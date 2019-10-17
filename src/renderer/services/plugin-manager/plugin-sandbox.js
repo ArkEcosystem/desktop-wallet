@@ -44,19 +44,24 @@ export class PluginSandbox {
     this.sandboxes = this.__mapPermissionsToSandbox()
   }
 
-  getSandbox () {
+  getSandbox (loadApi = true) {
+    if (loadApi) {
+      return {
+        ...this.sandbox,
+        walletApi: this.walletApi
+      }
+    }
+
     return {
-      ...this.sandbox,
-      walletApi: this.walletApi,
       document
     }
   }
 
-  getVM (loadSandbox = true) {
+  getVM ({ loadApi }) {
     const fullPath = this.plugin.fullPath
 
     return new NodeVM({
-      sandbox: loadSandbox ? this.getSandbox() : {},
+      sandbox: this.getSandbox(loadApi),
       require: {
         builtin: [],
         context: 'sandbox',

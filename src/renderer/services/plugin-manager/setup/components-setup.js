@@ -23,7 +23,8 @@ export function createComponentsSetup (plugin, pluginObject, sandbox, vue) {
           vue,
           fullPath,
           name: componentName,
-          vm: sandbox.getVM(),
+          pluginVM: sandbox.getVM({ loadApi: false }),
+          componentVM: sandbox.getVM({ loadApi: true }),
           logger: sandbox.app.$logger
         })
 

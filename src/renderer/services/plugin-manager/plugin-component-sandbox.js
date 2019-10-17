@@ -8,7 +8,8 @@ export class PluginComponentSandbox {
     name,
     plugin,
     source,
-    vm,
+    pluginVM,
+    componentVM,
     vue,
     logger
   }) {
@@ -16,7 +17,8 @@ export class PluginComponentSandbox {
     this.name = name
     this.plugin = plugin
     this.source = source
-    this.vm = vm
+    this.pluginVM = pluginVM
+    this.componentVM = componentVM
     this.vue = vue
     this.logger = logger
 
@@ -39,7 +41,8 @@ export class PluginComponentSandbox {
       name: name,
       fullPath: this.fullPath,
       plugin: this.plugin,
-      vm: this.vm,
+      pluginVM: this.pluginVM,
+      componentVM: this.componentVM,
       vue: this.vue,
       logger: this.logger
     })
@@ -54,7 +57,7 @@ export class PluginComponentSandbox {
       return
     }
 
-    const compiledTemplate = compileTemplate(this.vm, this.compiled.template)
+    const compiledTemplate = compileTemplate(this.pluginVM, this.compiled.template)
 
     const lazyComponent = Object.assign(compiledTemplate, this.compiled)
     delete lazyComponent.template
@@ -73,7 +76,7 @@ export class PluginComponentSandbox {
 
   __compileSource () {
     if (this.isFromFilesystem) {
-      this.compiled = this.vm.run(
+      this.compiled = this.componentVM.run(
         this.source,
         this.fullPath
       )

@@ -23,7 +23,8 @@ const vm = {
 const options = {
   vue,
   plugin,
-  vm,
+  componentVM: vm,
+  pluginVM: vm,
   name: 'test'
 }
 
