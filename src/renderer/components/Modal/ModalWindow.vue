@@ -18,7 +18,7 @@
               [containerClasses]: isMaximized,
               [containerClassesMinimized]: !isMaximized,
             }]"
-            class="ModalWindow__container flex flex-col shadow mx-auto rounded-lg relative transition text-theme-text-content"
+            class="ModalWindow__container flex flex-col mx-auto rounded-lg relative transition text-theme-text-content"
             @click.stop="void 0"
           >
             <section class="ModalWindow__container__content">
@@ -52,8 +52,11 @@
                 </slot>
               </header>
 
-              <article class="content flex-1 mt-3">
-                <slot :isMaximized="isMaximized" />
+              <article
+                :class="isMaximized ? 'mt-3' : 'mt-12'"
+                class="content flex-1"
+              >
+                <slot :is-maximized="isMaximized" />
               </article>
             </section>
 
@@ -206,10 +209,10 @@ export default {
 }
 
 .ModalWindow--maximized .ModalWindow__container__content {
-  @apply overflow-hidden p-16 pt-16 bg-theme-modal rounded-lg
+  @apply overflow-hidden p-16 pt-16 bg-theme-modal shadow rounded-lg
 }
 .ModalWindow--minimized .ModalWindow__container__content {
-  @apply overflow-y-auto px-8 pt-2 pb-5 bg-theme-modal rounded-lg
+  @apply overflow-y-auto px-8 pt-2 pb-5 bg-theme-modal shadow rounded-lg
 }
 .ModalWindow--minimized .ModalWindow__container {
   height: 200px!default;
@@ -218,10 +221,16 @@ export default {
 </style>
 
 <style lang="postcss">
-.ModalWindow__container__footer--warning {
-  @apply px-10 py-8 bg-yellow-lighter text-grey-darkest rounded-lg mt-2 text-sm;
+.ModalWindow__container__footer {
+  @apply p-8 rounded-lg mt-2 text-sm shadow;
 }
-.ModalWindow--minimized .ModalWindow__container__footer--warning {
+.ModalWindow__container__footer--warning {
+  @apply ModalWindow__container__footer bg-yellow-lighter text-grey-darkest;
+}
+.ModalWindow__container__footer--error {
+  @apply ModalWindow__container__footer bg-theme-error text-white;
+}
+.ModalWindow--minimized .ModalWindow__container__footer {
   @apply hidden
 }
 </style>

@@ -61,14 +61,13 @@
           {{ $t('MODAL_PLUGIN_INSTALL.INSTALL') }}
         </button>
       </footer>
+    </template>
 
-      <footer
-        v-else
-        class="PluginInstallModal__footer--failed"
-      >
-        <span>
-          {{ errorMessage ? errorMessage : 'unknown error' }}
-        </span>
+    <template #footer>
+      <footer v-if="isDownloadFailed">
+        <div class="ModalWindow__container__footer--error">
+          {{ errorMessage ? errorMessage : $t('MODAL_PLUGIN_INSTALL.UNKNOW_ERROR') }}
+        </div>
       </footer>
     </template>
   </ModalWindow>
@@ -193,9 +192,6 @@ export default {
   @apply w-full
 }
 .PluginInstallModal__footer {
-  @apply mt-10 flex justify-between items-center
-}
-.PluginInstallModal__footer--failed {
-  @apply py-5 bg-theme-error text-white
+  @apply flex justify-between items-center mt-5
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <ModalWindow
     :message="$t('PAGES.PLUGIN_MANAGER.DISCLAIMER')"
-    header-classes="flex px-10 py-8 -mx-16 -mt-16 bg-theme-secondary-feature rounded-t-lg"
+    header-classes="flex p-8 -mx-16 -mt-16 bg-theme-secondary-feature rounded-t-lg"
     container-classes="max-w-md"
     @close="emitClose"
   >

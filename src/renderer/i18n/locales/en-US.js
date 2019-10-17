@@ -495,7 +495,8 @@ export default {
     CANCEL: 'Cancel',
     DOWNLOADED: 'Downloaded {plugin}',
     DOWNLOADING: 'Downloading {plugin}',
-    INSTALL: 'Install now'
+    INSTALL: 'Install now',
+    UNKNOW_ERROR: 'Unknow error. Close this window and try again.'
   },
 
   MODAL_PLUGIN_PERMISSIONS: {

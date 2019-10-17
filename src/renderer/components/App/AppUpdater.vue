@@ -94,7 +94,7 @@
 
     <template #footer>
       <footer v-if="isDownloadFailed">
-        <div class="AppUpdater__footer AppUpdater__footer--failed">
+        <div class="ModalWindow__container__footer--error">
           {{ errorMessage ? errorMessage : $t('APP_UPDATER.UNKNOW_ERROR') }}
         </div>
       </footer>
@@ -272,9 +272,6 @@ export default {
 
 .AppUpdater__footer {
   @apply flex flex-row justify-center
-}
-.AppUpdater__footer--failed {
-  @apply py-5 bg-theme-error text-white
 }
 .AppUpdater__content + footer {
   @apply mt-5
