@@ -4,6 +4,8 @@ import decompress from 'decompress'
 import trash from 'trash'
 import { ensureDirSync } from 'fs-extra'
 
+const logger = require('electron-log')
+
 export const setupPluginManager = ({ sendToWindow, mainWindow, ipcMain }) => {
   let downloadItem
   let savePath
@@ -17,9 +19,16 @@ export const setupPluginManager = ({ sendToWindow, mainWindow, ipcMain }) => {
   const prefix = 'plugin-manager:'
 
   ipcMain.on(prefix + 'download', async (_, { url }) => {
+    downloadItem = undefined
+
     const options = {
       directory: cachePath,
+      onCancel: item => {
+        logger.log(`${prefix} Download cancelled`)
+      },
       onStarted: item => {
+        logger.log(`${prefix} Download started`)
+
         downloadItem = item
         totalBytes = item.getTotalBytes()
         savePath = item.getSavePath()
@@ -35,6 +44,7 @@ export const setupPluginManager = ({ sendToWindow, mainWindow, ipcMain }) => {
 
     try {
       await download(mainWindow, url, options)
+      logger.log(`${prefix} Download complete`)
       sendToWindow(prefix + 'plugin-downloaded', savePath)
     } catch (error) {
       sendToWindow(prefix + 'error', error)
