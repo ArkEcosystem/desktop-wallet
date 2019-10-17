@@ -44,7 +44,7 @@
                 class="AppUpdater__authorized__downloading__header__info"
               >
                 <span class="font-semibold">{{ formattedPercentage }}</span>
-                <span class="ml-2 text-theme-page-text-light truncate">{{ formatBytes(progressUpdate.transferred) }} / {{ formatBytes(progressUpdate.total) }}</span>
+                <span class="ml-2 text-theme-page-text-light truncate">{{ formatter_bytes(progressUpdate.transferred) }} / {{ formatter_bytes(progressUpdate.total) }}</span>
               </div>
             </div>
             <div class="AppUpdater__progress-bar">
@@ -107,7 +107,6 @@ import { ModalWindow } from '@/components/Modal'
 import { ProgressBar } from '@/components/ProgressBar'
 import { ipcRenderer } from 'electron'
 import { mapGetters } from 'vuex'
-import bytes from 'pretty-bytes'
 import cheerio from 'cheerio'
 import releaseService from '@/services/release'
 import Vue from 'vue'
@@ -244,10 +243,6 @@ export default {
         this.errorMessage = this.$t('APP_UPDATER.NETWORK_ERROR')
         this.cancel()
       }
-    },
-
-    formatBytes (value) {
-      return bytes(value)
     },
 
     __formatReleaseNotes (notes) {
