@@ -33,6 +33,12 @@
               </span>
             </div>
           </div>
+          <div class="PluginInstallModal__progress-bar">
+            <ProgressBar
+              :percent="normalizedPercentage"
+              :status="isDownloadFailed ? 'exception' : 'active'"
+            />
+          </div>
         </div>
       </section>
 
@@ -71,12 +77,15 @@
 <script>
 import { ipcRenderer } from 'electron'
 import { ModalWindow } from '@/components/Modal'
+import { ProgressBar } from '@/components/ProgressBar'
+import Vue from 'vue'
 
 export default {
   name: 'PluginInstallModal',
 
   components: {
-    ModalWindow
+    ModalWindow,
+    ProgressBar
   },
 
   props: {
@@ -105,7 +114,7 @@ export default {
     },
 
     normalizedPercentage () {
-      return this.progressUpdate.percent * 1e2
+      return parseInt(this.progressUpdate.percent * 100, 10)
     }
   },
 
@@ -115,8 +124,8 @@ export default {
     })
 
     ipcRenderer.on('plugin-manager:plugin-downloaded', () => {
+      Vue.set(this.progressUpdate, 'percent', 1)
       this.isDownloadFinished = true
-      this.progressUpdate.percent = 1
     })
 
     ipcRenderer.on('plugin-manager:error', (_, error) => {
@@ -180,6 +189,9 @@ export default {
   @apply flex my-2 justify-center
 }
 
+.PluginInstallModal__progress-bar {
+  @apply w-full
+}
 .PluginInstallModal__footer {
   @apply mt-10 flex justify-between items-center
 }

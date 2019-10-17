@@ -493,7 +493,7 @@ export default {
 
   MODAL_PLUGIN_INSTALL: {
     CANCEL: 'Cancel',
-    DOWNLOADED: 'Download complete',
+    DOWNLOADED: 'Downloaded {plugin}',
     DOWNLOADING: 'Downloading {plugin}',
     INSTALL: 'Install now'
   },
