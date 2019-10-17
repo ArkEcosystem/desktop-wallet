@@ -74,7 +74,16 @@ export const setupPluginManager = ({ sendToWindow, mainWindow, ipcMain }) => {
   })
 
   ipcMain.on(prefix + 'cancel', () => {
-    downloadItem.cancel()
+    const wait = () => {
+      if (downloadItem) {
+        downloadItem.cancel()
+      } else {
+        logger.log(`${prefix} Trying to cancel download...`)
+        setTimeout(wait, 100)
+      }
+    }
+
+    wait()
   })
 
   ipcMain.on(prefix + 'cleanup', async () => {
