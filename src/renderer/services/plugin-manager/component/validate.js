@@ -8,6 +8,7 @@ export function validateComponent (plugin, rawComponent, logger) {
     'methods',
     'computed',
     'components',
+    'props',
     ...hooks
   ]
 
