@@ -162,6 +162,15 @@ describe('Create Component', () => {
           this.$nextTick(() => {
             this.refs.test.innerHTML = 'Jest'
             this.refs.test.outerHTML = 'Jest'
+            this.refs.test.appendChild(document.createElement('p'))
+            this.refs.test.cloneNode()
+            this.refs.test.getRootNode()
+            this.refs.test.insertBefore()
+            this.refs.test.normalize()
+            this.refs.test.querySelector()
+            this.refs.test.querySelectorAll()
+            this.refs.test.removeChild()
+            this.refs.test.replaceChild()
           })
         }
       }
@@ -172,6 +181,15 @@ describe('Create Component', () => {
       localVue.nextTick(() => {
         expect(spy).toHaveBeenCalledWith('innerHTML 🚫')
         expect(spy).toHaveBeenCalledWith('outerHTML 🚫')
+        expect(spy).toHaveBeenCalledWith('appendChild 🚫')
+        expect(spy).toHaveBeenCalledWith('cloneNode 🚫')
+        expect(spy).toHaveBeenCalledWith('getRootNode 🚫')
+        expect(spy).toHaveBeenCalledWith('insertBefore 🚫')
+        expect(spy).toHaveBeenCalledWith('normalize 🚫')
+        expect(spy).toHaveBeenCalledWith('querySelector 🚫')
+        expect(spy).toHaveBeenCalledWith('querySelectorAll 🚫')
+        expect(spy).toHaveBeenCalledWith('removeChild 🚫')
+        expect(spy).toHaveBeenCalledWith('replaceChild 🚫')
         done()
       })
     })
