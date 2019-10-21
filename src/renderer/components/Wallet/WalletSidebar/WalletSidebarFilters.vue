@@ -162,13 +162,11 @@ export default {
     },
 
     setHideEmpty (isHidden) {
-      this.filters.hideEmpty = isHidden
-      this.emitFilter()
+      this.setFilter('hideEmpty', isHidden)
     },
 
     setHideLedger (isHidden) {
-      this.filters.hideLedger = isHidden
-      this.emitFilter()
+      this.setFilter('hideLedger', isHidden)
     },
 
     setFilter (filter, value) {
