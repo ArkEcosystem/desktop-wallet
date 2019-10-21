@@ -85,13 +85,9 @@ export function getSafeContext (vueContext, component) {
     }
   }
 
-  const props = vueContext.$options.propsData ? Object.keys(vueContext.$options.propsData) : null
-  if (props && props.length) {
-    context.props = {}
-    for (const prop of props) {
-      context.__defineGetter__(prop, () => {
-        return vueContext.$options.propsData[prop]
-      })
+  if (vueContext._props) {
+    for (const propName in vueContext._props) {
+      context[propName] = vueContext._props[propName]
     }
   }
 

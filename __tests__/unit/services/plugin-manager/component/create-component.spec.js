@@ -14,6 +14,46 @@ describe('Create Component', () => {
     expect(wrapper.isVueInstance()).toBe(true)
   })
 
+  describe('Props', () => {
+    it('should mount with props', () => {
+      const plugin = {
+        template: '<div>{{ name }}</div>',
+        props: {
+          name: {
+            type: String
+          }
+        }
+      }
+      const component = wrapperPlugin(plugin)
+      const wrapper = mount(component, {
+        propsData: {
+          name: 'Test'
+        }
+      })
+      expect(wrapper.html()).toBe('<div>Test</div>')
+    })
+
+    it('should sync changes', () => {
+      const plugin = {
+        template: '<div>{{ name }}</div>',
+        props: {
+          name: {
+            type: String
+          }
+        }
+      }
+      const component = wrapperPlugin(plugin)
+      const wrapper = mount(component, {
+        propsData: {
+          name: 'Test'
+        }
+      })
+      expect(wrapper.html()).toBe('<div>Test</div>')
+      wrapper.setProps({ name: 'Jest' })
+      expect(wrapper.html()).toBe('<div>Jest</div>')
+    })
+  })
+
   describe('Data', () => {
     it('should mount with data', () => {
       const plugin = {
