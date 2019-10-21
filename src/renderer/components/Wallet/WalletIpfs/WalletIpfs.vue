@@ -17,9 +17,8 @@
             <TransactionModal
               v-if="isOpen"
               :type="5"
-              @cancel="toggle"
-              @close="toggle"
-              @sent="toggle"
+              @cancel="closeTransactionModal(toggle, isOpen)"
+              @sent="closeTransactionModal(toggle, isOpen)"
             />
           </template>
         </ButtonModal>
@@ -45,6 +44,15 @@ export default {
     ButtonModal,
     TransactionModal,
     WalletTransactions
+  },
+
+  methods: {
+    closeTransactionModal (toggleMethod, isOpen) {
+      console.log('WalletIpfs closeTransactionModal', toggleMethod, isOpen)
+      if (isOpen) {
+        toggleMethod()
+      }
+    }
   }
 }
 </script>

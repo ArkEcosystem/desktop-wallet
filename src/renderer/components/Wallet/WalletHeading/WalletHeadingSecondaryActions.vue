@@ -20,8 +20,8 @@
           <TransactionModal
             v-if="isOpen"
             :type="item.type"
-            @cancel="toggle"
-            @sent="toggle"
+            @cancel="closeTransactionModal(toggle, isOpen)"
+            @sent="closeTransactionModal(toggle, isOpen)"
           />
         </template>
       </ButtonModal>
@@ -146,6 +146,12 @@ export default {
   methods: {
     async onRemoval () {
       this.$router.push({ name: 'wallets' })
+    },
+
+    closeTransactionModal (toggleMethod, isOpen) {
+      if (isOpen) {
+        toggleMethod()
+      }
     }
   }
 }

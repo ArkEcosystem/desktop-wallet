@@ -150,10 +150,7 @@ export default {
       const response = await MultiSignature.sendTransaction(peer, this.transaction)
       if (response && !sendToNetwork) {
         this.$success(this.$t(`TRANSACTION.SUCCESS.${this.transactionKey}`))
-        if (this.transaction.type !== 0) {
-          this.emitSent(true, this.transaction)
-        }
-        this.emitClose()
+        this.emitSent(true, this.transaction)
       } else if (!response) {
         this.$error(this.$t(`TRANSACTION.ERROR.${this.transactionKey}`))
       }
@@ -247,7 +244,7 @@ export default {
             return errors[transactionId].some(error => error.type === 'ERR_LOW_FEE')
           })
           const anyNotDuplicate = Object.keys(errors).some(transactionId => {
-            return errors[transactionId].some(error => error.type !== 'ERR_DUPLICATE' && error.type !== 'ERR_LOW_FEE')
+            return errors[transactionId].some(error => !['ERR_DUPLICATE', 'ERR_FORGED', 'ERR_ALREADY_IN_POOL', 'ERR_LOW_FEE'].includes(error.type))
           })
           const wrongNonce = Object.keys(errors).some(transactionId => {
             return errors[transactionId].some(error => {
@@ -273,8 +270,6 @@ export default {
         this.showBroadcastingTransactions = false
         this.emitSent(success, this.transaction)
       }
-
-      this.emitClose()
     },
 
     emitSent (success, transaction = null) {

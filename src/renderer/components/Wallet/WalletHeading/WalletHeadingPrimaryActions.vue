@@ -72,9 +72,8 @@
           <TransactionModal
             v-if="isOpen"
             :type="0"
-            @cancel="toggle"
-            @close="toggle"
-            @sent="toggle"
+            @cancel="closeTransactionModal(toggle, isOpen)"
+            @sent="closeTransactionModal(toggle, isOpen)"
           />
         </template>
       </ButtonModal>
@@ -90,8 +89,8 @@
           <TransactionModal
             v-if="isOpen"
             :type="item.type"
-            @cancel="toggle"
-            @sent="toggle"
+            @cancel="closeTransactionModal(toggle, isOpen)"
+            @sent="closeTransactionModal(toggle, isOpen)"
           />
         </template>
       </ButtonModal>
@@ -183,6 +182,12 @@ export default {
       this.isRefreshing = true
       await this.$eventBus.emit('wallet:reload')
       this.isRefreshing = false
+    },
+
+    closeTransactionModal (toggleMethod, isOpen) {
+      if (isOpen) {
+        toggleMethod()
+      }
     }
   }
 }

@@ -194,9 +194,8 @@
             v-if="isOpen"
             :type="-1"
             :transaction="transaction"
-            @cancel="emitClose(toggle)"
-            @close="emitClose(toggle)"
-            @sent="emitClose(toggle)"
+            @cancel="closeTransactionModal(toggle, isOpen)"
+            @sent="closeTransactionModal(toggle, isOpen)"
           />
         </template>
       </ButtonModal>
@@ -212,9 +211,8 @@
             v-if="isOpen"
             :type="transaction.type"
             :transaction-override="transaction"
-            @cancel="emitClose(toggle)"
-            @close="emitClose(toggle)"
-            @sent="emitClose(toggle)"
+            @cancel="closeTransactionModal(toggle, isOpen)"
+            @sent="closeTransactionModal(toggle, isOpen)"
           />
         </template>
       </ButtonModal>
@@ -312,11 +310,15 @@ export default {
       this.network_openExplorer('block', this.transaction.blockId)
     },
 
-    emitClose (modalToggle) {
-      if (typeof modalToggle === 'function') {
-        modalToggle()
+    closeTransactionModal (toggleMethod, isOpen) {
+      if (isOpen) {
+        toggleMethod()
       }
 
+      this.emitClose()
+    },
+
+    emitClose () {
       this.$emit('close', 'navigateToTransactions')
     },
 
