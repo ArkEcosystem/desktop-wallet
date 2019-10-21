@@ -38,6 +38,18 @@ export function getSafeContext (vueContext, component) {
       'outerHTML'
     ]
 
+    const badMethods = [
+      'appendChild',
+      'cloneNode',
+      'getRootNode',
+      'insertBefore',
+      'normalize',
+      'querySelector',
+      'querySelectorAll',
+      'removeChild',
+      'replaceChild'
+    ]
+
     const blockElementProperties = (element) => {
       if (!isElement(element) || !element.tagName || element.tagName.toLowerCase() === 'iframe') {
         return element
@@ -56,6 +68,14 @@ export function getSafeContext (vueContext, component) {
           element.__defineGetter__(badGetter, () => console.error(`${badGetter} 🚫`))
         } catch {
           throw new Error(`Failed to apply ${badGetter} getter to the element. Try wrapping it with '$nextTick'.`)
+        }
+      }
+
+      for (const badMethod of badMethods) {
+        try {
+          element[badMethod] = () => console.error(`${badMethod} 🚫`)
+        } catch {
+          throw new Error(`Failed to apply ${badMethod} method to the element. Try wrapping it with '$nextTick'.`)
         }
       }
 
