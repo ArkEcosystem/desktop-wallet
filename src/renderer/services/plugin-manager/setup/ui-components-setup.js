@@ -9,12 +9,12 @@ import TableWrapper from '@/components/utils/TableWrapper'
 export function createUiComponentsSetup (plugin) {
   return () => {
     const components = {
-      Button: ButtonComponents,
-      Collapse: CollapseComponents,
-      Input: InputComponents,
-      ListDivided: ListDividedComponents,
+      ...ButtonComponents,
+      ...CollapseComponents,
+      ...InputComponents,
+      ...ListDividedComponents,
+      ...MenuComponents,
       Loader,
-      Menu: MenuComponents,
       TableWrapper
     }
 
