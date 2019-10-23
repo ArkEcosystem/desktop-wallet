@@ -80,6 +80,36 @@ describe('Create Component', () => {
     })
   })
 
+  describe('Computed', () => {
+    it('should mount with computed data', () => {
+      const plugin = {
+        template: '<div>{{ name }}</div>',
+        computed: {
+          name () {
+            return 'Test'
+          }
+        }
+      }
+      const component = wrapperPlugin(plugin)
+      const wrapper = mount(component)
+      expect(wrapper.html()).toBe('<div>Test</div>')
+    })
+
+    it('should not access parent element', () => {
+      const plugin = {
+        template: '<div>{{ name }}</div>',
+        computed: {
+          name () {
+            return this.$parent
+          }
+        }
+      }
+      const component = wrapperPlugin(plugin)
+      const wrapper = mount(component)
+      expect(wrapper.vm.name).toBeUndefined()
+    })
+  })
+
   describe('Created', () => {
     it('should mount with created hook', () => {
       const plugin = {

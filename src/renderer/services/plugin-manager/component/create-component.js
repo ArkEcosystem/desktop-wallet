@@ -15,13 +15,6 @@ export function createSafeComponent (componentName, baseComponent, vue) {
     }
   }
 
-  // Fix context of "computed" methods - also removes global computed methods
-  if (vmComponent.options.computed) {
-    for (const computedName of Object.keys(vmComponent.options.computed)) {
-      vmComponent.options.computed[computedName] = function () {}
-    }
-  }
-
   vmComponent.options.created = [function safeCreated () {
     if (this.$options.computed) {
       for (const computedName of Object.keys(this.$options.computed)) {
