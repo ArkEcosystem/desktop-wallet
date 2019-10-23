@@ -1,7 +1,7 @@
 import { hooks } from './hooks'
 import { PLUGINS } from '@config'
 
-export function validateComponent (plugin, rawComponent, name, logger) {
+export function validateComponent ({ plugin, component, name, logger }) {
   const requiredKeys = ['template']
   const allowedKeys = [
     'data',
@@ -14,7 +14,7 @@ export function validateComponent (plugin, rawComponent, name, logger) {
 
   const missingKeys = []
   for (const key of requiredKeys) {
-    if (!Object.prototype.hasOwnProperty.call(rawComponent, key)) {
+    if (!Object.prototype.hasOwnProperty.call(component, key)) {
       missingKeys.push(key)
     }
   }
@@ -32,29 +32,29 @@ export function validateComponent (plugin, rawComponent, name, logger) {
   }
 
   const inlineErrors = []
-  if (/v-html/i.test(rawComponent.template)) {
+  if (/v-html/i.test(component.template)) {
     inlineErrors.push('uses v-html')
   }
-  if (/javascript:/i.test(rawComponent.template)) {
+  if (/javascript:/i.test(component.template)) {
     inlineErrors.push('"javascript:"')
   }
-  if (/<\s*webview/i.test(rawComponent.template)) {
+  if (/<\s*webview/i.test(component.template)) {
     inlineErrors.push('uses webview tag')
   }
-  if (/<\s*script/i.test(rawComponent.template)) {
+  if (/<\s*script/i.test(component.template)) {
     inlineErrors.push('uses script tag')
-  } else if (/[^\w]+eval\(/i.test(rawComponent.template)) {
+  } else if (/[^\w]+eval\(/i.test(component.template)) {
     inlineErrors.push('uses eval')
   }
-  if (/<\s*iframe/i.test(rawComponent.template)) {
+  if (/<\s*iframe/i.test(component.template)) {
     inlineErrors.push('uses iframe tag')
   }
-  if (/srcdoc/i.test(rawComponent.template)) {
+  if (/srcdoc/i.test(component.template)) {
     inlineErrors.push('uses srcdoc property')
   }
   const inlineEvents = []
   for (const event of PLUGINS.validation.events) {
-    if ((new RegExp(`on${event}`, 'i')).test(rawComponent.template)) {
+    if ((new RegExp(`on${event}`, 'i')).test(component.template)) {
       inlineEvents.push(event)
     }
   }
@@ -69,7 +69,7 @@ export function validateComponent (plugin, rawComponent, name, logger) {
   }
 
   const bannedKeys = []
-  for (const key of Object.keys(rawComponent)) {
+  for (const key of Object.keys(component)) {
     if (![...requiredKeys, ...allowedKeys].includes(key)) {
       bannedKeys.push(key)
     }
