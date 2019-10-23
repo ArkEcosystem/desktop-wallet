@@ -118,10 +118,11 @@ export default {
 
   PEER: {
     BEST: 'Connetti al migliore',
+    CONFIG_CHECK_FAILED: 'Controllo configurazione fallito',
     CONNECTED: 'Connesso al peer',
     CONNECT_CUSTOM: 'Connetti peer personalizzato',
     CONNECT_FAILED: 'Impossibile connettersi al peer',
-    DELAY: 'Ritardo',
+    LATENCY: 'Latenza',
     DISCONNECT: 'Disconnesso dal peer',
     FAILED_REFRESH: 'Impossibile aggiornare i peers',
     HEIGHT: 'Altezza Blocco',
@@ -260,8 +261,18 @@ export default {
   },
 
   APP_SIDEMENU_NOTIFICATION: {
-    NOTIFICATION: 'Una nuova versione ({version}) è stata rilasciata. Aggiorna ora!',
     TOOLTIP: 'La nuova versione ({version}) è stata rilasciata!'
+  },
+
+  APP_UPDATER: {
+    RELEASE_NOTES: 'Note di rilascio',
+    DOWNLOAD_NOW: 'Si, scarica ora',
+    MAYBE_LATER: 'No, forse più tardi',
+    DOWNLOADING: 'Scaricamento {version}',
+    DOWNLOADED: 'Scaricato {version}',
+    QUIT_AND_INSTALL: 'Esci e installa',
+    UNKNOW_ERROR: 'Errore sconosciuto. Chiudi questa finestra e riprova.',
+    NETWORK_ERROR: 'Sembra che il tuo file non venga scaricato. Verifica la tua connessione.'
   },
 
   MARKET_CHART: {
@@ -509,7 +520,7 @@ export default {
       },
       TITLE: 'Inserisci l\'indirizzo del contatto',
       ADDRESS: 'Indirizzo',
-      NAME: 'Nome contatto (opzionala)',
+      NAME: 'Nome contatto (opzionale)',
       NAME_INFO: 'Info:',
       NAME_DESCRIPTION: 'Il nome del contatto non è richiesto, ma può essere utilizzato per comodità dell\'utente',
       FAILED: 'Fallito nel creare il contatto',
