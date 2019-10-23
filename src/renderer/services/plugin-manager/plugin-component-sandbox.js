@@ -53,7 +53,7 @@ export class PluginComponentSandbox {
    * a secure component to be mounted by Vue.
    */
   render () {
-    if (!validateComponent(this.plugin, this.compiled, this.logger)) {
+    if (!validateComponent(this.plugin, this.compiled, this.name, this.logger)) {
       return
     }
 

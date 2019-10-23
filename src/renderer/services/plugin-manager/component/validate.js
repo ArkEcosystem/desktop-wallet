@@ -1,7 +1,7 @@
 import { hooks } from './hooks'
 import { PLUGINS } from '@config'
 
-export function validateComponent (plugin, rawComponent, logger) {
+export function validateComponent (plugin, rawComponent, name, logger) {
   const requiredKeys = ['template']
   const allowedKeys = [
     'data',
