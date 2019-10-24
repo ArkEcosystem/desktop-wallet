@@ -1,5 +1,6 @@
 import BaseModule from '../base'
 import { cloneDeep, isEmpty } from 'lodash'
+import { Managers } from '@arkecosystem/crypto'
 import { NETWORKS } from '@config'
 import eventBus from '@/plugins/event-bus'
 import NetworkModel from '@/models/network'
@@ -47,7 +48,7 @@ export default new BaseModule(NetworkModel, {
   },
 
   actions: {
-    load ({ commit, getters }) {
+    load ({ commit, getters, rootGetters }) {
       const all = cloneDeep(getters.all)
       if (!isEmpty(all)) {
         // TODO: remove in future major version
@@ -62,17 +63,18 @@ export default new BaseModule(NetworkModel, {
         if (missingCustom) {
           commit('SET_ALL', all)
         }
-
-        return
+      } else {
+        commit('SET_ALL', NETWORKS)
       }
 
-      commit('SET_ALL', NETWORKS)
+      Managers.configManager.setConfig(cloneDeep(rootGetters['session/network'].crypto))
+      Managers.configManager.setHeight(rootGetters['session/network'].height)
     },
 
     /*
      * Update data of the network
      */
-    async updateData ({ commit, rootGetters }, network = null) {
+    async updateData ({ commit, dispatch, rootGetters }, network = null) {
       if (!network) {
         network = rootGetters['session/network']
       }
@@ -80,11 +82,17 @@ export default new BaseModule(NetworkModel, {
       try {
         const crypto = await Client.fetchNetworkCrypto(network.server)
         const { constants } = await Client.fetchNetworkConfig(network.server)
+        // Fall back to the height of the current milestone on failure - we don't regularly check the height anyway
+        const height = (await dispatch('peer/getAverageHeight', network, { root: true })) || constants.height
         commit('UPDATE', {
           ...network,
           crypto,
-          constants
+          constants,
+          height
         })
+
+        Managers.configManager.setConfig(cloneDeep(network.crypto))
+        Managers.configManager.setHeight(height)
       } catch (error) {
         // data could not be updated
       }

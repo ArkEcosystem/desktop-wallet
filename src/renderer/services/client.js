@@ -1,5 +1,5 @@
 import { Connection } from '@arkecosystem/client'
-import { Identities, Managers, Transactions } from '@arkecosystem/crypto'
+import { Identities, Transactions } from '@arkecosystem/crypto'
 import { castArray, chunk, cloneDeep, orderBy } from 'lodash'
 import got from 'got'
 import moment from 'moment'
@@ -945,9 +945,6 @@ export default class ClientService {
   ) {
     const network = store.getters['session/network']
 
-    Managers.configManager.setConfig(cloneDeep(network.crypto))
-    Managers.configManager.setHeight(await store.dispatch('peer/getAverageHeight', network))
-
     transaction = transaction.network(network.version)
 
     // TODO replace with dayjs
@@ -1029,9 +1026,6 @@ export default class ClientService {
     if (!network.constants.aip11) {
       throw new Error('Multi-Signature Transactions are not supported yet')
     }
-
-    Managers.configManager.setConfig(cloneDeep(network.crypto))
-    Managers.configManager.setHeight(await store.dispatch('peer/getAverageHeight', network))
 
     let keys
     if (passphrase) {

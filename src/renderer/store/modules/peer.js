@@ -321,18 +321,24 @@ export default {
 
     /**
      * Get average peer height.
-     * @return {Number}
+     * @return {(Number|null)}
      */
     async getAverageHeight ({ dispatch, getters, rootGetters }, network = null) {
-      const peerDiscovery = await dispatch('getPeerDiscovery', network)
-      const peers = await peerDiscovery.findPeersWithPlugin('core-api', {
-        additional: [
-          'height'
-        ]
-      })
+      let peers = []
+
+      try {
+        const peerDiscovery = await dispatch('getPeerDiscovery', network)
+        peers = await peerDiscovery.findPeersWithPlugin('core-api', {
+          additional: [
+            'height'
+          ]
+        })
+      } catch (error) {
+        console.error('Could not get average height:', error)
+      }
 
       if (!peers.length) {
-        return 1
+        return null
       }
 
       let sum = 0
@@ -340,7 +346,7 @@ export default {
         sum += peer.height
       }
 
-      return sum / peers.length
+      return parseInt(sum / peers.length)
     },
 
     /**
