@@ -148,7 +148,8 @@
       v-if="showDetailsModal"
       :plugin="selectedPlugin"
       @close="reset"
-      @remove="setModal('remove')"
+      @update="onUpdate"
+      @remove="onRemove"
       @show-permissions="openPermissionsModal('details')"
     />
 
@@ -156,6 +157,7 @@
       v-if="showPermissionsModal"
       :modal-ref="modalRef"
       :plugin="selectedPlugin"
+      :is-update="isUpdate"
       @close="closePermissionsModal"
       @confirm="setModal('install')"
     />
@@ -169,6 +171,7 @@
     <PluginInstallModal
       v-if="showInstallModal"
       :plugin="selectedPlugin"
+      :is-update="isUpdate"
       @close="reset"
       @download="onDownload"
       @install="onInstall"
@@ -232,6 +235,7 @@ export default {
     activeFilter: 'all',
     isMenuOpen: false,
     isRefreshing: false,
+    isUpdate: false,
     modalRef: null,
     selectedPlugin: null,
     modal: '',
@@ -327,13 +331,21 @@ export default {
   },
 
   mounted () {
-    ipcRenderer.on('plugin-manager:plugin-installed', async (_, plugin) => {
-      await this.$plugins.fetchPlugin(plugin.pluginPath)
+    ipcRenderer.on('plugin-manager:plugin-installed', async (_, { pluginId, pluginPath }) => {
+      if (this.isUpdate) {
+        this.$store.dispatch('plugin/setEnabled', {
+          enabled: false,
+          pluginId
+        })
+      }
+
+      await this.$plugins.fetchPlugin(pluginPath, this.isUpdate)
+
+      this.$success(this.$t(`PAGES.PLUGIN_MANAGER.SUCCESS.${this.isUpdate ? 'UPDATE' : 'INSTALLATION'}`, {
+        plugin: pluginId
+      }))
 
       this.resetModal()
-      this.$success(this.$t('PAGES.PLUGIN_MANAGER.SUCCESS.INSTALLATION', {
-        plugin: plugin.pluginId
-      }))
     })
   },
 
@@ -359,6 +371,12 @@ export default {
 
     resetModal () {
       this.modal = null
+    },
+
+    resetIsUpdate () {
+      if (this.isUpdate) {
+        this.isUpdate = false
+      }
     },
 
     setPlugin (plugin) {
@@ -393,11 +411,14 @@ export default {
       } else {
         this.resetModal()
       }
+
+      this.resetIsUpdate()
     },
 
     reset () {
       this.resetPlugin()
       this.resetModal()
+      this.resetIsUpdate()
     },
 
     async fetchPluginData (url) {
@@ -441,7 +462,19 @@ export default {
     onInstall () {
       this.setModal('loading')
 
-      ipcRenderer.send('plugin-manager:install', this.selectedPlugin.id)
+      ipcRenderer.send('plugin-manager:install', {
+        pluginId: this.selectedPlugin.id,
+        isUpdate: this.isUpdate
+      })
+    },
+
+    onUpdate () {
+      this.isUpdate = true
+      this.openPermissionsModal('details')
+    },
+
+    onRemove () {
+      this.setModal('remove')
     },
 
     onRemoved () {

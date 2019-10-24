@@ -27,7 +27,7 @@
         </button>
 
         <button
-          v-if="!isInstalled"
+          v-if="!isInstalled || isUpdate"
           class="blue-button"
           @click="emitConfirm"
         >
@@ -57,12 +57,17 @@ export default {
     plugin: {
       type: Object,
       required: true
+    },
+    isUpdate: {
+      type: Boolean,
+      default: false,
+      required: false
     }
   },
 
   computed: {
     title () {
-      if (this.isInstalled) {
+      if (this.isInstalled && !this.isUpdate) {
         return this.$t('MODAL_PLUGIN_PERMISSIONS.TITLE')
       }
       return this.$t('MODAL_PLUGIN_PERMISSIONS.ALTERNATIVE_TITLE')

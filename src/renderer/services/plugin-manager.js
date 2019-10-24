@@ -745,7 +745,7 @@ class PluginManager {
     return sanitize(body)
   }
 
-  async fetchPlugin (pluginPath) {
+  async fetchPlugin (pluginPath, isUpdate = false) {
     this.validatePlugin(pluginPath)
 
     let config = JSON.parse(fs.readFileSync(`${pluginPath}/package.json`))
@@ -755,7 +755,7 @@ class PluginManager {
       throw new Error('Plugin ID not found')
     } else if (!/^[@/a-z-0-9-]+$/.test(config.id)) {
       throw new Error('Invalid Plugin ID')
-    } else if (this.plugins[config.id]) {
+    } else if (this.plugins[config.id] && !isUpdate) {
       throw new Error(`Plugin '${config.id}' has already been loaded`)
     }
 

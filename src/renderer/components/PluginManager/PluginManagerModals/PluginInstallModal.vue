@@ -58,7 +58,7 @@
           class="blue-button"
           @click="emitInstall"
         >
-          {{ $t('MODAL_PLUGIN_INSTALL.INSTALL') }}
+          {{ $t(`MODAL_PLUGIN_INSTALL.${isUpdate ? 'UPDATE' : 'INSTALL'}`) }}
         </button>
       </footer>
     </template>
@@ -91,6 +91,11 @@ export default {
     plugin: {
       type: Object,
       required: true
+    },
+    isUpdate: {
+      type: Boolean,
+      default: false,
+      required: false
     }
   },
 
@@ -146,7 +151,13 @@ export default {
     },
 
     emitDownload () {
-      this.$emit('download', this.plugin.source)
+      let source = this.plugin.source
+
+      if (this.isUpdate) {
+        source = (this.$store.getters['plugin/availableById'](this.plugin.id)).config.source
+      }
+
+      this.$emit('download', source)
     },
 
     emitInstall () {

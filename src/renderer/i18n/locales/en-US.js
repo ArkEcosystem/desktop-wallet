@@ -496,6 +496,7 @@ export default {
     DOWNLOADED: 'Downloaded {plugin}',
     DOWNLOADING: 'Downloading {plugin}',
     INSTALL: 'Install now',
+    UPDATE: 'Update now',
     UNKNOW_ERROR: 'Unknow error. Close this window and try again.'
   },
 
@@ -639,6 +640,7 @@ export default {
       },
       SUCCESS: {
         INSTALLATION: 'The plugin \'{plugin}\' was installed successfully',
+        UPDATE: 'The plugin \'{plugin}\' was updated successfully',
         REMOVAL: 'The plugin \'{plugin}\' was removed successfully'
       },
       DISCLAIMER: '<b>Disclaimer:</b> The availability of this plugin in the ARK Desktop Wallet does not mean that ARK is directly involved in the development or affiliated with the developer providing this plugin. By installing it on your wallet, you assume every responsibility.',
