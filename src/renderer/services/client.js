@@ -736,7 +736,7 @@ export default class ClientService {
     const transaction = Transactions.BuilderFactory
       .multiSignature()
       .multiSignatureAsset({
-        min: minKeys,
+        min: +minKeys,
         publicKeys
       })
       .fee(fee)

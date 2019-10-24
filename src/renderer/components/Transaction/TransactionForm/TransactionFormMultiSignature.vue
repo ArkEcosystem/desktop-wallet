@@ -497,7 +497,7 @@ export default {
         },
 
         aboveMinimum (value) {
-          return value > 1
+          return value >= 1
         }
       },
 
