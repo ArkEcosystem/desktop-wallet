@@ -110,6 +110,65 @@ describe('Create Component', () => {
     })
   })
 
+  describe('Methods', () => {
+    it('should mount with methods', () => {
+      const plugin = {
+        template: '<div>{{ name }}</div>',
+        data: () => ({
+          name: 'Test'
+        }),
+        methods: {
+          change () {
+            this.name = 'Jest'
+          }
+        }
+      }
+      const component = wrapperPlugin(plugin)
+      const wrapper = mount(component)
+      wrapper.vm.change()
+      expect(wrapper.vm.name).toBe('Jest')
+    })
+
+    it('should call methods from elements', () => {
+      const plugin = {
+        template: '<button ref="btn" @click="change">{{ name }}</button>',
+        data: () => ({
+          name: 'Test'
+        }),
+        methods: {
+          change () {
+            this.name = 'Jest'
+          }
+        }
+      }
+      const component = wrapperPlugin(plugin)
+      const wrapper = mount(component)
+      const btn = wrapper.find({ ref: 'btn' })
+      btn.trigger('click')
+      expect(wrapper.vm.name).toBe('Jest')
+    })
+
+    it('should call methods from elements with params', () => {
+      const plugin = {
+        template: '<button ref="btn" @click="change(customName)">{{ name }}</button>',
+        data: () => ({
+          name: 'Test',
+          customName: 'Jest'
+        }),
+        methods: {
+          change (name) {
+            this.name = name
+          }
+        }
+      }
+      const component = wrapperPlugin(plugin)
+      const wrapper = mount(component)
+      const btn = wrapper.find({ ref: 'btn' })
+      btn.trigger('click')
+      expect(wrapper.vm.name).toBe('Jest')
+    })
+  })
+
   describe('Created', () => {
     it('should mount with created hook', () => {
       const plugin = {
