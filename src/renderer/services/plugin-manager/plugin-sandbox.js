@@ -66,7 +66,7 @@ export class PluginSandbox {
         builtin: [],
         context: 'sandbox',
         resolve: function (source) {
-          return path.resolve(fullPath, 'src/', source)
+          return path.resolve(fullPath, source)
         },
         external: {
           modules: [
@@ -77,7 +77,7 @@ export class PluginSandbox {
         },
         root: [
           this.plugin.rootPath,
-          path.resolve(fullPath, 'src/')
+          path.resolve(fullPath)
         ]
       }
     })
