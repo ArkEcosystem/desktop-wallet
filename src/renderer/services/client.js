@@ -966,6 +966,8 @@ export default class ClientService {
 
       transaction.version(2)
         .nonce(nonce)
+    } else {
+      transaction.version(1)
     }
 
     if (multiSignature) {
