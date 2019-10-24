@@ -59,13 +59,21 @@ export default class TransactionService {
     return !!transaction.multiSignature
   }
 
+  static isMultiSignatureRegistration (transaction) {
+    return transaction.type === TRANSACTION_TYPES.GROUP_1.MULTI_SIGNATURE
+  }
+
   static needsSignatures (transaction) {
+    if (this.isMultiSignatureRegistration(transaction)) {
+      return this.needsAllSignatures(transaction)
+    }
+
     return !transaction.signatures || transaction.signatures.length < transaction.multiSignature.min
   }
 
   static needsWalletSignature (transaction, publicKey) {
-    if (transaction.type === TRANSACTION_TYPES.GROUP_1.MULTI_SIGNATURE && this.isMultiSignatureReady(transaction, true)) {
-      return transaction.senderPublicKey === publicKey && !transaction.signature
+    if (this.isMultiSignatureRegistration(transaction) && this.isMultiSignatureReady(transaction, true)) {
+      return transaction.senderPublicKey === publicKey && this.needsFinalSignature(transaction)
     }
 
     const index = transaction.multiSignature.publicKeys.indexOf(publicKey)
@@ -81,7 +89,7 @@ export default class TransactionService {
   }
 
   static isMultiSignatureReady (transaction, excludeFinal = false) {
-    const isMultiSigRegistration = transaction.type === TRANSACTION_TYPES.GROUP_1.MULTI_SIGNATURE
+    const isMultiSigRegistration = this.isMultiSignatureRegistration(transaction)
     if (isMultiSigRegistration && this.needsAllSignatures(transaction)) {
       return false
     } else if (this.needsSignatures(transaction)) {
