@@ -71,7 +71,7 @@
             v-else-if="needsSignatures(data.row)"
             class="text-red"
           >
-            {{ data.row.multiSignature.min - data.row.signatures.length }} more signatures
+            {{ $t('TRANSACTION.MULTI_SIGNATURE.N_MORE', [remainingSignatureCount(data.row)]) }}
           </span>
 
           <span
@@ -182,6 +182,15 @@ export default {
 
     needsWalletSignature (transaction) {
       return TransactionService.needsWalletSignature(transaction, WalletService.getPublicKeyFromWallet(this.wallet_fromRoute))
+    },
+
+    remainingSignatureCount (transaction) {
+      let min = transaction.multiSignature.min
+      if (TransactionService.isMultiSignatureRegistration(transaction)) {
+        min = transaction.multiSignature.publicKeys.length
+      }
+
+      return min - transaction.signatures.length
     },
 
     formatDate (value) {

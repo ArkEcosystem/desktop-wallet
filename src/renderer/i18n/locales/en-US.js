@@ -877,6 +877,7 @@ export default {
       ERROR_PUBLIC_KEY_NOT_FOUND: 'Could not determine public key',
       ERROR_PUBLIC_KEY_EXISTS: 'Public key already provided',
       MIN_KEYS: 'Minimum Required Signatures',
+      N_MORE: '{0} more signature(s)',
       PUBLIC_KEYS: 'Public Keys',
       READY: 'Ready',
       TOTAL_SIGNATURES: 'Total Signatures',
