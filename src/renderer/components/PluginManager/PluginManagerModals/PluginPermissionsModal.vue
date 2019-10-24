@@ -88,13 +88,13 @@ export default {
 <style lang="postcss" scoped>
 .PluginPermissionsModal__permission__container {
   max-height: 12rem;
-  @apply overflow-y-scroll
+  @apply overflow-y-auto pr-2
 }
 .PluginPermissionsModal__permission {
   @apply flex flex-col py-4 border-b border-dashed border-theme-line-separator
 }
 .PluginPermissionsModal__permission:last-of-type {
-  @apply border-none pb-0
+  @apply border-none
 }
 
 .PluginPermissionsModal__footer {

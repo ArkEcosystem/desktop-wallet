@@ -400,14 +400,6 @@ export default {
       this.resetModal()
     },
 
-    openRemovalModal (plugin) {
-      if (this.pluginToShow) {
-        this.pluginToShow = null
-      }
-
-      this.pluginToRemove = plugin
-    },
-
     async fetchPluginData (url) {
       try {
         const plugin = await this.$plugins.fetchPluginFromUrl(url)
