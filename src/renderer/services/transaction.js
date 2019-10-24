@@ -94,10 +94,14 @@ export default class TransactionService {
       return false
     } else if (this.needsSignatures(transaction)) {
       return false
-    } else if (!excludeFinal && isMultiSigRegistration && !transaction.signature) {
+    } else if (!excludeFinal && isMultiSigRegistration && this.needsFinalSignature(transaction)) {
       return false
     }
 
     return true
+  }
+
+  static needsFinalSignature (transaction) {
+    return !transaction.signature || !Transactions.Verifier.verifyHash(transaction)
   }
 }
