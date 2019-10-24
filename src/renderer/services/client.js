@@ -1036,7 +1036,7 @@ export default class ClientService {
       keys = Identities.Keys.fromWIF(wif)
     }
 
-    if (!transaction.signatures || transaction.signatures.length < multiSignature.min) {
+    if (TransactionService.needsSignatures({ ...transaction, multiSignature })) {
       const index = multiSignature.publicKeys.indexOf(keys.publicKey)
       if (index !== false) {
         Transactions.Signer.multiSign(transaction, keys, index)
