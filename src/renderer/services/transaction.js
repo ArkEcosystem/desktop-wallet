@@ -1,5 +1,5 @@
 import { TRANSACTION_TYPES } from '@config'
-import { Transactions } from '@arkecosystem/crypto'
+import { Crypto, Transactions } from '@arkecosystem/crypto'
 
 export default class TransactionService {
   /*
