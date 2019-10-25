@@ -78,11 +78,19 @@ export default class TransactionService {
   }
 
   static needsSignatures (transaction) {
+    if (!this.isMultiSignature(transaction)) {
+      return false
+    }
+
     if (this.isMultiSignatureRegistration(transaction)) {
       return this.needsAllSignatures(transaction)
     }
 
-    return !transaction.signatures || transaction.signatures.length < transaction.multiSignature.min
+    return this.getValidMultiSignatures(transaction).length < transaction.multiSignature.min
+  }
+
+  static needsAllSignatures (transaction) {
+    return this.getValidMultiSignatures(transaction).length < transaction.multiSignature.publicKeys.length
   }
 
   static needsWalletSignature (transaction, publicKey) {
@@ -90,25 +98,29 @@ export default class TransactionService {
       return transaction.senderPublicKey === publicKey && this.needsFinalSignature(transaction)
     }
 
-    const index = transaction.multiSignature.publicKeys.indexOf(publicKey)
-    if (index === -1) {
+    if (!this.isMultiSignature(transaction)) {
       return false
     }
 
-    return !transaction.signatures || !transaction.signatures.some(signature => parseInt(signature.substring(0, 2), 16) === index)
-  }
+    const index = transaction.multiSignature.publicKeys.indexOf(publicKey)
+    if (index === -1) {
+      return false
+    } else if (!transaction.signatures) {
+      return true
+    }
 
-  static needsAllSignatures (transaction) {
-    return !transaction.signatures || transaction.signatures.length < transaction.multiSignature.publicKeys.length
+    const signature = transaction.signatures.find(signature => parseInt(signature.substring(0, 2), 16) === index)
+    if (!signature) {
+      return true
+    }
+
+    return !Crypto.Hash.verifySchnorr(this.getHash(transaction), signature.slice(2, 130), publicKey)
   }
 
   static isMultiSignatureReady (transaction, excludeFinal = false) {
-    const isMultiSigRegistration = this.isMultiSignatureRegistration(transaction)
-    if (isMultiSigRegistration && this.needsAllSignatures(transaction)) {
+    if (this.needsSignatures(transaction)) {
       return false
-    } else if (this.needsSignatures(transaction)) {
-      return false
-    } else if (!excludeFinal && isMultiSigRegistration && this.needsFinalSignature(transaction)) {
+    } else if (!excludeFinal && this.isMultiSignatureRegistration(transaction) && this.needsFinalSignature(transaction)) {
       return false
     }
 
@@ -116,6 +128,29 @@ export default class TransactionService {
   }
 
   static needsFinalSignature (transaction) {
-    return !transaction.signature || !Transactions.Verifier.verifyHash(transaction)
+    if (this.isMultiSignature(transaction) && !this.isMultiSignatureRegistration(transaction)) {
+      return false
+    }
+
+    return !transaction.signature || !Crypto.Hash.verifySchnorr(this.getHash(transaction, false), transaction.signature, transaction.senderPublicKey)
+  }
+
+  static getValidMultiSignatures (transaction) {
+    if (!this.isMultiSignature(transaction) || !transaction.signatures || !transaction.signatures.length) {
+      return []
+    }
+
+    const validSignatures = []
+    for (const signature of transaction.signatures) {
+      const publicKeyIndex = parseInt(signature.slice(0, 2), 16)
+      const partialSignature = signature.slice(2, 130)
+      const publicKey = transaction.multiSignature.publicKeys[publicKeyIndex]
+
+      if (Crypto.Hash.verifySchnorr(this.getHash(transaction), partialSignature, publicKey)) {
+        validSignatures.push(signature)
+      }
+    }
+
+    return validSignatures
   }
 }
