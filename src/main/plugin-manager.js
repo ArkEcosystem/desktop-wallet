@@ -23,9 +23,6 @@ export const setupPluginManager = ({ sendToWindow, mainWindow, ipcMain }) => {
 
     const options = {
       directory: cachePath,
-      onCancel: item => {
-        logger.log(`${prefix} Download cancelled`)
-      },
       onStarted: item => {
         logger.log(`${prefix} Download started`)
 
@@ -77,17 +74,27 @@ export const setupPluginManager = ({ sendToWindow, mainWindow, ipcMain }) => {
     }
   })
 
-  ipcMain.on(prefix + 'cancel', () => {
-    const wait = () => {
+  ipcMain.on(prefix + 'cancel', async () => {
+    const wait = async () => {
       if (downloadItem) {
-        downloadItem.cancel()
+        try {
+          const state = downloadItem.getState()
+
+          if (state === 'progressing') {
+            downloadItem.cancel()
+          }
+        } catch (error) {
+          await trash(savePath)
+        } finally {
+          logger.log(`${prefix} Download cancelled`)
+        }
       } else {
         logger.log(`${prefix} Trying to cancel download...`)
         setTimeout(wait, 100)
       }
     }
 
-    wait()
+    await wait()
   })
 
   ipcMain.on(prefix + 'cleanup', async () => {
