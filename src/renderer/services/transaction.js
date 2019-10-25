@@ -23,6 +23,20 @@ export default class TransactionService {
     }).toString('hex')
   }
 
+  /**
+   * Get hash for transaction.
+   * @param  {Object}  transaction
+   * @param  {Boolean} excludeMultiSignature
+   * @return {Buffer}
+   */
+  static getHash (transaction, excludeMultiSignature = true) {
+    return Transactions.Utils.toHash(transaction, {
+      excludeSignature: true,
+      excludeSecondSignature: true,
+      excludeMultiSignature
+    })
+  }
+
   /*
    * Get bytes for transaction.
    * @param {Object} wallet
