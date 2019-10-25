@@ -67,8 +67,11 @@ export default new BaseModule(NetworkModel, {
         commit('SET_ALL', NETWORKS)
       }
 
-      Managers.configManager.setConfig(cloneDeep(rootGetters['session/network'].crypto))
-      Managers.configManager.setHeight(rootGetters['session/network'].height)
+      const sessionNetwork = rootGetters['session/network']
+      if (sessionNetwork) {
+        Managers.configManager.setConfig(cloneDeep(sessionNetwork.crypto))
+        Managers.configManager.setHeight(sessionNetwork.height)
+      }
     },
 
     /*
