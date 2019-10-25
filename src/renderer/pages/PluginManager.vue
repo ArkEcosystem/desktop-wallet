@@ -324,7 +324,7 @@ export default {
         return ''
       }
 
-      return this.$t('PAGES.PLUGIN_MANAGER.INSTALLING', {
+      return this.$t(`PAGES.PLUGIN_MANAGER.${this.isUpdate ? 'UPDATING' : 'INSTALLING'}`, {
         plugin: this.selectedPlugin.id
       })
     }

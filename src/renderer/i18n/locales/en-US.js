@@ -608,6 +608,7 @@ export default {
       INSTALL: 'Install',
       INSTALLING: 'Installing \'{plugin}\'',
       INSTALL_URL: 'Install from URL',
+      UPDATING: 'Updating \'{plugin}\'',
       OFFICIAL: 'Official {author} plugin',
       MENU: 'Menu',
       BANNER: {
