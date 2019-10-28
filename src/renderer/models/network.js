@@ -17,9 +17,6 @@ export default new BaseModel({
     apiVersion: {
       type: 'number'
     },
-    height: {
-      type: 'number'
-    },
     market: {
       type: 'object'
     },

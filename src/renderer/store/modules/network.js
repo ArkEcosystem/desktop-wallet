@@ -70,7 +70,7 @@ export default new BaseModule(NetworkModel, {
       const sessionNetwork = rootGetters['session/network']
       if (sessionNetwork) {
         Managers.configManager.setConfig(cloneDeep(sessionNetwork.crypto))
-        Managers.configManager.setHeight(sessionNetwork.height)
+        Managers.configManager.setHeight(sessionNetwork.constants.height)
       }
     },
 
@@ -85,17 +85,14 @@ export default new BaseModule(NetworkModel, {
       try {
         const crypto = await Client.fetchNetworkCrypto(network.server)
         const { constants } = await Client.fetchNetworkConfig(network.server)
-        // Fall back to the height of the current milestone on failure - we don't regularly check the height anyway
-        const height = (await dispatch('peer/getAverageHeight', network, { root: true })) || constants.height
         commit('UPDATE', {
           ...network,
           crypto,
-          constants,
-          height
+          constants
         })
 
         Managers.configManager.setConfig(cloneDeep(network.crypto))
-        Managers.configManager.setHeight(height)
+        Managers.configManager.setHeight(constants.height)
       } catch (error) {
         // data could not be updated
       }
