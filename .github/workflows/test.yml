@@ -81,7 +81,7 @@ jobs:
       #     path: build/target/ark-desktop-wallet-linux-x64-2.6.2.tar.gz
 
       - name: Upload .deb
-        uses: actions/upload-artifact@master
+        uses: actions/upload-artifact@v1
         with:
           name: ark-desktop-wallet-linux-2.6.2.deb
           path: build/target/ark-desktop-wallet-linux-amd64-2.6.2.deb
@@ -116,7 +116,7 @@ jobs:
       #     path: build/target/ark-desktop-wallet-mac-2.6.2.zip
 
       - name: Upload .dmg
-        uses: actions/upload-artifact@master
+        uses: actions/upload-artifact@v1
         with:
           name: ark-desktop-wallet-mac-2.6.2.dmg
           path: build/target/ark-desktop-wallet-mac-2.6.2.dmg
@@ -147,7 +147,7 @@ jobs:
         shell: cmd
 
       - name: Upload .exe
-        uses: actions/upload-artifact@master
+        uses: actions/upload-artifact@v1
         with:
           name: ark-desktop-wallet-win-2.6.2.exe
           path: build/target/ark-desktop-wallet-win-2.6.2.exe
