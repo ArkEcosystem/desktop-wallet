@@ -515,7 +515,7 @@ export default {
       try {
         networkConfig = await ClientService.fetchNetworkConfig(baseUrl, timeout)
       } catch (error) {
-        //
+        console.error('Could not get network config:', error)
       }
 
       if (!networkConfig) {
