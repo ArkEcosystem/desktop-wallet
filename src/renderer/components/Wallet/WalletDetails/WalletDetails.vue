@@ -205,7 +205,7 @@ export default {
     return {
       currentTab: '',
       walletVote: {
-        publicKey: null
+        username: null
       },
       isVoting: false,
       isUnvoting: false,
@@ -227,30 +227,31 @@ export default {
           component: 'WalletTransactions',
           componentName: 'WalletTransactions',
           text: this.$t('PAGES.WALLET.TRANSACTIONS')
-        },
-        {
-          component: 'WalletDelegates',
-          componentName: 'WalletDelegates',
-          text: this.$t('PAGES.WALLET.DELEGATES')
         }
       ]
 
-      const isOwnedWallet = this.currentWallet && !this.currentWallet.isContact
-
-      if (isOwnedWallet && !this.currentWallet.isLedger) {
+      if (this.currentWallet && this.isOwned) {
         tabs.push({
-          component: 'WalletSignVerify',
-          componentName: 'WalletSignVerify',
-          text: this.$t('PAGES.WALLET.SIGN_VERIFY')
+          component: 'WalletDelegates',
+          componentName: 'WalletDelegates',
+          text: this.$t('PAGES.WALLET.DELEGATES')
         })
-      }
 
-      if (isOwnedWallet && this.currentNetwork && this.currentNetwork.market && this.currentNetwork.market.enabled) {
-        tabs.push({
-          component: 'WalletExchange',
-          componentName: 'WalletExchange',
-          text: this.$t('PAGES.WALLET.PURCHASE', { ticker: this.currentNetwork.market.ticker })
-        })
+        if (!this.currentWallet.isLedger) {
+          tabs.push({
+            component: 'WalletSignVerify',
+            componentName: 'WalletSignVerify',
+            text: this.$t('PAGES.WALLET.SIGN_VERIFY')
+          })
+        }
+
+        if (this.currentNetwork && this.currentNetwork.market && this.currentNetwork.market.enabled) {
+          tabs.push({
+            component: 'WalletExchange',
+            componentName: 'WalletExchange',
+            text: this.$t('PAGES.WALLET.PURCHASE', { ticker: this.currentNetwork.market.ticker })
+          })
+        }
       }
 
       if (this.currentNetwork.constants && this.currentNetwork.constants.aip11) {
@@ -260,7 +261,7 @@ export default {
           text: this.$t('PAGES.WALLET.IPFS')
         })
 
-        if (isOwnedWallet) {
+        if (this.isOwned) {
           tabs.push({
             component: 'WalletMultiSignature',
             componentName: 'WalletMultiSignature',
@@ -348,6 +349,9 @@ export default {
           break
       }
     },
+    async currentWallet () {
+      await this.fetchWalletVote()
+    },
     tabs () {
       this.$nextTick(() => {
         this.$refs.menutab.collectItems()
@@ -398,7 +402,9 @@ export default {
     },
 
     switchToTab (component) {
-      this.currentTab = component
+      if (this.tabs.map(tab => tab.componentName).includes(component)) {
+        this.currentTab = component
+      }
     },
 
     getVoteTitle () {
@@ -422,14 +428,14 @@ export default {
 
         if (walletVote) {
           this.votedDelegate = this.$store.getters['delegate/byPublicKey'](walletVote)
-          this.walletVote.publicKey = walletVote
+          this.walletVote.username = this.votedDelegate.username
         } else {
           this.votedDelegate = null
-          this.walletVote.publicKey = null
+          this.walletVote.username = null
         }
       } catch (error) {
         this.votedDelegate = null
-        this.walletVote.publicKey = null
+        this.walletVote.username = null
 
         const messages = at(error, 'response.body.message')
         if (messages[0] !== 'Wallet not found') {

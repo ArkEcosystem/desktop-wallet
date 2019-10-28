@@ -286,6 +286,14 @@ describe('peer store module', () => {
         }
       })
 
+    nock(`http://${goodPeer1.ip}:4040`)
+      .get('/config')
+      .reply(200, {
+        data: {
+          version: '2.0.0'
+        }
+      })
+
     const response = await store.dispatch('peer/validatePeer', { ...goodPeer1, timeout: 100 })
 
     expect(response).toBeObject()
@@ -307,7 +315,14 @@ describe('peer store module', () => {
       .get('/api/v2/node/syncing')
       .reply(200, {
         data: {
-          height: 10002,
+          height: 10002
+        }
+      })
+
+    nock(`https://${goodPeer1.ip}:4040`)
+      .get('/config')
+      .reply(200, {
+        data: {
           version: '2.0.0'
         }
       })
@@ -343,10 +358,16 @@ describe('peer store module', () => {
           nethash
         }
       })
-
-    nock(`http://${goodPeer1.ip}:${goodPeer1.port}`)
       .get('/api/v2/node/syncing')
       .reply(400)
+
+    nock(`http://${goodPeer1.ip}:4040`)
+      .get('/config')
+      .reply(200, {
+        data: {
+          version: '2.0.0'
+        }
+      })
 
     const response = await store.dispatch('peer/validatePeer', { ...goodPeer1, timeout: 100 })
     expect(response).toEqual(expect.stringMatching(/^Status check failed$/))

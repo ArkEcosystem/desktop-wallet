@@ -554,6 +554,16 @@ export default {
         return i18n.t('PEER.WRONG_NETWORK')
       }
 
+      let peerConfig
+      try {
+        peerConfig = await ClientService.fetchPeerConfig(baseUrl)
+      } catch (error) {
+        //
+      }
+      if (!peerConfig) {
+        return i18n.t('PEER.CONFIG_CHECK_FAILED')
+      }
+
       const client = new ClientService(false)
       client.host = baseUrl
       client.client.withOptions({ timeout: 3000 })
@@ -569,11 +579,6 @@ export default {
         return i18n.t('PEER.STATUS_CHECK_FAILED')
       }
 
-      let version = '2'
-      if (networkConfig.core && networkConfig.core.version) {
-        version = networkConfig.core.version
-      }
-
       return {
         ip: schemeUrl ? schemeUrl[2] : host,
         host: baseUrl,
@@ -582,7 +587,7 @@ export default {
         status: 'OK',
         latency: 0,
         isHttps: schemeUrl && schemeUrl[1] === 'https://',
-        version
+        version: peerConfig.version
       }
     }
   }

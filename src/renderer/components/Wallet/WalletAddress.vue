@@ -202,4 +202,8 @@ export default {
   @apply .truncate;
   padding-right: 1px;
 }
+
+.WalletAddress a {
+  @apply cursor-pointer
+}
 </style>

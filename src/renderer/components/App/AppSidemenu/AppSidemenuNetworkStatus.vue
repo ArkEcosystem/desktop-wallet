@@ -225,7 +225,7 @@ export default {
       }
 
       return bestPeers.reduce((map, peer, index) => {
-        map[index] = `http://${peer.ip}`
+        map[index] = `${peer.isHttps ? 'https' : 'http'}://${peer.ip}`
 
         return map
       }, {})
