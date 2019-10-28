@@ -1,7 +1,7 @@
 <template>
   <div class="WalletDelegates">
     <div
-      v-if="!walletVote.publicKey && isExplanationDisplayed"
+      v-if="!walletVote.username && isExplanationDisplayed"
       class="WalletDelegates__explanation relative rounded-lg mt-2 mb-6 bg-theme-explanation-background text-theme-explanation-text flex flex-row items-center justify-between"
     >
       <div class="WalletDelegates__explanation__text flex text-left text-inherit py-4 pl-6">
@@ -51,7 +51,7 @@
           <div class="flex items-center">
             <span>{{ data.formattedRow['username'] }}</span>
             <span
-              v-if="data.row.publicKey === walletVote.publicKey"
+              v-if="data.row.username === walletVote.username"
               class="vote-badge"
             >
               {{ $t('WALLET_DELEGATES.VOTE') }}

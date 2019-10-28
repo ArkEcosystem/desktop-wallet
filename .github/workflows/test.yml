@@ -3,8 +3,8 @@ name: Test & Build
 on:
   push:
     branches:
-      - '*'
-      - '*/*'
+      - 'master'
+      - 'develop'
   pull_request:
     types: [ready_for_review, synchronize, opened]
 
@@ -140,9 +140,11 @@ jobs:
 
       - name: Install
         run: yarn global add node-gyp && yarn install --frozen-lockfile && npm rebuild
+        shell: cmd
 
       - name: Build
         run: node .electron-vue/build.js && node ./node_modules/electron-builder/out/cli/cli.js --win --x64 --ia32
+        shell: cmd
 
       - name: Upload .exe
         uses: actions/upload-artifact@master
