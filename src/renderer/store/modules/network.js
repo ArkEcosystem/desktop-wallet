@@ -91,7 +91,7 @@ export default new BaseModule(NetworkModel, {
           constants
         })
 
-        Managers.configManager.setConfig(cloneDeep(network.crypto))
+        Managers.configManager.setConfig(cloneDeep(crypto))
         Managers.configManager.setHeight(constants.height)
       } catch (error) {
         console.error('Could not update network data:', error)
