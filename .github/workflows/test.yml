@@ -71,20 +71,20 @@ jobs:
       # - name: Upload .AppImage
       #   uses: actions/upload-artifact@master
       #   with:
-      #     name: ark-desktop-wallet-linux-2.6.2.AppImage
-      #     path: build/target/ark-desktop-wallet-linux-x86_64-2.6.2.AppImage
+      #     name: ark-desktop-wallet-linux-2.6.3.AppImage
+      #     path: build/target/ark-desktop-wallet-linux-x86_64-2.6.3.AppImage
 
       # - name: Upload .tar.gz
       #   uses: actions/upload-artifact@master
       #   with:
-      #     name: ark-desktop-wallet-linux-2.6.2.tar.gz
-      #     path: build/target/ark-desktop-wallet-linux-x64-2.6.2.tar.gz
+      #     name: ark-desktop-wallet-linux-2.6.3.tar.gz
+      #     path: build/target/ark-desktop-wallet-linux-x64-2.6.3.tar.gz
 
       - name: Upload .deb
         uses: actions/upload-artifact@v1
         with:
-          name: ark-desktop-wallet-linux-2.6.2.deb
-          path: build/target/ark-desktop-wallet-linux-amd64-2.6.2.deb
+          name: ark-desktop-wallet-linux-2.6.3.deb
+          path: build/target/ark-desktop-wallet-linux-amd64-2.6.3.deb
 
   build-macOS:
     needs: unit
@@ -112,14 +112,14 @@ jobs:
       # - name: Upload .zip
       #   uses: actions/upload-artifact@master
       #   with:
-      #     name: ark-desktop-wallet-mac-2.6.2.zip
-      #     path: build/target/ark-desktop-wallet-mac-2.6.2.zip
+      #     name: ark-desktop-wallet-mac-2.6.3.zip
+      #     path: build/target/ark-desktop-wallet-mac-2.6.3.zip
 
       - name: Upload .dmg
         uses: actions/upload-artifact@v1
         with:
-          name: ark-desktop-wallet-mac-2.6.2.dmg
-          path: build/target/ark-desktop-wallet-mac-2.6.2.dmg
+          name: ark-desktop-wallet-mac-2.6.3.dmg
+          path: build/target/ark-desktop-wallet-mac-2.6.3.dmg
 
   build-windows:
     needs: unit
@@ -149,5 +149,5 @@ jobs:
       - name: Upload .exe
         uses: actions/upload-artifact@v1
         with:
-          name: ark-desktop-wallet-win-2.6.2.exe
-          path: build/target/ark-desktop-wallet-win-2.6.2.exe
+          name: ark-desktop-wallet-win-2.6.3.exe
+          path: build/target/ark-desktop-wallet-win-2.6.3.exe
