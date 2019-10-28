@@ -111,20 +111,20 @@
                 :networks="defaultNetworks"
                 @select="selectNetwork"
               />
-              <div v-if="availableCustomNetworks.length">
-                <p class="mt-5 mb-1 text-theme-page-text font-semibold">
-                  {{ $t('PAGES.PROFILE_NEW.STEP2.CUSTOM_NETWORK') }}
-                </p>
-                <p class="text-theme-page-text-light mb-5">
-                  {{ $t('PAGES.PROFILE_NEW.STEP2.CUSTOM_NETWORK_EXPLAIN') }}
-                </p>
-                <SelectionNetwork
-                  :selected="selectedNetwork"
-                  :networks="availableCustomNetworks"
-                  :is-custom="true"
-                  @select="selectNetwork"
-                />
-              </div>
+
+              <p class="mt-5 mb-1 text-theme-page-text font-semibold">
+                {{ $t('PAGES.PROFILE_NEW.STEP2.CUSTOM_NETWORK') }}
+              </p>
+              <p class="text-theme-page-text-light mb-5">
+                {{ $t('PAGES.PROFILE_NEW.STEP2.CUSTOM_NETWORK_EXPLAIN') }}
+              </p>
+              <SelectionNetwork
+                :selected="selectedNetwork"
+                :networks="availableCustomNetworks"
+                :is-custom="true"
+                :add-button="true"
+                @select="selectNetwork"
+              />
             </div>
           </MenuStepItem>
 
