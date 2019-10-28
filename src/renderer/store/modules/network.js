@@ -68,7 +68,7 @@ export default new BaseModule(NetworkModel, {
       }
 
       const sessionNetwork = rootGetters['session/network']
-      if (sessionNetwork) {
+      if (sessionNetwork && sessionNetwork.crypto && sessionNetwork.constants) {
         Managers.configManager.setConfig(cloneDeep(sessionNetwork.crypto))
         Managers.configManager.setHeight(sessionNetwork.constants.height)
       }
