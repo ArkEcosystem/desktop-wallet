@@ -54,7 +54,7 @@ export function validateComponent ({ plugin, component, name, logger }) {
   }
   const inlineEvents = []
   for (const event of PLUGINS.validation.events) {
-    if ((new RegExp(`on${event}`, 'i')).test(component.template)) {
+    if ((new RegExp(`(^|\\s)+on${event}`, 'i')).test(component.template)) {
       inlineEvents.push(event)
     }
   }
