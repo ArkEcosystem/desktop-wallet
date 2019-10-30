@@ -105,6 +105,13 @@ describe('PluginWebsocket', () => {
     socket.send('ping')
   })
 
+  it('should change the binary type to arraybuffer', () => {
+    const socket = walletApi.websocket.connect(host)
+
+    socket.binaryType = 'arraybuffer'
+    expect(socket.binaryType).toBe('arraybuffer')
+  })
+
   it('should close the websocket', (done) => {
     const socket = walletApi.websocket.connect(host)
 
@@ -150,6 +157,12 @@ describe('PluginWebsocket', () => {
     expect(() => {
       walletApi.websocket.connect('ws://my.test.com:8081')
     }).toThrow('URL "ws://my.test.com:8081" not allowed')
+  })
+
+  it('should destroy the socket', () => {
+    const socket = walletApi.websocket.connect(host)
+    socket.destroy()
+    expect(socket.isDestroyed()).toBeTrue()
   })
 
   it('should ignore an invalid whitelist', () => {
