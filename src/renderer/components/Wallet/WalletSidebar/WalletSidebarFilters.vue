@@ -75,6 +75,7 @@
 import { ButtonSwitch } from '@/components/Button'
 import { MenuOptions, MenuOptionsItem } from '@/components/Menu'
 import WalletSidebarFiltersSearchInput from './WalletSidebarFiltersSearchInput'
+import Vue from 'vue'
 
 export default {
   name: 'WalletSidebarFilters',
@@ -170,7 +171,7 @@ export default {
     },
 
     setFilter (filter, value) {
-      this.currentFilters[filter] = value
+      Vue.set(this.currentFilters, filter, value)
       this.emitFilter()
     },
 
