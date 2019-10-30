@@ -225,7 +225,11 @@ export default {
         return
       }
 
-      for (const pluginId of Object.keys(state.enabled[profile.id])) {
+      for (const pluginId in state.enabled[profile.id]) {
+        if (!getters.isEnabled(pluginId)) {
+          continue
+        }
+
         if (!getters.isAvailable(pluginId)) {
           continue
         }
