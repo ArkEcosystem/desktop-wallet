@@ -118,6 +118,7 @@ export default {
 
   PEER: {
     BEST: 'Connect to best',
+    CONFIG_CHECK_FAILED: 'Config check failed',
     CONNECTED: 'Connected to peer',
     CONNECT_CUSTOM: 'Connect custom peer',
     CONNECT_FAILED: 'Failed to connect to peer',
@@ -260,8 +261,18 @@ export default {
   },
 
   APP_SIDEMENU_NOTIFICATION: {
-    NOTIFICATION: 'A new version ({version}) has been released. Upgrade now!',
     TOOLTIP: 'New version ({version}) has been released!'
+  },
+
+  APP_UPDATER: {
+    RELEASE_NOTES: 'Release Notes',
+    DOWNLOAD_NOW: 'Yes, download now',
+    MAYBE_LATER: 'No, maybe later',
+    DOWNLOADING: 'Downloading {version}',
+    DOWNLOADED: 'Downloaded {version}',
+    QUIT_AND_INSTALL: 'Quit and install',
+    UNKNOW_ERROR: 'Unknow error. Close this window and try again.',
+    NETWORK_ERROR: 'Looks like your file isn\'t downloading. Verify your connection.'
   },
 
   MARKET_CHART: {
@@ -726,7 +737,8 @@ export default {
 
     WALLET_SHOW: {
       NO_VOTE: 'Wallet hasn\'t voted',
-      ADD_CONTACT: 'Add to contacts'
+      ADD_CONTACT: 'Add to contacts',
+      VOTING_FOR: 'Voting for {delegate}'
     }
   },
 
