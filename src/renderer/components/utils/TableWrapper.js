@@ -53,6 +53,7 @@ export default {
         },
         paginationOptions: {
           enabled: this.hasPagination,
+          setCurrentPage: this.currentPage,
           dropdownAllowAll: false,
           perPage: this.perPage,
           perPageDropdown: this.perPageDropdown,

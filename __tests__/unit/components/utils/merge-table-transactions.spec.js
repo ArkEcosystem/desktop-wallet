@@ -5,12 +5,12 @@ describe('Utils > mergeTableTransactions', () => {
 
   beforeEach(() => {
     transactions = [
-      { id: 'tx1', timestamp: 1 },
-      { id: 'tx2', timestamp: 2 },
-      { id: 'tx3', timestamp: 8 },
-      { id: 'tx4', timestamp: 9 },
-      { id: 'tx5', timestamp: 5 },
-      { id: 'tx6', timestamp: 6 }
+      { id: 'tx1', timestamp: 1, amount: '6' },
+      { id: 'tx2', timestamp: 2, amount: '5' },
+      { id: 'tx3', timestamp: 8, amount: '9' },
+      { id: 'tx4', timestamp: 9, amount: '8' },
+      { id: 'tx5', timestamp: 5, amount: '2' },
+      { id: 'tx6', timestamp: 6, amount: '1' }
     ]
   })
 
@@ -44,6 +44,23 @@ describe('Utils > mergeTableTransactions', () => {
       transactions[0],
       transactions[1],
       transactions[5],
+      transactions[2]
+    ])
+  })
+
+  it('should return the transactions sorted by `amount` ascendently', () => {
+    const a = [
+      transactions[0],
+      transactions[2]
+    ]
+    const b = [
+      transactions[1],
+      transactions[5]
+    ]
+    expect(mergeTableTransactions(a, b, { field: 'amount', type: 'asc' })).toEqual([
+      transactions[5],
+      transactions[1],
+      transactions[0],
       transactions[2]
     ])
   })

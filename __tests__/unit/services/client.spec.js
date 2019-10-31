@@ -421,8 +421,8 @@ describe('Services > Client', () => {
 
       transactions.forEach((transaction, i) => {
         expect(transaction).toHaveProperty('totalAmount')
-        expect(transaction.totalAmount).toBeInstanceOf(BigNumber)
-        expect(transaction.totalAmount.toString()).toBe((data[i].amount + data[i].fee).toString())
+        expect(transaction.totalAmount).toBeString()
+        expect(transaction.totalAmount).toEqual(new BigNumber(data[i].amount).plus(data[i].fee).toString())
         expect(transaction).toHaveProperty('timestamp', data[i].timestamp.unix * 1000)
         expect(transaction).toHaveProperty('isSender')
         expect(transaction).toHaveProperty('isRecipient')
