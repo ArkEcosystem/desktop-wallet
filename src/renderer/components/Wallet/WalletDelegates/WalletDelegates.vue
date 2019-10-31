@@ -31,9 +31,13 @@
       :is-loading="isLoading"
       :is-remote="true"
       :rows="delegates"
-      :sort-query="queryParams.sort"
+      :sort-query="{
+        field: queryParams.sort.field,
+        type: queryParams.sort.type
+      }"
       :total-rows="totalCount"
       :no-data-message="$t('TABLE.NO_DELEGATES')"
+      :current-page="currentPage"
       :per-page="queryParams.limit"
       :per-page-dropdown="[25, 51]"
       class="WalletDelegates__table"
@@ -68,6 +72,7 @@
 </template>
 
 <script>
+import isEqual from 'lodash/isEqual'
 import { ButtonClose } from '@/components/Button'
 import TableWrapper from '@/components/utils/TableWrapper'
 
@@ -193,16 +198,15 @@ export default {
     },
 
     onSortChange (sortOptions) {
-      const columnName = sortOptions[0].field
-      const sortType = sortOptions[0].type
-      this.__updateParams({
-        sort: {
-          field: columnName,
-          type: sortType
-        },
-        page: 1
-      })
-      this.fetchDelegates()
+      const params = sortOptions[0]
+
+      if (!isEqual(params, this.queryParams.sort)) {
+        this.__updateParams({
+          sort: params,
+          page: 1
+        })
+        this.fetchDelegates()
+      }
     },
 
     reset () {
