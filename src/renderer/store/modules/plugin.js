@@ -339,6 +339,10 @@ export default {
       }
 
       for (const pluginId of Object.keys(state.enabled[profile.id])) {
+        if (!getters.isEnabled(pluginId)) {
+          continue
+        }
+
         if (!getters.isInstalled(pluginId)) {
           continue
         }

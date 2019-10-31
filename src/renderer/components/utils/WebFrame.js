@@ -3,6 +3,7 @@ import logger from 'electron-log'
 import path from 'path'
 
 const allowedProtocols = [
+  'ark:',
   'http:',
   'https:'
 ]

@@ -3,25 +3,7 @@ import { PLUGINS } from '@config'
 import du from 'du'
 import parse from 'parse-author'
 
-const sanitize = async (config, pluginPath = null) => {
-  return {
-    author: sanitizeAuthor(config),
-    categories: sanitizeCategories(config),
-    description: config.description,
-    homepage: config.homepage,
-    id: config.name,
-    isOfficial: isOfficial(config.name),
-    minVersion: sanitizeMinVersion(config),
-    permissions: sanitizePermissions(config),
-    size: await sanitizeSize(config, pluginPath) || 0,
-    source: sanitizeSource(config),
-    title: config.title || sanitizeName(config.name),
-    urls: sanitizeUrls(config),
-    version: config.version
-  }
-}
-
-const getWalletOption = (config, option) => {
+const getOption = (config, option) => {
   try {
     return config['desktop-wallet'][option]
   } catch (error) {
@@ -32,6 +14,10 @@ const getWalletOption = (config, option) => {
 const isOfficial = name => {
   const scopeRegex = new RegExp(`^@${PLUGINS.officialScope}/`)
   return scopeRegex.test(name)
+}
+
+const sanitizeIsOfficial = name => {
+  return isOfficial(name)
 }
 
 const sanitizeAuthor = config => {
@@ -57,7 +43,7 @@ const sanitizeAuthor = config => {
 }
 
 const sanitizeCategories = config => {
-  let categories = getWalletOption(config, 'categories')
+  let categories = getOption(config, 'categories')
 
   if (!categories) {
     if (config.categories && config.categories.length) {
@@ -77,7 +63,7 @@ const sanitizeCategories = config => {
 }
 
 const sanitizeMinVersion = config => {
-  return getWalletOption(config, 'minVersion') || config.minVersion || null
+  return getOption(config, 'minVersion') || config.minVersion || null
 }
 
 const sanitizeName = name => {
@@ -89,7 +75,7 @@ const sanitizeName = name => {
 }
 
 const sanitizePermissions = config => {
-  const permissions = getWalletOption(config, 'permissions') || config.permissions || []
+  const permissions = getOption(config, 'permissions') || config.permissions || []
 
   return intersection(uniq(permissions).sort().map(permission => {
     return permission.toUpperCase()
@@ -123,7 +109,17 @@ const sanitizeSource = config => {
 }
 
 const sanitizeUrls = config => {
-  return getWalletOption(config, 'urls') || config.urls || []
+  return getOption(config, 'urls') || config.urls || []
 }
 
-export default sanitize
+export {
+  sanitizeAuthor,
+  sanitizeCategories,
+  sanitizeIsOfficial,
+  sanitizeMinVersion,
+  sanitizeName,
+  sanitizePermissions,
+  sanitizeSize,
+  sanitizeSource,
+  sanitizeUrls
+}
