@@ -1,7 +1,7 @@
 <template>
   <section class="TransactionConfirm">
     <TransactionDetail
-      :amount="formatter_networkCurrency(totalAmount)"
+      :amount="formatter_networkCurrency(transaction.totalAmount)"
       :recipient-address="transaction.recipientId"
       :sender-address="address"
       :type="transaction.type"
@@ -27,7 +27,7 @@
         >
           {{ $t('TRANSACTION.SEND') }}
           <span class="px-2 py-1 bg-theme-button-inner-box rounded">
-            {{ formatter_networkCurrency(totalAmount) }}
+            {{ formatter_networkCurrency(transaction.totalAmount) }}
           </span>
         </button>
       </div>
@@ -120,6 +120,7 @@ export default {
 
       return amount.value
     },
+
     currentWallet () {
       return this.wallet || this.wallet_fromRoute
     },

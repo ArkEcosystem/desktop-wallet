@@ -1025,7 +1025,7 @@ export default {
     RECIPIENT: 'Destinatario',
     SENDER: 'Mittente',
     AMOUNT: 'Importo',
-    NEW_TRANSACTIONS: 'Questo portafoglio ha {count} nuova/e transazione/i. Premi il pulsante ricarica per aggiornare.'
+    NEW_TRANSACTIONS: '0 | Questo portafoglio ha 1 nuova transazione. Premi il pulsante ricarica per aggiornare. | Questo portafoglio ha {count} nuove transazioni. Premi il pulsante ricarica per aggiornare.'
   },
 
   WALLET_TABLE: {

@@ -75,6 +75,7 @@
 import { ButtonSwitch } from '@/components/Button'
 import { MenuOptions, MenuOptionsItem } from '@/components/Menu'
 import WalletSidebarFiltersSearchInput from './WalletSidebarFiltersSearchInput'
+import Vue from 'vue'
 
 export default {
   name: 'WalletSidebarFilters',
@@ -162,17 +163,15 @@ export default {
     },
 
     setHideEmpty (isHidden) {
-      this.filters.hideEmpty = isHidden
-      this.emitFilter()
+      this.setFilter('hideEmpty', isHidden)
     },
 
     setHideLedger (isHidden) {
-      this.filters.hideLedger = isHidden
-      this.emitFilter()
+      this.setFilter('hideLedger', isHidden)
     },
 
     setFilter (filter, value) {
-      this.currentFilters[filter] = value
+      Vue.set(this.currentFilters, filter, value)
       this.emitFilter()
     },
 

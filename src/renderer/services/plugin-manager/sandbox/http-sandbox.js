@@ -1,6 +1,6 @@
 import got from 'got'
 
-export default class PluginHttp {
+class PluginHttp {
   constructor (whitelist) {
     this.whitelist = []
 
@@ -36,5 +36,11 @@ export default class PluginHttp {
     this.validateUrl(url)
 
     return got.post(url, opts)
+  }
+}
+
+export function createHttpSandbox (walletApi, plugin) {
+  return () => {
+    walletApi.http = new PluginHttp(plugin.config.urls)
   }
 }

@@ -314,7 +314,7 @@ export default class ClientService {
     const result = transactions.map(transaction => {
       transaction.isSender = transaction.sender === address
       transaction.isRecipient = transaction.recipient === address
-      transaction.totalAmount = new BigNumber(transaction.amount).plus(transaction.fee)
+      transaction.totalAmount = new BigNumber(transaction.amount).plus(transaction.fee).toString()
 
       return transaction
     })
