@@ -249,11 +249,11 @@ export default {
       this.network_openExplorer('transaction', id)
     },
 
-    onSortChange ({ columnIndex, sortType }) {
-      if (this.columns[columnIndex]) {
-        const columnName = this.columns[columnIndex].field
-        this.$emit('on-sort-change', { columnName, sortType })
-      }
+    onSortChange (sortOptions) {
+      this.$emit('on-sort-change', {
+        source: 'transactionsTab',
+        ...sortOptions[0]
+      })
     },
 
     onRowClick ({ row }) {

@@ -44,7 +44,7 @@
 
           <ButtonLayout
             :grid-layout="hasWalletGridLayout"
-            @click="toggleWalletLayout()"
+            @click="toggleWalletLayout"
           />
         </div>
       </div>
@@ -68,7 +68,10 @@
           :show-voted-delegates="showVotedDelegates"
           :rows="contacts"
           :total-rows="contacts.length"
-          :sort-query="sortParams"
+          :sort-query="{
+            field: sortParams.field,
+            type: sortParams.type
+          }"
           :no-data-message="$t('TABLE.NO_CONTACTS')"
           @remove-row="onRemoveContact"
           @rename-row="onRenameContact"
@@ -94,7 +97,7 @@
 </template>
 
 <script>
-import some from 'lodash/some'
+import { isEqual, some } from 'lodash'
 import { ButtonLayout } from '@/components/Button'
 import { ContactRemovalConfirmation, ContactRenameModal } from '@/components/Contact'
 import { WalletGrid, WalletIdenticonPlaceholder } from '@/components/Wallet'
@@ -210,7 +213,9 @@ export default {
     },
 
     onSortChange (sortParams) {
-      this.sortParams = sortParams
+      if (!isEqual(sortParams, this.sortParams)) {
+        this.sortParams = sortParams
+      }
     },
 
     showContact (contactId) {
