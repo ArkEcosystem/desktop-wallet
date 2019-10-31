@@ -80,11 +80,11 @@ jobs:
       #     name: ark-desktop-wallet-linux-2.6.3.tar.gz
       #     path: build/target/ark-desktop-wallet-linux-x64-2.6.3.tar.gz
 
-      - name: Upload .deb
-        uses: actions/upload-artifact@v1
-        with:
-          name: ark-desktop-wallet-linux-2.6.3.deb
-          path: build/target/ark-desktop-wallet-linux-amd64-2.6.3.deb
+      # - name: Upload .deb
+      #   uses: actions/upload-artifact@v1
+      #   with:
+      #     name: ark-desktop-wallet-linux-2.6.3.deb
+      #     path: build/target/ark-desktop-wallet-linux-amd64-2.6.3.deb
 
   build-macOS:
     needs: unit
@@ -106,7 +106,7 @@ jobs:
       - name: Install
         run: yarn global add node-gyp && yarn install --frozen-lockfile && npm rebuild
 
-      - name: Build
+      - name: Build .dmg
         run: node .electron-vue/build.js && node ./node_modules/electron-builder/out/cli/cli.js --mac
 
       # - name: Upload .zip
@@ -120,6 +120,15 @@ jobs:
         with:
           name: ark-desktop-wallet-mac-2.6.3.dmg
           path: build/target/ark-desktop-wallet-mac-2.6.3.dmg
+
+      - name: Build .deb
+        run: node .electron-vue/build.js && node ./node_modules/electron-builder/out/cli/cli.js --linux
+
+      - name: Upload .deb
+        uses: actions/upload-artifact@v1
+        with:
+          name: ark-desktop-wallet-linux-2.6.3.deb
+          path: build/target/ark-desktop-wallet-linux-amd64-2.6.3.deb
 
   build-windows:
     needs: unit
