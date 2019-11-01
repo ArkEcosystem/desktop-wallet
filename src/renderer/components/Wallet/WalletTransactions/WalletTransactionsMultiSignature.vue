@@ -18,7 +18,6 @@
       :is-loading="isLoading"
       :is-remote="true"
       :has-pagination="totalCount > 0"
-      :sort-query="queryParams.sort"
       :per-page="transactionTableRowCount"
       @on-per-page-change="onPerPageChange"
       @on-page-change="onPageChange"
