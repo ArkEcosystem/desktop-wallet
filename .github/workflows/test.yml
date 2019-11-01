@@ -39,6 +39,18 @@ jobs:
       - name: Build
         run: node .electron-vue/build.js && node ./node_modules/electron-builder/out/cli/cli.js --linux
 
+      - name: Upload .AppImage
+        uses: actions/upload-artifact@master
+        with:
+          name: ark-desktop-wallet-linux-2.6.3.AppImage
+          path: build/target/ark-desktop-wallet-linux-x86_64-2.6.3.AppImage
+
+      - name: Upload .tar.gz
+        uses: actions/upload-artifact@master
+        with:
+          name: ark-desktop-wallet-linux-2.6.3.tar.gz
+          path: build/target/ark-desktop-wallet-linux-x64-2.6.3.tar.gz
+
       - name: Upload .deb
         uses: actions/upload-artifact@v1
         with:
