@@ -145,7 +145,7 @@ export default {
       return this.$t('INPUT_FEE.ERROR.NOT_VALID')
     },
     maxV1fee () {
-      const defaultMaxV1Fee = V1.fees[this.transactionType]
+      const defaultMaxV1Fee = V1.fees.GROUP_1[this.transactionType]
       const staticFee = this.$store.getters['transaction/staticFee'](this.transactionType)
       return staticFee || defaultMaxV1Fee
     },

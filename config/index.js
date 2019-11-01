@@ -125,17 +125,19 @@ exports.THEMES = [
 ]
 
 exports.V1 = {
-  fees: [
-    0.1 * 1e8, // Transfer
-    5 * 1e8, // Second signautre
-    25 * 1e8, // Delegate registration
-    1 * 1e8, // Vote
-    5 * 1e8, // Multisignature
-    5 * 1e8, // IPFS
-    1 * 1e8, // Multi-payment
-    25 * 1e8, // Delegate resignation
-    1 * 1e8, // HTLC Lock
-    0 * 1e8, // HTLC Claim
-    0 * 1e8 // HTLC Refund
-  ]
+  fees: {
+    GROUP_1: [
+      0.1 * 1e8, // Transfer
+      5 * 1e8, // Second signautre
+      25 * 1e8, // Delegate registration
+      1 * 1e8, // Vote
+      5 * 1e8, // Multisignature
+      5 * 1e8, // IPFS
+      1 * 1e8, // Multi-payment
+      25 * 1e8, // Delegate resignation
+      1 * 1e8, // HTLC Lock
+      0 * 1e8, // HTLC Claim
+      0 * 1e8 // HTLC Refund
+    ]
+  }
 }
