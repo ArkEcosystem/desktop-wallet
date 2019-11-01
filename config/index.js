@@ -64,7 +64,12 @@ exports.TRANSACTION_TYPES = {
   },
 
   GROUP_2: {
-
+    BUSINESS_REGISTRATION: 0,
+    BUSINESS_RESIGNATION: 1,
+    BUSINESS_UPDATE: 2,
+    BRIDGECHAIN_REGISTRATION: 3,
+    BRIDGECHAIN_RESIGNATION: 4,
+    BRIDGECHAIN_UPDATE: 5
   }
 }
 
@@ -138,6 +143,15 @@ exports.V1 = {
       1 * 1e8, // HTLC Lock
       0 * 1e8, // HTLC Claim
       0 * 1e8 // HTLC Refund
+    ],
+
+    GROUP_2: [
+      50 * 1e8, // Business Registration
+      50 * 1e8, // Business Resignation
+      50 * 1e8, // Business Update
+      50 * 1e8, // Bridgechain Registration
+      50 * 1e8, // Bridgechain Resignation
+      50 * 1e8 // Bridgechain Update
     ]
   }
 }
