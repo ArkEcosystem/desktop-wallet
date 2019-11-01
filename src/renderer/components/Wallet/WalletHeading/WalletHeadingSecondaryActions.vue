@@ -20,6 +20,7 @@
           <TransactionModal
             v-if="isOpen"
             :type="item.type"
+            :group="item.group || 1"
             @cancel="closeTransactionModal(toggle, isOpen)"
             @sent="closeTransactionModal(toggle, isOpen)"
           />

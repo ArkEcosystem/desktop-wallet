@@ -9,6 +9,7 @@
 
 <script>
 /* eslint-disable vue/no-unused-components */
+import { TRANSACTION_GROUPS } from '@config'
 import TransactionFormDelegateRegistration from './TransactionFormDelegateRegistration'
 import TransactionFormDelegateResignation from './TransactionFormDelegateResignation'
 import TransactionFormIpfs from './TransactionFormIpfs'
@@ -36,6 +37,12 @@ export default {
   },
 
   props: {
+    group: {
+      type: Number,
+      required: false,
+      default: TRANSACTION_GROUPS.STANDARD
+    },
+
     type: {
       type: Number,
       required: true
@@ -48,10 +55,17 @@ export default {
 
   // TODO: Fetch fees remotely
   mounted () {
-    const component = find(this.$options.components, item => item.transactionType === this.type)
+    const component = find(this.$options.components, item => {
+      const group = item.transactionGroup || TRANSACTION_GROUPS.STANDARD
+      if (group !== this.group) {
+        return false
+      }
+
+      return item.transactionType === this.type
+    })
 
     if (!component) {
-      throw new Error(`[TransactionForm] - Form for type ${this.type} not found.`)
+      throw new Error(`[TransactionForm] - Form for type ${this.type} (group ${this.group}) not found.`)
     }
 
     this.activeComponent = component.name

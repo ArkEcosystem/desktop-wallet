@@ -92,6 +92,12 @@ export default {
       required: true
     },
 
+    transactionGroup: {
+      type: Number,
+      required: false,
+      default: 1
+    },
+
     showInsufficientFunds: {
       type: Boolean,
       required: false,
@@ -145,7 +151,7 @@ export default {
       return this.$t('INPUT_FEE.ERROR.NOT_VALID')
     },
     maxV1fee () {
-      const defaultMaxV1Fee = V1.fees.GROUP_1[this.transactionType]
+      const defaultMaxV1Fee = V1.fees[`GROUP_${this.transactionGroup}`][this.transactionType]
       const staticFee = this.$store.getters['transaction/staticFee'](this.transactionType)
       return staticFee || defaultMaxV1Fee
     },

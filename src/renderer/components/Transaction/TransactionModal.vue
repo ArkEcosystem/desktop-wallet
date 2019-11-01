@@ -65,6 +65,15 @@ export default {
       default: null
     },
 
+    group: {
+      type: Number,
+      required: false,
+      default: 1,
+      validator: value => {
+        return Object.keys(TRANSACTION_TYPES).includes(`GROUP_${value}`)
+      }
+    },
+
     type: {
       type: Number,
       required: true,
@@ -93,7 +102,7 @@ export default {
         return 'MULTI_SIGN'
       }
 
-      const key = findKey(TRANSACTION_TYPES.GROUP_1, type => this.type === type)
+      const key = findKey(TRANSACTION_TYPES[`GROUP_${this.group}`], type => this.type === type)
       if (key === 'VOTE' && this.transaction.asset.votes.length) {
         if (this.transaction.asset.votes[0].substring(0, 1) === '-') {
           return 'UNVOTE'
@@ -107,7 +116,7 @@ export default {
         return 'TransactionModalMultiSign'
       }
 
-      const type = findKey(TRANSACTION_TYPES.GROUP_1, type => this.type === type)
+      const type = findKey(TRANSACTION_TYPES[`GROUP_${this.group}`], type => this.type === type)
       return `TransactionModal${upperFirst(camelCase(type))}`
     },
     typeName () {

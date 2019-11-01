@@ -46,6 +46,11 @@ exports.BIP39 = {
   ]
 }
 
+exports.TRANSACTION_GROUPS = {
+  STANDARD: 1,
+  MAGISTRATE: 2
+}
+
 exports.TRANSACTION_TYPES = {
   MULTI_SIGN: -1,
 
