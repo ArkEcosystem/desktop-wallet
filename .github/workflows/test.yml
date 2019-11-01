@@ -39,53 +39,6 @@ jobs:
       - name: Codecov
         run: ./node_modules/.bin/codecov --token=${{ secrets.CODECOV_TOKEN }}
 
-  build-linux:
-    needs: unit
-
-    runs-on: ubuntu-16.04
-
-    strategy:
-      matrix:
-        node-version: [12.x]
-
-    steps:
-      - uses: actions/checkout@v1
-
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
-
-      - name: Update System
-        run: sudo apt-get update
-
-      - name: Ledger
-        run: sudo apt-get install libudev-dev libusb-1.0-0-dev
-
-      - name: Install
-        run: yarn global add node-gyp && yarn install --frozen-lockfile && npm rebuild
-
-      - name: Build
-        run: node .electron-vue/build.js && node ./node_modules/electron-builder/out/cli/cli.js --linux
-
-      # - name: Upload .AppImage
-      #   uses: actions/upload-artifact@master
-      #   with:
-      #     name: ark-desktop-wallet-linux-2.6.3.AppImage
-      #     path: build/target/ark-desktop-wallet-linux-x86_64-2.6.3.AppImage
-
-      # - name: Upload .tar.gz
-      #   uses: actions/upload-artifact@master
-      #   with:
-      #     name: ark-desktop-wallet-linux-2.6.3.tar.gz
-      #     path: build/target/ark-desktop-wallet-linux-x64-2.6.3.tar.gz
-
-      - name: Upload .deb
-        uses: actions/upload-artifact@v1
-        with:
-          name: ark-desktop-wallet-linux-2.6.3.deb
-          path: build/target/ark-desktop-wallet-linux-amd64-2.6.3.deb
-
   build-macOS:
     needs: unit
 
