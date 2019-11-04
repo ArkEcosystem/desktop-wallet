@@ -303,7 +303,7 @@ export default {
 
   MARKET_CHART_HEADER: {
     PRICE: '{currency} Prezzo',
-    SHOW_CHART: 'Show chart'
+    SHOW_CHART: 'Mostra grafico'
   },
 
   BUTTON_CLIPBOARD: {
