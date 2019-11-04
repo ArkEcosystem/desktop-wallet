@@ -1,5 +1,5 @@
 import { Server } from 'mock-socket'
-import PluginWebsocket from '@/services/plugin-manager/websocket'
+import { createWebsocketSandbox } from '@/services/plugin-manager/sandbox/websocket-sandbox'
 
 const whitelist = [
   /* eslint-disable: no-useless-escape */
@@ -7,11 +7,20 @@ const whitelist = [
 ]
 const host = 'ws://my.test.com:8080'
 
+const plugin = {
+  config: {
+    urls: whitelist
+  }
+}
+
+let app
+let sandbox
+let walletApi
+
 let pongMock
 let mockServer
-let router
 let routerNext
-let pluginWebsocket
+
 beforeEach(() => {
   if (mockServer) {
     mockServer.stop()
@@ -34,24 +43,34 @@ beforeEach(() => {
 
   const routeCallbacks = []
   routerNext = jest.fn()
-  router = {
-    beforeEach: jest.fn(callback => {
-      routeCallbacks.push(callback)
-    }),
 
-    push () {
-      for (const callback of routeCallbacks) {
-        callback(null, null, routerNext)
+  walletApi = {}
+
+  app = {
+    $router: {
+      beforeEach: jest.fn(callback => {
+        routeCallbacks.push(callback)
+      }),
+
+      push () {
+        for (const callback of routeCallbacks) {
+          callback(null, null, routerNext)
+        }
       }
     }
   }
 
-  pluginWebsocket = new PluginWebsocket(whitelist, router)
+  sandbox = createWebsocketSandbox(walletApi, app, plugin)
+  sandbox()
 })
 
 describe('PluginWebsocket', () => {
+  it('should expose functions', () => {
+    expect(walletApi.websocket).toBeTruthy()
+  })
+
   it('should connect to websocket', (done) => {
-    const socket = pluginWebsocket.connect(host)
+    const socket = walletApi.websocket.connect(host)
     expect(socket.isConnecting()).toBeTrue()
 
     setTimeout(() => {
@@ -62,7 +81,7 @@ describe('PluginWebsocket', () => {
   })
 
   it('should connect to websocket and receive data', (done) => {
-    const socket = pluginWebsocket.connect(host)
+    const socket = walletApi.websocket.connect(host)
 
     socket.on('data', (event) => {
       expect(event.data).toEqual('test')
@@ -73,7 +92,7 @@ describe('PluginWebsocket', () => {
   })
 
   it('should connect to websocket and send data', (done) => {
-    const socket = pluginWebsocket.connect(host)
+    const socket = walletApi.websocket.connect(host)
 
     socket.on('pong', (event) => {
       expect(pongMock).toHaveBeenCalledWith('ping')
@@ -86,8 +105,15 @@ describe('PluginWebsocket', () => {
     socket.send('ping')
   })
 
+  it('should change the binary type to arraybuffer', () => {
+    const socket = walletApi.websocket.connect(host)
+
+    socket.binaryType = 'arraybuffer'
+    expect(socket.binaryType).toBe('arraybuffer')
+  })
+
   it('should close the websocket', (done) => {
-    const socket = pluginWebsocket.connect(host)
+    const socket = walletApi.websocket.connect(host)
 
     setTimeout(() => {
       expect(socket.isOpen()).toBeTrue()
@@ -106,19 +132,19 @@ describe('PluginWebsocket', () => {
   })
 
   it('should reset websockets on route change', () => {
-    const socket = pluginWebsocket.connect(host)
+    const socket = walletApi.websocket.connect(host)
 
     socket.on('pong', jest.fn())
 
     expect(socket.events.pong).toBeTruthy()
-    expect(router.beforeEach).toHaveBeenCalledTimes(1)
-    router.push()
+    expect(app.$router.beforeEach).toHaveBeenCalledTimes(1)
+    app.$router.push()
     expect(routerNext).toHaveBeenCalledTimes(1)
     expect(socket.events.length).toEqual(0)
   })
 
   it('should not connect to websocket', (done) => {
-    const socket = pluginWebsocket.connect('ws://failure.test.com:8080')
+    const socket = walletApi.websocket.connect('ws://failure.test.com:8080')
 
     setTimeout(() => {
       expect(socket.isClosed()).toBeTrue()
@@ -129,14 +155,25 @@ describe('PluginWebsocket', () => {
 
   it('should not connect to websocket due to whitelist', () => {
     expect(() => {
-      pluginWebsocket.connect('ws://my.test.com:8081')
+      walletApi.websocket.connect('ws://my.test.com:8081')
     }).toThrow('URL "ws://my.test.com:8081" not allowed')
+  })
+
+  it('should destroy the socket', () => {
+    const socket = walletApi.websocket.connect(host)
+    socket.destroy()
+    expect(socket.isDestroyed()).toBeTrue()
   })
 
   it('should ignore an invalid whitelist', () => {
     expect(() => {
-      pluginWebsocket = new PluginWebsocket('not a whitelist', router)
-      pluginWebsocket.connect('ws://my.test.com:8081')
+      const api = {}
+      createWebsocketSandbox(api, app, {
+        config: {
+          url: 'not a whitelist'
+        }
+      })()
+      api.websocket.connect('ws://my.test.com:8081')
     }).toThrow('URL "ws://my.test.com:8081" not allowed')
   })
 })
