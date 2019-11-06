@@ -45,7 +45,7 @@ export class PluginManager {
     this.pluginsPath = process.env.NODE_ENV !== 'development' ? PLUGINS.path : PLUGINS.devPath
 
     await this.app.$store.dispatch('plugin/reset')
-    await this.fetchPluginsFromPath()
+    await this.fetchPlugins()
 
     this.hasInit = true
 
@@ -158,7 +158,7 @@ export class PluginManager {
 
     const plugin = this.plugins[pluginId]
     if (!plugin) {
-      throw new Error(`Plugin \`${pluginId}\` not found`)
+      throw new errors.PluginNotFoundError(pluginId)
     }
 
     if (plugin.config.permissions.includes('THEMES')) {

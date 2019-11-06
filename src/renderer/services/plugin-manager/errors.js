@@ -14,24 +14,24 @@ export class NotInitiatedError extends PluginManagerError {
 
 export class PluginAlreadyInstalledError extends PluginManagerError {
   constructor (plugin) {
-    super(`Plugin \`${plugin}\` is already installed`)
+    super(`Plugin \'${plugin}\' is already installed`)
   }
 }
 
 export class PluginDownloadFailedError extends PluginManagerError {
   constructor (plugin) {
-    super(`Plugin \`${plugin}\` could not be downloaded`)
+    super(`Plugin \'${plugin}\' could not be downloaded`)
   }
 }
 
 export class PluginNotEnabledError extends PluginManagerError {
   constructor (plugin) {
-    super(`Plugin \`${plugin}\` is not enabled`)
+    super(`Plugin \'${plugin}\' is not enabled`)
   }
 }
 
 export class PluginNotFoundError extends Error {
   constructor (plugin) {
-    super(`Plugin \`${plugin}\` not found`)
+    super(`Plugin \'${plugin}\' not found`)
   }
 }
