@@ -35,12 +35,16 @@ export class PluginManager {
     this.adapter = adapters[upperFirst(adapter) + 'Adapter']
   }
 
+  setApp (app) {
+    this.app = app
+  }
+
   setVue (vue) {
     this.vue = vue
   }
 
   async init (app) {
-    this.app = app
+    this.setApp(app)
 
     this.pluginsPath = process.env.NODE_ENV !== 'development' ? PLUGINS.path : PLUGINS.devPath
 

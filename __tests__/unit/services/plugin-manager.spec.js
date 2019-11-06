@@ -1,5 +1,3 @@
-import * as fs from 'fs'
-import * as fsExtra from 'fs-extra'
 import { createLocalVue } from '@vue/test-utils'
 import { PluginManager } from '@/services/plugin-manager'
 import { PluginSandbox } from '@/services/plugin-manager/plugin-sandbox'
@@ -47,6 +45,7 @@ const app = {
     getters: {
       'plugin/isEnabled': jest.fn((pluginId) => pluginId === 'plugin-test'),
       'plugin/isInstalledSupported': jest.fn(() => true),
+      'plugin/lastFetched': jest.fn(() => 0),
       'profile/byId': jest.fn(() => {})
     }
   }
@@ -58,6 +57,8 @@ beforeEach(() => {
   mockDispatch.mockReset()
   pluginManager = new PluginManager()
   pluginManager.setVue(localVue)
+  pluginManager.setAdapter('npm')
+  pluginManager.setApp(app)
 })
 
 describe('Plugin Manager', () => {
@@ -68,18 +69,18 @@ describe('Plugin Manager', () => {
   })
 
   describe('Fetch plugins', () => {
-    xit('should read plugins from path', async () => {
-      jest.spyOn(fsExtra, 'readdirSync').mockReturnValue(['plugin-1'])
-      jest.spyOn(fs, 'readFileSync').mockReturnValue(JSON.stringify(pkg))
+    it('should fetch plugins from path', async () => {
+      jest.spyOn(pluginManager, 'fetchPluginsFromPath')
 
-      await pluginManager.init(app)
+      await pluginManager.fetchPlugins()
+      expect(pluginManager.fetchPluginsFromPath).toHaveBeenCalled()
+    })
 
-      expect(app.$store.dispatch).toHaveBeenCalledWith('plugin/setInstalled',
-        expect.objectContaining({
-          config: expect.any(Object),
-          fullPath: expect.any(String)
-        })
-      )
+    it('should fetch plugins from adapter if forced', async () => {
+      jest.spyOn(pluginManager, 'fetchPluginsFromAdapter')
+
+      await pluginManager.fetchPlugins(true)
+      expect(pluginManager.fetchPluginsFromAdapter).toHaveBeenCalled()
     })
   })
 
