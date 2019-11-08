@@ -485,7 +485,6 @@ export default {
     },
 
     onSearch (query) {
-      this.activeCategory = 'all'
       this.query = query
     },
 
