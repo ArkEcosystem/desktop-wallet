@@ -127,7 +127,7 @@ export default new BaseModel({
     },
     pluginSortParams: {
       type: 'object',
-      format: data => data.pluginSortParams || { field: 'id', type: 'asc' }
+      format: data => data.pluginSortParams || { field: 'title', type: 'asc' }
     },
     lastFees: {
       type: 'object',

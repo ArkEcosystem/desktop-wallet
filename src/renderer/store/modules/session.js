@@ -221,7 +221,7 @@ export default {
       state.walletSidebarFilters = {}
       state.walletSortParams = { field: 'balance', type: 'desc' }
       state.contactSortParams = { field: 'name', type: 'asc' }
-      state.pluginSortParams = { field: 'id', type: 'asc' }
+      state.pluginSortParams = { field: 'title', type: 'asc' }
       state.backgroundUpdateLedger = true
       state.broadcastPeers = true
       state.screenshotProtection = true
