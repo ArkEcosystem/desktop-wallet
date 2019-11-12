@@ -50,7 +50,8 @@
   },
   "dependencies": {
     "@arkecosystem/client": "^1.0.2",
-    "@arkecosystem/crypto": "^2.6.0-alpha.1",
+    "@arkecosystem/core-magistrate-crypto": "^2.6.0-next.0",
+    "@arkecosystem/crypto": "^2.6.0-next.4",
     "@arkecosystem/ledger-transport": "^0.1.0",
     "@arkecosystem/peers": "^0.2.1",
     "@babel/runtime": "^7.4.2",
@@ -65,6 +66,7 @@
     "bip38": "^3.0.0",
     "bip39": "^3.0.0",
     "bs58check": "^2.1.2",
+    "case": "^1.6.2",
     "chart.js": "^2.8.0",
     "cheerio": "^1.0.0-rc.3",
     "clean-css": "^4.2.1",
