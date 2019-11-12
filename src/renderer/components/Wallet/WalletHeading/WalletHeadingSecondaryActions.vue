@@ -69,6 +69,7 @@
 </template>
 
 <script>
+import { TRANSACTION_TYPES } from '@config'
 import { ButtonDropdown, ButtonModal } from '@/components/Button'
 import { ContactRenameModal } from '@/components/Contact'
 import { WalletRenameModal, WalletRemovalConfirmation } from '@/components/Wallet'
@@ -110,14 +111,14 @@ export default {
         if (!this.currentWallet.isLedger && !this.currentWallet.secondPublicKey) {
           types.push({
             label: this.$t('WALLET_HEADING.ACTIONS.SECOND_PASSPHRASE'),
-            type: 1
+            type: TRANSACTION_TYPES.GROUP_1.SECOND_SIGNATURE
           })
         }
 
         if (!this.currentWallet.isDelegate) {
           types.push({
             label: this.$t('WALLET_HEADING.ACTIONS.REGISTER_DELEGATE'),
-            type: 2
+            type: TRANSACTION_TYPES.GROUP_1.DELEGATE_REGISTRATION
           })
         }
       }
@@ -129,14 +130,14 @@ export default {
       if (!this.currentWallet.multiSignature) {
         types.push({
           label: this.$t('WALLET_HEADING.ACTIONS.REGISTER_MULTISIGNATURE'),
-          type: 4
+          type: TRANSACTION_TYPES.GROUP_1.MULTI_SIGNATURE
         })
       }
 
       if (this.currentWallet.isDelegate) {
         types.push({
           label: this.$t('WALLET_HEADING.ACTIONS.RESIGN_DELEGATE'),
-          type: 7
+          type: TRANSACTION_TYPES.GROUP_1.DELEGATE_RESIGNATION
         })
       }
 
