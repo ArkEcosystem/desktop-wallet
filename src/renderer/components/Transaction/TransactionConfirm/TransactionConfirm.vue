@@ -53,6 +53,7 @@
 <script>
 /* eslint-disable vue/no-unused-components */
 import { find } from 'lodash'
+import { TRANSACTION_GROUPS } from '@config'
 import TransactionConfirmDelegateRegistration from './TransactionConfirmDelegateRegistration'
 import TransactionConfirmDelegateResignation from './TransactionConfirmDelegateResignation'
 import TransactionConfirmIpfs from './TransactionConfirmIpfs'
@@ -133,10 +134,18 @@ export default {
   },
 
   mounted () {
-    const component = find(this.$options.components, item => item.transactionType === this.transaction.type)
+    const transactionGroup = this.transaction.typeGroup || TRANSACTION_GROUPS.STANDARD
+    const component = find(this.$options.components, component => {
+      const group = component.transactionGroup || TRANSACTION_GROUPS.STANDARD
+      if (group !== transactionGroup) {
+        return false
+      }
+
+      return component.transactionType === this.transaction.type
+    })
 
     if (!component) {
-      throw new Error(`[TransactionConfirm] - Confirm for type ${this.type} not found.`)
+      throw new Error(`[TransactionConfirm] - Confirm for type ${this.type} (group ${this.transaction.typeGroup}) not found.`)
     }
 
     this.activeComponent = component.name

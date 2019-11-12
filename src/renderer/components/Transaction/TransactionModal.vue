@@ -8,6 +8,7 @@
       <TransactionForm
         v-if="!transaction"
         v-bind="$attrs"
+        :group="group"
         :type="type"
         @built="onBuilt"
         @cancel="emitCancel"

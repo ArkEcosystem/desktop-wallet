@@ -95,6 +95,7 @@
             :address="data.row.recipient"
             :address-length="8"
             :type="data.row.type"
+            :group="data.row.typeGroup"
             :asset="data.row.asset"
             tooltip-container=".TransactionTable"
           />

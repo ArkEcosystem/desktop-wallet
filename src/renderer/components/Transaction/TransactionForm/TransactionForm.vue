@@ -55,13 +55,13 @@ export default {
 
   // TODO: Fetch fees remotely
   mounted () {
-    const component = find(this.$options.components, item => {
-      const group = item.transactionGroup || TRANSACTION_GROUPS.STANDARD
+    const component = find(this.$options.components, component => {
+      const group = component.transactionGroup || TRANSACTION_GROUPS.STANDARD
       if (group !== this.group) {
         return false
       }
 
-      return item.transactionType === this.type
+      return component.transactionType === this.type
     })
 
     if (!component) {
