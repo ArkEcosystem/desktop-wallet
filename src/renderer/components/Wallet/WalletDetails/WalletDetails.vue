@@ -160,7 +160,6 @@
 import electron from 'electron'
 import at from 'lodash/at'
 /* eslint-disable vue/no-unused-components */
-import { WalletSelectDelegate } from '@/components/Wallet'
 import { ButtonGeneric } from '@/components/Button'
 import { TransactionModal } from '@/components/Transaction'
 import {
@@ -169,6 +168,7 @@ import {
   WalletHeading,
   WalletIpfs,
   WalletMultiSignature,
+  WalletSelectDelegate,
   WalletSignVerify,
   WalletStatistics,
   WalletTransactions
