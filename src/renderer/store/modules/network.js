@@ -110,7 +110,7 @@ export default new BaseModule(NetworkModel, {
         const feeStatistics = await Client.fetchFeeStatistics(network.server)
         commit('UPDATE', {
           ...network,
-          feeStatistics
+          feeStatistics: { ...feeStatistics }
         })
       } catch (error) {
         // Fees couldn't be updated

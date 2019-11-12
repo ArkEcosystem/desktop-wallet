@@ -152,7 +152,7 @@ export default {
     },
     maxV1fee () {
       const defaultMaxV1Fee = V1.fees[`GROUP_${this.transactionGroup}`][this.transactionType]
-      const staticFee = this.$store.getters['transaction/staticFee'](this.transactionType)
+      const staticFee = this.$store.getters['transaction/staticFee'](this.transactionType, this.transactionGroup)
       return staticFee || defaultMaxV1Fee
     },
     isStaticFee () {
@@ -173,9 +173,19 @@ export default {
       }
 
       const { feeStatistics } = this.feeNetwork
-      const transactionStatistics = feeStatistics.find(feeConfig => feeConfig.type === this.transactionType)
-      if (transactionStatistics) {
-        return transactionStatistics.fees
+      if (feeStatistics) {
+        let transactionStatistics
+        if (feeStatistics[0]) {
+          transactionStatistics = Object.values(feeStatistics).find(feeConfig => feeConfig.type === this.transactionType)
+        } else if (feeStatistics[this.transactionGroup]) {
+          transactionStatistics = Object.values(feeStatistics[this.transactionGroup]).find(feeConfig => {
+            return feeConfig.type === this.transactionType
+          })
+        }
+
+        if (transactionStatistics) {
+          return transactionStatistics.fees
+        }
       }
 
       return {

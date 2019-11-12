@@ -76,13 +76,19 @@ export default {
      * @param  {Number} type
      * @return {(Number|null)}
      */
-    staticFee: (state, _, __, rootGetters) => (type) => {
+    staticFee: (state, _, __, rootGetters) => (type, group) => {
       const networkId = rootGetters['session/profile'].networkId
       if (!networkId || !state.staticFees[networkId]) {
         return null
       }
 
-      return state.staticFees[networkId][type]
+      if (!state.staticFees[networkId].GROUP_1) {
+        return state.staticFees[networkId][type]
+      } else if (!state.staticFees[networkId][`GROUP_${group}`]) {
+        return null
+      }
+
+      return state.staticFees[networkId][`GROUP_${group}`][type]
     }
   },
 
@@ -227,9 +233,23 @@ export default {
      * @return {void}
      */
     async updateStaticFees ({ commit, rootGetters }) {
+      let staticFees = {}
+      const feesResponse = await this._vm.$client.fetchStaticFees()
+      if (feesResponse[config.TRANSACTION_GROUPS.STANDARD]) {
+        for (const group of Object.values(config.TRANSACTION_GROUPS)) {
+          if (!feesResponse[group]) {
+            continue
+          }
+
+          staticFees[group] = feesResponse[group]
+        }
+      } else {
+        staticFees = feesResponse
+      }
+
       commit('SET_STATIC_FEES', {
         networkId: rootGetters['session/profile'].networkId,
-        staticFees: await this._vm.$client.fetchStaticFees()
+        staticFees
       })
     }
   }
