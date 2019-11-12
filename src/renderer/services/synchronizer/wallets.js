@@ -1,7 +1,8 @@
 import { find, groupBy, keyBy, map, maxBy, partition, uniqBy } from 'lodash'
-import config from '@config'
+import { TRANSACTION_GROUPS, TRANSACTION_TYPES } from '@config'
 import eventBus from '@/plugins/event-bus'
 import truncateMiddle from '@/filters/truncate-middle'
+import TransactionService from '@/services/transaction'
 
 class Action {
   /**
@@ -318,21 +319,31 @@ class Action {
 
   // TODO use the eventBus to display transactions
   displayNewTransaction (transaction, wallet) {
+    switch ((transaction.typeGroup || 1)) {
+      case TRANSACTION_GROUPS.STANDARD: {
+        this.displayNewStandardTransaction(transaction, wallet)
+        break
+      }
+    }
+  }
+
+  // TODO use the eventBus to display transactions
+  displayNewStandardTransaction (transaction, wallet) {
     let message = {}
 
     switch (transaction.type) {
-      case config.TRANSACTION_TYPES.GROUP_1.SECOND_SIGNATURE: {
+      case TRANSACTION_TYPES.GROUP_1.SECOND_SIGNATURE: {
         message = {
-          translation: 'SYNCHRONIZER.NEW_SECOND_SIGNATURE',
+          translation: 'SYNCHRONIZER.GROUP_1.NEW_SECOND_SIGNATURE',
           options: {
             address: truncateMiddle(wallet.address)
           }
         }
         break
       }
-      case config.TRANSACTION_TYPES.GROUP_1.DELEGATE_REGISTRATION: {
+      case TRANSACTION_TYPES.GROUP_1.DELEGATE_REGISTRATION: {
         message = {
-          translation: 'SYNCHRONIZER.NEW_DELEGATE_REGISTRATION',
+          translation: 'SYNCHRONIZER.GROUP_1.NEW_DELEGATE_REGISTRATION',
           options: {
             address: truncateMiddle(wallet.address),
             username: transaction.asset.delegate.username
@@ -340,11 +351,11 @@ class Action {
         }
         break
       }
-      case config.TRANSACTION_TYPES.GROUP_1.VOTE: {
+      case TRANSACTION_TYPES.GROUP_1.VOTE: {
         const type = transaction.asset.votes[0].substring(0, 1) === '+' ? 'VOTE' : 'UNVOTE'
-        const voteUnvote = this.$t(`SYNCHRONIZER.${type}`)
+        const voteUnvote = this.$t(`SYNCHRONIZER.GROUP_1.${type}`)
         message = {
-          translation: 'SYNCHRONIZER.NEW_VOTE',
+          translation: 'SYNCHRONIZER.GROUP_1.NEW_VOTE',
           options: {
             address: truncateMiddle(wallet.address),
             voteUnvote,
@@ -353,10 +364,64 @@ class Action {
         }
         break
       }
+      case TRANSACTION_TYPES.GROUP_1.MULTI_SIGNATURE: {
+        message = {
+          translation: 'SYNCHRONIZER.GROUP_1.NEW_MULTI_SIGNATURE',
+          options: {
+            address: truncateMiddle(wallet.address)
+          }
+        }
+        break
+      }
+      case TRANSACTION_TYPES.GROUP_1.IPFS: {
+        message = {
+          translation: 'SYNCHRONIZER.GROUP_1.NEW_IPFS',
+          options: {
+            address: truncateMiddle(wallet.address)
+          }
+        }
+        break
+      }
+      case TRANSACTION_TYPES.GROUP_1.MULTI_PAYMENT: {
+        let amount = this.$scope.currency_toBuilder(0)
+        let type = 'SENT'
+        let recipient = transaction.asset.payments.filter(payment => payment.recipientId === wallet.address)
+        if (recipient.length) {
+          type = 'RECEIVED'
+          for (const entry of recipient) {
+            amount.add(entry.amount)
+          }
+          recipient = truncateMiddle(wallet.address)
+        } else {
+          amount = TransactionService.getAmount(this.$scope, transaction)
+          recipient = transaction.asset.payments.length + ' recipients'
+        }
+
+        message = {
+          translation: `SYNCHRONIZER.GROUP_1.NEW_MULTI_PAYMENT_${type}`,
+          options: {
+            address: truncateMiddle(wallet.address),
+            amount: `${this.$getters['session/network'].symbol}${(amount / 1e8)}`,
+            sender: truncateMiddle(transaction.sender),
+            recipient
+          }
+        }
+        break
+      }
+      case TRANSACTION_TYPES.GROUP_1.DELEGATE_RESIGNATION: {
+        message = {
+          translation: 'SYNCHRONIZER.GROUP_1.NEW_DELEGATE_RESIGNATION',
+          options: {
+            address: truncateMiddle(wallet.address),
+            username: transaction.asset.delegate.username
+          }
+        }
+        break
+      }
       default: {
         const type = transaction.sender === wallet.address ? 'SENT' : 'RECEIVED'
         message = {
-          translation: `SYNCHRONIZER.NEW_TRANSFER_${type}`,
+          translation: `SYNCHRONIZER.GROUP_1.NEW_TRANSFER_${type}`,
           options: {
             address: truncateMiddle(wallet.address),
             amount: `${this.$getters['session/network'].symbol}${(transaction.amount / 1e8)}`,

@@ -975,11 +975,18 @@ export default {
   SYNCHRONIZER: {
     VOTE: 'voted for',
     UNVOTE: 'unvoted',
-    NEW_SECOND_SIGNATURE: 'New second signature: {address}',
-    NEW_DELEGATE_REGISTRATION: 'New delegate: {address} registered as {username}',
-    NEW_VOTE: 'New vote: {address} {voteUnvote} {publicKey}',
-    NEW_TRANSFER_SENT: 'New transfer: {amount} sent from {sender} to {recipient}',
-    NEW_TRANSFER_RECEIVED: 'New transfer: {amount} received from {sender} to {recipient}'
+    GROUP_1: {
+      NEW_SECOND_SIGNATURE: 'New second signature: {address}',
+      NEW_DELEGATE_REGISTRATION: 'New delegate: {address} registered as {username}',
+      NEW_VOTE: 'New vote: {address} {voteUnvote} {publicKey}',
+      NEW_MULTI_SIGNATURE: 'New multi-signature registration: {address}',
+      NEW_IPFS: 'New IPFS hash: {address}',
+      NEW_MULTI_PAYMENT_SENT: 'New multi-payment: {amount} sent from {sender} to {recipient}',
+      NEW_MULTI_PAYMENT_RECEIVED: 'New multi-payment: {amount} received from {sender} to {recipient}',
+      NEW_DELEGATE_RESIGNATION: 'New delegate resignation: {address} registered as {username}',
+      NEW_TRANSFER_SENT: 'New transfer: {amount} sent from {sender} to {recipient}',
+      NEW_TRANSFER_RECEIVED: 'New transfer: {amount} received from {sender} to {recipient}'
+    }
   },
 
   TRANSACTION_FORM: {
