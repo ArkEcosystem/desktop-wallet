@@ -26,6 +26,13 @@
         />
       </div>
     </div>
+
+    <div
+      v-if="!items || !items.length"
+      class="mt-2 text-center"
+    >
+      {{ $t('INPUT_EDITABLE_LIST.NO_ITEMS') }}
+    </div>
   </div>
 </template>
 

@@ -346,6 +346,10 @@ export default {
     SEARCH_HINT: 'You can search by username, address or public key'
   },
 
+  INPUT_EDITABLE_LIST: {
+    NO_ITEMS: 'This list has no items'
+  },
+
   INPUT_FEE: {
     LAST: 'Last',
     MINIMUM: 'Minimum',
