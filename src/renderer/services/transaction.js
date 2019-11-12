@@ -24,6 +24,23 @@ export default class TransactionService {
   }
 
   /**
+   * Get amount for transaction.
+   * @param  {Object} vm
+   * @param  {Object} transaction
+   * @return {String}
+   */
+  static getAmount (vm, transaction) {
+    const amount = vm.currency_toBuilder(transaction.amount)
+    if (transaction.asset && transaction.asset.payments) {
+      for (const payment of transaction.asset.payments) {
+        amount.add(payment.amount)
+      }
+    }
+
+    return amount.value
+  }
+
+  /**
    * Get hash for transaction.
    * @param  {Object}  transaction
    * @param  {Boolean} excludeMultiSignature

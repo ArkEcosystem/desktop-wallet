@@ -11,6 +11,7 @@
 </template>
 
 <script>
+import TransactionService from '@/services/transaction'
 
 export default {
   name: 'TransactionAmount',
@@ -24,16 +25,7 @@ export default {
 
   computed: {
     totalAmount () {
-      const amount = this.currency_toBuilder(0)
-      if (this.transaction.asset && this.transaction.asset.payments) {
-        for (const payment of this.transaction.asset.payments) {
-          amount.add(payment.amount)
-        }
-      } else if (this.transaction.amount) {
-        amount.add(this.transaction.amount)
-      }
-
-      return amount.value
+      return TransactionService.getAmount(this, this.transaction)
     },
 
     isTransfer () {
