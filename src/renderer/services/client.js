@@ -1,5 +1,6 @@
 import { Connection } from '@arkecosystem/client'
 import { Identities, Transactions } from '@arkecosystem/crypto'
+import * as MagistrateCrypto from '@arkecosystem/core-magistrate-crypto'
 import Case from 'case'
 import { castArray, chunk, cloneDeep, orderBy } from 'lodash'
 import got from 'got'
@@ -12,6 +13,10 @@ import eventBus from '@/plugins/event-bus'
 import BigNumber from '@/plugins/bignumber'
 import TransactionService from '@/services/transaction'
 import WalletService from '@/services/wallet'
+
+Transactions.TransactionRegistry.registerTransactionType(MagistrateCrypto.Transactions.BusinessRegistrationTransaction)
+Transactions.TransactionRegistry.registerTransactionType(MagistrateCrypto.Transactions.BusinessResignationTransaction)
+Transactions.TransactionRegistry.registerTransactionType(MagistrateCrypto.Transactions.BusinessUpdateTransaction)
 
 export default class ClientService {
   /*
@@ -922,6 +927,197 @@ export default class ClientService {
 
     const transaction = Transactions.BuilderFactory
       .delegateResignation()
+      .fee(fee)
+
+    passphrase = this.normalizePassphrase(passphrase)
+    secondPassphrase = this.normalizePassphrase(secondPassphrase)
+
+    return this.__signTransaction({
+      address,
+      transaction,
+      passphrase,
+      secondPassphrase,
+      wif,
+      networkWif,
+      multiSignature
+    }, returnObject)
+  }
+
+  /**
+   * Build a business registration transaction.
+   * @param {Object} data
+   * @param {String} data.address
+   * @param {Number} data.fee - dynamic fee, as arktoshi
+   * @param {Object} data.asset
+   * @param {String} data.passphrase
+   * @param {String} data.secondPassphrase
+   * @param {String} data.wif
+   * @param {String} data.networkWif
+   * @param {Object} data.multiSignature
+   * @param {Boolean} isAdvancedFee - if it's not a static fee
+   * @param {Boolean} returnObject - to return the transaction of its internal struct
+   * @returns {Object}
+   */
+  async buildBusinessRegistration (
+    {
+      address,
+      fee,
+      asset,
+      passphrase,
+      secondPassphrase,
+      wif,
+      networkWif,
+      multiSignature
+    },
+    isAdvancedFee = false,
+    returnObject = false
+  ) {
+    if (!store.getters['session/network'].constants.aip11) {
+      throw new Error('AIP-11 transaction not supported on network')
+    }
+
+    const staticFee = store.getters['transaction/staticFee'](TRANSACTION_TYPES.GROUP_2.BUSINESS_REGISTRATION, 2)
+    if (!isAdvancedFee && fee.gt(staticFee)) {
+      throw new Error(`Business Registration fee should be smaller than ${staticFee}`)
+    }
+
+    const businessRegistrationAsset = {
+      name: asset.name,
+      website: asset.website
+    }
+
+    if (asset.vat && asset.vat.length) {
+      businessRegistrationAsset.vat = asset.vat
+    }
+
+    if (asset.repository && asset.repository.length) {
+      businessRegistrationAsset.repository = asset.repository
+    }
+
+    const transaction = new MagistrateCrypto.Builders.BusinessRegistrationBuilder()
+      .businessRegistrationAsset(businessRegistrationAsset)
+      .fee(fee)
+
+    passphrase = this.normalizePassphrase(passphrase)
+    secondPassphrase = this.normalizePassphrase(secondPassphrase)
+
+    return this.__signTransaction({
+      address,
+      transaction,
+      passphrase,
+      secondPassphrase,
+      wif,
+      networkWif,
+      multiSignature
+    }, returnObject)
+  }
+
+  /**
+   * Build a business update transaction.
+   * @param {Object} data
+   * @param {String} data.address
+   * @param {Number} data.fee - dynamic fee, as arktoshi
+   * @param {Object} data.asset
+   * @param {String} data.passphrase
+   * @param {String} data.secondPassphrase
+   * @param {String} data.wif
+   * @param {String} data.networkWif
+   * @param {Object} data.multiSignature
+   * @param {Boolean} isAdvancedFee - if it's not a static fee
+   * @param {Boolean} returnObject - to return the transaction of its internal struct
+   * @returns {Object}
+   */
+  async buildBusinessUpdate (
+    {
+      address,
+      fee,
+      asset,
+      passphrase,
+      secondPassphrase,
+      wif,
+      networkWif,
+      multiSignature
+    },
+    isAdvancedFee = false,
+    returnObject = false
+  ) {
+    if (!store.getters['session/network'].constants.aip11) {
+      throw new Error('AIP-11 transaction not supported on network')
+    }
+
+    const staticFee = store.getters['transaction/staticFee'](TRANSACTION_TYPES.GROUP_2.BUSINESS_UPDATE, 2)
+    if (!isAdvancedFee && fee.gt(staticFee)) {
+      throw new Error(`Business Update fee should be smaller than ${staticFee}`)
+    }
+
+    const businessAsset = {
+      name: asset.name,
+      website: asset.website
+    }
+
+    if (asset.vat && asset.vat.length) {
+      businessAsset.vat = asset.vat
+    }
+
+    if (asset.repository && asset.repository.length) {
+      businessAsset.repository = asset.repository
+    }
+
+    const transaction = new MagistrateCrypto.Builders.BusinessUpdateBuilder()
+      .businessRegistrationAsset(businessAsset)
+      .fee(fee)
+
+    passphrase = this.normalizePassphrase(passphrase)
+    secondPassphrase = this.normalizePassphrase(secondPassphrase)
+
+    return this.__signTransaction({
+      address,
+      transaction,
+      passphrase,
+      secondPassphrase,
+      wif,
+      networkWif,
+      multiSignature
+    }, returnObject)
+  }
+
+  /**
+   * Build a business resignation transaction.
+   * @param {Object} data
+   * @param {String} data.address
+   * @param {Number} data.fee - dynamic fee, as arktoshi
+   * @param {String} data.passphrase
+   * @param {String} data.secondPassphrase
+   * @param {String} data.wif
+   * @param {String} data.networkWif
+   * @param {Object} data.multiSignature
+   * @param {Boolean} isAdvancedFee - if it's not a static fee
+   * @param {Boolean} returnObject - to return the transaction of its internal struct
+   * @returns {Object}
+   */
+  async buildBusinessResignation (
+    {
+      address,
+      fee,
+      passphrase,
+      secondPassphrase,
+      wif,
+      networkWif,
+      multiSignature
+    },
+    isAdvancedFee = false,
+    returnObject = false
+  ) {
+    if (!store.getters['session/network'].constants.aip11) {
+      throw new Error('AIP-11 transaction not supported on network')
+    }
+
+    const staticFee = store.getters['transaction/staticFee'](TRANSACTION_TYPES.GROUP_2.BUSINESS_RESIGNATION, 2)
+    if (!isAdvancedFee && fee.gt(staticFee)) {
+      throw new Error(`Business Resignation fee should be smaller than ${staticFee}`)
+    }
+
+    const transaction = new MagistrateCrypto.Builders.BusinessResignationBuilder()
       .fee(fee)
 
     passphrase = this.normalizePassphrase(passphrase)

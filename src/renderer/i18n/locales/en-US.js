@@ -624,6 +624,7 @@ export default {
     },
 
     WALLET: {
+      BUSINESS: 'Business',
       TRANSACTIONS: 'Transactions',
       DELEGATES: 'Delegates',
       IPFS: 'IPFS',

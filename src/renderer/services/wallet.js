@@ -110,6 +110,36 @@ export default class WalletService {
   }
 
   /**
+   * Check if a wallet is a business wallet
+   * @param {String} address
+   * @returns {Boolean}
+   */
+  static isBusiness (wallet, ignoreResigned = true) {
+    if (!wallet.business) {
+      return false
+    }
+
+    if (ignoreResigned) {
+      return !!wallet.business.name
+    }
+
+    return !wallet.business.isResigned
+  }
+
+  /**
+   * Check if a wallet can resign as a business
+   * @param {String} address
+   * @returns {Boolean}
+   */
+  static canResignBusiness (wallet) {
+    if (!wallet.business) {
+      return false
+    }
+
+    return !wallet.business.isResigned
+  }
+
+  /**
    * Signs a message by using the given passphrase.
    * @param {String} message
    * @param {String} passphrase

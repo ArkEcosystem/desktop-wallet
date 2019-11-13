@@ -19,6 +19,7 @@ import TransactionFormMultiSignature from './TransactionFormMultiSignature'
 import TransactionFormTransfer from './TransactionFormTransfer'
 import TransactionFormVote from './TransactionFormVote'
 import TransactionFormSecondSignature from './TransactionFormSecondSignature'
+import TransactionFormBusiness from './TransactionFormBusiness'
 import { find } from 'lodash'
 
 export default {
@@ -33,7 +34,8 @@ export default {
     TransactionFormMultiSignature,
     TransactionFormTransfer,
     TransactionFormVote,
-    TransactionFormSecondSignature
+    TransactionFormSecondSignature,
+    ...TransactionFormBusiness
   },
 
   props: {

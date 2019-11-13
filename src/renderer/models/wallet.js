@@ -56,6 +56,10 @@ export default new BaseModel({
       type: 'boolean',
       default: false
     },
+    business: {
+      type: ['object', 'null'],
+      default: null
+    },
     isWatchOnly: {
       type: 'boolean',
       default: false

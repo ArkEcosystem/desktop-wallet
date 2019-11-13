@@ -10,6 +10,7 @@ import WalletSignModal from './WalletSignModal'
 import WalletVerifyDetail from './WalletVerifyDetail'
 import WalletVerifyModal from './WalletVerifyModal'
 
+export * from './WalletBusiness'
 export * from './WalletButtons'
 export * from './WalletDelegates'
 export * from './WalletExchange'

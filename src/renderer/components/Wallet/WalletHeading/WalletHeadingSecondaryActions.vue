@@ -74,6 +74,7 @@ import { ButtonDropdown, ButtonModal } from '@/components/Button'
 import { ContactRenameModal } from '@/components/Contact'
 import { WalletRenameModal, WalletRemovalConfirmation } from '@/components/Wallet'
 import { TransactionModal } from '@/components/Transaction'
+import WalletService from '@/services/wallet'
 
 export default {
   name: 'WalletHeadingSecondaryActions',
@@ -138,6 +139,26 @@ export default {
         types.push({
           label: this.$t('WALLET_HEADING.ACTIONS.RESIGN_DELEGATE'),
           type: TRANSACTION_TYPES.GROUP_1.DELEGATE_RESIGNATION
+        })
+      }
+
+      if (!WalletService.isBusiness(this.currentWallet)) {
+        types.push({
+          label: this.$t('WALLET_HEADING.ACTIONS.BUSINESS.REGISTER'),
+          group: 2,
+          type: TRANSACTION_TYPES.GROUP_2.BUSINESS_REGISTRATION
+        })
+      } else if (WalletService.isBusiness(this.currentWallet, false)) {
+        types.push({
+          label: this.$t('WALLET_HEADING.ACTIONS.BUSINESS.UPDATE'),
+          group: 2,
+          type: TRANSACTION_TYPES.GROUP_2.BUSINESS_UPDATE
+        })
+      } else if (WalletService.canResignBusiness(this.currentWallet)) {
+        types.push({
+          label: this.$t('WALLET_HEADING.ACTIONS.BUSINESS.RESIGN'),
+          group: 2,
+          type: TRANSACTION_TYPES.GROUP_2.BUSINESS_RESIGNATION
         })
       }
 
