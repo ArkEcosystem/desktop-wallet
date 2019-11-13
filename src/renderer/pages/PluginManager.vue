@@ -500,7 +500,6 @@ export default {
 
     enablePlugin (plugin) {
       this.updateStatus({ pluginId: plugin.id, enabled: true })
-      this.closeEnableConfirmation()
     },
 
     updateStatus ({ pluginId, enabled }) {
