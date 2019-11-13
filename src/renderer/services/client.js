@@ -1,7 +1,6 @@
 import { Connection } from '@arkecosystem/client'
 import { Identities, Transactions } from '@arkecosystem/crypto'
 import * as MagistrateCrypto from '@arkecosystem/core-magistrate-crypto'
-import Case from 'case'
 import { castArray, chunk, cloneDeep, orderBy } from 'lodash'
 import got from 'got'
 import moment from 'moment'
@@ -128,7 +127,7 @@ export default class ClientService {
                 const fee = body.data[group][key]
 
                 return {
-                  type: TRANSACTION_TYPES[`GROUP_${group}`][Case.upper(key)], // Number(fee.type),
+                  type: TRANSACTION_TYPES[`GROUP_${group}`][key.toUpperCase()],
                   fees: {
                     minFee: Number(fee.min),
                     maxFee: Number(fee.max),
