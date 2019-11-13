@@ -293,6 +293,15 @@ class Action {
         // Disable notification on first check
         if (checkedAt > 0) {
           this.displayNewTransaction(latestTransaction, wallet)
+
+          const types = [
+            TRANSACTION_TYPES.GROUP_1.DELEGATE_REGISTRATION,
+            TRANSACTION_TYPES.GROUP_1.DELEGATE_RESIGNATION
+          ]
+
+          if (types.includes(latestTransaction.type)) {
+            this.$dispatch('delegate/load')
+          }
         }
 
         return latestAt
