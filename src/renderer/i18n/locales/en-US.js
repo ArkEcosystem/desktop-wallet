@@ -139,10 +139,12 @@ export default {
 
   VALIDATION: {
     TOO_LONG: 'The \'{0}\' is too long',
+    TOO_SHORT: 'The \'{0}\' is too short',
     INVALID_URI: 'Invalid URI',
     INVALID_FORMAT: 'Invalid format',
     INVALID_TYPE: 'Invalid type',
     MAX_LENGTH: 'Max {0}',
+    MIN_LENGTH: 'Min {0}',
     MUST_BE_GREATER_THAN: 'Must be greater than {0}',
     NOT_MATCH: 'The \'{0}\' does not match the \'{1}\'',
     NOT_VALID: 'The \'{0}\' is not valid',
@@ -819,7 +821,10 @@ export default {
       DELEGATE_RESIGNATION: 'Delegate Resignation',
       HTLC_LOCK: 'Timelock',
       HTLC_CLAIM: 'Timelock Claim',
-      HTLC_REFUND: 'Timelock Refund'
+      HTLC_REFUND: 'Timelock Refund',
+      BUSINESS_REGISTRATION: 'Business Registration',
+      BUSINESS_RESIGNATION: 'Business Resignation',
+      BUSINESS_UPDATE: 'Business Update'
     },
     ERROR: {
       VALIDATION: {
@@ -829,7 +834,12 @@ export default {
         VOTE: 'Vote transaction could not be created',
         MULTI_SIGNATURE: 'Multi-Signature transaction could not be created',
         IPFS: 'IPFS transaction could not be created',
-        DELEGATE_RESIGNATION: 'Delegate Resignation transaction could not be created'
+        DELEGATE_RESIGNATION: 'Delegate Resignation transaction could not be created',
+        BUSINESS: {
+          REGISTRATION: 'Business Registration transaction could not be created',
+          RESIGNATION: 'Business Resignation transaction could not be created',
+          UPDATE: 'Business Update transaction could not be created'
+        }
       },
       TRANSFER: 'Your transaction could not be sent',
       SECOND_SIGNATURE: 'Second signature could not be registered',
@@ -1010,7 +1020,13 @@ export default {
       SECOND_PASSPHRASE: 'Second Passphrase',
       DELETE_WALLET: 'Delete Wallet',
       SHOW_PUBLIC_KEY: 'Show Public Key',
-      SHOW_ADDRESS: 'Show Address'
+      SHOW_ADDRESS: 'Show Address',
+
+      BUSINESS: {
+        REGISTER: 'Register Business',
+        RESIGN: 'Resign Business',
+        UPDATE: 'Update Business'
+      }
     },
     PENDING_BALANCE: '{amount} including 1 unconfirmed transaction | {amount} including {n} unconfirmed transactions',
     SECOND_PASSPHRASE_ENABLED: 'Second Signature Enabled'
