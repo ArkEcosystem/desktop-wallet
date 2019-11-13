@@ -997,6 +997,11 @@ export default {
       NEW_DELEGATE_RESIGNATION: 'New delegate resignation: {address} registered as {username}',
       NEW_TRANSFER_SENT: 'New transfer: {amount} sent from {sender} to {recipient}',
       NEW_TRANSFER_RECEIVED: 'New transfer: {amount} received from {sender} to {recipient}'
+    },
+    GROUP_2: {
+      NEW_BUSINESS_REGISTRATION: 'New business registration: {address} business {name}',
+      NEW_BUSINESS_RESIGNATION: 'New business resignation: {address} business {name}',
+      NEW_BUSINESS_UPDATE: 'New business update: {address} business {name}'
     }
   },
 

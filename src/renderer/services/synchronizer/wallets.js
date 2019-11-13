@@ -324,6 +324,10 @@ class Action {
         this.displayNewStandardTransaction(transaction, wallet)
         break
       }
+      case TRANSACTION_GROUPS.MAGISTRATE: {
+        this.displayNewMagistrateTransaction(transaction, wallet)
+        break
+      }
     }
   }
 
@@ -434,6 +438,48 @@ class Action {
     }
 
     this.$success(this.$t(message.translation, message.options))
+  }
+
+  // TODO use the eventBus to display transactions
+  displayNewMagistrateTransaction (transaction, wallet) {
+    let message = null
+
+    switch (transaction.type) {
+      case TRANSACTION_TYPES.GROUP_2.BUSINESS_REGISTRATION: {
+        message = {
+          translation: 'SYNCHRONIZER.GROUP_2.NEW_BUSINESS_REGISTRATION',
+          options: {
+            address: truncateMiddle(wallet.address),
+            name: transaction.asset.businessRegistration.name
+          }
+        }
+        break
+      }
+      case TRANSACTION_TYPES.GROUP_2.BUSINESS_RESIGNATION: {
+        message = {
+          translation: 'SYNCHRONIZER.GROUP_2.NEW_BUSINESS_RESIGNATION',
+          options: {
+            address: truncateMiddle(wallet.address),
+            name: transaction.asset.businessRegistration.name
+          }
+        }
+        break
+      }
+      case TRANSACTION_TYPES.GROUP_2.BUSINESS_UPDATE: {
+        message = {
+          translation: 'SYNCHRONIZER.GROUP_2.NEW_BUSINESS_UPDATE',
+          options: {
+            address: truncateMiddle(wallet.address),
+            name: transaction.asset.businessRegistration.name
+          }
+        }
+        break
+      }
+    }
+
+    if (message) {
+      this.$success(this.$t(message.translation, message.options))
+    }
   }
 
   /**
