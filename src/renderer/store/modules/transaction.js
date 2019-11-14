@@ -1,6 +1,6 @@
 import dayjs from 'dayjs'
 import { findIndex, unionBy } from 'lodash'
-import config from '@config'
+import { APP, TRANSACTION_GROUPS, TRANSACTION_TYPES } from '@config'
 import BigNumber from '@/plugins/bignumber'
 import eventBus from '@/plugins/event-bus'
 import TransactionModel from '@/models/transaction'
@@ -157,7 +157,7 @@ export default {
         return
       }
 
-      const votes = transactions.filter(tx => tx.type === config.TRANSACTION_TYPES.GROUP_1.VOTE)
+      const votes = transactions.filter(tx => tx.type === TRANSACTION_TYPES.GROUP_1.VOTE)
       if (!votes.length) {
         return
       }
@@ -201,7 +201,7 @@ export default {
     clearExpired ({ commit, getters, rootGetters }) {
       const expired = []
       const profileId = rootGetters['session/profileId']
-      const threshold = dayjs().subtract(config.APP.transactionExpiryMinutes, 'minute')
+      const threshold = dayjs().subtract(APP.transactionExpiryMinutes, 'minute')
       for (const transaction of getters.byProfileId(profileId)) {
         if (dayjs(transaction.timestamp).isBefore(threshold)) {
           transaction.isExpired = true
@@ -238,7 +238,7 @@ export default {
       if (feesResponse.transfer) {
         staticFees = Object.values(feesResponse)
       } else {
-        for (const group of Object.values(config.TRANSACTION_GROUPS)) {
+        for (const group of Object.values(TRANSACTION_GROUPS)) {
           if (!feesResponse[group]) {
             continue
           }
