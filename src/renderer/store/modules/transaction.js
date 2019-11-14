@@ -82,13 +82,13 @@ export default {
         return null
       }
 
-      if (!state.staticFees[networkId].GROUP_1) {
+      if (state.staticFees[networkId][0]) {
         return state.staticFees[networkId][type]
-      } else if (!state.staticFees[networkId][`GROUP_${group}`]) {
+      } else if (!state.staticFees[networkId][group]) {
         return null
       }
 
-      return state.staticFees[networkId][`GROUP_${group}`][type]
+      return state.staticFees[networkId][group][type]
     }
   },
 
@@ -235,16 +235,16 @@ export default {
     async updateStaticFees ({ commit, rootGetters }) {
       let staticFees = {}
       const feesResponse = await this._vm.$client.fetchStaticFees()
-      if (feesResponse[config.TRANSACTION_GROUPS.STANDARD]) {
+      if (feesResponse.transfer) {
+        staticFees = Object.values(feesResponse)
+      } else {
         for (const group of Object.values(config.TRANSACTION_GROUPS)) {
           if (!feesResponse[group]) {
             continue
           }
 
-          staticFees[group] = feesResponse[group]
+          staticFees[group] = Object.values(feesResponse[group])
         }
-      } else {
-        staticFees = feesResponse
       }
 
       commit('SET_STATIC_FEES', {

@@ -254,7 +254,7 @@ export default class ClientService {
    * @return {Number[]}
    */
   async fetchStaticFees () {
-    const fees = Object.values((await this.client.api('transactions').fees()).body.data)
+    const fees = (await this.client.api('transactions').fees()).body.data
 
     return fees
   }
