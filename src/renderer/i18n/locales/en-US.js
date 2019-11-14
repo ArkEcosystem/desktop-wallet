@@ -863,7 +863,8 @@ export default {
     },
     FOOTER_TEXT: {
       DELEGATE_REGISTRATION: 'Keep in mind that you cannot change the name of your delegate after the registration has been registered on the blockchain.',
-      DELEGATE_RESIGNATION: 'Keep in mind that you cannot restore your delegate after the resignation has been registered on the blockchain.'
+      DELEGATE_RESIGNATION: 'Keep in mind that you cannot restore your delegate after the resignation has been registered on the blockchain.',
+      BUSINESS_RESIGNATION: 'Keep in mind that you cannot restore your business after the resignation has been registered on the blockchain.'
     },
     INFO: {
       BROADCASTING: 'Your transaction is being broadcast to the network',
@@ -883,6 +884,9 @@ export default {
       HTLC_REFUND: 'Timelock Refund created successfully',
       MULTI_PAYMENT: 'Multi payment created successfully',
       DELEGATE_RESIGNATION: 'Delegate resignation was successful',
+      BUSINESS_REGISTRATION: 'Business Registration created successful',
+      BUSINESS_RESIGNATION: 'Business Resignation created successful',
+      BUSINESS_UPDATE: 'Business Update created successful',
       SAVE_OFFLINE: 'The transaction file was saved successfully in: {path}',
       LOAD_FROM_FILE: 'The transaction file was loaded successfully'
     },
@@ -1000,7 +1004,7 @@ export default {
     },
     GROUP_2: {
       NEW_BUSINESS_REGISTRATION: 'New business registration: {address} business {name}',
-      NEW_BUSINESS_RESIGNATION: 'New business resignation: {address} business {name}',
+      NEW_BUSINESS_RESIGNATION: 'New business resignation: {address}',
       NEW_BUSINESS_UPDATE: 'New business update: {address} business {name}'
     }
   },
