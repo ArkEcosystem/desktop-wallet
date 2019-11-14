@@ -154,7 +154,9 @@ export default {
           group: 2,
           type: TRANSACTION_TYPES.GROUP_2.BUSINESS_UPDATE
         })
-      } else if (WalletService.canResignBusiness(this.currentWallet)) {
+      }
+
+      if (WalletService.canResignBusiness(this.currentWallet)) {
         types.push({
           label: this.$t('WALLET_HEADING.ACTIONS.BUSINESS.RESIGN'),
           group: 2,
