@@ -115,12 +115,12 @@ if (!gotTheLock) {
   app.on('second-instance', (_, argv) => {
     // Someone tried to run a second instance, we should focus our window.
     // argv: An array of the second instance’s (command line / deep linked) arguments
-    if (process.platform === 'linux') {
-      deeplinkingUrl = argv[1]
-      broadcastURL(deeplinkingUrl)
-    } else if (process.platform !== 'darwin') {
-      deeplinkingUrl = argv[2]
-      broadcastURL(deeplinkingUrl)
+    for (const arg of argv) {
+      if (arg.startsWith('ark:')) {
+        deeplinkingUrl = arg
+        broadcastURL(deeplinkingUrl)
+        break
+      }
     }
 
     if (mainWindow) {
@@ -131,12 +131,12 @@ if (!gotTheLock) {
     }
   })
 
-  if (process.platform === 'linux') {
-    deeplinkingUrl = process.argv[1]
-    broadcastURL(deeplinkingUrl)
-  } else if (process.platform !== 'darwin') {
-    deeplinkingUrl = process.argv[2]
-    broadcastURL(deeplinkingUrl)
+  for (const arg of process.argv) {
+    if (arg.startsWith('ark:')) {
+      deeplinkingUrl = arg
+      broadcastURL(deeplinkingUrl)
+      break
+    }
   }
 }
 
