@@ -21,7 +21,10 @@
         <div
           v-else-if="data.column.field === 'title'"
         >
-          <span class="whitespace-no-wrap">
+          <span
+            class="whitespace-no-wrap cursor-pointer"
+            @click="emitShowDetails(data.row)"
+          >
             {{ data.row.title | truncate(30) }}
           </span>
         </div>

@@ -29,7 +29,10 @@
 
         <div class="pl-4">
           <div class="flex flex-col justify-center h-20">
-            <span class="text-theme-page-text font-semibold text-lg">
+            <span
+              class="PluginManagerGrid__plugin__name"
+              @click="emitShowDetails(plugin)"
+            >
               {{ plugin.title }}
             </span>
 
@@ -101,6 +104,9 @@ export default {
 }
 .PluginManagerGrid__plugin:last-child {
   @apply pb-0 border-none;
+}
+.PluginManagerGrid__plugin__name {
+  @apply text-theme-page-text font-semibold text-lg cursor-pointer;
 }
 .PluginManagerGrid__plugin__details {
   @apply flex items-center mt-1 text-theme-page-text-light;
