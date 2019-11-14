@@ -23,6 +23,7 @@
       <InputFee
         ref="fee"
         :currency="walletNetwork.token"
+        :transaction-group="$options.transactionGroup"
         :transaction-type="$options.transactionType"
         :show-insufficient-funds="true"
         @input="onFee"
@@ -146,7 +147,7 @@ export default {
     },
 
     async buildTransaction (transactionData, isAdvancedFee = false, returnObject = false) {
-      return this.$client.buildDelegateResignation(transactionData, isAdvancedFee, returnObject)
+      return this.$client.buildBusinessResignation(transactionData, isAdvancedFee, returnObject)
     },
 
     transactionError () {
