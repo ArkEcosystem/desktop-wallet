@@ -18,19 +18,26 @@ export default {
     }
   },
 
-  data: (vm) => ({
+  data: () => ({
     form: {
       fee: 0,
       passphrase: '',
       walletPassword: '',
       asset: {
-        name: vm.wallet_fromRoute.business.name,
-        website: vm.wallet_fromRoute.business.website,
-        vat: vm.wallet_fromRoute.business.vat,
-        repository: vm.wallet_fromRoute.business.repository
+        name: '',
+        website: '',
+        vat: '',
+        repository: ''
       }
     }
   }),
+
+  mounted () {
+    this.form.asset.name = this.wallet_fromRoute.business.name
+    this.form.asset.website = this.wallet_fromRoute.business.website
+    this.form.asset.vat = this.wallet_fromRoute.business.vat
+    this.form.asset.repository = this.wallet_fromRoute.business.repository
+  },
 
   methods: {
     async buildTransaction (transactionData, isAdvancedFee = false, returnObject = false) {
