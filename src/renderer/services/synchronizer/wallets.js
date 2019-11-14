@@ -468,8 +468,7 @@ class Action {
         message = {
           translation: 'SYNCHRONIZER.GROUP_2.NEW_BUSINESS_RESIGNATION',
           options: {
-            address: truncateMiddle(wallet.address),
-            name: transaction.asset.businessRegistration.name
+            address: truncateMiddle(wallet.address)
           }
         }
         break
@@ -479,7 +478,7 @@ class Action {
           translation: 'SYNCHRONIZER.GROUP_2.NEW_BUSINESS_UPDATE',
           options: {
             address: truncateMiddle(wallet.address),
-            name: transaction.asset.businessRegistration.name
+            name: transaction.asset.businessUpdate.name
           }
         }
         break
