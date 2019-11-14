@@ -483,6 +483,36 @@ class Action {
         }
         break
       }
+      case TRANSACTION_TYPES.GROUP_2.BRIDGECHAIN_REGISTRATION: {
+        message = {
+          translation: 'SYNCHRONIZER.GROUP_2.NEW_BRIDGECHAIN_REGISTRATION',
+          options: {
+            address: truncateMiddle(wallet.address),
+            name: transaction.asset.bridgechainRegistration.name
+          }
+        }
+        break
+      }
+      case TRANSACTION_TYPES.GROUP_2.BRIDGECHAIN_RESIGNATION: {
+        message = {
+          translation: 'SYNCHRONIZER.GROUP_2.NEW_BRIDGECHAIN_RESIGNATION',
+          options: {
+            address: truncateMiddle(wallet.address),
+            name: transaction.asset.bridgechainRegistration.name
+          }
+        }
+        break
+      }
+      case TRANSACTION_TYPES.GROUP_2.BRIDGECHAIN_UPDATE: {
+        message = {
+          translation: 'SYNCHRONIZER.GROUP_2.NEW_BRIDGECHAIN_UPDATE',
+          options: {
+            address: truncateMiddle(wallet.address),
+            name: transaction.asset.bridgechainRegistration.name
+          }
+        }
+        break
+      }
     }
 
     if (message) {

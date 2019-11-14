@@ -16,6 +16,9 @@ import WalletService from '@/services/wallet'
 Transactions.TransactionRegistry.registerTransactionType(MagistrateCrypto.Transactions.BusinessRegistrationTransaction)
 Transactions.TransactionRegistry.registerTransactionType(MagistrateCrypto.Transactions.BusinessResignationTransaction)
 Transactions.TransactionRegistry.registerTransactionType(MagistrateCrypto.Transactions.BusinessUpdateTransaction)
+Transactions.TransactionRegistry.registerTransactionType(MagistrateCrypto.Transactions.BridgechainRegistrationTransaction)
+Transactions.TransactionRegistry.registerTransactionType(MagistrateCrypto.Transactions.BridgechainResignationTransaction)
+Transactions.TransactionRegistry.registerTransactionType(MagistrateCrypto.Transactions.BridgechainUpdateTransaction)
 
 export default class ClientService {
   /*
@@ -289,6 +292,15 @@ export default class ClientService {
       transactions,
       totalCount
     }
+  }
+
+  /**
+   * Fetch bridgechains for a business.
+   * @param  {(Number|String)} businessId
+   * @return {Object}
+   */
+  async fetchBusinessBridgechains (businessId) {
+    return this.client.api('businesses').bridgechains(businessId)
   }
 
   /**

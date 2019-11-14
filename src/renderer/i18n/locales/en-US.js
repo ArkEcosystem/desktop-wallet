@@ -141,6 +141,7 @@ export default {
     TOO_LONG: 'The \'{0}\' is too long',
     TOO_SHORT: 'The \'{0}\' is too short',
     INVALID_URI: 'Invalid URI',
+    INVALID_URL: 'Invalid URL',
     INVALID_FORMAT: 'Invalid format',
     INVALID_TYPE: 'Invalid type',
     MAX_LENGTH: 'Max {0}',
@@ -824,7 +825,10 @@ export default {
       HTLC_REFUND: 'Timelock Refund',
       BUSINESS_REGISTRATION: 'Business Registration',
       BUSINESS_RESIGNATION: 'Business Resignation',
-      BUSINESS_UPDATE: 'Business Update'
+      BUSINESS_UPDATE: 'Business Update',
+      BRIDGECHAIN_REGISTRATION: 'Bridgechain Registration',
+      BRIDGECHAIN_RESIGNATION: 'Bridgechain Resignation',
+      BRIDGECHAIN_UPDATE: 'Bridgechain Update'
     },
     ERROR: {
       VALIDATION: {
@@ -918,6 +922,15 @@ export default {
       },
       YOUR_SIGNATURE: 'Your Signature'
     },
+    BRIDGECHAIN: {
+      BUTTON_ADD: 'Add',
+      NAME: 'Name',
+      SEED_NODE: 'Seed Node',
+      SEED_NODES: 'Seed Nodes',
+      GENESIS_HASH: 'Genesis Hash',
+      BRIDGECHAIN_REPOSITORY: 'Bridgechain Repository',
+      ERROR_DUPLICATE: 'The seed node has already been added'
+    },
     WARNING: {
       BROADCAST: 'Transaction was broadcasted to other peers. It may not be accepted by them'
     },
@@ -1005,7 +1018,10 @@ export default {
     GROUP_2: {
       NEW_BUSINESS_REGISTRATION: 'New business registration: {address} business {name}',
       NEW_BUSINESS_RESIGNATION: 'New business resignation: {address}',
-      NEW_BUSINESS_UPDATE: 'New business update: {address} business {name}'
+      NEW_BUSINESS_UPDATE: 'New business update: {address} business {name}',
+      NEW_BRIDGECHAIN_REGISTRATION: 'New bridgechain registration: {address} bridgechain {name}',
+      NEW_BRIDGECHAIN_RESIGNATION: 'New bridgechain resignation: {address} bridgechain {name}',
+      NEW_BRIDGECHAIN_UPDATE: 'New bridgechain update: {address} bridgechain {name}'
     }
   },
 
@@ -1035,6 +1051,12 @@ export default {
         REGISTER: 'Register Business',
         RESIGN: 'Resign Business',
         UPDATE: 'Update Business'
+      },
+
+      BRIDGECHAIN: {
+        REGISTER: 'Register Bridgechain',
+        RESIGN: 'Resign Bridgechain',
+        UPDATE: 'Update Bridgechain'
       }
     },
     PENDING_BALANCE: '{amount} including 1 unconfirmed transaction | {amount} including {n} unconfirmed transactions',
@@ -1118,11 +1140,22 @@ export default {
   },
 
   WALLET_BUSINESS: {
+    BUTTON_REGISTER_BRIDGECHAIN: 'Register Bridgechain',
+    HEADER: 'Bridgechains',
+    DESCRIPTION: 'All bridgechains registered for this business',
     NAME: 'Name',
     NAME_ERROR: 'No special characters or uppercase allowed',
     WEBSITE: 'Website',
     VAT: 'VAT',
-    REPOSITORY: 'Repository'
+    REPOSITORY: 'Repository',
+    NO_TRANSACTIONS: 'This wallet has no bridgechains',
+    COLUMN: {
+      ID: 'ID',
+      NAME: 'Name',
+      SEEDS: 'Seeds',
+      GENESIS_HASH: 'Genesis Hash',
+      REPO: 'Git Repository'
+    }
   },
 
   WALLET_GRID: {
