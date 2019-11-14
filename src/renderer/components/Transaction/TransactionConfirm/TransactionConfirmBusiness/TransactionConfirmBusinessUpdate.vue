@@ -11,25 +11,25 @@
     </ListDividedItem>
 
     <ListDividedItem :label="$t('WALLET_BUSINESS.NAME')">
-      {{ transaction.asset.bridgechainUpdate.name }}
+      {{ transaction.asset.businessUpdate.name }}
     </ListDividedItem>
 
     <ListDividedItem :label="$t('WALLET_BUSINESS.WEBSITE')">
-      {{ transaction.asset.bridgechainUpdate.website }}
+      {{ transaction.asset.businessUpdate.website }}
     </ListDividedItem>
 
     <ListDividedItem
-      v-if="transaction.asset.bridgechainUpdate.vat"
+      v-if="transaction.asset.businessUpdate.vat"
       :label="$t('WALLET_BUSINESS.VAT')"
     >
-      {{ transaction.asset.bridgechainUpdate.vat }}
+      {{ transaction.asset.businessUpdate.vat }}
     </ListDividedItem>
 
     <ListDividedItem
-      v-if="transaction.asset.bridgechainUpdate.repository"
+      v-if="transaction.asset.businessUpdate.repository"
       :label="$t('WALLET_BUSINESS.REPOSITORY')"
     >
-      {{ transaction.asset.bridgechainUpdate.repository }}
+      {{ transaction.asset.businessUpdate.repository }}
     </ListDividedItem>
   </ListDivided>
 </template>
