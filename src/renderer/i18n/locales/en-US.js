@@ -1117,6 +1117,14 @@ export default {
     BUTTON_SET_PEER: 'Set Peer'
   },
 
+  WALLET_BUSINESS: {
+    NAME: 'Name',
+    NAME_ERROR: 'No special characters or uppercase allowed',
+    WEBSITE: 'Website',
+    VAT: 'VAT',
+    REPOSITORY: 'Repository'
+  },
+
   WALLET_GRID: {
     LOADING_LEDGER: 'Loading Ledger wallets...'
   },
