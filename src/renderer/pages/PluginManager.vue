@@ -341,9 +341,13 @@ export default {
 
       await this.$plugins.fetchPlugin(pluginPath, this.isUpdate)
 
-      this.$success(this.$t(`PAGES.PLUGIN_MANAGER.SUCCESS.${this.isUpdate ? 'UPDATE' : 'INSTALLATION'}`, {
-        plugin: pluginId
-      }))
+      const message = this.$root.$t(
+        `PAGES.PLUGIN_MANAGER.SUCCESS.${this.isUpdate ? 'UPDATE' : 'INSTALLATION'}`, {
+          plugin: pluginId
+        }
+      )
+
+      this.$success(message)
 
       this.resetModal()
     })
