@@ -552,7 +552,7 @@ export default class ClientService {
    * @param {Boolean} returnObject - to return the transaction of its internal struct
    * @returns {Object}
    */
-  async buildTransfer ({ amount, fee, recipientId, vendorField, passphrase, secondPassphrase, wif, networkWif }, isAdvancedFee = false, returnObject = false) {
+  async buildTransfer ({ amount, fee, recipientId, vendorField, passphrase, secondPassphrase, wif, networkWif, networkId }, isAdvancedFee = false, returnObject = false) {
     const staticFee = store.getters['transaction/staticFee'](TRANSACTION_TYPES.TRANSFER)
     if (!isAdvancedFee && fee.gt(staticFee)) {
       throw new Error(`Transfer fee should be smaller than ${staticFee}`)
@@ -574,7 +574,8 @@ export default class ClientService {
       passphrase,
       secondPassphrase,
       wif,
-      networkWif
+      networkWif,
+      networkId
     }, returnObject)
   }
 
@@ -616,11 +617,13 @@ export default class ClientService {
    * @param {String} data.passphrase
    * @param {String} data.secondPassphrase
    * @param {String} data.wif
+   * @param {String} data.networkWif
+   * @param {String} data.networkId
    * @param {Boolean} returnObject - to return the transaction of its internal struct
    * @returns {Object}
    */
-  __signTransaction ({ transaction, passphrase, secondPassphrase, wif, networkWif }, returnObject = false) {
-    const network = store.getters['session/network']
+  __signTransaction ({ transaction, passphrase, secondPassphrase, wif, networkWif, networkId }, returnObject = false) {
+    const network = store.getters['network/byId'](networkId) || store.getters['session/network']
     transaction = transaction.network(network.version)
 
     // TODO replace with dayjs
@@ -628,14 +631,18 @@ export default class ClientService {
     const now = moment().valueOf()
     transaction.data.timestamp = Math.floor((now - epochTime) / 1000)
 
-    if (passphrase) {
-      transaction = transaction.sign(this.normalizePassphrase(passphrase))
-    } else if (wif) {
-      transaction = transaction.signWithWif(wif, networkWif)
-    }
+    try {
+      if (passphrase) {
+        transaction = transaction.sign(this.normalizePassphrase(passphrase))
+      } else if (wif) {
+        transaction = transaction.signWithWif(wif, networkWif)
+      }
 
-    if (secondPassphrase) {
-      transaction = transaction.secondSign(this.normalizePassphrase(secondPassphrase))
+      if (secondPassphrase) {
+        transaction = transaction.secondSign(this.normalizePassphrase(secondPassphrase))
+      }
+    } catch (error) {
+      //
     }
 
     return returnObject ? transaction : transaction.getStruct()
