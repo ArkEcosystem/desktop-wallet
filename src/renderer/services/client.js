@@ -1063,7 +1063,7 @@ export default class ClientService {
     }
 
     const transaction = new MagistrateCrypto.Builders.BusinessUpdateBuilder()
-      .businessRegistrationAsset(businessAsset)
+      .businessUpdateAsset(businessAsset)
       .fee(fee)
 
     passphrase = this.normalizePassphrase(passphrase)
