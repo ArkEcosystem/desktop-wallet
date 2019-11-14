@@ -65,10 +65,12 @@ const staticFeeResponses = {
       delegateRegistration: 2500000000,
       vote: 100000000,
       multiSignature: 500000000,
-      ipfs: 0,
-      timelockTransfer: 0,
-      multiPayment: 0,
-      delegateResignation: 0
+      ipfs: 500000000,
+      multiPayment: 100000000,
+      delegateResignation: 2500000000,
+      htlcLock: 100000000,
+      htlcClaim: 100000000,
+      htlcRefund: 100000000
     }
   }
 }
