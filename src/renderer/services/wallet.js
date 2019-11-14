@@ -123,7 +123,7 @@ export default class WalletService {
       return !!wallet.business.name
     }
 
-    return !wallet.business.isResigned
+    return !wallet.business.resigned
   }
 
   /**
@@ -136,7 +136,7 @@ export default class WalletService {
       return false
     }
 
-    return !wallet.business.isResigned
+    return !wallet.business.resigned
   }
 
   /**
