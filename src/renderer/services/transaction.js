@@ -29,12 +29,16 @@ export default class TransactionService {
    * @param  {Object} transaction
    * @return {String}
    */
-  static getAmount (vm, transaction) {
+  static getAmount (vm, transaction, includeFee = false) {
     const amount = vm.currency_toBuilder(transaction.amount)
     if (transaction.asset && transaction.asset.payments) {
       for (const payment of transaction.asset.payments) {
         amount.add(payment.amount)
       }
+    }
+
+    if (includeFee) {
+      amount.add(transaction.fee)
     }
 
     return amount.value
