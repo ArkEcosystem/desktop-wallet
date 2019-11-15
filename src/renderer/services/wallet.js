@@ -184,6 +184,8 @@ export default class WalletService {
   }
 
   /**
+   * TODO: Is this necessary? A passphrase is always valid as long as it's a string.
+   *
    * Check that a passphrase is valid.
    * @param {String} passhrase
    * @param {Number} pubKeyHash - also known as address or network version
