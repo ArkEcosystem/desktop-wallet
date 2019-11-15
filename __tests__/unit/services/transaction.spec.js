@@ -1,10 +1,19 @@
 import { Crypto, Identities, Managers, Transactions } from '@arkecosystem/crypto'
 import TransactionService from '@/services/transaction'
 import transactionFixture from '../__fixtures__/models/transaction'
+import currencyMixin from '@/mixins/currency'
 
 const recipientAddress = Identities.Address.fromPassphrase('recipient passphrase')
 const senderPassphrase = 'sender passphrase'
 const senderPublicKey = Identities.PublicKey.fromPassphrase(senderPassphrase)
+
+const mockVm = {
+  currency_toBuilder: (value) => {
+    return currencyMixin.methods.currency_toBuilder(value, {
+      fractionDigits: 8
+    })
+  }
+}
 
 describe('Services > Transaction', () => {
   describe('getId', () => {
@@ -48,6 +57,54 @@ describe('Services > Transaction', () => {
       transaction.multiSign(passphrase, 0)
 
       expect(TransactionService.getHash(transaction.getStruct(), false).toString('hex')).not.toBe(hash)
+    })
+  })
+
+  describe('getAmount', () => {
+    describe('standard transaction', () => {
+      let transaction
+      beforeEach(() => {
+        transaction = Transactions.BuilderFactory
+          .transfer()
+          .amount('100000000')
+          .fee('10000000')
+          .recipientId(recipientAddress)
+          .sign('passphrase')
+          .build()
+          .toJson()
+      })
+
+      it('should get correct amount with fee', () => {
+        expect(TransactionService.getAmount(mockVm, transaction, true).toFixed()).toEqual('110000000')
+      })
+
+      it('should get correct amount without fee', () => {
+        expect(TransactionService.getAmount(mockVm, transaction).toFixed()).toEqual('100000000')
+      })
+    })
+
+    describe('multi-payment transaction', () => {
+      let transaction
+      beforeEach(() => {
+        transaction = Transactions.BuilderFactory
+          .multiPayment()
+          .addPayment(Identities.Address.fromPassphrase('recipient 1'), '100000000')
+          .addPayment(Identities.Address.fromPassphrase('recipient 2'), '100000000')
+          .addPayment(Identities.Address.fromPassphrase('recipient 3'), '100000000')
+          .fee('10000000')
+          .recipientId(recipientAddress)
+          .sign('passphrase')
+          .build()
+          .toJson()
+      })
+
+      it('should get correct amount with fee', () => {
+        expect(TransactionService.getAmount(mockVm, transaction, true).toFixed()).toEqual('310000000')
+      })
+
+      it('should get correct amount without fee', () => {
+        expect(TransactionService.getAmount(mockVm, transaction).toFixed()).toEqual('300000000')
+      })
     })
   })
 
