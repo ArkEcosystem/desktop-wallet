@@ -63,7 +63,7 @@ export default {
     timeFormat: state => state.timeFormat,
     hideWalletButtonText: state => state.hideWalletButtonText,
     isMarketChartEnabled: state => state.isMarketChartEnabled,
-    marketChartOptions: state => state.marketChartOptions,
+    marketChartOptions: state => ({ ...state.marketChartOptions }),
     theme: state => state.theme,
     pluginManagerLayout: state => state.pluginManagerLayout,
     walletLayout: state => state.walletLayout,
