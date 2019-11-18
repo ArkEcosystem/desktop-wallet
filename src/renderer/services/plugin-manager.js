@@ -15,6 +15,7 @@ import { PluginConfiguration } from './plugin-manager/plugin-configuration'
 import { PluginSandbox } from './plugin-manager/plugin-sandbox'
 import { PluginSetup } from './plugin-manager/plugin-setup'
 import { validatePluginPath } from './plugin-manager/utils/validate-plugin-path'
+import validatePackageName from 'validate-npm-package-name'
 
 let rootPath = path.resolve(__dirname, '../../../')
 if (process.env.NODE_ENV === 'production') {
@@ -193,7 +194,17 @@ export class PluginManager {
         }
       }
 
-      if (!plugin.minVersion || semver.gte(releaseService.currentVersion, plugin.minVersion)) {
+      const validName = validatePackageName(plugin.id).validForNewPackages
+      if (!validName) {
+        console.info(`${plugin.id} is not a valid package name`)
+      }
+
+      const minVersionSatisfied = !plugin.minVersion || semver.gte(releaseService.currentVersion, plugin.minVersion)
+      if (!minVersionSatisfied) {
+        console.info(`${plugin.id} requires a higher wallet version`)
+      }
+
+      if (validName && minVersionSatisfied) {
         return plugin
       }
     }))
