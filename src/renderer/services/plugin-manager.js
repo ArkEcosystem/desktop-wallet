@@ -267,6 +267,12 @@ export class PluginManager {
       throw new Error(`Plugin '${pluginConfig.id}' has already been loaded`)
     }
 
+    try {
+      pluginConfig.logo = fs.readFileSync(`${pluginPath}/logo.png`).toString('base64')
+    } catch (error) {
+      console.info(`Plugin '${pluginConfig.id}' has no logo, falling back to identicon`)
+    }
+
     const fullPath = pluginPath.substring(0, 1) === '/' ? pluginPath : path.resolve(pluginPath)
 
     await this.app.$store.dispatch('plugin/setInstalled', {

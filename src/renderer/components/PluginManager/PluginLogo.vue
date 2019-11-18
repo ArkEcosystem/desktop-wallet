@@ -3,7 +3,13 @@
     class="PluginLogo"
     :style="{ height: `${size}px`, width: `${size}px` }"
   >
+    <img
+      v-if="plugin.logo"
+      :src="`data:image/png;base64,${plugin.logo}`"
+    >
+
     <PluginIdenticon
+      v-else
       :value="plugin.id"
       :size="size"
       shape="square"
