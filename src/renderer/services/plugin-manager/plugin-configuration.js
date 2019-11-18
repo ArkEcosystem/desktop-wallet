@@ -3,10 +3,10 @@ import {
   sanitizeCategories,
   sanitizeIsOfficial,
   sanitizeMinVersion,
-  sanitizeName,
   sanitizePermissions,
   sanitizeSize,
   sanitizeSource,
+  sanitizeTitle,
   sanitizeUrls
 } from './config-sanitizers'
 
@@ -53,7 +53,7 @@ export class PluginConfiguration {
       permissions: sanitizePermissions(config),
       size: await sanitizeSize(config, pluginPath) || 0,
       source: sanitizeSource(config),
-      title: config.title || sanitizeName(config.name),
+      title: sanitizeTitle(config),
       urls: sanitizeUrls(config),
       version: config.version
     })

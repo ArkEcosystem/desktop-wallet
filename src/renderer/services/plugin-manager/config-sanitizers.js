@@ -3,6 +3,7 @@ import { PLUGINS } from '@config'
 import du from 'du'
 import parse from 'parse-author'
 import semver from 'semver'
+import titlecase from 'titlecase'
 
 const getOption = (config, option) => {
   try {
@@ -75,10 +76,10 @@ const sanitizeMinVersion = config => {
 
 const sanitizeName = name => {
   const parts = name.split('/')
-  return parts[parts.length ? 1 : 0]
+  const tmp = parts[parts.length ? 1 : 0]
     .split('-')
-    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
     .join(' ')
+  return titlecase(tmp)
 }
 
 const sanitizePermissions = config => {
@@ -115,6 +116,10 @@ const sanitizeSource = config => {
   return null
 }
 
+const sanitizeTitle = config => {
+  return config.title ? titlecase(config.title) : sanitizeName(config.name)
+}
+
 const sanitizeUrls = config => {
   return getOption(config, 'urls') || config.urls || []
 }
@@ -128,5 +133,6 @@ export {
   sanitizePermissions,
   sanitizeSize,
   sanitizeSource,
+  sanitizeTitle,
   sanitizeUrls
 }
