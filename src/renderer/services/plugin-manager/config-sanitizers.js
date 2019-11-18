@@ -2,6 +2,7 @@ import { difference, intersection, uniq } from 'lodash'
 import { PLUGINS } from '@config'
 import du from 'du'
 import parse from 'parse-author'
+import semver from 'semver'
 
 const getOption = (config, option) => {
   try {
@@ -63,7 +64,13 @@ const sanitizeCategories = config => {
 }
 
 const sanitizeMinVersion = config => {
-  return getOption(config, 'minVersion') || config.minVersion || null
+  const minVersion = getOption(config, 'minVersion') || config.minVersion || null
+
+  if (minVersion) {
+    return semver.clean(minVersion)
+  }
+
+  return null
 }
 
 const sanitizeName = name => {
