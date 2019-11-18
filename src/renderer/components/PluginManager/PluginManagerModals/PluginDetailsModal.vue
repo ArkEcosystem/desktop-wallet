@@ -108,18 +108,18 @@
         <div>
           <span>{{ $t('COMMON.URL') }}</span>
           <button
+            v-if="homepageLink"
             class="flex items-center text-blue hover:underline"
-            :disabled="!homepageLink"
             @click.stop="openExternal(plugin.homepage)"
           >
-            {{ homepageLink || 'n.a.' }}
+            {{ homepageLink }}
             <SvgIcon
-              v-if="homepageLink"
               name="open-external"
               view-box="0 0 12 12"
               class="text-theme-page-text-light ml-1"
             />
           </button>
+          <span v-else>n.a.</span>
         </div>
         <div>
           <span>{{ $t('COMMON.SIZE') }}</span>
