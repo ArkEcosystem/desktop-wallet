@@ -180,12 +180,23 @@ export class PluginManager {
     let configs = await this.adapter.all()
 
     configs = await Promise.all(configs.map(async config => {
-      return PluginConfiguration.sanitize(config)
-    }))
+      const plugin = await PluginConfiguration.sanitize(config)
 
-    configs = configs.filter(plugin => {
-      return !plugin.minVersion || semver.gte(releaseService.currentVersion, plugin.minVersion)
-    })
+      if (config.homepage) {
+        const { owner, repository, branch } = this.parsePluginUrl(config.homepage.split('#')[0])
+
+        try {
+          const { body } = await got(`https://raw.githubusercontent.com/${owner}/${repository}/${branch}/logo.png`, { encoding: null })
+          plugin.logo = body.toString('base64')
+        } catch (error) {
+          console.info(`Plugin '${plugin.id}' has no logo, falling back to identicon`)
+        }
+      }
+
+      if (!plugin.minVersion || semver.gte(releaseService.currentVersion, plugin.minVersion)) {
+        return plugin
+      }
+    }))
 
     const plugins = configs.reduce((plugins, config) => {
       plugins[config.id] = { config }
@@ -195,20 +206,29 @@ export class PluginManager {
     this.app.$store.dispatch('plugin/setAvailable', plugins)
   }
 
-  async fetchPluginFromUrl (url) {
-    const matches = /https?:\/\/github.com\/([A-Za-z0-9_.-]+)\/([A-Za-z0-9_.-]+)\/archive\/([A-Za-z0-9/_.-]+)\./.exec(url)
+  parsePluginUrl (url) {
+    const matches = /https?:\/\/github.com\/([A-Za-z0-9_.-]+)\/([A-Za-z0-9_.-]+)[/]?$/.exec(url)
 
     if (!matches) {
       throw new Error('invalid url')
     }
 
-    const owner = matches[1]
-    const repository = matches[2]
-    const branch = matches[3]
+    return {
+      owner: matches[1],
+      repository: matches[2],
+      branch: 'master'
+    }
+  }
+
+  async fetchPluginFromUrl (url) {
+    const { owner, repository, branch } = this.parsePluginUrl(url)
 
     const { body } = await got(`https://raw.githubusercontent.com/${owner}/${repository}/${branch}/package.json`, { json: true })
 
-    return PluginConfiguration.sanitize(body)
+    const plugin = await PluginConfiguration.sanitize(body)
+    plugin.source = `https://github.com/${owner}/${repository}/archive/${branch}.zip`
+
+    return plugin
   }
 
   async fetchPlugins (force = false) {

@@ -63,12 +63,12 @@ export default {
           return this.$t('VALIDATION.URL.INVALID')
         }
 
-        if (!this.$v.form.url.isAllowed) {
-          return this.$t('VALIDATION.URL.NOT_ALLOWED')
+        if (!this.$v.form.url.isGitHubUrl) {
+          return this.$t('VALIDATION.URL.NOT_GITHUB')
         }
 
-        if (!this.$v.form.url.isArchive) {
-          return this.$t('VALIDATION.URL.NO_ARCHIVE')
+        if (!this.$v.form.url.isAllowed) {
+          return this.$t('VALIDATION.URL.INVALID')
         }
       }
 
@@ -91,11 +91,12 @@ export default {
       url: {
         required,
         url,
-        isAllowed (value) {
+        isGitHubUrl (value) {
           return /github\.com/.test(value.toLowerCase())
         },
-        isArchive (value) {
-          return /\.zip$/.test(value.toLowerCase())
+        isAllowed (value) {
+          const regex = RegExp('/github.com/([A-Za-z0-9_.-]+)/([A-Za-z0-9_.-]+)[/]?$')
+          return regex.test(value.toLowerCase())
         }
       }
     }

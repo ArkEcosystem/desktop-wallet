@@ -435,8 +435,6 @@ export default {
           }))
           this.resetModal()
         } else {
-          plugin.source = url
-
           this.selectedPlugin = plugin
           this.openPermissionsModal('url')
         }

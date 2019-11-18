@@ -172,8 +172,7 @@ export default {
     },
     URL: {
       INVALID: 'Invalid \'URL\'',
-      NOT_ALLOWED: 'Only URLs containgin \'github.com\' are allowed',
-      NO_ARCHIVE: 'The \'URL\' must point to a ZIP archive'
+      NOT_GITHUB: 'Only URLs containing \'github.com\' are allowed'
     },
     VENDOR_FIELD: {
       LIMIT_REACHED: 'You can enter a maximum of {0} characters only',
