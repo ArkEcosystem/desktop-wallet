@@ -435,8 +435,7 @@ export default {
           }))
           this.resetModal()
         } else {
-          this.selectedPlugin = plugin
-          this.openPermissionsModal('url')
+          this.openDetailsModal(plugin)
         }
       } catch (error) {
         this.$error(this.$t('COMMON.FAILED_FETCH', {

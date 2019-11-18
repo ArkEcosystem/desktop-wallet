@@ -234,10 +234,18 @@ export class PluginManager {
   async fetchPluginFromUrl (url) {
     const { owner, repository, branch } = this.parsePluginUrl(url)
 
-    const { body } = await got(`https://raw.githubusercontent.com/${owner}/${repository}/${branch}/package.json`, { json: true })
+    const baseUrl = `https://raw.githubusercontent.com/${owner}/${repository}/${branch}`
+    const { body } = await got(`${baseUrl}/package.json`, { json: true })
 
     const plugin = await PluginConfiguration.sanitize(body)
     plugin.source = `https://github.com/${owner}/${repository}/archive/${branch}.zip`
+
+    try {
+      const { body } = await got(`${baseUrl}/logo.png`, { encoding: null })
+      plugin.logo = body.toString('base64')
+    } catch (error) {
+      console.info(`Plugin '${plugin.id}' has no logo, falling back to identicon`)
+    }
 
     return plugin
   }

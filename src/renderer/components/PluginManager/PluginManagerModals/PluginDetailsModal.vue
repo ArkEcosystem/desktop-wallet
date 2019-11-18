@@ -124,7 +124,7 @@
         <div>
           <span>{{ $t('COMMON.SIZE') }}</span>
           <span class="whitespace-no-wrap">
-            {{ formatter_bytes(plugin.size) }}
+            {{ plugin.size ? formatter_bytes(plugin.size) : 'n.a.' }}
           </span>
         </div>
         <div>
