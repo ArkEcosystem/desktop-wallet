@@ -1,5 +1,5 @@
 <template>
-  <div class="relative">
+  <div class="Identicon__wrapper">
     <div
       :style="{ height: `${size}px`, width: `${size}px` }"
       class="Identicon select-none"
@@ -221,6 +221,11 @@ export default {
 </script>
 
 <style>
+.Identicon__wrapper {
+  @apply relative;
+  font-size: 0;
+}
+
 .Identicon {
   overflow: hidden;
   padding: 0px;
