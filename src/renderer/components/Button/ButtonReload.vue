@@ -1,31 +1,36 @@
 <template>
-  <button
+  <span
     v-tooltip="{
       content: tooltipContent,
       trigger: 'hover',
+      hideOnTargetClick: false,
       ...(tooltipPlacement && { placement: tooltipPlacement })
     }"
-    :class="[
-      withoutBackground ? 'hover:bg-transparent' : `py-2 px-4 rounded ${colorClass ? colorClass : 'bg-theme-button-light text-theme-button-light-text'}`
-    ]"
-    class="ButtonReload cursor-pointer inline-flex items-center self-stretch"
-    :disabled="isRefreshing"
-    @click="emitClick"
+    class="flex items-center"
   >
-    <span v-if="text.length && !isRefreshing">
-      {{ text }}
-    </span>
-    <SvgIcon
-      v-else
+    <button
       :class="[
-        isRefreshing ? 'rotate-360' : '',
-        textClass
+        withoutBackground ? 'hover:bg-transparent' : `py-2 px-4 rounded ${colorClass ? colorClass : 'bg-theme-button-light text-theme-button-light-text'}`
       ]"
-      class="mx-1"
-      name="update"
-      :view-box="viewBox"
-    />
-  </button>
+      class="ButtonReload cursor-pointer inline-flex items-center self-stretch"
+      :disabled="isRefreshing"
+      @click="emitClick"
+    >
+      <span v-if="text.length && !isRefreshing">
+        {{ text }}
+      </span>
+      <SvgIcon
+        v-else
+        :class="[
+          isRefreshing ? 'rotate-360' : '',
+          textClass
+        ]"
+        class="mx-1"
+        name="update"
+        :view-box="viewBox"
+      />
+    </button>
+  </span>
 </template>
 
 <script>
