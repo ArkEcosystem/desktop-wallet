@@ -335,13 +335,13 @@ export default {
     },
 
     async setPluginOption ({ commit, getters, rootGetters }, data) {
-      if (!getters.isEnabled(data.pluginId, data.profileId)) {
+      if (data.profileId !== 'global' && !getters.isEnabled(data.pluginId, data.profileId)) {
         throw new Error('Plugin is not enabled')
       }
 
       commit('SET_PLUGIN_OPTION', {
         pluginId: data.pluginId,
-        profileId: rootGetters['session/profileId'],
+        profileId: data.profileId === 'global' ? 'global' : rootGetters['session/profileId'],
         key: data.key,
         value: data.value
       })
