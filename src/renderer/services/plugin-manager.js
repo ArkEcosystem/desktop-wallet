@@ -158,7 +158,7 @@ export class PluginManager {
   // TODO hook to clean up and restore or reset values
   async disablePlugin (pluginId, profileId) {
     if (!this.hasInit) {
-      throw new Error('Plugin Manager not initiated')
+      throw new errors.NotInitiatedError()
     }
 
     const plugin = this.plugins[pluginId]
@@ -237,7 +237,14 @@ export class PluginManager {
     const baseUrl = `https://raw.githubusercontent.com/${owner}/${repository}/${branch}`
     const { body } = await got(`${baseUrl}/package.json`, { json: true })
 
-    const plugin = await PluginConfiguration.sanitize(body)
+    let plugin
+
+    try {
+      plugin = await PluginConfiguration.sanitize(body)
+    } catch (error) {
+      throw new errors.PluginConfigError()
+    }
+
     plugin.source = `https://github.com/${owner}/${repository}/archive/${branch}.zip`
 
     try {
@@ -303,7 +310,7 @@ export class PluginManager {
     const pluginConfig = await PluginConfiguration.sanitize(packageJson, pluginPath)
 
     if (this.plugins[pluginConfig.id] && !isUpdate) {
-      throw new Error(`Plugin '${pluginConfig.id}' has already been loaded`)
+      throw new errors.PluginAlreadyLoadedError(pluginConfig.id)
     }
 
     try {
