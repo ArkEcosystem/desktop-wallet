@@ -42,11 +42,11 @@ export default {
       return rootGetters['profile/byId'](state.profileId)
     },
     network (state, getters, __, rootGetters) {
-      if (!getters['profile']) {
+      if (!getters.profile) {
         return
       }
 
-      const { networkId } = getters['profile']
+      const { networkId } = getters.profile
       let network = rootGetters['network/byId'](networkId)
 
       if (!network) {
@@ -60,11 +60,11 @@ export default {
     timeFormat: state => state.timeFormat,
     hideWalletButtonText: state => state.hideWalletButtonText,
     isMarketChartEnabled: state => state.isMarketChartEnabled,
-    marketChartOptions: state => state.marketChartOptions,
+    marketChartOptions: state => ({ ...state.marketChartOptions }),
     theme: state => state.theme,
     walletLayout: state => state.walletLayout,
-    walletSidebarSortParams: state => state.walletSidebarSortParams,
-    walletSidebarFilters: state => state.walletSidebarFilters,
+    walletSidebarSortParams: state => ({ ...state.walletSidebarSortParams }),
+    walletSidebarFilters: state => ({ ...state.walletSidebarFilters }),
     walletSortParams: state => state.walletSortParams,
     contactSortParams: state => state.contactSortParams,
     pluginSortParams: state => state.pluginSortParams,
@@ -366,7 +366,7 @@ export default {
     },
 
     setLastFeeByType ({ commit, getters }, { fee, type }) {
-      const fees = getters['lastFees']
+      const fees = getters.lastFees
       fees[type] = fee
 
       commit('SET_LAST_FEES', fees)

@@ -37,7 +37,7 @@ export default {
 
     isEnabled: (state, getters) => (pluginId, profileId) => {
       if (!profileId) {
-        return getters['enabled'][pluginId]
+        return getters.enabled[pluginId]
       }
 
       return state.enabled[profileId] ? state.enabled[profileId][pluginId] : null
@@ -45,7 +45,7 @@ export default {
 
     isLoaded: (state, getters) => (pluginId, profileId) => {
       if (!profileId) {
-        return getters['loaded'][pluginId]
+        return getters.loaded[pluginId]
       }
 
       return state.loaded[profileId] ? !!state.loaded[profileId][pluginId] : null
@@ -64,7 +64,7 @@ export default {
     avatars: (state, getters) => profileId => {
       let loadedPlugins
       if (!profileId) {
-        loadedPlugins = getters['loaded']
+        loadedPlugins = getters.loaded
       } else {
         loadedPlugins = state.loaded[profileId]
       }
@@ -88,7 +88,7 @@ export default {
     },
 
     menuItems: (_, getters) => {
-      const loadedPlugins = getters['loaded']
+      const loadedPlugins = getters.loaded
       const menuItems = []
 
       for (const plugin of Object.values(loadedPlugins)) {
@@ -225,12 +225,16 @@ export default {
         return
       }
 
-      for (const pluginId of Object.keys(state.enabled[profile.id])) {
-        if (!getters['isAvailable'](pluginId)) {
+      for (const pluginId in state.enabled[profile.id]) {
+        if (!getters.isEnabled(pluginId)) {
           continue
         }
 
-        if (getters['isLoaded'](pluginId, profile.id)) {
+        if (!getters.isAvailable(pluginId)) {
+          continue
+        }
+
+        if (getters.isLoaded(pluginId, profile.id)) {
           continue
         }
 
@@ -245,7 +249,7 @@ export default {
     },
 
     async setEnabled ({ commit, getters, rootGetters }, { enabled, pluginId }) {
-      if (getters['isEnabled'](pluginId) === enabled) {
+      if (getters.isEnabled(pluginId) === enabled) {
         return
       }
 
@@ -269,7 +273,7 @@ export default {
     },
 
     setLoaded ({ commit, getters, rootGetters }, data) {
-      if (!getters['isEnabled'](data.config.id, data.profileId)) {
+      if (!getters.isEnabled(data.config.id, data.profileId)) {
         throw new Error('Plugin is not enabled')
       }
 
@@ -287,7 +291,7 @@ export default {
     },
 
     setAvatars ({ commit, getters, rootGetters }, data) {
-      if (!getters['isEnabled'](data.pluginId, data.profileId)) {
+      if (!getters.isEnabled(data.pluginId, data.profileId)) {
         throw new Error('Plugin is not enabled')
       }
 
@@ -298,7 +302,7 @@ export default {
     },
 
     setMenuItems ({ commit, getters, rootGetters }, data) {
-      if (!getters['isEnabled'](data.pluginId, data.profileId)) {
+      if (!getters.isEnabled(data.pluginId, data.profileId)) {
         throw new Error('Plugin is not enabled')
       }
 
@@ -331,13 +335,13 @@ export default {
     },
 
     async setPluginOption ({ commit, getters, rootGetters }, data) {
-      if (!getters.isEnabled(data.pluginId, data.profileId)) {
+      if (data.profileId !== 'global' && !getters.isEnabled(data.pluginId, data.profileId)) {
         throw new Error('Plugin is not enabled')
       }
 
       commit('SET_PLUGIN_OPTION', {
         pluginId: data.pluginId,
-        profileId: rootGetters['session/profileId'],
+        profileId: data.profileId === 'global' ? 'global' : rootGetters['session/profileId'],
         key: data.key,
         value: data.value
       })

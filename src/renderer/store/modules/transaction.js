@@ -1,6 +1,7 @@
 import dayjs from 'dayjs'
 import { findIndex, unionBy } from 'lodash'
 import config from '@config'
+import BigNumber from '@/plugins/bignumber'
 import eventBus from '@/plugins/event-bus'
 import TransactionModel from '@/models/transaction'
 import Vue from 'vue'
@@ -34,7 +35,7 @@ export default {
       }).map(transaction => {
         transaction.isSender = transaction.sender === address
         transaction.isRecipient = transaction.recipient === address
-        transaction.totalAmount = transaction.amount + transaction.fee
+        transaction.totalAmount = new BigNumber(transaction.amount).plus(transaction.fee).toString()
 
         return transaction
       })
@@ -58,7 +59,7 @@ export default {
       const transactions = state.transactions[profileId].map(transaction => {
         transaction.isSender = addresses.includes(transaction.sender)
         transaction.isRecipient = addresses.includes(transaction.recipient)
-        transaction.totalAmount = transaction.amount + transaction.fee
+        transaction.totalAmount = new BigNumber(transaction.amount).plus(transaction.fee).toString()
 
         return transaction
       })
@@ -195,7 +196,7 @@ export default {
       const expired = []
       const profileId = rootGetters['session/profileId']
       const threshold = dayjs().subtract(config.APP.transactionExpiryMinutes, 'minute')
-      for (const transaction of getters['byProfileId'](profileId)) {
+      for (const transaction of getters.byProfileId(profileId)) {
         if (dayjs(transaction.timestamp).isBefore(threshold)) {
           transaction.isExpired = true
           expired.push(transaction.id)

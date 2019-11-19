@@ -726,7 +726,8 @@ export default {
 
     WALLET_SHOW: {
       NO_VOTE: 'Il portafoglio non ha votato',
-      ADD_CONTACT: 'Aggiungi ai contatti'
+      ADD_CONTACT: 'Aggiungi ai contatti',
+      VOTING_FOR: 'Votando per {delegate}'
     }
   },
 
@@ -808,7 +809,9 @@ export default {
       LOAD_FROM_FILE: 'Impossibile caricare il file transazione',
       EXPIRED: 'Transazione scaduta prima di essere proccessata: {transactionId}',
       FEE_TOO_LOW: 'La transazione non può essere inviata perchè la commissione ({fee}) è troppo bassa',
-      NOTHING_SENT: 'La transazione non può essere inviata. Controlla la tua connessione di rete o cambia peer'
+      NOTHING_SENT: 'La transazione non può essere inviata. Controlla la tua connessione di rete o cambia peer',
+      NETWORK_NOT_CONFIGURED: 'Rete non configurata',
+      WALLET_NOT_IMPORTED: 'Wallet non importato'
     },
     FOOTER_TEXT: {
       DELEGATE_REGISTRATION: 'Tieni presente che non è possibile modificare il nome del Delegato dopo che la registrazione è stata registrata sulla blockchain.'
@@ -1024,7 +1027,7 @@ export default {
     RECIPIENT: 'Destinatario',
     SENDER: 'Mittente',
     AMOUNT: 'Importo',
-    NEW_TRANSACTIONS: 'Questo portafoglio ha {count} nuova/e transazione/i. Premi il pulsante ricarica per aggiornare.'
+    NEW_TRANSACTIONS: '0 | Questo portafoglio ha 1 nuova transazione. Premi il pulsante ricarica per aggiornare. | Questo portafoglio ha {count} nuove transazioni. Premi il pulsante ricarica per aggiornare.'
   },
 
   WALLET_TABLE: {

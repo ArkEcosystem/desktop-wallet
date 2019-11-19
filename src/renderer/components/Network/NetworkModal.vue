@@ -444,9 +444,11 @@ export default {
     async validateSeed () {
       this.showLoadingModal = true
 
-      const matches = /(https?:\/\/[a-zA-Z0-9.-_]+):([0-9]+)/.exec(this.form.server)
-      const host = matches[1]
-      const port = matches[2]
+      let { origin: host, port, protocol } = new URL(this.form.server)
+
+      if (!port) {
+        port = protocol === 'https:' ? 443 : 80
+      }
 
       const response = await this.$store.dispatch('peer/validatePeer', {
         host,
@@ -492,8 +494,14 @@ export default {
       customNetwork.knownWallets = {}
 
       if (this.showFull && this.hasFetched) {
-        const { hostname: ip, port, protocol } = new URL(this.form.server)
+        let { hostname: ip, port, protocol } = new URL(this.form.server)
+
         const isHttps = protocol === 'https:'
+
+        if (!port) {
+          port = isHttps ? 443 : 80
+        }
+
         const peer = {
           version: '0',
           height: 0,
@@ -502,6 +510,7 @@ export default {
           ip,
           isHttps
         }
+
         await this.$store.dispatch('network/addCustomNetwork', customNetwork)
         await this.$store.dispatch('peer/setToNetwork', { peers: [peer], networkId: customNetwork.id })
       } else {

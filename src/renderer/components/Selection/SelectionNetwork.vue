@@ -12,6 +12,15 @@
     />
 
     <SelectionNetworkButton
+      v-if="addButton"
+      :show-title="false"
+      tag="div"
+      class="flex-none"
+      network-image="networks/add.svg"
+      @click="toggleAddNetwork"
+    />
+
+    <SelectionNetworkButton
       v-if="othersNetworks.length"
       :class="isOtherSelected ? 'SelectionNetworkButton--selected' : null"
       class="SelectionNetworkButton"
@@ -27,6 +36,14 @@
       </div>
     </SelectionNetworkButton>
 
+    <NetworkModal
+      v-if="showAddNetwork"
+      :title="$t('PAGES.NETWORK_OVERVIEW.NEW_NETWORK')"
+      @cancel="toggleAddNetwork"
+      @saved="toggleAddNetwork"
+      @removed="toggleAddNetwork"
+    />
+
     <NetworkSelectionModal
       v-if="isModalOpen"
       :toggle="closeModal"
@@ -37,7 +54,7 @@
 </template>
 
 <script>
-import { NetworkSelectionModal } from '@/components/Network'
+import { NetworkModal, NetworkSelectionModal } from '@/components/Network'
 import SelectionNetworkButton from './SelectionNetworkButton'
 import { pullAllBy } from 'lodash'
 
@@ -48,6 +65,7 @@ export default {
   buttonClasses: '',
 
   components: {
+    NetworkModal,
     NetworkSelectionModal,
     SelectionNetworkButton
   },
@@ -71,11 +89,17 @@ export default {
       type: Boolean,
       required: false,
       default: false
+    },
+    addButton: {
+      type: Boolean,
+      required: false,
+      default: false
     }
   },
 
   data: () => ({
-    isModalOpen: false
+    isModalOpen: false,
+    showAddNetwork: false
   }),
 
   computed: {
@@ -104,6 +128,10 @@ export default {
 
     closeModal () {
       this.isModalOpen = false
+    },
+
+    toggleAddNetwork () {
+      this.showAddNetwork = !this.showAddNetwork
     }
   }
 }

@@ -81,7 +81,7 @@
 
           <ButtonLayout
             :grid-layout="hasWalletGridLayout"
-            @click="toggleWalletLayout()"
+            @click="toggleWalletLayout"
           />
         </div>
 
@@ -94,32 +94,37 @@
           </div>
         </div>
 
-        <WalletGrid
-          v-if="hasWalletGridLayout && !isLoading"
-          :is-ledger-loading="isLedgerLoading"
-          :wallets="selectableWallets"
-          @show="showWallet"
-          @rename="openRenameModal"
-          @remove="openRemovalConfirmation"
-        />
-
-        <div
-          v-else-if="!hasWalletGridLayout && !isLoading"
-          class="WalletAll__tabular mt-10"
-        >
-          <WalletTable
-            :has-pagination="false"
-            :is-loading="false"
-            :rows="selectableWallets"
-            :show-voted-delegates="showVotedDelegates"
-            :total-rows="selectableWallets.length"
-            :sort-query="sortParams"
-            :no-data-message="$t('TABLE.NO_WALLETS')"
-            @remove-row="onRemoveWallet"
-            @rename-row="onRenameWallet"
-            @on-sort-change="onSortChange"
+        <template v-else>
+          <WalletGrid
+            v-if="hasWalletGridLayout"
+            :is-ledger-loading="isLedgerLoading"
+            :wallets="selectableWallets"
+            @show="showWallet"
+            @rename="openRenameModal"
+            @remove="openRemovalConfirmation"
           />
-        </div>
+
+          <div
+            v-else
+            class="WalletAll__tabular mt-10"
+          >
+            <WalletTable
+              :has-pagination="false"
+              :is-loading="false"
+              :rows="selectableWallets"
+              :show-voted-delegates="showVotedDelegates"
+              :total-rows="selectableWallets.length"
+              :sort-query="{
+                field: sortParams.field,
+                type: sortParams.type
+              }"
+              :no-data-message="$t('TABLE.NO_WALLETS')"
+              @remove-row="onRemoveWallet"
+              @rename-row="onRenameWallet"
+              @on-sort-change="onSortChange"
+            />
+          </div>
+        </template>
       </div>
     </div>
 
@@ -140,7 +145,7 @@
 </template>
 
 <script>
-import { some, uniqBy } from 'lodash'
+import { isEqual, some, uniqBy } from 'lodash'
 import { ButtonLayout } from '@/components/Button'
 import Loader from '@/components/utils/Loader'
 import { ProfileAvatar } from '@/components/Profile'
@@ -353,7 +358,9 @@ export default {
     },
 
     onSortChange (sortParams) {
-      this.sortParams = sortParams
+      if (!isEqual(sortParams, this.sortParams)) {
+        this.sortParams = sortParams
+      }
     },
 
     showWallet (walletId) {

@@ -5,6 +5,12 @@ describe('SessionModule', () => {
     store.dispatch('session/reset')
   })
 
+  describe('getters > marketChartOptions', () => {
+    it('should get the market chart options', () => {
+      expect(store.getters['session/marketChartOptions']).toEqual({ isEnabled: true, isExpanded: true, period: 'day' })
+    })
+  })
+
   describe('getters > walletSortParams', () => {
     it('should get the wallet sort params', () => {
       expect(store.getters['session/walletSortParams']).toEqual({ field: 'balance', type: 'desc' })
@@ -29,6 +35,14 @@ describe('SessionModule', () => {
     expect(store.getters['session/theme']).toEqual('dark')
     store.dispatch('session/reset')
     expect(store.getters['session/theme']).toEqual('light')
+  })
+
+  describe('actions > setMarketChartOptions', () => {
+    it('should set the market chart options', () => {
+      const params = { foo: 'bar' }
+      store.dispatch('session/setMarketChartOptions', params)
+      expect(store.getters['session/marketChartOptions']).toEqual({ foo: 'bar' })
+    })
   })
 
   describe('actions > setWalletSortParams', () => {

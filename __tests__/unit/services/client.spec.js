@@ -12,6 +12,18 @@ jest.mock('@/store', () => ({
         epoch: '2017-03-21T13:00:00.000Z'
       }
     },
+    'network/byId': (id) => {
+      let version = 23
+      if (id === 'ark.devnet') {
+        version = 30
+      }
+      return {
+        constants: {
+          epoch: '2017-03-21T13:00:00.000Z'
+        },
+        version
+      }
+    },
     'delegate/byAddress': (address) => {
       if (address === 'DTRdbaUW3RQQSL5By4G43JVaeHiqfVp9oh') {
         return {
@@ -84,7 +96,7 @@ describe('Services > Client', () => {
 
   beforeEach(() => {
     client = new ClientService()
-    client.host = `http://127.0.0.1:4003`
+    client.host = 'http://127.0.0.1:4003'
   })
 
   describe('constructor', () => {
@@ -421,8 +433,8 @@ describe('Services > Client', () => {
 
       transactions.forEach((transaction, i) => {
         expect(transaction).toHaveProperty('totalAmount')
-        expect(transaction.totalAmount).toBeInstanceOf(BigNumber)
-        expect(transaction.totalAmount.toString()).toBe((data[i].amount + data[i].fee).toString())
+        expect(transaction.totalAmount).toBeString()
+        expect(transaction.totalAmount).toEqual(new BigNumber(data[i].amount).plus(data[i].fee).toString())
         expect(transaction).toHaveProperty('timestamp', data[i].timestamp.unix * 1000)
         expect(transaction).toHaveProperty('isSender')
         expect(transaction).toHaveProperty('isRecipient')
@@ -552,6 +564,14 @@ describe('Services > Client', () => {
   })
 
   describe('buildTransfer', () => {
+    describe('when a custom network is specified', () => {
+      it('should have the correct version', async () => {
+        const networkId = 'ark.devnet'
+        const transaction = await client.buildTransfer({ fee: new BigNumber(fees[0]), networkId }, false, true)
+        expect(transaction.data.network).toBe(30)
+      })
+    })
+
     describe('when the fee is bigger than the static fee', () => {
       it('should throw an Error', async () => {
         const fee = new BigNumber(fees[0] + 1)

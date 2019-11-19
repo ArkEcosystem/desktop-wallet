@@ -1,11 +1,12 @@
 name: Lint
 
 on:
-    push:
-        branches:
-            - '**'
-    pull_request:
-        types: [ready_for_review, synchronize, opened]
+  push:
+    branches:
+      - 'master'
+      - 'develop'
+  pull_request:
+    types: [ready_for_review, synchronize, opened]
 
 jobs:
   source:
@@ -17,16 +18,28 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
+
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
+
+      - name: Cache node modules
+        uses: actions/cache@v1
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: ${{ runner.os }}-node-
+
       - name: Update System
         run: sudo apt-get update
+
       - name: Ledger
         run: sudo apt-get install libudev-dev libusb-1.0-0-dev
+
       - name: Install
         run: yarn global add node-gyp && yarn install --frozen-lockfile && npm rebuild
+
       - name: Lint
         run: yarn lint
 
