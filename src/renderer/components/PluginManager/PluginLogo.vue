@@ -1,20 +1,25 @@
 <template>
   <div
-    class="PluginLogo"
-    :style="{ height: `${size}px`, width: `${size}px` }"
+    class="PluginLogo__wrapper"
+    :class="isModal ? 'border-theme-modal' : 'border-theme-table-row-hover'"
   >
-    <img
-      v-if="plugin.logo"
-      :src="`data:image/png;base64,${plugin.logo}`"
+    <div
+      class="PluginLogo object-contain"
+      :style="{ height: `${size}px`, width: `${size}px` }"
     >
+      <img
+        v-if="plugin.logo"
+        :src="`data:image/png;base64,${plugin.logo}`"
+      >
 
-    <PluginIdenticon
-      v-else
-      :value="plugin.id"
-      :size="size"
-      shape="square"
-      :show-network-symbol="false"
-    />
+      <PluginIdenticon
+        v-else
+        :value="plugin.id"
+        :size="size"
+        shape="square"
+        :show-network-symbol="false"
+      />
+    </div>
   </div>
 </template>
 
@@ -38,12 +43,22 @@ export default {
       required: false,
       default: 80
     }
+  },
+
+  computed: {
+    isModal () {
+      return this.size > 80
+    }
   }
 }
 </script>
 
 <style lang="postcss" scoped>
+.PluginLogo__wrapper {
+  @apply rounded-lg overflow-hidden border;
+}
+
 .PluginLogo {
-  @apply rounded-lg overflow-hidden;
+  @apply flex items-center;
 }
 </style>
