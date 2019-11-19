@@ -1,22 +1,19 @@
 <template>
-  <div class="PluginLogo__wrapper">
-    <div
-      class="PluginLogo object-contain"
-      :style="{ height: `${size}px`, width: `${size}px` }"
+  <div
+    class="PluginLogo"
+    :style="{ height: `${size}px`, width: `${size}px` }"
+  >
+    <img
+      v-if="plugin.logo"
+      class="PluginLogo__image"
+      :src="`data:image/png;base64,${plugin.logo}`"
     >
-      <img
-        v-if="plugin.logo"
-        :src="`data:image/png;base64,${plugin.logo}`"
-      >
 
-      <PluginIdenticon
-        v-else
-        :value="plugin.id"
-        :size="size"
-        shape="square"
-        :show-network-symbol="false"
-      />
-    </div>
+    <PluginIdenticon
+      v-else
+      :value="plugin.id"
+      :size="size"
+    />
   </div>
 </template>
 
@@ -45,11 +42,12 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
-.PluginLogo__wrapper {
-  @apply rounded-lg overflow-hidden border border-theme-button;
+.PluginLogo {
+  @apply rounded-lg overflow-hidden;
 }
 
-.PluginLogo {
-  @apply flex items-center;
+.PluginLogo__image {
+  @apply w-full h-full;
+  object-fit: cover;
 }
 </style>

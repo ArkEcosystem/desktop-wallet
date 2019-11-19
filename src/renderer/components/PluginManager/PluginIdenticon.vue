@@ -2,7 +2,6 @@
   <Identicon
     :value="value"
     :size="size"
-    :shape="shape"
     :shape-count="shapeCount"
     :is-dark="isDark"
     :show-network-symbol="showNetworkSymbol"
@@ -31,7 +30,7 @@ export default {
     shape: {
       type: String,
       required: false,
-      default: () => 'circle'
+      default: () => 'square'
     },
     shapeCount: {
       type: Number,
@@ -46,7 +45,7 @@ export default {
     showNetworkSymbol: {
       type: Boolean,
       required: false,
-      default: true
+      default: false
     }
   }
 }
