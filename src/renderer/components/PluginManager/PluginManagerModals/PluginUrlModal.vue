@@ -15,6 +15,7 @@
       ref="url"
       v-model="$v.form.url.$model"
       :label="$t('COMMON.URL')"
+      placeholder="https://github.com/ark-ecosystem-desktop-plugins/explorer"
       :is-invalid="$v.form.url.$dirty && $v.form.url.$invalid"
       :helper-text="urlError"
       name="url"
@@ -64,11 +65,11 @@ export default {
         }
 
         if (!this.$v.form.url.isGitHubUrl) {
-          return this.$t('VALIDATION.URL.NOT_GITHUB')
+          return this.$t('VALIDATION.URL.NO_GITHUB')
         }
 
         if (!this.$v.form.url.isAllowed) {
-          return this.$t('VALIDATION.URL.INVALID')
+          return this.$t('VALIDATION.URL.NO_GITHUB_REPOSITORY')
         }
       }
 

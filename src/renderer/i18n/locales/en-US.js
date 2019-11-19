@@ -172,7 +172,8 @@ export default {
     },
     URL: {
       INVALID: 'Invalid \'URL\'',
-      NOT_GITHUB: 'Only URLs containing \'github.com\' are allowed'
+      NO_GITHUB: 'Only URLs containing \'github.com\' are allowed',
+      NO_GITHUB_REPOSITORY: 'This URL does not point to a GitHub repository'
     },
     VENDOR_FIELD: {
       LIMIT_REACHED: 'You can enter a maximum of {0} characters only',
@@ -527,7 +528,7 @@ export default {
 
   MODAL_PLUGIN_URL: {
     TITLE: 'Install from URL',
-    EXPLANATION: 'Install a plugin by pasting a GitHub URL pointing to the archive of the repository in the input field below.',
+    EXPLANATION: 'Fetch the plugin directly from GitHub by using the URL of the plugin repository in the input field below.',
     DISCLAIMER: '<b>Disclaimer:</b> Please make sure to check the documentation of the plugin before installing it. By installing it on your wallet, you assume every responsibility.'
   },
 
