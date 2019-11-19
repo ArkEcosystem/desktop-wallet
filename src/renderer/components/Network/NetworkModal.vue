@@ -360,7 +360,6 @@ export default {
           try {
             ClientService.fetchNetworkConfig(this.form.server)
               .then(network => {
-                console.log('fetchNetworkConfig')
                 this.form.version = network.version.toString()
                 this.$error('Address Version was missing - please check your wallets')
               })
