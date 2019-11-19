@@ -361,7 +361,7 @@ export default {
             ClientService.fetchNetworkConfig(this.form.server)
               .then(network => {
                 this.form.version = network.version.toString()
-                this.$error('Address Version was missing - please check your wallets')
+                this.$error(this.$t('MODAL_NETWORK.ADDRESS_VERSION_MISSING'))
               })
           } catch (error) {
             this.form.version = '0'
