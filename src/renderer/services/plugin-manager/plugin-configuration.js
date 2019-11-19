@@ -4,6 +4,7 @@ import {
   sanitizeIsOfficial,
   sanitizeMinVersion,
   sanitizePermissions,
+  sanitizeRepository,
   sanitizeSize,
   sanitizeSource,
   sanitizeTitle,
@@ -24,7 +25,8 @@ export class PluginConfiguration {
     source,
     title,
     urls,
-    version
+    version,
+    repository
   }) {
     this.id = id
     this.author = author
@@ -39,6 +41,7 @@ export class PluginConfiguration {
     this.title = title
     this.urls = urls
     this.version = version
+    this.repository = repository
   }
 
   static async sanitize (config, pluginPath = null) {
@@ -55,7 +58,8 @@ export class PluginConfiguration {
       source: sanitizeSource(config),
       title: sanitizeTitle(config),
       urls: sanitizeUrls(config),
-      version: config.version
+      version: config.version,
+      repository: sanitizeRepository(config.repository)
     })
   }
 

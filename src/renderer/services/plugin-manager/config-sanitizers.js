@@ -1,5 +1,6 @@
 import { difference, intersection, uniq } from 'lodash'
 import { PLUGINS } from '@config'
+import validPermissions from './plugin-permission'
 import du from 'du'
 import parse from 'parse-author'
 import semver from 'semver'
@@ -87,7 +88,25 @@ const sanitizePermissions = config => {
 
   return intersection(uniq(permissions).sort().map(permission => {
     return permission.toUpperCase()
-  }), PLUGINS.validation.permissions)
+  }), Object.keys(validPermissions))
+}
+
+const sanitizeRepository = (repository) => {
+  let url
+
+  if (repository && repository.type === 'git') {
+    url = repository.url
+
+    if (url.startsWith('git+')) {
+      url = url.split('git+')[1]
+
+      if (url.endsWith('.git')) {
+        url = url.split('.git')[0]
+      }
+    }
+  }
+
+  return url
 }
 
 const sanitizeSize = async (config, pluginPath) => {
@@ -131,6 +150,7 @@ export {
   sanitizeMinVersion,
   sanitizeName,
   sanitizePermissions,
+  sanitizeRepository,
   sanitizeSize,
   sanitizeSource,
   sanitizeTitle,

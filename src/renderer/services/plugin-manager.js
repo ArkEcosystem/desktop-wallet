@@ -183,8 +183,8 @@ export class PluginManager {
     configs = await Promise.all(configs.map(async config => {
       const plugin = await PluginConfiguration.sanitize(config)
 
-      if (config.homepage) {
-        const { owner, repository, branch } = this.parsePluginUrl(config.homepage.split('#')[0])
+      if (plugin.repository) {
+        const { owner, repository, branch } = this.parsePluginUrl(plugin.repository)
 
         try {
           const { body } = await got(`https://raw.githubusercontent.com/${owner}/${repository}/${branch}/logo.png`, { encoding: null })
