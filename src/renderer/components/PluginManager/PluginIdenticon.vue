@@ -2,6 +2,7 @@
   <Identicon
     :value="value"
     :size="size"
+    :shape="shape"
     :shape-count="shapeCount"
     :is-dark="isDark"
     :show-network-symbol="showNetworkSymbol"
