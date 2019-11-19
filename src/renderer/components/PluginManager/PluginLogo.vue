@@ -1,8 +1,5 @@
 <template>
-  <div
-    class="PluginLogo__wrapper"
-    :class="isModal ? 'border-theme-modal' : 'border-theme-table-row-hover'"
-  >
+  <div class="PluginLogo__wrapper">
     <div
       class="PluginLogo object-contain"
       :style="{ height: `${size}px`, width: `${size}px` }"
@@ -43,19 +40,13 @@ export default {
       required: false,
       default: 80
     }
-  },
-
-  computed: {
-    isModal () {
-      return this.size > 80
-    }
   }
 }
 </script>
 
 <style lang="postcss" scoped>
 .PluginLogo__wrapper {
-  @apply rounded-lg overflow-hidden border;
+  @apply rounded-lg overflow-hidden border border-theme-button;
 }
 
 .PluginLogo {
