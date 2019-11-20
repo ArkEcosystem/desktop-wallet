@@ -98,18 +98,18 @@ export default {
         return
       }
 
-      let address, businessId
+      let address, publicKey
       if (this.wallet_fromRoute) {
         console.log('fetchTransactions', this.wallet_fromRoute)
         address = this.wallet_fromRoute.address.slice()
-        businessId = this.wallet_fromRoute.business.businessId
+        publicKey = this.wallet_fromRoute.publicKey
       }
 
       this.isFetching = true
 
       try {
         const { limit, page, sort } = this.queryParams
-        const response = await this.$client.fetchBusinessBridgechains(businessId, {
+        const response = await this.$client.fetchBusinessBridgechains(publicKey, {
           transactionType: this.transactionType,
           page,
           limit,

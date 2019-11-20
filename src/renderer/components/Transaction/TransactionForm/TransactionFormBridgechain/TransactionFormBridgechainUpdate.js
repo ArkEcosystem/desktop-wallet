@@ -18,7 +18,7 @@ export default {
   },
 
   mounted () {
-    this.form.asset.bridgechainId = this.bridgechain.bridgechainId
+    this.form.asset.bridgechainId = this.bridgechain.genesisHash
     this.form.asset.seedNodes = this.bridgechain.seedNodes
     if (this.bridgechain.ports['@arkecosystem/core-api']) {
       this.form.apiPort = this.bridgechain.ports['@arkecosystem/core-api']

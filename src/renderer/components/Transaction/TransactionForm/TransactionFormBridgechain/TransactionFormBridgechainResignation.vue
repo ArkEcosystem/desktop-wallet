@@ -138,7 +138,7 @@ export default {
   methods: {
     getTransactionData () {
       const transactionData = {
-        bridgechainId: this.bridgechain.bridgechainId,
+        bridgechainId: this.bridgechain.genesisHash,
         address: this.currentWallet.address,
         passphrase: this.form.passphrase,
         fee: this.getFee(),
