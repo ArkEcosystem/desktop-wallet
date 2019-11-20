@@ -488,6 +488,7 @@ export default {
 
   MODAL_PLUGIN_DETAILS: {
     INSTALL: 'Install',
+    KEYWORDS: 'Keywords',
     SHOW_PERMISSIONS: 'Show permissions'
   },
 

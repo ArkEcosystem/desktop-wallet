@@ -83,8 +83,15 @@
     </template>
 
     <template #default>
-      <p class="mt-12 mb-4 leading-tight">
+      <p class="PluginDetailsModal__description">
         {{ plugin.description }}
+      </p>
+
+      <p
+        v-if="plugin.keywords.length"
+        class="PluginDetailsModal__keywords"
+      >
+        <span class="font-semibold">{{ $t('MODAL_PLUGIN_DETAILS.KEYWORDS') }}:</span> {{ keywordsText }}
       </p>
 
       <a
@@ -144,8 +151,10 @@ import { ButtonGeneric, ButtonIconGeneric } from '@/components/Button'
 import { PluginLogo, PluginManagerCheckmark } from '@/components/PluginManager'
 import { ModalWindow } from '@/components/Modal'
 import { PluginManagerButtonSwitch } from '@/components/PluginManager/PluginManagerButtons'
+import uniq from 'lodash/uniq'
 import SvgIcon from '@/components/SvgIcon'
 import domain from 'getdomain'
+import titlecase from 'titlecase'
 
 export default {
   name: 'PluginDetailsModal',
@@ -214,6 +223,11 @@ export default {
       }
     },
 
+    keywordsText () {
+      const keywords = uniq(this.plugin.keywords).slice(0, 6).map(keyword => titlecase(keyword)).join(', ')
+      return this.plugin.keywords.length > 6 ? `${keywords} ...` : keywords
+    },
+
     homepageLink () {
       try {
         return domain.get(this.plugin.homepage)
@@ -277,6 +291,12 @@ export default {
   grid-template-columns: 1fr 1fr 0.75fr 0.75fr;
   grid-column-gap: 1.5rem;
   @apply border-t pt-4 mt-8 border-theme-line-separator
+}
+.PluginDetailsModal__description {
+  @apply mt-12 mb-4 leading-tight
+}
+.PluginDetailsModal__keywords {
+  @apply mb-4
 }
 .PluginDetailsModal__stats > div {
   @apply flex flex-col border-r border-dashed border-theme-line-separator py-2
