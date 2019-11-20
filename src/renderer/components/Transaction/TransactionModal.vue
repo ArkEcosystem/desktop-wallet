@@ -311,7 +311,7 @@ export default {
     },
 
     storeTransaction (transaction) {
-      const { type, amount, fee, senderPublicKey, vendorField } = transaction
+      const { type, typeGroup, amount, fee, senderPublicKey, vendorField } = transaction
 
       let id = transaction.id
       if (transaction.signatures) {
@@ -337,6 +337,7 @@ export default {
       this.$store.dispatch('transaction/create', {
         id,
         type,
+        typeGroup: typeGroup || 1,
         amount,
         fee,
         sender: WalletService.getAddressFromPublicKey(senderPublicKey, this.walletNetwork.version),
