@@ -44,8 +44,14 @@ export default {
         }
 
         if (query) {
-          match = match && ['id', 'title', 'description'].some(property => {
-            return plugin.config[property].includes(query)
+          match = match && ['id', 'title', 'description', 'keywords'].some(property => {
+            let value = plugin.config[property]
+
+            if (property === 'keywords') {
+              value = value.join(' ')
+            }
+
+            return value.includes(query)
           })
         }
 

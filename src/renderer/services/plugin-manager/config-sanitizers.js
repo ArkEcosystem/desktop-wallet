@@ -52,7 +52,7 @@ const sanitizeCategories = config => {
     if (config.categories && config.categories.length) {
       categories = config.categories
     } else if (config.keywords && config.keywords.length) {
-      categories = difference(config.keywords, PLUGINS.keywords)
+      categories = sanitizeKeywords(config.keywords)
     }
   }
 
@@ -63,6 +63,10 @@ const sanitizeCategories = config => {
   }
 
   return categories.length ? categories : ['other']
+}
+
+const sanitizeKeywords = keywords => {
+  return difference(keywords, PLUGINS.keywords)
 }
 
 const sanitizeMinVersion = config => {
@@ -135,8 +139,9 @@ export {
   sanitizeAuthor,
   sanitizeCategories,
   sanitizeIsOfficial,
-  sanitizeMinVersion,
+  sanitizeKeywords,
   sanitizeLogo,
+  sanitizeMinVersion,
   sanitizeName,
   sanitizePermissions,
   sanitizeSize,
