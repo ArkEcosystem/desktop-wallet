@@ -43,37 +43,41 @@
         <TransactionPeerList
           :title="$t('TRANSACTION.BRIDGECHAIN.SEED_NODES')"
           :items="$v.form.asset.seedNodes.$model"
+          :helper-text="seedNodesError"
+          :is-invalid="!!seedNodesError"
           @remove="emitRemoveSeedNode"
         />
       </div>
 
       <div v-if="step === 2">
-        <InputText
-          v-model="$v.form.asset.name.$model"
-          :helper-text="nameError"
-          :label="$t('TRANSACTION.BRIDGECHAIN.NAME')"
-          :is-invalid="!!nameError"
-          class="mb-5"
-          name="name"
-        />
+        <div v-if="!isUpdate">
+          <InputText
+            v-model="$v.form.asset.name.$model"
+            :helper-text="nameError"
+            :label="$t('TRANSACTION.BRIDGECHAIN.NAME')"
+            :is-invalid="!!nameError"
+            class="mb-5"
+            name="name"
+          />
 
-        <InputText
-          v-model="$v.form.asset.genesisHash.$model"
-          :helper-text="genesisHashError"
-          :label="$t('TRANSACTION.BRIDGECHAIN.GENESIS_HASH')"
-          :is-invalid="!!genesisHashError"
-          class="mb-5"
-          name="genesisHash"
-        />
+          <InputText
+            v-model="$v.form.asset.genesisHash.$model"
+            :helper-text="genesisHashError"
+            :label="$t('TRANSACTION.BRIDGECHAIN.GENESIS_HASH')"
+            :is-invalid="!!genesisHashError"
+            class="mb-5"
+            name="genesisHash"
+          />
 
-        <InputText
-          v-model="$v.form.asset.bridgechainRepository.$model"
-          :helper-text="bridgechainRepositoryError"
-          :label="$t('TRANSACTION.BRIDGECHAIN.BRIDGECHAIN_REPOSITORY')"
-          :is-invalid="!!bridgechainRepositoryError"
-          class="mb-5"
-          name="repository"
-        />
+          <InputText
+            v-model="$v.form.asset.bridgechainRepository.$model"
+            :helper-text="bridgechainRepositoryError"
+            :label="$t('TRANSACTION.BRIDGECHAIN.BRIDGECHAIN_REPOSITORY')"
+            :is-invalid="!!bridgechainRepositoryError"
+            class="mb-5"
+            name="repository"
+          />
+        </div>
 
         <InputFee
           ref="fee"
@@ -198,6 +202,10 @@ export default {
   }),
 
   computed: {
+    isUpdate () {
+      return !!this.bridgechain
+    },
+
     validStep1 () {
       if (!this.$v.seedNode.$dirty || this.$v.seedNode.$invalid ||
         this.seedNodeError || this.seedNode.replace(/\s+/, '') === '') {
@@ -235,10 +243,12 @@ export default {
 
     seedNodeError () {
       if (this.$v.seedNode.$dirty && !this.$v.seedNode.isValid) {
-        if (!this.$v.seedNode.url) {
-          return this.$t('VALIDATION.INVALID_URL')
+        if (!this.$v.seedNode.isValid) {
+          return this.$t('VALIDATION.INVALID_SEED')
         } else if (!this.$v.seedNode.isUnique) {
           return this.$t('TRANSACTION.BRIDGECHAIN.ERROR_DUPLICATE')
+        } else if (!this.$v.seedNode.tooMany) {
+          return this.$t('VALIDATION.TOO_MANY', [this.$t('TRANSACTION.BRIDGECHAIN.SEED_NODES')])
         }
       }
 
@@ -249,8 +259,8 @@ export default {
       if (this.$v.form.asset.seedNodes.$dirty && !this.$v.form.asset.seedNodes.isValid) {
         if (!this.$v.form.asset.seedNodes.required) {
           return this.$t('VALIDATION.REQUIRED', [this.$t('TRANSACTION.BRIDGECHAIN.SEED_NODES')])
-        } else if (!this.$v.form.asset.seedNodes.url) {
-          return this.$t('VALIDATION.INVALID_URL')
+        } else if (!this.$v.form.asset.seedNodes.notEnough) {
+          return this.$t('VALIDATION.NOT_ENOUGH', [this.$t('TRANSACTION.BRIDGECHAIN.SEED_NODES')])
         }
       }
 
@@ -259,10 +269,8 @@ export default {
 
     genesisHashError () {
       if (this.$v.form.asset.genesisHash.$dirty && !this.$v.form.asset.genesisHash.isValid) {
-        if (!this.$v.form.asset.genesisHash.tooShort) {
-          return this.$t('VALIDATION.TOO_SHORT', [this.$t('TRANSACTION.BRIDGECHAIN.GENESIS_HASH')])
-        } else if (!this.$v.form.asset.genesisHash.tooLong) {
-          return this.$t('VALIDATION.TOO_LONG', [this.$t('TRANSACTION.BRIDGECHAIN.GENESIS_HASH')])
+        if (!this.$v.form.asset.genesisHash.isValid) {
+          return this.$t('VALIDATION.NOT_VALID', [this.$t('TRANSACTION.BRIDGECHAIN.GENESIS_HASH')])
         }
       }
 
@@ -335,7 +343,10 @@ export default {
       isUnique (value) {
         return !this.form.asset.seedNodes.includes(value)
       },
-      url
+      isValid (value) {
+        return /^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9\\-]*[A-Za-z0-9])$/.test(value)
+      },
+      tooMany: maxLength(10)
     },
 
     form: {
@@ -346,25 +357,42 @@ export default {
 
       asset: {
         name: {
-          required,
-          tooLong: maxLength(maxNameLength),
-          validName: value => {
-            return /^[a-zA-Z0-9_-]+$/.test(value)
+          required (value) {
+            return this.bridgechain ? true : required(value)
+          },
+          tooLong (value) {
+            return this.bridgechain ? true : maxLength(maxNameLength)(value)
+          },
+          validName (value) {
+            return this.bridgechain ? true : /^[a-zA-Z0-9_-]+$/.test(value)
           }
         },
 
         seedNodes: {
-          tooShort: minLength(1),
-          required
+          notEnough (value) {
+            return this.bridgechain ? true : minLength(1)(value)
+          },
+          required (value) {
+            return this.bridgechain ? true : required(value)
+          }
         },
 
         genesisHash: {
-          required
+          isValid (value) {
+            return this.bridgechain ? true : /^[a-z0-9]{64}$/.test(value)
+          },
+          required (value) {
+            return this.bridgechain ? true : required(value)
+          }
         },
 
         bridgechainRepository: {
-          tooShort: minLength(minRepositoryLength),
-          url
+          tooShort (value) {
+            return this.bridgechain ? true : minLength(minRepositoryLength)(value)
+          },
+          url (value) {
+            return this.bridgechain ? true : url(value)
+          }
         }
       }
     }

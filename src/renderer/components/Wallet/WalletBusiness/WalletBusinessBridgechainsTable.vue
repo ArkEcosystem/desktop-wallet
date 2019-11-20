@@ -7,14 +7,48 @@
       v-on="$listeners"
       @on-row-click="onRowClick"
       @on-sort-change="onSortChange"
-    />
+    >
+      <template
+        slot-scope="data"
+      >
+        <div v-if="data.column.field === 'bridgechainRepository'">
+          <a
+            class="flex items-center whitespace-no-wrap"
+            href="#"
+            @click.stop="electron_openExternal(data.row.bridgechainRepository)"
+          >
+            <span
+              v-tooltip="{
+                content: data.row.bridgechainRepository,
+                classes: 'text-xs',
+                trigger: 'hover',
+                container: '.TransactionTable'
+              }"
+              class="mr-1"
+            >
+              {{ data.formattedRow.bridgechainRepository }}
+            </span>
+
+            <SvgIcon
+              name="open-external"
+              view-box="0 0 12 12"
+              class="text-theme-page-text-light"
+            />
+          </a>
+        </div>
+
+        <span v-else>
+          {{ data.formattedRow[data.column.field] }}
+        </span>
+      </template>
+    </TableWrapper>
 
     <Portal
       v-if="selected"
       to="modal"
     >
-      <TransactionShow
-        :transaction="selected"
+      <WalletBusinessShowBridgechain
+        :bridgechain="selected"
         @close="onCloseModal"
       />
     </Portal>
@@ -23,15 +57,17 @@
 
 <script>
 import truncateMiddle from '@/filters/truncate-middle'
-import { TransactionShow } from '@/components/Transaction'
+import SvgIcon from '@/components/SvgIcon'
+import WalletBusinessShowBridgechain from './WalletBusinessShowBridgechain'
 import TableWrapper from '@/components/utils/TableWrapper'
 
 export default {
   name: 'WalletBusinessBridgechainsTable',
 
   components: {
+    SvgIcon,
     TableWrapper,
-    TransactionShow
+    WalletBusinessShowBridgechain
   },
 
   props: {
@@ -62,25 +98,25 @@ export default {
     columns () {
       return [
         {
-          label: this.$t('WALLET_BUSINESS.COLUMN.ID'),
-          field: 'bridgechainId'
-        }, {
           label: this.$t('WALLET_BUSINESS.COLUMN.NAME'),
           field: 'name'
-        }, {
+        },
+        {
           label: this.$t('WALLET_BUSINESS.COLUMN.SEEDS'),
           field: 'seedNodes',
           formatFn: value => {
             return value.length
           }
-        }, {
+        },
+        {
           label: this.$t('WALLET_BUSINESS.COLUMN.GENESIS_HASH'),
           field: 'genesisHash',
           formatFn: value => {
-            return truncateMiddle(value, 5)
+            return truncateMiddle(value, 14)
           }
-        }, {
-          label: this.$t('WALLET_BUSINESS.COLUMN.REPO'),
+        },
+        {
+          label: this.$t('WALLET_BUSINESS.COLUMN.REPOSITORY'),
           field: 'bridgechainRepository'
         }
       ]

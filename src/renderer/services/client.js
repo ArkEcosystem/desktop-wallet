@@ -300,7 +300,7 @@ export default class ClientService {
    * @return {Object}
    */
   async fetchBusinessBridgechains (businessId) {
-    return this.client.api('businesses').bridgechains(businessId)
+    return (await this.client.api('businesses').bridgechains(businessId)).body
   }
 
   /**
@@ -1129,6 +1129,174 @@ export default class ClientService {
     }
 
     const transaction = new MagistrateCrypto.Builders.BusinessResignationBuilder()
+      .fee(fee)
+
+    passphrase = this.normalizePassphrase(passphrase)
+    secondPassphrase = this.normalizePassphrase(secondPassphrase)
+
+    return this.__signTransaction({
+      address,
+      transaction,
+      passphrase,
+      secondPassphrase,
+      wif,
+      networkWif,
+      multiSignature
+    }, returnObject)
+  }
+
+  /**
+   * Build a bridgechain registration transaction.
+   * @param {Object} data
+   * @param {String} data.address
+   * @param {Number} data.fee - dynamic fee, as arktoshi
+   * @param {Object} data.asset
+   * @param {String} data.passphrase
+   * @param {String} data.secondPassphrase
+   * @param {String} data.wif
+   * @param {String} data.networkWif
+   * @param {Object} data.multiSignature
+   * @param {Boolean} isAdvancedFee - if it's not a static fee
+   * @param {Boolean} returnObject - to return the transaction of its internal struct
+   * @returns {Object}
+   */
+  async buildBridgechainRegistration (
+    {
+      address,
+      fee,
+      asset,
+      passphrase,
+      secondPassphrase,
+      wif,
+      networkWif,
+      multiSignature
+    },
+    isAdvancedFee = false,
+    returnObject = false
+  ) {
+    if (!store.getters['session/network'].constants.aip11) {
+      throw new Error('AIP-11 transaction not supported on network')
+    }
+
+    const staticFee = store.getters['transaction/staticFee'](TRANSACTION_TYPES.GROUP_2.BRIDGECHAIN_REGISTRATION, 2)
+    if (!isAdvancedFee && fee.gt(staticFee)) {
+      throw new Error(`Bridgechain Registration fee should be smaller than ${staticFee}`)
+    }
+
+    const transaction = new MagistrateCrypto.Builders.BridgechainRegistrationBuilder()
+      .bridgechainRegistrationAsset(asset)
+      .fee(fee)
+
+    passphrase = this.normalizePassphrase(passphrase)
+    secondPassphrase = this.normalizePassphrase(secondPassphrase)
+
+    return this.__signTransaction({
+      address,
+      transaction,
+      passphrase,
+      secondPassphrase,
+      wif,
+      networkWif,
+      multiSignature
+    }, returnObject)
+  }
+
+  /**
+   * Build a bridgechain update transaction.
+   * @param {Object} data
+   * @param {String} data.address
+   * @param {Number} data.fee - dynamic fee, as arktoshi
+   * @param {Object} data.asset
+   * @param {String} data.passphrase
+   * @param {String} data.secondPassphrase
+   * @param {String} data.wif
+   * @param {String} data.networkWif
+   * @param {Object} data.multiSignature
+   * @param {Boolean} isAdvancedFee - if it's not a static fee
+   * @param {Boolean} returnObject - to return the transaction of its internal struct
+   * @returns {Object}
+   */
+  async buildBridgechainUpdate (
+    {
+      address,
+      fee,
+      asset,
+      passphrase,
+      secondPassphrase,
+      wif,
+      networkWif,
+      multiSignature
+    },
+    isAdvancedFee = false,
+    returnObject = false
+  ) {
+    if (!store.getters['session/network'].constants.aip11) {
+      throw new Error('AIP-11 transaction not supported on network')
+    }
+
+    const staticFee = store.getters['transaction/staticFee'](TRANSACTION_TYPES.GROUP_2.BRIDGECHAIN_UPDATE, 2)
+    if (!isAdvancedFee && fee.gt(staticFee)) {
+      throw new Error(`Bridgechain Update fee should be smaller than ${staticFee}`)
+    }
+
+    const transaction = new MagistrateCrypto.Builders.BridgechainUpdateBuilder()
+      .bridgechainUpdateAsset(asset)
+      .fee(fee)
+
+    passphrase = this.normalizePassphrase(passphrase)
+    secondPassphrase = this.normalizePassphrase(secondPassphrase)
+
+    return this.__signTransaction({
+      address,
+      transaction,
+      passphrase,
+      secondPassphrase,
+      wif,
+      networkWif,
+      multiSignature
+    }, returnObject)
+  }
+
+  /**
+   * Build a bridgechain resignation transaction.
+   * @param {Object} data
+   * @param {String} data.address
+   * @param {Number} data.fee - dynamic fee, as arktoshi
+   * @param {String} data.bridgechainId
+   * @param {String} data.passphrase
+   * @param {String} data.secondPassphrase
+   * @param {String} data.wif
+   * @param {String} data.networkWif
+   * @param {Object} data.multiSignature
+   * @param {Boolean} isAdvancedFee - if it's not a static fee
+   * @param {Boolean} returnObject - to return the transaction of its internal struct
+   * @returns {Object}
+   */
+  async buildBridgechainResignation (
+    {
+      address,
+      fee,
+      bridgechainId,
+      passphrase,
+      secondPassphrase,
+      wif,
+      networkWif,
+      multiSignature
+    },
+    isAdvancedFee = false,
+    returnObject = false
+  ) {
+    if (!store.getters['session/network'].constants.aip11) {
+      throw new Error('AIP-11 transaction not supported on network')
+    }
+
+    const staticFee = store.getters['transaction/staticFee'](TRANSACTION_TYPES.GROUP_2.BRIDGECHAIN_RESIGNATION, 2)
+    if (!isAdvancedFee && fee.gt(staticFee)) {
+      throw new Error(`Bridgechain Resignation fee should be smaller than ${staticFee}`)
+    }
+
+    const transaction = new MagistrateCrypto.Builders.BridgechainResignationBuilder()
+      .bridgechainResignationAsset(bridgechainId)
       .fee(fee)
 
     passphrase = this.normalizePassphrase(passphrase)

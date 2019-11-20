@@ -1,9 +1,9 @@
 <template>
   <form
-    class="TransactionFormBusinessResignation flex flex-col"
+    class="TransactionFormBridgechainResignation flex flex-col"
     @submit.prevent
   >
-    <template v-if="currentWallet.isDelegate">
+    <template v-if="!bridgechain.resigned">
       <ListDivided :is-floating-label="true">
         <ListDividedItem :label="$t('TRANSACTION.SENDER')">
           {{ senderLabel }}
@@ -15,8 +15,8 @@
           </span>
         </ListDividedItem>
 
-        <ListDividedItem :label="$t('TRANSACTION.BUSINESS_NAME')">
-          {{ currentWallet.business.name }}
+        <ListDividedItem :label="$t('TRANSACTION.BRIDGECHAIN_NAME')">
+          {{ bridgechain.name }}
         </ListDividedItem>
       </ListDivided>
 
@@ -83,12 +83,12 @@
 
       <Portal to="transaction-footer">
         <footer class="ModalWindow__container__footer--warning">
-          {{ $t('TRANSACTION.FOOTER_TEXT.BUSINESS_RESIGNATION') }}
+          {{ $t('TRANSACTION.FOOTER_TEXT.BRIDGECHAIN_RESIGNATION') }}
         </footer>
       </Portal>
     </template>
     <template v-else>
-      {{ $t('WALLET_DELEGATES.NOT_REGISTERED') }}
+      {{ $t('WALLET_BUSINESS.BRIDGECHAIN.NOT_REGISTERED') }}
     </template>
   </form>
 </template>
@@ -102,11 +102,11 @@ import { PassphraseInput } from '@/components/Passphrase'
 import mixin from '../mixin'
 
 export default {
-  name: 'TransactionFormBusinessResignation',
+  name: 'TransactionFormBridgechainResignation',
 
   transactionGroup: TRANSACTION_GROUPS.MAGISTRATE,
 
-  transactionType: TRANSACTION_TYPES.GROUP_2.BUSINESS_RESIGNATION,
+  transactionType: TRANSACTION_TYPES.GROUP_2.BRIDGECHAIN_RESIGNATION,
 
   components: {
     InputFee,
@@ -119,6 +119,13 @@ export default {
 
   mixins: [mixin],
 
+  props: {
+    bridgechain: {
+      type: Object,
+      required: true
+    }
+  },
+
   data: () => ({
     form: {
       fee: 0,
@@ -130,6 +137,7 @@ export default {
   methods: {
     getTransactionData () {
       const transactionData = {
+        bridgechainId: this.bridgechain.bridgechainId,
         address: this.currentWallet.address,
         passphrase: this.form.passphrase,
         fee: this.getFee(),
@@ -150,7 +158,7 @@ export default {
     },
 
     transactionError () {
-      this.$error(this.$t('TRANSACTION.ERROR.VALIDATION.BUSINESS_RESIGNATION'))
+      this.$error(this.$t('TRANSACTION.ERROR.VALIDATION.BRIDGECHAIN_RESIGNATION'))
     }
   },
 

@@ -140,8 +140,8 @@ export default {
   VALIDATION: {
     TOO_LONG: 'The \'{0}\' is too long',
     TOO_SHORT: 'The \'{0}\' is too short',
+    INVALID_SEED: 'Invalid Seed',
     INVALID_URI: 'Invalid URI',
-    INVALID_URL: 'Invalid URL',
     INVALID_FORMAT: 'Invalid format',
     INVALID_TYPE: 'Invalid type',
     MAX_LENGTH: 'Max {0}',
@@ -868,7 +868,8 @@ export default {
     FOOTER_TEXT: {
       DELEGATE_REGISTRATION: 'Keep in mind that you cannot change the name of your delegate after the registration has been registered on the blockchain.',
       DELEGATE_RESIGNATION: 'Keep in mind that you cannot restore your delegate after the resignation has been registered on the blockchain.',
-      BUSINESS_RESIGNATION: 'Keep in mind that you cannot restore your business after the resignation has been registered on the blockchain.'
+      BUSINESS_RESIGNATION: 'Keep in mind that you cannot restore your business after the resignation has been registered on the blockchain.',
+      BRIDGECHAIN_RESIGNATION: 'Keep in mind that you cannot restore your bridgechain after the resignation has been registered on the blockchain.'
     },
     INFO: {
       BROADCASTING: 'Your transaction is being broadcast to the network',
@@ -1149,12 +1150,23 @@ export default {
     VAT: 'VAT',
     REPOSITORY: 'Repository',
     NO_TRANSACTIONS: 'This wallet has no bridgechains',
+    NOT_REGISTERED: 'This wallet is not registered as a business',
     COLUMN: {
-      ID: 'ID',
       NAME: 'Name',
       SEEDS: 'Seeds',
       GENESIS_HASH: 'Genesis Hash',
-      REPO: 'Git Repository'
+      REPOSITORY: 'Repository'
+    },
+    BRIDGECHAIN: {
+      NAME: 'Name',
+      SEED_NODES: 'Seed Nodes',
+      GENESIS_HASH: 'Genesis Hash',
+      BRIDGECHAIN_REPOSITORY: 'Bridgechain Repository',
+      NOT_REGISTERED: 'This bridgechain is not registered',
+      BUTTON: {
+        RESIGN: 'Resign',
+        UPDATE: 'Update'
+      }
     }
   },
 

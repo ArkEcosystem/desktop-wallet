@@ -11,32 +11,15 @@ export default {
   mixins: [mixin],
 
   props: {
-    isUpdate: {
-      type: Boolean,
-      required: false,
-      default: false
+    bridgechain: {
+      type: Object,
+      required: true
     }
   },
 
-  data: () => ({
-    form: {
-      fee: 0,
-      passphrase: '',
-      walletPassword: '',
-      asset: {
-        name: '',
-        website: '',
-        vat: '',
-        repository: ''
-      }
-    }
-  }),
-
   mounted () {
-    this.form.asset.name = this.wallet_fromRoute.bridgechain.name
-    this.form.asset.website = this.wallet_fromRoute.bridgechain.website
-    this.form.asset.vat = this.wallet_fromRoute.bridgechain.vat
-    this.form.asset.repository = this.wallet_fromRoute.bridgechain.repository
+    this.form.asset.bridgechainId = this.bridgechain.bridgechainId
+    this.form.asset.seedNodes = this.bridgechain.seedNodes
   },
 
   methods: {
