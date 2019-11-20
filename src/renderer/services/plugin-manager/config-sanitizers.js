@@ -1,6 +1,6 @@
 import { difference, intersection, uniq } from 'lodash'
 import { PLUGINS } from '@config'
-import validPermissions from './plugin-permission'
+import * as validPermissions from './plugin-permission'
 import du from 'du'
 import parse from 'parse-author'
 import semver from 'semver'

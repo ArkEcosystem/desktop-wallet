@@ -28,26 +28,3 @@ export const UI_COMPONENTS = new Permission({ name: 'UI_COMPONENTS' })
 export const WALLET_TABS = new Permission({ name: 'WALLET_TABS' })
 export const WEBFRAME = new Permission({ name: 'WEBFRAME' })
 export const WEBSOCKET = new Permission({ name: 'WEBSOCKET' })
-
-export default {
-  ALERTS,
-  AUDIO,
-  AVATARS,
-  COMPONENTS,
-  EVENTS,
-  HTTP,
-  MENU_ITEMS,
-  MESSAGING,
-  PEER_CURRENT,
-  PROFILE_ALL,
-  PROFILE_CURRENT,
-  PUBLIC,
-  ROUTES,
-  STORAGE,
-  THEMES,
-  TIMERS,
-  UI_COMPONENTS,
-  WALLET_TABS,
-  WEBFRAME,
-  WEBSOCKET
-}
