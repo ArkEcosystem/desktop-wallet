@@ -15,7 +15,7 @@
           </span>
         </ListDividedItem>
 
-        <ListDividedItem :label="$t('TRANSACTION.BRIDGECHAIN_NAME')">
+        <ListDividedItem :label="$t('WALLET_BUSINESS.BRIDGECHAIN.NAME')">
           {{ bridgechain.name }}
         </ListDividedItem>
       </ListDivided>

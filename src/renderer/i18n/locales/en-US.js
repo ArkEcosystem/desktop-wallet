@@ -142,6 +142,7 @@ export default {
     TOO_SHORT: 'The \'{0}\' is too short',
     INVALID_SEED: 'Invalid Seed',
     INVALID_URI: 'Invalid URI',
+    INVALID_URL: 'Invalid URL',
     INVALID_PORT: 'Invalid Port Number',
     INVALID_FORMAT: 'Invalid format',
     INVALID_TYPE: 'Invalid type',
@@ -893,6 +894,9 @@ export default {
       BUSINESS_REGISTRATION: 'Business Registration created successful',
       BUSINESS_RESIGNATION: 'Business Resignation created successful',
       BUSINESS_UPDATE: 'Business Update created successful',
+      BRIDGECHAIN_REGISTRATION: 'Bridgechain Registration created successful',
+      BRIDGECHAIN_RESIGNATION: 'Bridgechain Resignation created successful',
+      BRIDGECHAIN_UPDATE: 'Bridgechain Update created successful',
       SAVE_OFFLINE: 'The transaction file was saved successfully in: {path}',
       LOAD_FROM_FILE: 'The transaction file was loaded successfully'
     },
@@ -939,6 +943,7 @@ export default {
     },
     AMOUNT: 'Amount',
     BLOCK_ID: 'Block ID',
+    BUSINESS_NAME: 'Business Name',
     CONFIRMATION_COUNT: '{confirmations} Confirmations',
     CONFIRM_SEND_ALL: 'This will enable sending all of your tokens from the current wallet in this transaction.',
     CONFIRM_SEND_ALL_TITLE: 'Send all your tokens?',
@@ -1166,6 +1171,7 @@ export default {
       BRIDGECHAIN_REPOSITORY: 'Bridgechain Repository',
       API_PORT: 'API Port',
       NOT_REGISTERED: 'This bridgechain is not registered',
+      RESIGNED: 'Resigned',
       BUTTON: {
         RESIGN: 'Resign',
         UPDATE: 'Update'
