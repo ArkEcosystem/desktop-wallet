@@ -338,17 +338,29 @@ export default {
         })
       }
 
-      await this.$plugins.fetchPlugin(pluginPath, this.isUpdate)
+      try {
+        await this.$plugins.fetchPlugin(pluginPath, this.isUpdate)
 
-      const message = this.$root.$t(
-        `PAGES.PLUGIN_MANAGER.SUCCESS.${this.isUpdate ? 'UPDATE' : 'INSTALLATION'}`, {
-          plugin: this.selectedPlugin.title
-        }
-      )
+        const message = this.$root.$t(
+          `PAGES.PLUGIN_MANAGER.SUCCESS.${this.isUpdate ? 'UPDATE' : 'INSTALLATION'}`, {
+            plugin: this.selectedPlugin.title
+          }
+        )
 
-      this.$success(message)
+        this.$success(message)
+      } catch (error) {
+        this.$error(this.$t('COMMON.FAILED_FETCH', {
+          name: 'plugin',
+          msg: error.message
+        }))
+      }
 
-      this.resetModal()
+      this.reset()
+    })
+
+    ipcRenderer.on('plugin-manager:error', (_, error) => {
+      this.reset()
+      this.$error(error)
     })
   },
 
