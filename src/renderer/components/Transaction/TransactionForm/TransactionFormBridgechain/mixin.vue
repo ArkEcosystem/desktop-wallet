@@ -204,6 +204,7 @@ export default {
       asset: {
         name: '',
         seedNodes: [],
+        ports: {},
         genesisHash: '',
         bridgechainRepository: ''
       }
