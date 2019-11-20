@@ -510,23 +510,23 @@ export default {
       ALERTS: 'Allows access to the Desktop Wallet alerts',
       AUDIO: 'Allows access to play audio from within the Desktop Wallet',
       AVATARS: 'Plugin contains custom components',
-      COMPONENTS: 'Allows to load custom components',
+      COMPONENTS: 'Allows loading custom components',
       EVENTS: 'Allows access to the Desktop Wallet events',
       HTTP: 'Allows performing external web requests',
       MENU_ITEMS: 'Allows adding custom menu items to the Desktop Wallet sidebar',
-      MESSAGING: 'Allows WebFrame to have access to a one-way messaging system',
+      MESSAGING: 'Allows WebFrames access to a one-way messaging system',
       PEER_CURRENT: 'Allows access to the currently connected peer',
-      PUBLIC: 'Allows to navigate to wallet routes and provides access to the Font Awesome icon set',
+      PUBLIC: 'Allows navigation to wallet routes and provides access to the Font Awesome icon set',
       PROFILE_ALL: 'Allows access to all available profiles',
       PROFILE_CURRENT: 'Allows access to the currently active profile',
-      ROUTES: 'Allows to load additional routes into the Desktop Wallet',
+      ROUTES: 'Allows loading additional routes into the Desktop Wallet',
       STORAGE: 'Allows storing data within the Desktop Wallet, using key-value pairs',
       THEMES: 'Allows loading additional custom themes for the Desktop Wallet',
       TIMERS: 'Allows using timeouts and intervals',
       UI_COMPONENTS: 'Allows access to the standard Desktop Wallet components used throughout',
       WALLET_TABS: 'Allows showing an additional tab/page on the Wallet screen',
       WEBFRAME: 'Allows showing remote URL pages within a frame',
-      WEBSOCKET: 'Allows to connect to websockets'
+      WEBSOCKET: 'Allows connections to websockets'
     }
   },
 
