@@ -16,9 +16,7 @@
         </ListDividedItem>
       </ListDivided>
 
-      <div
-        v-if="step === 1"
-      >
+      <div v-if="step === 1">
         <div
           class="flex"
         >
@@ -215,15 +213,6 @@ export default {
   computed: {
     isUpdate () {
       return !!this.bridgechain
-    },
-
-    validStep1 () {
-      if (!this.$v.seedNode.$dirty || this.$v.seedNode.$invalid ||
-        this.seedNodeError || this.seedNode.replace(/\s+/, '') === '') {
-        return false
-      }
-
-      return true
     },
 
     isFormValid () {
