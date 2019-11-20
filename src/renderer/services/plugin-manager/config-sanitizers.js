@@ -76,7 +76,7 @@ const sanitizeMinVersion = config => {
 }
 
 const sanitizeLogo = logo => {
-  if (logo && /^https?:\/\/raw.githubusercontent.com[A-Za-z0-9_.-]+logo.png$/.test(logo)) {
+  if (logo && /^https?:\/\/raw.githubusercontent.com[A-Za-z0-9/_.-]+logo.png$/.test(logo)) {
     return logo
   }
 }
