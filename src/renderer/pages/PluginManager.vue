@@ -324,17 +324,17 @@ export default {
       }
 
       return this.$t(`PAGES.PLUGIN_MANAGER.${this.isUpdate ? 'UPDATING' : 'INSTALLING'}`, {
-        plugin: this.selectedPlugin.id
+        plugin: this.selectedPlugin.title
       })
     }
   },
 
   mounted () {
-    ipcRenderer.on('plugin-manager:plugin-installed', async (_, { pluginId, pluginPath }) => {
+    ipcRenderer.on('plugin-manager:plugin-installed', async (_, pluginPath) => {
       if (this.isUpdate) {
         this.$store.dispatch('plugin/setEnabled', {
           enabled: false,
-          pluginId
+          pluginId: this.selectedPlugin.id
         })
       }
 
@@ -342,7 +342,7 @@ export default {
 
       const message = this.$root.$t(
         `PAGES.PLUGIN_MANAGER.SUCCESS.${this.isUpdate ? 'UPDATE' : 'INSTALLATION'}`, {
-          plugin: pluginId
+          plugin: this.selectedPlugin.title
         }
       )
 
@@ -479,7 +479,7 @@ export default {
 
     onRemoved () {
       this.$success(this.$t('PAGES.PLUGIN_MANAGER.SUCCESS.REMOVAL', {
-        plugin: this.selectedPlugin.id
+        plugin: this.selectedPlugin.title
       }))
       this.reset()
     },

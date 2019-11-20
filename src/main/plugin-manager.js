@@ -65,10 +65,7 @@ export const setupPluginManager = ({ sendToWindow, mainWindow, ipcMain }) => {
 
       await trash(savePath)
 
-      sendToWindow(prefix + 'plugin-installed', {
-        pluginId,
-        pluginPath
-      })
+      sendToWindow(prefix + 'plugin-installed', pluginPath)
     } catch (error) {
       sendToWindow(prefix + 'error', error)
     }

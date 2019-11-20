@@ -20,7 +20,7 @@
               tag="span"
               class="PluginInstallModal__authorized__downloading__header__title"
             >
-              <strong slot="plugin">{{ plugin.id }}</strong>
+              <strong slot="plugin">{{ plugin.title }}</strong>
             </i18n>
 
             <div class="PluginInstallModal__authorized__downloading__header__info">
