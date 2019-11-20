@@ -430,7 +430,7 @@ describe('Services > Wallet', () => {
       it('should throw an error for wrong signature', () => {
         expect(() => {
           WalletService.verifyMessage(message, publicKey, 'wrong')
-        }).toThrowError('signature length is invalid')
+        }).toThrowError()
       })
     })
   })

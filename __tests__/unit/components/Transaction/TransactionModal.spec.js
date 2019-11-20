@@ -121,13 +121,14 @@ describe('TransactionModal', () => {
     it('should dispatch `transaction/create` using the transaction, but replacing some attributes, and the current profile', () => {
       wrapper.vm.storeTransaction(transaction)
 
-      const { id, type, amount, fee, vendorField } = transaction
+      const { id, type, typeGroup, amount, fee, vendorField } = transaction
       const timestamp = (new Date(wrapper.vm.session_network.constants.epoch)).getTime() + transaction.timestamp * 1000
 
       const expected = {
         profileId,
         id,
         type,
+        typeGroup,
         amount,
         fee,
         vendorField,
