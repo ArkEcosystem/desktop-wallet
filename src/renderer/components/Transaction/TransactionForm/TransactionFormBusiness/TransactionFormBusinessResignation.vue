@@ -3,7 +3,7 @@
     class="TransactionFormBusinessResignation flex flex-col"
     @submit.prevent
   >
-    <template v-if="WalletService.canResignBusiness(currentWallet)">
+    <template v-if="canResignBusiness">
       <ListDivided :is-floating-label="true">
         <ListDividedItem :label="$t('TRANSACTION.SENDER')">
           {{ senderLabel }}
@@ -100,6 +100,7 @@ import { InputFee, InputPassword } from '@/components/Input'
 import { ListDivided, ListDividedItem } from '@/components/ListDivided'
 import { ModalLoader } from '@/components/Modal'
 import { PassphraseInput } from '@/components/Passphrase'
+import WalletService from '@/services/wallet'
 import mixin from '../mixin'
 
 export default {
@@ -127,6 +128,12 @@ export default {
       walletPassword: ''
     }
   }),
+
+  computed: {
+    canResignBusiness () {
+      return WalletService.canResignBusiness(this.currentWallet)
+    }
+  },
 
   methods: {
     getTransactionData () {
