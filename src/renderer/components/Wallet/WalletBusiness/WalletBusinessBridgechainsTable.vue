@@ -11,7 +11,18 @@
       <template
         slot-scope="data"
       >
-        <div v-if="data.column.field === 'bridgechainRepository'">
+        <div v-if="data.column.field === 'name'">
+          <span>{{ data.formattedRow[data.column.field] }}</span>
+
+          <span
+            v-if="!!data.row.isResigned"
+            class="font-bold"
+          >
+            - {{ $t('WALLET_BUSINESS.BRIDGECHAIN.RESIGNED') }}
+          </span>
+        </div>
+
+        <div v-else-if="data.column.field === 'bridgechainRepository'">
           <a
             class="flex items-center whitespace-no-wrap"
             href="#"

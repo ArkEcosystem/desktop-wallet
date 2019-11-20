@@ -63,7 +63,10 @@
       />
     </ListDivided>
 
-    <div class="flex">
+    <div
+      v-if="!isResigned"
+      class="flex"
+    >
       <div class="flex-1">
         <ButtonModal
           slot="primaryButton"
@@ -85,7 +88,6 @@
 
       <div class="flex-1">
         <ButtonModal
-          v-if="canResign"
           slot="primaryButton"
           :label="$t('WALLET_BUSINESS.BRIDGECHAIN.BUTTON.RESIGN')"
           class="ButtonGeneric blue-button"
@@ -133,8 +135,8 @@ export default {
   },
 
   computed: {
-    canResign () {
-      return !this.bridgechain.resigned
+    isResigned () {
+      return !!this.bridgechain.isResigned
     }
   },
 

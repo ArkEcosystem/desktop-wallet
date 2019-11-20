@@ -3,7 +3,7 @@
     class="TransactionFormBridgechainResignation flex flex-col"
     @submit.prevent
   >
-    <template v-if="!bridgechain.resigned">
+    <template v-if="!bridgechain.isResigned">
       <ListDivided :is-floating-label="true">
         <ListDividedItem :label="$t('TRANSACTION.SENDER')">
           {{ senderLabel }}
