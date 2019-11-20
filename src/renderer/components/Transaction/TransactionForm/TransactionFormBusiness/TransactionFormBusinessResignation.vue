@@ -3,7 +3,7 @@
     class="TransactionFormBusinessResignation flex flex-col"
     @submit.prevent
   >
-    <template v-if="currentWallet.isDelegate">
+    <template v-if="WalletService.canResignBusiness(currentWallet)">
       <ListDivided :is-floating-label="true">
         <ListDividedItem :label="$t('TRANSACTION.SENDER')">
           {{ senderLabel }}
@@ -89,7 +89,7 @@
       </Portal>
     </template>
     <template v-else>
-      {{ $t('WALLET_DELEGATES.NOT_REGISTERED') }}
+      {{ $t('WALLET_BUSINESS.NOT_REGISTERED') }}
     </template>
   </form>
 </template>
