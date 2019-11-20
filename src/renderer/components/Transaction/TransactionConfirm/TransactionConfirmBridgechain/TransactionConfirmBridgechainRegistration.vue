@@ -15,7 +15,16 @@
     </ListDividedItem>
 
     <ListDividedItem :label="$t('WALLET_BUSINESS.BRIDGECHAIN.GENESIS_HASH')">
-      {{ transaction.asset.bridgechainRegistration.genesisHash }}
+      <span
+        v-tooltip="{
+          content: transaction.asset.bridgechainRegistration.genesisHash,
+          trigger: 'hover',
+          classes: 'text-xs'
+        }"
+        class="cursor-default"
+      >
+        {{ transaction.asset.bridgechainRegistration.genesisHash | truncateMiddle(10) }}
+      </span>
     </ListDividedItem>
 
     <ListDividedItem :label="$t('WALLET_BUSINESS.BRIDGECHAIN.SEED_NODES')">
