@@ -1,36 +1,31 @@
 <template>
-  <span
+  <button
     v-tooltip="{
-      content: tooltipContent,
+      content: title,
       trigger: 'hover',
-      hideOnTargetClick: false,
       ...(tooltipPlacement && { placement: tooltipPlacement })
     }"
-    class="flex items-center"
+    :class="[
+      withoutBackground ? 'hover:bg-transparent' : `py-2 px-4 rounded ${colorClass ? colorClass : 'bg-theme-button-light text-theme-button-light-text'}`
+    ]"
+    class="ButtonReload cursor-pointer inline-flex items-center self-stretch"
+    :disabled="isRefreshing"
+    @click="emitClick"
   >
-    <button
+    <span v-if="text.length && !isRefreshing">
+      {{ text }}
+    </span>
+    <SvgIcon
+      v-else
       :class="[
-        withoutBackground ? 'hover:bg-transparent' : `py-2 px-4 rounded ${colorClass ? colorClass : 'bg-theme-button-light text-theme-button-light-text'}`
+        isRefreshing ? 'rotate-360' : '',
+        textClass
       ]"
-      class="ButtonReload cursor-pointer inline-flex items-center self-stretch"
-      :disabled="isRefreshing"
-      @click="emitClick"
-    >
-      <span v-if="text.length && !isRefreshing">
-        {{ text }}
-      </span>
-      <SvgIcon
-        v-else
-        :class="[
-          isRefreshing ? 'rotate-360' : '',
-          textClass
-        ]"
-        class="mx-1"
-        name="update"
-        :view-box="viewBox"
-      />
-    </button>
-  </span>
+      class="mx-1"
+      name="update"
+      :view-box="viewBox"
+    />
+  </button>
 </template>
 
 <script>
@@ -74,30 +69,15 @@ export default {
       required: false,
       default: ''
     },
-    alternativeTitle: {
+    viewBox: {
       type: String,
       required: false,
-      default: ''
+      default: '0 0 15 14'
     },
     tooltipPlacement: {
       type: String,
       required: false,
       default: ''
-    },
-    viewBox: {
-      type: String,
-      required: false,
-      default: '0 0 15 14'
-    }
-  },
-
-  computed: {
-    tooltipContent () {
-      if (this.isRefreshing) {
-        return this.alternativeTitle
-      }
-
-      return this.title
     }
   },
 

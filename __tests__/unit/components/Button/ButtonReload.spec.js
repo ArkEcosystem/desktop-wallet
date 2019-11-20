@@ -13,7 +13,7 @@ describe('ButtonReload', () => {
   })
 
   it('should emit click event', () => {
-    wrapper.find('.ButtonReload').trigger('click')
+    wrapper.trigger('click')
     expect(wrapper.emitted('click')).toBeTruthy()
   })
 })

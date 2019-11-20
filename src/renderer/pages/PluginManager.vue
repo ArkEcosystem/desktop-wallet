@@ -65,7 +65,6 @@
           <ButtonReload
             :is-refreshing="isRefreshing"
             :title="$t('PAGES.PLUGIN_MANAGER.CLICK_TO_RELOAD')"
-            :alternative-title="$t('PAGES.PLUGIN_MANAGER.RELOADING')"
             :without-background="true"
             tooltip-placement="left"
             class="ml-auto"

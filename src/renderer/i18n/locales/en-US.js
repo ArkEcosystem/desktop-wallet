@@ -629,7 +629,6 @@ export default {
       NO_SEARCH_RESULTS: 'Unfortunately, searching for "{query}" returned no results',
       NO_RESULTS: 'There are no {filter} plugins with the category {category}',
       SEARCH: 'Search',
-      RELOADING: 'The repository is being reloaded',
       CLICK_TO_RELOAD: 'Reload the plugin repository',
       ALREADY_INSTALLED: 'You\'ve already installed this plugin',
       UPDATE: {
