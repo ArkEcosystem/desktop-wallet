@@ -79,6 +79,16 @@
           />
         </div>
 
+        <InputText
+          v-model="$v.form.apiPort.$model"
+          :helper-text="apiPortError"
+          :label="$t('TRANSACTION.BRIDGECHAIN.API_PORT')"
+          :is-invalid="!!apiPortError"
+          type="number"
+          class="mb-5"
+          name="apiPort"
+        />
+
         <InputFee
           ref="fee"
           :currency="walletNetwork.token"
@@ -158,7 +168,7 @@
 </template>
 
 <script type="text/javascript">
-import { maxLength, minLength, required, url } from 'vuelidate/lib/validators'
+import { maxLength, minLength, numeric, required, url } from 'vuelidate/lib/validators'
 import { ButtonGeneric } from '@/components/Button'
 import { InputFee, InputPassword, InputText } from '@/components/Input'
 import { ListDivided, ListDividedItem } from '@/components/ListDivided'
@@ -192,6 +202,7 @@ export default {
       fee: 0,
       passphrase: '',
       walletPassword: '',
+      apiPort: 4003,
       asset: {
         name: '',
         seedNodes: [],
@@ -287,6 +298,18 @@ export default {
       }
 
       return null
+    },
+
+    apiPortError () {
+      if (this.$v.form.apiPort.$dirty && !this.$v.form.apiPort.isValid) {
+        if (!this.$v.form.apiPort.isNumeric) {
+          return this.$t('VALIDATION.NOT_NUMERIC', [this.$t('TRANSACTION.BRIDGECHAIN.API_PORT')])
+        } else if (!this.$v.form.apiPort.isValid) {
+          return this.$t('VALIDATION.INVALID_PORT')
+        }
+      }
+
+      return null
     }
   },
 
@@ -321,6 +344,8 @@ export default {
         transactionData.secondPassphrase = this.form.secondPassphrase
       }
 
+      transactionData.asset.ports['@arkecosystem/core-api'] = parseInt(this.form.apiPort)
+
       return transactionData
     },
 
@@ -354,6 +379,14 @@ export default {
       passphrase: mixin.validators.passphrase,
       walletPassword: mixin.validators.walletPassword,
       secondPassphrase: mixin.validators.secondPassphrase,
+
+      apiPort: {
+        isNumeric: numeric,
+
+        isValid (value) {
+          return parseInt(value) < 65536
+        }
+      },
 
       asset: {
         name: {

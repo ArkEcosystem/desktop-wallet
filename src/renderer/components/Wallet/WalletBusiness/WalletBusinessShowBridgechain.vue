@@ -56,6 +56,11 @@
           />
         </a>
       </ListDividedItem>
+
+      <ListDividedItem
+        :label="$t('WALLET_BUSINESS.BRIDGECHAIN.API_PORT')"
+        :value="bridgechain.ports['@arkecosystem/core-api']"
+      />
     </ListDivided>
 
     <div class="flex">

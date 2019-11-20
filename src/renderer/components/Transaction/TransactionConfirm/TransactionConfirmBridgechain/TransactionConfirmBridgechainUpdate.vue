@@ -18,6 +18,10 @@
         {{ seedNode }}
       </div>
     </ListDividedItem>
+
+    <ListDividedItem :label="$t('WALLET_BUSINESS.BRIDGECHAIN.API_PORT')">
+      {{ apiPort }}
+    </ListDividedItem>
   </ListDivided>
 </template>
 
@@ -42,6 +46,14 @@ export default {
   computed: {
     senderLabel () {
       return this.wallet_formatAddress(this.currentWallet.address)
+    },
+
+    apiPort () {
+      if (!this.transaction.asset.bridgechainUpdate.ports['@arkecosystem/core-api']) {
+        return '-'
+      }
+
+      return this.transaction.asset.bridgechainUpdate.ports['@arkecosystem/core-api']
     }
   }
 }

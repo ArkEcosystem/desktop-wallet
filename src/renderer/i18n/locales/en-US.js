@@ -142,6 +142,7 @@ export default {
     TOO_SHORT: 'The \'{0}\' is too short',
     INVALID_SEED: 'Invalid Seed',
     INVALID_URI: 'Invalid URI',
+    INVALID_PORT: 'Invalid Port Number',
     INVALID_FORMAT: 'Invalid format',
     INVALID_TYPE: 'Invalid type',
     MAX_LENGTH: 'Max {0}',
@@ -930,6 +931,7 @@ export default {
       SEED_NODES: 'Seed Nodes',
       GENESIS_HASH: 'Genesis Hash',
       BRIDGECHAIN_REPOSITORY: 'Bridgechain Repository',
+      API_PORT: 'API Port',
       ERROR_DUPLICATE: 'The seed node has already been added'
     },
     WARNING: {
@@ -1162,6 +1164,7 @@ export default {
       SEED_NODES: 'Seed Nodes',
       GENESIS_HASH: 'Genesis Hash',
       BRIDGECHAIN_REPOSITORY: 'Bridgechain Repository',
+      API_PORT: 'API Port',
       NOT_REGISTERED: 'This bridgechain is not registered',
       BUTTON: {
         RESIGN: 'Resign',
