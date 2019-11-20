@@ -173,6 +173,11 @@ export class PluginManager {
     await this.app.$store.dispatch('plugin/deleteLoaded', plugin.config.id)
   }
 
+  async fetchLogo (url) {
+    const { body } = await got(url, { encoding: null })
+    return body.toString('base64')
+  }
+
   async fetchPluginsFromAdapter () {
     if (!this.adapter) {
       this.setAdapter(this.app.$store.getters['session/pluginAdapter'])
@@ -183,16 +188,9 @@ export class PluginManager {
     configs = await Promise.all(configs.map(async config => {
       const plugin = await PluginConfiguration.sanitize(config)
 
-      if (plugin.repository) {
-        const { owner, repository, branch } = this.parsePluginUrl(plugin.repository)
-
-        try {
-          const { body } = await got(`https://raw.githubusercontent.com/${owner}/${repository}/${branch}/logo.png`, { encoding: null })
-          plugin.logo = body.toString('base64')
-        } catch (error) {
-          console.info(`Plugin '${plugin.id}' has no logo, falling back to identicon`)
-        }
-      }
+      try {
+        plugin.logo = await this.fetchLogo(plugin.logo)
+      } catch (error) { }
 
       const validName = validatePackageName(plugin.id).validForNewPackages
       if (!validName) {
@@ -220,10 +218,6 @@ export class PluginManager {
   parsePluginUrl (url) {
     const matches = /https?:\/\/github.com\/([A-Za-z0-9_.-]+)\/([A-Za-z0-9_.-]+)[/]?$/.exec(url)
 
-    if (!matches) {
-      throw new Error('invalid url')
-    }
-
     return {
       owner: matches[1],
       repository: matches[2],
@@ -248,11 +242,8 @@ export class PluginManager {
     plugin.source = `https://github.com/${owner}/${repository}/archive/${branch}.zip`
 
     try {
-      const { body } = await got(`${baseUrl}/logo.png`, { encoding: null })
-      plugin.logo = body.toString('base64')
-    } catch (error) {
-      console.info(`Plugin '${plugin.id}' has no logo, falling back to identicon`)
-    }
+      plugin.logo = await this.fetchLogo(plugin.logo)
+    } catch (error) { }
 
     return plugin
   }
@@ -315,9 +306,7 @@ export class PluginManager {
 
     try {
       pluginConfig.logo = fs.readFileSync(`${pluginPath}/logo.png`).toString('base64')
-    } catch (error) {
-      console.info(`Plugin '${pluginConfig.id}' has no logo, falling back to identicon`)
-    }
+    } catch (error) { }
 
     const fullPath = pluginPath.substring(0, 1) === '/' ? pluginPath : path.resolve(pluginPath)
 

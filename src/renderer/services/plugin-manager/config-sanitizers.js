@@ -75,6 +75,12 @@ const sanitizeMinVersion = config => {
   return null
 }
 
+const sanitizeLogo = logo => {
+  if (logo && /^https?:\/\/raw.githubusercontent.com[A-Za-z0-9_.-]+logo.png$/.test(logo)) {
+    return logo
+  }
+}
+
 const sanitizeName = name => {
   const parts = name.split('/')
   const tmp = parts[parts.length ? 1 : 0]
@@ -89,24 +95,6 @@ const sanitizePermissions = config => {
   return intersection(uniq(permissions).sort().map(permission => {
     return permission.toUpperCase()
   }), Object.keys(validPermissions))
-}
-
-const sanitizeRepository = (repository) => {
-  let url
-
-  if (repository && repository.type === 'git') {
-    url = repository.url
-
-    if (url.startsWith('git+')) {
-      url = url.split('git+')[1]
-
-      if (url.endsWith('.git')) {
-        url = url.split('.git')[0]
-      }
-    }
-  }
-
-  return url
 }
 
 const sanitizeSize = async (config, pluginPath) => {
@@ -148,9 +136,9 @@ export {
   sanitizeCategories,
   sanitizeIsOfficial,
   sanitizeMinVersion,
+  sanitizeLogo,
   sanitizeName,
   sanitizePermissions,
-  sanitizeRepository,
   sanitizeSize,
   sanitizeSource,
   sanitizeTitle,

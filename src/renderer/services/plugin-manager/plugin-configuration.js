@@ -2,9 +2,9 @@ import {
   sanitizeAuthor,
   sanitizeCategories,
   sanitizeIsOfficial,
+  sanitizeLogo,
   sanitizeMinVersion,
   sanitizePermissions,
-  sanitizeRepository,
   sanitizeSize,
   sanitizeSource,
   sanitizeTitle,
@@ -17,6 +17,7 @@ export class PluginConfiguration {
     author,
     categories,
     description,
+    logo,
     homepage,
     isOfficial,
     minVersion,
@@ -25,13 +26,13 @@ export class PluginConfiguration {
     source,
     title,
     urls,
-    version,
-    repository
+    version
   }) {
     this.id = id
     this.author = author
     this.categories = categories
     this.description = description
+    this.logo = logo
     this.homepage = homepage
     this.isOfficial = isOfficial
     this.minVersion = minVersion
@@ -41,7 +42,6 @@ export class PluginConfiguration {
     this.title = title
     this.urls = urls
     this.version = version
-    this.repository = repository
   }
 
   static async sanitize (config, pluginPath = null) {
@@ -50,6 +50,7 @@ export class PluginConfiguration {
       author: sanitizeAuthor(config),
       categories: sanitizeCategories(config),
       description: config.description,
+      logo: sanitizeLogo(config.logo),
       homepage: config.homepage,
       isOfficial: sanitizeIsOfficial(config.name),
       minVersion: sanitizeMinVersion(config),
@@ -58,8 +59,7 @@ export class PluginConfiguration {
       source: sanitizeSource(config),
       title: sanitizeTitle(config),
       urls: sanitizeUrls(config),
-      version: config.version,
-      repository: sanitizeRepository(config.repository)
+      version: config.version
     })
   }
 
