@@ -20,19 +20,18 @@
     got "^9.6.0"
     is-url-superb "^3.0.0"
 
-"@arkecosystem/core-magistrate-crypto@^2.6.0-next.0":
-  version "2.6.0-next.0"
-  resolved "https://registry.yarnpkg.com/@arkecosystem/core-magistrate-crypto/-/core-magistrate-crypto-2.6.0-next.0.tgz#6753d9a0e8fb212ee23719b8a1d09677f1abc95d"
-  integrity sha512-l58tsKXCKaWSzM11kT8Uqm+xYzRiYvkH7U+NdZWRSf8fyW6GEr3df8mNJoc18rs2vORB5f128gjygFONfmweIg==
+"@arkecosystem/core-magistrate-crypto@^2.6.0-next.6":
+  version "2.6.0-next.6"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/core-magistrate-crypto/-/core-magistrate-crypto-2.6.0-next.6.tgz#1af16c661dc3dae675df000d3ee6efe826ac5580"
+  integrity sha512-3mWGPm3rvgBWBV+MmHcg4eVjNzXxGOiMKZfhvA/lYw7ORXz/h83VACTJw4ArJtuufFhwN+2KIEuu3gsRx+MIAg==
   dependencies:
-    "@arkecosystem/crypto" "^2.6.0-next.0"
+    "@arkecosystem/crypto" "^2.6.0-next.6"
     bytebuffer "^5.0.1"
-    long "~3"
 
-"@arkecosystem/crypto@^2.6.0-next.0", "@arkecosystem/crypto@^2.6.0-next.4":
-  version "2.6.0-next.4"
-  resolved "https://registry.yarnpkg.com/@arkecosystem/crypto/-/crypto-2.6.0-next.4.tgz#46ca7eaa5e983a2ec42612a9aeb825f4ef4df953"
-  integrity sha512-Tp/QnHscBQXMjjy4yFjqxJolH9j9g9G2OxwYPwHF5iDk2a2kEyoNZamqB7+dqHFN87QtzNPtGkYz08cErri7+A==
+"@arkecosystem/crypto@^2.6.0-next.6":
+  version "2.6.0-next.6"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/crypto/-/crypto-2.6.0-next.6.tgz#588cd91938ca0c2b1442ca9479357ace9788afd2"
+  integrity sha512-mLX83o+p6beaSxpIV8nNunfXyN0n56Q6Z0rS3pSFdqLQ1ViBPIQZxlFyPQgoerz4Nl0FBvS5+pRbNFa2N82LpQ==
   dependencies:
     "@arkecosystem/utils" "0.8.3"
     ajv "^6.10.2"
