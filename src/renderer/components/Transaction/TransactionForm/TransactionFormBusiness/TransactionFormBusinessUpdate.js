@@ -10,28 +10,6 @@ export default {
 
   mixins: [mixin],
 
-  props: {
-    isUpdate: {
-      type: Boolean,
-      required: false,
-      default: false
-    }
-  },
-
-  data: () => ({
-    form: {
-      fee: 0,
-      passphrase: '',
-      walletPassword: '',
-      asset: {
-        name: '',
-        website: '',
-        vat: '',
-        repository: ''
-      }
-    }
-  }),
-
   mounted () {
     this.form.asset.name = this.wallet_fromRoute.business.name
     this.form.asset.website = this.wallet_fromRoute.business.website
