@@ -80,7 +80,16 @@ export default class WalletService {
    * @return {String}
    */
   static getPublicKeyFromPassphrase (passphrase) {
-    return Identities.Keys.fromPassphrase(this.normalizePassphrase(passphrase)).publicKey
+    return Identities.PublicKey.fromPassphrase(this.normalizePassphrase(passphrase))
+  }
+
+  /**
+   * Generates the public key belonging to the given wif
+   * @param {String} wif
+   * @return {String}
+   */
+  static getPublicKeyFromWIF (wif) {
+    return Identities.PublicKey.fromWIF(wif)
   }
 
   /**

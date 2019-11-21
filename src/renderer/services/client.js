@@ -1368,8 +1368,12 @@ export default class ClientService {
 
     if (multiSignature) {
       let senderPublicKey = null
-      if (passphrase) {
-        senderPublicKey = WalletService.getPublicKeyFromPassphrase(passphrase)
+      if (passphrase || wif) {
+        if (passphrase) {
+          senderPublicKey = WalletService.getPublicKeyFromPassphrase(passphrase)
+        } else {
+          senderPublicKey = WalletService.getPublicKeyFromWIF(wif)
+        }
 
         const publicKeyIndex = multiSignature.publicKeys.indexOf(senderPublicKey)
         transaction.senderPublicKey(senderPublicKey)
