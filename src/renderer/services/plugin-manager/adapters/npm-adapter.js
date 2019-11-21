@@ -51,7 +51,8 @@ class NpmAdapter {
       query: {
         text: `keywords:${keywords}`,
         from: options.from || 0,
-        size: options.size || 250
+        size: options.size || 250,
+        t: Date.now()
       },
       baseUrl: this.baseUrl,
       json: true
