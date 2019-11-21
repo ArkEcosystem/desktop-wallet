@@ -25,7 +25,7 @@
         :class="
           filter === activeFilter
             ? 'bg-theme-feature-item-hover text-theme-feature-item-selected-text'
-            : 'text-grey-dark hover:bg-theme-feature-item-alternative border-grey-light'
+            : 'text-grey-dark hover:bg-theme-feature-item-alternative'
         "
         class="PluginManagerButtonFilter__options__option transition"
         @click="emitFilterChange(filter)"
@@ -93,6 +93,6 @@ export default {
   border-color: transparent;
 }
 .PluginManagerButtonFilter__options__option:not(:last-child) div {
-   @apply border-b
+   @apply border-b border-theme-line-separator
 }
 </style>
