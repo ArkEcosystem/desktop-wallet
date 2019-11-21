@@ -423,7 +423,7 @@ export default {
       this.showLoadingModal = true
 
       try {
-        let { origin: host, port, protocol } = new URL(this.form.server)
+        let { hostname: host, port, protocol } = new URL(this.form.server)
 
         if (!port) {
           port = protocol === 'https:' ? 443 : 80
