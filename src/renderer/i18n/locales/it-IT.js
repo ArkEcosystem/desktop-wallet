@@ -820,7 +820,9 @@ export default {
       LOAD_FROM_FILE: 'Impossibile caricare il file transazione',
       EXPIRED: 'Transazione scaduta prima di essere proccessata: {transactionId}',
       FEE_TOO_LOW: 'La transazione non può essere inviata perchè la commissione ({fee}) è troppo bassa',
-      NOTHING_SENT: 'La transazione non può essere inviata. Controlla la tua connessione di rete o cambia peer'
+      NOTHING_SENT: 'La transazione non può essere inviata. Controlla la tua connessione di rete o cambia peer',
+      NETWORK_NOT_CONFIGURED: 'Rete non configurata',
+      WALLET_NOT_IMPORTED: 'Wallet non importato'
     },
     FOOTER_TEXT: {
       DELEGATE_REGISTRATION: 'Tieni presente che non è possibile modificare il nome del Delegato dopo che la registrazione è stata registrata sulla blockchain.'

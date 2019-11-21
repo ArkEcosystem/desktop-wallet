@@ -129,11 +129,17 @@ export default {
 
   methods: {
     toggleChart (value) {
-      this.marketChartOptions.isExpanded = value
+      this.marketChartOptions = {
+        ...this.marketChartOptions,
+        isExpanded: value
+      }
     },
 
     onPeriodChange (period) {
-      this.marketChartOptions.period = period
+      this.marketChartOptions = {
+        ...this.marketChartOptions,
+        period
+      }
     }
   }
 }
