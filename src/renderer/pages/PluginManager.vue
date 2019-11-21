@@ -341,6 +341,11 @@ export default {
       try {
         await this.$plugins.fetchPlugin(pluginPath, this.isUpdate)
 
+        this.$store.dispatch('plugin/setEnabled', {
+          enabled: true,
+          pluginId: this.selectedPlugin.id
+        })
+
         const message = this.$root.$t(
           `PAGES.PLUGIN_MANAGER.SUCCESS.${this.isUpdate ? 'UPDATE' : 'INSTALLATION'}`, {
             plugin: this.selectedPlugin.title
