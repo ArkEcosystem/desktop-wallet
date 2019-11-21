@@ -859,10 +859,14 @@ export default {
     ACTIONS: 'Actions',
     AUTHOR: 'Author',
     CATEGORY: 'Category',
+    DISABLED: 'Disabled',
+    ENABLED: 'Enabled',
     LOGO: 'Logo',
     NAME: 'Name',
+    NOT_INSTALLED: 'Not installed',
     NO_PLUGINS: 'No plugins available',
     SIZE: 'Size',
+    STATUS: 'Status',
     VERSION: 'Version'
   },
 

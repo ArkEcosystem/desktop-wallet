@@ -55,6 +55,21 @@
         </div>
 
         <div
+          v-else-if="data.column.field === 'status'"
+          class="flex items-center"
+        >
+          <img
+            v-tooltip="{
+              content: $t(`PLUGIN_TABLE.${getStatusText(data.row.id).toUpperCase().replace('-', '_')}`),
+              placement: 'left'
+            }"
+            :src="getStatusIcon(data.row.id)"
+            width="33"
+            class="px-1 mx-auto"
+          >
+        </div>
+
+        <div
           v-else-if="data.column.field === 'actions'"
           class="flex items-center justify-center"
         >
@@ -143,6 +158,13 @@ export default {
           type: 'number'
         },
         {
+          label: this.$t('PLUGIN_TABLE.STATUS'),
+          field: 'status',
+          sortFn: this.sortByStatus,
+          thClass: 'text-center',
+          tdClass: 'text-center'
+        },
+        {
           label: '',
           field: 'actions',
           sortable: false,
@@ -179,11 +201,37 @@ export default {
       return this.$t(`PAGES.PLUGIN_MANAGER.CATEGORIES.${row.categories[0].toUpperCase()}`)
     },
 
+    getStatusIcon (pluginId) {
+      return this.assets_loadImage(`pages/plugin-manager/status/plugin-${this.getStatusText(pluginId)}.svg`)
+    },
+
+    getStatusText (pluginId) {
+      if (this.isInstalled(pluginId)) {
+        return this.isEnabled(pluginId) ? 'enabled' : 'disabled'
+      }
+
+      return 'not-installed'
+    },
+
     sortByCategories (x, y, col, rowX, rowY) {
       const a = this.getCategory(rowX)
       const b = this.getCategory(rowY)
 
       return a.localeCompare(b)
+    },
+
+    sortByStatus (x, y, col, rowX, rowY) {
+      const aInstalled = this.isInstalled(rowX.id)
+      const bInstalled = this.isInstalled(rowY.id)
+
+      const aEnabled = this.isEnabled(rowX.id)
+      const bEnabled = this.isEnabled(rowY.id)
+
+      return (aInstalled === bInstalled) ? (!!aEnabled === !!bEnabled) ? 0 : aEnabled ? -1 : 1 : aInstalled ? -1 : 1
+    },
+
+    isEnabled (pluginId) {
+      return this.$store.getters['plugin/isEnabled'](pluginId)
     },
 
     isInstalled (pluginId) {
