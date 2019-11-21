@@ -129,6 +129,49 @@ describe('Create Component', () => {
       expect(wrapper.vm.name).toBe('Jest')
     })
 
+    it('should not access restricted properties', () => {
+      const plugin = {
+        template: '<div></div>',
+        data: () => ({
+          parent: undefined,
+          root: undefined
+        }),
+        methods: {
+          change () {
+            this.parent = this.$parent
+            this.root = this.$root
+          }
+        }
+      }
+      const component = wrapperPlugin(plugin)
+      const wrapper = mount(component)
+      wrapper.vm.change()
+      expect(wrapper.vm.parent).toBe(undefined)
+      expect(wrapper.vm.root).toBe(undefined)
+    })
+
+    it('should not access restricted properties from events', () => {
+      const plugin = {
+        template: '<button ref="btn" @click="change">Test</button>',
+        data: () => ({
+          parent: undefined,
+          root: undefined
+        }),
+        methods: {
+          change () {
+            this.parent = this.$parent
+            this.root = this.$root
+          }
+        }
+      }
+      const component = wrapperPlugin(plugin)
+      const wrapper = mount(component)
+      const btn = wrapper.find({ ref: 'btn' })
+      btn.trigger('click')
+      expect(wrapper.vm.parent).toBe(undefined)
+      expect(wrapper.vm.root).toBe(undefined)
+    })
+
     it('should call methods from elements', () => {
       const plugin = {
         template: '<button ref="btn" @click="change">{{ name }}</button>',

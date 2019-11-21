@@ -40,7 +40,6 @@ export class PluginSandbox {
 
     this.sandbox = {}
     this.walletApi = {}
-
     this.sandboxes = this.__mapPermissionsToSandbox()
   }
 
@@ -57,28 +56,34 @@ export class PluginSandbox {
     }
   }
 
-  getVM ({ loadApi }) {
-    const fullPath = this.plugin.fullPath
-
+  getComponentVM () {
     return new NodeVM({
-      sandbox: this.getSandbox(loadApi),
+      sandbox: this.getSandbox(true),
       require: {
         builtin: [],
         context: 'sandbox',
-        resolve: function (source) {
-          return path.resolve(fullPath, source)
-        },
         external: {
-          modules: [
-            path.resolve(fullPath),
-            'vue/dist/vue.common.js'
-          ],
+          modules: [],
           transitive: true
         },
         root: [
-          this.plugin.rootPath,
-          path.resolve(fullPath)
+          path.resolve(this.plugin.fullPath)
         ]
+      }
+    })
+  }
+
+  getPluginVM () {
+    const { rootPath } = this.plugin
+
+    return new NodeVM({
+      sandbox: this.getSandbox(false),
+      require: {
+        context: 'sandbox',
+        resolve: function (source) {
+          return path.resolve(rootPath, 'node_modules', source)
+        },
+        external: ['vue']
       }
     })
   }

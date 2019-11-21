@@ -865,7 +865,9 @@ export default {
       EXPIRED: 'Transaction expired before it was processed: {transactionId}',
       FEE_TOO_LOW: 'Transaction could not be sent because the fee ({fee}) is too low',
       NOTHING_SENT: 'The transaction could not be sent. Please check your network connection or change peer',
-      WRONG_NONCE: 'The transaction could not be sent. Wrong nonce provided'
+      WRONG_NONCE: 'The transaction could not be sent. Wrong nonce provided',
+      NETWORK_NOT_CONFIGURED: 'Network not configured',
+      WALLET_NOT_IMPORTED: 'Wallet not imported'
     },
     FOOTER_TEXT: {
       DELEGATE_REGISTRATION: 'Keep in mind that you cannot change the name of your delegate after the registration has been registered on the blockchain.',

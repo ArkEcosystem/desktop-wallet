@@ -345,6 +345,52 @@ export default {
       this.$set(this.form, 'amount', this.schema.amount || '')
       this.$set(this.form, 'recipientId', this.schema.address || '')
       this.$set(this.form, 'vendorField', this.schema.vendorField || '')
+      if (this.schema.wallet) {
+        const currentProfile = this.$store.getters['session/profileId']
+        const ledgerWallets = this.$store.getters['ledger/isConnected'] ? this.$store.getters['ledger/wallets'] : []
+        const profiles = this.$store.getters['profile/all']
+        const wallets = []
+
+        let foundNetwork = !this.schema.nethash
+
+        if (currentProfile) {
+          if (this.schema.nethash) {
+            const profile = this.$store.getters['profile/byId'](currentProfile)
+            const network = this.$store.getters['network/byId'](profile.networkId)
+            if (network.nethash === this.schema.nethash) {
+              foundNetwork = true
+              wallets.push(...this.$store.getters['wallet/byProfileId'](currentProfile))
+            }
+          } else {
+            wallets.push(...this.$store.getters['wallet/byProfileId'](currentProfile))
+          }
+        }
+        wallets.push(...ledgerWallets)
+        for (const profile of profiles) {
+          if (currentProfile !== profile.id) {
+            if (this.schema.nethash) {
+              const network = this.$store.getters['network/byId'](profile.networkId)
+              if (network.nethash === this.schema.nethash) {
+                foundNetwork = true
+                wallets.push(...this.$store.getters['wallet/byProfileId'](profile.id))
+              }
+            } else {
+              wallets.push(...this.$store.getters['wallet/byProfileId'](profile.id))
+            }
+          }
+        }
+        const wallet = wallets.filter(wallet => wallet.address === this.schema.wallet)
+        if (wallet.length) {
+          this.currentWallet = wallet[0]
+        }
+        if (!foundNetwork) {
+          this.$emit('cancel')
+          this.$error(`${this.$t('TRANSACTION.ERROR.NETWORK_NOT_CONFIGURED')}: ${this.schema.nethash}`)
+        } else if (!wallet.length) {
+          this.$emit('cancel')
+          this.$error(`${this.$t('TRANSACTION.ERROR.WALLET_NOT_IMPORTED')}: ${this.schema.wallet}`)
+        }
+      }
     }
 
     if (this.currentWallet && this.currentWallet.id) {
@@ -364,6 +410,7 @@ export default {
         fee: this.getFee(),
         wif: this.form.wif,
         networkWif: this.walletNetwork.wif,
+        networkId: this.walletNetwork.id,
         multiSignature: this.currentWallet.multiSignature
       }
 

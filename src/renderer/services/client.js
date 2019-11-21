@@ -655,6 +655,7 @@ export default class ClientService {
       secondPassphrase,
       wif,
       networkWif,
+      networkId,
       multiSignature
     },
     isAdvancedFee = false,
@@ -682,6 +683,7 @@ export default class ClientService {
       secondPassphrase,
       wif,
       networkWif,
+      networkId,
       multiSignature
     }, returnObject)
   }
@@ -1320,6 +1322,8 @@ export default class ClientService {
    * @param {String} data.passphrase
    * @param {String} data.secondPassphrase
    * @param {String} data.wif
+   * @param {String} data.networkWif
+   * @param {String} data.networkId
    * @param {Boolean} returnObject - to return the transaction of its internal struct
    * @returns {Object}
    */
@@ -1331,12 +1335,12 @@ export default class ClientService {
       secondPassphrase,
       wif,
       networkWif,
+      networkId,
       multiSignature
     },
     returnObject = false
   ) {
-    const network = store.getters['session/network']
-
+    const network = store.getters['network/byId'](networkId) || store.getters['session/network']
     transaction = transaction.network(network.version)
 
     // TODO replace with dayjs
