@@ -46,6 +46,9 @@ jobs:
       - name: Lint
         run: yarn lint
 
+        env:
+          CI: true
+
       - name: Codecov
         run: ./node_modules/.bin/codecov --token=${{ secrets.CODECOV_TOKEN }}
 
