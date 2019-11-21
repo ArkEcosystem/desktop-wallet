@@ -43,6 +43,9 @@ jobs:
       - name: Test
         run: yarn test:unit --coverage
 
+      - name: Lint
+        run: yarn lint
+
       - name: Codecov
         run: ./node_modules/.bin/codecov --token=${{ secrets.CODECOV_TOKEN }}
 
