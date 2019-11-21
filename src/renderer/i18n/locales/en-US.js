@@ -189,7 +189,7 @@ export default {
     'en-US': 'English',
     'es-ES': 'Español',
     'it-IT': 'Italiano',
-    'pt-BR': 'Portugues - Brazil'
+    'pt-BR': 'Português - Brazil'
   },
 
   TIME_FORMAT: {
