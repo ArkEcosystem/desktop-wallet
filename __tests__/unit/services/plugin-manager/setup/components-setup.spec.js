@@ -31,7 +31,10 @@ const pluginObject = {
 }
 
 const sandbox = {
-  getVM: jest.fn(() => ({
+  getComponentVM: jest.fn(() => ({
+    run: jest.fn()
+  })),
+  getPluginVM: jest.fn(() => ({
     run: jest.fn()
   })),
   app: {}

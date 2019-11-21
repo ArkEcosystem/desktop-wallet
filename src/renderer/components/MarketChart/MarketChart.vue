@@ -128,6 +128,12 @@ export default {
 
     period () {
       this.renderChart()
+    },
+
+    isExpanded (value, oldValue) {
+      if (!oldValue && value) {
+        this.renderChart()
+      }
     }
   },
 

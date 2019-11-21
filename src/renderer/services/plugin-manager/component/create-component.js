@@ -8,6 +8,16 @@ export function createSafeComponent (componentName, baseComponent, vue) {
     name: componentName
   })
 
+  if (baseComponent.methods) {
+    const methods = {}
+    for (const methodName in baseComponent.methods) {
+      methods[methodName] = function safeMethod () {
+        return baseComponent.methods[methodName].call(getSafeContext(this, baseComponent), ...arguments)
+      }
+    }
+    vmComponent.options.methods = methods
+  }
+
   // Fix context of "data" method
   if (baseComponent.data) {
     vmComponent.options.data = function safeData () {
