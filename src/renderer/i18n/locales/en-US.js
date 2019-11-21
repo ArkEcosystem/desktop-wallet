@@ -820,7 +820,9 @@ export default {
       LOAD_FROM_FILE: 'Failed to load transaction file',
       EXPIRED: 'Transaction expired before it was processed: {transactionId}',
       FEE_TOO_LOW: 'Transaction could not be sent because the fee ({fee}) is too low',
-      NOTHING_SENT: 'The transaction could not be sent. Please check your network connection or change peer'
+      NOTHING_SENT: 'The transaction could not be sent. Please check your network connection or change peer',
+      NETWORK_NOT_CONFIGURED: 'Network not configured',
+      WALLET_NOT_IMPORTED: 'Wallet not imported'
     },
     FOOTER_TEXT: {
       DELEGATE_REGISTRATION: 'Keep in mind that you cannot change the name of your delegate after the registration has been registered on the blockchain.'
@@ -1036,7 +1038,7 @@ export default {
     RECIPIENT: 'Recipient',
     SENDER: 'Sender',
     AMOUNT: 'Amount',
-    NEW_TRANSACTIONS: 'This wallet has {count} new transaction{plural}. Press the refresh button to update.'
+    NEW_TRANSACTIONS: '0 | This wallet has 1 new transaction. Press the refresh button to update. | This wallet has {count} new transactions. Press the refresh button to update.'
   },
 
   WALLET_TABLE: {

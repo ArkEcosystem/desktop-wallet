@@ -1,7 +1,7 @@
 <template>
   <div class="WalletTransactions">
     <div
-      v-if="newTransactionsNotice"
+      v-if="newTransactionsNotice && newTransactionsNotice !== '0'"
       class="bg-theme-feature flex flex-row"
     >
       <div
@@ -17,7 +17,10 @@
       :is-loading="isLoading"
       :is-remote="true"
       :has-pagination="totalCount > 0"
-      :sort-query="queryParams.sort"
+      :sort-query="{
+        field: queryParams.sort.field,
+        type: queryParams.sort.type
+      }"
       :per-page="transactionTableRowCount"
       @on-per-page-change="onPerPageChange"
       @on-page-change="onPageChange"
@@ -27,7 +30,7 @@
 </template>
 
 <script>
-import at from 'lodash/at'
+import { at, isEqual } from 'lodash'
 import mergeTableTransactions from '@/components/utils/merge-table-transactions'
 import TransactionTable from '@/components/Transaction/TransactionTable'
 
@@ -170,7 +173,7 @@ export default {
           profileId: this.session_profile.id
         })
 
-        const transactions = mergeTableTransactions(response.transactions, this.getStoredTransactions(address))
+        const transactions = mergeTableTransactions(response.transactions, this.getStoredTransactions(address), this.queryParams.sort)
 
         if (this.wallet_fromRoute && address === this.wallet_fromRoute.address) {
           this.$set(this, 'fetchedTransactions', transactions)
@@ -225,7 +228,7 @@ export default {
       try {
         let newTransactions = 0
         const response = await this.getTransactions(address)
-        const transactions = mergeTableTransactions(response.transactions, this.getStoredTransactions(address))
+        const transactions = mergeTableTransactions(response.transactions, this.getStoredTransactions(address), this.queryParams.sort)
         for (const existingTransaction of this.fetchedTransactions) {
           for (const transaction of transactions) {
             if (existingTransaction.id === transaction.id) {
@@ -251,9 +254,8 @@ export default {
         // Avoid throwing an Error if the user changes to a different route
         if (this.wallet_fromRoute) {
           if (address === this.wallet_fromRoute.address && newTransactions > 0) {
-            this.newTransactionsNotice = this.$t('WALLET_TRANSACTIONS.NEW_TRANSACTIONS', {
-              count: newTransactions,
-              plural: newTransactions > 1 ? 's' : ''
+            this.newTransactionsNotice = this.$tc('WALLET_TRANSACTIONS.NEW_TRANSACTIONS', newTransactions, {
+              count: newTransactions
             })
           }
         }
@@ -269,23 +271,26 @@ export default {
     },
 
     onPerPageChange ({ currentPerPage }) {
+      this.transactionTableRowCount = currentPerPage
       this.__updateParams({ limit: currentPerPage, page: 1 })
       this.loadTransactions()
-      this.transactionTableRowCount = currentPerPage
     },
 
-    onSortChange (sortOptions) {
-      const columnName = sortOptions[0].field
-      const sortType = sortOptions[0].type
+    onSortChange ({ source, field, type }) {
+      if (!source || source !== 'transactionsTab') {
+        return
+      }
 
-      this.__updateParams({
-        sort: {
-          field: columnName,
-          type: sortType
-        },
-        page: 1
-      })
-      this.loadTransactions()
+      if (!isEqual({ field, type }, this.queryParams.sort)) {
+        this.__updateParams({
+          sort: {
+            field,
+            type
+          },
+          page: 1
+        })
+        this.loadTransactions()
+      }
     },
 
     reset () {

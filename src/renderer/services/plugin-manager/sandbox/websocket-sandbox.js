@@ -1,4 +1,4 @@
-export default class PluginWebsocket {
+class PluginWebsocket {
   constructor (whitelist, router) {
     this.whitelist = []
     this.router = router
@@ -27,7 +27,7 @@ export default class PluginWebsocket {
   connect (url) {
     this.validateUrl(url)
 
-    const websocket = new WebSocket(url)
+    let websocket = new WebSocket(url)
 
     const websocketEvents = {
       events: [],
@@ -42,7 +42,7 @@ export default class PluginWebsocket {
       on (action, eventCallback) {
         const eventTrigger = event => {
           const result = {}
-          if (event.data && event.data !== Object(event.data)) {
+          if (event.data) {
             result.data = event.data
           }
 
@@ -63,8 +63,26 @@ export default class PluginWebsocket {
         this.events[action] = eventTrigger
       },
 
+      get binaryType () {
+        return websocket && websocket.binaryType
+      },
+
+      set binaryType (type) {
+        websocket.binaryType = type
+      },
+
       close () {
         websocket.close()
+      },
+
+      destroy () {
+        if (websocket) {
+          if (!websocketEvents.isClosing() && !websocketEvents.isClosed()) {
+            websocket.close()
+          }
+          websocketEvents.clear()
+        }
+        websocket = null
       },
 
       send (data) {
@@ -72,28 +90,37 @@ export default class PluginWebsocket {
       },
 
       isConnecting () {
-        return websocket.readyState === WebSocket.CONNECTING
+        return websocket && websocket.readyState === WebSocket.CONNECTING
+      },
+
+      isDestroyed () {
+        return websocket === null
       },
 
       isOpen () {
-        return websocket.readyState === WebSocket.OPEN
+        return websocket && websocket.readyState === WebSocket.OPEN
       },
 
       isClosing () {
-        return websocket.readyState === WebSocket.CLOSING
+        return websocket && websocket.readyState === WebSocket.CLOSING
       },
 
       isClosed () {
-        return websocket.readyState === WebSocket.CLOSED
+        return websocket && websocket.readyState === WebSocket.CLOSED
       }
     }
 
     this.router.beforeEach((_, __, next) => {
-      websocketEvents.clear()
-      websocket.close()
+      websocketEvents.destroy()
       next()
     })
 
     return websocketEvents
+  }
+}
+
+export function createWebsocketSandbox (walletApi, app, plugin) {
+  return () => {
+    walletApi.websocket = new PluginWebsocket(plugin.config.urls, app.$router)
   }
 }
