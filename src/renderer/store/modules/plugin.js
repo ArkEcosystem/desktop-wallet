@@ -51,7 +51,7 @@ export default {
               value = value.join(' ')
             }
 
-            return value.includes(query)
+            return value.toLowerCase().includes(query)
           })
         }
 

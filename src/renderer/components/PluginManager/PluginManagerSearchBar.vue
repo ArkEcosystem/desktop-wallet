@@ -45,7 +45,7 @@ export default {
 
     emitSearch () {
       if (!this.query || this.query.length >= 3) {
-        this.$emit('search', this.query)
+        this.$emit('search', this.query.toLowerCase())
       }
     },
 
