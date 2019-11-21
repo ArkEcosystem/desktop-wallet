@@ -66,7 +66,7 @@ const sanitizeCategories = config => {
 }
 
 const sanitizeKeywords = keywords => {
-  return difference(keywords, PLUGINS.keywords)
+  return difference(uniq(keywords), PLUGINS.keywords).map(keyword => titlecase(keyword))
 }
 
 const sanitizeMinVersion = config => {

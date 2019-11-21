@@ -92,6 +92,14 @@
         class="PluginDetailsModal__keywords"
       >
         <span class="font-semibold">{{ $t('MODAL_PLUGIN_DETAILS.KEYWORDS') }}:</span> {{ keywordsText }}
+        <span
+          v-if="showKeywordsTooltip"
+          v-tooltip="{
+            content: keywordsTooltip,
+            placement: 'right'
+          }"
+          class="pr-1"
+        >...</span>
       </p>
 
       <a
@@ -151,10 +159,8 @@ import { ButtonGeneric, ButtonIconGeneric } from '@/components/Button'
 import { PluginLogo, PluginManagerCheckmark } from '@/components/PluginManager'
 import { ModalWindow } from '@/components/Modal'
 import { PluginManagerButtonSwitch } from '@/components/PluginManager/PluginManagerButtons'
-import uniq from 'lodash/uniq'
 import SvgIcon from '@/components/SvgIcon'
 import domain from 'getdomain'
-import titlecase from 'titlecase'
 
 export default {
   name: 'PluginDetailsModal',
@@ -224,8 +230,16 @@ export default {
     },
 
     keywordsText () {
-      const keywords = uniq(this.plugin.keywords).slice(0, 6).map(keyword => titlecase(keyword)).join(', ')
-      return this.plugin.keywords.length > 6 ? `${keywords} ...` : keywords
+      const keywords = this.plugin.keywords.slice(0, PLUGINS.maxKeywords).join(', ')
+      return this.showKeywordsTooltip ? `${keywords}, ` : keywords
+    },
+
+    keywordsTooltip () {
+      return this.plugin.keywords.slice(PLUGINS.maxKeywords).join('\n')
+    },
+
+    showKeywordsTooltip () {
+      return this.plugin.keywords.length > PLUGINS.maxKeywords
     },
 
     homepageLink () {
