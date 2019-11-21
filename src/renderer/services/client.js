@@ -668,7 +668,7 @@ export default class ClientService {
 
     const transaction = Transactions.BuilderFactory
       .transfer()
-      .amount(amount)
+      .amount(amount || 0)
       .fee(fee)
       .recipientId(recipientId)
       .vendorField(vendorField)
