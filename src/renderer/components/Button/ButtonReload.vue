@@ -22,7 +22,7 @@
         textClass
       ]"
       class="mx-1"
-      name="update"
+      name="reload"
       :view-box="viewBox"
     />
   </button>
