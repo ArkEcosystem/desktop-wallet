@@ -640,11 +640,12 @@ export default {
         NOT_AVAILABLE: 'No updates available'
       },
       ERRORS: {
-        ALREADY_INSTALLED: 'The plugin \'{plugin}\' is already installed'
+        ALREADY_INSTALLED: 'The plugin \'{plugin}\' is already installed',
+        FETCH: 'The plugin \'{plugin}\' was installed but could not be loaded'
       },
       SUCCESS: {
-        INSTALLATION: 'The plugin \'{plugin}\' was installed successfully',
-        UPDATE: 'The plugin \'{plugin}\' was updated successfully',
+        INSTALLATION: 'The plugin \'{plugin}\' was installed and loaded successfully',
+        UPDATE: 'The plugin \'{plugin}\' was updated and reloaded successfully',
         REMOVAL: 'The plugin \'{plugin}\' was removed successfully'
       },
       DISCLAIMER: '<b>Disclaimer:</b> The availability of this plugin in the ARK Desktop Wallet does not mean that ARK is directly involved in the development or affiliated with the developer providing this plugin. By installing it on your wallet, you assume every responsibility.',

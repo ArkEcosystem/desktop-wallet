@@ -242,6 +242,20 @@ export default {
   }),
 
   computed: {
+    installSuccessMessage () {
+      return this.$t(
+        `PAGES.PLUGIN_MANAGER.SUCCESS.${this.isUpdate ? 'UPDATE' : 'INSTALLATION'}`, {
+          plugin: this.selectedPlugin.title
+        }
+      )
+    },
+
+    installErrorMessage () {
+      return this.$t('PAGES.PLUGIN_MANAGER.ERRORS.FETCH', {
+        plugin: this.selectedPlugin.title
+      })
+    },
+
     showDetailsModal () {
       return !!this.selectedPlugin && this.modal === 'details'
     },
@@ -339,18 +353,9 @@ export default {
           pluginId: this.selectedPlugin.id
         })
 
-        const message = this.$root.$t(
-          `PAGES.PLUGIN_MANAGER.SUCCESS.${this.isUpdate ? 'UPDATE' : 'INSTALLATION'}`, {
-            plugin: this.selectedPlugin.title
-          }
-        )
-
-        this.$success(message)
+        this.$success(this.installSuccessMessage)
       } catch (error) {
-        this.$error(this.$root.$t('COMMON.FAILED_FETCH', {
-          name: 'plugin',
-          msg: error.message
-        }))
+        this.$error(this.installErrorMessage)
       }
 
       this.reset()
