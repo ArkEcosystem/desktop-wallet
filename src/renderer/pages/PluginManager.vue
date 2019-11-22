@@ -347,7 +347,7 @@ export default {
 
         this.$success(message)
       } catch (error) {
-        this.$error(this.$t('COMMON.FAILED_FETCH', {
+        this.$error(this.$root.$t('COMMON.FAILED_FETCH', {
           name: 'plugin',
           msg: error.message
         }))
