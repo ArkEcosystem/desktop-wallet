@@ -473,7 +473,7 @@ export default {
       this.setModal('loading')
 
       if (this.isUpdate) {
-        this.disablePlugin(this.selectedPlugin)
+        this.disablePlugin(this.selectedPlugin, this.session_profile.id)
       }
 
       ipcRenderer.send('plugin-manager:install', {

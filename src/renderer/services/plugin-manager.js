@@ -16,7 +16,6 @@ import { PluginSandbox } from './plugin-manager/plugin-sandbox'
 import { PluginSetup } from './plugin-manager/plugin-setup'
 import { validatePluginPath } from './plugin-manager/utils/validate-plugin-path'
 import validatePackageName from 'validate-npm-package-name'
-import Vue from 'vue'
 
 let rootPath = path.resolve(__dirname, '../../../')
 if (process.env.NODE_ENV === 'production') {
@@ -81,7 +80,7 @@ export class PluginManager {
 
     this.app.$store.dispatch('plugin/deleteInstalled', plugin.config.id)
 
-    Vue.delete(this.plugins, pluginId)
+    delete this.plugins[pluginId]
   }
 
   async enablePlugin (pluginId, profileId) {
@@ -171,7 +170,7 @@ export class PluginManager {
       await this.unloadThemes(plugin, profileId)
     }
 
-    await this.app.$store.dispatch('plugin/deleteLoaded', plugin.config.id)
+    await this.app.$store.dispatch('plugin/deleteLoaded', pluginId, profileId)
   }
 
   async fetchLogo (url) {
