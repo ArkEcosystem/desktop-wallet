@@ -345,7 +345,7 @@ export default {
       }
 
       for (const pluginId of Object.keys(state.enabled[profile.id])) {
-        if (!getters.isEnabled(pluginId)) {
+        if (!getters.isEnabled(pluginId, profile.id)) {
           continue
         }
 
