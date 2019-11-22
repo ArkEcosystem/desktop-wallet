@@ -1,8 +1,12 @@
 <template>
   <div
     v-click-outside="emitClose"
-    :class="isHorizontal ? 'AppSidemenuPlugins--horizontal' : 'AppSidemenuPlugins'"
-    class="absolute z-20"
+    :class="{
+      'AppSidemenuPlugins--horizontal': isHorizontal,
+      'AppSidemenuPlugins': !isHorizontal,
+      'AppSidemenuPlugins--single': pluginMenuItems.length === 1
+    }"
+    class="absolute z-20 theme-dark"
   >
     <MenuOptions
       :is-horizontal="isHorizontal"
@@ -87,6 +91,10 @@ export default {
 
 .AppSidemenuPlugins .MenuOptions--vertical:after {
   top: 6.5rem;
+}
+
+.AppSidemenuPlugins--single {
+  top: 22.2rem;
 }
 
 .AppSidemenuPlugins--horizontal {
