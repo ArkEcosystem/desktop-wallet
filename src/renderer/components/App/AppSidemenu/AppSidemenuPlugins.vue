@@ -89,10 +89,6 @@ export default {
   transform: translateY(-10%);
 }
 
-.AppSidemenuPlugins .MenuOptions--vertical:after {
-  top: 6.5rem;
-}
-
 .AppSidemenuPlugins--single {
   top: 22.2rem;
 }
