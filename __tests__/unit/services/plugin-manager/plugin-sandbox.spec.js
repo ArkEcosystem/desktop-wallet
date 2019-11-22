@@ -18,7 +18,7 @@ beforeEach(() => {
 })
 
 describe('Plugin Sandbox', () => {
-  it('should parse file with api', async () => {
+  it('should parse component vm file with api', async () => {
     const sandbox = new PluginSandbox({
       app,
       plugin
@@ -32,7 +32,7 @@ describe('Plugin Sandbox', () => {
     `)).toBeDefined()
   })
 
-  it('should parse file without api', async () => {
+  it('should parse plugin vm file without api', async () => {
     const sandbox = new PluginSandbox({
       app,
       plugin
@@ -41,9 +41,9 @@ describe('Plugin Sandbox', () => {
     await sandbox.install()
 
     const pluginVM = sandbox.getPluginVM()
-    expect(() => pluginVM.run(`
+    expect(pluginVM.run(`
       module.exports = walletApi
-    `)).toThrowError('walletApi is not defined')
+    `)).toBeDefined()
   })
 
   it('should read permissions', async () => {
