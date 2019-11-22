@@ -123,21 +123,17 @@ export default {
   },
 
   mounted () {
-    ipcRenderer.on('plugin-manager:download-progress', (_, data) => {
-      Object.assign(this.progressUpdate, data)
-    })
-
-    ipcRenderer.on('plugin-manager:plugin-downloaded', () => {
-      Vue.set(this.progressUpdate, 'percent', 1)
-      this.isDownloadFinished = true
-    })
-
-    ipcRenderer.on('plugin-manager:error', (_, error) => {
-      this.isDownloadFailed = true
-      this.errorMessage = error instanceof Error ? error.message : undefined
-    })
+    ipcRenderer.on('plugin-manager:download-progress', this.onUpdateProgress)
+    ipcRenderer.on('plugin-manager:plugin-downloaded', this.onPluginDownloaded)
+    ipcRenderer.on('plugin-manager:error', this.onError)
 
     this.emitDownload()
+  },
+
+  beforeDestroy () {
+    ipcRenderer.removeListener('plugin-manager:download-progress', this.onUpdateProgress)
+    ipcRenderer.removeListener('plugin-manager:plugin-downloaded', this.onPluginDownloaded)
+    ipcRenderer.removeListener('plugin-manager:error', this.onError)
   },
 
   methods: {
@@ -172,6 +168,20 @@ export default {
       }
 
       this.$emit('close')
+    },
+
+    onUpdateProgress (_, data) {
+      Object.assign(this.progressUpdate, data)
+    },
+
+    onPluginDownloaded () {
+      Vue.set(this.progressUpdate, 'percent', 1)
+      this.isDownloadFinished = true
+    },
+
+    onError (_, error) {
+      this.isDownloadFailed = true
+      this.errorMessage = error instanceof Error ? error.message : undefined
     }
   }
 }

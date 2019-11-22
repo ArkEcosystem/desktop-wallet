@@ -344,27 +344,13 @@ export default {
   },
 
   mounted () {
-    ipcRenderer.on('plugin-manager:plugin-installed', async (_, pluginPath) => {
-      try {
-        await this.$plugins.fetchPlugin(pluginPath, this.isUpdate)
+    ipcRenderer.on('plugin-manager:plugin-installed', this.onPluginInstalled)
+    ipcRenderer.on('plugin-manager:error', this.onError)
+  },
 
-        this.$store.dispatch('plugin/setEnabled', {
-          enabled: true,
-          pluginId: this.selectedPlugin.id
-        })
-
-        this.$success(this.installSuccessMessage)
-      } catch (error) {
-        this.$error(this.installErrorMessage)
-      }
-
-      this.reset()
-    })
-
-    ipcRenderer.on('plugin-manager:error', (_, error) => {
-      this.reset()
-      this.$error(error)
-    })
+  beforeDestroy () {
+    ipcRenderer.removeListener('plugin-manager:plugin-installed', this.onPluginInstalled)
+    ipcRenderer.removeListener('plugin-manager:error', this.onError)
   },
 
   methods: {
@@ -511,6 +497,28 @@ export default {
       if (!isEqual(sortParams, this.sortParams)) {
         this.sortParams = sortParams
       }
+    },
+
+    async onPluginInstalled (_, pluginPath) {
+      try {
+        await this.$plugins.fetchPlugin(pluginPath, this.isUpdate)
+
+        this.$store.dispatch('plugin/setEnabled', {
+          enabled: true,
+          pluginId: this.selectedPlugin.id
+        })
+
+        this.$success(this.installSuccessMessage)
+      } catch (error) {
+        this.$error(this.installErrorMessage)
+      } finally {
+        this.reset()
+      }
+    },
+
+    onError (_, error) {
+      this.reset()
+      this.$error(error)
     },
 
     disablePlugin (plugin) {
