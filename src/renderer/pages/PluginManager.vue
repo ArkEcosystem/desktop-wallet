@@ -331,13 +331,6 @@ export default {
 
   mounted () {
     ipcRenderer.on('plugin-manager:plugin-installed', async (_, pluginPath) => {
-      if (this.isUpdate) {
-        this.$store.dispatch('plugin/setEnabled', {
-          enabled: false,
-          pluginId: this.selectedPlugin.id
-        })
-      }
-
       try {
         await this.$plugins.fetchPlugin(pluginPath, this.isUpdate)
 
@@ -478,6 +471,10 @@ export default {
 
     onInstall () {
       this.setModal('loading')
+
+      if (this.isUpdate) {
+        this.disablePlugin(this.selectedPlugin)
+      }
 
       ipcRenderer.send('plugin-manager:install', {
         pluginId: this.selectedPlugin.id,
