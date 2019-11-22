@@ -52,7 +52,9 @@ export class PluginSandbox {
     }
 
     return {
-      document
+      document,
+      ...this.sandbox,
+      walletApi: this.walletApi
     }
   }
 
