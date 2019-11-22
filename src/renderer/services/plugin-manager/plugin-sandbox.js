@@ -94,6 +94,10 @@ export class PluginSandbox {
     await this.__run(this.sandboxes[PUBLIC.name])
 
     for (const permissionName of this.plugin.config.permissions) {
+      if (!this.sandboxes[permissionName]) {
+        continue
+      }
+
       await this.__run(this.sandboxes[permissionName])
     }
   }
