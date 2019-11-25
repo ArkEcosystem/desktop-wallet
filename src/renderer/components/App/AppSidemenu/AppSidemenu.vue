@@ -60,7 +60,7 @@
             :is-horizontal="isHorizontal"
             :can-activate="false"
             class="AppSidemenu__item"
-            icon="plugins"
+            icon="manage-plugins"
             @click="redirect($event)"
           />
 
@@ -72,7 +72,7 @@
             :is-horizontal="isHorizontal"
             :can-activate="false"
             class="AppSidemenu__item"
-            icon="more"
+            icon="my-plugins"
             @click="toggleShowPluginMenu"
           />
 

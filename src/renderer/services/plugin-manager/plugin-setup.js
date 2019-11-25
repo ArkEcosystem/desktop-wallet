@@ -38,7 +38,7 @@ export class PluginSetup {
     localVue.options._base = localVue
     this.vue = localVue
 
-    this.pluginObject = this.sandbox.getPluginVM().run(
+    this.pluginObject = this.sandbox.getComponentVM().run(
       fs.readFileSync(path.join(plugin.fullPath, 'src/index.js')),
       path.join(plugin.fullPath, 'src/index.js')
     )
