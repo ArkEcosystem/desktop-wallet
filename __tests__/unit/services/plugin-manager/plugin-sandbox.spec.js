@@ -41,9 +41,9 @@ describe('Plugin Sandbox', () => {
     await sandbox.install()
 
     const pluginVM = sandbox.getPluginVM()
-    expect(pluginVM.run(`
+    expect(() => pluginVM.run(`
       module.exports = walletApi
-    `)).toBeDefined()
+    `)).toThrowError('walletApi is not defined')
   })
 
   it('should read permissions', async () => {
