@@ -56,8 +56,23 @@ describe('Plugin Sandbox', () => {
     await sandbox.install()
 
     const componentVM = sandbox.getComponentVM()
-    expect(() => componentVM.run(`
+    expect(componentVM.run(`
       module.exports = walletApi.alert
     `)).toBeDefined()
+  })
+
+  it('should not throw error with nonexistent permission', async () => {
+    plugin.config.permissions = ['SECRETS']
+    const sandbox = new PluginSandbox({
+      app,
+      plugin
+    })
+
+    await sandbox.install()
+
+    const componentVM = sandbox.getComponentVM()
+    expect(componentVM.run(`
+      module.exports = walletApi.secrets
+    `)).toBeUndefined()
   })
 })
