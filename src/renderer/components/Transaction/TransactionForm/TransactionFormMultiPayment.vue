@@ -63,6 +63,7 @@
 
       <TransactionMultiPaymentList
         :items="$v.form.recipients.$model"
+        :required="true"
         class="TransactionModalMultiPayment__recipients mt-4"
         @remove="emitRemoveRecipient"
       />

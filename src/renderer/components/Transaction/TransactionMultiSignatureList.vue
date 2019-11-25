@@ -3,6 +3,10 @@
     v-model="items"
     :title="title"
     :readonly="readonly"
+    :required="required"
+    :helper-text="helperText"
+    :is-invalid="isInvalid"
+    :no-items-message="$t('TRANSACTION.MULTI_SIGNATURE.NO_RECIPIENTS')"
     @remove="emitRemove"
   >
     <div
@@ -45,6 +49,24 @@ export default {
     },
 
     readonly: {
+      type: Boolean,
+      required: false,
+      default: false
+    },
+
+    required: {
+      type: Boolean,
+      required: false,
+      default: false
+    },
+
+    helperText: {
+      type: String,
+      required: false,
+      default: null
+    },
+
+    isInvalid: {
       type: Boolean,
       required: false,
       default: false

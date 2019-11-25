@@ -1,14 +1,18 @@
 <template>
-  <div class="InputEditableList">
-    <ListDivided
-      v-if="title"
-      :is-floating-label="true"
+  <div
+    class="InputEditableList"
+    :class="{ 'InputEditableList--invalid': isInvalid || requiredAndEmpty }"
+  >
+    <div
+      class="InputField__wrapper relative appearance-none inline-flex items-end w-full"
     >
-      <ListDividedItem
-        :label="title"
-        class="pb-0"
-      />
-    </ListDivided>
+      <label
+        v-show="title"
+        class="InputField__label absolute pointer-events-none text-theme-page-text-light truncate"
+      >
+        {{ title }}
+      </label>
+    </div>
 
     <div class="InputEditableList__list">
       <div
@@ -28,25 +32,29 @@
     </div>
 
     <div
-      v-if="!items || !items.length"
-      class="mt-2 text-center"
+      v-if="requiredAndEmpty"
+      class="InputEditableList__no-items text-center"
     >
-      {{ $t('INPUT_EDITABLE_LIST.NO_ITEMS') }}
+      {{ noItemsMessage }}
     </div>
+
+    <p
+      v-if="helperText"
+      class="helper-text"
+    >
+      {{ helperText }}
+    </p>
   </div>
 </template>
 
 <script>
 import { ButtonClose } from '@/components/Button'
-import { ListDivided, ListDividedItem } from '@/components/ListDivided'
 
 export default {
   name: 'InputEditableList',
 
   components: {
-    ButtonClose,
-    ListDivided,
-    ListDividedItem
+    ButtonClose
   },
 
   props: {
@@ -61,7 +69,7 @@ export default {
       required: true
     },
 
-    isRequired: {
+    required: {
       type: Boolean,
       required: false,
       default: true
@@ -71,6 +79,26 @@ export default {
       type: Boolean,
       required: false,
       default: false
+    },
+
+    helperText: {
+      type: String,
+      required: false,
+      default: null
+    },
+
+    isInvalid: {
+      type: Boolean,
+      required: false,
+      default: false
+    },
+
+    noItemsMessage: {
+      type: String,
+      required: false,
+      default: function () {
+        return this.$t('INPUT_EDITABLE_LIST.NO_ITEMS')
+      }
     }
   },
 
@@ -89,6 +117,10 @@ export default {
         this.$v.items.$touch()
         this.$emit('input', value)
       }
+    },
+
+    requiredAndEmpty () {
+      return this.required && (!this.items || !this.items.length)
     }
   },
 
@@ -107,7 +139,7 @@ export default {
   validations: {
     items: {
       required (value) {
-        return this.isRequired ? value.length : true
+        return this.required ? value.length : true
       }
     }
   }
@@ -120,5 +152,15 @@ export default {
 }
 .InputEditableList__list .ButtonClose {
   @apply .mr-0 !important;
+}
+.InputEditableList--invalid .InputEditableList__no-items,
+.InputEditableList--invalid .InputField__label,
+.InputEditableList--invalid .helper-text {
+  @apply .text-red-dark;
+}
+.InputField__label {
+    font-weight: 600;
+    bottom: 0;
+    transform: scale(.75);
 }
 </style>

@@ -909,7 +909,8 @@ export default {
     MULTI_PAYMENT: {
       BUTTON_ADD: 'Add',
       WARNING_DUPLICATE: 'The address is already a recipient',
-      RECIPIENTS: 'Recipients'
+      RECIPIENTS: 'Recipients',
+      NO_RECIPIENTS: 'There are no recipients'
     },
     MULTI_SIGNATURE: {
       ADDRESS: 'Multi-Signature Address',
@@ -928,7 +929,8 @@ export default {
         ADDRESS: 'Address',
         PUBLIC_KEY: 'Public Key'
       },
-      YOUR_SIGNATURE: 'Your Signature'
+      YOUR_SIGNATURE: 'Your Signature',
+      NO_SIGNATURES: 'There are no signatures'
     },
     BRIDGECHAIN: {
       BUTTON_ADD: 'Add',
@@ -938,7 +940,8 @@ export default {
       GENESIS_HASH: 'Genesis Hash',
       BRIDGECHAIN_REPOSITORY: 'Bridgechain Repository',
       API_PORT: 'API Port',
-      ERROR_DUPLICATE: 'The seed node has already been added'
+      ERROR_DUPLICATE: 'The seed node has already been added',
+      NO_SIGNATURES: 'There are no peers'
     },
     WARNING: {
       BROADCAST: 'Transaction was broadcasted to other peers. It may not be accepted by them'
