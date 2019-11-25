@@ -87,7 +87,7 @@ const sanitizeLogo = logo => {
 
 const sanitizeName = name => {
   const parts = name.split('/')
-  const tmp = parts[parts.length ? 1 : 0]
+  const tmp = parts[parts.length > 1 ? 1 : 0]
     .split('-')
     .join(' ')
   return titlecase(tmp)
