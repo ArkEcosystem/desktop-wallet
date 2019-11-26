@@ -54,7 +54,7 @@ export class PluginConfiguration {
       categories: sanitizeCategories(config),
       keywords: sanitizeKeywords(config.keywords),
       description: config.description,
-      logo: sanitizeLogo(config.logo),
+      logo: sanitizeLogo(config),
       homepage: config.homepage,
       isOfficial: sanitizeIsOfficial(config.name),
       minVersion: sanitizeMinVersion(config),
