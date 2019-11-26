@@ -245,8 +245,8 @@ export default {
     DASHBOARD: 'Dashboard',
     NETWORK: 'Network',
     NETWORKS: 'Manage networks',
-    PLUGINS: 'Plugins',
-    PLUGINS_PAGES: 'Plugins pages',
+    PLUGIN_MANAGER: 'Plugin Manager',
+    PLUGINS_PAGES: 'Plugin Pages',
     SETTINGS: {
       CURRENCY: 'Currency',
       DARK_MODE: 'Dark mode',

@@ -56,7 +56,7 @@
           <!-- Plugin Manager -->
           <MenuNavigationItem
             id="plugin-manager"
-            :title="$t('APP_SIDEMENU.PLUGINS')"
+            :title="$t('APP_SIDEMENU.PLUGIN_MANAGER')"
             :is-horizontal="isHorizontal"
             :can-activate="false"
             class="AppSidemenu__item"
