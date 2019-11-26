@@ -645,7 +645,13 @@ export default class ClientService {
       //
     }
 
-    return returnObject ? transaction : transaction.getStruct()
+    const transactionResponse = returnObject ? transaction : transaction.getStruct()
+
+    if (!returnObject) {
+      transactionResponse.totalAmount = TransactionService.getTotalAmount(transactionResponse)
+    }
+
+    return transactionResponse
   }
 
   /**
