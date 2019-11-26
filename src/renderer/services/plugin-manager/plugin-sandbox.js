@@ -43,22 +43,13 @@ export class PluginSandbox {
     this.sandboxes = this.__mapPermissionsToSandbox()
   }
 
-  getSandbox (loadApi = true) {
-    if (loadApi) {
-      return {
-        ...this.sandbox,
-        walletApi: this.walletApi
-      }
-    }
-
-    return {
-      document
-    }
-  }
-
+  // Robust VM with relative module resolution and properties implemented by permission
   getComponentVM () {
     return new NodeVM({
-      sandbox: this.getSandbox(true),
+      sandbox: {
+        ...this.sandbox,
+        walletApi: this.walletApi
+      },
       require: {
         builtin: [],
         context: 'sandbox',
@@ -73,11 +64,14 @@ export class PluginSandbox {
     })
   }
 
+  // Basic VM with access to properties required to render elements
   getPluginVM () {
     const { rootPath } = this.plugin
 
     return new NodeVM({
-      sandbox: this.getSandbox(false),
+      sandbox: {
+        document
+      },
       require: {
         context: 'sandbox',
         resolve: function (source) {
@@ -92,6 +86,10 @@ export class PluginSandbox {
     await this.__run(this.sandboxes[PUBLIC.name])
 
     for (const permissionName of this.plugin.config.permissions) {
+      if (!this.sandboxes[permissionName]) {
+        continue
+      }
+
       await this.__run(this.sandboxes[permissionName])
     }
   }
