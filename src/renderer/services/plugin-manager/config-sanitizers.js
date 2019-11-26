@@ -129,7 +129,9 @@ const sanitizeSource = config => {
 }
 
 const sanitizeTitle = config => {
-  return config.title ? titlecase(config.title) : sanitizeName(config.name)
+  const title = getOption(config, 'title') || config.title
+
+  return title ? titlecase(title) : sanitizeName(config.name)
 }
 
 const sanitizeUrls = config => {
