@@ -4,10 +4,13 @@
     class="ButtonDropdown"
     :class="{ flex: hasPrimaryButton }"
   >
-    <slot
+    <div
       v-if="hasPrimaryButton"
-      name="primaryButton"
-    />
+      class="ButtonDropdown__primary"
+    >
+      <slot name="primaryButton" />
+    </div>
+
     <div
       v-if="items.length"
       v-click-outside.capture="triggerClose"
@@ -56,7 +59,7 @@
               v-bind="{ item, triggerClose }"
             >
               <ButtonGeneric
-                :label="item.label"
+                :label="item"
                 @click="triggerClose"
               />
             </slot>
@@ -83,7 +86,7 @@ export default {
     classes: {
       type: String,
       required: false,
-      default: null
+      default: ''
     },
 
     items: {
@@ -129,8 +132,14 @@ export default {
     },
 
     dropdownStyle () {
-      const height = this.$refs.buttonDropdown.clientHeight
-      const position = this.$refs.buttonDropdown.getBoundingClientRect()
+      const buttonDropdown = this.$refs.buttonDropdown
+
+      if (!buttonDropdown) {
+        return ''
+      }
+
+      const height = buttonDropdown.clientHeight
+      const position = buttonDropdown.getBoundingClientRect()
 
       return [
         `top: ${position.top + height}px`,
