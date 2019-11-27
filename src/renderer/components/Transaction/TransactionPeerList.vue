@@ -6,7 +6,7 @@
     :required="required"
     :helper-text="helperText"
     :is-invalid="isInvalid"
-    :no-items-message="$t('TRANSACTION.BRIDGECHAIN.NO_RECIPIENTS')"
+    :no-items-message="$t('TRANSACTION.BRIDGECHAIN.NO_PEERS')"
     @remove="emitRemove"
   >
     <div

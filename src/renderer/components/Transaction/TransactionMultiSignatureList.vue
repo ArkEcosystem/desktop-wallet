@@ -6,7 +6,7 @@
     :required="required"
     :helper-text="helperText"
     :is-invalid="isInvalid"
-    :no-items-message="$t('TRANSACTION.MULTI_SIGNATURE.NO_RECIPIENTS')"
+    :no-items-message="$t('TRANSACTION.MULTI_SIGNATURE.NO_SIGNATURES')"
     @remove="emitRemove"
   >
     <div
