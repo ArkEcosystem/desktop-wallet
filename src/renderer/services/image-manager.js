@@ -58,10 +58,12 @@ class ImageManager {
     }
 
     try {
-      return this.context(`./${filename}`)
+      const image = this.context(`./${filename}`)
+
+      return image.default ? image.default : image
     } catch (error) {
       // In case the image could not be found:
-      return this.context('./default.svg')
+      return this.context('./default.svg').default
     }
   }
 }
