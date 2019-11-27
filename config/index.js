@@ -100,7 +100,7 @@ exports.MARKET = {
 exports.PLUGINS = {
   adapters: ['npm'],
   categories: [
-    'games',
+    'gaming',
     'theme',
     'utility',
     'other'

@@ -621,7 +621,7 @@ export default {
       },
       CATEGORIES: {
         ALL: 'All',
-        GAMES: 'Games',
+        GAMING: 'Gaming',
         UTILITY: 'Utility',
         THEME: 'Theme',
         OTHER: 'Other'
