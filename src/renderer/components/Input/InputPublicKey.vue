@@ -6,6 +6,7 @@
     :helper-text="error"
     :label="publicKeyLabel"
     :maxlength="66"
+    class="InputPublicKey"
     name="publicKey"
   />
 </template>
@@ -21,11 +22,22 @@ export default {
     InputText
   },
 
+  model: {
+    prop: 'value',
+    event: 'input'
+  },
+
   props: {
     isRequired: {
       type: Boolean,
       required: false,
       default: true
+    },
+
+    value: {
+      type: String,
+      required: false,
+      default: ''
     }
   },
 
@@ -36,11 +48,12 @@ export default {
   computed: {
     model: {
       get () {
-        return this.dropdownValue || this.inputValue
+        return this.inputValue
       },
 
       set (value) {
-        this.updateInputValue(value)
+        this.inputValue = value
+        this.$v.model.$touch()
         this.$emit('input', value)
       }
     },
@@ -50,21 +63,23 @@ export default {
     },
 
     error () {
-      console.log('InputPublicKey error', this.$v.model)
-      if (this.$v.model.$dirty && !this.$v.model.isValid) {
-        return this.$t('INPUT_PUBLIC_KEY.INVALID')
+      if (this.$v.model.$dirty && this.$v.model.$invalid) {
+        if (!this.$v.model.isValid) {
+          return this.$t('INPUT_PUBLIC_KEY.INVALID')
+        }
       }
 
       return null
     }
   },
 
-  methods: {
-    updateInputValue (value) {
+  watch: {
+    value (value) {
       this.inputValue = value
-      this.$v.model.$touch()
-    },
+    }
+  },
 
+  methods: {
     reset () {
       this.model = ''
       this.$nextTick(() => {
@@ -85,7 +100,6 @@ export default {
 
           return true
         } catch (error) {
-          console.log('InputPublicKey isValid error', error)
           //
         }
 
