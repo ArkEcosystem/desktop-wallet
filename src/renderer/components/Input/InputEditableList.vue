@@ -18,14 +18,14 @@
       <div
         v-for="(item, key) of items"
         :key="key"
-        class="flex py-2 select-none"
+        class="InputEditableList__list__item flex py-2 select-none"
       >
         <slot :item="item" />
 
         <ButtonClose
           v-if="!readonly"
           icon-class="text-grey"
-          class="flex-inline"
+          class="InputEditableList__list__item__remove flex-inline"
           @click="emitRemove(key)"
         />
       </div>
@@ -40,7 +40,7 @@
 
     <p
       v-if="helperText"
-      class="helper-text"
+      class="InputEditableList__helper-text"
     >
       {{ helperText }}
     </p>
@@ -103,22 +103,10 @@ export default {
   },
 
   data: vm => ({
-    inputValue: vm.value
+    items: vm.value
   }),
 
   computed: {
-    items: {
-      get () {
-        return this.inputValue
-      },
-
-      set (value) {
-        this.inputValue = value
-        this.$v.items.$touch()
-        this.$emit('input', value)
-      }
-    },
-
     requiredAndEmpty () {
       return this.required && (!this.items || !this.items.length)
     }
@@ -126,21 +114,13 @@ export default {
 
   watch: {
     value (newValue) {
-      this.inputValue = newValue
+      this.items = newValue
     }
   },
 
   methods: {
     emitRemove (index) {
       this.$emit('remove', index)
-    }
-  },
-
-  validations: {
-    items: {
-      required (value) {
-        return this.required ? value.length : true
-      }
     }
   }
 }
@@ -155,7 +135,7 @@ export default {
 }
 .InputEditableList--invalid .InputEditableList__no-items,
 .InputEditableList--invalid .InputField__label,
-.InputEditableList--invalid .helper-text {
+.InputEditableList--invalid .InputEditableList__helper-text {
   @apply .text-red-dark;
 }
 .InputField__label {
