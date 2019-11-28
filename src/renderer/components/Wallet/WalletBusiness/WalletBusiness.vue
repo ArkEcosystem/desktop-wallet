@@ -1,5 +1,5 @@
 <template>
-  <div class="mx-4 overflow-hidden">
+  <div class="WalletBusiness mx-4 overflow-hidden">
     <div class="flex flex-row pb-5 border-b border-dashed border-theme-line-separator">
       <div class="flex flex-col justify-center pl-4">
         <span class="font-bold">
@@ -52,8 +52,7 @@ export default {
       bridgechainRegistration: {
         type: TRANSACTION_TYPES.GROUP_2.BRIDGECHAIN_REGISTRATION,
         group: TRANSACTION_GROUPS.MAGISTRATE
-      },
-      showLoadingModal: false
+      }
     }
   },
 
