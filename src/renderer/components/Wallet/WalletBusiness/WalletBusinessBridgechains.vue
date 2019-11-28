@@ -2,7 +2,7 @@
   <div class="WalletBusinessBridgechains">
     <WalletBusinessBridgechainsTable
       :current-page="currentPage"
-      :rows="fetchedTransactions"
+      :rows="fetchedBridgechains"
       :total-rows="totalCount"
       :is-loading="isLoading"
       :is-remote="true"
@@ -11,8 +11,7 @@
         field: queryParams.sort.field,
         type: queryParams.sort.type
       }"
-      :aaaaaaaaper-page="transactionTableRowCount"
-      :transaction-type="transactionType"
+      :per-page="tableRowCount"
       @on-per-page-change="onPerPageChange"
       @on-page-change="onPageChange"
       @on-sort-change="onSortChange"
@@ -31,19 +30,11 @@ export default {
     WalletBusinessBridgechainsTable
   },
 
-  props: {
-    transactionType: {
-      type: Number,
-      required: false,
-      default: null
-    }
-  },
-
   data: () => ({
     currentPage: 1,
     isFetching: false,
     isLoading: false,
-    fetchedTransactions: [],
+    fetchedBridgechains: [],
     expiryEvents: [],
     totalCount: 0,
     queryParams: {
@@ -57,7 +48,7 @@ export default {
   }),
 
   computed: {
-    transactionTableRowCount: {
+    tableRowCount: {
       get () {
         return this.$store.getters['session/transactionTableRowCount']
       },
@@ -77,22 +68,22 @@ export default {
     wallet_fromRoute (newValue, oldValue) {
       if (newValue.address !== oldValue.address) {
         this.reset()
-        this.loadTransactions()
+        this.loadBridgechains()
       }
     }
   },
 
   created () {
-    this.loadTransactions()
-    this.$eventBus.on('wallet:reload', this.loadTransactions)
+    this.loadBridgechains()
+    this.$eventBus.on('wallet:reload', this.loadBridgechains)
   },
 
   beforeDestroy () {
-    this.$eventBus.off('wallet:reload', this.loadTransactions)
+    this.$eventBus.off('wallet:reload', this.loadBridgechains)
   },
 
   methods: {
-    async fetchTransactions () {
+    async fetchBridgechains () {
       // If we're already fetching, it's unneccessary to fetch again
       if (this.isFetching) {
         return
@@ -100,7 +91,6 @@ export default {
 
       let address, publicKey
       if (this.wallet_fromRoute) {
-        console.log('fetchTransactions', this.wallet_fromRoute)
         address = this.wallet_fromRoute.address.slice()
         publicKey = this.wallet_fromRoute.publicKey
       }
@@ -110,18 +100,18 @@ export default {
       try {
         const { limit, page, sort } = this.queryParams
         const response = await this.$client.fetchBusinessBridgechains(publicKey, {
-          transactionType: this.transactionType,
           page,
           limit,
           orderBy: `${sort.field}:${sort.type}`
         })
 
         if (this.wallet_fromRoute && address === this.wallet_fromRoute.address) {
-          this.$set(this, 'fetchedTransactions', response.data)
+          this.$set(this, 'fetchedBridgechains', response.data)
           this.totalCount = response.meta.totalCount
         }
       } catch (error) {
-        this.fetchedTransactions = []
+        this.$set(this, 'fetchedBridgechains', [])
+        this.totalCount = 0
       } finally {
         this.isFetching = false
         this.isLoading = false
@@ -129,28 +119,28 @@ export default {
     },
 
     /**
-     * Fetch the transaction and show the loading animation while the response
+     * Fetch the bridgechains and show the loading animation while the response
      * is received
      */
-    async loadTransactions () {
+    async loadBridgechains () {
       if (!this.wallet_fromRoute || this.isFetching) {
         return
       }
 
       this.isLoading = true
-      this.fetchTransactions()
+      this.fetchBridgechains()
     },
 
     onPageChange ({ currentPage }) {
       this.currentPage = currentPage
       this.__updateParams({ page: currentPage })
-      this.loadTransactions()
+      this.loadBridgechains()
     },
 
     onPerPageChange ({ currentPerPage }) {
-      // this.transactionTableRowCount = currentPerPage
+      this.tableRowCount = currentPerPage
       this.__updateParams({ limit: currentPerPage, page: 1 })
-      this.loadTransactions()
+      this.loadBridgechains()
     },
 
     onSortChange ({ source, field, type }) {
@@ -166,7 +156,7 @@ export default {
           },
           page: 1
         })
-        this.loadTransactions()
+        this.loadBridgechains()
       }
     },
 
@@ -174,10 +164,14 @@ export default {
       this.currentPage = 1
       this.queryParams.page = 1
       this.totalCount = 0
-      this.fetchedTransactions = []
+      this.fetchedBridgechains = []
     },
 
     __updateParams (newProps) {
+      if (!newProps || typeof newProps !== 'object' || newProps === null) {
+        return
+      }
+
       this.queryParams = Object.assign({}, this.queryParams, newProps)
     }
   }
