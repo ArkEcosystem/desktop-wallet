@@ -612,6 +612,7 @@ export default {
       INSTALL: 'Install',
       INSTALLING: 'Installing \'{plugin}\'',
       INSTALL_URL: 'Install from URL',
+      REMOVING: 'Removing \'{plugin}\'',
       UPDATING: 'Updating \'{plugin}\'',
       OFFICIAL: 'Official {author} plugin',
       MENU: 'Menu',

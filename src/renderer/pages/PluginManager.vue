@@ -180,7 +180,7 @@
       v-if="showRemoveModal"
       :plugin="selectedPlugin"
       @cancel="reset"
-      @removed="onRemoved"
+      @confirm="removePlugin"
     />
 
     <ModalLoader
@@ -235,6 +235,7 @@ export default {
     isMenuOpen: false,
     isRefreshing: false,
     isUpdate: false,
+    isRemoving: false,
     modalRef: null,
     selectedPlugin: null,
     modal: '',
@@ -337,7 +338,9 @@ export default {
         return ''
       }
 
-      return this.$t(`PAGES.PLUGIN_MANAGER.${this.isUpdate ? 'UPDATING' : 'INSTALLING'}`, {
+      const type = this.isRemoving ? 'REMOVING' : this.isUpdate ? 'UPDATING' : 'INSTALLING'
+
+      return this.$t(`PAGES.PLUGIN_MANAGER.${type}`, {
         plugin: this.selectedPlugin.title
       })
     }
@@ -354,6 +357,22 @@ export default {
   },
 
   methods: {
+    async removePlugin (removeOptions) {
+      this.isRemoving = true
+      this.setModal('loading')
+
+      await this.$store.dispatch('plugin/deletePlugin', {
+        pluginId: this.selectedPlugin.id,
+        removeOptions
+      })
+
+      this.$success(this.$t('PAGES.PLUGIN_MANAGER.SUCCESS.REMOVAL', {
+        plugin: this.selectedPlugin.title
+      }))
+
+      this.reset()
+    },
+
     async reloadPlugins () {
       this.isRefreshing = true
 
@@ -423,6 +442,7 @@ export default {
       this.resetPlugin()
       this.resetModal()
       this.resetIsUpdate()
+      this.isRemoving = false
     },
 
     async fetchPluginData (url) {
@@ -480,13 +500,6 @@ export default {
 
     onRemove () {
       this.setModal('remove')
-    },
-
-    onRemoved () {
-      this.$success(this.$t('PAGES.PLUGIN_MANAGER.SUCCESS.REMOVAL', {
-        plugin: this.selectedPlugin.title
-      }))
-      this.reset()
     },
 
     onSearch (query) {

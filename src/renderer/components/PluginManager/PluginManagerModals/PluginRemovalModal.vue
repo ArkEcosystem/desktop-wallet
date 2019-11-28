@@ -63,20 +63,12 @@ export default {
       this.$emit('cancel')
     },
 
-    emitRemoved () {
-      this.$emit('removed')
-    },
-
     toggleRemoveOptions () {
       this.removeOptions = !this.removeOptions
     },
 
-    async removePlugin () {
-      await this.$store.dispatch('plugin/deletePlugin', {
-        pluginId: this.plugin.id,
-        removeOptions: this.removeOptions
-      })
-      this.emitRemoved()
+    removePlugin () {
+      this.$emit('confirm', this.removeOptions)
     }
   }
 }
