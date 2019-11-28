@@ -173,7 +173,7 @@ describe('Plugin Manager', () => {
       }
 
       await pluginManager.disablePlugin(pkg.name, 'p-1')
-      expect(mockDispatch).toHaveBeenCalledWith('plugin/deleteLoaded', pkg.name, 'p-1')
+      expect(mockDispatch).toHaveBeenCalledWith('plugin/deleteLoaded', { pluginId: pkg.name, profileId: 'p-1' })
     })
 
     it('should unload theme', async () => {
@@ -188,7 +188,7 @@ describe('Plugin Manager', () => {
       }
 
       await pluginManager.disablePlugin(pkg.name, 'p-1')
-      expect(mockDispatch).toHaveBeenCalledWith('plugin/deleteLoaded', pkg.name, 'p-1')
+      expect(mockDispatch).toHaveBeenCalledWith('plugin/deleteLoaded', { pluginId: pkg.name, profileId: 'p-1' })
       expect(mockDispatch).toHaveBeenCalledWith('session/setTheme', expect.any(String))
       expect(mockDispatch).toHaveBeenCalledWith('profile/update', expect.any(Object))
     })
