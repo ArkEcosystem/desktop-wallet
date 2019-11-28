@@ -132,7 +132,7 @@ export default {
 
     isLoaded: (state, getters) => (pluginId, profileId) => {
       if (!profileId) {
-        return getters.loaded[pluginId]
+        return !!getters.loaded[pluginId]
       }
 
       return state.loaded[profileId] ? !!state.loaded[profileId][pluginId] : null
@@ -368,11 +368,11 @@ export default {
     },
 
     async setEnabled ({ commit, getters, rootGetters }, { enabled, pluginId, profileId = null }) {
-      if (getters.isEnabled(pluginId) === enabled) {
+      profileId = profileId || rootGetters['session/profileId']
+
+      if (getters.isEnabled(pluginId, profileId) === enabled) {
         return
       }
-
-      profileId = profileId || rootGetters['session/profileId']
 
       commit('SET_IS_PLUGIN_ENABLED', {
         enabled,
@@ -407,20 +407,20 @@ export default {
       })
     },
 
-    async deletePlugin ({ dispatch, getters, rootGetters }, pluginId, removeOptions = false) {
+    async deletePlugin ({ dispatch, getters, rootGetters, state }, { pluginId, removeOptions = false }) {
       if (!getters.installedById(pluginId)) {
         return
       }
 
       for (const profile of rootGetters['profile/all']) {
-        dispatch('setEnabled', {
+        await dispatch('setEnabled', {
           enabled: false,
           pluginId,
           profileId: profile.id
         })
 
         if (removeOptions) {
-          dispatch('deletePluginOptionsForProfile', pluginId, profile.id)
+          dispatch('deletePluginOptionsForProfile', { pluginId, profileId: profile.id })
         }
       }
 
@@ -433,7 +433,7 @@ export default {
       }
     },
 
-    deleteLoaded ({ commit, getters, rootGetters }, pluginId, profileId = null) {
+    deleteLoaded ({ commit, getters, rootGetters, state }, { pluginId, profileId = null }) {
       profileId = profileId || rootGetters['session/profileId']
 
       if (!getters.isLoaded(pluginId, profileId)) {
@@ -511,7 +511,7 @@ export default {
       })
     },
 
-    deletePluginOptionsForProfile ({ commit, rootGetters }, pluginId, profileId = null) {
+    deletePluginOptionsForProfile ({ commit, rootGetters }, { pluginId, profileId = null }) {
       profileId = profileId || rootGetters['session/profileId']
 
       commit('DELETE_PLUGIN_OPTIONS', {

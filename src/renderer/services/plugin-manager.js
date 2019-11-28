@@ -170,7 +170,7 @@ export class PluginManager {
       await this.unloadThemes(plugin, profileId)
     }
 
-    await this.app.$store.dispatch('plugin/deleteLoaded', pluginId, profileId)
+    await this.app.$store.dispatch('plugin/deleteLoaded', { pluginId, profileId })
   }
 
   async fetchLogo (url) {

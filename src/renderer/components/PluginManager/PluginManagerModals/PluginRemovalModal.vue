@@ -72,7 +72,10 @@ export default {
     },
 
     async removePlugin () {
-      await this.$store.dispatch('plugin/deletePlugin', this.plugin.id, this.removeOptions)
+      await this.$store.dispatch('plugin/deletePlugin', {
+        pluginId: this.plugin.id,
+        removeOptions: this.removeOptions
+      })
       this.emitRemoved()
     }
   }
