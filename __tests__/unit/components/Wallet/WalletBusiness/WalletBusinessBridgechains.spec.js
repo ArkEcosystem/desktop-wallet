@@ -1,11 +1,9 @@
 import { createLocalVue, mount } from '@vue/test-utils'
-// import Vuex from 'vuex'
 import installI18n from '../../../__utils__/i18n'
 import { WalletBusinessBridgechains } from '@/components/Wallet/WalletBusiness'
 
 const localVue = createLocalVue()
 const i18n = installI18n(localVue)
-// localVue.use(Vuex)
 
 let wrapper
 let clientFetchBridgechainsMock
