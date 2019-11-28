@@ -282,7 +282,7 @@ describe('Create Component', () => {
       })
     })
 
-    it('should not set custom properties', (done) => {
+    it('should not set custom properties', async () => {
       const spy = jest.spyOn(console, 'error').mockImplementation()
 
       const plugin = {
@@ -310,20 +310,21 @@ describe('Create Component', () => {
       const wrapper = mount(component)
       expect(wrapper.html()).toBe('<div>Test</div>')
 
-      localVue.nextTick(() => {
-        expect(spy).toHaveBeenCalledWith('innerHTML 🚫')
-        expect(spy).toHaveBeenCalledWith('outerHTML 🚫')
-        expect(spy).toHaveBeenCalledWith('appendChild 🚫')
-        expect(spy).toHaveBeenCalledWith('cloneNode 🚫')
-        expect(spy).toHaveBeenCalledWith('getRootNode 🚫')
-        expect(spy).toHaveBeenCalledWith('insertBefore 🚫')
-        expect(spy).toHaveBeenCalledWith('normalize 🚫')
-        expect(spy).toHaveBeenCalledWith('querySelector 🚫')
-        expect(spy).toHaveBeenCalledWith('querySelectorAll 🚫')
-        expect(spy).toHaveBeenCalledWith('removeChild 🚫')
-        expect(spy).toHaveBeenCalledWith('replaceChild 🚫')
-        done()
-      })
+      await wrapper.vm.$nextTick()
+
+      expect(spy).toHaveBeenCalledWith('innerHTML 🚫')
+      expect(spy).toHaveBeenCalledWith('outerHTML 🚫')
+      expect(spy).toHaveBeenCalledWith('appendChild 🚫')
+      expect(spy).toHaveBeenCalledWith('cloneNode 🚫')
+      expect(spy).toHaveBeenCalledWith('getRootNode 🚫')
+      expect(spy).toHaveBeenCalledWith('insertBefore 🚫')
+      expect(spy).toHaveBeenCalledWith('normalize 🚫')
+      expect(spy).toHaveBeenCalledWith('querySelector 🚫')
+      expect(spy).toHaveBeenCalledWith('querySelectorAll 🚫')
+      expect(spy).toHaveBeenCalledWith('removeChild 🚫')
+      expect(spy).toHaveBeenCalledWith('replaceChild 🚫')
+
+      spy.mockRestore()
     })
   })
 })
