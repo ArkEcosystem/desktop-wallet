@@ -81,26 +81,6 @@ export default {
     WalletBusinessShowBridgechain
   },
 
-  props: {
-    hasShortId: {
-      type: Boolean,
-      required: false,
-      default: false
-    },
-
-    isDashboard: {
-      type: Boolean,
-      required: false,
-      default: false
-    },
-
-    transactionType: {
-      type: Number,
-      required: false,
-      default: null
-    }
-  },
-
   data: () => ({
     selected: null
   }),
@@ -137,7 +117,7 @@ export default {
   methods: {
     onSortChange (sortOptions) {
       this.$emit('on-sort-change', {
-        source: 'transactionsTab',
+        source: 'bridgechainsTab',
         ...sortOptions[0]
       })
     },
