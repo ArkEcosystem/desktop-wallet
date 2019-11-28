@@ -244,7 +244,7 @@ export default {
 
     seedNodeError () {
       if (this.$v.seedNode.$dirty && !this.$v.seedNode.isValid) {
-        if (!this.$v.seedNode.isValid) {
+        if (!this.$v.seedNode.isValidSeed) {
           return this.$t('VALIDATION.INVALID_SEED')
         } else if (!this.$v.seedNode.isUnique) {
           return this.$t('TRANSACTION.BRIDGECHAIN.ERROR_DUPLICATE')
@@ -270,7 +270,7 @@ export default {
 
     genesisHashError () {
       if (this.$v.form.asset.genesisHash.$dirty && !this.$v.form.asset.genesisHash.isValid) {
-        if (!this.$v.form.asset.genesisHash.isValid) {
+        if (!this.$v.form.asset.genesisHash.isValidHash) {
           return this.$t('VALIDATION.NOT_VALID', [this.$t('TRANSACTION.BRIDGECHAIN.GENESIS_HASH')])
         }
       }
@@ -294,7 +294,7 @@ export default {
       if (this.$v.form.apiPort.$dirty && !this.$v.form.apiPort.isValid) {
         if (!this.$v.form.apiPort.isNumeric) {
           return this.$t('VALIDATION.NOT_NUMERIC', [this.$t('TRANSACTION.BRIDGECHAIN.API_PORT')])
-        } else if (!this.$v.form.apiPort.isValid) {
+        } else if (!this.$v.form.apiPort.isValidPort) {
           return this.$t('VALIDATION.INVALID_PORT')
         }
       }
@@ -358,7 +358,7 @@ export default {
       isUnique (value) {
         return !this.form.asset.seedNodes.includes(value)
       },
-      isValid (value) {
+      isValidSeed (value) {
         return /^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9\\-]*[A-Za-z0-9])$/.test(value)
       },
       tooMany: maxLength(10)
@@ -373,7 +373,7 @@ export default {
       apiPort: {
         isNumeric: numeric,
 
-        isValid (value) {
+        isValidPort (value) {
           return parseInt(value) < 65536
         }
       },
@@ -401,7 +401,7 @@ export default {
         },
 
         genesisHash: {
-          isValid (value) {
+          isValidHash (value) {
             return this.bridgechain ? true : /^[a-z0-9]{64}$/.test(value)
           },
           required (value) {
