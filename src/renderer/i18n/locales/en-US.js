@@ -941,7 +941,7 @@ export default {
       BRIDGECHAIN_REPOSITORY: 'Bridgechain Repository',
       API_PORT: 'API Port',
       ERROR_DUPLICATE: 'The seed node has already been added',
-      NO_RECIPIENTS: 'There are no peers'
+      NO_PEERS: 'There are no peers'
     },
     WARNING: {
       BROADCAST: 'Transaction was broadcasted to other peers. It may not be accepted by them'
