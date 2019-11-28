@@ -24,7 +24,8 @@ describe('pages > PluginManager', () => {
         strings_capitalizeFirst: jest.fn(),
         $store: {
           getters: {
-            'plugin/filtered': () => []
+            'plugin/filtered': () => [],
+            'session/theme': 'dark'
           }
         }
       }
