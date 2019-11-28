@@ -7,16 +7,12 @@ const localVue = createLocalVue()
 const i18n = installI18n(localVue)
 
 let wrapper
-const createWrapper = (component, propsData) => {
+const createWrapper = (component) => {
   component = component || WalletBusiness
-  propsData = propsData || {
-    value: ''
-  }
 
   wrapper = mount(component, {
     i18n,
     localVue,
-    propsData,
     sync: false,
     stubs: {
       WalletBusinessBridgechains: `<div>

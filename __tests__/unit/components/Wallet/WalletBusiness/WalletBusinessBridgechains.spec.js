@@ -10,9 +10,8 @@ let clientFetchBridgechainsMock
 let eventOnMock
 let eventOffMock
 let storeDispatchMock
-const createWrapper = (component, propsData) => {
+const createWrapper = (component) => {
   component = component || WalletBusinessBridgechains
-  propsData = propsData || {}
 
   eventOnMock = jest.fn()
   eventOffMock = jest.fn()
@@ -75,7 +74,6 @@ const createWrapper = (component, propsData) => {
         }
       }
     ],
-    propsData,
     stubs: {
       WalletBusinessBridgechainsTable: `<div>
         <div class="WalletBusinessBridgechainsTable"></div>
