@@ -76,7 +76,7 @@
 
       <TransactionMultiSignatureList
         :items="$v.form.publicKeys.$model"
-        class="TransactionModalMultiSignature__publicKeys"
+        class="TransactionModalMultiSignature__publicKeys mt-4"
         @remove="emitRemovePublicKey"
       />
     </div>
