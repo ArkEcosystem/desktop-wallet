@@ -20,14 +20,17 @@
 
     <div
       class="PluginManager__banner"
-      :style="{ backgroundImage: `url(${bannerImage})` }"
+      :style="{
+        backgroundImage: `url(${bannerImage})`,
+        backgroundColor: colors.background
+      }"
     >
       <div class="w-full lg:w-3/5 flex flex-col">
-        <h1 class="PluginManager__banner__title">
+        <h1 :style="{ color: colors.title }">
           {{ $t('PAGES.PLUGIN_MANAGER.BANNER.TITLE') }}
         </h1>
 
-        <h3>
+        <h3 :style="{ color: colors.subtitle }">
           {{ $t('PAGES.PLUGIN_MANAGER.BANNER.SUBTITLE') }}
         </h3>
       </div>
@@ -288,6 +291,38 @@ export default {
     bannerImage () {
       const theme = this.hasDarkTheme ? 'dark' : 'light'
       return this.assets_loadImage(`pages/plugin-manager/banner-${theme}.svg`)
+    },
+
+    colors () {
+      const themeColors = {
+        dark: {
+          background: '#585d6d',
+          title: '#f7f9fb',
+          subtitle: '#787fa3'
+        },
+        light: {
+          background: '#e7f9fd',
+          title: '#1d6ddb',
+          subtitle: '#2b3748'
+        }
+      }
+
+      let colors = themeColors[this.theme]
+
+      if (!colors) {
+        let mode = 'light'
+        const pluginTheme = this.$store.getters['plugin/themes'][this.theme]
+        if (pluginTheme) {
+          mode = pluginTheme.darkMode ? 'dark' : 'light'
+        }
+        colors = themeColors[mode]
+      }
+
+      return colors
+    },
+
+    theme () {
+      return this.$store.getters['session/theme']
     },
 
     noResultsImage () {
@@ -568,11 +603,8 @@ export default {
   @apply .flex .justify-between .items-center .bg-theme-feature .rounded-lg;
 }
 .PluginManager__banner {
-  @apply flex items-center justify-end rounded-t-lg p-10 bg-left bg-no-repeat bg-theme-banner-background-color;
+  @apply flex items-center justify-end rounded-t-lg p-10 bg-left bg-no-repeat;
   background-size: auto 100%;
-}
-.PluginManager__banner__title {
-  @apply text-theme-banner-text
 }
 .PluginManager__wrapper {
   @apply flex flex-1 bg-theme-feature rounded-b-lg overflow-y-hidden
