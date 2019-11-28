@@ -483,10 +483,6 @@ export default {
     onInstall () {
       this.setModal('loading')
 
-      if (this.isUpdate) {
-        this.disablePlugin(this.selectedPlugin, this.session_profile.id)
-      }
-
       ipcRenderer.send('plugin-manager:install', {
         pluginId: this.selectedPlugin.id,
         isUpdate: this.isUpdate
@@ -516,10 +512,18 @@ export default {
       try {
         await this.$plugins.fetchPlugin(pluginPath, this.isUpdate)
 
-        this.$store.dispatch('plugin/setEnabled', {
-          enabled: true,
-          pluginId: this.selectedPlugin.id
-        })
+        if (this.isUpdate) {
+          const profileIds = this.$store.getters['profile/all'].map(profile => profile.id)
+
+          for (const profileId of profileIds) {
+            if (this.$store.getters['plugin/isEnabled'](this.selectedPlugin.id, profileId)) {
+              this.disablePlugin(this.selectedPlugin.id, profileId)
+              this.enablePlugin(this.selectedPlugin.id, profileId)
+            }
+          }
+        } else {
+          this.enablePlugin(this.selectedPlugin.id, this.session_profile.id)
+        }
 
         this.$success(this.installSuccessMessage)
       } catch (error) {
@@ -534,18 +538,19 @@ export default {
       this.$error(error)
     },
 
-    disablePlugin (plugin) {
-      this.updateStatus({ pluginId: plugin.id, enabled: false })
+    disablePlugin (pluginId, profileId) {
+      this.updateStatus({ enabled: false, pluginId, profileId })
     },
 
-    enablePlugin (plugin) {
-      this.updateStatus({ pluginId: plugin.id, enabled: true })
+    enablePlugin (pluginId, profileId) {
+      this.updateStatus({ enabled: true, pluginId, profileId })
     },
 
-    updateStatus ({ pluginId, enabled }) {
+    updateStatus ({ enabled, pluginId, profileId = null }) {
       this.$store.dispatch('plugin/setEnabled', {
         enabled,
-        pluginId
+        pluginId,
+        profileId
       })
     }
   }
