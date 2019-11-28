@@ -8,31 +8,42 @@
       <ListDividedItem
         :label="$t('WALLET_BUSINESS.BRIDGECHAIN.NAME')"
         :value="bridgechain.name"
+        class="WalletBusinessShowBridgechain__name"
       />
 
-      <ListDividedItem :label="$t('WALLET_BUSINESS.BRIDGECHAIN.SEED_NODES')">
+      <ListDividedItem
+        :label="$t('WALLET_BUSINESS.BRIDGECHAIN.SEED_NODES')"
+        class="WalletBusinessShowBridgechain__seed-nodes"
+      >
         <div
           v-for="(seedNode, id) of bridgechain.seedNodes"
           :key="id"
+          class="WalletBusinessShowBridgechain__seed-nodes__item"
         >
           {{ seedNode }}
         </div>
       </ListDividedItem>
 
-      <ListDividedItem :label="$t('WALLET_BUSINESS.BRIDGECHAIN.GENESIS_HASH')">
+      <ListDividedItem
+        :label="$t('WALLET_BUSINESS.BRIDGECHAIN.GENESIS_HASH')"
+        class="WalletBusinessShowBridgechain__genesis-hash"
+      >
         <span
           v-tooltip="{
             content: bridgechain.genesisHash,
             trigger: 'hover',
             classes: 'text-xs'
           }"
-          class="cursor-default"
+          class="WalletBusinessShowBridgechain__genesis-hash__item cursor-default"
         >
           {{ bridgechain.genesisHash | truncateMiddle(10) }}
         </span>
       </ListDividedItem>
 
-      <ListDividedItem :label="$t('WALLET_BUSINESS.BRIDGECHAIN.BRIDGECHAIN_REPOSITORY')">
+      <ListDividedItem
+        :label="$t('WALLET_BUSINESS.BRIDGECHAIN.BRIDGECHAIN_REPOSITORY')"
+        class="WalletBusinessShowBridgechain__bridgechain-repo"
+      >
         <a
           class="flex items-center whitespace-no-wrap"
           href="#"
@@ -44,7 +55,7 @@
               classes: 'text-xs',
               trigger: 'hover'
             }"
-            class="mr-1"
+            class="WalletBusinessShowBridgechain__bridgechain-repo__item mr-1"
           >
             {{ bridgechain.bridgechainRepository }}
           </span>
@@ -142,7 +153,7 @@ export default {
 
   methods: {
     closeTransactionModal (toggleMethod, isOpen) {
-      if (isOpen) {
+      if (isOpen && typeof toggleMethod === 'function') {
         toggleMethod()
       }
 
