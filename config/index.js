@@ -106,7 +106,6 @@ exports.PLUGINS = {
     'other'
   ],
   devPath: path.resolve(os.homedir(), '.ark-desktop/plugins-dev'),
-  discoverUrl: 'https://github.com/ark-ecosystem-desktop-plugins',
   maxKeywords: 5,
   keywords: [
     '@arkecosystem',
