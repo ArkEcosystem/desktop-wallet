@@ -37,7 +37,7 @@ export default {
     activeCategory: {
       type: String,
       required: false,
-      default: () => 'all'
+      default: 'all'
     }
   },
 

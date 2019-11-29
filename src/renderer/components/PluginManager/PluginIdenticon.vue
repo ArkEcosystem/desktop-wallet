@@ -31,7 +31,7 @@ export default {
     shape: {
       type: String,
       required: false,
-      default: () => 'square'
+      default: 'square'
     },
     shapeCount: {
       type: Number,
