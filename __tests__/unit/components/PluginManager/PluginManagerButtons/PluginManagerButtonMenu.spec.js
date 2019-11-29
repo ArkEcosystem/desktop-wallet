@@ -4,6 +4,7 @@ import { PluginManagerButtonMenu } from '@/components/PluginManager/PluginManage
 
 const i18n = useI18nGlobally()
 let wrapper
+
 beforeEach(() => {
   wrapper = shallowMount(PluginManagerButtonMenu, {
     i18n,
@@ -16,5 +17,10 @@ beforeEach(() => {
 describe('PluginManagerButtonMenu', () => {
   it('should render', () => {
     expect(wrapper.isVueInstance()).toBeTrue()
+  })
+
+  it('should emit click event', () => {
+    wrapper.trigger('click')
+    expect(wrapper.emitted('click')).toBeTruthy()
   })
 })

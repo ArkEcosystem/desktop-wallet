@@ -22,6 +22,12 @@ describe('PluginManagerButtonSwitch', () => {
     expect(wrapper.emitted('change')).toBeTruthy()
   })
 
+  it('should not toggle by method if disabled', () => {
+    wrapper.setProps({ isDisabled: true })
+    expect(wrapper.vm.toggle()).toBeUndefined()
+    expect(wrapper.emitted('change')).toBeFalsy()
+  })
+
   it('should be active', () => {
     wrapper.setProps({ isActive: true })
     expect(wrapper.contains('.PluginManagerButtonSwitch--active')).toBeTruthy()

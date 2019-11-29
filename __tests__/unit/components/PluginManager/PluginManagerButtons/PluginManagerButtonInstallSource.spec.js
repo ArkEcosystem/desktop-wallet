@@ -4,6 +4,7 @@ import { PluginManagerButtonInstallSource } from '@/components/PluginManager/Plu
 
 const i18n = useI18nGlobally()
 let wrapper
+
 beforeEach(() => {
   wrapper = shallowMount(PluginManagerButtonInstallSource, {
     i18n,
@@ -16,5 +17,10 @@ beforeEach(() => {
 describe('PluginManagerButtonInstallSource', () => {
   it('should render', () => {
     expect(wrapper.isVueInstance()).toBeTrue()
+  })
+
+  it('should emit click event', () => {
+    wrapper.trigger('click')
+    expect(wrapper.emitted('click')).toBeTruthy()
   })
 })
