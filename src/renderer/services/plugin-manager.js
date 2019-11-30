@@ -306,7 +306,13 @@ export class PluginManager {
 
     try {
       pluginConfig.logo = fs.readFileSync(`${pluginPath}/logo.png`).toString('base64')
-    } catch (error) { }
+    } catch (error) {
+      try {
+        pluginConfig.logo = await this.fetchLogo(pluginConfig.logo)
+      } catch (error) {
+        pluginConfig.logo = null
+      }
+    }
 
     const fullPath = pluginPath.substring(0, 1) === '/' ? pluginPath : path.resolve(pluginPath)
 
