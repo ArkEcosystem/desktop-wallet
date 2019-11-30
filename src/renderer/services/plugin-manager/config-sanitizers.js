@@ -70,11 +70,12 @@ const sanitizeKeywords = keywords => {
 }
 
 const sanitizeVersion = version => {
-  return semver.valid(version) || '0.0.0'
+  return semver.valid(version) || semver.coerce(version) || '0.0.0'
 }
 
 const sanitizeMinVersion = config => {
-  return semver.valid(getOption(config, 'minVersion') || config.minVersion) || '0.0.0'
+  const minVersion = getOption(config, 'minVersion') || config.minVersion
+  return semver.valid(minVersion) || semver.coerce(minVersion) || '0.0.0'
 }
 
 const sanitizeLogo = config => {
