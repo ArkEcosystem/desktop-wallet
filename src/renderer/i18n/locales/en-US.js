@@ -637,7 +637,7 @@ export default {
       CLICK_TO_RELOAD: 'Reload the plugin repository',
       ALREADY_INSTALLED: 'You\'ve already installed this plugin',
       UPDATE: {
-        AVAILABLE: 'Update to latest version (v{version})',
+        AVAILABLE: 'Update to latest version ({version})',
         NOT_AVAILABLE: 'No updates available'
       },
       ERRORS: {

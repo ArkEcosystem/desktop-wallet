@@ -69,14 +69,12 @@ const sanitizeKeywords = keywords => {
   return difference(uniq(keywords), PLUGINS.keywords).map(keyword => titlecase(keyword))
 }
 
+const sanitizeVersion = version => {
+  return semver.valid(version) || '0.0.0'
+}
+
 const sanitizeMinVersion = config => {
-  const minVersion = getOption(config, 'minVersion') || config.minVersion || null
-
-  if (minVersion) {
-    return semver.clean(minVersion)
-  }
-
-  return null
+  return semver.valid(getOption(config, 'minVersion') || config.minVersion) || '0.0.0'
 }
 
 const sanitizeLogo = config => {
@@ -150,5 +148,6 @@ export {
   sanitizeSize,
   sanitizeSource,
   sanitizeTitle,
-  sanitizeUrls
+  sanitizeUrls,
+  sanitizeVersion
 }

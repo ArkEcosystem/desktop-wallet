@@ -9,7 +9,8 @@ import {
   sanitizeSize,
   sanitizeSource,
   sanitizeTitle,
-  sanitizeUrls
+  sanitizeUrls,
+  sanitizeVersion
 } from './config-sanitizers'
 
 export class PluginConfiguration {
@@ -63,7 +64,7 @@ export class PluginConfiguration {
       source: sanitizeSource(config),
       title: sanitizeTitle(config),
       urls: sanitizeUrls(config),
-      version: config.version
+      version: sanitizeVersion(config.version)
     })
   }
 

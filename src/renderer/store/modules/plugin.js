@@ -153,7 +153,7 @@ export default {
         return true
       }
 
-      return semver.lte(releaseService.currentVersion, plugin.config.minVersion)
+      return semver.gte(releaseService.currentVersion, plugin.config.minVersion)
     },
 
     avatar: state => profile => {
