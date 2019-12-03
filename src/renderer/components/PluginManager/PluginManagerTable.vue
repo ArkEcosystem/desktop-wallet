@@ -1,5 +1,5 @@
 <template>
-  <div class="PluginTable w-full">
+  <div class="w-full mt-8">
     <TableWrapper
       v-bind="$attrs"
       class="PluginManagerTable"

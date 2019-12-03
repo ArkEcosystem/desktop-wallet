@@ -93,7 +93,6 @@
             }"
             :no-data-message="$t('PLUGIN_TABLE.NO_PLUGINS')"
             :active-category="activeCategory"
-            class="mt-10"
             @on-sort-change="onSortChange"
             @show-details="openDetailsModal"
           />
