@@ -356,7 +356,8 @@ export default {
 
     sortParams: {
       get () {
-        return this.$store.getters['session/pluginSortParams']
+        const sortParams = this.$store.getters['session/pluginSortParams']
+        return sortParams.field === 'id' ? { field: 'title', type: sortParams.type } : sortParams
       },
       set (sortParams) {
         this.$store.dispatch('session/setPluginSortParams', sortParams)
