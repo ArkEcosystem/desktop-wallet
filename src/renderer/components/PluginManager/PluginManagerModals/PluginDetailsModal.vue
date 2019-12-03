@@ -272,8 +272,8 @@ export default {
       this.electron_openExternal(target)
     },
 
-    toggleStatus (enabled) {
-      this.$store.dispatch('plugin/setEnabled', {
+    async toggleStatus (enabled) {
+      await this.$store.dispatch('plugin/setEnabled', {
         enabled,
         pluginId: this.plugin.id
       })

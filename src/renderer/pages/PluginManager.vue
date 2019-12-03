@@ -552,12 +552,12 @@ export default {
 
           for (const profileId of profileIds) {
             if (this.$store.getters['plugin/isEnabled'](this.selectedPlugin.id, profileId)) {
-              this.disablePlugin(this.selectedPlugin.id, profileId)
-              this.enablePlugin(this.selectedPlugin.id, profileId)
+              await this.disablePlugin(this.selectedPlugin.id, profileId)
+              await this.enablePlugin(this.selectedPlugin.id, profileId)
             }
           }
         } else {
-          this.enablePlugin(this.selectedPlugin.id, this.session_profile.id)
+          await this.enablePlugin(this.selectedPlugin.id, this.session_profile.id)
         }
 
         this.$success(this.installSuccessMessage)
@@ -573,16 +573,16 @@ export default {
       this.$error(error)
     },
 
-    disablePlugin (pluginId, profileId) {
-      this.updateStatus({ enabled: false, pluginId, profileId })
+    async disablePlugin (pluginId, profileId) {
+      await this.updateStatus({ enabled: false, pluginId, profileId })
     },
 
-    enablePlugin (pluginId, profileId) {
-      this.updateStatus({ enabled: true, pluginId, profileId })
+    async enablePlugin (pluginId, profileId) {
+      await this.updateStatus({ enabled: true, pluginId, profileId })
     },
 
-    updateStatus ({ enabled, pluginId, profileId = null }) {
-      this.$store.dispatch('plugin/setEnabled', {
+    async updateStatus ({ enabled, pluginId, profileId = null }) {
+      await this.$store.dispatch('plugin/setEnabled', {
         enabled,
         pluginId,
         profileId
