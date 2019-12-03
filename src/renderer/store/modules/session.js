@@ -273,29 +273,8 @@ export default {
       const profile = rootGetters['profile/byId'](profileId)
       if (!profile) return
 
-      let updateProfile = false
-
       if (!profile.unconfirmedVotes) {
         profile.unconfirmedVotes = []
-        updateProfile = true
-      }
-
-      if (!profile.pluginSortParams) {
-        profile.pluginSortParams = { field: 'title', type: 'asc' }
-        updateProfile = true
-      }
-
-      if (!profile.pluginAdapter) {
-        profile.pluginAdapter = 'npm'
-        updateProfile = true
-      }
-
-      if (profile.filterBlacklistedPlugins === undefined) {
-        profile.filterBlacklistedPlugins = true
-        updateProfile = true
-      }
-
-      if (updateProfile) {
         dispatch('profile/update', profile, { root: true })
       }
 
