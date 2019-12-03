@@ -125,14 +125,18 @@ export class PluginManager {
   }
 
   async unloadThemes (plugin, profileId) {
-    const defaultTheme = 'light'
-    await this.app.$store.dispatch('session/setTheme', defaultTheme)
+    const defaultThemes = ['light', 'dark']
 
-    const profile = this.app.$store.getters['profile/byId'](profileId)
-    await this.app.$store.dispatch('profile/update', {
-      ...profile,
-      ...{ theme: defaultTheme }
-    })
+    if (!defaultThemes.includes(this.app.$store.getters['session/theme'])) {
+      await this.app.$store.dispatch('session/setTheme', defaultThemes[0])
+
+      const profile = this.app.$store.getters['profile/byId'](profileId)
+
+      await this.app.$store.dispatch('profile/update', {
+        ...profile,
+        ...{ theme: defaultThemes[0] }
+      })
+    }
   }
 
   getWalletTabComponent (pluginId) {
