@@ -260,6 +260,7 @@ export default {
       BACKGROUND_UPDATE_LEDGER: 'Update Ledger in background',
       BROADCAST_PEERS: 'Broadcast to multiple peers',
       TITLE: 'Current settings',
+      MANAGE_BLACKLIST: 'Manage plugin blacklist',
       RESET_DATA: {
         TITLE: 'Reset data',
         QUESTION: 'Are you sure you want to wipe your data?',
@@ -484,6 +485,12 @@ export default {
       HOST: 'http://1.2.3.4',
       PORT: '4003'
     }
+  },
+
+  MODAL_PLUGIN_MANAGE_BLACKLIST: {
+    CLOSE: 'Close',
+    EMPTY: 'There are no plugins on your blacklist',
+    TITLE: 'Plugin blacklist'
   },
 
   MODAL_PLUGIN_DETAILS: {

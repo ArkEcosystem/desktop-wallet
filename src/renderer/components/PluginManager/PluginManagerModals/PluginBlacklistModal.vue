@@ -2,7 +2,7 @@
   <ModalConfirmation
     :question="$t('PLUGIN_BLACKLIST_CONFIRMATION.QUESTION', { plugin: plugin.title })"
     :note="$t('PLUGIN_BLACKLIST_CONFIRMATION.NOTE')"
-    container-classes="PluginBlacklistConfirmation"
+    container-classes="max-w-md"
     @close="emitCancel"
     @cancel="emitCancel"
     @continue="blacklistPlugin"

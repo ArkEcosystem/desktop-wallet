@@ -123,6 +123,13 @@
         </MenuOptionsItem>
 
         <MenuOptionsItem
+          v-if="blacklist.length"
+          :title="$t('APP_SIDEMENU.SETTINGS.MANAGE_BLACKLIST')"
+          class="text-grey-light"
+          @click="toggleManageBlacklistModal"
+        />
+
+        <MenuOptionsItem
           :title="$t('APP_SIDEMENU.SETTINGS.RESET_DATA.TITLE')"
           class="text-grey-light"
           @click="toggleResetDataModal"
@@ -149,6 +156,12 @@
           @cancel="toggleResetDataModal"
           @continue="onResetData"
         />
+
+        <PluginManageBlacklistModal
+          v-if="isManageBlacklistModalOpen"
+          :blacklist="blacklist"
+          @close="toggleManageBlacklistModal"
+        />
       </MenuOptions>
     </div>
   </div>
@@ -158,6 +171,7 @@
 import { ModalConfirmation } from '@/components/Modal'
 import { MenuNavigationItem, MenuOptions, MenuOptionsItem, MenuDropdown } from '@/components/Menu'
 import { ButtonSwitch } from '@/components/Button'
+import { PluginManageBlacklistModal } from '@/components/PluginManager/PluginManagerModals'
 import { isEmpty, isString } from 'lodash'
 const os = require('os')
 
@@ -165,12 +179,13 @@ export default {
   name: 'AppSidemenuOptionsSettings',
 
   components: {
-    ModalConfirmation,
+    ButtonSwitch,
+    MenuDropdown,
     MenuNavigationItem,
     MenuOptions,
     MenuOptionsItem,
-    MenuDropdown,
-    ButtonSwitch
+    ModalConfirmation,
+    PluginManageBlacklistModal
   },
 
   props: {
@@ -188,6 +203,7 @@ export default {
 
   data: () => ({
     isResetDataModalOpen: false,
+    isManageBlacklistModalOpen: false,
     isScreenshotProtectionModalOpen: false,
     isSettingsVisible: false,
     saveOnProfile: false
@@ -206,6 +222,9 @@ export default {
     },
     backgroundUpdateLedger () {
       return this.$store.getters['session/backgroundUpdateLedger']
+    },
+    blacklist () {
+      return this.$store.getters['plugin/blacklisted'].local
     },
     sessionCurrency: {
       get () {
@@ -332,6 +351,10 @@ export default {
       this.isResetDataModalOpen = !this.isResetDataModalOpen
     },
 
+    toggleManageBlacklistModal () {
+      this.isManageBlacklistModalOpen = !this.isManageBlacklistModalOpen
+    },
+
     async onResetData () {
       await this.$store.dispatch('resetData')
       this.electron_reload()
@@ -344,7 +367,7 @@ export default {
     },
 
     emitClose () {
-      if (this.outsideClick && !(this.isResetDataModalOpen || this.isScreenshotProtectionModalOpen)) {
+      if (this.outsideClick && !(this.isResetDataModalOpen || this.isScreenshotProtectionModalOpen || this.isManageBlacklistModalOpen)) {
         this.closeShowSettings()
       }
     }

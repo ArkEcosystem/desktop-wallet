@@ -434,7 +434,7 @@ export default {
 
       this.$store.dispatch('plugin/setBlacklisted', {
         scope: 'local',
-        plugins: uniq([...(this.$store.getters['plugin/blacklisted']).local, this.selectedPlugin.id])
+        plugins: uniq([...this.$store.getters['plugin/blacklisted'].local, this.selectedPlugin.id])
       })
 
       this.$success(this.$t('PAGES.PLUGIN_MANAGER.SUCCESS.BLACKLIST', {
