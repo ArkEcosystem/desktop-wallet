@@ -1,6 +1,6 @@
 <template>
   <ModalConfirmation
-    :question="$t('PLUGIN_REMOVAL_CONFIRMATION.QUESTION')"
+    :question="$t('PLUGIN_REMOVAL_CONFIRMATION.QUESTION', { plugin: plugin.title })"
     :note="$t('PLUGIN_REMOVAL_CONFIRMATION.NOTE')"
     container-classes="PluginRemovalConfirmation"
     @close="emitCancel"

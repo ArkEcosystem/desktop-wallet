@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import pluginManager from '@/services/plugin-manager'
 import releaseService from '@/services/release'
-import { cloneDeep, differenceWith, uniqBy } from 'lodash'
+import { cloneDeep, differenceWith, uniq, uniqBy } from 'lodash'
 import semver from 'semver'
 
 export default {
@@ -12,7 +12,10 @@ export default {
     installed: {},
     enabled: {},
     loaded: {},
-    blacklisted: [],
+    blacklisted: {
+      global: [],
+      local: []
+    },
     pluginOptions: {},
     lastFetched: 0
   },
@@ -24,11 +27,11 @@ export default {
       return uniqBy([...getters.installed, ...getters.available], 'config.id')
     },
 
-    filtered: (_, getters, rootGetters) => (query, category, filter) => {
+    filtered: (_, getters, __, rootGetters) => (query, category, filter) => {
       let plugins = getters[filter || 'all']
 
       if (rootGetters['session/filterBlacklistedPlugins']) {
-        plugins = differenceWith(plugins, getters.blacklisted, (plugin, blacklisted) => {
+        plugins = differenceWith(plugins, uniq([...getters.blacklisted.global, ...getters.blacklisted.local]), (plugin, blacklisted) => {
           return plugin.config.id === blacklisted
         })
       }
@@ -249,6 +252,14 @@ export default {
     RESET_PLUGINS (state) {
       state.loaded = {}
       state.installed = {}
+
+      // fix for 'tainted' profiles - can be removed with next release
+      if (state.blacklisted && Array.isArray(state.blacklisted)) {
+        state.blacklisted = {
+          global: state.blacklisted,
+          local: []
+        }
+      }
     },
 
     SET_LAST_FETCHED (state, timestamp) {
@@ -263,8 +274,8 @@ export default {
       Vue.set(state.installed, plugin.config.id, plugin)
     },
 
-    SET_BLACKLISTED_PLUGINS (state, plugins) {
-      state.blacklisted = plugins
+    SET_BLACKLISTED_PLUGINS (state, { scope, plugins }) {
+      Vue.set(state.blacklisted, scope, plugins)
     },
 
     SET_LOADED_PLUGIN (state, data) {
@@ -397,8 +408,8 @@ export default {
       commit('SET_INSTALLED_PLUGIN', plugin)
     },
 
-    setBlacklisted ({ commit, rootGetters }, plugins) {
-      commit('SET_BLACKLISTED_PLUGINS', plugins)
+    setBlacklisted ({ commit, rootGetters }, { scope, plugins }) {
+      commit('SET_BLACKLISTED_PLUGINS', { scope, plugins })
     },
 
     setLoaded ({ commit, getters, rootGetters }, data) {

@@ -151,6 +151,7 @@
       @close="reset"
       @update="onUpdate"
       @remove="onRemove"
+      @report="onReport"
       @show-permissions="openPermissionsModal('details')"
     />
 
@@ -185,6 +186,13 @@
       @confirm="removePlugin"
     />
 
+    <PluginBlacklistModal
+      v-if="showBlacklistModal"
+      :plugin="selectedPlugin"
+      @cancel="reset"
+      @confirm="blacklistPlugin"
+    />
+
     <ModalLoader
       :message="loadingModalText"
       :visible="showLoadingModal"
@@ -194,9 +202,10 @@
 
 <script>
 import { ipcRenderer } from 'electron'
-import { isEqual, sortBy } from 'lodash'
+import { isEqual, sortBy, uniq } from 'lodash'
 import { ButtonLayout, ButtonReload } from '@/components/Button'
 import {
+  PluginBlacklistModal,
   PluginDetailsModal,
   PluginInstallModal,
   PluginManagerGrid,
@@ -217,6 +226,7 @@ export default {
     ButtonLayout,
     ButtonReload,
     ModalLoader,
+    PluginBlacklistModal,
     PluginDetailsModal,
     PluginInstallModal,
     PluginManagerButtonFilter,
@@ -234,6 +244,7 @@ export default {
   data: () => ({
     activeCategory: 'all',
     activeFilter: 'all',
+    isBlacklisting: false,
     isMenuOpen: false,
     isRefreshing: false,
     isUpdate: false,
@@ -273,6 +284,10 @@ export default {
 
     showRemoveModal () {
       return !!this.selectedPlugin && this.modal === 'remove'
+    },
+
+    showBlacklistModal () {
+      return !!this.selectedPlugin && this.modal === 'blacklist'
     },
 
     showLoadingModal () {
@@ -372,7 +387,7 @@ export default {
         return ''
       }
 
-      const type = this.isRemoving ? 'REMOVING' : this.isUpdate ? 'UPDATING' : 'INSTALLING'
+      const type = this.isRemoving ? 'REMOVING' : this.isBlacklisting ? 'BLACKLISTING' : this.isUpdate ? 'UPDATING' : 'INSTALLING'
 
       return this.$t(`PAGES.PLUGIN_MANAGER.${type}`, {
         plugin: this.selectedPlugin.title
@@ -400,7 +415,29 @@ export default {
         removeOptions
       })
 
-      this.$success(this.$t('PAGES.PLUGIN_MANAGER.SUCCESS.REMOVAL', {
+      this.$success(this.$t('PAGES.PLUGIN_MANAGER.SUCCESS.REMOVE', {
+        plugin: this.selectedPlugin.title
+      }))
+
+      this.reset()
+    },
+
+    async blacklistPlugin () {
+      this.isBlacklisting = true
+      this.setModal('loading')
+
+      for (const profile of this.$store.getters['profile/all']) {
+        if (this.$store.getters['plugin/isEnabled'](this.selectedPlugin.id, profile.id)) {
+          await this.disablePlugin(this.selectedPlugin.id, profile.id)
+        }
+      }
+
+      this.$store.dispatch('plugin/setBlacklisted', {
+        scope: 'local',
+        plugins: uniq([...(this.$store.getters['plugin/blacklisted']).local, this.selectedPlugin.id])
+      })
+
+      this.$success(this.$t('PAGES.PLUGIN_MANAGER.SUCCESS.BLACKLIST', {
         plugin: this.selectedPlugin.title
       }))
 
@@ -477,6 +514,7 @@ export default {
       this.resetPlugin()
       this.resetModal()
       this.resetIsUpdate()
+      this.isBlacklisting = false
       this.isRemoving = false
     },
 
@@ -533,6 +571,10 @@ export default {
       this.setModal('remove')
     },
 
+    onReport () {
+      this.setModal('blacklist')
+    },
+
     onSearch (query) {
       this.query = query
     },
@@ -548,12 +590,10 @@ export default {
         await this.$plugins.fetchPlugin(pluginPath, this.isUpdate)
 
         if (this.isUpdate) {
-          const profileIds = this.$store.getters['profile/all'].map(profile => profile.id)
-
-          for (const profileId of profileIds) {
-            if (this.$store.getters['plugin/isEnabled'](this.selectedPlugin.id, profileId)) {
-              await this.disablePlugin(this.selectedPlugin.id, profileId)
-              await this.enablePlugin(this.selectedPlugin.id, profileId)
+          for (const profile of this.$store.getters['profile/all']) {
+            if (this.$store.getters['plugin/isEnabled'](this.selectedPlugin.id, profile.id)) {
+              await this.disablePlugin(this.selectedPlugin.id, profile.id)
+              await this.enablePlugin(this.selectedPlugin.id, profile.id)
             }
           }
         } else {

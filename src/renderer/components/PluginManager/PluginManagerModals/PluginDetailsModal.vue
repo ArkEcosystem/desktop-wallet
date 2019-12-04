@@ -125,7 +125,7 @@
           <button
             v-if="homepageLink"
             class="flex items-center text-blue hover:underline"
-            @click.stop="openExternal(plugin.homepage)"
+            @click.stop="electron_openExternal(plugin.homepage)"
           >
             {{ homepageLink }}
             <SvgIcon
@@ -268,10 +268,6 @@ export default {
       this.$emit('show-permissions')
     },
 
-    openExternal (target) {
-      this.electron_openExternal(target)
-    },
-
     async toggleStatus (enabled) {
       await this.$store.dispatch('plugin/setEnabled', {
         enabled,
@@ -286,7 +282,9 @@ export default {
         plugin_version: this.plugin.version
       })
 
-      this.openExternal(`${PLUGINS.reportUrl}?${params.toString()}`)
+      this.electron_openExternal(`${PLUGINS.reportUrl}?${params.toString()}`)
+
+      this.$emit('report')
     }
   }
 }

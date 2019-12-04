@@ -612,6 +612,7 @@ export default {
       INSTALL: 'Install',
       INSTALLING: 'Installing \'{plugin}\'',
       INSTALL_URL: 'Install from URL',
+      BLACKLISTING: 'Blacklisting \'{plugin}\'',
       REMOVING: 'Removing \'{plugin}\'',
       UPDATING: 'Updating \'{plugin}\'',
       OFFICIAL: 'Official {author} plugin',
@@ -647,7 +648,8 @@ export default {
       SUCCESS: {
         INSTALLATION: 'The plugin \'{plugin}\' was installed and loaded successfully',
         UPDATE: 'The plugin \'{plugin}\' was updated and reloaded successfully',
-        REMOVAL: 'The plugin \'{plugin}\' was removed successfully',
+        REMOVE: 'The plugin \'{plugin}\' was removed successfully',
+        BLACKLIST: 'The plugin \'{plugin}\' was added to the blacklist',
         RELOAD: 'The plugin repository was reloaded successfully'
       },
       DISCLAIMER: '<b>Disclaimer:</b> The availability of this plugin in the ARK Desktop Wallet does not mean that ARK is directly involved in the development or affiliated with the developer providing this plugin. By installing it on your wallet, you assume every responsibility.',
@@ -1144,12 +1146,17 @@ export default {
 
   PLUGIN_REMOVAL_CONFIRMATION: {
     NOTE: 'Uninstalling this plugin will remove it from all profiles on this system',
-    QUESTION: 'Are you sure you want to remove this plugin?',
+    QUESTION: 'Are you sure you want to remove \'{plugin}\'?',
     OPTIONS: {
       DATA: 'Also delete all plugin data and settings?'
     },
     SUCCESS: 'The plugin \'{plugin}\' has been uninstalled',
     ERROR: 'Could not remove plugin: {error}'
+  },
+
+  PLUGIN_BLACKLIST_CONFIRMATION: {
+    NOTE: 'By blacklisting the plugin it will be disabled on all profiles and will no longer appear in the Plugin Manager',
+    QUESTION: 'Do you want to blacklist \'{plugin}\'?'
   },
 
   WALLET_TRANSACTIONS: {
