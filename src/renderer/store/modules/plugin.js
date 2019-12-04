@@ -27,10 +27,7 @@ export default {
     filtered: (_, getters, rootGetters) => (query, category, filter) => {
       let plugins = getters[filter || 'all']
 
-      const filterPlugins = rootGetters['session/filterBlacklistedPlugins']
-
-      // TODO global blacklist
-      if (filterPlugins) {
+      if (rootGetters['session/filterBlacklistedPlugins']) {
         plugins = differenceWith(plugins, getters.blacklisted, (plugin, blacklisted) => {
           return plugin.config.id === blacklisted
         })
@@ -266,6 +263,10 @@ export default {
       Vue.set(state.installed, plugin.config.id, plugin)
     },
 
+    SET_BLACKLISTED_PLUGINS (state, plugins) {
+      state.blacklisted = plugins
+    },
+
     SET_LOADED_PLUGIN (state, data) {
       if (!state.loaded[data.profileId]) {
         Vue.set(state.loaded, data.profileId, {})
@@ -394,6 +395,10 @@ export default {
 
     setInstalled ({ commit, rootGetters }, plugin) {
       commit('SET_INSTALLED_PLUGIN', plugin)
+    },
+
+    setBlacklisted ({ commit, rootGetters }, plugins) {
+      commit('SET_BLACKLISTED_PLUGINS', plugins)
     },
 
     setLoaded ({ commit, getters, rootGetters }, data) {

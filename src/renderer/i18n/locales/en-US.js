@@ -647,7 +647,8 @@ export default {
       SUCCESS: {
         INSTALLATION: 'The plugin \'{plugin}\' was installed and loaded successfully',
         UPDATE: 'The plugin \'{plugin}\' was updated and reloaded successfully',
-        REMOVAL: 'The plugin \'{plugin}\' was removed successfully'
+        REMOVAL: 'The plugin \'{plugin}\' was removed successfully',
+        RELOAD: 'The plugin repository was reloaded successfully'
       },
       DISCLAIMER: '<b>Disclaimer:</b> The availability of this plugin in the ARK Desktop Wallet does not mean that ARK is directly involved in the development or affiliated with the developer providing this plugin. By installing it on your wallet, you assume every responsibility.',
       REPORT: 'Report this plugin'

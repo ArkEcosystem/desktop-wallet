@@ -412,6 +412,7 @@ export default {
 
       try {
         await this.$plugins.fetchPlugins(true)
+        this.$success(this.$t('PAGES.PLUGIN_MANAGER.SUCCESS.RELOAD'))
       } catch (error) {
         this.$error(this.$t('COMMON.FAILED_FETCH', {
           name: 'plugins',

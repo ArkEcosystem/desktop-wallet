@@ -253,15 +253,15 @@ export class PluginManager {
   }
 
   async fetchPlugins (force = false) {
-    const lastFetched = this.app.$store.getters['plugin/lastFetched']
+    const requests = [this.fetchPluginsFromPath()]
 
-    if (force || dayjs().isAfter(dayjs(lastFetched).add(
+    if (force || dayjs().isAfter(dayjs(this.app.$store.getters['plugin/lastFetched']).add(
       PLUGINS.updateInterval.value, PLUGINS.updateInterval.unit
     ))) {
-      await this.fetchPluginsFromAdapter()
+      requests.push(this.fetchPluginsFromAdapter(), this.fetchBlacklist())
     }
 
-    await this.fetchPluginsFromPath()
+    await Promise.all(requests)
   }
 
   async fetchPluginsFromPath () {
@@ -293,8 +293,17 @@ export class PluginManager {
       try {
         await this.fetchPlugin(pluginPath)
       } catch (error) {
-        console.error(`Could not fetch plugin '${pluginPath}': ${error}`)
+        console.error(`Could not fetch plugin '${pluginPath}': ${error.message}`)
       }
+    }
+  }
+
+  async fetchBlacklist () {
+    try {
+      const { body } = await got(PLUGINS.blacklistUrl, { json: true })
+      await this.app.$store.dispatch('plugin/setBlacklisted', body.plugins)
+    } catch (error) {
+      console.error(`Could not fetch blacklist from '${PLUGINS.blacklistUrl}: ${error.message}`)
     }
   }
 
