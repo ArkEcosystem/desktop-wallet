@@ -273,7 +273,6 @@ export default {
 
       if (peer) {
         this._vm.$client.host = getBaseUrl(peer)
-        this._vm.$client.capabilities = peer.version
 
         // TODO only when necessary (when / before sending) (if no dynamic)
         await dispatch('transaction/updateStaticFees', null, { root: true })

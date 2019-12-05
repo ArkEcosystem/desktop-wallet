@@ -1,10 +1,9 @@
 import { Connection } from '@arkecosystem/client'
-import { Identities, Transactions } from '@arkecosystem/crypto'
+import { Transactions } from '@arkecosystem/crypto'
 import { castArray, chunk, orderBy } from 'lodash'
 import got from 'got'
 import moment from 'moment'
 import logger from 'electron-log'
-import semver from 'semver'
 import { TRANSACTION_TYPES } from '@config'
 import store from '@/store'
 import eventBus from '@/plugins/event-bus'
@@ -110,9 +109,6 @@ export default class ClientService {
 
   constructor (watchProfile = true) {
     this.__host = null
-    // The API version is imprecise, since new capabilities are being added continuously.
-    // So, this property uses the peer version to know which features are available
-    this.__capabilities = '2.0.0'
     this.client = new Connection('http://localhost')
 
     if (watchProfile) {
@@ -132,18 +128,6 @@ export default class ClientService {
 
   get version () {
     return this.__version
-  }
-
-  get capabilities () {
-    return this.__capabilities
-  }
-
-  set capabilities (version) {
-    this.__capabilities = semver.coerce(version)
-  }
-
-  isCapable (version) {
-    return semver.gte(this.capabilities, version)
   }
 
   /**
@@ -310,55 +294,53 @@ export default class ClientService {
     options = options || {}
 
     const walletData = {}
-    if (this.isCapable('2.1.0')) {
-      let transactions = []
-      let hadFailure = false
+    let transactions = []
+    let hadFailure = false
 
-      for (const addressChunk of chunk(addresses, 20)) {
-        try {
-          const { body } = await this.client.api('transactions').search({
-            addresses: addressChunk
-          })
-          transactions.push(...body.data)
-        } catch (error) {
-          logger.error(error)
-          hadFailure = true
-        }
-      }
-
-      if (!hadFailure) {
-        transactions = orderBy(transactions, 'timestamp', 'desc').map(transaction => {
-          transaction.timestamp = transaction.timestamp.unix * 1000 // to milliseconds
-          transaction.isSender = addresses.includes(transaction.sender)
-          transaction.isRecipient = addresses.includes(transaction.recipient)
-
-          return transaction
+    for (const addressChunk of chunk(addresses, 20)) {
+      try {
+        const { body } = await this.client.api('transactions').search({
+          addresses: addressChunk
         })
-
-        for (const transaction of transactions) {
-          if (addresses.includes(transaction.sender)) {
-            if (!walletData[transaction.sender]) {
-              walletData[transaction.sender] = {}
-            }
-            walletData[transaction.sender][transaction.id] = transaction
-          }
-
-          if (transaction.recipient && addresses.includes(transaction.recipient)) {
-            if (!walletData[transaction.recipient]) {
-              walletData[transaction.recipient] = {}
-            }
-            walletData[transaction.recipient][transaction.id] = transaction
-          }
-        }
-
-        for (const address of Object.keys(walletData)) {
-          if (walletData[address]) {
-            walletData[address] = Object.values(walletData[address])
-          }
-        }
-
-        return walletData
+        transactions.push(...body.data)
+      } catch (error) {
+        logger.error(error)
+        hadFailure = true
       }
+    }
+
+    if (!hadFailure) {
+      transactions = orderBy(transactions, 'timestamp', 'desc').map(transaction => {
+        transaction.timestamp = transaction.timestamp.unix * 1000 // to milliseconds
+        transaction.isSender = addresses.includes(transaction.sender)
+        transaction.isRecipient = addresses.includes(transaction.recipient)
+
+        return transaction
+      })
+
+      for (const transaction of transactions) {
+        if (addresses.includes(transaction.sender)) {
+          if (!walletData[transaction.sender]) {
+            walletData[transaction.sender] = {}
+          }
+          walletData[transaction.sender][transaction.id] = transaction
+        }
+
+        if (transaction.recipient && addresses.includes(transaction.recipient)) {
+          if (!walletData[transaction.recipient]) {
+            walletData[transaction.recipient] = {}
+          }
+          walletData[transaction.recipient][transaction.id] = transaction
+        }
+      }
+
+      for (const address of Object.keys(walletData)) {
+        if (walletData[address]) {
+          walletData[address] = Object.values(walletData[address])
+        }
+      }
+
+      return walletData
     }
 
     for (const address of addresses) {
@@ -394,25 +376,11 @@ export default class ClientService {
   async fetchWallets (addresses) {
     const walletData = []
 
-    if (this.isCapable('2.1.0')) {
-      for (const addressChunk of chunk(addresses, 20)) {
-        const { body } = await this.client.api('wallets').search({
-          addresses: addressChunk
-        })
-        walletData.push(...body.data)
-      }
-    } else {
-      for (const address of addresses) {
-        try {
-          walletData.push(await this.fetchWallet(address))
-        } catch (error) {
-          logger.error(error)
-          const message = error.response ? error.response.body.message : error.message
-          if (message !== 'Wallet not found') {
-            throw error
-          }
-        }
-      }
+    for (const addressChunk of chunk(addresses, 20)) {
+      const { body } = await this.client.api('wallets').search({
+        addresses: addressChunk
+      })
+      walletData.push(...body.data)
     }
 
     return walletData
@@ -704,32 +672,10 @@ export default class ClientService {
           return
         }
 
-        const network = store.getters['network/byId'](profile.networkId)
         const currentPeer = store.getters['peer/current']()
-
         if (currentPeer && currentPeer.ip) {
           const scheme = currentPeer.isHttps ? 'https://' : 'http://'
           this.host = `${scheme}${currentPeer.ip}:${currentPeer.port}`
-          this.capabilities = currentPeer.version
-
-        // TODO if we could use the server from network, then, it is a peer and this shouldn't be necessary
-        } else {
-          let { server, apiVersion } = network
-          this.host = server
-
-          // Infer which are the real capabilities of the peer
-          try {
-            const testAddress = Identities.Address.fromPassphrase('test', network.version)
-            const { address } = this.client.api('wallets').search({
-              addresses: [testAddress]
-            })
-
-            apiVersion = (address === testAddress) ? '2.1.0' : '2.0.0'
-          } catch (_) {
-            // The peer does not have capability to search for multiple wallets or transactions at once
-          }
-
-          this.capabilities = apiVersion
         }
 
         if (!oldProfile || profile.id !== oldProfile.id) {
