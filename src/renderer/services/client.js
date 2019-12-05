@@ -1,7 +1,6 @@
 import { Connection } from '@arkecosystem/client'
 import { Transactions } from '@arkecosystem/crypto'
 import { castArray, chunk, orderBy } from 'lodash'
-import got from 'got'
 import moment from 'moment'
 import logger from 'electron-log'
 import { TRANSACTION_TYPES } from '@config'
@@ -50,41 +49,6 @@ export default class ClientService {
     }
 
     return data
-  }
-
-  /**
-   * TODO: Remove unnecessary endpoints once core 2.4 is released (maybe wait until 2.5 so other chains have updated)
-   * Only for V2
-   * Get the configuration of a peer
-   * @param {String} host - URL of the host (using `core-p2p` port)
-   * @param {Number} [timeout=3000]
-   * @return {(Object|null)}
-   */
-  static async fetchPeerConfig (host, timeout = 3000) {
-    const walletApiHost = host.replace(/:\d+/, ':4040')
-    const endpoints = [
-      `${walletApiHost}/config`,
-      `${host}/config`,
-      walletApiHost
-    ]
-
-    for (const endpoint of endpoints) {
-      try {
-        const { body } = await got(endpoint, {
-          json: true,
-          timeout
-        })
-
-        if (body) {
-          return body.data
-        }
-      } catch (error) {
-        // TODO only if a new feature to enable logging is added
-        // console.log(`Error on \`${host}\``)
-      }
-    }
-
-    return null
   }
 
   static async fetchFeeStatistics (server, timeout) {

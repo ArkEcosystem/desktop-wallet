@@ -324,8 +324,7 @@ export default {
         .findPeersWithPlugin('core-api', {
           additional: [
             'height',
-            'latency',
-            'version'
+            'latency'
           ]
         })
 
@@ -334,8 +333,7 @@ export default {
           .findPeersWithPlugin('core-wallet-api', {
             additional: [
               'height',
-              'latency',
-              'version'
+              'latency'
             ]
           })
       }
@@ -515,16 +513,6 @@ export default {
         return i18n.t('PEER.WRONG_NETWORK')
       }
 
-      let peerConfig
-      try {
-        peerConfig = await ClientService.fetchPeerConfig(baseUrl)
-      } catch (error) {
-        //
-      }
-      if (!peerConfig) {
-        return i18n.t('PEER.CONFIG_CHECK_FAILED')
-      }
-
       const client = new ClientService(false)
       client.host = baseUrl
       client.client.withOptions({ timeout: 3000 })
@@ -546,8 +534,7 @@ export default {
         height: peerStatus.height,
         status: 'OK',
         latency: 0,
-        isHttps: schemeUrl && schemeUrl[1] === 'https://',
-        version: peerConfig.version
+        isHttps: schemeUrl && schemeUrl[1] === 'https://'
       }
     }
   }
