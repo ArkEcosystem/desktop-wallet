@@ -18,7 +18,7 @@ beforeEach(() => {
 })
 
 describe('Plugin Sandbox', () => {
-  it('should parse file with api', async () => {
+  it('should parse component vm file with api', async () => {
     const sandbox = new PluginSandbox({
       app,
       plugin
@@ -32,7 +32,7 @@ describe('Plugin Sandbox', () => {
     `)).toBeDefined()
   })
 
-  it('should parse file without api', async () => {
+  it('should parse plugin vm file without api', async () => {
     const sandbox = new PluginSandbox({
       app,
       plugin
@@ -56,8 +56,23 @@ describe('Plugin Sandbox', () => {
     await sandbox.install()
 
     const componentVM = sandbox.getComponentVM()
-    expect(() => componentVM.run(`
+    expect(componentVM.run(`
       module.exports = walletApi.alert
     `)).toBeDefined()
+  })
+
+  it('should not throw error with nonexistent permission', async () => {
+    plugin.config.permissions = ['SECRETS']
+    const sandbox = new PluginSandbox({
+      app,
+      plugin
+    })
+
+    await sandbox.install()
+
+    const componentVM = sandbox.getComponentVM()
+    expect(componentVM.run(`
+      module.exports = walletApi.secrets
+    `)).toBeUndefined()
   })
 })

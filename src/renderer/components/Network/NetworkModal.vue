@@ -444,28 +444,34 @@ export default {
     async validateSeed () {
       this.showLoadingModal = true
 
-      let { origin: host, port, protocol } = new URL(this.form.server)
+      try {
+        let { hostname: host, port, protocol } = new URL(this.form.server)
 
-      if (!port) {
-        port = protocol === 'https:' ? 443 : 80
+        if (!port) {
+          port = protocol === 'https:' ? 443 : 80
+        }
+
+        const response = await this.$store.dispatch('peer/validatePeer', {
+          host,
+          port,
+          ignoreNetwork: true
+        })
+        let success = false
+        if (response === false) {
+          this.$error(this.$t('MODAL_NETWORK.SEED_VALIDATE_FAILED'))
+        } else if (typeof response === 'string') {
+          this.$error(`${this.$t('MODAL_NETWORK.SEED_VALIDATE_FAILED')}: ${response}`)
+        } else {
+          success = true
+        }
+        this.showLoadingModal = false
+
+        return success
+      } catch (error) {
+        //
       }
 
-      const response = await this.$store.dispatch('peer/validatePeer', {
-        host,
-        port,
-        ignoreNetwork: true
-      })
-      let success = false
-      if (response === false) {
-        this.$error(this.$t('MODAL_NETWORK.SEED_VALIDATE_FAILED'))
-      } else if (typeof response === 'string') {
-        this.$error(`${this.$t('MODAL_NETWORK.SEED_VALIDATE_FAILED')}: ${response}`)
-      } else {
-        success = true
-      }
-      this.showLoadingModal = false
-
-      return success
+      return false
     },
 
     async updateNetwork () {
