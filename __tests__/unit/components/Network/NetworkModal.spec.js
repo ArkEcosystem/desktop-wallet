@@ -12,6 +12,7 @@ const i18n = useI18nGlobally()
 let wrapper
 const mocks = {
   $store: {
+    dispatch () {},
     getters: {
       'network/byName': jest.fn((name) => {
         return name === 'exists'
@@ -284,6 +285,30 @@ describe('NetworkModal', () => {
 
         it('should switch from invalid to valid to invalid for format', () => {
           testNumeric(wrapper.vm.$v.form.activeDelegates)
+        })
+      })
+
+      describe('validateSeed', () => {
+        let spyDispatch
+        beforeEach(() => {
+          spyDispatch = jest.spyOn(mocks.$store, 'dispatch')
+        })
+        afterEach(() => {
+          spyDispatch.mockRestore()
+        })
+
+        it('should return true for correct urls', async () => {
+          wrapper.vm.$v.form.server.$model = 'http://1.2.3.4:4040'
+          spyDispatch.mockImplementation(() => ({}))
+
+          expect(await wrapper.vm.validateSeed()).toBeTruthy()
+        })
+
+        it('should return false for incorrect urls', async () => {
+          wrapper.vm.$v.form.server.$model = 'http://1.2.3.4:4040:4040'
+
+          expect(await wrapper.vm.validateSeed()).toBe(false)
+          expect(spyDispatch).not.toHaveBeenCalled()
         })
       })
 

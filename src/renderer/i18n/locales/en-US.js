@@ -282,7 +282,7 @@ export default {
     DOWNLOADING: 'Downloading {version}',
     DOWNLOADED: 'Downloaded {version}',
     QUIT_AND_INSTALL: 'Quit and install',
-    UNKNOW_ERROR: 'Unknow error. Close this window and try again.',
+    UNKNOWN_ERROR: 'Unknown error. Close this window and try again.',
     NETWORK_ERROR: 'Looks like your file isn\'t downloading. Verify your connection.'
   },
 
@@ -457,6 +457,7 @@ export default {
     WIF: 'WIF',
     SLIP44: 'Slip44',
     ACTIVE_DELEGATES: 'Active Delegates',
+    ADDRESS_VERSION_MISSING: 'Address Version was missing - please check your wallets',
     MARKET_TICKER: 'Market Ticker (Optional)',
     FAILED_FETCH: 'Failed to fetch network information',
     NETWORK_IN_USE: 'This network is in use by one or more profiles and cannot be removed',
@@ -859,13 +860,6 @@ export default {
       ADD_CONTACT: 'Add to contacts',
       VOTING_FOR: 'Voting for {delegate}'
     }
-  },
-
-  PLUGIN_ENABLE_CONFIRMATION: {
-    QUESTION: 'Are you sure you want to enable the "{title}" plugin?',
-    NO: 'No, keep it disabled',
-    NOTICE: 'WARNING: By accepting this disclaimer, you are confirming that you are adding an untested and unverified third-party plugin to the desktop wallet. ARK SCIC assumes no liability for any harm caused by this plug-in and has no responsibility to test them for security vulnerabilities. All security testing and vulnerability discovery is the sole responsibility of the plugin author. ARK SCIC makes no warranties, express or implied, regarding the conditions of merchantability or fitness for particular purpose of any third-party plugin. ARK SCIC makes no representations about the functionality, accuracy, availability, quality, completeness, security, validity or non-infringement of any third-party plugins. Any third-party plugin used is done so at your own risk.',
-    YES: 'Yes, enable it'
   },
 
   PLUGIN_TABLE: {

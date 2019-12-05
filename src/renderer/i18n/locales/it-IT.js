@@ -271,7 +271,7 @@ export default {
     DOWNLOADING: 'Scaricamento {version}',
     DOWNLOADED: 'Scaricato {version}',
     QUIT_AND_INSTALL: 'Esci e installa',
-    UNKNOW_ERROR: 'Errore sconosciuto. Chiudi questa finestra e riprova.',
+    UNKNOWN_ERROR: 'Errore sconosciuto. Chiudi questa finestra e riprova.',
     NETWORK_ERROR: 'Sembra che il tuo file non venga scaricato. Verifica la tua connessione.'
   },
 
@@ -740,13 +740,6 @@ export default {
       ADD_CONTACT: 'Aggiungi ai contatti',
       VOTING_FOR: 'Votando per {delegate}'
     }
-  },
-
-  PLUGIN_ENABLE_CONFIRMATION: {
-    QUESTION: 'Sei sicuro di voler attivare il plugin "{title}"?',
-    NO: 'No, tenerlo disattivato',
-    NOTICE: 'ATTENZIONE: accettando questa dichiarazione di non responsabilità, confermi di aggiungere al portafoglio desktop un plugin di terze parti, non testato e non verificato. ARK SCIC non si assume alcuna responsabilità per eventuali danni causati da questo plug-in e non si assume alcuna responsabilità di testare i plugin per vulnerabilità di sicurezza. I test di sicurezza e l\'individuazione delle vulnerabilità sono di esclusiva responsabilità dell\'autore del plug-in. ARK SCIC non rilascia alcuna garanzia, espressa o implicita, in merito alle condizioni di commerciabilità o idoneità per scopi particolari di qualsiasi plugin di terze parti. ARK SCIC non rilascia dichiarazioni in merito a sicurezza, validità o non violazione di plug-in di terze parti. Qualsiasi plug-in di terze parti utilizzato viene eseguito a proprio rischio.',
-    YES: 'Si, attiva'
   },
 
   PLUGIN_TABLE: {
