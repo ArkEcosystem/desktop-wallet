@@ -490,6 +490,7 @@ export default {
   MODAL_PLUGIN_MANAGE_BLACKLIST: {
     CLOSE: 'Close',
     EMPTY: 'There are no plugins on your blacklist',
+    REMOVE_ALL: 'Remove all',
     TITLE: 'Plugin blacklist'
   },
 

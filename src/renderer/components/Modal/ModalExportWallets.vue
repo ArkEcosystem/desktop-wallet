@@ -2,7 +2,7 @@
   <ModalWindow
     :title="$t('MODAL_EXPORT_WALLETS.TITLE')"
     :message="$t('MODAL_EXPORT_WALLETS.INSTRUCTIONS')"
-    container-classes="w-2/5"
+    container-classes="w-md max-w-md"
     @close="emitClose"
   >
     <section class="flex flex-col">

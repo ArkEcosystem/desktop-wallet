@@ -13,26 +13,33 @@
           {{ $t('MODAL_PLUGIN_MANAGE_BLACKLIST.EMPTY') }}
         </p>
 
-        <div
-          v-for="plugin of blacklist"
-          :key="plugin"
-          class="flex items-center justify-between mb-2"
-        >
-          <span class="mr-4">{{ plugin }}</span>
-
-          <button
-            class="font-semibold flex text-xs hover:text-red text-theme-page-text-light p-1"
-            @click="removeFromBlacklist(plugin)"
+        <ListDivided class="overflow-y-auto max-h-2xs">
+          <ListDividedItem
+            v-for="plugin of blacklist"
+            :key="plugin"
+            :label="plugin"
           >
-            <SvgIcon
-              name="delete-wallet"
-              view-box="0 0 16 16"
-            />
-          </button>
-        </div>
+            <button
+              class="font-semibold flex text-xs hover:text-red text-theme-page-text-light p-1"
+              @click="removeFromBlacklist(plugin)"
+            >
+              <SvgIcon
+                name="delete-wallet"
+                view-box="0 0 16 16"
+              />
+            </button>
+          </ListDividedItem>
+        </ListDivided>
       </div>
 
       <div class="mt-2 flex flex-row">
+        <button
+          class="blue-button"
+          @click="removeAll"
+        >
+          {{ $t('MODAL_PLUGIN_MANAGE_BLACKLIST.REMOVE_ALL') }}
+        </button>
+
         <button
           class="blue-button"
           @click="emitClose"
@@ -45,6 +52,7 @@
 </template>
 
 <script>
+import { ListDivided, ListDividedItem } from '@/components/ListDivided'
 import { ModalWindow } from '@/components/Modal'
 import { SvgIcon } from '@/components/SvgIcon'
 
@@ -52,6 +60,8 @@ export default {
   name: 'PluginManageBlacklistModal',
 
   components: {
+    ListDivided,
+    ListDividedItem,
     ModalWindow,
     SvgIcon
   },
@@ -66,6 +76,13 @@ export default {
   methods: {
     emitClose () {
       this.$emit('close')
+    },
+
+    removeAll () {
+      this.$store.dispatch('plugin/setBlacklisted', {
+        scope: 'local',
+        plugins: []
+      })
     },
 
     removeFromBlacklist (plugin) {

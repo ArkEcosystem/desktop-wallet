@@ -224,7 +224,7 @@ export default {
       return this.$store.getters['session/backgroundUpdateLedger']
     },
     blacklist () {
-      return this.$store.getters['plugin/blacklisted'].local
+      return [...this.$store.getters['plugin/blacklisted'].local].sort()
     },
     sessionCurrency: {
       get () {
