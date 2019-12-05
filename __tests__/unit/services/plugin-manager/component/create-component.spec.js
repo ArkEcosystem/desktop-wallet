@@ -282,7 +282,7 @@ describe('Create Component', () => {
       })
     })
 
-    it('should not set custom properties', (done) => {
+    it('should not set custom properties', async () => {
       const spy = jest.spyOn(console, 'error').mockImplementation()
 
       const plugin = {
@@ -292,6 +292,7 @@ describe('Create Component', () => {
         }),
         mounted () {
           this.$nextTick(() => {
+            this.refs.test.href = 'Jest'
             this.refs.test.innerHTML = 'Jest'
             this.refs.test.outerHTML = 'Jest'
             this.refs.test.appendChild(document.createElement('p'))
@@ -310,20 +311,64 @@ describe('Create Component', () => {
       const wrapper = mount(component)
       expect(wrapper.html()).toBe('<div>Test</div>')
 
-      localVue.nextTick(() => {
-        expect(spy).toHaveBeenCalledWith('innerHTML 🚫')
-        expect(spy).toHaveBeenCalledWith('outerHTML 🚫')
-        expect(spy).toHaveBeenCalledWith('appendChild 🚫')
-        expect(spy).toHaveBeenCalledWith('cloneNode 🚫')
-        expect(spy).toHaveBeenCalledWith('getRootNode 🚫')
-        expect(spy).toHaveBeenCalledWith('insertBefore 🚫')
-        expect(spy).toHaveBeenCalledWith('normalize 🚫')
-        expect(spy).toHaveBeenCalledWith('querySelector 🚫')
-        expect(spy).toHaveBeenCalledWith('querySelectorAll 🚫')
-        expect(spy).toHaveBeenCalledWith('removeChild 🚫')
-        expect(spy).toHaveBeenCalledWith('replaceChild 🚫')
-        done()
-      })
+      await wrapper.vm.$nextTick()
+
+      expect(spy).toHaveBeenCalledWith('href 🚫')
+      expect(spy).toHaveBeenCalledWith('innerHTML 🚫')
+      expect(spy).toHaveBeenCalledWith('outerHTML 🚫')
+      expect(spy).toHaveBeenCalledWith('appendChild 🚫')
+      expect(spy).toHaveBeenCalledWith('cloneNode 🚫')
+      expect(spy).toHaveBeenCalledWith('getRootNode 🚫')
+      expect(spy).toHaveBeenCalledWith('insertBefore 🚫')
+      expect(spy).toHaveBeenCalledWith('normalize 🚫')
+      expect(spy).toHaveBeenCalledWith('querySelector 🚫')
+      expect(spy).toHaveBeenCalledWith('querySelectorAll 🚫')
+      expect(spy).toHaveBeenCalledWith('removeChild 🚫')
+      expect(spy).toHaveBeenCalledWith('replaceChild 🚫')
+
+      spy.mockRestore()
+    })
+
+    it('should only allow href change via template variable', async () => {
+      const spy = jest.spyOn(console, 'error').mockImplementation()
+
+      const plugin = {
+        template: `<div>
+          <a ref="normalLink" href="testHref">test link</a>
+          <a ref="variableLink" :href="testHref">test link</a>
+        </div>`,
+        data: () => ({
+          testHref: 'testHref'
+        }),
+        mounted () {
+          this.$nextTick(() => {
+            this.refs.normalLink.href = 'Failed'
+
+            this.testHref = 'Success'
+          })
+        },
+        methods: {
+          updateHref () {
+            this.refs.variableLink.href = 'Failed'
+          }
+        }
+      }
+
+      const component = wrapperPlugin(plugin)
+      const wrapper = mount(component)
+
+      await wrapper.vm.$nextTick()
+
+      expect(wrapper.find({ ref: 'normalLink' }).element.href).toBe(undefined)
+      expect(wrapper.find({ ref: 'variableLink' }).element.href).toBe('http://localhost/Success')
+
+      wrapper.vm.updateHref()
+
+      expect(wrapper.find({ ref: 'variableLink' }).element.href).toBe(undefined)
+      expect(spy).toHaveBeenCalledWith('href 🚫')
+      expect(spy).toHaveBeenCalledTimes(2)
+
+      spy.mockRestore()
     })
   })
 })
