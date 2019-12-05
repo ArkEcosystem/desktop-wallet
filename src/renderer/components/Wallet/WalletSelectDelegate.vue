@@ -77,4 +77,7 @@ export default {
   @apply .overflow-visible;
   min-width: 35rem;
 }
+.SelectDelegateModal .ModalWindow__container__content {
+  @apply .overflow-visible;
+}
 </style>
