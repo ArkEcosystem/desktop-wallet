@@ -301,7 +301,7 @@ export class PluginManager {
   async fetchBlacklist () {
     try {
       const { body } = await got(PLUGINS.blacklistUrl, { json: true })
-      await this.app.$store.dispatch('plugin/setBlacklisted', { scope: 'global', plugins: body.plugins })
+      this.app.$store.dispatch('plugin/setBlacklisted', { scope: 'global', plugins: body.plugins })
     } catch (error) {
       console.error(`Could not fetch blacklist from '${PLUGINS.blacklistUrl}: ${error.message}`)
     }
