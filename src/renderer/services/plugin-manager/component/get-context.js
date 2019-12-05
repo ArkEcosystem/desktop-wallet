@@ -34,6 +34,7 @@ export function getSafeContext (vueContext, component) {
     ]
 
     const badSetters = [
+      'href',
       'innerHTML',
       'outerHTML'
     ]
