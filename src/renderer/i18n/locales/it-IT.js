@@ -271,7 +271,7 @@ export default {
     DOWNLOADING: 'Scaricamento {version}',
     DOWNLOADED: 'Scaricato {version}',
     QUIT_AND_INSTALL: 'Esci e installa',
-    UNKNOW_ERROR: 'Errore sconosciuto. Chiudi questa finestra e riprova.',
+    UNKNOWN_ERROR: 'Errore sconosciuto. Chiudi questa finestra e riprova.',
     NETWORK_ERROR: 'Sembra che il tuo file non venga scaricato. Verifica la tua connessione.'
   },
 
