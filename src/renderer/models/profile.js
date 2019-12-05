@@ -135,7 +135,7 @@ export default new BaseModel({
     },
     filterBlacklistedPlugins: {
       type: 'boolean',
-      format: data => data.filterBlacklistedPlugins || true
+      format: data => data.filterBlacklistedPlugins !== undefined ? data.filterBlacklistedPlugins : true
     },
     pluginAdapter: {
       type: 'string',
