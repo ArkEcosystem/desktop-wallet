@@ -6,7 +6,7 @@ import logger from 'electron-log'
 import { TRANSACTION_TYPES } from '@config'
 import store from '@/store'
 import eventBus from '@/plugins/event-bus'
-import BigNumber from '@/plugins/bignumber'
+import TransactionService from '@/services/transaction'
 
 export default class ClientService {
   /*
@@ -237,7 +237,7 @@ export default class ClientService {
     const result = transactions.map(transaction => {
       transaction.isSender = transaction.sender === address
       transaction.isRecipient = transaction.recipient === address
-      transaction.totalAmount = new BigNumber(transaction.amount).plus(transaction.fee).toString()
+      transaction.totalAmount = TransactionService.getTotalAmount(transaction)
 
       return transaction
     })
@@ -577,7 +577,13 @@ export default class ClientService {
       //
     }
 
-    return returnObject ? transaction : transaction.getStruct()
+    const transactionResponse = returnObject ? transaction : transaction.getStruct()
+
+    if (!returnObject) {
+      transactionResponse.totalAmount = TransactionService.getTotalAmount(transactionResponse)
+    }
+
+    return transactionResponse
   }
 
   /**

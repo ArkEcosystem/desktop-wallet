@@ -270,7 +270,7 @@ export default {
     DOWNLOADING: 'Downloading {version}',
     DOWNLOADED: 'Downloaded {version}',
     QUIT_AND_INSTALL: 'Quit and install',
-    UNKNOW_ERROR: 'Unknow error. Close this window and try again.',
+    UNKNOWN_ERROR: 'Unknown error. Close this window and try again.',
     NETWORK_ERROR: 'Looks like your file isn\'t downloading. Verify your connection.'
   },
 
@@ -445,6 +445,7 @@ export default {
     WIF: 'WIF',
     SLIP44: 'Slip44',
     ACTIVE_DELEGATES: 'Active Delegates',
+    ADDRESS_VERSION_MISSING: 'Address Version was missing - please check your wallets',
     MARKET_TICKER: 'Market Ticker (Optional)',
     FAILED_FETCH: 'Failed to fetch network information',
     NETWORK_IN_USE: 'This network is in use by one or more profiles and cannot be removed',

@@ -1,5 +1,6 @@
 import { TRANSACTION_TYPES } from '@config'
 import { Transactions } from '@arkecosystem/crypto'
+import BigNumber from '@/plugins/bignumber'
 
 export default class TransactionService {
   /*
@@ -21,6 +22,15 @@ export default class TransactionService {
       excludeSignature: true,
       excludeSecondSignature: true
     }).toString('hex')
+  }
+
+  /**
+   * Get total amount for transaction.
+   * @param  {Object} transaction
+   * @return {String}
+   */
+  static getTotalAmount (transaction) {
+    return new BigNumber(transaction.amount).plus(transaction.fee).toString()
   }
 
   /*
