@@ -209,6 +209,7 @@
 
 <script>
 import { numeric, required, requiredIf } from 'vuelidate/lib/validators'
+import { NETWORKS } from '@config'
 import { InputText, InputToggle } from '@/components/Input'
 import { ModalLoader, ModalWindow } from '@/components/Modal'
 import ClientService from '@/services/client'
@@ -346,7 +347,28 @@ export default {
       this.form.nethash = this.network.nethash
       this.form.token = this.network.token
       this.form.symbol = this.network.symbol
-      this.form.version = this.network.version.toString()
+
+      // Temporary block to patch networks missing "version" - address prefix
+      if (this.network.version) {
+        this.form.version = this.network.version.toString()
+      } else {
+        const networkConfig = NETWORKS.find(network => network.id === this.network.id)
+
+        if (networkConfig) {
+          this.form.version = networkConfig.version.toString()
+        } else {
+          try {
+            ClientService.fetchNetworkConfig(this.form.server)
+              .then(network => {
+                this.form.version = network.version.toString()
+                this.$error(this.$t('MODAL_NETWORK.ADDRESS_VERSION_MISSING'))
+              })
+          } catch (error) {
+            this.form.version = '0'
+          }
+        }
+      }
+
       this.form.explorer = this.network.explorer || ''
 
       this.form.epoch = this.network.constants.epoch
@@ -422,28 +444,34 @@ export default {
     async validateSeed () {
       this.showLoadingModal = true
 
-      let { origin: host, port, protocol } = new URL(this.form.server)
+      try {
+        let { hostname: host, port, protocol } = new URL(this.form.server)
 
-      if (!port) {
-        port = protocol === 'https:' ? 443 : 80
+        if (!port) {
+          port = protocol === 'https:' ? 443 : 80
+        }
+
+        const response = await this.$store.dispatch('peer/validatePeer', {
+          host,
+          port,
+          ignoreNetwork: true
+        })
+        let success = false
+        if (response === false) {
+          this.$error(this.$t('MODAL_NETWORK.SEED_VALIDATE_FAILED'))
+        } else if (typeof response === 'string') {
+          this.$error(`${this.$t('MODAL_NETWORK.SEED_VALIDATE_FAILED')}: ${response}`)
+        } else {
+          success = true
+        }
+        this.showLoadingModal = false
+
+        return success
+      } catch (error) {
+        //
       }
 
-      const response = await this.$store.dispatch('peer/validatePeer', {
-        host,
-        port,
-        ignoreNetwork: true
-      })
-      let success = false
-      if (response === false) {
-        this.$error(this.$t('MODAL_NETWORK.SEED_VALIDATE_FAILED'))
-      } else if (typeof response === 'string') {
-        this.$error(`${this.$t('MODAL_NETWORK.SEED_VALIDATE_FAILED')}: ${response}`)
-      } else {
-        success = true
-      }
-      this.showLoadingModal = false
-
-      return success
+      return false
     },
 
     async updateNetwork () {

@@ -1,9 +1,9 @@
 import dayjs from 'dayjs'
 import { findIndex, unionBy } from 'lodash'
 import config from '@config'
-import BigNumber from '@/plugins/bignumber'
 import eventBus from '@/plugins/event-bus'
 import TransactionModel from '@/models/transaction'
+import TransactionService from '@/services/transaction'
 import Vue from 'vue'
 
 const includes = (objects, find) => objects.map(a => a.id).includes(find.id)
@@ -35,7 +35,7 @@ export default {
       }).map(transaction => {
         transaction.isSender = transaction.sender === address
         transaction.isRecipient = transaction.recipient === address
-        transaction.totalAmount = new BigNumber(transaction.amount).plus(transaction.fee).toString()
+        transaction.totalAmount = TransactionService.getTotalAmount(transaction)
 
         return transaction
       })
@@ -59,7 +59,7 @@ export default {
       const transactions = state.transactions[profileId].map(transaction => {
         transaction.isSender = addresses.includes(transaction.sender)
         transaction.isRecipient = addresses.includes(transaction.recipient)
-        transaction.totalAmount = new BigNumber(transaction.amount).plus(transaction.fee).toString()
+        transaction.totalAmount = TransactionService.getTotalAmount(transaction)
 
         return transaction
       })
