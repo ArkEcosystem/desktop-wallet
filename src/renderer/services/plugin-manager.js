@@ -183,8 +183,9 @@ export class PluginManager {
   }
 
   async fetchPluginsFromAdapter () {
-    if (!this.adapter) {
-      this.setAdapter(this.app.$store.getters['session/pluginAdapter'])
+    const sessionAdapter = this.app.$store.getters['session/pluginAdapter']
+    if (this.adapter !== sessionAdapter) {
+      this.setAdapter(sessionAdapter)
     }
 
     let configs = await this.adapter.all()

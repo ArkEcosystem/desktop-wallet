@@ -288,6 +288,23 @@
                   @change="selectFilterBlacklistedPlugins"
                 />
               </ListDividedItem>
+
+              <ListDividedItem
+                :label="$t('COMMON.ADAPTER')"
+                :item-label-class="!isAdapterDropdownEnabled ? 'opacity-50' : ''"
+                :item-value-class="!isAdapterDropdownEnabled ? 'opacity-50 cursor-not-allowed' : ''"
+              >
+                <MenuDropdown
+                  :class="{
+                    'ProfileEdition__field--modified': modified.pluginAdapter && modified.pluginAdapter !== profile.pluginAdapter
+                  }"
+                  :items="availablePluginAdapters"
+                  :value="pluginAdapter"
+                  :position="['-50%', '0%']"
+                  :is-disabled="!isAdapterDropdownEnabled"
+                  @select="selectPluginAdapter"
+                />
+              </ListDividedItem>
             </ListDivided>
 
             <footer class="ProfileEdition__footer pb-10">
@@ -316,7 +333,7 @@
 
 <script>
 import { clone, isEmpty } from 'lodash'
-import { BIP39, I18N } from '@config'
+import { BIP39, I18N, PLUGINS } from '@config'
 import { ButtonSwitch } from '@/components/Button'
 import { InputText } from '@/components/Input'
 import { ListDivided, ListDividedItem } from '@/components/ListDivided'
@@ -422,6 +439,19 @@ export default {
 
     filterBlacklistedPlugins () {
       return this.modified.filterBlacklistedPlugins || this.profile.filterBlacklistedPlugins
+    },
+    isAdapterDropdownEnabled () {
+      return this.availablePluginAdapters && Object.keys(this.availablePluginAdapters).length > 1
+    },
+    availablePluginAdapters () {
+      return PLUGINS.adapters.reduce((all, adapter) => {
+        all[adapter] = adapter
+
+        return all
+      }, {})
+    },
+    pluginAdapter () {
+      return this.modified.pluginAdapter || this.profile.pluginAdapter || PLUGINS.adapters[0]
     },
     avatar () {
       return this.modified.avatar || this.profile.avatar
@@ -622,6 +652,10 @@ export default {
 
     async selectFilterBlacklistedPlugins (filterBlacklistedPlugins) {
       this.__updateSession('filterBlacklistedPlugins', filterBlacklistedPlugins)
+    },
+
+    async selectPluginAdapter (pluginAdapter) {
+      this.__updateSession('pluginAdapter', pluginAdapter)
     },
 
     async selectIsMarketChartEnabled (isMarketChartEnabled) {
