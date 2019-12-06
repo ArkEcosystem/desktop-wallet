@@ -46,7 +46,8 @@ const app = {
       'plugin/isEnabled': jest.fn((pluginId) => pluginId === 'plugin-test'),
       'plugin/isInstalledSupported': jest.fn(() => true),
       'plugin/lastFetched': jest.fn(() => 0),
-      'profile/byId': jest.fn(() => {})
+      'profile/byId': jest.fn(() => {}),
+      'session/pluginAdapter': 'npm'
     }
   }
 }
