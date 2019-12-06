@@ -50,10 +50,6 @@ jest.mock('@/store', () => ({
 
 beforeEach(() => {
   nock.cleanAll()
-  nock('http://127.0.0.1')
-    .persist()
-    .post('/api/v2/wallets/search')
-    .reply(200, { data: [] })
 })
 
 describe('Services > Client', () => {
@@ -97,12 +93,6 @@ describe('Services > Client', () => {
   beforeEach(() => {
     client = new ClientService()
     client.host = 'http://127.0.0.1:4003'
-  })
-
-  describe('constructor', () => {
-    it('should use version 2 the capabilities of the API', () => {
-      expect(client.__capabilities).toEqual('2.0.0')
-    })
   })
 
   describe('fetchWallet', () => {
@@ -193,37 +183,12 @@ describe('Services > Client', () => {
       client.client.api = jest.fn(resource)
     })
 
-    describe('when version capabilities are at least 2.1.0', () => {
-      beforeEach(() => {
-        client.__capabilities = '2.1.0'
-      })
+    it('should call the wallet search endpoint', async () => {
+      const fetchedWallets = await client.fetchWallets(walletAddresses)
 
-      it('should call the wallet search endpoint', async () => {
-        const fetchedWallets = await client.fetchWallets(walletAddresses)
-
-        expect(client.client.api).toHaveBeenNthCalledWith(1, 'wallets')
-        expect(searchWalletEndpoint).toHaveBeenNthCalledWith(1, { addresses: walletAddresses })
-        expect(fetchedWallets).toEqual(walletsResponse.body.data)
-      })
-    })
-
-    describe('when version capabilities are not at least 2.1.0', () => {
-      beforeEach(() => {
-        client.__capabilities = '2.0.9'
-      })
-
-      it('should call the wallet endpoint for each wallet', async () => {
-        const fetchedWallets = await client.fetchWallets(walletAddresses)
-
-        expect(client.client.api).toHaveBeenNthCalledWith(1, 'wallets')
-        expect(client.client.api).toHaveBeenNthCalledWith(2, 'wallets')
-        expect(getWalletEndpoint).toHaveBeenNthCalledWith(1, walletAddresses[0])
-        expect(getWalletEndpoint).toHaveBeenNthCalledWith(2, walletAddresses[1])
-        expect(fetchedWallets).toEqual([
-          generateWalletResponse('address1').body.data,
-          generateWalletResponse('address2').body.data
-        ])
-      })
+      expect(client.client.api).toHaveBeenNthCalledWith(1, 'wallets')
+      expect(searchWalletEndpoint).toHaveBeenNthCalledWith(1, { addresses: walletAddresses })
+      expect(fetchedWallets).toEqual(walletsResponse.body.data)
     })
   })
 
@@ -447,87 +412,37 @@ describe('Services > Client', () => {
   })
 
   describe('fetchTransactionsForWallets', () => {
-    const { meta } = fixtures.transactions
     const walletAddresses = ['address1', 'address2']
     let transactions
-    let getTransactionsEndpoint
     let searchTransactionsEndpoint
     let walletTransactions
 
-    describe('when version capabilities are at least 2.1.0', () => {
-      beforeEach(() => {
-        client.__capabilities = '2.1.0'
+    it('should call the transaction search endpoint', async () => {
+      transactions = cloneDeep(fixtures.transactions.v2)
+      searchTransactionsEndpoint = jest.fn(() => ({ body: { data: transactions } }))
 
-        transactions = cloneDeep(fixtures.transactions.v2)
-        searchTransactionsEndpoint = jest.fn(() => ({ body: { data: transactions } }))
-
-        const resource = resource => {
-          if (resource === 'transactions') {
-            return {
-              search: searchTransactionsEndpoint
-            }
-          }
-        }
-
-        client.client.api = jest.fn(resource)
-      })
-
-      it('should call the transaction search endpoint', async () => {
-        walletTransactions = walletAddresses.reduce((all, address) => {
-          all[address] = transactions.filter(transaction => {
-            return [transaction.sender, transaction.recipient].includes(address)
-          })
-          return all
-        }, {})
-
-        const fetchedWallets = await client.fetchTransactionsForWallets(walletAddresses)
-
-        expect(client.client.api).toHaveBeenNthCalledWith(1, 'transactions')
-        expect(searchTransactionsEndpoint).toHaveBeenNthCalledWith(1, { addresses: walletAddresses })
-        expect(fetchedWallets).toEqual(walletTransactions)
-      })
-    })
-
-    describe('when version capabilities are not at least 2.1.0', () => {
-      beforeEach(() => {
-        client.__capabilities = '2.0.9'
-
-        transactions = cloneDeep(fixtures.transactions.v2)
-        getTransactionsEndpoint = jest.fn(() => {
+      const resource = resource => {
+        if (resource === 'transactions') {
           return {
-            body: {
-              data: transactions,
-              meta: {
-                totalCount: meta.count
-              }
-            }
-          }
-        })
-
-        walletTransactions = walletAddresses.reduce((all, address) => {
-          all[address] = transactions
-          return all
-        }, {})
-
-        const resource = resource => {
-          if (resource === 'wallets') {
-            return {
-              transactions: getTransactionsEndpoint
-            }
+            search: searchTransactionsEndpoint
           }
         }
+      }
 
-        client.client.api = jest.fn(resource)
-      })
+      client.client.api = jest.fn(resource)
 
-      it('should call the wallet transactions endpoint for each wallet', async () => {
-        const fetchedWallets = await client.fetchTransactionsForWallets(walletAddresses)
+      walletTransactions = walletAddresses.reduce((all, address) => {
+        all[address] = transactions.filter(transaction => {
+          return [transaction.sender, transaction.recipient].includes(address)
+        })
+        return all
+      }, {})
 
-        expect(client.client.api).toHaveBeenNthCalledWith(1, 'wallets')
-        expect(client.client.api).toHaveBeenNthCalledWith(2, 'wallets')
-        expect(getTransactionsEndpoint).toHaveBeenCalledTimes(2)
-        expect(fetchedWallets).toEqual(walletTransactions)
-      })
+      const fetchedWallets = await client.fetchTransactionsForWallets(walletAddresses)
+
+      expect(client.client.api).toHaveBeenNthCalledWith(1, 'transactions')
+      expect(searchTransactionsEndpoint).toHaveBeenNthCalledWith(1, { addresses: walletAddresses })
+      expect(fetchedWallets).toEqual(walletTransactions)
     })
   })
 
