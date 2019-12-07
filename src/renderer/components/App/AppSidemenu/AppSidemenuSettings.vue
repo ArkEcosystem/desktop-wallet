@@ -210,6 +210,14 @@ export default {
   }),
 
   computed: {
+    isAllowedToClose () {
+      return this.outsideClick &&
+        !(
+          this.isResetDataModalOpen ||
+          this.isScreenshotProtectionModalOpen ||
+          this.isManageBlacklistModalOpen
+        )
+    },
     isLinux () {
       // You can find the possible options here: https://nodejs.org/api/os.html#os_os_platform
       return os.platform() !== 'darwin' && os.platform() !== 'win32'
@@ -367,7 +375,7 @@ export default {
     },
 
     emitClose () {
-      if (this.outsideClick && !(this.isResetDataModalOpen || this.isScreenshotProtectionModalOpen || this.isManageBlacklistModalOpen)) {
+      if (this.isAllowedToClose) {
         this.closeShowSettings()
       }
     }
