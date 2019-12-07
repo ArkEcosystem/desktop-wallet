@@ -48,10 +48,6 @@ beforeAll(() => {
 
 beforeEach(() => {
   nock.cleanAll()
-  nock('http://127.0.0.1')
-    .persist()
-    .post('/api/v2/wallets/search')
-    .reply(200, { data: [] })
 })
 
 describe('peer store module', () => {
@@ -286,14 +282,6 @@ describe('peer store module', () => {
         }
       })
 
-    nock(`http://${goodPeer1.ip}:4040`)
-      .get('/config')
-      .reply(200, {
-        data: {
-          version: '2.0.0'
-        }
-      })
-
     const response = await store.dispatch('peer/validatePeer', { ...goodPeer1, timeout: 100 })
 
     expect(response).toBeObject()
@@ -316,14 +304,6 @@ describe('peer store module', () => {
       .reply(200, {
         data: {
           height: 10002
-        }
-      })
-
-    nock(`https://${goodPeer1.ip}:4040`)
-      .get('/config')
-      .reply(200, {
-        data: {
-          version: '2.0.0'
         }
       })
 
@@ -360,14 +340,6 @@ describe('peer store module', () => {
       })
       .get('/api/v2/node/syncing')
       .reply(400)
-
-    nock(`http://${goodPeer1.ip}:4040`)
-      .get('/config')
-      .reply(200, {
-        data: {
-          version: '2.0.0'
-        }
-      })
 
     const response = await store.dispatch('peer/validatePeer', { ...goodPeer1, timeout: 100 })
     expect(response).toEqual(expect.stringMatching(/^Status check failed$/))
