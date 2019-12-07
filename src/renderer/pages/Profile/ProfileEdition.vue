@@ -284,6 +284,7 @@
                 class="ProfileEdition__wallet-button-text"
               >
                 <ButtonSwitch
+                  ref="blacklist"
                   :is-active="filterBlacklistedPlugins"
                   @change="selectFilterBlacklistedPlugins"
                 />
@@ -328,6 +329,12 @@
       @ignore="onLeave(false)"
       @save="onLeave(true)"
     />
+
+    <PluginBlacklistDisclaimerModal
+      v-if="showBlacklistDisclaimer"
+      @close="acceptBlacklistDisclaimer(false)"
+      @continue="acceptBlacklistDisclaimer(true)"
+    />
   </div>
 </template>
 
@@ -338,6 +345,7 @@ import { ButtonSwitch } from '@/components/Button'
 import { InputText } from '@/components/Input'
 import { ListDivided, ListDividedItem } from '@/components/ListDivided'
 import { MenuDropdown, MenuDropdownHandler, MenuTab, MenuTabItem } from '@/components/Menu'
+import { PluginBlacklistDisclaimerModal } from '@/components/PluginManager'
 import { ProfileLeavingConfirmation } from '@/components/Profile'
 import { SelectionAvatar, SelectionBackground, SelectionTheme } from '@/components/Selection'
 import SvgIcon from '@/components/SvgIcon'
@@ -359,6 +367,7 @@ export default {
     MenuTabItem,
     MenuDropdown,
     MenuDropdownHandler,
+    PluginBlacklistDisclaimerModal,
     ProfileLeavingConfirmation,
     SelectionAvatar,
     SelectionBackground,
@@ -377,7 +386,8 @@ export default {
       marketChartOptions: {}
     },
     routeLeaveCallback: null,
-    tab: 'profile'
+    tab: 'profile',
+    showBlacklistDisclaimer: false
   }),
 
   computed: {
@@ -651,7 +661,11 @@ export default {
     },
 
     async selectFilterBlacklistedPlugins (filterBlacklistedPlugins) {
-      this.__updateSession('filterBlacklistedPlugins', filterBlacklistedPlugins)
+      if (!filterBlacklistedPlugins && !this.$store.getters['app/hasAcceptedBlacklistDisclaimer']) {
+        this.showBlacklistDisclaimer = true
+      } else {
+        this.__updateSession('filterBlacklistedPlugins', filterBlacklistedPlugins)
+      }
     },
 
     async selectPluginAdapter (pluginAdapter) {
@@ -677,6 +691,17 @@ export default {
         const action = `session/set${this.strings_capitalizeFirst(propertyName)}`
         await this.$store.dispatch(action, value)
       }
+    },
+
+    async acceptBlacklistDisclaimer (accepted) {
+      if (accepted) {
+        this.$store.dispatch('app/setHasAcceptedBlacklistDisclaimer', accepted)
+      } else {
+        this.$refs.blacklist.toggle()
+      }
+
+      this.selectFilterBlacklistedPlugins(!accepted)
+      this.showBlacklistDisclaimer = false
     }
   },
 

@@ -1,3 +1,4 @@
+import PluginBlacklistDisclaimerModal from './PluginBlacklistDisclaimerModal'
 import PluginBlacklistModal from './PluginBlacklistModal'
 import PluginDetailsModal from './PluginDetailsModal'
 import PluginInstallModal from './PluginInstallModal'
@@ -7,6 +8,7 @@ import PluginRemovalModal from './PluginRemovalModal'
 import PluginUrlModal from './PluginUrlModal'
 
 export {
+  PluginBlacklistDisclaimerModal,
   PluginBlacklistModal,
   PluginDetailsModal,
   PluginInstallModal,

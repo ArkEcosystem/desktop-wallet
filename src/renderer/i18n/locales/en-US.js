@@ -661,7 +661,7 @@ export default {
         BLACKLIST: 'The plugin \'{plugin}\' was added to the blacklist',
         RELOAD: 'The plugin repository was reloaded successfully'
       },
-      DISCLAIMER: '<b>Disclaimer:</b> The availability of this plugin in the ARK Desktop Wallet does not mean that ARK is directly involved in the development or affiliated with the developer providing this plugin. By installing it on your wallet, you assume every responsibility.',
+      DISCLAIMER: '<b>Disclaimer:</b> The availability of this plugin in the ARK Desktop Wallet does not mean that either ARK.io or ARK SCIC is directly involved in the development or affiliated with the developer providing this plugin. By installing it on your wallet, you assume every responsibility.',
       REPORT: 'Report this plugin'
     },
 
@@ -1159,6 +1159,13 @@ export default {
   PLUGIN_BLACKLIST_CONFIRMATION: {
     NOTE: 'By blacklisting the plugin it will be disabled on all profiles and will no longer appear in the Plugin Manager',
     QUESTION: 'Do you want to blacklist \'{plugin}\'?'
+  },
+
+  BLACKLIST_DISCLAIMER_CONFIRMATION: {
+    QUESTION: 'Are you sure you want to disable the blacklist?',
+    NOTE: 'Warning: By turning off filtering, you will be viewing third-party plugins that have not been tested and approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of the third-party plugin. We are not responsible for any of the content presented as a result of viewing, installing, or running any of these third-party plugins. ARK.io and ARK SCIC shall bear no liability for any loss suffered by using third-party plugins. By clicking "I Accept" you acknowledge that unverified third-party plugins may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.',
+    ACCEPT: 'I Accept',
+    CANCEL: 'Cancel'
   },
 
   WALLET_TRANSACTIONS: {
