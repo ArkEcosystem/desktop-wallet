@@ -66,7 +66,7 @@
     <template #footer>
       <footer v-if="isDownloadFailed">
         <div class="ModalWindow__container__footer--error">
-          {{ errorMessage ? errorMessage : $t('MODAL_PLUGIN_INSTALL.UNKNOW_ERROR') }}
+          {{ errorMessage ? errorMessage : $t('MODAL_PLUGIN_INSTALL.UNKNOWN_ERROR') }}
         </div>
       </footer>
     </template>

@@ -508,7 +508,7 @@ export default {
     DOWNLOADING: 'Downloading {plugin}',
     INSTALL: 'Install now',
     UPDATE: 'Update now',
-    UNKNOW_ERROR: 'Unknow error. Close this window and try again.'
+    UNKNOWN_ERROR: 'Unknow error. Close this window and try again.'
   },
 
   MODAL_PLUGIN_PERMISSIONS: {

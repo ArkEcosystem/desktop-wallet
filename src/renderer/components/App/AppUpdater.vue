@@ -95,7 +95,7 @@
     <template #footer>
       <footer v-if="isDownloadFailed">
         <div class="ModalWindow__container__footer--error">
-          {{ errorMessage ? errorMessage : $t('APP_UPDATER.UNKNOW_ERROR') }}
+          {{ errorMessage ? errorMessage : $t('APP_UPDATER.UNKNOWN_ERROR') }}
         </div>
       </footer>
     </template>
