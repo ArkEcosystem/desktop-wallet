@@ -45,5 +45,5 @@ export default new BaseModel({
       format: (value) => value.isHttps || false
     }
   },
-  required: ['ip', 'port', 'version', 'height', 'latency']
+  required: ['ip', 'port', 'height', 'latency']
 })
