@@ -69,7 +69,7 @@ export class PluginManager {
 
     const parentDir = path.dirname(plugin.fullPath)
     const pluginCount = fs.readdirSync(parentDir).filter(entry => {
-      return entry !== '.DS_Store'
+      return !entry.startsWith('.')
     }).length
 
     if (parentDir !== this.pluginsPath && pluginCount === 1) {
