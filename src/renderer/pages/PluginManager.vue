@@ -217,7 +217,11 @@ import {
   PluginUrlModal
 } from '@/components/PluginManager'
 import { ModalLoader } from '@/components/Modal'
-import { PluginManagerButtonFilter, PluginManagerButtonInstallSource, PluginManagerButtonMenu } from '@/components/PluginManager/PluginManagerButtons'
+import {
+  PluginManagerButtonFilter,
+  PluginManagerButtonInstallSource,
+  PluginManagerButtonMenu
+} from '@/components/PluginManager/PluginManagerButtons'
 
 export default {
   name: 'PluginManager',
