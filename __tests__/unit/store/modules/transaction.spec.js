@@ -42,10 +42,6 @@ describe('TransactionModule', () => {
     wallets.forEach(wallet => store.commit('wallet/STORE', wallet))
     ClientService.host = 'http://127.0.0.1:4003'
     nock.cleanAll()
-    nock('http://127.0.0.1')
-      .persist()
-      .post('/api/v2/wallets/search')
-      .reply(200, { data: [] })
   })
 
   describe('getters byAddress', () => {

@@ -124,7 +124,6 @@ export default {
 
   PEER: {
     BEST: 'Connect to best',
-    CONFIG_CHECK_FAILED: 'Config check failed',
     CONNECTED: 'Connected to peer',
     CONNECT_CUSTOM: 'Connect custom peer',
     CONNECT_FAILED: 'Failed to connect to peer',

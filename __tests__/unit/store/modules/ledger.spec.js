@@ -13,8 +13,6 @@ Vue.use(apiClient)
 
 logger.error = jest.fn()
 
-ClientService.host = 'http://127.0.0.1'
-
 let ledgerNameByAddress = () => null
 let ledgerCache = false
 const nethash = '2a44f340d76ffc3df204c5f38cd355b7496c9065a1ade2ef92071436bd72e867'
@@ -72,7 +70,7 @@ beforeEach(async () => {
     spyConnect.mockRestore()
   }
   store.replaceState(JSON.parse(JSON.stringify(initialState)))
-  ClientService.capabilities = '2.0.0'
+  ClientService.host = 'http://127.0.0.1'
   ledgerNameByAddress = () => null
   nock.cleanAll()
 })
@@ -220,55 +218,7 @@ describe('ledger store module', () => {
       expect(store.getters['ledger/shouldStopLoading']('test3')).toEqual(true)
     })
 
-    it('should load 10 wallets', async () => {
-      nock('http://127.0.0.1')
-        .persist()
-        .get(/\/api\/v2\/wallets\/.+/)
-        .reply(404, {
-          statusCode: 404,
-          error: 'Not Found',
-          message: 'Wallet not found'
-        })
-
-      expect(store.getters['ledger/isConnected']).toBeTruthy()
-      expect(await store.dispatch('ledger/reloadWallets', {
-        clearFirst: false,
-        forceLoad: false,
-        quantity: 10
-      })).not.toEqual({})
-      expect(store.getters['ledger/wallets'].length).toEqual(10)
-    })
-
-    it('should load all wallets without multi-wallet search', async () => {
-      for (const wallet of ledgerWallets) {
-        if (wallet.address === 'address 10') {
-          continue
-        }
-
-        nock('http://127.0.0.1')
-          .persist()
-          .get(`/api/v2/wallets/${wallet.address.replace(/\s+/, '%20')}`)
-          .reply(200, {
-            data: wallet
-          })
-      }
-
-      nock('http://127.0.0.1')
-        .persist()
-        .get('/api/v2/wallets/address%2010')
-        .reply(404, {
-          statusCode: 404,
-          error: 'Not Found',
-          message: 'Wallet not found'
-        })
-
-      await store.dispatch('ledger/connect')
-      expect(await store.dispatch('ledger/reloadWallets')).toEqual(expectedWallets)
-    })
-
     it('should load all wallets with multi-wallet search', async () => {
-      ClientService.capabilities = '2.1.0'
-
       nock('http://127.0.0.1')
         .persist()
         .post('/api/v2/wallets/search')
@@ -281,7 +231,6 @@ describe('ledger store module', () => {
     })
 
     it('should use ledger name', async () => {
-      ClientService.capabilities = '2.1.0'
       ledgerNameByAddress = (address) => address
 
       nock('http://127.0.0.1')
