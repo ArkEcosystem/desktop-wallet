@@ -5,7 +5,7 @@
     container-classes="max-w-md"
     @close="emitCancel"
     @cancel="emitCancel"
-    @continue="blacklistPlugin"
+    @continue="emitConfirm"
   />
 </template>
 
@@ -31,7 +31,7 @@ export default {
       this.$emit('cancel')
     },
 
-    blacklistPlugin () {
+    emitConfirm () {
       this.$emit('confirm')
     }
   }
