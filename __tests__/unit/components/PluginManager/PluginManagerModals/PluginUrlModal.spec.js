@@ -61,6 +61,11 @@ describe('PluginUrlModal', () => {
         wrapper.vm.$v.form.url.$model = 'https://github.com/'
         expect(wrapper.vm.urlError).toEqual('VALIDATION.URL.NO_GITHUB_REPOSITORY')
       })
+
+      it('should return null if input is a valid github repository url', () => {
+        wrapper.vm.$v.form.url.$model = 'https://github.com/foo/bar'
+        expect(wrapper.vm.urlError).toEqual(null)
+      })
     })
   })
 
