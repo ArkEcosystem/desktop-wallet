@@ -26,10 +26,10 @@
             <div class="PluginInstallModal__authorized__downloading__header__info">
               <span class="font-semibold">{{ formatter_percentage(normalizedPercentage, 2, 2) }}</span>
               <span
-                v-if="progressUpdate.total"
+                v-if="progress.totalBytes"
                 class="ml-2 text-theme-page-text-light truncate"
               >
-                {{ formatter_bytes(progressUpdate.transferred) }} / {{ formatter_bytes(progressUpdate.total) }}
+                {{ transferred }} / {{ total }}
               </span>
             </div>
           </div>
@@ -77,7 +77,6 @@
 import { ipcRenderer } from 'electron'
 import { ModalWindow } from '@/components/Modal'
 import { ProgressBar } from '@/components/ProgressBar'
-import Vue from 'vue'
 
 export default {
   name: 'PluginInstallModal',
@@ -104,10 +103,10 @@ export default {
     isDownloadFinished: false,
     isDownloadFailed: false,
     isDownloadCancelled: false,
-    progressUpdate: {
+    progress: {
       percent: 0,
-      total: 0,
-      transferred: 0
+      transferredBytes: 0,
+      totalBytes: 0
     }
   }),
 
@@ -118,12 +117,20 @@ export default {
     },
 
     normalizedPercentage () {
-      return parseInt(this.progressUpdate.percent * 100, 10)
+      return parseInt(this.progress.percent * 100, 10)
+    },
+
+    transferred () {
+      return this.formatter_bytes(this.progress.transferredBytes)
+    },
+
+    total () {
+      return this.formatter_bytes(this.progress.totalBytes)
     }
   },
 
   mounted () {
-    ipcRenderer.on('plugin-manager:download-progress', this.onUpdateProgress)
+    ipcRenderer.on('plugin-manager:download-progress', this.onProgress)
     ipcRenderer.on('plugin-manager:plugin-downloaded', this.onPluginDownloaded)
     ipcRenderer.on('plugin-manager:error', this.onError)
 
@@ -131,7 +138,7 @@ export default {
   },
 
   beforeDestroy () {
-    ipcRenderer.removeListener('plugin-manager:download-progress', this.onUpdateProgress)
+    ipcRenderer.removeListener('plugin-manager:download-progress', this.onProgress)
     ipcRenderer.removeListener('plugin-manager:plugin-downloaded', this.onPluginDownloaded)
     ipcRenderer.removeListener('plugin-manager:error', this.onError)
   },
@@ -170,12 +177,11 @@ export default {
       this.$emit('close')
     },
 
-    onUpdateProgress (_, data) {
-      Object.assign(this.progressUpdate, data)
+    onProgress (_, progress) {
+      Object.assign(this.progress, progress)
     },
 
     onPluginDownloaded () {
-      Vue.set(this.progressUpdate, 'percent', 1)
       this.isDownloadFinished = true
     },
 

@@ -9,7 +9,6 @@ const logger = require('electron-log')
 export const setupPluginManager = ({ sendToWindow, mainWindow, ipcMain }) => {
   let downloadItem
   let savePath
-  let totalBytes
 
   const pluginsPath = `${process.env.NODE_ENV !== 'development' ? PLUGINS.path : PLUGINS.devPath}`
   const cachePath = `${pluginsPath}/.cache`
@@ -25,18 +24,10 @@ export const setupPluginManager = ({ sendToWindow, mainWindow, ipcMain }) => {
       directory: cachePath,
       onStarted: item => {
         logger.log(`${prefix} Download started`)
-
         downloadItem = item
-        totalBytes = item.getTotalBytes()
         savePath = item.getSavePath()
       },
-      onProgress: percent => {
-        sendToWindow(prefix + 'download-progress', {
-          percent,
-          transferred: parseInt(percent * totalBytes, 10),
-          total: totalBytes
-        })
-      }
+      onProgress: progress => sendToWindow(prefix + 'download-progress', progress)
     }
 
     try {
