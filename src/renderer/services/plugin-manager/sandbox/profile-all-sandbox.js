@@ -1,4 +1,4 @@
-export function createProfileAllSandbox (walletApi, app) {
+export function create (walletApi, app) {
   return () => {
     if (!walletApi.profiles) {
       walletApi.profiles = {}

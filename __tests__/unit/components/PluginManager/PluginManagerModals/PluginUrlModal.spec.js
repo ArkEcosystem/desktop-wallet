@@ -44,7 +44,6 @@ describe('PluginUrlModal', () => {
     describe('urlError', () => {
       it('should return an error if input is empty', () => {
         wrapper.vm.$v.form.url.$model = ''
-        console.log(wrapper.vm.$refs)
         expect(wrapper.vm.urlError).toEqual('VALIDATION.REQUIRED')
       })
 

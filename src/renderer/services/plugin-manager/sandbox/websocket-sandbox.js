@@ -119,7 +119,7 @@ class PluginWebsocket {
   }
 }
 
-export function createWebsocketSandbox (walletApi, app, plugin) {
+export function create (walletApi, app, plugin) {
   return () => {
     walletApi.websocket = new PluginWebsocket(plugin.config.urls, app.$router)
   }

@@ -1,4 +1,4 @@
-import { createWalletTabsSetup } from '@/services/plugin-manager/setup/wallet-tabs-setup'
+import { create as createWalletTabsSetup } from '@/services/plugin-manager/setup/wallet-tabs-setup'
 import { Plugin } from '@/services/plugin-manager/plugin'
 
 const plugin = new Plugin({

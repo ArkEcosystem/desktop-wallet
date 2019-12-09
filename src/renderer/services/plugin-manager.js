@@ -28,6 +28,7 @@ export class PluginManager {
     this.adapter = null
     this.pluginsPath = null
     this.plugins = {}
+    this.pluginSetups = {}
     this.hasInit = false
     this.vue = null
   }
@@ -122,6 +123,8 @@ export class PluginManager {
     })
 
     await setup.install()
+
+    this.pluginSetups[pluginId] = setup
   }
 
   async unloadThemes (plugin, profileId) {
@@ -175,6 +178,8 @@ export class PluginManager {
     }
 
     await this.app.$store.dispatch('plugin/deleteLoaded', { pluginId, profileId })
+
+    await this.pluginSetups[pluginId].destroy()
   }
 
   async fetchLogo (url) {
