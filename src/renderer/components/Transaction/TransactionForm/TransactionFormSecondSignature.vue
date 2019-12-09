@@ -288,6 +288,7 @@ export default {
         try {
           const transactionObject = await this.$client.buildSecondSignatureRegistration(transactionData, this.$refs.fee && this.$refs.fee.isAdvancedFee, true)
           transaction = await TransactionService.ledgerSign(this.currentWallet, transactionObject, this)
+          transaction.totalAmount = TransactionService.getTotalAmount(transaction)
           success = true
         } catch (error) {
           this.$error(`${this.$t('TRANSACTION.LEDGER_SIGN_FAILED')}: ${error.message}`)
