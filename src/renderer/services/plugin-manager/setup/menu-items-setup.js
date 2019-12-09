@@ -1,7 +1,7 @@
 import { normalizeJson } from '../utils/normalize-json'
 import { getAllRoutes } from '../utils/get-all-routes'
 
-export function createMenuItemsSetup (plugin, pluginObject, sandbox, profileId) {
+export function create (plugin, pluginObject, sandbox, profileId) {
   return async () => {
     if (!Object.prototype.hasOwnProperty.call(pluginObject, 'getMenuItems')) {
       return

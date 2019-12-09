@@ -1,7 +1,7 @@
 import { normalizeJson } from '../utils/normalize-json'
 import { getAllRoutes } from '../utils/get-all-routes'
 
-export function createRoutesSetup (plugin, pluginObject, sandbox) {
+export function create (plugin, pluginObject, sandbox) {
   return () => {
     if (!Object.prototype.hasOwnProperty.call(pluginObject, 'getRoutes')) {
       return

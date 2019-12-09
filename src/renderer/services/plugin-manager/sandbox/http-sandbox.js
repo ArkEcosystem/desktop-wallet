@@ -39,7 +39,7 @@ class PluginHttp {
   }
 }
 
-export function createHttpSandbox (walletApi, plugin) {
+export function create (walletApi, plugin) {
   return () => {
     walletApi.http = new PluginHttp(plugin.config.urls)
   }

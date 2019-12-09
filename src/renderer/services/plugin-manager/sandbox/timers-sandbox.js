@@ -1,4 +1,4 @@
-export function createTimersSandbox (walletApi, app) {
+export function create (walletApi, app) {
   return () => {
     const timerArrays = {
       intervals: [],
