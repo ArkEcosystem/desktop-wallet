@@ -74,3 +74,7 @@ export function create (walletApi, app) {
     walletApi.eventBus = new PluginEvents(app.$eventBus)
   }
 }
+
+export function destroy (walletApi) {
+  walletApi.eventBus.destroy()
+}

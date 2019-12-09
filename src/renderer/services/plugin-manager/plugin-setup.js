@@ -64,6 +64,10 @@ export class PluginSetup {
     }
   }
 
+  async destroy () {
+    await this.sandbox.destroy()
+  }
+
   async __run (setups = []) {
     for (const setup of castArray(setups)) {
       await setup()

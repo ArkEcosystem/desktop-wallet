@@ -124,6 +124,8 @@ export class PluginManager {
     }
 
     await this.app.$store.dispatch('plugin/deleteLoaded', plugin.config.id)
+
+    await this.pluginSetups[pluginId].destroy()
   }
 
   async fetchPluginsFromPath (pluginsPath) {

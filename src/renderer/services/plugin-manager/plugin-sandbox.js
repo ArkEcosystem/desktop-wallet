@@ -94,6 +94,17 @@ export class PluginSandbox {
     }
   }
 
+  async destroy () {
+    const sandboxesDestroy = this.__mapDestroy()
+    for (const permissionName of this.plugin.config.permissions) {
+      if (!sandboxesDestroy[permissionName]) {
+        continue
+      }
+
+      await sandboxesDestroy[permissionName]()
+    }
+  }
+
   async __run (sandboxes = []) {
     for (const sandbox of castArray(sandboxes)) {
       await sandbox()
@@ -117,6 +128,12 @@ export class PluginSandbox {
       [STORAGE.name]: StorageSandbox.create(this.walletApi, this.app, this.plugin),
       [TIMERS.name]: TimersSandbox.create(this.walletApi, this.app),
       [WEBSOCKET.name]: WebsocketSandbox.create(this.walletApi, this.app, this.plugin)
+    }
+  }
+
+  __mapDestroy () {
+    return {
+      [EVENTS.name]: () => EventsSandbox.destroy(this.walletApi)
     }
   }
 }
