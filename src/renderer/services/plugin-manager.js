@@ -16,6 +16,7 @@ if (process.env.NODE_ENV === 'production') {
 export class PluginManager {
   constructor () {
     this.plugins = {}
+    this.pluginSetups = {}
     this.hasInit = false
     this.vue = null
   }
@@ -72,6 +73,8 @@ export class PluginManager {
     })
 
     await setup.install()
+
+    this.pluginSetups[pluginId] = setup
   }
 
   async unloadThemes (plugin, profileId) {
