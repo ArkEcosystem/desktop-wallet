@@ -1,4 +1,4 @@
-import { createTimersSandbox } from '@/services/plugin-manager/sandbox/timers-sandbox'
+import { create as createTimersSandbox } from '@/services/plugin-manager/sandbox/timers-sandbox'
 
 const routerNext = jest.fn()
 

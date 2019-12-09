@@ -1,4 +1,4 @@
-import { createThemesSetup } from '@/services/plugin-manager/setup/themes-setup'
+import { create as createThemesSetup } from '@/services/plugin-manager/setup/themes-setup'
 
 jest.mock('fs', () => ({
   existsSync: jest.fn(() => true)

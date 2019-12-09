@@ -1,6 +1,6 @@
 import { getAllRoutes } from '../utils/get-all-routes'
 
-export function createRouteSandbox (walletApi, plugin, app) {
+export function create (walletApi, plugin, app) {
   return () => {
     walletApi.route = {
       get: () => {

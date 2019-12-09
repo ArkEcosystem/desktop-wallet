@@ -6,7 +6,7 @@ import * as MenuComponents from '@/components/Menu'
 import Loader from '@/components/utils/Loader'
 import TableWrapper from '@/components/utils/TableWrapper'
 
-export function createUiComponentsSetup (plugin) {
+export function create (plugin) {
   return () => {
     const components = {
       ...ButtonComponents,

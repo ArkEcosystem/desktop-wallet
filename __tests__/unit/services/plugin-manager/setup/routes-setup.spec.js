@@ -1,4 +1,4 @@
-import { createRoutesSetup } from '@/services/plugin-manager/setup/routes-setup'
+import { create as createRoutesSetup } from '@/services/plugin-manager/setup/routes-setup'
 import { Plugin } from '@/services/plugin-manager/plugin'
 
 const pluginObject = {

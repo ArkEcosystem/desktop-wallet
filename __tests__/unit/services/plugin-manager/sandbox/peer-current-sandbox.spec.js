@@ -1,4 +1,4 @@
-import { createPeerCurrentSandbox } from '@/services/plugin-manager/sandbox/peer-current-sandbox'
+import { create as createPeerCurrentSandbox } from '@/services/plugin-manager/sandbox/peer-current-sandbox'
 
 const walletApi = {}
 const app = {}

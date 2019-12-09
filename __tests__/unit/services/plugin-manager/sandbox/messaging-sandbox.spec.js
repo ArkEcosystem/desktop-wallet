@@ -1,4 +1,4 @@
-import { createMessagingSandbox } from '@/services/plugin-manager/sandbox/messaging-sandbox'
+import { create as createMessagingSandbox } from '@/services/plugin-manager/sandbox/messaging-sandbox'
 
 let walletApi
 let app

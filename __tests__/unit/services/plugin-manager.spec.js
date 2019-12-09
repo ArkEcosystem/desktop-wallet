@@ -169,9 +169,15 @@ describe('Plugin Manager', () => {
           }
         }
       }
+      pluginManager.pluginSetups = {
+        [pkg.name]: {
+          destroy: jest.fn()
+        }
+      }
 
       await pluginManager.disablePlugin(pkg.name, 'p-1')
       expect(mockDispatch).toHaveBeenCalledWith('plugin/deleteLoaded', pkg.name)
+      expect(pluginManager.pluginSetups[pkg.name].destroy).toHaveBeenCalledTimes(1)
     })
 
     it('should unload theme', async () => {
@@ -184,11 +190,17 @@ describe('Plugin Manager', () => {
           }
         }
       }
+      pluginManager.pluginSetups = {
+        [pkg.name]: {
+          destroy: jest.fn()
+        }
+      }
 
       await pluginManager.disablePlugin(pkg.name, 'p-1')
       expect(mockDispatch).toHaveBeenCalledWith('plugin/deleteLoaded', pkg.name)
       expect(mockDispatch).toHaveBeenCalledWith('session/setTheme', expect.any(String))
       expect(mockDispatch).toHaveBeenCalledWith('profile/update', expect.any(Object))
+      expect(pluginManager.pluginSetups[pkg.name].destroy).toHaveBeenCalledTimes(1)
     })
   })
 })

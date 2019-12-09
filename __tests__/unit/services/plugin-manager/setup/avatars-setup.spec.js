@@ -1,4 +1,4 @@
-import { createAvatarsSetup } from '@/services/plugin-manager/setup/avatars-setup'
+import { create as createAvatarsSetup } from '@/services/plugin-manager/setup/avatars-setup'
 import { Plugin } from '@/services/plugin-manager/plugin'
 
 const plugin = new Plugin({

@@ -1,5 +1,5 @@
 import { Server } from 'mock-socket'
-import { createWebsocketSandbox } from '@/services/plugin-manager/sandbox/websocket-sandbox'
+import { create as createWebsocketSandbox } from '@/services/plugin-manager/sandbox/websocket-sandbox'
 
 const whitelist = [
   /* eslint-disable: no-useless-escape */

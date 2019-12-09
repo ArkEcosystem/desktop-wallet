@@ -1,9 +1,8 @@
-
 import fs from 'fs'
 import path from 'path'
 import { PluginComponentSandbox } from '../plugin-component-sandbox'
 
-export function createComponentsSetup (plugin, pluginObject, sandbox, vue) {
+export function create (plugin, pluginObject, sandbox, vue) {
   return () => {
     if (!Object.prototype.hasOwnProperty.call(pluginObject, 'getComponentPaths')) {
       return
