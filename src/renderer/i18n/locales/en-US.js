@@ -871,7 +871,7 @@ export default {
     ENABLED: 'Enabled',
     LOGO: 'Logo',
     NAME: 'Name',
-    NOT_INSTALLED: 'Not installed',
+    AVAILABLE: 'Not installed',
     NO_PLUGINS: 'No plugins available',
     SIZE: 'Size',
     STATUS: 'Status',

@@ -60,7 +60,7 @@
         >
           <img
             v-tooltip="{
-              content: $t(`PLUGIN_TABLE.${getStatusText(data.row.id).toUpperCase().replace('-', '_')}`),
+              content: $t(`PLUGIN_TABLE.${getStatusText(data.row.id).toUpperCase()}`),
               placement: 'left'
             }"
             :src="getStatusIcon(data.row.id)"
@@ -189,10 +189,6 @@ export default {
       this.$emit('on-sort-change', sortOptions[0])
     },
 
-    toggleStatus (plugin) {
-      this.$emit('toggle', plugin)
-    },
-
     emitShowDetails (plugin) {
       this.$emit('show-details', plugin)
     },
@@ -210,7 +206,7 @@ export default {
         return this.isEnabled(pluginId) ? 'enabled' : 'disabled'
       }
 
-      return 'not-installed'
+      return 'available'
     },
 
     sortByCategories (x, y, col, rowX, rowY) {
