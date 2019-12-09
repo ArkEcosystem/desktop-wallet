@@ -30,7 +30,7 @@ describe('PluginRemovalModal', () => {
     expect(wrapper.find('.ListDivided').exists()).toBeFalse()
   })
 
-  it('should render divided list if plugin has STORAGE permission', async() => {
+  it('should render divided list if plugin has STORAGE permission', () => {
     wrapper.setProps({
       plugin: {
         id: 'test',
