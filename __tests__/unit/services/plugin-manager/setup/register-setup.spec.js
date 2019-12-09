@@ -1,4 +1,4 @@
-import { createRegisterSetup } from '@/services/plugin-manager/setup/register-setup'
+import { create as createRegisterSetup } from '@/services/plugin-manager/setup/register-setup'
 
 const pluginObject = {
   register: jest.fn()

@@ -1,5 +1,5 @@
 import { Plugin } from '@/services/plugin-manager/plugin'
-import { createWebFrameSetup } from '@/services/plugin-manager/setup/webframe-setup'
+import { create as createWebFrameSetup } from '@/services/plugin-manager/setup/webframe-setup'
 
 const plugin = new Plugin({
   config: {

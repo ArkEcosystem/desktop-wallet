@@ -1,5 +1,5 @@
 import { Plugin } from '@/services/plugin-manager/plugin'
-import { createUiComponentsSetup } from '@/services/plugin-manager/setup/ui-components-setup'
+import { create as createUiComponentsSetup } from '@/services/plugin-manager/setup/ui-components-setup'
 
 const plugin = new Plugin({
   config: {

@@ -1,4 +1,4 @@
-import { createAudioSandbox } from '@/services/plugin-manager/sandbox/audio-sandbox'
+import { create as createAudioSandbox } from '@/services/plugin-manager/sandbox/audio-sandbox'
 
 global.AudioContext = {}
 
