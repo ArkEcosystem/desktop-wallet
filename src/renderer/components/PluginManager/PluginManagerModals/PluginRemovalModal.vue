@@ -5,7 +5,7 @@
     container-classes="PluginRemovalConfirmation"
     @close="emitCancel"
     @cancel="emitCancel"
-    @continue="removePlugin"
+    @continue="emitConfirm"
   >
     <div
       v-if="hasStorage"
@@ -63,12 +63,12 @@ export default {
       this.$emit('cancel')
     },
 
-    toggleRemoveOptions () {
-      this.removeOptions = !this.removeOptions
+    emitConfirm () {
+      this.$emit('confirm', this.removeOptions)
     },
 
-    removePlugin () {
-      this.$emit('confirm', this.removeOptions)
+    toggleRemoveOptions () {
+      this.removeOptions = !this.removeOptions
     }
   }
 }
