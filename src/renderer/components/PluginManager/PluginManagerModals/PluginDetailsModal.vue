@@ -67,17 +67,21 @@
             />
           </template>
 
-          <ButtonIconGeneric
+          <span
             v-if="isAvailable"
             v-tooltip="{
-              content: $t('PAGES.PLUGIN_MANAGER.REPORT'),
+              content: isBlacklisted ? $t('PAGES.PLUGIN_MANAGER.BLACKLISTED') : $t('PAGES.PLUGIN_MANAGER.REPORT'),
               placement: 'bottom'
             }"
-            icon="exclamation-mark"
-            view-box="0 0 16 20"
-            class="ml-2"
-            @click="reportPlugin"
-          />
+          >
+            <ButtonIconGeneric
+              :disabled="isBlacklisted"
+              icon="exclamation-mark"
+              view-box="0 0 16 20"
+              class="ml-2"
+              @click="reportPlugin"
+            />
+          </span>
         </div>
       </div>
     </template>
@@ -193,6 +197,10 @@ export default {
 
     isInstalled () {
       return this.$store.getters['plugin/isInstalled'](this.plugin.id)
+    },
+
+    isBlacklisted () {
+      return this.$store.getters['plugin/isBlacklisted'](this.plugin.id)
     },
 
     switchButtonLabel () {

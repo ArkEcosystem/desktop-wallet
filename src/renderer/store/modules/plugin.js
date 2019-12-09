@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import pluginManager from '@/services/plugin-manager'
 import releaseService from '@/services/release'
-import { cloneDeep, differenceWith, uniq, uniqBy } from 'lodash'
+import { cloneDeep, uniqBy } from 'lodash'
 import semver from 'semver'
 
 export default {
@@ -30,13 +30,11 @@ export default {
     filtered: (_, getters, __, rootGetters) => (query, category, filter) => {
       let plugins = getters[filter || 'all']
 
-      if (rootGetters['session/filterBlacklistedPlugins']) {
-        plugins = differenceWith(plugins, uniq([...getters.blacklisted.global, ...getters.blacklisted.local]), (plugin, blacklisted) => {
-          return plugin.config.id === blacklisted
-        })
-      }
-
       plugins = plugins.filter(plugin => {
+        if (rootGetters['session/filterBlacklistedPlugins'] && getters.isBlacklisted(plugin.config.id)) {
+          return false
+        }
+
         let match = true
 
         if (category && category !== 'all') {
@@ -139,11 +137,7 @@ export default {
     },
 
     isBlacklisted: (_, getters) => pluginId => {
-      if (!getters.blacklisted.length) {
-        return false
-      }
-
-      return getters.blacklisted.includes(pluginId)
+      return getters.blacklisted.global.includes(pluginId) || getters.blacklisted.local.includes(pluginId)
     },
 
     isInstalledSupported: (_, getters) => pluginId => {
