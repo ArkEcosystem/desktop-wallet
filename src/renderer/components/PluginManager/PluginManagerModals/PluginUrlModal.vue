@@ -49,15 +49,14 @@ export default {
   data: () => ({
     form: {
       url: ''
-    },
-    isValid: false
+    }
   }),
 
   computed: {
     urlError () {
       if (this.$v.form.url.$dirty) {
         if (!this.$v.form.url.required) {
-          return this.$t('VALIDATION.REQUIRED', [this.$refs.url.label])
+          return this.$t('VALIDATION.REQUIRED', [this.$t('COMMON.URL')])
         }
 
         if (!this.$v.form.url.url) {

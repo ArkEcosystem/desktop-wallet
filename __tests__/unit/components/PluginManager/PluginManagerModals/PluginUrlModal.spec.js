@@ -1,4 +1,4 @@
-import { shallowMount } from '@vue/test-utils'
+import { mount } from '@vue/test-utils'
 import Vuelidate from 'vuelidate'
 import Vue from 'vue'
 import useI18nGlobally from '../../../__utils__/i18n'
@@ -6,9 +6,14 @@ import { PluginUrlModal } from '@/components/PluginManager/PluginManagerModals'
 
 const i18n = useI18nGlobally()
 let wrapper
+
 beforeEach(() => {
-  wrapper = shallowMount(PluginUrlModal, {
-    i18n
+  wrapper = mount(PluginUrlModal, {
+    i18n,
+    stubs: {
+      Portal: true
+    },
+    sync: false
   })
 })
 
@@ -32,6 +37,43 @@ describe('PluginUrlModal', () => {
         expect(wrapper.vm.$v.form.url.isGitHubUrl).toBe(false)
         expect(wrapper.vm.$v.form.url.isAllowed).toBe(false)
       })
+    })
+  })
+
+  describe('Computed properties', () => {
+    describe('urlError', () => {
+      it('should return an error if input is empty', () => {
+        wrapper.vm.$v.form.url.$model = ''
+        console.log(wrapper.vm.$refs)
+        expect(wrapper.vm.urlError).toEqual('VALIDATION.REQUIRED')
+      })
+
+      it('should return an error if input is not an url', () => {
+        wrapper.vm.$v.form.url.$model = 'not-an-url'
+        expect(wrapper.vm.urlError).toEqual('VALIDATION.URL.INVALID')
+      })
+
+      it('should return an error if input is not a github url', () => {
+        wrapper.vm.$v.form.url.$model = 'https://not-github.com/'
+        expect(wrapper.vm.urlError).toEqual('VALIDATION.URL.NO_GITHUB')
+      })
+
+      it('should return an error if input is not a github repository url', () => {
+        wrapper.vm.$v.form.url.$model = 'https://github.com/'
+        expect(wrapper.vm.urlError).toEqual('VALIDATION.URL.NO_GITHUB_REPOSITORY')
+      })
+    })
+  })
+
+  describe('Methods', () => {
+    it('should emit close event', () => {
+      wrapper.vm.emitClose()
+      expect(wrapper.emitted('close')).toBeTruthy()
+    })
+
+    it('should emit fetch-plugin event', () => {
+      wrapper.vm.emitFetchPlugin()
+      expect(wrapper.emitted('fetch-plugin', wrapper.vm.$v.form.url.$model)).toBeTruthy()
     })
   })
 })
