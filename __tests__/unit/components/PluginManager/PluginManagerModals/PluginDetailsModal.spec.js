@@ -27,9 +27,6 @@ beforeEach(() => {
     localVue,
     i18n,
     store,
-    mocks: {
-      electron_openExternal: jest.fn()
-    },
     propsData: {
       plugin: {
         id: 'test',
