@@ -43,7 +43,7 @@ export class PluginNotFoundError extends Error {
 }
 
 export class PluginConfigError extends Error {
-  constructor () {
-    super('Plugin configuration could not be parsed')
+  constructor (message) {
+    super(`Plugin configuration could not be parsed: ${message}`)
   }
 }

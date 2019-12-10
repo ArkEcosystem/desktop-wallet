@@ -246,7 +246,7 @@ export class PluginManager {
     try {
       plugin = await PluginConfiguration.sanitize(body)
     } catch (error) {
-      throw new errors.PluginConfigError()
+      throw new errors.PluginConfigError(error.message)
     }
 
     plugin.source = `https://github.com/${owner}/${repository}/archive/${branch}.zip`

@@ -19,6 +19,14 @@ const isOfficial = name => {
   return scopeRegex.test(name)
 }
 
+const sanitizeId = name => {
+  if (!name) {
+    return new Error('missing required name')
+  }
+
+  return name
+}
+
 const sanitizeIsOfficial = name => {
   return isOfficial(name)
 }
@@ -66,6 +74,12 @@ const sanitizeCategories = config => {
 }
 
 const sanitizeKeywords = keywords => {
+  for (const keyword of PLUGINS.keywords) {
+    if (!keywords.includes(keyword)) {
+      throw new Error('missing required keywords')
+    }
+  }
+
   return difference(uniq(keywords), PLUGINS.keywords).map(keyword => titlecase(keyword))
 }
 
@@ -140,11 +154,11 @@ const sanitizeUrls = config => {
 export {
   sanitizeAuthor,
   sanitizeCategories,
+  sanitizeId,
   sanitizeIsOfficial,
   sanitizeKeywords,
   sanitizeLogo,
   sanitizeMinVersion,
-  sanitizeName,
   sanitizePermissions,
   sanitizeSize,
   sanitizeSource,

@@ -1,6 +1,7 @@
 import {
   sanitizeAuthor,
   sanitizeCategories,
+  sanitizeId,
   sanitizeIsOfficial,
   sanitizeKeywords,
   sanitizeLogo,
@@ -50,7 +51,7 @@ export class PluginConfiguration {
 
   static async sanitize (config, pluginPath = null) {
     return new PluginConfiguration({
-      id: config.name,
+      id: sanitizeId(config.name),
       author: sanitizeAuthor(config),
       categories: sanitizeCategories(config),
       keywords: sanitizeKeywords(config.keywords),
