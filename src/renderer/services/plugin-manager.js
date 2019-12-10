@@ -179,7 +179,9 @@ export class PluginManager {
 
     await this.app.$store.dispatch('plugin/deleteLoaded', { pluginId, profileId })
 
-    await this.pluginSetups[pluginId].destroy()
+    if (this.pluginSetups[pluginId]) {
+      await this.pluginSetups[pluginId].destroy()
+    }
   }
 
   async fetchLogo (url) {
