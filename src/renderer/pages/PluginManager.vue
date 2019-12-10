@@ -195,6 +195,7 @@
 
     <ModalLoader
       :message="loadingModalText"
+      :plugin="selectedPlugin"
       :visible="showLoadingModal"
     />
   </div>
