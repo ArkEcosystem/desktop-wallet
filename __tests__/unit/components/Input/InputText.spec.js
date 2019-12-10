@@ -114,7 +114,7 @@ describe('InputText', () => {
       })
     })
 
-    it.only('should show a warning', async () => {
+    it('should show a warning', async () => {
       wrapper.find('.InputText input').setValue('one video jaguar gap soldier ill hobby motor bundle couple trophy smoke')
 
       wrapper.vm.$v.$touch()
