@@ -99,7 +99,7 @@ export class PluginManager {
     }
 
     if (!this.app.$store.getters['plugin/isInstalledSupported'](plugin.config.id)) {
-      throw new Error('Wallet version is not supported')
+      throw new errors.PluginWalletVersionError()
     }
 
     await this.app.$store.dispatch('plugin/setLoaded', {

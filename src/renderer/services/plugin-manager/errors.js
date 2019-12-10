@@ -47,3 +47,9 @@ export class PluginConfigError extends Error {
     super(`Plugin configuration could not be parsed: ${message}`)
   }
 }
+
+export class PluginWalletVersionError extends Error {
+  constructor () {
+    super('Wallet version is not supported')
+  }
+}
