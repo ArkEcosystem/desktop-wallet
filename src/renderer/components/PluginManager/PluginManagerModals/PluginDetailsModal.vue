@@ -37,12 +37,20 @@
           />
 
           <template v-else>
-            <PluginManagerButtonSwitch
-              :is-active="isEnabled"
-              :label="switchButtonLabel"
-              class="mr-2"
-              @change="toggleStatus"
-            />
+            <span
+              v-tooltip="{
+                content: !isInstalledSupported ? $t('PAGES.PLUGIN_MANAGER.VERSION_MISMATCH') : '',
+                placement: 'bottom'
+              }"
+            >
+              <PluginManagerButtonSwitch
+                :is-active="isEnabled"
+                :is-disabled="!isInstalledSupported"
+                :label="switchButtonLabel"
+                class="mr-2"
+                @change="toggleStatus"
+              />
+            </span>
 
             <span
               v-tooltip="{
@@ -197,6 +205,10 @@ export default {
 
     isInstalled () {
       return this.$store.getters['plugin/isInstalled'](this.plugin.id)
+    },
+
+    isInstalledSupported () {
+      return this.$store.getters['plugin/isInstalledSupported'](this.plugin.id)
     },
 
     isBlacklisted () {

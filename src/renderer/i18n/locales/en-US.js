@@ -663,7 +663,8 @@ export default {
       },
       DISCLAIMER: '<b>Disclaimer:</b> The availability of this plugin in the ARK Desktop Wallet does not mean that either ARK.io or ARK SCIC is directly involved in the development or affiliated with the developer providing this plugin. By installing it on your wallet, you assume every responsibility.',
       REPORT: 'Report this plugin',
-      BLACKLISTED: 'This plugin is already blacklisted'
+      BLACKLISTED: 'This plugin is already blacklisted',
+      VERSION_MISMATCH: 'This plugin is not compatible with your wallet version'
     },
 
     PROFILE_ALL: {
