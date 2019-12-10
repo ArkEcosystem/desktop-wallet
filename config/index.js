@@ -98,9 +98,29 @@ exports.MARKET = {
 }
 
 exports.PLUGINS = {
+  adapters: ['npm'],
+  blacklistUrl: 'https://raw.githubusercontent.com/ark-ecosystem-desktop-plugins/blacklisted-plugins/master/blacklist.json',
+  categories: [
+    'gaming',
+    'theme',
+    'utility',
+    'other'
+  ],
   devPath: path.resolve(os.homedir(), '.ark-desktop/plugins-dev'),
-  discoverUrl: 'https://github.com/ark-ecosystem-desktop-plugins',
+  maxKeywords: 5,
+  keywords: [
+    '@arkecosystem',
+    'desktop-wallet',
+    'plugin'
+  ],
+  officialScope: 'arkecosystem',
+  officialAuthor: 'ARK Ecosystem',
   path: path.resolve(os.homedir(), '.ark-desktop/plugins'),
+  reportUrl: 'https://ark.io/contact',
+  updateInterval: {
+    value: 1,
+    unit: 'day'
+  },
   validation: require('./plugin-validation.json')
 }
 

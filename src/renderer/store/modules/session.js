@@ -15,6 +15,7 @@ export default {
     name: null,
     profileId: null,
     theme: null,
+    pluginManagerLayout: null,
     walletLayout: null,
     walletSidebarSortParams: null,
     walletSidebarFilters: null,
@@ -27,7 +28,9 @@ export default {
     ledgerCache: null,
     transactionTableRowCount: 10,
     unconfirmedVotes: [],
-    lastFees: {}
+    lastFees: {},
+    filterBlacklistedPlugins: true,
+    pluginAdapter: 'npm'
   }),
 
   getters: {
@@ -62,6 +65,7 @@ export default {
     isMarketChartEnabled: state => state.isMarketChartEnabled,
     marketChartOptions: state => ({ ...state.marketChartOptions }),
     theme: state => state.theme,
+    pluginManagerLayout: state => state.pluginManagerLayout,
     walletLayout: state => state.walletLayout,
     walletSidebarSortParams: state => ({ ...state.walletSidebarSortParams }),
     walletSidebarFilters: state => ({ ...state.walletSidebarFilters }),
@@ -81,7 +85,9 @@ export default {
     lastFees: state => state.lastFees,
     lastFeeByType: state => type => {
       return state.lastFees ? state.lastFees[type] : null
-    }
+    },
+    filterBlacklistedPlugins: state => state.filterBlacklistedPlugins,
+    pluginAdapter: state => state.pluginAdapter
   },
 
   mutations: {
@@ -131,6 +137,10 @@ export default {
 
     SET_THEME (state, theme) {
       state.theme = theme
+    },
+
+    SET_PLUGIN_MANAGER_LAYOUT (state, pluginManagerLayout) {
+      state.pluginManagerLayout = pluginManagerLayout
     },
 
     SET_WALLET_LAYOUT (state, walletLayout) {
@@ -185,6 +195,14 @@ export default {
       state.lastFees = fees
     },
 
+    SET_FILTER_BLACKLISTED_PLUGINS (state, filterBlacklistedPlugins) {
+      state.filterBlacklistedPlugins = filterBlacklistedPlugins
+    },
+
+    SET_PLUGIN_ADAPTER (state, pluginAdapter) {
+      state.pluginAdapter = pluginAdapter
+    },
+
     RESET (state) {
       state.avatar = 'pages/new-profile-avatar.svg'
       state.background = null
@@ -197,12 +215,13 @@ export default {
       state.bip39Language = 'english'
       state.name = null
       state.theme = 'light'
+      state.pluginManagerLayout = 'grid'
       state.walletLayout = 'grid'
       state.walletSidebarSortParams = { field: 'name', type: 'asc' }
       state.walletSidebarFilters = {}
       state.walletSortParams = { field: 'balance', type: 'desc' }
       state.contactSortParams = { field: 'name', type: 'asc' }
-      state.pluginSortParams = { field: 'id', type: 'asc' }
+      state.pluginSortParams = { field: 'title', type: 'asc' }
       state.backgroundUpdateLedger = true
       state.broadcastPeers = true
       state.screenshotProtection = true
@@ -210,6 +229,8 @@ export default {
       state.transactionTableRowCount = 10
       state.unconfirmedVotes = []
       state.lastFees = {}
+      state.filterBlacklistedPlugins = true
+      state.pluginAdapter = 'npm'
 
       i18n.locale = state.language
     },
@@ -226,6 +247,7 @@ export default {
       state.bip39Language = value.bip39Language
       state.name = value.name
       state.theme = value.theme
+      state.pluginManagerLayout = value.pluginManagerLayout
       state.walletLayout = value.walletLayout
       state.walletSidebarSortParams = value.walletSidebarSortParams
       state.walletSidebarFilters = value.walletSidebarFilters
@@ -239,6 +261,8 @@ export default {
       state.transactionTableRowCount = value.transactionTableRowCount
       state.unconfirmedVotes = value.unconfirmedVotes
       state.lastFees = value.lastFees
+      state.filterBlacklistedPlugins = value.filterBlacklistedPlugins
+      state.pluginAdapter = value.pluginAdapter
 
       i18n.locale = state.language
     }
@@ -329,6 +353,10 @@ export default {
       commit('SET_THEME', value)
     },
 
+    setPluginManagerLayout ({ commit }, value) {
+      commit('SET_PLUGIN_MANAGER_LAYOUT', value)
+    },
+
     setWalletLayout ({ commit }, value) {
       commit('SET_WALLET_LAYOUT', value)
     },
@@ -370,6 +398,14 @@ export default {
       fees[type] = fee
 
       commit('SET_LAST_FEES', fees)
+    },
+
+    setFilterBlacklistedPlugins ({ commit }, value) {
+      commit('SET_FILTER_BLACKLISTED_PLUGINS', value)
+    },
+
+    setPluginAdapter ({ commit }, value) {
+      commit('SET_PLUGIN_ADAPTER', value)
     }
   }
 }

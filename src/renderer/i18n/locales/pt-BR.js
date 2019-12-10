@@ -730,13 +730,6 @@ export default {
     }
   },
 
-  PLUGIN_ENABLE_CONFIRMATION: {
-    QUESTION: 'Tem certeza de que deseja ativar este plugin?',
-    NO: 'Não, mantenha desativado',
-    NOTICE: 'AVISO: Ao aceitar este aviso, você confirma que está adicionando um plug-in de terceiros não testado e não verificado à carteira da área de trabalho. O ARK SCIC não se responsabiliza por nenhum dano causado por este plug-in e não tem responsabilidade de testá-los quanto a vulnerabilidades de segurança. Todos os testes de segurança e descoberta de vulnerabilidades são de responsabilidade exclusiva do autor do plug-in. O ARK SCIC não oferece garantias, expressas ou implícitas, em relação às condições de comercialização ou adequação a finalidades específicas de qualquer plug-in de terceiros. O ARK SCIC não faz representações sobre a funcionalidade, precisão, disponibilidade, qualidade, integridade, segurança, validade ou não violação de nenhum plug-in de terceiros. Qualquer plug-in de terceiros usado é feito por sua conta e risco.',
-    YES: 'Sim, habilite'
-  },
-
   PLUGIN_TABLE: {
     ACTIONS: 'Ações',
     ENABLE: 'Habilitar',

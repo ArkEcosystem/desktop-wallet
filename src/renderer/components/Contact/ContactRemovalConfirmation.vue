@@ -12,7 +12,7 @@
         :src="assets_loadImage('arrows/arrow-confirmation.svg')"
         class="ContactRemovalConfirmation__container__arrow"
       >
-      <WalletIdenticon
+      <Identicon
         :value="contact.address"
         :size="150"
         class="identicon cursor-pointer"
@@ -28,13 +28,13 @@
 
 <script>
 import { ModalConfirmation } from '@/components/Modal'
-import { WalletIdenticon } from '@/components/Wallet'
+import Identicon from '@/components/utils/Identicon'
 
 export default {
   name: 'ContactRemovalConfirmation',
 
   components: {
-    WalletIdenticon,
+    Identicon,
     ModalConfirmation
   },
 

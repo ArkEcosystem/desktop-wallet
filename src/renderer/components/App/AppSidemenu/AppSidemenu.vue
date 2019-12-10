@@ -53,10 +53,10 @@
             @click="redirect($event)"
           />
 
-          <!-- Plugins -->
+          <!-- Plugin Manager -->
           <MenuNavigationItem
-            id="plugins"
-            :title="$t('APP_SIDEMENU.PLUGINS')"
+            id="plugin-manager"
+            :title="$t('APP_SIDEMENU.PLUGIN_MANAGER')"
             :is-horizontal="isHorizontal"
             :can-activate="false"
             class="AppSidemenu__item"

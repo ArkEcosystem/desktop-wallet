@@ -4,6 +4,7 @@ export default {
   state: {
     latestAppliedMigration: null,
     pinCode: null,
+    hasAcceptedBlacklistDisclaimer: false,
     hasSeenIntroduction: false,
     showVotingExplanation: true,
     isScreenshotProtectionEnabled: null
@@ -13,6 +14,7 @@ export default {
     latestAppliedMigration: state => state.latestAppliedMigration,
     pinCodeEnabled: state => !!state.pinCode,
     pinCode: state => state.pinCode,
+    hasAcceptedBlacklistDisclaimer: state => state.hasAcceptedBlacklistDisclaimer,
     hasSeenIntroduction: state => state.hasSeenIntroduction,
     showVotingExplanation: state => state.showVotingExplanation,
     isScreenshotProtectionEnabled: state => state.isScreenshotProtectionEnabled
@@ -24,6 +26,9 @@ export default {
     },
     SET_PIN_CODE (state, pinCode) {
       state.pinCode = pinCode
+    },
+    SET_HAS_ACCEPTED_BLACKLIST_DISCLAIMER (state, accepted) {
+      state.hasAcceptedBlacklistDisclaimer = accepted
     },
     SET_HAS_SEEN_INTRODUCTION (state, seen) {
       state.hasSeenIntroduction = seen
@@ -42,6 +47,9 @@ export default {
     },
     setPinCode ({ commit }, value) {
       commit('SET_PIN_CODE', value)
+    },
+    setHasAcceptedBlacklistDisclaimer ({ commit }, value) {
+      commit('SET_HAS_ACCEPTED_BLACKLIST_DISCLAIMER', value)
     },
     setHasSeenIntroduction ({ commit }, value) {
       commit('SET_HAS_SEEN_INTRODUCTION', value)

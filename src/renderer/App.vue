@@ -319,6 +319,8 @@ export default {
       this.$eventBus.on('ledger:disconnected', async () => {
         this.$warn('Ledger Disconnected!')
       })
+
+      await this.$plugins.fetchPluginsFromAdapter()
     },
 
     onPortalChange (isActive) {

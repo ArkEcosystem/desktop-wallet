@@ -102,7 +102,7 @@
           <template v-if="votedDelegate.rank">
             <i18n
               tag="span"
-              class="font-semibold px-6 border-r border-theme-line-separator"
+              class="font-semibold px-6"
               path="WALLET_DELEGATES.RANK_BANNER"
             >
               <strong place="rank">
