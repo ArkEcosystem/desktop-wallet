@@ -95,7 +95,7 @@ export class PluginManager {
     }
 
     if (!this.app.$store.getters['plugin/isEnabled'](plugin.config.id, profileId)) {
-      throw new errors.PluginNotEnabledError(plugin.config.id)
+      throw new errors.PluginStatusError('enabled', plugin.config.id)
     }
 
     if (!this.app.$store.getters['plugin/isInstalledSupported'](plugin.config.id)) {
@@ -171,6 +171,10 @@ export class PluginManager {
     const plugin = this.plugins[pluginId]
     if (!plugin) {
       throw new errors.PluginNotFoundError(pluginId)
+    }
+
+    if (this.app.$store.getters['plugin/isEnabled'](plugin.config.id, profileId)) {
+      throw new errors.PluginStatusError('disabled', plugin.config.id)
     }
 
     if (plugin.config.permissions.includes('THEMES')) {

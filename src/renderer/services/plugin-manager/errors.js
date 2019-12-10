@@ -30,9 +30,9 @@ export class PluginDownloadFailedError extends PluginManagerError {
   }
 }
 
-export class PluginNotEnabledError extends PluginManagerError {
-  constructor (plugin) {
-    super(`Plugin '${plugin}' is not enabled`)
+export class PluginStatusError extends PluginManagerError {
+  constructor (status, plugin) {
+    super(`Plugin '${plugin}' is not ${status}`)
   }
 }
 
