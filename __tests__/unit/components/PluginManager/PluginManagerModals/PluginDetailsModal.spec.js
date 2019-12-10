@@ -1,40 +1,45 @@
-import { createLocalVue, mount } from '@vue/test-utils'
-import Vuex from 'vuex'
-import useI18n from '../../../__utils__/i18n'
+import { mount } from '@vue/test-utils'
+import useI18nGlobally from '../../../__utils__/i18n'
 import { PluginDetailsModal } from '@/components/PluginManager/PluginManagerModals'
 
-const localVue = createLocalVue()
-localVue.use(Vuex)
-const i18n = useI18n(localVue)
+const i18n = useI18nGlobally()
 
 let wrapper
 
-const actions = {
-  setEnabled: jest.fn()
-}
+const mockDispatch = jest.fn()
 
-const store = new Vuex.Store({
-  modules: {
-    plugin: {
-      namespaced: true,
-      actions
+const mocks = {
+  $store: {
+    dispatch: mockDispatch,
+    getters: {
+      'plugin/isAvailable': jest.fn((pluginId) => pluginId === 'test'),
+      'plugin/isBlacklisted': jest.fn((pluginId) => pluginId !== 'test'),
+      'plugin/isEnabled': jest.fn((pluginId) => pluginId === 'test'),
+      'plugin/isInstalled': jest.fn((pluginId) => pluginId === 'test'),
+      'plugin/isUpdateAvailable': jest.fn((pluginId) => pluginId !== 'test'),
+      'plugin/isInstalledSupported': jest.fn((pluginId) => pluginId === 'test'),
+      'plugin/latestVersion': jest.fn((pluginId) => pluginId === '0.0.1')
     }
   }
-})
+}
 
 beforeEach(() => {
+  mockDispatch.mockReset()
+
   wrapper = mount(PluginDetailsModal, {
-    localVue,
     i18n,
-    store,
+    mocks,
     propsData: {
       plugin: {
         id: 'test',
-        version: '0.0.1'
+        version: '0.0.1',
+        keywords: ['Keyword'],
+        categories: ['utility'],
+        permissions: []
       }
     },
     stubs: {
-      Portal: true
+      Portal: '<div><slot /></div>'
     }
   })
 })
@@ -42,6 +47,14 @@ beforeEach(() => {
 describe('PluginDetailsModal', () => {
   it('should render', () => {
     expect(wrapper.isVueInstance()).toBeTrue()
+  })
+
+  it('should render update, delete and report button for installed plugins', () => {
+    const buttons = wrapper.findAll('.ButtonIconGeneric')
+
+    expect(buttons.at(0).html().includes('#update')).toBeTrue()
+    expect(buttons.at(1).html().includes('#trash')).toBeTrue()
+    expect(buttons.at(2).html().includes('#exclamation-mark')).toBeTrue()
   })
 
   describe('Methods', () => {
@@ -67,7 +80,7 @@ describe('PluginDetailsModal', () => {
 
     it('should toggle the status', () => {
       wrapper.vm.toggleStatus(true)
-      expect(actions.setEnabled).toHaveBeenCalled()
+      expect(mockDispatch).toHaveBeenCalledWith('plugin/setEnabled', { enabled: true, pluginId: 'test' })
     })
 
     it('should report the plugin', () => {
