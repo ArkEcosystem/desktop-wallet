@@ -386,10 +386,16 @@ export default {
         profileId
       })
 
-      if (enabled) {
-        await this._vm.$plugins.enablePlugin(pluginId, profileId)
-      } else {
-        await this._vm.$plugins.disablePlugin(pluginId, profileId)
+      try {
+        await this._vm.$plugins[`${enabled ? 'enable' : 'disable'}Plugin`](pluginId, profileId)
+      } catch (error) {
+        commit('SET_IS_PLUGIN_ENABLED', {
+          enabled: !enabled,
+          pluginId,
+          profileId
+        })
+
+        throw error
       }
     },
 
