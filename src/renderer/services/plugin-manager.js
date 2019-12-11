@@ -95,7 +95,7 @@ export class PluginManager {
     }
 
     if (!this.app.$store.getters['plugin/isEnabled'](plugin.config.id, profileId)) {
-      throw new errors.PluginNotEnabledError(plugin.config.id)
+      throw new errors.PluginStatusError('enabled', plugin.config.id)
     }
 
     if (!this.app.$store.getters['plugin/isInstalledSupported'](plugin.config.id)) {
@@ -173,13 +173,19 @@ export class PluginManager {
       throw new errors.PluginNotFoundError(pluginId)
     }
 
+    if (this.app.$store.getters['plugin/isEnabled'](plugin.config.id, profileId)) {
+      throw new errors.PluginStatusError('disabled', plugin.config.id)
+    }
+
     if (plugin.config.permissions.includes('THEMES')) {
       await this.unloadThemes(plugin, profileId)
     }
 
     await this.app.$store.dispatch('plugin/deleteLoaded', { pluginId, profileId })
 
-    await this.pluginSetups[pluginId].destroy()
+    if (this.pluginSetups[pluginId]) {
+      await this.pluginSetups[pluginId].destroy()
+    }
   }
 
   async fetchLogo (url) {
