@@ -165,45 +165,45 @@ describe('Plugin Manager', () => {
     it('should disable', async () => {
       await pluginManager.init(app)
       pluginManager.plugins = {
-        [pkg.name]: {
+        [`${pkg.name}-disabled`]: {
           config: {
-            id: pkg.name,
+            id: `${pkg.name}-disabled`,
             permissions: []
           }
         }
       }
       pluginManager.pluginSetups = {
-        [pkg.name]: {
+        [`${pkg.name}-disabled`]: {
           destroy: jest.fn()
         }
       }
 
-      await pluginManager.disablePlugin(pkg.name, 'p-1')
-      expect(mockDispatch).toHaveBeenCalledWith('plugin/deleteLoaded', { pluginId: pkg.name, profileId: 'p-1' })
-      expect(pluginManager.pluginSetups[pkg.name].destroy).toHaveBeenCalledTimes(1)
+      await pluginManager.disablePlugin(`${pkg.name}-disabled`, 'p-1')
+      expect(mockDispatch).toHaveBeenCalledWith('plugin/deleteLoaded', { pluginId: `${pkg.name}-disabled`, profileId: 'p-1' })
+      expect(pluginManager.pluginSetups[`${pkg.name}-disabled`].destroy).toHaveBeenCalledTimes(1)
     })
 
     it('should unload theme', async () => {
       await pluginManager.init(app)
       pluginManager.plugins = {
-        [pkg.name]: {
+        [`${pkg.name}-disabled`]: {
           config: {
-            id: pkg.name,
+            id: `${pkg.name}-disabled`,
             permissions: ['THEMES']
           }
         }
       }
       pluginManager.pluginSetups = {
-        [pkg.name]: {
+        [`${pkg.name}-disabled`]: {
           destroy: jest.fn()
         }
       }
 
-      await pluginManager.disablePlugin(pkg.name, 'p-1')
-      expect(mockDispatch).toHaveBeenCalledWith('plugin/deleteLoaded', { pluginId: pkg.name, profileId: 'p-1' })
+      await pluginManager.disablePlugin(`${pkg.name}-disabled`, 'p-1')
+      expect(mockDispatch).toHaveBeenCalledWith('plugin/deleteLoaded', { pluginId: `${pkg.name}-disabled`, profileId: 'p-1' })
       expect(mockDispatch).toHaveBeenCalledWith('session/setTheme', expect.any(String))
       expect(mockDispatch).toHaveBeenCalledWith('profile/update', expect.any(Object))
-      expect(pluginManager.pluginSetups[pkg.name].destroy).toHaveBeenCalledTimes(1)
+      expect(pluginManager.pluginSetups[`${pkg.name}-disabled`].destroy).toHaveBeenCalledTimes(1)
     })
   })
 })
