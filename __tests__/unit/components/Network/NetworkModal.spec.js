@@ -12,6 +12,7 @@ const i18n = useI18nGlobally()
 let wrapper
 const mocks = {
   $store: {
+    dispatch () {},
     getters: {
       'network/byName': jest.fn((name) => {
         return name === 'exists'
@@ -206,6 +207,16 @@ describe('NetworkModal', () => {
         })
       })
 
+      describe('version', () => {
+        it('should switch from invalid to valid to invalid for required when changed', () => {
+          testRequired(wrapper.vm.$v.form.version, 1)
+        })
+
+        it('should switch from invalid to valid to invalid for format', () => {
+          testNumeric(wrapper.vm.$v.form.version)
+        })
+      })
+
       describe('explorer', () => {
         it('should switch from invalid to valid to invalid for required when changed', () => {
           testRequired(wrapper.vm.$v.form.explorer, 'http://1.2.3.4')
@@ -277,6 +288,30 @@ describe('NetworkModal', () => {
         })
       })
 
+      describe('validateSeed', () => {
+        let spyDispatch
+        beforeEach(() => {
+          spyDispatch = jest.spyOn(mocks.$store, 'dispatch')
+        })
+        afterEach(() => {
+          spyDispatch.mockRestore()
+        })
+
+        it('should return true for correct urls', async () => {
+          wrapper.vm.$v.form.server.$model = 'http://1.2.3.4:4040'
+          spyDispatch.mockImplementation(() => ({}))
+
+          expect(await wrapper.vm.validateSeed()).toBeTruthy()
+        })
+
+        it('should return false for incorrect urls', async () => {
+          wrapper.vm.$v.form.server.$model = 'http://1.2.3.4:4040:4040'
+
+          expect(await wrapper.vm.validateSeed()).toBe(false)
+          expect(spyDispatch).not.toHaveBeenCalled()
+        })
+      })
+
       describe('save button', () => {
         beforeEach(() => {
           wrapper.vm.$v.form.name.$model = 'sample name'
@@ -286,6 +321,7 @@ describe('NetworkModal', () => {
           wrapper.vm.$v.form.nethash.$model = '6e84d08bd299ed97c212c886c98a57e36545c8f5d645ca7eeae63a8bd62d8988'
           wrapper.vm.$v.form.token.$model = 'A'
           wrapper.vm.$v.form.symbol.$model = 'A'
+          wrapper.vm.$v.form.version.$model = '1'
           wrapper.vm.$v.form.explorer.$model = 'http://1.2.3.4'
           wrapper.vm.$v.form.epoch.$model = '2019-04-09T15:32:16.123Z'
           wrapper.vm.$v.form.wif.$model = '1'
@@ -329,6 +365,12 @@ describe('NetworkModal', () => {
 
         it('should disable if invalid symbol', () => {
           wrapper.vm.$v.form.symbol.$model = ''
+
+          expect(wrapper.vm.$v.form.$invalid).toBe(true)
+        })
+
+        it('should disable if invalid version', () => {
+          wrapper.vm.$v.form.version.$model = 'ten'
 
           expect(wrapper.vm.$v.form.$invalid).toBe(true)
         })

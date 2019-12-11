@@ -40,12 +40,8 @@ describe('TransactionModule', () => {
   beforeEach(() => {
     transactions.forEach(transaction => store.commit('transaction/STORE', transaction))
     wallets.forEach(wallet => store.commit('wallet/STORE', wallet))
-    ClientService.host = `http://127.0.0.1:4003`
+    ClientService.host = 'http://127.0.0.1:4003'
     nock.cleanAll()
-    nock('http://127.0.0.1')
-      .persist()
-      .post('/api/v2/wallets/search')
-      .reply(200, { data: [] })
   })
 
   describe('getters byAddress', () => {
@@ -251,7 +247,7 @@ describe('TransactionModule', () => {
       expect(store.getters['session/unconfirmedVotes'].length).toBe(3)
       await store.dispatch('transaction/clearUnconfirmedVotes')
       expect(store.getters['session/unconfirmedVotes'].length).toBe(1)
-      expect(store.getters['session/unconfirmedVotes'][0]['id']).toBe(2)
+      expect(store.getters['session/unconfirmedVotes'][0].id).toBe(2)
     })
   })
 })

@@ -1,6 +1,8 @@
 'use strict'
 
 import { app, BrowserWindow, ipcMain, screen } from 'electron'
+import { setupPluginManager } from './plugin-manager'
+import { setupUpdater } from './updater'
 import winState from 'electron-window-state'
 import packageJson from '../../package.json'
 
@@ -26,7 +28,7 @@ let mainWindow = null
 let deeplinkingUrl = null
 
 const winURL = process.env.NODE_ENV === 'development'
-  ? `http://localhost:9080`
+  ? 'http://localhost:9080'
   : `file://${__dirname}/index.html`
 
 function createWindow () {
@@ -91,10 +93,18 @@ function broadcastURL (url) {
     return
   }
 
-  if (mainWindow && mainWindow.webContents) {
-    mainWindow.webContents.send('process-url', url)
+  if (sendToWindow('process-url', url)) {
     deeplinkingUrl = null
   }
+}
+
+function sendToWindow (key, value) {
+  if (mainWindow && mainWindow.webContents) {
+    mainWindow.webContents.send(key, value)
+    return true
+  }
+
+  return false
 }
 
 // Force Single Instance Application
@@ -106,12 +116,12 @@ if (!gotTheLock) {
   app.on('second-instance', (_, argv) => {
     // Someone tried to run a second instance, we should focus our window.
     // argv: An array of the second instance’s (command line / deep linked) arguments
-    if (process.platform === 'linux') {
-      deeplinkingUrl = argv[1]
-      broadcastURL(deeplinkingUrl)
-    } else if (process.platform !== 'darwin') {
-      deeplinkingUrl = argv[2]
-      broadcastURL(deeplinkingUrl)
+    for (const arg of argv) {
+      if (arg.startsWith('ark:')) {
+        deeplinkingUrl = arg
+        broadcastURL(deeplinkingUrl)
+        break
+      }
     }
 
     if (mainWindow) {
@@ -122,16 +132,20 @@ if (!gotTheLock) {
     }
   })
 
-  if (process.platform === 'linux') {
-    deeplinkingUrl = process.argv[1]
-    broadcastURL(deeplinkingUrl)
-  } else if (process.platform !== 'darwin') {
-    deeplinkingUrl = process.argv[2]
-    broadcastURL(deeplinkingUrl)
+  for (const arg of process.argv) {
+    if (arg.startsWith('ark:')) {
+      deeplinkingUrl = arg
+      broadcastURL(deeplinkingUrl)
+      break
+    }
   }
 }
 
-app.on('ready', createWindow)
+app.on('ready', () => {
+  createWindow()
+  setupPluginManager({ sendToWindow, mainWindow, ipcMain })
+  setupUpdater({ sendToWindow, ipcMain })
+})
 
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
@@ -153,23 +167,3 @@ app.on('open-url', (event, url) => {
 })
 
 app.setAsDefaultProtocolClient('ark', process.execPath, ['--'])
-
-/**
- * Auto Updater
- *
- * Uncomment the following code below and install `electron-updater` to
- * support auto updating. Code Signing with a valid certificate is required.
- * https://simulatedgreg.gitbooks.io/electron-vue/content/en/using-electron-builder.html#auto-updating
- */
-
-/*
-import { autoUpdater } from 'electron-updater'
-
-autoUpdater.on('update-downloaded', () => {
-  autoUpdater.quitAndInstall()
-})
-
-app.on('ready', () => {
-  if (process.env.NODE_ENV === 'production') autoUpdater.checkForUpdates()
-})
- */

@@ -53,14 +53,14 @@
             @click="redirect($event)"
           />
 
-          <!-- Plugins -->
+          <!-- Plugin Manager -->
           <MenuNavigationItem
-            id="plugins"
-            :title="$t('APP_SIDEMENU.PLUGINS')"
+            id="plugin-manager"
+            :title="$t('APP_SIDEMENU.PLUGIN_MANAGER')"
             :is-horizontal="isHorizontal"
             :can-activate="false"
             class="AppSidemenu__item"
-            icon="plugins"
+            icon="manage-plugins"
             @click="redirect($event)"
           />
 
@@ -72,7 +72,7 @@
             :is-horizontal="isHorizontal"
             :can-activate="false"
             class="AppSidemenu__item"
-            icon="more"
+            icon="my-plugins"
             @click="toggleShowPluginMenu"
           />
 
@@ -87,7 +87,7 @@
         <div class="flexify">
           <!-- Important notification / new releases -->
           <AppSidemenuImportantNotification
-            v-if="isImportantNotificationVisible && hasNewRelease"
+            v-if="isImportantNotificationVisible && hasAvailableRelease"
             :is-horizontal="isHorizontal"
             class="AppSidemenu__item"
             @close="hideImportantNotification"
@@ -139,9 +139,7 @@
 </template>
 
 <script>
-import semver from 'semver'
 import { mapGetters } from 'vuex'
-import releaseService from '@/services/release'
 import AppSidemenuPlugins from './AppSidemenuPlugins'
 import AppSidemenuSettings from './AppSidemenuSettings'
 import AppSidemenuNetworkStatus from './AppSidemenuNetworkStatus'
@@ -182,12 +180,9 @@ export default {
 
   computed: {
     ...mapGetters({
-      latestReleaseVersion: 'app/latestReleaseVersion',
+      hasAvailableRelease: 'updater/hasAvailableRelease',
       unreadAnnouncements: 'announcements/unread'
     }),
-    hasNewRelease () {
-      return semver.lt(releaseService.currentVersion, this.latestReleaseVersion || releaseService.currentVersion)
-    },
     showUnread () {
       return this.unreadAnnouncements.length > 0
     },

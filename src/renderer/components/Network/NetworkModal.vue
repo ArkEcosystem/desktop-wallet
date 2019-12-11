@@ -84,6 +84,16 @@
               />
 
               <InputText
+                ref="input-version"
+                v-model="$v.form.version.$model"
+                :label="$t('MODAL_NETWORK.VERSION')"
+                :is-invalid="$v.form.version.$dirty && $v.form.version.$invalid"
+                :helper-text="versionError"
+                class="mt-5"
+                name="version"
+              />
+
+              <InputText
                 ref="input-epoch"
                 v-model="$v.form.epoch.$model"
                 :label="$t('MODAL_NETWORK.EPOCH')"
@@ -199,10 +209,12 @@
 
 <script>
 import { numeric, required, requiredIf } from 'vuelidate/lib/validators'
+import { NETWORKS } from '@config'
 import { InputText, InputToggle } from '@/components/Input'
 import { ModalLoader, ModalWindow } from '@/components/Modal'
 import ClientService from '@/services/client'
 import cryptoCompare from '@/services/crypto-compare'
+import { URL } from 'url'
 
 const requiredIfFull = requiredIf(function () { return this.showFull })
 
@@ -236,13 +248,13 @@ export default {
       nethash: '',
       token: '',
       symbol: '',
+      version: '',
       explorer: '',
       epoch: '',
       wif: '',
       slip44: '',
       activeDelegates: '',
-      ticker: '',
-      version: ''
+      ticker: ''
     },
     configChoices: [
       'Basic',
@@ -295,6 +307,10 @@ export default {
       return this.requiredFieldError(this.$v.form.slip44, this.$refs['input-slip44'])
     },
 
+    versionError () {
+      return this.requiredNumericFieldError(this.$v.form.version, this.$refs['input-version'])
+    },
+
     wifError () {
       return this.requiredNumericFieldError(this.$v.form.wif, this.$refs['input-wif'])
     },
@@ -331,6 +347,28 @@ export default {
       this.form.nethash = this.network.nethash
       this.form.token = this.network.token
       this.form.symbol = this.network.symbol
+
+      // Temporary block to patch networks missing "version" - address prefix
+      if (this.network.version) {
+        this.form.version = this.network.version.toString()
+      } else {
+        const networkConfig = NETWORKS.find(network => network.id === this.network.id)
+
+        if (networkConfig) {
+          this.form.version = networkConfig.version.toString()
+        } else {
+          try {
+            ClientService.fetchNetworkConfig(this.form.server)
+              .then(network => {
+                this.form.version = network.version.toString()
+                this.$error(this.$t('MODAL_NETWORK.ADDRESS_VERSION_MISSING'))
+              })
+          } catch (error) {
+            this.form.version = '0'
+          }
+        }
+      }
+
       this.form.explorer = this.network.explorer || ''
 
       this.form.epoch = this.network.constants.epoch
@@ -406,26 +444,34 @@ export default {
     async validateSeed () {
       this.showLoadingModal = true
 
-      const matches = /(https?:\/\/[a-zA-Z0-9.-_]+):([0-9]+)/.exec(this.form.server)
-      const host = matches[1]
-      const port = matches[2]
+      try {
+        let { hostname: host, port, protocol } = new URL(this.form.server)
 
-      const response = await this.$store.dispatch('peer/validatePeer', {
-        host,
-        port,
-        ignoreNetwork: true
-      })
-      let success = false
-      if (response === false) {
-        this.$error(this.$t('MODAL_NETWORK.SEED_VALIDATE_FAILED'))
-      } else if (typeof response === 'string') {
-        this.$error(`${this.$t('MODAL_NETWORK.SEED_VALIDATE_FAILED')}: ${response}`)
-      } else {
-        success = true
+        if (!port) {
+          port = protocol === 'https:' ? 443 : 80
+        }
+
+        const response = await this.$store.dispatch('peer/validatePeer', {
+          host,
+          port,
+          ignoreNetwork: true
+        })
+        let success = false
+        if (response === false) {
+          this.$error(this.$t('MODAL_NETWORK.SEED_VALIDATE_FAILED'))
+        } else if (typeof response === 'string') {
+          this.$error(`${this.$t('MODAL_NETWORK.SEED_VALIDATE_FAILED')}: ${response}`)
+        } else {
+          success = true
+        }
+        this.showLoadingModal = false
+
+        return success
+      } catch (error) {
+        //
       }
-      this.showLoadingModal = false
 
-      return success
+      return false
     },
 
     async updateNetwork () {
@@ -447,13 +493,32 @@ export default {
         enabled: this.form.ticker !== '',
         ticker: this.form.ticker !== '' ? this.form.ticker : null
       }
+      customNetwork.version = parseInt(customNetwork.version) // Important: needs to be a Number
       customNetwork.subunit = this.form.token.toLowerCase() + 'toshi'
       customNetwork.fractionDigits = 8
       customNetwork.wif = parseInt(this.form.wif)
       customNetwork.knownWallets = {}
 
       if (this.showFull && this.hasFetched) {
+        let { hostname: ip, port, protocol } = new URL(this.form.server)
+
+        const isHttps = protocol === 'https:'
+
+        if (!port) {
+          port = isHttps ? 443 : 80
+        }
+
+        const peer = {
+          version: '0',
+          height: 0,
+          latency: 0,
+          port: parseInt(port),
+          ip,
+          isHttps
+        }
+
         await this.$store.dispatch('network/addCustomNetwork', customNetwork)
+        await this.$store.dispatch('peer/setToNetwork', { peers: [peer], networkId: customNetwork.id })
       } else {
         // Note: this is also used to update the 'default' networks, since the update checks if it exists as custom network
         await this.$store.dispatch('network/updateCustomNetwork', customNetwork)
@@ -492,6 +557,9 @@ export default {
             }
           }
           this.form.ticker = tokenFound ? network.token : ''
+          if (tokenFound && network.version) {
+            this.form.version = network.version.toString()
+          }
 
           this.showFull = true
           this.hasFetched = true
@@ -568,6 +636,10 @@ export default {
       },
       symbol: {
         requiredIfFull
+      },
+      version: {
+        requiredIfFull,
+        numeric
       },
       explorer: {
         requiredIfFull,

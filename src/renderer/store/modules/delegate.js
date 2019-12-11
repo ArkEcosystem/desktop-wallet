@@ -63,11 +63,11 @@ export default {
 
     search: (state, getters) => query => {
       if (query.length <= 20) {
-        return getters['byUsername'](query)
+        return getters.byUsername(query)
       } else if (query.length <= 34) {
-        return getters['byAddress'](query)
+        return getters.byAddress(query)
       } else {
-        return getters['byPublicKey'](query)
+        return getters.byPublicKey(query)
       }
     }
   },

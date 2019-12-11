@@ -118,10 +118,11 @@ export default {
 
   PEER: {
     BEST: 'Connetti al migliore',
+    CONFIG_CHECK_FAILED: 'Controllo configurazione fallito',
     CONNECTED: 'Connesso al peer',
     CONNECT_CUSTOM: 'Connetti peer personalizzato',
     CONNECT_FAILED: 'Impossibile connettersi al peer',
-    DELAY: 'Ritardo',
+    LATENCY: 'Latenza',
     DISCONNECT: 'Disconnesso dal peer',
     FAILED_REFRESH: 'Impossibile aggiornare i peers',
     HEIGHT: 'Altezza Blocco',
@@ -260,8 +261,18 @@ export default {
   },
 
   APP_SIDEMENU_NOTIFICATION: {
-    NOTIFICATION: 'Una nuova versione ({version}) è stata rilasciata. Aggiorna ora!',
     TOOLTIP: 'La nuova versione ({version}) è stata rilasciata!'
+  },
+
+  APP_UPDATER: {
+    RELEASE_NOTES: 'Note di rilascio',
+    DOWNLOAD_NOW: 'Si, scarica ora',
+    MAYBE_LATER: 'No, forse più tardi',
+    DOWNLOADING: 'Scaricamento {version}',
+    DOWNLOADED: 'Scaricato {version}',
+    QUIT_AND_INSTALL: 'Esci e installa',
+    UNKNOWN_ERROR: 'Errore sconosciuto. Chiudi questa finestra e riprova.',
+    NETWORK_ERROR: 'Sembra che il tuo file non venga scaricato. Verifica la tua connessione.'
   },
 
   MARKET_CHART: {
@@ -292,7 +303,7 @@ export default {
 
   MARKET_CHART_HEADER: {
     PRICE: '{currency} Prezzo',
-    SHOW_CHART: 'Show chart'
+    SHOW_CHART: 'Mostra grafico'
   },
 
   BUTTON_CLIPBOARD: {
@@ -379,7 +390,7 @@ export default {
       EXPORT_WALLETS: 'Impossibile esportare i tuoi protafogli'
     },
     EXPORT: 'Esporta 0 Portafogli | Esporta 1 Portafoglio | Esporta {count} Portafogli',
-    INSTRUCTIONS: 'I tuoi portafogli esportati non conterranno le tue frasi segrete, verranno salvati solamente gli indirizzi e i rispettivi nomi!',
+    INSTRUCTIONS: '<b>Importante:</b> I tuoi portafogli esportati non conterranno le tue frasi segrete, verranno salvati solamente gli indirizzi e i rispettivi nomi!',
     OPTIONS: {
       ADD_NETWORK: 'Aggiungi informazioni sulla rete',
       EXCLUDE_EMPTY: 'Escludi portafogli vuoti',
@@ -509,7 +520,7 @@ export default {
       },
       TITLE: 'Inserisci l\'indirizzo del contatto',
       ADDRESS: 'Indirizzo',
-      NAME: 'Nome contatto (opzionala)',
+      NAME: 'Nome contatto (opzionale)',
       NAME_INFO: 'Info:',
       NAME_DESCRIPTION: 'Il nome del contatto non è richiesto, ma può essere utilizzato per comodità dell\'utente',
       FAILED: 'Fallito nel creare il contatto',
@@ -726,15 +737,9 @@ export default {
 
     WALLET_SHOW: {
       NO_VOTE: 'Il portafoglio non ha votato',
-      ADD_CONTACT: 'Aggiungi ai contatti'
+      ADD_CONTACT: 'Aggiungi ai contatti',
+      VOTING_FOR: 'Votando per {delegate}'
     }
-  },
-
-  PLUGIN_ENABLE_CONFIRMATION: {
-    QUESTION: 'Sei sicuro di voler attivare il plugin "{name}"?',
-    NO: 'No, tenerlo disattivato',
-    NOTICE: 'ATTENZIONE: accettando questa dichiarazione di non responsabilità, confermi di aggiungere al portafoglio desktop un plugin di terze parti, non testato e non verificato. ARK SCIC non si assume alcuna responsabilità per eventuali danni causati da questo plug-in e non si assume alcuna responsabilità di testare i plugin per vulnerabilità di sicurezza. I test di sicurezza e l\'individuazione delle vulnerabilità sono di esclusiva responsabilità dell\'autore del plug-in. ARK SCIC non rilascia alcuna garanzia, espressa o implicita, in merito alle condizioni di commerciabilità o idoneità per scopi particolari di qualsiasi plugin di terze parti. ARK SCIC non rilascia dichiarazioni in merito a sicurezza, validità o non violazione di plug-in di terze parti. Qualsiasi plug-in di terze parti utilizzato viene eseguito a proprio rischio.',
-    YES: 'Si, attiva'
   },
 
   PLUGIN_TABLE: {
@@ -808,7 +813,9 @@ export default {
       LOAD_FROM_FILE: 'Impossibile caricare il file transazione',
       EXPIRED: 'Transazione scaduta prima di essere proccessata: {transactionId}',
       FEE_TOO_LOW: 'La transazione non può essere inviata perchè la commissione ({fee}) è troppo bassa',
-      NOTHING_SENT: 'La transazione non può essere inviata. Controlla la tua connessione di rete o cambia peer'
+      NOTHING_SENT: 'La transazione non può essere inviata. Controlla la tua connessione di rete o cambia peer',
+      NETWORK_NOT_CONFIGURED: 'Rete non configurata',
+      WALLET_NOT_IMPORTED: 'Wallet non importato'
     },
     FOOTER_TEXT: {
       DELEGATE_REGISTRATION: 'Tieni presente che non è possibile modificare il nome del Delegato dopo che la registrazione è stata registrata sulla blockchain.'
@@ -928,6 +935,7 @@ export default {
       SHOW_PUBLIC_KEY: 'Mostra chiave pubblica',
       SHOW_ADDRESS: 'Mostra indirizzo'
     },
+    PENDING_BALANCE: '{amount} compreso 1 transazione non confermata | {amount} compreso {n} transazioni non confermate',
     SECOND_PASSPHRASE_ENABLED: 'Seconda firma abilitata'
   },
 
@@ -1023,7 +1031,7 @@ export default {
     RECIPIENT: 'Destinatario',
     SENDER: 'Mittente',
     AMOUNT: 'Importo',
-    NEW_TRANSACTIONS: 'Questo portafoglio ha {count} nuova/e transazione/i. Premi il pulsante ricarica per aggiornare.'
+    NEW_TRANSACTIONS: '0 | Questo portafoglio ha 1 nuova transazione. Premi il pulsante ricarica per aggiornare. | Questo portafoglio ha {count} nuove transazioni. Premi il pulsante ricarica per aggiornare.'
   },
 
   WALLET_TABLE: {

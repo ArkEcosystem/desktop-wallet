@@ -19,6 +19,7 @@ import PluginModule from '@/store/modules/plugin'
 import ProfileModule from '@/store/modules/profile'
 import SessionModule from '@/store/modules/session'
 import TransactionModule from '@/store/modules/transaction'
+import UpdaterModule from '@/store/modules/updater'
 import WalletModule from '@/store/modules/wallet'
 
 Vue.use(Vuex)
@@ -35,11 +36,14 @@ const modules = {
   profile: ProfileModule,
   session: SessionModule,
   transaction: TransactionModule,
+  updater: UpdaterModule,
   wallet: WalletModule
 }
 
 // Modules that should not be persisted
-const ignoreModules = []
+const ignoreModules = [
+  'updater'
+]
 
 const vuexMigrations = new VuexPersistMigrations({
   untilVersion: packageJson.version,

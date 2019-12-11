@@ -22,7 +22,9 @@ export default class URIHandler {
       address: null,
       amount: null,
       label: null,
-      vendorField: null
+      nethash: null,
+      vendorField: null,
+      wallet: null
     }
 
     for (const prop in scheme) {
@@ -32,7 +34,9 @@ export default class URIHandler {
     scheme.address = schema[1]
     scheme.amount = scheme.amount ? Number(scheme.amount) : null
     scheme.label = scheme.label ? this.__fullyDecode(scheme.label) : null
+    scheme.nethash = scheme.nethash ? this.__fullyDecode(scheme.nethash) : null
     scheme.vendorField = scheme.vendorField ? this.__fullyDecode(scheme.vendorField) : null
+    scheme.wallet = scheme.wallet ? this.__fullyDecode(scheme.wallet) : null
 
     return scheme
   }

@@ -1,14 +1,12 @@
 import { Connection } from '@arkecosystem/client'
-import { Identities, Transactions } from '@arkecosystem/crypto'
+import { Transactions } from '@arkecosystem/crypto'
 import { castArray, chunk, orderBy } from 'lodash'
-import got from 'got'
 import moment from 'moment'
 import logger from 'electron-log'
-import semver from 'semver'
 import { TRANSACTION_TYPES } from '@config'
 import store from '@/store'
 import eventBus from '@/plugins/event-bus'
-import BigNumber from '@/plugins/bignumber'
+import TransactionService from '@/services/transaction'
 
 export default class ClientService {
   /*
@@ -38,7 +36,7 @@ export default class ClientService {
     const data = response.body.data
 
     const currentNetwork = store.getters['session/network']
-    if (currentNetwork.nethash === data.nethash) {
+    if (currentNetwork && currentNetwork.nethash === data.nethash) {
       const newLength = data.constants.vendorFieldLength
 
       if (newLength && (!currentNetwork.vendorField || newLength !== currentNetwork.vendorField.maxLength)) {
@@ -51,41 +49,6 @@ export default class ClientService {
     }
 
     return data
-  }
-
-  /**
-   * TODO: Remove unnecessary endpoints once core 2.4 is released (maybe wait until 2.5 so other chains have updated)
-   * Only for V2
-   * Get the configuration of a peer
-   * @param {String} host - URL of the host (using `core-p2p` port)
-   * @param {Number} [timeout=3000]
-   * @return {(Object|null)}
-   */
-  static async fetchPeerConfig (host, timeout = 3000) {
-    const walletApiHost = host.replace(/:\d+/, ':4040')
-    const endpoints = [
-      `${walletApiHost}/config`,
-      `${host}/config`,
-      walletApiHost
-    ]
-
-    for (const endpoint of endpoints) {
-      try {
-        const { body } = await got(endpoint, {
-          json: true,
-          timeout
-        })
-
-        if (body) {
-          return body.data
-        }
-      } catch (error) {
-        // TODO only if a new feature to enable logging is added
-        // console.log(`Error on \`${host}\``)
-      }
-    }
-
-    return null
   }
 
   static async fetchFeeStatistics (server, timeout) {
@@ -110,9 +73,6 @@ export default class ClientService {
 
   constructor (watchProfile = true) {
     this.__host = null
-    // The API version is imprecise, since new capabilities are being added continuously.
-    // So, this property uses the peer version to know which features are available
-    this.__capabilities = '2.0.0'
     this.client = new Connection('http://localhost')
 
     if (watchProfile) {
@@ -132,18 +92,6 @@ export default class ClientService {
 
   get version () {
     return this.__version
-  }
-
-  get capabilities () {
-    return this.__capabilities
-  }
-
-  set capabilities (version) {
-    this.__capabilities = semver.coerce(version)
-  }
-
-  isCapable (version) {
-    return semver.gte(this.capabilities, version)
   }
 
   /**
@@ -289,7 +237,7 @@ export default class ClientService {
     const result = transactions.map(transaction => {
       transaction.isSender = transaction.sender === address
       transaction.isRecipient = transaction.recipient === address
-      transaction.totalAmount = new BigNumber(transaction.amount).plus(transaction.fee)
+      transaction.totalAmount = TransactionService.getTotalAmount(transaction)
 
       return transaction
     })
@@ -310,55 +258,53 @@ export default class ClientService {
     options = options || {}
 
     const walletData = {}
-    if (this.isCapable('2.1.0')) {
-      let transactions = []
-      let hadFailure = false
+    let transactions = []
+    let hadFailure = false
 
-      for (const addressChunk of chunk(addresses, 20)) {
-        try {
-          const { body } = await this.client.api('transactions').search({
-            addresses: addressChunk
-          })
-          transactions.push(...body.data)
-        } catch (error) {
-          logger.error(error)
-          hadFailure = true
-        }
-      }
-
-      if (!hadFailure) {
-        transactions = orderBy(transactions, 'timestamp', 'desc').map(transaction => {
-          transaction.timestamp = transaction.timestamp.unix * 1000 // to milliseconds
-          transaction.isSender = addresses.includes(transaction.sender)
-          transaction.isRecipient = addresses.includes(transaction.recipient)
-
-          return transaction
+    for (const addressChunk of chunk(addresses, 20)) {
+      try {
+        const { body } = await this.client.api('transactions').search({
+          addresses: addressChunk
         })
-
-        for (const transaction of transactions) {
-          if (addresses.includes(transaction.sender)) {
-            if (!walletData[transaction.sender]) {
-              walletData[transaction.sender] = {}
-            }
-            walletData[transaction.sender][transaction.id] = transaction
-          }
-
-          if (transaction.recipient && addresses.includes(transaction.recipient)) {
-            if (!walletData[transaction.recipient]) {
-              walletData[transaction.recipient] = {}
-            }
-            walletData[transaction.recipient][transaction.id] = transaction
-          }
-        }
-
-        for (const address of Object.keys(walletData)) {
-          if (walletData[address]) {
-            walletData[address] = Object.values(walletData[address])
-          }
-        }
-
-        return walletData
+        transactions.push(...body.data)
+      } catch (error) {
+        logger.error(error)
+        hadFailure = true
       }
+    }
+
+    if (!hadFailure) {
+      transactions = orderBy(transactions, 'timestamp', 'desc').map(transaction => {
+        transaction.timestamp = transaction.timestamp.unix * 1000 // to milliseconds
+        transaction.isSender = addresses.includes(transaction.sender)
+        transaction.isRecipient = addresses.includes(transaction.recipient)
+
+        return transaction
+      })
+
+      for (const transaction of transactions) {
+        if (addresses.includes(transaction.sender)) {
+          if (!walletData[transaction.sender]) {
+            walletData[transaction.sender] = {}
+          }
+          walletData[transaction.sender][transaction.id] = transaction
+        }
+
+        if (transaction.recipient && addresses.includes(transaction.recipient)) {
+          if (!walletData[transaction.recipient]) {
+            walletData[transaction.recipient] = {}
+          }
+          walletData[transaction.recipient][transaction.id] = transaction
+        }
+      }
+
+      for (const address of Object.keys(walletData)) {
+        if (walletData[address]) {
+          walletData[address] = Object.values(walletData[address])
+        }
+      }
+
+      return walletData
     }
 
     for (const address of addresses) {
@@ -394,25 +340,11 @@ export default class ClientService {
   async fetchWallets (addresses) {
     const walletData = []
 
-    if (this.isCapable('2.1.0')) {
-      for (const addressChunk of chunk(addresses, 20)) {
-        const { body } = await this.client.api('wallets').search({
-          addresses: addressChunk
-        })
-        walletData.push(...body.data)
-      }
-    } else {
-      for (const address of addresses) {
-        try {
-          walletData.push(await this.fetchWallet(address))
-        } catch (error) {
-          logger.error(error)
-          const message = error.response ? error.response.body.message : error.message
-          if (message !== 'Wallet not found') {
-            throw error
-          }
-        }
-      }
+    for (const addressChunk of chunk(addresses, 20)) {
+      const { body } = await this.client.api('wallets').search({
+        addresses: addressChunk
+      })
+      walletData.push(...body.data)
     }
 
     return walletData
@@ -462,16 +394,12 @@ export default class ClientService {
     const matches = /(https?:\/\/)([a-zA-Z0-9.-_]+):([0-9]+)/.exec(this.host)
     const scheme = matches[1]
     const ip = matches[2]
-    const isHttps = scheme === 'https://'
-    let port = isHttps ? 443 : 80
-    if (matches[3]) {
-      port = matches[3]
-    }
+    const port = matches[3]
 
     return {
       ip,
       port,
-      isHttps
+      isHttps: scheme === 'https://'
     }
   }
 
@@ -556,7 +484,7 @@ export default class ClientService {
    * @param {Boolean} returnObject - to return the transaction of its internal struct
    * @returns {Object}
    */
-  async buildTransfer ({ amount, fee, recipientId, vendorField, passphrase, secondPassphrase, wif, networkWif }, isAdvancedFee = false, returnObject = false) {
+  async buildTransfer ({ amount, fee, recipientId, vendorField, passphrase, secondPassphrase, wif, networkWif, networkId }, isAdvancedFee = false, returnObject = false) {
     const staticFee = store.getters['transaction/staticFee'](TRANSACTION_TYPES.TRANSFER)
     if (!isAdvancedFee && fee.gt(staticFee)) {
       throw new Error(`Transfer fee should be smaller than ${staticFee}`)
@@ -578,7 +506,8 @@ export default class ClientService {
       passphrase,
       secondPassphrase,
       wif,
-      networkWif
+      networkWif,
+      networkId
     }, returnObject)
   }
 
@@ -620,11 +549,13 @@ export default class ClientService {
    * @param {String} data.passphrase
    * @param {String} data.secondPassphrase
    * @param {String} data.wif
+   * @param {String} data.networkWif
+   * @param {String} data.networkId
    * @param {Boolean} returnObject - to return the transaction of its internal struct
    * @returns {Object}
    */
-  __signTransaction ({ transaction, passphrase, secondPassphrase, wif, networkWif }, returnObject = false) {
-    const network = store.getters['session/network']
+  __signTransaction ({ transaction, passphrase, secondPassphrase, wif, networkWif, networkId }, returnObject = false) {
+    const network = store.getters['network/byId'](networkId) || store.getters['session/network']
     transaction = transaction.network(network.version)
 
     // TODO replace with dayjs
@@ -632,17 +563,27 @@ export default class ClientService {
     const now = moment().valueOf()
     transaction.data.timestamp = Math.floor((now - epochTime) / 1000)
 
-    if (passphrase) {
-      transaction = transaction.sign(this.normalizePassphrase(passphrase))
-    } else if (wif) {
-      transaction = transaction.signWithWif(wif, networkWif)
+    try {
+      if (passphrase) {
+        transaction = transaction.sign(this.normalizePassphrase(passphrase))
+      } else if (wif) {
+        transaction = transaction.signWithWif(wif, networkWif)
+      }
+
+      if (secondPassphrase) {
+        transaction = transaction.secondSign(this.normalizePassphrase(secondPassphrase))
+      }
+    } catch (error) {
+      //
     }
 
-    if (secondPassphrase) {
-      transaction = transaction.secondSign(this.normalizePassphrase(secondPassphrase))
+    const transactionResponse = returnObject ? transaction : transaction.getStruct()
+
+    if (!returnObject) {
+      transactionResponse.totalAmount = TransactionService.getTotalAmount(transactionResponse)
     }
 
-    return returnObject ? transaction : transaction.getStruct()
+    return transactionResponse
   }
 
   /**
@@ -701,32 +642,10 @@ export default class ClientService {
           return
         }
 
-        const network = store.getters['network/byId'](profile.networkId)
         const currentPeer = store.getters['peer/current']()
-
         if (currentPeer && currentPeer.ip) {
           const scheme = currentPeer.isHttps ? 'https://' : 'http://'
           this.host = `${scheme}${currentPeer.ip}:${currentPeer.port}`
-          this.capabilities = currentPeer.version
-
-        // TODO if we could use the server from network, then, it is a peer and this shouldn't be necessary
-        } else {
-          let { server, apiVersion } = network
-          this.host = server
-
-          // Infer which are the real capabilities of the peer
-          try {
-            const testAddress = Identities.Address.fromPassphrase('test', network.version)
-            const { address } = this.client.api('wallets').search({
-              addresses: [testAddress]
-            })
-
-            apiVersion = (address === testAddress) ? '2.1.0' : '2.0.0'
-          } catch (_) {
-            // The peer does not have capability to search for multiple wallets or transactions at once
-          }
-
-          this.capabilities = apiVersion
         }
 
         if (!oldProfile || profile.id !== oldProfile.id) {

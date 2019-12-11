@@ -36,7 +36,7 @@ describe('pages > ProfileAll', () => {
             'network/byToken': token => networkBy('token', token),
             'network/bySymbol': symbol => networkBy('symbol', symbol),
             'profile/all': profiles,
-            'profile/balanceWithLedger': _id => 13700000,
+            'profile/balanceWithLedger': _id => new BigNumber(13700000),
             'wallet/byProfileId': id => wallets[id]
           }
         },
@@ -62,20 +62,20 @@ describe('pages > ProfileAll', () => {
     ]
     wallets = {
       p1: [
-        { address: 'M0', balance: 1000 },
-        { address: 'M1', balance: 15089900 }
+        { address: 'M0', balance: '1000' },
+        { address: 'M1', balance: '15089900' }
       ],
       p2: [
-        { address: 'O0', balance: 12000000 },
-        { address: 'O1', balance: 190000 }
+        { address: 'O0', balance: '12000000' },
+        { address: 'O1', balance: '190000' }
       ],
       p3: [
-        { address: 'M2', balance: 0 },
-        { address: 'M3', balance: 50000000000 }
+        { address: 'M2', balance: '0' },
+        { address: 'M3', balance: '50000000000' }
       ],
       p4: [
-        { address: 'D0', balance: 1110000 },
-        { address: 'D1', balance: 50900000 }
+        { address: 'D0', balance: '1110000' },
+        { address: 'D1', balance: '50900000' }
       ]
     }
     ledgerWallets = []
@@ -110,8 +110,8 @@ describe('pages > ProfileAll', () => {
     describe('when the Ledger has wallets on the current network', () => {
       beforeEach(() => {
         ledgerWallets = [
-          { address: 'MxLedger0', balance: 9883102007 },
-          { address: 'MxLedger1', balance: 6723900701 }
+          { address: 'MxLedger0', balance: '9883102007' },
+          { address: 'MxLedger1', balance: '6723900701' }
         ]
       })
 
@@ -150,8 +150,8 @@ describe('pages > ProfileAll', () => {
     describe('when the Ledger has wallets on the current network', () => {
       beforeEach(() => {
         ledgerWallets = [
-          { address: 'MxLedger0', balance: 9883102007 },
-          { address: 'MxLedger1', balance: 6723900701 }
+          { address: 'MxLedger0', balance: '9883102007' },
+          { address: 'MxLedger1', balance: '6723900701' }
         ]
       })
 

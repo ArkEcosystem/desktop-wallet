@@ -80,6 +80,12 @@
       />
 
       <PortalTarget
+        :slot-props="{ setBlurFilter }"
+        name="updater"
+        @change="onPortalChange"
+      />
+
+      <PortalTarget
         name="loading"
         @change="onPortalChange"
       />
@@ -290,6 +296,7 @@ export default {
      * @return {void}
      */
     async loadNotEssential () {
+      ipcRenderer.send('updater:check-for-updates')
       await this.$store.dispatch('peer/refresh')
       this.$store.dispatch('peer/connectToBest', {})
 
@@ -313,11 +320,7 @@ export default {
         this.$warn('Ledger Disconnected!')
       })
 
-      try {
-        await this.$store.dispatch('app/checkNewVersion')
-      } catch (error) {
-        this.$error(this.$t('APP.RELEASE.REQUEST_ERROR'))
-      }
+      await Promise.all([this.$plugins.fetchPluginsFromAdapter(), this.$plugins.fetchBlacklist()])
     },
 
     onPortalChange (isActive) {
@@ -333,6 +336,10 @@ export default {
         } else {
           this.openUriTransaction(uri.deserialize())
         }
+      })
+
+      ipcRenderer.on('updater:update-available', (_, data) => {
+        this.$store.dispatch('updater/setAvailableRelease', data)
       })
     },
 

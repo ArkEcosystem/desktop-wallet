@@ -43,7 +43,7 @@ export default {
       }
 
       if (ignoreCurrent) {
-        const currentPeer = getters['current']()
+        const currentPeer = getters.current()
         if (currentPeer) {
           peers = peers.filter(peer => {
             return peer.ip !== currentPeer.ip
@@ -60,7 +60,7 @@ export default {
      * @return {(Object|undefined)}
      */
     get: (_, getters) => ip => {
-      return getters['all']().find(peer => peer.ip === ip)
+      return getters.all().find(peer => peer.ip === ip)
     },
 
     /**
@@ -69,7 +69,7 @@ export default {
      * @return {(Object|null)}
      */
     best: (_, getters) => (ignoreCurrent = true, networkId = null) => {
-      const peers = getters['bestPeers'](undefined, ignoreCurrent)
+      const peers = getters.bestPeers(undefined, ignoreCurrent)
       if (!peers) {
         return null
       }
@@ -83,7 +83,7 @@ export default {
      * @return {Object[]} containing peer objects
      */
     randomPeers: (_, getters) => (amount = 5, networkId = null) => {
-      const peers = getters['all'](true) // Ignore current peer
+      const peers = getters.all(true) // Ignore current peer
       if (!peers.length) {
         return []
       }
@@ -122,9 +122,9 @@ export default {
      * @return {Object[]} containing peer objects
      */
     broadcastPeers: (_, getters) => (networkId = null) => {
-      const bestPeers = getters['bestPeers'](10, false, networkId)
-      const randomPeers = getters['randomPeers'](5, networkId)
-      const seedPeers = getters['randomSeedPeers'](5, networkId)
+      const bestPeers = getters.bestPeers(10, false, networkId)
+      const randomPeers = getters.randomPeers(5, networkId)
+      const seedPeers = getters.randomSeedPeers(5, networkId)
       let peers = bestPeers.concat(randomPeers)
       if (seedPeers.length) {
         peers = peers.concat(seedPeers)
@@ -139,7 +139,7 @@ export default {
      * @return {Object[]}
      */
     bestPeers: (_, getters) => (maxRandom = 10, ignoreCurrent = true, networkId = null) => {
-      const peers = getters['all'](ignoreCurrent)
+      const peers = getters.all(ignoreCurrent)
       if (!peers.length) {
         return []
       }
@@ -215,6 +215,27 @@ export default {
 
   actions: {
     /**
+     * Set peers for specific network.
+     * @param  {Object[]} peers
+     * @param  {Number} networkId
+     * @return {void}
+     */
+    setToNetwork ({ commit }, { peers, networkId }) {
+      commit('SET_PEERS', {
+        peers: peers.map(peer => {
+          try {
+            return PeerModel.deserialize(peer)
+          } catch (error) {
+            this._vm.$logger.error(`Could not deserialize peer: ${error.message}`)
+          }
+
+          return null
+        }).filter(peer => peer !== null),
+        networkId
+      })
+    },
+
+    /**
      * Set peers for current network.
      * @param  {Object[]} peers
      * @return {void}
@@ -252,7 +273,6 @@ export default {
 
       if (peer) {
         this._vm.$client.host = getBaseUrl(peer)
-        this._vm.$client.capabilities = peer.version
 
         // TODO only when necessary (when / before sending) (if no dynamic)
         await dispatch('transaction/updateStaticFees', null, { root: true })
@@ -286,8 +306,8 @@ export default {
         peerDiscovery = await PeerDiscovery.new({
           networkOrHost: networkLookup[network.id]
         })
-      } else if (getters['current']()) {
-        const peerUrl = getBaseUrl(getters['current']())
+      } else if (getters.current()) {
+        const peerUrl = getBaseUrl(getters.current())
         peerDiscovery = await PeerDiscovery.new({
           networkOrHost: `${peerUrl}/api/v2/peers`
         })
@@ -304,8 +324,7 @@ export default {
         .findPeersWithPlugin('core-api', {
           additional: [
             'height',
-            'latency',
-            'version'
+            'latency'
           ]
         })
 
@@ -314,8 +333,7 @@ export default {
           .findPeersWithPlugin('core-wallet-api', {
             additional: [
               'height',
-              'latency',
-              'version'
+              'latency'
             ]
           })
       }
@@ -342,7 +360,7 @@ export default {
         }
       }
 
-      let peer = network ? getters['best'](true, network.id) : getters['best']()
+      let peer = network ? getters.best(true, network.id) : getters.best()
       if (!peer) {
         return null
       }
@@ -366,7 +384,7 @@ export default {
      */
     async connectToBest ({ dispatch, getters }, { refresh = true, skipIfCustom = true }) {
       if (skipIfCustom) {
-        const currentPeer = getters['current']()
+        const currentPeer = getters.current()
         if (!isEmpty(currentPeer) && currentPeer.isCustom) {
           // TODO only when necessary (when / before sending) (if no dynamic)
           await dispatch('transaction/updateStaticFees', null, { root: true })
@@ -409,7 +427,7 @@ export default {
     async updateCurrentPeerStatus ({ dispatch, getters }, currentPeer) {
       let updateCurrentPeer = false
       if (isEmpty(currentPeer)) {
-        currentPeer = { ...getters['current']() }
+        currentPeer = { ...getters.current() }
         updateCurrentPeer = true
       }
       if (isEmpty(currentPeer)) {

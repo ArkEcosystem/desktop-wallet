@@ -16,53 +16,16 @@
         />
       </div>
     </button>
-    <Portal
+    <AppUpdater
       v-if="isNotificationVisible"
-      to="modal"
-    >
-      <div class="modal-backdrop">
-        <div class="AppSidemenuImportantNotification__notification absolute pin flex justify-center items-center">
-          <div class="max-w-2/3 min-w-1/4 rounded-lg inline p-4 bg-theme-button-text text-theme-feature hover-button-blue-shadow-definition">
-            <!-- The real viewBox of `notification` and `download` is 0 0 15 15, but it is adjusted -->
-            <SvgIcon
-              class="fill-current text-theme-feature mr-1"
-              name="notification"
-              view-box="0 0 12 12"
-            />
-
-            <span
-              class="mr-2 cursor-pointer hover:text-theme-feature-item-alternative"
-              @click="download"
-            >
-              {{ notificationText }}
-            </span>
-
-            <button
-              class="AppSidemenuImportantNotification__notification__download rounded-lg -my-2 mr-2"
-              @click="download"
-            >
-              <SvgIcon
-                class="fill-current text-theme-feature"
-                name="download"
-                view-box="0 0 13 13"
-              />
-            </button>
-
-            <ButtonClose
-              class="dismiss cursor-pointer select-none float-right -my-2 ml-10 text-theme-feature"
-              @click="closeNotification"
-            />
-          </div>
-        </div>
-      </div>
-    </Portal>
+      @close="closeNotification"
+    />
   </div>
 </template>
 
 <script>
 import { mapGetters } from 'vuex'
-import releaseService from '@/services/release'
-import { ButtonClose } from '@/components/Button'
+import AppUpdater from '@/components/App/AppUpdater'
 import SvgIcon from '@/components/SvgIcon'
 
 /**
@@ -73,8 +36,8 @@ export default {
   name: 'AppSidemenuImportantNotification',
 
   components: {
-    ButtonClose,
-    SvgIcon
+    SvgIcon,
+    AppUpdater
   },
 
   props: {
@@ -90,14 +53,9 @@ export default {
   }),
 
   computed: {
-    ...mapGetters({
-      releaseVersion: 'app/latestReleaseVersion'
-    }),
-    notificationText () {
-      return this.$t('APP_SIDEMENU_NOTIFICATION.NOTIFICATION', { version: this.releaseVersion })
-    },
-    releaseUrl () {
-      return releaseService.latestReleaseUrl
+    ...mapGetters('updater', ['availableRelease']),
+    releaseVersion () {
+      return this.availableRelease && this.availableRelease.version
     },
     tooltipText () {
       return this.$t('APP_SIDEMENU_NOTIFICATION.TOOLTIP', { version: this.releaseVersion })
@@ -106,23 +64,9 @@ export default {
 
   methods: {
     closeNotification () {
-      document.removeEventListener('keyup', this.onEscKey)
-
       this.isNotificationVisible = false
-      this.$emit('close')
-    },
-    download () {
-      this.electron_openExternal(this.releaseUrl)
-      this.closeNotification()
-    },
-    onEscKey (event) {
-      if (event.keyCode === 27) {
-        this.closeNotification()
-      }
     },
     openNotification () {
-      document.addEventListener('keyup', this.onEscKey, { once: true })
-
       this.isNotificationVisible = true
     }
   }

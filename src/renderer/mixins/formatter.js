@@ -1,9 +1,19 @@
 import moment from 'moment'
+import prettyBytes from 'pretty-bytes'
 
 export default {
   methods: {
-    formatter_percentage (value) {
-      return `${this.$n(value, { minimumFractionDigits: 2 })}%`
+    formatter_bytes (value) {
+      return prettyBytes(value)
+    },
+
+    formatter_percentage (value, minimumFractionDigits = 2, maximumFractionDigits = null) {
+      const options = {
+        minimumFractionDigits,
+        ...(maximumFractionDigits && { maximumFractionDigits })
+      }
+
+      return `${this.$n(value, options)}%`
     },
 
     formatter_networkCurrency (value, digits) {

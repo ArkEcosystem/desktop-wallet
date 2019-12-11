@@ -272,6 +272,52 @@
               </button>
             </footer>
           </MenuTabItem>
+
+          <MenuTabItem
+            :label="$t('PAGES.PROFILE_EDITION.TAB_PLUGINS.TITLE')"
+            tab="plugins"
+            class="p-5"
+          >
+            <ListDivided>
+              <ListDividedItem
+                :label="$t('COMMON.FILTER_BLACKLISTED_PLUGINS')"
+                class="ProfileEdition__wallet-button-text"
+              >
+                <ButtonSwitch
+                  ref="blacklist"
+                  :is-active="filterBlacklistedPlugins"
+                  @change="selectFilterBlacklistedPlugins"
+                />
+              </ListDividedItem>
+
+              <ListDividedItem
+                :label="$t('COMMON.ADAPTER')"
+                :item-label-class="!isAdapterDropdownEnabled ? 'opacity-50' : ''"
+                :item-value-class="!isAdapterDropdownEnabled ? 'opacity-50 cursor-not-allowed' : ''"
+              >
+                <MenuDropdown
+                  :class="{
+                    'ProfileEdition__field--modified': modified.pluginAdapter && modified.pluginAdapter !== profile.pluginAdapter
+                  }"
+                  :items="availablePluginAdapters"
+                  :value="pluginAdapter"
+                  :position="['-50%', '0%']"
+                  :is-disabled="!isAdapterDropdownEnabled"
+                  @select="selectPluginAdapter"
+                />
+              </ListDividedItem>
+            </ListDivided>
+
+            <footer class="ProfileEdition__footer pb-10">
+              <button
+                :disabled="!isModified || nameError"
+                class="blue-button"
+                @click="save"
+              >
+                {{ $t('COMMON.SAVE') }}
+              </button>
+            </footer>
+          </MenuTabItem>
         </MenuTab>
       </div>
     </main>
@@ -283,16 +329,23 @@
       @ignore="onLeave(false)"
       @save="onLeave(true)"
     />
+
+    <PluginBlacklistDisclaimerModal
+      v-if="showBlacklistDisclaimer"
+      @close="acceptBlacklistDisclaimer(false)"
+      @continue="acceptBlacklistDisclaimer(true)"
+    />
   </div>
 </template>
 
 <script>
 import { clone, isEmpty } from 'lodash'
-import { BIP39, I18N } from '@config'
+import { BIP39, I18N, PLUGINS } from '@config'
 import { ButtonSwitch } from '@/components/Button'
 import { InputText } from '@/components/Input'
 import { ListDivided, ListDividedItem } from '@/components/ListDivided'
 import { MenuDropdown, MenuDropdownHandler, MenuTab, MenuTabItem } from '@/components/Menu'
+import { PluginBlacklistDisclaimerModal } from '@/components/PluginManager'
 import { ProfileLeavingConfirmation } from '@/components/Profile'
 import { SelectionAvatar, SelectionBackground, SelectionTheme } from '@/components/Selection'
 import SvgIcon from '@/components/SvgIcon'
@@ -314,6 +367,7 @@ export default {
     MenuTabItem,
     MenuDropdown,
     MenuDropdownHandler,
+    PluginBlacklistDisclaimerModal,
     ProfileLeavingConfirmation,
     SelectionAvatar,
     SelectionBackground,
@@ -332,7 +386,8 @@ export default {
       marketChartOptions: {}
     },
     routeLeaveCallback: null,
-    tab: 'profile'
+    tab: 'profile',
+    showBlacklistDisclaimer: false
   }),
 
   computed: {
@@ -392,6 +447,22 @@ export default {
       return this.session_profile.id === this.profile.id
     },
 
+    filterBlacklistedPlugins () {
+      return this.modified.filterBlacklistedPlugins || this.profile.filterBlacklistedPlugins
+    },
+    isAdapterDropdownEnabled () {
+      return this.availablePluginAdapters && Object.keys(this.availablePluginAdapters).length > 1
+    },
+    availablePluginAdapters () {
+      return PLUGINS.adapters.reduce((all, adapter) => {
+        all[adapter] = adapter
+
+        return all
+      }, {})
+    },
+    pluginAdapter () {
+      return this.modified.pluginAdapter || this.profile.pluginAdapter || PLUGINS.adapters[0]
+    },
     avatar () {
       return this.modified.avatar || this.profile.avatar
     },
@@ -589,6 +660,18 @@ export default {
       this.__updateSession('hideWalletButtonText', hideWalletButtonText)
     },
 
+    async selectFilterBlacklistedPlugins (filterBlacklistedPlugins) {
+      if (!filterBlacklistedPlugins && !this.$store.getters['app/hasAcceptedBlacklistDisclaimer']) {
+        this.showBlacklistDisclaimer = true
+      } else {
+        this.__updateSession('filterBlacklistedPlugins', filterBlacklistedPlugins)
+      }
+    },
+
+    async selectPluginAdapter (pluginAdapter) {
+      this.__updateSession('pluginAdapter', pluginAdapter)
+    },
+
     async selectIsMarketChartEnabled (isMarketChartEnabled) {
       const marketChartOptions = clone(this.$store.getters['session/marketChartOptions'])
       marketChartOptions.isEnabled = isMarketChartEnabled
@@ -605,13 +688,20 @@ export default {
       this.$set(this.modified, propertyName, value)
 
       if (this.isCurrentProfile) {
-        const action = `session/set${this.capitalizeFirst(propertyName)}`
+        const action = `session/set${this.strings_capitalizeFirst(propertyName)}`
         await this.$store.dispatch(action, value)
       }
     },
 
-    capitalizeFirst (value) {
-      return value.charAt(0).toUpperCase() + value.slice(1)
+    async acceptBlacklistDisclaimer (accepted) {
+      if (accepted) {
+        this.$store.dispatch('app/setHasAcceptedBlacklistDisclaimer', accepted)
+      } else {
+        this.$refs.blacklist.toggle()
+      }
+
+      this.selectFilterBlacklistedPlugins(!accepted)
+      this.showBlacklistDisclaimer = false
     }
   },
 
