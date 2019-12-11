@@ -561,9 +561,11 @@ export default {
     onInstall () {
       this.setModal('loading')
 
+      const installedPlugin = this.$store.getters['plugin/installedById'](this.selectedPlugin.id)
+
       ipcRenderer.send('plugin-manager:install', {
         pluginId: this.selectedPlugin.id,
-        isUpdate: this.isUpdate
+        pluginPath: installedPlugin ? installedPlugin.fullPath : null
       })
     },
 
