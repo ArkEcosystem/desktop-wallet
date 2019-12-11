@@ -1,4 +1,3 @@
-import path from 'path'
 import { PLUGINS } from '../../config'
 import { download } from 'electron-dl'
 import decompress from 'decompress'
@@ -12,7 +11,7 @@ export const setupPluginManager = ({ sendToWindow, mainWindow, ipcMain }) => {
   let savePath
 
   const pluginsPath = `${process.env.NODE_ENV !== 'development' ? PLUGINS.path : PLUGINS.devPath}`
-  const cachePath = path.join(pluginsPath, '.cache')
+  const cachePath = `${pluginsPath}/.cache`
 
   ensureDirSync(cachePath)
 
@@ -46,10 +45,10 @@ export const setupPluginManager = ({ sendToWindow, mainWindow, ipcMain }) => {
         await trash(pluginPath)
       }
 
-      pluginPath = path.join(pluginsPath, pluginId)
+      pluginPath = [pluginsPath, pluginId].join('/')
       await decompress(savePath, pluginPath, {
         map: file => {
-          file.path = path.join(...file.path.split(path.sep).slice(1))
+          file.path = file.path.split('/').slice(1).join('/')
           return file
         }
       })
