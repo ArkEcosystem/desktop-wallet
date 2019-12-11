@@ -39,14 +39,13 @@ export const setupPluginManager = ({ sendToWindow, mainWindow, ipcMain }) => {
     }
   })
 
-  ipcMain.on(prefix + 'install', async (_, { pluginId, isUpdate }) => {
-    const pluginPath = [pluginsPath, pluginId].join('/')
-
+  ipcMain.on(prefix + 'install', async (_, { pluginId, pluginPath }) => {
     try {
-      if (isUpdate) {
+      if (pluginPath) {
         await trash(pluginPath)
       }
 
+      pluginPath = [pluginsPath, pluginId].join('/')
       await decompress(savePath, pluginPath, {
         map: file => {
           file.path = file.path.split('/').slice(1).join('/')
