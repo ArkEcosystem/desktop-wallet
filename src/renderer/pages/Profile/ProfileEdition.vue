@@ -174,6 +174,13 @@
                 />
               </ListDividedItem>
 
+              <ListDividedItem :label="$t('COMMON.ADVANCED_MODE')">
+                <ButtonSwitch
+                  :is-active="isAdvancedModeEnabled"
+                  @change="setAdvancedMode"
+                />
+              </ListDividedItem>
+
               <ListDividedItem
                 :label="$t('COMMON.AVATAR')"
                 class="ProfileEdition__avatar"
@@ -495,6 +502,9 @@ export default {
     hideWalletButtonText () {
       return this.modified.hideWalletButtonText || this.profile.hideWalletButtonText
     },
+    isAdvancedModeEnabled () {
+      return this.modified.isAdvancedModeEnabled || this.profile.isAdvancedModeEnabled
+    },
     isMarketChartEnabled () {
       return this.modified.marketChartOptions.isEnabled || this.profile.marketChartOptions.isEnabled
     },
@@ -650,6 +660,10 @@ export default {
 
     selectNetwork (network) {
       this.$set(this.modified, 'networkId', network)
+    },
+
+    setAdvancedMode (mode) {
+      this.__updateSession('isAdvancedModeEnabled', mode)
     },
 
     async selectTheme (theme) {

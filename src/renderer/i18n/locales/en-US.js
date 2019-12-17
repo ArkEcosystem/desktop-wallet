@@ -47,7 +47,8 @@ export default {
     VERSION: 'Version',
     WARNING: 'Warning',
     WILL: 'will',
-    WALLET: 'Wallet'
+    WALLET: 'Wallet',
+    ADVANCED_MODE: 'Advanced Mode'
   },
 
   ANNOUNCEMENTS: {

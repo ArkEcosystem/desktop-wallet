@@ -11,6 +11,7 @@ export default {
     language: null,
     hideWalletButtonText: false,
     isMarketChartEnabled: true,
+    isAdvancedModeEnabled: false,
     marketChartOptions: { isEnabled: true, isExpanded: true, period: 'day' },
     name: null,
     profileId: null,
@@ -63,6 +64,7 @@ export default {
     timeFormat: state => state.timeFormat,
     hideWalletButtonText: state => state.hideWalletButtonText,
     isMarketChartEnabled: state => state.isMarketChartEnabled,
+    isAdvancedModeEnabled: state => state.isAdvancedModeEnabled,
     marketChartOptions: state => ({ ...state.marketChartOptions }),
     theme: state => state.theme,
     pluginManagerLayout: state => state.pluginManagerLayout,
@@ -113,6 +115,10 @@ export default {
 
     SET_IS_MARKET_CHART_ENABLED (state, isEnabled) {
       state.isMarketChartEnabled = isEnabled
+    },
+
+    SET_IS_ADVANCED_MODE_ENABLED (state, isEnabled) {
+      state.isAdvancedModeEnabled = isEnabled
     },
 
     SET_MARKET_CHART_OPTIONS (state, marketChartOptions) {
@@ -210,6 +216,7 @@ export default {
       state.timeFormat = 'Default'
       state.hideWalletButtonText = false
       state.isMarketChartEnabled = true
+      state.isMarketChartEnabled = false
       state.marketChartOptions = { isEnabled: true, isExpanded: true, period: 'day' }
       state.language = I18N.defaultLocale
       state.bip39Language = 'english'
@@ -242,6 +249,7 @@ export default {
       state.timeFormat = value.timeFormat
       state.hideWalletButtonText = value.hideWalletButtonText
       state.isMarketChartEnabled = value.isMarketChartEnabled
+      state.isAdvancedModeEnabled = value.isAdvancedModeEnabled
       state.marketChartOptions = value.marketChartOptions
       state.language = value.language
       state.bip39Language = value.bip39Language
@@ -309,6 +317,10 @@ export default {
 
     setIsMarketChartEnabled ({ commit }, value) {
       commit('SET_IS_MARKET_CHART_ENABLED', value)
+    },
+
+    setIsAdvancedModeEnabled ({ commit }, value) {
+      commit('SET_IS_ADVANCED_MODE_ENABLED', value)
     },
 
     setMarketChartOptions ({ commit }, value) {
