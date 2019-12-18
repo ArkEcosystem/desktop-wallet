@@ -1,6 +1,7 @@
 <template>
   <button
     class="PluginManagerButtonInstallSource justify-end"
+    :disabled="isDisabled"
     @click="emitClick"
   >
     <span class="PluginManagerButtonInstallSource__icon">
@@ -32,6 +33,11 @@ export default {
       type: String,
       required: false,
       default: 'url'
+    },
+    isDisabled: {
+      type: Boolean,
+      required: false,
+      default: false
     }
   },
 

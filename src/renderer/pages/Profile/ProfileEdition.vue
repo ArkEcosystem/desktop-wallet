@@ -390,6 +390,7 @@ export default {
       bip39Language: '',
       currency: '',
       timeFormat: '',
+      isAdvancedModeEnabled: false,
       marketChartOptions: {}
     },
     routeLeaveCallback: null,
@@ -564,6 +565,7 @@ export default {
     this.modified.currency = this.profile.currency
     this.modified.timeFormat = this.profile.timeFormat || 'Default'
     this.modified.marketChartOptions = this.profile.marketChartOptions
+    this.modified.isAdvancedModeEnabled = this.profile.isAdvancedModeEnabled
   },
 
   methods: {

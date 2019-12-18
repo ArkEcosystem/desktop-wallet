@@ -140,6 +140,10 @@ export default new BaseModel({
     pluginAdapter: {
       type: 'string',
       format: data => data.pluginAdapter || 'npm'
+    },
+    isAdvancedModeEnabled: {
+      type: 'boolean',
+      format: data => data.isAdvancedModeEnabled || false
     }
   },
   required: ['background', 'currency', 'language', 'name', 'networkId', 'theme']
