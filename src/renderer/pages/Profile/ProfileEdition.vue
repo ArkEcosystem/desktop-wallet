@@ -176,8 +176,9 @@
 
               <ListDividedItem :label="$t('COMMON.ADVANCED_MODE')">
                 <ButtonSwitch
+                  ref="advancedMode"
                   :is-active="isAdvancedModeEnabled"
-                  @change="setAdvancedMode"
+                  @change="selectEnableAdvancedMode"
                 />
               </ListDividedItem>
 
@@ -329,6 +330,12 @@
       </div>
     </main>
 
+    <ProfileAdvancedModeConfirmation
+      v-if="showAdvancedModeDisclaimer"
+      @close="acceptAdvancedModeDisclaimer(false)"
+      @save="acceptAdvancedModeDisclaimer(true)"
+    />
+
     <ProfileLeavingConfirmation
       v-if="routeLeaveCallback"
       :profile="profile"
@@ -353,7 +360,7 @@ import { InputText } from '@/components/Input'
 import { ListDivided, ListDividedItem } from '@/components/ListDivided'
 import { MenuDropdown, MenuDropdownHandler, MenuTab, MenuTabItem } from '@/components/Menu'
 import { PluginBlacklistDisclaimerModal } from '@/components/PluginManager'
-import { ProfileLeavingConfirmation } from '@/components/Profile'
+import { ProfileAdvancedModeConfirmation, ProfileLeavingConfirmation } from '@/components/Profile'
 import { SelectionAvatar, SelectionBackground, SelectionTheme } from '@/components/Selection'
 import SvgIcon from '@/components/SvgIcon'
 import Profile from '@/models/profile'
@@ -375,6 +382,7 @@ export default {
     MenuDropdown,
     MenuDropdownHandler,
     PluginBlacklistDisclaimerModal,
+    ProfileAdvancedModeConfirmation,
     ProfileLeavingConfirmation,
     SelectionAvatar,
     SelectionBackground,
@@ -395,7 +403,8 @@ export default {
     },
     routeLeaveCallback: null,
     tab: 'profile',
-    showBlacklistDisclaimer: false
+    showBlacklistDisclaimer: false,
+    showAdvancedModeDisclaimer: false
   }),
 
   computed: {
@@ -684,6 +693,14 @@ export default {
       }
     },
 
+    async selectEnableAdvancedMode (enableAdvancedMode) {
+      if (enableAdvancedMode) {
+        this.showAdvancedModeDisclaimer = true
+      } else {
+        this.setAdvancedMode(enableAdvancedMode)
+      }
+    },
+
     async selectPluginAdapter (pluginAdapter) {
       this.__updateSession('pluginAdapter', pluginAdapter)
     },
@@ -718,6 +735,16 @@ export default {
 
       this.selectFilterBlacklistedPlugins(!accepted)
       this.showBlacklistDisclaimer = false
+    },
+
+    async acceptAdvancedModeDisclaimer (accepted) {
+      if (accepted) {
+        this.setAdvancedMode(accepted)
+      } else {
+        this.$refs.advancedMode.toggle()
+      }
+
+      this.showAdvancedModeDisclaimer = false
     }
   },
 
