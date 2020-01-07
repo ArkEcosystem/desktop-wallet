@@ -3,7 +3,7 @@
     :to="portalTarget"
   >
     <div
-      slot-scope="{ setBlurFilter }"
+      slot-scope="{ setPortalHasContent }"
       class="ModalWindow"
       :class="{
         'ModalWindow--maximized': isMaximized,
@@ -31,7 +31,7 @@
                     :icon-name="isMaximized ? 'minus' : 'resize'"
                     icon-class="text-grey"
                     class="ModalWindow__resize-button p-6"
-                    @click="toggleMaximized(setBlurFilter)"
+                    @click="toggleMaximized(setPortalHasContent)"
                   />
                 </span>
 
@@ -150,7 +150,7 @@ export default {
   methods: {
     toggleMaximized (callback) {
       this.isMaximized = !this.isMaximized
-      isFunction(callback) && callback(this.isMaximized)
+      isFunction(callback) && callback(this.portalTarget, this.isMaximized)
     },
 
     onBackdropClick () {
