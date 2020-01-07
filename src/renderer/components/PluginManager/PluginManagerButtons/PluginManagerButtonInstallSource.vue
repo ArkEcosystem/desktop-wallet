@@ -1,21 +1,26 @@
 <template>
-  <button
-    class="PluginManagerButtonInstallSource justify-end"
-    :disabled="isDisabled"
-    @click="emitClick"
+  <div
+    v-tooltip="disabledTooltip"
+    class="justify-end"
   >
-    <span class="PluginManagerButtonInstallSource__icon">
-      <SvgIcon
-        :name="source === 'file' ? 'save': 'open-external'"
-        view-box="0 0 14 14"
-        class="text-center"
-      />
-    </span>
+    <button
+      class="PluginManagerButtonInstallSource"
+      :disabled="isDisabled"
+      @click="emitClick"
+    >
+      <span class="PluginManagerButtonInstallSource__icon">
+        <SvgIcon
+          :name="source === 'file' ? 'save': 'open-external'"
+          view-box="0 0 14 14"
+          class="text-center"
+        />
+      </span>
 
-    <span class="flex items-center h-10 px-4 whitespace-no-wrap">
-      {{ $t(`PAGES.PLUGIN_MANAGER.INSTALL_${source.toUpperCase()}`) }}
-    </span>
-  </button>
+      <span class="flex items-center h-10 px-4 whitespace-no-wrap">
+        {{ $t(`PAGES.PLUGIN_MANAGER.INSTALL_${source.toUpperCase()}`) }}
+      </span>
+    </button>
+  </div>
 </template>
 
 <script>
@@ -41,6 +46,19 @@ export default {
     }
   },
 
+  computed: {
+    disabledTooltip () {
+      if (!this.isDisabled) {
+        return null
+      }
+
+      return {
+        content: this.$t('COMMON.ENABLE_ADVANCED_MODE'),
+        placement: 'left'
+      }
+    }
+  },
+
   methods: {
     emitClick () {
       this.$emit('click')
@@ -52,7 +70,7 @@ export default {
 <style lang="postcss" scoped>
 .PluginManagerButtonInstallSource {
   transition: all .1s ease-in;
-  @apply .flex .items-center .font-semibold .bg-theme-button .rounded .cursor-pointer .text-theme-button-text .ml-4;
+  @apply .flex .items-center .font-semibold .bg-theme-button .rounded .cursor-pointer .text-theme-button-text;
 }
 .PluginManagerButtonInstallSource:hover {
   @apply .bg-blue .text-white;
