@@ -16,6 +16,7 @@ export default {
     DATE: 'Date',
     DELEGATE: 'Delegate',
     DONE: 'Done',
+    ENABLE_ADVANCED_MODE: 'Enable Advanced Mode to use this feature',
     FAILED_UPDATE: 'Failed to update \'{name}\'. Reason: {reason}',
     FAILED_FETCH: 'Failed to fetch {name}. Reason: "{msg}".',
     FETCH: 'Fetch',
