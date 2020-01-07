@@ -100,6 +100,7 @@ exports.MARKET = {
 exports.PLUGINS = {
   adapters: ['npm'],
   blacklistUrl: 'https://raw.githubusercontent.com/ark-ecosystem-desktop-plugins/blacklisted-plugins/master/blacklist.json',
+  whitelistUrl: 'https://raw.githubusercontent.com/ark-ecosystem-desktop-plugins/whitelist/master/whitelist.json',
   categories: [
     'gaming',
     'theme',

@@ -320,7 +320,7 @@ export default {
         this.$warn('Ledger Disconnected!')
       })
 
-      await Promise.all([this.$plugins.fetchPluginsFromAdapter(), this.$plugins.fetchBlacklist()])
+      await Promise.all([this.$plugins.fetchPluginsFromAdapter(), this.$plugins.fetchBlacklist(), this.$plugins.fetchWhitelist()])
     },
 
     onPortalChange (isActive) {

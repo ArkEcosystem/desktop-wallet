@@ -16,6 +16,9 @@ export default {
       global: [],
       local: []
     },
+    whitelisted: {
+      global: []
+    },
     pluginOptions: {},
     lastFetched: 0
   },
@@ -31,7 +34,7 @@ export default {
       let plugins = getters[filter || 'all']
 
       plugins = plugins.filter(plugin => {
-        if (rootGetters['session/filterBlacklistedPlugins'] && getters.isBlacklisted(plugin.config.id)) {
+        if ((rootGetters['session/filterBlacklistedPlugins'] && getters.isBlacklisted(plugin.config.id)) || !getters.isWhitelisted(plugin)) {
           return false
         }
 
@@ -94,6 +97,8 @@ export default {
 
     blacklisted: state => state.blacklisted,
 
+    whitelisted: state => state.whitelisted,
+
     enabled: (state, _, __, rootGetters) => {
       const profileId = rootGetters['session/profileId']
       if (!profileId || !state.enabled[profileId]) {
@@ -138,6 +143,14 @@ export default {
 
     isBlacklisted: (_, getters) => pluginId => {
       return getters.blacklisted.global.includes(pluginId) || getters.blacklisted.local.includes(pluginId)
+    },
+
+    isWhitelisted: (_, getters) => (plugin) => {
+      if (Object.prototype.hasOwnProperty.call(getters.whitelisted.global, plugin.config.id)) {
+        return semver.lte(plugin.config.version, getters.whitelisted.global[plugin.config.id])
+      }
+
+      return false
     },
 
     isInstalledSupported: (_, getters) => pluginId => {
@@ -270,6 +283,10 @@ export default {
 
     SET_BLACKLISTED_PLUGINS (state, { scope, plugins }) {
       Vue.set(state.blacklisted, scope, plugins)
+    },
+
+    SET_WHITELISTED_PLUGINS (state, { scope, plugins }) {
+      Vue.set(state.whitelisted, scope, plugins)
     },
 
     SET_LOADED_PLUGIN (state, data) {
@@ -410,6 +427,10 @@ export default {
 
     setBlacklisted ({ commit, rootGetters }, { scope, plugins }) {
       commit('SET_BLACKLISTED_PLUGINS', { scope, plugins })
+    },
+
+    setWhitelisted ({ commit, rootGetters }, { scope, plugins }) {
+      commit('SET_WHITELISTED_PLUGINS', { scope, plugins })
     },
 
     setLoaded ({ commit, getters, rootGetters }, data) {
