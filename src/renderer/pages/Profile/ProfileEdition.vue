@@ -174,6 +174,14 @@
                 />
               </ListDividedItem>
 
+              <ListDividedItem :label="$t('COMMON.ADVANCED_MODE')">
+                <ButtonSwitch
+                  ref="advancedMode"
+                  :is-active="isAdvancedModeEnabled"
+                  @change="selectEnableAdvancedMode"
+                />
+              </ListDividedItem>
+
               <ListDividedItem
                 :label="$t('COMMON.AVATAR')"
                 class="ProfileEdition__avatar"
@@ -322,6 +330,12 @@
       </div>
     </main>
 
+    <ProfileAdvancedModeConfirmation
+      v-if="showAdvancedModeDisclaimer"
+      @close="acceptAdvancedModeDisclaimer(false)"
+      @save="acceptAdvancedModeDisclaimer(true)"
+    />
+
     <ProfileLeavingConfirmation
       v-if="routeLeaveCallback"
       :profile="profile"
@@ -346,7 +360,7 @@ import { InputText } from '@/components/Input'
 import { ListDivided, ListDividedItem } from '@/components/ListDivided'
 import { MenuDropdown, MenuDropdownHandler, MenuTab, MenuTabItem } from '@/components/Menu'
 import { PluginBlacklistDisclaimerModal } from '@/components/PluginManager'
-import { ProfileLeavingConfirmation } from '@/components/Profile'
+import { ProfileAdvancedModeConfirmation, ProfileLeavingConfirmation } from '@/components/Profile'
 import { SelectionAvatar, SelectionBackground, SelectionTheme } from '@/components/Selection'
 import SvgIcon from '@/components/SvgIcon'
 import Profile from '@/models/profile'
@@ -368,6 +382,7 @@ export default {
     MenuDropdown,
     MenuDropdownHandler,
     PluginBlacklistDisclaimerModal,
+    ProfileAdvancedModeConfirmation,
     ProfileLeavingConfirmation,
     SelectionAvatar,
     SelectionBackground,
@@ -383,11 +398,13 @@ export default {
       bip39Language: '',
       currency: '',
       timeFormat: '',
+      isAdvancedModeEnabled: false,
       marketChartOptions: {}
     },
     routeLeaveCallback: null,
     tab: 'profile',
-    showBlacklistDisclaimer: false
+    showBlacklistDisclaimer: false,
+    showAdvancedModeDisclaimer: false
   }),
 
   computed: {
@@ -495,6 +512,9 @@ export default {
     hideWalletButtonText () {
       return this.modified.hideWalletButtonText || this.profile.hideWalletButtonText
     },
+    isAdvancedModeEnabled () {
+      return this.modified.isAdvancedModeEnabled || this.profile.isAdvancedModeEnabled
+    },
     isMarketChartEnabled () {
       return this.modified.marketChartOptions.isEnabled || this.profile.marketChartOptions.isEnabled
     },
@@ -554,6 +574,7 @@ export default {
     this.modified.currency = this.profile.currency
     this.modified.timeFormat = this.profile.timeFormat || 'Default'
     this.modified.marketChartOptions = this.profile.marketChartOptions
+    this.modified.isAdvancedModeEnabled = this.profile.isAdvancedModeEnabled
   },
 
   methods: {
@@ -652,6 +673,10 @@ export default {
       this.$set(this.modified, 'networkId', network)
     },
 
+    setAdvancedMode (mode) {
+      this.__updateSession('isAdvancedModeEnabled', mode)
+    },
+
     async selectTheme (theme) {
       this.__updateSession('theme', theme)
     },
@@ -665,6 +690,14 @@ export default {
         this.showBlacklistDisclaimer = true
       } else {
         this.__updateSession('filterBlacklistedPlugins', filterBlacklistedPlugins)
+      }
+    },
+
+    async selectEnableAdvancedMode (enableAdvancedMode) {
+      if (enableAdvancedMode) {
+        this.showAdvancedModeDisclaimer = true
+      } else {
+        this.setAdvancedMode(enableAdvancedMode)
       }
     },
 
@@ -702,6 +735,16 @@ export default {
 
       this.selectFilterBlacklistedPlugins(!accepted)
       this.showBlacklistDisclaimer = false
+    },
+
+    async acceptAdvancedModeDisclaimer (accepted) {
+      if (accepted) {
+        this.setAdvancedMode(accepted)
+      } else {
+        this.$refs.advancedMode.toggle()
+      }
+
+      this.showAdvancedModeDisclaimer = false
     }
   },
 
