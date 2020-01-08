@@ -34,7 +34,11 @@ export default {
       let plugins = getters[filter || 'all']
 
       plugins = plugins.filter(plugin => {
-        if ((rootGetters['session/filterBlacklistedPlugins'] && getters.isBlacklisted(plugin.config.id)) || !getters.isWhitelisted(plugin)) {
+        if (rootGetters['session/filterBlacklistedPlugins'] && getters.isBlacklisted(plugin.config.id)) {
+          return false
+        }
+
+        if (!getters.installedById(plugin.config.id) && !getters.isWhitelisted(plugin)) {
           return false
         }
 
