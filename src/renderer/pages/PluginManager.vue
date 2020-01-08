@@ -12,6 +12,7 @@
         />
 
         <PluginManagerButtonInstallSource
+          :is-disabled="!isAdvancedModeEnabled"
           source="url"
           @click="setModal('url')"
         />
@@ -338,6 +339,10 @@ export default {
       }
 
       return colors
+    },
+
+    isAdvancedModeEnabled () {
+      return this.$store.getters['session/isAdvancedModeEnabled']
     },
 
     theme () {
