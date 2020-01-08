@@ -429,8 +429,16 @@ export default {
       commit('SET_INSTALLED_PLUGIN', plugin)
     },
 
-    setBlacklisted ({ commit, rootGetters }, { scope, plugins }) {
+    async setBlacklisted ({ commit, dispatch, getters, rootGetters }, { scope, plugins }) {
       commit('SET_BLACKLISTED_PLUGINS', { scope, plugins })
+
+      for (const plugin of plugins) {
+        for (const profile of rootGetters['profile/all']) {
+          if (getters.isEnabled(plugin, profile.id)) {
+            await dispatch('setEnabled', { enabled: false, pluginId: plugin, profileId: profile.id })
+          }
+        }
+      }
     },
 
     setWhitelisted ({ commit, rootGetters }, { scope, plugins }) {
