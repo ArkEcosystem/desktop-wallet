@@ -420,7 +420,7 @@ export default {
       }
     },
 
-    setAvailable ({ commit, getters }, plugins) {
+    setAvailable ({ commit }, plugins) {
       commit('SET_AVAILABLE_PLUGINS', plugins)
       commit('SET_LAST_FETCHED', Date.now())
     },
