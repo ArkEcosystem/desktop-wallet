@@ -67,4 +67,11 @@ describe('SessionModule', () => {
       expect(store.getters['session/hideWalletButtonText']).toEqual(true)
     })
   })
+
+  describe('actions > setIsAdvancedModeEnabled', () => {
+    it('should set the value for isAdvancedModeEnabled', () => {
+      store.dispatch('session/setIsAdvancedModeEnabled', true)
+      expect(store.getters['session/isAdvancedModeEnabled']).toEqual(true)
+    })
+  })
 })

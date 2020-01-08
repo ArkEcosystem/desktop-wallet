@@ -20,7 +20,7 @@ describe('PluginManagerButtonInstallSource', () => {
   })
 
   it('should emit click event', () => {
-    wrapper.trigger('click')
+    wrapper.find('.PluginManagerButtonInstallSource').trigger('click')
     expect(wrapper.emitted('click')).toBeTruthy()
   })
 })
