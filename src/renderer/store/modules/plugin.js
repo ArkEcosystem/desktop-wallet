@@ -16,6 +16,9 @@ export default {
       global: [],
       local: []
     },
+    whitelisted: {
+      global: []
+    },
     pluginOptions: {},
     lastFetched: 0
   },
@@ -32,6 +35,10 @@ export default {
 
       plugins = plugins.filter(plugin => {
         if (rootGetters['session/filterBlacklistedPlugins'] && getters.isBlacklisted(plugin.config.id)) {
+          return false
+        }
+
+        if (!getters.installedById(plugin.config.id) && !getters.isWhitelisted(plugin)) {
           return false
         }
 
@@ -94,6 +101,8 @@ export default {
 
     blacklisted: state => state.blacklisted,
 
+    whitelisted: state => state.whitelisted,
+
     enabled: (state, _, __, rootGetters) => {
       const profileId = rootGetters['session/profileId']
       if (!profileId || !state.enabled[profileId]) {
@@ -138,6 +147,14 @@ export default {
 
     isBlacklisted: (_, getters) => pluginId => {
       return getters.blacklisted.global.includes(pluginId) || getters.blacklisted.local.includes(pluginId)
+    },
+
+    isWhitelisted: (_, getters) => (plugin) => {
+      if (Object.prototype.hasOwnProperty.call(getters.whitelisted.global, plugin.config.id)) {
+        return semver.lte(plugin.config.version, getters.whitelisted.global[plugin.config.id])
+      }
+
+      return false
     },
 
     isInstalledSupported: (_, getters) => pluginId => {
@@ -272,6 +289,10 @@ export default {
       Vue.set(state.blacklisted, scope, plugins)
     },
 
+    SET_WHITELISTED_PLUGINS (state, { scope, plugins }) {
+      Vue.set(state.whitelisted, scope, plugins)
+    },
+
     SET_LOADED_PLUGIN (state, data) {
       if (!state.loaded[data.profileId]) {
         Vue.set(state.loaded, data.profileId, {})
@@ -399,7 +420,7 @@ export default {
       }
     },
 
-    setAvailable ({ commit, getters }, plugins) {
+    setAvailable ({ commit }, plugins) {
       commit('SET_AVAILABLE_PLUGINS', plugins)
       commit('SET_LAST_FETCHED', Date.now())
     },
@@ -408,8 +429,20 @@ export default {
       commit('SET_INSTALLED_PLUGIN', plugin)
     },
 
-    setBlacklisted ({ commit, rootGetters }, { scope, plugins }) {
+    async setBlacklisted ({ commit, dispatch, getters, rootGetters }, { scope, plugins }) {
       commit('SET_BLACKLISTED_PLUGINS', { scope, plugins })
+
+      for (const plugin of plugins) {
+        for (const profile of rootGetters['profile/all']) {
+          if (profile.filterBlacklistedPlugins && getters.isEnabled(plugin, profile.id)) {
+            await dispatch('setEnabled', { enabled: false, pluginId: plugin, profileId: profile.id })
+          }
+        }
+      }
+    },
+
+    setWhitelisted ({ commit, rootGetters }, { scope, plugins }) {
+      commit('SET_WHITELISTED_PLUGINS', { scope, plugins })
     },
 
     setLoaded ({ commit, getters, rootGetters }, data) {

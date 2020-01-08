@@ -270,7 +270,7 @@ export class PluginManager {
     if (force || dayjs().isAfter(dayjs(this.app.$store.getters['plugin/lastFetched']).add(
       PLUGINS.updateInterval.value, PLUGINS.updateInterval.unit
     ))) {
-      requests.push(this.fetchPluginsFromAdapter(), this.fetchBlacklist())
+      requests.push(this.fetchPluginsFromAdapter(), this.fetchBlacklist(), this.fetchWhitelist())
     }
 
     await Promise.all(requests)
@@ -316,6 +316,15 @@ export class PluginManager {
       this.app.$store.dispatch('plugin/setBlacklisted', { scope: 'global', plugins: body.plugins })
     } catch (error) {
       console.error(`Could not fetch blacklist from '${PLUGINS.blacklistUrl}: ${error.message}`)
+    }
+  }
+
+  async fetchWhitelist () {
+    try {
+      const { body } = await got(PLUGINS.whitelistUrl, { json: true })
+      this.app.$store.dispatch('plugin/setWhitelisted', { scope: 'global', plugins: body.plugins })
+    } catch (error) {
+      console.error(`Could not fetch whitelist from '${PLUGINS.whitelistUrl}: ${error.message}`)
     }
   }
 
