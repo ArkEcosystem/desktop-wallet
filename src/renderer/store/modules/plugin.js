@@ -434,7 +434,7 @@ export default {
 
       for (const plugin of plugins) {
         for (const profile of rootGetters['profile/all']) {
-          if (getters.isEnabled(plugin, profile.id)) {
+          if (profile.filterBlacklistedPlugins && getters.isEnabled(plugin, profile.id)) {
             await dispatch('setEnabled', { enabled: false, pluginId: plugin, profileId: profile.id })
           }
         }
