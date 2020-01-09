@@ -248,6 +248,14 @@ export default {
       }, [])
     },
 
+    profileHasPluginOptions: (state, _, __, rootGetters) => (pluginId, profileId) => {
+      if (!profileId) {
+        profileId = rootGetters['session/profileId']
+      }
+
+      return state.pluginOptions[profileId] && state.pluginOptions[profileId][pluginId]
+    },
+
     pluginOptions: (state) => (pluginId, profileId) => {
       if (!state.pluginOptions[profileId]) {
         return {}
