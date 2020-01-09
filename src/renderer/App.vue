@@ -73,26 +73,26 @@
       />
 
       <PortalTarget
-        :slot-props="{ setBlurFilter }"
+        :slot-props="{ setPortalHasContent }"
         name="modal"
         multiple
-        @change="onPortalChange"
+        @change="onPortalChange('modal', ...arguments)"
       />
 
       <PortalTarget
-        :slot-props="{ setBlurFilter }"
+        :slot-props="{ setPortalHasContent }"
         name="updater"
-        @change="onPortalChange"
+        @change="onPortalChange('updater', ...arguments)"
       />
 
       <PortalTarget
         name="loading"
-        @change="onPortalChange"
+        @change="onPortalChange('loading', ...arguments)"
       />
 
       <PortalTarget
         name="qr-scan"
-        @change="onPortalChange"
+        @change="onPortalChange('qr-scan', ...arguments)"
       />
 
       <AlertMessage />
@@ -127,8 +127,14 @@ export default {
 
   data: vm => ({
     isReady: false,
-    hasBlurFilter: false,
     isUriTransactionOpen: false,
+    forceBlurFilter: false,
+    portalHasContent: {
+      modal: false,
+      update: false,
+      loading: false,
+      'qr-scan': false
+    },
     uriTransactionSchema: {},
     aliveRouteComponents: []
   }),
@@ -142,6 +148,9 @@ export default {
   }),
 
   computed: {
+    hasBlurFilter () {
+      return Object.values(this.portalHasContent).some(hasContent => !!hasContent)
+    },
     background () {
       return this.$store.getters['session/background'] || `wallpapers/${this.hasSeenIntroduction ? 1 : 2}Default.png`
     },
@@ -320,11 +329,11 @@ export default {
         this.$warn('Ledger Disconnected!')
       })
 
-      await Promise.all([this.$plugins.fetchPluginsFromAdapter(), this.$plugins.fetchBlacklist()])
+      await Promise.all([this.$plugins.fetchPluginsFromAdapter(), this.$plugins.fetchBlacklist(), this.$plugins.fetchWhitelist()])
     },
 
-    onPortalChange (isActive) {
-      this.hasBlurFilter = isActive
+    onPortalChange (portal, isActive) {
+      this.setPortalHasContent(portal, isActive)
     },
 
     __watchProcessURL () {
@@ -353,8 +362,8 @@ export default {
       this.uriTransactionSchema = {}
     },
 
-    setBlurFilter (isActive) {
-      this.hasBlurFilter = isActive
+    setPortalHasContent (portal, isActive) {
+      this.portalHasContent[portal] = isActive
     },
 
     setIntroDone () {
