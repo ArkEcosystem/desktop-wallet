@@ -1,5 +1,5 @@
 <template>
-  <div class="mx-4 overflow-hidden">
+  <div class="WalletMultiSignature mx-4 overflow-hidden">
     <div class="flex flex-row pb-5 border-b border-dashed border-theme-line-separator">
       <div class="flex flex-col justify-center pl-4">
         <span class="font-bold">

@@ -1,6 +1,6 @@
 <template>
   <form
-    class="flex flex-col"
+    class="TransactionFormBridgechainRegistrationUpdate flex flex-col"
     @submit.prevent
   >
     <template>

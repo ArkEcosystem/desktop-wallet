@@ -3,6 +3,7 @@
     v-if="isVisible"
     :allow-close="showClose"
     container-classes="w-1/2"
+    class="ModalLoader"
     portal-target="loading"
     @close="toggle"
   >
