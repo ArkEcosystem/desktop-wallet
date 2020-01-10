@@ -11,7 +11,7 @@
       <div class="flex-1 flex flex-row items-center ml-4">
         <div class="flex-1 text-right pr-4">
           <span class="font-bold">{{ $t('PEER.PEER') }}:</span>
-          <span :class="{ 'font-bold': !peer }">{{ peer ? `${peer.host}:${peer.port}` : $t('PEER.NONE') }}</span>
+          <span :class="{ 'font-bold': !peer }">{{ peerOutput }}</span>
         </div>
 
         <ButtonModal
@@ -72,6 +72,14 @@ export default {
   computed: {
     peer () {
       return this.$store.getters['session/multiSignaturePeer']
+    },
+
+    peerOutput () {
+      if (!this.peer) {
+        return this.$t('PEER.NONE')
+      }
+
+      return `${this.peer.host}:${this.peer.port}`
     }
   },
 
