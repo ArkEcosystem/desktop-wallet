@@ -14,6 +14,19 @@ beforeEach(() => {
         permissions: []
       }
     },
+    mocks: {
+      $store: {
+        getters: {
+          'plugin/profileHasPluginOptions': (pluginId) => {
+            if (pluginId === 'hasOptions') {
+              return true
+            }
+
+            return false
+          }
+        }
+      }
+    },
     stubs: {
       ListDivided: '<div class="ListDivided" />'
     }
@@ -30,7 +43,19 @@ describe('PluginRemovalModal', () => {
     expect(wrapper.find('.ListDivided').exists()).toBeFalse()
   })
 
-  it('should render divided list if plugin has STORAGE permission', () => {
+  it('should render divided list if plugin has STORAGE permission and data stored', () => {
+    wrapper.setProps({
+      plugin: {
+        id: 'hasOptions',
+        permissions: ['STORAGE']
+      }
+    })
+
+    expect(wrapper.vm.hasStorage).toBeTrue()
+    expect(wrapper.find('.ListDivided').exists()).toBeTrue()
+  })
+
+  it('should not render divided list if plugin has STORAGE permission but no data stored', () => {
     wrapper.setProps({
       plugin: {
         id: 'test',
@@ -38,8 +63,8 @@ describe('PluginRemovalModal', () => {
       }
     })
 
-    expect(wrapper.vm.hasStorage).toBeTrue()
-    expect(wrapper.find('.ListDivided').exists()).toBeTrue()
+    expect(wrapper.vm.hasStorage).toBeFalse()
+    expect(wrapper.find('.ListDivided').exists()).toBeFalse()
   })
 
   describe('Methods', () => {
