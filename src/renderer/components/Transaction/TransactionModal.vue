@@ -375,6 +375,8 @@ export default {
   min-width: 38rem;
 }
 
+.TransactionModalBridgechainRegistration,
+.TransactionModalBridgechainUpdate,
 .TransactionModalIpfs,
 .TransactionModalMultiPayment,
 .TransactionModalMultiSignature {
