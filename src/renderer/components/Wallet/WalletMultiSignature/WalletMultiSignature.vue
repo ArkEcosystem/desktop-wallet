@@ -51,8 +51,6 @@ import { ModalLoader, ModalPeer } from '@/components/Modal'
 import { WalletTransactionsMultiSignature } from '@/components/Wallet/WalletTransactions'
 import MultiSignature from '@/services/client-multisig'
 
-console.log(WalletTransactionsMultiSignature)
-
 export default {
   name: 'WalletMultiSignature',
 
