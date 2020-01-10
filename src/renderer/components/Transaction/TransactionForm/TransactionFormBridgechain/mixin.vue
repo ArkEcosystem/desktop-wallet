@@ -43,6 +43,7 @@
           :items="$v.form.asset.seedNodes.$model"
           :helper-text="seedNodesError"
           :is-invalid="!!seedNodesError"
+          class="mt-4"
           @remove="emitRemoveSeedNode"
         />
       </div>
