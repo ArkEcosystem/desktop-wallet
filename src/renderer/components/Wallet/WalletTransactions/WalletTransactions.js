@@ -1,37 +1,5 @@
-<template>
-  <div class="WalletTransactions">
-    <div
-      v-if="newTransactionsNotice && newTransactionsNotice !== '0'"
-      class="bg-theme-feature flex flex-row"
-    >
-      <div
-        class="mb-2 py-4 px-6 rounded-l text-theme-voting-banner-text bg-theme-voting-banner-background w-full text-center"
-      >
-        {{ newTransactionsNotice }}
-      </div>
-    </div>
-    <TransactionTable
-      :current-page="currentPage"
-      :rows="fetchedTransactions"
-      :total-rows="totalCount"
-      :is-loading="isLoading"
-      :is-remote="true"
-      :has-pagination="totalCount > 0"
-      :sort-query="{
-        field: queryParams.sort.field,
-        type: queryParams.sort.type
-      }"
-      :per-page="transactionTableRowCount"
-      :transaction-type="transactionType"
-      @on-per-page-change="onPerPageChange"
-      @on-page-change="onPageChange"
-      @on-sort-change="onSortChange"
-    />
-  </div>
-</template>
-
-<script>
-import { at, isEqual } from 'lodash'
+import { at } from 'lodash'
+import mixin from './mixin'
 import mergeTableTransactions from '@/components/utils/merge-table-transactions'
 import { TransactionTable } from '@/components/Transaction'
 
@@ -42,65 +10,13 @@ export default {
     TransactionTable
   },
 
+  mixins: [mixin],
+
   props: {
     transactionType: {
       type: Number,
       required: false,
       default: null
-    }
-  },
-
-  data: () => ({
-    currentPage: 1,
-    isFetching: false,
-    isLoading: false,
-    fetchedTransactions: [],
-    expiryEvents: [],
-    totalCount: 0,
-    newTransactionsNotice: null,
-    lastStatusRefresh: null,
-    queryParams: {
-      page: 1,
-      limit: 10,
-      sort: {
-        field: 'timestamp',
-        type: 'desc'
-      }
-    }
-  }),
-
-  computed: {
-    transactionTableRowCount: {
-      get () {
-        return this.$store.getters['session/transactionTableRowCount']
-      },
-      set (count) {
-        this.$store.dispatch('session/setTransactionTableRowCount', count)
-
-        this.$store.dispatch('profile/update', {
-          ...this.session_profile,
-          transactionTableRowCount: count
-        })
-      }
-    }
-  },
-
-  watch: {
-    // This watcher would invoke the `fetch` after the `Synchronizer`
-    wallet_fromRoute (newValue, oldValue) {
-      const currentTimestamp = Math.round((new Date()).getTime() / 1000)
-      if (newValue.address !== oldValue.address) {
-        this.lastStatusRefresh = null
-        this.newTransactionsNotice = null
-        this.reset()
-        this.loadTransactions()
-
-        this.disableNewTransactionEvent(oldValue.address)
-        this.enableNewTransactionEvent(newValue.address)
-      } else if (this.lastStatusRefresh < currentTimestamp - 1) {
-        this.lastStatusRefresh = currentTimestamp
-        this.refreshStatus()
-      }
     }
   },
 
@@ -146,11 +62,11 @@ export default {
 
       const transactions = this.$store.getters['transaction/byAddress'](address, { includeExpired: true })
 
-      if (!this.transactionType) {
+      if (this.transactionType === null) {
         return transactions
       }
 
-      return transactions.filter(transaction => transaction.type === this.transactionType) || []
+      return transactions.filter(transaction => transaction.type === this.transactionType)
     },
 
     async getTransactions (address) {
@@ -178,7 +94,7 @@ export default {
 
       let address
       if (this.wallet_fromRoute) {
-        address = this.wallet_fromRoute.address.slice()
+        address = this.wallet_fromRoute.address
       }
 
       this.isFetching = true
@@ -195,6 +111,7 @@ export default {
 
         if (this.wallet_fromRoute && address === this.wallet_fromRoute.address) {
           this.$set(this, 'fetchedTransactions', transactions)
+          // TODO: Does this need fixing? This only stores total count from API, not including locally stored transactions
           this.totalCount = response.totalCount
         }
       } catch (error) {
@@ -215,33 +132,16 @@ export default {
       }
     },
 
-    /**
-     * Fetch the transaction and show the loading animation while the response
-     * is received
-     */
-    async loadTransactions () {
-      if (!this.wallet_fromRoute || this.isFetching) {
-        return
-      }
-
-      this.newTransactionsNotice = null
-      this.isLoading = true
-      this.fetchTransactions()
-    },
-
     refreshStatusEvent () {
       this.refreshStatus()
     },
 
     async refreshStatus () {
-      let address
-      if (this.wallet_fromRoute) {
-        address = this.wallet_fromRoute.address.slice()
-      }
-
-      if (!address || !this.wallet_fromRoute) {
+      if (!this.wallet_fromRoute || !this.wallet_fromRoute.address) {
         return
       }
+
+      const address = this.wallet_fromRoute.address
 
       try {
         let newTransactions = 0
@@ -282,45 +182,13 @@ export default {
       }
     },
 
-    onPageChange ({ currentPage }) {
-      this.currentPage = currentPage
-      this.__updateParams({ page: currentPage })
-      this.loadTransactions()
-    },
-
-    onPerPageChange ({ currentPerPage }) {
-      this.transactionTableRowCount = currentPerPage
-      this.__updateParams({ limit: currentPerPage, page: 1 })
-      this.loadTransactions()
-    },
-
-    onSortChange ({ source, field, type }) {
-      if (!source || source !== 'transactionsTab') {
-        return
+    onWalletChange (newWallet, oldWallet) {
+      if (oldWallet) {
+        this.disableNewTransactionEvent(oldWallet.address)
       }
-
-      if (!isEqual({ field, type }, this.queryParams.sort)) {
-        this.__updateParams({
-          sort: {
-            field,
-            type
-          },
-          page: 1
-        })
-        this.loadTransactions()
+      if (newWallet) {
+        this.enableNewTransactionEvent(newWallet.address)
       }
-    },
-
-    reset () {
-      this.currentPage = 1
-      this.queryParams.page = 1
-      this.totalCount = 0
-      this.fetchedTransactions = []
-    },
-
-    __updateParams (newProps) {
-      this.queryParams = Object.assign({}, this.queryParams, newProps)
     }
   }
 }
-</script>
