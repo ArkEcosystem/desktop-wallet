@@ -48,7 +48,7 @@
 <script>
 import { ButtonModal } from '@/components/Button'
 import { ModalLoader, ModalPeer } from '@/components/Modal'
-import { WalletTransactionsMultiSignature } from '@/components/Wallet'
+import { WalletTransactionsMultiSignature } from '@/components/Wallet/WalletTransactions'
 import MultiSignature from '@/services/client-multisig'
 
 console.log(WalletTransactionsMultiSignature)
