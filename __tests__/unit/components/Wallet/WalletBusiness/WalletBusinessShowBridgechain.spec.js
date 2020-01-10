@@ -29,8 +29,6 @@ const createWrapper = (component, propsData) => {
     sync: false,
     stubs: {
       Portal: '<div class="Portal"><slot /></div>'
-      // TableWrapper: '<div class="TableWrapper"></div>',
-      // WalletBusinessShowBridgechain: '<div class="WalletBusinessShowBridgechain"></div>'
     }
   })
 }
@@ -131,9 +129,8 @@ describe('WalletBusinessShowBridgechain', () => {
       expect(spy).toHaveBeenCalledTimes(1)
     })
 
-    it('should only not toggle method if not a function', async () => {
-      const toggleClose = null
-      expect(() => { wrapper.vm.closeTransactionModal(toggleClose, true) }).not.toThrowError()
+    it('should not toggle method if not a function', async () => {
+      expect(() => { wrapper.vm.closeTransactionModal(null, true) }).not.toThrowError()
     })
   })
 
