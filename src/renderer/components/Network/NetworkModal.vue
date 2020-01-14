@@ -209,6 +209,7 @@
 
 <script>
 import { numeric, required, requiredIf } from 'vuelidate/lib/validators'
+import { NETWORKS } from '@config'
 import { InputText, InputToggle } from '@/components/Input'
 import { ModalLoader, ModalWindow } from '@/components/Modal'
 import ClientService from '@/services/client'
@@ -346,7 +347,28 @@ export default {
       this.form.nethash = this.network.nethash
       this.form.token = this.network.token
       this.form.symbol = this.network.symbol
-      this.form.version = this.network.version.toString()
+
+      // Temporary block to patch networks missing "version" - address prefix
+      if (this.network.version) {
+        this.form.version = this.network.version.toString()
+      } else {
+        const networkConfig = NETWORKS.find(network => network.id === this.network.id)
+
+        if (networkConfig) {
+          this.form.version = networkConfig.version.toString()
+        } else {
+          try {
+            ClientService.fetchNetworkConfig(this.form.server)
+              .then(network => {
+                this.form.version = network.version.toString()
+                this.$error(this.$t('MODAL_NETWORK.ADDRESS_VERSION_MISSING'))
+              })
+          } catch (error) {
+            this.form.version = '0'
+          }
+        }
+      }
+
       this.form.explorer = this.network.explorer || ''
 
       this.form.epoch = this.network.constants.epoch

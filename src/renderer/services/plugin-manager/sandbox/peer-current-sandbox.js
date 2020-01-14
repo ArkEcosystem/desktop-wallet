@@ -1,4 +1,4 @@
-export function createPeerCurrentSandbox (walletApi, app) {
+export function create (walletApi, app) {
   return () => {
     walletApi.peers = {
       current: {

@@ -12,16 +12,16 @@ import {
   WEBFRAME,
   UI_COMPONENTS
 } from './plugin-permission'
-import { createComponentsSetup } from './setup/components-setup'
-import { createAvatarsSetup } from './setup/avatars-setup'
-import { createRoutesSetup } from './setup/routes-setup'
-import { createWalletTabsSetup } from './setup/wallet-tabs-setup'
-import { createRegisterSetup } from './setup/register-setup'
-import { createMenuItemsSetup } from './setup/menu-items-setup'
-import { createThemesSetup } from './setup/themes-setup'
-import { createWebFrameSetup } from './setup/webframe-setup'
-import { createUiComponentsSetup } from './setup/ui-components-setup'
-import { createFontAwesomeSetup } from './setup/font-awesome-setup'
+import * as ComponentsSetup from './setup/components-setup'
+import * as AvatarsSetup from './setup/avatars-setup'
+import * as RoutesSetup from './setup/routes-setup'
+import * as WalletTabsSetup from './setup/wallet-tabs-setup'
+import * as RegisterSetup from './setup/register-setup'
+import * as MenuItemsSetup from './setup/menu-items-setup'
+import * as ThemesSetup from './setup/themes-setup'
+import * as WebFrameSetup from './setup/webframe-setup'
+import * as UiComponentsSetup from './setup/ui-components-setup'
+import * as FontAwesomeSetup from './setup/font-awesome-setup'
 
 export class PluginSetup {
   constructor ({
@@ -38,7 +38,7 @@ export class PluginSetup {
     localVue.options._base = localVue
     this.vue = localVue
 
-    this.pluginObject = this.sandbox.getPluginVM().run(
+    this.pluginObject = this.sandbox.getComponentVM().run(
       fs.readFileSync(path.join(plugin.fullPath, 'src/index.js')),
       path.join(plugin.fullPath, 'src/index.js')
     )
@@ -64,6 +64,10 @@ export class PluginSetup {
     }
   }
 
+  async destroy () {
+    await this.sandbox.destroy()
+  }
+
   async __run (setups = []) {
     for (const setup of castArray(setups)) {
       await setup()
@@ -72,18 +76,18 @@ export class PluginSetup {
 
   __mapPermissionsToSetup () {
     return {
-      [AVATARS.name]: createAvatarsSetup(this.plugin, this.pluginObject, this.sandbox, this.profileId),
-      [WALLET_TABS.name]: createWalletTabsSetup(this.plugin, this.pluginObject, this.sandbox, this.profileId),
-      [ROUTES.name]: createRoutesSetup(this.plugin, this.pluginObject, this.sandbox),
-      [COMPONENTS.name]: createComponentsSetup(this.plugin, this.pluginObject, this.sandbox, this.vue),
-      [MENU_ITEMS.name]: createMenuItemsSetup(this.plugin, this.pluginObject, this.sandbox, this.profileId),
-      [THEMES.name]: createThemesSetup(this.plugin, this.pluginObject, this.sandbox, this.profileId),
+      [AVATARS.name]: AvatarsSetup.create(this.plugin, this.pluginObject, this.sandbox, this.profileId),
+      [WALLET_TABS.name]: WalletTabsSetup.create(this.plugin, this.pluginObject, this.sandbox, this.profileId),
+      [ROUTES.name]: RoutesSetup.create(this.plugin, this.pluginObject, this.sandbox),
+      [COMPONENTS.name]: ComponentsSetup.create(this.plugin, this.pluginObject, this.sandbox, this.vue),
+      [MENU_ITEMS.name]: MenuItemsSetup.create(this.plugin, this.pluginObject, this.sandbox, this.profileId),
+      [THEMES.name]: ThemesSetup.create(this.plugin, this.pluginObject, this.sandbox, this.profileId),
       [PUBLIC.name]: [
-        createRegisterSetup(this.pluginObject),
-        createFontAwesomeSetup(this.plugin)
+        RegisterSetup.create(this.pluginObject),
+        FontAwesomeSetup.create(this.plugin)
       ],
-      [WEBFRAME.name]: createWebFrameSetup(this.plugin),
-      [UI_COMPONENTS.name]: createUiComponentsSetup(this.plugin)
+      [WEBFRAME.name]: WebFrameSetup.create(this.plugin),
+      [UI_COMPONENTS.name]: UiComponentsSetup.create(this.plugin)
     }
   }
 }

@@ -1,6 +1,7 @@
 'use strict'
 
 import { app, BrowserWindow, ipcMain, screen } from 'electron'
+import { setupPluginManager } from './plugin-manager'
 import { setupUpdater } from './updater'
 import winState from 'electron-window-state'
 import packageJson from '../../package.json'
@@ -142,6 +143,7 @@ if (!gotTheLock) {
 
 app.on('ready', () => {
   createWindow()
+  setupPluginManager({ sendToWindow, mainWindow, ipcMain })
   setupUpdater({ sendToWindow, ipcMain })
 })
 

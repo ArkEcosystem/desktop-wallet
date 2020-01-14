@@ -64,7 +64,8 @@ export default {
     isReady: false,
     chartData: {},
     options: {},
-    gradient: null
+    gradient: null,
+    lastCurrency: null
   }),
 
   computed: {
@@ -137,9 +138,13 @@ export default {
     }
   },
 
+  mounted () {
+    this.setLastCurrency()
+  },
+
   activated () {
     // Only if it's not already rendered
-    if (this.isExpanded && !this.isReady) {
+    if ((this.isExpanded && !this.isReady) || this.lastCurrency !== this.currency) {
       this.renderChart()
     }
   },
@@ -149,7 +154,15 @@ export default {
       this.isReady = true
     },
 
+    setLastCurrency () {
+      this.lastCurrency = this.currency
+    },
+
     async renderChart () {
+      if (!this._inactive) {
+        this.setLastCurrency()
+      }
+
       await this.renderGradient()
 
       const response = await cryptoCompare.historicByType(this.period, this.ticker, this.currency)
@@ -255,7 +268,8 @@ export default {
           tooltips: {
             displayColors: false,
             intersect: false,
-            mode: 'x',
+            mode: 'index',
+            axis: 'x',
             callbacks: {
               label: (item, data) => {
                 return this.currency_format(item.yLabel / scaleCorrection, { currency: this.currency })
@@ -291,7 +305,7 @@ export default {
           labels: response.labels,
           datasets: [{
             // Do not show the points, but enable a big target for the tooltip
-            pointHitRadius: 12,
+            pointHitRadius: 6,
             pointRadius: 0,
             borderWidth: 3,
             type: 'line',

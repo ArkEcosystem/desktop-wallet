@@ -1,4 +1,4 @@
-import { createAlertsSandbox } from '@/services/plugin-manager/sandbox/alerts-sandbox'
+import { create as createAlertsSandbox } from '@/services/plugin-manager/sandbox/alerts-sandbox'
 
 const walletApi = {}
 const app = {

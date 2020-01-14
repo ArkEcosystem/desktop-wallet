@@ -1,4 +1,4 @@
-import { createHttpSandbox } from '@/services/plugin-manager/sandbox/http-sandbox'
+import { create as createHttpSandbox } from '@/services/plugin-manager/sandbox/http-sandbox'
 import got from 'got'
 
 jest.mock('got')

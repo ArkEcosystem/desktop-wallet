@@ -1,4 +1,4 @@
-export function createStorageSandbox (walletApi, app, plugin) {
+export function create (walletApi, app, plugin) {
   return () => {
     walletApi.storage = {
       get: (key, global = false) => {

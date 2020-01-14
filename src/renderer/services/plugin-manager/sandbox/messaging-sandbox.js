@@ -1,6 +1,6 @@
 import cloneDeep from 'lodash/cloneDeep'
 
-export function createMessagingSandbox (walletApi, app) {
+export function create (walletApi, app) {
   return () => {
     const messages = {
       events: {},

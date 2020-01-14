@@ -1,6 +1,7 @@
 import ButtonClipboard from './ButtonClipboard'
 import ButtonClose from './ButtonClose'
 import ButtonGeneric from './ButtonGeneric'
+import ButtonIconGeneric from './ButtonIconGeneric'
 import ButtonLetter from './ButtonLetter'
 import ButtonModal from './ButtonModal'
 import ButtonReload from './ButtonReload'
@@ -15,6 +16,7 @@ export {
   ButtonClose,
   ButtonDropdown,
   ButtonGeneric,
+  ButtonIconGeneric,
   ButtonLetter,
   ButtonReload,
   ButtonSwitch,

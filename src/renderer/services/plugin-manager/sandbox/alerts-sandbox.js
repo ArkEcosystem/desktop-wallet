@@ -1,4 +1,4 @@
-export function createAlertsSandbox (walletApi, app) {
+export function create (walletApi, app) {
   return () => {
     walletApi.alert = {
       error: app.$error,
