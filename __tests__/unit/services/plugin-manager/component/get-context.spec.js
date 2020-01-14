@@ -11,7 +11,7 @@ const createSafeRender = (plugin) => {
   return localVue.extend({
     ...plugin,
     render: function (...args) {
-      return plugin.render.apply(getSafeContext(this, plugin), [args])
+      return plugin.render.apply(getSafeContext(this, plugin), args)
     }
   })
 }
