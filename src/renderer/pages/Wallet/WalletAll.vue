@@ -73,7 +73,7 @@
             >
               <SvgIcon
                 class="rotate-360"
-                name="update"
+                name="reload"
                 view-box="0 0 16 14"
               />
             </span>

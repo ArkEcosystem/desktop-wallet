@@ -1,5 +1,3 @@
-import * as fs from 'fs'
-import * as fsExtra from 'fs-extra'
 import { createLocalVue } from '@vue/test-utils'
 import { PluginManager } from '@/services/plugin-manager'
 import { PluginSandbox } from '@/services/plugin-manager/plugin-sandbox'
@@ -46,7 +44,10 @@ const app = {
     dispatch: mockDispatch,
     getters: {
       'plugin/isEnabled': jest.fn((pluginId) => pluginId === 'plugin-test'),
-      'profile/byId': jest.fn(() => {})
+      'plugin/isInstalledSupported': jest.fn(() => true),
+      'plugin/lastFetched': jest.fn(() => 0),
+      'profile/byId': jest.fn(() => {}),
+      'session/pluginAdapter': 'npm'
     }
   }
 }
@@ -57,28 +58,30 @@ beforeEach(() => {
   mockDispatch.mockReset()
   pluginManager = new PluginManager()
   pluginManager.setVue(localVue)
+  pluginManager.setAdapter('npm')
+  pluginManager.setApp(app)
 })
 
 describe('Plugin Manager', () => {
   it('should load plugins on init', async () => {
     await pluginManager.init(app)
-    expect(app.$store.dispatch).toHaveBeenNthCalledWith(1, 'plugin/init')
+    expect(app.$store.dispatch).toHaveBeenNthCalledWith(1, 'plugin/reset')
     expect(app.$store.dispatch).toHaveBeenNthCalledWith(2, 'plugin/loadPluginsForProfiles')
   })
 
   describe('Fetch plugins', () => {
-    it('should read plugins from path', async () => {
-      jest.spyOn(fsExtra, 'readdirSync').mockReturnValue(['plugin-1'])
-      jest.spyOn(fs, 'readFileSync').mockReturnValue(JSON.stringify(pkg))
+    it('should fetch plugins from path', async () => {
+      jest.spyOn(pluginManager, 'fetchPluginsFromPath')
 
-      await pluginManager.init(app)
+      await pluginManager.fetchPlugins()
+      expect(pluginManager.fetchPluginsFromPath).toHaveBeenCalled()
+    })
 
-      expect(app.$store.dispatch).toHaveBeenCalledWith('plugin/setAvailable',
-        expect.objectContaining({
-          config: expect.any(Object),
-          fullPath: expect.any(String)
-        })
-      )
+    it('should fetch plugins from adapter if forced', async () => {
+      jest.spyOn(pluginManager, 'fetchPluginsFromAdapter')
+
+      await pluginManager.fetchPlugins(true)
+      expect(pluginManager.fetchPluginsFromAdapter).toHaveBeenCalled()
     })
   })
 
@@ -98,7 +101,7 @@ describe('Plugin Manager', () => {
       try {
         await pluginManager.enablePlugin('plugin-not-loaded', 'p-1')
       } catch (e) {
-        expect(e.message).toBe('Plugin not found')
+        expect(e.message).toBe('Plugin \'plugin-not-loaded\' not found')
       }
     })
 
@@ -115,7 +118,7 @@ describe('Plugin Manager', () => {
       try {
         await pluginManager.enablePlugin('plugin-not-enabled', 'p-1')
       } catch (e) {
-        expect(e.message).toBe('Plugin is not enabled')
+        expect(e.message).toBe('Plugin \'1\' is not enabled')
         expect(app.$store.getters['plugin/isEnabled']).toHaveBeenCalled()
       }
     })
@@ -155,40 +158,52 @@ describe('Plugin Manager', () => {
       try {
         await pluginManager.disablePlugin('plugin-not-loaded', 'p-1')
       } catch (e) {
-        expect(e.message).toBe('Plugin `plugin-not-loaded` not found')
+        expect(e.message).toBe('Plugin \'plugin-not-loaded\' not found')
       }
     })
 
     it('should disable', async () => {
       await pluginManager.init(app)
       pluginManager.plugins = {
-        [pkg.name]: {
+        [`${pkg.name}-disabled`]: {
           config: {
-            id: pkg.name,
+            id: `${pkg.name}-disabled`,
             permissions: []
           }
         }
       }
+      pluginManager.pluginSetups = {
+        [`${pkg.name}-disabled`]: {
+          destroy: jest.fn()
+        }
+      }
 
-      await pluginManager.disablePlugin(pkg.name, 'p-1')
-      expect(mockDispatch).toHaveBeenCalledWith('plugin/deleteLoaded', pkg.name)
+      await pluginManager.disablePlugin(`${pkg.name}-disabled`, 'p-1')
+      expect(mockDispatch).toHaveBeenCalledWith('plugin/deleteLoaded', { pluginId: `${pkg.name}-disabled`, profileId: 'p-1' })
+      expect(pluginManager.pluginSetups[`${pkg.name}-disabled`].destroy).toHaveBeenCalledTimes(1)
     })
 
     it('should unload theme', async () => {
       await pluginManager.init(app)
       pluginManager.plugins = {
-        [pkg.name]: {
+        [`${pkg.name}-disabled`]: {
           config: {
-            id: pkg.name,
+            id: `${pkg.name}-disabled`,
             permissions: ['THEMES']
           }
         }
       }
+      pluginManager.pluginSetups = {
+        [`${pkg.name}-disabled`]: {
+          destroy: jest.fn()
+        }
+      }
 
-      await pluginManager.disablePlugin(pkg.name, 'p-1')
-      expect(mockDispatch).toHaveBeenCalledWith('plugin/deleteLoaded', pkg.name)
+      await pluginManager.disablePlugin(`${pkg.name}-disabled`, 'p-1')
+      expect(mockDispatch).toHaveBeenCalledWith('plugin/deleteLoaded', { pluginId: `${pkg.name}-disabled`, profileId: 'p-1' })
       expect(mockDispatch).toHaveBeenCalledWith('session/setTheme', expect.any(String))
       expect(mockDispatch).toHaveBeenCalledWith('profile/update', expect.any(Object))
+      expect(pluginManager.pluginSetups[`${pkg.name}-disabled`].destroy).toHaveBeenCalledTimes(1)
     })
   })
 })

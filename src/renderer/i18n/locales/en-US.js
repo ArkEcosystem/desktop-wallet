@@ -1,5 +1,6 @@
 export default {
   COMMON: {
+    ADAPTER: 'Adapter',
     ADDRESS: 'Address',
     ALL: 'All',
     APP_NAME: 'ARK Desktop Wallet',
@@ -9,14 +10,17 @@ export default {
     BACK: 'Back',
     BACKGROUND: 'Background',
     BIP39_LANGUAGE: 'Passphrase Language (BIP39)',
+    CATEGORY: 'Category',
     CONFIRM: 'Confirm',
     CURRENCY: 'Currency',
     DATE: 'Date',
     DELEGATE: 'Delegate',
     DONE: 'Done',
+    ENABLE_ADVANCED_MODE: 'Enable Advanced Mode to use this feature',
     FAILED_UPDATE: 'Failed to update \'{name}\'. Reason: {reason}',
     FAILED_FETCH: 'Failed to fetch {name}. Reason: "{msg}".',
     FETCH: 'Fetch',
+    FILTER_BLACKLISTED_PLUGINS: 'Apply blacklist',
     FINISH: 'Finish',
     HIDE_WALLET_BUTTON_TEXT: 'Hide text from wallet buttons',
     IS_MARKET_CHART_ENABLED: 'Price chart on the dashboard',
@@ -34,14 +38,18 @@ export default {
     PROFILE_NAME: 'Profile name',
     REMOVE: 'Remove',
     SAVE: 'Save',
+    SIZE: 'Size',
     SKIP: 'Skip',
     START: 'Start',
     THEME: 'Theme',
     TIME_FORMAT: 'Time format',
+    URL: 'URL',
     VERIFIED_ADDRESS: 'This is a verified address',
+    VERSION: 'Version',
     WARNING: 'Warning',
     WILL: 'will',
-    WALLET: 'Wallet'
+    WALLET: 'Wallet',
+    ADVANCED_MODE: 'Advanced Mode'
   },
 
   ANNOUNCEMENTS: {
@@ -118,7 +126,6 @@ export default {
 
   PEER: {
     BEST: 'Connect to best',
-    CONFIG_CHECK_FAILED: 'Config check failed',
     CONNECTED: 'Connected to peer',
     CONNECT_CUSTOM: 'Connect custom peer',
     CONNECT_FAILED: 'Failed to connect to peer',
@@ -164,6 +171,11 @@ export default {
     },
     PUBLIC_KEY: {
       INVALID_LENGTH: 'The public key must be 66 characters long'
+    },
+    URL: {
+      INVALID: 'Invalid \'URL\'',
+      NO_GITHUB: 'Only URLs containing \'github.com\' are allowed',
+      NO_GITHUB_REPOSITORY: 'This URL does not point to a GitHub repository'
     },
     VENDOR_FIELD: {
       LIMIT_REACHED: 'You can enter a maximum of {0} characters only',
@@ -235,8 +247,8 @@ export default {
     DASHBOARD: 'Dashboard',
     NETWORK: 'Network',
     NETWORKS: 'Manage networks',
-    PLUGINS: 'Plugins',
-    PLUGINS_PAGES: 'Plugins pages',
+    PLUGIN_MANAGER: 'Plugin Manager',
+    PLUGINS_PAGES: 'Plugin Pages',
     SETTINGS: {
       CURRENCY: 'Currency',
       DARK_MODE: 'Dark mode',
@@ -250,6 +262,7 @@ export default {
       BACKGROUND_UPDATE_LEDGER: 'Update Ledger in background',
       BROADCAST_PEERS: 'Broadcast to multiple peers',
       TITLE: 'Current settings',
+      MANAGE_BLACKLIST: 'Manage plugin blacklist',
       RESET_DATA: {
         TITLE: 'Reset data',
         QUESTION: 'Are you sure you want to wipe your data?',
@@ -271,7 +284,7 @@ export default {
     DOWNLOADING: 'Downloading {version}',
     DOWNLOADED: 'Downloaded {version}',
     QUIT_AND_INSTALL: 'Quit and install',
-    UNKNOW_ERROR: 'Unknow error. Close this window and try again.',
+    UNKNOWN_ERROR: 'Unknown error. Close this window and try again.',
     NETWORK_ERROR: 'Looks like your file isn\'t downloading. Verify your connection.'
   },
 
@@ -390,7 +403,7 @@ export default {
       EXPORT_WALLETS: 'Failed to export your wallets'
     },
     EXPORT: 'Export 0 Wallets | Export 1 Wallet | Export {count} Wallets',
-    INSTRUCTIONS: 'Your exported wallets will not contain your passphrases, only the addresses and respective names will be saved!',
+    INSTRUCTIONS: '<b>Important:</b> Your exported wallets will not contain your passphrases, only the addresses and respective names will be saved!',
     OPTIONS: {
       ADD_NETWORK: 'Add information about the network',
       EXCLUDE_EMPTY: 'Exclude empty wallets',
@@ -446,6 +459,7 @@ export default {
     WIF: 'WIF',
     SLIP44: 'Slip44',
     ACTIVE_DELEGATES: 'Active Delegates',
+    ADDRESS_VERSION_MISSING: 'Address Version was missing - please check your wallets',
     MARKET_TICKER: 'Market Ticker (Optional)',
     FAILED_FETCH: 'Failed to fetch network information',
     NETWORK_IN_USE: 'This network is in use by one or more profiles and cannot be removed',
@@ -474,6 +488,63 @@ export default {
       HOST: 'http://1.2.3.4',
       PORT: '4003'
     }
+  },
+
+  MODAL_PLUGIN_MANAGE_BLACKLIST: {
+    CLOSE: 'Close',
+    EMPTY: 'There are no plugins on your blacklist',
+    REMOVE_ALL: 'Remove all',
+    TITLE: 'Plugin blacklist'
+  },
+
+  MODAL_PLUGIN_DETAILS: {
+    INSTALL: 'Install',
+    KEYWORDS: 'Keywords',
+    SHOW_PERMISSIONS: 'Show permissions'
+  },
+
+  MODAL_PLUGIN_INSTALL: {
+    CANCEL: 'Cancel',
+    DOWNLOADED: 'Downloaded {plugin}',
+    DOWNLOADING: 'Downloading {plugin}',
+    INSTALL: 'Install now',
+    UPDATE: 'Update now',
+    UNKNOWN_ERROR: 'Unknow error. Close this window and try again.'
+  },
+
+  MODAL_PLUGIN_PERMISSIONS: {
+    ALTERNATIVE_TITLE: 'This plugin needs the following permissions',
+    BACK: 'Back',
+    DOWNLOAD: 'Download now',
+    TITLE: 'Permissions',
+    PERMISSIONS: {
+      ALERTS: 'Allows access to the Desktop Wallet alerts',
+      AUDIO: 'Allows access to play audio from within the Desktop Wallet',
+      AVATARS: 'Plugin contains custom avatars',
+      COMPONENTS: 'Allows loading custom components',
+      EVENTS: 'Allows access to the Desktop Wallet events',
+      HTTP: 'Allows performing external web requests',
+      MENU_ITEMS: 'Allows adding custom menu items to the Desktop Wallet sidebar',
+      MESSAGING: 'Allows WebFrames access to a one-way messaging system',
+      PEER_CURRENT: 'Allows access to the currently connected peer',
+      PUBLIC: 'Allows navigation to wallet routes and provides access to the Font Awesome icon set',
+      PROFILE_ALL: 'Allows access to all available profiles',
+      PROFILE_CURRENT: 'Allows access to the currently active profile',
+      ROUTES: 'Allows loading additional routes into the Desktop Wallet',
+      STORAGE: 'Allows storing data within the Desktop Wallet, using key-value pairs',
+      THEMES: 'Allows loading additional custom themes for the Desktop Wallet',
+      TIMERS: 'Allows using timeouts and intervals',
+      UI_COMPONENTS: 'Allows access to the standard Desktop Wallet components used throughout',
+      WALLET_TABS: 'Allows showing an additional tab/page on the Wallet screen',
+      WEBFRAME: 'Allows showing remote URL pages within a frame',
+      WEBSOCKET: 'Allows connections to websockets'
+    }
+  },
+
+  MODAL_PLUGIN_URL: {
+    TITLE: 'Install from URL',
+    EXPLANATION: 'Fetch the plugin directly from GitHub by using the URL of the plugin repository in the input field below.',
+    DISCLAIMER: '<b>Disclaimer:</b> Please make sure to check the documentation of the plugin before installing it. By installing it on your wallet, you assume every responsibility.'
   },
 
   PASSPHRASE_INPUT: {
@@ -545,11 +616,57 @@ export default {
       NEW_NETWORK: 'New network'
     },
 
-    PLUGINS: {
+    PLUGIN_MANAGER: {
       HEADER: 'Plugins',
-      DISCOVER: 'Discover Plugins',
-      OPEN: 'Open Plugins',
-      RELOAD: 'Reload Plugins'
+      ENABLED: 'Enabled',
+      DISABLED: 'Disabled',
+      INSTALL: 'Install',
+      INSTALLING: 'Installing \'{plugin}\'',
+      INSTALL_URL: 'Install from URL',
+      BLACKLISTING: 'Blacklisting \'{plugin}\'',
+      REMOVING: 'Removing \'{plugin}\'',
+      UPDATING: 'Updating \'{plugin}\'',
+      OFFICIAL: 'Official {author} plugin',
+      MENU: 'Menu',
+      BANNER: {
+        TITLE: 'Welcome to the Plugin Manager',
+        SUBTITLE: 'The easy way to find, manage and install plugins'
+      },
+      CATEGORIES: {
+        ALL: 'All',
+        GAMING: 'Gaming',
+        UTILITY: 'Utility',
+        THEME: 'Theme',
+        OTHER: 'Other'
+      },
+      FILTERS: {
+        ALL: 'all',
+        INSTALLED: 'installed'
+      },
+      NO_SEARCH_RESULTS: 'Unfortunately, searching for "{query}" returned no results',
+      NO_RESULTS: 'There are no {filter} plugins with the category {category}',
+      SEARCH: 'Search',
+      CLICK_TO_RELOAD: 'Reload the plugin repository',
+      ALREADY_INSTALLED: 'You\'ve already installed this plugin',
+      UPDATE: {
+        AVAILABLE: 'Update to latest version ({version})',
+        NOT_AVAILABLE: 'No updates available'
+      },
+      ERRORS: {
+        ALREADY_INSTALLED: 'The plugin \'{plugin}\' is already installed',
+        FETCH: 'The plugin \'{plugin}\' was installed but could not be loaded'
+      },
+      SUCCESS: {
+        INSTALLATION: 'The plugin \'{plugin}\' was installed and loaded successfully',
+        UPDATE: 'The plugin \'{plugin}\' was updated and reloaded successfully',
+        REMOVE: 'The plugin \'{plugin}\' was removed successfully',
+        BLACKLIST: 'The plugin \'{plugin}\' was added to the blacklist',
+        RELOAD: 'The plugin repository was reloaded successfully'
+      },
+      DISCLAIMER: '<b>Disclaimer:</b> The availability of this plugin in the ARK Desktop Wallet does not mean that either ARK.io or ARK SCIC is directly involved in the development or affiliated with the developer providing this plugin. By installing it on your wallet, you assume every responsibility.',
+      REPORT: 'Report this plugin',
+      BLACKLISTED: 'This plugin is already blacklisted',
+      VERSION_MISMATCH: 'This plugin is not compatible with your wallet version'
     },
 
     PROFILE_ALL: {
@@ -610,6 +727,19 @@ export default {
           TEXT: 'Here you can choose the default theme (light or dark) and the background.'
         },
         TITLE: 'Wallet design'
+      },
+      TAB_PLUGINS: {
+        INSTRUCTIONS: {
+          HEADER: 'Plugin settings',
+          TEXT: 'Here you can adjust the settings of the Plugin Manager.'
+        },
+        TITLE: 'Plugins'
+      },
+      ADVANCED_MODE: {
+        DECLINE: 'I Decline',
+        ACCEPT: 'I Accept',
+        QUESTION: 'By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.',
+        TITLE: 'Advanced Mode Disclaimer'
       }
     },
 
@@ -742,26 +872,19 @@ export default {
     }
   },
 
-  PLUGIN_ENABLE_CONFIRMATION: {
-    QUESTION: 'Are you sure you want to enable the "{name}" plugin?',
-    NO: 'No, keep it disabled',
-    NOTICE: 'WARNING: By accepting this disclaimer, you are confirming that you are adding an untested and unverified third-party plugin to the desktop wallet. ARK SCIC assumes no liability for any harm caused by this plug-in and has no responsibility to test them for security vulnerabilities. All security testing and vulnerability discovery is the sole responsibility of the plugin author. ARK SCIC makes no warranties, express or implied, regarding the conditions of merchantability or fitness for particular purpose of any third-party plugin. ARK SCIC makes no representations about the functionality, accuracy, availability, quality, completeness, security, validity or non-infringement of any third-party plugins. Any third-party plugin used is done so at your own risk.',
-    YES: 'Yes, enable it'
-  },
-
   PLUGIN_TABLE: {
     ACTIONS: 'Actions',
-    ENABLE: 'Enable',
-    ENABLED: 'Enabled',
-    DESCRIPTION: 'Description',
-    DISABLE: 'Disable',
+    AUTHOR: 'Author',
+    CATEGORY: 'Category',
     DISABLED: 'Disabled',
-    ID: 'ID',
+    ENABLED: 'Enabled',
+    LOGO: 'Logo',
     NAME: 'Name',
-    NO_PERMISSIONS: 'No permissions',
+    AVAILABLE: 'Not installed',
     NO_PLUGINS: 'No plugins available',
-    PERMISSIONS: 'Permissions',
-    STATUS: 'Status'
+    SIZE: 'Size',
+    STATUS: 'Status',
+    VERSION: 'Version'
   },
 
   PROFILE_LEAVING_CONFIRMATION: {
@@ -1031,6 +1154,28 @@ export default {
   WALLET_REMOVAL_CONFIRMATION: {
     NOTE: 'It does not delete any data on the blockchain. You could recover the wallet as long as you have the passphrase',
     QUESTION: 'Are you sure you want to remove this wallet?'
+  },
+
+  PLUGIN_REMOVAL_CONFIRMATION: {
+    NOTE: 'Uninstalling this plugin will remove it from all profiles on this system',
+    QUESTION: 'Are you sure you want to remove \'{plugin}\'?',
+    OPTIONS: {
+      DATA: 'Also delete all plugin data and settings?'
+    },
+    SUCCESS: 'The plugin \'{plugin}\' has been uninstalled',
+    ERROR: 'Could not remove plugin: {error}'
+  },
+
+  PLUGIN_BLACKLIST_CONFIRMATION: {
+    NOTE: 'By blacklisting the plugin it will be disabled on all profiles and will no longer appear in the Plugin Manager',
+    QUESTION: 'Do you want to blacklist \'{plugin}\'?'
+  },
+
+  BLACKLIST_DISCLAIMER_CONFIRMATION: {
+    QUESTION: 'Are you sure you want to disable the blacklist?',
+    NOTE: 'Warning: By turning off filtering, you will be viewing third-party plugins that have not been tested and approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of the third-party plugin. We are not responsible for any of the content presented as a result of viewing, installing, or running any of these third-party plugins. ARK.io and ARK SCIC shall bear no liability for any loss suffered by using third-party plugins. By clicking "I Accept" you acknowledge that unverified third-party plugins may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.',
+    ACCEPT: 'I Accept',
+    CANCEL: 'Cancel'
   },
 
   WALLET_TRANSACTIONS: {

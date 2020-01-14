@@ -1,6 +1,6 @@
 import { normalizeJson } from '../utils/normalize-json'
 
-export function createAvatarsSetup (plugin, pluginObject, sandbox, profileId) {
+export function create (plugin, pluginObject, sandbox, profileId) {
   return async () => {
     if (!Object.prototype.hasOwnProperty.call(pluginObject, 'getAvatars')) {
       return

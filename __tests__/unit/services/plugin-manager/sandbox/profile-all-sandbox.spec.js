@@ -1,4 +1,4 @@
-import { createProfileAllSandbox } from '@/services/plugin-manager/sandbox/profile-all-sandbox'
+import { create as createProfileAllSandbox } from '@/services/plugin-manager/sandbox/profile-all-sandbox'
 
 const mockGetter = jest.fn(() => [
   {

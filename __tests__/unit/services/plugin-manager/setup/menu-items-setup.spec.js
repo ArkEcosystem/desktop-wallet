@@ -1,4 +1,4 @@
-import { createMenuItemsSetup } from '@/services/plugin-manager/setup/menu-items-setup'
+import { create as createMenuItemsSetup } from '@/services/plugin-manager/setup/menu-items-setup'
 import { Plugin } from '@/services/plugin-manager/plugin'
 
 const plugin = new Plugin({

@@ -1,4 +1,4 @@
-import { createStorageSandbox } from '@/services/plugin-manager/sandbox/storage-sandbox'
+import { create as createStorageSandbox } from '@/services/plugin-manager/sandbox/storage-sandbox'
 
 const plugin = {
   config: {

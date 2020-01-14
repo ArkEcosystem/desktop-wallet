@@ -139,6 +139,7 @@ export default {
             true
           )
           transaction = await TransactionService.ledgerSign(this.currentWallet, transactionObject, this)
+          transaction.totalAmount = TransactionService.getTotalAmount(transaction)
           success = true
         } catch (error) {
           this.$error(`${this.$t('TRANSACTION.LEDGER_SIGN_FAILED')}: ${error.message}`)

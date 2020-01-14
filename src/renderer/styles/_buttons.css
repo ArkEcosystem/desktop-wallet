@@ -20,11 +20,19 @@ button:disabled {
 	@apply .mx-auto .font-semibold .py-4 .px-8 .border-transparent .rounded .transition .cursor-pointer
 }
 
+.small-button {
+  @apply .mx-auto .font-semibold .py-2 .px-4 .border-transparent .rounded .transition .cursor-pointer .text-sm
+}
+
 .blue-button {
 	@apply default-button .bg-theme-button .text-theme-button-text
 }
 
-.blue-button:enabled:hover {
+.blue-small-button {
+  @apply small-button .bg-theme-button .text-theme-button-text
+}
+
+.blue-button:enabled:hover, .blue-small-button:enabled:hover {
 	@apply .bg-blue .text-white .hover-button-blue-shadow-definition
 }
 
@@ -74,4 +82,14 @@ button:disabled {
 
 .svg-button--selected:hover {
   box-shadow: 0 0 4px 2px rgba(45, 183, 97, 0.34);
+}
+
+/* Pagination Buttons */
+
+.pager-button {
+  @apply .flex .flex-no-wrap .justify-center .items-center .bg-theme-button .text-theme-button-text .font-semibold .border-transparent .rounded .transition .py-3 .px-4;
+}
+
+.pager-button:enabled:hover {
+  @apply .bg-blue .text-white .hover-button-blue-shadow-definition .cursor-pointer;
 }

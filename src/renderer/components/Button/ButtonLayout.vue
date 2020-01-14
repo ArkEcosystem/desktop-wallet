@@ -1,7 +1,7 @@
 <template>
   <div class="flex items-center">
     <button
-      class="ButtonLayout flex border-none p-1 rounded mr-1"
+      class="ButtonLayout flex mr-1"
       :disabled="gridLayout"
       @click="emitClick()"
     >
@@ -13,7 +13,7 @@
     </button>
 
     <button
-      class="ButtonLayout flex border-none p-1 rounded"
+      class="ButtonLayout flex"
       :disabled="!gridLayout"
       @click="emitClick()"
     >
@@ -30,7 +30,7 @@
 import SvgIcon from '@/components/SvgIcon'
 
 export default {
-  name: 'ButtonGeneric',
+  name: 'ButtonLayout',
 
   components: {
     SvgIcon
@@ -53,7 +53,7 @@ export default {
 
 <style>
 .ButtonLayout {
-  @apply text-theme-option-button-text;
+  @apply text-theme-option-button-text border-none p-2 rounded;
   transition: all 0.4s;
 }
 .ButtonLayout:hover {

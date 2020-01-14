@@ -101,6 +101,10 @@ export default new BaseModel({
       type: 'array',
       format: data => data.unconfirmedVotes || []
     },
+    pluginManagerLayout: {
+      type: 'string',
+      format: data => data.pluginManagerLayout || 'grid'
+    },
     walletLayout: {
       type: 'string',
       format: data => data.walletLayout || 'grid'
@@ -123,11 +127,23 @@ export default new BaseModel({
     },
     pluginSortParams: {
       type: 'object',
-      format: data => data.pluginSortParams || { field: 'id', type: 'asc' }
+      format: data => data.pluginSortParams || { field: 'title', type: 'asc' }
     },
     lastFees: {
       type: 'object',
       format: data => data.lastFees || {}
+    },
+    filterBlacklistedPlugins: {
+      type: 'boolean',
+      format: data => data.filterBlacklistedPlugins !== undefined ? data.filterBlacklistedPlugins : true
+    },
+    pluginAdapter: {
+      type: 'string',
+      format: data => data.pluginAdapter || 'npm'
+    },
+    isAdvancedModeEnabled: {
+      type: 'boolean',
+      format: data => data.isAdvancedModeEnabled || false
     }
   },
   required: ['background', 'currency', 'language', 'name', 'networkId', 'theme']

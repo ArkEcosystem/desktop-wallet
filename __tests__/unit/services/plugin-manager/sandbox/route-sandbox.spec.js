@@ -1,4 +1,4 @@
-import { createRouteSandbox } from '@/services/plugin-manager/sandbox/route-sandbox'
+import { create as createRouteSandbox } from '@/services/plugin-manager/sandbox/route-sandbox'
 
 const walletApi = {}
 const routeSandbox = createRouteSandbox(walletApi, {}, {})
