@@ -12,7 +12,7 @@ const i18n = useI18nGlobally()
 let wrapper
 const mocks = {
   $store: {
-    dispatch () {},
+    dispatch: jest.fn(),
     getters: {
       'network/byName': jest.fn((name) => {
         return name === 'exists'

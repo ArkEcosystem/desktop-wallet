@@ -4,7 +4,7 @@ import decompress from 'decompress'
 import trash from 'trash'
 import { ensureDirSync } from 'fs-extra'
 
-const logger = require('electron-log')
+import logger from 'electron-log'
 
 export const setupPluginManager = ({ sendToWindow, mainWindow, ipcMain }) => {
   let downloadItem

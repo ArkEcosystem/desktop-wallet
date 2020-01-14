@@ -11,8 +11,8 @@ export function createSafeComponent (componentName, baseComponent, vue) {
   if (baseComponent.methods) {
     const methods = {}
     for (const methodName in baseComponent.methods) {
-      methods[methodName] = function safeMethod () {
-        return baseComponent.methods[methodName].call(getSafeContext(this, baseComponent), ...arguments)
+      methods[methodName] = function safeMethod (...args) {
+        return baseComponent.methods[methodName].call(getSafeContext(this, baseComponent), args)
       }
     }
     vmComponent.options.methods = methods
