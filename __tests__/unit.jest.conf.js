@@ -40,7 +40,7 @@ module.exports = {
   collectCoverageFrom: [
     'src/renderer/**/*.{js,vue}'
   ],
-  coverageReporters: ['html'],
+  coverageReporters: ['json', 'lcov', 'text', 'clover', 'html'],
   setupFilesAfterEnv: ['jest-extended'],
   watchman: false
 }
