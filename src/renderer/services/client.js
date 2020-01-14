@@ -243,12 +243,6 @@ export default class ClientService {
       return delegate.forged.total
     }
 
-    const { body } = await this.client.api('delegates').forged(delegate.publicKey)
-
-    if (body.success) {
-      return body.forged
-    }
-
     return '0'
   }
 
