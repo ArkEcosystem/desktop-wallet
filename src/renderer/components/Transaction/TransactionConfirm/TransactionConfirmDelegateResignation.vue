@@ -21,7 +21,7 @@ export default {
 
   transactionType: TRANSACTION_TYPES.GROUP_1.DELEGATE_RESIGNATION,
 
-  inject: ['currentWallet', 'transaction'],
+  inject: ['currentWallet'],
 
   components: {
     ListDivided,

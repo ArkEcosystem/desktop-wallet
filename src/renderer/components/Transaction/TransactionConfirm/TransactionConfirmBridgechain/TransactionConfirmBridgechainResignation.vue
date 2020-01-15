@@ -29,7 +29,7 @@ export default {
 
   transactionGroup: TRANSACTION_GROUPS.MAGISTRATE,
 
-  inject: ['currentWallet', 'transaction'],
+  inject: ['currentWallet'],
 
   components: {
     ListDivided,
