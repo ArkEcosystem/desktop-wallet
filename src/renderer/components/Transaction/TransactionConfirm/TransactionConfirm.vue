@@ -9,6 +9,7 @@
     />
     <Component
       :is="activeComponent"
+      v-if="activeComponent"
     />
 
     <footer class="mt-10 flex justify-between items-center">
