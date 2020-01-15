@@ -115,7 +115,7 @@ export default class ClientService {
         }
       }))
     } catch (error) {
-      return (await ClientService.fetchNetworkConfig(server, timeout)).feeStatistics
+      return []
     }
   }
 
