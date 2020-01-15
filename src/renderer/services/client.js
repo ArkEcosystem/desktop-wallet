@@ -137,10 +137,6 @@ export default class ClientService {
     this.client = ClientService.newConnection(host)
   }
 
-  get version () {
-    return this.__version
-  }
-
   /**
    * Fetch the peer status.
    * @returns {Object}
@@ -665,7 +661,6 @@ export default class ClientService {
    * Build Multi-Signature transaction.
    * @param {Object} data
    * @param {Number} data.fee - dynamic fee, as arktoshi
-   * @param {Number} data.hash - ipfs hash
    * @param {String} data.passphrase
    * @param {String} data.secondPassphrase
    * @param {String} data.wif
@@ -678,7 +673,6 @@ export default class ClientService {
       publicKeys,
       minKeys,
       fee,
-      hash,
       passphrase,
       secondPassphrase,
       wif,
@@ -1443,7 +1437,6 @@ export default class ClientService {
   }
 
   // TODO this shouldn't be responsibility of the client
-  // TODO update client when peer changes
   __watchProfile () {
     store.watch(
       (_, getters) => getters['session/profile'],
