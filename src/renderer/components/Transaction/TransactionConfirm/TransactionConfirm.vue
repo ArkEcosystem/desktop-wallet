@@ -147,7 +147,7 @@ export default {
     })
 
     if (!component) {
-      throw new Error(`[TransactionConfirm] - Confirm for type ${this.type} (group ${this.transaction.typeGroup}) not found.`)
+      throw new Error(`[TransactionConfirm] - Confirm for type ${this.transaction.type} (group ${this.transaction.typeGroup}) not found.`)
     }
 
     this.activeComponent = component.name
