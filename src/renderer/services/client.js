@@ -660,6 +660,8 @@ export default class ClientService {
   /**
    * Build Multi-Signature transaction.
    * @param {Object} data
+   * @param {Number} data.publicKeys - public keys associated with new multisignature wallet
+   * @param {Number} data.minKeys - minimum required keys for wallet transactions
    * @param {Number} data.fee - dynamic fee, as arktoshi
    * @param {String} data.passphrase
    * @param {String} data.secondPassphrase
@@ -1262,7 +1264,18 @@ export default class ClientService {
     },
     returnObject = false
   ) {
-    const network = store.getters['network/byId'](networkId) || store.getters['session/network']
+    if (!passphrase && !wif) {
+      throw new Error('No passphrase or wif provided')
+    }
+
+    let network
+    if (networkId) {
+      network = store.getters['network/byId'](networkId)
+    }
+    if (!network) {
+      network = store.getters['session/network']
+    }
+
     transaction = transaction.network(network.version)
 
     // TODO replace with dayjs
@@ -1290,36 +1303,33 @@ export default class ClientService {
 
     if (multiSignature) {
       let senderPublicKey = null
-      if (passphrase || wif) {
-        if (passphrase) {
-          senderPublicKey = WalletService.getPublicKeyFromPassphrase(passphrase)
-        } else {
-          senderPublicKey = WalletService.getPublicKeyFromWIF(wif)
-        }
-
-        const publicKeyIndex = multiSignature.publicKeys.indexOf(senderPublicKey)
-        transaction.senderPublicKey(senderPublicKey)
-        if (publicKeyIndex > -1) {
-          if (passphrase) {
-            transaction.multiSign(passphrase, publicKeyIndex)
-          } else if (wif) {
-            transaction.multiSignWithWif(publicKeyIndex, wif, networkWif)
-          }
-        }
+      if (passphrase) {
+        senderPublicKey = WalletService.getPublicKeyFromPassphrase(passphrase)
       } else {
-        senderPublicKey = WalletService.getPublicKeyFromMultiSignatureAsset(multiSignature)
-        transaction.senderPublicKey(senderPublicKey)
+        senderPublicKey = WalletService.getPublicKeyFromWIF(wif)
+      }
+
+      const publicKeyIndex = multiSignature.publicKeys.indexOf(senderPublicKey)
+      transaction.senderPublicKey(senderPublicKey)
+      if (publicKeyIndex > -1) {
+        if (passphrase) {
+          transaction.multiSign(passphrase, publicKeyIndex)
+        } else {
+          transaction.multiSignWithWif(publicKeyIndex, wif, networkWif)
+        }
+      } else if (transaction.data.type === TRANSACTION_TYPES.GROUP_1.MULTI_SIGNATURE && !transaction.data.signatures) {
+        transaction.data.signatures = []
       }
     } else {
       if (passphrase) {
         transaction.sign(passphrase)
-      } else if (wif) {
+      } else {
         transaction.signWithWif(wif, networkWif)
       }
-    }
 
-    if (secondPassphrase) {
-      transaction.secondSign(this.normalizePassphrase(secondPassphrase))
+      if (secondPassphrase) {
+        transaction.secondSign(this.normalizePassphrase(secondPassphrase))
+      }
     }
 
     if (returnObject) {
@@ -1347,6 +1357,10 @@ export default class ClientService {
    * @return {Object}
    */
   async multiSign (transaction, { multiSignature, networkWif, passphrase, wif }) {
+    if (!passphrase && !wif) {
+      throw new Error('No passphrase or wif provided')
+    }
+
     transaction = this.__transactionFromData(transaction)
 
     const network = store.getters['session/network']
@@ -1357,21 +1371,29 @@ export default class ClientService {
     let keys
     if (passphrase) {
       keys = Identities.Keys.fromPassphrase(passphrase)
-    } else if (wif) {
-      keys = Identities.Keys.fromWIF(wif)
+    } else {
+      keys = Identities.Keys.fromWIF(wif, { wif: networkWif })
     }
 
-    if (TransactionService.needsSignatures({ ...transaction, multiSignature })) {
+    const isReady = TransactionService.isMultiSignatureReady({
+      ...transaction,
+      multiSignature,
+      signatures: [
+        ...transaction.signatures
+      ]
+    }, true)
+
+    if (!isReady) {
       const index = multiSignature.publicKeys.indexOf(keys.publicKey)
-      if (index !== false) {
+      if (index >= 0) {
         Transactions.Signer.multiSign(transaction, keys, index)
         transaction.signatures = transaction.signatures.filter((value, index, self) => {
           return self.indexOf(value) === index
         })
       } else {
-        throw new Error('Passphrase is not used to sign this transaction')
+        throw new Error('passphrase/wif is not used to sign this transaction')
       }
-    } else {
+    } else if (TransactionService.needsWalletSignature(transaction, keys.publicKey)) {
       Transactions.Signer.sign(transaction, keys)
       transaction.id = TransactionService.getId(transaction)
     }
@@ -1398,6 +1420,12 @@ export default class ClientService {
    * @returns {Object[]}
    */
   async broadcastTransaction (transactions, broadcast) {
+    if (Array.isArray(transactions) && !transactions.length) {
+      return []
+    } else if (typeof transactions === 'object' && !transactions.network) {
+      return []
+    }
+
     let currentPeer = store.getters['peer/current']()
     if (!currentPeer) {
       currentPeer = this.__parseCurrentPeer()
