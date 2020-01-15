@@ -447,15 +447,17 @@ export default class ClientService {
    * @return {Object}
    */
   __parseCurrentPeer () {
-    const matches = /(https?:\/\/)([a-zA-Z0-9.-_]+):([0-9]+)/.exec(this.host)
+    const matches = /(https?:\/\/)([a-zA-Z0-9.\-_]+)(:([0-9]*))?/.exec(this.host)
     const scheme = matches[1]
     const ip = matches[2]
-    const port = matches[3]
+    const port = matches[4]
+
+    const isHttps = scheme === 'https://'
 
     return {
       ip,
-      port,
-      isHttps: scheme === 'https://'
+      port: port || (isHttps ? '443' : '80'),
+      isHttps
     }
   }
 
