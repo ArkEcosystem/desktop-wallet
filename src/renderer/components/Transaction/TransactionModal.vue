@@ -178,9 +178,7 @@ export default {
         if (!isReady) {
           return
         }
-      }
 
-      if (TransactionService.isMultiSignature(this.transaction)) {
         this.transaction.timestamp = undefined
       }
 
