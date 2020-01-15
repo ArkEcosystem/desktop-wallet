@@ -1,6 +1,12 @@
 <template>
-  <ListDivided :is-floating-label="true">
-    <ListDividedItem :label="$t('TRANSACTION.SENDER')">
+  <ListDivided
+    class="TransactionConfirmDelegateRegistration"
+    :is-floating-label="true"
+  >
+    <ListDividedItem
+      class="TransactionConfirmDelegateRegistration__sender"
+      :label="$t('TRANSACTION.SENDER')"
+    >
       {{ senderLabel }}
       <span
         v-if="senderLabel !== currentWallet.address"
@@ -10,7 +16,10 @@
       </span>
     </ListDividedItem>
 
-    <ListDividedItem :label="$t('WALLET_DELEGATES.USERNAME')">
+    <ListDividedItem
+      class="TransactionConfirmDelegateRegistration__username"
+      :label="$t('WALLET_DELEGATES.USERNAME')"
+    >
       {{ getUsername(transaction) }}
     </ListDividedItem>
   </ListDivided>

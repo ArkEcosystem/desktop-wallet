@@ -7,6 +7,7 @@
     :helper-text="helperText"
     :is-invalid="isInvalid"
     :no-items-message="$t('TRANSACTION.MULTI_PAYMENT.NO_RECIPIENTS')"
+    class="TransactionMultiPaymentList"
     @remove="emitRemove"
   >
     <div
@@ -20,7 +21,7 @@
       />
 
       <div class="flex-1 pl-4">
-        <div class="py-1">
+        <div class="TransactionMultiPaymentList__recipient py-1">
           <span class="font-bold">
             {{ $t('TRANSACTION.RECIPIENT') }}:
           </span>
@@ -30,7 +31,7 @@
           </span>
         </div>
 
-        <div class="py-1">
+        <div class="TransactionMultiPaymentList__amount py-1">
           <span class="font-bold">
             {{ $t('TRANSACTION.AMOUNT') }}:
           </span>

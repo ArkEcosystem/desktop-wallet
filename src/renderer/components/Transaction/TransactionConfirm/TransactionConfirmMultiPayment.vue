@@ -1,6 +1,12 @@
 <template>
-  <ListDivided :is-floating-label="true">
-    <ListDividedItem :label="$t('TRANSACTION.SENDER')">
+  <ListDivided
+    class="TransactionConfirmMultiPayment"
+    :is-floating-label="true"
+  >
+    <ListDividedItem
+      class="TransactionConfirmMultiPayment__sender"
+      :label="$t('TRANSACTION.SENDER')"
+    >
       {{ senderLabel }}
       <span
         v-if="senderLabel !== currentWallet.address"
@@ -11,7 +17,7 @@
     </ListDividedItem>
 
     <ListDividedItem
-      class="TransactionConfirmMultiPayment__Recipients"
+      class="TransactionConfirmMultiPayment__recipients"
       :label="$t('TRANSACTION.RECIPIENTS')"
       item-value-class="items-center"
     >
@@ -55,7 +61,7 @@ export default {
 </script>
 
 <style scoped>
-.TransactionConfirmMultiPayment__Recipients {
+.TransactionConfirmMultiPayment__recipients {
   @apply .overflow-y-auto;
   max-height: 200px;
 }
