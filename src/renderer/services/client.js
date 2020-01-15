@@ -1,11 +1,12 @@
 import { Connection } from '@arkecosystem/client'
-import { Identities, Managers, Transactions } from '@arkecosystem/crypto'
+import { Managers, Transactions } from '@arkecosystem/crypto'
 import { castArray, chunk, orderBy } from 'lodash'
 import moment from 'moment'
 import logger from 'electron-log'
 import { TRANSACTION_TYPES } from '@config'
 import store from '@/store'
 import eventBus from '@/plugins/event-bus'
+import BigNumber from '@/plugins/bignumber'
 import TransactionService from '@/services/transaction'
 
 export default class ClientService {
