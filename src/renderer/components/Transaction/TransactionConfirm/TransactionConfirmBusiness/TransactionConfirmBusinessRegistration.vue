@@ -1,6 +1,12 @@
 <template>
-  <ListDivided :is-floating-label="true">
-    <ListDividedItem :label="$t('TRANSACTION.SENDER')">
+  <ListDivided
+    class="TransactionConfirmBusinessRegistration"
+    :is-floating-label="true"
+  >
+    <ListDividedItem
+      class="TransactionConfirmBusinessRegistration__sender"
+      :label="$t('TRANSACTION.SENDER')"
+    >
       {{ senderLabel }}
       <span
         v-if="senderLabel !== currentWallet.address"
@@ -10,16 +16,23 @@
       </span>
     </ListDividedItem>
 
-    <ListDividedItem :label="$t('WALLET_BUSINESS.NAME')">
+    <ListDividedItem
+      class="TransactionConfirmBusinessRegistration__name"
+      :label="$t('WALLET_BUSINESS.NAME')"
+    >
       {{ transaction.asset.businessRegistration.name }}
     </ListDividedItem>
 
-    <ListDividedItem :label="$t('WALLET_BUSINESS.WEBSITE')">
+    <ListDividedItem
+      class="TransactionConfirmBusinessRegistration__website"
+      :label="$t('WALLET_BUSINESS.WEBSITE')"
+    >
       {{ transaction.asset.businessRegistration.website }}
     </ListDividedItem>
 
     <ListDividedItem
       v-if="transaction.asset.businessRegistration.vat"
+      class="TransactionConfirmBusinessRegistration__vat"
       :label="$t('WALLET_BUSINESS.VAT')"
     >
       {{ transaction.asset.businessRegistration.vat }}
@@ -27,6 +40,7 @@
 
     <ListDividedItem
       v-if="transaction.asset.businessRegistration.repository"
+      class="TransactionConfirmBusinessRegistration__repository"
       :label="$t('WALLET_BUSINESS.REPOSITORY')"
     >
       {{ transaction.asset.businessRegistration.repository }}
