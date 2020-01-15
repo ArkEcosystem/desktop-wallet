@@ -1,6 +1,12 @@
 <template>
-  <ListDivided :is-floating-label="true">
-    <ListDividedItem :label="$t('TRANSACTION.SENDER')">
+  <ListDivided
+    class="TransactionConfirmBridgechainRegistration"
+    :is-floating-label="true"
+  >
+    <ListDividedItem
+      class="TransactionConfirmBridgechainRegistration__sender"
+      :label="$t('TRANSACTION.SENDER')"
+    >
       {{ senderLabel }}
       <span
         v-if="senderLabel !== currentWallet.address"
@@ -10,11 +16,17 @@
       </span>
     </ListDividedItem>
 
-    <ListDividedItem :label="$t('WALLET_BUSINESS.BRIDGECHAIN.NAME')">
+    <ListDividedItem
+      class="TransactionConfirmBridgechainRegistration__name"
+      :label="$t('WALLET_BUSINESS.BRIDGECHAIN.NAME')"
+    >
       {{ transaction.asset.bridgechainRegistration.name }}
     </ListDividedItem>
 
-    <ListDividedItem :label="$t('WALLET_BUSINESS.BRIDGECHAIN.GENESIS_HASH')">
+    <ListDividedItem
+      class="TransactionConfirmBridgechainRegistration__genesis-hash"
+      :label="$t('WALLET_BUSINESS.BRIDGECHAIN.GENESIS_HASH')"
+    >
       <span
         v-tooltip="{
           content: transaction.asset.bridgechainRegistration.genesisHash,
@@ -27,7 +39,10 @@
       </span>
     </ListDividedItem>
 
-    <ListDividedItem :label="$t('WALLET_BUSINESS.BRIDGECHAIN.SEED_NODES')">
+    <ListDividedItem
+      class="TransactionConfirmBridgechainRegistration__seed-nodes"
+      :label="$t('WALLET_BUSINESS.BRIDGECHAIN.SEED_NODES')"
+    >
       <div
         v-for="(seedNode, id) of transaction.asset.bridgechainRegistration.seedNodes"
         :key="id"
@@ -36,11 +51,17 @@
       </div>
     </ListDividedItem>
 
-    <ListDividedItem :label="$t('WALLET_BUSINESS.BRIDGECHAIN.API_PORT')">
+    <ListDividedItem
+      class="TransactionConfirmBridgechainRegistration__api-port"
+      :label="$t('WALLET_BUSINESS.BRIDGECHAIN.API_PORT')"
+    >
       {{ apiPort }}
     </ListDividedItem>
 
-    <ListDividedItem :label="$t('WALLET_BUSINESS.BRIDGECHAIN.BRIDGECHAIN_REPOSITORY')">
+    <ListDividedItem
+      class="TransactionConfirmBridgechainRegistration__bridgechain-repo"
+      :label="$t('WALLET_BUSINESS.BRIDGECHAIN.BRIDGECHAIN_REPOSITORY')"
+    >
       {{ transaction.asset.bridgechainRegistration.bridgechainRepository }}
     </ListDividedItem>
   </ListDivided>

@@ -1,6 +1,12 @@
 <template>
-  <ListDivided :is-floating-label="true">
-    <ListDividedItem :label="$t('TRANSACTION.SENDER')">
+  <ListDivided
+    class="TransactionConfirmBridgechainUpdate"
+    :is-floating-label="true"
+  >
+    <ListDividedItem
+      class="TransactionConfirmBridgechainUpdate__sender"
+      :label="$t('TRANSACTION.SENDER')"
+    >
       {{ senderLabel }}
       <span
         v-if="senderLabel !== currentWallet.address"
@@ -10,7 +16,10 @@
       </span>
     </ListDividedItem>
 
-    <ListDividedItem :label="$t('WALLET_BUSINESS.BRIDGECHAIN.SEED_NODES')">
+    <ListDividedItem
+      class="TransactionConfirmBridgechainUpdate__seed-nodes"
+      :label="$t('WALLET_BUSINESS.BRIDGECHAIN.SEED_NODES')"
+    >
       <div
         v-for="(seedNode, id) of transaction.asset.bridgechainUpdate.seedNodes"
         :key="id"
@@ -19,7 +28,10 @@
       </div>
     </ListDividedItem>
 
-    <ListDividedItem :label="$t('WALLET_BUSINESS.BRIDGECHAIN.API_PORT')">
+    <ListDividedItem
+      class="TransactionConfirmBridgechainUpdate__api-port"
+      :label="$t('WALLET_BUSINESS.BRIDGECHAIN.API_PORT')"
+    >
       {{ apiPort }}
     </ListDividedItem>
   </ListDivided>
