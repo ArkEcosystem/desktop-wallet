@@ -26,9 +26,10 @@ delegates.v2 = [
 
 const transactions = {
   data: [
-    { id: 1, amount: 100000, fee: 10000000, timestamp: { epoch: 47848091, human: '2018-09-26T08:08:11.000Z' }, sender: 'address1', recipient: 'address2' },
-    { id: 2, amount: 200000, fee: 10000000, timestamp: { epoch: 47809625, human: '2018-09-25T21:27:05.000Z' }, sender: 'address2', recipient: 'address3' },
-    { id: 3, amount: 300000, fee: 10000000, timestamp: { epoch: 47796863, human: '2018-09-25T17:54:23.000Z' }, sender: 'address3', recipient: 'address3' }
+    { id: 1, type: 0, amount: 100000, fee: 10000000, timestamp: { epoch: 47848091, human: '2018-09-26T08:08:11.000Z' }, sender: 'address1', recipient: 'address2' },
+    { id: 2, type: 0, amount: 200000, fee: 10000000, timestamp: { epoch: 47809625, human: '2018-09-25T21:27:05.000Z' }, sender: 'address2', recipient: 'address3' },
+    { id: 3, type: 0, amount: 300000, fee: 10000000, timestamp: { epoch: 47796863, human: '2018-09-25T17:54:23.000Z' }, sender: 'address3', recipient: 'address3' },
+    { id: 3, type: 1, amount: 0, fee: 10000000, timestamp: { epoch: 47796863, human: '2018-09-25T17:54:23.000Z' }, sender: 'address3', recipient: 'address3' }
   ]
 }
 
