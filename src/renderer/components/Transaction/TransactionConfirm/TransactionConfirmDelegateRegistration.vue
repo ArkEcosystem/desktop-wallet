@@ -20,7 +20,7 @@
       class="TransactionConfirmDelegateRegistration__username"
       :label="$t('WALLET_DELEGATES.USERNAME')"
     >
-      {{ getUsername(transaction) }}
+      {{ username }}
     </ListDividedItem>
   </ListDivided>
 </template>
@@ -44,14 +44,13 @@ export default {
   computed: {
     senderLabel () {
       return this.wallet_formatAddress(this.currentWallet.address)
-    }
-  },
+    },
 
-  methods: {
-    getUsername (transaction) {
-      if (transaction.asset && transaction.asset.delegate) {
-        return transaction.asset.delegate.username
+    username () {
+      if (this.transaction.asset && this.transaction.asset.delegate) {
+        return this.transaction.asset.delegate.username
       }
+
       return ''
     }
   }
