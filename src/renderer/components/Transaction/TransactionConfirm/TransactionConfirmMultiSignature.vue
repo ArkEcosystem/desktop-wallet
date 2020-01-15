@@ -27,7 +27,7 @@ export default {
 
   transactionType: TRANSACTION_TYPES.GROUP_1.MULTI_SIGNATURE,
 
-  inject: ['currentWallet', 'transaction'],
+  inject: ['currentWallet'],
 
   components: {
     ListDivided,
@@ -38,10 +38,6 @@ export default {
     senderLabel () {
       return this.wallet_formatAddress(this.currentWallet.address)
     }
-  },
-
-  mounted () {
-    console.log('mounted transaction', this.transaction)
   }
 }
 </script>

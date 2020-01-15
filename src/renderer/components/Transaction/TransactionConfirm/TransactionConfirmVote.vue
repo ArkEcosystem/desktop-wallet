@@ -27,7 +27,7 @@ export default {
 
   transactionType: TRANSACTION_TYPES.GROUP_1.VOTE,
 
-  inject: ['currentWallet', 'transaction'],
+  inject: ['currentWallet'],
 
   components: {
     ListDivided,
