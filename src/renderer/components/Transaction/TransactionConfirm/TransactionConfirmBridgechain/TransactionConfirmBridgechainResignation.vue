@@ -23,7 +23,7 @@ import { TRANSACTION_GROUPS, TRANSACTION_TYPES } from '@config'
 import { ListDivided, ListDividedItem } from '@/components/ListDivided'
 
 export default {
-  name: 'TransactionConfirmBusinessResignation',
+  name: 'TransactionConfirmBridgechainResignation',
 
   transactionType: TRANSACTION_TYPES.GROUP_2.BRIDGECHAIN_RESIGNATION,
 
