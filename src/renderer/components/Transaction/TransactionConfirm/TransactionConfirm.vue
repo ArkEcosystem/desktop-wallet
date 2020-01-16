@@ -96,8 +96,7 @@ export default {
   props: {
     transaction: {
       type: Object,
-      required: true,
-      default: () => {}
+      required: true
     },
     wallet: {
       type: Object,
@@ -139,15 +138,14 @@ export default {
 
   mounted () {
     const transactionGroup = this.transaction.typeGroup || TRANSACTION_GROUPS.STANDARD
-    const component = Object.keys(this.$options.components).find(componentName => {
-      const component = this.$options.components[componentName]
+    const component = Object.values(this.$options.components).find(component => {
       const group = component.transactionGroup || TRANSACTION_GROUPS.STANDARD
 
       return group !== transactionGroup ? false : component.transactionType === this.transaction.type
     })
 
     if (!component) {
-      throw new Error(`[TransactionConfirm] - Confirm for type ${this.transaction.type} (group ${this.transaction.typeGroup}) not found.`)
+      throw new Error(`[TransactionConfirm] - Confirm for type ${this.transaction.type} (group ${transactionGroup}) not found.`)
     }
 
     this.activeComponent = component.name
@@ -174,7 +172,7 @@ export default {
         const path = await this.electron_writeFile(raw, defaultPath)
         this.$success(this.$t('TRANSACTION.SUCCESS.SAVE_OFFLINE', { path }))
       } catch (e) {
-        this.$error(this.$t('TRANSACTION.ERROR.SAVE_OFFLINE'))
+        this.$error(this.$t('TRANSACTION.ERROR.SAVE_OFFLINE', { error: e.message }))
       }
     }
   }
