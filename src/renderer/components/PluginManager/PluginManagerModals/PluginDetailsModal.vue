@@ -46,7 +46,6 @@
               <PluginManagerButtonSwitch
                 :is-active="isEnabled"
                 :is-disabled="!isInstalledSupported"
-                :label="switchButtonLabel"
                 class="mr-2"
                 @change="toggleStatus"
               />
@@ -213,14 +212,6 @@ export default {
 
     isBlacklisted () {
       return this.$store.getters['plugin/isBlacklisted'](this.plugin.id)
-    },
-
-    switchButtonLabel () {
-      if (this.isEnabled) {
-        return this.$t('PAGES.PLUGIN_MANAGER.ENABLED')
-      }
-
-      return this.$t('PAGES.PLUGIN_MANAGER.DISABLED')
     },
 
     isUpdateAvailable () {
