@@ -166,7 +166,7 @@ export default {
     },
 
     nameError () {
-      if (this.$v.form.asset.name.$dirty && !this.$v.form.asset.name.isValid) {
+      if (this.$v.form.asset.name.$dirty && this.$v.form.asset.name.$invalid) {
         if (!this.$v.form.asset.name.required) {
           return this.$t('VALIDATION.REQUIRED', [this.$t('WALLET_BUSINESS.NAME')])
         } else if (!this.$v.form.asset.name.tooLong) {
@@ -180,7 +180,7 @@ export default {
     },
 
     websiteError () {
-      if (this.$v.form.asset.website.$dirty && !this.$v.form.asset.website.isValid) {
+      if (this.$v.form.asset.website.$dirty && this.$v.form.asset.website.$invalid) {
         if (!this.$v.form.asset.website.required) {
           return this.$t('VALIDATION.REQUIRED', [this.$t('WALLET_BUSINESS.WEBSITE')])
         } else if (!this.$v.form.asset.website.url) {
@@ -196,7 +196,7 @@ export default {
     },
 
     vatError () {
-      if (this.$v.form.asset.vat.$dirty && !this.$v.form.asset.vat.isValid) {
+      if (this.$v.form.asset.vat.$dirty && this.$v.form.asset.vat.$invalid) {
         if (!this.$v.form.asset.vat.tooShort) {
           return this.$t('VALIDATION.TOO_SHORT', [this.$t('WALLET_BUSINESS.VAT')])
         } else if (!this.$v.form.asset.vat.tooLong) {
@@ -212,7 +212,7 @@ export default {
     },
 
     repositoryError () {
-      if (this.$v.form.asset.repository.$dirty && !this.$v.form.asset.repository.isValid) {
+      if (this.$v.form.asset.repository.$dirty && this.$v.form.asset.repository.$invalid) {
         if (!this.$v.form.asset.repository.url) {
           return this.$t('VALIDATION.INVALID_URL')
         } else if (!this.$v.form.asset.repository.tooShort) {
