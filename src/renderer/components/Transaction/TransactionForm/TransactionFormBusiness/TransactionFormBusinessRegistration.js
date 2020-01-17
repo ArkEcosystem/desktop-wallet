@@ -19,26 +19,4 @@ export default {
       this.$error(this.$t('TRANSACTION.ERROR.VALIDATION.BUSINESS_REGISTRATION'))
     }
   }
-
-  // props: {
-  //   isUpdate: {
-  //     type: Boolean,
-  //     required: false,
-  //     default: false
-  //   }
-  // },
-
-  // data: (vm) => ({
-  //   form: {
-  //     fee: 0,
-  //     passphrase: '',
-  //     walletPassword: '',
-  //     asset: {
-  //       name: vm.wallet_fromRoute.business.name,
-  //       website: vm.wallet_fromRoute.business.website,
-  //       vat: vm.wallet_fromRoute.business.vat,
-  //       repository: vm.wallet_fromRoute.business.repository
-  //     }
-  //   }
-  // }),
 }
