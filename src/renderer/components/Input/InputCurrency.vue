@@ -40,7 +40,6 @@
 import { includes, isString } from 'lodash'
 import { required } from 'vuelidate/lib/validators'
 import { MARKET } from '@config'
-import store from '@/store'
 import InputField from './InputField'
 import BigNumber from '@/plugins/bignumber'
 
@@ -365,7 +364,7 @@ export default {
      * @return {Boolean}
      */
     currencyValidator (currency) {
-      const currentNetwork = this.walletNetwork || store.getters['session/network']
+      const currentNetwork = this.walletNetwork || this.$store.getters['session/network']
       const currencies = [
         currentNetwork.token,
         currentNetwork.subunit,
