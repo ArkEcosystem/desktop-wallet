@@ -167,9 +167,9 @@ export default {
 
   validations: {
     form: {
-      fee: mixin.validators.secondPassphrase,
-      passphrase: mixin.validators.secondPassphrase,
-      walletPassword: mixin.validators.secondPassphrase,
+      fee: mixin.validators.fee,
+      passphrase: mixin.validators.passphrase,
+      walletPassword: mixin.validators.walletPassword,
       secondPassphrase: mixin.validators.secondPassphrase
     }
   }
