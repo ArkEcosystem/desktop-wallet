@@ -26,13 +26,14 @@
         :transaction-group="$options.transactionGroup"
         :transaction-type="$options.transactionType"
         :show-insufficient-funds="true"
+        class="TransactionFormBusinessResignation__fee"
         @input="onFee"
       />
 
       <div v-if="!isMultiSignature">
         <div
           v-if="currentWallet.isLedger"
-          class="mt-10"
+          class="TransactionFormBusinessResignation__ledger-notice mt-10"
         >
           {{ $t('TRANSACTION.LEDGER_SIGN_NOTICE') }}
         </div>
@@ -43,6 +44,7 @@
           v-model="$v.form.walletPassword.$model"
           :label="$t('TRANSACTION.PASSWORD')"
           :is-required="true"
+          class="TransactionFormBusinessResignation__password"
         />
 
         <PassphraseInput
@@ -51,6 +53,7 @@
           v-model="$v.form.passphrase.$model"
           :address="currentWallet.address"
           :pub-key-hash="walletNetwork.version"
+          class="TransactionFormBusinessResignation__passphrase"
         />
       </div>
 
@@ -61,12 +64,12 @@
         :label="$t('TRANSACTION.SECOND_PASSPHRASE')"
         :pub-key-hash="walletNetwork.version"
         :public-key="currentWallet.secondPublicKey"
-        class="mt-5"
+        class="TransactionFormBusinessResignation__second-passphrase mt-5"
       />
 
       <button
         :disabled="$v.form.$invalid"
-        class="blue-button mt-10 ml-0"
+        class="TransactionFormBusinessResignation__next blue-button mt-10 ml-0"
         @click="onSubmit"
       >
         {{ $t('COMMON.NEXT') }}

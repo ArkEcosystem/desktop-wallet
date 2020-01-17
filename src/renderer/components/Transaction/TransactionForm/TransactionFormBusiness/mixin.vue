@@ -1,6 +1,6 @@
 <template>
   <form
-    class="flex flex-col"
+    class="TransactionFormBusiness flex flex-col"
     @submit.prevent
   >
     <template>
@@ -21,7 +21,7 @@
         :helper-text="nameError"
         :label="nameLabel"
         :is-invalid="!!nameError"
-        class="mb-5"
+        class="TransactionFormBusiness__name mb-5"
         name="name"
       />
 
@@ -30,7 +30,7 @@
         :helper-text="websiteError"
         :label="$t('WALLET_BUSINESS.WEBSITE')"
         :is-invalid="!!websiteError"
-        class="mb-5"
+        class="TransactionFormBusiness__website mb-5"
         name="website"
       />
 
@@ -39,7 +39,7 @@
         :helper-text="vatError"
         :label="vatLabel"
         :is-invalid="!!vatError"
-        class="mb-5"
+        class="TransactionFormBusiness__vat mb-5"
         name="vat"
       />
 
@@ -48,7 +48,7 @@
         :helper-text="repositoryError"
         :label="repositoryLabel"
         :is-invalid="!!repositoryError"
-        class="mb-5"
+        class="TransactionFormBusiness__repository mb-5"
         name="repository"
       />
 
@@ -58,13 +58,14 @@
         :transaction-group="$options.transactionGroup"
         :transaction-type="$options.transactionType"
         :show-insufficient-funds="true"
+        class="TransactionFormBusiness__fee"
         @input="onFee"
       />
 
       <div v-if="!isMultiSignature">
         <div
           v-if="currentWallet.isLedger"
-          class="mt-10"
+          class="TransactionFormBusiness__ledger-notice mt-10"
         >
           {{ $t('TRANSACTION.LEDGER_SIGN_NOTICE') }}
         </div>
@@ -75,6 +76,7 @@
           v-model="$v.form.walletPassword.$model"
           :label="$t('TRANSACTION.PASSWORD')"
           :is-required="true"
+          class="TransactionFormBusiness__password"
         />
 
         <PassphraseInput
@@ -83,6 +85,7 @@
           v-model="$v.form.passphrase.$model"
           :address="currentWallet.address"
           :pub-key-hash="walletNetwork.version"
+          class="TransactionFormBusiness__passphrase"
         />
       </div>
 
@@ -93,12 +96,12 @@
         :label="$t('TRANSACTION.SECOND_PASSPHRASE')"
         :pub-key-hash="walletNetwork.version"
         :public-key="currentWallet.secondPublicKey"
-        class="mt-5"
+        class="TransactionFormBusiness__second-passphrase mt-5"
       />
 
       <button
         :disabled="$v.form.$invalid"
-        class="blue-button mt-10 ml-0"
+        class="TransactionFormBusiness__next blue-button mt-10 ml-0"
         @click="onSubmit"
       >
         {{ $t('COMMON.NEXT') }}
