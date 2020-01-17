@@ -131,7 +131,7 @@ import mixin from '@/components/Transaction/TransactionForm/mixin'
 const maxNameLength = 40
 const minVatLength = 8
 const maxVatLength = 15
-const minRepositoryLength = 11
+const minRepositoryLength = 12
 
 export default {
   components: {
