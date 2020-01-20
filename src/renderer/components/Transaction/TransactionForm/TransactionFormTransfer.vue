@@ -1,6 +1,6 @@
 <template>
   <form
-    class="flex flex-col"
+    class="TransactionFormTransfer flex flex-col"
     @submit.prevent
   >
     <ListDivided
@@ -22,7 +22,7 @@
       v-if="schema && schema.address"
       v-model="$v.wallet.$model"
       :compatible-address="$v.form.recipientId.$model"
-      class="mb-5"
+      class="TransactionFormTransfer__wallet mb-5"
       profile-class="mb-5"
       @select="ensureAvailableAmount"
     />
@@ -35,7 +35,7 @@
       :show-suggestions="true"
       :is-disabled="!currentWallet"
       name="recipientId"
-      class="mb-5"
+      class="TransactionFormTransfer__recipient mb-5"
     />
 
     <div class="flex items-baseline mb-5">
@@ -53,7 +53,7 @@
         :required="true"
         :is-disabled="!currentWallet"
         :wallet-network="walletNetwork"
-        class="flex-1 mr-3"
+        class="TransactionFormTransfer__amount flex-1 mr-3"
         @blur="ensureAvailableAmount"
         @input="setSendAll(false, false)"
       />
@@ -61,7 +61,8 @@
       <InputSwitch
         v-model="isSendAllActive"
         :text="$t('TRANSACTION.SEND_ALL')"
-        :is-disabled="!canSendAll() || !currentWallet"
+        :is-disabled="!canSendAll || !currentWallet"
+        class="TransactionFormTransfer__send-all"
         @change="setSendAll"
       />
     </div>
@@ -75,7 +76,7 @@
       :is-disabled="!currentWallet"
       :maxlength="vendorFieldMaxLength"
       name="vendorField"
-      class="mb-5"
+      class="TransactionFormTransfer__vendorfield mb-5"
     />
 
     <InputFee
@@ -85,13 +86,14 @@
       :is-disabled="!currentWallet"
       :wallet="currentWallet"
       :wallet-network="walletNetwork"
+      class="TransactionFormTransfer__fee"
       @input="onFee"
     />
 
     <div v-if="!isMultiSignature">
       <div
         v-if="currentWallet && currentWallet.isLedger"
-        class="mt-10"
+        class="TransactionFormTransfer__ledger-notice mt-10"
       >
         {{ $t('TRANSACTION.LEDGER_SIGN_NOTICE') }}
       </div>
@@ -100,19 +102,19 @@
         v-else-if="currentWallet && currentWallet.passphrase"
         ref="password"
         v-model="$v.form.walletPassword.$model"
-        class="mt-4"
         :label="$t('TRANSACTION.PASSWORD')"
         :is-required="true"
+        class="TransactionFormTransfer__password mt-4"
       />
 
       <PassphraseInput
         v-else
         ref="passphrase"
         v-model="$v.form.passphrase.$model"
-        class="mt-4"
         :address="currentWallet && currentWallet.address"
         :pub-key-hash="walletNetwork.version"
         :is-disabled="!currentWallet"
+        class="TransactionFormTransfer__passphrase mt-4"
       />
     </div>
 
@@ -123,14 +125,14 @@
       :label="$t('TRANSACTION.SECOND_PASSPHRASE')"
       :pub-key-hash="walletNetwork.version"
       :public-key="currentWallet.secondPublicKey"
-      class="mt-5"
+      class="TransactionFormTransfer__second-passphrase mt-5"
     />
 
     <footer class="mt-10 flex justify-between items-center">
       <div class="self-start">
         <button
           :disabled="$v.form.$invalid"
-          class="blue-button"
+          class="TransactionFormTransfer__next blue-button"
           @click="onSubmit"
         >
           {{ $t('COMMON.NEXT') }}
@@ -160,8 +162,8 @@
       :note="$t('TRANSACTION.CONFIRM_SEND_ALL_NOTE')"
       container-classes="SendAllConfirmation"
       portal-target="loading"
-      @close="emitCancelSendAll"
-      @cancel="emitCancelSendAll"
+      @close="cancelSendAll"
+      @cancel="cancelSendAll"
       @continue="enableSendAll"
     />
     <ModalLoader
@@ -264,10 +266,14 @@ export default {
 
     maximumAvailableAmount () {
       if (!this.currentWallet) {
-        return 0
+        return this.currency_subToUnit(0)
       }
 
       return this.currency_subToUnit(this.currentWallet.balance).minus(this.form.fee)
+    },
+
+    canSendAll () {
+      return this.maximumAvailableAmount > 0
     },
 
     senderLabel () {
@@ -285,7 +291,7 @@ export default {
       }
 
       const profile = this.$store.getters['profile/byId'](this.currentWallet.profileId)
-      if (!profile.id) {
+      if (!profile || !profile.id) {
         return sessionNetwork
       }
 
@@ -340,61 +346,10 @@ export default {
   },
 
   mounted () {
-    // Note: we set this here and not in the data property so validation is triggered properly when fields get pre-populated
-    if (this.schema) {
-      this.$set(this.form, 'amount', this.schema.amount || '')
-      this.$set(this.form, 'recipientId', this.schema.address || '')
-      this.$set(this.form, 'vendorField', this.schema.vendorField || '')
-      if (this.schema.wallet) {
-        const currentProfile = this.$store.getters['session/profileId']
-        const ledgerWallets = this.$store.getters['ledger/isConnected'] ? this.$store.getters['ledger/wallets'] : []
-        const profiles = this.$store.getters['profile/all']
-        const wallets = []
-
-        let foundNetwork = !this.schema.nethash
-
-        if (currentProfile) {
-          if (this.schema.nethash) {
-            const profile = this.$store.getters['profile/byId'](currentProfile)
-            const network = this.$store.getters['network/byId'](profile.networkId)
-            if (network.nethash === this.schema.nethash) {
-              foundNetwork = true
-              wallets.push(...this.$store.getters['wallet/byProfileId'](currentProfile))
-            }
-          } else {
-            wallets.push(...this.$store.getters['wallet/byProfileId'](currentProfile))
-          }
-        }
-        wallets.push(...ledgerWallets)
-        for (const profile of profiles) {
-          if (currentProfile !== profile.id) {
-            if (this.schema.nethash) {
-              const network = this.$store.getters['network/byId'](profile.networkId)
-              if (network.nethash === this.schema.nethash) {
-                foundNetwork = true
-                wallets.push(...this.$store.getters['wallet/byProfileId'](profile.id))
-              }
-            } else {
-              wallets.push(...this.$store.getters['wallet/byProfileId'](profile.id))
-            }
-          }
-        }
-        const wallet = wallets.filter(wallet => wallet.address === this.schema.wallet)
-        if (wallet.length) {
-          this.currentWallet = wallet[0]
-        }
-        if (!foundNetwork) {
-          this.$emit('cancel')
-          this.$error(`${this.$t('TRANSACTION.ERROR.NETWORK_NOT_CONFIGURED')}: ${this.schema.nethash}`)
-        } else if (!wallet.length) {
-          this.$emit('cancel')
-          this.$error(`${this.$t('TRANSACTION.ERROR.WALLET_NOT_IMPORTED')}: ${this.schema.wallet}`)
-        }
-      }
-    }
+    this.populateSchema()
 
     if (this.currentWallet && this.currentWallet.id) {
-      this.$set(this, 'wallet', this.currentWallet || null)
+      this.$set(this, 'wallet', this.currentWallet)
       this.$v.wallet.$touch()
     }
   },
@@ -425,6 +380,63 @@ export default {
       return this.$client.buildTransfer(transactionData, isAdvancedFee, returnObject)
     },
 
+    populateSchema () {
+      if (!this.schema) {
+        return
+      }
+
+      this.$set(this.form, 'amount', this.schema.amount || '')
+      this.$set(this.form, 'recipientId', this.schema.address || '')
+      this.$set(this.form, 'vendorField', this.schema.vendorField || '')
+      if (this.schema.wallet) {
+        const currentProfileId = this.$store.getters['session/profileId']
+        const ledgerWallets = this.$store.getters['ledger/isConnected'] ? this.$store.getters['ledger/wallets'] : []
+        const wallets = []
+
+        let foundNetwork = !this.schema.nethash
+        if (currentProfileId) {
+          if (this.schema.nethash) {
+            const profile = this.$store.getters['profile/byId'](currentProfileId)
+            const network = this.$store.getters['network/byId'](profile.networkId)
+            if (network.nethash === this.schema.nethash) {
+              foundNetwork = true
+              wallets.push(...this.$store.getters['wallet/byProfileId'](currentProfileId))
+            }
+          } else {
+            wallets.push(...this.$store.getters['wallet/byProfileId'](currentProfileId))
+          }
+        }
+
+        wallets.push(...ledgerWallets)
+
+        for (const profile of this.$store.getters['profile/all']) {
+          if (currentProfileId !== profile.id) {
+            if (this.schema.nethash) {
+              const network = this.$store.getters['network/byId'](profile.networkId)
+              if (network.nethash === this.schema.nethash) {
+                foundNetwork = true
+                wallets.push(...this.$store.getters['wallet/byProfileId'](profile.id))
+              }
+            } else {
+              wallets.push(...this.$store.getters['wallet/byProfileId'](profile.id))
+            }
+          }
+        }
+
+        const wallet = wallets.filter(wallet => wallet.address === this.schema.wallet)
+        if (wallet.length) {
+          this.currentWallet = wallet[0]
+        }
+        if (!foundNetwork) {
+          this.$emit('cancel')
+          this.$error(`${this.$t('TRANSACTION.ERROR.NETWORK_NOT_CONFIGURED')}: ${this.schema.nethash}`)
+        } else if (!wallet.length) {
+          this.$emit('cancel')
+          this.$error(`${this.$t('TRANSACTION.ERROR.WALLET_NOT_IMPORTED')}: ${this.schema.wallet}`)
+        }
+      }
+    },
+
     transactionError () {
       this.$error(this.$t('TRANSACTION.ERROR.VALIDATION.TRANSFER'))
     },
@@ -445,9 +457,8 @@ export default {
       if (isActive) {
         this.confirmSendAll()
         this.previousAmount = this.form.amount
-      }
-      if (!isActive) {
-        if (setPreviousAmount && !this.previousAmount && this.previousAmount.length) {
+      } else {
+        if (setPreviousAmount && !!this.previousAmount) {
           this.$set(this.form, 'amount', this.previousAmount)
         }
         this.previousAmount = ''
@@ -456,12 +467,8 @@ export default {
       }
     },
 
-    canSendAll () {
-      return this.maximumAvailableAmount > 0
-    },
-
     ensureAvailableAmount () {
-      if (this.isSendAllActive && this.canSendAll()) {
+      if (this.isSendAllActive && this.canSendAll) {
         this.$set(this.form, 'amount', this.maximumAvailableAmount)
       }
     },
@@ -476,7 +483,7 @@ export default {
       this.showConfirmSendAll = true
     },
 
-    emitCancelSendAll () {
+    cancelSendAll () {
       this.showConfirmSendAll = false
       this.isSendAllActive = false
     },
@@ -540,20 +547,14 @@ export default {
       recipientId: {
         required,
         isValid (value) {
-          if (this.$refs.recipient) {
-            return !this.$refs.recipient.$v.$invalid
-          }
-          return false
+          return !this.$refs.recipient.$v.$invalid
         }
       },
 
       amount: {
         required,
         isValid (value) {
-          if (this.$refs.amount) {
-            return !this.$refs.amount.$v.$invalid
-          }
-          return false
+          return !this.$refs.amount.$v.$invalid
         }
       }
     }
