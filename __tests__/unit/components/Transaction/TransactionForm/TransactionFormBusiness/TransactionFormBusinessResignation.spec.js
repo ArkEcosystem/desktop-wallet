@@ -98,6 +98,10 @@ describe('TransactionFormBusinessResignation', () => {
       expect(wrapper.contains('.TransactionFormBusinessResignation')).toBe(true)
     })
 
+    it('should have fee field', () => {
+      expect(wrapper.contains('.TransactionFormBusinessResignation__fee')).toBe(true)
+    })
+
     describe('ledger notice', () => {
       it('should show if wallet is a ledger', () => {
         createWrapper(null, {

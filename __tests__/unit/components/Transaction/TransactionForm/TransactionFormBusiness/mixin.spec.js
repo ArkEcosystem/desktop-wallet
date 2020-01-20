@@ -141,6 +141,10 @@ describe.each([
       expect(wrapper.contains('.TransactionFormBusiness__repository')).toBe(true)
     })
 
+    it('should have fee field', () => {
+      expect(wrapper.contains('.TransactionFormBusiness__fee')).toBe(true)
+    })
+
     describe('ledger notice', () => {
       it('should show if wallet is a ledger', () => {
         createWrapper(component, {
