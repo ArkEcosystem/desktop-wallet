@@ -265,15 +265,19 @@ export default {
     },
 
     onPageChange ({ currentPage }) {
-      this.currentPage = currentPage
-      this.__updateParams({ page: currentPage })
-      this.loadTransactions()
+      if (this.currentPage !== currentPage) {
+        this.currentPage = currentPage
+        this.__updateParams({ page: currentPage })
+        this.loadTransactions()
+      }
     },
 
     onPerPageChange ({ currentPerPage }) {
-      this.transactionTableRowCount = currentPerPage
-      this.__updateParams({ limit: currentPerPage, page: 1 })
-      this.loadTransactions()
+      if (this.transactionTableRowCount !== currentPerPage) {
+        this.transactionTableRowCount = currentPerPage
+        this.__updateParams({ limit: currentPerPage, page: 1 })
+        this.loadTransactions()
+      }
     },
 
     onSortChange ({ source, field, type }) {
