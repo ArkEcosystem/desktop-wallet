@@ -195,6 +195,7 @@ export default {
     onPerPageChange ({ currentPerPage }) {
       if (currentPerPage && currentPerPage !== this.transactionTableRowCount) {
         this.transactionTableRowCount = currentPerPage
+        this.currentPage = 1
         this.__updateParams({ limit: currentPerPage, page: 1 })
         this.loadTransactions()
       }
