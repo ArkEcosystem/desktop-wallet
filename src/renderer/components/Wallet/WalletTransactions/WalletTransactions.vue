@@ -272,6 +272,7 @@ export default {
 
     onPerPageChange ({ currentPerPage }) {
       this.transactionTableRowCount = currentPerPage
+      this.currentPage = 1 // Reset page to 1 when change display rows
       this.__updateParams({ limit: currentPerPage, page: 1 })
       this.loadTransactions()
     },
