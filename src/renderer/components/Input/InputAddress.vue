@@ -191,7 +191,7 @@ export default {
       ]
       const contacts = this.$store.getters['wallet/contactsByProfileId'](this.currentProfile.id)
 
-      const source = unionBy(wallets, contacts, 'address')
+      const source = unionBy(wallets, contacts, 'address').filter(wallet => wallet && !!wallet.address)
 
       const addresses = map(source, (wallet) => {
         const address = {
@@ -208,7 +208,7 @@ export default {
       })
 
       const results = orderBy(addresses, (object) => {
-        return object.name || object.address.toLowerCase()
+        return (object.name || object.address).toLowerCase()
       })
 
       return results.reduce((wallets, wallet, index) => {
