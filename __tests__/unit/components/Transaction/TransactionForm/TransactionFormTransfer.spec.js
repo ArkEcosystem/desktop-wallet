@@ -1,7 +1,7 @@
 import { createLocalVue, mount } from '@vue/test-utils'
 import { Identities } from '@arkecosystem/crypto'
 import Vuelidate from 'vuelidate'
-import cloneDeep from 'lodash.cloneDeep'
+import cloneDeep from 'lodash/cloneDeep'
 import installI18n from '../../../__utils__/i18n'
 import { VENDOR_FIELD } from '@config'
 import { TransactionFormTransfer } from '@/components/Transaction/TransactionForm'
