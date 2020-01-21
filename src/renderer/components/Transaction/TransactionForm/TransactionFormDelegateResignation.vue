@@ -3,7 +3,7 @@
     class="TransactionFormDelegateResignation flex flex-col"
     @submit.prevent
   >
-    <template v-if="currentWallet.isDelegate">
+    <template v-if="canResign">
       <ListDivided :is-floating-label="true">
         <ListDividedItem :label="$t('TRANSACTION.SENDER')">
           {{ senderLabel }}
@@ -25,13 +25,14 @@
         :currency="walletNetwork.token"
         :transaction-type="$options.transactionType"
         :show-insufficient-funds="true"
+        class="TransactionFormDelegateResignation__fee"
         @input="onFee"
       />
 
       <div v-if="!isMultiSignature">
         <div
           v-if="currentWallet.isLedger"
-          class="mt-10"
+          class="TransactionFormDelegateResignation__ledger-notice mt-10"
         >
           {{ $t('TRANSACTION.LEDGER_SIGN_NOTICE') }}
         </div>
@@ -42,6 +43,7 @@
           v-model="$v.form.walletPassword.$model"
           :label="$t('TRANSACTION.PASSWORD')"
           :is-required="true"
+          class="TransactionFormDelegateResignation__password"
         />
 
         <PassphraseInput
@@ -50,6 +52,7 @@
           v-model="$v.form.passphrase.$model"
           :address="currentWallet.address"
           :pub-key-hash="walletNetwork.version"
+          class="TransactionFormDelegateResignation__passphrase"
         />
       </div>
 
@@ -60,12 +63,12 @@
         :label="$t('TRANSACTION.SECOND_PASSPHRASE')"
         :pub-key-hash="walletNetwork.version"
         :public-key="currentWallet.secondPublicKey"
-        class="mt-5"
+        class="TransactionFormDelegateResignation__second-passphrase mt-5"
       />
 
       <button
         :disabled="$v.form.$invalid"
-        class="blue-button mt-10 ml-0"
+        class="TransactionFormDelegateResignation__next blue-button mt-10 ml-0"
         @click="onSubmit"
       >
         {{ $t('COMMON.NEXT') }}
@@ -126,7 +129,21 @@ export default {
   }),
 
   computed: {
+    canResign () {
+      if (this.username === null) {
+        return false
+      }
+
+      return this.currentWallet.isDelegate
+    },
+
     username () {
+      const delegate = this.$store.getters['delegate/byAddress'](this.currentWallet.address)
+
+      if (!delegate || !delegate.username) {
+        return null
+      }
+
       return this.$store.getters['delegate/byAddress'](this.currentWallet.address).username
     }
   },
@@ -160,9 +177,9 @@ export default {
 
   validations: {
     form: {
-      fee: mixin.validators.secondPassphrase,
-      passphrase: mixin.validators.secondPassphrase,
-      walletPassword: mixin.validators.secondPassphrase,
+      fee: mixin.validators.fee,
+      passphrase: mixin.validators.passphrase,
+      walletPassword: mixin.validators.walletPassword,
       secondPassphrase: mixin.validators.secondPassphrase
     }
   }
