@@ -1,6 +1,6 @@
 <template>
   <form
-    class="flex flex-col"
+    class="TransactionFormMultiPayment flex flex-col"
     @submit.prevent
   >
     <ListDivided
@@ -30,7 +30,7 @@
         :is-disabled="!currentWallet"
         :warning-text="recipientWarning"
         name="recipientId"
-        class="mb-5 mr-4 flex-1"
+        class="TransactionFormMultiPayment__recipient mb-5 mr-4 flex-1"
       />
 
       <div
@@ -50,13 +50,13 @@
           :required="true"
           :is-disabled="!currentWallet"
           :wallet-network="walletNetwork"
-          class="flex-1"
+          class="TransactionFormMultiPayment__amount flex-1"
         />
 
         <ButtonGeneric
           :disabled="!validStep1"
           :label="$t('TRANSACTION.MULTI_PAYMENT.BUTTON_ADD')"
-          class="py-1 flex-inline h-8 mt-4 ml-4"
+          class="TransactionFormMultiPayment__add py-1 flex-inline h-8 mt-4 ml-4"
           @click="addRecipient"
         />
       </div>
@@ -78,7 +78,7 @@
         :helper-text="vendorFieldHelperText"
         :maxlength="vendorFieldMaxLength"
         name="vendorField"
-        class="mb-5"
+        class="TransactionFormMultiPayment__vendorfield mb-5"
       />
 
       <InputFee
@@ -88,45 +88,46 @@
         :is-disabled="!currentWallet"
         :wallet="currentWallet"
         :wallet-network="walletNetwork"
+        class="TransactionFormMultiPayment__fee"
         @input="onFee"
       />
 
       <div v-if="!isMultiSignature">
         <div
-          v-if="currentWallet && currentWallet.isLedger"
-          class="mt-10"
+          v-if="currentWallet.isLedger"
+          class="TransactionFormMultiPayment__ledger-notice mt-10"
         >
           {{ $t('TRANSACTION.LEDGER_SIGN_NOTICE') }}
         </div>
 
         <InputPassword
-          v-else-if="currentWallet && currentWallet.passphrase"
+          v-else-if="currentWallet.passphrase"
           ref="password"
           v-model="$v.form.walletPassword.$model"
-          class="mt-4"
           :label="$t('TRANSACTION.PASSWORD')"
           :is-required="true"
+          class="TransactionFormMultiPayment__password mt-4"
         />
 
         <PassphraseInput
           v-else
           ref="passphrase"
           v-model="$v.form.passphrase.$model"
-          class="mt-4"
-          :address="currentWallet && currentWallet.address"
+          :address="currentWallet.address"
           :pub-key-hash="walletNetwork.version"
           :is-disabled="!currentWallet"
+          class="TransactionFormMultiPayment__passphrase mt-4"
         />
       </div>
 
       <PassphraseInput
-        v-if="currentWallet && currentWallet.secondPublicKey"
+        v-if="currentWallet.secondPublicKey"
         ref="secondPassphrase"
         v-model="$v.form.secondPassphrase.$model"
         :label="$t('TRANSACTION.SECOND_PASSPHRASE')"
         :pub-key-hash="walletNetwork.version"
         :public-key="currentWallet.secondPublicKey"
-        class="mt-5"
+        class="TransactionFormMultiPayment__second-passphrase mt-5"
       />
     </div>
 
@@ -134,7 +135,7 @@
       <div class="self-start">
         <button
           :disabled="step === 1"
-          class="blue-button"
+          class="TransactionFormMultiPayment__prev blue-button"
           @click="previousStep"
         >
           {{ $t('COMMON.PREV') }}
@@ -142,7 +143,7 @@
 
         <button
           :disabled="!isFormValid"
-          class="blue-button"
+          class="TransactionFormMultiPayment__next blue-button"
           @click="nextStep"
         >
           {{ $t('COMMON.NEXT') }}
@@ -252,17 +253,13 @@ export default {
     },
 
     maximumAvailableAmount () {
-      return this.currency_subToUnit(this.currentWallet.balance).minus(this.form.fee)
-    },
+      let availableAmount = this.currency_subToUnit(this.currentWallet.balance).minus(this.form.fee)
 
-    walletNetwork () {
-      const sessionNetwork = this.session_network
-      const profile = this.$store.getters['profile/byId'](this.currentWallet.profileId)
-      if (!profile.id) {
-        return sessionNetwork
+      for (const recipient of this.form.recipients) {
+        availableAmount = availableAmount.minus(recipient.amount)
       }
 
-      return this.$store.getters['network/byId'](profile.networkId) || sessionNetwork
+      return availableAmount
     },
 
     vendorFieldLabel () {
@@ -348,10 +345,9 @@ export default {
     },
 
     addRecipient () {
-      console.log('addRecipient', {
-        address: this.recipientId,
-        amount: this.currency_unitToSub(this.amount)
-      })
+      if (this.$v.recipientId.$invalid || this.$v.amount.$invalid) {
+        return
+      }
 
       this.form.recipients.push({
         address: this.recipientId,
@@ -378,25 +374,11 @@ export default {
       }
     },
 
-    onFee (fee) {
-      this.$set(this.form, 'fee', fee)
-    },
-
-    setSendAll (isActive, setPreviousAmount = true) {
-      if (isActive) {
-        this.confirmSendAll()
-        this.previousAmount = this.form.amount
-      }
-      if (!isActive) {
-        if (setPreviousAmount && !this.previousAmount && this.previousAmount.length) {
-          this.$set(this.form, 'amount', this.previousAmount)
-        }
-        this.previousAmount = ''
-        this.isSendAllActive = isActive
-      }
-    },
-
     emitRemoveRecipient (index) {
+      if (!Object.prototype.hasOwnProperty.call(this.$v.form.recipients.$model, index)) {
+        return
+      }
+
       this.$v.form.recipients.$model = [
         ...this.form.recipients.slice(0, index),
         ...this.form.recipients.slice(index + 1)
@@ -429,10 +411,6 @@ export default {
 
     form: {
       recipients: {
-        notEmpty () {
-          return !!this.form.recipients.length
-        },
-
         aboveMinimum () {
           return this.form.recipients.length > 1
         },
