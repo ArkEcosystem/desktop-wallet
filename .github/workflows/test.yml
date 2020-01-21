@@ -80,7 +80,7 @@ jobs:
         run: sudo apt-get install libudev-dev libusb-1.0-0-dev
 
       - name: Install
-        run: yarn global add node-gyp && yarn install --frozen-lockfile && npm rebuild
+        run: yarn global add node-gyp && yarn install --frozen-lockfile && npm rebuild && cd ./node_modules/bcrypto && npm install && cd ../../
 
       - name: Build
         run: node .electron-vue/build.js && node ./node_modules/electron-builder/out/cli/cli.js --linux
