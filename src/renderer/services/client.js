@@ -182,7 +182,7 @@ export default class ClientService {
     return body.meta.totalCount
   }
 
-  async fetchDelegateForged (delegate) {
+  fetchDelegateForged (delegate) {
     if (delegate.forged) {
       return delegate.forged.total
     }

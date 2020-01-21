@@ -1,9 +1,8 @@
 <template>
-  <div
-    class="TransactionFormVote"
-  >
+  <div class="TransactionFormVote">
     <Collapse
       :is-open="!isPassphraseStep"
+      class="TransactionFormVote__delegate-details"
     >
       <ListDivided :is-floating-label="true">
         <ListDividedItem :label="$t('TRANSACTION.SENDER')">
@@ -78,15 +77,14 @@
       </div>
     </Collapse>
 
-    <Collapse
-      :is-open="isPassphraseStep"
-    >
+    <Collapse :is-open="isPassphraseStep">
       <div class="mt-12">
         <InputFee
           ref="fee"
           :currency="walletNetwork.token"
           :transaction-type="$options.transactionType"
           :show-insufficient-funds="true"
+          class="TransactionFormVote__fee"
           @input="onFee"
         />
       </div>
@@ -94,7 +92,7 @@
       <div v-if="!isMultiSignature">
         <div
           v-if="currentWallet.isLedger"
-          class="mt-10"
+          class="TransactionFormVote__ledger-notice mt-10"
         >
           {{ $t('TRANSACTION.LEDGER_SIGN_NOTICE') }}
         </div>
@@ -105,6 +103,7 @@
           v-model="$v.form.walletPassword.$model"
           :label="$t('TRANSACTION.PASSWORD')"
           :is-required="true"
+          class="TransactionFormVote__password"
         />
 
         <PassphraseInput
@@ -113,7 +112,7 @@
           v-model="$v.form.passphrase.$model"
           :address="currentWallet.address"
           :pub-key-hash="walletNetwork.version"
-          class="mt-5"
+          class="TransactionFormVote__passphrase mt-5"
         />
       </div>
 
@@ -124,13 +123,13 @@
         :label="$t('TRANSACTION.SECOND_PASSPHRASE')"
         :pub-key-hash="walletNetwork.version"
         :public-key="currentWallet.secondPublicKey"
-        class="mt-5"
+        class="TransactionFormVote__second-passphrase mt-5"
       />
 
       <button
         :disabled="$v.form.$invalid"
         type="button"
-        class="blue-button mt-5"
+        class="TransactionFormVote__next blue-button mt-5"
         @click="onSubmit"
       >
         {{ $t('COMMON.NEXT') }}
@@ -207,7 +206,11 @@ export default {
 
   computed: {
     blocksProduced () {
-      return this.delegate.blocks.produced || '0'
+      if (!this.delegate.blocks || !this.delegate.blocks.produced) {
+        return 0
+      }
+
+      return this.delegate.blocks.produced
     },
 
     showVoteUnvoteButton () {
@@ -281,8 +284,8 @@ export default {
       this.isPassphraseStep = !this.isPassphraseStep
     },
 
-    async fetchForged () {
-      const forged = await this.$client.fetchDelegateForged(this.delegate)
+    fetchForged () {
+      const forged = this.$client.fetchDelegateForged(this.delegate)
       this.forged = this.currency_format(this.currency_subToUnit(forged), { currencyFrom: 'network' })
     },
 
