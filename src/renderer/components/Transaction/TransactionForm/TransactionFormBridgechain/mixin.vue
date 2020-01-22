@@ -1,6 +1,6 @@
 <template>
   <form
-    class="TransactionFormBridgechainRegistrationUpdate flex flex-col"
+    class="TransactionFormBridgechain flex flex-col"
     @submit.prevent
   >
     <template>
@@ -27,13 +27,13 @@
             :label="$t('TRANSACTION.BRIDGECHAIN.SEED_NODE')"
             :is-invalid="!!seedNodeError"
             name="seedNode"
-            class="mr-4 flex-1"
+            class="TransactionFormBridgechain__seed-node mr-4 flex-1"
           />
 
           <ButtonGeneric
             :disabled="seedNodeDisabled"
             :label="$t('TRANSACTION.BRIDGECHAIN.BUTTON_ADD')"
-            class="py-1 flex-inline h-8 mt-4 ml-4"
+            class="TransactionFormBridgechain__add py-1 flex-inline h-8 mt-4 ml-4"
             @click="addSeedNode"
           />
         </div>
@@ -43,7 +43,7 @@
           :items="$v.form.asset.seedNodes.$model"
           :helper-text="seedNodesError"
           :is-invalid="!!seedNodesError"
-          class="mt-4"
+          class="TransactionFormBridgechain__seed-nodes mt-4"
           @remove="emitRemoveSeedNode"
         />
       </div>
@@ -55,7 +55,7 @@
             :helper-text="nameError"
             :label="$t('TRANSACTION.BRIDGECHAIN.NAME')"
             :is-invalid="!!nameError"
-            class="mb-5"
+            class="TransactionFormBridgechain__name mb-5"
             name="name"
           />
 
@@ -64,7 +64,7 @@
             :helper-text="genesisHashError"
             :label="$t('TRANSACTION.BRIDGECHAIN.GENESIS_HASH')"
             :is-invalid="!!genesisHashError"
-            class="mb-5"
+            class="TransactionFormBridgechain__genesis-hash mb-5"
             name="genesisHash"
           />
 
@@ -73,7 +73,7 @@
             :helper-text="bridgechainRepositoryError"
             :label="$t('TRANSACTION.BRIDGECHAIN.BRIDGECHAIN_REPOSITORY')"
             :is-invalid="!!bridgechainRepositoryError"
-            class="mb-5"
+            class="TransactionFormBridgechain__bridgechain-repository mb-5"
             name="repository"
           />
         </div>
@@ -84,7 +84,7 @@
           :label="$t('TRANSACTION.BRIDGECHAIN.API_PORT')"
           :is-invalid="!!apiPortError"
           type="number"
-          class="mb-5"
+          class="TransactionFormBridgechain__api-port mb-5"
           name="apiPort"
         />
 
@@ -94,13 +94,14 @@
           :transaction-group="$options.transactionGroup"
           :transaction-type="$options.transactionType"
           :show-insufficient-funds="true"
+          class="TransactionFormBridgechain__fee"
           @input="onFee"
         />
 
         <div v-if="!isMultiSignature">
           <div
             v-if="currentWallet.isLedger"
-            class="mt-10"
+            class="TransactionFormBridgechain__ledger-notice mt-10"
           >
             {{ $t('TRANSACTION.LEDGER_SIGN_NOTICE') }}
           </div>
@@ -111,6 +112,7 @@
             v-model="$v.form.walletPassword.$model"
             :label="$t('TRANSACTION.PASSWORD')"
             :is-required="true"
+            class="TransactionFormBridgechain__password"
           />
 
           <PassphraseInput
@@ -119,6 +121,7 @@
             v-model="$v.form.passphrase.$model"
             :address="currentWallet.address"
             :pub-key-hash="walletNetwork.version"
+            class="TransactionFormBridgechain__passphrase"
           />
         </div>
 
@@ -129,7 +132,7 @@
           :label="$t('TRANSACTION.SECOND_PASSPHRASE')"
           :pub-key-hash="walletNetwork.version"
           :public-key="currentWallet.secondPublicKey"
-          class="mt-5"
+          class="TransactionFormBridgechain__second-passphrase mt-5"
         />
       </div>
 
@@ -137,7 +140,7 @@
         <div class="self-start">
           <button
             :disabled="step === 1"
-            class="blue-button"
+            class="TransactionFormBridgechain__prev blue-button"
             @click="previousStep"
           >
             {{ $t('COMMON.PREV') }}
@@ -145,7 +148,7 @@
 
           <button
             :disabled="!isFormValid"
-            class="blue-button"
+            class="TransactionFormBridgechain__next blue-button"
             @click="nextStep"
           >
             {{ $t('COMMON.NEXT') }}
@@ -177,7 +180,8 @@ import TransactionPeerList from '@/components/Transaction/TransactionPeerList'
 import mixin from '@/components/Transaction/TransactionForm/mixin'
 
 const maxNameLength = 40
-const minRepositoryLength = 11
+const maxSeedNodes = 10
+const minRepositoryLength = 12
 
 export default {
   components: {
@@ -226,7 +230,7 @@ export default {
     },
 
     nameError () {
-      if (this.$v.form.asset.name.$dirty && !this.$v.form.asset.name.isValid) {
+      if (this.$v.form.asset.name.$dirty && this.$v.form.asset.name.$invalid) {
         if (!this.$v.form.asset.name.required) {
           return this.$t('VALIDATION.REQUIRED', [this.$t('TRANSACTION.BRIDGECHAIN.NAME')])
         } else if (!this.$v.form.asset.name.tooLong) {
@@ -244,12 +248,12 @@ export default {
     },
 
     seedNodeError () {
-      if (this.$v.seedNode.$dirty && !this.$v.seedNode.isValid) {
+      if (this.$v.seedNode.$dirty && this.$v.seedNode.$invalid) {
         if (!this.$v.seedNode.isValidSeed) {
           return this.$t('VALIDATION.INVALID_SEED')
         } else if (!this.$v.seedNode.isUnique) {
           return this.$t('TRANSACTION.BRIDGECHAIN.ERROR_DUPLICATE')
-        } else if (!this.$v.seedNode.tooMany) {
+        } else if (!this.$v.seedNode.belowMax) {
           return this.$t('VALIDATION.TOO_MANY', [this.$t('TRANSACTION.BRIDGECHAIN.SEED_NODES')])
         }
       }
@@ -258,11 +262,11 @@ export default {
     },
 
     seedNodesError () {
-      if (this.$v.form.asset.seedNodes.$dirty && !this.$v.form.asset.seedNodes.isValid) {
+      if (this.$v.form.asset.seedNodes.$dirty && this.$v.form.asset.seedNodes.$invalid) {
         if (!this.$v.form.asset.seedNodes.required) {
           return this.$t('VALIDATION.REQUIRED', [this.$t('TRANSACTION.BRIDGECHAIN.SEED_NODES')])
-        } else if (!this.$v.form.asset.seedNodes.notEnough) {
-          return this.$t('VALIDATION.NOT_ENOUGH', [this.$t('TRANSACTION.BRIDGECHAIN.SEED_NODES')])
+        } else if (!this.$v.form.asset.seedNodes.belowMax) {
+          return this.$t('VALIDATION.TOO_MANY', [this.$t('TRANSACTION.BRIDGECHAIN.SEED_NODES')])
         }
       }
 
@@ -270,7 +274,7 @@ export default {
     },
 
     genesisHashError () {
-      if (this.$v.form.asset.genesisHash.$dirty && !this.$v.form.asset.genesisHash.isValid) {
+      if (this.$v.form.asset.genesisHash.$dirty && this.$v.form.asset.genesisHash.$invalid) {
         if (!this.$v.form.asset.genesisHash.isValidHash) {
           return this.$t('VALIDATION.NOT_VALID', [this.$t('TRANSACTION.BRIDGECHAIN.GENESIS_HASH')])
         }
@@ -280,7 +284,7 @@ export default {
     },
 
     bridgechainRepositoryError () {
-      if (this.$v.form.asset.bridgechainRepository.$dirty && !this.$v.form.asset.bridgechainRepository.isValid) {
+      if (this.$v.form.asset.bridgechainRepository.$dirty && this.$v.form.asset.bridgechainRepository.$invalid) {
         if (!this.$v.form.asset.bridgechainRepository.url) {
           return this.$t('VALIDATION.INVALID_URL')
         } else if (!this.$v.form.asset.bridgechainRepository.tooShort) {
@@ -292,8 +296,10 @@ export default {
     },
 
     apiPortError () {
-      if (this.$v.form.apiPort.$dirty && !this.$v.form.apiPort.isValid) {
-        if (!this.$v.form.apiPort.isNumeric) {
+      if (this.$v.form.apiPort.$dirty && this.$v.form.apiPort.$invalid) {
+        if (!this.$v.form.apiPort.required) {
+          return this.$t('VALIDATION.REQUIRED', [this.$t('TRANSACTION.BRIDGECHAIN.API_PORT')])
+        } else if (!this.$v.form.apiPort.isNumeric) {
           return this.$t('VALIDATION.NOT_NUMERIC', [this.$t('TRANSACTION.BRIDGECHAIN.API_PORT')])
         } else if (!this.$v.form.apiPort.isValidPort) {
           return this.$t('VALIDATION.INVALID_PORT')
@@ -305,22 +311,11 @@ export default {
   },
 
   methods: {
-    previousStep () {
-      if (this.step === 2) {
-        this.step = 1
-      }
-    },
-
-    nextStep () {
-      if (this.step === 1) {
-        this.step = 2
-      } else {
-        this.form.fee = this.$refs.fee.fee
-        this.onSubmit()
-      }
-    },
-
     getTransactionData () {
+      if (this.isUpdate) {
+        this.form.asset.bridgechainId = this.form.asset.genesisHash
+      }
+
       const transactionData = {
         address: this.currentWallet.address,
         asset: this.form.asset,
@@ -340,13 +335,36 @@ export default {
       return transactionData
     },
 
+    previousStep () {
+      if (this.step === 2) {
+        this.step = 1
+      }
+    },
+
+    nextStep () {
+      if (this.step === 1) {
+        this.step = 2
+      } else {
+        this.form.fee = this.$refs.fee.fee
+        this.onSubmit()
+      }
+    },
+
     addSeedNode () {
+      if (this.$v.seedNode.$invalid) {
+        return
+      }
+
       this.form.asset.seedNodes.push(this.seedNode)
 
       this.$refs.seedNode.reset()
     },
 
     emitRemoveSeedNode (index) {
+      if (!Object.prototype.hasOwnProperty.call(this.$v.form.asset.seedNodes.$model, index)) {
+        return
+      }
+
       this.$v.form.asset.seedNodes.$model = [
         ...this.form.asset.seedNodes.slice(0, index),
         ...this.form.asset.seedNodes.slice(index + 1)
@@ -362,7 +380,9 @@ export default {
       isValidSeed (value) {
         return /^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9\\-]*[A-Za-z0-9])$/.test(value)
       },
-      tooMany: maxLength(10)
+      belowMax (value) {
+        return this.$v.form.asset.seedNodes.$model.length < maxSeedNodes
+      }
     },
 
     form: {
@@ -372,6 +392,7 @@ export default {
       secondPassphrase: mixin.validators.secondPassphrase,
 
       apiPort: {
+        required,
         isNumeric: numeric,
 
         isValidPort (value) {
@@ -393,11 +414,9 @@ export default {
         },
 
         seedNodes: {
-          notEnough (value) {
-            return this.bridgechain ? true : minLength(1)(value)
-          },
-          required (value) {
-            return this.bridgechain ? true : required(value)
+          required,
+          belowMax (value) {
+            return value.length < maxSeedNodes
           }
         },
 

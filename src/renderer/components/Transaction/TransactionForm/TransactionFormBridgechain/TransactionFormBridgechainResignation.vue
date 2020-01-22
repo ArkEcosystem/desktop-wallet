@@ -26,13 +26,14 @@
         :transaction-group="$options.transactionGroup"
         :transaction-type="$options.transactionType"
         :show-insufficient-funds="true"
+        class="TransactionFormBridgechainResignation__fee"
         @input="onFee"
       />
 
       <div v-if="!isMultiSignature">
         <div
           v-if="currentWallet.isLedger"
-          class="mt-10"
+          class="TransactionFormBridgechainResignation__ledger-notice mt-10"
         >
           {{ $t('TRANSACTION.LEDGER_SIGN_NOTICE') }}
         </div>
@@ -43,6 +44,7 @@
           v-model="$v.form.walletPassword.$model"
           :label="$t('TRANSACTION.PASSWORD')"
           :is-required="true"
+          class="TransactionFormBridgechainResignation__password"
         />
 
         <PassphraseInput
@@ -51,6 +53,7 @@
           v-model="$v.form.passphrase.$model"
           :address="currentWallet.address"
           :pub-key-hash="walletNetwork.version"
+          class="TransactionFormBridgechainResignation__passphrase"
         />
       </div>
 
@@ -61,12 +64,12 @@
         :label="$t('TRANSACTION.SECOND_PASSPHRASE')"
         :pub-key-hash="walletNetwork.version"
         :public-key="currentWallet.secondPublicKey"
-        class="mt-5"
+        class="TransactionFormBridgechainResignation__second-password mt-5"
       />
 
       <button
         :disabled="$v.form.$invalid"
-        class="blue-button mt-10 ml-0"
+        class="TransactionFormBridgechainResignation__next blue-button mt-10 ml-0"
         @click="onSubmit"
       >
         {{ $t('COMMON.NEXT') }}
@@ -165,9 +168,9 @@ export default {
 
   validations: {
     form: {
-      fee: mixin.validators.secondPassphrase,
-      passphrase: mixin.validators.secondPassphrase,
-      walletPassword: mixin.validators.secondPassphrase,
+      fee: mixin.validators.fee,
+      passphrase: mixin.validators.passphrase,
+      walletPassword: mixin.validators.walletPassword,
       secondPassphrase: mixin.validators.secondPassphrase
     }
   }
