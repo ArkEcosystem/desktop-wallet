@@ -1,0 +1,31 @@
+name: Format
+
+on:
+    pull_request:
+        paths:
+            - '**.css'
+            - '**.js'
+            - '**.ts'
+            - '**.vue'
+
+jobs:
+    eslint:
+        runs-on: ubuntu-latest
+
+        steps:
+            - uses: actions/checkout@v1
+
+            - name: Install
+              run: yarn install
+              env:
+                  CI: true
+
+            - name: Run prettier
+              run: yarn lint:fix
+
+            - uses: stefanzweifel/git-auto-commit-action@v2.1.0
+              with:
+                  commit_message: "style: resolve style guide violations"
+                  branch: ${{ github.head_ref }}
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
