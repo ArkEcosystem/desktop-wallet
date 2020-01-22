@@ -187,6 +187,74 @@ describe('TransactionFormBridgechainUpdate', () => {
         })
       })
     })
+
+    describe('prev button', () => {
+      it('should be enabled if form is on step 2', async () => {
+        wrapper.vm.step = 2
+
+        await wrapper.vm.$nextTick()
+
+        expect(wrapper.find('.TransactionFormBridgechain__prev').attributes('disabled')).toBeFalsy()
+      })
+
+      it('should be disabled if form is on step 1', async () => {
+        wrapper.vm.step = 1
+
+        await wrapper.vm.$nextTick()
+
+        expect(wrapper.find('.TransactionFormBridgechain__prev').attributes('disabled')).toBe('disabled')
+      })
+    })
+
+    describe('next button', () => {
+      it('should be enabled if seed nodes is valid on step 1', async () => {
+        wrapper.vm.step = 1
+        wrapper.vm.$v.form.asset.seedNodes.$model = [
+          '1.1.1.1'
+        ]
+
+        await wrapper.vm.$nextTick()
+
+        expect(wrapper.find('.TransactionFormBridgechain__next').attributes('disabled')).toBeFalsy()
+      })
+
+      it('should be enabled if form is valid on step 2', async () => {
+        wrapper.vm.step = 2
+        wrapper.vm.$v.form.fee.$model = (0.1 * 1e8).toString()
+        wrapper.vm.$v.form.passphrase.$model = 'passphrase'
+        wrapper.vm.$v.form.asset.name.$model = 'bridgechain'
+        wrapper.vm.$v.form.asset.genesisHash.$model = '2a44f340d76ffc3df204c5f38cd355b7496c9065a1ade2ef92071436bd72e867'
+        wrapper.vm.form.asset.ports = {
+          '@arkecosystem/core-api': 4003
+        }
+        wrapper.vm.$v.form.asset.seedNodes.$model = [
+          '1.1.1.1'
+        ]
+        wrapper.vm.$v.form.asset.bridgechainRepository.$model = 'https://github.com/arkecosystem/core.git'
+
+        await wrapper.vm.$nextTick()
+
+        expect(wrapper.find('.TransactionFormBridgechain__next').attributes('disabled')).toBeFalsy()
+      })
+
+      it('should be disabled if seed nodes is invalid on step 1', async () => {
+        wrapper.vm.step = 1
+        wrapper.vm.$v.form.asset.seedNodes.$model = []
+
+        await wrapper.vm.$nextTick()
+
+        expect(wrapper.find('.TransactionFormBridgechain__next').attributes('disabled')).toBe('disabled')
+      })
+
+      it('should be disabled if form is invalid on step 2', async () => {
+        wrapper.vm.step = 2
+        wrapper.vm.$v.form.asset.seedNodes.$model = []
+
+        await wrapper.vm.$nextTick()
+
+        expect(wrapper.find('.TransactionFormBridgechain__next').attributes('disabled')).toBe('disabled')
+      })
+    })
   })
 
   describe('mounted hook', () => {
