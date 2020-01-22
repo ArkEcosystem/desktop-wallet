@@ -1,11 +1,9 @@
-const path = require('path')
-
 module.exports = {
   verbose: false,
   globals: {
     __static: __dirname
   },
-  rootDir: path.resolve(__dirname, '../'),
+  rootDir: require('path').resolve(__dirname, '../'),
   moduleFileExtensions: [
     'js',
     'json',
