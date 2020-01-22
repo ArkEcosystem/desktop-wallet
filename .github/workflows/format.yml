@@ -15,10 +15,14 @@ jobs:
         steps:
             - uses: actions/checkout@v1
 
+            - name: Update System
+              run: sudo apt-get update
+
+            - name: Ledger
+              run: sudo apt-get install libudev-dev libusb-1.0-0-dev
+
             - name: Install
-              run: yarn install
-              env:
-                  CI: true
+              run: yarn global add node-gyp && yarn install --frozen-lockfile && npm rebuild
 
             - name: Run eslint
               run: yarn lint:fix
