@@ -129,11 +129,46 @@ describe.each([
   if (componentName === 'TransactionFormBridgechainUpdate') {
     describe('mounted hook', () => {
       it('should load bridgechain into form', () => {
+        createWrapper(component, null, {
+          genesisHash: '2a44f340d76ffc3df204c5f38cd355b7496c9065a1ade2ef92071436bd72e867',
+          ports: {
+            '@arkecosystem/core-api': 8081
+          },
+          seedNodes: [
+            '5.5.5.5',
+            '6.6.6.6'
+          ]
+        })
+
+        expect(wrapper.vm.form.apiPort).toBe(8081)
         expect(wrapper.vm.form.asset).toEqual({
           name: '',
           seedNodes: [
-            '1.1.1.1',
-            '2.2.2.2'
+            '5.5.5.5',
+            '6.6.6.6'
+          ],
+          ports: {},
+          genesisHash: '2a44f340d76ffc3df204c5f38cd355b7496c9065a1ade2ef92071436bd72e867',
+          bridgechainRepository: ''
+        })
+      })
+
+      it('should use default api port if not provided', () => {
+        createWrapper(component, null, {
+          genesisHash: '2a44f340d76ffc3df204c5f38cd355b7496c9065a1ade2ef92071436bd72e867',
+          ports: {},
+          seedNodes: [
+            '5.5.5.5',
+            '6.6.6.6'
+          ]
+        })
+
+        expect(wrapper.vm.form.apiPort).toBe(4003)
+        expect(wrapper.vm.form.asset).toEqual({
+          name: '',
+          seedNodes: [
+            '5.5.5.5',
+            '6.6.6.6'
           ],
           ports: {},
           genesisHash: '2a44f340d76ffc3df204c5f38cd355b7496c9065a1ade2ef92071436bd72e867',
