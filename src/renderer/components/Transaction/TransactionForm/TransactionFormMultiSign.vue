@@ -6,7 +6,7 @@
     <template>
       <div
         v-if="currentWallet.isLedger"
-        class="mt-10"
+        class="TransactionFormMultiSign__ledger-notice mt-10"
       >
         {{ $t('TRANSACTION.LEDGER_SIGN_NOTICE') }}
       </div>
@@ -17,6 +17,7 @@
         v-model="$v.form.walletPassword.$model"
         :label="$t('TRANSACTION.PASSWORD')"
         :is-required="true"
+        class="TransactionFormMultiSign__password"
       />
 
       <PassphraseInput
@@ -25,6 +26,7 @@
         v-model="$v.form.passphrase.$model"
         :address="currentWallet.address"
         :pub-key-hash="walletNetwork.version"
+        class="TransactionFormMultiSign__passphrase"
       />
 
       <PassphraseInput
@@ -34,12 +36,12 @@
         :label="$t('TRANSACTION.SECOND_PASSPHRASE')"
         :pub-key-hash="walletNetwork.version"
         :public-key="currentWallet.secondPublicKey"
-        class="mt-5"
+        class="TransactionFormMultiSign__second-passphrase mt-5"
       />
 
       <button
         :disabled="$v.form.$invalid"
-        class="blue-button mt-10 ml-0"
+        class="TransactionFormMultiSign__next blue-button mt-10 ml-0"
         @click="onSubmit"
       >
         {{ $t('COMMON.NEXT') }}
@@ -87,7 +89,6 @@ export default {
 
   data: () => ({
     form: {
-      fee: 0,
       passphrase: '',
       walletPassword: ''
     }
@@ -95,7 +96,6 @@ export default {
 
   methods: {
     getTransactionData () {
-      console.log('TransactionFormMultiSign transaction', this.transaction)
       const transactionData = {
         publicKey: this.currentWallet.publicKey,
         passphrase: this.form.passphrase,
