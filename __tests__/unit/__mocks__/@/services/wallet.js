@@ -1,3 +1,5 @@
+import WalletServiceOriginal from '../../../../../src/renderer/services/wallet'
+
 export default {
   generate: jest.fn(() => {
     return {
@@ -11,6 +13,7 @@ export default {
   getPublicKeyFromMultiSignatureAsset: jest.fn(multisignature => 'public key of multisignature'),
   validateAddress: jest.fn(() => true),
   validatePassphrase: jest.fn(() => true),
+  validateUsername: jest.fn(WalletServiceOriginal.validateUsername),
   verifyPassphrase: jest.fn(() => true),
   isBip39Passphrase: jest.fn(() => true)
 }
