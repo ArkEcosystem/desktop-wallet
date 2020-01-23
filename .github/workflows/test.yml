@@ -44,7 +44,7 @@ jobs:
         run: yarn lint
 
       - name: Test
-        run: yarn test:unit --coverage
+        run: yarn test:unit --coverage --logHeapUsage
 
       - name: Codecov
         run: ./node_modules/.bin/codecov --token=${{ secrets.CODECOV_TOKEN }}
