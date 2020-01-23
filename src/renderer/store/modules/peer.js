@@ -202,13 +202,13 @@ export default {
   },
 
   mutations: {
-    SET_PEERS(state, { peers, networkId }) {
+    SET_PEERS (state, { peers, networkId }) {
       Vue.set(state.all, networkId, {
         peers,
         lastUpdated: new Date()
       })
     },
-    SET_CURRENT_PEER(state, { peer, networkId }) {
+    SET_CURRENT_PEER (state, { peer, networkId }) {
       Vue.set(state.current, networkId, peer)
     }
   },
@@ -220,7 +220,7 @@ export default {
      * @param  {Number} networkId
      * @return {void}
      */
-    setToNetwork({ commit }, { peers, networkId }) {
+    setToNetwork ({ commit }, { peers, networkId }) {
       commit('SET_PEERS', {
         peers: peers.map(peer => {
           try {
@@ -240,7 +240,7 @@ export default {
      * @param  {Object[]} peers
      * @return {void}
      */
-    set({ commit, rootGetters }, peers) {
+    set ({ commit, rootGetters }, peers) {
       const profile = rootGetters['session/profile']
       if (!profile || !profile.networkId) {
         return
@@ -265,7 +265,7 @@ export default {
      * @param  {Object} peer
      * @return {void}
      */
-    async setCurrentPeer({ commit, dispatch, rootGetters }, peer) {
+    async setCurrentPeer ({ commit, dispatch, rootGetters }, peer) {
       const profile = rootGetters['session/profile']
       if (!profile || !profile.networkId) {
         return
@@ -287,7 +287,7 @@ export default {
      * Refresh peer list.
      * @return {void}
      */
-    async refresh({ dispatch, getters, rootGetters }, network = null) {
+    async refresh ({ dispatch, getters, rootGetters }, network = null) {
       if (!network) {
         network = rootGetters['session/network']
       }
@@ -351,7 +351,7 @@ export default {
      * @param  {Boolean} [skipIfCustom=true]
      * @return {(Object|null)}
      */
-    async findBest({ dispatch, getters }, { refresh = true, network = null }) {
+    async findBest ({ dispatch, getters }, { refresh = true, network = null }) {
       if (refresh) {
         try {
           await dispatch('refresh', network)
@@ -382,7 +382,7 @@ export default {
      * @param  {Boolean} [skipIfCustom=true]
      * @return {(Object|null)}
      */
-    async connectToBest({ dispatch, getters }, { refresh = true, skipIfCustom = true }) {
+    async connectToBest ({ dispatch, getters }, { refresh = true, skipIfCustom = true }) {
       if (skipIfCustom) {
         const currentPeer = getters.current()
         if (!isEmpty(currentPeer) && currentPeer.isCustom) {
@@ -402,7 +402,7 @@ export default {
       return peer
     },
 
-    async ensureStillValid({ rootGetters }, peer) {
+    async ensureStillValid ({ rootGetters }, peer) {
       if (!peer) {
         throw new Error('Not connected to peer')
       }
@@ -413,7 +413,7 @@ export default {
       }
     },
 
-    async fallbackToSeedPeer({ dispatch }) {
+    async fallbackToSeedPeer ({ dispatch }) {
       dispatch('set', [])
       dispatch('setCurrentPeer', null)
       await dispatch('connectToBest', { skipIfCustom: false })
@@ -424,7 +424,7 @@ export default {
      * @param  {Object} [port]
      * @return {(Object|void)}
      */
-    async updateCurrentPeerStatus({ dispatch, getters }, currentPeer) {
+    async updateCurrentPeerStatus ({ dispatch, getters }, currentPeer) {
       let updateCurrentPeer = false
       if (isEmpty(currentPeer)) {
         currentPeer = { ...getters.current() }
@@ -475,7 +475,7 @@ export default {
      * @param  {Object} peer
      * @return {ClientService}
      */
-    async clientServiceFromPeer(_, peer) {
+    async clientServiceFromPeer (_, peer) {
       const client = new ClientService(false)
       client.host = getBaseUrl(peer)
       client.client.withOptions({ timeout: 3000 })
@@ -490,7 +490,7 @@ export default {
      * @param  {Number} [timeout=3000]
      * @return {(Object|String)}
      */
-    async validatePeer({ rootGetters }, { url, ignoreNetwork = false, timeout = 3000 }) {
+    async validatePeer ({ rootGetters }, { url, ignoreNetwork = false, timeout = 3000 }) {
       let networkConfig
 
       try {
