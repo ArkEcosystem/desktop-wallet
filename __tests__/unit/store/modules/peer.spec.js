@@ -282,7 +282,9 @@ describe('peer store module', () => {
         }
       })
 
-    const response = await store.dispatch('peer/validatePeer', { ...goodPeer1, timeout: 100 })
+    const url = new URL(`${goodPeer1.host}:${goodPeer1.port}`)
+
+    const response = await store.dispatch('peer/validatePeer', { url, timeout: 100 })
 
     expect(response).toBeObject()
     expect(response).toContainEntries([
@@ -307,9 +309,10 @@ describe('peer store module', () => {
         }
       })
 
+    const url = new URL(`https://${goodPeer1.ip}:${goodPeer1.port}`)
+
     const response = await store.dispatch('peer/validatePeer', {
-      ...goodPeer1,
-      host: `https://${goodPeer1.ip}`,
+      url,
       timeout: 100
     })
 
@@ -325,7 +328,9 @@ describe('peer store module', () => {
       .get('/api/v2/node/configuration')
       .reply(400)
 
-    const response = await store.dispatch('peer/validatePeer', { ...goodPeer1, timeout: 100 })
+    const url = new URL(`${goodPeer1.host}:${goodPeer1.port}`)
+
+    const response = await store.dispatch('peer/validatePeer', { url, timeout: 100 })
     expect(response).toEqual(expect.stringMatching(/^Could not connect$/))
   })
 
@@ -341,7 +346,9 @@ describe('peer store module', () => {
       .get('/api/v2/node/syncing')
       .reply(400)
 
-    const response = await store.dispatch('peer/validatePeer', { ...goodPeer1, timeout: 100 })
+    const url = new URL(`${goodPeer1.host}:${goodPeer1.port}`)
+
+    const response = await store.dispatch('peer/validatePeer', { url, timeout: 100 })
     expect(response).toEqual(expect.stringMatching(/^Status check failed$/))
   })
 
@@ -356,7 +363,9 @@ describe('peer store module', () => {
         }
       })
 
-    const response = await store.dispatch('peer/validatePeer', { ...goodPeer1, timeout: 100 })
+    const url = new URL(`${goodPeer1.host}:${goodPeer1.port}`)
+
+    const response = await store.dispatch('peer/validatePeer', { url, timeout: 100 })
     expect(response).toEqual(expect.stringMatching(/^Wrong network$/))
   })
 })
