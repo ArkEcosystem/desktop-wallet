@@ -484,27 +484,29 @@ export default {
     },
 
     /**
-     * Validate custom peer, used to check it's acceptable to connect.
-     * @param  {String} ip
-     * @param  {Number} port
+     * Validate custom peer, used to check it's acceptable to connect. Uses URL() class.
+     * @param  {Object} From class URL().
      * @param  {Number} [ignoreNetwork=false]
      * @param  {Number} [timeout=3000]
      * @return {(Object|String)}
      */
-    async validatePeer ({ rootGetters }, { host, ip, port, ignoreNetwork = false, timeout = 3000 }) {
+    async validatePeer ({ rootGetters }, { url, ignoreNetwork = false, timeout = 3000 }) {
       let networkConfig
-      if (!host && ip) {
-        host = ip
-      }
-      let baseUrl = `${host}:${port}`
-      const schemeUrl = host.match(/^(https?:\/\/)+(.+)$/)
-      if (!schemeUrl) {
-        baseUrl = `http://${baseUrl}`
-      }
+
+      /*
+        host: "dexplorer.ark.io:8443"
+        hostname: "dexplorer.ark.io"
+        href: "https://dexplorer.ark.io:8443/"
+        origin: "https://dexplorer.ark.io:8443"
+        pathname: "/"
+        port: "8443"
+        protocol: "https:"
+      */
+
       try {
-        networkConfig = await ClientService.fetchNetworkConfig(baseUrl, timeout)
+        networkConfig = await ClientService.fetchNetworkConfig(url.origin, timeout)
       } catch (error) {
-        //
+        console.error(error)
       }
 
       if (!networkConfig) {
@@ -514,27 +516,27 @@ export default {
       }
 
       const client = new ClientService(false)
-      client.host = baseUrl
+      client.host = url.origin
       client.client.withOptions({ timeout: 3000 })
 
       let peerStatus
       try {
         peerStatus = await client.fetchPeerStatus()
       } catch (error) {
-        //
+        console.error(error)
       }
       if (!peerStatus) {
         return i18n.t('PEER.STATUS_CHECK_FAILED')
       }
 
       return {
-        ip: schemeUrl ? schemeUrl[2] : host,
-        host: baseUrl,
-        port: +port,
+        ip: url.hostname,
+        host: url.host,
+        port: +url.port,
         height: peerStatus.height,
         status: 'OK',
         latency: 0,
-        isHttps: schemeUrl && schemeUrl[1] === 'https://'
+        isHttps: url.protocol === 'https:'
       }
     }
   }

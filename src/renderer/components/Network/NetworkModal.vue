@@ -445,18 +445,14 @@ export default {
       this.showLoadingModal = true
 
       try {
-        let { hostname: host, port, protocol } = new URL(this.form.server)
-
-        if (!port) {
-          port = protocol === 'https:' ? 443 : 80
-        }
-
+        const url = new URL(this.form.server)
         const response = await this.$store.dispatch('peer/validatePeer', {
-          host,
-          port,
+          url,
           ignoreNetwork: true
         })
+
         let success = false
+
         if (response === false) {
           this.$error(this.$t('MODAL_NETWORK.SEED_VALIDATE_FAILED'))
         } else if (typeof response === 'string') {
@@ -468,7 +464,7 @@ export default {
 
         return success
       } catch (error) {
-        //
+        console.error(error)
       }
 
       return false

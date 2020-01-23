@@ -122,8 +122,9 @@ export default {
   methods: {
     async validate () {
       this.showLoadingModal = true
+      const url = new URL(`${this.form.host}:${this.form.port}`)
       const response = await this.$store.dispatch('peer/validatePeer', {
-        host: this.form.host,
+        url,
         port: this.form.port
       })
       if (response === false) {
