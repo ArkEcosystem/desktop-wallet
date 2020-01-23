@@ -1,6 +1,6 @@
 <template>
   <form
-    class="flex flex-col"
+    class="TransactionFormMultiSignature flex flex-col"
     @submit.prevent
   >
     <ListDivided
@@ -20,25 +20,26 @@
 
     <div
       v-if="step === 1"
+      class="TransactionFormMultiSignature__step-1"
     >
       <MenuTab
         ref="menutab"
         v-model="currentTab"
-        class="TransactionModalMultiSignature__MenuTabs"
+        class="TransactionModalMultiSignature__menu-tabs"
       >
         <MenuTabItem
           v-for="(tab, id) in tabs"
           :key="id"
           :tab="id"
           :label="tab.text"
-          class="flex-1"
+          class="TransactionFormMultiSignature__menu-tab flex-1"
         />
       </MenuTab>
 
       <div class="flex flex-row">
         <div
           v-if="addressTab"
-          class="flex-1"
+          class="TransactionFormMultiSignature__address-tab flex-1"
         >
           <InputAddress
             ref="address"
@@ -51,6 +52,7 @@
             :is-invalid="!!addressWarning"
             :helper-text="addressWarning"
             name="address"
+            class="TransactionFormMultiSignature__address"
           />
         </div>
 
@@ -63,20 +65,21 @@
             v-model="$v.publicKey.$model"
             :is-required="false"
             :warning-text="publicKeyWarning"
+            class="TransactionFormMultiSignature__public-key"
           />
         </div>
 
         <ButtonGeneric
           :disabled="!validStep1"
           :label="$t('TRANSACTION.MULTI_SIGNATURE.BUTTON_ADD')"
-          class="py-1 flex-inline h-8 mt-4 ml-4"
+          class="TransactionFormMultiSignature__add py-1 flex-inline h-8 mt-4 ml-4"
           @click="addPublicKey"
         />
       </div>
 
       <TransactionMultiSignatureList
         :items="$v.form.publicKeys.$model"
-        class="TransactionModalMultiSignature__publicKeys mt-4"
+        class="TransactionModalMultiSignature__public-keys mt-4"
         @remove="emitRemovePublicKey"
       />
     </div>
@@ -90,7 +93,7 @@
         :is-invalid="!!minKeysError"
         name="minKeys"
         type="number"
-        class="mb-5"
+        class="TransactionFormMultiSignature__min-keys mb-5"
       />
 
       <InputFee
@@ -100,43 +103,44 @@
         :is-disabled="!currentWallet"
         :wallet="currentWallet"
         :wallet-network="walletNetwork"
+        class="TransactionFormMultiSignature__fee"
         @input="onFee"
       />
 
       <div
-        v-if="currentWallet && currentWallet.isLedger"
-        class="mt-10"
+        v-if="currentWallet.isLedger"
+        class="TransactionFormMultiSignature__ledger-notice mt-10"
       >
         {{ $t('TRANSACTION.LEDGER_SIGN_NOTICE') }}
       </div>
 
       <InputPassword
-        v-else-if="currentWallet && currentWallet.passphrase"
+        v-else-if="currentWallet.passphrase"
         ref="password"
         v-model="$v.form.walletPassword.$model"
-        class="mt-4"
         :label="$t('TRANSACTION.PASSWORD')"
         :is-required="true"
+        class="TransactionFormMultiSignature__password mt-4"
       />
 
       <PassphraseInput
         v-else
         ref="passphrase"
         v-model="$v.form.passphrase.$model"
-        class="mt-4"
-        :address="currentWallet && currentWallet.address"
+        :address="currentWallet.address"
         :pub-key-hash="walletNetwork.version"
         :is-disabled="!currentWallet"
+        class="TransactionFormMultiSignature__passphrase mt-4"
       />
 
       <PassphraseInput
-        v-if="currentWallet && currentWallet.secondPublicKey"
+        v-if="currentWallet.secondPublicKey"
         ref="secondPassphrase"
         v-model="$v.form.secondPassphrase.$model"
         :label="$t('TRANSACTION.SECOND_PASSPHRASE')"
         :pub-key-hash="walletNetwork.version"
         :public-key="currentWallet.secondPublicKey"
-        class="mt-5"
+        class="TransactionFormMultiSignature__second-passphrase mt-5"
       />
     </div>
 
@@ -144,7 +148,7 @@
       <div class="self-start">
         <button
           :disabled="step === 1"
-          class="blue-button"
+          class="TransactionFormMultiSignature__prev blue-button"
           @click="previousStep"
         >
           {{ $t('COMMON.PREV') }}
@@ -152,7 +156,7 @@
 
         <button
           :disabled="!isFormValid"
-          class="blue-button"
+          class="TransactionFormMultiSignature__next blue-button"
           @click="nextStep"
         >
           {{ $t('COMMON.NEXT') }}
@@ -242,12 +246,11 @@ export default {
 
     validStep1 () {
       if (this.addressTab) {
-        console.log('validStep1', this.$v.address, this.addressWarning)
         if (!this.$v.address.$dirty || this.$v.address.$invalid ||
           this.addressWarning || this.address.replace(/\s+/, '') === '') {
           return false
         }
-      } else if (this.publicKeyTab) {
+      } else {
         if (!this.$v.publicKey.$dirty || this.$v.publicKey.$invalid ||
           this.publicKeyWarning || this.publicKey.replace(/\s+/, '') === '') {
           return false
@@ -263,16 +266,6 @@ export default {
       }
 
       return !this.$v.form.$invalid
-    },
-
-    walletNetwork () {
-      const sessionNetwork = this.session_network
-      const profile = this.$store.getters['profile/byId'](this.currentWallet.profileId)
-      if (!profile.id) {
-        return sessionNetwork
-      }
-
-      return this.$store.getters['network/byId'](profile.networkId) || sessionNetwork
     },
 
     addressWarning () {
@@ -292,7 +285,7 @@ export default {
         return null
       }
 
-      if (this.form.publicKeys.some(publicKey => publicKey === this.$v.publicKey.$model)) {
+      if (this.form.publicKeys.some(key => key.publicKey === this.$v.publicKey.$model)) {
         return this.$t('TRANSACTION.MULTI_SIGNATURE.ERROR_DUPLICATE')
       }
 
@@ -308,7 +301,6 @@ export default {
     },
 
     minKeysError () {
-      console.log('this.$v.form.minKeys', this.$v.form.minKeys)
       if (this.$v.form.minKeys.$dirty && this.$v.form.minKeys.$error) {
         if (!this.$v.form.minKeys.required) {
           return this.$t('VALIDATION.REQUIRED', [this.$t('TRANSACTION.MULTI_SIGNATURE.MIN_KEYS')])
@@ -431,20 +423,6 @@ export default {
       this.$set(this.form, 'fee', fee)
     },
 
-    setSendAll (isActive, setPreviousAmount = true) {
-      if (isActive) {
-        this.confirmSendAll()
-        this.previousAmount = this.form.amount
-      }
-      if (!isActive) {
-        if (setPreviousAmount && !this.previousAmount && this.previousAmount.length) {
-          this.$set(this.form, 'amount', this.previousAmount)
-        }
-        this.previousAmount = ''
-        this.isSendAllActive = isActive
-      }
-    },
-
     emitRemovePublicKey (index) {
       this.$v.form.publicKeys.$model = [
         ...this.form.publicKeys.slice(0, index),
@@ -511,15 +489,15 @@ export default {
 </script>
 
 <style>
-.TransactionModalMultiSignature__MenuTabs .MenuTab__nav__items {
+.TransactionModalMultiSignature__menu-tabs .MenuTab__nav__items {
   @apply .flex;
 }
 
-.TransactionModalMultiSignature__MenuTabs .MenuTab__nav__item {
+.TransactionModalMultiSignature__menu-tabs .MenuTab__nav__item {
   @apply .flex-1;
 }
 
-.TransactionModalMultiSignature__MenuTabs .MenuTab__content {
+.TransactionModalMultiSignature__menu-tabs .MenuTab__content {
   @apply .hidden;
 }
 </style>
