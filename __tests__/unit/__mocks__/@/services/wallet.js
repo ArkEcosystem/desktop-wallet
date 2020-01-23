@@ -16,5 +16,6 @@ export default {
   validatePassphrase: jest.fn(() => true),
   validateUsername: jest.fn(WalletServiceOriginal.validateUsername),
   verifyPassphrase: jest.fn(() => true),
-  isBip39Passphrase: jest.fn(() => true)
+  isBip39Passphrase: jest.fn(() => true),
+  isNeoAddress: jest.fn(() => false)
 }
