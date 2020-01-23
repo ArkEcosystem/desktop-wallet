@@ -1,5 +1,5 @@
 import cryptoLibrary from 'crypto'
-import { keyBy } from 'lodash'
+import keyBy from 'lodash/keyby'
 import logger from 'electron-log'
 import Vue from 'vue'
 import { Identities } from '@arkecosystem/crypto'

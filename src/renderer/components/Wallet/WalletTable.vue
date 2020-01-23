@@ -138,10 +138,10 @@
 </template>
 
 <script>
-import { ButtonClipboard } from '@/components/Button'
-import SvgIcon from '@/components/SvgIcon'
+import ButtonClipboard from '@/components/Button/ButtonClipboard'
+import SvgIcon from '@/components/SvgIcon/SvgIcon'
 import TableWrapper from '@/components/utils/TableWrapper'
-import { WalletIdenticon } from '@/components/Wallet'
+import WalletIdenticon from '@/components/Wallet/WalletIdenticon'
 
 export default {
   name: 'WalletTable',

@@ -1,6 +1,8 @@
 import { shallowMount } from '@vue/test-utils'
 import { useI18nGlobally } from '../../__utils__/i18n'
-import { InputGrid, InputGridItem, InputGridModal } from '@/components/Input/InputGrid'
+import InputGrid from '@/components/Input/InputGrid/InputGrid'
+import InputGridItem from '@/components/Input/InputGrid/InputGridItem'
+import InputGridModal from '@/components/Input/InputGrid/InputGridModal'
 
 const i18n = useI18nGlobally()
 

@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import { ButtonReload } from '@/components/Button'
+import ButtonReload from '@/components/Button/ButtonReload'
 
 describe('ButtonReload', () => {
   let wrapper

@@ -35,7 +35,7 @@
 </template>
 
 <script>
-import { ButtonLetter } from '@/components/Button'
+import ButtonLetter from '@/components/Button/ButtonLetter'
 
 export default {
   name: 'ProfileAvatar',

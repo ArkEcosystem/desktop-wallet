@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import SvgIcon from '@/components/SvgIcon'
+import SvgIcon from '@/components/SvgIcon/SvgIcon'
 import debounce from 'lodash/debounce'
 
 export default {

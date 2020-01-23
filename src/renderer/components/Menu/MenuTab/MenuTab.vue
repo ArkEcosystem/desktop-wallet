@@ -32,6 +32,7 @@
 
 <script>
 import VNodes from '@/components/utils/VNodes'
+
 export default {
   name: 'MenuTab',
 

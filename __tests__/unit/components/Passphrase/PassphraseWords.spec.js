@@ -1,7 +1,7 @@
 import { mount } from '@vue/test-utils'
 import Vue from 'vue'
 import Vuelidate from 'vuelidate'
-import { PassphraseWords } from '@/components/Passphrase'
+import PassphraseWords from '@/components/Passphrase/PassphraseWords'
 
 Vue.use(Vuelidate)
 

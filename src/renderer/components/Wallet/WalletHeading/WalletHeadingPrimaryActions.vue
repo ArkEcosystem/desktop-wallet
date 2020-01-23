@@ -102,10 +102,12 @@
 </template>
 
 <script>
-import { ButtonDropdown, ButtonModal, ButtonReload } from '@/components/Button'
-import { ModalQrCode } from '@/components/Modal'
-import { TransactionModal } from '@/components/Transaction'
-import { ContactRenameModal } from '@/components/Contact'
+import ButtonDropdown from '@/components/Button/ButtonDropdown'
+import ButtonModal from '@/components/Button/ButtonModal'
+import ButtonReload from '@/components/Button/ButtonReload'
+import ModalQrCode from '@/components/Modal/ModalQrCode'
+import TransactionModal from '@/components/Transaction/TransactionModal'
+import ContactRenameModal from '@/components/Contact/ContactRenameModal'
 
 export default {
   name: 'WalletHeadingPrimaryActions',

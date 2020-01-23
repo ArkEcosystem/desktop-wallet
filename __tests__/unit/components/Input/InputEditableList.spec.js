@@ -1,6 +1,6 @@
 import { createLocalVue, mount } from '@vue/test-utils'
 import installI18n from '../../__utils__/i18n'
-import { InputEditableList } from '@/components/Input'
+import InputEditableList from '@/components/Input/InputEditableList'
 
 const localVue = createLocalVue()
 const i18n = installI18n(localVue)

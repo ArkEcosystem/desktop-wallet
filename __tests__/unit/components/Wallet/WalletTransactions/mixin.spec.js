@@ -1,6 +1,7 @@
 import { createLocalVue, mount } from '@vue/test-utils'
 import installI18n from '../../../__utils__/i18n'
-import { WalletTransactions, WalletTransactionsMultiSignature } from '@/components/Wallet/WalletTransactions'
+import WalletTransactions from '@/components/Wallet/WalletTransactions/WalletTransactions'
+import WalletTransactionsMultiSignature from '@/components/Wallet/WalletTransactions/WalletTransactionsMultiSignature'
 
 // Do not mock WalletService
 jest.mock('@/services/wallet', () => jest.requireActual('@/services/wallet'))

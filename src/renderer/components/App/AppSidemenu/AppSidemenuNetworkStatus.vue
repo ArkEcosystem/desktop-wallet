@@ -170,10 +170,14 @@
 </template>
 
 <script>
-import { MenuDropdown, MenuNavigationItem, MenuOptions } from '@/components/Menu'
-import { ModalLoader, ModalPeer } from '@/components/Modal'
-import { ButtonModal, ButtonReload } from '@/components/Button'
-import SvgIcon from '@/components/SvgIcon'
+import MenuDropdown from '@/components/Menu/MenuDropdown/MenuDropdown'
+import MenuNavigationItem from '@/components/Menu/MenuNavigation/MenuNavigationItem'
+import MenuOptions from '@/components/Menu/MenuOptions/MenuOptions'
+import ModalLoader from '@/components/Modal/ModalLoader'
+import ModalPeer from '@/components/Modal/ModalPeer'
+import ButtonModal from '@/components/Button/ButtonModal'
+import ButtonReload from '@/components/Button/ButtonReload'
+import SvgIcon from '@/components/SvgIcon/SvgIcon'
 
 export default {
   name: 'AppSidemenuNetworkStatus',

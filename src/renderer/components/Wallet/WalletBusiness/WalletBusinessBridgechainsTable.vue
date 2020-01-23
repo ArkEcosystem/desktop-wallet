@@ -68,7 +68,7 @@
 
 <script>
 import truncateMiddle from '@/filters/truncate-middle'
-import SvgIcon from '@/components/SvgIcon'
+import SvgIcon from '@/components/SvgIcon/SvgIcon'
 import WalletBusinessShowBridgechain from './WalletBusinessShowBridgechain'
 import TableWrapper from '@/components/utils/TableWrapper'
 

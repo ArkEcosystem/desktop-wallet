@@ -144,9 +144,10 @@ import AppSidemenuPlugins from './AppSidemenuPlugins'
 import AppSidemenuSettings from './AppSidemenuSettings'
 import AppSidemenuNetworkStatus from './AppSidemenuNetworkStatus'
 import AppSidemenuImportantNotification from './AppSidemenuImportantNotification'
-import { MenuNavigation, MenuNavigationItem } from '@/components/Menu'
-import { ProfileAvatar } from '@/components/Profile'
-import SvgIcon from '@/components/SvgIcon'
+import MenuNavigation from '@/components/Menu/MenuNavigation/MenuNavigation'
+import MenuNavigationItem from '@/components/Menu/MenuNavigation/MenuNavigationItem'
+import ProfileAvatar from '@/components/Profile/ProfileAvatar'
+import SvgIcon from '@/components/SvgIcon/SvgIcon'
 
 var { ipcRenderer } = require('electron')
 

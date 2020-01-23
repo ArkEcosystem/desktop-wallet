@@ -1,4 +1,4 @@
-import { InputGrid } from '@/components/Input'
+import InputGrid from '@/components/Input/InputGrid'
 
 export default {
   components: {

@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import { InputSwitch } from '@/components/Input'
+import InputSwitch from '@/components/Input/InputSwitch'
 
 describe('InputSwitch', () => {
   it('should render', () => {

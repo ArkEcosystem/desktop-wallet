@@ -192,10 +192,16 @@
 <script>
 import { BIP39, NETWORKS } from '@config'
 import Profile from '@/models/profile'
-import { ButtonSwitch } from '@/components/Button'
-import { MenuStep, MenuStepItem } from '@/components/Menu'
-import { InputLanguage, InputSelect, InputText } from '@/components/Input'
-import { SelectionAvatar, SelectionBackground, SelectionNetwork, SelectionTheme } from '@/components/Selection'
+import ButtonSwitch from '@/components/Button/ButtonSwitch'
+import MenuStep from '@/components/Menu/MenuStep/MenuStep'
+import MenuStepItem from '@/components/Menu/MenuStep/MenuStepItem'
+import InputLanguage from '@/components/Input/InputLanguage'
+import InputSelect from '@/components/Input/InputSelect'
+import InputText from '@/components/Input/InputText'
+import SelectionAvatar from '@/components/Selection/SelectionAvatar'
+import SelectionBackground from '@/components/Selection/SelectionBackground'
+import SelectionNetwork from '@/components/Selection/SelectionNetwork'
+import SelectionTheme from '@/components/Selection/SelectionTheme'
 
 export default {
   name: 'ProfileNew',

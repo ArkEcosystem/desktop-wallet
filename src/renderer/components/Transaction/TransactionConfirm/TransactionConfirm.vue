@@ -65,7 +65,7 @@ import TransactionConfirmVote from './TransactionConfirmVote'
 import TransactionConfirmBusiness from './TransactionConfirmBusiness'
 import TransactionConfirmBridgechain from './TransactionConfirmBridgechain'
 import TransactionDetail from '../TransactionDetail'
-import SvgIcon from '@/components/SvgIcon'
+import SvgIcon from '@/components/SvgIcon/SvgIcon'
 import TransactionService from '@/services/transaction'
 
 export default {

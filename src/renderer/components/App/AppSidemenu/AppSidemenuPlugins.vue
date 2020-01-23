@@ -31,7 +31,8 @@
 
 <script>
 import chunk from 'lodash/chunk'
-import { MenuOptions, MenuOptionsItem } from '@/components/Menu'
+import MenuOptions from '@/components/Menu/MenuOptions/MenuOptions'
+import MenuOptionsItem from '@/components/Menu/MenuOptions/MenuOptionsItem'
 
 export default {
   name: 'AppSidemenuPlugins',

@@ -1,5 +1,6 @@
 import Vue from 'vue'
-import { map, uniqBy } from 'lodash'
+import map from 'lodash/map'
+import uniqBy from 'lodash/uniqby'
 import crypto from 'crypto'
 import BaseModule from '../base'
 import ProfileModel from '@/models/profile'

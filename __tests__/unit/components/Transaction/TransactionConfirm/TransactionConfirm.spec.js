@@ -1,8 +1,20 @@
 import { createLocalVue, mount } from '@vue/test-utils'
 import installI18n from '../../../__utils__/i18n'
-import TransactionConfirm, * as TransactionConfirmComponents from '@/components/Transaction/TransactionConfirm'
-import TransactionConfirmBusiness from '@/components/Transaction/TransactionConfirm/TransactionConfirmBusiness'
-import TransactionConfirmBridgechain from '@/components/Transaction/TransactionConfirm/TransactionConfirmBridgechain'
+import TransactionConfirm from '@/components/Transaction/TransactionConfirm/TransactionConfirm'
+import TransactionConfirmDelegateRegistration from '@/components/Transaction/TransactionConfirm/TransactionConfirmDelegateRegistration'
+import TransactionConfirmDelegateResignation from '@/components/Transaction/TransactionConfirm/TransactionConfirmDelegateResignation'
+import TransactionConfirmIpfs from '@/components/Transaction/TransactionConfirm/TransactionConfirmIpfs'
+import TransactionConfirmMultiPayment from '@/components/Transaction/TransactionConfirm/TransactionConfirmMultiPayment'
+import TransactionConfirmMultiSignature from '@/components/Transaction/TransactionConfirm/TransactionConfirmMultiSignature'
+import TransactionConfirmSecondSignature from '@/components/Transaction/TransactionConfirm/TransactionConfirmSecondSignature'
+import TransactionConfirmTransfer from '@/components/Transaction/TransactionConfirm/TransactionConfirmTransfer'
+import TransactionConfirmVote from '@/components/Transaction/TransactionConfirm/TransactionConfirmVote'
+import TransactionConfirmBusinessRegistration from '@/components/Transaction/TransactionConfirm/TransactionConfirmBusiness/TransactionConfirmBusinessRegistration'
+import TransactionConfirmBusinessResignation from '@/components/Transaction/TransactionConfirm/TransactionConfirmBusiness/TransactionConfirmBusinessResignation'
+import TransactionConfirmBusinessUpdate from '@/components/Transaction/TransactionConfirm/TransactionConfirmBusiness/TransactionConfirmBusinessUpdate'
+import TransactionConfirmBridgechainRegistration from '@/components/Transaction/TransactionConfirm/TransactionConfirmBridgechain/TransactionConfirmBridgechainRegistration'
+import TransactionConfirmBridgechainResignation from '@/components/Transaction/TransactionConfirm/TransactionConfirmBridgechain/TransactionConfirmBridgechainResignation'
+import TransactionConfirmBridgechainUpdate from '@/components/Transaction/TransactionConfirm/TransactionConfirmBridgechain/TransactionConfirmBridgechainUpdate'
 import CurrencyMixin from '@/mixins/currency'
 
 const transactions = {
@@ -172,9 +184,21 @@ const createWrapper = (component, transaction) => {
     stubs: {
       Identicon: true,
       TransactionDetail: true,
-      ...TransactionConfirmComponents,
-      ...TransactionConfirmBusiness,
-      ...TransactionConfirmBridgechain
+      TransactionConfirm,
+      TransactionConfirmDelegateRegistration,
+      TransactionConfirmDelegateResignation,
+      TransactionConfirmIpfs,
+      TransactionConfirmMultiPayment,
+      TransactionConfirmMultiSignature,
+      TransactionConfirmSecondSignature,
+      TransactionConfirmTransfer,
+      TransactionConfirmVote,
+      TransactionConfirmBusinessRegistration,
+      TransactionConfirmBusinessResignation,
+      TransactionConfirmBusinessUpdate,
+      TransactionConfirmBridgechainRegistration,
+      TransactionConfirmBridgechainResignation,
+      TransactionConfirmBridgechainUpdate
     }
   })
 }

@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import ModalWindow from '@/components/Modal'
+import ModalWindow from '@/components/Modal/ModalWindow'
 
 const stubs = {
   Portal: '<div><slot/></div>'

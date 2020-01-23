@@ -1,6 +1,7 @@
 import { mount } from '@vue/test-utils'
 import { useI18nGlobally } from '../../__utils__/i18n'
-import { MenuStep, MenuStepItem } from '@/components/Menu'
+import MenuStep from '@/components/Menu/MenuStep/MenuStep'
+import MenuStepItem from '@/components/Menu/MenuStep/MenuStepItem'
 
 const i18n = useI18nGlobally()
 

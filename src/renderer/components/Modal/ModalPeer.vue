@@ -54,8 +54,8 @@
 <script>
 import { numeric, required } from 'vuelidate/lib/validators'
 import ModalWindow from './ModalWindow'
-import { ButtonGeneric } from '@/components/Button'
-import { InputText } from '@/components/Input'
+import ButtonGeneric from '@/components/Button/ButtonGeneric'
+import InputText from '@/components/Input/InputText'
 
 export default {
   name: 'ModalPeer',

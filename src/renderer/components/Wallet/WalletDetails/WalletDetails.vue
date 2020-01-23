@@ -159,23 +159,21 @@
 <script>
 import electron from 'electron'
 import at from 'lodash/at'
-/* eslint-disable vue/no-unused-components */
-import { ButtonGeneric } from '@/components/Button'
-import { TransactionModal } from '@/components/Transaction'
-import {
-  WalletBusiness,
-  WalletDelegates,
-  WalletExchange,
-  WalletHeading,
-  WalletIpfs,
-  WalletMultiSignature,
-  WalletSelectDelegate,
-  WalletSignVerify,
-  WalletStatistics,
-  WalletTransactions
-} from '../'
-import { MenuTab, MenuTabItem } from '@/components/Menu'
-import SvgIcon from '@/components/SvgIcon'
+import ButtonGeneric from '@/components/Button/ButtonGeneric'
+import TransactionModal from '@/components/Transaction/TransactionModal'
+import WalletBusiness from '../WalletBusiness'
+import WalletDelegates from '../WalletDelegates'
+import WalletExchange from '../WalletExchange'
+import WalletHeading from '../WalletHeading'
+import WalletIpfs from '../WalletIpfs'
+import WalletMultiSignature from '../WalletMultiSignature'
+import WalletSelectDelegate from '../WalletSelectDelegate'
+import WalletSignVerify from '../WalletSignVerify'
+import WalletStatistics from '../WalletStatistics'
+import WalletTransactions from '../WalletTransactions'
+import MenuTab from '@/components/Menu/MenuTab/MenuTab'
+import MenuTabItem from '@/components/Menu/MenuTab/MenuTabItem'
+import SvgIcon from '@/components/SvgIcon/SvgIcon'
 import WalletService from '@/services/wallet'
 
 export default {

@@ -59,14 +59,15 @@
 </template>
 
 <script>
+import isEmpty from 'lodash/isempty'
+import orderBy from 'lodash/orderby'
 import { required } from 'vuelidate/lib/validators'
-import { ButtonModal } from '@/components/Button'
-import ModalQrCodeScanner from '@/components/Modal/ModalQrCodeScanner'
-import { MenuDropdown } from '@/components/Menu'
 import Cycled from 'cycled'
+import ButtonModal from '@/components/Button/ButtonModal'
+import ModalQrCodeScanner from '@/components/Modal/ModalQrCodeScanner'
+import MenuDropdown from '@/components/Menu/MenuDropdown/MenuDropdown'
 import InputField from './InputField'
 import truncate from '@/filters/truncate'
-import { isEmpty, orderBy } from 'lodash'
 
 export default {
   name: 'InputDelegate',

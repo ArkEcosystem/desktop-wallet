@@ -17,7 +17,9 @@
 </template>
 
 <script>
-import { SearchInput, SearchFilter, SearchFilterButton } from '@/components/Search'
+import SearchInput from '@/components/Search/SearchInput'
+import SearchFilter from '@/components/Search/SearchFilter'
+import SearchFilterButton from '@/components/Search/SearchFilterButton'
 
 export default {
   name: 'SearchPage',

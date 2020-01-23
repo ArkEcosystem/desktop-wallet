@@ -51,10 +51,10 @@
 </template>
 
 <script>
-import { orderBy } from 'lodash'
+import orderBy from 'lodash/orderBy'
 import { mapGetters } from 'vuex'
-import { AnnouncementsPost } from '@/components/Announcements'
-import SvgIcon from '@/components/SvgIcon'
+import AnnouncementsPost from '@/components/Announcements/AnnouncementsPost'
+import SvgIcon from '@/components/SvgIcon/SvgIcon'
 
 export default {
   name: 'Announcements',

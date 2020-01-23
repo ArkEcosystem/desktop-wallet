@@ -28,8 +28,8 @@
 </template>
 
 <script>
-import { ModalConfirmation } from '@/components/Modal'
-import { WalletIdenticon } from './'
+import ModalConfirmation from '@/components/Modal/ModalConfirmation'
+import WalletIdenticon from './WalletIdenticon'
 
 export default {
   name: 'WalletRemovalConfirmation',

@@ -26,7 +26,7 @@
 <script>
 import { mapGetters } from 'vuex'
 import AppUpdater from '@/components/App/AppUpdater'
-import SvgIcon from '@/components/SvgIcon'
+import SvgIcon from '@/components/SvgIcon/SvgIcon'
 
 /**
  * A component to display a notification icon (a bell) and display important

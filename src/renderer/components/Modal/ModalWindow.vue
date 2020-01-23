@@ -77,8 +77,8 @@
 </template>
 
 <script>
-import { ButtonClose } from '@/components/Button'
-import { isFunction } from 'lodash'
+import ButtonClose from '@/components/Button/ButtonClose'
+import isFunction from 'lodash/isfunction'
 
 export default {
   name: 'ModalWindow',

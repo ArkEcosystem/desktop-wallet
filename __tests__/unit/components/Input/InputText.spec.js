@@ -1,7 +1,7 @@
 import { mount } from '@vue/test-utils'
 import Vue from 'vue'
 import Vuelidate from 'vuelidate'
-import { InputText } from '@/components/Input'
+import InputText from '@/components/Input/InputText'
 import useI18nGlobally from '../../__utils__/i18n'
 
 Vue.use(Vuelidate)

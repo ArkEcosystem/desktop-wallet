@@ -1,4 +1,4 @@
-import { isBoolean } from 'lodash'
+import isBoolean from 'lodash/isboolean'
 import BaseModel from './base'
 
 export default new BaseModel({

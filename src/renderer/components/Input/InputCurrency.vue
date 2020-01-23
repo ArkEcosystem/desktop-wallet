@@ -37,8 +37,9 @@
 </template>
 
 <script>
-import { includes, isString } from 'lodash'
 import { required } from 'vuelidate/lib/validators'
+import includes from 'lodash/includes'
+import isString from 'lodash/isstring'
 import { MARKET } from '@config'
 import InputField from './InputField'
 import BigNumber from '@/plugins/bignumber'

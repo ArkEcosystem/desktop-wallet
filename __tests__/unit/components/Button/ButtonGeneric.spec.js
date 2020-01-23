@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import { ButtonGeneric } from '@/components/Button'
+import ButtonGeneric from '@/components/Button/ButtonGeneric'
 
 describe('ButtonGeneric', () => {
   let wrapper

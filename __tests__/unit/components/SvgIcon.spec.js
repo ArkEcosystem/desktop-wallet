@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import SvgIcon from '@/components/SvgIcon'
+import SvgIcon from '@/components/SvgIcon/SvgIcon'
 
 describe('SvgIcon', () => {
   it('should render', () => {

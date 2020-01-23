@@ -10,8 +10,10 @@
 </template>
 
 <script>
-import { map, first, last } from 'lodash'
-import { CollapseAccordion } from '@/components/Collapse'
+import map from 'lodash/map'
+import first from 'lodash/first'
+import last from 'lodash/last'
+import CollapseAccordion from '@/components/Collapse/CollapseAccordion'
 
 export default {
   name: 'MenuStep',

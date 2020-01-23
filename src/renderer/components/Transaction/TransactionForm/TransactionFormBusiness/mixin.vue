@@ -122,10 +122,13 @@
 
 <script type="text/javascript">
 import { maxLength, minLength, required, url } from 'vuelidate/lib/validators'
-import { InputFee, InputPassword, InputText } from '@/components/Input'
-import { ListDivided, ListDividedItem } from '@/components/ListDivided'
-import { ModalLoader } from '@/components/Modal'
-import { PassphraseInput } from '@/components/Passphrase'
+import InputFee from '@/components/Input/InputFee'
+import InputPassword from '@/components/Input/InputPassword'
+import InputText from '@/components/Input/InputText'
+import ListDivided from '@/components/ListDivided/ListDivided'
+import ListDividedItem from '@/components/ListDivided/ListDividedItem'
+import ModalLoader from '@/components/Modal/ModalLoader'
+import PassphraseInput from '@/components/Passphrase/PassphraseInput'
 import mixin from '@/components/Transaction/TransactionForm/mixin'
 
 const maxNameLength = 40

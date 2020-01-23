@@ -145,13 +145,20 @@
 </template>
 
 <script>
-import { isEqual, some, uniqBy } from 'lodash'
-import { ButtonLayout } from '@/components/Button'
+import isEqual from 'lodash/isequal'
+import some from 'lodash/some'
+import uniqBy from 'lodash/uniqby'
+import ButtonLayout from '@/components/Button/ButtonLayout'
 import Loader from '@/components/utils/Loader'
-import { ProfileAvatar } from '@/components/Profile'
-import SvgIcon from '@/components/SvgIcon'
-import { WalletButtonCreate, WalletButtonExport, WalletButtonImport, WalletButtonLedgerSettings } from '@/components/Wallet/WalletButtons'
-import { WalletGrid, WalletRemovalConfirmation, WalletRenameModal } from '@/components/Wallet'
+import ProfileAvatar from '@/components/Profile/ProfileAvatar'
+import SvgIcon from '@/components/SvgIcon/SvgIcon'
+import WalletButtonCreate from '@/components/Wallet/WalletButtons/WalletButtonCreate'
+import WalletButtonExport from '@/components/Wallet/WalletButtons/WalletButtonExport'
+import WalletButtonImport from '@/components/Wallet/WalletButtons/WalletButtonImport'
+import WalletButtonLedgerSettings from '@/components/Wallet/WalletButtons/WalletButtonLedgerSettings'
+import WalletGrid from '@/components/Wallet/WalletGrid'
+import WalletRemovalConfirmation from '@/components/Wallet/WalletRemovalConfirmation'
+import WalletRenameModal from '@/components/Wallet/WalletRenameModal'
 import WalletTable from '@/components/Wallet/WalletTable'
 
 export default {

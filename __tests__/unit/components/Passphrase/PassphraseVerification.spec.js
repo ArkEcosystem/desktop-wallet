@@ -1,9 +1,9 @@
-import { pull } from 'lodash'
+import pull from 'lodash/pull'
 import { mount } from '@vue/test-utils'
 import Vue from 'vue'
 import Vuelidate from 'vuelidate'
 import { useI18nGlobally } from '../../__utils__/i18n'
-import { PassphraseVerification } from '@/components/Passphrase'
+import PassphraseVerification from '@/components/Passphrase/PassphraseVerification'
 
 const i18n = useI18nGlobally()
 

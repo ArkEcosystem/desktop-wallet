@@ -72,8 +72,9 @@
 </template>
 
 <script>
-import { ButtonSwitch } from '@/components/Button'
-import { MenuOptions, MenuOptionsItem } from '@/components/Menu'
+import ButtonSwitch from '@/components/Button/ButtonSwitch'
+import MenuOptions from '@/components/Menu/MenuOptions/MenuOptions'
+import MenuOptionsItem from '@/components/Menu/MenuOptions/MenuOptionsItem'
 import WalletSidebarFiltersSearchInput from './WalletSidebarFiltersSearchInput'
 import Vue from 'vue'
 

@@ -1,6 +1,6 @@
 import { shallowMount } from '@vue/test-utils'
 import { useI18nGlobally } from '../../__utils__/i18n'
-import { SelectionBackground } from '@/components/Selection'
+import SelectionBackground from '@/components/Selection/SelectionBackground'
 
 const i18n = useI18nGlobally()
 

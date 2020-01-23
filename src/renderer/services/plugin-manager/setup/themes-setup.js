@@ -1,7 +1,10 @@
 import path from 'path'
 import fs from 'fs'
 import { normalizeJson } from '../utils/normalize-json'
-import { isEmpty, isString, isObject, isBoolean } from 'lodash'
+import isEmpty from 'lodash/isempty'
+import isString from 'lodash/isstring'
+import isObject from 'lodash/isobject'
+import isBoolean from 'lodash/isboolean'
 
 export function create (plugin, pluginObject, sandbox, profileId) {
   return async () => {

@@ -40,10 +40,14 @@
 </template>
 
 <script>
-import { camelCase, includes, findKey, upperFirst } from 'lodash'
 import { TRANSACTION_TYPES } from '@config'
+import camelCase from 'lodash/camelcase'
+import includes from 'lodash/includes'
+import findKey from 'lodash/findkey'
+import upperFirst from 'lodash/upperfirst'
 import MultiSignature from '@/services/client-multisig'
-import { ModalLoader, ModalWindow } from '@/components/Modal'
+import ModalLoader from '@/components/Modal/ModalLoader'
+import ModalWindow from '@/components/Modal/ModalWindow'
 import TransactionForm from './TransactionForm'
 import TransactionConfirm from './TransactionConfirm'
 import TransactionService from '@/services/transaction'

@@ -42,8 +42,8 @@
 </template>
 
 <script>
-import { at } from 'lodash'
-import SvgIcon from '@/components/SvgIcon'
+import at from 'lodash/at'
+import SvgIcon from '@/components/SvgIcon/SvgIcon'
 
 export default {
   name: 'TransactionStatusIcon',

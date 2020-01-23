@@ -27,9 +27,10 @@
 </template>
 
 <script>
-import { ButtonSwitch } from '@/components/Button'
-import { ModalConfirmation } from '@/components/Modal'
-import { ListDivided, ListDividedItem } from '@/components/ListDivided'
+import ButtonSwitch from '@/components/Button/ButtonSwitch'
+import ModalConfirmation from '@/components/Modal/ModalConfirmation'
+import ListDivided from '@/components/ListDivided/ListDivided'
+import ListDividedItem from '@/components/ListDivided/ListDividedItem'
 
 export default {
   name: 'PluginRemovalConfirmation',

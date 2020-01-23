@@ -34,8 +34,8 @@
 
 <script>
 import { TRANSACTION_GROUPS, TRANSACTION_TYPES } from '@config'
-import { ButtonModal } from '@/components/Button'
-import { TransactionModal } from '@/components/Transaction'
+import ButtonModal from '@/components/Button/ButtonModal'
+import TransactionModal from '@/components/Transaction/TransactionModal'
 import WalletBusinessBridgechains from './WalletBusinessBridgechains'
 
 export default {

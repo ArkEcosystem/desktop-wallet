@@ -1,4 +1,4 @@
-import { cloneDeep } from 'lodash'
+import cloneDeep from 'lodash/clonedeep'
 import nock from 'nock'
 import { Identities, Managers, Transactions } from '@arkecosystem/crypto'
 import errorCapturer from '../__utils__/error-capturer'

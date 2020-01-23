@@ -90,8 +90,8 @@
 
 <script>
 import { format } from 'util'
-import { InputSwitch } from '@/components/Input'
 import { MARKET } from '@config'
+import InputSwitch from '@/components/Input/InputSwitch'
 
 export default {
   name: 'WalletExchange',

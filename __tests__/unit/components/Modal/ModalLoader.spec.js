@@ -1,5 +1,5 @@
 import { shallowMount } from '@vue/test-utils'
-import { ModalLoader } from '@/components/Modal'
+import ModalLoader from '@/components/Modal/ModalLoader'
 
 describe('ModalLoader', () => {
   it('should render modal', () => {

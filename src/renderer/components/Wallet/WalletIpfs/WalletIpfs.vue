@@ -33,8 +33,8 @@
 </template>
 
 <script>
-import { ButtonModal } from '@/components/Button'
-import { TransactionModal } from '@/components/Transaction'
+import ButtonModal from '@/components/Button/ButtonModal'
+import TransactionModal from '@/components/Transaction/TransactionModal'
 import WalletTransactions from '@/components/Wallet/WalletTransactions'
 
 export default {

@@ -32,7 +32,8 @@
 
 <script>
 import { TRANSACTION_TYPES } from '@config'
-import { ListDivided, ListDividedItem } from '@/components/ListDivided'
+import ListDivided from '@/components/ListDivided/ListDivided'
+import ListDividedItem from '@/components/ListDivided/ListDividedItem'
 import TransactionMultiPaymentList from '@/components/Transaction/TransactionMultiPaymentList'
 
 export default {

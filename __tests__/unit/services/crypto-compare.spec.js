@@ -1,6 +1,6 @@
 import nock from 'nock'
 import { MARKET } from '@config'
-import { keys } from 'lodash'
+import keys from 'lodash/keys'
 import cryptoCompare from '@/services/crypto-compare'
 
 describe('CryptoCompare', () => {

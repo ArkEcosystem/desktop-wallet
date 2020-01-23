@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import { ModalConfirmation } from '@/components/Modal'
+import ModalConfirmation from '@/components/Modal/ModalConfirmation'
 import Identicon from '@/components/utils/Identicon'
 
 export default {

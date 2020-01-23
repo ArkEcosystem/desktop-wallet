@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import { InputSelect } from '@/components/Input'
+import InputSelect from '@/components/Input/InputSelect'
 
 describe('InputSelect', () => {
   it('should render', () => {

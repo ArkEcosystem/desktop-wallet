@@ -35,8 +35,11 @@
 </template>
 
 <script>
-import { isEqual, isString, shuffle, uniq } from 'lodash'
-import { InputText } from '@/components/Input'
+import isEqual from 'lodash/isequal'
+import isString from 'lodash/isstring'
+import shuffle from 'lodash/shuffle'
+import uniq from 'lodash/uniq'
+import InputText from '@/components/Input/InputText'
 
 export default {
   name: 'PassphraseVerification',

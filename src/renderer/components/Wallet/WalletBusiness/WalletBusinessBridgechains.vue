@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import { isEqual } from 'lodash'
+import isEqual from 'lodash/isequal'
 import WalletBusinessBridgechainsTable from './WalletBusinessBridgechainsTable'
 
 export default {

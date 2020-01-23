@@ -71,8 +71,8 @@
 </template>
 
 <script>
-import { ButtonGeneric } from '@/components/Button'
-import SvgIcon from '@/components/SvgIcon'
+import ButtonGeneric from '@/components/Button/ButtonGeneric'
+import SvgIcon from '@/components/SvgIcon/SvgIcon'
 
 export default {
   name: 'ButtonDropdown',

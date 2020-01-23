@@ -36,7 +36,7 @@
 </template>
 
 <script>
-import { InputText } from '@/components/Input'
+import InputText from '@/components/Input/InputText'
 import ModalWindow from './ModalWindow'
 import Wallet from '@/models/wallet'
 import truncate from '@/filters/truncate'

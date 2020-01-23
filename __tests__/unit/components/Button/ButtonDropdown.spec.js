@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import { ButtonDropdown } from '@/components/Button'
+import ButtonDropdown from '@/components/Button/ButtonDropdown'
 
 const stubs = {
   Portal: '<div><slot/></div>'

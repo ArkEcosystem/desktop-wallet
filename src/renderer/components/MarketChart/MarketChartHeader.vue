@@ -42,7 +42,7 @@
 </template>
 
 <script>
-import { ButtonSwitch } from '@/components/Button'
+import ButtonSwitch from '@/components/Button/ButtonSwitch'
 
 export default {
   name: 'MarketChartHeader',

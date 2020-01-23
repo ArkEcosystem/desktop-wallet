@@ -2,7 +2,7 @@ import { createLocalVue, mount } from '@vue/test-utils'
 import { Identities } from '@arkecosystem/crypto'
 import Vuelidate from 'vuelidate'
 import installI18n from '../../../__utils__/i18n'
-import { TransactionFormIpfs } from '@/components/Transaction/TransactionForm'
+import TransactionFormIpfs from '@/components/Transaction/TransactionForm/TransactionFormIpfs'
 import CurrencyMixin from '@/mixins/currency'
 import BigNumber from '@/plugins/bignumber'
 

@@ -50,7 +50,8 @@
 
 <script>
 import InputField from './InputField'
-import { MenuDropdown, MenuDropdownHandler } from '@/components/Menu'
+import MenuDropdown from '@/components/Menu/MenuDropdown/MenuDropdown'
+import MenuDropdownHandler from '@/components/Menu/MenuDropdown/MenuDropdownHandler'
 
 export default {
   name: 'InputSelect',

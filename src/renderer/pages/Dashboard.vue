@@ -49,9 +49,12 @@
 </template>
 
 <script>
-import { DashboardTransactions } from '@/components/Dashboard'
-import { MarketChart, MarketChartHeader } from '@/components/MarketChart'
-import { WalletSidebar, WalletButtonCreate, WalletButtonImport } from '@/components/Wallet'
+import DashboardTransactions from '@/components/Dashboard/DashboardTransactions'
+import MarketChart from '@/components/MarketChart/MarketChart'
+import MarketChartHeader from '@/components/MarketChart/MarketChartHeader'
+import WalletSidebar from '@/components/Wallet/WalletSidebar'
+import WalletButtonCreate from '@/components/Wallet/WalletButtons/WalletButtonCreate'
+import WalletButtonImport from '@/components/Wallet/WalletButtons/WalletButtonImport'
 import store from '@/store'
 
 export default {

@@ -1,5 +1,6 @@
 import { mount } from '@vue/test-utils'
-import { MenuNavigation, MenuNavigationItem } from '@/components/Menu'
+import MenuNavigation from '@/components/Menu/MenuNavigation/MenuNavigation'
+import MenuNavigationItem from '@/components/Menu/MenuNavigation/MenuNavigationItem'
 
 describe('MenuNavigation', () => {
   let wrapper

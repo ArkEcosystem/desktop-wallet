@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import { InputEditableList } from '@/components/Input'
+import InputEditableList from '@/components/Input/InputEditableList'
 /* eslint-disable-next-line no-unused-vars */
 import truncateMiddle from '@/filters/truncate-middle'
 

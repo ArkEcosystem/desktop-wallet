@@ -1,4 +1,8 @@
-import { transform, isFunction, isObject, isUndefined, isNil } from 'lodash'
+import transform from 'lodash/transform'
+import isFunction from 'lodash/isfunction'
+import isObject from 'lodash/isobject'
+import isUndefined from 'lodash/isundefined'
+import isNil from 'lodash/isnil'
 import { validate as jsonValidate } from 'jsonschema'
 
 export default class BaseModel {

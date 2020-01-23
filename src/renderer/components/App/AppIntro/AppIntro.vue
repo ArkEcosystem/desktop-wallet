@@ -226,8 +226,9 @@
 import { I18N } from '@config'
 import AppFooter from '@/components/App/AppFooter'
 import AppIntroScreen from '@/components/App/AppIntro/AppIntroScreen'
-import { ButtonGeneric } from '@/components/Button'
-import { MenuDropdown, MenuDropdownHandler } from '@/components/Menu'
+import ButtonGeneric from '@/components/Button/ButtonGeneric'
+import MenuDropdown from '@/components/Menu/MenuDropdown/MenuDropdown'
+import MenuDropdownHandler from '@/components/Menu/MenuDropdown/MenuDropdownHandler'
 
 export default {
   name: 'AppIntro',

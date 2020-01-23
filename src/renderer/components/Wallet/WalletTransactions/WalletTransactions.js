@@ -1,7 +1,7 @@
-import { at } from 'lodash'
+import at from 'lodash/at'
 import mixin from './mixin'
 import mergeTableTransactions from '@/components/utils/merge-table-transactions'
-import { TransactionTable } from '@/components/Transaction'
+import TransactionTable from '@/components/Transaction/TransactionTable'
 
 export default {
   name: 'WalletTransactions',

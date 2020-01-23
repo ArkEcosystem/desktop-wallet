@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import { ButtonLetter } from '@/components/Button'
+import ButtonLetter from '@/components/Button/ButtonLetter'
 
 describe('ButtonLetter', () => {
   let wrapper

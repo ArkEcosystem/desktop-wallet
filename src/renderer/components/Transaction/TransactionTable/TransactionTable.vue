@@ -145,9 +145,10 @@
 
 <script>
 import { TRANSACTION_TYPES } from '@config'
-import SvgIcon from '@/components/SvgIcon'
+import SvgIcon from '@/components/SvgIcon/SvgIcon'
 import truncateMiddle from '@/filters/truncate-middle'
-import { TransactionShow, TransactionStatusIcon } from '@/components/Transaction'
+import TransactionShow from '@/components/Transaction/TransactionShow'
+import TransactionStatusIcon from '@/components/Transaction/TransactionStatusIcon'
 import WalletAddress from '@/components/Wallet/WalletAddress'
 import TableWrapper from '@/components/utils/TableWrapper'
 

@@ -43,9 +43,11 @@
 
 <script>
 /* eslint-disable vue/no-unused-components */
-import { MenuOptions, MenuDropdown, MenuDropdownAlternativeHandler } from '@/components/Menu'
+import MenuOptions from '@/components/Menu/MenuOptions/MenuOptions'
+import MenuDropdown from '@/components/Menu/MenuDropdown/MenuDropdown'
+import MenuDropdownAlternativeHandler from '@/components/Menu/MenuDropdown/MenuDropdownAlternativeHandler'
 import SearchFilterItem from './SearchFilterItem'
-import SvgIcon from '@/components/SvgIcon'
+import SvgIcon from '@/components/SvgIcon/SvgIcon'
 import SearchFilterTransaction from './SearchFilterTransaction'
 import SearchFilterDelegate from './SearchFilterDelegate'
 

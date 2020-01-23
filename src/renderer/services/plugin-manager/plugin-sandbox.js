@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import path from 'path'
-import { castArray } from 'lodash'
+import castArray from 'lodash/castarray'
 import { NodeVM } from 'vm2'
 import {
   HTTP,

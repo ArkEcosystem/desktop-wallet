@@ -114,9 +114,9 @@
 </template>
 
 <script>
-import { ButtonClipboard } from '@/components/Button'
-import SvgIcon from '@/components/SvgIcon'
-import { WalletIdenticon } from '../'
+import ButtonClipboard from '@/components/Button/ButtonClipboard'
+import SvgIcon from '@/components/SvgIcon/SvgIcon'
+import WalletIdenticon from '../WalletIdenticon'
 import WalletService from '@/services/wallet'
 
 export default {

@@ -1,5 +1,6 @@
 import { mount, shallowMount } from '@vue/test-utils'
-import { Collapse, CollapseAccordion } from '@/components/Collapse'
+import Collapse from '@/components/Collapse/Collapse'
+import CollapseAccordion from '@/components/Collapse/CollapseAccordion'
 
 describe('Collapse', () => {
   it('should render collapse', () => {

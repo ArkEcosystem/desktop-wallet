@@ -1,5 +1,6 @@
 import { mount } from '@vue/test-utils'
-import { ListDivided, ListDividedItem } from '@/components/ListDivided'
+import ListDivided from '@/components/ListDivided/ListDivided'
+import ListDividedItem from '@/components/ListDivided/ListDividedItem'
 
 describe('ListDivided', () => {
   it('should render item', () => {

@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
 import { useI18nGlobally } from '../../__utils__/i18n'
-import { WalletDelegates } from '@/components/Wallet'
+import WalletDelegates from '@/components/Wallet/WalletDelegates'
 
 const i18n = useI18nGlobally()
 

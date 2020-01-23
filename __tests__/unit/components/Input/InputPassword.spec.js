@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
 import { useI18nGlobally } from '../../__utils__/i18n'
-import { InputPassword } from '@/components/Input'
+import InputPassword from '@/components/Input/InputPassword'
 
 const i18n = useI18nGlobally()
 let mountData

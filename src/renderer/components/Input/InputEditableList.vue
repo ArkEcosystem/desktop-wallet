@@ -48,7 +48,7 @@
 </template>
 
 <script>
-import { ButtonClose } from '@/components/Button'
+import ButtonClose from '@/components/Button/ButtonClose'
 
 export default {
   name: 'InputEditableList',

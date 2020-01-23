@@ -1,6 +1,6 @@
 import { shallowMount } from '@vue/test-utils'
 import useI18nGlobally from '../../__utils__/i18n'
-import { ModalQrCode } from '@/components/Modal'
+import ModalQrCode from '@/components/Modal/ModalQrCode'
 
 describe('ModalQrCode', () => {
   it('should render modal', () => {

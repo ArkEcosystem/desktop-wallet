@@ -41,8 +41,8 @@
 
 <script>
 import { required } from 'vuelidate/lib/validators'
-import { InputField } from '@/components/Input'
-import SvgIcon from '@/components/SvgIcon'
+import InputField from '@/components/Input/InputField'
+import SvgIcon from '@/components/SvgIcon/SvgIcon'
 
 export default {
   name: 'InputPassword',

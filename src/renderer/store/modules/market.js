@@ -1,5 +1,6 @@
 import { MarketTicker } from '@/models/market'
-import { forEach, keys } from 'lodash'
+import forEach from 'lodash/foreach'
+import keys from 'lodash/keys'
 import cryptoCompare from '@/services/crypto-compare'
 import { MARKET } from '@config'
 import Vue from 'vue'

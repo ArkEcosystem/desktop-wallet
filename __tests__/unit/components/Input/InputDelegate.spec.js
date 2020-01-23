@@ -1,9 +1,9 @@
-import { merge } from 'lodash'
+import merge from 'lodash/merge'
 import Vue from 'vue'
 import Vuelidate from 'vuelidate'
 import { mount } from '@vue/test-utils'
 import { useI18n } from '../../__utils__/i18n'
-import { InputDelegate } from '@/components/Input'
+import InputDelegate from '@/components/Input/InputDelegate'
 import delegates from '../../__fixtures__/store/delegate'
 
 Vue.use(Vuelidate)

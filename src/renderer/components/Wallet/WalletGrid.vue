@@ -105,9 +105,9 @@
 
 <script>
 import Loader from '@/components/utils/Loader'
-import { MenuDropdown } from '@/components/Menu'
+import MenuDropdown from '@/components/Menu/MenuDropdown/MenuDropdown'
 import WalletIdenticon from './WalletIdenticon'
-import SvgIcon from '@/components/SvgIcon'
+import SvgIcon from '@/components/SvgIcon/SvgIcon'
 
 export default {
   name: 'WalletGrid',

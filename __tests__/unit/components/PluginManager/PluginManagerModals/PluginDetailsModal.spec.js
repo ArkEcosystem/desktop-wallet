@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
 import useI18nGlobally from '../../../__utils__/i18n'
-import { PluginDetailsModal } from '@/components/PluginManager/PluginManagerModals'
+import PluginDetailsModal from '@/components/PluginManager/PluginManagerModals/PluginDetailsModal'
 
 const i18n = useI18nGlobally()
 

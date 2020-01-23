@@ -2,7 +2,9 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import VuexPersistence from 'vuex-persist'
 import localforage from 'localforage'
-import { isNull, pullAll, keys } from 'lodash'
+import isNull from 'lodash/isnull'
+import pullAll from 'lodash/pullall'
+import keys from 'lodash/keys'
 
 import packageJson from '@package.json'
 

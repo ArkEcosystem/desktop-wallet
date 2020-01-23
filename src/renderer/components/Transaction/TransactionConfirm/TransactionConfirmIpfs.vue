@@ -20,7 +20,8 @@
 
 <script>
 import { TRANSACTION_TYPES } from '@config'
-import { ListDivided, ListDividedItem } from '@/components/ListDivided'
+import ListDivided from '@/components/ListDivided/ListDivided'
+import ListDividedItem from '@/components/ListDivided/ListDividedItem'
 
 export default {
   name: 'TransactionConfirmIpfs',

@@ -1,5 +1,6 @@
 import BaseModel from './base'
-import { toString, get } from 'lodash'
+import toString from 'lodash/tostring'
+import get from 'lodash/get'
 
 export default new BaseModel({
   type: 'object',

@@ -55,8 +55,8 @@
 </template>
 
 <script>
-import { ButtonLetter } from '@/components/Button'
-import { SvgIcon } from '@/components/SvgIcon'
+import ButtonLetter from '@/components/Button/ButtonLetter'
+import SvgIcon from '@/components/SvgIcon/SvgIcon'
 
 export default {
   name: 'InputGridItem',

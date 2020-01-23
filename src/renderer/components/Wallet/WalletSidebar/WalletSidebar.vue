@@ -204,11 +204,15 @@
 </template>
 
 <script>
-import { filter, sortBy, uniqBy } from 'lodash'
+import filter from 'lodash/filter'
+import sortBy from 'lodash/sortby'
+import uniqBy from 'lodash/uniqby'
 import Loader from '@/components/utils/Loader'
-import { MenuNavigation, MenuNavigationItem } from '@/components/Menu'
-import { WalletIdenticon, WalletIdenticonPlaceholder } from '../'
-import SvgIcon from '@/components/SvgIcon'
+import MenuNavigation from '@/components/Menu/MenuNavigation/MenuNavigation'
+import MenuNavigationItem from '@/components/Menu/MenuNavigation/MenuNavigationItem'
+import WalletIdenticon from '../WalletIdenticon'
+import WalletIdenticonPlaceholder from '../WalletIdenticonPlaceholder'
+import SvgIcon from '@/components/SvgIcon/SvgIcon'
 import WalletSidebarFilters from './WalletSidebarFilters'
 
 export default {

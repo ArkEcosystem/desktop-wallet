@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import { WalletIdenticon } from './'
+import WalletIdenticon from './WalletIdenticon'
 
 export default {
   name: 'WalletVerifyDetail',

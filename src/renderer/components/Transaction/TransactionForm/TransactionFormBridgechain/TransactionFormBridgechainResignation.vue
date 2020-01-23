@@ -99,10 +99,12 @@
 
 <script>
 import { TRANSACTION_GROUPS, TRANSACTION_TYPES } from '@config'
-import { InputFee, InputPassword } from '@/components/Input'
-import { ListDivided, ListDividedItem } from '@/components/ListDivided'
-import { ModalLoader } from '@/components/Modal'
-import { PassphraseInput } from '@/components/Passphrase'
+import InputFee from '@/components/Input/InputFee'
+import InputPassword from '@/components/Input/InputPassword'
+import ListDivided from '@/components/ListDivided/ListDivided'
+import ListDividedItem from '@/components/ListDivided/ListDividedItem'
+import ModalLoader from '@/components/Modal/ModalLoader'
+import PassphraseInput from '@/components/Passphrase/PassphraseInput'
 import mixin from '../mixin'
 
 export default {

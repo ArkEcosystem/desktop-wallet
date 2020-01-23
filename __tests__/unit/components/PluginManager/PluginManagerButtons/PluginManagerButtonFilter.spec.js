@@ -1,6 +1,6 @@
 import { shallowMount } from '@vue/test-utils'
 import useI18nGlobally from '../../../__utils__/i18n'
-import { PluginManagerButtonFilter } from '@/components/PluginManager/PluginManagerButtons'
+import PluginManagerButtonFilter from '@/components/PluginManager/PluginManagerButtons/PluginManagerButtonFilter'
 
 const i18n = useI18nGlobally()
 let wrapper

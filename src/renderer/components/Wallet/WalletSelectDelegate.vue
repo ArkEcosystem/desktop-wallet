@@ -28,8 +28,8 @@
 </template>
 
 <script>
-import { InputDelegate } from '@/components/Input'
-import { ModalWindow } from '@/components/Modal'
+import InputDelegate from '@/components/Input/InputDelegate'
+import ModalWindow from '@/components/Modal/ModalWindow'
 
 export default {
   name: 'ModalSelectDelegate',

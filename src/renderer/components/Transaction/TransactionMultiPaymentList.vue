@@ -47,7 +47,7 @@
 
 <script>
 import truncate from '@/filters/truncate'
-import { InputEditableList } from '@/components/Input'
+import InputEditableList from '@/components/Input/InputEditableList'
 import WalletIdenticon from '@/components/Wallet/WalletIdenticon'
 
 export default {

@@ -46,8 +46,9 @@
 
 <script>
 import ModalAdditionalLedgers from '@/components/Modal/ModalAdditionalLedgers'
-import { MenuOptions, MenuOptionsItem } from '@/components/Menu'
-import { ButtonSwitch } from '@/components/Button'
+import MenuOptions from '@/components/Menu/MenuOptions/MenuOptions'
+import MenuOptionsItem from '@/components/Menu/MenuOptions/MenuOptionsItem'
+import ButtonSwitch from '@/components/Button/ButtonSwitch'
 
 export default {
   name: 'AppSidemenuOptionsSettings',

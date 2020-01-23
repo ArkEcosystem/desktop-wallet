@@ -160,12 +160,17 @@
 
 <script>
 import { TRANSACTION_TYPES } from '@config'
-import { ButtonClipboard, ButtonReload } from '@/components/Button'
-import { Collapse } from '@/components/Collapse'
-import { InputFee, InputPassword } from '@/components/Input'
-import { ListDivided, ListDividedItem } from '@/components/ListDivided'
-import { ModalLoader } from '@/components/Modal'
-import { PassphraseInput, PassphraseVerification, PassphraseWords } from '@/components/Passphrase'
+import ButtonClipboard from '@/components/Button/ButtonClipboard'
+import ButtonReload from '@/components/Button/ButtonReload'
+import Collapse from '@/components/Collapse/Collapse'
+import InputFee from '@/components/Input/InputFee'
+import InputPassword from '@/components/Input/InputPassword'
+import ListDivided from '@/components/ListDivided/ListDivided'
+import ListDividedItem from '@/components/ListDivided/ListDividedItem'
+import ModalLoader from '@/components/Modal/ModalLoader'
+import PassphraseInput from '@/components/Passphrase/PassphraseInput'
+import PassphraseVerification from '@/components/Passphrase/PassphraseVerification'
+import PassphraseWords from '@/components/Passphrase/PassphraseWords'
 import WalletService from '@/services/wallet'
 import mixin from './mixin'
 

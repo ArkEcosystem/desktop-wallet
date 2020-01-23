@@ -2,7 +2,7 @@ import { mount } from '@vue/test-utils'
 import Vuelidate from 'vuelidate'
 import Vue from 'vue'
 import useI18nGlobally from '../../../__utils__/i18n'
-import { PluginUrlModal } from '@/components/PluginManager/PluginManagerModals'
+import PluginUrlModal from '@/components/PluginManager/PluginManagerModals/PluginUrlModal'
 
 const i18n = useI18nGlobally()
 let wrapper

@@ -1,6 +1,6 @@
 import { shallowMount } from '@vue/test-utils'
 import useI18nGlobally from '../../../__utils__/i18n'
-import { WalletButtonLedgerSettings } from '@/components/Wallet/WalletButtons'
+import WalletButtonLedgerSettings from '@/components/Wallet/WalletButtons/WalletButtonLedgerSettings'
 
 const i18n = useI18nGlobally()
 let wrapper

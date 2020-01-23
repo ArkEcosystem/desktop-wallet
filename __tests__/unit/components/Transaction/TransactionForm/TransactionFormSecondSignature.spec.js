@@ -1,7 +1,7 @@
 import { createLocalVue, mount } from '@vue/test-utils'
 import Vuelidate from 'vuelidate'
 import installI18n from '../../../__utils__/i18n'
-import { TransactionFormSecondSignature } from '@/components/Transaction/TransactionForm'
+import TransactionFormSecondSignature from '@/components/Transaction/TransactionForm/TransactionFormSecondSignature'
 import CurrencyMixin from '@/mixins/currency'
 import FormatterMixin from '@/mixins/formatter'
 import BigNumber from '@/plugins/bignumber'

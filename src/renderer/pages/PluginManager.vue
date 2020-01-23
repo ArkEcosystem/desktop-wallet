@@ -204,26 +204,25 @@
 
 <script>
 import { ipcRenderer } from 'electron'
-import { isEqual, sortBy, uniq } from 'lodash'
-import { ButtonLayout, ButtonReload } from '@/components/Button'
-import {
-  PluginBlacklistModal,
-  PluginDetailsModal,
-  PluginInstallModal,
-  PluginManagerGrid,
-  PluginManagerSearchBar,
-  PluginManagerSideMenu,
-  PluginManagerTable,
-  PluginPermissionsModal,
-  PluginRemovalModal,
-  PluginUrlModal
-} from '@/components/PluginManager'
-import { ModalLoader } from '@/components/Modal'
-import {
-  PluginManagerButtonFilter,
-  PluginManagerButtonInstallSource,
-  PluginManagerButtonMenu
-} from '@/components/PluginManager/PluginManagerButtons'
+import isEqual from 'lodash/isequal'
+import sortBy from 'lodash/sortby'
+import uniq from 'lodash/uniq'
+import ButtonLayout from '@/components/Button/ButtonLayout'
+import ButtonReload from '@/components/Button/ButtonReload'
+import ModalLoader from '@/components/Modal/ModalLoader'
+import PluginBlacklistModal from '@/components/PluginManager/PluginBlacklistModal'
+import PluginDetailsModal from '@/components/PluginManager/PluginDetailsModal'
+import PluginInstallModal from '@/components/PluginManager/PluginInstallModal'
+import PluginManagerGrid from '@/components/PluginManager/PluginManagerGrid'
+import PluginManagerSearchBar from '@/components/PluginManager/PluginManagerSearchBar'
+import PluginManagerSideMenu from '@/components/PluginManager/PluginManagerSideMenu'
+import PluginManagerTable from '@/components/PluginManager/PluginManagerTable'
+import PluginPermissionsModal from '@/components/PluginManager/PluginPermissionsModal'
+import PluginRemovalModal from '@/components/PluginManager/PluginRemovalModal'
+import PluginUrlModal from '@/components/PluginManager/PluginUrlModal'
+import PluginManagerButtonFilter from '@/components/PluginManager/PluginManagerButtons/PluginManagerButtonFilter'
+import PluginManagerButtonInstallSource from '@/components/PluginManager/PluginManagerButtons/PluginManagerButtonInstallSource'
+import PluginManagerButtonMenu from '@/components/PluginManager/PluginManagerButtons/PluginManagerButtonMenu'
 
 export default {
   name: 'PluginManager',

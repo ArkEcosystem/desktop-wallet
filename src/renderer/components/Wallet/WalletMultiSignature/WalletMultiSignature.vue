@@ -46,9 +46,10 @@
 </template>
 
 <script>
-import { ButtonModal } from '@/components/Button'
-import { ModalLoader, ModalPeer } from '@/components/Modal'
-import { WalletTransactionsMultiSignature } from '@/components/Wallet/WalletTransactions'
+import ButtonModal from '@/components/Button/ButtonModal'
+import ModalLoader from '@/components/Modal/ModalLoader'
+import ModalPeer from '@/components/Modal/ModalPeer'
+import WalletTransactionsMultiSignature from '@/components/Wallet/WalletTransactions/WalletTransactionsMultiSignature'
 import MultiSignature from '@/services/client-multisig'
 
 export default {

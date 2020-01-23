@@ -9,9 +9,11 @@
 </template>
 
 <script>
-import { uniqBy, orderBy, flatten } from 'lodash'
+import uniqBy from 'lodash/uniqby'
+import orderBy from 'lodash/orderby'
+import flatten from 'lodash/flatten'
 import mergeTableTransactions from '@/components/utils/merge-table-transactions'
-import { TransactionTable } from '@/components/Transaction'
+import TransactionTable from '@/components/Transaction/TransactionTable'
 
 export default {
   name: 'DashboardTransactions',

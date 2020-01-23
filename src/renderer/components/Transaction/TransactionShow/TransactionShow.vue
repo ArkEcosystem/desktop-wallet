@@ -231,12 +231,16 @@
 </template>
 
 <script>
-import { at } from 'lodash'
-import { ListDivided, ListDividedItem } from '@/components/ListDivided'
-import { ModalWindow } from '@/components/Modal'
-import { ButtonClipboard, ButtonGeneric } from '@/components/Button'
-import SvgIcon from '@/components/SvgIcon'
-import { TransactionAmount, TransactionMultiPaymentList, TransactionStatusIcon } from '@/components/Transaction'
+import at from 'lodash/at'
+import ButtonClipboard from '@/components/Button/ButtonClipboard'
+import ButtonGeneric from '@/components/Button/ButtonGeneric'
+import ListDivided from '@/components/ListDivided/ListDivided'
+import ListDividedItem from '@/components/ListDivided/ListDividedItem'
+import ModalWindow from '@/components/Modal/ModalWindow'
+import SvgIcon from '@/components/SvgIcon/SvgIcon'
+import TransactionAmount from '@/components/Transaction/TransactionAmount'
+import TransactionMultiPaymentList from '@/components/Transaction/TransactionMultiPaymentList'
+import TransactionStatusIcon from '@/components/Transaction/TransactionStatusIcon'
 import WalletAddress from '@/components/Wallet/WalletAddress'
 import WalletService from '@/services/wallet'
 import truncateMiddle from '@/filters/truncate-middle'

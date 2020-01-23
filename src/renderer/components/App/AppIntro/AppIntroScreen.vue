@@ -78,7 +78,7 @@
 </template>
 
 <script>
-import { ButtonGeneric } from '@/components/Button'
+import ButtonGeneric from '@/components/Button/ButtonGeneric'
 
 export default {
   name: 'AppIntroScreen',

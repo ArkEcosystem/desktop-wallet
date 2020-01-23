@@ -98,9 +98,10 @@
 </template>
 
 <script>
-import { InputText, InputToggle } from '@/components/Input'
-import { ModalWindow } from '@/components/Modal'
-import { WalletVerifyDetail } from './'
+import InputText from '@/components/Input/InputText'
+import InputToggle from '@/components/Input/InputToggle'
+import ModalWindow from '@/components/Modal/ModalWindow'
+import WalletVerifyDetail from './WalletVerifyDetail'
 import WalletService from '@/services/wallet'
 
 export default {

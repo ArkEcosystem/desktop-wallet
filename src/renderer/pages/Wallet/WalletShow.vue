@@ -23,7 +23,8 @@
 </template>
 
 <script>
-import { WalletSidebar, WalletDetails } from '@/components/Wallet'
+import WalletSidebar from '@/components/Wallet/WalletSidebar'
+import WalletDetails from '@/components/Wallet/WalletDetails'
 
 export default {
   name: 'WalletShow',

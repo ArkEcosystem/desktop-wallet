@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import { ProgressBar } from '@/components/ProgressBar'
+import ProgressBar from '@/components/ProgressBar/ProgressBar'
 
 describe('ProgressBar', () => {
   it('should render', () => {

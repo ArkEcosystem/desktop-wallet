@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import { InputEditableList } from '@/components/Input'
+import InputEditableList from '@/components/Input/InputEditableList'
 
 export default {
   name: 'TransactionPeerList',

@@ -1,4 +1,6 @@
-import { findIndex, unionBy, uniqBy } from 'lodash'
+import findIndex from 'lodash/findindex'
+import unionBy from 'lodash/unionby'
+import uniqBy from 'lodash/uniqby'
 import WalletModel from '@/models/wallet'
 import Vue from 'vue'
 

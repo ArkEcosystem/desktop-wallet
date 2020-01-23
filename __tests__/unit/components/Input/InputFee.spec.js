@@ -1,11 +1,11 @@
-import { merge } from 'lodash'
+import merge from 'lodash/merge'
 import Vue from 'vue'
 import { shallowMount } from '@vue/test-utils'
 import { V1 } from '@config'
 import { useI18n } from '../../__utils__/i18n'
 import CurrencyMixin from '@/mixins/currency'
 import FormatterMixin from '@/mixins/formatter'
-import { InputFee } from '@/components/Input'
+import InputFee from '@/components/Input/InputFee'
 import store from '@/store'
 import BigNumber from '@/plugins/bignumber'
 

@@ -1,5 +1,6 @@
 import dayjs from 'dayjs'
-import { findIndex, unionBy } from 'lodash'
+import findIndex from 'lodash/findindex'
+import unionBy from 'lodash/unionby'
 import { APP, TRANSACTION_GROUPS, TRANSACTION_TYPES } from '@config'
 import eventBus from '@/plugins/event-bus'
 import TransactionModel from '@/models/transaction'

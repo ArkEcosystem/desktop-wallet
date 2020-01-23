@@ -39,7 +39,7 @@
 </template>
 
 <script>
-import { ModalWindow } from '@/components/Modal'
+import ModalWindow from '@/components/Modal/ModalWindow'
 
 export default {
   name: 'PluginPermissionsModal',

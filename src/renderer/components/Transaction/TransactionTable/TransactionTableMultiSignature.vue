@@ -102,7 +102,7 @@
 
 <script>
 import truncateMiddle from '@/filters/truncate-middle'
-import { TransactionShowMultiSignature } from '@/components/Transaction'
+import TransactionShowMultiSignature from '@/components/Transaction/TransactionShow/TransactionShowMultiSignature'
 import WalletAddress from '@/components/Wallet/WalletAddress'
 import TableWrapper from '@/components/utils/TableWrapper'
 import TransactionService from '@/services/transaction'

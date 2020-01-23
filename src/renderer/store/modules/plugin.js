@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import pluginManager from '@/services/plugin-manager'
 import releaseService from '@/services/release'
-import { cloneDeep, uniqBy } from 'lodash'
+import cloneDeep from 'lodash/clonedeep'
+import uniqBy from 'lodash/uniqby'
 import semver from 'semver'
 
 export default {

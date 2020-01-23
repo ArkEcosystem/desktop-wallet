@@ -1,4 +1,3 @@
-
 // Returns a sort function for the given prop
 export function sortByProps (props, locale = undefined, options = null) {
   locale = locale || undefined

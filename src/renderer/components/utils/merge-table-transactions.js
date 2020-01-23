@@ -1,4 +1,5 @@
-import { orderBy, uniqBy } from 'lodash'
+import orderBy from 'lodash/orderby'
+import uniqBy from 'lodash/uniqby'
 import BigNumber from 'bignumber.js'
 
 /**

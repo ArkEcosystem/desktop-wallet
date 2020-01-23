@@ -97,12 +97,15 @@
 </template>
 
 <script>
-import { isEqual, some } from 'lodash'
-import { ButtonLayout } from '@/components/Button'
-import { ContactRemovalConfirmation, ContactRenameModal } from '@/components/Contact'
-import { WalletGrid, WalletIdenticonPlaceholder } from '@/components/Wallet'
+import isEqual from 'lodash/isequal'
+import some from 'lodash/some'
+import ButtonLayout from '@/components/Button/ButtonLayout'
+import ContactRemovalConfirmation from '@/components/Contact/ContactRemovalConfirmation'
+import ContactRenameModal from '@/components/Contact/ContactRenameModal'
+import WalletGrid from '@/components/Wallet/WalletGrid'
+import WalletIdenticonPlaceholder from '@/components/Wallet/WalletIdenticonPlaceholder'
 import WalletTable from '@/components/Wallet/WalletTable'
-import SvgIcon from '@/components/SvgIcon'
+import SvgIcon from '@/components/SvgIcon/SvgIcon'
 
 export default {
   name: 'ContactAll',

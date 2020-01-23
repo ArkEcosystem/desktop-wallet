@@ -73,7 +73,7 @@
 
 <script>
 import isEqual from 'lodash/isEqual'
-import { ButtonClose } from '@/components/Button'
+import ButtonClose from '@/components/Button/ButtonClose'
 import TableWrapper from '@/components/utils/TableWrapper'
 
 export default {

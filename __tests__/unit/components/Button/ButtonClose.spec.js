@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import { ButtonClose } from '@/components/Button'
+import ButtonClose from '@/components/Button/ButtonClose'
 
 describe('ButtonClose', () => {
   let wrapper

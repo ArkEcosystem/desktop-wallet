@@ -62,9 +62,9 @@
 
 <script>
 import { TRANSACTION_TYPES } from '@config'
-import { InputPassword } from '@/components/Input'
-import { ModalLoader } from '@/components/Modal'
-import { PassphraseInput } from '@/components/Passphrase'
+import InputPassword from '@/components/Input/InputPassword'
+import ModalLoader from '@/components/Modal/ModalLoader'
+import PassphraseInput from '@/components/Passphrase/PassphraseInput'
 import mixin from './mixin'
 
 export default {

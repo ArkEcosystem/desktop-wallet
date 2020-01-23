@@ -24,7 +24,7 @@
 <script>
 import concat from 'lodash/concat'
 import { PLUGINS } from '@config'
-import { PluginManagerButtonMenu } from '@/components/PluginManager/PluginManagerButtons'
+import PluginManagerButtonMenu from '@/components/PluginManager/PluginManagerButtons/PluginManagerButtonMenu'
 
 export default {
   name: 'PluginManagerSideMenu',

@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
 import useI18nGlobally from '../../../__utils__/i18n'
-import { PluginBlacklistDisclaimerModal } from '@/components/PluginManager/PluginManagerModals'
+import PluginBlacklistDisclaimerModal from '@/components/PluginManager/PluginManagerModals/PluginBlacklistDisclaimerModal'
 
 const i18n = useI18nGlobally()
 

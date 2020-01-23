@@ -14,8 +14,8 @@
 </template>
 
 <script>
-import { InputText } from '@/components/Input'
-import SvgIcon from '@/components/SvgIcon'
+import InputText from '@/components/Input/InputText'
+import SvgIcon from '@/components/SvgIcon/SvgIcon'
 
 export default {
   name: 'SearchInput',

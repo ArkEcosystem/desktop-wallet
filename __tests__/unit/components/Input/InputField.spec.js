@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import { InputField } from '@/components/Input'
+import InputField from '@/components/Input/InputField'
 
 describe('InputField', () => {
   it('should render', () => {

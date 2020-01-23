@@ -70,10 +70,12 @@
 
 <script>
 import { TRANSACTION_TYPES } from '@config'
-import { ButtonDropdown, ButtonModal } from '@/components/Button'
-import { ContactRenameModal } from '@/components/Contact'
-import { WalletRenameModal, WalletRemovalConfirmation } from '@/components/Wallet'
-import { TransactionModal } from '@/components/Transaction'
+import ButtonDropdown from '@/components/Button/ButtonDropdown'
+import ButtonModal from '@/components/Button/ButtonModal'
+import ContactRenameModal from '@/components/Contact/ContactRenameModal'
+import WalletRenameModal from '@/components/Wallet/WalletRenameModal'
+import WalletRemovalConfirmation from '@/components/Wallet/WalletRemovalConfirmation'
+import TransactionModal from '@/components/Transaction/TransactionModal'
 import WalletService from '@/services/wallet'
 
 export default {

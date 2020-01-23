@@ -27,8 +27,8 @@
 </template>
 
 <script>
-import { ModalConfirmation } from '@/components/Modal'
-import { ProfileAvatar } from '@/components/Profile'
+import ModalConfirmation from '@/components/Modal/ModalConfirmation'
+import ProfileAvatar from '@/components/Profile/ProfileAvatar'
 
 export default {
   name: 'ProfileRemovalConfirmation',

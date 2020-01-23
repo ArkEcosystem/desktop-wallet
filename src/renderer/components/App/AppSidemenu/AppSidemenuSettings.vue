@@ -168,11 +168,15 @@
 </template>
 
 <script>
-import { ModalConfirmation } from '@/components/Modal'
-import { MenuNavigationItem, MenuOptions, MenuOptionsItem, MenuDropdown } from '@/components/Menu'
-import { ButtonSwitch } from '@/components/Button'
-import { PluginManageBlacklistModal } from '@/components/PluginManager/PluginManagerModals'
-import { isEmpty, isString } from 'lodash'
+import ModalConfirmation from '@/components/Modal/ModalConfirmation'
+import MenuNavigationItem from '@/components/Menu/MenuNavigation/MenuNavigationItem'
+import MenuOptions from '@/components/Menu/MenuOptions/MenuOptions'
+import MenuOptionsItem from '@/components/Menu/MenuOptions/MenuOptionsItem'
+import MenuDropdown from '@/components/Menu/MenuDropdown/MenuDropdown'
+import ButtonSwitch from '@/components/Button/ButtonSwitch'
+import PluginManageBlacklistModal from '@/components/PluginManager/PluginManagerModals/PluginManageBlacklistModal'
+import isEmpty from 'lodash/isempty'
+import isString from 'lodash/isstring'
 const os = require('os')
 
 export default {

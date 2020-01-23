@@ -1,6 +1,6 @@
 import { shallowMount } from '@vue/test-utils'
 import useI18nGlobally from '../../../__utils__/i18n'
-import { PluginManagerButtonInstallSource } from '@/components/PluginManager/PluginManagerButtons'
+import PluginManagerButtonInstallSource from '@/components/PluginManager/PluginManagerButtons/PluginManagerButtonInstallSource'
 
 const i18n = useI18nGlobally()
 let wrapper

@@ -353,16 +353,24 @@
 </template>
 
 <script>
-import { clone, isEmpty } from 'lodash'
+import clone from 'lodash/clone'
+import isEmpty from 'lodash/isempty'
 import { BIP39, I18N, PLUGINS } from '@config'
-import { ButtonSwitch } from '@/components/Button'
-import { InputText } from '@/components/Input'
-import { ListDivided, ListDividedItem } from '@/components/ListDivided'
-import { MenuDropdown, MenuDropdownHandler, MenuTab, MenuTabItem } from '@/components/Menu'
-import { PluginBlacklistDisclaimerModal } from '@/components/PluginManager'
-import { ProfileAdvancedModeConfirmation, ProfileLeavingConfirmation } from '@/components/Profile'
-import { SelectionAvatar, SelectionBackground, SelectionTheme } from '@/components/Selection'
-import SvgIcon from '@/components/SvgIcon'
+import ButtonSwitch from '@/components/Button/ButtonSwitch'
+import InputText from '@/components/Input/InputText'
+import ListDivided from '@/components/ListDivided/ListDivided'
+import ListDividedItem from '@/components/ListDivided/ListDividedItem'
+import MenuDropdown from '@/components/Menu/MenuDropdown/MenuDropdown'
+import MenuDropdownHandler from '@/components/Menu/MenuDropdown/MenuDropdownHandler'
+import MenuTab from '@/components/Menu/MenuTab/MenuTab'
+import MenuTabItem from '@/components/Menu/MenuTab/MenuTabItem'
+import PluginBlacklistDisclaimerModal from '@/components/PluginManager/PluginBlacklistDisclaimerModal'
+import ProfileAdvancedModeConfirmation from '@/components/Profile/ProfileAdvancedModeConfirmation'
+import ProfileLeavingConfirmation from '@/components/Profile/ProfileLeavingConfirmation'
+import SelectionAvatar from '@/components/Selection/SelectionAvatar'
+import SelectionBackground from '@/components/Selection/SelectionBackground'
+import SelectionTheme from '@/components/Selection/SelectionTheme'
+import SvgIcon from '@/components/SvgIcon/SvgIcon'
 import Profile from '@/models/profile'
 
 /**

@@ -94,8 +94,8 @@
 </template>
 
 <script>
-import { NetworkModal } from '@/components/Network'
-import { SvgIcon } from '@/components/SvgIcon'
+import NetworkModal from '@/components/Network/NetworkModal'
+import SvgIcon from '@/components/SvgIcon/SvgIcon'
 import SelectionNetworkButton from '@/components/Selection/SelectionNetworkButton'
 
 export default {

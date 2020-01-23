@@ -67,7 +67,8 @@
 </template>
 
 <script>
-import { InputAddress, InputText } from '@/components/Input'
+import InputAddress from '@/components/Input/InputAddress'
+import InputText from '@/components/Input/InputText'
 import Wallet from '@/models/wallet'
 
 export default {

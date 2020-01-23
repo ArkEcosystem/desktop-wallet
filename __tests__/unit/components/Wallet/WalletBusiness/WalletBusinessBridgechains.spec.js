@@ -1,6 +1,6 @@
 import { createLocalVue, mount } from '@vue/test-utils'
 import installI18n from '../../../__utils__/i18n'
-import { WalletBusinessBridgechains } from '@/components/Wallet/WalletBusiness'
+import WalletBusinessBridgechains from '@/components/Wallet/WalletBusiness/WalletBusinessBridgechains'
 
 const localVue = createLocalVue()
 const i18n = installI18n(localVue)

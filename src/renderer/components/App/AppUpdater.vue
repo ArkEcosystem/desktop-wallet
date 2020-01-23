@@ -103,11 +103,11 @@
 </template>
 
 <script>
-import { ModalWindow } from '@/components/Modal'
-import { ProgressBar } from '@/components/ProgressBar'
 import { ipcRenderer } from 'electron'
 import { mapGetters } from 'vuex'
 import cheerio from 'cheerio'
+import ModalWindow from '@/components/Modal/ModalWindow'
+import ProgressBar from '@/components/ProgressBar/ProgressBar'
 import releaseService from '@/services/release'
 import Vue from 'vue'
 

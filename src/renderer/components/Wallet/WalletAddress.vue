@@ -100,7 +100,7 @@
 </template>
 
 <script>
-import SvgIcon from '@/components/SvgIcon'
+import SvgIcon from '@/components/SvgIcon/SvgIcon'
 
 export default {
   name: 'WalletAddress',

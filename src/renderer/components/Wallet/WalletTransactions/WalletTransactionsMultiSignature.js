@@ -1,6 +1,6 @@
 import at from 'lodash/at'
 import mixin from './mixin'
-import { TransactionTableMultiSignature } from '@/components/Transaction'
+import TransactionTableMultiSignature from '@/components/Transaction/TransactionTable/TransactionTableMultiSignature'
 import MultiSignature from '@/services/client-multisig'
 import WalletService from '@/services/wallet'
 

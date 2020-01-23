@@ -33,7 +33,7 @@
 </template>
 
 <script>
-import SvgIcon from '@/components/SvgIcon'
+import SvgIcon from '@/components/SvgIcon/SvgIcon'
 import WalletHeadingMenuLedger from '@/components/Wallet/WalletHeading/WalletHeadingMenuLedger'
 
 export default {

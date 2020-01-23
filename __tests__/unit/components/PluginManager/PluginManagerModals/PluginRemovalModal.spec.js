@@ -1,6 +1,6 @@
 import { shallowMount } from '@vue/test-utils'
 import useI18nGlobally from '../../../__utils__/i18n'
-import { PluginRemovalModal } from '@/components/PluginManager/PluginManagerModals'
+import PluginRemovalModal from '@/components/PluginManager/PluginManagerModals/PluginRemovalModal'
 
 const i18n = useI18nGlobally()
 let wrapper

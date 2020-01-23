@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
 import useI18nGlobally from '../../__utils__/i18n'
-import { PluginManagerGrid } from '@/components/PluginManager'
+import PluginManagerGrid from '@/components/PluginManager/PluginManagerGrid'
 
 const i18n = useI18nGlobally()
 let wrapper

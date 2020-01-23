@@ -52,9 +52,10 @@
 </template>
 
 <script>
-import { ListDivided, ListDividedItem } from '@/components/ListDivided'
-import { ModalWindow } from '@/components/Modal'
-import { SvgIcon } from '@/components/SvgIcon'
+import ListDivided from '@/components/ListDivided/ListDivided'
+import ListDividedItem from '@/components/ListDivided/ListDividedItem'
+import ModalWindow from '@/components/Modal/ModalWindow'
+import SvgIcon from '@/components/SvgIcon/SvgIcon'
 
 export default {
   name: 'PluginManageBlacklistModal',

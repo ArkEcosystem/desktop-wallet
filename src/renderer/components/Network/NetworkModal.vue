@@ -210,8 +210,10 @@
 <script>
 import { numeric, required, requiredIf } from 'vuelidate/lib/validators'
 import { NETWORKS } from '@config'
-import { InputText, InputToggle } from '@/components/Input'
-import { ModalLoader, ModalWindow } from '@/components/Modal'
+import InputText from '@/components/Input/InputText'
+import InputToggle from '@/components/Input/InputToggle'
+import ModalLoader from '@/components/Modal/ModalLoader'
+import ModalWindow from '@/components/Modal/ModalWindow'
 import ClientService from '@/services/client'
 import cryptoCompare from '@/services/crypto-compare'
 import { URL } from 'url'

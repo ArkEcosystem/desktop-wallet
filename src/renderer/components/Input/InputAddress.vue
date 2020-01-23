@@ -62,14 +62,18 @@
 
 <script>
 import { required } from 'vuelidate/lib/validators'
-import { ButtonModal } from '@/components/Button'
+import ButtonModal from '@/components/Button/ButtonModal'
 import ModalQrCodeScanner from '@/components/Modal/ModalQrCodeScanner'
-import { MenuDropdown } from '@/components/Menu'
+import MenuDropdown from '@/components/Menu/MenuDropdown/MenuDropdown'
 import Cycled from 'cycled'
 import InputField from './InputField'
 import WalletService from '@/services/wallet'
 import truncate from '@/filters/truncate'
-import { includes, isEmpty, map, orderBy, unionBy } from 'lodash'
+import includes from 'lodash/includes'
+import isEmpty from 'lodash/isempty'
+import map from 'lodash/map'
+import orderBy from 'lodash/orderby'
+import unionBy from 'lodash/unionby'
 
 export default {
   name: 'InputAddress',

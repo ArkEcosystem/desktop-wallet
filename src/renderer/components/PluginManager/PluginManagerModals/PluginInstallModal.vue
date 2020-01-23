@@ -75,8 +75,8 @@
 
 <script>
 import { ipcRenderer } from 'electron'
-import { ModalWindow } from '@/components/Modal'
-import { ProgressBar } from '@/components/ProgressBar'
+import ModalWindow from '@/components/Modal/ModalWindow'
+import ProgressBar from '@/components/ProgressBar/ProgressBar'
 
 export default {
   name: 'PluginInstallModal',

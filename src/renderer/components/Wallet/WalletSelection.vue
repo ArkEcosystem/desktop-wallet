@@ -28,8 +28,9 @@
 </template>
 
 <script>
-import { map, orderBy } from 'lodash'
-import { InputSelect } from '@/components/Input'
+import map from 'lodash/map'
+import orderBy from 'lodash/orderby'
+import InputSelect from '@/components/Input/InputSelect'
 import truncate from '@/filters/truncate'
 
 export default {

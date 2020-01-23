@@ -120,11 +120,12 @@
 </template>
 
 <script>
-import { ListDivided, ListDividedItem } from '@/components/ListDivided'
-import { ModalWindow } from '@/components/Modal'
-import { ButtonModal } from '@/components/Button'
-import SvgIcon from '@/components/SvgIcon'
-import { TransactionModal } from '@/components/Transaction'
+import ListDivided from '@/components/ListDivided/ListDivided'
+import ListDividedItem from '@/components/ListDivided/ListDividedItem'
+import ModalWindow from '@/components/Modal/ModalWindow'
+import ButtonModal from '@/components/Button/ButtonModal'
+import SvgIcon from '@/components/SvgIcon/SvgIcon'
+import TransactionModal from '@/components/Transaction/TransactionModal'
 
 export default {
   name: 'WalletBusinessShowBridgechain',

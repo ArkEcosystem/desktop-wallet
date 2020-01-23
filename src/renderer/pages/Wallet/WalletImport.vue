@@ -154,10 +154,14 @@
 
 <script>
 import { required } from 'vuelidate/lib/validators'
-import { InputAddress, InputPassword, InputSwitch, InputText } from '@/components/Input'
-import { MenuStep, MenuStepItem } from '@/components/Menu'
-import { ModalLoader } from '@/components/Modal'
-import { PassphraseInput } from '@/components/Passphrase'
+import InputAddress from '@/components/Input/InputAddress'
+import InputPassword from '@/components/Input/InputPassword'
+import InputSwitch from '@/components/Input/InputSwitch'
+import InputText from '@/components/Input/InputText'
+import MenuStep from '@/components/Menu/MenuStep/MenuStep'
+import MenuStepItem from '@/components/Menu/MenuStep/MenuStepItem'
+import ModalLoader from '@/components/Modal/ModalLoader'
+import PassphraseInput from '@/components/Passphrase/PassphraseInput'
 import WalletService from '@/services/wallet'
 import Wallet from '@/models/wallet'
 import onCreate from './mixin-on-create'

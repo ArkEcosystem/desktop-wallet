@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import { ModalConfirmation } from '@/components/Modal'
+import ModalConfirmation from '@/components/Modal/ModalConfirmation'
 
 export default {
   name: 'ProfileAdvancedModeConfirmation',

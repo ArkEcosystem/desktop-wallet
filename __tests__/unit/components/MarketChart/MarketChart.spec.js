@@ -1,5 +1,5 @@
 import { shallowMount } from '@vue/test-utils'
-import { MarketChart } from '@/components/MarketChart'
+import MarketChart from '@/components/MarketChart/MarketChart'
 
 const mocks = {
   session_network: {

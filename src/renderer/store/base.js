@@ -1,4 +1,6 @@
-import { merge, unionBy, findIndex } from 'lodash'
+import merge from 'lodash/merge'
+import unionBy from 'lodash/unionby'
+import findIndex from 'lodash/findindex'
 
 const includes = (objects, find) => objects.map(a => a.id).includes(find.id)
 

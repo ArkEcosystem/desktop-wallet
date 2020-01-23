@@ -34,7 +34,7 @@
 
 <script>
 import InputField from './InputField'
-import { ButtonSwitch } from '@/components/Button'
+import ButtonSwitch from '@/components/Button/ButtonSwitch'
 
 export default {
   name: 'InputSwitch',

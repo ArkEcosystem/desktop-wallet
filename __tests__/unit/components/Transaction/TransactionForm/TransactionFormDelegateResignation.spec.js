@@ -2,7 +2,7 @@ import { createLocalVue, mount } from '@vue/test-utils'
 import { Identities } from '@arkecosystem/crypto'
 import Vuelidate from 'vuelidate'
 import installI18n from '../../../__utils__/i18n'
-import { TransactionFormDelegateResignation } from '@/components/Transaction/TransactionForm'
+import TransactionFormDelegateResignation from '@/components/Transaction/TransactionForm/TransactionFormDelegateResignation'
 import CurrencyMixin from '@/mixins/currency'
 import BigNumber from '@/plugins/bignumber'
 

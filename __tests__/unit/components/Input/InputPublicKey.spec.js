@@ -2,7 +2,7 @@ import { createLocalVue, mount } from '@vue/test-utils'
 import { Identities } from '@arkecosystem/crypto'
 import Vuelidate from 'vuelidate'
 import installI18n from '../../__utils__/i18n'
-import { InputPublicKey } from '@/components/Input'
+import InputPublicKey from '@/components/Input/InputPublicKey'
 import transaction from '../../__fixtures__/models/transaction'
 
 const localVue = createLocalVue()

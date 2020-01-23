@@ -58,9 +58,11 @@
 
 <script>
 import { required, minLength } from 'vuelidate/lib/validators'
-import { InputPassword, InputText } from '@/components/Input'
-import { ModalLoader, ModalWindow } from '@/components/Modal'
-import { PassphraseInput } from '@/components/Passphrase'
+import InputPassword from '@/components/Input/InputPassword'
+import InputText from '@/components/Input/InputText'
+import ModalLoader from '@/components/Modal/ModalLoader'
+import ModalWindow from '@/components/Modal/ModalWindow'
+import PassphraseInput from '@/components/Passphrase/PassphraseInput'
 import Bip38 from '@/services/bip38'
 import WalletService from '@/services/wallet'
 

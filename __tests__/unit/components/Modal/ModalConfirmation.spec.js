@@ -1,6 +1,6 @@
 import { shallowMount } from '@vue/test-utils'
 import useI18nGlobally from '../../__utils__/i18n'
-import { ModalConfirmation } from '@/components/Modal'
+import ModalConfirmation from '@/components/Modal/ModalConfirmation'
 
 const i18n = useI18nGlobally()
 let wrapper

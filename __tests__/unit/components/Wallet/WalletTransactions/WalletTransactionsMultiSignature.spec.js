@@ -1,6 +1,6 @@
 import { createLocalVue, mount } from '@vue/test-utils'
 import installI18n from '../../../__utils__/i18n'
-import { WalletTransactionsMultiSignature } from '@/components/Wallet/WalletTransactions'
+import WalletTransactionsMultiSignature from '@/components/Wallet/WalletTransactions/WalletTransactionsMultiSignature'
 import WalletTransactionsMixin from '@/components/Wallet/WalletTransactions/mixin'
 import MultiSignatureClient from '@/services/client-multisig'
 import WalletService from '@/services/wallet'

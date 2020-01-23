@@ -102,7 +102,8 @@
 </template>
 
 <script>
-import { ButtonGeneric, ButtonIconGeneric } from '@/components/Button'
+import ButtonGeneric from '@/components/Button/ButtonGeneric'
+import ButtonIconGeneric from '@/components/Button/ButtonIconGeneric'
 import PluginManagerCheckmark from '@/components/PluginManager/PluginManagerCheckmark'
 import PluginLogo from '@/components/PluginManager/PluginLogo'
 import TableWrapper from '@/components/utils/TableWrapper'

@@ -2,7 +2,7 @@ import { createLocalVue, mount } from '@vue/test-utils'
 import { Identities } from '@arkecosystem/crypto'
 import Vuelidate from 'vuelidate'
 import installI18n from '../../../__utils__/i18n'
-import { TransactionFormMultiSign } from '@/components/Transaction/TransactionForm'
+import TransactionFormMultiSign from '@/components/Transaction/TransactionForm/TransactionFormMultiSign'
 import CurrencyMixin from '@/mixins/currency'
 
 const localVue = createLocalVue()

@@ -4,7 +4,7 @@ import Vue from 'vue'
 import Vuelidate from 'vuelidate'
 import nock from 'nock'
 import { MARKET } from '@config'
-import { NetworkModal } from '@/components/Network'
+import NetworkModal from '@/components/Network/NetworkModal'
 import { testIsValid, testNumeric, testRequired, testScheme, testUrl } from '../../__utils__/validation'
 
 const i18n = useI18nGlobally()

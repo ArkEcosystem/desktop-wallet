@@ -1,5 +1,5 @@
 import { shallowMount } from '@vue/test-utils'
-import { PluginManagerButtonSwitch } from '@/components/PluginManager/PluginManagerButtons'
+import PluginManagerButtonSwitch from '@/components/PluginManager/PluginManagerButtons/PluginManagerButtonSwitch'
 
 let wrapper
 

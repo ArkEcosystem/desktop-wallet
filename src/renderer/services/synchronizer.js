@@ -1,5 +1,15 @@
-import { flatten, includes, isFunction, pullAll } from 'lodash'
-import { announcements, fees, ledger, market, peer, wallets } from './synchronizer/'
+import flatten from 'lodash/flatten'
+import includes from 'lodash/includes'
+import isFunction from 'lodash/isfunction'
+import pullAll from 'lodash/pullall'
+
+import announcements from './synchronizer/announcements'
+import fees from './synchronizer/fees'
+import ledger from './synchronizer/ledger'
+import market from './synchronizer/market'
+import peer from './synchronizer/peer'
+import wallets from './synchronizer/wallets'
+
 /**
  * This class adds the possibility to define actions (not to confuse with Vuex actions)
  * that could be dispatched using 2 modes: `default` and `focus`.

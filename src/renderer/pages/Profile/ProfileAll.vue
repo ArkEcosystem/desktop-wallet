@@ -78,8 +78,12 @@
 </template>
 
 <script>
-import { map, mapValues, sortBy, uniqBy } from 'lodash'
-import { ProfileAvatar, ProfileRemovalConfirmation } from '@/components/Profile'
+import map from 'lodash/map'
+import mapValues from 'lodash/mapvalues'
+import sortBy from 'lodash/sortby'
+import uniqBy from 'lodash/uniqby'
+import ProfileAvatar from '@/components/Profile/ProfileAvatar'
+import ProfileRemovalConfirmation from '@/components/Profile/ProfileRemovalConfirmation'
 
 export default {
   name: 'ProfileAll',

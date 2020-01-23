@@ -1,6 +1,6 @@
 import { shallowMount } from '@vue/test-utils'
 import useI18nGlobally from '../../__utils__/i18n'
-import { PluginManagerSearchBar } from '@/components/PluginManager'
+import PluginManagerSearchBar from '@/components/PluginManager/PluginManagerSearchBar'
 
 const i18n = useI18nGlobally()
 let wrapper

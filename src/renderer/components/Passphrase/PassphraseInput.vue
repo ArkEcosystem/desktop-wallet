@@ -59,10 +59,10 @@
 
 <script>
 import { required } from 'vuelidate/lib/validators'
-import { ButtonModal } from '@/components/Button'
-import { ModalQrCodeScanner } from '@/components/Modal'
-import { InputField } from '@/components/Input'
-import SvgIcon from '@/components/SvgIcon'
+import ButtonModal from '@/components/Button/ButtonModal'
+import ModalQrCodeScanner from '@/components/Modal/ModalQrCodeScanner'
+import InputField from '@/components/Input/InputField'
+import SvgIcon from '@/components/SvgIcon/SvgIcon'
 import WalletService from '@/services/wallet'
 
 export default {

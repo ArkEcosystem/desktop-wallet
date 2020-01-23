@@ -1,6 +1,6 @@
 import { createLocalVue, mount } from '@vue/test-utils'
 import installI18n from '../../../__utils__/i18n'
-import { WalletBusiness } from '@/components/Wallet/WalletBusiness'
+import WalletBusiness from '@/components/Wallet/WalletBusiness/WalletBusiness'
 import { TRANSACTION_GROUPS, TRANSACTION_TYPES } from '@config'
 
 const localVue = createLocalVue()

@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import { ButtonSwitch } from '@/components/Button'
+import ButtonSwitch from '@/components/Button/ButtonSwitch'
 
 describe('ButtonSwitch', () => {
   it('should render', () => {

@@ -1,6 +1,6 @@
 import { createLocalVue, mount } from '@vue/test-utils'
 import installI18n from '../../../__utils__/i18n'
-import { WalletBusinessBridgechainsTable } from '@/components/Wallet/WalletBusiness'
+import WalletBusinessBridgechainsTable from '@/components/Wallet/WalletBusiness/WalletBusinessBridgechainsTable'
 import truncateMiddle from '@/filters/truncate-middle'
 
 const localVue = createLocalVue()

@@ -35,8 +35,8 @@
 
 <script>
 import { required, url } from 'vuelidate/lib/validators'
-import { InputText } from '@/components/Input'
-import { ModalWindow } from '@/components/Modal'
+import InputText from '@/components/Input/InputText'
+import ModalWindow from '@/components/Modal/ModalWindow'
 
 export default {
   name: 'PluginUrlModal',

@@ -60,10 +60,14 @@
 </template>
 
 <script>
-import { isNull, omitBy, uniqBy } from 'lodash'
+import isNull from 'lodash/isnull'
+import omitBy from 'lodash/omitby'
+import uniqBy from 'lodash/uniqby'
 import ModalWindow from '@/components/Modal/ModalWindow'
-import { ButtonGeneric, ButtonSwitch } from '@/components/Button'
-import { ListDivided, ListDividedItem } from '@/components/ListDivided'
+import ButtonGeneric from '@/components/Button/ButtonGeneric'
+import ButtonSwitch from '@/components/Button/ButtonSwitch'
+import ListDivided from '@/components/ListDivided/ListDivided'
+import ListDividedItem from '@/components/ListDivided/ListDividedItem'
 
 export default {
   name: 'ModalExportWallets',

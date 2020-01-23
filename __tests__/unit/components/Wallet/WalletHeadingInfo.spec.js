@@ -3,7 +3,7 @@ import useI18n from '../../__utils__/i18n'
 import CurrencyMixin from '@/mixins/currency'
 import FormatterMixin from '@/mixins/formatter'
 import truncate from '@/filters/truncate'
-import { WalletHeadingInfo } from '@/components/Wallet'
+import WalletHeadingInfo from '@/components/Wallet/WalletHeading/WalletHeadingInfo'
 
 const network = {
   token: 'NET',

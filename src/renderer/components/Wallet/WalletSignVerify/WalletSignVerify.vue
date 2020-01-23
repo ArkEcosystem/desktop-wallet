@@ -88,10 +88,12 @@
 </template>
 
 <script>
-import { ButtonClipboard, ButtonModal } from '@/components/Button'
-import { WalletSignModal, WalletVerifyModal } from '../'
-import SvgIcon from '@/components/SvgIcon'
-import { clone } from 'lodash'
+import ButtonClipboard from '@/components/Button/ButtonClipboard'
+import ButtonModal from '@/components/Button/ButtonModal'
+import WalletSignModal from '../WalletSignModal'
+import WalletVerifyModal from '../WalletVerifyModal'
+import SvgIcon from '@/components/SvgIcon/SvgIcon'
+import clone from 'lodash/clone'
 
 export default {
   name: 'WalletSignVerify',

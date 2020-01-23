@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Vuelidate from 'vuelidate'
 import { shallowMount } from '@vue/test-utils'
 import useI18nGlobally from '../../__utils__/i18n'
-import { ModalAdditionalLedgers } from '@/components/Modal'
+import ModalAdditionalLedgers from '@/components/Modal/ModalAdditionalLedgers'
 
 Vue.use(Vuelidate)
 

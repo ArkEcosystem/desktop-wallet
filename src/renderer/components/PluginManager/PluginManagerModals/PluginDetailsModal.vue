@@ -167,11 +167,13 @@
 
 <script>
 import { PLUGINS } from '@config'
-import { ButtonGeneric, ButtonIconGeneric } from '@/components/Button'
-import { PluginLogo, PluginManagerCheckmark } from '@/components/PluginManager'
-import { ModalWindow } from '@/components/Modal'
-import { PluginManagerButtonSwitch } from '@/components/PluginManager/PluginManagerButtons'
-import SvgIcon from '@/components/SvgIcon'
+import ButtonGeneric from '@/components/Button/ButtonGeneric'
+import ButtonIconGeneric from '@/components/Button/ButtonIconGeneric'
+import PluginLogo from '@/components/PluginManager/PluginLogo'
+import PluginManagerCheckmark from '@/components/PluginManager/PluginManagerCheckmark'
+import ModalWindow from '@/components/Modal/ModalWindow'
+import PluginManagerButtonSwitch from '@/components/PluginManager/PluginManagerButtons/PluginManagerButtonSwitch'
+import SvgIcon from '@/components/SvgIcon/SvgIcon'
 import domain from 'getdomain'
 
 export default {

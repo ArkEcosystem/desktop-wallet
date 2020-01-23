@@ -1,4 +1,5 @@
-import { clone, isUndefined } from 'lodash'
+import clone from 'lodash/clone'
+import isUndefined from 'lodash/isundefined'
 
 export default store => {
   store.getters['profile/all'].forEach(profile => {

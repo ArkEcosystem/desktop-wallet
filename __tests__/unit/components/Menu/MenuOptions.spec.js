@@ -1,5 +1,6 @@
 import { mount, shallowMount } from '@vue/test-utils'
-import { MenuOptions, MenuOptionsItem } from '@/components/Menu'
+import MenuOptions from '@/components/Menu/MenuOptions/MenuOptions'
+import MenuOptionsItem from '@/components/Menu/MenuOptions/MenuOptionsItem'
 
 describe('MenuOptions', () => {
   describe('render', () => {
