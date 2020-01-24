@@ -47,7 +47,7 @@
     "test:unit": "jest --config __tests__/unit.jest.conf.js",
     "test:unit:coverage": "jest --config __tests__/unit.jest.conf.js --coverage",
     "test:unit:watch": "jest --config __tests__/unit.jest.conf.js --watch",
-    "test:unit:band": "jest --config __tests__/unit.jest.conf.js --runInBand "
+    "test:unit:band": "jest --config __tests__/unit.jest.conf.js --runInBand"
   },
   "dependencies": {
     "@arkecosystem/client": "^1.0.5",
