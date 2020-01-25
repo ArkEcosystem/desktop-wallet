@@ -104,6 +104,10 @@ export default {
 
   computed: {
     perPageOptions () {
+      if (this.activeDelegates < 25) {
+        return [this.activeDelegates]
+      }
+
       const options = []
 
       for (let i = 25; i <= this.activeDelegates && i <= 100; i = i + 25) {
