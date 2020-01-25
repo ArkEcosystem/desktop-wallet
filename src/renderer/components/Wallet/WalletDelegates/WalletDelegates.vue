@@ -140,7 +140,7 @@ export default {
   },
 
   mounted () {
-    this.queryParams.limit = this.activeDelegates
+    this.queryParams.limit = Math.min(100, this.activeDelegates)
     this.fetchDelegates()
   },
 
