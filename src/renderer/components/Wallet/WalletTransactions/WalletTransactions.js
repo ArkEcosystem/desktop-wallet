@@ -12,14 +12,6 @@ export default {
 
   mixins: [mixin],
 
-  props: {
-    transactionType: {
-      type: Number,
-      required: false,
-      default: null
-    }
-  },
-
   created () {
     this.loadTransactions()
     this.$eventBus.on('wallet:reload', this.loadTransactions)

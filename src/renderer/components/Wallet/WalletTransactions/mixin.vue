@@ -20,7 +20,7 @@
       :has-pagination="totalCount > 0"
       :sort-query="sortQuery"
       :per-page="transactionTableRowCount"
-      :transaction-type="transactionType"
+      :transaction-type="typeof transactionType !== 'undefined' ? transactionType : null"
       @on-per-page-change="onPerPageChange"
       @on-page-change="onPageChange"
       @on-sort-change="onSortChange"
@@ -32,6 +32,14 @@
 import { isEqual } from 'lodash'
 
 export default {
+  props: {
+    transactionType: {
+      type: Number,
+      required: false,
+      default: null
+    }
+  },
+
   data: () => ({
     currentPage: 1,
     isFetching: false,
