@@ -486,7 +486,7 @@ export default {
       const path = `44'/${state.slip44}'/${accountIndex || 0}'/0/0`
       const actions = {
         async getWallet () {
-          const { publicKey } = await ledgerService.getWallet(path)
+          const publicKey = await ledgerService.getPublicKey(path)
           const network = rootGetters['session/network']
 
           return {
@@ -495,16 +495,16 @@ export default {
           }
         },
         async getAddress () {
-          const { publicKey } = await ledgerService.getWallet(path)
+          const publicKey = await ledgerService.getPublicKey(path)
           const network = rootGetters['session/network']
 
           return Identities.Address.fromPublicKey(publicKey, network.version)
         },
         async getPublicKey () {
-          return (await ledgerService.getWallet(path)).publicKey
+          return ledgerService.getPublicKey(path)
         },
         async signTransaction () {
-          return (await ledgerService.signTransaction(path, data)).signature
+          return ledgerService.signTransaction(path, data)
         }
       }
 

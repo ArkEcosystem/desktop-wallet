@@ -1,5 +1,5 @@
 import LedgerTransport from '@ledgerhq/hw-transport-node-hid-singleton'
-import ArkLedger from '@arkecosystem/ledger-transport'
+import { ARKTransport } from '@arkecosystem/ledger-transport'
 import queue from 'async/queue'
 import logger from 'electron-log'
 
@@ -35,7 +35,7 @@ class LedgerService {
 
     this.listeningForLedger = true
     this.transport = await LedgerTransport.create()
-    this.ledger = new ArkLedger(this.transport)
+    this.ledger = new ARKTransport(this.transport)
     this.listeningForLedger = false
   }
 
@@ -84,7 +84,7 @@ class LedgerService {
 
       // Make a request to the ledger device to determine if it's accessible
       const isConnected = await this.__performAction(async () => {
-        return this.ledger.getAddress('44\'/1\'/0\'/0/0')
+        return this.ledger.getPublicKey('44\'/1\'/0\'/0/0')
       })
 
       return !!isConnected
@@ -102,7 +102,7 @@ class LedgerService {
    */
   async getWallet (path) {
     return this.__performAction(async () => {
-      return this.ledger.getAddress(path)
+      return this.ledger.getPublicKey(path)
     })
   }
 
@@ -113,7 +113,7 @@ class LedgerService {
    */
   async getPublicKey (path) {
     return this.__performAction(async () => {
-      return this.ledger.getAddress(path)
+      return this.ledger.getPublicKey(path)
     })
   }
 
