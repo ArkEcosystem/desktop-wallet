@@ -1264,10 +1264,6 @@ export default class ClientService {
     },
     returnObject = false
   ) {
-    if (!passphrase && !wif) {
-      throw new Error('No passphrase or wif provided')
-    }
-
     let network
     if (networkId) {
       network = store.getters['network/byId'](networkId)
@@ -1305,7 +1301,7 @@ export default class ClientService {
       let senderPublicKey = null
       if (passphrase) {
         senderPublicKey = WalletService.getPublicKeyFromPassphrase(passphrase)
-      } else {
+      } else if (wif) {
         senderPublicKey = WalletService.getPublicKeyFromWIF(wif)
       }
 
@@ -1314,7 +1310,7 @@ export default class ClientService {
       if (publicKeyIndex > -1) {
         if (passphrase) {
           transaction.multiSign(passphrase, publicKeyIndex)
-        } else {
+        } else if (wif) {
           transaction.multiSignWithWif(publicKeyIndex, wif, networkWif)
         }
       } else if (transaction.data.type === TRANSACTION_TYPES.GROUP_1.MULTI_SIGNATURE && !transaction.data.signatures) {
@@ -1323,7 +1319,7 @@ export default class ClientService {
     } else {
       if (passphrase) {
         transaction.sign(passphrase)
-      } else {
+      } else if (wif) {
         transaction.signWithWif(wif, networkWif)
       }
 
