@@ -355,6 +355,7 @@ export default {
       })
 
       this.$refs.recipient.reset()
+      this.$v.recipientId.$reset()
       this.$v.amount.$model = ''
       this.$refs.amount.reset()
     },

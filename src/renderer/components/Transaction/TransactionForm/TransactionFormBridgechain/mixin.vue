@@ -358,6 +358,7 @@ export default {
       this.form.asset.seedNodes.push(this.seedNode)
 
       this.$refs.seedNode.reset()
+      this.$v.seedNode.$reset()
     },
 
     emitRemoveSeedNode (index) {
