@@ -968,6 +968,11 @@ export default {
           REGISTRATION: 'Business Registration transaction could not be created',
           RESIGNATION: 'Business Resignation transaction could not be created',
           UPDATE: 'Business Update transaction could not be created'
+        },
+        BRIDGECHAIN: {
+          REGISTRATION: 'Bridgechain Registration transaction could not be created',
+          RESIGNATION: 'Bridgechain Resignation transaction could not be created',
+          UPDATE: 'Bridgechain Update transaction could not be created'
         }
       },
       TRANSFER: 'Your transaction could not be sent',
@@ -983,6 +988,12 @@ export default {
       HTLC_REFUND: 'Timelock Refund could not be created',
       MULTI_PAYMENT: 'Multi payment could not be created',
       DELEGATE_RESIGNATION: 'Delegate resignation was unsuccessful',
+      BUSINESS_REGISTRATION: 'Business registration was unsuccessful',
+      BUSINESS_RESIGNATION: 'Business resignation was unsuccessful',
+      BUSINESS_UPDATE: 'Business update was unsuccessful',
+      BRIDGECHAIN_REGISTRATION: 'Bridgechain registration was unsuccessful',
+      BRIDGECHAIN_RESIGNATION: 'Bridgechain resignation was unsuccessful',
+      BRIDGECHAIN_UPDATE: 'Bridgechain update was unsuccessful',
       SAVE_OFFLINE: 'Failed to save transaction file: {error}',
       LOAD_FROM_FILE: 'Failed to load transaction file',
       EXPIRED: 'Transaction expired before it was processed: {transactionId}',
