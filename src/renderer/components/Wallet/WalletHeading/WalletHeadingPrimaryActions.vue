@@ -56,16 +56,16 @@
 
     <ButtonDropdown
       v-show="!currentWallet.isContact"
-      :classes="buttonStyle"
       :items="sendOptions"
+      dropdown-classes="option-heading-button px-3 py-2"
+      class="mr-2"
     >
       <ButtonModal
         slot="primaryButton"
-        class="option-heading-button px-3 py-2"
+        class="option-heading-button px-3 py-2 h-full"
         :class="{
-          'rounded-tr-none': hasAip11,
-          'rounded-br-none': hasAip11,
-          'mr-2': !hasAip11
+          'rounded-tr-none': hasSendOptions,
+          'rounded-br-none': hasSendOptions
         }"
         :label="$t('TRANSACTION.SEND')"
         icon="send"
@@ -155,12 +155,18 @@ export default {
         return options
       }
 
-      options.push({
-        label: this.$t('TRANSACTION.TYPE.MULTI_PAYMENT'),
-        type: 6
-      })
+      if (!this.currentWallet.isLedger) {
+        options.push({
+          label: this.$t('TRANSACTION.TYPE.MULTI_PAYMENT'),
+          type: 6
+        })
+      }
 
       return options
+    },
+
+    hasSendOptions () {
+      return !!this.sendOptions.length
     },
 
     isVoting () {

@@ -17,7 +17,7 @@
     >
       <button
         class="ButtonDropdown__button blue-button"
-        :class="dropdownClasses"
+        :class="dropdownButtonClasses"
         @click="toggleDropdown"
       >
         <div class="whitespace-no-wrap">
@@ -83,6 +83,12 @@ export default {
   },
 
   props: {
+    dropdownClasses: {
+      type: String,
+      required: false,
+      default: ''
+    },
+
     classes: {
       type: String,
       required: false,
@@ -112,9 +118,9 @@ export default {
       return !!this.$slots.primaryButton
     },
 
-    dropdownClasses () {
+    dropdownButtonClasses () {
       return {
-        ...this.classes.split(' ').reduce((classes, className) => {
+        ...this.dropdownClasses.split(' ').reduce((classes, className) => {
           classes[className] = true
 
           return classes
