@@ -20,18 +20,18 @@
     got "^9.6.0"
     is-url-superb "^3.0.0"
 
-"@arkecosystem/core-magistrate-crypto@^2.6.0-next.6":
-  version "2.6.0-next.6"
-  resolved "https://registry.yarnpkg.com/@arkecosystem/core-magistrate-crypto/-/core-magistrate-crypto-2.6.0-next.6.tgz#1af16c661dc3dae675df000d3ee6efe826ac5580"
-  integrity sha512-3mWGPm3rvgBWBV+MmHcg4eVjNzXxGOiMKZfhvA/lYw7ORXz/h83VACTJw4ArJtuufFhwN+2KIEuu3gsRx+MIAg==
+"@arkecosystem/core-magistrate-crypto@^2.6.0-next.9":
+  version "2.6.0-next.9"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/core-magistrate-crypto/-/core-magistrate-crypto-2.6.0-next.9.tgz#3108dcd2575ed4df7e082175ba1fc68e70784370"
+  integrity sha512-wt0VuUzjXrxTFdU1QOd5ilpUwMpbq64wjwl983jKS0ruJvBaOwLOqPoXtO1Ugi5Pzyt0WSsyXo6dKCkyAExm4A==
   dependencies:
-    "@arkecosystem/crypto" "^2.6.0-next.6"
+    "@arkecosystem/crypto" "^2.6.0-next.9"
     bytebuffer "^5.0.1"
 
-"@arkecosystem/crypto@^2.6.0-next.6":
-  version "2.6.0-next.6"
-  resolved "https://registry.yarnpkg.com/@arkecosystem/crypto/-/crypto-2.6.0-next.6.tgz#588cd91938ca0c2b1442ca9479357ace9788afd2"
-  integrity sha512-mLX83o+p6beaSxpIV8nNunfXyN0n56Q6Z0rS3pSFdqLQ1ViBPIQZxlFyPQgoerz4Nl0FBvS5+pRbNFa2N82LpQ==
+"@arkecosystem/crypto@^2.6.0-next.9":
+  version "2.6.0-next.9"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/crypto/-/crypto-2.6.0-next.9.tgz#273a97098057ae9dbbdd433fc8e32ee1de1bd471"
+  integrity sha512-C/zTe3ekYwD4mfeX/He5TSuwEwNrCWI/umtEhHP5wEMBY+rCJIPEr0WjSvnTVlIuM68hQ99j2VWRksoB3xDSIQ==
   dependencies:
     "@arkecosystem/utils" "0.8.3"
     ajv "^6.10.2"
@@ -54,10 +54,12 @@
     tiny-glob "^0.2.6"
     wif "^2.0.6"
 
-"@arkecosystem/ledger-transport@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@arkecosystem/ledger-transport/-/ledger-transport-1.0.0.tgz#44910a44c6c6c9a9123b65cc003efb46a0133c83"
-  integrity sha512-k96u0NqzoKRyLY+5hI4sZ0DQtT8lMa506XgeJGvMAq6UdKf10js23fkXFQmT2TTa1Pp91v6ZRA/R9oEosC/iiA==
+"@arkecosystem/ledger-transport@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/ledger-transport/-/ledger-transport-1.0.2.tgz#cbc0bdef8a2af5d2fe9a9720db97b46d1f35aa96"
+  integrity sha512-7df/2PNn9qapx+lQP+4yLiva9KUYdXYVUMVk9iLOThzCXzYlb+KHii8nFnIyS2iwenO6NECfwiCYbsYHw52DRw==
+  dependencies:
+    "@arkecosystem/utils" "^1.1.7"
 
 "@arkecosystem/peers@^0.2.1":
   version "0.2.1"
@@ -79,6 +81,17 @@
     fast-copy "^2.0.3"
     fast-deep-equal "^2.0.1"
     fast-sort "^1.5.6"
+
+"@arkecosystem/utils@^1.1.7":
+  version "1.1.7"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/utils/-/utils-1.1.7.tgz#3c36695b3bb578c33c9dcbfb5e1cf4647b95da21"
+  integrity sha512-L6otSODmR+td2ePnoZ++PMFI4kCokS3WakeJ/8r7epfe5C+iHVmRRYRbMHcuHQ2cw1xWwEDhYZcJaWUaXLXUHQ==
+  dependencies:
+    "@hapi/bourne" "^1.3.2"
+    deepmerge "^4.2.2"
+    fast-copy "^2.0.3"
+    fast-deep-equal "^2.0.1"
+    fast-sort "^1.6.0"
 
 "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.5.5":
   version "7.5.5"
@@ -4123,7 +4136,7 @@ deepmerge@^4.0.0:
   resolved "https://registry.yarnpkg.com/deepmerge/-/deepmerge-4.0.0.tgz#3e3110ca29205f120d7cb064960a39c3d2087c09"
   integrity sha512-YZ1rOP5+kHor4hMAH+HRQnBQHg+wvS1un1hAOuIcxcBy0hzcUf6Jg2a1w65kpoOUnurOfZbERwjI1TfZxNjcww==
 
-deepmerge@^4.1.1:
+deepmerge@^4.1.1, deepmerge@^4.2.2:
   version "4.2.2"
   resolved "https://registry.yarnpkg.com/deepmerge/-/deepmerge-4.2.2.tgz#44d2ea3679b8f4d4ffba33f03d865fc1e7bf4955"
   integrity sha512-FJ3UgI4gIl+PHZm53knsuSFpE+nESMr7M4v9QcgB7S63Kj/6WqMiFQJpBBYz1Pt+66bZpP3Q7Lye0Oo9MPKEdg==
@@ -5413,7 +5426,7 @@ fast-memoize@^2.5.1:
   resolved "https://registry.yarnpkg.com/fast-memoize/-/fast-memoize-2.5.1.tgz#c3519241e80552ce395e1a32dcdde8d1fd680f5d"
   integrity sha512-xdmw296PCL01tMOXx9mdJSmWY29jQgxyuZdq0rEHMu+Tpe1eOEtCycoG6chzlcrWsNgpZP7oL8RiQr7+G6Bl6g==
 
-fast-sort@^1.5.6:
+fast-sort@^1.5.6, fast-sort@^1.6.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/fast-sort/-/fast-sort-1.6.0.tgz#68c6d94ce309ead19d562014159902c80c68d0a0"
   integrity sha512-sjV6dxWdHs14cef7GzJgCWSOagw57cUBYMey+seWeOsU0HgMf2g4Wkdflv65X/8E4UWptUcq9EZ3YqSXUnUy9Q==
