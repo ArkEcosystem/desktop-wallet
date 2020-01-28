@@ -46,8 +46,7 @@
     "test:e2e:full": "npm run pack && npm run test:e2e",
     "test:unit": "jest --config __tests__/unit.jest.conf.js",
     "test:unit:coverage": "jest --config __tests__/unit.jest.conf.js --coverage",
-    "test:unit:watch": "jest --config __tests__/unit.jest.conf.js --watch",
-    "test:unit:band": "jest --config __tests__/unit.jest.conf.js --runInBand"
+    "test:unit:watch": "jest --config __tests__/unit.jest.conf.js --watch"
   },
   "dependencies": {
     "@arkecosystem/client": "^1.0.5",
@@ -73,8 +72,8 @@
     "color": "^3.1.0",
     "cycled": "^1.0.0",
     "dayjs": "^1.8.11",
-    "decompress": "^4.2.0",
     "deepmerge": "^4.1.1",
+    "decompress": "^4.2.0",
     "du": "^1.0.0",
     "electron-dl": "^2.0.0",
     "electron-log": "^3.0.7",
@@ -114,7 +113,6 @@
     "vuelidate": "^0.7.4",
     "vuex": "^3.1.1",
     "vuex-persist": "^2.0.1",
-    "weak-napi": "^1.0.3",
     "wif": "^2.0.6"
   },
   "devDependencies": {
