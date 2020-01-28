@@ -96,17 +96,6 @@ class LedgerService {
   }
 
   /**
-   * Get address and public key from ledger wallet.
-   * @param  {Number} [path] Path for wallet location.
-   * @return {(String|Boolean)}
-   */
-  async getWallet (path) {
-    return this.__performAction(async () => {
-      return this.ledger.getPublicKey(path)
-    })
-  }
-
-  /**
    * Get public key from ledger wallet.
    * @param  {Number} [path] Path for wallet location.
    * @return {(String|Boolean)}
