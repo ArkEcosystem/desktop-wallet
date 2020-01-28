@@ -375,6 +375,8 @@ export default {
 
 .TransactionModalBridgechainRegistration,
 .TransactionModalBridgechainUpdate,
+.TransactionModalBusinessRegistration,
+.TransactionModalBusinessUpdate,
 .TransactionModalIpfs,
 .TransactionModalMultiPayment,
 .TransactionModalMultiSignature {
