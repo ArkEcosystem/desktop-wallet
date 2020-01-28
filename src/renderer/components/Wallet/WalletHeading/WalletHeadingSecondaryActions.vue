@@ -5,7 +5,7 @@
   >
     <ButtonDropdown
       v-if="registrationTypes.length"
-      :dropdown-classes="buttonStyle"
+      :classes="buttonStyle"
       :items="registrationTypes"
       title="Registration"
     >

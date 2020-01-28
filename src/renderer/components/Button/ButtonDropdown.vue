@@ -83,12 +83,6 @@ export default {
   },
 
   props: {
-    dropdownClasses: {
-      type: String,
-      required: false,
-      default: ''
-    },
-
     classes: {
       type: String,
       required: false,
@@ -120,7 +114,7 @@ export default {
 
     dropdownButtonClasses () {
       return {
-        ...this.dropdownClasses.split(' ').reduce((classes, className) => {
+        ...this.classes.split(' ').reduce((classes, className) => {
           classes[className] = true
 
           return classes

@@ -57,7 +57,7 @@
     <ButtonDropdown
       v-show="!currentWallet.isContact"
       :items="sendOptions"
-      dropdown-classes="option-heading-button px-3 py-2"
+      classes="option-heading-button px-3 py-2"
       class="mr-2"
     >
       <ButtonModal
