@@ -1967,18 +1967,6 @@ describe('Services > Client', () => {
       expect(spy).not.toHaveBeenCalled()
     })
 
-    it('should if no passphrase or wif is provided', async () => {
-      const spy = jest.spyOn(client, 'normalizePassphrase')
-
-      expect(await errorCapturer(client.__signTransaction({
-        ...signData,
-        passphrase: null,
-        secondPassphrase: null
-      }))).toThrow('No passphrase or wif provided')
-
-      expect(spy).not.toHaveBeenCalled()
-    })
-
     it('should create v1 transaction if aip11 disabled', async () => {
       const response = await client.__signTransaction(signData)
 

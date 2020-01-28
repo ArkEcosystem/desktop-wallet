@@ -155,11 +155,11 @@ describe('ledger store module', () => {
       }
       spyGetWallet = jest.spyOn(
         ledgerService,
-        'getWallet'
+        'getPublicKey'
       ).mockImplementation((path) => {
         const matches = path.match(/^44'+\/.+'\/([0-9]+)'\/0\/0/)
 
-        return testWallets[matches[1]]
+        return testWallets[matches[1]].publicKey
       })
       spyCryptoGetAddress = jest.spyOn(
         Identities.Address,

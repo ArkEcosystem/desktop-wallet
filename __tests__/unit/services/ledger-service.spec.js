@@ -19,14 +19,14 @@ describe('LedgerService', () => {
   })
 
   it('should return false for isConnected', async () => {
-    const getAddress = ledgerService.ledger.getAddress
-    ledgerService.ledger.getAddress = jest.fn(() => {
+    const getPublicKey = ledgerService.ledger.getPublicKey
+    ledgerService.ledger.getPublicKey = jest.fn(() => {
       throw new Error('Could not connect')
     })
 
     expect(await ledgerService.isConnected()).toBe(false)
 
-    ledgerService.ledger.getAddress = getAddress
+    ledgerService.ledger.getPublicKey = getPublicKey
   })
 
   it('should disconnect', async () => {
@@ -36,18 +36,11 @@ describe('LedgerService', () => {
     expect(ledgerService.transport.close).toHaveBeenCalledTimes(1)
   })
 
-  it('should run getWallet', async () => {
-    const response = await ledgerService.getWallet('44\'/1\'/0\'/0/0')
-
-    expect(response).toBeTruthy()
-    expect(ledgerService.ledger.getAddress).toHaveBeenCalledTimes(1)
-  })
-
   it('should run getPublicKey', async () => {
     const response = await ledgerService.getPublicKey('44\'/1\'/0\'/0/0')
 
     expect(response).toBeTruthy()
-    expect(ledgerService.ledger.getAddress).toHaveBeenCalledTimes(1)
+    expect(ledgerService.ledger.getPublicKey).toHaveBeenCalledTimes(1)
   })
 
   it('should run signTransaction', async () => {

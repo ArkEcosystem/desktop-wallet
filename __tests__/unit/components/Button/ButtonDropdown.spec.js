@@ -117,7 +117,7 @@ describe('ButtonDropdown', () => {
 
     expect(wrapper.find('.ButtonDropdown__button').classes('test-class-1')).toBe(true)
     expect(wrapper.find('.ButtonDropdown__button').classes('test-class-2')).toBe(true)
-    expect(wrapper.vm.dropdownClasses).toEqual({ 'ButtonDropdown__button--nolabel': false, 'test-class-1': true, 'test-class-2': true })
+    expect(wrapper.vm.dropdownButtonClasses).toEqual({ 'ButtonDropdown__button--nolabel': false, 'test-class-1': true, 'test-class-2': true })
   })
 
   it('should change arrow viewbox if dropdown is open', () => {
