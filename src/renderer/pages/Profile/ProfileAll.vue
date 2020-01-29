@@ -38,7 +38,7 @@
             </div>
 
             <span class="font-bold my-2 text-lg">
-              {{ profileBalance(profile) }}
+              {{ profileBalance(profile) | truncate(15) }}
             </span>
 
             <RouterLink
