@@ -74,15 +74,16 @@ beforeEach(async () => {
   ledgerNameByAddress = () => null
   nock.cleanAll()
 })
+
 describe('ledger store module', () => {
-  it('should init ledger service', () => {
-    store.dispatch('ledger/init', 1234)
+  it('should init ledger service', async () => {
+    await store.dispatch('ledger/init', 1234)
 
     expect(store.state.ledger.slip44).toBe(1234)
   })
 
-  it('should set slip44 value', () => {
-    store.dispatch('ledger/init', 4567)
+  it('should set slip44 value', async () => {
+    await store.dispatch('ledger/init', 4567)
 
     expect(store.state.ledger.slip44).toBe(4567)
   })
@@ -128,6 +129,20 @@ describe('ledger store module', () => {
   })
 
   describe('signTransaction', () => {
+    it('should call ledger service', async () => {
+      await store.dispatch('ledger/setSlip44', 1234)
+
+      const spy = jest.spyOn(ledgerService, 'signTransaction').mockReturnValue('SIGNATURE')
+
+      const response = await store.dispatch('ledger/signTransaction', {
+        accountIndex: 1,
+        transactionHex: 'abc'
+      })
+
+      expect(response).toBe('SIGNATURE')
+      expect(spy).toHaveBeenNthCalledWith(1, '44\'/1234\'/1\'/0/0', 'abc')
+    })
+
     it('should fail with invalid accountIndex', async () => {
       await expect(store.dispatch('ledger/signTransaction')).rejects.toThrow(/.*accountIndex must be a Number$/)
     })
@@ -137,6 +152,34 @@ describe('ledger store module', () => {
       await expect(store.dispatch('ledger/signTransaction', {
         accountIndex: 1,
         transactionHex: 'abc'
+      })).rejects.toThrow(/.*Ledger not connected$/)
+    })
+  })
+
+  describe('signMessage', () => {
+    it('should call ledger service', async () => {
+      await store.dispatch('ledger/setSlip44', 1234)
+
+      const spy = jest.spyOn(ledgerService, 'signMessage').mockReturnValue('SIGNATURE')
+
+      const response = await store.dispatch('ledger/signMessage', {
+        accountIndex: 1,
+        messageHex: 'abc'
+      })
+
+      expect(response).toBe('SIGNATURE')
+      expect(spy).toHaveBeenNthCalledWith(1, '44\'/1234\'/1\'/0/0', 'abc')
+    })
+
+    it('should fail with invalid accountIndex', async () => {
+      await expect(store.dispatch('ledger/signMessage')).rejects.toThrow(/.*accountIndex must be a Number$/)
+    })
+
+    it('should fail when not connected', async () => {
+      await disconnectLedger()
+      await expect(store.dispatch('ledger/signMessage', {
+        accountIndex: 1,
+        messageHex: 'abc'
       })).rejects.toThrow(/.*Ledger not connected$/)
     })
   })

@@ -36,18 +36,33 @@ describe('LedgerService', () => {
     expect(ledgerService.transport.close).toHaveBeenCalledTimes(1)
   })
 
-  it('should run getPublicKey', async () => {
-    const response = await ledgerService.getPublicKey('44\'/1\'/0\'/0/0')
+  describe('getPublicKey', () => {
+    it('should run', async () => {
+      const response = await ledgerService.getPublicKey('44\'/1\'/0\'/0/0')
 
-    expect(response).toBeTruthy()
-    expect(ledgerService.ledger.getPublicKey).toHaveBeenCalledTimes(1)
+      expect(response).toBeTruthy()
+      expect(ledgerService.ledger.getPublicKey).toHaveBeenCalledTimes(1)
+    })
   })
 
-  it('should run signTransaction', async () => {
-    const response = await ledgerService.signTransaction('44\'/1\'/0\'/0/0', '1234')
+  describe('signTransaction', () => {
+    it('should run', async () => {
+      const response = await ledgerService.signTransaction('44\'/1\'/0\'/0/0', '1234')
 
-    expect(response).toBeTruthy()
-    expect(ledgerService.ledger.signTransaction).toHaveBeenCalledTimes(1)
+      expect(response).toBeTruthy()
+      expect(ledgerService.ledger.signTransaction).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('signMessage', () => {
+    it('should run', async () => {
+      ledgerService.ledger.signMessage.mockClear()
+
+      const response = await ledgerService.signMessage('44\'/1\'/0\'/0/0', Buffer.from('1234'))
+
+      expect(response).toBeTruthy()
+      expect(ledgerService.ledger.signMessage).toHaveBeenCalledTimes(1)
+    })
   })
 
   it('should queue an action', async () => {
