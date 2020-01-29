@@ -155,7 +155,7 @@ export default {
       return this.$store.getters['session/background'] || `wallpapers/${this.hasSeenIntroduction ? 1 : 2}Default.png`
     },
     hasAnyProfile () {
-      return !!this.$store.getters['profile/all'].length
+      return this.$store.getters['session/profile']
     },
     hasScreenshotProtection () {
       return this.$store.getters['session/screenshotProtection']
