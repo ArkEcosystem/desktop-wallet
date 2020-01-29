@@ -240,13 +240,11 @@ export default {
           text: this.$t('PAGES.WALLET.DELEGATES')
         })
 
-        if (!this.currentWallet.isLedger) {
-          tabs.push({
-            component: 'WalletSignVerify',
-            componentName: 'WalletSignVerify',
-            text: this.$t('PAGES.WALLET.SIGN_VERIFY')
-          })
-        }
+        tabs.push({
+          component: 'WalletSignVerify',
+          componentName: 'WalletSignVerify',
+          text: this.$t('PAGES.WALLET.SIGN_VERIFY')
+        })
 
         if (this.currentNetwork && this.currentNetwork.market && this.currentNetwork.market.enabled) {
           tabs.push({

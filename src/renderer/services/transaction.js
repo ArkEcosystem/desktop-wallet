@@ -100,6 +100,25 @@ export default class TransactionService {
     return transaction
   }
 
+  /*
+   * Sign message with Ledger.
+   * @param {Object} wallet
+   * @param {String} message
+   * @return {Object}
+   */
+  static async ledgerSignMessage (wallet, message, vm) {
+    const signature = await vm.$store.dispatch('ledger/signMessage', {
+      messageHex: Buffer.from(message).toString('hex'),
+      accountIndex: wallet.ledgerIndex
+    })
+
+    if (!signature) {
+      throw new Error(vm.$t('TRANSACTION.LEDGER_USER_DECLINED'))
+    }
+
+    return signature
+  }
+
   static isMultiSignature (transaction) {
     return !!transaction.multiSignature
   }

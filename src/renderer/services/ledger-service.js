@@ -97,7 +97,7 @@ class LedgerService {
 
   /**
    * Get public key from ledger wallet.
-   * @param  {Number} [path] Path for wallet location.
+   * @param  {Number} path Path for wallet location.
    * @return {(String|Boolean)}
    */
   async getPublicKey (path) {
@@ -108,13 +108,25 @@ class LedgerService {
 
   /**
    * Sign transaction for ledger wallet.
-   * @param  {Number} [path] Path for wallet location.
+   * @param  {Number} path Path for wallet location.
    * @param  {String} transactionHex Hex of transaction.
    * @return {(String|Boolean)}
    */
   async signTransaction (path, transactionHex) {
     return this.__performAction(async () => {
       return this.ledger.signTransaction(path, transactionHex)
+    })
+  }
+
+  /**
+   * Sign message for ledger wallet.
+   * @param  {Number} path Path for wallet location.
+   * @param  {String} messageHex Hex to sign.
+   * @return {(String|Boolean)}
+   */
+  async signMessage (path, messageHex) {
+    return this.__performAction(async () => {
+      return this.ledger.signMessage(path, Buffer.from(messageHex, 'hex'))
     })
   }
 

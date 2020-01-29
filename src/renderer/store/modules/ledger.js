@@ -445,7 +445,7 @@ export default {
 
     /**
      * Sign transaction for ledger wallet.
-     * @param {Object} obj
+     * @param  {Object} obj
      * @param  {String} obj.transactionHex Hex of transaction.
      * @param  {Number} obj.accountIndex Index of wallet to sign transaction for.
      * @return {(String|Boolean)}
@@ -460,6 +460,26 @@ export default {
       } catch (error) {
         logger.error(error)
         throw new Error(`Could not sign transaction: ${error}`)
+      }
+    },
+
+    /**
+     * Sign message for ledger wallet.
+     * @param  {Object} obj
+     * @param  {String} obj.messageHex Hex to sign.
+     * @param  {Number} obj.accountIndex Index of wallet to sign transaction for.
+     * @return {(String|Boolean)}
+     */
+    async signMessage ({ dispatch }, { messageHex, accountIndex } = {}) {
+      try {
+        return await dispatch('action', {
+          action: 'signMessage',
+          accountIndex,
+          data: messageHex
+        })
+      } catch (error) {
+        logger.error(error)
+        throw new Error(`Could not sign message: ${error}`)
       }
     },
 
@@ -505,6 +525,9 @@ export default {
         },
         async signTransaction () {
           return ledgerService.signTransaction(path, data)
+        },
+        async signMessage () {
+          return ledgerService.signMessage(path, data)
         }
       }
 
