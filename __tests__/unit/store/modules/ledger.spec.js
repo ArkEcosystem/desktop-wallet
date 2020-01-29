@@ -55,12 +55,7 @@ const store = new Vuex.Store({
 
 let spyConnect
 const disconnectLedger = async () => {
-  spyConnect = jest.spyOn(
-    ledgerService,
-    'connect'
-  ).mockImplementation(() => {
-    return false
-  })
+  spyConnect = jest.spyOn(ledgerService, 'connect').mockImplementation(() => false)
   await store.dispatch('ledger/disconnect')
 }
 
@@ -69,6 +64,7 @@ beforeEach(async () => {
   if (spyConnect) {
     spyConnect.mockRestore()
   }
+
   store.replaceState(JSON.parse(JSON.stringify(initialState)))
   ClientService.host = 'http://127.0.0.1'
   ledgerNameByAddress = () => null
@@ -107,6 +103,20 @@ describe('ledger store module', () => {
   })
 
   describe('getAddress', () => {
+    it('should call ledger service', async () => {
+      await store.dispatch('ledger/connect')
+      await store.dispatch('ledger/setSlip44', 1234)
+
+      const spy = jest.spyOn(ledgerService, 'getPublicKey').mockReturnValue('PUBLIC_KEY')
+
+      const response = await store.dispatch('ledger/getPublicKey', 1)
+
+      expect(response).toBe('PUBLIC_KEY')
+      expect(spy).toHaveBeenNthCalledWith(1, '44\'/1234\'/1\'/0/0')
+
+      spy.mockRestore()
+    })
+
     it('should fail with invalid accountIndex', async () => {
       await expect(store.dispatch('ledger/getAddress')).rejects.toThrow(/.*accountIndex must be a Number$/)
     })
@@ -118,6 +128,20 @@ describe('ledger store module', () => {
   })
 
   describe('getPublicKey', () => {
+    it('should call ledger service', async () => {
+      await store.dispatch('ledger/connect')
+      await store.dispatch('ledger/setSlip44', 1234)
+
+      const spy = jest.spyOn(ledgerService, 'getPublicKey').mockReturnValue('PUBLIC_KEY')
+
+      const response = await store.dispatch('ledger/getPublicKey', 1)
+
+      expect(response).toBe('PUBLIC_KEY')
+      expect(spy).toHaveBeenNthCalledWith(1, '44\'/1234\'/1\'/0/0')
+
+      spy.mockRestore()
+    })
+
     it('should fail with invalid accountIndex', async () => {
       await expect(store.dispatch('ledger/getPublicKey')).rejects.toThrow(/.*accountIndex must be a Number$/)
     })
@@ -130,6 +154,7 @@ describe('ledger store module', () => {
 
   describe('signTransaction', () => {
     it('should call ledger service', async () => {
+      await store.dispatch('ledger/connect')
       await store.dispatch('ledger/setSlip44', 1234)
 
       const spy = jest.spyOn(ledgerService, 'signTransaction').mockReturnValue('SIGNATURE')
@@ -141,6 +166,8 @@ describe('ledger store module', () => {
 
       expect(response).toBe('SIGNATURE')
       expect(spy).toHaveBeenNthCalledWith(1, '44\'/1234\'/1\'/0/0', 'abc')
+
+      spy.mockRestore()
     })
 
     it('should fail with invalid accountIndex', async () => {
@@ -158,6 +185,7 @@ describe('ledger store module', () => {
 
   describe('signMessage', () => {
     it('should call ledger service', async () => {
+      await store.dispatch('ledger/connect')
       await store.dispatch('ledger/setSlip44', 1234)
 
       const spy = jest.spyOn(ledgerService, 'signMessage').mockReturnValue('SIGNATURE')
@@ -169,6 +197,8 @@ describe('ledger store module', () => {
 
       expect(response).toBe('SIGNATURE')
       expect(spy).toHaveBeenNthCalledWith(1, '44\'/1234\'/1\'/0/0', 'abc')
+
+      spy.mockRestore()
     })
 
     it('should fail with invalid accountIndex', async () => {
