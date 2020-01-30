@@ -5,7 +5,7 @@
     <MenuTab
       ref="menutab"
       v-model="currentTab"
-      :class="{ 'rounded-bl-lg' : !isDelegatesTab || !isOwned }"
+      :class="{ 'rounded-b-lg lg:rounded-br-none' : !isDelegatesTab || !isOwned }"
       class="flex-1 overflow-y-auto"
     >
       <MenuTabItem
@@ -44,7 +44,7 @@
     </MenuTab>
     <div
       v-if="isDelegatesTab && isOwned"
-      class="bg-theme-feature px-5 flex flex-row rounded-bl-lg"
+      class="bg-theme-feature px-5 flex flex-row rounded-b-lg lg:rounded-br-none"
     >
       <div
         class="WalletDetails__button rounded-l"
