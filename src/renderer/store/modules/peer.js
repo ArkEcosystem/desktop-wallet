@@ -513,7 +513,7 @@ export default {
       try {
         peerStatus = await client.fetchPeerStatus()
       } catch (error) {
-        console.error(error)
+        this._vm.$logger.error('Could not validate peer (status): ', error)
       }
       if (!peerStatus) {
         return i18n.t('PEER.STATUS_CHECK_FAILED')
