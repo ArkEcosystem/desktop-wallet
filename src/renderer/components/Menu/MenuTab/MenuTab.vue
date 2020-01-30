@@ -24,7 +24,7 @@
         </button>
       </div>
     </nav>
-    <section class="MenuTab__content p-5">
+    <section class="MenuTab__content p-5 overflow-y-auto">
       <slot />
     </section>
   </div>
@@ -92,8 +92,12 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
+.MenuTab {
+  @apply .flex .flex-col .h-full;
+}
+
 .MenuTab__nav__item--active {
-  @apply .bg-theme-feature .text-theme-page-text
+  @apply .bg-theme-feature .text-theme-page-text;
 }
 
 .MenuTab__nav__item--clickable {
@@ -101,10 +105,10 @@ export default {
 }
 
 .MenuTab__nav__item--disabled {
-  @apply .text-theme-feature-item-alternative-text .opacity-50
+  @apply .text-theme-feature-item-alternative-text .opacity-50;
 }
 
 .MenuTab__nav__item--disabled:hover {
-  @apply .bg-transparent
+  @apply .bg-transparent;
 }
 </style>
