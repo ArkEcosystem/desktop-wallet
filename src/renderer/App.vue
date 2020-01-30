@@ -31,7 +31,7 @@
       />
       <section
         :style="background ? `backgroundImage: url('${assets_loadImage(background)}')` : ''"
-        class="App__main flex flex-col items-center px-4 pb-4 lg:pt-4 h-screen w-screen overflow-hidden"
+        class="App__main flex flex-col items-center px-4 pb-4 lg:pt-4 w-screen h-screen-adjusted overflow-hidden"
       >
         <div
           :class="{ 'ml-6': !hasAnyProfile }"
@@ -385,6 +385,9 @@ export default {
 .App__main {
   transition: .1s filter linear;
 }
+.App__main.h-screen-adjusted {
+  height: calc(100vh - 80px);
+}
 .App__container {
   max-width: 1400px;
 }
@@ -392,6 +395,9 @@ export default {
   .App__page {
     @apply .min-h-full;
     max-height: calc(100vh - 5rem);
+  }
+  .App__main.h-screen-adjusted {
+    @apply h-screen;
   }
 }
 </style>
