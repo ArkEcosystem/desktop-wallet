@@ -496,7 +496,7 @@ export default {
       try {
         networkConfig = await ClientService.fetchNetworkConfig(url.origin, timeout)
       } catch (error) {
-        console.error(error)
+        this._vm.$logger.error('Could not validate peer (network config): ', error)
       }
 
       if (!networkConfig) {
