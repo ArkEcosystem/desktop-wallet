@@ -464,7 +464,7 @@ export default {
 
         return success
       } catch (error) {
-        console.error(error)
+        this.$logger.error('Could not validate seed: ', error)
       }
 
       return false
