@@ -3,7 +3,6 @@
     :to="portalTarget"
   >
     <div
-      slot-scope="{ setPortalHasContent }"
       class="ModalWindow"
       :class="{
         'ModalWindow--maximized': isMaximized,
@@ -31,7 +30,7 @@
                     :icon-name="isMaximized ? 'minus' : 'resize'"
                     icon-class="text-grey"
                     class="ModalWindow__resize-button p-6"
-                    @click="toggleMaximized(setPortalHasContent)"
+                    @click="toggleMaximized()"
                   />
                 </span>
 
@@ -78,7 +77,6 @@
 
 <script>
 import { ButtonClose } from '@/components/Button'
-import { isFunction } from 'lodash'
 
 export default {
   name: 'ModalWindow',
@@ -148,9 +146,8 @@ export default {
   },
 
   methods: {
-    toggleMaximized (callback) {
+    toggleMaximized () {
       this.isMaximized = !this.isMaximized
-      isFunction(callback) && callback(this.portalTarget, this.isMaximized)
     },
 
     onBackdropClick () {
@@ -195,6 +192,7 @@ export default {
   height: 100%;
   background-color: rgba(0, 0, 0, .5);
   transition: opacity .3s ease;
+  backdrop-filter: blur(4px);
 }
 
 .ModalWindow--maximized .ModalWindow__wrapper {
