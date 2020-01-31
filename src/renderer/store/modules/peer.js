@@ -1,4 +1,5 @@
 import { isEmpty, random, shuffle } from 'lodash'
+import logger from 'electron-log'
 import { PeerDiscovery } from '@arkecosystem/peers'
 import ClientService from '@/services/client'
 import config from '@config'
@@ -226,7 +227,7 @@ export default {
           try {
             return PeerModel.deserialize(peer)
           } catch (error) {
-            this._vm.$logger.error(`Could not deserialize peer: ${error.message}`)
+            logger.error(`Could not deserialize peer: ${error.message}`)
           }
 
           return null
@@ -251,7 +252,7 @@ export default {
           try {
             return PeerModel.deserialize(peer)
           } catch (error) {
-            this._vm.$logger.error(`Could not deserialize peer: ${error.message}`)
+            logger.error(`Could not deserialize peer: ${error.message}`)
           }
 
           return null
@@ -496,7 +497,7 @@ export default {
       try {
         networkConfig = await ClientService.fetchNetworkConfig(url.origin, timeout)
       } catch (error) {
-        this._vm.$logger.error('Could not validate peer (network config): ', error)
+        logger.error('Could not validate peer (network config): ', error)
       }
 
       if (!networkConfig) {
@@ -513,7 +514,7 @@ export default {
       try {
         peerStatus = await client.fetchPeerStatus()
       } catch (error) {
-        this._vm.$logger.error('Could not validate peer (status): ', error)
+        logger.error('Could not validate peer (status): ', error)
       }
       if (!peerStatus) {
         return i18n.t('PEER.STATUS_CHECK_FAILED')
