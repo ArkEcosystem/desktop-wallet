@@ -10219,7 +10219,7 @@ pupa@^2.0.1:
   dependencies:
     escape-goat "^2.0.0"
 
-purgecss-webpack-plugin@^2.0.0:
+purgecss-webpack-plugin@^2.0.5:
   version "2.0.5"
   resolved "https://registry.yarnpkg.com/purgecss-webpack-plugin/-/purgecss-webpack-plugin-2.0.5.tgz#6ccd0be4db2011535dfd2f1d56e3d5c6637e2433"
   integrity sha512-k7NT6FZ/ChzcOZTWtUyqAW+E29n7QEO87WWfwKDF8bjvMXsH5TqK5RvEragDQKT16RaxYCvXZkQ2chvnfFXPIg==
@@ -10227,16 +10227,6 @@ purgecss-webpack-plugin@^2.0.0:
     purgecss "^2.0.5"
     webpack "^4.41.2"
     webpack-sources "^1.4.3"
-
-purgecss@^1.1.0:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/purgecss/-/purgecss-1.4.0.tgz#79905624ec1c6c8e1f03044bca92dd8a598ba429"
-  integrity sha512-or7/16i7O6DH+NpXqY8NCcWCc940O6PxOgjWAcMTElzgccKOJua1/n6JVtM8UYqoMMWoCyKk+CbLpo4+4mY3BQ==
-  dependencies:
-    glob "^7.1.3"
-    postcss "^7.0.14"
-    postcss-selector-parser "^6.0.0"
-    yargs "^14.0.0"
 
 purgecss@^2.0.5:
   version "2.0.5"
@@ -13456,23 +13446,6 @@ yargs@^13.2.2:
   integrity sha512-2eehun/8ALW8TLoIl7MVaRUrg+yCnenu8B4kBlRxj3GJGDKU1Og7sMXPNm1BYyM1DOJmTZ4YeN/Nwxv+8XJsUA==
   dependencies:
     cliui "^5.0.0"
-    find-up "^3.0.0"
-    get-caller-file "^2.0.1"
-    require-directory "^2.1.1"
-    require-main-filename "^2.0.0"
-    set-blocking "^2.0.0"
-    string-width "^3.0.0"
-    which-module "^2.0.0"
-    y18n "^4.0.0"
-    yargs-parser "^13.1.1"
-
-yargs@^14.0.0:
-  version "14.0.0"
-  resolved "https://registry.yarnpkg.com/yargs/-/yargs-14.0.0.tgz#ba4cacc802b3c0b3e36a9e791723763d57a85066"
-  integrity sha512-ssa5JuRjMeZEUjg7bEL99AwpitxU/zWGAGpdj0di41pOEmJti8NR6kyUIJBkR78DTYNPZOU08luUo0GTHuB+ow==
-  dependencies:
-    cliui "^5.0.0"
-    decamelize "^1.2.0"
     find-up "^3.0.0"
     get-caller-file "^2.0.1"
     require-directory "^2.1.1"
