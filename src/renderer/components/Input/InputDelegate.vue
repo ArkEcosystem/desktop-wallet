@@ -306,7 +306,9 @@ export default {
         this.$error(this.$t('MODAL_QR_SCANNER.DECODE_FAILED', { data: value }))
       }
 
-      this.model = this.$store.getters['delegate/byAddress'](address).username
+      const delegate = this.$store.getters['delegate/byAddress'](address)
+      this.model = delegate ? delegate.username : address
+
       this.$nextTick(() => {
         this.closeDropdown()
         toggle()
