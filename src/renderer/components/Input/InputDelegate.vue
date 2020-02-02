@@ -65,7 +65,6 @@ import ModalQrCodeScanner from '@/components/Modal/ModalQrCodeScanner'
 import { MenuDropdown } from '@/components/Menu'
 import Cycled from 'cycled'
 import InputField from './InputField'
-import truncate from '@/filters/truncate'
 import { includes, isEmpty, map, orderBy } from 'lodash'
 
 export default {
@@ -176,7 +175,7 @@ export default {
           publicKey: object.publicKey
         }
 
-        delegate.name = `${truncate(object.username, 25)} (${this.wallet_truncate(object.address)})`
+        delegate.name = `${object.username} (${this.wallet_truncate(object.address)})`
 
         return delegate
       })
