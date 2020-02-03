@@ -30,7 +30,7 @@
 import dayjs from 'dayjs'
 import LineChart from '@/components/utils/LineChart'
 import Loader from '@/components/utils/Loader'
-import cryptoCompare from '@/services/crypto-compare'
+import priceApi from '@/services/price-api'
 
 export default {
   name: 'MarketChart',
@@ -65,7 +65,8 @@ export default {
     chartData: {},
     options: {},
     gradient: null,
-    lastCurrency: null
+    lastCurrency: null,
+    lastPriceApi: null
   }),
 
   computed: {
@@ -105,6 +106,10 @@ export default {
       return this.$store.getters['session/currency']
     },
 
+    priceApi () {
+      return this.$store.getters['session/priceApi']
+    },
+
     theme () {
       return this.$store.getters['session/theme']
     },
@@ -116,6 +121,10 @@ export default {
 
   watch: {
     currency () {
+      this.renderChart()
+    },
+
+    priceApi () {
       this.renderChart()
     },
 
@@ -144,7 +153,7 @@ export default {
 
   activated () {
     // Only if it's not already rendered
-    if ((this.isExpanded && !this.isReady) || this.lastCurrency !== this.currency) {
+    if ((this.isExpanded && !this.isReady) || this.lastCurrency !== this.currency || this.lastPriceApi !== this.priceApi) {
       this.renderChart()
     }
   },
@@ -158,14 +167,19 @@ export default {
       this.lastCurrency = this.currency
     },
 
+    setLastPriceApi () {
+      this.lastPriceApi = this.priceApi
+    },
+
     async renderChart () {
       if (!this._inactive) {
         this.setLastCurrency()
+        this.setLastPriceApi()
       }
 
       await this.renderGradient()
 
-      const response = await cryptoCompare.historicByType(this.period, this.ticker, this.currency)
+      const response = await priceApi.historicByType(this.period, this.ticker, this.currency)
 
       if (response && response.datasets) {
         // Since BTC price could be very low :(, the linear scale could produce

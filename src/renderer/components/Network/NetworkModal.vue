@@ -213,7 +213,7 @@ import { NETWORKS } from '@config'
 import { InputText, InputToggle } from '@/components/Input'
 import { ModalLoader, ModalWindow } from '@/components/Modal'
 import ClientService from '@/services/client'
-import cryptoCompare from '@/services/crypto-compare'
+import priceApi from '@/services/price-api'
 import { URL } from 'url'
 
 const requiredIfFull = requiredIf(function () { return this.showFull })
@@ -547,7 +547,7 @@ export default {
         const network = await ClientService.fetchNetworkConfig(this.form.server)
 
         if (network) {
-          const tokenFound = await cryptoCompare.checkTradeable(network.token)
+          const tokenFound = await priceApi.checkTradeable(network.token)
 
           for (const key of Object.keys(this.form)) {
             if (Object.prototype.hasOwnProperty.call(network, key)) {

@@ -141,6 +141,10 @@ export default new BaseModel({
       type: 'string',
       format: data => data.pluginAdapter || 'npm'
     },
+    priceApi: {
+      type: 'string',
+      format: data => data.priceApi || 'coingecko'
+    },
     isAdvancedModeEnabled: {
       type: 'boolean',
       format: data => data.isAdvancedModeEnabled || false

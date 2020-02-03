@@ -36,6 +36,7 @@ export default {
     OTHER: 'Other',
     PREV: 'Prev',
     PROFILE_NAME: 'Profile name',
+    PRICE_PROVIDER: 'Price Provider',
     REMOVE: 'Remove',
     SAVE: 'Save',
     SIZE: 'Size',

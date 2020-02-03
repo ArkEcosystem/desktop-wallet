@@ -7,6 +7,7 @@ import { TRANSACTION_TYPES } from '@config'
 import store from '@/store'
 import eventBus from '@/plugins/event-bus'
 import TransactionService from '@/services/transaction'
+import priceApi from '@/services/price-api'
 
 export default class ClientService {
   /*
@@ -651,6 +652,8 @@ export default class ClientService {
         if (!oldProfile || profile.id !== oldProfile.id) {
           eventBus.emit('client:changed')
         }
+
+        priceApi.setAdapter(profile.priceApi)
       },
       { immediate: true }
     )

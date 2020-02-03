@@ -1,6 +1,6 @@
 import { MarketTicker } from '@/models/market'
 import { forEach, keys } from 'lodash'
-import cryptoCompare from '@/services/crypto-compare'
+import priceApi from '@/services/price-api'
 import { MARKET } from '@config'
 import Vue from 'vue'
 
@@ -45,7 +45,7 @@ export default {
       }
 
       const ticker = network.market.ticker
-      const data = await cryptoCompare.fetchMarketData(ticker)
+      const data = await priceApi.fetchMarketData(ticker)
       if (!data) return
 
       forEach(data, (value) => {

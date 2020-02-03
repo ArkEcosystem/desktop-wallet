@@ -31,7 +31,8 @@ export default {
     unconfirmedVotes: [],
     lastFees: {},
     filterBlacklistedPlugins: true,
-    pluginAdapter: 'npm'
+    pluginAdapter: 'npm',
+    priceApi: 'coingecko'
   }),
 
   getters: {
@@ -89,7 +90,8 @@ export default {
       return state.lastFees ? state.lastFees[type] : null
     },
     filterBlacklistedPlugins: state => state.filterBlacklistedPlugins,
-    pluginAdapter: state => state.pluginAdapter
+    pluginAdapter: state => state.pluginAdapter,
+    priceApi: state => state.priceApi
   },
 
   mutations: {
@@ -209,6 +211,10 @@ export default {
       state.pluginAdapter = pluginAdapter
     },
 
+    SET_PRICE_API (state, priceApi) {
+      state.priceApi = priceApi
+    },
+
     RESET (state) {
       state.avatar = 'pages/new-profile-avatar.svg'
       state.background = null
@@ -238,6 +244,7 @@ export default {
       state.lastFees = {}
       state.filterBlacklistedPlugins = true
       state.pluginAdapter = 'npm'
+      state.priceApi = 'coingecko'
 
       i18n.locale = state.language
     },
@@ -271,6 +278,7 @@ export default {
       state.lastFees = value.lastFees
       state.filterBlacklistedPlugins = value.filterBlacklistedPlugins
       state.pluginAdapter = value.pluginAdapter
+      state.priceApi = value.priceApi
 
       i18n.locale = state.language
     }
@@ -418,6 +426,10 @@ export default {
 
     setPluginAdapter ({ commit }, value) {
       commit('SET_PLUGIN_ADAPTER', value)
+    },
+
+    setPriceApi ({ commit }, value) {
+      commit('SET_PRICE_API', value)
     }
   }
 }
