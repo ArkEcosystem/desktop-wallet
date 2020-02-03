@@ -3,6 +3,7 @@ import alertEvents from '@/plugins/alert-events'
 import { capitalize } from 'lodash'
 import logger from 'electron-log'
 import CryptoCompareAdapter from './price-api/crypto-compare'
+import CoinGeckoAdapter from './price-api/coin-gecko'
 
 class PriceApi {
   setAdapter (adapter) {
@@ -10,7 +11,11 @@ class PriceApi {
   }
 
   getAdapter () {
-    return CryptoCompareAdapter
+    if (this.adapter === 'cryptocompare') {
+      return CryptoCompareAdapter
+    }
+
+    return CoinGeckoAdapter
   }
 
   /**
