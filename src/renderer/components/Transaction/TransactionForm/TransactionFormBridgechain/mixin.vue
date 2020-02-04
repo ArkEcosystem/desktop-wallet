@@ -487,7 +487,7 @@ export default {
 
         bridgechainRepository: {
           tooShort (value) {
-            return this.bridgechain ? true : minLength(minRepositoryLength)(value)
+            return this.bridgechain ? true : required(value) && minLength(minRepositoryLength)(value)
           },
           url (value) {
             return this.bridgechain ? true : url(value)
