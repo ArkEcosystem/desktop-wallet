@@ -9,7 +9,7 @@ export default class CryptoCompareAdapter {
    * @param {String} token
    * @return {(Boolean|null)} Return true if the token is found
    */
-  async checkTradeable (token) {
+  static async checkTradeable (token) {
     try {
       const uri = `${MARKET.source.cryptoCompare}/data/price`
       const { body } = await got(uri, {

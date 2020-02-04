@@ -39,7 +39,7 @@ export default class CoinGeckoAdapter {
    * @param {String} token
    * @return {(Boolean|null)} Return true if the token is found
    */
-  async checkTradeable (token) {
+  static async checkTradeable (token) {
     const tokenId = await this.getTokenId(token)
 
     try {
