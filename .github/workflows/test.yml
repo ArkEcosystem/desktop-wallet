@@ -50,8 +50,6 @@ jobs:
         run: ./node_modules/.bin/codecov --token=${{ secrets.CODECOV_TOKEN }}
 
   build-linux:
-    needs: lint-unit
-
     runs-on: ubuntu-latest
 
     strategy:
@@ -104,8 +102,6 @@ jobs:
           path: build/target/ark-desktop-wallet-linux-amd64-2.7.0.deb
 
   build-macOS:
-    needs: lint-unit
-
     runs-on: macOS-latest
 
     strategy:
@@ -146,8 +142,6 @@ jobs:
           path: build/target/ark-desktop-wallet-mac-2.7.0.dmg
 
   build-windows:
-    needs: lint-unit
-
     runs-on: windows-latest
 
     strategy:
