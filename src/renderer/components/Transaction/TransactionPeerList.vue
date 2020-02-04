@@ -12,8 +12,9 @@
     <div
       slot-scope="{ item }"
       class="flex flex-1"
+      :class="{ 'text-red': item.isInvalid }"
     >
-      {{ item }}
+      {{ item.ip }}
     </div>
   </InputEditableList>
 </template>

@@ -40,7 +40,7 @@
 
         <TransactionPeerList
           :title="$t('TRANSACTION.BRIDGECHAIN.SEED_NODES')"
-          :items="$v.form.asset.seedNodes.$model"
+          :items="$v.form.seedNodes.$model"
           :helper-text="seedNodesError"
           :is-invalid="!!seedNodesError"
           class="TransactionFormBridgechain__seed-nodes mt-4"
@@ -165,6 +165,11 @@
         :message="$t('TRANSACTION.LEDGER_SIGN_WAIT')"
         :visible="showLedgerLoader"
       />
+      <ModalLoader
+        :message="$t('MODAL_PEER.VALIDATING')"
+        :allow-close="true"
+        :visible="showValidatingModal"
+      />
     </template>
   </form>
 </template>
@@ -201,14 +206,16 @@ export default {
   data: () => ({
     step: 1,
     seedNode: '',
+    showValidatingModal: false,
+    invalidSeeds: [],
     form: {
       fee: 0,
       passphrase: '',
       walletPassword: '',
       apiPort: 4003,
+      seedNodes: [],
       asset: {
         name: '',
-        seedNodes: [],
         ports: {},
         genesisHash: '',
         bridgechainRepository: ''
@@ -223,7 +230,7 @@ export default {
 
     isFormValid () {
       if (this.step === 1) {
-        return !this.$v.form.asset.seedNodes.$invalid
+        return !this.$v.form.seedNodes.$invalid
       }
 
       return !this.$v.form.$invalid
@@ -262,10 +269,10 @@ export default {
     },
 
     seedNodesError () {
-      if (this.$v.form.asset.seedNodes.$dirty && this.$v.form.asset.seedNodes.$invalid) {
-        if (!this.$v.form.asset.seedNodes.required) {
+      if (this.$v.form.seedNodes.$dirty && this.$v.form.seedNodes.$invalid) {
+        if (!this.$v.form.seedNodes.required) {
           return this.$t('VALIDATION.REQUIRED', [this.$t('TRANSACTION.BRIDGECHAIN.SEED_NODES')])
-        } else if (!this.$v.form.asset.seedNodes.belowMax) {
+        } else if (!this.$v.form.seedNodes.belowMax) {
           return this.$t('VALIDATION.TOO_MANY', [this.$t('TRANSACTION.BRIDGECHAIN.SEED_NODES')])
         }
       }
@@ -315,6 +322,7 @@ export default {
       if (this.isUpdate) {
         this.form.asset.bridgechainId = this.form.asset.genesisHash
       }
+      this.form.asset.seedNodes = this.form.seedNodes.map(seedNode => seedNode.ip)
 
       const transactionData = {
         address: this.currentWallet.address,
@@ -341,12 +349,20 @@ export default {
       }
     },
 
-    nextStep () {
+    async nextStep () {
       if (this.step === 1) {
         this.step = 2
+
+        this.$v.form.fee.$touch()
       } else {
-        this.form.fee = this.$refs.fee.fee
-        this.onSubmit()
+        await this.validateSeeds()
+
+        if (!this.invalidSeeds.length) {
+          this.$v.form.fee.$model = this.$refs.fee.fee
+          this.onSubmit()
+        } else {
+          this.step = 1
+        }
       }
     },
 
@@ -355,34 +371,73 @@ export default {
         return
       }
 
-      this.form.asset.seedNodes.push(this.seedNode)
+      this.form.seedNodes.push({
+        ip: this.seedNode,
+        isInvalid: false
+      })
 
       this.$refs.seedNode.reset()
       this.$v.seedNode.$reset()
     },
 
     emitRemoveSeedNode (index) {
-      if (!Object.prototype.hasOwnProperty.call(this.$v.form.asset.seedNodes.$model, index)) {
+      if (!Object.prototype.hasOwnProperty.call(this.$v.form.seedNodes.$model, index)) {
         return
       }
 
-      this.$v.form.asset.seedNodes.$model = [
-        ...this.form.asset.seedNodes.slice(0, index),
-        ...this.form.asset.seedNodes.slice(index + 1)
+      this.$v.form.seedNodes.$model = [
+        ...this.form.seedNodes.slice(0, index),
+        ...this.form.seedNodes.slice(index + 1)
       ]
+    },
+
+    async validateSeeds () {
+      this.showValidatingModal = true
+
+      const invalidSeeds = []
+      for (const seedNode of this.form.seedNodes) {
+        let isValid = true
+
+        try {
+          const response = await this.$store.dispatch('peer/validatePeer', {
+            ip: seedNode.ip,
+            port: this.form.apiPort,
+            nethash: this.form.asset.genesisHash
+          })
+
+          if (response === false || typeof response === 'string') {
+            isValid = false
+          }
+        } catch (error) {
+          isValid = false
+          this.$logger.error('Could not validate seeds: ', error)
+        }
+
+        if (!isValid) {
+          seedNode.isInvalid = true
+          invalidSeeds.push(seedNode)
+        }
+      }
+
+      this.invalidSeeds = invalidSeeds
+      if (invalidSeeds.length) {
+        this.$error(this.$tc('TRANSACTION.BRIDGECHAIN.INVALID_PEERS', invalidSeeds.length))
+      }
+
+      this.showValidatingModal = false
     }
   },
 
   validations: {
     seedNode: {
       isUnique (value) {
-        return !this.form.asset.seedNodes.includes(value)
+        return !this.form.seedNodes.find(seedNode => seedNode.ip === value)
       },
       isValidSeed (value) {
         return /^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9\\-]*[A-Za-z0-9])$/.test(value)
       },
       belowMax (value) {
-        return this.$v.form.asset.seedNodes.$model.length < maxSeedNodes
+        return this.$v.form.seedNodes.$model.length < maxSeedNodes
       }
     },
 
@@ -401,6 +456,13 @@ export default {
         }
       },
 
+      seedNodes: {
+        required,
+        belowMax (value) {
+          return value.length < maxSeedNodes
+        }
+      },
+
       asset: {
         name: {
           required (value) {
@@ -411,13 +473,6 @@ export default {
           },
           validName (value) {
             return this.bridgechain ? true : /^[a-zA-Z0-9_-]+$/.test(value)
-          }
-        },
-
-        seedNodes: {
-          required,
-          belowMax (value) {
-            return value.length < maxSeedNodes
           }
         },
 

@@ -506,7 +506,7 @@ export default {
      * @param  {Number} [timeout=3000]
      * @return {(Object|String)}
      */
-    async validatePeer ({ rootGetters }, { host, ip, port, ignoreNetwork = false, timeout = 3000 }) {
+    async validatePeer ({ rootGetters }, { host, ip, port, nethash, ignoreNetwork = false, timeout = 3000 }) {
       let networkConfig
       if (!host && ip) {
         host = ip
@@ -524,7 +524,7 @@ export default {
 
       if (!networkConfig) {
         return i18n.t('PEER.NO_CONNECT')
-      } else if (!ignoreNetwork && networkConfig.nethash !== rootGetters['session/network'].nethash) {
+      } else if (!ignoreNetwork && networkConfig.nethash !== (nethash || rootGetters['session/network'].nethash)) {
         return i18n.t('PEER.WRONG_NETWORK')
       }
 
