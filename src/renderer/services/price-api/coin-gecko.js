@@ -5,22 +5,54 @@ import { MARKET } from '@config'
 
 export default class CoinGeckoAdapter {
   /**
+   * Get token name from api
+   * @param  {String} token
+   * @return {(String|null)}
+   */
+  static async getTokenId (token) {
+    if (this.tokenLookup) {
+      return this.tokenLookup[token.toUpperCase()]
+    }
+
+    try {
+      const uri = `${MARKET.source.coinGecko}/coins/list`
+      const { body } = await got(uri, {
+        json: true
+      })
+
+      this.tokenLookup = body.reduce((map, value, index) => {
+        map[value.symbol.toUpperCase()] = value.id
+
+        return map
+      }, {})
+
+      return this.tokenLookup[token.toUpperCase()]
+    } catch (error) {
+      //
+    }
+
+    return null
+  }
+
+  /**
    * Checks if a token is tradeable
    * @param {String} token
    * @return {(Boolean|null)} Return true if the token is found
    */
   async checkTradeable (token) {
+    const tokenId = await this.getTokenId(token)
+
     try {
       const uri = `${MARKET.source.coinGecko}/simple/price`
       const { body } = await got(uri, {
         query: {
-          ids: 'ARK',
+          ids: tokenId,
           vs_currencies: 'BTC'
         },
         json: true
       })
 
-      return !!body.ark
+      return !!body[tokenId]
     } catch (error) {
       return null
     }
@@ -32,7 +64,8 @@ export default class CoinGeckoAdapter {
    * @return {(Object|null)} Return API response data or null on failure
    */
   static async fetchMarketData (token) {
-    const { body } = await got(`${MARKET.source.coinGecko}/coins/${token.toLowerCase()}`, { json: true })
+    const tokenId = await this.getTokenId(token)
+    const { body } = await got(`${MARKET.source.coinGecko}/coins/${tokenId}`, { json: true })
 
     return this.__transformMarketResponse(body.market_data)
   }
@@ -47,7 +80,8 @@ export default class CoinGeckoAdapter {
    * @return {(Object|null)} Return API response data or null on failure
    */
   static async fetchHistoricalData (token, currency, days, _, dateFormat = 'DD.MM') {
-    const { body } = await got(`${MARKET.source.coinGecko}/coins/${token.toLowerCase()}/market_chart`, {
+    const tokenId = await this.getTokenId(token)
+    const { body } = await got(`${MARKET.source.coinGecko}/coins/${tokenId}/market_chart`, {
       query: {
         vs_currency: currency,
         days
