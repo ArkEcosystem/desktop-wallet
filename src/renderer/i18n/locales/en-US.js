@@ -217,6 +217,7 @@ export default {
   MARKET: {
     MARKET: 'Market',
     HISTORICAL_DATA: 'Historical data',
+    CHECK_TRADEABLE: 'Check Tradeable',
     DAY: 'Day',
     WEEK: 'Week',
     MONTH: 'Month'

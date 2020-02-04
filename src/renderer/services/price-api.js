@@ -105,7 +105,11 @@ class PriceApi {
     try {
       return this.getAdapter().checkTradeable(token)
     } catch (error) {
-      //
+      logger.error(error)
+      alertEvents.$error(i18n.t('COMMON.FAILED_FETCH', {
+        name: i18n.t('MARKET.CHECK_TRADEABLE'),
+        msg: error.message
+      }))
     }
 
     return null
