@@ -209,7 +209,7 @@ describe('TransactionFormBridgechainUpdate', () => {
     describe('next button', () => {
       it('should be enabled if seed nodes is valid on step 1', async () => {
         wrapper.vm.step = 1
-        wrapper.vm.$v.form.asset.seedNodes.$model = [
+        wrapper.vm.$v.form.seedNodes.$model = [
           '1.1.1.1'
         ]
 
@@ -227,7 +227,7 @@ describe('TransactionFormBridgechainUpdate', () => {
         wrapper.vm.form.asset.ports = {
           '@arkecosystem/core-api': 4003
         }
-        wrapper.vm.$v.form.asset.seedNodes.$model = [
+        wrapper.vm.$v.form.seedNodes.$model = [
           '1.1.1.1'
         ]
         wrapper.vm.$v.form.asset.bridgechainRepository.$model = 'https://github.com/arkecosystem/core.git'
@@ -239,7 +239,7 @@ describe('TransactionFormBridgechainUpdate', () => {
 
       it('should be disabled if seed nodes is invalid on step 1', async () => {
         wrapper.vm.step = 1
-        wrapper.vm.$v.form.asset.seedNodes.$model = []
+        wrapper.vm.$v.form.seedNodes.$model = []
 
         await wrapper.vm.$nextTick()
 
@@ -248,7 +248,7 @@ describe('TransactionFormBridgechainUpdate', () => {
 
       it('should be disabled if form is invalid on step 2', async () => {
         wrapper.vm.step = 2
-        wrapper.vm.$v.form.asset.seedNodes.$model = []
+        wrapper.vm.$v.form.seedNodes.$model = []
 
         await wrapper.vm.$nextTick()
 
@@ -271,12 +271,12 @@ describe('TransactionFormBridgechainUpdate', () => {
       })
 
       expect(wrapper.vm.form.apiPort).toBe(8081)
+      expect(wrapper.vm.form.seedNodes).toEqual([
+        { ip: '5.5.5.5', isInvalid: false },
+        { ip: '6.6.6.6', isInvalid: false }
+      ])
       expect(wrapper.vm.form.asset).toEqual({
         name: '',
-        seedNodes: [
-          '5.5.5.5',
-          '6.6.6.6'
-        ],
         ports: {},
         genesisHash: '2a44f340d76ffc3df204c5f38cd355b7496c9065a1ade2ef92071436bd72e867',
         bridgechainRepository: ''
@@ -294,12 +294,12 @@ describe('TransactionFormBridgechainUpdate', () => {
       })
 
       expect(wrapper.vm.form.apiPort).toBe(4003)
+      expect(wrapper.vm.form.seedNodes).toEqual([
+        { ip: '5.5.5.5', isInvalid: false },
+        { ip: '6.6.6.6', isInvalid: false }
+      ])
       expect(wrapper.vm.form.asset).toEqual({
         name: '',
-        seedNodes: [
-          '5.5.5.5',
-          '6.6.6.6'
-        ],
         ports: {},
         genesisHash: '2a44f340d76ffc3df204c5f38cd355b7496c9065a1ade2ef92071436bd72e867',
         bridgechainRepository: ''

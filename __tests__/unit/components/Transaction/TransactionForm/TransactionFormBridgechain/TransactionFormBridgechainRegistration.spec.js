@@ -193,7 +193,7 @@ describe('TransactionFormBridgechainRegistration', () => {
     describe('next button', () => {
       it('should be enabled if seed nodes is valid on step 1', async () => {
         wrapper.vm.step = 1
-        wrapper.vm.$v.form.asset.seedNodes.$model = [
+        wrapper.vm.$v.form.seedNodes.$model = [
           '1.1.1.1'
         ]
 
@@ -211,7 +211,7 @@ describe('TransactionFormBridgechainRegistration', () => {
         wrapper.vm.form.asset.ports = {
           '@arkecosystem/core-api': 4003
         }
-        wrapper.vm.$v.form.asset.seedNodes.$model = [
+        wrapper.vm.$v.form.seedNodes.$model = [
           '1.1.1.1'
         ]
         wrapper.vm.$v.form.asset.bridgechainRepository.$model = 'https://github.com/arkecosystem/core.git'
@@ -223,7 +223,7 @@ describe('TransactionFormBridgechainRegistration', () => {
 
       it('should be disabled if seed nodes is invalid on step 1', async () => {
         wrapper.vm.step = 1
-        wrapper.vm.$v.form.asset.seedNodes.$model = []
+        wrapper.vm.$v.form.seedNodes.$model = []
 
         await wrapper.vm.$nextTick()
 
@@ -232,7 +232,7 @@ describe('TransactionFormBridgechainRegistration', () => {
 
       it('should be disabled if form is invalid on step 2', async () => {
         wrapper.vm.step = 2
-        wrapper.vm.$v.form.asset.seedNodes.$model = []
+        wrapper.vm.$v.form.seedNodes.$model = []
 
         await wrapper.vm.$nextTick()
 
