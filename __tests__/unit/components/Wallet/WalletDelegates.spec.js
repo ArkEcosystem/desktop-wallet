@@ -1,3 +1,4 @@
+import { merge } from 'lodash'
 import { mount } from '@vue/test-utils'
 import { useI18nGlobally } from '../../__utils__/i18n'
 import { WalletDelegates } from '@/components/Wallet'
@@ -8,8 +9,20 @@ describe('WalletDelegates', () => {
   let showExplanation
   let walletVote = {}
 
-  const mountWrapper = () => {
-    return mount(WalletDelegates, {
+  const activeDelegatesMock = count => {
+    return {
+      mocks: {
+        session_network: {
+          constants: {
+            activeDelegates: count
+          }
+        }
+      }
+    }
+  }
+
+  const mountWrapper = config => {
+    return mount(WalletDelegates, merge({
       i18n,
       provide: {
         walletVote
@@ -33,12 +46,28 @@ describe('WalletDelegates', () => {
       stubs: {
         TableWrapper: true
       }
-    })
+    }, config))
   }
 
   it('should render', () => {
     const wrapper = mountWrapper()
     expect(wrapper.isVueInstance()).toBeTrue()
+  })
+
+  it('should dynamically calculate the per page options', () => {
+    let wrapper = mountWrapper(activeDelegatesMock(25))
+    expect(wrapper.vm.perPageOptions).toEqual([25])
+
+    wrapper = mountWrapper(activeDelegatesMock(53))
+    expect(wrapper.vm.perPageOptions).toEqual([25, 53])
+
+    wrapper = mountWrapper(activeDelegatesMock(101))
+    expect(wrapper.vm.perPageOptions).toEqual([25, 50, 75, 100])
+  })
+
+  it('should cap the query limit at 100', () => {
+    const wrapper = mountWrapper(activeDelegatesMock(101))
+    expect(wrapper.vm.queryParams.limit).toBe(100)
   })
 
   describe('when the wallet is voting', () => {
