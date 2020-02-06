@@ -192,7 +192,7 @@
     "productName": "Ark Desktop Wallet",
     "appId": "io.ark.desktop-wallet",
     "artifactName": "${name}-${os}-${arch}-${version}.${ext}",
-    "npmRebuild": false,
+    "npmRebuild": true,
     "publish": {
       "provider": "github",
       "vPrefixedTagName": false
