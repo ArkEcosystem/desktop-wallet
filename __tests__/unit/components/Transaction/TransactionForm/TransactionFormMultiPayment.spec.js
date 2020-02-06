@@ -387,15 +387,21 @@ describe('TransactionFormMultiPayment', () => {
         expect(wrapper.vm.maximumAvailableAmount).toEqual((new BigNumber(1000)).minus(0.1))
       })
 
-      it('should return value including all recipients', () => {
+      it('should return value including all recipients', async () => {
         wrapper.vm.$v.form.fee.$model = 0.1
-        wrapper.vm.$v.form.recipients.$model = [{
-          address: 'address-2',
-          amount: 10
-        }, {
-          address: 'address-3',
-          amount: 20
-        }]
+        wrapper.vm.$v.recipientId.$model = Identities.Address.fromPassphrase('test')
+        wrapper.vm.$v.amount.$model = 10
+
+        await wrapper.vm.$nextTick()
+        wrapper.vm.addRecipient()
+        await wrapper.vm.$nextTick()
+
+        wrapper.vm.$v.recipientId.$model = Identities.Address.fromPassphrase('test')
+        wrapper.vm.$v.amount.$model = 20
+
+        await wrapper.vm.$nextTick()
+        wrapper.vm.addRecipient()
+        await wrapper.vm.$nextTick()
 
         expect(wrapper.vm.maximumAvailableAmount).toEqual((new BigNumber(1000)).minus(0.1).minus(30))
       })
