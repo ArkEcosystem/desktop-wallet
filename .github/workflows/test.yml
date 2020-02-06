@@ -26,10 +26,11 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
           restore-keys: ${{ runner.os }}-node-
 
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
+      - name: Install Node.js
+        run: curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash - && sudo apt-get install nodejs
+
+      - name: Install yarn
+        run: curl -o- -L https://yarnpkg.com/install.sh | bash
 
       - name: Update System
         run: sudo apt-get update
