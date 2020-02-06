@@ -81,6 +81,9 @@ jobs:
       - name: Install
         run: yarn global add node-gyp && yarn install --frozen-lockfile && npm rebuild
 
+      - name: Re-build bcrypto
+        run: cd node_modules/bcrypto && npm install && cd ../../
+
       - name: Build
         run: node .electron-vue/build.js && node ./node_modules/electron-builder/out/cli/cli.js --linux
 
