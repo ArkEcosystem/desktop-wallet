@@ -1149,9 +1149,9 @@ export default {
   },
 
   SYNCHRONIZER: {
-    VOTE: 'voted for',
-    UNVOTE: 'unvoted',
     GROUP_1: {
+      VOTE: 'voted for',
+      UNVOTE: 'unvoted',
       NEW_SECOND_SIGNATURE: 'New second signature: {address}',
       NEW_DELEGATE_REGISTRATION: 'New delegate: {address} registered as {username}',
       NEW_VOTE: 'New vote: {address} {voteUnvote} {publicKey}',
