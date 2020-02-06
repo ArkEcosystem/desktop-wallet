@@ -66,11 +66,16 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
           restore-keys: ${{ runner.os }}-node-
 
-      - name: Install Node.js
-        run: curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash - && sudo apt-get install nodejs
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
 
-      - name: Install yarn
-        run: curl -o- -L https://yarnpkg.com/install.sh | bash
+      # - name: Install Node.js
+      #   run: curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash - && sudo apt-get install nodejs
+
+      # - name: Install yarn
+      #   run: curl -o- -L https://yarnpkg.com/install.sh | bash
 
       - name: Update System
         run: sudo apt-get update
@@ -108,77 +113,77 @@ jobs:
           name: ark-desktop-wallet-linux-2.7.0.deb
           path: build/target/ark-desktop-wallet-linux-amd64-2.7.0.deb
 
-  build-macOS:
-    runs-on: macOS-latest
+  # build-macOS:
+  #   runs-on: macOS-latest
 
-    strategy:
-      matrix:
-        node-version: [12.x]
+  #   strategy:
+  #     matrix:
+  #       node-version: [12.x]
 
-    steps:
-      - uses: actions/checkout@v1
+  #   steps:
+  #     - uses: actions/checkout@v1
 
-      - name: Cache node modules
-        uses: actions/cache@v1
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: ${{ runner.os }}-node-
+  #     - name: Cache node modules
+  #       uses: actions/cache@v1
+  #       with:
+  #         path: node_modules
+  #         key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
+  #         restore-keys: ${{ runner.os }}-node-
 
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
+  #     - name: Use Node.js ${{ matrix.node-version }}
+  #       uses: actions/setup-node@v1
+  #       with:
+  #         node-version: ${{ matrix.node-version }}
 
-      - name: Install
-        run: yarn global add node-gyp && yarn install --frozen-lockfile && npm rebuild
+  #     - name: Install
+  #       run: yarn global add node-gyp && yarn install --frozen-lockfile && npm rebuild
 
-      - name: Build
-        run: yarn build:mac
+  #     - name: Build
+  #       run: yarn build:mac
 
-      # - name: Build .dmg
-      #   run: node .electron-vue/build.js && node ./node_modules/electron-builder/out/cli/cli.js --mac
+  #     # - name: Build .dmg
+  #     #   run: node .electron-vue/build.js && node ./node_modules/electron-builder/out/cli/cli.js --mac
 
-      # - name: Upload .zip
-      #   uses: actions/upload-artifact@master
-      #   with:
-      #     name: ark-desktop-wallet-mac-2.7.0.zip
-      #     path: build/target/ark-desktop-wallet-mac-2.7.0.zip
+  #     # - name: Upload .zip
+  #     #   uses: actions/upload-artifact@master
+  #     #   with:
+  #     #     name: ark-desktop-wallet-mac-2.7.0.zip
+  #     #     path: build/target/ark-desktop-wallet-mac-2.7.0.zip
 
-      - name: Upload .dmg
-        uses: actions/upload-artifact@v1
-        with:
-          name: ark-desktop-wallet-mac-2.7.0.dmg
-          path: build/target/ark-desktop-wallet-mac-2.7.0.dmg
+  #     - name: Upload .dmg
+  #       uses: actions/upload-artifact@v1
+  #       with:
+  #         name: ark-desktop-wallet-mac-2.7.0.dmg
+  #         path: build/target/ark-desktop-wallet-mac-2.7.0.dmg
 
-  build-windows:
-    runs-on: windows-latest
+  # build-windows:
+  #   runs-on: windows-latest
 
-    strategy:
-      matrix:
-        node-version: [12.x]
+  #   strategy:
+  #     matrix:
+  #       node-version: [12.x]
 
-    steps:
-      - uses: actions/checkout@v1
+  #   steps:
+  #     - uses: actions/checkout@v1
 
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
+  #     - name: Use Node.js ${{ matrix.node-version }}
+  #       uses: actions/setup-node@v1
+  #       with:
+  #         node-version: ${{ matrix.node-version }}
 
-      - name: Install
-        run: yarn global add node-gyp && yarn install --frozen-lockfile && npm rebuild
-        shell: cmd
+  #     - name: Install
+  #       run: yarn global add node-gyp && yarn install --frozen-lockfile && npm rebuild
+  #       shell: cmd
 
-      - name: Build
-        run: yarn build:win
+  #     - name: Build
+  #       run: yarn build:win
 
-      # - name: Build
-      #   run: node .electron-vue/build.js && node ./node_modules/electron-builder/out/cli/cli.js --win --x64 --ia32
-      #   shell: cmd
+  #     # - name: Build
+  #     #   run: node .electron-vue/build.js && node ./node_modules/electron-builder/out/cli/cli.js --win --x64 --ia32
+  #     #   shell: cmd
 
-      - name: Upload .exe
-        uses: actions/upload-artifact@v1
-        with:
-          name: ark-desktop-wallet-win-2.7.0.exe
-          path: build/target/ark-desktop-wallet-win-2.7.0.exe
+  #     - name: Upload .exe
+  #       uses: actions/upload-artifact@v1
+  #       with:
+  #         name: ark-desktop-wallet-win-2.7.0.exe
+  #         path: build/target/ark-desktop-wallet-win-2.7.0.exe
