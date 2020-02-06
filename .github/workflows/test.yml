@@ -85,7 +85,10 @@ jobs:
         run: cd node_modules/bcrypto && npm install && cd ../../
 
       - name: Build
-        run: node .electron-vue/build.js && node ./node_modules/electron-builder/out/cli/cli.js --linux
+        run: yarn build:linux
+
+      # - name: Build
+      #   run: node .electron-vue/build.js && node ./node_modules/electron-builder/out/cli/cli.js --linux
 
       # - name: Upload .AppImage
       #   uses: actions/upload-artifact@master
@@ -130,8 +133,11 @@ jobs:
       - name: Install
         run: yarn global add node-gyp && yarn install --frozen-lockfile && npm rebuild
 
-      - name: Build .dmg
-        run: node .electron-vue/build.js && node ./node_modules/electron-builder/out/cli/cli.js --mac
+      - name: Build
+        run: yarn build:mac
+
+      # - name: Build .dmg
+      #   run: node .electron-vue/build.js && node ./node_modules/electron-builder/out/cli/cli.js --mac
 
       # - name: Upload .zip
       #   uses: actions/upload-artifact@master
@@ -165,8 +171,11 @@ jobs:
         shell: cmd
 
       - name: Build
-        run: node .electron-vue/build.js && node ./node_modules/electron-builder/out/cli/cli.js --win --x64 --ia32
-        shell: cmd
+        run: yarn build:win
+
+      # - name: Build
+      #   run: node .electron-vue/build.js && node ./node_modules/electron-builder/out/cli/cli.js --win --x64 --ia32
+      #   shell: cmd
 
       - name: Upload .exe
         uses: actions/upload-artifact@v1
