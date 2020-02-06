@@ -256,7 +256,7 @@ export default {
       let availableAmount = this.currency_subToUnit(this.currentWallet.balance).minus(this.form.fee)
 
       for (const recipient of this.form.recipients) {
-        availableAmount = availableAmount.minus(recipient.amount)
+        availableAmount = availableAmount.minus(this.currency_subToUnit(recipient.amount))
       }
 
       return availableAmount
@@ -349,7 +349,7 @@ export default {
         return
       }
 
-      this.form.recipients.push({
+      this.$v.form.recipients.$model.push({
         address: this.recipientId,
         amount: this.currency_unitToSub(this.amount)
       })
