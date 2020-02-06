@@ -81,8 +81,8 @@ jobs:
       - name: Install
         run: yarn global add node-gyp && yarn install --frozen-lockfile && npm rebuild
 
-      - name: Re-build bcrypto
-        run: cd node_modules/bcrypto && npm install && cd ../../
+      # - name: Re-build bcrypto
+      #   run: cd node_modules/bcrypto && npm install && cd ../../
 
       - name: Build
         run: yarn build:linux
