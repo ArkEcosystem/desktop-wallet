@@ -78,10 +78,13 @@ jobs:
         run: sudo apt-get install libudev-dev libusb-1.0-0-dev
 
       - name: Install
-        run: yarn global add node-gyp && yarn install --frozen-lockfile && npm rebuild
+        run: yarn global add node-gyp && yarn install --frozen-lockfile
+
+      - name: Re-build bcrypto
+        run: cd node_modules/bcrypto && npm install && cd ../../
 
       - name: Build
-        run: node .electron-vue/build.js && node ./node_modules/electron-builder/out/cli/cli.js --linux
+        run: yarn build:linux
 
       # - name: Upload .AppImage
       #   uses: actions/upload-artifact@master
@@ -124,10 +127,10 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Install
-        run: yarn global add node-gyp && yarn install --frozen-lockfile && npm rebuild
+        run: yarn global add node-gyp && yarn install --frozen-lockfile
 
-      - name: Build .dmg
-        run: node .electron-vue/build.js && node ./node_modules/electron-builder/out/cli/cli.js --mac
+      - name: Build
+        run: yarn build:mac
 
       # - name: Upload .zip
       #   uses: actions/upload-artifact@master
@@ -157,11 +160,11 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Install
-        run: yarn global add node-gyp && yarn install --frozen-lockfile && npm rebuild
+        run: yarn global add node-gyp && yarn install --frozen-lockfile
         shell: cmd
 
       - name: Build
-        run: node .electron-vue/build.js && node ./node_modules/electron-builder/out/cli/cli.js --win --x64 --ia32
+        run: yarn build:win
         shell: cmd
 
       - name: Upload .exe
