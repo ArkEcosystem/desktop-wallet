@@ -195,8 +195,9 @@ export default {
 
       if (!getters.needsUpdate) {
         eventBus.emit('ledger:connected')
-        await dispatch('reloadWallets', {})
       }
+
+      await dispatch('reloadWallets', {})
 
       return true
     },
@@ -285,13 +286,6 @@ export default {
         }
 
         await commit('STOP_ALL_LOADING_PROCESSES')
-      }
-
-      if (getters.needsUpdate) {
-        commit('SET_WALLETS', {})
-        await commit('STOP_ALL_LOADING_PROCESSES')
-
-        return {}
       }
 
       const profileId = rootGetters['session/profileId']
