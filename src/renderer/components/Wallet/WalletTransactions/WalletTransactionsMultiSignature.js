@@ -1,4 +1,5 @@
 import at from 'lodash/at'
+import isEqual from 'lodash/isEqual'
 import mixin from './mixin'
 import { TransactionTableMultiSignature } from '@/components/Transaction'
 import MultiSignature from '@/services/client-multisig'
@@ -6,6 +7,9 @@ import WalletService from '@/services/wallet'
 
 export default {
   name: 'WalletTransactionsMultiSignature',
+
+  isRemote: false,
+  hasPagination: false,
 
   components: {
     TransactionTable: TransactionTableMultiSignature
@@ -110,6 +114,27 @@ export default {
       } catch (error) {
         this.$logger.error('Failed to update confirmations: ', error)
       }
+    },
+
+    onSortChange ({ source, field, type }) {
+      if (!source || source !== 'transactionsTab') {
+        return
+      }
+
+      if (!isEqual({ field, type }, this.queryParams.sort)) {
+        this.__updateParams({
+          sort: {
+            field,
+            type
+          }
+        })
+      }
+    },
+
+    reset () {
+      this.totalCount = 0
+      this.fetchedTransactions = []
+      this.newTransactionsNotice = null
     }
   }
 }

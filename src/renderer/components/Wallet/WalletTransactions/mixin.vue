@@ -16,8 +16,8 @@
       :rows="fetchedTransactions"
       :total-rows="totalCount"
       :is-loading="isLoading"
-      :is-remote="true"
-      :has-pagination="totalCount > 0"
+      :is-remote="isRemote"
+      :has-pagination="hasPagination"
       :sort-query="sortQuery"
       :per-page="transactionTableRowCount"
       :transaction-type="typeof transactionType !== 'undefined' ? transactionType : null"
@@ -29,8 +29,6 @@
 </template>
 
 <script>
-import { isEqual } from 'lodash'
-
 export default {
   props: {
     transactionType: {
@@ -60,6 +58,22 @@ export default {
   }),
 
   computed: {
+    isRemote () {
+      if (this.$options.isRemote !== undefined) {
+        return this.$options.isRemote
+      }
+
+      return true
+    },
+
+    hasPagination () {
+      if (this.$options.hasPagination !== undefined) {
+        return this.$options.hasPagination
+      }
+
+      return this.totalCount > 0
+    },
+
     sortQuery () {
       return {
         field: this.queryParams.sort.field,
@@ -116,50 +130,12 @@ export default {
       this.fetchTransactions()
     },
 
-    onPageChange ({ currentPage }) {
-      if (!currentPage) {
-        return
-      }
-
-      this.currentPage = currentPage
-      this.__updateParams({ page: currentPage })
-      this.loadTransactions()
+    onPerPageChange () {
+      // Placeholders if not used
     },
 
-    onPerPageChange ({ currentPerPage }) {
-      if (!currentPerPage) {
-        return
-      }
-
-      this.__updateParams({ limit: currentPerPage, page: 1 })
-      this.loadTransactions()
-      this.transactionTableRowCount = currentPerPage
-    },
-
-    onSortChange ({ source, field, type }) {
-      if (!source || source !== 'transactionsTab') {
-        return
-      }
-
-      if (!isEqual({ field, type }, this.queryParams.sort)) {
-        this.__updateParams({
-          sort: {
-            field,
-            type
-          },
-          page: 1
-        })
-        this.loadTransactions()
-      }
-    },
-
-    reset () {
-      this.currentPage = 1
-      this.queryParams.page = 1
-      this.totalCount = 0
-      this.fetchedTransactions = []
-      this.lastStatusRefresh = null
-      this.newTransactionsNotice = null
+    onPageChange () {
+      // Placeholders if not used
     },
 
     __updateParams (newProps) {

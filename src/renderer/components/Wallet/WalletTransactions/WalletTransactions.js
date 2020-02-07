@@ -1,4 +1,5 @@
-import { at } from 'lodash'
+import at from 'lodash/at'
+import isEqual from 'lodash/isEqual'
 import mixin from './mixin'
 import mergeTableTransactions from '@/components/utils/merge-table-transactions'
 import { TransactionTable } from '@/components/Transaction'
@@ -181,6 +182,52 @@ export default {
       if (newWallet) {
         this.enableNewTransactionEvent(newWallet.address)
       }
+    },
+
+    onPageChange ({ currentPage }) {
+      if (!currentPage) {
+        return
+      }
+
+      this.currentPage = currentPage
+      this.__updateParams({ page: currentPage })
+      this.loadTransactions()
+    },
+
+    onPerPageChange ({ currentPerPage }) {
+      if (!currentPerPage) {
+        return
+      }
+
+      this.__updateParams({ limit: currentPerPage, page: 1 })
+      this.loadTransactions()
+      this.transactionTableRowCount = currentPerPage
+    },
+
+    onSortChange ({ source, field, type }) {
+      if (!source || source !== 'transactionsTab') {
+        return
+      }
+
+      if (!isEqual({ field, type }, this.queryParams.sort)) {
+        this.__updateParams({
+          sort: {
+            field,
+            type
+          },
+          page: 1
+        })
+        this.loadTransactions()
+      }
+    },
+
+    reset () {
+      this.currentPage = 1
+      this.queryParams.page = 1
+      this.totalCount = 0
+      this.fetchedTransactions = []
+      this.lastStatusRefresh = null
+      this.newTransactionsNotice = null
     }
   }
 }
