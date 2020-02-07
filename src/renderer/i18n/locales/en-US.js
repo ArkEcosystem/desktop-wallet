@@ -1073,7 +1073,7 @@ export default {
     BRIDGECHAIN: {
       BUTTON_ADD: 'Add',
       NAME: 'Name',
-      SEED_NODE: 'Seed Node',
+      SEED_NODE: 'Seed Node IP Address',
       SEED_NODES: 'Seed Nodes',
       GENESIS_HASH: 'Genesis Hash',
       BRIDGECHAIN_REPOSITORY: 'Bridgechain Repository',
