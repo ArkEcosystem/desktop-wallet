@@ -2,6 +2,7 @@
   <ModalWindow
     :title="title || typeName"
     :container-classes="`TransactionModal ${typeClass}`"
+    :confirm-close="true"
     @close="emitCancel"
   >
     <KeepAlive>

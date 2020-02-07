@@ -69,6 +69,12 @@
                 <p v-html="message" />
               </footer>
             </slot>
+
+            <ModalCloseConfirmation
+              v-if="showConfirmationModal"
+              @cancel="showConfirmationModal = false"
+              @confirm="emitCloseAfterConfirm"
+            />
           </div>
         </div>
       </Transition>
@@ -79,12 +85,14 @@
 <script>
 import { ButtonClose } from '@/components/Button'
 import { isFunction } from 'lodash'
+import ModalCloseConfirmation from './ModalCloseConfirmation'
 
 export default {
   name: 'ModalWindow',
 
   components: {
-    ButtonClose
+    ButtonClose,
+    ModalCloseConfirmation
   },
 
   props: {
@@ -123,6 +131,11 @@ export default {
       required: false,
       default: true
     },
+    confirmClose: {
+      type: Boolean,
+      required: false,
+      default: false
+    },
     allowClose: {
       type: Boolean,
       required: false,
@@ -136,8 +149,13 @@ export default {
   },
 
   data: () => ({
-    isMaximized: true
+    isMaximized: true,
+    showConfirmationModal: false
   }),
+
+  beforeCreate () {
+    this.$options.components.ModalConfirmation = require('./ModalConfirmation').default
+  },
 
   mounted () {
     document.addEventListener('keyup', this.onEscKey, { once: true })
@@ -164,9 +182,19 @@ export default {
         return
       }
 
+      if (this.confirmClose) {
+        this.showConfirmationModal = true
+        return
+      }
+
       if (force || this.isMaximized) {
         this.$emit('close')
       }
+    },
+
+    emitCloseAfterConfirm () {
+      this.showConfirmationModal = false
+      this.$emit('close')
     },
 
     onEscKey (event) {
