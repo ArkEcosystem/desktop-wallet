@@ -400,8 +400,8 @@ export default {
 
   MODAL_CLOSE_CONFIRMATION: {
     QUESTION: 'Tem certeza que deseja fechar esta janela?',
-    CONFIRM: 'Sim, fechar.',
-    CANCEL: 'Cancelar'
+    CONFIRM: 'Sim, fechar',
+    CANCEL: 'Não, cancelar'
   },
 
   MODAL_QR_CODE: {
