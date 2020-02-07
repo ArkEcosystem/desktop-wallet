@@ -176,7 +176,7 @@ export default {
       commit('SET_NEEDS_UPDATE', needsUpdate)
 
       if (needsUpdate) {
-        this._vm.$error(i18n.t('LEDGER.NEEDS_UPDATE'))
+        this._vm.$error(i18n.t('LEDGER.NEEDS_UPDATE'), 10000)
       }
     },
 
