@@ -49,13 +49,10 @@
     tiny-glob "^0.2.6"
     wif "^2.0.6"
 
-"@arkecosystem/ledger-transport@^0.1.0":
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/@arkecosystem/ledger-transport/-/ledger-transport-0.1.1.tgz#93d03863a7b1b15c18d675d7d74d20ef8e7a38e3"
-  integrity sha512-2Xzj7ISqCGlN2VLp+cjDs0pAsezNGkYpzUOdWF9t5oGt8Xokpn+PzJ9gMPoIEoW34ReuDNYEREhHrcNff13WCA==
-  dependencies:
-    "@ledgerhq/hw-transport" "^4.7.3"
-    babel-runtime "^6.26.0"
+"@arkecosystem/ledger-transport@^1.0.0":
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/ledger-transport/-/ledger-transport-1.0.3.tgz#9d8ac25296172321aba8076a07e63ce116514c51"
+  integrity sha512-HEyCpNNmdDzcMMIOYIecUVqEYDfBfAXfEyEz8BvGC4Pna1ZR34Zmr/jy1zsDZjYHqsrRN8dJlLNUHNU7kHPPlA==
 
 "@arkecosystem/peers@^0.2.1":
   version "0.2.1"
@@ -1182,7 +1179,7 @@
     node-hid "^0.7.9"
     usb-detection "^4.3.0"
 
-"@ledgerhq/hw-transport@^4.7.3", "@ledgerhq/hw-transport@^4.71.0":
+"@ledgerhq/hw-transport@^4.71.0":
   version "4.71.0"
   resolved "https://registry.yarnpkg.com/@ledgerhq/hw-transport/-/hw-transport-4.71.0.tgz#7fbed87ca090d04fe7b9c7ee469e6c3a6c45283a"
   integrity sha512-IgPxcDd2NW4aC4ATBu1G/MroxKWOSl0spkIdMWHSnALH/iFPApaynGNFCY4QhTIULaIZCLp3mcyt/NK4HDcwpw==
