@@ -9,7 +9,7 @@
         'ModalWindow--maximized': isMaximized,
         'ModalWindow--minimized': !isMaximized
       }"
-      @click="onBackdropClick"
+      @mousedown="onBackdropClick"
     >
       <Transition name="ModalWindow">
         <div class="ModalWindow__wrapper flex items-center justify-center absolute">
@@ -19,7 +19,7 @@
               [containerClassesMinimized]: !isMaximized,
             }]"
             class="ModalWindow__container flex flex-col mx-auto rounded-lg relative transition text-theme-text-content"
-            @click.stop="void 0"
+            @mousedown.stop="void 0"
           >
             <section class="ModalWindow__container__content">
               <div class="ModalWindow__container__actions">
