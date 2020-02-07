@@ -44,7 +44,7 @@
           v-model="$v.form.walletPassword.$model"
           :label="$t('TRANSACTION.PASSWORD')"
           :is-required="true"
-          class="TransactionFormBusinessResignation__password"
+          class="TransactionFormBusinessResignation__password mt-4"
         />
 
         <PassphraseInput
@@ -53,7 +53,7 @@
           v-model="$v.form.passphrase.$model"
           :address="currentWallet.address"
           :pub-key-hash="walletNetwork.version"
-          class="TransactionFormBusinessResignation__passphrase"
+          class="TransactionFormBusinessResignation__passphrase mt-4"
         />
       </div>
 

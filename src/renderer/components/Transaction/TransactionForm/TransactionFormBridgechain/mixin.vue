@@ -112,7 +112,7 @@
             v-model="$v.form.walletPassword.$model"
             :label="$t('TRANSACTION.PASSWORD')"
             :is-required="true"
-            class="TransactionFormBridgechain__password"
+            class="TransactionFormBridgechain__password mt-4"
           />
 
           <PassphraseInput
@@ -121,7 +121,7 @@
             v-model="$v.form.passphrase.$model"
             :address="currentWallet.address"
             :pub-key-hash="walletNetwork.version"
-            class="TransactionFormBridgechain__passphrase"
+            class="TransactionFormBridgechain__passphrase mt-4"
           />
         </div>
 
