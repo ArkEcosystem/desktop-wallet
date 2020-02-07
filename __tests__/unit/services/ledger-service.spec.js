@@ -45,6 +45,15 @@ describe('LedgerService', () => {
     })
   })
 
+  describe('getVersion', () => {
+    it('should run', async () => {
+      const response = await ledgerService.getVersion()
+
+      expect(response).toBe('1.0.0')
+      expect(ledgerService.ledger.getVersion).toHaveBeenCalledTimes(1)
+    })
+  })
+
   describe('signTransaction', () => {
     it('should run', async () => {
       const response = await ledgerService.signTransaction('44\'/1\'/0\'/0/0', '1234')

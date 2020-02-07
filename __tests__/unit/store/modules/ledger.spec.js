@@ -14,6 +14,8 @@ Vue.use(apiClient)
 logger.error = jest.fn()
 
 let ledgerNameByAddress = () => null
+const sessionNetwork = jest.fn()
+
 let ledgerCache = false
 const nethash = '2a44f340d76ffc3df204c5f38cd355b7496c9065a1ade2ef92071436bd72e867'
 const store = new Vuex.Store({
@@ -34,10 +36,7 @@ const store = new Vuex.Store({
           return 'profile id'
         },
         network () {
-          return {
-            id: 'abc',
-            nethash
-          }
+          return sessionNetwork()
         }
       }
     },
@@ -66,6 +65,17 @@ beforeEach(async () => {
   }
 
   store.replaceState(JSON.parse(JSON.stringify(initialState)))
+
+  sessionNetwork.mockReturnValue({
+    id: 'abc',
+    nethash,
+    constants: {
+      aip11: false
+    }
+  })
+
+  store._vm.$error = jest.fn()
+
   ClientService.host = 'http://127.0.0.1'
   ledgerNameByAddress = () => null
   nock.cleanAll()
@@ -82,6 +92,42 @@ describe('ledger store module', () => {
     await store.dispatch('ledger/init', 4567)
 
     expect(store.state.ledger.slip44).toBe(4567)
+  })
+
+  describe('updateVersion', () => {
+    it('should not show error if aip11 is false', async () => {
+      await store.dispatch('ledger/updateVersion')
+
+      expect(store._vm.$error).not.toHaveBeenCalled()
+    })
+
+    it('should not show error if aip11 is false', async () => {
+      sessionNetwork.mockReturnValue({
+        id: 'abc',
+        nethash,
+        constants: {
+          aip11: true
+        }
+      })
+
+      await store.dispatch('ledger/updateVersion')
+
+      expect(store._vm.$error).toHaveBeenCalledWith(
+        'Please update your Ledger ARK app via Ledger Live to continue using Ledger inside wallet',
+        10000
+      )
+    })
+  })
+
+  describe('getVersion', () => {
+    it('should return version', async () => {
+      expect(await store.dispatch('ledger/getVersion')).toEqual('1.0.0')
+    })
+
+    it('should fail when not connected', async () => {
+      await disconnectLedger()
+      await expect(store.dispatch('ledger/getVersion')).rejects.toThrow(/.*Ledger not connected$/)
+    })
   })
 
   describe('getWallet', () => {
