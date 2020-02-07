@@ -95,7 +95,7 @@ describe.each([
 
         await wrapper.vm.$nextTick()
 
-        expect(props).toEqual({
+        const expectedProps = {
           'current-page': 1,
           rows: [],
           'total-rows': 0,
@@ -107,7 +107,13 @@ describe.each([
             type: 'desc'
           },
           'per-page': 10
-        })
+        }
+
+        if (componentName === 'WalletTransactionsMultiSignature') {
+          expectedProps['is-remote'] = false
+        }
+
+        expect(props).toEqual(expectedProps)
 
         if (componentName === 'WalletTransactions') {
           expect(props['transaction-type']).toBe(undefined)
@@ -133,7 +139,7 @@ describe.each([
 
         await wrapper.vm.$nextTick()
 
-        expect(props).toEqual({
+        const expectedProps = {
           'current-page': 3,
           rows: ['test'],
           'total-rows': 12,
@@ -145,7 +151,14 @@ describe.each([
             type: 'asc'
           },
           'per-page': 20
-        })
+        }
+
+        if (componentName === 'WalletTransactionsMultiSignature') {
+          expectedProps['is-remote'] = false
+          expectedProps['has-pagination'] = false
+        }
+
+        expect(props).toEqual(expectedProps)
 
         if (componentName === 'WalletTransactions') {
           expect(wrapper.find('.TransactionTable').props('transactionType')).toBe(7)
@@ -292,71 +305,73 @@ describe.each([
       })
     })
 
-    describe('onPageChange', () => {
-      it('should update page data', () => {
-        const updateParamsSpy = jest.spyOn(wrapper.vm, '__updateParams')
-        const loadTransactionsSpy = jest.spyOn(wrapper.vm, 'loadTransactions')
+    if (componentName === 'WalletTransactions') {
+      describe('onPageChange', () => {
+        it('should update page data', () => {
+          const updateParamsSpy = jest.spyOn(wrapper.vm, '__updateParams')
+          const loadTransactionsSpy = jest.spyOn(wrapper.vm, 'loadTransactions')
 
-        expect(wrapper.vm.currentPage).toBe(1)
+          expect(wrapper.vm.currentPage).toBe(1)
 
-        wrapper.vm.onPageChange({ currentPage: 10 })
+          wrapper.vm.onPageChange({ currentPage: 10 })
 
-        expect(wrapper.vm.currentPage).toBe(10)
-        expect(wrapper.vm.queryParams.page).toBe(10)
-        expect(updateParamsSpy).toHaveBeenCalledTimes(1)
-        expect(updateParamsSpy).toHaveBeenCalledWith({ page: 10 })
-        expect(loadTransactionsSpy).toHaveBeenCalledTimes(1)
+          expect(wrapper.vm.currentPage).toBe(10)
+          expect(wrapper.vm.queryParams.page).toBe(10)
+          expect(updateParamsSpy).toHaveBeenCalledTimes(1)
+          expect(updateParamsSpy).toHaveBeenCalledWith({ page: 10 })
+          expect(loadTransactionsSpy).toHaveBeenCalledTimes(1)
+        })
+
+        it('should do nothing if invalid page', () => {
+          const updateParamsSpy = jest.spyOn(wrapper.vm, '__updateParams')
+          const loadTransactionsSpy = jest.spyOn(wrapper.vm, 'loadTransactions')
+
+          expect(wrapper.vm.currentPage).toBe(1)
+
+          wrapper.vm.onPageChange({ currentPage: null })
+
+          expect(wrapper.vm.currentPage).toBe(1)
+          expect(wrapper.vm.queryParams.page).toBe(1)
+          expect(updateParamsSpy).not.toHaveBeenCalled()
+          expect(loadTransactionsSpy).not.toHaveBeenCalled()
+        })
       })
 
-      it('should do nothing if invalid page', () => {
-        const updateParamsSpy = jest.spyOn(wrapper.vm, '__updateParams')
-        const loadTransactionsSpy = jest.spyOn(wrapper.vm, 'loadTransactions')
+      describe('onPerPageChange', () => {
+        it('should update page data', () => {
+          const updateParamsSpy = jest.spyOn(wrapper.vm, '__updateParams')
+          const loadTransactionsSpy = jest.spyOn(wrapper.vm, 'loadTransactions')
 
-        expect(wrapper.vm.currentPage).toBe(1)
+          wrapper.vm.queryParams.page = 11
+          expect(wrapper.vm.queryParams.limit).toBe(10)
 
-        wrapper.vm.onPageChange({ currentPage: null })
+          wrapper.vm.onPerPageChange({ currentPerPage: 20 })
 
-        expect(wrapper.vm.currentPage).toBe(1)
-        expect(wrapper.vm.queryParams.page).toBe(1)
-        expect(updateParamsSpy).not.toHaveBeenCalled()
-        expect(loadTransactionsSpy).not.toHaveBeenCalled()
+          expect(wrapper.vm.queryParams.limit).toBe(20)
+          expect(wrapper.vm.queryParams.page).toBe(1)
+          expect(updateParamsSpy).toHaveBeenCalledTimes(1)
+          expect(updateParamsSpy).toHaveBeenCalledWith({ limit: 20, page: 1 })
+          expect(loadTransactionsSpy).toHaveBeenCalledTimes(1)
+          expect(dispatchMock).toHaveBeenCalledWith('session/setTransactionTableRowCount', 20)
+        })
+
+        it('should do nothing if invalid page', () => {
+          const updateParamsSpy = jest.spyOn(wrapper.vm, '__updateParams')
+          const loadTransactionsSpy = jest.spyOn(wrapper.vm, 'loadTransactions')
+
+          wrapper.vm.queryParams.page = 11
+          expect(wrapper.vm.queryParams.limit).toBe(10)
+
+          wrapper.vm.onPerPageChange({ currentPerPage: null })
+
+          expect(wrapper.vm.queryParams.limit).toBe(10)
+          expect(wrapper.vm.queryParams.page).toBe(11)
+          expect(updateParamsSpy).not.toHaveBeenCalled()
+          expect(loadTransactionsSpy).not.toHaveBeenCalled()
+          expect(dispatchMock).not.toHaveBeenCalledWith('session/setTransactionTableRowCount', 20)
+        })
       })
-    })
-
-    describe('onPerPageChange', () => {
-      it('should update page data', () => {
-        const updateParamsSpy = jest.spyOn(wrapper.vm, '__updateParams')
-        const loadTransactionsSpy = jest.spyOn(wrapper.vm, 'loadTransactions')
-
-        wrapper.vm.queryParams.page = 11
-        expect(wrapper.vm.queryParams.limit).toBe(10)
-
-        wrapper.vm.onPerPageChange({ currentPerPage: 20 })
-
-        expect(wrapper.vm.queryParams.limit).toBe(20)
-        expect(wrapper.vm.queryParams.page).toBe(1)
-        expect(updateParamsSpy).toHaveBeenCalledTimes(1)
-        expect(updateParamsSpy).toHaveBeenCalledWith({ limit: 20, page: 1 })
-        expect(loadTransactionsSpy).toHaveBeenCalledTimes(1)
-        expect(dispatchMock).toHaveBeenCalledWith('session/setTransactionTableRowCount', 20)
-      })
-
-      it('should do nothing if invalid page', () => {
-        const updateParamsSpy = jest.spyOn(wrapper.vm, '__updateParams')
-        const loadTransactionsSpy = jest.spyOn(wrapper.vm, 'loadTransactions')
-
-        wrapper.vm.queryParams.page = 11
-        expect(wrapper.vm.queryParams.limit).toBe(10)
-
-        wrapper.vm.onPerPageChange({ currentPerPage: null })
-
-        expect(wrapper.vm.queryParams.limit).toBe(10)
-        expect(wrapper.vm.queryParams.page).toBe(11)
-        expect(updateParamsSpy).not.toHaveBeenCalled()
-        expect(loadTransactionsSpy).not.toHaveBeenCalled()
-        expect(dispatchMock).not.toHaveBeenCalledWith('session/setTransactionTableRowCount', 20)
-      })
-    })
+    }
 
     describe('onSortChange', () => {
       let spyUpdateParams, spyLoadTransactions
@@ -374,14 +389,20 @@ describe.each([
         })
 
         expect(spyUpdateParams).toHaveBeenCalledTimes(1)
-        expect(spyUpdateParams).toHaveBeenCalledWith({
+
+        const expectedUpdateParams = {
           sort: {
             field: 'amount',
             type: 'desc'
-          },
-          page: 1
-        })
-        expect(spyLoadTransactions).toHaveBeenCalledTimes(1)
+          }
+        }
+
+        if (componentName === 'WalletTransactions') {
+          expectedUpdateParams.page = 1
+          expect(spyLoadTransactions).toHaveBeenCalledTimes(1)
+        }
+
+        expect(spyUpdateParams).toHaveBeenCalledWith(expectedUpdateParams)
       })
 
       it('should update sort column direction', () => {
@@ -392,14 +413,20 @@ describe.each([
         })
 
         expect(spyUpdateParams).toHaveBeenCalledTimes(1)
-        expect(spyUpdateParams).toHaveBeenCalledWith({
+
+        const expectedUpdateParams = {
           sort: {
             field: 'timestamp',
             type: 'asc'
-          },
-          page: 1
-        })
-        expect(spyLoadTransactions).toHaveBeenCalledTimes(1)
+          }
+        }
+
+        if (componentName === 'WalletTransactions') {
+          expectedUpdateParams.page = 1
+          expect(spyLoadTransactions).toHaveBeenCalledTimes(1)
+        }
+
+        expect(spyUpdateParams).toHaveBeenCalledWith(expectedUpdateParams)
       })
 
       it('should not do anything if source is falsy', () => {
@@ -437,21 +464,37 @@ describe.each([
     })
 
     describe('reset', () => {
-      it('should reset values', () => {
-        wrapper.vm.currentPage = 10
-        wrapper.vm.queryParams.page = 10
-        wrapper.vm.totalCount = 10
-        wrapper.vm.fetchedTransactions = [
-          'fake entry'
-        ]
+      if (componentName === 'WalletTransactions') {
+        it('should reset values', () => {
+          wrapper.vm.currentPage = 10
+          wrapper.vm.queryParams.page = 10
+          wrapper.vm.totalCount = 10
+          wrapper.vm.fetchedTransactions = [
+            'fake entry'
+          ]
 
-        wrapper.vm.reset()
+          wrapper.vm.reset()
 
-        expect(wrapper.vm.currentPage).toBe(1)
-        expect(wrapper.vm.queryParams.page).toBe(1)
-        expect(wrapper.vm.totalCount).toBe(0)
-        expect(wrapper.vm.fetchedTransactions).toEqual([])
-      })
+          expect(wrapper.vm.currentPage).toBe(1)
+          expect(wrapper.vm.queryParams.page).toBe(1)
+          expect(wrapper.vm.totalCount).toBe(0)
+          expect(wrapper.vm.fetchedTransactions).toEqual([])
+        })
+      } else {
+        it('should reset values', () => {
+          wrapper.vm.newTransactionsNotice = 'TEST NOTICE'
+          wrapper.vm.totalCount = 10
+          wrapper.vm.fetchedTransactions = [
+            'fake entry'
+          ]
+
+          wrapper.vm.reset()
+
+          expect(wrapper.vm.newTransactionsNotice).toBe(null)
+          expect(wrapper.vm.totalCount).toBe(0)
+          expect(wrapper.vm.fetchedTransactions).toEqual([])
+        })
+      }
     })
 
     describe('__updateParams', () => {

@@ -590,7 +590,7 @@ describe.each([
         wrapper.vm.$v.seedNode.$reset()
 
         expect(wrapper.vm.$v.seedNode.$dirty).toBe(false)
-        expect(wrapper.vm.$v.seedNode.$invalid).toBe(true)
+        expect(wrapper.vm.$v.seedNode.$invalid).toBe(false)
         expect(wrapper.vm.seedNodeError).toBe(null)
       })
 
