@@ -71,17 +71,40 @@ describe('ModalWindow', () => {
       expect(wrapper.emitted('close')).toBeTruthy()
     })
 
-    it('should emit a close event when clicks the mask', () => {
-      const wrapper = mount(ModalWindow, { stubs })
-      const mask = wrapper.find('.ModalWindow')
-      mask.trigger('click')
-      expect(wrapper.emitted('close')).toBeTruthy()
-    })
-
-    it('should not close when pressing inside the modal', () => {
+    it('should not close when clicking inside the modal', () => {
       const wrapper = mount(ModalWindow, { stubs })
       const modal = wrapper.find('.ModalWindow__container')
       modal.trigger('click')
+      expect(wrapper.emitted('close')).toBeFalsy()
+    })
+
+    it('should not close when mousedown inside the modal', () => {
+      const wrapper = mount(ModalWindow, { stubs })
+      const modal = wrapper.find('.ModalWindow__container')
+      modal.trigger('mousedown')
+      expect(wrapper.emitted('close')).toBeFalsy()
+    })
+
+    it('should close when firing mousedown inside the mask', () => {
+      const wrapper = mount(ModalWindow, { stubs })
+      const mask = wrapper.find('.ModalWindow')
+      mask.trigger('mousedown')
+      expect(wrapper.emitted('close')).toBeTruthy()
+    })
+
+    it('should not close event when firing mouseup only inside the mask', () => {
+      const wrapper = mount(ModalWindow, { stubs })
+      const mask = wrapper.find('.ModalWindow')
+      mask.trigger('mouseup')
+      expect(wrapper.emitted('close')).toBeFalsy()
+    })
+
+    it('should not close event when firing mousedown inside the container and mouseup inside the wrapper', () => {
+      const wrapper = mount(ModalWindow, { stubs })
+      const modal = wrapper.find('.ModalWindow__container')
+      const mask = wrapper.find('.ModalWindow')
+      modal.trigger('mousedown')
+      mask.trigger('mouseup')
       expect(wrapper.emitted('close')).toBeFalsy()
     })
   })
