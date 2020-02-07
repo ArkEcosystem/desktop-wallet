@@ -108,8 +108,8 @@ export default {
         return []
       }
 
-      if (!this.currentWallet.multiSignature) {
-        if (!this.currentWallet.isLedger && !this.currentWallet.secondPublicKey) {
+      if (!this.currentWallet.isLedger && !this.currentWallet.multiSignature) {
+        if (!this.currentWallet.secondPublicKey) {
           types.push({
             label: this.$t('WALLET_HEADING.ACTIONS.SECOND_PASSPHRASE'),
             type: TRANSACTION_TYPES.GROUP_1.SECOND_SIGNATURE
@@ -124,7 +124,8 @@ export default {
         }
       }
 
-      if (!this.currentNetwork.constants || !this.currentNetwork.constants.aip11) {
+      // TODO: Remove ledger check when ledger app supports multisig, business & bridgechain transactions
+      if (this.currentWallet.isLedger || !this.currentNetwork.constants || !this.currentNetwork.constants.aip11) {
         return types
       }
 
@@ -135,7 +136,7 @@ export default {
         })
       }
 
-      if (this.currentWallet.isDelegate) {
+      if (!this.currentWallet.isLedger && this.currentWallet.isDelegate) {
         types.push({
           label: this.$t('WALLET_HEADING.ACTIONS.RESIGN_DELEGATE'),
           type: TRANSACTION_TYPES.GROUP_1.DELEGATE_RESIGNATION
