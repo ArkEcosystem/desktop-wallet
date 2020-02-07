@@ -1,9 +1,12 @@
 import got from 'got'
 // import dayjs from 'dayjs'
 // import { min, max } from 'lodash'
+import { convert } from 'cashify'
 import { MARKET } from '@config'
 
-// const BASE_CURRENCY = 'USD'
+const BASE_CURRENCY = 'USD'
+const TOKEN_ID = 'ARK'
+const AMOUNT_TO_CONVERT = 1
 
 export default class CoinCapAdapter {
   /**
@@ -29,7 +32,7 @@ export default class CoinCapAdapter {
         return map
       }, {})
 
-      return this.tokenLookup[token.toUpperCase()] || token.toLowerCase
+      return this.tokenLookup[token.toUpperCase()] || token
     } catch (error) {
     }
 
@@ -40,20 +43,15 @@ export default class CoinCapAdapter {
    * Get ark data from api
    * @return {(Object|null)}
    */
-  static async getArkRate () {
-    let arkRate = {}
-
+  static async getArkData () {
     try {
       const uri = `${MARKET.source.coinCap}/assets/ark`
       const { body } = await got(uri, {
         json: true
       })
       const { data } = body
-      const { symbol, priceUsd } = data
 
-      arkRate[symbol.toUpperCase()] = priceUsd
-
-      return arkRate
+      return data
     } catch (error) {
     }
 
@@ -61,10 +59,12 @@ export default class CoinCapAdapter {
   }
 
   /**
-   * Get data rates from api
+   * Get currency data from api
    * @return {(Object|null)}
    */
-  static async getRates () {
+  static async getCurrencyData () {
+    let currencyData = {}
+    let ratesData = {}
     let rates = {}
 
     try {
@@ -72,18 +72,28 @@ export default class CoinCapAdapter {
       const { body } = await got(uri, {
         json: true
       })
-      const { data } = body
-      const arkRate = await this.getArkRate()
+      const { data, timestamp } = body
+      const arkData = await this.getArkData()
+
+      ratesData = data.reduce((map, value, index) => {
+        map[value.symbol.toUpperCase()] = value
+
+        return map
+      }, { [arkData.symbol.toUpperCase()]: arkData })
 
       rates = data.reduce((map, value, index) => {
         map[value.symbol.toUpperCase()] = value.rateUsd
 
         return map
-      }, {})
+      }, { [arkData.symbol.toUpperCase()]: arkData.priceUsd })
 
-      rates = Object.assign({}, rates, arkRate)
+      currencyData = {
+        data: ratesData,
+        rates,
+        timestamp
+      }
 
-      return rates
+      return currencyData
     } catch (error) {
     }
 
@@ -109,5 +119,49 @@ export default class CoinCapAdapter {
     } catch (error) {
       return null
     }
+  }
+
+  /**
+   * Fetch market data from API.
+   * @param {String} token
+   * @return {(Object|null)} Return API response data or null on failure
+   */
+  static async fetchMarketData (token) {
+    const tokenId = await this.getTokenId(token)
+    const currencyData = await this.getCurrencyData()
+
+    return this.__transformMarketResponse(currencyData, tokenId)
+  }
+
+  /**
+   * Normalize market data reponse to a object
+   * @param {Object} response
+   * @return {Object}
+   */
+  static __transformMarketResponse (marketData, token = TOKEN_ID) {
+    const marketResponse = {}
+
+    const lastUpdated = new Date(marketData.timestamp)
+
+    for (const currency of Object.keys(MARKET.currencies)) {
+      if (!marketData.data[currency]) {
+        continue
+      }
+
+      const { rates } = marketData
+
+      marketResponse[currency] = {
+        currency,
+        price: convert(
+          AMOUNT_TO_CONVERT, { from: currency, to: token, base: BASE_CURRENCY, rates }
+        ),
+        marketCap: marketData.data[token].marketCapUsd * (rates[BASE_CURRENCY] / rates[currency]),
+        volume: marketData.data[token].volumeUsd24Hr * (rates[BASE_CURRENCY] / rates[currency]),
+        date: lastUpdated,
+        change24h: null
+      }
+    }
+
+    return marketResponse
   }
 }
