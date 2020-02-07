@@ -248,7 +248,7 @@ export default {
     async createWallet () {
       try {
         try {
-          const wallet = this.$client.fetchWallet(this.wallet.address)
+          const wallet = await this.$client.fetchWallet(this.wallet.address)
           if (wallet.multiSignature) {
             this.wallet.multiSignature = wallet.multiSignature
           }
