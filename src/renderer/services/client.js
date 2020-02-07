@@ -1333,6 +1333,9 @@ export default class ClientService {
     }
 
     if (multiSignature) {
+      if (!transaction.data.senderPublicKey) {
+        transaction.senderPublicKey(WalletService.getPublicKeyFromMultiSignatureAsset(multiSignature))
+      }
       const transactionJson = transaction.build().toJson()
       transactionJson.multiSignature = multiSignature
       if (!transactionJson.signatures) {
