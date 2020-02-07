@@ -175,7 +175,7 @@
 </template>
 
 <script type="text/javascript">
-import { maxLength, minLength, numeric, required, url } from 'vuelidate/lib/validators'
+import { ipAddress, maxLength, minLength, numeric, required, url } from 'vuelidate/lib/validators'
 import { ButtonGeneric } from '@/components/Button'
 import { InputFee, InputPassword, InputText } from '@/components/Input'
 import { ListDivided, ListDividedItem } from '@/components/ListDivided'
@@ -421,7 +421,7 @@ export default {
 
       this.invalidSeeds = invalidSeeds
       if (invalidSeeds.length) {
-        this.$error(this.$tc('TRANSACTION.BRIDGECHAIN.INVALID_PEERS', invalidSeeds.length))
+        this.$error(this.$tc('TRANSACTION.BRIDGECHAIN.INVALID_SEEDS', invalidSeeds.length))
       }
 
       this.showValidatingModal = false
@@ -434,7 +434,7 @@ export default {
         return !this.form.seedNodes.find(seedNode => seedNode.ip === value)
       },
       isValidSeed (value) {
-        return /^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9\\-]*[A-Za-z0-9])$/.test(value)
+        return ipAddress(value)
       },
       belowMax (value) {
         return this.$v.form.seedNodes.$model.length < maxSeedNodes

@@ -1080,7 +1080,7 @@ export default {
       API_PORT: 'API Port',
       ERROR_DUPLICATE: 'The seed node has already been added',
       NO_PEERS: 'There are no peers',
-      INVALID_PEERS: 'You have an invalid seed node | You have invalid seed nodes'
+      INVALID_SEEDS: 'You have an invalid seed node - please check it is up and running correctly | You have invalid seed nodes - please check they are up and running correctly'
     },
     WARNING: {
       BROADCAST: 'Transaction was broadcasted to other peers. It may not be accepted by them'
