@@ -131,6 +131,17 @@ class LedgerService {
   }
 
   /**
+   * Get version of ledger wallet.
+   * @param  {Number} path Path for wallet location.
+   * @return {(String|Boolean)}
+   */
+  async getVersion () {
+    return this.__performAction(async () => {
+      return this.ledger.getVersion()
+    })
+  }
+
+  /**
    * Sign transaction for ledger wallet.
    * @param  {Function} [action] Method to run in an synchronous queue.
    * @return {Promise}

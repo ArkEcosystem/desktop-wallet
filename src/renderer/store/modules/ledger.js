@@ -2,7 +2,9 @@ import cryptoLibrary from 'crypto'
 import { keyBy } from 'lodash'
 import logger from 'electron-log'
 import Vue from 'vue'
+import semver from 'semver'
 import { Identities } from '@arkecosystem/crypto'
+import i18n from '@/i18n'
 import eventBus from '@/plugins/event-bus'
 import ledgerService from '@/services/ledger-service'
 
@@ -14,13 +16,17 @@ export default {
     isConnected: false,
     wallets: {},
     walletCache: {},
-    loadingProcesses: {}
+    loadingProcesses: {},
+    needsUpdate: false,
+    ensureConnection: false
   },
 
   getters: {
     isLoading: state => Object.keys(state.loadingProcesses).length,
     shouldStopLoading: state => processId => state.loadingProcesses[processId],
     isConnected: state => state.isConnected,
+    needsUpdate: state => state.needsUpdate,
+    isEnsureConnectionRunning: state => state.ensureConnection,
     wallets: state => Object.values(state.wallets),
     walletsObject: state => state.wallets,
     wallet: state => (address) => {
@@ -63,9 +69,17 @@ export default {
       state.isConnected = false
       state.wallets = {}
       state.loadingProcesses = {}
+      state.needsUpdate = false
+      state.ensureConnection = false
     },
     SET_SLIP44 (state, slip44) {
       state.slip44 = slip44
+    },
+    SET_NEEDS_UPDATE (state, needsUpdate) {
+      state.needsUpdate = needsUpdate
+    },
+    SET_ENSURE_CONNECTION (state, ensureConnection) {
+      state.ensureConnection = ensureConnection
     },
     SET_LOADING (state, processId) {
       Vue.set(state.loadingProcesses, processId, false)
@@ -136,23 +150,53 @@ export default {
      * Initialise ledger service with ark-ledger library.
      * @param {Number} slip44
      */
-    async init ({ dispatch }, slip44) {
+    async init ({ dispatch, getters }, slip44) {
       dispatch('setSlip44', slip44)
       dispatch('ensureConnection')
+
+      const neededUpdate = getters.needsUpdate
+      await dispatch('updateVersion')
+
+      if (!getters.needsUpdate && neededUpdate !== getters.needsUpdate) {
+        eventBus.emit('ledger:connected')
+      }
+    },
+
+    /**
+     * Update flag to determine if ledger app needs update.
+     */
+    async updateVersion ({ commit, dispatch, rootGetters }) {
+      const network = rootGetters['session/network']
+
+      let needsUpdate = false
+      if (network.constants && network.constants.aip11 && semver.lt(await dispatch('getVersion'), '1.2.0')) {
+        needsUpdate = true
+      }
+
+      commit('SET_NEEDS_UPDATE', needsUpdate)
+
+      if (needsUpdate) {
+        this._vm.$error(i18n.t('LEDGER.NEEDS_UPDATE'))
+      }
     },
 
     /**
      * Try connecting to ledger device.
      * @return {Boolean} true if connected, false if failed
      */
-    async connect ({ commit, dispatch }) {
+    async connect ({ commit, dispatch, getters }) {
       if (!await ledgerService.connect()) {
         return false
       }
 
       commit('SET_CONNECTED', true)
-      eventBus.emit('ledger:connected')
-      await dispatch('reloadWallets', {})
+
+      await dispatch('updateVersion')
+
+      if (!getters.needsUpdate) {
+        eventBus.emit('ledger:connected')
+        await dispatch('reloadWallets', {})
+      }
 
       return true
     },
@@ -175,7 +219,13 @@ export default {
      * @param  {Number} [obj.delay=2000] Delay in between connection attempts.
      * @return {void}
      */
-    async ensureConnection ({ commit, state, dispatch }, { delay } = { delay: 2000 }) {
+    async ensureConnection ({ commit, dispatch, getters, state }, { delay, reRun } = { delay: 2000, reRun: false }) {
+      if (!reRun && getters.isEnsureConnectionRunning) {
+        return
+      }
+
+      commit('SET_ENSURE_CONNECTION', true)
+
       if (state.isConnected && !await dispatch('checkConnected')) {
         await dispatch('disconnect')
         delay = 2000
@@ -188,7 +238,7 @@ export default {
       }
 
       setTimeout(() => {
-        dispatch('ensureConnection', { delay })
+        dispatch('ensureConnection', { delay, reRun: true })
       }, delay)
     },
 
@@ -235,6 +285,13 @@ export default {
         }
 
         await commit('STOP_ALL_LOADING_PROCESSES')
+      }
+
+      if (getters.needsUpdate) {
+        commit('SET_WALLETS', {})
+        await commit('STOP_ALL_LOADING_PROCESSES')
+
+        return {}
       }
 
       const profileId = rootGetters['session/profileId']
@@ -397,6 +454,22 @@ export default {
      * @param  {Number} accountIndex Index of wallet to get data for.
      * @return {(String|Boolean)}
      */
+    async getVersion ({ dispatch }) {
+      try {
+        return await dispatch('action', {
+          action: 'getVersion'
+        })
+      } catch (error) {
+        logger.error(error)
+        throw new Error(`Could not get version: ${error}`)
+      }
+    },
+
+    /**
+     * Get address and public key from ledger wallet.
+     * @param  {Number} accountIndex Index of wallet to get data for.
+     * @return {(String|Boolean)}
+     */
     async getWallet ({ dispatch }, accountIndex) {
       try {
         return await dispatch('action', {
@@ -492,7 +565,7 @@ export default {
      * @return {String}
      */
     async action ({ state, dispatch, rootGetters }, { action, accountIndex, data } = {}) {
-      if (accountIndex === undefined || !Number.isFinite(accountIndex)) {
+      if (action !== 'getVersion' && (accountIndex === undefined || !Number.isFinite(accountIndex))) {
         throw new Error('accountIndex must be a Number')
       }
 
@@ -528,6 +601,9 @@ export default {
         },
         async signMessage () {
           return ledgerService.signMessage(path, data)
+        },
+        async getVersion () {
+          return ledgerService.getVersion()
         }
       }
 

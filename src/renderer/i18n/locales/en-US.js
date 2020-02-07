@@ -125,6 +125,10 @@ export default {
     FAILED_ENCRYPT: 'Failed to encrypt passphrase'
   },
 
+  LEDGER: {
+    NEEDS_UPDATE: 'Please update your Ledger ARK app via Ledger Live to continue using Ledger inside wallet'
+  },
+
   PEER: {
     BEST: 'Connect to best',
     CONNECTED: 'Connected to peer',
