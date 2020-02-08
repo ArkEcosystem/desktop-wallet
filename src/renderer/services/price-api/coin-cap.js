@@ -1,11 +1,12 @@
 import got from 'got'
-// import dayjs from 'dayjs'
-// import { min, max } from 'lodash'
+import dayjs from 'dayjs'
+import moment from 'moment'
+import { min, max } from 'lodash'
 import { convert } from 'cashify'
 import { MARKET } from '@config'
 
+// All prices on the CoinCap API are standardized in USD (United States Dollar)
 const BASE_CURRENCY = 'USD'
-const TOKEN_ID = 'ARK'
 const AMOUNT_TO_CONVERT = 1
 
 export default class CoinCapAdapter {
@@ -14,7 +15,7 @@ export default class CoinCapAdapter {
    * @param  {String} token
    * @return {(String|null)}
    */
-  static async getTokenId (token, limit = 500) {
+  static async getTokenId (token, limit = 1000) {
     if (this.tokenLookup) {
       return this.tokenLookup[token.toUpperCase()]
     }
@@ -43,7 +44,7 @@ export default class CoinCapAdapter {
    * Get ark data from api
    * @return {(Object|null)}
    */
-  static async getArkData () {
+  static async fetchArkData () {
     try {
       const uri = `${MARKET.source.coinCap}/assets/ark`
       const { body } = await got(uri, {
@@ -69,7 +70,7 @@ export default class CoinCapAdapter {
         json: true
       })
       const { data, timestamp } = body
-      const arkData = await this.getArkData()
+      const arkData = await this.fetchArkData()
 
       const currencyData = data.reduce((map, value, index) => {
         map[value.symbol.toUpperCase()] = value
@@ -128,11 +129,38 @@ export default class CoinCapAdapter {
   }
 
   /**
+   * Fetch historical data from API.
+   * @param {String} token
+   * @param {String} currency
+   * @param {Number} limit
+   * @param {String} type
+   * @param {String} dateFormat
+   * @return {(Object|null)} Return API response data or null on failure
+   */
+  static async fetchHistoricalData (token, currency, days, _, dateFormat = 'DD.MM') {
+    const tokenId = await this.getTokenId(token)
+    const currencyData = await this.getCurrencyData()
+    const { rates } = currencyData
+    const daysSubtract = days === 24 ? 1 : days
+    const timeInterval = days === 24 ? 'h1' : 'd1'
+    const startDate = moment().subtract(daysSubtract, 'd').valueOf()
+    const endDate = moment().valueOf()
+    const { body } = await got(`${MARKET.source.coinCap}/assets/${tokenId}/history?interval=${timeInterval}&start=${startDate}&end=${endDate}`, {
+      json: true
+    })
+    const { data } = body
+
+    return this.__transformHistoricalResponse(data, currency, rates, dateFormat)
+  }
+
+  /**
    * Normalize market data reponse to a object
    * @param {Object} response
+   * @param {String} token
    * @return {Object}
    */
-  static __transformMarketResponse (marketData, tokenId = TOKEN_ID) {
+  static __transformMarketResponse (marketData, token) {
+    const tokenId = token.toUpperCase()
     const marketResponse = {}
 
     const lastUpdated = new Date(marketData.timestamp)
@@ -157,5 +185,30 @@ export default class CoinCapAdapter {
     }
 
     return marketResponse
+  }
+
+  /**
+   * Prepare the historical data response to be used in charts
+   * @param {Object} response
+   * @param {String} currency
+   * @param {Object} rates
+   * @param {String} dateFormat
+   * @return {Object}
+   */
+  static __transformHistoricalResponse (response, currency, rates, dateFormat) {
+    const datasets = {}
+
+    for (let i = 0; i < response.length; i++) {
+      datasets[dayjs(response[i].date).format(dateFormat)] = convert(
+        response[i].priceUsd, { from: BASE_CURRENCY, to: currency, base: BASE_CURRENCY, rates }
+      )
+    }
+
+    return {
+      labels: Object.keys(datasets),
+      datasets: Object.values(datasets),
+      min: min(Object.values(datasets)),
+      max: max(Object.values(datasets))
+    }
   }
 }
