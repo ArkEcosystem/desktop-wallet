@@ -453,7 +453,7 @@ export default {
       return {
         coingecko: 'CoinGecko',
         cryptocompare: 'CryptoCompare',
-        coinCap: 'CoinCap'
+        coincap: 'CoinCap'
       }
     },
 
