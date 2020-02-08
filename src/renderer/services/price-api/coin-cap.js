@@ -14,13 +14,13 @@ export default class CoinCapAdapter {
    * @param  {String} token
    * @return {(String|null)}
    */
-  static async getTokenId (token) {
+  static async getTokenId (token, limit = 500) {
     if (this.tokenLookup) {
       return this.tokenLookup[token.toUpperCase()]
     }
 
     try {
-      const uri = `${MARKET.source.coinCap}/rates`
+      const uri = `${MARKET.source.coinCap}/assets?limit=${limit}`
       const { body } = await got(uri, {
         json: true
       })
@@ -32,7 +32,7 @@ export default class CoinCapAdapter {
         return map
       }, {})
 
-      return this.tokenLookup[token.toUpperCase()] || token
+      return this.tokenLookup[token.toUpperCase()]
     } catch (error) {
     }
 
@@ -63,9 +63,6 @@ export default class CoinCapAdapter {
    * @return {(Object|null)}
    */
   static async getCurrencyData () {
-    let currencyData = {}
-    let rates = {}
-
     try {
       const uri = `${MARKET.source.coinCap}/rates`
       const { body } = await got(uri, {
@@ -74,13 +71,13 @@ export default class CoinCapAdapter {
       const { data, timestamp } = body
       const arkData = await this.getArkData()
 
-      currencyData = data.reduce((map, value, index) => {
+      const currencyData = data.reduce((map, value, index) => {
         map[value.symbol.toUpperCase()] = value
 
         return map
       }, { [arkData.symbol.toUpperCase()]: arkData })
 
-      rates = data.reduce((map, value, index) => {
+      const rates = data.reduce((map, value, index) => {
         map[value.symbol.toUpperCase()] = value.rateUsd
 
         return map
