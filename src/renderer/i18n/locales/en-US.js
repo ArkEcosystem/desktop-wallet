@@ -126,7 +126,7 @@ export default {
   },
 
   LEDGER: {
-    NEEDS_UPDATE: 'Please update your Ledger ARK app via Ledger Live to continue using Ledger inside wallet'
+    NEEDS_UPDATE: 'Ledger update available! Please update the ARK app via Ledger Live to send transactions on this network'
   },
 
   PEER: {
