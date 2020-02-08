@@ -59,12 +59,11 @@ export default class CoinCapAdapter {
   }
 
   /**
-   * Get currency data from api
+   * Get currency data and rates from api
    * @return {(Object|null)}
    */
   static async getCurrencyData () {
     let currencyData = {}
-    let ratesData = {}
     let rates = {}
 
     try {
@@ -75,7 +74,7 @@ export default class CoinCapAdapter {
       const { data, timestamp } = body
       const arkData = await this.getArkData()
 
-      ratesData = data.reduce((map, value, index) => {
+      currencyData = data.reduce((map, value, index) => {
         map[value.symbol.toUpperCase()] = value
 
         return map
@@ -87,13 +86,11 @@ export default class CoinCapAdapter {
         return map
       }, { [arkData.symbol.toUpperCase()]: arkData.priceUsd })
 
-      currencyData = {
-        data: ratesData,
+      return {
+        currencyData,
         rates,
         timestamp
       }
-
-      return currencyData
     } catch (error) {
     }
 
@@ -124,7 +121,7 @@ export default class CoinCapAdapter {
   /**
    * Fetch market data from API.
    * @param {String} token
-   * @return {(Object|null)} Return API response data or null on failure
+   * @return {(Object|null)} Return normalized market data or null on failure
    */
   static async fetchMarketData (token) {
     const tokenId = await this.getTokenId(token)
@@ -138,25 +135,25 @@ export default class CoinCapAdapter {
    * @param {Object} response
    * @return {Object}
    */
-  static __transformMarketResponse (marketData, token = TOKEN_ID) {
+  static __transformMarketResponse (marketData, tokenId = TOKEN_ID) {
     const marketResponse = {}
 
     const lastUpdated = new Date(marketData.timestamp)
 
     for (const currency of Object.keys(MARKET.currencies)) {
-      if (!marketData.data[currency]) {
+      const { currencyData, rates } = marketData
+
+      if (!currencyData[currency]) {
         continue
       }
-
-      const { rates } = marketData
 
       marketResponse[currency] = {
         currency,
         price: convert(
-          AMOUNT_TO_CONVERT, { from: currency, to: token, base: BASE_CURRENCY, rates }
+          AMOUNT_TO_CONVERT, { from: currency, to: tokenId, base: BASE_CURRENCY, rates }
         ),
-        marketCap: marketData.data[token].marketCapUsd * (rates[BASE_CURRENCY] / rates[currency]),
-        volume: marketData.data[token].volumeUsd24Hr * (rates[BASE_CURRENCY] / rates[currency]),
+        marketCap: currencyData[tokenId].marketCapUsd * (rates[BASE_CURRENCY] / rates[currency]),
+        volume: currencyData[tokenId].volumeUsd24Hr * (rates[BASE_CURRENCY] / rates[currency]),
         date: lastUpdated,
         change24h: null
       }
