@@ -123,7 +123,8 @@ export default class WalletService {
 
   /**
    * Check if a wallet is a business wallet
-   * @param {String} address
+   * @param {Object} wallet
+   * @param {Boolean} ignoreResigned
    * @returns {Boolean}
    */
   static isBusiness (wallet, ignoreResigned = true) {
@@ -140,7 +141,7 @@ export default class WalletService {
 
   /**
    * Check if a wallet can resign as a business
-   * @param {String} address
+   * @param {Object} wallet
    * @returns {Boolean}
    */
   static canResignBusiness (wallet) {
@@ -149,6 +150,17 @@ export default class WalletService {
     }
 
     return !wallet.business.resigned
+  }
+
+  /**
+   * Check if a wallet business has bridgechains
+   * @param {Object} wallet
+   * @returns {Boolean}
+   */
+  static async hasBridgechains (wallet, vm) {
+    const bridegchains = await vm.$client.fetchBusinessBridgechains(wallet.publicKey)
+
+    return bridegchains.filter(bridgechain => !bridgechain.isResigned).length > 0
   }
 
   /**

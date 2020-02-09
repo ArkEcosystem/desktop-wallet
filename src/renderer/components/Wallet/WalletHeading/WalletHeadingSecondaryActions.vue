@@ -12,8 +12,13 @@
       <ButtonModal
         slot="button"
         slot-scope="{ item, triggerClose }"
+        v-tooltip="item.tooltip"
         :label="item.label"
-        class="option-heading-button whitespace-no-wrap w-full"
+        :disabled="item.disabled"
+        class="ButtonDropdown__ButtonModal option-heading-button whitespace-no-wrap w-full"
+        :class="{
+          'ButtonDropdown__ButtonModal__disabled': item.disabled
+        }"
         @toggle="triggerClose"
       >
         <template slot-scope="{ toggle, isOpen }">
@@ -157,13 +162,21 @@ export default {
         })
       }
 
-      if (WalletService.canResignBusiness(this.currentWallet)) {
-        types.push({
-          label: this.$t('WALLET_HEADING.ACTIONS.BUSINESS.RESIGN'),
-          group: 2,
-          type: TRANSACTION_TYPES.GROUP_2.BUSINESS_RESIGNATION
-        })
+      const businessResignOption = {
+        label: this.$t('WALLET_HEADING.ACTIONS.BUSINESS.RESIGN'),
+        group: 2,
+        type: TRANSACTION_TYPES.GROUP_2.BUSINESS_RESIGNATION
       }
+
+      if (WalletService.hasBridgechains(this.currentWallet, this)) {
+        businessResignOption.disabled = true
+        businessResignOption.tooltip = {
+          content: this.$t('WALLET_HEADING.ACTIONS.BUSINESS.CANNOT_RESIGN'),
+          placement: 'left'
+        }
+      }
+
+      types.push(businessResignOption)
 
       return types
     }
@@ -186,5 +199,14 @@ export default {
 <style scoped>
 .ButtonDropdown__list {
   background-color: var(--theme-option-heading-button);
+}
+
+.ButtonDropdown__ButtonModal__disabled {
+  background-color: var(--theme-option-heading-button-disabled);
+  color: var(--theme-option-heading-button-text-disabled);
+}
+.ButtonDropdown__ButtonModal__disabled:hover {
+  background-color: var(--theme-option-heading-button-disabled-hover);
+  color: var(--theme-option-heading-button-text-disabled-hover);
 }
 </style>

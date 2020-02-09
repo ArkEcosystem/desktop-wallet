@@ -234,11 +234,11 @@ export default class ClientService {
 
   /**
    * Fetch bridgechains for a business.
-   * @param  {(Number|String)} businessId
+   * @param  {String} publicKey
    * @return {Object}
    */
-  async fetchBusinessBridgechains (businessId) {
-    return (await this.client.api('businesses').bridgechains(businessId)).body
+  async fetchBusinessBridgechains (publicKey) {
+    return (await this.client.api('businesses').bridgechains(publicKey)).body
   }
 
   /**

@@ -1202,7 +1202,8 @@ export default {
       BUSINESS: {
         REGISTER: 'Register Business',
         RESIGN: 'Resign Business',
-        UPDATE: 'Update Business'
+        UPDATE: 'Update Business',
+        CANNOT_RESIGN: 'You must resign all bridgechains first'
       },
 
       BRIDGECHAIN: {
