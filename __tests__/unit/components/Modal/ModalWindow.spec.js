@@ -93,6 +93,19 @@ describe('ModalWindow', () => {
       expect(wrapper.emitted('close')).toBeFalsy()
     })
 
+    it('should not emit close when click close button', () => {
+      const wrapper = mount(ModalWindow, {
+        stubs,
+        i18n,
+        propsData: {
+          confirmClose: true
+        }
+      })
+      const mask = wrapper.find('.ModalWindow__close-button')
+      mask.trigger('click')
+      expect(wrapper.emitted('close')).toBeFalsy()
+    })
+
     it('should emit close when confirm closing', () => {
       const wrapper = mount(ModalWindow, {
         stubs,
