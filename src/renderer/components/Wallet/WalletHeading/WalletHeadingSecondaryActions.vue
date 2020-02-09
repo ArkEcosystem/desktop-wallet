@@ -93,6 +93,10 @@ export default {
     TransactionModal
   },
 
+  data: () => ({
+    registrationTypes: []
+  }),
+
   computed: {
     buttonStyle () {
       return 'option-heading-button whitespace-no-wrap mr-2 px-3 py-2'
@@ -104,9 +108,25 @@ export default {
 
     currentWallet () {
       return this.wallet_fromRoute
+    }
+  },
+
+  async mounted () {
+    this.registrationTypes = await this.getRegistrationTypes()
+  },
+
+  methods: {
+    async onRemoval () {
+      this.$router.push({ name: 'wallets' })
     },
 
-    registrationTypes () {
+    closeTransactionModal (toggleMethod, isOpen) {
+      if (isOpen) {
+        toggleMethod()
+      }
+    },
+
+    async getRegistrationTypes () {
       const types = []
 
       if (this.currentWallet.isContact) {
@@ -168,7 +188,7 @@ export default {
         type: TRANSACTION_TYPES.GROUP_2.BUSINESS_RESIGNATION
       }
 
-      if (WalletService.hasBridgechains(this.currentWallet, this)) {
+      if (await WalletService.hasBridgechains(this.currentWallet, this)) {
         businessResignOption.disabled = true
         businessResignOption.tooltip = {
           content: this.$t('WALLET_HEADING.ACTIONS.BUSINESS.CANNOT_RESIGN'),
@@ -179,18 +199,6 @@ export default {
       types.push(businessResignOption)
 
       return types
-    }
-  },
-
-  methods: {
-    async onRemoval () {
-      this.$router.push({ name: 'wallets' })
-    },
-
-    closeTransactionModal (toggleMethod, isOpen) {
-      if (isOpen) {
-        toggleMethod()
-      }
     }
   }
 }

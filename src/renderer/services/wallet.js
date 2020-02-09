@@ -160,7 +160,7 @@ export default class WalletService {
   static async hasBridgechains (wallet, vm) {
     const bridegchains = await vm.$client.fetchBusinessBridgechains(wallet.publicKey)
 
-    return bridegchains.filter(bridgechain => !bridgechain.isResigned).length > 0
+    return bridegchains.data.filter(bridgechain => !bridgechain.isResigned).length > 0
   }
 
   /**
