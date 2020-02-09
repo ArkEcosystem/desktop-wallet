@@ -60,7 +60,7 @@ export default class CoinCapAdapter {
   }
 
   /**
-   * Get currency data and rates from api
+   * Get assets data and rates from api
    * @return {(Object|null)}
    */
   static async getCurrencyData () {
@@ -72,7 +72,7 @@ export default class CoinCapAdapter {
       const { data, timestamp } = body
       const arkData = await this.fetchArkData()
 
-      const currencyData = data.reduce((map, value, index) => {
+      const assets = data.reduce((map, value, index) => {
         map[value.symbol.toUpperCase()] = value
 
         return map
@@ -85,7 +85,7 @@ export default class CoinCapAdapter {
       }, { [arkData.symbol.toUpperCase()]: arkData.priceUsd })
 
       return {
-        currencyData,
+        assets,
         rates,
         timestamp
       }
@@ -142,7 +142,7 @@ export default class CoinCapAdapter {
     const currencyData = await this.getCurrencyData()
     const { rates } = currencyData
     const daysSubtract = days === 24 ? 1 : days
-    const timeInterval = days === 24 ? 'h1' : 'd1'
+    const timeInterval = days === 24 ? 'h1' : 'h12'
     const startDate = moment().subtract(daysSubtract, 'd').valueOf()
     const endDate = moment().valueOf()
     const { body } = await got(`${MARKET.source.coinCap}/assets/${tokenId}/history?interval=${timeInterval}&start=${startDate}&end=${endDate}`, {
@@ -150,7 +150,7 @@ export default class CoinCapAdapter {
     })
     const { data } = body
 
-    return this.__transformHistoricalResponse(data, currency, rates, dateFormat)
+    return this.__transformHistoricalResponse(data, currency, rates, dateFormat, tokenId)
   }
 
   /**
@@ -166,9 +166,9 @@ export default class CoinCapAdapter {
     const lastUpdated = new Date(marketData.timestamp)
 
     for (const currency of Object.keys(MARKET.currencies)) {
-      const { currencyData, rates } = marketData
+      const { assets, rates } = marketData
 
-      if (!currencyData[currency]) {
+      if (!assets[currency]) {
         continue
       }
 
@@ -177,8 +177,8 @@ export default class CoinCapAdapter {
         price: convert(
           AMOUNT_TO_CONVERT, { from: currency, to: tokenId, base: BASE_CURRENCY, rates }
         ),
-        marketCap: currencyData[tokenId].marketCapUsd * (rates[BASE_CURRENCY] / rates[currency]),
-        volume: currencyData[tokenId].volumeUsd24Hr * (rates[BASE_CURRENCY] / rates[currency]),
+        marketCap: assets[tokenId].marketCapUsd * (rates[BASE_CURRENCY] / rates[currency]),
+        volume: assets[tokenId].volumeUsd24Hr * (rates[BASE_CURRENCY] / rates[currency]),
         date: lastUpdated,
         change24h: null
       }
@@ -193,14 +193,16 @@ export default class CoinCapAdapter {
    * @param {String} currency
    * @param {Object} rates
    * @param {String} dateFormat
+   * @param {String} token
    * @return {Object}
    */
-  static __transformHistoricalResponse (response, currency, rates, dateFormat) {
+  static __transformHistoricalResponse (response, currency, rates, dateFormat, token) {
+    const tokenId = token.toUpperCase()
     const datasets = {}
 
-    for (let i = 0; i < response.length; i++) {
-      datasets[dayjs(response[i].date).format(dateFormat)] = convert(
-        response[i].priceUsd, { from: BASE_CURRENCY, to: currency, base: BASE_CURRENCY, rates }
+    for (const value of response) {
+      datasets[dayjs(value.date).format(dateFormat)] = convert(
+        value.priceUsd, { from: currency, to: tokenId, base: tokenId, rates }
       )
     }
 
