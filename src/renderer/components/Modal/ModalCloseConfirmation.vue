@@ -1,9 +1,12 @@
 <template>
   <div
-    class="ModalCloseConfirmation__wrapper"
+    class="ModalCloseConfirmation__mask"
     @click="onBackdropClick"
   >
-    <div class="ModalCloseConfirmation__container">
+    <div
+      class="ModalCloseConfirmation__container"
+      @click.stop="void 0"
+    >
       <section class="ModalCloseConfirmation__container__content">
         <div class="mb-6">
           <h3
@@ -26,14 +29,14 @@
 
         <div class="mt-4 flex flex-row">
           <button
-            class="blue-button m-1"
+            class="ModalCloseConfirmation__cancel-button blue-button m-1"
             @click="emitCancel"
           >
             {{ cancelButton }}
           </button>
 
           <button
-            class="action-button m-1 ml-auto"
+            class="ModalCloseConfirmation__confirm-button action-button m-1 ml-auto"
             @click="emitConfirm"
           >
             {{ confirmButton }}
@@ -123,7 +126,7 @@ export default {
   transform: scale(1.1);
 }
 
-.ModalCloseConfirmation__wrapper {
+.ModalCloseConfirmation__mask {
   @apply overflow-hidden p-16 pt-16 bg-theme-modal shadow rounded-lg w-full h-full flex items-center justify-center absolute;
   position: fixed;
   z-index: 60;
