@@ -1,6 +1,6 @@
 <template>
   <div
-    class="ModalCloseConfirmation__mask"
+    class="ModalCloseConfirmation ModalCloseConfirmation__mask"
     @click="onBackdropClick"
   >
     <div
