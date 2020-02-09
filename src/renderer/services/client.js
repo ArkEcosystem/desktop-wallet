@@ -1355,7 +1355,7 @@ export default class ClientService {
    * Sign a transaction that requires multi-signatures
    * @return {Object}
    */
-  async multiSign (transaction, { multiSignature, networkWif, passphrase, wif }) {
+  async multiSign (transaction, { multiSignature, networkWif, passphrase, secondPassphrase, wif }) {
     if (!passphrase && !wif) {
       throw new Error('No passphrase or wif provided')
     }
@@ -1394,6 +1394,12 @@ export default class ClientService {
       }
     } else if (TransactionService.needsWalletSignature(transaction, keys.publicKey)) {
       Transactions.Signer.sign(transaction, keys)
+
+      if (secondPassphrase) {
+        const secondaryKeys = Identities.Keys.fromPassphrase(secondPassphrase)
+        Transactions.Signer.secondSign(transaction, secondaryKeys)
+      }
+
       transaction.id = TransactionService.getId(transaction)
     }
 
