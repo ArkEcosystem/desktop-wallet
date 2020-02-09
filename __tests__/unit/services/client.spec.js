@@ -2352,6 +2352,35 @@ describe('Services > Client', () => {
       expect(transaction.signature).toBeTruthy()
       expect(transaction.signatures.length).toBe(5)
     })
+
+    it('should sign transaction with sender second passphrase for registration', async () => {
+      transaction = {
+        fee: new BigNumber(0.1 * 1e8),
+        type: 4,
+        typeGroup: 1,
+        version: 2,
+        network: 23,
+        senderPublicKey: publicKey,
+        nonce: '1',
+        signatures: [],
+        asset: {
+          multiSignature
+        }
+      }
+
+      for (let i = 0; i < 5; i++) {
+        transaction = await client.multiSign(transaction, { ...signData, passphrase: `passphrase ${i}` })
+      }
+      transaction = await client.multiSign(transaction, {
+        ...signData,
+        passphrase: masterPassphrase,
+        secondPassphrase: 'second-passphrase'
+      })
+
+      expect(transaction.signature).toBeTruthy()
+      expect(transaction.secondSignature).toBeTruthy()
+      expect(transaction.signatures.length).toBe(5)
+    })
   })
 
   describe('__transactionFromData', () => {
