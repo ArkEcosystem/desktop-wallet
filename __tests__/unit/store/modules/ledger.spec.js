@@ -113,7 +113,7 @@ describe('ledger store module', () => {
       await store.dispatch('ledger/updateVersion')
 
       expect(store._vm.$error).toHaveBeenCalledWith(
-        'Please update your Ledger ARK app via Ledger Live to continue using Ledger inside wallet',
+        'Ledger update available! Please update the ARK app via Ledger Live to send transactions on this network',
         10000
       )
     })
