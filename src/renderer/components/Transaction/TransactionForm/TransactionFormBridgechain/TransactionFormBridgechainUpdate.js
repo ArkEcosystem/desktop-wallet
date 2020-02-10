@@ -19,6 +19,9 @@ export default {
 
   mounted () {
     this.form.asset.genesisHash = this.bridgechain.genesisHash
+    this.form.asset.bridgechainRepository = this.bridgechain.bridgechainRepository
+    this.form.asset.bridgechainAssetRepository = this.bridgechain.bridgechainAssetRepository
+
     this.form.seedNodes = this.bridgechain.seedNodes.map(ip => ({
       ip,
       isInvalid: false

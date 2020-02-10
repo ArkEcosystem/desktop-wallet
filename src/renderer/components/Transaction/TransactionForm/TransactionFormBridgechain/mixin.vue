@@ -67,16 +67,25 @@
             class="TransactionFormBridgechain__genesis-hash mb-5"
             name="genesisHash"
           />
-
-          <InputText
-            v-model="$v.form.asset.bridgechainRepository.$model"
-            :helper-text="bridgechainRepositoryError"
-            :label="$t('TRANSACTION.BRIDGECHAIN.BRIDGECHAIN_REPOSITORY')"
-            :is-invalid="!!bridgechainRepositoryError"
-            class="TransactionFormBridgechain__bridgechain-repository mb-5"
-            name="repository"
-          />
         </div>
+
+        <InputText
+          v-model="$v.form.asset.bridgechainRepository.$model"
+          :helper-text="bridgechainRepositoryError"
+          :label="$t('TRANSACTION.BRIDGECHAIN.BRIDGECHAIN_REPOSITORY')"
+          :is-invalid="!!bridgechainRepositoryError"
+          class="TransactionFormBridgechain__bridgechain-repository mb-5"
+          name="repository"
+        />
+
+        <InputText
+          v-model="$v.form.asset.bridgechainAssetRepository.$model"
+          :helper-text="bridgechainAssetRepositoryError"
+          :label="$t('TRANSACTION.BRIDGECHAIN.BRIDGECHAIN_ASSET_REPOSITORY')"
+          :is-invalid="!!bridgechainAssetRepositoryError"
+          class="TransactionFormBridgechain__bridgechain-asset-repository mb-5"
+          name="repository"
+        />
 
         <InputText
           v-model="$v.form.apiPort.$model"
@@ -218,7 +227,8 @@ export default {
         name: '',
         ports: {},
         genesisHash: '',
-        bridgechainRepository: ''
+        bridgechainRepository: '',
+        bridgechainAssetRepository: ''
       }
     }
   }),
@@ -296,6 +306,16 @@ export default {
           return this.$t('VALIDATION.INVALID_URL')
         } else if (!this.$v.form.asset.bridgechainRepository.tooShort) {
           return this.$t('VALIDATION.TOO_SHORT', [this.$t('TRANSACTION.BRIDGECHAIN.BRIDGECHAIN_REPOSITORY')])
+        }
+      }
+
+      return null
+    },
+
+    bridgechainAssetRepositoryError () {
+      if (this.$v.form.asset.bridgechainAssetRepository.$dirty && this.$v.form.asset.bridgechainAssetRepository.$invalid) {
+        if (!this.$v.form.asset.bridgechainAssetRepository.url) {
+          return this.$t('VALIDATION.INVALID_URL')
         }
       }
 
@@ -487,10 +507,16 @@ export default {
 
         bridgechainRepository: {
           tooShort (value) {
-            return this.bridgechain ? true : required(value) && minLength(minRepositoryLength)(value)
+            return required(value) && minLength(minRepositoryLength)(value)
           },
           url (value) {
-            return this.bridgechain ? true : url(value)
+            return url(value)
+          }
+        },
+
+        bridgechainAssetRepository: {
+          url (value) {
+            return url(value)
           }
         }
       }
