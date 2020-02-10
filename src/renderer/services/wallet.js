@@ -158,9 +158,15 @@ export default class WalletService {
    * @returns {Boolean}
    */
   static async hasBridgechains (wallet, vm) {
-    const bridegchains = await vm.$client.fetchBusinessBridgechains(wallet.publicKey)
+    try {
+      const bridegchains = await vm.$client.fetchBusinessBridgechains(wallet.publicKey)
 
-    return bridegchains.data.filter(bridgechain => !bridgechain.isResigned).length > 0
+      return bridegchains.data.filter(bridgechain => !bridgechain.isResigned).length > 0
+    } catch (error) {
+      //
+    }
+
+    return false
   }
 
   /**

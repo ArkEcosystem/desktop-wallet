@@ -188,7 +188,7 @@ export default {
         type: TRANSACTION_TYPES.GROUP_2.BUSINESS_RESIGNATION
       }
 
-      if (await WalletService.hasBridgechains(this.currentWallet, this)) {
+      if (WalletService.isBusiness(this.currentWallet) && await WalletService.hasBridgechains(this.currentWallet, this)) {
         businessResignOption.disabled = true
         businessResignOption.tooltip = {
           content: this.$t('WALLET_HEADING.ACTIONS.BUSINESS.CANNOT_RESIGN'),
