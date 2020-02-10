@@ -3,6 +3,7 @@ import { MARKET } from '@config'
 import priceApi from '@/services/price-api'
 import CryptoCompareAdapter from '@/services/price-api/crypto-compare'
 import CoinGeckoAdapter from '@/services/price-api/coin-gecko'
+import CoinCapAdapter from '@/services/price-api/coin-cap'
 
 describe('PriceApi', () => {
   const token = 'ARK'
@@ -10,7 +11,8 @@ describe('PriceApi', () => {
 
   describe.each([
     ['cryptoCompare', CryptoCompareAdapter],
-    ['coinGecko', CoinGeckoAdapter]
+    ['coinGecko', CoinGeckoAdapter],
+    ['coinCap', CoinCapAdapter]
   ])('%s', (adapterName, adapter) => {
     beforeEach(() => {
       priceApi.setAdapter(adapterName.toLowerCase())
@@ -24,7 +26,7 @@ describe('PriceApi', () => {
         nock(MARKET.source[adapterName])
           .get(/\/data\/histo.+/)
           .reply(200, require('../__fixtures__/services/price-api/crypto-compare/historical.json'))
-      } else {
+      } else if (adapterName === 'coinGecko') {
         nock(MARKET.source[adapterName])
           .get('/coins/list')
           .reply(200, [{
@@ -54,6 +56,39 @@ describe('PriceApi', () => {
           .get('/coins/ark/market_chart')
           .query(true)
           .reply(200, require('../__fixtures__/services/price-api/coin-gecko/historical.json'))
+      } else {
+        nock(MARKET.source[adapterName])
+          .get('/assets')
+          .query(true)
+          .reply(200, require('../__fixtures__/services/price-api/coin-cap/assets.json'))
+
+        nock(MARKET.source[adapterName])
+          .get('/assets/ark')
+          .reply(200, {
+            data: {
+              id: 'ark',
+              rank: '97',
+              symbol: 'ARK',
+              name: 'Ark',
+              supply: '118054742.0000000000000000',
+              maxSupply: null,
+              marketCapUsd: '25606314.3186528481730628',
+              volumeUsd24Hr: '200149.6642060181260072',
+              priceUsd: '0.2169020395525734',
+              changePercent24Hr: '4.0498226198624989',
+              vwap24Hr: '0.2168174454697512'
+            },
+            timestamp: 1581339180902
+          })
+
+        nock(MARKET.source[adapterName])
+          .get('/rates')
+          .reply(200, require('../__fixtures__/services/price-api/coin-cap/rates.json'))
+
+        nock(MARKET.source[adapterName])
+          .get('/assets/ark/history')
+          .query(true)
+          .reply(200, require('../__fixtures__/services/price-api/coin-cap/historical.json'))
       }
     })
 
@@ -65,8 +100,10 @@ describe('PriceApi', () => {
 
       if (adapterName === 'cryptoCompare') {
         expect(response.USD.price).toBe(0.178045896)
-      } else {
+      } else if (adapterName === 'coinGecko') {
         expect(response.USD.price).toBe(0.176829)
+      } else {
+        expect(response.USD.price).toBe(0.2169020395525734)
       }
     })
 

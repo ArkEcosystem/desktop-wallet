@@ -109,7 +109,7 @@ export default class CoinCapAdapter {
 
       return !!data.id
     } catch (error) {
-      return null
+      return false
     }
   }
 
