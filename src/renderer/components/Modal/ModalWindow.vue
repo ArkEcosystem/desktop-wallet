@@ -150,7 +150,8 @@ export default {
 
   data: () => ({
     isMaximized: true,
-    showConfirmationModal: false
+    showConfirmationModal: false,
+    hasChanged: false
   }),
 
   beforeCreate () {
@@ -159,6 +160,7 @@ export default {
 
   mounted () {
     document.addEventListener('keyup', this.onEscKey, { once: true })
+    document.addEventListener('change', this.onChange)
   },
 
   destroyed () {
@@ -182,7 +184,7 @@ export default {
         return
       }
 
-      if (this.confirmClose) {
+      if (this.confirmClose && this.hasChanged) {
         this.showConfirmationModal = true
         return
       }
@@ -201,6 +203,10 @@ export default {
       if (event.keyCode === 27) {
         this.emitClose()
       }
+    },
+
+    onChange () {
+      this.hasChanged = true
     }
   }
 }
