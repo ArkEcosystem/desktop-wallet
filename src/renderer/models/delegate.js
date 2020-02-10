@@ -25,6 +25,10 @@ export default new BaseModel({
         }
       }
     },
+    isResigned: {
+      type: 'boolean',
+      default: false
+    },
     production: {
       type: 'object',
       properties: {

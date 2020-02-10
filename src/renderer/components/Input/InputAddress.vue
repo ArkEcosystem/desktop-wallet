@@ -16,6 +16,7 @@
       :is-disabled="isDisabled"
       :is-focused="isFocused"
       :is-invalid="invalid"
+      :warning-text="warningText"
       class="InputAddress text-left"
     >
       <div
@@ -91,6 +92,11 @@ export default {
       required: false,
       default: false
     },
+    isRequired: {
+      type: Boolean,
+      required: false,
+      default: true
+    },
     label: {
       type: String,
       required: false,
@@ -120,6 +126,11 @@ export default {
       type: Boolean,
       required: false,
       default: false
+    },
+    warningText: {
+      type: String,
+      required: false,
+      default: null
     }
   },
 
@@ -180,7 +191,7 @@ export default {
       ]
       const contacts = this.$store.getters['wallet/contactsByProfileId'](this.currentProfile.id)
 
-      const source = unionBy(wallets, contacts, 'address')
+      const source = unionBy(wallets, contacts, 'address').filter(wallet => wallet && !!wallet.address)
 
       const addresses = map(source, (wallet) => {
         const address = {
@@ -197,7 +208,7 @@ export default {
       })
 
       const results = orderBy(addresses, (object) => {
-        return object.name || object.address.toLowerCase()
+        return (object.name || object.address).toLowerCase()
       })
 
       return results.reduce((wallets, wallet, index) => {
@@ -373,13 +384,27 @@ export default {
       this.$nextTick(() => {
         this.$refs.input.setSelectionRange(this.inputValue.length, this.dropdownValue.length)
       })
+    },
+
+    reset () {
+      this.model = ''
+      this.$nextTick(() => {
+        this.$v.$reset()
+      })
     }
   },
 
   validations: {
     model: {
-      required,
+      required (value) {
+        return this.isRequired ? required(value) : true
+      },
+
       isValid (value) {
+        if (!this.isRequired && value.replace(/\s+/, '') === '') {
+          return true
+        }
+
         return WalletService.validateAddress(value, this.pubKeyHash)
       }
     }

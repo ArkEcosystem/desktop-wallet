@@ -1,3 +1,4 @@
+import Vue from 'vue'
 import { map, uniqBy } from 'lodash'
 import crypto from 'crypto'
 import BaseModule from '../base'
@@ -68,6 +69,18 @@ export default new BaseModule(ProfileModel, {
     }
   },
 
+  mutations: {
+    SET_MULTI_SIGNATURE_PEER (state, { host, port, profileId }) {
+      for (const peerId in state.all) {
+        if (state.all[peerId].id === profileId) {
+          Vue.set(state.all[peerId], 'multiSignaturePeer', { host, port })
+
+          break
+        }
+      }
+    }
+  },
+
   actions: {
     /**
      * This default action is overridden to generate a random unique ID
@@ -97,6 +110,11 @@ export default new BaseModule(ProfileModel, {
       }
 
       commit('DELETE', id)
+    },
+
+    setMultiSignaturePeer ({ commit, rootGetters }, { host, port }) {
+      const profileId = rootGetters['session/profileId']
+      commit('SET_MULTI_SIGNATURE_PEER', { host, port, profileId })
     }
   }
 })
