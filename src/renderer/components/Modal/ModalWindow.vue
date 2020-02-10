@@ -209,7 +209,7 @@ export default {
 }
 
 .ModalWindow--maximized .ModalWindow__container__content {
-  @apply overflow-hidden p-16 pt-16 bg-theme-modal shadow rounded-lg
+  @apply overflow-y-auto p-16 pt-16 bg-theme-modal shadow rounded-lg
 }
 .ModalWindow--minimized .ModalWindow__container__content {
   @apply overflow-y-auto px-8 pt-2 pb-5 bg-theme-modal shadow rounded-lg
