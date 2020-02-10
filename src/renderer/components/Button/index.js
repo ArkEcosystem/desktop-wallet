@@ -8,9 +8,13 @@ import ButtonReload from './ButtonReload'
 import ButtonSwitch from './ButtonSwitch'
 import ButtonLayout from './ButtonLayout'
 
+// Last because of order
+import ButtonDropdown from './ButtonDropdown'
+
 export {
   ButtonClipboard,
   ButtonClose,
+  ButtonDropdown,
   ButtonGeneric,
   ButtonIconGeneric,
   ButtonLetter,

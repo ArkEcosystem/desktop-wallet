@@ -19,7 +19,7 @@
       <SvgIcon
         :class="{ 'opacity-25': iconDisabled }"
         name="arrow-dropdown"
-        view-box="0 0 20 20"
+        view-box="0 0 10 10"
       />
     </span>
   </button>

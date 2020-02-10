@@ -27,11 +27,11 @@ before_script:
 script:
   - |
     if [ "$TRAVIS_OS_NAME" == "osx" ]; then
-      yarn build:mac
+      yarn build:mac:publish
     elif [ "$TRAVIS_OS_NAME" == "windows" ]; then
-      yarn build:win
+      yarn build:win:publish
     else
-      yarn build:linux
+      yarn build:linux:publish
     fi
 
 after_script:

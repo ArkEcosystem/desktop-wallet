@@ -248,6 +248,14 @@ export default {
       }, [])
     },
 
+    profileHasPluginOptions: (state, _, __, rootGetters) => (pluginId, profileId) => {
+      if (!profileId) {
+        profileId = rootGetters['session/profileId']
+      }
+
+      return state.pluginOptions[profileId] && state.pluginOptions[profileId][pluginId]
+    },
+
     pluginOptions: (state) => (pluginId, profileId) => {
       if (!state.pluginOptions[profileId]) {
         return {}
@@ -341,7 +349,7 @@ export default {
     },
 
     DELETE_PLUGIN_OPTIONS (state, { pluginId, profileId }) {
-      if (state.pluginOptions[profileId][pluginId]) {
+      if (state.pluginOptions[profileId] && state.pluginOptions[profileId][pluginId]) {
         Vue.delete(state.pluginOptions[profileId], pluginId)
       }
     },
