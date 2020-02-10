@@ -1,6 +1,12 @@
 <template>
-  <ListDivided :is-floating-label="true">
-    <ListDividedItem :label="$t('TRANSACTION.SENDER')">
+  <ListDivided
+    class="TransactionConfirmTransfer"
+    :is-floating-label="true"
+  >
+    <ListDividedItem
+      class="TransactionConfirmTransfer__sender"
+      :label="$t('TRANSACTION.SENDER')"
+    >
       {{ senderLabel }}
       <span
         v-if="senderLabel !== currentWallet.address"
@@ -10,11 +16,17 @@
       </span>
     </ListDividedItem>
 
-    <ListDividedItem :label="$t('TRANSACTION.AMOUNT')">
+    <ListDividedItem
+      class="TransactionConfirmTransfer__amount"
+      :label="$t('TRANSACTION.AMOUNT')"
+    >
       {{ formatter_networkCurrency(transaction.amount) }}
     </ListDividedItem>
 
-    <ListDividedItem :label="$t('TRANSACTION.RECIPIENT')">
+    <ListDividedItem
+      class="TransactionConfirmTransfer__recipient"
+      :label="$t('TRANSACTION.RECIPIENT')"
+    >
       {{ recipientLabel }}
       <span
         v-if="recipientLabel !== transaction.recipientId"
@@ -26,12 +38,16 @@
 
     <ListDividedItem
       v-if="transaction.vendorField"
+      class="TransactionConfirmTransfer__vendorfield"
       :label="$t('TRANSACTION.VENDOR_FIELD')"
     >
       {{ transaction.vendorField }}
     </ListDividedItem>
 
-    <ListDividedItem :label="$t('TRANSACTION.FEE')">
+    <ListDividedItem
+      class="TransactionConfirmTransfer__fee"
+      :label="$t('TRANSACTION.FEE')"
+    >
       {{ formatter_networkCurrency(transaction.fee) }}
     </ListDividedItem>
   </ListDivided>
@@ -44,7 +60,7 @@ import { ListDivided, ListDividedItem } from '@/components/ListDivided'
 export default {
   name: 'TransactionConfirmTransfer',
 
-  transactionType: TRANSACTION_TYPES.TRANSFER,
+  transactionType: TRANSACTION_TYPES.GROUP_1.TRANSFER,
 
   inject: ['currentWallet', 'transaction'],
 

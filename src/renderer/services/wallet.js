@@ -1,8 +1,9 @@
 import * as bip39 from 'bip39'
-import { Crypto, Identities } from '@arkecosystem/crypto'
+import { Crypto, Identities, Managers } from '@arkecosystem/crypto'
 import { version as mainnetVersion } from '@config/networks/mainnet'
 import store from '@/store'
 import got from 'got'
+import cloneDeep from 'lodash.clonedeep'
 
 export default class WalletService {
   /*
@@ -50,12 +51,56 @@ export default class WalletService {
   }
 
   /**
+   * Returns the address generated from a multi-signature registration.
+   * @param {Object} multiSignatureAsset
+   * @return {String}
+   */
+  static getAddressFromMultiSignatureAsset (multiSignatureAsset) {
+    Managers.configManager.setConfig(cloneDeep(store.getters['session/network'].crypto))
+
+    return Identities.Address.fromMultiSignatureAsset(multiSignatureAsset)
+  }
+
+  /**
+   * Generates the public key belonging to a wallet
+   * @param {Object} wallet
+   * @return {String|null}
+   */
+  static getPublicKeyFromWallet (wallet) {
+    if (wallet.multiSignature) {
+      return this.getPublicKeyFromMultiSignatureAsset(wallet.multiSignature)
+    }
+
+    return wallet.publicKey || null
+  }
+
+  /**
    * Generates the public key belonging to the given passphrase
    * @param {String} passphrase
    * @return {String}
    */
   static getPublicKeyFromPassphrase (passphrase) {
-    return Identities.Keys.fromPassphrase(this.normalizePassphrase(passphrase)).publicKey
+    return Identities.PublicKey.fromPassphrase(this.normalizePassphrase(passphrase))
+  }
+
+  /**
+   * Generates the public key belonging to the given wif
+   * @param {String} wif
+   * @return {String}
+   */
+  static getPublicKeyFromWIF (wif) {
+    return Identities.PublicKey.fromWIF(wif)
+  }
+
+  /**
+   * Returns the public key generated from a multi-signature registration.
+   * @param {Object} multiSignatureAsset
+   * @return {String}
+   */
+  static getPublicKeyFromMultiSignatureAsset (multiSignatureAsset) {
+    Managers.configManager.setConfig(cloneDeep(store.getters['session/network'].crypto))
+
+    return Identities.PublicKey.fromMultiSignatureAsset(multiSignatureAsset)
   }
 
   /**
@@ -69,8 +114,59 @@ export default class WalletService {
     }
 
     const neoUrl = 'https://neoscan.io/api/main_net/v1/get_last_transactions_by_address/'
-    const response = await got(neoUrl + address)
-    return response.status === 200 && response.body && response.body.length > 0
+    const response = await got(neoUrl + address, {
+      json: true
+    })
+
+    return response.statusCode === 200 && response.body && response.body.length > 0
+  }
+
+  /**
+   * Check if a wallet is a business wallet
+   * @param {Object} wallet
+   * @param {Boolean} ignoreResigned
+   * @returns {Boolean}
+   */
+  static isBusiness (wallet, ignoreResigned = true) {
+    if (!wallet.business) {
+      return false
+    }
+
+    if (ignoreResigned) {
+      return !!wallet.business.name
+    }
+
+    return !wallet.business.resigned
+  }
+
+  /**
+   * Check if a wallet can resign as a business
+   * @param {Object} wallet
+   * @returns {Boolean}
+   */
+  static canResignBusiness (wallet) {
+    if (!wallet.business) {
+      return false
+    }
+
+    return !wallet.business.resigned
+  }
+
+  /**
+   * Check if a wallet business has bridgechains
+   * @param {Object} wallet
+   * @returns {Boolean}
+   */
+  static async hasBridgechains (wallet, vm) {
+    try {
+      const bridegchains = await vm.$client.fetchBusinessBridgechains(wallet.publicKey)
+
+      return bridegchains.data.filter(bridgechain => !bridgechain.isResigned).length > 0
+    } catch (error) {
+      //
+    }
+
+    return false
   }
 
   /**
@@ -115,6 +211,8 @@ export default class WalletService {
   }
 
   /**
+   * TODO: Is this necessary? A passphrase is always valid as long as it's a string.
+   *
    * Check that a passphrase is valid.
    * @param {String} passhrase
    * @param {Number} pubKeyHash - also known as address or network version

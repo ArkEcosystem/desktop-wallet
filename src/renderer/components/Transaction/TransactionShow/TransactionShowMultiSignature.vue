@@ -1,7 +1,7 @@
 <template>
   <ModalWindow
     :title="$t('TRANSACTION.TRANSACTION')"
-    container-classes="TransactionShow"
+    container-classes="TransactionShowMultiSignature"
     @close="emitClose"
   >
     <ListDivided>
@@ -81,11 +81,11 @@
         item-value-class="flex items-center"
       >
         <WalletAddress
-          :address="transaction.sender"
+          :address="getAddress(transaction)"
           @click="emitClose"
         />
         <ButtonClipboard
-          :value="transaction.sender"
+          :value="getAddress(transaction)"
           class="text-theme-page-text-light mx-2"
         />
         <button
@@ -94,7 +94,7 @@
             trigger: 'hover'
           }"
           class="flex items-center"
-          @click="openAddress(transaction.sender)"
+          @click="openAddress(getAddress(transaction))"
         >
           <SvgIcon
             name="open-external"
@@ -151,33 +151,10 @@
       />
 
       <ListDividedItem
-        :label="$t('TRANSACTION.CONFIRMATIONS')"
-        item-value-class="flex items-center"
-      >
-        <span v-if="transaction.isExpired">
-          {{ $t('TRANSACTION.EXPIRED') }}
-        </span>
-        <span v-else-if="!isWellConfirmed">
-          {{ transaction.confirmations }}
-        </span>
-        <span v-else>
-          {{ $t('TRANSACTION.WELL_CONFIRMED') }}
-        </span>
-
-        <span
-          v-show="!transaction.isExpired"
-          v-tooltip="{
-            content: $t('TRANSACTION.CONFIRMATION_COUNT', { confirmations: transaction.confirmations }),
-            trigger: 'hover'
-          }"
-          class="flex items-center ml-2"
-        >
-          <SvgIcon
-            name="time"
-            view-box="0 0 12 13"
-          />
-        </span>
-      </ListDividedItem>
+        v-if="transaction.nonce"
+        :label="$t('TRANSACTION.NONCE')"
+        :value="transaction.nonce"
+      />
 
       <ListDividedItem
         :label="$t('TRANSACTION.TIMESTAMP')"
@@ -189,44 +166,83 @@
         :value="transaction.vendorField"
         :label="$t('TRANSACTION.VENDOR_FIELD')"
       />
+
+      <ListDividedItem
+        v-if="!!multiSignatureWalletAddress"
+        :value="multiSignatureWalletAddress"
+        :label="$t('TRANSACTION.MULTI_SIGNATURE.ADDRESS')"
+      />
+
+      <ListDividedItem
+        :value="totalCount"
+        :label="$t('TRANSACTION.MULTI_SIGNATURE.TOTAL_SIGNATURES')"
+      />
     </ListDivided>
 
-    <div v-show="transaction.isExpired">
-      <ButtonGeneric
-        :label="$t('TRANSACTION.RESEND')"
-        @click="emitResend"
-      />
-      <ButtonGeneric
-        :label="$t('TRANSACTION.DISCARD')"
-        class="ml-4"
-        @click="emitDiscard"
-      />
+    <div
+      v-if="canSign || canBeSent"
+      class="text-left"
+    >
+      <ButtonModal
+        v-if="canSign"
+        slot="primaryButton"
+        :label="$t('TRANSACTION.SIGN')"
+        class="ButtonGeneric blue-button"
+      >
+        <template slot-scope="{ toggle, isOpen }">
+          <TransactionModal
+            v-if="isOpen"
+            :type="-1"
+            :transaction="transaction"
+            @cancel="closeTransactionModal(toggle, isOpen)"
+            @sent="closeTransactionModal(toggle, isOpen)"
+          />
+        </template>
+      </ButtonModal>
+
+      <ButtonModal
+        v-if="canBeSent"
+        slot="primaryButton"
+        :label="$t('TRANSACTION.SEND')"
+        class="ButtonGeneric blue-button"
+      >
+        <template slot-scope="{ toggle, isOpen }">
+          <TransactionModal
+            v-if="isOpen"
+            :type="transaction.type"
+            :transaction-override="transaction"
+            @cancel="closeTransactionModal(toggle, isOpen)"
+            @sent="closeTransactionModal(toggle, isOpen)"
+          />
+        </template>
+      </ButtonModal>
     </div>
   </ModalWindow>
 </template>
 
 <script>
-import { at } from 'lodash'
+import { TRANSACTION_TYPES } from '@config'
 import { ListDivided, ListDividedItem } from '@/components/ListDivided'
 import { ModalWindow } from '@/components/Modal'
-import { ButtonClipboard, ButtonGeneric } from '@/components/Button'
+import { ButtonClipboard, ButtonModal } from '@/components/Button'
 import SvgIcon from '@/components/SvgIcon'
-import TransactionAmount from './TransactionAmount'
-import TransactionStatusIcon from './TransactionStatusIcon'
+import { TransactionAmount, TransactionModal, TransactionStatusIcon } from '@/components/Transaction'
+import TransactionService from '@/services/transaction'
 import WalletAddress from '@/components/Wallet/WalletAddress'
-import truncateMiddle from '@/filters/truncate-middle'
+import WalletService from '@/services/wallet'
 
 export default {
-  name: 'TransactionShow',
+  name: 'TransactionShowMultiSignature',
 
   components: {
-    ButtonGeneric,
     ListDivided,
     ListDividedItem,
     ModalWindow,
     ButtonClipboard,
+    ButtonModal,
     SvgIcon,
     TransactionAmount,
+    TransactionModal,
     TransactionStatusIcon,
     WalletAddress
   },
@@ -243,22 +259,39 @@ export default {
   }),
 
   computed: {
-    isWellConfirmed () {
-      return this.transaction.confirmations >= (this.numberOfActiveDelegates || 51)
+    totalCount () {
+      return this.$t('COMMON.X_OF_Y', [
+        (this.transaction.signatures || []).length,
+        this.transaction.multiSignature.publicKeys.length
+      ])
     },
-    numberOfActiveDelegates () {
-      return at(this, 'session_network.constants.activeDelegates') || 51
+
+    canSign () {
+      return TransactionService.needsWalletSignature(this.transaction, WalletService.getPublicKeyFromWallet(this.wallet_fromRoute))
     },
+
+    canBeSent () {
+      return TransactionService.isMultiSignatureReady(this.transaction)
+    },
+
     votePublicKey () {
       if (this.transaction && this.transaction.asset && this.transaction.asset.votes) {
         const vote = this.transaction.asset.votes[0]
         return vote.substr(1)
       }
       return ''
+    },
+
+    multiSignatureWalletAddress () {
+      if (this.transaction.type !== TRANSACTION_TYPES.GROUP_1.MULTI_SIGNATURE || !this.transaction.multiSignature) {
+        return null
+      }
+
+      return WalletService.getAddressFromMultiSignatureAsset(this.transaction.multiSignature)
     }
   },
 
-  mounted () {
+  async mounted () {
     if (this.votePublicKey) {
       this.determineVote()
     }
@@ -277,22 +310,16 @@ export default {
       this.network_openExplorer('block', this.transaction.blockId)
     },
 
+    closeTransactionModal (toggleMethod, isOpen) {
+      if (isOpen) {
+        toggleMethod()
+      }
+
+      this.emitClose()
+    },
+
     emitClose () {
       this.$emit('close', 'navigateToTransactions')
-    },
-
-    async emitResend () {
-      const shouldBroadcast = this.$store.getters['session/broadcastPeers']
-      await this.$client.broadcastTransaction(this.transaction.raw, shouldBroadcast)
-
-      this.$success(this.$t('TRANSACTION.RESENT_NOTICE', { transactionId: truncateMiddle(this.transaction.id) }))
-      this.$emit('close')
-    },
-
-    emitDiscard () {
-      this.$store.dispatch('transaction/delete', this.transaction)
-      this.$emit('close')
-      this.$eventBus.emit('wallet:reload')
     },
 
     openAddressInWallet (address) {
@@ -302,13 +329,17 @@ export default {
 
     determineVote () {
       this.votedDelegate = this.$store.getters['delegate/byPublicKey'](this.votePublicKey)
+    },
+
+    getAddress (transaction) {
+      return transaction.sender || WalletService.getAddressFromPublicKey(transaction.senderPublicKey, this.session_network.version)
     }
   }
 }
 </script>
 
 <style>
-.TransactionShow {
+.TransactionShowMultiSignature {
   min-width: 35rem
 }
 </style>
