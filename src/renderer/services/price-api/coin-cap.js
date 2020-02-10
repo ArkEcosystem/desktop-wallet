@@ -11,7 +11,7 @@ const AMOUNT_TO_CONVERT = 1
 
 export default class CoinCapAdapter {
   /**
-   * Get token name from api
+   * Get token name from API
    * @param  {String} token
    * @return {(String|null)}
    */
@@ -35,13 +35,12 @@ export default class CoinCapAdapter {
 
       return this.tokenLookup[token.toUpperCase()]
     } catch (error) {
+      return null
     }
-
-    return null
   }
 
   /**
-   * Get ark data from api
+   * Get Ark data from API
    * @return {(Object|null)}
    */
   static async fetchArkData () {
@@ -54,13 +53,12 @@ export default class CoinCapAdapter {
 
       return data
     } catch (error) {
+      return null
     }
-
-    return null
   }
 
   /**
-   * Get assets data and rates from api
+   * Get assets and rates data from API
    * @return {(Object|null)}
    */
   static async getCurrencyData () {
@@ -90,9 +88,8 @@ export default class CoinCapAdapter {
         timestamp
       }
     } catch (error) {
+      return null
     }
-
-    return null
   }
 
   /**
@@ -117,7 +114,7 @@ export default class CoinCapAdapter {
   }
 
   /**
-   * Fetch market data from API.
+   * Fetch market data from API
    * @param {String} token
    * @return {(Object|null)} Return normalized market data or null on failure
    */
@@ -129,7 +126,7 @@ export default class CoinCapAdapter {
   }
 
   /**
-   * Fetch historical data from API.
+   * Fetch historical data from API
    * @param {String} token
    * @param {String} currency
    * @param {Number} limit
@@ -150,11 +147,11 @@ export default class CoinCapAdapter {
     })
     const { data } = body
 
-    return this.__transformHistoricalResponse(data, currency, rates, dateFormat, tokenId)
+    return this.__transformHistoricalResponse(tokenId, data, currency, rates, dateFormat)
   }
 
   /**
-   * Normalize market data reponse to a object
+   * Normalize market data response to an object
    * @param {Object} response
    * @param {String} token
    * @return {Object}
@@ -189,14 +186,14 @@ export default class CoinCapAdapter {
 
   /**
    * Prepare the historical data response to be used in charts
+   * @param {String} token
    * @param {Object} response
    * @param {String} currency
    * @param {Object} rates
    * @param {String} dateFormat
-   * @param {String} token
    * @return {Object}
    */
-  static __transformHistoricalResponse (response, currency, rates, dateFormat, token) {
+  static __transformHistoricalResponse (token, response, currency, rates, dateFormat) {
     const tokenId = token.toUpperCase()
     const datasets = {}
 
