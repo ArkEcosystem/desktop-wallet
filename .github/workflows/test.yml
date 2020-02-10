@@ -44,7 +44,7 @@ jobs:
         run: yarn lint
 
       - name: Test
-        run: yarn test:unit --coverage
+        run: node --max-old-space-size=4096 ./node_modules/.bin/jest --config __tests__/unit.jest.conf.js __tests__/unit/ --logHeapUsage --coverage
 
       - name: Codecov
         run: ./node_modules/.bin/codecov --token=${{ secrets.CODECOV_TOKEN }}
