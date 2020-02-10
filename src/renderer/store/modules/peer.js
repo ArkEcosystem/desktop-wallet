@@ -319,55 +319,38 @@ export default {
     },
 
     /**
-     * Get average peer height.
-     * @return {Number}
-     */
-    async getAverageHeight ({ dispatch, getters, rootGetters }, network = null) {
-      const peerDiscovery = await dispatch('getPeerDiscovery', network)
-      const peers = await peerDiscovery.findPeersWithPlugin('core-api', {
-        additional: [
-          'height'
-        ]
-      })
-
-      if (!peers.length) {
-        return 1
-      }
-
-      let sum = 0
-      for (const peer of peers) {
-        sum += peer.height
-      }
-
-      return sum / peers.length
-    },
-
-    /**
      * Refresh peer list.
      * @return {void}
      */
     async refresh ({ dispatch, getters, rootGetters }, network = null) {
-      const peerDiscovery = await dispatch('getPeerDiscovery', network)
+      let peers = []
 
-      peerDiscovery.withLatency(300)
-        .sortBy('latency')
+      try {
+        const peerDiscovery = await dispatch('getPeerDiscovery', network)
 
-      let peers = await peerDiscovery
-        .findPeersWithPlugin('core-api', {
-          additional: [
-            'height',
-            'latency'
-          ]
-        })
+        peerDiscovery.withLatency(300)
+          .sortBy('latency')
 
-      if (!peers.length) {
         peers = await peerDiscovery
-          .findPeersWithPlugin('core-wallet-api', {
+          .findPeersWithPlugin('core-api', {
             additional: [
               'height',
               'latency'
             ]
           })
+
+        if (!peers.length) {
+          peers = await peerDiscovery
+            .findPeersWithPlugin('core-wallet-api', {
+              additional: [
+                'height',
+                'latency',
+                'version'
+              ]
+            })
+        }
+      } catch (error) {
+        console.error('Could not refresh peer list:', error)
       }
 
       if (!peers.length) {
@@ -523,7 +506,7 @@ export default {
      * @param  {Number} [timeout=3000]
      * @return {(Object|String)}
      */
-    async validatePeer ({ rootGetters }, { host, ip, port, ignoreNetwork = false, timeout = 3000 }) {
+    async validatePeer ({ rootGetters }, { host, ip, port, nethash, ignoreNetwork = false, timeout = 3000 }) {
       let networkConfig
       if (!host && ip) {
         host = ip
@@ -536,12 +519,12 @@ export default {
       try {
         networkConfig = await ClientService.fetchNetworkConfig(baseUrl, timeout)
       } catch (error) {
-        //
+        console.error('Could not get network config:', error)
       }
 
       if (!networkConfig) {
         return i18n.t('PEER.NO_CONNECT')
-      } else if (!ignoreNetwork && networkConfig.nethash !== rootGetters['session/network'].nethash) {
+      } else if (!ignoreNetwork && networkConfig.nethash !== (nethash || rootGetters['session/network'].nethash)) {
         return i18n.t('PEER.WRONG_NETWORK')
       }
 
@@ -555,6 +538,7 @@ export default {
       } catch (error) {
         //
       }
+
       if (!peerStatus) {
         return i18n.t('PEER.STATUS_CHECK_FAILED')
       }

@@ -8,6 +8,7 @@
       <TransactionForm
         v-if="!transaction"
         v-bind="$attrs"
+        :group="group"
         :type="type"
         @built="onBuilt"
         @cancel="emitCancel"
@@ -41,10 +42,12 @@
 <script>
 import { camelCase, includes, findKey, upperFirst } from 'lodash'
 import { TRANSACTION_TYPES } from '@config'
-import WalletService from '@/services/wallet'
+import MultiSignature from '@/services/client-multisig'
 import { ModalLoader, ModalWindow } from '@/components/Modal'
 import TransactionForm from './TransactionForm'
 import TransactionConfirm from './TransactionConfirm'
+import TransactionService from '@/services/transaction'
+import WalletService from '@/services/wallet'
 
 export default {
   name: 'TransactionModal',
@@ -57,11 +60,29 @@ export default {
   },
 
   props: {
+    transactionOverride: {
+      type: Object,
+      required: false,
+      default: null
+    },
+
+    group: {
+      type: Number,
+      required: false,
+      default: 1,
+      validator: value => {
+        return Object.keys(TRANSACTION_TYPES).includes(`GROUP_${value}`)
+      }
+    },
+
     type: {
       type: Number,
       required: true,
-      validator: value => includes(TRANSACTION_TYPES, value)
+      validator: value => {
+        return value === TRANSACTION_TYPES.MULTI_SIGN || includes(TRANSACTION_TYPES.GROUP_1, value)
+      }
     },
+
     title: {
       type: String,
       required: false,
@@ -69,16 +90,20 @@ export default {
     }
   },
 
-  data: () => ({
+  data: vm => ({
     showBroadcastingTransactions: false,
     step: 0,
-    transaction: null,
+    transaction: vm.transactionOverride,
     walletOverride: null
   }),
 
   computed: {
     transactionKey () {
-      const key = findKey(TRANSACTION_TYPES, type => this.type === type)
+      if (this.type === TRANSACTION_TYPES.MULTI_SIGN) {
+        return 'MULTI_SIGN'
+      }
+
+      const key = findKey(TRANSACTION_TYPES[`GROUP_${this.group}`], type => this.type === type)
       if (key === 'VOTE' && this.transaction.asset.votes.length) {
         if (this.transaction.asset.votes[0].substring(0, 1) === '-') {
           return 'UNVOTE'
@@ -88,7 +113,11 @@ export default {
       return key
     },
     typeClass () {
-      const type = findKey(TRANSACTION_TYPES, type => this.type === type)
+      if (this.type === TRANSACTION_TYPES.MULTI_SIGN) {
+        return 'TransactionModalMultiSign'
+      }
+
+      const type = findKey(TRANSACTION_TYPES[`GROUP_${this.group}`], type => this.type === type)
       return `TransactionModal${upperFirst(camelCase(type))}`
     },
     typeName () {
@@ -122,7 +151,37 @@ export default {
       this.transaction = null
     },
 
+    async pushMultiSignature (sendToNetwork) {
+      const peer = this.$store.getters['session/multiSignaturePeer']
+      if (!peer) {
+        return
+      }
+
+      const response = await MultiSignature.sendTransaction(peer, this.transaction)
+      if (response && !sendToNetwork) {
+        this.$success(this.$t(`TRANSACTION.SUCCESS.${this.transactionKey}`))
+        this.emitSent(true, this.transaction)
+      } else if (!response) {
+        this.$error(this.$t(`TRANSACTION.ERROR.${this.transactionKey}`))
+      }
+
+      this.$eventBus.emit('wallet:reload:multi-signature')
+
+      this.showBroadcastingTransactions = false
+    },
+
     async onConfirm () {
+      if (TransactionService.isMultiSignature(this.transaction)) {
+        const isReady = TransactionService.isMultiSignatureReady(this.transaction)
+        await this.pushMultiSignature(isReady)
+
+        if (!isReady) {
+          return
+        }
+
+        this.transaction.timestamp = undefined
+      }
+
       // Produce the messages before closing the modal to avoid `$t` scope errors
       const messages = {
         success: this.$t(`TRANSACTION.SUCCESS.${this.transactionKey}`),
@@ -131,7 +190,8 @@ export default {
           fee: this.formatter_networkCurrency(this.transaction.fee)
         }),
         warningBroadcast: this.$t('TRANSACTION.WARNING.BROADCAST'),
-        nothingSent: this.$t('TRANSACTION.ERROR.NOTHING_SENT')
+        nothingSent: this.$t('TRANSACTION.ERROR.NOTHING_SENT'),
+        wrongNonce: this.$t('TRANSACTION.ERROR.WRONG_NONCE')
       }
 
       let responseArray
@@ -179,6 +239,7 @@ export default {
 
               success = true
               this.$success(messages.success)
+
               return
             }
           }
@@ -190,11 +251,21 @@ export default {
           const anyLowFee = Object.keys(errors).some(transactionId => {
             return errors[transactionId].some(error => error.type === 'ERR_LOW_FEE')
           })
+          const anyNotDuplicate = Object.keys(errors).some(transactionId => {
+            return errors[transactionId].some(error => !['ERR_DUPLICATE', 'ERR_FORGED', 'ERR_ALREADY_IN_POOL', 'ERR_LOW_FEE'].includes(error.type))
+          })
+          const wrongNonce = Object.keys(errors).some(transactionId => {
+            return errors[transactionId].some(error => {
+              return error.type === 'ERR_APPLY' && error.message.includes('Cannot apply a transaction with nonce')
+            })
+          })
 
           // Be clear with the user about the error cause
           if (anyLowFee) {
             this.$error(messages.errorLowFee)
-          } else {
+          } else if (wrongNonce) {
+            this.$error(messages.wrongNonce)
+          } else if (anyNotDuplicate) {
             this.$error(messages.error)
           }
         } else {
@@ -207,8 +278,6 @@ export default {
         this.showBroadcastingTransactions = false
         this.emitSent(success, this.transaction)
       }
-
-      this.emitClose()
     },
 
     emitSent (success, transaction = null) {
@@ -240,22 +309,36 @@ export default {
     },
 
     storeTransaction (transaction) {
-      const { id, type, amount, fee, senderPublicKey, vendorField } = transaction
+      const { type, typeGroup, amount, fee, senderPublicKey, vendorField } = transaction
+
+      let id = transaction.id
+      if (transaction.signatures) {
+        id = TransactionService.getId(transaction)
+      }
+
+      if (!transaction.timestamp) {
+        transaction.timestamp = Math.floor((new Date()).getTime() / 1000)
+      } else if (transaction.timestamp > Math.floor(new Date().getTime() / 1000)) {
+        transaction.timestamp = Math.floor(transaction.timestamp / 1000)
+      }
 
       if (!transaction.timestamp) {
         transaction.timestamp = Math.floor((new Date()).getTime() / 1000)
       }
 
-      const sender = WalletService.getAddressFromPublicKey(senderPublicKey, this.walletNetwork.version)
-      const epoch = new Date(this.walletNetwork.constants.epoch)
-      const timestamp = epoch.getTime() + transaction.timestamp * 1000
+      let timestamp = transaction.timestamp * 1000
+      if (transaction.version === 1) {
+        const epoch = new Date(this.walletNetwork.constants.epoch)
+        timestamp = epoch.getTime() + (transaction.timestamp * 1000)
+      }
 
       this.$store.dispatch('transaction/create', {
         id,
         type,
+        typeGroup: typeGroup || 1,
         amount,
         fee,
-        sender,
+        sender: WalletService.getAddressFromPublicKey(senderPublicKey, this.walletNetwork.version),
         timestamp,
         vendorField,
         confirmations: 0,
@@ -284,8 +367,19 @@ export default {
 .TransactionModal {
   max-width: 45rem
 }
+
 .TransactionModalTransfer {
   /* To allow more space on the fee slider */
   min-width: 38rem;
+}
+
+.TransactionModalBridgechainRegistration,
+.TransactionModalBridgechainUpdate,
+.TransactionModalBusinessRegistration,
+.TransactionModalBusinessUpdate,
+.TransactionModalIpfs,
+.TransactionModalMultiPayment,
+.TransactionModalMultiSignature {
+  min-width: 35rem;
 }
 </style>

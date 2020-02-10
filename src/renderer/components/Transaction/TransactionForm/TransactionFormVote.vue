@@ -1,9 +1,8 @@
 <template>
-  <div
-    class="TransactionFormVote"
-  >
+  <div class="TransactionFormVote">
     <Collapse
       :is-open="!isPassphraseStep"
+      class="TransactionFormVote__delegate-details"
     >
       <ListDivided :is-floating-label="true">
         <ListDividedItem :label="$t('TRANSACTION.SENDER')">
@@ -78,40 +77,44 @@
       </div>
     </Collapse>
 
-    <Collapse
-      :is-open="isPassphraseStep"
-    >
+    <Collapse :is-open="isPassphraseStep">
       <div class="mt-12">
         <InputFee
           ref="fee"
           :currency="walletNetwork.token"
           :transaction-type="$options.transactionType"
           :show-insufficient-funds="true"
+          class="TransactionFormVote__fee"
           @input="onFee"
         />
       </div>
 
-      <div
-        v-if="currentWallet.isLedger"
-        class="mt-10"
-      >
-        {{ $t('TRANSACTION.LEDGER_SIGN_NOTICE') }}
+      <div v-if="!isMultiSignature">
+        <div
+          v-if="currentWallet.isLedger"
+          class="TransactionFormVote__ledger-notice mt-10"
+        >
+          {{ $t('TRANSACTION.LEDGER_SIGN_NOTICE') }}
+        </div>
+
+        <InputPassword
+          v-else-if="currentWallet.passphrase"
+          ref="password"
+          v-model="$v.form.walletPassword.$model"
+          :label="$t('TRANSACTION.PASSWORD')"
+          :is-required="true"
+          class="TransactionFormVote__password mt-4"
+        />
+
+        <PassphraseInput
+          v-else
+          ref="passphrase"
+          v-model="$v.form.passphrase.$model"
+          :address="currentWallet.address"
+          :pub-key-hash="walletNetwork.version"
+          class="TransactionFormVote__passphrase mt-4"
+        />
       </div>
-      <InputPassword
-        v-else-if="currentWallet.passphrase"
-        ref="password"
-        v-model="$v.form.walletPassword.$model"
-        :label="$t('TRANSACTION.PASSWORD')"
-        :is-required="true"
-      />
-      <PassphraseInput
-        v-else
-        ref="passphrase"
-        v-model="$v.form.passphrase.$model"
-        :address="currentWallet.address"
-        :pub-key-hash="walletNetwork.version"
-        class="mt-5"
-      />
 
       <PassphraseInput
         v-if="currentWallet.secondPublicKey"
@@ -120,13 +123,13 @@
         :label="$t('TRANSACTION.SECOND_PASSPHRASE')"
         :pub-key-hash="walletNetwork.version"
         :public-key="currentWallet.secondPublicKey"
-        class="mt-5"
+        class="TransactionFormVote__second-passphrase mt-5"
       />
 
       <button
         :disabled="$v.form.$invalid"
         type="button"
-        class="blue-button mt-5"
+        class="TransactionFormVote__next blue-button mt-5"
         @click="onSubmit"
       >
         {{ $t('COMMON.NEXT') }}
@@ -158,7 +161,7 @@ import mixin from './mixin'
 export default {
   name: 'TransactionFormVote',
 
-  transactionType: TRANSACTION_TYPES.VOTE,
+  transactionType: TRANSACTION_TYPES.GROUP_1.VOTE,
 
   components: {
     Collapse,
@@ -203,7 +206,11 @@ export default {
 
   computed: {
     blocksProduced () {
-      return this.delegate.blocks.produced || '0'
+      if (!this.delegate.blocks || !this.delegate.blocks.produced) {
+        return 0
+      }
+
+      return this.delegate.blocks.produced
     },
 
     showVoteUnvoteButton () {
@@ -222,7 +229,7 @@ export default {
   watch: {
     isPassphraseStep () {
       // Ignore Ledger wallets
-      if (this.currentWallet.isLedger) {
+      if (this.currentWallet.isLedger || this.isMultiSignature) {
         return
       }
 
@@ -250,7 +257,8 @@ export default {
         ],
         fee: this.getFee(),
         wif: this.form.wif,
-        networkWif: this.walletNetwork.wif
+        networkWif: this.walletNetwork.wif,
+        multiSignature: this.currentWallet.multiSignature
       }
 
       if (this.currentWallet.secondPublicKey) {
@@ -264,6 +272,10 @@ export default {
       return this.$client.buildVote(transactionData, isAdvancedFee, returnObject)
     },
 
+    transactionError () {
+      this.$error(this.$t('TRANSACTION.ERROR.VALIDATION.VOTE'))
+    },
+
     postSubmit () {
       this.reset()
     },
@@ -272,8 +284,8 @@ export default {
       this.isPassphraseStep = !this.isPassphraseStep
     },
 
-    async fetchForged () {
-      const forged = await this.$client.fetchDelegateForged(this.delegate)
+    fetchForged () {
+      const forged = this.$client.fetchDelegateForged(this.delegate)
       this.forged = this.currency_format(this.currency_subToUnit(forged), { currencyFrom: 'network' })
     },
 
@@ -283,12 +295,14 @@ export default {
 
     reset () {
       this.isPassphraseStep = false
-      if (!this.currentWallet.passphrase && !this.currentWallet.isLedger) {
-        this.$set(this.form, 'passphrase', '')
-        this.$refs.passphrase.reset()
-      } else if (!this.currentWallet.isLedger) {
-        this.$set(this.form, 'walletPassword', '')
-        this.$refs.password.reset()
+      if (!this.isMultiSignature) {
+        if (!this.currentWallet.passphrase && !this.currentWallet.isLedger) {
+          this.$set(this.form, 'passphrase', '')
+          this.$refs.passphrase.reset()
+        } else if (!this.currentWallet.isLedger) {
+          this.$set(this.form, 'walletPassword', '')
+          this.$refs.password.reset()
+        }
       }
       this.$v.$reset()
     },

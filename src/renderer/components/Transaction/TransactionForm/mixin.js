@@ -17,7 +17,9 @@ export default {
 
     passphrase: {
       isValid (value) {
-        if (this.currentWallet.isLedger || this.currentWallet.passphrase) {
+        if (this.isMultiSignature) {
+          return true
+        } else if (this.currentWallet && (this.currentWallet.isLedger || this.currentWallet.passphrase)) {
           return true
         }
 
@@ -31,7 +33,9 @@ export default {
 
     walletPassword: {
       isValid (value) {
-        if (this.currentWallet.isLedger || !this.currentWallet.passphrase) {
+        if (this.isMultiSignature) {
+          return true
+        } else if (this.currentWallet && (this.currentWallet.isLedger || !this.currentWallet.passphrase)) {
           return true
         }
 
@@ -69,6 +73,10 @@ export default {
   },
 
   computed: {
+    isMultiSignature () {
+      return this.currentWallet && !!this.currentWallet.multiSignature
+    },
+
     currentWallet () {
       return this.wallet_fromRoute
     },
@@ -83,7 +91,9 @@ export default {
   },
 
   mounted () {
-    this.form.fee = this.$refs.fee.fee
+    if (this.$refs.fee) {
+      this.form.fee = this.$refs.fee.fee
+    }
   },
 
   methods: {
@@ -119,7 +129,7 @@ export default {
 
     async submit () {
       // Ensure that fee has value, even when the user has not interacted
-      if (!this.form.fee) {
+      if (!this.form.fee && this.$refs.fee) {
         this.$set(this.form, 'fee', this.$refs.fee.fee)
       }
 
@@ -128,7 +138,14 @@ export default {
       let success = true
       let transaction
       if (!this.currentWallet.isLedger) {
-        transaction = await this.buildTransaction(transactionData, this.$refs.fee && this.$refs.fee.isAdvancedFee)
+        try {
+          transaction = await this.buildTransaction(transactionData, this.$refs.fee && this.$refs.fee.isAdvancedFee)
+        } catch (error) {
+          this.$logger.error('Could not build transaction: ', error)
+          if (this.transactionError) {
+            this.transactionError(error)
+          }
+        }
       } else {
         success = false
         this.showLedgerLoader = true

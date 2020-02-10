@@ -14,8 +14,8 @@ module.exports = {
   moduleNameMapper: {
     '^@tailwind': '<rootDir>/tailwind.js',
     '^@package.json$': '<rootDir>/package.json',
-    '^@config': '<rootDir>/config/index.js',
     '^@config/(.*)$': '<rootDir>/config/$1',
+    '^@config': '<rootDir>/config/index.js',
     '^@/(.*)$': '<rootDir>/src/renderer/$1',
     '^@tests/(.*)$': '<rootDir>/__tests__/$1',
     vue$: '<rootDir>/node_modules/vue/dist/vue.common.js'

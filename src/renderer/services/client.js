@@ -1,13 +1,22 @@
 import { Connection } from '@arkecosystem/client'
-import { Managers, Transactions } from '@arkecosystem/crypto'
-import { castArray, chunk, orderBy } from 'lodash'
+import { Identities, Transactions } from '@arkecosystem/crypto'
+import * as MagistrateCrypto from '@arkecosystem/core-magistrate-crypto'
+import { castArray, chunk, cloneDeep, orderBy } from 'lodash'
 import moment from 'moment'
 import logger from 'electron-log'
-import { TRANSACTION_TYPES } from '@config'
+import { TRANSACTION_GROUPS, TRANSACTION_TYPES } from '@config'
 import store from '@/store'
 import eventBus from '@/plugins/event-bus'
 import BigNumber from '@/plugins/bignumber'
 import TransactionService from '@/services/transaction'
+import WalletService from '@/services/wallet'
+
+Transactions.TransactionRegistry.registerTransactionType(MagistrateCrypto.Transactions.BusinessRegistrationTransaction)
+Transactions.TransactionRegistry.registerTransactionType(MagistrateCrypto.Transactions.BusinessResignationTransaction)
+Transactions.TransactionRegistry.registerTransactionType(MagistrateCrypto.Transactions.BusinessUpdateTransaction)
+Transactions.TransactionRegistry.registerTransactionType(MagistrateCrypto.Transactions.BridgechainRegistrationTransaction)
+Transactions.TransactionRegistry.registerTransactionType(MagistrateCrypto.Transactions.BridgechainResignationTransaction)
+Transactions.TransactionRegistry.registerTransactionType(MagistrateCrypto.Transactions.BridgechainUpdateTransaction)
 
 export default class ClientService {
   /*
@@ -75,6 +84,28 @@ export default class ClientService {
     try {
       const { body } = await ClientService.newConnection(server, timeout).api('node').fees(7)
 
+      if (!body.data[0]) {
+        return Object.values(TRANSACTION_GROUPS)
+          .filter(group => !!body.data[group])
+          .reduce((accumulator, group) => {
+            accumulator[group] = Object.keys(body.data[group])
+              .map(key => {
+                const fee = body.data[group][key]
+
+                return {
+                  type: TRANSACTION_TYPES[`GROUP_${group}`][key.toUpperCase()],
+                  fees: {
+                    minFee: Number(fee.min),
+                    maxFee: Number(fee.max),
+                    avgFee: Number(fee.avg)
+                  }
+                }
+              })
+
+            return accumulator
+          }, {})
+      }
+
       return body.data.map(fee => ({
         type: Number(fee.type),
         fees: {
@@ -84,9 +115,7 @@ export default class ClientService {
         }
       }))
     } catch (error) {
-      const { feeStatistics } = await ClientService.fetchNetworkConfig(server, timeout)
-
-      return feeStatistics
+      return []
     }
   }
 
@@ -106,10 +135,6 @@ export default class ClientService {
   set host (host) {
     this.__host = `${host}/api/v2`
     this.client = ClientService.newConnection(host)
-  }
-
-  get version () {
-    return this.__version
   }
 
   /**
@@ -157,15 +182,9 @@ export default class ClientService {
     return body.meta.totalCount
   }
 
-  async fetchDelegateForged (delegate) {
+  fetchDelegateForged (delegate) {
     if (delegate.forged) {
       return delegate.forged.total
-    }
-
-    const { body } = await this.client.api('delegates').forged(delegate.publicKey)
-
-    if (body.success) {
-      return body.forged
     }
 
     return '0'
@@ -176,7 +195,7 @@ export default class ClientService {
    * @return {Number[]}
    */
   async fetchStaticFees () {
-    const fees = Object.values((await this.client.api('transactions').fees()).body.data)
+    const fees = (await this.client.api('transactions').fees()).body.data
 
     return fees
   }
@@ -214,6 +233,15 @@ export default class ClientService {
   }
 
   /**
+   * Fetch bridgechains for a business.
+   * @param  {String} publicKey
+   * @return {Object}
+   */
+  async fetchBusinessBridgechains (publicKey) {
+    return (await this.client.api('businesses').bridgechains(publicKey)).body
+  }
+
+  /**
    * Request the transactions according to the current network version
    *
    * V1:
@@ -237,11 +265,17 @@ export default class ClientService {
     let totalCount = 0
     let transactions = []
 
-    const { body } = await this.client.api('wallets').transactions(address, {
+    const queryOptions = {
       orderBy: options.orderBy,
       limit: options.limit,
       page: options.page
-    })
+    }
+
+    if (options.transactionType) {
+      queryOptions.type = options.transactionType
+    }
+
+    const { body } = await this.client.api('wallets').transactions(address, queryOptions)
 
     transactions = body.data.map(transaction => {
       transaction.timestamp = transaction.timestamp.unix * 1000 // to milliseconds
@@ -409,15 +443,17 @@ export default class ClientService {
    * @return {Object}
    */
   __parseCurrentPeer () {
-    const matches = /(https?:\/\/)([a-zA-Z0-9.-_]+):([0-9]+)/.exec(this.host)
+    const matches = /(https?:\/\/)([a-zA-Z0-9.\-_]+)(:([0-9]*))?/.exec(this.host)
     const scheme = matches[1]
     const ip = matches[2]
-    const port = matches[3]
+    const port = matches[4]
+
+    const isHttps = scheme === 'https://'
 
     return {
       ip,
-      port,
-      isHttps: scheme === 'https://'
+      port: port || (isHttps ? '443' : '80'),
+      isHttps
     }
   }
 
@@ -440,12 +476,13 @@ export default class ClientService {
       passphrase,
       secondPassphrase,
       wif,
-      networkWif
+      networkWif,
+      multiSignature
     },
     isAdvancedFee = false,
     returnObject = false
   ) {
-    const staticFee = store.getters['transaction/staticFee'](TRANSACTION_TYPES.VOTE)
+    const staticFee = store.getters['transaction/staticFee'](TRANSACTION_TYPES.GROUP_1.VOTE, 1)
     if (!isAdvancedFee && fee.gt(staticFee)) {
       throw new Error(`Vote fee should be smaller than ${staticFee}`)
     }
@@ -464,7 +501,8 @@ export default class ClientService {
       passphrase,
       secondPassphrase,
       wif,
-      networkWif
+      networkWif,
+      multiSignature
     }, returnObject)
   }
 
@@ -487,12 +525,13 @@ export default class ClientService {
       passphrase,
       secondPassphrase,
       wif,
-      networkWif
+      networkWif,
+      multiSignature
     },
     isAdvancedFee = false,
     returnObject = false
   ) {
-    const staticFee = store.getters['transaction/staticFee'](TRANSACTION_TYPES.DELEGATE_REGISTRATION)
+    const staticFee = store.getters['transaction/staticFee'](TRANSACTION_TYPES.GROUP_1.DELEGATE_REGISTRATION, 1)
     if (!isAdvancedFee && fee.gt(staticFee)) {
       throw new Error(`Delegate registration fee should be smaller than ${staticFee}`)
     }
@@ -511,7 +550,8 @@ export default class ClientService {
       passphrase,
       secondPassphrase,
       wif,
-      networkWif
+      networkWif,
+      multiSignature
     }, returnObject)
   }
 
@@ -539,23 +579,23 @@ export default class ClientService {
       secondPassphrase,
       wif,
       networkWif,
-      networkId
+      networkId,
+      multiSignature
     },
     isAdvancedFee = false,
     returnObject = false
   ) {
-    const staticFee = store.getters['transaction/staticFee'](TRANSACTION_TYPES.TRANSFER)
+    const staticFee = store.getters['transaction/staticFee'](TRANSACTION_TYPES.GROUP_1.TRANSFER, 1)
     if (!isAdvancedFee && fee.gt(staticFee)) {
       throw new Error(`Transfer fee should be smaller than ${staticFee}`)
     }
 
     const transaction = Transactions.BuilderFactory
       .transfer()
-      .amount(amount)
+      .amount(amount || 0)
       .fee(fee)
       .recipientId(recipientId)
-
-    transaction.data.vendorField = vendorField
+      .vendorField(vendorField)
 
     passphrase = this.normalizePassphrase(passphrase)
     secondPassphrase = this.normalizePassphrase(secondPassphrase)
@@ -567,7 +607,8 @@ export default class ClientService {
       secondPassphrase,
       wif,
       networkWif,
-      networkId
+      networkId,
+      multiSignature
     }, returnObject)
   }
 
@@ -588,12 +629,13 @@ export default class ClientService {
       passphrase,
       secondPassphrase,
       wif,
-      networkWif
+      networkWif,
+      multiSignature
     },
     isAdvancedFee = false,
     returnObject = false
   ) {
-    const staticFee = store.getters['transaction/staticFee'](TRANSACTION_TYPES.SECOND_SIGNATURE)
+    const staticFee = store.getters['transaction/staticFee'](TRANSACTION_TYPES.GROUP_1.SECOND_SIGNATURE, 1)
     if (!isAdvancedFee && fee.gt(staticFee)) {
       throw new Error(`Second signature fee should be smaller than ${staticFee}`)
     }
@@ -610,7 +652,590 @@ export default class ClientService {
       transaction,
       passphrase,
       wif,
+      networkWif,
+      multiSignature
+    }, returnObject)
+  }
+
+  /**
+   * Build Multi-Signature transaction.
+   * @param {Object} data
+   * @param {Number} data.publicKeys - public keys associated with new multisignature wallet
+   * @param {Number} data.minKeys - minimum required keys for wallet transactions
+   * @param {Number} data.fee - dynamic fee, as arktoshi
+   * @param {String} data.passphrase
+   * @param {String} data.secondPassphrase
+   * @param {String} data.wif
+   * @param {Boolean} returnObject - to return the transaction of its internal struct
+   * @returns {Object}
+   */
+  async buildMultiSignature (
+    {
+      address,
+      publicKeys,
+      minKeys,
+      fee,
+      passphrase,
+      secondPassphrase,
+      wif,
       networkWif
+    },
+    isAdvancedFee = false,
+    returnObject = false
+  ) {
+    if (!store.getters['session/network'].constants.aip11) {
+      throw new Error('AIP-11 transaction not supported on network')
+    }
+
+    const staticFee = store.getters['transaction/staticFee'](TRANSACTION_TYPES.GROUP_1.MULTI_SIGNATURE, 1)
+    if (!isAdvancedFee && fee.gt(staticFee)) {
+      throw new Error(`Multi-Signature fee should be smaller than ${staticFee}`)
+    }
+
+    const transaction = Transactions.BuilderFactory
+      .multiSignature()
+      .multiSignatureAsset({
+        min: +minKeys,
+        publicKeys
+      })
+      .fee(fee)
+
+    passphrase = this.normalizePassphrase(passphrase)
+    secondPassphrase = this.normalizePassphrase(secondPassphrase)
+
+    const transactionObject = await this.__signTransaction({
+      address,
+      transaction,
+      passphrase,
+      secondPassphrase,
+      wif,
+      networkWif,
+      multiSignature: transaction.data.asset.multiSignature
+    }, true)
+
+    return returnObject ? transactionObject : transactionObject.getStruct()
+  }
+
+  /**
+   * Build IPFS transaction.
+   * @param {Object} data
+   * @param {Number} data.fee - dynamic fee, as arktoshi
+   * @param {Number} data.hash - ipfs hash
+   * @param {String} data.passphrase
+   * @param {String} data.secondPassphrase
+   * @param {String} data.wif
+   * @param {Boolean} returnObject - to return the transaction of its internal struct
+   * @returns {Object}
+   */
+  async buildIpfs (
+    {
+      address,
+      fee,
+      hash,
+      passphrase,
+      secondPassphrase,
+      wif,
+      networkWif,
+      multiSignature
+    },
+    isAdvancedFee = false,
+    returnObject = false
+  ) {
+    if (!store.getters['session/network'].constants.aip11) {
+      throw new Error('AIP-11 transaction not supported on network')
+    }
+
+    const staticFee = store.getters['transaction/staticFee'](TRANSACTION_TYPES.GROUP_1.IPFS, 1)
+    if (!isAdvancedFee && fee.gt(staticFee)) {
+      throw new Error(`IPFS fee should be smaller than ${staticFee}`)
+    }
+
+    const transaction = Transactions.BuilderFactory
+      .ipfs()
+      .ipfsAsset(hash)
+      .fee(fee)
+
+    passphrase = this.normalizePassphrase(passphrase)
+    secondPassphrase = this.normalizePassphrase(secondPassphrase)
+
+    return this.__signTransaction({
+      address,
+      transaction,
+      passphrase,
+      secondPassphrase,
+      wif,
+      networkWif,
+      multiSignature
+    }, returnObject)
+  }
+
+  /**
+   * Build a multi-payment transfer transaction.
+   * @param {Object} data
+   * @param {Number} data.amount - amount to send, as arktoshi
+   * @param {Number} data.fee - dynamic fee, as arktoshi
+   * @param {String} data.recipientId
+   * @param {String} data.vendorField
+   * @param {String} data.passphrase
+   * @param {String} data.secondPassphrase
+   * @param {String} data.wif
+   * @param {Boolean} returnObject - to return the transaction of its internal struct
+   * @returns {Object}
+   */
+  async buildMultiPayment (
+    {
+      address,
+      recipients,
+      fee,
+      vendorField,
+      passphrase,
+      secondPassphrase,
+      wif,
+      networkWif,
+      multiSignature
+    },
+    isAdvancedFee = false,
+    returnObject = false
+  ) {
+    if (!store.getters['session/network'].constants.aip11) {
+      throw new Error('AIP-11 transaction not supported on network')
+    }
+
+    const staticFee = store.getters['transaction/staticFee'](TRANSACTION_TYPES.GROUP_1.MULTI_PAYMENT, 1)
+    if (!isAdvancedFee && fee.gt(staticFee)) {
+      throw new Error(`Multi-Payment fee should be smaller than ${staticFee}`)
+    }
+
+    const transaction = Transactions.BuilderFactory
+      .multiPayment()
+      .recipientId(address)
+      .fee(fee)
+      .vendorField(vendorField)
+
+    for (const recipient of recipients) {
+      transaction.addPayment(recipient.address, recipient.amount)
+    }
+
+    passphrase = this.normalizePassphrase(passphrase)
+    secondPassphrase = this.normalizePassphrase(secondPassphrase)
+
+    return this.__signTransaction({
+      address,
+      transaction,
+      passphrase,
+      secondPassphrase,
+      wif,
+      networkWif,
+      multiSignature
+    }, returnObject)
+  }
+
+  /**
+   * Build a delegate resignation transaction.
+   * @param {Object} data
+   * @param {Number} data.fee - dynamic fee, as arktoshi
+   * @param {String} data.passphrase
+   * @param {String} data.secondPassphrase
+   * @param {String} data.wif
+   * @param {Boolean} returnObject - to return the transaction of its internal struct
+   * @returns {Object}
+   */
+  async buildDelegateResignation (
+    {
+      address,
+      fee,
+      passphrase,
+      secondPassphrase,
+      wif,
+      networkWif,
+      multiSignature
+    },
+    isAdvancedFee = false,
+    returnObject = false
+  ) {
+    if (!store.getters['session/network'].constants.aip11) {
+      throw new Error('AIP-11 transaction not supported on network')
+    }
+
+    const staticFee = store.getters['transaction/staticFee'](TRANSACTION_TYPES.GROUP_1.DELEGATE_RESIGNATION, 1)
+    if (!isAdvancedFee && fee.gt(staticFee)) {
+      throw new Error(`Delegate resignation fee should be smaller than ${staticFee}`)
+    }
+
+    const transaction = Transactions.BuilderFactory
+      .delegateResignation()
+      .fee(fee)
+
+    passphrase = this.normalizePassphrase(passphrase)
+    secondPassphrase = this.normalizePassphrase(secondPassphrase)
+
+    return this.__signTransaction({
+      address,
+      transaction,
+      passphrase,
+      secondPassphrase,
+      wif,
+      networkWif,
+      multiSignature
+    }, returnObject)
+  }
+
+  /**
+   * Build a business registration transaction.
+   * @param {Object} data
+   * @param {String} data.address
+   * @param {Number} data.fee - dynamic fee, as arktoshi
+   * @param {Object} data.asset
+   * @param {String} data.passphrase
+   * @param {String} data.secondPassphrase
+   * @param {String} data.wif
+   * @param {String} data.networkWif
+   * @param {Object} data.multiSignature
+   * @param {Boolean} isAdvancedFee - if it's not a static fee
+   * @param {Boolean} returnObject - to return the transaction of its internal struct
+   * @returns {Object}
+   */
+  async buildBusinessRegistration (
+    {
+      address,
+      fee,
+      asset,
+      passphrase,
+      secondPassphrase,
+      wif,
+      networkWif,
+      multiSignature
+    },
+    isAdvancedFee = false,
+    returnObject = false
+  ) {
+    if (!store.getters['session/network'].constants.aip11) {
+      throw new Error('AIP-11 transaction not supported on network')
+    }
+
+    const staticFee = store.getters['transaction/staticFee'](TRANSACTION_TYPES.GROUP_2.BUSINESS_REGISTRATION, 2)
+    if (!isAdvancedFee && fee.gt(staticFee)) {
+      throw new Error(`Business Registration fee should be smaller than ${staticFee}`)
+    }
+
+    const businessRegistrationAsset = {
+      name: asset.name,
+      website: asset.website
+    }
+
+    if (asset.vat && asset.vat.length) {
+      businessRegistrationAsset.vat = asset.vat
+    }
+
+    if (asset.repository && asset.repository.length) {
+      businessRegistrationAsset.repository = asset.repository
+    }
+
+    const transaction = new MagistrateCrypto.Builders.BusinessRegistrationBuilder()
+      .businessRegistrationAsset(businessRegistrationAsset)
+      .fee(fee)
+
+    passphrase = this.normalizePassphrase(passphrase)
+    secondPassphrase = this.normalizePassphrase(secondPassphrase)
+
+    return this.__signTransaction({
+      address,
+      transaction,
+      passphrase,
+      secondPassphrase,
+      wif,
+      networkWif,
+      multiSignature
+    }, returnObject)
+  }
+
+  /**
+   * Build a business update transaction.
+   * @param {Object} data
+   * @param {String} data.address
+   * @param {Number} data.fee - dynamic fee, as arktoshi
+   * @param {Object} data.asset
+   * @param {String} data.passphrase
+   * @param {String} data.secondPassphrase
+   * @param {String} data.wif
+   * @param {String} data.networkWif
+   * @param {Object} data.multiSignature
+   * @param {Boolean} isAdvancedFee - if it's not a static fee
+   * @param {Boolean} returnObject - to return the transaction of its internal struct
+   * @returns {Object}
+   */
+  async buildBusinessUpdate (
+    {
+      address,
+      fee,
+      asset,
+      passphrase,
+      secondPassphrase,
+      wif,
+      networkWif,
+      multiSignature
+    },
+    isAdvancedFee = false,
+    returnObject = false
+  ) {
+    if (!store.getters['session/network'].constants.aip11) {
+      throw new Error('AIP-11 transaction not supported on network')
+    }
+
+    const staticFee = store.getters['transaction/staticFee'](TRANSACTION_TYPES.GROUP_2.BUSINESS_UPDATE, 2)
+    if (!isAdvancedFee && fee.gt(staticFee)) {
+      throw new Error(`Business Update fee should be smaller than ${staticFee}`)
+    }
+
+    const businessAsset = {
+      name: asset.name,
+      website: asset.website
+    }
+
+    if (asset.vat && asset.vat.length) {
+      businessAsset.vat = asset.vat
+    }
+
+    if (asset.repository && asset.repository.length) {
+      businessAsset.repository = asset.repository
+    }
+
+    const transaction = new MagistrateCrypto.Builders.BusinessUpdateBuilder()
+      .businessUpdateAsset(businessAsset)
+      .fee(fee)
+
+    passphrase = this.normalizePassphrase(passphrase)
+    secondPassphrase = this.normalizePassphrase(secondPassphrase)
+
+    return this.__signTransaction({
+      address,
+      transaction,
+      passphrase,
+      secondPassphrase,
+      wif,
+      networkWif,
+      multiSignature
+    }, returnObject)
+  }
+
+  /**
+   * Build a business resignation transaction.
+   * @param {Object} data
+   * @param {String} data.address
+   * @param {Number} data.fee - dynamic fee, as arktoshi
+   * @param {String} data.passphrase
+   * @param {String} data.secondPassphrase
+   * @param {String} data.wif
+   * @param {String} data.networkWif
+   * @param {Object} data.multiSignature
+   * @param {Boolean} isAdvancedFee - if it's not a static fee
+   * @param {Boolean} returnObject - to return the transaction of its internal struct
+   * @returns {Object}
+   */
+  async buildBusinessResignation (
+    {
+      address,
+      fee,
+      passphrase,
+      secondPassphrase,
+      wif,
+      networkWif,
+      multiSignature
+    },
+    isAdvancedFee = false,
+    returnObject = false
+  ) {
+    if (!store.getters['session/network'].constants.aip11) {
+      throw new Error('AIP-11 transaction not supported on network')
+    }
+
+    const staticFee = store.getters['transaction/staticFee'](TRANSACTION_TYPES.GROUP_2.BUSINESS_RESIGNATION, 2)
+    if (!isAdvancedFee && fee.gt(staticFee)) {
+      throw new Error(`Business Resignation fee should be smaller than ${staticFee}`)
+    }
+
+    const transaction = new MagistrateCrypto.Builders.BusinessResignationBuilder()
+      .fee(fee)
+
+    passphrase = this.normalizePassphrase(passphrase)
+    secondPassphrase = this.normalizePassphrase(secondPassphrase)
+
+    return this.__signTransaction({
+      address,
+      transaction,
+      passphrase,
+      secondPassphrase,
+      wif,
+      networkWif,
+      multiSignature
+    }, returnObject)
+  }
+
+  /**
+   * Build a bridgechain registration transaction.
+   * @param {Object} data
+   * @param {String} data.address
+   * @param {Number} data.fee - dynamic fee, as arktoshi
+   * @param {Object} data.asset
+   * @param {String} data.passphrase
+   * @param {String} data.secondPassphrase
+   * @param {String} data.wif
+   * @param {String} data.networkWif
+   * @param {Object} data.multiSignature
+   * @param {Boolean} isAdvancedFee - if it's not a static fee
+   * @param {Boolean} returnObject - to return the transaction of its internal struct
+   * @returns {Object}
+   */
+  async buildBridgechainRegistration (
+    {
+      address,
+      fee,
+      asset,
+      passphrase,
+      secondPassphrase,
+      wif,
+      networkWif,
+      multiSignature
+    },
+    isAdvancedFee = false,
+    returnObject = false
+  ) {
+    if (!store.getters['session/network'].constants.aip11) {
+      throw new Error('AIP-11 transaction not supported on network')
+    }
+
+    const staticFee = store.getters['transaction/staticFee'](TRANSACTION_TYPES.GROUP_2.BRIDGECHAIN_REGISTRATION, 2)
+    if (!isAdvancedFee && fee.gt(staticFee)) {
+      throw new Error(`Bridgechain Registration fee should be smaller than ${staticFee}`)
+    }
+
+    const transaction = new MagistrateCrypto.Builders.BridgechainRegistrationBuilder()
+      .bridgechainRegistrationAsset(asset)
+      .fee(fee)
+
+    passphrase = this.normalizePassphrase(passphrase)
+    secondPassphrase = this.normalizePassphrase(secondPassphrase)
+
+    return this.__signTransaction({
+      address,
+      transaction,
+      passphrase,
+      secondPassphrase,
+      wif,
+      networkWif,
+      multiSignature
+    }, returnObject)
+  }
+
+  /**
+   * Build a bridgechain update transaction.
+   * @param {Object} data
+   * @param {String} data.address
+   * @param {Number} data.fee - dynamic fee, as arktoshi
+   * @param {Object} data.asset
+   * @param {String} data.passphrase
+   * @param {String} data.secondPassphrase
+   * @param {String} data.wif
+   * @param {String} data.networkWif
+   * @param {Object} data.multiSignature
+   * @param {Boolean} isAdvancedFee - if it's not a static fee
+   * @param {Boolean} returnObject - to return the transaction of its internal struct
+   * @returns {Object}
+   */
+  async buildBridgechainUpdate (
+    {
+      address,
+      fee,
+      asset,
+      passphrase,
+      secondPassphrase,
+      wif,
+      networkWif,
+      multiSignature
+    },
+    isAdvancedFee = false,
+    returnObject = false
+  ) {
+    if (!store.getters['session/network'].constants.aip11) {
+      throw new Error('AIP-11 transaction not supported on network')
+    }
+
+    const staticFee = store.getters['transaction/staticFee'](TRANSACTION_TYPES.GROUP_2.BRIDGECHAIN_UPDATE, 2)
+    if (!isAdvancedFee && fee.gt(staticFee)) {
+      throw new Error(`Bridgechain Update fee should be smaller than ${staticFee}`)
+    }
+
+    const transaction = new MagistrateCrypto.Builders.BridgechainUpdateBuilder()
+      .bridgechainUpdateAsset(asset)
+      .fee(fee)
+
+    passphrase = this.normalizePassphrase(passphrase)
+    secondPassphrase = this.normalizePassphrase(secondPassphrase)
+
+    return this.__signTransaction({
+      address,
+      transaction,
+      passphrase,
+      secondPassphrase,
+      wif,
+      networkWif,
+      multiSignature
+    }, returnObject)
+  }
+
+  /**
+   * Build a bridgechain resignation transaction.
+   * @param {Object} data
+   * @param {String} data.address
+   * @param {Number} data.fee - dynamic fee, as arktoshi
+   * @param {String} data.bridgechainId
+   * @param {String} data.passphrase
+   * @param {String} data.secondPassphrase
+   * @param {String} data.wif
+   * @param {String} data.networkWif
+   * @param {Object} data.multiSignature
+   * @param {Boolean} isAdvancedFee - if it's not a static fee
+   * @param {Boolean} returnObject - to return the transaction of its internal struct
+   * @returns {Object}
+   */
+  async buildBridgechainResignation (
+    {
+      address,
+      fee,
+      bridgechainId,
+      passphrase,
+      secondPassphrase,
+      wif,
+      networkWif,
+      multiSignature
+    },
+    isAdvancedFee = false,
+    returnObject = false
+  ) {
+    if (!store.getters['session/network'].constants.aip11) {
+      throw new Error('AIP-11 transaction not supported on network')
+    }
+
+    const staticFee = store.getters['transaction/staticFee'](TRANSACTION_TYPES.GROUP_2.BRIDGECHAIN_RESIGNATION, 2)
+    if (!isAdvancedFee && fee.gt(staticFee)) {
+      throw new Error(`Bridgechain Resignation fee should be smaller than ${staticFee}`)
+    }
+
+    const transaction = new MagistrateCrypto.Builders.BridgechainResignationBuilder()
+      .bridgechainResignationAsset(bridgechainId)
+      .fee(fee)
+
+    passphrase = this.normalizePassphrase(passphrase)
+    secondPassphrase = this.normalizePassphrase(secondPassphrase)
+
+    return this.__signTransaction({
+      address,
+      transaction,
+      passphrase,
+      secondPassphrase,
+      wif,
+      networkWif,
+      multiSignature
     }, returnObject)
   }
 
@@ -634,11 +1259,19 @@ export default class ClientService {
       secondPassphrase,
       wif,
       networkWif,
-      networkId
+      networkId,
+      multiSignature
     },
     returnObject = false
   ) {
-    const network = store.getters['network/byId'](networkId) || store.getters['session/network']
+    let network
+    if (networkId) {
+      network = store.getters['network/byId'](networkId)
+    }
+    if (!network) {
+      network = store.getters['session/network']
+    }
+
     transaction = transaction.network(network.version)
 
     // TODO replace with dayjs
@@ -646,10 +1279,11 @@ export default class ClientService {
     const now = moment().valueOf()
     transaction.data.timestamp = Math.floor((now - epochTime) / 1000)
 
-    if (network.constants.aip11) {
-      Managers.configManager.setConfig(network.crypto)
-      Managers.configManager.setHeight(await store.dispatch('peer/getAverageHeight', network))
+    if (passphrase) {
+      passphrase = this.normalizePassphrase(passphrase)
+    }
 
+    if (network.constants.aip11) {
       let nonce = '1'
       try {
         nonce = BigNumber((await this.fetchWallet(address)).nonce || 0).plus(1).toString()
@@ -659,25 +1293,128 @@ export default class ClientService {
 
       transaction.version(2)
         .nonce(nonce)
+    } else {
+      transaction.version(1)
     }
 
+    if (multiSignature) {
+      let senderPublicKey = null
+      if (passphrase) {
+        senderPublicKey = WalletService.getPublicKeyFromPassphrase(passphrase)
+      } else if (wif) {
+        senderPublicKey = WalletService.getPublicKeyFromWIF(wif)
+      }
+
+      const publicKeyIndex = multiSignature.publicKeys.indexOf(senderPublicKey)
+      transaction.senderPublicKey(senderPublicKey)
+      if (publicKeyIndex > -1) {
+        if (passphrase) {
+          transaction.multiSign(passphrase, publicKeyIndex)
+        } else if (wif) {
+          transaction.multiSignWithWif(publicKeyIndex, wif, networkWif)
+        }
+      } else if (transaction.data.type === TRANSACTION_TYPES.GROUP_1.MULTI_SIGNATURE && !transaction.data.signatures) {
+        transaction.data.signatures = []
+      }
+    } else {
+      if (passphrase) {
+        transaction.sign(passphrase)
+      } else if (wif) {
+        transaction.signWithWif(wif, networkWif)
+      }
+
+      if (secondPassphrase) {
+        transaction.secondSign(this.normalizePassphrase(secondPassphrase))
+      }
+    }
+
+    if (returnObject) {
+      return transaction
+    }
+
+    if (multiSignature) {
+      if (!transaction.data.senderPublicKey) {
+        transaction.senderPublicKey(WalletService.getPublicKeyFromMultiSignatureAsset(multiSignature))
+      }
+      const transactionJson = transaction.build().toJson()
+      transactionJson.multiSignature = multiSignature
+      if (!transactionJson.signatures) {
+        transactionJson.signatures = []
+      }
+
+      return transactionJson
+    }
+
+    const response = transaction.build().toJson()
+    response.totalAmount = TransactionService.getTotalAmount(response)
+
+    return response
+  }
+
+  /**
+   * Sign a transaction that requires multi-signatures
+   * @return {Object}
+   */
+  async multiSign (transaction, { multiSignature, networkWif, passphrase, secondPassphrase, wif }) {
+    if (!passphrase && !wif) {
+      throw new Error('No passphrase or wif provided')
+    }
+
+    transaction = this.__transactionFromData(transaction)
+
+    const network = store.getters['session/network']
+    if (!network.constants.aip11) {
+      throw new Error('Multi-Signature Transactions are not supported yet')
+    }
+
+    let keys
     if (passphrase) {
-      transaction = transaction.sign(this.normalizePassphrase(passphrase))
-    } else if (wif) {
-      transaction = transaction.signWithWif(wif, networkWif)
+      keys = Identities.Keys.fromPassphrase(passphrase)
+    } else {
+      keys = Identities.Keys.fromWIF(wif, { wif: networkWif })
     }
 
-    if (secondPassphrase) {
-      transaction = transaction.secondSign(this.normalizePassphrase(secondPassphrase))
+    const isReady = TransactionService.isMultiSignatureReady({
+      ...transaction,
+      multiSignature,
+      signatures: [
+        ...transaction.signatures
+      ]
+    }, true)
+
+    if (!isReady) {
+      const index = multiSignature.publicKeys.indexOf(keys.publicKey)
+      if (index >= 0) {
+        Transactions.Signer.multiSign(transaction, keys, index)
+        transaction.signatures = transaction.signatures.filter((value, index, self) => {
+          return self.indexOf(value) === index
+        })
+      } else {
+        throw new Error('passphrase/wif is not used to sign this transaction')
+      }
+    } else if (TransactionService.needsWalletSignature(transaction, keys.publicKey)) {
+      Transactions.Signer.sign(transaction, keys)
+
+      if (secondPassphrase) {
+        const secondaryKeys = Identities.Keys.fromPassphrase(secondPassphrase)
+        Transactions.Signer.secondSign(transaction, secondaryKeys)
+      }
+
+      transaction.id = TransactionService.getId(transaction)
     }
 
-    const transactionResponse = returnObject ? transaction : transaction.getStruct()
-
-    if (!returnObject) {
-      transactionResponse.totalAmount = TransactionService.getTotalAmount(transactionResponse)
+    return {
+      ...transaction,
+      multiSignature
     }
+  }
 
-    return transactionResponse
+  __transactionFromData (transaction) {
+    transaction = cloneDeep(transaction)
+    transaction.multiSignature = undefined
+    transaction.timestamp = undefined
+
+    return transaction
   }
 
   /**
@@ -688,6 +1425,12 @@ export default class ClientService {
    * @returns {Object[]}
    */
   async broadcastTransaction (transactions, broadcast) {
+    if (Array.isArray(transactions) && !transactions.length) {
+      return []
+    } else if (typeof transactions === 'object' && !transactions.network) {
+      return []
+    }
+
     let currentPeer = store.getters['peer/current']()
     if (!currentPeer) {
       currentPeer = this.__parseCurrentPeer()
@@ -727,7 +1470,6 @@ export default class ClientService {
   }
 
   // TODO this shouldn't be responsibility of the client
-  // TODO update client when peer changes
   __watchProfile () {
     store.watch(
       (_, getters) => getters['session/profile'],

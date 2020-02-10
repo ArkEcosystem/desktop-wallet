@@ -1,5 +1,6 @@
 import BaseModule from '../base'
 import { cloneDeep, isEmpty } from 'lodash'
+import { Managers } from '@arkecosystem/crypto'
 import { NETWORKS } from '@config'
 import eventBus from '@/plugins/event-bus'
 import NetworkModel from '@/models/network'
@@ -47,7 +48,7 @@ export default new BaseModule(NetworkModel, {
   },
 
   actions: {
-    load ({ commit, getters }) {
+    load ({ commit, getters, rootGetters }) {
       const all = cloneDeep(getters.all)
       if (!isEmpty(all)) {
         // TODO: remove in future major version
@@ -62,17 +63,21 @@ export default new BaseModule(NetworkModel, {
         if (missingCustom) {
           commit('SET_ALL', all)
         }
-
-        return
+      } else {
+        commit('SET_ALL', NETWORKS)
       }
 
-      commit('SET_ALL', NETWORKS)
+      const sessionNetwork = rootGetters['session/network']
+      if (sessionNetwork && sessionNetwork.crypto && sessionNetwork.constants) {
+        Managers.configManager.setConfig(cloneDeep(sessionNetwork.crypto))
+        Managers.configManager.setHeight(sessionNetwork.constants.height)
+      }
     },
 
     /*
      * Update data of the network
      */
-    async updateData ({ commit, rootGetters }, network = null) {
+    async updateData ({ commit, dispatch, rootGetters }, network = null) {
       if (!network) {
         network = rootGetters['session/network']
       }
@@ -85,8 +90,11 @@ export default new BaseModule(NetworkModel, {
           crypto,
           constants
         })
+
+        Managers.configManager.setConfig(cloneDeep(crypto))
+        Managers.configManager.setHeight(constants.height)
       } catch (error) {
-        // data could not be updated
+        console.error('Could not update network data:', error)
       }
     },
 
@@ -102,7 +110,7 @@ export default new BaseModule(NetworkModel, {
         const feeStatistics = await Client.fetchFeeStatistics(network.server)
         commit('UPDATE', {
           ...network,
-          feeStatistics
+          feeStatistics: { ...feeStatistics }
         })
       } catch (error) {
         // Fees couldn't be updated

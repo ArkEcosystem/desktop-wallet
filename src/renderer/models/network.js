@@ -44,7 +44,7 @@ export default new BaseModel({
       type: 'object'
     },
     feeStatistics: {
-      type: 'array'
+      type: 'object'
     },
     constants: {
       type: 'object'

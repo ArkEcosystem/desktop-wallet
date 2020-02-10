@@ -32,17 +32,19 @@
       <Collapse
         :is-open="!isPassphraseStep"
         :animation-duration="{ enter: 0, leave: 0 }"
+        class="TransactionFormSecondSignature__step-1"
       >
         <PassphraseWords
           v-show="showPassphraseWords"
           :passphrase-words="passphraseWords"
+          class="TransactionFormSecondSignature__passphrase-words"
         />
 
         <button
           :disabled="isGenerating || !showPassphraseWords"
           :class="{ 'hidden': !showPassphraseWords }"
           type="button"
-          class="blue-button mt-5"
+          class="TransactionFormSecondSignature__step-1__next blue-button mt-5"
           @click="toggleStep"
         >
           {{ $t('COMMON.NEXT') }}
@@ -51,12 +53,13 @@
 
       <Collapse
         :is-open="isPassphraseStep"
+        class="TransactionFormSecondSignature__step-2"
       >
         <PassphraseVerification
           ref="passphraseVerification"
           :passphrase="passphraseWords"
           :word-positions="wordPositions"
-          class="mb-10"
+          class="TransactionFormSecondSignature__passphrase-verification mb-10"
           @verified="onVerification"
         />
 
@@ -65,34 +68,40 @@
           :currency="walletNetwork.token"
           :transaction-type="$options.transactionType"
           :show-insufficient-funds="true"
+          class="TransactionFormSecondSignature__fee"
           @input="onFee"
         />
 
-        <div
-          v-if="currentWallet.isLedger"
-          class="mt-10"
-        >
-          {{ $t('TRANSACTION.LEDGER_SIGN_NOTICE') }}
+        <div v-if="!isMultiSignature">
+          <div
+            v-if="currentWallet.isLedger"
+            class="TransactionFormSecondSignature__ledger-notice mt-10"
+          >
+            {{ $t('TRANSACTION.LEDGER_SIGN_NOTICE') }}
+          </div>
+
+          <InputPassword
+            v-else-if="currentWallet.passphrase"
+            ref="password"
+            v-model="$v.form.walletPassword.$model"
+            :label="$t('TRANSACTION.PASSWORD')"
+            :is-required="true"
+            class="TransactionFormSecondSignature__password mt-4"
+          />
+
+          <PassphraseInput
+            v-else
+            ref="passphrase"
+            v-model="$v.form.passphrase.$model"
+            :address="currentWallet.address"
+            :pub-key-hash="walletNetwork.version"
+            class="TransactionFormSecondSignature__passphrase mt-4"
+          />
         </div>
-        <InputPassword
-          v-else-if="currentWallet.passphrase"
-          ref="password"
-          v-model="$v.form.walletPassword.$model"
-          :label="$t('TRANSACTION.PASSWORD')"
-          :is-required="true"
-        />
-        <PassphraseInput
-          v-else
-          ref="passphrase"
-          v-model="$v.form.passphrase.$model"
-          :address="currentWallet.address"
-          :pub-key-hash="walletNetwork.version"
-          class="mt-5"
-        />
 
         <button
           type="button"
-          class="blue-button mt-5 mr-4"
+          class="TransactionFormSecondSignature__back blue-button mt-5 mr-4"
           @click="toggleStep"
         >
           {{ $t('COMMON.BACK') }}
@@ -101,7 +110,7 @@
         <button
           :disabled="$v.form.$invalid || !isPassphraseVerified"
           type="button"
-          class="blue-button mt-5"
+          class="TransactionFormSecondSignature__step-2__next blue-button mt-5"
           @click="onSubmit"
         >
           {{ $t('COMMON.NEXT') }}
@@ -122,7 +131,7 @@
         v-if="!isPassphraseStep && showPassphraseWords"
         to="transaction-footer"
       >
-        <footer class="ModalWindow__container__footer--warning flex flex-row justify-between">
+        <footer class="TransactionFormSecondSignature__footer ModalWindow__container__footer--warning">
           <div class="flex w-80">
             {{ $t('WALLET_SECOND_SIGNATURE.INSTRUCTIONS') }}
           </div>
@@ -163,7 +172,7 @@ import mixin from './mixin'
 export default {
   name: 'TransactionFormSecondSignature',
 
-  transactionType: TRANSACTION_TYPES.SECOND_SIGNATURE,
+  transactionType: TRANSACTION_TYPES.GROUP_1.SECOND_SIGNATURE,
 
   components: {
     ButtonClipboard,
@@ -195,6 +204,7 @@ export default {
   }),
 
   computed: {
+    // TODO: doesn't need to be computed
     wordPositions () {
       return [3, 6, 9]
     },
@@ -204,13 +214,16 @@ export default {
       if (/\u3000/.test(this.secondPassphrase)) {
         return this.secondPassphrase.split('\u3000')
       }
+
       return this.secondPassphrase.split(' ')
     }
   },
 
   watch: {
     isPassphraseStep () {
-      this.$refs.passphraseVerification.focusFirst()
+      if (this.isPassphraseStep) {
+        this.$refs.passphraseVerification.focusFirst()
+      }
     }
   },
 
@@ -226,12 +239,17 @@ export default {
         secondPassphrase: this.secondPassphrase,
         fee: this.getFee(),
         wif: this.form.wif,
-        networkWif: this.walletNetwork.wif
+        networkWif: this.walletNetwork.wif,
+        multiSignature: this.currentWallet.multiSignature
       }
     },
 
     async buildTransaction (transactionData, isAdvancedFee = false, returnObject = false) {
       return this.$client.buildSecondSignatureRegistration(transactionData, isAdvancedFee, returnObject)
+    },
+
+    transactionError () {
+      this.$error(this.$t('TRANSACTION.ERROR.VALIDATION.SECOND_SIGNATURE'))
     },
 
     postSubmit () {
@@ -245,6 +263,7 @@ export default {
       this.isPassphraseStep = !this.isPassphraseStep
     },
 
+    // TODO: must be a better way of doing this without a timeout?
     displayPassphraseWords () {
       this.isGenerating = true
       setTimeout(() => {
@@ -253,6 +272,7 @@ export default {
       }, 300)
     },
 
+    // TODO: must be a better way of doing this without a timeout?
     generateNewPassphrase () {
       this.reset()
       this.isGenerating = true
@@ -269,12 +289,14 @@ export default {
     reset () {
       this.isPassphraseStep = false
       this.isPassphraseVerified = false
-      if (!this.currentWallet.passphrase && !this.currentWallet.isLedger) {
-        this.$set(this.form, 'passphrase', '')
-        this.$refs.passphrase.reset()
-      } else if (!this.currentWallet.isLedger) {
-        this.$set(this.form, 'walletPassword', '')
-        this.$refs.password.reset()
+      if (!this.isMultiSignature) {
+        if (!this.currentWallet.passphrase && !this.currentWallet.isLedger) {
+          this.$set(this.form, 'passphrase', '')
+          this.$refs.passphrase.reset()
+        } else if (!this.currentWallet.isLedger) {
+          this.$set(this.form, 'walletPassword', '')
+          this.$refs.password.reset()
+        }
       }
       this.$v.$reset()
     }
@@ -297,5 +319,9 @@ export default {
 
 .TransactionFormSecondSignature /deep/ .Collapse__handler {
   display: none
+}
+
+.TransactionFormSecondSignature__footer {
+  @apply .flex .flex-row .justify-between;
 }
 </style>

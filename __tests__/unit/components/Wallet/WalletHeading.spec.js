@@ -37,6 +37,15 @@ const sampleWalletData = {
 }
 
 const mocks = {
+  $store: {
+    getters: {
+      'session/network': {
+        milestone: {
+          aip11: false
+        }
+      }
+    }
+  },
   wallet_fromRoute: sampleWalletData,
   wallet_truncate: value => value,
   walletVote: {

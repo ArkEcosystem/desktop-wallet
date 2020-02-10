@@ -247,6 +247,15 @@ export default {
   methods: {
     async createWallet () {
       try {
+        try {
+          const wallet = await this.$client.fetchWallet(this.wallet.address)
+          if (wallet.multiSignature) {
+            this.wallet.multiSignature = wallet.multiSignature
+          }
+        } catch (error) {
+          //
+        }
+
         const { address } = await this.$store.dispatch('wallet/create', this.wallet)
         this.$router.push({ name: 'wallet-show', params: { address } })
       } catch (error) {

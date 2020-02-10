@@ -21,7 +21,7 @@
         :helper-text="usernameError"
         :label="$t('WALLET_DELEGATES.USERNAME')"
         :is-invalid="!!usernameError"
-        class="mb-5"
+        class="TransactionFormDelegateRegistration__username mb-5"
         name="username"
       />
 
@@ -30,29 +30,36 @@
         :currency="walletNetwork.token"
         :transaction-type="$options.transactionType"
         :show-insufficient-funds="true"
+        class="TransactionFormDelegateRegistration__fee"
         @input="onFee"
       />
 
-      <div
-        v-if="currentWallet.isLedger"
-        class="mt-10"
-      >
-        {{ $t('TRANSACTION.LEDGER_SIGN_NOTICE') }}
+      <div v-if="!isMultiSignature">
+        <div
+          v-if="currentWallet.isLedger"
+          class="TransactionFormDelegateRegistration__ledger-notice mt-10"
+        >
+          {{ $t('TRANSACTION.LEDGER_SIGN_NOTICE') }}
+        </div>
+
+        <InputPassword
+          v-else-if="currentWallet.passphrase"
+          ref="password"
+          v-model="$v.form.walletPassword.$model"
+          :label="$t('TRANSACTION.PASSWORD')"
+          :is-required="true"
+          class="TransactionFormDelegateRegistration__password mt-4"
+        />
+
+        <PassphraseInput
+          v-else
+          ref="passphrase"
+          v-model="$v.form.passphrase.$model"
+          :address="currentWallet.address"
+          :pub-key-hash="walletNetwork.version"
+          class="TransactionFormDelegateRegistration__passphrase mt-4"
+        />
       </div>
-      <InputPassword
-        v-else-if="currentWallet.passphrase"
-        ref="password"
-        v-model="$v.form.walletPassword.$model"
-        :label="$t('TRANSACTION.PASSWORD')"
-        :is-required="true"
-      />
-      <PassphraseInput
-        v-else
-        ref="passphrase"
-        v-model="$v.form.passphrase.$model"
-        :address="currentWallet.address"
-        :pub-key-hash="walletNetwork.version"
-      />
 
       <PassphraseInput
         v-if="currentWallet.secondPublicKey"
@@ -61,12 +68,12 @@
         :label="$t('TRANSACTION.SECOND_PASSPHRASE')"
         :pub-key-hash="walletNetwork.version"
         :public-key="currentWallet.secondPublicKey"
-        class="mt-5"
+        class="TransactionFormDelegateRegistration__second-passphrase mt-5"
       />
 
       <button
         :disabled="$v.form.$invalid"
-        class="blue-button mt-10 ml-0"
+        class="TransactionFormDelegateRegistration__next blue-button mt-10 ml-0"
         @click="onSubmit"
       >
         {{ $t('COMMON.NEXT') }}
@@ -106,7 +113,7 @@ import mixin from './mixin'
 export default {
   name: 'TransactionFormDelegateRegistration',
 
-  transactionType: TRANSACTION_TYPES.DELEGATE_REGISTRATION,
+  transactionType: TRANSACTION_TYPES.GROUP_1.DELEGATE_REGISTRATION,
 
   components: {
     InputFee,
@@ -155,7 +162,8 @@ export default {
         passphrase: this.form.passphrase,
         fee: this.getFee(),
         wif: this.form.wif,
-        networkWif: this.walletNetwork.wif
+        networkWif: this.walletNetwork.wif,
+        multiSignature: this.currentWallet.multiSignature
       }
 
       if (this.currentWallet.secondPublicKey) {
@@ -167,6 +175,10 @@ export default {
 
     async buildTransaction (transactionData, isAdvancedFee = false, returnObject = false) {
       return this.$client.buildDelegateRegistration(transactionData, isAdvancedFee, returnObject)
+    },
+
+    transactionError () {
+      this.$error(this.$t('TRANSACTION.ERROR.VALIDATION.DELEGATE_REGISTRATION'))
     }
   },
 
