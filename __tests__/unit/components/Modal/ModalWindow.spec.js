@@ -67,97 +67,100 @@ describe('ModalWindow', () => {
   })
 
   describe('close confirmation modal', () => {
-    it('should render a close confirmation modal when click on mask', () => {
-      const wrapper = mount(ModalWindow, {
-        stubs,
-        i18n,
-        propsData: {
-          confirmClose: true
-        }
+    const options = {
+      stubs,
+      i18n,
+      propsData: {
+        confirmClose: true
+      }
+    }
+
+    describe('render', () => {
+      describe('without changes', () => {
+        it('should not render when click on mask', () => {
+          const wrapper = mount(ModalWindow, options)
+          const mask = wrapper.find('.ModalWindow')
+          mask.trigger('click')
+          expect(wrapper.contains('.ModalCloseConfirmation')).toBeFalsy()
+        })
+        it('should not render when click on close button', () => {
+          const wrapper = mount(ModalWindow, options)
+          const mask = wrapper.find('.ModalWindow__close-button')
+          mask.trigger('click')
+          expect(wrapper.contains('.ModalCloseConfirmation')).toBeFalsy()
+        })
       })
-      const mask = wrapper.find('.ModalWindow')
-      mask.trigger('click')
-      expect(wrapper.contains('.ModalCloseConfirmation')).toBeTruthy()
+      describe('with changes', () => {
+        it('should render when click on mask', () => {
+          const wrapper = mount(ModalWindow, options)
+          wrapper.setData({ showConfirmationModal: true })
+          const mask = wrapper.find('.ModalWindow')
+          mask.trigger('click')
+          expect(wrapper.contains('.ModalCloseConfirmation')).toBeTruthy()
+        })
+
+        it('should render when click on close button', () => {
+          const wrapper = mount(ModalWindow, options)
+          wrapper.setData({ showConfirmationModal: true })
+          const mask = wrapper.find('.ModalWindow__close-button')
+          mask.trigger('click')
+          expect(wrapper.contains('.ModalCloseConfirmation')).toBeTruthy()
+        })
+      })
     })
 
-    it('should not emit close when backdrop clicked', () => {
-      const wrapper = mount(ModalWindow, {
-        stubs,
-        i18n,
-        propsData: {
-          confirmClose: true
-        }
-      })
-      const mask = wrapper.find('.ModalWindow')
-      mask.trigger('click')
-      expect(wrapper.emitted('close')).toBeFalsy()
-    })
+    describe('events', () => {
+      describe('close', () => {
+        it('should emit on confirm', () => {
+          const wrapper = mount(ModalWindow, options)
+          wrapper.setData({ showConfirmationModal: true })
+          const confirmButton = wrapper.find('.ModalCloseConfirmation__confirm-button')
+          confirmButton.trigger('click')
+          expect(wrapper.emitted('close')).toBeTruthy()
+        })
 
-    it('should not emit close when click close button', () => {
-      const wrapper = mount(ModalWindow, {
-        stubs,
-        i18n,
-        propsData: {
-          confirmClose: true
-        }
+        it('should not emit on cancel', () => {
+          const wrapper = mount(ModalWindow, options)
+          wrapper.setData({ showConfirmationModal: true })
+          const cancelButton = wrapper.find('.ModalCloseConfirmation__cancel-button')
+          cancelButton.trigger('click')
+          expect(wrapper.emitted('close')).toBeFalsy()
+        })
       })
-      const mask = wrapper.find('.ModalWindow__close-button')
-      mask.trigger('click')
-      expect(wrapper.emitted('close')).toBeFalsy()
-    })
 
-    it('should emit close when confirm closing', () => {
-      const wrapper = mount(ModalWindow, {
-        stubs,
-        i18n,
-        propsData: {
-          confirmClose: true
-        },
-        data () {
-          return {
-            showConfirmationModal: true
-          }
-        }
+      describe('confirm', () => {
+        it('should close the confirmation modal', () => {
+          const wrapper = mount(ModalWindow, options)
+          wrapper.setData({ showConfirmationModal: true })
+          const confirmButton = wrapper.find('.ModalCloseConfirmation__confirm-button')
+          confirmButton.trigger('click')
+          expect(wrapper.contains('.ModalCloseConfirmation')).toBeFalsy()
+        })
+        it('should close the modal window', () => {
+          const wrapper = mount(ModalWindow, options)
+          wrapper.setData({ showConfirmationModal: true })
+          const confirmButton = wrapper.find('.ModalCloseConfirmation__confirm-button')
+          confirmButton.trigger('click')
+          expect(wrapper.contains('.ModalCloseConfirmation')).toBeFalsy()
+        })
       })
-      const button = wrapper.find('.ModalCloseConfirmation__confirm-button')
-      button.trigger('click')
-      expect(wrapper.emitted('close')).toBeTruthy()
-    })
 
-    it('should not emit close when click on confirmation mask', () => {
-      const wrapper = mount(ModalWindow, {
-        stubs,
-        i18n,
-        propsData: {
-          confirmClose: true
-        },
-        data () {
-          return {
-            showConfirmationModal: true
-          }
-        }
+      describe('cancel', () => {
+        it('should close the confirmation modal', () => {
+          const wrapper = mount(ModalWindow, options)
+          wrapper.setData({ showConfirmationModal: true })
+          const cancelButton = wrapper.find('.ModalCloseConfirmation__cancel-button')
+          cancelButton.trigger('click')
+          expect(wrapper.contains('.ModalCloseConfirmation')).toBeFalsy()
+        })
+        it('should not close the modal window', () => {
+          const wrapper = mount(ModalWindow, options)
+          wrapper.setData({ showConfirmationModal: true })
+          const cancelButton = wrapper.find('.ModalCloseConfirmation__cancel-button')
+          cancelButton.trigger('click')
+          expect(wrapper.contains('.ModalWindow')).toBeTruthy()
+        })
       })
-      const button = wrapper.find('.ModalCloseConfirmation__mask')
-      button.trigger('click')
-      expect(wrapper.emitted('close')).toBeFalsy()
-    })
-
-    it('should close the confirmation modal when canceling', () => {
-      const wrapper = mount(ModalWindow, {
-        stubs,
-        i18n,
-        propsData: {
-          confirmClose: true
-        },
-        data () {
-          return {
-            showConfirmationModal: true
-          }
-        }
-      })
-      const button = wrapper.find('.ModalCloseConfirmation__cancel-button')
-      button.trigger('click')
-      expect(wrapper.contains('.ModalCloseConfirmation')).toBeFalsy()
     })
   })
 
