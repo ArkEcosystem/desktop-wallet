@@ -19,6 +19,7 @@
               [containerClassesMinimized]: !isMaximized,
             }]"
             class="ModalWindow__container flex flex-col mx-auto rounded-lg relative transition text-theme-text-content"
+            @change="onChange"
             @click.stop="void 0"
           >
             <section class="ModalWindow__container__content">
@@ -160,7 +161,7 @@ export default {
 
   mounted () {
     document.addEventListener('keyup', this.onEscKey, { once: true })
-    document.addEventListener('change', this.onChange)
+    this.$eventBus.on('change', this.onChange)
   },
 
   destroyed () {
