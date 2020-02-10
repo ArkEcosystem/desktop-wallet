@@ -77,6 +77,18 @@
       </ListDividedItem>
 
       <ListDividedItem
+        v-if="transaction.asset && transaction.asset.businessRegistration"
+        :label="$t('TRANSACTION.BUSINESS_NAME')"
+        :value="transaction.asset.businessRegistration.name"
+      />
+
+      <ListDividedItem
+        v-if="transaction.asset && transaction.asset.bridgechainRegistration"
+        :label="$t('TRANSACTION.BRIDGECHAIN_NAME')"
+        :value="transaction.asset.bridgechainRegistration.name"
+      />
+
+      <ListDividedItem
         :label="$t('TRANSACTION.SENDER')"
         item-value-class="flex items-center"
       >

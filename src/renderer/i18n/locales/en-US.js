@@ -1089,6 +1089,7 @@ export default {
     AMOUNT: 'Amount',
     BLOCK_ID: 'Block ID',
     BUSINESS_NAME: 'Business Name',
+    BRIDGECHAIN_NAME: 'Bridgechain Name',
     CONFIRMATION_COUNT: '{confirmations} Confirmations',
     CONFIRM_SEND_ALL: 'This will enable sending all of your tokens from the current wallet in this transaction.',
     CONFIRM_SEND_ALL_TITLE: 'Send all your tokens?',
