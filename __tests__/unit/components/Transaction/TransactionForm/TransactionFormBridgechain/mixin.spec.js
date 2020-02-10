@@ -47,7 +47,8 @@ const createWrapper = (component, wallet, bridgechain) => {
         '@arkecosystem/core-api': 4003
       },
       genesisHash: '2a44f340d76ffc3df204c5f38cd355b7496c9065a1ade2ef92071436bd72e867',
-      bridgechainRepository: 'https://github.com/arkecosystem/core.git'
+      bridgechainRepository: 'https://github.com/arkecosystem/core.git',
+      bridgechainAssetRepository: 'https://github.com/arkecosystem/core-assets.git'
     }
   }
 
@@ -121,7 +122,8 @@ describe.each([
         'name',
         'ports',
         'genesisHash',
-        'bridgechainRepository'
+        'bridgechainRepository',
+        'bridgechainAssetRepository'
       ])
     })
   })
@@ -137,7 +139,9 @@ describe.each([
           seedNodes: [
             '5.5.5.5',
             '6.6.6.6'
-          ]
+          ],
+          bridgechainRepository: '',
+          bridgechainAssetRepository: ''
         })
 
         expect(wrapper.vm.form.apiPort).toBe(8081)
@@ -149,7 +153,8 @@ describe.each([
           name: '',
           ports: {},
           genesisHash: '2a44f340d76ffc3df204c5f38cd355b7496c9065a1ade2ef92071436bd72e867',
-          bridgechainRepository: ''
+          bridgechainRepository: '',
+          bridgechainAssetRepository: ''
         })
       })
 
@@ -160,7 +165,9 @@ describe.each([
           seedNodes: [
             '5.5.5.5',
             '6.6.6.6'
-          ]
+          ],
+          bridgechainRepository: '',
+          bridgechainAssetRepository: ''
         })
 
         expect(wrapper.vm.form.apiPort).toBe(4003)
@@ -172,7 +179,8 @@ describe.each([
           name: '',
           ports: {},
           genesisHash: '2a44f340d76ffc3df204c5f38cd355b7496c9065a1ade2ef92071436bd72e867',
-          bridgechainRepository: ''
+          bridgechainRepository: '',
+          bridgechainAssetRepository: ''
         })
       })
     })
@@ -211,10 +219,6 @@ describe.each([
           it('should have genesis hash field', () => {
             expect(wrapper.contains('.TransactionFormBridgechain__genesis-hash')).toBe(true)
           })
-
-          it('should have bridgechain repository field', () => {
-            expect(wrapper.contains('.TransactionFormBridgechain__bridgechain-repository')).toBe(true)
-          })
         })
       } else {
         describe('update', () => {
@@ -225,12 +229,16 @@ describe.each([
           it('should not have genesis hash field', () => {
             expect(wrapper.contains('.TransactionFormBridgechain__genesis-hash')).toBe(false)
           })
-
-          it('should not have bridgechain repository field', () => {
-            expect(wrapper.contains('.TransactionFormBridgechain__bridgechain-repository')).toBe(false)
-          })
         })
       }
+
+      it('should have bridgechain repository field', () => {
+        expect(wrapper.contains('.TransactionFormBridgechain__bridgechain-repository')).toBe(true)
+      })
+
+      it('should have bridgechain asset repository field', () => {
+        expect(wrapper.contains('.TransactionFormBridgechain__bridgechain-asset-repository')).toBe(true)
+      })
 
       it('should have api port field', () => {
         expect(wrapper.contains('.TransactionFormBridgechain__api-port')).toBe(true)
@@ -342,6 +350,7 @@ describe.each([
           { ip: '1.1.1.1', isInvalid: false }
         ]
         wrapper.vm.$v.form.asset.bridgechainRepository.$model = 'https://github.com/arkecosystem/core.git'
+        wrapper.vm.$v.form.asset.bridgechainAssetRepository.$model = 'https://github.com/arkecosystem/core-assets.git'
 
         await wrapper.vm.$nextTick()
 
@@ -384,7 +393,8 @@ describe.each([
                   '@arkecosystem/core-api': 4003
                 },
                 genesisHash: '2a44f340d76ffc3df204c5f38cd355b7496c9065a1ade2ef92071436bd72e867',
-                bridgechainRepository: 'https://github.com/arkecosystem/core.git'
+                bridgechainRepository: 'https://github.com/arkecosystem/core.git',
+                bridgechainAssetRepository: 'https://github.com/arkecosystem/core-assets.git'
               }
             })
 
@@ -413,7 +423,8 @@ describe.each([
                   '@arkecosystem/core-api': 4003
                 },
                 genesisHash: '2a44f340d76ffc3df204c5f38cd355b7496c9065a1ade2ef92071436bd72e867',
-                bridgechainRepository: 'https://github.com/arkecosystem/core.git'
+                bridgechainRepository: 'https://github.com/arkecosystem/core.git',
+                bridgechainAssetRepository: 'https://github.com/arkecosystem/core-assets.git'
               }
             })
 
@@ -456,6 +467,7 @@ describe.each([
           { ip: '1.1.1.1', isInvalid: false }
         ]
         wrapper.vm.$v.form.asset.bridgechainRepository.$model = 'https://github.com/arkecosystem/core.git'
+        wrapper.vm.$v.form.asset.bridgechainAssetRepository.$model = 'https://github.com/arkecosystem/core-assets.git'
 
         await wrapper.vm.$nextTick()
 
@@ -731,11 +743,7 @@ describe.each([
         wrapper.vm.$v.form.asset.bridgechainRepository.$reset()
 
         expect(wrapper.vm.$v.form.asset.bridgechainRepository.$dirty).toBe(false)
-        if (componentName === 'TransactionFormBridgechainRegistration') {
-          expect(wrapper.vm.$v.form.asset.bridgechainRepository.$invalid).toBe(true)
-        } else {
-          expect(wrapper.vm.$v.form.asset.bridgechainRepository.$invalid).toBe(false)
-        }
+        expect(wrapper.vm.$v.form.asset.bridgechainRepository.$invalid).toBe(true)
         expect(wrapper.vm.bridgechainRepositoryError).toBe(null)
       })
 
@@ -779,6 +787,45 @@ describe.each([
             expect(wrapper.vm.$v.form.asset.bridgechainRepository.$dirty).toBe(true)
             expect(wrapper.vm.$v.form.asset.bridgechainRepository.$invalid).toBe(true)
             expect(wrapper.vm.bridgechainRepositoryError).toBe('VALIDATION.INVALID_URL')
+          })
+        })
+      }
+    })
+
+    describe('bridgechainAssetRepositoryError', () => {
+      it('should return null if valid', () => {
+        wrapper.vm.$v.form.asset.bridgechainAssetRepository.$model = 'https://github.com/arkecosystem/desktop-wallet.git'
+
+        expect(wrapper.vm.$v.form.asset.bridgechainAssetRepository.$dirty).toBe(true)
+        expect(wrapper.vm.$v.form.asset.bridgechainAssetRepository.$invalid).toBe(false)
+        expect(wrapper.vm.bridgechainAssetRepositoryError).toBe(null)
+      })
+
+      it('should return null if not dirty', () => {
+        wrapper.vm.$v.form.asset.bridgechainAssetRepository.$model = ''
+        wrapper.vm.$v.form.asset.bridgechainAssetRepository.$reset()
+
+        expect(wrapper.vm.$v.form.asset.bridgechainAssetRepository.$dirty).toBe(false)
+        expect(wrapper.vm.$v.form.asset.bridgechainAssetRepository.$invalid).toBe(false)
+        expect(wrapper.vm.bridgechainAssetRepositoryError).toBe(null)
+      })
+
+      if (componentName === 'TransactionFormBridgechainRegistration') {
+        describe('TransactionFormBridgechainRegistration', () => {
+          it('should not return error if valid', () => {
+            wrapper.vm.$v.form.asset.bridgechainAssetRepository.$model = 'https://github.com/arkecosystem/desktop-wallet.git'
+
+            expect(wrapper.vm.$v.form.asset.bridgechainAssetRepository.$dirty).toBe(true)
+            expect(wrapper.vm.$v.form.asset.bridgechainAssetRepository.$invalid).toBe(false)
+            expect(wrapper.vm.bridgechainAssetRepositoryError).not.toBe('VALIDATION.INVALID_URL')
+          })
+
+          it('should return error if invalid', () => {
+            wrapper.vm.$v.form.asset.bridgechainAssetRepository.$model = 'https://github/arkecosystem/desktop-wallet.git'
+
+            expect(wrapper.vm.$v.form.asset.bridgechainAssetRepository.$dirty).toBe(true)
+            expect(wrapper.vm.$v.form.asset.bridgechainAssetRepository.$invalid).toBe(true)
+            expect(wrapper.vm.bridgechainAssetRepositoryError).toBe('VALIDATION.INVALID_URL')
           })
         })
       }
@@ -843,6 +890,7 @@ describe.each([
           '@arkecosystem/core-api': 4003
         }
         wrapper.vm.$v.form.asset.bridgechainRepository.$model = 'https://github.com/arkecosystem/core.git'
+        wrapper.vm.$v.form.asset.bridgechainAssetRepository.$model = 'https://github.com/arkecosystem/core-assets.git'
 
         const expectedAsset = {
           name: 'bridgechain',
@@ -854,7 +902,8 @@ describe.each([
             '@arkecosystem/core-api': 4003
           },
           genesisHash: '2a44f340d76ffc3df204c5f38cd355b7496c9065a1ade2ef92071436bd72e867',
-          bridgechainRepository: 'https://github.com/arkecosystem/core.git'
+          bridgechainRepository: 'https://github.com/arkecosystem/core.git',
+          bridgechainAssetRepository: 'https://github.com/arkecosystem/core-assets.git'
         }
 
         if (componentName === 'TransactionFormBridgechainUpdate') {
@@ -893,6 +942,7 @@ describe.each([
           '@arkecosystem/core-api': 4003
         }
         wrapper.vm.$v.form.asset.bridgechainRepository.$model = 'https://github.com/arkecosystem/core.git'
+        wrapper.vm.$v.form.asset.bridgechainAssetRepository.$model = 'https://github.com/arkecosystem/core-assets.git'
 
         const expectedAsset = {
           name: 'bridgechain',
@@ -904,7 +954,8 @@ describe.each([
             '@arkecosystem/core-api': 4003
           },
           genesisHash: '2a44f340d76ffc3df204c5f38cd355b7496c9065a1ade2ef92071436bd72e867',
-          bridgechainRepository: 'https://github.com/arkecosystem/core.git'
+          bridgechainRepository: 'https://github.com/arkecosystem/core.git',
+          bridgechainAssetRepository: 'https://github.com/arkecosystem/core-assets.git'
         }
 
         if (componentName === 'TransactionFormBridgechainUpdate') {

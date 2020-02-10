@@ -35,7 +35,8 @@ const createWrapper = (component, wallet, bridgechain) => {
         '@arkecosystem/core-api': 4003
       },
       genesisHash: '2a44f340d76ffc3df204c5f38cd355b7496c9065a1ade2ef92071436bd72e867',
-      bridgechainRepository: 'https://github.com/arkecosystem/core.git'
+      bridgechainRepository: 'https://github.com/arkecosystem/core.git',
+      bridgechainAssetRepository: 'https://github.com/arkecosystem/core-assets.git'
     }
   }
 
@@ -117,8 +118,12 @@ describe('TransactionFormBridgechainUpdate', () => {
         expect(wrapper.contains('.TransactionFormBridgechain__genesis-hash')).toBe(false)
       })
 
-      it('should not have bridgechain repository field', () => {
-        expect(wrapper.contains('.TransactionFormBridgechain__bridgechain-repository')).toBe(false)
+      it('should have bridgechain repository field', () => {
+        expect(wrapper.contains('.TransactionFormBridgechain__bridgechain-repository')).toBe(true)
+      })
+
+      it('should have bridgechain asset repository field', () => {
+        expect(wrapper.contains('.TransactionFormBridgechain__bridgechain-asset-repository')).toBe(true)
       })
 
       it('should have api port field', () => {
@@ -231,6 +236,7 @@ describe('TransactionFormBridgechainUpdate', () => {
           '1.1.1.1'
         ]
         wrapper.vm.$v.form.asset.bridgechainRepository.$model = 'https://github.com/arkecosystem/core.git'
+        wrapper.vm.$v.form.asset.bridgechainAssetRepository.$model = 'https://github.com/arkecosystem/core-assets.git'
 
         await wrapper.vm.$nextTick()
 
@@ -267,7 +273,9 @@ describe('TransactionFormBridgechainUpdate', () => {
         seedNodes: [
           '5.5.5.5',
           '6.6.6.6'
-        ]
+        ],
+        bridgechainRepository: '',
+        bridgechainAssetRepository: ''
       })
 
       expect(wrapper.vm.form.apiPort).toBe(8081)
@@ -279,7 +287,8 @@ describe('TransactionFormBridgechainUpdate', () => {
         name: '',
         ports: {},
         genesisHash: '2a44f340d76ffc3df204c5f38cd355b7496c9065a1ade2ef92071436bd72e867',
-        bridgechainRepository: ''
+        bridgechainRepository: '',
+        bridgechainAssetRepository: ''
       })
     })
 
@@ -290,7 +299,9 @@ describe('TransactionFormBridgechainUpdate', () => {
         seedNodes: [
           '5.5.5.5',
           '6.6.6.6'
-        ]
+        ],
+        bridgechainRepository: '',
+        bridgechainAssetRepository: ''
       })
 
       expect(wrapper.vm.form.apiPort).toBe(4003)
@@ -302,7 +313,8 @@ describe('TransactionFormBridgechainUpdate', () => {
         name: '',
         ports: {},
         genesisHash: '2a44f340d76ffc3df204c5f38cd355b7496c9065a1ade2ef92071436bd72e867',
-        bridgechainRepository: ''
+        bridgechainRepository: '',
+        bridgechainAssetRepository: ''
       })
     })
   })

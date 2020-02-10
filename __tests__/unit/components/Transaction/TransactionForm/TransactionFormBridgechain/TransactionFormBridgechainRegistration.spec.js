@@ -105,6 +105,10 @@ describe('TransactionFormBridgechainRegistration', () => {
         expect(wrapper.contains('.TransactionFormBridgechain__bridgechain-repository')).toBe(true)
       })
 
+      it('should have bridgechain asset repository field', () => {
+        expect(wrapper.contains('.TransactionFormBridgechain__bridgechain-asset-repository')).toBe(true)
+      })
+
       it('should have api port field', () => {
         expect(wrapper.contains('.TransactionFormBridgechain__api-port')).toBe(true)
       })
@@ -215,6 +219,7 @@ describe('TransactionFormBridgechainRegistration', () => {
           '1.1.1.1'
         ]
         wrapper.vm.$v.form.asset.bridgechainRepository.$model = 'https://github.com/arkecosystem/core.git'
+        wrapper.vm.$v.form.asset.bridgechainAssetRepository.$model = 'https://github.com/arkecosystem/core-assets.git'
 
         await wrapper.vm.$nextTick()
 
