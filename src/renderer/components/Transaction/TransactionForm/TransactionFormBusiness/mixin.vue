@@ -172,7 +172,7 @@ export default {
         } else if (!this.$v.form.asset.name.tooLong) {
           return this.$t('VALIDATION.TOO_LONG', [this.$t('WALLET_BUSINESS.NAME')])
         } else if (!this.$v.form.asset.name.validName) {
-          return this.$t('VALIDATION.NAME_ERROR')
+          return this.$t('VALIDATION.NOT_VALID', [this.$t('WALLET_BUSINESS.NAME')])
         }
       }
 
