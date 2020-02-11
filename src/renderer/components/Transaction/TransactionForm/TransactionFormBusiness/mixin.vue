@@ -256,7 +256,7 @@ export default {
           required,
           tooLong: maxLength(maxNameLength),
           validName: value => {
-            return /^[a-zA-Z0-9_-]+$/.test(value)
+            return /^[a-zA-Z0-9]+(( - |[ ._-])[a-zA-Z0-9]+)*[.]?$/.test(value)
           }
         },
 
