@@ -416,8 +416,8 @@ export default {
           return this.form.recipients.length > 1
         },
 
-        belowMaximum () {
-          return this.form.recipients.length < this.maximumRecipients
+        belowOrEqualMaximum () {
+          return this.form.recipients.length <= this.maximumRecipients
         }
       },
       fee: mixin.validators.fee,
