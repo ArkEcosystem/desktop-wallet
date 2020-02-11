@@ -255,7 +255,7 @@ export default {
   height: 1.5rem;
 }
 
-.AppSidemenu--vertical { @apply w-22 rounded-lg }
+.AppSidemenu--vertical { @apply w-22 h-full rounded-lg }
 .AppSidemenu--vertical .flexify { @apply flex flex-col }
 .AppSidemenu--vertical .AppSidemenu__container__scrollable { @apply rounded-lg py-2 }
 .AppSidemenu--vertical .AppSidemenu__item { @apply h-16 }
