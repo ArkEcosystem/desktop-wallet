@@ -22,7 +22,7 @@
         class="flex-inline"
       />
 
-      <div class="flex-1 pl-4">
+      <div class="flex-1 px-4">
         <div class="TransactionMultiPaymentList__recipient py-1">
           <span class="font-bold">
             {{ $t('TRANSACTION.RECIPIENT') }}:
