@@ -16,7 +16,7 @@ export default {
      * the image path and its filename as title.
      */
     images () {
-      const componentName = this.$options.name.toUpperCase().replace(' ', '_')
+      const componentName = this.strings_snakeCase(this.$options.name).toUpperCase()
       const groups = imageManager.tree
 
       return this.categories.reduce((all, category) => {
