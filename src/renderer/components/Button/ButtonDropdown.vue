@@ -99,7 +99,8 @@ export default {
 
   data () {
     return {
-      showDropdown: false
+      showDropdown: false,
+      dropdownStyle: ''
     }
   },
 
@@ -125,24 +126,17 @@ export default {
       }
 
       return '0 -2 12 16'
-    },
-
-    dropdownStyle () {
-      const buttonDropdown = this.$refs.buttonDropdown
-
-      if (!buttonDropdown) {
-        return ''
-      }
-
-      const height = buttonDropdown.clientHeight
-      const position = buttonDropdown.getBoundingClientRect()
-
-      return [
-        `top: ${position.top + height}px`,
-        `left: ${position.left}px`,
-        'z-index: 10'
-      ].join(';')
     }
+  },
+
+  mounted () {
+    this.setDropdownStyle()
+
+    window.addEventListener('resize', this.handleResize)
+  },
+
+  destroyed () {
+    window.removeEventListener('resize', this.handleResize)
   },
 
   methods: {
@@ -152,6 +146,27 @@ export default {
 
     triggerClose () {
       this.showDropdown = false
+    },
+
+    handleResize () {
+      this.setDropdownStyle()
+    },
+
+    setDropdownStyle () {
+      const buttonDropdown = this.$refs.buttonDropdown
+
+      if (buttonDropdown) {
+        const height = buttonDropdown.clientHeight
+        const position = buttonDropdown.getBoundingClientRect()
+
+        this.dropdownStyle = [
+          `top: ${position.top + height}px`,
+          `left: ${position.left}px`,
+          'z-index: 10'
+        ].join(';')
+      } else {
+        this.dropdownStyle = ''
+      }
     }
   }
 }
