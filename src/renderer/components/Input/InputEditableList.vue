@@ -10,7 +10,7 @@
         v-show="title"
         class="InputField__label absolute pointer-events-none text-theme-page-text-light truncate"
       >
-        {{ title }}
+        {{ title }} <span v-if="showCount && items.length"> - {{ items.length }}<span v-if="maxItems"> / {{ maxItems }}</span></span>
       </label>
     </div>
 
@@ -60,6 +60,18 @@ export default {
   props: {
     title: {
       type: String,
+      required: false,
+      default: null
+    },
+
+    showCount: {
+      type: Boolean,
+      required: false,
+      default: false
+    },
+
+    maxItems: {
+      type: Number,
       required: false,
       default: null
     },
