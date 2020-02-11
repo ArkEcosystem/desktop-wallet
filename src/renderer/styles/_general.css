@@ -73,3 +73,7 @@ img {
 .shadow-outline-green {
   box-shadow: 0 0 0 2px config('colors.green');
 }
+
+.blur {
+  filter: blur(4px)
+}

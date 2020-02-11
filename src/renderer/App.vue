@@ -77,6 +77,12 @@
 
       <PortalTarget name="qr-scan" />
 
+      <PortalTarget
+        name="button-dropdown"
+        multiple
+        :slot-props="{ hasBlurFilter }"
+      />
+
       <AlertMessage />
     </div>
   </div>
@@ -280,16 +286,18 @@ export default {
       ipcRenderer.send('updater:check-for-updates')
       await this.$store.dispatch('peer/refresh')
       this.$store.dispatch('peer/connectToBest', {})
+      await this.$store.dispatch('network/updateData')
 
       if (this.session_network) {
         this.$store.dispatch('ledger/init', this.session_network.slip44)
         this.$store.dispatch('delegate/load')
       }
 
-      this.$eventBus.on('client:changed', () => {
-        this.$store.dispatch('ledger/init', this.session_network.slip44)
+      this.$eventBus.on('client:changed', async () => {
         this.$store.dispatch('peer/connectToBest', {})
+        this.$store.dispatch('network/updateData')
         this.$store.dispatch('delegate/load')
+        await this.$store.dispatch('ledger/init', this.session_network.slip44)
         if (this.$store.getters['ledger/isConnected']) {
           this.$store.dispatch('ledger/reloadWallets', { clearFirst: true, forceLoad: true })
         }

@@ -130,12 +130,12 @@ describe('InputFee', () => {
       let wrapper = mountComponent({
         propsData: { transactionType: 0 }
       })
-      expect(wrapper.vm.maxV1fee).toEqual(V1.fees[0])
+      expect(wrapper.vm.maxV1fee).toEqual(V1.fees.GROUP_1[0])
 
       wrapper = mountComponent({
         propsData: { transactionType: 3 }
       })
-      expect(wrapper.vm.maxV1fee).toEqual(V1.fees[3])
+      expect(wrapper.vm.maxV1fee).toEqual(V1.fees.GROUP_1[3])
     })
   })
 
