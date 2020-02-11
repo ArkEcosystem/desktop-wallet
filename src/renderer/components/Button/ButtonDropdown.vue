@@ -42,12 +42,8 @@
       >
         <div
           v-show="showDropdown"
-          slot-scope="app"
           class="ButtonDropdown__list transition"
           :style="dropdownStyle"
-          :class="{
-            'blur': app.hasBlurFilter
-          }"
         >
           <div
             v-for="(item, key) of items"

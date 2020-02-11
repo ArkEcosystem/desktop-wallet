@@ -80,7 +80,6 @@
       <PortalTarget
         name="button-dropdown"
         multiple
-        :slot-props="{ hasBlurFilter }"
       />
 
       <AlertMessage />
