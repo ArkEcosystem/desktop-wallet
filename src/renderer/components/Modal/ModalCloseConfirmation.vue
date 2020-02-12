@@ -19,7 +19,7 @@
           <div
             v-if="note"
             class="mt-3 text-grey-darker text-lg"
-            :class="note ? 'mb-8' : ''"
+            :class="{ 'mb-8': note }"
           >
             {{ note }}
           </div>
