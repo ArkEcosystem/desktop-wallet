@@ -1,14 +1,12 @@
 <template>
-  <Portal
-    :to="portalTarget"
-  >
+  <Portal :to="portalTarget">
     <div
       class="ModalWindow"
       :class="{
         'ModalWindow--maximized': isMaximized,
         'ModalWindow--minimized': !isMaximized
       }"
-      @click="onBackdropClick"
+      @mousedown.left="onBackdropClick"
     >
       <Transition name="ModalWindow">
         <div class="ModalWindow__wrapper flex items-center justify-center absolute">
@@ -18,7 +16,7 @@
               [containerClassesMinimized]: !isMaximized,
             }]"
             class="ModalWindow__container flex flex-col mx-auto rounded-lg relative transition text-theme-text-content"
-            @click.stop="void 0"
+            @mousedown.stop="void 0"
           >
             <section class="ModalWindow__container__content">
               <div class="ModalWindow__container__actions">
@@ -196,25 +194,25 @@ export default {
 }
 
 .ModalWindow--maximized .ModalWindow__wrapper {
-  @apply pin
+  @apply pin;
 }
 .ModalWindow--minimized .ModalWindow__wrapper {
-  @apply pin-r pin-b mr-5 mb-5
+  @apply pin-r pin-b mr-5 mb-5;
 }
 
 .ModalWindow__container__actions {
-  @apply absolute pin-x pin-t flex justify-end m-2 p-2
+  @apply absolute pin-x pin-t flex justify-end m-2 p-2;
 }
 
 .ModalWindow--maximized .ModalWindow__container__content {
-  @apply overflow-y-auto p-16 pt-16 bg-theme-modal shadow rounded-lg
+  @apply overflow-y-auto p-16 pt-16 bg-theme-modal shadow rounded-lg;
 }
 .ModalWindow--minimized .ModalWindow__container__content {
-  @apply overflow-y-auto px-8 pt-2 pb-5 bg-theme-modal shadow rounded-lg
+  @apply overflow-y-auto px-8 pt-2 pb-5 bg-theme-modal shadow rounded-lg;
 }
 .ModalWindow--minimized .ModalWindow__container {
-  height: 200px!default;
-  @apply .overflow-hidden;
+  height: 200px !default;
+  @apply overflow-hidden;
 }
 </style>
 
@@ -229,6 +227,6 @@ export default {
   @apply ModalWindow__container__footer bg-theme-error text-white;
 }
 .ModalWindow--minimized .ModalWindow__container__footer {
-  @apply hidden
+  @apply hidden;
 }
 </style>
