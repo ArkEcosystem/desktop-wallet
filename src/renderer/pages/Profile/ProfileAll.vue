@@ -37,8 +37,8 @@
               {{ profile.name | truncate(12) }}
             </div>
 
-            <span class="font-bold my-2 text-lg">
-              {{ profileBalance(profile) | truncate(15) }}
+            <span class="ProfileAll__grid__profile__balance">
+              {{ profileBalance(profile) }}
             </span>
 
             <RouterLink
@@ -205,6 +205,10 @@ export default {
 }
 .ProfileAll__grid__profile__name {
   width: var(--profile-avatar-xl);
+}
+.ProfileAll__grid__profile__balance {
+  max-width: 10rem;
+  @apply .font-bold .my-2 .text-lg .truncate .inline-block;
 }
 
 .ProfileAll .ProfileAvatar {
