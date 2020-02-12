@@ -57,7 +57,7 @@
         >
           <span
             v-tooltip="{
-              content: `${$t('TRANSACTION.AMOUNT')}: ${data.formattedRow['amount']}<br>${$t('TRANSACTION.FEE')}: ${formatAmount(data.row.fee)}`,
+              content: `${$t('TRANSACTION.AMOUNT')}: ${formatAmount(data.row, false)}<br>${$t('TRANSACTION.FEE')}: ${formatFee(data.row.fee)}`,
               html: true,
               classes: 'leading-loose',
               trigger: 'hover',
@@ -245,7 +245,6 @@ export default {
           label: this.$t('TRANSACTION.AMOUNT'),
           type: 'number',
           field: 'amount',
-          formatFn: this.formatAmount,
           tdClass: 'text-right',
           thClass: 'text-right'
         }
@@ -279,8 +278,12 @@ export default {
       return truncateMiddle(value, 10)
     },
 
-    formatAmount (row) {
-      return this.formatter_networkCurrency(TransactionService.getAmount(this, row, this.wallet_fromRoute, true))
+    formatAmount (row, includeFee = true) {
+      return this.formatter_networkCurrency(TransactionService.getAmount(this, row, this.wallet_fromRoute, includeFee))
+    },
+
+    formatFee (value) {
+      return this.formatter_networkCurrency(value)
     },
 
     formatRow (row) {
