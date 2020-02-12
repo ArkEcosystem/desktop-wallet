@@ -67,7 +67,7 @@
             class="font-bold mr-2 whitespace-no-wrap"
           >
             {{ data.row.isSender ? '-' : '+' }}
-            {{ data.formattedRow['amount'] }}
+            {{ formatAmount(data.row) }}
           </span>
           <TransactionStatusIcon
             v-bind="data.row"
@@ -150,6 +150,7 @@ import truncateMiddle from '@/filters/truncate-middle'
 import { TransactionShow, TransactionStatusIcon } from '@/components/Transaction'
 import WalletAddress from '@/components/Wallet/WalletAddress'
 import TableWrapper from '@/components/utils/TableWrapper'
+import TransactionService from '@/services/transaction'
 
 export default {
   name: 'TransactionTable',
@@ -267,10 +268,6 @@ export default {
       return this.hasShortId ? truncateMiddle(value, 6) : truncateMiddle(value, 10)
     },
 
-    formatAmount (value) {
-      return this.formatter_networkCurrency(value)
-    },
-
     formatSmartbridge (value) {
       if (value.length > 43) {
         return `${value.slice(0, 40)}...`
@@ -280,6 +277,10 @@ export default {
 
     formatHash (value) {
       return truncateMiddle(value, 10)
+    },
+
+    formatAmount (row) {
+      return this.formatter_networkCurrency(TransactionService.getAmount(this, row, this.wallet_fromRoute, true))
     },
 
     formatRow (row) {

@@ -25,7 +25,7 @@ export default {
 
   computed: {
     totalAmount () {
-      return TransactionService.getAmount(this, this.transaction)
+      return TransactionService.getAmount(this, this.transaction, this.wallet_fromRoute)
     },
 
     isTransfer () {

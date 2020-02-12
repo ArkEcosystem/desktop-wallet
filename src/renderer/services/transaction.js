@@ -30,15 +30,23 @@ export default class TransactionService {
    * @param  {Object} transaction
    * @return {String}
    */
-  static getAmount (vm, transaction, includeFee = false) {
+  static getAmount (vm, transaction, wallet, includeFee = false) {
     const amount = vm.currency_toBuilder(transaction.amount)
     if (transaction.asset && transaction.asset.payments) {
       for (const payment of transaction.asset.payments) {
+        if (wallet) {
+          if (wallet.address === transaction.sender && wallet.address === payment.recipientId) {
+            continue
+          } else if (wallet && wallet.address !== transaction.sender && wallet.address !== payment.recipientId) {
+            continue
+          }
+        }
+
         amount.add(payment.amount)
       }
     }
 
-    if (includeFee) {
+    if (includeFee && (!wallet || (wallet && wallet.address === transaction.sender))) {
       amount.add(transaction.fee)
     }
 
