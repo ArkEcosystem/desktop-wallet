@@ -1,17 +1,14 @@
 import { createLocalVue, mount } from '@vue/test-utils'
 import VueRouter from 'vue-router'
-import { uniqBy } from 'lodash'
 import { useI18n } from '../../__utils__/i18n'
 import router from '@/router'
 import CurrencyMixin from '@/mixins/currency'
-import truncate from '@/filters/truncate'
 import ProfileAll from '@/pages/Profile/ProfileAll'
 import BigNumber from '@/plugins/bignumber.js'
 
 const localVue = createLocalVue()
 const i18n = useI18n(localVue)
 localVue.use(VueRouter)
-localVue.filter('truncate', truncate)
 
 describe('pages > ProfileAll', () => {
   let wrapper
@@ -39,11 +36,7 @@ describe('pages > ProfileAll', () => {
             'network/byToken': token => networkBy('token', token),
             'network/bySymbol': symbol => networkBy('symbol', symbol),
             'profile/all': profiles,
-            'profile/balanceWithLedger': id => {
-              return uniqBy(wallets[id], 'address').reduce((total, wallet) => {
-                return new BigNumber(wallet.balance).plus(total)
-              }, 0)
-            },
+            'profile/balanceWithLedger': _id => new BigNumber(13700000),
             'wallet/byProfileId': id => wallets[id]
           }
         },
@@ -176,17 +169,7 @@ describe('pages > ProfileAll', () => {
   describe('profileBalance', () => {
     it('should return the formatted balance of a profile, using the network symbol', () => {
       wrapper = mountPage()
-      expect(wrapper.vm.profileBalance(profiles[0])).toEqual('m\xa00.150909')
-    })
-
-    describe('when the `truncate` is passed', () => {
-      it('should return the balance, but truncated', () => {
-        wrapper = mountPage()
-        expect(truncate(wrapper.vm.profileBalance(profiles[0]), 8)).toEqual('m\xa00.1509…')
-        expect(truncate(wrapper.vm.profileBalance(profiles[1]), 6)).toEqual('o\xa00.12…')
-        expect(truncate(wrapper.vm.profileBalance(profiles[2]), 3)).toEqual('m\xa05…')
-        expect(truncate(wrapper.vm.profileBalance(profiles[3]), 5)).toEqual('d\xa00.5…')
-      })
+      expect(wrapper.vm.profileBalance(profiles[0])).toEqual('m\xa00.137')
     })
   })
 })
