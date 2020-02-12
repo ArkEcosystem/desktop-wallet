@@ -28,7 +28,7 @@
             class="font-bold mr-2 whitespace-no-wrap"
           >
             {{ data.row.isSender ? '-' : '+' }}
-            {{ data.formattedRow['amount'] }}
+            {{ formatAmount(data.row) }}
           </span>
         </div>
 
@@ -205,10 +205,6 @@ export default {
       return this.hasShortId ? truncateMiddle(value, 6) : truncateMiddle(value, 10)
     },
 
-    formatAmount (value) {
-      return this.formatter_networkCurrency(value)
-    },
-
     formatSmartbridge (value) {
       if (value.length > 43) {
         return `${value.slice(0, 40)}...`
@@ -218,6 +214,10 @@ export default {
 
     formatHash (value) {
       return truncateMiddle(value, 10)
+    },
+
+    formatAmount (row) {
+      return this.formatter_networkCurrency(TransactionService.getAmount(this, row, this.wallet_fromRoute, true))
     },
 
     formatRow (row) {
