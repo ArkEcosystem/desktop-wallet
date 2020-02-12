@@ -75,7 +75,7 @@ describe('Services > Transaction', () => {
       })
 
       it('should get correct amount with fee', () => {
-        expect(TransactionService.getAmount(mockVm, transaction, true).toFixed()).toEqual('110000000')
+        expect(TransactionService.getAmount(mockVm, transaction, null, true).toFixed()).toEqual('110000000')
       })
 
       it('should get correct amount without fee', () => {
@@ -96,14 +96,32 @@ describe('Services > Transaction', () => {
           .sign('passphrase')
           .build()
           .toJson()
+
+        transaction.sender = Identities.Address.fromPassphrase('passphrase')
       })
 
       it('should get correct amount with fee', () => {
-        expect(TransactionService.getAmount(mockVm, transaction, true).toFixed()).toEqual('310000000')
+        expect(TransactionService.getAmount(mockVm, transaction, null, true).toFixed()).toEqual('310000000')
       })
 
       it('should get correct amount without fee', () => {
         expect(TransactionService.getAmount(mockVm, transaction).toFixed()).toEqual('300000000')
+      })
+
+      it('should get correct amount if sender including fee', () => {
+        const wallet = {
+          address: Identities.Address.fromPassphrase('passphrase')
+        }
+
+        expect(TransactionService.getAmount(mockVm, transaction, wallet, true).toFixed()).toEqual('310000000')
+      })
+
+      it('should get correct amount if recipient including fee', () => {
+        const wallet = {
+          address: Identities.Address.fromPassphrase('recipient 3')
+        }
+
+        expect(TransactionService.getAmount(mockVm, transaction, wallet, true).toFixed()).toEqual('100000000')
       })
     })
   })
