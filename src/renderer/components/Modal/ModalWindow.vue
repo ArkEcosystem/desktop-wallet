@@ -153,10 +153,6 @@ export default {
     hasChanged: false
   }),
 
-  beforeCreate () {
-    this.$options.components.ModalConfirmation = require('./ModalConfirmation').default
-  },
-
   mounted () {
     document.addEventListener('keyup', this.onEscKey, { once: true })
     this.$eventBus.on('change', this.onChange)
