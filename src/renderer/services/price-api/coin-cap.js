@@ -7,12 +7,12 @@ import { MARKET } from '@config'
 
 // All prices on the CoinCap API are standardized in USD (United States Dollar)
 const BASE_CURRENCY = 'USD'
-const AMOUNT_TO_CONVERT = 1
 
 export default class CoinCapAdapter {
   /**
    * Get token name from API
    * @param  {String} token
+   * @param  {Number} limit
    * @return {(String|null)}
    */
   static async getTokenId (token, limit = 1000) {
@@ -25,9 +25,8 @@ export default class CoinCapAdapter {
       const { body } = await got(uri, {
         json: true
       })
-      const { data } = body
 
-      this.tokenLookup = data.reduce((map, value, index) => {
+      this.tokenLookup = body.data.reduce((map, value, index) => {
         map[value.symbol.toUpperCase()] = value.id
 
         return map
@@ -40,18 +39,20 @@ export default class CoinCapAdapter {
   }
 
   /**
-   * Get Ark data from API
+   * Get token data from API
+   * @param {String} token
    * @return {(Object|null)}
    */
-  static async fetchArkData () {
+  static async fetchTokenData (token) {
+    const tokenId = await this.getTokenId(token)
+
     try {
-      const uri = `${MARKET.source.coinCap}/assets/ark`
+      const uri = `${MARKET.source.coinCap}/assets/${tokenId}`
       const { body } = await got(uri, {
         json: true
       })
-      const { data } = body
 
-      return data
+      return body.data
     } catch (error) {
       return null
     }
@@ -59,34 +60,30 @@ export default class CoinCapAdapter {
 
   /**
    * Get assets and rates data from API
+   * @param {String} token
    * @return {(Object|null)}
    */
-  static async getCurrencyData () {
+  static async getCurrencyData (token) {
     try {
       const uri = `${MARKET.source.coinCap}/rates`
       const { body } = await got(uri, {
         json: true
       })
       const { data, timestamp } = body
-      const arkData = await this.fetchArkData()
+      const tokenData = await this.fetchTokenData(token)
 
-      const assets = data.reduce((map, value, index) => {
-        map[value.symbol.toUpperCase()] = value
-
-        return map
-      }, { [arkData.symbol.toUpperCase()]: arkData })
-
-      const rates = data.reduce((map, value, index) => {
-        map[value.symbol.toUpperCase()] = value.rateUsd
-
-        return map
-      }, { [arkData.symbol.toUpperCase()]: arkData.priceUsd })
-
-      return {
-        assets,
-        rates,
+      const response = {
+        assets: { [tokenData.symbol.toUpperCase()]: tokenData },
+        rates: { [tokenData.symbol.toUpperCase()]: tokenData.priceUsd },
         timestamp
       }
+
+      for (const value of data) {
+        response.assets[value.symbol.toUpperCase()] = value
+        response.rates[value.symbol.toUpperCase()] = value.rateUsd
+      }
+
+      return response
     } catch (error) {
       return null
     }
@@ -95,19 +92,13 @@ export default class CoinCapAdapter {
   /**
    * Checks if a token is tradeable
    * @param {String} token
-   * @return {(Boolean|null)} Return true if the token is found
+   * @return {(Boolean)} Return true if the token is found
    */
   static async checkTradeable (token) {
-    const tokenId = await this.getTokenId(token)
-
     try {
-      const uri = `${MARKET.source.coinCap}/assets/${tokenId}`
-      const { body } = await got(uri, {
-        json: true
-      })
-      const { data } = body
+      const tokenData = await this.fetchTokenData(token)
 
-      return !!data.id
+      return !!tokenData.id
     } catch (error) {
       return false
     }
@@ -119,10 +110,10 @@ export default class CoinCapAdapter {
    * @return {(Object|null)} Return normalized market data or null on failure
    */
   static async fetchMarketData (token) {
-    const tokenId = await this.getTokenId(token)
-    const currencyData = await this.getCurrencyData()
-
-    return this.__transformMarketResponse(currencyData, tokenId)
+    return this.__transformMarketResponse(
+      await this.getCurrencyData(token),
+      await this.getTokenId(token)
+    )
   }
 
   /**
@@ -136,8 +127,7 @@ export default class CoinCapAdapter {
    */
   static async fetchHistoricalData (token, currency, days, _, dateFormat = 'DD.MM') {
     const tokenId = await this.getTokenId(token)
-    const currencyData = await this.getCurrencyData()
-    const { rates } = currencyData
+    const { rates } = await this.getCurrencyData(token)
     const daysSubtract = days === 24 ? 1 : days
     const timeInterval = days === 24 ? 'h1' : 'h12'
     const startDate = moment().subtract(daysSubtract, 'd').valueOf()
@@ -145,9 +135,8 @@ export default class CoinCapAdapter {
     const { body } = await got(`${MARKET.source.coinCap}/assets/${tokenId}/history?interval=${timeInterval}&start=${startDate}&end=${endDate}`, {
       json: true
     })
-    const { data } = body
 
-    return this.__transformHistoricalResponse(tokenId, data, currency, rates, dateFormat)
+    return this.__transformHistoricalResponse(tokenId, body.data, currency, rates, dateFormat)
   }
 
   /**
@@ -171,9 +160,7 @@ export default class CoinCapAdapter {
 
       marketResponse[currency] = {
         currency,
-        price: convert(
-          AMOUNT_TO_CONVERT, { from: currency, to: tokenId, base: BASE_CURRENCY, rates }
-        ),
+        price: convert(1, { from: currency, to: tokenId, base: BASE_CURRENCY, rates }),
         marketCap: assets[tokenId].marketCapUsd * (rates[BASE_CURRENCY] / rates[currency]),
         volume: assets[tokenId].volumeUsd24Hr * (rates[BASE_CURRENCY] / rates[currency]),
         date: lastUpdated,
