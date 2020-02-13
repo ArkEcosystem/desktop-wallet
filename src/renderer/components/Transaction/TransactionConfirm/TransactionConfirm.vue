@@ -1,7 +1,7 @@
 <template>
   <section class="TransactionConfirm">
     <TransactionDetail
-      :amount="formatter_networkCurrency(transaction.totalAmount)"
+      :amount="formatter_networkCurrency(totalAmount)"
       :recipient-address="transaction.recipientId"
       :sender-address="address"
       :type="transaction.type"
@@ -9,6 +9,7 @@
     />
     <Component
       :is="activeComponent"
+      v-if="activeComponent"
     />
 
     <footer class="mt-10 flex justify-between items-center">
@@ -27,12 +28,12 @@
         >
           {{ $t('TRANSACTION.SEND') }}
           <span class="px-2 py-1 bg-theme-button-inner-box rounded">
-            {{ formatter_networkCurrency(transaction.totalAmount) }}
+            {{ formatter_networkCurrency(totalAmount) }}
           </span>
         </button>
       </div>
 
-      <div>
+      <div v-if="showSave">
         <button
           v-tooltip="{ content: $t('TRANSACTION.SAVE_OFFLINE'), toggle: 'hover' }"
           class="TransactionConfirm__save-tx action-button pull-right flex items-center"
@@ -52,13 +53,20 @@
 
 <script>
 /* eslint-disable vue/no-unused-components */
-import { find } from 'lodash'
+import { TRANSACTION_GROUPS } from '@config'
 import TransactionConfirmDelegateRegistration from './TransactionConfirmDelegateRegistration'
+import TransactionConfirmDelegateResignation from './TransactionConfirmDelegateResignation'
+import TransactionConfirmIpfs from './TransactionConfirmIpfs'
+import TransactionConfirmMultiPayment from './TransactionConfirmMultiPayment'
+import TransactionConfirmMultiSignature from './TransactionConfirmMultiSignature'
 import TransactionConfirmSecondSignature from './TransactionConfirmSecondSignature'
 import TransactionConfirmTransfer from './TransactionConfirmTransfer'
 import TransactionConfirmVote from './TransactionConfirmVote'
+import TransactionConfirmBusiness from './TransactionConfirmBusiness'
+import TransactionConfirmBridgechain from './TransactionConfirmBridgechain'
 import TransactionDetail from '../TransactionDetail'
 import SvgIcon from '@/components/SvgIcon'
+import TransactionService from '@/services/transaction'
 
 export default {
   name: 'TransactionConfirm',
@@ -72,9 +80,15 @@ export default {
 
   components: {
     TransactionConfirmDelegateRegistration,
+    TransactionConfirmDelegateResignation,
+    TransactionConfirmIpfs,
+    TransactionConfirmMultiPayment,
+    TransactionConfirmMultiSignature,
     TransactionConfirmSecondSignature,
     TransactionConfirmTransfer,
     TransactionConfirmVote,
+    ...TransactionConfirmBusiness,
+    ...TransactionConfirmBridgechain,
     TransactionDetail,
     SvgIcon
   },
@@ -82,8 +96,7 @@ export default {
   props: {
     transaction: {
       type: Object,
-      required: true,
-      default: () => {}
+      required: true
     },
     wallet: {
       type: Object,
@@ -98,19 +111,41 @@ export default {
   }),
 
   computed: {
+    totalAmount () {
+      const amount = this.currency_toBuilder(this.transaction.fee)
+
+      if (this.transaction.asset && this.transaction.asset.payments) {
+        for (const payment of this.transaction.asset.payments) {
+          amount.add(payment.amount)
+        }
+      } else if (this.transaction.amount) {
+        amount.add(this.transaction.amount)
+      }
+
+      return amount.value
+    },
+
     currentWallet () {
       return this.wallet || this.wallet_fromRoute
     },
     address () {
       return this.currentWallet.address
+    },
+    showSave () {
+      return !TransactionService.isMultiSignature(this.transaction)
     }
   },
 
   mounted () {
-    const component = find(this.$options.components, item => item.transactionType === this.transaction.type)
+    const transactionGroup = this.transaction.typeGroup || TRANSACTION_GROUPS.STANDARD
+    const component = Object.values(this.$options.components).find(component => {
+      const group = component.transactionGroup || TRANSACTION_GROUPS.STANDARD
+
+      return group !== transactionGroup ? false : component.transactionType === this.transaction.type
+    })
 
     if (!component) {
-      throw new Error(`[TransactionConfirm] - Confirm for type ${this.type} not found.`)
+      throw new Error(`[TransactionConfirm] - Confirm for type ${this.transaction.type} (group ${transactionGroup}) not found.`)
     }
 
     this.activeComponent = component.name
@@ -137,7 +172,7 @@ export default {
         const path = await this.electron_writeFile(raw, defaultPath)
         this.$success(this.$t('TRANSACTION.SUCCESS.SAVE_OFFLINE', { path }))
       } catch (e) {
-        this.$error(this.$t('TRANSACTION.ERROR.SAVE_OFFLINE'))
+        this.$error(this.$t('TRANSACTION.ERROR.SAVE_OFFLINE', { error: e.message }))
       }
     }
   }

@@ -285,10 +285,10 @@ export default {
     },
 
     /**
-     * Refresh peer list.
-     * @return {void}
+     * Get Peer Discovery instance.
+     * @return {PeerDiscovery}
      */
-    async refresh ({ dispatch, getters, rootGetters }, network = null) {
+    async getPeerDiscovery ({ dispatch, getters, rootGetters }, network = null) {
       if (!network) {
         network = rootGetters['session/network']
       }
@@ -302,41 +302,56 @@ export default {
         'ark.devnet': 'devnet'
       }
 
-      let peerDiscovery = null
       if (networkLookup[network.id]) {
-        peerDiscovery = await PeerDiscovery.new({
+        return PeerDiscovery.new({
           networkOrHost: networkLookup[network.id]
         })
       } else if (getters.current()) {
         const peerUrl = getBaseUrl(getters.current())
-        peerDiscovery = await PeerDiscovery.new({
+
+        return PeerDiscovery.new({
           networkOrHost: `${peerUrl}/api/v2/peers`
-        })
-      } else {
-        peerDiscovery = await PeerDiscovery.new({
-          networkOrHost: `${network.server}/api/v2/peers`
         })
       }
 
-      peerDiscovery.withLatency(300)
-        .sortBy('latency')
+      return PeerDiscovery.new({
+        networkOrHost: `${network.server}/api/v2/peers`
+      })
+    },
 
-      let peers = await peerDiscovery
-        .findPeersWithPlugin('core-api', {
-          additional: [
-            'height',
-            'latency'
-          ]
-        })
+    /**
+     * Refresh peer list.
+     * @return {void}
+     */
+    async refresh ({ dispatch, getters, rootGetters }, network = null) {
+      let peers = []
 
-      if (!peers.length) {
+      try {
+        const peerDiscovery = await dispatch('getPeerDiscovery', network)
+
+        peerDiscovery.withLatency(300)
+          .sortBy('latency')
+
         peers = await peerDiscovery
-          .findPeersWithPlugin('core-wallet-api', {
+          .findPeersWithPlugin('core-api', {
             additional: [
               'height',
               'latency'
             ]
           })
+
+        if (!peers.length) {
+          peers = await peerDiscovery
+            .findPeersWithPlugin('core-wallet-api', {
+              additional: [
+                'height',
+                'latency',
+                'version'
+              ]
+            })
+        }
+      } catch (error) {
+        console.error('Could not refresh peer list:', error)
       }
 
       if (!peers.length) {
@@ -491,7 +506,7 @@ export default {
      * @param  {Number} [timeout=3000]
      * @return {(Object|String)}
      */
-    async validatePeer ({ rootGetters }, { url, ignoreNetwork = false, timeout = 3000 }) {
+    async validatePeer ({ rootGetters }, { url, nethash, ignoreNetwork = false, timeout = 3000 }) {
       let networkConfig
 
       try {
@@ -502,7 +517,7 @@ export default {
 
       if (!networkConfig) {
         return i18n.t('PEER.NO_CONNECT')
-      } else if (!ignoreNetwork && networkConfig.nethash !== rootGetters['session/network'].nethash) {
+      } else if (!ignoreNetwork && networkConfig.nethash !== (nethash || rootGetters['session/network'].nethash)) {
         return i18n.t('PEER.WRONG_NETWORK')
       }
 
@@ -516,6 +531,7 @@ export default {
       } catch (error) {
         logger.error('Could not validate peer (status): ', error)
       }
+
       if (!peerStatus) {
         return i18n.t('PEER.STATUS_CHECK_FAILED')
       }

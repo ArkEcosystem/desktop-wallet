@@ -131,21 +131,33 @@ describe('WalletAddress', () => {
     expect(wrapper.text()).toEqual(expect.stringContaining('TRANSACTION.TYPE.IPFS'))
   })
 
-  it('should display Timelock Transfer for type 6', () => {
+  it('should display Multi Payment for type 6', () => {
     const wrapper = mount({ address: 'dummyAddress', type: 6 })
-
-    expect(wrapper.text()).toEqual(expect.stringContaining('TRANSACTION.TYPE.TIMELOCK_TRANSFER'))
-  })
-
-  it('should display Multi Payment for type 7', () => {
-    const wrapper = mount({ address: 'dummyAddress', type: 7 })
 
     expect(wrapper.text()).toEqual(expect.stringContaining('TRANSACTION.TYPE.MULTI_PAYMENT'))
   })
 
-  it('should display Delegate Resignation for type 8', () => {
-    const wrapper = mount({ address: 'dummyAddress', type: 8 })
+  it('should display Delegate Resignation for type 7', () => {
+    const wrapper = mount({ address: 'dummyAddress', type: 7 })
 
     expect(wrapper.text()).toEqual(expect.stringContaining('TRANSACTION.TYPE.DELEGATE_RESIGNATION'))
+  })
+
+  it('should display HTLC Lock for type 8', () => {
+    const wrapper = mount({ address: 'dummyAddress', type: 8 })
+
+    expect(wrapper.text()).toEqual(expect.stringContaining('TRANSACTION.TYPE.HTLC_LOCK'))
+  })
+
+  it('should display HTLC Claim for type 9', () => {
+    const wrapper = mount({ address: 'dummyAddress', type: 9 })
+
+    expect(wrapper.text()).toEqual(expect.stringContaining('TRANSACTION.TYPE.HTLC_CLAIM'))
+  })
+
+  it('should display HTLC Refund for type 10', () => {
+    const wrapper = mount({ address: 'dummyAddress', type: 10 })
+
+    expect(wrapper.text()).toEqual(expect.stringContaining('TRANSACTION.TYPE.HTLC_REFUND'))
   })
 })

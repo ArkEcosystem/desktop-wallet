@@ -11,6 +11,7 @@
         v-if="showFull"
         v-model="configChoice"
         :choices="configChoices"
+        :selected-choice="configChoice"
         @select="onChoiceSelect"
       />
       <div
