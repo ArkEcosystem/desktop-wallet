@@ -19,14 +19,14 @@ describe('LedgerService', () => {
   })
 
   it('should return false for isConnected', async () => {
-    const getAddress = ledgerService.ledger.getAddress
-    ledgerService.ledger.getAddress = jest.fn(() => {
+    const getPublicKey = ledgerService.ledger.getPublicKey
+    ledgerService.ledger.getPublicKey = jest.fn(() => {
       throw new Error('Could not connect')
     })
 
     expect(await ledgerService.isConnected()).toBe(false)
 
-    ledgerService.ledger.getAddress = getAddress
+    ledgerService.ledger.getPublicKey = getPublicKey
   })
 
   it('should disconnect', async () => {
@@ -36,25 +36,42 @@ describe('LedgerService', () => {
     expect(ledgerService.transport.close).toHaveBeenCalledTimes(1)
   })
 
-  it('should run getWallet', async () => {
-    const response = await ledgerService.getWallet('44\'/1\'/0\'/0/0')
+  describe('getPublicKey', () => {
+    it('should run', async () => {
+      const response = await ledgerService.getPublicKey('44\'/1\'/0\'/0/0')
 
-    expect(response).toBeTruthy()
-    expect(ledgerService.ledger.getAddress).toHaveBeenCalledTimes(1)
+      expect(response).toBeTruthy()
+      expect(ledgerService.ledger.getPublicKey).toHaveBeenCalledTimes(1)
+    })
   })
 
-  it('should run getPublicKey', async () => {
-    const response = await ledgerService.getPublicKey('44\'/1\'/0\'/0/0')
+  describe('getVersion', () => {
+    it('should run', async () => {
+      const response = await ledgerService.getVersion()
 
-    expect(response).toBeTruthy()
-    expect(ledgerService.ledger.getAddress).toHaveBeenCalledTimes(1)
+      expect(response).toBe('1.0.0')
+      expect(ledgerService.ledger.getVersion).toHaveBeenCalledTimes(1)
+    })
   })
 
-  it('should run signTransaction', async () => {
-    const response = await ledgerService.signTransaction('44\'/1\'/0\'/0/0', '1234')
+  describe('signTransaction', () => {
+    it('should run', async () => {
+      const response = await ledgerService.signTransaction('44\'/1\'/0\'/0/0', '1234')
 
-    expect(response).toBeTruthy()
-    expect(ledgerService.ledger.signTransaction).toHaveBeenCalledTimes(1)
+      expect(response).toBeTruthy()
+      expect(ledgerService.ledger.signTransaction).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('signMessage', () => {
+    it('should run', async () => {
+      ledgerService.ledger.signMessage.mockClear()
+
+      const response = await ledgerService.signMessage('44\'/1\'/0\'/0/0', Buffer.from('1234'))
+
+      expect(response).toBeTruthy()
+      expect(ledgerService.ledger.signMessage).toHaveBeenCalledTimes(1)
+    })
   })
 
   it('should queue an action', async () => {

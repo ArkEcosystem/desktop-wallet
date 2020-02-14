@@ -15,6 +15,9 @@ export default new BaseModel({
     type: {
       type: 'integer'
     },
+    typeGroup: {
+      type: 'integer'
+    },
     recipient: {
       type: 'string'
     },
