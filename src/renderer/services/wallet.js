@@ -127,7 +127,6 @@ export default class WalletService {
    * @returns {Boolean}
    */
   static canResignDelegate (wallet) {
-    console.log('canResignDelegate', wallet)
     if (!wallet.isDelegate) {
       return false
     }
