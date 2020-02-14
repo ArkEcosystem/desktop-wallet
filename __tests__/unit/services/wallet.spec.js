@@ -419,6 +419,53 @@ describe('Services > Wallet', () => {
     })
   })
 
+  describe('hasBridgechains', () => {
+    let vm
+    beforeEach(() => {
+      vm = {
+        $client: {
+          fetchBusinessBridgechains: jest.fn()
+        }
+      }
+    })
+
+    it('should return true if active bridgechains', async () => {
+      vm.$client.fetchBusinessBridgechains.mockReturnValue({
+        data: [{
+          isResigned: false
+        }, {
+          isResigned: false
+        }, {
+          isResigned: true
+        }]
+      })
+
+      expect(await WalletService.hasBridgechains({}, vm)).toBe(true)
+    })
+
+    it('should return false if all bridgechains are resigned', async () => {
+      vm.$client.fetchBusinessBridgechains.mockReturnValue({
+        data: [{
+          isResigned: true
+        }, {
+          isResigned: true
+        }, {
+          isResigned: true
+        }]
+      })
+
+      expect(await WalletService.hasBridgechains({}, vm)).toBe(false)
+    })
+
+    it('should return false if no bridgechains', async () => {
+      vm.$client.fetchBusinessBridgechains.mockReturnValue({
+        data: []
+      })
+
+      expect(await WalletService.hasBridgechains({}, vm)).toBe(false)
+    })
+  })
+
   describe('Messages', () => {
     const message = 'test message'
     const passphrase = 'test passphrase'
