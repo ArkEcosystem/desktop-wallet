@@ -1,5 +1,5 @@
 <template>
-  <div class="flex items-center relative overflow-hidden font-sans my-auto">
+  <div class="flex items-center relative font-sans my-auto">
     <WalletHeadingPrimaryActions
       v-if="!secondaryButtonsVisible"
       class="-mr-2"

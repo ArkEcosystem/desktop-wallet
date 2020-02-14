@@ -28,6 +28,10 @@ export default new BaseModel({
         }
       }
     },
+    multiSignature: {
+      type: ['object', 'null'],
+      default: null
+    },
     name: {
       type: 'string',
       default: '',
@@ -51,6 +55,10 @@ export default new BaseModel({
     isDelegate: {
       type: 'boolean',
       default: false
+    },
+    business: {
+      type: ['object', 'null'],
+      default: null
     },
     isWatchOnly: {
       type: 'boolean',

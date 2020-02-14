@@ -117,6 +117,7 @@
 import { ButtonClipboard } from '@/components/Button'
 import SvgIcon from '@/components/SvgIcon'
 import { WalletIdenticon } from '../'
+import WalletService from '@/services/wallet'
 
 export default {
   name: 'WalletHeadingInfo',
@@ -138,10 +139,15 @@ export default {
     },
 
     publicKey () {
-      const publicKey = this.currentWallet ? this.currentWallet.publicKey : ''
-      const lazyPublicKey = this.lazyWallet.publicKey
+      if (this.currentWallet) {
+        if (this.currentWallet.multiSignature) {
+          return WalletService.getPublicKeyFromMultiSignatureAsset(this.currentWallet.multiSignature)
+        } else if (this.currentWallet.publicKey) {
+          return this.currentWallet.publicKey
+        }
+      }
 
-      return publicKey || lazyPublicKey
+      return this.lazyWallet.publicKey
     },
 
     secondPublicKey () {

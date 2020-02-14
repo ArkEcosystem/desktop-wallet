@@ -133,6 +133,10 @@ export default new BaseModel({
       type: 'object',
       format: data => data.lastFees || {}
     },
+    multiSignaturePeer: {
+      type: ['object', 'null'],
+      format: data => data.multiSignaturePeer || null
+    },
     filterBlacklistedPlugins: {
       type: 'boolean',
       format: data => data.filterBlacklistedPlugins !== undefined ? data.filterBlacklistedPlugins : true
