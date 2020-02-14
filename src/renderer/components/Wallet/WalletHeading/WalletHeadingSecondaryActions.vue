@@ -161,7 +161,7 @@ export default {
         })
       }
 
-      if (!this.currentWallet.isLedger && this.currentWallet.isDelegate) {
+      if (!this.currentWallet.isLedger && WalletService.canResignDelegate(this.currentWallet)) {
         types.push({
           label: this.$t('WALLET_HEADING.ACTIONS.RESIGN_DELEGATE'),
           type: TRANSACTION_TYPES.GROUP_1.DELEGATE_RESIGNATION
