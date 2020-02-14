@@ -182,7 +182,7 @@ export default {
         })
       }
 
-      if (WalletService.isBusiness(this.currentWallet)) {
+      if (WalletService.canResignBusiness(this.currentWallet)) {
         const businessResignOption = {
           label: this.$t('WALLET_HEADING.ACTIONS.BUSINESS.RESIGN'),
           group: 2,
