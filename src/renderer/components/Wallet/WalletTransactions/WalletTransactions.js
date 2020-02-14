@@ -1,38 +1,8 @@
-<template>
-  <div class="WalletTransactions">
-    <div
-      v-if="newTransactionsNotice && newTransactionsNotice !== '0'"
-      class="bg-theme-feature flex flex-row"
-    >
-      <div
-        class="mb-2 py-4 px-6 rounded-l text-theme-voting-banner-text bg-theme-voting-banner-background w-full text-center"
-      >
-        {{ newTransactionsNotice }}
-      </div>
-    </div>
-    <TransactionTable
-      :current-page="currentPage"
-      :rows="fetchedTransactions"
-      :total-rows="totalCount"
-      :is-loading="isLoading"
-      :is-remote="true"
-      :has-pagination="totalCount > 0"
-      :sort-query="{
-        field: queryParams.sort.field,
-        type: queryParams.sort.type
-      }"
-      :per-page="transactionTableRowCount"
-      @on-per-page-change="onPerPageChange"
-      @on-page-change="onPageChange"
-      @on-sort-change="onSortChange"
-    />
-  </div>
-</template>
-
-<script>
-import { at, isEqual } from 'lodash'
+import at from 'lodash/at'
+import isEqual from 'lodash/isEqual'
+import mixin from './mixin'
 import mergeTableTransactions from '@/components/utils/merge-table-transactions'
-import TransactionTable from '@/components/Transaction/TransactionTable'
+import { TransactionTable } from '@/components/Transaction'
 
 export default {
   name: 'WalletTransactions',
@@ -41,59 +11,7 @@ export default {
     TransactionTable
   },
 
-  data: () => ({
-    currentPage: 1,
-    isFetching: false,
-    isLoading: false,
-    fetchedTransactions: [],
-    expiryEvents: [],
-    totalCount: 0,
-    newTransactionsNotice: null,
-    lastStatusRefresh: null,
-    queryParams: {
-      page: 1,
-      limit: 10,
-      sort: {
-        field: 'timestamp',
-        type: 'desc'
-      }
-    }
-  }),
-
-  computed: {
-    transactionTableRowCount: {
-      get () {
-        return this.$store.getters['session/transactionTableRowCount']
-      },
-      set (count) {
-        this.$store.dispatch('session/setTransactionTableRowCount', count)
-
-        this.$store.dispatch('profile/update', {
-          ...this.session_profile,
-          transactionTableRowCount: count
-        })
-      }
-    }
-  },
-
-  watch: {
-    // This watcher would invoke the `fetch` after the `Synchronizer`
-    wallet_fromRoute (newValue, oldValue) {
-      const currentTimestamp = Math.round((new Date()).getTime() / 1000)
-      if (newValue.address !== oldValue.address) {
-        this.lastStatusRefresh = null
-        this.newTransactionsNotice = null
-        this.reset()
-        this.loadTransactions()
-
-        this.disableNewTransactionEvent(oldValue.address)
-        this.enableNewTransactionEvent(newValue.address)
-      } else if (this.lastStatusRefresh < currentTimestamp - 1) {
-        this.lastStatusRefresh = currentTimestamp
-        this.refreshStatus()
-      }
-    }
-  },
+  mixins: [mixin],
 
   created () {
     this.loadTransactions()
@@ -135,7 +53,13 @@ export default {
         return []
       }
 
-      return this.$store.getters['transaction/byAddress'](address, { includeExpired: true })
+      const transactions = this.$store.getters['transaction/byAddress'](address, { includeExpired: true })
+
+      if (this.transactionType === null) {
+        return transactions
+      }
+
+      return transactions.filter(transaction => transaction.type === this.transactionType)
     },
 
     async getTransactions (address) {
@@ -145,11 +69,14 @@ export default {
 
       const { limit, page, sort } = this.queryParams
 
-      return this.$client.fetchWalletTransactions(address, {
+      const response = await this.$client.fetchWalletTransactions(address, {
+        transactionType: this.transactionType,
         page,
         limit,
         orderBy: `${sort.field}:${sort.type}`
       })
+
+      return response
     },
 
     async fetchTransactions () {
@@ -160,7 +87,7 @@ export default {
 
       let address
       if (this.wallet_fromRoute) {
-        address = this.wallet_fromRoute.address.slice()
+        address = this.wallet_fromRoute.address
       }
 
       this.isFetching = true
@@ -177,6 +104,7 @@ export default {
 
         if (this.wallet_fromRoute && address === this.wallet_fromRoute.address) {
           this.$set(this, 'fetchedTransactions', transactions)
+          // TODO: Does this need fixing? This only stores total count from API, not including locally stored transactions
           this.totalCount = response.totalCount
         }
       } catch (error) {
@@ -197,33 +125,16 @@ export default {
       }
     },
 
-    /**
-     * Fetch the transaction and show the loading animation while the response
-     * is received
-     */
-    async loadTransactions () {
-      if (!this.wallet_fromRoute || this.isFetching) {
-        return
-      }
-
-      this.newTransactionsNotice = null
-      this.isLoading = true
-      this.fetchTransactions()
-    },
-
     refreshStatusEvent () {
       this.refreshStatus()
     },
 
     async refreshStatus () {
-      let address
-      if (this.wallet_fromRoute) {
-        address = this.wallet_fromRoute.address.slice()
-      }
-
-      if (!address || !this.wallet_fromRoute) {
+      if (!this.wallet_fromRoute || !this.wallet_fromRoute.address) {
         return
       }
+
+      const address = this.wallet_fromRoute.address
 
       try {
         let newTransactions = 0
@@ -264,8 +175,17 @@ export default {
       }
     },
 
+    onWalletChange (newWallet, oldWallet) {
+      if (oldWallet) {
+        this.disableNewTransactionEvent(oldWallet.address)
+      }
+      if (newWallet) {
+        this.enableNewTransactionEvent(newWallet.address)
+      }
+    },
+
     onPageChange ({ currentPage }) {
-      if (this.currentPage !== currentPage) {
+      if (currentPage && currentPage !== this.currentPage) {
         this.currentPage = currentPage
         this.__updateParams({ page: currentPage })
         this.loadTransactions()
@@ -273,7 +193,7 @@ export default {
     },
 
     onPerPageChange ({ currentPerPage }) {
-      if (this.transactionTableRowCount !== currentPerPage) {
+      if (currentPerPage && currentPerPage !== this.transactionTableRowCount) {
         this.transactionTableRowCount = currentPerPage
         this.__updateParams({ limit: currentPerPage, page: 1 })
         this.loadTransactions()
@@ -302,11 +222,8 @@ export default {
       this.queryParams.page = 1
       this.totalCount = 0
       this.fetchedTransactions = []
-    },
-
-    __updateParams (newProps) {
-      this.queryParams = Object.assign({}, this.queryParams, newProps)
+      this.lastStatusRefresh = null
+      this.newTransactionsNotice = null
     }
   }
 }
-</script>
