@@ -1,7 +1,7 @@
 <template>
   <div class="MenuTab bg-theme-feature overflow-hidden">
     <nav class="MenuTab__nav bg-theme-feature-item-alternative text-theme-feature-item-alternative-text">
-      <div class="inline-flex justify-start items-center">
+      <div class="MenuTab__nav__items inline-flex justify-start items-center">
         <button
           v-for="item in items"
           :key="item.tab"
@@ -11,7 +11,7 @@
             'MenuTab__nav__item--clickable': !!item.onClick,
           }"
           :disabled="item.isDisabled"
-          class="MenuTab__nav__item text-inherit appearance-none cursor-pointer font-semibold px-5 py-4 flex justify-center items-center hover:bg-theme-feature-item-hover hover:text-theme-feature-item-selected-text"
+          class="MenuTab__nav__item text-inherit appearance-none cursor-pointer font-semibold px-5 py-4 flex justify-center items-center bg-theme-feature-item-alternative hover:bg-theme-feature-item-hover hover:text-theme-feature-item-selected-text"
           @click="item.onClick ? item.onClick() : switchToTab(item.tab)"
         >
           <template v-if="item.$slots.header">
@@ -97,7 +97,7 @@ export default {
 }
 
 .MenuTab__nav__item--active {
-  @apply .bg-theme-feature .text-theme-page-text;
+  @apply .bg-theme-switch-button .text-theme-button-text;
 }
 
 .MenuTab__nav__item--clickable {

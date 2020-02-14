@@ -2,6 +2,7 @@ import ModalAdditionalLedgers from './ModalAdditionalLedgers'
 import ModalConfirmation from './ModalConfirmation'
 import ModalExportWallets from './ModalExportWallets'
 import ModalLoader from './ModalLoader'
+import ModalPeer from './ModalPeer'
 import ModalQrCode from './ModalQrCode'
 import ModalQrCodeScanner from './ModalQrCodeScanner'
 import ModalRename from './ModalRename'
@@ -11,8 +12,9 @@ export default ModalWindow
 export {
   ModalAdditionalLedgers,
   ModalConfirmation,
-  ModalLoader,
   ModalExportWallets,
+  ModalLoader,
+  ModalPeer,
   ModalQrCode,
   ModalQrCodeScanner,
   ModalRename,
