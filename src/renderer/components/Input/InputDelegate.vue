@@ -238,11 +238,14 @@ export default {
       this.$refs.input.focus()
     },
 
-    onBlur (evt) {
+    onBlur (event) {
       // Verifies that the element that generated the blur was a dropdown item
-      if (evt.relatedTarget) {
-        const classList = evt.relatedTarget.classList || []
-        const isDropdownItem = classList.includes('MenuDropdownItem__button')
+      if (event.relatedTarget) {
+        const classList = event.relatedTarget.classList
+
+        const isDropdownItem = classList && typeof classList.contains === 'function'
+          ? classList.contains('MenuDropdownItem__button')
+          : false
 
         if (!isDropdownItem) {
           this.closeDropdown()
