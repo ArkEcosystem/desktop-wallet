@@ -326,7 +326,9 @@ export default {
     },
 
     amountTooltip () {
-      if (this.transaction.typeGroup === TRANSACTION_GROUPS.MAGISTRATE) {
+      if (!this.wallet_fromRoute || this.transaction.sender !== this.wallet_fromRoute.address) {
+        return null
+      } else if (this.transaction.typeGroup === TRANSACTION_GROUPS.MAGISTRATE) {
         return null
       } else if (this.transaction.type !== TRANSACTION_TYPES.GROUP_1.MULTI_PAYMENT) {
         return null
