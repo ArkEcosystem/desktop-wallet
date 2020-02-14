@@ -492,7 +492,7 @@ export default {
             return this.bridgechain ? true : maxLength(maxNameLength)(value)
           },
           validName (value) {
-            return this.bridgechain ? true : /^[a-zA-Z0-9_-]+$/.test(value)
+            return this.bridgechain ? true : /^[a-zA-Z0-9]+(( - |[ ._-])[a-zA-Z0-9]+)*[.]?$/.test(value)
           }
         },
 
