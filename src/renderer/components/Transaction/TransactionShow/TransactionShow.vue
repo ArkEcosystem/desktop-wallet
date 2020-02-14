@@ -155,6 +155,14 @@
           :show-waiting-confirmations="false"
           class="ml-2"
         />
+
+        <SvgIcon
+          v-if="!!amountTooltip"
+          v-tooltip="amountTooltip"
+          name="exclamation-mark"
+          view-box="0 0 16 20"
+          class="ml-2 text-theme-page-text-light"
+        />
       </ListDividedItem>
 
       <ListDividedItem
@@ -244,6 +252,7 @@
 
 <script>
 import { at } from 'lodash'
+import { TRANSACTION_GROUPS, TRANSACTION_TYPES } from '@config'
 import { ListDivided, ListDividedItem } from '@/components/ListDivided'
 import { ModalWindow } from '@/components/Modal'
 import { ButtonClipboard, ButtonGeneric } from '@/components/Button'
@@ -314,6 +323,31 @@ export default {
       }
 
       return this.transaction.recipient
+    },
+
+    amountTooltip () {
+      if (this.transaction.typeGroup === TRANSACTION_GROUPS.MAGISTRATE) {
+        return null
+      } else if (this.transaction.type !== TRANSACTION_TYPES.GROUP_1.MULTI_PAYMENT) {
+        return null
+      }
+
+      const amount = this.currency_toBuilder(0)
+      for (const payment of this.transaction.asset.payments) {
+        if (payment.recipientId !== this.wallet_fromRoute.address) {
+          continue
+        }
+
+        amount.add(payment.amount)
+      }
+
+      if (amount.isEqualTo(0)) {
+        return null
+      }
+
+      return this.$t('TRANSACTION.ERROR.MULTI_PAYMENT_TO_SELF', {
+        amount: this.formatter_networkCurrency(amount)
+      })
     }
   },
 

@@ -991,6 +991,7 @@ export default {
       HTLC_CLAIM: 'Timelock Claim could not be created',
       HTLC_REFUND: 'Timelock Refund could not be created',
       MULTI_PAYMENT: 'Multi payment could not be created',
+      MULTI_PAYMENT_TO_SELF: 'Excluding {amount} the sender sent to themselves',
       DELEGATE_RESIGNATION: 'Delegate resignation was unsuccessful',
       BUSINESS_REGISTRATION: 'Business registration was unsuccessful',
       BUSINESS_RESIGNATION: 'Business resignation was unsuccessful',
