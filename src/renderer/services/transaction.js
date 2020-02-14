@@ -1,4 +1,4 @@
-import { TRANSACTION_TYPES } from '@config'
+import { TRANSACTION_GROUPS, TRANSACTION_TYPES } from '@config'
 import { Crypto, Transactions } from '@arkecosystem/crypto'
 import BigNumber from '@/plugins/bignumber'
 
@@ -31,7 +31,7 @@ export default class TransactionService {
    * @return {String}
    */
   static getAmount (vm, transaction, wallet, includeFee = false) {
-    const amount = vm.currency_toBuilder(transaction.amount)
+    const amount = vm.currency_toBuilder(0)
     if (transaction.asset && transaction.asset.payments) {
       for (const payment of transaction.asset.payments) {
         if (wallet) {
@@ -44,6 +44,8 @@ export default class TransactionService {
 
         amount.add(payment.amount)
       }
+    } else if (this.isTransfer(transaction)) {
+      amount.add(transaction.amount)
     }
 
     if (includeFee && (!wallet || (wallet && wallet.address === transaction.sender))) {
@@ -106,6 +108,23 @@ export default class TransactionService {
     transaction.id = this.getId(transaction)
 
     return transaction
+  }
+
+  /**
+   * Get total amount for transaction.
+   * @param  {Object} transaction
+   * @return {String}
+   */
+  static isTransfer (transaction) {
+    if (transaction.typeGroup === TRANSACTION_GROUPS.MAGISTRATE) {
+      return false
+    }
+
+    const transferTypes = [
+      TRANSACTION_TYPES.GROUP_1.TRANSFER
+    ]
+
+    return transferTypes.includes(transaction.type)
   }
 
   /*
