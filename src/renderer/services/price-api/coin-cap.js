@@ -1,7 +1,7 @@
 import got from 'got'
 import dayjs from 'dayjs'
 import moment from 'moment'
-import { has, min, max } from 'lodash'
+import { min, max } from 'lodash'
 import { MARKET } from '@config'
 
 // All prices on the CoinCap API are standardized in USD (United States Dollar)
@@ -159,7 +159,7 @@ export default class CoinCapAdapter {
 
       marketResponse[currency] = {
         currency,
-        price: this.__convert(1, { from: currency, to: tokenId, base: BASE_CURRENCY, rates }),
+        price: this.__convertToCurrency(1, { from: currency, to: tokenId, base: BASE_CURRENCY, rates }),
         marketCap: assets[tokenId].marketCapUsd * (rates[BASE_CURRENCY] / rates[currency]),
         volume: assets[tokenId].volumeUsd24Hr * (rates[BASE_CURRENCY] / rates[currency]),
         date: lastUpdated,
@@ -184,7 +184,7 @@ export default class CoinCapAdapter {
     const datasets = {}
 
     for (const value of response) {
-      datasets[dayjs(value.date).format(dateFormat)] = this.__convert(
+      datasets[dayjs(value.date).format(dateFormat)] = this.__convertToCurrency(
         value.priceUsd, { from: currency, to: tokenId, base: tokenId, rates }
       )
     }
@@ -203,20 +203,20 @@ export default class CoinCapAdapter {
    * @param {Object} options
    * @return {Number} Returns conversion result
    */
-  static __convert (amount, { from, to, base, rates }) {
+  static __convertToCurrency (amount, { from, to, base, rates }) {
     if (from && to) {
       // If `from` equals `base`, return the basic exchange rate for the `to` currency
-      if (from === base && has(rates, to)) {
+      if (from === base && Object.prototype.hasOwnProperty.call(rates, to)) {
         return (amount * 100) * (rates[to] / 100)
       }
 
       // If `to` equals `base`, return the basic inverse rate of the `from` currency
-      if (to === base && has(rates, from)) {
+      if (to === base && Object.prototype.hasOwnProperty.call(rates, from)) {
         return (amount * 100) * ((1 / rates[from]) / 100)
       }
 
       // Otherwise, return the `to` rate multipled by the inverse of the `from` rate to get the relative exchange rate between the two currencies.
-      if (has(rates, from) && has(rates, to)) {
+      if (Object.prototype.hasOwnProperty.call(rates, from) && Object.prototype.hasOwnProperty.call(rates, to)) {
         return (amount * 100) * ((rates[to] * (1 / rates[from])) / 100)
       }
 
