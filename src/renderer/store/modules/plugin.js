@@ -433,7 +433,7 @@ export default {
       commit('SET_LAST_FETCHED', Date.now())
     },
 
-    setInstalled ({ commit, rootGetters }, plugin) {
+    setInstalled ({ commit }, plugin) {
       commit('SET_INSTALLED_PLUGIN', plugin)
     },
 
