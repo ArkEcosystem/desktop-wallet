@@ -32,12 +32,13 @@ export default class TransactionService {
    */
   static getAmount (vm, transaction, wallet, includeFee = false) {
     const amount = vm.currency_toBuilder(0)
+    const walletAddress = transaction.walletAddress || wallet ? wallet.address : null
     if (transaction.asset && transaction.asset.payments) {
       for (const payment of transaction.asset.payments) {
-        if (wallet) {
-          if (wallet.address === transaction.sender && wallet.address === payment.recipientId) {
+        if (walletAddress) {
+          if (walletAddress === transaction.sender && walletAddress === payment.recipientId) {
             continue
-          } else if (wallet && wallet.address !== transaction.sender && wallet.address !== payment.recipientId) {
+          } else if (walletAddress !== transaction.sender && walletAddress !== payment.recipientId) {
             continue
           }
         }
@@ -48,7 +49,7 @@ export default class TransactionService {
       amount.add(transaction.amount)
     }
 
-    if (includeFee && (!wallet || (wallet && wallet.address === transaction.sender))) {
+    if (includeFee && (!walletAddress || (walletAddress === transaction.sender))) {
       amount.add(transaction.fee)
     }
 

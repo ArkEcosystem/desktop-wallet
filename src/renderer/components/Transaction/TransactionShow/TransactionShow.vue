@@ -326,7 +326,8 @@ export default {
     },
 
     amountTooltip () {
-      if (!this.wallet_fromRoute || this.transaction.sender !== this.wallet_fromRoute.address) {
+      const walletAddress = this.transaction.walletAddress || this.wallet_fromRoute.address
+      if (!walletAddress || this.transaction.sender !== walletAddress) {
         return null
       } else if (this.transaction.typeGroup === TRANSACTION_GROUPS.MAGISTRATE) {
         return null
@@ -336,7 +337,7 @@ export default {
 
       const amount = this.currency_toBuilder(0)
       for (const payment of this.transaction.asset.payments) {
-        if (payment.recipientId !== this.wallet_fromRoute.address) {
+        if (payment.recipientId !== walletAddress) {
           continue
         }
 
