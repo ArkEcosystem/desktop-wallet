@@ -4,6 +4,7 @@ import { capitalize } from 'lodash'
 import logger from 'electron-log'
 import CryptoCompareAdapter from './price-api/crypto-compare'
 import CoinGeckoAdapter from './price-api/coin-gecko'
+import CoinCapAdapter from './price-api/coin-cap'
 
 class PriceApi {
   setAdapter (adapter) {
@@ -13,6 +14,8 @@ class PriceApi {
   getAdapter () {
     if (this.adapter === 'cryptocompare') {
       return CryptoCompareAdapter
+    } else if (this.adapter === 'coincap') {
+      return CoinCapAdapter
     }
 
     return CoinGeckoAdapter
