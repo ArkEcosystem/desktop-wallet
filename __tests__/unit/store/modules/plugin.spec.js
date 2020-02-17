@@ -228,6 +228,34 @@ describe('PluginModule', () => {
     })
   })
 
+  describe('isBlacklisted', () => {
+    beforeAll(() => {
+      store.replaceState(merge(
+        JSON.parse(JSON.stringify(initialState)),
+        {
+          plugin: {
+            blacklisted: {
+              global: [availablePlugins[0].config.id],
+              local: [availablePlugins[1].config.id]
+            }
+          }
+        }
+      ))
+    })
+
+    it('should return true if the plugin is blacklisted globally', () => {
+      expect(store.getters['plugin/isBlacklisted'](availablePlugins[0].config.id)).toBe(true)
+    })
+
+    it('should return true if the plugin is blacklisted locally', () => {
+      expect(store.getters['plugin/isBlacklisted'](availablePlugins[1].config.id)).toBe(true)
+    })
+
+    it('should return false if the plugin is not blacklisted', () => {
+      expect(store.getters['plugin/isBlacklisted']('plugin-not-blacklisted')).toBe(false)
+    })
+  })
+
   describe('enabled', () => {
     beforeAll(() => {
       store.replaceState(JSON.parse(JSON.stringify(initialState)))
