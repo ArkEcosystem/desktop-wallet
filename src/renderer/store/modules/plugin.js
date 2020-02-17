@@ -17,7 +17,7 @@ export default {
       local: []
     },
     whitelisted: {
-      global: []
+      global: {}
     },
     pluginOptions: {},
     lastFetched: 0
@@ -149,7 +149,7 @@ export default {
       return getters.blacklisted.global.includes(pluginId) || getters.blacklisted.local.includes(pluginId)
     },
 
-    isWhitelisted: (_, getters) => (plugin) => {
+    isWhitelisted: (_, getters) => plugin => {
       if (Object.prototype.hasOwnProperty.call(getters.whitelisted.global, plugin.config.id)) {
         return semver.lte(plugin.config.version, getters.whitelisted.global[plugin.config.id])
       }

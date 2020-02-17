@@ -256,6 +256,47 @@ describe('PluginModule', () => {
     })
   })
 
+  describe('isWhitelisted', () => {
+    beforeAll(() => {
+      store.replaceState(merge(
+        JSON.parse(JSON.stringify(initialState)),
+        {
+          plugin: {
+            whitelisted: {
+              global: {
+                [availablePlugins[0].config.id]: availablePlugins[0].config.version
+              }
+            }
+          }
+        }
+      ))
+    })
+
+    it('should return true if the plugin is whitelisted and the version is lower or equal', () => {
+      const equal = {
+        config: {
+          id: availablePlugins[0].config.id,
+          version: '0.0.1'
+        }
+      }
+      expect(store.getters['plugin/isWhitelisted'](equal)).toBe(true)
+    })
+
+    it('should return false if the plugin is whitelisted and the version is higher', () => {
+      const higher = {
+        config: {
+          id: availablePlugins[0].config.id,
+          version: '1.0.0'
+        }
+      }
+      expect(store.getters['plugin/isWhitelisted'](higher)).toBe(false)
+    })
+
+    it('should return false if the plugin is not whitelisted', () => {
+      expect(store.getters['plugin/isWhitelisted']({ config: { id: 'plugin-not-whitelisted' } })).toBe(false)
+    })
+  })
+
   describe('enabled', () => {
     beforeAll(() => {
       store.replaceState(JSON.parse(JSON.stringify(initialState)))
