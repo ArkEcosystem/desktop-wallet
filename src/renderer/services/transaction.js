@@ -32,7 +32,7 @@ export default class TransactionService {
    */
   static getAmount (vm, transaction, wallet, includeFee = false) {
     const amount = vm.currency_toBuilder(0)
-    const walletAddress = transaction.walletAddress || wallet ? wallet.address : null
+    const walletAddress = transaction.walletAddress || (wallet ? wallet.address : null)
     if (transaction.asset && transaction.asset.payments) {
       for (const payment of transaction.asset.payments) {
         if (walletAddress) {
