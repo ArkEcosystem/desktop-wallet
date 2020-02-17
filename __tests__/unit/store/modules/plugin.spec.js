@@ -187,7 +187,7 @@ describe('PluginModule', () => {
       expect(store.getters['plugin/loaded']).toEqual({})
     })
 
-    it('should return an empty object if there are no plugins for the session profile', () => {
+    it('should return an empty object if there are no loaded plugins for the session profile', () => {
       sessionProfileId.mockReturnValue(profile1.id)
       expect(store.getters['plugin/loaded']).toEqual({})
     })
@@ -225,6 +225,40 @@ describe('PluginModule', () => {
           profileId: profile1.id
         }
       })
+    })
+  })
+
+  describe('enabled', () => {
+    beforeAll(() => {
+      store.replaceState(JSON.parse(JSON.stringify(initialState)))
+    })
+
+    it('should return an empty object if there is no session profile', () => {
+      sessionProfileId.mockReturnValue(null)
+      expect(store.getters['plugin/enabled']).toEqual({})
+    })
+
+    it('should return an empty object if there are no enabled plugins for the session profile', () => {
+      sessionProfileId.mockReturnValue(profile1.id)
+      expect(store.getters['plugin/enabled']).toEqual({})
+    })
+
+    it('should return the enabled plugins for the session profile', () => {
+      store.replaceState(merge(
+        JSON.parse(JSON.stringify(initialState)),
+        {
+          plugin: {
+            available: availablePlugins[0],
+            enabled: {
+              [profile1.id]: {
+                [availablePlugins[0].config.id]: true
+              }
+            }
+          }
+        }
+      ))
+
+      expect(store.getters['plugin/enabled']).toEqual({ [availablePlugins[0].config.id]: true })
     })
   })
 })
