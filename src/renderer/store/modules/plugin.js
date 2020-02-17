@@ -131,10 +131,10 @@ export default {
 
     isEnabled: (state, getters) => (pluginId, profileId) => {
       if (!profileId) {
-        return getters.enabled[pluginId]
+        return !!getters.enabled[pluginId]
       }
 
-      return state.enabled[profileId] ? state.enabled[profileId][pluginId] : null
+      return state.enabled[profileId] ? !!state.enabled[profileId][pluginId] : false
     },
 
     isLoaded: (state, getters) => (pluginId, profileId) => {
