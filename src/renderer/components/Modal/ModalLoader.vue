@@ -2,6 +2,7 @@
   <ModalWindow
     v-if="isVisible"
     :allow-close="showClose"
+    class="ModalLoader"
     container-classes="max-w-md sm:w-md"
     portal-target="loading"
     @close="toggle"

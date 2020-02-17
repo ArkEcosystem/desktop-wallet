@@ -51,6 +51,12 @@ export default {
     label: {
       type: String,
       required: true
+    },
+
+    disabled: {
+      type: Boolean,
+      required: false,
+      default: false
     }
   },
 
@@ -62,7 +68,12 @@ export default {
     emitToggle () {
       this.$emit('toggle', this.isOpen)
     },
+
     toggle () {
+      if (this.disabled) {
+        return
+      }
+
       this.isOpen = !this.isOpen
       this.emitToggle()
     }

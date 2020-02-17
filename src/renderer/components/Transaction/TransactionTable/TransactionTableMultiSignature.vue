@@ -1,5 +1,5 @@
 <template>
-  <div class="TransactionTable w-full">
+  <div class="TransactionMultiSignatureTable w-full">
     <TableWrapper
       v-bind="$attrs"
       :columns="columns"
@@ -12,47 +12,8 @@
       <template
         slot-scope="data"
       >
-        <div v-if="data.column.field === 'id' && data.row.confirmations > 0">
-          <a
-            class="flex items-center whitespace-no-wrap"
-            href="#"
-            @click.stop="network_openExplorer('transaction', data.row.id)"
-          >
-            <SvgIcon
-              v-show="isDashboard"
-              v-tooltip="{
-                content: data.row.vendorField,
-                classes: 'text-xs',
-                trigger: 'hover',
-                container: '.TransactionTable'
-              }"
-              :name="data.formattedRow['vendorField'] ? 'vendorfield' : 'vendorfield-empty'"
-              view-box="0 0 18 18"
-              class="mr-2"
-            />
-
-            <span
-              v-tooltip="{
-                content: data.row.id,
-                classes: 'text-xs',
-                trigger: 'hover',
-                container: '.TransactionTable'
-              }"
-              class="mr-1"
-            >
-              {{ data.formattedRow['id'] }}
-            </span>
-
-            <SvgIcon
-              name="open-external"
-              view-box="0 0 12 12"
-              class="text-theme-page-text-light"
-            />
-          </a>
-        </div>
-
         <div
-          v-else-if="data.column.field === 'amount'"
+          v-if="data.column.field === 'amount'"
           class="flex items-center justify-end"
         >
           <span
@@ -61,7 +22,7 @@
               html: true,
               classes: 'leading-loose',
               trigger: 'hover',
-              container: '.TransactionTable',
+              container: '.TransactionMultiSignatureTable',
               placement: 'left'
             }"
             class="font-bold mr-2 whitespace-no-wrap"
@@ -69,41 +30,59 @@
             {{ data.row.isSender ? '-' : '+' }}
             {{ data.formattedRow['amount'] }}
           </span>
-          <TransactionStatusIcon
-            v-bind="data.row"
-            :show-tooltip="true"
-            tooltip-container=".TransactionTable"
-          />
         </div>
 
         <div
           v-else-if="data.column.field === 'sender'"
-          :class="[ isDashboard ? 'dashboard-address' : 'max-w-xxs' ]"
+          class="max-w-xxs"
         >
           <WalletAddress
-            :address="data.row.sender"
+            :address="formatAddress(data.row)"
             :address-length="8"
-            tooltip-container=".TransactionTable"
+            tooltip-container=".TransactionMultiSignatureTable"
           />
         </div>
 
         <div
           v-else-if="data.column.field === 'recipient'"
-          :class="[ isDashboard ? 'dashboard-address' : 'max-w-xxs' ]"
+          class="max-w-xxs"
         >
           <WalletAddress
-            :address="data.row.recipient"
+            :address="data.row.recipient || data.row.recipientId"
             :address-length="8"
             :type="data.row.type"
             :asset="data.row.asset"
-            tooltip-container=".TransactionTable"
+            tooltip-container=".TransactionMultiSignatureTable"
           />
         </div>
 
-        <span
-          v-else
-          :class="{ 'word-break-all': data.column.field === 'vendorField' }"
+        <div
+          v-else-if="data.column.field === 'status'"
+          class="max-w-xxs"
         >
+          <span
+            v-if="needsWalletSignature(data.row)"
+            class="text-red"
+          >
+            {{ $t('TRANSACTION.MULTI_SIGNATURE.YOUR_SIGNATURE') }}
+          </span>
+
+          <span
+            v-else-if="needsSignatures(data.row)"
+            class="text-red"
+          >
+            {{ $t('TRANSACTION.MULTI_SIGNATURE.N_MORE', [remainingSignatureCount(data.row)]) }}
+          </span>
+
+          <span
+            v-else
+            class="text-green"
+          >
+            {{ $t('TRANSACTION.MULTI_SIGNATURE.READY') }}
+          </span>
+        </div>
+
+        <span v-else>
           {{ data.formattedRow[data.column.field] }}
         </span>
       </template>
@@ -113,7 +92,7 @@
       v-if="selected"
       to="modal"
     >
-      <TransactionShow
+      <TransactionShowMultiSignature
         :transaction="selected"
         @close="onCloseModal"
       />
@@ -122,21 +101,19 @@
 </template>
 
 <script>
-import SvgIcon from '@/components/SvgIcon'
 import truncateMiddle from '@/filters/truncate-middle'
-import TransactionShow from './TransactionShow'
-import TransactionStatusIcon from './TransactionStatusIcon'
+import { TransactionShowMultiSignature } from '@/components/Transaction'
 import WalletAddress from '@/components/Wallet/WalletAddress'
 import TableWrapper from '@/components/utils/TableWrapper'
+import TransactionService from '@/services/transaction'
+import WalletService from '@/services/wallet'
 
 export default {
-  name: 'TransactionTable',
+  name: 'TransactionMultiSignatureTable',
 
   components: {
-    SvgIcon,
     TableWrapper,
-    TransactionShow,
-    TransactionStatusIcon,
+    TransactionShowMultiSignature,
     WalletAddress
   },
 
@@ -146,10 +123,11 @@ export default {
       required: false,
       default: false
     },
-    isDashboard: {
-      type: Boolean,
+
+    transactionType: {
+      type: Number,
       required: false,
-      default: false
+      default: null
     }
   },
 
@@ -159,15 +137,6 @@ export default {
 
   computed: {
     columns () {
-      const vendorFieldClass = [
-        'hidden', 'w-1/4'
-      ]
-      if (this.hasShortId && !this.isDashboard) {
-        vendorFieldClass.push('xxl:table-cell')
-      } else if (!this.isDashboard) {
-        vendorFieldClass.push('xl:table-cell')
-      }
-
       return [
         {
           label: this.$t('TRANSACTION.ID'),
@@ -191,11 +160,8 @@ export default {
           field: 'recipient'
         },
         {
-          label: this.$t('TRANSACTION.VENDOR_FIELD'),
-          field: 'vendorField',
-          formatFn: this.formatSmartbridge,
-          tdClass: vendorFieldClass.join(' '),
-          thClass: vendorFieldClass.join(' ')
+          label: this.$t('TRANSACTION.STATUS'),
+          field: 'status'
         },
         {
           label: this.$t('TRANSACTION.AMOUNT'),
@@ -210,12 +176,29 @@ export default {
   },
 
   methods: {
+    needsSignatures (transaction) {
+      return TransactionService.needsSignatures(transaction)
+    },
+
+    needsWalletSignature (transaction) {
+      return TransactionService.needsWalletSignature(transaction, WalletService.getPublicKeyFromWallet(this.wallet_fromRoute))
+    },
+
+    remainingSignatureCount (transaction) {
+      let min = transaction.multiSignature.min
+      if (TransactionService.isMultiSignatureRegistration(transaction)) {
+        min = transaction.multiSignature.publicKeys.length
+      }
+
+      return min - transaction.signatures.length
+    },
+
     formatDate (value) {
       return this.formatter_date(value)
     },
 
-    formatAddress (value) {
-      return this.wallet_formatAddress(value, 10)
+    formatAddress (row) {
+      return row.sender || WalletService.getAddressFromPublicKey(row.senderPublicKey, this.session_network.version)
     },
 
     formatTransactionId (value) {
@@ -233,6 +216,10 @@ export default {
       return value
     },
 
+    formatHash (value) {
+      return truncateMiddle(value, 10)
+    },
+
     formatRow (row) {
       const classes = [
         row.confirmations === 0 ? 'unconfirmed' : 'confirmed'
@@ -243,6 +230,10 @@ export default {
       }
 
       return classes.join(' ')
+    },
+
+    getIpfsUrl (row) {
+      return `https://cloudflare-ipfs.com/ipfs/${row.asset.ipfs}`
     },
 
     openTransactions (id) {
@@ -268,16 +259,16 @@ export default {
 </script>
 
 <style lang="postcss">
-.TransactionTable tr.unconfirmed {
+.TransactionMultiSignatureTable tr.unconfirmed {
   @apply opacity-50 text-theme-page-text;
 }
-.TransactionTable tr.unconfirmed .Transaction__confirmations {
+.TransactionMultiSignatureTable tr.unconfirmed .Transaction__confirmations {
   @apply text-theme-page-text bg-theme-page-instructions-background;
 }
-.TransactionTable tr.expired {
+.TransactionMultiSignatureTable tr.expired {
   @apply line-through;
 }
-.TransactionTable td .dashboard-address {
+.TransactionMultiSignatureTable td .dashboard-address {
   width: 100px;
 }
 </style>
