@@ -181,6 +181,21 @@ describe('PluginModule', () => {
     })
   })
 
+  describe('latestVersion', () => {
+    beforeAll(() => {
+      store.replaceState(JSON.parse(JSON.stringify(initialState)))
+    })
+
+    it('should return null if the plugin is not available', () => {
+      expect(store.getters['plugin/latestVersion']('plugin-not-available')).toBeNull()
+    })
+
+    it('should return the version of the available plugin', () => {
+      store.dispatch('plugin/setAvailable', [availablePlugins[0]])
+      expect(store.getters['plugin/latestVersion'](availablePlugins[0].config.id)).toBe(availablePlugins[0].config.version)
+    })
+  })
+
   describe('all', () => {
     beforeAll(() => {
       store.replaceState(JSON.parse(JSON.stringify(initialState)))
