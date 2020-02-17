@@ -1,11 +1,11 @@
 <template>
   <ModalWindow
-    :allow-close="!showLoadingModal"
+    :allow-close="allowClose"
     @close="emitClose"
   >
     <section class="flex flex-col">
       <h2 class="mb-1">
-        {{ $t('MODAL_PEER.TITLE') }}
+        {{ title }}
       </h2>
 
       <InputText
@@ -18,6 +18,7 @@
         :title="$t('MODAL_PEER.HOST')"
         :placeholder="$t('MODAL_PEER.PLACEHOLDER.HOST')"
         name="host"
+        class="mb-2"
       />
 
       <InputText
@@ -30,6 +31,7 @@
         :title="$t('MODAL_PEER.PORT')"
         :placeholder="$t('MODAL_PEER.PLACEHOLDER.PORT')"
         name="port"
+        class="mb-2"
       />
 
       <div class="flex mt-5">
@@ -38,25 +40,20 @@
           class="mr-5"
           @click="emitClose"
         />
+
         <ButtonGeneric
           :disabled="$v.form.$invalid"
           :label="$t('MODAL_PEER.CONNECT')"
-          @click="validate"
+          @click="emitConnect"
         />
       </div>
-
-      <ModalLoader
-        :message="$t('MODAL_PEER.VALIDATING')"
-        :allow-close="true"
-        :visible="showLoadingModal"
-      />
     </section>
   </ModalWindow>
 </template>
 
 <script>
 import { numeric, required } from 'vuelidate/lib/validators'
-import { ModalLoader, ModalWindow } from '@/components/Modal'
+import ModalWindow from './ModalWindow'
 import { ButtonGeneric } from '@/components/Button'
 import { InputText } from '@/components/Input'
 
@@ -66,8 +63,32 @@ export default {
   components: {
     ButtonGeneric,
     InputText,
-    ModalLoader,
     ModalWindow
+  },
+
+  props: {
+    title: {
+      type: String,
+      required: true
+    },
+
+    currentPeer: {
+      type: Object,
+      required: false,
+      default: () => ({})
+    },
+
+    closeTrigger: {
+      type: Function,
+      required: false,
+      default: null
+    },
+
+    allowClose: {
+      type: Boolean,
+      required: false,
+      default: false
+    }
   },
 
   data () {
@@ -75,8 +96,7 @@ export default {
       form: {
         host: '',
         port: ''
-      },
-      showLoadingModal: false
+      }
     }
   },
 
@@ -111,42 +131,30 @@ export default {
   },
 
   mounted () {
-    const currentPeer = this.$store.getters['peer/current']()
-    if (currentPeer && currentPeer.isCustom) {
-      const scheme = currentPeer.isHttps ? 'https://' : 'http://'
-      this.form.host = `${scheme}${currentPeer.ip}`
-      this.form.port = currentPeer.port
+    if (this.currentPeer) {
+      if (this.currentPeer.host) {
+        this.form.host = this.currentPeer.host
+      } else if (this.currentPeer.ip) {
+        const scheme = this.currentPeer.isHttps ? 'https://' : 'http://'
+        this.form.host = `${scheme}${this.currentPeer.ip}`
+      }
+
+      if (this.currentPeer.port) {
+        this.form.port = this.currentPeer.port
+      }
     }
   },
 
   methods: {
-    async validate () {
-      this.showLoadingModal = true
-      const response = await this.$store.dispatch('peer/validatePeer', {
-        host: this.form.host,
-        port: this.form.port
+    emitConnect () {
+      this.$emit('connect', {
+        peer: this.form,
+        closeTrigger: this.closeTrigger
       })
-      if (response === false) {
-        this.$error(this.$t('PEER.CONNECT_FAILED'))
-      } else if (typeof response === 'string') {
-        this.$error(`${this.$t('PEER.CONNECT_FAILED')}: ${response}`)
-      } else {
-        response.isCustom = true
-        await this.$store.dispatch('peer/setCurrentPeer', response)
-        await this.$store.dispatch('peer/updateCurrentPeerStatus')
-        this.$success(`${this.$t('PEER.CONNECTED')}: ${this.form.host}:${this.form.port}`)
-        this.emitClose(true)
-      }
-      this.showLoadingModal = false
     },
 
-    emitClose (force = false) {
-      if (force) {
-        this.showLoadingModal = false
-      }
-      if (!this.showLoadingModal) {
-        this.$emit('close')
-      }
+    emitClose () {
+      this.$emit('close')
     }
   },
 

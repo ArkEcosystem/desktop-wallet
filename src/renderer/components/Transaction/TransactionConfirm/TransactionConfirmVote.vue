@@ -1,6 +1,12 @@
 <template>
-  <ListDivided :is-floating-label="true">
-    <ListDividedItem :label="$t('TRANSACTION.SENDER')">
+  <ListDivided
+    class="TransactionConfirmVote"
+    :is-floating-label="true"
+  >
+    <ListDividedItem
+      class="TransactionConfirmVote__sender"
+      :label="$t('TRANSACTION.SENDER')"
+    >
       {{ senderLabel }}
       <span
         v-if="senderLabel !== currentWallet.address"
@@ -19,9 +25,9 @@ import { ListDivided, ListDividedItem } from '@/components/ListDivided'
 export default {
   name: 'TransactionConfirmVote',
 
-  transactionType: TRANSACTION_TYPES.VOTE,
+  transactionType: TRANSACTION_TYPES.GROUP_1.VOTE,
 
-  inject: ['currentWallet', 'transaction'],
+  inject: ['currentWallet'],
 
   components: {
     ListDivided,
