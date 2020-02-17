@@ -149,6 +149,38 @@ describe('PluginModule', () => {
     })
   })
 
+  describe('isUpdateAvailable', () => {
+    beforeAll(() => {
+      store.replaceState(JSON.parse(JSON.stringify(initialState)))
+    })
+
+    it('should return false if the plugin is not available', () => {
+      const plugin = availablePlugins[0]
+
+      store.dispatch('plugin/setInstalled', plugin)
+      expect(store.getters['plugin/isUpdateAvailable'](plugin.config.id)).toBe(false)
+    })
+
+    it('should return false if the plugin is not installed', () => {
+      const plugin = availablePlugins[0]
+
+      store.dispatch('plugin/setAvailable', [plugin])
+      expect(store.getters['plugin/isUpdateAvailable'](plugin.config.id)).toBe(false)
+    })
+
+    it('should return false if the installed version is equal or higher than the available version', () => {
+      store.dispatch('plugin/setAvailable', [availablePlugins[0]])
+      store.dispatch('plugin/setInstalled', installedPlugins[0])
+      expect(store.getters['plugin/isUpdateAvailable'](availablePlugins[0].config.id)).toBe(false)
+    })
+
+    it('should return true if the installed version is lower than the available version', () => {
+      store.dispatch('plugin/setAvailable', [installedPlugins[0]])
+      store.dispatch('plugin/setInstalled', availablePlugins[0])
+      expect(store.getters['plugin/isUpdateAvailable'](availablePlugins[0].config.id)).toBe(true)
+    })
+  })
+
   describe('all', () => {
     beforeAll(() => {
       store.replaceState(JSON.parse(JSON.stringify(initialState)))
