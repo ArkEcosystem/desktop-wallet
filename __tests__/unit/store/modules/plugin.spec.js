@@ -224,6 +224,47 @@ describe('PluginModule', () => {
     })
   })
 
+  describe('isEnabled', () => {
+    beforeAll(() => {
+      store.replaceState(merge(
+        JSON.parse(JSON.stringify(initialState)),
+        {
+          plugin: {
+            enabled: {
+              [profile1.id]: {
+                [availablePlugins[0].config.id]: true
+              }
+            }
+          }
+        }
+      ))
+    })
+
+    describe('when no profile id given', () => {
+      it('should return false if the plugin is not enabled', () => {
+        expect(store.getters['plugin/isEnabled']('plugin-not-enabled')).toBe(false)
+      })
+
+      it('should return true if the plugin is enabled', () => {
+        expect(store.getters['plugin/isEnabled'](availablePlugins[0].config.id)).toBe(true)
+      })
+    })
+
+    describe('when profile id given', () => {
+      it('should return false if the plugin is not enabled', () => {
+        expect(store.getters['plugin/isEnabled']('plugin-not-enabled', profile1.id)).toBe(false)
+      })
+
+      it('should return false if there are no enabled plugins', () => {
+        expect(store.getters['plugin/isEnabled']('plugin-not-enabled', 'wrong-profile')).toBe(false)
+      })
+
+      it('should return true if the plugin is enabled', () => {
+        expect(store.getters['plugin/isEnabled'](availablePlugins[0].config.id, profile1.id)).toBe(true)
+      })
+    })
+  })
+
   describe('loaded', () => {
     beforeAll(() => {
       store.replaceState(JSON.parse(JSON.stringify(initialState)))
