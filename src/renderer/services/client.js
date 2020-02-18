@@ -1490,6 +1490,7 @@ export default class ClientService {
         }
 
         priceApi.setAdapter(profile.priceApi)
+        store.dispatch('market/refreshTicker')
       },
       { immediate: true }
     )

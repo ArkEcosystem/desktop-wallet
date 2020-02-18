@@ -440,8 +440,9 @@ export default {
       commit('SET_PLUGIN_ADAPTER', value)
     },
 
-    setPriceApi ({ commit }, value) {
+    setPriceApi ({ commit, dispatch }, value) {
       commit('SET_PRICE_API', value)
+      dispatch('market/refreshTicker', null, { root: true })
     }
   }
 }
