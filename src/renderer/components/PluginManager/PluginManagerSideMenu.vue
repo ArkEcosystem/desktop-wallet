@@ -17,7 +17,7 @@
         @click="emitCategory(category)"
       >
         <span>
-          {{ $t(`PAGES.PLUGIN_MANAGER.MENU_ITEMS.${category.toUpperCase()}`) }}
+          {{ $t(`PAGES.PLUGIN_MANAGER.CATEGORIES.${category.toUpperCase()}`) }}
         </span>
       </li>
     </ul>
@@ -31,7 +31,7 @@
         @click="emitCategory(category)"
       >
         <span>
-          {{ $t(`PAGES.PLUGIN_MANAGER.MENU_ITEMS.${category.toUpperCase()}`) }}
+          {{ $t(`PAGES.PLUGIN_MANAGER.CATEGORIES.${category.toUpperCase()}`) }}
         </span>
       </li>
     </ul>

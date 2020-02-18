@@ -654,18 +654,11 @@ export default {
         TITLE: 'Welcome to the Plugin Manager',
         SUBTITLE: 'The easy way to find, manage and install plugins'
       },
-      MENU_ITEMS: {
-        ALL: 'All',
-        GAMING: 'Gaming',
-        UTILITY: 'Utility',
-        THEME: 'Themes',
-        OTHER: 'Other'
-      },
       CATEGORIES: {
         ALL: 'All',
         GAMING: 'Gaming',
         UTILITY: 'Utility',
-        THEME: 'Theme',
+        THEME: 'Themes',
         OTHER: 'Other'
       },
       FILTERS: {
