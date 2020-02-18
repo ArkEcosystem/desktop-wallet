@@ -385,6 +385,38 @@ describe('PluginModule', () => {
     })
   })
 
+  // TODO: mock releaseService
+  describe('isInstalledSupported', () => {
+    beforeAll(() => {
+      store.replaceState(JSON.parse(JSON.stringify(initialState)))
+    })
+
+    it('should return true if the plugin does not define a min version', () => {
+      store.dispatch('plugin/setInstalled', installedPlugins[0])
+      expect(store.getters['plugin/isInstalledSupported'](installedPlugins[0].config.id)).toBe(true)
+    })
+
+    it('should return true if the wallet version is equal or higher than the defined min version', () => {
+      store.dispatch('plugin/setInstalled', {
+        config: {
+          ...installedPlugins[0].config,
+          minVersion: '1.0.0'
+        }
+      })
+      expect(store.getters['plugin/isInstalledSupported'](installedPlugins[0].config.id)).toBe(true)
+    })
+
+    it('should return false if the wallet version is lower than the defined min version', () => {
+      store.dispatch('plugin/setInstalled', {
+        config: {
+          ...installedPlugins[0].config,
+          minVersion: '3.0.0'
+        }
+      })
+      expect(store.getters['plugin/isInstalledSupported'](installedPlugins[0].config.id)).toBe(false)
+    })
+  })
+
   describe('enabled', () => {
     beforeAll(() => {
       store.replaceState(JSON.parse(JSON.stringify(initialState)))
