@@ -658,7 +658,7 @@ export default {
         ALL: 'All',
         GAMING: 'Gaming',
         UTILITY: 'Utility',
-        THEME: 'Theme',
+        THEME: 'Themes',
         OTHER: 'Other'
       },
       FILTERS: {
