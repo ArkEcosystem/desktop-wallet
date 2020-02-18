@@ -442,7 +442,6 @@ export default {
 
     setPriceApi ({ commit, dispatch }, value) {
       commit('SET_PRICE_API', value)
-      dispatch('market/refreshTicker', null, { root: true })
     }
   }
 }

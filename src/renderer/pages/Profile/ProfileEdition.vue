@@ -639,6 +639,10 @@ export default {
         ...this.modified
       })
 
+      if (this.isCurrentProfile && this.profile.priceApi !== this.modified.priceApi) {
+        this.$store.dispatch('market/refreshTicker')
+      }
+
       if (hasNameError) {
         this.$error(this.$t('COMMON.FAILED_UPDATE', {
           name: this.$t('COMMON.PROFILE_NAME'),
