@@ -172,7 +172,7 @@ export default {
         } else if (!this.$v.form.asset.name.tooLong) {
           return this.$t('VALIDATION.TOO_LONG', [this.$t('WALLET_BUSINESS.NAME')])
         } else if (!this.$v.form.asset.name.validName) {
-          return this.$t('VALIDATION.NAME_ERROR')
+          return this.$t('VALIDATION.NOT_VALID', [this.$t('WALLET_BUSINESS.NAME')])
         }
       }
 
@@ -256,7 +256,7 @@ export default {
           required,
           tooLong: maxLength(maxNameLength),
           validName: value => {
-            return /^[a-zA-Z0-9_-]+$/.test(value)
+            return /^[a-zA-Z0-9]+(( - |[ ._-])[a-zA-Z0-9]+)*[.]?$/.test(value)
           }
         },
 

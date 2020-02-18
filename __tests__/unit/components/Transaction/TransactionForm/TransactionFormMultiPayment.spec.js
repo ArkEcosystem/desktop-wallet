@@ -912,7 +912,7 @@ describe('TransactionFormMultiPayment', () => {
           expect(wrapper.vm.$v.form.recipients.aboveMinimum).toBe(true)
         })
 
-        it('should not be below maximum if too many', () => {
+        it('should not be below or equal to maximum if too many', () => {
           const network = {
             ...cloneDeep(globalNetwork),
             constants: {
@@ -933,16 +933,16 @@ describe('TransactionFormMultiPayment', () => {
             amount: 10
           }]
 
-          expect(wrapper.vm.$v.form.recipients.belowMaximum).toBe(false)
+          expect(wrapper.vm.$v.form.recipients.belowOrEqualMaximum).toBe(false)
         })
 
-        it('should be above minimum if set', () => {
+        it('should be below or equal to maximum if set', () => {
           wrapper.vm.$v.form.recipients.$model = [{
             address: 'address-1',
             amount: 10
           }]
 
-          expect(wrapper.vm.$v.form.recipients.belowMaximum).toBe(true)
+          expect(wrapper.vm.$v.form.recipients.belowOrEqualMaximum).toBe(true)
         })
       })
     })

@@ -348,6 +348,17 @@ export default class ClientService {
           }
           walletData[transaction.recipient][transaction.id] = transaction
         }
+
+        if (transaction.asset && transaction.asset.payments) {
+          for (const payment of transaction.asset.payments) {
+            if (addresses.includes(payment.recipientId)) {
+              if (!walletData[payment.recipientId]) {
+                walletData[payment.recipientId] = {}
+              }
+              walletData[payment.recipientId][transaction.id] = transaction
+            }
+          }
+        }
       }
 
       for (const address of Object.keys(walletData)) {

@@ -206,7 +206,9 @@ export class PluginManager {
 
       try {
         plugin.logo = await this.fetchLogo(plugin.logo)
-      } catch (error) { }
+      } catch (error) {
+        plugin.logo = null
+      }
 
       const validName = validatePackageName(plugin.id).validForNewPackages
       if (!validName) {
