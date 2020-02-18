@@ -398,7 +398,10 @@ export default {
   },
 
   INPUT_PUBLIC_KEY: {
-    TITLE: 'Public Key'
+    TITLE: 'Public Key',
+    ERROR: {
+      NOT_VALID: 'The public key is not valid'
+    }
   },
 
   WALLET_SELECTION: {
