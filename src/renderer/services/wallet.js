@@ -122,6 +122,19 @@ export default class WalletService {
   }
 
   /**
+   * Check if a wallet can resign as a delegate
+   * @param {Object} wallet
+   * @returns {Boolean}
+   */
+  static canResignDelegate (wallet) {
+    if (!wallet.isDelegate) {
+      return false
+    }
+
+    return !wallet.isResigned
+  }
+
+  /**
    * Check if a wallet is a business wallet
    * @param {Object} wallet
    * @param {Boolean} ignoreResigned
