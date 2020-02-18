@@ -2,6 +2,8 @@
   <InputEditableList
     v-model="items"
     :title="title"
+    :max-items="maxItems"
+    :show-count="showCount"
     :readonly="readonly"
     :required="required"
     :helper-text="helperText"
@@ -20,7 +22,7 @@
         class="flex-inline"
       />
 
-      <div class="flex-1 pl-4">
+      <div class="flex-1 px-4">
         <div class="TransactionMultiPaymentList__recipient py-1">
           <span class="font-bold">
             {{ $t('TRANSACTION.RECIPIENT') }}:
@@ -62,12 +64,26 @@ export default {
     title: {
       type: String,
       required: false,
-      default: 'Recipients'
+      default: function () {
+        return this.$t('TRANSACTION.MULTI_PAYMENT.RECIPIENTS')
+      }
     },
 
     items: {
       type: Array,
       required: true
+    },
+
+    maxItems: {
+      type: Number,
+      required: false,
+      default: null
+    },
+
+    showCount: {
+      type: Boolean,
+      required: false,
+      default: false
     },
 
     readonly: {
