@@ -398,7 +398,10 @@ export default {
   },
 
   INPUT_PUBLIC_KEY: {
-    TITLE: 'Public Key'
+    TITLE: 'Public Key',
+    ERROR: {
+      NOT_VALID: 'The public key is not valid'
+    }
   },
 
   WALLET_SELECTION: {
@@ -991,6 +994,7 @@ export default {
       HTLC_CLAIM: 'Timelock Claim could not be created',
       HTLC_REFUND: 'Timelock Refund could not be created',
       MULTI_PAYMENT: 'Multi payment could not be created',
+      MULTI_PAYMENT_TO_SELF: 'Excluding {amount} sent to itself',
       DELEGATE_RESIGNATION: 'Delegate resignation was unsuccessful',
       BUSINESS_REGISTRATION: 'Business registration was unsuccessful',
       BUSINESS_RESIGNATION: 'Business resignation was unsuccessful',
@@ -1031,12 +1035,12 @@ export default {
       HTLC_REFUND: 'Timelock Refund created successfully',
       MULTI_PAYMENT: 'Multi payment created successfully',
       DELEGATE_RESIGNATION: 'Delegate resignation was successful',
-      BUSINESS_REGISTRATION: 'Business Registration created successful',
-      BUSINESS_RESIGNATION: 'Business Resignation created successful',
-      BUSINESS_UPDATE: 'Business Update created successful',
-      BRIDGECHAIN_REGISTRATION: 'Bridgechain Registration created successful',
-      BRIDGECHAIN_RESIGNATION: 'Bridgechain Resignation created successful',
-      BRIDGECHAIN_UPDATE: 'Bridgechain Update created successful',
+      BUSINESS_REGISTRATION: 'Business Registration created successfully',
+      BUSINESS_RESIGNATION: 'Business Resignation created successfully',
+      BUSINESS_UPDATE: 'Business Update created successfully',
+      BRIDGECHAIN_REGISTRATION: 'Bridgechain Registration created successfully',
+      BRIDGECHAIN_RESIGNATION: 'Bridgechain Resignation created successfully',
+      BRIDGECHAIN_UPDATE: 'Bridgechain Update created successfully',
       SAVE_OFFLINE: 'The transaction file was saved successfully in: {path}',
       LOAD_FROM_FILE: 'The transaction file was loaded successfully'
     },
