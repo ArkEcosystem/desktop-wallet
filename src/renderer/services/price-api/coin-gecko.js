@@ -65,6 +65,11 @@ export default class CoinGeckoAdapter {
    */
   static async fetchMarketData (token) {
     const tokenId = await this.getTokenId(token)
+
+    if (!tokenId) {
+      return null
+    }
+
     const { body } = await got(`${MARKET.source.coinGecko}/coins/${tokenId}`, { json: true })
 
     return this.__transformMarketResponse(body.market_data)
@@ -81,6 +86,11 @@ export default class CoinGeckoAdapter {
    */
   static async fetchHistoricalData (token, currency, days, _, dateFormat = 'DD.MM') {
     const tokenId = await this.getTokenId(token)
+
+    if (!tokenId) {
+      return null
+    }
+
     const { body } = await got(`${MARKET.source.coinGecko}/coins/${tokenId}/market_chart`, {
       query: {
         vs_currency: currency,

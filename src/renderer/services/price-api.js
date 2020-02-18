@@ -28,7 +28,13 @@ class PriceApi {
    */
   async fetchMarketData (token) {
     try {
-      return this.getAdapter().fetchMarketData(token)
+      const marketData = this.getAdapter().fetchMarketData(token)
+
+      if (!marketData) {
+        logger.warn(`${token} market data does not exist on ${this.adapter}`)
+      }
+
+      return marketData
     } catch (error) {
       logger.error(error)
       alertEvents.$error(i18n.t('COMMON.FAILED_FETCH', {

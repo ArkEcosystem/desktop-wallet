@@ -1,5 +1,6 @@
 <template>
   <section
+    v-if="hasChartData"
     :class="isExpanded ? 'bg-theme-chart-background pb-4' : 'bg-theme-feature'"
     class="MarketChartWrapper flex-column"
   >
@@ -61,6 +62,7 @@ export default {
   },
 
   data: () => ({
+    hasChartData: true,
     isReady: false,
     chartData: {},
     options: {},
@@ -180,8 +182,11 @@ export default {
       await this.renderGradient()
 
       const response = await priceApi.historicByType(this.period, this.ticker, this.currency)
+      if (!response) {
+        this.hasChartData = false
+      } else if (response.datasets) {
+        this.hasChartData = true
 
-      if (response && response.datasets) {
         // Since BTC price could be very low :(, the linear scale could produce
         // imprecise values, such as converting 0.00001078 to 0, provoking that
         // the chart isn't displayed correctly

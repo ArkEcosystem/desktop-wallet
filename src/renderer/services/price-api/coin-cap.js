@@ -109,9 +109,15 @@ export default class CoinCapAdapter {
    * @return {(Object|null)} Return normalized market data or null on failure
    */
   static async fetchMarketData (token) {
+    const tokenId = await this.getTokenId(token)
+
+    if (!tokenId) {
+      return null
+    }
+
     return this.__transformMarketResponse(
       await this.getCurrencyData(token),
-      await this.getTokenId(token)
+      tokenId
     )
   }
 
@@ -126,6 +132,11 @@ export default class CoinCapAdapter {
    */
   static async fetchHistoricalData (token, currency, days, _, dateFormat = 'DD.MM') {
     const tokenId = await this.getTokenId(token)
+
+    if (!tokenId) {
+      return null
+    }
+
     const { rates } = await this.getCurrencyData(token)
     const daysSubtract = days === 24 ? 1 : days
     const timeInterval = days === 24 ? 'h1' : 'h12'
