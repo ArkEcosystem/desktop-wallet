@@ -168,6 +168,7 @@
 </template>
 
 <script>
+import { MARKET } from '@config'
 import { ModalConfirmation } from '@/components/Modal'
 import { MenuNavigationItem, MenuOptions, MenuOptionsItem, MenuDropdown } from '@/components/Menu'
 import { ButtonSwitch } from '@/components/Button'
@@ -226,7 +227,7 @@ export default {
       return this.session_network && this.session_network.market && this.session_network.market.enabled
     },
     currencies () {
-      return this.$store.getters['market/currencies']
+      return Object.keys(MARKET.currencies)
     },
     backgroundUpdateLedger () {
       return this.$store.getters['session/backgroundUpdateLedger']
