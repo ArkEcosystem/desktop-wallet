@@ -55,7 +55,7 @@ export default {
 
         tickers[marketTicker.id] = marketTicker
       }
-      commit('UPDATE_TICKER', tickers)
+      commit('UPDATE_TICKERS', tickers)
     }
   }
 }
