@@ -1,6 +1,7 @@
 'use strict'
 
 import { app, BrowserWindow, ipcMain, screen } from 'electron'
+import { splashScreenWindow, darkArkTemplate } from './splash-screen'
 import { setupPluginManager } from './plugin-manager'
 import { setupUpdater } from './updater'
 import winState from 'electron-window-state'
@@ -68,9 +69,24 @@ function createWindow () {
 
   windowState.manage(mainWindow)
   mainWindow.loadURL(winURL)
-  mainWindow.once('ready-to-show', () => {
-    mainWindow.show()
+
+  const splashScreen = splashScreenWindow({
+    mainWindow,
+    width: 500,
+    height: 300,
+    template: darkArkTemplate,
+    color: '#1a1b1f',
+    brand: 'ARK.io',
+    productName: packageJson.build.productName,
+    text: 'Initializing ...',
+    version: `Version ${packageJson.version}`
   })
+
+  ipcMain.on('splashscreen:app-ready', splashScreen)
+
+  // mainWindow.once('ready-to-show', () => {
+  //   mainWindow.show()
+  // })
 
   mainWindow.on('closed', () => {
     mainWindow = null

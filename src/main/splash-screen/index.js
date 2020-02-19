@@ -1,4 +1,5 @@
 import { BrowserWindow, ipcMain } from 'electron'
+export { default as darkArkTemplate } from './templates/darkArk'
 
 export const splashScreenWindow = ({
   mainWindow,
@@ -7,7 +8,7 @@ export const splashScreenWindow = ({
   template,
   color,
   brand,
-  appName,
+  productName,
   text,
   version
 }) => {
@@ -28,7 +29,7 @@ export const splashScreenWindow = ({
   const props = {
     color,
     brand,
-    appName,
+    productName,
     text,
     version
   }

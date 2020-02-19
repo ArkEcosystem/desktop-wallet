@@ -312,6 +312,7 @@ export default {
      */
     async loadNotEssential () {
       ipcRenderer.send('updater:check-for-updates')
+      ipcRenderer.send('splashscreen:app-ready')
       await this.$store.dispatch('peer/refresh')
       this.$store.dispatch('peer/connectToBest', {})
       await this.$store.dispatch('network/updateData')
