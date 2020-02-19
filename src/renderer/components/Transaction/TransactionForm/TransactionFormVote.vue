@@ -226,7 +226,7 @@ export default {
       }
       return {
         text: this.$t('WALLET_DELEGATES.STATUS.STANDBY'),
-        class: 'text-yellow'
+        class: 'text-orange'
       }
     },
 
