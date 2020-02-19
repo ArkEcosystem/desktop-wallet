@@ -251,7 +251,7 @@ export default {
     },
 
     showVoteUnvoteButton () {
-      if (this.delegate.isResigned || this.currentWallet.isContact || (!!this.votedDelegate && !this.isVoter)) {
+      if (this.currentWallet.isContact || (!!this.votedDelegate && !this.isVoter) || (this.delegate.isResigned && !this.isVoter)) {
         return false
       }
 
