@@ -296,12 +296,12 @@ export default {
   methods: {
     async loadEssential () {
       // We need to await plugins in order for all plugins to load properly
-      await this.$plugins.init(this)
-      await this.$store.dispatch('network/load', config.NETWORKS)
+      this.$plugins.init(this)
+      this.$store.dispatch('network/load', config.NETWORKS)
       const currentProfileId = this.$store.getters['session/profileId']
       await this.$store.dispatch('session/reset')
       await this.$store.dispatch('session/setProfileId', currentProfileId)
-      await this.$store.dispatch('ledger/reset')
+      this.$store.dispatch('ledger/reset')
     },
     /**
      * These data are used in different parts, but loading them should not
@@ -312,9 +312,8 @@ export default {
      */
     async loadNotEssential () {
       ipcRenderer.send('updater:check-for-updates')
-      await this.$store.dispatch('peer/refresh')
       this.$store.dispatch('peer/connectToBest', {})
-      await this.$store.dispatch('network/updateData')
+      this.$store.dispatch('network/updateData')
 
       if (this.session_network) {
         this.$store.dispatch('ledger/init', this.session_network.slip44)
