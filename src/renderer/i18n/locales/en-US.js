@@ -1252,9 +1252,17 @@ export default {
   },
 
   WALLET_DELEGATES: {
+    STATUS: {
+      TITLE: 'Status',
+      ACTIVE: 'Active',
+      STANDBY: 'Standby',
+      RESIGNED: 'Resigned'
+    },
     RANK: 'Rank',
     USERNAME: 'Username',
     RANK_BANNER: 'Rank: {rank}',
+    RANK_NOT_APPLICABLE: 'Not applicable',
+    RANK_NOT_AVAILABLE: 'Not yet available',
     APPROVAL: 'Vote %',
     FORGED: 'Forged',
     BLOCKS: 'Blocks',
