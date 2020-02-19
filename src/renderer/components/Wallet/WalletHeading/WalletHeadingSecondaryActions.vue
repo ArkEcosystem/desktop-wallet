@@ -161,7 +161,7 @@ export default {
         })
       }
 
-      if (!this.currentWallet.isLedger && this.currentWallet.isDelegate) {
+      if (!this.currentWallet.isLedger && WalletService.canResignDelegate(this.currentWallet)) {
         types.push({
           label: this.$t('WALLET_HEADING.ACTIONS.RESIGN_DELEGATE'),
           type: TRANSACTION_TYPES.GROUP_1.DELEGATE_RESIGNATION
@@ -182,21 +182,23 @@ export default {
         })
       }
 
-      const businessResignOption = {
-        label: this.$t('WALLET_HEADING.ACTIONS.BUSINESS.RESIGN'),
-        group: 2,
-        type: TRANSACTION_TYPES.GROUP_2.BUSINESS_RESIGNATION
-      }
-
-      if (WalletService.isBusiness(this.currentWallet) && await WalletService.hasBridgechains(this.currentWallet, this)) {
-        businessResignOption.disabled = true
-        businessResignOption.tooltip = {
-          content: this.$t('WALLET_HEADING.ACTIONS.BUSINESS.CANNOT_RESIGN'),
-          placement: 'left'
+      if (WalletService.canResignBusiness(this.currentWallet)) {
+        const businessResignOption = {
+          label: this.$t('WALLET_HEADING.ACTIONS.BUSINESS.RESIGN'),
+          group: 2,
+          type: TRANSACTION_TYPES.GROUP_2.BUSINESS_RESIGNATION
         }
-      }
 
-      types.push(businessResignOption)
+        if (await WalletService.hasBridgechains(this.currentWallet, this)) {
+          businessResignOption.disabled = true
+          businessResignOption.tooltip = {
+            content: this.$t('WALLET_HEADING.ACTIONS.BUSINESS.CANNOT_RESIGN'),
+            placement: 'left'
+          }
+        }
+
+        types.push(businessResignOption)
+      }
 
       return types
     }
