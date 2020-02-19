@@ -3,7 +3,13 @@ import { BrowserWindow, ipcMain } from 'electron'
 export const splashScreenWindow = ({
   mainWindow,
   width = 600,
-  height = 400
+  height = 400,
+  template,
+  color,
+  brand,
+  appName,
+  text,
+  version
 }) => {
   const splashScreen = new BrowserWindow({
     width,
@@ -19,6 +25,17 @@ export const splashScreenWindow = ({
     movable: false
   })
 
+  const props = {
+    color,
+    brand,
+    appName,
+    text,
+    version
+  }
+
+  const file = `data:text/html;charset=UTF-8,${encodeURIComponent(template(props))}`
+
+  splashScreen.loadURL(file)
   splashScreen.show()
 
   const hide = () => {
@@ -26,7 +43,7 @@ export const splashScreenWindow = ({
     mainWindow.show()
   }
 
-  ipcMain.on('splashscreen:app-is-ready', hide)
+  ipcMain.on('splashscreen:app-ready', hide)
 
   return hide
 }
