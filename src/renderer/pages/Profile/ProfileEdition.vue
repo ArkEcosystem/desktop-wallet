@@ -19,7 +19,7 @@
             >
             <h2
               v-if="isProfileTab"
-              class="ProfileNew__instructions__name opacity-75 absolute pin-x z-10 hidden xl:block"
+              class="ProfileNew__instructions__name opacity-75 absolute pin-x z-10 hidden xl:block truncate"
             >
               {{ name }}
             </h2>
@@ -56,7 +56,7 @@
                   :class="{
                     'ProfileEdition__field--modified': modified.name && modified.name !== profile.name
                   }"
-                  class="leading-tight border-b border-transparent flex-1"
+                  class="leading-tight border-b border-transparent flex-1 truncate"
                 >
                   {{ name }}
                 </div>
@@ -820,43 +820,45 @@ export default {
 }
 
 .ProfileEdition__language .MenuDropdown__container {
-  min-width: 200px
+  min-width: 200px;
 }
 .ProfileEdition__language .MenuDropdownItem__container {
-  @apply .mx-2 .px-2
+  @apply .mx-2 .px-2;
 }
 .ProfileEdition__language .MenuDropdownItem__container {
-  @apply .break-normal
+  @apply .break-normal;
 }
 .ProfileEdition__language__item__flag {
-  height: 18px
+  height: 18px;
 }
 .ProfileEdition__language__handler__flag {
-  height: 12px
+  height: 12px;
 }
 
 .ProfileEdition__name .ProfileEdition__field--modified,
 .ProfileEdition__field--modified .MenuDropdownHandler {
-  @apply .text-blue .font-bold
+  @apply .text-blue .font-bold;
 }
 
 .ProfileEdition__name .ListDividedItem__label {
-  @apply .flex-no-shrink
+  @apply .flex-shrink;
 }
 .ProfileEdition__name .ListDividedItem__value {
-  @apply .flex w-full text-right
+  display: contents;
+  @apply .w-full .text-right;
 }
-.ProfileEdition__name .ListDividedItem__value .InputText {
-  @apply .w-full .ml-4
+.ProfileEdition__name .ListDividedItem__value .InputText,
+.ProfileEdition__name .ListDividedItem__value .InputText__input {
+  @apply .w-full;
 }
 .ProfileEdition__name__toggle {
-  height: 21px
+  height: 21px;
 }
 .ProfileEdition__name .ListDividedItem__value .InputText .InputField__wrapper {
-  height: 0
+  height: 0;
 }
 .ProfileEdition__avatar .InputGrid__container {
   grid-template-columns: repeat(4, 4rem) !important;
-  grid-gap: 1rem !important
+  grid-gap: 1rem !important;
 }
 </style>
