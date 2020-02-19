@@ -366,7 +366,7 @@
 
 <script>
 import { clone, isEmpty } from 'lodash'
-import { BIP39, I18N, PLUGINS } from '@config'
+import { BIP39, I18N, MARKET, PLUGINS } from '@config'
 import { ButtonSwitch } from '@/components/Button'
 import { InputText } from '@/components/Input'
 import { ListDivided, ListDividedItem } from '@/components/ListDivided'
@@ -422,7 +422,7 @@ export default {
 
   computed: {
     currencies () {
-      return this.$store.getters['market/currencies']
+      return Object.keys(MARKET.currencies)
     },
     timeFormats () {
       return ['Default', '12h', '24h'].reduce((all, format) => {

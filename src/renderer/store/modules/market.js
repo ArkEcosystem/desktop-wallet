@@ -1,7 +1,6 @@
 import { MarketTicker } from '@/models/market'
-import { forEach, keys } from 'lodash'
+import { forEach } from 'lodash'
 import priceApi from '@/services/price-api'
-import { MARKET } from '@config'
 import Vue from 'vue'
 
 export default {
@@ -12,7 +11,6 @@ export default {
   }),
 
   getters: {
-    currencies: () => keys(MARKET.currencies),
     lastPrice: (_, getters) => {
       const lastTicker = getters.lastTicker
       return lastTicker ? lastTicker.price : null

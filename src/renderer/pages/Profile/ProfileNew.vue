@@ -198,7 +198,7 @@
 </template>
 
 <script>
-import { BIP39, NETWORKS } from '@config'
+import { BIP39, MARKET, NETWORKS } from '@config'
 import Profile from '@/models/profile'
 import { ButtonSwitch } from '@/components/Button'
 import { MenuStep, MenuStepItem } from '@/components/Menu'
@@ -294,7 +294,7 @@ export default {
       }
     },
     currencies () {
-      return this.$store.getters['market/currencies']
+      return Object.keys(MARKET.currencies)
     },
     bip39Languages () {
       return BIP39.languages.reduce((all, language) => {
