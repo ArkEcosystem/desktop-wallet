@@ -174,6 +174,18 @@
                 />
               </ListDividedItem>
 
+              <ListDividedItem :label="$t('COMMON.PRICE_PROVIDER')">
+                <MenuDropdown
+                  :class="{
+                    'ProfileEdition__field--modified': modified.priceApi && modified.priceApi !== profile.priceApi
+                  }"
+                  :items="priceApis"
+                  :value="priceApi"
+                  :position="['-75%', '0%']"
+                  @select="selectPriceApi"
+                />
+              </ListDividedItem>
+
               <ListDividedItem :label="$t('COMMON.ADVANCED_MODE')">
                 <ButtonSwitch
                   ref="advancedMode"
@@ -354,7 +366,7 @@
 
 <script>
 import { clone, isEmpty } from 'lodash'
-import { BIP39, I18N, PLUGINS } from '@config'
+import { BIP39, I18N, MARKET, PLUGINS } from '@config'
 import { ButtonSwitch } from '@/components/Button'
 import { InputText } from '@/components/Input'
 import { ListDivided, ListDividedItem } from '@/components/ListDivided'
@@ -399,7 +411,8 @@ export default {
       currency: '',
       timeFormat: '',
       isAdvancedModeEnabled: false,
-      marketChartOptions: {}
+      marketChartOptions: {},
+      priceApi: 'coingecko'
     },
     routeLeaveCallback: null,
     tab: 'profile',
@@ -409,7 +422,7 @@ export default {
 
   computed: {
     currencies () {
-      return this.$store.getters['market/currencies']
+      return Object.keys(MARKET.currencies)
     },
     timeFormats () {
       return ['Default', '12h', '24h'].reduce((all, format) => {
@@ -435,6 +448,13 @@ export default {
         acc[network.id] = network.name
         return acc
       }, {})
+    },
+    priceApis () {
+      return {
+        coingecko: 'CoinGecko',
+        cryptocompare: 'CryptoCompare',
+        coincap: 'CoinCap'
+      }
     },
 
     hasWallets () {
@@ -504,6 +524,9 @@ export default {
     },
     networkId () {
       return this.modified.networkId || this.profile.networkId
+    },
+    priceApi () {
+      return this.modified.priceApi || this.profile.priceApi
     },
     // TODO update it when modified, but it's changed on the sidemenu
     theme () {
@@ -575,6 +598,7 @@ export default {
     this.modified.timeFormat = this.profile.timeFormat || 'Default'
     this.modified.marketChartOptions = this.profile.marketChartOptions
     this.modified.isAdvancedModeEnabled = this.profile.isAdvancedModeEnabled
+    this.modified.priceApi = this.profile.priceApi || 'coingecko'
   },
 
   methods: {
@@ -614,6 +638,10 @@ export default {
         ...this.profile,
         ...this.modified
       })
+
+      if (this.isCurrentProfile && this.profile.priceApi !== this.modified.priceApi) {
+        this.$store.dispatch('market/refreshTicker')
+      }
 
       if (hasNameError) {
         this.$error(this.$t('COMMON.FAILED_UPDATE', {
@@ -671,6 +699,10 @@ export default {
 
     selectNetwork (network) {
       this.$set(this.modified, 'networkId', network)
+    },
+
+    selectPriceApi (priceApi) {
+      this.__updateSession('priceApi', priceApi)
     },
 
     setAdvancedMode (mode) {
