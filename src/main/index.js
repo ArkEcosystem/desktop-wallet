@@ -1,7 +1,7 @@
 'use strict'
 
 import { app, BrowserWindow, ipcMain, screen } from 'electron'
-import { splashScreenWindow, darkArkTemplate } from './splash-screen'
+import { splashScreenWindow } from './splashscreen'
 import { setupPluginManager } from './plugin-manager'
 import { setupUpdater } from './updater'
 import winState from 'electron-window-state'
@@ -53,6 +53,9 @@ function createWindow () {
     }
   })
 
+  // The `mainWindow.show()` is executed after the opening splash screen
+  ipcMain.on('splashscreen:app-ready', splashScreenWindow(mainWindow))
+
   ipcMain.on('disable-iframe-protection', function (_event, urls) {
     const filter = { urls }
     mainWindow.webContents.session.webRequest.onHeadersReceived(filter, (details, done) => {
@@ -69,20 +72,6 @@ function createWindow () {
 
   windowState.manage(mainWindow)
   mainWindow.loadURL(winURL)
-
-  const splashScreen = splashScreenWindow({
-    mainWindow,
-    width: 500,
-    height: 300,
-    template: darkArkTemplate,
-    brand: 'ARK.io',
-    productName: packageJson.build.productName,
-    text: 'Initializing ...',
-    version: `Version ${packageJson.version}`
-  })
-
-  // The `mainWindow.show()` is executed after the opening splash screen
-  ipcMain.on('splashscreen:app-ready', splashScreen)
 
   mainWindow.on('closed', () => {
     mainWindow = null
