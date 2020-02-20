@@ -1,109 +1,8 @@
 name: Test & Build
 
-on:
-  push:
-    branches:
-      - "master"
-      - "develop"
-  pull_request:
-    types: [ready_for_review, synchronize, opened]
+on: [push]
 
 jobs:
-  lint-unit:
-    runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [12.x]
-
-    steps:
-      - uses: actions/checkout@v1
-
-      - name: Cache node modules
-        uses: actions/cache@v1
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: ${{ runner.os }}-node-
-
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
-
-      - name: Update System
-        run: sudo apt-get update
-
-      - name: Ledger
-        run: sudo apt-get install libudev-dev libusb-1.0-0-dev
-
-      - name: Install
-        run: yarn global add node-gyp && yarn install --frozen-lockfile && npm rebuild
-
-      - name: Lint
-        run: yarn lint
-
-      - name: Test
-        run: node --max-old-space-size=4096 ./node_modules/.bin/jest --config __tests__/unit.jest.conf.js __tests__/unit/ --logHeapUsage --coverage
-
-      - name: Codecov
-        run: ./node_modules/.bin/codecov --token=${{ secrets.CODECOV_TOKEN }}
-
-  build-linux:
-    runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [12.x]
-
-    steps:
-      - uses: actions/checkout@v1
-
-      - name: Cache node modules
-        uses: actions/cache@v1
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: ${{ runner.os }}-node-
-
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
-
-      - name: Update System
-        run: sudo apt-get update
-
-      - name: Ledger
-        run: sudo apt-get install libudev-dev libusb-1.0-0-dev
-
-      - name: Install
-        run: yarn global add node-gyp && yarn install --frozen-lockfile
-
-      - name: Re-build bcrypto
-        run: cd node_modules/bcrypto && npm install && cd ../../
-
-      - name: Build
-        run: yarn build:linux
-
-      # - name: Upload .AppImage
-      #   uses: actions/upload-artifact@master
-      #   with:
-      #     name: ark-desktop-wallet-linux-2.8.0.AppImage
-      #     path: build/target/ark-desktop-wallet-linux-x86_64-2.8.0.AppImage
-
-      # - name: Upload .tar.gz
-      #   uses: actions/upload-artifact@master
-      #   with:
-      #     name: ark-desktop-wallet-linux-2.8.0.tar.gz
-      #     path: build/target/ark-desktop-wallet-linux-x64-2.8.0.tar.gz
-
-      - name: Upload .deb
-        uses: actions/upload-artifact@master
-        with:
-          name: ark-desktop-wallet-linux-2.8.0.deb
-          path: build/target/ark-desktop-wallet-linux-amd64-2.8.0.deb
-
   build-macOS:
     runs-on: macOS-latest
 
@@ -132,43 +31,8 @@ jobs:
       - name: Build
         run: yarn build:mac
 
-      # - name: Upload .zip
-      #   uses: actions/upload-artifact@master
-      #   with:
-      #     name: ark-desktop-wallet-mac-2.8.0.zip
-      #     path: build/target/ark-desktop-wallet-mac-2.8.0.zip
-
       - name: Upload .dmg
         uses: actions/upload-artifact@v1
         with:
           name: ark-desktop-wallet-mac-2.8.0.dmg
           path: build/target/ark-desktop-wallet-mac-2.8.0.dmg
-
-  build-windows:
-    runs-on: windows-latest
-
-    strategy:
-      matrix:
-        node-version: [12.x]
-
-    steps:
-      - uses: actions/checkout@v1
-
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
-
-      - name: Install
-        run: yarn global add node-gyp && yarn install --frozen-lockfile
-        shell: cmd
-
-      - name: Build
-        run: yarn build:win
-        shell: cmd
-
-      - name: Upload .exe
-        uses: actions/upload-artifact@v1
-        with:
-          name: ark-desktop-wallet-win-2.8.0.exe
-          path: build/target/ark-desktop-wallet-win-2.8.0.exe
