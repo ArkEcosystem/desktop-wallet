@@ -28,13 +28,52 @@ describe('InputEditableList', () => {
     expect(wrapper.contains('.InputEditableList')).toBe(true)
   })
 
-  it('should show title', () => {
-    createWrapper(null, {
-      value: [],
-      title: 'Test List'
+  describe('title', () => {
+    it('should show title', () => {
+      createWrapper(null, {
+        value: [],
+        title: 'Test List'
+      })
+
+      expect(wrapper.find('.InputField__label').text()).toBe('Test List')
     })
 
-    expect(wrapper.find('.InputField__label').text()).toBe('Test List')
+    it('should show title including the item count', () => {
+      createWrapper(null, {
+        value: [
+          'test item 1',
+          'test item 2'
+        ],
+        title: 'Test List',
+        showCount: true
+      })
+
+      expect(wrapper.find('.InputField__label').text()).toBe('Test List - 2')
+    })
+
+    it('should not show the item count if there are zero items', () => {
+      createWrapper(null, {
+        value: [],
+        title: 'Test List',
+        showCount: true
+      })
+
+      expect(wrapper.find('.InputField__label').text()).toBe('Test List')
+    })
+
+    it('should show title including the item count and maximum allowed count', () => {
+      createWrapper(null, {
+        value: [
+          'test item 1',
+          'test item 2'
+        ],
+        title: 'Test List',
+        showCount: true,
+        maxItems: 3
+      })
+
+      expect(wrapper.find('.InputField__label').text()).toBe('Test List - 2 / 3')
+    })
   })
 
   it('should list each item', () => {

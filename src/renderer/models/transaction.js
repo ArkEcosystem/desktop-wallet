@@ -48,6 +48,9 @@ export default new BaseModel({
     vendorField: {
       type: 'string'
     },
+    asset: {
+      type: 'object'
+    },
     raw: {
       type: 'object'
     },

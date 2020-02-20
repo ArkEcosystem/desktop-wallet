@@ -74,4 +74,11 @@ describe('SessionModule', () => {
       expect(store.getters['session/isAdvancedModeEnabled']).toEqual(true)
     })
   })
+
+  describe('actions > setPriceApi', () => {
+    it('should set the value for priceApi', () => {
+      store.dispatch('session/setPriceApi', 'coingecko')
+      expect(store.getters['session/priceApi']).toEqual('coingecko')
+    })
+  })
 })

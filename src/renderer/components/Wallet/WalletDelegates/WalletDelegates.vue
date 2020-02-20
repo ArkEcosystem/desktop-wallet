@@ -157,7 +157,7 @@ export default {
     },
 
     votingUrl () {
-      return 'https://docs.ark.io/tutorials/usage-guides/how-to-vote-in-the-ark-desktop-wallet.html'
+      return 'https://guides.ark.dev/usage-guides/desktop-wallet-voting'
     }
   },
 

@@ -406,7 +406,7 @@ class Action {
           }
           recipient = truncateMiddle(wallet.address)
         } else {
-          amount = TransactionService.getAmount(this.$scope, transaction)
+          amount = TransactionService.getAmount(this.$scope, transaction, wallet)
           recipient = transaction.asset.payments.length + ' recipients'
         }
 

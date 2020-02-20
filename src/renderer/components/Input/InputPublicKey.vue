@@ -65,7 +65,7 @@ export default {
     error () {
       if (this.$v.model.$dirty && this.$v.model.$invalid) {
         if (!this.$v.model.isValid) {
-          return this.$t('INPUT_PUBLIC_KEY.INVALID')
+          return this.$t('INPUT_PUBLIC_KEY.ERROR.NOT_VALID')
         }
       }
 

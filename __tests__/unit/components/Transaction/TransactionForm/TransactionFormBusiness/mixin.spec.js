@@ -249,7 +249,7 @@ describe.each([
       })
 
       it('should not return error if shorter than max (40)', () => {
-        wrapper.vm.$v.form.asset.name.$model = ''.padStart(30, '-')
+        wrapper.vm.$v.form.asset.name.$model = ''.padStart(30, 'a')
 
         expect(wrapper.vm.$v.form.asset.name.$dirty).toBe(true)
         expect(wrapper.vm.$v.form.asset.name.$invalid).toBe(false)
@@ -257,7 +257,7 @@ describe.each([
       })
 
       it('should not return error if equal to max (40)', () => {
-        wrapper.vm.$v.form.asset.name.$model = ''.padStart(40, '-')
+        wrapper.vm.$v.form.asset.name.$model = ''.padStart(40, 'a')
 
         expect(wrapper.vm.$v.form.asset.name.$dirty).toBe(true)
         expect(wrapper.vm.$v.form.asset.name.$invalid).toBe(false)
@@ -265,7 +265,7 @@ describe.each([
       })
 
       it('should return error if longer than max (40)', () => {
-        wrapper.vm.$v.form.asset.name.$model = ''.padStart(50, '-')
+        wrapper.vm.$v.form.asset.name.$model = ''.padStart(50, 'a')
 
         expect(wrapper.vm.$v.form.asset.name.$dirty).toBe(true)
         expect(wrapper.vm.$v.form.asset.name.$invalid).toBe(true)
@@ -277,7 +277,7 @@ describe.each([
 
         expect(wrapper.vm.$v.form.asset.name.$dirty).toBe(true)
         expect(wrapper.vm.$v.form.asset.name.$invalid).toBe(false)
-        expect(wrapper.vm.nameError).not.toBe('VALIDATION.NAME_ERROR')
+        expect(wrapper.vm.nameError).not.toBe('VALIDATION.NOT_VALID')
       })
 
       it('should return error if invalid', () => {
@@ -285,7 +285,7 @@ describe.each([
 
         expect(wrapper.vm.$v.form.asset.name.$dirty).toBe(true)
         expect(wrapper.vm.$v.form.asset.name.$invalid).toBe(true)
-        expect(wrapper.vm.nameError).toBe('VALIDATION.NAME_ERROR')
+        expect(wrapper.vm.nameError).toBe('VALIDATION.NOT_VALID')
       })
     })
 
@@ -417,7 +417,7 @@ describe.each([
 
         expect(wrapper.vm.$v.form.asset.vat.$dirty).toBe(true)
         expect(wrapper.vm.$v.form.asset.vat.$invalid).toBe(false)
-        expect(wrapper.vm.vatError).not.toBe('VALIDATION.NAME_ERROR')
+        expect(wrapper.vm.vatError).not.toBe('VALIDATION.NOT_VALID')
       })
     })
 
