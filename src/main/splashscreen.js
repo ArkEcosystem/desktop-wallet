@@ -5,7 +5,7 @@ const url = process.env.NODE_ENV === 'development'
   : `file://${__dirname}/splashscreen.html`
 
 export const splashScreenWindow = mainWindow => {
-  const splashScreen = new BrowserWindow({
+  let splashScreen = new BrowserWindow({
     width: 800,
     height: 600,
     parent: mainWindow,
@@ -22,7 +22,14 @@ export const splashScreenWindow = mainWindow => {
   splashScreen.show()
 
   const hideSplashScreen = () => {
-    setTimeout(() => splashScreen.destroy(), 500)
+    setTimeout(() => {
+      splashScreen.destroy()
+
+      splashScreen.on('closed', () => {
+        splashScreen = null
+      })
+    }, 500)
+
     mainWindow.show()
   }
 
