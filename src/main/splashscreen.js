@@ -22,7 +22,6 @@ export const splashScreenWindow = (splashScreen, mainWindow) => {
   splashScreen.show()
 
   const hideSplashScreen = () => {
-    console.log('MODIFY....')
     setTimeout(() => splashScreen.destroy(), 500)
     mainWindow.show()
   }
