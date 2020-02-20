@@ -4,8 +4,8 @@ const url = process.env.NODE_ENV === 'development'
   ? 'http://localhost:9080/splashscreen.html'
   : `file://${__dirname}/splashscreen.html`
 
-export const splashScreenWindow = (splashScreen, mainWindow) => {
-  splashScreen = new BrowserWindow({
+export const splashScreenWindow = mainWindow => {
+  const splashScreen = new BrowserWindow({
     width: 800,
     height: 600,
     parent: mainWindow,
