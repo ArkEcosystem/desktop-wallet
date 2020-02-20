@@ -83,7 +83,12 @@ function createWindow () {
   })
 
   // The `mainWindow.show()` is executed after the opening splash screen
-  // ipcMain.on('splashscreen:app-ready', splashScreenWindow(splashScreen, mainWindow))
+  ipcMain.on('splashscreen:app-ready', () => {
+    if (loadingWindow) {
+      loadingWindow.close()
+    }
+    mainWindow.show()
+  })
 
   ipcMain.on('disable-iframe-protection', function (_event, urls) {
     const filter = { urls }
@@ -121,13 +126,6 @@ function createWindow () {
     mainWindow.setTitle(windowTitle)
 
     broadcastURL(deeplinkingUrl)
-  })
-
-  ipcMain.on('splashscreen:app-ready', () => {
-    if (loadingWindow) {
-      loadingWindow.close()
-    }
-    mainWindow.show()
   })
 
   require('./menu')
