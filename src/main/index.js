@@ -25,6 +25,7 @@ if (process.env.TEMP_USER_DATA === 'true') {
   app.setPath('userData', tempDirectory)
 }
 
+let splashScreen = null
 let mainWindow = null
 let deeplinkingUrl = null
 
@@ -54,7 +55,7 @@ function createWindow () {
   })
 
   // The `mainWindow.show()` is executed after the opening splash screen
-  ipcMain.on('splashscreen:app-ready', splashScreenWindow(mainWindow))
+  ipcMain.on('splashscreen:app-ready', splashScreenWindow(splashScreen, mainWindow))
 
   ipcMain.on('disable-iframe-protection', function (_event, urls) {
     const filter = { urls }
@@ -74,6 +75,7 @@ function createWindow () {
   mainWindow.loadURL(winURL)
 
   mainWindow.on('closed', () => {
+    splashScreen = null
     mainWindow = null
   })
 
