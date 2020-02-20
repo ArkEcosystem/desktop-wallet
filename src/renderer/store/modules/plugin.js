@@ -273,14 +273,6 @@ export default {
     RESET_PLUGINS (state) {
       state.loaded = {}
       state.installed = {}
-
-      // fix for 'tainted' profiles - can be removed with next release
-      if (state.blacklisted && Array.isArray(state.blacklisted)) {
-        state.blacklisted = {
-          global: state.blacklisted,
-          local: []
-        }
-      }
     },
 
     SET_LAST_FETCHED (state, timestamp) {
