@@ -258,7 +258,7 @@ export default {
       return !!(state.pluginOptions[profileId] && state.pluginOptions[profileId][pluginId])
     },
 
-    pluginOptions: (state) => (pluginId, profileId) => {
+    pluginOptions: state => (pluginId, profileId) => {
       if (!state.pluginOptions[profileId]) {
         return {}
       } else if (!state.pluginOptions[profileId][pluginId]) {

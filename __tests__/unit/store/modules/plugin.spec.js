@@ -533,4 +533,35 @@ describe('PluginModule', () => {
       })
     })
   })
+
+  describe('pluginOptions', () => {
+    const options = { foo: 'bar' }
+
+    beforeAll(() => {
+      store.replaceState(merge(
+        JSON.parse(JSON.stringify(initialState)),
+        {
+          plugin: {
+            pluginOptions: {
+              [profile1.id]: {
+                [availablePlugins[0].config.id]: options
+              }
+            }
+          }
+        }
+      ))
+    })
+
+    it('should return an empty object if there are options for the given profile', () => {
+      expect(store.getters['plugin/pluginOptions'](availablePlugins[0].config.id, 'profile-no-options')).toEqual({})
+    })
+
+    it('should return an empty object if there are options for the given plugin and profile', () => {
+      expect(store.getters['plugin/pluginOptions']('plugin-not-available', profile1.id)).toEqual({})
+    })
+
+    it('should return a copy of the object', () => {
+      expect(JSON.stringify(store.getters['plugin/pluginOptions'](availablePlugins[0].config.id, profile1.id))).toBe(JSON.stringify(options))
+    })
+  })
 })
