@@ -561,7 +561,35 @@ describe('PluginModule', () => {
     })
 
     it('should return a copy of the object', () => {
-      expect(JSON.stringify(store.getters['plugin/pluginOptions'](availablePlugins[0].config.id, profile1.id))).toBe(JSON.stringify(options))
+      expect(store.getters['plugin/pluginOptions'](availablePlugins[0].config.id, profile1.id)).toEqual(options)
+    })
+  })
+
+  describe('reset', () => {
+    const dummy = { foo: 'bar' }
+
+    beforeEach(() => {
+      store.replaceState(merge(
+        JSON.parse(JSON.stringify(initialState)),
+        {
+          plugin: {
+            loaded: dummy,
+            installed: dummy
+          }
+        }
+      ))
+    })
+
+    it('should reset loaded plugins to empty object', async () => {
+      expect(store.state.plugin.loaded).toEqual(dummy)
+      await store.dispatch('plugin/reset')
+      expect(store.state.plugin.loaded).toEqual({})
+    })
+
+    it('should reset installed plugins to empty object', async () => {
+      expect(store.state.plugin.installed).toEqual(dummy)
+      await store.dispatch('plugin/reset')
+      expect(store.state.plugin.installed).toEqual({})
     })
   })
 })
