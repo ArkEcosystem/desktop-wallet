@@ -255,7 +255,7 @@ export default {
         profileId = rootGetters['session/profileId']
       }
 
-      return state.pluginOptions[profileId] && state.pluginOptions[profileId][pluginId]
+      return !!(state.pluginOptions[profileId] && state.pluginOptions[profileId][pluginId])
     },
 
     pluginOptions: (state) => (pluginId, profileId) => {
