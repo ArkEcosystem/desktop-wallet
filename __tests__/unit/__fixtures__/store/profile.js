@@ -8,10 +8,22 @@ const profile1 = {
   theme: 'light'
 }
 
-export default {
-  profile1
+const profile2 = {
+  id: 'profile2',
+  networkId: 'main',
+  background: 'bg',
+  currency: 'usd',
+  language: 'en',
+  name: 'Profile 2',
+  theme: 'light'
 }
 
+export default [
+  profile1,
+  profile2
+]
+
 export {
-  profile1
+  profile1,
+  profile2
 }

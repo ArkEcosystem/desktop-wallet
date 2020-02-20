@@ -1,7 +1,7 @@
 import { createLocalVue } from '@vue/test-utils'
 import Vuex from 'vuex'
 import PluginModule from '@/store/modules/plugin'
-import { profile1 } from '../../__fixtures__/store/profile'
+import profiles, { profile1 } from '../../__fixtures__/store/profile'
 import merge from 'lodash/merge'
 
 const localVue = createLocalVue()
@@ -37,6 +37,14 @@ const store = new Vuex.Store({
         },
         profileId () {
           return sessionProfileId()
+        }
+      }
+    },
+    profile: {
+      namespaced: true,
+      getters: {
+        all () {
+          return profiles
         }
       }
     }
@@ -590,6 +598,24 @@ describe('PluginModule', () => {
       expect(store.state.plugin.installed).toEqual(dummy)
       await store.dispatch('plugin/reset')
       expect(store.state.plugin.installed).toEqual({})
+    })
+  })
+
+  describe('loadPluginsForProfiles', () => {
+    beforeAll(() => {
+      store.replaceState(JSON.parse(JSON.stringify(initialState)))
+    })
+
+    it('should dispatch loadPluginsForProfile for every profile', async () => {
+      const spy = jest.spyOn(store, 'dispatch')
+
+      await store.dispatch('plugin/loadPluginsForProfiles')
+
+      for (const profile of profiles) {
+        expect(spy).toHaveBeenCalledWith('plugin/loadPluginsForProfile', profile)
+      }
+
+      spy.mockRestore()
     })
   })
 })
