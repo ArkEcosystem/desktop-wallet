@@ -84,8 +84,6 @@ function createWindow () {
     }
   })
 
-  mainWindow.hide()
-
   // The `mainWindow.show()` is executed after the opening splash screen
   ipcMain.on('splashscreen:app-ready', () => {
     if (loadingWindow) {
