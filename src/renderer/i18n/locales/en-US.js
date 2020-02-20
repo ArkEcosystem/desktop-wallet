@@ -36,6 +36,7 @@ export default {
     OTHER: 'Other',
     PREV: 'Prev',
     PROFILE_NAME: 'Profile name',
+    PRICE_PROVIDER: 'Price Provider',
     REMOVE: 'Remove',
     SAVE: 'Save',
     SIZE: 'Size',
@@ -228,6 +229,7 @@ export default {
   MARKET: {
     MARKET: 'Market',
     HISTORICAL_DATA: 'Historical data',
+    CHECK_TRADEABLE: 'Check Tradeable',
     DAY: 'Day',
     WEEK: 'Week',
     MONTH: 'Month'
@@ -1258,9 +1260,17 @@ export default {
   },
 
   WALLET_DELEGATES: {
+    STATUS: {
+      TITLE: 'Status',
+      ACTIVE: 'Active',
+      STANDBY: 'Standby',
+      RESIGNED: 'Resigned'
+    },
     RANK: 'Rank',
     USERNAME: 'Username',
     RANK_BANNER: 'Rank: {rank}',
+    RANK_NOT_APPLICABLE: 'Not applicable',
+    RANK_NOT_AVAILABLE: 'Not yet available',
     APPROVAL: 'Vote %',
     FORGED: 'Forged',
     BLOCKS: 'Blocks',

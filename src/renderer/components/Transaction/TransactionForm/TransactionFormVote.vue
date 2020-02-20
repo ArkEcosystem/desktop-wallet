@@ -23,9 +23,14 @@
             @click="emitCancel"
           />
         </ListDividedItem>
+        <ListDividedItem :label="$t('WALLET_DELEGATES.STATUS.TITLE')">
+          <span :class="delegateStatus.class">
+            {{ delegateStatus.text }}
+          </span>
+        </ListDividedItem>
         <ListDividedItem
           :label="$t('WALLET_DELEGATES.RANK')"
-          :value="delegate.rank"
+          :value="rankLabel"
         />
         <ListDividedItem
           :label="$t('WALLET_DELEGATES.APPROVAL')"
@@ -205,6 +210,38 @@ export default {
   }),
 
   computed: {
+    delegateStatus () {
+      const activeThreshold = this.session_network.constants.activeDelegates
+      if (this.delegate.isResigned) {
+        return {
+          text: this.$t('WALLET_DELEGATES.STATUS.RESIGNED'),
+          class: 'text-red'
+        }
+      }
+      if (this.delegate.rank && this.delegate.rank <= activeThreshold) {
+        return {
+          text: this.$t('WALLET_DELEGATES.STATUS.ACTIVE'),
+          class: 'text-green'
+        }
+      }
+      return {
+        text: this.$t('WALLET_DELEGATES.STATUS.STANDBY'),
+        class: 'text-orange'
+      }
+    },
+
+    rankLabel () {
+      if (this.delegate.rank === undefined && this.delegate.isResigned) {
+        return this.$t('WALLET_DELEGATES.RANK_NOT_APPLICABLE')
+      }
+
+      if (this.delegate.rank === undefined) {
+        return this.$t('WALLET_DELEGATES.RANK_NOT_AVAILABLE')
+      }
+
+      return this.delegate.rank
+    },
+
     blocksProduced () {
       if (!this.delegate.blocks || !this.delegate.blocks.produced) {
         return 0
@@ -214,7 +251,7 @@ export default {
     },
 
     showVoteUnvoteButton () {
-      if (this.currentWallet.isContact || (!!this.votedDelegate && !this.isVoter)) {
+      if (this.currentWallet.isContact || (!!this.votedDelegate && !this.isVoter) || (this.delegate.isResigned && !this.isVoter)) {
         return false
       }
 
