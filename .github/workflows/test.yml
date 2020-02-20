@@ -1,6 +1,12 @@
 name: Test & Build
 
-on: [push]
+on:
+  push:
+    branches:
+      - "master"
+      - "develop"
+  pull_request:
+    types: [ready_for_review, synchronize, opened]
 
 jobs:
   lint-unit:
