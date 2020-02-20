@@ -1,5 +1,5 @@
 <template>
-  <div class="absolute h-full w-full flex flex-col text-center">
+  <div class="absolute h-full w-full flex flex-col text-center select-none">
     <div class="flex flex-1 justify-center">
       <div class="rounded-lg mb-3 p-5 bg-red m-auto">
         <img
