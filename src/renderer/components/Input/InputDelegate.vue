@@ -120,7 +120,7 @@ export default {
     },
 
     delegates () {
-      return Object.values(this.$store.getters['delegate/bySessionNetwork'] || {}).filter(delegate => !delegate.isResigned)
+      return Object.values(this.$store.getters['delegate/bySessionNetwork'] || {})
     },
 
     error () {

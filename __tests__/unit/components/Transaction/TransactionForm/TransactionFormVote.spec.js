@@ -20,7 +20,10 @@ const network = {
   market: {
     enabled: false
   },
-  knownWallets: {}
+  knownWallets: {},
+  constants: {
+    activeDelegates: 51
+  }
 }
 
 let wrapper

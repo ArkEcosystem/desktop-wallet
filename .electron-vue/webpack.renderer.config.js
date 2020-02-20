@@ -86,6 +86,7 @@ let rendererConfig = {
         use: {
           loader: 'url-loader',
           query: {
+            esModule: false,
             limit: 10000,
             name: 'imgs/[name]--[folder].[ext]'
           }
