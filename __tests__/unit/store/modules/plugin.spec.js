@@ -8,6 +8,7 @@ const localVue = createLocalVue()
 localVue.use(Vuex)
 
 jest.mock('@/services/plugin-manager')
+jest.mock('@/services/release')
 
 const dateSpy = jest.spyOn(Date, 'now')
 dateSpy.mockReturnValue(1)
@@ -440,7 +441,6 @@ describe('PluginModule', () => {
     })
   })
 
-  // TODO: mock releaseService
   describe('isInstalledSupported', () => {
     beforeAll(() => {
       store.replaceState(JSON.parse(JSON.stringify(initialState)))
