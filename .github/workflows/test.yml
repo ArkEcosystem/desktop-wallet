@@ -95,7 +95,7 @@ jobs:
       - name: Upload .deb
         uses: actions/upload-artifact@master
         with:
-          name: ark-desktop-wallet-linux-2.8.0-${{ GITHUB_REF }}.deb
+          name: ark-desktop-wallet-linux-2.8.0-${{ github.ref }}.deb
           path: build/target/ark-desktop-wallet-linux-amd64-2.8.0.deb
 
   build-macOS:
@@ -135,7 +135,7 @@ jobs:
       - name: Upload .dmg
         uses: actions/upload-artifact@v1
         with:
-          name: ark-desktop-wallet-mac-2.8.0-${{ GITHUB_REF }}.dmg
+          name: ark-desktop-wallet-mac-2.8.0-${{ github.ref }}.dmg
           path: build/target/ark-desktop-wallet-mac-2.8.0.dmg
 
   build-windows:
@@ -164,5 +164,5 @@ jobs:
       - name: Upload .exe
         uses: actions/upload-artifact@v1
         with:
-          name: ark-desktop-wallet-win-2.8.0-${{ GITHUB_REF }}.exe
+          name: ark-desktop-wallet-win-2.8.0-${{ github.ref }}.exe
           path: build/target/ark-desktop-wallet-win-2.8.0.exe
