@@ -400,18 +400,14 @@ describe('PluginModule', () => {
 
   describe('isWhitelisted', () => {
     beforeAll(() => {
-      store.replaceState(merge(
-        JSON.parse(JSON.stringify(initialState)),
-        {
-          plugin: {
-            whitelisted: {
-              global: {
-                [availablePlugins[0].config.id]: availablePlugins[0].config.version
-              }
-            }
-          }
+      store.replaceState(JSON.parse(JSON.stringify(initialState)))
+
+      store.dispatch('plugin/setWhitelisted', {
+        scope: 'global',
+        plugins:{
+          [availablePlugins[0].config.id]: availablePlugins[0].config.version
         }
-      ))
+      })
     })
 
     it('should return true if the plugin is whitelisted and the version is lower or equal', () => {
