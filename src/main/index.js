@@ -95,13 +95,6 @@ function createWindow () {
     })
   })
 
-  mainWindow.webContents.on('did-finish-load', () => {
-    if (loadingWindow) {
-      loadingWindow.close()
-    }
-    mainWindow.show()
-  })
-
   windowState.manage(mainWindow)
   mainWindow.loadURL(winURL)
 
@@ -115,6 +108,13 @@ function createWindow () {
     mainWindow.setTitle(windowTitle)
 
     broadcastURL(deeplinkingUrl)
+  })
+
+  ipcMain.on('splashscreen:app-ready', () => {
+    if (loadingWindow) {
+      loadingWindow.close()
+    }
+    mainWindow.show()
   })
 
   require('./menu')
