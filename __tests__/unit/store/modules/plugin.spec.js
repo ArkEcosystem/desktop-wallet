@@ -56,6 +56,10 @@ store._vm.$plugins = {
   enablePlugin: jest.fn()
 }
 
+store._vm.$logger = {
+  error: jest.fn()
+}
+
 const initialState = JSON.parse(JSON.stringify(store.state))
 
 describe('PluginModule', () => {
@@ -610,6 +614,62 @@ describe('PluginModule', () => {
       for (const profile of profiles) {
         expect(spy).toHaveBeenCalledWith('plugin/loadPluginsForProfile', profile)
       }
+
+      spy.mockRestore()
+    })
+  })
+
+  describe('loadPluginsForProfile', () => {
+    beforeAll(() => {
+      store.replaceState(merge(
+        JSON.parse(JSON.stringify(initialState)),
+        {
+          plugin: {
+            enabled: {
+              [profile1.id]: {
+                'plugin-not-installed': false,
+                [availablePlugins[0].config.id]: true,
+                [availablePlugins[1].config.id]: true,
+                [availablePlugins[2].config.id]: true
+              }
+            },
+            installed: {
+              [availablePlugins[1].config.id]: availablePlugins[1],
+              [availablePlugins[2].config.id]: availablePlugins[2]
+            },
+            loaded: {
+              [profile1.id]: {
+                [availablePlugins[2].config.id]: {
+                  ...availablePlugins[0],
+                  avatars: [],
+                  menuItems: []
+                }
+              }
+            }
+          }
+        }
+      ))
+    })
+
+    it('should return early if there are no enabled plugins for the given profile', async () => {
+      expect(await store.dispatch('plugin/loadPluginsForProfile', profiles[1])).toBe(undefined)
+    })
+
+    it('should try to enable the plugins for the given profile', async () => {
+      await store.dispatch('plugin/loadPluginsForProfile', profile1)
+
+      expect(store._vm.$plugins.enablePlugin).toHaveBeenCalledTimes(1)
+      expect(store._vm.$plugins.enablePlugin).toHaveBeenCalledWith(availablePlugins[1].config.id, profile1.id)
+    })
+
+    it('should log the error if enabling a plugin fails', async () => {
+      const spy = jest.spyOn(store._vm.$plugins, 'enablePlugin').mockImplementation(() => {
+        throw new Error('error')
+      })
+
+      await store.dispatch('plugin/loadPluginsForProfile', profile1)
+
+      expect(store._vm.$logger.error).toHaveBeenCalledWith("Could not enable 'plugin-2' for profile 'Profile 1': error")
 
       spy.mockRestore()
     })
