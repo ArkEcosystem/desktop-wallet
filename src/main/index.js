@@ -75,18 +75,14 @@ function createWindow () {
     width: 500,
     height: 300,
     template: darkArkTemplate,
-    color: '#1a1b1f',
     brand: 'ARK.io',
     productName: packageJson.build.productName,
     text: 'Initializing ...',
     version: `Version ${packageJson.version}`
   })
 
+  // The `mainWindow.show()` is executed after the opening splash screen
   ipcMain.on('splashscreen:app-ready', splashScreen)
-
-  // mainWindow.once('ready-to-show', () => {
-  //   mainWindow.show()
-  // })
 
   mainWindow.on('closed', () => {
     mainWindow = null

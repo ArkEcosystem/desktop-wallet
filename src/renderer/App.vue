@@ -312,7 +312,6 @@ export default {
      */
     async loadNotEssential () {
       ipcRenderer.send('updater:check-for-updates')
-      ipcRenderer.send('splashscreen:app-ready')
       await this.$store.dispatch('peer/refresh')
       this.$store.dispatch('peer/connectToBest', {})
       await this.$store.dispatch('network/updateData')
@@ -337,6 +336,8 @@ export default {
       this.$eventBus.on('ledger:disconnected', async () => {
         this.$warn('Ledger Disconnected!')
       })
+
+      ipcRenderer.send('splashscreen:app-ready')
 
       await Promise.all([this.$plugins.fetchPluginsFromAdapter(), this.$plugins.fetchBlacklist(), this.$plugins.fetchWhitelist()])
     },

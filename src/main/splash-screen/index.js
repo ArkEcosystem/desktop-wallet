@@ -1,5 +1,12 @@
 import { BrowserWindow, ipcMain } from 'electron'
+// import path from 'path'
+
 export { default as darkArkTemplate } from './templates/darkArk'
+
+// const isProduction = process.env.NODE_ENV === 'production'
+// const logo = isProduction
+//   ? path.resolve(__dirname, '../static/128x128.png')
+//   : path.resolve(__dirname, '../../../build/icons/128x128.png')
 
 export const splashScreenWindow = ({
   mainWindow,
@@ -27,6 +34,7 @@ export const splashScreenWindow = ({
   })
 
   const props = {
+    // logo,
     color,
     brand,
     productName,
