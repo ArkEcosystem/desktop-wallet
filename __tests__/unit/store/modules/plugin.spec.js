@@ -404,7 +404,7 @@ describe('PluginModule', () => {
 
       store.dispatch('plugin/setWhitelisted', {
         scope: 'global',
-        plugins:{
+        plugins: {
           [availablePlugins[0].config.id]: availablePlugins[0].config.version
         }
       })
