@@ -496,4 +496,41 @@ describe('PluginModule', () => {
       expect(store.getters['plugin/enabled']).toEqual({ [availablePlugins[0].config.id]: true })
     })
   })
+
+  describe('profileHasPluginOptions', () => {
+    beforeAll(() => {
+      store.replaceState(merge(
+        JSON.parse(JSON.stringify(initialState)),
+        {
+          plugin: {
+            pluginOptions: {
+              [profile1.id]: {
+                [availablePlugins[0].config.id]: {}
+              }
+            }
+          }
+        }
+      ))
+    })
+
+    describe('when no profile id given', () => {
+      it('should return true if there are options', () => {
+        expect(store.getters['plugin/profileHasPluginOptions'](availablePlugins[0].config.id)).toBe(true)
+      })
+
+      it('should return false if there are options', () => {
+        expect(store.getters['plugin/profileHasPluginOptions']('plugin-no-options')).toBe(false)
+      })
+    })
+
+    describe('when profile id given', () => {
+      it('should return true if there are options', () => {
+        expect(store.getters['plugin/profileHasPluginOptions'](availablePlugins[0].config.id, profile1.id)).toBe(true)
+      })
+
+      it('should return false if there are options', () => {
+        expect(store.getters['plugin/profileHasPluginOptions']('plugin-no-options', profile1.id)).toBe(false)
+      })
+    })
+  })
 })
