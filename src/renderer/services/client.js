@@ -10,6 +10,7 @@ import eventBus from '@/plugins/event-bus'
 import BigNumber from '@/plugins/bignumber'
 import TransactionService from '@/services/transaction'
 import WalletService from '@/services/wallet'
+import priceApi from '@/services/price-api'
 
 Transactions.TransactionRegistry.registerTransactionType(MagistrateCrypto.Transactions.BusinessRegistrationTransaction)
 Transactions.TransactionRegistry.registerTransactionType(MagistrateCrypto.Transactions.BusinessResignationTransaction)
@@ -1498,6 +1499,9 @@ export default class ClientService {
         if (!oldProfile || profile.id !== oldProfile.id) {
           eventBus.emit('client:changed')
         }
+
+        priceApi.setAdapter(profile.priceApi)
+        store.dispatch('market/refreshTicker')
       },
       { immediate: true }
     )
