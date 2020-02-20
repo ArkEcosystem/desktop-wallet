@@ -337,7 +337,7 @@ describe('PluginModule', () => {
       ))
     })
 
-    describe('when no profile id is given', () => {
+    describe('when no profile id is given', () => {
       it('should return true if the plugin is loaded', () => {
         expect(store.getters['plugin/isLoaded'](availablePlugins[0].config.id)).toBe(true)
       })
@@ -347,7 +347,7 @@ describe('PluginModule', () => {
       })
     })
 
-    describe('when profile id is given', () => {
+    describe('when profile id is given', () => {
       it('should return true if the plugin is loaded', () => {
         expect(store.getters['plugin/isLoaded'](availablePlugins[0].config.id, profile1.id)).toBe(true)
       })
