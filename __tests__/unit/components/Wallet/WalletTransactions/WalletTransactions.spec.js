@@ -582,10 +582,12 @@ describe('WalletTransactions', () => {
         const spyTransactions = jest.spyOn(WalletTransactionsMixin.methods, 'loadTransactions').mockImplementation()
         createWrapper()
 
+        wrapper.vm.currentPage = 5
+
         wrapper.vm.onPerPageChange({ currentPerPage: 20 })
         expect(spyParams).toHaveBeenCalledTimes(1)
         expect(spyTransactions).toHaveBeenCalledTimes(2) // gets called once in the created lifecycle hook
-
+        expect(wrapper.vm.currentPage).toBe(1)
         spyParams.mockRestore()
         spyTransactions.mockRestore()
       })
