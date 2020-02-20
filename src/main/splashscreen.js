@@ -9,14 +9,11 @@ export const splashScreenWindow = mainWindow => {
     width: 800,
     height: 600,
     parent: mainWindow,
-    // modal: true,
     transparent: true,
     skipTaskbar: true,
     frame: false,
     autoHideMenuBar: true,
-    // alwaysOnTop: true,
     resizable: false,
-    // movable: false,
     webPreferences: {
       nodeIntegration: true
     }
