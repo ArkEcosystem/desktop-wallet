@@ -5,7 +5,8 @@ const profile1 = {
   currency: 'usd',
   language: 'en',
   name: 'Profile 1',
-  theme: 'light'
+  theme: 'light',
+  filterBlacklistedPlugins: true
 }
 
 const profile2 = {

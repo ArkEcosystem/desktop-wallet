@@ -53,7 +53,8 @@ const store = new Vuex.Store({
 })
 
 store._vm.$plugins = {
-  enablePlugin: jest.fn()
+  enablePlugin: jest.fn(),
+  disablePlugin: jest.fn()
 }
 
 store._vm.$logger = {
@@ -573,105 +574,154 @@ describe('PluginModule', () => {
     })
   })
 
-  describe('reset', () => {
-    const dummy = { foo: 'bar' }
-
-    beforeEach(() => {
-      store.replaceState(merge(
-        JSON.parse(JSON.stringify(initialState)),
-        {
-          plugin: {
-            loaded: dummy,
-            installed: dummy
-          }
-        }
-      ))
-    })
-
-    it('should reset loaded plugins to empty object', async () => {
-      expect(store.state.plugin.loaded).toEqual(dummy)
-      await store.dispatch('plugin/reset')
-      expect(store.state.plugin.loaded).toEqual({})
-    })
-
-    it('should reset installed plugins to empty object', async () => {
-      expect(store.state.plugin.installed).toEqual(dummy)
-      await store.dispatch('plugin/reset')
-      expect(store.state.plugin.installed).toEqual({})
-    })
-  })
-
-  describe('loadPluginsForProfiles', () => {
-    beforeAll(() => {
-      store.replaceState(JSON.parse(JSON.stringify(initialState)))
-    })
-
-    it('should dispatch loadPluginsForProfile for every profile', async () => {
-      const spy = jest.spyOn(store, 'dispatch')
-
-      await store.dispatch('plugin/loadPluginsForProfiles')
-
-      for (const profile of profiles) {
-        expect(spy).toHaveBeenCalledWith('plugin/loadPluginsForProfile', profile)
-      }
-
-      spy.mockRestore()
-    })
-  })
-
-  describe('loadPluginsForProfile', () => {
-    beforeAll(() => {
-      store.replaceState(merge(
-        JSON.parse(JSON.stringify(initialState)),
-        {
-          plugin: {
-            enabled: {
-              [profile1.id]: {
-                'plugin-not-installed': false,
-                [availablePlugins[0].config.id]: true,
-                [availablePlugins[1].config.id]: true,
-                [availablePlugins[2].config.id]: true
-              }
-            },
-            installed: {
-              [availablePlugins[1].config.id]: availablePlugins[1],
-              [availablePlugins[2].config.id]: availablePlugins[2]
-            },
-            loaded: {
-              [profile1.id]: {
-                [availablePlugins[2].config.id]: {
-                  ...availablePlugins[0],
-                  avatars: [],
-                  menuItems: []
+  describe('actions', () => {
+    describe('setBlacklisted', () => {
+      beforeEach(() => {
+        store.replaceState(merge(
+          JSON.parse(JSON.stringify(initialState)),
+          {
+            plugin: {
+              enabled: {
+                [profile1.id]: {
+                  [availablePlugins[0].config.id]: true
                 }
               }
             }
           }
-        }
-      ))
-    })
-
-    it('should return early if there are no enabled plugins for the given profile', async () => {
-      expect(await store.dispatch('plugin/loadPluginsForProfile', profiles[1])).toBe(undefined)
-    })
-
-    it('should try to enable the plugins for the given profile', async () => {
-      await store.dispatch('plugin/loadPluginsForProfile', profile1)
-
-      expect(store._vm.$plugins.enablePlugin).toHaveBeenCalledTimes(1)
-      expect(store._vm.$plugins.enablePlugin).toHaveBeenCalledWith(availablePlugins[1].config.id, profile1.id)
-    })
-
-    it('should log the error if enabling a plugin fails', async () => {
-      const spy = jest.spyOn(store._vm.$plugins, 'enablePlugin').mockImplementation(() => {
-        throw new Error('error')
+        ))
       })
 
-      await store.dispatch('plugin/loadPluginsForProfile', profile1)
+      const plugins = availablePlugins.map(plugin => plugin.config.id)
 
-      expect(store._vm.$logger.error).toHaveBeenCalledWith("Could not enable 'plugin-2' for profile 'Profile 1': error")
+      it('should set blacklisted plugins on the given scope', async () => {
+        expect(store.getters['plugin/blacklisted'].global).toEqual([])
 
-      spy.mockRestore()
+        await store.dispatch('plugin/setBlacklisted', {
+          scope: 'global',
+          plugins
+        })
+
+        expect(store.getters['plugin/blacklisted'].global).toEqual(plugins)
+      })
+
+      it('should disable a plugin if it is enabled on a profile', async () => {
+        const spy = jest.spyOn(store, 'dispatch')
+
+        await store.dispatch('plugin/setBlacklisted', {
+          scope: 'global',
+          plugins
+        })
+
+        expect(spy).toHaveBeenCalledWith('plugin/setEnabled', {
+          enabled: false,
+          pluginId: availablePlugins[0].config.id,
+          profileId: profile1.id
+        })
+
+        spy.mockRestore()
+      })
+    })
+
+    describe('reset', () => {
+      const dummy = { foo: 'bar' }
+
+      beforeEach(() => {
+        store.replaceState(merge(
+          JSON.parse(JSON.stringify(initialState)),
+          {
+            plugin: {
+              loaded: dummy,
+              installed: dummy
+            }
+          }
+        ))
+      })
+
+      it('should reset loaded plugins to empty object', async () => {
+        expect(store.state.plugin.loaded).toEqual(dummy)
+        await store.dispatch('plugin/reset')
+        expect(store.state.plugin.loaded).toEqual({})
+      })
+
+      it('should reset installed plugins to empty object', async () => {
+        expect(store.state.plugin.installed).toEqual(dummy)
+        await store.dispatch('plugin/reset')
+        expect(store.state.plugin.installed).toEqual({})
+      })
+    })
+
+    describe('loadPluginsForProfiles', () => {
+      beforeAll(() => {
+        store.replaceState(JSON.parse(JSON.stringify(initialState)))
+      })
+
+      it('should dispatch loadPluginsForProfile for every profile', async () => {
+        const spy = jest.spyOn(store, 'dispatch')
+
+        await store.dispatch('plugin/loadPluginsForProfiles')
+
+        for (const profile of profiles) {
+          expect(spy).toHaveBeenCalledWith('plugin/loadPluginsForProfile', profile)
+        }
+
+        spy.mockRestore()
+      })
+    })
+
+    describe('loadPluginsForProfile', () => {
+      beforeAll(() => {
+        store.replaceState(merge(
+          JSON.parse(JSON.stringify(initialState)),
+          {
+            plugin: {
+              enabled: {
+                [profile1.id]: {
+                  'plugin-not-installed': false,
+                  [availablePlugins[0].config.id]: true,
+                  [availablePlugins[1].config.id]: true,
+                  [availablePlugins[2].config.id]: true
+                }
+              },
+              installed: {
+                [availablePlugins[1].config.id]: availablePlugins[1],
+                [availablePlugins[2].config.id]: availablePlugins[2]
+              },
+              loaded: {
+                [profile1.id]: {
+                  [availablePlugins[2].config.id]: {
+                    ...availablePlugins[0],
+                    avatars: [],
+                    menuItems: []
+                  }
+                }
+              }
+            }
+          }
+        ))
+      })
+
+      it('should return early if there are no enabled plugins for the given profile', async () => {
+        expect(await store.dispatch('plugin/loadPluginsForProfile', profiles[1])).toBe(undefined)
+      })
+
+      it('should try to enable the plugins for the given profile', async () => {
+        await store.dispatch('plugin/loadPluginsForProfile', profile1)
+
+        expect(store._vm.$plugins.enablePlugin).toHaveBeenCalledTimes(1)
+        expect(store._vm.$plugins.enablePlugin).toHaveBeenCalledWith(availablePlugins[1].config.id, profile1.id)
+      })
+
+      it('should log the error if enabling a plugin fails', async () => {
+        const spy = jest.spyOn(store._vm.$plugins, 'enablePlugin').mockImplementation(() => {
+          throw new Error('error')
+        })
+
+        await store.dispatch('plugin/loadPluginsForProfile', profile1)
+
+        expect(store._vm.$logger.error).toHaveBeenCalledWith("Could not enable 'plugin-2' for profile 'Profile 1': error")
+
+        spy.mockRestore()
+      })
     })
   })
 })
