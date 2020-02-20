@@ -14,7 +14,9 @@ require('electron-log')
  * https://simulatedgreg.gitbooks.io/electron-vue/content/en/using-static-assets.html
  */
 if (process.env.NODE_ENV !== 'development') {
-  global.__static = require('path').join(__dirname, '/static').replace(/\\/g, '\\\\')
+  global.__static = require('path')
+    .join(__dirname, '/static')
+    .replace(/\\/g, '\\\\')
 }
 
 // To E2E tests
@@ -25,11 +27,39 @@ if (process.env.TEMP_USER_DATA === 'true') {
 }
 
 let mainWindow = null
+let loadingWindow = null
 let deeplinkingUrl = null
 
-const winURL = process.env.NODE_ENV === 'development'
-  ? 'http://localhost:9080'
-  : `file://${__dirname}/index.html`
+const winURL =
+  process.env.NODE_ENV === 'development'
+    ? 'http://localhost:9080'
+    : `file://${__dirname}/index.html`
+
+const loadingURL =
+  process.env.NODE_ENV === 'development'
+    ? 'http://localhost:9080/splashscreen.html'
+    : `file://${__dirname}/splashscreen.html`
+
+const createLoadingWindow = () => {
+  loadingWindow = new BrowserWindow({
+    width: 800,
+    height: 600,
+    parent: mainWindow,
+    skipTaskbar: true,
+    frame: false,
+    autoHideMenuBar: true,
+    resizable: false,
+    webPreferences: {
+      nodeIntegration: true
+    }
+  })
+  loadingWindow.setResizable(false)
+  loadingWindow.loadURL(loadingURL)
+  loadingWindow.show()
+  loadingWindow.on('close', () => (loadingWindow = null))
+  loadingWindow.on('closed', () => (loadingWindow = null))
+  loadingWindow.webContents.on('did-finish-load', () => loadingWindow.show())
+}
 
 function createWindow () {
   const { width, height } = screen.getPrimaryDisplay().workAreaSize
@@ -52,29 +82,42 @@ function createWindow () {
     }
   })
 
+  // The `mainWindow.show()` is executed after the opening splash screen
+  ipcMain.on('splashscreen:app-ready', () => {
+    if (loadingWindow) {
+      loadingWindow.close()
+    }
+    mainWindow.show()
+  })
+
   ipcMain.on('disable-iframe-protection', function (_event, urls) {
     const filter = { urls }
-    mainWindow.webContents.session.webRequest.onHeadersReceived(filter, (details, done) => {
-      const headers = details.responseHeaders
+    mainWindow.webContents.session.webRequest.onHeadersReceived(
+      filter,
+      (details, done) => {
+        const headers = details.responseHeaders
 
-      const xFrameOrigin = Object.keys(headers).find(header => header.toString().match(/^x-frame-options$/i))
-      if (xFrameOrigin) {
-        delete headers[xFrameOrigin]
+        const xFrameOrigin = Object.keys(headers).find(header =>
+          header.toString().match(/^x-frame-options$/i)
+        )
+        if (xFrameOrigin) {
+          delete headers[xFrameOrigin]
+        }
+
+        done({
+          cancel: false,
+          responseHeaders: headers,
+          statusLine: details.statusLine
+        })
       }
-
-      done({ cancel: false, responseHeaders: headers, statusLine: details.statusLine })
-    })
+    )
   })
 
   windowState.manage(mainWindow)
   mainWindow.loadURL(winURL)
-  mainWindow.once('ready-to-show', () => {
-    mainWindow.show()
-  })
 
-  mainWindow.on('closed', () => {
-    mainWindow = null
-  })
+  mainWindow.on('close', () => (mainWindow = null))
+  mainWindow.on('closed', () => (mainWindow = null))
 
   mainWindow.webContents.on('did-finish-load', () => {
     const name = packageJson.build.productName
@@ -142,6 +185,7 @@ if (!gotTheLock) {
 }
 
 app.on('ready', () => {
+  createLoadingWindow()
   createWindow()
   setupPluginManager({ sendToWindow, mainWindow, ipcMain })
   setupUpdater({ sendToWindow, ipcMain })
@@ -155,6 +199,7 @@ app.on('window-all-closed', () => {
 
 app.on('activate', () => {
   if (mainWindow === null) {
+    createLoadingWindow()
     createWindow()
   }
 })
