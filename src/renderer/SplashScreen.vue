@@ -14,7 +14,7 @@
         {{ $t('COMMON.APP_NAME') }}
       </h1>
 
-      <div class="text-sm">
+      <div class="text-sm mb-2">
         {{ $t('COMMON.INITIALIZING') }}
       </div>
     </div>
