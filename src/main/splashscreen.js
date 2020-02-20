@@ -9,7 +9,6 @@ export const splashScreenWindow = mainWindow => {
     width: 800,
     height: 600,
     parent: mainWindow,
-    transparent: true,
     skipTaskbar: true,
     frame: false,
     autoHideMenuBar: true,
