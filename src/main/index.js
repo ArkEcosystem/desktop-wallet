@@ -9,6 +9,8 @@ import packageJson from '../../package.json'
 // It is necessary to require `electron-log` here to use it on the renderer process
 require('electron-log')
 
+const logger = require('electron-log')
+
 /**
  * Set `__static` path to static files in production
  * https://simulatedgreg.gitbooks.io/electron-vue/content/en/using-static-assets.html
@@ -188,7 +190,7 @@ if (!gotTheLock) {
 }
 
 const bootApplicationServices = () => {
-  console.log('bootstrap application')
+  logger.log('bootstrap application')
   createLoadingWindow()
   createWindow()
   setupPluginManager({ sendToWindow, mainWindow, ipcMain })
