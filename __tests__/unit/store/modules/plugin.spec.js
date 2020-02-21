@@ -1081,7 +1081,7 @@ describe('PluginModule', () => {
 
           spy.mockRestore()
           commitSpy.mockRestore()
-        })  
+        })
       })
     })
   })
