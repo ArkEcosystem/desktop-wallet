@@ -18,7 +18,6 @@ export const setupPluginManager = ({ sendToWindow, windows, ipcMain }) => {
   const prefix = 'plugin-manager:'
 
   ipcMain.on(prefix + 'download', async (_, { url }) => {
-    logger.log('plugin' + prefix + 'download')
     downloadItem = undefined
 
     const options = {
