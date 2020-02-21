@@ -163,6 +163,8 @@ jobs:
         shell: cmd
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CSC_LINK: ${{ secrets.CSC_LINK }}
+          CSC_KEY_PASSWORD: ${{ secrets.CSC_KEY_PASSWORD }}
 
       - name: Calculate Checksums for EXE
         run: Get-FileHash build/target/ark-desktop-wallet-win-2.8.1.exe -Algorithm SHA256 | Format-List
