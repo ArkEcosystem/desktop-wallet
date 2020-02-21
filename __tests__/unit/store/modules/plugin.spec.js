@@ -990,5 +990,99 @@ describe('PluginModule', () => {
         spy.mockRestore()
       })
     })
+
+    describe('setEnabled', () => {
+      describe('when disabling a plugin', () => {
+        it('should return early if the plugin is not enabled', async () => {
+          store.replaceState(JSON.parse(JSON.stringify(initialState)))
+
+          expect(await store.dispatch('plugin/setEnabled', {
+            enabled: false,
+            pluginId: availablePlugins[0].config.id
+          })).toBe(undefined)
+        })
+
+        it('should throw an error if it cannot disable the plugin', async () => {
+          store.replaceState(merge(
+            JSON.parse(JSON.stringify(initialState)),
+            {
+              plugin: {
+                enabled: {
+                  [profile1.id]: {
+                    [availablePlugins[0].config.id]: true
+                  }
+                }
+              }
+            }
+          ))
+
+          const spy = jest.spyOn(store._vm.$plugins, 'disablePlugin').mockImplementation(() => {
+            throw new Error('error')
+          })
+
+          const commitSpy = jest.spyOn(store, 'commit')
+
+          try {
+            await store.dispatch('plugin/setEnabled', {
+              enabled: false,
+              pluginId: availablePlugins[0].config.id
+            })
+          } catch (e) {
+            expect(e.message).toBe('error')
+          }
+
+          expect(commitSpy).toHaveBeenCalledTimes(2)
+
+          spy.mockRestore()
+          commitSpy.mockRestore()
+        })
+      })
+
+      describe('when enabling a plugin', () => {
+        it('should return early if the plugin is not disabled', async () => {
+          store.replaceState(merge(
+            JSON.parse(JSON.stringify(initialState)),
+            {
+              plugin: {
+                enabled: {
+                  [profile1.id]: {
+                    [availablePlugins[0].config.id]: true
+                  }
+                }
+              }
+            }
+          ))
+
+          expect(await store.dispatch('plugin/setEnabled', {
+            enabled: true,
+            pluginId: availablePlugins[0].config.id
+          })).toBe(undefined)
+        })
+
+        it('should throw an error if it cannot enable the plugin', async () => {
+          store.replaceState(JSON.parse(JSON.stringify(initialState)))
+
+          const spy = jest.spyOn(store._vm.$plugins, 'enablePlugin').mockImplementation(() => {
+            throw new Error('error')
+          })
+
+          const commitSpy = jest.spyOn(store, 'commit')
+
+          try {
+            await store.dispatch('plugin/setEnabled', {
+              enabled: true,
+              pluginId: availablePlugins[0].config.id
+            })
+          } catch (e) {
+            expect(e.message).toBe('error')
+          }
+
+          expect(commitSpy).toHaveBeenCalledTimes(2)
+
+          spy.mockRestore()
+          commitSpy.mockRestore()
+        })  
+      })
+    })
   })
 })
