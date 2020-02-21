@@ -79,6 +79,7 @@
 
       <TransactionMultiSignatureList
         :items="$v.form.publicKeys.$model"
+        :show-count="true"
         class="TransactionModalMultiSignature__public-keys mt-4"
         @remove="emitRemovePublicKey"
       />
@@ -489,12 +490,23 @@ export default {
 </script>
 
 <style>
+.TransactionModalMultiSignature__menu-tabs .MenuTab__nav {
+  @apply .rounded-lg;
+}
+
 .TransactionModalMultiSignature__menu-tabs .MenuTab__nav__items {
   @apply .flex;
 }
 
 .TransactionModalMultiSignature__menu-tabs .MenuTab__nav__item {
   @apply .flex-1;
+}
+
+.TransactionModalMultiSignature__menu-tabs .MenuTab__nav__item:first-child {
+  @apply .rounded-l;
+}
+.TransactionModalMultiSignature__menu-tabs .MenuTab__nav__item:last-child {
+  @apply .rounded-r;
 }
 
 .TransactionModalMultiSignature__menu-tabs .MenuTab__content {

@@ -2,6 +2,7 @@
   <InputEditableList
     v-model="items"
     :title="title"
+    :show-count="showCount"
     :readonly="readonly"
     :required="required"
     :helper-text="helperText"
@@ -46,6 +47,12 @@ export default {
     items: {
       type: Array,
       required: true
+    },
+
+    showCount: {
+      type: Boolean,
+      required: false,
+      default: false
     },
 
     readonly: {
