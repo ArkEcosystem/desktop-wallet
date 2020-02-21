@@ -129,6 +129,11 @@ jobs:
       - name: Install
         run: yarn global add node-gyp && yarn install --frozen-lockfile
 
+      - name: Prepare for app notarization
+        run: |
+          mkdir -p ~/private_keys/
+          echo '${{ secrets.APPLE_API_KEY }}' > ~/private_keys/AuthKey_${{ secrets.APPLE_API_KEY_ID }}.p8
+
       - name: Build
         run: yarn build:mac
         env:
