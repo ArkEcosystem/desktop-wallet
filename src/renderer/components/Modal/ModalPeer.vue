@@ -132,12 +132,12 @@ export default {
 
   mounted () {
     if (this.currentPeer) {
+      const scheme = this.currentPeer.isHttps ? 'https://' : 'http://'
+
       if (this.currentPeer.host) {
-        const scheme = this.currentPeer.isHttps ? 'https://' : 'http://'
         const hostname = new URL(this.currentPeer.host).hostname
-        this.form.host = scheme + hostname
+        this.form.host = `${scheme}${hostname}`
       } else if (this.currentPeer.ip) {
-        const scheme = this.currentPeer.isHttps ? 'https://' : 'http://'
         this.form.host = `${scheme}${this.currentPeer.ip}`
       }
 
