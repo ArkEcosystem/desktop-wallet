@@ -31,6 +31,8 @@ jobs:
   #         prerelease: false
 
   publish-linux:
+    # needs: ["create-release"]
+
     runs-on: ubuntu-latest
 
     strategy:
@@ -80,6 +82,8 @@ jobs:
         run: shasum -a 256 build/target/ark-desktop-wallet-linux-amd64-2.8.1.deb
 
   publish-macos:
+    # needs: ["create-release"]
+
     runs-on: macos-latest
 
     strategy:
@@ -126,6 +130,8 @@ jobs:
         run: shasum -a 256 build/target/ark-desktop-wallet-mac-2.8.1.zip
 
   publish-windows:
+    # needs: ["create-release"]
+
     runs-on: windows-latest
 
     strategy:
