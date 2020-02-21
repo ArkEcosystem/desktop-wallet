@@ -1,5 +1,5 @@
 <template>
-  <div class="SplashScreen absolute h-full w-full flex flex-col text-center select-none">
+  <div class="bg-default-background absolute h-full w-full flex flex-col text-center select-none">
     <div class="flex flex-1 justify-center">
       <div class="rounded-lg mb-3 p-5 bg-red m-auto">
         <img
@@ -77,9 +77,3 @@ export default {
   }
 }
 </script>
-
-<style>
-.SplashScreen {
-  background-color: #f7fafb;
-}
-</style>

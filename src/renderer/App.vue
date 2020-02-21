@@ -6,9 +6,11 @@
       'background-image': background,
       windows: isWindows,
       mac: isMac,
-      linux: isLinux
+      linux: isLinux,
+      'bg-theme-page': isReady,
+      'bg-default-background': !isReady
     }]"
-    class="App bg-theme-page text-theme-page-text font-sans"
+    class="App text-theme-page-text font-sans"
   >
     <div
       v-if="!hasSeenIntroduction"

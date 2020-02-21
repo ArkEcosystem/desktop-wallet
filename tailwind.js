@@ -43,6 +43,7 @@ View the full documentation at https://tailwindcss.com.
 
 let colors = {
   // Custom color variables
+  'default-background': '#f7fafb',
   'theme-page': 'var(--theme-page)',
   'theme-page-text': 'var(--theme-page-text)',
   'theme-page-text-light': 'var(--theme-page-text-light)',
