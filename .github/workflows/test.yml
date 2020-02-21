@@ -105,7 +105,7 @@ jobs:
           path: build/target/ark-desktop-wallet-linux-amd64-2.8.1.deb
 
   build-macOS:
-    runs-on: macOS-latest
+    runs-on: macos-latest
 
     strategy:
       matrix:
@@ -129,8 +129,18 @@ jobs:
       - name: Install
         run: yarn global add node-gyp && yarn install --frozen-lockfile
 
+      - name: Prepare for app notarization
+        run: |
+          mkdir -p ~/private_keys/
+          echo '${{ secrets.APPLE_API_KEY }}' > ~/private_keys/AuthKey_${{ secrets.APPLE_API_KEY_ID }}.p8
+
       - name: Build
         run: yarn build:mac
+        env:
+          APPLE_API_KEY_ID: ${{ secrets.APPLE_API_KEY_ID }}
+          APPLE_API_KEY_ISSUER_ID: ${{ secrets.APPLE_API_KEY_ISSUER_ID }}
+          CSC_LINK: ${{ secrets.CSC_LINK }}
+          CSC_KEY_PASSWORD: ${{ secrets.CSC_KEY_PASSWORD }}
 
       # - name: Upload .zip
       #   uses: actions/upload-artifact@master
@@ -166,6 +176,9 @@ jobs:
       - name: Build
         run: yarn build:win
         shell: cmd
+        env:
+          CSC_LINK: ${{ secrets.CSC_LINK }}
+          CSC_KEY_PASSWORD: ${{ secrets.CSC_KEY_PASSWORD }}
 
       - name: Upload .exe
         uses: actions/upload-artifact@v1
