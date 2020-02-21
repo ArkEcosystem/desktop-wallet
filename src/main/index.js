@@ -77,6 +77,7 @@ function createWindow () {
     height: windowState.height,
     x: windowState.x,
     y: windowState.y,
+    backgroundColor: '#f7fafb',
     center: true,
     show: false,
     webPreferences: {
