@@ -45,6 +45,7 @@ const createLoadingWindow = () => {
     width: 800,
     height: 600,
     parent: mainWindow,
+    backgroundColor: '#f7fafb',
     skipTaskbar: true,
     frame: false,
     autoHideMenuBar: true,
