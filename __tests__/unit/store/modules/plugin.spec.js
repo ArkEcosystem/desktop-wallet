@@ -843,14 +843,15 @@ describe('PluginModule', () => {
     })
 
     describe('setLoaded', () => {
-      beforeEach(() => {
+      beforeAll(() => {
         store.replaceState(merge(
           JSON.parse(JSON.stringify(initialState)),
           {
             plugin: {
               enabled: {
                 [profile1.id]: {
-                  [availablePlugins[0].config.id]: true
+                  [availablePlugins[0].config.id]: true,
+                  [availablePlugins[2].config.id]: true
                 }
               }
             }
@@ -881,11 +882,11 @@ describe('PluginModule', () => {
       })
 
       it('should load the plugin on the session profile if no profile id given', () => {
-        expect(store.getters['plugin/isLoaded'](availablePlugins[0].config.id, profile1.id)).toBe(false)
+        expect(store.getters['plugin/isLoaded'](availablePlugins[2].config.id, profile1.id)).toBe(false)
 
-        store.dispatch('plugin/setLoaded', availablePlugins[0])
+        store.dispatch('plugin/setLoaded', availablePlugins[2])
 
-        expect(store.getters['plugin/isLoaded'](availablePlugins[0].config.id, profile1.id)).toBe(true)
+        expect(store.getters['plugin/isLoaded'](availablePlugins[2].config.id, profile1.id)).toBe(true)
       })
     })
 
