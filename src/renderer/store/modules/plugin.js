@@ -148,7 +148,7 @@ export default {
         return !!getters.loaded[pluginId]
       }
 
-      return state.loaded[profileId] ? !!state.loaded[profileId][pluginId] : null
+      return state.loaded[profileId] ? !!state.loaded[profileId][pluginId] : false
     },
 
     isBlacklisted: (_, getters) => pluginId => {

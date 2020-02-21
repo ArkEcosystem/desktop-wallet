@@ -583,8 +583,8 @@ describe('PluginModule', () => {
           expect(store.getters['plugin/isLoaded']('plugin-not-loaded', profile1.id)).toBe(false)
         })
 
-        it('should return null if the profile id does not exist', () => {
-          expect(store.getters['plugin/isLoaded']('plugin-not-loaded', 'profile-invalid')).toBe(null)
+        it('should return false if the profile id does not exist', () => {
+          expect(store.getters['plugin/isLoaded']('plugin-not-loaded', 'profile-invalid')).toBe(false)
         })
       })
     })
@@ -839,6 +839,53 @@ describe('PluginModule', () => {
         })
 
         spy.mockRestore()
+      })
+    })
+
+    describe('setLoaded', () => {
+      beforeEach(() => {
+        store.replaceState(merge(
+          JSON.parse(JSON.stringify(initialState)),
+          {
+            plugin: {
+              enabled: {
+                [profile1.id]: {
+                  [availablePlugins[0].config.id]: true
+                }
+              }
+            }
+          }
+        ))
+      })
+
+      it('should throw an error if the plugin is not enabled', () => {
+        try {
+          store.dispatch('plugin/setLoaded', {
+            ...availablePlugins[1],
+            profileId: profile1.id
+          })
+        } catch (e) {
+          expect(e.message).toBe('Plugin is not enabled')
+        }
+      })
+
+      it('should load the plugin if it is enabled', () => {
+        expect(store.getters['plugin/isLoaded'](availablePlugins[0].config.id, profile1.id)).toBe(false)
+
+        store.dispatch('plugin/setLoaded', {
+          ...availablePlugins[0],
+          profileId: profile1.id
+        })
+
+        expect(store.getters['plugin/isLoaded'](availablePlugins[0].config.id, profile1.id)).toBe(true)
+      })
+
+      it('should load the plugin on the session profile if no profile id given', () => {
+        expect(store.getters['plugin/isLoaded'](availablePlugins[0].config.id, profile1.id)).toBe(false)
+
+        store.dispatch('plugin/setLoaded', availablePlugins[0])
+
+        expect(store.getters['plugin/isLoaded'](availablePlugins[0].config.id, profile1.id)).toBe(true)
       })
     })
 
