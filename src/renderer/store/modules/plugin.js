@@ -54,6 +54,10 @@ export default {
           match = match && ['id', 'title', 'description', 'keywords'].some(property => {
             let value = plugin.config[property]
 
+            if (!value) {
+              return false
+            }
+
             if (property === 'keywords') {
               value = value.join(' ')
             }

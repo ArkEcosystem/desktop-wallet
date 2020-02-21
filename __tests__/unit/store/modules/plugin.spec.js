@@ -38,6 +38,9 @@ const store = new Vuex.Store({
         },
         profileId () {
           return sessionProfileId()
+        },
+        filterBlacklistedPlugins () {
+          return true
         }
       }
     },
@@ -75,6 +78,221 @@ describe('PluginModule', () => {
         expect(store.getters['plugin/lastFetched']).toEqual(0)
         store.dispatch('plugin/setAvailable', {})
         expect(store.getters['plugin/lastFetched']).toEqual(1)
+      })
+    })
+
+    describe('filtered', () => {
+      describe('blacklisted plugins', () => {
+        it('should filter out globally blacklisted plugins', () => {
+          store.replaceState(merge(
+            JSON.parse(JSON.stringify(initialState)),
+            {
+              plugin: {
+                available: {
+                  [availablePlugins[0].config.id]: availablePlugins[0]
+                },
+                blacklisted: {
+                  global: [availablePlugins[0].config.id]
+                }
+              }
+            }
+          ))
+
+          expect(store.getters['plugin/filtered']()).toEqual([])
+        })
+
+        it('should filter out locally blacklisted plugins', () => {
+          store.replaceState(merge(
+            JSON.parse(JSON.stringify(initialState)),
+            {
+              plugin: {
+                available: {
+                  [availablePlugins[0].config.id]: availablePlugins[0]
+                },
+                blacklisted: {
+                  local: [availablePlugins[0].config.id]
+                }
+              }
+            }
+          ))
+
+          expect(store.getters['plugin/filtered']()).toEqual([])
+        })
+      })
+
+      describe('whitelisted plugins', () => {
+        it('should filter out plugins that are not installed and not whitelisted', () => {
+          store.replaceState(merge(
+            JSON.parse(JSON.stringify(initialState)),
+            {
+              plugin: {
+                available: {
+                  [availablePlugins[0].config.id]: availablePlugins[0]
+                }
+              }
+            }
+          ))
+
+          expect(store.getters['plugin/filtered']()).toEqual([])
+        })
+
+        it('should filter out plugins that are not installed and whitelisted', () => {
+          store.replaceState(merge(
+            JSON.parse(JSON.stringify(initialState)),
+            {
+              plugin: {
+                available: {
+                  [availablePlugins[0].config.id]: availablePlugins[0]
+                },
+                whitelisted: {
+                  global: {
+                    [availablePlugins[0].config.id]: availablePlugins[0].config.version
+                  }
+                }
+              }
+            }
+          ))
+
+          expect(store.getters['plugin/filtered']()).toEqual([availablePlugins[0]])
+        })
+
+        it('should not filter out plugins that are installed and not whitelisted', () => {
+          store.replaceState(merge(
+            JSON.parse(JSON.stringify(initialState)),
+            {
+              plugin: {
+                available: {
+                  [availablePlugins[0].config.id]: availablePlugins[0]
+                },
+                installed: {
+                  [availablePlugins[0].config.id]: availablePlugins[0]
+                }
+              }
+            }
+          ))
+
+          expect(store.getters['plugin/filtered']()).toEqual([availablePlugins[0]])
+        })
+      })
+
+      describe('when given a category', () => {
+        describe('when the category is \'all\'', () => {
+          it('should filter out theme plugins', () => {
+            const plugin1 = {
+              config: {
+                ...availablePlugins[0].config,
+                categories: ['match']
+              }
+            }
+            const plugin2 = {
+              config: {
+                ...availablePlugins[1].config,
+                categories: ['theme']
+              }
+            }
+
+            store.replaceState(merge(
+              JSON.parse(JSON.stringify(initialState)),
+              {
+                plugin: {
+                  available: {
+                    [plugin1.config.id]: plugin1,
+                    [plugin2.config.id]: plugin2
+                  },
+                  whitelisted: {
+                    global: {
+                      [plugin1.config.id]: plugin1.config.version,
+                      [plugin2.config.id]: plugin2.config.version
+                    }
+                  }
+                }
+              }
+            ))
+
+            const result = store.getters['plugin/filtered'](null, 'all')
+
+            expect(result).toEqual(expect.arrayContaining([plugin1]))
+            expect(result).toEqual(expect.not.arrayContaining([plugin2]))
+          })
+        })
+
+        it('should not filter out plugins that match the category', () => {
+          const plugin1 = {
+            config: {
+              ...availablePlugins[0].config,
+              categories: ['match']
+            }
+          }
+          const plugin2 = {
+            config: {
+              ...availablePlugins[1].config,
+              categories: ['no-match']
+            }
+          }
+
+          store.replaceState(merge(
+            JSON.parse(JSON.stringify(initialState)),
+            {
+              plugin: {
+                available: {
+                  [plugin1.config.id]: plugin1,
+                  [plugin2.config.id]: plugin2
+                },
+                whitelisted: {
+                  global: {
+                    [plugin1.config.id]: plugin1.config.version,
+                    [plugin2.config.id]: plugin2.config.version
+                  }
+                }
+              }
+            }
+          ))
+
+          const result = store.getters['plugin/filtered'](null, 'match')
+
+          expect(result).toEqual(expect.arrayContaining([plugin1]))
+          expect(result).toEqual(expect.not.arrayContaining([plugin2]))
+        })
+      })
+
+      describe('when given a query', () => {
+        it('should filter out plugins that do not match the query', () => {
+          const plugin1 = {
+            config: {
+              ...availablePlugins[0].config,
+              keywords: ['yes']
+            }
+          }
+          const plugin2 = {
+            config: {
+              ...availablePlugins[1].config,
+              keyowrds: ['no']
+            }
+          }
+
+          store.replaceState(merge(
+            JSON.parse(JSON.stringify(initialState)),
+            {
+              plugin: {
+                available: {
+                  [plugin1.config.id]: plugin1,
+                  [plugin2.config.id]: plugin2
+                },
+                whitelisted: {
+                  global: {
+                    [plugin1.config.id]: plugin1.config.version,
+                    [plugin2.config.id]: plugin2.config.version
+                  }
+                }
+              }
+            }
+          ))
+
+          const result = store.getters['plugin/filtered']('yes')
+
+          expect(result).toEqual(expect.arrayContaining([plugin1]))
+          expect(result).toEqual(expect.not.arrayContaining([plugin2]))
+        })
       })
     })
 
