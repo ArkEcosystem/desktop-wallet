@@ -1,6 +1,7 @@
 import { createLocalVue } from '@vue/test-utils'
 import Vuex from 'vuex'
 import PluginModule from '@/store/modules/plugin'
+import releaseService from '@/services/release'
 import profiles, { profile1 } from '../../__fixtures__/store/profile'
 import merge from 'lodash/merge'
 
@@ -8,7 +9,6 @@ const localVue = createLocalVue()
 localVue.use(Vuex)
 
 jest.mock('@/services/plugin-manager')
-jest.mock('@/services/release')
 
 const dateSpy = jest.spyOn(Date, 'now')
 dateSpy.mockReturnValue(1)
@@ -442,8 +442,15 @@ describe('PluginModule', () => {
   })
 
   describe('isInstalledSupported', () => {
+    let spy
+
     beforeAll(() => {
       store.replaceState(JSON.parse(JSON.stringify(initialState)))
+      spy = jest.spyOn(releaseService, 'currentVersion', 'get').mockImplementation(() => '2.0.0')
+    })
+
+    afterAll(() => {
+      spy.mockRestore()
     })
 
     it('should return true if the plugin does not define a min version', () => {
