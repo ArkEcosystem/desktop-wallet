@@ -466,7 +466,7 @@ export default {
   MODAL_PEER: {
     CANCEL: 'Annulla',
     CONNECT: 'Connetti',
-    HOST: 'IP / Host',
+    HOST: 'Protocollo + IP / Hostname',
     PORT: 'Porta',
     TITLE: 'Connetti ad un peer personalizzato',
     VALIDATING: 'Validazione dettagli peer...',

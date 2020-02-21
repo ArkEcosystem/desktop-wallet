@@ -506,7 +506,7 @@ export default {
   MODAL_PEER: {
     CANCEL: 'Cancel',
     CONNECT: 'Connect',
-    HOST: 'IP / Host',
+    HOST: 'Protocol + IP / Hostname',
     PORT: 'Port',
     VALIDATING: 'Validating peer details...',
     PLACEHOLDER: {
