@@ -149,6 +149,10 @@ export default {
 
   methods: {
     emitConnect () {
+      const host = this.form.host
+      if (host.endsWith('/')) {
+        this.form.host = host.slice(0, -1)
+      }
       this.$emit('connect', {
         peer: this.form,
         closeTrigger: this.closeTrigger
