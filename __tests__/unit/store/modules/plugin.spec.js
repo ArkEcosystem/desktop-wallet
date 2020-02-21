@@ -57,6 +57,7 @@ const store = new Vuex.Store({
 })
 
 store._vm.$plugins = {
+  deletePlugin: jest.fn(),
   enablePlugin: jest.fn(),
   disablePlugin: jest.fn()
 }
@@ -1070,6 +1071,78 @@ describe('PluginModule', () => {
           spy.mockRestore()
           commitSpy.mockRestore()
         })
+      })
+    })
+
+    describe('deletePlugin', () => {
+      beforeAll(() => {
+        store.replaceState(merge(
+          JSON.parse(JSON.stringify(initialState)),
+          {
+            plugin: {
+              installed: {
+                [availablePlugins[0].config.id]: availablePlugins[0]
+              }
+            }
+          }
+        ))
+      })
+
+      it('should return early if plugin is not installed', async () => {
+        expect(await store.dispatch('plugin/deletePlugin', { pluginId: availablePlugins[1].config.id })).toBe(undefined)
+      })
+
+      it.each(profiles)('should disable the plugin', async (profile) => {
+        const spy = jest.spyOn(store, 'dispatch')
+
+        await store.dispatch('plugin/deletePlugin', { pluginId: availablePlugins[0].config.id })
+
+        expect(spy).toHaveBeenCalledWith('plugin/setEnabled', {
+          enabled: false,
+          pluginId: availablePlugins[0].config.id,
+          profileId: profile.id
+        })
+
+        spy.mockRestore()
+      })
+
+      it.each(profiles)('should disable the plugin and delete its options', async (profile) => {
+        const spy = jest.spyOn(store, 'dispatch')
+
+        await store.dispatch('plugin/deletePlugin', { pluginId: availablePlugins[0].config.id, removeOptions: true })
+
+        expect(spy).toHaveBeenCalledWith('plugin/setEnabled', {
+          enabled: false,
+          pluginId: availablePlugins[0].config.id,
+          profileId: profile.id
+        })
+        expect(spy).toHaveBeenCalledWith('plugin/deletePluginOptionsForProfile', {
+          pluginId: availablePlugins[0].config.id,
+          profileId: profile.id
+        })
+        spy.mockRestore()
+      })
+
+      it('should try to delete the plugin for the given profile', async () => {
+        const spy = jest.spyOn(store._vm.$plugins, 'deletePlugin')
+
+        await store.dispatch('plugin/deletePlugin', { pluginId: availablePlugins[0].config.id })
+
+        expect(spy).toHaveBeenCalledWith(availablePlugins[0].config.id)
+
+        spy.mockRestore()
+      })
+
+      it('should log the error if deleting a plugin fails', async () => {
+        const spy = jest.spyOn(store._vm.$plugins, 'deletePlugin').mockImplementation(() => {
+          throw new Error('error')
+        })
+
+        await store.dispatch('plugin/deletePlugin', { pluginId: availablePlugins[0].config.id })
+
+        expect(store._vm.$logger.error).toHaveBeenCalledWith("Could not delete 'plugin-1' plugin: error")
+
+        spy.mockRestore()
       })
     })
   })

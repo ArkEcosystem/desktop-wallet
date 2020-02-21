@@ -483,7 +483,7 @@ export default {
         await this._vm.$plugins.deletePlugin(pluginId)
       } catch (error) {
         this._vm.$logger.error(
-          `Could not delete '${pluginId}' plugin': ${error.message}`
+          `Could not delete '${pluginId}' plugin: ${error.message}`
         )
       }
     },
