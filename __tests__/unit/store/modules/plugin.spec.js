@@ -300,12 +300,6 @@ describe('PluginModule', () => {
           JSON.parse(JSON.stringify(initialState)),
           {
             plugin: {
-              available: availablePlugins[0],
-              enabled: {
-                [profile1.id]: {
-                  [availablePlugins[0].config.id]: true
-                }
-              },
               loaded: {
                 [profile1.id]: {
                   [availablePlugins[0].config.id]: {
@@ -500,7 +494,6 @@ describe('PluginModule', () => {
           JSON.parse(JSON.stringify(initialState)),
           {
             plugin: {
-              available: availablePlugins[0],
               enabled: {
                 [profile1.id]: {
                   [availablePlugins[0].config.id]: true
