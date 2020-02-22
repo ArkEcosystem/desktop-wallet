@@ -131,6 +131,8 @@ jobs:
 
       - name: Build
         run: yarn build:mac
+        env:
+          SKIP_NOTARIZE: true
 
       # - name: Upload .zip
       #   uses: actions/upload-artifact@master
