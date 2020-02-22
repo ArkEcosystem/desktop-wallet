@@ -726,6 +726,32 @@ describe('PluginModule', () => {
       })
     })
 
+    describe('menuItems', () => {
+      beforeAll(() => {
+        store.replaceState(merge(
+          JSON.parse(JSON.stringify(initialState)),
+          {
+            plugin: {
+              loaded: {
+                [profile1.id]: {
+                  [availablePlugins[0].config.id]: {
+                    menuItems: ['menu-item-1']
+                  },
+                  [availablePlugins[1].config.id]: {
+                    menuItems: ['menu-item-2']
+                  }
+                }
+              }
+            }
+          }
+        ))
+      })
+
+      it('should retrieve all menu items', () => {
+        expect(store.getters['plugin/menuItems']).toEqual(['menu-item-1', 'menu-item-2'])
+      })
+    })
+
     describe('enabled', () => {
       beforeAll(() => {
         store.replaceState(JSON.parse(JSON.stringify(initialState)))
