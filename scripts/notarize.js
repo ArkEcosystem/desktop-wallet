@@ -3,8 +3,15 @@ const { notarize } = require('electron-notarize')
 
 exports.default = async function notarizing (context) {
   const { electronPlatformName, appOutDir } = context
+
+  // We are not on macOS so we skip notarisation.
   if (electronPlatformName !== 'darwin') {
     return
+  }
+
+  // We are on a fork without the required credentials.
+  if (process.env.GITHUB_BASE_REF !== undefined) {
+    return;
   }
 
   const appName = context.packager.appInfo.productFilename
