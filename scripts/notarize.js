@@ -10,8 +10,8 @@ exports.default = async function notarizing (context) {
   }
 
   // We are on a fork without the required credentials.
-  if (process.env.GITHUB_BASE_REF !== undefined) {
-    return;
+  if (process.env.GITHUB_HEAD_REF || process.env.GITHUB_BASE_REF) {
+    return
   }
 
   const appName = context.packager.appInfo.productFilename
