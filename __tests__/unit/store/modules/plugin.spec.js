@@ -1204,5 +1204,52 @@ describe('PluginModule', () => {
         spy.mockRestore()
       })
     })
+
+    describe('setMenuItems', () => {
+      beforeAll(() => {
+        store.replaceState(merge(
+          JSON.parse(JSON.stringify(initialState)),
+          {
+            plugin: {
+              enabled: {
+                [profile1.id]: {
+                  [availablePlugins[0].config.id]: true
+                }
+              },
+              loaded: {
+                [profile1.id]: {
+                  [availablePlugins[0].config.id]: {
+                    menuItems: []
+                  }
+                }
+              }
+            }
+          }
+        ))
+      })
+
+      it('should throw an error if the plugin is not enabled', () => {
+        try {
+          store.dispatch('plugin/setMenuItems', {
+            pluginId: availablePlugins[1].config.id,
+            profileId: profile1.id
+          })
+        } catch (e) {
+          expect(e.message).toBe('Plugin is not enabled')
+        }
+      })
+
+      it('should set the menu items if the plugin is enabled', () => {
+        expect(store.getters['plugin/menuItems']).toEqual([])
+
+        store.dispatch('plugin/setMenuItems', {
+          pluginId: availablePlugins[0].config.id,
+          profileId: profile1.id,
+          menuItems: ['menu-item-1', 'menu-item-2']
+        })
+
+        expect(store.getters['plugin/menuItems']).toEqual(['menu-item-1', 'menu-item-2'])
+      })
+    })
   })
 })
