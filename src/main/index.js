@@ -26,8 +26,10 @@ if (process.env.TEMP_USER_DATA === 'true') {
   app.setPath('userData', tempDirectory)
 }
 
-let mainWindow = null
-let loadingWindow = null
+const windows = {
+  main: null,
+  loading: null
+}
 let deeplinkingUrl = null
 
 const winURL =
@@ -41,10 +43,10 @@ const loadingURL =
     : `file://${__dirname}/splashscreen.html`
 
 const createLoadingWindow = () => {
-  loadingWindow = new BrowserWindow({
+  windows.loading = new BrowserWindow({
     width: 800,
     height: 600,
-    parent: mainWindow,
+    parent: windows.main,
     skipTaskbar: true,
     frame: false,
     autoHideMenuBar: true,
@@ -53,12 +55,12 @@ const createLoadingWindow = () => {
       nodeIntegration: true
     }
   })
-  loadingWindow.setResizable(false)
-  loadingWindow.loadURL(loadingURL)
-  loadingWindow.show()
-  loadingWindow.on('close', () => (loadingWindow = null))
-  loadingWindow.on('closed', () => (loadingWindow = null))
-  loadingWindow.webContents.on('did-finish-load', () => loadingWindow.show())
+  windows.loading.setResizable(false)
+  windows.loading.loadURL(loadingURL)
+  windows.loading.show()
+  windows.loading.on('close', () => (windows.loading = null))
+  windows.loading.on('closed', () => (windows.loading = null))
+  windows.loading.webContents.on('did-finish-load', () => windows.loading.show())
 }
 
 function createWindow () {
@@ -66,10 +68,12 @@ function createWindow () {
 
   const windowState = winState({
     defaultWidth: width,
-    defaultHeight: height
+    defaultHeight: height,
+    fullScreen: false
   })
 
-  mainWindow = new BrowserWindow({
+  const wasFullScreen = windowState.isFullScreen
+  windows.main = new BrowserWindow({
     width: windowState.width,
     height: windowState.height,
     x: windowState.x,
@@ -84,15 +88,16 @@ function createWindow () {
 
   // The `mainWindow.show()` is executed after the opening splash screen
   ipcMain.on('splashscreen:app-ready', () => {
-    if (loadingWindow) {
-      loadingWindow.close()
+    if (windows.loading) {
+      windows.loading.close()
     }
-    mainWindow.show()
+    windows.main.show()
+    windows.main.setFullScreen(wasFullScreen)
   })
 
   ipcMain.on('disable-iframe-protection', function (_event, urls) {
     const filter = { urls }
-    mainWindow.webContents.session.webRequest.onHeadersReceived(
+    windows.main.webContents.session.webRequest.onHeadersReceived(
       filter,
       (details, done) => {
         const headers = details.responseHeaders
@@ -113,17 +118,17 @@ function createWindow () {
     )
   })
 
-  windowState.manage(mainWindow)
-  mainWindow.loadURL(winURL)
+  windowState.manage(windows.main)
+  windows.main.loadURL(winURL)
 
-  mainWindow.on('close', () => (mainWindow = null))
-  mainWindow.on('closed', () => (mainWindow = null))
+  windows.main.on('close', () => (windows.main = null))
+  windows.main.on('closed', () => (windows.main = null))
 
-  mainWindow.webContents.on('did-finish-load', () => {
+  windows.main.webContents.on('did-finish-load', () => {
     const name = packageJson.build.productName
     const version = app.getVersion()
     const windowTitle = `${name} ${version}`
-    mainWindow.setTitle(windowTitle)
+    windows.main.setTitle(windowTitle)
 
     broadcastURL(deeplinkingUrl)
   })
@@ -142,8 +147,8 @@ function broadcastURL (url) {
 }
 
 function sendToWindow (key, value) {
-  if (mainWindow && mainWindow.webContents) {
-    mainWindow.webContents.send(key, value)
+  if (windows.main && windows.main.webContents) {
+    windows.main.webContents.send(key, value)
     return true
   }
 
@@ -167,11 +172,11 @@ if (!gotTheLock) {
       }
     }
 
-    if (mainWindow) {
-      if (mainWindow.isMinimized()) {
-        mainWindow.restore()
+    if (windows.main) {
+      if (windows.main.isMinimized()) {
+        windows.main.restore()
       }
-      mainWindow.focus()
+      windows.main.focus()
     }
   })
 
@@ -187,7 +192,7 @@ if (!gotTheLock) {
 app.on('ready', () => {
   createLoadingWindow()
   createWindow()
-  setupPluginManager({ sendToWindow, mainWindow, ipcMain })
+  setupPluginManager({ sendToWindow, windows, ipcMain })
   setupUpdater({ sendToWindow, ipcMain })
 })
 
@@ -198,7 +203,7 @@ app.on('window-all-closed', () => {
 })
 
 app.on('activate', () => {
-  if (mainWindow === null) {
+  if (windows.main === null) {
     createLoadingWindow()
     createWindow()
   }
