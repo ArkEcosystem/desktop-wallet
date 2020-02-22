@@ -1206,7 +1206,7 @@ describe('PluginModule', () => {
     })
 
     describe('setMenuItems', () => {
-      beforeAll(() => {
+      beforeEach(() => {
         store.replaceState(merge(
           JSON.parse(JSON.stringify(initialState)),
           {
@@ -1239,12 +1239,12 @@ describe('PluginModule', () => {
         }
       })
 
-      it('should set the menu items if the plugin is enabled', () => {
+      it.each([null, profile1.id])('should set the menu items if the plugin is enabled', (profileId) => {
         expect(store.getters['plugin/menuItems']).toEqual([])
 
         store.dispatch('plugin/setMenuItems', {
           pluginId: availablePlugins[0].config.id,
-          profileId: profile1.id,
+          profileId,
           menuItems: ['menu-item-1', 'menu-item-2']
         })
 
