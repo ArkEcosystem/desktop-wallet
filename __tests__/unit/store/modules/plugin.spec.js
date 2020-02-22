@@ -1,6 +1,7 @@
 import { createLocalVue } from '@vue/test-utils'
 import Vuex from 'vuex'
 import PluginModule from '@/store/modules/plugin'
+import pluginManager from '@/services/plugin-manager'
 import releaseService from '@/services/release'
 import profiles, { profile1 } from '../../__fixtures__/store/profile'
 import merge from 'lodash/merge'
@@ -690,6 +691,38 @@ describe('PluginModule', () => {
           }
         })
         expect(store.getters['plugin/isInstalledSupported'](installedPlugins[0].config.id)).toBe(false)
+      })
+    })
+
+    describe('avatar', () => {
+      beforeAll(() => {
+        store.replaceState(merge(
+          JSON.parse(JSON.stringify(initialState)),
+          {
+            plugin: {
+              loaded: {
+                [profile1.id]: {
+                  'avatar-plugin': {}
+                }
+              }
+            }
+          }
+        ))
+      })
+
+      it('should return null if there are no loaded plugins for the given profile', () => {
+        expect(store.getters['plugin/avatar'](profiles[1])).toBe(null)
+      })
+
+      it('should retrieve the avatar components from the plugin manager', () => {
+        const spy = jest.spyOn(pluginManager, 'getAvatarComponents').mockImplementation(() => ({
+          [profile1.avatar.avatarName]: 'avatar'
+        }))
+
+        expect(store.getters['plugin/avatar'](profile1)).toBe('avatar')
+        expect(spy).toHaveBeenCalledWith(profile1.avatar.pluginId)
+
+        spy.mockRestore()
       })
     })
 

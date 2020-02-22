@@ -6,7 +6,11 @@ const profile1 = {
   language: 'en',
   name: 'Profile 1',
   theme: 'light',
-  filterBlacklistedPlugins: true
+  filterBlacklistedPlugins: true,
+  avatar: {
+    pluginId: 'avatar-plugin',
+    avatarName: 'avatar'
+  }
 }
 
 const profile2 = {
