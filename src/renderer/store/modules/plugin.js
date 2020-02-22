@@ -184,12 +184,7 @@ export default {
     },
 
     avatars: (state, getters) => profileId => {
-      let loadedPlugins
-      if (!profileId) {
-        loadedPlugins = getters.loaded
-      } else {
-        loadedPlugins = state.loaded[profileId]
-      }
+      const loadedPlugins = profileId ? state.loaded[profileId] : getters.loaded
 
       if (!loadedPlugins || !Object.keys(loadedPlugins)) {
         return []
