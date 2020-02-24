@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import { uniqBy, orderBy, flatten } from 'lodash'
+import { uniqBy, orderBy } from 'lodash'
 import mergeTableTransactions from '@/components/utils/merge-table-transactions'
 import { TransactionTable } from '@/components/Transaction'
 
@@ -55,7 +55,15 @@ export default {
     }
 
     this.$eventBus.on('transactions:fetched', transactionsByWallet => {
-      const transactions = flatten(Object.values(transactionsByWallet))
+      const transactions = []
+      for (const address of Object.keys(transactionsByWallet)) {
+        for (const transaction of Object.values(transactionsByWallet[address])) {
+          transaction.walletAddress = address
+
+          transactions.push(transaction)
+        }
+      }
+
       this.fetchedTransactions = this.processTransactions(transactions)
       this.isLoading = false
     })

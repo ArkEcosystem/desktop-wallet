@@ -54,28 +54,55 @@
       </template>
     </ButtonModal>
 
-    <ButtonModal
+    <ButtonDropdown
       v-show="!currentWallet.isContact"
-      :class="buttonStyle"
-      :label="$t('TRANSACTION.SEND')"
-      icon="send"
-      view-box="0 0 12 12"
+      :items="sendOptions"
+      classes="option-heading-button px-3 py-2"
+      class="mr-2"
     >
-      <template slot-scope="{ toggle, isOpen }">
-        <TransactionModal
-          v-if="isOpen"
-          :type="0"
-          @cancel="toggle"
-          @close="toggle"
-          @sent="toggle"
-        />
-      </template>
-    </ButtonModal>
+      <ButtonModal
+        slot="primaryButton"
+        class="option-heading-button px-3 py-2 h-full"
+        :class="{
+          'rounded-tr-none': hasSendOptions,
+          'rounded-br-none': hasSendOptions
+        }"
+        :label="$t('TRANSACTION.SEND')"
+        icon="send"
+        view-box="0 0 12 12"
+      >
+        <template slot-scope="{ toggle, isOpen }">
+          <TransactionModal
+            v-if="isOpen"
+            :type="0"
+            @cancel="closeTransactionModal(toggle, isOpen)"
+            @sent="closeTransactionModal(toggle, isOpen)"
+          />
+        </template>
+      </ButtonModal>
+
+      <ButtonModal
+        slot="button"
+        slot-scope="{ item, triggerClose }"
+        :label="item.label"
+        class="option-heading-button whitespace-no-wrap w-full"
+        @toggle="triggerClose"
+      >
+        <template slot-scope="{ toggle, isOpen }">
+          <TransactionModal
+            v-if="isOpen"
+            :type="item.type"
+            @cancel="closeTransactionModal(toggle, isOpen)"
+            @sent="closeTransactionModal(toggle, isOpen)"
+          />
+        </template>
+      </ButtonModal>
+    </ButtonDropdown>
   </div>
 </template>
 
 <script>
-import { ButtonModal, ButtonReload } from '@/components/Button'
+import { ButtonDropdown, ButtonModal, ButtonReload } from '@/components/Button'
 import { ModalQrCode } from '@/components/Modal'
 import { TransactionModal } from '@/components/Transaction'
 import { ContactRenameModal } from '@/components/Contact'
@@ -86,6 +113,7 @@ export default {
   inject: ['switchToTab', 'walletVote'],
 
   components: {
+    ButtonDropdown,
     ButtonModal,
     ButtonReload,
     ModalQrCode,
@@ -108,8 +136,37 @@ export default {
       return this.wallet_fromRoute
     },
 
+    currentNetwork () {
+      return this.session_network
+    },
+
     doesNotExist () {
       return !this.$store.getters['wallet/byAddress'](this.currentWallet.address)
+    },
+
+    hasAip11 () {
+      return this.currentNetwork.constants ? !!this.currentNetwork.constants.aip11 : false
+    },
+
+    sendOptions () {
+      const options = []
+
+      if (!this.hasAip11) {
+        return options
+      }
+
+      if (!this.currentWallet.isLedger) {
+        options.push({
+          label: this.$t('TRANSACTION.TYPE.MULTI_PAYMENT'),
+          type: 6
+        })
+      }
+
+      return options
+    },
+
+    hasSendOptions () {
+      return !!this.sendOptions.length
     },
 
     isVoting () {
@@ -126,6 +183,12 @@ export default {
       this.isRefreshing = true
       await this.$eventBus.emit('wallet:reload')
       this.isRefreshing = false
+    },
+
+    closeTransactionModal (toggleMethod, isOpen) {
+      if (isOpen) {
+        toggleMethod()
+      }
     }
   }
 }

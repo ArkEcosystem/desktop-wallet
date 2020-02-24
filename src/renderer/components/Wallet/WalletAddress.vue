@@ -1,31 +1,13 @@
 <template>
   <span class="WalletAddress flex items-center">
-    <span
-      v-if="!type"
-      v-tooltip="{
-        content: address,
-        container: tooltipContainer,
-        delay: { show: 300, hide: 0 },
-        show: showTooltip,
-        trigger: 'manual'
-      }"
-    >
-      <a
-        @click.stop="onClick"
-        @mouseover="onMouseOver"
-        @mouseout="onMouseOut"
-      >
-        {{ wallet_formatAddress(address, addressLength) }}
-      </a>
-    </span>
-    <span v-else-if="type === 1">
+    <span v-if="group === 1 && type === 1">
       {{ $t("TRANSACTION.TYPE.SECOND_SIGNATURE") }}
     </span>
-    <span v-else-if="type === 2">
+    <span v-else-if="group === 1 && type === 2">
       {{ $t("TRANSACTION.TYPE.DELEGATE_REGISTRATION") }}
     </span>
     <span
-      v-else-if="type === 3"
+      v-else-if="group === 1 && type === 3"
       v-tooltip="{
         content: votedDelegateAddress,
         container: tooltipContainer,
@@ -49,20 +31,62 @@
         </span>
       </a>
     </span>
-    <span v-else-if="type === 4">
+    <span v-else-if="group === 1 && type === 4">
       {{ $t("TRANSACTION.TYPE.MULTI_SIGNATURE") }}
     </span>
-    <span v-else-if="type === 5">
+    <span v-else-if="group === 1 && type === 5">
       {{ $t("TRANSACTION.TYPE.IPFS") }}
     </span>
-    <span v-else-if="type === 6">
-      {{ $t("TRANSACTION.TYPE.TIMELOCK_TRANSFER") }}
-    </span>
-    <span v-else-if="type === 7">
+    <span v-else-if="group === 1 && type === 6">
       {{ $t("TRANSACTION.TYPE.MULTI_PAYMENT") }}
     </span>
-    <span v-else-if="type === 8">
+    <span v-else-if="group === 1 && type === 7">
       {{ $t("TRANSACTION.TYPE.DELEGATE_RESIGNATION") }}
+    </span>
+    <span v-else-if="group === 1 && type === 8">
+      {{ $t("TRANSACTION.TYPE.HTLC_LOCK") }}
+    </span>
+    <span v-else-if="group === 1 && type === 9">
+      {{ $t("TRANSACTION.TYPE.HTLC_CLAIM") }}
+    </span>
+    <span v-else-if="group === 1 && type === 10">
+      {{ $t("TRANSACTION.TYPE.HTLC_REFUND") }}
+    </span>
+    <span v-else-if="group === 2 && type === 0">
+      {{ $t("TRANSACTION.TYPE.BUSINESS_REGISTRATION") }}
+    </span>
+    <span v-else-if="group === 2 && type === 1">
+      {{ $t("TRANSACTION.TYPE.BUSINESS_RESIGNATION") }}
+    </span>
+    <span v-else-if="group === 2 && type === 2">
+      {{ $t("TRANSACTION.TYPE.BUSINESS_UPDATE") }}
+    </span>
+    <span v-else-if="group === 2 && type === 3">
+      {{ $t("TRANSACTION.TYPE.BRIDGECHAIN_REGISTRATION") }}
+    </span>
+    <span v-else-if="group === 2 && type === 4">
+      {{ $t("TRANSACTION.TYPE.BRIDGECHAIN_RESIGNATION") }}
+    </span>
+    <span v-else-if="group === 2 && type === 5">
+      {{ $t("TRANSACTION.TYPE.BRIDGECHAIN_UPDATE") }}
+    </span>
+    <span
+      v-else
+      v-tooltip="{
+        content: address,
+        container: tooltipContainer,
+        delay: { show: 300, hide: 0 },
+        show: showTooltip,
+        trigger: 'manual'
+      }"
+    >
+      <a
+        @click.stop="onClick"
+        @mouseover="onMouseOver"
+        @mouseout="onMouseOut"
+      >
+        {{ wallet_formatAddress(address, addressLength) }}
+      </a>
     </span>
 
     <SvgIcon
@@ -100,6 +124,11 @@ export default {
       type: Number,
       required: false,
       default: () => 0
+    },
+    group: {
+      type: Number,
+      required: false,
+      default: () => 1
     },
     tooltipContainer: {
       type: String,
@@ -193,7 +222,8 @@ export default {
 
 <style lang="postcss" scoped>
 .WalletAddress > span {
-  @apply truncate
+  @apply .truncate;
+  padding-right: 1px;
 }
 
 .WalletAddress a {

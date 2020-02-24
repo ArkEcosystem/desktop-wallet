@@ -588,7 +588,7 @@ describe('Services > Synchronizer > Wallets', () => {
 
     describe('when transactions include votes', () => {
       beforeEach(() => {
-        transactions[0].type = config.TRANSACTION_TYPES.VOTE
+        transactions[0].type = config.TRANSACTION_TYPES.GROUP_1.VOTE
       })
 
       it('should process the votes', async () => {
