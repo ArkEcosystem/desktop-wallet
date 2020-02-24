@@ -778,7 +778,7 @@ describe('PluginModule', () => {
         expect(store.getters['plugin/themes']).toEqual({})
       })
 
-      it('should retrieve all themes of loaded plugins', () => {
+      it('should retrieve all themes of loaded plugins', () => {
         store.replaceState(merge(
           JSON.parse(JSON.stringify(initialState)),
           {
@@ -1251,6 +1251,42 @@ describe('PluginModule', () => {
         expect(store._vm.$logger.error).toHaveBeenCalledWith("Could not delete 'plugin-1' plugin: error")
 
         spy.mockRestore()
+      })
+    })
+
+    describe('deleteLoaded', () => {
+      beforeEach(() => {
+        store.replaceState(merge(
+          JSON.parse(JSON.stringify(initialState)),
+          {
+            plugin: {
+              loaded: {
+                [profile1.id]: {
+                  [availablePlugins[0].config.id]: {}
+                }
+              }
+            }
+          }
+        ))
+      })
+
+      it('should return early if the plugin is not loaded', async () => {
+        expect(await store.dispatch('plugin/deleteLoaded', {
+          pluginId: availablePlugins[1].config.id
+        })).toBe(undefined)
+      })
+
+      it.each([null, profile1.id])('should delete the loaded plugin', (profileId) => {
+        expect(store.getters['plugin/loaded']).toEqual({
+          [availablePlugins[0].config.id]: {}
+        })
+
+        store.dispatch('plugin/deleteLoaded', {
+          pluginId: availablePlugins[0].config.id,
+          profileId
+        })
+
+        expect(store.getters['plugin/loaded']).toEqual({})
       })
     })
 
