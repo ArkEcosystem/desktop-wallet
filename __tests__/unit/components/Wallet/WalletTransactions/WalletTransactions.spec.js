@@ -54,7 +54,8 @@ const createWrapper = (component, gettersTransactions) => {
         getters: {
           get 'transaction/byAddress' () {
             return gettersTransactions
-          }
+          },
+          'session/transactionTableRowCount': 10
         }
       },
       session_profile: {
@@ -530,6 +531,65 @@ describe('WalletTransactions', () => {
 
         expect(loggerErrorMock).toHaveBeenCalledWith('Failed to update confirmations: ', error)
         expect(wrapper.vm.newTransactionsNotice).toBe('test')
+      })
+    })
+
+    describe('onPageChange', () => {
+      it('should do nothing if currentPage has not changed', () => {
+        const spyParams = jest.spyOn(WalletTransactionsMixin.methods, '__updateParams').mockImplementation()
+        const spyTransactions = jest.spyOn(WalletTransactionsMixin.methods, 'loadTransactions').mockImplementation()
+        createWrapper()
+
+        wrapper.vm.onPageChange({ currentPage: 1 })
+        expect(spyParams).not.toHaveBeenCalled()
+        expect(spyTransactions).toHaveBeenCalledTimes(1) // gets called once in the created lifecycle hook
+
+        spyParams.mockRestore()
+        spyTransactions.mockRestore()
+      })
+
+      it('should update params and load transactions if currentPage has changed', () => {
+        const spyParams = jest.spyOn(WalletTransactionsMixin.methods, '__updateParams').mockImplementation()
+        const spyTransactions = jest.spyOn(WalletTransactionsMixin.methods, 'loadTransactions').mockImplementation()
+        createWrapper()
+
+        wrapper.vm.onPageChange({ currentPage: 10 })
+        expect(wrapper.vm.currentPage).toBe(10)
+        expect(spyParams).toHaveBeenCalledTimes(1)
+        expect(spyTransactions).toHaveBeenCalledTimes(2) // gets called once in the created lifecycle hook
+
+        spyParams.mockRestore()
+        spyTransactions.mockRestore()
+      })
+    })
+
+    describe('onPerPageChange', () => {
+      it('should do nothing if currentPerPage has not changed', () => {
+        const spyParams = jest.spyOn(WalletTransactionsMixin.methods, '__updateParams').mockImplementation()
+        const spyTransactions = jest.spyOn(WalletTransactionsMixin.methods, 'loadTransactions').mockImplementation()
+        createWrapper()
+
+        wrapper.vm.onPerPageChange({ currentPerPage: 10 })
+        expect(spyParams).not.toHaveBeenCalled()
+        expect(spyTransactions).toHaveBeenCalledTimes(1) // gets called once in the created lifecycle hook
+
+        spyParams.mockRestore()
+        spyTransactions.mockRestore()
+      })
+
+      it('should update params and load transactions if currentPerPage has changed', () => {
+        const spyParams = jest.spyOn(WalletTransactionsMixin.methods, '__updateParams').mockImplementation()
+        const spyTransactions = jest.spyOn(WalletTransactionsMixin.methods, 'loadTransactions').mockImplementation()
+        createWrapper()
+
+        wrapper.vm.currentPage = 5
+
+        wrapper.vm.onPerPageChange({ currentPerPage: 20 })
+        expect(spyParams).toHaveBeenCalledTimes(1)
+        expect(spyTransactions).toHaveBeenCalledTimes(2) // gets called once in the created lifecycle hook
+        expect(wrapper.vm.currentPage).toBe(1)
+        spyParams.mockRestore()
+        spyTransactions.mockRestore()
       })
     })
   })
