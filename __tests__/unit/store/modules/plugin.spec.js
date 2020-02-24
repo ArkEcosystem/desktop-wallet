@@ -1548,6 +1548,61 @@ describe('PluginModule', () => {
       })
     })
 
+    describe('setWalletTabs', () => {
+      beforeEach(() => {
+        store.replaceState(merge(
+          JSON.parse(JSON.stringify(initialState)),
+          {
+            plugin: {
+              enabled: {
+                [profile1.id]: {
+                  [availablePlugins[0].config.id]: true
+                }
+              },
+              loaded: {
+                [profile1.id]: {
+                  [availablePlugins[0].config.id]: {}
+                }
+              }
+            }
+          }
+        ))
+      })
+
+      it('should throw an error if the plugin is not enabled', async () => {
+        try {
+          await store.dispatch('plugin/setWalletTabs', {
+            pluginId: availablePlugins[1].config.id,
+            profileId: profile1.id
+          })
+        } catch (e) {
+          expect(e.message).toBe('Plugin is not enabled')
+        }
+      })
+
+      it.each([null, profile1.id])('should set the wallet tabs', (profileId) => {
+        const spy = jest.spyOn(pluginManager, 'getWalletTabComponent').mockImplementation(() => 'tab-1-component')
+
+        expect(store.getters['plugin/walletTabs']).toEqual([])
+
+        store.dispatch('plugin/setWalletTabs', {
+          pluginId: availablePlugins[0].config.id,
+          profileId,
+          walletTabs: [{
+            name: 'tab-1',
+            component: 'tab-1-component'
+          }]
+        })
+
+        expect(store.getters['plugin/walletTabs']).toEqual([{
+          name: 'tab-1',
+          component: 'tab-1-component'
+        }])
+
+        spy.mockRestore()
+      })
+    })
+
     describe('setPluginOption', () => {
       beforeAll(() => {
         store.replaceState(merge(
