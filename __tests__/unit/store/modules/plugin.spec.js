@@ -1477,6 +1477,69 @@ describe('PluginModule', () => {
       })
     })
 
+    describe('setPluginOption', () => {
+      beforeAll(() => {
+        store.replaceState(merge(
+          JSON.parse(JSON.stringify(initialState)),
+          {
+            plugin: {
+              enabled: {
+                [profile1.id]: {
+                  [availablePlugins[0].config.id]: true
+                }
+              }
+            }
+          }
+        ))
+      })
+
+      it('should throw an error if the plugin is not enabled', async () => {
+        try {
+          await store.dispatch('plugin/setPluginOption', {
+            pluginId: availablePlugins[1].config.id,
+            profileId: profile1.id
+          })
+        } catch (e) {
+          expect(e.message).toBe('Plugin is not enabled')
+        }
+      })
+
+      it('should set the plugin option', async () => {
+        expect(store.getters['plugin/pluginOptions'](availablePlugins[0].config.id, profile1.id)).toEqual({})
+
+        await store.dispatch('plugin/setPluginOption', {
+          pluginId: availablePlugins[0].config.id,
+          profileId: profile1.id,
+          key: 'foo',
+          value: 'bar'
+        })
+
+        expect(store.getters['plugin/pluginOptions'](availablePlugins[0].config.id, profile1.id)).toEqual({ foo: 'bar' })
+
+        await store.dispatch('plugin/setPluginOption', {
+          pluginId: availablePlugins[0].config.id,
+          profileId: profile1.id,
+          key: 'bar',
+          value: 'foo'
+        })
+
+        expect(store.getters['plugin/pluginOptions'](availablePlugins[0].config.id, profile1.id)).toEqual({ foo: 'bar', bar: 'foo' })
+      })
+
+      it('should set a global plugin option', async () => {
+        expect(store.getters['plugin/pluginOptions'](availablePlugins[0].config.id, 'global')).toEqual({})
+
+        await store.dispatch('plugin/setPluginOption', {
+          pluginId: availablePlugins[0].config.id,
+          profileId: 'global',
+          key: 'foo',
+          value: 'bar'
+        })
+
+        expect(store.getters['plugin/pluginOptions'](availablePlugins[0].config.id, 'global')).toEqual({ foo: 'bar' })
+      })
+    })
+
     describe('deletePluginOptionsForProfile', () => {
       const options = { foo: 'bar' }
 
