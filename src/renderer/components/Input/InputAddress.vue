@@ -368,6 +368,9 @@ export default {
 
     updateInputValue (value) {
       this.inputValue = value
+
+      this.$eventBus.emit('change')
+
       // Inform Vuelidate that the value changed
       this.$v.model.$touch()
     },
