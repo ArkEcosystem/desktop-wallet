@@ -839,6 +839,39 @@ describe('PluginModule', () => {
       })
     })
 
+    describe('walletTabs', () => {
+      beforeEach(() => {
+        store.replaceState(merge(
+          JSON.parse(JSON.stringify(initialState)),
+          {
+            plugin: {
+              loaded: {
+                [profile1.id]: {
+                  [availablePlugins[0].config.id]: {},
+                  [availablePlugins[1].config.id]: {
+                    walletTabs: [{
+                      name: 'tab-1'
+                    }]
+                  }
+                }
+              }
+            }
+          }
+        ))
+      })
+
+      it('should return the wallet tabs', () => {
+        const spy = jest.spyOn(pluginManager, 'getWalletTabComponent').mockImplementation(() => 'tab-1-component')
+
+        expect(store.getters['plugin/walletTabs']).toEqual([{
+          name: 'tab-1',
+          component: 'tab-1-component'
+        }])
+
+        spy.mockRestore()
+      })
+    })
+
     describe('enabled', () => {
       beforeAll(() => {
         store.replaceState(JSON.parse(JSON.stringify(initialState)))
