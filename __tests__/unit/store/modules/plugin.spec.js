@@ -1385,5 +1385,35 @@ describe('PluginModule', () => {
         expect(store.getters['plugin/themes']).toEqual({ 'theme-1': {} })
       })
     })
+
+    describe('deletePluginOptionsForProfile', () => {
+      const options = { foo: 'bar' }
+
+      beforeEach(() => {
+        store.replaceState(merge(
+          JSON.parse(JSON.stringify(initialState)),
+          {
+            plugin: {
+              pluginOptions: {
+                [profile1.id]: {
+                  [availablePlugins[0].config.id]: options
+                }
+              }
+            }
+          }
+        ))
+      })
+
+      it.each([null, profile1.id])('should delete the plugin options', (profileId) => {
+        expect(store.getters['plugin/pluginOptions'](availablePlugins[0].config.id, profile1.id)).toEqual(options)
+
+        store.dispatch('plugin/deletePluginOptionsForProfile', {
+          pluginId: availablePlugins[0].config.id,
+          profileId
+        })
+
+        expect(store.getters['plugin/pluginOptions'](availablePlugins[0].config.id, profileId)).toEqual({})
+      })
+    })
   })
 })
