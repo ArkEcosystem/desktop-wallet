@@ -1290,6 +1290,33 @@ describe('PluginModule', () => {
       })
     })
 
+    describe('deleteInstalled', () => {
+      beforeAll(() => {
+        store.replaceState(merge(
+          JSON.parse(JSON.stringify(initialState)),
+          {
+            plugin: {
+              installed: {
+                [availablePlugins[0].config.id]: availablePlugins[0]
+              }
+            }
+          }
+        ))
+      })
+
+      it('should return early if the plugin is not installed', async () => {
+        expect(await store.dispatch('plugin/deleteInstalled', availablePlugins[1].config.id)).toBe(undefined)
+      })
+
+      it('should delete the installed plugin', () => {
+        expect(store.getters['plugin/installed']).toEqual([availablePlugins[0]])
+
+        store.dispatch('plugin/deleteInstalled', availablePlugins[0].config.id)
+
+        expect(store.getters['plugin/installed']).toEqual([])
+      })
+    })
+
     describe('setMenuItems', () => {
       beforeEach(() => {
         store.replaceState(merge(
