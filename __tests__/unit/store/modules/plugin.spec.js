@@ -1596,15 +1596,25 @@ describe('PluginModule', () => {
         ))
       })
 
-      it.each([null, profile1.id])('should delete the plugin options', (profileId) => {
+      it('should delete the plugin options when no profile id given', () => {
+        expect(store.getters['plugin/pluginOptions'](availablePlugins[0].config.id, profile1.id)).toEqual(options)
+
+        store.dispatch('plugin/deletePluginOptionsForProfile', {
+          pluginId: availablePlugins[0].config.id
+        })
+
+        expect(store.getters['plugin/pluginOptions'](availablePlugins[0].config.id, profile1.id)).toEqual({})
+      })
+
+      it('should delete the plugin options', () => {
         expect(store.getters['plugin/pluginOptions'](availablePlugins[0].config.id, profile1.id)).toEqual(options)
 
         store.dispatch('plugin/deletePluginOptionsForProfile', {
           pluginId: availablePlugins[0].config.id,
-          profileId
+          profileId: profile1.id
         })
 
-        expect(store.getters['plugin/pluginOptions'](availablePlugins[0].config.id, profileId)).toEqual({})
+        expect(store.getters['plugin/pluginOptions'](availablePlugins[0].config.id, profile1.id)).toEqual({})
       })
     })
   })
