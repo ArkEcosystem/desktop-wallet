@@ -28,19 +28,23 @@
         <slot />
 
         <div class="mt-4 flex flex-row">
-          <button
-            class="ModalCloseConfirmation__cancel-button blue-button m-1"
-            @click="emitCancel"
-          >
-            {{ cancelButton }}
-          </button>
+          <div class="flex-1">
+            <button
+              class="ModalCloseConfirmation__cancel-button blue-button m-1"
+              @click="emitCancel"
+            >
+              {{ cancelButton }}
+            </button>
+          </div>
 
-          <button
-            class="ModalCloseConfirmation__confirm-button action-button m-1 ml-auto"
-            @click="emitConfirm"
-          >
-            {{ confirmButton }}
-          </button>
+          <div class="flex-1 text-right">
+            <button
+              class="ModalCloseConfirmation__confirm-button action-button m-1 px-8 py-4"
+              @click="emitConfirm"
+            >
+              {{ confirmButton }}
+            </button>
+          </div>
         </div>
       </section>
     </div>
