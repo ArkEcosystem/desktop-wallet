@@ -1,65 +1,67 @@
 name: Draft Artifacts
 
-on:
-  push:
-    branches:
-      - "develop"
+on: [push]
+
+# on:
+#   push:
+#     branches:
+#       - "develop"
 
 jobs:
-  build-linux:
-    runs-on: ubuntu-latest
+  # build-linux:
+  #   runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [12.x]
+  #   strategy:
+  #     matrix:
+  #       node-version: [12.x]
 
-    steps:
-      - uses: actions/checkout@v1
+  #   steps:
+  #     - uses: actions/checkout@v1
 
-      - name: Cache node modules
-        uses: actions/cache@v1
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: ${{ runner.os }}-node-
+  #     - name: Cache node modules
+  #       uses: actions/cache@v1
+  #       with:
+  #         path: node_modules
+  #         key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
+  #         restore-keys: ${{ runner.os }}-node-
 
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
+  #     - name: Use Node.js ${{ matrix.node-version }}
+  #       uses: actions/setup-node@v1
+  #       with:
+  #         node-version: ${{ matrix.node-version }}
 
-      - name: Update System
-        run: sudo apt-get update
+  #     - name: Update System
+  #       run: sudo apt-get update
 
-      - name: Ledger
-        run: sudo apt-get install libudev-dev libusb-1.0-0-dev
+  #     - name: Ledger
+  #       run: sudo apt-get install libudev-dev libusb-1.0-0-dev
 
-      - name: Install
-        run: yarn global add node-gyp && yarn install --frozen-lockfile
+  #     - name: Install
+  #       run: yarn global add node-gyp && yarn install --frozen-lockfile
 
-      - name: Re-build bcrypto
-        run: cd node_modules/bcrypto && npm install && cd ../../
+  #     - name: Re-build bcrypto
+  #       run: cd node_modules/bcrypto && npm install && cd ../../
 
-      - name: Build
-        run: yarn build:linux
+  #     - name: Build
+  #       run: yarn build:linux
 
-      # - name: Upload .AppImage
-      #   uses: actions/upload-artifact@master
-      #   with:
-      #     name: ark-desktop-wallet-linux-2.8.1.AppImage
-      #     path: build/target/ark-desktop-wallet-linux-x86_64-2.8.1.AppImage
+  #     # - name: Upload .AppImage
+  #     #   uses: actions/upload-artifact@master
+  #     #   with:
+  #     #     name: ark-desktop-wallet-linux-2.8.1.AppImage
+  #     #     path: build/target/ark-desktop-wallet-linux-x86_64-2.8.1.AppImage
 
-      # - name: Upload .tar.gz
-      #   uses: actions/upload-artifact@master
-      #   with:
-      #     name: ark-desktop-wallet-linux-2.8.1.tar.gz
-      #     path: build/target/ark-desktop-wallet-linux-x64-2.8.1.tar.gz
+  #     # - name: Upload .tar.gz
+  #     #   uses: actions/upload-artifact@master
+  #     #   with:
+  #     #     name: ark-desktop-wallet-linux-2.8.1.tar.gz
+  #     #     path: build/target/ark-desktop-wallet-linux-x64-2.8.1.tar.gz
 
-      - name: Upload .deb
-        uses: actions/upload-artifact@master
-        with:
-          name: ark-desktop-wallet-linux-2.8.1-${{ github.sha }}.deb
-          path: build/target/ark-desktop-wallet-linux-amd64-2.8.1.deb
+  #     - name: Upload .deb
+  #       uses: actions/upload-artifact@master
+  #       with:
+  #         name: ark-desktop-wallet-linux-2.8.1-${{ github.sha }}.deb
+  #         path: build/target/ark-desktop-wallet-linux-amd64-2.8.1.deb
 
   build-macOS:
     runs-on: macos-latest
