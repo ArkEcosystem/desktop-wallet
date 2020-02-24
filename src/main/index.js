@@ -72,7 +72,6 @@ function createWindow () {
     fullScreen: false
   })
 
-  const wasFullScreen = windowState.isFullScreen
   windows.main = new BrowserWindow({
     width: windowState.width,
     height: windowState.height,
@@ -92,7 +91,7 @@ function createWindow () {
       windows.loading.close()
     }
     windows.main.show()
-    windows.main.setFullScreen(wasFullScreen)
+    windows.main.setFullScreen(windowState ? windowState.isFullScreen : false)
   })
 
   ipcMain.on('disable-iframe-protection', function (_event, urls) {
