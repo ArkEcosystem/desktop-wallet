@@ -1300,5 +1300,54 @@ describe('PluginModule', () => {
         expect(store.getters['plugin/menuItems']).toEqual(['menu-item-1', 'menu-item-2'])
       })
     })
+
+    describe('setThemes', () => {
+      beforeEach(() => {
+        store.replaceState(merge(
+          JSON.parse(JSON.stringify(initialState)),
+          {
+            plugin: {
+              enabled: {
+                [profile1.id]: {
+                  [availablePlugins[0].config.id]: true
+                }
+              },
+              loaded: {
+                [profile1.id]: {
+                  [availablePlugins[0].config.id]: {
+                    themes: {}
+                  }
+                }
+              }
+            }
+          }
+        ))
+      })
+
+      it('should throw an error if the plugin is not enabled', () => {
+        try {
+          store.dispatch('plugin/setThemes', {
+            pluginId: availablePlugins[1].config.id,
+            profileId: profile1.id
+          })
+        } catch (e) {
+          expect(e.message).toBe('Plugin is not enabled')
+        }
+      })
+
+      it.each([null, profile1.id])('should set the themes if the plugin is enabled', (profileId) => {
+        expect(store.getters['plugin/themes']).toEqual({})
+
+        store.dispatch('plugin/setThemes', {
+          pluginId: availablePlugins[0].config.id,
+          profileId,
+          themes: {
+            'theme-1': {}
+          }
+        })
+
+        expect(store.getters['plugin/themes']).toEqual({ 'theme-1': {} })
+      })
+    })
   })
 })
