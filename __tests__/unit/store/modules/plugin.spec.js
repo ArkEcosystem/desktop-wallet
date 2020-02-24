@@ -752,6 +752,55 @@ describe('PluginModule', () => {
       })
     })
 
+    describe('themes', () => {
+      beforeAll(() => {
+        store.replaceState(JSON.parse(JSON.stringify(initialState)))
+      })
+
+      it('should return an empty object if there are no loaded plugins', () => {
+        expect(store.getters['plugin/themes']).toEqual({})
+      })
+
+      it('should return an empty object if there are no loaded plugins with themes', () => {
+        store.replaceState(merge(
+          JSON.parse(JSON.stringify(initialState)),
+          {
+            plugin: {
+              loaded: {
+                [profile1.id]: {
+                  [availablePlugins[0].config.id]: {}
+                }
+              }
+            }
+          }
+        ))
+
+        expect(store.getters['plugin/themes']).toEqual({})
+      })
+
+      it('should retrieve all themes of loaded plugins', () => {
+        store.replaceState(merge(
+          JSON.parse(JSON.stringify(initialState)),
+          {
+            plugin: {
+              loaded: {
+                [profile1.id]: {
+                  [availablePlugins[0].config.id]: {},
+                  [availablePlugins[1].config.id]: {
+                    themes: {
+                      'theme-1': {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ))
+
+        expect(store.getters['plugin/themes']).toEqual({ 'theme-1': {} })
+      })
+    })
+
     describe('enabled', () => {
       beforeAll(() => {
         store.replaceState(JSON.parse(JSON.stringify(initialState)))
