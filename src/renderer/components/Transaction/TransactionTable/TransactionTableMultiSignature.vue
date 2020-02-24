@@ -18,7 +18,7 @@
         >
           <span
             v-tooltip="{
-              content: `${$t('TRANSACTION.AMOUNT')}: ${data.formattedRow['amount']}<br>${$t('TRANSACTION.FEE')}: ${formatAmount(data.row.fee)}`,
+              content: `${$t('TRANSACTION.AMOUNT')}: ${formatAmount(data.row, false)}<br>${$t('TRANSACTION.FEE')}: ${formatFee(data.row.fee)}`,
               html: true,
               classes: 'leading-loose',
               trigger: 'hover',
@@ -28,7 +28,7 @@
             class="font-bold mr-2 whitespace-no-wrap"
           >
             {{ data.row.isSender ? '-' : '+' }}
-            {{ data.formattedRow['amount'] }}
+            {{ formatAmount(data.row) }}
           </span>
         </div>
 
@@ -167,7 +167,6 @@ export default {
           label: this.$t('TRANSACTION.AMOUNT'),
           type: 'number',
           field: 'amount',
-          formatFn: this.formatAmount,
           tdClass: 'text-right',
           thClass: 'text-right'
         }
@@ -205,10 +204,6 @@ export default {
       return this.hasShortId ? truncateMiddle(value, 6) : truncateMiddle(value, 10)
     },
 
-    formatAmount (value) {
-      return this.formatter_networkCurrency(value)
-    },
-
     formatSmartbridge (value) {
       if (value.length > 43) {
         return `${value.slice(0, 40)}...`
@@ -218,6 +213,14 @@ export default {
 
     formatHash (value) {
       return truncateMiddle(value, 10)
+    },
+
+    formatAmount (row, includeFee = true) {
+      return this.formatter_networkCurrency(TransactionService.getAmount(this, row, this.wallet_fromRoute, includeFee))
+    },
+
+    formatFee (value) {
+      return this.formatter_networkCurrency(value)
     },
 
     formatRow (row) {

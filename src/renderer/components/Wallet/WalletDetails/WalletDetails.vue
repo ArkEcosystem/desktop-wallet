@@ -422,7 +422,7 @@ export default {
     getVoteTitle () {
       if (this.isUnvoting && this.votedDelegate) {
         return this.$t('WALLET_DELEGATES.UNVOTE_DELEGATE', { delegate: this.votedDelegate.username })
-      } else if (this.isVoting && this.selectedDelegate) {
+      } else if (this.isVoting && this.selectedDelegate && !this.selectedDelegate.isResigned) {
         return this.$t('WALLET_DELEGATES.VOTE_DELEGATE', { delegate: this.selectedDelegate.username })
       } else {
         return `${this.$t('COMMON.DELEGATE')} ${this.selectedDelegate.username}`
