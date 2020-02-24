@@ -24,7 +24,7 @@
         </button>
       </div>
     </nav>
-    <section class="MenuTab__content p-5">
+    <section class="MenuTab__content p-5 overflow-y-auto">
       <slot />
     </section>
   </div>
@@ -92,6 +92,10 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
+.MenuTab {
+  @apply .flex .flex-col .h-full;
+}
+
 .MenuTab__nav__item--active {
   @apply .bg-theme-switch-button .text-theme-button-text;
 }

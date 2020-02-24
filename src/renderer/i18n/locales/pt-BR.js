@@ -398,6 +398,12 @@ export default {
     TITLE: 'Confirmação'
   },
 
+  MODAL_CLOSE_CONFIRMATION: {
+    QUESTION: 'Tem certeza que deseja fechar esta janela?',
+    CONFIRM: 'Sim, fechar',
+    CANCEL: 'Não, cancelar'
+  },
+
   MODAL_QR_CODE: {
     TITLE: 'QR Code',
     SUBTITLE: 'Verificar endereço'
