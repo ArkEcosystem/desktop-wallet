@@ -726,6 +726,44 @@ describe('PluginModule', () => {
       })
     })
 
+    describe('avatars', () => {
+      beforeEach(() => {
+        store.replaceState(merge(
+          JSON.parse(JSON.stringify(initialState)),
+          {
+            plugin: {
+              loaded: {
+                [profile1.id]: {
+                  [availablePlugins[0].config.id]: {
+                    ...availablePlugins[0],
+                    avatars: { 'avatar-1': 'avatar-1' }
+                  }
+                }
+              }
+            }
+          }
+        ))
+      })
+
+      it('should return an empty list if there are no loaded plugins for the given profile', () => {
+        expect(store.getters['plugin/avatars'](profiles[1].id)).toEqual([])
+      })
+
+      it.each([null, profile1.id])('should return the avatars', (profileId) => {
+        const spy = jest.spyOn(pluginManager, 'getAvatarComponents').mockImplementation(() => {
+          return store.getters['plugin/loaded'][availablePlugins[0].config.id].avatars
+        })
+
+        expect(store.getters['plugin/avatars'](profileId)).toEqual([{
+          component: 'avatar-1',
+          name: 'avatar-1',
+          pluginId: availablePlugins[0].config.id
+        }])
+
+        spy.mockRestore()
+      })
+    })
+
     describe('menuItems', () => {
       beforeAll(() => {
         store.replaceState(merge(
