@@ -1317,6 +1317,70 @@ describe('PluginModule', () => {
       })
     })
 
+    describe('setAvatars', () => {
+      beforeEach(() => {
+        store.replaceState(merge(
+          JSON.parse(JSON.stringify(initialState)),
+          {
+            plugin: {
+              enabled: {
+                [profile1.id]: {
+                  [availablePlugins[0].config.id]: true
+                }
+              },
+              loaded: {
+                [profile1.id]: {
+                  [availablePlugins[0].config.id]: {
+                    ...availablePlugins[0],
+                    avatars: { 'avatar-1': 'avatar-1' }
+                  }
+                }
+              }
+            }
+          }
+        ))
+      })
+
+      it('should throw an error if the plugin is not enabled', () => {
+        try {
+          store.dispatch('plugin/setAvatars', {
+            pluginId: availablePlugins[1].config.id,
+            profileId: profile1.id
+          })
+        } catch (e) {
+          expect(e.message).toBe('Plugin is not enabled')
+        }
+      })
+
+      it.each([null, profile1.id])('should set the avatars if the plugin is enabled', (profileId) => {
+        const spy = jest.spyOn(pluginManager, 'getAvatarComponents').mockImplementation(() => {
+          return store.getters['plugin/loaded'][availablePlugins[0].config.id].avatars
+        })
+
+        expect(store.getters['plugin/avatars'](profile1.id)).toEqual([{
+          component: 'avatar-1',
+          name: 'avatar-1',
+          pluginId: availablePlugins[0].config.id
+        }])
+
+        store.dispatch('plugin/setAvatars', {
+          pluginId: availablePlugins[0].config.id,
+          profileId,
+          avatars: {
+            'avatar-2': 'avatar-2'
+          }
+        })
+
+        expect(store.getters['plugin/avatars'](profile1.id)).toEqual([{
+          component: 'avatar-2',
+          name: 'avatar-2',
+          pluginId: availablePlugins[0].config.id
+        }])
+
+        spy.mockRestore()
+      })
+    })
+
     describe('setMenuItems', () => {
       beforeEach(() => {
         store.replaceState(merge(
