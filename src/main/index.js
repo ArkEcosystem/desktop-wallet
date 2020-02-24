@@ -188,12 +188,14 @@ if (!gotTheLock) {
   }
 }
 
-app.on('ready', () => {
+const bootstrapApplication = () => {
   createLoadingWindow()
   createWindow()
   setupPluginManager({ sendToWindow, windows, ipcMain })
   setupUpdater({ sendToWindow, ipcMain })
-})
+}
+
+app.on('ready', () => bootstrapApplication())
 
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
@@ -203,8 +205,7 @@ app.on('window-all-closed', () => {
 
 app.on('activate', () => {
   if (windows.main === null) {
-    createLoadingWindow()
-    createWindow()
+    bootstrapApplication()
   }
 })
 
