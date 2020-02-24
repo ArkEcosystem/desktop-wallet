@@ -204,7 +204,8 @@
 </template>
 
 <script>
-import { filter, sortBy, uniqBy } from 'lodash'
+import { filter, uniqBy } from 'lodash'
+import { sortByProps } from '@/components/utils/Sorting'
 import Loader from '@/components/utils/Loader'
 import { MenuNavigation, MenuNavigationItem } from '@/components/Menu'
 import { WalletIdenticon, WalletIdenticonPlaceholder } from '../'
@@ -444,7 +445,7 @@ export default {
       if (field === 'name') {
         wallets = this.wallet_sortByName(wallets)
       } else if (field === 'balance') {
-        wallets = sortBy(wallets, ['balance', 'name', 'address'])
+        wallets = wallets.sort(sortByProps(['balance', 'name', 'address']))
       } else {
         throw new Error(`Sorting by "${field}" is not implemented`)
       }

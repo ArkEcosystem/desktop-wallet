@@ -44,7 +44,9 @@ export default {
 
         let match = true
 
-        if (category && category !== 'all') {
+        if (category === 'all') {
+          match = match && !plugin.config.categories.includes('theme')
+        } else if (category && category !== 'all') {
           match = match && plugin.config.categories.includes(category)
         }
 

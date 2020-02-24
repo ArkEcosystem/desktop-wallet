@@ -1,6 +1,12 @@
 <template>
-  <ListDivided :is-floating-label="true">
-    <ListDividedItem :label="$t('TRANSACTION.SENDER')">
+  <ListDivided
+    class="TransactionConfirmDelegateRegistration"
+    :is-floating-label="true"
+  >
+    <ListDividedItem
+      class="TransactionConfirmDelegateRegistration__sender"
+      :label="$t('TRANSACTION.SENDER')"
+    >
       {{ senderLabel }}
       <span
         v-if="senderLabel !== currentWallet.address"
@@ -10,8 +16,11 @@
       </span>
     </ListDividedItem>
 
-    <ListDividedItem :label="$t('WALLET_DELEGATES.USERNAME')">
-      {{ getUsername(transaction) }}
+    <ListDividedItem
+      class="TransactionConfirmDelegateRegistration__username"
+      :label="$t('WALLET_DELEGATES.USERNAME')"
+    >
+      {{ username }}
     </ListDividedItem>
   </ListDivided>
 </template>
@@ -23,7 +32,7 @@ import { ListDivided, ListDividedItem } from '@/components/ListDivided'
 export default {
   name: 'TransactionConfirmDelegateRegistration',
 
-  transactionType: TRANSACTION_TYPES.DELEGATE_REGISTRATION,
+  transactionType: TRANSACTION_TYPES.GROUP_1.DELEGATE_REGISTRATION,
 
   inject: ['currentWallet', 'transaction'],
 
@@ -35,14 +44,13 @@ export default {
   computed: {
     senderLabel () {
       return this.wallet_formatAddress(this.currentWallet.address)
-    }
-  },
+    },
 
-  methods: {
-    getUsername (transaction) {
-      if (transaction.asset && transaction.asset.delegate) {
-        return transaction.asset.delegate.username
+    username () {
+      if (this.transaction.asset && this.transaction.asset.delegate) {
+        return this.transaction.asset.delegate.username
       }
+
       return ''
     }
   }

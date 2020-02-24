@@ -1,5 +1,5 @@
-import { TRANSACTION_TYPES } from '@config'
-import { Transactions } from '@arkecosystem/crypto'
+import { TRANSACTION_GROUPS, TRANSACTION_TYPES } from '@config'
+import { Crypto, Transactions } from '@arkecosystem/crypto'
 import BigNumber from '@/plugins/bignumber'
 
 export default class TransactionService {
@@ -25,6 +25,52 @@ export default class TransactionService {
   }
 
   /**
+   * Get amount for transaction.
+   * @param  {Object} vm
+   * @param  {Object} transaction
+   * @return {String}
+   */
+  static getAmount (vm, transaction, wallet, includeFee = false) {
+    const amount = vm.currency_toBuilder(0)
+    const walletAddress = transaction.walletAddress || (wallet ? wallet.address : null)
+    if (transaction.asset && transaction.asset.payments) {
+      for (const payment of transaction.asset.payments) {
+        if (walletAddress) {
+          if (walletAddress === transaction.sender && walletAddress === payment.recipientId) {
+            continue
+          } else if (walletAddress !== transaction.sender && walletAddress !== payment.recipientId) {
+            continue
+          }
+        }
+
+        amount.add(payment.amount)
+      }
+    } else if (this.isTransfer(transaction)) {
+      amount.add(transaction.amount)
+    }
+
+    if (includeFee && (!walletAddress || (walletAddress === transaction.sender))) {
+      amount.add(transaction.fee)
+    }
+
+    return amount.value
+  }
+
+  /**
+   * Get hash for transaction.
+   * @param  {Object}  transaction
+   * @param  {Boolean} excludeMultiSignature
+   * @return {Buffer}
+   */
+  static getHash (transaction, excludeMultiSignature = true) {
+    return Transactions.Utils.toHash(transaction, {
+      excludeSignature: true,
+      excludeSecondSignature: true,
+      excludeMultiSignature
+    })
+  }
+
+  /**
    * Get total amount for transaction.
    * @param  {Object} transaction
    * @return {String}
@@ -46,7 +92,7 @@ export default class TransactionService {
     const transaction = transactionObject.getStruct()
     transaction.senderPublicKey = wallet.publicKey // Restore original sender public key
 
-    if (transactionObject.data.type === TRANSACTION_TYPES.VOTE) {
+    if (transactionObject.data.type === TRANSACTION_TYPES.GROUP_1.VOTE) {
       transaction.recipientId = wallet.address
     }
 
@@ -63,5 +109,126 @@ export default class TransactionService {
     transaction.id = this.getId(transaction)
 
     return transaction
+  }
+
+  /**
+   * Get total amount for transaction.
+   * @param  {Object} transaction
+   * @return {String}
+   */
+  static isTransfer (transaction) {
+    if (transaction.typeGroup === TRANSACTION_GROUPS.MAGISTRATE) {
+      return false
+    }
+
+    const transferTypes = [
+      TRANSACTION_TYPES.GROUP_1.TRANSFER
+    ]
+
+    return transferTypes.includes(transaction.type)
+  }
+
+  /*
+   * Sign message with Ledger.
+   * @param {Object} wallet
+   * @param {String} message
+   * @return {Object}
+   */
+  static async ledgerSignMessage (wallet, message, vm) {
+    const signature = await vm.$store.dispatch('ledger/signMessage', {
+      messageHex: Buffer.from(message).toString('hex'),
+      accountIndex: wallet.ledgerIndex
+    })
+
+    if (!signature) {
+      throw new Error(vm.$t('TRANSACTION.LEDGER_USER_DECLINED'))
+    }
+
+    return signature
+  }
+
+  static isMultiSignature (transaction) {
+    return !!transaction.multiSignature
+  }
+
+  static isMultiSignatureRegistration (transaction) {
+    return transaction.type === TRANSACTION_TYPES.GROUP_1.MULTI_SIGNATURE
+  }
+
+  static needsSignatures (transaction) {
+    if (!this.isMultiSignature(transaction)) {
+      return false
+    }
+
+    if (this.isMultiSignatureRegistration(transaction)) {
+      return this.needsAllSignatures(transaction)
+    }
+
+    return this.getValidMultiSignatures(transaction).length < transaction.multiSignature.min
+  }
+
+  static needsAllSignatures (transaction) {
+    return this.getValidMultiSignatures(transaction).length < transaction.multiSignature.publicKeys.length
+  }
+
+  static needsWalletSignature (transaction, publicKey) {
+    if (this.isMultiSignatureRegistration(transaction) && this.isMultiSignatureReady(transaction, true)) {
+      return transaction.senderPublicKey === publicKey && this.needsFinalSignature(transaction)
+    }
+
+    if (!this.isMultiSignature(transaction)) {
+      return false
+    }
+
+    const index = transaction.multiSignature.publicKeys.indexOf(publicKey)
+    if (index === -1) {
+      return false
+    } else if (!transaction.signatures) {
+      return true
+    }
+
+    const signature = transaction.signatures.find(signature => parseInt(signature.substring(0, 2), 16) === index)
+    if (!signature) {
+      return true
+    }
+
+    return !Crypto.Hash.verifySchnorr(this.getHash(transaction), signature.slice(2, 130), publicKey)
+  }
+
+  static isMultiSignatureReady (transaction, excludeFinal = false) {
+    if (this.needsSignatures(transaction)) {
+      return false
+    } else if (!excludeFinal && this.isMultiSignatureRegistration(transaction) && this.needsFinalSignature(transaction)) {
+      return false
+    }
+
+    return true
+  }
+
+  static needsFinalSignature (transaction) {
+    if (this.isMultiSignature(transaction) && !this.isMultiSignatureRegistration(transaction)) {
+      return false
+    }
+
+    return !transaction.signature || !Crypto.Hash.verifySchnorr(this.getHash(transaction, false), transaction.signature, transaction.senderPublicKey)
+  }
+
+  static getValidMultiSignatures (transaction) {
+    if (!this.isMultiSignature(transaction) || !transaction.signatures || !transaction.signatures.length) {
+      return []
+    }
+
+    const validSignatures = []
+    for (const signature of transaction.signatures) {
+      const publicKeyIndex = parseInt(signature.slice(0, 2), 16)
+      const partialSignature = signature.slice(2, 130)
+      const publicKey = transaction.multiSignature.publicKeys[publicKeyIndex]
+
+      if (Crypto.Hash.verifySchnorr(this.getHash(transaction), partialSignature, publicKey)) {
+        validSignatures.push(signature)
+      }
+    }
+
+    return validSignatures
   }
 }

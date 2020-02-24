@@ -1,9 +1,8 @@
 <template>
-  <div
-    class="TransactionFormVote"
-  >
+  <div class="TransactionFormVote">
     <Collapse
       :is-open="!isPassphraseStep"
+      class="TransactionFormVote__delegate-details"
     >
       <ListDivided :is-floating-label="true">
         <ListDividedItem :label="$t('TRANSACTION.SENDER')">
@@ -24,9 +23,14 @@
             @click="emitCancel"
           />
         </ListDividedItem>
+        <ListDividedItem :label="$t('WALLET_DELEGATES.STATUS.TITLE')">
+          <span :class="delegateStatus.class">
+            {{ delegateStatus.text }}
+          </span>
+        </ListDividedItem>
         <ListDividedItem
           :label="$t('WALLET_DELEGATES.RANK')"
-          :value="delegate.rank"
+          :value="rankLabel"
         />
         <ListDividedItem
           :label="$t('WALLET_DELEGATES.APPROVAL')"
@@ -78,40 +82,44 @@
       </div>
     </Collapse>
 
-    <Collapse
-      :is-open="isPassphraseStep"
-    >
+    <Collapse :is-open="isPassphraseStep">
       <div class="mt-12">
         <InputFee
           ref="fee"
           :currency="walletNetwork.token"
           :transaction-type="$options.transactionType"
           :show-insufficient-funds="true"
+          class="TransactionFormVote__fee"
           @input="onFee"
         />
       </div>
 
-      <div
-        v-if="currentWallet.isLedger"
-        class="mt-10"
-      >
-        {{ $t('TRANSACTION.LEDGER_SIGN_NOTICE') }}
+      <div v-if="!isMultiSignature">
+        <div
+          v-if="currentWallet.isLedger"
+          class="TransactionFormVote__ledger-notice mt-10"
+        >
+          {{ $t('TRANSACTION.LEDGER_SIGN_NOTICE') }}
+        </div>
+
+        <InputPassword
+          v-else-if="currentWallet.passphrase"
+          ref="password"
+          v-model="$v.form.walletPassword.$model"
+          :label="$t('TRANSACTION.PASSWORD')"
+          :is-required="true"
+          class="TransactionFormVote__password mt-4"
+        />
+
+        <PassphraseInput
+          v-else
+          ref="passphrase"
+          v-model="$v.form.passphrase.$model"
+          :address="currentWallet.address"
+          :pub-key-hash="walletNetwork.version"
+          class="TransactionFormVote__passphrase mt-4"
+        />
       </div>
-      <InputPassword
-        v-else-if="currentWallet.passphrase"
-        ref="password"
-        v-model="$v.form.walletPassword.$model"
-        :label="$t('TRANSACTION.PASSWORD')"
-        :is-required="true"
-      />
-      <PassphraseInput
-        v-else
-        ref="passphrase"
-        v-model="$v.form.passphrase.$model"
-        :address="currentWallet.address"
-        :pub-key-hash="walletNetwork.version"
-        class="mt-5"
-      />
 
       <PassphraseInput
         v-if="currentWallet.secondPublicKey"
@@ -120,13 +128,13 @@
         :label="$t('TRANSACTION.SECOND_PASSPHRASE')"
         :pub-key-hash="walletNetwork.version"
         :public-key="currentWallet.secondPublicKey"
-        class="mt-5"
+        class="TransactionFormVote__second-passphrase mt-5"
       />
 
       <button
         :disabled="$v.form.$invalid"
         type="button"
-        class="blue-button mt-5"
+        class="TransactionFormVote__next blue-button mt-5"
         @click="onSubmit"
       >
         {{ $t('COMMON.NEXT') }}
@@ -146,7 +154,6 @@
 </template>
 
 <script>
-import { required } from 'vuelidate/lib/validators'
 import { TRANSACTION_TYPES } from '@config'
 import { Collapse } from '@/components/Collapse'
 import { InputFee, InputPassword } from '@/components/Input'
@@ -154,13 +161,12 @@ import { ListDivided, ListDividedItem } from '@/components/ListDivided'
 import { ModalLoader } from '@/components/Modal'
 import { PassphraseInput } from '@/components/Passphrase'
 import WalletAddress from '@/components/Wallet/WalletAddress'
-import TransactionService from '@/services/transaction'
-import onSubmit from './mixin-on-submit'
+import mixin from './mixin'
 
 export default {
   name: 'TransactionFormVote',
 
-  transactionType: TRANSACTION_TYPES.VOTE,
+  transactionType: TRANSACTION_TYPES.GROUP_1.VOTE,
 
   components: {
     Collapse,
@@ -173,7 +179,7 @@ export default {
     WalletAddress
   },
 
-  mixins: [onSubmit],
+  mixins: [mixin],
 
   props: {
     delegate: {
@@ -200,26 +206,52 @@ export default {
       walletPassword: ''
     },
     forged: 0,
-    voters: '0',
-    showEncryptLoader: false,
-    showLedgerLoader: false
+    voters: '0'
   }),
 
   computed: {
-    currentWallet () {
-      return this.wallet_fromRoute
+    delegateStatus () {
+      const activeThreshold = this.session_network.constants.activeDelegates
+      if (this.delegate.isResigned) {
+        return {
+          text: this.$t('WALLET_DELEGATES.STATUS.RESIGNED'),
+          class: 'text-red'
+        }
+      }
+      if (this.delegate.rank && this.delegate.rank <= activeThreshold) {
+        return {
+          text: this.$t('WALLET_DELEGATES.STATUS.ACTIVE'),
+          class: 'text-green'
+        }
+      }
+      return {
+        text: this.$t('WALLET_DELEGATES.STATUS.STANDBY'),
+        class: 'text-orange'
+      }
+    },
+
+    rankLabel () {
+      if (this.delegate.rank === undefined && this.delegate.isResigned) {
+        return this.$t('WALLET_DELEGATES.RANK_NOT_APPLICABLE')
+      }
+
+      if (this.delegate.rank === undefined) {
+        return this.$t('WALLET_DELEGATES.RANK_NOT_AVAILABLE')
+      }
+
+      return this.delegate.rank
     },
 
     blocksProduced () {
-      return this.delegate.blocks.produced || '0'
-    },
+      if (!this.delegate.blocks || !this.delegate.blocks.produced) {
+        return 0
+      }
 
-    senderLabel () {
-      return this.wallet_formatAddress(this.currentWallet.address)
+      return this.delegate.blocks.produced
     },
 
     showVoteUnvoteButton () {
-      if (this.currentWallet.isContact || (!!this.votedDelegate && !this.isVoter)) {
+      if (this.currentWallet.isContact || (!!this.votedDelegate && !this.isVoter) || (this.delegate.isResigned && !this.isVoter)) {
         return false
       }
 
@@ -228,17 +260,13 @@ export default {
 
     showCurrentlyVoting () {
       return !!this.votedDelegate && !this.isVoter
-    },
-
-    walletNetwork () {
-      return this.session_network
     }
   },
 
   watch: {
     isPassphraseStep () {
       // Ignore Ledger wallets
-      if (this.currentWallet.isLedger) {
+      if (this.currentWallet.isLedger || this.isMultiSignature) {
         return
       }
 
@@ -254,17 +282,47 @@ export default {
   mounted () {
     this.fetchForged()
     this.fetchVoters()
-
-    this.form.fee = this.$refs.fee.fee
   },
 
   methods: {
+    getTransactionData () {
+      const transactionData = {
+        address: this.currentWallet.address,
+        passphrase: this.form.passphrase,
+        votes: [
+          `${this.isVoter ? '-' : '+'}${this.delegate.publicKey}`
+        ],
+        fee: this.getFee(),
+        wif: this.form.wif,
+        networkWif: this.walletNetwork.wif,
+        multiSignature: this.currentWallet.multiSignature
+      }
+
+      if (this.currentWallet.secondPublicKey) {
+        transactionData.secondPassphrase = this.form.secondPassphrase
+      }
+
+      return transactionData
+    },
+
+    async buildTransaction (transactionData, isAdvancedFee = false, returnObject = false) {
+      return this.$client.buildVote(transactionData, isAdvancedFee, returnObject)
+    },
+
+    transactionError () {
+      this.$error(this.$t('TRANSACTION.ERROR.VALIDATION.VOTE'))
+    },
+
+    postSubmit () {
+      this.reset()
+    },
+
     toggleStep () {
       this.isPassphraseStep = !this.isPassphraseStep
     },
 
-    async fetchForged () {
-      const forged = await this.$client.fetchDelegateForged(this.delegate)
+    fetchForged () {
+      const forged = this.$client.fetchDelegateForged(this.delegate)
       this.forged = this.currency_format(this.currency_subToUnit(forged), { currencyFrom: 'network' })
     },
 
@@ -272,132 +330,31 @@ export default {
       this.voters = await this.$client.fetchDelegateVoters(this.delegate) || '0'
     },
 
-    onFee (fee) {
-      this.$set(this.form, 'fee', fee)
-    },
-
-    async submit () {
-      // Ensure that fee has value, even when the user has not interacted
-      if (!this.form.fee) {
-        this.form.fee = this.$refs.fee.fee
-      }
-
-      const { publicKey } = this.delegate
-      const prefix = this.isVoter ? '-' : '+'
-
-      const votes = [
-        `${prefix}${publicKey}`
-      ]
-      const transactionData = {
-        passphrase: this.form.passphrase,
-        votes,
-        fee: this.currency_unitToSub(this.form.fee),
-        wif: this.form.wif,
-        networkWif: this.walletNetwork.wif
-      }
-
-      if (this.currentWallet.secondPublicKey) {
-        transactionData.secondPassphrase = this.form.secondPassphrase
-      }
-
-      let success = true
-      let transaction
-      if (!this.currentWallet.isLedger) {
-        transaction = await this.$client.buildVote(transactionData, this.$refs.fee && this.$refs.fee.isAdvancedFee)
-      } else {
-        success = false
-        this.showLedgerLoader = true
-        try {
-          const transactionObject = await this.$client.buildVote(transactionData, this.$refs.fee && this.$refs.fee.isAdvancedFee, true)
-          transaction = await TransactionService.ledgerSign(this.currentWallet, transactionObject, this)
-          transaction.totalAmount = TransactionService.getTotalAmount(transaction)
-          success = true
-        } catch (error) {
-          this.$error(`${this.$t('TRANSACTION.LEDGER_SIGN_FAILED')}: ${error.message}`)
-        }
-        this.showLedgerLoader = false
-      }
-
-      if (success) {
-        this.emitNext(transaction)
-        this.reset()
-      }
-    },
-
     reset () {
       this.isPassphraseStep = false
-      if (!this.currentWallet.passphrase && !this.currentWallet.isLedger) {
-        this.$set(this.form, 'passphrase', '')
-        this.$refs.passphrase.reset()
-      } else if (!this.currentWallet.isLedger) {
-        this.$set(this.form, 'walletPassword', '')
-        this.$refs.password.reset()
+      if (!this.isMultiSignature) {
+        if (!this.currentWallet.passphrase && !this.currentWallet.isLedger) {
+          this.$set(this.form, 'passphrase', '')
+          this.$refs.passphrase.reset()
+        } else if (!this.currentWallet.isLedger) {
+          this.$set(this.form, 'walletPassword', '')
+          this.$refs.password.reset()
+        }
       }
       this.$v.$reset()
     },
 
     emitCancel () {
       this.$emit('cancel', 'navigateToTransactions')
-    },
-
-    emitNext (transaction) {
-      this.$emit('next', { transaction })
     }
   },
 
   validations: {
     form: {
-      fee: {
-        required,
-        isValid () {
-          if (this.$refs.fee) {
-            return !this.$refs.fee.$v.$invalid
-          }
-
-          return false
-        }
-      },
-      passphrase: {
-        isValid (value) {
-          if (this.currentWallet.isLedger || this.currentWallet.passphrase) {
-            return true
-          }
-
-          if (this.$refs.passphrase) {
-            return !this.$refs.passphrase.$v.$invalid
-          }
-          return false
-        }
-      },
-      walletPassword: {
-        isValid (value) {
-          if (this.currentWallet.isLedger || !this.currentWallet.passphrase) {
-            return true
-          }
-
-          if (!this.form.walletPassword || !this.form.walletPassword.length) {
-            return false
-          }
-
-          if (this.$refs.password) {
-            return !this.$refs.password.$v.$invalid
-          }
-
-          return false
-        }
-      },
-      secondPassphrase: {
-        isValid (value) {
-          if (!this.currentWallet.secondPublicKey) {
-            return true
-          }
-
-          if (this.$refs.secondPassphrase) {
-            return !this.$refs.secondPassphrase.$v.$invalid
-          }
-          return false
-        }
-      }
+      fee: mixin.validators.fee,
+      passphrase: mixin.validators.passphrase,
+      walletPassword: mixin.validators.walletPassword,
+      secondPassphrase: mixin.validators.secondPassphrase
     }
   }
 }

@@ -24,6 +24,7 @@ export default {
     FINISH: 'Finish',
     HIDE_WALLET_BUTTON_TEXT: 'Hide text from wallet buttons',
     IS_MARKET_CHART_ENABLED: 'Price chart on the dashboard',
+    INITIALIZING: 'Initializing...',
     LANGUAGE: 'Application Language',
     LEDGER: 'Ledger',
     LEDGER_WALLET: 'This is a Ledger wallet',
@@ -36,6 +37,7 @@ export default {
     OTHER: 'Other',
     PREV: 'Prev',
     PROFILE_NAME: 'Profile name',
+    PRICE_PROVIDER: 'Price Provider',
     REMOVE: 'Remove',
     SAVE: 'Save',
     SIZE: 'Size',
@@ -49,6 +51,7 @@ export default {
     WARNING: 'Warning',
     WILL: 'will',
     WALLET: 'Wallet',
+    X_OF_Y: '{0} of {1}',
     ADVANCED_MODE: 'Advanced Mode'
   },
 
@@ -124,10 +127,16 @@ export default {
     FAILED_ENCRYPT: 'Failed to encrypt passphrase'
   },
 
+  LEDGER: {
+    NEEDS_UPDATE: 'Ledger update available! Please update the ARK app via Ledger Live to send transactions on this network'
+  },
+
   PEER: {
     BEST: 'Connect to best',
     CONNECTED: 'Connected to peer',
     CONNECT_CUSTOM: 'Connect custom peer',
+    CUSTOM_TITLE: 'Connect to custom peer',
+    MULTI_SIGNATURE_TITLE: 'Connect multisignature peer',
     CONNECT_FAILED: 'Failed to connect to peer',
     LATENCY: 'Latency',
     DISCONNECT: 'Disconnect from peer',
@@ -143,10 +152,15 @@ export default {
 
   VALIDATION: {
     TOO_LONG: 'The \'{0}\' is too long',
+    TOO_SHORT: 'The \'{0}\' is too short',
+    INVALID_SEED: 'Invalid Seed',
     INVALID_URI: 'Invalid URI',
+    INVALID_URL: 'Invalid URL',
+    INVALID_PORT: 'Invalid Port Number',
     INVALID_FORMAT: 'Invalid format',
     INVALID_TYPE: 'Invalid type',
     MAX_LENGTH: 'Max {0}',
+    MIN_LENGTH: 'Min {0}',
     MUST_BE_GREATER_THAN: 'Must be greater than {0}',
     NOT_MATCH: 'The \'{0}\' does not match the \'{1}\'',
     NOT_VALID: 'The \'{0}\' is not valid',
@@ -216,6 +230,7 @@ export default {
   MARKET: {
     MARKET: 'Market',
     HISTORICAL_DATA: 'Historical data',
+    CHECK_TRADEABLE: 'Check Tradeable',
     DAY: 'Day',
     WEEK: 'Week',
     MONTH: 'Month'
@@ -356,6 +371,10 @@ export default {
     SEARCH_HINT: 'You can search by username, address or public key'
   },
 
+  INPUT_EDITABLE_LIST: {
+    NO_ITEMS: 'This list has no items'
+  },
+
   INPUT_FEE: {
     LAST: 'Last',
     MINIMUM: 'Minimum',
@@ -379,6 +398,13 @@ export default {
 
   INPUT_GRID_MODAL: {
     TITLE: 'Select'
+  },
+
+  INPUT_PUBLIC_KEY: {
+    TITLE: 'Public Key',
+    ERROR: {
+      NOT_VALID: 'The public key is not valid'
+    }
   },
 
   WALLET_SELECTION: {
@@ -482,7 +508,6 @@ export default {
     CONNECT: 'Connect',
     HOST: 'IP / Host',
     PORT: 'Port',
-    TITLE: 'Connect to custom peer',
     VALIDATING: 'Validating peer details...',
     PLACEHOLDER: {
       HOST: 'http://1.2.3.4',
@@ -636,7 +661,7 @@ export default {
         ALL: 'All',
         GAMING: 'Gaming',
         UTILITY: 'Utility',
-        THEME: 'Theme',
+        THEME: 'Themes',
         OTHER: 'Other'
       },
       FILTERS: {
@@ -744,8 +769,11 @@ export default {
     },
 
     WALLET: {
+      BUSINESS: 'Business',
       TRANSACTIONS: 'Transactions',
       DELEGATES: 'Delegates',
+      IPFS: 'IPFS',
+      MULTI_SIGNATURE: 'Multisignature',
       STATISTICS: 'Statistics',
       SIGN_VERIFY: 'Sign',
       PURCHASE: 'Purchase {ticker}'
@@ -922,33 +950,75 @@ export default {
       DELEGATE_REGISTRATION: 'Delegate Registration',
       VOTE: 'Vote',
       UNVOTE: 'Unvote',
-      MULTI_SIGNATURE: 'Multi Signature',
+      MULTI_SIGN: 'Multisignature Transaction',
+      MULTI_SIGNATURE: 'Multisignature',
       IPFS: 'IPFS',
-      TIMELOCK_TRANSFER: 'Timelock Transfer',
-      MULTI_PAYMENT: 'Multi Payment',
-      DELEGATE_RESIGNATION: 'Delegate Resignation'
+      MULTI_PAYMENT: 'Multipayment',
+      DELEGATE_RESIGNATION: 'Delegate Resignation',
+      HTLC_LOCK: 'Timelock',
+      HTLC_CLAIM: 'Timelock Claim',
+      HTLC_REFUND: 'Timelock Refund',
+      BUSINESS_REGISTRATION: 'Business Registration',
+      BUSINESS_RESIGNATION: 'Business Resignation',
+      BUSINESS_UPDATE: 'Business Update',
+      BRIDGECHAIN_REGISTRATION: 'Bridgechain Registration',
+      BRIDGECHAIN_RESIGNATION: 'Bridgechain Resignation',
+      BRIDGECHAIN_UPDATE: 'Bridgechain Update'
     },
     ERROR: {
+      VALIDATION: {
+        TRANSFER: 'Transfer transaction could not be created',
+        SECOND_SIGNATURE: 'Second Signature transaction could not be created',
+        DELEGATE_REGISTRATION: 'Delegate Registration transaction could not be created',
+        VOTE: 'Vote transaction could not be created',
+        MULTI_SIGNATURE: 'Multisignature transaction could not be created',
+        IPFS: 'IPFS transaction could not be created',
+        DELEGATE_RESIGNATION: 'Delegate Resignation transaction could not be created',
+        BUSINESS: {
+          REGISTRATION: 'Business Registration transaction could not be created',
+          RESIGNATION: 'Business Resignation transaction could not be created',
+          UPDATE: 'Business Update transaction could not be created'
+        },
+        BRIDGECHAIN: {
+          REGISTRATION: 'Bridgechain Registration transaction could not be created',
+          RESIGNATION: 'Bridgechain Resignation transaction could not be created',
+          UPDATE: 'Bridgechain Update transaction could not be created'
+        }
+      },
       TRANSFER: 'Your transaction could not be sent',
       SECOND_SIGNATURE: 'Second signature could not be registered',
       DELEGATE_REGISTRATION: 'Could not register as delegate',
       VOTE: 'Vote could not be registered',
       UNVOTE: 'Unvote could not be registered',
-      MULTI_SIGNATURE: 'Multi signature could not be created',
-      IPFS: 'IPFS',
-      TIMELOCK_TRANSFER: 'Timelock transfer could not be created',
-      MULTI_PAYMENT: 'Multi payment could not be created',
+      IPFS: 'IPFS could not be created',
+      MULTI_SIGN: 'Could not sign transaction',
+      MULTI_SIGNATURE: 'Multisignature could not be created',
+      HTLC_LOCK: 'Timelock could not be created',
+      HTLC_CLAIM: 'Timelock Claim could not be created',
+      HTLC_REFUND: 'Timelock Refund could not be created',
+      MULTI_PAYMENT: 'Multipayment could not be created',
+      MULTI_PAYMENT_TO_SELF: 'Excluding {amount} sent to itself',
       DELEGATE_RESIGNATION: 'Delegate resignation was unsuccessful',
-      SAVE_OFFLINE: 'Failed to save transaction file',
+      BUSINESS_REGISTRATION: 'Business registration was unsuccessful',
+      BUSINESS_RESIGNATION: 'Business resignation was unsuccessful',
+      BUSINESS_UPDATE: 'Business update was unsuccessful',
+      BRIDGECHAIN_REGISTRATION: 'Bridgechain registration was unsuccessful',
+      BRIDGECHAIN_RESIGNATION: 'Bridgechain resignation was unsuccessful',
+      BRIDGECHAIN_UPDATE: 'Bridgechain update was unsuccessful',
+      SAVE_OFFLINE: 'Failed to save transaction file: {error}',
       LOAD_FROM_FILE: 'Failed to load transaction file',
       EXPIRED: 'Transaction expired before it was processed: {transactionId}',
       FEE_TOO_LOW: 'Transaction could not be sent because the fee ({fee}) is too low',
       NOTHING_SENT: 'The transaction could not be sent. Please check your network connection or change peer',
+      WRONG_NONCE: 'The transaction could not be sent. Wrong nonce provided',
       NETWORK_NOT_CONFIGURED: 'Network not configured',
       WALLET_NOT_IMPORTED: 'Wallet not imported'
     },
     FOOTER_TEXT: {
-      DELEGATE_REGISTRATION: 'Keep in mind that you cannot change the name of your delegate after the registration has been registered on the blockchain.'
+      DELEGATE_REGISTRATION: 'Keep in mind that you cannot change the name of your delegate after the registration has been registered on the blockchain.',
+      DELEGATE_RESIGNATION: 'Keep in mind that you cannot restore your delegate after the resignation has been registered on the blockchain.',
+      BUSINESS_RESIGNATION: 'Keep in mind that you cannot restore your business after the resignation has been registered on the blockchain.',
+      BRIDGECHAIN_RESIGNATION: 'Keep in mind that you cannot restore your bridgechain after the resignation has been registered on the blockchain.'
     },
     INFO: {
       BROADCASTING: 'Your transaction is being broadcast to the network',
@@ -960,11 +1030,20 @@ export default {
       DELEGATE_REGISTRATION: 'Successfully registered as delegate',
       VOTE: 'Voted successfully',
       UNVOTE: 'Unvoted successfully',
-      MULTI_SIGNATURE: 'Multi signature created successfully',
-      IPFS: 'IPFS',
-      TIMELOCK_TRANSFER: 'Timelock transfer created successfully',
-      MULTI_PAYMENT: 'Multi payment created successfully',
+      MULTI_SIGN: 'Transaction has been signed successfully',
+      MULTI_SIGNATURE: 'Multisignature created successfully',
+      IPFS: 'IPFS created successfully',
+      HTLC_LOCK: 'Timelock created successfully',
+      HTLC_CLAIM: 'Timelock Claim created successfully',
+      HTLC_REFUND: 'Timelock Refund created successfully',
+      MULTI_PAYMENT: 'Multipayment created successfully',
       DELEGATE_RESIGNATION: 'Delegate resignation was successful',
+      BUSINESS_REGISTRATION: 'Business Registration created successfully',
+      BUSINESS_RESIGNATION: 'Business Resignation created successfully',
+      BUSINESS_UPDATE: 'Business Update created successfully',
+      BRIDGECHAIN_REGISTRATION: 'Bridgechain Registration created successfully',
+      BRIDGECHAIN_RESIGNATION: 'Bridgechain Resignation created successfully',
+      BRIDGECHAIN_UPDATE: 'Bridgechain Update created successfully',
       SAVE_OFFLINE: 'The transaction file was saved successfully in: {path}',
       LOAD_FROM_FILE: 'The transaction file was loaded successfully'
     },
@@ -972,11 +1051,52 @@ export default {
       VOTE_DELEGATE: 'Vote for delegate {delegate}',
       UNVOTE_DELEGATE: 'Unvote delegate {delegate}'
     },
+    MULTI_PAYMENT: {
+      BUTTON_ADD: 'Add',
+      WARNING_DUPLICATE: 'The address is already a recipient',
+      RECIPIENTS: 'Recipients',
+      NO_RECIPIENTS: 'There are no recipients'
+    },
+    MULTI_SIGNATURE: {
+      ADDRESS: 'Multisignature Address',
+      BUTTON_ADD: 'Add',
+      ERROR_DUPLICATE: 'The public key has already been added',
+      ERROR_MIN_KEYS_TOO_HIGH: 'Minimum required signatures is too high',
+      ERROR_MIN_KEYS_TOO_LOW: 'Minimum required signatures is too low',
+      ERROR_PUBLIC_KEY_NOT_FOUND: 'Could not determine public key',
+      ERROR_PUBLIC_KEY_EXISTS: 'Public key already provided',
+      MIN_KEYS: 'Minimum Required Signatures',
+      N_MORE: '{0} more signature(s)',
+      PUBLIC_KEYS: 'Public Keys',
+      READY: 'Ready',
+      TOTAL_SIGNATURES: 'Total Signatures',
+      TAB: {
+        ADDRESS: 'Address',
+        PUBLIC_KEY: 'Public Key'
+      },
+      YOUR_SIGNATURE: 'Your Signature',
+      NO_SIGNATURES: 'There are no signatures'
+    },
+    BRIDGECHAIN: {
+      BUTTON_ADD: 'Add',
+      NAME: 'Name',
+      SEED_NODE: 'Seed Node IP Address',
+      SEED_NODES: 'Seed Nodes',
+      GENESIS_HASH: 'Genesis Hash',
+      BRIDGECHAIN_REPOSITORY: 'Bridgechain Repository',
+      BRIDGECHAIN_ASSET_REPOSITORY: 'Bridgechain Asset Repository',
+      API_PORT: 'API Port',
+      ERROR_DUPLICATE: 'The seed node has already been added',
+      NO_PEERS: 'There are no peers',
+      INVALID_SEEDS: 'You have an invalid seed node - please check it is up and running correctly | You have invalid seed nodes - please check they are up and running correctly'
+    },
     WARNING: {
       BROADCAST: 'Transaction was broadcasted to other peers. It may not be accepted by them'
     },
     AMOUNT: 'Amount',
     BLOCK_ID: 'Block ID',
+    BUSINESS_NAME: 'Business Name',
+    BRIDGECHAIN_NAME: 'Bridgechain Name',
     CONFIRMATION_COUNT: '{confirmations} Confirmations',
     CONFIRM_SEND_ALL: 'This will enable sending all of your tokens from the current wallet in this transaction.',
     CONFIRM_SEND_ALL_TITLE: 'Send all your tokens?',
@@ -986,6 +1106,7 @@ export default {
     DISCARD: 'Discard',
     EXPIRED: 'Expired',
     FEE: 'Transaction fee',
+    HASH: 'Hash',
     ID: 'ID',
     LEDGER_SIGN_NOTICE: 'Next you will confirm the transaction with your Ledger',
     LEDGER_SIGN_WAIT: 'Awaiting Ledger Signature. Please check and sign the transaction when you are ready.',
@@ -993,10 +1114,12 @@ export default {
     LEDGER_USER_DECLINED: 'User declined',
     LOAD_FROM_FILE: 'Load transaction from file',
     MULTIPLE: 'Multiple',
+    NONCE: 'Nonce',
     OPEN_IN_EXPLORER: 'Open in Explorer',
     PASSPHRASE: 'Passphrase',
     PASSWORD: 'Encryption Password',
     RECIPIENT: 'Recipient',
+    RECIPIENTS: 'Recipients',
     RESEND: 'Resend',
     RESENT_NOTICE: 'Transaction {transactionId} has been resent',
     SAVE_OFFLINE: 'Save transaction offline',
@@ -1004,9 +1127,12 @@ export default {
     SEND: 'Send',
     SEND_ALL: 'Send All',
     SENDER: 'Sender',
+    SIGN: 'Sign',
     SINGLE: 'Single',
+    STATUS: 'Status',
     TIMESTAMP: 'Timestamp',
     TRANSACTION: 'Transaction',
+    USERNAME: 'Username',
     VENDOR_FIELD: 'Smartbridge',
     WELL_CONFIRMED: 'Well Confirmed',
     WELL_CONFIRMED_COUNT: 'Well Confirmed ({confirmations} confirmations)'
@@ -1036,13 +1162,28 @@ export default {
   },
 
   SYNCHRONIZER: {
-    VOTE: 'voted for',
-    UNVOTE: 'unvoted',
-    NEW_SECOND_SIGNATURE: 'New second signature: {address}',
-    NEW_DELEGATE_REGISTRATION: 'New delegate: {address} registered as {username}',
-    NEW_VOTE: 'New vote: {address} {voteUnvote} {publicKey}',
-    NEW_TRANSFER_SENT: 'New transfer: {amount} sent from {sender} to {recipient}',
-    NEW_TRANSFER_RECEIVED: 'New transfer: {amount} received from {sender} to {recipient}'
+    GROUP_1: {
+      VOTE: 'voted for',
+      UNVOTE: 'unvoted',
+      NEW_SECOND_SIGNATURE: 'New second signature: {address}',
+      NEW_DELEGATE_REGISTRATION: 'New delegate: {address} registered as {username}',
+      NEW_VOTE: 'New vote: {address} {voteUnvote} {publicKey}',
+      NEW_MULTI_SIGNATURE: 'New multisignature registration: {address}',
+      NEW_IPFS: 'New IPFS hash: {address}',
+      NEW_MULTI_PAYMENT_SENT: 'New multipayment: {amount} sent from {sender} to {recipient}',
+      NEW_MULTI_PAYMENT_RECEIVED: 'New multipayment: {amount} received from {sender} to {recipient}',
+      NEW_DELEGATE_RESIGNATION: 'New delegate resignation: {address} registered as {username}',
+      NEW_TRANSFER_SENT: 'New transfer: {amount} sent from {sender} to {recipient}',
+      NEW_TRANSFER_RECEIVED: 'New transfer: {amount} received from {sender} to {recipient}'
+    },
+    GROUP_2: {
+      NEW_BUSINESS_REGISTRATION: 'New business registration: {address} business {name}',
+      NEW_BUSINESS_RESIGNATION: 'New business resignation: {address}',
+      NEW_BUSINESS_UPDATE: 'New business update: {address} business {name}',
+      NEW_BRIDGECHAIN_REGISTRATION: 'New bridgechain registration: {address} bridgechain {name}',
+      NEW_BRIDGECHAIN_RESIGNATION: 'New bridgechain resignation: {address} bridgechain {name}',
+      NEW_BRIDGECHAIN_UPDATE: 'New bridgechain update: {address} bridgechain {name}'
+    }
   },
 
   TRANSACTION_FORM: {
@@ -1057,13 +1198,28 @@ export default {
 
   WALLET_HEADING: {
     ACTIONS: {
-      WALLET_NAME: 'Wallet name',
-      CONTACT_NAME: 'Contact name',
-      REGISTER_DELEGATE: 'Register delegate',
-      SECOND_PASSPHRASE: '2nd passphrase',
-      DELETE_WALLET: 'Delete wallet',
-      SHOW_PUBLIC_KEY: 'Show public key',
-      SHOW_ADDRESS: 'Show address'
+      WALLET_NAME: 'Wallet Name',
+      CONTACT_NAME: 'Contact Name',
+      REGISTER_MULTISIGNATURE: 'Register Multisignature',
+      REGISTER_DELEGATE: 'Register Delegate',
+      RESIGN_DELEGATE: 'Resign Delegate',
+      SECOND_PASSPHRASE: 'Second Passphrase',
+      DELETE_WALLET: 'Delete Wallet',
+      SHOW_PUBLIC_KEY: 'Show Public Key',
+      SHOW_ADDRESS: 'Show Address',
+
+      BUSINESS: {
+        REGISTER: 'Register Business',
+        RESIGN: 'Resign Business',
+        UPDATE: 'Update Business',
+        CANNOT_RESIGN: 'You must resign all bridgechains first'
+      },
+
+      BRIDGECHAIN: {
+        REGISTER: 'Register Bridgechain',
+        RESIGN: 'Resign Bridgechain',
+        UPDATE: 'Update Bridgechain'
+      }
     },
     PENDING_BALANCE: '{amount} including 1 unconfirmed transaction | {amount} including {n} unconfirmed transactions',
     SECOND_PASSPHRASE_ENABLED: 'Second Signature Enabled'
@@ -1099,9 +1255,17 @@ export default {
   },
 
   WALLET_DELEGATES: {
+    STATUS: {
+      TITLE: 'Status',
+      ACTIVE: 'Active',
+      STANDBY: 'Standby',
+      RESIGNED: 'Resigned'
+    },
     RANK: 'Rank',
     USERNAME: 'Username',
     RANK_BANNER: 'Rank: {rank}',
+    RANK_NOT_APPLICABLE: 'Not applicable',
+    RANK_NOT_AVAILABLE: 'Not yet available',
     APPROVAL: 'Vote %',
     FORGED: 'Forged',
     BLOCKS: 'Blocks',
@@ -1114,6 +1278,7 @@ export default {
     USERNAME_EXISTS: 'A delegate with this username already exists',
     USERNAME_MAX_LENGTH_ERROR: 'The username must be less than or equal to 20 characters long',
     ALREADY_REGISTERED: 'This wallet is already registered as a delegate',
+    NOT_REGISTERED: 'This wallet is not registered as a delegate',
     BLOG: 'Voting Guide',
     EXPLANATION: 'Voting is an optional, but important mechanism that keeps the ARK network secure. The {delegates} delegates with the most votes from the network are responsible for verifying and forging transactions into new blocks. This page can be used to cast your vote for a delegate that you support. Learn more about voting for a delegate by clicking on the following link:',
     VOTE_DELEGATE: 'Vote Delegate {delegate}',
@@ -1126,6 +1291,55 @@ export default {
     AWAITING_VOTE_CONFIRMATION: 'Your {type} is awaiting confirmation',
     LOADING_VOTE: 'Loading vote details...',
     SEARCH_DELEGATE: 'Search delegate'
+  },
+
+  WALLET_IPFS: {
+    HEADER: 'IPFS Hash',
+    DESCRIPTION: 'Store an IPFS hash on the network',
+    BUTTON_STORE_HASH: 'Store Hash',
+    MESSAGE: 'IPFS Hash',
+    SIGNATURE: 'IPFS Hash',
+    HASH: 'Hash',
+    HASH_ERROR: 'The IPFS Hash is not a valid hash'
+  },
+
+  WALLET_MULTI_SIGNATURE: {
+    HEADER: 'Multisignature',
+    DESCRIPTION: 'Pending transactions requiring your signature',
+    BUTTON_SET_PEER: 'Set Peer'
+  },
+
+  WALLET_BUSINESS: {
+    BUTTON_REGISTER_BRIDGECHAIN: 'Register Bridgechain',
+    HEADER: 'Bridgechains',
+    DESCRIPTION: 'All bridgechains registered for this business',
+    NAME: 'Name',
+    NAME_ERROR: 'No special characters or uppercase allowed',
+    WEBSITE: 'Website',
+    VAT: 'VAT',
+    REPOSITORY: 'Repository',
+    NO_TRANSACTIONS: 'This wallet has no bridgechains',
+    NOT_REGISTERED: 'This wallet is not registered as a business',
+    COLUMN: {
+      NAME: 'Name',
+      SEEDS: 'Seeds',
+      GENESIS_HASH: 'Genesis Hash',
+      REPOSITORY: 'Repository'
+    },
+    BRIDGECHAIN: {
+      NAME: 'Name',
+      SEED_NODES: 'Seed Nodes',
+      GENESIS_HASH: 'Genesis Hash',
+      BRIDGECHAIN_REPOSITORY: 'Bridgechain Repository',
+      BRIDGECHAIN_ASSET_REPOSITORY: 'Bridgechain Asset Repository',
+      API_PORT: 'API Port',
+      NOT_REGISTERED: 'This bridgechain is not registered',
+      RESIGNED: 'Resigned',
+      BUTTON: {
+        RESIGN: 'Resign',
+        UPDATE: 'Update'
+      }
+    }
   },
 
   WALLET_GRID: {
