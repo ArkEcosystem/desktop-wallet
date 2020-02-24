@@ -338,6 +338,8 @@ export default {
       })
 
       await Promise.all([this.$plugins.fetchPluginsFromAdapter(), this.$plugins.fetchBlacklist(), this.$plugins.fetchWhitelist()])
+
+      ipcRenderer.send('splashscreen:app-ready')
     },
 
     onPortalChange (portal, isActive) {

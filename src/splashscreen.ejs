@@ -11,16 +11,12 @@
     <% } %>
   </head>
   <body>
-    <div id="app"></div>
+    <div id="splashscreen"></div>
     <!-- Set `__static` path to static files in production -->
     <script>
       if (process.env.NODE_ENV !== 'development') window.__static = require('path').join(__dirname, '/static').replace(/\\/g, '\\\\')
     </script>
 
-    <!-- CSS used by plugin themes would be here -->
-    <style name="plugins">
-    </style>
-
-    <script type="text/javascript" src="renderer.js"></script>
+    <script type="text/javascript" src="splashscreen.js"></script>
   </body>
 </html>
