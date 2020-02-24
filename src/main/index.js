@@ -91,7 +91,7 @@ function createWindow () {
       windows.loading.close()
     }
     windows.main.show()
-    windows.main.setFullScreen(windowState ? windowState.isFullScreen : false)
+    windows.main.setFullScreen(windowState ? Boolean(windowState.isFullScreen) : false)
   })
 
   ipcMain.on('disable-iframe-protection', function (_event, urls) {
