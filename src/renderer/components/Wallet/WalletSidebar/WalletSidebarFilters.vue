@@ -207,7 +207,7 @@ export default {
 <style lang="postcss" scoped>
 .WalletSidebarFilters {
   width: 380px;
-  /* The expanded sidebar uses `.w-1/7` */
+  /* The collapsed sidebar uses `.w-1/8` */
   right: calc(12.5% - 0.5rem);
   top: 0.75rem;
   transition: right 0.4s;
@@ -215,7 +215,7 @@ export default {
 
 .WalletSidebarFilters--expanded {
   /* The expanded sidebar uses `.w-1/3` */
-  right: calc(33.33333% - 2.5rem);
+  right: calc(33.33333% - 1.25rem);
 }
 
 .WalletSidebarFilters__sorting .MenuOptionsItem {
