@@ -403,6 +403,12 @@ export default {
     TITLE: 'Esporta Portafogli'
   },
 
+  MODAL_CLOSE_CONFIRMATION: {
+    QUESTION: 'Sei sicuro di voler chiudere questa finestra?',
+    CONFIRM: 'Sim, fechar.',
+    CANCEL: 'No, annulla'
+  },
+
   MODAL_CONFIRMATION: {
     CANCEL: 'No, annulla',
     CONTINUE: 'Sì, sono sicuro',

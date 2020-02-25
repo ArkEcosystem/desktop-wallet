@@ -22,7 +22,7 @@ export default {
   },
 
   mounted () {
-    this.$once('chart:render', () => {
+    this.$on('chart:render', () => {
       this.$emit('ready')
     })
     this.render()

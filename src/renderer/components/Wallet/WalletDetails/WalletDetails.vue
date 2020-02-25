@@ -1,6 +1,6 @@
 <template>
   <main class="WalletDetails flex flex-col">
-    <WalletHeading class="sticky pin-t z-10" />
+    <WalletHeading />
 
     <MenuTab
       ref="menutab"
@@ -422,7 +422,7 @@ export default {
     getVoteTitle () {
       if (this.isUnvoting && this.votedDelegate) {
         return this.$t('WALLET_DELEGATES.UNVOTE_DELEGATE', { delegate: this.votedDelegate.username })
-      } else if (this.isVoting && this.selectedDelegate) {
+      } else if (this.isVoting && this.selectedDelegate && !this.selectedDelegate.isResigned) {
         return this.$t('WALLET_DELEGATES.VOTE_DELEGATE', { delegate: this.selectedDelegate.username })
       } else {
         return `${this.$t('COMMON.DELEGATE')} ${this.selectedDelegate.username}`
@@ -519,9 +519,6 @@ export default {
 </script>
 
 <style lang="postcss">
-.WalletDetails .MenuTab > .MenuTab__nav {
-  @apply .sticky .pin-t .z-10
-}
 .WalletDetails__button {
   transition: 0.5s;
   cursor: pointer;

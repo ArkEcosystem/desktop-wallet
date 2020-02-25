@@ -17,10 +17,10 @@
       if (process.env.NODE_ENV !== 'development') window.__static = require('path').join(__dirname, '/static').replace(/\\/g, '\\\\')
     </script>
 
-    <!-- webpack builds are automatically injected -->
-
     <!-- CSS used by plugin themes would be here -->
     <style name="plugins">
     </style>
+
+    <script type="text/javascript" src="renderer.js"></script>
   </body>
 </html>

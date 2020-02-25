@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "ark-desktop-wallet",
-  "version": "2.8.0",
+  "version": "2.8.1",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ArkEcosystem/desktop-wallet.git"
@@ -78,8 +78,8 @@
     "decompress": "^4.2.0",
     "deepmerge": "^4.1.1",
     "du": "^1.0.0",
-    "electron-dl": "^2.0.0",
-    "electron-log": "^3.0.7",
+    "electron-dl": "^3.0.0",
+    "electron-log": "^4.0.0",
     "electron-updater": "^4.1.2",
     "electron-window-state": "^5.0.3",
     "emittery": "^0.5.0",
@@ -132,16 +132,17 @@
     "babel-register": "^6.26.0",
     "cfonts": "^2.4.2",
     "chalk": "^3.0.0",
-    "codecov": "^3.2.0",
+    "codecov": "^3.6.5",
     "copy-webpack-plugin": "^5.0.2",
     "cross-env": "^7.0.0",
     "css-loader": "^3.1.0",
     "del": "^5.0.0",
     "devtron": "^1.4.0",
-    "electron": "^6.0.0",
+    "electron": "^8.0.0",
     "electron-builder": "22.3.2",
     "electron-debug": "^3.0.1",
     "electron-devtools-installer": "^2.2.4",
+    "electron-notarize": "^0.2.1",
     "eslint": "^6.1.0",
     "eslint-config-standard": "^14.0.0",
     "eslint-friendly-formatter": "^4.0.1",
@@ -151,7 +152,7 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.0",
     "eslint-plugin-vue": "^6.0.0",
-    "file-loader": "^4.1.0",
+    "file-loader": "^5.0.0",
     "glob-all": "^3.1.0",
     "html-webpack-plugin": "^3.2.0",
     "husky": "^4.0.0",
@@ -164,7 +165,7 @@
     "mini-css-extract-plugin": "^0.9.0",
     "mock-socket": "^9.0.0",
     "multispinner": "^0.2.1",
-    "nock": "^v11.0.0-beta.28",
+    "nock": "^12.0.0",
     "node-abi": "^2.11.0",
     "node-loader": "^0.6.0",
     "postcss-loader": "^3.0.0",
@@ -176,7 +177,7 @@
     "svgo": "^1.2.0",
     "svgo-loader": "^2.2.0",
     "tailwindcss": "^0.7.4",
-    "tempy": "^0.3.0",
+    "tempy": "^0.4.0",
     "url-loader": "^2.1.0",
     "vue-html-loader": "^1.2.4",
     "vue-i18n-extract": "^1.0.2",
@@ -192,6 +193,7 @@
     "productName": "Ark Desktop Wallet",
     "appId": "io.ark.desktop-wallet",
     "artifactName": "${name}-${os}-${arch}-${version}.${ext}",
+    "afterSign": "scripts/notarize.js",
     "npmRebuild": false,
     "publish": {
       "provider": "github",
@@ -216,7 +218,13 @@
     "mac": {
       "category": "public.app-category.finance",
       "icon": "build/icons/icon.icns",
-      "hardenedRuntime": false
+      "hardenedRuntime": true,
+      "gatekeeperAssess": false,
+      "asarUnpack": [
+        "**/*.node"
+      ],
+      "entitlements": "build/entitlements.mac.plist",
+      "entitlementsInherit": "build/entitlements.mac.plist"
     },
     "win": {
       "target": "nsis",
@@ -228,7 +236,8 @@
       "target": [
         "AppImage",
         "deb",
-        "tar.gz"
+        "tar.gz",
+        "snap"
       ],
       "desktop": {
         "MimeType": "x-scheme-handler/ark;"

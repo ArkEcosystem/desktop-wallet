@@ -16,6 +16,7 @@
               [containerClassesMinimized]: !isMaximized,
             }]"
             class="ModalWindow__container flex flex-col mx-auto rounded-lg relative transition text-theme-text-content"
+            @change="onChange"
             @mousedown.stop="void 0"
           >
             <section class="ModalWindow__container__content">
@@ -66,6 +67,12 @@
                 <p v-html="message" />
               </footer>
             </slot>
+
+            <ModalCloseConfirmation
+              v-if="showConfirmationModal"
+              @cancel="showConfirmationModal = false"
+              @confirm="emitCloseAfterConfirm"
+            />
           </div>
         </div>
       </Transition>
@@ -75,12 +82,14 @@
 
 <script>
 import { ButtonClose } from '@/components/Button'
+import ModalCloseConfirmation from './ModalCloseConfirmation'
 
 export default {
   name: 'ModalWindow',
 
   components: {
-    ButtonClose
+    ButtonClose,
+    ModalCloseConfirmation
   },
 
   props: {
@@ -119,6 +128,11 @@ export default {
       required: false,
       default: true
     },
+    confirmClose: {
+      type: Boolean,
+      required: false,
+      default: false
+    },
     allowClose: {
       type: Boolean,
       required: false,
@@ -132,11 +146,14 @@ export default {
   },
 
   data: () => ({
-    isMaximized: true
+    isMaximized: true,
+    showConfirmationModal: false,
+    hasChanged: false
   }),
 
   mounted () {
     document.addEventListener('keyup', this.onEscKey, { once: true })
+    this.$eventBus.on('change', this.onChange)
   },
 
   destroyed () {
@@ -159,15 +176,29 @@ export default {
         return
       }
 
+      if (this.confirmClose && this.hasChanged) {
+        this.showConfirmationModal = true
+        return
+      }
+
       if (force || this.isMaximized) {
         this.$emit('close')
       }
+    },
+
+    emitCloseAfterConfirm () {
+      this.showConfirmationModal = false
+      this.$emit('close')
     },
 
     onEscKey (event) {
       if (event.keyCode === 27) {
         this.emitClose()
       }
+    },
+
+    onChange () {
+      this.hasChanged = true
     }
   }
 }

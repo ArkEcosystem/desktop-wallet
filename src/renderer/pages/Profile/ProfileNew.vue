@@ -67,12 +67,20 @@
                 />
               </div>
 
-              <div class="flex mb-5 w-1/2 ProfileNew__time-format-container">
+              <div class="flex mb-5 ProfileNew__time-format-container">
                 <InputSelect
                   v-model="timeFormat"
                   :items="timeFormats"
                   :label="$t('COMMON.TIME_FORMAT')"
                   name="time-format"
+                  class="flex-1 mr-5"
+                />
+
+                <InputSelect
+                  v-model="priceApi"
+                  :items="priceApis"
+                  :label="$t('COMMON.PRICE_PROVIDER')"
+                  name="price-api"
                   class="flex-1"
                 />
               </div>
@@ -190,7 +198,7 @@
 </template>
 
 <script>
-import { BIP39, NETWORKS } from '@config'
+import { BIP39, MARKET, NETWORKS } from '@config'
 import Profile from '@/models/profile'
 import { ButtonSwitch } from '@/components/Button'
 import { MenuStep, MenuStepItem } from '@/components/Menu'
@@ -277,8 +285,16 @@ export default {
         this.selectTimeFormat(timeFormat)
       }
     },
+    priceApi: {
+      get () {
+        return this.$store.getters['session/priceApi'] || 'coingecko'
+      },
+      set (priceApi) {
+        this.selectPriceApi(priceApi)
+      }
+    },
     currencies () {
-      return this.$store.getters['market/currencies']
+      return Object.keys(MARKET.currencies)
     },
     bip39Languages () {
       return BIP39.languages.reduce((all, language) => {
@@ -292,6 +308,13 @@ export default {
         all[format] = this.$t(`TIME_FORMAT.${format.toUpperCase()}`)
         return all
       }, {})
+    },
+    priceApis () {
+      return {
+        coingecko: 'CoinGecko',
+        cryptocompare: 'CryptoCompare',
+        coincap: 'CoinCap'
+      }
     },
     defaultNetworks () {
       return NETWORKS.map(network => network)
@@ -331,6 +354,7 @@ export default {
     this.schema.isMarketChartEnabled = this.isMarketChartEnabled
     this.schema.language = this.language
     this.schema.timeFormat = this.timeFormat
+    this.schema.priceApi = this.priceApi
 
     // In case we came from a profile using a plugin theme, revert back to default
     const defaultThemes = ['light', 'dark']
@@ -422,6 +446,11 @@ export default {
     async selectTimeFormat (timeFormat) {
       this.schema.timeFormat = timeFormat
       await this.$store.dispatch('session/setTimeFormat', timeFormat)
+    },
+
+    async selectPriceApi (priceApi) {
+      this.schema.priceApi = priceApi
+      await this.$store.dispatch('session/setPriceApi', priceApi)
     }
   },
 

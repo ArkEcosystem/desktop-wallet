@@ -321,6 +321,32 @@ describe('Services > Wallet', () => {
     })
   })
 
+  describe('canResignDelegate', () => {
+    it('should return true if delegate that has not resigned', () => {
+      const wallet = {
+        isDelegate: true,
+        isResigned: false
+      }
+
+      expect(WalletService.canResignDelegate(wallet)).toBe(true)
+    })
+
+    it('should return false if delegate has resigned', () => {
+      const wallet = {
+        isDelegate: true,
+        isResigned: true
+      }
+
+      expect(WalletService.canResignDelegate(wallet)).toBe(false)
+    })
+
+    it('should return false if not a delegate', () => {
+      const wallet = {}
+
+      expect(WalletService.canResignDelegate(wallet)).toBe(false)
+    })
+  })
+
   describe('isBusiness', () => {
     it('should return true if wallet has not resigned as a business when checking both scenarios', () => {
       const wallet = {
@@ -390,6 +416,53 @@ describe('Services > Wallet', () => {
       const wallet = {}
 
       expect(WalletService.canResignBusiness(wallet)).toBe(false)
+    })
+  })
+
+  describe('hasBridgechains', () => {
+    let vm
+    beforeEach(() => {
+      vm = {
+        $client: {
+          fetchBusinessBridgechains: jest.fn()
+        }
+      }
+    })
+
+    it('should return true if active bridgechains', async () => {
+      vm.$client.fetchBusinessBridgechains.mockReturnValue({
+        data: [{
+          isResigned: false
+        }, {
+          isResigned: false
+        }, {
+          isResigned: true
+        }]
+      })
+
+      expect(await WalletService.hasBridgechains({}, vm)).toBe(true)
+    })
+
+    it('should return false if all bridgechains are resigned', async () => {
+      vm.$client.fetchBusinessBridgechains.mockReturnValue({
+        data: [{
+          isResigned: true
+        }, {
+          isResigned: true
+        }, {
+          isResigned: true
+        }]
+      })
+
+      expect(await WalletService.hasBridgechains({}, vm)).toBe(false)
+    })
+
+    it('should return false if no bridgechains', async () => {
+      vm.$client.fetchBusinessBridgechains.mockReturnValue({
+        data: []
+      })
+
+      expect(await WalletService.hasBridgechains({}, vm)).toBe(false)
     })
   })
 
