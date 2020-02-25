@@ -174,6 +174,8 @@ export default {
     },
 
     async renderChart () {
+      this.isReady = false
+
       if (!this._inactive) {
         this.setLastCurrency()
         this.setLastPriceApi()
@@ -334,6 +336,8 @@ export default {
           }]
         }
       }
+
+      this.isReady = true
     },
 
     async renderGradient () {

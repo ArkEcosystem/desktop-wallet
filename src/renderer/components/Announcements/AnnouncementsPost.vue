@@ -126,15 +126,13 @@ export default {
 <style scoped>
 .AnnouncementsPost__close {
   /* The close button is shown only on hover over the entire announcement */
-  margin-top: -1px;
-  opacity: 0;
+  @apply .flex .cursor-pointer .text-theme-option-button-text .bg-theme-button .rounded .p-2 .-mt-px .opacity-0;
 }
 .AnnouncementsPost:hover > .AnnouncementsPost__close {
-  opacity: 1;
-  @apply .flex .cursor-pointer .text-theme-option-button-text .bg-theme-button .rounded .p-2;
+  @apply .opacity-100;
 }
 .AnnouncementsPost:hover > .AnnouncementsPost__close:hover {
-  opacity: 0.5;
+  @apply .opacity-50;
 }
 .AnnouncementsPost__date {
   line-height: 1.75rem;
