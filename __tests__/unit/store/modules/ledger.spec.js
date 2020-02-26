@@ -104,13 +104,13 @@ describe('ledger store module', () => {
         }
       })
 
+      await store.dispatch('ledger/connect')
+      await store.dispatch('ledger/setSlip44', 1234)
       await disconnectLedger()
+      store._vm.$error.mockReset()
       await store.dispatch('ledger/updateVersion')
 
-      expect(store._vm.$error).toHaveBeenCalledWith(
-        'Ledger update available! Please update the ARK app via Ledger Live to send transactions on this network',
-        10000
-      )
+      expect(store._vm.$error).not.toHaveBeenCalled()
     })
 
     it('should not show error if aip11 is false', async () => {
@@ -128,6 +128,8 @@ describe('ledger store module', () => {
         }
       })
 
+      await store.dispatch('ledger/connect')
+      await store.dispatch('ledger/setSlip44', 1234)
       await store.dispatch('ledger/updateVersion')
 
       expect(store._vm.$error).toHaveBeenCalledWith(
