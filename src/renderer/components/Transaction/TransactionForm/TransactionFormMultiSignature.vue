@@ -79,6 +79,7 @@
 
       <TransactionMultiSignatureList
         :items="$v.form.publicKeys.$model"
+        :show-count="true"
         class="TransactionModalMultiSignature__public-keys mt-4"
         @remove="emitRemovePublicKey"
       />
@@ -210,7 +211,7 @@ export default {
 
   mixins: [mixin],
 
-  data: vm => ({
+  data: () => ({
     step: 1,
     currentTab: 0,
     address: '',
@@ -433,7 +434,7 @@ export default {
 
   validations: {
     publicKey: {
-      isValid (value) {
+      isValid () {
         if (this.$refs.publicKey) {
           return !this.$refs.publicKey.$v.$invalid
         }
@@ -443,7 +444,7 @@ export default {
     },
 
     address: {
-      isValid (value) {
+      isValid () {
         if (this.$refs.address) {
           return !this.$refs.address.$v.$invalid
         }
@@ -489,12 +490,23 @@ export default {
 </script>
 
 <style>
+.TransactionModalMultiSignature__menu-tabs .MenuTab__nav {
+  @apply .rounded-lg;
+}
+
 .TransactionModalMultiSignature__menu-tabs .MenuTab__nav__items {
   @apply .flex;
 }
 
 .TransactionModalMultiSignature__menu-tabs .MenuTab__nav__item {
   @apply .flex-1;
+}
+
+.TransactionModalMultiSignature__menu-tabs .MenuTab__nav__item:first-child {
+  @apply .rounded-l;
+}
+.TransactionModalMultiSignature__menu-tabs .MenuTab__nav__item:last-child {
+  @apply .rounded-r;
 }
 
 .TransactionModalMultiSignature__menu-tabs .MenuTab__content {

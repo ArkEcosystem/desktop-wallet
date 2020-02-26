@@ -31,6 +31,12 @@ export default {
     popupHeader: 'Seleccionar'
   },
 
+  MODAL_CLOSE_CONFIRMATION: {
+    QUESTION: '¿Seguro que quieres cerrar esta ventana?',
+    CONFIRM: 'Si, cerca',
+    CANCEL: 'No, cancelar'
+  },
+
   PAGES: {
     PROFILE_NEW: {
       STEP1: {
@@ -52,6 +58,18 @@ export default {
           TEXT: 'Personaliza esta aplicación seleccionando uno de nuestro temas y fondos.'
         }
       }
+    }
+  },
+
+  MODAL_PEER: {
+    CANCEL: 'Cancelar',
+    CONNECT: 'Conectar',
+    HOST: 'Protocol + IP / Hostname',
+    PORT: 'Puerta',
+    VALIDATING: 'Validando detalles de pares ...',
+    PLACEHOLDER: {
+      HOST: 'http://1.2.3.4',
+      PORT: '4003'
     }
   }
 

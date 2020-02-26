@@ -63,9 +63,6 @@ export default {
     }
   },
 
-  mounted () {
-  },
-
   methods: {
     getCustomNetworks () {
       return Object.values(this.$store.getters['network/customNetworks'])

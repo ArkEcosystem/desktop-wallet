@@ -13,64 +13,64 @@
       v-if="showMenu"
       class="WalletSidebar__menu flex flex-row px-4 pt-4 justify-around"
     >
-      <div
-        v-if="!isExpanded"
-        v-tooltip="{
-          content: $t('WALLET_SIDEBAR.FILTER')
-        }"
-        class="WalletSidebar__menu__button"
-        :class="areFiltersActive ? 'WalletSidebar__menu__button--active' : ''"
-        @click="toggleFilters"
-      >
-        <SvgIcon
-          name="filter"
-          view-box="0 0 13 20"
-        />
-      </div>
-      <div
-        v-if="!isExpanded"
-        v-tooltip="{
-          content: $t('WALLET_SIDEBAR.EXPAND')
-        }"
-        class="WalletSidebar__menu__button"
-        @click="expand"
-      >
-        <SvgIcon
-          name="expand"
-          view-box="0 0 18 14"
-        />
-      </div>
-      <div
-        v-if="isExpanded"
-        class="WalletSidebar__menu__button"
-        :class="areFiltersActive ? 'WalletSidebar__menu__button--active' : ''"
-        @click="toggleFilters"
-      >
-        <div class="flex items-center">
+      <template v-if="!isExpanded">
+        <div
+          v-tooltip="{
+            content: $t('WALLET_SIDEBAR.FILTER')
+          }"
+          class="WalletSidebar__menu__button"
+          :class="areFiltersActive ? 'WalletSidebar__menu__button--active' : ''"
+          @click="toggleFilters"
+        >
           <SvgIcon
             name="filter"
             view-box="0 0 13 20"
           />
-          <span v-if="isExpanded">
-            {{ $t('WALLET_SIDEBAR.FILTER') }}
-          </span>
         </div>
-      </div>
-      <div
-        v-if="isExpanded"
-        class="WalletSidebar__menu__button"
-        @click="collapse"
-      >
-        <div class="flex items-center">
+        <div
+          v-tooltip="{
+            content: $t('WALLET_SIDEBAR.EXPAND')
+          }"
+          class="WalletSidebar__menu__button"
+          @click="expand"
+        >
           <SvgIcon
-            name="collapse"
+            name="expand"
             view-box="0 0 18 14"
           />
-          <span v-if="isExpanded">
-            {{ $t('WALLET_SIDEBAR.HIDE') }}
-          </span>
         </div>
-      </div>
+      </template>
+      <template v-else-if="isExpanded">
+        <div
+          class="WalletSidebar__menu__button"
+          :class="areFiltersActive ? 'WalletSidebar__menu__button--active' : ''"
+          @click="toggleFilters"
+        >
+          <div class="flex items-center">
+            <SvgIcon
+              name="filter"
+              view-box="0 0 13 20"
+            />
+            <span>
+              {{ $t('WALLET_SIDEBAR.FILTER') }}
+            </span>
+          </div>
+        </div>
+        <div
+          class="WalletSidebar__menu__button"
+          @click="collapse"
+        >
+          <div class="flex items-center">
+            <SvgIcon
+              name="collapse"
+              view-box="0 0 18 14"
+            />
+            <span>
+              {{ $t('WALLET_SIDEBAR.HIDE') }}
+            </span>
+          </div>
+        </div>
+      </template>
     </div>
 
     <WalletSidebarFilters
@@ -204,7 +204,8 @@
 </template>
 
 <script>
-import { filter, sortBy, uniqBy } from 'lodash'
+import { filter, uniqBy } from 'lodash'
+import { sortByProps } from '@/components/utils/Sorting'
 import Loader from '@/components/utils/Loader'
 import { MenuNavigation, MenuNavigationItem } from '@/components/Menu'
 import { WalletIdenticon, WalletIdenticonPlaceholder } from '../'
@@ -242,7 +243,7 @@ export default {
     }
   },
 
-  data: vm => ({
+  data: () => ({
     hasBeenExpanded: false,
     isFiltersVisible: false,
     isResizing: false,
@@ -444,7 +445,7 @@ export default {
       if (field === 'name') {
         wallets = this.wallet_sortByName(wallets)
       } else if (field === 'balance') {
-        wallets = sortBy(wallets, ['balance', 'name', 'address'])
+        wallets = wallets.sort(sortByProps(['balance', 'name', 'address']))
       } else {
         throw new Error(`Sorting by "${field}" is not implemented`)
       }

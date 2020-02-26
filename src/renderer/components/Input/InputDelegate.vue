@@ -119,7 +119,7 @@ export default {
     },
 
     delegates () {
-      return Object.values(this.$store.getters['delegate/bySessionNetwork'] || {}).filter(delegate => !delegate.isResigned)
+      return Object.values(this.$store.getters['delegate/bySessionNetwork'] || {})
     },
 
     error () {
@@ -184,7 +184,7 @@ export default {
         return object.name || object.address.toLowerCase()
       })
 
-      return results.reduce((delegates, delegate, index) => {
+      return results.reduce((delegates, delegate) => {
         Object.values(delegate).forEach(prop => {
           if (prop.toLowerCase().includes(this.inputValue.toLowerCase())) {
             delegates[delegate.username] = delegate.name

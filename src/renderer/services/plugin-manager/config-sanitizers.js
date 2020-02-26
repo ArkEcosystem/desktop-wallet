@@ -53,6 +53,16 @@ const sanitizeAuthor = config => {
   return 'unknown'
 }
 
+const sanitizeKeywords = keywords => {
+  for (const keyword of PLUGINS.keywords) {
+    if (!keywords.includes(keyword)) {
+      throw new Error('missing required keywords')
+    }
+  }
+
+  return difference(uniq(keywords), PLUGINS.keywords).map(keyword => titlecase(keyword))
+}
+
 const sanitizeCategories = config => {
   let categories = getOption(config, 'categories')
 
@@ -71,16 +81,6 @@ const sanitizeCategories = config => {
   }
 
   return categories.length ? categories : ['other']
-}
-
-const sanitizeKeywords = keywords => {
-  for (const keyword of PLUGINS.keywords) {
-    if (!keywords.includes(keyword)) {
-      throw new Error('missing required keywords')
-    }
-  }
-
-  return difference(uniq(keywords), PLUGINS.keywords).map(keyword => titlecase(keyword))
 }
 
 const sanitizeVersion = version => {

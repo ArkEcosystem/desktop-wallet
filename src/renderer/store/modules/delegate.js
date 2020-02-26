@@ -88,7 +88,7 @@ export default {
   },
 
   actions: {
-    async load ({ dispatch, rootGetters }) {
+    async load ({ dispatch }) {
       const delegates = []
       let page = 1
       let totalCount = null

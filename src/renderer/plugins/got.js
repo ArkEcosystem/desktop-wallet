@@ -1,6 +1,7 @@
-import got from 'got/source/index'
-import { request } from 'stream-http'
+/* eslint-disable @typescript-eslint/no-var-requires */
+const got = require('got/source/index')
+const { request } = require('stream-http')
 
-const client = got.extend({ request, stream: false })
+const client = got.extend({ request })
 
-export default client
+module.exports = client

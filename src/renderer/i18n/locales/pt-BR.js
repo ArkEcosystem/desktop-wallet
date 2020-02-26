@@ -398,6 +398,12 @@ export default {
     TITLE: 'Confirmação'
   },
 
+  MODAL_CLOSE_CONFIRMATION: {
+    QUESTION: 'Tem certeza que deseja fechar esta janela?',
+    CONFIRM: 'Sim, fechar',
+    CANCEL: 'Não, cancelar'
+  },
+
   MODAL_QR_CODE: {
     TITLE: 'QR Code',
     SUBTITLE: 'Verificar endereço'
@@ -455,7 +461,7 @@ export default {
   MODAL_PEER: {
     CANCEL: 'Cancelar',
     CONNECT: 'Conectar',
-    HOST: 'IP / Hospedeiro',
+    HOST: 'Protocolo + IP / Hostname',
     PORT: 'Porta',
     TITLE: 'Conecte-se a um peer personalizado',
     VALIDATING: 'Validando detalhes de peer ...',

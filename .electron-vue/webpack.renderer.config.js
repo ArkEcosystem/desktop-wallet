@@ -21,12 +21,13 @@ const { VueLoaderPlugin } = require('vue-loader')
  * that provide pure *.vue files that need compiling
  * https://simulatedgreg.gitbooks.io/electron-vue/content/en/webpack-configurations.html#white-listing-externals
  */
-let whiteListedModules = ['vue', 'portal-vue', '@arkecosystem/client', 'got', '@arkecosystem/peers']
+let whiteListedModules = ['vue', 'portal-vue', 'vue-property-decorator', 'vue-class-component', '@arkecosystem/client', 'got', '@arkecosystem/peers']
 
 let rendererConfig = {
   devtool: '#cheap-module-eval-source-map',
   entry: {
-    renderer: path.join(__dirname, '../src/renderer/main.js')
+    renderer: path.join(__dirname, '../src/renderer/main.js'),
+    splashscreen: path.join(__dirname, '../src/renderer/splashscreen.js')
   },
   externals: [
     ...Object.keys(dependencies || {}).filter(d => !whiteListedModules.includes(d))
@@ -34,7 +35,7 @@ let rendererConfig = {
   module: {
     rules: [
       {
-        test: /\.(js|vue)$/,
+        test: /\.(js|vue|ts)$/,
         enforce: 'pre',
         exclude: /node_modules/,
         use: {
@@ -42,6 +43,14 @@ let rendererConfig = {
           options: {
             formatter: require('eslint-friendly-formatter')
           }
+        }
+      },
+      {
+        test: /\.tsx?$/,
+        loader: 'ts-loader',
+        exclude: /node_modules/,
+        options: {
+          appendTsSuffixTo: [/\.vue$/]
         }
       },
       {
@@ -86,6 +95,7 @@ let rendererConfig = {
         use: {
           loader: 'url-loader',
           query: {
+            esModule: false,
             limit: 10000,
             name: 'imgs/[name]--[folder].[ext]'
           }
@@ -142,6 +152,20 @@ let rendererConfig = {
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: path.resolve(__dirname, '../src/index.ejs'),
+      inject: false,
+      minify: {
+        collapseWhitespace: true,
+        removeAttributeQuotes: true,
+        removeComments: true
+      },
+      nodeModules: process.env.NODE_ENV !== 'production'
+        ? path.resolve(__dirname, '../node_modules')
+        : false
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'splashscreen.html',
+      template: path.resolve(__dirname, '../src/splashscreen.ejs'),
+      inject: false,
       minify: {
         collapseWhitespace: true,
         removeAttributeQuotes: true,
@@ -169,7 +193,7 @@ let rendererConfig = {
       'vue$': 'vue/dist/vue.esm.js',
       'got$': path.join(__dirname, '../src/renderer/plugins/got.js')
     },
-    extensions: ['.js', '.vue', '.json', '.css', '.node']
+    extensions: ['.js', '.vue', '.json', '.css', '.node', '.ts', '.tsx']
   },
   target: 'electron-renderer'
 }

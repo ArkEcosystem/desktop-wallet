@@ -63,6 +63,9 @@
 
       <TransactionMultiPaymentList
         :items="$v.form.recipients.$model"
+        :max-items="maximumRecipients"
+        :show-count="true"
+        :is-invalid="hasMoreThanMaximumRecipients"
         :required="true"
         class="TransactionModalMultiPayment__recipients mt-4"
         @remove="emitRemoveRecipient"
@@ -194,7 +197,7 @@ export default {
 
   mixins: [mixin],
 
-  data: vm => ({
+  data: () => ({
     step: 1,
     amount: '',
     recipientId: '',
@@ -230,6 +233,10 @@ export default {
       }
 
       return !this.$v.form.$invalid
+    },
+
+    hasMoreThanMaximumRecipients () {
+      return this.form.recipients.length > this.maximumRecipients
     },
 
     // Customize the message to display the minimum amount as subunit
@@ -390,7 +397,7 @@ export default {
   validations: {
     recipientId: {
       required,
-      isValid (value) {
+      isValid () {
         if (this.$refs.recipient) {
           return !this.$refs.recipient.$v.$invalid
         }
@@ -401,7 +408,7 @@ export default {
 
     amount: {
       required,
-      isValid (value) {
+      isValid () {
         if (this.$refs.amount) {
           return !this.$refs.amount.$v.$invalid
         }
@@ -416,8 +423,8 @@ export default {
           return this.form.recipients.length > 1
         },
 
-        belowMaximum () {
-          return this.form.recipients.length < this.maximumRecipients
+        belowOrEqualMaximum () {
+          return this.form.recipients.length <= this.maximumRecipients
         }
       },
       fee: mixin.validators.fee,

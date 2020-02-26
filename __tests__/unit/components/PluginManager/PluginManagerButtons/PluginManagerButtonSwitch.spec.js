@@ -1,10 +1,13 @@
 import { shallowMount } from '@vue/test-utils'
+import useI18nGlobally from '../../../__utils__/i18n'
 import { PluginManagerButtonSwitch } from '@/components/PluginManager/PluginManagerButtons'
+
+const i18n = useI18nGlobally()
 
 let wrapper
 
 beforeEach(() => {
-  wrapper = shallowMount(PluginManagerButtonSwitch)
+  wrapper = shallowMount(PluginManagerButtonSwitch, { i18n })
 })
 
 describe('PluginManagerButtonSwitch', () => {

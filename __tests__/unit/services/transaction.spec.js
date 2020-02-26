@@ -1,7 +1,10 @@
 import { Crypto, Identities, Managers, Transactions } from '@arkecosystem/crypto'
+import * as MagistrateCrypto from '@arkecosystem/core-magistrate-crypto'
 import TransactionService from '@/services/transaction'
 import transactionFixture from '../__fixtures__/models/transaction'
 import currencyMixin from '@/mixins/currency'
+
+Transactions.TransactionRegistry.registerTransactionType(MagistrateCrypto.Transactions.BusinessRegistrationTransaction)
 
 const recipientAddress = Identities.Address.fromPassphrase('recipient passphrase')
 const senderPassphrase = 'sender passphrase'
@@ -75,7 +78,7 @@ describe('Services > Transaction', () => {
       })
 
       it('should get correct amount with fee', () => {
-        expect(TransactionService.getAmount(mockVm, transaction, true).toFixed()).toEqual('110000000')
+        expect(TransactionService.getAmount(mockVm, transaction, null, true).toFixed()).toEqual('110000000')
       })
 
       it('should get correct amount without fee', () => {
@@ -96,14 +99,32 @@ describe('Services > Transaction', () => {
           .sign('passphrase')
           .build()
           .toJson()
+
+        transaction.sender = Identities.Address.fromPassphrase('passphrase')
       })
 
       it('should get correct amount with fee', () => {
-        expect(TransactionService.getAmount(mockVm, transaction, true).toFixed()).toEqual('310000000')
+        expect(TransactionService.getAmount(mockVm, transaction, null, true).toFixed()).toEqual('310000000')
       })
 
       it('should get correct amount without fee', () => {
         expect(TransactionService.getAmount(mockVm, transaction).toFixed()).toEqual('300000000')
+      })
+
+      it('should get correct amount if sender including fee', () => {
+        const wallet = {
+          address: Identities.Address.fromPassphrase('passphrase')
+        }
+
+        expect(TransactionService.getAmount(mockVm, transaction, wallet, true).toFixed()).toEqual('310000000')
+      })
+
+      it('should get correct amount if recipient including fee', () => {
+        const wallet = {
+          address: Identities.Address.fromPassphrase('recipient 3')
+        }
+
+        expect(TransactionService.getAmount(mockVm, transaction, wallet, true).toFixed()).toEqual('100000000')
       })
     })
   })
@@ -790,6 +811,7 @@ describe('Services > Transaction', () => {
   describe('ledgerSign', () => {
     const vmMock = {
       $store: {
+        // eslint-disable-next-line @typescript-eslint/no-empty-function
         dispatch () {}
       },
       $t (translationKey) {
@@ -868,6 +890,45 @@ describe('Services > Transaction', () => {
       await expect(TransactionService.ledgerSign(wallet, transactionObject, vmMock)).rejects.toThrow('TRANSACTION.LEDGER_USER_DECLINED')
 
       expect(spyTranslate).toHaveBeenCalledWith('TRANSACTION.LEDGER_USER_DECLINED')
+    })
+  })
+
+  describe('isTransfer', () => {
+    it('should return true if transaction is transfer', () => {
+      const transaction = Transactions.BuilderFactory
+        .transfer()
+        .amount(1)
+        .fee(1)
+        .recipientId(recipientAddress)
+        .sign(senderPassphrase)
+        .getStruct()
+
+      expect(TransactionService.isTransfer(transaction)).toBe(true)
+    })
+
+    it('should return false if transaction is vote', () => {
+      const transaction = Transactions.BuilderFactory
+        .vote()
+        .votesAsset([`+${senderPublicKey}`])
+        .fee(1)
+        .sign(senderPassphrase)
+        .getStruct()
+
+      expect(TransactionService.isTransfer(transaction)).toBe(false)
+    })
+
+    it('should return false if transaction is business registration (type 0)', () => {
+      const transaction = new MagistrateCrypto.Builders
+        .BusinessRegistrationBuilder()
+        .businessRegistrationAsset({
+          name: 'Name',
+          website: 'http://github.com/ark/core.git'
+        })
+        .fee(1)
+        .sign(senderPassphrase)
+        .getStruct()
+
+      expect(TransactionService.isTransfer(transaction)).toBe(false)
     })
   })
 })

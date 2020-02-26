@@ -206,7 +206,9 @@ export class PluginManager {
 
       try {
         plugin.logo = await this.fetchLogo(plugin.logo)
-      } catch (error) { }
+      } catch (error) {
+        plugin.logo = null
+      }
 
       const validName = validatePackageName(plugin.id).validForNewPackages
       if (!validName) {
@@ -312,7 +314,7 @@ export class PluginManager {
 
   async fetchBlacklist () {
     try {
-      const { body } = await got(PLUGINS.blacklistUrl, { json: true })
+      const { body } = await got(`${PLUGINS.blacklistUrl}?ts=${(new Date()).getTime()}`, { json: true })
       this.app.$store.dispatch('plugin/setBlacklisted', { scope: 'global', plugins: body.plugins })
     } catch (error) {
       console.error(`Could not fetch blacklist from '${PLUGINS.blacklistUrl}: ${error.message}`)
@@ -321,7 +323,7 @@ export class PluginManager {
 
   async fetchWhitelist () {
     try {
-      const { body } = await got(PLUGINS.whitelistUrl, { json: true })
+      const { body } = await got(`${PLUGINS.whitelistUrl}?ts=${(new Date()).getTime()}`, { json: true })
       this.app.$store.dispatch('plugin/setWhitelisted', { scope: 'global', plugins: body.plugins })
     } catch (error) {
       console.error(`Could not fetch whitelist from '${PLUGINS.whitelistUrl}: ${error.message}`)

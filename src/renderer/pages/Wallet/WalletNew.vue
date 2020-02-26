@@ -455,7 +455,7 @@ export default {
       isVerified: value => value
     },
     walletPassword: {
-      isValid (value) {
+      isValid () {
         if (!this.walletPassword || !this.walletPassword.length) {
           return true
         }
@@ -468,7 +468,7 @@ export default {
       }
     },
     walletConfirmPassword: {
-      isValid (value) {
+      isValid () {
         if (!this.walletPassword || !this.walletPassword.length) {
           return true
         }

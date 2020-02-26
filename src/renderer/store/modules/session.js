@@ -32,7 +32,9 @@ export default {
     lastFees: {},
     multiSignaturePeer: null,
     filterBlacklistedPlugins: true,
-    pluginAdapter: 'npm'
+    pluginAdapter: 'npm',
+    priceApi: 'coingecko',
+    pluginMenuOpen: true
   }),
 
   getters: {
@@ -91,7 +93,9 @@ export default {
     },
     multiSignaturePeer: state => state.multiSignaturePeer,
     filterBlacklistedPlugins: state => state.filterBlacklistedPlugins,
-    pluginAdapter: state => state.pluginAdapter
+    pluginAdapter: state => state.pluginAdapter,
+    priceApi: state => state.priceApi,
+    pluginMenuOpen: state => state.pluginMenuOpen
   },
 
   mutations: {
@@ -215,6 +219,14 @@ export default {
       state.pluginAdapter = pluginAdapter
     },
 
+    SET_PRICE_API (state, priceApi) {
+      state.priceApi = priceApi
+    },
+
+    SET_PLUGIN_MENU_OPEN (state, pluginMenuOpen) {
+      state.pluginMenuOpen = pluginMenuOpen
+    },
+
     RESET (state) {
       state.avatar = 'pages/new-profile-avatar.svg'
       state.background = null
@@ -245,6 +257,8 @@ export default {
       state.multiSignaturePeer = null
       state.filterBlacklistedPlugins = true
       state.pluginAdapter = 'npm'
+      state.priceApi = 'coingecko'
+      state.pluginMenuOpen = true
 
       i18n.locale = state.language
     },
@@ -279,6 +293,8 @@ export default {
       state.multiSignaturePeer = value.multiSignaturePeer
       state.filterBlacklistedPlugins = value.filterBlacklistedPlugins
       state.pluginAdapter = value.pluginAdapter
+      state.priceApi = value.priceApi
+      state.pluginMenuOpen = value.pluginMenuOpen !== undefined ? value.pluginMenuOpen : true
 
       i18n.locale = state.language
     }
@@ -430,6 +446,14 @@ export default {
 
     setPluginAdapter ({ commit }, value) {
       commit('SET_PLUGIN_ADAPTER', value)
+    },
+
+    setPriceApi ({ commit }, value) {
+      commit('SET_PRICE_API', value)
+    },
+
+    setPluginMenuOpen ({ commit, dispatch }, value) {
+      commit('SET_PLUGIN_MENU_OPEN', value)
     }
   }
 }

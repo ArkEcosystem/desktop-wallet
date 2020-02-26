@@ -1,0 +1,196 @@
+name: Publish Release
+
+on:
+  push:
+    branches:
+      - "master"
+
+jobs:
+  # create-release:
+  #   runs-on: ubuntu-latest
+
+  #   steps:
+  #     - name: Checkout code
+  #       uses: actions/checkout@v2
+
+  #     - name: Determine the release version
+  #       id: derive_release_version
+  #       run: |
+  #         RELEASE_VERSION=$(cat package.json | jq -r '.version')
+  #         echo "::set-output name=version::${RELEASE_VERSION}"
+
+  #     - name: Create Release
+  #       id: create_release
+  #       uses: actions/create-release@v1
+  #       env:
+  #         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  #       with:
+  #         tag_name: ${{ steps.derive_release_version.outputs.version }}
+  #         release_name: Version ${{ steps.derive_release_version.outputs.version }}
+  #         draft: true
+  #         prerelease: false
+
+  publish-linux:
+    # needs: ["create-release"]
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Cache node modules
+        uses: actions/cache@v1
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: ${{ runner.os }}-node-
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Update System
+        run: sudo apt-get update
+
+      - name: Ledger
+        run: sudo apt-get install libudev-dev libusb-1.0-0-dev
+
+      - name: Install
+        run: yarn global add node-gyp && yarn install --frozen-lockfile
+
+      - name: Re-build bcrypto
+        run: cd node_modules/bcrypto && npm install && cd ../../
+
+      - name: Build & Publish
+        run: yarn build:linux:publish
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Calculate Checksums for AppImage
+        run: shasum -a 256 build/target/ark-desktop-wallet-linux-x86_64-2.8.1.AppImage
+
+      - name: Calculate Checksums for TAR
+        run: shasum -a 256 build/target/ark-desktop-wallet-linux-x64-2.8.1.tar.gz
+
+      - name: Calculate Checksums for DEB
+        run: shasum -a 256 build/target/ark-desktop-wallet-linux-amd64-2.8.1.deb
+
+      - name: VirusTotal Scan for AppImage
+        run: |
+          UPLOAD_URL=$(curl -s --location --url 'https://www.virustotal.com/vtapi/v2/file/scan/upload_url?apikey=${{ secrets.VIRUSTOTAL_TOKEN }}' | jq -r .upload_url)
+          curl -s --url "$UPLOAD_URL" --form 'apikey=${{ secrets.VIRUSTOTAL_TOKEN }}' --form 'file=@build/target/ark-desktop-wallet-linux-x86_64-2.8.1.AppImage' | jq -r .permalink
+
+      - name: VirusTotal Scan for TAR
+        run: |
+          UPLOAD_URL=$(curl -s --location --url 'https://www.virustotal.com/vtapi/v2/file/scan/upload_url?apikey=${{ secrets.VIRUSTOTAL_TOKEN }}' | jq -r .upload_url)
+          curl -s --url "$UPLOAD_URL" --form 'apikey=${{ secrets.VIRUSTOTAL_TOKEN }}' --form 'file=@build/target/ark-desktop-wallet-linux-x64-2.8.1.tar.gz' | jq -r .permalink
+
+      - name: VirusTotal Scan for DEB
+        run: |
+          UPLOAD_URL=$(curl -s --location --url 'https://www.virustotal.com/vtapi/v2/file/scan/upload_url?apikey=${{ secrets.VIRUSTOTAL_TOKEN }}' | jq -r .upload_url)
+          curl -s --url "$UPLOAD_URL" --form 'apikey=${{ secrets.VIRUSTOTAL_TOKEN }}' --form 'file=@build/target/ark-desktop-wallet-linux-amd64-2.8.1.deb' | jq -r .permalink
+
+  publish-macos:
+    # needs: ["create-release"]
+
+    runs-on: macos-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Cache node modules
+        uses: actions/cache@v1
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: ${{ runner.os }}-node-
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install
+        run: yarn global add node-gyp && yarn install --frozen-lockfile
+
+      - name: Prepare for app notarization
+        run: |
+          mkdir -p ~/private_keys/
+          echo '${{ secrets.APPLE_API_KEY }}' > ~/private_keys/AuthKey_${{ secrets.APPLE_API_KEY_ID }}.p8
+
+      - name: Build & Publish
+        run: yarn build:mac:publish
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          APPLE_API_KEY_ID: ${{ secrets.APPLE_API_KEY_ID }}
+          APPLE_API_KEY_ISSUER_ID: ${{ secrets.APPLE_API_KEY_ISSUER_ID }}
+          CSC_LINK: ${{ secrets.CSC_LINK }}
+          CSC_KEY_PASSWORD: ${{ secrets.CSC_KEY_PASSWORD }}
+
+      - name: Calculate Checksums for DMG
+        run: shasum -a 256 build/target/ark-desktop-wallet-mac-2.8.1.dmg
+
+      - name: Calculate Checksums for ZIP
+        run: shasum -a 256 build/target/ark-desktop-wallet-mac-2.8.1.zip
+
+      - name: VirusTotal Scan for DMG
+        run: |
+          UPLOAD_URL=$(curl -s --location --url 'https://www.virustotal.com/vtapi/v2/file/scan/upload_url?apikey=${{ secrets.VIRUSTOTAL_TOKEN }}' | jq -r .upload_url)
+          curl -s --url "$UPLOAD_URL" --form 'apikey=${{ secrets.VIRUSTOTAL_TOKEN }}' --form 'file=@build/target/ark-desktop-wallet-mac-2.8.1.dmg' | jq -r .permalink
+
+      - name: VirusTotal Scan for ZIP
+        run: |
+          UPLOAD_URL=$(curl -s --location --url 'https://www.virustotal.com/vtapi/v2/file/scan/upload_url?apikey=${{ secrets.VIRUSTOTAL_TOKEN }}' | jq -r .upload_url)
+          curl -s --url "$UPLOAD_URL" --form 'apikey=${{ secrets.VIRUSTOTAL_TOKEN }}' --form 'file=@build/target/ark-desktop-wallet-mac-2.8.1.zip' | jq -r .permalink
+
+  publish-windows:
+    # needs: ["create-release"]
+
+    runs-on: windows-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Cache node modules
+        uses: actions/cache@v1
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: ${{ runner.os }}-node-
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install
+        run: yarn global add node-gyp && yarn install --frozen-lockfile
+        shell: cmd
+
+      - name: Build & Publish
+        run: yarn build:win:publish
+        shell: cmd
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CSC_LINK: ${{ secrets.CSC_LINK }}
+          CSC_KEY_PASSWORD: ${{ secrets.CSC_KEY_PASSWORD }}
+
+      - name: Calculate Checksums for EXE
+        run: Get-FileHash build/target/ark-desktop-wallet-win-2.8.1.exe -Algorithm SHA256 | Format-List
+        shell: powershell

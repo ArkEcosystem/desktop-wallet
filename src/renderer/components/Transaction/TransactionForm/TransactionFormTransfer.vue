@@ -220,7 +220,7 @@ export default {
     }
   },
 
-  data: vm => ({
+  data: () => ({
     form: {
       amount: '',
       fee: 0,
@@ -546,15 +546,21 @@ export default {
 
       recipientId: {
         required,
-        isValid (value) {
-          return !this.$refs.recipient.$v.$invalid
+        isValid () {
+          if (this.$refs.recipient) {
+            return !this.$refs.recipient.$v.$invalid
+          }
+          return false
         }
       },
 
       amount: {
         required,
-        isValid (value) {
-          return !this.$refs.amount.$v.$invalid
+        isValid () {
+          if (this.$refs.amount) {
+            return !this.$refs.amount.$v.$invalid
+          }
+          return false
         }
       }
     }

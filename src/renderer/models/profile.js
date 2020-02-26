@@ -105,6 +105,10 @@ export default new BaseModel({
       type: 'string',
       format: data => data.pluginManagerLayout || 'grid'
     },
+    pluginMenuOpen: {
+      type: 'boolean',
+      format: data => data.pluginMenuOpen !== undefined ? data.pluginMenuOpen : true
+    },
     walletLayout: {
       type: 'string',
       format: data => data.walletLayout || 'grid'
@@ -144,6 +148,10 @@ export default new BaseModel({
     pluginAdapter: {
       type: 'string',
       format: data => data.pluginAdapter || 'npm'
+    },
+    priceApi: {
+      type: 'string',
+      format: data => data.priceApi || 'coingecko'
     },
     isAdvancedModeEnabled: {
       type: 'boolean',

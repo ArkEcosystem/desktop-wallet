@@ -12,7 +12,7 @@ const i18n = useI18nGlobally()
 let wrapper
 const mocks = {
   $store: {
-    dispatch () {},
+    dispatch: jest.fn(),
     getters: {
       'network/byName': jest.fn((name) => {
         return name === 'exists'
@@ -149,7 +149,7 @@ describe('NetworkModal', () => {
             }
           })
 
-        nock(MARKET.source.baseUrl)
+        nock(MARKET.source.cryptoCompare)
           .get('/data/price')
           .query({
             fsym: 'TEST',

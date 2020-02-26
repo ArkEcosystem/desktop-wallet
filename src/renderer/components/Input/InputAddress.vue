@@ -211,7 +211,7 @@ export default {
         return (object.name || object.address).toLowerCase()
       })
 
-      return results.reduce((wallets, wallet, index) => {
+      return results.reduce((wallets, wallet) => {
         const value = wallet.name || wallet.address
         const searchValue = value.toLowerCase()
 
@@ -371,6 +371,9 @@ export default {
 
     updateInputValue (value) {
       this.inputValue = value
+
+      this.$eventBus.emit('change')
+
       // Inform Vuelidate that the value changed
       this.$v.model.$touch()
     },

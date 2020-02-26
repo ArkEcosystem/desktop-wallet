@@ -1,5 +1,6 @@
 <template>
   <section
+    v-if="hasChartData"
     :class="isExpanded ? 'bg-theme-chart-background pb-4' : 'bg-theme-feature'"
     class="MarketChartWrapper flex-column"
   >
@@ -30,7 +31,7 @@
 import dayjs from 'dayjs'
 import LineChart from '@/components/utils/LineChart'
 import Loader from '@/components/utils/Loader'
-import cryptoCompare from '@/services/crypto-compare'
+import priceApi from '@/services/price-api'
 
 export default {
   name: 'MarketChart',
@@ -61,11 +62,13 @@ export default {
   },
 
   data: () => ({
+    hasChartData: true,
     isReady: false,
     chartData: {},
     options: {},
     gradient: null,
-    lastCurrency: null
+    lastCurrency: null,
+    lastPriceApi: null
   }),
 
   computed: {
@@ -105,6 +108,10 @@ export default {
       return this.$store.getters['session/currency']
     },
 
+    priceApi () {
+      return this.$store.getters['session/priceApi']
+    },
+
     theme () {
       return this.$store.getters['session/theme']
     },
@@ -116,6 +123,10 @@ export default {
 
   watch: {
     currency () {
+      this.renderChart()
+    },
+
+    priceApi () {
       this.renderChart()
     },
 
@@ -144,7 +155,7 @@ export default {
 
   activated () {
     // Only if it's not already rendered
-    if ((this.isExpanded && !this.isReady) || this.lastCurrency !== this.currency) {
+    if ((this.isExpanded && !this.isReady) || this.lastCurrency !== this.currency || this.lastPriceApi !== this.priceApi) {
       this.renderChart()
     }
   },
@@ -158,16 +169,26 @@ export default {
       this.lastCurrency = this.currency
     },
 
+    setLastPriceApi () {
+      this.lastPriceApi = this.priceApi
+    },
+
     async renderChart () {
+      this.isReady = false
+
       if (!this._inactive) {
         this.setLastCurrency()
+        this.setLastPriceApi()
       }
 
       await this.renderGradient()
 
-      const response = await cryptoCompare.historicByType(this.period, this.ticker, this.currency)
+      const response = await priceApi.historicByType(this.period, this.ticker, this.currency)
+      if (!response) {
+        this.hasChartData = false
+      } else if (response.datasets) {
+        this.hasChartData = true
 
-      if (response && response.datasets) {
         // Since BTC price could be very low :(, the linear scale could produce
         // imprecise values, such as converting 0.00001078 to 0, provoking that
         // the chart isn't displayed correctly
@@ -271,7 +292,7 @@ export default {
             mode: 'index',
             axis: 'x',
             callbacks: {
-              label: (item, data) => {
+              label: (item) => {
                 return this.currency_format(item.yLabel / scaleCorrection, { currency: this.currency })
               },
               title: (items, data) => {
@@ -315,6 +336,8 @@ export default {
           }]
         }
       }
+
+      this.isReady = true
     },
 
     async renderGradient () {

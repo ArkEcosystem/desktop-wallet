@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const os = require('os')
 const path = require('path')
 
@@ -87,7 +88,9 @@ exports.INTERVALS = {
 
 exports.MARKET = {
   source: {
-    baseUrl: 'https://min-api.cryptocompare.com'
+    cryptoCompare: 'https://min-api.cryptocompare.com',
+    coinGecko: 'https://api.coingecko.com/api/v3',
+    coinCap: 'https://api.coincap.io/v2'
   },
   defaultCurrency: 'BTC',
   crypto: [
