@@ -151,7 +151,13 @@ export default {
     onBlur (event) {
       // To ensure that the code is evaluated after other tasks
       setTimeout(() => {
-        if (Object.values(document.activeElement.classList).includes('MenuDropdownItem__button')) {
+        const classList = document.activeElement.classList
+
+        const isDropdownItem = classList && typeof classList.contains === 'function'
+          ? classList.contains('MenuDropdownItem__button')
+          : false
+
+        if (isDropdownItem) {
           event.preventDefault()
         } else {
           this.$refs.dropdown.close()
