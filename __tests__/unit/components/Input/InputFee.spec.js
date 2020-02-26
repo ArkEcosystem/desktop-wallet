@@ -387,4 +387,28 @@ describe('InputFee', () => {
       })
     })
   })
+
+  describe('erasing the input', () => {
+    describe('events', () => {
+      it('should not change on raw', () => {
+        const wrapper = mountComponent()
+        const input = wrapper.find("input[name='fee']")
+
+        // Cannot use setValue, since it triggers the input event and vue-test-utils don't provide the emitter.
+        input.element.value = '0.0000'
+        input.trigger('raw')
+        expect(input.element.value).toBe('0.0000')
+      })
+
+      it('should change on input', () => {
+        const wrapper = mountComponent()
+        const input = wrapper.find("input[name='fee']")
+
+        // Manually triggers the input event for the input.
+        input.element.value = '0.0000'
+        input.trigger('input')
+        expect(input.element.value).toBe('0')
+      })
+    })
+  })
 })
