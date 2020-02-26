@@ -4,7 +4,7 @@ export class Language {
   }
 
   static get messages () {
-    return require('../locales/en-US')
+    return require('../locales/en-US').default
   }
 
   static get dateTimeFormats () {

@@ -204,14 +204,7 @@ export default {
   },
 
   LANGUAGES: {
-<<<<<<< HEAD
     'en-US': 'English'
-=======
-    'en-US': 'English',
-    'es-ES': 'Español',
-    'it-IT': 'Italiano',
-    'pt-BR': 'Português - Brazil'
->>>>>>> develop
   },
 
   TIME_FORMAT: {
