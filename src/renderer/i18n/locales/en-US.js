@@ -442,6 +442,12 @@ export default {
     TITLE: 'Export Wallets'
   },
 
+  MODAL_CLOSE_CONFIRMATION: {
+    QUESTION: 'Are you sure you want to close this window?',
+    CONFIRM: 'Yes, close',
+    CANCEL: 'No, cancel'
+  },
+
   MODAL_CONFIRMATION: {
     CANCEL: 'No, cancel',
     CONTINUE: 'Yes, I am sure',

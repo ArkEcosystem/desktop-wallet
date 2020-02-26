@@ -7,6 +7,7 @@ import ModalQrCode from './ModalQrCode'
 import ModalQrCodeScanner from './ModalQrCodeScanner'
 import ModalRename from './ModalRename'
 import ModalWindow from './ModalWindow'
+import ModalCloseConfirmation from './ModalCloseConfirmation'
 
 export default ModalWindow
 export {
@@ -18,5 +19,6 @@ export {
   ModalQrCode,
   ModalQrCodeScanner,
   ModalRename,
-  ModalWindow
+  ModalWindow,
+  ModalCloseConfirmation
 }
