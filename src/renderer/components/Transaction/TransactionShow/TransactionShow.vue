@@ -377,7 +377,7 @@ export default {
       this.network_openExplorer('address', address)
     },
 
-    openBlock (address) {
+    openBlock () {
       this.network_openExplorer('block', this.transaction.blockId)
     },
 

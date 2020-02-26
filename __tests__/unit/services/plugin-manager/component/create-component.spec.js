@@ -3,6 +3,10 @@ import { createSafeComponent } from '@/services/plugin-manager/component/create-
 
 const localVue = createLocalVue()
 
+const wrapperPlugin = (plugin) => {
+  return createSafeComponent('test', plugin, localVue)
+}
+
 describe('Create Component', () => {
   it('should return a valid component', () => {
     const plugin = {
@@ -372,7 +376,3 @@ describe('Create Component', () => {
     })
   })
 })
-
-const wrapperPlugin = (plugin) => {
-  return createSafeComponent('test', plugin, localVue)
-}

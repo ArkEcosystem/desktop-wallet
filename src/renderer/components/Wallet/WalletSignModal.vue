@@ -202,7 +202,7 @@ export default {
         minLength: minLength(1)
       },
       passphrase: {
-        isValid (value) {
+        isValid () {
           if (this.wallet.passphrase) {
             return true
           } else if (this.wallet && (this.wallet.isLedger || this.wallet.passphrase)) {
@@ -217,7 +217,7 @@ export default {
         }
       },
       walletPassword: {
-        isValid (value) {
+        isValid () {
           if (!this.wallet.passphrase) {
             return true
           } else if (this.wallet && (this.wallet.isLedger || !this.wallet.passphrase)) {

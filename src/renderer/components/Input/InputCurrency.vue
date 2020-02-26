@@ -391,13 +391,13 @@ export default {
 
   validations: {
     model: {
-      isNumber (value) {
+      isNumber () {
         return this.inputValue && this.checkAmount(this.inputValue)
       },
-      isMoreThanMinimum (value) {
+      isMoreThanMinimum () {
         return !this.minimumAmount.isGreaterThan(this.inputValue)
       },
-      isLessThanMaximum (value) {
+      isLessThanMaximum () {
         return !this.maximumAmount.isLessThan(this.inputValue)
       },
       isRequired (value) {

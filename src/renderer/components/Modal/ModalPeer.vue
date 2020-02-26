@@ -132,10 +132,12 @@ export default {
 
   mounted () {
     if (this.currentPeer) {
+      const scheme = this.currentPeer.isHttps ? 'https://' : 'http://'
+
       if (this.currentPeer.host) {
-        this.form.host = this.currentPeer.host
+        const hostname = new URL(this.currentPeer.host).hostname
+        this.form.host = `${scheme}${hostname}`
       } else if (this.currentPeer.ip) {
-        const scheme = this.currentPeer.isHttps ? 'https://' : 'http://'
         this.form.host = `${scheme}${this.currentPeer.ip}`
       }
 
@@ -147,6 +149,10 @@ export default {
 
   methods: {
     emitConnect () {
+      const host = this.form.host
+      if (host.endsWith('/')) {
+        this.form.host = host.slice(0, -1)
+      }
       this.$emit('connect', {
         peer: this.form,
         closeTrigger: this.closeTrigger

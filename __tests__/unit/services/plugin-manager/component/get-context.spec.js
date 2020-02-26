@@ -7,6 +7,15 @@ beforeEach(() => {
   localVue = createLocalVue()
 })
 
+const createSafeRender = (plugin) => {
+  return localVue.extend({
+    ...plugin,
+    render: function (...args) {
+      return plugin.render.apply(getSafeContext(this, plugin), args)
+    }
+  })
+}
+
 describe('Prepare Component Context', () => {
   describe('Render', () => {
     it('should render', () => {
@@ -60,12 +69,3 @@ describe('Prepare Component Context', () => {
     })
   })
 })
-
-const createSafeRender = (plugin) => {
-  return localVue.extend({
-    ...plugin,
-    render: function () {
-      return plugin.render.apply(getSafeContext(this, plugin), [...arguments])
-    }
-  })
-}
