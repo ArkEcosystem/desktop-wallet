@@ -326,7 +326,7 @@ export default {
     },
 
     amountTooltip () {
-      const walletAddress = this.transaction.walletAddress || this.wallet_fromRoute.address
+      const walletAddress = this.transaction.walletAddress || (this.wallet_fromRoute ? this.wallet_fromRoute.address : null)
       if (!walletAddress || this.transaction.sender !== walletAddress) {
         return null
       } else if (this.transaction.typeGroup === TRANSACTION_GROUPS.MAGISTRATE) {
