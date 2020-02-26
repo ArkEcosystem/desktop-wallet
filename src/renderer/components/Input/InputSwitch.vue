@@ -32,86 +32,50 @@
   </InputField>
 </template>
 
-<script>
-import InputField from './InputField'
+<script lang="ts">
+import { Vue, Component, Prop, Model } from 'vue-property-decorator'
+import { InputField } from '@/components/Input'
 import { ButtonSwitch } from '@/components/Button'
 
-export default {
+@Component({
   name: 'InputSwitch',
 
   components: {
     InputField,
     ButtonSwitch
-  },
+  }
+})
+export default class InputSwitch extends Vue {
+  @Model('change', { default: false })
+  readonly isActive!: boolean;
 
-  model: {
-    prop: 'isActive',
-    event: 'change'
-  },
+  @Prop({ type: String })
+  readonly backgroundColor: string | undefined;
 
-  props: {
-    backgroundColor: {
-      type: String,
-      required: false,
-      default: null
-    },
-    helperText: {
-      type: String,
-      required: false,
-      default: null
-    },
-    isActive: {
-      type: Boolean,
-      required: false,
-      default: false
-    },
-    isDisabled: {
-      type: Boolean,
-      required: false,
-      default: false
-    },
-    label: {
-      type: String,
-      required: false,
-      default: null
-    },
-    text: {
-      type: String,
-      required: false,
-      default: null
-    },
-    isLarge: {
-      type: Boolean,
-      required: false,
-      default: true
-    },
-    isReverse: {
-      type: Boolean,
-      required: false,
-      default: false
-    }
-  },
+  @Prop({ type: String })
+  readonly helperText: string | undefined;
 
-  data: vm => ({
-    inputIsActive: vm.isActive
-  }),
+  @Prop({ type: String })
+  readonly label: string | undefined;
 
-  computed: {
-    model: {
-      get () {
-        return this.inputIsActive
-      },
-      set (value) {
-        this.inputIsActive = value
-        this.$emit('change', value)
-      }
-    }
-  },
+  @Prop({ type: String })
+  readonly text: string | undefined;
 
-  watch: {
-    isActive (isActive) {
-      this.inputIsActive = isActive
-    }
+  @Prop({ default: false })
+  readonly isDisabled!: boolean;
+
+  @Prop({ default: true })
+  readonly isLarge!: boolean;
+
+  @Prop({ default: false })
+  readonly isReverse!: boolean;
+
+  get model () {
+    return this.isActive
+  }
+
+  set model (value) {
+    this.$emit('change', value)
   }
 }
 </script>

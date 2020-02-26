@@ -1,11 +1,16 @@
 module.exports = {
   verbose: false,
   globals: {
-    __static: __dirname
+    __static: __dirname,
+    'vue-jest': {
+      hideStyleWarn: true
+    }
   },
   rootDir: require('path').resolve(__dirname, '../'),
   moduleFileExtensions: [
     'js',
+    'ts',
+    'tsx',
     'json',
     'vue'
   ],
@@ -18,9 +23,11 @@ module.exports = {
     '^@tests/(.*)$': '<rootDir>/__tests__/$1',
     vue$: '<rootDir>/node_modules/vue/dist/vue.common.js'
   },
+  preset: 'ts-jest/presets/js-with-ts',
   transform: {
     '^.+\\.js$': 'babel-jest',
-    '.*\\.(vue)$': 'jest-vue-preprocessor'
+    '.*\\.vue$': 'vue-jest',
+    '^.+\\.tsx?$': 'ts-jest'
   },
   testPathIgnorePatterns: [
     '<rootDir>/__tests__/e2e',
@@ -30,15 +37,15 @@ module.exports = {
     '<rootDir>/__tests__/unit/__mocks__',
     '<rootDir>/__tests__/unit/__utils__'
   ],
-  setupFiles: [
-    '<rootDir>/__tests__/unit/__utils__/setup.js'
-  ],
   snapshotSerializers: ['jest-serializer-vue'],
   coverageReporters: ['json', 'lcov', 'text', 'clover', 'html'],
   coverageDirectory: '<rootDir>/__tests__/unit/.coverage',
   collectCoverageFrom: [
-    'src/renderer/**/*.{js,vue}'
+    'src/renderer/**/*.{js,ts,tsx,vue}'
   ],
-  setupFilesAfterEnv: ['jest-extended'],
+  setupFilesAfterEnv: [
+    'jest-extended',
+    '<rootDir>/__tests__/unit/__utils__/setup.js'
+  ],
   watchman: false
 }

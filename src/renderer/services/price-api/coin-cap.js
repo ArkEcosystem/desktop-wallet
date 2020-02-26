@@ -25,7 +25,7 @@ export default class CoinCapAdapter {
         json: true
       })
 
-      this.tokenLookup = body.data.reduce((map, value, index) => {
+      this.tokenLookup = body.data.reduce((map, value) => {
         map[value.symbol.toUpperCase()] = value.id
 
         return map
