@@ -72,7 +72,6 @@
             y="0"
           />
           <path
-            :key="logo.id"
             :width="logo.width"
             :height="logo.height"
             :transform="logo.transform"
