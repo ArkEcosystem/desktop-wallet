@@ -1,5 +1,5 @@
 import LedgerTransport from '@ledgerhq/hw-transport-node-hid-singleton'
-import ArkLedger from '@arkecosystem/ledger-transport'
+import { ARKTransport } from '@arkecosystem/ledger-transport'
 import queue from 'async/queue'
 import logger from 'electron-log'
 
@@ -35,7 +35,7 @@ class LedgerService {
 
     this.listeningForLedger = true
     this.transport = await LedgerTransport.create()
-    this.ledger = new ArkLedger(this.transport)
+    this.ledger = new ARKTransport(this.transport)
     this.listeningForLedger = false
   }
 
@@ -84,7 +84,7 @@ class LedgerService {
 
       // Make a request to the ledger device to determine if it's accessible
       const isConnected = await this.__performAction(async () => {
-        return this.ledger.getAddress('44\'/1\'/0\'/0/0')
+        return this.ledger.getPublicKey('44\'/1\'/0\'/0/0')
       })
 
       return !!isConnected
@@ -96,36 +96,48 @@ class LedgerService {
   }
 
   /**
-   * Get address and public key from ledger wallet.
-   * @param  {Number} [path] Path for wallet location.
-   * @return {(String|Boolean)}
-   */
-  async getWallet (path) {
-    return this.__performAction(async () => {
-      return this.ledger.getAddress(path)
-    })
-  }
-
-  /**
    * Get public key from ledger wallet.
-   * @param  {Number} [path] Path for wallet location.
+   * @param  {Number} path Path for wallet location.
    * @return {(String|Boolean)}
    */
   async getPublicKey (path) {
     return this.__performAction(async () => {
-      return this.ledger.getAddress(path)
+      return this.ledger.getPublicKey(path)
     })
   }
 
   /**
    * Sign transaction for ledger wallet.
-   * @param  {Number} [path] Path for wallet location.
+   * @param  {Number} path Path for wallet location.
    * @param  {String} transactionHex Hex of transaction.
    * @return {(String|Boolean)}
    */
   async signTransaction (path, transactionHex) {
     return this.__performAction(async () => {
       return this.ledger.signTransaction(path, transactionHex)
+    })
+  }
+
+  /**
+   * Sign message for ledger wallet.
+   * @param  {Number} path Path for wallet location.
+   * @param  {String} messageHex Hex to sign.
+   * @return {(String|Boolean)}
+   */
+  async signMessage (path, messageHex) {
+    return this.__performAction(async () => {
+      return this.ledger.signMessage(path, Buffer.from(messageHex, 'hex'))
+    })
+  }
+
+  /**
+   * Get version of ledger wallet.
+   * @param  {Number} path Path for wallet location.
+   * @return {(String|Boolean)}
+   */
+  async getVersion () {
+    return this.__performAction(async () => {
+      return this.ledger.getVersion()
     })
   }
 

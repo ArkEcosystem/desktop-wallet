@@ -30,8 +30,10 @@ export default {
     transactionTableRowCount: 10,
     unconfirmedVotes: [],
     lastFees: {},
+    multiSignaturePeer: null,
     filterBlacklistedPlugins: true,
-    pluginAdapter: 'npm'
+    pluginAdapter: 'npm',
+    priceApi: 'coingecko'
   }),
 
   getters: {
@@ -88,8 +90,10 @@ export default {
     lastFeeByType: state => type => {
       return state.lastFees ? state.lastFees[type] : null
     },
+    multiSignaturePeer: state => state.multiSignaturePeer,
     filterBlacklistedPlugins: state => state.filterBlacklistedPlugins,
-    pluginAdapter: state => state.pluginAdapter
+    pluginAdapter: state => state.pluginAdapter,
+    priceApi: state => state.priceApi
   },
 
   mutations: {
@@ -201,12 +205,20 @@ export default {
       state.lastFees = fees
     },
 
+    SET_MULTI_SIGNATURE_PEER (state, peer) {
+      state.multiSignaturePeer = peer
+    },
+
     SET_FILTER_BLACKLISTED_PLUGINS (state, filterBlacklistedPlugins) {
       state.filterBlacklistedPlugins = filterBlacklistedPlugins
     },
 
     SET_PLUGIN_ADAPTER (state, pluginAdapter) {
       state.pluginAdapter = pluginAdapter
+    },
+
+    SET_PRICE_API (state, priceApi) {
+      state.priceApi = priceApi
     },
 
     RESET (state) {
@@ -236,8 +248,10 @@ export default {
       state.transactionTableRowCount = 10
       state.unconfirmedVotes = []
       state.lastFees = {}
+      state.multiSignaturePeer = null
       state.filterBlacklistedPlugins = true
       state.pluginAdapter = 'npm'
+      state.priceApi = 'coingecko'
 
       i18n.locale = state.language
     },
@@ -269,8 +283,10 @@ export default {
       state.transactionTableRowCount = value.transactionTableRowCount
       state.unconfirmedVotes = value.unconfirmedVotes
       state.lastFees = value.lastFees
+      state.multiSignaturePeer = value.multiSignaturePeer
       state.filterBlacklistedPlugins = value.filterBlacklistedPlugins
       state.pluginAdapter = value.pluginAdapter
+      state.priceApi = value.priceApi
 
       i18n.locale = state.language
     }
@@ -412,12 +428,20 @@ export default {
       commit('SET_LAST_FEES', fees)
     },
 
+    setMultiSignaturePeer ({ commit }, { host, port }) {
+      commit('SET_MULTI_SIGNATURE_PEER', { host, port })
+    },
+
     setFilterBlacklistedPlugins ({ commit }, value) {
       commit('SET_FILTER_BLACKLISTED_PLUGINS', value)
     },
 
     setPluginAdapter ({ commit }, value) {
       commit('SET_PLUGIN_ADAPTER', value)
+    },
+
+    setPriceApi ({ commit, dispatch }, value) {
+      commit('SET_PRICE_API', value)
     }
   }
 }

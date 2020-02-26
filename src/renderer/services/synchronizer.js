@@ -39,18 +39,6 @@ export default class Synchronizer {
         default: { interval: longest, delay: loop * 6 },
         focus: { interval: medium }
       },
-      market: {
-        default: { interval: medium },
-        focus: { interval: shorter }
-      },
-      wallets: {
-        default: { interval: shorter },
-        focus: { interval: shortest }
-      },
-      ledgerWallets: {
-        default: { interval: shorter },
-        focus: { interval: shortest }
-      },
       delegates: {
         default: { interval: longer, delay: loop * 3 },
         focus: { interval: longer }
@@ -59,9 +47,21 @@ export default class Synchronizer {
         default: { interval: null },
         focus: { interval: shorter }
       },
+      ledgerWallets: {
+        default: { interval: shorter },
+        focus: { interval: shortest }
+      },
+      market: {
+        default: { interval: medium },
+        focus: { interval: shorter }
+      },
       peer: {
         default: { interval: longer },
         focus: { interval: shorter }
+      },
+      wallets: {
+        default: { interval: shorter },
+        focus: { interval: shortest }
       }
     }
     config.contacts = config.wallets

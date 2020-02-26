@@ -31,6 +31,12 @@ export default {
     popupHeader: 'Seleccionar'
   },
 
+  MODAL_CLOSE_CONFIRMATION: {
+    QUESTION: '¿Seguro que quieres cerrar esta ventana?',
+    CONFIRM: 'Si, cerca',
+    CANCEL: 'No, cancelar'
+  },
+
   PAGES: {
     PROFILE_NEW: {
       STEP1: {

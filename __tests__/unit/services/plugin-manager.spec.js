@@ -2,6 +2,7 @@ import { createLocalVue } from '@vue/test-utils'
 import { PluginManager } from '@/services/plugin-manager'
 import { PluginSandbox } from '@/services/plugin-manager/plugin-sandbox'
 import { PluginSetup } from '@/services/plugin-manager/plugin-setup'
+import nock from 'nock'
 
 jest.mock('@/services/plugin-manager/plugin-sandbox.js')
 jest.mock('@/services/plugin-manager/plugin-setup.js')
@@ -78,7 +79,7 @@ describe('Plugin Manager', () => {
     })
 
     it('should fetch plugins from adapter if forced', async () => {
-      jest.spyOn(pluginManager, 'fetchPluginsFromAdapter')
+      jest.spyOn(pluginManager, 'fetchPluginsFromAdapter').mockReturnValue({})
 
       await pluginManager.fetchPlugins(true)
       expect(pluginManager.fetchPluginsFromAdapter).toHaveBeenCalled()
@@ -204,6 +205,48 @@ describe('Plugin Manager', () => {
       expect(mockDispatch).toHaveBeenCalledWith('session/setTheme', expect.any(String))
       expect(mockDispatch).toHaveBeenCalledWith('profile/update', expect.any(Object))
       expect(pluginManager.pluginSetups[`${pkg.name}-disabled`].destroy).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('fetchBlacklist', () => {
+    it('should fetch using cache-busted url', async () => {
+      const spy = jest.spyOn(Date.prototype, 'getTime').mockReturnValue(1234)
+      const spyError = jest.spyOn(console, 'error')
+
+      nock('https://raw.githubusercontent.com')
+        .get('/ark-ecosystem-desktop-plugins/config/master/blacklist.json')
+        .query({
+          ts: 1234
+        })
+        .reply(200, [])
+
+      await pluginManager.fetchBlacklist()
+
+      expect(spyError).not.toHaveBeenCalled()
+
+      spy.mockRestore()
+      spyError.mockRestore()
+    })
+  })
+
+  describe('fetchWhitelist', () => {
+    it('should fetch using cache-busted url', async () => {
+      const spy = jest.spyOn(Date.prototype, 'getTime').mockReturnValue(1234)
+      const spyError = jest.spyOn(console, 'error')
+
+      nock('https://raw.githubusercontent.com')
+        .get('/ark-ecosystem-desktop-plugins/config/master/whitelist.json')
+        .query({
+          ts: 1234
+        })
+        .reply(200, [])
+
+      await pluginManager.fetchWhitelist()
+
+      expect(spyError).not.toHaveBeenCalled()
+
+      spy.mockRestore()
+      spyError.mockRestore()
     })
   })
 })

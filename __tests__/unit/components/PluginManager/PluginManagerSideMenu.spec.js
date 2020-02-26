@@ -25,9 +25,15 @@ describe('PluginManagerSideMenu', () => {
   })
 
   describe('Computed properties', () => {
-    describe('categories', () => {
-      it('should return all categories', () => {
-        expect(wrapper.vm.categories).toEqual(['all', 'gaming', 'theme', 'utility', 'other'])
+    describe('pluginCategories', () => {
+      it('should return plugin categories', () => {
+        expect(wrapper.vm.pluginCategories).toEqual(['all', 'gaming', 'utility', 'other'])
+      })
+    })
+
+    describe('otherCategories', () => {
+      it('should return other categories', () => {
+        expect(wrapper.vm.otherCategories).toEqual(['theme'])
       })
     })
   })
