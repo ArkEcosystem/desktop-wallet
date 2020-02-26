@@ -157,7 +157,7 @@ export default {
         },
         {
           label: this.$t('TRANSACTION.RECIPIENT'),
-          field: 'recipientAddress'
+          field: 'recipientId'
         },
         {
           label: this.$t('TRANSACTION.STATUS'),
