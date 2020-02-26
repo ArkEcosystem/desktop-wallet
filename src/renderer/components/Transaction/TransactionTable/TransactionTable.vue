@@ -103,21 +103,24 @@
 
         <div
           v-else-if="data.column.field === 'asset.ipfs'"
-          :class="[ isDashboard ? 'dashboard-address' : 'max-w-xxs' ]"
+          :class="{ 'dashboard-address': isDashboard }"
         >
           <a
-            class="flex items-center whitespace-no-wrap"
+            class="flex items-center justify-end whitespace-no-wrap"
             href="#"
             @click.stop="electron_openExternal(getIpfsUrl(data.row))"
           >
-            <span class="mr-1">
+            <span class="hidden md:inline">
               {{ data.formattedRow[data.column.field] }}
+            </span>
+            <span class="inline md:hidden">
+              {{ data.formattedRow[data.column.field] | truncateMiddle(20) }}
             </span>
 
             <SvgIcon
               name="open-external"
               view-box="0 0 12 12"
-              class="text-theme-page-text-light"
+              class="text-theme-page-text-light ml-1"
             />
           </a>
         </div>
@@ -218,7 +221,8 @@ export default {
         columns.push({
           label: this.$t('TRANSACTION.HASH'),
           field: 'asset.ipfs',
-          formatFn: this.formatHash
+          tdClass: 'text-right md:w-3/5',
+          thClass: 'text-right md:w-3/5'
         })
       } else {
         columns.push(...[
@@ -236,19 +240,16 @@ export default {
             formatFn: this.formatSmartbridge,
             tdClass: vendorFieldClass.join(' '),
             thClass: vendorFieldClass.join(' ')
+          },
+          {
+            label: this.$t('TRANSACTION.AMOUNT'),
+            type: 'number',
+            field: 'amount',
+            tdClass: 'text-right',
+            thClass: 'text-right'
           }
         ])
       }
-
-      columns.push(...[
-        {
-          label: this.$t('TRANSACTION.AMOUNT'),
-          type: 'number',
-          field: 'amount',
-          tdClass: 'text-right',
-          thClass: 'text-right'
-        }
-      ])
 
       return columns
     }
@@ -272,10 +273,6 @@ export default {
         return `${value.slice(0, 40)}...`
       }
       return value
-    },
-
-    formatHash (value) {
-      return truncateMiddle(value, 10)
     },
 
     formatAmount (row, includeFee = true) {
