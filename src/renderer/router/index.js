@@ -1,6 +1,15 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
+const originalPush = Router.prototype.push
+Router.prototype.push = function push (location) {
+  return originalPush.call(this, location).catch(error => {
+    if (error.name !== 'NavigationDuplicated') {
+      throw error
+    }
+  })
+}
+
 Vue.use(Router)
 
 // NOTE: when adding a route here, check the `KeepAliveRoutes` computed property
