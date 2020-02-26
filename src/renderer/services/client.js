@@ -168,7 +168,7 @@ export default class ClientService {
 
     return {
       delegates: body.data,
-      totalCount: body.meta.totalCount
+      meta: body.meta
     }
   }
 
