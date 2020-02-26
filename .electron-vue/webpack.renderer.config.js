@@ -26,7 +26,8 @@ let whiteListedModules = ['vue', 'portal-vue', 'vue-property-decorator', 'vue-cl
 let rendererConfig = {
   devtool: '#cheap-module-eval-source-map',
   entry: {
-    renderer: path.join(__dirname, '../src/renderer/main.js')
+    renderer: path.join(__dirname, '../src/renderer/main.js'),
+    splashscreen: path.join(__dirname, '../src/renderer/splashscreen.js')
   },
   externals: [
     ...Object.keys(dependencies || {}).filter(d => !whiteListedModules.includes(d))
@@ -94,6 +95,7 @@ let rendererConfig = {
         use: {
           loader: 'url-loader',
           query: {
+            esModule: false,
             limit: 10000,
             name: 'imgs/[name]--[folder].[ext]'
           }
@@ -150,6 +152,20 @@ let rendererConfig = {
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: path.resolve(__dirname, '../src/index.ejs'),
+      inject: false,
+      minify: {
+        collapseWhitespace: true,
+        removeAttributeQuotes: true,
+        removeComments: true
+      },
+      nodeModules: process.env.NODE_ENV !== 'production'
+        ? path.resolve(__dirname, '../node_modules')
+        : false
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'splashscreen.html',
+      template: path.resolve(__dirname, '../src/splashscreen.ejs'),
+      inject: false,
       minify: {
         collapseWhitespace: true,
         removeAttributeQuotes: true,

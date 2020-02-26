@@ -171,6 +171,13 @@ export default {
 
     blur () {
       this.$refs.input.blur()
+    },
+
+    reset () {
+      this.model = ''
+      this.$nextTick(() => {
+        this.$v.$reset()
+      })
     }
   },
 

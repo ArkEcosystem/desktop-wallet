@@ -19,7 +19,7 @@
             >
             <h2
               v-if="isProfileTab"
-              class="ProfileNew__instructions__name opacity-75 absolute pin-x z-10 hidden xl:block"
+              class="ProfileNew__instructions__name opacity-75 absolute pin-x z-10 hidden xl:block truncate"
             >
               {{ name }}
             </h2>
@@ -56,7 +56,7 @@
                   :class="{
                     'ProfileEdition__field--modified': modified.name && modified.name !== profile.name
                   }"
-                  class="leading-tight border-b border-transparent flex-1"
+                  class="leading-tight border-b border-transparent flex-1 truncate"
                 >
                   {{ name }}
                 </div>
@@ -171,6 +171,18 @@
                   :value="networkId"
                   :position="['-50%', '0%']"
                   @select="selectNetwork"
+                />
+              </ListDividedItem>
+
+              <ListDividedItem :label="$t('COMMON.PRICE_PROVIDER')">
+                <MenuDropdown
+                  :class="{
+                    'ProfileEdition__field--modified': modified.priceApi && modified.priceApi !== profile.priceApi
+                  }"
+                  :items="priceApis"
+                  :value="priceApi"
+                  :position="['-75%', '0%']"
+                  @select="selectPriceApi"
                 />
               </ListDividedItem>
 
@@ -354,7 +366,7 @@
 
 <script>
 import { clone, isEmpty } from 'lodash'
-import { BIP39, I18N, PLUGINS } from '@config'
+import { BIP39, I18N, MARKET, PLUGINS } from '@config'
 import { ButtonSwitch } from '@/components/Button'
 import { InputText } from '@/components/Input'
 import { ListDivided, ListDividedItem } from '@/components/ListDivided'
@@ -399,7 +411,8 @@ export default {
       currency: '',
       timeFormat: '',
       isAdvancedModeEnabled: false,
-      marketChartOptions: {}
+      marketChartOptions: {},
+      priceApi: 'coingecko'
     },
     routeLeaveCallback: null,
     tab: 'profile',
@@ -409,7 +422,7 @@ export default {
 
   computed: {
     currencies () {
-      return this.$store.getters['market/currencies']
+      return Object.keys(MARKET.currencies)
     },
     timeFormats () {
       return ['Default', '12h', '24h'].reduce((all, format) => {
@@ -435,6 +448,13 @@ export default {
         acc[network.id] = network.name
         return acc
       }, {})
+    },
+    priceApis () {
+      return {
+        coingecko: 'CoinGecko',
+        cryptocompare: 'CryptoCompare',
+        coincap: 'CoinCap'
+      }
     },
 
     hasWallets () {
@@ -504,6 +524,9 @@ export default {
     },
     networkId () {
       return this.modified.networkId || this.profile.networkId
+    },
+    priceApi () {
+      return this.modified.priceApi || this.profile.priceApi
     },
     // TODO update it when modified, but it's changed on the sidemenu
     theme () {
@@ -575,6 +598,7 @@ export default {
     this.modified.timeFormat = this.profile.timeFormat || 'Default'
     this.modified.marketChartOptions = this.profile.marketChartOptions
     this.modified.isAdvancedModeEnabled = this.profile.isAdvancedModeEnabled
+    this.modified.priceApi = this.profile.priceApi || 'coingecko'
   },
 
   methods: {
@@ -614,6 +638,10 @@ export default {
         ...this.profile,
         ...this.modified
       })
+
+      if (this.isCurrentProfile && this.profile.priceApi !== this.modified.priceApi) {
+        this.$store.dispatch('market/refreshTicker')
+      }
 
       if (hasNameError) {
         this.$error(this.$t('COMMON.FAILED_UPDATE', {
@@ -671,6 +699,10 @@ export default {
 
     selectNetwork (network) {
       this.$set(this.modified, 'networkId', network)
+    },
+
+    selectPriceApi (priceApi) {
+      this.__updateSession('priceApi', priceApi)
     },
 
     setAdvancedMode (mode) {
@@ -788,43 +820,45 @@ export default {
 }
 
 .ProfileEdition__language .MenuDropdown__container {
-  min-width: 200px
+  min-width: 200px;
 }
 .ProfileEdition__language .MenuDropdownItem__container {
-  @apply .mx-2 .px-2
+  @apply .mx-2 .px-2;
 }
 .ProfileEdition__language .MenuDropdownItem__container {
-  @apply .break-normal
+  @apply .break-normal;
 }
 .ProfileEdition__language__item__flag {
-  height: 18px
+  height: 18px;
 }
 .ProfileEdition__language__handler__flag {
-  height: 12px
+  height: 12px;
 }
 
 .ProfileEdition__name .ProfileEdition__field--modified,
 .ProfileEdition__field--modified .MenuDropdownHandler {
-  @apply .text-blue .font-bold
+  @apply .text-blue .font-bold;
 }
 
 .ProfileEdition__name .ListDividedItem__label {
-  @apply .flex-no-shrink
+  @apply .flex-shrink;
 }
 .ProfileEdition__name .ListDividedItem__value {
-  @apply .flex w-full text-right
+  display: contents;
+  @apply .w-full .text-right;
 }
-.ProfileEdition__name .ListDividedItem__value .InputText {
-  @apply .w-full .ml-4
+.ProfileEdition__name .ListDividedItem__value .InputText,
+.ProfileEdition__name .ListDividedItem__value .InputText__input {
+  @apply .w-full;
 }
 .ProfileEdition__name__toggle {
-  height: 21px
+  height: 21px;
 }
 .ProfileEdition__name .ListDividedItem__value .InputText .InputField__wrapper {
-  height: 0
+  height: 0;
 }
 .ProfileEdition__avatar .InputGrid__container {
   grid-template-columns: repeat(4, 4rem) !important;
-  grid-gap: 1rem !important
+  grid-gap: 1rem !important;
 }
 </style>

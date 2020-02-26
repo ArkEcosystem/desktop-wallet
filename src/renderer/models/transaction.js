@@ -15,6 +15,9 @@ export default new BaseModel({
     type: {
       type: 'integer'
     },
+    typeGroup: {
+      type: 'integer'
+    },
     recipient: {
       type: 'string'
     },
@@ -44,6 +47,9 @@ export default new BaseModel({
     },
     vendorField: {
       type: 'string'
+    },
+    asset: {
+      type: 'object'
     },
     raw: {
       type: 'object'

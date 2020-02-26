@@ -8,7 +8,7 @@
           'rotate-vertical': isOpen
         }"
         name="arrow-dropdown"
-        view-box="0 0 18 18"
+        view-box="0 0 8 8"
         class="transition align-middle"
       />
     </span>

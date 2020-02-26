@@ -23,6 +23,7 @@
         class="InputCurrency__input flex flex-grow bg-transparent text-theme-page-text"
         type="text"
         @blur="onBlur"
+        @change="onChange"
         @focus="onFocus"
       >
       <div
@@ -40,7 +41,6 @@
 import { includes, isString } from 'lodash'
 import { required } from 'vuelidate/lib/validators'
 import { MARKET } from '@config'
-import store from '@/store'
 import InputField from './InputField'
 import BigNumber from '@/plugins/bignumber'
 
@@ -273,6 +273,11 @@ export default {
       this.isFocused = false
       this.$emit('blur')
     },
+    onChange (event) {
+      const value = event.target.value
+      const numeric = value ? this.sanitizeNumeric(value) : '0'
+      this.$emit('change', isNaN(numeric) ? '0' : numeric)
+    },
     onFocus () {
       this.isFocused = true
       this.$v.model.$touch()
@@ -365,7 +370,7 @@ export default {
      * @return {Boolean}
      */
     currencyValidator (currency) {
-      const currentNetwork = this.walletNetwork || store.getters['session/network']
+      const currentNetwork = this.walletNetwork || this.$store.getters['session/network']
       const currencies = [
         currentNetwork.token,
         currentNetwork.subunit,
@@ -374,6 +379,13 @@ export default {
         ...Object.values(MARKET.currencies).map(currency => currency.symbol)
       ]
       return includes(currencies, currency)
+    },
+
+    reset () {
+      this.inputValue = ''
+      this.$nextTick(() => {
+        this.$v.model.$reset()
+      })
     }
   },
 

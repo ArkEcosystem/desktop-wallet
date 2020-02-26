@@ -32,17 +32,19 @@
       <Collapse
         :is-open="!isPassphraseStep"
         :animation-duration="{ enter: 0, leave: 0 }"
+        class="TransactionFormSecondSignature__step-1"
       >
         <PassphraseWords
           v-show="showPassphraseWords"
           :passphrase-words="passphraseWords"
+          class="TransactionFormSecondSignature__passphrase-words"
         />
 
         <button
           :disabled="isGenerating || !showPassphraseWords"
           :class="{ 'hidden': !showPassphraseWords }"
           type="button"
-          class="blue-button mt-5"
+          class="TransactionFormSecondSignature__step-1__next blue-button mt-5"
           @click="toggleStep"
         >
           {{ $t('COMMON.NEXT') }}
@@ -51,12 +53,13 @@
 
       <Collapse
         :is-open="isPassphraseStep"
+        class="TransactionFormSecondSignature__step-2"
       >
         <PassphraseVerification
           ref="passphraseVerification"
           :passphrase="passphraseWords"
           :word-positions="wordPositions"
-          class="mb-10"
+          class="TransactionFormSecondSignature__passphrase-verification mb-10"
           @verified="onVerification"
         />
 
@@ -65,34 +68,40 @@
           :currency="walletNetwork.token"
           :transaction-type="$options.transactionType"
           :show-insufficient-funds="true"
+          class="TransactionFormSecondSignature__fee"
           @input="onFee"
         />
 
-        <div
-          v-if="currentWallet.isLedger"
-          class="mt-10"
-        >
-          {{ $t('TRANSACTION.LEDGER_SIGN_NOTICE') }}
+        <div v-if="!isMultiSignature">
+          <div
+            v-if="currentWallet.isLedger"
+            class="TransactionFormSecondSignature__ledger-notice mt-10"
+          >
+            {{ $t('TRANSACTION.LEDGER_SIGN_NOTICE') }}
+          </div>
+
+          <InputPassword
+            v-else-if="currentWallet.passphrase"
+            ref="password"
+            v-model="$v.form.walletPassword.$model"
+            :label="$t('TRANSACTION.PASSWORD')"
+            :is-required="true"
+            class="TransactionFormSecondSignature__password mt-4"
+          />
+
+          <PassphraseInput
+            v-else
+            ref="passphrase"
+            v-model="$v.form.passphrase.$model"
+            :address="currentWallet.address"
+            :pub-key-hash="walletNetwork.version"
+            class="TransactionFormSecondSignature__passphrase mt-4"
+          />
         </div>
-        <InputPassword
-          v-else-if="currentWallet.passphrase"
-          ref="password"
-          v-model="$v.form.walletPassword.$model"
-          :label="$t('TRANSACTION.PASSWORD')"
-          :is-required="true"
-        />
-        <PassphraseInput
-          v-else
-          ref="passphrase"
-          v-model="$v.form.passphrase.$model"
-          :address="currentWallet.address"
-          :pub-key-hash="walletNetwork.version"
-          class="mt-5"
-        />
 
         <button
           type="button"
-          class="blue-button mt-5 mr-4"
+          class="TransactionFormSecondSignature__back blue-button mt-5 mr-4"
           @click="toggleStep"
         >
           {{ $t('COMMON.BACK') }}
@@ -101,7 +110,7 @@
         <button
           :disabled="$v.form.$invalid || !isPassphraseVerified"
           type="button"
-          class="blue-button mt-5"
+          class="TransactionFormSecondSignature__step-2__next blue-button mt-5"
           @click="onSubmit"
         >
           {{ $t('COMMON.NEXT') }}
@@ -122,7 +131,7 @@
         v-if="!isPassphraseStep && showPassphraseWords"
         to="transaction-footer"
       >
-        <footer class="ModalWindow__container__footer--warning flex flex-row justify-between">
+        <footer class="TransactionFormSecondSignature__footer ModalWindow__container__footer--warning">
           <div class="flex w-80">
             {{ $t('WALLET_SECOND_SIGNATURE.INSTRUCTIONS') }}
           </div>
@@ -150,7 +159,6 @@
 </template>
 
 <script>
-import { required } from 'vuelidate/lib/validators'
 import { TRANSACTION_TYPES } from '@config'
 import { ButtonClipboard, ButtonReload } from '@/components/Button'
 import { Collapse } from '@/components/Collapse'
@@ -158,14 +166,13 @@ import { InputFee, InputPassword } from '@/components/Input'
 import { ListDivided, ListDividedItem } from '@/components/ListDivided'
 import { ModalLoader } from '@/components/Modal'
 import { PassphraseInput, PassphraseVerification, PassphraseWords } from '@/components/Passphrase'
-import TransactionService from '@/services/transaction'
 import WalletService from '@/services/wallet'
-import onSubmit from './mixin-on-submit'
+import mixin from './mixin'
 
 export default {
   name: 'TransactionFormSecondSignature',
 
-  transactionType: TRANSACTION_TYPES.SECOND_SIGNATURE,
+  transactionType: TRANSACTION_TYPES.GROUP_1.SECOND_SIGNATURE,
 
   components: {
     ButtonClipboard,
@@ -181,7 +188,7 @@ export default {
     PassphraseWords
   },
 
-  mixins: [onSubmit],
+  mixins: [mixin],
 
   data: () => ({
     isGenerating: false,
@@ -193,12 +200,11 @@ export default {
       passphrase: '',
       walletPassword: ''
     },
-    showEncryptLoader: false,
-    showLedgerLoader: false,
     showPassphraseWords: false
   }),
 
   computed: {
+    // TODO: doesn't need to be computed
     wordPositions () {
       return [3, 6, 9]
     },
@@ -208,25 +214,16 @@ export default {
       if (/\u3000/.test(this.secondPassphrase)) {
         return this.secondPassphrase.split('\u3000')
       }
+
       return this.secondPassphrase.split(' ')
-    },
-
-    currentWallet () {
-      return this.wallet_fromRoute
-    },
-
-    senderLabel () {
-      return this.wallet_formatAddress(this.currentWallet.address)
-    },
-
-    walletNetwork () {
-      return this.session_network
     }
   },
 
   watch: {
     isPassphraseStep () {
-      this.$refs.passphraseVerification.focusFirst()
+      if (this.isPassphraseStep) {
+        this.$refs.passphraseVerification.focusFirst()
+      }
     }
   },
 
@@ -234,15 +231,39 @@ export default {
     this.secondPassphrase = WalletService.generateSecondPassphrase(this.session_profile.bip39Language)
   },
 
-  mounted () {
-    this.form.fee = this.$refs.fee.fee
-  },
-
   methods: {
+    getTransactionData () {
+      return {
+        address: this.currentWallet.address,
+        passphrase: this.form.passphrase,
+        secondPassphrase: this.secondPassphrase,
+        fee: this.getFee(),
+        wif: this.form.wif,
+        networkWif: this.walletNetwork.wif,
+        multiSignature: this.currentWallet.multiSignature
+      }
+    },
+
+    async buildTransaction (transactionData, isAdvancedFee = false, returnObject = false) {
+      return this.$client.buildSecondSignatureRegistration(transactionData, isAdvancedFee, returnObject)
+    },
+
+    transactionError () {
+      this.$error(this.$t('TRANSACTION.ERROR.VALIDATION.SECOND_SIGNATURE'))
+    },
+
+    postSubmit () {
+      this.reset()
+
+      // The current passphrase has been already verified
+      this.isPassphraseVerified = true
+    },
+
     toggleStep () {
       this.isPassphraseStep = !this.isPassphraseStep
     },
 
+    // TODO: must be a better way of doing this without a timeout?
     displayPassphraseWords () {
       this.isGenerating = true
       setTimeout(() => {
@@ -251,6 +272,7 @@ export default {
       }, 300)
     },
 
+    // TODO: must be a better way of doing this without a timeout?
     generateNewPassphrase () {
       this.reset()
       this.isGenerating = true
@@ -260,51 +282,6 @@ export default {
       }, 300)
     },
 
-    onFee (fee) {
-      this.$set(this.form, 'fee', fee)
-    },
-
-    async submit () {
-      // Ensure that fee has value, even when the user has not interacted
-      if (!this.form.fee) {
-        this.form.fee = this.$refs.fee.fee
-      }
-
-      const transactionData = {
-        passphrase: this.form.passphrase,
-        secondPassphrase: this.secondPassphrase,
-        fee: this.currency_unitToSub(this.form.fee),
-        wif: this.form.wif,
-        networkWif: this.walletNetwork.wif
-      }
-
-      let success = true
-      let transaction
-      if (!this.currentWallet.isLedger) {
-        transaction = await this.$client.buildSecondSignatureRegistration(transactionData, this.$refs.fee && this.$refs.fee.isAdvancedFee)
-      } else {
-        success = false
-        this.showLedgerLoader = true
-        try {
-          const transactionObject = await this.$client.buildSecondSignatureRegistration(transactionData, this.$refs.fee && this.$refs.fee.isAdvancedFee, true)
-          transaction = await TransactionService.ledgerSign(this.currentWallet, transactionObject, this)
-          transaction.totalAmount = TransactionService.getTotalAmount(transaction)
-          success = true
-        } catch (error) {
-          this.$error(`${this.$t('TRANSACTION.LEDGER_SIGN_FAILED')}: ${error.message}`)
-        }
-        this.showLedgerLoader = false
-      }
-
-      if (success) {
-        this.emitNext(transaction)
-        this.reset()
-
-        // The current passphrase has been already verified
-        this.isPassphraseVerified = true
-      }
-    },
-
     onVerification () {
       this.isPassphraseVerified = true
     },
@@ -312,63 +289,24 @@ export default {
     reset () {
       this.isPassphraseStep = false
       this.isPassphraseVerified = false
-      if (!this.currentWallet.passphrase && !this.currentWallet.isLedger) {
-        this.$set(this.form, 'passphrase', '')
-        this.$refs.passphrase.reset()
-      } else if (!this.currentWallet.isLedger) {
-        this.$set(this.form, 'walletPassword', '')
-        this.$refs.password.reset()
+      if (!this.isMultiSignature) {
+        if (!this.currentWallet.passphrase && !this.currentWallet.isLedger) {
+          this.$set(this.form, 'passphrase', '')
+          this.$refs.passphrase.reset()
+        } else if (!this.currentWallet.isLedger) {
+          this.$set(this.form, 'walletPassword', '')
+          this.$refs.password.reset()
+        }
       }
       this.$v.$reset()
-    },
-
-    emitNext (transaction) {
-      this.$emit('next', { transaction })
     }
   },
 
   validations: {
     form: {
-      fee: {
-        required,
-        isValid () {
-          if (this.$refs.fee) {
-            return !this.$refs.fee.$v.$invalid
-          }
-
-          return false
-        }
-      },
-      passphrase: {
-        isValid () {
-          if (this.currentWallet.isLedger || this.currentWallet.passphrase) {
-            return true
-          }
-
-          if (this.$refs.passphrase) {
-            return !this.$refs.passphrase.$v.$invalid
-          }
-
-          return false
-        }
-      },
-      walletPassword: {
-        isValid () {
-          if (this.currentWallet.isLedger || !this.currentWallet.passphrase) {
-            return true
-          }
-
-          if (!this.form.walletPassword || !this.form.walletPassword.length) {
-            return false
-          }
-
-          if (this.$refs.password) {
-            return !this.$refs.password.$v.$invalid
-          }
-
-          return false
-        }
-      }
+      fee: mixin.validators.fee,
+      passphrase: mixin.validators.passphrase,
+      walletPassword: mixin.validators.walletPassword
     }
   }
 }
@@ -381,5 +319,9 @@ export default {
 
 .TransactionFormSecondSignature /deep/ .Collapse__handler {
   display: none
+}
+
+.TransactionFormSecondSignature__footer {
+  @apply .flex .flex-row .justify-between;
 }
 </style>

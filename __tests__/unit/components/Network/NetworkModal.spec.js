@@ -149,7 +149,7 @@ describe('NetworkModal', () => {
             }
           })
 
-        nock(MARKET.source.baseUrl)
+        nock(MARKET.source.cryptoCompare)
           .get('/data/price')
           .query({
             fsym: 'TEST',

@@ -39,7 +39,7 @@
       :no-data-message="$t('TABLE.NO_DELEGATES')"
       :current-page="currentPage"
       :per-page="queryParams.limit"
-      :per-page-dropdown="[25, 51]"
+      :per-page-dropdown="perPageOptions"
       class="WalletDelegates__table"
       @on-row-click="onRowClick"
       @on-per-page-change="onPerPageChange"
@@ -103,6 +103,28 @@ export default {
   }),
 
   computed: {
+    perPageOptions () {
+      if (this.activeDelegates < 25) {
+        return [this.activeDelegates]
+      }
+
+      const options = []
+
+      for (let i = 25; i <= this.activeDelegates && i <= 100; i = i + 25) {
+        options.push(i)
+      }
+
+      if (this.activeDelegates < 100) {
+        if (this.activeDelegates - options[options.length - 1] > 10) {
+          options.push(this.activeDelegates)
+        } else {
+          options[options.length - 1] = this.activeDelegates
+        }
+      }
+
+      return options
+    },
+
     activeDelegates () {
       return this.session_network.constants.activeDelegates || 51
     },
@@ -135,12 +157,12 @@ export default {
     },
 
     votingUrl () {
-      return 'https://docs.ark.io/tutorials/usage-guides/how-to-vote-in-the-ark-desktop-wallet.html'
+      return 'https://guides.ark.dev/usage-guides/desktop-wallet-voting'
     }
   },
 
   mounted () {
-    this.queryParams.limit = this.activeDelegates
+    this.queryParams.limit = Math.min(100, this.activeDelegates)
     this.fetchDelegates()
   },
 

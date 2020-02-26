@@ -1,7 +1,5 @@
 <template>
-  <Portal
-    :to="portalTarget"
-  >
+  <Portal :to="portalTarget">
     <div
       slot-scope="{ setPortalHasContent }"
       class="ModalWindow"
@@ -9,7 +7,7 @@
         'ModalWindow--maximized': isMaximized,
         'ModalWindow--minimized': !isMaximized
       }"
-      @click="onBackdropClick"
+      @mousedown.left="onBackdropClick"
     >
       <Transition name="ModalWindow">
         <div class="ModalWindow__wrapper flex items-center justify-center absolute">
@@ -19,7 +17,8 @@
               [containerClassesMinimized]: !isMaximized,
             }]"
             class="ModalWindow__container flex flex-col mx-auto rounded-lg relative transition text-theme-text-content"
-            @click.stop="void 0"
+            @change="onChange"
+            @mousedown.stop="void 0"
           >
             <section class="ModalWindow__container__content">
               <div class="ModalWindow__container__actions">
@@ -69,6 +68,12 @@
                 <p v-html="message" />
               </footer>
             </slot>
+
+            <ModalCloseConfirmation
+              v-if="showConfirmationModal"
+              @cancel="showConfirmationModal = false"
+              @confirm="emitCloseAfterConfirm"
+            />
           </div>
         </div>
       </Transition>
@@ -79,12 +84,14 @@
 <script>
 import { ButtonClose } from '@/components/Button'
 import { isFunction } from 'lodash'
+import ModalCloseConfirmation from './ModalCloseConfirmation'
 
 export default {
   name: 'ModalWindow',
 
   components: {
-    ButtonClose
+    ButtonClose,
+    ModalCloseConfirmation
   },
 
   props: {
@@ -123,6 +130,11 @@ export default {
       required: false,
       default: true
     },
+    confirmClose: {
+      type: Boolean,
+      required: false,
+      default: false
+    },
     allowClose: {
       type: Boolean,
       required: false,
@@ -136,11 +148,14 @@ export default {
   },
 
   data: () => ({
-    isMaximized: true
+    isMaximized: true,
+    showConfirmationModal: false,
+    hasChanged: false
   }),
 
   mounted () {
     document.addEventListener('keyup', this.onEscKey, { once: true })
+    this.$eventBus.on('change', this.onChange)
   },
 
   destroyed () {
@@ -164,15 +179,29 @@ export default {
         return
       }
 
+      if (this.confirmClose && this.hasChanged) {
+        this.showConfirmationModal = true
+        return
+      }
+
       if (force || this.isMaximized) {
         this.$emit('close')
       }
+    },
+
+    emitCloseAfterConfirm () {
+      this.showConfirmationModal = false
+      this.$emit('close')
     },
 
     onEscKey (event) {
       if (event.keyCode === 27) {
         this.emitClose()
       }
+    },
+
+    onChange () {
+      this.hasChanged = true
     }
   }
 }
@@ -193,30 +222,30 @@ export default {
   display: table;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, .5);
-  transition: opacity .3s ease;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: opacity 0.3s ease;
 }
 
 .ModalWindow--maximized .ModalWindow__wrapper {
-  @apply pin
+  @apply pin;
 }
 .ModalWindow--minimized .ModalWindow__wrapper {
-  @apply pin-r pin-b mr-5 mb-5
+  @apply pin-r pin-b mr-5 mb-5;
 }
 
 .ModalWindow__container__actions {
-  @apply absolute pin-x pin-t flex justify-end m-2 p-2
+  @apply absolute pin-x pin-t flex justify-end m-2 p-2;
 }
 
 .ModalWindow--maximized .ModalWindow__container__content {
-  @apply overflow-hidden p-16 pt-16 bg-theme-modal shadow rounded-lg
+  @apply overflow-y-auto p-16 pt-16 bg-theme-modal shadow rounded-lg;
 }
 .ModalWindow--minimized .ModalWindow__container__content {
-  @apply overflow-y-auto px-8 pt-2 pb-5 bg-theme-modal shadow rounded-lg
+  @apply overflow-y-auto px-8 pt-2 pb-5 bg-theme-modal shadow rounded-lg;
 }
 .ModalWindow--minimized .ModalWindow__container {
-  height: 200px!default;
-  @apply overflow-hidden
+  height: 200px !default;
+  @apply overflow-hidden;
 }
 </style>
 
@@ -231,6 +260,6 @@ export default {
   @apply ModalWindow__container__footer bg-theme-error text-white;
 }
 .ModalWindow--minimized .ModalWindow__container__footer {
-  @apply hidden
+  @apply hidden;
 }
 </style>

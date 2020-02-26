@@ -78,7 +78,7 @@ describe('Plugin Manager', () => {
     })
 
     it('should fetch plugins from adapter if forced', async () => {
-      jest.spyOn(pluginManager, 'fetchPluginsFromAdapter')
+      jest.spyOn(pluginManager, 'fetchPluginsFromAdapter').mockReturnValue({})
 
       await pluginManager.fetchPlugins(true)
       expect(pluginManager.fetchPluginsFromAdapter).toHaveBeenCalled()
