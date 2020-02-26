@@ -153,11 +153,11 @@ export default {
         },
         {
           label: this.$t('TRANSACTION.SENDER'),
-          field: 'sender'
+          field: 'senderPublicKey'
         },
         {
           label: this.$t('TRANSACTION.RECIPIENT'),
-          field: 'recipient'
+          field: 'recipientAddress'
         },
         {
           label: this.$t('TRANSACTION.STATUS'),
