@@ -122,6 +122,10 @@ export default {
         }
 
         this.showEncryptLoader = false
+
+        if (!this.form.wif) {
+          return
+        }
       }
 
       this.submit()

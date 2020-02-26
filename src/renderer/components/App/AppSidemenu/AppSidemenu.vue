@@ -3,9 +3,9 @@
     v-model="activeItem"
     :class="{
       'AppSidemenu--horizontal': isHorizontal,
-      'AppSidemenu--vertical': !isHorizontal
+      'AppSidemenu--vertical mr-3 lg:mx-6': !isHorizontal
     }"
-    class="AppSidemenu relative bg-transparent"
+    class="AppSidemenu"
   >
     <div
       class="AppSidemenu__container flexify w-full md:h-full justify-between"
@@ -232,6 +232,7 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
+.AppSidemenu { @apply relative bg-transparent }
 .AppSidemenu__container__scrollable .flexify { @apply flex-none }
 .AppSidemenu__logo { transition: opacity 0.5s; }
 
@@ -239,11 +240,12 @@ export default {
   transition: opacity 0.5s;
 }
 
-.AppSidemenu--horizontal .AppSidemenu__item { @apply w-16 }
+.AppSidemenu--horizontal { @apply h-full }
+.AppSidemenu--horizontal .flexify { @apply flex flex-row }
+.AppSidemenu--horizontal .AppSidemenu__container { @apply bg-theme-feature }
+.AppSidemenu--horizontal .AppSidemenu__item { @apply w-16 h-full }
 .AppSidemenu--horizontal .AppSidemenu__logo { @apply p-4 }
 .AppSidemenu--horizontal .AppSidemenu__logo img { @apply h-12 }
-.AppSidemenu--horizontal .flexify { @apply flex flex-row }
-.AppSidemenu--horizontal { @apply h-18; }
 .AppSidemenu--horizontal .AppSidemenu__avatar__dots {
   @apply absolute p-2 rounded-full bg-theme-feature;
   right: 0.1rem;
@@ -252,12 +254,12 @@ export default {
   height: 1.5rem;
 }
 
+.AppSidemenu--vertical { @apply w-22 h-full rounded-lg }
+.AppSidemenu--vertical .flexify { @apply flex flex-col }
 .AppSidemenu--vertical .AppSidemenu__container__scrollable { @apply rounded-lg py-2 }
 .AppSidemenu--vertical .AppSidemenu__item { @apply h-16 }
 .AppSidemenu--vertical .AppSidemenu__logo { @apply rounded-lg mb-3 p-5 }
 .AppSidemenu--vertical .AppSidemenu__logo img { @apply w-18 }
-.AppSidemenu--vertical .flexify { @apply flex flex-col }
-.AppSidemenu--vertical { @apply w-22 mx-6 rounded-lg }
 .AppSidemenu--vertical .AppSidemenu__avatar__dots {
   @apply absolute p-2 rounded-full bg-theme-feature shadow;
   right: 1rem;

@@ -27,17 +27,11 @@
       <AppSidemenu
         v-if="hasProfile"
         :is-horizontal="true"
-        :class="{
-          'blur': hasBlurFilter
-        }"
         class="block md:hidden z-1"
       />
       <section
         :style="background ? `backgroundImage: url('${assets_loadImage(background)}')` : ''"
-        :class="{
-          'blur': hasBlurFilter
-        }"
-        class="App__main flex flex-col items-center px-6 pb-6 pt-2 lg:pt-6 w-screen-adjusted h-screen-adjusted overflow-hidden -m-2"
+        class="App__main flex flex-col items-center px-4 pb-4 lg:pt-4 w-screen h-screen-adjusted overflow-hidden"
       >
         <div
           :class="{ 'ml-6': !hasProfile }"
@@ -73,32 +67,19 @@
       />
 
       <PortalTarget
-        :slot-props="{ setPortalHasContent }"
         name="modal"
         multiple
-        @change="onPortalChange('modal', ...arguments)"
       />
 
-      <PortalTarget
-        :slot-props="{ setPortalHasContent }"
-        name="updater"
-        @change="onPortalChange('updater', ...arguments)"
-      />
+      <PortalTarget name="updater" />
 
-      <PortalTarget
-        name="loading"
-        @change="onPortalChange('loading', ...arguments)"
-      />
+      <PortalTarget name="loading" />
 
-      <PortalTarget
-        name="qr-scan"
-        @change="onPortalChange('qr-scan', ...arguments)"
-      />
+      <PortalTarget name="qr-scan" />
 
       <PortalTarget
         name="button-dropdown"
         multiple
-        :slot-props="{ hasBlurFilter }"
       />
 
       <AlertMessage />
@@ -134,13 +115,6 @@ export default {
   data: () => ({
     isReady: false,
     isUriTransactionOpen: false,
-    forceBlurFilter: false,
-    portalHasContent: {
-      modal: false,
-      update: false,
-      loading: false,
-      'qr-scan': false
-    },
     uriTransactionSchema: {},
     aliveRouteComponents: []
   }),
@@ -154,9 +128,6 @@ export default {
   }),
 
   computed: {
-    hasBlurFilter () {
-      return Object.values(this.portalHasContent).some(hasContent => !!hasContent)
-    },
     background () {
       return this.$store.getters['session/background'] || `wallpapers/${this.hasSeenIntroduction ? 1 : 2}Default.png`
     },
@@ -342,10 +313,6 @@ export default {
       ipcRenderer.send('splashscreen:app-ready')
     },
 
-    onPortalChange (portal, isActive) {
-      this.setPortalHasContent(portal, isActive)
-    },
-
     __watchProcessURL () {
       ipcRenderer.on('process-url', (_, url) => {
         const uri = new URIHandler(url)
@@ -370,10 +337,6 @@ export default {
     closeUriTransaction () {
       this.isUriTransactionOpen = false
       this.uriTransactionSchema = {}
-    },
-
-    setPortalHasContent (portal, isActive) {
-      this.portalHasContent[portal] = isActive
     },
 
     setIntroDone () {
@@ -431,19 +394,19 @@ export default {
 .App__main {
   transition: .1s filter linear;
 }
+.App__main.h-screen-adjusted {
+  height: calc(100vh - 80px);
+}
 .App__container {
   max-width: 1400px;
-}
-.App__main.h-screen-adjusted {
-  height: calc(100vh + 1rem);
-}
-.App__main.w-screen-adjusted {
-  width: calc(100vw + 1rem);
 }
 @media (min-width: 768px) {
   .App__page {
     @apply .min-h-full;
     max-height: calc(100vh - 5rem);
+  }
+  .App__main.h-screen-adjusted {
+    @apply h-screen;
   }
 }
 </style>
