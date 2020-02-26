@@ -1,5 +1,5 @@
 import electron from 'electron'
-import { readFile, writeFileSync } from 'fs'
+import { readFileSync, writeFileSync } from 'fs'
 
 export default {
   methods: {
@@ -28,25 +28,18 @@ export default {
       return filePath
     },
 
-    electron_readFile (options = {}) {
-      const filters = options.filters || [
-        { name: 'JSON', extensions: ['json'] },
-        { name: 'All Files', extensions: ['*'] }
-      ]
-
-      return new Promise((resolve, reject) => {
-        electron.remote.dialog.showOpenDialog({
-          properties: ['openFile'],
-          filters
-        }, filePaths => {
-          if (!filePaths) return
-
-          readFile(filePaths[0], 'utf8', (err, data) => {
-            if (err) reject(err)
-            resolve(data)
-          })
-        })
+    async electron_readFile (options = {}) {
+      const { filePaths } = await electron.remote.dialog.showOpenDialog({
+        properties: ['openFile'],
+        filters: options.filters || [
+          { name: 'JSON', extensions: ['json'] },
+          { name: 'All Files', extensions: ['*'] }
+        ]
       })
+
+      if (!filePaths) return
+
+      return readFileSync(filePaths[0], 'utf8')
     }
   }
 }
