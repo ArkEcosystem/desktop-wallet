@@ -42,14 +42,14 @@ describe('App', () => {
   describe('Computed properties', () => {
     describe('hasProfile', () => {
       it('should not have a profile', () => {
-        wrapper.vm.$store.getters['session/profile'] = {}
-        expect(wrapper.vm.hasProfile).toMatchObject({})
+        wrapper.vm.$store.getters['session/profile'] = undefined
+        expect(wrapper.vm.hasProfile).toBe(false)
       })
 
       it('should have a profile', () => {
         const profileMock = { id: 'test-profile-2' }
         wrapper.vm.$store.getters['session/profile'] = profileMock
-        expect(wrapper.vm.hasProfile).toMatchObject(profileMock)
+        expect(wrapper.vm.hasProfile).toBe(true)
       })
     })
   })
