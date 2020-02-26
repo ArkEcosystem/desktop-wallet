@@ -32,7 +32,7 @@ describe('Services > Feed', () => {
 
     describe('when the request or parsing fails', () => {
       it('should throw the Error', async () => {
-        parseURLMock.mockImplementation(url => {
+        parseURLMock.mockImplementation(() => {
           throw new Error('failed')
         })
 
@@ -50,7 +50,7 @@ describe('Services > Feed', () => {
 
     describe('when the request or parsing fails', () => {
       it('should throw the Error', async () => {
-        parseURLMock.mockImplementation(url => {
+        parseURLMock.mockImplementation(() => {
           throw new Error('failed items')
         })
 

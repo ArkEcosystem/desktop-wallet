@@ -36,7 +36,7 @@ describe('pages > ProfileAll', () => {
             'network/byToken': token => networkBy('token', token),
             'network/bySymbol': symbol => networkBy('symbol', symbol),
             'profile/all': profiles,
-            'profile/balanceWithLedger': _id => new BigNumber(13700000),
+            'profile/balanceWithLedger': () => new BigNumber(13700000),
             'wallet/byProfileId': id => wallets[id]
           }
         },
