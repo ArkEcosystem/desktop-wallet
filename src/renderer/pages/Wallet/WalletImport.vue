@@ -283,7 +283,7 @@ export default {
     step2: ['walletPassword', 'walletConfirmPassword'],
     step3: ['schema.name'],
     walletPassword: {
-      isValid (value) {
+      isValid () {
         if (!this.walletPassword || !this.walletPassword.length) {
           return true
         }
@@ -296,7 +296,7 @@ export default {
       }
     },
     walletConfirmPassword: {
-      isValid (value) {
+      isValid () {
         if (!this.walletPassword || !this.walletPassword.length) {
           return true
         }
@@ -313,7 +313,7 @@ export default {
         isRequired (value) {
           return this.useOnlyPassphrase || required(value)
         },
-        isValid (value) {
+        isValid () {
           if (this.useOnlyPassphrase) {
             return true
           }
@@ -347,7 +347,7 @@ export default {
         isRequired (value) {
           return this.useOnlyAddress || required(value)
         },
-        isValid (value) {
+        isValid () {
           if (this.useOnlyAddress) {
             return true
           }

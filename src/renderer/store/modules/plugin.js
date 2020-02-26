@@ -367,7 +367,7 @@ export default {
       }
     },
 
-    async loadPluginsForProfile ({ getters, rootGetters, state }, profile) {
+    async loadPluginsForProfile ({ getters, state }, profile) {
       if (!state.enabled[profile.id]) {
         return
       }
@@ -442,7 +442,7 @@ export default {
       }
     },
 
-    setWhitelisted ({ commit, rootGetters }, { scope, plugins }) {
+    setWhitelisted ({ commit }, { scope, plugins }) {
       commit('SET_WHITELISTED_PLUGINS', { scope, plugins })
     },
 
@@ -457,7 +457,7 @@ export default {
       })
     },
 
-    async deletePlugin ({ dispatch, getters, rootGetters, state }, { pluginId, removeOptions = false }) {
+    async deletePlugin ({ dispatch, getters, rootGetters }, { pluginId, removeOptions = false }) {
       if (!getters.installedById(pluginId)) {
         return
       }
@@ -483,7 +483,7 @@ export default {
       }
     },
 
-    deleteLoaded ({ commit, getters, rootGetters, state }, { pluginId, profileId = null }) {
+    deleteLoaded ({ commit, getters, rootGetters }, { pluginId, profileId = null }) {
       profileId = profileId || rootGetters['session/profileId']
 
       if (!getters.isLoaded(pluginId, profileId)) {

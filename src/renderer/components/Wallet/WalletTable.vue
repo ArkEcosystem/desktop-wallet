@@ -225,7 +225,7 @@ export default {
       return a.localeCompare(b, undefined, { sensitivity: 'base', numeric: true })
     },
 
-    sortByVote (x, y, col, rowX, rowY) {
+    sortByVote (x, y) {
       const a = x ? this.getDelegateProperty(x, 'username') : ''
       const b = y ? this.getDelegateProperty(y, 'username') : ''
 

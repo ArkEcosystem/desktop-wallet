@@ -88,7 +88,7 @@ export default {
   },
 
   actions: {
-    async load ({ dispatch, rootGetters }) {
+    async load ({ dispatch }) {
       const delegates = []
 
       const delegatePage1 = await this._vm.$client.fetchDelegates({

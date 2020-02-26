@@ -243,7 +243,7 @@ export default {
     }
   },
 
-  data: vm => ({
+  data: () => ({
     hasBeenExpanded: false,
     isFiltersVisible: false,
     isResizing: false,

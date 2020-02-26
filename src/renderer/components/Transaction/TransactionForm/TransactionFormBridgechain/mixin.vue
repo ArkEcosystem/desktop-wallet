@@ -456,7 +456,7 @@ export default {
       isValidSeed (value) {
         return ipAddress(value)
       },
-      belowMax (value) {
+      belowMax () {
         return this.$v.form.seedNodes.$model.length < maxSeedNodes
       }
     },

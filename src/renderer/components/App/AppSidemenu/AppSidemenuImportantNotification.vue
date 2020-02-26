@@ -48,7 +48,7 @@ export default {
     }
   },
 
-  data: vm => ({
+  data: () => ({
     isNotificationVisible: false
   }),
 
