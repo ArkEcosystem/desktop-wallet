@@ -90,19 +90,23 @@ export default {
   actions: {
     async load ({ dispatch }) {
       const delegates = []
-      let page = 1
-      let totalCount = null
-      while (!totalCount || delegates.length < totalCount) {
-        const delegateResponse = await this._vm.$client.fetchDelegates({
+
+      const delegatePage1 = await this._vm.$client.fetchDelegates({
+        page: 1,
+        limit: 100
+      })
+
+      const requests = []
+      for (let page = 2; page < delegatePage1.meta.pageCount; page++) {
+        requests.push(this._vm.$client.fetchDelegates({
           page,
           limit: 100
-        })
-        delegateResponse.delegates = delegateResponse.delegates.map((delegate) => {
-          return { ...delegate }
-        })
-        delegates.push(...delegateResponse.delegates)
-        totalCount = delegateResponse.totalCount
-        page++
+        }))
+      }
+
+      const delegatePages = [delegatePage1, ...await Promise.all(requests)]
+      for (const page of delegatePages) {
+        delegates.push(...page.delegates)
       }
 
       dispatch('set', delegates)

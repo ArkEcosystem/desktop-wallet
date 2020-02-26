@@ -93,9 +93,7 @@ export default {
     },
 
     readAll () {
-      this.unreadAnnouncements.forEach(announcement => {
-        this.read(announcement)
-      })
+      this.$store.dispatch('announcements/markAsReadBulk', this.unreadAnnouncements)
     }
   }
 }
