@@ -37,7 +37,7 @@ beforeEach(() => {
     mockServer.emit('data', 'test')
     socket.on('message', pongMock)
   })
-  mockServer.on('message', socket => {
+  mockServer.on('message', () => {
     mockServer.emit('data', 'test')
   })
 

@@ -32,7 +32,7 @@ describe('pages > WalletAll', () => {
             'ledger/wallets': ledgerWallets,
             'profile/balanceWithLedger': jest.fn(),
             'session/hasWalletGridLayout': true,
-            'wallet/byProfileId': id => wallets
+            'wallet/byProfileId': () => wallets
           }
         },
         session_network: {

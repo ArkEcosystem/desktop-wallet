@@ -197,7 +197,7 @@ export default {
 
   mixins: [mixin],
 
-  data: vm => ({
+  data: () => ({
     step: 1,
     amount: '',
     recipientId: '',
@@ -397,7 +397,7 @@ export default {
   validations: {
     recipientId: {
       required,
-      isValid (value) {
+      isValid () {
         if (this.$refs.recipient) {
           return !this.$refs.recipient.$v.$invalid
         }
@@ -408,7 +408,7 @@ export default {
 
     amount: {
       required,
-      isValid (value) {
+      isValid () {
         if (this.$refs.amount) {
           return !this.$refs.amount.$v.$invalid
         }
