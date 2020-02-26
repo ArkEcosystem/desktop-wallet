@@ -9,7 +9,8 @@ const config = {
   fallbackLocale: I18N.defaultLocale,
   dateTimeFormats: {},
   numberFormats: {},
-  messages: {}
+  messages: {},
+  silentTranslationWarn: true
 }
 
 const languagesContext = require.context('./languages', true, /\.js$/)
