@@ -56,7 +56,6 @@ const createLoadingWindow = () => {
       nodeIntegration: true
     }
   })
-  windows.loading.setResizable(false)
   windows.loading.loadURL(loadingURL)
   windows.loading.show()
   windows.loading.on('close', () => (windows.loading = null))
