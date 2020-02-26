@@ -440,7 +440,7 @@ export default {
       commit('SET_PLUGIN_ADAPTER', value)
     },
 
-    setPriceApi ({ commit, dispatch }, value) {
+    setPriceApi ({ commit }, value) {
       commit('SET_PRICE_API', value)
     }
   }

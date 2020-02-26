@@ -20,7 +20,7 @@ export default class CoinGeckoAdapter {
         json: true
       })
 
-      this.tokenLookup = body.reduce((map, value, index) => {
+      this.tokenLookup = body.reduce((map, value) => {
         map[value.symbol.toUpperCase()] = value.id
 
         return map

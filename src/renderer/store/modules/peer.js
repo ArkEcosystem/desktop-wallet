@@ -287,7 +287,7 @@ export default {
      * Get Peer Discovery instance.
      * @return {PeerDiscovery}
      */
-    async getPeerDiscovery ({ dispatch, getters, rootGetters }, network = null) {
+    async getPeerDiscovery ({ getters, rootGetters }, network = null) {
       if (!network) {
         network = rootGetters['session/network']
       }
@@ -322,7 +322,7 @@ export default {
      * Refresh peer list.
      * @return {void}
      */
-    async refresh ({ dispatch, getters, rootGetters }, network = null) {
+    async refresh ({ dispatch }, network = null) {
       let peers = []
 
       try {
