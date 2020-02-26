@@ -59,6 +59,18 @@ export default {
         }
       }
     }
+  },
+
+  MODAL_PEER: {
+    CANCEL: 'Cancelar',
+    CONNECT: 'Conectar',
+    HOST: 'Protocol + IP / Hostname',
+    PORT: 'Puerta',
+    VALIDATING: 'Validando detalles de pares ...',
+    PLACEHOLDER: {
+      HOST: 'http://1.2.3.4',
+      PORT: '4003'
+    }
   }
 
 }
