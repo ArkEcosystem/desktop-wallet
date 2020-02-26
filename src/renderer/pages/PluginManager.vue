@@ -251,7 +251,6 @@ export default {
     activeCategory: 'all',
     activeFilter: 'all',
     isBlacklisting: false,
-    isMenuOpen: false,
     isRefreshing: false,
     isUpdate: false,
     isRemoving: false,
@@ -368,6 +367,20 @@ export default {
         this.$store.dispatch('profile/update', {
           ...this.session_profile,
           pluginManagerLayout: layout
+        })
+      }
+    },
+
+    isMenuOpen: {
+      get () {
+        return this.$store.getters['session/pluginMenuOpen']
+      },
+      set (open) {
+        this.$store.dispatch('session/setPluginMenuOpen', open)
+
+        this.$store.dispatch('profile/update', {
+          ...this.session_profile,
+          pluginMenuOpen: open
         })
       }
     },

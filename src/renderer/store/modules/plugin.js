@@ -17,7 +17,7 @@ export default {
       local: []
     },
     whitelisted: {
-      global: []
+      global: {}
     },
     pluginOptions: {},
     lastFetched: 0
@@ -53,6 +53,10 @@ export default {
         if (query) {
           match = match && ['id', 'title', 'description', 'keywords'].some(property => {
             let value = plugin.config[property]
+
+            if (!value) {
+              return false
+            }
 
             if (property === 'keywords') {
               value = value.join(' ')
@@ -133,10 +137,10 @@ export default {
 
     isEnabled: (state, getters) => (pluginId, profileId) => {
       if (!profileId) {
-        return getters.enabled[pluginId]
+        return !!getters.enabled[pluginId]
       }
 
-      return state.enabled[profileId] ? state.enabled[profileId][pluginId] : null
+      return state.enabled[profileId] ? !!state.enabled[profileId][pluginId] : false
     },
 
     isLoaded: (state, getters) => (pluginId, profileId) => {
@@ -144,14 +148,14 @@ export default {
         return !!getters.loaded[pluginId]
       }
 
-      return state.loaded[profileId] ? !!state.loaded[profileId][pluginId] : null
+      return state.loaded[profileId] ? !!state.loaded[profileId][pluginId] : false
     },
 
     isBlacklisted: (_, getters) => pluginId => {
       return getters.blacklisted.global.includes(pluginId) || getters.blacklisted.local.includes(pluginId)
     },
 
-    isWhitelisted: (_, getters) => (plugin) => {
+    isWhitelisted: (_, getters) => plugin => {
       if (Object.prototype.hasOwnProperty.call(getters.whitelisted.global, plugin.config.id)) {
         return semver.lte(plugin.config.version, getters.whitelisted.global[plugin.config.id])
       }
@@ -180,12 +184,7 @@ export default {
     },
 
     avatars: (state, getters) => profileId => {
-      let loadedPlugins
-      if (!profileId) {
-        loadedPlugins = getters.loaded
-      } else {
-        loadedPlugins = state.loaded[profileId]
-      }
+      const loadedPlugins = profileId ? state.loaded[profileId] : getters.loaded
 
       if (!loadedPlugins || !Object.keys(loadedPlugins)) {
         return []
@@ -255,10 +254,10 @@ export default {
         profileId = rootGetters['session/profileId']
       }
 
-      return state.pluginOptions[profileId] && state.pluginOptions[profileId][pluginId]
+      return !!(state.pluginOptions[profileId] && state.pluginOptions[profileId][pluginId])
     },
 
-    pluginOptions: (state) => (pluginId, profileId) => {
+    pluginOptions: state => (pluginId, profileId) => {
       if (!state.pluginOptions[profileId]) {
         return {}
       } else if (!state.pluginOptions[profileId][pluginId]) {
@@ -273,14 +272,6 @@ export default {
     RESET_PLUGINS (state) {
       state.loaded = {}
       state.installed = {}
-
-      // fix for 'tainted' profiles - can be removed with next release
-      if (state.blacklisted && Array.isArray(state.blacklisted)) {
-        state.blacklisted = {
-          global: state.blacklisted,
-          local: []
-        }
-      }
     },
 
     SET_LAST_FETCHED (state, timestamp) {
@@ -487,7 +478,7 @@ export default {
         await this._vm.$plugins.deletePlugin(pluginId)
       } catch (error) {
         this._vm.$logger.error(
-          `Could not delete '${pluginId}' plugin': ${error.message}`
+          `Could not delete '${pluginId}' plugin: ${error.message}`
         )
       }
     },
