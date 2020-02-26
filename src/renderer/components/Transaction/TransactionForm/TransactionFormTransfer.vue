@@ -562,9 +562,7 @@ export default {
           }
           return false
         }
-      },
-
-      vendorField: {}
+      }
     }
   }
 }

@@ -69,8 +69,8 @@ function broadcastURL (url) {
     return
   }
 
-  if (mainWindow && mainWindow.webContents) {
-    mainWindow.webContents.send('process-url', url)
+  if (window.main && window.main.webContents) {
+    window.main.webContents.send('process-url', url)
     deeplinkingUrl = null
   }
 }
@@ -97,7 +97,7 @@ function createWindow () {
     }
   })
 
-  // The `mainWindow.show()` is executed after the opening splash screen
+  // The `window.main.show()` is executed after the opening splash screen
   ipcMain.on('splashscreen:app-ready', () => {
     if (windows.loading) {
       windows.loading.close()
