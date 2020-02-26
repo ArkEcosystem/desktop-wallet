@@ -15,34 +15,41 @@ jest.mock('electron', () => ({
 const localVue = createLocalVue()
 localVue.use(VueRouter)
 
-describe('App', () => {
-  const mountPage = () => {
-    return mount(App, {
-      localVue,
-      router,
-      mocks: {
-        $store: {
-          getters: {
-            'session/theme': 'dark',
-            'session/profile': {
-              id: 'test-profile'
-            }
+let wrapper
+
+beforeEach(() => {
+  wrapper = mount(App, {
+    localVue,
+    router,
+    mocks: {
+      $store: {
+        getters: {
+          'session/theme': 'dark',
+          'session/profile': {
+            id: 'test-profile'
           }
         }
       }
-    })
-  }
+    }
+  })
+})
 
+describe('App', () => {
   it('should have the right name', () => {
-    const wrapper = mountPage()
     expect(wrapper.name()).toEqual('DesktopWallet')
   })
 
   describe('Computed properties', () => {
     describe('hasProfile', () => {
-      it('should has a profile', () => {
-        const wrapper = mountPage()
-        expect(wrapper.vm.hasProfile).toMatchObject({ id: 'test-profile' })
+      it('should not have a profile', () => {
+        wrapper.vm.$store.getters['session/profile'] = {}
+        expect(wrapper.vm.hasProfile).toMatchObject({})
+      })
+
+      it('should have a profile', () => {
+        const profileMock = { id: 'test-profile-2' }
+        wrapper.vm.$store.getters['session/profile'] = profileMock
+        expect(wrapper.vm.hasProfile).toMatchObject(profileMock)
       })
     })
   })
