@@ -50,6 +50,8 @@ let colors = {
   'theme-page-instructions-background': 'var(--theme-page-instructions-background)',
   'theme-modal': 'var(--theme-modal)',
 
+  'theme-header-text': 'var(--theme-header-text)',
+
   'theme-intro-gradient-1': 'var(--theme-intro-gradient-1)',
   'theme-intro-gradient-2': 'var(--theme-intro-gradient-2)',
 
@@ -90,6 +92,8 @@ let colors = {
   'theme-feature-item-selected-text': 'var(--theme-feature-item-selected-text)',
   'theme-feature-item-indicator': 'var(--theme-feature-item-indicator)',
 
+  'theme-secondary-feature': 'var(--theme-secondary-feature)',
+
   'theme-caption-text': 'var(--theme-caption-text)',
   'theme-heading-background': 'var(--theme-heading-background)',
   'theme-heading-text': 'var(--theme-heading-text)',
@@ -100,6 +104,7 @@ let colors = {
   'theme-chart-price': 'var(--theme-chart-price)',
 
   'theme-button': 'var(--theme-button)',
+  'theme-button-active': 'var(--theme-button-active)',
   'theme-button-text': 'var(--theme-button-text)',
   'theme-button-light': 'var(--theme-button-light)',
   'theme-button-light-text': 'var(--theme-button-light-text)',
@@ -147,6 +152,9 @@ let colors = {
   'theme-warn': 'var(--theme-warn)',
   'theme-warn-shadow': 'var(--theme-warn-shadow)',
   'theme-warn-text': 'var(--theme-warn-text)',
+
+  'theme-banner-background-color': 'var(--theme-banner-background-color)',
+  'theme-banner-text': 'var(--theme-banner-text)',
 
   'theme-footer-text': '#a4acb8',
 
@@ -278,8 +286,10 @@ module.exports = {
     'max-md': { max: '991px' },
     'lg': '992px',
     'minmax-lg': { min: '992px', max: '1199px' },
+    'min-xl': { min: '1200px' },
     'xl': '1200px',
-    'xxl': '1375px'
+    'xxl': '1375px',
+    'min-xxl': { min: '1375px' }
   },
 
   /*
@@ -500,6 +510,7 @@ module.exports = {
     default: '1px',
     '0': '0',
     '2': '2px',
+    '3': '3px', // Added
     '4': '4px',
     '8': '8px'
   },
@@ -593,6 +604,7 @@ module.exports = {
     '64': '16rem',
     '80': '20rem', // Added
     '88': '22rem', // Added
+    'md': '40rem', // Added
     '1/2': '50%',
     '1/3': '33.33333%',
     '2/3': '66.66667%',
@@ -603,7 +615,8 @@ module.exports = {
     '3/5': '60%',
     '4/5': '80%',
     '1/6': '16.66667%',
-    '1/7': '12.50%', // Added
+    '1/8': '12.50%', // Added
+    '7/8': '87.50%', // Added
     '5/6': '83.33333%',
     'full': '100%',
     'screen': '100vw'
@@ -647,6 +660,7 @@ module.exports = {
     '64': '16rem',
     '100': '25rem', // Added
     '120': '30rem', // Added
+    '1/2': '50%', // Added
     'full': '100%',
     'screen': '100vh'
   },
@@ -668,6 +682,7 @@ module.exports = {
   minWidth: {
     '0': '0',
     '1/4': '25%', // Added
+    '48': '12rem', // Added
     'full': '100%'
   },
 

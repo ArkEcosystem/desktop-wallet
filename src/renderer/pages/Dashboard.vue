@@ -73,9 +73,6 @@ export default {
     currency () {
       return this.$store.getters['session/currency']
     },
-    price () {
-      return this.$store.getters['market/lastPrice']
-    },
     ticker () {
       return this.session_network.market.ticker
     },
@@ -129,11 +126,17 @@ export default {
 
   methods: {
     toggleChart (value) {
-      this.marketChartOptions.isExpanded = value
+      this.marketChartOptions = {
+        ...this.marketChartOptions,
+        isExpanded: value
+      }
     },
 
     onPeriodChange (period) {
-      this.marketChartOptions.period = period
+      this.marketChartOptions = {
+        ...this.marketChartOptions,
+        period
+      }
     }
   }
 }

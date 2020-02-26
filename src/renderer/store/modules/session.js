@@ -11,10 +11,12 @@ export default {
     language: null,
     hideWalletButtonText: false,
     isMarketChartEnabled: true,
+    isAdvancedModeEnabled: false,
     marketChartOptions: { isEnabled: true, isExpanded: true, period: 'day' },
     name: null,
     profileId: null,
     theme: null,
+    pluginManagerLayout: null,
     walletLayout: null,
     walletSidebarSortParams: null,
     walletSidebarFilters: null,
@@ -27,7 +29,12 @@ export default {
     ledgerCache: null,
     transactionTableRowCount: 10,
     unconfirmedVotes: [],
-    lastFees: {}
+    lastFees: {},
+    multiSignaturePeer: null,
+    filterBlacklistedPlugins: true,
+    pluginAdapter: 'npm',
+    priceApi: 'coingecko',
+    pluginMenuOpen: true
   }),
 
   getters: {
@@ -60,11 +67,13 @@ export default {
     timeFormat: state => state.timeFormat,
     hideWalletButtonText: state => state.hideWalletButtonText,
     isMarketChartEnabled: state => state.isMarketChartEnabled,
-    marketChartOptions: state => state.marketChartOptions,
+    isAdvancedModeEnabled: state => state.isAdvancedModeEnabled,
+    marketChartOptions: state => ({ ...state.marketChartOptions }),
     theme: state => state.theme,
+    pluginManagerLayout: state => state.pluginManagerLayout,
     walletLayout: state => state.walletLayout,
-    walletSidebarSortParams: state => state.walletSidebarSortParams,
-    walletSidebarFilters: state => state.walletSidebarFilters,
+    walletSidebarSortParams: state => ({ ...state.walletSidebarSortParams }),
+    walletSidebarFilters: state => ({ ...state.walletSidebarFilters }),
     walletSortParams: state => state.walletSortParams,
     contactSortParams: state => state.contactSortParams,
     pluginSortParams: state => state.pluginSortParams,
@@ -81,7 +90,12 @@ export default {
     lastFees: state => state.lastFees,
     lastFeeByType: state => type => {
       return state.lastFees ? state.lastFees[type] : null
-    }
+    },
+    multiSignaturePeer: state => state.multiSignaturePeer,
+    filterBlacklistedPlugins: state => state.filterBlacklistedPlugins,
+    pluginAdapter: state => state.pluginAdapter,
+    priceApi: state => state.priceApi,
+    pluginMenuOpen: state => state.pluginMenuOpen
   },
 
   mutations: {
@@ -109,6 +123,10 @@ export default {
       state.isMarketChartEnabled = isEnabled
     },
 
+    SET_IS_ADVANCED_MODE_ENABLED (state, isEnabled) {
+      state.isAdvancedModeEnabled = isEnabled
+    },
+
     SET_MARKET_CHART_OPTIONS (state, marketChartOptions) {
       state.marketChartOptions = marketChartOptions
     },
@@ -131,6 +149,10 @@ export default {
 
     SET_THEME (state, theme) {
       state.theme = theme
+    },
+
+    SET_PLUGIN_MANAGER_LAYOUT (state, pluginManagerLayout) {
+      state.pluginManagerLayout = pluginManagerLayout
     },
 
     SET_WALLET_LAYOUT (state, walletLayout) {
@@ -185,6 +207,26 @@ export default {
       state.lastFees = fees
     },
 
+    SET_MULTI_SIGNATURE_PEER (state, peer) {
+      state.multiSignaturePeer = peer
+    },
+
+    SET_FILTER_BLACKLISTED_PLUGINS (state, filterBlacklistedPlugins) {
+      state.filterBlacklistedPlugins = filterBlacklistedPlugins
+    },
+
+    SET_PLUGIN_ADAPTER (state, pluginAdapter) {
+      state.pluginAdapter = pluginAdapter
+    },
+
+    SET_PRICE_API (state, priceApi) {
+      state.priceApi = priceApi
+    },
+
+    SET_PLUGIN_MENU_OPEN (state, pluginMenuOpen) {
+      state.pluginMenuOpen = pluginMenuOpen
+    },
+
     RESET (state) {
       state.avatar = 'pages/new-profile-avatar.svg'
       state.background = null
@@ -192,17 +234,19 @@ export default {
       state.timeFormat = 'Default'
       state.hideWalletButtonText = false
       state.isMarketChartEnabled = true
+      state.isAdvancedModeEnabled = false
       state.marketChartOptions = { isEnabled: true, isExpanded: true, period: 'day' }
       state.language = I18N.defaultLocale
       state.bip39Language = 'english'
       state.name = null
       state.theme = 'light'
+      state.pluginManagerLayout = 'grid'
       state.walletLayout = 'grid'
       state.walletSidebarSortParams = { field: 'name', type: 'asc' }
       state.walletSidebarFilters = {}
       state.walletSortParams = { field: 'balance', type: 'desc' }
       state.contactSortParams = { field: 'name', type: 'asc' }
-      state.pluginSortParams = { field: 'id', type: 'asc' }
+      state.pluginSortParams = { field: 'title', type: 'asc' }
       state.backgroundUpdateLedger = true
       state.broadcastPeers = true
       state.screenshotProtection = true
@@ -210,6 +254,11 @@ export default {
       state.transactionTableRowCount = 10
       state.unconfirmedVotes = []
       state.lastFees = {}
+      state.multiSignaturePeer = null
+      state.filterBlacklistedPlugins = true
+      state.pluginAdapter = 'npm'
+      state.priceApi = 'coingecko'
+      state.pluginMenuOpen = true
 
       i18n.locale = state.language
     },
@@ -221,11 +270,13 @@ export default {
       state.timeFormat = value.timeFormat
       state.hideWalletButtonText = value.hideWalletButtonText
       state.isMarketChartEnabled = value.isMarketChartEnabled
+      state.isAdvancedModeEnabled = value.isAdvancedModeEnabled
       state.marketChartOptions = value.marketChartOptions
       state.language = value.language
       state.bip39Language = value.bip39Language
       state.name = value.name
       state.theme = value.theme
+      state.pluginManagerLayout = value.pluginManagerLayout
       state.walletLayout = value.walletLayout
       state.walletSidebarSortParams = value.walletSidebarSortParams
       state.walletSidebarFilters = value.walletSidebarFilters
@@ -239,6 +290,11 @@ export default {
       state.transactionTableRowCount = value.transactionTableRowCount
       state.unconfirmedVotes = value.unconfirmedVotes
       state.lastFees = value.lastFees
+      state.multiSignaturePeer = value.multiSignaturePeer
+      state.filterBlacklistedPlugins = value.filterBlacklistedPlugins
+      state.pluginAdapter = value.pluginAdapter
+      state.priceApi = value.priceApi
+      state.pluginMenuOpen = value.pluginMenuOpen !== undefined ? value.pluginMenuOpen : true
 
       i18n.locale = state.language
     }
@@ -287,6 +343,10 @@ export default {
       commit('SET_IS_MARKET_CHART_ENABLED', value)
     },
 
+    setIsAdvancedModeEnabled ({ commit }, value) {
+      commit('SET_IS_ADVANCED_MODE_ENABLED', value)
+    },
+
     setMarketChartOptions ({ commit }, value) {
       commit('SET_MARKET_CHART_OPTIONS', value)
     },
@@ -327,6 +387,10 @@ export default {
 
     setTheme ({ commit }, value) {
       commit('SET_THEME', value)
+    },
+
+    setPluginManagerLayout ({ commit }, value) {
+      commit('SET_PLUGIN_MANAGER_LAYOUT', value)
     },
 
     setWalletLayout ({ commit }, value) {
@@ -370,6 +434,26 @@ export default {
       fees[type] = fee
 
       commit('SET_LAST_FEES', fees)
+    },
+
+    setMultiSignaturePeer ({ commit }, { host, port }) {
+      commit('SET_MULTI_SIGNATURE_PEER', { host, port })
+    },
+
+    setFilterBlacklistedPlugins ({ commit }, value) {
+      commit('SET_FILTER_BLACKLISTED_PLUGINS', value)
+    },
+
+    setPluginAdapter ({ commit }, value) {
+      commit('SET_PLUGIN_ADAPTER', value)
+    },
+
+    setPriceApi ({ commit, dispatch }, value) {
+      commit('SET_PRICE_API', value)
+    },
+
+    setPluginMenuOpen ({ commit, dispatch }, value) {
+      commit('SET_PLUGIN_MENU_OPEN', value)
     }
   }
 }

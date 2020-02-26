@@ -3,13 +3,13 @@ name: Test & Build
 on:
   push:
     branches:
-      - 'master'
-      - 'develop'
+      - "master"
+      - "develop"
   pull_request:
     types: [ready_for_review, synchronize, opened]
 
 jobs:
-  unit:
+  lint-unit:
     runs-on: ubuntu-latest
 
     strategy:
@@ -18,6 +18,13 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
+
+      - name: Cache node modules
+        uses: actions/cache@v1
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: ${{ runner.os }}-node-
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
@@ -33,15 +40,16 @@ jobs:
       - name: Install
         run: yarn global add node-gyp && yarn install --frozen-lockfile && npm rebuild
 
+      - name: Lint
+        run: yarn lint
+
       - name: Test
-        run: yarn test:unit --coverage
+        run: node --max-old-space-size=4096 ./node_modules/.bin/jest --config __tests__/unit.jest.conf.js __tests__/unit/ --logHeapUsage --coverage
 
       - name: Codecov
         run: ./node_modules/.bin/codecov --token=${{ secrets.CODECOV_TOKEN }}
 
   build-linux:
-    needs: unit
-
     runs-on: ubuntu-latest
 
     strategy:
@@ -50,6 +58,13 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
+
+      - name: Cache node modules
+        uses: actions/cache@v1
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: ${{ runner.os }}-node-
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
@@ -63,33 +78,34 @@ jobs:
         run: sudo apt-get install libudev-dev libusb-1.0-0-dev
 
       - name: Install
-        run: yarn global add node-gyp && yarn install --frozen-lockfile && npm rebuild
+        run: yarn global add node-gyp && yarn install --frozen-lockfile
+
+      - name: Re-build bcrypto
+        run: cd node_modules/bcrypto && npm install && cd ../../
 
       - name: Build
-        run: node .electron-vue/build.js && node ./node_modules/electron-builder/out/cli/cli.js --linux
+        run: yarn build:linux
 
       # - name: Upload .AppImage
       #   uses: actions/upload-artifact@master
       #   with:
-      #     name: ark-desktop-wallet-linux-2.6.2.AppImage
-      #     path: build/target/ark-desktop-wallet-linux-x86_64-2.6.2.AppImage
+      #     name: ark-desktop-wallet-linux-2.8.1.AppImage
+      #     path: build/target/ark-desktop-wallet-linux-x86_64-2.8.1.AppImage
 
       # - name: Upload .tar.gz
       #   uses: actions/upload-artifact@master
       #   with:
-      #     name: ark-desktop-wallet-linux-2.6.2.tar.gz
-      #     path: build/target/ark-desktop-wallet-linux-x64-2.6.2.tar.gz
+      #     name: ark-desktop-wallet-linux-2.8.1.tar.gz
+      #     path: build/target/ark-desktop-wallet-linux-x64-2.8.1.tar.gz
 
       - name: Upload .deb
         uses: actions/upload-artifact@master
         with:
-          name: ark-desktop-wallet-linux-2.6.2.deb
-          path: build/target/ark-desktop-wallet-linux-amd64-2.6.2.deb
+          name: ark-desktop-wallet-linux-2.8.1-${{ github.sha }}.deb
+          path: build/target/ark-desktop-wallet-linux-amd64-2.8.1.deb
 
   build-macOS:
-    needs: unit
-
-    runs-on: macOS-latest
+    runs-on: macos-latest
 
     strategy:
       matrix:
@@ -98,32 +114,39 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
+      - name: Cache node modules
+        uses: actions/cache@v1
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: ${{ runner.os }}-node-
+
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
 
       - name: Install
-        run: yarn global add node-gyp && yarn install --frozen-lockfile && npm rebuild
+        run: yarn global add node-gyp && yarn install --frozen-lockfile
 
       - name: Build
-        run: node .electron-vue/build.js && node ./node_modules/electron-builder/out/cli/cli.js --mac
+        run: yarn build:mac
+        env:
+          SKIP_NOTARIZE: true
 
       # - name: Upload .zip
       #   uses: actions/upload-artifact@master
       #   with:
-      #     name: ark-desktop-wallet-mac-2.6.2.zip
-      #     path: build/target/ark-desktop-wallet-mac-2.6.2.zip
+      #     name: ark-desktop-wallet-mac-2.8.1.zip
+      #     path: build/target/ark-desktop-wallet-mac-2.8.1.zip
 
       - name: Upload .dmg
-        uses: actions/upload-artifact@master
+        uses: actions/upload-artifact@v1
         with:
-          name: ark-desktop-wallet-mac-2.6.2.dmg
-          path: build/target/ark-desktop-wallet-mac-2.6.2.dmg
+          name: ark-desktop-wallet-mac-2.8.1-${{ github.sha }}.dmg
+          path: build/target/ark-desktop-wallet-mac-2.8.1.dmg
 
   build-windows:
-    needs: unit
-
     runs-on: windows-latest
 
     strategy:
@@ -139,13 +162,15 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Install
-        run: yarn global add node-gyp && yarn install --frozen-lockfile && npm rebuild
+        run: yarn global add node-gyp && yarn install --frozen-lockfile
+        shell: cmd
 
       - name: Build
-        run: node .electron-vue/build.js && node ./node_modules/electron-builder/out/cli/cli.js --win --x64 --ia32
+        run: yarn build:win
+        shell: cmd
 
       - name: Upload .exe
-        uses: actions/upload-artifact@master
+        uses: actions/upload-artifact@v1
         with:
-          name: ark-desktop-wallet-win-2.6.2.exe
-          path: build/target/ark-desktop-wallet-win-2.6.2.exe
+          name: ark-desktop-wallet-win-2.8.1-${{ github.sha }}.exe
+          path: build/target/ark-desktop-wallet-win-2.8.1.exe

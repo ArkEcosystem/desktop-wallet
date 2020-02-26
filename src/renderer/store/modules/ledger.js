@@ -2,7 +2,9 @@ import cryptoLibrary from 'crypto'
 import { keyBy } from 'lodash'
 import logger from 'electron-log'
 import Vue from 'vue'
+import semver from 'semver'
 import { Identities } from '@arkecosystem/crypto'
+import i18n from '@/i18n'
 import eventBus from '@/plugins/event-bus'
 import ledgerService from '@/services/ledger-service'
 
@@ -14,13 +16,17 @@ export default {
     isConnected: false,
     wallets: {},
     walletCache: {},
-    loadingProcesses: {}
+    loadingProcesses: {},
+    needsUpdate: false,
+    ensureConnection: false
   },
 
   getters: {
     isLoading: state => Object.keys(state.loadingProcesses).length,
     shouldStopLoading: state => processId => state.loadingProcesses[processId],
     isConnected: state => state.isConnected,
+    needsUpdate: state => state.needsUpdate,
+    isEnsureConnectionRunning: state => state.ensureConnection,
     wallets: state => Object.values(state.wallets),
     walletsObject: state => state.wallets,
     wallet: state => (address) => {
@@ -63,9 +69,17 @@ export default {
       state.isConnected = false
       state.wallets = {}
       state.loadingProcesses = {}
+      state.needsUpdate = false
+      state.ensureConnection = false
     },
     SET_SLIP44 (state, slip44) {
       state.slip44 = slip44
+    },
+    SET_NEEDS_UPDATE (state, needsUpdate) {
+      state.needsUpdate = needsUpdate
+    },
+    SET_ENSURE_CONNECTION (state, ensureConnection) {
+      state.ensureConnection = ensureConnection
     },
     SET_LOADING (state, processId) {
       Vue.set(state.loadingProcesses, processId, false)
@@ -136,22 +150,53 @@ export default {
      * Initialise ledger service with ark-ledger library.
      * @param {Number} slip44
      */
-    async init ({ dispatch }, slip44) {
+    async init ({ dispatch, getters }, slip44) {
       dispatch('setSlip44', slip44)
       dispatch('ensureConnection')
+
+      const neededUpdate = getters.needsUpdate
+      await dispatch('updateVersion')
+
+      if (!getters.needsUpdate && neededUpdate !== getters.needsUpdate) {
+        eventBus.emit('ledger:connected')
+      }
+    },
+
+    /**
+     * Update flag to determine if ledger app needs update.
+     */
+    async updateVersion ({ commit, dispatch, rootGetters }) {
+      const network = rootGetters['session/network']
+
+      let needsUpdate = false
+      if (network.constants && network.constants.aip11 && semver.lt(await dispatch('getVersion'), '1.2.0')) {
+        needsUpdate = true
+      }
+
+      commit('SET_NEEDS_UPDATE', needsUpdate)
+
+      if (needsUpdate) {
+        this._vm.$error(i18n.t('LEDGER.NEEDS_UPDATE'), 10000)
+      }
     },
 
     /**
      * Try connecting to ledger device.
      * @return {Boolean} true if connected, false if failed
      */
-    async connect ({ commit, dispatch }) {
+    async connect ({ commit, dispatch, getters }) {
       if (!await ledgerService.connect()) {
         return false
       }
 
       commit('SET_CONNECTED', true)
-      eventBus.emit('ledger:connected')
+
+      await dispatch('updateVersion')
+
+      if (!getters.needsUpdate) {
+        eventBus.emit('ledger:connected')
+      }
+
       await dispatch('reloadWallets', {})
 
       return true
@@ -175,7 +220,13 @@ export default {
      * @param  {Number} [obj.delay=2000] Delay in between connection attempts.
      * @return {void}
      */
-    async ensureConnection ({ commit, state, dispatch }, { delay } = { delay: 2000 }) {
+    async ensureConnection ({ commit, dispatch, getters, state }, { delay, reRun } = { delay: 2000, reRun: false }) {
+      if (!reRun && getters.isEnsureConnectionRunning) {
+        return
+      }
+
+      commit('SET_ENSURE_CONNECTION', true)
+
       if (state.isConnected && !await dispatch('checkConnected')) {
         await dispatch('disconnect')
         delay = 2000
@@ -188,7 +239,7 @@ export default {
       }
 
       setTimeout(() => {
-        dispatch('ensureConnection', { delay })
+        dispatch('ensureConnection', { delay, reRun: true })
       }, delay)
     },
 
@@ -259,11 +310,7 @@ export default {
 
       // Note: We only batch if search endpoint available, otherwise we would
       //       be doing unnecessary API calls for potentially cold wallets.
-      let batchIncrement = 1
-      if (this._vm.$client.isCapable('2.1.0')) {
-        batchIncrement = startIndex === 0 ? 10 : 2
-      }
-
+      const batchIncrement = startIndex === 0 ? 10 : 2
       try {
         for (let ledgerIndex = startIndex; ; ledgerIndex += batchIncrement) {
           if (getters.shouldStopLoading(processId)) {
@@ -401,6 +448,22 @@ export default {
      * @param  {Number} accountIndex Index of wallet to get data for.
      * @return {(String|Boolean)}
      */
+    async getVersion ({ dispatch }) {
+      try {
+        return await dispatch('action', {
+          action: 'getVersion'
+        })
+      } catch (error) {
+        logger.error(error)
+        throw new Error(`Could not get version: ${error}`)
+      }
+    },
+
+    /**
+     * Get address and public key from ledger wallet.
+     * @param  {Number} accountIndex Index of wallet to get data for.
+     * @return {(String|Boolean)}
+     */
     async getWallet ({ dispatch }, accountIndex) {
       try {
         return await dispatch('action', {
@@ -449,7 +512,7 @@ export default {
 
     /**
      * Sign transaction for ledger wallet.
-     * @param {Object} obj
+     * @param  {Object} obj
      * @param  {String} obj.transactionHex Hex of transaction.
      * @param  {Number} obj.accountIndex Index of wallet to sign transaction for.
      * @return {(String|Boolean)}
@@ -468,6 +531,26 @@ export default {
     },
 
     /**
+     * Sign message for ledger wallet.
+     * @param  {Object} obj
+     * @param  {String} obj.messageHex Hex to sign.
+     * @param  {Number} obj.accountIndex Index of wallet to sign transaction for.
+     * @return {(String|Boolean)}
+     */
+    async signMessage ({ dispatch }, { messageHex, accountIndex } = {}) {
+      try {
+        return await dispatch('action', {
+          action: 'signMessage',
+          accountIndex,
+          data: messageHex
+        })
+      } catch (error) {
+        logger.error(error)
+        throw new Error(`Could not sign message: ${error}`)
+      }
+    },
+
+    /**
      * Action method to act as a wrapper for ledger methods
      * @param {Object} obj
      * @param  {String} obj.action       Action to perform
@@ -476,7 +559,7 @@ export default {
      * @return {String}
      */
     async action ({ state, dispatch, rootGetters }, { action, accountIndex, data } = {}) {
-      if (accountIndex === undefined || !Number.isFinite(accountIndex)) {
+      if (action !== 'getVersion' && (accountIndex === undefined || !Number.isFinite(accountIndex))) {
         throw new Error('accountIndex must be a Number')
       }
 
@@ -490,7 +573,7 @@ export default {
       const path = `44'/${state.slip44}'/${accountIndex || 0}'/0/0`
       const actions = {
         async getWallet () {
-          const { publicKey } = await ledgerService.getWallet(path)
+          const publicKey = await ledgerService.getPublicKey(path)
           const network = rootGetters['session/network']
 
           return {
@@ -499,16 +582,22 @@ export default {
           }
         },
         async getAddress () {
-          const { publicKey } = await ledgerService.getWallet(path)
+          const publicKey = await ledgerService.getPublicKey(path)
           const network = rootGetters['session/network']
 
           return Identities.Address.fromPublicKey(publicKey, network.version)
         },
         async getPublicKey () {
-          return (await ledgerService.getWallet(path)).publicKey
+          return ledgerService.getPublicKey(path)
         },
         async signTransaction () {
-          return (await ledgerService.signTransaction(path, data)).signature
+          return ledgerService.signTransaction(path, data)
+        },
+        async signMessage () {
+          return ledgerService.signMessage(path, data)
+        },
+        async getVersion () {
+          return ledgerService.getVersion()
         }
       }
 

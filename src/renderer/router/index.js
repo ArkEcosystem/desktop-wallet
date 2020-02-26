@@ -38,9 +38,9 @@ const router = new Router({
       component: require('@/pages/NetworkOverview').default
     },
     {
-      path: '/plugins',
-      name: 'plugins',
-      component: require('@/pages/Plugins').default
+      path: '/plugin-manager',
+      name: 'plugin-manager',
+      component: require('@/pages/PluginManager').default
     },
     {
       path: '/profiles/new',

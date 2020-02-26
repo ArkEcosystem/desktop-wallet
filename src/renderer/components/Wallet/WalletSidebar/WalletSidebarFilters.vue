@@ -75,6 +75,7 @@
 import { ButtonSwitch } from '@/components/Button'
 import { MenuOptions, MenuOptionsItem } from '@/components/Menu'
 import WalletSidebarFiltersSearchInput from './WalletSidebarFiltersSearchInput'
+import Vue from 'vue'
 
 export default {
   name: 'WalletSidebarFilters',
@@ -162,17 +163,15 @@ export default {
     },
 
     setHideEmpty (isHidden) {
-      this.filters.hideEmpty = isHidden
-      this.emitFilter()
+      this.setFilter('hideEmpty', isHidden)
     },
 
     setHideLedger (isHidden) {
-      this.filters.hideLedger = isHidden
-      this.emitFilter()
+      this.setFilter('hideLedger', isHidden)
     },
 
     setFilter (filter, value) {
-      this.currentFilters[filter] = value
+      Vue.set(this.currentFilters, filter, value)
       this.emitFilter()
     },
 
@@ -208,7 +207,7 @@ export default {
 <style lang="postcss" scoped>
 .WalletSidebarFilters {
   width: 380px;
-  /* The expanded sidebar uses `.w-1/7` */
+  /* The collapsed sidebar uses `.w-1/8` */
   right: calc(12.5% - 0.5rem);
   top: 0.75rem;
   transition: right 0.4s;
@@ -216,7 +215,7 @@ export default {
 
 .WalletSidebarFilters--expanded {
   /* The expanded sidebar uses `.w-1/3` */
-  right: calc(33.33333% - 2.5rem);
+  right: calc(33.33333% - 1.25rem);
 }
 
 .WalletSidebarFilters__sorting .MenuOptionsItem {

@@ -5,6 +5,12 @@ describe('SessionModule', () => {
     store.dispatch('session/reset')
   })
 
+  describe('getters > marketChartOptions', () => {
+    it('should get the market chart options', () => {
+      expect(store.getters['session/marketChartOptions']).toEqual({ isEnabled: true, isExpanded: true, period: 'day' })
+    })
+  })
+
   describe('getters > walletSortParams', () => {
     it('should get the wallet sort params', () => {
       expect(store.getters['session/walletSortParams']).toEqual({ field: 'balance', type: 'desc' })
@@ -31,6 +37,14 @@ describe('SessionModule', () => {
     expect(store.getters['session/theme']).toEqual('light')
   })
 
+  describe('actions > setMarketChartOptions', () => {
+    it('should set the market chart options', () => {
+      const params = { foo: 'bar' }
+      store.dispatch('session/setMarketChartOptions', params)
+      expect(store.getters['session/marketChartOptions']).toEqual({ foo: 'bar' })
+    })
+  })
+
   describe('actions > setWalletSortParams', () => {
     it('should set the wallet sort params', () => {
       const params = { foo: 'bar' }
@@ -51,6 +65,20 @@ describe('SessionModule', () => {
     it('should set the value for hideWalletButtonText', () => {
       store.dispatch('session/setHideWalletButtonText', true)
       expect(store.getters['session/hideWalletButtonText']).toEqual(true)
+    })
+  })
+
+  describe('actions > setIsAdvancedModeEnabled', () => {
+    it('should set the value for isAdvancedModeEnabled', () => {
+      store.dispatch('session/setIsAdvancedModeEnabled', true)
+      expect(store.getters['session/isAdvancedModeEnabled']).toEqual(true)
+    })
+  })
+
+  describe('actions > setPriceApi', () => {
+    it('should set the value for priceApi', () => {
+      store.dispatch('session/setPriceApi', 'coingecko')
+      expect(store.getters['session/priceApi']).toEqual('coingecko')
     })
   })
 })

@@ -47,16 +47,16 @@ describe('WalletSidebar', () => {
 
   describe('filterWallets', () => {
     const wallets = [
-      { address: 'A1', isLedger: false, balance: 23 },
-      { address: 'A2', isLedger: false, balance: 22 }
+      { address: 'A1', isLedger: false, balance: '23' },
+      { address: 'A2', isLedger: false, balance: '22' }
     ]
     const ledgerWallets = [
-      { address: 'Aledger1', isLedger: true, balance: 10 },
-      { address: 'Aledger2', isLedger: true, balance: 12 }
+      { address: 'Aledger1', isLedger: true, balance: '10' },
+      { address: 'Aledger2', isLedger: true, balance: '12' }
     ]
     const emptyWallets = [
-      { address: 'A3', isLedger: false, balance: 0 },
-      { address: 'Aledger3', isLedger: true, balance: 0 }
+      { address: 'A3', isLedger: false, balance: '0' },
+      { address: 'Aledger3', isLedger: true, balance: '0' }
     ]
     const allWallets = [
       ...wallets,
@@ -126,9 +126,9 @@ describe('WalletSidebar', () => {
 
     describe('when a search query (`searchQuery`) is passed', () => {
       const wallets = [
-        { address: 'A1xd', name: 'example', balance: 132.23 },
-        { address: 'A2xd', name: 'name', balance: 13 },
-        { address: 'A3dx', name: 'other', balance: 937 }
+        { address: 'A1xd', name: 'example', balance: '13223' },
+        { address: 'A2xd', name: 'name', balance: '13' },
+        { address: 'A3dx', name: 'other', balance: '937' }
       ]
 
       let wrapper
@@ -215,10 +215,10 @@ describe('WalletSidebar', () => {
 
   describe('sortWallets', () => {
     const wallets = [
-      { address: 'AA', name: 'example', balance: 132.23 },
-      { address: 'AD', name: '', balance: 0 },
-      { address: 'AB', name: 'name', balance: 13 },
-      { address: 'AC', name: 'other', balance: 937 }
+      { address: 'AA', name: 'example', balance: '132' },
+      { address: 'AD', name: '', balance: '0' },
+      { address: 'AB', name: 'name', balance: '13' },
+      { address: 'AC', name: 'other', balance: '937' }
     ]
 
     let wrapper
@@ -235,7 +235,7 @@ describe('WalletSidebar', () => {
       it('should sort the wallets by name ascendently', () => {
         wrapper.vm.applySortOrder({ field: 'name', type: 'asc' })
 
-        expect(wrapper.vm.sortWallets(wallets)).toEqual([
+        expect(wrapper.vm.sortWallets(wallets.slice())).toEqual([
           wallets[1],
           wallets[0],
           wallets[2],
@@ -252,7 +252,7 @@ describe('WalletSidebar', () => {
       it('should sort the wallets by name descendently', () => {
         wrapper.vm.applySortOrder({ field: 'name', type: 'desc' })
 
-        expect(wrapper.vm.sortWallets(wallets)).toEqual([
+        expect(wrapper.vm.sortWallets(wallets.slice())).toEqual([
           wallets[3],
           wallets[2],
           wallets[0],
@@ -269,7 +269,7 @@ describe('WalletSidebar', () => {
       it('should sort the wallets by balance ascendently', () => {
         wrapper.vm.applySortOrder({ field: 'balance', type: 'asc' })
 
-        expect(wrapper.vm.sortWallets(wallets)).toEqual([
+        expect(wrapper.vm.sortWallets(wallets.slice())).toEqual([
           wallets[1],
           wallets[2],
           wallets[0],
@@ -286,7 +286,7 @@ describe('WalletSidebar', () => {
       it('should sort the wallets by balance descendently', () => {
         wrapper.vm.applySortOrder({ field: 'balance', type: 'desc' })
 
-        expect(wrapper.vm.sortWallets(wallets)).toEqual([
+        expect(wrapper.vm.sortWallets(wallets.slice())).toEqual([
           wallets[3],
           wallets[0],
           wallets[2],

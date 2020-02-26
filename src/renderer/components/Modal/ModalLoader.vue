@@ -2,11 +2,18 @@
   <ModalWindow
     v-if="isVisible"
     :allow-close="showClose"
-    container-classes="w-1/2"
+    class="ModalLoader"
+    container-classes="max-w-md sm:w-md"
     portal-target="loading"
     @close="toggle"
   >
-    <h2>
+    <PluginLogo
+      v-if="plugin"
+      :plugin="plugin"
+      class="mb-5 mx-auto"
+    />
+
+    <h2 class="text-center">
       {{ message }}
     </h2>
     <div
@@ -26,6 +33,7 @@
 
 <script>
 import Loader from '@/components/utils/Loader'
+import PluginLogo from '@/components/PluginManager/PluginLogo'
 import ModalWindow from './ModalWindow'
 
 export default {
@@ -33,13 +41,19 @@ export default {
 
   components: {
     Loader,
-    ModalWindow
+    ModalWindow,
+    PluginLogo
   },
 
   props: {
     message: {
       type: String,
       required: true
+    },
+    plugin: {
+      type: Object,
+      required: false,
+      default: null
     },
     visible: {
       type: Boolean,

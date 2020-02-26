@@ -2,7 +2,7 @@
 
 ![Ark Desktop Wallet](./banner.png)
 
-[![Build Status](https://badgen.now.sh/circleci/github/ArkEcosystem/desktop-wallet)](https://circleci.com/gh/ArkEcosystem/desktop-wallet)
+[![Build Status](https://badgen.now.sh/github/status/ArkEcosystem/desktop-wallet)](https://github.com/ArkEcosystem/desktop-wallet/actions?query=branch%3Adevelop)
 [![Latest Version](https://badgen.now.sh/github/release/ArkEcosystem/desktop-wallet)](https://github.com/ArkEcosystem/desktop-wallet/releases)
 [![License: MIT](https://badgen.now.sh/badge/license/MIT/green)](https://opensource.org/licenses/MIT)
 
@@ -10,7 +10,7 @@
 
 ## Download
 
-[Latest Release](https://github.com/ArkEcosystem/ark-desktop/releases)
+[Latest Release](https://github.com/ArkEcosystem/ark-desktop/releases/latest)
 
 ## Installing via Package Managers
 
@@ -31,6 +31,10 @@ Install via [Homebrew](https://brew.sh/):
 ```shell
 brew cask install ark-desktop-wallet
 ```
+
+## Translations
+
+Translations are no longer accepted for the Desktop Wallet. Our plan is to use plugins to provide languages in the near future.
 
 ## Development
 

@@ -31,15 +31,17 @@ describe('URI Handler', () => {
   describe('deserialize', () => {
     it('should contain keys', () => {
       const schema = new URIHandler('ark:DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9').deserialize()
-      expect(schema).toContainAllKeys(['address', 'amount', 'label', 'vendorField'])
+      expect(schema).toContainAllKeys(['address', 'amount', 'label', 'nethash', 'vendorField', 'wallet'])
     })
 
     it('should fill params', () => {
-      const schema = new URIHandler('ark:DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9?amount=1.2&label=Hello&vendorField=ARK').deserialize()
+      const schema = new URIHandler('ark:DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9?amount=1.2&label=Hello&vendorField=ARK&nethash=2a44f340d76ffc3df204c5f38cd355b7496c9065a1ade2ef92071436bd72e867&wallet=DSyG9hK9CE8eyfddUoEvsga4kNVQLdw2ve').deserialize()
       expect(schema.address).toBe('DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9')
       expect(schema.amount).toBe(1.2)
       expect(schema.label).toBe('Hello')
+      expect(schema.nethash).toBe('2a44f340d76ffc3df204c5f38cd355b7496c9065a1ade2ef92071436bd72e867')
       expect(schema.vendorField).toBe('ARK')
+      expect(schema.wallet).toBe('DSyG9hK9CE8eyfddUoEvsga4kNVQLdw2ve')
     })
   })
 })

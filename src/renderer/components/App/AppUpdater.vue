@@ -44,7 +44,7 @@
                 class="AppUpdater__authorized__downloading__header__info"
               >
                 <span class="font-semibold">{{ formattedPercentage }}</span>
-                <span class="ml-2 text-theme-page-text-light truncate">{{ formatBytes(progressUpdate.transferred) }} / {{ formatBytes(progressUpdate.total) }}</span>
+                <span class="ml-2 text-theme-page-text-light truncate">{{ formatter_bytes(progressUpdate.transferred) }} / {{ formatter_bytes(progressUpdate.total) }}</span>
               </div>
             </div>
             <div class="AppUpdater__progress-bar">
@@ -94,8 +94,8 @@
 
     <template #footer>
       <footer v-if="isDownloadFailed">
-        <div class="AppUpdater__footer AppUpdater__footer--failed">
-          {{ errorMessage ? errorMessage : $t('APP_UPDATER.UNKNOW_ERROR') }}
+        <div class="ModalWindow__container__footer--error">
+          {{ errorMessage ? errorMessage : $t('APP_UPDATER.UNKNOWN_ERROR') }}
         </div>
       </footer>
     </template>
@@ -107,7 +107,6 @@ import { ModalWindow } from '@/components/Modal'
 import { ProgressBar } from '@/components/ProgressBar'
 import { ipcRenderer } from 'electron'
 import { mapGetters } from 'vuex'
-import bytes from 'pretty-bytes'
 import cheerio from 'cheerio'
 import releaseService from '@/services/release'
 import Vue from 'vue'
@@ -246,10 +245,6 @@ export default {
       }
     },
 
-    formatBytes (value) {
-      return bytes(value)
-    },
-
     __formatReleaseNotes (notes) {
       const $ = cheerio.load(notes)
       const hashTable = $('table').last()
@@ -277,9 +272,6 @@ export default {
 
 .AppUpdater__footer {
   @apply flex flex-row justify-center
-}
-.AppUpdater__footer--failed {
-  @apply py-5 bg-theme-error text-white
 }
 .AppUpdater__content + footer {
   @apply mt-5

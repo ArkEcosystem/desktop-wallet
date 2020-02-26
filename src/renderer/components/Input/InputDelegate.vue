@@ -66,7 +66,7 @@ import { MenuDropdown } from '@/components/Menu'
 import Cycled from 'cycled'
 import InputField from './InputField'
 import truncate from '@/filters/truncate'
-import { includes, isEmpty, map, orderBy } from 'lodash'
+import { isEmpty, orderBy } from 'lodash'
 
 export default {
   name: 'InputDelegate',
@@ -120,7 +120,7 @@ export default {
     },
 
     delegates () {
-      return this.$store.getters['delegate/bySessionNetwork']
+      return Object.values(this.$store.getters['delegate/bySessionNetwork'] || {})
     },
 
     error () {
@@ -168,7 +168,7 @@ export default {
         return []
       }
 
-      const delegates = map(this.delegates, (object) => {
+      const delegates = this.delegates.map(object => {
         const delegate = {
           name: null,
           username: object.username,
@@ -187,7 +187,7 @@ export default {
 
       return results.reduce((delegates, delegate, index) => {
         Object.values(delegate).forEach(prop => {
-          if (includes(prop.toLowerCase(), this.inputValue.toLowerCase())) {
+          if (prop.toLowerCase().includes(this.inputValue.toLowerCase())) {
             delegates[delegate.username] = delegate.name
           }
         })
@@ -243,7 +243,7 @@ export default {
       // Verifies that the element that generated the blur was a dropdown item
       if (evt.relatedTarget) {
         const classList = evt.relatedTarget.classList || []
-        const isDropdownItem = includes(classList, 'MenuDropdownItem__button')
+        const isDropdownItem = classList.includes('MenuDropdownItem__button')
 
         if (!isDropdownItem) {
           this.closeDropdown()

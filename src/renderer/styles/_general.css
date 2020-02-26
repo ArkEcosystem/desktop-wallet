@@ -58,6 +58,10 @@ img {
 	transform: rotate(90deg);
 }
 
+.rotate-180 {
+  transform: rotate(180deg);
+}
+
 .modal-backdrop {
   @apply .fixed .z-50 .pin-t .pin-l .table .w-full .h-full;
   background-color: rgba(0, 0, 0, 0.5);
@@ -74,4 +78,8 @@ img {
 
 .shadow-outline-green {
   box-shadow: 0 0 0 2px config('colors.green');
+}
+
+.blur {
+  filter: blur(4px)
 }

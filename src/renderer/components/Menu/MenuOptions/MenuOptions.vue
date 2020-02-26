@@ -53,39 +53,4 @@ export default {
 .MenuOptions .MenuOptionsItem:last-child .MenuOptionsItem__container {
   border: none;
 }
-
-.MenuOptions__default--vertical:after {
-  top: 86px;
-}
-
-.MenuOptions__settings--vertical:after {
-  bottom: 230px;
-}
-
-.MenuOptions--vertical:after {
-  border-color: transparent;
-  border-style: solid;
-  border-right-color: config('colors.theme-settings');
-  border-width: 10px;
-  position: absolute;
-  content: "";
-  left: -20px;
-  width: 20px;
-  height: 0;
-  pointer-events: none;
-}
-
-.MenuOptions--horizontal:after {
-  border-color: transparent;
-  border-style: solid;
-  border-bottom-color: config('colors.theme-settings');
-  border-width: 10px;
-  position: absolute;
-  content: "";
-  top: -20px;
-  right: 20px;
-  width: 20px;
-  height: 0;
-  pointer-events: none;
-}
 </style>

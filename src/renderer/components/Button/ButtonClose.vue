@@ -1,6 +1,6 @@
 <template>
   <button
-    class="ButtonClose leading-none -m-2 ml-4 rounded-lg"
+    class="ButtonClose leading-none -m-2 rounded-lg"
     @click="emitClick"
   >
     <SvgIcon

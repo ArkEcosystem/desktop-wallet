@@ -17,19 +17,53 @@ const mocks = {
   }
 }
 
+const propsData = {
+  period: 'day',
+  isExpanded: false
+}
+
 describe('MarketChart', () => {
   it('should be instantiated', () => {
     const wrapper = shallowMount(MarketChart, {
-      mocks
+      mocks,
+      propsData
     })
 
     expect(wrapper.isVueInstance()).toBeTrue()
   })
 
+  it('should render the chart when isExpanded changes (from false to true)', () => {
+    const wrapper = shallowMount(MarketChart, {
+      mocks,
+      propsData
+    })
+
+    jest.spyOn(wrapper.vm, 'renderChart')
+
+    wrapper.setProps({ isExpanded: true })
+    expect(wrapper.vm.renderChart).toHaveBeenCalled()
+  })
+
+  it('should not render the chart when isExpanded changes (from true to false)', () => {
+    const wrapper = shallowMount(MarketChart, {
+      mocks,
+      propsData: {
+        ...propsData,
+        isExpanded: true
+      }
+    })
+
+    jest.spyOn(wrapper.vm, 'renderChart')
+
+    wrapper.setProps({ isExpanded: false })
+    expect(wrapper.vm.renderChart).not.toHaveBeenCalled()
+  })
+
   describe('formatHour', () => {
     it('should use the session to return 12h or 24h format', () => {
       let wrapper = shallowMount(MarketChart, {
-        mocks
+        mocks,
+        propsData
       })
 
       expect(wrapper.vm.formatHour('11:00')).toEqual('11:00')
@@ -37,7 +71,8 @@ describe('MarketChart', () => {
 
       mocks.session_profile.timeFormat = '12h'
       wrapper = shallowMount(MarketChart, {
-        mocks
+        mocks,
+        propsData
       })
 
       expect(wrapper.vm.formatHour('00:10')).toEqual('12:10 PM')
@@ -48,7 +83,8 @@ describe('MarketChart', () => {
 
       mocks.session_profile.timeFormat = '24h'
       wrapper = shallowMount(MarketChart, {
-        mocks
+        mocks,
+        propsData
       })
 
       expect(wrapper.vm.formatHour('11:00')).toEqual('11:00')

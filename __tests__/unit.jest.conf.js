@@ -1,11 +1,9 @@
-const path = require('path')
-
 module.exports = {
   verbose: false,
   globals: {
     __static: __dirname
   },
-  rootDir: path.resolve(__dirname, '../'),
+  rootDir: require('path').resolve(__dirname, '../'),
   moduleFileExtensions: [
     'js',
     'json',
@@ -14,8 +12,8 @@ module.exports = {
   moduleNameMapper: {
     '^@tailwind': '<rootDir>/tailwind.js',
     '^@package.json$': '<rootDir>/package.json',
-    '^@config': '<rootDir>/config/index.js',
     '^@config/(.*)$': '<rootDir>/config/$1',
+    '^@config': '<rootDir>/config/index.js',
     '^@/(.*)$': '<rootDir>/src/renderer/$1',
     '^@tests/(.*)$': '<rootDir>/__tests__/$1',
     vue$: '<rootDir>/node_modules/vue/dist/vue.common.js'
@@ -36,6 +34,7 @@ module.exports = {
     '<rootDir>/__tests__/unit/__utils__/setup.js'
   ],
   snapshotSerializers: ['jest-serializer-vue'],
+  coverageReporters: ['json', 'lcov', 'text', 'clover', 'html'],
   coverageDirectory: '<rootDir>/__tests__/unit/.coverage',
   collectCoverageFrom: [
     'src/renderer/**/*.{js,vue}'

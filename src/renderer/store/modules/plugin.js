@@ -1,19 +1,100 @@
 import Vue from 'vue'
 import pluginManager from '@/services/plugin-manager'
-import { cloneDeep } from 'lodash'
+import releaseService from '@/services/release'
+import { cloneDeep, uniqBy } from 'lodash'
+import semver from 'semver'
 
 export default {
   namespaced: true,
 
   state: {
-    loaded: {},
     available: {},
+    installed: {},
     enabled: {},
-    pluginOptions: {}
+    loaded: {},
+    blacklisted: {
+      global: [],
+      local: []
+    },
+    whitelisted: {
+      global: {}
+    },
+    pluginOptions: {},
+    lastFetched: 0
   },
 
   getters: {
-    available: state => state.available,
+    lastFetched: state => state.lastFetched,
+
+    all: (_, getters) => {
+      return uniqBy([...getters.installed, ...getters.available], 'config.id')
+    },
+
+    filtered: (_, getters, __, rootGetters) => (query, category, filter) => {
+      let plugins = getters[filter || 'all']
+
+      plugins = plugins.filter(plugin => {
+        if (rootGetters['session/filterBlacklistedPlugins'] && getters.isBlacklisted(plugin.config.id)) {
+          return false
+        }
+
+        if (!getters.installedById(plugin.config.id) && !getters.isWhitelisted(plugin)) {
+          return false
+        }
+
+        let match = true
+
+        if (category === 'all') {
+          match = match && !plugin.config.categories.includes('theme')
+        } else if (category && category !== 'all') {
+          match = match && plugin.config.categories.includes(category)
+        }
+
+        if (query) {
+          match = match && ['id', 'title', 'description', 'keywords'].some(property => {
+            let value = plugin.config[property]
+
+            if (!value) {
+              return false
+            }
+
+            if (property === 'keywords') {
+              value = value.join(' ')
+            }
+
+            return value.toLowerCase().includes(query)
+          })
+        }
+
+        return match
+      })
+
+      return plugins
+    },
+
+    available: state => Object.values(state.available),
+
+    availableById: (_, getters) => id => {
+      const plugins = getters.available
+
+      if (!Object.keys(plugins).length) {
+        return null
+      }
+
+      return plugins.find(plugin => id === plugin.config.id)
+    },
+
+    installed: state => Object.values(state.installed),
+
+    installedById: (_, getters) => id => {
+      const plugins = getters.installed
+
+      if (!plugins.length) {
+        return null
+      }
+
+      return plugins.find(plugin => id === plugin.config.id)
+    },
 
     loaded: (state, _, __, rootGetters) => {
       const profileId = rootGetters['session/profileId']
@@ -24,6 +105,10 @@ export default {
       return state.loaded[profileId]
     },
 
+    blacklisted: state => state.blacklisted,
+
+    whitelisted: state => state.whitelisted,
+
     enabled: (state, _, __, rootGetters) => {
       const profileId = rootGetters['session/profileId']
       if (!profileId || !state.enabled[profileId]) {
@@ -33,22 +118,59 @@ export default {
       return state.enabled[profileId]
     },
 
-    isAvailable: state => pluginId => !!state.available[pluginId],
+    isAvailable: (_, getters) => pluginId => !!getters.availableById(pluginId),
+
+    isInstalled: (_, getters) => pluginId => !!getters.installedById(pluginId),
+
+    isUpdateAvailable: (_, getters) => pluginId => {
+      const available = getters.availableById(pluginId)
+      const installed = getters.installedById(pluginId)
+
+      return available && installed ? semver.lt(installed.config.version, available.config.version) : false
+    },
+
+    latestVersion: (_, getters) => pluginId => {
+      const plugin = getters.availableById(pluginId)
+
+      return plugin ? plugin.config.version : null
+    },
 
     isEnabled: (state, getters) => (pluginId, profileId) => {
       if (!profileId) {
-        return getters.enabled[pluginId]
+        return !!getters.enabled[pluginId]
       }
 
-      return state.enabled[profileId] ? state.enabled[profileId][pluginId] : null
+      return state.enabled[profileId] ? !!state.enabled[profileId][pluginId] : false
     },
 
     isLoaded: (state, getters) => (pluginId, profileId) => {
       if (!profileId) {
-        return getters.loaded[pluginId]
+        return !!getters.loaded[pluginId]
       }
 
-      return state.loaded[profileId] ? !!state.loaded[profileId][pluginId] : null
+      return state.loaded[profileId] ? !!state.loaded[profileId][pluginId] : false
+    },
+
+    isBlacklisted: (_, getters) => pluginId => {
+      return getters.blacklisted.global.includes(pluginId) || getters.blacklisted.local.includes(pluginId)
+    },
+
+    isWhitelisted: (_, getters) => plugin => {
+      if (Object.prototype.hasOwnProperty.call(getters.whitelisted.global, plugin.config.id)) {
+        return semver.lte(plugin.config.version, getters.whitelisted.global[plugin.config.id])
+      }
+
+      return false
+    },
+
+    isInstalledSupported: (_, getters) => pluginId => {
+      const plugin = getters.installedById(pluginId)
+
+      if (!plugin.config.minVersion) {
+        return true
+      }
+
+      return semver.gte(releaseService.currentVersion, plugin.config.minVersion)
     },
 
     avatar: state => profile => {
@@ -62,12 +184,7 @@ export default {
     },
 
     avatars: (state, getters) => profileId => {
-      let loadedPlugins
-      if (!profileId) {
-        loadedPlugins = getters.loaded
-      } else {
-        loadedPlugins = state.loaded[profileId]
-      }
+      const loadedPlugins = profileId ? state.loaded[profileId] : getters.loaded
 
       if (!loadedPlugins || !Object.keys(loadedPlugins)) {
         return []
@@ -132,7 +249,15 @@ export default {
       }, [])
     },
 
-    pluginOptions: (state) => (pluginId, profileId) => {
+    profileHasPluginOptions: (state, _, __, rootGetters) => (pluginId, profileId) => {
+      if (!profileId) {
+        profileId = rootGetters['session/profileId']
+      }
+
+      return !!(state.pluginOptions[profileId] && state.pluginOptions[profileId][pluginId])
+    },
+
+    pluginOptions: state => (pluginId, profileId) => {
       if (!state.pluginOptions[profileId]) {
         return {}
       } else if (!state.pluginOptions[profileId][pluginId]) {
@@ -144,13 +269,29 @@ export default {
   },
 
   mutations: {
-    RESET_PLUGINS (state, plugin) {
+    RESET_PLUGINS (state) {
       state.loaded = {}
-      state.available = {}
+      state.installed = {}
     },
 
-    SET_AVAILABLE_PLUGIN (state, plugin) {
-      Vue.set(state.available, plugin.config.id, plugin)
+    SET_LAST_FETCHED (state, timestamp) {
+      state.lastFetched = timestamp
+    },
+
+    SET_AVAILABLE_PLUGINS (state, plugins) {
+      state.available = plugins
+    },
+
+    SET_INSTALLED_PLUGIN (state, plugin) {
+      Vue.set(state.installed, plugin.config.id, plugin)
+    },
+
+    SET_BLACKLISTED_PLUGINS (state, { scope, plugins }) {
+      Vue.set(state.blacklisted, scope, plugins)
+    },
+
+    SET_WHITELISTED_PLUGINS (state, { scope, plugins }) {
+      Vue.set(state.whitelisted, scope, plugins)
     },
 
     SET_LOADED_PLUGIN (state, data) {
@@ -165,12 +306,12 @@ export default {
       })
     },
 
-    DELETE_LOADED_PLUGIN (state, data) {
-      if (!state.loaded[data.profileId]) {
-        return
-      }
+    DELETE_LOADED_PLUGIN (state, { pluginId, profileId }) {
+      Vue.delete(state.loaded[profileId], pluginId)
+    },
 
-      Vue.delete(state.loaded[data.profileId], data.pluginId)
+    DELETE_INSTALLED_PLUGIN (state, pluginId) {
+      Vue.delete(state.installed, pluginId)
     },
 
     SET_PLUGIN_AVATARS (state, data) {
@@ -200,6 +341,12 @@ export default {
       Vue.set(state.pluginOptions[data.profileId][data.pluginId], data.key, data.value)
     },
 
+    DELETE_PLUGIN_OPTIONS (state, { pluginId, profileId }) {
+      if (state.pluginOptions[profileId] && state.pluginOptions[profileId][pluginId]) {
+        Vue.delete(state.pluginOptions[profileId], pluginId)
+      }
+    },
+
     SET_IS_PLUGIN_ENABLED (state, data) {
       if (!state.enabled[data.profileId]) {
         Vue.set(state.enabled, data.profileId, {})
@@ -210,7 +357,7 @@ export default {
   },
 
   actions: {
-    async init ({ commit, dispatch }) {
+    async reset ({ commit }) {
       commit('RESET_PLUGINS')
     },
 
@@ -226,7 +373,11 @@ export default {
       }
 
       for (const pluginId of Object.keys(state.enabled[profile.id])) {
-        if (!getters.isAvailable(pluginId)) {
+        if (!getters.isEnabled(pluginId, profile.id)) {
+          continue
+        }
+
+        if (!getters.isInstalled(pluginId)) {
           continue
         }
 
@@ -238,18 +389,18 @@ export default {
           await this._vm.$plugins.enablePlugin(pluginId, profile.id)
         } catch (error) {
           this._vm.$logger.error(
-            `Could not enable '${pluginId}' plugin for profile '${profile.name}': ${error.message}`
+            `Could not enable '${pluginId}' for profile '${profile.name}': ${error.message}`
           )
         }
       }
     },
 
-    async setEnabled ({ commit, getters, rootGetters }, { enabled, pluginId }) {
-      if (getters.isEnabled(pluginId) === enabled) {
+    async setEnabled ({ commit, getters, rootGetters }, { enabled, pluginId, profileId = null }) {
+      profileId = profileId || rootGetters['session/profileId']
+
+      if (getters.isEnabled(pluginId, profileId) === enabled) {
         return
       }
-
-      const profileId = rootGetters['session/profileId']
 
       commit('SET_IS_PLUGIN_ENABLED', {
         enabled,
@@ -257,15 +408,42 @@ export default {
         profileId
       })
 
-      if (enabled) {
-        await this._vm.$plugins.enablePlugin(pluginId, profileId)
-      } else {
-        await this._vm.$plugins.disablePlugin(pluginId, profileId)
+      try {
+        await this._vm.$plugins[`${enabled ? 'enable' : 'disable'}Plugin`](pluginId, profileId)
+      } catch (error) {
+        commit('SET_IS_PLUGIN_ENABLED', {
+          enabled: !enabled,
+          pluginId,
+          profileId
+        })
+
+        throw error
       }
     },
 
-    setAvailable ({ commit, rootGetters }, plugin) {
-      commit('SET_AVAILABLE_PLUGIN', plugin)
+    setAvailable ({ commit }, plugins) {
+      commit('SET_AVAILABLE_PLUGINS', plugins)
+      commit('SET_LAST_FETCHED', Date.now())
+    },
+
+    setInstalled ({ commit }, plugin) {
+      commit('SET_INSTALLED_PLUGIN', plugin)
+    },
+
+    async setBlacklisted ({ commit, dispatch, getters, rootGetters }, { scope, plugins }) {
+      commit('SET_BLACKLISTED_PLUGINS', { scope, plugins })
+
+      for (const plugin of plugins) {
+        for (const profile of rootGetters['profile/all']) {
+          if (profile.filterBlacklistedPlugins && getters.isEnabled(plugin, profile.id)) {
+            await dispatch('setEnabled', { enabled: false, pluginId: plugin, profileId: profile.id })
+          }
+        }
+      }
+    },
+
+    setWhitelisted ({ commit, rootGetters }, { scope, plugins }) {
+      commit('SET_WHITELISTED_PLUGINS', { scope, plugins })
     },
 
     setLoaded ({ commit, getters, rootGetters }, data) {
@@ -279,11 +457,51 @@ export default {
       })
     },
 
-    deleteLoaded ({ commit, getters, rootGetters }, pluginId) {
+    async deletePlugin ({ dispatch, getters, rootGetters, state }, { pluginId, removeOptions = false }) {
+      if (!getters.installedById(pluginId)) {
+        return
+      }
+
+      for (const profile of rootGetters['profile/all']) {
+        await dispatch('setEnabled', {
+          enabled: false,
+          pluginId,
+          profileId: profile.id
+        })
+
+        if (removeOptions) {
+          dispatch('deletePluginOptionsForProfile', { pluginId, profileId: profile.id })
+        }
+      }
+
+      try {
+        await this._vm.$plugins.deletePlugin(pluginId)
+      } catch (error) {
+        this._vm.$logger.error(
+          `Could not delete '${pluginId}' plugin: ${error.message}`
+        )
+      }
+    },
+
+    deleteLoaded ({ commit, getters, rootGetters, state }, { pluginId, profileId = null }) {
+      profileId = profileId || rootGetters['session/profileId']
+
+      if (!getters.isLoaded(pluginId, profileId)) {
+        return
+      }
+
       commit('DELETE_LOADED_PLUGIN', {
         pluginId,
-        profileId: rootGetters['session/profileId']
+        profileId
       })
+    },
+
+    deleteInstalled ({ commit, getters }, pluginId) {
+      if (!getters.installedById(pluginId)) {
+        return
+      }
+
+      commit('DELETE_INSTALLED_PLUGIN', pluginId)
     },
 
     setAvatars ({ commit, getters, rootGetters }, data) {
@@ -331,15 +549,24 @@ export default {
     },
 
     async setPluginOption ({ commit, getters, rootGetters }, data) {
-      if (!getters.isEnabled(data.pluginId, data.profileId)) {
+      if (data.profileId !== 'global' && !getters.isEnabled(data.pluginId, data.profileId)) {
         throw new Error('Plugin is not enabled')
       }
 
       commit('SET_PLUGIN_OPTION', {
         pluginId: data.pluginId,
-        profileId: rootGetters['session/profileId'],
+        profileId: data.profileId === 'global' ? 'global' : rootGetters['session/profileId'],
         key: data.key,
         value: data.value
+      })
+    },
+
+    deletePluginOptionsForProfile ({ commit, rootGetters }, { pluginId, profileId = null }) {
+      profileId = profileId || rootGetters['session/profileId']
+
+      commit('DELETE_PLUGIN_OPTIONS', {
+        pluginId,
+        profileId
       })
     }
   }
