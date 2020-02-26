@@ -450,7 +450,7 @@ describe('Services > Client', () => {
     it('should return all properties for each delegate', async () => {
       const response = await client.fetchDelegates()
       expect(response).toHaveProperty('delegates')
-      expect(response).toHaveProperty('totalCount', meta.totalCount)
+      expect(response).toHaveProperty('meta', meta)
 
       const delegates = response.delegates
       expect(delegates).toHaveLength(data.length)
