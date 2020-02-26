@@ -33,12 +33,33 @@ export default {
         ...readAnnouncement,
         isRead: true
       })
+    },
+
+    MARK_ANNOUNCEMENT_AS_READ_BULK (state, announcements) {
+      const announcementsToUpdate = []
+      for (const announcement of state.announcements) {
+        let isRead = announcement.isRead
+        if (announcements.find(readAnnouncement => announcement.guid === readAnnouncement.guid)) {
+          isRead = true
+        }
+
+        announcementsToUpdate.push({
+          ...announcement,
+          isRead
+        })
+      }
+
+      Vue.set(state, 'announcements', announcementsToUpdate)
     }
   },
 
   actions: {
     markAsRead ({ commit }, announcement) {
       commit('MARK_ANNOUNCEMENT_AS_READ', announcement)
+    },
+
+    markAsReadBulk ({ commit }, announcements) {
+      commit('MARK_ANNOUNCEMENT_AS_READ_BULK', announcements)
     },
 
     async fetch ({ commit }) {
