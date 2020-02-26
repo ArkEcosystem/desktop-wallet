@@ -3,7 +3,7 @@
     <WalletDetails
       v-if="wallet"
       ref="WalletDetails"
-      class="h-full flex-1"
+      class="flex-1"
       :class="{
         'w-2/3': isSidebarExpanded,
         'w-7/8': !isSidebarExpanded
