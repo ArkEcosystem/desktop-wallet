@@ -77,7 +77,7 @@
         </div>
 
         <div
-          v-else-if="data.column.field === 'sender'"
+          v-else-if="data.column.field === 'senderPublicKey'"
           :class="[ isDashboard ? 'dashboard-address' : 'max-w-xxs' ]"
         >
           <WalletAddress
@@ -88,7 +88,7 @@
         </div>
 
         <div
-          v-else-if="data.column.field === 'recipient'"
+          v-else-if="data.column.field === 'recipientId'"
           :class="[ isDashboard ? 'dashboard-address' : 'max-w-xxs' ]"
         >
           <WalletAddress
@@ -224,11 +224,11 @@ export default {
         columns.push(...[
           {
             label: this.$t('TRANSACTION.SENDER'),
-            field: 'sender'
+            field: 'senderPublicKey'
           },
           {
             label: this.$t('TRANSACTION.RECIPIENT'),
-            field: 'recipient'
+            field: 'recipientId'
           },
           {
             label: this.$t('TRANSACTION.VENDOR_FIELD'),
