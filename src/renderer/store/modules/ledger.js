@@ -363,22 +363,8 @@ export default {
             }
           }
 
-          let walletData = []
-          if (batchIncrement > 1) {
-            walletData = await this._vm.$client.fetchWallets(ledgerWallets.map(wallet => wallet.address))
-          } else {
-            try {
-              walletData = [await this._vm.$client.fetchWallet(ledgerWallets[0].address)]
-            } catch (error) {
-              logger.error(error)
-              const message = error.response ? error.response.body.message : error.message
-              if (message !== 'Wallet not found') {
-                throw error
-              }
-            }
-          }
-
           let hasCold = false
+          const walletData = await this._vm.$client.fetchWallets(ledgerWallets.map(wallet => wallet.address))
           const filteredWallets = []
           for (const ledgerWallet of ledgerWallets) {
             const wallet = walletData.find(wallet => wallet.address === ledgerWallet.address)
