@@ -300,7 +300,7 @@ export default {
         commit('SET_WALLETS', {})
         eventBus.emit('ledger:wallets-updated', {})
       } else if (currentWallets.length) {
-        quantity = currentWallets.length
+        quantity = currentWallets.length + 1
       }
       commit('SET_LOADING', processId)
       const firstWallet = await dispatch('getWallet', 0)
