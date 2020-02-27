@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import localforage from 'localforage'
-import { isNull, pullAll, keys } from 'lodash'
+import { isNull, merge, pullAll, keys } from 'lodash'
 
 import packageJson from '@package.json'
 
@@ -21,7 +21,6 @@ import SessionModule from '@/store/modules/session'
 import TransactionModule from '@/store/modules/transaction'
 import UpdaterModule from '@/store/modules/updater'
 import WalletModule from '@/store/modules/wallet'
-import merge from 'lodash/merge'
 
 Vue.use(Vuex)
 
