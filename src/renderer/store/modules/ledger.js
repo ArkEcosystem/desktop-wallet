@@ -165,7 +165,11 @@ export default {
     /**
      * Update flag to determine if ledger app needs update.
      */
-    async updateVersion ({ commit, dispatch, rootGetters }) {
+    async updateVersion ({ commit, dispatch, rootGetters, state }) {
+      if (!state.isConnected) {
+        return
+      }
+
       const network = rootGetters['session/network']
 
       let needsUpdate = false

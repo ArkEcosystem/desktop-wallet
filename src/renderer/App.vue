@@ -25,7 +25,7 @@
       class="overflow-hidden"
     >
       <AppSidemenu
-        v-if="hasAnyProfile"
+        v-if="hasProfile"
         :is-horizontal="true"
         class="block md:hidden z-1"
       />
@@ -34,14 +34,14 @@
         class="App__main flex flex-col items-center px-4 pb-4 lg:pt-4 w-screen h-screen-adjusted overflow-hidden"
       >
         <div
-          :class="{ 'ml-6': !hasAnyProfile }"
+          :class="{ 'ml-6': !hasProfile }"
           class="App__container w-full h-full flex mt-4 mb-4 lg:mr-6"
         >
           <div
             class="hidden md:flex flex-col"
           >
             <AppSidemenu
-              v-if="hasAnyProfile"
+              v-if="hasProfile"
               class="flex flex-1"
             />
           </div>
@@ -131,8 +131,8 @@ export default {
     background () {
       return this.$store.getters['session/background'] || `wallpapers/${this.hasSeenIntroduction ? 1 : 2}Default.png`
     },
-    hasAnyProfile () {
-      return !!this.$store.getters['profile/all'].length
+    hasProfile () {
+      return !!this.$store.getters['session/profile']
     },
     hasScreenshotProtection () {
       return this.$store.getters['session/screenshotProtection']

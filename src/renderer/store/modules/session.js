@@ -452,7 +452,7 @@ export default {
       commit('SET_PRICE_API', value)
     },
 
-    setPluginMenuOpen ({ commit, dispatch }, value) {
+    setPluginMenuOpen ({ commit }, value) {
       commit('SET_PLUGIN_MENU_OPEN', value)
     }
   }
