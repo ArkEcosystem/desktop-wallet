@@ -309,12 +309,12 @@ export default {
       let startIndex = 0
       if (!quantity && Object.keys(cachedWallets).length) {
         wallets = cachedWallets
-        startIndex = Object.keys(cachedWallets).length - 2
+        startIndex = Math.max(0, Object.keys(cachedWallets).length - 2)
       }
 
       // Note: We only batch if search endpoint available, otherwise we would
       //       be doing unnecessary API calls for potentially cold wallets.
-      const batchIncrement = startIndex === 0 ? 10 : 2
+      const batchIncrement = Object.keys(wallets).length === 0 ? 10 : 2
       try {
         for (let ledgerIndex = startIndex; ; ledgerIndex += batchIncrement) {
           if (getters.shouldStopLoading(processId)) {
