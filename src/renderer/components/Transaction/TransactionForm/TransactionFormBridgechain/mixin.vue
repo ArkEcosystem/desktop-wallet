@@ -41,8 +41,10 @@
         <TransactionPeerList
           :title="$t('TRANSACTION.BRIDGECHAIN.SEED_NODES')"
           :items="$v.form.seedNodes.$model"
-          :helper-text="seedNodesError"
-          :is-invalid="!!seedNodesError"
+          :max-items="maxSeedNodes"
+          :show-count="true"
+          :is-invalid="hasMoreThanMaximumSeedNodes"
+          :required="true"
           class="TransactionFormBridgechain__seed-nodes mt-4"
           @remove="emitRemoveSeedNode"
         />
@@ -234,6 +236,10 @@ export default {
   }),
 
   computed: {
+    maxSeedNodes () {
+      return maxSeedNodes
+    },
+
     isUpdate () {
       return !!this.bridgechain
     },
@@ -264,26 +270,16 @@ export default {
       return !this.$v.seedNode.$model.length || !!this.seedNodeError
     },
 
+    hasMoreThanMaximumSeedNodes () {
+      return this.form.seedNodes.length > this.maxSeedNodes
+    },
+
     seedNodeError () {
       if (this.$v.seedNode.$dirty && this.$v.seedNode.$invalid) {
         if (!this.$v.seedNode.isValidSeed) {
           return this.$t('VALIDATION.INVALID_SEED')
         } else if (!this.$v.seedNode.isUnique) {
           return this.$t('TRANSACTION.BRIDGECHAIN.ERROR_DUPLICATE')
-        } else if (!this.$v.seedNode.belowMax) {
-          return this.$t('VALIDATION.TOO_MANY', [this.$t('TRANSACTION.BRIDGECHAIN.SEED_NODES')])
-        }
-      }
-
-      return null
-    },
-
-    seedNodesError () {
-      if (this.$v.form.seedNodes.$dirty && this.$v.form.seedNodes.$invalid) {
-        if (!this.$v.form.seedNodes.required) {
-          return this.$t('VALIDATION.REQUIRED', [this.$t('TRANSACTION.BRIDGECHAIN.SEED_NODES')])
-        } else if (!this.$v.form.seedNodes.belowMax) {
-          return this.$t('VALIDATION.TOO_MANY', [this.$t('TRANSACTION.BRIDGECHAIN.SEED_NODES')])
         }
       }
 
@@ -292,7 +288,9 @@ export default {
 
     genesisHashError () {
       if (this.$v.form.asset.genesisHash.$dirty && this.$v.form.asset.genesisHash.$invalid) {
-        if (!this.$v.form.asset.genesisHash.isValidHash) {
+        if (!this.$v.form.asset.genesisHash.required) {
+          return this.$t('VALIDATION.REQUIRED', [this.$t('TRANSACTION.BRIDGECHAIN.GENESIS_HASH')])
+        } else if (!this.$v.form.asset.genesisHash.isValidHash) {
           return this.$t('VALIDATION.NOT_VALID', [this.$t('TRANSACTION.BRIDGECHAIN.GENESIS_HASH')])
         }
       }
@@ -302,7 +300,9 @@ export default {
 
     bridgechainRepositoryError () {
       if (this.$v.form.asset.bridgechainRepository.$dirty && this.$v.form.asset.bridgechainRepository.$invalid) {
-        if (!this.$v.form.asset.bridgechainRepository.url) {
+        if (!this.$v.form.asset.bridgechainRepository.required) {
+          return this.$t('VALIDATION.REQUIRED', [this.$t('TRANSACTION.BRIDGECHAIN.BRIDGECHAIN_REPOSITORY')])
+        } else if (!this.$v.form.asset.bridgechainRepository.url) {
           return this.$t('VALIDATION.INVALID_URL')
         } else if (!this.$v.form.asset.bridgechainRepository.tooShort) {
           return this.$t('VALIDATION.TOO_SHORT', [this.$t('TRANSACTION.BRIDGECHAIN.BRIDGECHAIN_REPOSITORY')])
@@ -455,9 +455,6 @@ export default {
       },
       isValidSeed (value) {
         return ipAddress(value)
-      },
-      belowMax () {
-        return this.$v.form.seedNodes.$model.length < maxSeedNodes
       }
     },
 
@@ -478,8 +475,8 @@ export default {
 
       seedNodes: {
         required,
-        belowMax (value) {
-          return value.length < maxSeedNodes
+        belowOrEqualMaximum (value) {
+          return value.length <= maxSeedNodes
         }
       },
 
@@ -497,17 +494,20 @@ export default {
         },
 
         genesisHash: {
-          isValidHash (value) {
-            return this.bridgechain ? true : /^[a-z0-9]{64}$/.test(value)
-          },
           required (value) {
             return this.bridgechain ? true : required(value)
+          },
+          isValidHash (value) {
+            return this.bridgechain ? true : /^[a-z0-9]{64}$/.test(value)
           }
         },
 
         bridgechainRepository: {
+          required (value) {
+            return this.bridgechain ? true : required(value)
+          },
           tooShort (value) {
-            return required(value) && minLength(minRepositoryLength)(value)
+            return this.bridgechain ? true : minLength(minRepositoryLength)(value)
           },
           url (value) {
             return url(value)
@@ -524,3 +524,9 @@ export default {
   }
 }
 </script>
+
+<style>
+.TransactionFormBridgechain__seed-nodes .InputEditableList__list {
+  max-height: 13rem;
+}
+</style>

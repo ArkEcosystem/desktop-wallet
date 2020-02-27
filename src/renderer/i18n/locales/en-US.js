@@ -1088,7 +1088,7 @@ export default {
       BRIDGECHAIN_ASSET_REPOSITORY: 'Bridgechain Asset Repository',
       API_PORT: 'API Port',
       ERROR_DUPLICATE: 'The seed node has already been added',
-      NO_PEERS: 'There are no peers',
+      NO_SEED_NODES: 'There are no seed nodes',
       INVALID_SEEDS: 'You have an invalid seed node - please check it is up and running correctly | You have invalid seed nodes - please check they are up and running correctly'
     },
     WARNING: {
