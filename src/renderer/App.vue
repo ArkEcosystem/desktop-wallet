@@ -272,9 +272,6 @@ export default {
       const currentProfileId = this.$store.getters['session/profileId']
       await this.$store.dispatch('session/reset')
       await this.$store.dispatch('session/setProfileId', currentProfileId)
-
-      ipcRenderer.send('splashscreen:app-ready')
-
       await this.$store.dispatch('ledger/reset')
     },
     /**
@@ -310,6 +307,8 @@ export default {
       this.$eventBus.on('ledger:disconnected', async () => {
         this.$warn('Ledger Disconnected!')
       })
+
+      ipcRenderer.send('splashscreen:app-ready')
 
       await Promise.all([this.$plugins.fetchPluginsFromAdapter(), this.$plugins.fetchBlacklist(), this.$plugins.fetchWhitelist()])
     },
