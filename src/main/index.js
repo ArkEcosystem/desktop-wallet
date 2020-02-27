@@ -47,6 +47,7 @@ const createLoadingWindow = () => {
   windows.loading = new BrowserWindow({
     width: 800,
     height: 600,
+    backgroundColor: '#f7fafb',
     parent: windows.main,
     skipTaskbar: true,
     frame: false,
@@ -88,6 +89,7 @@ function createWindow () {
     height: windowState.height,
     x: windowState.x,
     y: windowState.y,
+    backgroundColor: '#f7fafb',
     center: true,
     show: false,
     webPreferences: {
