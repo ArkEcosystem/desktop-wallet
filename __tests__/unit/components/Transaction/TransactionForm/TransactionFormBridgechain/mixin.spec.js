@@ -588,13 +588,21 @@ describe.each([
       })
     })
 
-    describe('hasMoreThanMaximumSeedNodes', () => {
+    describe('hasSeedNodesError', () => {
+      it('should be true if there is an invalid seed node', () => {
+        wrapper.vm.invalidSeeds = [
+          { ip: '0.5.5.5', isInvalid: true }
+        ]
+
+        expect(wrapper.vm.hasSeedNodesError).toBe(true)
+      })
+
       it('should be false if there are less than maximum seed nodes', () => {
         wrapper.vm.$v.form.seedNodes.$model = [
           { ip: '0.5.5.5', isInvalid: false }
         ]
 
-        expect(wrapper.vm.hasMoreThanMaximumSeedNodes).toBe(false)
+        expect(wrapper.vm.hasSeedNodesError).toBe(false)
       })
 
       it('should be true if there are more than maximum seed nodes', () => {
@@ -612,7 +620,7 @@ describe.each([
           { ip: '10.5.5.5', isInvalid: false }
         ]
 
-        expect(wrapper.vm.hasMoreThanMaximumSeedNodes).toBe(true)
+        expect(wrapper.vm.hasSeedNodesError).toBe(true)
       })
     })
 
@@ -703,7 +711,12 @@ describe.each([
         wrapper.vm.$v.form.asset.bridgechainRepository.$reset()
 
         expect(wrapper.vm.$v.form.asset.bridgechainRepository.$dirty).toBe(false)
-        expect(wrapper.vm.$v.form.asset.bridgechainRepository.$invalid).toBe(true)
+        if (componentName === 'TransactionFormBridgechainRegistration') {
+          expect(wrapper.vm.$v.form.asset.bridgechainRepository.$invalid).toBe(true)
+        } else {
+          expect(wrapper.vm.$v.form.asset.bridgechainRepository.$invalid).toBe(false)
+        }
+
         expect(wrapper.vm.bridgechainRepositoryError).toBe(null)
       })
 
