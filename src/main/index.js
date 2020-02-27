@@ -132,6 +132,8 @@ function createWindow () {
 
   windowState.manage(windows.main)
   windows.main.loadURL(winURL)
+  windows.main.hide()
+  windows.main.setBackgroundColor('#f7fafb')
 
   windows.main.on('close', () => (windows.main = null))
   windows.main.on('closed', () => (windows.main = null))
