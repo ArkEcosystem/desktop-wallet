@@ -1,4 +1,4 @@
-import { merge, unionBy, findIndex } from 'lodash'
+import { merge, unionBy } from 'lodash'
 
 const includes = (objects, find) => objects.map(a => a.id).includes(find.id)
 
@@ -43,7 +43,7 @@ export default class BaseModule {
         },
 
         DELETE (state, id) {
-          const index = findIndex(state.all, { id })
+          const index = state.all.findIndex(item => item.id === id)
           if (index === -1) {
             throw new Error(`Cannot delete \`${id}\`. It does not exist on the state`)
           }
