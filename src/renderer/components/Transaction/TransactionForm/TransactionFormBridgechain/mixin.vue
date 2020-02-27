@@ -507,7 +507,13 @@ export default {
             return this.bridgechain ? true : required(value)
           },
           tooShort (value) {
-            return this.bridgechain ? true : minLength(minRepositoryLength)(value)
+            if (this.bridgechain) {
+              if (value) {
+                return minLength(minRepositoryLength)(value)
+              }
+              return true
+            }
+            return minLength(minRepositoryLength)(value)
           },
           url (value) {
             return url(value)
