@@ -294,28 +294,54 @@ export default {
       }
 
       const profileId = rootGetters['session/profileId']
-      const currentWallets = getters.wallets
       const processId = cryptoLibrary.randomBytes(12).toString('base64')
 
       if (clearFirst) {
         commit('SET_WALLETS', {})
         eventBus.emit('ledger:wallets-updated', {})
-      } else if (currentWallets.length) {
-        quantity = currentWallets.length + 1
-      }
-      commit('SET_LOADING', processId)
-      const firstWallet = await dispatch('getWallet', 0)
-      const cachedWallets = keyBy(getters.cachedWallets(firstWallet.address), 'address')
-      let wallets = {}
-      let startIndex = 0
-      if (!quantity && Object.keys(cachedWallets).length) {
-        wallets = cachedWallets
-        startIndex = Math.max(0, Object.keys(cachedWallets).length - 2)
       }
 
-      // Note: We only batch if search endpoint available, otherwise we would
-      //       be doing unnecessary API calls for potentially cold wallets.
-      const batchIncrement = Object.keys(wallets).length === 0 ? 10 : 2
+      commit('SET_LOADING', processId)
+      const firstWallet = await dispatch('getWallet', 0)
+      const cachedWallets = getters.cachedWallets(firstWallet.address)
+      let wallets = {}
+      let startIndex = 0
+      if (cachedWallets.length) {
+        let returnWallets = false
+        if (!quantity || quantity > cachedWallets.length) {
+          wallets = keyBy(cachedWallets, 'address')
+          startIndex = Math.max(0, cachedWallets.length - 1)
+        } else if (quantity < cachedWallets.length) {
+          wallets = keyBy(cachedWallets.slice(0, quantity), 'address')
+          returnWallets = true
+        } else {
+          wallets = keyBy(cachedWallets, 'address')
+          returnWallets = true
+        }
+
+        if (returnWallets) {
+          if (getters.shouldStopLoading(processId)) {
+            commit('CLEAR_LOADING_PROCESS', processId)
+
+            return {}
+          }
+
+          commit('SET_WALLETS', wallets)
+          eventBus.emit('ledger:wallets-updated', wallets)
+          commit('CLEAR_LOADING_PROCESS', processId)
+          dispatch('cacheWallets')
+
+          return wallets
+        }
+      }
+
+      let batchIncrement = 10
+      if (quantity && Math.abs(quantity - startIndex) < 10) {
+        batchIncrement = Math.abs(quantity - startIndex)
+      } else if (!quantity && Object.keys(wallets).length > 0) {
+        batchIncrement = 2
+      }
+
       try {
         for (let ledgerIndex = startIndex; ; ledgerIndex += batchIncrement) {
           if (getters.shouldStopLoading(processId)) {
