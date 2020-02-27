@@ -1,6 +1,6 @@
 import logger from 'electron-log'
 import semver from 'semver'
-import isFunction from 'lodash/isFunction'
+import { isFunction } from 'lodash'
 
 export default class VuexMigrations {
   /**

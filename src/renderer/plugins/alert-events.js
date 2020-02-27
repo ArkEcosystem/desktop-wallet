@@ -1,5 +1,5 @@
+import { assignIn, transform } from 'lodash'
 import eventBus from './event-bus'
-import { transform, assignIn } from 'lodash'
 
 const triggerAlert = (alert) => eventBus.emit('alert', alert)
 

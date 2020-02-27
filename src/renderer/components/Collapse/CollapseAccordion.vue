@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import isEmpty from 'lodash/isEmpty'
+import { isEmpty } from 'lodash'
 
 export default {
   name: 'CollapseAccordion',

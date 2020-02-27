@@ -51,7 +51,7 @@
 </template>
 
 <script>
-import orderBy from 'lodash/orderBy'
+import { orderBy } from 'lodash'
 import { mapGetters } from 'vuex'
 import { AnnouncementsPost } from '@/components/Announcements'
 import SvgIcon from '@/components/SvgIcon'

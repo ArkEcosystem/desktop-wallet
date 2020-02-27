@@ -1,6 +1,6 @@
 // Based on https://github.com/championswimmer/vuex-persist
 
-import lodashMerge from 'lodash/merge'
+import { merge as lodashMerge } from 'lodash'
 
 const merge = (into, from) => lodashMerge({}, into, from)
 

@@ -18,8 +18,8 @@
 </template>
 
 <script>
+import { debounce } from 'lodash'
 import SvgIcon from '@/components/SvgIcon'
-import debounce from 'lodash/debounce'
 
 export default {
   name: 'PluginManagerSearchBar',

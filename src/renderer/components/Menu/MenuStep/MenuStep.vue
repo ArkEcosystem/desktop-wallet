@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import { map, first, last } from 'lodash'
+import { first, last, map } from 'lodash'
 import { CollapseAccordion } from '@/components/Collapse'
 
 export default {

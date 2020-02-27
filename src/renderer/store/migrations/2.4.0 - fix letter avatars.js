@@ -1,4 +1,4 @@
-import isUndefined from 'lodash/isUndefined'
+import { isUndefined } from 'lodash'
 
 // Update the schema of profile avatars to be consistent and use `null` instead
 // of `null` and `undefined` when to establish a "letter" avatar.

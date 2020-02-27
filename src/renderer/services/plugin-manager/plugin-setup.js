@@ -1,6 +1,6 @@
 import path from 'path'
 import fs from 'fs'
-import castArray from 'lodash/castArray'
+import { castArray } from 'lodash'
 import {
   COMPONENTS,
   AVATARS,

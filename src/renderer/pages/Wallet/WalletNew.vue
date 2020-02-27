@@ -266,7 +266,7 @@
 </template>
 
 <script>
-import flatten from 'lodash/flatten'
+import { flatten } from 'lodash'
 import { required } from 'vuelidate/lib/validators'
 import { ButtonClipboard, ButtonReload } from '@/components/Button'
 import { InputPassword, InputSwitch, InputText } from '@/components/Input'

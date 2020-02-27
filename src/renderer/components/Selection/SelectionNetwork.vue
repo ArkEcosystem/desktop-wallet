@@ -54,9 +54,9 @@
 </template>
 
 <script>
+import { pullAllBy } from 'lodash'
 import { NetworkModal, NetworkSelectionModal } from '@/components/Network'
 import SelectionNetworkButton from './SelectionNetworkButton'
-import pullAllBy from 'lodash/pullAllBy'
 
 export default {
   name: 'SelectionNetwork',

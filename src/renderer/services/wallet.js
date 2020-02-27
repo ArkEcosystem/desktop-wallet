@@ -3,7 +3,7 @@ import { Crypto, Identities, Managers } from '@arkecosystem/crypto'
 import { version as mainnetVersion } from '@config/networks/mainnet'
 import store from '@/store'
 import got from 'got'
-import cloneDeep from 'lodash/cloneDeep'
+import { cloneDeep } from 'lodash'
 
 export default class WalletService {
   /*

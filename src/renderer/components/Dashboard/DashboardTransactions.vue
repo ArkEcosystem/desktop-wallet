@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import { uniqBy, orderBy } from 'lodash'
+import { orderBy, uniqBy } from 'lodash'
 import mergeTableTransactions from '@/components/utils/merge-table-transactions'
 import { TransactionTable } from '@/components/Transaction'
 

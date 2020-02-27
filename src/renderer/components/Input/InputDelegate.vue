@@ -59,13 +59,13 @@
 </template>
 
 <script>
+import Cycled from 'cycled'
+import { isEmpty, orderBy } from 'lodash'
 import { required } from 'vuelidate/lib/validators'
 import { ButtonModal } from '@/components/Button'
 import ModalQrCodeScanner from '@/components/Modal/ModalQrCodeScanner'
 import { MenuDropdown } from '@/components/Menu'
-import Cycled from 'cycled'
 import InputField from './InputField'
-import { isEmpty, orderBy } from 'lodash'
 
 export default {
   name: 'InputDelegate',

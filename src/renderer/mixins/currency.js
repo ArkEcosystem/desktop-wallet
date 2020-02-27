@@ -1,6 +1,6 @@
+import { merge } from 'lodash'
 import { NumberBuilder } from '@/plugins/bignumber.js'
 import { MARKET } from '@config'
-import merge from 'lodash/merge'
 
 export default {
   methods: {

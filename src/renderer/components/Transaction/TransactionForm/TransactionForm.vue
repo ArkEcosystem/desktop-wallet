@@ -21,7 +21,7 @@ import TransactionFormVote from './TransactionFormVote'
 import TransactionFormSecondSignature from './TransactionFormSecondSignature'
 import TransactionFormBusiness from './TransactionFormBusiness'
 import TransactionFormBridgechain from './TransactionFormBridgechain'
-import find from 'lodash/find'
+import { find } from 'lodash'
 
 export default {
   name: 'TransactionForm',
