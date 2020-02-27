@@ -1,9 +1,6 @@
 name: Draft Artifacts
 
-on:
-  push:
-    branches:
-      - "develop"
+on: [push]
 
 jobs:
   build-linux:
