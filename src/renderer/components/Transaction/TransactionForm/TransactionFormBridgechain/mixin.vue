@@ -43,7 +43,7 @@
           :items="$v.form.seedNodes.$model"
           :max-items="maxSeedNodes"
           :show-count="true"
-          :is-invalid="hasMoreThanMaximumSeedNodes"
+          :is-invalid="hasSeedNodesError"
           :required="true"
           class="TransactionFormBridgechain__seed-nodes mt-4"
           @remove="emitRemoveSeedNode"
@@ -270,8 +270,8 @@ export default {
       return !this.$v.seedNode.$model.length || !!this.seedNodeError
     },
 
-    hasMoreThanMaximumSeedNodes () {
-      return this.form.seedNodes.length > this.maxSeedNodes
+    hasSeedNodesError () {
+      return this.invalidSeeds.length > 0 || this.form.seedNodes.length > this.maxSeedNodes
     },
 
     seedNodeError () {
