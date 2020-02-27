@@ -1,5 +1,5 @@
 import electron from 'electron'
-import { readFile, writeFile } from 'fs'
+import { readFileSync, writeFileSync } from 'fs'
 
 export default {
   methods: {
@@ -12,46 +12,34 @@ export default {
       win.reload()
     },
 
-    electron_writeFile (raw, defaultPath, options = {}) {
-      const filters = options.filters || [
-        { name: 'JSON', extensions: ['json'] },
-        { name: 'All Files', extensions: ['*'] }
-      ]
-
-      return new Promise((resolve, reject) => {
-        electron.remote.dialog.showSaveDialog({
-          defaultPath,
-          filters
-        }, fileName => {
-          if (!fileName) return
-
-          writeFile(fileName, raw, 'utf8', err => {
-            if (err) reject(err)
-            resolve(fileName)
-          })
-        })
+    async electron_writeFile (raw, defaultPath, options = {}) {
+      const { filePath } = await electron.remote.dialog.showSaveDialog({
+        defaultPath,
+        filters: options.filters || [
+          { name: 'JSON', extensions: ['json'] },
+          { name: 'All Files', extensions: ['*'] }
+        ]
       })
+
+      if (!filePath) return
+
+      writeFileSync(filePath, raw, 'utf8')
+
+      return filePath
     },
 
-    electron_readFile (options = {}) {
-      const filters = options.filters || [
-        { name: 'JSON', extensions: ['json'] },
-        { name: 'All Files', extensions: ['*'] }
-      ]
-
-      return new Promise((resolve, reject) => {
-        electron.remote.dialog.showOpenDialog({
-          properties: ['openFile'],
-          filters
-        }, filePaths => {
-          if (!filePaths) return
-
-          readFile(filePaths[0], 'utf8', (err, data) => {
-            if (err) reject(err)
-            resolve(data)
-          })
-        })
+    async electron_readFile (options = {}) {
+      const { filePaths } = await electron.remote.dialog.showOpenDialog({
+        properties: ['openFile'],
+        filters: options.filters || [
+          { name: 'JSON', extensions: ['json'] },
+          { name: 'All Files', extensions: ['*'] }
+        ]
       })
+
+      if (!filePaths) return
+
+      return readFileSync(filePaths[0], 'utf8')
     }
   }
 }

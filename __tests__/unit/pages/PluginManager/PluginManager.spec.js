@@ -25,7 +25,12 @@ describe('pages > PluginManager', () => {
         $store: {
           getters: {
             'plugin/filtered': () => [],
-            'session/theme': 'dark'
+            'session/theme': 'dark',
+            'session/pluginMenuOpen': true
+          },
+
+          dispatch (action, value) {
+            //
           }
         }
       }
@@ -40,5 +45,16 @@ describe('pages > PluginManager', () => {
   it('should render component', () => {
     const wrapper = mountPage()
     expect(wrapper.contains('.PluginManager')).toBeTruthy()
+  })
+
+  it('should show side menu by default', () => {
+    const wrapper = mountPage()
+    expect(wrapper.contains('.PluginManagerSideMenu')).toBeTruthy()
+  })
+
+  it('should hide side menu from session', () => {
+    const wrapper = mountPage()
+    wrapper.vm.$store.getters['session/pluginMenuOpen'] = false
+    expect(wrapper.contains('.PluginManagerSideMenu')).toBeFalsy()
   })
 })

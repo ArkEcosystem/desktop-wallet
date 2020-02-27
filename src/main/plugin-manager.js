@@ -4,9 +4,9 @@ import decompress from 'decompress'
 import trash from 'trash'
 import { ensureDirSync } from 'fs-extra'
 
-const logger = require('electron-log')
+import logger from 'electron-log'
 
-export const setupPluginManager = ({ sendToWindow, mainWindow, ipcMain }) => {
+export const setupPluginManager = ({ sendToWindow, windows, ipcMain }) => {
   let downloadItem
   let savePath
 
@@ -31,7 +31,7 @@ export const setupPluginManager = ({ sendToWindow, mainWindow, ipcMain }) => {
     }
 
     try {
-      await download(mainWindow, url, options)
+      await download(windows.main, url, options)
       logger.log(`${prefix} Download complete`)
       sendToWindow(prefix + 'plugin-downloaded', savePath)
     } catch (error) {

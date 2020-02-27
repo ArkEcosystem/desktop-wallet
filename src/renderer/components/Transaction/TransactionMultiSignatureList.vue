@@ -15,11 +15,11 @@
       class="flex-1"
     >
       <span>
-        {{ item.publicKey | truncateMiddle(20) }}
+        {{ formatItem(item.publicKey, 20) }}
       </span>
 
       <span v-if="item.address">
-        ({{ item.address | truncateMiddle(10) }})
+        ({{ formatItem(item.address) }})
       </span>
     </div>
   </InputEditableList>
@@ -27,7 +27,6 @@
 
 <script>
 import { InputEditableList } from '@/components/Input'
-/* eslint-disable-next-line no-unused-vars */
 import truncateMiddle from '@/filters/truncate-middle'
 
 export default {
@@ -83,6 +82,10 @@ export default {
   methods: {
     emitRemove (index) {
       this.$emit('remove', index)
+    },
+
+    formatItem (value, limit = 10) {
+      return truncateMiddle(value, limit)
     }
   }
 }

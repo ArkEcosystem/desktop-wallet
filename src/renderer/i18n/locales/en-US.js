@@ -136,7 +136,7 @@ export default {
     CONNECTED: 'Connected to peer',
     CONNECT_CUSTOM: 'Connect custom peer',
     CUSTOM_TITLE: 'Connect to custom peer',
-    MULTI_SIGNATURE_TITLE: 'Connect Multi-Signature peer',
+    MULTI_SIGNATURE_TITLE: 'Connect multisignature peer',
     CONNECT_FAILED: 'Failed to connect to peer',
     LATENCY: 'Latency',
     DISCONNECT: 'Disconnect from peer',
@@ -204,10 +204,7 @@ export default {
   },
 
   LANGUAGES: {
-    'en-US': 'English',
-    'es-ES': 'Español',
-    'it-IT': 'Italiano',
-    'pt-BR': 'Português - Brazil'
+    'en-US': 'English'
   },
 
   TIME_FORMAT: {
@@ -442,6 +439,12 @@ export default {
     TITLE: 'Export Wallets'
   },
 
+  MODAL_CLOSE_CONFIRMATION: {
+    QUESTION: 'Are you sure you want to close this window?',
+    CONFIRM: 'Yes, close',
+    CANCEL: 'No, cancel'
+  },
+
   MODAL_CONFIRMATION: {
     CANCEL: 'No, cancel',
     CONTINUE: 'Yes, I am sure',
@@ -506,7 +509,7 @@ export default {
   MODAL_PEER: {
     CANCEL: 'Cancel',
     CONNECT: 'Connect',
-    HOST: 'IP / Host',
+    HOST: 'Protocol + IP / Hostname',
     PORT: 'Port',
     VALIDATING: 'Validating peer details...',
     PLACEHOLDER: {
@@ -773,7 +776,7 @@ export default {
       TRANSACTIONS: 'Transactions',
       DELEGATES: 'Delegates',
       IPFS: 'IPFS',
-      MULTI_SIGNATURE: 'Multi-Signature',
+      MULTI_SIGNATURE: 'Multisignature',
       STATISTICS: 'Statistics',
       SIGN_VERIFY: 'Sign',
       PURCHASE: 'Purchase {ticker}'
@@ -950,8 +953,8 @@ export default {
       DELEGATE_REGISTRATION: 'Delegate Registration',
       VOTE: 'Vote',
       UNVOTE: 'Unvote',
-      MULTI_SIGN: 'Multi-Signature Transaction',
-      MULTI_SIGNATURE: 'Multi-Signature',
+      MULTI_SIGN: 'Multisignature Transaction',
+      MULTI_SIGNATURE: 'Multisignature',
       IPFS: 'IPFS',
       MULTI_PAYMENT: 'Multipayment',
       DELEGATE_RESIGNATION: 'Delegate Resignation',
@@ -971,19 +974,17 @@ export default {
         SECOND_SIGNATURE: 'Second Signature transaction could not be created',
         DELEGATE_REGISTRATION: 'Delegate Registration transaction could not be created',
         VOTE: 'Vote transaction could not be created',
-        MULTI_SIGNATURE: 'Multi-Signature transaction could not be created',
+        MULTI_SIGN: 'Could not multisign transaction',
+        MULTI_SIGNATURE: 'Multisignature transaction could not be created',
+        MULTI_PAYMENT: 'Multipayment transaction could not be created',
         IPFS: 'IPFS transaction could not be created',
         DELEGATE_RESIGNATION: 'Delegate Resignation transaction could not be created',
-        BUSINESS: {
-          REGISTRATION: 'Business Registration transaction could not be created',
-          RESIGNATION: 'Business Resignation transaction could not be created',
-          UPDATE: 'Business Update transaction could not be created'
-        },
-        BRIDGECHAIN: {
-          REGISTRATION: 'Bridgechain Registration transaction could not be created',
-          RESIGNATION: 'Bridgechain Resignation transaction could not be created',
-          UPDATE: 'Bridgechain Update transaction could not be created'
-        }
+        BUSINESS_REGISTRATION: 'Business Registration transaction could not be created',
+        BUSINESS_RESIGNATION: 'Business Resignation transaction could not be created',
+        BUSINESS_UPDATE: 'Business Update transaction could not be created',
+        BRIDGECHAIN_REGISTRATION: 'Bridgechain Registration transaction could not be created',
+        BRIDGECHAIN_RESIGNATION: 'Bridgechain Resignation transaction could not be created',
+        BRIDGECHAIN_UPDATE: 'Bridgechain Update transaction could not be created'
       },
       TRANSFER: 'Your transaction could not be sent',
       SECOND_SIGNATURE: 'Second signature could not be registered',
@@ -992,7 +993,7 @@ export default {
       UNVOTE: 'Unvote could not be registered',
       IPFS: 'IPFS could not be created',
       MULTI_SIGN: 'Could not sign transaction',
-      MULTI_SIGNATURE: 'Multi signature could not be created',
+      MULTI_SIGNATURE: 'Multisignature could not be created',
       HTLC_LOCK: 'Timelock could not be created',
       HTLC_CLAIM: 'Timelock Claim could not be created',
       HTLC_REFUND: 'Timelock Refund could not be created',
@@ -1031,7 +1032,7 @@ export default {
       VOTE: 'Voted successfully',
       UNVOTE: 'Unvoted successfully',
       MULTI_SIGN: 'Transaction has been signed successfully',
-      MULTI_SIGNATURE: 'Multi signature created successfully',
+      MULTI_SIGNATURE: 'Multisignature created successfully',
       IPFS: 'IPFS created successfully',
       HTLC_LOCK: 'Timelock created successfully',
       HTLC_CLAIM: 'Timelock Claim created successfully',
@@ -1058,7 +1059,7 @@ export default {
       NO_RECIPIENTS: 'There are no recipients'
     },
     MULTI_SIGNATURE: {
-      ADDRESS: 'Multi-Signature Address',
+      ADDRESS: 'Multisignature Address',
       BUTTON_ADD: 'Add',
       ERROR_DUPLICATE: 'The public key has already been added',
       ERROR_MIN_KEYS_TOO_HIGH: 'Minimum required signatures is too high',
@@ -1168,7 +1169,7 @@ export default {
       NEW_SECOND_SIGNATURE: 'New second signature: {address}',
       NEW_DELEGATE_REGISTRATION: 'New delegate: {address} registered as {username}',
       NEW_VOTE: 'New vote: {address} {voteUnvote} {publicKey}',
-      NEW_MULTI_SIGNATURE: 'New multi-signature registration: {address}',
+      NEW_MULTI_SIGNATURE: 'New multisignature registration: {address}',
       NEW_IPFS: 'New IPFS hash: {address}',
       NEW_MULTI_PAYMENT_SENT: 'New multipayment: {amount} sent from {sender} to {recipient}',
       NEW_MULTI_PAYMENT_RECEIVED: 'New multipayment: {amount} received from {sender} to {recipient}',
@@ -1200,7 +1201,7 @@ export default {
     ACTIONS: {
       WALLET_NAME: 'Wallet Name',
       CONTACT_NAME: 'Contact Name',
-      REGISTER_MULTISIGNATURE: 'Register Multi-Signature',
+      REGISTER_MULTISIGNATURE: 'Register Multisignature',
       REGISTER_DELEGATE: 'Register Delegate',
       RESIGN_DELEGATE: 'Resign Delegate',
       SECOND_PASSPHRASE: 'Second Passphrase',
@@ -1304,7 +1305,7 @@ export default {
   },
 
   WALLET_MULTI_SIGNATURE: {
-    HEADER: 'Multi-Signature',
+    HEADER: 'Multisignature',
     DESCRIPTION: 'Pending transactions requiring your signature',
     BUTTON_SET_PEER: 'Set Peer'
   },

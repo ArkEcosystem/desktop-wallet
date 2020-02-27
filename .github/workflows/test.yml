@@ -105,7 +105,7 @@ jobs:
           path: build/target/ark-desktop-wallet-linux-amd64-2.8.1.deb
 
   build-macOS:
-    runs-on: macOS-latest
+    runs-on: macos-latest
 
     strategy:
       matrix:
@@ -131,6 +131,8 @@ jobs:
 
       - name: Build
         run: yarn build:mac
+        env:
+          SKIP_NOTARIZE: true
 
       # - name: Upload .zip
       #   uses: actions/upload-artifact@master

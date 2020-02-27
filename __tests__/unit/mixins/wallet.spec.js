@@ -37,8 +37,8 @@ describe('Mixins > Wallet', () => {
         session_network: network,
         $store: {
           getters: {
-            'wallet/byProfileId': id => walletsByProfile,
-            'wallet/contactsByProfileId': id => contactsByProfile,
+            'wallet/byProfileId': () => walletsByProfile,
+            'wallet/contactsByProfileId': () => contactsByProfile,
             'delegate/byAddress': (address) => {
               if (address === 'DTRdbaUW3RQQSL5By4G43JVaeHiqfVp9oh') {
                 return {

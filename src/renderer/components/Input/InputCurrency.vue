@@ -23,6 +23,7 @@
         class="InputCurrency__input flex flex-grow bg-transparent text-theme-page-text"
         type="text"
         @blur="onBlur"
+        @change="onChange"
         @focus="onFocus"
       >
       <div
@@ -272,6 +273,11 @@ export default {
       this.isFocused = false
       this.$emit('blur')
     },
+    onChange (event) {
+      const value = event.target.value
+      const numeric = value ? this.sanitizeNumeric(value) : '0'
+      this.$emit('change', isNaN(numeric) ? '0' : numeric)
+    },
     onFocus () {
       this.isFocused = true
       this.$v.model.$touch()
@@ -385,13 +391,13 @@ export default {
 
   validations: {
     model: {
-      isNumber (value) {
+      isNumber () {
         return this.inputValue && this.checkAmount(this.inputValue)
       },
-      isMoreThanMinimum (value) {
+      isMoreThanMinimum () {
         return !this.minimumAmount.isGreaterThan(this.inputValue)
       },
-      isLessThanMaximum (value) {
+      isLessThanMaximum () {
         return !this.maximumAmount.isLessThan(this.inputValue)
       },
       isRequired (value) {

@@ -211,7 +211,7 @@ export default {
         return (object.name || object.address).toLowerCase()
       })
 
-      return results.reduce((wallets, wallet, index) => {
+      return results.reduce((wallets, wallet) => {
         const value = wallet.name || wallet.address
         const searchValue = value.toLowerCase()
 
@@ -289,11 +289,14 @@ export default {
       return this.neoCheckedAddressess[address]
     },
 
-    onBlur (evt) {
+    onBlur (event) {
       // Verifies that the element that generated the blur was a dropdown item
-      if (evt.relatedTarget) {
-        const classList = evt.relatedTarget.classList || []
-        const isDropdownItem = includes(classList, 'MenuDropdownItem__button')
+      if (event.relatedTarget) {
+        const classList = event.relatedTarget.classList
+
+        const isDropdownItem = classList && typeof classList.contains === 'function'
+          ? classList.contains('MenuDropdownItem__button')
+          : false
 
         if (!isDropdownItem) {
           this.closeDropdown()
@@ -368,6 +371,9 @@ export default {
 
     updateInputValue (value) {
       this.inputValue = value
+
+      this.$eventBus.emit('change')
+
       // Inform Vuelidate that the value changed
       this.$v.model.$touch()
     },

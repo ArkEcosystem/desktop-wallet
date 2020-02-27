@@ -1,5 +1,6 @@
+import 'reflect-metadata'
 import { mount } from '@vue/test-utils'
-import { InputSwitch } from '@/components/Input'
+import InputSwitch from '@/components/Input/InputSwitch.vue'
 
 describe('InputSwitch', () => {
   it('should render', () => {

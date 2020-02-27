@@ -165,7 +165,11 @@ export default {
     /**
      * Update flag to determine if ledger app needs update.
      */
-    async updateVersion ({ commit, dispatch, rootGetters }) {
+    async updateVersion ({ commit, dispatch, rootGetters, state }) {
+      if (!state.isConnected) {
+        return
+      }
+
       const network = rootGetters['session/network']
 
       let needsUpdate = false
@@ -402,7 +406,7 @@ export default {
     /**
      * Store ledger wallets in the cache.
      */
-    async updateWallet ({ commit, dispatch, getters, rootGetters }, updatedWallet) {
+    async updateWallet ({ commit, dispatch, getters }, updatedWallet) {
       commit('SET_WALLET', updatedWallet)
       eventBus.emit('ledger:wallets-updated', getters.walletsObject)
       dispatch('cacheWallets')
@@ -411,7 +415,7 @@ export default {
     /**
      * Store several Ledger wallets at once and cache them.
      */
-    async updateWallets ({ commit, dispatch, getters, rootGetters }, walletsToUpdate) {
+    async updateWallets ({ commit, dispatch, getters }, walletsToUpdate) {
       commit('SET_WALLETS', {
         ...getters.walletsObject,
         ...walletsToUpdate

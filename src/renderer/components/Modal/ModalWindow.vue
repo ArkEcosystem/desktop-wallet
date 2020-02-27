@@ -1,7 +1,6 @@
 <template>
   <Portal :to="portalTarget">
     <div
-      slot-scope="{ setPortalHasContent }"
       class="ModalWindow"
       :class="{
         'ModalWindow--maximized': isMaximized,
@@ -17,6 +16,7 @@
               [containerClassesMinimized]: !isMaximized,
             }]"
             class="ModalWindow__container flex flex-col mx-auto rounded-lg relative transition text-theme-text-content"
+            @change="onChange"
             @mousedown.stop="void 0"
           >
             <section class="ModalWindow__container__content">
@@ -29,7 +29,7 @@
                     :icon-name="isMaximized ? 'minus' : 'resize'"
                     icon-class="text-grey"
                     class="ModalWindow__resize-button p-6"
-                    @click="toggleMaximized(setPortalHasContent)"
+                    @click="toggleMaximized()"
                   />
                 </span>
 
@@ -67,6 +67,12 @@
                 <p v-html="message" />
               </footer>
             </slot>
+
+            <ModalCloseConfirmation
+              v-if="showConfirmationModal"
+              @cancel="showConfirmationModal = false"
+              @confirm="emitCloseAfterConfirm"
+            />
           </div>
         </div>
       </Transition>
@@ -76,13 +82,14 @@
 
 <script>
 import { ButtonClose } from '@/components/Button'
-import { isFunction } from 'lodash'
+import ModalCloseConfirmation from './ModalCloseConfirmation'
 
 export default {
   name: 'ModalWindow',
 
   components: {
-    ButtonClose
+    ButtonClose,
+    ModalCloseConfirmation
   },
 
   props: {
@@ -121,6 +128,11 @@ export default {
       required: false,
       default: true
     },
+    confirmClose: {
+      type: Boolean,
+      required: false,
+      default: false
+    },
     allowClose: {
       type: Boolean,
       required: false,
@@ -134,11 +146,14 @@ export default {
   },
 
   data: () => ({
-    isMaximized: true
+    isMaximized: true,
+    showConfirmationModal: false,
+    hasChanged: false
   }),
 
   mounted () {
     document.addEventListener('keyup', this.onEscKey, { once: true })
+    this.$eventBus.on('change', this.onChange)
   },
 
   destroyed () {
@@ -146,9 +161,8 @@ export default {
   },
 
   methods: {
-    toggleMaximized (callback) {
+    toggleMaximized () {
       this.isMaximized = !this.isMaximized
-      isFunction(callback) && callback(this.portalTarget, this.isMaximized)
     },
 
     onBackdropClick () {
@@ -162,15 +176,29 @@ export default {
         return
       }
 
+      if (this.confirmClose && this.hasChanged) {
+        this.showConfirmationModal = true
+        return
+      }
+
       if (force || this.isMaximized) {
         this.$emit('close')
       }
+    },
+
+    emitCloseAfterConfirm () {
+      this.showConfirmationModal = false
+      this.$emit('close')
     },
 
     onEscKey (event) {
       if (event.keyCode === 27) {
         this.emitClose()
       }
+    },
+
+    onChange () {
+      this.hasChanged = true
     }
   }
 }
@@ -191,8 +219,9 @@ export default {
   display: table;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  transition: opacity 0.3s ease;
+  background-color: rgba(0, 0, 0, .5);
+  transition: opacity .3s ease;
+  backdrop-filter: blur(4px);
 }
 
 .ModalWindow--maximized .ModalWindow__wrapper {

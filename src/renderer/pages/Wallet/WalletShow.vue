@@ -3,10 +3,10 @@
     <WalletDetails
       v-if="wallet"
       ref="WalletDetails"
-      class="h-full flex-1"
+      class="flex-1"
       :class="{
         'w-2/3': isSidebarExpanded,
-        'w-6/7': !isSidebarExpanded
+        'w-7/8': !isSidebarExpanded
       }"
     />
     <WalletSidebar
@@ -14,7 +14,7 @@
       class="border-l border-theme-line-separator rounded-r-lg hidden lg:block"
       :class="{
         'w-1/3': isSidebarExpanded,
-        'w-1/7': !isSidebarExpanded
+        'w-1/8': !isSidebarExpanded
       }"
       @expanded="onExpand"
       @collapsed="onCollapse"

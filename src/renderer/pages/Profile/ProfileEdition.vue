@@ -744,7 +744,7 @@ export default {
       this.__updateSession('marketChartOptions', marketChartOptions)
     },
 
-    setName (event) {
+    setName () {
       this.__updateSession('name', this.modified.name)
       this.$v.modified.name.$touch()
     },

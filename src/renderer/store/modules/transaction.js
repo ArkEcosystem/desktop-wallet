@@ -116,12 +116,54 @@ export default {
       }
       state.transactions[transaction.profileId] = unionBy([transaction, ...state.transactions[transaction.profileId]], 'id')
     },
+    UPDATE_BULK (state, { transactions, profileId }) {
+      for (const transaction of transactions) {
+        let index = null
+        for (const profileTransactionIndex of Object.keys(state.transactions[profileId])) {
+          if (state.transactions[profileId][profileTransactionIndex].id === transaction.id) {
+            index = profileTransactionIndex
+
+            break
+          }
+        }
+
+        if (!index) {
+          continue
+        }
+
+        Vue.set(state.transactions[profileId], index, transaction)
+        state.transactions[profileId].splice(index, 1)
+      }
+    },
     DELETE (state, transaction) {
       const index = findIndex(state.transactions[transaction.profileId], { id: transaction.id })
       if (index === -1) {
         throw new Error(`Cannot delete transaction '${transaction.id}' - it does not exist on the state`)
       }
       state.transactions[transaction.profileId].splice(index, 1)
+    },
+    DELETE_BULK (state, { transactions, profileId }) {
+      for (const transaction of transactions) {
+        let index = null
+
+        if (!state.transactions[profileId]) {
+          continue
+        }
+
+        for (const profileTransactionIndex of Object.keys(state.transactions[profileId])) {
+          if (state.transactions[profileId][profileTransactionIndex].id === transaction.id) {
+            index = profileTransactionIndex
+
+            break
+          }
+        }
+
+        if (!index) {
+          continue
+        }
+
+        state.transactions[profileId].splice(index, 1)
+      }
     },
     SET_STATIC_FEES (state, data) {
       state.staticFees[data.networkId] = data.staticFees
@@ -206,9 +248,10 @@ export default {
         if (dayjs(transaction.timestamp).isBefore(threshold)) {
           transaction.isExpired = true
           expired.push(transaction.id)
-          commit('UPDATE', transaction)
         }
       }
+
+      commit('UPDATE_BULK', { transactions: expired, profileId })
 
       return expired
     },
@@ -218,14 +261,7 @@ export default {
     },
 
     deleteBulk ({ commit }, { transactions = [], profileId = null }) {
-      for (const transaction of transactions) {
-        transaction.profileId = profileId
-        try {
-          commit('DELETE', transaction)
-        } catch (error) {
-          //
-        }
-      }
+      commit('DELETE_BULK', { transactions, profileId })
     },
 
     /**
