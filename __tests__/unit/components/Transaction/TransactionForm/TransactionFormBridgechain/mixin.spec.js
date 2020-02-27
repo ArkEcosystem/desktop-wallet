@@ -588,6 +588,34 @@ describe.each([
       })
     })
 
+    describe('hasMoreThanMaximumSeedNodes', () => {
+      it('should be false if there are less than maximum seed nodes', () => {
+        wrapper.vm.$v.form.seedNodes.$model = [
+          { ip: '0.5.5.5', isInvalid: false }
+        ]
+
+        expect(wrapper.vm.hasMoreThanMaximumSeedNodes).toBe(false)
+      })
+
+      it('should be true if there are more than maximum seed nodes', () => {
+        wrapper.vm.$v.form.seedNodes.$model = [
+          { ip: '0.5.5.5', isInvalid: false },
+          { ip: '1.5.5.5', isInvalid: false },
+          { ip: '2.5.5.5', isInvalid: false },
+          { ip: '3.5.5.5', isInvalid: false },
+          { ip: '4.5.5.5', isInvalid: false },
+          { ip: '5.5.5.5', isInvalid: false },
+          { ip: '6.5.5.5', isInvalid: false },
+          { ip: '7.5.5.5', isInvalid: false },
+          { ip: '8.5.5.5', isInvalid: false },
+          { ip: '9.5.5.5', isInvalid: false },
+          { ip: '10.5.5.5', isInvalid: false }
+        ]
+
+        expect(wrapper.vm.hasMoreThanMaximumSeedNodes).toBe(true)
+      })
+    })
+
     describe('seedNodeError', () => {
       it('should return null if valid', () => {
         wrapper.vm.$v.seedNode.$model = '5.5.5.5'
@@ -623,74 +651,6 @@ describe.each([
         expect(wrapper.vm.$v.seedNode.$dirty).toBe(true)
         expect(wrapper.vm.$v.seedNode.$invalid).toBe(true)
         expect(wrapper.vm.seedNodeError).toBe('TRANSACTION.BRIDGECHAIN.ERROR_DUPLICATE')
-      })
-
-      it('should return error if too many', () => {
-        wrapper.vm.$v.form.seedNodes.$model = [
-          { ip: '1.5.5.5', isInvalid: false },
-          { ip: '2.5.5.5', isInvalid: false },
-          { ip: '3.5.5.5', isInvalid: false },
-          { ip: '4.5.5.5', isInvalid: false },
-          { ip: '5.5.5.5', isInvalid: false },
-          { ip: '6.5.5.5', isInvalid: false },
-          { ip: '7.5.5.5', isInvalid: false },
-          { ip: '8.5.5.5', isInvalid: false },
-          { ip: '9.5.5.5', isInvalid: false },
-          { ip: '10.5.5.5', isInvalid: false }
-        ]
-        wrapper.vm.$v.seedNode.$model = '6.6.6.6'
-
-        expect(wrapper.vm.$v.seedNode.$dirty).toBe(true)
-        expect(wrapper.vm.$v.seedNode.$invalid).toBe(true)
-        expect(wrapper.vm.seedNodeError).toBe('VALIDATION.TOO_MANY')
-      })
-    })
-
-    describe('seedNodesError', () => {
-      it('should return null if valid', () => {
-        wrapper.vm.$v.form.seedNodes.$model = [
-          { ip: '5.5.5.5', isInvalid: false }
-        ]
-
-        expect(wrapper.vm.$v.form.seedNodes.$dirty).toBe(true)
-        expect(wrapper.vm.$v.form.seedNodes.$invalid).toBe(false)
-        expect(wrapper.vm.seedNodesError).toBe(null)
-      })
-
-      it('should return null if not dirty', () => {
-        wrapper.vm.$v.form.seedNodes.$model = []
-        wrapper.vm.$v.form.seedNodes.$reset()
-
-        expect(wrapper.vm.$v.form.seedNodes.$dirty).toBe(false)
-        expect(wrapper.vm.$v.form.seedNodes.$invalid).toBe(true)
-        expect(wrapper.vm.seedNodesError).toBe(null)
-      })
-
-      it('should return error if empty', () => {
-        wrapper.vm.$v.form.seedNodes.$model = []
-
-        expect(wrapper.vm.$v.form.seedNodes.$dirty).toBe(true)
-        expect(wrapper.vm.$v.form.seedNodes.$invalid).toBe(true)
-        expect(wrapper.vm.seedNodesError).toBe('VALIDATION.REQUIRED')
-      })
-
-      it('should return error if too many', () => {
-        wrapper.vm.$v.form.seedNodes.$model = [
-          { ip: '1.5.5.5', isInvalid: false },
-          { ip: '2.5.5.5', isInvalid: false },
-          { ip: '3.5.5.5', isInvalid: false },
-          { ip: '4.5.5.5', isInvalid: false },
-          { ip: '5.5.5.5', isInvalid: false },
-          { ip: '6.5.5.5', isInvalid: false },
-          { ip: '7.5.5.5', isInvalid: false },
-          { ip: '8.5.5.5', isInvalid: false },
-          { ip: '9.5.5.5', isInvalid: false },
-          { ip: '10.5.5.5', isInvalid: false }
-        ]
-
-        expect(wrapper.vm.$v.form.seedNodes.$dirty).toBe(true)
-        expect(wrapper.vm.$v.form.seedNodes.$invalid).toBe(true)
-        expect(wrapper.vm.seedNodesError).toBe('VALIDATION.TOO_MANY')
       })
     })
 
