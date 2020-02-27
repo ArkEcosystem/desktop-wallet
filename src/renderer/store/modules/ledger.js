@@ -211,6 +211,7 @@ export default {
      * @return {void}
      */
     async disconnect ({ commit, dispatch }) {
+      await commit('STOP_ALL_LOADING_PROCESSES')
       commit('SET_CONNECTED', false)
       await ledgerService.disconnect()
       eventBus.emit('ledger:disconnected')
