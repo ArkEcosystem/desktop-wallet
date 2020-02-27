@@ -1,6 +1,6 @@
 import i18n from '@/i18n'
 import alertEvents from '@/plugins/alert-events'
-import { capitalize } from 'lodash'
+import capitalize from 'lodash/capitalize'
 import logger from 'electron-log'
 import CryptoCompareAdapter from './price-api/crypto-compare'
 import CoinGeckoAdapter from './price-api/coin-gecko'

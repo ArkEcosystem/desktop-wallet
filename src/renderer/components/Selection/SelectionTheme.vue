@@ -23,7 +23,7 @@
 <script>
 import { ButtonSwitch } from '@/components/Button'
 import { SvgIcon } from '@/components/SvgIcon'
-import { findKey } from 'lodash'
+import findKey from 'lodash/findKey'
 
 export default {
   name: 'SelectionTheme',

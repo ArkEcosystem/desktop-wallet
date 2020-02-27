@@ -91,7 +91,7 @@
 import { ButtonClipboard, ButtonModal } from '@/components/Button'
 import { WalletSignModal, WalletVerifyModal } from '../'
 import SvgIcon from '@/components/SvgIcon'
-import { clone } from 'lodash'
+import clone from 'lodash/clone'
 
 export default {
   name: 'WalletSignVerify',

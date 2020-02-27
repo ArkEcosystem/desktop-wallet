@@ -1,5 +1,5 @@
 import cryptoLibrary from 'crypto'
-import { keyBy } from 'lodash'
+import keyBy from 'lodash/keyBy'
 import logger from 'electron-log'
 import Vue from 'vue'
 import semver from 'semver'

@@ -251,7 +251,7 @@
 </template>
 
 <script>
-import { at } from 'lodash'
+import at from 'lodash/at'
 import { TRANSACTION_GROUPS, TRANSACTION_TYPES } from '@config'
 import { ListDivided, ListDividedItem } from '@/components/ListDivided'
 import { ModalWindow } from '@/components/Modal'

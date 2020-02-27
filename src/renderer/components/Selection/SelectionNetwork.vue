@@ -56,7 +56,7 @@
 <script>
 import { NetworkModal, NetworkSelectionModal } from '@/components/Network'
 import SelectionNetworkButton from './SelectionNetworkButton'
-import { pullAllBy } from 'lodash'
+import pullAllBy from 'lodash/pullAllBy'
 
 export default {
   name: 'SelectionNetwork',

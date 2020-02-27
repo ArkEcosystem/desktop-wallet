@@ -1,4 +1,4 @@
-import { snakeCase } from 'lodash'
+import snakeCase from 'lodash/snakeCase'
 
 export default {
   methods: {

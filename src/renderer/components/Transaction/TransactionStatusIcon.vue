@@ -50,7 +50,7 @@
 </template>
 
 <script>
-import { at } from 'lodash'
+import at from 'lodash/at'
 import SvgIcon from '@/components/SvgIcon'
 import TransactionService from '@/services/transaction'
 
