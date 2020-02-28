@@ -100,7 +100,7 @@
       />
 
       <button
-        :disabled="$v.form.$invalid"
+        :disabled="!isFormValid"
         class="TransactionFormBusiness__next blue-button mt-10 ml-0"
         @click="onSubmit"
       >
@@ -161,8 +161,51 @@ export default {
   }),
 
   computed: {
+    business () {
+      return this.wallet_fromRoute.business
+    },
+
+    isUpdate () {
+      return !!this.business
+    },
+
+    hasSameName () {
+      return this.form.asset.name === this.business.name
+    },
+
+    hasSameWebsite () {
+      return this.form.asset.website === this.business.website
+    },
+
+    hasSameVat () {
+      return (
+        this.form.asset.vat === this.business.vat ||
+        !!this.form.asset.vat === !!this.business.vat
+      )
+    },
+
+    hasSameRepository () {
+      return (
+        this.form.asset.repository === this.business.repository ||
+        !!this.form.asset.repository === !!this.business.repository
+      )
+    },
+
     nameLabel () {
       return `${this.$t('WALLET_BUSINESS.NAME')} - ${this.$t('VALIDATION.MAX_LENGTH', [maxNameLength])}`
+    },
+
+    isFormValid () {
+      if (this.isUpdate) {
+        return !this.$v.form.$invalid && !(
+          this.hasSameName &&
+          this.hasSameWebsite &&
+          this.hasSameVat &&
+          this.hasSameRepository
+        )
+      }
+
+      return !this.$v.form.$invalid
     },
 
     nameError () {
@@ -226,9 +269,19 @@ export default {
 
   methods: {
     getTransactionData () {
+      const businessAsset = Object.assign({}, this.form.asset)
+
+      if (this.isUpdate) {
+        for (const property of Object.keys(this.form.asset)) {
+          if (this[`hasSame${this.strings_capitalizeFirst(property)}`]) {
+            delete businessAsset[property]
+          }
+        }
+      }
+
       const transactionData = {
         address: this.currentWallet.address,
-        asset: this.form.asset,
+        asset: businessAsset,
         passphrase: this.form.passphrase,
         fee: this.getFee(),
         wif: this.form.wif,

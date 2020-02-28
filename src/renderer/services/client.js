@@ -930,21 +930,8 @@ export default class ClientService {
       throw new Error(`Business Registration fee should be smaller than ${staticFee}`)
     }
 
-    const businessRegistrationAsset = {
-      name: asset.name,
-      website: asset.website
-    }
-
-    if (asset.vat && asset.vat.length) {
-      businessRegistrationAsset.vat = asset.vat
-    }
-
-    if (asset.repository && asset.repository.length) {
-      businessRegistrationAsset.repository = asset.repository
-    }
-
     const transaction = new MagistrateCrypto.Builders.BusinessRegistrationBuilder()
-      .businessRegistrationAsset(businessRegistrationAsset)
+      .businessRegistrationAsset(asset)
       .fee(fee)
 
     passphrase = this.normalizePassphrase(passphrase)
@@ -999,21 +986,8 @@ export default class ClientService {
       throw new Error(`Business Update fee should be smaller than ${staticFee}`)
     }
 
-    const businessAsset = {
-      name: asset.name,
-      website: asset.website
-    }
-
-    if (asset.vat && asset.vat.length) {
-      businessAsset.vat = asset.vat
-    }
-
-    if (asset.repository && asset.repository.length) {
-      businessAsset.repository = asset.repository
-    }
-
     const transaction = new MagistrateCrypto.Builders.BusinessUpdateBuilder()
-      .businessUpdateAsset(businessAsset)
+      .businessUpdateAsset(asset)
       .fee(fee)
 
     passphrase = this.normalizePassphrase(passphrase)
