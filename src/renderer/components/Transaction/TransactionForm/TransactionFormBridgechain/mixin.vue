@@ -339,14 +339,46 @@ export default {
 
   methods: {
     getTransactionData () {
+      const bridgechainAsset = Object.assign({}, this.form.asset)
+
+      // will have to be adjusted when multiple ports are supported in the wallet
+      bridgechainAsset.ports['@arkecosystem/core-api'] = parseInt(this.form.apiPort)
+      bridgechainAsset.seedNodes = this.form.seedNodes.map(seedNode => seedNode.ip)
+
       if (this.isUpdate) {
-        this.form.asset.bridgechainId = this.form.asset.genesisHash
+        bridgechainAsset.bridgechainId = bridgechainAsset.genesisHash
+
+        delete bridgechainAsset.name
+        delete bridgechainAsset.genesisHash
+
+        if (bridgechainAsset.bridgechainRepository === this.bridgechain.bridgechainRepository) {
+          delete bridgechainAsset.bridgechainRepository
+        }
+
+        if (bridgechainAsset.bridgechainAssetRepository === this.bridgechain.bridgechainAssetRepository) {
+          delete bridgechainAsset.bridgechainAssetRepository
+        }
+
+        if (
+          bridgechainAsset.seedNodes.length === this.bridgechain.seedNodes.length &&
+          bridgechainAsset.seedNodes.every(seedNode => this.bridgechain.seedNodes.includes(seedNode))
+        ) {
+          delete bridgechainAsset.seedNodes
+        }
+
+        // will have to be adjusted when multiple ports are supported in the wallet
+        if (bridgechainAsset.ports['@arkecosystem/core-api'] === this.bridgechain.ports['@arkecosystem/core-api']) {
+          delete bridgechainAsset.ports
+        }
+      } else {
+        if (bridgechainAsset.bridgechainAssetRepository && !bridgechainAsset.bridgechainAssetRepository.length) {
+          delete bridgechainAsset.bridgechainAssetRepository
+        }
       }
-      this.form.asset.seedNodes = this.form.seedNodes.map(seedNode => seedNode.ip)
 
       const transactionData = {
         address: this.currentWallet.address,
-        asset: this.form.asset,
+        asset: bridgechainAsset,
         passphrase: this.form.passphrase,
         fee: this.getFee(),
         wif: this.form.wif,
@@ -357,8 +389,6 @@ export default {
       if (this.currentWallet.secondPublicKey) {
         transactionData.secondPassphrase = this.form.secondPassphrase
       }
-
-      transactionData.asset.ports['@arkecosystem/core-api'] = parseInt(this.form.apiPort)
 
       return transactionData
     },

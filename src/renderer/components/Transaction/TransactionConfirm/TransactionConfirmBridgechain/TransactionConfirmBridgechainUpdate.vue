@@ -17,6 +17,7 @@
     </ListDividedItem>
 
     <ListDividedItem
+      v-if="transaction.asset.bridgechainUpdate.seedNodes"
       class="TransactionConfirmBridgechainUpdate__seed-nodes"
       :label="$t('WALLET_BUSINESS.BRIDGECHAIN.SEED_NODES')"
     >
@@ -29,6 +30,7 @@
     </ListDividedItem>
 
     <ListDividedItem
+      v-if="apiPort"
       class="TransactionConfirmBridgechainUpdate__api-port"
       :label="$t('WALLET_BUSINESS.BRIDGECHAIN.API_PORT')"
     >
@@ -61,8 +63,14 @@ export default {
     },
 
     apiPort () {
-      if (!this.transaction.asset.bridgechainUpdate.ports['@arkecosystem/core-api']) {
-        return '-'
+      if (
+        !this.transaction.asset.bridgechainUpdate.ports ||
+        (
+          this.transaction.asset.bridgechainUpdate.ports &&
+          !this.transaction.asset.bridgechainUpdate.ports['@arkecosystem/core-api']
+        )
+      ) {
+        return null
       }
 
       return this.transaction.asset.bridgechainUpdate.ports['@arkecosystem/core-api']
