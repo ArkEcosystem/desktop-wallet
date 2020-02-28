@@ -1121,8 +1121,20 @@ export default class ClientService {
       throw new Error(`Bridgechain Registration fee should be smaller than ${staticFee}`)
     }
 
+    const bridgechainRegistrationAsset = {
+      name: asset.name,
+      seedNodes: asset.seedNodes,
+      ports: asset.ports,
+      genesisHash: asset.genesisHash,
+      bridgechainRepository: asset.bridgechainRepository
+    }
+
+    if (asset.bridgechainAssetRepository && asset.bridgechainAssetRepository.length) {
+      bridgechainRegistrationAsset.bridgechainAssetRepository = asset.bridgechainAssetRepository
+    }
+
     const transaction = new MagistrateCrypto.Builders.BridgechainRegistrationBuilder()
-      .bridgechainRegistrationAsset(asset)
+      .bridgechainRegistrationAsset(bridgechainRegistrationAsset)
       .fee(fee)
 
     passphrase = this.normalizePassphrase(passphrase)
