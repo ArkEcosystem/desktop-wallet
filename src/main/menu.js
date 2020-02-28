@@ -65,7 +65,16 @@ const template = [
   {
     label: 'View',
     submenu: [
-      { role: 'reload' },
+      {
+        label: 'Reload',
+        accelerator: 'CmdOrCtrl+R',
+        click: (_, focusedWindow) => {
+          if (focusedWindow) {
+            focusedWindow.reload()
+            focusedWindow.hide()
+          }
+        }
+      },
       { role: 'forcereload' },
       { role: 'toggledevtools' },
       { type: 'separator' },
