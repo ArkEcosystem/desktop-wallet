@@ -12,7 +12,7 @@ const includes = (objects, find) => objects.map(a => a.id).includes(find.id)
  * This module stores unconfirmed transactions, so it does not persist currently:
  * it is not required and avoids managing their lifecycle when they are confirmed.
  *
- * Internally the transactions are stored aggregated by `profileId``
+ * Internally the transactions are stored aggregated by `profileId`
  */
 export default {
   namespaced: true,
