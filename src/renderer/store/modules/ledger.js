@@ -305,6 +305,7 @@ export default {
 
         commit('SET_LOADING', processId)
         const firstWallet = await dispatch('getWallet', 0)
+        const currentWallets = getters.wallets
         const cachedWallets = getters.cachedWallets(firstWallet.address)
         let startIndex = 0
         if (cachedWallets.length) {
@@ -334,6 +335,9 @@ export default {
 
             return wallets
           }
+        } else if (currentWallets && currentWallets.length) {
+          startIndex = currentWallets.length - 1
+          wallets = currentWallets
         }
 
         let batchIncrement = 10
