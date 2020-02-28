@@ -587,7 +587,7 @@ describe('Services > Client', () => {
       }
 
       nock('http://127.0.0.1:4003')
-        .get('/api/v2/businesses/BUSINESS_ID/bridgechains')
+        .get('/api/v2/businesses/BUSINESS_ID/bridgechains?page=1&limit=50&orderBy=name%3Aasc')
         .reply(200, response)
 
       expect(await client.fetchBusinessBridgechains('BUSINESS_ID')).toEqual(response)
