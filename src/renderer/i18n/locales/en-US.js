@@ -1180,10 +1180,10 @@ export default {
     GROUP_2: {
       NEW_BUSINESS_REGISTRATION: 'New business registration: {address} business {name}',
       NEW_BUSINESS_RESIGNATION: 'New business resignation: {address}',
-      NEW_BUSINESS_UPDATE: 'New business update: {address} business {name}',
-      NEW_BRIDGECHAIN_REGISTRATION: 'New bridgechain registration: {address} bridgechain {name}',
-      NEW_BRIDGECHAIN_RESIGNATION: 'New bridgechain resignation: {address} bridgechain {name}',
-      NEW_BRIDGECHAIN_UPDATE: 'New bridgechain update: {address} bridgechain {name}'
+      NEW_BUSINESS_UPDATE: 'New business update: {address}',
+      NEW_BRIDGECHAIN_REGISTRATION: 'New bridgechain registration: {address}, bridgechain {bridgechain}',
+      NEW_BRIDGECHAIN_RESIGNATION: 'New bridgechain resignation: {address}, bridgechain {bridgechain}',
+      NEW_BRIDGECHAIN_UPDATE: 'New bridgechain update: {address}, bridgechain {bridgechain}'
     }
   },
 
