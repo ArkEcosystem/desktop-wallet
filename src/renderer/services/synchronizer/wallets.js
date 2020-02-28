@@ -1,4 +1,4 @@
-import { find, groupBy, keyBy, maxBy, partition, uniqBy } from 'lodash'
+import { groupBy, keyBy, maxBy, partition, uniqBy } from 'lodash'
 import { TRANSACTION_GROUPS, TRANSACTION_TYPES } from '@config'
 import eventBus from '@/plugins/event-bus'
 import truncateMiddle from '@/filters/truncate-middle'
@@ -254,7 +254,7 @@ class Action {
       const transactions = transactionsByAddress[address]
 
       if (transactions && transactions.length) {
-        const wallet = find(this.wallets, { address })
+        const wallet = this.wallets.find(wallet => wallet.address === address)
         const latestAt = await this.processWalletTransactions(wallet, transactions)
         if (latestAt) {
           walletsTransactionsAt[address] = latestAt
