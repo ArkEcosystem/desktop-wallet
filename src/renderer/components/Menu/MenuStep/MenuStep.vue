@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import { first, last, map } from 'lodash'
+import { first, map } from 'lodash'
 import { CollapseAccordion } from '@/components/Collapse'
 
 export default {
@@ -63,7 +63,7 @@ export default {
         firstStep.isFirstItem = true
       }
 
-      const lastStep = last(steps)
+      const lastStep = steps[steps.length - 1]
       if (lastStep) {
         lastStep.isLastItem = true
       }
