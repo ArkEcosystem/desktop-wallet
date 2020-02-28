@@ -865,7 +865,7 @@ describe.each([
         wrapper.vm.$v.form.asset.bridgechainRepository.$model = 'https://github.com/arkecosystem/core.git'
         wrapper.vm.$v.form.asset.bridgechainAssetRepository.$model = 'https://github.com/arkecosystem/core-assets.git'
 
-        const expectedAsset = {
+        let expectedAsset = {
           name: 'bridgechain',
           seedNodes: [
             '1.1.1.1',
@@ -880,8 +880,9 @@ describe.each([
         }
 
         if (componentName === 'TransactionFormBridgechainUpdate') {
-          wrapper.vm.form.asset.bridgechainId = '2a44f340d76ffc3df204c5f38cd355b7496c9065a1ade2ef92071436bd72e867'
-          expectedAsset.bridgechainId = '2a44f340d76ffc3df204c5f38cd355b7496c9065a1ade2ef92071436bd72e867'
+          expectedAsset = {
+            bridgechainId: '2a44f340d76ffc3df204c5f38cd355b7496c9065a1ade2ef92071436bd72e867'
+          }
         }
 
         expect(wrapper.vm.getTransactionData()).toEqual({
@@ -917,7 +918,7 @@ describe.each([
         wrapper.vm.$v.form.asset.bridgechainRepository.$model = 'https://github.com/arkecosystem/core.git'
         wrapper.vm.$v.form.asset.bridgechainAssetRepository.$model = 'https://github.com/arkecosystem/core-assets.git'
 
-        const expectedAsset = {
+        let expectedAsset = {
           name: 'bridgechain',
           seedNodes: [
             '1.1.1.1',
@@ -932,8 +933,9 @@ describe.each([
         }
 
         if (componentName === 'TransactionFormBridgechainUpdate') {
-          wrapper.vm.form.asset.bridgechainId = '2a44f340d76ffc3df204c5f38cd355b7496c9065a1ade2ef92071436bd72e867'
-          expectedAsset.bridgechainId = '2a44f340d76ffc3df204c5f38cd355b7496c9065a1ade2ef92071436bd72e867'
+          expectedAsset = {
+            bridgechainId: '2a44f340d76ffc3df204c5f38cd355b7496c9065a1ade2ef92071436bd72e867'
+          }
         }
 
         expect(wrapper.vm.getTransactionData()).toEqual({

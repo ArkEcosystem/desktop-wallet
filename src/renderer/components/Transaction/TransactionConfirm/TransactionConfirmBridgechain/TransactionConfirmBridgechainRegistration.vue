@@ -99,8 +99,14 @@ export default {
     },
 
     apiPort () {
-      if (!this.transaction.asset.bridgechainRegistration.ports['@arkecosystem/core-api']) {
-        return '-'
+      if (
+        !this.transaction.asset.bridgechainRegistration.ports ||
+        (
+          this.transaction.asset.bridgechainRegistration.ports &&
+          !this.transaction.asset.bridgechainRegistration.ports['@arkecosystem/core-api']
+        )
+      ) {
+        return null
       }
 
       return this.transaction.asset.bridgechainRegistration.ports['@arkecosystem/core-api']
