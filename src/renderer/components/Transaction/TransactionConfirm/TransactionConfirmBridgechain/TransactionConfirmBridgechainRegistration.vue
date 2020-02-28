@@ -64,6 +64,14 @@
     >
       {{ transaction.asset.bridgechainRegistration.bridgechainRepository }}
     </ListDividedItem>
+
+    <ListDividedItem
+      v-if="transaction.asset.bridgechainRegistration.bridgechainAssetRepository"
+      class="TransactionConfirmBridgechainRegistration__bridgechain-asset-repo"
+      :label="$t('WALLET_BUSINESS.BRIDGECHAIN.BRIDGECHAIN_ASSET_REPOSITORY')"
+    >
+      {{ transaction.asset.bridgechainRegistration.bridgechainAssetRepository }}
+    </ListDividedItem>
   </ListDivided>
 </template>
 
