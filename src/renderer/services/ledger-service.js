@@ -1,4 +1,4 @@
-import LedgerTransport from '@ledgerhq/hw-transport-node-hid'
+import LedgerTransport from '@ledgerhq/hw-transport-node-hid-singleton'
 import { ARKTransport } from '@arkecosystem/ledger-transport'
 import queue from 'async/queue'
 import logger from 'electron-log'
