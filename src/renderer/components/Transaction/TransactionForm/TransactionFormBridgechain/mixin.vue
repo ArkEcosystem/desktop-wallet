@@ -249,7 +249,36 @@ export default {
         return !this.$v.form.seedNodes.$invalid
       }
 
+      if (this.step === 2 && this.isUpdate) {
+        return !this.$v.form.$invalid && !(
+          this.hasSameRepository &&
+          this.hasSameAssetRepository &&
+          this.hasSameSeedNodes &&
+          this.hasSamePorts
+        )
+      }
+
       return !this.$v.form.$invalid
+    },
+
+    hasSameRepository () {
+      return this.form.asset.bridgechainRepository === this.bridgechain.bridgechainRepository
+    },
+
+    hasSameAssetRepository () {
+      return this.form.asset.bridgechainAssetRepository === this.bridgechain.bridgechainAssetRepository
+    },
+
+    hasSameSeedNodes () {
+      return (
+        this.form.seedNodes.length === this.bridgechain.seedNodes.length &&
+        this.form.seedNodes.every(seedNode => this.bridgechain.seedNodes.includes(seedNode.ip))
+      )
+    },
+
+    // will have to be adjusted when multiple ports are supported in the wallet
+    hasSamePorts () {
+      return parseInt(this.form.apiPort) === this.bridgechain.ports['@arkecosystem/core-api']
     },
 
     nameError () {
@@ -351,27 +380,23 @@ export default {
         delete bridgechainAsset.name
         delete bridgechainAsset.genesisHash
 
-        if (bridgechainAsset.bridgechainRepository === this.bridgechain.bridgechainRepository) {
+        if (this.hasSameRepository) {
           delete bridgechainAsset.bridgechainRepository
         }
 
-        if (bridgechainAsset.bridgechainAssetRepository === this.bridgechain.bridgechainAssetRepository) {
+        if (this.hasSameAssetRepository) {
           delete bridgechainAsset.bridgechainAssetRepository
         }
 
-        if (
-          bridgechainAsset.seedNodes.length === this.bridgechain.seedNodes.length &&
-          bridgechainAsset.seedNodes.every(seedNode => this.bridgechain.seedNodes.includes(seedNode))
-        ) {
+        if (this.hasSameSeedNodes) {
           delete bridgechainAsset.seedNodes
         }
 
-        // will have to be adjusted when multiple ports are supported in the wallet
-        if (bridgechainAsset.ports['@arkecosystem/core-api'] === this.bridgechain.ports['@arkecosystem/core-api']) {
+        if (this.hasSamePorts) {
           delete bridgechainAsset.ports
         }
       } else {
-        if (bridgechainAsset.bridgechainAssetRepository && !bridgechainAsset.bridgechainAssetRepository.length) {
+        if (!bridgechainAsset.bridgechainAssetRepository || !bridgechainAsset.bridgechainAssetRepository.length) {
           delete bridgechainAsset.bridgechainAssetRepository
         }
       }
