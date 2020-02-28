@@ -41,8 +41,10 @@
         <TransactionPeerList
           :title="$t('TRANSACTION.BRIDGECHAIN.SEED_NODES')"
           :items="$v.form.seedNodes.$model"
-          :helper-text="seedNodesError"
-          :is-invalid="!!seedNodesError"
+          :max-items="maxSeedNodes"
+          :show-count="true"
+          :is-invalid="hasSeedNodesError"
+          :required="true"
           class="TransactionFormBridgechain__seed-nodes mt-4"
           @remove="emitRemoveSeedNode"
         />
@@ -234,6 +236,10 @@ export default {
   }),
 
   computed: {
+    maxSeedNodes () {
+      return maxSeedNodes
+    },
+
     isUpdate () {
       return !!this.bridgechain
     },
@@ -243,7 +249,36 @@ export default {
         return !this.$v.form.seedNodes.$invalid
       }
 
+      if (this.step === 2 && this.isUpdate) {
+        return !this.$v.form.$invalid && !(
+          this.hasSameRepository &&
+          this.hasSameAssetRepository &&
+          this.hasSameSeedNodes &&
+          this.hasSamePorts
+        )
+      }
+
       return !this.$v.form.$invalid
+    },
+
+    hasSameRepository () {
+      return this.form.asset.bridgechainRepository === this.bridgechain.bridgechainRepository
+    },
+
+    hasSameAssetRepository () {
+      return this.form.asset.bridgechainAssetRepository === this.bridgechain.bridgechainAssetRepository
+    },
+
+    hasSameSeedNodes () {
+      return (
+        this.form.seedNodes.length === this.bridgechain.seedNodes.length &&
+        this.form.seedNodes.every(seedNode => this.bridgechain.seedNodes.includes(seedNode.ip))
+      )
+    },
+
+    // will have to be adjusted when multiple ports are supported in the wallet
+    hasSamePorts () {
+      return parseInt(this.form.apiPort) === this.bridgechain.ports['@arkecosystem/core-api']
     },
 
     nameError () {
@@ -264,26 +299,16 @@ export default {
       return !this.$v.seedNode.$model.length || !!this.seedNodeError
     },
 
+    hasSeedNodesError () {
+      return this.invalidSeeds.length > 0 || this.form.seedNodes.length > this.maxSeedNodes
+    },
+
     seedNodeError () {
       if (this.$v.seedNode.$dirty && this.$v.seedNode.$invalid) {
         if (!this.$v.seedNode.isValidSeed) {
           return this.$t('VALIDATION.INVALID_SEED')
         } else if (!this.$v.seedNode.isUnique) {
           return this.$t('TRANSACTION.BRIDGECHAIN.ERROR_DUPLICATE')
-        } else if (!this.$v.seedNode.belowMax) {
-          return this.$t('VALIDATION.TOO_MANY', [this.$t('TRANSACTION.BRIDGECHAIN.SEED_NODES')])
-        }
-      }
-
-      return null
-    },
-
-    seedNodesError () {
-      if (this.$v.form.seedNodes.$dirty && this.$v.form.seedNodes.$invalid) {
-        if (!this.$v.form.seedNodes.required) {
-          return this.$t('VALIDATION.REQUIRED', [this.$t('TRANSACTION.BRIDGECHAIN.SEED_NODES')])
-        } else if (!this.$v.form.seedNodes.belowMax) {
-          return this.$t('VALIDATION.TOO_MANY', [this.$t('TRANSACTION.BRIDGECHAIN.SEED_NODES')])
         }
       }
 
@@ -292,7 +317,9 @@ export default {
 
     genesisHashError () {
       if (this.$v.form.asset.genesisHash.$dirty && this.$v.form.asset.genesisHash.$invalid) {
-        if (!this.$v.form.asset.genesisHash.isValidHash) {
+        if (!this.$v.form.asset.genesisHash.required) {
+          return this.$t('VALIDATION.REQUIRED', [this.$t('TRANSACTION.BRIDGECHAIN.GENESIS_HASH')])
+        } else if (!this.$v.form.asset.genesisHash.isValidHash) {
           return this.$t('VALIDATION.NOT_VALID', [this.$t('TRANSACTION.BRIDGECHAIN.GENESIS_HASH')])
         }
       }
@@ -302,7 +329,9 @@ export default {
 
     bridgechainRepositoryError () {
       if (this.$v.form.asset.bridgechainRepository.$dirty && this.$v.form.asset.bridgechainRepository.$invalid) {
-        if (!this.$v.form.asset.bridgechainRepository.url) {
+        if (!this.$v.form.asset.bridgechainRepository.required) {
+          return this.$t('VALIDATION.REQUIRED', [this.$t('TRANSACTION.BRIDGECHAIN.BRIDGECHAIN_REPOSITORY')])
+        } else if (!this.$v.form.asset.bridgechainRepository.url) {
           return this.$t('VALIDATION.INVALID_URL')
         } else if (!this.$v.form.asset.bridgechainRepository.tooShort) {
           return this.$t('VALIDATION.TOO_SHORT', [this.$t('TRANSACTION.BRIDGECHAIN.BRIDGECHAIN_REPOSITORY')])
@@ -339,14 +368,42 @@ export default {
 
   methods: {
     getTransactionData () {
+      const bridgechainAsset = Object.assign({}, this.form.asset)
+
+      // will have to be adjusted when multiple ports are supported in the wallet
+      bridgechainAsset.ports['@arkecosystem/core-api'] = parseInt(this.form.apiPort)
+      bridgechainAsset.seedNodes = this.form.seedNodes.map(seedNode => seedNode.ip)
+
       if (this.isUpdate) {
-        this.form.asset.bridgechainId = this.form.asset.genesisHash
+        bridgechainAsset.bridgechainId = bridgechainAsset.genesisHash
+
+        delete bridgechainAsset.name
+        delete bridgechainAsset.genesisHash
+
+        if (this.hasSameRepository) {
+          delete bridgechainAsset.bridgechainRepository
+        }
+
+        if (this.hasSameAssetRepository) {
+          delete bridgechainAsset.bridgechainAssetRepository
+        }
+
+        if (this.hasSameSeedNodes) {
+          delete bridgechainAsset.seedNodes
+        }
+
+        if (this.hasSamePorts) {
+          delete bridgechainAsset.ports
+        }
+      } else {
+        if (!bridgechainAsset.bridgechainAssetRepository || !bridgechainAsset.bridgechainAssetRepository.length) {
+          delete bridgechainAsset.bridgechainAssetRepository
+        }
       }
-      this.form.asset.seedNodes = this.form.seedNodes.map(seedNode => seedNode.ip)
 
       const transactionData = {
         address: this.currentWallet.address,
-        asset: this.form.asset,
+        asset: bridgechainAsset,
         passphrase: this.form.passphrase,
         fee: this.getFee(),
         wif: this.form.wif,
@@ -357,8 +414,6 @@ export default {
       if (this.currentWallet.secondPublicKey) {
         transactionData.secondPassphrase = this.form.secondPassphrase
       }
-
-      transactionData.asset.ports['@arkecosystem/core-api'] = parseInt(this.form.apiPort)
 
       return transactionData
     },
@@ -455,9 +510,6 @@ export default {
       },
       isValidSeed (value) {
         return ipAddress(value)
-      },
-      belowMax () {
-        return this.$v.form.seedNodes.$model.length < maxSeedNodes
       }
     },
 
@@ -478,8 +530,8 @@ export default {
 
       seedNodes: {
         required,
-        belowMax (value) {
-          return value.length < maxSeedNodes
+        belowOrEqualMaximum (value) {
+          return value.length <= maxSeedNodes
         }
       },
 
@@ -497,17 +549,26 @@ export default {
         },
 
         genesisHash: {
-          isValidHash (value) {
-            return this.bridgechain ? true : /^[a-z0-9]{64}$/.test(value)
-          },
           required (value) {
             return this.bridgechain ? true : required(value)
+          },
+          isValidHash (value) {
+            return this.bridgechain ? true : /^[a-z0-9]{64}$/.test(value)
           }
         },
 
         bridgechainRepository: {
+          required (value) {
+            return this.bridgechain ? true : required(value)
+          },
           tooShort (value) {
-            return required(value) && minLength(minRepositoryLength)(value)
+            if (this.bridgechain) {
+              if (value) {
+                return minLength(minRepositoryLength)(value)
+              }
+              return true
+            }
+            return minLength(minRepositoryLength)(value)
           },
           url (value) {
             return url(value)
@@ -524,3 +585,9 @@ export default {
   }
 }
 </script>
+
+<style>
+.TransactionFormBridgechain__seed-nodes .InputEditableList__list {
+  max-height: 13rem;
+}
+</style>

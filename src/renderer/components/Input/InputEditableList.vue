@@ -33,7 +33,7 @@
 
     <div
       v-if="requiredAndEmpty"
-      class="InputEditableList__no-items text-center"
+      class="InputEditableList__no-items"
     >
       {{ noItemsMessage }}
     </div>
