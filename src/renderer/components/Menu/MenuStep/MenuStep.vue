@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import { first, map } from 'lodash'
+import { map } from 'lodash'
 import { CollapseAccordion } from '@/components/Collapse'
 
 export default {
@@ -58,7 +58,7 @@ export default {
       const collapses = map(steps, step => step.$refs.collapse)
 
       // The first and last items has a different style and text on the default footer
-      const firstStep = first(steps)
+      const firstStep = steps[0]
       if (firstStep) {
         firstStep.isFirstItem = true
       }
