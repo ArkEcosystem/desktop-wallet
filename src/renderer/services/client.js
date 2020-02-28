@@ -235,11 +235,19 @@ export default class ClientService {
 
   /**
    * Fetch bridgechains for a business.
-   * @param  {String} publicKey
+   * @param  {String} address
    * @return {Object}
    */
-  async fetchBusinessBridgechains (publicKey) {
-    return (await this.client.api('businesses').bridgechains(publicKey)).body
+  async fetchBusinessBridgechains (address, options = {}) {
+    options.page || (options.page = 1)
+    options.limit || (options.limit = 50)
+    options.orderBy || (options.orderBy = 'name:asc')
+
+    return (await this.client.api('businesses').bridgechains(address, {
+      page: options.page,
+      limit: options.limit,
+      orderBy: options.orderBy
+    })).body
   }
 
   /**
