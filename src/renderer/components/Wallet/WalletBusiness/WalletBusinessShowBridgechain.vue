@@ -18,7 +18,7 @@
         <div
           v-for="(seedNode, id) of bridgechain.seedNodes"
           :key="id"
-          class="WalletBusinessShowBridgechain__seed-nodes__item"
+          class="WalletBusinessShowBridgechain__seed-nodes__item text-right"
         >
           {{ seedNode }}
         </div>

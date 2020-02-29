@@ -707,14 +707,14 @@ describe('TransactionFormMultiSignature', () => {
         wrapper.vm.$v.form.passphrase.$model = 'passphrase'
         wrapper.vm.$v.form.minKeys.$model = 3
         wrapper.vm.$v.form.publicKeys.$model = [{
-          address: 'address-2',
-          publicKey: 'public-key-2'
+          address: 'address-4',
+          publicKey: 'public-key-4'
         }, {
           address: 'address-3',
           publicKey: 'public-key-3'
         }, {
-          address: 'address-4',
-          publicKey: 'public-key-4'
+          address: 'address-2',
+          publicKey: 'public-key-2'
         }]
 
         expect(wrapper.vm.getTransactionData()).toEqual({
@@ -744,14 +744,14 @@ describe('TransactionFormMultiSignature', () => {
         wrapper.vm.$v.form.secondPassphrase.$model = 'second passphrase'
         wrapper.vm.$v.form.minKeys.$model = 3
         wrapper.vm.$v.form.publicKeys.$model = [{
-          address: 'address-2',
-          publicKey: 'public-key-2'
-        }, {
-          address: 'address-3',
-          publicKey: 'public-key-3'
-        }, {
           address: 'address-4',
           publicKey: 'public-key-4'
+        },{
+          address: 'address-3',
+          publicKey: 'public-key-3'
+        },{
+          address: 'address-2',
+          publicKey: 'public-key-2'
         }]
 
         expect(wrapper.vm.getTransactionData()).toEqual({

@@ -327,7 +327,7 @@ export default {
     getTransactionData () {
       const transactionData = {
         address: this.currentWallet.address,
-        recipients: this.form.recipients,
+        recipients: this.form.recipients.slice().reverse(),
         vendorField: this.form.vendorField,
         passphrase: this.form.passphrase,
         fee: this.getFee(),
@@ -356,7 +356,7 @@ export default {
         return
       }
 
-      this.$v.form.recipients.$model.push({
+      this.$v.form.recipients.$model.unshift({
         address: this.recipientId,
         amount: this.currency_unitToSub(this.amount)
       })

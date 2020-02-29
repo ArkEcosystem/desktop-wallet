@@ -372,7 +372,7 @@ export default {
 
       // will have to be adjusted when multiple ports are supported in the wallet
       bridgechainAsset.ports['@arkecosystem/core-api'] = parseInt(this.form.apiPort)
-      bridgechainAsset.seedNodes = this.form.seedNodes.map(seedNode => seedNode.ip)
+      bridgechainAsset.seedNodes = this.form.seedNodes.map(seedNode => seedNode.ip).slice().reverse()
 
       if (this.isUpdate) {
         bridgechainAsset.bridgechainId = bridgechainAsset.genesisHash
@@ -446,7 +446,7 @@ export default {
         return
       }
 
-      this.form.seedNodes.push({
+      this.form.seedNodes.unshift({
         ip: this.seedNode,
         isInvalid: false
       })

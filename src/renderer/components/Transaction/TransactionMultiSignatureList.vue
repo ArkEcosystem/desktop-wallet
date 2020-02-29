@@ -12,13 +12,16 @@
   >
     <div
       slot-scope="{ item }"
-      class="flex-1"
+      class="flex flex-1"
     >
       <span>
         {{ formatItem(item.publicKey, 20) }}
       </span>
 
-      <span v-if="item.address">
+      <span
+        v-if="item.address"
+        class="ml-1"
+      >
         ({{ formatItem(item.address) }})
       </span>
     </div>

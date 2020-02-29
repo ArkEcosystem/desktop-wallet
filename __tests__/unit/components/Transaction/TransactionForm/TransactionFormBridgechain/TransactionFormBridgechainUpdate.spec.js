@@ -280,8 +280,8 @@ describe('TransactionFormBridgechainUpdate', () => {
 
       expect(wrapper.vm.form.apiPort).toBe(8081)
       expect(wrapper.vm.form.seedNodes).toEqual([
-        { ip: '5.5.5.5', isInvalid: false },
-        { ip: '6.6.6.6', isInvalid: false }
+        { ip: '6.6.6.6', isInvalid: false },
+        { ip: '5.5.5.5', isInvalid: false }
       ])
       expect(wrapper.vm.form.asset).toEqual({
         name: '',
@@ -306,8 +306,8 @@ describe('TransactionFormBridgechainUpdate', () => {
 
       expect(wrapper.vm.form.apiPort).toBe(4003)
       expect(wrapper.vm.form.seedNodes).toEqual([
-        { ip: '5.5.5.5', isInvalid: false },
-        { ip: '6.6.6.6', isInvalid: false }
+        { ip: '6.6.6.6', isInvalid: false },
+        { ip: '5.5.5.5', isInvalid: false }
       ])
       expect(wrapper.vm.form.asset).toEqual({
         name: '',

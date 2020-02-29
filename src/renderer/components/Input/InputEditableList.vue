@@ -15,20 +15,22 @@
     </div>
 
     <div class="InputEditableList__list">
-      <div
-        v-for="(item, key) of items"
-        :key="key"
-        class="InputEditableList__list__item flex py-2 select-none"
-      >
-        <slot :item="item" />
+      <TransitionGroup name="list">
+        <div
+          v-for="(item, key) of items"
+          :key="items[key]"
+          class="InputEditableList__list__item flex py-2 select-none"
+        >
+          <slot :item="item" />
 
-        <ButtonClose
-          v-if="!readonly"
-          icon-class="text-grey"
-          class="InputEditableList__list__item__remove flex-inline"
-          @click="emitRemove(key)"
-        />
-      </div>
+          <ButtonClose
+            v-if="!readonly"
+            icon-class="text-grey"
+            class="InputEditableList__list__item__remove flex-inline"
+            @click="emitRemove(key)"
+          />
+        </div>
+      </TransitionGroup>
     </div>
 
     <div
@@ -140,19 +142,34 @@ export default {
 
 <style scoped>
 .InputEditableList__list {
-  @apply .overflow-y-auto;
+  @apply overflow-y-auto -mx-3 px-3;
 }
 .InputEditableList__list .ButtonClose {
   @apply .mr-0 !important;
 }
+.InputEditableList__list__item {
+  transition: transform .5s ease, opacity .2s ease;
+}
+
 .InputEditableList--invalid .InputEditableList__no-items,
 .InputEditableList--invalid .InputField__label,
 .InputEditableList--invalid .InputEditableList__helper-text {
   @apply .text-red-dark;
 }
 .InputField__label {
-    font-weight: 600;
-    bottom: 0;
-    transform: scale(.75);
+  font-weight: 600;
+  bottom: 0;
+  transform: scale(.75);
+}
+
+.list-enter, .list-leave-to {
+  @apply z-10 opacity-0;
+  transform: scale(1.02);
+}
+.list-leave-active {
+  position: absolute;
+}
+.list-leave-active .InputEditableList__list__item__remove {
+  display: none;
 }
 </style>

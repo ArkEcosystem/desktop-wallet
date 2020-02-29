@@ -328,7 +328,7 @@ export default {
     getTransactionData () {
       const transactionData = {
         address: this.currentWallet.address,
-        publicKeys: this.form.publicKeys.map(key => key.publicKey),
+        publicKeys: this.form.publicKeys.map(key => key.publicKey).slice().reverse(),
         minKeys: this.form.minKeys,
         passphrase: this.form.passphrase,
         fee: this.getFee(),
@@ -397,7 +397,7 @@ export default {
         return
       }
 
-      this.form.publicKeys.push(entry)
+      this.form.publicKeys.unshift(entry)
       this.updateMinKeys()
     },
 

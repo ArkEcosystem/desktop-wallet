@@ -25,7 +25,7 @@ export default {
     this.form.seedNodes = this.bridgechain.seedNodes.map(ip => ({
       ip,
       isInvalid: false
-    }))
+    })).slice().reverse()
 
     if (this.bridgechain.ports['@arkecosystem/core-api']) {
       this.form.apiPort = this.bridgechain.ports['@arkecosystem/core-api']

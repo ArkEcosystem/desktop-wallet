@@ -146,8 +146,8 @@ describe.each([
 
         expect(wrapper.vm.form.apiPort).toBe(8081)
         expect(wrapper.vm.form.seedNodes).toEqual([
-          { ip: '5.5.5.5', isInvalid: false },
-          { ip: '6.6.6.6', isInvalid: false }
+          { ip: '6.6.6.6', isInvalid: false },
+          { ip: '5.5.5.5', isInvalid: false }
         ])
         expect(wrapper.vm.form.asset).toEqual({
           name: '',
@@ -172,8 +172,8 @@ describe.each([
 
         expect(wrapper.vm.form.apiPort).toBe(4003)
         expect(wrapper.vm.form.seedNodes).toEqual([
-          { ip: '5.5.5.5', isInvalid: false },
-          { ip: '6.6.6.6', isInvalid: false }
+          { ip: '6.6.6.6', isInvalid: false },
+          { ip: '5.5.5.5', isInvalid: false }
         ])
         expect(wrapper.vm.form.asset).toEqual({
           name: '',
@@ -856,8 +856,8 @@ describe.each([
         wrapper.vm.$v.form.asset.name.$model = 'bridgechain'
         wrapper.vm.$v.form.asset.genesisHash.$model = '2a44f340d76ffc3df204c5f38cd355b7496c9065a1ade2ef92071436bd72e867'
         wrapper.vm.$v.form.seedNodes.$model = [
-          { ip: '1.1.1.1', isInvalid: false },
-          { ip: '2.2.2.2', isInvalid: false }
+          { ip: '2.2.2.2', isInvalid: false },
+          { ip: '1.1.1.1', isInvalid: false }
         ]
         wrapper.vm.form.asset.ports = {
           '@arkecosystem/core-api': 4003
