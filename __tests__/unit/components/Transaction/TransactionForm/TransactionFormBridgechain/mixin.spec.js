@@ -40,8 +40,8 @@ const createWrapper = (component, wallet, bridgechain) => {
     bridgechain = {
       name: 'bridgechain',
       seedNodes: [
-        '1.1.1.1',
-        '2.2.2.2'
+        '2.2.2.2',
+        '1.1.1.1'
       ],
       ports: {
         '@arkecosystem/core-api': 4003
