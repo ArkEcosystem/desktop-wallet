@@ -67,6 +67,10 @@ export default class WalletService {
    * @return {String|null}
    */
   static getPublicKeyFromWallet (wallet) {
+    if (!wallet) {
+      return null
+    }
+
     if (wallet.multiSignature) {
       return this.getPublicKeyFromMultiSignatureAsset(wallet.multiSignature)
     }
