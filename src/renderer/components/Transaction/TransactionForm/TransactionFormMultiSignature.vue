@@ -80,6 +80,7 @@
       <TransactionMultiSignatureList
         :items="$v.form.publicKeys.$model"
         :show-count="true"
+        :required="true"
         class="TransactionModalMultiSignature__public-keys mt-4"
         @remove="emitRemovePublicKey"
       />
