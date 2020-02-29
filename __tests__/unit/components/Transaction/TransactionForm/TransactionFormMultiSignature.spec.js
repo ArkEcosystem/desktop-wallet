@@ -746,10 +746,10 @@ describe('TransactionFormMultiSignature', () => {
         wrapper.vm.$v.form.publicKeys.$model = [{
           address: 'address-4',
           publicKey: 'public-key-4'
-        },{
+        }, {
           address: 'address-3',
           publicKey: 'public-key-3'
-        },{
+        }, {
           address: 'address-2',
           publicKey: 'public-key-2'
         }]
