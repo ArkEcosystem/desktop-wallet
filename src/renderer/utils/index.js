@@ -17,4 +17,4 @@ export const capitalize = str => `${str.charAt(0).toUpperCase()}${str.slice(1).t
  * @param {*} val
  * @return {Boolean} Returns `true` if `value` is nullish, else `false`.
  */
-export const isNil = val => val == null
+export const isNil = val => val === null || val === undefined
