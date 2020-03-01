@@ -18,7 +18,7 @@
       <TransitionGroup name="list">
         <div
           v-for="(item, key) of items"
-          :key="item.id"
+          :key="item.id !== undefined ? item.id : key"
           class="InputEditableList__list__item flex py-2 select-none"
         >
           <slot :item="item" />
