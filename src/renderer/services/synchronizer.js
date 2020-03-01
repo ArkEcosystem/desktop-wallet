@@ -1,4 +1,4 @@
-import { flatten, includes, isFunction, pullAll } from 'lodash'
+import { flatten, includes, pullAll } from 'lodash'
 import { announcements, fees, ledger, market, peer, wallets } from './synchronizer/'
 /**
  * This class adds the possibility to define actions (not to confuse with Vuex actions)
@@ -95,7 +95,7 @@ export default class Synchronizer {
    * @param {Function} actionFn
    */
   define (actionId, config, actionFn) {
-    if (!isFunction(actionFn)) {
+    if (typeof actionFn !== 'function') {
       throw new Error('[$synchronizer] action is not a function')
     }
     ;['default', 'focus'].forEach(mode => {

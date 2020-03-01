@@ -1,4 +1,4 @@
-import { isFunction, transform } from 'lodash'
+import { transform } from 'lodash'
 import { validate as jsonValidate } from 'jsonschema'
 import { isNil } from '@/utils'
 
@@ -25,7 +25,7 @@ export default class BaseModel {
     return transform(this.schema.properties, (result, item, key) => {
       let value
 
-      if (item.format && isFunction(item.format)) {
+      if (item.format && typeof item.format === 'function') {
         value = item.format(input)
       } else if (input[key] !== undefined) {
         value = input[key]
