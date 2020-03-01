@@ -317,17 +317,18 @@ export default {
         id = TransactionService.getId(transaction)
       }
 
+      let timestamp
+
       if (!transaction.timestamp) {
-        transaction.timestamp = Math.floor((new Date()).getTime() / 1000)
+        timestamp = Math.floor((new Date()).getTime())
       } else if (transaction.timestamp > Math.floor(new Date().getTime() / 1000)) {
-        transaction.timestamp = Math.floor(transaction.timestamp / 1000)
+        timestamp = Math.floor(transaction.timestamp)
       }
 
       if (!transaction.timestamp) {
-        transaction.timestamp = Math.floor((new Date()).getTime() / 1000)
+        timestamp = Math.floor((new Date()).getTime())
       }
 
-      let timestamp = transaction.timestamp * 1000
       if (transaction.version === 1) {
         const epoch = new Date(this.walletNetwork.constants.epoch)
         timestamp = epoch.getTime() + (transaction.timestamp * 1000)
