@@ -1,6 +1,6 @@
 import path from 'path'
 import fs from 'fs'
-import { isBoolean, isEmpty, isObject, isString } from 'lodash'
+import { isEmpty, isObject, isString } from 'lodash'
 import { normalizeJson } from '../utils/normalize-json'
 
 export function create (plugin, pluginObject, sandbox, profileId) {
@@ -15,7 +15,7 @@ export function create (plugin, pluginObject, sandbox, profileId) {
       const themes = Object.keys(pluginThemes).reduce((valid, themeName) => {
         const config = pluginThemes[themeName]
 
-        if (isBoolean(config.darkMode) && isString(config.cssPath)) {
+        if (typeof config.darkMode === 'boolean' && isString(config.cssPath)) {
           const cssPath = path.join(plugin.fullPath, 'src', config.cssPath)
           if (!fs.existsSync(cssPath)) {
             throw new Error(`No file found on \`${config.cssPath}\` for theme "${themeName}"`)
