@@ -1,5 +1,4 @@
 import { normalizeJson } from '../utils/normalize-json'
-import { isString } from 'lodash'
 
 export function create (plugin, pluginObject, sandbox, profileId) {
   return async () => {
@@ -8,7 +7,7 @@ export function create (plugin, pluginObject, sandbox, profileId) {
     if (pluginWalletTabs && Array.isArray(pluginWalletTabs) && pluginWalletTabs.length) {
       // Validate the configuration of each tab
       const walletTabs = pluginWalletTabs.reduce((valid, walletTab) => {
-        if (isString(walletTab.tabTitle) && plugin.components[walletTab.componentName]) {
+        if (typeof walletTab.tabTitle === 'string' && plugin.components[walletTab.componentName]) {
           valid.push(walletTab)
         }
         return valid

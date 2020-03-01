@@ -169,7 +169,7 @@
 
 <script>
 import os from 'os'
-import { isEmpty, isString } from 'lodash'
+import { isEmpty } from 'lodash'
 import { MARKET } from '@config'
 import { ModalConfirmation } from '@/components/Modal'
 import { MenuNavigationItem, MenuOptions, MenuOptionsItem, MenuDropdown } from '@/components/Menu'
@@ -333,7 +333,7 @@ export default {
     },
 
     setTheme (theme) {
-      this.sessionTheme = isString(theme) ? theme : (theme ? 'dark' : 'light')
+      this.sessionTheme = typeof theme === 'string' ? theme : (theme ? 'dark' : 'light')
     },
 
     setBackgroundUpdateLedger (update) {
