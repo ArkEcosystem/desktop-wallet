@@ -27,7 +27,7 @@
             :label="$t('TRANSACTION.BRIDGECHAIN.SEED_NODE')"
             :is-invalid="!!seedNodeError"
             name="seedNode"
-            class="TransactionFormBridgechain__seed-node mr-4 flex-1"
+            class="TransactionFormBridgechain__seed-node flex-1"
           />
 
           <ButtonGeneric
