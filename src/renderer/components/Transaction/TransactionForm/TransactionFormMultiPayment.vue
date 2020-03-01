@@ -30,7 +30,7 @@
         :is-disabled="!currentWallet"
         :warning-text="recipientWarning"
         name="recipientId"
-        class="TransactionFormMultiPayment__recipient mb-5 mr-4 flex-1"
+        class="TransactionFormMultiPayment__recipient mb-5 flex-1"
       />
 
       <div
