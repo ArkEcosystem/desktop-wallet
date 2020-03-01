@@ -1,4 +1,4 @@
-import { isFunction, isObject, transform } from 'lodash'
+import { isFunction, transform } from 'lodash'
 import { validate as jsonValidate } from 'jsonschema'
 import { isNil } from '@/utils'
 
@@ -8,7 +8,7 @@ export default class BaseModel {
   }
 
   deserialize (input) {
-    if (!isObject(input)) {
+    if (typeof input !== 'object') {
       throw new Error(`Invalid model input type: \`${input}\``)
     }
 

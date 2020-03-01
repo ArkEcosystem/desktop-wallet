@@ -1,6 +1,6 @@
 import path from 'path'
 import fs from 'fs'
-import { isEmpty, isObject, isString } from 'lodash'
+import { isEmpty, isString } from 'lodash'
 import { normalizeJson } from '../utils/normalize-json'
 
 export function create (plugin, pluginObject, sandbox, profileId) {
@@ -10,7 +10,7 @@ export function create (plugin, pluginObject, sandbox, profileId) {
     }
 
     const pluginThemes = normalizeJson(pluginObject.getThemes())
-    if (pluginThemes && isObject(pluginThemes)) {
+    if (pluginThemes && typeof pluginThemes === 'object') {
       // Validate the configuration of each theme and ensure that their CSS exist
       const themes = Object.keys(pluginThemes).reduce((valid, themeName) => {
         const config = pluginThemes[themeName]
