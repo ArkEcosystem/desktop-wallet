@@ -213,6 +213,7 @@ export default {
   mixins: [mixin],
 
   data: () => ({
+    uniqueId: 1,
     step: 1,
     currentTab: 0,
     address: '',
@@ -319,6 +320,7 @@ export default {
 
   mounted () {
     this.form.publicKeys.push({
+      id: this.uniqueId,
       address: this.currentWallet.address,
       publicKey: this.currentWallet.publicKey
     })
@@ -329,7 +331,7 @@ export default {
     getTransactionData () {
       const transactionData = {
         address: this.currentWallet.address,
-        publicKeys: this.form.publicKeys.map(key => key.publicKey).slice().reverse(),
+        publicKeys: this.form.publicKeys.map(key => key.publicKey).reverse(),
         minKeys: this.form.minKeys,
         passphrase: this.form.passphrase,
         fee: this.getFee(),
@@ -398,7 +400,12 @@ export default {
         return
       }
 
-      this.form.publicKeys.unshift(entry)
+      this.uniqueId += 1
+
+      this.form.publicKeys.unshift({
+        ...entry,
+        id: this.uniqueId
+      })
       this.updateMinKeys()
     },
 

@@ -22,10 +22,11 @@ export default {
     this.form.asset.bridgechainRepository = this.bridgechain.bridgechainRepository
     this.form.asset.bridgechainAssetRepository = this.bridgechain.bridgechainAssetRepository
 
-    this.form.seedNodes = this.bridgechain.seedNodes.map(ip => ({
+    this.form.seedNodes = this.bridgechain.seedNodes.map((ip, index) => ({
+      id: index + 1,
       ip,
       isInvalid: false
-    })).slice().reverse()
+    })).reverse()
 
     if (this.bridgechain.ports['@arkecosystem/core-api']) {
       this.form.apiPort = this.bridgechain.ports['@arkecosystem/core-api']

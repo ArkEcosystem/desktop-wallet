@@ -54,7 +54,13 @@ export default {
     },
 
     payments () {
-      return this.transaction.asset.payments
+      return this.transaction.asset.payments.reduce((payments, payment, index) => {
+        payments.push({
+          id: index + 1,
+          ...payment
+        })
+        return payments
+      }, [])
     }
   }
 }

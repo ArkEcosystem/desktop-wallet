@@ -215,6 +215,7 @@ export default {
   mixins: [mixin],
 
   data: () => ({
+    uniqueId: 0,
     step: 1,
     seedNode: '',
     showValidatingModal: false,
@@ -372,7 +373,7 @@ export default {
 
       // will have to be adjusted when multiple ports are supported in the wallet
       bridgechainAsset.ports['@arkecosystem/core-api'] = parseInt(this.form.apiPort)
-      bridgechainAsset.seedNodes = this.form.seedNodes.map(seedNode => seedNode.ip).slice().reverse()
+      bridgechainAsset.seedNodes = this.form.seedNodes.map(seedNode => seedNode.ip).reverse()
 
       if (this.isUpdate) {
         bridgechainAsset.bridgechainId = bridgechainAsset.genesisHash
@@ -446,7 +447,14 @@ export default {
         return
       }
 
+      if (!this.uniqueId) {
+        this.uniqueId = this.form.seedNodes.length + 1
+      } else {
+        this.uniqueId += 1
+      }
+
       this.form.seedNodes.unshift({
+        id: this.uniqueId,
         ip: this.seedNode,
         isInvalid: false
       })

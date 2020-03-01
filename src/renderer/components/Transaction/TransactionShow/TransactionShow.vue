@@ -230,7 +230,7 @@
       >
         <TransactionMultiPaymentList
           :title="null"
-          :items="transaction.asset.payments"
+          :items="payments"
           readonly
         />
       </ListDividedItem>
@@ -351,6 +351,16 @@ export default {
       return this.$t('TRANSACTION.ERROR.MULTI_PAYMENT_TO_SELF', {
         amount: this.formatter_networkCurrency(amount)
       })
+    },
+
+    payments () {
+      return this.transaction.asset.payments.reduce((payments, payment, index) => {
+        payments.push({
+          id: index + 1,
+          ...payment
+        })
+        return payments
+      }, [])
     }
   },
 
