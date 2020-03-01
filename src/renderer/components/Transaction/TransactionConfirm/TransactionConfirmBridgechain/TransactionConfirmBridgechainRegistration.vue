@@ -64,6 +64,14 @@
     >
       {{ transaction.asset.bridgechainRegistration.bridgechainRepository }}
     </ListDividedItem>
+
+    <ListDividedItem
+      v-if="transaction.asset.bridgechainRegistration.bridgechainAssetRepository"
+      class="TransactionConfirmBridgechainRegistration__bridgechain-asset-repo"
+      :label="$t('WALLET_BUSINESS.BRIDGECHAIN.BRIDGECHAIN_ASSET_REPOSITORY')"
+    >
+      {{ transaction.asset.bridgechainRegistration.bridgechainAssetRepository }}
+    </ListDividedItem>
   </ListDivided>
 </template>
 
@@ -91,8 +99,14 @@ export default {
     },
 
     apiPort () {
-      if (!this.transaction.asset.bridgechainRegistration.ports['@arkecosystem/core-api']) {
-        return '-'
+      if (
+        !this.transaction.asset.bridgechainRegistration.ports ||
+        (
+          this.transaction.asset.bridgechainRegistration.ports &&
+          !this.transaction.asset.bridgechainRegistration.ports['@arkecosystem/core-api']
+        )
+      ) {
+        return null
       }
 
       return this.transaction.asset.bridgechainRegistration.ports['@arkecosystem/core-api']
