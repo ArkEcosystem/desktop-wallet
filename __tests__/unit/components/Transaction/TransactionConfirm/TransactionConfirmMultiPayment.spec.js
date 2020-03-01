@@ -88,10 +88,12 @@ describe('TransactionConfirmMultiPayment', () => {
       it('should return all payments', () => {
         expect(wrapper.vm.payments).toEqual([
           {
+            id: 1,
             address: 'address-1',
             amount: '100000000'
           },
           {
+            id: 2,
             address: 'address-2',
             amount: '200000000'
           }

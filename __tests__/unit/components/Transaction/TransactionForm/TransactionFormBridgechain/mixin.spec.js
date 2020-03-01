@@ -40,8 +40,8 @@ const createWrapper = (component, wallet, bridgechain) => {
     bridgechain = {
       name: 'bridgechain',
       seedNodes: [
-        '2.2.2.2',
-        '1.1.1.1'
+        '1.1.1.1',
+        '2.2.2.2'
       ],
       ports: {
         '@arkecosystem/core-api': 4003
@@ -146,8 +146,8 @@ describe.each([
 
         expect(wrapper.vm.form.apiPort).toBe(8081)
         expect(wrapper.vm.form.seedNodes).toEqual([
-          { ip: '6.6.6.6', isInvalid: false },
-          { ip: '5.5.5.5', isInvalid: false }
+          { id: 2, ip: '6.6.6.6', isInvalid: false },
+          { id: 1, ip: '5.5.5.5', isInvalid: false }
         ])
         expect(wrapper.vm.form.asset).toEqual({
           name: '',
@@ -172,8 +172,8 @@ describe.each([
 
         expect(wrapper.vm.form.apiPort).toBe(4003)
         expect(wrapper.vm.form.seedNodes).toEqual([
-          { ip: '6.6.6.6', isInvalid: false },
-          { ip: '5.5.5.5', isInvalid: false }
+          { id: 2, ip: '6.6.6.6', isInvalid: false },
+          { id: 1, ip: '5.5.5.5', isInvalid: false }
         ])
         expect(wrapper.vm.form.asset).toEqual({
           name: '',
@@ -329,7 +329,7 @@ describe.each([
       it('should be enabled if seed nodes is valid on step 1', async () => {
         wrapper.vm.step = 1
         wrapper.vm.$v.form.seedNodes.$model = [
-          { ip: '1.1.1.1', isInvalid: false }
+          { id: 1, ip: '1.1.1.1', isInvalid: false }
         ]
 
         await wrapper.vm.$nextTick()
@@ -347,7 +347,7 @@ describe.each([
           '@arkecosystem/core-api': 4003
         }
         wrapper.vm.$v.form.seedNodes.$model = [
-          { ip: '1.1.1.1', isInvalid: false }
+          { id: 1, ip: '1.1.1.1', isInvalid: false }
         ]
         wrapper.vm.$v.form.asset.bridgechainRepository.$model = 'https://github.com/arkecosystem/core.git'
         wrapper.vm.$v.form.asset.bridgechainAssetRepository.$model = 'https://github.com/arkecosystem/core-assets.git'
@@ -446,7 +446,7 @@ describe.each([
       it('should be true if seed nodes is valid on step 1', async () => {
         wrapper.vm.step = 1
         wrapper.vm.$v.form.seedNodes.$model = [
-          { ip: '1.1.1.1', isInvalid: false }
+          { id: 1, ip: '1.1.1.1', isInvalid: false }
         ]
 
         await wrapper.vm.$nextTick()
@@ -464,7 +464,7 @@ describe.each([
           '@arkecosystem/core-api': 4003
         }
         wrapper.vm.$v.form.seedNodes.$model = [
-          { ip: '1.1.1.1', isInvalid: false }
+          { id: 1, ip: '1.1.1.1', isInvalid: false }
         ]
         wrapper.vm.$v.form.asset.bridgechainRepository.$model = 'https://github.com/arkecosystem/core.git'
         wrapper.vm.$v.form.asset.bridgechainAssetRepository.$model = 'https://github.com/arkecosystem/core-assets.git'
@@ -591,7 +591,7 @@ describe.each([
     describe('hasSeedNodesError', () => {
       it('should be true if there is an invalid seed node', () => {
         wrapper.vm.invalidSeeds = [
-          { ip: '0.5.5.5', isInvalid: true }
+          { id: 1, ip: '0.5.5.5', isInvalid: true }
         ]
 
         expect(wrapper.vm.hasSeedNodesError).toBe(true)
@@ -599,7 +599,7 @@ describe.each([
 
       it('should be false if there are less than maximum seed nodes', () => {
         wrapper.vm.$v.form.seedNodes.$model = [
-          { ip: '0.5.5.5', isInvalid: false }
+          { id: 1, ip: '0.5.5.5', isInvalid: false }
         ]
 
         expect(wrapper.vm.hasSeedNodesError).toBe(false)
@@ -607,17 +607,17 @@ describe.each([
 
       it('should be true if there are more than maximum seed nodes', () => {
         wrapper.vm.$v.form.seedNodes.$model = [
-          { ip: '0.5.5.5', isInvalid: false },
-          { ip: '1.5.5.5', isInvalid: false },
-          { ip: '2.5.5.5', isInvalid: false },
-          { ip: '3.5.5.5', isInvalid: false },
-          { ip: '4.5.5.5', isInvalid: false },
-          { ip: '5.5.5.5', isInvalid: false },
-          { ip: '6.5.5.5', isInvalid: false },
-          { ip: '7.5.5.5', isInvalid: false },
-          { ip: '8.5.5.5', isInvalid: false },
-          { ip: '9.5.5.5', isInvalid: false },
-          { ip: '10.5.5.5', isInvalid: false }
+          { id: 11, ip: '10.5.5.5', isInvalid: false },
+          { id: 10, ip: '9.5.5.5', isInvalid: false },
+          { id: 9, ip: '8.5.5.5', isInvalid: false },
+          { id: 8, ip: '7.5.5.5', isInvalid: false },
+          { id: 7, ip: '6.5.5.5', isInvalid: false },
+          { id: 6, ip: '5.5.5.5', isInvalid: false },
+          { id: 5, ip: '4.5.5.5', isInvalid: false },
+          { id: 4, ip: '3.5.5.5', isInvalid: false },
+          { id: 3, ip: '2.5.5.5', isInvalid: false },
+          { id: 2, ip: '1.5.5.5', isInvalid: false },
+          { id: 1, ip: '0.5.5.5', isInvalid: false }
         ]
 
         expect(wrapper.vm.hasSeedNodesError).toBe(true)
@@ -652,7 +652,7 @@ describe.each([
 
       it('should return error if duplicate', () => {
         wrapper.vm.$v.form.seedNodes.$model = [
-          { ip: '5.5.5.5', isInvalid: false }
+          { id: 1, ip: '5.5.5.5', isInvalid: false }
         ]
         wrapper.vm.$v.seedNode.$model = '5.5.5.5'
 
@@ -856,8 +856,8 @@ describe.each([
         wrapper.vm.$v.form.asset.name.$model = 'bridgechain'
         wrapper.vm.$v.form.asset.genesisHash.$model = '2a44f340d76ffc3df204c5f38cd355b7496c9065a1ade2ef92071436bd72e867'
         wrapper.vm.$v.form.seedNodes.$model = [
-          { ip: '2.2.2.2', isInvalid: false },
-          { ip: '1.1.1.1', isInvalid: false }
+          { id: 2, ip: '2.2.2.2', isInvalid: false },
+          { id: 1, ip: '1.1.1.1', isInvalid: false }
         ]
         wrapper.vm.form.asset.ports = {
           '@arkecosystem/core-api': 4003
@@ -909,8 +909,8 @@ describe.each([
         wrapper.vm.$v.form.asset.name.$model = 'bridgechain'
         wrapper.vm.$v.form.asset.genesisHash.$model = '2a44f340d76ffc3df204c5f38cd355b7496c9065a1ade2ef92071436bd72e867'
         wrapper.vm.$v.form.seedNodes.$model = [
-          { ip: '1.1.1.1', isInvalid: false },
-          { ip: '2.2.2.2', isInvalid: false }
+          { id: 2, ip: '2.2.2.2', isInvalid: false },
+          { id: 1, ip: '1.1.1.1', isInvalid: false }
         ]
         wrapper.vm.form.asset.ports = {
           '@arkecosystem/core-api': 4003
@@ -1049,7 +1049,7 @@ describe.each([
 
         wrapper.vm.addSeedNode()
 
-        expect(wrapper.vm.$v.form.seedNodes.$model).toEqual([{ ip: '5.5.5.5', isInvalid: false }])
+        expect(wrapper.vm.$v.form.seedNodes.$model).toEqual([{ id: 1, ip: '5.5.5.5', isInvalid: false }])
       })
 
       it('should reset current seed', async () => {
@@ -1077,23 +1077,23 @@ describe.each([
     describe('emitRemoveSeedNode', () => {
       it('should remove seed at index', () => {
         wrapper.vm.$v.form.seedNodes.$model = [
-          { ip: '5.5.5.5', isInvalid: false },
-          { ip: '6.6.6.6', isInvalid: false },
-          { ip: '7.7.7.7', isInvalid: false }
+          { id: 3, ip: '5.5.5.5', isInvalid: false },
+          { id: 2, ip: '6.6.6.6', isInvalid: false },
+          { id: 1, ip: '7.7.7.7', isInvalid: false }
         ]
 
         wrapper.vm.emitRemoveSeedNode(1)
 
         expect(wrapper.vm.$v.form.seedNodes.$model).toEqual([
-          { ip: '5.5.5.5', isInvalid: false },
-          { ip: '7.7.7.7', isInvalid: false }
+          { id: 3, ip: '5.5.5.5', isInvalid: false },
+          { id: 1, ip: '7.7.7.7', isInvalid: false }
         ])
       })
 
       it('should do nothing if index does not exist', () => {
         const seeds = [
-          { ip: '5.5.5.5', isInvalid: false },
-          { ip: '6.6.6.6', isInvalid: false }
+          { id: 2, ip: '5.5.5.5', isInvalid: false },
+          { id: 1, ip: '6.6.6.6', isInvalid: false }
         ]
 
         wrapper.vm.$v.form.seedNodes.$model = seeds

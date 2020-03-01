@@ -259,9 +259,11 @@ describe('TransactionFormMultiPayment', () => {
       it('should be enabled if recipients form is valid', async () => {
         wrapper.vm.step = 1
         wrapper.vm.$v.form.recipients.$model = [{
+          id: 1,
           address: 'address-2',
           amount: 10
         }, {
+          id: 2,
           address: 'address-2',
           amount: 10
         }]
@@ -277,9 +279,11 @@ describe('TransactionFormMultiPayment', () => {
       it('should be enabled if both forms are valid', async () => {
         wrapper.vm.step = 2
         wrapper.vm.$v.form.recipients.$model = [{
+          id: 1,
           address: 'address-2',
           amount: 10
         }, {
+          id: 2,
           address: 'address-2',
           amount: 10
         }]
@@ -524,6 +528,7 @@ describe('TransactionFormMultiPayment', () => {
 
       it('should return message for duplicate recipients', () => {
         wrapper.vm.$v.form.recipients.$model = [{
+          id: 2,
           address: 'address-2',
           amount: 10
         }]
@@ -571,6 +576,7 @@ describe('TransactionFormMultiPayment', () => {
         wrapper.vm.$v.form.vendorField.$model = 'vendorfield test'
         wrapper.vm.$v.form.passphrase.$model = 'passphrase'
         wrapper.vm.$v.form.recipients.$model = [{
+          id: 1,
           address: 'address-2',
           amount: (1 * 1e8).toString()
         }]
@@ -602,6 +608,7 @@ describe('TransactionFormMultiPayment', () => {
         wrapper.vm.$v.form.passphrase.$model = 'passphrase'
         wrapper.vm.$v.form.secondPassphrase.$model = 'second passphrase'
         wrapper.vm.$v.form.recipients.$model = [{
+          id: 1,
           address: 'address-2',
           amount: (1 * 1e8).toString()
         }]
@@ -668,6 +675,7 @@ describe('TransactionFormMultiPayment', () => {
         wrapper.vm.addRecipient()
 
         expect(wrapper.vm.$v.form.recipients.$model).toEqual([{
+          id: 2,
           address: address,
           amount: new BigNumber(100 * 1e8)
         }])
@@ -755,12 +763,15 @@ describe('TransactionFormMultiPayment', () => {
     describe('emitRemoveRecipient', () => {
       it('should remove recipient at index', () => {
         wrapper.vm.$v.form.recipients.$model = [{
+          id: 1,
           address: 'address-1',
           amount: 10
         }, {
+          id: 2,
           address: 'address-2',
           amount: 10
         }, {
+          id: 3,
           address: 'address-3',
           amount: 10
         }]
@@ -768,9 +779,11 @@ describe('TransactionFormMultiPayment', () => {
         wrapper.vm.emitRemoveRecipient(1)
 
         expect(wrapper.vm.$v.form.recipients.$model).toEqual([{
+          id: 1,
           address: 'address-1',
           amount: 10
         }, {
+          id: 3,
           address: 'address-3',
           amount: 10
         }])
@@ -778,9 +791,11 @@ describe('TransactionFormMultiPayment', () => {
 
       it('should do nothing if index does not exist', () => {
         const recipients = [{
+          id: 1,
           address: 'address-1',
           amount: 10
         }, {
+          id: 2,
           address: 'address-2',
           amount: 10
         }]
@@ -893,6 +908,7 @@ describe('TransactionFormMultiPayment', () => {
 
         it('should not be above minimum if not enough', () => {
           wrapper.vm.$v.form.recipients.$model = [{
+            id: 1,
             address: 'address-1',
             amount: 10
           }]
@@ -902,9 +918,11 @@ describe('TransactionFormMultiPayment', () => {
 
         it('should be above minimum if set', () => {
           wrapper.vm.$v.form.recipients.$model = [{
+            id: 1,
             address: 'address-1',
             amount: 10
           }, {
+            id: 2,
             address: 'address-1',
             amount: 10
           }]
@@ -923,12 +941,15 @@ describe('TransactionFormMultiPayment', () => {
           createWrapper(null, undefined, network)
 
           wrapper.vm.$v.form.recipients.$model = [{
+            id: 1,
             address: 'address-1',
             amount: 10
           }, {
+            id: 2,
             address: 'address-1',
             amount: 10
           }, {
+            id: 3,
             address: 'address-1',
             amount: 10
           }]
@@ -938,6 +959,7 @@ describe('TransactionFormMultiPayment', () => {
 
         it('should be below or equal to maximum if set', () => {
           wrapper.vm.$v.form.recipients.$model = [{
+            id: 1,
             address: 'address-1',
             amount: 10
           }]

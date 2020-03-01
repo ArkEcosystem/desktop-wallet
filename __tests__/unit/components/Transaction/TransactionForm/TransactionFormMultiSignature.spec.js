@@ -281,9 +281,11 @@ describe('TransactionFormMultiSignature', () => {
       it('should be enabled if recipients form is valid', async () => {
         wrapper.vm.step = 1
         wrapper.vm.$v.form.publicKeys.$model = [{
+          id: 2,
           address: 'address-2',
           publicKey: 'public-key-2'
         }, {
+          id: 3,
           address: 'address-3',
           publicKey: 'public-key-3'
         }]
@@ -298,9 +300,11 @@ describe('TransactionFormMultiSignature', () => {
       it('should be enabled if both forms are valid', async () => {
         wrapper.vm.step = 2
         wrapper.vm.$v.form.publicKeys.$model = [{
+          id: 2,
           address: 'address-2',
           publicKey: 'public-key-2'
         }, {
+          id: 3,
           address: 'address-3',
           publicKey: 'public-key-3'
         }]
@@ -401,6 +405,7 @@ describe('TransactionFormMultiSignature', () => {
           const address = Identities.Address.fromPassphrase('passphrase')
           wrapper.vm.$v.address.$model = address
           wrapper.vm.form.publicKeys = [{
+            id: 2,
             address: address,
             publicKey: 'public-key-2'
           }]
@@ -455,6 +460,7 @@ describe('TransactionFormMultiSignature', () => {
           const publicKey = Identities.PublicKey.fromPassphrase('passphrase')
           wrapper.vm.$v.publicKey.$model = publicKey
           wrapper.vm.form.publicKeys = [{
+            id: 2,
             address: 'address-2',
             publicKey: publicKey
           }]
@@ -482,9 +488,11 @@ describe('TransactionFormMultiSignature', () => {
       it('should return true if valid step 1', () => {
         wrapper.vm.step = 1
         wrapper.vm.$v.form.publicKeys.$model = [{
+          id: 2,
           address: 'address-2',
           publicKey: 'public-key-2'
         }, {
+          id: 3,
           address: 'address-3',
           publicKey: 'public-key-3'
         }]
@@ -502,9 +510,11 @@ describe('TransactionFormMultiSignature', () => {
       it('should return true if valid step 2', async () => {
         wrapper.vm.step = 2
         wrapper.vm.$v.form.publicKeys.$model = [{
+          id: 2,
           address: 'address-2',
           publicKey: 'public-key-2'
         }, {
+          id: 3,
           address: 'address-3',
           publicKey: 'public-key-3'
         }]
@@ -520,9 +530,11 @@ describe('TransactionFormMultiSignature', () => {
       it('should return false if valid step 1 and no keys', () => {
         wrapper.vm.step = 2
         wrapper.vm.$v.form.publicKeys.$model = [{
+          id: 2,
           address: 'address-2',
           publicKey: 'public-key-2'
         }, {
+          id: 3,
           address: 'address-3',
           publicKey: 'public-key-3'
         }]
@@ -541,9 +553,11 @@ describe('TransactionFormMultiSignature', () => {
 
       it('should return null if not duplicate', () => {
         wrapper.vm.form.publicKeys = [{
+          id: 2,
           address: 'address-2',
           publicKey: 'public-key-2'
         }, {
+          id: 3,
           address: 'address-3',
           publicKey: 'public-key-3'
         }]
@@ -555,9 +569,11 @@ describe('TransactionFormMultiSignature', () => {
 
       it('should return error if duplicate', () => {
         wrapper.vm.form.publicKeys = [{
+          id: 2,
           address: 'address-2',
           publicKey: 'public-key-2'
         }, {
+          id: 3,
           address: 'address-3',
           publicKey: 'public-key-3'
         }]
@@ -578,9 +594,11 @@ describe('TransactionFormMultiSignature', () => {
 
       it('should return null if not duplicate', () => {
         wrapper.vm.form.publicKeys = [{
+          id: 2,
           address: 'address-2',
           publicKey: 'public-key-2'
         }, {
+          id: 3,
           address: 'address-3',
           publicKey: 'public-key-3'
         }]
@@ -592,9 +610,11 @@ describe('TransactionFormMultiSignature', () => {
 
       it('should return error if duplicate', () => {
         wrapper.vm.form.publicKeys = [{
+          id: 2,
           address: 'address-2',
           publicKey: 'public-key-2'
         }, {
+          id: 3,
           address: 'address-3',
           publicKey: 'public-key-3'
         }]
@@ -638,9 +658,11 @@ describe('TransactionFormMultiSignature', () => {
     describe('minKeysError', () => {
       beforeEach(() => {
         wrapper.vm.$v.form.publicKeys.$model = [{
+          id: 2,
           address: 'address-2',
           publicKey: 'public-key-2'
         }, {
+          id: 3,
           address: 'address-3',
           publicKey: 'public-key-3'
         }]
@@ -683,6 +705,7 @@ describe('TransactionFormMultiSignature', () => {
   describe('mounted hook', () => {
     it('should add current wallet to public keys', () => {
       expect(wrapper.vm.form.publicKeys).toEqual([{
+        id: 1,
         address: 'address-1',
         publicKey: 'public-key-1'
       }])
@@ -707,12 +730,15 @@ describe('TransactionFormMultiSignature', () => {
         wrapper.vm.$v.form.passphrase.$model = 'passphrase'
         wrapper.vm.$v.form.minKeys.$model = 3
         wrapper.vm.$v.form.publicKeys.$model = [{
+          id: 4,
           address: 'address-4',
           publicKey: 'public-key-4'
         }, {
+          id: 3,
           address: 'address-3',
           publicKey: 'public-key-3'
         }, {
+          id: 2,
           address: 'address-2',
           publicKey: 'public-key-2'
         }]
@@ -744,12 +770,15 @@ describe('TransactionFormMultiSignature', () => {
         wrapper.vm.$v.form.secondPassphrase.$model = 'second passphrase'
         wrapper.vm.$v.form.minKeys.$model = 3
         wrapper.vm.$v.form.publicKeys.$model = [{
+          id: 4,
           address: 'address-4',
           publicKey: 'public-key-4'
         }, {
+          id: 3,
           address: 'address-3',
           publicKey: 'public-key-3'
         }, {
+          id: 2,
           address: 'address-2',
           publicKey: 'public-key-2'
         }]
@@ -824,14 +853,15 @@ describe('TransactionFormMultiSignature', () => {
         it('should get wallet from store', async () => {
           const spy = jest.spyOn(wrapper.vm.$store.getters, 'wallet/byAddress')
 
-          wrapper.vm.address = 'address-4'
+          wrapper.vm.address = 'address-2'
 
           await wrapper.vm.addPublicKey()
 
-          expect(spy).toHaveBeenCalledWith('address-4')
+          expect(spy).toHaveBeenCalledWith('address-2')
           expect(wrapper.vm.form.publicKeys).toEqual([{
-            address: 'address-4',
-            publicKey: 'public-key-4'
+            id: 2,
+            address: 'address-2',
+            publicKey: 'public-key-2'
           }])
         })
 
@@ -839,14 +869,15 @@ describe('TransactionFormMultiSignature', () => {
           jest.spyOn(wrapper.vm.$store.getters, 'wallet/byAddress').mockReturnValue(null)
           const spy = jest.spyOn(wrapper.vm.$client, 'fetchWallet')
 
-          wrapper.vm.address = 'address-4'
+          wrapper.vm.address = 'address-2'
 
           await wrapper.vm.addPublicKey()
 
-          expect(spy).toHaveBeenCalledWith('address-4')
+          expect(spy).toHaveBeenCalledWith('address-2')
           expect(wrapper.vm.form.publicKeys).toEqual([{
-            address: 'address-4',
-            publicKey: 'public-key-4'
+            id: 2,
+            address: 'address-2',
+            publicKey: 'public-key-2'
           }])
         })
 
@@ -865,6 +896,7 @@ describe('TransactionFormMultiSignature', () => {
 
         it('should error if duplicate entry', async () => {
           wrapper.vm.form.publicKeys = [{
+            id: 4,
             address: 'address-4',
             publicKey: 'public-key-4'
           }]
@@ -878,6 +910,7 @@ describe('TransactionFormMultiSignature', () => {
 
           expect(spy).toHaveBeenCalledWith('TRANSACTION.MULTI_SIGNATURE.ERROR_PUBLIC_KEY_EXISTS')
           expect(wrapper.vm.form.publicKeys).toEqual([{
+            id: 4,
             address: 'address-4',
             publicKey: 'public-key-4'
           }])
@@ -885,6 +918,7 @@ describe('TransactionFormMultiSignature', () => {
 
         it('should update duplicate entry if only has public key', async () => {
           wrapper.vm.form.publicKeys = [{
+            id: 4,
             address: null,
             publicKey: 'public-key-4'
           }]
@@ -898,6 +932,7 @@ describe('TransactionFormMultiSignature', () => {
 
           expect(spy).toHaveBeenCalledWith('TRANSACTION.MULTI_SIGNATURE.ERROR_PUBLIC_KEY_EXISTS')
           expect(wrapper.vm.form.publicKeys).toEqual([{
+            id: 4,
             address: 'address-4',
             publicKey: 'public-key-4'
           }])
@@ -920,18 +955,20 @@ describe('TransactionFormMultiSignature', () => {
         })
 
         it('should store public key', async () => {
-          wrapper.vm.publicKey = 'public-key-4'
+          wrapper.vm.publicKey = 'public-key-2'
 
           await wrapper.vm.addPublicKey()
 
           expect(wrapper.vm.form.publicKeys).toEqual([{
+            id: 2,
             address: null,
-            publicKey: 'public-key-4'
+            publicKey: 'public-key-2'
           }])
         })
 
         it('should error if duplicate entry', async () => {
           wrapper.vm.form.publicKeys = [{
+            id: 4,
             address: 'address-4',
             publicKey: 'public-key-4'
           }]
@@ -945,6 +982,7 @@ describe('TransactionFormMultiSignature', () => {
 
           expect(spy).toHaveBeenCalledWith('TRANSACTION.MULTI_SIGNATURE.ERROR_PUBLIC_KEY_EXISTS')
           expect(wrapper.vm.form.publicKeys).toEqual([{
+            id: 4,
             address: 'address-4',
             publicKey: 'public-key-4'
           }])
@@ -965,12 +1003,15 @@ describe('TransactionFormMultiSignature', () => {
     describe('updateMinKeys', () => {
       it('should update min keys to be length of public keys', () => {
         wrapper.vm.$v.form.publicKeys.$model = [{
+          id: 2,
           address: 'address-2',
           publicKey: 'public-key-2'
         }, {
+          id: 3,
           address: 'address-3',
           publicKey: 'public-key-3'
         }, {
+          id: 4,
           address: 'address-4',
           publicKey: 'public-key-4'
         }]
@@ -1025,12 +1066,15 @@ describe('TransactionFormMultiSignature', () => {
     describe('emitRemovePublicKey', () => {
       it('should remove recipient at index', () => {
         wrapper.vm.$v.form.publicKeys.$model = [{
+          id: 2,
           address: 'address-2',
           publicKey: 'public-key-2'
         }, {
+          id: 3,
           address: 'address-3',
           publicKey: 'public-key-3'
         }, {
+          id: 4,
           address: 'address-4',
           publicKey: 'public-key-4'
         }]
@@ -1038,9 +1082,11 @@ describe('TransactionFormMultiSignature', () => {
         wrapper.vm.emitRemovePublicKey(1)
 
         expect(wrapper.vm.$v.form.publicKeys.$model).toEqual([{
+          id: 2,
           address: 'address-2',
           publicKey: 'public-key-2'
         }, {
+          id: 4,
           address: 'address-4',
           publicKey: 'public-key-4'
         }])
@@ -1048,9 +1094,11 @@ describe('TransactionFormMultiSignature', () => {
 
       it('should do nothing if index does not exist', () => {
         const publicKeys = [{
+          id: 2,
           address: 'address-2',
           publicKey: 'public-key-2'
         }, {
+          id: 3,
           address: 'address-3',
           publicKey: 'public-key-3'
         }]
@@ -1141,6 +1189,7 @@ describe('TransactionFormMultiSignature', () => {
       describe('publicKeys', () => {
         it('should not be notEmpty', () => {
           wrapper.vm.$v.form.publicKeys.$model = [{
+            id: 1,
             address: 'address-1',
             publicKey: 'public-key-1'
           }]
@@ -1162,6 +1211,7 @@ describe('TransactionFormMultiSignature', () => {
 
         it('should not be above minimum if not enough', () => {
           wrapper.vm.$v.form.publicKeys.$model = [{
+            id: 2,
             address: 'address-2',
             publicKey: 'public-key-2'
           }]
@@ -1171,9 +1221,11 @@ describe('TransactionFormMultiSignature', () => {
 
         it('should be above minimum if set', () => {
           wrapper.vm.$v.form.publicKeys.$model = [{
+            id: 2,
             address: 'address-2',
             publicKey: 'public-key-2'
           }, {
+            id: 3,
             address: 'address-3',
             publicKey: 'public-key-3'
           }]
@@ -1192,12 +1244,15 @@ describe('TransactionFormMultiSignature', () => {
           createWrapper(null, undefined, network)
 
           wrapper.vm.$v.form.publicKeys.$model = [{
+            id: 2,
             address: 'address-2',
             publicKey: 'public-key-2'
           }, {
+            id: 3,
             address: 'address-3',
             publicKey: 'public-key-3'
           }, {
+            id: 4,
             address: 'address-4',
             publicKey: 'public-key-4'
           }]
@@ -1207,6 +1262,7 @@ describe('TransactionFormMultiSignature', () => {
 
         it('should be below maximum if set', () => {
           wrapper.vm.$v.form.publicKeys.$model = [{
+            id: 2,
             address: 'address-2',
             publicKey: 'public-key-2'
           }]
@@ -1248,9 +1304,11 @@ describe('TransactionFormMultiSignature', () => {
 
         it('should not be below maximum if too many', () => {
           wrapper.vm.$v.form.minKeys.$model = [{
+            id: 2,
             address: 'address-2',
             publicKey: 'public-key-2'
           }, {
+            id: 3,
             address: 'address-3',
             publicKey: 'public-key-3'
           }]
@@ -1261,9 +1319,11 @@ describe('TransactionFormMultiSignature', () => {
 
         it('should be below maximum if set', () => {
           wrapper.vm.$v.form.publicKeys.$model = [{
+            id: 2,
             address: 'address-2',
             publicKey: 'public-key-2'
           }, {
+            id: 3,
             address: 'address-3',
             publicKey: 'public-key-3'
           }]
