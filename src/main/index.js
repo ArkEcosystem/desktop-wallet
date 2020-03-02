@@ -5,7 +5,7 @@ import { setupPluginManager } from './plugin-manager'
 import { setupUpdater } from './updater'
 import winState from 'electron-window-state'
 import packageJson from '../../package.json'
-import createMenu from './menu'
+import assignMenu from './menu'
 
 // It is necessary to require `electron-log` here to use it on the renderer process
 require('electron-log')
@@ -75,7 +75,7 @@ function broadcastURL (url) {
   }
 }
 
-createMenu({ createLoadingWindow })
+assignMenu({ createLoadingWindow })
 function createWindow () {
   const { width, height } = screen.getPrimaryDisplay().workAreaSize
 
