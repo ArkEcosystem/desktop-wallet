@@ -13,6 +13,8 @@ import { TransferBuilder } from './transfer.builder'
 import { DelegateRegistrationBuilder } from './delegate-registration.builder'
 import { VoteBuilder } from './vote.builder'
 
+import 'configure-magistrate-transactions'
+
 export default class TransactionBuilderService {
   async buildTransfer (data, isAdvancedFee = false, returnObject = false) {
     return TransferBuilder.build(data, isAdvancedFee, returnObject)
