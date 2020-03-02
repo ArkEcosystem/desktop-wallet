@@ -258,6 +258,8 @@ export default {
     })
 
     this.setContextMenu()
+
+    this.__watchProfile()
   },
 
   mounted () {
@@ -311,6 +313,31 @@ export default {
       await Promise.all([this.$plugins.fetchPluginsFromAdapter(), this.$plugins.fetchBlacklist(), this.$plugins.fetchWhitelist()])
 
       ipcRenderer.send('splashscreen:app-ready')
+    },
+
+    __watchProfile () {
+      this.$store.watch(
+        (_, getters) => getters['session/profile'],
+        async (profile, oldProfile) => {
+          if (!profile) {
+            return
+          }
+
+          const currentPeer = this.$store.getters['peer/current']()
+          if (currentPeer && currentPeer.ip) {
+            const scheme = currentPeer.isHttps ? 'https://' : 'http://'
+            this.host = `${scheme}${currentPeer.ip}:${currentPeer.port}`
+          }
+
+          if (!oldProfile || profile.id !== oldProfile.id) {
+            this.$eventBus.emit('client:changed')
+          }
+
+          this.$store.getters['session/priceApi'].setAdapter(profile.priceApi)
+          this.$store.dispatch('market/refreshTicker')
+        },
+        { immediate: true }
+      )
     },
 
     __watchProcessURL () {
