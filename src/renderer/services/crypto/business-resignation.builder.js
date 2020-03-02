@@ -13,7 +13,8 @@ export class BusinessResignationBuilder {
       secondPassphrase,
       wif,
       networkWif,
-      multiSignature
+      multiSignature,
+      nonce
     },
     isAdvancedFee = false,
     returnObject = false
@@ -47,7 +48,8 @@ export class BusinessResignationBuilder {
         secondPassphrase,
         wif,
         networkWif,
-        multiSignature
+        multiSignature,
+        nonce
       },
       returnObject
     )

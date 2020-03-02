@@ -8,6 +8,7 @@ import TransactionService from '@/services/transaction'
 import priceApi from '@/services/price-api'
 import { TransactionBuilderService } from './crypto/transaction-builder.service'
 import { TransactionSigner } from './crypto/transaction-signer'
+import BigNumber from '@/plugins/bignumber'
 
 export default class ClientService {
   /**
@@ -479,9 +480,34 @@ export default class ClientService {
     }
   }
 
+  async getNonceForAddress ({ address, networkId }) {
+    let network
+    if (networkId) {
+      network = store.getters['network/byId'](networkId)
+    }
+    if (!network) {
+      network = store.getters['session/network']
+    }
+
+    if (network.constants.aip11) {
+      try {
+        const response = await this.fetchWallet(address)
+        return BigNumber(
+          response.nonce || 0
+        )
+          .plus(1)
+          .toString()
+      } catch (error) {
+        return '1'
+      }
+    }
+
+    return undefined
+  }
+
   // todo: move this out
   async buildTransfer (data, isAdvancedFee = false, returnObject = false) {
-    return TransactionBuilderService.buildTransfer(data, isAdvancedFee, returnObject)
+    return this.__buildTransaction('buildTransfer', data, isAdvancedFee, returnObject)
   }
 
   // todo: move this out
@@ -490,7 +516,7 @@ export default class ClientService {
     isAdvancedFee = false,
     returnObject = false
   ) {
-    return TransactionBuilderService.buildSecondSignatureRegistration(data, isAdvancedFee, returnObject)
+    return this.__buildTransaction('buildSecondSignatureRegistration', data, isAdvancedFee, returnObject)
   }
 
   // todo: move this out
@@ -499,27 +525,27 @@ export default class ClientService {
     isAdvancedFee = false,
     returnObject = false
   ) {
-    return TransactionBuilderService.buildDelegateRegistration(data, isAdvancedFee, returnObject)
+    return this.__buildTransaction('buildDelegateRegistration', data, isAdvancedFee, returnObject)
   }
 
   // todo: move this out
   async buildVote (data, isAdvancedFee = false, returnObject = false) {
-    return TransactionBuilderService.buildVote(data, isAdvancedFee, returnObject)
+    return this.__buildTransaction('buildVote', data, isAdvancedFee, returnObject)
   }
 
   // todo: move this out
   async buildMultiSignature (data, isAdvancedFee = false, returnObject = false) {
-    return TransactionBuilderService.buildMultiSignature(data, isAdvancedFee, returnObject)
+    return this.__buildTransaction('buildMultiSignature', data, isAdvancedFee, returnObject)
   }
 
   // todo: move this out
   async buildIpfs (data, isAdvancedFee = false, returnObject = false) {
-    return TransactionBuilderService.buildIpfs(data, isAdvancedFee, returnObject)
+    return this.__buildTransaction('buildIpfs', data, isAdvancedFee, returnObject)
   }
 
   // todo: move this out
   async buildMultiPayment (data, isAdvancedFee = false, returnObject = false) {
-    return TransactionBuilderService.buildMultiPayment(data, isAdvancedFee, returnObject)
+    return this.__buildTransaction('buildMultiPayment', data, isAdvancedFee, returnObject)
   }
 
   // todo: move this out
@@ -528,7 +554,7 @@ export default class ClientService {
     isAdvancedFee = false,
     returnObject = false
   ) {
-    return TransactionBuilderService.buildDelegateResignation(data, isAdvancedFee, returnObject)
+    return this.__buildTransaction('buildDelegateResignation', data, isAdvancedFee, returnObject)
   }
 
   // todo: move this out
@@ -537,12 +563,12 @@ export default class ClientService {
     isAdvancedFee = false,
     returnObject = false
   ) {
-    return TransactionBuilderService.buildBusinessRegistration(data, isAdvancedFee, returnObject)
+    return this.__buildTransaction('buildBusinessRegistration', data, isAdvancedFee, returnObject)
   }
 
   // todo: move this out
   async buildBusinessUpdate (data, isAdvancedFee = false, returnObject = false) {
-    return TransactionBuilderService.buildBusinessUpdate(data, isAdvancedFee, returnObject)
+    return this.__buildTransaction('buildBusinessUpdate', data, isAdvancedFee, returnObject)
   }
 
   // todo: move this out
@@ -551,7 +577,7 @@ export default class ClientService {
     isAdvancedFee = false,
     returnObject = false
   ) {
-    return TransactionBuilderService.buildBusinessResignation(data, isAdvancedFee, returnObject)
+    return this.__buildTransaction('buildBusinessResignation', data, isAdvancedFee, returnObject)
   }
 
   // todo: move this out
@@ -560,7 +586,7 @@ export default class ClientService {
     isAdvancedFee = false,
     returnObject = false
   ) {
-    return TransactionBuilderService.buildBridgechainRegistration(data, isAdvancedFee, returnObject)
+    return this.__buildTransaction('buildBridgechainRegistration', data, isAdvancedFee, returnObject)
   }
 
   // todo: move this out
@@ -569,7 +595,7 @@ export default class ClientService {
     isAdvancedFee = false,
     returnObject = false
   ) {
-    return TransactionBuilderService.buildBridgechainUpdate(data, isAdvancedFee, returnObject)
+    return this.__buildTransaction('buildBridgechainUpdate', data, isAdvancedFee, returnObject)
   }
 
   // todo: move this out
@@ -578,7 +604,21 @@ export default class ClientService {
     isAdvancedFee = false,
     returnObject = false
   ) {
-    return TransactionBuilderService.buildBridgechainResignation(data, isAdvancedFee, returnObject)
+    return this.__buildTransaction('buildBridgechainResignation', data, isAdvancedFee, returnObject)
+  }
+
+  // todo: move this out
+  async __buildTransaction (
+    builder,
+    data,
+    isAdvancedFee = false,
+    returnObject = false
+  ) {
+    return TransactionBuilderService[builder](
+      { ...data, ...{ nonce: await this.getNonceForAddress(data) } },
+      isAdvancedFee,
+      returnObject
+    )
   }
 
   // todo: move this out

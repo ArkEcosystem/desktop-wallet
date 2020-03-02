@@ -13,7 +13,8 @@ export class SecondSignatureRegistrationBuilder {
       secondPassphrase,
       wif,
       networkWif,
-      multiSignature
+      multiSignature,
+      nonce
     },
     isAdvancedFee = false,
     returnObject = false
@@ -41,7 +42,8 @@ export class SecondSignatureRegistrationBuilder {
         passphrase,
         wif,
         networkWif,
-        multiSignature
+        multiSignature,
+        nonce
       },
       returnObject
     )

@@ -14,7 +14,7 @@ export class BridgechainResignationBuilder {
       secondPassphrase,
       wif,
       networkWif,
-      multiSignature
+      multiSignature, nonce
     },
     isAdvancedFee = false,
     returnObject = false
@@ -48,7 +48,8 @@ export class BridgechainResignationBuilder {
         secondPassphrase,
         wif,
         networkWif,
-        multiSignature
+        multiSignature,
+        nonce
       },
       returnObject
     )

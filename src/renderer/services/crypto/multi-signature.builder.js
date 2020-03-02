@@ -14,7 +14,8 @@ export class MultiSignatureBuilder {
       passphrase,
       secondPassphrase,
       wif,
-      networkWif
+      networkWif,
+      nonce
     },
     isAdvancedFee = false,
     returnObject = false
@@ -51,7 +52,8 @@ export class MultiSignatureBuilder {
         secondPassphrase,
         wif,
         networkWif,
-        multiSignature: transaction.data.asset.multiSignature
+        multiSignature: transaction.data.asset.multiSignature,
+        nonce
       },
       true
     )

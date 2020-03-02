@@ -14,7 +14,8 @@ export class BridgechainUpdateBuilder {
       secondPassphrase,
       wif,
       networkWif,
-      multiSignature
+      multiSignature,
+      nonce
     },
     isAdvancedFee = false,
     returnObject = false
@@ -48,7 +49,8 @@ export class BridgechainUpdateBuilder {
         secondPassphrase,
         wif,
         networkWif,
-        multiSignature
+        multiSignature,
+        nonce
       },
       returnObject
     )

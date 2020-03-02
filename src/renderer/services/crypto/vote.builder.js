@@ -14,7 +14,8 @@ export class VoteBuilder {
       secondPassphrase,
       wif,
       networkWif,
-      multiSignature
+      multiSignature,
+      nonce
     },
     isAdvancedFee = false,
     returnObject = false
@@ -42,7 +43,8 @@ export class VoteBuilder {
         secondPassphrase,
         wif,
         networkWif,
-        multiSignature
+        multiSignature,
+        nonce
       },
       returnObject
     )

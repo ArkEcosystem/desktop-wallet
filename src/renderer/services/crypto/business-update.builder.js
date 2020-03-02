@@ -14,7 +14,8 @@ export class BusinessUpdateBuilder {
       secondPassphrase,
       wif,
       networkWif,
-      multiSignature
+      multiSignature,
+      nonce
     },
     isAdvancedFee = false,
     returnObject = false
@@ -61,7 +62,8 @@ export class BusinessUpdateBuilder {
         secondPassphrase,
         wif,
         networkWif,
-        multiSignature
+        multiSignature,
+        nonce
       },
       returnObject
     )

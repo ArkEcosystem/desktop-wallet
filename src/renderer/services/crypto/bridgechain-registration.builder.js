@@ -14,7 +14,8 @@ export class BridgechainRegistrationBuilder {
       secondPassphrase,
       wif,
       networkWif,
-      multiSignature
+      multiSignature,
+      nonce
     },
     isAdvancedFee = false,
     returnObject = false
@@ -29,7 +30,7 @@ export class BridgechainRegistrationBuilder {
     )
     if (!isAdvancedFee && fee.gt(staticFee)) {
       throw new Error(
-        `Bridgechain Registration fee should be smaller than ${staticFee}`
+               `Bridgechain Registration fee should be smaller than ${staticFee}`
       )
     }
 
@@ -48,7 +49,8 @@ export class BridgechainRegistrationBuilder {
         secondPassphrase,
         wif,
         networkWif,
-        multiSignature
+        multiSignature,
+        nonce
       },
       returnObject
     )

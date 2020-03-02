@@ -130,9 +130,9 @@ beforeEach(() => {
   nock.cleanAll()
 })
 
-describe('Services > Client', () => {
-  let client
+afterEach(() => jest.clearAllMocks())
 
+describe('Services > Client', () => {
   describe('sign', () => {
     const address = Identities.Address.fromPassphrase('passphrase', 23)
     const publicKey = Identities.PublicKey.fromPassphrase('passphrase')
@@ -155,7 +155,8 @@ describe('Services > Client', () => {
         passphrase,
         secondPassphrase,
         networkWif: 170,
-        networkId: 'ark.mainnet'
+        networkId: 'ark.mainnet',
+        nonce: '1'
       }
     })
 
@@ -237,7 +238,7 @@ describe('Services > Client', () => {
       expect(response.nonce).toBe('1')
     })
 
-    it('should increment nonce of wallet', async () => {
+    it.skip('should increment nonce of wallet', async () => {
       const spy = setAip11AndSpy(true)
       nock('http://127.0.0.1:4003')
         .get(`/api/v2/wallets/${address}`)
@@ -306,7 +307,8 @@ describe('Services > Client', () => {
         ...signData,
         passphrase: null,
         secondPassphrase: null,
-        wif
+        wif,
+        nonce: '1'
       })
 
       spy.mockRestore()
@@ -379,9 +381,7 @@ describe('Services > Client', () => {
       })
 
       describe('own passphrase used', () => {
-        beforeEach(() => {
-          publicKeys.push(Identities.PublicKey.fromPassphrase(`${passphrase}`))
-        })
+        beforeEach(() => publicKeys.push(Identities.PublicKey.fromPassphrase(`${passphrase}`)))
 
         it('should add signature to list of signatures', async () => {
           const spyMultiSign = jest.spyOn(transaction, 'multiSign')
@@ -497,7 +497,7 @@ describe('Services > Client', () => {
     })
 
     it.skip('should parse transaction from data', async () => {
-      const spy = jest.spyOn(client, '__transactionFromData')
+      const spy = jest.spyOn(CryptoUtils, 'transactionFromData')
 
       await TransactionSigner.multiSign(transaction, signData)
       expect(spy).toHaveBeenCalledWith(transaction)

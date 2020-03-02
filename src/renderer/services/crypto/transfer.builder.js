@@ -17,7 +17,8 @@ export class TransferBuilder {
       wif,
       networkWif,
       networkId,
-      multiSignature
+      multiSignature,
+      nonce
     },
     isAdvancedFee = false,
     returnObject = false
@@ -50,7 +51,8 @@ export class TransferBuilder {
         wif,
         networkWif,
         networkId,
-        multiSignature
+        multiSignature,
+        nonce
       },
       returnObject
     )

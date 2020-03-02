@@ -2,7 +2,6 @@ import { Identities, Transactions } from '@arkecosystem/crypto'
 import moment from 'moment'
 import { TRANSACTION_TYPES } from '@config'
 import store from '@/store'
-import BigNumber from '@/plugins/bignumber'
 import TransactionService from '@/services/transaction'
 import WalletService from '@/services/wallet'
 import { CryptoUtils } from './utils'
@@ -10,14 +9,14 @@ import { CryptoUtils } from './utils'
 export class TransactionSigner {
   static async sign (
     {
-      address,
       transaction,
       passphrase,
       secondPassphrase,
       wif,
       networkWif,
       networkId,
-      multiSignature
+      multiSignature,
+      nonce
     },
     returnObject = false
   ) {
@@ -36,26 +35,13 @@ export class TransactionSigner {
       .utc()
       .valueOf()
     const now = moment().valueOf()
-    transaction.data.timestamp = Math.floor(
-      (now - epochTime) / 1000
-    )
+    transaction.data.timestamp = Math.floor((now - epochTime) / 1000)
 
     if (passphrase) {
       passphrase = CryptoUtils.normalizePassphrase(passphrase)
     }
 
     if (network.constants.aip11) {
-      let nonce = '1'
-      try {
-        nonce = BigNumber(
-          (await this.fetchWallet(address)).nonce || 0
-        )
-          .plus(1)
-          .toString()
-      } catch (error) {
-        //
-      }
-
       transaction.version(2).nonce(nonce)
     } else {
       transaction.version(1)
@@ -79,16 +65,12 @@ export class TransactionSigner {
         if (passphrase) {
           transaction.multiSign(passphrase, publicKeyIndex)
         } else if (wif) {
-          transaction.multiSignWithWif(
-            publicKeyIndex,
-            wif,
-            networkWif
-          )
+          transaction.multiSignWithWif(publicKeyIndex, wif, networkWif)
         }
       } else if (
         transaction.data.type ===
-                         TRANSACTION_TYPES.GROUP_1.MULTI_SIGNATURE &&
-                       !transaction.data.signatures
+                 TRANSACTION_TYPES.GROUP_1.MULTI_SIGNATURE &&
+               !transaction.data.signatures
       ) {
         transaction.data.signatures = []
       }
@@ -128,22 +110,15 @@ export class TransactionSigner {
     }
 
     const response = transaction.build().toJson()
-    response.totalAmount = TransactionService.getTotalAmount(
-      response
-    )
+    response.totalAmount = TransactionService.getTotalAmount(response)
 
     return response
   }
 
+  // todo: why is this async? it doesn't make any use of promises or await
   static async multiSign (
     transaction,
-    {
-      multiSignature,
-      networkWif,
-      passphrase,
-      secondPassphrase,
-      wif
-    }
+    { multiSignature, networkWif, passphrase, secondPassphrase, wif }
   ) {
     if (!passphrase && !wif) {
       throw new Error('No passphrase or wif provided')
@@ -175,9 +150,7 @@ export class TransactionSigner {
     )
 
     if (!isReady) {
-      const index = multiSignature.publicKeys.indexOf(
-        keys.publicKey
-      )
+      const index = multiSignature.publicKeys.indexOf(keys.publicKey)
       if (index >= 0) {
         Transactions.Signer.multiSign(transaction, keys, index)
         transaction.signatures = transaction.signatures.filter(
@@ -202,10 +175,7 @@ export class TransactionSigner {
         const secondaryKeys = Identities.Keys.fromPassphrase(
           secondPassphrase
         )
-        Transactions.Signer.secondSign(
-          transaction,
-          secondaryKeys
-        )
+        Transactions.Signer.secondSign(transaction, secondaryKeys)
       }
 
       transaction.id = TransactionService.getId(transaction)
