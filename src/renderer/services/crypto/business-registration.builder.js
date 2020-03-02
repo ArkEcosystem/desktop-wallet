@@ -1,7 +1,7 @@
 import * as MagistrateCrypto from '@arkecosystem/core-magistrate-crypto'
 import { TRANSACTION_TYPES } from '@config'
 import store from '@/store'
-import CryptoUtils from './utils'
+import { CryptoUtils } from './utils'
 import TransactionSigner from './transaction-signer'
 
 export class BusinessRegistrationBuilder {

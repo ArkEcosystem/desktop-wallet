@@ -1,6 +1,6 @@
 import { cloneDeep } from 'lodash'
 
-export default class CryptoUtils {
+export class CryptoUtils {
   static transactionFromData (transaction) {
     transaction = cloneDeep(transaction)
     transaction.multiSignature = undefined

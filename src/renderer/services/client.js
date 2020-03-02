@@ -6,8 +6,8 @@ import store from '@/store'
 import eventBus from '@/plugins/event-bus'
 import TransactionService from '@/services/transaction'
 import priceApi from '@/services/price-api'
-import TransactionBuilderService from './crypto/transaction-builder.service'
-import TransactionSigner from './crypto/transaction-signer'
+import { TransactionBuilderService } from './crypto/transaction-builder.service'
+import { TransactionSigner } from './crypto/transaction-signer'
 
 export default class ClientService {
   /**

@@ -5,9 +5,9 @@ import store from '@/store'
 import BigNumber from '@/plugins/bignumber'
 import TransactionService from '@/services/transaction'
 import WalletService from '@/services/wallet'
-import CryptoUtils from './utils'
+import { CryptoUtils } from './utils'
 
-export default class TransactionSigner {
+export class TransactionSigner {
   static async sign (
     {
       address,

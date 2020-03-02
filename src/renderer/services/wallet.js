@@ -4,7 +4,7 @@ import { version as mainnetVersion } from '@config/networks/mainnet'
 import store from '@/store'
 import got from 'got'
 import cloneDeep from 'lodash.clonedeep'
-import CryptoUtils from './crypto/utils'
+import { CryptoUtils } from './crypto/utils'
 
 export default class WalletService {
   /*

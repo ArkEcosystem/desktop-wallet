@@ -15,7 +15,7 @@ import { VoteBuilder } from './vote.builder'
 
 import 'configure-magistrate-transactions'
 
-export default class TransactionBuilderService {
+export class TransactionBuilderService {
   async buildTransfer (data, isAdvancedFee = false, returnObject = false) {
     return TransferBuilder.build(data, isAdvancedFee, returnObject)
   }
