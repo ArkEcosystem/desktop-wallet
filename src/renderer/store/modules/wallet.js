@@ -1,4 +1,4 @@
-import { findIndex, unionBy, uniqBy } from 'lodash'
+import { unionBy, uniqBy } from 'lodash'
 import WalletModel from '@/models/wallet'
 import Vue from 'vue'
 
@@ -142,7 +142,7 @@ export default {
       state.wallets[profileId] = unionBy([...wallets, ...state.wallets[profileId]], 'id')
     },
     DELETE (state, wallet) {
-      const index = findIndex(state.wallets[wallet.profileId], { id: wallet.id })
+      const index = state.wallets[wallet.profileId].findIndex(profileWallet => profileWallet.id === wallet.id)
       if (index === -1) {
         throw new Error(`Cannot delete wallet '${wallet.id}' - it does not exist on the state`)
       }
@@ -167,7 +167,7 @@ export default {
       }
     },
     DELETE_SIGNED_MESSAGE (state, message) {
-      const index = findIndex(state.signedMessages[message.address], { timestamp: message.timestamp })
+      const index = state.signedMessages[message.address].findIndex(signedMessage => signedMessage.timestamp === message.timestamp)
       if (index !== -1) {
         state.signedMessages[message.address].splice(index, 1)
       }
