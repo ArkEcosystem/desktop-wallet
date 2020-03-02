@@ -1,8 +1,7 @@
 import got from 'got'
-import dayjs from 'dayjs'
-import moment from 'moment'
 import { min, max } from 'lodash'
 import { MARKET } from '@config'
+import { dayjs } from '@/services/datetime'
 
 // All prices on the CoinCap API are standardized in USD (United States Dollar)
 const BASE_CURRENCY = 'USD'
@@ -140,8 +139,8 @@ export default class CoinCapAdapter {
     const { rates } = await this.getCurrencyData(token)
     const daysSubtract = days === 24 ? 1 : days
     const timeInterval = days === 24 ? 'h1' : 'h12'
-    const startDate = moment().subtract(daysSubtract, 'd').valueOf()
-    const endDate = moment().valueOf()
+    const startDate = dayjs().subtract(daysSubtract, 'd').valueOf()
+    const endDate = dayjs().valueOf()
     const { body } = await got(`${MARKET.source.coinCap}/assets/${tokenId}/history?interval=${timeInterval}&start=${startDate}&end=${endDate}`, {
       json: true
     })

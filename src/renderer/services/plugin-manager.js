@@ -1,7 +1,7 @@
 import * as adapters from '@/services/plugin-manager/adapters'
 import releaseService from '@/services/release'
 import { PLUGINS } from '@config'
-import dayjs from 'dayjs'
+import { dayjs } from '@/services/datetime'
 import * as fs from 'fs'
 import * as fsExtra from 'fs-extra'
 import got from 'got'

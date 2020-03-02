@@ -2,7 +2,7 @@ import { Connection } from '@arkecosystem/client'
 import { Identities, Transactions } from '@arkecosystem/crypto'
 import * as MagistrateCrypto from '@arkecosystem/core-magistrate-crypto'
 import { castArray, chunk, cloneDeep, orderBy } from 'lodash'
-import moment from 'moment'
+import { dayjs } from '@/services/datetime'
 import logger from 'electron-log'
 import { TRANSACTION_GROUPS, TRANSACTION_TYPES } from '@config'
 import store from '@/store'
@@ -1287,8 +1287,8 @@ export default class ClientService {
     transaction = transaction.network(network.version)
 
     // TODO replace with dayjs
-    const epochTime = moment(network.constants.epoch).utc().valueOf()
-    const now = moment().valueOf()
+    const epochTime = dayjs(network.constants.epoch).utc().valueOf()
+    const now = dayjs().valueOf()
     transaction.data.timestamp = Math.floor((now - epochTime) / 1000)
 
     if (passphrase) {

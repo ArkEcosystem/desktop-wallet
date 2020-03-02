@@ -1,4 +1,4 @@
-import dayjs from 'dayjs'
+import { dayjs } from '@/services/datetime'
 import { findIndex, unionBy } from 'lodash'
 import { APP, TRANSACTION_GROUPS, TRANSACTION_TYPES } from '@config'
 import eventBus from '@/plugins/event-bus'

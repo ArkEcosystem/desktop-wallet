@@ -1,4 +1,4 @@
-import moment from 'moment'
+import { dayjs } from '@/services/datetime'
 import prettyBytes from 'pretty-bytes'
 
 export default {
@@ -34,7 +34,7 @@ export default {
      * @return {String}
      */
     formatter_date (value, format = null) {
-      moment.locale(window.navigator.userLanguage || window.navigator.language)
+      dayjs.locale(window.navigator.userLanguage || window.navigator.language)
 
       if (!format) {
         const sessionFormat = this.session_profile.timeFormat
@@ -46,7 +46,7 @@ export default {
           format = 'L LTS'
         }
       }
-      return moment(value).format(format)
+      return dayjs(value).format(format)
     }
   }
 }
