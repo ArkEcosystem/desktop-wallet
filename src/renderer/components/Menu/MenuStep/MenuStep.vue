@@ -10,7 +10,6 @@
 </template>
 
 <script>
-import { map } from 'lodash'
 import { CollapseAccordion } from '@/components/Collapse'
 
 export default {
@@ -55,7 +54,7 @@ export default {
   methods: {
     collectItems () {
       const steps = this.collections_filterChildren('MenuStepItem', this.$refs.accordion) || []
-      const collapses = map(steps, step => step.$refs.collapse)
+      const collapses = steps.map(step => step.$refs.collapse)
 
       // The first and last items has a different style and text on the default footer
       const firstStep = steps[0]
