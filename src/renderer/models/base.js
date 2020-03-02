@@ -1,5 +1,6 @@
-import { transform, isFunction, isObject, isNil } from 'lodash'
+import { transform, isFunction, isObject } from 'lodash'
 import { validate as jsonValidate } from 'jsonschema'
+import { isNil } from '@/utils'
 
 export default class BaseModel {
   constructor (schema) {
