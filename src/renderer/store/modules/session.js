@@ -203,10 +203,6 @@ export default {
       state.unconfirmedVotes = votes
     },
 
-    SET_LAST_FEES (state, fees) {
-      state.lastFees = fees
-    },
-
     SET_LAST_FEES_BY_TYPE (state, { fee, type }) {
       state.lastFees[type] = fee
     },
@@ -427,10 +423,6 @@ export default {
 
     setUnconfirmedVotes ({ commit }, value) {
       commit('SET_UNCONFIRMED_VOTES', value)
-    },
-
-    setLastFees ({ commit }, value) {
-      commit('SET_LAST_FEES', value)
     },
 
     setLastFeeByType ({ commit, getters }, { fee, type }) {
