@@ -1325,7 +1325,7 @@ describe('Services > Client', () => {
       it('should throw an Error', async () => {
         const spy = setAip11AndSpy(true)
         const fee = new BigNumber(fees[1][5] + 1)
-        expect(client.buildIpfs({ fee })).rejects.toThrow(/fee/)
+        await expect(client.buildIpfs({ fee })).rejects.toThrow(/fee/)
         spy.mockRestore()
       })
     })
