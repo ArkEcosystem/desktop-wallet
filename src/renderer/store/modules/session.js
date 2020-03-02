@@ -207,6 +207,10 @@ export default {
       state.lastFees = fees
     },
 
+    SET_LAST_FEES_BY_TYPE (state, { fee, type }) {
+      state.lastFees[type] = fee
+    },
+
     SET_MULTI_SIGNATURE_PEER (state, peer) {
       state.multiSignaturePeer = peer
     },
@@ -430,10 +434,7 @@ export default {
     },
 
     setLastFeeByType ({ commit, getters }, { fee, type }) {
-      const fees = getters.lastFees
-      fees[type] = fee
-
-      commit('SET_LAST_FEES', fees)
+      commit('SET_LAST_FEES_BY_TYPE', { fee, type })
     },
 
     setMultiSignaturePeer ({ commit }, { host, port }) {
