@@ -147,9 +147,17 @@ describe('AppUpdater', () => {
   })
 
   it('should start download', () => {
+    const originalPlatform = process.platform
+    Object.defineProperty(process, 'platform', {
+      value: 'notlinux'
+    })
+    createWrapper()
     expect(wrapper.vm.isDownloadAuthorized).toBe(false)
     wrapper.vm.startDownload()
-    expect(wrapper.vm.isDownloadAuthorized).toBeTruthy()
+    expect(wrapper.vm.isDownloadAuthorized).toBe(true)
+    Object.defineProperty(process, 'platform', {
+      value: originalPlatform
+    })
   })
 
   it('should not start download if not supported', () => {
