@@ -1,9 +1,8 @@
 import * as bip39 from 'bip39'
-import { Crypto, Identities, Managers } from '@arkecosystem/crypto'
+import { Crypto, Identities } from '@arkecosystem/crypto'
 import { version as mainnetVersion } from '@config/networks/mainnet'
 import store from '@/store'
 import got from 'got'
-import cloneDeep from 'lodash.clonedeep'
 import { CryptoUtils } from './crypto/utils'
 
 export default class WalletService {
@@ -49,8 +48,6 @@ export default class WalletService {
    * @return {String}
    */
   static getAddressFromMultiSignatureAsset (multiSignatureAsset) {
-    Managers.configManager.setConfig(cloneDeep(store.getters['session/network'].crypto))
-
     return Identities.Address.fromMultiSignatureAsset(multiSignatureAsset)
   }
 
@@ -91,8 +88,6 @@ export default class WalletService {
    * @return {String}
    */
   static getPublicKeyFromMultiSignatureAsset (multiSignatureAsset) {
-    Managers.configManager.setConfig(cloneDeep(store.getters['session/network'].crypto))
-
     return Identities.PublicKey.fromMultiSignatureAsset(multiSignatureAsset)
   }
 
