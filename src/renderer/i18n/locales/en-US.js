@@ -1088,7 +1088,7 @@ export default {
       BRIDGECHAIN_ASSET_REPOSITORY: 'Bridgechain Asset Repository',
       API_PORT: 'API Port',
       ERROR_DUPLICATE: 'The seed node has already been added',
-      NO_PEERS: 'There are no peers',
+      NO_SEED_NODES: 'There are no seed nodes',
       INVALID_SEEDS: 'You have an invalid seed node - please check it is up and running correctly | You have invalid seed nodes - please check they are up and running correctly'
     },
     WARNING: {
@@ -1180,10 +1180,10 @@ export default {
     GROUP_2: {
       NEW_BUSINESS_REGISTRATION: 'New business registration: {address} business {name}',
       NEW_BUSINESS_RESIGNATION: 'New business resignation: {address}',
-      NEW_BUSINESS_UPDATE: 'New business update: {address} business {name}',
-      NEW_BRIDGECHAIN_REGISTRATION: 'New bridgechain registration: {address} bridgechain {name}',
-      NEW_BRIDGECHAIN_RESIGNATION: 'New bridgechain resignation: {address} bridgechain {name}',
-      NEW_BRIDGECHAIN_UPDATE: 'New bridgechain update: {address} bridgechain {name}'
+      NEW_BUSINESS_UPDATE: 'New business update: {address}',
+      NEW_BRIDGECHAIN_REGISTRATION: 'New bridgechain registration: {address}, bridgechain {bridgechain}',
+      NEW_BRIDGECHAIN_RESIGNATION: 'New bridgechain resignation: {address}, bridgechain {bridgechain}',
+      NEW_BRIDGECHAIN_UPDATE: 'New bridgechain update: {address}, bridgechain {bridgechain}'
     }
   },
 

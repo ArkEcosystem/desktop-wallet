@@ -47,7 +47,7 @@ const createLoadingWindow = () => {
   windows.loading = new BrowserWindow({
     width: 800,
     height: 600,
-    parent: windows.main,
+    backgroundColor: '#f7fafb',
     skipTaskbar: true,
     frame: false,
     autoHideMenuBar: true,
@@ -88,6 +88,7 @@ function createWindow () {
     height: windowState.height,
     x: windowState.x,
     y: windowState.y,
+    backgroundColor: '#f7fafb',
     center: true,
     show: false,
     webPreferences: {
@@ -130,9 +131,12 @@ function createWindow () {
 
   windowState.manage(windows.main)
   windows.main.loadURL(winURL)
+  windows.main.hide()
+  windows.main.setBackgroundColor('#f7fafb')
 
   windows.main.on('close', () => (windows.main = null))
   windows.main.on('closed', () => (windows.main = null))
+  windows.main.on('hide', () => createLoadingWindow())
 
   windows.main.webContents.on('did-finish-load', () => {
     const name = packageJson.build.productName
