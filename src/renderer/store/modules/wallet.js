@@ -142,11 +142,13 @@ export default {
       state.wallets[profileId] = unionBy([...wallets, ...state.wallets[profileId]], 'id')
     },
     DELETE (state, wallet) {
-      const index = state.wallets[wallet.profileId].findIndex(profileWallet => profileWallet.id === wallet.id)
-      if (index === -1) {
-        throw new Error(`Cannot delete wallet '${wallet.id}' - it does not exist on the state`)
+      if (state.wallets[wallet.profileId]) {
+        const index = state.wallets[wallet.profileId].findIndex(profileWallet => profileWallet.id === wallet.id)
+        if (index === -1) {
+          throw new Error(`Cannot delete wallet '${wallet.id}' - it does not exist on the state`)
+        }
+        state.wallets[wallet.profileId].splice(index, 1)
       }
-      state.wallets[wallet.profileId].splice(index, 1)
     },
     SET_LEDGER_NAME (state, { address, name, profileId }) {
       if (!state.ledgerNames[profileId]) {
@@ -167,9 +169,11 @@ export default {
       }
     },
     DELETE_SIGNED_MESSAGE (state, message) {
-      const index = state.signedMessages[message.address].findIndex(signedMessage => signedMessage.timestamp === message.timestamp)
-      if (index !== -1) {
-        state.signedMessages[message.address].splice(index, 1)
+      if (state.signedMessages[message.address]) {
+        const index = state.signedMessages[message.address].findIndex(signedMessage => signedMessage.timestamp === message.timestamp)
+        if (index !== -1) {
+          state.signedMessages[message.address].splice(index, 1)
+        }
       }
     }
   },
