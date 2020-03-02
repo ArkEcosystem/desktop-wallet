@@ -975,7 +975,7 @@ describe('Services > Client', () => {
     describe('when the fee is bigger than the static fee', () => {
       it('should throw an Error', async () => {
         const fee = new BigNumber(fees[1][3] + 1)
-        expect(client.buildVote({ fee }))).toThrow(/fee/)
+        await expect(client.buildVote({ fee })).rejects.toThrow(/fee/)
       })
     })
 
@@ -1030,7 +1030,7 @@ describe('Services > Client', () => {
     describe('when the fee is bigger than the static fee', () => {
       it('should throw an Error', async () => {
         const fee = new BigNumber(fees[1][2] + 1)
-        expect(client.buildDelegateRegistration({ fee }))).toThrow(/fee/)
+        await expect(client.buildDelegateRegistration({ fee })).rejects.toThrow(/fee/)
       })
     })
 
@@ -1098,7 +1098,7 @@ describe('Services > Client', () => {
     describe('when the fee is bigger than the static fee', () => {
       it('should throw an Error', async () => {
         const fee = new BigNumber(fees[1][0] + 1)
-        expect(client.buildTransfer({ fee }))).toThrow(/fee/)
+        await expect(client.buildTransfer({ fee })).rejects.toThrow(/fee/)
       })
     })
 
@@ -1153,7 +1153,7 @@ describe('Services > Client', () => {
     describe('when the fee is bigger than the static fee', () => {
       it('should throw an Error', async () => {
         const fee = new BigNumber(fees[1][1] + 1)
-        expect(client.buildSecondSignatureRegistration({ fee }))).toThrow(/fee/)
+        await expect(client.buildSecondSignatureRegistration({ fee })).rejects.toThrow(/fee/)
       })
     })
 
@@ -1189,7 +1189,7 @@ describe('Services > Client', () => {
       it('should not build a v1 transaction', async () => {
         setAip11AndSpy(false, false)
 
-        expect(client.buildMultiSignature(rawTransaction, true))).toThrow('AIP-11 transaction not supported on network')
+        await expect(client.buildMultiSignature(rawTransaction, true)).rejects.toThrow('AIP-11 transaction not supported on network')
       })
 
       it('should build a valid v2 transaction', async () => {
@@ -1259,7 +1259,7 @@ describe('Services > Client', () => {
       it('should throw an Error', async () => {
         const spy = setAip11AndSpy(true)
         const fee = new BigNumber(fees[1][4] + 1)
-        expect(client.buildMultiSignature({ fee, minKeys, publicKeys }))).toThrow(/fee/)
+        await expect(client.buildMultiSignature({ fee, minKeys, publicKeys })).rejects.toThrow(/fee/)
         spy.mockRestore()
       })
     })
@@ -1290,7 +1290,7 @@ describe('Services > Client', () => {
       it('should not build a v1 transaction', async () => {
         setAip11AndSpy(false, false)
 
-        expect(client.buildIpfs(rawTransaction, true))).toThrow('AIP-11 transaction not supported on network')
+        await expect(client.buildIpfs(rawTransaction, true)).rejects.toThrow('AIP-11 transaction not supported on network')
       })
 
       it('should not create transaction with invalid hash', async () => {
@@ -1301,7 +1301,7 @@ describe('Services > Client', () => {
           hash: 'invalid hash'
         }
 
-        expect(client.buildIpfs(newRawTransaction, true))).toThrow('Invalid base58 string.')
+        await expect(client.buildIpfs(newRawTransaction, true)).rejects.toThrow('Invalid base58 string.')
 
         spy.mockRestore()
       })
@@ -1365,7 +1365,7 @@ describe('Services > Client', () => {
       it('should not build a v1 transaction', async () => {
         setAip11AndSpy(false, false)
 
-        expect(client.buildMultiPayment(rawTransaction, true))).toThrow('AIP-11 transaction not supported on network')
+        await expect(client.buildMultiPayment(rawTransaction, true)).rejects.toThrow('AIP-11 transaction not supported on network')
       })
 
       it('should build a valid v2 transaction', async () => {
@@ -1391,7 +1391,7 @@ describe('Services > Client', () => {
       it('should throw an Error', async () => {
         const spy = setAip11AndSpy(true)
         const fee = new BigNumber(fees[1][6] + 1)
-        expect(client.buildMultiPayment({ fee }))).toThrow(/fee/)
+        await expect(client.buildMultiPayment({ fee })).rejects.toThrow(/fee/)
         spy.mockRestore()
       })
     })
@@ -1421,7 +1421,7 @@ describe('Services > Client', () => {
       it('should not build a v1 transaction', async () => {
         setAip11AndSpy(false, false)
 
-        expect(client.buildDelegateResignation(rawTransaction, true))).toThrow('AIP-11 transaction not supported on network')
+        await expect(client.buildDelegateResignation(rawTransaction, true)).rejects.toThrow('AIP-11 transaction not supported on network')
       })
 
       it('should build a valid v2 transaction', async () => {
@@ -1442,7 +1442,7 @@ describe('Services > Client', () => {
       it('should throw an Error', async () => {
         const spy = setAip11AndSpy(true)
         const fee = new BigNumber(fees[1][7] + 1)
-        expect(client.buildDelegateResignation({ fee }))).toThrow(/fee/)
+        await expect(client.buildDelegateResignation({ fee })).rejects.toThrow(/fee/)
         spy.mockRestore()
       })
     })
@@ -1478,7 +1478,7 @@ describe('Services > Client', () => {
       it('should not build a v1 transaction', async () => {
         setAip11AndSpy(false, false)
 
-        expect(client.buildBusinessRegistration(rawTransaction, true))).toThrow('AIP-11 transaction not supported on network')
+        await expect(client.buildBusinessRegistration(rawTransaction, true)).rejects.toThrow('AIP-11 transaction not supported on network')
       })
 
       it('should build a valid v2 transaction', async () => {
@@ -1523,7 +1523,7 @@ describe('Services > Client', () => {
       it('should throw an Error', async () => {
         const spy = setAip11AndSpy(true)
         const fee = new BigNumber(fees[2][0] + 1)
-        expect(client.buildBusinessRegistration({ fee }))).toThrow(/fee/)
+        await expect(client.buildBusinessRegistration({ fee })).rejects.toThrow(/fee/)
         spy.mockRestore()
       })
     })
@@ -1559,7 +1559,7 @@ describe('Services > Client', () => {
       it('should not build a v1 transaction', async () => {
         setAip11AndSpy(false, false)
 
-        expect(client.buildBusinessUpdate(rawTransaction, true))).toThrow('AIP-11 transaction not supported on network')
+        await expect(client.buildBusinessUpdate(rawTransaction, true)).rejects.toThrow('AIP-11 transaction not supported on network')
       })
 
       it('should build a valid v2 transaction', async () => {
@@ -1604,7 +1604,7 @@ describe('Services > Client', () => {
       it('should throw an Error', async () => {
         const spy = setAip11AndSpy(true)
         const fee = new BigNumber(fees[2][2] + 1)
-        expect(client.buildBusinessUpdate({ fee }))).toThrow(/fee/)
+        await expect(client.buildBusinessUpdate({ fee })).rejects.toThrow(/fee/)
         spy.mockRestore()
       })
     })
@@ -1634,7 +1634,7 @@ describe('Services > Client', () => {
       it('should not build a v1 transaction', async () => {
         setAip11AndSpy(false, false)
 
-        expect(client.buildBusinessResignation(rawTransaction, true))).toThrow('AIP-11 transaction not supported on network')
+        await expect(client.buildBusinessResignation(rawTransaction, true)).rejects.toThrow('AIP-11 transaction not supported on network')
       })
 
       it('should build a valid v2 transaction', async () => {
@@ -1656,7 +1656,7 @@ describe('Services > Client', () => {
       it('should throw an Error', async () => {
         const spy = setAip11AndSpy(true)
         const fee = new BigNumber(fees[2][1] + 1)
-        expect(client.buildBusinessResignation({ fee }))).toThrow(/fee/)
+        await expect(client.buildBusinessResignation({ fee })).rejects.toThrow(/fee/)
         spy.mockRestore()
       })
     })
@@ -1700,7 +1700,7 @@ describe('Services > Client', () => {
       it('should not build a v1 transaction', async () => {
         setAip11AndSpy(false, false)
 
-        expect(client.buildBridgechainRegistration(rawTransaction, true))).toThrow('AIP-11 transaction not supported on network')
+        await expect(client.buildBridgechainRegistration(rawTransaction, true)).rejects.toThrow('AIP-11 transaction not supported on network')
       })
 
       it('should build a valid v2 transaction', async () => {
@@ -1723,7 +1723,7 @@ describe('Services > Client', () => {
       it('should throw an Error', async () => {
         const spy = setAip11AndSpy(true)
         const fee = new BigNumber(fees[2][3] + 1)
-        expect(client.buildBridgechainRegistration({ fee }))).toThrow(/fee/)
+        await expect(client.buildBridgechainRegistration({ fee })).rejects.toThrow(/fee/)
         spy.mockRestore()
       })
     })
@@ -1765,7 +1765,7 @@ describe('Services > Client', () => {
       it('should not build a v1 transaction', async () => {
         setAip11AndSpy(false, false)
 
-        expect(client.buildBridgechainUpdate(rawTransaction, true))).toThrow('AIP-11 transaction not supported on network')
+        await expect(client.buildBridgechainUpdate(rawTransaction, true)).rejects.toThrow('AIP-11 transaction not supported on network')
       })
 
       it('should build a valid v2 transaction', async () => {
@@ -1788,7 +1788,7 @@ describe('Services > Client', () => {
       it('should throw an Error', async () => {
         const spy = setAip11AndSpy(true)
         const fee = new BigNumber(fees[2][5] + 1)
-        expect(client.buildBridgechainUpdate({ fee }))).toThrow(/fee/)
+        await expect(client.buildBridgechainUpdate({ fee })).rejects.toThrow(/fee/)
         spy.mockRestore()
       })
     })
@@ -1819,7 +1819,7 @@ describe('Services > Client', () => {
       it('should not build a v1 transaction', async () => {
         setAip11AndSpy(false, false)
 
-        expect(client.buildBridgechainResignation(rawTransaction, true))).toThrow('AIP-11 transaction not supported on network')
+        await expect(client.buildBridgechainResignation(rawTransaction, true)).rejects.toThrow('AIP-11 transaction not supported on network')
       })
 
       it('should build a valid v2 transaction', async () => {
@@ -1842,7 +1842,7 @@ describe('Services > Client', () => {
       it('should throw an Error', async () => {
         const spy = setAip11AndSpy(true)
         const fee = new BigNumber(fees[2][4] + 1)
-        expect(client.buildBridgechainResignation({ fee }))).toThrow(/fee/)
+        await expect(client.buildBridgechainResignation({ fee })).rejects.toThrow(/fee/)
         spy.mockRestore()
       })
     })
