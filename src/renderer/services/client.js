@@ -583,7 +583,7 @@ export default class ClientService {
 
   // todo: move this out
   async multiSign (transaction, data) {
-    return TransactionSigner.multisig(transaction, data)
+    return TransactionSigner.multiSign(transaction, data)
   }
 
   /**

@@ -16,11 +16,11 @@ import { VoteBuilder } from './vote.builder'
 import './configure-magistrate-transactions'
 
 export class TransactionBuilderService {
-  async buildTransfer (data, isAdvancedFee = false, returnObject = false) {
+  static async buildTransfer (data, isAdvancedFee = false, returnObject = false) {
     return TransferBuilder.build(data, isAdvancedFee, returnObject)
   }
 
-  async buildSecondSignatureRegistration (
+  static async buildSecondSignatureRegistration (
     data,
     isAdvancedFee = false,
     returnObject = false
@@ -32,7 +32,7 @@ export class TransactionBuilderService {
     )
   }
 
-  async buildDelegateRegistration (
+  static async buildDelegateRegistration (
     data,
     isAdvancedFee = false,
     returnObject = false
@@ -40,23 +40,23 @@ export class TransactionBuilderService {
     return DelegateRegistrationBuilder.build(data, isAdvancedFee, returnObject)
   }
 
-  async buildVote (data, isAdvancedFee = false, returnObject = false) {
+  static async buildVote (data, isAdvancedFee = false, returnObject = false) {
     return VoteBuilder.build(data, isAdvancedFee, returnObject)
   }
 
-  async buildMultiSignature (data, isAdvancedFee = false, returnObject = false) {
+  static async buildMultiSignature (data, isAdvancedFee = false, returnObject = false) {
     return MultiSignatureBuilder.build(data, isAdvancedFee, returnObject)
   }
 
-  async buildIpfs (data, isAdvancedFee = false, returnObject = false) {
+  static async buildIpfs (data, isAdvancedFee = false, returnObject = false) {
     return IpfsBuilder.build(data, isAdvancedFee, returnObject)
   }
 
-  async buildMultiPayment (data, isAdvancedFee = false, returnObject = false) {
+  static async buildMultiPayment (data, isAdvancedFee = false, returnObject = false) {
     return MultiPaymentBuilder.build(data, isAdvancedFee, returnObject)
   }
 
-  async buildDelegateResignation (
+  static async buildDelegateResignation (
     data,
     isAdvancedFee = false,
     returnObject = false
@@ -64,7 +64,7 @@ export class TransactionBuilderService {
     return DelegateResignationBuilder.build(data, isAdvancedFee, returnObject)
   }
 
-  async buildBusinessRegistration (
+  static async buildBusinessRegistration (
     data,
     isAdvancedFee = false,
     returnObject = false
@@ -72,11 +72,11 @@ export class TransactionBuilderService {
     return BusinessRegistrationBuilder.build(data, isAdvancedFee, returnObject)
   }
 
-  async buildBusinessUpdate (data, isAdvancedFee = false, returnObject = false) {
+  static async buildBusinessUpdate (data, isAdvancedFee = false, returnObject = false) {
     return BusinessUpdateBuilder.build(data, isAdvancedFee, returnObject)
   }
 
-  async buildBusinessResignation (
+  static async buildBusinessResignation (
     data,
     isAdvancedFee = false,
     returnObject = false
@@ -84,7 +84,7 @@ export class TransactionBuilderService {
     return BusinessResignationBuilder.build(data, isAdvancedFee, returnObject)
   }
 
-  async buildBridgechainRegistration (
+  static async buildBridgechainRegistration (
     data,
     isAdvancedFee = false,
     returnObject = false
@@ -96,7 +96,7 @@ export class TransactionBuilderService {
     )
   }
 
-  async buildBridgechainUpdate (
+  static async buildBridgechainUpdate (
     data,
     isAdvancedFee = false,
     returnObject = false
@@ -104,7 +104,7 @@ export class TransactionBuilderService {
     return BridgechainUpdateBuilder.build(data, isAdvancedFee, returnObject)
   }
 
-  async buildBridgechainResignation (
+  static async buildBridgechainResignation (
     data,
     isAdvancedFee = false,
     returnObject = false

@@ -2,7 +2,7 @@ import { Transactions } from '@arkecosystem/crypto'
 import { TRANSACTION_TYPES } from '@config'
 import store from '@/store'
 import { CryptoUtils } from './utils'
-import TransactionSigner from './transaction-signer'
+import { TransactionSigner } from './transaction-signer'
 
 export class MultiSignatureBuilder {
   static async build (
@@ -43,7 +43,7 @@ export class MultiSignatureBuilder {
     passphrase = CryptoUtils.normalizePassphrase(passphrase)
     secondPassphrase = CryptoUtils.normalizePassphrase(secondPassphrase)
 
-    const transactionObject = TransactionSigner.sign(
+    const transactionObject = await TransactionSigner.sign(
       {
         address,
         transaction,
