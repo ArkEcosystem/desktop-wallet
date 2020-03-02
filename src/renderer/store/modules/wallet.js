@@ -14,7 +14,7 @@ const sanitizeWallet = (wallet) => {
 }
 
 /**
- * Internally the wallets are stored aggregated by `profileId``
+ * Internally the wallets are stored aggregated by `profileId`
  */
 export default {
   namespaced: true,
