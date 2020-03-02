@@ -34,7 +34,20 @@ export default {
      * @return {String}
      */
     formatter_date (value, format = null) {
-      dayjs.locale(window.navigator.userLanguage || window.navigator.language)
+      let userLanguage =
+        (window.navigator.userLanguage || window.navigator.language).toLowerCase()
+
+      if (userLanguage === 'en-us') {
+        userLanguage = 'en'
+      }
+
+      try {
+        require(`dayjs/locale/${userLanguage}`)
+      } catch {
+        userLanguage = 'en'
+      }
+
+      dayjs.locale(userLanguage)
 
       if (!format) {
         const sessionFormat = this.session_profile.timeFormat
@@ -46,6 +59,7 @@ export default {
           format = 'L LTS'
         }
       }
+
       return dayjs(value).format(format)
     }
   }
