@@ -91,13 +91,14 @@
 import '@/styles/style.css'
 import fs from 'fs'
 import CleanCss from 'clean-css'
+import { remote, ipcRenderer } from 'electron'
 import { pull, uniq } from 'lodash'
 import { AppFooter, AppIntro, AppSidemenu } from '@/components/App'
 import AlertMessage from '@/components/AlertMessage'
 import { TransactionModal } from '@/components/Transaction'
 import config from '@config'
 import URIHandler from '@/services/uri-handler'
-import { remote, ipcRenderer } from 'electron'
+import priceApi from '@/services/price-api'
 
 const Menu = remote.Menu
 
@@ -326,14 +327,15 @@ export default {
           const currentPeer = this.$store.getters['peer/current']()
           if (currentPeer && currentPeer.ip) {
             const scheme = currentPeer.isHttps ? 'https://' : 'http://'
-            this.host = `${scheme}${currentPeer.ip}:${currentPeer.port}`
+            this.$client.host = `${scheme}${currentPeer.ip}:${currentPeer.port}`
           }
 
           if (!oldProfile || profile.id !== oldProfile.id) {
             this.$eventBus.emit('client:changed')
           }
 
-          this.$store.getters['session/priceApi'].setAdapter(profile.priceApi)
+          priceApi.setAdapter(profile.priceApi)
+
           this.$store.dispatch('market/refreshTicker')
         },
         { immediate: true }
