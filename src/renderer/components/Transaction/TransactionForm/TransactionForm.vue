@@ -21,7 +21,6 @@ import TransactionFormVote from './TransactionFormVote'
 import TransactionFormSecondSignature from './TransactionFormSecondSignature'
 import TransactionFormBusiness from './TransactionFormBusiness'
 import TransactionFormBridgechain from './TransactionFormBridgechain'
-import { find } from 'lodash'
 
 export default {
   name: 'TransactionForm',
@@ -59,7 +58,7 @@ export default {
 
   // TODO: Fetch fees remotely
   mounted () {
-    const component = find(this.$options.components, component => {
+    const component = Object.values(this.$options.components).find(component => {
       const group = component.transactionGroup || TRANSACTION_GROUPS.STANDARD
       if (group !== this.group) {
         return false
