@@ -38,7 +38,7 @@
 </template>
 
 <script>
-import { includes, isString } from 'lodash'
+import { includes } from 'lodash'
 import { required } from 'vuelidate/lib/validators'
 import { MARKET } from '@config'
 import InputField from './InputField'
@@ -255,7 +255,7 @@ export default {
       if (!bigNum.isNaN()) {
         return bigNum.isPositive() && bigNum.isFinite()
       } else {
-        return !!(isString(amount) && amount.match(/^\s*[0-9.,]+([,. _]+[0-9]+)*\s*$/))
+        return !!(typeof amount === 'string' && amount.match(/^\s*[0-9.,]+([,. _]+[0-9]+)*\s*$/))
       }
     },
     /**
