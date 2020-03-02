@@ -1,5 +1,5 @@
 import { normalizeJson } from '../utils/normalize-json'
-import isString from 'lodash/isString'
+import { isString } from 'lodash'
 
 export function create (plugin, pluginObject, sandbox, profileId) {
   return async () => {
