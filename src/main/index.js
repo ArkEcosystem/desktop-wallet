@@ -5,6 +5,7 @@ import { setupPluginManager } from './plugin-manager'
 import { setupUpdater } from './updater'
 import winState from 'electron-window-state'
 import packageJson from '../../package.json'
+import assignMenu from './menu'
 
 // It is necessary to require `electron-log` here to use it on the renderer process
 require('electron-log')
@@ -47,6 +48,7 @@ const createLoadingWindow = () => {
   windows.loading = new BrowserWindow({
     width: 800,
     height: 600,
+    backgroundColor: '#f7fafb',
     skipTaskbar: true,
     frame: false,
     autoHideMenuBar: true,
@@ -73,6 +75,7 @@ function broadcastURL (url) {
   }
 }
 
+assignMenu({ createLoadingWindow })
 function createWindow () {
   const { width, height } = screen.getPrimaryDisplay().workAreaSize
 
@@ -87,6 +90,7 @@ function createWindow () {
     height: windowState.height,
     x: windowState.x,
     y: windowState.y,
+    backgroundColor: '#f7fafb',
     center: true,
     show: false,
     webPreferences: {
@@ -94,6 +98,7 @@ function createWindow () {
       webviewTag: true
     }
   })
+  windows.main.isMain = true
 
   // The `window.main.show()` is executed after the opening splash screen
   ipcMain.on('splashscreen:app-ready', () => {
@@ -129,10 +134,11 @@ function createWindow () {
 
   windowState.manage(windows.main)
   windows.main.loadURL(winURL)
+  windows.main.hide()
+  windows.main.setBackgroundColor('#f7fafb')
 
   windows.main.on('close', () => (windows.main = null))
   windows.main.on('closed', () => (windows.main = null))
-  windows.main.on('hide', () => createLoadingWindow())
 
   windows.main.webContents.on('did-finish-load', () => {
     const name = packageJson.build.productName
@@ -142,8 +148,6 @@ function createWindow () {
 
     broadcastURL(deeplinkingUrl)
   })
-
-  require('./menu')
 }
 
 function sendToWindow (key, value) {
