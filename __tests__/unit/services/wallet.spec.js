@@ -2,6 +2,7 @@ import * as bip39 from 'bip39'
 import nock from 'nock'
 import { Identities } from '@arkecosystem/crypto'
 import WalletService from '../../../src/renderer/services/wallet'
+import { CryptoUtils } from '@/services/crypto/utils'
 
 jest.mock('@/store', () => ({
   getters: {
@@ -139,7 +140,7 @@ describe('Services > Wallet', () => {
     let normalizeSpy
 
     beforeEach(() => {
-      normalizeSpy = jest.spyOn(WalletService, 'normalizePassphrase')
+      normalizeSpy = jest.spyOn(CryptoUtils, 'normalizePassphrase')
     })
 
     afterEach(() => {
