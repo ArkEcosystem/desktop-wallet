@@ -89,7 +89,8 @@ export default {
     },
     summary: {
       type: String,
-      required: true
+      required: true,
+      validator: value => typeof value === 'string' || value === null
     },
     url: {
       type: String,
