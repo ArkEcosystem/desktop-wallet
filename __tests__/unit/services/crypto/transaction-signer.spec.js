@@ -1,7 +1,6 @@
 import { cloneDeep } from 'lodash'
 import nock from 'nock'
 import { Identities, Managers, Transactions } from '@arkecosystem/crypto'
-import errorCapturer from '../../__utils__/error-capturer'
 import { TransactionSigner } from '@/services/crypto/transaction-signer'
 import BigNumber from '@/plugins/bignumber'
 import store from '@/store'
@@ -487,13 +486,13 @@ describe('Services > Client', () => {
     })
 
     it('should throw error if no passphrase or wif', async () => {
-      expect(await errorCapturer(TransactionSigner.multiSign(transaction, { multiSignature }))).toThrow('No passphrase or wif provided')
+      expect(TransactionSigner.multiSign(transaction, { multiSignature })).rejects.toThrow('No passphrase or wif provided')
     })
 
     it('should throw error aip11 not enabled', async () => {
       setAip11AndSpy(false, false)
 
-      expect(await errorCapturer(TransactionSigner.multiSign(transaction, signData))).toThrow('Multi-Signature Transactions are not supported yet')
+      expect(TransactionSigner.multiSign(transaction, signData)).rejects.toThrow('Multi-Signature Transactions are not supported yet')
     })
 
     it.skip('should parse transaction from data', async () => {
@@ -538,7 +537,7 @@ describe('Services > Client', () => {
     })
 
     it('should throw error if passphrase is not required for multi-signature wallet', async () => {
-      expect(await errorCapturer(TransactionSigner.multiSign(transaction, { ...signData, passphrase: 'not used' }))).toThrow('passphrase/wif is not used to sign this transaction')
+      expect(TransactionSigner.multiSign(transaction, { ...signData, passphrase: 'not used' })).rejects.toThrow('passphrase/wif is not used to sign this transaction')
     })
 
     it('should add signature for passphrase', async () => {

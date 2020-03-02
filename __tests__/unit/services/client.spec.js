@@ -1,7 +1,6 @@
 import { cloneDeep } from 'lodash'
 import nock from 'nock'
 import { Identities, Managers } from '@arkecosystem/crypto'
-import errorCapturer from '../__utils__/error-capturer'
 import fixtures from '../__fixtures__/services/client'
 import ClientService from '@/services/client'
 import BigNumber from '@/plugins/bignumber'
@@ -704,7 +703,7 @@ describe('Services > Client', () => {
         throw error
       })
 
-      expect(await errorCapturer(client.fetchTransactionsForWallets(['address-1']))).toThrow('oops')
+      await expect(client.fetchTransactionsForWallets(['address-1'])).rejects.toThrow('oops')
 
       spy.mockRestore()
     })
@@ -854,7 +853,7 @@ describe('Services > Client', () => {
         throw error
       })
 
-      expect(await errorCapturer(client.fetchWalletVote('address2'))).toThrow('oops')
+      await expect(client.fetchWalletVote('address2')).rejects.toThrow('oops')
       spy.mockRestore()
     })
   })
@@ -976,14 +975,14 @@ describe('Services > Client', () => {
     describe('when the fee is bigger than the static fee', () => {
       it('should throw an Error', async () => {
         const fee = new BigNumber(fees[1][3] + 1)
-        expect(await errorCapturer(client.buildVote({ fee }))).toThrow(/fee/)
+        expect(client.buildVote({ fee }))).toThrow(/fee/)
       })
     })
 
     describe('when the fee is smaller or equal to the static fee fee (0.1)', () => {
       it('should not throw an Error', async () => {
-        expect(await errorCapturer(client.buildVote({ fee: new BigNumber(fees[1][3]) }))).not.toThrow(/fee/)
-        expect(await errorCapturer(client.buildVote({ fee: new BigNumber(fees[1][3] - 1) }))).not.toThrow(/fee/)
+        await expect(client.buildVote({ fee: new BigNumber(fees[1][3]) })).resolves.not.toThrow(/fee/)
+        await expect(client.buildVote({ fee: new BigNumber(fees[1][3] - 1) })).resolves.not.toThrow(/fee/)
       })
     })
   })
@@ -1031,14 +1030,14 @@ describe('Services > Client', () => {
     describe('when the fee is bigger than the static fee', () => {
       it('should throw an Error', async () => {
         const fee = new BigNumber(fees[1][2] + 1)
-        expect(await errorCapturer(client.buildDelegateRegistration({ fee }))).toThrow(/fee/)
+        expect(client.buildDelegateRegistration({ fee }))).toThrow(/fee/)
       })
     })
 
     describe('when the fee is smaller or equal to the static fee (25)', () => {
       it('should not throw an Error', async () => {
-        expect(await errorCapturer(client.buildDelegateRegistration({ fee: new BigNumber(fees[1][2]) }))).not.toThrow(/fee/)
-        expect(await errorCapturer(client.buildDelegateRegistration({ fee: new BigNumber(fees[1][2] - 1) }))).not.toThrow(/fee/)
+        await expect(client.buildDelegateRegistration({ fee: new BigNumber(fees[1][2]) })).resolves.not.toThrow(/fee/)
+        await expect(client.buildDelegateRegistration({ fee: new BigNumber(fees[1][2] - 1) })).resolves.not.toThrow(/fee/)
       })
     })
   })
@@ -1099,14 +1098,14 @@ describe('Services > Client', () => {
     describe('when the fee is bigger than the static fee', () => {
       it('should throw an Error', async () => {
         const fee = new BigNumber(fees[1][0] + 1)
-        expect(await errorCapturer(client.buildTransfer({ fee }))).toThrow(/fee/)
+        expect(client.buildTransfer({ fee }))).toThrow(/fee/)
       })
     })
 
     describe('when the fee is smaller or equal to the static fee (0.1)', () => {
       it('should not throw an Error', async () => {
-        expect(await errorCapturer(client.buildTransfer({ fee: new BigNumber(fees[1][0]) }))).not.toThrow(/fee/)
-        expect(await errorCapturer(client.buildTransfer({ fee: new BigNumber(fees[1][0] - 1) }))).not.toThrow(/fee/)
+        await expect(client.buildTransfer({ fee: new BigNumber(fees[1][0]) })).resolves.not.toThrow(/fee/)
+        await expect(client.buildTransfer({ fee: new BigNumber(fees[1][0] - 1) })).resolves.not.toThrow(/fee/)
       })
     })
   })
@@ -1154,14 +1153,14 @@ describe('Services > Client', () => {
     describe('when the fee is bigger than the static fee', () => {
       it('should throw an Error', async () => {
         const fee = new BigNumber(fees[1][1] + 1)
-        expect(await errorCapturer(client.buildSecondSignatureRegistration({ fee }))).toThrow(/fee/)
+        expect(client.buildSecondSignatureRegistration({ fee }))).toThrow(/fee/)
       })
     })
 
     describe('when the fee is smaller or equal to the static fee (5)', () => {
       it('should not throw an Error', async () => {
-        expect(await errorCapturer(client.buildSecondSignatureRegistration({ fee: new BigNumber(fees[1][1]) }))).not.toThrow(/fee/)
-        expect(await errorCapturer(client.buildSecondSignatureRegistration({ fee: new BigNumber(fees[1][1] - 1) }))).not.toThrow(/fee/)
+        await expect(client.buildSecondSignatureRegistration({ fee: new BigNumber(fees[1][1]) })).resolves.not.toThrow(/fee/)
+        await expect(client.buildSecondSignatureRegistration({ fee: new BigNumber(fees[1][1] - 1) })).resolves.not.toThrow(/fee/)
       })
     })
   })
@@ -1190,7 +1189,7 @@ describe('Services > Client', () => {
       it('should not build a v1 transaction', async () => {
         setAip11AndSpy(false, false)
 
-        expect(await errorCapturer(client.buildMultiSignature(rawTransaction, true))).toThrow('AIP-11 transaction not supported on network')
+        expect(client.buildMultiSignature(rawTransaction, true))).toThrow('AIP-11 transaction not supported on network')
       })
 
       it('should build a valid v2 transaction', async () => {
@@ -1260,7 +1259,7 @@ describe('Services > Client', () => {
       it('should throw an Error', async () => {
         const spy = setAip11AndSpy(true)
         const fee = new BigNumber(fees[1][4] + 1)
-        expect(await errorCapturer(client.buildMultiSignature({ fee, minKeys, publicKeys }))).toThrow(/fee/)
+        expect(client.buildMultiSignature({ fee, minKeys, publicKeys }))).toThrow(/fee/)
         spy.mockRestore()
       })
     })
@@ -1268,8 +1267,8 @@ describe('Services > Client', () => {
     describe('when the fee is smaller or equal to the static fee (5)', () => {
       it('should not throw an Error', async () => {
         const spy = setAip11AndSpy(true)
-        expect(await errorCapturer(client.buildMultiSignature({ fee: new BigNumber(fees[1][4]) }))).not.toThrow(/fee/)
-        expect(await errorCapturer(client.buildMultiSignature({ fee: new BigNumber(fees[1][4] - 1) }))).not.toThrow(/fee/)
+        await expect(client.buildMultiSignature({ fee: new BigNumber(fees[1][4]) })).resolves.not.toThrow(/fee/)
+        await expect(client.buildMultiSignature({ fee: new BigNumber(fees[1][4] - 1) })).resolves.not.toThrow(/fee/)
         spy.mockRestore()
       })
     })
@@ -1291,7 +1290,7 @@ describe('Services > Client', () => {
       it('should not build a v1 transaction', async () => {
         setAip11AndSpy(false, false)
 
-        expect(await errorCapturer(client.buildIpfs(rawTransaction, true))).toThrow('AIP-11 transaction not supported on network')
+        expect(client.buildIpfs(rawTransaction, true))).toThrow('AIP-11 transaction not supported on network')
       })
 
       it('should not create transaction with invalid hash', async () => {
@@ -1302,7 +1301,7 @@ describe('Services > Client', () => {
           hash: 'invalid hash'
         }
 
-        expect(await errorCapturer(client.buildIpfs(newRawTransaction, true))).toThrow('Invalid base58 string.')
+        expect(client.buildIpfs(newRawTransaction, true))).toThrow('Invalid base58 string.')
 
         spy.mockRestore()
       })
@@ -1326,7 +1325,7 @@ describe('Services > Client', () => {
       it('should throw an Error', async () => {
         const spy = setAip11AndSpy(true)
         const fee = new BigNumber(fees[1][5] + 1)
-        expect(await errorCapturer(client.buildIpfs({ fee }))).toThrow(/fee/)
+        expect(client.buildIpfs({ fee })).rejects.toThrow(/fee/)
         spy.mockRestore()
       })
     })
@@ -1334,8 +1333,8 @@ describe('Services > Client', () => {
     describe('when the fee is smaller or equal to the static fee (5)', () => {
       it('should not throw an Error', async () => {
         const spy = setAip11AndSpy(true)
-        expect(await errorCapturer(client.buildIpfs({ fee: new BigNumber(fees[1][5]) }))).not.toThrow(/fee/)
-        expect(await errorCapturer(client.buildIpfs({ fee: new BigNumber(fees[1][5] - 1) }))).not.toThrow(/fee/)
+        await expect(client.buildIpfs({ fee: new BigNumber(fees[1][5]) })).resolves.not.toThrow(/fee/)
+        await expect(client.buildIpfs({ fee: new BigNumber(fees[1][5] - 1) })).resolves.not.toThrow(/fee/)
         spy.mockRestore()
       })
     })
@@ -1366,7 +1365,7 @@ describe('Services > Client', () => {
       it('should not build a v1 transaction', async () => {
         setAip11AndSpy(false, false)
 
-        expect(await errorCapturer(client.buildMultiPayment(rawTransaction, true))).toThrow('AIP-11 transaction not supported on network')
+        expect(client.buildMultiPayment(rawTransaction, true))).toThrow('AIP-11 transaction not supported on network')
       })
 
       it('should build a valid v2 transaction', async () => {
@@ -1392,7 +1391,7 @@ describe('Services > Client', () => {
       it('should throw an Error', async () => {
         const spy = setAip11AndSpy(true)
         const fee = new BigNumber(fees[1][6] + 1)
-        expect(await errorCapturer(client.buildMultiPayment({ fee }))).toThrow(/fee/)
+        expect(client.buildMultiPayment({ fee }))).toThrow(/fee/)
         spy.mockRestore()
       })
     })
@@ -1400,8 +1399,8 @@ describe('Services > Client', () => {
     describe('when the fee is smaller or equal to the static fee (5)', () => {
       it('should not throw an Error', async () => {
         const spy = setAip11AndSpy(true)
-        expect(await errorCapturer(client.buildMultiPayment({ fee: new BigNumber(fees[1][6]) }))).not.toThrow(/fee/)
-        expect(await errorCapturer(client.buildMultiPayment({ fee: new BigNumber(fees[1][6] - 1) }))).not.toThrow(/fee/)
+        await expect(client.buildMultiPayment({ fee: new BigNumber(fees[1][6]) })).resolves.not.toThrow(/fee/)
+        await expect(client.buildMultiPayment({ fee: new BigNumber(fees[1][6] - 1) })).resolves.not.toThrow(/fee/)
         spy.mockRestore()
       })
     })
@@ -1422,7 +1421,7 @@ describe('Services > Client', () => {
       it('should not build a v1 transaction', async () => {
         setAip11AndSpy(false, false)
 
-        expect(await errorCapturer(client.buildDelegateResignation(rawTransaction, true))).toThrow('AIP-11 transaction not supported on network')
+        expect(client.buildDelegateResignation(rawTransaction, true))).toThrow('AIP-11 transaction not supported on network')
       })
 
       it('should build a valid v2 transaction', async () => {
@@ -1443,7 +1442,7 @@ describe('Services > Client', () => {
       it('should throw an Error', async () => {
         const spy = setAip11AndSpy(true)
         const fee = new BigNumber(fees[1][7] + 1)
-        expect(await errorCapturer(client.buildDelegateResignation({ fee }))).toThrow(/fee/)
+        expect(client.buildDelegateResignation({ fee }))).toThrow(/fee/)
         spy.mockRestore()
       })
     })
@@ -1451,8 +1450,8 @@ describe('Services > Client', () => {
     describe('when the fee is smaller or equal to the static fee (5)', () => {
       it('should not throw an Error', async () => {
         const spy = setAip11AndSpy(true)
-        expect(await errorCapturer(client.buildDelegateResignation({ fee: new BigNumber(fees[1][7]) }))).not.toThrow(/fee/)
-        expect(await errorCapturer(client.buildDelegateResignation({ fee: new BigNumber(fees[1][7] - 1) }))).not.toThrow(/fee/)
+        await expect(client.buildDelegateResignation({ fee: new BigNumber(fees[1][7]) })).resolves.not.toThrow(/fee/)
+        await expect(client.buildDelegateResignation({ fee: new BigNumber(fees[1][7] - 1) })).resolves.not.toThrow(/fee/)
         spy.mockRestore()
       })
     })
@@ -1479,7 +1478,7 @@ describe('Services > Client', () => {
       it('should not build a v1 transaction', async () => {
         setAip11AndSpy(false, false)
 
-        expect(await errorCapturer(client.buildBusinessRegistration(rawTransaction, true))).toThrow('AIP-11 transaction not supported on network')
+        expect(client.buildBusinessRegistration(rawTransaction, true))).toThrow('AIP-11 transaction not supported on network')
       })
 
       it('should build a valid v2 transaction', async () => {
@@ -1524,7 +1523,7 @@ describe('Services > Client', () => {
       it('should throw an Error', async () => {
         const spy = setAip11AndSpy(true)
         const fee = new BigNumber(fees[2][0] + 1)
-        expect(await errorCapturer(client.buildBusinessRegistration({ fee }))).toThrow(/fee/)
+        expect(client.buildBusinessRegistration({ fee }))).toThrow(/fee/)
         spy.mockRestore()
       })
     })
@@ -1532,8 +1531,8 @@ describe('Services > Client', () => {
     describe('when the fee is smaller or equal to the static fee (5)', () => {
       it('should not throw an Error', async () => {
         const spy = setAip11AndSpy(true)
-        expect(await errorCapturer(client.buildBusinessRegistration({ fee: new BigNumber(fees[2][0]) }))).not.toThrow(/fee/)
-        expect(await errorCapturer(client.buildBusinessRegistration({ fee: new BigNumber(fees[2][0] - 1) }))).not.toThrow(/fee/)
+        await expect(client.buildBusinessRegistration({ fee: new BigNumber(fees[2][0]) })).resolves.not.toThrow(/fee/)
+        await expect(client.buildBusinessRegistration({ fee: new BigNumber(fees[2][0] - 1) })).resolves.not.toThrow(/fee/)
         spy.mockRestore()
       })
     })
@@ -1560,7 +1559,7 @@ describe('Services > Client', () => {
       it('should not build a v1 transaction', async () => {
         setAip11AndSpy(false, false)
 
-        expect(await errorCapturer(client.buildBusinessUpdate(rawTransaction, true))).toThrow('AIP-11 transaction not supported on network')
+        expect(client.buildBusinessUpdate(rawTransaction, true))).toThrow('AIP-11 transaction not supported on network')
       })
 
       it('should build a valid v2 transaction', async () => {
@@ -1605,7 +1604,7 @@ describe('Services > Client', () => {
       it('should throw an Error', async () => {
         const spy = setAip11AndSpy(true)
         const fee = new BigNumber(fees[2][2] + 1)
-        expect(await errorCapturer(client.buildBusinessUpdate({ fee }))).toThrow(/fee/)
+        expect(client.buildBusinessUpdate({ fee }))).toThrow(/fee/)
         spy.mockRestore()
       })
     })
@@ -1613,8 +1612,8 @@ describe('Services > Client', () => {
     describe('when the fee is smaller or equal to the static fee (5)', () => {
       it('should not throw an Error', async () => {
         const spy = setAip11AndSpy(true)
-        expect(await errorCapturer(client.buildBusinessUpdate({ fee: new BigNumber(fees[2][2]) }))).not.toThrow(/fee/)
-        expect(await errorCapturer(client.buildBusinessUpdate({ fee: new BigNumber(fees[2][2] - 1) }))).not.toThrow(/fee/)
+        await expect(client.buildBusinessUpdate({ fee: new BigNumber(fees[2][2]) })).resolves.not.toThrow(/fee/)
+        await expect(client.buildBusinessUpdate({ fee: new BigNumber(fees[2][2] - 1) })).resolves.not.toThrow(/fee/)
         spy.mockRestore()
       })
     })
@@ -1635,7 +1634,7 @@ describe('Services > Client', () => {
       it('should not build a v1 transaction', async () => {
         setAip11AndSpy(false, false)
 
-        expect(await errorCapturer(client.buildBusinessResignation(rawTransaction, true))).toThrow('AIP-11 transaction not supported on network')
+        expect(client.buildBusinessResignation(rawTransaction, true))).toThrow('AIP-11 transaction not supported on network')
       })
 
       it('should build a valid v2 transaction', async () => {
@@ -1657,7 +1656,7 @@ describe('Services > Client', () => {
       it('should throw an Error', async () => {
         const spy = setAip11AndSpy(true)
         const fee = new BigNumber(fees[2][1] + 1)
-        expect(await errorCapturer(client.buildBusinessResignation({ fee }))).toThrow(/fee/)
+        expect(client.buildBusinessResignation({ fee }))).toThrow(/fee/)
         spy.mockRestore()
       })
     })
@@ -1665,8 +1664,8 @@ describe('Services > Client', () => {
     describe('when the fee is smaller or equal to the static fee (5)', () => {
       it('should not throw an Error', async () => {
         const spy = setAip11AndSpy(true)
-        expect(await errorCapturer(client.buildBusinessResignation({ fee: new BigNumber(fees[2][1]) }))).not.toThrow(/fee/)
-        expect(await errorCapturer(client.buildBusinessResignation({ fee: new BigNumber(fees[2][1] - 1) }))).not.toThrow(/fee/)
+        await expect(client.buildBusinessResignation({ fee: new BigNumber(fees[2][1]) })).resolves.not.toThrow(/fee/)
+        await expect(client.buildBusinessResignation({ fee: new BigNumber(fees[2][1] - 1) })).resolves.not.toThrow(/fee/)
         spy.mockRestore()
       })
     })
@@ -1701,7 +1700,7 @@ describe('Services > Client', () => {
       it('should not build a v1 transaction', async () => {
         setAip11AndSpy(false, false)
 
-        expect(await errorCapturer(client.buildBridgechainRegistration(rawTransaction, true))).toThrow('AIP-11 transaction not supported on network')
+        expect(client.buildBridgechainRegistration(rawTransaction, true))).toThrow('AIP-11 transaction not supported on network')
       })
 
       it('should build a valid v2 transaction', async () => {
@@ -1724,7 +1723,7 @@ describe('Services > Client', () => {
       it('should throw an Error', async () => {
         const spy = setAip11AndSpy(true)
         const fee = new BigNumber(fees[2][3] + 1)
-        expect(await errorCapturer(client.buildBridgechainRegistration({ fee }))).toThrow(/fee/)
+        expect(client.buildBridgechainRegistration({ fee }))).toThrow(/fee/)
         spy.mockRestore()
       })
     })
@@ -1732,8 +1731,8 @@ describe('Services > Client', () => {
     describe('when the fee is smaller or equal to the static fee (5)', () => {
       it('should not throw an Error', async () => {
         const spy = setAip11AndSpy(true)
-        expect(await errorCapturer(client.buildBridgechainRegistration({ fee: new BigNumber(fees[2][3]) }))).not.toThrow(/fee/)
-        expect(await errorCapturer(client.buildBridgechainRegistration({ fee: new BigNumber(fees[2][3] - 1) }))).not.toThrow(/fee/)
+        await expect(client.buildBridgechainRegistration({ fee: new BigNumber(fees[2][3]) })).resolves.not.toThrow(/fee/)
+        await expect(client.buildBridgechainRegistration({ fee: new BigNumber(fees[2][3] - 1) })).resolves.not.toThrow(/fee/)
         spy.mockRestore()
       })
     })
@@ -1766,7 +1765,7 @@ describe('Services > Client', () => {
       it('should not build a v1 transaction', async () => {
         setAip11AndSpy(false, false)
 
-        expect(await errorCapturer(client.buildBridgechainUpdate(rawTransaction, true))).toThrow('AIP-11 transaction not supported on network')
+        expect(client.buildBridgechainUpdate(rawTransaction, true))).toThrow('AIP-11 transaction not supported on network')
       })
 
       it('should build a valid v2 transaction', async () => {
@@ -1789,7 +1788,7 @@ describe('Services > Client', () => {
       it('should throw an Error', async () => {
         const spy = setAip11AndSpy(true)
         const fee = new BigNumber(fees[2][5] + 1)
-        expect(await errorCapturer(client.buildBridgechainUpdate({ fee }))).toThrow(/fee/)
+        expect(client.buildBridgechainUpdate({ fee }))).toThrow(/fee/)
         spy.mockRestore()
       })
     })
@@ -1797,8 +1796,8 @@ describe('Services > Client', () => {
     describe('when the fee is smaller or equal to the static fee (5)', () => {
       it('should not throw an Error', async () => {
         const spy = setAip11AndSpy(true)
-        expect(await errorCapturer(client.buildBridgechainUpdate({ fee: new BigNumber(fees[2][5]) }))).not.toThrow(/fee/)
-        expect(await errorCapturer(client.buildBridgechainUpdate({ fee: new BigNumber(fees[2][5] - 1) }))).not.toThrow(/fee/)
+        await expect(client.buildBridgechainUpdate({ fee: new BigNumber(fees[2][5]) })).resolves.not.toThrow(/fee/)
+        await expect(client.buildBridgechainUpdate({ fee: new BigNumber(fees[2][5] - 1) })).resolves.not.toThrow(/fee/)
         spy.mockRestore()
       })
     })
@@ -1820,7 +1819,7 @@ describe('Services > Client', () => {
       it('should not build a v1 transaction', async () => {
         setAip11AndSpy(false, false)
 
-        expect(await errorCapturer(client.buildBridgechainResignation(rawTransaction, true))).toThrow('AIP-11 transaction not supported on network')
+        expect(client.buildBridgechainResignation(rawTransaction, true))).toThrow('AIP-11 transaction not supported on network')
       })
 
       it('should build a valid v2 transaction', async () => {
@@ -1843,7 +1842,7 @@ describe('Services > Client', () => {
       it('should throw an Error', async () => {
         const spy = setAip11AndSpy(true)
         const fee = new BigNumber(fees[2][4] + 1)
-        expect(await errorCapturer(client.buildBridgechainResignation({ fee }))).toThrow(/fee/)
+        expect(client.buildBridgechainResignation({ fee }))).toThrow(/fee/)
         spy.mockRestore()
       })
     })
@@ -1851,8 +1850,8 @@ describe('Services > Client', () => {
     describe('when the fee is smaller or equal to the static fee (5)', () => {
       it('should not throw an Error', async () => {
         const spy = setAip11AndSpy(true)
-        expect(await errorCapturer(client.buildBridgechainResignation({ fee: new BigNumber(fees[2][4]) }))).not.toThrow(/fee/)
-        expect(await errorCapturer(client.buildBridgechainResignation({ fee: new BigNumber(fees[2][4] - 1) }))).not.toThrow(/fee/)
+        await expect(client.buildBridgechainResignation({ fee: new BigNumber(fees[2][4]) })).resolves.not.toThrow(/fee/)
+        await expect(client.buildBridgechainResignation({ fee: new BigNumber(fees[2][4] - 1) })).resolves.not.toThrow(/fee/)
         spy.mockRestore()
       })
     })
