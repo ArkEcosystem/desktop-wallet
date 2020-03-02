@@ -72,7 +72,6 @@
             y="0"
           />
           <path
-            :key="logo.id"
             :width="logo.width"
             :height="logo.height"
             :transform="logo.transform"
@@ -87,10 +86,10 @@
 </template>
 
 <script>
-const MersenneTwister = require('mersenne-twister')
-const Color = require('color')
-const colors = require('@/components/utils/IdenticonColors')
-const crypto = require('crypto')
+import MersenneTwister from 'mersenne-twister'
+import Color from 'color'
+import colors from '@/components/utils/IdenticonColors'
+import crypto from 'crypto'
 
 export default {
   name: 'Identicon',
@@ -163,10 +162,10 @@ export default {
       const remainingColors = this.hueShift(colors.slice(), generator)
       this.backgroundColor = this.genColor(remainingColors, generator)
 
-      for (var i = 0; i < this.shapeCount; i++) {
+      for (let i = 0; i < this.shapeCount; i++) {
         this.rectangles.push(this.genShape(generator, remainingColors, 100, i, this.shapeCount))
       }
-      this.logo = this.genShape(generator, remainingColors, 100, i, this.shapeCount)
+      this.logo = this.genShape(generator, remainingColors, 100, 1, this.shapeCount)
     },
 
     genShape (generator, remainingColors, diameter, i, total) {
@@ -174,9 +173,9 @@ export default {
       const width = diameter
       const height = diameter
 
-      var firstRot = generator.random()
-      var angle = Math.PI * 2 * firstRot
-      var velocity = diameter / total * generator.random() + (i * diameter / total)
+      const firstRot = generator.random()
+      const angle = Math.PI * 2 * firstRot
+      const velocity = diameter / total * generator.random() + (i * diameter / total)
 
       const tx = (Math.cos(angle) * velocity)
       const ty = (Math.sin(angle) * velocity)
@@ -210,7 +209,7 @@ export default {
       const wobble = 30
       const amount = (generator.random() * 30) - (wobble / 2)
       return colors.map(function (hex) {
-        var color = Color(hex)
+        const color = Color(hex)
         color.rotate(amount)
         return color.hex()
       })

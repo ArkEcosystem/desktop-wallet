@@ -84,7 +84,7 @@ describe('TransactionConfirmBridgechainUpdate', () => {
         expect(wrapper.vm.apiPort).toBe(4003)
       })
 
-      it('should return placeholder if no core-api port', () => {
+      it('should return null if no core-api port', () => {
         createWrapper(null, {
           asset: {
             bridgechainUpdate: {
@@ -100,7 +100,7 @@ describe('TransactionConfirmBridgechainUpdate', () => {
           }
         })
 
-        expect(wrapper.vm.apiPort).toBe('-')
+        expect(wrapper.vm.apiPort).toBe(null)
       })
     })
   })

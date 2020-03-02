@@ -5,6 +5,7 @@ import { setupPluginManager } from './plugin-manager'
 import { setupUpdater } from './updater'
 import winState from 'electron-window-state'
 import packageJson from '../../package.json'
+import assignMenu from './menu'
 
 // It is necessary to require `electron-log` here to use it on the renderer process
 require('electron-log')
@@ -21,6 +22,7 @@ if (process.env.NODE_ENV !== 'development') {
 
 // To E2E tests
 if (process.env.TEMP_USER_DATA === 'true') {
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
   const tempy = require('tempy')
   const tempDirectory = tempy.directory()
   app.setPath('userData', tempDirectory)
@@ -46,7 +48,7 @@ const createLoadingWindow = () => {
   windows.loading = new BrowserWindow({
     width: 800,
     height: 600,
-    parent: windows.main,
+    backgroundColor: '#f7fafb',
     skipTaskbar: true,
     frame: false,
     autoHideMenuBar: true,
@@ -55,7 +57,6 @@ const createLoadingWindow = () => {
       nodeIntegration: true
     }
   })
-  windows.loading.setResizable(false)
   windows.loading.loadURL(loadingURL)
   windows.loading.show()
   windows.loading.on('close', () => (windows.loading = null))
@@ -63,6 +64,18 @@ const createLoadingWindow = () => {
   windows.loading.webContents.on('did-finish-load', () => windows.loading.show())
 }
 
+function broadcastURL (url) {
+  if (!url || typeof url !== 'string') {
+    return
+  }
+
+  if (window.main && window.main.webContents) {
+    window.main.webContents.send('process-url', url)
+    deeplinkingUrl = null
+  }
+}
+
+assignMenu({ createLoadingWindow })
 function createWindow () {
   const { width, height } = screen.getPrimaryDisplay().workAreaSize
 
@@ -77,6 +90,7 @@ function createWindow () {
     height: windowState.height,
     x: windowState.x,
     y: windowState.y,
+    backgroundColor: '#f7fafb',
     center: true,
     show: false,
     webPreferences: {
@@ -84,8 +98,9 @@ function createWindow () {
       webviewTag: true
     }
   })
+  windows.main.isMain = true
 
-  // The `mainWindow.show()` is executed after the opening splash screen
+  // The `window.main.show()` is executed after the opening splash screen
   ipcMain.on('splashscreen:app-ready', () => {
     if (windows.loading) {
       windows.loading.close()
@@ -119,6 +134,8 @@ function createWindow () {
 
   windowState.manage(windows.main)
   windows.main.loadURL(winURL)
+  windows.main.hide()
+  windows.main.setBackgroundColor('#f7fafb')
 
   windows.main.on('close', () => (windows.main = null))
   windows.main.on('closed', () => (windows.main = null))
@@ -131,18 +148,6 @@ function createWindow () {
 
     broadcastURL(deeplinkingUrl)
   })
-
-  require('./menu')
-}
-
-function broadcastURL (url) {
-  if (!url || typeof url !== 'string') {
-    return
-  }
-
-  if (sendToWindow('process-url', url)) {
-    deeplinkingUrl = null
-  }
 }
 
 function sendToWindow (key, value) {

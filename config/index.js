@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const os = require('os')
 const path = require('path')
 
@@ -27,9 +28,7 @@ exports.VENDOR_FIELD = {
 exports.I18N = {
   defaultLocale: 'en-US',
   enabledLocales: [
-    'en-US',
-    'it-IT',
-    'pt-BR'
+    'en-US'
   ]
 }
 

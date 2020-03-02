@@ -1,7 +1,7 @@
 import Synchronizer from '@/services/synchronizer'
 
 export default {
-  install (Vue, _options) {
+  install (Vue) {
     let synchronizer
 
     Object.defineProperty(Vue.prototype, '$synchronizer', {

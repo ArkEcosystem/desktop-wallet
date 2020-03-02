@@ -16,7 +16,7 @@ export default {
     },
 
     passphrase: {
-      isValid (value) {
+      isValid () {
         if (this.isMultiSignature) {
           return true
         } else if (this.currentWallet && (this.currentWallet.isLedger || this.currentWallet.passphrase)) {
@@ -32,7 +32,7 @@ export default {
     },
 
     walletPassword: {
-      isValid (value) {
+      isValid () {
         if (this.isMultiSignature) {
           return true
         } else if (this.currentWallet && (this.currentWallet.isLedger || !this.currentWallet.passphrase)) {
@@ -52,7 +52,7 @@ export default {
     },
 
     secondPassphrase: {
-      isValid (value) {
+      isValid () {
         if (!this.currentWallet.secondPublicKey) {
           return true
         }
@@ -122,6 +122,10 @@ export default {
         }
 
         this.showEncryptLoader = false
+
+        if (!this.form.wif) {
+          return
+        }
       }
 
       this.submit()
