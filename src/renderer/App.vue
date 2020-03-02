@@ -311,9 +311,9 @@ export default {
         this.$warn('Ledger Disconnected!')
       })
 
-      await Promise.all([this.$plugins.fetchPluginsFromAdapter(), this.$plugins.fetchBlacklist(), this.$plugins.fetchWhitelist()])
-
       ipcRenderer.send('splashscreen:app-ready')
+
+      await Promise.all([this.$plugins.fetchPluginsFromAdapter(), this.$plugins.fetchBlacklist(), this.$plugins.fetchWhitelist()])
     },
 
     __watchProfile () {
