@@ -1370,7 +1370,7 @@ describe('Services > Client', () => {
           hash: 'invalid hash'
         }
 
-        await expect(client.buildIpfs(newRawTransaction, true)).rejects.toThrow('Non-base58 character.')
+        await expect(client.buildIpfs(newRawTransaction, true)).rejects.toThrow('Invalid base58 string.')
 
         spy.mockRestore()
       })
