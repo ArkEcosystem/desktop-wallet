@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "outDir": "./dist/",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "moduleResolution": "node",
+    "module": "es2015",
+    "target": "es5",
+    "lib": [
+      "dom",
+      "esnext"
+    ],
+    "baseUrl": "./",
+    "paths": {
+      "@package.json": ["./package.json"],
+      "@tailwind": ["./tailwind.js"],
+      "@config": ["./config"],
+      "@/*": ["./src/renderer/*"]
+    },
+    "resolveJsonModule": true,
+    "allowJs": true
+  }
+}

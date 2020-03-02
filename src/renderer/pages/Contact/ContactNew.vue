@@ -149,7 +149,7 @@ export default {
   validations: {
     schema: {
       address: {
-        isValid (value) {
+        isValid () {
           if (this.$refs.addressInput) {
             return !this.$refs.addressInput.$v.$invalid
           }

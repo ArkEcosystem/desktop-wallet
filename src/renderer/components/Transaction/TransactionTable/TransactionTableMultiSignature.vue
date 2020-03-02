@@ -33,7 +33,7 @@
         </div>
 
         <div
-          v-else-if="data.column.field === 'sender'"
+          v-else-if="data.column.field === 'senderPublicKey'"
           class="max-w-xxs"
         >
           <WalletAddress
@@ -44,7 +44,7 @@
         </div>
 
         <div
-          v-else-if="data.column.field === 'recipient'"
+          v-else-if="data.column.field === 'recipientId'"
           class="max-w-xxs"
         >
           <WalletAddress
@@ -153,11 +153,11 @@ export default {
         },
         {
           label: this.$t('TRANSACTION.SENDER'),
-          field: 'sender'
+          field: 'senderPublicKey'
         },
         {
           label: this.$t('TRANSACTION.RECIPIENT'),
-          field: 'recipient'
+          field: 'recipientId'
         },
         {
           label: this.$t('TRANSACTION.STATUS'),

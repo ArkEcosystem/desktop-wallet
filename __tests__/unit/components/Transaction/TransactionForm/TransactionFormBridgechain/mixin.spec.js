@@ -588,6 +588,42 @@ describe.each([
       })
     })
 
+    describe('hasSeedNodesError', () => {
+      it('should be true if there is an invalid seed node', () => {
+        wrapper.vm.invalidSeeds = [
+          { ip: '0.5.5.5', isInvalid: true }
+        ]
+
+        expect(wrapper.vm.hasSeedNodesError).toBe(true)
+      })
+
+      it('should be false if there are less than maximum seed nodes', () => {
+        wrapper.vm.$v.form.seedNodes.$model = [
+          { ip: '0.5.5.5', isInvalid: false }
+        ]
+
+        expect(wrapper.vm.hasSeedNodesError).toBe(false)
+      })
+
+      it('should be true if there are more than maximum seed nodes', () => {
+        wrapper.vm.$v.form.seedNodes.$model = [
+          { ip: '0.5.5.5', isInvalid: false },
+          { ip: '1.5.5.5', isInvalid: false },
+          { ip: '2.5.5.5', isInvalid: false },
+          { ip: '3.5.5.5', isInvalid: false },
+          { ip: '4.5.5.5', isInvalid: false },
+          { ip: '5.5.5.5', isInvalid: false },
+          { ip: '6.5.5.5', isInvalid: false },
+          { ip: '7.5.5.5', isInvalid: false },
+          { ip: '8.5.5.5', isInvalid: false },
+          { ip: '9.5.5.5', isInvalid: false },
+          { ip: '10.5.5.5', isInvalid: false }
+        ]
+
+        expect(wrapper.vm.hasSeedNodesError).toBe(true)
+      })
+    })
+
     describe('seedNodeError', () => {
       it('should return null if valid', () => {
         wrapper.vm.$v.seedNode.$model = '5.5.5.5'
@@ -623,74 +659,6 @@ describe.each([
         expect(wrapper.vm.$v.seedNode.$dirty).toBe(true)
         expect(wrapper.vm.$v.seedNode.$invalid).toBe(true)
         expect(wrapper.vm.seedNodeError).toBe('TRANSACTION.BRIDGECHAIN.ERROR_DUPLICATE')
-      })
-
-      it('should return error if too many', () => {
-        wrapper.vm.$v.form.seedNodes.$model = [
-          { ip: '1.5.5.5', isInvalid: false },
-          { ip: '2.5.5.5', isInvalid: false },
-          { ip: '3.5.5.5', isInvalid: false },
-          { ip: '4.5.5.5', isInvalid: false },
-          { ip: '5.5.5.5', isInvalid: false },
-          { ip: '6.5.5.5', isInvalid: false },
-          { ip: '7.5.5.5', isInvalid: false },
-          { ip: '8.5.5.5', isInvalid: false },
-          { ip: '9.5.5.5', isInvalid: false },
-          { ip: '10.5.5.5', isInvalid: false }
-        ]
-        wrapper.vm.$v.seedNode.$model = '6.6.6.6'
-
-        expect(wrapper.vm.$v.seedNode.$dirty).toBe(true)
-        expect(wrapper.vm.$v.seedNode.$invalid).toBe(true)
-        expect(wrapper.vm.seedNodeError).toBe('VALIDATION.TOO_MANY')
-      })
-    })
-
-    describe('seedNodesError', () => {
-      it('should return null if valid', () => {
-        wrapper.vm.$v.form.seedNodes.$model = [
-          { ip: '5.5.5.5', isInvalid: false }
-        ]
-
-        expect(wrapper.vm.$v.form.seedNodes.$dirty).toBe(true)
-        expect(wrapper.vm.$v.form.seedNodes.$invalid).toBe(false)
-        expect(wrapper.vm.seedNodesError).toBe(null)
-      })
-
-      it('should return null if not dirty', () => {
-        wrapper.vm.$v.form.seedNodes.$model = []
-        wrapper.vm.$v.form.seedNodes.$reset()
-
-        expect(wrapper.vm.$v.form.seedNodes.$dirty).toBe(false)
-        expect(wrapper.vm.$v.form.seedNodes.$invalid).toBe(true)
-        expect(wrapper.vm.seedNodesError).toBe(null)
-      })
-
-      it('should return error if empty', () => {
-        wrapper.vm.$v.form.seedNodes.$model = []
-
-        expect(wrapper.vm.$v.form.seedNodes.$dirty).toBe(true)
-        expect(wrapper.vm.$v.form.seedNodes.$invalid).toBe(true)
-        expect(wrapper.vm.seedNodesError).toBe('VALIDATION.REQUIRED')
-      })
-
-      it('should return error if too many', () => {
-        wrapper.vm.$v.form.seedNodes.$model = [
-          { ip: '1.5.5.5', isInvalid: false },
-          { ip: '2.5.5.5', isInvalid: false },
-          { ip: '3.5.5.5', isInvalid: false },
-          { ip: '4.5.5.5', isInvalid: false },
-          { ip: '5.5.5.5', isInvalid: false },
-          { ip: '6.5.5.5', isInvalid: false },
-          { ip: '7.5.5.5', isInvalid: false },
-          { ip: '8.5.5.5', isInvalid: false },
-          { ip: '9.5.5.5', isInvalid: false },
-          { ip: '10.5.5.5', isInvalid: false }
-        ]
-
-        expect(wrapper.vm.$v.form.seedNodes.$dirty).toBe(true)
-        expect(wrapper.vm.$v.form.seedNodes.$invalid).toBe(true)
-        expect(wrapper.vm.seedNodesError).toBe('VALIDATION.TOO_MANY')
       })
     })
 
@@ -743,7 +711,12 @@ describe.each([
         wrapper.vm.$v.form.asset.bridgechainRepository.$reset()
 
         expect(wrapper.vm.$v.form.asset.bridgechainRepository.$dirty).toBe(false)
-        expect(wrapper.vm.$v.form.asset.bridgechainRepository.$invalid).toBe(true)
+        if (componentName === 'TransactionFormBridgechainRegistration') {
+          expect(wrapper.vm.$v.form.asset.bridgechainRepository.$invalid).toBe(true)
+        } else {
+          expect(wrapper.vm.$v.form.asset.bridgechainRepository.$invalid).toBe(false)
+        }
+
         expect(wrapper.vm.bridgechainRepositoryError).toBe(null)
       })
 
@@ -892,7 +865,7 @@ describe.each([
         wrapper.vm.$v.form.asset.bridgechainRepository.$model = 'https://github.com/arkecosystem/core.git'
         wrapper.vm.$v.form.asset.bridgechainAssetRepository.$model = 'https://github.com/arkecosystem/core-assets.git'
 
-        const expectedAsset = {
+        let expectedAsset = {
           name: 'bridgechain',
           seedNodes: [
             '1.1.1.1',
@@ -907,8 +880,9 @@ describe.each([
         }
 
         if (componentName === 'TransactionFormBridgechainUpdate') {
-          wrapper.vm.form.asset.bridgechainId = '2a44f340d76ffc3df204c5f38cd355b7496c9065a1ade2ef92071436bd72e867'
-          expectedAsset.bridgechainId = '2a44f340d76ffc3df204c5f38cd355b7496c9065a1ade2ef92071436bd72e867'
+          expectedAsset = {
+            bridgechainId: '2a44f340d76ffc3df204c5f38cd355b7496c9065a1ade2ef92071436bd72e867'
+          }
         }
 
         expect(wrapper.vm.getTransactionData()).toEqual({
@@ -944,7 +918,7 @@ describe.each([
         wrapper.vm.$v.form.asset.bridgechainRepository.$model = 'https://github.com/arkecosystem/core.git'
         wrapper.vm.$v.form.asset.bridgechainAssetRepository.$model = 'https://github.com/arkecosystem/core-assets.git'
 
-        const expectedAsset = {
+        let expectedAsset = {
           name: 'bridgechain',
           seedNodes: [
             '1.1.1.1',
@@ -959,8 +933,9 @@ describe.each([
         }
 
         if (componentName === 'TransactionFormBridgechainUpdate') {
-          wrapper.vm.form.asset.bridgechainId = '2a44f340d76ffc3df204c5f38cd355b7496c9065a1ade2ef92071436bd72e867'
-          expectedAsset.bridgechainId = '2a44f340d76ffc3df204c5f38cd355b7496c9065a1ade2ef92071436bd72e867'
+          expectedAsset = {
+            bridgechainId: '2a44f340d76ffc3df204c5f38cd355b7496c9065a1ade2ef92071436bd72e867'
+          }
         }
 
         expect(wrapper.vm.getTransactionData()).toEqual({

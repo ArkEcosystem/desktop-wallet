@@ -43,7 +43,7 @@ export default {
       this.$nextTick(() => (this.inputId = val))
     },
 
-    inputId (val) {
+    inputId () {
       this.toggleCollapse()
     },
 

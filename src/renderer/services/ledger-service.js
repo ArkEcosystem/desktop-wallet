@@ -147,7 +147,7 @@ class LedgerService {
    * @return {Promise}
    */
   __performAction (action) {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       this.actionsQueue.push({
         action,
         resolve

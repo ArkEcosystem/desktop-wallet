@@ -77,7 +77,7 @@ export default new BaseModule(NetworkModel, {
     /*
      * Update data of the network
      */
-    async updateData ({ commit, dispatch, rootGetters }, network = null) {
+    async updateData ({ commit, rootGetters }, network = null) {
       if (!network) {
         network = rootGetters['session/network']
       }
@@ -87,7 +87,6 @@ export default new BaseModule(NetworkModel, {
         const { constants } = await Client.fetchNetworkConfig(network.server)
         commit('UPDATE', {
           ...network,
-          crypto,
           constants
         })
 

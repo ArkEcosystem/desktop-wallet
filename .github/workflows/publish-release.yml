@@ -81,6 +81,21 @@ jobs:
       - name: Calculate Checksums for DEB
         run: shasum -a 256 build/target/ark-desktop-wallet-linux-amd64-2.8.1.deb
 
+      - name: VirusTotal Scan for AppImage
+        run: |
+          UPLOAD_URL=$(curl -s --location --url 'https://www.virustotal.com/vtapi/v2/file/scan/upload_url?apikey=${{ secrets.VIRUSTOTAL_TOKEN }}' | jq -r .upload_url)
+          curl -s --url "$UPLOAD_URL" --form 'apikey=${{ secrets.VIRUSTOTAL_TOKEN }}' --form 'file=@build/target/ark-desktop-wallet-linux-x86_64-2.8.1.AppImage' | jq -r .permalink
+
+      - name: VirusTotal Scan for TAR
+        run: |
+          UPLOAD_URL=$(curl -s --location --url 'https://www.virustotal.com/vtapi/v2/file/scan/upload_url?apikey=${{ secrets.VIRUSTOTAL_TOKEN }}' | jq -r .upload_url)
+          curl -s --url "$UPLOAD_URL" --form 'apikey=${{ secrets.VIRUSTOTAL_TOKEN }}' --form 'file=@build/target/ark-desktop-wallet-linux-x64-2.8.1.tar.gz' | jq -r .permalink
+
+      - name: VirusTotal Scan for DEB
+        run: |
+          UPLOAD_URL=$(curl -s --location --url 'https://www.virustotal.com/vtapi/v2/file/scan/upload_url?apikey=${{ secrets.VIRUSTOTAL_TOKEN }}' | jq -r .upload_url)
+          curl -s --url "$UPLOAD_URL" --form 'apikey=${{ secrets.VIRUSTOTAL_TOKEN }}' --form 'file=@build/target/ark-desktop-wallet-linux-amd64-2.8.1.deb' | jq -r .permalink
+
   publish-macos:
     # needs: ["create-release"]
 
@@ -128,6 +143,16 @@ jobs:
 
       - name: Calculate Checksums for ZIP
         run: shasum -a 256 build/target/ark-desktop-wallet-mac-2.8.1.zip
+
+      - name: VirusTotal Scan for DMG
+        run: |
+          UPLOAD_URL=$(curl -s --location --url 'https://www.virustotal.com/vtapi/v2/file/scan/upload_url?apikey=${{ secrets.VIRUSTOTAL_TOKEN }}' | jq -r .upload_url)
+          curl -s --url "$UPLOAD_URL" --form 'apikey=${{ secrets.VIRUSTOTAL_TOKEN }}' --form 'file=@build/target/ark-desktop-wallet-mac-2.8.1.dmg' | jq -r .permalink
+
+      - name: VirusTotal Scan for ZIP
+        run: |
+          UPLOAD_URL=$(curl -s --location --url 'https://www.virustotal.com/vtapi/v2/file/scan/upload_url?apikey=${{ secrets.VIRUSTOTAL_TOKEN }}' | jq -r .upload_url)
+          curl -s --url "$UPLOAD_URL" --form 'apikey=${{ secrets.VIRUSTOTAL_TOKEN }}' --form 'file=@build/target/ark-desktop-wallet-mac-2.8.1.zip' | jq -r .permalink
 
   publish-windows:
     # needs: ["create-release"]

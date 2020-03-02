@@ -8,10 +8,7 @@
     type="button"
     @click="toggle"
   >
-    <span
-      v-if="label"
-      class="mr-4 text-theme-page-text"
-    >
+    <span class="mr-4 text-theme-page-text">
       {{ label }}
     </span>
     <span class="PluginManagerButtonSwitch__line">
@@ -46,10 +43,13 @@ export default {
       required: false,
       default: false
     },
-    label: {
-      type: String,
+    labels: {
+      type: Object,
       required: false,
-      default: ''
+      default: () => ({
+        active: 'PAGES.PLUGIN_MANAGER.ENABLED',
+        inactive: 'PAGES.PLUGIN_MANAGER.DISABLED'
+      })
     }
   },
 
@@ -66,6 +66,10 @@ export default {
         this.inputIsActive = value
         this.$emit('change', value)
       }
+    },
+
+    label () {
+      return this.inputIsActive ? this.$t(this.labels.active) : this.$t(this.labels.inactive)
     }
   },
 
