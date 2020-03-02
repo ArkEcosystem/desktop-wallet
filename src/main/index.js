@@ -5,6 +5,7 @@ import { setupPluginManager } from './plugin-manager'
 import { setupUpdater } from './updater'
 import winState from 'electron-window-state'
 import packageJson from '../../package.json'
+import createMenu from './menu'
 
 // It is necessary to require `electron-log` here to use it on the renderer process
 require('electron-log')
@@ -74,6 +75,7 @@ function broadcastURL (url) {
   }
 }
 
+createMenu({ createLoadingWindow })
 function createWindow () {
   const { width, height } = screen.getPrimaryDisplay().workAreaSize
 
@@ -96,6 +98,7 @@ function createWindow () {
       webviewTag: true
     }
   })
+  windows.main.isMain = true
 
   // The `window.main.show()` is executed after the opening splash screen
   ipcMain.on('splashscreen:app-ready', () => {
@@ -136,7 +139,6 @@ function createWindow () {
 
   windows.main.on('close', () => (windows.main = null))
   windows.main.on('closed', () => (windows.main = null))
-  windows.main.on('hide', () => createLoadingWindow())
 
   windows.main.webContents.on('did-finish-load', () => {
     const name = packageJson.build.productName
@@ -146,8 +148,6 @@ function createWindow () {
 
     broadcastURL(deeplinkingUrl)
   })
-
-  require('./menu')
 }
 
 function sendToWindow (key, value) {
