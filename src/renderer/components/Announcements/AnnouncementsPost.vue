@@ -88,7 +88,6 @@ export default {
       required: true
     },
     summary: {
-      type: String,
       required: true,
       validator: value => typeof value === 'string' || value === null
     },
