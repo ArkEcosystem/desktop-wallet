@@ -48,7 +48,6 @@ const createLoadingWindow = () => {
     width: 800,
     height: 600,
     backgroundColor: '#f7fafb',
-    parent: windows.main,
     skipTaskbar: true,
     frame: false,
     autoHideMenuBar: true,
@@ -137,6 +136,7 @@ function createWindow () {
 
   windows.main.on('close', () => (windows.main = null))
   windows.main.on('closed', () => (windows.main = null))
+  windows.main.on('hide', () => createLoadingWindow())
 
   windows.main.webContents.on('did-finish-load', () => {
     const name = packageJson.build.productName

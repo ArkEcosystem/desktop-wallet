@@ -477,8 +477,7 @@ class Action {
         message = {
           translation: 'SYNCHRONIZER.GROUP_2.NEW_BUSINESS_UPDATE',
           options: {
-            address: truncateMiddle(wallet.address),
-            name: transaction.asset.businessUpdate.name
+            address: truncateMiddle(wallet.address)
           }
         }
         break
@@ -488,7 +487,7 @@ class Action {
           translation: 'SYNCHRONIZER.GROUP_2.NEW_BRIDGECHAIN_REGISTRATION',
           options: {
             address: truncateMiddle(wallet.address),
-            name: transaction.asset.bridgechainRegistration.name
+            bridgechain: truncateMiddle(transaction.asset.bridgechainRegistration.genesisHash)
           }
         }
         break
@@ -498,7 +497,7 @@ class Action {
           translation: 'SYNCHRONIZER.GROUP_2.NEW_BRIDGECHAIN_RESIGNATION',
           options: {
             address: truncateMiddle(wallet.address),
-            name: transaction.asset.bridgechainRegistration.name
+            bridgechain: truncateMiddle(transaction.asset.bridgechainResignation.bridgechainId)
           }
         }
         break
@@ -508,7 +507,7 @@ class Action {
           translation: 'SYNCHRONIZER.GROUP_2.NEW_BRIDGECHAIN_UPDATE',
           options: {
             address: truncateMiddle(wallet.address),
-            name: transaction.asset.bridgechainRegistration.name
+            bridgechain: truncateMiddle(transaction.asset.bridgechainUpdate.bridgechainId)
           }
         }
         break
