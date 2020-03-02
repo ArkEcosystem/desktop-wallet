@@ -4,16 +4,9 @@ import { version as mainnetVersion } from '@config/networks/mainnet'
 import store from '@/store'
 import got from 'got'
 import cloneDeep from 'lodash.clonedeep'
+import { CryptoUtils } from './crypto/utils'
 
 export default class WalletService {
-  /*
-   * Normalizes the passphrase by decomposing any characters (if applicable)
-   * This is mainly used for the korean language where characters are combined while the passphrase was based on the decomposed consonants
-  */
-  static normalizePassphrase (passphrase) {
-    return passphrase.normalize('NFD')
-  }
-
   /*
    * Generate a wallet.
    * It does not check if the wallet is new (no transactions on the blockchain)
@@ -22,7 +15,7 @@ export default class WalletService {
    */
   static generate (pubKeyHash, language) {
     const passphrase = bip39.generateMnemonic(null, null, bip39.wordlists[language])
-    const publicKey = Identities.Keys.fromPassphrase(this.normalizePassphrase(passphrase)).publicKey
+    const publicKey = Identities.Keys.fromPassphrase(CryptoUtils.normalizePassphrase(passphrase)).publicKey
     return {
       address: Identities.Address.fromPublicKey(publicKey, pubKeyHash),
       passphrase
@@ -43,7 +36,7 @@ export default class WalletService {
    * @return {String}
    */
   static getAddress (passphrase, pubKeyHash) {
-    return Identities.Address.fromPassphrase(this.normalizePassphrase(passphrase), pubKeyHash)
+    return Identities.Address.fromPassphrase(CryptoUtils.normalizePassphrase(passphrase), pubKeyHash)
   }
 
   static getAddressFromPublicKey (publicKey, pubKeyHash) {
@@ -80,7 +73,7 @@ export default class WalletService {
    * @return {String}
    */
   static getPublicKeyFromPassphrase (passphrase) {
-    return Identities.PublicKey.fromPassphrase(this.normalizePassphrase(passphrase))
+    return Identities.PublicKey.fromPassphrase(CryptoUtils.normalizePassphrase(passphrase))
   }
 
   /**
@@ -189,7 +182,7 @@ export default class WalletService {
    * @return {String}
    */
   static signMessage (message, passphrase) {
-    return Crypto.Message.sign(message, this.normalizePassphrase(passphrase))
+    return Crypto.Message.sign(message, CryptoUtils.normalizePassphrase(passphrase))
   }
 
   /**
@@ -232,7 +225,7 @@ export default class WalletService {
    * @return {Boolean}
    */
   static validatePassphrase (passphrase, pubKeyHash) {
-    const publicKey = Identities.Keys.fromPassphrase(this.normalizePassphrase(passphrase)).publicKey
+    const publicKey = Identities.Keys.fromPassphrase(CryptoUtils.normalizePassphrase(passphrase)).publicKey
     return Identities.PublicKey.validate(publicKey, pubKeyHash)
   }
 
@@ -243,7 +236,7 @@ export default class WalletService {
    * @return {Boolean}
    */
   static isBip39Passphrase (passphrase, language) {
-    return bip39.validateMnemonic(this.normalizePassphrase(passphrase), bip39.wordlists[language])
+    return bip39.validateMnemonic(CryptoUtils.normalizePassphrase(passphrase), bip39.wordlists[language])
   }
 
   /**
@@ -280,6 +273,6 @@ export default class WalletService {
    * @return {Boolean}
    */
   static verifyPassphrase (address, passphrase, pubKeyHash) {
-    return address === WalletService.getAddress(this.normalizePassphrase(passphrase), pubKeyHash)
+    return address === WalletService.getAddress(CryptoUtils.normalizePassphrase(passphrase), pubKeyHash)
   }
 }
