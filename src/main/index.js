@@ -1,6 +1,6 @@
 'use strict'
 
-import { app, BrowserWindow, ipcMain, screen } from 'electron'
+import { app, BrowserWindow, ipcMain, screen, globalShortcut } from 'electron'
 import { setupPluginManager } from './plugin-manager'
 import { setupUpdater } from './updater'
 import winState from 'electron-window-state'
@@ -150,6 +150,14 @@ function createWindow () {
 
     broadcastURL(deeplinkingUrl)
   })
+
+  const clearHistoryOnReload = () => {
+    windows.main.webContents.clearHistory()
+    windows.main.reload()
+  }
+
+  globalShortcut.register('f5', clearHistoryOnReload)
+  globalShortcut.register('CommandOrControl+R', clearHistoryOnReload)
 }
 
 function sendToWindow (key, value) {
