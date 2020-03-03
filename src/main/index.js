@@ -32,6 +32,7 @@ const windows = {
   main: null,
   loading: null
 }
+let windowState
 let deeplinkingUrl = null
 
 const winURL =
@@ -76,10 +77,43 @@ function broadcastURL (url) {
 }
 
 assignMenu({ createLoadingWindow })
+
+// The `window.main.show()` is executed after the opening splash screen
+ipcMain.on('splashscreen:app-ready', () => {
+  if (windows.loading) {
+    windows.loading.close()
+  }
+  windows.main.show()
+  windows.main.setFullScreen(windowState ? Boolean(windowState.isFullScreen) : false)
+})
+
+ipcMain.on('disable-iframe-protection', function (_event, urls) {
+  const filter = { urls }
+  windows.main.webContents.session.webRequest.onHeadersReceived(
+    filter,
+    (details, done) => {
+      const headers = details.responseHeaders
+
+      const xFrameOrigin = Object.keys(headers).find(header =>
+        header.toString().match(/^x-frame-options$/i)
+      )
+      if (xFrameOrigin) {
+        delete headers[xFrameOrigin]
+      }
+
+      done({
+        cancel: false,
+        responseHeaders: headers,
+        statusLine: details.statusLine
+      })
+    }
+  )
+})
+
 function createWindow () {
   const { width, height } = screen.getPrimaryDisplay().workAreaSize
 
-  const windowState = winState({
+  windowState = winState({
     defaultWidth: width,
     defaultHeight: height,
     fullScreen: false
@@ -99,38 +133,6 @@ function createWindow () {
     }
   })
   windows.main.isMain = true
-
-  // The `window.main.show()` is executed after the opening splash screen
-  ipcMain.on('splashscreen:app-ready', () => {
-    if (windows.loading) {
-      windows.loading.close()
-    }
-    windows.main.show()
-    windows.main.setFullScreen(windowState ? Boolean(windowState.isFullScreen) : false)
-  })
-
-  ipcMain.on('disable-iframe-protection', function (_event, urls) {
-    const filter = { urls }
-    windows.main.webContents.session.webRequest.onHeadersReceived(
-      filter,
-      (details, done) => {
-        const headers = details.responseHeaders
-
-        const xFrameOrigin = Object.keys(headers).find(header =>
-          header.toString().match(/^x-frame-options$/i)
-        )
-        if (xFrameOrigin) {
-          delete headers[xFrameOrigin]
-        }
-
-        done({
-          cancel: false,
-          responseHeaders: headers,
-          statusLine: details.statusLine
-        })
-      }
-    )
-  })
 
   windowState.manage(windows.main)
   windows.main.loadURL(winURL)
