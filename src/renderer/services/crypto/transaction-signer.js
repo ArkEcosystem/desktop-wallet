@@ -1,5 +1,5 @@
 import { Identities, Transactions } from '@arkecosystem/crypto'
-import { dayjs } from '@/services/datetim'
+import { dayjs } from '@/services/datetime'
 import { TRANSACTION_TYPES } from '@config'
 import store from '@/store'
 import TransactionService from '@/services/transaction'
