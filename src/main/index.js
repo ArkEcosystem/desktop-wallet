@@ -70,8 +70,8 @@ function broadcastURL (url) {
     return
   }
 
-  if (window.main && window.main.webContents) {
-    window.main.webContents.send('process-url', url)
+  if (windows.main && windows.main.webContents) {
+    windows.main.webContents.send('process-url', url)
     deeplinkingUrl = null
   }
 }
