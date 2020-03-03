@@ -1,45 +1,57 @@
 <template>
-  <div
-    v-if="hasImages"
-    class="PluginSlider"
-  >
-    <div class="relative w-full h-full">
-      <!-- Images -->
-      <transition-group
-        :name="sliderClass"
-        tag="div"
-        class="flex flex-no-wrap h-full"
-        @after-leave="transitionEnd"
-      >
-        <div
-          v-for="imageId in [currentImage]"
-          :key="imageId"
-          class="PluginSlider__slide"
+  <div v-if="hasImages">
+    <div class="PluginSlider">
+      <div class="relative w-full h-full">
+        <!-- Images -->
+        <transition-group
+          :name="sliderClass"
+          tag="div"
+          class="flex flex-no-wrap h-full"
+          @after-leave="transitionEnd"
         >
-          <img :src="`data:image/png;base64,${plugin.images[Math.abs(imageId) % plugin.images.length]}`">
-        </div>
-      </transition-group>
+          <div
+            v-for="imageId in [currentIndex]"
+            :key="imageId"
+            class="PluginSlider__slide"
+          >
+            <img :src="`data:image/png;base64,${plugin.images[imageId]}`">
+          </div>
+        </transition-group>
+      </div>
+
+      <!-- Left Button -->
+      <div
+        class="PluginSlider__left"
+        @click="previousImage"
+      >
+        <SvgIcon
+          name="caret-left"
+          view-box="0 0 12 12"
+        />
+      </div>
+
+      <!-- Right Button -->
+      <div
+        class="PluginSlider__right"
+        @click="nextImage"
+      >
+        <SvgIcon
+          name="caret-right"
+          view-box="0 0 12 12"
+        />
+      </div>
     </div>
 
-    <!-- Left Button -->
-    <div
-      class="PluginSlider__left"
-      @click="previousImage"
-    >
-      <SvgIcon
-        name="caret-left"
-        view-box="0 0 12 12"
-      />
-    </div>
-
-    <!-- Right Button -->
-    <div
-      class="PluginSlider__right"
-      @click="nextImage"
-    >
-      <SvgIcon
-        name="caret-right"
-        view-box="0 0 12 12"
+    <div class="flex mt-4 justify-center">
+      <div
+        v-for="page in plugin.images.length"
+        :key="page"
+        class="PluginSlider__page"
+        :class="{
+          'bg-theme-button': currentIndex + 1 !== page,
+          'bg-theme-button-active': currentIndex + 1 === page
+        }"
+        @click="goToPage(page)"
       />
     </div>
   </div>
@@ -63,7 +75,7 @@ export default {
   },
 
   data: () => ({
-    currentImage: 0,
+    currentIndex: 0,
     isTransitioning: false,
     sliderClass: 'slides-right'
   }),
@@ -85,8 +97,13 @@ export default {
       }
 
       this.isTransitioning = true
-      this.sliderClass = 'slides-left'
-      this.currentImage--
+      if (this.currentIndex === 0) {
+        this.sliderClass = 'slides-right'
+        this.currentIndex = this.plugin.images.length - 1
+      } else {
+        this.sliderClass = 'slides-left'
+        this.currentIndex--
+      }
     },
 
     nextImage () {
@@ -95,8 +112,26 @@ export default {
       }
 
       this.isTransitioning = true
-      this.sliderClass = 'slides-right'
-      this.currentImage++
+      if (this.currentIndex >= this.plugin.images.length - 1) {
+        this.sliderClass = 'slides-left'
+        this.currentIndex = 0
+      } else {
+        this.sliderClass = 'slides-right'
+        this.currentIndex++
+      }
+    },
+
+    goToPage (page) {
+      if (page < this.currentIndex + 1) {
+        this.sliderClass = 'slides-left'
+      } else if (page > this.currentIndex + 1) {
+        this.sliderClass = 'slides-right'
+      } else {
+        return
+      }
+
+      this.isTransitioning = true
+      this.currentIndex = page - 1
     }
   }
 }
@@ -141,6 +176,10 @@ export default {
 .PluginSlider__left .SvgIcon,
 .PluginSlider__right .SvgIcon {
   @apply .m-auto;
+}
+
+.PluginSlider__page {
+  @apply .rounded-full .p-1 .mx-1 .cursor-pointer;
 }
 
 .slides-right-leave-active,
