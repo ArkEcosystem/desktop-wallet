@@ -275,11 +275,12 @@ export default {
     getTransactionData () {
       const businessAsset = Object.assign({}, this.form.asset)
 
-      if (this.isUpdate) {
-        for (const property of Object.keys(this.form.asset)) {
-          if (this[`hasSame${this.strings_capitalizeFirst(property)}`]) {
-            delete businessAsset[property]
-          }
+      for (const property of Object.keys(this.form.asset)) {
+        if (
+          (this.isUpdate && this[`hasSame${this.strings_capitalizeFirst(property)}`]) ||
+          !businessAsset[property].length
+        ) {
+          delete businessAsset[property]
         }
       }
 
