@@ -333,7 +333,7 @@ export default {
 
         repository: {
           required (value) {
-            return (this.business && this.business.respository) ? required(value) : true
+            return (this.business && this.business.repository) ? required(value) : true
           },
           tooShort: minLength(minRepositoryLength),
           url
