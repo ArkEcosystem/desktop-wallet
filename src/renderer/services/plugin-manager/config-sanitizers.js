@@ -100,15 +100,9 @@ const sanitizeLogo = config => {
 }
 
 const sanitizeImages = config => {
-  // const images = getOption(config, 'images') || config.images || []
+  const images = getOption(config, 'images') || config.images || []
 
-  // return images.filter(image => /^https?:\/\/raw.githubusercontent.com[A-Za-z0-9/_.-]+\.png$/.test(image))
-  return [
-    'https://d.newsweek.com/en/full/1176971/obesity-meme.png',
-    'https://d.newsweek.com/en/full/1176971/obesity-meme.png',
-    'https://d.newsweek.com/en/full/1176971/obesity-meme.png',
-    'https://d.newsweek.com/en/full/1176971/obesity-meme.png'
-  ]
+  return images.filter(image => /^https?:\/\/raw.githubusercontent.com[A-Za-z0-9/_.-]+\.png$/.test(image))
 }
 
 const sanitizeName = name => {

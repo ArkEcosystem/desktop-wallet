@@ -193,6 +193,21 @@ export class PluginManager {
     return body.toString('base64')
   }
 
+  async fetchImages (images) {
+    if (!images || !images.length) {
+      return []
+    }
+
+    const requests = []
+    for (const imageUrl of images) {
+      requests.push(
+        got(imageUrl, { encoding: null }).then(response => response.body.toString('base64'))
+      )
+    }
+
+    return Promise.all(requests)
+  }
+
   async fetchPluginsFromAdapter () {
     const sessionAdapter = this.app.$store.getters['session/pluginAdapter']
     if (this.adapter !== sessionAdapter) {
@@ -208,6 +223,12 @@ export class PluginManager {
         plugin.logo = await this.fetchLogo(plugin.logo)
       } catch (error) {
         plugin.logo = null
+      }
+
+      try {
+        plugin.images = await this.fetchImages(plugin.images)
+      } catch (error) {
+        plugin.images = []
       }
 
       const validName = validatePackageName(plugin.id).validForNewPackages
@@ -261,7 +282,15 @@ export class PluginManager {
 
     try {
       plugin.logo = await this.fetchLogo(plugin.logo)
-    } catch (error) { }
+    } catch (error) {
+      plugin.logo = null
+    }
+
+    try {
+      plugin.images = await this.fetchImages(plugin.images)
+    } catch (error) {
+      plugin.images = []
+    }
 
     return plugin
   }
@@ -347,6 +376,12 @@ export class PluginManager {
         pluginConfig.logo = await this.fetchLogo(pluginConfig.logo)
       } catch (error) {
         pluginConfig.logo = null
+      }
+
+      try {
+        pluginConfig.images = await this.fetchImages(pluginConfig.images)
+      } catch (error) {
+        pluginConfig.images = []
       }
     }
 

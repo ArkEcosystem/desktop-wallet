@@ -16,7 +16,7 @@
           :key="imageId"
           class="PluginSlider__slide"
         >
-          <img :src="plugin.images[Math.abs(imageId) % plugin.images.length]">
+          <img :src="`data:image/png;base64,${plugin.images[Math.abs(imageId) % plugin.images.length]}`">
         </div>
       </transition-group>
     </div>
@@ -109,21 +109,16 @@ export default {
 }
 
 .PluginSlider__slide {
-  @apply .flex .flex-none .h-full .relative;
+  @apply .absolute .flex .flex-none .h-full .pin .overflow-hidden;
   width: 640px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right:0;
 }
 .PluginSlider__slide img {
-  @apply .max-h-full .m-auto;
+  @apply .max-w-full .m-auto;
 }
 
 .PluginSlider__left,
 .PluginSlider__right {
-  @apply .absolute .rounded .bg-theme-button .text-theme-button-text .flex .pin-y .my-auto .cursor-pointer;
+  @apply .absolute .rounded .bg-theme-button .text-theme-button-text .flex .pin-y .my-auto .cursor-pointer .shadow;
   width: 35px;
   height: 35px;
 }
