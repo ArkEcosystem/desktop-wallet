@@ -180,14 +180,14 @@ export default {
     hasSameVat () {
       return (
         this.form.asset.vat === this.business.vat ||
-        !!this.form.asset.vat === !!this.business.vat
+        (!this.form.asset.vat && (this.business.vat === undefined))
       )
     },
 
     hasSameRepository () {
       return (
         this.form.asset.repository === this.business.repository ||
-        !!this.form.asset.repository === !!this.business.repository
+        (!this.form.asset.repository && (this.business.repository === undefined))
       )
     },
 
