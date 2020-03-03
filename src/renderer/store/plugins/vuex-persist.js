@@ -1,8 +1,8 @@
 // Based on https://github.com/championswimmer/vuex-persist
 
-import lodash from 'lodash'
+import { merge as lodashMerge } from 'lodash'
 
-const merge = (into, from) => lodash.merge({}, into, from)
+const merge = (into, from) => lodashMerge({}, into, from)
 
 class SimplePromiseQueue {
   constructor () {

@@ -1,4 +1,4 @@
-import merge from 'lodash/merge'
+import { merge } from 'lodash'
 
 const mixins = [
   require('./assets').default,

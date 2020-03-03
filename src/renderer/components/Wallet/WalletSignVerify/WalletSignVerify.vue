@@ -89,7 +89,7 @@
 
 <script>
 import { ButtonClipboard, ButtonModal } from '@/components/Button'
-import { WalletSignModal, WalletVerifyModal } from '../'
+import { WalletSignModal, WalletVerifyModal } from '@/components/Wallet'
 import SvgIcon from '@/components/SvgIcon'
 import { clone } from 'lodash'
 

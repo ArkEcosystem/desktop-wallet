@@ -1,4 +1,4 @@
-import isElement from 'lodash/isElement'
+import { isElement } from 'lodash'
 
 export function getSafeContext (vueContext, component) {
   const context = vueContext._data || {}
