@@ -78,7 +78,7 @@
 </template>
 
 <script>
-import { map, mapValues, sortBy, uniqBy } from 'lodash'
+import { mapValues, sortBy, uniqBy } from 'lodash'
 import { ProfileAvatar, ProfileRemovalConfirmation } from '@/components/Profile'
 
 export default {
@@ -147,7 +147,7 @@ export default {
         })
       }
       const sorted = sortBy(balances, ['amount', 'formatted'])
-      return map(sorted, 'formatted').reverse()
+      return sorted.map(sort => sort.formatted).reverse()
     }
   },
 

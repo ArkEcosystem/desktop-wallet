@@ -1,5 +1,6 @@
-import { transform, isFunction, isObject, isUndefined, isNil } from 'lodash'
+import { transform } from 'lodash'
 import { validate as jsonValidate } from 'jsonschema'
+import { isNil } from '@/utils'
 
 export default class BaseModel {
   constructor (schema) {
@@ -7,7 +8,7 @@ export default class BaseModel {
   }
 
   deserialize (input) {
-    if (!isObject(input)) {
+    if (typeof input !== 'object') {
       throw new Error(`Invalid model input type: \`${input}\``)
     }
 
@@ -24,9 +25,9 @@ export default class BaseModel {
     return transform(this.schema.properties, (result, item, key) => {
       let value
 
-      if (item.format && isFunction(item.format)) {
+      if (item.format && typeof item.format === 'function') {
         value = item.format(input)
-      } else if (!isUndefined(input[key])) {
+      } else if (input[key] !== undefined) {
         value = input[key]
       }
 

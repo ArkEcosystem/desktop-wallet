@@ -1,7 +1,7 @@
 import got from 'got'
 import dayjs from 'dayjs'
 import moment from 'moment'
-import { min, max } from 'lodash'
+import { min, max } from '@/utils'
 import { MARKET } from '@config'
 
 // All prices on the CoinCap API are standardized in USD (United States Dollar)

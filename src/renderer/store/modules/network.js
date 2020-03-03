@@ -87,7 +87,6 @@ export default new BaseModule(NetworkModel, {
         const { constants } = await Client.fetchNetworkConfig(network.server)
         commit('UPDATE', {
           ...network,
-          crypto,
           constants
         })
 

@@ -69,7 +69,7 @@ import Cycled from 'cycled'
 import InputField from './InputField'
 import WalletService from '@/services/wallet'
 import truncate from '@/filters/truncate'
-import { includes, isEmpty, map, orderBy, unionBy } from 'lodash'
+import { includes, isEmpty, orderBy, unionBy } from 'lodash'
 
 export default {
   name: 'InputAddress',
@@ -193,7 +193,7 @@ export default {
 
       const source = unionBy(wallets, contacts, 'address').filter(wallet => wallet && !!wallet.address)
 
-      const addresses = map(source, (wallet) => {
+      const addresses = source.map(wallet => {
         const address = {
           name: null,
           address: wallet.address
