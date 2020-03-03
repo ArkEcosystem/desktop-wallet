@@ -34,7 +34,8 @@ export default {
     filterBlacklistedPlugins: true,
     pluginAdapter: 'npm',
     priceApi: 'coingecko',
-    pluginMenuOpen: true
+    pluginMenuOpen: true,
+    defaultChosenFee: 'AVERAGE'
   }),
 
   getters: {
@@ -95,7 +96,8 @@ export default {
     filterBlacklistedPlugins: state => state.filterBlacklistedPlugins,
     pluginAdapter: state => state.pluginAdapter,
     priceApi: state => state.priceApi,
-    pluginMenuOpen: state => state.pluginMenuOpen
+    pluginMenuOpen: state => state.pluginMenuOpen,
+    defaultChosenFee: state => state.defaultChosenFee
   },
 
   mutations: {
@@ -227,6 +229,10 @@ export default {
       state.pluginMenuOpen = pluginMenuOpen
     },
 
+    SET_DEFAULT_CHOSEN_FEE (state, defaultChosenFee) {
+      state.defaultChosenFee = defaultChosenFee
+    },
+
     RESET (state) {
       state.avatar = 'pages/new-profile-avatar.svg'
       state.background = null
@@ -259,6 +265,7 @@ export default {
       state.pluginAdapter = 'npm'
       state.priceApi = 'coingecko'
       state.pluginMenuOpen = true
+      state.defaultChosenFee = 'AVERAGE'
 
       i18n.locale = state.language
     },
@@ -295,6 +302,7 @@ export default {
       state.pluginAdapter = value.pluginAdapter
       state.priceApi = value.priceApi
       state.pluginMenuOpen = value.pluginMenuOpen !== undefined ? value.pluginMenuOpen : true
+      state.defaultChosenFee = value.defaultChosenFee
 
       i18n.locale = state.language
     }
@@ -454,6 +462,10 @@ export default {
 
     setPluginMenuOpen ({ commit }, value) {
       commit('SET_PLUGIN_MENU_OPEN', value)
+    },
+
+    setDefaultChosenFee ({ commit }, value) {
+      commit('SET_DEFAULT_CHOSEN_FEE', value)
     }
   }
 }

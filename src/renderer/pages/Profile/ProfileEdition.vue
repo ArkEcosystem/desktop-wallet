@@ -186,6 +186,18 @@
                 />
               </ListDividedItem>
 
+              <ListDividedItem :label="$t('COMMON.DEFAULT_CHOSEN_FEE')">
+                <MenuDropdown
+                  :class="{
+                    'ProfileEdition__field--modified': modified.defaultChosenFee && modified.defaultChosenFee !== profile.defaultChosenFee
+                  }"
+                  :items="defaultFees"
+                  :value="defaultChosenFee"
+                  :position="['-75%', '0%']"
+                  @select="selectDefaultChosenFee"
+                />
+              </ListDividedItem>
+
               <ListDividedItem :label="$t('COMMON.ADVANCED_MODE')">
                 <ButtonSwitch
                   ref="advancedMode"
@@ -412,7 +424,8 @@ export default {
       timeFormat: '',
       isAdvancedModeEnabled: false,
       marketChartOptions: {},
-      priceApi: 'coingecko'
+      priceApi: 'coingecko',
+      defaultChosenFee: 'AVERAGE'
     },
     routeLeaveCallback: null,
     tab: 'profile',
@@ -454,6 +467,12 @@ export default {
         coingecko: 'CoinGecko',
         cryptocompare: 'CryptoCompare',
         coincap: 'CoinCap'
+      }
+    },
+    defaultFees () {
+      return {
+        LAST: this.$t('INPUT_FEE.LAST'),
+        AVERAGE: this.$t('INPUT_FEE.AVERAGE')
       }
     },
 
@@ -528,6 +547,9 @@ export default {
     priceApi () {
       return this.modified.priceApi || this.profile.priceApi
     },
+    defaultChosenFee () {
+      return this.modified.defaultChosenFee || this.profile.defaultChosenFee
+    },
     // TODO update it when modified, but it's changed on the sidemenu
     theme () {
       return this.modified.theme || this.profile.theme
@@ -599,6 +621,7 @@ export default {
     this.modified.marketChartOptions = this.profile.marketChartOptions
     this.modified.isAdvancedModeEnabled = this.profile.isAdvancedModeEnabled
     this.modified.priceApi = this.profile.priceApi || 'coingecko'
+    this.modified.defaultChosenFee = this.profile.defaultChosenFee || 'AVERAGE'
   },
 
   methods: {
@@ -703,6 +726,10 @@ export default {
 
     selectPriceApi (priceApi) {
       this.__updateSession('priceApi', priceApi)
+    },
+
+    selectDefaultChosenFee (defaultChosenFee) {
+      this.__updateSession('defaultChosenFee', defaultChosenFee)
     },
 
     setAdvancedMode (mode) {
