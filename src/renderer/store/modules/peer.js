@@ -460,7 +460,7 @@ export default {
         if (updateCurrentPeer) {
           peerStatus = await this._vm.$client.fetchPeerStatus()
         } else {
-          const client = new ClientService(false)
+          const client = new ClientService()
           client.host = getBaseUrl(currentPeer)
           client.client.withOptions({ timeout: 3000 })
           peerStatus = await client.fetchPeerStatus()
@@ -491,7 +491,7 @@ export default {
      * @return {ClientService}
      */
     async clientServiceFromPeer (_, peer) {
-      const client = new ClientService(false)
+      const client = new ClientService()
       client.host = getBaseUrl(peer)
       client.client.withOptions({ timeout: 3000 })
 
@@ -528,7 +528,7 @@ export default {
         return i18n.t('PEER.WRONG_NETWORK')
       }
 
-      const client = new ClientService(false)
+      const client = new ClientService()
       client.host = baseUrl
       client.client.withOptions({ timeout: 3000 })
 

@@ -3,9 +3,7 @@ import { castArray, chunk, orderBy } from 'lodash'
 import logger from 'electron-log'
 import { TRANSACTION_GROUPS, TRANSACTION_TYPES } from '@config'
 import store from '@/store'
-import eventBus from '@/plugins/event-bus'
 import TransactionService from '@/services/transaction'
-import priceApi from '@/services/price-api'
 import { TransactionBuilderService } from './crypto/transaction-builder.service'
 import { TransactionSigner } from './crypto/transaction-signer'
 import BigNumber from '@/plugins/bignumber'
@@ -114,13 +112,9 @@ export default class ClientService {
     }
   }
 
-  constructor (watchProfile = true) {
+  constructor () {
     this.__host = null
     this.client = new Connection('http://localhost')
-
-    if (watchProfile) {
-      this.__watchProfile()
-    }
   }
 
   get host () {
@@ -676,31 +670,5 @@ export default class ClientService {
       })
       return [transaction]
     }
-  }
-
-  // todo: move this out, not the responsibility of the client
-  __watchProfile () {
-    store.watch(
-      (_, getters) => getters['session/profile'],
-      async (profile, oldProfile) => {
-        if (!profile) {
-          return
-        }
-
-        const currentPeer = store.getters['peer/current']()
-        if (currentPeer && currentPeer.ip) {
-          const scheme = currentPeer.isHttps ? 'https://' : 'http://'
-          this.host = `${scheme}${currentPeer.ip}:${currentPeer.port}`
-        }
-
-        if (!oldProfile || profile.id !== oldProfile.id) {
-          eventBus.emit('client:changed')
-        }
-
-        priceApi.setAdapter(profile.priceApi)
-        store.dispatch('market/refreshTicker')
-      },
-      { immediate: true }
-    )
   }
 }
