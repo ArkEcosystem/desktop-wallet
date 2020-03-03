@@ -350,20 +350,24 @@ describe.each([
       })
 
       it('should return null if not dirty', () => {
-        wrapper.vm.$v.form.asset.vat.$model = ''
-        wrapper.vm.$v.form.asset.vat.$reset()
+        if (componentName === 'TransactionFormBusinessRegistration') {
+          wrapper.vm.$v.form.asset.vat.$model = ''
+          wrapper.vm.$v.form.asset.vat.$reset()
 
-        expect(wrapper.vm.$v.form.asset.vat.$dirty).toBe(false)
-        expect(wrapper.vm.$v.form.asset.vat.$invalid).toBe(false)
-        expect(wrapper.vm.vatError).toBe(null)
+          expect(wrapper.vm.$v.form.asset.vat.$dirty).toBe(false)
+          expect(wrapper.vm.$v.form.asset.vat.$invalid).toBe(false)
+          expect(wrapper.vm.vatError).toBe(null)
+        }
       })
 
       it('should return null if empty as not required', () => {
-        wrapper.vm.$v.form.asset.vat.$model = ''
+        if (componentName === 'TransactionFormBusinessRegistration') {
+          wrapper.vm.$v.form.asset.vat.$model = ''
 
-        expect(wrapper.vm.$v.form.asset.vat.$dirty).toBe(true)
-        expect(wrapper.vm.$v.form.asset.vat.$invalid).toBe(false)
-        expect(wrapper.vm.vatError).toBe(null)
+          expect(wrapper.vm.$v.form.asset.vat.$dirty).toBe(true)
+          expect(wrapper.vm.$v.form.asset.vat.$invalid).toBe(false)
+          expect(wrapper.vm.vatError).toBe(null)
+        }
       })
 
       it('should not return error if shorter than max (15)', () => {
@@ -439,12 +443,14 @@ describe.each([
       })
 
       it('should return null if not dirty', () => {
-        wrapper.vm.$v.form.asset.repository.$model = ''
-        wrapper.vm.$v.form.asset.repository.$reset()
+        if (componentName === 'TransactionFormBusinessRegistration') {
+          wrapper.vm.$v.form.asset.repository.$model = ''
+          wrapper.vm.$v.form.asset.repository.$reset()
 
-        expect(wrapper.vm.$v.form.asset.repository.$dirty).toBe(false)
-        expect(wrapper.vm.$v.form.asset.repository.$invalid).toBe(false)
-        expect(wrapper.vm.repositoryError).toBe(null)
+          expect(wrapper.vm.$v.form.asset.repository.$dirty).toBe(false)
+          expect(wrapper.vm.$v.form.asset.repository.$invalid).toBe(false)
+          expect(wrapper.vm.repositoryError).toBe(null)
+        }
       })
 
       it('should not return error if longer than min (12)', () => {
