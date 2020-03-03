@@ -9,6 +9,7 @@
         :name="sliderClass"
         tag="div"
         class="flex flex-no-wrap h-full"
+        @after-leave="transitionEnd"
       >
         <div
           v-for="imageId in [currentImage]"
@@ -63,6 +64,7 @@ export default {
 
   data: () => ({
     currentImage: 0,
+    transitionRunning: false,
     sliderClass: 'slides-right'
   }),
 
@@ -73,12 +75,26 @@ export default {
   },
 
   methods: {
+    transitionEnd () {
+      this.transitionRunning = false
+    },
+
     previousImage () {
+      if (this.transitionRunning) {
+        return
+      }
+
+      this.transitionRunning = true
       this.sliderClass = 'slides-left'
       this.currentImage--
     },
 
     nextImage () {
+      if (this.transitionRunning) {
+        return
+      }
+
+      this.transitionRunning = true
       this.sliderClass = 'slides-right'
       this.currentImage++
     }
