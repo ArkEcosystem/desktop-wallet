@@ -1,6 +1,6 @@
 import got from 'got'
 import dayjs from 'dayjs'
-import { min, max } from 'lodash'
+import { min, max } from '@/utils'
 import { MARKET } from '@config'
 
 export default class CryptoCompareAdapter {

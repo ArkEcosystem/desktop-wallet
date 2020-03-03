@@ -39,7 +39,7 @@
 </template>
 
 <script>
-import concat from 'lodash/concat'
+import { concat } from 'lodash'
 import { PLUGINS } from '@config'
 import { PluginManagerButtonMenu } from '@/components/PluginManager/PluginManagerButtons'
 

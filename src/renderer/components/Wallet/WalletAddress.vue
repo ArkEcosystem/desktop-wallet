@@ -85,7 +85,9 @@
         @mouseover="onMouseOver"
         @mouseout="onMouseOut"
       >
-        {{ wallet_formatAddress(address, addressLength) }}
+        <slot>
+          {{ wallet_formatAddress(address, addressLength) }}
+        </slot>
       </a>
     </span>
 

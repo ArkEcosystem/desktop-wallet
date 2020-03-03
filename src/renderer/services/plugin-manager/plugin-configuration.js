@@ -2,6 +2,7 @@ import {
   sanitizeAuthor,
   sanitizeCategories,
   sanitizeId,
+  sanitizeImages,
   sanitizeIsOfficial,
   sanitizeKeywords,
   sanitizeLogo,
@@ -22,6 +23,7 @@ export class PluginConfiguration {
     keywords,
     description,
     logo,
+    images,
     homepage,
     isOfficial,
     minVersion,
@@ -38,6 +40,7 @@ export class PluginConfiguration {
     this.keywords = keywords
     this.description = description
     this.logo = logo
+    this.images = images
     this.homepage = homepage
     this.isOfficial = isOfficial
     this.minVersion = minVersion
@@ -57,6 +60,7 @@ export class PluginConfiguration {
       keywords: sanitizeKeywords(config.keywords),
       description: config.description,
       logo: sanitizeLogo(config),
+      images: sanitizeImages(config),
       homepage: config.homepage,
       isOfficial: sanitizeIsOfficial(config.name),
       minVersion: sanitizeMinVersion(config),
