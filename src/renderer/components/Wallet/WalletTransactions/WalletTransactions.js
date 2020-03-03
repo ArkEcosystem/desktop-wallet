@@ -1,5 +1,4 @@
-import at from 'lodash/at'
-import isEqual from 'lodash/isEqual'
+import { at, isEqual } from 'lodash'
 import mixin from './mixin'
 import mergeTableTransactions from '@/components/utils/merge-table-transactions'
 import { TransactionTable } from '@/components/Transaction'

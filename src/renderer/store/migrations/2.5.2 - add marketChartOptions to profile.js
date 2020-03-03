@@ -1,8 +1,8 @@
-import { clone, isUndefined } from 'lodash'
+import { clone } from 'lodash'
 
 export default store => {
   store.getters['profile/all'].forEach(profile => {
-    if (isUndefined(profile.marketChartOptions)) {
+    if (profile.marketChartOptions === undefined) {
       const updatedProfile = clone(profile)
 
       updatedProfile.marketChartOptions = {

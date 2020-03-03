@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import localforage from 'localforage'
-import { isNull, merge, pullAll, keys } from 'lodash'
+import { merge, pullAll, keys } from 'lodash'
 
 import packageJson from '@package.json'
 
@@ -44,7 +44,7 @@ const vuexMigrations = new VuexPersistMigrations({
   untilVersion: packageJson.version,
   fromVersion (store) {
     const version = store.getters['app/latestAppliedMigration']
-    return isNull(version) ? '0.0.0' : version
+    return version === null ? '0.0.0' : version
   }
 })
 

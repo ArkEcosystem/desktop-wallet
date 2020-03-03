@@ -1,4 +1,4 @@
-import { find, groupBy, keyBy, map, maxBy, partition, uniqBy } from 'lodash'
+import { groupBy, keyBy, maxBy, partition, uniqBy } from 'lodash'
 import { TRANSACTION_GROUPS, TRANSACTION_TYPES } from '@config'
 import eventBus from '@/plugins/event-bus'
 import truncateMiddle from '@/filters/truncate-middle'
@@ -152,8 +152,8 @@ class Action {
    * @return {Object}
    */
   async fetch () {
-    const allAddresses = map(uniqBy(this.allWallets, 'address'), 'address')
-    const walletAddresses = map(uniqBy(this.wallets, 'address'), 'address')
+    const allAddresses = uniqBy(this.allWallets, 'address').map(wallet => wallet.address)
+    const walletAddresses = uniqBy(this.wallets, 'address').map(wallet => wallet.address)
 
     // Fetch in parallel TODO if 1 success and the other fails
     const [walletsData, transactionsByAddress] = await Promise.all([
@@ -254,7 +254,7 @@ class Action {
       const transactions = transactionsByAddress[address]
 
       if (transactions && transactions.length) {
-        const wallet = find(this.wallets, { address })
+        const wallet = this.wallets.find(wallet => wallet.address === address)
         const latestAt = await this.processWalletTransactions(wallet, transactions)
         if (latestAt) {
           walletsTransactionsAt[address] = latestAt
@@ -318,7 +318,7 @@ class Action {
    */
   async processUnconfirmedVotes () {
     const unconfirmedVotes = this.$getters['session/unconfirmedVotes']
-    const addresses = map(uniqBy(unconfirmedVotes, 'address'), 'address')
+    const addresses = uniqBy(unconfirmedVotes, 'address').map(wallet => wallet.address)
 
     for (const address of addresses) {
       const votes = await this.$client.fetchWalletVotes(address)
