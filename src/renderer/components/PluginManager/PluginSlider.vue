@@ -64,7 +64,7 @@ export default {
 
   data: () => ({
     currentImage: 0,
-    transitionRunning: false,
+    isTransitioning: false,
     sliderClass: 'slides-right'
   }),
 
@@ -76,25 +76,25 @@ export default {
 
   methods: {
     transitionEnd () {
-      this.transitionRunning = false
+      this.isTransitioning = false
     },
 
     previousImage () {
-      if (this.transitionRunning) {
+      if (this.isTransitioning) {
         return
       }
 
-      this.transitionRunning = true
+      this.isTransitioning = true
       this.sliderClass = 'slides-left'
       this.currentImage--
     },
 
     nextImage () {
-      if (this.transitionRunning) {
+      if (this.isTransitioning) {
         return
       }
 
-      this.transitionRunning = true
+      this.isTransitioning = true
       this.sliderClass = 'slides-right'
       this.currentImage++
     }
