@@ -1,11 +1,11 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import VuexPersistence from 'vuex-persist'
 import localforage from 'localforage'
-import { isNull, pullAll, keys } from 'lodash'
+import { merge, pullAll, keys } from 'lodash'
 
 import packageJson from '@package.json'
 
+import { VuexPersistence } from '@/store/plugins/vuex-persist'
 import vuexPersistReady from '@/store/plugins/vuex-persist-ready'
 import VuexPersistMigrations from '@/store/plugins/vuex-persist-migrations'
 import AnnouncementsModule from '@/store/modules/announcements'
@@ -40,26 +40,33 @@ const modules = {
   wallet: WalletModule
 }
 
-// Modules that should not be persisted
-const ignoreModules = [
-  'updater'
-]
-
 const vuexMigrations = new VuexPersistMigrations({
   untilVersion: packageJson.version,
   fromVersion (store) {
     const version = store.getters['app/latestAppliedMigration']
-    return isNull(version) ? '0.0.0' : version
+    return version === null ? '0.0.0' : version
   }
 })
 
+const modulesWithoutPersistence = pullAll(keys(modules), ['delegate', 'market', 'updater'])
+
 const vuexPersist = new VuexPersistence({
-  // It is necessary to enable the strict mode to watch to mutations, such as `RESTORE_MUTATION`
-  strictMode: true,
-  asyncStorage: true,
   key: 'ark-desktop',
   storage: localforage,
-  modules: pullAll(keys(modules), ignoreModules)
+  reducer: state => {
+    const networks = Object.values(state.network.all).concat(
+      Object.values(state.network.customNetworks)
+    )
+
+    for (const network of networks) {
+      delete network.crypto
+    }
+
+    return modulesWithoutPersistence.reduce(
+      (a, i) => merge(a, { [i]: state[i] }),
+      {}
+    )
+  }
 })
 
 export default new Vuex.Store({

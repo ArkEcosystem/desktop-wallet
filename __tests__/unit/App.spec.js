@@ -28,7 +28,8 @@ beforeEach(() => {
           'session/profile': {
             id: 'test-profile'
           }
-        }
+        },
+        watch: jest.fn()
       }
     }
   })

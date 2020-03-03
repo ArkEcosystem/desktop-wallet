@@ -1,4 +1,4 @@
-import cloneDeep from 'lodash/cloneDeep'
+import { cloneDeep } from 'lodash'
 
 export function create (walletApi, app) {
   return () => {

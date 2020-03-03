@@ -23,18 +23,26 @@
       />
 
       <div class="flex-1 px-4">
-        <div class="TransactionMultiPaymentList__recipient py-1">
-          <span class="font-bold">
+        <div class="TransactionMultiPaymentList__recipient flex py-1">
+          <span class="font-bold mr-1">
             {{ $t('TRANSACTION.RECIPIENT') }}:
           </span>
 
-          <span>
+          <WalletAddress
+            v-if="showLinks"
+            :address="item.address || item.recipientId"
+            @click="emitClick"
+          >
+            {{ formatWalletAddress(item.address || item.recipientId) }}
+          </WalletAddress>
+
+          <span v-else>
             {{ formatWalletAddress(item.address || item.recipientId) }}
           </span>
         </div>
 
-        <div class="TransactionMultiPaymentList__amount py-1">
-          <span class="font-bold">
+        <div class="TransactionMultiPaymentList__amount flex py-1">
+          <span class="font-bold mr-1">
             {{ $t('TRANSACTION.AMOUNT') }}:
           </span>
 
@@ -50,6 +58,7 @@
 <script>
 import truncate from '@/filters/truncate'
 import { InputEditableList } from '@/components/Input'
+import WalletAddress from '@/components/Wallet/WalletAddress'
 import WalletIdenticon from '@/components/Wallet/WalletIdenticon'
 
 export default {
@@ -57,6 +66,7 @@ export default {
 
   components: {
     InputEditableList,
+    WalletAddress,
     WalletIdenticon
   },
 
@@ -81,6 +91,12 @@ export default {
     },
 
     showCount: {
+      type: Boolean,
+      required: false,
+      default: false
+    },
+
+    showLinks: {
       type: Boolean,
       required: false,
       default: false
@@ -123,6 +139,10 @@ export default {
 
     emitRemove (index) {
       this.$emit('remove', index)
+    },
+
+    emitClick () {
+      this.$emit('click')
     }
   }
 }

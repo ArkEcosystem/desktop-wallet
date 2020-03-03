@@ -1,12 +1,10 @@
-import { isUndefined } from 'lodash'
-
 // Update the schema of profile avatars to be consistent and use `null` instead
 // of `null` and `undefined` when to establish a "letter" avatar.
 // It also fixes profiles that have been created, incorrectly, using `extraItems`
 // from `SelectionAvatar`
 export default store => {
   store.getters['profile/all'].forEach(profile => {
-    if (isUndefined(profile.avatar) || (profile.avatar && profile.avatar.onlyLetter)) {
+    if (profile.avatar === undefined || (profile.avatar && profile.avatar.onlyLetter)) {
       store.dispatch('profile/update', {
         ...profile,
         avatar: null
