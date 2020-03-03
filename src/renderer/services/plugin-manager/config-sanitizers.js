@@ -99,6 +99,18 @@ const sanitizeLogo = config => {
   }
 }
 
+const sanitizeImages = config => {
+  // const images = getOption(config, 'images') || config.images || []
+
+  // return images.filter(image => /^https?:\/\/raw.githubusercontent.com[A-Za-z0-9/_.-]+\.png$/.test(image))
+  return [
+    'https://d.newsweek.com/en/full/1176971/obesity-meme.png',
+    'https://d.newsweek.com/en/full/1176971/obesity-meme.png',
+    'https://d.newsweek.com/en/full/1176971/obesity-meme.png',
+    'https://d.newsweek.com/en/full/1176971/obesity-meme.png'
+  ]
+}
+
 const sanitizeName = name => {
   const parts = name.split('/')
   const tmp = parts[parts.length > 1 ? 1 : 0]
@@ -155,6 +167,7 @@ export {
   sanitizeAuthor,
   sanitizeCategories,
   sanitizeId,
+  sanitizeImages,
   sanitizeIsOfficial,
   sanitizeKeywords,
   sanitizeLogo,
