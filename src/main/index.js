@@ -156,8 +156,17 @@ function createWindow () {
     windows.main.webContents.clearHistory()
   }
 
-  globalShortcut.register('f5', clearHistoryOnReload)
-  globalShortcut.register('CmdOrCtrl+R', clearHistoryOnReload)
+  const showLoadingWindowOnReload = () => {
+    clearHistoryOnReload()
+
+    if (windows.main && windows.main.isMain) {
+      windows.main.hide()
+      createLoadingWindow()
+    }
+  }
+
+  globalShortcut.register('f5', showLoadingWindowOnReload)
+  globalShortcut.register('CmdOrCtrl+R', showLoadingWindowOnReload)
 }
 
 function sendToWindow (key, value) {
