@@ -10,10 +10,11 @@ export default new BaseModel({
     },
     title: {},
     summary: {
-      format: (data) => trunc(data['content:encoded'], 300).text
+      type: ['string', 'null'],
+      format: data => trunc(data['content:encoded'], 300).text
     },
     url: {
-      format: (data) => data.link
+      format: data => data.link
     },
     isRead: {
       format: () => false

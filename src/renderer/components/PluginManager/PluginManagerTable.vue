@@ -174,9 +174,7 @@ export default {
       ]
 
       if (this.activeCategory !== 'all') {
-        const index = columns.findIndex(el => {
-          return el.field === 'categories'
-        })
+        const index = columns.findIndex(el => el.field === 'categories')
         columns.splice(index, 1)
       }
 
