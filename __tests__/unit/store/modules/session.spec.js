@@ -86,10 +86,13 @@ describe('SessionModule', () => {
     it('should set the value for the last fee by type', () => {
       store.dispatch('session/setLastFeeByType', {
         fee: '1000',
-        type: 0
+        type: 0,
+        typeGroup: 1
       })
       expect(store.getters['session/lastFees']).toEqual({
-        0: '1000'
+        1: {
+          0: '1000'
+        }
       })
     })
   })

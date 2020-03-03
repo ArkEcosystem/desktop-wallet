@@ -42,7 +42,7 @@
 
 <script>
 import { camelCase, includes, findKey, upperFirst } from 'lodash'
-import { TRANSACTION_TYPES } from '@config'
+import { TRANSACTION_GROUPS, TRANSACTION_TYPES } from '@config'
 import MultiSignature from '@/services/client-multisig'
 import { ModalLoader, ModalWindow } from '@/components/Modal'
 import TransactionForm from './TransactionForm'
@@ -229,7 +229,8 @@ export default {
               this.storeTransaction(this.transaction)
               this.updateLastFeeByType({
                 fee: this.transaction.fee.toString(),
-                type: this.transaction.type
+                type: this.transaction.type,
+                typeGroup: this.transaction.typeGroup || TRANSACTION_GROUPS.STANDARD
               })
 
               const { data } = response.body
@@ -350,14 +351,17 @@ export default {
       })
     },
 
-    updateLastFeeByType ({ fee, type }) {
-      this.$store.dispatch('session/setLastFeeByType', { fee, type })
+    updateLastFeeByType ({ fee, type, typeGroup }) {
+      this.$store.dispatch('session/setLastFeeByType', { fee, type, typeGroup })
 
       this.$store.dispatch('profile/update', {
         ...this.session_profile,
         lastFees: {
           ...this.session_profile.lastFees,
-          [type]: fee
+          [typeGroup]: {
+            ...this.session_profile.lastFees[typeGroup],
+            [type]: fee
+          }
         }
       })
     }
