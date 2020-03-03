@@ -231,7 +231,9 @@
         <TransactionMultiPaymentList
           :title="null"
           :items="transaction.asset.payments"
+          :show-links="true"
           readonly
+          @click="emitClose"
         />
       </ListDividedItem>
     </ListDivided>

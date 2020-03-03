@@ -204,7 +204,7 @@
 </template>
 
 <script>
-import { filter, uniqBy } from 'lodash'
+import { uniqBy } from 'lodash'
 import { sortByProps } from '@/components/utils/Sorting'
 import Loader from '@/components/utils/Loader'
 import { MenuNavigation, MenuNavigationItem } from '@/components/Menu'
@@ -402,13 +402,13 @@ export default {
       let filtered = wallets
 
       if (this.filters.hideLedger) {
-        filtered = filter(filtered, wallet => !wallet.isLedger)
+        filtered = filtered.filter(wallet => !wallet.isLedger)
       }
       if (this.filters.hideEmpty) {
-        filtered = filter(filtered, wallet => wallet.balance > 0)
+        filtered = filtered.filter(wallet => wallet.balance > 0)
       }
       if (this.searchQuery) {
-        filtered = filter(filtered, ({ address, balance, name }) => {
+        filtered = filtered.filter(({ address, balance, name }) => {
           let match = [
             address,
             balance.toString()

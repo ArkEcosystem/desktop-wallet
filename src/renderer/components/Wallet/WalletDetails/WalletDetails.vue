@@ -158,7 +158,7 @@
 
 <script>
 import electron from 'electron'
-import at from 'lodash/at'
+import { at } from 'lodash'
 /* eslint-disable vue/no-unused-components */
 import { ButtonGeneric } from '@/components/Button'
 import { TransactionModal } from '@/components/Transaction'

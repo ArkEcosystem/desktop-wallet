@@ -1,6 +1,5 @@
 import logger from 'electron-log'
 import semver from 'semver'
-import { isFunction } from 'lodash'
 
 export default class VuexMigrations {
   /**
@@ -25,8 +24,8 @@ export default class VuexMigrations {
       throw new Error(`The version "${version}" does not comply with semver`)
     }
 
-    const from = isFunction(this.fromVersion) ? this.fromVersion(this.store) : this.fromVersion
-    const until = isFunction(this.untilVersion) ? this.untilVersion(this.store) : this.untilVersion
+    const from = typeof this.fromVersion === 'function' ? this.fromVersion(this.store) : this.fromVersion
+    const until = typeof this.untilVersion === 'function' ? this.untilVersion(this.store) : this.untilVersion
 
     return semver.gt(version, from) && semver.lte(version, until)
   }
