@@ -134,7 +134,7 @@ describe('TransactionModal', () => {
         vendorField,
         confirmations: 0,
         timestamp,
-        sender: `public key of ${transaction.senderPublicKey}`,
+        sender: `address of ${transaction.senderPublicKey}`,
         recipient: transaction.recipientId,
         raw: transaction
       }
