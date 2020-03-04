@@ -82,6 +82,7 @@ export default function ({ createLoadingWindow }) {
           click: (_, focusedWindow) => {
             focusedWindow.reload()
             focusedWindow.webContents.clearHistory()
+            focusedWindow.webContents.session.clearCache()
             if (focusedWindow && focusedWindow.isMain) {
               focusedWindow.hide()
               createLoadingWindow()

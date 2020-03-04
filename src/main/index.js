@@ -151,13 +151,13 @@ function createWindow () {
     broadcastURL(deeplinkingUrl)
   })
 
-  const clearHistoryOnReload = () => {
+  const showLoadingWindowOnReload = (forceReload = false) => {
     windows.main.reload()
     windows.main.webContents.clearHistory()
-  }
 
-  const showLoadingWindowOnReload = () => {
-    clearHistoryOnReload()
+    if (forceReload) {
+      windows.main.webContents.session.clearCache()
+    }
 
     if (windows.main && windows.main.isMain) {
       windows.main.hide()
@@ -165,7 +165,13 @@ function createWindow () {
     }
   }
 
-  globalShortcut.registerAll(['f5', 'CmdOrCtrl+R', 'CmdOrCtrl+Shift+R'], showLoadingWindowOnReload)
+  ['f5', 'CmdOrCtrl+R', 'CmdOrCtrl+Shift+R'].forEach(shortcut => {
+    if (shortcut === 'CmdOrCtrl+Shift+R') {
+      globalShortcut.register(shortcut, showLoadingWindowOnReload.bind(this, true))
+    } else {
+      globalShortcut.register(shortcut, showLoadingWindowOnReload)
+    }
+  })
 }
 
 function sendToWindow (key, value) {
