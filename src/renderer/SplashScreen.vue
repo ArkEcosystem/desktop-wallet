@@ -10,10 +10,10 @@
     </div>
 
     <div class="flex-inline">
-      <h1 class="text-3xl mb-4">
+      <div class="text-4xl mb-4">
         <span class="font-semibold">{{ $t('COMMON.ARK') }}</span>
         {{ $t('COMMON.DESKTOP_WALLET') }}
-      </h1>
+      </div>
 
       <div class="text-sm mb-2">
         {{ $t('COMMON.INITIALIZING') }}
