@@ -1,6 +1,6 @@
 'use strict'
 
-import { app, BrowserWindow, ipcMain, screen, globalShortcut } from 'electron'
+import { app, BrowserWindow, ipcMain, screen } from 'electron'
 import { setupPluginManager } from './plugin-manager'
 import { setupUpdater } from './updater'
 import winState from 'electron-window-state'
@@ -149,28 +149,6 @@ function createWindow () {
     windows.main.setTitle(windowTitle)
 
     broadcastURL(deeplinkingUrl)
-  })
-
-  const showLoadingWindowOnReload = (forceReload = false) => {
-    windows.main.reload()
-    windows.main.webContents.clearHistory()
-
-    if (forceReload) {
-      windows.main.webContents.session.clearCache()
-    }
-
-    if (windows.main && windows.main.isMain) {
-      windows.main.hide()
-      createLoadingWindow()
-    }
-  }
-
-  ['f5', 'CmdOrCtrl+R', 'CmdOrCtrl+Shift+R'].forEach(shortcut => {
-    if (shortcut === 'CmdOrCtrl+Shift+R') {
-      globalShortcut.register(shortcut, showLoadingWindowOnReload.bind(this, true))
-    } else {
-      globalShortcut.register(shortcut, showLoadingWindowOnReload)
-    }
   })
 }
 
