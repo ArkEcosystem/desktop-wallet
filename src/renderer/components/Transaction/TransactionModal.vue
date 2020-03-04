@@ -320,8 +320,8 @@ export default {
 
       let timestamp
 
-      if (!transaction.timestamp || (transaction.timestamp <= Math.floor(new Date().getTime() / 1000))) {
-        timestamp = new Date().getTime()
+      if (!transaction.timestamp || (transaction.timestamp <= Math.floor(Date.now() / 1000))) {
+        timestamp = Date.now()
       } else {
         timestamp = transaction.timestamp
       }
