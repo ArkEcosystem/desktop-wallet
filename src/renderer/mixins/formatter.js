@@ -35,10 +35,15 @@ export default {
      */
     formatter_date (value, format = null) {
       let userLanguage =
-        (window.navigator.userLanguage || window.navigator.language).toLowerCase()
+        (window.navigator.userLanguage || window.navigator.language).toLowerCase() || 'en'
 
-      if (userLanguage === 'en-us') {
-        userLanguage = 'en'
+      const [language, region] = userLanguage.split('-')
+
+      if (
+        (language === 'en' && region === 'us') ||
+        language === region
+      ) {
+        userLanguage = language
       }
 
       try {
