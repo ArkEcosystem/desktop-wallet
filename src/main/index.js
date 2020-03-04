@@ -152,6 +152,15 @@ function createWindow () {
   })
 }
 
+ipcMain.on('show-loading-window-on-reload', () => {
+  if (windows.main && windows.main.isMain) {
+    windows.main.reload()
+    windows.main.webContents.clearHistory()
+    windows.main.hide()
+    createLoadingWindow()
+  }
+})
+
 function sendToWindow (key, value) {
   if (windows.main && windows.main.webContents) {
     windows.main.webContents.send(key, value)
