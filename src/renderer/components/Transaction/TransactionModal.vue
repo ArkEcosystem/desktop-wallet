@@ -320,14 +320,10 @@ export default {
 
       let timestamp
 
-      if (!transaction.timestamp) {
-        timestamp = Math.floor((new Date()).getTime())
-      } else if (transaction.timestamp > Math.floor(new Date().getTime() / 1000)) {
-        timestamp = Math.floor(transaction.timestamp)
-      }
-
-      if (!transaction.timestamp) {
-        timestamp = Math.floor((new Date()).getTime())
+      if (!transaction.timestamp || (transaction.timestamp <= Math.floor(new Date().getTime() / 1000))) {
+        timestamp = new Date().getTime()
+      } else {
+        timestamp = transaction.timestamp
       }
 
       if (transaction.version === 1) {
