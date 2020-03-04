@@ -1,6 +1,6 @@
 'use strict'
 
-import { app, BrowserWindow, ipcMain, screen, globalShortcut } from 'electron'
+import { app, BrowserWindow, ipcMain, screen } from 'electron'
 import { setupPluginManager } from './plugin-manager'
 import { setupUpdater } from './updater'
 import winState from 'electron-window-state'
@@ -150,24 +150,16 @@ function createWindow () {
 
     broadcastURL(deeplinkingUrl)
   })
+}
 
-  const clearHistoryOnReload = () => {
+ipcMain.on('show-loading-window-on-reload', () => {
+  if (windows.main && windows.main.isMain) {
     windows.main.reload()
     windows.main.webContents.clearHistory()
+    windows.main.hide()
+    createLoadingWindow()
   }
-
-  const showLoadingWindowOnReload = () => {
-    clearHistoryOnReload()
-
-    if (windows.main && windows.main.isMain) {
-      windows.main.hide()
-      createLoadingWindow()
-    }
-  }
-
-  globalShortcut.register('f5', showLoadingWindowOnReload)
-  globalShortcut.register('CmdOrCtrl+R', showLoadingWindowOnReload)
-}
+})
 
 function sendToWindow (key, value) {
   if (windows.main && windows.main.webContents) {
