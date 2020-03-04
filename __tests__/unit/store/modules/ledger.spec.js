@@ -365,7 +365,7 @@ describe('ledger store module', () => {
           data: ledgerWallets.slice(0, 9)
         })
 
-      await store.dispatch('ledger/connect')
+      await store.commit('ledger/SET_CONNECTED', true)
       expect(await store.dispatch('ledger/reloadWallets')).toEqual(expectedWallets)
     })
 
@@ -383,7 +383,7 @@ describe('ledger store module', () => {
         expectedWallets[walletId].name = expectedWallets[walletId].address
       }
 
-      await store.dispatch('ledger/connect')
+      await store.commit('ledger/SET_CONNECTED', true)
       expect(await store.dispatch('ledger/reloadWallets')).toEqual(expectedWallets)
     })
 

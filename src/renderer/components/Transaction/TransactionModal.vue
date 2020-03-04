@@ -41,7 +41,8 @@
 </template>
 
 <script>
-import { camelCase, includes, findKey, upperFirst } from 'lodash'
+import { camelCase, includes, findKey } from 'lodash'
+import { upperFirst } from '@/utils'
 import { TRANSACTION_TYPES } from '@config'
 import MultiSignature from '@/services/client-multisig'
 import { ModalLoader, ModalWindow } from '@/components/Modal'

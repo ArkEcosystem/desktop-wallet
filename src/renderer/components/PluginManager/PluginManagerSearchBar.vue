@@ -19,7 +19,7 @@
 
 <script>
 import SvgIcon from '@/components/SvgIcon'
-import debounce from 'lodash/debounce'
+import { debounce } from 'lodash'
 
 export default {
   name: 'PluginManagerSearchBar',
