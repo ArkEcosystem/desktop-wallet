@@ -69,13 +69,25 @@ export default function ({ createLoadingWindow }) {
           accelerator: 'CmdOrCtrl+R',
           click: (_, focusedWindow) => {
             focusedWindow.reload()
+            focusedWindow.webContents.clearHistory()
             if (focusedWindow && focusedWindow.isMain) {
               focusedWindow.hide()
               createLoadingWindow()
             }
           }
         },
-        { role: 'forcereload' },
+        {
+          label: 'Force Reload',
+          accelerator: 'CmdOrCtrl+Shift+R',
+          click: (_, focusedWindow) => {
+            focusedWindow.reload()
+            focusedWindow.webContents.clearHistory()
+            if (focusedWindow && focusedWindow.isMain) {
+              focusedWindow.hide()
+              createLoadingWindow()
+            }
+          }
+        },
         { role: 'toggledevtools' },
         { type: 'separator' },
         { role: 'resetzoom' },

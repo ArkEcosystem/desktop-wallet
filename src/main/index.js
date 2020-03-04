@@ -165,8 +165,7 @@ function createWindow () {
     }
   }
 
-  globalShortcut.register('f5', showLoadingWindowOnReload)
-  globalShortcut.register('CmdOrCtrl+R', showLoadingWindowOnReload)
+  globalShortcut.registerAll(['f5', 'CmdOrCtrl+R', 'CmdOrCtrl+Shift+R'], showLoadingWindowOnReload)
 }
 
 function sendToWindow (key, value) {
