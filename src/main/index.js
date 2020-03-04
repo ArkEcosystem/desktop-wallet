@@ -32,6 +32,7 @@ const windows = {
   main: null,
   loading: null
 }
+let windowState
 let deeplinkingUrl = null
 
 const winURL =
@@ -69,17 +70,50 @@ function broadcastURL (url) {
     return
   }
 
-  if (window.main && window.main.webContents) {
-    window.main.webContents.send('process-url', url)
+  if (windows.main && windows.main.webContents) {
+    windows.main.webContents.send('process-url', url)
     deeplinkingUrl = null
   }
 }
 
 assignMenu({ createLoadingWindow })
+
+// The `window.main.show()` is executed after the opening splash screen
+ipcMain.on('splashscreen:app-ready', () => {
+  if (windows.loading) {
+    windows.loading.close()
+  }
+  windows.main.show()
+  windows.main.setFullScreen(windowState ? Boolean(windowState.isFullScreen) : false)
+})
+
+ipcMain.on('disable-iframe-protection', function (_event, urls) {
+  const filter = { urls }
+  windows.main.webContents.session.webRequest.onHeadersReceived(
+    filter,
+    (details, done) => {
+      const headers = details.responseHeaders
+
+      const xFrameOrigin = Object.keys(headers).find(header =>
+        header.toString().match(/^x-frame-options$/i)
+      )
+      if (xFrameOrigin) {
+        delete headers[xFrameOrigin]
+      }
+
+      done({
+        cancel: false,
+        responseHeaders: headers,
+        statusLine: details.statusLine
+      })
+    }
+  )
+})
+
 function createWindow () {
   const { width, height } = screen.getPrimaryDisplay().workAreaSize
 
-  const windowState = winState({
+  windowState = winState({
     defaultWidth: width,
     defaultHeight: height,
     fullScreen: false
@@ -100,38 +134,6 @@ function createWindow () {
   })
   windows.main.isMain = true
 
-  // The `window.main.show()` is executed after the opening splash screen
-  ipcMain.on('splashscreen:app-ready', () => {
-    if (windows.loading) {
-      windows.loading.close()
-    }
-    windows.main.show()
-    windows.main.setFullScreen(windowState ? Boolean(windowState.isFullScreen) : false)
-  })
-
-  ipcMain.on('disable-iframe-protection', function (_event, urls) {
-    const filter = { urls }
-    windows.main.webContents.session.webRequest.onHeadersReceived(
-      filter,
-      (details, done) => {
-        const headers = details.responseHeaders
-
-        const xFrameOrigin = Object.keys(headers).find(header =>
-          header.toString().match(/^x-frame-options$/i)
-        )
-        if (xFrameOrigin) {
-          delete headers[xFrameOrigin]
-        }
-
-        done({
-          cancel: false,
-          responseHeaders: headers,
-          statusLine: details.statusLine
-        })
-      }
-    )
-  })
-
   windowState.manage(windows.main)
   windows.main.loadURL(winURL)
   windows.main.hide()
@@ -149,6 +151,15 @@ function createWindow () {
     broadcastURL(deeplinkingUrl)
   })
 }
+
+ipcMain.on('show-loading-window-on-reload', () => {
+  if (windows.main && windows.main.isMain) {
+    windows.main.reload()
+    windows.main.webContents.clearHistory()
+    windows.main.hide()
+    createLoadingWindow()
+  }
+})
 
 function sendToWindow (key, value) {
   if (windows.main && windows.main.webContents) {

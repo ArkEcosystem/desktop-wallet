@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import chunk from 'lodash/chunk'
+import { chunk } from 'lodash'
 import { MenuOptions, MenuOptionsItem } from '@/components/Menu'
 
 export default {

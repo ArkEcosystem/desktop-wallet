@@ -1,5 +1,5 @@
 import { PLUGINS } from '@config'
-import chunk from 'lodash/chunk'
+import { chunk } from 'lodash'
 import got from 'got'
 import packageJson from 'package-json'
 

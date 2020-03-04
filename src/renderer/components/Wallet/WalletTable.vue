@@ -199,9 +199,7 @@ export default {
       ]
 
       if (!this.showVotedDelegates) {
-        const index = columns.findIndex(el => {
-          return el.field === 'delegate'
-        })
+        const index = columns.findIndex(el => el.field === 'delegate')
         columns.splice(index, 1)
       }
 

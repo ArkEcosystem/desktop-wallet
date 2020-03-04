@@ -31,6 +31,7 @@ export default {
       const readAnnouncementIndex = state.announcements.findIndex(announcement => announcement.guid === readAnnouncement.guid)
       Vue.set(state.announcements, readAnnouncementIndex, {
         ...readAnnouncement,
+        summary: null,
         isRead: true
       })
     },
@@ -45,6 +46,7 @@ export default {
 
         announcementsToUpdate.push({
           ...announcement,
+          summary: isRead ? null : announcement.summary,
           isRead
         })
       }
