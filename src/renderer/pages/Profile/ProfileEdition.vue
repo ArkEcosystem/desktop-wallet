@@ -83,7 +83,6 @@
                   }"
                   :items="languages"
                   :value="language"
-                  :position="['-50%', '0%']"
                   @select="selectLanguage"
                 >
                   <div
@@ -130,7 +129,6 @@
                   }"
                   :items="bip39Languages"
                   :value="bip39Language"
-                  :position="['-50%', '0%']"
                   @select="selectBip39Language"
                 />
               </ListDividedItem>
@@ -142,7 +140,6 @@
                   }"
                   :items="currencies"
                   :value="currency"
-                  :position="['-50%', '0%']"
                   @select="selectCurrency"
                 />
               </ListDividedItem>
@@ -154,7 +151,6 @@
                   }"
                   :items="timeFormats"
                   :value="timeFormat"
-                  :position="['-50%', '0%']"
                   @select="selectTimeFormat"
                 />
               </ListDividedItem>
@@ -169,7 +165,6 @@
                   }"
                   :items="networks"
                   :value="networkId"
-                  :position="['-50%', '0%']"
                   @select="selectNetwork"
                 />
               </ListDividedItem>
@@ -181,7 +176,6 @@
                   }"
                   :items="priceApis"
                   :value="priceApi"
-                  :position="['-75%', '0%']"
                   @select="selectPriceApi"
                 />
               </ListDividedItem>
@@ -260,7 +254,6 @@
                   }"
                   :items="themes"
                   :value="theme"
-                  :position="['-50%', '0%']"
                   @select="selectTheme"
                 />
                 <SelectionTheme
@@ -321,7 +314,6 @@
                   }"
                   :items="availablePluginAdapters"
                   :value="pluginAdapter"
-                  :position="['-50%', '0%']"
                   :is-disabled="!isAdapterDropdownEnabled"
                   @select="selectPluginAdapter"
                 />

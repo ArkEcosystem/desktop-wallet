@@ -31,7 +31,6 @@
             <MenuDropdown
               ref="currency-menu"
               :items="currencies"
-              :position="['-40%', '5%']"
               :value="sessionCurrency"
               @select="setCurrency"
             />
@@ -53,7 +52,6 @@
               v-if="pluginThemes"
               ref="theme-menu"
               :items="themes"
-              :position="['-40%', '5%']"
               :value="sessionTheme"
               @select="setTheme"
             />

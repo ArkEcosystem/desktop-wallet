@@ -67,7 +67,7 @@
                 />
               </div>
 
-              <div class="flex mb-5 ProfileNew__time-format-container">
+              <div class="flex mb-5">
                 <InputSelect
                   v-model="timeFormat"
                   :items="timeFormats"
@@ -467,10 +467,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-.ProfileNew__time-format-container {
-  /* To produce the exact same width  (.pr-5 class / 2) */
-  padding-right: 0.625rem
-}
-</style>

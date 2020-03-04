@@ -32,10 +32,10 @@
       v-if="isOpen && (hasDefaultSlot || hasItems)"
       v-click-outside.stop="close"
       :class="[{
-        'MenuDropdown--pin-above': pinAbove,
+        'pin-b pb-10': pinAbove,
         'pin-x': pinToInputWidth
       }, containerClasses]"
-      :style="{ transform: `translate(${position.join(',')})` }"
+      :style="{ right: adjustedPosition.x, top: pinAbove ? null : adjustedPosition.y }"
       class="MenuDropdown__container absolute min-w-full z-20"
     >
       <ul
@@ -101,9 +101,9 @@ export default {
       default: null
     },
     position: {
-      type: Array,
+      type: Object,
       required: false,
-      default: () => ['0%', '0%']
+      default: () => {}
     },
     pinAbove: {
       type: Boolean,
@@ -138,6 +138,13 @@ export default {
   }),
 
   computed: {
+    adjustedPosition () {
+      return {
+        x: '0',
+        y: '120%',
+        ...this.position
+      }
+    },
     entries () {
       return Array.isArray(this.items) ? zipObject(this.items, this.items) : this.items
     },
@@ -200,9 +207,5 @@ export default {
 <style lang="postcss">
 .MenuDropdown .MenuDropdownItem:last-child .MenuDropdownItem__container {
   border: none;
-}
-
-.MenuDropdown--pin-above {
-  @apply pin-b pb-10;
 }
 </style>
