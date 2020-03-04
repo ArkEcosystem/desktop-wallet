@@ -1205,6 +1205,7 @@ export default {
       REGISTER_DELEGATE: 'Register Delegate',
       RESIGN_DELEGATE: 'Resign Delegate',
       SECOND_PASSPHRASE: 'Second Passphrase',
+      DELETE_CONTACT: 'Delete Contact',
       DELETE_WALLET: 'Delete Wallet',
       SHOW_PUBLIC_KEY: 'Show Public Key',
       SHOW_ADDRESS: 'Show Address',

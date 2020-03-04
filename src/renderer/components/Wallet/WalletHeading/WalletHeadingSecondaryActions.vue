@@ -58,7 +58,7 @@
     <ButtonModal
       v-show="!currentWallet.isLedger"
       :class="buttonStyle"
-      :label="$t('WALLET_HEADING.ACTIONS.DELETE_WALLET')"
+      :label="currentWallet.isContact ? $t('WALLET_HEADING.ACTIONS.DELETE_CONTACT') : $t('WALLET_HEADING.ACTIONS.DELETE_WALLET')"
       icon="delete-wallet"
     >
       <template slot-scope="{ toggle, isOpen }">
