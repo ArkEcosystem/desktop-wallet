@@ -192,7 +192,7 @@ export default {
         if (await WalletService.hasBridgechains(this.currentWallet, this)) {
           businessResignOption.disabled = true
           businessResignOption.tooltip = {
-            content: this.$t('WALLET_HEADING.ACTIONS.BUSINESS.CANNOT_RESIGN'),
+            content: this.$root.$t('WALLET_HEADING.ACTIONS.BUSINESS.CANNOT_RESIGN'),
             placement: 'left'
           }
         }
