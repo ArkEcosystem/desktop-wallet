@@ -1369,7 +1369,8 @@ export default {
 
   WALLET_REMOVAL_CONFIRMATION: {
     NOTE: 'It does not delete any data on the blockchain. You could recover the wallet as long as you have the passphrase',
-    QUESTION: 'Are you sure you want to remove this wallet?'
+    QUESTION: 'Are you sure you want to remove this wallet?',
+    CONTACT_QUESTION: 'Are you sure you want to remove this contact?'
   },
 
   PLUGIN_REMOVAL_CONFIRMATION: {

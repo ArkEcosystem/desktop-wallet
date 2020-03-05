@@ -94,7 +94,8 @@ export default {
   },
 
   data: () => ({
-    registrationTypes: []
+    registrationTypes: [],
+    isContact: false
   }),
 
   computed: {
@@ -111,13 +112,24 @@ export default {
     }
   },
 
+  watch: {
+    currentWallet (wallet) {
+      this.isContact = wallet.isContact
+    }
+  },
+
   async mounted () {
     this.registrationTypes = await this.getRegistrationTypes()
+    this.isContact = this.currentWallet.isContact
   },
 
   methods: {
     async onRemoval () {
-      this.$router.push({ name: 'wallets' })
+      if (this.isContact) {
+        this.$router.push({ name: 'contacts' })
+      } else {
+        this.$router.push({ name: 'wallets' })
+      }
     },
 
     closeTransactionModal (toggleMethod, isOpen) {
