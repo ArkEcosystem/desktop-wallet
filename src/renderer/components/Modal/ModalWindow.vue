@@ -238,7 +238,7 @@ export default {
 }
 
 .ModalWindow__container__actions {
-  @apply absolute pin-x pin-t flex justify-end m-2 p-2;
+  @apply absolute pin-x pin-t flex justify-end m-2 p-2 z-10;
 }
 
 .ModalWindow--maximized .ModalWindow__container__content {
