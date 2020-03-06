@@ -192,7 +192,6 @@ export default {
 
 .PluginSlider__right {
   @apply .pin-r .mr-6;
-  padding-left: 0.125rem;
 }
 
 .PluginSlider__left .SvgIcon,
