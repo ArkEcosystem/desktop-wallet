@@ -4,7 +4,8 @@
       class="ModalWindow"
       :class="{
         'ModalWindow--maximized': isMaximized,
-        'ModalWindow--minimized': !isMaximized
+        'ModalWindow--minimized': !isMaximized,
+        [modalClasses]: true
       }"
       @mousedown.left="onBackdropClick"
     >
@@ -97,6 +98,11 @@ export default {
       type: Boolean,
       required: false,
       default: false
+    },
+    modalClasses: {
+      type: String,
+      required: false,
+      default: ''
     },
     headerClasses: {
       type: String,
