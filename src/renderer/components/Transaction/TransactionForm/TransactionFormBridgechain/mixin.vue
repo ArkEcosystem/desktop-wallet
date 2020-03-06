@@ -435,6 +435,16 @@ export default {
         if (this.$refs.fee && fee) {
           this.$refs.fee.emitFee(fee)
         }
+
+        if (this.$v.form.passphrase.$model) {
+          this.$refs.passphrase.touch()
+        } else if (this.$v.form.walletPassword.$model) {
+          this.$v.form.walletPassword.$touch()
+        }
+
+        if (this.$v.form.secondPassphrase.$model) {
+          this.$refs.secondPassphrase.touch()
+        }
       } else {
         await this.validateSeeds()
 
