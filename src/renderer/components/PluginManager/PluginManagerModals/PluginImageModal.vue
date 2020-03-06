@@ -166,11 +166,13 @@ export default {
 }
 
 .PluginSlider__slide {
-  @apply .absolute .flex .flex-none .h-full .w-full .pin .overflow-hidden;
+  @apply .absolute .flex .flex-none .h-full .w-full .pin .overflow-hidden .justify-center;
 }
 
 .PluginSlider__slide img {
-  @apply .max-w-full .h-full .m-auto;
+  max-width: none;
+  height: max-content;
+  @apply .m-auto .max-h-full;
 }
 
 .PluginSlider__left,

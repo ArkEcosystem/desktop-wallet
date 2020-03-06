@@ -17,11 +17,11 @@
             <div
               v-for="(image, imageId) in getPageImages(pageId)"
               :key="imageId"
-              class="w-1/3 text-center"
+              class="flex w-1/3 justify-center overflow-hidden mx-1 rounded-xl"
             >
               <img
                 :src="`data:image/png;base64,${image}`"
-                class="max-h-full rounded-xl"
+                class="m-auto h-full arounded-xl"
                 @click="openImage(imageId)"
               >
             </div>
@@ -179,11 +179,14 @@ export default {
 <style scoped>
 .PluginSlider {
   @apply .relative .select-none;
-  height: 130px;
+  height: 150px;
 }
 
 .PluginSlider__slide {
   @apply .absolute .flex .flex-none .h-full .pin .overflow-hidden;
+}
+.PluginSlider__slide img {
+  max-width: none;
 }
 .PluginSlider__slide img:hover {
   @apply .cursor-pointer .opacity-75;
