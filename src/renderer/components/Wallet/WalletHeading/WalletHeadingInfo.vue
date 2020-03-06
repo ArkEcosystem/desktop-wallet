@@ -258,11 +258,19 @@ export default {
     // Called by the parent when the address changed
     // Fetch watch-only address, since the wallet is not stored on vuex
     async refreshWallet () {
-      if (this.currentWallet.profileId.length) {
+      const updateLedger = this.currentWallet.isLedger && !this.$store.getters['session/backgroundUpdateLedger']
+      if (!updateLedger && this.currentWallet.profileId.length) {
         return
       }
 
       this.lazyWallet = await this.$client.fetchWallet(this.currentWallet.address)
+      if (updateLedger) {
+        const ledgerWallet = this.$store.getters['ledger/wallet'](this.currentWallet.address)
+        this.$store.dispatch('ledger/updateWallet', {
+          ...ledgerWallet,
+          balance: this.lazyWallet.balance
+        })
+      }
     },
 
     getStoredTransactions () {

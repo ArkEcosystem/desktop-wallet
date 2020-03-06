@@ -211,6 +211,7 @@ export default {
      * @return {void}
      */
     async disconnect ({ commit, dispatch }) {
+      await commit('STOP_ALL_LOADING_PROCESSES')
       commit('SET_CONNECTED', false)
       await ledgerService.disconnect()
       eventBus.emit('ledger:disconnected')
@@ -292,30 +293,60 @@ export default {
         await commit('STOP_ALL_LOADING_PROCESSES')
       }
 
-      const profileId = rootGetters['session/profileId']
-      const currentWallets = getters.wallets
-      const processId = cryptoLibrary.randomBytes(12).toString('base64')
-
-      if (clearFirst) {
-        commit('SET_WALLETS', {})
-        eventBus.emit('ledger:wallets-updated', {})
-      } else if (currentWallets.length) {
-        quantity = currentWallets.length
-      }
-      commit('SET_LOADING', processId)
-      const firstWallet = await dispatch('getWallet', 0)
-      const cachedWallets = keyBy(getters.cachedWallets(firstWallet.address), 'address')
       let wallets = {}
-      let startIndex = 0
-      if (!quantity && Object.keys(cachedWallets).length) {
-        wallets = cachedWallets
-        startIndex = Object.keys(cachedWallets).length - 2
-      }
-
-      // Note: We only batch if search endpoint available, otherwise we would
-      //       be doing unnecessary API calls for potentially cold wallets.
-      const batchIncrement = startIndex === 0 ? 10 : 2
+      const processId = cryptoLibrary.randomBytes(12).toString('base64')
       try {
+        const profileId = rootGetters['session/profileId']
+
+        if (clearFirst) {
+          commit('SET_WALLETS', {})
+          eventBus.emit('ledger:wallets-updated', {})
+        }
+
+        commit('SET_LOADING', processId)
+        const firstWallet = await dispatch('getWallet', 0)
+        const currentWallets = getters.walletsObject
+        const cachedWallets = getters.cachedWallets(firstWallet.address)
+        let startIndex = 0
+        if (cachedWallets.length) {
+          let returnWallets = false
+          if (!quantity || quantity > cachedWallets.length) {
+            wallets = keyBy(cachedWallets, 'address')
+            startIndex = Math.max(0, cachedWallets.length - 1)
+          } else if (quantity < cachedWallets.length) {
+            wallets = keyBy(cachedWallets.slice(0, quantity), 'address')
+            returnWallets = true
+          } else {
+            wallets = keyBy(cachedWallets, 'address')
+            returnWallets = true
+          }
+
+          if (returnWallets) {
+            if (getters.shouldStopLoading(processId)) {
+              commit('CLEAR_LOADING_PROCESS', processId)
+
+              return {}
+            }
+
+            commit('SET_WALLETS', wallets)
+            eventBus.emit('ledger:wallets-updated', wallets)
+            commit('CLEAR_LOADING_PROCESS', processId)
+            dispatch('cacheWallets')
+
+            return wallets
+          }
+        } else if (currentWallets && Object.keys(currentWallets).length) {
+          startIndex = Object.keys(currentWallets).length - 1
+          wallets = { ...currentWallets }
+        }
+
+        let batchIncrement = 10
+        if (quantity && Math.abs(quantity - startIndex) < 10) {
+          batchIncrement = Math.abs(quantity - startIndex)
+        } else if (!quantity && Object.keys(wallets).length > 0) {
+          batchIncrement = 2
+        }
+
         for (let ledgerIndex = startIndex; ; ledgerIndex += batchIncrement) {
           if (getters.shouldStopLoading(processId)) {
             commit('CLEAR_LOADING_PROCESS', processId)
@@ -336,22 +367,8 @@ export default {
             }
           }
 
-          let walletData = []
-          if (batchIncrement > 1) {
-            walletData = await this._vm.$client.fetchWallets(ledgerWallets.map(wallet => wallet.address))
-          } else {
-            try {
-              walletData = [await this._vm.$client.fetchWallet(ledgerWallets[0].address)]
-            } catch (error) {
-              logger.error(error)
-              const message = error.response ? error.response.body.message : error.message
-              if (message !== 'Wallet not found') {
-                throw error
-              }
-            }
-          }
-
           let hasCold = false
+          const walletData = await this._vm.$client.fetchWallets(ledgerWallets.map(wallet => wallet.address))
           const filteredWallets = []
           for (const ledgerWallet of ledgerWallets) {
             const wallet = walletData.find(wallet => wallet.address === ledgerWallet.address)

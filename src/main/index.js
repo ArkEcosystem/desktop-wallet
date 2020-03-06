@@ -70,8 +70,8 @@ function broadcastURL (url) {
     return
   }
 
-  if (window.main && window.main.webContents) {
-    window.main.webContents.send('process-url', url)
+  if (windows.main && windows.main.webContents) {
+    windows.main.webContents.send('process-url', url)
     deeplinkingUrl = null
   }
 }
@@ -151,6 +151,15 @@ function createWindow () {
     broadcastURL(deeplinkingUrl)
   })
 }
+
+ipcMain.on('show-loading-window-on-reload', () => {
+  if (windows.main && windows.main.isMain) {
+    windows.main.reload()
+    windows.main.webContents.clearHistory()
+    windows.main.hide()
+    createLoadingWindow()
+  }
+})
 
 function sendToWindow (key, value) {
   if (windows.main && windows.main.webContents) {

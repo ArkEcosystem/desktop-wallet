@@ -97,7 +97,8 @@ export default {
           field: 'seedNodes',
           formatFn: value => {
             return value.length
-          }
+          },
+          sortable: false
         },
         {
           label: this.$t('WALLET_BUSINESS.COLUMN.GENESIS_HASH'),

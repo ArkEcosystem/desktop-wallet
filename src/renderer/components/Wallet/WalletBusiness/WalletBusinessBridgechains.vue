@@ -41,8 +41,8 @@ export default {
       page: 1,
       limit: 10,
       sort: {
-        field: 'timestamp',
-        type: 'desc'
+        field: 'name',
+        type: 'asc'
       }
     }
   }),
@@ -89,17 +89,16 @@ export default {
         return
       }
 
-      let address, publicKey
+      let address
       if (this.wallet_fromRoute) {
         address = this.wallet_fromRoute.address.slice()
-        publicKey = this.wallet_fromRoute.publicKey
       }
 
       this.isFetching = true
 
       try {
         const { limit, page, sort } = this.queryParams
-        const response = await this.$client.fetchBusinessBridgechains(publicKey, {
+        const response = await this.$client.fetchBusinessBridgechains(address, {
           page,
           limit,
           orderBy: `${sort.field}:${sort.type}`
@@ -144,7 +143,7 @@ export default {
     },
 
     onSortChange ({ source, field, type }) {
-      if (!source) {
+      if (!source || source !== 'bridgechainsTab') {
         return
       }
 
