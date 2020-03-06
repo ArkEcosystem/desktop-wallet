@@ -85,11 +85,6 @@ exports.INTERVALS = {
 }
 
 exports.MARKET = {
-  source: {
-    cryptoCompare: 'https://min-api.cryptocompare.com',
-    coinGecko: 'https://api.coingecko.com/api/v3',
-    coinCap: 'https://api.coincap.io/v2'
-  },
   defaultCurrency: 'BTC',
   crypto: [
     'BTC',

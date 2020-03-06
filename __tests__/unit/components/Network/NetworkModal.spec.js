@@ -3,7 +3,6 @@ import { useI18nGlobally } from '../../__utils__/i18n'
 import Vue from 'vue'
 import Vuelidate from 'vuelidate'
 import nock from 'nock'
-import { MARKET } from '@config'
 import { NetworkModal } from '@/components/Network'
 import { testIsValid, testNumeric, testRequired, testScheme, testUrl } from '../../__utils__/validation'
 
@@ -149,7 +148,7 @@ describe('NetworkModal', () => {
             }
           })
 
-        nock(MARKET.source.cryptoCompare)
+        nock('https://min-api.cryptocompare.com')
           .get('/data/price')
           .query({
             fsym: 'TEST',
