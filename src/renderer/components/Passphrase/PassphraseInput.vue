@@ -206,6 +206,10 @@ export default {
       this.$v.$reset()
     },
 
+    touch () {
+      this.$v.model.$touch()
+    },
+
     onDecode (value, toggle) {
       this.model = this.qr_getPassphrase(value)
 
