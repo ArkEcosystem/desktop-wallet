@@ -61,7 +61,8 @@
       <TransactionModal
         v-if="isUriTransactionOpen"
         :schema="uriTransactionSchema"
-        :type="0"
+        :type="uriTransactionSchema.type"
+        :group="uriTransactionSchema.typeGroup"
         @cancel="closeUriTransaction"
         @sent="closeUriTransaction"
       />

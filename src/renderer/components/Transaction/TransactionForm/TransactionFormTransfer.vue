@@ -188,6 +188,7 @@ import SvgIcon from '@/components/SvgIcon'
 import WalletSelection from '@/components/Wallet/WalletSelection'
 import WalletService from '@/services/wallet'
 import mixin from './mixin'
+import { populateFormFromSchema } from './utils'
 
 export default {
   name: 'TransactionFormTransfer',
@@ -381,60 +382,11 @@ export default {
     },
 
     populateSchema () {
-      if (!this.schema) {
-        return
-      }
-
-      this.$set(this.form, 'amount', this.schema.amount || '')
-      this.$set(this.form, 'recipientId', this.schema.address || '')
-      this.$set(this.form, 'vendorField', this.schema.vendorField || '')
-      if (this.schema.wallet) {
-        const currentProfileId = this.$store.getters['session/profileId']
-        const ledgerWallets = this.$store.getters['ledger/isConnected'] ? this.$store.getters['ledger/wallets'] : []
-        const wallets = []
-
-        let foundNetwork = !this.schema.nethash
-        if (currentProfileId) {
-          if (this.schema.nethash) {
-            const profile = this.$store.getters['profile/byId'](currentProfileId)
-            const network = this.$store.getters['network/byId'](profile.networkId)
-            if (network.nethash === this.schema.nethash) {
-              foundNetwork = true
-              wallets.push(...this.$store.getters['wallet/byProfileId'](currentProfileId))
-            }
-          } else {
-            wallets.push(...this.$store.getters['wallet/byProfileId'](currentProfileId))
-          }
-        }
-
-        wallets.push(...ledgerWallets)
-
-        for (const profile of this.$store.getters['profile/all']) {
-          if (currentProfileId !== profile.id) {
-            if (this.schema.nethash) {
-              const network = this.$store.getters['network/byId'](profile.networkId)
-              if (network.nethash === this.schema.nethash) {
-                foundNetwork = true
-                wallets.push(...this.$store.getters['wallet/byProfileId'](profile.id))
-              }
-            } else {
-              wallets.push(...this.$store.getters['wallet/byProfileId'](profile.id))
-            }
-          }
-        }
-
-        const wallet = wallets.filter(wallet => wallet.address === this.schema.wallet)
-        if (wallet.length) {
-          this.currentWallet = wallet[0]
-        }
-        if (!foundNetwork) {
-          this.$emit('cancel')
-          this.$error(`${this.$t('TRANSACTION.ERROR.NETWORK_NOT_CONFIGURED')}: ${this.schema.nethash}`)
-        } else if (!wallet.length) {
-          this.$emit('cancel')
-          this.$error(`${this.$t('TRANSACTION.ERROR.WALLET_NOT_IMPORTED')}: ${this.schema.wallet}`)
-        }
-      }
+      populateFormFromSchema(this, {
+        amount: this.schema.amount,
+        recipientId: this.schema.address,
+        vendorField: this.schema.vendorField
+      })
     },
 
     transactionError () {

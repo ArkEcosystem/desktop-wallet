@@ -81,7 +81,9 @@ export default {
       type: Number,
       required: true,
       validator: value => {
-        return value === TRANSACTION_TYPES.MULTI_SIGN || includes(TRANSACTION_TYPES.GROUP_1, value)
+        return value === TRANSACTION_TYPES.MULTI_SIGN ||
+          includes(TRANSACTION_TYPES.GROUP_1, value) ||
+          includes(TRANSACTION_TYPES.GROUP_2, value)
       }
     },
 
