@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-ignore */
 import logger from 'electron-log'
 import i18n from '@/i18n'
 import { capitalize } from '@/utils'
@@ -5,19 +6,22 @@ import alertEvents from '@/plugins/alert-events'
 import { PriceTrackerService } from '@arkecosystem/platform-sdk'
 
 class PriceApi {
-  setAdapter (adapter) {
+  private adapter = 'cryptocompare';
+
+  public getAdapter () {
+    return PriceTrackerService.make(this.adapter)
+  }
+
+  public setAdapter (adapter: string) {
     this.adapter = adapter
   }
 
-  getAdapter () {
-    return PriceTrackerService.make(this.adapter || 'cryptocompare')
-  }
-
-  async verifyToken (token) {
+  public async verifyToken (token: string) {
     try {
       return this.getAdapter().verifyToken(token)
     } catch (error) {
       logger.error(error)
+      // @ts-ignore - todo: needs types
       alertEvents.$error(
         i18n.t('COMMON.FAILED_FETCH', {
           name: i18n.t('MARKET.CHECK_TRADEABLE'),
@@ -29,7 +33,7 @@ class PriceApi {
     return null
   }
 
-  async marketData (token) {
+  public async marketData (token: string) {
     try {
       const marketData = this.getAdapter().marketData(token)
 
@@ -40,6 +44,7 @@ class PriceApi {
       return marketData
     } catch (error) {
       logger.error(error)
+      // @ts-ignore - todo: needs types
       alertEvents.$error(
         i18n.t('COMMON.FAILED_FETCH', {
           name: i18n.t('MARKET.MARKET'),
@@ -49,14 +54,20 @@ class PriceApi {
     }
   }
 
-  async historicalPriceFor (type, token, currency) {
+  public async historicalPriceFor (
+    type: string,
+    token: string,
+    currency: string
+  ) {
     try {
+      // @ts-ignore
       return this.getAdapter()[`historicalPriceFor${capitalize(type)}`](
         token,
         currency
       )
     } catch (error) {
       logger.error(error)
+      // @ts-ignore - todo: needs types
       alertEvents.$error(
         i18n.t('COMMON.FAILED_FETCH', {
           name: i18n.t('MARKET.HISTORICAL_DATA'),
