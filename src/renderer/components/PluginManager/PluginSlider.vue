@@ -18,11 +18,11 @@
               v-for="(image, imageId) in getPageImages(pageId)"
               :key="imageId"
               class="w-1/3 text-center"
-              @click="openImage(imageId)"
             >
               <img
                 :src="`data:image/png;base64,${image}`"
                 class="max-h-full rounded-xl"
+                @click="openImage(imageId)"
               >
             </div>
           </div>
@@ -184,6 +184,9 @@ export default {
 
 .PluginSlider__slide {
   @apply .absolute .flex .flex-none .h-full .pin .overflow-hidden;
+}
+.PluginSlider__slide img:hover {
+  @apply .cursor-pointer .opacity-75;
 }
 
 .PluginSlider__left,
