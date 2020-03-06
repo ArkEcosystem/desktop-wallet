@@ -179,6 +179,10 @@ export default {
       this.$v.$reset()
     },
 
+    touch () {
+      this.$v.model.$touch()
+    },
+
     toggleVisible () {
       this.passwordIsVisible = !this.passwordIsVisible
     },
