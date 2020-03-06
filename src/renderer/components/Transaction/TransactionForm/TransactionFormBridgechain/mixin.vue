@@ -428,7 +428,13 @@ export default {
       if (this.step === 1) {
         this.step = 2
 
-        this.$v.form.fee.$touch()
+        const fee = this.$v.form.fee.$model
+
+        await this.$nextTick()
+
+        if (this.$refs.fee && fee) {
+          this.$refs.fee.emitFee(fee)
+        }
       } else {
         await this.validateSeeds()
 
