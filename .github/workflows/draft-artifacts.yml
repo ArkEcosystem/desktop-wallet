@@ -3,7 +3,7 @@ name: Draft Artifacts
 on:
   push:
     branches:
-      - "develop"
+      - "staging"
 
 jobs:
   build-linux:
