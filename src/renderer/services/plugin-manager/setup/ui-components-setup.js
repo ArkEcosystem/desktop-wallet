@@ -9,6 +9,7 @@ import ModalWindow from '@/components/Modal/ModalWindow'
 import Loader from '@/components/utils/Loader'
 import SvgIcon from '@/components/SvgIcon/SvgIcon'
 import TableWrapper from '@/components/utils/TableWrapper'
+import WalletIdenticon from '@/components/Wallet/WalletIdenticon'
 
 export function create (plugin) {
   return () => {
@@ -23,7 +24,8 @@ export function create (plugin) {
       ModalWindow,
       Loader,
       SvgIcon,
-      TableWrapper
+      TableWrapper,
+      WalletIdenticon
     }
 
     plugin.globalComponents = {
