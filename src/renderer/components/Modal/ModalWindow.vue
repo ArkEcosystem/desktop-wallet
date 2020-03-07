@@ -4,7 +4,8 @@
       class="ModalWindow"
       :class="{
         'ModalWindow--maximized': isMaximized,
-        'ModalWindow--minimized': !isMaximized
+        'ModalWindow--minimized': !isMaximized,
+        [modalClasses]: true
       }"
       @mousedown.left="onBackdropClick"
     >
@@ -97,6 +98,11 @@ export default {
       type: Boolean,
       required: false,
       default: false
+    },
+    modalClasses: {
+      type: String,
+      required: false,
+      default: ''
     },
     headerClasses: {
       type: String,
@@ -232,7 +238,7 @@ export default {
 }
 
 .ModalWindow__container__actions {
-  @apply absolute pin-x pin-t flex justify-end m-2 p-2;
+  @apply absolute pin-x pin-t flex justify-end m-2 p-2 z-10;
 }
 
 .ModalWindow--maximized .ModalWindow__container__content {
