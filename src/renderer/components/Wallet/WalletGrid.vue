@@ -53,11 +53,19 @@
                     {{ $t('COMMON.LEDGER') }}
                   </span>
                 </div>
-                <span
-                  class="font-bold mt-2 text-lg text-theme-page-text text-left whitespace-no-wrap"
-                >
-                  {{ formatter_networkCurrency(wallet.balance, 2) }}
-                </span>
+                <div class="text-left">
+                  <span
+                    class="font-bold mt-2 text-lg text-theme-page-text text-left whitespace-no-wrap"
+                  >
+                    {{ formatter_networkCurrency(wallet.balance, 2) }}
+                  </span>
+                  <span
+                    v-if="isMarketEnabled"
+                    class="text-xs font-bold text-theme-page-text-light ml-1"
+                  >
+                    {{ getAlternativeBalance(wallet.balance) }}
+                  </span>
+                </div>
               </div>
             </div>
 
@@ -132,7 +140,27 @@ export default {
     }
   },
 
+  computed: {
+    isMarketEnabled () {
+      return this.session_network.market.enabled
+    },
+
+    alternativeCurrency () {
+      return this.$store.getters['session/currency']
+    },
+
+    price () {
+      return this.$store.getters['market/lastPrice']
+    }
+  },
+
   methods: {
+    getAlternativeBalance (balance) {
+      const unitBalance = this.currency_subToUnit(balance)
+      const price = this.price || 0
+      return this.currency_format(unitBalance * price, { currency: this.alternativeCurrency })
+    },
+
     contextMenuOptions (wallet) {
       const options = {
         rename: {

@@ -1,5 +1,5 @@
-import dayjs from 'dayjs'
-import { findIndex, unionBy } from 'lodash'
+import { dayjs } from '@/services/datetime'
+import { unionBy } from 'lodash'
 import { APP, TRANSACTION_GROUPS, TRANSACTION_TYPES } from '@config'
 import eventBus from '@/plugins/event-bus'
 import TransactionModel from '@/models/transaction'
@@ -12,7 +12,7 @@ const includes = (objects, find) => objects.map(a => a.id).includes(find.id)
  * This module stores unconfirmed transactions, so it does not persist currently:
  * it is not required and avoids managing their lifecycle when they are confirmed.
  *
- * Internally the transactions are stored aggregated by `profileId``
+ * Internally the transactions are stored aggregated by `profileId`
  */
 export default {
   namespaced: true,
@@ -136,7 +136,7 @@ export default {
       }
     },
     DELETE (state, transaction) {
-      const index = findIndex(state.transactions[transaction.profileId], { id: transaction.id })
+      const index = state.transactions[transaction.profileId].findIndex(profileTransaction => profileTransaction.id === transaction.id)
       if (index === -1) {
         throw new Error(`Cannot delete transaction '${transaction.id}' - it does not exist on the state`)
       }

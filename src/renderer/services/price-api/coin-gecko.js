@@ -1,5 +1,5 @@
 import got from 'got'
-import dayjs from 'dayjs'
+import { dayjs } from '@/services/datetime'
 import { min, max } from 'lodash'
 import { MARKET } from '@config'
 

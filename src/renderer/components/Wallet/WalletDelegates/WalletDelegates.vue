@@ -72,7 +72,7 @@
 </template>
 
 <script>
-import isEqual from 'lodash/isEqual'
+import { isEqual } from 'lodash'
 import { ButtonClose } from '@/components/Button'
 import TableWrapper from '@/components/utils/TableWrapper'
 

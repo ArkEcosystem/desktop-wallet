@@ -35,7 +35,7 @@
 </template>
 
 <script>
-import { isEqual, isString, shuffle, uniq } from 'lodash'
+import { isEqual, shuffle, uniq } from 'lodash'
 import { InputText } from '@/components/Input'
 
 export default {
@@ -158,7 +158,7 @@ export default {
      * @param {String} word
      */
     isAccepted (position, word) {
-      return isString(word) && word !== '' && isEqual(this.acceptedWords[position], word)
+      return typeof word === 'string' && word !== '' && isEqual(this.acceptedWords[position], word)
     },
 
     resetData (data) {
