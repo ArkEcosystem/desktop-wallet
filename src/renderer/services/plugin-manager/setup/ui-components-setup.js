@@ -5,6 +5,7 @@ import * as ListDividedComponents from '@/components/ListDivided'
 import * as MenuComponents from '@/components/Menu'
 import { ModalCloseConfirmation, ModalConfirmation, ModalWindow } from '@/components/Modal'
 import Loader from '@/components/utils/Loader'
+import SvgIcon from '@/components/SvgIcon/SvgIcon'
 import TableWrapper from '@/components/utils/TableWrapper'
 
 export function create (plugin) {
@@ -19,6 +20,7 @@ export function create (plugin) {
       ModalConfirmation,
       ModalWindow,
       Loader,
+      SvgIcon,
       TableWrapper
     }
 
