@@ -565,6 +565,7 @@ export default {
       THEMES: 'Allows loading additional custom themes for the Desktop Wallet',
       TIMERS: 'Allows using timeouts and intervals',
       UI_COMPONENTS: 'Allows access to the standard Desktop Wallet components used throughout',
+      UTILS: 'Allows using utilities such as the BigNumber type and dayjs',
       WALLET_TABS: 'Allows showing an additional tab/page on the Wallet screen',
       WEBFRAME: 'Allows showing remote URL pages within a frame',
       WEBSOCKET: 'Allows connections to websockets'
