@@ -22,5 +22,17 @@
     </style>
 
     <script type="text/javascript" src="renderer.js"></script>
+    <script>
+      const { ipcRenderer } = require('electron')
+      const showLoadingWindowOnReload = event => {
+        if (event.key === 'F5') {
+          ipcRenderer.send('show-loading-window-on-reload')
+        }
+
+        return false
+      }
+
+      window.addEventListener('keyup', showLoadingWindowOnReload, true)
+    </script>
   </body>
 </html>
