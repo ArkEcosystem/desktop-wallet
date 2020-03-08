@@ -8,14 +8,7 @@ const validatePath = (parentPath, filePath) => {
   return relative && !relative.startsWith('..') && !path.isAbsolute(relative)
 }
 
-const parseFilters = (filters) => {
-  if (!filters || (Array.isArray(filters) && !filters.length)) {
-    return [
-      { name: 'JSON', extensions: ['json'] },
-      { name: 'All Files', extensions: ['*'] }
-    ]
-  }
-
+const parseFilters = filters => {
   if (typeof filters === 'string') {
     filters = [filters]
   }
@@ -26,8 +19,12 @@ const parseFilters = (filters) => {
         name: filter.toUpperCase(), extensions: [filter]
       }))
     }
-    return filters
   }
+
+  return filters || [
+    { name: 'JSON', extensions: ['json'] },
+    { name: 'All Files', extensions: ['*'] }
+  ]
 }
 
 export default {
