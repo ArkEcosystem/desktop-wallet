@@ -6,6 +6,7 @@ export function validateComponent ({ plugin, component, name, logger }) {
   const allowedKeys = [
     'data',
     'methods',
+    'watch',
     'computed',
     'components',
     'props',
