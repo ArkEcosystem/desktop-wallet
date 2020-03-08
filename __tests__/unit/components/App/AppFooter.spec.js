@@ -2,7 +2,7 @@ import { shallowMount } from '@vue/test-utils'
 import { AppFooter } from '@/components/App'
 
 let wrapper
-const translation = 'Mock Translaton'
+const translation = 'Mock Translation'
 const createWrapper = () => {
   wrapper = shallowMount(AppFooter, {
     mocks: {

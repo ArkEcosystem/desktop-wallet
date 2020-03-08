@@ -10,7 +10,6 @@ jest.mock('electron', () => ({
 let wrapper
 
 const push = jest.fn()
-const showSettings = jest.fn()
 const mockData = {
   session_profile: {
     avatar: 'mock_avatar',
@@ -30,13 +29,12 @@ const mockData = {
   $router: {
     push
   },
-  $t: () => 'Mock Translaton',
+  $t: () => 'Mock Translation',
   $refs: {
     settings: {
-      showSettings
+      showSettings: jest.fn()
     }
   }
-
 }
 
 const stubs = { RouterLink: RouterLinkStub }
@@ -59,30 +57,30 @@ describe('AppSidemenu', () => {
     expect(wrapper.contains('.AppSidemenu')).toBeTruthy()
   })
 
-  it('should render verticle by default', () => {
+  it('should be vertical by default', () => {
     expect(wrapper.contains('.AppSidemenu--vertical')).toBeTruthy()
   })
 
-  it('should render horizontal when isHorizontal is true', () => {
+  it('should be horizontal when isHorizontal is true', () => {
     createWrapper({
       isHorizontal: true
     })
     expect(wrapper.contains('.AppSidemenu--horizontal')).toBeTruthy()
   })
 
-  it('should render verticle when isHorizontal is false', () => {
+  it('should be vertical when isHorizontal is false', () => {
     createWrapper({
       isHorizontal: false
     })
     expect(wrapper.contains('.AppSidemenu--vertical')).toBeTruthy()
   })
 
-  it('should detetct standard avatar', () => {
+  it('should detect standard avatar', () => {
     expect(wrapper.vm.hasStandardAvatar).toBeTruthy()
     expect(wrapper.vm.pluginAvatar).toBe(null)
   })
 
-  it('should get plugn avatar if enabled', () => {
+  it('should get plugin avatar if enabled', () => {
     createWrapper(undefined, {
       ...mockData,
       session_profile: {
@@ -102,7 +100,7 @@ describe('AppSidemenu', () => {
     expect(wrapper.vm.activeItem).toBe(navName)
   })
 
-  it('should make a redirection', () => {
+  it('should do a redirect', () => {
     const name = 'redirectNavItem'
     wrapper.vm.redirect(name)
     expect(push).toHaveBeenCalledWith({ name })

@@ -19,7 +19,7 @@ const store = new Vuex.Store({
 })
 
 const mockData = {
-  $t: () => 'Mock Translaton'
+  $t: () => 'Mock Translation'
 }
 
 const createWrapper = (propsData = {}, mocks = mockData) => {
@@ -40,7 +40,7 @@ describe('AppSidemenuImportantNotification', () => {
     expect(wrapper.contains('.AppSidemenuImportantNotification')).toBeTruthy()
   })
 
-  it('should set notifcation visability state', () => {
+  it('should define the visibility status of the notification', () => {
     expect(wrapper.vm.isNotificationVisible).toBe(false)
     wrapper.vm.openNotification()
     expect(wrapper.vm.isNotificationVisible).toBe(true)

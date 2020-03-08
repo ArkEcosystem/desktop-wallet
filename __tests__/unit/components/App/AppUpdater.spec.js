@@ -33,7 +33,7 @@ const store = new Vuex.Store({
 })
 
 const mockData = {
-  $t: () => 'Mock Translaton',
+  $t: () => 'Mock Translation',
   process: {
     platform: 'linux'
   },
@@ -65,7 +65,7 @@ describe('AppUpdater', () => {
     expect(wrapper.vm.formattedPercentage).toBe('5.57%')
   })
 
-  it('should return if Linux', () => {
+  it('should return if it is linux', () => {
     const originalPlatform = process.platform
 
     Object.defineProperty(process, 'platform', {
@@ -105,8 +105,8 @@ describe('AppUpdater', () => {
     })
   })
 
-  it('should return title if not authorized downloading', () => {
-    expect(wrapper.vm.title).toBe('Mock Translaton - 0.1')
+  it('should return the title if download is not authorized', () => {
+    expect(wrapper.vm.title).toBe('Mock Translation - 0.1')
     wrapper.vm.isDownloadAuthorized = true
     expect(wrapper.vm.title).toBe(undefined)
   })
@@ -117,7 +117,7 @@ describe('AppUpdater', () => {
     expect(wrapper.vm.releaseNotes).toBe(newHTML)
   })
 
-  it('should return description image dependant on theme', () => {
+  it('should return the image of the description depending on the theme', () => {
     expect(wrapper.vm.descriptionImage).toBe('pages/updater/computer-light.svg')
     createWrapper({
       ...mockData,
