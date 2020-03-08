@@ -57,6 +57,10 @@ export default class WalletService {
    * @return {String|null}
    */
   static getPublicKeyFromWallet (wallet) {
+    if (!wallet) {
+      return null
+    }
+
     if (wallet.multiSignature) {
       return this.getPublicKeyFromMultiSignatureAsset(wallet.multiSignature)
     }
@@ -160,7 +164,7 @@ export default class WalletService {
    */
   static async hasBridgechains (wallet, vm) {
     try {
-      const bridegchains = await vm.$client.fetchBusinessBridgechains(wallet.publicKey)
+      const bridegchains = await vm.$client.fetchBusinessBridgechains(wallet.address)
 
       return bridegchains.data.filter(bridgechain => !bridgechain.isResigned).length > 0
     } catch (error) {

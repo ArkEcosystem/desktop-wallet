@@ -1,5 +1,5 @@
 import { Identities, Transactions } from '@arkecosystem/crypto'
-import moment from 'moment'
+import { dayjs } from '@/services/datetime'
 import { TRANSACTION_TYPES } from '@config'
 import store from '@/store'
 import TransactionService from '@/services/transaction'
@@ -31,10 +31,10 @@ export class TransactionSigner {
     transaction = transaction.network(network.version)
 
     // TODO replace with dayjs
-    const epochTime = moment(network.constants.epoch)
+    const epochTime = dayjs(network.constants.epoch)
       .utc()
       .valueOf()
-    const now = moment().valueOf()
+    const now = dayjs().valueOf()
     transaction.data.timestamp = Math.floor((now - epochTime) / 1000)
 
     if (passphrase) {

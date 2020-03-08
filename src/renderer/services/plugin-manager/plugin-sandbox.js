@@ -14,7 +14,8 @@ import {
   STORAGE,
   AUDIO,
   EVENTS,
-  ALERTS
+  ALERTS,
+  UTILS
 } from './plugin-permission'
 import * as HttpSandbox from './sandbox/http-sandbox'
 import * as MessagingSandbox from './sandbox/messaging-sandbox'
@@ -29,6 +30,8 @@ import * as StorageSandbox from './sandbox/storage-sandbox'
 import * as AudioSandbox from './sandbox/audio-sandbox'
 import * as EventsSandbox from './sandbox/events-sandbox'
 import * as AlertsSandbox from './sandbox/alerts-sandbox'
+import * as BigNumberSandbox from './sandbox/big-number-sandbox'
+import * as DatetimeSandbox from './sandbox/datetime-sandbox'
 
 export class PluginSandbox {
   constructor ({
@@ -127,6 +130,10 @@ export class PluginSandbox {
       ],
       [STORAGE.name]: StorageSandbox.create(this.walletApi, this.app, this.plugin),
       [TIMERS.name]: TimersSandbox.create(this.walletApi, this.app),
+      [UTILS.name]: [
+        DatetimeSandbox.create(this.walletApi),
+        BigNumberSandbox.create(this.walletApi)
+      ],
       [WEBSOCKET.name]: WebsocketSandbox.create(this.walletApi, this.app, this.plugin)
     }
   }

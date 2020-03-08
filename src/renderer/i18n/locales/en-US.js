@@ -6,6 +6,7 @@ export default {
     APP_NAME: 'ARK Desktop Wallet',
     APP_NAME_SHORT: 'ARK Desktop',
     APPEARANCE: 'Appearance',
+    ARK: 'ARK',
     AVATAR: 'Avatar',
     BACK: 'Back',
     BACKGROUND: 'Background',
@@ -15,6 +16,7 @@ export default {
     CURRENCY: 'Currency',
     DATE: 'Date',
     DELEGATE: 'Delegate',
+    DESKTOP_WALLET: 'Desktop Wallet',
     DONE: 'Done',
     ENABLE_ADVANCED_MODE: 'Enable Advanced Mode to use this feature',
     FAILED_UPDATE: 'Failed to update \'{name}\'. Reason: {reason}',
@@ -564,6 +566,7 @@ export default {
       THEMES: 'Allows loading additional custom themes for the Desktop Wallet',
       TIMERS: 'Allows using timeouts and intervals',
       UI_COMPONENTS: 'Allows access to the standard Desktop Wallet components used throughout',
+      UTILS: 'Allows using utilities such as the BigNumber type and dayjs',
       WALLET_TABS: 'Allows showing an additional tab/page on the Wallet screen',
       WEBFRAME: 'Allows showing remote URL pages within a frame',
       WEBSOCKET: 'Allows connections to websockets'

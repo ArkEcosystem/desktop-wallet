@@ -28,10 +28,10 @@
 </template>
 
 <script>
-import dayjs from 'dayjs'
 import LineChart from '@/components/utils/LineChart'
 import Loader from '@/components/utils/Loader'
 import priceApi from '@/services/price-api'
+import { dayjs } from '@/services/datetime'
 
 export default {
   name: 'MarketChart',
