@@ -2,7 +2,6 @@ import { createLocalVue, shallowMount } from '@vue/test-utils'
 import useI18n from '../__utils__/i18n'
 import ElectronMixin from '@/mixins/electron'
 import electron from 'electron'
-import fs from 'fs'
 
 jest.mock('electron', () => ({
   remote: {
