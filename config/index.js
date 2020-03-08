@@ -139,6 +139,7 @@ exports.PLUGINS = {
   officialAuthor: 'ARK Ecosystem',
   path: path.resolve(os.homedir(), '.ark-desktop/plugins'),
   reportUrl: 'https://ark.io/contact',
+  sharePath: path.resolve(os.homedir(), '.ark-desktop/share'),
   updateInterval: {
     value: 1,
     unit: 'day'
