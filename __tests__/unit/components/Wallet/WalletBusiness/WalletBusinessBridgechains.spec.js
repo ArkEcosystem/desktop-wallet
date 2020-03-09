@@ -24,8 +24,8 @@ const createWrapper = (component) => {
       totalCount: 0,
       next: null,
       previous: null,
-      self: '/api/businesses/public-key-1/bridgechains?page=1&limit=100',
-      first: '/api/businesses/public-key-1/bridgechains?page=1&limit=100',
+      self: '/api/businesses/address-1/bridgechains?page=1&limit=100',
+      first: '/api/businesses/address-1/bridgechains?page=1&limit=100',
       last: null
     }
   }))
@@ -159,7 +159,7 @@ describe('WalletBusinessBridgechains', () => {
       wrapper.vm.fetchBridgechains()
 
       expect(clientFetchBridgechainsMock).toHaveBeenCalledTimes(1)
-      expect(clientFetchBridgechainsMock).toHaveBeenCalledWith('public-key-1', {
+      expect(clientFetchBridgechainsMock).toHaveBeenCalledWith('address-1', {
         page: params.page,
         limit: params.limit,
         orderBy: `${params.sort.field}:${params.sort.type}`
@@ -264,16 +264,16 @@ describe('WalletBusinessBridgechains', () => {
 
     it('should update sort column', () => {
       wrapper.vm.onSortChange({
-        source: 'from-third-party-component',
-        field: 'amount',
-        type: 'desc'
+        source: 'bridgechainsTab',
+        field: 'genesisHash',
+        type: 'asc'
       })
 
       expect(spyUpdateParams).toHaveBeenCalledTimes(1)
       expect(spyUpdateParams).toHaveBeenCalledWith({
         sort: {
-          field: 'amount',
-          type: 'desc'
+          field: 'genesisHash',
+          type: 'asc'
         },
         page: 1
       })
@@ -282,16 +282,16 @@ describe('WalletBusinessBridgechains', () => {
 
     it('should update sort column direction', () => {
       wrapper.vm.onSortChange({
-        source: 'from-third-party-component',
-        field: 'timestamp',
-        type: 'asc'
+        source: 'bridgechainsTab',
+        field: 'name',
+        type: 'desc'
       })
 
       expect(spyUpdateParams).toHaveBeenCalledTimes(1)
       expect(spyUpdateParams).toHaveBeenCalledWith({
         sort: {
-          field: 'timestamp',
-          type: 'asc'
+          field: 'name',
+          type: 'desc'
         },
         page: 1
       })
@@ -309,11 +309,22 @@ describe('WalletBusinessBridgechains', () => {
       expect(spyLoadBridgechains).toHaveBeenCalledTimes(0)
     })
 
+    it('should not do anything if source doesn\'t match component', () => {
+      wrapper.vm.onSortChange({
+        source: 'transactionsTab',
+        field: 'amount',
+        type: 'desc'
+      })
+
+      expect(spyUpdateParams).toHaveBeenCalledTimes(0)
+      expect(spyLoadBridgechains).toHaveBeenCalledTimes(0)
+    })
+
     it('should not do anything if column and direction do not change', () => {
       wrapper.vm.onSortChange({
-        source: 'from-third-party-component',
-        field: 'timestamp',
-        type: 'desc'
+        source: 'bridgechainsTab',
+        field: 'name',
+        type: 'asc'
       })
 
       expect(spyUpdateParams).toHaveBeenCalledTimes(0)
@@ -344,8 +355,8 @@ describe('WalletBusinessBridgechains', () => {
       page: 1,
       limit: 10,
       sort: {
-        field: 'timestamp',
-        type: 'desc'
+        field: 'name',
+        type: 'asc'
       }
     }
 
@@ -354,7 +365,7 @@ describe('WalletBusinessBridgechains', () => {
         page: 10,
         limit: 100,
         sort: {
-          field: 'amount',
+          field: 'genesisHash',
           type: 'asc'
         }
       }

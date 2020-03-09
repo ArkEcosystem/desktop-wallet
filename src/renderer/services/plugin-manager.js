@@ -1,11 +1,12 @@
 import * as adapters from '@/services/plugin-manager/adapters'
 import releaseService from '@/services/release'
 import { PLUGINS } from '@config'
-import dayjs from 'dayjs'
+import { dayjs } from '@/services/datetime'
 import * as fs from 'fs'
 import * as fsExtra from 'fs-extra'
 import got from 'got'
-import { partition, upperFirst } from 'lodash'
+import { partition } from 'lodash'
+import { upperFirst } from '@/utils'
 import * as path from 'path'
 import semver from 'semver'
 import trash from 'trash'
@@ -193,6 +194,21 @@ export class PluginManager {
     return body.toString('base64')
   }
 
+  async fetchImages (images) {
+    if (!images || !images.length) {
+      return []
+    }
+
+    const requests = []
+    for (const imageUrl of images) {
+      requests.push(
+        got(imageUrl, { encoding: null }).then(response => response.body.toString('base64'))
+      )
+    }
+
+    return Promise.all(requests)
+  }
+
   async fetchPluginsFromAdapter () {
     const sessionAdapter = this.app.$store.getters['session/pluginAdapter']
     if (this.adapter !== sessionAdapter) {
@@ -208,6 +224,12 @@ export class PluginManager {
         plugin.logo = await this.fetchLogo(plugin.logo)
       } catch (error) {
         plugin.logo = null
+      }
+
+      try {
+        plugin.images = await this.fetchImages(plugin.images)
+      } catch (error) {
+        plugin.images = []
       }
 
       const validName = validatePackageName(plugin.id).validForNewPackages
@@ -261,7 +283,15 @@ export class PluginManager {
 
     try {
       plugin.logo = await this.fetchLogo(plugin.logo)
-    } catch (error) { }
+    } catch (error) {
+      plugin.logo = null
+    }
+
+    try {
+      plugin.images = await this.fetchImages(plugin.images)
+    } catch (error) {
+      plugin.images = []
+    }
 
     return plugin
   }
@@ -314,7 +344,7 @@ export class PluginManager {
 
   async fetchBlacklist () {
     try {
-      const { body } = await got(PLUGINS.blacklistUrl, { json: true })
+      const { body } = await got(`${PLUGINS.blacklistUrl}?ts=${(new Date()).getTime()}`, { json: true })
       this.app.$store.dispatch('plugin/setBlacklisted', { scope: 'global', plugins: body.plugins })
     } catch (error) {
       console.error(`Could not fetch blacklist from '${PLUGINS.blacklistUrl}: ${error.message}`)
@@ -323,7 +353,7 @@ export class PluginManager {
 
   async fetchWhitelist () {
     try {
-      const { body } = await got(PLUGINS.whitelistUrl, { json: true })
+      const { body } = await got(`${PLUGINS.whitelistUrl}?ts=${(new Date()).getTime()}`, { json: true })
       this.app.$store.dispatch('plugin/setWhitelisted', { scope: 'global', plugins: body.plugins })
     } catch (error) {
       console.error(`Could not fetch whitelist from '${PLUGINS.whitelistUrl}: ${error.message}`)
@@ -347,6 +377,12 @@ export class PluginManager {
         pluginConfig.logo = await this.fetchLogo(pluginConfig.logo)
       } catch (error) {
         pluginConfig.logo = null
+      }
+
+      try {
+        pluginConfig.images = await this.fetchImages(pluginConfig.images)
+      } catch (error) {
+        pluginConfig.images = []
       }
     }
 

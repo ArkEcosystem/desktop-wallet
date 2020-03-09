@@ -28,7 +28,7 @@
 </template>
 
 <script>
-import { map, orderBy } from 'lodash'
+import { orderBy } from 'lodash'
 import { InputSelect } from '@/components/Input'
 import truncate from '@/filters/truncate'
 
@@ -125,7 +125,7 @@ export default {
     },
 
     profileList () {
-      return this.profiles.reduce((map, profile, index) => {
+      return this.profiles.reduce((map, profile) => {
         map[profile.id] = profile.name
 
         return map
@@ -151,7 +151,7 @@ export default {
     },
 
     walletList () {
-      const addresses = map(this.wallets, (wallet) => {
+      const addresses = this.wallets.map(wallet => {
         const address = {
           name: null,
           address: wallet.address
@@ -169,7 +169,7 @@ export default {
         return object.name || object.address.toLowerCase()
       })
 
-      return results.reduce((wallets, wallet, index) => {
+      return results.reduce((wallets, wallet) => {
         const value = wallet.name || wallet.address
         wallets[wallet.address] = value
 

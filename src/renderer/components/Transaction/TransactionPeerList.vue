@@ -2,11 +2,13 @@
   <InputEditableList
     v-model="items"
     :title="title"
+    :max-items="maxItems"
+    :show-count="showCount"
     :readonly="readonly"
     :required="required"
     :helper-text="helperText"
     :is-invalid="isInvalid"
-    :no-items-message="$t('TRANSACTION.BRIDGECHAIN.NO_PEERS')"
+    :no-items-message="$t('TRANSACTION.BRIDGECHAIN.NO_SEED_NODES')"
     @remove="emitRemove"
   >
     <div
@@ -39,6 +41,18 @@ export default {
     items: {
       type: Array,
       required: true
+    },
+
+    maxItems: {
+      type: Number,
+      required: false,
+      default: null
+    },
+
+    showCount: {
+      type: Boolean,
+      required: false,
+      default: false
     },
 
     readonly: {

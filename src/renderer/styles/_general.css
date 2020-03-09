@@ -36,6 +36,10 @@ img {
   -webkit-user-drag: none;
 }
 
+body {
+  @apply .bg-default-background;
+}
+
 .App:not(.mac) *::-webkit-scrollbar {
   @apply .w-2 .h-2 .rounded-full;
   background-color: rgba(0, 0, 0, 0);
@@ -60,12 +64,6 @@ img {
 
 .rotate-180 {
   transform: rotate(180deg);
-}
-
-.modal-backdrop {
-  @apply .fixed .z-50 .pin-t .pin-l .table .w-full .h-full;
-  background-color: rgba(0, 0, 0, 0.5);
-  transition: opacity 0.3s ease;
 }
 
 .instructions-text {

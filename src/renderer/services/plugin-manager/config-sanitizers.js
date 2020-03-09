@@ -53,6 +53,16 @@ const sanitizeAuthor = config => {
   return 'unknown'
 }
 
+const sanitizeKeywords = keywords => {
+  for (const keyword of PLUGINS.keywords) {
+    if (!keywords.includes(keyword)) {
+      throw new Error('missing required keywords')
+    }
+  }
+
+  return difference(uniq(keywords), PLUGINS.keywords).map(keyword => titlecase(keyword))
+}
+
 const sanitizeCategories = config => {
   let categories = getOption(config, 'categories')
 
@@ -73,16 +83,6 @@ const sanitizeCategories = config => {
   return categories.length ? categories : ['other']
 }
 
-const sanitizeKeywords = keywords => {
-  for (const keyword of PLUGINS.keywords) {
-    if (!keywords.includes(keyword)) {
-      throw new Error('missing required keywords')
-    }
-  }
-
-  return difference(uniq(keywords), PLUGINS.keywords).map(keyword => titlecase(keyword))
-}
-
 const sanitizeVersion = version => {
   return semver.valid(version) || semver.coerce(version) || '0.0.0'
 }
@@ -94,9 +94,17 @@ const sanitizeMinVersion = config => {
 
 const sanitizeLogo = config => {
   const logo = getOption(config, 'logo') || config.logo
-  if (logo && /^https?:\/\/raw.githubusercontent.com[A-Za-z0-9/_.-]+logo.png$/.test(logo)) {
+  if (logo && /^https?:\/\/raw.githubusercontent.com[A-Za-z0-9/_.-]+logo\.(png|jpg)$/.test(logo)) {
     return logo
   }
+}
+
+const sanitizeImages = config => {
+  const images = getOption(config, 'images') || config.images || []
+
+  return images
+    .slice(0, 5)
+    .filter(image => /^https?:\/\/raw.githubusercontent.com[A-Za-z0-9/_.-]+\.(png|jpg)$/.test(image))
 }
 
 const sanitizeName = name => {
@@ -155,6 +163,7 @@ export {
   sanitizeAuthor,
   sanitizeCategories,
   sanitizeId,
+  sanitizeImages,
   sanitizeIsOfficial,
   sanitizeKeywords,
   sanitizeLogo,

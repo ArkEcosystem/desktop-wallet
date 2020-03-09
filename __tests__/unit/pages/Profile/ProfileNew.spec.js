@@ -9,7 +9,7 @@ describe('pages > ProfileNew', () => {
     // FIXME schema ?
     return mount(ProfileNew, {
       mocks: {
-        $t () {}
+        $t: () => {}
       },
       localVue
     })

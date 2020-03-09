@@ -24,7 +24,7 @@
         </button>
       </div>
     </nav>
-    <section class="MenuTab__content p-5">
+    <section class="MenuTab__content p-5 overflow-y-auto">
       <slot />
     </section>
   </div>
@@ -92,12 +92,20 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
+.MenuTab {
+  @apply .flex .flex-col .h-full;
+}
+
+.MenuTab__nav__item {
+  @apply .self-stretch;
+}
+
 .MenuTab__nav__item--active {
   @apply .bg-theme-switch-button .text-theme-button-text;
 }
 
 .MenuTab__nav__item--clickable {
-  @apply bg-theme-voting-banner-background text-theme-page-text opacity-75;
+  @apply .bg-theme-voting-banner-background .text-theme-page-text .opacity-75;
 }
 
 .MenuTab__nav__item--disabled {

@@ -43,6 +43,7 @@ View the full documentation at https://tailwindcss.com.
 
 let colors = {
   // Custom color variables
+  'default-background': '#f7fafb',
   'theme-page': 'var(--theme-page)',
   'theme-page-text': 'var(--theme-page-text)',
   'theme-page-text-light': 'var(--theme-page-text-light)',
@@ -615,7 +616,8 @@ module.exports = {
     '3/5': '60%',
     '4/5': '80%',
     '1/6': '16.66667%',
-    '1/7': '12.50%', // Added
+    '1/8': '12.50%', // Added
+    '7/8': '87.50%', // Added
     '5/6': '83.33333%',
     'full': '100%',
     'screen': '100vw'

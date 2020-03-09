@@ -231,7 +231,9 @@
         <TransactionMultiPaymentList
           :title="null"
           :items="transaction.asset.payments"
+          :show-links="true"
           readonly
+          @click="emitClose"
         />
       </ListDividedItem>
     </ListDivided>
@@ -326,7 +328,7 @@ export default {
     },
 
     amountTooltip () {
-      const walletAddress = this.transaction.walletAddress || this.wallet_fromRoute.address
+      const walletAddress = this.transaction.walletAddress || (this.wallet_fromRoute ? this.wallet_fromRoute.address : null)
       if (!walletAddress || this.transaction.sender !== walletAddress) {
         return null
       } else if (this.transaction.typeGroup === TRANSACTION_GROUPS.MAGISTRATE) {
@@ -377,7 +379,7 @@ export default {
       this.network_openExplorer('address', address)
     },
 
-    openBlock (address) {
+    openBlock () {
       this.network_openExplorer('block', this.transaction.blockId)
     },
 

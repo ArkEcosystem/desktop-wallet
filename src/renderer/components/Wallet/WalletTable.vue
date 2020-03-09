@@ -199,9 +199,7 @@ export default {
       ]
 
       if (!this.showVotedDelegates) {
-        const index = columns.findIndex(el => {
-          return el.field === 'delegate'
-        })
+        const index = columns.findIndex(el => el.field === 'delegate')
         columns.splice(index, 1)
       }
 
@@ -225,7 +223,7 @@ export default {
       return a.localeCompare(b, undefined, { sensitivity: 'base', numeric: true })
     },
 
-    sortByVote (x, y, col, rowX, rowY) {
+    sortByVote (x, y) {
       const a = x ? this.getDelegateProperty(x, 'username') : ''
       const b = y ? this.getDelegateProperty(y, 'username') : ''
 

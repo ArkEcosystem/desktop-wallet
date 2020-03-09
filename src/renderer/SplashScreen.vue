@@ -1,7 +1,7 @@
 <template>
-  <div class="absolute h-full w-full flex flex-col text-center select-none">
+  <div class="SplashScreen bg-default-background absolute h-full w-full flex flex-col text-center select-none">
     <div class="flex flex-1 justify-center">
-      <div class="rounded-lg mb-3 p-5 bg-red m-auto">
+      <div class="flex rounded-lg mb-3 p-5 bg-red m-auto">
         <img
           src="@/assets/images/ark-logo.png"
           class="h-12"
@@ -10,9 +10,10 @@
     </div>
 
     <div class="flex-inline">
-      <h1 class="text-4xl mb-4">
-        {{ $t('COMMON.APP_NAME') }}
-      </h1>
+      <div class="text-4xl mb-4">
+        <span class="font-semibold">{{ $t('COMMON.ARK') }}</span>
+        {{ $t('COMMON.DESKTOP_WALLET') }}
+      </div>
 
       <div class="text-sm mb-2">
         {{ $t('COMMON.INITIALIZING') }}
@@ -57,7 +58,7 @@
       </svg>
     </div>
 
-    <div class="flex-inline pb-4">
+    <div class="flex-inline text-sm pb-4">
       {{ `${$t('COMMON.VERSION')} ${version}` }}
     </div>
   </div>
@@ -77,3 +78,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.SplashScreen {
+  color: #3c4249;
+}
+</style>

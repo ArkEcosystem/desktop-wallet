@@ -16,13 +16,6 @@ const useI18n = vue => {
           currency: 'USD',
           currencyDisplay: 'symbol'
         }
-      },
-      'es-ES': {
-        currency: {
-          style: 'currency',
-          currency: 'EUR',
-          currencyDisplay: 'symbol'
-        }
       }
     }
   })

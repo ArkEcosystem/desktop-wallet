@@ -89,7 +89,7 @@
 
 <script>
 import { ButtonClipboard, ButtonModal } from '@/components/Button'
-import { WalletSignModal, WalletVerifyModal } from '../'
+import { WalletSignModal, WalletVerifyModal } from '@/components/Wallet'
 import SvgIcon from '@/components/SvgIcon'
 import { clone } from 'lodash'
 
@@ -140,14 +140,14 @@ export default {
     },
 
     copyMessage (value) {
-      var message = clone(value, false)
+      const message = clone(value, false)
       delete message.timestamp
       delete message.address
       return JSON.stringify(message)
     },
 
     deleteMessage (value) {
-      var message = clone(value, false)
+      const message = clone(value, false)
       this.$store.dispatch('wallet/deleteSignedMessage', message)
     },
 

@@ -120,8 +120,20 @@ export default {
   methods: {
     async create () {
       try {
+        let wallet
+
+        try {
+          wallet = await this.$client.fetchWallet(this.schema.address)
+        } catch (error) {
+          wallet = {
+            address: this.schema.address,
+            balance: '0'
+          }
+        }
+
         const { address } = await this.$store.dispatch('wallet/create', {
-          ...this.schema,
+          ...wallet,
+          name: this.schema.name,
           profileId: this.session_profile.id,
           isContact: true
         })
@@ -149,7 +161,7 @@ export default {
   validations: {
     schema: {
       address: {
-        isValid (value) {
+        isValid () {
           if (this.$refs.addressInput) {
             return !this.$refs.addressInput.$v.$invalid
           }

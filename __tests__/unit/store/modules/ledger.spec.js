@@ -95,13 +95,7 @@ describe('ledger store module', () => {
   })
 
   describe('updateVersion', () => {
-    it('should not show error if aip11 is false', async () => {
-      await store.dispatch('ledger/updateVersion')
-
-      expect(store._vm.$error).not.toHaveBeenCalled()
-    })
-
-    it('should not show error if aip11 is false', async () => {
+    it('should not show error if disconnected', async () => {
       sessionNetwork.mockReturnValue({
         id: 'abc',
         nethash,
@@ -110,6 +104,32 @@ describe('ledger store module', () => {
         }
       })
 
+      await store.dispatch('ledger/connect')
+      await store.dispatch('ledger/setSlip44', 1234)
+      await disconnectLedger()
+      store._vm.$error.mockReset()
+      await store.dispatch('ledger/updateVersion')
+
+      expect(store._vm.$error).not.toHaveBeenCalled()
+    })
+
+    it('should not show error if aip11 is false', async () => {
+      await store.dispatch('ledger/updateVersion')
+
+      expect(store._vm.$error).not.toHaveBeenCalled()
+    })
+
+    it('should show error if aip11 is true', async () => {
+      sessionNetwork.mockReturnValue({
+        id: 'abc',
+        nethash,
+        constants: {
+          aip11: true
+        }
+      })
+
+      await store.dispatch('ledger/connect')
+      await store.dispatch('ledger/setSlip44', 1234)
       await store.dispatch('ledger/updateVersion')
 
       expect(store._vm.$error).toHaveBeenCalledWith(
@@ -345,7 +365,7 @@ describe('ledger store module', () => {
           data: ledgerWallets.slice(0, 9)
         })
 
-      await store.dispatch('ledger/connect')
+      await store.commit('ledger/SET_CONNECTED', true)
       expect(await store.dispatch('ledger/reloadWallets')).toEqual(expectedWallets)
     })
 
@@ -363,7 +383,7 @@ describe('ledger store module', () => {
         expectedWallets[walletId].name = expectedWallets[walletId].address
       }
 
-      await store.dispatch('ledger/connect')
+      await store.commit('ledger/SET_CONNECTED', true)
       expect(await store.dispatch('ledger/reloadWallets')).toEqual(expectedWallets)
     })
 

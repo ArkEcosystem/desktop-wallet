@@ -4,8 +4,6 @@ import feedService from '@/services/feed'
 import RssParser from 'rss-parser' // eslint-disable-line
 import { parseURLMock } from 'rss-parser' // eslint-disable-line
 
-import errorCapturer from '../__utils__/error-capturer'
-
 describe('Services > Feed', () => {
   const feed = {
     feedUrl: 'http://exampl.net/feed.rss',
@@ -32,11 +30,11 @@ describe('Services > Feed', () => {
 
     describe('when the request or parsing fails', () => {
       it('should throw the Error', async () => {
-        parseURLMock.mockImplementation(url => {
+        parseURLMock.mockImplementation(() => {
           throw new Error('failed')
         })
 
-        expect(await errorCapturer(feedService.fetchAndParse(feed.feedUrl))).toThrow('failed')
+        await expect(feedService.fetchAndParse(feed.feedUrl)).rejects.toThrow('failed')
       })
     })
   })
@@ -50,11 +48,11 @@ describe('Services > Feed', () => {
 
     describe('when the request or parsing fails', () => {
       it('should throw the Error', async () => {
-        parseURLMock.mockImplementation(url => {
+        parseURLMock.mockImplementation(() => {
           throw new Error('failed items')
         })
 
-        expect(await errorCapturer(feedService.fetchItems(feed.feedUrl))).toThrow('failed items')
+        await expect(feedService.fetchItems(feed.feedUrl)).rejects.toThrow('failed items')
       })
     })
   })

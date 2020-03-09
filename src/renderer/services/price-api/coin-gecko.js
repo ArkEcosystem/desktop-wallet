@@ -1,5 +1,5 @@
 import got from 'got'
-import dayjs from 'dayjs'
+import { dayjs } from '@/services/datetime'
 import { min, max } from 'lodash'
 import { MARKET } from '@config'
 
@@ -20,7 +20,7 @@ export default class CoinGeckoAdapter {
         json: true
       })
 
-      this.tokenLookup = body.reduce((map, value, index) => {
+      this.tokenLookup = body.reduce((map, value) => {
         map[value.symbol.toUpperCase()] = value.id
 
         return map

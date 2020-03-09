@@ -2,7 +2,7 @@
   <ModalWindow
     :message="$t('PAGES.PLUGIN_MANAGER.DISCLAIMER')"
     header-classes="flex p-8 -mx-16 -mt-16 bg-theme-secondary-feature rounded-t-lg"
-    container-classes="max-w-md"
+    container-classes="PluginDetailsModal max-w-md"
     @close="emitClose"
   >
     <template #header>
@@ -46,7 +46,6 @@
               <PluginManagerButtonSwitch
                 :is-active="isEnabled"
                 :is-disabled="!isInstalledSupported"
-                :label="switchButtonLabel"
                 class="mr-2"
                 @change="toggleStatus"
               />
@@ -95,7 +94,13 @@
     </template>
 
     <template #default>
-      <p class="PluginDetailsModal__description">
+      <p
+        class="PluginDetailsModal__description"
+        :class="{
+          'mt-12': !hasImages,
+          'mt-4': hasImages
+        }"
+      >
         {{ plugin.description }}
       </p>
 
@@ -121,6 +126,12 @@
       >
         {{ $t('MODAL_PLUGIN_DETAILS.SHOW_PERMISSIONS') }}
       </a>
+
+      <div class="mt-6">
+        <PluginSlider
+          :plugin="plugin"
+        />
+      </div>
 
       <div class="PluginDetailsModal__stats">
         <div>
@@ -168,7 +179,7 @@
 <script>
 import { PLUGINS } from '@config'
 import { ButtonGeneric, ButtonIconGeneric } from '@/components/Button'
-import { PluginLogo, PluginManagerCheckmark } from '@/components/PluginManager'
+import { PluginLogo, PluginManagerCheckmark, PluginSlider } from '@/components/PluginManager'
 import { ModalWindow } from '@/components/Modal'
 import { PluginManagerButtonSwitch } from '@/components/PluginManager/PluginManagerButtons'
 import SvgIcon from '@/components/SvgIcon'
@@ -184,6 +195,7 @@ export default {
     PluginManagerButtonSwitch,
     ModalWindow,
     PluginLogo,
+    PluginSlider,
     SvgIcon
   },
 
@@ -213,14 +225,6 @@ export default {
 
     isBlacklisted () {
       return this.$store.getters['plugin/isBlacklisted'](this.plugin.id)
-    },
-
-    switchButtonLabel () {
-      if (this.isEnabled) {
-        return this.$t('PAGES.PLUGIN_MANAGER.ENABLED')
-      }
-
-      return this.$t('PAGES.PLUGIN_MANAGER.DISABLED')
     },
 
     isUpdateAvailable () {
@@ -268,6 +272,10 @@ export default {
       } catch (error) {
         return null
       }
+    },
+
+    hasImages () {
+      return this.plugin.images && this.plugin.images.length > 0
     }
   },
 
@@ -311,6 +319,12 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
+.PluginDetailsModal .ModalWindow__container__content {
+  @apply .pb-8;
+}
+.PluginDetailsModal .ModalWindow__container__footer--warning {
+  @apply .py-4;
+}
 .PluginDetailsModal__header__details {
   @apply flex items-center mt-1 text-theme-page-text-light;
 }
@@ -325,7 +339,7 @@ export default {
   @apply border-t pt-4 mt-8 border-theme-line-separator
 }
 .PluginDetailsModal__description {
-  @apply mt-12 mb-4 leading-tight
+  @apply mb-4 leading-tight
 }
 .PluginDetailsModal__keywords {
   @apply mb-4

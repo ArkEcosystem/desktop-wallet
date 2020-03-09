@@ -28,10 +28,10 @@
 </template>
 
 <script>
-import dayjs from 'dayjs'
 import LineChart from '@/components/utils/LineChart'
 import Loader from '@/components/utils/Loader'
 import priceApi from '@/services/price-api'
+import { dayjs } from '@/services/datetime'
 
 export default {
   name: 'MarketChart',
@@ -174,6 +174,8 @@ export default {
     },
 
     async renderChart () {
+      this.isReady = false
+
       if (!this._inactive) {
         this.setLastCurrency()
         this.setLastPriceApi()
@@ -290,7 +292,7 @@ export default {
             mode: 'index',
             axis: 'x',
             callbacks: {
-              label: (item, data) => {
+              label: (item) => {
                 return this.currency_format(item.yLabel / scaleCorrection, { currency: this.currency })
               },
               title: (items, data) => {
@@ -334,6 +336,8 @@ export default {
           }]
         }
       }
+
+      this.isReady = true
     },
 
     async renderGradient () {

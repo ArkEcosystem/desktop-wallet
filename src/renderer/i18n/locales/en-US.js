@@ -6,6 +6,7 @@ export default {
     APP_NAME: 'ARK Desktop Wallet',
     APP_NAME_SHORT: 'ARK Desktop',
     APPEARANCE: 'Appearance',
+    ARK: 'ARK',
     AVATAR: 'Avatar',
     BACK: 'Back',
     BACKGROUND: 'Background',
@@ -15,6 +16,7 @@ export default {
     CURRENCY: 'Currency',
     DATE: 'Date',
     DELEGATE: 'Delegate',
+    DESKTOP_WALLET: 'Desktop Wallet',
     DONE: 'Done',
     ENABLE_ADVANCED_MODE: 'Enable Advanced Mode to use this feature',
     FAILED_UPDATE: 'Failed to update \'{name}\'. Reason: {reason}',
@@ -204,10 +206,7 @@ export default {
   },
 
   LANGUAGES: {
-    'en-US': 'English',
-    'es-ES': 'Español',
-    'it-IT': 'Italiano',
-    'pt-BR': 'Português - Brazil'
+    'en-US': 'English'
   },
 
   TIME_FORMAT: {
@@ -442,6 +441,12 @@ export default {
     TITLE: 'Export Wallets'
   },
 
+  MODAL_CLOSE_CONFIRMATION: {
+    QUESTION: 'Are you sure you want to close this window?',
+    CONFIRM: 'Yes, close',
+    CANCEL: 'No, cancel'
+  },
+
   MODAL_CONFIRMATION: {
     CANCEL: 'No, cancel',
     CONTINUE: 'Yes, I am sure',
@@ -506,7 +511,7 @@ export default {
   MODAL_PEER: {
     CANCEL: 'Cancel',
     CONNECT: 'Connect',
-    HOST: 'IP / Host',
+    HOST: 'Protocol + IP / Hostname',
     PORT: 'Port',
     VALIDATING: 'Validating peer details...',
     PLACEHOLDER: {
@@ -971,19 +976,17 @@ export default {
         SECOND_SIGNATURE: 'Second Signature transaction could not be created',
         DELEGATE_REGISTRATION: 'Delegate Registration transaction could not be created',
         VOTE: 'Vote transaction could not be created',
+        MULTI_SIGN: 'Could not multisign transaction',
         MULTI_SIGNATURE: 'Multisignature transaction could not be created',
+        MULTI_PAYMENT: 'Multipayment transaction could not be created',
         IPFS: 'IPFS transaction could not be created',
         DELEGATE_RESIGNATION: 'Delegate Resignation transaction could not be created',
-        BUSINESS: {
-          REGISTRATION: 'Business Registration transaction could not be created',
-          RESIGNATION: 'Business Resignation transaction could not be created',
-          UPDATE: 'Business Update transaction could not be created'
-        },
-        BRIDGECHAIN: {
-          REGISTRATION: 'Bridgechain Registration transaction could not be created',
-          RESIGNATION: 'Bridgechain Resignation transaction could not be created',
-          UPDATE: 'Bridgechain Update transaction could not be created'
-        }
+        BUSINESS_REGISTRATION: 'Business Registration transaction could not be created',
+        BUSINESS_RESIGNATION: 'Business Resignation transaction could not be created',
+        BUSINESS_UPDATE: 'Business Update transaction could not be created',
+        BRIDGECHAIN_REGISTRATION: 'Bridgechain Registration transaction could not be created',
+        BRIDGECHAIN_RESIGNATION: 'Bridgechain Resignation transaction could not be created',
+        BRIDGECHAIN_UPDATE: 'Bridgechain Update transaction could not be created'
       },
       TRANSFER: 'Your transaction could not be sent',
       SECOND_SIGNATURE: 'Second signature could not be registered',
@@ -1087,7 +1090,7 @@ export default {
       BRIDGECHAIN_ASSET_REPOSITORY: 'Bridgechain Asset Repository',
       API_PORT: 'API Port',
       ERROR_DUPLICATE: 'The seed node has already been added',
-      NO_PEERS: 'There are no peers',
+      NO_SEED_NODES: 'There are no seed nodes',
       INVALID_SEEDS: 'You have an invalid seed node - please check it is up and running correctly | You have invalid seed nodes - please check they are up and running correctly'
     },
     WARNING: {
@@ -1179,10 +1182,10 @@ export default {
     GROUP_2: {
       NEW_BUSINESS_REGISTRATION: 'New business registration: {address} business {name}',
       NEW_BUSINESS_RESIGNATION: 'New business resignation: {address}',
-      NEW_BUSINESS_UPDATE: 'New business update: {address} business {name}',
-      NEW_BRIDGECHAIN_REGISTRATION: 'New bridgechain registration: {address} bridgechain {name}',
-      NEW_BRIDGECHAIN_RESIGNATION: 'New bridgechain resignation: {address} bridgechain {name}',
-      NEW_BRIDGECHAIN_UPDATE: 'New bridgechain update: {address} bridgechain {name}'
+      NEW_BUSINESS_UPDATE: 'New business update: {address}',
+      NEW_BRIDGECHAIN_REGISTRATION: 'New bridgechain registration: {address}, bridgechain {bridgechain}',
+      NEW_BRIDGECHAIN_RESIGNATION: 'New bridgechain resignation: {address}, bridgechain {bridgechain}',
+      NEW_BRIDGECHAIN_UPDATE: 'New bridgechain update: {address}, bridgechain {bridgechain}'
     }
   },
 

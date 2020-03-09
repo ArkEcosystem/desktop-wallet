@@ -72,7 +72,7 @@
 </template>
 
 <script>
-import isEqual from 'lodash/isEqual'
+import { isEqual } from 'lodash'
 import { ButtonClose } from '@/components/Button'
 import TableWrapper from '@/components/utils/TableWrapper'
 
@@ -180,14 +180,14 @@ export default {
         this.isLoading = true
 
         const { limit, page, sort } = this.queryParams
-        const { delegates, totalCount } = await this.$client.fetchDelegates({
+        const { delegates, meta } = await this.$client.fetchDelegates({
           page,
           limit,
           orderBy: `${sort.field.replace('production.', '')}:${sort.type}`
         })
 
         this.delegates = delegates
-        this.totalCount = totalCount
+        this.totalCount = meta.totalCount
       } catch (error) {
         this.$logger.error(error)
         this.$error(this.$t('COMMON.FAILED_FETCH', {

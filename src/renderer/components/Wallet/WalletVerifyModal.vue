@@ -11,6 +11,7 @@
         <InputToggle
           v-model="verifyChoice"
           :choices="verifyChoices"
+          :selected-choice="verifyChoice"
           @select="onChoiceSelect"
         />
 

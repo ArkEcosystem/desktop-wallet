@@ -28,6 +28,7 @@
         :is-disabled="isDisabled"
         :wallet-network="walletNetwork"
         class="w-full InputField--dirty"
+        @change="onChange"
         @raw="onRawInput"
       />
     </div>
@@ -282,6 +283,16 @@ export default {
       const fee = this.feeChoices[choice]
       this.emitFee(fee)
     },
+
+    /**
+     * Emit the value after the user finishes changes. This prevents premature parsing the input.
+     * @param {(String|Number)} fee
+     */
+    onChange (fee) {
+      fee = fee.toString()
+      this.emitFee(fee)
+    },
+
     /**
      * Receives the `InputCurrency` value as String
      * @param {String} fee
@@ -293,7 +304,6 @@ export default {
 
       fee = fee.toString()
       this.$set(this.feeChoices, this.chosenFee, fee)
-      this.emitFee(fee)
     },
     /**
      * The native slider uses Strings
@@ -330,7 +340,7 @@ export default {
 
   validations: {
     fee: {
-      isValid (value) {
+      isValid () {
         if (this.$refs.input) {
           return !this.$refs.input.$v.$invalid && !this.insufficientFundsError
         }

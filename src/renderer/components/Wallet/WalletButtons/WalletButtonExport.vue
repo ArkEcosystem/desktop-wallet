@@ -52,7 +52,7 @@ export default {
   },
 
   methods: {
-    toggle (exportOptions = null) {
+    toggle () {
       this.showModal = !this.showModal
     }
   }

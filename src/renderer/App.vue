@@ -25,29 +25,23 @@
       class="overflow-hidden"
     >
       <AppSidemenu
-        v-if="hasAnyProfile"
+        v-if="hasProfile"
         :is-horizontal="true"
-        :class="{
-          'blur': hasBlurFilter
-        }"
         class="block md:hidden z-1"
       />
       <section
         :style="background ? `backgroundImage: url('${assets_loadImage(background)}')` : ''"
-        :class="{
-          'blur': hasBlurFilter
-        }"
-        class="App__main flex flex-col items-center px-6 pb-6 pt-2 lg:pt-6 w-screen-adjusted h-screen-adjusted overflow-hidden -m-2"
+        class="App__main flex flex-col items-center px-4 pb-4 lg:pt-4 w-screen h-screen-adjusted overflow-hidden"
       >
         <div
-          :class="{ 'ml-6': !hasAnyProfile }"
+          :class="{ 'ml-6': !hasProfile }"
           class="App__container w-full h-full flex mt-4 mb-4 lg:mr-6"
         >
           <div
             class="hidden md:flex flex-col"
           >
             <AppSidemenu
-              v-if="hasAnyProfile"
+              v-if="hasProfile"
               class="flex flex-1"
             />
           </div>
@@ -73,32 +67,19 @@
       />
 
       <PortalTarget
-        :slot-props="{ setPortalHasContent }"
         name="modal"
         multiple
-        @change="onPortalChange('modal', ...arguments)"
       />
 
-      <PortalTarget
-        :slot-props="{ setPortalHasContent }"
-        name="updater"
-        @change="onPortalChange('updater', ...arguments)"
-      />
+      <PortalTarget name="updater" />
 
-      <PortalTarget
-        name="loading"
-        @change="onPortalChange('loading', ...arguments)"
-      />
+      <PortalTarget name="loading" />
 
-      <PortalTarget
-        name="qr-scan"
-        @change="onPortalChange('qr-scan', ...arguments)"
-      />
+      <PortalTarget name="qr-scan" />
 
       <PortalTarget
         name="button-dropdown"
         multiple
-        :slot-props="{ hasBlurFilter }"
       />
 
       <AlertMessage />
@@ -110,14 +91,15 @@
 import '@/styles/style.css'
 import fs from 'fs'
 import CleanCss from 'clean-css'
+import { remote, ipcRenderer } from 'electron'
 import { pull, uniq } from 'lodash'
 import { AppFooter, AppIntro, AppSidemenu } from '@/components/App'
 import AlertMessage from '@/components/AlertMessage'
 import { TransactionModal } from '@/components/Transaction'
 import config from '@config'
 import URIHandler from '@/services/uri-handler'
+import priceApi from '@/services/price-api'
 
-var { remote, ipcRenderer } = require('electron')
 const Menu = remote.Menu
 
 export default {
@@ -131,16 +113,9 @@ export default {
     TransactionModal
   },
 
-  data: vm => ({
+  data: () => ({
     isReady: false,
     isUriTransactionOpen: false,
-    forceBlurFilter: false,
-    portalHasContent: {
-      modal: false,
-      update: false,
-      loading: false,
-      'qr-scan': false
-    },
     uriTransactionSchema: {},
     aliveRouteComponents: []
   }),
@@ -154,14 +129,11 @@ export default {
   }),
 
   computed: {
-    hasBlurFilter () {
-      return Object.values(this.portalHasContent).some(hasContent => !!hasContent)
-    },
     background () {
       return this.$store.getters['session/background'] || `wallpapers/${this.hasSeenIntroduction ? 1 : 2}Default.png`
     },
-    hasAnyProfile () {
-      return !!this.$store.getters['profile/all'].length
+    hasProfile () {
+      return !!this.$store.getters['session/profile']
     },
     hasScreenshotProtection () {
       return this.$store.getters['session/screenshotProtection']
@@ -258,10 +230,10 @@ export default {
         }
       }
     },
-    pluginThemes (value, oldValue) {
+    pluginThemes () {
       this.applyPluginTheme(this.theme)
     },
-    theme (value, oldValue) {
+    theme (value) {
       this.applyPluginTheme(value)
     }
   },
@@ -287,6 +259,8 @@ export default {
     })
 
     this.setContextMenu()
+
+    this.__watchProfile()
   },
 
   mounted () {
@@ -337,13 +311,35 @@ export default {
         this.$warn('Ledger Disconnected!')
       })
 
-      await Promise.all([this.$plugins.fetchPluginsFromAdapter(), this.$plugins.fetchBlacklist(), this.$plugins.fetchWhitelist()])
-
       ipcRenderer.send('splashscreen:app-ready')
+
+      await Promise.all([this.$plugins.fetchPluginsFromAdapter(), this.$plugins.fetchBlacklist(), this.$plugins.fetchWhitelist()])
     },
 
-    onPortalChange (portal, isActive) {
-      this.setPortalHasContent(portal, isActive)
+    __watchProfile () {
+      this.$store.watch(
+        (_, getters) => getters['session/profile'],
+        async (profile, oldProfile) => {
+          if (!profile) {
+            return
+          }
+
+          const currentPeer = this.$store.getters['peer/current']()
+          if (currentPeer && currentPeer.ip) {
+            const scheme = currentPeer.isHttps ? 'https://' : 'http://'
+            this.$client.host = `${scheme}${currentPeer.ip}:${currentPeer.port}`
+          }
+
+          if (!oldProfile || profile.id !== oldProfile.id) {
+            this.$eventBus.emit('client:changed')
+          }
+
+          priceApi.setAdapter(profile.priceApi)
+
+          this.$store.dispatch('market/refreshTicker')
+        },
+        { immediate: true }
+      )
     },
 
     __watchProcessURL () {
@@ -370,10 +366,6 @@ export default {
     closeUriTransaction () {
       this.isUriTransactionOpen = false
       this.uriTransactionSchema = {}
-    },
-
-    setPortalHasContent (portal, isActive) {
-      this.portalHasContent[portal] = isActive
     },
 
     setIntroDone () {
@@ -431,19 +423,19 @@ export default {
 .App__main {
   transition: .1s filter linear;
 }
+.App__main.h-screen-adjusted {
+  height: calc(100vh - 80px);
+}
 .App__container {
   max-width: 1400px;
-}
-.App__main.h-screen-adjusted {
-  height: calc(100vh + 1rem);
-}
-.App__main.w-screen-adjusted {
-  width: calc(100vw + 1rem);
 }
 @media (min-width: 768px) {
   .App__page {
     @apply .min-h-full;
     max-height: calc(100vh - 5rem);
+  }
+  .App__main.h-screen-adjusted {
+    @apply h-screen;
   }
 }
 </style>

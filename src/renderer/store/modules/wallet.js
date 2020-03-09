@@ -1,4 +1,4 @@
-import { findIndex, unionBy, uniqBy } from 'lodash'
+import { unionBy, uniqBy } from 'lodash'
 import WalletModel from '@/models/wallet'
 import Vue from 'vue'
 
@@ -14,7 +14,7 @@ const sanitizeWallet = (wallet) => {
 }
 
 /**
- * Internally the wallets are stored aggregated by `profileId``
+ * Internally the wallets are stored aggregated by `profileId`
  */
 export default {
   namespaced: true,
@@ -45,7 +45,7 @@ export default {
       return state.wallets[profileId].find(wallet => wallet.name === name)
     },
 
-    byProfileId: (state, _, __, rootGetters) => profileId => {
+    byProfileId: (state) => profileId => {
       if (!state.wallets[profileId]) {
         return []
       }
@@ -77,7 +77,7 @@ export default {
       }))
     },
 
-    contactsByProfileId: (state, _, __, rootGetters) => profileId => {
+    contactsByProfileId: (state) => profileId => {
       if (!state.wallets[profileId]) {
         return []
       }
@@ -142,11 +142,13 @@ export default {
       state.wallets[profileId] = unionBy([...wallets, ...state.wallets[profileId]], 'id')
     },
     DELETE (state, wallet) {
-      const index = findIndex(state.wallets[wallet.profileId], { id: wallet.id })
-      if (index === -1) {
-        throw new Error(`Cannot delete wallet '${wallet.id}' - it does not exist on the state`)
+      if (state.wallets[wallet.profileId]) {
+        const index = state.wallets[wallet.profileId].findIndex(profileWallet => profileWallet.id === wallet.id)
+        if (index === -1) {
+          throw new Error(`Cannot delete wallet '${wallet.id}' - it does not exist on the state`)
+        }
+        state.wallets[wallet.profileId].splice(index, 1)
       }
-      state.wallets[wallet.profileId].splice(index, 1)
     },
     SET_LEDGER_NAME (state, { address, name, profileId }) {
       if (!state.ledgerNames[profileId]) {
@@ -167,9 +169,11 @@ export default {
       }
     },
     DELETE_SIGNED_MESSAGE (state, message) {
-      const index = findIndex(state.signedMessages[message.address], { timestamp: message.timestamp })
-      if (index !== -1) {
-        state.signedMessages[message.address].splice(index, 1)
+      if (state.signedMessages[message.address]) {
+        const index = state.signedMessages[message.address].findIndex(signedMessage => signedMessage.timestamp === message.timestamp)
+        if (index !== -1) {
+          state.signedMessages[message.address].splice(index, 1)
+        }
       }
     }
   },

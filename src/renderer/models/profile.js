@@ -1,4 +1,3 @@
-import { isBoolean } from 'lodash'
 import BaseModel from './base'
 
 export default new BaseModel({
@@ -91,7 +90,7 @@ export default new BaseModel({
     },
     showPluginConfirmation: {
       type: 'boolean',
-      format: data => isBoolean(data.showPluginConfirmation) ? data.showPluginConfirmation : true
+      format: data => typeof data.showPluginConfirmation === 'boolean' ? data.showPluginConfirmation : true
     },
     transactionTableRowCount: {
       type: 'integer',
@@ -104,6 +103,10 @@ export default new BaseModel({
     pluginManagerLayout: {
       type: 'string',
       format: data => data.pluginManagerLayout || 'grid'
+    },
+    pluginMenuOpen: {
+      type: 'boolean',
+      format: data => data.pluginMenuOpen !== undefined ? data.pluginMenuOpen : true
     },
     walletLayout: {
       type: 'string',

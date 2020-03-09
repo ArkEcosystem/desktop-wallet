@@ -173,8 +173,8 @@ import { ModalConfirmation } from '@/components/Modal'
 import { MenuNavigationItem, MenuOptions, MenuOptionsItem, MenuDropdown } from '@/components/Menu'
 import { ButtonSwitch } from '@/components/Button'
 import { PluginManageBlacklistModal } from '@/components/PluginManager/PluginManagerModals'
-import { isEmpty, isString } from 'lodash'
-const os = require('os')
+import { isEmpty } from 'lodash'
+import os from 'os'
 
 export default {
   name: 'AppSidemenuOptionsSettings',
@@ -333,7 +333,7 @@ export default {
     },
 
     setTheme (theme) {
-      this.sessionTheme = isString(theme) ? theme : (theme ? 'dark' : 'light')
+      this.sessionTheme = typeof theme === 'string' ? theme : (theme ? 'dark' : 'light')
     },
 
     setBackgroundUpdateLedger (update) {

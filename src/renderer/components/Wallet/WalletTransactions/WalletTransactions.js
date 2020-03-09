@@ -1,5 +1,4 @@
-import at from 'lodash/at'
-import isEqual from 'lodash/isEqual'
+import { at, isEqual } from 'lodash'
 import mixin from './mixin'
 import mergeTableTransactions from '@/components/utils/merge-table-transactions'
 import { TransactionTable } from '@/components/Transaction'
@@ -185,23 +184,20 @@ export default {
     },
 
     onPageChange ({ currentPage }) {
-      if (!currentPage) {
-        return
+      if (currentPage && currentPage !== this.currentPage) {
+        this.currentPage = currentPage
+        this.__updateParams({ page: currentPage })
+        this.loadTransactions()
       }
-
-      this.currentPage = currentPage
-      this.__updateParams({ page: currentPage })
-      this.loadTransactions()
     },
 
     onPerPageChange ({ currentPerPage }) {
-      if (!currentPerPage) {
-        return
+      if (currentPerPage && currentPerPage !== this.transactionTableRowCount) {
+        this.transactionTableRowCount = currentPerPage
+        this.currentPage = 1
+        this.__updateParams({ limit: currentPerPage, page: 1 })
+        this.loadTransactions()
       }
-
-      this.__updateParams({ limit: currentPerPage, page: 1 })
-      this.loadTransactions()
-      this.transactionTableRowCount = currentPerPage
     },
 
     onSortChange ({ source, field, type }) {

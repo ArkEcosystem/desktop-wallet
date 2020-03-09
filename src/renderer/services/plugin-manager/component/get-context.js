@@ -1,4 +1,4 @@
-import isElement from 'lodash/isElement'
+import { isElement } from 'lodash'
 
 export function getSafeContext (vueContext, component) {
   const context = vueContext._data || {}
@@ -100,8 +100,8 @@ export function getSafeContext (vueContext, component) {
 
   if (component.methods) {
     for (const methodName of Object.keys(component.methods || {})) {
-      context[methodName] = function () {
-        return component.methods[methodName].apply(getSafeContext(vueContext, component), [...arguments])
+      context[methodName] = function (...args) {
+        return component.methods[methodName].apply(getSafeContext(vueContext, component), args)
       }
     }
   }
