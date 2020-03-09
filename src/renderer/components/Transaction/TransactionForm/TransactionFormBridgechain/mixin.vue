@@ -266,7 +266,10 @@ export default {
     },
 
     hasSameAssetRepository () {
-      return this.form.asset.bridgechainAssetRepository === this.bridgechain.bridgechainAssetRepository
+      return (
+        this.form.asset.bridgechainAssetRepository === this.bridgechain.bridgechainAssetRepository ||
+        (!this.form.asset.bridgechainAssetRepository && (this.bridgechain.bridgechainAssetRepository === undefined))
+      )
     },
 
     hasSameSeedNodes () {
@@ -343,7 +346,9 @@ export default {
 
     bridgechainAssetRepositoryError () {
       if (this.$v.form.asset.bridgechainAssetRepository.$dirty && this.$v.form.asset.bridgechainAssetRepository.$invalid) {
-        if (!this.$v.form.asset.bridgechainAssetRepository.url) {
+        if (!this.$v.form.asset.bridgechainAssetRepository.required) {
+          return this.$t('VALIDATION.REQUIRED', [this.$t('TRANSACTION.BRIDGECHAIN.BRIDGECHAIN_ASSET_REPOSITORY')])
+        } else if (!this.$v.form.asset.bridgechainAssetRepository.url) {
           return this.$t('VALIDATION.INVALID_URL')
         }
       }
@@ -576,6 +581,9 @@ export default {
         },
 
         bridgechainAssetRepository: {
+          required (value) {
+            return (this.bridgechain && this.bridgechain.bridgechainAssetRepository) ? required(value) : true
+          },
           url (value) {
             return url(value)
           }
