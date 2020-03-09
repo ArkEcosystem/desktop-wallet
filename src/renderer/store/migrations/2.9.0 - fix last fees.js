@@ -5,7 +5,8 @@ export default store => {
   store.getters['profile/all'].forEach(profile => {
     const lastFees = profile.lastFees
 
-    if (lastFees === undefined || Object.keys(lastFees).length === 0) {
+    const values = Object.values(lastFees || {})
+    if (!values.length || values.every(value => typeof value === 'object')) {
       return
     }
 
@@ -16,10 +17,9 @@ export default store => {
         ...lastFees
       }
     }
-    console.log(updatedProfile.lastFees)
 
     store.dispatch('profile/update', updatedProfile)
   })
 
-  store.dispatch('app/setLatestAppliedMigration', '2.8.2')
+  store.dispatch('app/setLatestAppliedMigration', '2.9.0')
 }
