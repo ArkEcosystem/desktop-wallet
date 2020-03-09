@@ -5,6 +5,7 @@ import installI18n from '../../../../__utils__/i18n'
 import TransactionFormBusinessRegistration from '@/components/Transaction/TransactionForm/TransactionFormBusiness/TransactionFormBusinessRegistration'
 import TransactionFormBusinessUpdate from '@/components/Transaction/TransactionForm/TransactionFormBusiness/TransactionFormBusinessUpdate'
 import CurrencyMixin from '@/mixins/currency'
+import StringMixin from '@/mixins/strings'
 import BigNumber from '@/plugins/bignumber'
 
 const localVue = createLocalVue()
@@ -42,6 +43,7 @@ const createWrapper = (component, wallet_fromRoute) => {
     i18n,
     localVue,
     sync: false,
+    mixins: [StringMixin],
     mocks: {
       $client: {
         buildBusinessRegistration: jest.fn((transactionData) => transactionData),
@@ -195,7 +197,7 @@ describe.each([
       it('should be enabled if form is valid', async () => {
         wrapper.vm.$v.form.fee.$model = (0.1 * 1e8).toString()
         wrapper.vm.$v.form.passphrase.$model = 'passphrase'
-        wrapper.vm.$v.form.asset.name.$model = 'business'
+        wrapper.vm.$v.form.asset.name.$model = 'new business'
         wrapper.vm.$v.form.asset.website.$model = 'https://ark.io'
         wrapper.vm.$v.form.asset.vat.$model = 'GB12345678'
         wrapper.vm.$v.form.asset.repository.$model = 'https://github.com/arkecosystem/desktop-wallet.git'
@@ -348,20 +350,24 @@ describe.each([
       })
 
       it('should return null if not dirty', () => {
-        wrapper.vm.$v.form.asset.vat.$model = ''
-        wrapper.vm.$v.form.asset.vat.$reset()
+        if (componentName === 'TransactionFormBusinessRegistration') {
+          wrapper.vm.$v.form.asset.vat.$model = ''
+          wrapper.vm.$v.form.asset.vat.$reset()
 
-        expect(wrapper.vm.$v.form.asset.vat.$dirty).toBe(false)
-        expect(wrapper.vm.$v.form.asset.vat.$invalid).toBe(false)
-        expect(wrapper.vm.vatError).toBe(null)
+          expect(wrapper.vm.$v.form.asset.vat.$dirty).toBe(false)
+          expect(wrapper.vm.$v.form.asset.vat.$invalid).toBe(false)
+          expect(wrapper.vm.vatError).toBe(null)
+        }
       })
 
       it('should return null if empty as not required', () => {
-        wrapper.vm.$v.form.asset.vat.$model = ''
+        if (componentName === 'TransactionFormBusinessRegistration') {
+          wrapper.vm.$v.form.asset.vat.$model = ''
 
-        expect(wrapper.vm.$v.form.asset.vat.$dirty).toBe(true)
-        expect(wrapper.vm.$v.form.asset.vat.$invalid).toBe(false)
-        expect(wrapper.vm.vatError).toBe(null)
+          expect(wrapper.vm.$v.form.asset.vat.$dirty).toBe(true)
+          expect(wrapper.vm.$v.form.asset.vat.$invalid).toBe(false)
+          expect(wrapper.vm.vatError).toBe(null)
+        }
       })
 
       it('should not return error if shorter than max (15)', () => {
@@ -437,12 +443,14 @@ describe.each([
       })
 
       it('should return null if not dirty', () => {
-        wrapper.vm.$v.form.asset.repository.$model = ''
-        wrapper.vm.$v.form.asset.repository.$reset()
+        if (componentName === 'TransactionFormBusinessRegistration') {
+          wrapper.vm.$v.form.asset.repository.$model = ''
+          wrapper.vm.$v.form.asset.repository.$reset()
 
-        expect(wrapper.vm.$v.form.asset.repository.$dirty).toBe(false)
-        expect(wrapper.vm.$v.form.asset.repository.$invalid).toBe(false)
-        expect(wrapper.vm.repositoryError).toBe(null)
+          expect(wrapper.vm.$v.form.asset.repository.$dirty).toBe(false)
+          expect(wrapper.vm.$v.form.asset.repository.$invalid).toBe(false)
+          expect(wrapper.vm.repositoryError).toBe(null)
+        }
       })
 
       it('should not return error if longer than min (12)', () => {
@@ -497,14 +505,20 @@ describe.each([
         wrapper.vm.$v.form.asset.vat.$model = 'GB12345678'
         wrapper.vm.$v.form.asset.repository.$model = 'https://github.com/arkecosystem/desktop-wallet.git'
 
+        let expectedAsset = {
+          name: 'business',
+          website: 'https://ark.io',
+          vat: 'GB12345678',
+          repository: 'https://github.com/arkecosystem/desktop-wallet.git'
+        }
+
+        if (componentName === 'TransactionFormBusinessUpdate') {
+          expectedAsset = {}
+        }
+
         expect(wrapper.vm.getTransactionData()).toEqual({
           address: 'address-1',
-          asset: {
-            name: 'business',
-            website: 'https://ark.io',
-            vat: 'GB12345678',
-            repository: 'https://github.com/arkecosystem/desktop-wallet.git'
-          },
+          asset: expectedAsset,
           passphrase: 'passphrase',
           fee: new BigNumber(0.1 * 1e8),
           wif: undefined,
@@ -528,14 +542,20 @@ describe.each([
         wrapper.vm.$v.form.asset.vat.$model = 'GB12345678'
         wrapper.vm.$v.form.asset.repository.$model = 'https://github.com/arkecosystem/desktop-wallet.git'
 
+        let expectedAsset = {
+          name: 'business',
+          website: 'https://ark.io',
+          vat: 'GB12345678',
+          repository: 'https://github.com/arkecosystem/desktop-wallet.git'
+        }
+
+        if (componentName === 'TransactionFormBusinessUpdate') {
+          expectedAsset = {}
+        }
+
         expect(wrapper.vm.getTransactionData()).toEqual({
           address: 'address-1',
-          asset: {
-            name: 'business',
-            website: 'https://ark.io',
-            vat: 'GB12345678',
-            repository: 'https://github.com/arkecosystem/desktop-wallet.git'
-          },
+          asset: expectedAsset,
           passphrase: 'passphrase',
           secondPassphrase: 'second passphrase',
           fee: new BigNumber(0.1 * 1e8),
