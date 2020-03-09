@@ -6,7 +6,7 @@ const localVue = createLocalVue()
 const i18n = installI18n(localVue)
 
 let wrapper
-const createWrapper = (component, transaction) => {
+const createWrapper = (component) => {
   component = component || TransactionConfirmBridgechainResignation
 
   wrapper = mount(component, {

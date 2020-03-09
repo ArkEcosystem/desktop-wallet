@@ -58,7 +58,7 @@
     <ButtonModal
       v-show="!currentWallet.isLedger"
       :class="buttonStyle"
-      :label="$t('WALLET_HEADING.ACTIONS.DELETE_WALLET')"
+      :label="currentWallet.isContact ? $t('WALLET_HEADING.ACTIONS.DELETE_CONTACT') : $t('WALLET_HEADING.ACTIONS.DELETE_WALLET')"
       icon="delete-wallet"
     >
       <template slot-scope="{ toggle, isOpen }">
@@ -94,7 +94,8 @@ export default {
   },
 
   data: () => ({
-    registrationTypes: []
+    registrationTypes: [],
+    isContact: false
   }),
 
   computed: {
@@ -111,13 +112,24 @@ export default {
     }
   },
 
+  watch: {
+    currentWallet (wallet) {
+      this.isContact = wallet.isContact
+    }
+  },
+
   async mounted () {
     this.registrationTypes = await this.getRegistrationTypes()
+    this.isContact = this.currentWallet.isContact
   },
 
   methods: {
     async onRemoval () {
-      this.$router.push({ name: 'wallets' })
+      if (this.isContact) {
+        this.$router.push({ name: 'contacts' })
+      } else {
+        this.$router.push({ name: 'wallets' })
+      }
     },
 
     closeTransactionModal (toggleMethod, isOpen) {
@@ -192,7 +204,7 @@ export default {
         if (await WalletService.hasBridgechains(this.currentWallet, this)) {
           businessResignOption.disabled = true
           businessResignOption.tooltip = {
-            content: this.$t('WALLET_HEADING.ACTIONS.BUSINESS.CANNOT_RESIGN'),
+            content: this.$root.$t('WALLET_HEADING.ACTIONS.BUSINESS.CANNOT_RESIGN'),
             placement: 'left'
           }
         }
@@ -214,6 +226,7 @@ export default {
 .ButtonDropdown__ButtonModal__disabled {
   background-color: var(--theme-option-heading-button-disabled);
   color: var(--theme-option-heading-button-text-disabled);
+  @apply .cursor-not-allowed;
 }
 .ButtonDropdown__ButtonModal__disabled:hover {
   background-color: var(--theme-option-heading-button-disabled-hover);

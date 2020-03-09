@@ -51,6 +51,7 @@
             :address="data.row.recipient || data.row.recipientId"
             :address-length="8"
             :type="data.row.type"
+            :group="data.row.typeGroup"
             :asset="data.row.asset"
             tooltip-container=".TransactionMultiSignatureTable"
           />
