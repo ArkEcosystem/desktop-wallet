@@ -15,7 +15,8 @@ import {
   AUDIO,
   EVENTS,
   ALERTS,
-  UTILS
+  UTILS,
+  DIALOGS
 } from './plugin-permission'
 import * as HttpSandbox from './sandbox/http-sandbox'
 import * as MessagingSandbox from './sandbox/messaging-sandbox'
@@ -32,6 +33,7 @@ import * as EventsSandbox from './sandbox/events-sandbox'
 import * as AlertsSandbox from './sandbox/alerts-sandbox'
 import * as BigNumberSandbox from './sandbox/big-number-sandbox'
 import * as DatetimeSandbox from './sandbox/datetime-sandbox'
+import * as DialogSandbox from './sandbox/dialogs-sandbox'
 
 export class PluginSandbox {
   constructor ({
@@ -118,6 +120,7 @@ export class PluginSandbox {
     return {
       [ALERTS.name]: AlertsSandbox.create(this.walletApi, this.app),
       [AUDIO.name]: AudioSandbox.create(this.sandbox),
+      [DIALOGS.name]: DialogSandbox.create(this.walletApi),
       [EVENTS.name]: EventsSandbox.create(this.walletApi, this.app),
       [HTTP.name]: HttpSandbox.create(this.walletApi, this.plugin),
       [MESSAGING.name]: MessagingSandbox.create(this.walletApi, this.app),

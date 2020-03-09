@@ -6,7 +6,7 @@
           ? 'MenuDropdownItem--active bg-theme-feature-item-hover text-theme-feature-item-selected-text'
           : 'text-grey-dark hover:bg-theme-feature-item-alternative border-grey-light'
       "
-      class="MenuDropdownItem__button cursor-pointer bt-theme-feature w-full"
+      class="MenuDropdownItem__button cursor-pointer bg-theme-feature w-full"
       @click.capture.stop="emitClick"
     >
       <div
