@@ -157,7 +157,7 @@
 </template>
 
 <script>
-import electron from 'electron'
+import { remote } from 'electron'
 import { at } from 'lodash'
 /* eslint-disable vue/no-unused-components */
 import { ButtonGeneric } from '@/components/Button'
@@ -405,12 +405,21 @@ export default {
 
   methods: {
     historyBack () {
-      const webContents = electron.remote.getCurrentWindow().webContents
-      if (!webContents.canGoBack()) {
-        throw new Error('It is not possible to go back in history')
-      }
+      const webContents = remote.getCurrentWindow().webContents
 
-      webContents.goBack()
+      if (webContents.canGoBack()) {
+        webContents.goBack()
+      } else {
+        try {
+          if (this.currentWallet.isContact) {
+            this.$router.push({ name: 'contacts' })
+          } else {
+            this.$router.push({ name: 'wallets' })
+          }
+        } catch (error) {
+          throw new Error('It is not possible to go back in history')
+        }
+      }
     },
 
     switchToTab (component) {
