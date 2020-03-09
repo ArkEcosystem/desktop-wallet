@@ -774,17 +774,17 @@ describe.each([
         expect(wrapper.vm.bridgechainAssetRepositoryError).toBe(null)
       })
 
-      it('should return null if not dirty', () => {
-        wrapper.vm.$v.form.asset.bridgechainAssetRepository.$model = ''
-        wrapper.vm.$v.form.asset.bridgechainAssetRepository.$reset()
-
-        expect(wrapper.vm.$v.form.asset.bridgechainAssetRepository.$dirty).toBe(false)
-        expect(wrapper.vm.$v.form.asset.bridgechainAssetRepository.$invalid).toBe(false)
-        expect(wrapper.vm.bridgechainAssetRepositoryError).toBe(null)
-      })
-
       if (componentName === 'TransactionFormBridgechainRegistration') {
         describe('TransactionFormBridgechainRegistration', () => {
+          it('should return null if not dirty', () => {
+            wrapper.vm.$v.form.asset.bridgechainAssetRepository.$model = ''
+            wrapper.vm.$v.form.asset.bridgechainAssetRepository.$reset()
+
+            expect(wrapper.vm.$v.form.asset.bridgechainAssetRepository.$dirty).toBe(false)
+            expect(wrapper.vm.$v.form.asset.bridgechainAssetRepository.$invalid).toBe(false)
+            expect(wrapper.vm.bridgechainAssetRepositoryError).toBe(null)
+          })
+
           it('should not return error if valid', () => {
             wrapper.vm.$v.form.asset.bridgechainAssetRepository.$model = 'https://github.com/arkecosystem/desktop-wallet.git'
 
