@@ -5,6 +5,7 @@ import config from '@config'
 import i18n from '@/i18n'
 import PeerModel from '@/models/peer'
 import Vue from 'vue'
+import { Peer } from '@/services/peer'
 
 const getBaseUrl = (peer) => {
   const scheme = peer.isHttps ? 'https://' : 'http://'
@@ -467,12 +468,13 @@ export default {
         }
         const latency = (performance.now() - delayStart).toFixed(0)
 
-        currentPeer = {
+        currentPeer = new Peer({
           ...currentPeer,
           latency: +latency,
           height: +peerStatus.height,
           lastUpdated: new Date()
-        }
+        })
+
         if (updateCurrentPeer) {
           await dispatch('setCurrentPeer', currentPeer)
         } else {
@@ -507,51 +509,34 @@ export default {
      * @return {(Object|String)}
      */
     async validatePeer ({ rootGetters }, { host, ip, port, nethash, ignoreNetwork = false, timeout = 3000 }) {
-      let networkConfig
-      if (!host && ip) {
-        host = ip
-      }
-      let baseUrl = `${host}:${port}`
       const schemeUrl = host.match(/^(https?:\/\/)+(.+)$/)
-      if (!schemeUrl) {
-        baseUrl = `http://${baseUrl}`
-      }
-      try {
-        networkConfig = await ClientService.fetchNetworkConfig(baseUrl, timeout)
-      } catch (error) {
-        console.error('Could not get network config:', error)
-      }
+      const isHttps = schemeUrl && schemeUrl[1] === 'https://'
 
-      if (!networkConfig) {
-        return i18n.t('PEER.NO_CONNECT')
-      } else if (!ignoreNetwork && networkConfig.nethash !== (nethash || rootGetters['session/network'].nethash)) {
-        return i18n.t('PEER.WRONG_NETWORK')
-      }
-
-      const client = new ClientService()
-      client.host = baseUrl
-      client.client.withOptions({ timeout: 3000 })
-
-      let peerStatus
-      try {
-        peerStatus = await client.fetchPeerStatus()
-      } catch (error) {
-        //
-      }
-
-      if (!peerStatus) {
-        return i18n.t('PEER.STATUS_CHECK_FAILED')
-      }
-
-      return {
-        ip: schemeUrl ? schemeUrl[2] : host,
-        host: baseUrl,
+      const peer = new Peer({
+        host: host,
+        ip: ip,
         port: +port,
-        height: peerStatus.height,
-        status: 'OK',
-        latency: 0,
-        isHttps: schemeUrl && schemeUrl[1] === 'https://'
+        isHttps: isHttps,
+        clientTimeout: timeout
+      })
+
+      try {
+        await peer.checkNetwork({
+          nethash: nethash || rootGetters['session/network'].nethash,
+          ignoreNetwork: ignoreNetwork,
+          timeout: timeout
+        })
+        await peer.fetchStatus({
+          timeout: timeout
+        })
+      } catch (err) {
+        return err
       }
+
+      peer.status = 'OK'
+      peer.latency = 0
+
+      return peer
     }
   }
 }
