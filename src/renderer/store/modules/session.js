@@ -88,8 +88,8 @@ export default {
     transactionTableRowCount: state => state.transactionTableRowCount,
     unconfirmedVotes: state => state.unconfirmedVotes,
     lastFees: state => state.lastFees,
-    lastFeeByType: state => type => {
-      return state.lastFees ? state.lastFees[type] : null
+    lastFeeByType: state => (type, typeGroup) => {
+      return (state.lastFees && state.lastFees[typeGroup]) ? state.lastFees[typeGroup][type] : null
     },
     multiSignaturePeer: state => state.multiSignaturePeer,
     filterBlacklistedPlugins: state => state.filterBlacklistedPlugins,
@@ -203,8 +203,11 @@ export default {
       state.unconfirmedVotes = votes
     },
 
-    SET_LAST_FEES (state, fees) {
-      state.lastFees = fees
+    SET_LAST_FEES_BY_TYPE (state, { fee, type, typeGroup }) {
+      if (!state.lastFees[typeGroup]) {
+        state.lastFees[typeGroup] = {}
+      }
+      state.lastFees[typeGroup][type] = fee
     },
 
     SET_MULTI_SIGNATURE_PEER (state, peer) {
@@ -425,15 +428,8 @@ export default {
       commit('SET_UNCONFIRMED_VOTES', value)
     },
 
-    setLastFees ({ commit }, value) {
-      commit('SET_LAST_FEES', value)
-    },
-
-    setLastFeeByType ({ commit, getters }, { fee, type }) {
-      const fees = getters.lastFees
-      fees[type] = fee
-
-      commit('SET_LAST_FEES', fees)
+    setLastFeeByType ({ commit }, { fee, type, typeGroup }) {
+      commit('SET_LAST_FEES_BY_TYPE', { fee, type, typeGroup })
     },
 
     setMultiSignaturePeer ({ commit }, { host, port }) {
