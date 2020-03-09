@@ -30,6 +30,7 @@
           >
             <MenuDropdown
               ref="currency-menu"
+              container-classes="theme-light"
               :items="currencies"
               :value="sessionCurrency"
               @select="setCurrency"
@@ -51,6 +52,7 @@
             <MenuDropdown
               v-if="pluginThemes"
               ref="theme-menu"
+              container-classes="theme-light"
               :items="themes"
               :value="sessionTheme"
               @select="setTheme"
