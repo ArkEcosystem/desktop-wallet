@@ -2,7 +2,7 @@ import ClientService from '@/services/client'
 import i18n from '@/i18n'
 
 export class Peer {
-  constructor ({ ip, host, port, height, status, latency, isHttps, lastUpdated, clientTimeout }) {
+  constructor ({ ip, host, port, height, status, latency, isHttps, lastUpdated }) {
     if (!host && ip) {
       host = ip
     }
