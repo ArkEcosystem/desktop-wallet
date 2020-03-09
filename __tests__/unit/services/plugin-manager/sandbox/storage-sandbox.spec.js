@@ -101,8 +101,7 @@ describe('Storage Sandbox', () => {
   })
 
   it('should get all global values', () => {
-    app.$store.getters['session/profileId'] = 'global'
-    const result = walletApi.storage.getOptions()
+    const result = walletApi.storage.getOptions(true)
     expect(Object.keys(result)).toHaveLength(1)
     expect(result).toHaveProperty(globalOptions.key, globalOptions.value)
   })

@@ -1,7 +1,7 @@
 <template>
   <ModalConfirmation
-    :question="$t('WALLET_REMOVAL_CONFIRMATION.QUESTION')"
-    :note="$t('WALLET_REMOVAL_CONFIRMATION.NOTE')"
+    :question="wallet.isContact ? $t('WALLET_REMOVAL_CONFIRMATION.CONTACT_QUESTION') : $t('WALLET_REMOVAL_CONFIRMATION.QUESTION')"
+    :note="!wallet.isContact ? $t('WALLET_REMOVAL_CONFIRMATION.NOTE') : null"
     container-classes="WalletRemovalConfirmation"
     @close="emitCancel"
     @cancel="emitCancel"
