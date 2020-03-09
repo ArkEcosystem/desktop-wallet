@@ -502,10 +502,12 @@ export default {
 
     /**
      * Validate custom peer, used to check it's acceptable to connect.
-     * @param  {String} ip
-     * @param  {Number} port
-     * @param  {Number} [ignoreNetwork=false]
-     * @param  {Number} [timeout=3000]
+     * @param  {String} ip IP address without the schema.
+     * @param  {String} host Host address, with or without the schema.
+     * @param  {Number} port Port number
+     * @param  {String} nethash The network hash for the network which the peer belongs to
+     * @param  {Number} [ignoreNetwork=false] Set to true if validating a peer for other network
+     * @param  {Number} [timeout=3000] Default timeout for all the client requests.
      * @return {(Object|String)}
      */
     async validatePeer ({ rootGetters }, { host, ip, port, nethash, ignoreNetwork = false, timeout = 3000 }) {
