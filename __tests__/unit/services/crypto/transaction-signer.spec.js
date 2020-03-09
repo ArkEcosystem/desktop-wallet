@@ -93,7 +93,7 @@ jest.mock('@/store', () => ({
     ]
   },
   dispatch: jest.fn(),
-  watch: jest.fn((getter, callback, options) => {
+  watch: jest.fn(() => {
     // getter()
     // require('@/store').__mock__.watch = {
     //   getter: getter(),

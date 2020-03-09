@@ -41,7 +41,7 @@ export default {
       }
 
       const ticker = network.market.ticker
-      const data = await priceApi.fetchMarketData(ticker)
+      const data = await priceApi.marketData(ticker)
       if (!data) {
         return
       }

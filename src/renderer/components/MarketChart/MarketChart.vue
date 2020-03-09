@@ -183,7 +183,7 @@ export default {
 
       await this.renderGradient()
 
-      const response = await priceApi.historicByType(this.period, this.ticker, this.currency)
+      const response = await priceApi.historicalPriceFor(this.period, this.ticker, this.currency)
       if (!response) {
         this.hasChartData = false
       } else if (response.datasets) {

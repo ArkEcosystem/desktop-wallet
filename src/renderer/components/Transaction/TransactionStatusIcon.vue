@@ -8,7 +8,7 @@
       container: tooltipContainer
     }"
     :class="{
-      'bg-grey-lighter': isTransferToSelf,
+      'TransactionStatus__transferToSelf': isTransferToSelf,
       'text-theme-transaction-confirmations-sent bg-theme-transaction-sent': isSender && !isTransferToSelf,
       'text-theme-transaction-confirmations-received bg-theme-transaction-received': !isSender && !isTransferToSelf
     }"
@@ -29,7 +29,7 @@
       container: tooltipContainer
     }"
     :class="{
-      'bg-grey-lighter': isTransferToSelf,
+      'TransactionStatus__transferToSelf': isTransferToSelf,
       'text-theme-transaction-sent-arrow bg-theme-transaction-sent': isSender && !isTransferToSelf,
       'text-theme-transaction-received-arrow bg-theme-transaction-received': !isSender && !isTransferToSelf
     }"
@@ -119,3 +119,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.TransactionStatus__transferToSelf {
+  background-color: var(--theme-button-light);
+}
+</style>
