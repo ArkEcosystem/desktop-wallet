@@ -9,7 +9,6 @@ jest.mock('@/services/wallet')
 
 const localVue = createLocalVue()
 const i18n = installI18n(localVue)
-const sampleTransactions = Object.freeze([])
 
 let wrapper
 
@@ -21,9 +20,8 @@ let multiSignatureClientMock
 let publicKeyFromWalletMock
 let loggerErrorMock
 let dispatchMock
-const createWrapper = (component, gettersTransactions) => {
+const createWrapper = (component) => {
   component = component || WalletTransactionsMultiSignature
-  gettersTransactions = gettersTransactions === undefined ? sampleTransactions : gettersTransactions
 
   errorMock = jest.fn()
   successMock = jest.fn()
