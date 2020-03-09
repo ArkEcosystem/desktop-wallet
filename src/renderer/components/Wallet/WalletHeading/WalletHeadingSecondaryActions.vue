@@ -214,6 +214,7 @@ export default {
 .ButtonDropdown__ButtonModal__disabled {
   background-color: var(--theme-option-heading-button-disabled);
   color: var(--theme-option-heading-button-text-disabled);
+  @apply .cursor-not-allowed;
 }
 .ButtonDropdown__ButtonModal__disabled:hover {
   background-color: var(--theme-option-heading-button-disabled-hover);

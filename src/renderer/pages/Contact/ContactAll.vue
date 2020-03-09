@@ -18,7 +18,7 @@
       </div>
 
       <button
-        class="ContactAll__CreateButton justify-end"
+        class="ContactAll__CreateButton ml-12 justify-end"
         @click="createContact"
       >
         <span class="ContactAll__CreateButton__icon">
@@ -237,7 +237,7 @@ export default {
 }
 .ContactAll__CreateButton {
   transition: all .1s ease-in;
-  @apply .flex .items-center .font-semibold .bg-theme-button .rounded .cursor-pointer .text-theme-button-text .ml-12;
+  @apply .flex .items-center .font-semibold .bg-theme-button .rounded .cursor-pointer .text-theme-button-text;
 }
 .ContactAll__CreateButton:hover {
   @apply .bg-blue .text-white;
