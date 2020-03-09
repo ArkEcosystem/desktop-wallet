@@ -81,4 +81,19 @@ describe('SessionModule', () => {
       expect(store.getters['session/priceApi']).toEqual('coingecko')
     })
   })
+
+  describe('actions > setLastFeeByType', () => {
+    it('should set the value for the last fee by type', () => {
+      store.dispatch('session/setLastFeeByType', {
+        fee: '1000',
+        type: 0,
+        typeGroup: 1
+      })
+      expect(store.getters['session/lastFees']).toEqual({
+        1: {
+          0: '1000'
+        }
+      })
+    })
+  })
 })
