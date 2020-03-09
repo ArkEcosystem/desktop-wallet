@@ -51,9 +51,20 @@ export default new BaseModule(ProfileModel, {
     },
 
     public: (state, _, __, rootGetters) => (all = false) => {
-      const minimiseProfile = (profile) => ({
+      const isDarkTheme = theme => {
+        if (['light', 'dark'].includes(theme)) {
+          return theme === 'dark'
+        }
+        return rootGetters['plugin/themes'][theme].darkMode
+      }
+
+      const minimiseProfile = profile => ({
         avatar: profile.avatar,
         currency: profile.currency,
+        theme: {
+          name: profile.theme,
+          isDark: isDarkTheme(profile.theme)
+        },
         language: profile.language,
         name: profile.name,
         network: rootGetters['network/byId'](profile.networkId),

@@ -6,7 +6,7 @@ const localVue = createLocalVue()
 const i18n = installI18n(localVue)
 
 let wrapper
-const createWrapper = (component, propsData) => {
+const createWrapper = (component) => {
   component = component || WalletIpfs
 
   wrapper = mount(component, {
