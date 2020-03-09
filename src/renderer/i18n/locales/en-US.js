@@ -565,6 +565,7 @@ export default {
       THEMES: 'Allows loading additional custom themes for the Desktop Wallet',
       TIMERS: 'Allows using timeouts and intervals',
       UI_COMPONENTS: 'Allows access to the standard Desktop Wallet components used throughout',
+      UTILS: 'Allows using utilities such as the BigNumber type and dayjs',
       WALLET_TABS: 'Allows showing an additional tab/page on the Wallet screen',
       WEBFRAME: 'Allows showing remote URL pages within a frame',
       WEBSOCKET: 'Allows connections to websockets'
@@ -1207,6 +1208,7 @@ export default {
       REGISTER_DELEGATE: 'Register Delegate',
       RESIGN_DELEGATE: 'Resign Delegate',
       SECOND_PASSPHRASE: 'Second Passphrase',
+      DELETE_CONTACT: 'Delete Contact',
       DELETE_WALLET: 'Delete Wallet',
       SHOW_PUBLIC_KEY: 'Show Public Key',
       SHOW_ADDRESS: 'Show Address',
@@ -1370,7 +1372,8 @@ export default {
 
   WALLET_REMOVAL_CONFIRMATION: {
     NOTE: 'It does not delete any data on the blockchain. You could recover the wallet as long as you have the passphrase',
-    QUESTION: 'Are you sure you want to remove this wallet?'
+    QUESTION: 'Are you sure you want to remove this wallet?',
+    CONTACT_QUESTION: 'Are you sure you want to remove this contact?'
   },
 
   PLUGIN_REMOVAL_CONFIRMATION: {

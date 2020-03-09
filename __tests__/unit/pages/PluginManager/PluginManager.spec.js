@@ -29,7 +29,7 @@ describe('pages > PluginManager', () => {
             'session/pluginMenuOpen': true
           },
 
-          dispatch (action, value) {
+          dispatch () {
             //
           }
         }
