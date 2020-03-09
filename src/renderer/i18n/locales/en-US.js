@@ -556,6 +556,7 @@ export default {
       HTTP: 'Allows performing external web requests',
       MENU_ITEMS: 'Allows adding custom menu items to the Desktop Wallet sidebar',
       MESSAGING: 'Allows WebFrames access to a one-way messaging system',
+      PEER_ALL: 'Allows access to the peer discovery',
       PEER_CURRENT: 'Allows access to the currently connected peer',
       PUBLIC: 'Allows navigation to wallet routes and provides access to the Font Awesome icon set',
       PROFILE_ALL: 'Allows access to all available profiles',
