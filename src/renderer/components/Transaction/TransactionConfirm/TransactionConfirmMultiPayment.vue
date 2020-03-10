@@ -96,6 +96,11 @@ export default {
 <style scoped>
 .TransactionConfirmMultiPayment__recipients {
   @apply .overflow-y-auto;
-  max-height: 200px;
+}
+</style>
+
+<style>
+.TransactionConfirmMultiPayment__recipients .InputEditableList__list {
+  max-height: 13rem;
 }
 </style>
