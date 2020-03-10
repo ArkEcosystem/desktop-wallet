@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "ark-desktop-wallet",
-  "version": "2.8.1",
+  "version": "2.9.0",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ArkEcosystem/desktop-wallet.git"
@@ -202,7 +202,7 @@
     "webpack-hot-middleware": "^2.25.0"
   },
   "build": {
-    "productName": "Ark Desktop Wallet",
+    "productName": "ARK Desktop Wallet",
     "appId": "io.ark.desktop-wallet",
     "artifactName": "${name}-${os}-${arch}-${version}.${ext}",
     "afterSign": "scripts/notarize.js",

@@ -17,6 +17,7 @@
     </ListDividedItem>
 
     <ListDividedItem
+      v-if="transaction.asset.businessUpdate.name"
       class="TransactionConfirmBusinessUpdate__name"
       :label="$t('WALLET_BUSINESS.NAME')"
     >
@@ -24,6 +25,7 @@
     </ListDividedItem>
 
     <ListDividedItem
+      v-if="transaction.asset.businessUpdate.website"
       class="TransactionConfirmBusinessUpdate__website"
       :label="$t('WALLET_BUSINESS.WEBSITE')"
     >

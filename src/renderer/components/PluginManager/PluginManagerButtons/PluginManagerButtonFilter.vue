@@ -4,14 +4,14 @@
       class="PluginManagerButtonFilter"
       @click="toggleDropdown"
     >
-      <span class="mr-1 md:whitespace-no-wrap">
+      <span class="mr-2 md:whitespace-no-wrap">
         {{ strings_capitalizeFirst($t(`PAGES.PLUGIN_MANAGER.FILTERS.${activeFilter.toUpperCase()}`)) }}
       </span>
 
       <SvgIcon
         :class="{ 'rotate-180': isOpen }"
         name="arrow-dropdown"
-        view-box="0 0 16 16"
+        view-box="0 0 10 10"
       />
     </button>
 
