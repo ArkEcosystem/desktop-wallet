@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - "master"
+      - "staging"
       - "develop"
   pull_request:
     types: [ready_for_review, synchronize, opened]
@@ -89,20 +90,20 @@ jobs:
       # - name: Upload .AppImage
       #   uses: actions/upload-artifact@master
       #   with:
-      #     name: ark-desktop-wallet-linux-2.8.1.AppImage
-      #     path: build/target/ark-desktop-wallet-linux-x86_64-2.8.1.AppImage
+      #     name: ark-desktop-wallet-linux-2.9.0.AppImage
+      #     path: build/target/ark-desktop-wallet-linux-x86_64-2.9.0.AppImage
 
       # - name: Upload .tar.gz
       #   uses: actions/upload-artifact@master
       #   with:
-      #     name: ark-desktop-wallet-linux-2.8.1.tar.gz
-      #     path: build/target/ark-desktop-wallet-linux-x64-2.8.1.tar.gz
+      #     name: ark-desktop-wallet-linux-2.9.0.tar.gz
+      #     path: build/target/ark-desktop-wallet-linux-x64-2.9.0.tar.gz
 
       - name: Upload .deb
         uses: actions/upload-artifact@master
         with:
-          name: ark-desktop-wallet-linux-2.8.1-${{ github.sha }}.deb
-          path: build/target/ark-desktop-wallet-linux-amd64-2.8.1.deb
+          name: ark-desktop-wallet-linux-2.9.0-${{ github.sha }}.deb
+          path: build/target/ark-desktop-wallet-linux-amd64-2.9.0.deb
 
   build-macOS:
     runs-on: macos-latest
@@ -137,14 +138,14 @@ jobs:
       # - name: Upload .zip
       #   uses: actions/upload-artifact@master
       #   with:
-      #     name: ark-desktop-wallet-mac-2.8.1.zip
-      #     path: build/target/ark-desktop-wallet-mac-2.8.1.zip
+      #     name: ark-desktop-wallet-mac-2.9.0.zip
+      #     path: build/target/ark-desktop-wallet-mac-2.9.0.zip
 
       - name: Upload .dmg
         uses: actions/upload-artifact@v1
         with:
-          name: ark-desktop-wallet-mac-2.8.1-${{ github.sha }}.dmg
-          path: build/target/ark-desktop-wallet-mac-2.8.1.dmg
+          name: ark-desktop-wallet-mac-2.9.0-${{ github.sha }}.dmg
+          path: build/target/ark-desktop-wallet-mac-2.9.0.dmg
 
   build-windows:
     runs-on: windows-latest
@@ -172,5 +173,5 @@ jobs:
       - name: Upload .exe
         uses: actions/upload-artifact@v1
         with:
-          name: ark-desktop-wallet-win-2.8.1-${{ github.sha }}.exe
-          path: build/target/ark-desktop-wallet-win-2.8.1.exe
+          name: ark-desktop-wallet-win-2.9.0-${{ github.sha }}.exe
+          path: build/target/ark-desktop-wallet-win-2.9.0.exe

@@ -2,7 +2,7 @@
   <ModalWindow
     :message="$t('PAGES.PLUGIN_MANAGER.DISCLAIMER')"
     header-classes="flex p-8 -mx-16 -mt-16 bg-theme-secondary-feature rounded-t-lg"
-    container-classes="max-w-md"
+    container-classes="PluginDetailsModal max-w-md"
     @close="emitClose"
   >
     <template #header>
@@ -94,12 +94,6 @@
     </template>
 
     <template #default>
-      <div class="-mx-16 -mt-3">
-        <PluginSlider
-          :plugin="plugin"
-        />
-      </div>
-
       <p
         class="PluginDetailsModal__description"
         :class="{
@@ -132,6 +126,12 @@
       >
         {{ $t('MODAL_PLUGIN_DETAILS.SHOW_PERMISSIONS') }}
       </a>
+
+      <div class="mt-6">
+        <PluginSlider
+          :plugin="plugin"
+        />
+      </div>
 
       <div class="PluginDetailsModal__stats">
         <div>
@@ -319,6 +319,12 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
+.PluginDetailsModal .ModalWindow__container__content {
+  @apply .pb-8;
+}
+.PluginDetailsModal .ModalWindow__container__footer--warning {
+  @apply .py-4;
+}
 .PluginDetailsModal__header__details {
   @apply flex items-center mt-1 text-theme-page-text-light;
 }
