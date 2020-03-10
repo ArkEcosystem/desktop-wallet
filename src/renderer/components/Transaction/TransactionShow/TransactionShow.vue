@@ -220,6 +220,7 @@
         v-if="transaction.vendorField"
         :value="transaction.vendorField"
         :label="$t('TRANSACTION.VENDOR_FIELD')"
+        item-value-class="max-w-xs break-words"
       />
 
       <ListDividedItem
