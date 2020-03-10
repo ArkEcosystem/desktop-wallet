@@ -47,7 +47,7 @@
         class="PluginInstallModal__footer"
       >
         <button
-          class="blue-button"
+          class="blue-button mx-1"
           @click="emitClose"
         >
           {{ $t('MODAL_PLUGIN_INSTALL.CANCEL') }}
@@ -55,7 +55,7 @@
 
         <button
           v-if="isDownloadFinished && !isDownloadFailed"
-          class="blue-button"
+          class="action-button px-8 py-4 mx-1"
           @click="emitInstall"
         >
           {{ $t(`MODAL_PLUGIN_INSTALL.${isUpdate ? 'UPDATE' : 'INSTALL'}`) }}
@@ -219,6 +219,6 @@ export default {
   @apply w-full
 }
 .PluginInstallModal__footer {
-  @apply flex justify-between items-center mt-5
+  @apply flex justify-center items-center mt-5
 }
 </style>
