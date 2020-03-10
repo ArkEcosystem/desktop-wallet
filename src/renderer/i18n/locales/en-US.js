@@ -552,6 +552,7 @@ export default {
       AUDIO: 'Allows access to play audio from within the Desktop Wallet',
       AVATARS: 'Plugin contains custom avatars',
       COMPONENTS: 'Allows loading custom components',
+      DIALOGS: 'Allows using file dialogs',
       EVENTS: 'Allows access to the Desktop Wallet events',
       HTTP: 'Allows performing external web requests',
       MENU_ITEMS: 'Allows adding custom menu items to the Desktop Wallet sidebar',
