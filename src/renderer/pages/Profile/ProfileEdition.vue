@@ -187,7 +187,6 @@
                   }"
                   :items="defaultFees"
                   :value="defaultChosenFee"
-                  :position="['-75%', '0%']"
                   @select="selectDefaultChosenFee"
                 />
               </ListDividedItem>
