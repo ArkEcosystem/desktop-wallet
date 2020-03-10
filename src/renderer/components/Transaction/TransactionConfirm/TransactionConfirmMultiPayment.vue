@@ -17,6 +17,13 @@
     </ListDividedItem>
 
     <ListDividedItem
+      class="TransactionConfirmMultiPayment__amount"
+      :label="$t('TRANSACTION.MULTI_PAYMENT.TOTAL_AMOUNT')"
+    >
+      {{ formatter_networkCurrency(totalAmount) }}
+    </ListDividedItem>
+
+    <ListDividedItem
       class="TransactionConfirmMultiPayment__recipients"
       :label="`${$t('TRANSACTION.RECIPIENTS')} - ${payments.length}`"
       item-value-class="items-center"
@@ -51,6 +58,16 @@ export default {
   computed: {
     senderLabel () {
       return this.wallet_formatAddress(this.currentWallet.address)
+    },
+
+    totalAmount () {
+      const amount = this.currency_toBuilder(0)
+
+      for (const payment of this.payments) {
+        amount.add(payment.amount)
+      }
+
+      return amount.value
     },
 
     payments () {
