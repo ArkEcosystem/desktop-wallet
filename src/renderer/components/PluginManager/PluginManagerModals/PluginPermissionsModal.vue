@@ -20,7 +20,7 @@
 
       <footer class="PluginPermissionsModal__footer">
         <button
-          class="blue-button"
+          class="blue-button mx-1"
           @click="emitClose"
         >
           {{ $t('MODAL_PLUGIN_PERMISSIONS.BACK') }}
@@ -28,7 +28,7 @@
 
         <button
           v-if="!isInstalled || isUpdate"
-          class="blue-button"
+          class="action-button px-8 py-4 mx-1"
           @click="emitConfirm"
         >
           {{ $t('MODAL_PLUGIN_PERMISSIONS.DOWNLOAD') }}
@@ -103,6 +103,6 @@ export default {
 }
 
 .PluginPermissionsModal__footer {
-  @apply mt-10 flex justify-between items-center
+  @apply mt-10 flex justify-center items-center
 }
 </style>
