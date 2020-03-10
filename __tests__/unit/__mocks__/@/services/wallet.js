@@ -8,7 +8,7 @@ export default {
     }
   }),
   canResignBusiness: jest.fn(() => false),
-  getAddressFromPublicKey: jest.fn(address => `public key of ${address}`),
+  getAddressFromPublicKey: jest.fn(publicKey => `address of ${publicKey}`),
   getPublicKeyFromPassphrase: jest.fn(passphrase => `public key of ${passphrase}`),
   getPublicKeyFromMultiSignatureAsset: jest.fn(() => 'public key of multisignature'),
   generateSecondPassphrase: jest.fn(() => 'second-passphrase'),

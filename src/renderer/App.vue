@@ -405,13 +405,18 @@ export default {
      * instead of that, those assets are loaded manually and then injected directly on the DOM.
      */
     applyPluginTheme (themeName) {
-      if (themeName && this.pluginThemes) {
+      const $style = document.querySelector('style[name=plugins]')
+
+      if (['light', 'dark'].includes(themeName)) {
+        $style.innerHTML = null
+      } else if (themeName && this.pluginThemes) {
         const theme = this.pluginThemes[themeName]
         if (theme) {
-          const $style = document.querySelector('style[name=plugins]')
           const input = fs.readFileSync(theme.cssPath)
           const output = new CleanCss().minify(input)
           $style.innerHTML = output.styles
+        } else {
+          $style.innerHTML = null
         }
       }
     }
