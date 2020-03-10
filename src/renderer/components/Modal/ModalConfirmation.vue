@@ -26,17 +26,17 @@
 
       <slot />
 
-      <div class="mt-4 flex flex-row">
+      <div class="mt-4 flex flex-row justify-center">
         <button
           v-if="showCancelButton"
-          class="ModalConfirmation__cancel-button blue-button"
+          class="ModalConfirmation__cancel-button blue-button mx-1"
           @click="emitCancel"
         >
           {{ cancelButton }}
         </button>
 
         <button
-          class="ModalConfirmation__continue-button action-button py-4 px-8"
+          class="ModalConfirmation__continue-button action-button py-4 px-8 mx-1"
           @click="emitContinue"
         >
           {{ continueButton }}
