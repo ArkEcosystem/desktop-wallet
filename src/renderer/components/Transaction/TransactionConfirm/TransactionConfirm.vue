@@ -13,7 +13,7 @@
     />
 
     <footer class="mt-10 flex justify-between items-center">
-      <div>
+      <div class="flex">
         <button
           class="TransactionConfirm__back-button blue-button mr-2 px-5"
           @click="emitBack"
