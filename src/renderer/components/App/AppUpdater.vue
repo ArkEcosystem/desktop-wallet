@@ -65,16 +65,16 @@
         >
           <button
             class="blue-button mx-1"
-            @click="startDownload"
-          >
-            {{ $t('APP_UPDATER.DOWNLOAD_NOW') }}
-          </button>
-
-          <button
-            class="action-button px-8 mx-1"
             @click="emitClose"
           >
             {{ $t('APP_UPDATER.MAYBE_LATER') }}
+          </button>
+
+          <button
+            class="action-button py-4 px-8 mx-1"
+            @click="startDownload"
+          >
+            {{ $t('APP_UPDATER.DOWNLOAD_NOW') }}
           </button>
         </div>
 
