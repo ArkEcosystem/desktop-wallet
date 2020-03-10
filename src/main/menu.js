@@ -136,11 +136,17 @@ export default function ({ createLoadingWindow }) {
         { type: 'separator' },
         { role: 'services', submenu: [] },
         { type: 'separator' },
-        { role: 'hide' },
+        {
+          label: 'Hide',
+          role: 'hide'
+        },
         { role: 'hideothers' },
         { role: 'unhide' },
         { type: 'separator' },
-        { role: 'quit' }
+        {
+          label: 'Quit',
+          role: 'quit'
+        }
       ]
     }
 
