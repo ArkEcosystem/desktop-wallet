@@ -1,5 +1,6 @@
 import { createLocalVue, mount } from '@vue/test-utils'
 import installI18n from '../../../__utils__/i18n'
+import CurrencyMixin from '@/mixins/currency'
 import TransactionConfirmMultiPayment from '@/components/Transaction/TransactionConfirm/TransactionConfirmMultiPayment'
 
 const localVue = createLocalVue()
@@ -34,6 +35,7 @@ const createWrapper = (component, transaction) => {
       transaction
     },
     mocks: {
+      currency_toBuilder: jest.fn(CurrencyMixin.methods.currency_toBuilder),
       formatter_networkCurrency: jest.fn((amount) => amount),
       wallet_formatAddress: jest.fn((address) => `formatted-${address}`),
       wallet_name: jest.fn(wallet => wallet)
