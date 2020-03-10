@@ -34,6 +34,22 @@
         readonly
       />
     </ListDividedItem>
+
+    <ListDividedItem
+      v-if="transaction.vendorField"
+      class="TransactionConfirmMultiPayment__vendorfield"
+      :label="$t('TRANSACTION.VENDOR_FIELD')"
+      item-value-class="w-full break-words"
+    >
+      {{ transaction.vendorField }}
+    </ListDividedItem>
+
+    <ListDividedItem
+      class="TransactionConfirmMultiPayment__fee"
+      :label="$t('TRANSACTION.FEE')"
+    >
+      {{ formatter_networkCurrency(transaction.fee) }}
+    </ListDividedItem>
   </ListDivided>
 </template>
 
