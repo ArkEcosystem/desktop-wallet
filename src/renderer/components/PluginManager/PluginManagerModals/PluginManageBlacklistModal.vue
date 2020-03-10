@@ -32,19 +32,20 @@
         </ListDivided>
       </div>
 
-      <div class="mt-2 flex flex-row">
+      <div class="mt-2 flex flex-row justify-center">
         <button
-          class="blue-button"
-          @click="removeAll"
-        >
-          {{ $t('MODAL_PLUGIN_MANAGE_BLACKLIST.REMOVE_ALL') }}
-        </button>
-
-        <button
-          class="blue-button"
+          class="blue-button mx-1"
           @click="emitClose"
         >
           {{ $t('MODAL_PLUGIN_MANAGE_BLACKLIST.CLOSE') }}
+        </button>
+
+        <button
+          v-if="blacklist.length"
+          class="action-button px-8 py-4 mx-1"
+          @click="removeAll"
+        >
+          {{ $t('MODAL_PLUGIN_MANAGE_BLACKLIST.REMOVE_ALL') }}
         </button>
       </div>
     </section>
