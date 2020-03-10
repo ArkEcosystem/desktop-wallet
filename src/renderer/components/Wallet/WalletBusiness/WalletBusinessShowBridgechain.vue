@@ -69,6 +69,35 @@
       </ListDividedItem>
 
       <ListDividedItem
+        v-if="bridgechain.bridgechainAssetRepository"
+        :label="$t('WALLET_BUSINESS.BRIDGECHAIN.BRIDGECHAIN_ASSET_REPOSITORY')"
+        class="WalletBusinessShowBridgechain__bridgechain-asset-repo"
+      >
+        <a
+          class="flex items-center whitespace-no-wrap"
+          href="#"
+          @click.stop="electron_openExternal(bridgechain.bridgechainAssetRepository)"
+        >
+          <span
+            v-tooltip="{
+              content: bridgechain.bridgechainAssetRepository,
+              classes: 'text-xs',
+              trigger: 'hover'
+            }"
+            class="WalletBusinessShowBridgechain__bridgechain-asset-repo__item mr-1"
+          >
+            {{ bridgechain.bridgechainAssetRepository }}
+          </span>
+
+          <SvgIcon
+            name="open-external"
+            view-box="0 0 12 12"
+            class="text-theme-page-text-light"
+          />
+        </a>
+      </ListDividedItem>
+
+      <ListDividedItem
         :label="$t('WALLET_BUSINESS.BRIDGECHAIN.API_PORT')"
         :value="bridgechain.ports['@arkecosystem/core-api']"
       />

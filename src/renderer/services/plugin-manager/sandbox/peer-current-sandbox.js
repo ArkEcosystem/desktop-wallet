@@ -1,6 +1,12 @@
 export function create (walletApi, app) {
   return () => {
+    if (!walletApi.peers) {
+      walletApi.peers = {}
+    }
+
     walletApi.peers = {
+      ...walletApi.peers,
+
       current: {
         get: async (url, options = {}) => {
           options.timeout || (options.timeout = 3000)

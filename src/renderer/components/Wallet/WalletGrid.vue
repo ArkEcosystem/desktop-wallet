@@ -73,7 +73,7 @@
               :ref="`dropdown-${wallet.id}`"
               :items="contextMenuOptions(wallet)"
               :is-highlighting="false"
-              :position="['-100%', '-20%']"
+              :position="{ x: '100%', y: '-0.5rem' }"
               :container-classes="'hidden group-hover:block'"
               @select="onSelectDropdown(wallet, $event)"
             >
