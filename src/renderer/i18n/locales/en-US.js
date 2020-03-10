@@ -552,10 +552,12 @@ export default {
       AUDIO: 'Allows access to play audio from within the Desktop Wallet',
       AVATARS: 'Plugin contains custom avatars',
       COMPONENTS: 'Allows loading custom components',
+      DIALOGS: 'Allows using file dialogs',
       EVENTS: 'Allows access to the Desktop Wallet events',
       HTTP: 'Allows performing external web requests',
       MENU_ITEMS: 'Allows adding custom menu items to the Desktop Wallet sidebar',
       MESSAGING: 'Allows WebFrames access to a one-way messaging system',
+      PEER_ALL: 'Allows access to the peer discovery',
       PEER_CURRENT: 'Allows access to the currently connected peer',
       PUBLIC: 'Allows navigation to wallet routes and provides access to the Font Awesome icon set',
       PROFILE_ALL: 'Allows access to all available profiles',
@@ -1208,6 +1210,7 @@ export default {
       REGISTER_DELEGATE: 'Register Delegate',
       RESIGN_DELEGATE: 'Resign Delegate',
       SECOND_PASSPHRASE: 'Second Passphrase',
+      DELETE_CONTACT: 'Delete Contact',
       DELETE_WALLET: 'Delete Wallet',
       SHOW_PUBLIC_KEY: 'Show Public Key',
       SHOW_ADDRESS: 'Show Address',
@@ -1371,7 +1374,8 @@ export default {
 
   WALLET_REMOVAL_CONFIRMATION: {
     NOTE: 'It does not delete any data on the blockchain. You could recover the wallet as long as you have the passphrase',
-    QUESTION: 'Are you sure you want to remove this wallet?'
+    QUESTION: 'Are you sure you want to remove this wallet?',
+    CONTACT_QUESTION: 'Are you sure you want to remove this contact?'
   },
 
   PLUGIN_REMOVAL_CONFIRMATION: {

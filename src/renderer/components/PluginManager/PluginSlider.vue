@@ -1,7 +1,7 @@
 <template>
   <div v-if="hasImages">
     <div class="PluginSlider">
-      <div class="relative w-full h-full">
+      <div class="overflow-x-hidden relative w-full h-full">
         <!-- Images -->
         <transition-group
           :name="sliderClass"
@@ -10,17 +10,28 @@
           @after-leave="transitionEnd"
         >
           <div
-            v-for="imageId in [currentIndex]"
-            :key="imageId"
+            v-for="pageId in [currentIndex]"
+            :key="pageId"
             class="PluginSlider__slide"
           >
-            <img :src="`data:image/png;base64,${plugin.images[imageId]}`">
+            <div
+              v-for="(image, imageId) in getPageImages(pageId)"
+              :key="imageId"
+              class="flex w-1/3 justify-center overflow-hidden mx-1 rounded-xl"
+            >
+              <img
+                :src="`data:image/png;base64,${image}`"
+                class="m-auto h-full arounded-xl"
+                @click="openImage(imageId)"
+              >
+            </div>
           </div>
         </transition-group>
       </div>
 
       <!-- Left Button -->
       <div
+        v-if="pageCount > 1"
         class="PluginSlider__left"
         @click="previousImage"
       >
@@ -32,6 +43,7 @@
 
       <!-- Right Button -->
       <div
+        v-if="pageCount > 1"
         class="PluginSlider__right"
         @click="nextImage"
       >
@@ -42,9 +54,12 @@
       </div>
     </div>
 
-    <div class="flex mt-4 justify-center">
+    <div
+      v-if="pageCount > 1"
+      class="flex mt-4 justify-center"
+    >
       <div
-        v-for="page in plugin.images.length"
+        v-for="page in pageCount"
         :key="page"
         class="PluginSlider__page"
         :class="{
@@ -54,16 +69,25 @@
         @click="goToPage(page)"
       />
     </div>
+
+    <PluginImageModal
+      v-if="selectedImage !== null"
+      :image-index="selectedImage"
+      :images="images"
+      @close="selectedImage = null"
+    />
   </div>
 </template>
 
 <script>
+import PluginImageModal from '@/components/PluginManager/PluginManagerModals/PluginImageModal'
 import SvgIcon from '@/components/SvgIcon/SvgIcon'
 
 export default {
   name: 'PluginSlider',
 
   components: {
+    PluginImageModal,
     SvgIcon
   },
 
@@ -74,19 +98,30 @@ export default {
     }
   },
 
-  data: () => ({
+  data: (vm) => ({
+    perPage: 3,
     currentIndex: 0,
     isTransitioning: false,
-    sliderClass: 'slides-right'
+    sliderClass: 'slides-right',
+    images: vm.plugin.images,
+    selectedImage: null
   }),
 
   computed: {
     hasImages () {
-      return this.plugin.images && this.plugin.images.length > 0
+      return this.images && this.images.length > 0
+    },
+
+    pageCount () {
+      return Math.ceil(this.images.length / this.perPage)
     }
   },
 
   methods: {
+    getPageImages (pageIndex) {
+      return this.images.slice(pageIndex * this.perPage, (pageIndex * this.perPage) + this.perPage)
+    },
+
     transitionEnd () {
       this.isTransitioning = false
     },
@@ -99,7 +134,7 @@ export default {
       this.isTransitioning = true
       if (this.currentIndex === 0) {
         this.sliderClass = 'slides-right'
-        this.currentIndex = this.plugin.images.length - 1
+        this.currentIndex = this.pageCount - 1
       } else {
         this.sliderClass = 'slides-left'
         this.currentIndex--
@@ -112,7 +147,7 @@ export default {
       }
 
       this.isTransitioning = true
-      if (this.currentIndex >= this.plugin.images.length - 1) {
+      if (this.currentIndex >= this.pageCount - 1) {
         this.sliderClass = 'slides-left'
         this.currentIndex = 0
       } else {
@@ -132,6 +167,10 @@ export default {
 
       this.isTransitioning = true
       this.currentIndex = page - 1
+    },
+
+    openImage (imageId) {
+      this.selectedImage = this.currentIndex * this.perPage + imageId
     }
   }
 }
@@ -139,16 +178,18 @@ export default {
 
 <style scoped>
 .PluginSlider {
-  @apply .relative .overflow-x-hidden .select-none;
-  height: 300px;
+  @apply .relative .select-none;
+  height: 150px;
 }
 
 .PluginSlider__slide {
   @apply .absolute .flex .flex-none .h-full .pin .overflow-hidden;
-  width: 640px;
 }
 .PluginSlider__slide img {
-  @apply .max-w-full .m-auto;
+  max-width: none;
+}
+.PluginSlider__slide img:hover {
+  @apply .cursor-pointer .opacity-75;
 }
 
 .PluginSlider__left,
@@ -164,13 +205,12 @@ export default {
 }
 
 .PluginSlider__left {
-  @apply .pin-l .ml-6;
+  @apply .pin-l .-ml-2;
   padding-right: 0.125rem;
 }
 
 .PluginSlider__right {
-  @apply .pin-r .mr-6;
-  padding-left: 0.125rem;
+  @apply .pin-r .-mr-2;
 }
 
 .PluginSlider__left .SvgIcon,

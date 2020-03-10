@@ -548,7 +548,7 @@ export default {
         const network = await ClientService.fetchNetworkConfig(this.form.server)
 
         if (network) {
-          const tokenFound = await priceApi.checkTradeable(network.token)
+          const tokenFound = await priceApi.verifyToken(network.token)
 
           for (const key of Object.keys(this.form)) {
             if (Object.prototype.hasOwnProperty.call(network, key)) {

@@ -42,7 +42,6 @@
             <MenuDropdown
               :items="languages"
               :value="language"
-              :position="['-10%', '0%']"
               class="AppIntro__1__languages flex align-center justify-center p-2 text-grey-dark"
               @select="selectLanguage"
             >

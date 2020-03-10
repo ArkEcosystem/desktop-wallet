@@ -10,6 +10,7 @@ import {
   TIMERS,
   PROFILE_ALL,
   PROFILE_CURRENT,
+  PEER_ALL,
   PEER_CURRENT,
   STORAGE,
   AUDIO,
@@ -26,6 +27,7 @@ import * as RouteSandbox from './sandbox/route-sandbox'
 import * as TimersSandbox from './sandbox/timers-sandbox'
 import * as ProfileAllSandbox from './sandbox/profile-all-sandbox'
 import * as ProfileCurrentSandbox from './sandbox/profile-current-sandbox'
+import * as PeerAllSandbox from './sandbox/peer-all-sandbox'
 import * as PeerCurrentSandbox from './sandbox/peer-current-sandbox'
 import * as StorageSandbox from './sandbox/storage-sandbox'
 import * as AudioSandbox from './sandbox/audio-sandbox'
@@ -124,6 +126,7 @@ export class PluginSandbox {
       [EVENTS.name]: EventsSandbox.create(this.walletApi, this.app),
       [HTTP.name]: HttpSandbox.create(this.walletApi, this.plugin),
       [MESSAGING.name]: MessagingSandbox.create(this.walletApi, this.app),
+      [PEER_ALL.name]: PeerAllSandbox.create(this.walletApi, this.app),
       [PEER_CURRENT.name]: PeerCurrentSandbox.create(this.walletApi, this.app),
       [PROFILE_ALL.name]: ProfileAllSandbox.create(this.walletApi, this.app),
       [PROFILE_CURRENT.name]: ProfileCurrentSandbox.create(this.walletApi, this.app),
