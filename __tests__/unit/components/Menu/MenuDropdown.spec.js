@@ -87,6 +87,36 @@ describe('MenuDropdown', () => {
       expect(wrapper.contains('.MenuDropdown')).toBeTruthy()
     })
 
+    describe('when the `position` is omitted', () => {
+      it('should fallback to the default values', () => {
+        const wrapper = mount(MenuDropdown)
+        expect(wrapper.vm.adjustedPosition).toEqual({
+          x: '0',
+          y: '120%'
+        })
+      })
+    })
+
+    describe('when the `position` is an object', () => {
+      it.each(['x', 'y'])('should merge the provided values with the default values', (dimension) => {
+        const wrapper = mount(MenuDropdown, {
+          propsData: {
+            position: { [dimension]: 'foo' }
+          }
+        })
+
+        const defaultValues = {
+          x: '0',
+          y: '120%'
+        }
+
+        expect(wrapper.vm.adjustedPosition).toEqual({
+          ...defaultValues,
+          [dimension]: 'foo'
+        })
+      })
+    })
+
     describe('when the `items` are an Array', () => {
       it('should render component with `items`', () => {
         const wrapper = mount(MenuDropdown, {
