@@ -263,18 +263,25 @@ export default {
   max-height: 400px;
   @apply overflow-y-auto;
 }
+.AppUpdater__release-notes h2,
 .AppUpdater__release-notes h3 {
-  @apply my-4 text-lg
+  @apply my-4 text-lg;
+}
+.AppUpdater__release-notes tt {
+  @apply text-sm font-mono;
 }
 .AppUpdater__release-notes li {
-  @apply text-sm text-base leading-tight
+  @apply text-sm text-base leading-tight;
+}
+.AppUpdater__release-notes ul + p {
+  @apply mt-4;
 }
 
 .AppUpdater__footer {
-  @apply flex flex-row justify-center
+  @apply flex flex-row justify-center;
 }
 .AppUpdater__content + footer {
-  @apply mt-5
+  @apply mt-5;
 }
 
 .AppUpdater--maximized {
