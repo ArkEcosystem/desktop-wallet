@@ -76,10 +76,12 @@ export default {
   created () {
     this.loadBridgechains()
     this.$eventBus.on('wallet:reload', this.loadBridgechains)
+    this.$eventBus.on('wallet:reload:business-bridgechains', this.loadBridgechains)
   },
 
   beforeDestroy () {
     this.$eventBus.off('wallet:reload', this.loadBridgechains)
+    this.$eventBus.off('wallet:reload:business-bridgechains', this.loadBridgechains)
   },
 
   methods: {
