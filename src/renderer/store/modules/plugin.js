@@ -474,6 +474,10 @@ export default {
         }
       }
 
+      if (removeOptions && getters.profileHasPluginOptions(pluginId, 'global')) {
+        dispatch('deletePluginOptionsForProfile', { pluginId, profileId: 'global' })
+      }
+
       try {
         await this._vm.$plugins.deletePlugin(pluginId)
       } catch (error) {
