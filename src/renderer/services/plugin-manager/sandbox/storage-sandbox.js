@@ -22,6 +22,13 @@ export function create (walletApi, app, plugin) {
         })
       },
 
+      clear: (global = false) => {
+        app.$store.dispatch('plugin/deletePluginOptionsForProfile', {
+          profileId: global ? 'global' : app.$store.getters['session/profileId'],
+          pluginId: plugin.config.id
+        })
+      },
+
       getOptions
     }
   }
