@@ -167,10 +167,13 @@
     >
       {{ $t('COMMON.FETCH') }}
     </button>
-    <div v-else>
+    <div
+      v-else
+      class="flex mt-5"
+    >
       <button
         :disabled="$v.form.$invalid"
-        class="blue-button mt-5"
+        class="blue-button ml-0 mr-2"
         type="button"
         @click="updateNetwork"
       >
@@ -180,7 +183,7 @@
       <button
         v-if="network && !network.isDefault"
         :disabled="isNetworkInUse"
-        class="blue-button mt-5 ml-4"
+        class="action-button px-8 py-4 mx-0"
         type="button"
         @click="removeNetwork"
       >
