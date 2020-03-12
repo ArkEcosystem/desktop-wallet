@@ -69,7 +69,7 @@ export default {
 
   methods: {
     navigateToRoute (routeName) {
-      this.$emit('close')
+      this.$emit('close', true)
       this.$router.push({ name: routeName })
     },
 
