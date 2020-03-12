@@ -39,8 +39,8 @@ export default {
       required: false
     },
     showBadge: {
-      type: Number,
-      default: null,
+      type: Boolean,
+      default: false,
       required: false
     }
   },
