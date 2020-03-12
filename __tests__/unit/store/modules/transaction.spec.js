@@ -250,4 +250,25 @@ describe('TransactionModule', () => {
       expect(store.getters['session/unconfirmedVotes'][0].id).toBe(2)
     })
   })
+
+  describe('isWaitingMultisig', () => {
+    describe('getters', () => {
+      it('should return false in the first try', async () => {
+        const isWaitingMultisignature = await store.getters['transaction/isWaitingMultisignature']
+        expect(isWaitingMultisignature).toBeFalse()
+      })
+    })
+
+    describe('actions', () => {
+      it('should change the state', async () => {
+        const before = await store.getters['transaction/isWaitingMultisignature']
+        expect(before).toBeFalse()
+
+        await store.dispatch('transaction/setWaitingMultisignature', !before)
+
+        const after = await store.getters['transaction/isWaitingMultisignature']
+        expect(after).toBeTrue()
+      })
+    })
+  })
 })
