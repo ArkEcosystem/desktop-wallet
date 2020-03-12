@@ -8,6 +8,14 @@ export function create (walletApi, app) {
       .withLatency(300)
       .sortBy('latency')
 
-    walletApi.peers.all = peerDiscovery
+    walletApi.peers = {
+      ...walletApi.peers,
+
+      all: peerDiscovery,
+
+      connectToBest: async () => {
+        return app.$store.dispatch('peer/connectToBest', {})
+      }
+    }
   }
 }

@@ -10,7 +10,13 @@ class PeerDiscoveryStub {
   }
 }
 
-const mockDispatch = jest.fn(() => new PeerDiscoveryStub())
+const mockDispatch = jest.fn(action => {
+  if (action === 'peer/getPeerDiscovery') {
+    return new PeerDiscoveryStub()
+  } else if (action === 'peer/connectToBest') {
+    return { ip: '1.1.1.1' }
+  }
+})
 
 let walletApi
 let app
@@ -31,5 +37,6 @@ describe('Peer All Sandbox', () => {
   it('should expose functions', () => {
     expect(mockDispatch).toHaveBeenCalled()
     expect(walletApi.peers.all).toBeTruthy()
+    expect(walletApi.peers.connectToBest).toBeTruthy()
   })
 })
