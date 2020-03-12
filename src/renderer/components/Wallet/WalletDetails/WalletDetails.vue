@@ -34,6 +34,14 @@
         :label="tab.text"
         :tab="tab.componentName"
       >
+        <div
+          v-if="tab.showBadge"
+          slot="header"
+          class="inline-flex items-center"
+        >
+          <div class="WalletDetails_badge" />
+          {{ tab.text }}
+        </div>
         <Component
           :is="tab.component"
           slot-scope="{ isActive }"
@@ -266,7 +274,8 @@ export default {
           tabs.push({
             component: 'WalletMultiSignature',
             componentName: 'WalletMultiSignature',
-            text: this.$t('PAGES.WALLET.MULTI_SIGNATURE')
+            text: this.$t('PAGES.WALLET.MULTI_SIGNATURE'),
+            showBadge: this.isWaitingMultisig
           })
         }
 
@@ -341,6 +350,10 @@ export default {
 
     isAwaitingConfirmation () {
       return !!this.unconfirmedVote
+    },
+
+    isWaitingMultisig () {
+      return this.$store.getters['transaction/isWaitingMultisignature']
     }
   },
 
@@ -539,5 +552,12 @@ export default {
 }
 .WalletDetails__back-button > svg {
   transform: rotate(-135deg)
+}
+
+.WalletDetails_badge {
+  @apply .rounded-full border border-theme-button-special-choice rounded-full w-2 h-2 mr-1;
+  width: 7px;
+  height: 7px;
+  background-color: red;
 }
 </style>

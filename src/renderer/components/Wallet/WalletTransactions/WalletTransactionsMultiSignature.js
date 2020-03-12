@@ -65,6 +65,7 @@ export default {
         if (publicKey === WalletService.getPublicKeyFromWallet(this.wallet_fromRoute)) {
           this.$set(this, 'fetchedTransactions', response.transactions)
           this.totalCount = response.totalCount
+          this.$store.dispatch('transaction/setWaitingMultisignature', true)
         }
       } catch (error) {
         // Ignore the 404 error of wallets that are not on the blockchain

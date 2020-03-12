@@ -20,7 +20,8 @@ export default {
   state: {
     transactions: {},
     // TODO This should not be stored here: it depends on the network, not the transactions
-    staticFees: {}
+    staticFees: {},
+    isWaitingMultisignature: false
   },
 
   getters: {
@@ -89,7 +90,8 @@ export default {
       }
 
       return state.staticFees[networkId][group][type]
-    }
+    },
+    isWaitingMultisignature: state => state.isWaitingMultisignature
   },
 
   mutations: {
@@ -167,6 +169,9 @@ export default {
     },
     SET_STATIC_FEES (state, data) {
       state.staticFees[data.networkId] = data.staticFees
+    },
+    SET_WAITING_MULTISIGNATURE (state, value) {
+      state.isWaitingMultisignature = value
     }
   },
 
@@ -287,6 +292,14 @@ export default {
         networkId: rootGetters['session/profile'].networkId,
         staticFees
       })
+    },
+
+    /**
+     * Sets if there is a multisignature ttransaction waiting for this wallet signature.
+     * @param {Bool} value
+     */
+    setWaitingMultisignature ({ commit }, value) {
+      commit('SET_WAITING_MULTISIGNATURE', value)
     }
   }
 }

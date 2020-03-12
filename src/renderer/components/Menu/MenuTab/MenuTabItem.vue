@@ -37,6 +37,11 @@ export default {
       type: Function,
       default: null,
       required: false
+    },
+    showBadge: {
+      type: Number,
+      default: null,
+      required: false
     }
   },
 
