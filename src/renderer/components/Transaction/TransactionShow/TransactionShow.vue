@@ -221,7 +221,7 @@
         :value="transaction.vendorField"
         :label="$t('TRANSACTION.VENDOR_FIELD')"
         item-label-class="mb-auto"
-        item-value-class="max-w-xs break-words text-right"
+        item-value-class="max-w-xs break-words text-justify"
       />
 
       <ListDividedItem
