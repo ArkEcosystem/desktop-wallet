@@ -158,7 +158,7 @@ export default {
   }),
 
   mounted () {
-    document.addEventListener('keyup', this.onEscKey, { once: true })
+    document.addEventListener('keyup', this.onEscKey, false)
     this.$eventBus.on('change', this.onChange)
   },
 
@@ -198,7 +198,7 @@ export default {
     },
 
     onEscKey (event) {
-      if (event.keyCode === 27) {
+      if (event.key === 'Escape') {
         this.emitClose()
       }
     },
