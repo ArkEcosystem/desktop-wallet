@@ -773,10 +773,10 @@ describe('PluginModule', () => {
               loaded: {
                 [profile1.id]: {
                   [availablePlugins[0].config.id]: {
-                    menuItems: [ { title: 'menu-item-1' }]
+                    menuItems: [{ title: 'menu-item-1' }]
                   },
                   [availablePlugins[1].config.id]: {
-                    menuItems: [ { title: 'menu-item-2' }]
+                    menuItems: [{ title: 'menu-item-2' }]
                   }
                 }
               }
