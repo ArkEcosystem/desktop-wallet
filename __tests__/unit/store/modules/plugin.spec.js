@@ -773,10 +773,10 @@ describe('PluginModule', () => {
               loaded: {
                 [profile1.id]: {
                   [availablePlugins[0].config.id]: {
-                    menuItems: ['menu-item-1']
+                    menuItems: [ { title: 'menu-item-1' }]
                   },
                   [availablePlugins[1].config.id]: {
-                    menuItems: ['menu-item-2']
+                    menuItems: [ { title: 'menu-item-2' }]
                   }
                 }
               }
@@ -786,7 +786,10 @@ describe('PluginModule', () => {
       })
 
       it('should retrieve all menu items', () => {
-        expect(store.getters['plugin/menuItems']).toEqual(['menu-item-1', 'menu-item-2'])
+        expect(store.getters['plugin/menuItems']).toEqual([
+          { title: 'menu-item-1' },
+          { title: 'menu-item-2' }
+        ])
       })
     })
 
@@ -1489,13 +1492,18 @@ describe('PluginModule', () => {
       it.each([null, profile1.id])('should set the menu items if the plugin is enabled', (profileId) => {
         expect(store.getters['plugin/menuItems']).toEqual([])
 
+        const menuItems = [
+          { title: 'menu-item-1' },
+          { title: 'menu-item-2' }
+        ]
+
         store.dispatch('plugin/setMenuItems', {
           pluginId: availablePlugins[0].config.id,
           profileId,
-          menuItems: ['menu-item-1', 'menu-item-2']
+          menuItems
         })
 
-        expect(store.getters['plugin/menuItems']).toEqual(['menu-item-1', 'menu-item-2'])
+        expect(store.getters['plugin/menuItems']).toEqual(menuItems)
       })
     })
 
