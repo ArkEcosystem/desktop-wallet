@@ -378,7 +378,13 @@ export class PluginManager {
       } catch (error) {
         pluginConfig.logo = null
       }
+    }
 
+    try {
+      pluginConfig.images = pluginConfig.images.map(image => {
+        return fs.readFileSync(`${pluginPath}/images/${image.split('/').pop()}`).toString('base64')
+      })
+    } catch (error) {
       try {
         pluginConfig.images = await this.fetchImages(pluginConfig.images)
       } catch (error) {
