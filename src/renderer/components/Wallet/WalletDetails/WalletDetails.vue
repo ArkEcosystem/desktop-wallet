@@ -556,8 +556,6 @@ export default {
 
 .WalletDetails_badge {
   @apply .rounded-full border border-theme-button-special-choice rounded-full w-2 h-2 mr-1;
-  width: 7px;
-  height: 7px;
   background-color: red;
 }
 </style>
