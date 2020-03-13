@@ -92,7 +92,7 @@ export default class TransactionService {
     const transaction = transactionObject.getStruct()
     transaction.senderPublicKey = wallet.publicKey // Restore original sender public key
 
-    if (transactionObject.data.type === TRANSACTION_TYPES.GROUP_1.VOTE) {
+    if (this.isVote(transactionObject.data)) {
       transaction.recipientId = wallet.address
     }
 
@@ -131,6 +131,19 @@ export default class TransactionService {
     }
 
     return transaction.type === TRANSACTION_TYPES.GROUP_1.TRANSFER
+  }
+
+  /**
+   * Determine if transaction is a vote.
+   * @param  {Object} transaction
+   * @return {Boolean}
+   */
+  static isVote (transaction) {
+    if (!this.isStandard(transaction)) {
+      return false
+    }
+
+    return transaction.type === TRANSACTION_TYPES.GROUP_1.VOTE
   }
 
   /*
