@@ -441,6 +441,27 @@ describe('Services > Transaction', () => {
         spyReady.mockRestore()
         spyFinalSignature.mockRestore()
       })
+
+      it('should return true if no final signature', () => {
+        for (let i = 1; i <= 10; i++) {
+          transactionObject.multiSign(`passphrase ${i}`)
+        }
+        transaction = transactionObject.getStruct()
+        transaction.multiSignature = multiSignatureAsset
+
+        expect(TransactionService.needsWalletSignature(transaction, senderPublicKey)).toBe(true)
+      })
+
+      it('should return false if all signatures (including final)', () => {
+        for (let i = 1; i <= 10; i++) {
+          transactionObject.multiSign(`passphrase ${i}`)
+        }
+        transactionObject.sign(senderPassphrase)
+        transaction = transactionObject.getStruct()
+        transaction.multiSignature = multiSignatureAsset
+
+        expect(TransactionService.needsWalletSignature(transaction, senderPublicKey)).toBe(false)
+      })
     })
 
     describe('non-registration', () => {
@@ -494,6 +515,16 @@ describe('Services > Transaction', () => {
         transaction.multiSignature = multiSignatureAsset
 
         expect(TransactionService.needsWalletSignature(transaction, multiSignatureAsset.publicKeys[0])).toBe(false)
+      })
+
+      it('should return false if min keys is met', () => {
+        for (let i = 1; i <= multiSignatureAsset.min; i++) {
+          transactionObject.multiSign(`passphrase ${i}`)
+        }
+        transaction = transactionObject.getStruct()
+        transaction.multiSignature = multiSignatureAsset
+
+        expect(TransactionService.needsWalletSignature(transaction, multiSignatureAsset.publicKeys[9])).toBe(false)
       })
     })
   })
