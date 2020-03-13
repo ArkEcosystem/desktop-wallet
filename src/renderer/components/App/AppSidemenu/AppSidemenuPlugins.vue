@@ -3,9 +3,7 @@
     v-click-outside="emitClose"
     :class="{
       'AppSidemenuPlugins--horizontal': isHorizontal,
-      'AppSidemenuPlugins__scrollable--horizontal': isHorizontal && pluginMenuItems.length >= 5,
       'AppSidemenuPlugins': !isHorizontal,
-      'AppSidemenuPlugins__scrollable': !isHorizontal && pluginMenuItems.length >= 5,
       'AppSidemenuPlugins--single': pluginMenuItems.length === 1
     }"
     class="absolute z-20 theme-dark"
@@ -79,10 +77,7 @@ export default {
   transform: translateY(-10%);
 }
 .AppSidemenuPlugins .MenuOptions {
-  @apply .flex-col .max-h-xs;
-}
-.AppSidemenuPlugins__scrollable .MenuOptions {
-  @apply .flex-col .max-h-xs .overflow-y-scroll;
+  @apply .flex-col .max-h-xs .overflow-y-auto;
 }
 
 .AppSidemenuPlugins--single {
@@ -95,9 +90,6 @@ export default {
   top: 5.75rem;
 }
 .AppSidemenuPlugins--horizontal .MenuOptions {
-  @apply .flex-col .max-h-xs;
-}
-.AppSidemenuPlugins__scrollable--horizontal .MenuOptions {
-  @apply .flex-col .max-h-xs .overflow-y-scroll;
+  @apply .flex-col .max-h-xs .overflow-y-auto;
 }
 </style>
