@@ -344,6 +344,10 @@ export default {
     DELETE_PLUGIN_OPTIONS (state, { pluginId, profileId }) {
       if (state.pluginOptions[profileId] && state.pluginOptions[profileId][pluginId]) {
         Vue.delete(state.pluginOptions[profileId], pluginId)
+
+        if (!Object.keys(state.pluginOptions[profileId].length) {
+          Vue.delete(state.pluginOptions, profileId)
+        }
       }
     },
 
