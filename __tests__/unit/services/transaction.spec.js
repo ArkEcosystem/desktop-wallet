@@ -918,6 +918,39 @@ describe('Services > Transaction', () => {
       expect(transaction.recipientId).toEqual(wallet.address)
     })
 
+    it('should not set the recipientId for bridgechain registration (type 3 group 2)', async () => {
+      transactionObject = new MagistrateCrypto.Builders
+        .BridgechainRegistrationBuilder()
+        .bridgechainRegistrationAsset({
+          name: 'test_bridgechain',
+          seedNodes: [
+            '1.1.1.1',
+            '2.2.2.2',
+            '3.3.3.3',
+            '4.4.4.4'
+          ],
+          ports: {
+            '@arkecosystem/core-api': 4003
+          },
+          genesisHash: '2a44f340d76ffc3df204c5f38cd355b7496c9065a1ade2ef92071436bd72e867',
+          bridgechainRepository: 'https://github.com/arkecosystem/core.git'
+        })
+        .fee(1)
+        .sign(senderPassphrase)
+
+      const signature = transactionObject.data.signature
+
+      spyDispatch.mockImplementation((key) => {
+        if (key === 'ledger/signTransaction') {
+          return signature
+        }
+      })
+
+      const transaction = await TransactionService.ledgerSign(wallet, transactionObject, vmMock)
+
+      expect(transaction.recipientId).toBeFalsy()
+    })
+
     it('should throw error if no signature', async () => {
       await expect(TransactionService.ledgerSign(wallet, transactionObject, vmMock)).rejects.toThrow('TRANSACTION.LEDGER_USER_DECLINED')
 
