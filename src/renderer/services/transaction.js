@@ -157,6 +157,10 @@ export default class TransactionService {
   }
 
   static isMultiSignatureRegistration (transaction) {
+    if (!this.isStandard(transaction)) {
+      return false
+    }
+
     return transaction.type === TRANSACTION_TYPES.GROUP_1.MULTI_SIGNATURE
   }
 
