@@ -5,6 +5,7 @@ import transactionFixture from '../__fixtures__/models/transaction'
 import currencyMixin from '@/mixins/currency'
 
 Transactions.TransactionRegistry.registerTransactionType(MagistrateCrypto.Transactions.BusinessRegistrationTransaction)
+Transactions.TransactionRegistry.registerTransactionType(MagistrateCrypto.Transactions.BridgechainRegistrationTransaction)
 
 const recipientAddress = Identities.Address.fromPassphrase('recipient passphrase')
 const senderPassphrase = 'sender passphrase'
@@ -893,6 +894,69 @@ describe('Services > Transaction', () => {
     })
   })
 
+  describe('isStandard', () => {
+    it('should return true if transaction is transfer', () => {
+      const transaction = Transactions.BuilderFactory
+        .transfer()
+        .amount(1)
+        .fee(1)
+        .recipientId(recipientAddress)
+        .sign(senderPassphrase)
+        .getStruct()
+
+      expect(TransactionService.isStandard(transaction)).toBe(true)
+    })
+
+    it('should return true if transaction is vote', () => {
+      const transaction = Transactions.BuilderFactory
+        .vote()
+        .votesAsset([`+${senderPublicKey}`])
+        .fee(1)
+        .sign(senderPassphrase)
+        .getStruct()
+
+      expect(TransactionService.isStandard(transaction)).toBe(true)
+    })
+
+    it('should return false if transaction is business registration', () => {
+      const transaction = new MagistrateCrypto.Builders
+        .BusinessRegistrationBuilder()
+        .businessRegistrationAsset({
+          name: 'Name',
+          website: 'http://github.com/ark/core.git'
+        })
+        .fee(1)
+        .sign(senderPassphrase)
+        .getStruct()
+
+      expect(TransactionService.isStandard(transaction)).toBe(false)
+    })
+
+    it('should return false if transaction is bridgechain registration', () => {
+      const transaction = new MagistrateCrypto.Builders
+        .BridgechainRegistrationBuilder()
+        .bridgechainRegistrationAsset({
+          name: 'test_bridgechain',
+          seedNodes: [
+            '1.1.1.1',
+            '2.2.2.2',
+            '3.3.3.3',
+            '4.4.4.4'
+          ],
+          ports: {
+            '@arkecosystem/core-api': 4003
+          },
+          genesisHash: '2a44f340d76ffc3df204c5f38cd355b7496c9065a1ade2ef92071436bd72e867',
+          bridgechainRepository: 'https://github.com/arkecosystem/core.git'
+        })
+        .fee(1)
+        .sign(senderPassphrase)
+        .getStruct()
+
+      expect(TransactionService.isStandard(transaction)).toBe(false)
+    })
+  })
+
   describe('isTransfer', () => {
     it('should return true if transaction is transfer', () => {
       const transaction = Transactions.BuilderFactory
@@ -929,6 +993,55 @@ describe('Services > Transaction', () => {
         .getStruct()
 
       expect(TransactionService.isTransfer(transaction)).toBe(false)
+    })
+  })
+
+  describe('isVote', () => {
+    it('should return true if transaction is vote', () => {
+      const transaction = Transactions.BuilderFactory
+        .vote()
+        .votesAsset([`+${senderPublicKey}`])
+        .fee(1)
+        .sign(senderPassphrase)
+        .getStruct()
+
+      expect(TransactionService.isVote(transaction)).toBe(true)
+    })
+
+    it('should return false if transaction is transfer', () => {
+      const transaction = Transactions.BuilderFactory
+        .transfer()
+        .amount(1)
+        .fee(1)
+        .recipientId(recipientAddress)
+        .sign(senderPassphrase)
+        .getStruct()
+
+      expect(TransactionService.isVote(transaction)).toBe(false)
+    })
+
+    it('should return false if transaction is bridgechain registration (type 3)', () => {
+      const transaction = new MagistrateCrypto.Builders
+        .BridgechainRegistrationBuilder()
+        .bridgechainRegistrationAsset({
+          name: 'test_bridgechain',
+          seedNodes: [
+            '1.1.1.1',
+            '2.2.2.2',
+            '3.3.3.3',
+            '4.4.4.4'
+          ],
+          ports: {
+            '@arkecosystem/core-api': 4003
+          },
+          genesisHash: '2a44f340d76ffc3df204c5f38cd355b7496c9065a1ade2ef92071436bd72e867',
+          bridgechainRepository: 'https://github.com/arkecosystem/core.git'
+        })
+        .fee(1)
+        .sign(senderPassphrase)
+        .getStruct()
+
+      expect(TransactionService.isVote(transaction)).toBe(false)
     })
   })
 })
