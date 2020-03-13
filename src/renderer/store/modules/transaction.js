@@ -295,7 +295,7 @@ export default {
     },
 
     /**
-     * Sets if there is a multisignature ttransaction waiting for this wallet signature.
+     * Sets if there is a multisignature transaction waiting for this wallet signature.
      * @param {Bool} value
      */
     setWaitingMultisignature ({ commit }, value) {
