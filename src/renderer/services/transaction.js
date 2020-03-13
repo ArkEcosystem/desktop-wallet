@@ -112,20 +112,25 @@ export default class TransactionService {
   }
 
   /**
-   * Get total amount for transaction.
+   * Determine if transaction is a standard transaction.
    * @param  {Object} transaction
-   * @return {String}
+   * @return {Boolean}
+   */
+  static isStandard (transaction) {
+    return !transaction.typeGroup || transaction.typeGroup === TRANSACTION_GROUPS.STANDARD
+  }
+
+  /**
+   * Determine if transaction is a transfer.
+   * @param  {Object} transaction
+   * @return {Boolean}
    */
   static isTransfer (transaction) {
-    if (transaction.typeGroup === TRANSACTION_GROUPS.MAGISTRATE) {
+    if (!this.isStandard(transaction)) {
       return false
     }
 
-    const transferTypes = [
-      TRANSACTION_TYPES.GROUP_1.TRANSFER
-    ]
-
-    return transferTypes.includes(transaction.type)
+    return transaction.type === TRANSACTION_TYPES.GROUP_1.TRANSFER
   }
 
   /*
