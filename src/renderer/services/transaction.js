@@ -194,6 +194,10 @@ export default class TransactionService {
   }
 
   static needsWalletSignature (transaction, publicKey) {
+    if (!this.needsSignatures(transaction)) {
+      return false
+    }
+
     if (this.isMultiSignatureRegistration(transaction) && this.isMultiSignatureReady(transaction, true)) {
       return transaction.senderPublicKey === publicKey && this.needsFinalSignature(transaction)
     }
