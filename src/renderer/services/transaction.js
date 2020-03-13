@@ -194,7 +194,7 @@ export default class TransactionService {
   }
 
   static needsWalletSignature (transaction, publicKey) {
-    if (!this.needsSignatures(transaction)) {
+    if (!this.needsSignatures(transaction) && !this.needsFinalSignature(transaction)) {
       return false
     }
 
