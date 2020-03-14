@@ -385,5 +385,6 @@ export default {
 .TransactionModalMultiPayment,
 .TransactionModalMultiSignature {
   min-width: 35rem;
+  max-height: 80vh;
 }
 </style>

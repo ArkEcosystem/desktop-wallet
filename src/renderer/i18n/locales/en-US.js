@@ -54,7 +54,8 @@ export default {
     WILL: 'will',
     WALLET: 'Wallet',
     X_OF_Y: '{0} of {1}',
-    ADVANCED_MODE: 'Advanced Mode'
+    ADVANCED_MODE: 'Advanced Mode',
+    DEFAULT_CHOSEN_FEE: 'Default fee type'
   },
 
   ANNOUNCEMENTS: {
@@ -1059,9 +1060,10 @@ export default {
     },
     MULTI_PAYMENT: {
       BUTTON_ADD: 'Add',
-      WARNING_DUPLICATE: 'The address is already a recipient',
+      NO_RECIPIENTS: 'There are no recipients',
       RECIPIENTS: 'Recipients',
-      NO_RECIPIENTS: 'There are no recipients'
+      TOTAL_AMOUNT: 'Total amount',
+      WARNING_DUPLICATE: 'The address is already a recipient'
     },
     MULTI_SIGNATURE: {
       ADDRESS: 'Multisignature Address',
