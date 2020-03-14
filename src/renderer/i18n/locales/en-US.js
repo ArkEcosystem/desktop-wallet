@@ -54,7 +54,8 @@ export default {
     WILL: 'will',
     WALLET: 'Wallet',
     X_OF_Y: '{0} of {1}',
-    ADVANCED_MODE: 'Advanced Mode'
+    ADVANCED_MODE: 'Advanced Mode',
+    DEFAULT_CHOSEN_FEE: 'Default fee type'
   },
 
   ANNOUNCEMENTS: {
