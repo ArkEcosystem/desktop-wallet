@@ -14,23 +14,25 @@
       </label>
     </div>
 
-    <div class="InputEditableList__list">
-      <TransitionGroup name="list">
-        <div
-          v-for="(item, key) of items"
-          :key="item.id !== undefined ? item.id : key"
-          class="InputEditableList__list__item flex py-2 select-none"
-        >
-          <slot :item="item" />
+    <div class="overflow-hidden -mx-3 px-3">
+      <div class="InputEditableList__list">
+        <TransitionGroup name="list">
+          <div
+            v-for="(item, key) of items"
+            :key="item.id !== undefined ? item.id : key"
+            class="InputEditableList__list__item flex py-2 select-none"
+          >
+            <slot :item="item" />
 
-          <ButtonClose
-            v-if="!readonly"
-            icon-class="text-grey"
-            class="InputEditableList__list__item__remove flex-inline"
-            @click="emitRemove(key)"
-          />
-        </div>
-      </TransitionGroup>
+            <ButtonClose
+              v-if="!readonly"
+              icon-class="text-grey"
+              class="InputEditableList__list__item__remove flex-inline"
+              @click="emitRemove(key)"
+            />
+          </div>
+        </TransitionGroup>
+      </div>
     </div>
 
     <div
