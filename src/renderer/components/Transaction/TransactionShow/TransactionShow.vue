@@ -231,6 +231,7 @@
       >
         <TransactionMultiPaymentList
           :title="null"
+          :items="payments"
           :show-links="true"
           readonly
           @click="emitClose"
