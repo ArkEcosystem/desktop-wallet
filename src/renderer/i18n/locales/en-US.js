@@ -46,6 +46,10 @@ export default {
     SKIP: 'Skip',
     START: 'Start',
     THEME: 'Theme',
+    THEMES: {
+      LIGHT: 'Default: Light',
+      DARK: 'Default: Dark'
+    },
     TIME_FORMAT: 'Time format',
     URL: 'URL',
     VERIFIED_ADDRESS: 'This is a verified address',
