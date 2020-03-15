@@ -94,6 +94,14 @@ export default {
     sliderClass: 'slides-right'
   }),
 
+  mounted () {
+    document.addEventListener('keyup', this.onArrowKeys, false)
+  },
+
+  destroyed () {
+    document.removeEventListener('keyup', this.onArrowKeys)
+  },
+
   methods: {
     emitClose () {
       this.$emit('close')
@@ -144,6 +152,16 @@ export default {
 
       this.isTransitioning = true
       this.currentIndex = page - 1
+    },
+
+    onArrowKeys (event) {
+      if (event.key === 'ArrowLeft') {
+        this.transitionEnd()
+        this.previousImage()
+      } else if (event.key === 'ArrowRight') {
+        this.transitionEnd()
+        this.nextImage()
+      }
     }
   }
 }
