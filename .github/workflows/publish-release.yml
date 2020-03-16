@@ -3,6 +3,7 @@ name: Publish Release
 on:
   push:
     branches:
+      - "master"
       - "fix/non-mac-build-signing"
 
 jobs:
@@ -72,14 +73,14 @@ jobs:
         # env:
         #   GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      # - name: Calculate Checksums for AppImage
-      #   run: shasum -a 256 build/target/ark-desktop-wallet-linux-x86_64-2.9.0.AppImage
+      - name: Calculate Checksums for AppImage
+        run: shasum -a 256 build/target/ark-desktop-wallet-linux-x86_64-2.9.0.AppImage
 
-      # - name: Calculate Checksums for TAR
-      #   run: shasum -a 256 build/target/ark-desktop-wallet-linux-x64-2.9.0.tar.gz
+      - name: Calculate Checksums for TAR
+        run: shasum -a 256 build/target/ark-desktop-wallet-linux-x64-2.9.0.tar.gz
 
-      # - name: Calculate Checksums for DEB
-      #   run: shasum -a 256 build/target/ark-desktop-wallet-linux-amd64-2.9.0.deb
+      - name: Calculate Checksums for DEB
+        run: shasum -a 256 build/target/ark-desktop-wallet-linux-amd64-2.9.0.deb
 
       # - name: VirusTotal Scan for AppImage
       #   run: |
@@ -144,11 +145,11 @@ jobs:
           CSC_LINK: ${{ secrets.CSC_LINK }}
           CSC_KEY_PASSWORD: ${{ secrets.CSC_KEY_PASSWORD }}
 
-      # - name: Calculate Checksums for DMG
-      #   run: shasum -a 256 build/target/ark-desktop-wallet-mac-2.9.0.dmg
+      - name: Calculate Checksums for DMG
+        run: shasum -a 256 build/target/ark-desktop-wallet-mac-2.9.0.dmg
 
-      # - name: Calculate Checksums for ZIP
-      #   run: shasum -a 256 build/target/ark-desktop-wallet-mac-2.9.0.zip
+      - name: Calculate Checksums for ZIP
+        run: shasum -a 256 build/target/ark-desktop-wallet-mac-2.9.0.zip
 
       # - name: VirusTotal Scan for DMG
       #   run: |
@@ -203,9 +204,9 @@ jobs:
         #   CSC_LINK: ${{ secrets.CSC_LINK }}
         #   CSC_KEY_PASSWORD: ${{ secrets.CSC_KEY_PASSWORD }}
 
-      # - name: Calculate Checksums for EXE
-      #   run: Get-FileHash build/target/ark-desktop-wallet-win-2.9.0.exe -Algorithm SHA256 | Format-List
-      #   shell: powershell
+      - name: Calculate Checksums for EXE
+        run: Get-FileHash build/target/ark-desktop-wallet-win-2.9.0.exe -Algorithm SHA256 | Format-List
+        shell: powershell
 
       - name: Upload .exe
         uses: actions/upload-artifact@v1
