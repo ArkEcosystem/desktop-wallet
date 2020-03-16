@@ -222,7 +222,8 @@ export default {
           label: this.$t('TRANSACTION.HASH'),
           field: 'asset.ipfs',
           tdClass: 'text-right md:w-3/5',
-          thClass: 'text-right md:w-3/5'
+          thClass: 'text-right md:w-3/5',
+          sortable: false
         })
       } else {
         columns.push(...[
