@@ -9,7 +9,7 @@
         icon-class="text-white"
         @click="showNext"
       />
-      <span class="mr-4">
+      <span class="mr-4 break-words">
         {{ alert ? alert.message : '&nbsp;' }}
       </span>
     </div>
