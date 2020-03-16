@@ -1,7 +1,7 @@
 <template>
   <div class="PluginManagerGrid mt-10">
     <div
-      v-for="plugin in plugins"
+      v-for="plugin in sortedPlugins"
       :key="plugin.id"
       class="PluginManagerGrid__plugin"
     >
@@ -73,6 +73,12 @@ export default {
     plugins: {
       type: Array,
       required: true
+    }
+  },
+
+  computed: {
+    sortedPlugins () {
+      return this.plugins.concat().sort((a, b) => a.title.localeCompare(b.title))
     }
   },
 

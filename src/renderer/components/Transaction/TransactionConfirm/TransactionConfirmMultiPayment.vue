@@ -17,8 +17,15 @@
     </ListDividedItem>
 
     <ListDividedItem
+      class="TransactionConfirmMultiPayment__amount"
+      :label="$t('TRANSACTION.MULTI_PAYMENT.TOTAL_AMOUNT')"
+    >
+      {{ formatter_networkCurrency(totalAmount) }}
+    </ListDividedItem>
+
+    <ListDividedItem
       class="TransactionConfirmMultiPayment__recipients"
-      :label="$t('TRANSACTION.RECIPIENTS')"
+      :label="`${$t('TRANSACTION.RECIPIENTS')} - ${payments.length}`"
       item-value-class="items-center"
     >
       <TransactionMultiPaymentList
@@ -26,6 +33,22 @@
         :items="payments"
         readonly
       />
+    </ListDividedItem>
+
+    <ListDividedItem
+      v-if="transaction.vendorField"
+      class="TransactionConfirmMultiPayment__vendorfield"
+      :label="$t('TRANSACTION.VENDOR_FIELD')"
+      item-value-class="w-full break-words"
+    >
+      {{ transaction.vendorField }}
+    </ListDividedItem>
+
+    <ListDividedItem
+      class="TransactionConfirmMultiPayment__fee"
+      :label="$t('TRANSACTION.FEE')"
+    >
+      {{ formatter_networkCurrency(transaction.fee) }}
     </ListDividedItem>
   </ListDivided>
 </template>
@@ -53,6 +76,16 @@ export default {
       return this.wallet_formatAddress(this.currentWallet.address)
     },
 
+    totalAmount () {
+      const amount = this.currency_toBuilder(0)
+
+      for (const payment of this.payments) {
+        amount.add(payment.amount)
+      }
+
+      return amount.value
+    },
+
     payments () {
       return this.transaction.asset.payments
     }
@@ -63,6 +96,11 @@ export default {
 <style scoped>
 .TransactionConfirmMultiPayment__recipients {
   @apply .overflow-y-auto;
-  max-height: 200px;
+}
+</style>
+
+<style>
+.TransactionConfirmMultiPayment__recipients .InputEditableList__list {
+  max-height: 13rem;
 }
 </style>

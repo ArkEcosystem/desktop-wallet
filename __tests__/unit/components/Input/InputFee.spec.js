@@ -22,17 +22,21 @@ jest.mock('@/store', () => {
             return null
         }
       }),
-      'session/lastFeeByType': jest.fn(type => {
-        switch (type) {
-          case 0:
-            return 10000000
-          case 1:
-            return undefined
-          case 3:
-            return 100000000
-          default:
-            return null
+      'session/lastFeeByType': jest.fn((type, typeGroup) => {
+        if (typeGroup === 1) {
+          switch (type) {
+            case 0:
+              return 10000000
+            case 1:
+              return undefined
+            case 3:
+              return 100000000
+            default:
+              return null
+          }
         }
+
+        return null
       })
     }
   }
@@ -123,6 +127,18 @@ describe('InputFee', () => {
     })
     const buttons = wrapper.findAll('.InputFee__choice')
     expect(buttons).toHaveLength(5)
+  })
+
+  it('should set the default chosen fee if available when created', () => {
+    const wrapper = mountComponent({
+      mocks: {
+        session_profile: {
+          defaultChosenFee: 'LAST'
+        }
+      }
+    })
+
+    expect(wrapper.vm.chosenFee).toBe('LAST')
   })
 
   describe('maxV1fee', () => {

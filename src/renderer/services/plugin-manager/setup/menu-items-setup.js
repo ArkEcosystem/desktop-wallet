@@ -7,7 +7,11 @@ export function create (plugin, pluginObject, sandbox, profileId) {
       return
     }
 
-    const pluginMenuItems = normalizeJson(pluginObject.getMenuItems())
+    const pluginMenuItems = normalizeJson(pluginObject.getMenuItems().map(menuItem => ({
+      ...menuItem,
+      routeName: [plugin.config.id, menuItem.routeName].join(':')
+    })))
+
     if (pluginMenuItems && Array.isArray(pluginMenuItems) && pluginMenuItems.length) {
       const allRoutes = getAllRoutes(sandbox.app, plugin)
       const menuItems = pluginMenuItems.reduce((valid, menuItem) => {
