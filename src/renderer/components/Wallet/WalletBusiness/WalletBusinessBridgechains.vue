@@ -135,7 +135,7 @@ export default {
         this.isLoading = true
         this.fetchBridgechains()
       } catch (error) {
-        throw new Error('It is not possible load bridgechain list')
+        this.$logger.warn('It is not possible load bridgechain list')
       } finally {
         this.timeout = setTimeout(() => this.loadBridgechains(), this.interval)
       }
