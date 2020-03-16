@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import pluginManager from '@/services/plugin-manager'
 import releaseService from '@/services/release'
+import { sortByProps } from '@/utils'
 import { cloneDeep, uniqBy } from 'lodash'
 import semver from 'semver'
 
@@ -212,7 +213,7 @@ export default {
         menuItems.push(...plugin.menuItems)
       }
 
-      return menuItems
+      return [...menuItems].sort(sortByProps('title'))
     },
 
     themes: (_, getters) => {
@@ -344,6 +345,10 @@ export default {
     DELETE_PLUGIN_OPTIONS (state, { pluginId, profileId }) {
       if (state.pluginOptions[profileId] && state.pluginOptions[profileId][pluginId]) {
         Vue.delete(state.pluginOptions[profileId], pluginId)
+
+        if (!Object.keys(state.pluginOptions[profileId]).length) {
+          Vue.delete(state.pluginOptions, profileId)
+        }
       }
     },
 
@@ -472,6 +477,10 @@ export default {
         if (removeOptions) {
           dispatch('deletePluginOptionsForProfile', { pluginId, profileId: profile.id })
         }
+      }
+
+      if (removeOptions && getters.profileHasPluginOptions(pluginId, 'global')) {
+        dispatch('deletePluginOptionsForProfile', { pluginId, profileId: 'global' })
       }
 
       try {

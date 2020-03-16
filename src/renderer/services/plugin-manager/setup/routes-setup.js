@@ -7,7 +7,11 @@ export function create (plugin, pluginObject, sandbox) {
       return
     }
 
-    const pluginRoutes = normalizeJson(pluginObject.getRoutes())
+    const pluginRoutes = normalizeJson(pluginObject.getRoutes().map(route => ({
+      ...route,
+      name: [plugin.config.id, route.name].join(':')
+    })))
+
     if (pluginRoutes && Array.isArray(pluginRoutes) && pluginRoutes.length) {
       const allRoutes = getAllRoutes(sandbox.app)
 
