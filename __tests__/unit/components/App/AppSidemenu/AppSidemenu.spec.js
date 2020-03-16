@@ -113,11 +113,19 @@ describe('AppSidemenu', () => {
     expect(wrapper.vm.isImportantNotificationVisible).toBe(false)
   })
 
-  it('should toggle & close plugin menu state', () => {
-    expect(wrapper.vm.isPluginMenuVisible).toBe(false)
-    wrapper.vm.toggleShowPluginMenu()
-    expect(wrapper.vm.isPluginMenuVisible).toBe(true)
-    wrapper.vm.closeShowPlugins()
-    expect(wrapper.vm.isPluginMenuVisible).toBe(false)
+  describe('Plugin Menu', () => {
+    it('should toggle & close plugin menu state', () => {
+      expect(wrapper.vm.isPluginMenuVisible).toBe(false)
+      wrapper.vm.toggleShowPluginMenu()
+      expect(wrapper.vm.isPluginMenuVisible).toBe(true)
+      wrapper.vm.closeShowPlugins()
+      expect(wrapper.vm.isPluginMenuVisible).toBe(false)
+    })
+
+    it('should activate the plugin menu item when \'setActive\' is true', () => {
+      expect(wrapper.vm.activeItem).toBe('mock_route')
+      wrapper.vm.closeShowPlugins(true)
+      expect(wrapper.vm.activeItem).toBe('plugin-pages')
+    })
   })
 })

@@ -6,7 +6,26 @@ const i18n = useI18nGlobally()
 let wrapper
 
 const plugins = [
-  { id: 'test' }
+  {
+    id: 'test 4',
+    title: 'plugin 4'
+  },
+  {
+    id: 'test 3',
+    title: 'plugin 3'
+  },
+  {
+    id: 'test 2',
+    title: 'plugin 2'
+  },
+  {
+    id: 'test 1',
+    title: 'plugin 1'
+  },
+  {
+    id: 'first test',
+    title: 'first plugin'
+  }
 ]
 
 beforeEach(() => {
@@ -36,6 +55,19 @@ describe('PluginManagerGrid', () => {
     it('should emit show-details event', () => {
       wrapper.vm.emitShowDetails(plugins[0])
       expect(wrapper.emitted('show-details', plugins[0])).toBeTruthy()
+    })
+  })
+
+  describe('computed', () => {
+    it('sortedPlugins', () => {
+      expect(wrapper.vm.sortedPlugins[0].title).toBe('first plugin')
+      expect(wrapper.vm.sortedPlugins).toEqual([
+        plugins[4],
+        plugins[3],
+        plugins[2],
+        plugins[1],
+        plugins[0]
+      ])
     })
   })
 })

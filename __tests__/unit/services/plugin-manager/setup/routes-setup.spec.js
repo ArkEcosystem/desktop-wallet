@@ -64,7 +64,7 @@ describe('Routes Items Setup', () => {
     const customSetup = createRoutesSetup(plugin, pluginObject, sandbox)
     customSetup()
 
-    expect(plugin.routes.length).toBe(0)
-    expect(sandbox.app.$router.addRoutes).toHaveBeenCalledTimes(0)
+    expect(plugin.routes.length).toBe(1)
+    expect(sandbox.app.$router.addRoutes).toHaveBeenCalledTimes(1)
   })
 })
