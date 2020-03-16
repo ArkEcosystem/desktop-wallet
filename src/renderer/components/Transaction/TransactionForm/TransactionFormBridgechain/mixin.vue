@@ -468,7 +468,7 @@ export default {
         return
       }
 
-      this.form.seedNodes.push({
+      this.$v.form.seedNodes.$model.push({
         ip: this.seedNode,
         isInvalid: false
       })
