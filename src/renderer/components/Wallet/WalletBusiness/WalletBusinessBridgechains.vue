@@ -126,18 +126,21 @@ export default {
      * Fetch the bridgechains and show the loading animation while the response
      * is received
      */
-    async loadBridgechains () {
+    async loadBridgechains (showLoading = true) {
       try {
         if (!this.wallet_fromRoute || this.isFetching) {
           return
         }
 
-        this.isLoading = true
+        if (showLoading) {
+          this.isLoading = true
+        }
+
         this.fetchBridgechains()
       } catch (error) {
         this.$logger.warn('It is not possible load bridgechain list')
       } finally {
-        this.timeout = setTimeout(() => this.loadBridgechains(), this.interval)
+        this.timeout = setTimeout(() => this.loadBridgechains(false), this.interval)
       }
     },
 
