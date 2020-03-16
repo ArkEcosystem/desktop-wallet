@@ -1,7 +1,7 @@
-import { sortByProps } from '@/components/utils/Sorting'
 import truncateMiddle from '@/filters/truncate-middle'
-import WalletService from '@/services/wallet'
 import WalletModel from '@/models/wallet'
+import WalletService from '@/services/wallet'
+import { sortByProps } from '@/utils'
 
 export default {
   computed: {
