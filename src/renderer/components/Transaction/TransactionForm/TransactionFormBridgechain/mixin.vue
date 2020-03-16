@@ -437,9 +437,13 @@ export default {
 
         await this.$nextTick()
 
+        // TODO: Figure out why fee vuelidate intermittently doesn't
+        //       trigger resulting in an "invalid" flag when it's not.
+        //       Remove assigning fee to zero initially as a workaround.
         if (this.$refs.fee && fee) {
+          this.$refs.fee.emitFee(0)
+          await this.$nextTick()
           this.$refs.fee.emitFee(fee)
-          this.$v.form.fee.$touch()
         }
 
         if (this.$v.form.passphrase.$model) {
