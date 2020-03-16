@@ -96,6 +96,12 @@ jobs:
       #     UPLOAD_URL=$(curl -s --location --url 'https://www.virustotal.com/vtapi/v2/file/scan/upload_url?apikey=${{ secrets.VIRUSTOTAL_TOKEN }}' | jq -r .upload_url)
       #     curl -s --url "$UPLOAD_URL" --form 'apikey=${{ secrets.VIRUSTOTAL_TOKEN }}' --form 'file=@build/target/ark-desktop-wallet-linux-amd64-2.9.0.deb' | jq -r .permalink
 
+      - name: Upload .deb
+        uses: actions/upload-artifact@master
+        with:
+          name: ark-desktop-wallet-linux-2.9.0-${{ github.sha }}.deb
+          path: build/target/ark-desktop-wallet-linux-amd64-2.9.0.deb
+
   publish-macos:
     # needs: ["create-release"]
 
@@ -154,6 +160,12 @@ jobs:
       #     UPLOAD_URL=$(curl -s --location --url 'https://www.virustotal.com/vtapi/v2/file/scan/upload_url?apikey=${{ secrets.VIRUSTOTAL_TOKEN }}' | jq -r .upload_url)
       #     curl -s --url "$UPLOAD_URL" --form 'apikey=${{ secrets.VIRUSTOTAL_TOKEN }}' --form 'file=@build/target/ark-desktop-wallet-mac-2.9.0.zip' | jq -r .permalink
 
+      - name: Upload .dmg
+        uses: actions/upload-artifact@v1
+        with:
+          name: ark-desktop-wallet-mac-2.9.0-${{ github.sha }}.dmg
+          path: build/target/ark-desktop-wallet-mac-2.9.0.dmg
+
   publish-windows:
     # needs: ["create-release"]
 
@@ -194,3 +206,9 @@ jobs:
       # - name: Calculate Checksums for EXE
       #   run: Get-FileHash build/target/ark-desktop-wallet-win-2.9.0.exe -Algorithm SHA256 | Format-List
       #   shell: powershell
+
+      - name: Upload .exe
+        uses: actions/upload-artifact@v1
+        with:
+          name: ark-desktop-wallet-win-2.9.0-${{ github.sha }}.exe
+          path: build/target/ark-desktop-wallet-win-2.9.0.exe
