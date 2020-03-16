@@ -97,7 +97,7 @@ export default {
       })
 
       const requests = []
-      for (let page = 2; page < delegatePage1.meta.pageCount; page++) {
+      for (let page = 2; page <= delegatePage1.meta.pageCount; page++) {
         requests.push(this._vm.$client.fetchDelegates({
           page,
           limit: 100

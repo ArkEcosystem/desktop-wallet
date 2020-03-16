@@ -54,7 +54,11 @@ export default {
 
   computed: {
     hasStorage () {
-      return this.plugin.permissions.includes('STORAGE') && this.$store.getters['plugin/profileHasPluginOptions'](this.plugin.id)
+      return this.plugin.permissions.includes('STORAGE') &&
+        (
+          this.$store.getters['plugin/profileHasPluginOptions'](this.plugin.id) ||
+          this.$store.getters['plugin/profileHasPluginOptions'](this.plugin.id, 'global')
+        )
     }
   },
 

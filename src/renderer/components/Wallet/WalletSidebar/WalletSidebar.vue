@@ -205,7 +205,7 @@
 
 <script>
 import { uniqBy } from 'lodash'
-import { sortByProps } from '@/components/utils/Sorting'
+import { sortByProps } from '@/utils'
 import Loader from '@/components/utils/Loader'
 import { MenuNavigation, MenuNavigationItem } from '@/components/Menu'
 import { WalletIdenticon, WalletIdenticonPlaceholder } from '../'

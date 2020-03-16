@@ -51,19 +51,44 @@ describe('delegate store module', () => {
     expect(store.getters['delegate/byPublicKey']()).toBe(false)
   })
 
-  it('should fetch delegates from api', async () => {
-    nock('http://127.0.0.1')
-      .get('/api/v2/delegates')
-      .query({ page: 1, limit: 100, orderBy: 'rank:asc' })
-      .reply(200, {
-        data: delegates,
-        meta: {
-          totalCount: 2
-        }
+  describe('dispatch', () => {
+    describe('load', () => {
+      it('should fetch delegates from api', async () => {
+        nock('http://127.0.0.1')
+          .get('/api/v2/delegates')
+          .query({ page: 1, limit: 100, orderBy: 'rank:asc' })
+          .reply(200, {
+            data: delegates,
+            meta: {
+              totalCount: 2
+            }
+          })
+
+        await store.dispatch('delegate/load')
+
+        expect(Object.values(store.getters['delegate/all'][profile1.networkId])).toEqual(delegates)
       })
 
-    await store.dispatch('delegate/load')
+      it('should load all pages', async () => {
+        const pageCount = 10
 
-    expect(Object.values(store.getters['delegate/all'][profile1.networkId])).toEqual(delegates)
+        for (let page = 1; page <= pageCount; page++) {
+          nock('http://127.0.0.1')
+            .get('/api/v2/delegates')
+            .query({ page, limit: 100, orderBy: 'rank:asc' })
+            .reply(200, {
+              data: delegates.map(delegate => ({ ...delegate, address: `${delegate.address}-${page}` })),
+              meta: {
+                pageCount: 10,
+                totalCount: (delegates.length * 10)
+              }
+            })
+        }
+
+        await store.dispatch('delegate/load')
+
+        expect(Object.values(store.getters['delegate/all'][profile1.networkId]).length).toEqual(delegates.length * 10)
+      })
+    })
   })
 })
