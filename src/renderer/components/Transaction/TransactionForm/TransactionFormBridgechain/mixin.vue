@@ -439,6 +439,7 @@ export default {
 
         if (this.$refs.fee && fee) {
           this.$refs.fee.emitFee(fee)
+          this.$v.form.fee.$touch()
         }
 
         if (this.$v.form.passphrase.$model) {
