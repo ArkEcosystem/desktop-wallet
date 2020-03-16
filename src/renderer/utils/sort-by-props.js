@@ -1,6 +1,11 @@
-
-// Returns a sort function for the given prop
-export function sortByProps (props, locale = undefined, options = null) {
+/**
+ * Builds a sorting function for the given properties
+ * @param {*} props
+ * @param {*} locale
+ * @param {*} options
+ * @return {Function} Return the sorting function
+ */
+export default function sortByProps (props, locale = undefined, options = null) {
   locale = locale || undefined
   options = options || { sensitivity: 'base', numeric: 'true' }
 

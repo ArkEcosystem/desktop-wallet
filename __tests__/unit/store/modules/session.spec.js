@@ -96,4 +96,11 @@ describe('SessionModule', () => {
       })
     })
   })
+
+  describe('actions > setDefaultChosenFee', () => {
+    it('should set the value for defaultChosenFee', () => {
+      store.dispatch('session/setDefaultChosenFee', 'LAST')
+      expect(store.getters['session/defaultChosenFee']).toEqual('LAST')
+    })
+  })
 })
