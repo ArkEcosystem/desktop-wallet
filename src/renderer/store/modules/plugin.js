@@ -345,6 +345,10 @@ export default {
     DELETE_PLUGIN_OPTIONS (state, { pluginId, profileId }) {
       if (state.pluginOptions[profileId] && state.pluginOptions[profileId][pluginId]) {
         Vue.delete(state.pluginOptions[profileId], pluginId)
+
+        if (!Object.keys(state.pluginOptions[profileId]).length) {
+          Vue.delete(state.pluginOptions, profileId)
+        }
       }
     },
 
@@ -473,6 +477,10 @@ export default {
         if (removeOptions) {
           dispatch('deletePluginOptionsForProfile', { pluginId, profileId: profile.id })
         }
+      }
+
+      if (removeOptions && getters.profileHasPluginOptions(pluginId, 'global')) {
+        dispatch('deletePluginOptionsForProfile', { pluginId, profileId: 'global' })
       }
 
       try {
