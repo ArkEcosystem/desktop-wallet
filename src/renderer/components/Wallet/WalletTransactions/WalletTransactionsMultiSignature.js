@@ -3,6 +3,7 @@ import mixin from './mixin'
 import { TransactionTableMultiSignature } from '@/components/Transaction'
 import MultiSignature from '@/services/client-multisig'
 import WalletService from '@/services/wallet'
+import TransactionService from '@/services/transaction'
 
 export default {
   name: 'WalletTransactionsMultiSignature',
@@ -15,6 +16,22 @@ export default {
   },
 
   mixins: [mixin],
+
+  computed: {
+    isWaitingForSignature () {
+      const transactions = this.fetchedTransactions
+      const wallet = WalletService.getPublicKeyFromWallet(this.wallet_fromRoute)
+
+      function checkTransactionForWaitingSignatures (transaction) {
+        return TransactionService.needsWalletSignature(
+          transaction,
+          wallet
+        )
+      }
+
+      return transactions.some(t => checkTransactionForWaitingSignatures(t))
+    }
+  },
 
   created () {
     this.loadTransactions()
@@ -65,11 +82,7 @@ export default {
         if (publicKey === WalletService.getPublicKeyFromWallet(this.wallet_fromRoute)) {
           this.$set(this, 'fetchedTransactions', response.transactions)
           this.totalCount = response.totalCount
-          if (this.totalCount > 0) {
-            this.$store.dispatch('transaction/setWaitingMultisignature', true)
-          } else {
-            this.$store.dispatch('transaction/setWaitingMultisignature', false)
-          }
+          this.$store.dispatch('transaction/setWaitingMultisignature', this.isWaitingForSignature)
         }
       } catch (error) {
         // Ignore the 404 error of wallets that are not on the blockchain
