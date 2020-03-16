@@ -9,7 +9,7 @@ const plugin = new Plugin({
 
 plugin.routes = [
   {
-    name: 'test'
+    name: '1:test'
   }
 ]
 

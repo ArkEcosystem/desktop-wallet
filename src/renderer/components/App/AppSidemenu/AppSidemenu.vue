@@ -224,7 +224,11 @@ export default {
       this.isPluginMenuVisible = !this.isPluginMenuVisible
     },
 
-    closeShowPlugins () {
+    closeShowPlugins (setActive) {
+      if (setActive) {
+        this.setActive('plugin-pages')
+      }
+
       this.isPluginMenuVisible = false
     }
   }
