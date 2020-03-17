@@ -193,6 +193,7 @@
           <TransactionModal
             v-if="isOpen"
             :type="-1"
+            :group="transaction.typeGroup"
             :transaction="transaction"
             @cancel="closeTransactionModal(toggle, isOpen)"
             @sent="closeTransactionModal(toggle, isOpen)"
@@ -210,6 +211,7 @@
           <TransactionModal
             v-if="isOpen"
             :type="transaction.type"
+            :group="transaction.typeGroup"
             :transaction-override="transaction"
             @cancel="closeTransactionModal(toggle, isOpen)"
             @sent="closeTransactionModal(toggle, isOpen)"
