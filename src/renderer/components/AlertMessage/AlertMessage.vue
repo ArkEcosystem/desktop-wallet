@@ -9,7 +9,7 @@
         icon-class="text-white"
         @click="showNext"
       />
-      <span class="mr-4 break-words">
+      <span class="break-words">
         {{ alert ? alert.message : '&nbsp;' }}
       </span>
     </div>
@@ -93,5 +93,8 @@ export default {
 .AlertMessage--warn {
   @apply bg-theme-warn text-theme-warn-text;
   box-shadow: 0px 0px 15px var(--theme-warn-shadow);
+}
+.AlertMessage .ButtonClose {
+  @apply ml-4;
 }
 </style>
