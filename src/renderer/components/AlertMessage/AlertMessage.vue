@@ -5,7 +5,6 @@
   >
     <div class="text-left message font-bold">
       <ButtonClose
-        class="dismiss float-right p-10px cursor-pointer select-none"
         icon-class="text-white"
         @click="showNext"
       />
@@ -95,6 +94,6 @@ export default {
   box-shadow: 0px 0px 15px var(--theme-warn-shadow);
 }
 .AlertMessage .ButtonClose {
-  @apply ml-4;
+  @apply float-right cursor-pointer select-none ml-4;
 }
 </style>
