@@ -104,7 +104,7 @@ export default new BaseModule(NetworkModel, {
             })
             network.knownWallets = knownWallets.body
           } catch (error) {
-            console.error('Could not retrieve known wallets: ', error)
+            this._vm.$logger.error('Could not retrieve known wallets: ', error)
           }
         }
 
@@ -116,7 +116,7 @@ export default new BaseModule(NetworkModel, {
         Managers.configManager.setConfig(cloneDeep(crypto))
         Managers.configManager.setHeight(constants.height)
       } catch (error) {
-        console.error('Could not update network data: ', error)
+        this._vm.$logger.error('Could not update network data: ', error)
       }
     },
 
