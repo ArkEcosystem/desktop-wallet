@@ -133,9 +133,6 @@ jobs:
       - name: Build
         run: yarn build:win
         shell: cmd
-        env:
-          CSC_LINK: ${{ secrets.CSC_LINK }}
-          CSC_KEY_PASSWORD: ${{ secrets.CSC_KEY_PASSWORD }}
 
       - name: Upload .exe
         uses: actions/upload-artifact@v1

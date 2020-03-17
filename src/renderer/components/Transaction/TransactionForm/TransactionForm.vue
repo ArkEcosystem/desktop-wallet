@@ -58,9 +58,9 @@ export default {
 
   // TODO: Fetch fees remotely
   mounted () {
+    const group = this.type === -1 ? TRANSACTION_GROUPS.STANDARD : this.group
     const component = Object.values(this.$options.components).find(component => {
-      const group = component.transactionGroup || TRANSACTION_GROUPS.STANDARD
-      if (group !== this.group) {
+      if ((component.transactionGroup || TRANSACTION_GROUPS.STANDARD) !== group) {
         return false
       }
 
@@ -68,7 +68,7 @@ export default {
     })
 
     if (!component) {
-      throw new Error(`[TransactionForm] - Form for type ${this.type} (group ${this.group}) not found.`)
+      throw new Error(`[TransactionForm] - Form for type ${this.type} (group ${group}) not found.`)
     }
 
     this.activeComponent = component.name
