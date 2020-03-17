@@ -37,6 +37,8 @@ export default {
     fetchedBridgechains: [],
     expiryEvents: [],
     totalCount: 0,
+    interval: 60000,
+    timeout: undefined,
     queryParams: {
       page: 1,
       limit: 10,
@@ -76,10 +78,13 @@ export default {
   created () {
     this.loadBridgechains()
     this.$eventBus.on('wallet:reload', this.loadBridgechains)
+    this.$eventBus.on('wallet:reload:business-bridgechains', this.loadBridgechains)
   },
 
   beforeDestroy () {
+    clearTimeout(this.timeout)
     this.$eventBus.off('wallet:reload', this.loadBridgechains)
+    this.$eventBus.off('wallet:reload:business-bridgechains', this.loadBridgechains)
   },
 
   methods: {
@@ -121,13 +126,22 @@ export default {
      * Fetch the bridgechains and show the loading animation while the response
      * is received
      */
-    async loadBridgechains () {
-      if (!this.wallet_fromRoute || this.isFetching) {
-        return
-      }
+    async loadBridgechains (showLoading = true) {
+      try {
+        if (!this.wallet_fromRoute || this.isFetching) {
+          return
+        }
 
-      this.isLoading = true
-      this.fetchBridgechains()
+        if (showLoading) {
+          this.isLoading = true
+        }
+
+        this.fetchBridgechains()
+      } catch (error) {
+        this.$logger.warn('It is not possible load bridgechain list')
+      } finally {
+        this.timeout = setTimeout(() => this.loadBridgechains(false), this.interval)
+      }
     },
 
     onPageChange ({ currentPage }) {

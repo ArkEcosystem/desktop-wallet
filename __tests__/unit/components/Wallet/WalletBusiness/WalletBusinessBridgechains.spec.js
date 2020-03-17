@@ -114,16 +114,18 @@ describe('WalletBusinessBridgechains', () => {
     createWrapper()
 
     expect(spy).toHaveBeenCalledTimes(1)
-    expect(eventOnMock).toHaveBeenCalledTimes(1)
+    expect(eventOnMock).toHaveBeenCalledTimes(2)
     expect(eventOnMock).toHaveBeenCalledWith('wallet:reload', wrapper.vm.loadBridgechains)
+    expect(eventOnMock).toHaveBeenCalledWith('wallet:reload:business-bridgechains', wrapper.vm.loadBridgechains)
 
     spy.mockRestore()
   })
 
   describe('beforeDestroy', () => {
     wrapper.destroy()
-    expect(eventOffMock).toHaveBeenCalledTimes(1)
+    expect(eventOffMock).toHaveBeenCalledTimes(2)
     expect(eventOffMock).toHaveBeenCalledWith('wallet:reload', wrapper.vm.loadBridgechains)
+    expect(eventOffMock).toHaveBeenCalledWith('wallet:reload:business-bridgechains', wrapper.vm.loadBridgechains)
   })
 
   describe('fetchBridgechains', () => {
