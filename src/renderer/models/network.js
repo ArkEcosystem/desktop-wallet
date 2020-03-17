@@ -57,6 +57,9 @@ export default new BaseModel({
         }
       }
     },
+    knownWalletsUrl: {
+      type: ['string', 'null']
+    },
     knownWallets: {
       type: 'object',
       default: {}

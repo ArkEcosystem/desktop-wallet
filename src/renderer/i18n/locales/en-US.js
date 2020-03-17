@@ -491,6 +491,7 @@ export default {
     SYMBOL: 'Symbol',
     VERSION: 'Version',
     EXPLORER: 'Explorer',
+    KNOWN_WALLETS_URL: 'Known Wallets URL',
     EPOCH: 'Epoch',
     WIF: 'WIF',
     SLIP44: 'Slip44',
