@@ -230,6 +230,12 @@ describe('NetworkModal', () => {
         })
       })
 
+      describe('knownWalletsUrl', () => {
+        it('should switch from invalid to valid to invalid for url', () => {
+          testUrl(wrapper.vm.$v.form.knownWalletsUrl)
+        })
+      })
+
       describe('epoch', () => {
         it('should switch from invalid to valid to invalid for required when changed', () => {
           testRequired(wrapper.vm.$v.form.epoch, '2019-04-09T15:32:16.123Z')
@@ -322,6 +328,7 @@ describe('NetworkModal', () => {
           wrapper.vm.$v.form.symbol.$model = 'A'
           wrapper.vm.$v.form.version.$model = '1'
           wrapper.vm.$v.form.explorer.$model = 'http://1.2.3.4'
+          wrapper.vm.$v.form.knownWalletsUrl.$model = 'http://1.2.3.4/know-wallets.json'
           wrapper.vm.$v.form.epoch.$model = '2019-04-09T15:32:16.123Z'
           wrapper.vm.$v.form.wif.$model = '1'
           wrapper.vm.$v.form.slip44.$model = '1'
@@ -376,6 +383,12 @@ describe('NetworkModal', () => {
 
         it('should disable if invalid explorer', () => {
           wrapper.vm.$v.form.explorer.$model = 'http://test.com:abcd'
+
+          expect(wrapper.vm.$v.form.$invalid).toBe(true)
+        })
+
+        it('should disable if invalid knownWalletsUrl', () => {
+          wrapper.vm.$v.form.knownWalletsUrl.$model = 'http://test.com:abcd/know-wallets.json'
 
           expect(wrapper.vm.$v.form.$invalid).toBe(true)
         })
