@@ -92,7 +92,7 @@ export default class TransactionService {
     const transaction = transactionObject.getStruct()
     transaction.senderPublicKey = wallet.publicKey // Restore original sender public key
 
-    if (transactionObject.data.type === TRANSACTION_TYPES.GROUP_1.VOTE) {
+    if (this.isVote(transactionObject.data)) {
       transaction.recipientId = wallet.address
     }
 
@@ -112,20 +112,38 @@ export default class TransactionService {
   }
 
   /**
-   * Get total amount for transaction.
+   * Determine if transaction is a standard transaction.
    * @param  {Object} transaction
-   * @return {String}
+   * @return {Boolean}
+   */
+  static isStandard (transaction) {
+    return !transaction.typeGroup || transaction.typeGroup === TRANSACTION_GROUPS.STANDARD
+  }
+
+  /**
+   * Determine if transaction is a transfer.
+   * @param  {Object} transaction
+   * @return {Boolean}
    */
   static isTransfer (transaction) {
-    if (transaction.typeGroup === TRANSACTION_GROUPS.MAGISTRATE) {
+    if (!this.isStandard(transaction)) {
       return false
     }
 
-    const transferTypes = [
-      TRANSACTION_TYPES.GROUP_1.TRANSFER
-    ]
+    return transaction.type === TRANSACTION_TYPES.GROUP_1.TRANSFER
+  }
 
-    return transferTypes.includes(transaction.type)
+  /**
+   * Determine if transaction is a vote.
+   * @param  {Object} transaction
+   * @return {Boolean}
+   */
+  static isVote (transaction) {
+    if (!this.isStandard(transaction)) {
+      return false
+    }
+
+    return transaction.type === TRANSACTION_TYPES.GROUP_1.VOTE
   }
 
   /*
@@ -152,6 +170,10 @@ export default class TransactionService {
   }
 
   static isMultiSignatureRegistration (transaction) {
+    if (!this.isStandard(transaction)) {
+      return false
+    }
+
     return transaction.type === TRANSACTION_TYPES.GROUP_1.MULTI_SIGNATURE
   }
 
@@ -172,6 +194,10 @@ export default class TransactionService {
   }
 
   static needsWalletSignature (transaction, publicKey) {
+    if (!this.needsSignatures(transaction) && !this.needsFinalSignature(transaction)) {
+      return false
+    }
+
     if (this.isMultiSignatureRegistration(transaction) && this.isMultiSignatureReady(transaction, true)) {
       return transaction.senderPublicKey === publicKey && this.needsFinalSignature(transaction)
     }
