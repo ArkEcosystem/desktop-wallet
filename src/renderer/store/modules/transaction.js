@@ -1,5 +1,5 @@
 import { dayjs } from '@/services/datetime'
-import { unionBy } from 'lodash'
+import { cloneDeep, unionBy } from 'lodash'
 import { APP, TRANSACTION_GROUPS, TRANSACTION_TYPES } from '@config'
 import eventBus from '@/plugins/event-bus'
 import TransactionModel from '@/models/transaction'
@@ -30,7 +30,7 @@ export default {
         return []
       }
 
-      const transactions = state.transactions[profileId].filter(transaction => {
+      const transactions = cloneDeep(state.transactions[profileId]).filter(transaction => {
         return transaction.recipient === address || transaction.sender === address
       }).map(transaction => {
         transaction.isSender = transaction.sender === address
@@ -56,7 +56,7 @@ export default {
         return wallet.address
       })
 
-      const transactions = state.transactions[profileId].map(transaction => {
+      const transactions = cloneDeep(state.transactions[profileId]).map(transaction => {
         transaction.isSender = addresses.includes(transaction.sender)
         transaction.isRecipient = addresses.includes(transaction.recipient)
         transaction.totalAmount = TransactionService.getTotalAmount(transaction)
