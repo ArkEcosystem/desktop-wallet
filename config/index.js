@@ -120,6 +120,7 @@ exports.PLUGINS = {
   categories: [
     'gaming',
     'theme',
+    'language',
     'utility',
     'other'
   ],

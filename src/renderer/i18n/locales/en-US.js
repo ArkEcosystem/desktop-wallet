@@ -570,6 +570,7 @@ export default {
       ROUTES: 'Allows loading additional routes into the Desktop Wallet',
       STORAGE: 'Allows storing data within the Desktop Wallet, using key-value pairs',
       THEMES: 'Allows loading additional custom themes for the Desktop Wallet',
+      LANGUAGES: 'Allows loading additional languages for the Desktop Wallet',
       TIMERS: 'Allows using timeouts and intervals',
       UI_COMPONENTS: 'Allows access to the standard Desktop Wallet components used throughout',
       UTILS: 'Allows using utilities such as the BigNumber type and dayjs',
@@ -675,6 +676,7 @@ export default {
         GAMING: 'Gaming',
         UTILITY: 'Utility',
         THEME: 'Themes',
+        LANGUAGE: 'Languages',
         OTHER: 'Other'
       },
       FILTERS: {

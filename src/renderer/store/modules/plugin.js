@@ -46,7 +46,7 @@ export default {
         let match = true
 
         if (category === 'all') {
-          match = match && !plugin.config.categories.includes('theme')
+          match = match && !plugin.config.categories.some(category => ['theme', 'language'].includes(category))
         } else if (category && category !== 'all') {
           match = match && plugin.config.categories.includes(category)
         }
@@ -231,6 +231,21 @@ export default {
       }, {})
     },
 
+    languages: (_, getters) => {
+      return Object.keys(getters.loaded).reduce((languages, pluginId) => {
+        const plugin = getters.loaded[pluginId]
+
+        if (plugin.languages) {
+          languages = {
+            ...languages,
+            ...plugin.languages
+          }
+        }
+
+        return languages
+      }, {})
+    },
+
     // For each plugin that supports wallet tabs, get the component and configuration of each tab
     walletTabs: (_, getters) => {
       return Object.keys(getters.loaded).reduce((walletTabs, pluginId) => {
@@ -325,6 +340,10 @@ export default {
 
     SET_PLUGIN_THEMES (state, data) {
       Vue.set(state.loaded[data.profileId][data.pluginId], 'themes', data.themes)
+    },
+
+    SET_PLUGIN_LANGUAGES (state, data) {
+      Vue.set(state.loaded[data.profileId][data.pluginId], 'languages', data.languages)
     },
 
     SET_PLUGIN_WALLET_TABS (state, data) {
@@ -541,6 +560,17 @@ export default {
       }
 
       commit('SET_PLUGIN_THEMES', {
+        ...data,
+        profileId: data.profileId || rootGetters['session/profileId']
+      })
+    },
+
+    setLanguages ({ commit, getters, rootGetters }, data) {
+      if (!getters.isEnabled(data.pluginId, data.profileId)) {
+        throw new Error('Plugin is not enabled')
+      }
+
+      commit('SET_PLUGIN_LANGUAGES', {
         ...data,
         profileId: data.profileId || rootGetters['session/profileId']
       })

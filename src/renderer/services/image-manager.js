@@ -61,6 +61,12 @@ class ImageManager {
       return this.context(`./${filename}`)
     } catch (error) {
       // In case the image could not be found:
+
+      // TODO: proper fallback icon
+      // if (filename.startsWith('flags/')) {
+      //   return this.context('./flags/default.svg')
+      // }
+
       return this.context('./default.svg')
     }
   }
