@@ -204,15 +204,17 @@ export default {
       return this.isAdvancedFee ? this.feeChoices.MAXIMUM.multipliedBy(10) : this.feeChoices.MAXIMUM
     },
     feeChoices () {
-      const { avgFee, maxFee } = this.feeStatistics
+      const { avgFee, maxFee, minFee } = this.feeStatistics
 
-      // Even if the network provides average or maximum fees higher than V1, they will be corrected
+      // If any of the fees are higher than the maximum V1 fee, than use the maximum.
       const average = this.currency_subToUnit(avgFee < this.maxV1fee ? avgFee : this.maxV1fee)
+      const minimum = this.currency_subToUnit(minFee < this.maxV1fee ? minFee : this.maxV1fee)
+      const maximum = this.currency_subToUnit(maxFee < this.maxV1fee ? maxFee : this.maxV1fee)
 
       const fees = {
-        MINIMUM: this.currency_subToUnit(1),
+        MINIMUM: minimum,
         AVERAGE: average,
-        MAXIMUM: this.currency_subToUnit(maxFee < this.maxV1fee ? maxFee : this.maxV1fee),
+        MAXIMUM: maximum,
         INPUT: average,
         ADVANCED: average
       }
