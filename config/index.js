@@ -154,7 +154,6 @@ exports.THEMES = [
 ]
 
 exports.V1 = {
-  remote: 'https://explorer.ark.io/api/node/fees',
   fees: {
     GROUP_1: [
       0.1 * 1e8, // Transfer
