@@ -179,6 +179,10 @@ export default {
       this.$v.$reset()
     },
 
+    touch () {
+      this.$v.model.$touch()
+    },
+
     async toggleVisible () {
       this.passwordIsVisible = !this.passwordIsVisible
       await this.focus()

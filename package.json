@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "ark-desktop-wallet",
-  "version": "2.9.0",
+  "version": "2.9.1",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ArkEcosystem/desktop-wallet.git"
@@ -51,8 +51,8 @@
   },
   "dependencies": {
     "@arkecosystem/client": "^1.0.5",
-    "@arkecosystem/core-magistrate-crypto": "^2.6",
-    "@arkecosystem/crypto": "^2.6",
+    "@arkecosystem/core-magistrate-crypto": "^2.6.27",
+    "@arkecosystem/crypto": "^2.6.27",
     "@arkecosystem/ledger-transport": "^1.0.5",
     "@arkecosystem/peers": "^0.2.1",
     "@arkecosystem/platform-sdk": "^0.0.2",
@@ -160,7 +160,7 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.0",
     "eslint-plugin-vue": "^6.0.0",
-    "file-loader": "^5.0.0",
+    "file-loader": "^6.0.0",
     "glob-all": "^3.1.0",
     "html-webpack-plugin": "^3.2.0",
     "husky": "^4.0.0",
@@ -189,7 +189,7 @@
     "ts-jest": "^25.0.0",
     "ts-loader": "^6.0.4",
     "typescript": "^3.5.3",
-    "url-loader": "^2.1.0",
+    "url-loader": "^4.0.0",
     "vue-html-loader": "^1.2.4",
     "vue-i18n-extract": "^1.0.2",
     "vue-jest": "^3.0.4",

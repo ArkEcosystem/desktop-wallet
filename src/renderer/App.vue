@@ -96,7 +96,6 @@ import { pull, uniq } from 'lodash'
 import { AppFooter, AppIntro, AppSidemenu } from '@/components/App'
 import AlertMessage from '@/components/AlertMessage'
 import { TransactionModal } from '@/components/Transaction'
-import config from '@config'
 import URIHandler from '@/services/uri-handler'
 import priceApi from '@/services/price-api'
 import i18nSetup from '@/i18n/i18n-setup'
@@ -290,7 +289,7 @@ export default {
     async loadEssential () {
       // We need to await plugins in order for all plugins to load properly
       await this.$plugins.init(this)
-      await this.$store.dispatch('network/load', config.NETWORKS)
+      await this.$store.dispatch('network/load')
       const currentProfileId = this.$store.getters['session/profileId']
       await this.$store.dispatch('session/reset')
       await this.$store.dispatch('session/setProfileId', currentProfileId)
