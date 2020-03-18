@@ -5,6 +5,7 @@ import { NETWORKS } from '@config'
 import eventBus from '@/plugins/event-bus'
 import NetworkModel from '@/models/network'
 import Client from '@/services/client'
+import got from 'got'
 import Vue from 'vue'
 
 export default new BaseModule(NetworkModel, {
@@ -79,12 +80,34 @@ export default new BaseModule(NetworkModel, {
      */
     async updateData ({ commit, rootGetters }, network = null) {
       if (!network) {
-        network = rootGetters['session/network']
+        network = cloneDeep(rootGetters['session/network'])
       }
 
       try {
         const crypto = await Client.fetchNetworkCrypto(network.server)
         const { constants } = await Client.fetchNetworkConfig(network.server)
+
+        // TODO: remove in future major version
+        // this is a "hack" to make sure the known wallets url is set on the default networks
+        if (!network.knownWalletsUrl) {
+          const defaultNetwork = NETWORKS.find(defaultNetwork => defaultNetwork.id === network.id)
+
+          if (defaultNetwork) {
+            network.knownWalletsUrl = defaultNetwork.knownWalletsUrl
+          }
+        }
+
+        if (network.knownWalletsUrl) {
+          try {
+            const knownWallets = await got(network.knownWalletsUrl, {
+              json: true
+            })
+            network.knownWallets = knownWallets.body
+          } catch (error) {
+            this._vm.$logger.error('Could not retrieve known wallets: ', error)
+          }
+        }
+
         commit('UPDATE', {
           ...network,
           constants
@@ -93,7 +116,7 @@ export default new BaseModule(NetworkModel, {
         Managers.configManager.setConfig(cloneDeep(crypto))
         Managers.configManager.setHeight(constants.height)
       } catch (error) {
-        console.error('Could not update network data:', error)
+        this._vm.$logger.error('Could not update network data: ', error)
       }
     },
 

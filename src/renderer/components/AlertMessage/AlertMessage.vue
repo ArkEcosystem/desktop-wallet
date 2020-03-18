@@ -5,11 +5,10 @@
   >
     <div class="text-left message font-bold">
       <ButtonClose
-        class="dismiss float-right p-10px cursor-pointer select-none"
         icon-class="text-white"
         @click="showNext"
       />
-      <span class="mr-4">
+      <span class="break-words">
         {{ alert ? alert.message : '&nbsp;' }}
       </span>
     </div>
@@ -93,5 +92,8 @@ export default {
 .AlertMessage--warn {
   @apply bg-theme-warn text-theme-warn-text;
   box-shadow: 0px 0px 15px var(--theme-warn-shadow);
+}
+.AlertMessage .ButtonClose {
+  @apply float-right cursor-pointer select-none ml-4;
 }
 </style>
