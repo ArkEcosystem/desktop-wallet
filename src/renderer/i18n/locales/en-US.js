@@ -695,6 +695,8 @@ export default {
       },
       ERRORS: {
         ALREADY_INSTALLED: 'The plugin \'{plugin}\' is already installed',
+        DISABLE: 'The plugin \'{plugin}\' could not be disabled: {error}',
+        ENABLE: 'The plugin \'{plugin}\' could not be enabled: {error}',
         FETCH: 'The plugin \'{plugin}\' was installed but could not be loaded'
       },
       SUCCESS: {

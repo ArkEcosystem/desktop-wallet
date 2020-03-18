@@ -565,14 +565,21 @@ export default {
       })
     },
 
-    setLanguages ({ commit, getters, rootGetters }, data) {
-      if (!getters.isEnabled(data.pluginId, data.profileId)) {
+    setLanguages ({ commit, getters, rootGetters }, { pluginId, languages, profileId }) {
+      if (!getters.isEnabled(pluginId, profileId)) {
         throw new Error('Plugin is not enabled')
       }
 
+      for (const language of Object.keys(languages)) {
+        if (getters.languages[language]) {
+          throw new Error(`Language "${language}" exists already`)
+        }
+      }
+
       commit('SET_PLUGIN_LANGUAGES', {
-        ...data,
-        profileId: data.profileId || rootGetters['session/profileId']
+        pluginId,
+        languages,
+        profileId: profileId || rootGetters['session/profileId']
       })
     },
 

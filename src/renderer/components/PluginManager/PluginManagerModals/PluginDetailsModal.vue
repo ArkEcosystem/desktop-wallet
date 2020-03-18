@@ -296,11 +296,8 @@ export default {
       this.$emit('show-permissions')
     },
 
-    async toggleStatus (enabled) {
-      await this.$store.dispatch('plugin/setEnabled', {
-        enabled,
-        pluginId: this.plugin.id
-      })
+    toggleStatus (enabled) {
+      this.$emit('change-status', enabled, this.plugin.id)
     },
 
     reportPlugin () {
