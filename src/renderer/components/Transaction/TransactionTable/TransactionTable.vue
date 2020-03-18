@@ -206,7 +206,8 @@ export default {
           label: this.$t('TRANSACTION.ID'),
           field: 'id',
           formatFn: this.formatTransactionId,
-          sortable: false
+          sortable: false,
+          thClass: 'no-sort'
         },
         {
           label: this.$t('COMMON.DATE'),
@@ -223,7 +224,7 @@ export default {
           label: this.$t('TRANSACTION.HASH'),
           field: 'asset.ipfs',
           tdClass: 'text-right md:w-3/5',
-          thClass: 'text-right md:w-3/5',
+          thClass: 'no-sort text-right md:w-3/5',
           sortable: false
         })
       } else {
@@ -231,12 +232,14 @@ export default {
           {
             label: this.$t('TRANSACTION.SENDER'),
             field: 'senderPublicKey',
-            sortable: false
+            sortable: false,
+            thClass: 'no-sort'
           },
           {
             label: this.$t('TRANSACTION.RECIPIENT'),
             field: 'recipientId',
-            sortable: false
+            sortable: false,
+            thClass: 'no-sort'
           },
           {
             label: this.$t('TRANSACTION.VENDOR_FIELD'),
