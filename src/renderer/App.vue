@@ -94,6 +94,7 @@ import CleanCss from 'clean-css'
 import { remote, ipcRenderer } from 'electron'
 import { pull, uniq } from 'lodash'
 import { AppFooter, AppIntro, AppSidemenu } from '@/components/App'
+import { I18N } from '@config'
 import AlertMessage from '@/components/AlertMessage'
 import { TransactionModal } from '@/components/Transaction'
 import URIHandler from '@/services/uri-handler'
@@ -194,7 +195,7 @@ export default {
     },
     language () {
       const language = this.$store.getters['session/language']
-      const defaultLocale = config.I18N.defaultLocale
+      const defaultLocale = I18N.defaultLocale
 
       // Ensure that the plugin language is available (not deleted from the file system)
       return defaultLocale === language || this.pluginLanguages[language]
@@ -440,7 +441,7 @@ export default {
     },
 
     applyPluginLanguage (languageName) {
-      if (languageName === config.I18N.defaultLocale) {
+      if (languageName === I18N.defaultLocale) {
         i18nSetup.setLanguage(languageName)
       } else if (languageName && this.pluginLanguages[languageName]) {
         i18nSetup.loadLanguage(languageName, this.pluginLanguages[languageName])
