@@ -78,9 +78,9 @@ describe('PluginDetailsModal', () => {
       expect(wrapper.emitted('show-permissions')).toBeTruthy()
     })
 
-    it('should toggle the status', () => {
+    it('should emit change-status', () => {
       wrapper.vm.toggleStatus(true)
-      expect(mockDispatch).toHaveBeenCalledWith('plugin/setEnabled', { enabled: true, pluginId: 'test' })
+      expect(wrapper.emitted('change-status', true, wrapper.props('plugin').id)).toBeTruthy()
     })
 
     it('should report the plugin', () => {
