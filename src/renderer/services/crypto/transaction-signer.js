@@ -1,6 +1,5 @@
 import { Identities, Transactions } from '@arkecosystem/crypto'
 import { dayjs } from '@/services/datetime'
-import { TRANSACTION_TYPES } from '@config'
 import store from '@/store'
 import TransactionService from '@/services/transaction'
 import WalletService from '@/services/wallet'
@@ -68,9 +67,8 @@ export class TransactionSigner {
           transaction.multiSignWithWif(publicKeyIndex, wif, networkWif)
         }
       } else if (
-        transaction.data.type ===
-                 TRANSACTION_TYPES.GROUP_1.MULTI_SIGNATURE &&
-               !transaction.data.signatures
+        TransactionService.isMultiSignatureRegistration(transaction.data) &&
+        !transaction.data.signatures
       ) {
         transaction.data.signatures = []
       }
