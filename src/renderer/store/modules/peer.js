@@ -7,11 +7,14 @@ import PeerModel from '@/models/peer'
 import Vue from 'vue'
 import { Peer } from '@/services/peer'
 
-const getBaseUrl = (peer) => {
-  const scheme = peer.isHttps ? 'https://' : 'http://'
+// Get the base URL from a peer
+const getBaseUrl = (peer) => `${peer.isHttps ? 'https://' : 'http://'}${peer.ip}:${peer.port}`
 
-  return `${scheme}${peer.ip}:${peer.port}`
-}
+// Remove a peer from a list based on its IP address.
+const removePeerFromList = (peer, list) => list ? list.filter(p => p.ip !== peer.ip) : list
+
+// Return the default network ID based on the profile. The profile object is provided by rootGetters.
+const defaultNetworkId = profile => profile && profile.networkId
 
 export default {
   namespaced: true,
@@ -24,33 +27,20 @@ export default {
   getters: {
     /**
      * Get all peers for current network.
-     * @param  {Boolean} [ignoreCurrent=false]
-     * @return {Object[]}
+     * @param {Boolean} [ignoreCurrentPeer=false] Set if the current peer should be ignored when returning a list of all peers.
+     * @param {string} [networkId=null] Network ID, eg 'ark.devnet'.
+     * @return {Array | Null} The peer list.
      */
-    all: (state, getters, _, rootGetters) => (ignoreCurrent = false, networkId = null) => {
-      if (!networkId) {
-        const profile = rootGetters['session/profile']
-        if (!profile || !profile.networkId) {
-          return []
-        }
+    all: (state, getters, _, rootGetters) => ({
+      ignoreCurrentPeer = false,
+      networkId = null
+    }) => {
+      networkId = networkId || defaultNetworkId(rootGetters['session/profile'])
 
-        networkId = profile.networkId
-      }
+      if (!networkId) return null
 
-      const networkPeers = state.all[networkId]
-      let peers = []
-      if (networkPeers) {
-        peers = Object.values(networkPeers.peers)
-      }
-
-      if (ignoreCurrent) {
-        const currentPeer = getters.current()
-        if (currentPeer) {
-          peers = peers.filter(peer => {
-            return peer.ip !== currentPeer.ip
-          })
-        }
-      }
+      let peers = state && state.all && state.all[networkId].peers
+      if (ignoreCurrentPeer) peers = removePeerFromList(getters.current(), peers)
 
       return peers
     },
@@ -60,9 +50,7 @@ export default {
      * @param  {String} ip
      * @return {(Object|undefined)}
      */
-    get: (_, getters) => ip => {
-      return getters.all().find(peer => peer.ip === ip)
-    },
+    get: (_, getters) => ip => (peers => peers ? peers.find(peer => peer.ip === ip) : undefined)(getters.all()),
 
     /**
      * Determine best peer for current network (random from top 10).
@@ -71,6 +59,7 @@ export default {
      */
     best: (_, getters) => (ignoreCurrent = true) => {
       const peers = getters.bestPeers(undefined, ignoreCurrent)
+
       if (!peers) {
         return null
       }
@@ -84,7 +73,7 @@ export default {
      * @return {Object[]} containing peer objects
      */
     randomPeers: (_, getters) => (amount = 5) => {
-      const peers = getters.all(true) // Ignore current peer
+      const peers = getters.all({ IgnoreCurrentPeer: true })
       if (!peers.length) {
         return []
       }
@@ -140,7 +129,7 @@ export default {
      * @return {Object[]}
      */
     bestPeers: (_, getters) => (maxRandom = 10, ignoreCurrent = true) => {
-      const peers = getters.all(ignoreCurrent)
+      const peers = getters.all({ ignoreCurrentPeer: ignoreCurrent })
       if (!peers.length) {
         return []
       }
