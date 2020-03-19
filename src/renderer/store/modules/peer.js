@@ -7,6 +7,10 @@ import PeerModel from '@/models/peer'
 import Vue from 'vue'
 import { Peer } from '@/services/peer'
 
+const logger = {
+  ...console
+}
+
 // Get the base URL from a peer
 const getBaseUrl = (peer) => `${peer.isHttps ? 'https://' : 'http://'}${peer.ip}:${peer.port}`
 
@@ -15,6 +19,18 @@ const removePeerFromList = (peer, list) => list ? list.filter(p => p.ip !== peer
 
 // Return the default network ID based on the profile. The profile object is provided by rootGetters.
 const defaultNetworkId = profile => profile && profile.networkId
+
+// Return an object containing chain and net from the networkId. Eg: ark.devnet => { chain: ark, net: devnet}
+const chainNetFromNetworkId = networkId => { networkId.split('.') }
+
+// I still don't know what this does.
+const deserializePeer = peer => {
+  try {
+    return PeerModel.deserialize(peer)
+  } catch (error) {
+    logger(error.message)
+  }
+}
 
 export default {
   namespaced: true,
@@ -29,17 +45,15 @@ export default {
      * Get all peers for current network.
      * @param {Boolean} [ignoreCurrentPeer=false] Set if the current peer should be ignored when returning a list of all peers.
      * @param {string} [networkId=null] Network ID, eg 'ark.devnet'.
-     * @return {Array | Null} The peer list.
+     * @return { Object[] | Null} The peer list.
      */
-    all: (state, getters, _, rootGetters) => ({
-      ignoreCurrentPeer = false,
-      networkId = null
-    }) => {
+    all: (state, getters, _, rootGetters) => ({ ignoreCurrentPeer = false, networkId = null }) => {
       networkId = networkId || defaultNetworkId(rootGetters['session/profile'])
 
       if (!networkId) return null
 
       let peers = state && state.all && state.all[networkId].peers
+
       if (ignoreCurrentPeer) peers = removePeerFromList(getters.current(), peers)
 
       return peers
@@ -47,7 +61,7 @@ export default {
 
     /**
      * Get peer for current network based on ip.
-     * @param  {String} ip
+     * @param  {string} ip
      * @return {(Object|undefined)}
      */
     get: (_, getters) => ip => (peers => peers ? peers.find(peer => peer.ip === ip) : undefined)(getters.all()),
@@ -59,12 +73,7 @@ export default {
      */
     best: (_, getters) => (ignoreCurrent = true) => {
       const peers = getters.bestPeers(undefined, ignoreCurrent)
-
-      if (!peers) {
-        return null
-      }
-
-      return Object.values(peers)[random(peers.length - 1)]
+      return (peers ? Object.values(peers)[random(peers.length - 1)] : null)
     },
 
     /**
@@ -74,11 +83,7 @@ export default {
      */
     randomPeers: (_, getters) => (amount = 5) => {
       const peers = getters.all({ IgnoreCurrentPeer: true })
-      if (!peers.length) {
-        return []
-      }
-
-      return shuffle(peers).slice(0, amount)
+      return peers.lenght ? shuffle(peers).slice(0, amount) : []
     },
 
     /**
@@ -86,22 +91,14 @@ export default {
      * Note that these peers are currently taken from a config file and will an empty array
      * custom networks without a corresponding peers file
      * @param {Number} amount of peers to return
-     * @return {Object[]} containing peer objects
+     * @return {Object[]} containing peer objects, can be length = 0.
      */
     randomSeedPeers: (_, __, ___, rootGetters) => (amount = 5, networkId = null) => {
-      if (!networkId) {
-        const profile = rootGetters['session/profile']
-        if (!profile || !profile.networkId) {
-          return []
-        }
-
-        networkId = profile.networkId
-      }
+      networkId = networkId || defaultNetworkId(rootGetters['session/profile'])
+      if (!networkId) return []
 
       const peers = config.PEERS[networkId]
-      if (!peers || !peers.length) {
-        return []
-      }
+      if (!peers || !peers.length) return []
 
       return shuffle(peers).slice(0, amount)
     },
@@ -134,60 +131,33 @@ export default {
         return []
       }
 
-      // NOTE: Disabled because if a bad peer has a height 50 blocks above the rest it is not returning any peer
-
-      // const highestHeight = peers[0].height
-      // for (let i = 1; i < maxRandom; i++) {
-      //   if (!peers[i]) {
-      //     break
-      //   }
-      //   if (peers[i].height < highestHeight - 50) {
-      //     maxRandom = i - 1
-      //   }
-      // }
-
       return peers.slice(0, Math.min(maxRandom, peers.length))
     },
 
     /**
      * Get current peer.
+     * @param {string} networkId The ID of the network. This doesn't make much sense, since you cannot be connected to multiple networks.
      * @return {(Object|boolean)} - false if no current peer
      */
     current: (state, getters, __, rootGetters) => (networkId = null) => {
-      if (!networkId) {
-        const profile = rootGetters['session/profile']
-        if (!profile || !profile.networkId) {
-          return false
-        }
-
-        networkId = profile.networkId
-      }
+      networkId = networkId || defaultNetworkId(rootGetters['session/profile'])
+      if (!networkId) return false
 
       const currentPeer = state.current[networkId]
-      if (isEmpty(currentPeer)) {
-        return false
-      }
+      if (isEmpty(currentPeer)) return false
 
-      return currentPeer
+      return currentPeer instanceof Peer ? currentPeer : new Peer(currentPeer)
     },
 
     /**
      * Get last updated date for peer list.
-     * @return {(Date|null)}
+     * @return {(Date|null|false)}
      */
     lastUpdated: (state, _, __, rootGetters) => () => {
-      const profile = rootGetters['session/profile']
-      if (!profile || !profile.networkId) {
-        return false
-      }
-
-      const networkPeers = state.all[profile.networkId]
-
-      if (networkPeers) {
-        return networkPeers.lastUpdated
-      }
-
-      return null
+      const networkId = defaultNetworkId(rootGetters['session/profile'])
+      if (!networkId) return false
+      const networkPeers = state.all[networkId]
+      return networkPeers ? (networkPeers && networkPeers.lastUpdated) : null
     }
   },
 
@@ -206,22 +176,14 @@ export default {
   actions: {
     /**
      * Set peers for specific network.
-     * @param  {Object[]} peers
-     * @param  {Number} networkId
+     * @param  {Object[]} peers A peer list
+     * @param  {string} networkId A network ID.
      * @return {void}
      */
     setToNetwork ({ commit }, { peers, networkId }) {
       commit('SET_PEERS', {
-        peers: peers.map(peer => {
-          try {
-            return PeerModel.deserialize(peer)
-          } catch (error) {
-            this._vm.$logger.error(`Could not deserialize peer: ${error.message}`)
-          }
-
-          return null
-        }).filter(peer => peer !== null),
-        networkId
+        peers: peers.map(peer => deserializePeer(peer)),
+        networkId: networkId
       })
     },
 
@@ -230,24 +192,10 @@ export default {
      * @param  {Object[]} peers
      * @return {void}
      */
-    set ({ commit, rootGetters }, peers) {
-      const profile = rootGetters['session/profile']
-      if (!profile || !profile.networkId) {
-        return
-      }
-
-      commit('SET_PEERS', {
-        peers: peers.map(peer => {
-          try {
-            return PeerModel.deserialize(peer)
-          } catch (error) {
-            this._vm.$logger.error(`Could not deserialize peer: ${error.message}`)
-          }
-
-          return null
-        }).filter(peer => peer !== null),
-        networkId: profile.networkId
-      })
+    set ({ rootGetters, dispatch }, peers) {
+      const networkId = defaultNetworkId(rootGetters['session/profile'])
+      if (!networkId) return
+      dispatch('setToNetwork', { peers: peers, networkId: networkId })
     },
 
     /**
@@ -256,56 +204,41 @@ export default {
      * @return {void}
      */
     async setCurrentPeer ({ commit, dispatch, rootGetters }, peer) {
-      const profile = rootGetters['session/profile']
-      if (!profile || !profile.networkId) {
-        return
-      }
+      peer = new Peer(peer)
 
-      if (peer) {
-        this._vm.$client.host = getBaseUrl(peer)
+      const networkId = defaultNetworkId(rootGetters['session/profile'])
+      if (!networkId) return
 
-        // TODO only when necessary (when / before sending) (if no dynamic)
-        await dispatch('transaction/updateStaticFees', null, { root: true })
-      }
+      this._vm.$client.host = getBaseUrl(peer)
+
+      // TODO only when necessary (when / before sending) (if no dynamic)
+      await dispatch('transaction/updateStaticFees', null, { root: true })
+
       commit('SET_CURRENT_PEER', {
         peer,
-        networkId: profile.networkId
+        networkId: networkId
       })
     },
 
     /**
      * Get Peer Discovery instance.
-     * @return {PeerDiscovery}
+     * @param {string} [network=null] - The network object
+     * @return {PeerDiscovery | void}
      */
     async getPeerDiscovery ({ getters, rootGetters }, network = null) {
-      if (!network) {
-        network = rootGetters['session/network']
-      }
+      const currentPeer = getters.current()
 
-      if (!network) {
-        return
-      }
+      if (currentPeer) return PeerDiscovery.new({ networkOrHost: `${getBaseUrl(currentPeer)}/api/v2/peers` })
 
-      const networkLookup = {
-        'ark.mainnet': 'mainnet',
-        'ark.devnet': 'devnet'
-      }
+      network = network || rootGetters['session/network']
+      if (!network) return
 
-      if (networkLookup[network.id]) {
-        return PeerDiscovery.new({
-          networkOrHost: networkLookup[network.id]
-        })
-      } else if (getters.current()) {
-        const peerUrl = getBaseUrl(getters.current())
+      const { net } = chainNetFromNetworkId(network.id)
 
-        return PeerDiscovery.new({
-          networkOrHost: `${peerUrl}/api/v2/peers`
-        })
-      }
+      // this doesnt seems to make sense. Am I submiting a string?
+      if (net) return PeerDiscovery.new({ networkOrHost: net })
 
-      return PeerDiscovery.new({
-        networkOrHost: `${network.server}/api/v2/peers`
-      })
+      return PeerDiscovery.new({ networkOrHost: `${network.server}/api/v2/peers` })
     },
 
     /**
@@ -407,6 +340,10 @@ export default {
       return peer
     },
 
+    /**
+     * Make sure that the peer is valid for the current network by checking the nethash
+     * @param {Peer} peer The peer object to be matched agains the current network.
+     */
     async ensureStillValid ({ rootGetters }, peer) {
       if (!peer) {
         throw new Error('Not connected to peer')
@@ -491,13 +428,13 @@ export default {
 
     /**
      * Validate custom peer, used to check it's acceptable to connect.
-     * @param  {String} ip IP address without the schema.
-     * @param  {String} host Host address, with or without the schema.
-     * @param  {Number} port Port number
-     * @param  {String} nethash The network hash for the network which the peer belongs to
-     * @param  {Number} [ignoreNetwork=false] Set to true if validating a peer for other network
-     * @param  {Number} [timeout=3000] Default timeout for all the client requests.
-     * @return {(Object|String)}
+     * @param  {string} ip IP address without the schema.
+     * @param  {string} host Host address, with or without the schema.
+     * @param  {number} port Port number
+     * @param  {string} nethash The network hash for the network which the peer belongs to
+     * @param  {number} [ignoreNetwork=false] Set to true if validating a peer for other network
+     * @param  {number} [timeout=3000] Default timeout for all the client requests.
+     * @return {(Object|string)}
      */
     async validatePeer ({ rootGetters }, { host, ip, port, nethash, ignoreNetwork = false, timeout = 3000 }) {
       const schemeUrl = host.match(/^(https?:\/\/)+(.+)$/)
