@@ -19,10 +19,7 @@ export class Peer {
   }
 
   get baseUrl () {
-    const scheme = this.isHttps ? 'https://' : 'http://'
-    const href = this.ip ? this.ip : this.host
-
-    return `${scheme}${href}:${this.port}`
+    return `${this.isHttps ? 'https://' : 'http://'}${this.ip || this.host}:${this.port}`
   }
 
   get clientService () {
@@ -57,9 +54,13 @@ export class Peer {
 
   async fetchStatus () {
     let peerStatus
+
     try {
+      const latencyStart = performance.now()
       peerStatus = await this.clientService.fetchPeerStatus()
-      if (!peerStatus) throw new Error()
+      if (!peerStatus) throw new Error('Fetch status failed')
+      const latencyEnd = performance.now()
+      this.latency = (latencyEnd - latencyStart).toFixed(0)
     } catch (err) {
       throw i18n.t('PEER.STATUS_CHECK_FAILED')
     }
