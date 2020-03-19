@@ -138,7 +138,7 @@ export class PluginManager {
 
       await this.app.$store.dispatch('profile/update', {
         ...profile,
-        ...{ theme: defaultThemes[0] }
+        theme: defaultThemes[0]
       })
     }
   }
@@ -151,7 +151,7 @@ export class PluginManager {
 
       await this.app.$store.dispatch('profile/update', {
         ...profile,
-        ...{ language: I18N.defaultLocale }
+        language: I18N.defaultLocale
       })
     }
   }
