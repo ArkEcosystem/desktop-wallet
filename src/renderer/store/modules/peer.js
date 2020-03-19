@@ -21,7 +21,13 @@ const removePeerFromList = (peer, list) => list ? list.filter(p => p.ip !== peer
 const defaultNetworkId = profile => profile && profile.networkId
 
 // Return an object containing chain and net from the networkId. Eg: ark.devnet => { chain: ark, net: devnet}
-const chainNetFromNetworkId = networkId => { networkId.split('.') }
+const chainNetFromNetworkId = networkId => {
+  const arr = networkId.split('.')
+  return {
+    chain: arr[0],
+    net: arr[1]
+  }
+}
 
 // I still don't know what this does.
 const deserializePeer = peer => {
@@ -146,7 +152,7 @@ export default {
       const currentPeer = state.current[networkId]
       if (isEmpty(currentPeer)) return false
 
-      return currentPeer instanceof Peer ? currentPeer : new Peer(currentPeer)
+      return currentPeer
     },
 
     /**
@@ -189,7 +195,7 @@ export default {
 
     /**
      * Set peers for current network.
-     * @param  {Object[]} peers
+     * @param  {Object[]} peers The peer list.
      * @return {void}
      */
     set ({ rootGetters, dispatch }, peers) {
@@ -204,7 +210,11 @@ export default {
      * @return {void}
      */
     async setCurrentPeer ({ commit, dispatch, rootGetters }, peer) {
+      if (!peer) return
+
       peer = new Peer(peer)
+
+      await peer.fetchStatus()
 
       const networkId = defaultNetworkId(rootGetters['session/profile'])
       if (!networkId) return
@@ -221,7 +231,7 @@ export default {
     },
 
     /**
-     * Get Peer Discovery instance.
+     * Gets a new peer Discovery instance.
      * @param {string} [network=null] - The network object
      * @return {PeerDiscovery | void}
      */
@@ -243,6 +253,7 @@ export default {
 
     /**
      * Refresh peer list.
+     * @param {Object} [network=null] The network object.
      * @return {void}
      */
     async refresh ({ dispatch }, network = null) {
@@ -273,11 +284,15 @@ export default {
             })
         }
       } catch (error) {
-        console.error('Could not refresh peer list:', error)
+        logger.error('Could not refresh peer list:', error)
       }
 
       if (!peers.length) {
         this._vm.$error(i18n.t('PEER.FAILED_REFRESH'))
+      }
+
+      if (!peers || !peers.length) {
+        return
       }
 
       dispatch('set', peers)
@@ -285,8 +300,8 @@ export default {
 
     /**
      * Get best peer for current network.
-     * @param  {Boolean} [refresh=true]
-     * @param  {Boolean} [skipIfCustom=true]
+     * @param  {Boolean} [refresh=true] Refresh peer list before finding the best peer.
+     * @param  {Object} [network=null] The network object
      * @return {(Object|null)}
      */
     async findBest ({ dispatch, getters }, { refresh = true, network = null }) {
@@ -299,9 +314,8 @@ export default {
       }
 
       let peer = network ? getters.best(true, network.id) : getters.best()
-      if (!peer) {
-        return null
-      }
+
+      if (!peer) return null
 
       peer = await dispatch('updateCurrentPeerStatus', peer)
       if (!peer) {
@@ -460,9 +474,6 @@ export default {
       } catch (err) {
         return err
       }
-
-      peer.status = 'OK'
-      peer.latency = 0
 
       return peer
     }

@@ -3,12 +3,8 @@ import i18n from '@/i18n'
 
 export class Peer {
   constructor ({ ip, host, port, height, status, latency, isHttps, lastUpdated }) {
-    if (!host && ip) {
-      host = ip
-    }
-
-    this.ip = ip
-    this.host = host
+    this.ip = ip || host
+    this.host = host || ip
     this.port = port
     this.height = height
     this.status = status
@@ -35,7 +31,6 @@ export class Peer {
   }
 
   async checkNetwork ({ nethash, ignoreNetwork }) {
-    console.log(this.baseUrl)
     let networkConfig
     try {
       networkConfig = await ClientService.fetchNetworkConfig(this.baseUrl)
@@ -70,6 +65,7 @@ export class Peer {
     }
 
     this.height = peerStatus.height
+    this.status = 'OK'
 
     return true
   }
