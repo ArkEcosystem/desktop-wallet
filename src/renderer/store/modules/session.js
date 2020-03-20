@@ -1,5 +1,4 @@
 import { I18N, MARKET } from '@config'
-import i18n from '@/i18n'
 
 export default {
   namespaced: true,
@@ -269,8 +268,6 @@ export default {
       state.priceApi = 'coingecko'
       state.pluginMenuOpen = true
       state.defaultChosenFee = 'AVERAGE'
-
-      i18n.locale = state.language
     },
 
     REPLACE (state, value) {
@@ -306,8 +303,6 @@ export default {
       state.priceApi = value.priceApi
       state.pluginMenuOpen = value.pluginMenuOpen !== undefined ? value.pluginMenuOpen : true
       state.defaultChosenFee = value.defaultChosenFee
-
-      i18n.locale = state.language
     }
   },
 
@@ -364,7 +359,6 @@ export default {
 
     setLanguage ({ commit }, value) {
       commit('SET_LANGUAGE', value)
-      i18n.locale = value
     },
 
     setBip39Language ({ commit }, value) {

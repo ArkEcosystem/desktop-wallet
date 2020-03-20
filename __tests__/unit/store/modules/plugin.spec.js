@@ -842,6 +842,55 @@ describe('PluginModule', () => {
       })
     })
 
+    describe('languages', () => {
+      beforeAll(() => {
+        store.replaceState(JSON.parse(JSON.stringify(initialState)))
+      })
+
+      it('should return an empty object if there are no loaded plugins', () => {
+        expect(store.getters['plugin/languages']).toEqual({})
+      })
+
+      it('should return an empty object if there are no loaded plugins with languages', () => {
+        store.replaceState(merge(
+          JSON.parse(JSON.stringify(initialState)),
+          {
+            plugin: {
+              loaded: {
+                [profile1.id]: {
+                  [availablePlugins[0].config.id]: {}
+                }
+              }
+            }
+          }
+        ))
+
+        expect(store.getters['plugin/languages']).toEqual({})
+      })
+
+      it('should retrieve all languages of loaded plugins', () => {
+        store.replaceState(merge(
+          JSON.parse(JSON.stringify(initialState)),
+          {
+            plugin: {
+              loaded: {
+                [profile1.id]: {
+                  [availablePlugins[0].config.id]: {},
+                  [availablePlugins[1].config.id]: {
+                    languages: {
+                      'language-1': {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ))
+
+        expect(store.getters['plugin/languages']).toEqual({ 'language-1': {} })
+      })
+    })
+
     describe('walletTabs', () => {
       beforeEach(() => {
         store.replaceState(merge(
@@ -1553,6 +1602,57 @@ describe('PluginModule', () => {
         })
 
         expect(store.getters['plugin/themes']).toEqual({ 'theme-1': {} })
+      })
+    })
+
+    describe('setLanguages', () => {
+      beforeEach(() => {
+        store.replaceState(merge(
+          JSON.parse(JSON.stringify(initialState)),
+          {
+            plugin: {
+              enabled: {
+                [profile1.id]: {
+                  [availablePlugins[0].config.id]: true,
+                  [availablePlugins[2].config.id]: true
+                }
+              },
+              loaded: {
+                [profile1.id]: {
+                  [availablePlugins[0].config.id]: {
+                    languages: {}
+                  },
+                  [availablePlugins[2].config.id]: {}
+                }
+              }
+            }
+          }
+        ))
+      })
+
+      it('should throw an error if the plugin is not enabled', () => {
+        try {
+          store.dispatch('plugin/setLanguages', {
+            pluginId: availablePlugins[1].config.id,
+            profileId: profile1.id
+          })
+        } catch (e) {
+          expect(e.message).toBe('Plugin is not enabled')
+        }
+      })
+
+      it.each([null, profile1.id])('should set the languages if the plugin is enabled', (profileId) => {
+        expect(store.getters['plugin/languages']).toEqual({})
+
+        store.dispatch('plugin/setLanguages', {
+          pluginId: availablePlugins[0].config.id,
+          profileId,
+          languages: {
+            'language-1': {}
+          }
+        })
+
+        expect(store.getters['plugin/languages']).toEqual({ 'language-1': {} })
       })
     })
 
