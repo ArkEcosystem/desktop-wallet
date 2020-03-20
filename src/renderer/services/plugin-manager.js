@@ -1,6 +1,6 @@
 import * as adapters from '@/services/plugin-manager/adapters'
 import releaseService from '@/services/release'
-import { PLUGINS } from '@config'
+import { I18N, PLUGINS } from '@config'
 import { dayjs } from '@/services/datetime'
 import * as fs from 'fs'
 import * as fsExtra from 'fs-extra'
@@ -138,7 +138,20 @@ export class PluginManager {
 
       await this.app.$store.dispatch('profile/update', {
         ...profile,
-        ...{ theme: defaultThemes[0] }
+        theme: defaultThemes[0]
+      })
+    }
+  }
+
+  async unloadLanguages (plugin, profileId) {
+    if (I18N.defaultLocale !== this.app.$store.getters['session/language']) {
+      await this.app.$store.dispatch('session/setLanguage', I18N.defaultLocale)
+
+      const profile = this.app.$store.getters['profile/byId'](profileId)
+
+      await this.app.$store.dispatch('profile/update', {
+        ...profile,
+        language: I18N.defaultLocale
       })
     }
   }
@@ -180,6 +193,10 @@ export class PluginManager {
 
     if (plugin.config.permissions.includes('THEMES')) {
       await this.unloadThemes(plugin, profileId)
+    }
+
+    if (plugin.config.permissions.includes('LANGUAGES')) {
+      await this.unloadLanguages(plugin, profileId)
     }
 
     await this.app.$store.dispatch('plugin/deleteLoaded', { pluginId, profileId })
