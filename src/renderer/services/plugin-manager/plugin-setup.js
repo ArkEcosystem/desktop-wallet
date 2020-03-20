@@ -2,26 +2,28 @@ import path from 'path'
 import fs from 'fs'
 import { castArray } from 'lodash'
 import {
-  COMPONENTS,
   AVATARS,
-  WALLET_TABS,
-  ROUTES,
-  PUBLIC,
+  COMPONENTS,
+  LANGUAGES,
   MENU_ITEMS,
+  PUBLIC,
+  ROUTES,
   THEMES,
-  WEBFRAME,
-  UI_COMPONENTS
+  UI_COMPONENTS,
+  WALLET_TABS,
+  WEBFRAME
 } from './plugin-permission'
-import * as ComponentsSetup from './setup/components-setup'
 import * as AvatarsSetup from './setup/avatars-setup'
-import * as RoutesSetup from './setup/routes-setup'
-import * as WalletTabsSetup from './setup/wallet-tabs-setup'
-import * as RegisterSetup from './setup/register-setup'
-import * as MenuItemsSetup from './setup/menu-items-setup'
-import * as ThemesSetup from './setup/themes-setup'
-import * as WebFrameSetup from './setup/webframe-setup'
-import * as UiComponentsSetup from './setup/ui-components-setup'
+import * as ComponentsSetup from './setup/components-setup'
 import * as FontAwesomeSetup from './setup/font-awesome-setup'
+import * as LanguagesSetup from './setup/languages-setup'
+import * as MenuItemsSetup from './setup/menu-items-setup'
+import * as RegisterSetup from './setup/register-setup'
+import * as RoutesSetup from './setup/routes-setup'
+import * as ThemesSetup from './setup/themes-setup'
+import * as UiComponentsSetup from './setup/ui-components-setup'
+import * as WalletTabsSetup from './setup/wallet-tabs-setup'
+import * as WebFrameSetup from './setup/webframe-setup'
 
 export class PluginSetup {
   constructor ({
@@ -82,6 +84,7 @@ export class PluginSetup {
       [COMPONENTS.name]: ComponentsSetup.create(this.plugin, this.pluginObject, this.sandbox, this.vue),
       [MENU_ITEMS.name]: MenuItemsSetup.create(this.plugin, this.pluginObject, this.sandbox, this.profileId),
       [THEMES.name]: ThemesSetup.create(this.plugin, this.pluginObject, this.sandbox, this.profileId),
+      [LANGUAGES.name]: LanguagesSetup.create(this.plugin, this.pluginObject, this.sandbox, this.profileId),
       [PUBLIC.name]: [
         RegisterSetup.create(this.pluginObject),
         FontAwesomeSetup.create(this.plugin)

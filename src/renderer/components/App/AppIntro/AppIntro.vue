@@ -39,51 +39,9 @@
           <div
             class="flex flex-row align-center justify-center mt-8"
           >
-            <MenuDropdown
-              :items="languages"
-              :value="language"
-              class="AppIntro__1__languages flex align-center justify-center p-2 text-grey-dark"
-              @select="selectLanguage"
-            >
-              <div
-                slot="item"
-                slot-scope="itemScope"
-                class="flex flex-row space-between"
-              >
-                <img
-                  :src="flagImage(itemScope.value)"
-                  :title="itemScope.item"
-                  class="AppIntro__1__languages__item__flag mr-2"
-                >
-                <span class="font-semibold">
-                  {{ itemScope.item }}
-                </span>
-              </div>
-
-              <div
-                slot="handler"
-                slot-scope="handlerScope"
-              >
-                <MenuDropdownHandler
-                  :value="handlerScope.activeValue"
-                  :item="handlerScope.item"
-                  :placeholder="handlerScope.placeholder"
-                  :prefix="handlerScope.prefix"
-                  :icon-disabled="handlerScope.isOnlySelectedItem"
-                >
-                  <img
-                    :src="flagImage(handlerScope.value)"
-                    :title="handlerScope.item"
-                    class="AppIntro__1__languages__handler__flag mr-1"
-                  >
-                  {{ handlerScope.item }}
-                </MenuDropdownHandler>
-              </div>
-            </MenuDropdown>
-
             <ButtonGeneric
               :label="$t('COMMON.START')"
-              class="AppIntro__1__start-button ml-4"
+              class="AppIntro__1__start-button ml-0"
               @click="moveTo(1)"
             />
           </div>
@@ -222,11 +180,9 @@
 </template>
 
 <script>
-import { I18N } from '@config'
 import AppFooter from '@/components/App/AppFooter'
 import AppIntroScreen from '@/components/App/AppIntro/AppIntroScreen'
 import { ButtonGeneric } from '@/components/Button'
-import { MenuDropdown, MenuDropdownHandler } from '@/components/Menu'
 
 export default {
   name: 'AppIntro',
@@ -234,13 +190,10 @@ export default {
   components: {
     AppFooter,
     AppIntroScreen,
-    ButtonGeneric,
-    MenuDropdown,
-    MenuDropdownHandler
+    ButtonGeneric
   },
 
   data: () => ({
-    language: I18N.defaultLocale,
     step: 0,
     stepImages: [
       'pages/intro/welcome.svg',
@@ -252,22 +205,12 @@ export default {
   }),
 
   computed: {
-    languages () {
-      return I18N.enabledLocales.reduce((all, locale) => {
-        all[locale] = this.$t(`LANGUAGES.${locale}`)
-        return all
-      }, {})
-    },
     stepImage () {
       return this.stepImages[this.step]
     }
   },
 
   methods: {
-    flagImage (language) {
-      return this.assets_loadImage(`flags/${language}.svg`)
-    },
-
     done () {
       this.$emit('done')
     },
@@ -276,10 +219,6 @@ export default {
     },
     start () {
       this.step = 0
-    },
-    selectLanguage (language) {
-      this.language = language
-      this.$store.dispatch('session/setLanguage', language)
     }
   }
 }
@@ -288,18 +227,5 @@ export default {
 <style lang="postcss" scoped>
 .AppIntro__1 .AppIntroScreen__container__left {
   background-color: #c9292c;
-}
-.AppIntro__1__languages {
-  @apply .border-2 .rounded
-}
-.AppIntro__1__languages .MenuDropdownItem__container {
-  @apply .pl-0
-}
-.AppIntro__1__languages__item__flag {
-  height: 18px
-}
-.AppIntro__1__languages__handler__flag {
-  height: 18px;
-  margin-bottom: -2px;
 }
 </style>

@@ -435,12 +435,6 @@ export default {
         return all
       }, {})
     },
-    languages () {
-      return I18N.enabledLocales.reduce((all, locale) => {
-        all[locale] = this.$t(`LANGUAGES.${locale}`)
-        return all
-      }, {})
-    },
     bip39Languages () {
       return BIP39.languages.reduce((all, language) => {
         all[language] = this.$t(`BIP39_LANGUAGES.${language}`)
@@ -594,6 +588,23 @@ export default {
         light: this.$t('COMMON.THEMES.LIGHT'),
         dark: this.$t('COMMON.THEMES.DARK'),
         ...pluginThemes
+      }
+    },
+    pluginLanguages () {
+      return isEmpty(this.$store.getters['plugin/languages'])
+        ? null
+        : this.$store.getters['plugin/languages']
+    },
+    languages () {
+      const pluginLanguages = {}
+
+      for (const [languageId, config] of Object.entries(this.pluginLanguages || {})) {
+        pluginLanguages[languageId] = config.name
+      }
+
+      return {
+        [I18N.defaultLocale]: this.$t(`LANGUAGES.${I18N.defaultLocale}`),
+        ...pluginLanguages
       }
     }
   },

@@ -153,6 +153,7 @@
       @update="onUpdate"
       @remove="onRemove"
       @report="onReport"
+      @change-status="onChangeStatus"
       @show-permissions="openPermissionsModal('details')"
     />
 
@@ -638,6 +639,10 @@ export default {
       this.$error(error)
     },
 
+    async onChangeStatus (enabled, pluginId) {
+      await this.updateStatus({ enabled, pluginId })
+    },
+
     async disablePlugin (pluginId, profileId) {
       await this.updateStatus({ enabled: false, pluginId, profileId })
     },
@@ -647,11 +652,18 @@ export default {
     },
 
     async updateStatus ({ enabled, pluginId, profileId = null }) {
-      await this.$store.dispatch('plugin/setEnabled', {
-        enabled,
-        pluginId,
-        profileId
-      })
+      try {
+        await this.$store.dispatch('plugin/setEnabled', {
+          enabled,
+          pluginId,
+          profileId
+        })
+      } catch (error) {
+        this.$error(this.$t(`PAGES.PLUGIN_MANAGER.ERRORS.${enabled ? 'ENABLE' : 'DISABLE'}`, {
+          plugin: pluginId,
+          error: error.message
+        }))
+      }
     }
   }
 }
