@@ -60,11 +60,11 @@ export default {
 
   computed: {
     pluginCategories () {
-      return concat(['all'], PLUGINS.categories.filter(category => category !== 'theme'))
+      return concat(['all'], PLUGINS.categories.filter(category => !['theme', 'language'].includes(category)))
     },
 
     otherCategories () {
-      return ['theme']
+      return ['theme', 'language']
     }
   },
 
