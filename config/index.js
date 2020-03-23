@@ -117,6 +117,7 @@ exports.PLUGINS = {
   adapters: ['npm'],
   blacklistUrl: 'https://raw.githubusercontent.com/ark-ecosystem-desktop-plugins/config/master/blacklist.json',
   whitelistUrl: 'https://raw.githubusercontent.com/ark-ecosystem-desktop-plugins/config/master/whitelist.json',
+  pluginsUrl: 'https://raw.githubusercontent.com/ark-ecosystem-desktop-plugins/config/master/plugins.json',
   categories: [
     'gaming',
     'theme',

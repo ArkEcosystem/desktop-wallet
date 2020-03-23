@@ -377,6 +377,16 @@ export class PluginManager {
     }
   }
 
+  async fetchPluginsList () {
+    try {
+      const { body } = await got(`${PLUGINS.pluginsUrl}?ts=${(new Date()).getTime()}`, { json: true })
+      this.app.$store.dispatch('plugin/setWhitelisted', { scope: 'global', plugins: body.plugins })
+      this.app.$store.dispatch('plugin/setBlacklisted', { scope: 'global', plugins: body.blacklist })
+    } catch (error) {
+      console.error(`Could not fetch plugins from the list '${PLUGINS.pluginsUrl}: ${error.message}`)
+    }
+  }
+
   async fetchPlugin (pluginPath, isUpdate = false) {
     validatePluginPath(pluginPath)
 
