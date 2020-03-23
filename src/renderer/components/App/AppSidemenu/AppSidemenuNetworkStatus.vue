@@ -277,7 +277,7 @@ export default {
       } else {
         response.isCustom = true
         await this.$store.dispatch('peer/setCurrentPeer', response)
-        await this.$store.dispatch('peer/updateCurrentPeerStatus')
+        await this.$store.dispatch('peer/updatePeerSystem')
         this.$success(`${this.$t('PEER.CONNECTED')}: ${peer.host}:${peer.port}`)
         if (closeTrigger) {
           closeTrigger()

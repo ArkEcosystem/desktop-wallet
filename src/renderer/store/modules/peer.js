@@ -7,9 +7,7 @@ import PeerModel from '@/models/peer'
 import Vue from 'vue'
 import { Peer } from '@/services/peer'
 
-const logger = {
-  ...console
-}
+const logger = { ...console }
 
 // Get the base URL from a peer
 const getBaseUrl = (peer) => `${peer.isHttps ? 'https://' : 'http://'}${peer.ip}:${peer.port}`
@@ -21,13 +19,7 @@ const removePeerFromList = (peer, list) => list ? list.filter(p => p.ip !== peer
 const defaultNetworkId = profile => profile && profile.networkId
 
 // Return an object containing chain and net from the networkId. Eg: ark.devnet => { chain: ark, net: devnet}
-const chainNetFromNetworkId = networkId => {
-  const arr = networkId.split('.')
-  return {
-    chain: arr[0],
-    net: arr[1]
-  }
-}
+const chainNetFromNetworkId = networkId => (arr => ({ chain: arr[0], net: arr[1] }))(networkId.split('.'))
 
 // I still don't know what this does.
 const deserializePeer = peer => {
@@ -317,21 +309,17 @@ export default {
 
       if (!peer) return null
 
-      peer = await dispatch('updateCurrentPeerStatus', peer)
-      if (!peer) {
-        return dispatch('findBest', {
-          refresh: true,
-          network
-        })
-      }
+      peer = peer instanceof Peer ? peer : new Peer(peer)
+
+      peer.fetchStatus()
 
       return peer
     },
 
     /**
      * Update to the best peer for current network.
-     * @param  {Boolean} [refresh=true]
-     * @param  {Boolean} [skipIfCustom=true]
+     * @param  {Boolean} [refresh=true] - Should refresh the list when trying to find the best peer.
+     * @param  {Boolean} [skipIfCustom=true] Ignore if a custom peer is set.
      * @return {(Object|null)}
      */
     async connectToBest ({ dispatch, getters }, { refresh = true, skipIfCustom = true }) {
@@ -345,9 +333,7 @@ export default {
         }
       }
 
-      const peer = await dispatch('findBest', {
-        refresh
-      })
+      const peer = await dispatch('findBest', { refresh })
 
       await dispatch('setCurrentPeer', peer)
 
@@ -355,13 +341,12 @@ export default {
     },
 
     /**
-     * Make sure that the peer is valid for the current network by checking the nethash
+     * Make sure that the peer is valid for the current network.
      * @param {Peer} peer The peer object to be matched agains the current network.
+     * @return
      */
     async ensureStillValid ({ rootGetters }, peer) {
-      if (!peer) {
-        throw new Error('Not connected to peer')
-      }
+      if (!peer) throw new Error('Not connected to peer')
 
       const networkConfig = await ClientService.fetchNetworkConfig(getBaseUrl(peer))
       if (networkConfig.nethash !== rootGetters['session/network'].nethash) {
@@ -369,6 +354,9 @@ export default {
       }
     },
 
+    /**
+     * Fallback to seed peer.
+     */
     async fallbackToSeedPeer ({ dispatch }) {
       dispatch('set', [])
       dispatch('setCurrentPeer', null)
@@ -376,68 +364,26 @@ export default {
     },
 
     /**
-     * Update peer status.
+     * Updates the whole peer system, checking the current peer is still valid and updating status.
      * @param  {Object} [port]
      * @return {(Object|void)}
      */
-    async updateCurrentPeerStatus ({ dispatch, getters }, currentPeer) {
-      let updateCurrentPeer = false
-      if (isEmpty(currentPeer)) {
-        currentPeer = { ...getters.current() }
-        updateCurrentPeer = true
-      }
-      if (isEmpty(currentPeer)) {
-        await dispatch('fallbackToSeedPeer')
+    async updatePeerSystem ({ dispatch, getters }) {
+      let peer = getters.current()
 
+      // If there is no current peer, fall back to seedPeer
+      if (!peer) {
+        await dispatch('fallbackToSeedPeer')
         return
       }
 
+      peer = peer instanceof Peer ? peer : new Peer(peer)
+
       try {
-        if (updateCurrentPeer) {
-          await dispatch('ensureStillValid', currentPeer)
-        }
-        const delayStart = performance.now()
-        let peerStatus
-        if (updateCurrentPeer) {
-          peerStatus = await this._vm.$client.fetchPeerStatus()
-        } else {
-          const client = new ClientService()
-          client.host = getBaseUrl(currentPeer)
-          client.client.withOptions({ timeout: 3000 })
-          peerStatus = await client.fetchPeerStatus()
-        }
-        const latency = (performance.now() - delayStart).toFixed(0)
-
-        currentPeer = new Peer({
-          ...currentPeer,
-          latency: +latency,
-          height: +peerStatus.height,
-          lastUpdated: new Date()
-        })
-
-        if (updateCurrentPeer) {
-          await dispatch('setCurrentPeer', currentPeer)
-        } else {
-          return currentPeer
-        }
+        await peer.fetchStatus()
       } catch (error) {
-        if (updateCurrentPeer) {
-          await dispatch('fallbackToSeedPeer')
-        }
+        await dispatch('fallbackToSeedPeer')
       }
-    },
-
-    /**
-     * Create client service object for a peer.
-     * @param  {Object} peer
-     * @return {ClientService}
-     */
-    async clientServiceFromPeer (_, peer) {
-      const client = new ClientService()
-      client.host = getBaseUrl(peer)
-      client.client.withOptions({ timeout: 3000 })
-
-      return client
     },
 
     /**
