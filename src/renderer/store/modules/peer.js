@@ -5,7 +5,6 @@ import config from '@config'
 import i18n from '@/i18n'
 import PeerModel from '@/models/peer'
 import Vue from 'vue'
-import { Peer } from '@/services/peer'
 
 const logger = { ...console }
 
@@ -204,9 +203,7 @@ export default {
     async setCurrentPeer ({ commit, dispatch, rootGetters }, peer) {
       if (!peer) return
 
-      peer = new Peer(peer)
-
-      await peer.fetchStatus()
+      peer = await dispatch('updatePeer', peer)
 
       const networkId = defaultNetworkId(rootGetters['session/profile'])
       if (!networkId) return
@@ -223,23 +220,30 @@ export default {
     },
 
     /**
-     * Gets a new peer Discovery instance.
+     * Gets a new peer Discovery instance. The discovery is based on the following order:
+     *
+     * 1) It checks for the network peers.
+     * 2) It checks for the peer peers.
+     * 3) It checks for the network server peer.
+     *
      * @param {string} [network=null] - The network object
      * @return {PeerDiscovery | void}
      */
     async getPeerDiscovery ({ getters, rootGetters }, network = null) {
-      const currentPeer = getters.current()
-
-      if (currentPeer) return PeerDiscovery.new({ networkOrHost: `${getBaseUrl(currentPeer)}/api/v2/peers` })
-
       network = network || rootGetters['session/network']
+
       if (!network) return
 
       const { net } = chainNetFromNetworkId(network.id)
 
-      // this doesnt seems to make sense. Am I submiting a string?
+      // 1) It checks for the default network peers.
       if (net) return PeerDiscovery.new({ networkOrHost: net })
 
+      // 2) It checks for the peers connected.
+      const currentPeer = getters.current()
+      if (currentPeer) return PeerDiscovery.new({ networkOrHost: `${getBaseUrl(currentPeer)}/api/v2/peers` })
+
+      // it checks for the default network server
       return PeerDiscovery.new({ networkOrHost: `${network.server}/api/v2/peers` })
     },
 
@@ -270,21 +274,18 @@ export default {
             .findPeersWithPlugin('core-wallet-api', {
               additional: [
                 'height',
-                'latency',
-                'version'
+                'latency'
               ]
             })
         }
       } catch (error) {
         logger.error('Could not refresh peer list:', error)
-      }
-
-      if (!peers.length) {
         this._vm.$error(i18n.t('PEER.FAILED_REFRESH'))
       }
 
-      if (!peers || !peers.length) {
-        return
+      if (!peers.length) {
+        logger.error('No peers retrieved')
+        this._vm.$error(i18n.t('PEER.FAILED_REFRESH'))
       }
 
       dispatch('set', peers)
@@ -301,6 +302,7 @@ export default {
         try {
           await dispatch('refresh', network)
         } catch (error) {
+          logger.error(error)
           this._vm.$error(`${i18n.t('PEER.FAILED_REFRESH')}: ${error.message}`)
         }
       }
@@ -309,9 +311,7 @@ export default {
 
       if (!peer) return null
 
-      peer = peer instanceof Peer ? peer : new Peer(peer)
-
-      peer.fetchStatus()
+      peer = await dispatch('updatePeer', peer)
 
       return peer
     },
@@ -333,9 +333,15 @@ export default {
         }
       }
 
-      const peer = await dispatch('findBest', { refresh })
+      let peer
 
-      await dispatch('setCurrentPeer', peer)
+      try {
+        const peer = await dispatch('findBest', { refresh })
+        await dispatch('setCurrentPeer', peer)
+      } catch (error) {
+        logger.error(error)
+        if (skipIfCustom) await dispatch('fallbackToSeed')
+      }
 
       return peer
     },
@@ -355,12 +361,104 @@ export default {
     },
 
     /**
-     * Fallback to seed peer.
+     * Fallback to seed peer, cleaning all the peer data.
      */
     async fallbackToSeedPeer ({ dispatch }) {
       dispatch('set', [])
       dispatch('setCurrentPeer', null)
       await dispatch('connectToBest', { skipIfCustom: false })
+    },
+
+    /**
+     * Checks if the peer is still valid in the provided network.
+     * @param {Object} peer The peer.
+     * @param {Object} network The network.
+     * @return {Boolean | Error} If the peer is compatible with the network.
+     */
+    async checkPeerNetworkCompatibility ({ dispatch }, { peer, network, nethash }) {
+      const networkNethash = nethash || network.nethash
+      let peerNethash
+
+      try {
+        peerNethash = await dispatch('clientServiceFromPeer', peer)
+          .fetchNetworkConfig(getBaseUrl(peer))
+          .nethash
+      } catch (err) {
+        console.error('Could not get network config:' + err)
+      }
+
+      if (!peerNethash) {
+        throw i18n.t('PEER.NO_CONNECT')
+      } else if (peerNethash !== networkNethash) {
+        return false
+      }
+
+      return true
+    },
+
+    /**
+     * Update the peer object with it's status
+     * @param {Object} peer The peer to be updated.
+     * @return {(void | Error)} The status for the update.
+     */
+    async updatePeer ({ dispatch }, peer) {
+      let status
+
+      try {
+        status = await dispatch('fetchPeerStatus', peer)
+      } catch (err) {
+        logger.error(err)
+        throw i18n.t('PEER.STATUS_CHECK_FAILED')
+      }
+
+      if (!status) {
+        logger.error('No status was fetched')
+        throw i18n.t('PEER.STATUS_CHECK_FAILED')
+      }
+
+      peer.latency = status.latency
+      peer.height = status.height
+      peer.status = status.status
+
+      return peer
+    },
+
+    /**
+     * Create a client service from the peer.
+     * @param {Object} peer The peer to create the client service
+     * @return {Client} The client instance
+     */
+    async clientServiceFromPeer (_, peer) {
+      const client = new ClientService()
+      client.host = getBaseUrl(peer)
+      client.client.withOptions({ timeout: 3000 })
+
+      return client
+    },
+
+    /**
+     * Fetch peer status and return it. This does not automatically add the status to the peer, nor saves the peer.
+     * @param {Object} peer The peer that is going to be fetched.
+     * @return {Object | Error} An object with the peer status fetched.
+     */
+    async fetchPeerStatus ({ dispatch }, peer) {
+      let client, status, latencyStart, latencyEnd
+
+      try {
+        latencyStart = performance.now()
+        client = await dispatch('clientServiceFromPeer', peer)
+        status = await client.fetchPeerStatus()
+        latencyEnd = performance.now()
+        if (!client || !status) throw new Error()
+      } catch (err) {
+        throw i18n.t('PEER.STATUS_CHECK_FAILED')
+      }
+
+      return {
+        status: 'OK',
+        height: status.height,
+        latency: (latencyEnd - latencyStart).toFixed(0)
+      }
     },
 
     /**
@@ -371,18 +469,17 @@ export default {
     async updatePeerSystem ({ dispatch, getters }) {
       let peer = getters.current()
 
-      // If there is no current peer, fall back to seedPeer
       if (!peer) {
         await dispatch('fallbackToSeedPeer')
         return
       }
 
-      peer = peer instanceof Peer ? peer : new Peer(peer)
-
       try {
-        await peer.fetchStatus()
+        peer = await dispatch('updatePeer', peer)
+        await dispatch('setCurrentPeer', peer)
       } catch (error) {
         await dispatch('fallbackToSeedPeer')
+        await dispatch('refresh')
       }
     },
 
@@ -396,29 +493,27 @@ export default {
      * @param  {number} [timeout=3000] Default timeout for all the client requests.
      * @return {(Object|string)}
      */
-    async validatePeer ({ rootGetters }, { host, ip, port, nethash, ignoreNetwork = false, timeout = 3000 }) {
+    async validatePeer ({ dispatch }, { host, ip, port, nethash, ignoreNetwork = false, timeout = 3000 }) {
       const schemeUrl = host.match(/^(https?:\/\/)+(.+)$/)
       const isHttps = schemeUrl && schemeUrl[1] === 'https://'
 
-      const peer = new Peer({
+      let peer = {
         host: host,
         ip: ip,
         port: +port,
         isHttps: isHttps,
         clientTimeout: timeout
-      })
+      }
 
       try {
-        await peer.checkNetwork({
-          nethash: nethash || rootGetters['session/network'].nethash,
-          ignoreNetwork: ignoreNetwork,
-          timeout: timeout
+        const isCompatible = await dispatch('checkPeerNetworkCompatibility', {
+          peer: peer,
+          nethash: nethash
         })
-        await peer.fetchStatus({
-          timeout: timeout
-        })
+        if (!isCompatible && !ignoreNetwork) return
+        peer = await dispatch('updatePeer', peer)
       } catch (err) {
-        return err
+        logger.error(err)
       }
 
       return peer
