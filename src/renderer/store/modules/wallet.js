@@ -73,6 +73,7 @@ export default {
         balance: wallet.balance,
         name: wallet.name,
         publicKey: wallet.publicKey,
+        vote: wallet.vote,
         ...(wallet.isLedger && { isLedger: wallet.isLedger })
       }))
     },
