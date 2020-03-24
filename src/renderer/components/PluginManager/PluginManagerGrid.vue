@@ -29,16 +29,17 @@
 
         <div class="pl-4">
           <div class="flex flex-col justify-center h-20">
-            <span
-              class="PluginManagerGrid__plugin__name"
-              @click="emitShowDetails(plugin)"
-            >
-              {{ plugin.title }}
-            </span>
-
+            <div class="flex items-center">
+              <span
+                class="PluginManagerGrid__plugin__name"
+                @click="emitShowDetails(plugin)"
+              >
+                {{ plugin.title }}
+              </span>
+              <PluginManagerCheckmark v-if="plugin.isOfficial && !plugin.isGrant" />
+              <PluginManagerGrant v-else-if="plugin.isGrant" />
+            </div>
             <div class="PluginManagerGrid__plugin__details">
-              <PluginManagerCheckmark v-if="plugin.isOfficial" />
-
               <span>{{ plugin.author }}</span>
               <span class="ml-2">v{{ plugin.version }}</span>
               <span class="ml-2">{{ formatter_bytes(plugin.size) }}</span>
@@ -57,6 +58,7 @@
 <script>
 import { ButtonGeneric, ButtonIconGeneric } from '@/components/Button'
 import PluginManagerCheckmark from '@/components/PluginManager/PluginManagerCheckmark'
+import PluginManagerGrant from '@/components/PluginManager/PluginManagerGrant'
 import PluginLogo from '@/components/PluginManager/PluginLogo'
 
 export default {
@@ -66,6 +68,7 @@ export default {
     ButtonGeneric,
     ButtonIconGeneric,
     PluginManagerCheckmark,
+    PluginManagerGrant,
     PluginLogo
   },
 
