@@ -164,6 +164,14 @@ export default {
       return false
     },
 
+    isGrant: (_, getters) => pluginId => {
+      if (Object.prototype.hasOwnProperty.call(getters.whitelisted.global, pluginId) && Object.prototype.hasOwnProperty.call(getters.whitelisted.global[pluginId], 'isGrant')) {
+        return getters.whitelisted.global[pluginId].isGrant
+      }
+
+      return false
+    },
+
     isInstalledSupported: (_, getters) => pluginId => {
       const plugin = getters.installedById(pluginId)
 

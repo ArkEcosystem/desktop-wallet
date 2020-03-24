@@ -237,6 +237,8 @@ export class PluginManager {
     configs = await Promise.all(configs.map(async config => {
       const plugin = await PluginConfiguration.sanitize(config)
 
+      plugin.isGrant = this.app.$store.getters['plugin/isGrant'](plugin.id)
+
       try {
         plugin.logo = await this.fetchLogo(plugin.logo)
       } catch (error) {
@@ -298,6 +300,8 @@ export class PluginManager {
 
     plugin.source = `https://github.com/${owner}/${repository}/archive/${branch}.zip`
 
+    plugin.isGrant = this.app.$store.getters['plugin/isGrant'](plugin.id)
+
     try {
       plugin.logo = await this.fetchLogo(plugin.logo)
     } catch (error) {
@@ -319,7 +323,7 @@ export class PluginManager {
     if (force || dayjs().isAfter(dayjs(this.app.$store.getters['plugin/lastFetched']).add(
       PLUGINS.updateInterval.value, PLUGINS.updateInterval.unit
     ))) {
-      requests.push(this.fetchPluginsFromAdapter(), this.fetchBlacklist(), this.fetchWhitelist())
+      requests.push(this.fetchPluginsFromAdapter(), this.fetchPluginsList())
     }
 
     await Promise.all(requests)
@@ -359,24 +363,6 @@ export class PluginManager {
     }
   }
 
-  async fetchBlacklist () {
-    try {
-      const { body } = await got(`${PLUGINS.blacklistUrl}?ts=${(new Date()).getTime()}`, { json: true })
-      this.app.$store.dispatch('plugin/setBlacklisted', { scope: 'global', plugins: body.plugins })
-    } catch (error) {
-      console.error(`Could not fetch blacklist from '${PLUGINS.blacklistUrl}: ${error.message}`)
-    }
-  }
-
-  async fetchWhitelist () {
-    try {
-      const { body } = await got(`${PLUGINS.whitelistUrl}?ts=${(new Date()).getTime()}`, { json: true })
-      this.app.$store.dispatch('plugin/setWhitelisted', { scope: 'global', plugins: body.plugins })
-    } catch (error) {
-      console.error(`Could not fetch whitelist from '${PLUGINS.whitelistUrl}: ${error.message}`)
-    }
-  }
-
   async fetchPluginsList () {
     try {
       const { body } = await got(`${PLUGINS.pluginsUrl}?ts=${(new Date()).getTime()}`, { json: true })
@@ -396,6 +382,8 @@ export class PluginManager {
     if (this.plugins[pluginConfig.id] && !isUpdate) {
       throw new errors.PluginAlreadyLoadedError(pluginConfig.id)
     }
+
+    pluginConfig.isGrant = this.app.$store.getters['plugin/isGrant'](pluginConfig.id)
 
     try {
       pluginConfig.logo = fs.readFileSync(`${pluginPath}/logo.png`).toString('base64')
