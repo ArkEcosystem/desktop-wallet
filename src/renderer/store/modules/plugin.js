@@ -158,7 +158,7 @@ export default {
 
     isWhitelisted: (_, getters) => plugin => {
       if (Object.prototype.hasOwnProperty.call(getters.whitelisted.global, plugin.config.id)) {
-        return semver.lte(plugin.config.version, getters.whitelisted.global[plugin.config.id])
+        return semver.lte(plugin.config.version, getters.whitelisted.global[plugin.config.id].version)
       }
 
       return false
