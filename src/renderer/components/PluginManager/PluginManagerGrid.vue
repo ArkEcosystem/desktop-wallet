@@ -36,7 +36,7 @@
               >
                 {{ plugin.title }}
               </span>
-              <PluginManagerCheckmark v-if="plugin.isOfficial && !plugin.isGrant" />
+              <PluginManagerCheckmark v-if="plugin.isOfficial" />
               <PluginManagerGrants v-else-if="plugin.isGrant" />
             </div>
             <div class="PluginManagerGrid__plugin__details">

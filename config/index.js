@@ -115,8 +115,7 @@ exports.MARKET = {
 
 exports.PLUGINS = {
   adapters: ['npm'],
-  // pluginsUrl: 'https://raw.githubusercontent.com/ark-ecosystem-desktop-plugins/config/master/plugins.json',
-  pluginsUrl: 'https://raw.githubusercontent.com/ark-ecosystem-desktop-plugins/config/chore/single-config-file/plugins.json',
+  pluginsUrl: 'https://raw.githubusercontent.com/ark-ecosystem-desktop-plugins/config/master/plugins.json',
   categories: [
     'gaming',
     'theme',

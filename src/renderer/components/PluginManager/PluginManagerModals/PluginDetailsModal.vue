@@ -17,7 +17,7 @@
             <span class="text-theme-page-text font-semibold text-xl">
               {{ plugin.title }}
             </span>
-            <PluginManagerCheckmark v-if="plugin.isOfficial && !plugin.isGrant" />
+            <PluginManagerCheckmark v-if="plugin.isOfficial" />
             <PluginManagerGrants v-else-if="plugin.isGrant" />
           </div>
 

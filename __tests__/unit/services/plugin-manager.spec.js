@@ -248,8 +248,7 @@ describe('Plugin Manager', () => {
       const spyError = jest.spyOn(console, 'error')
 
       nock('https://raw.githubusercontent.com')
-        // .get('/ark-ecosystem-desktop-plugins/config/master/plugins.json')
-        .get('/ark-ecosystem-desktop-plugins/config/chore/single-config-file/plugins.json')
+        .get('/ark-ecosystem-desktop-plugins/config/master/plugins.json')
         .query({
           ts: 1234
         })

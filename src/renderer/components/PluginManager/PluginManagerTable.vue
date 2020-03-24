@@ -28,7 +28,7 @@
           >
             {{ data.row.title | truncate(30) }}
           </span>
-          <PluginManagerCheckmark v-if="data.row.isOfficial && !data.row.isGrant" />
+          <PluginManagerCheckmark v-if="data.row.isOfficial" />
           <PluginManagerGrants v-else-if="data.row.isGrant" />
         </div>
 
