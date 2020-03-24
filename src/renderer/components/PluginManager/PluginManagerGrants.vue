@@ -1,7 +1,7 @@
 <template>
   <div
     v-tooltip="{
-      content: $t('PAGES.PLUGIN_MANAGER.OFFICIAL', { author }),
+      content: $t('PAGES.PLUGIN_MANAGER.GRANTS', { author }),
       placement: 'bottom'
     }"
     class="PluginManagerGrants"
