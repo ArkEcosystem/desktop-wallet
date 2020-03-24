@@ -41,7 +41,7 @@ describe('PluginWrapper', () => {
     it('should close a Wormhole when destroyed', done => {
       const spy = jest.spyOn(Wormhole, 'close')
 
-      const wrapper = mountComponent({
+      mountComponent({
         slots: {
           footer: '<div></div>'
         }
@@ -63,7 +63,7 @@ describe('PluginWrapper', () => {
     it('should not open a Wormhole when mounted', done => {
       const spy = jest.spyOn(Wormhole, 'open')
 
-      const wrapper = mountComponent()
+      mountComponent()
 
       vue.nextTick(() => {
         expect(spy).not.toHaveBeenCalled()
@@ -76,7 +76,7 @@ describe('PluginWrapper', () => {
     it('should not close a Wormhole when destroyed', done => {
       const spy = jest.spyOn(Wormhole, 'close')
 
-      const wrapper = mountComponent().destroy()
+      mountComponent().destroy()
 
       vue.nextTick(() => {
         expect(spy).not.toHaveBeenCalled()
