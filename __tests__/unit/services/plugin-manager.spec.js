@@ -93,14 +93,14 @@ describe('Plugin Manager', () => {
           name: 'test-plugin-1',
           keywords: PLUGINS.keywords,
           'desktop-wallet': {
-            minVersion: '1.0'
+            minimumVersion: '1.0'
           }
         }
         const invalidPlugin = {
           name: 'test-plugin-2',
           keywords: PLUGINS.keywords,
           'desktop-wallet': {
-            minVersion: '3.0'
+            minimumVersion: '3.0'
           }
         }
 

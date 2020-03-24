@@ -167,11 +167,11 @@ export default {
     isInstalledSupported: (_, getters) => pluginId => {
       const plugin = getters.installedById(pluginId)
 
-      if (!plugin.config.minVersion) {
+      if (!plugin.config.minimumVersion) {
         return true
       }
 
-      return semver.gte(releaseService.currentVersion, plugin.config.minVersion)
+      return semver.gte(releaseService.currentVersion, plugin.config.minimumVersion)
     },
 
     avatar: state => profile => {
