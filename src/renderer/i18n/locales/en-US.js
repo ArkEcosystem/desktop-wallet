@@ -667,7 +667,7 @@ export default {
       REMOVING: 'Removing \'{plugin}\'',
       UPDATING: 'Updating \'{plugin}\'',
       OFFICIAL: 'Official {author} plugin',
-      GRANTS: 'Funded by {author} grants',
+      GRANTS: 'Funded by ARK Grants',
       MENU: 'Menu',
       BANNER: {
         TITLE: 'Welcome to the Plugin Manager',

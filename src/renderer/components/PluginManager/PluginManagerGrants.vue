@@ -1,7 +1,7 @@
 <template>
   <div
     v-tooltip="{
-      content: $t('PAGES.PLUGIN_MANAGER.GRANTS', { author }),
+      content: $t('PAGES.PLUGIN_MANAGER.GRANTS'),
       placement: 'bottom'
     }"
     class="PluginManagerGrants"
@@ -14,7 +14,6 @@
 </template>
 
 <script>
-import { PLUGINS } from '@config'
 import SvgIcon from '@/components/SvgIcon'
 
 export default {
@@ -22,12 +21,6 @@ export default {
 
   components: {
     SvgIcon
-  },
-
-  computed: {
-    author () {
-      return PLUGINS.officialAuthor
-    }
   }
 }
 </script>
