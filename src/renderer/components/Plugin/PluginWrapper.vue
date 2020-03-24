@@ -16,6 +16,15 @@ export default {
     }
   },
 
+  destroyed () {
+    this.$nextTick(() => {
+      Wormhole.close({
+        to: 'plugin-footer',
+        from: 'plugin-wrapper'
+      })
+    })
+  },
+
   render (h) {
     const children = this.$slots.default
     return children
