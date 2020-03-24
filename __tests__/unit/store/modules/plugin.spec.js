@@ -672,6 +672,39 @@ describe('PluginModule', () => {
       })
     })
 
+    describe('isGrant', () => {
+      beforeAll(() => {
+        store.replaceState(JSON.parse(JSON.stringify(initialState)))
+
+        store.dispatch('plugin/setWhitelisted', {
+          scope: 'global',
+          plugins: {
+            [availablePlugins[0].config.id]: {
+              isGrant: true,
+              version: availablePlugins[0].config.version
+            },
+            [availablePlugins[1].config.id]: {
+              version: availablePlugins[1].config.version
+            }
+          }
+        })
+      })
+
+      it('should return true if the plugin is whitelisted and is a funded by ark grants', () => {
+        const pluginId = availablePlugins[0].config.id
+        expect(store.getters['plugin/isGrant'](pluginId)).toBe(true)
+      })
+
+      it('should return false if the plugin is whitelisted and is a not funded by ark grants', () => {
+        const pluginId = availablePlugins[1].config.id
+        expect(store.getters['plugin/isGrant'](pluginId)).toBe(false)
+      })
+
+      it('should return false if the plugin is not whitelisted and is a not funded by ark grants', () => {
+        expect(store.getters['plugin/isGrant']('plugin-not-grants')).toBe(false)
+      })
+    })
+
     describe('isInstalledSupported', () => {
       let spy
 
