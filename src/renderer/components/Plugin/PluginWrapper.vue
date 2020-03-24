@@ -3,26 +3,33 @@ import { Wormhole } from 'portal-vue'
 export default {
   name: 'PluginWrapper',
 
+  computed: {
+    footerSlot () {
+      return this.$slots.footer
+    }
+  },
+
   mounted () {
-    const footerSlot = this.$slots.footer
-    if (footerSlot) {
+    if (this.footerSlot) {
       this.$nextTick(() => {
         Wormhole.open({
           to: 'plugin-footer',
           from: 'plugin-wrapper',
-          passengers: footerSlot
+          passengers: this.footerSlot
         })
       })
     }
   },
 
   destroyed () {
-    this.$nextTick(() => {
-      Wormhole.close({
-        to: 'plugin-footer',
-        from: 'plugin-wrapper'
+    if (this.footerSlot) {
+      this.$nextTick(() => {
+        Wormhole.close({
+          to: 'plugin-footer',
+          from: 'plugin-wrapper'
+        })
       })
-    })
+    }
   },
 
   render (h) {
