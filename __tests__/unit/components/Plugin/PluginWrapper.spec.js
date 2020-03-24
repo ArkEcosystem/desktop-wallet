@@ -50,7 +50,7 @@ describe('PluginWrapper', () => {
       vue.nextTick(() => {
         expect(spy).toHaveBeenCalledWith({
           to: 'plugin-footer',
-          from: 'plugin-wrapper',
+          from: 'plugin-wrapper'
         })
         done()
       })
