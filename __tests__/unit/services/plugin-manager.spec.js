@@ -1,7 +1,9 @@
 import { createLocalVue } from '@vue/test-utils'
+import { PLUGINS } from '@config'
 import { PluginManager } from '@/services/plugin-manager'
 import { PluginSandbox } from '@/services/plugin-manager/plugin-sandbox'
 import { PluginSetup } from '@/services/plugin-manager/plugin-setup'
+import npmAdapter from '@/services/plugin-manager/adapters/npm-adapter'
 import nock from 'nock'
 
 jest.mock('@/services/plugin-manager/plugin-sandbox.js')
@@ -83,6 +85,37 @@ describe('Plugin Manager', () => {
 
       await pluginManager.fetchPlugins(true)
       expect(pluginManager.fetchPluginsFromAdapter).toHaveBeenCalled()
+    })
+
+    describe('fetchPluginsFromAdapter', () => {
+      it('should exclude plugins with minimum version above wallet version', async () => {
+        const validPlugin = {
+          name: 'test-plugin-1',
+          keywords: PLUGINS.keywords,
+          'desktop-wallet': {
+            minVersion: '1.0'
+          }
+        }
+        const invalidPlugin = {
+          name: 'test-plugin-2',
+          keywords: PLUGINS.keywords,
+          'desktop-wallet': {
+            minVersion: '3.0'
+          }
+        }
+
+        jest.spyOn(pluginManager, 'fetchLogo').mockReturnValue(null)
+        jest.spyOn(pluginManager, 'fetchImages').mockReturnValue([])
+        const spyNpm = jest.spyOn(npmAdapter, 'all').mockReturnValue([validPlugin, invalidPlugin])
+
+        pluginManager.setAdapter('npm')
+        await pluginManager.fetchPluginsFromAdapter()
+
+        expect(mockDispatch.mock.calls[0][0]).toBe('plugin/setAvailable')
+        expect(Object.keys(mockDispatch.mock.calls[0][1])).toEqual(['test-plugin-1'])
+
+        spyNpm.mockRestore()
+      })
     })
   })
 
