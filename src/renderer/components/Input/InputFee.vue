@@ -192,7 +192,7 @@ export default {
       return {
         avgFee: this.maxV1fee,
         maxFee: this.maxV1fee,
-        minFee: this.maxV1fee
+        minFee: 1
       }
     },
     lastFee () {
