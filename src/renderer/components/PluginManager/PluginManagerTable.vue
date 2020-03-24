@@ -20,6 +20,7 @@
 
         <div
           v-else-if="data.column.field === 'title'"
+          class="flex items-center"
         >
           <span
             class="whitespace-no-wrap cursor-pointer"
@@ -27,14 +28,14 @@
           >
             {{ data.row.title | truncate(30) }}
           </span>
+          <PluginManagerCheckmark v-if="data.row.isOfficial && !data.row.isGrant" />
+          <PluginManagerGrant v-else-if="data.row.isGrant" />
         </div>
 
         <div
           v-else-if="data.column.field === 'author'"
           class="flex items-center"
         >
-          <PluginManagerCheckmark v-if="data.row.isOfficial" />
-
           <span class="flex items-center whitespace-no-wrap">
             {{ data.row.author | truncate(30) }}
           </span>
@@ -104,6 +105,7 @@
 <script>
 import { ButtonGeneric, ButtonIconGeneric } from '@/components/Button'
 import PluginManagerCheckmark from '@/components/PluginManager/PluginManagerCheckmark'
+import PluginManagerGrant from '@/components/PluginManager/PluginManagerGrant'
 import PluginLogo from '@/components/PluginManager/PluginLogo'
 import TableWrapper from '@/components/utils/TableWrapper'
 
@@ -114,6 +116,7 @@ export default {
     ButtonGeneric,
     ButtonIconGeneric,
     PluginManagerCheckmark,
+    PluginManagerGrant,
     PluginLogo,
     TableWrapper
   },

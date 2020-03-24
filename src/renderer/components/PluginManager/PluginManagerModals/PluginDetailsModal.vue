@@ -13,15 +13,17 @@
 
       <div class="flex flex-col ml-5 justify-between">
         <div>
-          <span class="text-theme-page-text font-semibold text-xl">
-            {{ plugin.title }}
-          </span>
+          <div class="flex items-center">
+            <span class="text-theme-page-text font-semibold text-xl">
+              {{ plugin.title }}
+            </span>
+            <PluginManagerCheckmark v-if="plugin.isOfficial && !plugin.isGrant" />
+            <PluginManagerGrant v-else-if="plugin.isGrant" />
+          </div>
 
           <span
             class="PluginDetailsModal__header__details"
           >
-            <PluginManagerCheckmark v-if="plugin.isOfficial" />
-
             <span>
               {{ plugin.author }}
             </span>
@@ -179,7 +181,7 @@
 <script>
 import { PLUGINS } from '@config'
 import { ButtonGeneric, ButtonIconGeneric } from '@/components/Button'
-import { PluginLogo, PluginManagerCheckmark, PluginSlider } from '@/components/PluginManager'
+import { PluginLogo, PluginManagerCheckmark, PluginManagerGrant, PluginSlider } from '@/components/PluginManager'
 import { ModalWindow } from '@/components/Modal'
 import { PluginManagerButtonSwitch } from '@/components/PluginManager/PluginManagerButtons'
 import SvgIcon from '@/components/SvgIcon'
@@ -192,6 +194,7 @@ export default {
     ButtonGeneric,
     ButtonIconGeneric,
     PluginManagerCheckmark,
+    PluginManagerGrant,
     PluginManagerButtonSwitch,
     ModalWindow,
     PluginLogo,

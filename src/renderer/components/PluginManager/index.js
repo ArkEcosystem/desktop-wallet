@@ -1,4 +1,5 @@
 import PluginManagerCheckmark from './PluginManagerCheckmark'
+import PluginManagerGrant from './PluginManagerGrant'
 import PluginManagerGrid from './PluginManagerGrid'
 import PluginManagerSearchBar from './PluginManagerSearchBar'
 import PluginManagerSideMenu from './PluginManagerSideMenu'
@@ -10,6 +11,7 @@ export * from './PluginManagerModals'
 
 export {
   PluginManagerCheckmark,
+  PluginManagerGrant,
   PluginManagerGrid,
   PluginManagerSearchBar,
   PluginManagerSideMenu,
