@@ -4,10 +4,10 @@
       content: $t('PAGES.PLUGIN_MANAGER.OFFICIAL', { author }),
       placement: 'bottom'
     }"
-    class="PluginManagerGrant"
+    class="PluginManagerGrants"
   >
     <SvgIcon
-      name="ark-grant"
+      name="ark-grants"
       view-box="0 0 16 16"
     />
   </div>
@@ -18,7 +18,7 @@ import { PLUGINS } from '@config'
 import SvgIcon from '@/components/SvgIcon'
 
 export default {
-  name: 'PluginManagerGrant',
+  name: 'PluginManagerGrants',
 
   components: {
     SvgIcon
@@ -33,7 +33,7 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
-.PluginManagerGrant {
+.PluginManagerGrants {
   @apply flex items-center ml-1 w-4 h-4;
   color: #ffae10;
 }

@@ -29,7 +29,7 @@
             {{ data.row.title | truncate(30) }}
           </span>
           <PluginManagerCheckmark v-if="data.row.isOfficial && !data.row.isGrant" />
-          <PluginManagerGrant v-else-if="data.row.isGrant" />
+          <PluginManagerGrants v-else-if="data.row.isGrant" />
         </div>
 
         <div
@@ -105,7 +105,7 @@
 <script>
 import { ButtonGeneric, ButtonIconGeneric } from '@/components/Button'
 import PluginManagerCheckmark from '@/components/PluginManager/PluginManagerCheckmark'
-import PluginManagerGrant from '@/components/PluginManager/PluginManagerGrant'
+import PluginManagerGrants from '@/components/PluginManager/PluginManagerGrants'
 import PluginLogo from '@/components/PluginManager/PluginLogo'
 import TableWrapper from '@/components/utils/TableWrapper'
 
@@ -116,7 +116,7 @@ export default {
     ButtonGeneric,
     ButtonIconGeneric,
     PluginManagerCheckmark,
-    PluginManagerGrant,
+    PluginManagerGrants,
     PluginLogo,
     TableWrapper
   },

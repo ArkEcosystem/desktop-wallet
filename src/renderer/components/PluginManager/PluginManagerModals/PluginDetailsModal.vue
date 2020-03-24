@@ -18,7 +18,7 @@
               {{ plugin.title }}
             </span>
             <PluginManagerCheckmark v-if="plugin.isOfficial && !plugin.isGrant" />
-            <PluginManagerGrant v-else-if="plugin.isGrant" />
+            <PluginManagerGrants v-else-if="plugin.isGrant" />
           </div>
 
           <span
@@ -181,7 +181,7 @@
 <script>
 import { PLUGINS } from '@config'
 import { ButtonGeneric, ButtonIconGeneric } from '@/components/Button'
-import { PluginLogo, PluginManagerCheckmark, PluginManagerGrant, PluginSlider } from '@/components/PluginManager'
+import { PluginLogo, PluginManagerCheckmark, PluginManagerGrants, PluginSlider } from '@/components/PluginManager'
 import { ModalWindow } from '@/components/Modal'
 import { PluginManagerButtonSwitch } from '@/components/PluginManager/PluginManagerButtons'
 import SvgIcon from '@/components/SvgIcon'
@@ -194,7 +194,7 @@ export default {
     ButtonGeneric,
     ButtonIconGeneric,
     PluginManagerCheckmark,
-    PluginManagerGrant,
+    PluginManagerGrants,
     PluginManagerButtonSwitch,
     ModalWindow,
     PluginLogo,

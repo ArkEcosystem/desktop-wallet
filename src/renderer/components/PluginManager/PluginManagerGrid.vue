@@ -37,7 +37,7 @@
                 {{ plugin.title }}
               </span>
               <PluginManagerCheckmark v-if="plugin.isOfficial && !plugin.isGrant" />
-              <PluginManagerGrant v-else-if="plugin.isGrant" />
+              <PluginManagerGrants v-else-if="plugin.isGrant" />
             </div>
             <div class="PluginManagerGrid__plugin__details">
               <span>{{ plugin.author }}</span>
@@ -58,7 +58,7 @@
 <script>
 import { ButtonGeneric, ButtonIconGeneric } from '@/components/Button'
 import PluginManagerCheckmark from '@/components/PluginManager/PluginManagerCheckmark'
-import PluginManagerGrant from '@/components/PluginManager/PluginManagerGrant'
+import PluginManagerGrants from '@/components/PluginManager/PluginManagerGrants'
 import PluginLogo from '@/components/PluginManager/PluginLogo'
 
 export default {
@@ -68,7 +68,7 @@ export default {
     ButtonGeneric,
     ButtonIconGeneric,
     PluginManagerCheckmark,
-    PluginManagerGrant,
+    PluginManagerGrants,
     PluginLogo
   },
 
