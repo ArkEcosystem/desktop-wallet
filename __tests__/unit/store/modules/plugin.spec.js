@@ -148,7 +148,9 @@ describe('PluginModule', () => {
                 },
                 whitelisted: {
                   global: {
-                    [availablePlugins[0].config.id]: availablePlugins[0].config.version
+                    [availablePlugins[0].config.id]: {
+                      version: availablePlugins[0].config.version
+                    }
                   }
                 }
               }
@@ -203,8 +205,12 @@ describe('PluginModule', () => {
                   },
                   whitelisted: {
                     global: {
-                      [plugin1.config.id]: plugin1.config.version,
-                      [plugin2.config.id]: plugin2.config.version
+                      [plugin1.config.id]: {
+                        version: plugin1.config.version
+                      },
+                      [plugin2.config.id]: {
+                        version: plugin2.config.version
+                      }
                     }
                   }
                 }
@@ -242,8 +248,12 @@ describe('PluginModule', () => {
                 },
                 whitelisted: {
                   global: {
-                    [plugin1.config.id]: plugin1.config.version,
-                    [plugin2.config.id]: plugin2.config.version
+                    [plugin1.config.id]: {
+                      version: plugin1.config.version
+                    },
+                    [plugin2.config.id]: {
+                      version: plugin2.config.version
+                    }
                   }
                 }
               }
@@ -282,8 +292,12 @@ describe('PluginModule', () => {
                 },
                 whitelisted: {
                   global: {
-                    [plugin1.config.id]: plugin1.config.version,
-                    [plugin2.config.id]: plugin2.config.version
+                    [plugin1.config.id]: {
+                      version: plugin1.config.version
+                    },
+                    [plugin2.config.id]: {
+                      version: plugin2.config.version
+                    }
                   }
                 }
               }
@@ -626,7 +640,9 @@ describe('PluginModule', () => {
         store.dispatch('plugin/setWhitelisted', {
           scope: 'global',
           plugins: {
-            [availablePlugins[0].config.id]: availablePlugins[0].config.version
+            [availablePlugins[0].config.id]: {
+              version: availablePlugins[0].config.version
+            }
           }
         })
       })
