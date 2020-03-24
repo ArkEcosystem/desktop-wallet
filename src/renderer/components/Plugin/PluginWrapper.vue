@@ -21,7 +21,7 @@ export default {
     }
   },
 
-  destroyed () {
+  beforeDestroy () {
     if (this.footerSlot) {
       this.$nextTick(() => {
         Wormhole.close({
