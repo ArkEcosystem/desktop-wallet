@@ -260,12 +260,12 @@ export class PluginManager {
         console.info(`${plugin.id} is not a valid package name`)
       }
 
-      const minVersionSatisfied = !plugin.minVersion || semver.gte(releaseService.currentVersion, plugin.minVersion)
-      if (!minVersionSatisfied) {
+      const minimumVersionSatisfied = !plugin.minimumVersion || semver.gte(releaseService.currentVersion, plugin.minimumVersion)
+      if (!minimumVersionSatisfied) {
         console.info(`${plugin.id} requires a higher wallet version`)
       }
 
-      return validName && minVersionSatisfied
+      return validName && minimumVersionSatisfied
     })
 
     const plugins = configs.reduce((plugins, config) => {

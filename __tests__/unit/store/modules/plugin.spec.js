@@ -726,7 +726,7 @@ describe('PluginModule', () => {
         store.dispatch('plugin/setInstalled', {
           config: {
             ...installedPlugins[0].config,
-            minVersion: '1.0.0'
+            minimumVersion: '1.0.0'
           }
         })
         expect(store.getters['plugin/isInstalledSupported'](installedPlugins[0].config.id)).toBe(true)
@@ -736,7 +736,7 @@ describe('PluginModule', () => {
         store.dispatch('plugin/setInstalled', {
           config: {
             ...installedPlugins[0].config,
-            minVersion: '3.0.0'
+            minimumVersion: '3.0.0'
           }
         })
         expect(store.getters['plugin/isInstalledSupported'](installedPlugins[0].config.id)).toBe(false)
