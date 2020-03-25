@@ -199,7 +199,7 @@ export default {
       return this.$store.getters['session/lastFeeByType'](this.transactionType, this.transactionGroup)
     },
     feeChoiceMin () {
-      return this.feeChoices.MINIMUM
+      return this.currency_subToUnit(1)
     },
     feeChoiceMax () {
       return this.isAdvancedFee ? this.feeChoices.MAXIMUM.multipliedBy(10) : this.feeChoices.MAXIMUM
@@ -223,7 +223,7 @@ export default {
       return this.lastFee ? Object.assign({}, { LAST: this.currency_subToUnit(this.lastFee) }, fees) : fees
     },
     minimumError () {
-      const min = this.feeChoices.MINIMUM
+      const min = this.feeChoiceMin
       const fee = this.currency_format(min, { currency: this.currency, currencyDisplay: 'code' })
       return this.$t('INPUT_FEE.ERROR.LESS_THAN_MINIMUM', { fee })
     },
