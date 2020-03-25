@@ -6,32 +6,32 @@ on:
       - "master"
 
 jobs:
-  # create-release:
-  #   runs-on: ubuntu-latest
+  create-release:
+    runs-on: ubuntu-latest
 
-  #   steps:
-  #     - name: Checkout code
-  #       uses: actions/checkout@v2
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-  #     - name: Determine the release version
-  #       id: derive_release_version
-  #       run: |
-  #         RELEASE_VERSION=$(cat package.json | jq -r '.version')
-  #         echo "::set-output name=version::${RELEASE_VERSION}"
+      - name: Determine the release version
+        id: derive_release_version
+        run: |
+          RELEASE_VERSION=$(cat package.json | jq -r '.version')
+          echo "::set-output name=version::${RELEASE_VERSION}"
 
-  #     - name: Create Release
-  #       id: create_release
-  #       uses: actions/create-release@v1
-  #       env:
-  #         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  #       with:
-  #         tag_name: ${{ steps.derive_release_version.outputs.version }}
-  #         release_name: Version ${{ steps.derive_release_version.outputs.version }}
-  #         draft: true
-  #         prerelease: false
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ steps.derive_release_version.outputs.version }}
+          release_name: Version ${{ steps.derive_release_version.outputs.version }}
+          draft: true
+          prerelease: false
 
   publish-linux:
-    # needs: ["create-release"]
+    needs: ["create-release"]
 
     runs-on: ubuntu-latest
 
@@ -97,7 +97,7 @@ jobs:
           curl -s --url "$UPLOAD_URL" --form 'apikey=${{ secrets.VIRUSTOTAL_TOKEN }}' --form 'file=@build/target/ark-desktop-wallet-linux-amd64-2.9.1.deb' | jq -r .permalink
 
   publish-macos:
-    # needs: ["create-release"]
+    needs: ["create-release"]
 
     runs-on: macos-latest
 
@@ -155,7 +155,7 @@ jobs:
           curl -s --url "$UPLOAD_URL" --form 'apikey=${{ secrets.VIRUSTOTAL_TOKEN }}' --form 'file=@build/target/ark-desktop-wallet-mac-2.9.1.zip' | jq -r .permalink
 
   publish-windows:
-    # needs: ["create-release"]
+    needs: ["create-release"]
 
     runs-on: windows-latest
 

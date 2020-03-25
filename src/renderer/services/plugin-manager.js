@@ -249,6 +249,10 @@ export class PluginManager {
         plugin.images = []
       }
 
+      return plugin
+    }))
+
+    configs = configs.filter(plugin => {
       const validName = validatePackageName(plugin.id).validForNewPackages
       if (!validName) {
         console.info(`${plugin.id} is not a valid package name`)
@@ -259,10 +263,8 @@ export class PluginManager {
         console.info(`${plugin.id} requires a higher wallet version`)
       }
 
-      if (validName && minVersionSatisfied) {
-        return plugin
-      }
-    }))
+      return validName && minVersionSatisfied
+    })
 
     const plugins = configs.reduce((plugins, config) => {
       plugins[config.id] = { config }
