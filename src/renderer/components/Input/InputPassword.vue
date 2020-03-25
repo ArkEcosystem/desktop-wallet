@@ -19,7 +19,7 @@
         :name="name"
         :disabled="isDisabled"
         :type="passwordIsVisible ? 'text' : 'password'"
-        class="InputPassword__input flex flex-grow bg-transparent text-theme-page-text"
+        class="InputPassword__input flex flex-grow bg-transparent text-theme-page-text mr-2"
         @blur="onBlur"
         @focus="onFocus"
       >
@@ -179,8 +179,13 @@ export default {
       this.$v.$reset()
     },
 
-    toggleVisible () {
+    touch () {
+      this.$v.model.$touch()
+    },
+
+    async toggleVisible () {
       this.passwordIsVisible = !this.passwordIsVisible
+      await this.focus()
     },
 
     passwordFeedback () {

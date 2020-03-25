@@ -1,7 +1,7 @@
 <template>
   <div class="PluginManagerGrid mt-10">
     <div
-      v-for="plugin in plugins"
+      v-for="plugin in sortedPlugins"
       :key="plugin.id"
       class="PluginManagerGrid__plugin"
     >
@@ -29,16 +29,17 @@
 
         <div class="pl-4">
           <div class="flex flex-col justify-center h-20">
-            <span
-              class="PluginManagerGrid__plugin__name"
-              @click="emitShowDetails(plugin)"
-            >
-              {{ plugin.title }}
-            </span>
-
-            <div class="PluginManagerGrid__plugin__details">
+            <div class="flex items-center">
+              <span
+                class="PluginManagerGrid__plugin__name"
+                @click="emitShowDetails(plugin)"
+              >
+                {{ plugin.title }}
+              </span>
               <PluginManagerCheckmark v-if="plugin.isOfficial" />
-
+              <PluginManagerGrants v-else-if="plugin.isGrant" />
+            </div>
+            <div class="PluginManagerGrid__plugin__details">
               <span>{{ plugin.author }}</span>
               <span class="ml-2">v{{ plugin.version }}</span>
               <span class="ml-2">{{ formatter_bytes(plugin.size) }}</span>
@@ -57,6 +58,7 @@
 <script>
 import { ButtonGeneric, ButtonIconGeneric } from '@/components/Button'
 import PluginManagerCheckmark from '@/components/PluginManager/PluginManagerCheckmark'
+import PluginManagerGrants from '@/components/PluginManager/PluginManagerGrants'
 import PluginLogo from '@/components/PluginManager/PluginLogo'
 
 export default {
@@ -66,6 +68,7 @@ export default {
     ButtonGeneric,
     ButtonIconGeneric,
     PluginManagerCheckmark,
+    PluginManagerGrants,
     PluginLogo
   },
 
@@ -73,6 +76,12 @@ export default {
     plugins: {
       type: Array,
       required: true
+    }
+  },
+
+  computed: {
+    sortedPlugins () {
+      return this.plugins.concat().sort((a, b) => a.title.localeCompare(b.title))
     }
   },
 

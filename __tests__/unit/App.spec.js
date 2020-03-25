@@ -24,6 +24,7 @@ beforeEach(() => {
     mocks: {
       $store: {
         getters: {
+          'session/language': 'en-US',
           'session/theme': 'dark',
           'session/profile': {
             id: 'test-profile'

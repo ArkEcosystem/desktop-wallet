@@ -51,6 +51,7 @@
             :address="data.row.recipient || data.row.recipientId"
             :address-length="8"
             :type="data.row.type"
+            :group="data.row.typeGroup"
             :asset="data.row.asset"
             tooltip-container=".TransactionMultiSignatureTable"
           />
@@ -141,7 +142,8 @@ export default {
         {
           label: this.$t('TRANSACTION.ID'),
           field: 'id',
-          formatFn: this.formatTransactionId
+          formatFn: this.formatTransactionId,
+          sortable: false
         },
         {
           label: this.$t('COMMON.DATE'),
@@ -153,11 +155,13 @@ export default {
         },
         {
           label: this.$t('TRANSACTION.SENDER'),
-          field: 'senderPublicKey'
+          field: 'senderPublicKey',
+          sortable: false
         },
         {
           label: this.$t('TRANSACTION.RECIPIENT'),
-          field: 'recipientId'
+          field: 'recipientId',
+          sortable: false
         },
         {
           label: this.$t('TRANSACTION.STATUS'),

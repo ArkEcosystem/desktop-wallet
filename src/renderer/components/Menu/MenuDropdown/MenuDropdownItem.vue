@@ -6,11 +6,11 @@
           ? 'MenuDropdownItem--active bg-theme-feature-item-hover text-theme-feature-item-selected-text'
           : 'text-grey-dark hover:bg-theme-feature-item-alternative border-grey-light'
       "
-      class="MenuDropdownItem__button cursor-pointer bt-theme-feature w-full"
+      class="MenuDropdownItem__button cursor-pointer bg-theme-feature w-full"
       @click.capture.stop="emitClick"
     >
       <div
-        class="MenuDropdownItem__container mx-8 py-4 px-5 border-b text-center transition break-words"
+        class="MenuDropdownItem__container mx-8 py-4 px-5 border-b border-theme-line-separator text-center transition break-words"
       >
         <slot>
           <span class="font-semibold">

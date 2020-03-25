@@ -94,11 +94,12 @@ import CleanCss from 'clean-css'
 import { remote, ipcRenderer } from 'electron'
 import { pull, uniq } from 'lodash'
 import { AppFooter, AppIntro, AppSidemenu } from '@/components/App'
+import { I18N } from '@config'
 import AlertMessage from '@/components/AlertMessage'
 import { TransactionModal } from '@/components/Transaction'
-import config from '@config'
 import URIHandler from '@/services/uri-handler'
 import priceApi from '@/services/price-api'
+import i18nSetup from '@/i18n/i18n-setup'
 
 const Menu = remote.Menu
 
@@ -188,6 +189,18 @@ export default {
     },
     themeClass () {
       return `theme-${this.theme}`
+    },
+    pluginLanguages () {
+      return this.$store.getters['plugin/languages']
+    },
+    language () {
+      const language = this.$store.getters['session/language']
+      const defaultLocale = I18N.defaultLocale
+
+      // Ensure that the plugin language is available (not deleted from the file system)
+      return defaultLocale === language || this.pluginLanguages[language]
+        ? language
+        : defaultLocale
     }
   },
 
@@ -235,6 +248,12 @@ export default {
     },
     theme (value) {
       this.applyPluginTheme(value)
+    },
+    pluginLanguages () {
+      this.applyPluginLanguage(this.language)
+    },
+    language (value) {
+      this.applyPluginLanguage(value)
     }
   },
 
@@ -271,7 +290,7 @@ export default {
     async loadEssential () {
       // We need to await plugins in order for all plugins to load properly
       await this.$plugins.init(this)
-      await this.$store.dispatch('network/load', config.NETWORKS)
+      await this.$store.dispatch('network/load')
       const currentProfileId = this.$store.getters['session/profileId']
       await this.$store.dispatch('session/reset')
       await this.$store.dispatch('session/setProfileId', currentProfileId)
@@ -313,7 +332,7 @@ export default {
 
       ipcRenderer.send('splashscreen:app-ready')
 
-      await Promise.all([this.$plugins.fetchPluginsFromAdapter(), this.$plugins.fetchBlacklist(), this.$plugins.fetchWhitelist()])
+      await Promise.all([this.$plugins.fetchPluginsFromAdapter(), this.$plugins.fetchPluginsList()])
     },
 
     __watchProfile () {
@@ -405,14 +424,27 @@ export default {
      * instead of that, those assets are loaded manually and then injected directly on the DOM.
      */
     applyPluginTheme (themeName) {
-      if (themeName && this.pluginThemes) {
+      const $style = document.querySelector('style[name=plugins]')
+
+      if (['light', 'dark'].includes(themeName)) {
+        $style.innerHTML = null
+      } else if (themeName && this.pluginThemes) {
         const theme = this.pluginThemes[themeName]
         if (theme) {
-          const $style = document.querySelector('style[name=plugins]')
           const input = fs.readFileSync(theme.cssPath)
           const output = new CleanCss().minify(input)
           $style.innerHTML = output.styles
+        } else {
+          $style.innerHTML = null
         }
+      }
+    },
+
+    applyPluginLanguage (languageName) {
+      if (languageName === I18N.defaultLocale) {
+        i18nSetup.setLanguage(languageName)
+      } else if (languageName && this.pluginLanguages[languageName]) {
+        i18nSetup.loadLanguage(languageName, this.pluginLanguages[languageName])
       }
     }
   }

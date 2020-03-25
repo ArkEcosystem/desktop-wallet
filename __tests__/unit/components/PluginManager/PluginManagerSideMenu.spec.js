@@ -33,7 +33,7 @@ describe('PluginManagerSideMenu', () => {
 
     describe('otherCategories', () => {
       it('should return other categories', () => {
-        expect(wrapper.vm.otherCategories).toEqual(['theme'])
+        expect(wrapper.vm.otherCategories).toEqual(['theme', 'language'])
       })
     })
   })

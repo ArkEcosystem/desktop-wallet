@@ -39,11 +39,12 @@
         </div>
         <div class="bg-theme-settings-sub inline-block mx-6 rounded text-white relative px-3 py-2 inline-block select-none cursor-pointer">
           <button
+            class="w-full text-left pr-12"
             @click.stop="toggleSelect('peers-menu')"
           >
             <div
               slot="controls"
-              class="pointer-events-none"
+              class="pointer-events-none w-full"
             >
               <MenuDropdown
                 ref="peers-menu"
@@ -51,7 +52,7 @@
                 :value="currentPeerId"
                 :placeholder="peer ? `${peer.isHttps ? 'https://' : 'http://'}${peer.ip}` : $t('PEER.NONE')"
                 :pin-above="true"
-                class="inline-block text-white fill-white width-inherit"
+                class="inline-block text-white fill-white w-full"
                 @select="setPeer"
               />
             </div>

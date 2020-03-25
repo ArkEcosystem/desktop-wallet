@@ -85,11 +85,6 @@ exports.INTERVALS = {
 }
 
 exports.MARKET = {
-  source: {
-    cryptoCompare: 'https://min-api.cryptocompare.com',
-    coinGecko: 'https://api.coingecko.com/api/v3',
-    coinCap: 'https://api.coincap.io/v2'
-  },
   defaultCurrency: 'BTC',
   crypto: [
     'BTC',
@@ -120,11 +115,11 @@ exports.MARKET = {
 
 exports.PLUGINS = {
   adapters: ['npm'],
-  blacklistUrl: 'https://raw.githubusercontent.com/ark-ecosystem-desktop-plugins/config/master/blacklist.json',
-  whitelistUrl: 'https://raw.githubusercontent.com/ark-ecosystem-desktop-plugins/config/master/whitelist.json',
+  pluginsUrl: 'https://raw.githubusercontent.com/ark-ecosystem-desktop-plugins/config/master/plugins.json',
   categories: [
     'gaming',
     'theme',
+    'language',
     'utility',
     'other'
   ],
@@ -139,6 +134,7 @@ exports.PLUGINS = {
   officialAuthor: 'ARK Ecosystem',
   path: path.resolve(os.homedir(), '.ark-desktop/plugins'),
   reportUrl: 'https://ark.io/contact',
+  sharePath: path.resolve(os.homedir(), '.ark-desktop/share'),
   updateInterval: {
     value: 1,
     unit: 'day'

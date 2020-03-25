@@ -46,6 +46,10 @@ export default {
     SKIP: 'Skip',
     START: 'Start',
     THEME: 'Theme',
+    THEMES: {
+      LIGHT: 'Default: Light',
+      DARK: 'Default: Dark'
+    },
     TIME_FORMAT: 'Time format',
     URL: 'URL',
     VERIFIED_ADDRESS: 'This is a verified address',
@@ -54,7 +58,8 @@ export default {
     WILL: 'will',
     WALLET: 'Wallet',
     X_OF_Y: '{0} of {1}',
-    ADVANCED_MODE: 'Advanced Mode'
+    ADVANCED_MODE: 'Advanced Mode',
+    DEFAULT_CHOSEN_FEE: 'Default fee type'
   },
 
   ANNOUNCEMENTS: {
@@ -486,6 +491,7 @@ export default {
     SYMBOL: 'Symbol',
     VERSION: 'Version',
     EXPLORER: 'Explorer',
+    KNOWN_WALLETS_URL: 'Known Wallets URL',
     EPOCH: 'Epoch',
     WIF: 'WIF',
     SLIP44: 'Slip44',
@@ -552,10 +558,12 @@ export default {
       AUDIO: 'Allows access to play audio from within the Desktop Wallet',
       AVATARS: 'Plugin contains custom avatars',
       COMPONENTS: 'Allows loading custom components',
+      DIALOGS: 'Allows using file dialogs',
       EVENTS: 'Allows access to the Desktop Wallet events',
       HTTP: 'Allows performing external web requests',
       MENU_ITEMS: 'Allows adding custom menu items to the Desktop Wallet sidebar',
       MESSAGING: 'Allows WebFrames access to a one-way messaging system',
+      PEER_ALL: 'Allows access to the peer discovery',
       PEER_CURRENT: 'Allows access to the currently connected peer',
       PUBLIC: 'Allows navigation to wallet routes and provides access to the Font Awesome icon set',
       PROFILE_ALL: 'Allows access to all available profiles',
@@ -563,8 +571,10 @@ export default {
       ROUTES: 'Allows loading additional routes into the Desktop Wallet',
       STORAGE: 'Allows storing data within the Desktop Wallet, using key-value pairs',
       THEMES: 'Allows loading additional custom themes for the Desktop Wallet',
+      LANGUAGES: 'Allows loading additional languages for the Desktop Wallet',
       TIMERS: 'Allows using timeouts and intervals',
       UI_COMPONENTS: 'Allows access to the standard Desktop Wallet components used throughout',
+      UTILS: 'Allows using utilities such as the BigNumber type and dayjs',
       WALLET_TABS: 'Allows showing an additional tab/page on the Wallet screen',
       WEBFRAME: 'Allows showing remote URL pages within a frame',
       WEBSOCKET: 'Allows connections to websockets'
@@ -657,6 +667,7 @@ export default {
       REMOVING: 'Removing \'{plugin}\'',
       UPDATING: 'Updating \'{plugin}\'',
       OFFICIAL: 'Official {author} plugin',
+      GRANTS: 'Funded by ARK Grants',
       MENU: 'Menu',
       BANNER: {
         TITLE: 'Welcome to the Plugin Manager',
@@ -667,6 +678,7 @@ export default {
         GAMING: 'Gaming',
         UTILITY: 'Utility',
         THEME: 'Themes',
+        LANGUAGE: 'Languages',
         OTHER: 'Other'
       },
       FILTERS: {
@@ -684,6 +696,8 @@ export default {
       },
       ERRORS: {
         ALREADY_INSTALLED: 'The plugin \'{plugin}\' is already installed',
+        DISABLE: 'The plugin \'{plugin}\' could not be disabled: {error}',
+        ENABLE: 'The plugin \'{plugin}\' could not be enabled: {error}',
         FETCH: 'The plugin \'{plugin}\' was installed but could not be loaded'
       },
       SUCCESS: {
@@ -1056,9 +1070,10 @@ export default {
     },
     MULTI_PAYMENT: {
       BUTTON_ADD: 'Add',
-      WARNING_DUPLICATE: 'The address is already a recipient',
+      NO_RECIPIENTS: 'There are no recipients',
       RECIPIENTS: 'Recipients',
-      NO_RECIPIENTS: 'There are no recipients'
+      TOTAL_AMOUNT: 'Total amount',
+      WARNING_DUPLICATE: 'The address is already a recipient'
     },
     MULTI_SIGNATURE: {
       ADDRESS: 'Multisignature Address',
@@ -1207,6 +1222,7 @@ export default {
       REGISTER_DELEGATE: 'Register Delegate',
       RESIGN_DELEGATE: 'Resign Delegate',
       SECOND_PASSPHRASE: 'Second Passphrase',
+      DELETE_CONTACT: 'Delete Contact',
       DELETE_WALLET: 'Delete Wallet',
       SHOW_PUBLIC_KEY: 'Show Public Key',
       SHOW_ADDRESS: 'Show Address',
@@ -1370,7 +1386,8 @@ export default {
 
   WALLET_REMOVAL_CONFIRMATION: {
     NOTE: 'It does not delete any data on the blockchain. You could recover the wallet as long as you have the passphrase',
-    QUESTION: 'Are you sure you want to remove this wallet?'
+    QUESTION: 'Are you sure you want to remove this wallet?',
+    CONTACT_QUESTION: 'Are you sure you want to remove this contact?'
   },
 
   PLUGIN_REMOVAL_CONFIRMATION: {

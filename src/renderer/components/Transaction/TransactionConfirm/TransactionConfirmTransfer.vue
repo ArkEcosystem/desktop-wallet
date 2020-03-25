@@ -40,6 +40,7 @@
       v-if="transaction.vendorField"
       class="TransactionConfirmTransfer__vendorfield"
       :label="$t('TRANSACTION.VENDOR_FIELD')"
+      item-value-class="w-full break-words"
     >
       {{ transaction.vendorField }}
     </ListDividedItem>

@@ -117,6 +117,16 @@
               />
 
               <InputText
+                ref="input-known-wallets-url"
+                v-model="$v.form.knownWalletsUrl.$model"
+                :label="$t('MODAL_NETWORK.KNOWN_WALLETS_URL')"
+                :is-invalid="$v.form.knownWalletsUrl.$dirty && $v.form.knownWalletsUrl.$invalid"
+                :helper-text="knownWalletsUrlError"
+                class="mt-5"
+                name="knownWalletsUrl"
+              />
+
+              <InputText
                 v-model="$v.form.ticker.$model"
                 :label="$t('MODAL_NETWORK.MARKET_TICKER')"
                 class="mt-5"
@@ -209,7 +219,7 @@
 </template>
 
 <script>
-import { numeric, required, requiredIf } from 'vuelidate/lib/validators'
+import { numeric, required, requiredIf, url } from 'vuelidate/lib/validators'
 import { NETWORKS } from '@config'
 import { InputText, InputToggle } from '@/components/Input'
 import { ModalLoader, ModalWindow } from '@/components/Modal'
@@ -251,6 +261,7 @@ export default {
       symbol: '',
       version: '',
       explorer: '',
+      knownWalletsUrl: '',
       epoch: '',
       wif: '',
       slip44: '',
@@ -328,6 +339,10 @@ export default {
       return this.requiredUrlFieldError(this.$v.form.explorer, this.$refs['input-explorer'])
     },
 
+    knownWalletsUrlError () {
+      return this.requiredValidFieldError(this.$v.form.knownWalletsUrl, this.$refs['input-known-wallets-url'])
+    },
+
     nethashError () {
       return this.requiredValidFieldError(this.$v.form.nethash, this.$refs['input-nethash'])
     },
@@ -371,6 +386,7 @@ export default {
       }
 
       this.form.explorer = this.network.explorer || ''
+      this.form.knownWalletsUrl = this.network.knownWalletsUrl || ''
 
       this.form.epoch = this.network.constants.epoch
 
@@ -548,7 +564,7 @@ export default {
         const network = await ClientService.fetchNetworkConfig(this.form.server)
 
         if (network) {
-          const tokenFound = await priceApi.checkTradeable(network.token)
+          const tokenFound = await priceApi.verifyToken(network.token)
 
           for (const key of Object.keys(this.form)) {
             if (Object.prototype.hasOwnProperty.call(network, key)) {
@@ -649,6 +665,14 @@ export default {
         },
         hasScheme (value) {
           return !this.showFull || /^https?:\/\//.test(value)
+        }
+      },
+      knownWalletsUrl: {
+        required () {
+          return true
+        },
+        isValid (value) {
+          return !value || url(value)
         }
       },
       epoch: {

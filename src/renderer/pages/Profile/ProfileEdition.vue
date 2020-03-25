@@ -83,7 +83,6 @@
                   }"
                   :items="languages"
                   :value="language"
-                  :position="['-50%', '0%']"
                   @select="selectLanguage"
                 >
                   <div
@@ -130,7 +129,6 @@
                   }"
                   :items="bip39Languages"
                   :value="bip39Language"
-                  :position="['-50%', '0%']"
                   @select="selectBip39Language"
                 />
               </ListDividedItem>
@@ -142,7 +140,6 @@
                   }"
                   :items="currencies"
                   :value="currency"
-                  :position="['-50%', '0%']"
                   @select="selectCurrency"
                 />
               </ListDividedItem>
@@ -154,7 +151,6 @@
                   }"
                   :items="timeFormats"
                   :value="timeFormat"
-                  :position="['-50%', '0%']"
                   @select="selectTimeFormat"
                 />
               </ListDividedItem>
@@ -169,7 +165,6 @@
                   }"
                   :items="networks"
                   :value="networkId"
-                  :position="['-50%', '0%']"
                   @select="selectNetwork"
                 />
               </ListDividedItem>
@@ -181,8 +176,18 @@
                   }"
                   :items="priceApis"
                   :value="priceApi"
-                  :position="['-75%', '0%']"
                   @select="selectPriceApi"
+                />
+              </ListDividedItem>
+
+              <ListDividedItem :label="$t('COMMON.DEFAULT_CHOSEN_FEE')">
+                <MenuDropdown
+                  :class="{
+                    'ProfileEdition__field--modified': modified.defaultChosenFee && modified.defaultChosenFee !== profile.defaultChosenFee
+                  }"
+                  :items="defaultFees"
+                  :value="defaultChosenFee"
+                  @select="selectDefaultChosenFee"
                 />
               </ListDividedItem>
 
@@ -258,9 +263,9 @@
                   :class="{
                     'ProfileEdition__field--modified': modified.theme && modified.theme !== profile.theme
                   }"
+                  container-classes="whitespace-no-wrap"
                   :items="themes"
                   :value="theme"
-                  :position="['-50%', '0%']"
                   @select="selectTheme"
                 />
                 <SelectionTheme
@@ -321,7 +326,6 @@
                   }"
                   :items="availablePluginAdapters"
                   :value="pluginAdapter"
-                  :position="['-50%', '0%']"
                   :is-disabled="!isAdapterDropdownEnabled"
                   @select="selectPluginAdapter"
                 />
@@ -412,7 +416,8 @@ export default {
       timeFormat: '',
       isAdvancedModeEnabled: false,
       marketChartOptions: {},
-      priceApi: 'coingecko'
+      priceApi: 'coingecko',
+      defaultChosenFee: 'AVERAGE'
     },
     routeLeaveCallback: null,
     tab: 'profile',
@@ -427,12 +432,6 @@ export default {
     timeFormats () {
       return ['Default', '12h', '24h'].reduce((all, format) => {
         all[format] = this.$t(`TIME_FORMAT.${format.toUpperCase()}`)
-        return all
-      }, {})
-    },
-    languages () {
-      return I18N.enabledLocales.reduce((all, locale) => {
-        all[locale] = this.$t(`LANGUAGES.${locale}`)
         return all
       }, {})
     },
@@ -454,6 +453,12 @@ export default {
         coingecko: 'CoinGecko',
         cryptocompare: 'CryptoCompare',
         coincap: 'CoinCap'
+      }
+    },
+    defaultFees () {
+      return {
+        LAST: this.$t('INPUT_FEE.LAST'),
+        AVERAGE: this.$t('INPUT_FEE.AVERAGE')
       }
     },
 
@@ -528,6 +533,9 @@ export default {
     priceApi () {
       return this.modified.priceApi || this.profile.priceApi
     },
+    defaultChosenFee () {
+      return this.modified.defaultChosenFee || this.profile.defaultChosenFee
+    },
     // TODO update it when modified, but it's changed on the sidemenu
     theme () {
       return this.modified.theme || this.profile.theme
@@ -570,7 +578,34 @@ export default {
         : this.$store.getters['plugin/themes']
     },
     themes () {
-      return ['light', 'dark', ...Object.keys(this.pluginThemes)]
+      const pluginThemes = {}
+
+      for (const [themeId, config] of Object.entries(this.pluginThemes)) {
+        pluginThemes[themeId] = config.name
+      }
+
+      return {
+        light: this.$t('COMMON.THEMES.LIGHT'),
+        dark: this.$t('COMMON.THEMES.DARK'),
+        ...pluginThemes
+      }
+    },
+    pluginLanguages () {
+      return isEmpty(this.$store.getters['plugin/languages'])
+        ? null
+        : this.$store.getters['plugin/languages']
+    },
+    languages () {
+      const pluginLanguages = {}
+
+      for (const [languageId, config] of Object.entries(this.pluginLanguages || {})) {
+        pluginLanguages[languageId] = config.name
+      }
+
+      return {
+        [I18N.defaultLocale]: this.$t(`LANGUAGES.${I18N.defaultLocale}`),
+        ...pluginLanguages
+      }
     }
   },
 
@@ -599,6 +634,7 @@ export default {
     this.modified.marketChartOptions = this.profile.marketChartOptions
     this.modified.isAdvancedModeEnabled = this.profile.isAdvancedModeEnabled
     this.modified.priceApi = this.profile.priceApi || 'coingecko'
+    this.modified.defaultChosenFee = this.profile.defaultChosenFee || 'AVERAGE'
   },
 
   methods: {
@@ -703,6 +739,10 @@ export default {
 
     selectPriceApi (priceApi) {
       this.__updateSession('priceApi', priceApi)
+    },
+
+    selectDefaultChosenFee (defaultChosenFee) {
+      this.__updateSession('defaultChosenFee', defaultChosenFee)
     },
 
     setAdvancedMode (mode) {

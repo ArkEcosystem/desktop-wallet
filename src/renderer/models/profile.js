@@ -155,6 +155,10 @@ export default new BaseModel({
     isAdvancedModeEnabled: {
       type: 'boolean',
       format: data => data.isAdvancedModeEnabled || false
+    },
+    defaultChosenFee: {
+      type: 'string',
+      format: data => data.defaultChosenFee || 'AVERAGE'
     }
   },
   required: ['background', 'currency', 'language', 'name', 'networkId', 'theme']

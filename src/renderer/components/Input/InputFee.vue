@@ -195,7 +195,7 @@ export default {
       }
     },
     lastFee () {
-      return this.$store.getters['session/lastFeeByType'](this.transactionType)
+      return this.$store.getters['session/lastFeeByType'](this.transactionType, this.transactionGroup)
     },
     feeChoiceMin () {
       return this.feeChoices.MINIMUM
@@ -263,7 +263,11 @@ export default {
     // Fees should be synchronized only when this component is active
     this.$synchronizer.appendFocus('fees')
 
-    this.emitFee(this.feeChoices.AVERAGE)
+    if (this.lastFee && this.session_profile.defaultChosenFee === 'LAST') {
+      this.onChoice(this.session_profile.defaultChosenFee)
+    } else {
+      this.emitFee(this.feeChoices.AVERAGE)
+    }
   },
 
   beforeDestroy () {

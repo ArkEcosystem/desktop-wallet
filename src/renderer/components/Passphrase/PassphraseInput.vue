@@ -20,7 +20,7 @@
         :name="name"
         :disabled="isDisabled"
         :type="passphraseIsVisible ? 'text' : 'password'"
-        class="PassphraseInput__input flex flex-grow bg-transparent text-theme-page-text"
+        class="PassphraseInput__input flex flex-grow bg-transparent text-theme-page-text mr-2"
         @blur="onBlur"
         @focus="onFocus"
       >
@@ -206,6 +206,10 @@ export default {
       this.$v.$reset()
     },
 
+    touch () {
+      this.$v.model.$touch()
+    },
+
     onDecode (value, toggle) {
       this.model = this.qr_getPassphrase(value)
 
@@ -222,9 +226,9 @@ export default {
       this.$v.model.$touch()
     },
 
-    toggleVisible () {
+    async toggleVisible () {
       this.passphraseIsVisible = !this.passphraseIsVisible
-      this.$refs.input.focus()
+      await this.focus()
     }
   },
 

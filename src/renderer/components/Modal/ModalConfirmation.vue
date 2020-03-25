@@ -7,7 +7,10 @@
     @close="emitClose"
   >
     <section class="ModalConfirmation__container flex flex-col">
-      <div class="mb-6">
+      <div
+        v-if="question || note"
+        class="mb-6"
+      >
         <h3
           v-if="question"
           class="font-semibold"
@@ -28,14 +31,15 @@
 
       <div class="mt-4 flex flex-row">
         <button
-          class="blue-button"
+          v-if="showCancelButton"
+          class="ModalConfirmation__cancel-button blue-button"
           @click="emitCancel"
         >
           {{ cancelButton }}
         </button>
 
         <button
-          class="action-button px-8"
+          class="ModalConfirmation__continue-button action-button py-4 px-8"
           @click="emitContinue"
         >
           {{ continueButton }}
@@ -62,6 +66,11 @@ export default {
       default () {
         return this.$t('MODAL_CONFIRMATION.CANCEL')
       }
+    },
+    showCancelButton: {
+      type: Boolean,
+      required: false,
+      default: true
     },
     containerClasses: {
       type: String,

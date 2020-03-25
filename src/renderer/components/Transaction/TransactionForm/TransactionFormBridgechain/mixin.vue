@@ -266,7 +266,10 @@ export default {
     },
 
     hasSameAssetRepository () {
-      return this.form.asset.bridgechainAssetRepository === this.bridgechain.bridgechainAssetRepository
+      return (
+        this.form.asset.bridgechainAssetRepository === this.bridgechain.bridgechainAssetRepository ||
+        (!this.form.asset.bridgechainAssetRepository && (this.bridgechain.bridgechainAssetRepository === undefined))
+      )
     },
 
     hasSameSeedNodes () {
@@ -343,7 +346,9 @@ export default {
 
     bridgechainAssetRepositoryError () {
       if (this.$v.form.asset.bridgechainAssetRepository.$dirty && this.$v.form.asset.bridgechainAssetRepository.$invalid) {
-        if (!this.$v.form.asset.bridgechainAssetRepository.url) {
+        if (!this.$v.form.asset.bridgechainAssetRepository.required) {
+          return this.$t('VALIDATION.REQUIRED', [this.$t('TRANSACTION.BRIDGECHAIN.BRIDGECHAIN_ASSET_REPOSITORY')])
+        } else if (!this.$v.form.asset.bridgechainAssetRepository.url) {
           return this.$t('VALIDATION.INVALID_URL')
         }
       }
@@ -428,7 +433,28 @@ export default {
       if (this.step === 1) {
         this.step = 2
 
-        this.$v.form.fee.$touch()
+        const fee = this.$v.form.fee.$model
+
+        await this.$nextTick()
+
+        // TODO: Figure out why fee vuelidate intermittently doesn't
+        //       trigger resulting in an "invalid" flag when it's not.
+        //       Remove assigning fee to zero initially as a workaround.
+        if (this.$refs.fee && fee) {
+          this.$refs.fee.emitFee(0)
+          await this.$nextTick()
+          this.$refs.fee.emitFee(fee)
+        }
+
+        if (this.$v.form.passphrase.$model) {
+          this.$refs.passphrase.touch()
+        } else if (this.$v.form.walletPassword.$model) {
+          this.$v.form.walletPassword.$touch()
+        }
+
+        if (this.$v.form.secondPassphrase.$model) {
+          this.$refs.secondPassphrase.touch()
+        }
       } else {
         await this.validateSeeds()
 
@@ -446,7 +472,7 @@ export default {
         return
       }
 
-      this.form.seedNodes.push({
+      this.$v.form.seedNodes.$model.push({
         ip: this.seedNode,
         isInvalid: false
       })
@@ -576,6 +602,9 @@ export default {
         },
 
         bridgechainAssetRepository: {
+          required (value) {
+            return (this.bridgechain && this.bridgechain.bridgechainAssetRepository) ? required(value) : true
+          },
           url (value) {
             return url(value)
           }

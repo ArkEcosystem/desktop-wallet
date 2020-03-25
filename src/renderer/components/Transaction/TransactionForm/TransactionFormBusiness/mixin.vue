@@ -100,7 +100,7 @@
       />
 
       <button
-        :disabled="$v.form.$invalid"
+        :disabled="!isFormValid"
         class="TransactionFormBusiness__next blue-button mt-10 ml-0"
         @click="onSubmit"
       >
@@ -161,8 +161,51 @@ export default {
   }),
 
   computed: {
+    business () {
+      return this.wallet_fromRoute.business
+    },
+
+    isUpdate () {
+      return !!this.business
+    },
+
+    hasSameName () {
+      return this.form.asset.name === this.business.name
+    },
+
+    hasSameWebsite () {
+      return this.form.asset.website === this.business.website
+    },
+
+    hasSameVat () {
+      return (
+        this.form.asset.vat === this.business.vat ||
+        (!this.form.asset.vat && (this.business.vat === undefined))
+      )
+    },
+
+    hasSameRepository () {
+      return (
+        this.form.asset.repository === this.business.repository ||
+        (!this.form.asset.repository && (this.business.repository === undefined))
+      )
+    },
+
     nameLabel () {
       return `${this.$t('WALLET_BUSINESS.NAME')} - ${this.$t('VALIDATION.MAX_LENGTH', [maxNameLength])}`
+    },
+
+    isFormValid () {
+      if (this.isUpdate) {
+        return !this.$v.form.$invalid && !(
+          this.hasSameName &&
+          this.hasSameWebsite &&
+          this.hasSameVat &&
+          this.hasSameRepository
+        )
+      }
+
+      return !this.$v.form.$invalid
     },
 
     nameError () {
@@ -197,7 +240,9 @@ export default {
 
     vatError () {
       if (this.$v.form.asset.vat.$dirty && this.$v.form.asset.vat.$invalid) {
-        if (!this.$v.form.asset.vat.tooShort) {
+        if (!this.$v.form.asset.vat.required) {
+          return this.$t('VALIDATION.REQUIRED', [this.$t('WALLET_BUSINESS.VAT')])
+        } else if (!this.$v.form.asset.vat.tooShort) {
           return this.$t('VALIDATION.TOO_SHORT', [this.$t('WALLET_BUSINESS.VAT')])
         } else if (!this.$v.form.asset.vat.tooLong) {
           return this.$t('VALIDATION.TOO_LONG', [this.$t('WALLET_BUSINESS.VAT')])
@@ -213,7 +258,9 @@ export default {
 
     repositoryError () {
       if (this.$v.form.asset.repository.$dirty && this.$v.form.asset.repository.$invalid) {
-        if (!this.$v.form.asset.repository.url) {
+        if (!this.$v.form.asset.repository.required) {
+          return this.$t('VALIDATION.REQUIRED', [this.$t('WALLET_BUSINESS.REPOSITORY')])
+        } else if (!this.$v.form.asset.repository.url) {
           return this.$t('VALIDATION.INVALID_URL')
         } else if (!this.$v.form.asset.repository.tooShort) {
           return this.$t('VALIDATION.TOO_SHORT', [this.$t('WALLET_BUSINESS.REPOSITORY')])
@@ -226,9 +273,20 @@ export default {
 
   methods: {
     getTransactionData () {
+      const businessAsset = Object.assign({}, this.form.asset)
+
+      for (const property of Object.keys(this.form.asset)) {
+        if (
+          (this.isUpdate && this[`hasSame${this.strings_capitalizeFirst(property)}`]) ||
+          !businessAsset[property].length
+        ) {
+          delete businessAsset[property]
+        }
+      }
+
       const transactionData = {
         address: this.currentWallet.address,
-        asset: this.form.asset,
+        asset: businessAsset,
         passphrase: this.form.passphrase,
         fee: this.getFee(),
         wif: this.form.wif,
@@ -266,11 +324,17 @@ export default {
         },
 
         vat: {
+          required (value) {
+            return (this.business && this.business.vat) ? required(value) : true
+          },
           tooShort: minLength(minVatLength),
           tooLong: maxLength(maxVatLength)
         },
 
         repository: {
+          required (value) {
+            return (this.business && this.business.repository) ? required(value) : true
+          },
           tooShort: minLength(minRepositoryLength),
           url
         }

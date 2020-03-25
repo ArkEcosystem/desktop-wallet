@@ -14,6 +14,24 @@ describe('ModalConfirmation', () => {
     expect(wrapper.isVueInstance()).toBeTrue()
   })
 
+  it('should render buttons', () => {
+    expect(wrapper.findAll('button')).toHaveLength(2)
+    expect(wrapper.find('.ModalConfirmation__cancel-button').isVisible())
+    expect(wrapper.find('.ModalConfirmation__continue-button').isVisible())
+  })
+
+  it('should be possible to hide the cancel button', () => {
+    wrapper = shallowMount(ModalConfirmation, {
+      i18n,
+      propsData: {
+        showCancelButton: false
+      }
+    })
+    expect(wrapper.findAll('button')).toHaveLength(1)
+    expect(wrapper.find('.ModalConfirmation__cancel-button').exists()).toBe(false)
+    expect(wrapper.find('.ModalConfirmation__continue-button').isVisible())
+  })
+
   it('should default portal target to "modal"', () => {
     expect(wrapper.props('portalTarget')).toBe('modal')
   })
