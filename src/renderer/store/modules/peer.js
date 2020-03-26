@@ -15,7 +15,10 @@ const getBaseUrl = (peer) => `${peer.isHttps ? 'https://' : 'http://'}${peer.ip}
 const removePeerFromList = (peer, list) => list ? list.filter(p => p.ip !== peer.ip) : list
 
 // Return the default network ID based on the profile. The profile object is provided by rootGetters.
-const defaultNetworkId = profile => profile && profile.networkId
+const currentNetworkId = getters => {
+  const profile = getters['session/profile']
+  return profile && profile.networkId
+}
 
 // Return an object containing chain and net from the networkId. Eg: ark.devnet => { chain: ark, net: devnet}
 const chainNetFromNetworkId = networkId => (arr => ({ chain: arr[0], net: arr[1] }))(networkId.split('.'))
@@ -45,7 +48,7 @@ export default {
      * @return { Object[] | Null} The peer list.
      */
     all: (state, getters, _, rootGetters) => ({ ignoreCurrentPeer = false, networkId = null }) => {
-      networkId = networkId || defaultNetworkId(rootGetters['session/profile'])
+      networkId = networkId || currentNetworkId(rootGetters)
 
       if (!networkId) return null
 
@@ -91,7 +94,7 @@ export default {
      * @return {Object[]} containing peer objects, can be length = 0.
      */
     randomSeedPeers: (_, __, ___, rootGetters) => (amount = 5, networkId = null) => {
-      networkId = networkId || defaultNetworkId(rootGetters['session/profile'])
+      networkId = networkId || currentNetworkId(rootGetters)
       if (!networkId) return []
 
       const peers = config.PEERS[networkId]
@@ -137,7 +140,7 @@ export default {
      * @return {(Object|boolean)} - false if no current peer
      */
     current: (state, getters, __, rootGetters) => (networkId = null) => {
-      networkId = networkId || defaultNetworkId(rootGetters['session/profile'])
+      networkId = networkId || currentNetworkId(rootGetters)
       if (!networkId) return false
 
       const currentPeer = state.current[networkId]
@@ -151,7 +154,7 @@ export default {
      * @return {(Date|null|false)}
      */
     lastUpdated: (state, _, __, rootGetters) => () => {
-      const networkId = defaultNetworkId(rootGetters['session/profile'])
+      const networkId = currentNetworkId(rootGetters)
       if (!networkId) return false
       const networkPeers = state.all[networkId]
       return networkPeers ? (networkPeers && networkPeers.lastUpdated) : null
@@ -190,7 +193,7 @@ export default {
      * @return {void}
      */
     set ({ rootGetters, dispatch }, peers) {
-      const networkId = defaultNetworkId(rootGetters['session/profile'])
+      const networkId = currentNetworkId(rootGetters)
       if (!networkId) return
       dispatch('setToNetwork', { peers: peers, networkId: networkId })
     },
@@ -205,7 +208,7 @@ export default {
 
       peer = await dispatch('updatePeer', peer)
 
-      const networkId = defaultNetworkId(rootGetters['session/profile'])
+      const networkId = currentNetworkId(rootGetters)
       if (!networkId) return
 
       this._vm.$client.host = getBaseUrl(peer)
