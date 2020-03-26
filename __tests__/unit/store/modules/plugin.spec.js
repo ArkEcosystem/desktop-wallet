@@ -148,7 +148,9 @@ describe('PluginModule', () => {
                 },
                 whitelisted: {
                   global: {
-                    [availablePlugins[0].config.id]: availablePlugins[0].config.version
+                    [availablePlugins[0].config.id]: {
+                      version: availablePlugins[0].config.version
+                    }
                   }
                 }
               }
@@ -203,8 +205,12 @@ describe('PluginModule', () => {
                   },
                   whitelisted: {
                     global: {
-                      [plugin1.config.id]: plugin1.config.version,
-                      [plugin2.config.id]: plugin2.config.version
+                      [plugin1.config.id]: {
+                        version: plugin1.config.version
+                      },
+                      [plugin2.config.id]: {
+                        version: plugin2.config.version
+                      }
                     }
                   }
                 }
@@ -242,8 +248,12 @@ describe('PluginModule', () => {
                 },
                 whitelisted: {
                   global: {
-                    [plugin1.config.id]: plugin1.config.version,
-                    [plugin2.config.id]: plugin2.config.version
+                    [plugin1.config.id]: {
+                      version: plugin1.config.version
+                    },
+                    [plugin2.config.id]: {
+                      version: plugin2.config.version
+                    }
                   }
                 }
               }
@@ -282,8 +292,12 @@ describe('PluginModule', () => {
                 },
                 whitelisted: {
                   global: {
-                    [plugin1.config.id]: plugin1.config.version,
-                    [plugin2.config.id]: plugin2.config.version
+                    [plugin1.config.id]: {
+                      version: plugin1.config.version
+                    },
+                    [plugin2.config.id]: {
+                      version: plugin2.config.version
+                    }
                   }
                 }
               }
@@ -626,7 +640,9 @@ describe('PluginModule', () => {
         store.dispatch('plugin/setWhitelisted', {
           scope: 'global',
           plugins: {
-            [availablePlugins[0].config.id]: availablePlugins[0].config.version
+            [availablePlugins[0].config.id]: {
+              version: availablePlugins[0].config.version
+            }
           }
         })
       })
@@ -656,6 +672,39 @@ describe('PluginModule', () => {
       })
     })
 
+    describe('isGrant', () => {
+      beforeAll(() => {
+        store.replaceState(JSON.parse(JSON.stringify(initialState)))
+
+        store.dispatch('plugin/setWhitelisted', {
+          scope: 'global',
+          plugins: {
+            [availablePlugins[0].config.id]: {
+              isGrant: true,
+              version: availablePlugins[0].config.version
+            },
+            [availablePlugins[1].config.id]: {
+              version: availablePlugins[1].config.version
+            }
+          }
+        })
+      })
+
+      it('should return true if the plugin is whitelisted and is a funded by ark grants', () => {
+        const pluginId = availablePlugins[0].config.id
+        expect(store.getters['plugin/isGrant'](pluginId)).toBe(true)
+      })
+
+      it('should return false if the plugin is whitelisted and is a not funded by ark grants', () => {
+        const pluginId = availablePlugins[1].config.id
+        expect(store.getters['plugin/isGrant'](pluginId)).toBe(false)
+      })
+
+      it('should return false if the plugin is not whitelisted and is a not funded by ark grants', () => {
+        expect(store.getters['plugin/isGrant']('plugin-not-grants')).toBe(false)
+      })
+    })
+
     describe('isInstalledSupported', () => {
       let spy
 
@@ -677,7 +726,7 @@ describe('PluginModule', () => {
         store.dispatch('plugin/setInstalled', {
           config: {
             ...installedPlugins[0].config,
-            minVersion: '1.0.0'
+            minimumVersion: '1.0.0'
           }
         })
         expect(store.getters['plugin/isInstalledSupported'](installedPlugins[0].config.id)).toBe(true)
@@ -687,7 +736,7 @@ describe('PluginModule', () => {
         store.dispatch('plugin/setInstalled', {
           config: {
             ...installedPlugins[0].config,
-            minVersion: '3.0.0'
+            minimumVersion: '3.0.0'
           }
         })
         expect(store.getters['plugin/isInstalledSupported'](installedPlugins[0].config.id)).toBe(false)
