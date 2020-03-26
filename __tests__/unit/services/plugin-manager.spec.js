@@ -48,6 +48,7 @@ const app = {
     getters: {
       'plugin/isEnabled': jest.fn((pluginId) => pluginId === 'plugin-test'),
       'plugin/isInstalledSupported': jest.fn(() => true),
+      'plugin/isGrant': jest.fn(() => true),
       'plugin/lastFetched': jest.fn(() => 0),
       'profile/byId': jest.fn(() => {}),
       'session/pluginAdapter': 'npm'
@@ -93,14 +94,14 @@ describe('Plugin Manager', () => {
           name: 'test-plugin-1',
           keywords: PLUGINS.keywords,
           'desktop-wallet': {
-            minVersion: '1.0'
+            minimumVersion: '1.0'
           }
         }
         const invalidPlugin = {
           name: 'test-plugin-2',
           keywords: PLUGINS.keywords,
           'desktop-wallet': {
-            minVersion: '3.0'
+            minimumVersion: '3.0'
           }
         }
 
@@ -241,40 +242,19 @@ describe('Plugin Manager', () => {
     })
   })
 
-  describe('fetchBlacklist', () => {
+  describe('fetchPluginsList', () => {
     it('should fetch using cache-busted url', async () => {
       const spy = jest.spyOn(Date.prototype, 'getTime').mockReturnValue(1234)
       const spyError = jest.spyOn(console, 'error')
 
       nock('https://raw.githubusercontent.com')
-        .get('/ark-ecosystem-desktop-plugins/config/master/blacklist.json')
+        .get('/ark-ecosystem-desktop-plugins/config/master/plugins.json')
         .query({
           ts: 1234
         })
         .reply(200, [])
 
-      await pluginManager.fetchBlacklist()
-
-      expect(spyError).not.toHaveBeenCalled()
-
-      spy.mockRestore()
-      spyError.mockRestore()
-    })
-  })
-
-  describe('fetchWhitelist', () => {
-    it('should fetch using cache-busted url', async () => {
-      const spy = jest.spyOn(Date.prototype, 'getTime').mockReturnValue(1234)
-      const spyError = jest.spyOn(console, 'error')
-
-      nock('https://raw.githubusercontent.com')
-        .get('/ark-ecosystem-desktop-plugins/config/master/whitelist.json')
-        .query({
-          ts: 1234
-        })
-        .reply(200, [])
-
-      await pluginManager.fetchWhitelist()
+      await pluginManager.fetchPluginsList()
 
       expect(spyError).not.toHaveBeenCalled()
 
