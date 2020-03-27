@@ -79,4 +79,19 @@ export default {
 .Slider-image__slide img:hover {
   @apply .cursor-pointer .opacity-75;
 }
+
+.slides-right-leave-active,
+.slides-right-enter-active,
+.slides-left-leave-active,
+.slides-left-enter-active {
+  transition: 0.5s;
+}
+.slides-left-leave-to,
+.slides-right-enter {
+  transform: translate(100%, 0);
+}
+.slides-left-enter,
+.slides-right-leave-to {
+  transform: translate(-100%, 0);
+}
 </style>

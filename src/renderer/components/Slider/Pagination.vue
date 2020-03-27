@@ -17,6 +17,8 @@
 export default {
   name: 'Pagination',
 
+  inject: ['slider'],
+
   computed: {
     pageCount () {
       return this.slider.pageCount
