@@ -217,7 +217,7 @@ export default {
       return this.$store.getters['peer/current']()
     },
     bestPeers () {
-      return this.$store.getters['peer/bestPeers'](undefined, false)
+      return this.$store.getters['peer/bestPeers']({ ignoreCurrent: true })
     },
     peerIps () {
       const bestPeers = this.bestPeers

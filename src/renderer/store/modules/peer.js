@@ -111,8 +111,8 @@ export default {
      * @param  {Boolean} [ignoreCurrent=true] Ignore current peer when selecting the best.
      * @return {(Object|null)}
      */
-    best: (_, getters) => ({ ignoreCurrent = true } = {}) => {
-      const peers = getters.bestPeers(undefined, ignoreCurrent)
+    best: (_, getters) => ({ ignoreCurrent = true, networkId } = {}) => {
+      const peers = getters.bestPeers({ ignoreCurrent, networkId })
 
       if (!peers) {
         logger.error(errors.falsy_value)
@@ -127,8 +127,8 @@ export default {
      * @param  {Boolean} [ignoreCurrent=true]
      * @return {Object[]}
      */
-    bestPeers: (_, getters) => (maxRandom = 10, ignoreCurrent = true) => {
-      const peers = getters.all({ ignoreCurrent: ignoreCurrent })
+    bestPeers: (_, getters) => ({ maxRandom = 10, ignoreCurrent = false, networkId } = {}) => {
+      const peers = getters.all({ ignoreCurrent, networkId })
 
       if (!peers) logger.error(errors.falsy_value)
 

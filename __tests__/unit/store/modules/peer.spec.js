@@ -10,10 +10,8 @@ import { profile1 } from '../../__fixtures__/store/profile'
 Vue.use(Vuex)
 Vue.use(apiClient)
 
-const nethash = '2a44f340d76ffc3df204c5f38cd355b7496c9065a1ade2ef92071436bd72e867'
-
 beforeAll(() => {
-  network1.nethash = nethash
+  network1.nethash = '2a44f340d76ffc3df204c5f38cd355b7496c9065a1ade2ef92071436bd72e867'
   store.commit('network/SET_ALL', [network1])
   store.commit('profile/CREATE', profile1)
   store.commit('session/SET_PROFILE_ID', profile1.id)
@@ -72,13 +70,18 @@ describe('peer store module', () => {
     })
 
     describe('best', () => {
-      it('should be able to get the best peers from current network', () => {
+      it('should be able to get the best peer from current network', () => {
         const possibleBest = [goodPeer1, goodPeer2]
         expect(store.getters['peer/best']()).toBeOneOf(possibleBest)
       })
-      it('should be able to get the best peers ignoring the current', () => {
+      it('should be able to get the best peer ignoring the current peer', () => {
         const possibleBest = [goodPeer2]
         expect(store.getters['peer/best']({ ignoreCurrent: true })).toBeOneOf(possibleBest)
+      })
+      it('should be able to get the best peer from a network', () => {
+        const possibleBest = [goodPeer4, goodPeer5]
+        const networkId = network2.id
+        expect(store.getters['peer/best']({ networkId })).toBeOneOf(possibleBest)
       })
     })
   })
