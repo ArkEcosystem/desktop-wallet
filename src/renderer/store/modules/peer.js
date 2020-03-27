@@ -34,6 +34,15 @@ const currentNetworkId = getters => {
   return profile && profile.networkId
 }
 
+// This is used when optional chaining is not available
+const optionalChaining = (fn, failsafe) => {
+  try {
+    return fn()
+  } catch (err) {
+    return failsafe
+  }
+}
+
 // Return an object containing chain and net from the networkId. Eg: ark.devnet => { chain: ark, net: devnet}
 const chainNetFromNetworkId = networkId => (arr => ({ chain: arr[0], net: arr[1] }))(networkId.split('.'))
 
@@ -69,9 +78,12 @@ export default {
         return null
       }
 
-      let peers = state && state.all && state.all[networkId].peers
+      let peers = optionalChaining(() => state.all[networkId].peers, [])
 
-      if (!peers) logger.error(errors.falsy_value)
+      if (!peers) {
+        logger.error(errors.falsy_value)
+        return null
+      }
 
       if (ignoreCurrent) {
         const currentPeer = getters.current()
@@ -89,10 +101,10 @@ export default {
      * @param {string} [networkId = currentNetworkId] The network that the peer is on.
      * @return {(Object|undefined|Error)} The peer object. Returns undefined if none is found. Returns an error if no peer is provided.
      */
-    get: (_, getters) => ({ ip, networkId } = {}) => {
+    get: (_, getters) => ({ ip } = {}) => {
       if (!ip) throw new Error('Unable to find peer: no IP is provided')
 
-      const peers = getters.all({ networkId })
+      const peers = getters.all()
 
       if (!peers) {
         logger.error(errors.falsy_value)
@@ -126,7 +138,7 @@ export default {
 
       if (!peers) {
         logger.error(errors.falsy_value)
-        return null
+        return []
       }
 
       if (!Array.isArray(peers)) logger.error(errors.wrong_type)
@@ -150,13 +162,25 @@ export default {
     },
 
     /**
-     * Retrieves n random peers for the current network (excluding current peer)
-     * @param {Number} amount of peers to return
+     * Retrieves an amount of random peers
+     * @param {number} [amount=5] number of peers to return
+     * @param {Boolen} [ignoreCurrent = true ] I
+     * @param {string} networkId Include the network Id.
      * @return {Object[]} containing peer objects
      */
-    randomPeers: (_, getters) => (amount = 5) => {
-      const peers = getters.all({ IgnoreCurrent: true })
-      return peers.lenght ? shuffle(peers).slice(0, amount) : []
+    random: (_, getters) => ({ amount = 5, ignoreCurrent = true, networkId } = {}) => {
+      const peers = getters.all({ ignoreCurrent, networkId })
+
+      return peers.length ? shuffle(peers).slice(0, amount) : []
+    },
+
+    'seed/all': (_, __, ___, rootGetters) => ({ networkId } = {}) => {
+      networkId = networkId || currentNetworkId(rootGetters)
+      if (!networkId) return []
+
+      const peers = optionalChaining(() => config.PEERS[networkId], [])
+
+      return peers
     },
 
     /**
@@ -166,13 +190,8 @@ export default {
      * @param {Number} amount of peers to return
      * @return {Object[]} containing peer objects, can be length = 0.
      */
-    randomSeedPeers: (_, __, ___, rootGetters) => (amount = 5, networkId = null) => {
-      networkId = networkId || currentNetworkId(rootGetters)
-      if (!networkId) return []
-
-      const peers = config.PEERS[networkId]
-      if (!peers || !peers.length) return []
-
+    'seed/random': (_, getters) => ({ amount = 5, networkId } = {}) => {
+      const peers = getters['seed/all']({ networkId })
       return shuffle(peers).slice(0, amount)
     },
 
@@ -187,8 +206,8 @@ export default {
         ignoreCurrent: false,
         networkId
       })
-      const randomPeers = getters.randomPeers(5, networkId)
-      const seedPeers = getters.randomSeedPeers(5, networkId)
+      const randomPeers = getters.random({ amount: 5, networkId })
+      const seedPeers = getters['seed/random']({ amount: 5, networkId })
       let peers = bestPeers.concat(randomPeers)
       if (seedPeers.length) {
         peers = peers.concat(seedPeers)
