@@ -1,8 +1,11 @@
 <template>
-  <div class="Slider">
+  <div
+    v-if="hasImages"
+    class="Slider"
+  >
     <div class="Slider-wrapper">
       <SliderImage
-        v-if="hasImages"
+        v-if="type === 'image'"
         :images="data"
         :slider-class="sliderClass"
       />
@@ -81,7 +84,7 @@ export default {
 
   computed: {
     hasImages () {
-      return this.type === 'image' && this.data && this.data.length > 0
+      return this.data && this.data.length > 0
     },
 
     pageCount () {

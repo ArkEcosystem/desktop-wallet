@@ -130,8 +130,8 @@
       </a>
 
       <div class="mt-6">
-        <PluginSlider
-          :plugin="plugin"
+        <Slider
+          :data="plugin.images"
         />
       </div>
 
@@ -181,9 +181,10 @@
 <script>
 import { PLUGINS } from '@config'
 import { ButtonGeneric, ButtonIconGeneric } from '@/components/Button'
-import { PluginLogo, PluginManagerCheckmark, PluginManagerGrants, PluginSlider } from '@/components/PluginManager'
+import { PluginLogo, PluginManagerCheckmark, PluginManagerGrants } from '@/components/PluginManager'
 import { ModalWindow } from '@/components/Modal'
 import { PluginManagerButtonSwitch } from '@/components/PluginManager/PluginManagerButtons'
+import Slider from '@/components/Slider'
 import SvgIcon from '@/components/SvgIcon'
 import domain from 'getdomain'
 
@@ -198,7 +199,7 @@ export default {
     PluginManagerButtonSwitch,
     ModalWindow,
     PluginLogo,
-    PluginSlider,
+    Slider,
     SvgIcon
   },
 

@@ -48,13 +48,15 @@ export default {
 
   computed: {
     transitionEnd () {
-      return this.slider.transitionEnd()
+      return this.slider.transitionEnd
     },
 
     currentIndex () {
       return this.slider.getCurrentIndex
-    },
+    }
+  },
 
+  methods: {
     getPageImages (pageIndex) {
       const { perPage } = this.slider
       return this.images.slice(pageIndex * perPage, (pageIndex * perPage) + perPage)

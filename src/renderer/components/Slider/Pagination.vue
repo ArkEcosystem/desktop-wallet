@@ -19,7 +19,7 @@ export default {
 
   computed: {
     pageCount () {
-      return this.slider.pageCount()
+      return this.slider.pageCount
     },
 
     currentIndex () {
