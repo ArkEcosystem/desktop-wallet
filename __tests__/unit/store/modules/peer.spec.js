@@ -2,33 +2,77 @@ import nock from 'nock'
 import Vue from 'vue'
 import Vuex from 'vuex'
 import apiClient from '@/plugins/api-client'
+import { random } from 'lodash'
 import store from '@/store'
-import { goodPeer1, goodPeer2, goodPeer4, goodPeer5 } from '../../__fixtures__/store/peer'
+import { goodPeer1, goodPeer2, goodPeer4, goodPeer5, generateValidPeer } from '../../__fixtures__/store/peer'
 import { network1, network2 } from '../../__fixtures__/store/network'
 import { profile1 } from '../../__fixtures__/store/profile'
 
 Vue.use(Vuex)
 Vue.use(apiClient)
 
+network1.nethash = '2a44f340d76ffc3df204c5f38cd355b7496c9065a1ade2ef92071436bd72e867'
+
+const goodPeer6 = generateValidPeer()
+const goodPeer7 = generateValidPeer()
+const goodPeer8 = generateValidPeer()
+const goodPeer9 = generateValidPeer()
+const goodPeer10 = generateValidPeer()
+const goodPeer11 = generateValidPeer()
+const goodPeer12 = generateValidPeer()
+const goodPeer13 = generateValidPeer()
+const goodPeer14 = generateValidPeer()
+const goodPeer15 = generateValidPeer()
+
+const peerList = [
+  [goodPeer1, goodPeer2, goodPeer6, goodPeer7, goodPeer8, goodPeer9, goodPeer10],
+  [goodPeer4, goodPeer5, goodPeer11, goodPeer12, goodPeer13, goodPeer14, goodPeer15]
+]
+
+const networkList = [network1, network2]
+
+function currentNetwork () {
+  const session = store.state.session
+  const profile = store.state.profile.all.find(profile => profile.id === session.profileId)
+  const network = store.state.network.all.find(network => network.id === profile.networkId)
+  return network
+}
+
+function currentNetworkPeers () {
+  const network = currentNetwork()
+  const peers = store.state.peer.all[network.id].peers
+  return peers
+}
+
+function currentPeer () {
+  const peer = store.state.peer.current
+  return peer
+}
+
+function randomPeerFromCurrentNetwork () {
+  const peers = currentNetworkPeers()
+  const peer = peers[random(0, peers.length - 1)]
+  return peer
+}
+
 beforeAll(() => {
-  network1.nethash = '2a44f340d76ffc3df204c5f38cd355b7496c9065a1ade2ef92071436bd72e867'
-  store.commit('network/SET_ALL', [network1])
+  store.commit('network/SET_ALL', networkList)
   store.commit('profile/CREATE', profile1)
   store.commit('session/SET_PROFILE_ID', profile1.id)
 
   store.commit('peer/SET_PEERS', {
-    peers: [goodPeer1, goodPeer2],
-    networkId: network1.id
+    peers: peerList[0],
+    networkId: networkList[0].id
   })
 
   store.commit('peer/SET_PEERS', {
-    peers: [goodPeer4, goodPeer5],
-    networkId: network2.id
+    peers: peerList[1],
+    networkId: networkList[1].id
   })
 
   store.commit('peer/SET_CURRENT_PEER', {
-    peer: goodPeer1,
-    networkId: network1.id
+    peer: peerList[0][0],
+    networkId: networkList[0]
   })
 })
 
@@ -38,60 +82,110 @@ beforeEach(() => {
 
 describe('peer store module', () => {
   describe('getters', () => {
-    beforeEach(() => {
-
-    })
-
     describe('all', () => {
       it('should be able to get all the peers from the current network', () => {
-        // profile1 is from network1. Check fixtures
-        const peers = [goodPeer1, goodPeer2]
+        const peers = currentNetworkPeers()
         expect(store.getters['peer/all']()).toIncludeAllMembers(peers)
       })
 
       it('should be able to get all peers from a specific network', () => {
-        const networkId = network2.id
-        const peers = [goodPeer4, goodPeer5]
+        const id = 1
+        const networkId = networkList[id].id
+        const peers = peerList[id]
         expect(store.getters['peer/all']({ networkId })).toIncludeAllMembers(peers)
       })
 
       it('should be able to ignore current peer', () => {
-        const currentPeer = goodPeer1
-        expect(store.getters['peer/all']({ ignoreCurrent: true })).not.toIncludeAnyMembers([currentPeer])
+        expect(store.getters['peer/all']({ ignoreCurrent: true })).not.toIncludeAnyMembers([currentPeer()])
       })
     })
 
     describe('ip', () => {
       it('should be able to get peer by its ip address', () => {
-        const ip = '2.2.2.2'
-        const peer = goodPeer2
+        const peer = randomPeerFromCurrentNetwork()
+        const ip = peer.ip
         expect(store.getters['peer/get']({ ip })).toEqual(peer)
       })
     })
 
     describe('best', () => {
       it('should be able to get the best peer from current network', () => {
-        const possibleBest = [goodPeer1, goodPeer2]
+        const possibleBest = currentNetworkPeers()
         expect(store.getters['peer/best']()).toIncludeAnyMembers(possibleBest)
       })
       it('should be able to get the best peer ignoring the current peer', () => {
-        const possibleBest = [goodPeer2]
-        expect(store.getters['peer/best']({ ignoreCurrent: true })).toIncludeAnyMembers(possibleBest)
+        const impossibleBest = currentPeer()
+        const possibleBest = currentNetworkPeers()
+        const getter = store.getters['peer/best']({ ignoreCurrent: true })
+        expect(getter).not.toInclude(impossibleBest)
+        expect(getter).toIncludeAnyMembers(possibleBest)
       })
       it('should be able to get the best peer from a network', () => {
-        const possibleBest = [goodPeer4, goodPeer5]
-        const networkId = network2.id
+        const id = 1
+        const possibleBest = peerList[id]
+        const networkId = networkList[id].id
         expect(store.getters['peer/best']({ networkId })).toIncludeAnyMembers(possibleBest)
       })
       it('should be able to get at least 2 best peers from a network', () => {
-        const mandatoryBest = [goodPeer4, goodPeer5]
-        const networkId = network2.id
-        expect(store.getters['peer/best']({ networkId, min: 2 })).toIncludeSameMembers(mandatoryBest)
+        const id = 1
+        const mandatoryBest = peerList[id]
+        const min = mandatoryBest.length
+        const networkId = networkList[id].id
+        expect(store.getters['peer/best']({ networkId, min })).toIncludeSameMembers(mandatoryBest)
       })
       it('should be able to get at most 1 best peers from a network', () => {
-        const mandatoryBest = [goodPeer4, goodPeer5]
-        const networkId = network2.id
-        expect(store.getters['peer/best']({ networkId, max: 1 })).toIncludeAnyMembers(mandatoryBest)
+        const id = 0
+        const possibleBest = peerList[id]
+        const networkId = networkList[id].id
+        const getter = store.getters['peer/best']({ networkId, max: 1 })
+        expect(getter).toIncludeAnyMembers(possibleBest)
+        expect(getter.length).toBe(1)
+      })
+    })
+
+    describe('random', () => {
+      it('should be able to get 5 random peers from current network', () => {
+        const possiblePeers = currentNetworkPeers()
+        const amount = Math.min(5, possiblePeers.length)
+        const getter = store.getters['peer/random']()
+        expect(getter).toIncludeAnyMembers(possiblePeers)
+        expect(getter.length).toBe(amount)
+      })
+
+      it('should be able to get 5 random peers from current network', () => {
+        const possiblePeers = currentNetworkPeers()
+        const amount = Math.min(10, possiblePeers.length)
+        const getter = store.getters['peer/random']({ amount })
+        expect(getter).toIncludeAnyMembers(possiblePeers)
+        expect(getter.length).toBe(amount)
+      })
+
+      it('should be able to get 1 random peer from current network', () => {
+        const possiblePeers = currentNetworkPeers()
+        const amount = Math.min(1, possiblePeers.length)
+        const getter = store.getters['peer/random']({ amount })
+        expect(getter).toIncludeAnyMembers(possiblePeers)
+        expect(getter.length).toBe(amount)
+      })
+
+      it('should be able to get 5 random peer from an specific network', () => {
+        const id = 1
+        const possiblePeers = peerList[id]
+        const networkId = networkList[id].id
+        const amount = Math.min(5, possiblePeers.length)
+        const getter = store.getters['peer/random']({ networkId })
+        expect(getter).toIncludeAnyMembers(possiblePeers)
+        expect(getter.length).toBe(amount)
+      })
+
+      it('should be able to get 5 random peer from current network, but ignoring current', () => {
+        const possiblePeers = currentNetworkPeers()
+        const impossiblePeer = currentPeer()
+        const amount = Math.min(5, possiblePeers.length)
+        const getter = store.getters['peer/random']({ ignoreCurrent: true })
+        expect(getter).toIncludeAnyMembers(possiblePeers)
+        expect(getter).not.toInclude(impossiblePeer)
+        expect(getter.length).toBe(amount)
       })
     })
   })

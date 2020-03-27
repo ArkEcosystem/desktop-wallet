@@ -1,3 +1,42 @@
+import { random, sample } from 'lodash'
+
+/**
+ * Generate a valid peer based on specs
+ * @param {Object} params Force some spec on the peer.
+ */
+export function generateValidPeer (params = {}) {
+  const ip = `${random(1, 255)}.${random(1, 255)}.${random(1, 255)}.${random(1, 255)}`
+  const isHttps = !!random()
+  const host = `${isHttps ? 'https://' : 'http://'}${ip}`
+  const port = 4003
+  const version = random() ? '2.0.0' : '1.3.1'
+  const height = 6030358
+  const os = sample(['linux', 'windows', 'mac_os'])
+  const status = 'OK'
+  const latency = random(1, 1000)
+  const lastUpdated = Date.now()
+
+  const peer = {
+    ip,
+    host,
+    port,
+    isHttps,
+    p2pPort: null,
+    version,
+    height,
+    status,
+    os,
+    latency,
+    isCustom: false,
+    lastUpdated
+  }
+
+  return {
+    ...peer,
+    ...params
+  }
+}
+
 const goodPeer1 = {
   ip: '1.1.1.1',
   host: 'http://1.1.1.1',
