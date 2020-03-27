@@ -1,28 +1,22 @@
 <template>
   <div class="Slider">
     <div class="Slider-wrapper">
-      <slot>
-        <SliderImage
-          v-if="hasImages"
-          :images="data"
-          :slider-class="sliderClass"
-        />
-      </slot>
+      <SliderImage
+        v-if="hasImages"
+        :images="data"
+        :slider-class="sliderClass"
+      />
     </div>
 
-    <slot
+    <Navigation
       v-if="showNavigation && pageCount > 1"
-      name="navigation"
-    >
-      <Navigation @navigationclick="handleNavigation" />
-    </slot>
+      @navigationclick="handleNavigation"
+    />
 
-    <slot
+    <Pagination
       v-if="showPagination && pageCount > 1"
-      name="pagination"
-    >
-      <Pagination />
-    </slot>
+      @paginationclick="goToPage"
+    />
   </div>
 </template>
 
@@ -55,7 +49,7 @@ export default {
 
     type: {
       type: String,
-      required: true,
+      required: false,
       default: 'image' // or 'text'
     },
 
