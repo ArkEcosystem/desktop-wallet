@@ -17,15 +17,15 @@
 export default {
   name: 'Pagination',
 
-  inject: ['slider'],
+  inject: ['sliderImage'],
 
   computed: {
     pageCount () {
-      return this.slider.pageCount
+      return this.sliderImage.pageCount
     },
 
     currentIndex () {
-      return this.slider.getCurrentIndex
+      return this.sliderImage.getCurrentIndex
     }
   },
 

@@ -1,82 +1,157 @@
 <template>
-  <div class="Slider-image">
-    <transition-group
-      :name="sliderClass"
-      tag="div"
-      class="flex flex-no-wrap h-full"
-      @after-leave="transitionEnd"
-    >
-      <div
-        v-for="pageId in [currentIndex]"
-        :key="pageId"
-        class="Slider-image__slide"
-      >
-        <div
-          v-for="(image, imageId) in getPageImages(pageId)"
-          :key="imageId"
-          class="flex w-1/3 justify-center overflow-hidden mx-1 rounded-xl"
+  <div class="SliderImage">
+    <div class="SliderImage__container">
+      <div class="SliderImage__wrapper">
+        <transition-group
+          :name="sliderClass"
+          tag="div"
+          class="flex flex-no-wrap h-full"
+          @after-leave="transitionEnd"
         >
-          <img
-            :src="`data:image/png;base64,${image}`"
-            class="m-auto h-full arounded-xl"
+          <div
+            v-for="pageId in [currentIndex]"
+            :key="pageId"
+            class="SliderImage__slide"
           >
-        </div>
+            <div
+              v-for="(image, imageId) in getPageImages(pageId)"
+              :key="imageId"
+              class="flex w-1/3 justify-center overflow-hidden mx-1 rounded-xl"
+            >
+              <img
+                :src="`data:image/png;base64,${image}`"
+                class="m-auto h-full arounded-xl"
+              >
+            </div>
+          </div>
+        </transition-group>
       </div>
-    </transition-group>
+
+      <Navigation
+        v-if="pageCount > 1"
+        @navigationclick="handleNavigation"
+      />
+    </div>
+
+    <Pagination
+      v-if="pageCount > 1"
+      @paginationclick="goToPage"
+    />
   </div>
 </template>
 
 <script>
+import Navigation from './Navigation.vue'
+import Pagination from './Pagination.vue'
+
 export default {
   name: 'SliderImage',
 
-  inject: ['slider'],
+  components: {
+    Navigation,
+    Pagination
+  },
+
+  provide () {
+    return {
+      sliderImage: this
+    }
+  },
 
   props: {
     images: {
       type: Array,
       required: true,
       default: null
-    },
-
-    sliderClass: {
-      type: String,
-      required: false,
-      default: 'slides-right' // or 'slides-left'
     }
   },
 
+  data: () => ({
+    perPage: 3,
+    currentIndex: 0,
+    isTransitioning: false,
+    sliderClass: 'slides-right',
+    selectedImage: null
+  }),
+
   computed: {
-    transitionEnd () {
-      return this.slider.transitionEnd
+    pageCount () {
+      return Math.ceil(this.images.length / this.perPage)
     },
 
-    currentIndex () {
-      return this.slider.getCurrentIndex
+    getCurrentIndex () {
+      return this.currentIndex
     }
   },
 
   methods: {
     getPageImages (pageIndex) {
-      const { perPage } = this.slider
-      return this.images.slice(pageIndex * perPage, (pageIndex * perPage) + perPage)
+      return this.images.slice(pageIndex * this.perPage, (pageIndex * this.perPage) + this.perPage)
+    },
+
+    transitionEnd () {
+      this.isTransitioning = false
+    },
+
+    handleNavigation (direction) {
+      if (this.isTransitioning) {
+        return
+      }
+
+      this.isTransitioning = true
+
+      if (direction === 'backward') {
+        if (this.currentIndex === 0) {
+          this.sliderClass = 'slides-right'
+          this.currentIndex = this.pageCount - 1
+        } else {
+          this.sliderClass = 'slides-left'
+          this.currentIndex--
+        }
+      } else if (direction === 'forward') {
+        if (this.currentIndex >= this.pageCount - 1) {
+          this.sliderClass = 'slides-left'
+          this.currentIndex = 0
+        } else {
+          this.sliderClass = 'slides-right'
+          this.currentIndex++
+        }
+      }
+    },
+
+    goToPage (page) {
+      if (page < this.currentIndex + 1) {
+        this.sliderClass = 'slides-left'
+      } else if (page > this.currentIndex + 1) {
+        this.sliderClass = 'slides-right'
+      } else {
+        return
+      }
+
+      this.isTransitioning = true
+      this.currentIndex = page - 1
     }
   }
 }
 </script>
 
 <style scoped>
-.Slider-image {
+.SliderImage__container {
+  @apply .relative .select-none;
+  height: 150px;
+}
+
+.SliderImage__wrapper {
   @apply .w-full .h-full .relative .overflow-x-hidden;
 }
 
-.Slider-image__slide {
+.SliderImage__slide {
   @apply .absolute .flex .flex-none .h-full .pin .overflow-hidden;
 }
-.Slider-image__slide img {
+.SliderImage__slide img {
   max-width: none;
 }
-.Slider-image__slide img:hover {
+.SliderImage__slide img:hover {
   @apply .cursor-pointer .opacity-75;
 }
 
