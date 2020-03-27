@@ -54,6 +54,10 @@
   @apply .text-theme-page-text
 }
 
+.vgt-table th.no-sort:hover {
+  @apply .text-theme-page-text-light .cursor-default
+}
+
 .vgt-table th.not-sortable:hover {
   @apply .text-theme-page-text-light .cursor-default;
 }
