@@ -182,7 +182,11 @@ export default {
      * @return {Object[]} containing peer objects
      */
     broadcastPeers: (_, getters) => (networkId = null) => {
-      const bestPeers = getters.bestPeers(10, false, networkId)
+      const bestPeers = getters.best({
+        max: 10,
+        ignoreCurrent: false,
+        networkId
+      })
       const randomPeers = getters.randomPeers(5, networkId)
       const seedPeers = getters.randomSeedPeers(5, networkId)
       let peers = bestPeers.concat(randomPeers)
@@ -561,7 +565,7 @@ export default {
      * @param  {number} [timeout=3000] Default timeout for all the client requests.
      * @return {(Object|string)}
      */
-    async validatePeer ({ dispatch }, { host, ip, port, nethash, ignoreNetwork = false, timeout = 3000 }) {
+    async validatePeer ({ dispatch }, { host, ip, port, nethash, ignoreNetwork = false }) {
       const schemeUrl = host.match(/^(https?:\/\/)+(.+)$/)
       const isHttps = schemeUrl && schemeUrl[1] === 'https://'
 
@@ -569,8 +573,7 @@ export default {
         host: host,
         ip: ip,
         port: +port,
-        isHttps: isHttps,
-        clientTimeout: timeout
+        isHttps: isHttps
       }
 
       try {
