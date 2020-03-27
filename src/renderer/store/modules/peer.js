@@ -107,37 +107,46 @@ export default {
     },
 
     /**
-     * Determine best peer for current network (random from top 10).
-     * @param  {Boolean} [ignoreCurrent=true] Ignore current peer when selecting the best.
-     * @return {(Object|null)}
+     * Return the best peer lists. It defaults to RANDOM from TOP 10, but it can be changed.
+     * @param {string} [networkId = currentNetworkId()] The networkId.
+     * @param {bool} [ignoreCurrent = true] Ignore current peer. This filter is applied before the top.
+     * @param {number} [min = 1] Minimum number of peers returned.
+     * @param {number} [max] Maximum number of peers returned.
+     * @param {number} [top = 10] Selection of the N top peers before random is applied
      */
-    best: (_, getters) => ({ ignoreCurrent = true, networkId } = {}) => {
-      const peers = getters.bestPeers({ ignoreCurrent, networkId })
+    best: (_, getters, __, rootGetters) => ({ networkId, ignoreCurrent = true, min = 1, max, top = 10 } = {}) => {
+      if ((min < 0) || (top < 1)) throw new Error('Impossible parameters on best')
+
+      networkId = networkId || currentNetworkId(rootGetters)
+
+      let peers = getters.all({
+        networkId,
+        ignoreCurrent
+      })
 
       if (!peers) {
         logger.error(errors.falsy_value)
         return null
       }
 
-      return Object.values(peers)[random(peers.length - 1)]
-    },
+      if (!Array.isArray(peers)) logger.error(errors.wrong_type)
 
-    /**
-     * Determine best peer for current network (random from top 10).
-     * @param  {Boolean} [ignoreCurrent=true]
-     * @return {Object[]}
-     */
-    bestPeers: (_, getters) => ({ maxRandom = 10, ignoreCurrent = false, networkId } = {}) => {
-      const peers = getters.all({ ignoreCurrent, networkId })
+      // Prevents minimum and maximum to be bigger than the total of peers.
+      if (min > peers.length) logger.error('Impossible minimum length. Ignoring.')
 
-      if (!peers) logger.error(errors.falsy_value)
+      max = Math.min(max, peers.length)
+      top = Math.min(top, peers.length)
 
-      if (peers.length < 1) {
-        logger.error(errors.array_zero_length)
-        return []
-      }
+      const quantity = max ? random(min, max) : peers.length
 
-      return peers.slice(0, Math.min(maxRandom, peers.length))
+      // TOP
+      peers = peers.slice(0, top)
+
+      // RANDOM
+      peers = peers.sort(() => 0.5 - Math.random())
+      peers = peers.slice(0, quantity)
+
+      return peers
     },
 
     /**

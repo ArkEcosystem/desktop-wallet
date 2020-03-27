@@ -72,16 +72,26 @@ describe('peer store module', () => {
     describe('best', () => {
       it('should be able to get the best peer from current network', () => {
         const possibleBest = [goodPeer1, goodPeer2]
-        expect(store.getters['peer/best']()).toBeOneOf(possibleBest)
+        expect(store.getters['peer/best']()).toIncludeAnyMembers(possibleBest)
       })
       it('should be able to get the best peer ignoring the current peer', () => {
         const possibleBest = [goodPeer2]
-        expect(store.getters['peer/best']({ ignoreCurrent: true })).toBeOneOf(possibleBest)
+        expect(store.getters['peer/best']({ ignoreCurrent: true })).toIncludeAnyMembers(possibleBest)
       })
       it('should be able to get the best peer from a network', () => {
         const possibleBest = [goodPeer4, goodPeer5]
         const networkId = network2.id
-        expect(store.getters['peer/best']({ networkId })).toBeOneOf(possibleBest)
+        expect(store.getters['peer/best']({ networkId })).toIncludeAnyMembers(possibleBest)
+      })
+      it('should be able to get at least 2 best peers from a network', () => {
+        const mandatoryBest = [goodPeer4, goodPeer5]
+        const networkId = network2.id
+        expect(store.getters['peer/best']({ networkId, min: 2 })).toIncludeSameMembers(mandatoryBest)
+      })
+      it('should be able to get at most 1 best peers from a network', () => {
+        const mandatoryBest = [goodPeer4, goodPeer5]
+        const networkId = network2.id
+        expect(store.getters['peer/best']({ networkId, max: 1 })).toIncludeAnyMembers(mandatoryBest)
       })
     })
   })
