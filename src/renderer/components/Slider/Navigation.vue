@@ -3,7 +3,7 @@
     <!-- Left Button -->
     <div
       class="Slider-navigation__left"
-      @click.prevent="triggerPageAdvance('backward')"
+      @click="triggerPageAdvance('backward')"
     >
       <SvgIcon
         name="caret-left"
@@ -14,7 +14,7 @@
     <!-- Right Button -->
     <div
       class="Slider-navigation__right"
-      @click.prevent="triggerPageAdvance('forward')"
+      @click="triggerPageAdvance('forward')"
     >
       <SvgIcon
         name="caret-right"
