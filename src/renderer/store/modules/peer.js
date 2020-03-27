@@ -6,13 +6,27 @@ import i18n from '@/i18n'
 import PeerModel from '@/models/peer'
 import Vue from 'vue'
 
-const logger = { ...console }
+const logger = {
+  ...console,
+  error: (message) => console.trace(message)
+}
+
+const errors = {
+  array_zero_length: 'Expected array to return a positive length. Returned 0 instead.',
+  falsy_value: 'Expect value to be truthy, but it is falsy instead.',
+  wrong_type: 'Expect value to be one type, but is some other type.',
+  no_network: 'networkId has the falsy value.'
+}
 
 // Get the base URL from a peer
 const getBaseUrl = (peer) => `${peer.isHttps ? 'https://' : 'http://'}${peer.ip}:${peer.port}`
 
 // Remove a peer from a list based on its IP address.
-const removePeerFromList = (peer, list) => list ? list.filter(p => p.ip !== peer.ip) : list
+const removePeerFromList = (peer, list) => {
+  if (!peer) return list
+  if (!list) return false
+  return list.filter(listed => listed.ip !== peer.ip)
+}
 
 // Return the default network ID based on the profile. The profile object is provided by rootGetters.
 const currentNetworkId = getters => {
@@ -43,37 +57,87 @@ export default {
   getters: {
     /**
      * Get all peers for current network.
-     * @param {Boolean} [ignoreCurrentPeer=false] Set if the current peer should be ignored when returning a list of all peers.
+     * @param {Boolean} [ignoreCurrent=false] Set if the current peer should be ignored when returning a list of all peers.
      * @param {string} [networkId=null] Network ID, eg 'ark.devnet'.
      * @return { Object[] | Null} The peer list.
      */
-    all: (state, getters, _, rootGetters) => ({ ignoreCurrentPeer = false, networkId = null }) => {
+    all: (state, getters, _, rootGetters) => ({ ignoreCurrent = false, networkId = null } = {}) => {
       networkId = networkId || currentNetworkId(rootGetters)
 
-      if (!networkId) return null
+      if (!networkId) {
+        logger.error(errors.no_network)
+        return null
+      }
 
       let peers = state && state.all && state.all[networkId].peers
 
-      if (ignoreCurrentPeer) peers = removePeerFromList(getters.current(), peers)
+      if (!peers) logger.error(errors.falsy_value)
+
+      if (ignoreCurrent) {
+        const currentPeer = getters.current()
+        peers = removePeerFromList(currentPeer, peers)
+      }
+
+      if (peers.length < 1) logger.error(errors.array_zero_length)
 
       return peers
     },
 
     /**
-     * Get peer for current network based on ip.
-     * @param  {string} ip
-     * @return {(Object|undefined)}
+     * Gets the first peer that matches the IP address.
+     * @param {string} ip The IP address of the peer.
+     * @param {string} [networkId = currentNetworkId] The network that the peer is on.
+     * @return {(Object|undefined|Error)} The peer object. Returns undefined if none is found. Returns an error if no peer is provided.
      */
-    get: (_, getters) => ip => (peers => peers ? peers.find(peer => peer.ip === ip) : undefined)(getters.all()),
+    get: (_, getters) => ({ ip, networkId } = {}) => {
+      if (!ip) throw new Error('Unable to find peer: no IP is provided')
+
+      const peers = getters.all({ networkId })
+
+      if (!peers) {
+        logger.error(errors.falsy_value)
+        return undefined
+      }
+
+      const peer = peers.find(peer => peer.ip === ip)
+
+      if (!peer) logger.error(errors.falsy_value)
+
+      return peer
+    },
+
+    /**
+     * Determine best peer for current network (random from top 10).
+     * @param  {Boolean} [ignoreCurrent=true] Ignore current peer when selecting the best.
+     * @return {(Object|null)}
+     */
+    best: (_, getters) => ({ ignoreCurrent = true } = {}) => {
+      const peers = getters.bestPeers(undefined, ignoreCurrent)
+
+      if (!peers) {
+        logger.error(errors.falsy_value)
+        return null
+      }
+
+      return Object.values(peers)[random(peers.length - 1)]
+    },
 
     /**
      * Determine best peer for current network (random from top 10).
      * @param  {Boolean} [ignoreCurrent=true]
-     * @return {(Object|null)}
+     * @return {Object[]}
      */
-    best: (_, getters) => (ignoreCurrent = true) => {
-      const peers = getters.bestPeers(undefined, ignoreCurrent)
-      return (peers ? Object.values(peers)[random(peers.length - 1)] : null)
+    bestPeers: (_, getters) => (maxRandom = 10, ignoreCurrent = true) => {
+      const peers = getters.all({ ignoreCurrent: ignoreCurrent })
+
+      if (!peers) logger.error(errors.falsy_value)
+
+      if (peers.length < 1) {
+        logger.error(errors.array_zero_length)
+        return []
+      }
+
+      return peers.slice(0, Math.min(maxRandom, peers.length))
     },
 
     /**
@@ -82,7 +146,7 @@ export default {
      * @return {Object[]} containing peer objects
      */
     randomPeers: (_, getters) => (amount = 5) => {
-      const peers = getters.all({ IgnoreCurrentPeer: true })
+      const peers = getters.all({ IgnoreCurrent: true })
       return peers.lenght ? shuffle(peers).slice(0, amount) : []
     },
 
@@ -121,30 +185,22 @@ export default {
     },
 
     /**
-     * Determine best peer for current network (random from top 10).
-     * @param  {Boolean} [ignoreCurrent=true]
-     * @return {Object[]}
-     */
-    bestPeers: (_, getters) => (maxRandom = 10, ignoreCurrent = true) => {
-      const peers = getters.all({ ignoreCurrentPeer: ignoreCurrent })
-      if (!peers.length) {
-        return []
-      }
-
-      return peers.slice(0, Math.min(maxRandom, peers.length))
-    },
-
-    /**
      * Get current peer.
      * @param {string} networkId The ID of the network. This doesn't make much sense, since you cannot be connected to multiple networks.
      * @return {(Object|boolean)} - false if no current peer
      */
     current: (state, getters, __, rootGetters) => (networkId = null) => {
       networkId = networkId || currentNetworkId(rootGetters)
-      if (!networkId) return false
+      if (!networkId) {
+        logger.error(errors.no_network)
+        return false
+      }
 
       const currentPeer = state.current[networkId]
-      if (isEmpty(currentPeer)) return false
+      if (isEmpty(currentPeer)) {
+        logger.error('currentPeer is empty')
+        return false
+      }
 
       return currentPeer
     },
@@ -310,7 +366,7 @@ export default {
         }
       }
 
-      let peer = network ? getters.best(true, network.id) : getters.best()
+      let peer = network ? getters.best({ ignoreCurrent: true, networkId: network.id }) : getters.best()
 
       if (!peer) return null
 
