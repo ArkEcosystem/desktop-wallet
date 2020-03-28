@@ -332,7 +332,7 @@ export default {
 
       ipcRenderer.send('splashscreen:app-ready')
 
-      await Promise.all([this.$plugins.fetchPluginsFromAdapter(), this.$plugins.fetchBlacklist(), this.$plugins.fetchWhitelist()])
+      await Promise.all([this.$plugins.fetchPluginsFromAdapter(), this.$plugins.fetchPluginsList()])
     },
 
     __watchProfile () {

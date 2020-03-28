@@ -158,7 +158,15 @@ export default {
 
     isWhitelisted: (_, getters) => plugin => {
       if (Object.prototype.hasOwnProperty.call(getters.whitelisted.global, plugin.config.id)) {
-        return semver.lte(plugin.config.version, getters.whitelisted.global[plugin.config.id])
+        return semver.lte(plugin.config.version, getters.whitelisted.global[plugin.config.id].version)
+      }
+
+      return false
+    },
+
+    isGrant: (_, getters) => pluginId => {
+      if (Object.prototype.hasOwnProperty.call(getters.whitelisted.global, pluginId) && Object.prototype.hasOwnProperty.call(getters.whitelisted.global[pluginId], 'isGrant')) {
+        return getters.whitelisted.global[pluginId].isGrant
       }
 
       return false
@@ -167,11 +175,11 @@ export default {
     isInstalledSupported: (_, getters) => pluginId => {
       const plugin = getters.installedById(pluginId)
 
-      if (!plugin.config.minVersion) {
+      if (!plugin.config.minimumVersion) {
         return true
       }
 
-      return semver.gte(releaseService.currentVersion, plugin.config.minVersion)
+      return semver.gte(releaseService.currentVersion, plugin.config.minimumVersion)
     },
 
     avatar: state => profile => {

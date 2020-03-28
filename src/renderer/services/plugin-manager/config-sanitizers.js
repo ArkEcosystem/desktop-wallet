@@ -87,9 +87,9 @@ const sanitizeVersion = version => {
   return semver.valid(version) || semver.coerce(version) || '0.0.0'
 }
 
-const sanitizeMinVersion = config => {
-  const minVersion = getOption(config, 'minVersion') || config.minVersion
-  return semver.valid(minVersion) || semver.coerce(minVersion) || '0.0.0'
+const sanitizeMinimumVersion = config => {
+  const minimumVersion = getOption(config, 'minimumVersion') || config.minimumVersion
+  return semver.valid(minimumVersion) || semver.coerce(minimumVersion) || '0.0.0'
 }
 
 const sanitizeLogo = config => {
@@ -167,7 +167,7 @@ export {
   sanitizeIsOfficial,
   sanitizeKeywords,
   sanitizeLogo,
-  sanitizeMinVersion,
+  sanitizeMinimumVersion,
   sanitizePermissions,
   sanitizeSize,
   sanitizeSource,

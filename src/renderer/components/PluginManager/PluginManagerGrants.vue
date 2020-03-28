@@ -1,40 +1,33 @@
 <template>
   <div
     v-tooltip="{
-      content: $t('PAGES.PLUGIN_MANAGER.OFFICIAL', { author }),
+      content: $t('PAGES.PLUGIN_MANAGER.GRANTS'),
       placement: 'bottom'
     }"
-    class="PluginManagerCheckmark"
+    class="PluginManagerGrants"
   >
     <SvgIcon
-      name="ark-checkmark"
+      name="ark-grants"
       view-box="0 0 16 16"
     />
   </div>
 </template>
 
 <script>
-import { PLUGINS } from '@config'
 import SvgIcon from '@/components/SvgIcon'
 
 export default {
-  name: 'PluginManagerCheckmark',
+  name: 'PluginManagerGrants',
 
   components: {
     SvgIcon
-  },
-
-  computed: {
-    author () {
-      return PLUGINS.officialAuthor
-    }
   }
 }
 </script>
 
 <style lang="postcss" scoped>
-.PluginManagerCheckmark {
+.PluginManagerGrants {
   @apply flex items-center ml-1 w-4 h-4;
-  color: #007cff;
+  color: #ffae10;
 }
 </style>
