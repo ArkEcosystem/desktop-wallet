@@ -1,8 +1,9 @@
 <template>
-  <div class="Slider-navigation">
+  <div class="Navigation">
     <!-- Left Button -->
     <div
-      class="Slider-navigation__left"
+      class="Navigation__left"
+      :class="leftButtonClass"
       @click="triggerPageAdvance('backward')"
     >
       <SvgIcon
@@ -13,7 +14,8 @@
 
     <!-- Right Button -->
     <div
-      class="Slider-navigation__right"
+      class="Navigation__right"
+      :class="rightButtonClass"
       @click="triggerPageAdvance('forward')"
     >
       <SvgIcon
@@ -34,6 +36,20 @@ export default {
     SvgIcon
   },
 
+  props: {
+    leftButtonClass: {
+      type: String,
+      required: false,
+      default: null
+    },
+
+    rightButtonClass: {
+      type: String,
+      required: false,
+      default: null
+    }
+  },
+
   methods: {
     triggerPageAdvance (direction) {
       this.$emit('navigationclick', direction)
@@ -43,29 +59,38 @@ export default {
 </script>
 
 <style scoped>
-.Slider-navigation__left,
-.Slider-navigation__right {
+.Navigation__left,
+.Navigation__right {
   @apply .absolute .rounded .bg-theme-button .text-theme-button-text .flex .pin-y .my-auto .cursor-pointer .shadow;
   width: 35px;
   height: 35px;
 }
 
-.Slider-navigation__left:hover,
-.Slider-navigation__right:hover {
+.Navigation__left:hover,
+.Navigation__right:hover {
   @apply .bg-theme-button-active;
 }
 
-.Slider-navigation__left {
+/*.Navigation__left {
   @apply .pin-l .-ml-2;
   padding-right: 0.125rem;
 }
 
-.Slider-navigation__right {
+.Navigation__right {
   @apply .pin-r .-mr-2;
+}*/
+
+.Navigation__left {
+  @apply .pin-l;
+  padding-right: 0.125rem;
 }
 
-.Slider-navigation__left .SvgIcon,
-.Slider-navigation__right .SvgIcon {
+.Navigation__right {
+  @apply .pin-r;
+}
+
+.Navigation__left .SvgIcon,
+.Navigation__right .SvgIcon {
   @apply .m-auto;
 }
 </style>

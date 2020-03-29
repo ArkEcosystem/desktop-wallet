@@ -1,7 +1,23 @@
 <template>
-  <div class="SliderImage">
-    <div class="SliderImage__container">
-      <div class="SliderImage__wrapper">
+  <div
+    class="SliderImage"
+    :class="{
+      'flex flex-col': !isRow
+    }"
+  >
+    <div
+      class="SliderImage__container"
+      :class="{
+        'SliderImage__container--row': isRow,
+        'SliderImage__container--stack': !isRow
+      }"
+    >
+      <div
+        class="SliderImage__container__content"
+        :class="{
+          'overflow-x-hidden': isRow
+        }"
+      >
         <transition-group
           :name="sliderClass"
           tag="div"
@@ -9,32 +25,50 @@
           @after-leave="transitionEnd"
         >
           <div
-            v-for="pageId in [currentIndex]"
-            :key="pageId"
+            v-for="index in [currentIndex]"
+            :key="index"
             class="SliderImage__slide"
+            :class="{
+              'SliderImage__slide--stack w-full justify-center': !isRow
+            }"
           >
             <div
-              v-for="(image, imageId) in getPageImages(pageId)"
-              :key="imageId"
-              class="flex w-1/3 justify-center overflow-hidden mx-1 rounded-xl"
+              v-if="isRow"
+              class="SliderImage__slide SliderImage__slide--row"
             >
-              <img
-                :src="`data:image/png;base64,${image}`"
-                class="m-auto h-full arounded-xl"
+              <div
+                v-for="(image, imageId) in getPageImages(index)"
+                :key="imageId"
+                class="flex w-1/3 justify-center overflow-hidden mx-1 rounded-xl"
               >
+                <img
+                  :src="`data:image/png;base64,${image}`"
+                  class="m-auto h-full arounpageCountded-xl"
+                  @click="openImage(imageId)"
+                >
+              </div>
             </div>
+
+            <img
+              v-else
+              :src="`data:image/png;base64,${images[index]}`"
+            >
           </div>
         </transition-group>
       </div>
 
       <Navigation
         v-if="pageCount > 1"
+        :left-button-class="isRow ? '-ml-2' : 'ml-6'"
+        :right-button-class="isRow ? '-mr-2' : 'mr-6'"
         @navigationclick="handleNavigation"
       />
     </div>
 
     <Pagination
       v-if="pageCount > 1"
+      :current-index="currentIndex"
+      :page-count="pageCount"
       @paginationclick="goToPage"
     />
   </div>
@@ -52,26 +86,31 @@ export default {
     Pagination
   },
 
-  provide () {
-    return {
-      sliderImage: this
-    }
-  },
-
   props: {
     images: {
       type: Array,
       required: true,
       default: null
+    },
+
+    isRow: {
+      type: Boolean,
+      required: false,
+      default: false
+    },
+
+    imageIndex: {
+      type: Number,
+      required: false,
+      default: 0
     }
   },
 
-  data: () => ({
+  data: (vm) => ({
     perPage: 3,
-    currentIndex: 0,
+    currentIndex: vm.imageIndex,
     isTransitioning: false,
-    sliderClass: 'slides-right',
-    selectedImage: null
+    sliderClass: 'slides-right'
   }),
 
   computed: {
@@ -130,6 +169,11 @@ export default {
 
       this.isTransitioning = true
       this.currentIndex = page - 1
+    },
+
+    openImage (imageId) {
+      const selectedImage = this.currentIndex * this.perPage + imageId
+      this.$emit('openimageclick', selectedImage)
     }
   }
 }
@@ -138,21 +182,35 @@ export default {
 <style scoped>
 .SliderImage__container {
   @apply .relative .select-none;
+}
+.SliderImage__container--row {
   height: 150px;
 }
+.SliderImage__container--stack {
+  @apply .flex-1 .overflow-x-hidden;
+  width: 640px;
+  height: 550px;
+}
 
-.SliderImage__wrapper {
-  @apply .w-full .h-full .relative .overflow-x-hidden;
+.SliderImage__container__content {
+  @apply .w-full .h-full .relative;
 }
 
 .SliderImage__slide {
   @apply .absolute .flex .flex-none .h-full .pin .overflow-hidden;
 }
-.SliderImage__slide img {
+
+.SliderImage__slide--row img {
   max-width: none;
 }
-.SliderImage__slide img:hover {
+.SliderImage__slide--row img:hover {
   @apply .cursor-pointer .opacity-75;
+}
+
+.SliderImage__slide--stack img {
+  max-width: none;
+  height: max-content;
+  @apply .m-auto .max-h-full;
 }
 
 .slides-right-leave-active,

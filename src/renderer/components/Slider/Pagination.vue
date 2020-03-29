@@ -1,9 +1,9 @@
 <template>
-  <div class="Slider-pagination">
+  <div class="Pagination">
     <div
       v-for="page in pageCount"
       :key="page"
-      class="Slider-pagination__page"
+      class="Pagination__page"
       :class="{
         'bg-theme-button': currentIndex + 1 !== page,
         'bg-theme-button-active': currentIndex + 1 === page
@@ -17,15 +17,15 @@
 export default {
   name: 'Pagination',
 
-  inject: ['sliderImage'],
-
-  computed: {
-    pageCount () {
-      return this.sliderImage.pageCount
+  props: {
+    currentIndex: {
+      type: Number,
+      required: true
     },
 
-    currentIndex () {
-      return this.sliderImage.getCurrentIndex
+    pageCount: {
+      type: Number,
+      required: true
     }
   },
 
@@ -38,11 +38,11 @@ export default {
 </script>
 
 <style scoped>
-.Slider-pagination {
+.Pagination {
   @apply .flex .mt-4 .justify-center;
 }
 
-.Slider-pagination__page {
+.Pagination__page {
   @apply .rounded-full .p-1 .mx-1 .cursor-pointer;
 }
 </style>
