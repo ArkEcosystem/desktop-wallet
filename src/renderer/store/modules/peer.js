@@ -3,7 +3,7 @@ import { PeerDiscovery } from '@arkecosystem/peers'
 import ClientService from '@/services/client'
 import config from '@config'
 import i18n from '@/i18n'
-import PeerModel from '@/models/peer'
+// import PeerModel from '@/models/peer'
 import Vue from 'vue'
 
 const logger = {
@@ -46,14 +46,7 @@ const optionalChaining = (fn, failsafe) => {
 // Return an object containing chain and net from the networkId. Eg: ark.devnet => { chain: ark, net: devnet}
 const chainNetFromNetworkId = networkId => (arr => ({ chain: arr[0], net: arr[1] }))(networkId.split('.'))
 
-// I still don't know what this does.
-const deserializePeer = peer => {
-  try {
-    return PeerModel.deserialize(peer)
-  } catch (error) {
-    logger(error.message)
-  }
-}
+// Include peer serialization functions
 
 export default {
   namespaced: true,
@@ -268,62 +261,110 @@ export default {
   mutations: {
     SET_PEERS (state, { peers, networkId }) {
       Vue.set(state.all, networkId, {
-        peers,
-        lastUpdated: new Date()
+        peers: peers,
+        lastUpdated: Date.now()
       })
     },
+
+    CLEAR_PEERS (state, { networkId }) {
+      Vue.set(state.all, networkId, {
+        peers: undefined,
+        lastUpdated: undefined
+      })
+    },
+
     SET_CURRENT_PEER (state, { peer, networkId }) {
       Vue.set(state.current, networkId, peer)
+    },
+
+    CLEAR_CURRENT_PEER (state, { networkId }) {
+      Vue.set(state.current, networkId, undefined)
     }
   },
 
   actions: {
     /**
-     * Set peers for specific network.
-     * @param  {Object[]} peers A peer list
-     * @param  {string} networkId A network ID.
+     * Set peers for the network
+     * @param  {Object[]} peers A list of peer objects.
+     * @param  {string} [networkId = currentNetworkId()] A network ID.
      * @return {void}
      */
-    setToNetwork ({ commit }, { peers, networkId }) {
+    'set/peers' ({ rootGetters, commit }, { peers, networkId } = {}) {
+      if (!peers) {
+        logger.error('No peers to set. Send an empty array if this is the desired behaviour.')
+        return
+      }
+
+      networkId = networkId || currentNetworkId(rootGetters)
+
+      if (!networkId) {
+        logger.error('Unable to set peers')
+        return
+      }
+
       commit('SET_PEERS', {
-        peers: peers.map(peer => deserializePeer(peer)),
-        networkId: networkId
+        peers,
+        networkId
       })
     },
 
     /**
-     * Set peers for current network.
-     * @param  {Object[]} peers The peer list.
+     * Set current peer for the network
+     * @param {Object} peer The peer. If you want to set an empty peer, send an empty object.
+     * @param {string} [networkId = defaultNetworkId()] A network ID.
      * @return {void}
      */
-    set ({ rootGetters, dispatch }, peers) {
-      const networkId = currentNetworkId(rootGetters)
-      if (!networkId) return
-      dispatch('setToNetwork', { peers: peers, networkId: networkId })
-    },
+    async 'set/current' ({ commit, dispatch, rootGetters }, { peer, networkId, update = true } = {}) {
+      if (!peer) {
+        logger.error('No peer was provided to be set as current.')
+        return
+      }
 
-    /**
-     * Set current peer for current network.
-     * @param  {Object} peer
-     * @return {void}
-     */
-    async setCurrentPeer ({ commit, dispatch, rootGetters }, peer) {
-      if (!peer) return
+      networkId = networkId || currentNetworkId(rootGetters)
 
-      peer = await dispatch('updatePeer', peer)
-
-      const networkId = currentNetworkId(rootGetters)
       if (!networkId) return
 
-      this._vm.$client.host = getBaseUrl(peer)
+      if (update) {
+        // Use the current peer as the base url for requests.
+        this._vm.$client.host = getBaseUrl(peer)
 
-      // TODO only when necessary (when / before sending) (if no dynamic)
-      await dispatch('transaction/updateStaticFees', null, { root: true })
+        peer = await dispatch('updatePeer', peer)
+
+        // Update the static fees when setting a new peer.
+        // TODO only when necessary (when / before sending) (if no dynamic)
+        await dispatch('transaction/updateStaticFees', null, { root: true })
+      }
 
       commit('SET_CURRENT_PEER', {
         peer,
         networkId: networkId
       })
+    },
+
+    /**
+     * Clears the peers available to a network.
+     * @param {string} [networkId = currentNetworkId()]
+     * @returns {void}
+     */
+    'clear/peers' ({ commit, rootGetters }, { networkId }) {
+      networkId = networkId || currentNetworkId(rootGetters)
+
+      if (!networkId) return
+
+      commit('CLEAR_PEERS', { networkId: networkId })
+    },
+
+    /**
+     * Clear the current peer.
+     * @param {string} [networkId=currentNetworkId()]
+     * @returns {void}
+     */
+    'clear/current' ({ commit, rootGetters }, { networkId }) {
+      networkId = networkId || currentNetworkId(rootGetters)
+
+      if (!networkId) return
+
+      commit('CLEAR_CURRENT_PEER', { networkId })
     },
 
     /**
@@ -444,7 +485,7 @@ export default {
 
       try {
         const peer = await dispatch('findBest', { refresh })
-        await dispatch('setCurrentPeer', peer)
+        await dispatch('set/current', { peer })
       } catch (error) {
         logger.error(error)
         if (skipIfCustom) await dispatch('fallbackToSeed')
@@ -471,8 +512,8 @@ export default {
      * Fallback to seed peer, cleaning all the peer data.
      */
     async fallbackToSeedPeer ({ dispatch }) {
-      dispatch('set', [])
-      dispatch('setCurrentPeer', null)
+      dispatch('clear/peers')
+      dispatch('clear/current')
       await dispatch('connectToBest', { skipIfCustom: false })
     },
 
@@ -583,7 +624,7 @@ export default {
 
       try {
         peer = await dispatch('updatePeer', peer)
-        await dispatch('setCurrentPeer', peer)
+        await dispatch('set/current', { peer })
       } catch (error) {
         await dispatch('fallbackToSeedPeer')
         await dispatch('refresh')

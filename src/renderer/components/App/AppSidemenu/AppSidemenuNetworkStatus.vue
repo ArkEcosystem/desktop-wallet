@@ -276,7 +276,7 @@ export default {
         this.showLoadingModal = false
       } else {
         response.isCustom = true
-        await this.$store.dispatch('peer/setCurrentPeer', response)
+        await this.$store.dispatch('peer/set/current', { peer: response })
         await this.$store.dispatch('peer/updatePeerSystem')
         this.$success(`${this.$t('PEER.CONNECTED')}: ${peer.host}:${peer.port}`)
         if (closeTrigger) {
@@ -300,7 +300,7 @@ export default {
       if (!peer) {
         this.$error('Could not find peer')
       } else {
-        await this.$store.dispatch('peer/setCurrentPeer', peer)
+        await this.$store.dispatch('peer/set/current', { peer })
       }
     },
 
