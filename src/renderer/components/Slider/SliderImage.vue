@@ -1,5 +1,6 @@
 <template>
   <div
+    v-if="hasImages"
     class="SliderImage"
     :class="{
       'flex flex-col': !isRow
@@ -71,6 +72,11 @@
       :page-count="pageCount"
       @paginationclick="goToPage"
     />
+
+    <slot
+      :image-index="selectedImage"
+      :close="emitClose"
+    />
   </div>
 </template>
 
@@ -110,10 +116,15 @@ export default {
     perPage: 3,
     currentIndex: vm.imageIndex,
     isTransitioning: false,
-    sliderClass: 'slides-right'
+    sliderClass: 'slides-right',
+    selectedImage: null
   }),
 
   computed: {
+    hasImages () {
+      return this.images && this.images.length > 0
+    },
+
     pageCount () {
       return this.isRow ? Math.ceil(this.images.length / this.perPage) : this.images.length
     },
@@ -136,6 +147,11 @@ export default {
   },
 
   methods: {
+    emitClose () {
+      this.selectedImage = null
+      this.$emit('close')
+    },
+
     getPageImages (pageIndex) {
       return this.images.slice(pageIndex * this.perPage, (pageIndex * this.perPage) + this.perPage)
     },
@@ -186,8 +202,7 @@ export default {
     },
 
     openImage (imageId) {
-      const selectedImage = this.currentIndex * this.perPage + imageId
-      this.$emit('openimageclick', selectedImage)
+      this.selectedImage = this.currentIndex * this.perPage + imageId
     },
 
     onArrowKeys (event) {

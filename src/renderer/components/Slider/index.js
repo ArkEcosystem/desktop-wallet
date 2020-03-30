@@ -1,6 +1,7 @@
-import Slider from './Slider'
+import SliderImage from './SliderImage'
+import SliderImageModal from './SliderImageModal'
 
-export default Slider
 export {
-  Slider
+  SliderImage,
+  SliderImageModal
 }
