@@ -131,13 +131,13 @@
 
       <div class="mt-6">
         <SliderImage
-          :images="plugin.images"
           :is-row="true"
+          :images="plugin.images"
         >
           <template slot-scope="{ imageIndex, closeImage }">
             <SliderImageModal
-              :images="plugin.images"
               :is-row="false"
+              :images="plugin.images"
               :image-index="imageIndex"
               :close-image="closeImage"
             />

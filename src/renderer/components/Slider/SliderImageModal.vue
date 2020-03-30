@@ -2,7 +2,6 @@
   <ModalWindow
     v-if="imageIndex !== null"
     modal-classes="SliderImageModal"
-    aacontainer-classes="SliderImageModal max-w-md"
     @close="emitClose"
   >
     <SliderImage
@@ -26,16 +25,16 @@ export default {
   },
 
   props: {
-    images: {
-      type: Array,
-      required: true,
-      default: null
-    },
-
     isRow: {
       type: Boolean,
       required: false,
       default: false
+    },
+
+    images: {
+      type: Array,
+      required: true,
+      default: null
     },
 
     imageIndex: {

@@ -93,16 +93,16 @@ export default {
   },
 
   props: {
-    images: {
-      type: Array,
-      required: true,
-      default: null
-    },
-
     isRow: {
       type: Boolean,
       required: false,
       default: false
+    },
+
+    images: {
+      type: Array,
+      required: true,
+      default: null
     },
 
     imageIndex: {
