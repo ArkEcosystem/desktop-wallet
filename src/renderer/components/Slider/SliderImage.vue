@@ -111,6 +111,12 @@ export default {
       default: 0
     },
 
+    perPage: {
+      type: Number,
+      required: false,
+      default: 3
+    },
+
     showNavigation: {
       type: Boolean,
       required: false,
@@ -125,7 +131,6 @@ export default {
   },
 
   data: (vm) => ({
-    perPage: 3,
     currentIndex: vm.imageIndex,
     isTransitioning: false,
     sliderClass: 'slides-right',
