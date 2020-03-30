@@ -6,7 +6,6 @@
   >
     <SliderImage
       :images="images"
-      :is-row="false"
       :image-index="imageIndex"
       :show-navigation="showNavigation"
       :show-pagination="showPagination"
@@ -27,12 +26,6 @@ export default {
   },
 
   props: {
-    isRow: {
-      type: Boolean,
-      required: false,
-      default: false
-    },
-
     images: {
       type: Array,
       required: true,

@@ -136,7 +136,6 @@
         >
           <template slot-scope="{ imageIndex, closeImage }">
             <SliderImageModal
-              :is-row="false"
               :images="plugin.images"
               :image-index="imageIndex"
               :close-image="closeImage"

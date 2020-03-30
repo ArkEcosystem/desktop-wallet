@@ -44,7 +44,7 @@
               >
                 <img
                   :src="`data:image/png;base64,${image}`"
-                  class="m-auto h-full arounpageCountded-xl"
+                  class="m-auto h-full arounded-xl"
                   @click="openImage(imageId)"
                 >
               </div>
