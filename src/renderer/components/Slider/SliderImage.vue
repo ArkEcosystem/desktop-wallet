@@ -59,7 +59,7 @@
       </div>
 
       <Navigation
-        v-if="pageCount > 1"
+        v-if="showNavigation && pageCount > 1"
         :left-button-class="isRow ? '-ml-2' : 'ml-6'"
         :right-button-class="isRow ? '-mr-2' : 'mr-6'"
         @navigationclick="handleNavigation"
@@ -67,7 +67,7 @@
     </div>
 
     <Pagination
-      v-if="pageCount > 1"
+      v-if="showPagination && pageCount > 1"
       :current-index="currentIndex"
       :page-count="pageCount"
       @paginationclick="goToPage"
@@ -109,6 +109,18 @@ export default {
       type: Number,
       required: false,
       default: 0
+    },
+
+    showNavigation: {
+      type: Boolean,
+      required: false,
+      default: true
+    },
+
+    showPagination: {
+      type: Boolean,
+      required: false,
+      default: true
     }
   },
 

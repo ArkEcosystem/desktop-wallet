@@ -8,6 +8,8 @@
       :images="images"
       :is-row="false"
       :image-index="imageIndex"
+      :show-navigation="showNavigation"
+      :show-pagination="showPagination"
     />
   </ModalWindow>
 </template>
@@ -41,6 +43,18 @@ export default {
       type: Number,
       required: false,
       default: 0
+    },
+
+    showNavigation: {
+      type: Boolean,
+      required: false,
+      default: true
+    },
+
+    showPagination: {
+      type: Boolean,
+      required: false,
+      default: true
     },
 
     closeImage: {
