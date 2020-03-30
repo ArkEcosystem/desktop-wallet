@@ -18,7 +18,6 @@
         :images="data"
         :is-row="false"
         :image-index="selectedImage"
-        @close="selectedImage = null"
       />
     </ModalWindow>
   </div>
@@ -56,6 +55,7 @@ export default {
 
   methods: {
     emitClose () {
+      this.selectedImage = null
       this.$emit('close')
     },
 

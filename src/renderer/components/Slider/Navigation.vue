@@ -71,15 +71,6 @@ export default {
   @apply .bg-theme-button-active;
 }
 
-/*.Navigation__left {
-  @apply .pin-l .-ml-2;
-  padding-right: 0.125rem;
-}
-
-.Navigation__right {
-  @apply .pin-r .-mr-2;
-}*/
-
 .Navigation__left {
   @apply .pin-l;
   padding-right: 0.125rem;

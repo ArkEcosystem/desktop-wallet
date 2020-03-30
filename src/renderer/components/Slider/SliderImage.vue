@@ -115,11 +115,23 @@ export default {
 
   computed: {
     pageCount () {
-      return Math.ceil(this.images.length / this.perPage)
+      return this.isRow ? Math.ceil(this.images.length / this.perPage) : this.images.length
     },
 
     getCurrentIndex () {
       return this.currentIndex
+    }
+  },
+
+  mounted () {
+    if (!this.isRow) {
+      document.addEventListener('keyup', this.onArrowKeys, false)
+    }
+  },
+
+  destroyed () {
+    if (!this.isRow) {
+      document.removeEventListener('keyup', this.onArrowKeys)
     }
   },
 
@@ -137,18 +149,20 @@ export default {
         return
       }
 
+      const imageCount = this.isRow ? this.pageCount - 1 : this.images.length - 1
+
       this.isTransitioning = true
 
       if (direction === 'backward') {
         if (this.currentIndex === 0) {
           this.sliderClass = 'slides-right'
-          this.currentIndex = this.pageCount - 1
+          this.currentIndex = imageCount
         } else {
           this.sliderClass = 'slides-left'
           this.currentIndex--
         }
       } else if (direction === 'forward') {
-        if (this.currentIndex >= this.pageCount - 1) {
+        if (this.currentIndex >= imageCount) {
           this.sliderClass = 'slides-left'
           this.currentIndex = 0
         } else {
@@ -174,6 +188,16 @@ export default {
     openImage (imageId) {
       const selectedImage = this.currentIndex * this.perPage + imageId
       this.$emit('openimageclick', selectedImage)
+    },
+
+    onArrowKeys (event) {
+      if (event.key === 'ArrowLeft') {
+        this.transitionEnd()
+        this.handleNavigation('backward')
+      } else if (event.key === 'ArrowRight') {
+        this.transitionEnd()
+        this.handleNavigation('forward')
+      }
     }
   }
 }
