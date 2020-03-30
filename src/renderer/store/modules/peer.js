@@ -163,8 +163,8 @@ export default {
 
     /**
      * Retrieves an amount of random peers
-     * @param {number} [amount=5] number of peers to return
-     * @param {Boolen} [ignoreCurrent = true ] I
+     * @param {number} [amount=5] Number of peers to return.
+     * @param {Boolen} [ignoreCurrent = true ] Ignore current peer when returning the random list.
      * @param {string} networkId Include the network Id.
      * @return {Object[]} containing peer objects
      */
@@ -176,7 +176,10 @@ export default {
 
     'seed/all': (_, __, ___, rootGetters) => ({ networkId } = {}) => {
       networkId = networkId || currentNetworkId(rootGetters)
+
       if (!networkId) return []
+
+      if (!config.PEERS.includes(networkId)) logger.error('The network doesnt have seed peers')
 
       const peers = optionalChaining(() => config.PEERS[networkId], [])
 

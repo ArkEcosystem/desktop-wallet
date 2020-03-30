@@ -3,32 +3,40 @@ import { random, sample } from 'lodash'
 /**
  * Generate a valid peer based on specs
  * @param {Object} params Force some spec on the peer.
+ * @returns {Object} The peer object
  */
-export function generateValidPeer (params = {}) {
+export function generateValidPeer ({ params = {}, seed = false } = {}) {
   const ip = `${random(1, 255)}.${random(1, 255)}.${random(1, 255)}.${random(1, 255)}`
   const isHttps = !!random()
   const host = `${isHttps ? 'https://' : 'http://'}${ip}`
   const port = 4003
-  const version = random() ? '2.0.0' : '1.3.1'
+  const version = sample(['2.0.0', '1.3.1', '2'])
   const height = 6030358
   const os = sample(['linux', 'windows', 'mac_os'])
-  const status = 'OK'
-  const latency = random(1, 1000)
-  const lastUpdated = Date.now()
+  const status = sample(['OK', undefined])
+  const latency = sample([random(1, 1000), 0]) // When latency is undefined, it returns 0 instead. Changing 0 to undefined break tests.
+  const lastUpdated = sample([Date.now(), undefined])
 
-  const peer = {
+  let peer = {
     ip,
-    host,
     port,
     isHttps,
-    p2pPort: null,
-    version,
-    height,
-    status,
-    os,
-    latency,
-    isCustom: false,
-    lastUpdated
+    version
+  }
+
+  // Seed peers doesn't have any of this proprieties. Check. config/peers
+  if (!seed) {
+    peer = {
+      ...peer,
+      p2pPort: null,
+      host,
+      height,
+      status,
+      os,
+      latency,
+      isCustom: false,
+      lastUpdated
+    }
   }
 
   return {

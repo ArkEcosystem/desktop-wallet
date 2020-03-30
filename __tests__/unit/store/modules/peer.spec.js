@@ -13,23 +13,15 @@ Vue.use(apiClient)
 
 network1.nethash = '2a44f340d76ffc3df204c5f38cd355b7496c9065a1ade2ef92071436bd72e867'
 
-const goodPeer6 = generateValidPeer()
-const goodPeer7 = generateValidPeer()
-const goodPeer8 = generateValidPeer()
-const goodPeer9 = generateValidPeer()
-const goodPeer10 = generateValidPeer()
-const goodPeer11 = generateValidPeer()
-const goodPeer12 = generateValidPeer()
-const goodPeer13 = generateValidPeer()
-const goodPeer14 = generateValidPeer()
-const goodPeer15 = generateValidPeer()
-
 const peerList = [
-  [goodPeer1, goodPeer2, goodPeer6, goodPeer7, goodPeer8, goodPeer9, goodPeer10],
-  [goodPeer4, goodPeer5, goodPeer11, goodPeer12, goodPeer13, goodPeer14, goodPeer15]
+  [goodPeer1, goodPeer2, generateValidPeer(), generateValidPeer(), generateValidPeer(), generateValidPeer()],
+  [goodPeer4, goodPeer5, generateValidPeer(), generateValidPeer(), generateValidPeer(), generateValidPeer()]
 ]
 
-const networkList = [network1, network2]
+const networkList = [
+  network1,
+  network2
+]
 
 function currentNetwork () {
   const session = store.state.session
@@ -152,7 +144,7 @@ describe('peer store module', () => {
         expect(getter.length).toBe(amount)
       })
 
-      it('should be able to get 5 random peers from current network', () => {
+      it('should be able to get 10 random peers from current network', () => {
         const possiblePeers = currentNetworkPeers()
         const amount = Math.min(10, possiblePeers.length)
         const getter = store.getters['peer/random']({ amount })
@@ -187,6 +179,17 @@ describe('peer store module', () => {
         expect(getter).not.toInclude(impossiblePeer)
         expect(getter.length).toBe(amount)
       })
+    })
+
+    // This needs proper mocking over @config and handling.
+    describe('seed/all', () => {
+      test.todo('should be able to get all seed peers')
+      test.todo('should be able to get all seed peers from a specific network')
+    })
+
+    describe('seed/random', () => {
+      test.todo('should be able to get seed peers')
+      test.todo('should be able to get seed peers from a specific network')
     })
   })
 })
