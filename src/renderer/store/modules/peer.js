@@ -179,8 +179,6 @@ export default {
 
       if (!networkId) return []
 
-      if (!config.PEERS.includes(networkId)) logger.error('The network doesnt have seed peers')
-
       const peers = optionalChaining(() => config.PEERS[networkId], [])
 
       return peers
@@ -200,21 +198,31 @@ export default {
 
     /**
      * Returns an array of peers that can be used to broadcast a transaction to
-     * Currently this consists of top 10 peers + 5 random peers + 5 random seed peers
+     * Currently this consists of random top 10 peers + 5 random peers.
      * @return {Object[]} containing peer objects
      */
-    broadcastPeers: (_, getters) => (networkId = null) => {
-      const bestPeers = getters.best({
+    broadcast: (_, getters) => (networkId = null) => {
+      const peers = []
+
+      // top 10
+      peers.concat(getters.best({
         max: 10,
+        min: 10,
         ignoreCurrent: false,
         networkId
-      })
-      const randomPeers = getters.random({ amount: 5, networkId })
-      const seedPeers = getters['seed/random']({ amount: 5, networkId })
-      let peers = bestPeers.concat(randomPeers)
-      if (seedPeers.length) {
-        peers = peers.concat(seedPeers)
-      }
+      }))
+
+      // 5 random
+      peers.concat(getters.random({
+        amount: 5,
+        networkId
+      }))
+
+      // 5 seed random
+      peers.concat(getters['seed/random']({
+        amount: 5,
+        networkId
+      }))
 
       return peers
     },
@@ -226,12 +234,14 @@ export default {
      */
     current: (state, getters, __, rootGetters) => (networkId = null) => {
       networkId = networkId || currentNetworkId(rootGetters)
+
       if (!networkId) {
         logger.error(errors.no_network)
         return false
       }
 
       const currentPeer = state.current[networkId]
+
       if (isEmpty(currentPeer)) {
         logger.error('currentPeer is empty')
         return false
@@ -246,9 +256,12 @@ export default {
      */
     lastUpdated: (state, _, __, rootGetters) => () => {
       const networkId = currentNetworkId(rootGetters)
+
       if (!networkId) return false
-      const networkPeers = state.all[networkId]
-      return networkPeers ? (networkPeers && networkPeers.lastUpdated) : null
+
+      const networkPeers = optionalChaining(() => state.all[networkId].lastUpdated, null)
+
+      return networkPeers
     }
   },
 
