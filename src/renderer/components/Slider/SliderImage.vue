@@ -127,10 +127,6 @@ export default {
 
     pageCount () {
       return this.isRow ? Math.ceil(this.images.length / this.perPage) : this.images.length
-    },
-
-    getCurrentIndex () {
-      return this.currentIndex
     }
   },
 
