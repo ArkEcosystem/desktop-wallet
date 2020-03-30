@@ -75,7 +75,7 @@
 
     <slot
       :image-index="selectedImage"
-      :close="emitClose"
+      :close-image="closeImage"
     />
   </div>
 </template>
@@ -143,11 +143,6 @@ export default {
   },
 
   methods: {
-    emitClose () {
-      this.selectedImage = null
-      this.$emit('close')
-    },
-
     getPageImages (pageIndex) {
       return this.images.slice(pageIndex * this.perPage, (pageIndex * this.perPage) + this.perPage)
     },
@@ -197,10 +192,6 @@ export default {
       this.currentIndex = page - 1
     },
 
-    openImage (imageId) {
-      this.selectedImage = this.currentIndex * this.perPage + imageId
-    },
-
     onArrowKeys (event) {
       if (event.key === 'ArrowLeft') {
         this.transitionEnd()
@@ -209,6 +200,14 @@ export default {
         this.transitionEnd()
         this.handleNavigation('forward')
       }
+    },
+
+    openImage (imageId) {
+      this.selectedImage = this.currentIndex * this.perPage + imageId
+    },
+
+    closeImage () {
+      this.selectedImage = null
     }
   }
 }

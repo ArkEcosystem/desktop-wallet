@@ -44,7 +44,7 @@ export default {
       default: 0
     },
 
-    closeTrigger: {
+    closeImage: {
       type: Function,
       required: true,
       default: null
@@ -53,7 +53,8 @@ export default {
 
   methods: {
     emitClose () {
-      this.closeTrigger()
+      this.closeImage()
+      this.$emit('close')
     }
   }
 }

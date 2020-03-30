@@ -134,12 +134,12 @@
           :images="plugin.images"
           :is-row="true"
         >
-          <template slot-scope="{ imageIndex, close }">
+          <template slot-scope="{ imageIndex, closeImage }">
             <SliderImageModal
               :images="plugin.images"
               :is-row="false"
               :image-index="imageIndex"
-              :close-trigger="close"
+              :close-image="closeImage"
             />
           </template>
         </SliderImage>
