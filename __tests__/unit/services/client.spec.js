@@ -79,7 +79,7 @@ jest.mock('@/store', () => ({
       port: '8080',
       isHttps: false
     }),
-    'peer/broadcastPeers': () => [
+    'peer/broadcast': () => [
       {
         ip: '1.1.1.1',
         port: '8080',
@@ -2130,7 +2130,7 @@ describe('Services > Client', () => {
       })
 
       it('should get peers to broadcast to', async () => {
-        const spy = jest.spyOn(store.getters, 'peer/broadcastPeers')
+        const spy = jest.spyOn(store.getters, 'peer/broadcast')
 
         await client.broadcastTransaction({ network: 23 }, true)
 
@@ -2162,7 +2162,7 @@ describe('Services > Client', () => {
       })
 
       it('should broadcast to current peer if no broadcast peers', async () => {
-        const spy = jest.spyOn(store.getters, 'peer/broadcastPeers').mockReturnValue()
+        const spy = jest.spyOn(store.getters, 'peer/broadcast').mockReturnValue()
         const response = await client.broadcastTransaction({ network: 23 }, true)
 
         spy.mockRestore()

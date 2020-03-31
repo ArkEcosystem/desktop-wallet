@@ -79,7 +79,7 @@ jest.mock('@/store', () => ({
       port: '8080',
       isHttps: false
     }),
-    'peer/broadcastPeers': () => [
+    'peer/broadcast': () => [
       {
         ip: '1.1.1.1',
         port: '8080',

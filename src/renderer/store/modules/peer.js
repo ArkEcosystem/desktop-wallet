@@ -194,7 +194,7 @@ export default {
      * Currently this consists of random top 10 peers + 5 random peers.
      * @return {Object[]} containing peer objects
      */
-    broadcast: (_, getters) => (networkId = null) => {
+    broadcast: (_, getters) => ({ networkId = null } = {}) => {
       const peers = []
 
       // top 10
@@ -225,7 +225,7 @@ export default {
      * @param {string} networkId The ID of the network. This doesn't make much sense, since you cannot be connected to multiple networks.
      * @return {(Object|boolean)} - false if no current peer
      */
-    current: (state, getters, __, rootGetters) => (networkId = null) => {
+    current: (state, getters, __, rootGetters) => ({ networkId = null } = {}) => {
       networkId = networkId || currentNetworkId(rootGetters)
 
       if (!networkId) {
@@ -256,6 +256,7 @@ export default {
 
       return networkPeers
     }
+
   },
 
   mutations: {
@@ -346,7 +347,7 @@ export default {
      * @param {string} [networkId = currentNetworkId()]
      * @returns {void}
      */
-    'clear/peers' ({ commit, rootGetters }, { networkId }) {
+    'clear/peers' ({ commit, rootGetters }, { networkId } = {}) {
       networkId = networkId || currentNetworkId(rootGetters)
 
       if (!networkId) return
@@ -359,7 +360,7 @@ export default {
      * @param {string} [networkId=currentNetworkId()]
      * @returns {void}
      */
-    'clear/current' ({ commit, rootGetters }, { networkId }) {
+    'clear/current' ({ commit, rootGetters }, { networkId } = {}) {
       networkId = networkId || currentNetworkId(rootGetters)
 
       if (!networkId) return
@@ -436,7 +437,7 @@ export default {
         this._vm.$error(i18n.t('PEER.FAILED_REFRESH'))
       }
 
-      dispatch('set', peers)
+      dispatch('set/peers', peers)
     },
 
     /**

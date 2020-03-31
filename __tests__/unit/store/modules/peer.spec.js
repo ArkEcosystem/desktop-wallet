@@ -183,13 +183,22 @@ describe('peer store module', () => {
 
     // This needs proper mocking over @config and handling.
     describe('seed/all', () => {
-      test.todo('should be able to get all seed peers')
+      test.todo('should be able to get all seed peers from current network')
       test.todo('should be able to get all seed peers from a specific network')
     })
 
     describe('seed/random', () => {
-      test.todo('should be able to get seed peers')
+      test.todo('should be able to get seed peers from current network')
       test.todo('should be able to get seed peers from a specific network')
+    })
+
+    describe('broadcast', () => {
+      test.todo('should be able to get the broadcast peers from current network')
+      test.todo('should be able to get the broadcast peers from an specific network')
+    })
+
+    describe('current', () => {
+      test.todo('should be able to get the current peer from the current network')
     })
   })
 })
