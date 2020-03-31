@@ -46,7 +46,7 @@ export default {
         let match = true
 
         if (category === 'all') {
-          match = match && !plugin.config.categories.includes('theme')
+          match = match && !plugin.config.categories.some(category => ['theme', 'language'].includes(category))
         } else if (category && category !== 'all') {
           match = match && plugin.config.categories.includes(category)
         }
@@ -158,7 +158,15 @@ export default {
 
     isWhitelisted: (_, getters) => plugin => {
       if (Object.prototype.hasOwnProperty.call(getters.whitelisted.global, plugin.config.id)) {
-        return semver.lte(plugin.config.version, getters.whitelisted.global[plugin.config.id])
+        return semver.lte(plugin.config.version, getters.whitelisted.global[plugin.config.id].version)
+      }
+
+      return false
+    },
+
+    isGrant: (_, getters) => pluginId => {
+      if (Object.prototype.hasOwnProperty.call(getters.whitelisted.global, pluginId) && Object.prototype.hasOwnProperty.call(getters.whitelisted.global[pluginId], 'isGrant')) {
+        return getters.whitelisted.global[pluginId].isGrant
       }
 
       return false
@@ -167,11 +175,11 @@ export default {
     isInstalledSupported: (_, getters) => pluginId => {
       const plugin = getters.installedById(pluginId)
 
-      if (!plugin.config.minVersion) {
+      if (!plugin.config.minimumVersion) {
         return true
       }
 
-      return semver.gte(releaseService.currentVersion, plugin.config.minVersion)
+      return semver.gte(releaseService.currentVersion, plugin.config.minimumVersion)
     },
 
     avatar: state => profile => {
@@ -228,6 +236,21 @@ export default {
         }
 
         return themes
+      }, {})
+    },
+
+    languages: (_, getters) => {
+      return Object.keys(getters.loaded).reduce((languages, pluginId) => {
+        const plugin = getters.loaded[pluginId]
+
+        if (plugin.languages) {
+          languages = {
+            ...languages,
+            ...plugin.languages
+          }
+        }
+
+        return languages
       }, {})
     },
 
@@ -325,6 +348,10 @@ export default {
 
     SET_PLUGIN_THEMES (state, data) {
       Vue.set(state.loaded[data.profileId][data.pluginId], 'themes', data.themes)
+    },
+
+    SET_PLUGIN_LANGUAGES (state, data) {
+      Vue.set(state.loaded[data.profileId][data.pluginId], 'languages', data.languages)
     },
 
     SET_PLUGIN_WALLET_TABS (state, data) {
@@ -543,6 +570,24 @@ export default {
       commit('SET_PLUGIN_THEMES', {
         ...data,
         profileId: data.profileId || rootGetters['session/profileId']
+      })
+    },
+
+    setLanguages ({ commit, getters, rootGetters }, { pluginId, languages, profileId }) {
+      if (!getters.isEnabled(pluginId, profileId)) {
+        throw new Error('Plugin is not enabled')
+      }
+
+      for (const language of Object.keys(languages)) {
+        if (getters.languages[language]) {
+          throw new Error(`Language "${language}" exists already`)
+        }
+      }
+
+      commit('SET_PLUGIN_LANGUAGES', {
+        pluginId,
+        languages,
+        profileId: profileId || rootGetters['session/profileId']
       })
     },
 

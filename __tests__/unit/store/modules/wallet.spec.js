@@ -14,18 +14,18 @@ describe('WalletModule', () => {
   }
 
   const models = [
-    { id: 1, address: 'A1', profileId: sessionProfile.id, name: 'name1' },
-    { id: 2, address: 'A2', profileId: otherProfile.id, name: 'name2' },
-    { id: 3, address: 'A3', profileId: otherProfile.id, name: 'name3' },
-    { id: 4, address: 'A3', profileId: sessionProfile.id, name: 'name4' },
-    { id: 5, address: 'A4', profileId: sessionProfile.id, name: 'name5', isContact: true },
-    { id: 6, address: 'A5', profileId: sessionProfile.id, name: 'name6', isContact: true }
+    { id: 1, address: 'A1', publicKey: 'PK1', balance: '1', profileId: sessionProfile.id, name: 'name1', vote: null },
+    { id: 2, address: 'A2', publicKey: 'PK2', balance: '2', profileId: otherProfile.id, name: 'name2', vote: null },
+    { id: 3, address: 'A3', publicKey: 'PK3', balance: '3', profileId: otherProfile.id, name: 'name3', vote: null },
+    { id: 4, address: 'A3', publicKey: 'PK4', balance: '4', profileId: sessionProfile.id, name: 'name4', vote: null },
+    { id: 5, address: 'A4', publicKey: 'PK5', balance: '5', profileId: sessionProfile.id, name: 'name5', vote: null, isContact: true },
+    { id: 6, address: 'A5', publicKey: 'PK6', balance: '6', profileId: sessionProfile.id, name: 'name6', vote: null, isContact: true }
   ]
 
   const ledgerWallets = {
-    L1: { address: 'L1', profileId: sessionProfile.id, isLedger: true },
-    L2: { address: 'L2', profileId: sessionProfile.id, isLedger: true },
-    L3: { address: 'L3', profileId: otherProfile.id, isLedger: true }
+    L1: { address: 'L1', publicKey: 'PKL1', balance: '1', profileId: sessionProfile.id, name: null, vote: null, isLedger: true },
+    L2: { address: 'L2', publicKey: 'PKL2', balance: '2', profileId: sessionProfile.id, name: null, vote: null, isLedger: true },
+    L3: { address: 'L3', publicKey: 'PKL3', balance: '3', profileId: otherProfile.id, name: null, vote: null, isLedger: true }
   }
 
   const messages = [
@@ -127,6 +127,14 @@ describe('WalletModule', () => {
   })
 
   describe('getters publicByProfileId', () => {
+    it.each(['address', 'balance', 'name', 'publicKey', 'vote'])('should include wallet %s property', property => {
+      const publicByProfileId = store.getters['wallet/publicByProfileId']('exampleId')
+
+      for (const publicWallet of publicByProfileId) {
+        expect(publicWallet[property]).not.toBeUndefined()
+      }
+    })
+
     describe('when the session network is the network of the requested profile', () => {
       it('should include ledger wallets', () => {
         const walletsOfExampleId = [

@@ -7,7 +7,10 @@
     @close="emitClose"
   >
     <section class="ModalConfirmation__container flex flex-col">
-      <div class="mb-6">
+      <div
+        v-if="question || note"
+        class="mb-6"
+      >
         <h3
           v-if="question"
           class="font-semibold"
