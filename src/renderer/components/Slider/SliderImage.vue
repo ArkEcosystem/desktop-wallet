@@ -40,11 +40,11 @@
               <div
                 v-for="(image, imageId) in getPageImages(index)"
                 :key="imageId"
-                class="flex w-1/3 justify-center overflow-hidden mx-1 rounded-xl"
+                class="flex w-1/3 justify-center overflow-hidden mx-1 rounded-xl border-2 border-theme-line-separator hover:border-grey"
               >
                 <img
                   :src="`data:image/png;base64,${image}`"
-                  class="m-auto h-full arounded-xl"
+                  class="m-auto h-full"
                   @click="openImage(imageId)"
                 >
               </div>
