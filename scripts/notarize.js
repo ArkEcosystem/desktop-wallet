@@ -18,10 +18,10 @@ exports.default = async function notarizing (context) {
   }
 
   // We are on a fork without the required credentials.
-  // if (process.env.GITHUB_HEAD_REF || process.env.GITHUB_BASE_REF) {
-  //   console.log('[SKIPPING_NOTARISATION] Detected Fork')
-  //   return
-  // }
+  if (process.env.GITHUB_HEAD_REF || process.env.GITHUB_BASE_REF) {
+    console.log('[SKIPPING_NOTARISATION] Detected Fork')
+    return
+  }
 
   const appName = context.packager.appInfo.productFilename
 
