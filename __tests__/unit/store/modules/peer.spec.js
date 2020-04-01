@@ -227,4 +227,37 @@ describe('peer store module', () => {
       test.todo('should be able to clear the current peer for a network.')
     })
   })
+
+  describe('actions', () => {
+    describe('set/peers', () => {
+      test.todo('should be able to set available peers for the current network')
+      test.todo('should be able to set available peers for a specific network.')
+      test.todo('should not be able to set available peers to a falsy value')
+      test.todo('should not be able to set available peers if it is not an array') // can be improved.
+      test.todo('should not be able to set available peers to an empty vector')
+    })
+    describe('set/current', () => {
+      test.todo('should be able to set the current peer for the current network')
+      test.todo('should be able to set the current peer for a specific network')
+      test.todo('should not be able to set a falsy value as the current peer')
+      test.todo('should not be able to set an empty object as the current peer')
+      test.todo('should be able to update the peer before setting it as the current peer')
+      test.todo('should be able to not update the peer before setting it as the current peer')
+    })
+
+    describe('clear/peers', () => {
+      test.todo('should be able to clear peers for the current network')
+      test.todo('should be able to clear peers for a specific network')
+    })
+
+    describe('clear/current', () => {
+      test.todo('should be able to clear peers for the current network')
+      test.todo('should be able to clear peers for a specific network')
+    })
+
+    describe('refresh', () => {
+      test.todo('should be able to refresh the peers available for the current network')
+      test.todo('should be able to refresh the peers available for a specific network')
+    })
+  })
 })
