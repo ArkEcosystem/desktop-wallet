@@ -236,7 +236,7 @@ export default {
       const currentPeer = state.current[networkId]
 
       if (isEmpty(currentPeer)) {
-        logger.error('currentPeer is empty')
+        logger.warn('currentPeer is empty')
         return false
       }
 
@@ -255,6 +255,41 @@ export default {
       const networkPeers = optionalChaining(() => state.all[networkId].lastUpdated, null)
 
       return networkPeers
+    },
+
+    /**
+     * Gets a new peer discovery instance. The discovery is based on the following order:
+     *
+     * 1) It checks for the network peers.
+     * 2) It checks for the peer peers.
+     * 3) It checks for the network server peer.
+     * @param {string} [networkId = currentNetworkId()]
+     * @returns {Promise} The instance of the PeerDiscovery.
+     */
+    discovery: (getters, __, ___, rootGetters) => ({ networkId } = {}) => {
+      networkId = networkId || currentNetworkId(rootGetters)
+
+      if (!networkId) return
+
+      /*
+        The application is configured to find peers based on the network names.
+        The default network IDs are based on the chain + net, so it need to be
+        striped to only use the network name (main or devnet). Otherwise, use
+        the network id.
+      */
+      const defaultNetworks = Object.keys(config.PEERS)
+      const net = defaultNetworks.includes(networkId) ? chainNetFromNetworkId(networkId).net : networkId
+
+      // First it checks for the default network peers.
+      if (net) return PeerDiscovery.new({ networkOrHost: net })
+
+      // Then checks for the peers connected.
+      const currentPeer = getters.current()
+      if (currentPeer) return PeerDiscovery.new({ networkOrHost: `${getBaseUrl(currentPeer)}/api/v2/peers` })
+
+      // And then checks for the default network server
+      const networkServer = rootGetters.network[networkId].server
+      return PeerDiscovery.new({ networkOrHost: `${networkServer}/api/v2/peers` })
     }
 
   },
@@ -369,45 +404,22 @@ export default {
     },
 
     /**
-     * Gets a new peer Discovery instance. The discovery is based on the following order:
-     *
-     * 1) It checks for the network peers.
-     * 2) It checks for the peer peers.
-     * 3) It checks for the network server peer.
-     *
-     * @param {string} [network=null] - The network object
-     * @return {PeerDiscovery | void}
-     */
-    async getPeerDiscovery ({ getters, rootGetters }, network = null) {
-      network = network || rootGetters['session/network']
-
-      if (!network) return
-
-      const { net } = chainNetFromNetworkId(network.id)
-
-      // 1) It checks for the default network peers.
-      if (net) return PeerDiscovery.new({ networkOrHost: net })
-
-      // 2) It checks for the peers connected.
-      const currentPeer = getters.current()
-      if (currentPeer) return PeerDiscovery.new({ networkOrHost: `${getBaseUrl(currentPeer)}/api/v2/peers` })
-
-      // it checks for the default network server
-      return PeerDiscovery.new({ networkOrHost: `${network.server}/api/v2/peers` })
-    },
-
-    /**
      * Refresh peer list.
-     * @param {Object} [network=null] The network object.
+     * @param {Object} [networkId=null] The network object.
      * @return {void}
      */
-    async refresh ({ dispatch }, network = null) {
+    async refresh ({ getters, dispatch, rootGetters }, { networkId } = {}) {
+      networkId = networkId || currentNetworkId(rootGetters)
+
+      if (!networkId) return
+
       let peers = []
 
       try {
-        const peerDiscovery = await dispatch('getPeerDiscovery', network)
+        const peerDiscovery = await getters.discovery({ networkId })
 
-        peerDiscovery.withLatency(300)
+        peerDiscovery
+          .withLatency(300)
           .sortBy('latency')
 
         peers = await peerDiscovery
@@ -428,6 +440,7 @@ export default {
             })
         }
       } catch (error) {
+        logger.error(error)
         logger.error('Could not refresh peer list:', error)
         this._vm.$error(i18n.t('PEER.FAILED_REFRESH'))
       }
@@ -437,7 +450,7 @@ export default {
         this._vm.$error(i18n.t('PEER.FAILED_REFRESH'))
       }
 
-      dispatch('set/peers', peers)
+      dispatch('set/peers', { peers })
     },
 
     /**
@@ -446,17 +459,19 @@ export default {
      * @param  {Object} [network=null] The network object
      * @return {(Object|null)}
      */
-    async findBest ({ dispatch, getters }, { refresh = true, network = null }) {
+    async findBest ({ dispatch, getters, rootGetters }, { refresh = true, network = {} }) {
+      const networkId = network.id || currentNetworkId(rootGetters)
+
       if (refresh) {
         try {
-          await dispatch('refresh', network)
+          await dispatch('refresh', { networkId })
         } catch (error) {
           logger.error(error)
           this._vm.$error(`${i18n.t('PEER.FAILED_REFRESH')}: ${error.message}`)
         }
       }
 
-      let peer = network ? getters.best({ ignoreCurrent: true, networkId: network.id }) : getters.best()
+      let peer = network ? getters.best({ ignoreCurrent: true, networkId, min: 1, max: 1 })[0] : getters.best({ min: 1, max: 1 })[0]
 
       if (!peer) return null
 
@@ -489,7 +504,7 @@ export default {
         await dispatch('set/current', { peer })
       } catch (error) {
         logger.error(error)
-        if (skipIfCustom) await dispatch('fallbackToSeed')
+        if (skipIfCustom) await dispatch('fallbackToSeedPeer')
       }
 
       return peer
@@ -600,6 +615,7 @@ export default {
         latencyEnd = performance.now()
         if (!client || !status) throw new Error()
       } catch (err) {
+        logger.error(err)
         throw i18n.t('PEER.STATUS_CHECK_FAILED')
       }
 
