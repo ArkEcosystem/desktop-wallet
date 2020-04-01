@@ -34,7 +34,7 @@ brew cask install ark-desktop-wallet
 
 ## Translations
 
-Translations are no longer accepted for the Desktop Wallet. Our plan is to use plugins to provide languages in the near future.
+Translations are no longer accepted for the Desktop Wallet. We are using plugins to provide languages.
 
 ## Development
 
@@ -114,15 +114,6 @@ yarn test:e2e
 
 # Build the application and run end-to-end tests
 yarn test:e2e:full
-
-# List what translations are missing or unused on a specific language. It could capture suggestions that are not accurate
-yarn i18n 'src/renderer/i18n/locales/LANGUAGE.js'
-
-# List what English messages are missing or unused (English is the default language)
-yarn i18n:en-US
-
-# List what translations are missing or unused on every language
-yarn i18n:all
 ```
 
 </details>
