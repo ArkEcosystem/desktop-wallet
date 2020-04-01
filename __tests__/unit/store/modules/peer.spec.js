@@ -200,5 +200,31 @@ describe('peer store module', () => {
     describe('current', () => {
       test.todo('should be able to get the current peer from the current network')
     })
+
+    describe('discovery', () => {
+      describe('default networks (ark.mainnet & ark.devnet)', () => {
+        test.todo('should be able to get the peer discovery instance for the current network')
+        test.todo('should be able to get the peer discovery instance for a specific network')
+      })
+      describe('custom networks', () => {
+        test.todo('should be able to get the peer discovery instance for a custom network')
+      })
+    })
+  })
+
+  describe('mutations', () => {
+    describe('SET_PEERS', () => {
+      test.todo('should be able to set the peers to a network.')
+      test.todo('should be able to update the lastUpdate date.')
+    })
+    describe('CLEAR_PEERS', () => {
+      test.todo('should be able to clear all the peers from a network.')
+    })
+    describe('SET_CURRENT_PEER', () => {
+      test.todo('should be able to set the current peer for a network.')
+    })
+    describe('CLEAR_CURRENT_PEER', () => {
+      test.todo('should be able to clear the current peer for a network.')
+    })
   })
 })
