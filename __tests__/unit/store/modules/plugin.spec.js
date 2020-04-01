@@ -84,6 +84,50 @@ describe('PluginModule', () => {
     })
 
     describe('filtered', () => {
+      describe.only('when given a filter', () => {
+        beforeAll(() => {
+          store.replaceState(merge(
+            JSON.parse(JSON.stringify(initialState)),
+            {
+              plugin: {
+                available: {
+                  [availablePlugins[0].config.id]: {
+                    config: {
+                      ...availablePlugins[0].config,
+                      isOfficial: true
+                    }
+                  },
+                  [availablePlugins[1].config.id]: availablePlugins[1]
+                },
+                whitelisted: {
+                  global: {
+                    [availablePlugins[0].config.id]: {
+                      version: availablePlugins[0].config.version
+                    },
+                    [availablePlugins[1].config.id]: {
+                      isGrant: true,
+                      version: availablePlugins[1].config.version
+                    }
+                  }
+                }
+              }
+            }
+          ))
+        })
+
+        it('should filter official plugins only', () => {
+          expect(store.getters['plugin/filtered'](null, null, 'official').map(plugin => {
+            return plugin.config.id
+          })).toEqual([availablePlugins[0].config.id])
+        })
+
+        it('should filter funded plugins only', () => {
+          expect(store.getters['plugin/filtered'](null, null, 'funded').map(plugin => {
+            return plugin.config.id
+          })).toEqual([availablePlugins[1].config.id])
+        })
+      })
+
       describe('blacklisted plugins', () => {
         it('should filter out globally blacklisted plugins', () => {
           store.replaceState(merge(
