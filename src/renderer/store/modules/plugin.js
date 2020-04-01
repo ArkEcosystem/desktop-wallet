@@ -31,6 +31,14 @@ export default {
       return uniqBy([...getters.installed, ...getters.available], 'config.id')
     },
 
+    official: (_, getters) => {
+      return getters.all.filter(plugin => plugin.config.isOfficial)
+    },
+
+    funded: (_, getters) => {
+      return getters.all.filter(plugin => getters.isGrant(plugin.config.id))
+    },
+
     filtered: (_, getters, __, rootGetters) => (query, category, filter) => {
       let plugins = getters[filter || 'all']
 
