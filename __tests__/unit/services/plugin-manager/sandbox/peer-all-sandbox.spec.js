@@ -21,7 +21,7 @@ describe('Peer All Sandbox', () => {
     walletApi = {}
     app = {
       $store: {
-        dispatch: mockDispatch
+        getters: mockDispatch
       }
     }
     peerAllSandbox = createPeerAllSandbox(walletApi, app)
