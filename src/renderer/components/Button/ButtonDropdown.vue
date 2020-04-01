@@ -189,8 +189,8 @@ export default {
 
 <style>
 .ButtonDropdown__button--nolabel {
-  @apply .border-l .rounded-tl-none .rounded-bl-none;
-  border-left-color: var(--theme-header-text)
+  @apply .rounded-tl-none .rounded-bl-none;
+  margin-left: 1px;
 }
 .ButtonDropdown__list__item button {
   @apply .rounded-none;
