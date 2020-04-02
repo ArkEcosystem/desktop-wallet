@@ -58,6 +58,21 @@
         </div>
 
         <div
+          v-else-if="data.column.field === 'multisignature'"
+          class="flex items-center justify-center"
+        >
+          <span>
+            <SvgIcon
+              v-if="data.row.multiSignature"
+              v-tooltip="$t('PAGES.WALLET.MULTI_SIGNATURE_WALLET')"
+              class="w-5 h-5 text-theme-heading-text"
+              name="multi-signature"
+              view-box="0 0 16 16"
+            />
+          </span>
+        </div>
+
+        <div
           v-else-if="data.column.field === 'vote'"
         >
           <span class="flex items-center">
@@ -175,6 +190,13 @@ export default {
           sortFn: this.sortByName,
           thClass: !this.showVotedDelegates ? 'w-full' : '',
           tdClass: !this.showVotedDelegates ? 'w-full' : ''
+        },
+        {
+          label: '',
+          field: 'multisignature',
+          sortable: false,
+          thClass: 'text-center not-sortable',
+          tdClass: 'text-center'
         },
         {
           label: this.$t('PAGES.WALLET_ALL.VOTING_FOR'),
