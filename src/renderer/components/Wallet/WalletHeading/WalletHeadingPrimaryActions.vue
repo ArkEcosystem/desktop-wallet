@@ -5,6 +5,7 @@
   >
     <SvgIcon
       v-if="currentWallet.multiSignature"
+      v-tooltip="$t('WALLET.MULTI_SIGNATURE_WALLET')"
       class="w-5 h-5 text-theme-heading-text opacity-50"
       name="multi-signature"
       view-box="0 0 16 16"
