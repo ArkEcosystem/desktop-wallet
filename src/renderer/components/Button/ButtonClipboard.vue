@@ -47,7 +47,8 @@ export default {
   data: () => ({
     isCopying: false,
     isCopySupported: true,
-    copyText: ''
+    copyText: '',
+    timeout: null
   }),
 
   mounted () {
@@ -60,6 +61,10 @@ export default {
     }
   },
 
+  beforeDestroy () {
+    clearTimeout(this.timeout)
+  },
+
   methods: {
     copy () {
       const textArea = document.createElement('textarea')
@@ -70,8 +75,8 @@ export default {
       textArea.select()
 
       this.isCopying = true
-      setTimeout(() => (this.isCopying = false), 1000)
-      setTimeout(() => (this.copyText = this.$t('BUTTON_CLIPBOARD.COPY_TO_CLIPBOARD', [this.subject])), 1500)
+      this.timeout = setTimeout(() => (this.isCopying = false), 1000)
+      this.timeout = setTimeout(() => (this.copyText = this.$t('BUTTON_CLIPBOARD.COPY_TO_CLIPBOARD', [this.subject])), 1500)
 
       try {
         document.execCommand('copy')
