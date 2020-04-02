@@ -48,32 +48,36 @@ function randomPeerFromCurrentNetwork () {
 }
 
 beforeAll(() => {
+  /*
+    This is not ideal. The correct way is to set the state manually or switch
+    the getters, actions e mutations to use a manually created state. This breaks
+    the unit principle.
+  */
   store.commit('network/SET_ALL', networkList)
   store.commit('profile/CREATE', profile1)
   store.commit('session/SET_PROFILE_ID', profile1.id)
-
-  store.commit('peer/SET_PEERS', {
-    peers: peerList[0],
-    networkId: networkList[0].id
-  })
-
-  store.commit('peer/SET_PEERS', {
-    peers: peerList[1],
-    networkId: networkList[1].id
-  })
-
-  store.commit('peer/SET_CURRENT_PEER', {
-    peer: peerList[0][0],
-    networkId: networkList[0]
-  })
-})
-
-beforeEach(() => {
   nock.cleanAll()
 })
 
 describe('peer store module', () => {
   describe('getters', () => {
+    beforeAll(() => {
+      store.commit('peer/SET_PEERS', {
+        peers: peerList[0],
+        networkId: networkList[0].id
+      })
+
+      store.commit('peer/SET_PEERS', {
+        peers: peerList[1],
+        networkId: networkList[1].id
+      })
+
+      store.commit('peer/SET_CURRENT_PEER', {
+        peer: peerList[0][0],
+        networkId: networkList[0]
+      })
+    })
+
     describe('all', () => {
       it('should be able to get all the peers from the current network', () => {
         const peers = currentNetworkPeers()
@@ -229,14 +233,14 @@ describe('peer store module', () => {
   })
 
   describe('actions', () => {
-    describe('set/peers', () => {
+    describe('peers/set', () => {
       test.todo('should be able to set available peers for the current network')
       test.todo('should be able to set available peers for a specific network.')
       test.todo('should not be able to set available peers to a falsy value')
       test.todo('should not be able to set available peers if it is not an array') // can be improved.
       test.todo('should not be able to set available peers to an empty vector')
     })
-    describe('set/current', () => {
+    describe('current/set', () => {
       test.todo('should be able to set the current peer for the current network')
       test.todo('should be able to set the current peer for a specific network')
       test.todo('should not be able to set a falsy value as the current peer')
@@ -245,12 +249,12 @@ describe('peer store module', () => {
       test.todo('should be able to not update the peer before setting it as the current peer')
     })
 
-    describe('clear/peers', () => {
+    describe('peers/clear', () => {
       test.todo('should be able to clear peers for the current network')
       test.todo('should be able to clear peers for a specific network')
     })
 
-    describe('clear/current', () => {
+    describe('current/clear', () => {
       test.todo('should be able to clear peers for the current network')
       test.todo('should be able to clear peers for a specific network')
     })

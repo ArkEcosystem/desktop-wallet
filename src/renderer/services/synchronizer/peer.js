@@ -1,3 +1,3 @@
 export default async synchronizer => {
-  await synchronizer.$store.dispatch('peer/updatePeerSystem')
+  await synchronizer.$store.dispatch('peer/system/update')
 }

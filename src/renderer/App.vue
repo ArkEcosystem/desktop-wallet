@@ -305,8 +305,8 @@ export default {
      */
     async loadNotEssential () {
       ipcRenderer.send('updater:check-for-updates')
-      await this.$store.dispatch('peer/refresh')
-      this.$store.dispatch('peer/connectToBest', {})
+      await this.$store.dispatch('peer/peers/refresh')
+      this.$store.dispatch('peer/peers/connectToBest', {})
       await this.$store.dispatch('network/updateData')
 
       if (this.session_network) {
@@ -315,7 +315,7 @@ export default {
       }
 
       this.$eventBus.on('client:changed', async () => {
-        this.$store.dispatch('peer/connectToBest', {})
+        this.$store.dispatch('peer/peers/connectToBest', {})
         this.$store.dispatch('network/updateData')
         this.$store.dispatch('delegate/load')
         await this.$store.dispatch('ledger/init', this.session_network.slip44)

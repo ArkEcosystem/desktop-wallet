@@ -263,7 +263,7 @@ export default {
     async connectPeer ({ peer, closeTrigger }) {
       this.showLoadingModal = true
 
-      const response = await this.$store.dispatch('peer/validatePeer', {
+      const response = await this.$store.dispatch('peer/peer/validate', {
         host: peer.host,
         port: peer.port
       })
@@ -276,8 +276,8 @@ export default {
         this.showLoadingModal = false
       } else {
         response.isCustom = true
-        await this.$store.dispatch('peer/set/current', { peer: response })
-        await this.$store.dispatch('peer/updatePeerSystem')
+        await this.$store.dispatch('peer/current/set', { peer: response })
+        await this.$store.dispatch('peer/system/update')
         this.$success(`${this.$t('PEER.CONNECTED')}: ${peer.host}:${peer.port}`)
         if (closeTrigger) {
           closeTrigger()
@@ -289,7 +289,7 @@ export default {
 
     async refreshPeer () {
       this.isRefreshing = true
-      await this.$store.dispatch('peer/connectToBest', {
+      await this.$store.dispatch('peer/peers/connectToBest', {
         skipIfCustom: false
       })
       this.isRefreshing = false
@@ -300,7 +300,7 @@ export default {
       if (!peer) {
         this.$error('Could not find peer')
       } else {
-        await this.$store.dispatch('peer/set/current', { peer })
+        await this.$store.dispatch('peer/current/set', { peer })
       }
     },
 

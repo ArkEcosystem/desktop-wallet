@@ -468,7 +468,7 @@ export default {
           port = protocol === 'https:' ? 443 : 80
         }
 
-        const response = await this.$store.dispatch('peer/validatePeer', {
+        const response = await this.$store.dispatch('peer/peer/validate', {
           host,
           port,
           ignoreNetwork: true

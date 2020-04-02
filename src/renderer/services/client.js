@@ -654,10 +654,7 @@ export default class ClientService {
       if (peers && peers.length) {
         for (let i = 0; i < peers.length; i++) {
           try {
-            const client = await store.dispatch(
-              'peer/clientServiceFromPeer',
-              peers[i]
-            )
+            const client = await store.getters['peer/client']({ peer: peers[i] })
             const transaction = await client.client.api('transactions').create({
               transactions: castArray(transactions)
             })
