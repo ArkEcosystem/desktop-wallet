@@ -609,7 +609,7 @@ export default {
      * @param {Object} peer The peer that is going to be fetched.
      * @return {Object | Error} An object with the peer status fetched.
      */
-    async 'peer/fetchStatus' ({ dispatch, getters }, peer) {
+    async 'peer/fetchStatus' ({ getters }, peer) {
       let client, status, latencyStart, latencyEnd
 
       try {
