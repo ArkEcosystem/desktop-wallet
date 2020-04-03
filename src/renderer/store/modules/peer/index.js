@@ -7,8 +7,7 @@ import i18n from '@/i18n'
 import Vue from 'vue'
 
 const logger = {
-  ...console,
-  error: (message) => console.trace(message)
+  ...console
 }
 
 const errors = {
@@ -297,7 +296,7 @@ export default {
      * @param {Object} peer The peer object
      * @return {Promise} The client
      */
-    client: (getters) => ({ peer }) => {
+    'peer/client': (getters) => ({ peer }) => {
       peer = peer || getters.current()
 
       if (!peer) return
@@ -481,7 +480,7 @@ export default {
 
       if (refresh) {
         try {
-          await dispatch('refresh', { networkId })
+          await dispatch('peers/refresh', { networkId })
         } catch (error) {
           logger.error(error)
           this._vm.$error(`${i18n.t('PEER.FAILED_REFRESH')}: ${error.message}`)
@@ -518,7 +517,7 @@ export default {
 
       try {
         const peer = await dispatch('peers/findBest', { refresh })
-        await dispatch('', { peer })
+        await dispatch('current/set', { peer })
       } catch (error) {
         logger.error(error)
         if (skipIfCustom) await dispatch('system/clear')
@@ -583,23 +582,27 @@ export default {
      * @return {(void | Error)} The status for the update.
      */
     async 'peer/update' ({ dispatch }, peer) {
-      let status
-
+      let response
       try {
-        status = await dispatch('peer/fetchStatus', peer)
+        response = await dispatch('peer/fetchStatus', peer)
       } catch (err) {
         logger.error(err)
         throw i18n.t('PEER.STATUS_CHECK_FAILED')
       }
 
-      if (!status) {
+      if (!response) {
         logger.error('No status was fetched')
         throw i18n.t('PEER.STATUS_CHECK_FAILED')
       }
 
-      peer.latency = status.latency
-      peer.height = status.height
-      peer.status = status.status
+      const { status, heigth, latency } = response
+
+      peer = {
+        ...peer,
+        status,
+        heigth,
+        latency
+      }
 
       return peer
     },
@@ -662,19 +665,25 @@ export default {
      * @param  {number} [timeout=3000] Default timeout for all the client requests.
      * @return {(Object|string)}
      */
-    async 'peer/validate' ({ dispatch }, { host, ip, port, nethash, ignoreNetwork = false }) {
+    async 'peer/validate' ({ dispatch }, {
+      host,
+      ip,
+      port,
+      nethash,
+      ignoreNetwork = false
+    }) {
       const schemeUrl = host.match(/^(https?:\/\/)+(.+)$/)
       const isHttps = schemeUrl && schemeUrl[1] === 'https://'
 
       let peer = {
-        host: host,
-        ip: ip,
-        port: +port,
-        isHttps: isHttps
+        host,
+        ip,
+        port,
+        isHttps
       }
 
       try {
-        const isCompatible = await dispatch('checkPeerNetworkCompatibility', {
+        const isCompatible = await dispatch('peer/checkNetwork', {
           peer: peer,
           nethash: nethash
         })
