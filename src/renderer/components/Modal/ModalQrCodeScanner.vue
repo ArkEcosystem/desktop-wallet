@@ -44,7 +44,7 @@
 
         <span
           :class="{
-            'absolute pin-b pin-x text-center py-4 bg-black-transparent': !isLoading
+            'absolute pin-b pin-x text-center py-4 bg-black-transparent text-theme-explanation-text': !isLoading
           }"
         >
           {{ $t('MODAL_QR_SCANNER.INSTRUCTION') }}
