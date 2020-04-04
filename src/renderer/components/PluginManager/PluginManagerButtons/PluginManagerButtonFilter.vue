@@ -59,7 +59,9 @@ export default {
     isOpen: false,
     filters: [
       'all',
-      'installed'
+      'installed',
+      'official',
+      'funded'
     ]
   }),
 
