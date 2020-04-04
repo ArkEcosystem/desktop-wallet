@@ -5,7 +5,6 @@ import PluginManagerSearchBar from './PluginManagerSearchBar'
 import PluginManagerSideMenu from './PluginManagerSideMenu'
 import PluginManagerTable from './PluginManagerTable'
 import PluginLogo from './PluginLogo'
-import PluginSlider from './PluginSlider'
 
 export * from './PluginManagerModals'
 
@@ -16,6 +15,5 @@ export {
   PluginManagerSearchBar,
   PluginManagerSideMenu,
   PluginManagerTable,
-  PluginLogo,
-  PluginSlider
+  PluginLogo
 }
