@@ -88,6 +88,7 @@ export default {
       if (await MultiSignature.performHandshake(peer)) {
         await this.$store.dispatch('session/setMultiSignaturePeer', peer)
         await this.$store.dispatch('profile/setMultiSignaturePeer', peer)
+        await this.$eventBus.emit('wallet:reload:multi-signature')
         this.$success(`${this.$t('PEER.CONNECTED')}: ${peer.host}:${peer.port}`)
 
         if (closeTrigger) {
