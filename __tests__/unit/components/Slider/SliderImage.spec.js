@@ -45,8 +45,7 @@ describe('SliderImage', () => {
   })
 
   it('should render if has images', () => {
-    const sliderImage = wrapper.find('.SliderImage')
-    expect(sliderImage.vm.hasImages).toEqual(true)
+    expect(wrapper.vm.hasImages).toEqual(true)
   })
 
   it('should show navigation if "showNavigation" is true', () => {
@@ -55,9 +54,7 @@ describe('SliderImage', () => {
       showNavigation: true,
       images
     })
-
-    const sliderImage = wrapper.find('.SliderImage')
-    const { showNavigation, pageCount } = sliderImage.vm
+    const { showNavigation, pageCount } = wrapper.vm
     expect(showNavigation && pageCount > 1).toEqual(true)
   })
 
@@ -67,9 +64,7 @@ describe('SliderImage', () => {
       showNavigation: false,
       images
     })
-
-    const sliderImage = wrapper.find('.SliderImage')
-    const { showNavigation, pageCount } = sliderImage.vm
+    const { showNavigation, pageCount } = wrapper.vm
     expect(showNavigation && pageCount > 1).toEqual(false)
   })
 
@@ -79,9 +74,7 @@ describe('SliderImage', () => {
       showPagination: true,
       images
     })
-
-    const sliderImage = wrapper.find('.SliderImage')
-    const { showPagination, pageCount } = sliderImage.vm
+    const { showPagination, pageCount } = wrapper.vm
     expect(showPagination && pageCount > 1).toEqual(true)
   })
 
@@ -91,9 +84,7 @@ describe('SliderImage', () => {
       showPagination: false,
       images
     })
-
-    const sliderImage = wrapper.find('.SliderImage')
-    const { showPagination, pageCount } = sliderImage.vm
+    const { showPagination, pageCount } = wrapper.vm
     expect(showPagination && pageCount > 1).toEqual(false)
   })
 
@@ -104,9 +95,7 @@ describe('SliderImage', () => {
         'preview-1.png'
       ]
     })
-
-    const sliderImage = wrapper.find('.SliderImage')
-    expect(sliderImage.vm.pageCount > 1).toEqual(false)
+    expect(wrapper.vm.pageCount > 1).toEqual(false)
   })
 
   it('should show two images per page', () => {
@@ -115,8 +104,6 @@ describe('SliderImage', () => {
       perPage: 2,
       images
     })
-
-    const sliderImage = wrapper.find('.SliderImage')
-    expect(sliderImage.vm.perPage).toBe(2)
+    expect(wrapper.vm.perPage).toBe(2)
   })
 })

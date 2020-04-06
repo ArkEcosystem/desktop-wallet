@@ -19,8 +19,8 @@ describe('Pagination', () => {
         pageCount: 2
       }
     })
-    const pagination = wrapper.find('.Pagination')
-    expect(pagination.find('.Pagination__page').contains('.bg-theme-button')).toBeTruthy()
+    const pagination = wrapper.find('.Pagination__page')
+    expect(pagination.contains('.bg-theme-button')).toBeTruthy()
   })
 
   it('should render an active button', () => {
@@ -30,7 +30,7 @@ describe('Pagination', () => {
         pageCount: 2
       }
     })
-    const pagination = wrapper.find('.Pagination')
-    expect(pagination.find('.Pagination__page').contains('.bg-theme-button-active')).toBeTruthy()
+    const pagination = wrapper.find('.Pagination__page')
+    expect(pagination.contains('.bg-theme-button-active')).toBeTruthy()
   })
 })
