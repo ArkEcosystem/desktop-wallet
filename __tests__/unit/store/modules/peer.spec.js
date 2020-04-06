@@ -1,10 +1,10 @@
-import nock from 'nock'
 import Vue from 'vue'
 import Vuex from 'vuex'
 import apiClient from '@/plugins/api-client'
+import config from '@config'
 import { random } from 'lodash'
 import store from '@/store'
-import { goodPeer1, goodPeer2, goodPeer4, goodPeer5, generateValidPeer } from '../../__fixtures__/store/peer'
+import { generateValidPeer } from '../../__fixtures__/store/peer'
 import { network1, network2 } from '../../__fixtures__/store/network'
 import { profile1 } from '../../__fixtures__/store/profile'
 
@@ -13,14 +13,23 @@ Vue.use(apiClient)
 
 network1.nethash = '2a44f340d76ffc3df204c5f38cd355b7496c9065a1ade2ef92071436bd72e867'
 
-const peerList = [
-  [goodPeer1, goodPeer2, generateValidPeer(), generateValidPeer(), generateValidPeer(), generateValidPeer()],
-  [goodPeer4, goodPeer5, generateValidPeer(), generateValidPeer(), generateValidPeer(), generateValidPeer()]
-]
-
+/*
+  The IDs over this array are used to select networks.
+  networkList[0] is current network.
+*/
 const networkList = [
   network1,
   network2
+]
+
+const peerList = [
+  [generateValidPeer(), generateValidPeer(), generateValidPeer(), generateValidPeer(), generateValidPeer(), generateValidPeer(), generateValidPeer()],
+  [generateValidPeer(), generateValidPeer(), generateValidPeer(), generateValidPeer(), generateValidPeer(), generateValidPeer(), generateValidPeer()]
+]
+
+const seedPeerList = [
+  [generateValidPeer(), generateValidPeer(), generateValidPeer(), generateValidPeer(), generateValidPeer(), generateValidPeer()],
+  [generateValidPeer(), generateValidPeer(), generateValidPeer(), generateValidPeer(), generateValidPeer(), generateValidPeer()]
 ]
 
 function currentNetwork () {
@@ -37,7 +46,8 @@ function currentNetworkPeers () {
 }
 
 function currentPeer () {
-  const peer = store.state.peer.current
+  const network = currentNetwork()
+  const peer = store.state.peer.current[network.id]
   return peer
 }
 
@@ -56,7 +66,6 @@ beforeAll(() => {
   store.commit('network/SET_ALL', networkList)
   store.commit('profile/CREATE', profile1)
   store.commit('session/SET_PROFILE_ID', profile1.id)
-  nock.cleanAll()
 })
 
 describe('peer store module', () => {
@@ -74,7 +83,7 @@ describe('peer store module', () => {
 
       store.commit('peer/SET_CURRENT_PEER', {
         peer: peerList[0][0],
-        networkId: networkList[0]
+        networkId: networkList[0].id
       })
     })
 
@@ -150,8 +159,16 @@ describe('peer store module', () => {
 
       it('should be able to get 10 random peers from current network', () => {
         const possiblePeers = currentNetworkPeers()
-        const amount = Math.min(10, possiblePeers.length)
+        const amount = Math.min(10, possiblePeers.length) - 1 // -1 to exclude current peer.
         const getter = store.getters['peer/random']({ amount })
+        expect(getter).toIncludeAnyMembers(possiblePeers)
+        expect(getter.length).toBe(amount)
+      })
+
+      it('should be able to get 10 random peers from current network, including the current', () => {
+        const possiblePeers = currentNetworkPeers()
+        const amount = Math.min(10, possiblePeers.length)
+        const getter = store.getters['peer/random']({ amount, ignoreCurrent: false })
         expect(getter).toIncludeAnyMembers(possiblePeers)
         expect(getter.length).toBe(amount)
       })
@@ -185,24 +202,71 @@ describe('peer store module', () => {
       })
     })
 
-    // This needs proper mocking over @config and handling.
-    describe('seed/all', () => {
-      test.todo('should be able to get all seed peers from current network')
-      test.todo('should be able to get all seed peers from a specific network')
-    })
+    describe('seed', () => {
+      beforeAll(() => {
+        // ID 0 is aways current network
+        config.PEERS[networkList[0].id] = seedPeerList[0]
+        config.PEERS[networkList[1].id] = seedPeerList[1]
+      })
 
-    describe('seed/random', () => {
-      test.todo('should be able to get seed peers from current network')
-      test.todo('should be able to get seed peers from a specific network')
+      describe('seed/all', () => {
+        it('should be able to get all seed peers from current network', () => {
+          const id = 0
+          const possibleSeedPeers = seedPeerList[id]
+          const getter = store.getters['peer/seed/all']()
+          expect(getter).toIncludeSameMembers(possibleSeedPeers)
+        })
+
+        it('should be able to get all seed peers from a specific network', () => {
+          const id = 1
+          const possibleSeedPeers = seedPeerList[id]
+          const networkId = networkList[id].id
+          const getter = store.getters['peer/seed/all']({ networkId })
+          expect(getter).toIncludeSameMembers(possibleSeedPeers)
+        })
+      })
+
+      describe('seed/random', () => {
+        it('should be able to get 5 random seed peers from current network', () => {
+          const id = 0
+          const possibleSeedPeers = seedPeerList[id]
+          const getter = store.getters['peer/seed/random']()
+          expect(possibleSeedPeers).toIncludeAllMembers(getter)
+        })
+        it('should be able to get a random seed peers from current network', () => {
+          const id = 0
+          const possibleSeedPeers = seedPeerList[id]
+          const getter = store.getters['peer/seed/random']({ amount: 1 })[0]
+          expect(possibleSeedPeers).toInclude(getter)
+        })
+        it('should be able to get seed peers from a specific network', () => {
+          const id = 1
+          const possibleSeedPeers = seedPeerList[id]
+          const networkId = networkList[id].id
+          const getter = store.getters['peer/seed/random']({ networkId })
+          expect(possibleSeedPeers).toIncludeAnyMembers(getter)
+        })
+      })
     })
 
     describe('broadcast', () => {
-      test.todo('should be able to get the broadcast peers from current network')
+      it('should be able to get the broadcast peers from current network', () => {
+        const id = 0
+        const possibleTop = peerList[id]
+        const possibleRandom = peerList[id]
+        const possibleSeed = seedPeerList[id]
+        const getter = store.getters['peer/broadcast']()
+        expect(getter).toIncludeAnyMembers([...possibleTop, ...possibleRandom, ...possibleSeed])
+      })
       test.todo('should be able to get the broadcast peers from an specific network')
     })
 
     describe('current', () => {
-      test.todo('should be able to get the current peer from the current network')
+      it('should be able to get the current peer from the current network', () => {
+        const peer = currentPeer()
+        const getter = store.getters['peer/current']()
+        expect(getter).toBe(peer)
+      })
     })
 
     describe('discovery', () => {
