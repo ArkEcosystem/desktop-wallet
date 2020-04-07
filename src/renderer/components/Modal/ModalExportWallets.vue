@@ -86,7 +86,7 @@ export default {
         },
         excludeEmpty: {
           active: false,
-          filter: el => el.balance
+          filter: el => Number(el.balance)
         },
         excludeLedger: {
           active: false,
