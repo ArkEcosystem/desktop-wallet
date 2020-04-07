@@ -22,7 +22,7 @@ export function create (walletApi, app) {
       },
 
       getCurrent: () => {
-        return app.$store.getters['peer/current']()
+        return app.$store.getters['peer/current/get']()
       }
     }
   }

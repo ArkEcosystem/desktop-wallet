@@ -22,9 +22,8 @@ const removePeerFromList = (peer, list) => {
 }
 
 export default {
-  state: {
-
-  },
+  namespaced: true,
+  state: {},
 
   getters: {
     /**
@@ -33,7 +32,7 @@ export default {
      * @param {string} [networkId=null] Network ID, eg 'ark.devnet'.
      * @return { Object[] | Null} The peer list.
      */
-    all: (state, getters, _, rootGetters) => ({ ignoreCurrent = false, networkId = null } = {}) => {
+    all: (state, _, __, rootGetters) => ({ ignoreCurrent = false, networkId = null } = {}) => {
       networkId = networkId || optionalChaining(() => rootGetters['session/profile'].networkId, false)
 
       if (!networkId) {
@@ -49,7 +48,7 @@ export default {
       }
 
       if (ignoreCurrent) {
-        const currentPeer = getters['current/current']()
+        const currentPeer = rootGetters['peer/current/get']()
         peers = removePeerFromList(currentPeer, peers)
       }
 
@@ -141,7 +140,7 @@ export default {
      * Currently this consists of random top 10 peers + 5 random peers.
      * @return {Object[]} containing peer objects
      */
-    broadcast: (_, getters) => ({ networkId = null } = {}) => {
+    broadcast: (_, getters, __, rootGetters) => ({ networkId = null } = {}) => {
       const peers = []
 
       // top 10
@@ -159,7 +158,7 @@ export default {
       }))
 
       // 5 seed random
-      peers.concat(getters['seed/random']({
+      peers.concat(rootGetters['peer/seed/random']({
         amount: 5,
         networkId
       }))
@@ -205,7 +204,7 @@ export default {
      * @param  {string} [networkId = currentNetworkId()] A network ID.
      * @return {void}
      */
-    'peers/set' ({ rootGetters, commit }, { peers, networkId } = {}) {
+    'set' ({ rootGetters, commit }, { peers, networkId } = {}) {
       if (!peers) {
         logger.error('No peers to set. Send an empty array if this is the desired behaviour.')
         return
@@ -229,7 +228,7 @@ export default {
        * @param {string} [networkId = currentNetworkId()]
        * @returns {void}
        */
-    'peers/clear' ({ commit, rootGetters }, { networkId } = {}) {
+    'clear' ({ commit, rootGetters }, { networkId } = {}) {
       networkId = networkId || optionalChaining(() => rootGetters['session/profile'].networkId, false)
 
       if (!networkId) return
@@ -242,7 +241,7 @@ export default {
        * @param {Object} [networkId=null] The network object.
        * @return {void}
        */
-    async 'peers/refresh' ({ getters, dispatch, rootGetters }, { networkId } = {}) {
+    async 'refresh' ({ dispatch, rootGetters }, { networkId } = {}) {
       networkId = networkId || optionalChaining(() => rootGetters['session/profile'].networkId, false)
 
       if (!networkId) return
@@ -250,7 +249,7 @@ export default {
       let peers = []
 
       try {
-        const peerDiscovery = await getters['discovery/get']({ networkId })
+        const peerDiscovery = await rootGetters['peer/discovery/get']({ networkId })
 
         peerDiscovery
           .withLatency(300)
@@ -284,7 +283,7 @@ export default {
         this._vm.$error(i18n.t('PEER.FAILED_REFRESH'))
       }
 
-      dispatch('peers/set', { peers })
+      dispatch('peer/available/set', { peers }, { root: true })
     },
 
     /**
@@ -293,12 +292,12 @@ export default {
        * @param  {Object} [network=null] The network object
        * @return {(Object|null)}
        */
-    async 'peers/findBest' ({ dispatch, getters, rootGetters }, { refresh = true, network = {} }) {
+    async 'findBest' ({ dispatch, getters, rootGetters }, { refresh = true, network = {} }) {
       const networkId = network.id || optionalChaining(() => rootGetters['session/profile'].networkId, false)
 
       if (refresh) {
         try {
-          await dispatch('peers/refresh', { networkId })
+          await dispatch('peer/available/refresh', { networkId }, { root: true })
         } catch (error) {
           logger.error(error)
           this._vm.$error(`${i18n.t('PEER.FAILED_REFRESH')}: ${error.message}`)
@@ -309,7 +308,7 @@ export default {
 
       if (!peer) return null
 
-      peer = await dispatch('peer/update', peer)
+      peer = await dispatch('peer/update', peer, { root: true })
 
       return peer
     },
@@ -320,9 +319,9 @@ export default {
        * @param  {Boolean} [skipIfCustom=true] Ignore if a custom peer is set.
        * @return {(Object|null)}
        */
-    async 'peers/connectToBest' ({ dispatch, getters }, { refresh = true, skipIfCustom = true }) {
+    async 'connectToBest' ({ dispatch, rootGetters }, { refresh = true, skipIfCustom = true }) {
       if (skipIfCustom) {
-        const currentPeer = getters['current/current']()
+        const currentPeer = rootGetters['peer/current/get']()
         if (!isEmpty(currentPeer) && currentPeer.isCustom) {
           // TODO only when necessary (when / before sending) (if no dynamic)
           await dispatch('transaction/updateStaticFees', null, { root: true })
@@ -334,11 +333,11 @@ export default {
       let peer
 
       try {
-        const peer = await dispatch('peers/findBest', { refresh })
+        const peer = await dispatch('findBest', { refresh })
         await dispatch('peer/current/set', { peer }, { root: true })
       } catch (error) {
         logger.error(error)
-        if (skipIfCustom) await dispatch('system/clear')
+        if (skipIfCustom) await dispatch('peer/system/clear', null, { root: true })
       }
 
       return peer

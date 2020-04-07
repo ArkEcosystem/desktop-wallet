@@ -214,10 +214,10 @@ export default {
 
   computed: {
     peer () {
-      return this.$store.getters['peer/current']()
+      return this.$store.getters['peer/current/get']()
     },
     bestPeers () {
-      return this.$store.getters['peer/best']({ ignoreCurrent: true, min: 10, max: 10 })
+      return this.$store.getters['peer/available/best']({ ignoreCurrent: true, min: 10, max: 10 })
     },
     peerIps () {
       const bestPeers = this.bestPeers
@@ -247,7 +247,7 @@ export default {
       return null
     },
     lastUpdated () {
-      return this.$store.getters['peer/lastUpdated']()
+      return this.$store.getters['peer/available/lastUpdated']()
     }
   },
 

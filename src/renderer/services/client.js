@@ -642,7 +642,7 @@ export default class ClientService {
       return []
     }
 
-    let currentPeer = store.getters['peer/current']()
+    let currentPeer = store.getters['peer/current/get']()
     if (!currentPeer) {
       currentPeer = this.__parseCurrentPeer()
     }

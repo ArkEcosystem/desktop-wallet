@@ -4,6 +4,7 @@ const logger = {
 }
 
 export default {
+  namespaced: true,
   actions: {
 
     /**
@@ -12,7 +13,7 @@ export default {
      * @return {(Object|void)}
      */
     async 'update' ({ dispatch, getters }) {
-      let peer = getters['current/current']()
+      let peer = getters['peer/current/get']()
 
       if (!peer) {
         await dispatch('system/clear')
@@ -21,7 +22,7 @@ export default {
       }
 
       try {
-        peer = await dispatch('peer/update', peer)
+        peer = await dispatch('peer/update', peer, { root: true })
         await dispatch('peer/current/set', { peer }, { root: true })
       } catch (error) {
         logger.error(error)
@@ -33,7 +34,7 @@ export default {
     /**
      * Fallback to seed peer, cleaning all the peer data.
      */
-    async 'system/clear' ({ dispatch }) {
+    async 'clear' ({ dispatch }) {
       dispatch('peers/clear')
       dispatch('current/clear')
       await dispatch('peers/connectToBest', { skipIfCustom: false })

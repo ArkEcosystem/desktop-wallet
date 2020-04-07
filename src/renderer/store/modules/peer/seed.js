@@ -11,7 +11,7 @@ export default {
      * @param {string} networkId Specify the network
      * @return {Object[]} An array with the peers.
      */
-    'seed/all': (_, __, ___, rootGetters) => ({ networkId } = {}) => {
+    all: (_, __, ___, rootGetters) => ({ networkId } = {}) => {
       networkId = networkId || optionalChaining(() => rootGetters['session/profile'].networkId, false)
       if (!networkId) return []
       const peers = optionalChaining(() => config.PEERS[networkId], [])
@@ -25,7 +25,7 @@ export default {
      * @param {Number} amount of peers to return
      * @return {Object[]} containing peer objects, can be length = 0.
      */
-    'seed/random': (_, getters) => ({ amount = 5, networkId } = {}) => {
+    random: (_, getters) => ({ amount = 5, networkId } = {}) => {
       const peers = getters['seed/all']({ networkId })
       return shuffle(peers).slice(0, amount)
     }

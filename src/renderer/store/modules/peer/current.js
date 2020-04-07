@@ -14,7 +14,7 @@ export default {
   state: {},
 
   getters: {
-    current: (state, getters, __, rootGetters) => ({ networkId = null } = {}) => {
+    get: (state, getters, __, rootGetters) => ({ networkId = null } = {}) => {
       networkId = networkId || optionalChaining(() => rootGetters['session/profile'].networkId, false)
 
       if (!networkId) {
@@ -63,7 +63,7 @@ export default {
         // Use the current peer as the base url for requests.
         this._vm.$client.host = getBaseUrl(peer)
 
-        peer = await dispatch('peer/peer/update', peer, { root: true })
+        peer = await dispatch('peer/update', peer, { root: true })
 
         // Update the static fees when setting a new peer.
         // TODO only when necessary (when / before sending) (if no dynamic)

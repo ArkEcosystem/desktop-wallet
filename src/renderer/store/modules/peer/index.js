@@ -32,7 +32,7 @@ export default {
      * @return {Promise} The client
      */
     'peer/client': (getters) => ({ peer }) => {
-      peer = peer || getters['current/current']()
+      peer = peer || getters['peer/current/get']()
 
       if (!peer) return
 
@@ -93,7 +93,7 @@ export default {
      * @param {Object} peer The peer to be updated.
      * @return {(void | Error)} The status for the update.
      */
-    async 'peer/update' ({ dispatch }, peer) {
+    async 'update' ({ dispatch }, peer) {
       let response
 
       try {
@@ -179,7 +179,7 @@ export default {
           nethash: nethash
         })
         if (!isCompatible && !ignoreNetwork) return
-        peer = await dispatch('peer/update', peer)
+        peer = await dispatch('update', peer)
       } catch (err) {
         logger.error(err)
       }
