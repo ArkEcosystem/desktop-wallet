@@ -43,11 +43,30 @@ const max = nums => {
   }
 }
 
+/**
+ * Simple hack to validate deep nested objects without the actual optional chaining feature.
+ *
+ * @example
+ * // This returns an array in case the reference fails.
+ * optionalChaining(() => this.is.some.nested.object, [])
+ *
+ * @param {function} fn A function that imidiatly returns the object reference.
+ * @returns {Object | any} The failsafe object or the value of that object.
+ */
+const optionalChaining = (fn, failsafe) => {
+  try {
+    return fn()
+  } catch (err) {
+    return failsafe
+  }
+}
+
 export {
   upperFirst,
   capitalize,
   isNil,
   min,
   max,
-  sortByProps
+  sortByProps,
+  optionalChaining
 }
