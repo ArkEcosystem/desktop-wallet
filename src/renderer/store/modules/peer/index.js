@@ -7,6 +7,7 @@ import current from './current'
 import seed from './seed'
 import discovery from './discovery'
 import available from './available'
+import system from './system'
 
 const getBaseUrl = (peer) => `${peer.isHttps ? 'https://' : 'http://'}${peer.ip}:${peer.port}`
 
@@ -18,10 +19,11 @@ export default {
   namespaced: true,
 
   modules: {
+    seed,
+    discovery,
     available,
     current,
-    seed,
-    discovery
+    system
   },
 
   getters: {

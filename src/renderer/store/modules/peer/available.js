@@ -283,7 +283,7 @@ export default {
         this._vm.$error(i18n.t('PEER.FAILED_REFRESH'))
       }
 
-      dispatch('peer/available/set', { peers }, { root: true })
+      dispatch('set', { peers })
     },
 
     /**
@@ -297,7 +297,7 @@ export default {
 
       if (refresh) {
         try {
-          await dispatch('peer/available/refresh', { networkId }, { root: true })
+          await dispatch('refresh', { networkId })
         } catch (error) {
           logger.error(error)
           this._vm.$error(`${i18n.t('PEER.FAILED_REFRESH')}: ${error.message}`)
@@ -337,7 +337,7 @@ export default {
         await dispatch('peer/current/set', { peer }, { root: true })
       } catch (error) {
         logger.error(error)
-        if (skipIfCustom) await dispatch('peer/system/clear', null, { root: true })
+        if (skipIfCustom) await dispatch('system/clear', null, { root: true })
       }
 
       return peer

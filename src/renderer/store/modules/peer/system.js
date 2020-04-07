@@ -12,12 +12,12 @@ export default {
      * @param  {Object} [port]
      * @return {(Object|void)}
      */
-    async 'update' ({ dispatch, getters }) {
-      let peer = getters['peer/current/get']()
+    async 'update' ({ dispatch, rootGetters }) {
+      let peer = rootGetters['peer/current/get']()
 
       if (!peer) {
-        await dispatch('system/clear')
-        await dispatch('peers/refresh')
+        await dispatch('clear')
+        await dispatch('peer/available/refresh')
         return
       }
 
@@ -26,8 +26,8 @@ export default {
         await dispatch('peer/current/set', { peer }, { root: true })
       } catch (error) {
         logger.error(error)
-        await dispatch('system/clear')
-        await dispatch('peers/refresh')
+        await dispatch('clear')
+        await dispatch('peer/available/refresh')
       }
     },
 
@@ -35,9 +35,9 @@ export default {
      * Fallback to seed peer, cleaning all the peer data.
      */
     async 'clear' ({ dispatch }) {
-      dispatch('peers/clear')
-      dispatch('current/clear')
-      await dispatch('peers/connectToBest', { skipIfCustom: false })
+      await dispatch('peer/available/clear')
+      await dispatch('peer/current/clear')
+      await dispatch('peer/available/connectToBest', { skipIfCustom: false })
     }
   }
 }

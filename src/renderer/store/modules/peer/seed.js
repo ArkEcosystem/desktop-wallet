@@ -4,7 +4,6 @@ import { optionalChaining } from '@/utils'
 
 export default {
   namespaced: true,
-
   getters: {
     /**
      * Return all seed peers for the current network

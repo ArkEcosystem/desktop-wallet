@@ -264,7 +264,7 @@ describe('peer store module', () => {
     describe('current', () => {
       it('should be able to get the current peer from the current network', () => {
         const peer = currentPeer()
-        const getter = store.getters['peer/current']()
+        const getter = store.getters['peer/current/get']()
         expect(getter).toBe(peer)
       })
     })

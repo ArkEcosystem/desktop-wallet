@@ -289,7 +289,7 @@ export default {
 
     async refreshPeer () {
       this.isRefreshing = true
-      await this.$store.dispatch('peer/peers/connectToBest', {
+      await this.$store.dispatch('peer/available/connectToBest', {
         skipIfCustom: false
       })
       this.isRefreshing = false
