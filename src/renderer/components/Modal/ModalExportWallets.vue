@@ -253,12 +253,17 @@ export default {
 
       try {
         const path = await this.electron_writeFile(raw, defaultPath)
-        this.$success(this.$t('MODAL_EXPORT_WALLETS.SUCCESS.EXPORT_WALLETS', { path }))
+
+        if (path) {
+          this.$success(this.$t('MODAL_EXPORT_WALLETS.SUCCESS.EXPORT_WALLETS', { path }))
+          this.emitClose()
+        } else {
+          return
+        }
       } catch (e) {
         this.$error(this.$t('MODAL_EXPORT_WALLETS.ERROR.EXPORT_WALLETS'))
       } finally {
         this.isExporting = false
-        this.emitClose()
       }
     }
   },
