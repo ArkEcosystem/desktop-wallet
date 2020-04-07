@@ -79,7 +79,7 @@
                 />
               </div>
 
-              <div class="flex items-center justify-between mt-5 pt-5 mb-2 border-t border-theme-line-separator border-dashed">
+              <div class="ProfileNew__avatar flex items-center justify-between mt-5 pt-5 mb-2 border-t border-theme-line-separator border-dashed">
                 <div class="mr-2">
                   <h5 class="mb-2">
                     {{ $t('COMMON.AVATAR') }}
@@ -169,7 +169,7 @@
                 />
               </div>
 
-              <div class="flex items-center justify-between">
+              <div class="ProfileNew__background flex items-center justify-between">
                 <div>
                   <h5 class="mb-2">
                     {{ $t('COMMON.BACKGROUND') }}
@@ -447,3 +447,15 @@ export default {
   }
 }
 </script>
+
+<style lang="postcss">
+.ProfileNew__avatar .SelectionAvatar .InputGrid__container button:first-child,
+.ProfileNew__avatar .SelectionAvatar .InputGrid__container button:first-child .InputGridItem {
+  @apply .cursor-default .opacity-100;
+}
+
+.ProfileNew__background .SelectionBackgroundGrid .InputGrid__container button:first-child,
+.ProfileNew__background .SelectionBackgroundGrid .InputGrid__container button:first-child .InputGridItem {
+  @apply .cursor-default .opacity-100;
+}
+</style>
