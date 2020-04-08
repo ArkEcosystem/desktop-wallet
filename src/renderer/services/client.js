@@ -650,7 +650,7 @@ export default class ClientService {
     let failedBroadcast = false
     if (broadcast) {
       const txs = []
-      const peers = store.getters['peer/broadcast']()
+      const peers = store.getters['peer/available/broadcast']()
       if (peers && peers.length) {
         for (let i = 0; i < peers.length; i++) {
           try {

@@ -74,12 +74,15 @@ jest.mock('@/store', () => ({
 
       return fees[group][type]
     },
-    'peer/current': () => ({
+    'peer/client': (peer) => {
+      return store.getters['peer/client']({ peer })
+    },
+    'peer/current/get': () => ({
       ip: '1.1.1.1',
       port: '8080',
       isHttps: false
     }),
-    'peer/broadcast': () => [
+    'peer/available/broadcast': () => [
       {
         ip: '1.1.1.1',
         port: '8080',
@@ -2053,7 +2056,7 @@ describe('Services > Client', () => {
     })
 
     it('should get current peer', async () => {
-      const spy = jest.spyOn(store.getters, 'peer/current')
+      const spy = jest.spyOn(store.getters, 'peer/current/get')
 
       await client.broadcastTransaction({ network: 23 })
 
@@ -2063,7 +2066,7 @@ describe('Services > Client', () => {
     })
 
     it('should parse current peer if no peer found', async () => {
-      const spyPeerCurrent = jest.spyOn(store.getters, 'peer/current').mockReturnValue(null)
+      const spyPeerCurrent = jest.spyOn(store.getters, 'peer/current/get').mockReturnValue(null)
       const spy = jest.spyOn(client, '__parseCurrentPeer')
 
       await client.broadcastTransaction({ network: 23 })
@@ -2130,7 +2133,7 @@ describe('Services > Client', () => {
       })
 
       it('should get peers to broadcast to', async () => {
-        const spy = jest.spyOn(store.getters, 'peer/broadcast')
+        const spy = jest.spyOn(store.getters, 'peer/available/broadcast')
 
         await client.broadcastTransaction({ network: 23 }, true)
 
@@ -2140,14 +2143,16 @@ describe('Services > Client', () => {
       })
 
       it('should broadcast to all peers and return responses', async () => {
+        const spy = jest.spyOn(store.getters, 'peer/available/broadcast')
+
         const response = await client.broadcastTransaction({ network: 23 }, true)
 
-        expect(spyDispatch).toHaveBeenCalledWith('peer/clientServiceFromPeer', {
+        expect(spy).toHaveBeenCalledWith('peer/peer/client', {
           ip: '1.1.1.1',
           port: '8080',
           isHttps: false
         })
-        expect(spyDispatch).toHaveBeenCalledWith('peer/clientServiceFromPeer', {
+        expect(spy).toHaveBeenCalledWith('peer/peer/client', {
           ip: '2.2.2.2',
           port: '8080',
           isHttps: false
@@ -2162,7 +2167,7 @@ describe('Services > Client', () => {
       })
 
       it('should broadcast to current peer if no broadcast peers', async () => {
-        const spy = jest.spyOn(store.getters, 'peer/broadcast').mockReturnValue()
+        const spy = jest.spyOn(store.getters, 'peer/available/broadcast').mockReturnValue()
         const response = await client.broadcastTransaction({ network: 23 }, true)
 
         spy.mockRestore()
