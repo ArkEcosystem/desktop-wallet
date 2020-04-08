@@ -25,7 +25,7 @@ export default {
      * @return {Object[]} containing peer objects, can be length = 0.
      */
     random: (_, getters) => ({ amount = 5, networkId } = {}) => {
-      const peers = getters['seed/all']({ networkId })
+      const peers = getters.all({ networkId })
       return shuffle(peers).slice(0, amount)
     }
   }
