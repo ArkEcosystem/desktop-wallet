@@ -41,7 +41,7 @@ function currentNetwork () {
 
 function currentNetworkPeers () {
   const network = currentNetwork()
-  const peers = store.state.peer.all[network.id].peers
+  const peers = store.state.peer.available[network.id].peers
   return peers
 }
 
@@ -71,57 +71,57 @@ beforeAll(() => {
 describe('peer store module', () => {
   describe('getters', () => {
     beforeAll(() => {
-      store.commit('peer/SET_PEERS', {
+      store.commit('peer/available/SET_PEERS', {
         peers: peerList[0],
         networkId: networkList[0].id
       })
 
-      store.commit('peer/SET_PEERS', {
+      store.commit('peer/available/SET_PEERS', {
         peers: peerList[1],
         networkId: networkList[1].id
       })
 
-      store.commit('peer/SET_CURRENT_PEER', {
+      store.commit('peer/current/SET_CURRENT_PEER', {
         peer: peerList[0][0],
         networkId: networkList[0].id
       })
     })
 
-    describe('all', () => {
+    describe('available/all', () => {
       it('should be able to get all the peers from the current network', () => {
         const peers = currentNetworkPeers()
-        expect(store.getters['peer/all']()).toIncludeAllMembers(peers)
+        expect(store.getters['peer/available/all']()).toIncludeAllMembers(peers)
       })
 
       it('should be able to get all peers from a specific network', () => {
         const id = 1
         const networkId = networkList[id].id
         const peers = peerList[id]
-        expect(store.getters['peer/all']({ networkId })).toIncludeAllMembers(peers)
+        expect(store.getters['peer/available/all']({ networkId })).toIncludeAllMembers(peers)
       })
 
       it('should be able to ignore current peer', () => {
-        expect(store.getters['peer/all']({ ignoreCurrent: true })).not.toIncludeAnyMembers([currentPeer()])
+        expect(store.getters['peer/available/all']({ ignoreCurrent: true })).not.toIncludeAnyMembers([currentPeer()])
       })
     })
 
-    describe('ip', () => {
+    describe('available/ip', () => {
       it('should be able to get peer by its ip address', () => {
         const peer = randomPeerFromCurrentNetwork()
         const ip = peer.ip
-        expect(store.getters['peer/get']({ ip })).toEqual(peer)
+        expect(store.getters['peer/available/get']({ ip })).toEqual(peer)
       })
     })
 
-    describe('best', () => {
+    describe('available/best', () => {
       it('should be able to get the best peer from current network', () => {
         const possibleBest = currentNetworkPeers()
-        expect(store.getters['peer/best']()).toIncludeAnyMembers(possibleBest)
+        expect(store.getters['peer/available/best']()).toIncludeAnyMembers(possibleBest)
       })
       it('should be able to get the best peer ignoring the current peer', () => {
         const impossibleBest = currentPeer()
         const possibleBest = currentNetworkPeers()
-        const getter = store.getters['peer/best']({ ignoreCurrent: true })
+        const getter = store.getters['peer/available/best']({ ignoreCurrent: true })
         expect(getter).not.toInclude(impossibleBest)
         expect(getter).toIncludeAnyMembers(possibleBest)
       })
@@ -129,30 +129,30 @@ describe('peer store module', () => {
         const id = 1
         const possibleBest = peerList[id]
         const networkId = networkList[id].id
-        expect(store.getters['peer/best']({ networkId })).toIncludeAnyMembers(possibleBest)
+        expect(store.getters['peer/available/best']({ networkId })).toIncludeAnyMembers(possibleBest)
       })
       it('should be able to get at least 2 best peers from a network', () => {
         const id = 1
         const mandatoryBest = peerList[id]
         const min = mandatoryBest.length
         const networkId = networkList[id].id
-        expect(store.getters['peer/best']({ networkId, min })).toIncludeSameMembers(mandatoryBest)
+        expect(store.getters['peer/available/best']({ networkId, min })).toIncludeSameMembers(mandatoryBest)
       })
       it('should be able to get at most 1 best peers from a network', () => {
         const id = 0
         const possibleBest = peerList[id]
         const networkId = networkList[id].id
-        const getter = store.getters['peer/best']({ networkId, max: 1 })
+        const getter = store.getters['peer/available/best']({ networkId, max: 1 })
         expect(getter).toIncludeAnyMembers(possibleBest)
         expect(getter.length).toBe(1)
       })
     })
 
-    describe('random', () => {
+    describe('available/random', () => {
       it('should be able to get 5 random peers from current network', () => {
         const possiblePeers = currentNetworkPeers()
         const amount = Math.min(5, possiblePeers.length)
-        const getter = store.getters['peer/random']()
+        const getter = store.getters['peer/available/random']()
         expect(getter).toIncludeAnyMembers(possiblePeers)
         expect(getter.length).toBe(amount)
       })
@@ -160,7 +160,7 @@ describe('peer store module', () => {
       it('should be able to get 10 random peers from current network', () => {
         const possiblePeers = currentNetworkPeers()
         const amount = Math.min(10, possiblePeers.length) - 1 // -1 to exclude current peer.
-        const getter = store.getters['peer/random']({ amount })
+        const getter = store.getters['peer/available/random']({ amount })
         expect(getter).toIncludeAnyMembers(possiblePeers)
         expect(getter.length).toBe(amount)
       })
@@ -168,7 +168,7 @@ describe('peer store module', () => {
       it('should be able to get 10 random peers from current network, including the current', () => {
         const possiblePeers = currentNetworkPeers()
         const amount = Math.min(10, possiblePeers.length)
-        const getter = store.getters['peer/random']({ amount, ignoreCurrent: false })
+        const getter = store.getters['peer/available/random']({ amount, ignoreCurrent: false })
         expect(getter).toIncludeAnyMembers(possiblePeers)
         expect(getter.length).toBe(amount)
       })
@@ -176,7 +176,7 @@ describe('peer store module', () => {
       it('should be able to get 1 random peer from current network', () => {
         const possiblePeers = currentNetworkPeers()
         const amount = Math.min(1, possiblePeers.length)
-        const getter = store.getters['peer/random']({ amount })
+        const getter = store.getters['peer/available/random']({ amount })
         expect(getter).toIncludeAnyMembers(possiblePeers)
         expect(getter.length).toBe(amount)
       })
@@ -186,7 +186,7 @@ describe('peer store module', () => {
         const possiblePeers = peerList[id]
         const networkId = networkList[id].id
         const amount = Math.min(5, possiblePeers.length)
-        const getter = store.getters['peer/random']({ networkId })
+        const getter = store.getters['peer/available/random']({ networkId })
         expect(getter).toIncludeAnyMembers(possiblePeers)
         expect(getter.length).toBe(amount)
       })
@@ -195,7 +195,7 @@ describe('peer store module', () => {
         const possiblePeers = currentNetworkPeers()
         const impossiblePeer = currentPeer()
         const amount = Math.min(5, possiblePeers.length)
-        const getter = store.getters['peer/random']({ ignoreCurrent: true })
+        const getter = store.getters['peer/available/random']({ ignoreCurrent: true })
         expect(getter).toIncludeAnyMembers(possiblePeers)
         expect(getter).not.toInclude(impossiblePeer)
         expect(getter.length).toBe(amount)
@@ -255,7 +255,7 @@ describe('peer store module', () => {
         const possibleTop = peerList[id]
         const possibleRandom = peerList[id]
         const possibleSeed = seedPeerList[id]
-        const getter = store.getters['peer/broadcast']()
+        const getter = store.getters['peer/available/broadcast']()
         expect(getter).toIncludeAnyMembers([...possibleTop, ...possibleRandom, ...possibleSeed])
       })
       test.todo('should be able to get the broadcast peers from an specific network')
