@@ -141,10 +141,10 @@ export default {
      * @return {Object[]} containing peer objects
      */
     broadcast: (_, getters, __, rootGetters) => ({ networkId = null } = {}) => {
-      const peers = []
+      let peers = []
 
       // top 10
-      peers.concat(getters.best({
+      peers = peers.concat(getters.best({
         max: 10,
         min: 10,
         ignoreCurrent: false,
@@ -152,13 +152,13 @@ export default {
       }))
 
       // 5 random
-      peers.concat(getters.random({
+      peers = peers.concat(getters.random({
         amount: 5,
         networkId
       }))
 
       // 5 seed random
-      peers.concat(rootGetters['peer/seed/random']({
+      peers = peers.concat(rootGetters['peer/seed/random']({
         amount: 5,
         networkId
       }))
