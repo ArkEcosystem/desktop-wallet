@@ -22,7 +22,7 @@
               v-show="isDashboard"
               v-tooltip="{
                 content: data.row.vendorField,
-                classes: 'text-xs',
+                classes: 'max-w-xs break-words text-justify text-xs',
                 trigger: 'hover',
                 container: '.TransactionTable'
               }"

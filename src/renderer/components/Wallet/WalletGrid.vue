@@ -69,41 +69,51 @@
               </div>
             </div>
 
-            <MenuDropdown
-              :ref="`dropdown-${wallet.id}`"
-              :items="contextMenuOptions(wallet)"
-              :is-highlighting="false"
-              :position="{ x: '100%', y: '-0.5rem' }"
-              :container-classes="'hidden group-hover:block'"
-              @select="onSelectDropdown(wallet, $event)"
-            >
-              <span
-                slot="handler"
-                class="WalletGrid__wallet__select p-2 text-theme-page-text-light hover:text-theme-page-text opacity-75"
-              >
-                <SvgIcon
-                  name="more"
-                  view-box="0 0 5 15"
-                  class="text-inherit"
-                />
-              </span>
+            <div class="flex items-center">
+              <SvgIcon
+                v-if="wallet.multiSignature"
+                v-tooltip="$t('PAGES.WALLET.MULTI_SIGNATURE_WALLET')"
+                class="w-5 h-5 text-theme-heading-text mr-2"
+                name="multi-signature"
+                view-box="0 0 16 16"
+              />
 
-              <template
-                slot="item"
-                slot-scope="itemScope"
+              <MenuDropdown
+                :ref="`dropdown-${wallet.id}`"
+                :items="contextMenuOptions(wallet)"
+                :is-highlighting="false"
+                :position="{ x: '100%', y: '-0.5rem' }"
+                :container-classes="'hidden group-hover:block'"
+                @select="onSelectDropdown(wallet, $event)"
               >
-                <div class="flex items-center hidden">
+                <span
+                  slot="handler"
+                  class="WalletGrid__wallet__select p-2 text-theme-page-text-light hover:text-theme-page-text opacity-75"
+                >
                   <SvgIcon
-                    :name="itemScope.item.icon"
-                    view-box="0 0 16 16"
-                    class="text-inherit flex-none mr-2"
+                    name="more"
+                    view-box="0 0 5 15"
+                    class="text-inherit"
                   />
-                  <span class="font-semibold">
-                    {{ itemScope.item.value }}
-                  </span>
-                </div>
-              </template>
-            </MenuDropdown>
+                </span>
+
+                <template
+                  slot="item"
+                  slot-scope="itemScope"
+                >
+                  <div class="flex items-center hidden">
+                    <SvgIcon
+                      :name="itemScope.item.icon"
+                      view-box="0 0 16 16"
+                      class="text-inherit flex-none mr-2"
+                    />
+                    <span class="font-semibold">
+                      {{ itemScope.item.value }}
+                    </span>
+                  </div>
+                </template>
+              </MenuDropdown>
+            </div>
           </div>
         </div>
       </div>
