@@ -66,7 +66,7 @@ export default {
         filters
       })
 
-      if (!filePaths) return
+      if (!filePaths || !filePaths.length) return
 
       if (options.restrictToPath && !validatePath(options.restrictToPath, filePaths[0])) {
         throw new Error(`Path "${filePaths[0]}" not allowed`)

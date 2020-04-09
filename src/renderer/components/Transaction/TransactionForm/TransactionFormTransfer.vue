@@ -492,42 +492,44 @@ export default {
       try {
         const raw = await this.electron_readFile()
 
-        try {
-          const transaction = JSON.parse(raw)
+        if (raw) {
+          try {
+            const transaction = JSON.parse(raw)
 
-          if (parseInt(transaction.type, 10) !== TRANSACTION_TYPES.GROUP_1.TRANSFER) {
-            throw new Error(this.$t('VALIDATION.INVALID_TYPE'))
-          }
-
-          if (transaction.recipientId) {
-            if (WalletService.validateAddress(transaction.recipientId, this.session_network.version)) {
-              this.$refs.recipient.model = transaction.recipientId
-            } else {
-              throw new Error(this.$t('VALIDATION.RECIPIENT_DIFFERENT_NETWORK', [
-                this.wallet_truncate(transaction.recipientId)
-              ]))
+            if (parseInt(transaction.type, 10) !== TRANSACTION_TYPES.GROUP_1.TRANSFER) {
+              throw new Error(this.$t('VALIDATION.INVALID_TYPE'))
             }
-          }
 
-          if (transaction.amount) {
-            this.$refs.amount.model = this.currency_subToUnit(transaction.amount, this.session_network)
-          }
+            if (transaction.recipientId) {
+              if (WalletService.validateAddress(transaction.recipientId, this.session_network.version)) {
+                this.$refs.recipient.model = transaction.recipientId
+              } else {
+                throw new Error(this.$t('VALIDATION.RECIPIENT_DIFFERENT_NETWORK', [
+                  this.wallet_truncate(transaction.recipientId)
+                ]))
+              }
+            }
 
-          if (transaction.fee) {
-            this.$refs.fee.$refs.input.model = this.currency_subToUnit(transaction.fee, this.session_network)
-          }
+            if (transaction.amount) {
+              this.$refs.amount.model = this.currency_subToUnit(transaction.amount, this.session_network)
+            }
 
-          if (transaction.vendorField) {
-            this.$refs.vendorField.model = transaction.vendorField
-          }
+            if (transaction.fee) {
+              this.$refs.fee.$refs.input.model = this.currency_subToUnit(transaction.fee, this.session_network)
+            }
 
-          this.$success(this.$t('TRANSACTION.SUCCESS.LOAD_FROM_FILE'))
-        } catch (error) {
-          if (error.name === 'SyntaxError') {
-            error.message = this.$t('VALIDATION.INVALID_FORMAT')
-          }
+            if (transaction.vendorField) {
+              this.$refs.vendorField.model = transaction.vendorField
+            }
 
-          this.$error(`${this.$t('TRANSACTION.ERROR.LOAD_FROM_FILE')}: ${error.message}`)
+            this.$success(this.$t('TRANSACTION.SUCCESS.LOAD_FROM_FILE'))
+          } catch (error) {
+            if (error.name === 'SyntaxError') {
+              error.message = this.$t('VALIDATION.INVALID_FORMAT')
+            }
+
+            this.$error(`${this.$t('TRANSACTION.ERROR.LOAD_FROM_FILE')}: ${error.message}`)
+          }
         }
       } catch (error) {
         this.$error(`${this.$t('TRANSACTION.ERROR.LOAD_FROM_FILE')}: ${error.message}`)

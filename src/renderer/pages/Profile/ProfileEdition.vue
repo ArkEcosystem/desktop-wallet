@@ -897,8 +897,18 @@ export default {
 .ProfileEdition__name .ListDividedItem__value .InputText .InputField__wrapper {
   height: 0;
 }
+
 .ProfileEdition__avatar .InputGrid__container {
   grid-template-columns: repeat(4, 4rem) !important;
   grid-gap: 1rem !important;
+}
+.ProfileEdition__avatar .SelectionAvatar .InputGrid__container button:first-child,
+.ProfileEdition__avatar .SelectionAvatar .InputGrid__container button:first-child .InputGridItem {
+  @apply .cursor-default .opacity-100;
+}
+
+.ProfileEdition__background .SelectionBackgroundGrid .InputGrid__container button:first-child,
+.ProfileEdition__background .SelectionBackgroundGrid .InputGrid__container button:first-child .InputGridItem {
+  @apply .cursor-default .opacity-100;
 }
 </style>
