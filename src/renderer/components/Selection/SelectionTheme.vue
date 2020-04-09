@@ -23,7 +23,6 @@
 <script>
 import { ButtonSwitch } from '@/components/Button'
 import { SvgIcon } from '@/components/SvgIcon'
-import { findKey } from 'lodash'
 
 export default {
   name: 'SelectionTheme',
@@ -54,7 +53,7 @@ export default {
 
   methods: {
     emitInput (status) {
-      const theme = findKey(this.$options.themes, item => item === status)
+      const theme = Object.keys(this.$options.themes).find(theme => this.$options.themes[theme] === status)
       this.$emit('input', theme)
     }
   }
