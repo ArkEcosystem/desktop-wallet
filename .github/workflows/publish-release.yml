@@ -19,6 +19,14 @@ jobs:
           RELEASE_VERSION=$(cat package.json | jq -r '.version')
           echo "::set-output name=version::${RELEASE_VERSION}"
 
+      - name: Determine the release changelog
+        id: derive_release_changelog
+        run: |
+          CURRENT_VERSION=$(jq -r '.tag_name' <(curl https://api.github.com/repos/ArkEcosystem/desktop-wallet/releases/latest -s))
+          CHANGELOG_URL=$(echo "${{ secrets.CHANGELOG_SOURCE }}" | sed "s/__VERSION__/${CURRENT_VERSION}/g")
+          CHANGELOG=$(curl -s $CHANGELOG_URL)
+          echo "::set-output name=body::${CHANGELOG}"
+
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
@@ -29,6 +37,7 @@ jobs:
           release_name: Version ${{ steps.derive_release_version.outputs.version }}
           draft: true
           prerelease: false
+          body: ${{ steps.derive_release_changelog.outputs.body }}
 
   publish-linux:
     needs: ["create-release"]
