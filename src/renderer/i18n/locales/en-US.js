@@ -795,6 +795,7 @@ export default {
       DELEGATES: 'Delegates',
       IPFS: 'IPFS',
       MULTI_SIGNATURE: 'Multisignature',
+      MULTI_SIGNATURE_WALLET: 'Multisignature wallet',
       STATISTICS: 'Statistics',
       SIGN_VERIFY: 'Sign',
       PURCHASE: 'Purchase {ticker}'

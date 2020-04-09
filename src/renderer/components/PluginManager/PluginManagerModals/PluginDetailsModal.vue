@@ -130,9 +130,18 @@
       </a>
 
       <div class="mt-6">
-        <PluginSlider
-          :plugin="plugin"
-        />
+        <SliderImage
+          :is-row="true"
+          :images="plugin.images"
+        >
+          <template slot-scope="{ imageIndex, closeImage }">
+            <SliderImageModal
+              :images="plugin.images"
+              :image-index="imageIndex"
+              :close-image="closeImage"
+            />
+          </template>
+        </SliderImage>
       </div>
 
       <div class="PluginDetailsModal__stats">
@@ -181,9 +190,10 @@
 <script>
 import { PLUGINS } from '@config'
 import { ButtonGeneric, ButtonIconGeneric } from '@/components/Button'
-import { PluginLogo, PluginManagerCheckmark, PluginManagerGrants, PluginSlider } from '@/components/PluginManager'
+import { PluginLogo, PluginManagerCheckmark, PluginManagerGrants } from '@/components/PluginManager'
 import { ModalWindow } from '@/components/Modal'
 import { PluginManagerButtonSwitch } from '@/components/PluginManager/PluginManagerButtons'
+import { SliderImage, SliderImageModal } from '@/components/Slider'
 import SvgIcon from '@/components/SvgIcon'
 import domain from 'getdomain'
 
@@ -198,7 +208,8 @@ export default {
     PluginManagerButtonSwitch,
     ModalWindow,
     PluginLogo,
-    PluginSlider,
+    SliderImage,
+    SliderImageModal,
     SvgIcon
   },
 

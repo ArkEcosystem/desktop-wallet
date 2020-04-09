@@ -3,6 +3,14 @@
     key="PrimaryActions"
     class="WalletHeading__PrimaryActions flex items-center"
   >
+    <SvgIcon
+      v-if="currentWallet.multiSignature"
+      v-tooltip="$t('PAGES.WALLET.MULTI_SIGNATURE_WALLET')"
+      class="w-5 h-5 text-theme-heading-text opacity-50"
+      name="multi-signature"
+      view-box="0 0 16 16"
+    />
+
     <button
       v-tooltip="{
         content: isVoting ? $t('PAGES.WALLET_SHOW.VOTING_FOR', { delegate: walletVote.username }) : $t('PAGES.WALLET_SHOW.NO_VOTE'),
@@ -106,6 +114,7 @@ import { ButtonDropdown, ButtonModal, ButtonReload } from '@/components/Button'
 import { ModalQrCode } from '@/components/Modal'
 import { TransactionModal } from '@/components/Transaction'
 import { ContactRenameModal } from '@/components/Contact'
+import SvgIcon from '@/components/SvgIcon'
 
 export default {
   name: 'WalletHeadingPrimaryActions',
@@ -118,7 +127,8 @@ export default {
     ButtonReload,
     ModalQrCode,
     TransactionModal,
-    ContactRenameModal
+    ContactRenameModal,
+    SvgIcon
   },
 
   data () {
