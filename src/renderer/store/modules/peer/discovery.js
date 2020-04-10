@@ -39,7 +39,7 @@ export default {
       if (net) return PeerDiscovery.new({ networkOrHost: net })
 
       // Then checks for the peers connected.
-      const currentPeer = getters['peer/current/get']()
+      const currentPeer = rootGetters['peer/current/get']()
       if (currentPeer) return PeerDiscovery.new({ networkOrHost: `${getBaseUrl(currentPeer)}/api/v2/peers` })
 
       // And then checks for the default network server
