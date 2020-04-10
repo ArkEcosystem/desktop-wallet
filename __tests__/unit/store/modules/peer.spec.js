@@ -1,8 +1,10 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import apiClient from '@/plugins/api-client'
+import nock from 'nock'
 import config from '@config'
 import { random } from 'lodash'
+import { PeerDiscovery } from '@arkecosystem/peers'
 import store from '@/store'
 import { generateValidPeer } from '../../__fixtures__/store/peer'
 import { network1, network2 } from '../../__fixtures__/store/network'
@@ -66,27 +68,25 @@ beforeAll(() => {
   store.commit('network/SET_ALL', networkList)
   store.commit('profile/CREATE', profile1)
   store.commit('session/SET_PROFILE_ID', profile1.id)
+
+  store.commit('peer/available/SET_PEERS', {
+    peers: peerList[0],
+    networkId: networkList[0].id
+  })
+
+  store.commit('peer/available/SET_PEERS', {
+    peers: peerList[1],
+    networkId: networkList[1].id
+  })
+
+  store.commit('peer/current/SET_CURRENT_PEER', {
+    peer: peerList[0][0],
+    networkId: networkList[0].id
+  })
 })
 
 describe('peer store module', () => {
   describe('getters', () => {
-    beforeAll(() => {
-      store.commit('peer/available/SET_PEERS', {
-        peers: peerList[0],
-        networkId: networkList[0].id
-      })
-
-      store.commit('peer/available/SET_PEERS', {
-        peers: peerList[1],
-        networkId: networkList[1].id
-      })
-
-      store.commit('peer/current/SET_CURRENT_PEER', {
-        peer: peerList[0][0],
-        networkId: networkList[0].id
-      })
-    })
-
     describe('available/all', () => {
       it('should be able to get all the peers from the current network', () => {
         const peers = currentNetworkPeers()
@@ -209,6 +209,11 @@ describe('peer store module', () => {
         config.PEERS[networkList[1].id] = seedPeerList[1]
       })
 
+      afterAll(() => {
+        delete config.PEERS[networkList[0].id]
+        delete config.PEERS[networkList[1].id]
+      })
+
       describe('seed/all', () => {
         it('should be able to get all seed peers from current network', () => {
           const id = 0
@@ -258,7 +263,15 @@ describe('peer store module', () => {
         const getter = store.getters['peer/available/broadcast']()
         expect(getter).toIncludeAnyMembers([...possibleTop, ...possibleRandom, ...possibleSeed])
       })
-      test.todo('should be able to get the broadcast peers from an specific network')
+      it('should be able to get the broadcast peers from an specific network', () => {
+        const id = 1
+        const possibleTop = peerList[id]
+        const possibleRandom = peerList[id]
+        const possibleSeed = seedPeerList[id]
+        const networkId = networkList[id].id
+        const getter = store.getters['peer/available/broadcast']({ networkId })
+        expect(getter).toIncludeAnyMembers([...possibleTop, ...possibleRandom, ...possibleSeed])
+      })
     })
 
     describe('current', () => {
@@ -271,61 +284,121 @@ describe('peer store module', () => {
 
     describe('discovery', () => {
       describe('default networks (ark.mainnet & ark.devnet)', () => {
-        test.todo('should be able to get the peer discovery instance for the current network')
-        test.todo('should be able to get the peer discovery instance for a specific network')
-      })
-      describe('custom networks', () => {
-        test.todo('should be able to get the peer discovery instance for a custom network')
+        it('should be able to get the peer discovery instance for the current network', async () => {
+          const spy = jest.spyOn(PeerDiscovery, 'new').mockImplementation(() => jest.fn())
+          const networkId = currentNetwork().id
+          await store.getters['peer/discovery/get']()
+          expect(spy).toHaveBeenCalledWith({ networkOrHost: networkId })
+        })
+        it('should be able to get the peer discovery instance for a specific network', async () => {
+          const spy = jest.spyOn(PeerDiscovery, 'new').mockImplementation(() => jest.fn())
+          const id = 1
+          const networkId = networkList[id].id
+          await store.getters['peer/discovery/get']({ networkId })
+          expect(spy).toHaveBeenCalledWith({ networkOrHost: networkId })
+        })
+        it('should be able to get the peer discovery instance for default network names', async () => {
+          const networkId = 'ark.devnet'
+          const spy = jest.spyOn(PeerDiscovery, 'new').mockImplementation(() => jest.fn())
+          await store.getters['peer/discovery/get']({ networkId })
+          expect(spy).toHaveBeenCalledWith({ networkOrHost: 'devnet' })
+        })
       })
     })
   })
 
   describe('mutations', () => {
     describe('SET_PEERS', () => {
-      test.todo('should be able to set the peers to a network.')
-      test.todo('should be able to update the lastUpdate date.')
-    })
-    describe('CLEAR_PEERS', () => {
-      test.todo('should be able to clear all the peers from a network.')
-    })
-    describe('SET_CURRENT_PEER', () => {
-      test.todo('should be able to set the current peer for a network.')
-    })
-    describe('CLEAR_CURRENT_PEER', () => {
-      test.todo('should be able to clear the current peer for a network.')
-    })
-  })
-
-  describe('actions', () => {
-    describe('peers/set', () => {
-      test.todo('should be able to set available peers for the current network')
-      test.todo('should be able to set available peers for a specific network.')
-      test.todo('should not be able to set available peers to a falsy value')
-      test.todo('should not be able to set available peers if it is not an array') // can be improved.
-      test.todo('should not be able to set available peers to an empty vector')
-    })
-    describe('current/set', () => {
-      test.todo('should be able to set the current peer for the current network')
-      test.todo('should be able to set the current peer for a specific network')
-      test.todo('should not be able to set a falsy value as the current peer')
-      test.todo('should not be able to set an empty object as the current peer')
-      test.todo('should be able to update the peer before setting it as the current peer')
-      test.todo('should be able to not update the peer before setting it as the current peer')
+      test.todo('should be able to set the peers to a network and set lastUpdate')
+      describe('CLEAR_PEERS', () => {
+        test.todo('should be able to clear all the peers from a network.')
+      })
+      describe('SET_CURRENT_PEER', () => {
+        test.todo('should be able to set the current peer for a network.')
+      })
+      describe('CLEAR_CURRENT_PEER', () => {
+        test.todo('should be able to clear the current peer for a network.')
+      })
     })
 
-    describe('peers/clear', () => {
-      test.todo('should be able to clear peers for the current network')
-      test.todo('should be able to clear peers for a specific network')
-    })
+    describe('actions', () => {
+      beforeEach(() => {
+        networkList.forEach(network => {
+          store.commit('peer/available/CLEAR_PEERS', network.id)
+          store.commit('peer/current/CLEAR_CURRENT_PEER', network.id)
+        })
+      })
+      describe('available/set', () => {
+        it('should be able to set available peers for the current network', async () => {
+          const networkId = currentNetwork().id
+          const peers = currentNetworkPeers()
+          await store.dispatch('peer/available/set', { peers })
+          expect(store.state.peer.available[networkId].peers).toBe(peers)
+        })
+        it('should be able to set available peers for a specific network.', async () => {
+          const id = 1
+          const networkId = networkList[id]
+          const peers = peerList[id]
+          await store.dispatch('peer/available/set', { peers, networkId })
+          expect(store.state.peer.available[networkId].peers).toBe(peers)
+        })
+        it('should not be able to set available peers to anything but an array', async () => {
+          const id = 1
+          const networkId = networkList[id]
+          const stateBefore = store.state.peer.available[networkId].peers
+          const peers = false
+          const action = () => store.dispatch('peer/available/set', { peers, networkId })
+          await expect(action).toThrow()
+          const stateAfter = store.state.peer.available[networkId].peers
+          expect(stateAfter).toBe(stateBefore)
+        })
+      })
+      describe('current/set', () => {
+        const peer = generateValidPeer()
 
-    describe('current/clear', () => {
-      test.todo('should be able to clear peers for the current network')
-      test.todo('should be able to clear peers for a specific network')
-    })
+        beforeAll(() => {
+          const baseUrl = `${peer.isHttps ? 'https://' : 'http://'}${peer.ip}:${peer.port}`
 
-    describe('refresh', () => {
-      test.todo('should be able to refresh the peers available for the current network')
-      test.todo('should be able to refresh the peers available for a specific network')
+          nock(baseUrl)
+            .log(console.log)
+            .get('/api/v2/node/syncing')
+            .reply(200, {
+              data: {
+                height: random(1, 999999)
+              }
+            })
+
+          nock(baseUrl)
+            .log(console.log)
+            .get('/api/v2/transactions/fees')
+            .reply(200, {})
+        })
+
+        it('should be able to set the current peer for the current network', async () => {
+          await store.dispatch('peer/current/set', { peer })
+          expect(currentPeer()).toBe(peer)
+        })
+        test.todo('should be able to set the current peer for a specific network')
+        test.todo('should not be able to set a falsy value as the current peer')
+        test.todo('should not be able to set an empty object as the current peer')
+        test.todo('should be able to update the peer before setting it as the current peer')
+        test.todo('should be able to not update the peer before setting it as the current peer')
+      })
+
+      describe('peers/clear', () => {
+        test.todo('should be able to clear peers for the current network')
+        test.todo('should be able to clear peers for a specific network')
+      })
+
+      describe('current/clear', () => {
+        test.todo('should be able to clear peers for the current network')
+        test.todo('should be able to clear peers for a specific network')
+      })
+
+      describe('refresh', () => {
+        test.todo('should be able to refresh the peers available for the current network')
+        test.todo('should be able to refresh the peers available for a specific network')
+      })
     })
   })
 })
