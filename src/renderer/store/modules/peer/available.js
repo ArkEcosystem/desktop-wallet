@@ -205,9 +205,8 @@ export default {
      * @return {void}
      */
     'set' ({ rootGetters, commit }, { peers, networkId } = {}) {
-      if (!peers) {
-        logger.error('No peers to set. Send an empty array if this is the desired behaviour.')
-        return
+      if (!Array.isArray(peers)) {
+        throw new Error('Unable to set peers: peers value is not an array.')
       }
 
       networkId = networkId || optionalChaining(() => rootGetters['session/profile'].networkId, false)
