@@ -21,7 +21,7 @@ export default class TransactionService {
     return Transactions.Serializer.getBytes(transaction, {
       excludeSignature: true,
       excludeSecondSignature: true
-    }).toString('hex')
+    })
   }
 
   /**
@@ -98,7 +98,7 @@ export default class TransactionService {
 
     const transactionBytes = this.getBytes(transaction)
     transaction.signature = await vm.$store.dispatch('ledger/signTransaction', {
-      transactionHex: transactionBytes.toString('hex'),
+      transactionHex: transactionBytes,
       accountIndex: wallet.ledgerIndex
     })
 
@@ -154,7 +154,7 @@ export default class TransactionService {
    */
   static async ledgerSignMessage (wallet, message, vm) {
     const signature = await vm.$store.dispatch('ledger/signMessage', {
-      messageHex: Buffer.from(message).toString('hex'),
+      messageHex: Buffer.from(message),
       accountIndex: wallet.ledgerIndex
     })
 
