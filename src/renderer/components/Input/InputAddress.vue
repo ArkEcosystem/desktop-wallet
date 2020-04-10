@@ -69,7 +69,8 @@ import Cycled from 'cycled'
 import InputField from './InputField'
 import WalletService from '@/services/wallet'
 import truncate from '@/filters/truncate'
-import { includes, isEmpty, orderBy, unionBy } from 'lodash'
+import { includes, orderBy, unionBy } from 'lodash'
+import { isEmpty } from '@/utils'
 
 export default {
   name: 'InputAddress',

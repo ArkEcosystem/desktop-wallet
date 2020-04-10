@@ -168,13 +168,13 @@
 </template>
 
 <script>
+import os from 'os'
 import { MARKET } from '@config'
+import { isEmpty } from '@/utils'
 import { ModalConfirmation } from '@/components/Modal'
 import { MenuNavigationItem, MenuOptions, MenuOptionsItem, MenuDropdown } from '@/components/Menu'
 import { ButtonSwitch } from '@/components/Button'
 import { PluginManageBlacklistModal } from '@/components/PluginManager/PluginManagerModals'
-import { isEmpty } from 'lodash'
-import os from 'os'
 
 export default {
   name: 'AppSidemenuOptionsSettings',
