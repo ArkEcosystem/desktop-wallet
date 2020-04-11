@@ -534,16 +534,16 @@ export default {
     /**
      * Sign transaction for ledger wallet.
      * @param  {Object} obj
-     * @param  {String} obj.transactionHex Hex of transaction.
+     * @param  {String} obj.transactionBytes Bytes of transaction.
      * @param  {Number} obj.accountIndex Index of wallet to sign transaction for.
      * @return {(String|Boolean)}
      */
-    async signTransaction ({ dispatch }, { transactionHex, accountIndex } = {}) {
+    async signTransaction ({ dispatch }, { transactionBytes, accountIndex } = {}) {
       try {
         return await dispatch('action', {
           action: 'signTransaction',
           accountIndex,
-          data: transactionHex
+          data: transactionBytes
         })
       } catch (error) {
         logger.error(error)
@@ -554,16 +554,16 @@ export default {
     /**
      * Sign message for ledger wallet.
      * @param  {Object} obj
-     * @param  {String} obj.messageHex Hex to sign.
+     * @param  {String} obj.messageBytes Bytes to sign.
      * @param  {Number} obj.accountIndex Index of wallet to sign transaction for.
      * @return {(String|Boolean)}
      */
-    async signMessage ({ dispatch }, { messageHex, accountIndex } = {}) {
+    async signMessage ({ dispatch }, { messageBytes, accountIndex } = {}) {
       try {
         return await dispatch('action', {
           action: 'signMessage',
           accountIndex,
-          data: messageHex
+          data: messageBytes
         })
       } catch (error) {
         logger.error(error)

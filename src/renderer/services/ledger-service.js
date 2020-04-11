@@ -109,24 +109,24 @@ class LedgerService {
   /**
    * Sign transaction for ledger wallet.
    * @param  {Number} path Path for wallet location.
-   * @param  {String} transactionHex Hex of transaction.
+   * @param  {String} transactionBytes bytes of transaction.
    * @return {(String|Boolean)}
    */
-  async signTransaction (path, transactionHex) {
+  async signTransaction (path, transactionBytes) {
     return this.__performAction(async () => {
-      return this.ledger.signTransaction(path, transactionHex)
+      return this.ledger.signTransaction(path, transactionBytes)
     })
   }
 
   /**
-   * Sign message for ledger wallet.
+   * Sign message for  wallet.
    * @param  {Number} path Path for wallet location.
-   * @param  {String} messageHex Hex to sign.
+   * @param  {String} messagebytes bytes to sign.
    * @return {(String|Boolean)}
    */
-  async signMessage (path, messageHex) {
+  async signMessage (path, messageBytes) {
     return this.__performAction(async () => {
-      return this.ledger.signMessage(path, Buffer.from(messageHex, 'hex'))
+      return this.ledger.signMessage(path, Buffer.from(messageBytes))
     })
   }
 

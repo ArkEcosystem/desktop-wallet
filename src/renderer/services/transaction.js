@@ -96,9 +96,8 @@ export default class TransactionService {
       transaction.recipientId = wallet.address
     }
 
-    const transactionBytes = this.getBytes(transaction)
     transaction.signature = await vm.$store.dispatch('ledger/signTransaction', {
-      transactionHex: transactionBytes,
+      transactionBytes: this.getBytes(transaction),
       accountIndex: wallet.ledgerIndex
     })
 
@@ -154,7 +153,7 @@ export default class TransactionService {
    */
   static async ledgerSignMessage (wallet, message, vm) {
     const signature = await vm.$store.dispatch('ledger/signMessage', {
-      messageHex: Buffer.from(message),
+      messageBytes: Buffer.from(message),
       accountIndex: wallet.ledgerIndex
     })
 
