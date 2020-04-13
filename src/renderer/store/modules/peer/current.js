@@ -38,7 +38,7 @@ export default {
     },
 
     CLEAR_CURRENT_PEER (state, { networkId }) {
-      Vue.set(state, networkId, undefined)
+      Vue.delete(state, networkId)
     }
   },
 

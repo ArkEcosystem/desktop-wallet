@@ -190,10 +190,7 @@ export default {
     },
 
     CLEAR_PEERS (state, { networkId }) {
-      Vue.set(state, networkId, {
-        peers: undefined,
-        lastUpdated: undefined
-      })
+      Vue.delete(state, networkId)
     }
   },
 
