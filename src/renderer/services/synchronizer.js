@@ -1,4 +1,4 @@
-import { flatten, includes, pullAll } from 'lodash'
+import { flatten, pullAll } from 'lodash'
 import { announcements, fees, ledger, market, peer, wallets } from './synchronizer/'
 /**
  * This class adds the possibility to define actions (not to confuse with Vuex actions)
@@ -194,14 +194,14 @@ export default class Synchronizer {
      */
     const run = (options = {}) => {
       Object.keys(this.actions).forEach(actionId => {
-        if (!includes(this.paused, actionId)) {
+        if (!this.paused.includes(actionId)) {
           const action = this.actions[actionId]
 
           if (!action.isCalling) {
             if (options.immediate) {
               this.call(actionId)
             } else {
-              const mode = includes(this.focused, actionId) ? 'focus' : 'default'
+              const mode = this.focused.includes(actionId) ? 'focus' : 'default'
               const { interval } = action[mode]
 
               // A `null` interval means no interval, so the action does not run
