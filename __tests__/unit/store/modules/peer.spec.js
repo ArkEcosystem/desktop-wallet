@@ -59,6 +59,26 @@ function randomPeerFromCurrentNetwork () {
   return peer
 }
 
+function setPeerNocks (peer) {
+  const baseUrl = `${peer.isHttps ? 'https://' : 'http://'}${peer.ip}:${peer.port}`
+
+  nock(baseUrl)
+    .get('/api/v2/node/syncing')
+    .reply(200, {
+      data: {
+        height: peer.height
+      }
+    })
+
+  nock(baseUrl)
+    .get('/api/v2/transactions/fees')
+    .reply(200, {
+      data: {
+        transfer: {}
+      }
+    })
+}
+
 beforeAll(() => {
   /*
     This is not ideal. The correct way is to set the state manually or switch
@@ -83,6 +103,10 @@ beforeAll(() => {
     peer: peerList[0][0],
     networkId: networkList[0].id
   })
+})
+
+afterEach(function () {
+  nock.cleanAll()
 })
 
 describe('peer store module', () => {
@@ -337,14 +361,14 @@ describe('peer store module', () => {
         })
         it('should be able to set available peers for a specific network.', async () => {
           const id = 1
-          const networkId = networkList[id]
+          const networkId = networkList[id].id
           const peers = peerList[id]
           await store.dispatch('peer/available/set', { peers, networkId })
           expect(store.state.peer.available[networkId].peers).toBe(peers)
         })
         it('should not be able to set available peers to anything but an array', async () => {
           const id = 1
-          const networkId = networkList[id]
+          const networkId = networkList[id].id
           const stateBefore = store.state.peer.available[networkId].peers
           const peers = false
           const action = () => store.dispatch('peer/available/set', { peers, networkId })
@@ -354,45 +378,117 @@ describe('peer store module', () => {
         })
       })
       describe('current/set', () => {
-        const peer = generateValidPeer()
-
-        beforeAll(() => {
-          const baseUrl = `${peer.isHttps ? 'https://' : 'http://'}${peer.ip}:${peer.port}`
-
-          nock(baseUrl)
-            .log(console.log)
-            .get('/api/v2/node/syncing')
-            .reply(200, {
-              data: {
-                height: random(1, 999999)
-              }
-            })
-
-          nock(baseUrl)
-            .log(console.log)
-            .get('/api/v2/transactions/fees')
-            .reply(200, {})
-        })
-
         it('should be able to set the current peer for the current network', async () => {
+          const peer = generateValidPeer()
+          let current = currentPeer()
+
+          expect(current).not.toBe(peer)
+
+          setPeerNocks(peer)
           await store.dispatch('peer/current/set', { peer })
-          expect(currentPeer()).toBe(peer)
+          current = currentPeer()
+
+          // Remove parameters that are set during the response.
+          delete current.latency
+          delete peer.latency
+
+          expect(current).toStrictEqual(peer)
         })
-        test.todo('should be able to set the current peer for a specific network')
-        test.todo('should not be able to set a falsy value as the current peer')
-        test.todo('should not be able to set an empty object as the current peer')
-        test.todo('should be able to update the peer before setting it as the current peer')
-        test.todo('should be able to not update the peer before setting it as the current peer')
+        it('should be able to set the current peer for a specific network', async () => {
+          const id = 1
+          const networkId = networkList[id].id
+
+          const peer = generateValidPeer()
+          let current = store.state.peer.current[networkId]
+
+          expect(current).not.toBe(peer)
+
+          setPeerNocks(peer)
+          await store.dispatch('peer/current/set', { peer, networkId })
+
+          current = store.state.peer.current[networkId]
+
+          delete current.latency
+          delete peer.latency
+
+          expect(current).toStrictEqual(peer)
+        })
+        it('should not be able to set a falsy value as the current peer', async () => {
+          const peer = false
+          await expect(store.dispatch('peer/current/set', { peer })).rejects.toThrow()
+        })
+        it('should not be able to set an empty object as the current peer', async () => {
+          const peer = {}
+          await expect(store.dispatch('peer/current/set', { peer })).rejects.toThrow()
+        })
+        it('should be able to not update the peer before setting it as the current peer', async () => {
+          const peer = generateValidPeer()
+          const networkId = currentNetwork().id
+          setPeerNocks(peer)
+          await store.dispatch('peer/current/set', { peer, update: false })
+          const current = store.state.peer.current[networkId]
+          expect(current).toBe(peer)
+        })
       })
 
-      describe('peers/clear', () => {
-        test.todo('should be able to clear peers for the current network')
-        test.todo('should be able to clear peers for a specific network')
+      describe('available/clear', () => {
+        beforeEach(() => {
+          store.commit('peer/available/SET_PEERS', {
+            peers: peerList[0],
+            networkId: networkList[0].id
+          })
+
+          store.commit('peer/available/SET_PEERS', {
+            peers: peerList[1],
+            networkId: networkList[1].id
+          })
+        })
+        it('should be able to clear peers for the current network', async () => {
+          const peers = currentNetworkPeers()
+          const networkId = currentNetwork().id
+          expect(peers.length).toBeGreaterThan(0)
+          store.dispatch('peer/available/clear')
+          expect(store.state.peer.available[networkId]).toBeFalsy()
+        })
+        it('should be able to clear peers for a specific network', () => {
+          const id = 1
+          const networkId = networkList[id].id
+          const peers = store.state.peer.available[networkId].peers
+          expect(peers.length).toBeGreaterThan(0)
+          store.dispatch('peer/available/clear', { networkId })
+          expect(store.state.peer.available[networkId]).toBeFalsy()
+        })
       })
 
       describe('current/clear', () => {
-        test.todo('should be able to clear peers for the current network')
-        test.todo('should be able to clear peers for a specific network')
+        beforeEach(() => {
+          store.commit('peer/current/SET_CURRENT_PEER', {
+            peer: peerList[0][0],
+            networkId: networkList[0].id
+          })
+
+          store.commit('peer/current/SET_CURRENT_PEER', {
+            peer: peerList[1][0],
+            networkId: networkList[1].id
+          })
+        })
+        it('should be able to clear the current peer for the current network', async () => {
+          let peer = currentPeer()
+          const networkId = currentNetwork().id
+          expect(peer).toBeTruthy()
+          await store.dispatch('peer/current/clear')
+          peer = store.state.peer.current[networkId]
+          expect(peer).toBeFalsy()
+        })
+        it('should be able to clear the current peer for a specific network', async () => {
+          const id = 1
+          const networkId = networkList[id].id
+          let peer = store.state.peer.current[networkId]
+          expect(peer).toBeTruthy()
+          await store.dispatch('peer/current/clear', { networkId })
+          peer = store.state.peer.current[networkId]
+          expect(peer).toBeFalsy()
+        })
       })
 
       describe('refresh', () => {
