@@ -109,391 +109,419 @@ afterEach(function () {
   nock.cleanAll()
 })
 
-describe('peer store module', () => {
-  describe('getters', () => {
-    describe('available/all', () => {
-      it('should be able to get all the peers from the current network', () => {
-        const peers = currentNetworkPeers()
-        expect(store.getters['peer/available/all']()).toIncludeAllMembers(peers)
-      })
-
-      it('should be able to get all peers from a specific network', () => {
-        const id = 1
-        const networkId = networkList[id].id
-        const peers = peerList[id]
-        expect(store.getters['peer/available/all']({ networkId })).toIncludeAllMembers(peers)
-      })
-
-      it('should be able to ignore current peer', () => {
-        expect(store.getters['peer/available/all']({ ignoreCurrent: true })).not.toIncludeAnyMembers([currentPeer()])
+describe('peer', () => {
+  describe('modules', () => {
+    beforeEach(() => {
+      networkList.forEach(network => {
+        store.commit('peer/available/CLEAR_PEERS', network.id)
+        store.commit('peer/current/CLEAR_CURRENT_PEER', network.id)
       })
     })
+    describe('available', () => {
+      describe('getters', () => {
+        describe('all', () => {
+          it('should be able to get all the peers from the current network', () => {
+            const peers = currentNetworkPeers()
+            expect(store.getters['peer/available/all']()).toIncludeAllMembers(peers)
+          })
 
-    describe('available/ip', () => {
-      it('should be able to get peer by its ip address', () => {
-        const peer = randomPeerFromCurrentNetwork()
-        const ip = peer.ip
-        expect(store.getters['peer/available/get']({ ip })).toEqual(peer)
-      })
-    })
+          it('should be able to get all peers from a specific network', () => {
+            const id = 1
+            const networkId = networkList[id].id
+            const peers = peerList[id]
+            expect(store.getters['peer/available/all']({ networkId })).toIncludeAllMembers(peers)
+          })
 
-    describe('available/best', () => {
-      it('should be able to get the best peer from current network', () => {
-        const possibleBest = currentNetworkPeers()
-        expect(store.getters['peer/available/best']()).toIncludeAnyMembers(possibleBest)
-      })
-      it('should be able to get the best peer ignoring the current peer', () => {
-        const impossibleBest = currentPeer()
-        const possibleBest = currentNetworkPeers()
-        const getter = store.getters['peer/available/best']({ ignoreCurrent: true })
-        expect(getter).not.toInclude(impossibleBest)
-        expect(getter).toIncludeAnyMembers(possibleBest)
-      })
-      it('should be able to get the best peer from a network', () => {
-        const id = 1
-        const possibleBest = peerList[id]
-        const networkId = networkList[id].id
-        expect(store.getters['peer/available/best']({ networkId })).toIncludeAnyMembers(possibleBest)
-      })
-      it('should be able to get at least 2 best peers from a network', () => {
-        const id = 1
-        const mandatoryBest = peerList[id]
-        const min = mandatoryBest.length
-        const networkId = networkList[id].id
-        expect(store.getters['peer/available/best']({ networkId, min })).toIncludeSameMembers(mandatoryBest)
-      })
-      it('should be able to get at most 1 best peers from a network', () => {
-        const id = 0
-        const possibleBest = peerList[id]
-        const networkId = networkList[id].id
-        const getter = store.getters['peer/available/best']({ networkId, max: 1 })
-        expect(getter).toIncludeAnyMembers(possibleBest)
-        expect(getter.length).toBe(1)
-      })
-    })
-
-    describe('available/random', () => {
-      it('should be able to get 5 random peers from current network', () => {
-        const possiblePeers = currentNetworkPeers()
-        const amount = Math.min(5, possiblePeers.length)
-        const getter = store.getters['peer/available/random']()
-        expect(getter).toIncludeAnyMembers(possiblePeers)
-        expect(getter.length).toBe(amount)
-      })
-
-      it('should be able to get 10 random peers from current network', () => {
-        const possiblePeers = currentNetworkPeers()
-        const amount = Math.min(10, possiblePeers.length) - 1 // -1 to exclude current peer.
-        const getter = store.getters['peer/available/random']({ amount })
-        expect(getter).toIncludeAnyMembers(possiblePeers)
-        expect(getter.length).toBe(amount)
-      })
-
-      it('should be able to get 10 random peers from current network, including the current', () => {
-        const possiblePeers = currentNetworkPeers()
-        const amount = Math.min(10, possiblePeers.length)
-        const getter = store.getters['peer/available/random']({ amount, ignoreCurrent: false })
-        expect(getter).toIncludeAnyMembers(possiblePeers)
-        expect(getter.length).toBe(amount)
-      })
-
-      it('should be able to get 1 random peer from current network', () => {
-        const possiblePeers = currentNetworkPeers()
-        const amount = Math.min(1, possiblePeers.length)
-        const getter = store.getters['peer/available/random']({ amount })
-        expect(getter).toIncludeAnyMembers(possiblePeers)
-        expect(getter.length).toBe(amount)
-      })
-
-      it('should be able to get 5 random peer from an specific network', () => {
-        const id = 1
-        const possiblePeers = peerList[id]
-        const networkId = networkList[id].id
-        const amount = Math.min(5, possiblePeers.length)
-        const getter = store.getters['peer/available/random']({ networkId })
-        expect(getter).toIncludeAnyMembers(possiblePeers)
-        expect(getter.length).toBe(amount)
-      })
-
-      it('should be able to get 5 random peer from current network, but ignoring current', () => {
-        const possiblePeers = currentNetworkPeers()
-        const impossiblePeer = currentPeer()
-        const amount = Math.min(5, possiblePeers.length)
-        const getter = store.getters['peer/available/random']({ ignoreCurrent: true })
-        expect(getter).toIncludeAnyMembers(possiblePeers)
-        expect(getter).not.toInclude(impossiblePeer)
-        expect(getter.length).toBe(amount)
-      })
-    })
-
-    describe('seed', () => {
-      beforeAll(() => {
-        // ID 0 is aways current network
-        config.PEERS[networkList[0].id] = seedPeerList[0]
-        config.PEERS[networkList[1].id] = seedPeerList[1]
-      })
-
-      afterAll(() => {
-        delete config.PEERS[networkList[0].id]
-        delete config.PEERS[networkList[1].id]
-      })
-
-      describe('seed/all', () => {
-        it('should be able to get all seed peers from current network', () => {
-          const id = 0
-          const possibleSeedPeers = seedPeerList[id]
-          const getter = store.getters['peer/seed/all']()
-          expect(getter).toIncludeSameMembers(possibleSeedPeers)
+          it('should be able to ignore current peer', () => {
+            expect(store.getters['peer/available/all']({ ignoreCurrent: true })).not.toIncludeAnyMembers([currentPeer()])
+          })
         })
 
-        it('should be able to get all seed peers from a specific network', () => {
-          const id = 1
-          const possibleSeedPeers = seedPeerList[id]
-          const networkId = networkList[id].id
-          const getter = store.getters['peer/seed/all']({ networkId })
-          expect(getter).toIncludeSameMembers(possibleSeedPeers)
+        describe('ip', () => {
+          it('should be able to get peer by its ip address', () => {
+            const peer = randomPeerFromCurrentNetwork()
+            const ip = peer.ip
+            expect(store.getters['peer/available/get']({ ip })).toEqual(peer)
+          })
         })
-      })
 
-      describe('seed/random', () => {
-        it('should be able to get 5 random seed peers from current network', () => {
-          const id = 0
-          const possibleSeedPeers = seedPeerList[id]
-          const getter = store.getters['peer/seed/random']()
-          expect(possibleSeedPeers).toIncludeAllMembers(getter)
+        describe('best', () => {
+          it('should be able to get the best peer from current network', () => {
+            const possibleBest = currentNetworkPeers()
+            expect(store.getters['peer/available/best']()).toIncludeAnyMembers(possibleBest)
+          })
+          it('should be able to get the best peer ignoring the current peer', () => {
+            const impossibleBest = currentPeer()
+            const possibleBest = currentNetworkPeers()
+            const getter = store.getters['peer/available/best']({ ignoreCurrent: true })
+            expect(getter).not.toInclude(impossibleBest)
+            expect(getter).toIncludeAnyMembers(possibleBest)
+          })
+          it('should be able to get the best peer from a network', () => {
+            const id = 1
+            const possibleBest = peerList[id]
+            const networkId = networkList[id].id
+            expect(store.getters['peer/available/best']({ networkId })).toIncludeAnyMembers(possibleBest)
+          })
+          it('should be able to get at least 2 best peers from a network', () => {
+            const id = 1
+            const mandatoryBest = peerList[id]
+            const min = mandatoryBest.length
+            const networkId = networkList[id].id
+            expect(store.getters['peer/available/best']({ networkId, min })).toIncludeSameMembers(mandatoryBest)
+          })
+          it('should be able to get at most 1 best peers from a network', () => {
+            const id = 0
+            const possibleBest = peerList[id]
+            const networkId = networkList[id].id
+            const getter = store.getters['peer/available/best']({ networkId, max: 1 })
+            expect(getter).toIncludeAnyMembers(possibleBest)
+            expect(getter.length).toBe(1)
+          })
         })
-        it('should be able to get a random seed peers from current network', () => {
-          const id = 0
-          const possibleSeedPeers = seedPeerList[id]
-          const getter = store.getters['peer/seed/random']({ amount: 1 })[0]
-          expect(possibleSeedPeers).toInclude(getter)
-        })
-        it('should be able to get seed peers from a specific network', () => {
-          const id = 1
-          const possibleSeedPeers = seedPeerList[id]
-          const networkId = networkList[id].id
-          const getter = store.getters['peer/seed/random']({ networkId })
-          expect(possibleSeedPeers).toIncludeAnyMembers(getter)
-        })
-      })
-    })
 
-    describe('broadcast', () => {
-      it('should be able to get the broadcast peers from current network', () => {
-        const id = 0
-        const possibleTop = peerList[id]
-        const possibleRandom = peerList[id]
-        const possibleSeed = seedPeerList[id]
-        const getter = store.getters['peer/available/broadcast']()
-        expect(getter).toIncludeAnyMembers([...possibleTop, ...possibleRandom, ...possibleSeed])
+        describe('random', () => {
+          it('should be able to get 5 random peers from current network', () => {
+            const possiblePeers = currentNetworkPeers()
+            const amount = Math.min(5, possiblePeers.length)
+            const getter = store.getters['peer/available/random']()
+            expect(getter).toIncludeAnyMembers(possiblePeers)
+            expect(getter.length).toBe(amount)
+          })
+
+          it('should be able to get 10 random peers from current network', () => {
+            const possiblePeers = currentNetworkPeers()
+            const amount = Math.min(10, possiblePeers.length) - 1 // -1 to exclude current peer.
+            const getter = store.getters['peer/available/random']({ amount })
+            expect(getter).toIncludeAnyMembers(possiblePeers)
+            expect(getter.length).toBe(amount)
+          })
+
+          it('should be able to get 10 random peers from current network, including the current', () => {
+            const possiblePeers = currentNetworkPeers()
+            const amount = Math.min(10, possiblePeers.length)
+            const getter = store.getters['peer/available/random']({ amount, ignoreCurrent: false })
+            expect(getter).toIncludeAnyMembers(possiblePeers)
+            expect(getter.length).toBe(amount)
+          })
+
+          it('should be able to get 1 random peer from current network', () => {
+            const possiblePeers = currentNetworkPeers()
+            const amount = Math.min(1, possiblePeers.length)
+            const getter = store.getters['peer/available/random']({ amount })
+            expect(getter).toIncludeAnyMembers(possiblePeers)
+            expect(getter.length).toBe(amount)
+          })
+
+          it('should be able to get 5 random peer from an specific network', () => {
+            const id = 1
+            const possiblePeers = peerList[id]
+            const networkId = networkList[id].id
+            const amount = Math.min(5, possiblePeers.length)
+            const getter = store.getters['peer/available/random']({ networkId })
+            expect(getter).toIncludeAnyMembers(possiblePeers)
+            expect(getter.length).toBe(amount)
+          })
+
+          it('should be able to get 5 random peer from current network, but ignoring current', () => {
+            const possiblePeers = currentNetworkPeers()
+            const impossiblePeer = currentPeer()
+            const amount = Math.min(5, possiblePeers.length)
+            const getter = store.getters['peer/available/random']({ ignoreCurrent: true })
+            expect(getter).toIncludeAnyMembers(possiblePeers)
+            expect(getter).not.toInclude(impossiblePeer)
+            expect(getter.length).toBe(amount)
+          })
+        })
+        describe('broadcast', () => {
+          it('should be able to get the broadcast peers from current network', () => {
+            const id = 0
+            const possibleTop = peerList[id]
+            const possibleRandom = peerList[id]
+            const possibleSeed = seedPeerList[id]
+            const getter = store.getters['peer/available/broadcast']()
+            expect(getter).toIncludeAnyMembers([...possibleTop, ...possibleRandom, ...possibleSeed])
+          })
+          it('should be able to get the broadcast peers from an specific network', () => {
+            const id = 1
+            const possibleTop = peerList[id]
+            const possibleRandom = peerList[id]
+            const possibleSeed = seedPeerList[id]
+            const networkId = networkList[id].id
+            const getter = store.getters['peer/available/broadcast']({ networkId })
+            expect(getter).toIncludeAnyMembers([...possibleTop, ...possibleRandom, ...possibleSeed])
+          })
+        })
       })
-      it('should be able to get the broadcast peers from an specific network', () => {
-        const id = 1
-        const possibleTop = peerList[id]
-        const possibleRandom = peerList[id]
-        const possibleSeed = seedPeerList[id]
-        const networkId = networkList[id].id
-        const getter = store.getters['peer/available/broadcast']({ networkId })
-        expect(getter).toIncludeAnyMembers([...possibleTop, ...possibleRandom, ...possibleSeed])
+      describe('mutations', () => {
+        describe('SET_PEERS', () => {
+          test.todo('should be able to set the peers to a network and set lastUpdate')
+        })
+        describe('CLEAR_PEERS', () => {
+          test.todo('should be able to clear all the peers from a network.')
+        })
+      })
+      describe('actions', () => {
+        describe('set', () => {
+          it('should be able to set available peers for the current network', async () => {
+            const networkId = currentNetwork().id
+            const peers = currentNetworkPeers()
+            await store.dispatch('peer/available/set', { peers })
+            expect(store.state.peer.available[networkId].peers).toBe(peers)
+          })
+          it('should be able to set available peers for a specific network.', async () => {
+            const id = 1
+            const networkId = networkList[id].id
+            const peers = peerList[id]
+            await store.dispatch('peer/available/set', { peers, networkId })
+            expect(store.state.peer.available[networkId].peers).toBe(peers)
+          })
+          it('should not be able to set available peers to anything but an array', async () => {
+            const id = 1
+            const networkId = networkList[id].id
+            const stateBefore = store.state.peer.available[networkId].peers
+            const peers = false
+            const action = () => store.dispatch('peer/available/set', { peers, networkId })
+            await expect(action).toThrow()
+            const stateAfter = store.state.peer.available[networkId].peers
+            expect(stateAfter).toBe(stateBefore)
+          })
+        })
+        describe('clear', () => {
+          beforeEach(() => {
+            store.commit('peer/available/SET_PEERS', {
+              peers: peerList[0],
+              networkId: networkList[0].id
+            })
+
+            store.commit('peer/available/SET_PEERS', {
+              peers: peerList[1],
+              networkId: networkList[1].id
+            })
+          })
+          it('should be able to clear peers for the current network', async () => {
+            const peers = currentNetworkPeers()
+            const networkId = currentNetwork().id
+            expect(peers.length).toBeGreaterThan(0)
+            store.dispatch('peer/available/clear')
+            expect(store.state.peer.available[networkId]).toBeFalsy()
+          })
+          it('should be able to clear peers for a specific network', () => {
+            const id = 1
+            const networkId = networkList[id].id
+            const peers = store.state.peer.available[networkId].peers
+            expect(peers.length).toBeGreaterThan(0)
+            store.dispatch('peer/available/clear', { networkId })
+            expect(store.state.peer.available[networkId]).toBeFalsy()
+          })
+        })
+        describe('refresh', () => {
+        })
+        describe('findBest', () => {
+
+        })
+        describe('connectToBest', () => {
+
+        })
       })
     })
 
     describe('current', () => {
-      it('should be able to get the current peer from the current network', () => {
-        const peer = currentPeer()
-        const getter = store.getters['peer/current/get']()
-        expect(getter).toBe(peer)
+      describe('getters', () => {
+        describe('get', () => {
+          it('should be able to get the current peer from the current network', () => {
+            const peer = currentPeer()
+            const getter = store.getters['peer/current/get']()
+            expect(getter).toBe(peer)
+          })
+        })
+      })
+      describe('mutations', () => {
+        describe('SET_CURRENT_PEER', () => {
+          test.todo('should be able to set the current peer for a network.')
+        })
+        describe('CLEAR_CURRENT_PEER', () => {
+          test.todo('should be able to clear the current peer for a network.')
+        })
+      })
+      describe('actions', () => {
+        describe('set', () => {
+          it('should be able to set the current peer for the current network', async () => {
+            const peer = generateValidPeer()
+            let current = currentPeer()
+
+            expect(current).not.toBe(peer)
+
+            setPeerNocks(peer)
+            await store.dispatch('peer/current/set', { peer })
+            current = currentPeer()
+
+            // Remove parameters that are set during the response.
+            delete current.latency
+            delete peer.latency
+
+            expect(current).toStrictEqual(peer)
+          })
+          it('should be able to set the current peer for a specific network', async () => {
+            const id = 1
+            const networkId = networkList[id].id
+
+            const peer = generateValidPeer()
+            let current = store.state.peer.current[networkId]
+
+            expect(current).not.toBe(peer)
+
+            setPeerNocks(peer)
+            await store.dispatch('peer/current/set', { peer, networkId })
+
+            current = store.state.peer.current[networkId]
+
+            delete current.latency
+            delete peer.latency
+
+            expect(current).toStrictEqual(peer)
+          })
+          it('should not be able to set a falsy value as the current peer', async () => {
+            const peer = false
+            await expect(store.dispatch('peer/current/set', { peer })).rejects.toThrow()
+          })
+          it('should not be able to set an empty object as the current peer', async () => {
+            const peer = {}
+            await expect(store.dispatch('peer/current/set', { peer })).rejects.toThrow()
+          })
+          it('should be able to not update the peer before setting it as the current peer', async () => {
+            const peer = generateValidPeer()
+            const networkId = currentNetwork().id
+            setPeerNocks(peer)
+            await store.dispatch('peer/current/set', { peer, update: false })
+            const current = store.state.peer.current[networkId]
+            expect(current).toBe(peer)
+          })
+        })
+
+        describe('clear', () => {
+          beforeEach(() => {
+            store.commit('peer/current/SET_CURRENT_PEER', {
+              peer: peerList[0][0],
+              networkId: networkList[0].id
+            })
+
+            store.commit('peer/current/SET_CURRENT_PEER', {
+              peer: peerList[1][0],
+              networkId: networkList[1].id
+            })
+          })
+          it('should be able to clear the current peer for the current network', async () => {
+            let peer = currentPeer()
+            const networkId = currentNetwork().id
+            expect(peer).toBeTruthy()
+            await store.dispatch('peer/current/clear')
+            peer = store.state.peer.current[networkId]
+            expect(peer).toBeFalsy()
+          })
+          it('should be able to clear the current peer for a specific network', async () => {
+            const id = 1
+            const networkId = networkList[id].id
+            let peer = store.state.peer.current[networkId]
+            expect(peer).toBeTruthy()
+            await store.dispatch('peer/current/clear', { networkId })
+            peer = store.state.peer.current[networkId]
+            expect(peer).toBeFalsy()
+          })
+        })
       })
     })
 
     describe('discovery', () => {
-      describe('default networks (ark.mainnet & ark.devnet)', () => {
-        it('should be able to get the peer discovery instance for the current network', async () => {
-          const spy = jest.spyOn(PeerDiscovery, 'new').mockImplementation(() => jest.fn())
-          const networkId = currentNetwork().id
-          await store.getters['peer/discovery/get']()
-          expect(spy).toHaveBeenCalledWith({ networkOrHost: networkId })
-        })
-        it('should be able to get the peer discovery instance for a specific network', async () => {
-          const spy = jest.spyOn(PeerDiscovery, 'new').mockImplementation(() => jest.fn())
-          const id = 1
-          const networkId = networkList[id].id
-          await store.getters['peer/discovery/get']({ networkId })
-          expect(spy).toHaveBeenCalledWith({ networkOrHost: networkId })
-        })
-        it('should be able to get the peer discovery instance for default network names', async () => {
-          const networkId = 'ark.devnet'
-          const spy = jest.spyOn(PeerDiscovery, 'new').mockImplementation(() => jest.fn())
-          await store.getters['peer/discovery/get']({ networkId })
-          expect(spy).toHaveBeenCalledWith({ networkOrHost: 'devnet' })
+      describe('getters', () => {
+        describe('get', () => {
+          describe('default networks (ark.mainnet & ark.devnet)', () => {
+            it('should be able to get the peer discovery instance for the current network', async () => {
+              const spy = jest.spyOn(PeerDiscovery, 'new').mockImplementation(() => jest.fn())
+              const networkId = currentNetwork().id
+              await store.getters['peer/discovery/get']()
+              expect(spy).toHaveBeenCalledWith({ networkOrHost: networkId })
+            })
+            it('should be able to get the peer discovery instance for a specific network', async () => {
+              const spy = jest.spyOn(PeerDiscovery, 'new').mockImplementation(() => jest.fn())
+              const id = 1
+              const networkId = networkList[id].id
+              await store.getters['peer/discovery/get']({ networkId })
+              expect(spy).toHaveBeenCalledWith({ networkOrHost: networkId })
+            })
+            it('should be able to get the peer discovery instance for default network names', async () => {
+              const networkId = 'ark.devnet'
+              const spy = jest.spyOn(PeerDiscovery, 'new').mockImplementation(() => jest.fn())
+              await store.getters['peer/discovery/get']({ networkId })
+              expect(spy).toHaveBeenCalledWith({ networkOrHost: 'devnet' })
+            })
+          })
         })
       })
     })
-  })
 
-  describe('mutations', () => {
-    describe('SET_PEERS', () => {
-      test.todo('should be able to set the peers to a network and set lastUpdate')
-      describe('CLEAR_PEERS', () => {
-        test.todo('should be able to clear all the peers from a network.')
-      })
-      describe('SET_CURRENT_PEER', () => {
-        test.todo('should be able to set the current peer for a network.')
-      })
-      describe('CLEAR_CURRENT_PEER', () => {
-        test.todo('should be able to clear the current peer for a network.')
+    describe('seed', () => {
+      describe('getters', () => {
+        beforeAll(() => {
+          // ID 0 is aways current network
+          config.PEERS[networkList[0].id] = seedPeerList[0]
+          config.PEERS[networkList[1].id] = seedPeerList[1]
+        })
+
+        afterAll(() => {
+          delete config.PEERS[networkList[0].id]
+          delete config.PEERS[networkList[1].id]
+        })
+
+        describe('seed/all', () => {
+          it('should be able to get all seed peers from current network', () => {
+            const id = 0
+            const possibleSeedPeers = seedPeerList[id]
+            const getter = store.getters['peer/seed/all']()
+            expect(getter).toIncludeSameMembers(possibleSeedPeers)
+          })
+
+          it('should be able to get all seed peers from a specific network', () => {
+            const id = 1
+            const possibleSeedPeers = seedPeerList[id]
+            const networkId = networkList[id].id
+            const getter = store.getters['peer/seed/all']({ networkId })
+            expect(getter).toIncludeSameMembers(possibleSeedPeers)
+          })
+        })
+
+        describe('seed/random', () => {
+          it('should be able to get 5 random seed peers from current network', () => {
+            const id = 0
+            const possibleSeedPeers = seedPeerList[id]
+            const getter = store.getters['peer/seed/random']()
+            expect(possibleSeedPeers).toIncludeAllMembers(getter)
+          })
+          it('should be able to get a random seed peers from current network', () => {
+            const id = 0
+            const possibleSeedPeers = seedPeerList[id]
+            const getter = store.getters['peer/seed/random']({ amount: 1 })[0]
+            expect(possibleSeedPeers).toInclude(getter)
+          })
+          it('should be able to get seed peers from a specific network', () => {
+            const id = 1
+            const possibleSeedPeers = seedPeerList[id]
+            const networkId = networkList[id].id
+            const getter = store.getters['peer/seed/random']({ networkId })
+            expect(possibleSeedPeers).toIncludeAnyMembers(getter)
+          })
+        })
       })
     })
 
-    describe('actions', () => {
-      beforeEach(() => {
-        networkList.forEach(network => {
-          store.commit('peer/available/CLEAR_PEERS', network.id)
-          store.commit('peer/current/CLEAR_CURRENT_PEER', network.id)
-        })
-      })
-      describe('available/set', () => {
-        it('should be able to set available peers for the current network', async () => {
-          const networkId = currentNetwork().id
-          const peers = currentNetworkPeers()
-          await store.dispatch('peer/available/set', { peers })
-          expect(store.state.peer.available[networkId].peers).toBe(peers)
-        })
-        it('should be able to set available peers for a specific network.', async () => {
-          const id = 1
-          const networkId = networkList[id].id
-          const peers = peerList[id]
-          await store.dispatch('peer/available/set', { peers, networkId })
-          expect(store.state.peer.available[networkId].peers).toBe(peers)
-        })
-        it('should not be able to set available peers to anything but an array', async () => {
-          const id = 1
-          const networkId = networkList[id].id
-          const stateBefore = store.state.peer.available[networkId].peers
-          const peers = false
-          const action = () => store.dispatch('peer/available/set', { peers, networkId })
-          await expect(action).toThrow()
-          const stateAfter = store.state.peer.available[networkId].peers
-          expect(stateAfter).toBe(stateBefore)
-        })
-      })
-      describe('current/set', () => {
-        it('should be able to set the current peer for the current network', async () => {
-          const peer = generateValidPeer()
-          let current = currentPeer()
+    describe('system', () => {
+      describe('actions', () => {
+        describe('update', () => {
 
-          expect(current).not.toBe(peer)
-
-          setPeerNocks(peer)
-          await store.dispatch('peer/current/set', { peer })
-          current = currentPeer()
-
-          // Remove parameters that are set during the response.
-          delete current.latency
-          delete peer.latency
-
-          expect(current).toStrictEqual(peer)
         })
-        it('should be able to set the current peer for a specific network', async () => {
-          const id = 1
-          const networkId = networkList[id].id
+        describe('clear', () => {
 
-          const peer = generateValidPeer()
-          let current = store.state.peer.current[networkId]
-
-          expect(current).not.toBe(peer)
-
-          setPeerNocks(peer)
-          await store.dispatch('peer/current/set', { peer, networkId })
-
-          current = store.state.peer.current[networkId]
-
-          delete current.latency
-          delete peer.latency
-
-          expect(current).toStrictEqual(peer)
         })
-        it('should not be able to set a falsy value as the current peer', async () => {
-          const peer = false
-          await expect(store.dispatch('peer/current/set', { peer })).rejects.toThrow()
-        })
-        it('should not be able to set an empty object as the current peer', async () => {
-          const peer = {}
-          await expect(store.dispatch('peer/current/set', { peer })).rejects.toThrow()
-        })
-        it('should be able to not update the peer before setting it as the current peer', async () => {
-          const peer = generateValidPeer()
-          const networkId = currentNetwork().id
-          setPeerNocks(peer)
-          await store.dispatch('peer/current/set', { peer, update: false })
-          const current = store.state.peer.current[networkId]
-          expect(current).toBe(peer)
-        })
-      })
-
-      describe('available/clear', () => {
-        beforeEach(() => {
-          store.commit('peer/available/SET_PEERS', {
-            peers: peerList[0],
-            networkId: networkList[0].id
-          })
-
-          store.commit('peer/available/SET_PEERS', {
-            peers: peerList[1],
-            networkId: networkList[1].id
-          })
-        })
-        it('should be able to clear peers for the current network', async () => {
-          const peers = currentNetworkPeers()
-          const networkId = currentNetwork().id
-          expect(peers.length).toBeGreaterThan(0)
-          store.dispatch('peer/available/clear')
-          expect(store.state.peer.available[networkId]).toBeFalsy()
-        })
-        it('should be able to clear peers for a specific network', () => {
-          const id = 1
-          const networkId = networkList[id].id
-          const peers = store.state.peer.available[networkId].peers
-          expect(peers.length).toBeGreaterThan(0)
-          store.dispatch('peer/available/clear', { networkId })
-          expect(store.state.peer.available[networkId]).toBeFalsy()
-        })
-      })
-
-      describe('current/clear', () => {
-        beforeEach(() => {
-          store.commit('peer/current/SET_CURRENT_PEER', {
-            peer: peerList[0][0],
-            networkId: networkList[0].id
-          })
-
-          store.commit('peer/current/SET_CURRENT_PEER', {
-            peer: peerList[1][0],
-            networkId: networkList[1].id
-          })
-        })
-        it('should be able to clear the current peer for the current network', async () => {
-          let peer = currentPeer()
-          const networkId = currentNetwork().id
-          expect(peer).toBeTruthy()
-          await store.dispatch('peer/current/clear')
-          peer = store.state.peer.current[networkId]
-          expect(peer).toBeFalsy()
-        })
-        it('should be able to clear the current peer for a specific network', async () => {
-          const id = 1
-          const networkId = networkList[id].id
-          let peer = store.state.peer.current[networkId]
-          expect(peer).toBeTruthy()
-          await store.dispatch('peer/current/clear', { networkId })
-          peer = store.state.peer.current[networkId]
-          expect(peer).toBeFalsy()
-        })
-      })
-
-      describe('refresh', () => {
-        test.todo('should be able to refresh the peers available for the current network')
-        test.todo('should be able to refresh the peers available for a specific network')
       })
     })
   })
