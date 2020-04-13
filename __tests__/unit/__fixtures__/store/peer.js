@@ -13,7 +13,7 @@ export function generateValidPeer ({ params = {}, seed = false } = {}) {
   const version = sample(['2.0.0', '1.3.1', '2'])
   const height = 6030358
   const os = sample(['linux', 'windows', 'mac_os'])
-  const status = sample(['OK', undefined])
+  const status = sample(['OK'])
   const latency = sample([random(1, 1000), 0]) // When latency is undefined, it returns 0 instead. Changing 0 to undefined break tests.
   const lastUpdated = sample([Date.now(), undefined])
 
