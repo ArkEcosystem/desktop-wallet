@@ -51,8 +51,7 @@ export default {
      */
     async 'set' ({ commit, dispatch, rootGetters }, { peer, networkId, update = true } = {}) {
       if (!peer) {
-        logger.error('No peer was provided to be set as current.')
-        return
+        throw new Error('No peer was provided to be set as current.')
       }
 
       networkId = networkId || optionalChaining(() => rootGetters['session/profile'].networkId, false)

@@ -101,7 +101,6 @@ export default {
       try {
         response = await dispatch('peer/fetchStatus', peer)
       } catch (err) {
-        logger.error(err)
         throw i18n.t('PEER.STATUS_CHECK_FAILED')
       }
 
@@ -137,7 +136,6 @@ export default {
         latencyEnd = performance.now()
         if (!client || !status) throw new Error()
       } catch (err) {
-        logger.error(err)
         throw i18n.t('PEER.STATUS_CHECK_FAILED')
       }
 
