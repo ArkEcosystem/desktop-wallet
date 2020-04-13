@@ -8,9 +8,16 @@ import sortByProps from './sort-by-props'
 const capitalize = str => `${str.charAt(0).toUpperCase()}${str.slice(1).toLowerCase()}`
 
 /**
+ * Flattens `array` a single level deep
+ * @param {Array} arr
+ * @return {Array} Return the new flattened array
+ */
+const flatten = arr => arr.reduce((a, b) => a.concat(b), [])
+
+/**
  * Checks if `value` is an empty object, collection, map, or set
  * @param {*} val
- * @return {Boolean} Returns `true` if `value` is empty, else `false`
+ * @return {Boolean} Return `true` if `value` is empty, else `false`
  */
 const isEmpty = val => [Object, Array].includes((val || {}).constructor) && !Object.entries((val || {})).length
 
@@ -52,6 +59,7 @@ const upperFirst = str => `${str.charAt(0).toUpperCase()}${str.slice(1)}`
 
 export {
   capitalize,
+  flatten,
   isEmpty,
   isNil,
   max,
