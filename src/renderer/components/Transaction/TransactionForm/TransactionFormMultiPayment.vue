@@ -320,7 +320,6 @@ export default {
   },
 
   mounted () {
-    console.log('this.$v', this.$v)
     this.$v.recipientId.$touch()
   },
 
