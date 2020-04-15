@@ -39,7 +39,7 @@ describe('TransactionConfirmIpfs', () => {
     })
 
     it('should output senderLabel', () => {
-      expect(wrapper.find('.TransactionConfirmIpfs__sender .ListDividedItem__value span').text()).toBe('address-1')
+      expect(wrapper.find('.TransactionConfirmIpfs__sender .ListDividedItem__value span:first-child').text()).toBe('formatted-address-1')
     })
   })
 
