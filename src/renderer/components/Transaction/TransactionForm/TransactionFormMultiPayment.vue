@@ -320,6 +320,7 @@ export default {
   },
 
   mounted () {
+    console.log('this.$v', this.$v)
     this.$v.recipientId.$touch()
   },
 
@@ -420,7 +421,7 @@ export default {
     form: {
       recipients: {
         aboveMinimum () {
-          return this.form.recipients.length > 1
+          return this.form.recipients.length >= 1
         },
 
         belowOrEqualMaximum () {
