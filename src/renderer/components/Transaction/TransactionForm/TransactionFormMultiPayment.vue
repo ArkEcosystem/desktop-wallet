@@ -202,9 +202,9 @@ export default {
     recipientId: '',
     amount: '',
     form: {
-      recipientId: '',
-      recipients: [],
-      amount: '',
+      recipientId: '', // normal transaction
+      amount: '', // normal transaction
+      recipients: [], // multipayment transaction
       fee: 0,
       passphrase: '',
       walletPassword: '',
@@ -362,6 +362,11 @@ export default {
         return
       }
 
+      // normal transaction
+      this.$v.form.recipientId.$model = this.recipientId
+      this.$v.form.amount.$model = this.amount
+
+      // multipayment transaction
       this.$v.form.recipients.$model.push({
         address: this.recipientId,
         amount: this.currency_unitToSub(this.amount)
