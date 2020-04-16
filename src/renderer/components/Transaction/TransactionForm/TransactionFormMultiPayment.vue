@@ -402,6 +402,16 @@ export default {
         ...this.form.recipients.slice(0, index),
         ...this.form.recipients.slice(index + 1)
       ]
+
+      if (!this.isMultiPayment) {
+        if (Object.prototype.hasOwnProperty.call(this.$v.form.recipients.$model, 0)) {
+          this.$v.form.recipientId.$model = this.$v.form.recipients.$model[0].address
+          this.$v.form.amount.$model = this.$v.form.recipients.$model[0].amount
+        } else {
+          this.$v.form.recipientId.$model = ''
+          this.$v.form.amount.$model = ''
+        }
+      }
     }
   },
 
@@ -429,6 +439,26 @@ export default {
     },
 
     form: {
+      recipientId: {
+        required,
+        isValid () {
+          if (this.$refs.recipient) {
+            return !this.$refs.recipient.$v.$invalid
+          }
+
+          return false
+        }
+      },
+      amount: {
+        required,
+        isValid () {
+          if (this.$refs.amount) {
+            return !this.$refs.amount.$v.$invalid
+          }
+
+          return false
+        }
+      },
       recipients: {
         aboveMinimum () {
           return this.form.recipients.length >= 1
