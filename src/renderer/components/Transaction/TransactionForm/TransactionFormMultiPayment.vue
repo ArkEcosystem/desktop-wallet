@@ -235,6 +235,10 @@ export default {
       return !this.$v.form.$invalid
     },
 
+    isMultiPayment () {
+      return this.form.recipients.length > 1
+    },
+
     hasMoreThanMaximumRecipients () {
       return this.form.recipients.length > this.maximumRecipients
     },
