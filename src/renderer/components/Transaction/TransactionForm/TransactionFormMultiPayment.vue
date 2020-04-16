@@ -199,10 +199,12 @@ export default {
 
   data: () => ({
     step: 1,
-    amount: '',
     recipientId: '',
+    amount: '',
     form: {
+      recipientId: '',
       recipients: [],
+      amount: '',
       fee: 0,
       passphrase: '',
       walletPassword: '',
