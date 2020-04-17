@@ -137,7 +137,7 @@
     <footer class="mt-4 flex justify-between items-center">
       <div class="self-start">
         <button
-          :disabled="step === 1"
+          v-if="step === 2"
           class="TransactionFormMultiPayment__prev blue-button"
           @click="previousStep"
         >
@@ -241,12 +241,12 @@ export default {
       return this.form.recipients.length > 1
     },
 
-    transactionTypeFee () {
-      return this.isMultiPayment ? TRANSACTION_TYPES.GROUP_1.MULTI_PAYMENT : TRANSACTION_TYPES.GROUP_1.TRANSFER
-    },
-
     hasMoreThanMaximumRecipients () {
       return this.form.recipients.length > this.maximumRecipients
+    },
+
+    transactionTypeFee () {
+      return this.isMultiPayment ? TRANSACTION_TYPES.GROUP_1.MULTI_PAYMENT : TRANSACTION_TYPES.GROUP_1.TRANSFER
     },
 
     // Customize the message to display the minimum amount as subunit
