@@ -10,7 +10,7 @@ class PeerDiscoveryStub {
   }
 }
 
-const mockDispatch = jest.fn(() => new PeerDiscoveryStub())
+const mockGetter = jest.fn(() => new PeerDiscoveryStub())
 
 let walletApi
 let app
@@ -21,7 +21,9 @@ describe('Peer All Sandbox', () => {
     walletApi = {}
     app = {
       $store: {
-        getters: mockDispatch
+        getters: {
+          'peer/discovery/get': mockGetter
+        }
       }
     }
     peerAllSandbox = createPeerAllSandbox(walletApi, app)
@@ -29,7 +31,7 @@ describe('Peer All Sandbox', () => {
   })
 
   it('should expose functions', () => {
-    expect(mockDispatch).toHaveBeenCalled()
+    expect(mockGetter).toHaveBeenCalled()
     expect(walletApi.peers.all).toBeTruthy()
   })
 })

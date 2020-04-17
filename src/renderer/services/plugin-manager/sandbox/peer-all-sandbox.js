@@ -4,7 +4,7 @@ export function create (walletApi, app) {
       walletApi.peers = {}
     }
 
-    const peerDiscovery = (await app.$store.getters['peer/discovery'])
+    const peerDiscovery = (await app.$store.getters['peer/discovery/get']())
       .withLatency(300)
       .sortBy('latency')
 
