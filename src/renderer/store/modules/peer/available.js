@@ -288,8 +288,8 @@ export default {
        * @param  {Object} [network=null] The network object
        * @return {(Object|null)}
        */
-    async 'findBest' ({ dispatch, getters, rootGetters }, { refresh = true, network = {} } = {}) {
-      const networkId = network.id || optionalChaining(() => rootGetters['session/profile'].networkId, false)
+    async 'findBest' ({ dispatch, getters, rootGetters }, { refresh = true, network = {}, networkId } = {}) {
+      networkId = network.id || networkId || optionalChaining(() => rootGetters['session/profile'].networkId, false)
 
       if (refresh) {
         try {
