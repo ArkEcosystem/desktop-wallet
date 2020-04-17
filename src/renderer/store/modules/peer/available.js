@@ -279,7 +279,7 @@ export default {
         this._vm.$error(i18n.t('PEER.FAILED_REFRESH'))
       }
 
-      dispatch('set', { peers })
+      dispatch('set', { peers, networkId })
     },
 
     /**
