@@ -77,6 +77,9 @@ function setPeerNocks (peer) {
         transfer: {}
       }
     })
+
+  nock(baseUrl)
+    .log(console.log)
 }
 
 beforeAll(() => {
@@ -107,6 +110,7 @@ beforeAll(() => {
 
 afterEach(function () {
   nock.cleanAll()
+  jest.clearAllMocks()
 })
 
 describe('peer', () => {
@@ -316,12 +320,107 @@ describe('peer', () => {
           })
         })
         describe('refresh', () => {
+          it('should be able to refresh the peer list from current network', async () => {
+            const networkId = currentNetwork().id
+            const peers = [generateValidPeer(), generateValidPeer(), generateValidPeer()]
+            const spy = jest.spyOn(PeerDiscovery, 'new').mockImplementationOnce(() => ({
+              withLatency: jest.fn().mockReturnThis(),
+              sortBy: jest.fn().mockReturnThis(),
+              findPeersWithPlugin: jest.fn().mockReturnValue(peers)
+            }))
+            await store.dispatch('peer/available/refresh')
+            expect(spy).toHaveBeenCalledWith({ networkOrHost: networkId })
+            expect(currentNetworkPeers()).toBe(peers)
+          })
+          it('should be able to refresh the peer list from another network', async () => {
+            const id = 1
+            const networkId = networkList[id].id
+            const peers = [generateValidPeer(), generateValidPeer(), generateValidPeer()]
+            const spy = jest.spyOn(PeerDiscovery, 'new').mockImplementationOnce(() => ({
+              withLatency: jest.fn().mockReturnThis(),
+              sortBy: jest.fn().mockReturnThis(),
+              findPeersWithPlugin: jest.fn().mockReturnValue(peers)
+            }))
+            await store.dispatch('peer/available/refresh', { networkId })
+            expect(spy).toHaveBeenCalledWith({ networkOrHost: networkId })
+            expect(store.state.peer.available[networkId].peers).toBe(peers)
+          })
         })
         describe('findBest', () => {
+          it('should be able to find the best peer for the current network', async () => {
+            let peers = currentNetworkPeers()
+            const networkId = currentNetwork().id
+            peers.map(peer => setPeerNocks(peer))
 
+            const spyDiscovery = jest.spyOn(PeerDiscovery, 'new').mockImplementationOnce(() => {
+              return {
+                withLatency: jest.fn().mockReturnThis(),
+                sortBy: jest.fn().mockReturnThis(),
+                findPeersWithPlugin: jest.fn().mockReturnValue(peers)
+              }
+            })
+
+            const response = await store.dispatch('peer/available/findBest')
+
+            // normalize latency
+            response.latency = 0
+            peers = peers.map(peer => ({ ...peer, latency: 0 }))
+
+            expect(spyDiscovery).toHaveBeenCalledWith({ networkOrHost: networkId })
+            expect(response).toStrictEqual(peers.find(peer => peer.host === response.host))
+          })
+
+          it('should be able to find the best peer for an specific network', async () => {
+            const id = 1
+            let peers = peerList[id]
+            const networkId = networkList[id].id
+            peers.map(peer => setPeerNocks(peer))
+
+            const spyDiscovery = jest.spyOn(PeerDiscovery, 'new').mockImplementationOnce(() => {
+              return {
+                withLatency: jest.fn().mockReturnThis(),
+                sortBy: jest.fn().mockReturnThis(),
+                findPeersWithPlugin: jest.fn().mockReturnValue(peers)
+              }
+            })
+
+            const response = await store.dispatch('peer/available/findBest', { networkId })
+
+            // normalize latency
+            response.latency = 0
+            peers = peers.map(peer => ({ ...peer, latency: 0 }))
+
+            expect(spyDiscovery).toHaveBeenCalledWith({ networkOrHost: networkId })
+            expect(response).toStrictEqual(peers.find(peer => peer.host === response.host))
+          })
+
+          it('should be able to find the best peer without refreashing the list', async () => {
+            let peers = currentNetworkPeers()
+            peers.map(peer => setPeerNocks(peer))
+
+            const spyDiscovery = jest.spyOn(PeerDiscovery, 'new').mockImplementationOnce(() => {
+              return {
+                withLatency: jest.fn().mockReturnThis(),
+                sortBy: jest.fn().mockReturnThis(),
+                findPeersWithPlugin: jest.fn().mockReturnValue(peers)
+              }
+            })
+
+            const response = await store.dispatch('peer/available/findBest', { refresh: false })
+
+            // normalize latency
+            response.latency = 0
+            peers = peers.map(peer => ({ ...peer, latency: 0 }))
+
+            expect(spyDiscovery).not.toHaveBeenCalled()
+            expect(response).toStrictEqual(peers.find(peer => peer.host === response.host))
+          })
         })
         describe('connectToBest', () => {
-
+          test.todo('it should be able to connet to best peer from current network')
+          test.todo('it should be able to skip current peer if is custom network')
+          test.todo('it should be able to connet to best peer without refreshing the network')
+          test.todo('it should be able to clear the system in case cannot connect to best peer')
         })
       })
     })
@@ -517,10 +616,10 @@ describe('peer', () => {
     describe('system', () => {
       describe('actions', () => {
         describe('update', () => {
-
+          test.todo('it should be able to update the whole peer system')
         })
         describe('clear', () => {
-
+          test.todo('it should be able to clear all the peer system')
         })
       })
     })
