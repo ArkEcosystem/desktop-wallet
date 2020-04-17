@@ -342,6 +342,12 @@ export default {
         multiSignature: this.currentWallet.multiSignature
       }
 
+      if (!this.isMultiPayment) {
+        transactionData.recipientId = this.form.recipientId
+        transactionData.amount = this.form.amount
+        transactionData.networkId = this.walletNetwork.id
+      }
+
       if (this.currentWallet.secondPublicKey) {
         transactionData.secondPassphrase = this.form.secondPassphrase
       }
@@ -350,7 +356,11 @@ export default {
     },
 
     async buildTransaction (transactionData, isAdvancedFee = false, returnObject = false) {
-      return this.$client.buildMultiPayment(transactionData, isAdvancedFee, returnObject)
+      if (this.isMultiPayment) {
+        return this.$client.buildMultiPayment(transactionData, isAdvancedFee, returnObject)
+      } else {
+        return this.$client.buildTransfer(transactionData, isAdvancedFee, returnObject)
+      }
     },
 
     transactionError () {
@@ -364,7 +374,7 @@ export default {
 
       // normal transaction
       this.$v.form.recipientId.$model = this.recipientId
-      this.$v.form.amount.$model = this.amount
+      this.$v.form.amount.$model = this.currency_unitToSub(this.amount)
 
       // multipayment transaction
       this.$v.form.recipients.$model.push({
@@ -439,26 +449,8 @@ export default {
     },
 
     form: {
-      recipientId: {
-        required,
-        isValid () {
-          if (this.$refs.recipient) {
-            return !this.$refs.recipient.$v.$invalid
-          }
-
-          return false
-        }
-      },
-      amount: {
-        required,
-        isValid () {
-          if (this.$refs.amount) {
-            return !this.$refs.amount.$v.$invalid
-          }
-
-          return false
-        }
-      },
+      recipientId: {},
+      amount: {},
       recipients: {
         aboveMinimum () {
           return this.form.recipients.length >= 1
