@@ -87,7 +87,7 @@
       <InputFee
         ref="fee"
         :currency="walletNetwork.token"
-        :transaction-type="$options.transactionType"
+        :transaction-type="transactionTypeFee"
         :is-disabled="!currentWallet"
         :wallet="currentWallet"
         :wallet-network="walletNetwork"
@@ -241,6 +241,10 @@ export default {
       return this.form.recipients.length > 1
     },
 
+    transactionTypeFee () {
+      return this.isMultiPayment ? TRANSACTION_TYPES.GROUP_1.MULTI_PAYMENT : TRANSACTION_TYPES.GROUP_1.TRANSFER
+    },
+
     hasMoreThanMaximumRecipients () {
       return this.form.recipients.length > this.maximumRecipients
     },
@@ -364,7 +368,11 @@ export default {
     },
 
     transactionError () {
-      this.$error(this.$t('TRANSACTION.ERROR.VALIDATION.MULTI_PAYMENT'))
+      if (this.isMultiPayment) {
+        this.$error(this.$t('TRANSACTION.ERROR.VALIDATION.MULTI_PAYMENT'))
+      } else {
+        this.$error(this.$t('TRANSACTION.ERROR.VALIDATION.TRANSFER'))
+      }
     },
 
     addRecipient () {
