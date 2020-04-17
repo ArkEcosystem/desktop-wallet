@@ -74,9 +74,7 @@ jest.mock('@/store', () => ({
 
       return fees[group][type]
     },
-    'peer/client': (peer) => {
-      return store.getters['peer/client']({ peer })
-    },
+    'peer/peer/client': jest.fn(),
     'peer/current/get': () => ({
       ip: '1.1.1.1',
       port: '8080',
@@ -2078,7 +2076,7 @@ describe('Services > Client', () => {
     })
 
     it('should do nothing if no transactions', async () => {
-      const spy = jest.spyOn(store.getters, 'peer/current')
+      const spy = jest.spyOn(store.getters, 'peer/current/get')
 
       await client.broadcastTransaction([])
 
@@ -2088,7 +2086,7 @@ describe('Services > Client', () => {
     })
 
     it('should do nothing if empty transaction object', async () => {
-      const spy = jest.spyOn(store.getters, 'peer/current')
+      const spy = jest.spyOn(store.getters, 'peer/current/get')
 
       await client.broadcastTransaction({})
 
@@ -2107,10 +2105,9 @@ describe('Services > Client', () => {
     })
 
     describe('broadcast', () => {
-      let spyDispatch
+      let spyGetter
       beforeEach(() => {
-        spyDispatch = jest.spyOn(store, 'dispatch').mockImplementation((_, peer) => {
-          // Copied from peer store
+        spyGetter = jest.spyOn(store.getters, 'peer/peer/client').mockImplementation(({ peer } = {}) => {
           const client = new ClientService(false)
           const scheme = peer.isHttps ? 'https://' : 'http://'
           client.host = `${scheme}${peer.ip}:${peer.port}`
@@ -2129,7 +2126,7 @@ describe('Services > Client', () => {
       })
 
       afterEach(() => {
-        spyDispatch.mockRestore()
+        spyGetter.mockRestore()
       })
 
       it('should get peers to broadcast to', async () => {
@@ -2143,19 +2140,21 @@ describe('Services > Client', () => {
       })
 
       it('should broadcast to all peers and return responses', async () => {
-        const spy = jest.spyOn(store.getters, 'peer/available/broadcast')
-
         const response = await client.broadcastTransaction({ network: 23 }, true)
 
-        expect(spy).toHaveBeenCalledWith('peer/peer/client', {
-          ip: '1.1.1.1',
-          port: '8080',
-          isHttps: false
+        expect(spyGetter).toHaveBeenCalledWith({
+          peer: {
+            ip: '1.1.1.1',
+            port: '8080',
+            isHttps: false
+          }
         })
-        expect(spy).toHaveBeenCalledWith('peer/peer/client', {
-          ip: '2.2.2.2',
-          port: '8080',
-          isHttps: false
+        expect(spyGetter).toHaveBeenCalledWith({
+          peer: {
+            ip: '2.2.2.2',
+            port: '8080',
+            isHttps: false
+          }
         })
         expect(response.length).toBe(2)
         expect(response[0].body).toEqual({
