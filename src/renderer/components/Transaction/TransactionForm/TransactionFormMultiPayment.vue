@@ -30,11 +30,11 @@
         :is-disabled="!currentWallet"
         :warning-text="recipientWarning"
         name="recipientId"
-        class="TransactionFormMultiPayment__recipient mb-5 mr-4 flex-1"
+        class="TransactionFormMultiPayment__recipient mb-5"
       />
 
       <div
-        class="flex"
+        class="flex items-baseline mb-5"
       >
         <InputCurrency
           ref="amount"
@@ -50,14 +50,24 @@
           :required="true"
           :is-disabled="!currentWallet"
           :wallet-network="walletNetwork"
-          class="TransactionFormMultiPayment__amount flex-1"
+          class="TransactionFormMultiPayment__amount flex-1 mr-3"
+          @blur="ensureAvailableAmount"
+          @input="setSendAll(false, false)"
         />
 
         <ButtonGeneric
           :disabled="!validStep1"
           :label="$t('TRANSACTION.MULTI_PAYMENT.BUTTON_ADD')"
-          class="TransactionFormMultiPayment__add py-1 flex-inline h-8 mt-4 ml-4"
+          class="TransactionFormMultiPayment__add py-1 flex-inline h-8 mt-4 mr-3"
           @click="addRecipient"
+        />
+
+        <InputSwitch
+          v-model="isSendAllActive"
+          :text="$t('TRANSACTION.SEND_ALL')"
+          :is-disabled="!canSendAll || !currentWallet"
+          class="TransactionFormTransfer__send-all"
+          @change="setSendAll"
         />
       </div>
 
@@ -154,6 +164,17 @@
       </div>
     </footer>
 
+    <ModalConfirmation
+      v-if="showConfirmSendAll"
+      :question="$t('TRANSACTION.CONFIRM_SEND_ALL')"
+      :title="$t('TRANSACTION.CONFIRM_SEND_ALL_TITLE')"
+      :note="$t('TRANSACTION.CONFIRM_SEND_ALL_NOTE')"
+      container-classes="SendAllConfirmation"
+      portal-target="loading"
+      @close="cancelSendAll"
+      @cancel="cancelSendAll"
+      @continue="enableSendAll"
+    />
     <ModalLoader
       :message="$t('ENCRYPTION.DECRYPTING')"
       :visible="showEncryptLoader"
@@ -169,9 +190,9 @@
 import { required } from 'vuelidate/lib/validators'
 import { TRANSACTION_TYPES, VENDOR_FIELD } from '@config'
 import { ButtonGeneric } from '@/components/Button'
-import { InputAddress, InputCurrency, InputPassword, InputText, InputFee } from '@/components/Input'
+import { InputAddress, InputCurrency, InputPassword, InputSwitch, InputText, InputFee } from '@/components/Input'
 import { ListDivided, ListDividedItem } from '@/components/ListDivided'
-import { ModalLoader } from '@/components/Modal'
+import { ModalConfirmation, ModalLoader } from '@/components/Modal'
 import { PassphraseInput } from '@/components/Passphrase'
 import TransactionMultiPaymentList from '@/components/Transaction/TransactionMultiPaymentList'
 import mixin from './mixin'
@@ -186,10 +207,12 @@ export default {
     InputAddress,
     InputCurrency,
     InputPassword,
+    InputSwitch,
     InputText,
     InputFee,
     ListDivided,
     ListDividedItem,
+    ModalConfirmation,
     ModalLoader,
     PassphraseInput,
     TransactionMultiPaymentList
@@ -201,6 +224,9 @@ export default {
     step: 1,
     recipientId: '',
     amount: '',
+    isSendAllActive: false,
+    previousAmount: '',
+    showConfirmSendAll: false,
     form: {
       recipientId: '', // normal transaction
       amount: '', // normal transaction
@@ -277,6 +303,10 @@ export default {
       }
 
       return availableAmount
+    },
+
+    canSendAll () {
+      return this.maximumAvailableAmount > 0
     },
 
     vendorFieldLabel () {
@@ -375,9 +405,19 @@ export default {
       }
     },
 
+    onFee (fee) {
+      this.$set(this.form, 'fee', fee)
+      this.ensureAvailableAmount()
+    },
+
     addRecipient () {
       if (this.$v.recipientId.$invalid || this.$v.amount.$invalid) {
         return
+      }
+
+      if (this.isSendAllActive) {
+        this.previousAmount = ''
+        this.isSendAllActive = false
       }
 
       // normal transaction
@@ -394,6 +434,42 @@ export default {
       this.$v.recipientId.$reset()
       this.$v.amount.$model = ''
       this.$refs.amount.reset()
+    },
+
+    setSendAll (isActive, setPreviousAmount = true) {
+      if (isActive) {
+        this.confirmSendAll()
+        this.previousAmount = this.amount
+      } else {
+        if (setPreviousAmount && !!this.previousAmount) {
+          this.$v.amount.$model = this.previousAmount
+        }
+
+        this.previousAmount = ''
+        this.isSendAllActive = isActive
+        this.ensureAvailableAmount()
+      }
+    },
+
+    ensureAvailableAmount () {
+      if (this.isSendAllActive && this.canSendAll) {
+        this.$v.amount.$model = this.maximumAvailableAmount
+      }
+    },
+
+    enableSendAll () {
+      this.isSendAllActive = true
+      this.ensureAvailableAmount()
+      this.showConfirmSendAll = false
+    },
+
+    confirmSendAll () {
+      this.showConfirmSendAll = true
+    },
+
+    cancelSendAll () {
+      this.showConfirmSendAll = false
+      this.isSendAllActive = false
     },
 
     previousStep () {
@@ -479,7 +555,16 @@ export default {
 </script>
 
 <style>
+.TransactionFormMultiPayment {
+  width: 500px;
+}
+
 .TransactionModalMultiPayment__recipients .InputEditableList__list {
   max-height: 13rem;
+}
+
+.SendAllConfirmation .ModalConfirmation__container {
+  min-width: calc(var(--contact-identicon-xl) + 74px * 2);
+  max-width: calc(var(--contact-identicon-xl) + 74px * 2 + 50px);
 }
 </style>
