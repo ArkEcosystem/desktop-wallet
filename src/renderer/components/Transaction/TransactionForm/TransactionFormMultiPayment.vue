@@ -144,7 +144,7 @@
       />
     </div>
 
-    <footer class="mt-4 flex justify-between items-center">
+    <footer class="mt-10 flex justify-between items-center">
       <div class="self-start">
         <button
           v-if="step === 2"
@@ -160,6 +160,21 @@
           @click="nextStep"
         >
           {{ $t('COMMON.NEXT') }}
+        </button>
+      </div>
+
+      <div v-if="step === 1">
+        <button
+          v-tooltip="{ content: $t('TRANSACTION.LOAD_FROM_FILE'), toggle: 'hover' }"
+          class="TransactionFormTransfer__load-tx action-button pull-right flex items-center"
+          @click="loadTransaction"
+        >
+          <SvgIcon
+            name="load"
+            view-box="0 0 21 15"
+            class="mr-1"
+          />
+          {{ $t('COMMON.LOAD') }}
         </button>
       </div>
     </footer>
@@ -194,7 +209,9 @@ import { InputAddress, InputCurrency, InputPassword, InputSwitch, InputText, Inp
 import { ListDivided, ListDividedItem } from '@/components/ListDivided'
 import { ModalConfirmation, ModalLoader } from '@/components/Modal'
 import { PassphraseInput } from '@/components/Passphrase'
+import SvgIcon from '@/components/SvgIcon'
 import TransactionMultiPaymentList from '@/components/Transaction/TransactionMultiPaymentList'
+import WalletService from '@/services/wallet'
 import mixin from './mixin'
 
 export default {
@@ -215,6 +232,7 @@ export default {
     ModalConfirmation,
     ModalLoader,
     PassphraseInput,
+    SvgIcon,
     TransactionMultiPaymentList
   },
 
@@ -472,6 +490,27 @@ export default {
       this.isSendAllActive = false
     },
 
+    emitRemoveRecipient (index) {
+      if (!Object.prototype.hasOwnProperty.call(this.$v.form.recipients.$model, index)) {
+        return
+      }
+
+      this.$v.form.recipients.$model = [
+        ...this.form.recipients.slice(0, index),
+        ...this.form.recipients.slice(index + 1)
+      ]
+
+      if (!this.isMultiPayment) {
+        if (Object.prototype.hasOwnProperty.call(this.$v.form.recipients.$model, 0)) {
+          this.$v.form.recipientId.$model = this.$v.form.recipients.$model[0].address
+          this.$v.form.amount.$model = this.$v.form.recipients.$model[0].amount
+        } else {
+          this.$v.form.recipientId.$model = ''
+          this.$v.form.amount.$model = ''
+        }
+      }
+    },
+
     previousStep () {
       if (this.step === 2) {
         this.step = 1
@@ -499,24 +538,51 @@ export default {
       }
     },
 
-    emitRemoveRecipient (index) {
-      if (!Object.prototype.hasOwnProperty.call(this.$v.form.recipients.$model, index)) {
-        return
-      }
+    async loadTransaction () {
+      try {
+        const raw = await this.electron_readFile()
 
-      this.$v.form.recipients.$model = [
-        ...this.form.recipients.slice(0, index),
-        ...this.form.recipients.slice(index + 1)
-      ]
+        if (raw) {
+          try {
+            const transaction = JSON.parse(raw)
 
-      if (!this.isMultiPayment) {
-        if (Object.prototype.hasOwnProperty.call(this.$v.form.recipients.$model, 0)) {
-          this.$v.form.recipientId.$model = this.$v.form.recipients.$model[0].address
-          this.$v.form.amount.$model = this.$v.form.recipients.$model[0].amount
-        } else {
-          this.$v.form.recipientId.$model = ''
-          this.$v.form.amount.$model = ''
+            if (parseInt(transaction.type, 10) !== TRANSACTION_TYPES.GROUP_1.TRANSFER) {
+              throw new Error(this.$t('VALIDATION.INVALID_TYPE'))
+            }
+
+            if (transaction.recipientId) {
+              if (WalletService.validateAddress(transaction.recipientId, this.session_network.version)) {
+                this.$refs.recipient.model = transaction.recipientId
+              } else {
+                throw new Error(this.$t('VALIDATION.RECIPIENT_DIFFERENT_NETWORK', [
+                  this.wallet_truncate(transaction.recipientId)
+                ]))
+              }
+            }
+
+            if (transaction.amount) {
+              this.$refs.amount.model = this.currency_subToUnit(transaction.amount, this.session_network)
+            }
+
+            // if (transaction.fee) {
+            //   this.$refs.fee.$refs.input.model = this.currency_subToUnit(transaction.fee, this.session_network)
+            // }
+
+            // if (transaction.vendorField) {
+            //   this.$refs.vendorField.model = transaction.vendorField
+            // }
+
+            this.$success(this.$t('TRANSACTION.SUCCESS.LOAD_FROM_FILE'))
+          } catch (error) {
+            if (error.name === 'SyntaxError') {
+              error.message = this.$t('VALIDATION.INVALID_FORMAT')
+            }
+
+            this.$error(`${this.$t('TRANSACTION.ERROR.LOAD_FROM_FILE')}: ${error.message}`)
+          }
         }
+      } catch (error) {
+        this.$error(`${this.$t('TRANSACTION.ERROR.LOAD_FROM_FILE')}: ${error.message}`)
       }
     }
   },
