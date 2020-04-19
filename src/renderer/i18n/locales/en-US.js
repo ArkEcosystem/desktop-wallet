@@ -1074,7 +1074,6 @@ export default {
     MULTI_PAYMENT: {
       BUTTON_ADD: 'Add',
       NO_RECIPIENTS: 'There are no recipient(s)',
-      RECIPIENT: 'Recipient',
       RECIPIENTS: 'Recipients',
       TOTAL_AMOUNT: 'Total amount',
       WARNING_DUPLICATE: 'The address is already a recipient'

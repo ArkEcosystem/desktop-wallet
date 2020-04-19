@@ -432,8 +432,8 @@ export default {
 
       this.$refs.recipient.reset()
       this.$v.recipientId.$reset()
-      this.$v.amount.$model = ''
       this.$refs.amount.reset()
+      this.$v.amount.$model = ''
     },
 
     setSendAll (isActive, setPreviousAmount = true) {
@@ -478,9 +478,21 @@ export default {
       }
     },
 
-    nextStep () {
+    async nextStep () {
       if (this.step === 1) {
         this.step = 2
+
+        await this.$nextTick()
+
+        if (this.$v.form.passphrase.$model) {
+          this.$refs.passphrase.touch()
+        } else if (this.$v.form.walletPassword.$model) {
+          this.$v.form.walletPassword.$touch()
+        }
+
+        if (this.$v.form.secondPassphrase.$model) {
+          this.$refs.secondPassphrase.touch()
+        }
       } else {
         this.form.fee = this.$refs.fee.fee
         this.onSubmit()
