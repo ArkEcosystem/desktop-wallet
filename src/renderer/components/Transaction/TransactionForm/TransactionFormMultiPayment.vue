@@ -546,22 +546,47 @@ export default {
           try {
             const transaction = JSON.parse(raw)
 
-            if (parseInt(transaction.type, 10) !== TRANSACTION_TYPES.GROUP_1.TRANSFER) {
+            if (parseInt(transaction.type, 10) !== TRANSACTION_TYPES.GROUP_1.TRANSFER && parseInt(transaction.type, 10) !== TRANSACTION_TYPES.GROUP_1.MULTI_PAYMENT) {
               throw new Error(this.$t('VALIDATION.INVALID_TYPE'))
             }
 
-            if (transaction.recipientId) {
+            if (Object.prototype.hasOwnProperty.call(transaction, 'asset') && Object.prototype.hasOwnProperty.call(transaction.asset, 'payments')) {
+              this.$v.form.recipients.$model = []
+              transaction.asset.payments.forEach(payment => {
+                if (payment.recipientId && payment.amount) {
+                  if (WalletService.validateAddress(payment.recipientId, this.session_network.version)) {
+                    // normal transaction
+                    this.$v.form.recipientId.$model = payment.recipientId
+                    this.$v.form.amount.$model = this.currency_subToUnit(payment.amount, this.session_network)
+
+                    // multipayment transaction
+                    this.$v.form.recipients.$model.push({
+                      address: payment.recipientId,
+                      amount: this.currency_subToUnit(payment.amount, this.session_network)
+                    })
+                  } else {
+                    throw new Error(this.$t('VALIDATION.RECIPIENT_DIFFERENT_NETWORK', [
+                      this.wallet_truncate(payment.recipientId)
+                    ]))
+                  }
+                }
+              })
+            } else if (transaction.recipientId && transaction.amount) {
               if (WalletService.validateAddress(transaction.recipientId, this.session_network.version)) {
-                this.$refs.recipient.model = transaction.recipientId
+                // normal transaction
+                this.$v.form.recipientId.$model = transaction.recipientId
+                this.$v.form.amount.$model = this.currency_subToUnit(transaction.amount, this.session_network)
+
+                // multipayment transaction
+                this.$v.form.recipients.$model = [{
+                  address: transaction.recipientId,
+                  amount: this.currency_subToUnit(transaction.amount, this.session_network)
+                }]
               } else {
                 throw new Error(this.$t('VALIDATION.RECIPIENT_DIFFERENT_NETWORK', [
                   this.wallet_truncate(transaction.recipientId)
                 ]))
               }
-            }
-
-            if (transaction.amount) {
-              this.$refs.amount.model = this.currency_subToUnit(transaction.amount, this.session_network)
             }
 
             // if (transaction.fee) {
