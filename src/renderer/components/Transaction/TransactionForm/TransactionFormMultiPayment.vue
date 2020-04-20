@@ -539,9 +539,12 @@ export default {
               transaction.asset.payments.forEach(payment => {
                 if (payment.recipientId && payment.amount) {
                   if (WalletService.validateAddress(payment.recipientId, this.session_network.version)) {
+                    const amount = this.currency_subToUnit(payment.amount, this.session_network)
+                    const formatted = this.currency_unitToSub(amount, this.session_network)
+
                     this.$v.form.recipients.$model.push({
                       address: payment.recipientId,
-                      amount: this.currency_subToUnit(payment.amount, this.session_network)
+                      amount: formatted
                     })
                   } else {
                     throw new Error(this.$t('VALIDATION.RECIPIENT_DIFFERENT_NETWORK', [
@@ -552,9 +555,12 @@ export default {
               })
             } else if (transaction.recipientId && transaction.amount) {
               if (WalletService.validateAddress(transaction.recipientId, this.session_network.version)) {
+                const amount = this.currency_subToUnit(transaction.amount, this.session_network)
+                const formatted = this.currency_unitToSub(amount, this.session_network)
+
                 this.$v.form.recipients.$model = [{
                   address: transaction.recipientId,
-                  amount: this.currency_subToUnit(transaction.amount, this.session_network)
+                  amount: formatted
                 }]
               } else {
                 throw new Error(this.$t('VALIDATION.RECIPIENT_DIFFERENT_NETWORK', [
