@@ -245,10 +245,9 @@ export default {
     isSendAllActive: false,
     previousAmount: '',
     showConfirmSendAll: false,
+    // isLoadTransaction: false,
     form: {
-      recipientId: '', // normal transaction
-      amount: '', // normal transaction
-      recipients: [], // multipayment transaction
+      recipients: [],
       fee: 0,
       passphrase: '',
       walletPassword: '',
@@ -395,8 +394,8 @@ export default {
       }
 
       if (!this.isMultiPayment) {
-        transactionData.recipientId = this.form.recipientId
-        transactionData.amount = this.form.amount
+        transactionData.recipientId = this.form.recipients[0].address
+        transactionData.amount = this.form.recipients[0].amount
         transactionData.networkId = this.walletNetwork.id
       }
 
@@ -438,11 +437,6 @@ export default {
         this.isSendAllActive = false
       }
 
-      // normal transaction
-      this.$v.form.recipientId.$model = this.recipientId
-      this.$v.form.amount.$model = this.currency_unitToSub(this.amount)
-
-      // multipayment transaction
       this.$v.form.recipients.$model.push({
         address: this.recipientId,
         amount: this.currency_unitToSub(this.amount)
@@ -499,16 +493,6 @@ export default {
         ...this.form.recipients.slice(0, index),
         ...this.form.recipients.slice(index + 1)
       ]
-
-      if (!this.isMultiPayment) {
-        if (Object.prototype.hasOwnProperty.call(this.$v.form.recipients.$model, 0)) {
-          this.$v.form.recipientId.$model = this.$v.form.recipients.$model[0].address
-          this.$v.form.amount.$model = this.$v.form.recipients.$model[0].amount
-        } else {
-          this.$v.form.recipientId.$model = ''
-          this.$v.form.amount.$model = ''
-        }
-      }
     },
 
     previousStep () {
@@ -590,12 +574,16 @@ export default {
             }
 
             // if (transaction.fee) {
-            //   this.$refs.fee.$refs.input.model = this.currency_subToUnit(transaction.fee, this.session_network)
+            //   // this.$refs.fee.$refs.input.model = this.currency_subToUnit(transaction.fee, this.session_network)
+            //   this.$v.form.fee.$model = this.currency_subToUnit(transaction.fee, this.session_network)
             // }
 
             // if (transaction.vendorField) {
-            //   this.$refs.vendorField.model = transaction.vendorField
+            //   // this.$refs.vendorField.model = transaction.vendorField
+            //   this.$v.form.vendorField.$model = transaction.vendorField
             // }
+
+            // this.isLoadTransaction = true
 
             this.$success(this.$t('TRANSACTION.SUCCESS.LOAD_FROM_FILE'))
           } catch (error) {
