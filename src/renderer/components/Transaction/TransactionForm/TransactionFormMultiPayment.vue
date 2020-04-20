@@ -539,11 +539,6 @@ export default {
               transaction.asset.payments.forEach(payment => {
                 if (payment.recipientId && payment.amount) {
                   if (WalletService.validateAddress(payment.recipientId, this.session_network.version)) {
-                    // normal transaction
-                    this.$v.form.recipientId.$model = payment.recipientId
-                    this.$v.form.amount.$model = this.currency_subToUnit(payment.amount, this.session_network)
-
-                    // multipayment transaction
                     this.$v.form.recipients.$model.push({
                       address: payment.recipientId,
                       amount: this.currency_subToUnit(payment.amount, this.session_network)
@@ -557,11 +552,6 @@ export default {
               })
             } else if (transaction.recipientId && transaction.amount) {
               if (WalletService.validateAddress(transaction.recipientId, this.session_network.version)) {
-                // normal transaction
-                this.$v.form.recipientId.$model = transaction.recipientId
-                this.$v.form.amount.$model = this.currency_subToUnit(transaction.amount, this.session_network)
-
-                // multipayment transaction
                 this.$v.form.recipients.$model = [{
                   address: transaction.recipientId,
                   amount: this.currency_subToUnit(transaction.amount, this.session_network)
