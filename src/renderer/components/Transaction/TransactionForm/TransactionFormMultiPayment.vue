@@ -245,7 +245,6 @@ export default {
     isSendAllActive: false,
     previousAmount: '',
     showConfirmSendAll: false,
-    // isLoadTransaction: false,
     form: {
       recipients: [],
       fee: 0,
@@ -422,11 +421,6 @@ export default {
       }
     },
 
-    onFee (fee) {
-      this.$set(this.form, 'fee', fee)
-      this.ensureAvailableAmount()
-    },
-
     addRecipient () {
       if (this.$v.recipientId.$invalid || this.$v.amount.$invalid) {
         return
@@ -505,7 +499,18 @@ export default {
       if (this.step === 1) {
         this.step = 2
 
+        const fee = this.$v.form.fee.$model
+
         await this.$nextTick()
+
+        // TODO: Figure out why fee vuelidate intermittently doesn't
+        //       trigger resulting in an "invalid" flag when it's not.
+        //       Remove assigning fee to zero initially as a workaround.
+        if (this.$refs.fee && fee) {
+          this.$refs.fee.emitFee(0)
+          await this.$nextTick()
+          this.$refs.fee.emitFee(fee)
+        }
 
         if (this.$v.form.passphrase.$model) {
           this.$refs.passphrase.touch()
@@ -517,7 +522,7 @@ export default {
           this.$refs.secondPassphrase.touch()
         }
       } else {
-        this.form.fee = this.$refs.fee.fee
+        this.$v.form.fee.$model = this.$refs.fee.fee
         this.onSubmit()
       }
     },
@@ -569,17 +574,13 @@ export default {
               }
             }
 
-            // if (transaction.fee) {
-            //   // this.$refs.fee.$refs.input.model = this.currency_subToUnit(transaction.fee, this.session_network)
-            //   this.$v.form.fee.$model = this.currency_subToUnit(transaction.fee, this.session_network)
-            // }
+            if (transaction.fee) {
+              this.$v.form.fee.$model = this.currency_subToUnit(transaction.fee, this.session_network)
+            }
 
-            // if (transaction.vendorField) {
-            //   // this.$refs.vendorField.model = transaction.vendorField
-            //   this.$v.form.vendorField.$model = transaction.vendorField
-            // }
-
-            // this.isLoadTransaction = true
+            if (transaction.vendorField) {
+              this.$v.form.vendorField.$model = transaction.vendorField
+            }
 
             this.$success(this.$t('TRANSACTION.SUCCESS.LOAD_FROM_FILE'))
           } catch (error) {
