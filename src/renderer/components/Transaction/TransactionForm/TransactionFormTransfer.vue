@@ -641,10 +641,6 @@ export default {
 </script>
 
 <style>
-.TransactionFormTransfer {
-  width: 500px;
-}
-
 .TransactionFormTransfer__recipients .InputEditableList__list {
   max-height: 13rem;
 }

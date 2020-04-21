@@ -394,7 +394,6 @@ export default {
 .TransactionModalBusinessRegistration,
 .TransactionModalBusinessUpdate,
 .TransactionModalIpfs,
-.TransactionModalMultiPayment,
 .TransactionModalMultiSignature {
   min-width: 35rem;
   max-height: 80vh;
