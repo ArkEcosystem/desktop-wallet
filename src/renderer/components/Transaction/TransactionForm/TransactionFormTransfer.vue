@@ -18,128 +18,150 @@
       </ListDividedItem>
     </ListDivided>
 
-    <WalletSelection
-      v-if="schema && schema.address"
-      v-model="$v.wallet.$model"
-      :compatible-address="$v.form.recipientId.$model"
-      class="TransactionFormTransfer__wallet mb-5"
-      profile-class="mb-5"
-      @select="ensureAvailableAmount"
-    />
-
-    <InputAddress
-      ref="recipient"
-      v-model="$v.form.recipientId.$model"
-      :label="$t('TRANSACTION.RECIPIENT')"
-      :pub-key-hash="walletNetwork.version"
-      :show-suggestions="true"
-      :is-disabled="!currentWallet"
-      name="recipientId"
-      class="TransactionFormTransfer__recipient mb-5"
-    />
-
-    <div class="flex items-baseline mb-5">
-      <InputCurrency
-        ref="amount"
-        v-model="$v.form.amount.$model"
-        :alternative-currency="alternativeCurrency"
-        :currency="walletNetwork.token"
-        :is-invalid="$v.form.amount.$dirty && $v.form.amount.$invalid"
-        :label="$t('TRANSACTION.AMOUNT')"
-        :minimum-error="amountTooLowError"
-        :minimum-amount="minimumAmount"
-        :maximum-amount="maximumAvailableAmount"
-        :maximum-error="notEnoughBalanceError"
-        :required="true"
+    <div
+      v-if="step === 1"
+    >
+      <InputAddress
+        ref="recipient"
+        v-model="$v.recipientId.$model"
+        :label="$t('TRANSACTION.RECIPIENT')"
+        :pub-key-hash="walletNetwork.version"
+        :show-suggestions="true"
         :is-disabled="!currentWallet"
-        :wallet-network="walletNetwork"
-        class="TransactionFormTransfer__amount flex-1 mr-3"
-        @blur="ensureAvailableAmount"
-        @input="setSendAll(false, false)"
+        :warning-text="recipientWarning"
+        name="recipientId"
+        class="TransactionFormTransfer__recipient mb-5"
       />
 
-      <InputSwitch
-        v-model="isSendAllActive"
-        :text="$t('TRANSACTION.SEND_ALL')"
-        :is-disabled="!canSendAll || !currentWallet"
-        class="TransactionFormTransfer__send-all"
-        @change="setSendAll"
-      />
-    </div>
+      <div class="flex items-baseline mb-5">
+        <InputCurrency
+          ref="amount"
+          v-model="$v.amount.$model"
+          :alternative-currency="alternativeCurrency"
+          :currency="walletNetwork.token"
+          :is-invalid="$v.amount.$dirty && $v.amount.$invalid"
+          :label="$t('TRANSACTION.AMOUNT')"
+          :minimum-error="amountTooLowError"
+          :minimum-amount="minimumAmount"
+          :maximum-amount="maximumAvailableAmount"
+          :maximum-error="notEnoughBalanceError"
+          :required="true"
+          :is-disabled="!currentWallet"
+          :wallet-network="walletNetwork"
+          class="TransactionFormTransfer__amount flex-1 mr-3"
+          @blur="ensureAvailableAmount"
+          @input="setSendAll(false, false)"
+        />
 
-    <InputText
-      ref="vendorField"
-      v-model="$v.form.vendorField.$model"
-      :label="vendorFieldLabel"
-      :bip39-warning="true"
-      :helper-text="vendorFieldHelperText"
-      :is-disabled="!currentWallet"
-      :maxlength="vendorFieldMaxLength"
-      name="vendorField"
-      class="TransactionFormTransfer__vendorfield mb-5"
-    />
+        <ButtonGeneric
+          :disabled="!validStep1"
+          :label="$t('TRANSACTION.MULTI_PAYMENT.BUTTON_ADD')"
+          class="TransactionFormTransfer__add py-1 flex-inline h-8 mt-4 mr-3"
+          @click="addRecipient"
+        />
 
-    <InputFee
-      ref="fee"
-      :currency="walletNetwork.token"
-      :transaction-type="$options.transactionType"
-      :is-disabled="!currentWallet"
-      :wallet="currentWallet"
-      :wallet-network="walletNetwork"
-      class="TransactionFormTransfer__fee"
-      @input="onFee"
-    />
-
-    <div v-if="!isMultiSignature">
-      <div
-        v-if="currentWallet && currentWallet.isLedger"
-        class="TransactionFormTransfer__ledger-notice mt-10"
-      >
-        {{ $t('TRANSACTION.LEDGER_SIGN_NOTICE') }}
+        <InputSwitch
+          v-model="isSendAllActive"
+          :text="$t('TRANSACTION.SEND_ALL')"
+          :is-disabled="!canSendAll || !currentWallet"
+          class="TransactionFormTransfer__send-all"
+          @change="setSendAll"
+        />
       </div>
 
-      <InputPassword
-        v-else-if="currentWallet && currentWallet.passphrase"
-        ref="password"
-        v-model="$v.form.walletPassword.$model"
-        :label="$t('TRANSACTION.PASSWORD')"
-        :is-required="true"
-        class="TransactionFormTransfer__password mt-4"
-      />
-
-      <PassphraseInput
-        v-else
-        ref="passphrase"
-        v-model="$v.form.passphrase.$model"
-        :address="currentWallet && currentWallet.address"
-        :pub-key-hash="walletNetwork.version"
-        :is-disabled="!currentWallet"
-        class="TransactionFormTransfer__passphrase mt-4"
+      <TransactionTransferList
+        :items="$v.form.recipients.$model"
+        :max-items="maximumRecipients"
+        :show-count="true"
+        :is-invalid="hasMoreThanMaximumRecipients"
+        :required="true"
+        class="TransactionFormTransfer__recipients mt-4"
+        @remove="emitRemoveRecipient"
       />
     </div>
 
-    <PassphraseInput
-      v-if="currentWallet && currentWallet.secondPublicKey"
-      ref="secondPassphrase"
-      v-model="$v.form.secondPassphrase.$model"
-      :label="$t('TRANSACTION.SECOND_PASSPHRASE')"
-      :pub-key-hash="walletNetwork.version"
-      :public-key="currentWallet.secondPublicKey"
-      class="TransactionFormTransfer__second-passphrase mt-5"
-    />
+    <div v-if="step === 2">
+      <InputText
+        ref="vendorField"
+        v-model="$v.form.vendorField.$model"
+        :label="vendorFieldLabel"
+        :bip39-warning="true"
+        :helper-text="vendorFieldHelperText"
+        :maxlength="vendorFieldMaxLength"
+        name="vendorField"
+        class="TransactionFormTransfer__vendorfield mb-5"
+      />
+
+      <InputFee
+        ref="fee"
+        :currency="walletNetwork.token"
+        :transaction-type="transactionTypeFee"
+        :is-disabled="!currentWallet"
+        :wallet="currentWallet"
+        :wallet-network="walletNetwork"
+        class="TransactionFormTransfer__fee"
+        @input="onFee"
+      />
+
+      <div v-if="!isMultiSignature">
+        <div
+          v-if="currentWallet && currentWallet.isLedger"
+          class="TransactionFormTransfer__ledger-notice mt-10"
+        >
+          {{ $t('TRANSACTION.LEDGER_SIGN_NOTICE') }}
+        </div>
+
+        <InputPassword
+          v-else-if="currentWallet && currentWallet.passphrase"
+          ref="password"
+          v-model="$v.form.walletPassword.$model"
+          :label="$t('TRANSACTION.PASSWORD')"
+          :is-required="true"
+          class="TransactionFormTransfer__password mt-4"
+        />
+
+        <PassphraseInput
+          v-else
+          ref="passphrase"
+          v-model="$v.form.passphrase.$model"
+          :address="currentWallet && currentWallet.address"
+          :pub-key-hash="walletNetwork.version"
+          :is-disabled="!currentWallet"
+          class="TransactionFormTransfer__passphrase mt-4"
+        />
+      </div>
+
+      <PassphraseInput
+        v-if="currentWallet && currentWallet.secondPublicKey"
+        ref="secondPassphrase"
+        v-model="$v.form.secondPassphrase.$model"
+        :label="$t('TRANSACTION.SECOND_PASSPHRASE')"
+        :pub-key-hash="walletNetwork.version"
+        :public-key="currentWallet.secondPublicKey"
+        class="TransactionFormTransfer__second-passphrase mt-5"
+      />
+    </div>
 
     <footer class="mt-10 flex justify-between items-center">
       <div class="self-start">
         <button
-          :disabled="$v.form.$invalid"
+          v-if="step === 2"
+          class="TransactionFormTransfer__prev blue-button"
+          @click="previousStep"
+        >
+          {{ $t('COMMON.PREV') }}
+        </button>
+
+        <button
+          :disabled="!isFormValid"
           class="TransactionFormTransfer__next blue-button"
-          @click="onSubmit"
+          @click="nextStep"
         >
           {{ $t('COMMON.NEXT') }}
         </button>
       </div>
 
-      <div>
+      <div v-if="step === 1">
         <button
           v-tooltip="{ content: $t('TRANSACTION.LOAD_FROM_FILE'), toggle: 'hover' }"
           class="TransactionFormTransfer__load-tx action-button pull-right flex items-center"
@@ -180,12 +202,13 @@
 <script>
 import { required } from 'vuelidate/lib/validators'
 import { TRANSACTION_TYPES, VENDOR_FIELD } from '@config'
+import { ButtonGeneric } from '@/components/Button'
 import { InputAddress, InputCurrency, InputPassword, InputSwitch, InputText, InputFee } from '@/components/Input'
 import { ListDivided, ListDividedItem } from '@/components/ListDivided'
 import { ModalConfirmation, ModalLoader } from '@/components/Modal'
 import { PassphraseInput } from '@/components/Passphrase'
 import SvgIcon from '@/components/SvgIcon'
-import WalletSelection from '@/components/Wallet/WalletSelection'
+import TransactionTransferList from '@/components/Transaction/TransactionTransferList'
 import WalletService from '@/services/wallet'
 import mixin from './mixin'
 
@@ -195,6 +218,7 @@ export default {
   transactionType: TRANSACTION_TYPES.GROUP_1.TRANSFER,
 
   components: {
+    ButtonGeneric,
     InputAddress,
     InputCurrency,
     InputPassword,
@@ -207,37 +231,62 @@ export default {
     ModalLoader,
     PassphraseInput,
     SvgIcon,
-    WalletSelection
+    TransactionTransferList
   },
 
   mixins: [mixin],
 
-  props: {
-    schema: {
-      type: Object,
-      required: false,
-      default: () => {}
-    }
-  },
-
   data: () => ({
+    step: 1,
+    recipientId: '',
+    amount: '',
+    isSendAllActive: false,
+    previousAmount: '',
+    showConfirmSendAll: false,
     form: {
-      amount: '',
+      recipients: [],
       fee: 0,
       passphrase: '',
       walletPassword: '',
-      recipientId: '',
       vendorField: ''
-    },
-    isSendAllActive: false,
-    previousAmount: '',
-    wallet: null,
-    showConfirmSendAll: false
+    }
   }),
 
   computed: {
     alternativeCurrency () {
       return this.$store.getters['session/currency']
+    },
+
+    validStep1 () {
+      if (!this.$v.recipientId.$dirty || this.$v.recipientId.$invalid) {
+        return false
+      }
+
+      if (!this.$v.amount.$dirty || this.$v.amount.$invalid) {
+        return false
+      }
+
+      return true
+    },
+
+    isFormValid () {
+      if (this.step === 1) {
+        return !this.$v.form.recipients.$invalid
+      }
+
+      return !this.$v.form.$invalid
+    },
+
+    isMultiPayment () {
+      return this.form.recipients.length > 1
+    },
+
+    hasMoreThanMaximumRecipients () {
+      return this.form.recipients.length > this.maximumRecipients
+    },
+
+    transactionTypeFee () {
+      return this.isMultiPayment ? TRANSACTION_TYPES.GROUP_1.MULTI_PAYMENT : TRANSACTION_TYPES.GROUP_1.TRANSFER
     },
 
     // Customize the message to display the minimum amount as subunit
@@ -251,10 +300,6 @@ export default {
     },
 
     notEnoughBalanceError () {
-      if (!this.currentWallet) {
-        return ''
-      }
-
       return this.$t('TRANSACTION_FORM.ERROR.NOT_ENOUGH_BALANCE', {
         balance: this.formatter_networkCurrency(this.currentWallet.balance)
       })
@@ -265,47 +310,17 @@ export default {
     },
 
     maximumAvailableAmount () {
-      if (!this.currentWallet) {
-        return this.currency_subToUnit(0)
+      let availableAmount = this.currency_subToUnit(this.currentWallet.balance).minus(this.form.fee)
+
+      for (const recipient of this.form.recipients) {
+        availableAmount = availableAmount.minus(this.currency_subToUnit(recipient.amount))
       }
 
-      return this.currency_subToUnit(this.currentWallet.balance).minus(this.form.fee)
+      return availableAmount
     },
 
     canSendAll () {
       return this.maximumAvailableAmount > 0
-    },
-
-    senderLabel () {
-      return this.currentWallet ? this.wallet_formatAddress(this.currentWallet.address) : null
-    },
-
-    senderWallet () {
-      return this.wallet
-    },
-
-    walletNetwork () {
-      const sessionNetwork = this.session_network
-      if (!this.currentWallet || !this.currentWallet.id) {
-        return sessionNetwork
-      }
-
-      const profile = this.$store.getters['profile/byId'](this.currentWallet.profileId)
-      if (!profile || !profile.id) {
-        return sessionNetwork
-      }
-
-      return this.$store.getters['network/byId'](profile.networkId) || sessionNetwork
-    },
-
-    currentWallet: {
-      get () {
-        return this.senderWallet || this.wallet_fromRoute
-      },
-
-      set (wallet) {
-        this.wallet = wallet
-      }
     },
 
     vendorFieldLabel () {
@@ -335,38 +350,50 @@ export default {
       }
 
       return VENDOR_FIELD.defaultMaxLength
-    }
-  },
+    },
 
-  watch: {
-    wallet () {
-      this.ensureAvailableAmount()
-      this.$v.form.recipientId.$touch()
+    recipientWarning () {
+      if (!this.$v.recipientId.$dirty) {
+        return null
+      }
+
+      if (this.form.recipients.some(recipient => recipient.address === this.$v.recipientId.$model)) {
+        return this.$t('TRANSACTION.MULTI_PAYMENT.WARNING_DUPLICATE')
+      }
+
+      return null
+    },
+
+    maximumRecipients () {
+      if (!this.session_network.constants || !this.session_network.constants.multiPaymentLimit) {
+        return 500
+      }
+
+      return this.session_network.constants.multiPaymentLimit
     }
   },
 
   mounted () {
-    this.populateSchema()
-
-    if (this.currentWallet && this.currentWallet.id) {
-      this.$set(this, 'wallet', this.currentWallet)
-      this.$v.wallet.$touch()
-    }
+    this.$v.recipientId.$touch()
   },
 
   methods: {
     getTransactionData () {
       const transactionData = {
         address: this.currentWallet.address,
-        amount: this.currency_unitToSub(this.form.amount),
-        recipientId: this.form.recipientId,
+        recipients: this.form.recipients,
         vendorField: this.form.vendorField,
         passphrase: this.form.passphrase,
         fee: this.getFee(),
         wif: this.form.wif,
         networkWif: this.walletNetwork.wif,
-        networkId: this.walletNetwork.id,
         multiSignature: this.currentWallet.multiSignature
+      }
+
+      if (!this.isMultiPayment) {
+        transactionData.recipientId = this.form.recipients[0].address
+        transactionData.amount = this.form.recipients[0].amount
+        transactionData.networkId = this.walletNetwork.id
       }
 
       if (this.currentWallet.secondPublicKey) {
@@ -377,90 +404,51 @@ export default {
     },
 
     async buildTransaction (transactionData, isAdvancedFee = false, returnObject = false) {
-      return this.$client.buildTransfer(transactionData, isAdvancedFee, returnObject)
-    },
-
-    populateSchema () {
-      if (!this.schema) {
-        return
-      }
-
-      this.$set(this.form, 'amount', this.schema.amount || '')
-      this.$set(this.form, 'recipientId', this.schema.address || '')
-      this.$set(this.form, 'vendorField', this.schema.vendorField || '')
-      if (this.schema.wallet) {
-        const currentProfileId = this.$store.getters['session/profileId']
-        const ledgerWallets = this.$store.getters['ledger/isConnected'] ? this.$store.getters['ledger/wallets'] : []
-        const wallets = []
-
-        let foundNetwork = !this.schema.nethash
-        if (currentProfileId) {
-          if (this.schema.nethash) {
-            const profile = this.$store.getters['profile/byId'](currentProfileId)
-            const network = this.$store.getters['network/byId'](profile.networkId)
-            if (network.nethash === this.schema.nethash) {
-              foundNetwork = true
-              wallets.push(...this.$store.getters['wallet/byProfileId'](currentProfileId))
-            }
-          } else {
-            wallets.push(...this.$store.getters['wallet/byProfileId'](currentProfileId))
-          }
-        }
-
-        wallets.push(...ledgerWallets)
-
-        for (const profile of this.$store.getters['profile/all']) {
-          if (currentProfileId !== profile.id) {
-            if (this.schema.nethash) {
-              const network = this.$store.getters['network/byId'](profile.networkId)
-              if (network.nethash === this.schema.nethash) {
-                foundNetwork = true
-                wallets.push(...this.$store.getters['wallet/byProfileId'](profile.id))
-              }
-            } else {
-              wallets.push(...this.$store.getters['wallet/byProfileId'](profile.id))
-            }
-          }
-        }
-
-        const wallet = wallets.filter(wallet => wallet.address === this.schema.wallet)
-        if (wallet.length) {
-          this.currentWallet = wallet[0]
-        }
-        if (!foundNetwork) {
-          this.$emit('cancel')
-          this.$error(`${this.$t('TRANSACTION.ERROR.NETWORK_NOT_CONFIGURED')}: ${this.schema.nethash}`)
-        } else if (!wallet.length) {
-          this.$emit('cancel')
-          this.$error(`${this.$t('TRANSACTION.ERROR.WALLET_NOT_IMPORTED')}: ${this.schema.wallet}`)
-        }
+      if (this.isMultiPayment) {
+        return this.$client.buildMultiPayment(transactionData, isAdvancedFee, returnObject)
+      } else {
+        return this.$client.buildTransfer(transactionData, isAdvancedFee, returnObject)
       }
     },
 
     transactionError () {
-      this.$error(this.$t('TRANSACTION.ERROR.VALIDATION.TRANSFER'))
+      if (this.isMultiPayment) {
+        this.$error(this.$t('TRANSACTION.ERROR.VALIDATION.MULTI_PAYMENT'))
+      } else {
+        this.$error(this.$t('TRANSACTION.ERROR.VALIDATION.TRANSFER'))
+      }
     },
 
-    emitNext (transaction) {
-      this.$emit('next', {
-        transaction,
-        wallet: this.senderWallet
+    addRecipient () {
+      if (this.$v.recipientId.$invalid || this.$v.amount.$invalid) {
+        return
+      }
+
+      if (this.isSendAllActive) {
+        this.previousAmount = ''
+        this.isSendAllActive = false
+      }
+
+      this.$v.form.recipients.$model.push({
+        address: this.recipientId,
+        amount: this.currency_unitToSub(this.amount)
       })
-    },
 
-    onFee (fee) {
-      this.$set(this.form, 'fee', fee)
-      this.ensureAvailableAmount()
+      this.$refs.recipient.reset()
+      this.$v.recipientId.$reset()
+      this.$refs.amount.reset()
+      this.$v.amount.$model = ''
     },
 
     setSendAll (isActive, setPreviousAmount = true) {
       if (isActive) {
         this.confirmSendAll()
-        this.previousAmount = this.form.amount
+        this.previousAmount = this.amount
       } else {
         if (setPreviousAmount && !!this.previousAmount) {
-          this.$set(this.form, 'amount', this.previousAmount)
+          this.$v.amount.$model = this.previousAmount
         }
+
         this.previousAmount = ''
         this.isSendAllActive = isActive
         this.ensureAvailableAmount()
@@ -469,7 +457,7 @@ export default {
 
     ensureAvailableAmount () {
       if (this.isSendAllActive && this.canSendAll) {
-        this.$set(this.form, 'amount', this.maximumAvailableAmount)
+        this.$v.amount.$model = this.maximumAvailableAmount
       }
     },
 
@@ -488,6 +476,55 @@ export default {
       this.isSendAllActive = false
     },
 
+    emitRemoveRecipient (index) {
+      if (!Object.prototype.hasOwnProperty.call(this.$v.form.recipients.$model, index)) {
+        return
+      }
+
+      this.$v.form.recipients.$model = [
+        ...this.form.recipients.slice(0, index),
+        ...this.form.recipients.slice(index + 1)
+      ]
+    },
+
+    previousStep () {
+      if (this.step === 2) {
+        this.step = 1
+      }
+    },
+
+    async nextStep () {
+      if (this.step === 1) {
+        this.step = 2
+
+        const fee = this.$v.form.fee.$model
+
+        await this.$nextTick()
+
+        // TODO: Figure out why fee vuelidate intermittently doesn't
+        //       trigger resulting in an "invalid" flag when it's not.
+        //       Remove assigning fee to zero initially as a workaround.
+        if (this.$refs.fee && fee) {
+          this.$refs.fee.emitFee(0)
+          await this.$nextTick()
+          this.$refs.fee.emitFee(fee)
+        }
+
+        if (this.$v.form.passphrase.$model) {
+          this.$refs.passphrase.touch()
+        } else if (this.$v.form.walletPassword.$model) {
+          this.$v.form.walletPassword.$touch()
+        }
+
+        if (this.$v.form.secondPassphrase.$model) {
+          this.$refs.secondPassphrase.touch()
+        }
+      } else {
+        this.$v.form.fee.$model = this.$refs.fee.fee
+        this.onSubmit()
+      }
+    },
+
     async loadTransaction () {
       try {
         const raw = await this.electron_readFile()
@@ -496,13 +533,38 @@ export default {
           try {
             const transaction = JSON.parse(raw)
 
-            if (parseInt(transaction.type, 10) !== TRANSACTION_TYPES.GROUP_1.TRANSFER) {
+            if (parseInt(transaction.type, 10) !== TRANSACTION_TYPES.GROUP_1.TRANSFER && parseInt(transaction.type, 10) !== TRANSACTION_TYPES.GROUP_1.MULTI_PAYMENT) {
               throw new Error(this.$t('VALIDATION.INVALID_TYPE'))
             }
 
-            if (transaction.recipientId) {
+            if (Object.prototype.hasOwnProperty.call(transaction, 'asset') && Object.prototype.hasOwnProperty.call(transaction.asset, 'payments')) {
+              this.$v.form.recipients.$model = []
+              transaction.asset.payments.forEach(payment => {
+                if (payment.recipientId && payment.amount) {
+                  if (WalletService.validateAddress(payment.recipientId, this.session_network.version)) {
+                    const amount = this.currency_subToUnit(payment.amount, this.session_network)
+                    const formatted = this.currency_unitToSub(amount, this.session_network)
+
+                    this.$v.form.recipients.$model.push({
+                      address: payment.recipientId,
+                      amount: formatted
+                    })
+                  } else {
+                    throw new Error(this.$t('VALIDATION.RECIPIENT_DIFFERENT_NETWORK', [
+                      this.wallet_truncate(payment.recipientId)
+                    ]))
+                  }
+                }
+              })
+            } else if (transaction.recipientId && transaction.amount) {
               if (WalletService.validateAddress(transaction.recipientId, this.session_network.version)) {
-                this.$refs.recipient.model = transaction.recipientId
+                const amount = this.currency_subToUnit(transaction.amount, this.session_network)
+                const formatted = this.currency_unitToSub(amount, this.session_network)
+
+                this.$v.form.recipients.$model = [{
+                  address: transaction.recipientId,
+                  amount: formatted
+                }]
               } else {
                 throw new Error(this.$t('VALIDATION.RECIPIENT_DIFFERENT_NETWORK', [
                   this.wallet_truncate(transaction.recipientId)
@@ -510,16 +572,12 @@ export default {
               }
             }
 
-            if (transaction.amount) {
-              this.$refs.amount.model = this.currency_subToUnit(transaction.amount, this.session_network)
-            }
-
             if (transaction.fee) {
-              this.$refs.fee.$refs.input.model = this.currency_subToUnit(transaction.fee, this.session_network)
+              this.$v.form.fee.$model = this.currency_subToUnit(transaction.fee, this.session_network)
             }
 
             if (transaction.vendorField) {
-              this.$refs.vendorField.model = transaction.vendorField
+              this.$v.form.vendorField.$model = transaction.vendorField
             }
 
             this.$success(this.$t('TRANSACTION.SUCCESS.LOAD_FROM_FILE'))
@@ -538,41 +596,61 @@ export default {
   },
 
   validations: {
-    wallet: {},
+    recipientId: {
+      required,
+      isValid () {
+        if (this.$refs.recipient) {
+          return !this.$refs.recipient.$v.$invalid
+        }
+
+        return false
+      }
+    },
+
+    amount: {
+      required,
+      isValid () {
+        if (this.$refs.amount) {
+          return !this.$refs.amount.$v.$invalid
+        }
+
+        return false
+      }
+    },
+
     form: {
+      recipientId: {},
+      amount: {},
+      recipients: {
+        aboveMinimum () {
+          return this.form.recipients.length >= 1
+        },
+
+        belowOrEqualMaximum () {
+          return this.form.recipients.length <= this.maximumRecipients
+        }
+      },
       fee: mixin.validators.fee,
       passphrase: mixin.validators.passphrase,
       secondPassphrase: mixin.validators.secondPassphrase,
       vendorField: {},
-      walletPassword: mixin.validators.walletPassword,
-
-      recipientId: {
-        required,
-        isValid () {
-          if (this.$refs.recipient) {
-            return !this.$refs.recipient.$v.$invalid
-          }
-          return false
-        }
-      },
-
-      amount: {
-        required,
-        isValid () {
-          if (this.$refs.amount) {
-            return !this.$refs.amount.$v.$invalid
-          }
-          return false
-        }
-      }
+      walletPassword: mixin.validators.walletPassword
     }
   }
 }
 </script>
 
 <style>
+.TransactionFormTransfer {
+  width: 500px;
+}
+
+.TransactionFormTransfer__recipients .InputEditableList__list {
+  max-height: 13rem;
+}
+
 .SendAllConfirmation .ModalConfirmation__container {
   min-width: calc(var(--contact-identicon-xl) + 74px * 2);
-  max-width: calc(var(--contact-identicon-xl) + 74px * 2 + 50px)
+  max-width: calc(var(--contact-identicon-xl) + 74px * 2 + 50px);
 }
 </style>

@@ -2,7 +2,6 @@ import TransactionForm from './TransactionForm'
 import TransactionFormDelegateRegistration from './TransactionFormDelegateRegistration'
 import TransactionFormDelegateResignation from './TransactionFormDelegateResignation'
 import TransactionFormIpfs from './TransactionFormIpfs'
-import TransactionFormMultiPayment from './TransactionFormMultiPayment'
 import TransactionFormMultiSign from './TransactionFormMultiSign'
 import TransactionFormMultiSignature from './TransactionFormMultiSignature'
 import TransactionFormSecondSignature from './TransactionFormSecondSignature'
@@ -15,7 +14,6 @@ export {
   TransactionFormDelegateRegistration,
   TransactionFormDelegateResignation,
   TransactionFormIpfs,
-  TransactionFormMultiPayment,
   TransactionFormMultiSign,
   TransactionFormMultiSignature,
   TransactionFormSecondSignature,
