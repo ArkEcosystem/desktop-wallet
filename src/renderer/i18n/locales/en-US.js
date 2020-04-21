@@ -1072,9 +1072,6 @@ export default {
       UNVOTE_DELEGATE: 'Unvote delegate {delegate}'
     },
     MULTI_PAYMENT: {
-      BUTTON_ADD: 'Add',
-      NO_RECIPIENTS: 'There are no recipient(s)',
-      RECIPIENTS: 'Recipients',
       TOTAL_AMOUNT: 'Total amount',
       WARNING_DUPLICATE: 'The address is already a recipient'
     },
@@ -1116,8 +1113,9 @@ export default {
     },
     AMOUNT: 'Amount',
     BLOCK_ID: 'Block ID',
-    BUSINESS_NAME: 'Business Name',
     BRIDGECHAIN_NAME: 'Bridgechain Name',
+    BUSINESS_NAME: 'Business Name',
+    BUTTON_ADD: 'Add',
     CONFIRMATION_COUNT: '{confirmations} Confirmations',
     CONFIRM_SEND_ALL: 'This will enable sending all of your tokens from the current wallet in this transaction.',
     CONFIRM_SEND_ALL_TITLE: 'Send all your tokens?',
@@ -1136,6 +1134,7 @@ export default {
     LOAD_FROM_FILE: 'Load transaction from file',
     MULTIPLE: 'Multiple',
     NONCE: 'Nonce',
+    NO_RECIPIENTS: 'There are no recipient(s)',
     OPEN_IN_EXPLORER: 'Open in Explorer',
     PASSPHRASE: 'Passphrase',
     PASSWORD: 'Encryption Password',

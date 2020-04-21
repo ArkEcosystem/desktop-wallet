@@ -55,7 +55,7 @@
 
         <ButtonGeneric
           :disabled="!validStep1"
-          :label="$t('TRANSACTION.MULTI_PAYMENT.BUTTON_ADD')"
+          :label="$t('TRANSACTION.BUTTON_ADD')"
           class="TransactionFormTransfer__add py-1 flex-inline h-8 mt-4 mr-3"
           @click="addRecipient"
         />

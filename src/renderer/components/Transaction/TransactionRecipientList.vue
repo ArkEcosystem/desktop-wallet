@@ -8,7 +8,7 @@
     :required="required"
     :helper-text="helperText"
     :is-invalid="isInvalid"
-    :no-items-message="$t('TRANSACTION.MULTI_PAYMENT.NO_RECIPIENTS')"
+    :no-items-message="$t('TRANSACTION.NO_RECIPIENTS')"
     class="TransactionRecipientList"
     @remove="emitRemove"
   >
@@ -75,7 +75,7 @@ export default {
       type: String,
       required: false,
       default: function () {
-        return this.$t('TRANSACTION.MULTI_PAYMENT.RECIPIENTS')
+        return this.$t('TRANSACTION.RECIPIENTS')
       }
     },
 
