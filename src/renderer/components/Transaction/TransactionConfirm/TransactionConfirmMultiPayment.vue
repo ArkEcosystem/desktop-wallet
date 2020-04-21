@@ -28,7 +28,7 @@
       :label="`${$t('TRANSACTION.RECIPIENTS')} - ${payments.length}`"
       item-value-class="items-center"
     >
-      <TransactionTransferList
+      <TransactionRecipientList
         :title="null"
         :items="payments"
         readonly
@@ -56,7 +56,7 @@
 <script>
 import { TRANSACTION_TYPES } from '@config'
 import { ListDivided, ListDividedItem } from '@/components/ListDivided'
-import TransactionTransferList from '@/components/Transaction/TransactionTransferList'
+import TransactionRecipientList from '@/components/Transaction/TransactionRecipientList'
 
 export default {
   name: 'TransactionConfirmMultiPayment',
@@ -68,7 +68,7 @@ export default {
   components: {
     ListDivided,
     ListDividedItem,
-    TransactionTransferList
+    TransactionRecipientList
   },
 
   computed: {

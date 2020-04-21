@@ -69,7 +69,7 @@
         />
       </div>
 
-      <TransactionTransferList
+      <TransactionRecipientList
         :items="$v.form.recipients.$model"
         :max-items="maximumRecipients"
         :show-count="true"
@@ -207,8 +207,8 @@ import { InputAddress, InputCurrency, InputPassword, InputSwitch, InputText, Inp
 import { ListDivided, ListDividedItem } from '@/components/ListDivided'
 import { ModalConfirmation, ModalLoader } from '@/components/Modal'
 import { PassphraseInput } from '@/components/Passphrase'
+import TransactionRecipientList from '@/components/Transaction/TransactionRecipientList'
 import SvgIcon from '@/components/SvgIcon'
-import TransactionTransferList from '@/components/Transaction/TransactionTransferList'
 import WalletService from '@/services/wallet'
 import mixin from './mixin'
 
@@ -230,8 +230,8 @@ export default {
     ModalConfirmation,
     ModalLoader,
     PassphraseInput,
-    SvgIcon,
-    TransactionTransferList
+    TransactionRecipientList,
+    SvgIcon
   },
 
   mixins: [mixin],

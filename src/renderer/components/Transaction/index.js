@@ -2,8 +2,8 @@ import TransactionAmount from './TransactionAmount'
 import TransactionDetail from './TransactionDetail'
 import TransactionModal from './TransactionModal'
 import TransactionPeerList from './TransactionPeerList'
+import TransactionRecipientList from './TransactionRecipientList'
 import TransactionStatusIcon from './TransactionStatusIcon'
-import TransactionTransferList from './TransactionTransferList'
 
 export * from './TransactionForm'
 
@@ -12,8 +12,8 @@ export {
   TransactionDetail,
   TransactionModal,
   TransactionPeerList,
-  TransactionStatusIcon,
-  TransactionTransferList
+  TransactionRecipientList,
+  TransactionStatusIcon
 }
 
 export * from './TransactionShow'

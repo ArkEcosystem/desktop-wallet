@@ -9,7 +9,7 @@
     :helper-text="helperText"
     :is-invalid="isInvalid"
     :no-items-message="$t('TRANSACTION.MULTI_PAYMENT.NO_RECIPIENTS')"
-    class="TransactionTransferList"
+    class="TransactionRecipientList"
     @remove="emitRemove"
   >
     <div
@@ -23,7 +23,7 @@
       />
 
       <div class="flex-1 px-4">
-        <div class="TransactionTransferList__recipient flex py-1">
+        <div class="TransactionRecipientList__recipient flex py-1">
           <span class="font-bold mr-1">
             {{ $t('TRANSACTION.RECIPIENT') }}:
           </span>
@@ -41,7 +41,7 @@
           </span>
         </div>
 
-        <div class="TransactionTransferList__amount flex py-1">
+        <div class="TransactionRecipientList__amount flex py-1">
           <span class="font-bold mr-1">
             {{ $t('TRANSACTION.AMOUNT') }}:
           </span>
@@ -62,7 +62,7 @@ import WalletAddress from '@/components/Wallet/WalletAddress'
 import WalletIdenticon from '@/components/Wallet/WalletIdenticon'
 
 export default {
-  name: 'TransactionTransferList',
+  name: 'TransactionRecipientList',
 
   components: {
     InputEditableList,

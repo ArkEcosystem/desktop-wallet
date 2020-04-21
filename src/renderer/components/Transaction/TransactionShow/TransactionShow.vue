@@ -230,7 +230,7 @@
         :label="$t('TRANSACTION.RECIPIENTS')"
         item-value-class="items-center"
       >
-        <TransactionTransferList
+        <TransactionRecipientList
           :title="null"
           :items="transaction.asset.payments"
           :show-links="true"
@@ -261,7 +261,7 @@ import { ListDivided, ListDividedItem } from '@/components/ListDivided'
 import { ModalWindow } from '@/components/Modal'
 import { ButtonClipboard, ButtonGeneric } from '@/components/Button'
 import SvgIcon from '@/components/SvgIcon'
-import { TransactionAmount, TransactionStatusIcon, TransactionTransferList } from '@/components/Transaction'
+import { TransactionAmount, TransactionRecipientList, TransactionStatusIcon } from '@/components/Transaction'
 import WalletAddress from '@/components/Wallet/WalletAddress'
 import WalletService from '@/services/wallet'
 import truncateMiddle from '@/filters/truncate-middle'
@@ -277,8 +277,8 @@ export default {
     ButtonClipboard,
     SvgIcon,
     TransactionAmount,
+    TransactionRecipientList,
     TransactionStatusIcon,
-    TransactionTransferList,
     WalletAddress
   },
 
