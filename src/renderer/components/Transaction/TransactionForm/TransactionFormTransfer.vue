@@ -201,7 +201,7 @@
 
 <script>
 import { required } from 'vuelidate/lib/validators'
-import { TRANSACTION_TYPES, VENDOR_FIELD } from '@config'
+import { TRANSACTION_TYPES, VENDOR_FIELD, V1 } from '@config'
 import { ButtonGeneric } from '@/components/Button'
 import { InputAddress, InputCurrency, InputPassword, InputSwitch, InputText, InputFee } from '@/components/Input'
 import { ListDivided, ListDividedItem } from '@/components/ListDivided'
@@ -370,6 +370,75 @@ export default {
       }
 
       return this.session_network.constants.multiPaymentLimit
+    },
+
+    maxV1fee () {
+      const transactionGroup = 1
+      const defaultMaxV1Fee = V1.fees[`GROUP_${transactionGroup}`][this.transactionTypeFee]
+      const staticFee = this.$store.getters['transaction/staticFee'](this.transactionTypeFee, transactionGroup)
+      return staticFee || defaultMaxV1Fee
+    },
+
+    feeNetwork () {
+      return this.walletNetwork || this.session_network
+    },
+
+    feeStatistics () {
+      if (!this.feeNetwork) {
+        throw new Error('No active network to fetch fees')
+      }
+
+      const { feeStatistics } = this.feeNetwork
+      const transactionGroup = 1
+
+      if (feeStatistics) {
+        let transactionStatistics
+        if (feeStatistics[0]) {
+          transactionStatistics = Object.values(feeStatistics).find(feeConfig => feeConfig.type === this.transactionTypeFee)
+        } else if (feeStatistics[transactionGroup]) {
+          transactionStatistics = Object.values(feeStatistics[transactionGroup]).find(feeConfig => {
+            return feeConfig.type === this.transactionTypeFee
+          })
+        }
+
+        if (transactionStatistics) {
+          return transactionStatistics.fees
+        }
+      }
+
+      return {
+        avgFee: this.maxV1fee,
+        maxFee: this.maxV1fee
+      }
+    },
+
+    lastFee () {
+      return this.$store.getters['session/lastFeeByType'](this.transactionTypeFee, 1)
+    },
+
+    feeChoices () {
+      const { avgFee, maxFee } = this.feeStatistics
+
+      // Even if the network provides average or maximum fees higher than V1, they will be corrected
+      const average = this.currency_subToUnit(avgFee < this.maxV1fee ? avgFee : this.maxV1fee)
+
+      const fees = {
+        MINIMUM: this.currency_subToUnit(1),
+        AVERAGE: average,
+        MAXIMUM: this.currency_subToUnit(maxFee < this.maxV1fee ? maxFee : this.maxV1fee),
+        INPUT: average,
+        ADVANCED: average
+      }
+
+      return this.lastFee ? Object.assign({}, { LAST: this.currency_subToUnit(this.lastFee) }, fees) : fees
+    }
+  },
+
+  created () {
+    if (this.lastFee && this.session_profile.defaultChosenFee === 'LAST') {
+      this.$v.form.fee.$model = this.currency_toBuilder(this.feeChoices[this.session_profile.defaultChosenFee]).value.toString()
+    } else {
+      this.$v.form.fee.$model = this.currency_toBuilder(this.feeChoices.AVERAGE).value.toString()
     }
   },
 
