@@ -21,6 +21,15 @@
     <div
       v-if="step === 1"
     >
+      <WalletSelection
+        v-if="schema && schema.address"
+        v-model="$v.wallet.$model"
+        :compatible-address="$v.recipientId.$model"
+        class="TransactionFormTransfer__wallet mb-5"
+        profile-class="mb-5"
+        @select="ensureAvailableAmount"
+      />
+
       <InputAddress
         ref="recipient"
         v-model="$v.recipientId.$model"
@@ -207,8 +216,9 @@ import { InputAddress, InputCurrency, InputPassword, InputSwitch, InputText, Inp
 import { ListDivided, ListDividedItem } from '@/components/ListDivided'
 import { ModalConfirmation, ModalLoader } from '@/components/Modal'
 import { PassphraseInput } from '@/components/Passphrase'
-import TransactionRecipientList from '@/components/Transaction/TransactionRecipientList'
 import SvgIcon from '@/components/SvgIcon'
+import TransactionRecipientList from '@/components/Transaction/TransactionRecipientList'
+import WalletSelection from '@/components/Wallet/WalletSelection'
 import WalletService from '@/services/wallet'
 import mixin from './mixin'
 
@@ -230,11 +240,20 @@ export default {
     ModalConfirmation,
     ModalLoader,
     PassphraseInput,
+    SvgIcon,
     TransactionRecipientList,
-    SvgIcon
+    WalletSelection
   },
 
   mixins: [mixin],
+
+  props: {
+    schema: {
+      type: Object,
+      required: false,
+      default: () => {}
+    }
+  },
 
   data: () => ({
     step: 1,
@@ -243,6 +262,7 @@ export default {
     isSendAllActive: false,
     previousAmount: '',
     showConfirmSendAll: false,
+    wallet: null,
     form: {
       recipients: [],
       fee: 0,
@@ -300,6 +320,10 @@ export default {
     },
 
     notEnoughBalanceError () {
+      if (!this.currentWallet) {
+        return ''
+      }
+
       return this.$t('TRANSACTION_FORM.ERROR.NOT_ENOUGH_BALANCE', {
         balance: this.formatter_networkCurrency(this.currentWallet.balance)
       })
@@ -310,6 +334,10 @@ export default {
     },
 
     maximumAvailableAmount () {
+      if (!this.currentWallet) {
+        return this.currency_subToUnit(0)
+      }
+
       let availableAmount = this.currency_subToUnit(this.currentWallet.balance).minus(this.form.fee)
 
       for (const recipient of this.form.recipients) {
@@ -321,6 +349,38 @@ export default {
 
     canSendAll () {
       return this.maximumAvailableAmount > 0
+    },
+
+    senderLabel () {
+      return this.currentWallet ? this.wallet_formatAddress(this.currentWallet.address) : null
+    },
+
+    senderWallet () {
+      return this.wallet
+    },
+
+    walletNetwork () {
+      const sessionNetwork = this.session_network
+      if (!this.currentWallet || !this.currentWallet.id) {
+        return sessionNetwork
+      }
+
+      const profile = this.$store.getters['profile/byId'](this.currentWallet.profileId)
+      if (!profile || !profile.id) {
+        return sessionNetwork
+      }
+
+      return this.$store.getters['network/byId'](profile.networkId) || sessionNetwork
+    },
+
+    currentWallet: {
+      get () {
+        return this.senderWallet || this.wallet_fromRoute
+      },
+
+      set (wallet) {
+        this.wallet = wallet
+      }
     },
 
     vendorFieldLabel () {
@@ -426,6 +486,13 @@ export default {
     }
   },
 
+  watch: {
+    wallet () {
+      this.ensureAvailableAmount()
+      this.$v.recipientId.$touch()
+    }
+  },
+
   created () {
     if (this.lastFee && this.session_profile.defaultChosenFee === 'LAST') {
       this.$v.form.fee.$model = this.currency_toBuilder(this.feeChoices[this.session_profile.defaultChosenFee]).value.toString()
@@ -435,7 +502,12 @@ export default {
   },
 
   mounted () {
-    this.$v.recipientId.$touch()
+    this.populateSchema()
+
+    if (this.currentWallet && this.currentWallet.id) {
+      this.$set(this, 'wallet', this.currentWallet)
+      this.$v.wallet.$touch()
+    }
   },
 
   methods: {
@@ -480,6 +552,64 @@ export default {
       }
     },
 
+    populateSchema () {
+      if (!this.schema) {
+        return
+      }
+
+      this.$set(this, 'amount', this.schema.amount || '')
+      this.$set(this, 'recipientId', this.schema.address || '')
+      this.$set(this.form, 'vendorField', this.schema.vendorField || '')
+
+      if (this.schema.wallet) {
+        const currentProfileId = this.$store.getters['session/profileId']
+        const ledgerWallets = this.$store.getters['ledger/isConnected'] ? this.$store.getters['ledger/wallets'] : []
+        const wallets = []
+
+        let foundNetwork = !this.schema.nethash
+        if (currentProfileId) {
+          if (this.schema.nethash) {
+            const profile = this.$store.getters['profile/byId'](currentProfileId)
+            const network = this.$store.getters['network/byId'](profile.networkId)
+            if (network.nethash === this.schema.nethash) {
+              foundNetwork = true
+              wallets.push(...this.$store.getters['wallet/byProfileId'](currentProfileId))
+            }
+          } else {
+            wallets.push(...this.$store.getters['wallet/byProfileId'](currentProfileId))
+          }
+        }
+
+        wallets.push(...ledgerWallets)
+
+        for (const profile of this.$store.getters['profile/all']) {
+          if (currentProfileId !== profile.id) {
+            if (this.schema.nethash) {
+              const network = this.$store.getters['network/byId'](profile.networkId)
+              if (network.nethash === this.schema.nethash) {
+                foundNetwork = true
+                wallets.push(...this.$store.getters['wallet/byProfileId'](profile.id))
+              }
+            } else {
+              wallets.push(...this.$store.getters['wallet/byProfileId'](profile.id))
+            }
+          }
+        }
+
+        const wallet = wallets.filter(wallet => wallet.address === this.schema.wallet)
+        if (wallet.length) {
+          this.currentWallet = wallet[0]
+        }
+        if (!foundNetwork) {
+          this.$emit('cancel')
+          this.$error(`${this.$t('TRANSACTION.ERROR.NETWORK_NOT_CONFIGURED')}: ${this.schema.nethash}`)
+        } else if (!wallet.length) {
+          this.$emit('cancel')
+          this.$error(`${this.$t('TRANSACTION.ERROR.WALLET_NOT_IMPORTED')}: ${this.schema.wallet}`)
+        }
+      }
+    },
+
     addRecipient () {
       if (this.$v.recipientId.$invalid || this.$v.amount.$invalid) {
         return
@@ -501,13 +631,24 @@ export default {
       this.$v.amount.$model = ''
     },
 
+    emitRemoveRecipient (index) {
+      if (!Object.prototype.hasOwnProperty.call(this.$v.form.recipients.$model, index)) {
+        return
+      }
+
+      this.$v.form.recipients.$model = [
+        ...this.form.recipients.slice(0, index),
+        ...this.form.recipients.slice(index + 1)
+      ]
+    },
+
     setSendAll (isActive, setPreviousAmount = true) {
       if (isActive) {
         this.confirmSendAll()
         this.previousAmount = this.amount
       } else {
         if (setPreviousAmount && !!this.previousAmount) {
-          this.$v.amount.$model = this.previousAmount
+          this.$set(this, 'amount', this.previousAmount)
         }
 
         this.previousAmount = ''
@@ -518,7 +659,7 @@ export default {
 
     ensureAvailableAmount () {
       if (this.isSendAllActive && this.canSendAll) {
-        this.$v.amount.$model = this.maximumAvailableAmount
+        this.$set(this, 'amount', this.maximumAvailableAmount)
       }
     },
 
@@ -535,17 +676,6 @@ export default {
     cancelSendAll () {
       this.showConfirmSendAll = false
       this.isSendAllActive = false
-    },
-
-    emitRemoveRecipient (index) {
-      if (!Object.prototype.hasOwnProperty.call(this.$v.form.recipients.$model, index)) {
-        return
-      }
-
-      this.$v.form.recipients.$model = [
-        ...this.form.recipients.slice(0, index),
-        ...this.form.recipients.slice(index + 1)
-      ]
     },
 
     previousStep () {
@@ -581,9 +711,16 @@ export default {
           this.$refs.secondPassphrase.touch()
         }
       } else {
-        this.$v.form.fee.$model = this.$refs.fee.fee
+        this.$set(this.form, 'fee', this.$refs.fee.fee)
         this.onSubmit()
       }
+    },
+
+    emitNext (transaction) {
+      this.$emit('next', {
+        transaction,
+        wallet: this.senderWallet
+      })
     },
 
     async loadTransaction () {
@@ -634,11 +771,11 @@ export default {
             }
 
             if (transaction.fee) {
-              this.$v.form.fee.$model = this.currency_subToUnit(transaction.fee, this.session_network)
+              this.$set(this.form, 'fee', this.currency_subToUnit(transaction.fee, this.session_network))
             }
 
             if (transaction.vendorField) {
-              this.$v.form.vendorField.$model = transaction.vendorField
+              this.$set(this.form, 'vendorField', transaction.vendorField)
             }
 
             this.$success(this.$t('TRANSACTION.SUCCESS.LOAD_FROM_FILE'))
@@ -667,7 +804,6 @@ export default {
         return false
       }
     },
-
     amount: {
       required,
       isValid () {
@@ -678,7 +814,7 @@ export default {
         return false
       }
     },
-
+    wallet: {},
     form: {
       recipientId: {},
       amount: {},
