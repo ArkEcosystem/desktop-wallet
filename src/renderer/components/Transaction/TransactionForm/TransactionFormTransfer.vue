@@ -405,8 +405,7 @@ export default {
       }
 
       return {
-        avgFee: this.maxV1fee,
-        maxFee: this.maxV1fee
+        avgFee: this.maxV1fee
       }
     },
 
@@ -415,17 +414,12 @@ export default {
     },
 
     feeChoices () {
-      const { avgFee, maxFee } = this.feeStatistics
+      const { avgFee } = this.feeStatistics
 
       // Even if the network provides average or maximum fees higher than V1, they will be corrected
       const average = this.currency_subToUnit(avgFee < this.maxV1fee ? avgFee : this.maxV1fee)
-
       const fees = {
-        MINIMUM: this.currency_subToUnit(1),
-        AVERAGE: average,
-        MAXIMUM: this.currency_subToUnit(maxFee < this.maxV1fee ? maxFee : this.maxV1fee),
-        INPUT: average,
-        ADVANCED: average
+        AVERAGE: average
       }
 
       return this.lastFee ? Object.assign({}, { LAST: this.currency_subToUnit(this.lastFee) }, fees) : fees
