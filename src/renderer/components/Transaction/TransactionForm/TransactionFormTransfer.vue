@@ -514,7 +514,6 @@ export default {
     getTransactionData () {
       const transactionData = {
         address: this.currentWallet.address,
-        recipients: this.form.recipients,
         vendorField: this.form.vendorField,
         passphrase: this.form.passphrase,
         fee: this.getFee(),
@@ -523,7 +522,9 @@ export default {
         multiSignature: this.currentWallet.multiSignature
       }
 
-      if (!this.isMultiPayment) {
+      if (this.isMultiPayment) {
+        transactionData.recipients = this.form.recipients
+      } else {
         transactionData.recipientId = this.form.recipients[0].address
         transactionData.amount = this.form.recipients[0].amount
         transactionData.networkId = this.walletNetwork.id

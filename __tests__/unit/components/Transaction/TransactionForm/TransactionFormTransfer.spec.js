@@ -56,7 +56,8 @@ const createWrapper = (component, wallet, network, props = {}) => {
     propsData: props,
     mocks: {
       $client: {
-        buildTransfer: jest.fn((transactionData) => transactionData)
+        buildTransfer: jest.fn((transactionData) => transactionData),
+        buildMultiPayment: jest.fn((transactionData) => transactionData)
       },
       $error: jest.fn(),
       $success: jest.fn(),
@@ -341,13 +342,13 @@ describe('TransactionFormTransfer', () => {
         expect(wrapper.vm.isMultiPayment).toBe(false)
       })
 
-      it('should return true if it is multi payment transaction', () => {
+      it('should return true if it is multipayment transaction', () => {
         wrapper.vm.$v.form.recipients.$model = [{
           address: 'address-2',
           amount: 10
         }, {
           address: 'address-3',
-          amount: 15
+          amount: 10
         }]
 
         expect(wrapper.vm.isMultiPayment).toBe(true)
@@ -605,12 +606,40 @@ describe('TransactionFormTransfer', () => {
 
   describe('methods', () => {
     describe('getTransactionData', () => {
-      it('should return correct data with passphrase', () => {
+      it('should return correct data with passphrase for normal transaction', () => {
         wrapper.vm.$v.form.fee.$model = 0.1
         wrapper.vm.$v.form.vendorField.$model = 'vendorfield test'
         wrapper.vm.$v.form.passphrase.$model = 'passphrase'
         wrapper.vm.$v.form.recipients.$model = [{
           address: 'address-2',
+          amount: (1 * 1e8).toString()
+        }]
+        wrapper.vm.$v.form.recipientId.$model = wrapper.vm.$v.form.recipients.$model[0].address
+        wrapper.vm.$v.form.amount.$model = wrapper.vm.$v.form.recipients.$model[0].amount
+
+        expect(wrapper.vm.getTransactionData()).toEqual({
+          address: 'address-1',
+          passphrase: 'passphrase',
+          recipientId: 'address-2',
+          amount: (1 * 1e8).toString(),
+          fee: new BigNumber(0.1 * 1e8),
+          vendorField: 'vendorfield test',
+          wif: undefined,
+          networkWif: 170,
+          networkId: 'network-1',
+          multiSignature: undefined
+        })
+      })
+
+      it('should return correct data with passphrase for multipayment transaction', () => {
+        wrapper.vm.$v.form.fee.$model = 0.1
+        wrapper.vm.$v.form.vendorField.$model = 'vendorfield test'
+        wrapper.vm.$v.form.passphrase.$model = 'passphrase'
+        wrapper.vm.$v.form.recipients.$model = [{
+          address: 'address-2',
+          amount: (1 * 1e8).toString()
+        }, {
+          address: 'address-3',
           amount: (1 * 1e8).toString()
         }]
 
@@ -619,6 +648,9 @@ describe('TransactionFormTransfer', () => {
           passphrase: 'passphrase',
           recipients: [{
             address: 'address-2',
+            amount: (1 * 1e8).toString()
+          }, {
+            address: 'address-3',
             amount: (1 * 1e8).toString()
           }],
           fee: new BigNumber(0.1 * 1e8),
@@ -643,6 +675,9 @@ describe('TransactionFormTransfer', () => {
         wrapper.vm.$v.form.recipients.$model = [{
           address: 'address-2',
           amount: (1 * 1e8).toString()
+        }, {
+          address: 'address-3',
+          amount: (1 * 1e8).toString()
         }]
 
         expect(wrapper.vm.getTransactionData()).toEqual({
@@ -651,6 +686,9 @@ describe('TransactionFormTransfer', () => {
           secondPassphrase: 'second passphrase',
           recipients: [{
             address: 'address-2',
+            amount: (1 * 1e8).toString()
+          }, {
+            address: 'address-3',
             amount: (1 * 1e8).toString()
           }],
           fee: new BigNumber(0.1 * 1e8),
@@ -663,7 +701,27 @@ describe('TransactionFormTransfer', () => {
     })
 
     describe('buildTransaction', () => {
-      it('should build transfer', async () => {
+      it('should build normal transaction', async () => {
+        const transactionData = {
+          type: 0,
+          typeGroup: 2
+        }
+
+        const response = await wrapper.vm.buildTransaction(transactionData, true, true)
+
+        expect(wrapper.vm.$client.buildTransfer).toHaveBeenCalledWith(transactionData, true, true)
+        expect(response).toBe(transactionData)
+      })
+
+      it('should build multipayment transaction', async () => {
+        wrapper.vm.$v.form.recipients.$model = [{
+          address: 'address-2',
+          amount: 10
+        }, {
+          address: 'address-3',
+          amount: 10
+        }]
+
         const transactionData = {
           type: 6,
           typeGroup: 1
@@ -675,7 +733,27 @@ describe('TransactionFormTransfer', () => {
         expect(response).toBe(transactionData)
       })
 
-      it('should build transfer with default arguments', async () => {
+      it('should build normal transaction with default arguments', async () => {
+        const transactionData = {
+          type: 0,
+          typeGroup: 2
+        }
+
+        const response = await wrapper.vm.buildTransaction(transactionData)
+
+        expect(wrapper.vm.$client.buildTransfer).toHaveBeenCalledWith(transactionData, false, false)
+        expect(response).toBe(transactionData)
+      })
+
+      it('should build multipayment transaction with default arguments', async () => {
+        wrapper.vm.$v.form.recipients.$model = [{
+          address: 'address-2',
+          amount: 10
+        }, {
+          address: 'address-3',
+          amount: 10
+        }]
+
         const transactionData = {
           type: 6,
           typeGroup: 1
@@ -689,7 +767,21 @@ describe('TransactionFormTransfer', () => {
     })
 
     describe('transactionError', () => {
-      it('should generate transaction error', () => {
+      it('should generate error for normal transaction', () => {
+        wrapper.vm.transactionError()
+
+        expect(wrapper.vm.$error).toHaveBeenCalledWith('TRANSACTION.ERROR.VALIDATION.TRANSFER')
+      })
+
+      it('should generate error for multipayment transaction', () => {
+        wrapper.vm.$v.form.recipients.$model = [{
+          address: 'address-2',
+          amount: 10
+        }, {
+          address: 'address-3',
+          amount: 10
+        }]
+
         wrapper.vm.transactionError()
 
         expect(wrapper.vm.$error).toHaveBeenCalledWith('TRANSACTION.ERROR.VALIDATION.MULTI_PAYMENT')
@@ -930,20 +1022,8 @@ describe('TransactionFormTransfer', () => {
           expect(wrapper.vm.$v.form.recipients.aboveMinimum).toBe(false)
         })
 
-        it('should not be above minimum if not enough', () => {
-          wrapper.vm.$v.form.recipients.$model = [{
-            address: 'address-1',
-            amount: 10
-          }]
-
-          expect(wrapper.vm.$v.form.recipients.aboveMinimum).toBe(false)
-        })
-
         it('should be above minimum if set', () => {
           wrapper.vm.$v.form.recipients.$model = [{
-            address: 'address-1',
-            amount: 10
-          }, {
             address: 'address-1',
             amount: 10
           }]
