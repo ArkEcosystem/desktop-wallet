@@ -186,6 +186,32 @@ describe('TransactionFormTransfer', () => {
       expect(wrapper.contains('.TransactionFormTransfer__add')).toBe(true)
     })
 
+    it('should have send all switch', () => {
+      expect(wrapper.contains('.TransactionFormTransfer__send-all')).toBe(true)
+    })
+
+    describe('wallet selection', () => {
+      it('should show if schema prop is provided with address', async () => {
+        wrapper.setProps({
+          schema: {
+            address: 'address-1'
+          }
+        })
+
+        await wrapper.vm.$nextTick()
+
+        expect(wrapper.contains('.TransactionFormTransfer__wallet')).toBe(true)
+      })
+
+      it('should not show if no schema prop is provided', () => {
+        createWrapper(null, {
+          isLedger: false
+        })
+
+        expect(wrapper.contains('.TransactionFormTransfer__wallet')).toBe(false)
+      })
+    })
+
     describe('step 2', () => {
       beforeEach(() => {
         wrapper.vm.step = 2
@@ -453,6 +479,208 @@ describe('TransactionFormTransfer', () => {
       })
     })
 
+    describe('canSendAll', () => {
+      it('should return true if amount is greater than 0', () => {
+        expect(wrapper.vm.currentWallet.balance).toBe((1000 * 1e8).toString())
+        expect(wrapper.vm.form.fee).toBe('0.1')
+        expect(wrapper.vm.canSendAll).toBe(true)
+      })
+
+      it('should return false if maximumAvailableAmount is 0', () => {
+        createWrapper(null, {
+          balance: (0.1 * 1e8).toString()
+        })
+
+        expect(wrapper.vm.currentWallet.balance).toBe((0.1 * 1e8).toString())
+        expect(wrapper.vm.form.fee).toBe('0.1')
+        expect(wrapper.vm.canSendAll).toBe(false)
+      })
+    })
+
+    describe('senderLabel', () => {
+      it('should return formatted address if currentWallet', () => {
+        expect(wrapper.vm.senderLabel).toEqual('formatted-address-1')
+      })
+
+      it('should return null if no current wallet', async () => {
+        createWrapper(null, null)
+
+        expect(wrapper.vm.senderLabel).toEqual(null)
+      })
+    })
+
+    describe('senderWallet', () => {
+      it('should return wallet if set', () => {
+        wrapper.vm.wallet = {
+          address: 'address-1'
+        }
+
+        expect(wrapper.vm.senderWallet).toEqual({
+          address: 'address-1'
+        })
+      })
+    })
+
+    describe('walletNetwork', () => {
+      it('should return current network if no wallet selected', () => {
+        const profileByIdSpy = jest.fn()
+        const networkByIdSpy = jest.fn()
+        const response = TransactionFormTransfer.computed.walletNetwork.call({
+          $store: {
+            getters: {
+              'network/byId': networkByIdSpy,
+              'profile/byId': profileByIdSpy
+            }
+          },
+          session_network: globalNetwork,
+          currentWallet: null
+        })
+
+        expect(response).toBe(globalNetwork)
+        expect(profileByIdSpy).not.toHaveBeenCalled()
+        expect(networkByIdSpy).not.toHaveBeenCalled()
+      })
+
+      it('should return current network if wallet does not have id', () => {
+        const profileByIdSpy = jest.fn()
+        const networkByIdSpy = jest.fn()
+        const response = TransactionFormTransfer.computed.walletNetwork.call({
+          $store: {
+            getters: {
+              'network/byId': networkByIdSpy,
+              'profile/byId': profileByIdSpy
+            }
+          },
+          session_network: globalNetwork,
+          currentWallet: {}
+        })
+
+        expect(response).toBe(globalNetwork)
+        expect(profileByIdSpy).not.toHaveBeenCalled()
+        expect(networkByIdSpy).not.toHaveBeenCalled()
+      })
+
+      it('should return current network if no profile selected', () => {
+        const profileByIdSpy = jest.fn()
+        const networkByIdSpy = jest.fn()
+        const response = TransactionFormTransfer.computed.walletNetwork.call({
+          $store: {
+            getters: {
+              'network/byId': networkByIdSpy,
+              'profile/byId': profileByIdSpy
+            }
+          },
+          session_network: globalNetwork,
+          currentWallet: {
+            id: 'test',
+            profileId: 'profile-id'
+          }
+        })
+
+        expect(response).toBe(globalNetwork)
+        expect(profileByIdSpy).toHaveBeenCalledWith('profile-id')
+        expect(networkByIdSpy).not.toHaveBeenCalled()
+      })
+
+      it('should return current network if no network for profile selected', () => {
+        const profileByIdSpy = jest.fn(() => ({
+          id: 'profile-id',
+          networkId: 'network-id'
+        }))
+        const networkByIdSpy = jest.fn()
+        const response = TransactionFormTransfer.computed.walletNetwork.call({
+          $store: {
+            getters: {
+              'network/byId': networkByIdSpy,
+              'profile/byId': profileByIdSpy
+            }
+          },
+          session_network: globalNetwork,
+          currentWallet: {
+            id: 'test',
+            profileId: 'profile-id'
+          }
+        })
+
+        expect(response).toBe(globalNetwork)
+        expect(profileByIdSpy).toHaveBeenCalledWith('profile-id')
+        expect(networkByIdSpy).toHaveBeenCalledWith('network-id')
+      })
+
+      it('should return profile network if no network for profile selected', () => {
+        const profileNetwork = {
+          fractionDigits: 2,
+          token: 'DARK',
+          version: 30,
+          wif: 170,
+          market: {
+            enabled: false
+          }
+        }
+        const profileByIdSpy = jest.fn(() => ({
+          id: 'profile-id',
+          networkId: 'network-id'
+        }))
+        const networkByIdSpy = jest.fn(() => profileNetwork)
+        const response = TransactionFormTransfer.computed.walletNetwork.call({
+          $store: {
+            getters: {
+              'network/byId': networkByIdSpy,
+              'profile/byId': profileByIdSpy
+            }
+          },
+          session_network: globalNetwork,
+          currentWallet: {
+            id: 'test',
+            profileId: 'profile-id'
+          }
+        })
+
+        expect(response).toBe(profileNetwork)
+        expect(profileByIdSpy).toHaveBeenCalledWith('profile-id')
+        expect(networkByIdSpy).toHaveBeenCalledWith('network-id')
+      })
+    })
+
+    describe('currentWallet', () => {
+      it('should get sender wallet', () => {
+        wrapper.vm.wallet = {
+          id: 'test',
+          balance: 0,
+          address: 'address-3'
+        }
+
+        expect(wrapper.vm.currentWallet).toBe(wrapper.vm.wallet)
+      })
+
+      it('should get wallet from route', () => {
+        const newWallet = {
+          id: 'test',
+          balance: 20,
+          address: 'address-2'
+        }
+        createWrapper(null, newWallet)
+
+        wrapper.vm.wallet = null
+
+        expect(wrapper.vm.senderWallet).toBe(null)
+        expect(wrapper.vm.currentWallet).toBe(newWallet)
+      })
+
+      it('should set wallet', () => {
+        const newWallet = {
+          id: 'test',
+          balance: 20,
+          address: 'address-2'
+        }
+
+        wrapper.vm.wallet = null
+        wrapper.vm.currentWallet = newWallet
+
+        expect(wrapper.vm.wallet).toBe(newWallet)
+      })
+    })
+
     describe('vendorFieldLabel', () => {
       it('should return value', () => {
         expect(wrapper.vm.vendorFieldLabel).toBe('TRANSACTION.VENDOR_FIELD - VALIDATION.MAX_LENGTH')
@@ -601,6 +829,43 @@ describe('TransactionFormTransfer', () => {
 
         expect(wrapper.vm.maximumRecipients).toBe(20)
       })
+    })
+  })
+
+  describe('watch', () => {
+    it('should ensure available amount', async () => {
+      const spy = jest.spyOn(wrapper.vm, 'ensureAvailableAmount')
+
+      wrapper.vm.wallet = {
+        balance: 0,
+        address: 'address-4',
+        passphrase: null
+      }
+
+      await wrapper.vm.$nextTick()
+
+      expect(spy).toHaveBeenCalledTimes(1)
+    })
+
+    it('should check trigger recipient validation', async () => {
+      const spy = jest.spyOn(wrapper.vm.$v.recipientId, '$touch', 'get')
+
+      wrapper.vm.wallet = {
+        balance: 0,
+        address: 'address-4',
+        passphrase: null
+      }
+
+      await wrapper.vm.$nextTick()
+
+      expect(spy).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('mounted hook', () => {
+    it('should set wallet object', () => {
+      expect(wrapper.vm.currentWallet).toBe(wrapper.vm.currentWallet)
+      expect(wrapper.vm.wallet).toBe(wrapper.vm.currentWallet)
     })
   })
 
@@ -766,6 +1031,155 @@ describe('TransactionFormTransfer', () => {
       })
     })
 
+    describe('populateSchema', () => {
+      it('should do nothing if no schema data', () => {
+        const spy = jest.spyOn(wrapper.vm, '$set')
+
+        wrapper.setProps({
+          schema: null
+        })
+
+        expect(spy).not.toHaveBeenCalled()
+      })
+
+      it('should load in schema form data', () => {
+        wrapper.setProps({
+          schema: {
+            amount: (10 * 1e8).toString(),
+            address: 'address-5',
+            vendorField: 'test vendorfield'
+          }
+        })
+
+        wrapper.vm.populateSchema()
+
+        expect(wrapper.vm.amount).toBe((10 * 1e8).toString())
+        expect(wrapper.vm.recipientId).toBe('address-5')
+        expect(wrapper.vm.form.vendorField).toBe('test vendorfield')
+      })
+
+      it('should load in schema wallet data', () => {
+        const sessionProfileIdSpy = jest.spyOn(wrapper.vm.$store.getters, 'session/profileId', 'get')
+        const ledgerConnectedSpy = jest.spyOn(wrapper.vm.$store.getters, 'ledger/isConnected', 'get')
+        const ledgerWalletsSpy = jest.spyOn(wrapper.vm.$store.getters, 'ledger/wallets', 'get')
+        const profileAllSpy = jest.spyOn(wrapper.vm.$store.getters, 'profile/all', 'get')
+
+        wrapper.setProps({
+          schema: {
+            wallet: 'address-1'
+          }
+        })
+
+        wrapper.vm.$store.getters['profile/byId'].mockClear()
+        wrapper.vm.$store.getters['network/byId'].mockClear()
+
+        wrapper.vm.populateSchema()
+
+        expect(sessionProfileIdSpy).toHaveBeenCalled()
+        expect(ledgerConnectedSpy).toHaveBeenCalled()
+        expect(ledgerWalletsSpy).toHaveBeenCalled()
+        expect(profileAllSpy).toHaveBeenCalled()
+        expect(wrapper.vm.$store.getters['wallet/byProfileId']).toHaveBeenCalledWith('profile-1')
+        expect(wrapper.vm.$store.getters['wallet/byProfileId']).toHaveBeenCalledWith('profile-2')
+        expect(wrapper.vm.$store.getters['profile/byId']).not.toHaveBeenCalled()
+        expect(wrapper.vm.$store.getters['network/byId']).not.toHaveBeenCalled()
+        expect(wrapper.vm.currentWallet).toBe(wrapper.vm.wallet_fromRoute)
+      })
+
+      it('should load data for network with nethash', () => {
+        const sessionProfileIdSpy = jest.spyOn(wrapper.vm.$store.getters, 'session/profileId', 'get')
+        const ledgerConnectedSpy = jest.spyOn(wrapper.vm.$store.getters, 'ledger/isConnected', 'get')
+        const ledgerWalletsSpy = jest.spyOn(wrapper.vm.$store.getters, 'ledger/wallets', 'get')
+        const profileAllSpy = jest.spyOn(wrapper.vm.$store.getters, 'profile/all', 'get')
+
+        wrapper.setProps({
+          schema: {
+            wallet: 'address-1',
+            nethash: 'nethash-1'
+          }
+        })
+
+        wrapper.vm.$store.getters['profile/byId'].mockClear()
+        wrapper.vm.$store.getters['network/byId'].mockClear()
+
+        wrapper.vm.populateSchema()
+
+        expect(sessionProfileIdSpy).toHaveBeenCalled()
+        expect(ledgerConnectedSpy).toHaveBeenCalled()
+        expect(ledgerWalletsSpy).toHaveBeenCalled()
+        expect(profileAllSpy).toHaveBeenCalled()
+        expect(wrapper.vm.$store.getters['wallet/byProfileId']).toHaveBeenCalledWith('profile-1')
+        expect(wrapper.vm.$store.getters['wallet/byProfileId']).toHaveBeenCalledWith('profile-2')
+        expect(wrapper.vm.$store.getters['profile/byId']).toHaveBeenCalledWith('profile-1')
+        expect(wrapper.vm.$store.getters['network/byId']).toHaveBeenCalledWith('network-1')
+        expect(wrapper.vm.currentWallet).toBe(wrapper.vm.wallet_fromRoute)
+      })
+
+      it('should check other profiles if no current profile', () => {
+        const sessionProfileIdSpy = jest.spyOn(wrapper.vm.$store.getters, 'session/profileId', 'get').mockReturnValue(null)
+        const ledgerConnectedSpy = jest.spyOn(wrapper.vm.$store.getters, 'ledger/isConnected', 'get')
+        const ledgerWalletsSpy = jest.spyOn(wrapper.vm.$store.getters, 'ledger/wallets', 'get')
+        const profileAllSpy = jest.spyOn(wrapper.vm.$store.getters, 'profile/all', 'get')
+
+        wrapper.setProps({
+          schema: {
+            wallet: 'address-1',
+            nethash: 'nethash-1'
+          }
+        })
+
+        wrapper.vm.$store.getters['profile/byId'].mockClear()
+        wrapper.vm.$store.getters['network/byId'].mockClear()
+
+        wrapper.vm.populateSchema()
+
+        expect(sessionProfileIdSpy).toHaveBeenCalled()
+        expect(ledgerConnectedSpy).toHaveBeenCalled()
+        expect(ledgerWalletsSpy).toHaveBeenCalled()
+        expect(profileAllSpy).toHaveBeenCalled()
+        expect(wrapper.vm.$store.getters['wallet/byProfileId']).toHaveBeenCalledWith('profile-1')
+        expect(wrapper.vm.$store.getters['wallet/byProfileId']).toHaveBeenCalledWith('profile-2')
+        expect(wrapper.vm.$store.getters['profile/byId']).not.toHaveBeenCalled()
+        expect(wrapper.vm.$store.getters['network/byId']).toHaveBeenCalledWith('network-1')
+        expect(wrapper.vm.currentWallet).toBe(wrapper.vm.wallet_fromRoute)
+      })
+
+      it('should error when no network', () => {
+        const $tSpy = jest.spyOn(wrapper.vm, '$t')
+
+        wrapper.setProps({
+          schema: {
+            wallet: 'address-1',
+            nethash: 'wrong nethash'
+          }
+        })
+
+        wrapper.vm.populateSchema()
+
+        expect($tSpy).toHaveBeenCalledWith('TRANSACTION.ERROR.NETWORK_NOT_CONFIGURED')
+        expect(wrapper.vm.$error).toHaveBeenCalledWith('TRANSACTION.ERROR.NETWORK_NOT_CONFIGURED: wrong nethash')
+
+        $tSpy.mockRestore()
+      })
+
+      it('should error when no wallets', () => {
+        const $tSpy = jest.spyOn(wrapper.vm, '$t')
+
+        wrapper.setProps({
+          schema: {
+            wallet: 'wrong address'
+          }
+        })
+
+        wrapper.vm.populateSchema()
+
+        expect($tSpy).toHaveBeenCalledWith('TRANSACTION.ERROR.WALLET_NOT_IMPORTED')
+        expect(wrapper.vm.$error).toHaveBeenCalledWith('TRANSACTION.ERROR.WALLET_NOT_IMPORTED: wrong address')
+
+        $tSpy.mockRestore()
+      })
+    })
+
     describe('transactionError', () => {
       it('should generate error for normal transaction', () => {
         wrapper.vm.transactionError()
@@ -785,6 +1199,146 @@ describe('TransactionFormTransfer', () => {
         wrapper.vm.transactionError()
 
         expect(wrapper.vm.$error).toHaveBeenCalledWith('TRANSACTION.ERROR.VALIDATION.MULTI_PAYMENT')
+      })
+    })
+
+    describe('emitNext', () => {
+      it('should emit', () => {
+        wrapper.vm.emitNext({
+          recipientId: 'address-2'
+        })
+
+        expect(wrapper.emitted('next')).toEqual([
+          [{
+            transaction: {
+              recipientId: 'address-2'
+            },
+            wallet: wrapper.vm.senderWallet
+          }]
+        ])
+      })
+
+      it('should emit with current wallet', () => {
+        wrapper.vm.wallet = {
+          address: 'address-1'
+        }
+
+        wrapper.vm.emitNext({
+          recipientId: 'address-2'
+        })
+
+        expect(wrapper.emitted('next')).toEqual([
+          [{
+            transaction: {
+              recipientId: 'address-2'
+            },
+            wallet: {
+              address: 'address-1'
+            }
+          }]
+        ])
+      })
+    })
+
+    describe('setSendAll', () => {
+      it('should trigger send all', () => {
+        const spy = jest.spyOn(wrapper.vm, 'confirmSendAll').mockImplementation()
+
+        wrapper.vm.amount = 50
+        wrapper.vm.setSendAll(true)
+
+        expect(spy).toHaveBeenCalledTimes(1)
+        expect(wrapper.vm.previousAmount).toEqual(50)
+      })
+
+      it('should trigger when disabled', () => {
+        const spy = jest.spyOn(wrapper.vm, 'ensureAvailableAmount').mockImplementation()
+        const spySet = jest.spyOn(wrapper.vm, '$set')
+
+        wrapper.vm.amount = 10
+        wrapper.vm.previousAmount = 50
+        wrapper.vm.setSendAll(false)
+
+        expect(spy).toHaveBeenCalledTimes(1)
+        expect(spySet).toHaveBeenNthCalledWith(1, wrapper.vm, 'amount', 50)
+        expect(wrapper.vm.amount).toEqual(50)
+        expect(wrapper.vm.previousAmount).toEqual('')
+        expect(wrapper.vm.isSendAllActive).toEqual(false)
+      })
+
+      it('should not update amount when disabled', () => {
+        const spy = jest.spyOn(wrapper.vm, 'ensureAvailableAmount').mockImplementation()
+        const spySet = jest.spyOn(wrapper.vm, '$set')
+
+        wrapper.vm.amount = 10
+        wrapper.vm.previousAmount = 50
+        wrapper.vm.setSendAll(false, false)
+
+        expect(spy).toHaveBeenCalled()
+        expect(spySet).not.toHaveBeenCalled()
+        expect(wrapper.vm.amount).toEqual(10)
+        expect(wrapper.vm.previousAmount).toEqual('')
+        expect(wrapper.vm.isSendAllActive).toEqual(false)
+      })
+    })
+
+    describe('ensureAvailableAmount', () => {
+      it('should set amount to max if send all is enabled', async () => {
+        const spySet = jest.spyOn(wrapper.vm, '$set')
+
+        wrapper.vm.amount = 0
+        wrapper.vm.isSendAllActive = true
+
+        await wrapper.vm.$nextTick()
+
+        wrapper.vm.ensureAvailableAmount()
+
+        expect(wrapper.vm.isSendAllActive).toBe(true)
+        expect(wrapper.vm.canSendAll).toBe(true)
+        expect(spySet).toHaveBeenNthCalledWith(1, wrapper.vm, 'amount', new BigNumber('999.9'))
+        expect(wrapper.vm.amount).toEqual(new BigNumber('999.9'))
+      })
+
+      it('should not set amount to max if send all is disabled', async () => {
+        const spySet = jest.spyOn(wrapper.vm, '$set')
+
+        wrapper.vm.amount = 10
+
+        await wrapper.vm.$nextTick()
+
+        wrapper.vm.ensureAvailableAmount()
+
+        expect(spySet).not.toHaveBeenCalled()
+        expect(wrapper.vm.amount).toEqual(10)
+      })
+    })
+
+    describe('enableSendAll', () => {
+      it('should force send all (for when modal is confirmed)', () => {
+        const spy = jest.spyOn(wrapper.vm, 'ensureAvailableAmount')
+
+        wrapper.vm.enableSendAll()
+
+        expect(spy).toHaveBeenCalledTimes(1)
+        expect(wrapper.vm.isSendAllActive).toBe(true)
+        expect(wrapper.vm.showConfirmSendAll).toBe(false)
+      })
+    })
+
+    describe('confirmSendAll', () => {
+      it('should set to true (to show modal)', () => {
+        wrapper.vm.confirmSendAll()
+
+        expect(wrapper.vm.showConfirmSendAll).toBe(true)
+      })
+    })
+
+    describe('cancelSendAll', () => {
+      it('should set to false (to hide modal)', () => {
+        wrapper.vm.cancelSendAll()
+
+        expect(wrapper.vm.isSendAllActive).toBe(false)
+        expect(wrapper.vm.showConfirmSendAll).toBe(false)
       })
     })
 
@@ -843,6 +1397,47 @@ describe('TransactionFormTransfer', () => {
       })
     })
 
+    describe('emitRemoveRecipient', () => {
+      it('should remove recipient at index', () => {
+        wrapper.vm.$v.form.recipients.$model = [{
+          address: 'address-1',
+          amount: 10
+        }, {
+          address: 'address-2',
+          amount: 10
+        }, {
+          address: 'address-3',
+          amount: 10
+        }]
+
+        wrapper.vm.emitRemoveRecipient(1)
+
+        expect(wrapper.vm.$v.form.recipients.$model).toEqual([{
+          address: 'address-1',
+          amount: 10
+        }, {
+          address: 'address-3',
+          amount: 10
+        }])
+      })
+
+      it('should do nothing if index does not exist', () => {
+        const recipients = [{
+          address: 'address-1',
+          amount: 10
+        }, {
+          address: 'address-2',
+          amount: 10
+        }]
+
+        wrapper.vm.$v.form.recipients.$model = recipients
+
+        wrapper.vm.emitRemoveRecipient(3)
+
+        expect(wrapper.vm.$v.form.recipients.$model).toBe(recipients)
+      })
+    })
+
     describe('previousStep', () => {
       it('should go from step 2 to step 1', () => {
         wrapper.vm.step = 2
@@ -883,44 +1478,106 @@ describe('TransactionFormTransfer', () => {
       })
     })
 
-    describe('emitRemoveRecipient', () => {
-      it('should remove recipient at index', () => {
-        wrapper.vm.$v.form.recipients.$model = [{
-          address: 'address-1',
-          amount: 10
-        }, {
-          address: 'address-2',
-          amount: 10
-        }, {
-          address: 'address-3',
-          amount: 10
-        }]
-
-        wrapper.vm.emitRemoveRecipient(1)
-
-        expect(wrapper.vm.$v.form.recipients.$model).toEqual([{
-          address: 'address-1',
-          amount: 10
-        }, {
-          address: 'address-3',
-          amount: 10
-        }])
+    describe('loadTransaction', () => {
+      let $tSpy
+      beforeEach(() => {
+        $tSpy = jest.spyOn(wrapper.vm, '$t')
       })
 
-      it('should do nothing if index does not exist', () => {
-        const recipients = [{
-          address: 'address-1',
-          amount: 10
-        }, {
-          address: 'address-2',
-          amount: 10
-        }]
+      afterEach(() => {
+        $tSpy.mockRestore()
+      })
 
-        wrapper.vm.$v.form.recipients.$model = recipients
+      describe('when a valid JSON file is opened', () => {
+        it('should display an error alert if the transaction has the wrong type', async () => {
+          wrapper.vm.electron_readFile = jest.fn(async () => {
+            return '{ "type": "1" }'
+          })
 
-        wrapper.vm.emitRemoveRecipient(3)
+          await wrapper.vm.loadTransaction()
 
-        expect(wrapper.vm.$v.form.recipients.$model).toBe(recipients)
+          expect($tSpy).toHaveBeenCalledWith('VALIDATION.INVALID_TYPE')
+          expect($tSpy).toHaveBeenCalledWith('TRANSACTION.ERROR.LOAD_FROM_FILE')
+          expect(wrapper.vm.$error).toHaveBeenCalledWith('TRANSACTION.ERROR.LOAD_FROM_FILE: VALIDATION.INVALID_TYPE')
+        })
+
+        it('should display an error alert if the recipient is on a different network', async () => {
+          WalletService.validateAddress = jest.fn(() => false)
+
+          wrapper.vm.electron_readFile = jest.fn(async () => {
+            return '{ "type": "0", "recipientId": "AJAAfMJj1w6U5A3t6BGA7NYZsaVve6isMm", "amount": "10" }'
+          })
+
+          await wrapper.vm.loadTransaction()
+
+          expect($tSpy).toHaveBeenCalledWith('VALIDATION.RECIPIENT_DIFFERENT_NETWORK', [
+            'AJAAfMJj1w6U5A3t6BGA7NYZsaVve6isMm'
+          ])
+          expect(wrapper.vm.$error).toHaveBeenCalledWith('TRANSACTION.ERROR.LOAD_FROM_FILE: VALIDATION.RECIPIENT_DIFFERENT_NETWORK')
+        })
+
+        it('should set data from json', async () => {
+          WalletService.validateAddress = jest.fn(() => true)
+
+          const json = JSON.stringify({
+            type: 0,
+            recipientId: 'AJAAfMJj1w6U5A3t6BGA7NYZsaVve6isMm',
+            amount: (20 * 1e8).toString(),
+            fee: (0.1 * 1e8).toString(),
+            vendorField: 'vendorfield test'
+          })
+
+          wrapper.vm.electron_readFile = jest.fn(async () => {
+            return json
+          })
+
+          await wrapper.vm.loadTransaction()
+
+          const expectedAmount = wrapper.vm.currency_subToUnit((20 * 1e8).toString(), globalNetwork)
+          const expectedFormattedAmount = wrapper.vm.currency_unitToSub(expectedAmount, globalNetwork)
+
+          expect($tSpy).toHaveBeenCalledWith('TRANSACTION.SUCCESS.LOAD_FROM_FILE')
+          expect(wrapper.vm.$success).toHaveBeenCalledWith('TRANSACTION.SUCCESS.LOAD_FROM_FILE')
+          expect(wrapper.vm.form.recipients[0].address).toEqual('AJAAfMJj1w6U5A3t6BGA7NYZsaVve6isMm')
+          expect(wrapper.vm.form.recipients[0].amount).toEqual(expectedFormattedAmount)
+          expect(wrapper.vm.form.fee).toEqual(wrapper.vm.currency_subToUnit((0.1 * 1e8).toString(), globalNetwork))
+          expect(wrapper.vm.form.vendorField).toEqual('vendorfield test')
+        })
+
+        it('should display a success alert', async () => {
+          wrapper.vm.electron_readFile = jest.fn(async () => {
+            return '{ "type": "0" }'
+          })
+
+          await wrapper.vm.loadTransaction()
+
+          expect($tSpy).toHaveBeenCalledWith('TRANSACTION.SUCCESS.LOAD_FROM_FILE')
+          expect(wrapper.vm.$success).toHaveBeenCalledWith('TRANSACTION.SUCCESS.LOAD_FROM_FILE')
+        })
+      })
+
+      describe('when an invalid JSON file is opened', () => {
+        it('should display an error alert', async () => {
+          wrapper.vm.electron_readFile = jest.fn(async () => {
+            return 'invalid json'
+          })
+
+          await wrapper.vm.loadTransaction()
+
+          expect($tSpy).toHaveBeenCalledWith('TRANSACTION.ERROR.LOAD_FROM_FILE')
+          expect(wrapper.vm.$error).toHaveBeenCalledWith('TRANSACTION.ERROR.LOAD_FROM_FILE: VALIDATION.INVALID_FORMAT')
+        })
+
+        it('should display an error alert when error thrown', async () => {
+          wrapper.vm.electron_readFile = jest.fn(async () => {
+            throw new Error('invalid json')
+          })
+
+          await wrapper.vm.loadTransaction()
+
+          expect($tSpy).toHaveBeenCalledWith('TRANSACTION.ERROR.LOAD_FROM_FILE')
+          expect(wrapper.vm.$error).toHaveBeenCalledWith('TRANSACTION.ERROR.LOAD_FROM_FILE: invalid json')
+        })
       })
     })
   })
