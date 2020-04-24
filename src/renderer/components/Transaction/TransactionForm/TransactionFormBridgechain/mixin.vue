@@ -500,7 +500,7 @@ export default {
         let isValid = true
 
         try {
-          const response = await this.$store.dispatch('peer/validatePeer', {
+          const response = await this.$store.dispatch('peer/peer/validate', {
             ip: seedNode.ip,
             port: this.form.apiPort,
             nethash: this.form.asset.genesisHash
