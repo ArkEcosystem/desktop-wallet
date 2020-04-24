@@ -1240,6 +1240,22 @@ describe('TransactionFormTransfer', () => {
       })
     })
 
+    describe('onFee', () => {
+      it('should set fee in form', () => {
+        wrapper.vm.onFee(20)
+
+        expect(wrapper.vm.form.fee).toEqual(20)
+      })
+
+      it('should ensure amount is available', () => {
+        const spy = jest.spyOn(wrapper.vm, 'ensureAvailableAmount').mockImplementation()
+
+        wrapper.vm.onFee(20)
+
+        expect(spy).toHaveBeenCalledTimes(1)
+      })
+    })
+
     describe('setSendAll', () => {
       it('should trigger send all', () => {
         const spy = jest.spyOn(wrapper.vm, 'confirmSendAll').mockImplementation()
@@ -1253,14 +1269,12 @@ describe('TransactionFormTransfer', () => {
 
       it('should trigger when disabled', () => {
         const spy = jest.spyOn(wrapper.vm, 'ensureAvailableAmount').mockImplementation()
-        const spySet = jest.spyOn(wrapper.vm, '$set')
 
-        wrapper.vm.amount = 10
+        wrapper.vm.amount = 50
         wrapper.vm.previousAmount = 50
         wrapper.vm.setSendAll(false)
 
         expect(spy).toHaveBeenCalledTimes(1)
-        expect(spySet).toHaveBeenNthCalledWith(1, wrapper.vm, 'amount', 50)
         expect(wrapper.vm.amount).toEqual(50)
         expect(wrapper.vm.previousAmount).toEqual('')
         expect(wrapper.vm.isSendAllActive).toEqual(false)
@@ -1284,9 +1298,7 @@ describe('TransactionFormTransfer', () => {
 
     describe('ensureAvailableAmount', () => {
       it('should set amount to max if send all is enabled', async () => {
-        const spySet = jest.spyOn(wrapper.vm, '$set')
-
-        wrapper.vm.amount = 0
+        wrapper.vm.amount = new BigNumber('999.9')
         wrapper.vm.isSendAllActive = true
 
         await wrapper.vm.$nextTick()
@@ -1295,7 +1307,6 @@ describe('TransactionFormTransfer', () => {
 
         expect(wrapper.vm.isSendAllActive).toBe(true)
         expect(wrapper.vm.canSendAll).toBe(true)
-        expect(spySet).toHaveBeenNthCalledWith(1, wrapper.vm, 'amount', new BigNumber('999.9'))
         expect(wrapper.vm.amount).toEqual(new BigNumber('999.9'))
       })
 
