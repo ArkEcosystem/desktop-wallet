@@ -333,7 +333,7 @@ export default {
         await dispatch('peer/current/set', { peer }, { root: true })
       } catch (error) {
         logger.error(error)
-        if (skipIfCustom) await dispatch('system/clear', null, { root: true })
+        if (skipIfCustom) await dispatch('peer/system/clear', null, { root: true })
       }
 
       return peer
