@@ -649,7 +649,7 @@ export default {
         this.previousAmount = this.amount
       } else {
         if (setPreviousAmount && !!this.previousAmount) {
-          this.$set(this, 'amount', this.previousAmount)
+          this.$v.amount.$model = this.previousAmount
         }
 
         this.previousAmount = ''
@@ -660,7 +660,7 @@ export default {
 
     ensureAvailableAmount () {
       if (this.isSendAllActive && this.canSendAll) {
-        this.$set(this, 'amount', this.maximumAvailableAmount)
+        this.$v.amount.$model = this.maximumAvailableAmount
       }
     },
 
@@ -712,9 +712,14 @@ export default {
           this.$refs.secondPassphrase.touch()
         }
       } else {
-        this.$set(this.form, 'fee', this.$refs.fee.fee)
+        this.$v.form.fee.$model = this.$refs.fee.fee
         this.onSubmit()
       }
+    },
+
+    onFee (fee) {
+      this.$v.form.fee.$model = fee
+      this.ensureAvailableAmount()
     },
 
     emitNext (transaction) {
@@ -772,11 +777,11 @@ export default {
             }
 
             if (transaction.fee) {
-              this.$set(this.form, 'fee', this.currency_subToUnit(transaction.fee, this.session_network))
+              this.$v.form.fee.$model = this.currency_subToUnit(transaction.fee, this.session_network)
             }
 
             if (transaction.vendorField) {
-              this.$set(this.form, 'vendorField', transaction.vendorField)
+              this.$v.form.vendorField.$model = transaction.vendorField
             }
 
             this.$success(this.$t('TRANSACTION.SUCCESS.LOAD_FROM_FILE'))
