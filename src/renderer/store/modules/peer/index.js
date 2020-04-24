@@ -69,8 +69,8 @@ export default {
      * @param {Object} network The network.
      * @return {Boolean | Error} If the peer is compatible with the network.
      */
-    async 'peer/checkNetwork' ({ getters }, { peer, network, nethash }) {
-      const networkNethash = nethash || network.nethash
+    async 'peer/checkNetwork' ({ getters, rootGetters }, { peer, network, nethash }) {
+      const networkNethash = nethash || network.nethash || rootGetters['session/network'].nethash
       let peerNethash
 
       try {
