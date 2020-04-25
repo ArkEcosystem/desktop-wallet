@@ -70,8 +70,8 @@ describe('TransactionConfirmMultiPayment', () => {
       for (const recipientIndex in wrapper.vm.transaction.asset.payments) {
         const recipient = wrapper.vm.transaction.asset.payments[recipientIndex]
         const recipientElement = recipients.at(recipientIndex)
-        const addressText = recipientElement.find('.TransactionMultiPaymentList__recipient').text().replace('TRANSACTION.RECIPIENT:', '')
-        const amountText = recipientElement.find('.TransactionMultiPaymentList__amount').text().replace('TRANSACTION.AMOUNT:', '')
+        const addressText = recipientElement.find('.TransactionRecipientList__recipient').text().replace('TRANSACTION.RECIPIENT:', '')
+        const amountText = recipientElement.find('.TransactionRecipientList__amount').text().replace('TRANSACTION.AMOUNT:', '')
 
         expect(addressText.trim()).toBe(recipient.address)
         expect(amountText.trim()).toBe(recipient.amount)
