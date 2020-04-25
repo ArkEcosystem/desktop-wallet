@@ -1029,6 +1029,7 @@ export default {
       LOAD_FROM_FILE: 'Failed to load transaction file',
       EXPIRED: 'Transaction expired before it was processed: {transactionId}',
       FEE_TOO_LOW: 'Transaction could not be sent because the fee ({fee}) is too low',
+      NOT_ENOUGH_BALANCE: 'The total amount of the recipients + fee is greater than the balance of the wallet',
       NOTHING_SENT: 'The transaction could not be sent. Please check your network connection or change peer',
       WRONG_NONCE: 'The transaction could not be sent. Wrong nonce provided',
       NETWORK_NOT_CONFIGURED: 'Network not configured',

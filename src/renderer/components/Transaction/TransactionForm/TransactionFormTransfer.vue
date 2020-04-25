@@ -101,16 +101,27 @@
         class="TransactionFormTransfer__vendorfield mb-5"
       />
 
-      <InputFee
-        ref="fee"
-        :currency="walletNetwork.token"
-        :transaction-type="transactionTypeFee"
-        :is-disabled="!currentWallet"
-        :wallet="currentWallet"
-        :wallet-network="walletNetwork"
-        class="TransactionFormTransfer__fee"
-        @input="onFee"
-      />
+      <div>
+        <InputFee
+          ref="fee"
+          :currency="walletNetwork.token"
+          :transaction-type="transactionTypeFee"
+          :is-disabled="!currentWallet"
+          :wallet="currentWallet"
+          :wallet-network="walletNetwork"
+          class="TransactionFormTransfer__fee"
+          :class="{
+            'TransactionFormTransfer__fee--helper': isInsufficientFunds
+          }"
+          @input="onFee"
+        />
+        <p
+          v-if="isInsufficientFunds"
+          class="text-red-dark text-theme-page-text-light text-xs"
+        >
+          {{ $t('TRANSACTION.ERROR.NOT_ENOUGH_BALANCE') }}
+        </p>
+      </div>
 
       <div v-if="!isMultiSignature">
         <div
@@ -294,7 +305,7 @@ export default {
         return !this.$v.form.recipients.$invalid
       }
 
-      return !this.$v.form.$invalid
+      return !this.$v.form.$invalid && !this.isInsufficientFunds
     },
 
     isMultiPayment () {
@@ -345,6 +356,27 @@ export default {
       }
 
       return availableAmount
+    },
+
+    totalAmount () {
+      const amount = this.currency_toBuilder(0)
+
+      for (const recipient of this.$v.form.recipients.$model) {
+        amount.add(recipient.amount)
+      }
+
+      return amount.value
+    },
+
+    isInsufficientFunds () {
+      const funds = this.currency_unitToSub(this.currency_subToUnit(this.currentWallet.balance))
+      const totalAmount = this.currency_unitToSub(this.currency_subToUnit(this.totalAmount).plus(this.form.fee))
+
+      if (funds.isLessThan(totalAmount)) {
+        return true
+      }
+
+      return false
     },
 
     canSendAll () {
@@ -746,12 +778,11 @@ export default {
               transaction.asset.payments.forEach(payment => {
                 if (payment.recipientId && payment.amount) {
                   if (WalletService.validateAddress(payment.recipientId, this.session_network.version)) {
-                    const amount = this.currency_subToUnit(payment.amount, this.session_network)
-                    const formatted = this.currency_unitToSub(amount, this.session_network)
+                    const amount = this.currency_unitToSub(this.currency_subToUnit(payment.amount, this.session_network), this.session_network)
 
                     this.$v.form.recipients.$model.push({
                       address: payment.recipientId,
-                      amount: formatted
+                      amount
                     })
                   } else {
                     throw new Error(this.$t('VALIDATION.RECIPIENT_DIFFERENT_NETWORK', [
@@ -762,12 +793,11 @@ export default {
               })
             } else if (transaction.recipientId && transaction.amount) {
               if (WalletService.validateAddress(transaction.recipientId, this.session_network.version)) {
-                const amount = this.currency_subToUnit(transaction.amount, this.session_network)
-                const formatted = this.currency_unitToSub(amount, this.session_network)
+                const amount = this.currency_unitToSub(this.currency_subToUnit(transaction.amount, this.session_network), this.session_network)
 
                 this.$v.form.recipients.$model = [{
                   address: transaction.recipientId,
-                  amount: formatted
+                  amount
                 }]
               } else {
                 throw new Error(this.$t('VALIDATION.RECIPIENT_DIFFERENT_NETWORK', [
@@ -846,6 +876,13 @@ export default {
 <style>
 .TransactionFormTransfer__recipients .InputEditableList__list {
   max-height: 13rem;
+}
+
+.TransactionFormTransfer__fee.TransactionFormTransfer__fee--helper {
+  margin-bottom: 0;
+}
+.TransactionFormTransfer__fee--helper .InputField__helper {
+  display: none;
 }
 
 .SendAllConfirmation .ModalConfirmation__container {
