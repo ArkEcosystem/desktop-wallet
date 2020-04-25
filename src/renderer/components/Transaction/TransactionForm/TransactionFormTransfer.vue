@@ -804,6 +804,8 @@ export default {
                   this.wallet_truncate(transaction.recipientId)
                 ]))
               }
+            } else {
+              throw new Error(this.$t('TRANSACTION.ERROR.LOAD_FROM_FILE'))
             }
 
             if (transaction.fee) {
