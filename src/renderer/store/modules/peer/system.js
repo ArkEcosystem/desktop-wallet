@@ -17,7 +17,7 @@ export default {
 
       if (!peer) {
         await dispatch('clear')
-        await dispatch('peer/available/refresh')
+        await dispatch('peer/available/refresh', null, { root: true })
         return
       }
 
@@ -27,7 +27,7 @@ export default {
       } catch (error) {
         logger.error(error)
         await dispatch('clear')
-        await dispatch('peer/available/refresh')
+        await dispatch('peer/available/refresh', null, { root: true })
       }
     },
 
@@ -35,9 +35,9 @@ export default {
      * Fallback to seed peer, cleaning all the peer data.
      */
     async 'clear' ({ dispatch }) {
-      await dispatch('peer/available/clear')
-      await dispatch('peer/current/clear')
-      await dispatch('peer/available/connectToBest', { skipIfCustom: false })
+      await dispatch('peer/available/clear', null, { root: true })
+      await dispatch('peer/current/clear', null, { root: true })
+      await dispatch('peer/available/connectToBest', { skipIfCustom: false }, { root: true })
     }
   }
 }
