@@ -1,4 +1,5 @@
-import { flatten, pullAll } from 'lodash'
+import { pullAll } from 'lodash'
+import { flatten } from '@/utils'
 import { announcements, fees, ledger, market, peer, wallets } from './synchronizer/'
 /**
  * This class adds the possibility to define actions (not to confuse with Vuex actions)
