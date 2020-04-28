@@ -92,9 +92,7 @@
         class="TransactionFormTransfer__recipients mt-4"
         @remove="emitRemoveRecipient"
       />
-    </div>
 
-    <div v-if="step === 2">
       <InputText
         ref="vendorField"
         v-model="$v.form.vendorField.$model"
@@ -106,7 +104,7 @@
         class="TransactionFormTransfer__vendorfield mb-5"
       />
 
-      <div>
+      <div class="mt-4">
         <InputFee
           ref="fee"
           :currency="walletNetwork.token"
@@ -670,15 +668,16 @@ export default {
         return
       }
 
+      this.$v.form.recipients.$model.push({
+        address: this.recipientId,
+        amount: this.isSendAllActive ? 0 : this.currency_unitToSub(this.amount),
+        sendAll: this.isSendAllActive
+      })
+
       if (this.isSendAllActive) {
         this.previousAmount = ''
         this.isSendAllActive = false
       }
-
-      this.$v.form.recipients.$model.push({
-        address: this.recipientId,
-        amount: this.currency_unitToSub(this.amount)
-      })
 
       this.$refs.recipient.reset()
       this.$v.recipientId.$reset()
@@ -741,20 +740,20 @@ export default {
 
     async nextStep () {
       if (this.step === 1) {
-        this.step = 2
+        // const fee = this.$v.form.fee.$model
 
-        const fee = this.$v.form.fee.$model
+        // await this.$nextTick()
 
-        await this.$nextTick()
+        // // TODO: Figure out why fee vuelidate intermittently doesn't
+        // //       trigger resulting in an "invalid" flag when it's not.
+        // //       Remove assigning fee to zero initially as a workaround.
+        // if (this.$refs.fee && fee) {
+        //   this.$refs.fee.emitFee(0)
+        //   await this.$nextTick()
+        //   this.$refs.fee.emitFee(fee)
+        // }
 
-        // TODO: Figure out why fee vuelidate intermittently doesn't
-        //       trigger resulting in an "invalid" flag when it's not.
-        //       Remove assigning fee to zero initially as a workaround.
-        if (this.$refs.fee && fee) {
-          this.$refs.fee.emitFee(0)
-          await this.$nextTick()
-          this.$refs.fee.emitFee(fee)
-        }
+        this.$v.form.fee.$model = this.$refs.fee.fee
 
         if (this.$v.form.passphrase.$model) {
           this.$refs.passphrase.touch()
@@ -765,8 +764,15 @@ export default {
         if (this.$v.form.secondPassphrase.$model) {
           this.$refs.secondPassphrase.touch()
         }
-      } else {
-        this.$v.form.fee.$model = this.$refs.fee.fee
+
+        for (const recipient of this.$v.form.recipients.$model) {
+          if (recipient.sendAll) {
+            recipient.amount = this.currency_unitToSub(this.maximumAvailableAmount)
+
+            break
+          }
+        }
+
         this.onSubmit()
       }
     },

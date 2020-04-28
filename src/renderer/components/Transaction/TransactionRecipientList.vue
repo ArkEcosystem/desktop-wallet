@@ -46,7 +46,14 @@
             {{ $t('TRANSACTION.AMOUNT') }}:
           </span>
 
-          <span>
+          <span
+            v-if="item.sendAll"
+            class="font-bold mr-1"
+          >
+            {{ $t('TRANSACTION.ALL') }}
+          </span>
+
+          <span v-else>
             {{ formatter_networkCurrency(item.amount) }}
           </span>
         </div>
