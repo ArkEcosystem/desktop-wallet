@@ -387,6 +387,7 @@ export default {
 .TransactionModalTransfer {
   /* To allow more space on the fee slider */
   min-width: 38rem;
+  max-height: 100%;
 }
 
 .TransactionModalBridgechainRegistration,
