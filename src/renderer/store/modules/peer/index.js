@@ -9,7 +9,12 @@ import discovery from './discovery'
 import available from './available'
 import system from './system'
 
-const getBaseUrl = (peer) => `${peer.isHttps ? 'https://' : 'http://'}${peer.ip}:${peer.port}`
+import optionalChaining from '@/utils'
+
+const getBaseUrl = (peer) => {
+  const url = `${peer.isHttps ? 'https://' : 'http://'}${peer.ip}${peer.port ? `:${peer.port}` : ''}`
+  return url
+}
 
 const logger = {
   ...console
@@ -33,16 +38,42 @@ export default {
      * @param {Object} peer The peer object
      * @return {Promise} The client
      */
-    'peer/client': (getters) => ({ peer }) => {
+    'peer/client': (_, getters) => ({ peer } = {}) => {
       peer = peer || getters['peer/current/get']()
 
-      if (!peer) return
+      if (!peer) {
+        throw new Error('No peer to retrieve client from.')
+      }
 
       const client = new ClientService()
       client.host = getBaseUrl(peer)
       client.client.withOptions({ timeout: 3000 })
 
       return client
+    },
+
+    /**
+     * Get the network hash to the specified peer. Returns the default peer if none is provided.
+     * @param {Object} peer The peer object
+     * @return {string | Error } Network hash for the provided peer
+     */
+    'peer/nethash': (_, getters) => async ({ peer } = {}) => {
+      peer = peer || getters['peer/current/get']()
+
+      if (!peer) {
+        throw new Error('No peer to retrieve networkConfig from.')
+      }
+
+      let nethash
+      try {
+        const client = await ClientService.fetchNetworkConfig(getBaseUrl(peer), 3000)
+        nethash = client.nethash
+      } catch (err) {
+        logger.error(err)
+        throw err
+      }
+
+      return nethash
     }
 
   },
@@ -51,7 +82,7 @@ export default {
 
     /**
      * Make sure that the peer is valid for the current network.
-     * @param {Peer} peer The peer object to be matched agains the current network.
+     * @param {Object} peer The peer object to be matched agains the current network.
      * @return
      */
     async 'peer/ensureStillValid' ({ rootGetters }, peer) {
@@ -66,28 +97,29 @@ export default {
     /**
      * Checks if the peer is still valid in the provided network.
      * @param {Object} peer The peer.
-     * @param {Object} network The network.
+     * @param {string} nethash The nethash. You can either submit the network object or the nethash string.
+     * @param {Object} network The network. You can either submit the network object or the nethash string.
      * @return {Boolean | Error} If the peer is compatible with the network.
      */
     async 'peer/checkNetwork' ({ getters, rootGetters }, { peer, network, nethash }) {
-      const networkNethash = nethash || network.nethash || rootGetters['session/network'].nethash
+      const networkNethash = nethash || optionalChaining(() => network.nethash, false) || rootGetters['session/network'].nethash
+
       let peerNethash
 
       try {
-        peerNethash = await getters['peer/client']({ peer })
-          .fetchNetworkConfig(getBaseUrl(peer))
-          .nethash
+        peerNethash = await getters['peer/nethash']({ peer })
       } catch (err) {
         logger.error('Could not get network config:' + err)
+        throw err
       }
 
       if (!peerNethash) {
         throw i18n.t('PEER.NO_CONNECT')
-      } else if (peerNethash !== networkNethash) {
-        return false
+      } else if (peerNethash === networkNethash) {
+        return true
       }
 
-      return true
+      return false
     },
 
     /**
@@ -99,7 +131,7 @@ export default {
       let response
 
       try {
-        response = await dispatch('peer/fetchStatus', peer)
+        response = await dispatch('peer/fetchStatus', { peer })
       } catch (err) {
         logger.error(err)
         throw i18n.t('PEER.STATUS_CHECK_FAILED')
@@ -127,7 +159,7 @@ export default {
      * @param {Object} peer The peer that is going to be fetched.
      * @return {Object | Error} An object with the peer status fetched.
      */
-    async 'peer/fetchStatus' ({ getters }, peer) {
+    async 'peer/fetchStatus' ({ getters }, { peer } = {}) {
       let client, status, latencyStart, latencyEnd
 
       try {
@@ -135,7 +167,7 @@ export default {
         client = await getters['peer/client']({ peer })
         status = await client.fetchPeerStatus()
         latencyEnd = performance.now()
-        if (!client || !status) throw new Error()
+        if (!client || !status) throw new Error('Unable to connect')
       } catch (err) {
         logger.error(err)
         throw i18n.t('PEER.STATUS_CHECK_FAILED')
@@ -154,37 +186,50 @@ export default {
      * @param  {string} host Host address, with or without the schema.
      * @param  {number} port Port number
      * @param  {string} nethash The network hash for the network which the peer belongs to
-     * @param  {number} [ignoreNetwork=false] Set to true if validating a peer for other network
+     * @param  {boolean} [ignoreNetwork=false] Set to true if validating a peer for other network
      * @param  {number} [timeout=3000] Default timeout for all the client requests.
      * @return {(Object|string)}
      */
-    async 'peer/validate' ({ dispatch }, {
+    async 'peer/validate' ({ dispatch, rootGetters }, {
+      url,
       host,
       ip,
       port,
       nethash,
       ignoreNetwork = false
     }) {
-      const schemeUrl = host.match(/^(https?:\/\/)+(.+)$/)
-      const isHttps = schemeUrl && schemeUrl[1] === 'https://'
+      nethash = nethash || rootGetters['session/network'].nethash
 
-      let peer = {
-        host,
-        ip,
-        port,
-        isHttps
+      // check if peer has a valid url
+      try {
+        url = url || new URL(`${host || 'http://' + (ip)}:${port}`)
+      } catch (err) {
+        logger.error('Invalid url:' + err)
+        return false
       }
 
+      let peer = {
+        host: url.protocol + '//' + url.hostname,
+        ip: url.hostname,
+        port: url.port,
+        isHttps: url.protocol === 'https:'
+      }
+
+      // check if the peer is compatible with the current network
+      let isCompatible
       try {
-        const isCompatible = await dispatch('peer/checkNetwork', {
+        isCompatible = await dispatch('peer/checkNetwork', {
           peer: peer,
           nethash: nethash
         })
-        if (!isCompatible && !ignoreNetwork) return
-        peer = await dispatch('update', peer)
       } catch (err) {
         logger.error(err)
+        throw err
       }
+
+      if (!isCompatible && !ignoreNetwork) return
+
+      peer = await dispatch('update', peer)
 
       return peer
     }
