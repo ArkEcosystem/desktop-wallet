@@ -116,12 +116,12 @@
           :wallet-network="walletNetwork"
           class="TransactionFormTransfer__fee"
           :class="{
-            'TransactionFormTransfer__fee--helper': insufficientFundsError
+            'TransactionFormTransfer__fee--helper': isMultiPayment && insufficientFundsError
           }"
           @input="onFee"
         />
         <p
-          v-if="insufficientFundsError"
+          v-if="isMultiPayment && insufficientFundsError"
           class="text-red-dark text-theme-page-text-light text-xs"
         >
           {{ insufficientFundsError }}
@@ -310,7 +310,11 @@ export default {
         return !this.$v.form.recipients.$invalid
       }
 
-      return !this.$v.form.$invalid && !this.insufficientFundsError
+      if (this.isMultiPayment) {
+        return !this.$v.form.$invalid && !this.insufficientFundsError
+      }
+
+      return !this.$v.form.$invalid
     },
 
     isMultiPayment () {
@@ -568,7 +572,7 @@ export default {
         transactionData.recipients = this.form.recipients
       } else {
         transactionData.recipientId = this.form.recipients[0].address
-        transactionData.amount = this.form.recipients[0].amount
+        transactionData.amount = this.getAmountNormalTransaction()
         transactionData.networkId = this.walletNetwork.id
       }
 
@@ -577,6 +581,14 @@ export default {
       }
 
       return transactionData
+    },
+
+    getAmountNormalTransaction () {
+      if (this.insufficientFundsError) {
+        return this.currency_unitToSub(this.currency_subToUnit(this.form.recipients[0].amount).minus(this.form.fee))
+      }
+
+      return this.form.recipients[0].amount
     },
 
     async buildTransaction (transactionData, isAdvancedFee = false, returnObject = false) {

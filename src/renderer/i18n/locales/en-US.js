@@ -1118,7 +1118,7 @@ export default {
     BUSINESS_NAME: 'Business Name',
     BUTTON_ADD: 'Add',
     CONFIRMATION_COUNT: '{confirmations} Confirmations',
-    CONFIRM_SEND_ALL: 'This will enable sending all of your tokens from the current wallet in this transaction.',
+    CONFIRM_SEND_ALL: 'This will enable sending all of your tokens from the current wallet in this transaction. The selected transfer fee will be deducted from the send amount.',
     CONFIRM_SEND_ALL_TITLE: 'Send all your tokens?',
     CONFIRM_SEND_ALL_NOTE: 'Note: once sent, this cannot be undone.',
     CONFIRMATIONS: 'Confirmations',
