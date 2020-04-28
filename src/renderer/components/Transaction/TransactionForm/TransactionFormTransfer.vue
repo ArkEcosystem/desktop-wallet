@@ -116,15 +116,15 @@
           :wallet-network="walletNetwork"
           class="TransactionFormTransfer__fee"
           :class="{
-            'TransactionFormTransfer__fee--helper': isInsufficientFunds
+            'TransactionFormTransfer__fee--helper': insufficientFundsError
           }"
           @input="onFee"
         />
         <p
-          v-if="isInsufficientFunds"
+          v-if="insufficientFundsError"
           class="text-red-dark text-theme-page-text-light text-xs"
         >
-          {{ $t('TRANSACTION.ERROR.NOT_ENOUGH_BALANCE') }}
+          {{ insufficientFundsError }}
         </p>
       </div>
 
@@ -310,7 +310,7 @@ export default {
         return !this.$v.form.recipients.$invalid
       }
 
-      return !this.$v.form.$invalid && !this.isInsufficientFunds
+      return !this.$v.form.$invalid && !this.insufficientFundsError
     },
 
     isMultiPayment () {
@@ -373,15 +373,20 @@ export default {
       return amount.value
     },
 
-    isInsufficientFunds () {
+    insufficientFundsError () {
+      if (!this.currentWallet) {
+        return null
+      }
+
       const funds = this.currency_unitToSub(this.currency_subToUnit(this.currentWallet.balance))
       const totalAmount = this.currency_unitToSub(this.currency_subToUnit(this.totalAmount).plus(this.form.fee))
 
       if (funds.isLessThan(totalAmount)) {
-        return true
+        const balance = this.formatter_networkCurrency(this.currentWallet.balance)
+        return this.$t('TRANSACTION.ERROR.NOT_ENOUGH_BALANCE', { balance })
       }
 
-      return false
+      return null
     },
 
     canSendAll () {
