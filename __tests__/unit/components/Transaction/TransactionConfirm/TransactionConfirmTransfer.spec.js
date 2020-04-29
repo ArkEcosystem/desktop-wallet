@@ -47,7 +47,7 @@ describe('TransactionConfirmTransfer', () => {
     })
 
     it('should output senderLabel', () => {
-      expect(wrapper.find('.TransactionConfirmTransfer__sender .ListDividedItem__value span').text()).toBe('address-1')
+      expect(wrapper.find('.TransactionConfirmTransfer__sender .ListDividedItem__value span:first-child').text()).toBe('formatted-address-1')
     })
 
     it('should output amount', () => {
@@ -55,7 +55,7 @@ describe('TransactionConfirmTransfer', () => {
     })
 
     it('should output recipientLabel', () => {
-      expect(wrapper.find('.TransactionConfirmTransfer__recipient .ListDividedItem__value span').text()).toBe('recipient-address')
+      expect(wrapper.find('.TransactionConfirmTransfer__recipient .ListDividedItem__value span:first-child').text()).toBe('formatted-recipient-address')
     })
 
     it('should output vendorField', () => {

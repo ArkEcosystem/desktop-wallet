@@ -6,8 +6,11 @@
     <ListDividedItem
       class="TransactionConfirmTransfer__sender"
       :label="$t('TRANSACTION.SENDER')"
+      item-value-class="w-full"
     >
-      {{ senderLabel }}
+      <span class="break-words">
+        {{ senderLabel }}
+      </span>
       <span
         v-if="senderLabel !== currentWallet.address"
         class="text-sm text-theme-page-text-light"
@@ -26,8 +29,11 @@
     <ListDividedItem
       class="TransactionConfirmTransfer__recipient"
       :label="$t('TRANSACTION.RECIPIENT')"
+      item-value-class="w-full"
     >
-      {{ recipientLabel }}
+      <span class="break-words">
+        {{ recipientLabel }}
+      </span>
       <span
         v-if="recipientLabel !== transaction.recipientId"
         class="text-sm text-theme-page-text-light"

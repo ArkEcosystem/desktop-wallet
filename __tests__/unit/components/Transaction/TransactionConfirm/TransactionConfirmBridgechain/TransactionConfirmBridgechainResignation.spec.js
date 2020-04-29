@@ -43,7 +43,7 @@ describe('TransactionConfirmBridgechainResignation', () => {
     })
 
     it('should output senderLabel', () => {
-      expect(wrapper.find('.TransactionConfirmBridgechainResignation__sender .ListDividedItem__value span').text()).toBe('address-1')
+      expect(wrapper.find('.TransactionConfirmBridgechainResignation__sender .ListDividedItem__value span:first-child').text()).toBe('formatted-address-1')
     })
   })
 
