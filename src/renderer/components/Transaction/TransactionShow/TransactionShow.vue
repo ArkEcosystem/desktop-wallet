@@ -89,6 +89,7 @@
       />
 
       <ListDividedItem
+        class="TransactionShow__Sender"
         :label="$t('TRANSACTION.SENDER')"
         item-value-class="flex items-center"
       >
@@ -118,6 +119,7 @@
 
       <ListDividedItem
         v-if="showRecipient"
+        class="TransactionShow__Recipient"
         :label="$t('TRANSACTION.RECIPIENT')"
         item-value-class="flex items-center"
       >
@@ -422,10 +424,18 @@ export default {
   max-height: 80vh;
 }
 
+.TransactionShow__Sender .ListDividedItem__value,
+.TransactionShow__Recipient .ListDividedItem__value {
+  @apply .max-w-xs;
+}
+.TransactionShow__Sender .ListDividedItem__value .WalletAddress,
+.TransactionShow__Recipient .ListDividedItem__value .WalletAddress {
+  @apply .truncate;
+}
+
 .TransactionShow__Recipients {
   @apply .pb-0;
 }
-
 .TransactionShow__Recipients.ListDividedItem > div {
   @apply .flex-col .items-start;
 }
