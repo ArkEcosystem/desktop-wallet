@@ -113,6 +113,8 @@ exports.MARKET = {
   }
 }
 
+// This section handles fetching Desktop-Wallet Plugins from the NPM registry.
+// It should remain "ARK" unless intentionally implementing a custom package.
 exports.PLUGINS = {
   adapters: ['npm'],
   pluginsUrl: 'https://raw.githubusercontent.com/ark-ecosystem-desktop-plugins/config/master/plugins.json',
