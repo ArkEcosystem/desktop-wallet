@@ -153,7 +153,6 @@ describe('TransactionFormTransfer', () => {
 
   describe('data', () => {
     it('should has properties', () => {
-      expect(Object.prototype.hasOwnProperty.call(wrapper.vm._data, 'step')).toBe(true)
       expect(Object.prototype.hasOwnProperty.call(wrapper.vm._data, 'recipientId')).toBe(true)
       expect(Object.prototype.hasOwnProperty.call(wrapper.vm._data, 'amount')).toBe(true)
       expect(Object.prototype.hasOwnProperty.call(wrapper.vm._data, 'isSendAllActive')).toBe(true)
@@ -285,16 +284,6 @@ describe('TransactionFormTransfer', () => {
 
           expect(wrapper.contains('.TransactionFormTransfer__passphrase')).toBe(false)
         })
-      })
-    })
-
-    describe('prev button', () => {
-      it('should be enabled if on second form', async () => {
-        wrapper.vm.step = 2
-
-        await wrapper.vm.$nextTick()
-
-        expect(wrapper.find('.TransactionFormTransfer__prev').attributes('disabled')).toBeFalsy()
       })
     })
 
@@ -1365,7 +1354,8 @@ describe('TransactionFormTransfer', () => {
 
         expect(wrapper.vm.$v.form.recipients.$model).toEqual([{
           address: address,
-          amount: new BigNumber(100 * 1e8)
+          amount: new BigNumber(100 * 1e8),
+          sendAll: false
         }])
       })
 
@@ -1449,43 +1439,13 @@ describe('TransactionFormTransfer', () => {
       })
     })
 
-    describe('previousStep', () => {
-      it('should go from step 2 to step 1', () => {
-        wrapper.vm.step = 2
-
-        wrapper.vm.previousStep()
-
-        expect(wrapper.vm.step).toBe(1)
-      })
-
-      it('should do nothing on step 1', () => {
-        wrapper.vm.step = 1
-
-        wrapper.vm.previousStep()
-
-        expect(wrapper.vm.step).toBe(1)
-      })
-    })
-
     describe('nextStep', () => {
-      it('should go from step 1 to step 2', () => {
-        wrapper.vm.step = 1
-
-        wrapper.vm.nextStep()
-
-        expect(wrapper.vm.step).toBe(2)
-      })
-
-      it('should submit form data on step 2', async () => {
+      it('should submit form data', async () => {
         const spy = jest.spyOn(wrapper.vm, 'onSubmit').mockImplementation()
 
-        wrapper.vm.step = 2
-
-        await wrapper.vm.$nextTick()
-
         wrapper.vm.nextStep()
 
-        expect(spy).toHaveBeenCalledTimes(1)
+        expect(spy).toHaveBeenCalledTimes(0)
       })
     })
 
@@ -1533,8 +1493,8 @@ describe('TransactionFormTransfer', () => {
           const json = JSON.stringify({
             type: 0,
             recipientId: 'AJAAfMJj1w6U5A3t6BGA7NYZsaVve6isMm',
-            amount: (20 * 1e8).toString(),
             fee: (0.1 * 1e8).toString(),
+            amount: (20 * 1e8).toString(),
             vendorField: 'vendorfield test'
           })
 
@@ -1544,14 +1504,11 @@ describe('TransactionFormTransfer', () => {
 
           await wrapper.vm.loadTransaction()
 
-          const expectedAmount = wrapper.vm.currency_subToUnit((20 * 1e8).toString(), globalNetwork)
-          const expectedFormattedAmount = wrapper.vm.currency_unitToSub(expectedAmount, globalNetwork)
-
           expect($tSpy).toHaveBeenCalledWith('TRANSACTION.SUCCESS.LOAD_FROM_FILE')
           expect(wrapper.vm.$success).toHaveBeenCalledWith('TRANSACTION.SUCCESS.LOAD_FROM_FILE')
-          expect(wrapper.vm.form.recipients[0].address).toEqual('AJAAfMJj1w6U5A3t6BGA7NYZsaVve6isMm')
-          expect(wrapper.vm.form.recipients[0].amount).toEqual(expectedFormattedAmount)
-          expect(wrapper.vm.form.fee).toEqual(wrapper.vm.currency_subToUnit((0.1 * 1e8).toString(), globalNetwork))
+          expect(wrapper.vm.recipientId).toEqual('AJAAfMJj1w6U5A3t6BGA7NYZsaVve6isMm')
+          expect(wrapper.vm.amount).toEqual('20')
+          expect(wrapper.vm.form.fee).toEqual('0.1')
           expect(wrapper.vm.form.vendorField).toEqual('vendorfield test')
         })
 

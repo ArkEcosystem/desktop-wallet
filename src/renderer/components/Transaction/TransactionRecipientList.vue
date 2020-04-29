@@ -48,9 +48,9 @@
 
           <span
             v-if="item.sendAll"
-            class="font-bold mr-1"
+            class="font-bold uppercase"
           >
-            {{ $t('TRANSACTION.ALL') }}
+            {{ $t('COMMON.ALL') }}
           </span>
 
           <span v-else>
