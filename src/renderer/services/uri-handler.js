@@ -1,6 +1,20 @@
+import { TRANSACTION_GROUPS, TRANSACTION_TYPES } from '@config'
+
 import querystring from 'querystring'
 
-const schemaRegex = new RegExp(/^(?:ark:)([0-9a-zA-Z]{34})([-a-zA-Z0-9+&@#/%=~_|$?!:,.]*)$/)
+const schemaRegex = new RegExp(/^(?:ark:)([-0-9a-zA-Z]{1,34})([-a-zA-Z0-9+&@#/%=~_|$?!:,.]*)$/)
+
+const URIActions = {
+  GROUP_1: {
+    TRANSFER: 'transfer',
+    VOTE: 'vote',
+    DELEGATE_REGISTRATION: 'register-delegate'
+  // },
+  // GROUP_2: {
+  //   BUSINESS_REGISTRATION: 'register-business',
+  //   BRIDGECHAIN_REGISTRATION: 'register-bridgechain'
+  }
+}
 
 export default class URIHandler {
   constructor (url) {
@@ -12,52 +26,94 @@ export default class URIHandler {
    * @returns {Object}
    */
   deserialize () {
-    if (!this.validate()) return
+    const schema = this.validate()
 
-    const schema = this.__formatSchema()
+    if (!schema) return
+
+    let address, action
+
+    // 'address' is used only in legacy URIs
+    if (schema[1].length === 34) {
+      address = schema[1]
+    } else {
+      action = schema[1]
+    }
 
     const scheme = {
-      ...{
-        type: 0,
-        typeGroup: 0,
-        address: null,
-        amount: null,
-        label: null,
-        nethash: null,
-        vendorField: null,
-        wallet: null,
-        business: null
-      },
       ...querystring.parse(schema[2].substring(1))
     }
 
-    scheme.type = Number(scheme.type)
-    scheme.typeGroup = Number(scheme.typeGroup)
+    scheme.type = scheme.type !== undefined ? Number(scheme.type) : TRANSACTION_TYPES.GROUP_1.TRANSFER
+    scheme.typeGroup = Number(scheme.typeGroup) || TRANSACTION_GROUPS.STANDARD
 
-    scheme.address = schema[1]
-    scheme.amount = scheme.amount ? Number(scheme.amount) : null
+    scheme.amount = scheme.amount ? scheme.amount : ''
     scheme.label = this.__fullyDecode(scheme.label)
     scheme.nethash = this.__fullyDecode(scheme.nethash)
-    scheme.vendorField = this.__fullyDecode(scheme.vendorField)
+    scheme.vendorField = this.__fullyDecode(scheme.vendorField) || ''
     scheme.wallet = this.__fullyDecode(scheme.wallet)
+    scheme.recipientId = address || scheme.recipientId || ''
 
-    // Business Registration
-    if (scheme.type === 0 && scheme.typeGroup === 2) {
-      scheme.business = {
-        name: this.__fullyDecode(scheme.name),
-        website: this.__fullyDecode(scheme.website),
-        vat: this.__fullyDecode(scheme.vat),
-        repository: this.__fullyDecode(scheme.repository)
+    this.__inferTypesFromAction(scheme, action)
+
+    const baseSchema = {
+      type: scheme.type,
+      typeGroup: scheme.typeGroup,
+      fee: scheme.fee,
+      wallet: scheme.wallet,
+      nethash: scheme.nethash
+    }
+
+    // Standard Transactions
+    if (scheme.typeGroup === TRANSACTION_GROUPS.STANDARD) {
+      // Transfer
+      if (scheme.type === TRANSACTION_TYPES.GROUP_1.TRANSFER) {
+        return {
+          ...baseSchema,
+          amount: scheme.amount,
+          recipientId: scheme.recipientId,
+          vendorField: scheme.vendorField
+        }
+      }
+
+      // Vote
+      if (scheme.type === TRANSACTION_TYPES.GROUP_1.VOTE) {
+        scheme.vote = scheme.delegate
+      }
+
+      // Delegate Registration
+      if (scheme.type === TRANSACTION_TYPES.GROUP_1.DELEGATE_REGISTRATION) {
+        console.log('delegate registration', {
+          ...baseSchema,
+          username: scheme.delegate
+        })
+
+        return {
+          ...baseSchema,
+          username: scheme.delegate
+        }
       }
     }
 
-    // Bridgechain Registration
-    if (scheme.type === 3 && scheme.typeGroup === 2) {
-      scheme.bridgechain = {
-        name: this.__fullyDecode(scheme.name),
-        genesisHash: this.__fullyDecode(scheme.genesisHash),
-        bridgechainRepository: this.__fullyDecode(scheme.bridgechainRepository),
-        bridgechainAssetRepository: this.__fullyDecode(scheme.bridgechainAssetRepository)
+    // Magistrate Transactions
+    if (scheme.typeGroup === TRANSACTION_GROUPS.MAGISTRATE) {
+      // Business Registration
+      if (scheme.type === TRANSACTION_TYPES.GROUP_2.BUSINESS_REGISTRATION) {
+        scheme.business = {
+          name: this.__fullyDecode(scheme.name),
+          website: this.__fullyDecode(scheme.website),
+          vat: this.__fullyDecode(scheme.vat),
+          repository: this.__fullyDecode(scheme.repository)
+        }
+      }
+
+      // Bridgechain Registration
+      if (scheme.type === TRANSACTION_TYPES.GROUP_2.BRIDGECHAIN_REGISTRATION) {
+        scheme.bridgechain = {
+          name: this.__fullyDecode(scheme.name),
+          genesisHash: this.__fullyDecode(scheme.genesisHash),
+          bridgechainRepository: this.__fullyDecode(scheme.bridgechainRepository),
+          bridgechainAssetRepository: this.__fullyDecode(scheme.bridgechainAssetRepository)
+        }
       }
     }
 
@@ -69,7 +125,15 @@ export default class URIHandler {
    * @returns {Boolean}
    */
   validate () {
-    return schemaRegex.test(this.url)
+    if (schemaRegex.test(this.url)) {
+      const schema = this.__formatSchema()
+
+      if (schema[1].length === 34 || this.__actionExists(schema[1])) {
+        return schema
+      }
+    }
+
+    return false
   }
 
   /**
@@ -91,5 +155,46 @@ export default class URIHandler {
 
   __formatSchema () {
     return schemaRegex.exec(this.url)
+  }
+
+  __inferTypesFromAction (scheme, action) {
+    if (!this.__actionExists(action)) {
+      return
+    }
+
+    if (action === URIActions.GROUP_1.TRANSFER) {
+      scheme.type = TRANSACTION_TYPES.GROUP_1.TRANSFER
+      scheme.typeGroup = TRANSACTION_GROUPS.STANDARD
+    }
+
+    if (action === URIActions.GROUP_1.VOTE) {
+      scheme.type = TRANSACTION_TYPES.GROUP_1.VOTE
+      scheme.typeGroup = TRANSACTION_GROUPS.STANDARD
+    }
+
+    if (action === URIActions.GROUP_1.DELEGATE_REGISTRATION) {
+      scheme.type = TRANSACTION_TYPES.GROUP_1.DELEGATE_REGISTRATION
+      scheme.typeGroup = TRANSACTION_GROUPS.STANDARD
+    }
+
+    // if (action === URIActions.GROUP_2.BUSINESS_REGISTRATIONS) {
+    //   scheme.type = TRANSACTION_TYPES.GROUP_2.BUSINESS_REGISTRATION
+    //   scheme.typeGroup = TRANSACTION_GROUPS.MAGISTRATE
+    // }
+
+    // if (action === URIActions.GROUP_2.BRIDGECHAIN_REGISTRATIONS) {
+    //   scheme.type = TRANSACTION_TYPES.GROUP_2.BRIDGECHAIN_REGISTRATION
+    //   scheme.typeGroup = TRANSACTION_GROUPS.MAGISTRATE
+    // }
+  }
+
+  __actionExists (action) {
+    const actions = []
+
+    for (const actionGroup of Object.values(URIActions)) {
+      actions.push(...Object.values(actionGroup))
+    }
+
+    return actions.includes(action)
   }
 }

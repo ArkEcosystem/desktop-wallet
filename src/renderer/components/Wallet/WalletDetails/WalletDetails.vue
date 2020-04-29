@@ -133,7 +133,7 @@
         v-if="isUnvoting || selectedDelegate"
         :title="getVoteTitle()"
         :type="3"
-        :delegate="selectedDelegate"
+        :public-key="selectedDelegate.publicKey"
         :is-voter="isUnvoting"
         :voted-delegate="votedDelegate"
         @cancel="onCancel"

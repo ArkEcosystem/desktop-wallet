@@ -9,7 +9,7 @@
       :label="$t('WALLET_SELECTION.PROFILE')"
       name="profile"
       :class="profileClass"
-      class="flex-1 mr-2"
+      class="flex-1"
       @select="onSelect"
     />
 
@@ -17,11 +17,13 @@
       ref="input-wallet"
       v-model="walletId"
       :is-disabled="!profileId"
+      :is-invalid="!!walletError"
+      :error="walletError"
       :items="walletList"
       :label="$t('WALLET_SELECTION.WALLET')"
       name="wallet"
       :class="walletClass"
-      class="flex-1 mr-2"
+      class="flex-1"
       @select="onSelect"
     />
   </div>
@@ -61,6 +63,11 @@ export default {
       default: undefined
     },
     walletClass: {
+      type: String,
+      required: false,
+      default: undefined
+    },
+    walletError: {
       type: String,
       required: false,
       default: undefined

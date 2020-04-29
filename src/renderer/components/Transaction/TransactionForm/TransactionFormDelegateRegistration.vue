@@ -3,23 +3,38 @@
     class="TransactionFormDelegateRegistration flex flex-col"
     @submit.prevent
   >
-    <template v-if="!currentWallet.isDelegate">
-      <ListDivided :is-floating-label="true">
-        <ListDividedItem :label="$t('TRANSACTION.SENDER')">
-          {{ senderLabel }}
-          <span
-            v-if="senderLabel !== currentWallet.address"
-            class="text-sm text-theme-page-text-light"
-          >
-            {{ currentWallet.address }}
-          </span>
-        </ListDividedItem>
-      </ListDivided>
+    <ListDivided
+      v-if="senderLabel && !hasSchema"
+      :is-floating-label="true"
+    >
+      <ListDividedItem :label="$t('TRANSACTION.SENDER')">
+        {{ senderLabel }}
+        <span
+          v-if="senderLabel !== currentWallet.address"
+          class="text-sm text-theme-page-text-light"
+        >
+          {{ currentWallet.address }}
+        </span>
+      </ListDividedItem>
+    </ListDivided>
 
+    <WalletSelection
+      v-if="hasSchema"
+      v-model="$v.wallet.$model"
+      class="TransactionFormDelegateRegistration__wallet mb-5"
+      :wallet-error="walletError"
+      profile-class="mb-5"
+    />
+
+    <div
+      class="flex flex-col"
+      :class="{ 'opacity-25': !currentWallet }"
+    >
       <InputText
         v-model="$v.form.username.$model"
         :helper-text="usernameError"
         :label="$t('WALLET_DELEGATES.USERNAME')"
+        :is-disabled="!currentWallet"
         :is-invalid="!!usernameError"
         class="TransactionFormDelegateRegistration__username mb-5"
         name="username"
@@ -29,21 +44,23 @@
         ref="fee"
         :currency="walletNetwork.token"
         :transaction-type="$options.transactionType"
-        :show-insufficient-funds="true"
+        :is-disabled="!currentWallet"
+        :wallet="currentWallet"
+        :wallet-network="walletNetwork"
         class="TransactionFormDelegateRegistration__fee"
         @input="onFee"
       />
 
       <div v-if="!isMultiSignature">
         <div
-          v-if="currentWallet.isLedger"
+          v-if="currentWallet && currentWallet.isLedger"
           class="TransactionFormDelegateRegistration__ledger-notice mt-10"
         >
           {{ $t('TRANSACTION.LEDGER_SIGN_NOTICE') }}
         </div>
 
         <InputPassword
-          v-else-if="currentWallet.passphrase"
+          v-else-if="currentWallet && currentWallet.passphrase"
           ref="password"
           v-model="$v.form.walletPassword.$model"
           :label="$t('TRANSACTION.PASSWORD')"
@@ -55,14 +72,15 @@
           v-else
           ref="passphrase"
           v-model="$v.form.passphrase.$model"
-          :address="currentWallet.address"
+          :address="currentWallet && currentWallet.address"
           :pub-key-hash="walletNetwork.version"
+          :is-disabled="!currentWallet"
           class="TransactionFormDelegateRegistration__passphrase mt-4"
         />
       </div>
 
       <PassphraseInput
-        v-if="currentWallet.secondPublicKey"
+        v-if="currentWallet && currentWallet.secondPublicKey"
         ref="secondPassphrase"
         v-model="$v.form.secondPassphrase.$model"
         :label="$t('TRANSACTION.SECOND_PASSPHRASE')"
@@ -70,34 +88,31 @@
         :public-key="currentWallet.secondPublicKey"
         class="TransactionFormDelegateRegistration__second-passphrase mt-5"
       />
+    </div>
 
-      <button
-        :disabled="$v.form.$invalid"
-        class="TransactionFormDelegateRegistration__next blue-button mt-10 ml-0"
-        @click="onSubmit"
-      >
-        {{ $t('COMMON.NEXT') }}
-      </button>
+    <button
+      :disabled="$v.form.$invalid"
+      class="TransactionFormDelegateRegistration__next blue-button mt-10 ml-0"
+      @click="onSubmit"
+    >
+      {{ $t('COMMON.NEXT') }}
+    </button>
 
-      <ModalLoader
-        ref="modalLoader"
-        :message="$t('ENCRYPTION.DECRYPTING')"
-        :visible="showEncryptLoader"
-      />
-      <ModalLoader
-        :message="$t('TRANSACTION.LEDGER_SIGN_WAIT')"
-        :visible="showLedgerLoader"
-      />
+    <ModalLoader
+      ref="modalLoader"
+      :message="$t('ENCRYPTION.DECRYPTING')"
+      :visible="showEncryptLoader"
+    />
+    <ModalLoader
+      :message="$t('TRANSACTION.LEDGER_SIGN_WAIT')"
+      :visible="showLedgerLoader"
+    />
 
-      <Portal to="transaction-footer">
-        <footer class="ModalWindow__container__footer--warning">
-          {{ $t('TRANSACTION.FOOTER_TEXT.DELEGATE_REGISTRATION') }}
-        </footer>
-      </Portal>
-    </template>
-    <template v-else>
-      {{ $t('WALLET_DELEGATES.ALREADY_REGISTERED') }}
-    </template>
+    <Portal to="transaction-footer">
+      <footer class="ModalWindow__container__footer--warning">
+        {{ $t('TRANSACTION.FOOTER_TEXT.DELEGATE_REGISTRATION') }}
+      </footer>
+    </Portal>
   </form>
 </template>
 
@@ -107,6 +122,7 @@ import { InputFee, InputPassword, InputText } from '@/components/Input'
 import { ListDivided, ListDividedItem } from '@/components/ListDivided'
 import { ModalLoader } from '@/components/Modal'
 import { PassphraseInput } from '@/components/Passphrase'
+import WalletSelection from '@/components/Wallet/WalletSelection'
 import WalletService from '@/services/wallet'
 import mixin from './mixin'
 
@@ -122,7 +138,8 @@ export default {
     ListDivided,
     ListDividedItem,
     ModalLoader,
-    PassphraseInput
+    PassphraseInput,
+    WalletSelection
   },
 
   mixins: [mixin],
@@ -137,6 +154,14 @@ export default {
   }),
 
   computed: {
+    walletError () {
+      if (this.$v.wallet.$dirty && this.$v.wallet.$error) {
+        return this.$t('WALLET_DELEGATES.ALREADY_REGISTERED')
+      }
+
+      return null
+    },
+
     usernameError () {
       if (this.$v.form.username.$dirty && this.$v.form.username.$error) {
         if (!this.$v.form.username.isNotEmpty) {
@@ -151,6 +176,20 @@ export default {
       }
 
       return null
+    }
+  },
+
+  mounted () {
+    this.populateSchema()
+
+    if (this.schema) {
+      if (this.schema.wallet) {
+        this.$v.wallet.$touch()
+      }
+
+      if (this.schema.username) {
+        this.$v.form.username.$touch()
+      }
     }
   },
 
@@ -183,6 +222,11 @@ export default {
   },
 
   validations: {
+    wallet: {
+      isValid () {
+        return !this.currentWallet.isDelegate
+      }
+    },
     form: {
       fee: mixin.validators.fee,
       passphrase: mixin.validators.passphrase,
@@ -208,6 +252,7 @@ export default {
           return !validation.passes ? !validation.errors.find(error => error.type === 'maxLength') : true
         },
 
+        // TODO validate based on network
         doesNotExist (value) {
           const validation = WalletService.validateUsername(value)
 

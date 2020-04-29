@@ -22,6 +22,7 @@
         :name="name"
         :label="inputLabel"
         :value="optionText"
+        :helper-text="error"
         :is-dirty="isDirty"
         :is-disabled="isDisabled"
         :is-focused="isFocused"
@@ -89,6 +90,11 @@ export default {
       type: Boolean,
       required: false,
       default: false
+    },
+    error: {
+      type: String,
+      required: false,
+      default: undefined
     },
     value: {
       type: String,

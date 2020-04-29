@@ -22,7 +22,7 @@
     </div>
     <p
       v-show="warningText || helperText"
-      class="InputField__helper text-theme-page-text-light text-xs mt-1"
+      class="InputField__helper text-theme-page-text-light text-xs mt-1 text-left"
     >
       <slot name="helper">
         {{ warningText || helperText }}

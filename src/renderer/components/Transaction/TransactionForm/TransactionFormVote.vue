@@ -4,7 +4,10 @@
       :is-open="!isPassphraseStep"
       class="TransactionFormVote__delegate-details"
     >
-      <ListDivided :is-floating-label="true">
+      <ListDivided
+        v-if="senderLabel && !hasSchema"
+        :is-floating-label="true"
+      >
         <ListDividedItem :label="$t('TRANSACTION.SENDER')">
           {{ senderLabel }}
           <span
@@ -96,14 +99,14 @@
 
       <div v-if="!isMultiSignature">
         <div
-          v-if="currentWallet.isLedger"
+          v-if="currentWallet && currentWallet.isLedger"
           class="TransactionFormVote__ledger-notice mt-10"
         >
           {{ $t('TRANSACTION.LEDGER_SIGN_NOTICE') }}
         </div>
 
         <InputPassword
-          v-else-if="currentWallet.passphrase"
+          v-else-if="currentWallet && currentWallet.passphrase"
           ref="password"
           v-model="$v.form.walletPassword.$model"
           :label="$t('TRANSACTION.PASSWORD')"
@@ -115,14 +118,14 @@
           v-else
           ref="passphrase"
           v-model="$v.form.passphrase.$model"
-          :address="currentWallet.address"
+          :address="currentWallet && currentWallet.address"
           :pub-key-hash="walletNetwork.version"
           class="TransactionFormVote__passphrase mt-4"
         />
       </div>
 
       <PassphraseInput
-        v-if="currentWallet.secondPublicKey"
+        v-if="currentWallet && currentWallet.secondPublicKey"
         ref="secondPassphrase"
         v-model="$v.form.secondPassphrase.$model"
         :label="$t('TRANSACTION.SECOND_PASSPHRASE')"
@@ -162,6 +165,7 @@ import { ModalLoader } from '@/components/Modal'
 import { PassphraseInput } from '@/components/Passphrase'
 import WalletAddress from '@/components/Wallet/WalletAddress'
 import mixin from './mixin'
+import { populateFormFromSchema } from './utils'
 
 export default {
   name: 'TransactionFormVote',
@@ -182,9 +186,15 @@ export default {
   mixins: [mixin],
 
   props: {
-    delegate: {
+    schema: {
       type: Object,
-      required: true
+      required: false,
+      default: () => {}
+    },
+    publicKey: {
+      type: String,
+      required: false,
+      default: () => ''
     },
     isVoter: {
       type: Boolean,
@@ -201,10 +211,12 @@ export default {
   data: () => ({
     isPassphraseStep: false,
     form: {
+      vote: '',
       fee: 0,
       passphrase: '',
       walletPassword: ''
     },
+    delegate: null,
     forged: 0,
     voters: '0'
   }),
@@ -212,18 +224,21 @@ export default {
   computed: {
     delegateStatus () {
       const activeThreshold = this.session_network.constants.activeDelegates
+
       if (this.delegate.isResigned) {
         return {
           text: this.$t('WALLET_DELEGATES.STATUS.RESIGNED'),
           class: 'text-red'
         }
       }
+
       if (this.delegate.rank && this.delegate.rank <= activeThreshold) {
         return {
           text: this.$t('WALLET_DELEGATES.STATUS.ACTIVE'),
           class: 'text-green'
         }
       }
+
       return {
         text: this.$t('WALLET_DELEGATES.STATUS.STANDBY'),
         class: 'text-orange'
@@ -251,7 +266,7 @@ export default {
     },
 
     showVoteUnvoteButton () {
-      if (this.currentWallet.isContact || (!!this.votedDelegate && !this.isVoter) || (this.delegate.isResigned && !this.isVoter)) {
+      if (!this.currentWallet || this.currentWallet.isContact || (!!this.votedDelegate && !this.isVoter) || (this.delegate.isResigned && !this.isVoter)) {
         return false
       }
 
@@ -280,6 +295,10 @@ export default {
   },
 
   mounted () {
+    this.populateSchema()
+
+    this.delegate = this.$store.getters['delegate/byUsername'](this.form.vote || this.publicKey) || this.$store.getters['delegate/byPublicKey'](this.form.vote || this.publicKey)
+
     this.fetchForged()
     this.fetchVoters()
   },
@@ -290,7 +309,7 @@ export default {
         address: this.currentWallet.address,
         passphrase: this.form.passphrase,
         votes: [
-          `${this.isVoter ? '-' : '+'}${this.delegate.publicKey}`
+          `${this.isVoter ? '-' : '+'}${this.form.vote}`
         ],
         fee: this.getFee(),
         wif: this.form.wif,
@@ -307,6 +326,12 @@ export default {
 
     async buildTransaction (transactionData, isAdvancedFee = false, returnObject = false) {
       return this.$client.buildVote(transactionData, isAdvancedFee, returnObject)
+    },
+
+    populateSchema () {
+      populateFormFromSchema(this, {
+        vote: this.schema.vote
+      })
     },
 
     transactionError () {

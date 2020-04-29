@@ -1,6 +1,7 @@
 import { required } from 'vuelidate/lib/validators'
 import Bip38 from '@/services/bip38'
 import TransactionService from '@/services/transaction'
+import { populateFormFromSchema } from './utils'
 
 export default {
   validators: {
@@ -65,10 +66,19 @@ export default {
     }
   },
 
+  props: {
+    schema: {
+      type: Object,
+      required: false,
+      default: () => {}
+    }
+  },
+
   data () {
     return {
       showEncryptLoader: false,
-      showLedgerLoader: false
+      showLedgerLoader: false,
+      wallet: null
     }
   },
 
@@ -77,16 +87,30 @@ export default {
       return this.currentWallet && !!this.currentWallet.multiSignature
     },
 
-    currentWallet () {
-      return this.wallet_fromRoute
+    currentWallet: {
+      get () {
+        return this.senderWallet || this.wallet_fromRoute
+      },
+
+      set (wallet) {
+        this.wallet = wallet
+      }
     },
 
     senderLabel () {
-      return this.wallet_formatAddress(this.currentWallet.address)
+      return this.currentWallet ? this.wallet_formatAddress(this.currentWallet.address) : null
     },
 
     walletNetwork () {
       return this.session_network
+    },
+
+    senderWallet () {
+      return this.wallet
+    },
+
+    hasSchema () {
+      return this.schema && !!Object.keys(this.schema).length
     }
   },
 
@@ -174,6 +198,12 @@ export default {
         if (this.postSubmit) {
           this.postSubmit()
         }
+      }
+    },
+
+    populateSchema () {
+      if (this.hasSchema) {
+        populateFormFromSchema(this, this.schema)
       }
     },
 
