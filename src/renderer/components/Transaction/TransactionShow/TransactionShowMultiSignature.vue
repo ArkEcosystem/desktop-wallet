@@ -77,6 +77,7 @@
       </ListDividedItem>
 
       <ListDividedItem
+        class="TransactionShowMultiSignature__Sender"
         :label="$t('TRANSACTION.SENDER')"
         item-value-class="flex items-center"
       >
@@ -106,6 +107,7 @@
 
       <ListDividedItem
         v-if="transaction.recipient"
+        class="TransactionShowMultiSignature__Recipient"
         :label="$t('TRANSACTION.RECIPIENT')"
         item-value-class="flex items-center"
       >
@@ -165,6 +167,8 @@
         v-if="transaction.vendorField"
         :value="transaction.vendorField"
         :label="$t('TRANSACTION.VENDOR_FIELD')"
+        item-label-class="mb-auto"
+        item-value-class="max-w-xs break-words text-justify"
       />
 
       <ListDividedItem
@@ -343,5 +347,14 @@ export default {
 <style>
 .TransactionShowMultiSignature {
   min-width: 35rem
+}
+
+.TransactionShowMultiSignature__Sender .ListDividedItem__value,
+.TransactionShowMultiSignature__Recipient .ListDividedItem__value {
+  @apply .max-w-xs;
+}
+.TransactionShowMultiSignature__Sender .ListDividedItem__value .WalletAddress,
+.TransactionShowMultiSignature__Recipient .ListDividedItem__value .WalletAddress {
+  @apply .truncate;
 }
 </style>

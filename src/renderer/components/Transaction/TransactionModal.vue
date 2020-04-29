@@ -41,7 +41,7 @@
 </template>
 
 <script>
-import { camelCase, includes, findKey } from 'lodash'
+import { camelCase, includes } from 'lodash'
 import { upperFirst } from '@/utils'
 import { TRANSACTION_GROUPS, TRANSACTION_TYPES } from '@config'
 import MultiSignature from '@/services/client-multisig'
@@ -107,8 +107,10 @@ export default {
         return 'MULTI_SIGN'
       }
 
-      const key = findKey(TRANSACTION_TYPES[`GROUP_${this.group}`], type => this.type === type)
-      if (key === 'VOTE' && this.transaction && this.transaction.asset.votes.length) {
+      const transactionTypes = TRANSACTION_TYPES[`GROUP_${this.group}`]
+      const key = Object.keys(transactionTypes).find(type => transactionTypes[type] === this.type)
+
+      if (key === 'VOTE' && this.transaction.asset.votes.length) {
         if (this.transaction.asset.votes[0].substring(0, 1) === '-') {
           return 'UNVOTE'
         }
@@ -121,7 +123,9 @@ export default {
         return 'TransactionModalMultiSign'
       }
 
-      const type = findKey(TRANSACTION_TYPES[`GROUP_${this.group}`], type => this.type === type)
+      const transactionTypes = TRANSACTION_TYPES[`GROUP_${this.group}`]
+      const type = Object.keys(transactionTypes).find(type => transactionTypes[type] === this.type)
+
       return `TransactionModal${upperFirst(camelCase(type))}`
     },
     typeName () {

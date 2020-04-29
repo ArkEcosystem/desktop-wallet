@@ -683,7 +683,9 @@ export default {
       },
       FILTERS: {
         ALL: 'all',
-        INSTALLED: 'installed'
+        INSTALLED: 'installed',
+        OFFICIAL: 'official',
+        FUNDED: 'funded'
       },
       NO_SEARCH_RESULTS: 'Unfortunately, searching for "{query}" returned no results',
       NO_RESULTS: 'There are no {filter} plugins with the category {category}',
@@ -793,6 +795,7 @@ export default {
       DELEGATES: 'Delegates',
       IPFS: 'IPFS',
       MULTI_SIGNATURE: 'Multisignature',
+      MULTI_SIGNATURE_WALLET: 'Multisignature wallet',
       STATISTICS: 'Statistics',
       SIGN_VERIFY: 'Sign',
       PURCHASE: 'Purchase {ticker}'

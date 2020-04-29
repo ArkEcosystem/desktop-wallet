@@ -6,8 +6,11 @@
     <ListDividedItem
       class="TransactionConfirmMultiPayment__sender"
       :label="$t('TRANSACTION.SENDER')"
+      item-value-class="w-full"
     >
-      {{ senderLabel }}
+      <span class="break-words">
+        {{ senderLabel }}
+      </span>
       <span
         v-if="senderLabel !== currentWallet.address"
         class="text-sm text-theme-page-text-light"
