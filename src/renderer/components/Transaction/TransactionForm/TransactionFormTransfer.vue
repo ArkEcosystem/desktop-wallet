@@ -65,7 +65,7 @@
       />
 
       <ButtonGeneric
-        v-if="isAip11"
+        v-if="hasAip11"
         :disabled="!isValidRecipient"
         :label="$t('TRANSACTION.BUTTON_ADD')"
         class="TransactionFormTransfer__add py-1 flex-inline h-8 mt-4 mr-3"
@@ -82,7 +82,7 @@
     </div>
 
     <TransactionRecipientList
-      v-if="isAip11"
+      v-if="hasAip11"
       :items="$v.form.recipients.$model"
       :max-items="maximumRecipients"
       :show-count="true"
@@ -304,8 +304,8 @@ export default {
       return this.form.recipients.length > 1
     },
 
-    isAip11 () {
-      return !!this.walletNetwork.constants.aip11
+    hasAip11 () {
+      return this.walletNetwork.constants ? !!this.walletNetwork.constants.aip11 : false
     },
 
     hasMoreThanMaximumRecipients () {
@@ -345,7 +345,7 @@ export default {
         return this.currency_subToUnit(0)
       }
 
-      if (!this.isAip11) {
+      if (!this.hasAip11) {
         return this.currency_subToUnit(this.currentWallet.balance).minus(this.form.fee)
       }
 
@@ -507,7 +507,7 @@ export default {
       if (this.isMultiPayment) {
         transactionData.recipients = this.form.recipients
       } else {
-        if (this.isAip11) {
+        if (this.hasAip11) {
           transactionData.recipientId = this.form.recipients[0].address
           transactionData.amount = this.getAmountNormalTransaction()
         } else {
@@ -677,7 +677,7 @@ export default {
     },
 
     async nextStep () {
-      if (this.isAip11) {
+      if (this.hasAip11) {
         for await (const recipient of this.$v.form.recipients.$model) {
           if (recipient.sendAll) {
             recipient.amount = this.currency_unitToSub(this.maximumAvailableAmount)
@@ -791,7 +791,7 @@ export default {
     form: {
       recipients: {
         aboveMinimum () {
-          if (!this.isAip11) {
+          if (!this.hasAip11) {
             return true
           }
 
