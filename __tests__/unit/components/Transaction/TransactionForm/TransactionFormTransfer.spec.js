@@ -22,7 +22,10 @@ const globalNetwork = Object.freeze({
   market: {
     enabled: false
   },
-  nethash: 'nethash-1'
+  nethash: 'nethash-1',
+  constants: {
+    aip11: true
+  }
 })
 
 let wrapper
@@ -367,6 +370,32 @@ describe('TransactionFormTransfer', () => {
         }]
 
         expect(wrapper.vm.isMultiPayment).toBe(true)
+      })
+    })
+
+    describe('isAip11', () => {
+      it('should return true if it is aip11', () => {
+        const response = TransactionFormTransfer.computed.walletNetwork.call({
+          session_network: globalNetwork,
+          currentWallet: null
+        })
+
+        expect(response.constants.aip11).toBe(true)
+      })
+
+      it('should return false if aip11 is false', () => {
+        const response = TransactionFormTransfer.computed.walletNetwork.call({
+          session_network: {
+            ...globalNetwork,
+            constants: {
+              ...globalNetwork.constants,
+              aip11: false
+            }
+          },
+          currentWallet: null
+        })
+
+        expect(response.constants.aip11).toBe(false)
       })
     })
 
@@ -868,8 +897,8 @@ describe('TransactionFormTransfer', () => {
           address: 'address-2',
           amount: (1 * 1e8).toString()
         }]
-        wrapper.vm.$v.form.recipientId.$model = wrapper.vm.$v.form.recipients.$model[0].address
-        wrapper.vm.$v.form.amount.$model = wrapper.vm.$v.form.recipients.$model[0].amount
+        wrapper.vm.$v.recipientId.$model = wrapper.vm.$v.form.recipients.$model[0].address
+        wrapper.vm.$v.amount.$model = wrapper.vm.$v.form.recipients.$model[0].amount
 
         expect(wrapper.vm.getTransactionData()).toEqual({
           address: 'address-1',

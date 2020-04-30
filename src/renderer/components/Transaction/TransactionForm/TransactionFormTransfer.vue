@@ -65,6 +65,7 @@
       />
 
       <ButtonGeneric
+        v-if="isAip11"
         :disabled="!isValidRecipient"
         :label="$t('TRANSACTION.BUTTON_ADD')"
         class="TransactionFormTransfer__add py-1 flex-inline h-8 mt-4 mr-3"
@@ -81,6 +82,7 @@
     </div>
 
     <TransactionRecipientList
+      v-if="isAip11"
       :items="$v.form.recipients.$model"
       :max-items="maximumRecipients"
       :show-count="true"
@@ -302,6 +304,10 @@ export default {
       return this.form.recipients.length > 1
     },
 
+    isAip11 () {
+      return !!this.walletNetwork.constants.aip11
+    },
+
     hasMoreThanMaximumRecipients () {
       return this.form.recipients.length > this.maximumRecipients
     },
@@ -337,6 +343,10 @@ export default {
     maximumAvailableAmount () {
       if (!this.currentWallet) {
         return this.currency_subToUnit(0)
+      }
+
+      if (!this.isAip11) {
+        return this.currency_subToUnit(this.currentWallet.balance).minus(this.form.fee)
       }
 
       let availableAmount = this.currency_subToUnit(this.currentWallet.balance).minus(this.form.fee)
@@ -497,8 +507,14 @@ export default {
       if (this.isMultiPayment) {
         transactionData.recipients = this.form.recipients
       } else {
-        transactionData.recipientId = this.form.recipients[0].address
-        transactionData.amount = this.getAmountNormalTransaction()
+        if (this.isAip11) {
+          transactionData.recipientId = this.form.recipients[0].address
+          transactionData.amount = this.getAmountNormalTransaction()
+        } else {
+          transactionData.recipientId = this.recipientId
+          transactionData.amount = this.currency_unitToSub(this.amount)
+        }
+
         transactionData.networkId = this.walletNetwork.id
       }
 
@@ -661,10 +677,12 @@ export default {
     },
 
     async nextStep () {
-      for await (const recipient of this.$v.form.recipients.$model) {
-        if (recipient.sendAll) {
-          recipient.amount = this.currency_unitToSub(this.maximumAvailableAmount)
-          break
+      if (this.isAip11) {
+        for await (const recipient of this.$v.form.recipients.$model) {
+          if (recipient.sendAll) {
+            recipient.amount = this.currency_unitToSub(this.maximumAvailableAmount)
+            break
+          }
         }
       }
 
@@ -771,13 +789,14 @@ export default {
     },
     wallet: {},
     form: {
-      recipientId: {},
-      amount: {},
       recipients: {
         aboveMinimum () {
+          if (!this.isAip11) {
+            return true
+          }
+
           return this.form.recipients.length >= 1
         },
-
         belowOrEqualMaximum () {
           return this.form.recipients.length <= this.maximumRecipients
         }
