@@ -305,7 +305,7 @@ export default {
     },
 
     isLedger () {
-      return this.currentWallet && !!this.currentWallet.isLedger && this.$store.getters['ledger/isConnected']
+      return this.currentWallet && !!this.currentWallet.isLedger
     },
 
     hasAip11 () {
