@@ -73,7 +73,7 @@ const createWrapper = (component, wallet, network, props = {}) => {
           })),
           'session/currency': 'EUR',
           get 'ledger/isConnected' () {
-            return false
+            return true
           },
           get 'ledger/wallets' () {
             return [{
@@ -1018,7 +1018,7 @@ describe('TransactionFormTransfer', () => {
 
         expect(sessionProfileIdSpy).toHaveBeenCalled()
         expect(ledgerConnectedSpy).toHaveBeenCalled()
-        expect(ledgerWalletsSpy).toHaveBeenCalledTimes(0)
+        expect(ledgerWalletsSpy).toHaveBeenCalled()
         expect(profileAllSpy).toHaveBeenCalled()
         expect(wrapper.vm.$store.getters['wallet/byProfileId']).toHaveBeenCalledWith('profile-1')
         expect(wrapper.vm.$store.getters['wallet/byProfileId']).toHaveBeenCalledWith('profile-2')
@@ -1047,7 +1047,7 @@ describe('TransactionFormTransfer', () => {
 
         expect(sessionProfileIdSpy).toHaveBeenCalled()
         expect(ledgerConnectedSpy).toHaveBeenCalled()
-        expect(ledgerWalletsSpy).toHaveBeenCalledTimes(0)
+        expect(ledgerWalletsSpy).toHaveBeenCalled()
         expect(profileAllSpy).toHaveBeenCalled()
         expect(wrapper.vm.$store.getters['wallet/byProfileId']).toHaveBeenCalledWith('profile-1')
         expect(wrapper.vm.$store.getters['wallet/byProfileId']).toHaveBeenCalledWith('profile-2')
@@ -1076,7 +1076,7 @@ describe('TransactionFormTransfer', () => {
 
         expect(sessionProfileIdSpy).toHaveBeenCalled()
         expect(ledgerConnectedSpy).toHaveBeenCalled()
-        expect(ledgerWalletsSpy).toHaveBeenCalledTimes(0)
+        expect(ledgerWalletsSpy).toHaveBeenCalled()
         expect(profileAllSpy).toHaveBeenCalled()
         expect(wrapper.vm.$store.getters['wallet/byProfileId']).toHaveBeenCalledWith('profile-1')
         expect(wrapper.vm.$store.getters['wallet/byProfileId']).toHaveBeenCalledWith('profile-2')
