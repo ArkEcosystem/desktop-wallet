@@ -65,7 +65,7 @@
       />
 
       <ButtonGeneric
-        v-if="hasAip11"
+        v-if="!isLedger && hasAip11"
         :disabled="!isValidRecipient"
         :label="$t('TRANSACTION.BUTTON_ADD')"
         class="TransactionFormTransfer__add py-1 flex-inline h-8 mt-4 mr-3"
@@ -82,7 +82,7 @@
     </div>
 
     <TransactionRecipientList
-      v-if="hasAip11"
+      v-if="!isLedger && hasAip11"
       :items="$v.form.recipients.$model"
       :max-items="maximumRecipients"
       :show-count="true"
@@ -127,7 +127,7 @@
 
     <div v-if="!isMultiSignature">
       <div
-        v-if="currentWallet && currentWallet.isLedger"
+        v-if="isLedger"
         class="TransactionFormTransfer__ledger-notice mt-10"
       >
         {{ $t('TRANSACTION.LEDGER_SIGN_NOTICE') }}
@@ -304,8 +304,12 @@ export default {
       return this.form.recipients.length > 1
     },
 
+    isLedger () {
+      return this.currentWallet && !!this.currentWallet.isLedger
+    },
+
     hasAip11 () {
-      return this.walletNetwork.constants ? !!this.walletNetwork.constants.aip11 : false
+      return this.walletNetwork.constants && !!this.walletNetwork.constants.aip11
     },
 
     hasMoreThanMaximumRecipients () {
@@ -345,7 +349,7 @@ export default {
         return this.currency_subToUnit(0)
       }
 
-      if (!this.hasAip11) {
+      if (this.isLedger || !this.hasAip11) {
         return this.currency_subToUnit(this.currentWallet.balance).minus(this.form.fee)
       }
 
@@ -507,7 +511,7 @@ export default {
       if (this.isMultiPayment) {
         transactionData.recipients = this.form.recipients
       } else {
-        if (this.hasAip11) {
+        if (!this.isLedger && this.hasAip11) {
           transactionData.recipientId = this.form.recipients[0].address
           transactionData.amount = this.getAmountNormalTransaction()
         } else {
@@ -677,7 +681,7 @@ export default {
     },
 
     async nextStep () {
-      if (this.hasAip11) {
+      if (!this.isLedger && this.hasAip11) {
         for await (const recipient of this.$v.form.recipients.$model) {
           if (recipient.sendAll) {
             recipient.amount = this.currency_unitToSub(this.maximumAvailableAmount)
@@ -713,7 +717,7 @@ export default {
               throw new Error(this.$t('VALIDATION.INVALID_TYPE'))
             }
 
-            if (this.hasAip11 && Object.prototype.hasOwnProperty.call(transaction, 'asset') && Object.prototype.hasOwnProperty.call(transaction.asset, 'payments')) {
+            if (!this.isLedger && this.hasAip11 && Object.prototype.hasOwnProperty.call(transaction, 'asset') && Object.prototype.hasOwnProperty.call(transaction.asset, 'payments')) {
               this.$refs.recipient.reset()
               this.$refs.amount.reset()
               this.$v.form.recipients.$model = []
@@ -796,7 +800,7 @@ export default {
     form: {
       recipients: {
         aboveMinimum () {
-          if (!this.hasAip11) {
+          if (this.isLedger || !this.hasAip11) {
             return true
           }
 

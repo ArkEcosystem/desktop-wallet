@@ -214,6 +214,24 @@ describe('TransactionFormTransfer', () => {
       })
     })
 
+    describe('ledger notice', () => {
+      it('should show if wallet is a ledger', () => {
+        createWrapper(null, {
+          isLedger: true
+        })
+
+        expect(wrapper.contains('.TransactionFormTransfer__ledger-notice')).toBe(true)
+      })
+
+      it('should show if wallet is not a ledger', () => {
+        createWrapper(null, {
+          isLedger: false
+        })
+
+        expect(wrapper.contains('.TransactionFormTransfer__ledger-notice')).toBe(false)
+      })
+    })
+
     describe('next button', () => {
       it('should be enabled if recipients form is valid', async () => {
         wrapper.vm.$v.form.recipients.$model = [{
