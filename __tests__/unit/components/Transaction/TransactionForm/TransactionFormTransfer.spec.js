@@ -214,103 +214,8 @@ describe('TransactionFormTransfer', () => {
       })
     })
 
-    describe('step 2', () => {
-      beforeEach(() => {
-        wrapper.vm.step = 2
-      })
-
-      it('should have vendorfield', () => {
-        expect(wrapper.contains('.TransactionFormTransfer__vendorfield')).toBe(true)
-      })
-
-      it('should have fee field', () => {
-        expect(wrapper.contains('.TransactionFormTransfer__fee')).toBe(true)
-      })
-
-      describe('ledger notice', () => {
-        it('should show if wallet is a ledger', async () => {
-          createWrapper(null, {
-            isLedger: true
-          })
-
-          wrapper.vm.step = 2
-
-          await wrapper.vm.$nextTick()
-
-          expect(wrapper.contains('.TransactionFormTransfer__ledger-notice')).toBe(true)
-        })
-
-        it('should show if wallet is not a ledger', async () => {
-          createWrapper(null, {
-            isLedger: false
-          })
-
-          wrapper.vm.step = 2
-
-          await wrapper.vm.$nextTick()
-
-          expect(wrapper.contains('.TransactionFormTransfer__ledger-notice')).toBe(false)
-        })
-      })
-
-      describe('password field', () => {
-        it('should show if wallet does have a password', async () => {
-          createWrapper(null, {
-            passphrase: 'password'
-          })
-
-          wrapper.vm.step = 2
-
-          await wrapper.vm.$nextTick()
-
-          expect(wrapper.contains('.TransactionFormTransfer__password')).toBe(true)
-        })
-
-        it('should not show if wallet does not have a password', () => {
-          expect(wrapper.contains('.TransactionFormTransfer__password')).toBe(false)
-        })
-      })
-
-      describe('passphrase field', () => {
-        it('should show if wallet does not have a password', () => {
-          expect(wrapper.contains('.TransactionFormTransfer__passphrase')).toBe(true)
-        })
-
-        it('should not show if wallet does have a password', async () => {
-          createWrapper(null, {
-            passphrase: 'password'
-          })
-
-          wrapper.vm.step = 2
-
-          await wrapper.vm.$nextTick()
-
-          expect(wrapper.contains('.TransactionFormTransfer__passphrase')).toBe(false)
-        })
-      })
-    })
-
     describe('next button', () => {
       it('should be enabled if recipients form is valid', async () => {
-        wrapper.vm.step = 1
-        wrapper.vm.$v.form.recipients.$model = [{
-          address: 'address-2',
-          amount: 10
-        }, {
-          address: 'address-2',
-          amount: 10
-        }]
-        wrapper.vm.$v.form.fee.$model = 0.1
-        wrapper.vm.$v.form.vendorField.$model = 'vendorfield test'
-        wrapper.vm.$v.form.passphrase.$model = 'passphrase'
-
-        await wrapper.vm.$nextTick()
-
-        expect(wrapper.find('.TransactionFormTransfer__next').attributes('disabled')).toBeFalsy()
-      })
-
-      it('should be enabled if both forms are valid', async () => {
-        wrapper.vm.step = 2
         wrapper.vm.$v.form.recipients.$model = [{
           address: 'address-2',
           amount: 10
@@ -1542,8 +1447,14 @@ describe('TransactionFormTransfer', () => {
         })
 
         it('should display a success alert', async () => {
+          const json = JSON.stringify({
+            type: 0,
+            recipientId: 'AJAAfMJj1w6U5A3t6BGA7NYZsaVve6isMm',
+            amount: (20 * 1e8).toString()
+          })
+
           wrapper.vm.electron_readFile = jest.fn(async () => {
-            return '{ "type": "0" }'
+            return json
           })
 
           await wrapper.vm.loadTransaction()
