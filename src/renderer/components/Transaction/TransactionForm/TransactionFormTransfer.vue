@@ -713,8 +713,11 @@ export default {
               throw new Error(this.$t('VALIDATION.INVALID_TYPE'))
             }
 
-            if (Object.prototype.hasOwnProperty.call(transaction, 'asset') && Object.prototype.hasOwnProperty.call(transaction.asset, 'payments')) {
+            if (this.hasAip11 && Object.prototype.hasOwnProperty.call(transaction, 'asset') && Object.prototype.hasOwnProperty.call(transaction.asset, 'payments')) {
+              this.$refs.recipient.reset()
+              this.$refs.amount.reset()
               this.$v.form.recipients.$model = []
+
               transaction.asset.payments.forEach(payment => {
                 if (payment.recipientId && payment.amount) {
                   if (WalletService.validateAddress(payment.recipientId, this.session_network.version)) {
@@ -741,6 +744,8 @@ export default {
                   this.wallet_truncate(transaction.recipientId)
                 ]))
               }
+            } else {
+              throw new Error(this.$t('VALIDATION.INVALID_FORMAT'))
             }
 
             if (transaction.fee) {
