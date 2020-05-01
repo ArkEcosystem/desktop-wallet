@@ -304,8 +304,12 @@ export default {
       return this.form.recipients.length > 1
     },
 
+    isLedgerConnected () {
+      return this.$store.getters['ledger/isConnected']
+    },
+
     isLedger () {
-      return this.currentWallet && !!this.currentWallet.isLedger
+      return this.isLedgerConnected || (this.currentWallet && !!this.currentWallet.isLedger)
     },
 
     hasAip11 () {
@@ -564,7 +568,7 @@ export default {
 
       if (this.schema.wallet) {
         const currentProfileId = this.$store.getters['session/profileId']
-        const ledgerWallets = this.$store.getters['ledger/isConnected'] ? this.$store.getters['ledger/wallets'] : []
+        const ledgerWallets = this.isLedgerConnected ? this.$store.getters['ledger/wallets'] : []
         const wallets = []
 
         let foundNetwork = !this.schema.nethash
