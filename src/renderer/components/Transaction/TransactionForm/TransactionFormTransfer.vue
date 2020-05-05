@@ -484,6 +484,7 @@ export default {
     wallet () {
       this.ensureAvailableAmount()
       this.$v.recipientId.$touch()
+      this.$v.amount.$touch()
     }
   },
 
