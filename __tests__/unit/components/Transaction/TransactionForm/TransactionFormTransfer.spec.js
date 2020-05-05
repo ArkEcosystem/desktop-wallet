@@ -22,7 +22,10 @@ const globalNetwork = Object.freeze({
   market: {
     enabled: false
   },
-  nethash: 'nethash-1'
+  nethash: 'nethash-1',
+  constants: {
+    aip11: true
+  }
 })
 
 let wrapper
@@ -56,7 +59,8 @@ const createWrapper = (component, wallet, network, props = {}) => {
     propsData: props,
     mocks: {
       $client: {
-        buildTransfer: jest.fn((transactionData) => transactionData)
+        buildTransfer: jest.fn((transactionData) => transactionData),
+        buildMultiPayment: jest.fn((transactionData) => transactionData)
       },
       $error: jest.fn(),
       $success: jest.fn(),
@@ -102,19 +106,20 @@ const createWrapper = (component, wallet, network, props = {}) => {
       $synchronizer: {
         appendFocus: jest.fn()
       },
-      session_network: mountNetwork,
-      currency_simpleFormatCrypto: jest.fn(CurrencyMixin.methods.currency_simpleFormatCrypto),
       currency_subToUnit: jest.fn(CurrencyMixin.methods.currency_subToUnit),
-      formatter_networkCurrency: jest.fn(),
       currency_format: jest.fn(CurrencyMixin.methods.currency_format),
       currency_toBuilder: jest.fn(CurrencyMixin.methods.currency_toBuilder),
+      currency_simpleFormatCrypto: jest.fn(CurrencyMixin.methods.currency_simpleFormatCrypto),
       currency_unitToSub: jest.fn(CurrencyMixin.methods.currency_unitToSub),
+      formatter_networkCurrency: jest.fn(),
+      session_network: mountNetwork,
       wallet_formatAddress: jest.fn(address => `formatted-${address}`),
       wallet_truncate: jest.fn(address => address),
       wallet_name: jest.fn(address => address),
       wallet_fromRoute: wallet
     },
     stubs: {
+      Identicon: true,
       Portal: true
     }
   })
@@ -151,17 +156,18 @@ describe('TransactionFormTransfer', () => {
 
   describe('data', () => {
     it('should has properties', () => {
+      expect(Object.prototype.hasOwnProperty.call(wrapper.vm._data, 'recipientId')).toBe(true)
+      expect(Object.prototype.hasOwnProperty.call(wrapper.vm._data, 'amount')).toBe(true)
+      expect(Object.prototype.hasOwnProperty.call(wrapper.vm._data, 'isSendAllActive')).toBe(true)
+      expect(Object.prototype.hasOwnProperty.call(wrapper.vm._data, 'previousAmount')).toBe(true)
+      expect(Object.prototype.hasOwnProperty.call(wrapper.vm._data, 'showConfirmSendAll')).toBe(true)
+      expect(Object.prototype.hasOwnProperty.call(wrapper.vm._data, 'wallet')).toBe(true)
       expect(Object.prototype.hasOwnProperty.call(wrapper.vm._data, 'form')).toBe(true)
-      expect(Object.prototype.hasOwnProperty.call(wrapper.vm._data.form, 'amount')).toBe(true)
+      expect(Object.prototype.hasOwnProperty.call(wrapper.vm._data.form, 'recipients')).toBe(true)
       expect(Object.prototype.hasOwnProperty.call(wrapper.vm._data.form, 'fee')).toBe(true)
       expect(Object.prototype.hasOwnProperty.call(wrapper.vm._data.form, 'passphrase')).toBe(true)
       expect(Object.prototype.hasOwnProperty.call(wrapper.vm._data.form, 'walletPassword')).toBe(true)
-      expect(Object.prototype.hasOwnProperty.call(wrapper.vm._data.form, 'recipientId')).toBe(true)
       expect(Object.prototype.hasOwnProperty.call(wrapper.vm._data.form, 'vendorField')).toBe(true)
-      expect(Object.prototype.hasOwnProperty.call(wrapper.vm._data, 'isSendAllActive')).toBe(true)
-      expect(Object.prototype.hasOwnProperty.call(wrapper.vm._data, 'previousAmount')).toBe(true)
-      expect(Object.prototype.hasOwnProperty.call(wrapper.vm._data, 'wallet')).toBe(true)
-      expect(Object.prototype.hasOwnProperty.call(wrapper.vm._data, 'showConfirmSendAll')).toBe(true)
     })
   })
 
@@ -178,16 +184,12 @@ describe('TransactionFormTransfer', () => {
       expect(wrapper.contains('.TransactionFormTransfer__amount')).toBe(true)
     })
 
+    it('should have add button', () => {
+      expect(wrapper.contains('.TransactionFormTransfer__add')).toBe(true)
+    })
+
     it('should have send all switch', () => {
       expect(wrapper.contains('.TransactionFormTransfer__send-all')).toBe(true)
-    })
-
-    it('should have vendorfield', () => {
-      expect(wrapper.contains('.TransactionFormTransfer__vendorfield')).toBe(true)
-    })
-
-    it('should have fee field', () => {
-      expect(wrapper.contains('.TransactionFormTransfer__fee')).toBe(true)
     })
 
     describe('wallet selection', () => {
@@ -230,39 +232,16 @@ describe('TransactionFormTransfer', () => {
       })
     })
 
-    describe('password field', () => {
-      it('should show if wallet does have a password', () => {
-        createWrapper(null, {
-          passphrase: 'password'
-        })
-
-        expect(wrapper.contains('.TransactionFormTransfer__password')).toBe(true)
-      })
-
-      it('should show if wallet does not have a password', () => {
-        expect(wrapper.contains('.TransactionFormTransfer__password')).toBe(false)
-      })
-    })
-
-    describe('passphrase field', () => {
-      it('should show if wallet does not have a password', () => {
-        expect(wrapper.contains('.TransactionFormTransfer__passphrase')).toBe(true)
-      })
-
-      it('should not show if wallet does have a password', () => {
-        createWrapper(null, {
-          passphrase: 'password'
-        })
-
-        expect(wrapper.contains('.TransactionFormTransfer__passphrase')).toBe(false)
-      })
-    })
-
     describe('next button', () => {
-      it('should be enabled if form is valid', async () => {
+      it('should be enabled if recipients form is valid', async () => {
+        wrapper.vm.$v.form.recipients.$model = [{
+          address: 'address-2',
+          amount: 10
+        }, {
+          address: 'address-2',
+          amount: 10
+        }]
         wrapper.vm.$v.form.fee.$model = 0.1
-        wrapper.vm.$v.form.amount.$model = 1
-        wrapper.vm.$v.form.recipientId.$model = 'address-2'
         wrapper.vm.$v.form.vendorField.$model = 'vendorfield test'
         wrapper.vm.$v.form.passphrase.$model = 'passphrase'
 
@@ -291,6 +270,55 @@ describe('TransactionFormTransfer', () => {
         wrapper.vm.$store.getters['session/currency'] = 'GBP'
 
         expect(wrapper.vm.alternativeCurrency).toEqual('GBP')
+      })
+    })
+
+    describe('isMultiPayment', () => {
+      it('should return false if it is a normal transaction', () => {
+        wrapper.vm.$v.form.recipients.$model = [{
+          address: 'address-2',
+          amount: 10
+        }]
+
+        expect(wrapper.vm.isMultiPayment).toBe(false)
+      })
+
+      it('should return true if it is multipayment transaction', () => {
+        wrapper.vm.$v.form.recipients.$model = [{
+          address: 'address-2',
+          amount: 10
+        }, {
+          address: 'address-3',
+          amount: 10
+        }]
+
+        expect(wrapper.vm.isMultiPayment).toBe(true)
+      })
+    })
+
+    describe('hasAip11', () => {
+      it('should return true if it is aip11', () => {
+        const response = TransactionFormTransfer.computed.walletNetwork.call({
+          session_network: globalNetwork,
+          currentWallet: null
+        })
+
+        expect(response.constants.aip11).toBe(true)
+      })
+
+      it('should return false if aip11 is false', () => {
+        const response = TransactionFormTransfer.computed.walletNetwork.call({
+          session_network: {
+            ...globalNetwork,
+            constants: {
+              ...globalNetwork.constants,
+              aip11: false
+            }
+          },
+          currentWallet: null
+        })
+
+        expect(response.constants.aip11).toBe(false)
       })
     })
 
@@ -334,12 +362,6 @@ describe('TransactionFormTransfer', () => {
     })
 
     describe('notEnoughBalanceError', () => {
-      it('should return empty if no wallet', () => {
-        createWrapper(null, null)
-
-        expect(wrapper.vm.notEnoughBalanceError).toBe('')
-      })
-
       it('should return a formatted value', () => {
         const $tSpy = jest.fn(translation => translation)
         const formatterNetworkCurrencySpy = jest.fn(value => value)
@@ -367,14 +389,28 @@ describe('TransactionFormTransfer', () => {
     })
 
     describe('maximumAvailableAmount', () => {
-      it('should return zero if no wallet', () => {
-        createWrapper(null, null)
-
-        expect(wrapper.vm.maximumAvailableAmount).toEqual(new BigNumber('0'))
+      it('should return value', () => {
+        wrapper.vm.$v.form.fee.$model = 0.1
+        expect(wrapper.vm.maximumAvailableAmount).toEqual((new BigNumber(1000)).minus(0.1))
       })
 
-      it('should return value', () => {
-        expect(wrapper.vm.maximumAvailableAmount).toEqual((new BigNumber(1000)).minus(0.1))
+      it('should return value including all recipients', async () => {
+        wrapper.vm.$v.form.fee.$model = 0.1
+        wrapper.vm.$v.recipientId.$model = Identities.Address.fromPassphrase('test')
+        wrapper.vm.$v.amount.$model = 10
+
+        await wrapper.vm.$nextTick()
+        wrapper.vm.addRecipient()
+        await wrapper.vm.$nextTick()
+
+        wrapper.vm.$v.recipientId.$model = Identities.Address.fromPassphrase('test')
+        wrapper.vm.$v.amount.$model = 20
+
+        await wrapper.vm.$nextTick()
+        wrapper.vm.addRecipient()
+        await wrapper.vm.$nextTick()
+
+        expect(wrapper.vm.maximumAvailableAmount).toEqual((new BigNumber(1000)).minus(0.1).minus(30))
       })
 
       it('should return value based on different fee', () => {
@@ -689,6 +725,52 @@ describe('TransactionFormTransfer', () => {
         expect(wrapper.vm.vendorFieldMaxLength).toBe(VENDOR_FIELD.defaultMaxLength)
       })
     })
+
+    describe('recipientWarning', () => {
+      it('should return null if recipientId is not dirty', () => {
+        expect(wrapper.vm.recipientWarning).toBe(null)
+      })
+
+      it('should return message for duplicate recipients', () => {
+        wrapper.vm.$v.form.recipients.$model = [{
+          address: 'address-2',
+          amount: 10
+        }]
+        wrapper.vm.$v.recipientId.$model = 'address-2'
+
+        expect(wrapper.vm.recipientWarning).toBe('TRANSACTION.MULTI_PAYMENT.WARNING_DUPLICATE')
+      })
+    })
+
+    describe('maximumRecipients', () => {
+      it('should return default if no constants', () => {
+        expect(wrapper.vm.maximumRecipients).toBe(500)
+      })
+
+      it('should return default if no network value', () => {
+        const network = {
+          ...cloneDeep(globalNetwork),
+          constants: {}
+        }
+
+        createWrapper(null, undefined, network)
+
+        expect(wrapper.vm.maximumRecipients).toBe(500)
+      })
+
+      it('should return network constant', () => {
+        const network = {
+          ...cloneDeep(globalNetwork),
+          constants: {
+            multiPaymentLimit: 20
+          }
+        }
+
+        createWrapper(null, undefined, network)
+
+        expect(wrapper.vm.maximumRecipients).toBe(20)
+      })
+    })
   })
 
   describe('watch', () => {
@@ -707,7 +789,7 @@ describe('TransactionFormTransfer', () => {
     })
 
     it('should check trigger recipient validation', async () => {
-      const spy = jest.spyOn(wrapper.vm.$v.form.recipientId, '$touch', 'get')
+      const spy = jest.spyOn(wrapper.vm.$v.recipientId, '$touch', 'get')
 
       wrapper.vm.wallet = {
         balance: 0,
@@ -730,23 +812,57 @@ describe('TransactionFormTransfer', () => {
 
   describe('methods', () => {
     describe('getTransactionData', () => {
-      it('should return correct data with passphrase', () => {
+      it('should return correct data with passphrase for normal transaction', () => {
         wrapper.vm.$v.form.fee.$model = 0.1
-        wrapper.vm.$v.form.amount.$model = 1
-        wrapper.vm.$v.form.recipientId.$model = 'address-2'
         wrapper.vm.$v.form.vendorField.$model = 'vendorfield test'
         wrapper.vm.$v.form.passphrase.$model = 'passphrase'
+        wrapper.vm.$v.form.recipients.$model = [{
+          address: 'address-2',
+          amount: (1 * 1e8).toString()
+        }]
+        wrapper.vm.$v.recipientId.$model = wrapper.vm.$v.form.recipients.$model[0].address
+        wrapper.vm.$v.amount.$model = wrapper.vm.$v.form.recipients.$model[0].amount
 
         expect(wrapper.vm.getTransactionData()).toEqual({
           address: 'address-1',
           passphrase: 'passphrase',
           recipientId: 'address-2',
+          amount: (1 * 1e8).toString(),
           fee: new BigNumber(0.1 * 1e8),
-          amount: new BigNumber(1 * 1e8),
           vendorField: 'vendorfield test',
           wif: undefined,
           networkWif: 170,
           networkId: 'network-1',
+          multiSignature: undefined
+        })
+      })
+
+      it('should return correct data with passphrase for multipayment transaction', () => {
+        wrapper.vm.$v.form.fee.$model = 0.1
+        wrapper.vm.$v.form.vendorField.$model = 'vendorfield test'
+        wrapper.vm.$v.form.passphrase.$model = 'passphrase'
+        wrapper.vm.$v.form.recipients.$model = [{
+          address: 'address-2',
+          amount: (1 * 1e8).toString()
+        }, {
+          address: 'address-3',
+          amount: (1 * 1e8).toString()
+        }]
+
+        expect(wrapper.vm.getTransactionData()).toEqual({
+          address: 'address-1',
+          passphrase: 'passphrase',
+          recipients: [{
+            address: 'address-2',
+            amount: (1 * 1e8).toString()
+          }, {
+            address: 'address-3',
+            amount: (1 * 1e8).toString()
+          }],
+          fee: new BigNumber(0.1 * 1e8),
+          vendorField: 'vendorfield test',
+          wif: undefined,
+          networkWif: 170,
           multiSignature: undefined
         })
       })
@@ -759,30 +875,39 @@ describe('TransactionFormTransfer', () => {
         })
 
         wrapper.vm.$v.form.fee.$model = 0.1
-        wrapper.vm.$v.form.amount.$model = 1
-        wrapper.vm.$v.form.recipientId.$model = 'address-2'
         wrapper.vm.$v.form.vendorField.$model = 'vendorfield test'
         wrapper.vm.$v.form.passphrase.$model = 'passphrase'
         wrapper.vm.$v.form.secondPassphrase.$model = 'second passphrase'
+        wrapper.vm.$v.form.recipients.$model = [{
+          address: 'address-2',
+          amount: (1 * 1e8).toString()
+        }, {
+          address: 'address-3',
+          amount: (1 * 1e8).toString()
+        }]
 
         expect(wrapper.vm.getTransactionData()).toEqual({
           address: 'address-1',
           passphrase: 'passphrase',
-          recipientId: 'address-2',
           secondPassphrase: 'second passphrase',
+          recipients: [{
+            address: 'address-2',
+            amount: (1 * 1e8).toString()
+          }, {
+            address: 'address-3',
+            amount: (1 * 1e8).toString()
+          }],
           fee: new BigNumber(0.1 * 1e8),
-          amount: new BigNumber(1 * 1e8),
           vendorField: 'vendorfield test',
           wif: undefined,
           networkWif: 170,
-          networkId: 'network-1',
           multiSignature: undefined
         })
       })
     })
 
     describe('buildTransaction', () => {
-      it('should build transfer', async () => {
+      it('should build normal transaction', async () => {
         const transactionData = {
           type: 0,
           typeGroup: 2
@@ -794,7 +919,27 @@ describe('TransactionFormTransfer', () => {
         expect(response).toBe(transactionData)
       })
 
-      it('should build transfer with default arguments', async () => {
+      it('should build multipayment transaction', async () => {
+        wrapper.vm.$v.form.recipients.$model = [{
+          address: 'address-2',
+          amount: 10
+        }, {
+          address: 'address-3',
+          amount: 10
+        }]
+
+        const transactionData = {
+          type: 6,
+          typeGroup: 1
+        }
+
+        const response = await wrapper.vm.buildTransaction(transactionData, true, true)
+
+        expect(wrapper.vm.$client.buildMultiPayment).toHaveBeenCalledWith(transactionData, true, true)
+        expect(response).toBe(transactionData)
+      })
+
+      it('should build normal transaction with default arguments', async () => {
         const transactionData = {
           type: 0,
           typeGroup: 2
@@ -803,6 +948,26 @@ describe('TransactionFormTransfer', () => {
         const response = await wrapper.vm.buildTransaction(transactionData)
 
         expect(wrapper.vm.$client.buildTransfer).toHaveBeenCalledWith(transactionData, false, false)
+        expect(response).toBe(transactionData)
+      })
+
+      it('should build multipayment transaction with default arguments', async () => {
+        wrapper.vm.$v.form.recipients.$model = [{
+          address: 'address-2',
+          amount: 10
+        }, {
+          address: 'address-3',
+          amount: 10
+        }]
+
+        const transactionData = {
+          type: 6,
+          typeGroup: 1
+        }
+
+        const response = await wrapper.vm.buildTransaction(transactionData)
+
+        expect(wrapper.vm.$client.buildMultiPayment).toHaveBeenCalledWith(transactionData, false, false)
         expect(response).toBe(transactionData)
       })
     })
@@ -829,8 +994,8 @@ describe('TransactionFormTransfer', () => {
 
         wrapper.vm.populateSchema()
 
-        expect(wrapper.vm.form.amount).toBe((10 * 1e8).toString())
-        expect(wrapper.vm.form.recipientId).toBe('address-5')
+        expect(wrapper.vm.amount).toBe((10 * 1e8).toString())
+        expect(wrapper.vm.recipientId).toBe('address-5')
         expect(wrapper.vm.form.vendorField).toBe('test vendorfield')
       })
 
@@ -957,10 +1122,24 @@ describe('TransactionFormTransfer', () => {
     })
 
     describe('transactionError', () => {
-      it('should generate transaction error', () => {
+      it('should generate error for normal transaction', () => {
         wrapper.vm.transactionError()
 
         expect(wrapper.vm.$error).toHaveBeenCalledWith('TRANSACTION.ERROR.VALIDATION.TRANSFER')
+      })
+
+      it('should generate error for multipayment transaction', () => {
+        wrapper.vm.$v.form.recipients.$model = [{
+          address: 'address-2',
+          amount: 10
+        }, {
+          address: 'address-3',
+          amount: 10
+        }]
+
+        wrapper.vm.transactionError()
+
+        expect(wrapper.vm.$error).toHaveBeenCalledWith('TRANSACTION.ERROR.VALIDATION.MULTI_PAYMENT')
       })
     })
 
@@ -1022,7 +1201,7 @@ describe('TransactionFormTransfer', () => {
       it('should trigger send all', () => {
         const spy = jest.spyOn(wrapper.vm, 'confirmSendAll').mockImplementation()
 
-        wrapper.vm.form.amount = 50
+        wrapper.vm.amount = 50
         wrapper.vm.setSendAll(true)
 
         expect(spy).toHaveBeenCalledTimes(1)
@@ -1031,15 +1210,13 @@ describe('TransactionFormTransfer', () => {
 
       it('should trigger when disabled', () => {
         const spy = jest.spyOn(wrapper.vm, 'ensureAvailableAmount').mockImplementation()
-        const spySet = jest.spyOn(wrapper.vm, '$set')
 
-        wrapper.vm.form.amount = 10
+        wrapper.vm.amount = 50
         wrapper.vm.previousAmount = 50
         wrapper.vm.setSendAll(false)
 
         expect(spy).toHaveBeenCalledTimes(1)
-        expect(spySet).toHaveBeenNthCalledWith(1, wrapper.vm.form, 'amount', 50)
-        expect(wrapper.vm.form.amount).toEqual(50)
+        expect(wrapper.vm.amount).toEqual(50)
         expect(wrapper.vm.previousAmount).toEqual('')
         expect(wrapper.vm.isSendAllActive).toEqual(false)
       })
@@ -1048,13 +1225,13 @@ describe('TransactionFormTransfer', () => {
         const spy = jest.spyOn(wrapper.vm, 'ensureAvailableAmount').mockImplementation()
         const spySet = jest.spyOn(wrapper.vm, '$set')
 
-        wrapper.vm.form.amount = 10
+        wrapper.vm.amount = 10
         wrapper.vm.previousAmount = 50
         wrapper.vm.setSendAll(false, false)
 
         expect(spy).toHaveBeenCalled()
         expect(spySet).not.toHaveBeenCalled()
-        expect(wrapper.vm.form.amount).toEqual(10)
+        expect(wrapper.vm.amount).toEqual(10)
         expect(wrapper.vm.previousAmount).toEqual('')
         expect(wrapper.vm.isSendAllActive).toEqual(false)
       })
@@ -1062,9 +1239,7 @@ describe('TransactionFormTransfer', () => {
 
     describe('ensureAvailableAmount', () => {
       it('should set amount to max if send all is enabled', async () => {
-        const spySet = jest.spyOn(wrapper.vm, '$set')
-
-        wrapper.vm.form.amount = 0
+        wrapper.vm.amount = new BigNumber('999.9')
         wrapper.vm.isSendAllActive = true
 
         await wrapper.vm.$nextTick()
@@ -1073,21 +1248,20 @@ describe('TransactionFormTransfer', () => {
 
         expect(wrapper.vm.isSendAllActive).toBe(true)
         expect(wrapper.vm.canSendAll).toBe(true)
-        expect(spySet).toHaveBeenNthCalledWith(1, wrapper.vm.form, 'amount', new BigNumber('999.9'))
-        expect(wrapper.vm.form.amount).toEqual(new BigNumber('999.9'))
+        expect(wrapper.vm.amount).toEqual(new BigNumber('999.9'))
       })
 
       it('should not set amount to max if send all is disabled', async () => {
         const spySet = jest.spyOn(wrapper.vm, '$set')
 
-        wrapper.vm.form.amount = 10
+        wrapper.vm.amount = 10
 
         await wrapper.vm.$nextTick()
 
         wrapper.vm.ensureAvailableAmount()
 
         expect(spySet).not.toHaveBeenCalled()
-        expect(wrapper.vm.form.amount).toEqual(10)
+        expect(wrapper.vm.amount).toEqual(10)
       })
     })
 
@@ -1120,6 +1294,113 @@ describe('TransactionFormTransfer', () => {
       })
     })
 
+    describe('addRecipient', () => {
+      it('should add current recipient to list', async () => {
+        const address = Identities.Address.fromPassphrase('passphrase')
+        wrapper.vm.$v.recipientId.$model = address
+        wrapper.vm.$v.amount.$model = 100
+
+        await wrapper.vm.$nextTick()
+
+        wrapper.vm.addRecipient()
+
+        expect(wrapper.vm.$v.form.recipients.$model).toEqual([{
+          address: address,
+          amount: new BigNumber(100 * 1e8),
+          sendAll: false
+        }])
+      })
+
+      it('should reset current recipient', async () => {
+        wrapper.vm.$v.recipientId.$model = Identities.Address.fromPassphrase('passphrase')
+        wrapper.vm.$v.amount.$model = 100
+
+        await wrapper.vm.$nextTick()
+
+        wrapper.vm.addRecipient()
+
+        expect(wrapper.vm.$v.recipientId.$model).toBe('')
+        expect(wrapper.vm.$v.amount.$model).toBe('')
+      })
+
+      it('should do nothing if invalid address', async () => {
+        WalletService.validateAddress.mockReturnValue(false)
+
+        wrapper.vm.$v.recipientId.$model = 'invalid address'
+        wrapper.vm.$v.amount.$model = 100
+
+        await wrapper.vm.$nextTick()
+
+        wrapper.vm.addRecipient()
+
+        expect(wrapper.vm.$v.form.recipients.$model).toEqual([])
+
+        WalletService.validateAddress.mockReturnValue(true)
+      })
+
+      it('should do nothing if invalid fee', async () => {
+        wrapper.vm.$v.recipientId.$model = Identities.Address.fromPassphrase('passphrase')
+        wrapper.vm.$v.amount.$model = ''
+
+        await wrapper.vm.$nextTick()
+
+        wrapper.vm.addRecipient()
+
+        expect(wrapper.vm.$v.form.recipients.$model).toEqual([])
+      })
+    })
+
+    describe('emitRemoveRecipient', () => {
+      it('should remove recipient at index', () => {
+        wrapper.vm.$v.form.recipients.$model = [{
+          address: 'address-1',
+          amount: 10
+        }, {
+          address: 'address-2',
+          amount: 10
+        }, {
+          address: 'address-3',
+          amount: 10
+        }]
+
+        wrapper.vm.emitRemoveRecipient(1)
+
+        expect(wrapper.vm.$v.form.recipients.$model).toEqual([{
+          address: 'address-1',
+          amount: 10
+        }, {
+          address: 'address-3',
+          amount: 10
+        }])
+      })
+
+      it('should do nothing if index does not exist', () => {
+        const recipients = [{
+          address: 'address-1',
+          amount: 10
+        }, {
+          address: 'address-2',
+          amount: 10
+        }]
+
+        wrapper.vm.$v.form.recipients.$model = recipients
+
+        wrapper.vm.emitRemoveRecipient(3)
+
+        expect(wrapper.vm.$v.form.recipients.$model).toBe(recipients)
+      })
+    })
+
+    describe('nextStep', () => {
+      it('should submit form data', async () => {
+        const spy = jest.spyOn(wrapper.vm, 'onSubmit').mockImplementation()
+
+        wrapper.vm.nextStep()
+
+        expect(spy).toHaveBeenCalledTimes(0)
+      })
+    })
+
     describe('loadTransaction', () => {
       let $tSpy
       beforeEach(() => {
@@ -1147,7 +1428,7 @@ describe('TransactionFormTransfer', () => {
           WalletService.validateAddress = jest.fn(() => false)
 
           wrapper.vm.electron_readFile = jest.fn(async () => {
-            return '{ "type": "0", "recipientId": "AJAAfMJj1w6U5A3t6BGA7NYZsaVve6isMm" }'
+            return '{ "type": "0", "recipientId": "AJAAfMJj1w6U5A3t6BGA7NYZsaVve6isMm", "amount": "10" }'
           })
 
           await wrapper.vm.loadTransaction()
@@ -1177,15 +1458,21 @@ describe('TransactionFormTransfer', () => {
 
           expect($tSpy).toHaveBeenCalledWith('TRANSACTION.SUCCESS.LOAD_FROM_FILE')
           expect(wrapper.vm.$success).toHaveBeenCalledWith('TRANSACTION.SUCCESS.LOAD_FROM_FILE')
-          expect(wrapper.vm.form.recipientId).toEqual('AJAAfMJj1w6U5A3t6BGA7NYZsaVve6isMm')
+          expect(wrapper.vm.recipientId).toEqual('AJAAfMJj1w6U5A3t6BGA7NYZsaVve6isMm')
+          expect(wrapper.vm.amount).toEqual('20')
           expect(wrapper.vm.form.fee).toEqual('0.1')
-          expect(wrapper.vm.form.amount).toEqual('20')
           expect(wrapper.vm.form.vendorField).toEqual('vendorfield test')
         })
 
         it('should display a success alert', async () => {
+          const json = JSON.stringify({
+            type: 0,
+            recipientId: 'AJAAfMJj1w6U5A3t6BGA7NYZsaVve6isMm',
+            amount: (20 * 1e8).toString()
+          })
+
           wrapper.vm.electron_readFile = jest.fn(async () => {
-            return '{ "type": "0" }'
+            return json
           })
 
           await wrapper.vm.loadTransaction()
@@ -1216,6 +1503,148 @@ describe('TransactionFormTransfer', () => {
 
           expect($tSpy).toHaveBeenCalledWith('TRANSACTION.ERROR.LOAD_FROM_FILE')
           expect(wrapper.vm.$error).toHaveBeenCalledWith('TRANSACTION.ERROR.LOAD_FROM_FILE: invalid json')
+        })
+      })
+    })
+  })
+
+  describe('validations', () => {
+    describe('recipientId', () => {
+      it('should be required if not set', () => {
+        wrapper.vm.$v.recipientId.$model = ''
+
+        expect(wrapper.vm.$v.recipientId.required).toBe(false)
+      })
+
+      it('should not be required if set', () => {
+        wrapper.vm.$v.recipientId.$model = 'test'
+
+        expect(wrapper.vm.$v.recipientId.required).toBe(true)
+      })
+
+      it('should not be valid', async () => {
+        WalletService.validateAddress.mockReturnValue(false)
+
+        wrapper.vm.$v.recipientId.$model = 'test'
+
+        await wrapper.vm.$nextTick()
+
+        expect(wrapper.vm.$refs.recipient.$v.$invalid).toBe(true)
+        expect(wrapper.vm.$v.recipientId.isValid).toBe(false)
+
+        WalletService.validateAddress.mockReturnValue(true)
+      })
+
+      it('should not be valid if no recipient field', async () => {
+        wrapper.vm.$refs.recipient = null
+        wrapper.vm.$v.recipientId.$model = Identities.Address.fromPassphrase('passphrase')
+
+        await wrapper.vm.$nextTick()
+
+        expect(wrapper.vm.$refs.recipient).toBe(null)
+        expect(wrapper.vm.$v.recipientId.isValid).toBe(false)
+      })
+
+      it('should be valid', async () => {
+        wrapper.vm.$v.recipientId.$model = Identities.Address.fromPassphrase('passphrase')
+
+        await wrapper.vm.$nextTick()
+
+        expect(wrapper.vm.$refs.recipient.$v.$invalid).toBe(false)
+        expect(wrapper.vm.$v.recipientId.isValid).toBe(true)
+      })
+    })
+
+    describe('amount', () => {
+      it('should be required if not set', () => {
+        wrapper.vm.$v.amount.$model = ''
+
+        expect(wrapper.vm.$v.amount.required).toBe(false)
+      })
+
+      it('should not be required if set', () => {
+        wrapper.vm.$v.amount.$model = '10'
+
+        expect(wrapper.vm.$v.amount.required).toBe(true)
+      })
+
+      it('should not be valid', async () => {
+        wrapper.vm.$v.amount.$model = 'test'
+
+        await wrapper.vm.$nextTick()
+
+        expect(wrapper.vm.$refs.amount.$v.$invalid).toBe(true)
+        expect(wrapper.vm.$v.amount.isValid).toBe(false)
+      })
+
+      it('should not be valid if no amount field', async () => {
+        wrapper.vm.$refs.amount = null
+        wrapper.vm.$v.amount.$model = 'test'
+
+        await wrapper.vm.$nextTick()
+
+        expect(wrapper.vm.$refs.amount).toBe(null)
+        expect(wrapper.vm.$v.amount.isValid).toBe(false)
+      })
+
+      it('should be valid', async () => {
+        wrapper.vm.$v.amount.$model = 10
+
+        await wrapper.vm.$nextTick()
+
+        expect(wrapper.vm.$refs.amount.$v.$invalid).toBe(false)
+        expect(wrapper.vm.$v.amount.isValid).toBe(true)
+      })
+    })
+
+    describe('form', () => {
+      describe('recipients', () => {
+        it('should not be above minimum if not set', () => {
+          wrapper.vm.$v.form.recipients.$model = []
+
+          expect(wrapper.vm.$v.form.recipients.aboveMinimum).toBe(false)
+        })
+
+        it('should be above minimum if set', () => {
+          wrapper.vm.$v.form.recipients.$model = [{
+            address: 'address-1',
+            amount: 10
+          }]
+
+          expect(wrapper.vm.$v.form.recipients.aboveMinimum).toBe(true)
+        })
+
+        it('should not be below or equal to maximum if too many', () => {
+          const network = {
+            ...cloneDeep(globalNetwork),
+            constants: {
+              multiPaymentLimit: 2
+            }
+          }
+
+          createWrapper(null, undefined, network)
+
+          wrapper.vm.$v.form.recipients.$model = [{
+            address: 'address-1',
+            amount: 10
+          }, {
+            address: 'address-1',
+            amount: 10
+          }, {
+            address: 'address-1',
+            amount: 10
+          }]
+
+          expect(wrapper.vm.$v.form.recipients.belowOrEqualMaximum).toBe(false)
+        })
+
+        it('should be below or equal to maximum if set', () => {
+          wrapper.vm.$v.form.recipients.$model = [{
+            address: 'address-1',
+            amount: 10
+          }]
+
+          expect(wrapper.vm.$v.form.recipients.belowOrEqualMaximum).toBe(true)
         })
       })
     })

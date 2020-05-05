@@ -179,9 +179,7 @@ export default {
         if (feeStatistics[0]) {
           transactionStatistics = Object.values(feeStatistics).find(feeConfig => feeConfig.type === this.transactionType)
         } else if (feeStatistics[this.transactionGroup]) {
-          transactionStatistics = Object.values(feeStatistics[this.transactionGroup]).find(feeConfig => {
-            return feeConfig.type === this.transactionType
-          })
+          transactionStatistics = Object.values(feeStatistics[this.transactionGroup]).find(feeConfig => feeConfig.type === this.transactionType)
         }
 
         if (transactionStatistics) {
