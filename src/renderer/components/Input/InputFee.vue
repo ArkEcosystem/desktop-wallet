@@ -189,28 +189,31 @@ export default {
 
       return {
         avgFee: this.maxV1fee,
-        maxFee: this.maxV1fee
+        maxFee: this.maxV1fee,
+        minFee: 1
       }
     },
     lastFee () {
       return this.$store.getters['session/lastFeeByType'](this.transactionType, this.transactionGroup)
     },
     feeChoiceMin () {
-      return this.feeChoices.MINIMUM
+      return this.currency_subToUnit(1)
     },
     feeChoiceMax () {
       return this.isAdvancedFee ? this.feeChoices.MAXIMUM.multipliedBy(10) : this.feeChoices.MAXIMUM
     },
     feeChoices () {
-      const { avgFee, maxFee } = this.feeStatistics
+      const { avgFee, maxFee, minFee } = this.feeStatistics
 
-      // Even if the network provides average or maximum fees higher than V1, they will be corrected
+      // If any of the fees are higher than the maximum V1 fee, than use the maximum.
       const average = this.currency_subToUnit(avgFee < this.maxV1fee ? avgFee : this.maxV1fee)
+      const minimum = this.currency_subToUnit(minFee < this.maxV1fee ? minFee : this.maxV1fee)
+      const maximum = this.currency_subToUnit(maxFee < this.maxV1fee ? maxFee : this.maxV1fee)
 
       const fees = {
-        MINIMUM: this.currency_subToUnit(1),
+        MINIMUM: minimum,
         AVERAGE: average,
-        MAXIMUM: this.currency_subToUnit(maxFee < this.maxV1fee ? maxFee : this.maxV1fee),
+        MAXIMUM: maximum,
         INPUT: average,
         ADVANCED: average
       }
@@ -218,7 +221,7 @@ export default {
       return this.lastFee ? Object.assign({}, { LAST: this.currency_subToUnit(this.lastFee) }, fees) : fees
     },
     minimumError () {
-      const min = this.feeChoices.MINIMUM
+      const min = this.feeChoiceMin
       const fee = this.currency_format(min, { currency: this.currency, currencyDisplay: 'code' })
       return this.$t('INPUT_FEE.ERROR.LESS_THAN_MINIMUM', { fee })
     },
