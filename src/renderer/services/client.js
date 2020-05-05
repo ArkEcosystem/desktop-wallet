@@ -7,6 +7,7 @@ import TransactionService from '@/services/transaction'
 import { TransactionBuilderService } from './crypto/transaction-builder.service'
 import { TransactionSigner } from './crypto/transaction-signer'
 import BigNumber from '@/plugins/bignumber'
+import { cammelToUpperSnake } from '@/utils'
 
 export default class ClientService {
   /**
@@ -73,43 +74,71 @@ export default class ClientService {
   }
 
   static async fetchFeeStatistics (server, timeout) {
+    let data
+
     try {
-      const { body } = await ClientService.newConnection(server, timeout)
+      const response = await ClientService.newConnection(server, timeout)
         .api('node')
         .fees(7)
 
-      if (!body.data[0]) {
-        return Object.values(TRANSACTION_GROUPS)
-          .filter(group => !!body.data[group])
-          .reduce((accumulator, group) => {
-            accumulator[group] = Object.keys(body.data[group]).map(key => {
-              const fee = body.data[group][key]
-
-              return {
-                type: TRANSACTION_TYPES[`GROUP_${group}`][key.toUpperCase()],
-                fees: {
-                  minFee: Number(fee.min),
-                  maxFee: Number(fee.max),
-                  avgFee: Number(fee.avg)
-                }
-              }
-            })
-
-            return accumulator
-          }, {})
-      }
-
-      return body.data.map(fee => ({
-        type: Number(fee.type),
-        fees: {
-          minFee: Number(fee.min),
-          maxFee: Number(fee.max),
-          avgFee: Number(fee.avg)
-        }
-      }))
+      data = response.body.data
     } catch (error) {
       return []
     }
+
+    /*
+      The peer can send 2 types of response: an Array and and Object.
+      In case it sends an Object, the fees should be parsed according to the
+      transaction groups and types from @config.
+    */
+
+    // Case it is an Object
+    if (!Array.isArray(data)) {
+      // Remove the groups that are not in the response
+      const groupsIds = Object.values(TRANSACTION_GROUPS).filter(groupId => !!data[groupId])
+
+      const parsedFees = groupsIds.reduce((accumulator, groupId) => {
+        const retrivedTypeNames = Object.keys(data[groupId])
+
+        // Parse the fees and add to accumulator
+        accumulator[groupId] = retrivedTypeNames.map(typeName => {
+          const fees = data[groupId][typeName]
+
+          /*
+            Notice that the types are in different format.
+            Response is in cammelCase. Eg: 'bussinesUpdate'
+            @config is in UPPER_SNAKE_CASE. Eg: 'BUSSINES_UPDATE'
+          */
+          const groupName = `GROUP_${groupId}`
+          const parsedTypeName = cammelToUpperSnake(typeName)
+
+          const type = TRANSACTION_TYPES[groupName][parsedTypeName]
+
+          return {
+            type,
+            fees: {
+              minFee: Number(fees.min),
+              maxFee: Number(fees.max),
+              avgFee: Number(fees.avg)
+            }
+          }
+        })
+
+        return accumulator
+      }, {})
+
+      return parsedFees
+    }
+
+    // Case the response is an Array
+    return data.map(fee => ({
+      type: Number(fee.type),
+      fees: {
+        minFee: Number(fee.min),
+        maxFee: Number(fee.max),
+        avgFee: Number(fee.avg)
+      }
+    }))
   }
 
   constructor () {
