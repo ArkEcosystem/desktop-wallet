@@ -7,7 +7,7 @@ import TransactionService from '@/services/transaction'
 import { TransactionBuilderService } from './crypto/transaction-builder.service'
 import { TransactionSigner } from './crypto/transaction-signer'
 import BigNumber from '@/plugins/bignumber'
-import { cammelToUpperSnake } from '@/utils'
+import { camelToUpperSnake } from '@/utils'
 
 export default class ClientService {
   /**
@@ -110,7 +110,7 @@ export default class ClientService {
             @config is in UPPER_SNAKE_CASE. Eg: 'BUSSINES_UPDATE'
           */
           const groupName = `GROUP_${groupId}`
-          const parsedTypeName = cammelToUpperSnake(typeName)
+          const parsedTypeName = camelToUpperSnake(typeName)
 
           const type = TRANSACTION_TYPES[groupName][parsedTypeName]
 
