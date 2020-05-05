@@ -467,7 +467,7 @@ export default {
     /**
      * Get address and public key from ledger wallet.
      * @param  {Number} accountIndex Index of wallet to get data for.
-     * @return {(String|Boolean)}
+     * @return {Promise<string>}
      */
     async getVersion ({ dispatch }) {
       try {
@@ -517,7 +517,7 @@ export default {
     /**
      * Get public key from ledger wallet.
      * @param  {Number} [accountIndex] Index of wallet to get public key for.
-     * @return {(String|Boolean)}
+     * @return {Promise<string>}
      */
     async getPublicKey ({ dispatch }, accountIndex) {
       try {
@@ -534,9 +534,9 @@ export default {
     /**
      * Sign transaction for ledger wallet.
      * @param  {Object} obj
-     * @param  {String} obj.transactionBytes Bytes of transaction.
+     * @param  {Buffer} obj.transactionBytes Bytes of transaction.
      * @param  {Number} obj.accountIndex Index of wallet to sign transaction for.
-     * @return {(String|Boolean)}
+     * @return {Promise<string>}
      */
     async signTransaction ({ dispatch }, { transactionBytes, accountIndex } = {}) {
       try {
@@ -554,9 +554,9 @@ export default {
     /**
      * Sign message for ledger wallet.
      * @param  {Object} obj
-     * @param  {String} obj.messageBytes Bytes to sign.
+     * @param  {Buffer} obj.messageBytes Bytes to sign.
      * @param  {Number} obj.accountIndex Index of wallet to sign transaction for.
-     * @return {(String|Boolean)}
+     * @return {Promise<string>}
      */
     async signMessage ({ dispatch }, { messageBytes, accountIndex } = {}) {
       try {

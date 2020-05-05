@@ -15,7 +15,7 @@ export default class TransactionService {
   /*
    * Get bytes for transaction.
    * @param {Object} transaction
-   * @return {String}
+   * @return {Buffer}
    */
   static getBytes (transaction) {
     return Transactions.Serializer.getBytes(transaction, {
@@ -148,12 +148,12 @@ export default class TransactionService {
   /*
    * Sign message with Ledger.
    * @param {Object} wallet
-   * @param {String} message
+   * @param {string} message
    * @return {Object}
    */
   static async ledgerSignMessage (wallet, message, vm) {
     const signature = await vm.$store.dispatch('ledger/signMessage', {
-      messageBytes: Buffer.from(message),
+      messageBytes: Buffer.from(message, 'utf-8'),
       accountIndex: wallet.ledgerIndex
     })
 

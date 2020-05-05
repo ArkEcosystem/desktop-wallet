@@ -227,11 +227,11 @@ describe('ledger store module', () => {
 
       const response = await store.dispatch('ledger/signTransaction', {
         accountIndex: 1,
-        transactionBytes: Buffer.from('abc', 'utf-8')
+        transactionBytes: Buffer.from([1, 2, 3, 4])
       })
 
       expect(response).toBe('SIGNATURE')
-      expect(spy).toHaveBeenNthCalledWith(1, '44\'/1234\'/1\'/0/0', Buffer.from('abc', 'utf-8'))
+      expect(spy).toHaveBeenNthCalledWith(1, '44\'/1234\'/1\'/0/0', Buffer.from([1, 2, 3, 4]))
 
       spy.mockRestore()
     })
