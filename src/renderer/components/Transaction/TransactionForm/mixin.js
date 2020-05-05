@@ -115,6 +115,8 @@ export default {
   },
 
   mounted () {
+    this.populateSchema()
+
     if (this.$refs.fee) {
       this.form.fee = this.$refs.fee.fee
     }

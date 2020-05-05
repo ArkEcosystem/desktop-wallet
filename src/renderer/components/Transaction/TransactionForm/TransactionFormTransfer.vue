@@ -151,7 +151,7 @@
         </button>
       </div>
 
-      <div>
+      <div v-if="!hasSchema">
         <button
           v-tooltip="{ content: $t('TRANSACTION.LOAD_FROM_FILE'), toggle: 'hover' }"
           class="TransactionFormTransfer__load-tx action-button pull-right flex items-center"
@@ -331,8 +331,6 @@ export default {
   },
 
   mounted () {
-    this.populateSchema()
-
     if (this.currentWallet && this.currentWallet.id) {
       this.$set(this, 'wallet', this.currentWallet)
       this.$v.wallet.$touch()
