@@ -309,12 +309,12 @@ export default {
         const peerUrl = getBaseUrl(getters.current())
 
         return PeerDiscovery.new({
-          networkOrHost: `${peerUrl}/api/v2/peers`
+          networkOrHost: `${peerUrl}/api/peers`
         })
       }
 
       return PeerDiscovery.new({
-        networkOrHost: `${network.server}/api/v2/peers`
+        networkOrHost: `${network.server}/api/peers`
       })
     },
 
