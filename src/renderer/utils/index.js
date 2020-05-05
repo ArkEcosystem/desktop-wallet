@@ -1,6 +1,13 @@
 import sortByProps from './sort-by-props'
 
 /**
+ * Converts cammelCaseString to UPPER_CAMMEL_CASE_STRING
+ * @param {String} String the cammelCaseString
+ * @returns {String} The UPPER_CAMMEL_CASE
+ */
+const cammelToUpperSnake = string => string.split(/(?=[A-Z])/).join('_').toUpperCase()
+
+/**
  * Converts the first character of `string` to upper case and the remaining to lower case
  * @param {String} str
  * @return {String} Return the capitalized string
@@ -58,6 +65,7 @@ const min = nums => {
 const upperFirst = str => `${str.charAt(0).toUpperCase()}${str.slice(1)}`
 
 export {
+  cammelToUpperSnake,
   capitalize,
   flatten,
   isEmpty,
