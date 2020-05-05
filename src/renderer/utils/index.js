@@ -43,11 +43,19 @@ const max = nums => {
   }
 }
 
+/**
+ * Converts cammelCaseString to UPPER_CAMMEL_CASE_STRING.
+ * @param {string} string The cammelCaseString
+ * @returns {string} The UPPER_CAMMEL_CASE.
+ */
+const cammelToUpperSnake = string => string.split(/(?=[A-Z])/).join('_').toUpperCase()
+
 export {
   upperFirst,
   capitalize,
   isNil,
   min,
   max,
-  sortByProps
+  sortByProps,
+  cammelToUpperSnake
 }
