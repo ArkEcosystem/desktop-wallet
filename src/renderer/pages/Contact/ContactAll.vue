@@ -97,7 +97,7 @@
 </template>
 
 <script>
-import { isEqual, some } from 'lodash'
+import { isEqual } from 'lodash'
 import { ButtonLayout } from '@/components/Button'
 import { ContactRemovalConfirmation, ContactRenameModal } from '@/components/Contact'
 import { WalletGrid, WalletIdenticonPlaceholder } from '@/components/Wallet'
@@ -161,7 +161,7 @@ export default {
     },
 
     showVotedDelegates () {
-      return some(this.contacts, contact => Object.prototype.hasOwnProperty.call(contact, 'vote'))
+      return this.contacts.some(contact => Object.prototype.hasOwnProperty.call(contact, 'vote'))
     }
   },
 
