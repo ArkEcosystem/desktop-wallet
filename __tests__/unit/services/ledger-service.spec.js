@@ -56,7 +56,7 @@ describe('LedgerService', () => {
 
   describe('signTransaction', () => {
     it('should run', async () => {
-      const response = await ledgerService.signTransaction('44\'/1\'/0\'/0/0', '1234')
+      const response = await ledgerService.signTransaction('44\'/1\'/0\'/0/0', Buffer.from([1, 2, 3, 4]))
 
       expect(response).toBeTruthy()
       expect(ledgerService.ledger.signTransaction).toHaveBeenCalledTimes(1)
@@ -67,7 +67,7 @@ describe('LedgerService', () => {
     it('should run', async () => {
       ledgerService.ledger.signMessage.mockClear()
 
-      const response = await ledgerService.signMessage('44\'/1\'/0\'/0/0', Buffer.from('1234'))
+      const response = await ledgerService.signMessage('44\'/1\'/0\'/0/0', Buffer.from('1234', 'utf-8'))
 
       expect(response).toBeTruthy()
       expect(ledgerService.ledger.signMessage).toHaveBeenCalledTimes(1)
