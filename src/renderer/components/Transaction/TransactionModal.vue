@@ -41,7 +41,7 @@
 </template>
 
 <script>
-import { camelCase, includes } from 'lodash'
+import { camelCase } from 'lodash'
 import { upperFirst } from '@/utils'
 import { TRANSACTION_GROUPS, TRANSACTION_TYPES } from '@config'
 import MultiSignature from '@/services/client-multisig'
@@ -81,7 +81,7 @@ export default {
       type: Number,
       required: true,
       validator: value => {
-        return value === TRANSACTION_TYPES.MULTI_SIGN || includes(TRANSACTION_TYPES.GROUP_1, value)
+        return value === TRANSACTION_TYPES.MULTI_SIGN || Object.values(TRANSACTION_TYPES.GROUP_1).includes(value)
       }
     },
 
