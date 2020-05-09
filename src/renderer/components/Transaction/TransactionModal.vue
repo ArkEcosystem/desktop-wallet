@@ -41,7 +41,7 @@
 </template>
 
 <script>
-import { camelCase, includes } from 'lodash'
+import { camelCase } from 'lodash'
 import { upperFirst } from '@/utils'
 import { TRANSACTION_GROUPS, TRANSACTION_TYPES } from '@config'
 import MultiSignature from '@/services/client-multisig'
@@ -81,7 +81,7 @@ export default {
       type: Number,
       required: true,
       validator: value => {
-        return value === TRANSACTION_TYPES.MULTI_SIGN || includes(TRANSACTION_TYPES.GROUP_1, value)
+        return value === TRANSACTION_TYPES.MULTI_SIGN || Object.values(TRANSACTION_TYPES.GROUP_1).includes(value)
       }
     },
 
@@ -387,6 +387,7 @@ export default {
 .TransactionModalTransfer {
   /* To allow more space on the fee slider */
   min-width: 38rem;
+  max-height: 100%;
 }
 
 .TransactionModalBridgechainRegistration,
@@ -394,7 +395,6 @@ export default {
 .TransactionModalBusinessRegistration,
 .TransactionModalBusinessUpdate,
 .TransactionModalIpfs,
-.TransactionModalMultiPayment,
 .TransactionModalMultiSignature {
   min-width: 35rem;
   max-height: 80vh;

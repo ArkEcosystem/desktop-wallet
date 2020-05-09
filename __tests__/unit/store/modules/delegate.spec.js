@@ -55,7 +55,7 @@ describe('delegate store module', () => {
     describe('load', () => {
       it('should fetch delegates from api', async () => {
         nock('http://127.0.0.1')
-          .get('/api/v2/delegates')
+          .get('/api/delegates')
           .query({ page: 1, limit: 100, orderBy: 'rank:asc' })
           .reply(200, {
             data: delegates,
@@ -74,7 +74,7 @@ describe('delegate store module', () => {
 
         for (let page = 1; page <= pageCount; page++) {
           nock('http://127.0.0.1')
-            .get('/api/v2/delegates')
+            .get('/api/delegates')
             .query({ page, limit: 100, orderBy: 'rank:asc' })
             .reply(200, {
               data: delegates.map(delegate => ({ ...delegate, address: `${delegate.address}-${page}` })),

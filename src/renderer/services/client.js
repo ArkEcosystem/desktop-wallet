@@ -7,7 +7,7 @@ import TransactionService from '@/services/transaction'
 import { TransactionBuilderService } from './crypto/transaction-builder.service'
 import { TransactionSigner } from './crypto/transaction-signer'
 import BigNumber from '@/plugins/bignumber'
-import { cammelToUpperSnake } from '@/utils'
+import { camelToUpperSnake } from '@/utils'
 
 export default class ClientService {
   /**
@@ -18,7 +18,7 @@ export default class ClientService {
    * @return {Connection}
    */
   static newConnection (server, timeout) {
-    return new Connection(`${server}/api/v2`).withOptions({
+    return new Connection(`${server}/api`).withOptions({
       timeout: timeout || 5000
     })
   }
@@ -110,7 +110,7 @@ export default class ClientService {
             @config is in UPPER_SNAKE_CASE. Eg: 'BUSSINES_UPDATE'
           */
           const groupName = `GROUP_${groupId}`
-          const parsedTypeName = cammelToUpperSnake(typeName)
+          const parsedTypeName = camelToUpperSnake(typeName)
 
           const type = TRANSACTION_TYPES[groupName][parsedTypeName]
 
@@ -151,7 +151,7 @@ export default class ClientService {
   }
 
   set host (host) {
-    this.__host = `${host}/api/v2`
+    this.__host = `${host}/api`
     this.client = ClientService.newConnection(host)
   }
 
