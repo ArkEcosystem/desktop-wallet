@@ -369,8 +369,9 @@
 </template>
 
 <script>
-import { clone, isEmpty } from 'lodash'
+import { clone } from 'lodash'
 import { BIP39, I18N, MARKET, PLUGINS } from '@config'
+import { isEmpty } from '@/utils'
 import { ButtonSwitch } from '@/components/Button'
 import { InputText } from '@/components/Input'
 import { ListDivided, ListDividedItem } from '@/components/ListDivided'

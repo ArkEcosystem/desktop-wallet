@@ -1,8 +1,9 @@
-import { isEmpty, random, shuffle } from 'lodash'
+import { random, shuffle } from 'lodash'
 import { PeerDiscovery } from '@arkecosystem/peers'
 import ClientService from '@/services/client'
 import config from '@config'
 import i18n from '@/i18n'
+import { isEmpty } from '@/utils'
 import PeerModel from '@/models/peer'
 import Vue from 'vue'
 
@@ -309,12 +310,12 @@ export default {
         const peerUrl = getBaseUrl(getters.current())
 
         return PeerDiscovery.new({
-          networkOrHost: `${peerUrl}/api/v2/peers`
+          networkOrHost: `${peerUrl}/api/peers`
         })
       }
 
       return PeerDiscovery.new({
-        networkOrHost: `${network.server}/api/v2/peers`
+        networkOrHost: `${network.server}/api/peers`
       })
     },
 

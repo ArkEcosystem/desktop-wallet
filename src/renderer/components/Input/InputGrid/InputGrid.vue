@@ -43,7 +43,7 @@
 </template>
 
 <script>
-import { flatten } from 'lodash'
+import { flatten } from '@/utils'
 import InputGridItem from './InputGridItem'
 import InputGridModal from './InputGridModal'
 
