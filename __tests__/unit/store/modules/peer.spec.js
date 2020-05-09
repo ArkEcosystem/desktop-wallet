@@ -81,7 +81,7 @@ describe('peer store module', () => {
   it('should get & set current peer', async () => {
     for (const peer of peers) {
       nock(`http://${peer.ip}:${peer.port}`)
-        .get('/api/v2/transactions/fees')
+        .get('/api/transactions/fees')
         .reply(200, {
           data: {
             send: 1,
@@ -122,23 +122,23 @@ describe('peer store module', () => {
     for (const peer of peers) {
       nock(`http://${peer.ip}:${peer.port}`)
         .persist()
-        .get('/api/v2/node/syncing')
+        .get('/api/node/syncing')
         .reply(200, {
           data: {
             height: 20000
           }
         })
-        .get('/api/v2/node/configuration')
+        .get('/api/node/configuration')
         .reply(200, {
           data: {
             nethash
           }
         })
-        .get('/api/v2/blocks/getEpoch')
+        .get('/api/blocks/getEpoch')
         .reply(200, {
           epoch: new Date()
         })
-        .get('/api/v2/transactions/fees')
+        .get('/api/transactions/fees')
         .reply(200, {
           data: {
             send: 1,
@@ -147,7 +147,7 @@ describe('peer store module', () => {
             vote: 1
           }
         })
-        .get('/api/v2/peers')
+        .get('/api/peers')
         .reply(200, {
           data: peerResponse
         })
@@ -167,7 +167,7 @@ describe('peer store module', () => {
 
     nock(`http://${goodPeer1.ip}:${goodPeer1.ports['@arkecosystem/core-api']}`)
       .persist()
-      .get('/api/v2/transactions/fees')
+      .get('/api/transactions/fees')
       .reply(200, {
         data: {
           send: 1,
@@ -180,7 +180,7 @@ describe('peer store module', () => {
     for (const peer of refreshPeers) {
       nock(`http://${peer.ip}:${peer.ports['@arkecosystem/core-api']}`)
         .persist()
-        .get('/api/v2/peers')
+        .get('/api/peers')
         .reply(200, {
           data: refreshPeers
         })
@@ -205,13 +205,13 @@ describe('peer store module', () => {
     client.host = host
 
     nock(host)
-      .get('/api/v2/node/syncing')
+      .get('/api/node/syncing')
       .reply(200, {
         data: {
           height: 21000
         }
       })
-      .get('/api/v2/node/configuration')
+      .get('/api/node/configuration')
       .reply(200, {
         data: {
           constants: {},
@@ -229,7 +229,7 @@ describe('peer store module', () => {
   it('should update current peer status', async () => {
     nock(`http://${goodPeer1.ip}:${goodPeer1.port}`)
       .persist()
-      .get('/api/v2/node/configuration')
+      .get('/api/node/configuration')
       .reply(200, {
         data: {
           constants: {
@@ -238,13 +238,13 @@ describe('peer store module', () => {
           nethash
         }
       })
-      .get('/api/v2/node/syncing')
+      .get('/api/node/syncing')
       .reply(200, {
         data: {
           height: 10000
         }
       })
-      .get('/api/v2/transactions/fees')
+      .get('/api/transactions/fees')
       .reply(200, {
         data: {
           send: 1,
@@ -268,14 +268,14 @@ describe('peer store module', () => {
 
   it('should validate a v2 peer successfully', async () => {
     nock(`http://${goodPeer1.ip}:${goodPeer1.port}`)
-      .get('/api/v2/node/configuration')
+      .get('/api/node/configuration')
       .reply(200, {
         data: {
           constants: {},
           nethash
         }
       })
-      .get('/api/v2/node/syncing')
+      .get('/api/node/syncing')
       .reply(200, {
         data: {
           height: 10002
@@ -293,14 +293,14 @@ describe('peer store module', () => {
 
   it('should validate a v2 https peer successfully', async () => {
     nock(`https://${goodPeer1.ip}:${goodPeer1.port}`)
-      .get('/api/v2/node/configuration')
+      .get('/api/node/configuration')
       .reply(200, {
         data: {
           constants: {},
           nethash
         }
       })
-      .get('/api/v2/node/syncing')
+      .get('/api/node/syncing')
       .reply(200, {
         data: {
           height: 10002
@@ -322,7 +322,7 @@ describe('peer store module', () => {
 
   it('should fail validating a v2 peer due to bad network url', async () => {
     nock(`http://${goodPeer1.ip}:${goodPeer1.port}`)
-      .get('/api/v2/node/configuration')
+      .get('/api/node/configuration')
       .reply(400)
 
     const response = await store.dispatch('peer/validatePeer', { ...goodPeer1, timeout: 100 })
@@ -331,14 +331,14 @@ describe('peer store module', () => {
 
   it('should fail validating a v2 peer due to bad sync status url', async () => {
     nock(`http://${goodPeer1.ip}:${goodPeer1.port}`)
-      .get('/api/v2/node/configuration')
+      .get('/api/node/configuration')
       .reply(200, {
         data: {
           constants: {},
           nethash
         }
       })
-      .get('/api/v2/node/syncing')
+      .get('/api/node/syncing')
       .reply(400)
 
     const response = await store.dispatch('peer/validatePeer', { ...goodPeer1, timeout: 100 })
@@ -348,7 +348,7 @@ describe('peer store module', () => {
   it('should fail validating a v2 peer because of wrong nethash', async () => {
     nock(`http://${goodPeer1.ip}:${goodPeer1.port}`)
       .persist()
-      .get('/api/v2/node/configuration')
+      .get('/api/node/configuration')
       .reply(200, {
         data: {
           constants: {},

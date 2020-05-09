@@ -18,7 +18,7 @@ export default class ClientService {
    * @return {Connection}
    */
   static newConnection (server, timeout) {
-    return new Connection(`${server}/api/v2`).withOptions({
+    return new Connection(`${server}/api`).withOptions({
       timeout: timeout || 5000
     })
   }
@@ -151,7 +151,7 @@ export default class ClientService {
   }
 
   set host (host) {
-    this.__host = `${host}/api/v2`
+    this.__host = `${host}/api`
     this.client = ClientService.newConnection(host)
   }
 

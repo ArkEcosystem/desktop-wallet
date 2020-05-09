@@ -360,7 +360,7 @@ describe('ledger store module', () => {
     it('should load all wallets with multi-wallet search', async () => {
       nock('http://127.0.0.1')
         .persist()
-        .post('/api/v2/wallets/search')
+        .post('/api/wallets/search')
         .reply(200, {
           data: ledgerWallets.slice(0, 9)
         })
@@ -374,7 +374,7 @@ describe('ledger store module', () => {
 
       nock('http://127.0.0.1')
         .persist()
-        .post('/api/v2/wallets/search')
+        .post('/api/wallets/search')
         .reply(200, {
           data: ledgerWallets.slice(0, 9)
         })
