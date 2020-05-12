@@ -227,11 +227,11 @@ describe('ledger store module', () => {
 
       const response = await store.dispatch('ledger/signTransaction', {
         accountIndex: 1,
-        transactionHex: 'abc'
+        transactionBytes: Buffer.from([1, 2, 3, 4])
       })
 
       expect(response).toBe('SIGNATURE')
-      expect(spy).toHaveBeenNthCalledWith(1, '44\'/1234\'/1\'/0/0', 'abc')
+      expect(spy).toHaveBeenNthCalledWith(1, '44\'/1234\'/1\'/0/0', Buffer.from([1, 2, 3, 4]))
 
       spy.mockRestore()
     })
@@ -244,7 +244,7 @@ describe('ledger store module', () => {
       await disconnectLedger()
       await expect(store.dispatch('ledger/signTransaction', {
         accountIndex: 1,
-        transactionHex: 'abc'
+        transactionBytes: Buffer.from('abc', 'utf-8')
       })).rejects.toThrow(/.*Ledger not connected$/)
     })
   })
@@ -258,11 +258,11 @@ describe('ledger store module', () => {
 
       const response = await store.dispatch('ledger/signMessage', {
         accountIndex: 1,
-        messageHex: 'abc'
+        messageBytes: Buffer.from('abc', 'utf-8')
       })
 
       expect(response).toBe('SIGNATURE')
-      expect(spy).toHaveBeenNthCalledWith(1, '44\'/1234\'/1\'/0/0', 'abc')
+      expect(spy).toHaveBeenNthCalledWith(1, '44\'/1234\'/1\'/0/0', Buffer.from('abc', 'utf-8'))
 
       spy.mockRestore()
     })
@@ -275,7 +275,7 @@ describe('ledger store module', () => {
       await disconnectLedger()
       await expect(store.dispatch('ledger/signMessage', {
         accountIndex: 1,
-        messageHex: 'abc'
+        messageBytes: Buffer.from('abc', 'utf-8')
       })).rejects.toThrow(/.*Ledger not connected$/)
     })
   })
@@ -360,7 +360,7 @@ describe('ledger store module', () => {
     it('should load all wallets with multi-wallet search', async () => {
       nock('http://127.0.0.1')
         .persist()
-        .post('/api/v2/wallets/search')
+        .post('/api/wallets/search')
         .reply(200, {
           data: ledgerWallets.slice(0, 9)
         })
@@ -374,7 +374,7 @@ describe('ledger store module', () => {
 
       nock('http://127.0.0.1')
         .persist()
-        .post('/api/v2/wallets/search')
+        .post('/api/wallets/search')
         .reply(200, {
           data: ledgerWallets.slice(0, 9)
         })

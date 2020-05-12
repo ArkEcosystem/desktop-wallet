@@ -1,5 +1,6 @@
 import path from 'path'
-import { flatten, sortBy } from 'lodash'
+import { sortBy } from 'lodash'
+import { flatten } from '@/utils'
 import imageManager from '@/services/image-manager'
 
 export default {

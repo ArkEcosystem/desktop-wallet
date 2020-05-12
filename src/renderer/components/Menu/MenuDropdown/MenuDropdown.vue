@@ -62,7 +62,8 @@
 </template>
 
 <script>
-import { zipObject, isEmpty } from 'lodash'
+import { zipObject } from 'lodash'
+import { isEmpty } from '@/utils'
 import MenuDropdownItem from './MenuDropdownItem'
 import MenuDropdownHandler from './MenuDropdownHandler'
 

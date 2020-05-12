@@ -38,11 +38,10 @@
 </template>
 
 <script>
-import { includes } from 'lodash'
 import { required } from 'vuelidate/lib/validators'
 import { MARKET } from '@config'
-import InputField from './InputField'
 import BigNumber from '@/plugins/bignumber'
+import InputField from './InputField'
 
 /**
  * This component uses a String value internally to avoid several problems, such
@@ -378,7 +377,7 @@ export default {
         ...Object.keys(MARKET.currencies),
         ...Object.values(MARKET.currencies).map(currency => currency.symbol)
       ]
-      return includes(currencies, currency)
+      return currencies.includes(currency)
     },
 
     reset () {

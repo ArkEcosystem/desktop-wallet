@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import localforage from 'localforage'
-import { merge, pullAll, keys } from 'lodash'
+import { merge, pullAll } from 'lodash'
 
 import packageJson from '@package.json'
 
@@ -48,7 +48,7 @@ const vuexMigrations = new VuexPersistMigrations({
   }
 })
 
-const modulesWithoutPersistence = pullAll(keys(modules), ['delegate', 'market', 'updater'])
+const modulesWithoutPersistence = pullAll(Object.keys(modules), ['delegate', 'market', 'updater'])
 
 const vuexPersist = new VuexPersistence({
   key: 'ark-desktop',

@@ -97,8 +97,8 @@ class LedgerService {
 
   /**
    * Get public key from ledger wallet.
-   * @param  {Number} path Path for wallet location.
-   * @return {(String|Boolean)}
+   * @param  {string} path Path for wallet location.
+   * @return {Promise<string>}
    */
   async getPublicKey (path) {
     return this.__performAction(async () => {
@@ -108,32 +108,31 @@ class LedgerService {
 
   /**
    * Sign transaction for ledger wallet.
-   * @param  {Number} path Path for wallet location.
-   * @param  {String} transactionHex Hex of transaction.
-   * @return {(String|Boolean)}
+   * @param  {string} path Path for wallet location.
+   * @param  {Buffer} transactionBytes bytes of transaction.
+   * @return {Promise<string>}
    */
-  async signTransaction (path, transactionHex) {
+  async signTransaction (path, transactionBytes) {
     return this.__performAction(async () => {
-      return this.ledger.signTransaction(path, transactionHex)
+      return this.ledger.signTransaction(path, transactionBytes)
     })
   }
 
   /**
-   * Sign message for ledger wallet.
-   * @param  {Number} path Path for wallet location.
-   * @param  {String} messageHex Hex to sign.
-   * @return {(String|Boolean)}
+   * Sign message for wallet.
+   * @param  {string} path Path for wallet location.
+   * @param  {Buffer} messageBytes bytes to sign.
+   * @return {Promise<string>}
    */
-  async signMessage (path, messageHex) {
+  async signMessage (path, messageBytes) {
     return this.__performAction(async () => {
-      return this.ledger.signMessage(path, Buffer.from(messageHex, 'hex'))
+      return this.ledger.signMessage(path, messageBytes)
     })
   }
 
   /**
-   * Get version of ledger wallet.
-   * @param  {Number} path Path for wallet location.
-   * @return {(String|Boolean)}
+   * Get version from ledger app.
+   * @return {Promise<string>}
    */
   async getVersion () {
     return this.__performAction(async () => {
