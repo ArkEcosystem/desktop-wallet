@@ -4,6 +4,7 @@
     :items="suggestions"
     :value="dropdownValue"
     :pin-to-input-width="true"
+    :is-disabled="isDisabled"
     class="InputAddress__MenuDropdown"
     @select="onDropdownSelect"
     @click="focus"

@@ -10,7 +10,7 @@
       name="profile"
       :class="profileClass"
       class="flex-1"
-      @select="onSelect"
+      @input="onInput"
     />
 
     <InputSelect
@@ -24,7 +24,7 @@
       name="wallet"
       :class="walletClass"
       class="flex-1"
-      @select="onSelect"
+      @input="onInput"
     />
   </div>
 </template>
@@ -191,20 +191,25 @@ export default {
     },
 
     wallet (wallet) {
-      let profileId = null
-      let walletId = null
       if (wallet && wallet.profileId) {
-        profileId = wallet.profileId
-        walletId = wallet.id
+        this.profileId = wallet.profileId
+        this.walletId = wallet.id
       }
 
-      this.profileId = profileId
-      this.walletId = walletId
       this.model = wallet
     },
 
     walletId (walletId) {
       this.wallet = this.wallets.find(wallet => wallet.id === walletId)
+    },
+
+    profileId () {
+      if (this.currentWalletId) {
+        this.currentWalletId = null
+        this.$emit('input', null)
+      }
+
+      this.$emit('select-profile', this.currentProfileId)
     }
   },
 
@@ -230,7 +235,7 @@ export default {
       this.$refs['input-wallet'].blur()
     },
 
-    onSelect () {
+    onInput () {
       this.$emit('select')
     }
   }

@@ -29,12 +29,13 @@
       :compatible-address="$v.recipientId.$model"
       class="TransactionFormTransfer__wallet mb-5"
       profile-class="mb-5"
+      @select-profile="onSelectProfile"
       @select="ensureAvailableAmount"
     />
 
     <div
       class="flex flex-col"
-      :class="{ 'opacity-25': !currentWallet }"
+      :class="{ 'blur opacity-50': !currentWallet }"
     >
       <InputAddress
         ref="recipient"
@@ -617,6 +618,10 @@ export default {
     onFee (fee) {
       this.$v.form.fee.$model = fee
       this.ensureAvailableAmount()
+    },
+
+    onSelectProfile (profileId) {
+      console.log('profile selected: %s', profileId)
     },
 
     emitNext (transaction) {
