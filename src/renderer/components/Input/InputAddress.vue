@@ -115,6 +115,11 @@ export default {
       type: Number,
       required: true
     },
+    profileId: {
+      type: String,
+      required: false,
+      default: null
+    },
     showSuggestions: {
       type: Boolean,
       required: false,
@@ -146,6 +151,14 @@ export default {
 
   computed: {
     currentProfile () {
+      if (this.profileId) {
+        const profile = this.$store.getters['profile/byId'](this.profileId)
+
+        if (profile) {
+          return profile
+        }
+      }
+
       return this.session_profile
     },
 

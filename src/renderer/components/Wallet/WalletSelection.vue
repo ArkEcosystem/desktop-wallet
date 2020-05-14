@@ -203,13 +203,11 @@ export default {
       this.wallet = this.wallets.find(wallet => wallet.id === walletId)
     },
 
-    profileId () {
-      if (this.currentWalletId) {
+    profileId (newValue, oldValue) {
+      if (oldValue && this.currentWalletId) {
         this.currentWalletId = null
         this.$emit('input', null)
       }
-
-      this.$emit('select-profile', this.currentProfileId)
     }
   },
 

@@ -16,8 +16,17 @@ export default {
       return `${this.$n(value, options)}%`
     },
 
-    formatter_networkCurrency (value, digits) {
-      return this.currency_format(this.currency_subToUnit(value), { currencyFrom: 'network', maximumFractionDigits: digits })
+    formatter_networkCurrency (value, { token, fractionDigits } = {}) {
+      const options = {
+        currency: token,
+        maximumFractionDigits: fractionDigits
+      }
+
+      if (!token) {
+        options.currencyFrom = 'network'
+      }
+
+      return this.currency_format(this.currency_subToUnit(value), options)
     },
 
     formatter_votes (value) {

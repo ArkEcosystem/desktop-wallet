@@ -102,7 +102,16 @@ export default {
     },
 
     walletNetwork () {
-      return this.session_network
+      if (!this.currentWallet || !this.currentWallet.id) {
+        return this.session_network
+      }
+
+      const profile = this.$store.getters['profile/byId'](this.currentWallet.profileId)
+      if (!profile || !profile.id) {
+        return this.session_network
+      }
+
+      return this.$store.getters['network/byId'](profile.networkId) || this.session_network
     },
 
     senderWallet () {
@@ -117,7 +126,10 @@ export default {
   mounted () {
     this.populateSchema()
 
-    if (this.$refs.fee) {
+    if (this.form.fee) {
+      this.$refs.fee.setFee(this.form.fee)
+      this.$refs.fee.chosenFee = 'INPUT'
+    } else if (this.$refs.fee) {
       this.form.fee = this.$refs.fee.fee
     }
   },

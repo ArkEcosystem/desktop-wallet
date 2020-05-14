@@ -54,7 +54,7 @@
           </span>
 
           <span v-else>
-            {{ formatter_networkCurrency(item.amount) }}
+            {{ formatAmount(item.amount) }}
           </span>
         </div>
       </div>
@@ -131,6 +131,12 @@ export default {
       type: Boolean,
       required: false,
       default: false
+    },
+
+    walletNetwork: {
+      type: Object,
+      required: false,
+      default: null
     }
   },
 
@@ -142,6 +148,10 @@ export default {
       }
 
       return address
+    },
+
+    formatAmount (amount) {
+      return this.formatter_networkCurrency(amount, this.walletNetwork)
     },
 
     emitRemove (index) {

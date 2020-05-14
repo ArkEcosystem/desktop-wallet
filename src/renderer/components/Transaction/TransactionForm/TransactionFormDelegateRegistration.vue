@@ -33,7 +33,7 @@
 
     <div
       class="flex flex-col"
-      :class="{ 'opacity-25': !currentWallet }"
+      :class="{ 'blur opacity-25': !currentWallet }"
     >
       <InputText
         v-model="$v.form.username.$model"

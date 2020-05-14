@@ -6,10 +6,10 @@ const schemaRegex = new RegExp(/^(?:ark:)([-0-9a-zA-Z]{1,34})([-a-zA-Z0-9+&@#/%=
 
 const URIActions = {
   [TRANSACTION_GROUPS.STANDARD]: {
-    TRANSFER: 'transfer',
-    VOTE: 'vote',
-    DELEGATE_REGISTRATION: 'register-delegate',
-    DELEGATE_RESIGNATION: 'resign-delegate'
+    TRANSFER: 'transfer'
+  //   VOTE: 'vote',
+  //   DELEGATE_REGISTRATION: 'register-delegate',
+  //   DELEGATE_RESIGNATION: 'resign-delegate'
   // },
   // [TRANSACTION_GROUPS.MAGISTRATE]: {
   //   BUSINESS_REGISTRATION: 'register-business',

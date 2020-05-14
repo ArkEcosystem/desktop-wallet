@@ -26,10 +26,9 @@
     <WalletSelection
       v-if="hasSchema"
       v-model="$v.wallet.$model"
-      :compatible-address="$v.recipientId.$model"
+      :compatible-address="compatibleAddress"
       class="TransactionFormTransfer__wallet mb-5"
       profile-class="mb-5"
-      @select-profile="onSelectProfile"
       @select="ensureAvailableAmount"
     />
 
@@ -42,6 +41,7 @@
         v-model="$v.recipientId.$model"
         :label="$t('TRANSACTION.RECIPIENT')"
         :pub-key-hash="walletNetwork.version"
+        :profile-id="currentWallet ? currentWallet.profileId : null"
         :show-suggestions="true"
         :is-disabled="!currentWallet"
         :warning-text="recipientWarning"
@@ -93,6 +93,7 @@
         :show-count="true"
         :is-invalid="hasMoreThanMaximumRecipients"
         :required="true"
+        :wallet-network="walletNetwork"
         class="TransactionFormTransfer__recipients mt-4"
         @remove="emitRemoveRecipient"
       />
@@ -315,6 +316,14 @@ export default {
       return this.form.recipients.length > this.maximumRecipients
     },
 
+    compatibleAddress () {
+      if (this.hasAip11 && this.form.recipients.length) {
+        return this.form.recipients[0].address
+      }
+
+      return this.$v.recipientId.isValid ? this.$v.recipientId.$model : null
+    },
+
     transactionTypeFee () {
       return this.isMultiPayment ? TRANSACTION_TYPES.GROUP_1.MULTI_PAYMENT : TRANSACTION_TYPES.GROUP_1.TRANSFER
     },
@@ -335,7 +344,7 @@ export default {
       }
 
       return this.$t('TRANSACTION_FORM.ERROR.NOT_ENOUGH_BALANCE', {
-        balance: this.formatter_networkCurrency(this.currentWallet.balance)
+        balance: this.formatter_networkCurrency(this.currentWallet.balance, this.walletNetwork)
       })
     },
 
@@ -395,20 +404,6 @@ export default {
 
     canSendAll () {
       return this.maximumAvailableAmount > 0
-    },
-
-    walletNetwork () {
-      const sessionNetwork = this.session_network
-      if (!this.currentWallet || !this.currentWallet.id) {
-        return sessionNetwork
-      }
-
-      const profile = this.$store.getters['profile/byId'](this.currentWallet.profileId)
-      if (!profile || !profile.id) {
-        return sessionNetwork
-      }
-
-      return this.$store.getters['network/byId'](profile.networkId) || sessionNetwork
     },
 
     vendorFieldLabel () {
@@ -618,10 +613,6 @@ export default {
     onFee (fee) {
       this.$v.form.fee.$model = fee
       this.ensureAvailableAmount()
-    },
-
-    onSelectProfile (profileId) {
-      console.log('profile selected: %s', profileId)
     },
 
     emitNext (transaction) {

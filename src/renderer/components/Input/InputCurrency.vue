@@ -214,7 +214,7 @@ export default {
     },
 
     isMarketEnabled () {
-      return this.session_network.market.enabled
+      return this.walletNetwork ? this.walletNetwork.market.enabled : this.session_network.market.enabled
     },
 
     model: {
