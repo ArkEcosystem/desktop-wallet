@@ -126,8 +126,8 @@ export default {
   mounted () {
     this.populateSchema()
 
-    if (this.form.fee) {
-      this.$refs.fee.setFee(this.form.fee)
+    if (this.schema.fee) {
+      this.$refs.fee.setFee(this.schema.fee)
       this.$refs.fee.chosenFee = 'INPUT'
     } else if (this.$refs.fee) {
       this.form.fee = this.$refs.fee.fee

@@ -4,7 +4,11 @@ export const populateFormFromSchema = (component, mappings) => {
   }
 
   for (const [key, value] of Object.entries(mappings)) {
-    component.$set(component.form, key, value)
+    if (['amount', 'recipientId'].includes(key)) {
+      component.$set(component, key, value)
+    } else {
+      component.$set(component.form, key, value)
+    }
   }
 
   if (component.schema.wallet) {

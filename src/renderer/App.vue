@@ -369,7 +369,10 @@ export default {
         if (!uri.validate()) {
           this.$error(this.$t('VALIDATION.INVALID_URI'))
         } else {
-          this.openUriTransaction(uri.deserialize())
+          const schema = uri.deserialize()
+          if (uri.uriType === 'transaction') {
+            this.openUriTransaction(schema)
+          }
         }
       })
 

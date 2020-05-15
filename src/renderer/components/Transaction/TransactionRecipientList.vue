@@ -151,7 +151,7 @@ export default {
     },
 
     formatAmount (amount) {
-      return this.formatter_networkCurrency(amount, this.walletNetwork)
+      return this.formatter_networkCurrency(amount, this.walletNetwork || {})
     },
 
     emitRemove (index) {

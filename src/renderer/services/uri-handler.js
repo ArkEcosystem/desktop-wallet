@@ -1,29 +1,33 @@
 import { TRANSACTION_GROUPS, TRANSACTION_TYPES } from '@config'
+import { capitalize } from '@/utils'
 
 import querystring from 'querystring'
 
 const schemaRegex = new RegExp(/^(?:ark:)([-0-9a-zA-Z]{1,34})([-a-zA-Z0-9+&@#/%=~_|$?!:,.]*)$/)
 
 const URIActions = {
-  [TRANSACTION_GROUPS.STANDARD]: {
-    TRANSFER: 'transfer'
-  //   VOTE: 'vote',
-  //   DELEGATE_REGISTRATION: 'register-delegate',
-  //   DELEGATE_RESIGNATION: 'resign-delegate'
-  // },
-  // [TRANSACTION_GROUPS.MAGISTRATE]: {
-  //   BUSINESS_REGISTRATION: 'register-business',
-  //   BUSINESS_RESIGNATION: 'resign-business',
-  //   BUSINESS_UPDATE: 'update-business',
-  //   BRIDGECHAIN_REGISTRATION: 'register-bridgechain',
-  //   BRIDGECHAIN_RESIGNATION: 'resign-bridgechain',
-  //   BRIDGECHAIN_UPDATE: 'update-bridgechain'
+  transaction: {
+    [TRANSACTION_GROUPS.STANDARD]: {
+      TRANSFER: 'transfer'
+    //   VOTE: 'vote',
+    //   DELEGATE_REGISTRATION: 'register-delegate',
+    //   DELEGATE_RESIGNATION: 'resign-delegate'
+    // },
+    // [TRANSACTION_GROUPS.MAGISTRATE]: {
+    //   BUSINESS_REGISTRATION: 'register-business',
+    //   BUSINESS_RESIGNATION: 'resign-business',
+    //   BUSINESS_UPDATE: 'update-business',
+    //   BRIDGECHAIN_REGISTRATION: 'register-bridgechain',
+    //   BRIDGECHAIN_RESIGNATION: 'resign-bridgechain',
+    //   BRIDGECHAIN_UPDATE: 'update-bridgechain'
+    }
   }
 }
 
 export default class URIHandler {
   constructor (url) {
     this.url = url
+    this.uriType = null
   }
 
   /**
@@ -35,19 +39,18 @@ export default class URIHandler {
 
     if (!schema) return
 
-    let address, action
-
-    // 'address' is used only in legacy URIs, all other URIs have an 'action'
-    if (schema[1].length === 34) {
-      address = schema[1]
-    } else {
-      action = schema[1]
-    }
+    const addressOrAction = schema[1]
 
     const scheme = {
       ...querystring.parse(schema[2].substring(1))
     }
 
+    this.uriType = addressOrAction.length === 34 ? 'transaction' : this.__getActionType(addressOrAction)
+
+    return this[`build${capitalize(this.uriType)}Scheme`](scheme, addressOrAction)
+  }
+
+  buildTransactionScheme (scheme, addressOrAction) {
     scheme.type = Number(scheme.type) || TRANSACTION_TYPES.GROUP_1.TRANSFER
     scheme.typeGroup = Number(scheme.typeGroup) || TRANSACTION_GROUPS.STANDARD
 
@@ -58,9 +61,11 @@ export default class URIHandler {
     scheme.nethash = this.__fullyDecode(scheme.nethash)
     scheme.vendorField = this.__fullyDecode(scheme.vendorField) || ''
     scheme.wallet = this.__fullyDecode(scheme.wallet)
-    scheme.recipientId = address || scheme.recipientId || ''
+    scheme.recipientId = addressOrAction.length === 34 ? addressOrAction : (scheme.recipientId || '')
 
-    this.__inferTypesFromAction(scheme, action)
+    scheme.recipients = this.__parseRecipients(scheme.recipients) || []
+
+    this.__inferTransactionTypes(scheme, addressOrAction)
 
     const baseSchema = {
       type: scheme.type,
@@ -80,6 +85,7 @@ export default class URIHandler {
           ...baseSchema,
           amount: scheme.amount,
           recipientId: scheme.recipientId,
+          recipients: scheme.recipients,
           vendorField: scheme.vendorField
         }
       }
@@ -141,7 +147,7 @@ export default class URIHandler {
     if (schemaRegex.test(this.url)) {
       const schema = this.__formatSchema()
 
-      if (schema[1].length === 34 || this.__actionExists(schema[1])) {
+      if (schema[1].length === 34 || !!this.__getActionType(schema[1])) {
         return schema
       }
     }
@@ -166,35 +172,58 @@ export default class URIHandler {
     return param
   }
 
+  __parseRecipients (param) {
+    const parts = (this.__fullyDecode(param) || '').split(',')
+
+    if (parts.length % 2) return
+
+    const recipients = []
+
+    for (let i = 0; i <= parts.length - 2; i = i + 2) {
+      recipients.push({
+        address: parts[i],
+        amount: parts[i + 1]
+      })
+    }
+
+    return recipients
+  }
+
   __formatSchema () {
     return schemaRegex.exec(this.url)
   }
 
-  __inferTypesFromAction (scheme, action) {
-    if (!this.__actionExists(action)) {
+  __inferTransactionTypes (scheme, actionName) {
+    if (!this.__getActionType(actionName)) {
       return
     }
 
-    for (const [typeGroup, types] of Object.entries(URIActions)) {
-      if (Object.values(types).includes(action)) {
+    const actions = URIActions.transaction
+
+    for (const [typeGroup, types] of Object.entries(actions)) {
+      if (Object.values(types).includes(actionName)) {
         scheme.typeGroup = Number(typeGroup)
       }
     }
 
-    for (const [key, value] of Object.entries(URIActions[scheme.typeGroup])) {
-      if (value === action) {
+    for (const [key, curr] of Object.entries(actions[scheme.typeGroup])) {
+      if (curr === actionName) {
         scheme.type = Number(TRANSACTION_TYPES[`GROUP_${scheme.typeGroup}`][key])
       }
     }
   }
 
-  __actionExists (action) {
-    for (const actionGroup of Object.values(URIActions)) {
-      if (Object.values(actionGroup).includes(action)) {
-        return true
+  __getActionType (actionName, actions = URIActions) {
+    for (const [key, curr] of Object.entries(actions)) {
+      if (typeof curr === 'string') {
+        if (curr === actionName) {
+          return key
+        }
+      } else {
+        if (this.__getActionType(actionName, curr)) return key
       }
     }
 
-    return false
+    return undefined
   }
 }
