@@ -52,7 +52,7 @@ export class PluginManager {
     this.pluginsPath = process.env.NODE_ENV !== 'development' ? PLUGINS.path : PLUGINS.devPath
 
     await this.app.$store.dispatch('plugin/reset')
-    // await this.fetchPlugins()
+    await this.fetchPlugins()
 
     this.hasInit = true
 

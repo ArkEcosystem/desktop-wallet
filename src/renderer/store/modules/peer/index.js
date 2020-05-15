@@ -373,13 +373,15 @@ export default {
             try {
               const seeds = fallbackSeeds[network.id]
               const seed = seeds[Math.floor(Math.random() * seeds.length)]
-              const peerDiscovery = PeerDiscovery.new({ networkOrHost: `http://${seed.ip}:${seed.port}/api/peers` })
+              const peerDiscovery = await PeerDiscovery.new({ networkOrHost: `http://${seed.ip}:4003/api/peers` })
 
               peers = await discoverPeers(peerDiscovery)
 
               peerDiscoveryFailed = false
             } catch (error) {
               peerDiscoveryFailed = true
+
+              console.error('Could not refresh peer list:', error)
             }
           }
         } else {
