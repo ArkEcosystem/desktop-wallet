@@ -182,6 +182,8 @@ export default {
     },
     PASSWORD: {
       TOO_SHORT: 'Your password must be at least {0} characters long',
+      LOWER_CASE: 'Your password must contain at least 1 lowercase character',
+      UPPER_CASE: 'Your password must contain at least 1 uppercase character',
       NUMBERS: 'Your password must contain at least 1 number',
       SPECIAL_CHARACTERS: 'Your password must contain at least 1 special character',
       NO_MATCH: 'Your passwords do not match'
