@@ -289,7 +289,12 @@ export default {
   methods: {
     async loadEssential () {
       // We need to await plugins in order for all plugins to load properly
-      await this.$plugins.init(this)
+      try {
+        await this.$plugins.init(this)
+      } catch {
+        this.$error('Failed to load plugins. NPM might be down.')
+      }
+
       await this.$store.dispatch('network/load')
       const currentProfileId = this.$store.getters['session/profileId']
       await this.$store.dispatch('session/reset')
@@ -332,7 +337,11 @@ export default {
 
       ipcRenderer.send('splashscreen:app-ready')
 
-      await Promise.all([this.$plugins.fetchPluginsFromAdapter(), this.$plugins.fetchPluginsList()])
+      try {
+        await Promise.all([this.$plugins.fetchPluginsFromAdapter(), this.$plugins.fetchPluginsList()])
+      } catch {
+        this.$error('Failed to load plugins. NPM might be down.')
+      }
     },
 
     __watchProfile () {
