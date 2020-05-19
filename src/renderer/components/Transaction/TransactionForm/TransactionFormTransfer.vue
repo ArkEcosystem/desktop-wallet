@@ -559,9 +559,30 @@ export default {
         return
       }
 
-      this.$set(this, 'amount', this.schema.amount || '')
-      this.$set(this, 'recipientId', this.schema.address || '')
-      this.$set(this.form, 'vendorField', this.schema.vendorField || '')
+      try {
+        if (this.schema.address && this.schema.amount) {
+          if (WalletService.validateAddress(this.schema.address, this.session_network.version)) {
+            this.$v.form.recipients.$model = []
+            this.$v.form.recipients.$model.push({
+              address: this.schema.address,
+              amount: this.currency_unitToSub(this.schema.amount),
+              sendAll: false
+            })
+          } else {
+            throw new Error(this.$t('VALIDATION.RECIPIENT_DIFFERENT_NETWORK', [
+              this.wallet_truncate(this.schema.address)
+            ]))
+          }
+        }
+
+        this.$set(this.form, 'vendorField', this.schema.vendorField || '')
+      } catch (error) {
+        if (error.name === 'SyntaxError') {
+          error.message = this.$t('VALIDATION.INVALID_FORMAT')
+        }
+
+        this.$error(`${this.$t('TRANSACTION.ERROR.LOAD_FROM_FILE')}: ${error.message}`)
+      }
 
       if (this.schema.wallet) {
         const currentProfileId = this.$store.getters['session/profileId']
