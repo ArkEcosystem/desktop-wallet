@@ -39,10 +39,7 @@ jobs:
         run: sudo apt-get install libudev-dev libusb-1.0-0-dev
 
       - name: Install
-        run: yarn yarn install --immutable --immutable-cache
-
-      - name: Lint
-        run: yarn lint
+        run: yarn install --immutable --immutable-cache
 
       - name: Test
         run: node --max-old-space-size=4096 ./node_modules/.bin/jest --config __tests__/unit.jest.conf.js __tests__/unit/ --logHeapUsage --coverage
