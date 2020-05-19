@@ -33,10 +33,8 @@
 								class="AppUpdater__authorized__downloading__header__info"
 							>
 								<span class="font-semibold">{{ formattedPercentage }}</span>
-								<span class="ml-2 text-theme-page-text-light truncate"
-									>{{ formatter_bytes(progressUpdate.transferred) }} /
-									{{ formatter_bytes(progressUpdate.total) }}</span
-								>
+								<span class="ml-2 text-theme-page-text-light truncate">{{ formatter_bytes(progressUpdate.transferred) }} /
+									{{ formatter_bytes(progressUpdate.total) }}</span>
 							</div>
 						</div>
 						<div class="AppUpdater__progress-bar">
