@@ -34,5 +34,3 @@ jobs:
         with:
           commit_message: "style: resolve style guide violations"
           branch: ${{ github.head_ref }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
