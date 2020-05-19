@@ -1,0 +1,64 @@
+{
+    "id": "ark.mainnet",
+    "name": "ARK Mainnet",
+    "title": "ARK Mainnet",
+    "server": "https://explorer.ark.io:8443",
+    "description": "The ARK Mainnet should be chosen in most cases.",
+    "imagePath": "networks/ark.png",
+    "apiVersion": 2,
+    "slip44": "111",
+    "market": {
+        "enabled": true,
+        "ticker": "ARK"
+    },
+    "feeStatistics": [
+        {
+            "type": 0,
+            "fees": {
+                "avgFee": 10000000,
+                "maxFee": 10000000,
+                "minFee": 10000000
+            }
+        },
+        {
+            "type": 1,
+            "fees": {
+                "avgFee": 500000000,
+                "maxFee": 500000000,
+                "minFee": 500000000
+            }
+        },
+        {
+            "type": 2,
+            "fees": {
+                "avgFee": 2500000000,
+                "maxFee": 2500000000,
+                "minFee": 2500000000
+            }
+        },
+        {
+            "type": 3,
+            "fees": {
+                "avgFee": 100000000,
+                "maxFee": 100000000,
+                "minFee": 100000000
+            }
+        }
+    ],
+    "constants": {
+        "activeDelegates": 51,
+        "epoch": "2017-03-21T13:00:00.000Z"
+    },
+    "vendorField": {
+        "maxLength": 255
+    },
+    "nethash": "6e84d08bd299ed97c212c886c98a57e36545c8f5d645ca7eeae63a8bd62d8988",
+    "explorer": "https://explorer.ark.io",
+    "knownWalletsUrl": "https://raw.githubusercontent.com/ArkEcosystem/common/master/mainnet/known-wallets.json",
+    "token": "ARK",
+    "subunit": "arktoshi",
+    "symbol": "Ѧ",
+    "fractionDigits": 8,
+    "version": 23,
+    "wif": 170
+}
