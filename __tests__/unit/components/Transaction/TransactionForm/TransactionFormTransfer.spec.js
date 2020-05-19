@@ -986,16 +986,16 @@ describe('TransactionFormTransfer', () => {
       it('should load in schema form data', () => {
         wrapper.setProps({
           schema: {
-            amount: (10 * 1e8).toString(),
             address: 'address-5',
+            amount: 100,
             vendorField: 'test vendorfield'
           }
         })
 
         wrapper.vm.populateSchema()
 
-        expect(wrapper.vm.amount).toBe((10 * 1e8).toString())
-        expect(wrapper.vm.recipientId).toBe('address-5')
+        expect(wrapper.vm.form.recipients[0].address).toBe('address-5')
+        expect(wrapper.vm.form.recipients[0].amount).toEqual(new BigNumber(100 * 1e8))
         expect(wrapper.vm.form.vendorField).toBe('test vendorfield')
       })
 
