@@ -37,7 +37,7 @@
 		"format": "yarn lint && yarn prettier",
 		"lint": "eslint src --ext .js,.vue --fix --cache",
 		"lint:test": "eslint __tests__ --ext .js,.vue --fix --cache",
-		"prettier": "prettier --write \"./*.{ts,js,vue,json,md,}\" \"./**/*.{ts,js,vue,json,md,}\"",
+		"prettier": "prettier --write",
 		"pack": "npm run pack:main && npm run pack:renderer",
 		"pack:main": "cross-env NODE_ENV=production webpack --progress --colors --config .electron-vue/webpack.main.config.js",
 		"pack:renderer": "cross-env NODE_ENV=production webpack --progress --colors --config .electron-vue/webpack.renderer.config.js",

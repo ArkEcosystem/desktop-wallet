@@ -38,7 +38,7 @@
 </template>
 
 <script>
-import { ButtonGeneric } from "@/components/Button";
+import { ButtonGeneric } from "@/components/ButtonGeneric";
 import SvgIcon from "@/components/SvgIcon";
 
 export default {
