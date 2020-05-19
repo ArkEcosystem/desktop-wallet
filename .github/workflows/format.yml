@@ -13,7 +13,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.head_ref }}
 
       - name: Update System
         run: sudo apt-get update
@@ -24,12 +26,13 @@ jobs:
       - name: Install
         run: yarn global add node-gyp && yarn install --frozen-lockfile && npm rebuild
 
-      - name: Run eslint
-        run: yarn lint:fix
+      - name: Lint source
+        run: yarn lint
 
-      - uses: stefanzweifel/git-auto-commit-action@v4.1.2
+      - name: Lint tests
+        run: yarn lint:test
+
+      - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: "style: resolve style guide violations"
           branch: ${{ github.head_ref }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}

@@ -41,26 +41,33 @@ Translations are no longer accepted for the Desktop Wallet. We are using plugins
 ### Requirements
 
 #### Ubuntu
+
 In Ubuntu the development files of `libudev` are necessary:
+
 ```
 sudo apt-get install libudev-dev libusb-1.0-0-dev
 ```
 
 #### Windows
-- Python 2.7
-- Visual Studio 2017
+
+-   Python 2.7
+-   Visual Studio 2017
 
 #### Node 12
+
 To download, head over to [here](https://nodejs.org/en/) and download Node 12.
 
 If you already have npm installed, you can run
+
 ```
 npm install -g n
 sudo n 12
 ```
 
 #### Yarn
+
 Install the Yarn dependency manager
+
 ```
 npm install -g yarn
 ```
@@ -69,18 +76,15 @@ npm install -g yarn
 
 <details><summary>List of commands</summary>
 
-``` bash
+```bash
 # Install dependencies
 yarn install
 
 # Execute the application. Making changes in the code, updates the application (hot reloading).
 yarn dev
 
-# Lint all JS/Vue files in the `src` and `__tests__`
-yarn lint
-
 # Lint, and fix, all JS/Vue files in `src` and `__tests__`
-yarn lint:fix
+yarn lint
 
 # Collect the code and produce a compressed file
 yarn pack

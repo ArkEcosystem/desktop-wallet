@@ -1,24 +1,24 @@
-import eventBus from './event-bus'
-import { transform, assignIn } from 'lodash'
+import { assignIn, transform } from "lodash";
 
-const triggerAlert = (alert) => eventBus.emit('alert', alert)
+import eventBus from "./event-bus";
 
-const types = [
-  'error',
-  'success',
-  'info',
-  'warn'
-]
+const triggerAlert = (alert) => eventBus.emit("alert", alert);
 
-const inject = transform(types, (result, type) => {
-  result[`$${type}`] = (message, duration) => {
-    triggerAlert({ message, type, duration })
-  }
-}, {})
+const types = ["error", "success", "info", "warn"];
+
+const inject = transform(
+	types,
+	(result, type) => {
+		result[`$${type}`] = (message, duration) => {
+			triggerAlert({ message, type, duration });
+		};
+	},
+	{},
+);
 
 export default {
-  install (Vue) {
-    assignIn(Vue.prototype, inject)
-  },
-  ...inject
-}
+	install(Vue) {
+		assignIn(Vue.prototype, inject);
+	},
+	...inject,
+};

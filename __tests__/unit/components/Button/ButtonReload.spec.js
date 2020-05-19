@@ -1,19 +1,20 @@
-import { mount } from '@vue/test-utils'
-import { ButtonReload } from '@/components/Button'
+import { mount } from "@vue/test-utils";
 
-describe('ButtonReload', () => {
-  let wrapper
+import { ButtonReload } from "@/components/Button";
 
-  beforeEach(() => {
-    wrapper = mount(ButtonReload)
-  })
+describe("ButtonReload", () => {
+	let wrapper;
 
-  it('should render', () => {
-    expect(wrapper.contains('.ButtonReload')).toBeTruthy()
-  })
+	beforeEach(() => {
+		wrapper = mount(ButtonReload);
+	});
 
-  it('should emit click event', () => {
-    wrapper.trigger('click')
-    expect(wrapper.emitted('click')).toBeTruthy()
-  })
-})
+	it("should render", () => {
+		expect(wrapper.contains(".ButtonReload")).toBeTruthy();
+	});
+
+	it("should emit click event", () => {
+		wrapper.trigger("click");
+		expect(wrapper.emitted("click")).toBeTruthy();
+	});
+});

@@ -1,21 +1,13 @@
-import { Transactions } from '@arkecosystem/crypto'
-import * as MagistrateCrypto from '@arkecosystem/core-magistrate-crypto'
+import * as MagistrateCrypto from "@arkecosystem/core-magistrate-crypto";
+import { Transactions } from "@arkecosystem/crypto";
 
+Transactions.TransactionRegistry.registerTransactionType(MagistrateCrypto.Transactions.BusinessRegistrationTransaction);
+Transactions.TransactionRegistry.registerTransactionType(MagistrateCrypto.Transactions.BusinessResignationTransaction);
+Transactions.TransactionRegistry.registerTransactionType(MagistrateCrypto.Transactions.BusinessUpdateTransaction);
 Transactions.TransactionRegistry.registerTransactionType(
-  MagistrateCrypto.Transactions.BusinessRegistrationTransaction
-)
+	MagistrateCrypto.Transactions.BridgechainRegistrationTransaction,
+);
 Transactions.TransactionRegistry.registerTransactionType(
-  MagistrateCrypto.Transactions.BusinessResignationTransaction
-)
-Transactions.TransactionRegistry.registerTransactionType(
-  MagistrateCrypto.Transactions.BusinessUpdateTransaction
-)
-Transactions.TransactionRegistry.registerTransactionType(
-  MagistrateCrypto.Transactions.BridgechainRegistrationTransaction
-)
-Transactions.TransactionRegistry.registerTransactionType(
-  MagistrateCrypto.Transactions.BridgechainResignationTransaction
-)
-Transactions.TransactionRegistry.registerTransactionType(
-  MagistrateCrypto.Transactions.BridgechainUpdateTransaction
-)
+	MagistrateCrypto.Transactions.BridgechainResignationTransaction,
+);
+Transactions.TransactionRegistry.registerTransactionType(MagistrateCrypto.Transactions.BridgechainUpdateTransaction);

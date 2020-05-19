@@ -1,44 +1,44 @@
-import { create as createAvatarsSetup } from '@/services/plugin-manager/setup/avatars-setup'
-import { Plugin } from '@/services/plugin-manager/plugin'
+import { Plugin } from "@/services/plugin-manager/plugin";
+import { create as createAvatarsSetup } from "@/services/plugin-manager/setup/avatars-setup";
 
 const plugin = new Plugin({
-  config: {
-    id: 1
-  }
-})
+	config: {
+		id: 1,
+	},
+});
 
 plugin.components = {
-  man: {},
-  woman: {}
-}
+	man: {},
+	woman: {},
+};
 
 const pluginObject = {
-  getAvatars: jest.fn(() => ['man', 'woman'])
-}
+	getAvatars: jest.fn(() => ["man", "woman"]),
+};
 
 const sandbox = {
-  app: {
-    $store: {
-      dispatch: jest.fn()
-    }
-  }
-}
+	app: {
+		$store: {
+			dispatch: jest.fn(),
+		},
+	},
+};
 
-const profileId = 'profile1'
+const profileId = "profile1";
 
-const avatarsSetup = createAvatarsSetup(plugin, pluginObject, sandbox, profileId)
-avatarsSetup()
+const avatarsSetup = createAvatarsSetup(plugin, pluginObject, sandbox, profileId);
+avatarsSetup();
 
-describe('Avatars Setup', () => {
-  it('should call the getAvatars method', () => {
-    expect(pluginObject.getAvatars).toHaveBeenCalled()
-  })
+describe("Avatars Setup", () => {
+	it("should call the getAvatars method", () => {
+		expect(pluginObject.getAvatars).toHaveBeenCalled();
+	});
 
-  it('should populate the avatars field', () => {
-    expect(plugin.avatars.length).toBeGreaterThan(0)
-  })
+	it("should populate the avatars field", () => {
+		expect(plugin.avatars.length).toBeGreaterThan(0);
+	});
 
-  it('should dispatch to vuex', () => {
-    expect(sandbox.app.$store.dispatch).toHaveBeenCalled()
-  })
-})
+	it("should dispatch to vuex", () => {
+		expect(sandbox.app.$store.dispatch).toHaveBeenCalled();
+	});
+});

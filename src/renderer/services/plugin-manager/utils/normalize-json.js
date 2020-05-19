@@ -1,3 +1,3 @@
-export function normalizeJson (data) {
-  return JSON.parse(JSON.stringify(data))
+export function normalizeJson(data) {
+	return JSON.parse(JSON.stringify(data));
 }

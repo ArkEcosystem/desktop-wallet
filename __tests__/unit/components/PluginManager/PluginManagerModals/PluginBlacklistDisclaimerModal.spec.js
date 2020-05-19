@@ -1,34 +1,36 @@
-import { mount } from '@vue/test-utils'
-import useI18nGlobally from '../../../__utils__/i18n'
-import { PluginBlacklistDisclaimerModal } from '@/components/PluginManager/PluginManagerModals'
+import { mount } from "@vue/test-utils";
 
-const i18n = useI18nGlobally()
+import { PluginBlacklistDisclaimerModal } from "@/components/PluginManager/PluginManagerModals";
 
-let wrapper
+import useI18nGlobally from "../../../__utils__/i18n";
+
+const i18n = useI18nGlobally();
+
+let wrapper;
 
 beforeEach(() => {
-  wrapper = mount(PluginBlacklistDisclaimerModal, {
-    i18n,
-    stubs: {
-      Portal: true
-    }
-  })
-})
+	wrapper = mount(PluginBlacklistDisclaimerModal, {
+		i18n,
+		stubs: {
+			Portal: true,
+		},
+	});
+});
 
-describe('PluginBlacklistDisclaimerModal', () => {
-  it('should render', () => {
-    expect(wrapper.isVueInstance()).toBeTrue()
-  })
+describe("PluginBlacklistDisclaimerModal", () => {
+	it("should render", () => {
+		expect(wrapper.isVueInstance()).toBeTrue();
+	});
 
-  describe('Methods', () => {
-    it('should emit continue event', () => {
-      wrapper.vm.emitContinue()
-      expect(wrapper.emitted('continue')).toBeTruthy()
-    })
+	describe("Methods", () => {
+		it("should emit continue event", () => {
+			wrapper.vm.emitContinue();
+			expect(wrapper.emitted("continue")).toBeTruthy();
+		});
 
-    it('should emit close event', () => {
-      wrapper.vm.emitClose()
-      expect(wrapper.emitted('close')).toBeTruthy()
-    })
-  })
-})
+		it("should emit close event", () => {
+			wrapper.vm.emitClose();
+			expect(wrapper.emitted("close")).toBeTruthy();
+		});
+	});
+});

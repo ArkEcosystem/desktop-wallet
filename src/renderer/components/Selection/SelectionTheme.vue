@@ -1,61 +1,49 @@
 <template>
-  <div class="flex flex-no-grow items-center">
-    <SvgIcon
-      name="sun"
-      view-box="0 0 20 20"
-      class="transition text-yellow"
-    />
-    <div>
-      <ButtonSwitch
-        :is-active="status"
-        class="mx-2"
-        @change="emitInput"
-      />
-    </div>
-    <SvgIcon
-      name="moon"
-      view-box="0 0 18 18"
-      class="transition text-blue-dark"
-    />
-  </div>
+	<div class="flex flex-no-grow items-center">
+		<SvgIcon name="sun" view-box="0 0 20 20" class="transition text-yellow" />
+		<div>
+			<ButtonSwitch :is-active="status" class="mx-2" @change="emitInput" />
+		</div>
+		<SvgIcon name="moon" view-box="0 0 18 18" class="transition text-blue-dark" />
+	</div>
 </template>
 
 <script>
-import { ButtonSwitch } from '@/components/Button'
-import { SvgIcon } from '@/components/SvgIcon'
+import { ButtonSwitch } from "@/components/Button";
+import { SvgIcon } from "@/components/SvgIcon";
 
 export default {
-  name: 'SelectionTheme',
+	name: "SelectionTheme",
 
-  themes: {
-    light: false,
-    dark: true
-  },
+	themes: {
+		light: false,
+		dark: true,
+	},
 
-  components: {
-    ButtonSwitch,
-    SvgIcon
-  },
+	components: {
+		ButtonSwitch,
+		SvgIcon,
+	},
 
-  props: {
-    value: {
-      type: String,
-      required: false,
-      default: null
-    }
-  },
+	props: {
+		value: {
+			type: String,
+			required: false,
+			default: null,
+		},
+	},
 
-  computed: {
-    status () {
-      return this.$options.themes[this.value]
-    }
-  },
+	computed: {
+		status() {
+			return this.$options.themes[this.value];
+		},
+	},
 
-  methods: {
-    emitInput (status) {
-      const theme = Object.keys(this.$options.themes).find(theme => this.$options.themes[theme] === status)
-      this.$emit('input', theme)
-    }
-  }
-}
+	methods: {
+		emitInput(status) {
+			const theme = Object.keys(this.$options.themes).find((theme) => this.$options.themes[theme] === status);
+			this.$emit("input", theme);
+		},
+	},
+};
 </script>

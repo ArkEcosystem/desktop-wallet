@@ -1,7 +1,7 @@
-export const parseURLMock = jest.fn()
+export const parseURLMock = jest.fn();
 
 const RssParserMock = jest.fn().mockImplementation(() => {
-  return { parseURL: parseURLMock }
-})
+	return { parseURL: parseURLMock };
+});
 
-export default RssParserMock
+export default RssParserMock;

@@ -1,6 +1,4 @@
-import WalletExchange from './WalletExchange'
+import WalletExchange from "./WalletExchange";
 
-export default WalletExchange
-export {
-  WalletExchange
-}
+export default WalletExchange;
+export { WalletExchange };

@@ -1,74 +1,69 @@
 <template>
-  <CollapseAccordion
-    ref="accordion"
-    v-model="model"
-    :items="items"
-    class="MenuStep"
-  >
-    <slot />
-  </CollapseAccordion>
+	<CollapseAccordion ref="accordion" v-model="model" :items="items" class="MenuStep">
+		<slot />
+	</CollapseAccordion>
 </template>
 
 <script>
-import { CollapseAccordion } from '@/components/Collapse'
+import { CollapseAccordion } from "@/components/Collapse";
 
 export default {
-  name: 'MenuStep',
+	name: "MenuStep",
 
-  components: {
-    CollapseAccordion
-  },
+	components: {
+		CollapseAccordion,
+	},
 
-  model: {
-    prop: 'step',
-    event: 'change'
-  },
+	model: {
+		prop: "step",
+		event: "change",
+	},
 
-  props: {
-    step: {
-      type: [Number, String],
-      required: false,
-      default: null
-    }
-  },
+	props: {
+		step: {
+			type: [Number, String],
+			required: false,
+			default: null,
+		},
+	},
 
-  data: () => ({
-    items: []
-  }),
+	data: () => ({
+		items: [],
+	}),
 
-  computed: {
-    model: {
-      get () {
-        return this.step
-      },
-      set (val) {
-        this.$emit('change', val)
-      }
-    }
-  },
+	computed: {
+		model: {
+			get() {
+				return this.step;
+			},
+			set(val) {
+				this.$emit("change", val);
+			},
+		},
+	},
 
-  mounted () {
-    this.items = this.collectItems()
-  },
+	mounted() {
+		this.items = this.collectItems();
+	},
 
-  methods: {
-    collectItems () {
-      const steps = this.collections_filterChildren('MenuStepItem', this.$refs.accordion) || []
-      const collapses = steps.map(step => step.$refs.collapse)
+	methods: {
+		collectItems() {
+			const steps = this.collections_filterChildren("MenuStepItem", this.$refs.accordion) || [];
+			const collapses = steps.map((step) => step.$refs.collapse);
 
-      // The first and last items has a different style and text on the default footer
-      const firstStep = steps[0]
-      if (firstStep) {
-        firstStep.isFirstItem = true
-      }
+			// The first and last items has a different style and text on the default footer
+			const firstStep = steps[0];
+			if (firstStep) {
+				firstStep.isFirstItem = true;
+			}
 
-      const lastStep = steps[steps.length - 1]
-      if (lastStep) {
-        lastStep.isLastItem = true
-      }
+			const lastStep = steps[steps.length - 1];
+			if (lastStep) {
+				lastStep.isLastItem = true;
+			}
 
-      return collapses
-    }
-  }
-}
+			return collapses;
+		},
+	},
+};
 </script>

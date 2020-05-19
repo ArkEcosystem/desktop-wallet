@@ -1,46 +1,46 @@
-import got from 'got'
+import got from "got";
 
 class PluginHttp {
-  constructor (whitelist) {
-    this.whitelist = []
+	constructor(whitelist) {
+		this.whitelist = [];
 
-    if (Array.isArray(whitelist)) {
-      this.whitelist = whitelist.map(regex => {
-        return new RegExp(regex)
-      })
-    }
-  }
+		if (Array.isArray(whitelist)) {
+			this.whitelist = whitelist.map((regex) => {
+				return new RegExp(regex);
+			});
+		}
+	}
 
-  validateUrl (url) {
-    let valid = false
-    for (const regex of this.whitelist) {
-      if (regex.test(url)) {
-        valid = true
+	validateUrl(url) {
+		let valid = false;
+		for (const regex of this.whitelist) {
+			if (regex.test(url)) {
+				valid = true;
 
-        break
-      }
-    }
+				break;
+			}
+		}
 
-    if (!valid) {
-      throw new Error(`URL "${url}" not allowed`)
-    }
-  }
+		if (!valid) {
+			throw new Error(`URL "${url}" not allowed`);
+		}
+	}
 
-  get (url, opts) {
-    this.validateUrl(url)
+	get(url, opts) {
+		this.validateUrl(url);
 
-    return got.get(url, opts)
-  }
+		return got.get(url, opts);
+	}
 
-  post (url, opts) {
-    this.validateUrl(url)
+	post(url, opts) {
+		this.validateUrl(url);
 
-    return got.post(url, opts)
-  }
+		return got.post(url, opts);
+	}
 }
 
-export function create (walletApi, plugin) {
-  return () => {
-    walletApi.http = new PluginHttp(plugin.config.urls)
-  }
+export function create(walletApi, plugin) {
+	return () => {
+		walletApi.http = new PluginHttp(plugin.config.urls);
+	};
 }

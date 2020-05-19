@@ -1,3 +1,3 @@
-import Emittery from 'emittery'
+import Emittery from "emittery";
 
-export default new Emittery()
+export default new Emittery();

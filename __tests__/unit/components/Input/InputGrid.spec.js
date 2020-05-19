@@ -1,49 +1,51 @@
-import { shallowMount } from '@vue/test-utils'
-import { useI18nGlobally } from '../../__utils__/i18n'
-import { InputGrid, InputGridItem, InputGridModal } from '@/components/Input/InputGrid'
+import { shallowMount } from "@vue/test-utils";
 
-const i18n = useI18nGlobally()
+import { InputGrid, InputGridItem, InputGridModal } from "@/components/Input/InputGrid";
 
-describe('InputGrid', () => {
-  describe('InputGrid', () => {
-    it('should render the component', () => {
-      const wrapper = shallowMount(InputGrid, {
-        i18n,
-        propsData: {
-          items: [],
-          itemKey: 'src'
-        }
-      })
+import { useI18nGlobally } from "../../__utils__/i18n";
 
-      expect(wrapper.contains('.InputGrid')).toBeTruthy()
-    })
-  })
+const i18n = useI18nGlobally();
 
-  describe('InputGridItem', () => {
-    it('should render the component', () => {
-      const wrapper = shallowMount(InputGridItem, {
-        i18n,
-        propsData: {
-          isSelected: false,
-          title: 'Example title'
-        }
-      })
+describe("InputGrid", () => {
+	describe("InputGrid", () => {
+		it("should render the component", () => {
+			const wrapper = shallowMount(InputGrid, {
+				i18n,
+				propsData: {
+					items: [],
+					itemKey: "src",
+				},
+			});
 
-      expect(wrapper.contains('.InputGridItem')).toBeTruthy()
-    })
-  })
+			expect(wrapper.contains(".InputGrid")).toBeTruthy();
+		});
+	});
 
-  describe('InputGridModal', () => {
-    it('should render the component', () => {
-      const wrapper = shallowMount(InputGridModal, {
-        i18n,
-        propsData: {
-          items: [],
-          itemKey: 'src'
-        }
-      })
+	describe("InputGridItem", () => {
+		it("should render the component", () => {
+			const wrapper = shallowMount(InputGridItem, {
+				i18n,
+				propsData: {
+					isSelected: false,
+					title: "Example title",
+				},
+			});
 
-      expect(wrapper.contains('.InputGridModal')).toBeTruthy()
-    })
-  })
-})
+			expect(wrapper.contains(".InputGridItem")).toBeTruthy();
+		});
+	});
+
+	describe("InputGridModal", () => {
+		it("should render the component", () => {
+			const wrapper = shallowMount(InputGridModal, {
+				i18n,
+				propsData: {
+					items: [],
+					itemKey: "src",
+				},
+			});
+
+			expect(wrapper.contains(".InputGridModal")).toBeTruthy();
+		});
+	});
+});

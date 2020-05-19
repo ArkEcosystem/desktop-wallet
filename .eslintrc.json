@@ -1,0 +1,60 @@
+{
+	"parser": "vue-eslint-parser",
+	"parserOptions": {
+		"project": "./tsconfig.json",
+		"parser": "@typescript-eslint/parser",
+		"sourceType": "module",
+		"extraFileExtensions": [".vue"]
+	},
+	"plugins": ["@typescript-eslint", "jest", "prettier", "simple-import-sort"],
+	"extends": [
+		"eslint:recommended",
+		"plugin:@typescript-eslint/eslint-recommended",
+		"plugin:@typescript-eslint/recommended-requiring-type-checking",
+		"plugin:@typescript-eslint/recommended",
+		"plugin:jest/recommended",
+		"plugin:prettier/recommended",
+		"plugin:vue/recommended",
+		"prettier/@typescript-eslint"
+	],
+	"rules": {
+		"prefer-const": [
+			"error",
+			{
+				"destructuring": "all"
+			}
+		],
+		"@typescript-eslint/await-thenable": "off",
+		"@typescript-eslint/camelcase": "off",
+		"@typescript-eslint/explicit-function-return-type": "off",
+		"@typescript-eslint/no-empty-function": "off",
+		"@typescript-eslint/no-for-in-array": "off",
+		"@typescript-eslint/no-misused-promises": "off",
+		"@typescript-eslint/no-var-requires": "off",
+		"@typescript-eslint/prefer-includes": "off",
+		"@typescript-eslint/prefer-regexp-exec": "off",
+		"@typescript-eslint/require-await": "off",
+		"@typescript-eslint/unbound-method": "off",
+		"linebreak-style": ["error", "unix"],
+		"jest/no-commented-out-tests": "off",
+		"jest/no-disabled-tests": "off",
+		"jest/no-export": "off",
+		"jest/no-focused-tests": "off",
+		"jest/no-identical-title": "off",
+		"jest/no-standalone-expect": "off",
+		"jest/no-try-expect": "off",
+		"jest/valid-expect": "off",
+		"prettier/prettier": ["off", { "endOfLine": "auto" }],
+		"simple-import-sort/sort": "error",
+		"vue/html-indent": ["warn", "tab"],
+		"vue/html-self-closing": "off",
+		"vue/max-attributes-per-line": "off"
+	},
+	"env": {
+		"browser": true,
+		"node": true
+	},
+	"globals": {
+		"__static": true
+	}
+}

@@ -1,52 +1,50 @@
-import i18n from '@/i18n'
-import { I18N } from '@config'
-import { readFileSync } from 'fs'
+import { I18N } from "@config";
+import { readFileSync } from "fs";
+
+import i18n from "@/i18n";
 
 const loadedLanguages = {
-  [I18N.defaultLocale]: true
-}
+	[I18N.defaultLocale]: true,
+};
 
-const unloadLanguage = locale => {
-  i18n.setLocaleMessage(locale, undefined)
-  i18n.setDateTimeFormat(locale, undefined)
-  i18n.setNumberFormat(locale, undefined)
+const unloadLanguage = (locale) => {
+	i18n.setLocaleMessage(locale, undefined);
+	i18n.setDateTimeFormat(locale, undefined);
+	i18n.setNumberFormat(locale, undefined);
 
-  loadedLanguages[locale] = false
-}
+	loadedLanguages[locale] = false;
+};
 
-const setLanguage = locale => {
-  for (const loadedLanguage of Object.keys(loadedLanguages)) {
-    if (
-      loadedLanguage !== I18N.defaultLocale &&
-      loadedLanguage !== locale
-    ) {
-      unloadLanguage(loadedLanguage)
-    }
-  }
+const setLanguage = (locale) => {
+	for (const loadedLanguage of Object.keys(loadedLanguages)) {
+		if (loadedLanguage !== I18N.defaultLocale && loadedLanguage !== locale) {
+			unloadLanguage(loadedLanguage);
+		}
+	}
 
-  i18n.locale = locale
-}
+	i18n.locale = locale;
+};
 
 const loadLanguage = (languageName, pluginLanguage) => {
-  if (!pluginLanguage || i18n.locale === languageName) {
-    return
-  }
+	if (!pluginLanguage || i18n.locale === languageName) {
+		return;
+	}
 
-  const language = JSON.parse(readFileSync(pluginLanguage.languagePath))
+	const language = JSON.parse(readFileSync(pluginLanguage.languagePath));
 
-  if (!loadedLanguages[languageName]) {
-    i18n.setLocaleMessage(languageName, language.messages)
-    i18n.setDateTimeFormat(languageName, language.dateTimeFormats)
-    i18n.setNumberFormat(languageName, language.numberFormats)
+	if (!loadedLanguages[languageName]) {
+		i18n.setLocaleMessage(languageName, language.messages);
+		i18n.setDateTimeFormat(languageName, language.dateTimeFormats);
+		i18n.setNumberFormat(languageName, language.numberFormats);
 
-    loadedLanguages[languageName] = true
-  }
+		loadedLanguages[languageName] = true;
+	}
 
-  setLanguage(languageName)
-}
+	setLanguage(languageName);
+};
 
 export default {
-  loadLanguage,
-  unloadLanguage,
-  setLanguage
-}
+	loadLanguage,
+	unloadLanguage,
+	setLanguage,
+};

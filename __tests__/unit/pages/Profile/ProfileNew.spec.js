@@ -1,25 +1,25 @@
-import { createLocalVue, mount } from '@vue/test-utils'
-import ProfileNew from '@/pages/Profile/ProfileNew'
+import { createLocalVue, mount } from "@vue/test-utils";
 
-describe('pages > ProfileNew', () => {
-  const mountPage = () => {
-    const localVue = createLocalVue()
+import ProfileNew from "@/pages/Profile/ProfileNew";
 
-    // FIXME validations ?
-    // FIXME schema ?
-    return mount(ProfileNew, {
-      mocks: {
-        $t: () => {}
-      },
-      localVue
-    })
-  }
+describe("pages > ProfileNew", () => {
+	const mountPage = () => {
+		const localVue = createLocalVue();
 
-  xit('should render component', () => {
-    const wrapper = mountPage()
-    expect(wrapper.contains('.ProfileNew')).toBeTruthy()
-  })
+		// FIXME validations ?
+		// FIXME schema ?
+		return mount(ProfileNew, {
+			mocks: {
+				$t: () => {},
+			},
+			localVue,
+		});
+	};
 
-  describe('Step 1', () => {
-  })
-})
+	it.skip("should render component", () => {
+		const wrapper = mountPage();
+		expect(wrapper.contains(".ProfileNew")).toBeTruthy();
+	});
+
+	describe("Step 1", () => {});
+});

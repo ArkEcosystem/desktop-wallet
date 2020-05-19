@@ -1,39 +1,39 @@
 <template>
-  <ModalConfirmation
-    :question="$t('PLUGIN_BLACKLIST_CONFIRMATION.QUESTION', { plugin: plugin.title })"
-    :note="$t('PLUGIN_BLACKLIST_CONFIRMATION.NOTE')"
-    container-classes="max-w-md"
-    @close="emitCancel"
-    @cancel="emitCancel"
-    @continue="emitConfirm"
-  />
+	<ModalConfirmation
+		:question="$t('PLUGIN_BLACKLIST_CONFIRMATION.QUESTION', { plugin: plugin.title })"
+		:note="$t('PLUGIN_BLACKLIST_CONFIRMATION.NOTE')"
+		container-classes="max-w-md"
+		@close="emitCancel"
+		@cancel="emitCancel"
+		@continue="emitConfirm"
+	/>
 </template>
 
 <script>
-import { ModalConfirmation } from '@/components/Modal'
+import { ModalConfirmation } from "@/components/Modal";
 
 export default {
-  name: 'PluginBlacklistConfirmation',
+	name: "PluginBlacklistConfirmation",
 
-  components: {
-    ModalConfirmation
-  },
+	components: {
+		ModalConfirmation,
+	},
 
-  props: {
-    plugin: {
-      type: Object,
-      required: true
-    }
-  },
+	props: {
+		plugin: {
+			type: Object,
+			required: true,
+		},
+	},
 
-  methods: {
-    emitCancel () {
-      this.$emit('cancel')
-    },
+	methods: {
+		emitCancel() {
+			this.$emit("cancel");
+		},
 
-    emitConfirm () {
-      this.$emit('confirm')
-    }
-  }
-}
+		emitConfirm() {
+			this.$emit("confirm");
+		},
+	},
+};
 </script>

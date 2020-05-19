@@ -1,20 +1,22 @@
-import { shallowMount } from '@vue/test-utils'
-import useI18nGlobally from '../../__utils__/i18n'
-import { PluginManagerCheckmark } from '@/components/PluginManager'
+import { shallowMount } from "@vue/test-utils";
 
-const i18n = useI18nGlobally()
-let wrapper
+import { PluginManagerCheckmark } from "@/components/PluginManager";
+
+import useI18nGlobally from "../../__utils__/i18n";
+
+const i18n = useI18nGlobally();
+let wrapper;
 
 beforeEach(() => {
-  wrapper = shallowMount(PluginManagerCheckmark, { i18n })
-})
+	wrapper = shallowMount(PluginManagerCheckmark, { i18n });
+});
 
-describe('PluginManagerCheckmark', () => {
-  it('should render', () => {
-    expect(wrapper.isVueInstance()).toBeTrue()
-  })
+describe("PluginManagerCheckmark", () => {
+	it("should render", () => {
+		expect(wrapper.isVueInstance()).toBeTrue();
+	});
 
-  it('should render the official author', () => {
-    expect(wrapper.vm.author).toBe('ARK Ecosystem')
-  })
-})
+	it("should render the official author", () => {
+		expect(wrapper.vm.author).toBe("ARK Ecosystem");
+	});
+});

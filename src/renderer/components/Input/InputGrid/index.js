@@ -1,10 +1,6 @@
-import InputGrid from './InputGrid'
-import InputGridModal from './InputGridModal'
-import InputGridItem from './InputGridItem'
+import InputGrid from "./InputGrid";
+import InputGridItem from "./InputGridItem";
+import InputGridModal from "./InputGridModal";
 
-export default InputGrid
-export {
-  InputGrid,
-  InputGridItem,
-  InputGridModal
-}
+export default InputGrid;
+export { InputGrid, InputGridItem, InputGridModal };

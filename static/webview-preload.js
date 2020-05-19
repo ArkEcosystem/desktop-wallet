@@ -1,5 +1,5 @@
-const { ipcRenderer } = require('electron')
+const { ipcRenderer } = require("electron");
 
 window.triggerPluginEvent = function (event, data) {
-  ipcRenderer.sendToHost(event, data)
-}
+	ipcRenderer.sendToHost(event, data);
+};

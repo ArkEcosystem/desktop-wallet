@@ -1,97 +1,105 @@
-import { merge } from 'lodash'
-import Vue from 'vue'
-import Vuelidate from 'vuelidate'
-import { mount } from '@vue/test-utils'
-import { useI18n } from '../../__utils__/i18n'
-import { InputDelegate } from '@/components/Input'
-import delegates from '../../__fixtures__/store/delegate'
+import { mount } from "@vue/test-utils";
+import { merge } from "lodash";
+import Vue from "vue";
+import Vuelidate from "vuelidate";
 
-Vue.use(Vuelidate)
-const i18n = useI18n(Vue)
+import { InputDelegate } from "@/components/Input";
 
-describe('InputDelegate', () => {
-  const mountComponent = config => {
-    return mount(InputDelegate, merge({
-      i18n,
-      propsData: {
-        value: ''
-      },
-      mocks: {
-        wallet_name: value => value,
-        wallet_truncate: value => value,
-        $store: {
-          getters: {
-            'delegate/byUsername': value => value,
-            'delegate/byAddress': value => value,
-            'delegate/byPublicKey': value => value,
-            'delegate/bySessionNetwork': delegates
-          }
-        }
-      }
-    }, config))
-  }
+import delegates from "../../__fixtures__/store/delegate";
+import { useI18n } from "../../__utils__/i18n";
 
-  it('has the right name', () => {
-    const wrapper = mountComponent()
-    expect(wrapper.name()).toEqual('InputDelegate')
-  })
+Vue.use(Vuelidate);
+const i18n = useI18n(Vue);
 
-  it('should render', () => {
-    const wrapper = mountComponent()
-    expect(wrapper.contains('.InputDelegate')).toBeTruthy()
-  })
+describe("InputDelegate", () => {
+	const mountComponent = (config) => {
+		return mount(
+			InputDelegate,
+			merge(
+				{
+					i18n,
+					propsData: {
+						value: "",
+					},
+					mocks: {
+						wallet_name: (value) => value,
+						wallet_truncate: (value) => value,
+						$store: {
+							getters: {
+								"delegate/byUsername": (value) => value,
+								"delegate/byAddress": (value) => value,
+								"delegate/byPublicKey": (value) => value,
+								"delegate/bySessionNetwork": delegates,
+							},
+						},
+					},
+				},
+				config,
+			),
+		);
+	};
 
-  describe('when receiving the `helperText` prop', () => {
-    it('should show a helper text', () => {
-      const helperText = 'example text'
-      const wrapper = mountComponent({
-        propsData: { helperText }
-      })
-      const helper = wrapper.find('.InputField__helper')
-      expect(helper.text()).toBe(helperText)
-    })
-  })
+	it("has the right name", () => {
+		const wrapper = mountComponent();
+		expect(wrapper.name()).toEqual("InputDelegate");
+	});
 
-  describe('when the input value changes', () => {
-    it('should emit the `input` event', () => {
-      const wrapper = mountComponent()
-      wrapper.find('.InputDelegate input').setValue('not empty')
+	it("should render", () => {
+		const wrapper = mountComponent();
+		expect(wrapper.contains(".InputDelegate")).toBeTruthy();
+	});
 
-      expect(wrapper.emitted('input')).toBeTruthy()
-    })
+	describe("when receiving the `helperText` prop", () => {
+		it("should show a helper text", () => {
+			const helperText = "example text";
+			const wrapper = mountComponent({
+				propsData: { helperText },
+			});
+			const helper = wrapper.find(".InputField__helper");
+			expect(helper.text()).toBe(helperText);
+		});
+	});
 
-    it('should emit the `valid` event', () => {
-      const wrapper = mountComponent()
-      wrapper.find('.InputDelegate input').setValue('not empty')
+	describe("when the input value changes", () => {
+		it("should emit the `input` event", () => {
+			const wrapper = mountComponent();
+			wrapper.find(".InputDelegate input").setValue("not empty");
 
-      expect(wrapper.emitted('valid')).toBeTruthy()
-    })
-  })
+			expect(wrapper.emitted("input")).toBeTruthy();
+		});
 
-  describe('when the value is not valid', () => {
-    // FIXME: Vuelidate is not updating the $dirty state
-    xit('should show the error instead of the helper text', () => {
-      const wrapper = mountComponent()
-      wrapper.find('.InputDelegate input').setValue('not empty')
+		it("should emit the `valid` event", () => {
+			const wrapper = mountComponent();
+			wrapper.find(".InputDelegate input").setValue("not empty");
 
-      const helper = wrapper.find('.InputField__helper')
+			expect(wrapper.emitted("valid")).toBeTruthy();
+		});
+	});
 
-      expect(wrapper.vm.error).toMatch(/could not be found/)
-      expect(helper.text()).toMatch(/could not be found/)
-    })
-  })
+	describe("when the value is not valid", () => {
+		// FIXME: Vuelidate is not updating the $dirty state
+		it.skip("should show the error instead of the helper text", () => {
+			const wrapper = mountComponent();
+			wrapper.find(".InputDelegate input").setValue("not empty");
 
-  describe('when focus', () => {
-    it('should focus the input', () => {
-      const wrapper = mountComponent()
-      wrapper.vm.focus()
-      expect(wrapper.vm.isFocused).toBeTrue()
-    })
+			const helper = wrapper.find(".InputField__helper");
 
-    it('should emit the `focus` event', () => {
-      const wrapper = mountComponent()
-      wrapper.vm.focus()
-      expect(wrapper.emitted('focus')).toBeTruthy()
-    })
-  })
-})
+			expect(wrapper.vm.error).toMatch(/could not be found/);
+			expect(helper.text()).toMatch(/could not be found/);
+		});
+	});
+
+	describe("when focus", () => {
+		it("should focus the input", () => {
+			const wrapper = mountComponent();
+			wrapper.vm.focus();
+			expect(wrapper.vm.isFocused).toBeTrue();
+		});
+
+		it("should emit the `focus` event", () => {
+			const wrapper = mountComponent();
+			wrapper.vm.focus();
+			expect(wrapper.emitted("focus")).toBeTruthy();
+		});
+	});
+});

@@ -1,60 +1,62 @@
-import { createLocalVue, mount } from '@vue/test-utils'
-import VueRouter from 'vue-router'
-import { useI18n } from '../../__utils__/i18n'
-import router from '@/router'
-import PluginManager from '@/pages/PluginManager'
+import { createLocalVue, mount } from "@vue/test-utils";
+import VueRouter from "vue-router";
 
-jest.mock('electron', () => ({
-  ipcRenderer: {
-    on: jest.fn()
-  }
-}))
+import PluginManager from "@/pages/PluginManager";
+import router from "@/router";
 
-const localVue = createLocalVue()
-const i18n = useI18n(localVue)
-localVue.use(VueRouter)
+import { useI18n } from "../../__utils__/i18n";
 
-describe('pages > PluginManager', () => {
-  const mountPage = () => {
-    return mount(PluginManager, {
-      localVue,
-      router,
-      i18n,
-      mocks: {
-        strings_capitalizeFirst: jest.fn(),
-        $store: {
-          getters: {
-            'plugin/filtered': () => [],
-            'session/theme': 'dark',
-            'session/pluginMenuOpen': true
-          },
+jest.mock("electron", () => ({
+	ipcRenderer: {
+		on: jest.fn(),
+	},
+}));
 
-          dispatch () {
-            //
-          }
-        }
-      }
-    })
-  }
+const localVue = createLocalVue();
+const i18n = useI18n(localVue);
+localVue.use(VueRouter);
 
-  it('should have the right name', () => {
-    const wrapper = mountPage()
-    expect(wrapper.name()).toEqual('PluginManager')
-  })
+describe("pages > PluginManager", () => {
+	const mountPage = () => {
+		return mount(PluginManager, {
+			localVue,
+			router,
+			i18n,
+			mocks: {
+				strings_capitalizeFirst: jest.fn(),
+				$store: {
+					getters: {
+						"plugin/filtered": () => [],
+						"session/theme": "dark",
+						"session/pluginMenuOpen": true,
+					},
 
-  it('should render component', () => {
-    const wrapper = mountPage()
-    expect(wrapper.contains('.PluginManager')).toBeTruthy()
-  })
+					dispatch() {
+						//
+					},
+				},
+			},
+		});
+	};
 
-  it('should show side menu by default', () => {
-    const wrapper = mountPage()
-    expect(wrapper.contains('.PluginManagerSideMenu')).toBeTruthy()
-  })
+	it("should have the right name", () => {
+		const wrapper = mountPage();
+		expect(wrapper.name()).toEqual("PluginManager");
+	});
 
-  it('should hide side menu from session', () => {
-    const wrapper = mountPage()
-    wrapper.vm.$store.getters['session/pluginMenuOpen'] = false
-    expect(wrapper.contains('.PluginManagerSideMenu')).toBeFalsy()
-  })
-})
+	it("should render component", () => {
+		const wrapper = mountPage();
+		expect(wrapper.contains(".PluginManager")).toBeTruthy();
+	});
+
+	it("should show side menu by default", () => {
+		const wrapper = mountPage();
+		expect(wrapper.contains(".PluginManagerSideMenu")).toBeTruthy();
+	});
+
+	it("should hide side menu from session", () => {
+		const wrapper = mountPage();
+		wrapper.vm.$store.getters["session/pluginMenuOpen"] = false;
+		expect(wrapper.contains(".PluginManagerSideMenu")).toBeFalsy();
+	});
+});

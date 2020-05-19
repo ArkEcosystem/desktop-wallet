@@ -1,25 +1,25 @@
-import { clone } from 'lodash'
-import { TRANSACTION_GROUPS } from '@config'
+import { TRANSACTION_GROUPS } from "@config";
+import { clone } from "lodash";
 
-export default store => {
-  store.getters['profile/all'].forEach(profile => {
-    const lastFees = profile.lastFees
+export default (store) => {
+	store.getters["profile/all"].forEach((profile) => {
+		const lastFees = profile.lastFees;
 
-    const values = Object.values(lastFees || {})
-    if (!values.length || values.every(value => typeof value === 'object')) {
-      return
-    }
+		const values = Object.values(lastFees || {});
+		if (!values.length || values.every((value) => typeof value === "object")) {
+			return;
+		}
 
-    const updatedProfile = clone(profile)
+		const updatedProfile = clone(profile);
 
-    updatedProfile.lastFees = {
-      [TRANSACTION_GROUPS.STANDARD]: {
-        ...lastFees
-      }
-    }
+		updatedProfile.lastFees = {
+			[TRANSACTION_GROUPS.STANDARD]: {
+				...lastFees,
+			},
+		};
 
-    store.dispatch('profile/update', updatedProfile)
-  })
+		store.dispatch("profile/update", updatedProfile);
+	});
 
-  store.dispatch('app/setLatestAppliedMigration', '2.9.0')
-}
+	store.dispatch("app/setLatestAppliedMigration", "2.9.0");
+};

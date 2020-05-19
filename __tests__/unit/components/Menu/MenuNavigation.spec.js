@@ -1,52 +1,53 @@
-import { mount } from '@vue/test-utils'
-import { MenuNavigation, MenuNavigationItem } from '@/components/Menu'
+import { mount } from "@vue/test-utils";
 
-describe('MenuNavigation', () => {
-  let wrapper
+import { MenuNavigation, MenuNavigationItem } from "@/components/Menu";
 
-  beforeEach(() => {
-    wrapper = mount(MenuNavigationItem, {
-      provide: {
-        switchToId: jest.fn()
-      },
-      propsData: {
-        id: 'test'
-      }
-    })
-  })
+describe("MenuNavigation", () => {
+	let wrapper;
 
-  it('should render', () => {
-    expect(wrapper.isVueInstance()).toBeTruthy()
-  })
+	beforeEach(() => {
+		wrapper = mount(MenuNavigationItem, {
+			provide: {
+				switchToId: jest.fn(),
+			},
+			propsData: {
+				id: "test",
+			},
+		});
+	});
 
-  it('should toggle the active status', () => {
-    wrapper.setData({
-      isActive: true
-    })
-    expect(wrapper.vm.isActive).toBeTrue()
-    wrapper.vm.toggle(false)
-    expect(wrapper.vm.isActive).toBeFalse()
-  })
+	it("should render", () => {
+		expect(wrapper.isVueInstance()).toBeTruthy();
+	});
 
-  it('should accept slot', () => {
-    const slot = 'My MenuNavigationItem component'
-    const wrapper = mount(MenuNavigationItem, {
-      provide: {
-        switchToItem: jest.fn()
-      },
-      slots: {
-        default: slot
-      },
-      propsData: {
-        id: 'test'
-      }
-    })
-    const item = wrapper.find('.MenuNavigationItem')
-    expect(item.text()).toBe(slot)
-  })
+	it("should toggle the active status", () => {
+		wrapper.setData({
+			isActive: true,
+		});
+		expect(wrapper.vm.isActive).toBeTrue();
+		wrapper.vm.toggle(false);
+		expect(wrapper.vm.isActive).toBeFalse();
+	});
 
-  it('should render the menu', () => {
-    const wrapper = mount(MenuNavigation)
-    expect(wrapper.isVueInstance()).toBeTruthy()
-  })
-})
+	it("should accept slot", () => {
+		const slot = "My MenuNavigationItem component";
+		const wrapper = mount(MenuNavigationItem, {
+			provide: {
+				switchToItem: jest.fn(),
+			},
+			slots: {
+				default: slot,
+			},
+			propsData: {
+				id: "test",
+			},
+		});
+		const item = wrapper.find(".MenuNavigationItem");
+		expect(item.text()).toBe(slot);
+	});
+
+	it("should render the menu", () => {
+		const wrapper = mount(MenuNavigation);
+		expect(wrapper.isVueInstance()).toBeTruthy();
+	});
+});

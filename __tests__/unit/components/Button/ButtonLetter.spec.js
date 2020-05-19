@@ -1,22 +1,23 @@
-import { mount } from '@vue/test-utils'
-import { ButtonLetter } from '@/components/Button'
+import { mount } from "@vue/test-utils";
 
-describe('ButtonLetter', () => {
-  let wrapper
+import { ButtonLetter } from "@/components/Button";
 
-  beforeEach(() => {
-    wrapper = mount(ButtonLetter, {
-      propsData: {
-        value: 'Test'
-      }
-    })
-  })
+describe("ButtonLetter", () => {
+	let wrapper;
 
-  it('should render', () => {
-    expect(wrapper.contains('.ButtonLetter')).toBeTruthy()
-  })
+	beforeEach(() => {
+		wrapper = mount(ButtonLetter, {
+			propsData: {
+				value: "Test",
+			},
+		});
+	});
 
-  it('should display the first chart', () => {
-    expect(wrapper.vm.letter).toBe('T')
-  })
-})
+	it("should render", () => {
+		expect(wrapper.contains(".ButtonLetter")).toBeTruthy();
+	});
+
+	it("should display the first chart", () => {
+		expect(wrapper.vm.letter).toBe("T");
+	});
+});

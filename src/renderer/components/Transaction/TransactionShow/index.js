@@ -1,9 +1,6 @@
-import TransactionShow from './TransactionShow'
-import TransactionShowMultiSignature from './TransactionShowMultiSignature'
+import TransactionShow from "./TransactionShow";
+import TransactionShowMultiSignature from "./TransactionShowMultiSignature";
 
-export default TransactionShow
+export default TransactionShow;
 
-export {
-  TransactionShow,
-  TransactionShowMultiSignature
-}
+export { TransactionShow, TransactionShowMultiSignature };

@@ -1,32 +1,33 @@
-import Vue from 'vue'
-import { config } from '@vue/test-utils'
-import VTooltip from 'v-tooltip'
-import eventBus from '@/plugins/event-bus'
-import directives from '@/directives'
-import filters from '@/filters'
+import TestUtils from "@vue/test-utils";
+import VTooltip from "v-tooltip";
+import Vue from "vue";
 
-require('babel-plugin-require-context-hook/register')()
+import directives from "@/directives";
+import filters from "@/filters";
+import eventBus from "@/plugins/event-bus";
 
-HTMLCanvasElement.prototype.getContext = jest.fn()
+require("babel-plugin-require-context-hook/register")();
+
+HTMLCanvasElement.prototype.getContext = jest.fn();
 
 Vue.use(VTooltip, {
-  defaultHtml: false,
-  defaultContainer: '#app'
-})
-Vue.use(directives)
-Vue.use(filters)
-Vue.config.ignoredElements = ['webview']
+	defaultHtml: false,
+	defaultContainer: "#app",
+});
+Vue.use(directives);
+Vue.use(filters);
+Vue.config.ignoredElements = ["webview"];
 
-config.mocks.$eventBus = eventBus
-config.mocks.$client = {
-  fetchDelegates: jest.fn()
-}
+TestUtils.config.mocks.$eventBus = eventBus;
+TestUtils.config.mocks.$client = {
+	fetchDelegates: jest.fn(),
+};
 
-config.mocks.assets_loadImage = jest.fn()
-config.mocks.collections_filterChildren = jest.fn()
-config.mocks.currency_format = jest.fn()
-config.mocks.currency_subToUnit = jest.fn()
-config.mocks.electron_openExternal = jest.fn()
-config.mocks.session_network = jest.fn()
-config.mocks.session_profile = jest.fn()
-config.mocks.wallet_fromRoute = {}
+TestUtils.config.mocks.assets_loadImage = jest.fn();
+TestUtils.config.mocks.collections_filterChildren = jest.fn();
+TestUtils.config.mocks.currency_format = jest.fn();
+TestUtils.config.mocks.currency_subToUnit = jest.fn();
+TestUtils.config.mocks.electron_openExternal = jest.fn();
+TestUtils.config.mocks.session_network = jest.fn();
+TestUtils.config.mocks.session_profile = jest.fn();
+TestUtils.config.mocks.wallet_fromRoute = {};

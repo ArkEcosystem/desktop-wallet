@@ -1,19 +1,21 @@
-import { mount } from '@vue/test-utils'
-import useI18nGlobally from '../../__utils__/i18n'
-import ModalRename from '@/components/Modal'
+import { mount } from "@vue/test-utils";
 
-const i18n = useI18nGlobally()
-let wrapper
+import ModalRename from "@/components/Modal";
+
+import useI18nGlobally from "../../__utils__/i18n";
+
+const i18n = useI18nGlobally();
+let wrapper;
 beforeEach(() => {
-  wrapper = mount(ModalRename, {
-    stubs: {
-      Portal: true
-    },
-    i18n
-  })
-})
-describe('ModalRename', () => {
-  it('should render modal', () => {
-    expect(wrapper.isVueInstance()).toBeTrue()
-  })
-})
+	wrapper = mount(ModalRename, {
+		stubs: {
+			Portal: true,
+		},
+		i18n,
+	});
+});
+describe("ModalRename", () => {
+	it("should render modal", () => {
+		expect(wrapper.isVueInstance()).toBeTrue();
+	});
+});

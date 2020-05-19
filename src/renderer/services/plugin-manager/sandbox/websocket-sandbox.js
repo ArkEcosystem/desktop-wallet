@@ -1,126 +1,126 @@
 class PluginWebsocket {
-  constructor (whitelist, router) {
-    this.whitelist = []
-    this.router = router
+	constructor(whitelist, router) {
+		this.whitelist = [];
+		this.router = router;
 
-    if (Array.isArray(whitelist)) {
-      this.whitelist = whitelist.map(regex => {
-        return new RegExp(regex)
-      })
-    }
-  }
+		if (Array.isArray(whitelist)) {
+			this.whitelist = whitelist.map((regex) => {
+				return new RegExp(regex);
+			});
+		}
+	}
 
-  validateUrl (url) {
-    let valid = false
-    for (const regex of this.whitelist) {
-      if (regex.test(url)) {
-        valid = true
-        break
-      }
-    }
+	validateUrl(url) {
+		let valid = false;
+		for (const regex of this.whitelist) {
+			if (regex.test(url)) {
+				valid = true;
+				break;
+			}
+		}
 
-    if (!valid) {
-      throw new Error(`URL "${url}" not allowed`)
-    }
-  }
+		if (!valid) {
+			throw new Error(`URL "${url}" not allowed`);
+		}
+	}
 
-  connect (url) {
-    this.validateUrl(url)
+	connect(url) {
+		this.validateUrl(url);
 
-    let websocket = new WebSocket(url)
+		let websocket = new WebSocket(url);
 
-    const websocketEvents = {
-      events: [],
+		const websocketEvents = {
+			events: [],
 
-      clear () {
-        for (const eventId in this.events) {
-          websocket.removeEventListener(eventId, this.events[eventId])
-        }
-        this.events = []
-      },
+			clear() {
+				for (const eventId in this.events) {
+					websocket.removeEventListener(eventId, this.events[eventId]);
+				}
+				this.events = [];
+			},
 
-      on (action, eventCallback) {
-        const eventTrigger = event => {
-          const result = {}
-          if (event.data) {
-            result.data = event.data
-          }
+			on(action, eventCallback) {
+				const eventTrigger = (event) => {
+					const result = {};
+					if (event.data) {
+						result.data = event.data;
+					}
 
-          if (event.origin) {
-            result.origin = event.origin
-          }
+					if (event.origin) {
+						result.origin = event.origin;
+					}
 
-          if (event.wasClean !== undefined) {
-            result.clean = event.wasClean
-          }
+					if (event.wasClean !== undefined) {
+						result.clean = event.wasClean;
+					}
 
-          result.timestamp = event.timeStamp
+					result.timestamp = event.timeStamp;
 
-          eventCallback(result)
-        }
+					eventCallback(result);
+				};
 
-        websocket.addEventListener(action, eventTrigger)
-        this.events[action] = eventTrigger
-      },
+				websocket.addEventListener(action, eventTrigger);
+				this.events[action] = eventTrigger;
+			},
 
-      get binaryType () {
-        return websocket && websocket.binaryType
-      },
+			get binaryType() {
+				return websocket && websocket.binaryType;
+			},
 
-      set binaryType (type) {
-        websocket.binaryType = type
-      },
+			set binaryType(type) {
+				websocket.binaryType = type;
+			},
 
-      close () {
-        websocket.close()
-      },
+			close() {
+				websocket.close();
+			},
 
-      destroy () {
-        if (websocket) {
-          if (!websocketEvents.isClosing() && !websocketEvents.isClosed()) {
-            websocket.close()
-          }
-          websocketEvents.clear()
-        }
-        websocket = null
-      },
+			destroy() {
+				if (websocket) {
+					if (!websocketEvents.isClosing() && !websocketEvents.isClosed()) {
+						websocket.close();
+					}
+					websocketEvents.clear();
+				}
+				websocket = null;
+			},
 
-      send (data) {
-        websocket.send(data)
-      },
+			send(data) {
+				websocket.send(data);
+			},
 
-      isConnecting () {
-        return websocket && websocket.readyState === WebSocket.CONNECTING
-      },
+			isConnecting() {
+				return websocket && websocket.readyState === WebSocket.CONNECTING;
+			},
 
-      isDestroyed () {
-        return websocket === null
-      },
+			isDestroyed() {
+				return websocket === null;
+			},
 
-      isOpen () {
-        return websocket && websocket.readyState === WebSocket.OPEN
-      },
+			isOpen() {
+				return websocket && websocket.readyState === WebSocket.OPEN;
+			},
 
-      isClosing () {
-        return websocket && websocket.readyState === WebSocket.CLOSING
-      },
+			isClosing() {
+				return websocket && websocket.readyState === WebSocket.CLOSING;
+			},
 
-      isClosed () {
-        return websocket && websocket.readyState === WebSocket.CLOSED
-      }
-    }
+			isClosed() {
+				return websocket && websocket.readyState === WebSocket.CLOSED;
+			},
+		};
 
-    this.router.beforeEach((_, __, next) => {
-      websocketEvents.destroy()
-      next()
-    })
+		this.router.beforeEach((_, __, next) => {
+			websocketEvents.destroy();
+			next();
+		});
 
-    return websocketEvents
-  }
+		return websocketEvents;
+	}
 }
 
-export function create (walletApi, app, plugin) {
-  return () => {
-    walletApi.websocket = new PluginWebsocket(plugin.config.urls, app.$router)
-  }
+export function create(walletApi, app, plugin) {
+	return () => {
+		walletApi.websocket = new PluginWebsocket(plugin.config.urls, app.$router);
+	};
 }
