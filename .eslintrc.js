@@ -13,12 +13,13 @@ module.exports = {
   extends: [
     'plugin:@typescript-eslint/recommended',
     'plugin:vue/recommended',
-    'standard',
+    'standard'
   ],
   globals: {
     __static: true
   },
   rules: {
+    '@typescript-eslint/no-empty-function': 0,
     // allow paren-less arrow functions
     'arrow-parens': 0,
     // allow async-await
@@ -26,7 +27,7 @@ module.exports = {
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
     'vue/component-name-in-template-casing': ['warn', 'PascalCase', {
-      'ignores': ['i18n']
+      ignores: ['i18n']
     }],
     '@typescript-eslint/camelcase': 0,
     '@typescript-eslint/explicit-function-return-type': 0

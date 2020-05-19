@@ -1,5 +1,6 @@
 module.exports = {
-  verbose: false,
+  bail: true,
+  verbose: true,
   globals: {
     __static: __dirname,
     'vue-jest': {
