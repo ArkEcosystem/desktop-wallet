@@ -1,4 +1,5 @@
 module.exports = {
+  bail: true,
   verbose: false,
   globals: {
     __static: __dirname,

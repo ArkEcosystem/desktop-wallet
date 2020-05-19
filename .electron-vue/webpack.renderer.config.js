@@ -3,7 +3,9 @@
 process.env.BABEL_ENV = 'renderer'
 
 const path = require('path')
-const { dependencies } = require('../package.json')
+const {
+  dependencies
+} = require('../package.json')
 const webpack = require('webpack')
 const glob = require("glob-all")
 
@@ -12,7 +14,9 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const PurgecssPlugin = require("purgecss-webpack-plugin")
 const SpriteLoaderPlugin = require('svg-sprite-loader/plugin')
-const { VueLoaderPlugin } = require('vue-loader')
+const {
+  VueLoaderPlugin
+} = require('vue-loader')
 
 /**
  * List of node_modules to include in webpack bundle
@@ -33,8 +37,7 @@ let rendererConfig = {
     ...Object.keys(dependencies || {}).filter(d => !whiteListedModules.includes(d))
   ],
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.(js|vue|ts)$/,
         enforce: 'pre',
         exclude: /node_modules/,
@@ -127,13 +130,28 @@ let rendererConfig = {
           {
             loader: 'svgo-loader',
             options: {
-              plugins: [
-                { convertColors: { currentColor: true } },
-                { inlineStyles: { onlyMatchedOnce: false } },
-                { removeXMLNS: true },
-                { cleanupIDs: true },
-                { removeUnknownsAndDefaults: true },
-                { collapseGroups: true },
+              plugins: [{
+                  convertColors: {
+                    currentColor: true
+                  }
+                },
+                {
+                  inlineStyles: {
+                    onlyMatchedOnce: false
+                  }
+                },
+                {
+                  removeXMLNS: true
+                },
+                {
+                  cleanupIDs: true
+                },
+                {
+                  removeUnknownsAndDefaults: true
+                },
+                {
+                  collapseGroups: true
+                },
               ]
             }
           }
@@ -147,7 +165,9 @@ let rendererConfig = {
   },
   plugins: [
     new VueLoaderPlugin(),
-    new MiniCssExtractPlugin({filename: 'styles.css'}),
+    new MiniCssExtractPlugin({
+      filename: 'styles.css'
+    }),
     new SpriteLoaderPlugin(),
     new HtmlWebpackPlugin({
       filename: 'index.html',
@@ -158,9 +178,9 @@ let rendererConfig = {
         removeAttributeQuotes: true,
         removeComments: true
       },
-      nodeModules: process.env.NODE_ENV !== 'production'
-        ? path.resolve(__dirname, '../node_modules')
-        : false
+      nodeModules: process.env.NODE_ENV !== 'production' ?
+        path.resolve(__dirname, '../node_modules') :
+        false
     }),
     new HtmlWebpackPlugin({
       filename: 'splashscreen.html',
@@ -171,9 +191,9 @@ let rendererConfig = {
         removeAttributeQuotes: true,
         removeComments: true
       },
-      nodeModules: process.env.NODE_ENV !== 'production'
-        ? path.resolve(__dirname, '../node_modules')
-        : false
+      nodeModules: process.env.NODE_ENV !== 'production' ?
+        path.resolve(__dirname, '../node_modules') :
+        false
     }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin()
@@ -217,23 +237,30 @@ if (process.env.NODE_ENV === 'production') {
   rendererConfig.devtool = ''
 
   rendererConfig.plugins.push(
-    new CopyWebpackPlugin([
-      {
-        from: path.join(__dirname, '../static'),
-        to: path.join(__dirname, '../dist/electron/static'),
-        ignore: ['.*']
-      },
-      {
-        from: path.join(__dirname, '../build/icons'),
-        to: path.join(__dirname, '../dist/electron/static'),
-        ignore: ['.*']
-      },
-      {
-        from: path.join(__dirname, '../src/renderer/workers'),
-        to: path.join(__dirname, '../dist/electron/workers'),
-        ignore: ['.*']
-      }
-    ]),
+    new CopyWebpackPlugin({
+      patterns: [{
+          from: path.join(__dirname, '../static'),
+          to: path.join(__dirname, '../dist/electron/static'),
+          globOptions: {
+            ignore: ['.*']
+          }
+        },
+        {
+          from: path.join(__dirname, '../build/icons'),
+          to: path.join(__dirname, '../dist/electron/static'),
+          globOptions: {
+            ignore: ['.*']
+          }
+        },
+        {
+          from: path.join(__dirname, '../src/renderer/workers'),
+          to: path.join(__dirname, '../dist/electron/workers'),
+          globOptions: {
+            ignore: ['.*']
+          }
+        }
+      ]
+    }),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': '"production"'
     }),
@@ -241,7 +268,9 @@ if (process.env.NODE_ENV === 'production') {
       minimize: true
     }),
     new PurgecssPlugin({
-      paths: glob.sync(`${sourcePath}/**/*`, { nodir: true })
+      paths: glob.sync(`${sourcePath}/**/*`, {
+        nodir: true
+      })
     }),
   )
 }
