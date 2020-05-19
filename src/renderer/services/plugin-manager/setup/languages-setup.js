@@ -1,55 +1,57 @@
-import path from 'path'
-import fs from 'fs'
-import { normalizeJson } from '../utils/normalize-json'
-import { I18N } from '@config'
-import { isEmpty } from '@/utils'
+import { I18N } from "@config";
+import fs from "fs";
+import path from "path";
 
-export function create (plugin, pluginObject, sandbox, profileId) {
-  return async () => {
-    if (!Object.prototype.hasOwnProperty.call(pluginObject, 'getLanguages')) {
-      return
-    }
+import { isEmpty } from "@/utils";
 
-    const pluginLanguages = normalizeJson(pluginObject.getLanguages())
-    if (pluginLanguages && typeof pluginLanguages === 'object') {
-      // Validate the configuration of each language and ensure that the translations file exists
-      const languages = Object.keys(pluginLanguages).reduce((valid, languageId) => {
-        if (languageId === I18N.defaultLocale) {
-          throw new Error(`Language ID is the same as the default locale "${I18N.defaultLocale}"`)
-        }
+import { normalizeJson } from "../utils/normalize-json";
 
-        const config = pluginLanguages[languageId]
+export function create(plugin, pluginObject, sandbox, profileId) {
+	return async () => {
+		if (!Object.prototype.hasOwnProperty.call(pluginObject, "getLanguages")) {
+			return;
+		}
 
-        if (typeof config.languagePath === 'string') {
-          const languagePath = path.join(plugin.fullPath, 'src', config.languagePath)
-          if (!fs.existsSync(languagePath)) {
-            throw new Error(`No file found on "${config.languagePath}" for language "${languageId}"`)
-          }
+		const pluginLanguages = normalizeJson(pluginObject.getLanguages());
+		if (pluginLanguages && typeof pluginLanguages === "object") {
+			// Validate the configuration of each language and ensure that the translations file exists
+			const languages = Object.keys(pluginLanguages).reduce((valid, languageId) => {
+				if (languageId === I18N.defaultLocale) {
+					throw new Error(`Language ID is the same as the default locale "${I18N.defaultLocale}"`);
+				}
 
-          const language = JSON.parse(normalizeJson(fs.readFileSync(languagePath, 'utf8')))
+				const config = pluginLanguages[languageId];
 
-          for (const requiredProp of ['messages']) {
-            if (!language[requiredProp]) {
-              throw new Error(`Missing required property "${requiredProp}" for language "${languageId}"`)
-            }
-          }
+				if (typeof config.languagePath === "string") {
+					const languagePath = path.join(plugin.fullPath, "src", config.languagePath);
+					if (!fs.existsSync(languagePath)) {
+						throw new Error(`No file found on "${config.languagePath}" for language "${languageId}"`);
+					}
 
-          valid[languageId] = {
-            ...config,
-            name: config.name || languageId,
-            languagePath
-          }
-        }
-        return valid
-      }, {})
+					const language = JSON.parse(normalizeJson(fs.readFileSync(languagePath, "utf8")));
 
-      if (!isEmpty(languages)) {
-        await sandbox.app.$store.dispatch('plugin/setLanguages', {
-          pluginId: plugin.config.id,
-          languages,
-          profileId
-        })
-      }
-    }
-  }
+					for (const requiredProp of ["messages"]) {
+						if (!language[requiredProp]) {
+							throw new Error(`Missing required property "${requiredProp}" for language "${languageId}"`);
+						}
+					}
+
+					valid[languageId] = {
+						...config,
+						name: config.name || languageId,
+						languagePath,
+					};
+				}
+				return valid;
+			}, {});
+
+			if (!isEmpty(languages)) {
+				await sandbox.app.$store.dispatch("plugin/setLanguages", {
+					pluginId: plugin.config.id,
+					languages,
+					profileId,
+				});
+			}
+		}
+	};
 }

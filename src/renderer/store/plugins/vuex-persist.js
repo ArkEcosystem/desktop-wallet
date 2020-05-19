@@ -1,88 +1,79 @@
 // Based on https://github.com/championswimmer/vuex-persist
 
-import { merge as lodashMerge } from 'lodash'
+import { merge as lodashMerge } from "lodash";
 
-const merge = (into, from) => lodashMerge({}, into, from)
+const merge = (into, from) => lodashMerge({}, into, from);
 
 class SimplePromiseQueue {
-  constructor () {
-    this._queue = []
-    this._flushing = false
-  }
+	constructor() {
+		this._queue = [];
+		this._flushing = false;
+	}
 
-  enqueue (promise) {
-    this._queue.push(promise)
+	enqueue(promise) {
+		this._queue.push(promise);
 
-    if (!this._flushing) {
-      return this.flushQueue()
-    }
+		if (!this._flushing) {
+			return this.flushQueue();
+		}
 
-    return Promise.resolve()
-  }
+		return Promise.resolve();
+	}
 
-  flushQueue () {
-    this._flushing = true
+	flushQueue() {
+		this._flushing = true;
 
-    const chain = () => {
-      const nextTask = this._queue.shift()
+		const chain = () => {
+			const nextTask = this._queue.shift();
 
-      if (nextTask) {
-        return nextTask.then(chain)
-      }
+			if (nextTask) {
+				return nextTask.then(chain);
+			}
 
-      this._flushing = false
-    }
+			this._flushing = false;
+		};
 
-    return Promise.resolve(chain())
-  }
+		return Promise.resolve(chain());
+	}
 }
 
 export class VuexPersistence {
-  constructor (options) {
-    this._mutex = new SimplePromiseQueue()
+	constructor(options) {
+		this._mutex = new SimplePromiseQueue();
 
-    this.subscribed = false
+		this.subscribed = false;
 
-    if (typeof options === 'undefined') {
-      options = {}
-    }
+		if (typeof options === "undefined") {
+			options = {};
+		}
 
-    this.key = options.key
-    this.storage = options.storage
-    this.reducer = options.reducer
+		this.key = options.key;
+		this.storage = options.storage;
+		this.reducer = options.reducer;
 
-    this.RESTORE_MUTATION = function RESTORE_MUTATION (state, savedState) {
-      const mergedState = merge(state, savedState || {})
+		this.RESTORE_MUTATION = function RESTORE_MUTATION(state, savedState) {
+			const mergedState = merge(state, savedState || {});
 
-      for (const propertyName of Object.keys(mergedState)) {
-        this._vm.$set(state, propertyName, mergedState[propertyName])
-      }
-    }
+			for (const propertyName of Object.keys(mergedState)) {
+				this._vm.$set(state, propertyName, mergedState[propertyName]);
+			}
+		};
 
-    this.restoreState = (key, storage) =>
-      storage
-        .getItem(key)
-        .then(value =>
-          typeof value === 'string' ? JSON.parse(value || '{}') : value || {}
-        )
+		this.restoreState = (key, storage) =>
+			storage.getItem(key).then((value) => (typeof value === "string" ? JSON.parse(value || "{}") : value || {}));
 
-    this.saveState = (key, state, storage) =>
-      storage.setItem(key, merge({}, state || {}))
+		this.saveState = (key, state, storage) => storage.setItem(key, merge({}, state || {}));
 
-    this.plugin = store => {
-      store.restored = this.restoreState(this.key, this.storage).then(
-        savedState => {
-          store.commit('RESTORE_MUTATION', savedState)
+		this.plugin = (store) => {
+			store.restored = this.restoreState(this.key, this.storage).then((savedState) => {
+				store.commit("RESTORE_MUTATION", savedState);
 
-          store.subscribe((mutation, state) =>
-            this._mutex.enqueue(
-              this.saveState(this.key, this.reducer(state), this.storage)
-            )
-          )
+				store.subscribe((mutation, state) =>
+					this._mutex.enqueue(this.saveState(this.key, this.reducer(state), this.storage)),
+				);
 
-          this.subscribed = true
-        }
-      )
-    }
-  }
+				this.subscribed = true;
+			});
+		};
+	}
 }

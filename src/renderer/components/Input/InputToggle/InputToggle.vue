@@ -1,48 +1,48 @@
 <template>
-  <span class="InputToggle">
-    <InputToggleChoice
-      v-for="(choice, index) in choices"
-      :key="index"
-      :choice="choice"
-      :selected-choice="selectedChoice"
-      :index="index"
-      :length="choices.length"
-      @select="emitSelect(choice)"
-    />
-  </span>
+	<span class="InputToggle">
+		<InputToggleChoice
+			v-for="(choice, index) in choices"
+			:key="index"
+			:choice="choice"
+			:selected-choice="selectedChoice"
+			:index="index"
+			:length="choices.length"
+			@select="emitSelect(choice)"
+		/>
+	</span>
 </template>
 
 <script>
-import InputToggleChoice from './InputToggleChoice'
+import InputToggleChoice from "./InputToggleChoice";
 
 export default {
-  name: 'InputToggle',
+	name: "InputToggle",
 
-  components: {
-    InputToggleChoice
-  },
+	components: {
+		InputToggleChoice,
+	},
 
-  model: {
-    prop: 'selectedChoice',
-    event: 'choice-select'
-  },
+	model: {
+		prop: "selectedChoice",
+		event: "choice-select",
+	},
 
-  props: {
-    choices: {
-      type: Array,
-      required: true
-    },
+	props: {
+		choices: {
+			type: Array,
+			required: true,
+		},
 
-    selectedChoice: {
-      type: String,
-      required: true
-    }
-  },
+		selectedChoice: {
+			type: String,
+			required: true,
+		},
+	},
 
-  methods: {
-    emitSelect (choice) {
-      this.$emit('select', choice)
-    }
-  }
-}
+	methods: {
+		emitSelect(choice) {
+			this.$emit("select", choice);
+		},
+	},
+};
 </script>

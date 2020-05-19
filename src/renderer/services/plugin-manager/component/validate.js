@@ -1,86 +1,79 @@
-import { hooks } from './hooks'
-import { PLUGINS } from '@config'
+import { PLUGINS } from "@config";
 
-export function validateComponent ({ plugin, component, name, logger }) {
-  const requiredKeys = ['template']
-  const allowedKeys = [
-    'data',
-    'methods',
-    'watch',
-    'computed',
-    'components',
-    'props',
-    ...hooks
-  ]
+import { hooks } from "./hooks";
 
-  const missingKeys = []
-  for (const key of requiredKeys) {
-    if (!Object.prototype.hasOwnProperty.call(component, key)) {
-      missingKeys.push(key)
-    }
-  }
+export function validateComponent({ plugin, component, name, logger }) {
+	const requiredKeys = ["template"];
+	const allowedKeys = ["data", "methods", "watch", "computed", "components", "props", ...hooks];
 
-  const componentError = (error, errorType) => {
-    if (logger) {
-      logger.error(`Plugin '${plugin.config.id}' component '${name}' ${errorType}: ${error}`)
-    }
-  }
+	const missingKeys = [];
+	for (const key of requiredKeys) {
+		if (!Object.prototype.hasOwnProperty.call(component, key)) {
+			missingKeys.push(key);
+		}
+	}
 
-  if (missingKeys.length) {
-    componentError(missingKeys.join(', '), 'is missing')
+	const componentError = (error, errorType) => {
+		if (logger) {
+			logger.error(`Plugin '${plugin.config.id}' component '${name}' ${errorType}: ${error}`);
+		}
+	};
 
-    return false
-  }
+	if (missingKeys.length) {
+		componentError(missingKeys.join(", "), "is missing");
 
-  const inlineErrors = []
-  if (/v-html/i.test(component.template)) {
-    inlineErrors.push('uses v-html')
-  }
-  if (/javascript:/i.test(component.template)) {
-    inlineErrors.push('"javascript:"')
-  }
-  if (/<\s*webview/i.test(component.template)) {
-    inlineErrors.push('uses webview tag')
-  }
-  if (/<\s*script/i.test(component.template)) {
-    inlineErrors.push('uses script tag')
-  } else if (/[^\w]+eval\(/i.test(component.template)) {
-    inlineErrors.push('uses eval')
-  }
-  if (/<\s*iframe/i.test(component.template)) {
-    inlineErrors.push('uses iframe tag')
-  }
-  if (/srcdoc/i.test(component.template)) {
-    inlineErrors.push('uses srcdoc property')
-  }
-  const inlineEvents = []
-  for (const event of PLUGINS.validation.events) {
-    if ((new RegExp(`(^|\\s)+on${event}`, 'i')).test(component.template)) {
-      inlineEvents.push(event)
-    }
-  }
-  if (inlineEvents.length) {
-    inlineErrors.push('events: ' + inlineEvents.join(', '))
-  }
+		return false;
+	}
 
-  if (inlineErrors.length) {
-    componentError(inlineErrors.join('; '), 'has inline javascript')
+	const inlineErrors = [];
+	if (/v-html/i.test(component.template)) {
+		inlineErrors.push("uses v-html");
+	}
+	if (/javascript:/i.test(component.template)) {
+		inlineErrors.push('"javascript:"');
+	}
+	if (/<\s*webview/i.test(component.template)) {
+		inlineErrors.push("uses webview tag");
+	}
+	if (/<\s*script/i.test(component.template)) {
+		inlineErrors.push("uses script tag");
+	} else if (/[^\w]+eval\(/i.test(component.template)) {
+		inlineErrors.push("uses eval");
+	}
+	if (/<\s*iframe/i.test(component.template)) {
+		inlineErrors.push("uses iframe tag");
+	}
+	if (/srcdoc/i.test(component.template)) {
+		inlineErrors.push("uses srcdoc property");
+	}
+	const inlineEvents = [];
+	for (const event of PLUGINS.validation.events) {
+		if (new RegExp(`(^|\\s)+on${event}`, "i").test(component.template)) {
+			inlineEvents.push(event);
+		}
+	}
+	if (inlineEvents.length) {
+		inlineErrors.push("events: " + inlineEvents.join(", "));
+	}
 
-    return false
-  }
+	if (inlineErrors.length) {
+		componentError(inlineErrors.join("; "), "has inline javascript");
 
-  const bannedKeys = []
-  for (const key of Object.keys(component)) {
-    if (![...requiredKeys, ...allowedKeys].includes(key)) {
-      bannedKeys.push(key)
-    }
-  }
+		return false;
+	}
 
-  if (bannedKeys.length) {
-    componentError(bannedKeys.join(', '), 'has unpermitted keys')
+	const bannedKeys = [];
+	for (const key of Object.keys(component)) {
+		if (![...requiredKeys, ...allowedKeys].includes(key)) {
+			bannedKeys.push(key);
+		}
+	}
 
-    return false
-  }
+	if (bannedKeys.length) {
+		componentError(bannedKeys.join(", "), "has unpermitted keys");
 
-  return true
+		return false;
+	}
+
+	return true;
 }

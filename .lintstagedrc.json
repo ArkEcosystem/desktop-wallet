@@ -1,0 +1,4 @@
+{
+	"*.{ts,js,vue}": ["yarn lint", "prettier --write"],
+	"*.{json,md}": ["prettier --write"]
+}

@@ -1,6 +1,4 @@
-import AlertMessage from './AlertMessage'
+import AlertMessage from "./AlertMessage";
 
-export default AlertMessage
-export {
-  AlertMessage
-}
+export default AlertMessage;
+export { AlertMessage };

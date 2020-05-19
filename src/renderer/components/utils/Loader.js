@@ -1,20 +1,21 @@
-import { PulseLoader } from 'vue-spinner/dist/vue-spinner.min'
-import tailwindConfig from '@tailwind'
+import tailwindConfig from "@tailwind";
+import { PulseLoader } from "vue-spinner/dist/vue-spinner.min";
 
 export default {
-  functional: true,
+	functional: true,
 
-  props: {
-    color: {
-      type: String,
-      required: false,
-      default: tailwindConfig.colors['blue-dark']
-    }
-  },
+	props: {
+		color: {
+			type: String,
+			required: false,
+			default: tailwindConfig.colors["blue-dark"],
+		},
+	},
 
-  render: (h, ctx) => h(PulseLoader, {
-    props: {
-      color: ctx.props.color
-    }
-  })
-}
+	render: (h, ctx) =>
+		h(PulseLoader, {
+			props: {
+				color: ctx.props.color,
+			},
+		}),
+};

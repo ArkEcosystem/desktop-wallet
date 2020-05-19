@@ -1,54 +1,41 @@
 <template>
-  <div class="flex items-center relative font-sans my-auto">
-    <WalletHeadingPrimaryActions
-      v-if="!secondaryButtonsVisible"
-      class="-mr-2"
-    />
-    <WalletHeadingSecondaryActions
-      v-else
-      class="-mr-2"
-    />
-    <button
-      v-if="!currentWallet.isWatchOnly"
-      class="option-heading-button flex items-center self-stretch ml-2 p-2"
-      @click="$store.dispatch('wallet/setSecondaryButtonsVisible', !secondaryButtonsVisible)"
-    >
-      <SvgIcon
-        v-if="!secondaryButtonsVisible"
-        class="rotate-90"
-        name="point"
-        view-box="0 0 14 14"
-      />
-      <SvgIcon
-        v-else
-        name="step-back"
-        view-box="0 0 14 14"
-      />
-    </button>
-  </div>
+	<div class="flex items-center relative font-sans my-auto">
+		<WalletHeadingPrimaryActions v-if="!secondaryButtonsVisible" class="-mr-2" />
+		<WalletHeadingSecondaryActions v-else class="-mr-2" />
+		<button
+			v-if="!currentWallet.isWatchOnly"
+			class="option-heading-button flex items-center self-stretch ml-2 p-2"
+			@click="$store.dispatch('wallet/setSecondaryButtonsVisible', !secondaryButtonsVisible)"
+		>
+			<SvgIcon v-if="!secondaryButtonsVisible" class="rotate-90" name="point" view-box="0 0 14 14" />
+			<SvgIcon v-else name="step-back" view-box="0 0 14 14" />
+		</button>
+	</div>
 </template>
 
 <script>
-import WalletHeadingPrimaryActions from './WalletHeadingPrimaryActions'
-import WalletHeadingSecondaryActions from './WalletHeadingSecondaryActions'
-import SvgIcon from '@/components/SvgIcon'
-import { mapGetters } from 'vuex'
+import { mapGetters } from "vuex";
+
+import SvgIcon from "@/components/SvgIcon";
+
+import WalletHeadingPrimaryActions from "./WalletHeadingPrimaryActions";
+import WalletHeadingSecondaryActions from "./WalletHeadingSecondaryActions";
 
 export default {
-  name: 'WalletHeadingActions',
+	name: "WalletHeadingActions",
 
-  components: {
-    WalletHeadingPrimaryActions,
-    WalletHeadingSecondaryActions,
-    SvgIcon
-  },
+	components: {
+		WalletHeadingPrimaryActions,
+		WalletHeadingSecondaryActions,
+		SvgIcon,
+	},
 
-  computed: {
-    ...mapGetters('wallet', ['secondaryButtonsVisible']),
+	computed: {
+		...mapGetters("wallet", ["secondaryButtonsVisible"]),
 
-    currentWallet () {
-      return this.wallet_fromRoute
-    }
-  }
-}
+		currentWallet() {
+			return this.wallet_fromRoute;
+		},
+	},
+};
 </script>

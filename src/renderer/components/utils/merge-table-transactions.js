@@ -1,5 +1,5 @@
-import { orderBy, uniqBy } from 'lodash'
-import BigNumber from 'bignumber.js'
+import BigNumber from "bignumber.js";
+import { orderBy, uniqBy } from "lodash";
 
 /**
  * This utility is used to merge the transactions that have been fetched using
@@ -11,22 +11,19 @@ import BigNumber from 'bignumber.js'
  * @return {Array}
  */
 export default (a, b, order = null) => {
-  const { field, type } = order || { field: 'timestamp', type: 'desc' }
+	const { field, type } = order || { field: "timestamp", type: "desc" };
 
-  // The order is important: the fetched transactions should override the stored
-  const transactions = uniqBy([
-    ...a,
-    ...b
-  ], 'id')
+	// The order is important: the fetched transactions should override the stored
+	const transactions = uniqBy([...a, ...b], "id");
 
-  if (['amount', 'fee'].includes(field)) {
-    return transactions.sort((a, b) => {
-      const bignumA = new BigNumber(a[field])
-      const bignumB = new BigNumber(b[field])
+	if (["amount", "fee"].includes(field)) {
+		return transactions.sort((a, b) => {
+			const bignumA = new BigNumber(a[field]);
+			const bignumB = new BigNumber(b[field]);
 
-      return type === 'asc' ? bignumA.comparedTo(bignumB) : bignumB.comparedTo(bignumA)
-    })
-  }
+			return type === "asc" ? bignumA.comparedTo(bignumB) : bignumB.comparedTo(bignumA);
+		});
+	}
 
-  return orderBy(transactions, field, type)
-}
+	return orderBy(transactions, field, type);
+};

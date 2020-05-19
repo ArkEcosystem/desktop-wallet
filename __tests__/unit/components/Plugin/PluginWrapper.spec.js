@@ -1,89 +1,98 @@
-import { createLocalVue, mount } from '@vue/test-utils'
-import PluginWrapper from '@/components/Plugin/PluginWrapper'
-import { Wormhole } from 'portal-vue'
+import { createLocalVue, mount } from "@vue/test-utils";
+import { Wormhole } from "portal-vue";
 
-const vue = createLocalVue()
+import PluginWrapper from "@/components/Plugin/PluginWrapper";
 
-jest.mock('portal-vue', () => ({
-  Wormhole: {
-    open: jest.fn(),
-    close: jest.fn()
-  }
-}))
+const vue = createLocalVue();
 
-describe('PluginWrapper', () => {
-  const mountComponent = config => {
-    return mount(PluginWrapper, config)
-  }
+jest.mock("portal-vue", () => ({
+	Wormhole: {
+		open: jest.fn(),
+		close: jest.fn(),
+	},
+}));
 
-  describe('when there is a footer slot', () => {
-    it('should open a Wormhole when mounted', done => {
-      const spy = jest.spyOn(Wormhole, 'open')
+describe("PluginWrapper", () => {
+	const mountComponent = (config) => {
+		return mount(PluginWrapper, config);
+	};
 
-      const wrapper = mountComponent({
-        slots: {
-          footer: '<div></div>'
-        }
-      })
+	describe("when there is a footer slot", () => {
+		it("should open a Wormhole when mounted", () => {
+			return new Promise((done) => {
+				const spy = jest.spyOn(Wormhole, "open");
 
-      vue.nextTick(() => {
-        expect(spy).toHaveBeenCalledWith({
-          to: 'plugin-footer',
-          from: 'plugin-wrapper',
-          passengers: wrapper.vm.footerSlot
-        })
-        done()
-      })
+				const wrapper = mountComponent({
+					slots: {
+						footer: "<div></div>",
+					},
+				});
 
-      spy.mockRestore()
-    })
+				vue.nextTick(() => {
+					expect(spy).toHaveBeenCalledWith({
+						to: "plugin-footer",
+						from: "plugin-wrapper",
+						passengers: wrapper.vm.footerSlot,
+					});
+					done();
+				});
 
-    it('should close a Wormhole when destroyed', done => {
-      const spy = jest.spyOn(Wormhole, 'close')
+				spy.mockRestore();
+			});
+		});
 
-      mountComponent({
-        slots: {
-          footer: '<div></div>'
-        }
-      }).destroy()
+		it("should close a Wormhole when destroyed", () => {
+			return new Promise((done) => {
+				const spy = jest.spyOn(Wormhole, "close");
 
-      vue.nextTick(() => {
-        expect(spy).toHaveBeenCalledWith({
-          to: 'plugin-footer',
-          from: 'plugin-wrapper'
-        })
-        done()
-      })
+				mountComponent({
+					slots: {
+						footer: "<div></div>",
+					},
+				}).destroy();
 
-      spy.mockRestore()
-    })
-  })
+				vue.nextTick(() => {
+					expect(spy).toHaveBeenCalledWith({
+						to: "plugin-footer",
+						from: "plugin-wrapper",
+					});
+					done();
+				});
 
-  describe('when there is no footer slot', () => {
-    it('should not open a Wormhole when mounted', done => {
-      const spy = jest.spyOn(Wormhole, 'open')
+				spy.mockRestore();
+			});
+		});
+	});
 
-      mountComponent()
+	describe("when there is no footer slot", () => {
+		it("should not open a Wormhole when mounted", () => {
+			return new Promise((done) => {
+				const spy = jest.spyOn(Wormhole, "open");
 
-      vue.nextTick(() => {
-        expect(spy).not.toHaveBeenCalled()
-        done()
-      })
+				mountComponent();
 
-      spy.mockRestore()
-    })
+				vue.nextTick(() => {
+					expect(spy).not.toHaveBeenCalled();
+					done();
+				});
 
-    it('should not close a Wormhole when destroyed', done => {
-      const spy = jest.spyOn(Wormhole, 'close')
+				spy.mockRestore();
+			});
+		});
 
-      mountComponent().destroy()
+		it("should not close a Wormhole when destroyed", () => {
+			return new Promise((done) => {
+				const spy = jest.spyOn(Wormhole, "close");
 
-      vue.nextTick(() => {
-        expect(spy).not.toHaveBeenCalled()
-        done()
-      })
+				mountComponent().destroy();
 
-      spy.mockRestore()
-    })
-  })
-})
+				vue.nextTick(() => {
+					expect(spy).not.toHaveBeenCalled();
+					done();
+				});
+
+				spy.mockRestore();
+			});
+		});
+	});
+});

@@ -1,11 +1,11 @@
-import BigNumber from '@/plugins/bignumber'
+import BigNumber from "@/plugins/bignumber";
 
-export function create (walletApi) {
-  return () => {
-    if (!walletApi.utils) {
-      walletApi.utils = {}
-    }
+export function create(walletApi) {
+	return () => {
+		if (!walletApi.utils) {
+			walletApi.utils = {};
+		}
 
-    walletApi.utils.bigNumber = BigNumber
-  }
+		walletApi.utils.bigNumber = BigNumber;
+	};
 }

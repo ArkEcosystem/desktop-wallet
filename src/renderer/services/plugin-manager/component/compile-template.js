@@ -1,8 +1,8 @@
-import { getSafeContext } from './get-context'
+import { getSafeContext } from "./get-context";
 
-export function compileTemplate (vm, template) {
-  return vm.run(
-    `const Vue = require('vue/dist/vue.common.js')
+export function compileTemplate(vm, template) {
+	return vm.run(
+		`const Vue = require('vue/dist/vue.common.js')
     const compiled = Vue.compile(${JSON.stringify(template)})
     const prepareContext = ${getSafeContext.toString()}
     const component = {}
@@ -15,6 +15,6 @@ export function compileTemplate (vm, template) {
       }
     }
     module.exports = component`,
-    'compile-template.js'
-  )
+		"compile-template.js",
+	);
 }

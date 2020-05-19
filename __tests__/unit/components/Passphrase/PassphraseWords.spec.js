@@ -1,28 +1,29 @@
-import { mount } from '@vue/test-utils'
-import Vue from 'vue'
-import Vuelidate from 'vuelidate'
-import { PassphraseWords } from '@/components/Passphrase'
+import { mount } from "@vue/test-utils";
+import Vue from "vue";
+import Vuelidate from "vuelidate";
 
-Vue.use(Vuelidate)
+import { PassphraseWords } from "@/components/Passphrase";
 
-describe('PassphraseWords', () => {
-  const passphraseWords = ['test', 'check', 'verify', 'true', 'false', 'validate', 'ignore', 'shoulder']
-  let wrapper
+Vue.use(Vuelidate);
 
-  beforeEach(() => {
-    wrapper = mount(PassphraseWords, {
-      propsData: {
-        passphraseWords
-      }
-    })
-  })
+describe("PassphraseWords", () => {
+	const passphraseWords = ["test", "check", "verify", "true", "false", "validate", "ignore", "shoulder"];
+	let wrapper;
 
-  it('should render', () => {
-    expect(wrapper.contains('.PassphraseWords')).toBeTruthy()
-  })
+	beforeEach(() => {
+		wrapper = mount(PassphraseWords, {
+			propsData: {
+				passphraseWords,
+			},
+		});
+	});
 
-  it('should display an `InputText` per word', () => {
-    const inputs = wrapper.findAll('.InputText')
-    expect(inputs).toHaveLength(passphraseWords.length)
-  })
-})
+	it("should render", () => {
+		expect(wrapper.contains(".PassphraseWords")).toBeTruthy();
+	});
+
+	it("should display an `InputText` per word", () => {
+		const inputs = wrapper.findAll(".InputText");
+		expect(inputs).toHaveLength(passphraseWords.length);
+	});
+});

@@ -1,7 +1,4 @@
-import NetworkModal from './NetworkModal'
-import NetworkSelectionModal from './NetworkSelectionModal'
+import NetworkModal from "./NetworkModal";
+import NetworkSelectionModal from "./NetworkSelectionModal";
 
-export {
-  NetworkModal,
-  NetworkSelectionModal
-}
+export { NetworkModal, NetworkSelectionModal };

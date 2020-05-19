@@ -1,17 +1,15 @@
 <template>
-  <div class="bg-white rounded-b-lg p-5">
-    TODO
-  </div>
+	<div class="bg-white rounded-b-lg p-5">
+		TODO
+	</div>
 </template>
 
 <script>
 export default {
-  name: 'WalletStatistics',
+	name: "WalletStatistics",
 
-  components: {
-  },
+	components: {},
 
-  props: {
-  }
-}
+	props: {},
+};
 </script>

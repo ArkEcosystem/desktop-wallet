@@ -8,20 +8,22 @@
 /* eslint-disable */
 
 // Install `electron-debug` with `devtron`
-require('electron-debug')({ showDevTools: true })
+require("electron-debug")({ showDevTools: true });
 
 // It is necessary to require `electron-log` here to use it on the renderer process
-require('electron-log')
+require("electron-log");
 
 // Install `vue-devtools`
-require('electron').app.whenReady().then(() => {
-  const { default: installExtension, VUEJS_DEVTOOLS } = require('electron-devtools-installer')
-  installExtension(VUEJS_DEVTOOLS)
-    .then(() => {})
-    .catch(err => {
-      console.log('Unable to install `vue-devtools`: \n', err)
-    })
-})
+require("electron")
+	.app.whenReady()
+	.then(() => {
+		const { default: installExtension, VUEJS_DEVTOOLS } = require("electron-devtools-installer");
+		installExtension(VUEJS_DEVTOOLS)
+			.then(() => {})
+			.catch((err) => {
+				console.log("Unable to install `vue-devtools`: \n", err);
+			});
+	});
 
 // Require `main` process to boot app
-require('./index')
+require("./index");

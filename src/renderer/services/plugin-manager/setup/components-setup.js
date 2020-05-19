@@ -1,40 +1,41 @@
-import fs from 'fs'
-import path from 'path'
-import { PluginComponentSandbox } from '../plugin-component-sandbox'
+import fs from "fs";
+import path from "path";
 
-export function create (plugin, pluginObject, sandbox, vue) {
-  return () => {
-    if (!Object.prototype.hasOwnProperty.call(pluginObject, 'getComponentPaths')) {
-      return
-    }
+import { PluginComponentSandbox } from "../plugin-component-sandbox";
 
-    const pluginComponents = pluginObject.getComponentPaths()
-    const components = {}
+export function create(plugin, pluginObject, sandbox, vue) {
+	return () => {
+		if (!Object.prototype.hasOwnProperty.call(pluginObject, "getComponentPaths")) {
+			return;
+		}
 
-    for (const componentName of Object.keys(pluginComponents)) {
-      const fullPath = path.join(plugin.fullPath, 'src', pluginComponents[componentName])
-      const source = fs.readFileSync(fullPath)
+		const pluginComponents = pluginObject.getComponentPaths();
+		const components = {};
 
-      if (source) {
-        const component = new PluginComponentSandbox({
-          source,
-          plugin,
-          vue,
-          fullPath,
-          name: componentName,
-          pluginVM: sandbox.getPluginVM(),
-          componentVM: sandbox.getComponentVM(),
-          logger: sandbox.app.$logger
-        })
+		for (const componentName of Object.keys(pluginComponents)) {
+			const fullPath = path.join(plugin.fullPath, "src", pluginComponents[componentName]);
+			const source = fs.readFileSync(fullPath);
 
-        const vmComponent = component.render()
+			if (source) {
+				const component = new PluginComponentSandbox({
+					source,
+					plugin,
+					vue,
+					fullPath,
+					name: componentName,
+					pluginVM: sandbox.getPluginVM(),
+					componentVM: sandbox.getComponentVM(),
+					logger: sandbox.app.$logger,
+				});
 
-        if (vmComponent) {
-          components[componentName] = vmComponent
-        }
-      }
-    }
+				const vmComponent = component.render();
 
-    plugin.components = components
-  }
+				if (vmComponent) {
+					components[componentName] = vmComponent;
+				}
+			}
+		}
+
+		plugin.components = components;
+	};
 }

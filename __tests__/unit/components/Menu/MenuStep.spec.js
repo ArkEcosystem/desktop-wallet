@@ -1,109 +1,111 @@
-import { mount } from '@vue/test-utils'
-import { useI18nGlobally } from '../../__utils__/i18n'
-import { MenuStep, MenuStepItem } from '@/components/Menu'
+import { mount } from "@vue/test-utils";
 
-const i18n = useI18nGlobally()
+import { MenuStep, MenuStepItem } from "@/components/Menu";
 
-describe('MenuStep', () => {
-  it('should render', () => {
-    const wrapper = mount(MenuStep, {
-      propsData: {
-        step: 1
-      },
-      mocks: {
-        collections_filterChildren: jest.fn()
-      }
-    })
-    expect(wrapper.contains('.MenuStep')).toBeTruthy()
-  })
-})
+import { useI18nGlobally } from "../../__utils__/i18n";
 
-describe('MenuStepItem', () => {
-  const mountItem = propsData => {
-    return mount(MenuStepItem, {
-      i18n,
-      propsData
-    })
-  }
+const i18n = useI18nGlobally();
 
-  it('should render', () => {
-    const wrapper = mountItem({
-      title: 'Test',
-      step: 1
-    })
+describe("MenuStep", () => {
+	it("should render", () => {
+		const wrapper = mount(MenuStep, {
+			propsData: {
+				step: 1,
+			},
+			mocks: {
+				collections_filterChildren: jest.fn(),
+			},
+		});
+		expect(wrapper.contains(".MenuStep")).toBeTruthy();
+	});
+});
 
-    expect(wrapper.contains('.MenuStepItem')).toBeTruthy()
-    expect(wrapper.vm.$refs.collapse).toBeTruthy()
-  })
+describe("MenuStepItem", () => {
+	const mountItem = (propsData) => {
+		return mount(MenuStepItem, {
+			i18n,
+			propsData,
+		});
+	};
 
-  it('should trigger the handler', () => {
-    const wrapper = mountItem({
-      title: 'Test',
-      step: 1
-    })
-    const handler = wrapper.find('.MenuStepItem__header')
-    handler.trigger('click')
-    expect(wrapper.emitted('open')).toBeTruthy()
-  })
+	it("should render", () => {
+		const wrapper = mountItem({
+			title: "Test",
+			step: 1,
+		});
 
-  it('should emit the `back` event', async () => {
-    const wrapper = mountItem({
-      title: 'Test',
-      step: 1
-    })
+		expect(wrapper.contains(".MenuStepItem")).toBeTruthy();
+		expect(wrapper.vm.$refs.collapse).toBeTruthy();
+	});
 
-    wrapper.vm.$refs.collapse.toggle()
-    const back = wrapper.find('.MenuStepItem__footer__back-button')
-    back.trigger('click')
+	it("should trigger the handler", () => {
+		const wrapper = mountItem({
+			title: "Test",
+			step: 1,
+		});
+		const handler = wrapper.find(".MenuStepItem__header");
+		handler.trigger("click");
+		expect(wrapper.emitted("open")).toBeTruthy();
+	});
 
-    expect(wrapper.emitted('back')).toBeTruthy()
-  })
+	it("should emit the `back` event", async () => {
+		const wrapper = mountItem({
+			title: "Test",
+			step: 1,
+		});
 
-  describe('emitNext', () => {
-    let wrapper
+		wrapper.vm.$refs.collapse.toggle();
+		const back = wrapper.find(".MenuStepItem__footer__back-button");
+		back.trigger("click");
 
-    beforeEach(() => {
-      wrapper = mountItem({
-        title: 'Test',
-        step: 1,
-        isNextEnabled: true
-      })
-    })
+		expect(wrapper.emitted("back")).toBeTruthy();
+	});
 
-    describe('when is the last item', () => {
-      beforeEach(() => {
-        wrapper.vm.isLastItem = true
-      })
+	describe("emitNext", () => {
+		let wrapper;
 
-      describe('when the last item was not clicked', () => {
-        it('should mark it as clicked', () => {
-          expect(wrapper.vm.isLastItemClicked).toBeFalse()
+		beforeEach(() => {
+			wrapper = mountItem({
+				title: "Test",
+				step: 1,
+				isNextEnabled: true,
+			});
+		});
 
-          wrapper.vm.$refs.collapse.toggle()
-          const next = wrapper.find('.MenuStepItem__footer__next-button')
-          next.trigger('click')
+		describe("when is the last item", () => {
+			beforeEach(() => {
+				wrapper.vm.isLastItem = true;
+			});
 
-          expect(wrapper.vm.isLastItemClicked).toBeTrue()
-        })
+			describe("when the last item was not clicked", () => {
+				it("should mark it as clicked", () => {
+					expect(wrapper.vm.isLastItemClicked).toBeFalse();
 
-        it('should emit the `next` event', async () => {
-          wrapper.vm.$refs.collapse.toggle()
-          const next = wrapper.find('.MenuStepItem__footer__next-button')
-          next.trigger('click')
+					wrapper.vm.$refs.collapse.toggle();
+					const next = wrapper.find(".MenuStepItem__footer__next-button");
+					next.trigger("click");
 
-          expect(wrapper.emitted('next')).toBeTruthy()
-        })
-      })
-    })
+					expect(wrapper.vm.isLastItemClicked).toBeTrue();
+				});
 
-    describe('when the last item was clicked', () => {
-      it('should not emit the `next` event', async () => {
-        wrapper.vm.$refs.collapse.toggle()
-        const next = wrapper.find('.MenuStepItem__footer__next-button')
-        next.trigger('click')
+				it("should emit the `next` event", async () => {
+					wrapper.vm.$refs.collapse.toggle();
+					const next = wrapper.find(".MenuStepItem__footer__next-button");
+					next.trigger("click");
 
-        expect(wrapper.emitted('next')).toEqual([[]])
-      })
-    })
-  })
-})
+					expect(wrapper.emitted("next")).toBeTruthy();
+				});
+			});
+		});
+
+		describe("when the last item was clicked", () => {
+			it("should not emit the `next` event", async () => {
+				wrapper.vm.$refs.collapse.toggle();
+				const next = wrapper.find(".MenuStepItem__footer__next-button");
+				next.trigger("click");
+
+				expect(wrapper.emitted("next")).toEqual([[]]);
+			});
+		});
+	});
+});

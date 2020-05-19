@@ -1,30 +1,31 @@
-import { createLocalVue, shallowMount } from '@vue/test-utils'
-import StringsMixin from '@/mixins/strings'
+import { createLocalVue, shallowMount } from "@vue/test-utils";
 
-describe('Mixins > Strings', () => {
-  let wrapper
+import StringsMixin from "@/mixins/strings";
 
-  beforeEach(() => {
-    const localVue = createLocalVue()
+describe("Mixins > Strings", () => {
+	let wrapper;
 
-    const TestComponent = {
-      name: 'TestComponent',
-      template: '<div/>'
-    }
+	beforeEach(() => {
+		const localVue = createLocalVue();
 
-    wrapper = shallowMount(TestComponent, {
-      localVue,
-      mixins: [StringsMixin]
-    })
-  })
+		const TestComponent = {
+			name: "TestComponent",
+			template: "<div/>",
+		};
 
-  describe('strings_snakeCase', () => {
-    it('should return it as snake-cased string', () => {
-      const result = 'foo_bar'
+		wrapper = shallowMount(TestComponent, {
+			localVue,
+			mixins: [StringsMixin],
+		});
+	});
 
-      expect(wrapper.vm.strings_snakeCase('Foo Bar')).toEqual(result)
-      expect(wrapper.vm.strings_snakeCase('fooBar')).toEqual(result)
-      expect(wrapper.vm.strings_snakeCase('--Foo-Bar--')).toEqual(result)
-    })
-  })
-})
+	describe("strings_snakeCase", () => {
+		it("should return it as snake-cased string", () => {
+			const result = "foo_bar";
+
+			expect(wrapper.vm.strings_snakeCase("Foo Bar")).toEqual(result);
+			expect(wrapper.vm.strings_snakeCase("fooBar")).toEqual(result);
+			expect(wrapper.vm.strings_snakeCase("--Foo-Bar--")).toEqual(result);
+		});
+	});
+});

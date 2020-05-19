@@ -1,165 +1,175 @@
-import { mount } from '@vue/test-utils'
-import Vue from 'vue'
-import Vuelidate from 'vuelidate'
-import { InputText } from '@/components/Input'
-import useI18nGlobally from '../../__utils__/i18n'
+import { mount } from "@vue/test-utils";
+import Vue from "vue";
+import Vuelidate from "vuelidate";
 
-Vue.use(Vuelidate)
+import { InputText } from "@/components/Input";
 
-describe('InputText', () => {
-  it('should render', () => {
-    const wrapper = mount(InputText, {
-      propsData: {
-        name: 'test',
-        label: 'test'
-      }
-    })
-    expect(wrapper.contains('.InputText')).toBeTruthy()
-  })
+import useI18nGlobally from "../../__utils__/i18n";
 
-  it('should render with v-model', () => {
-    const value = 'testing'
-    const wrapper = mount(InputText, {
-      propsData: {
-        name: 'test',
-        label: 'test',
-        value
-      }
-    })
-    expect(wrapper.vm.value).toBe(value)
-    const input = wrapper.find('.InputText__input')
-    expect(input.element.value).toBe(value)
-  })
+Vue.use(Vuelidate);
 
-  it('should be disabled', () => {
-    const wrapper = mount(InputText, {
-      propsData: {
-        name: 'test',
-        label: 'test',
-        isDisabled: true
-      }
-    })
-    const input = wrapper.find('.InputText__input')
-    expect(input.attributes().disabled).toBe('disabled')
-  })
+describe("InputText", () => {
+	it("should render", () => {
+		const wrapper = mount(InputText, {
+			propsData: {
+				name: "test",
+				label: "test",
+			},
+		});
+		expect(wrapper.contains(".InputText")).toBeTruthy();
+	});
 
-  it('should be dirty', () => {
-    const wrapper = mount(InputText, {
-      propsData: {
-        name: 'test',
-        label: 'test',
-        value: 'testing'
-      }
-    })
-    expect(wrapper.vm.isDirty).toBeTrue()
-  })
+	it("should render with v-model", () => {
+		const value = "testing";
+		const wrapper = mount(InputText, {
+			propsData: {
+				name: "test",
+				label: "test",
+				value,
+			},
+		});
+		expect(wrapper.vm.value).toBe(value);
+		const input = wrapper.find(".InputText__input");
+		expect(input.element.value).toBe(value);
+	});
 
-  it('should show a helper text', () => {
-    const helperText = 'testing'
-    const wrapper = mount(InputText, {
-      propsData: {
-        name: 'test',
-        label: 'test',
-        helperText
-      }
-    })
-    const helper = wrapper.find('.InputField__helper')
-    expect(helper.text()).toBe(helperText)
-  })
+	it("should be disabled", () => {
+		const wrapper = mount(InputText, {
+			propsData: {
+				name: "test",
+				label: "test",
+				isDisabled: true,
+			},
+		});
+		const input = wrapper.find(".InputText__input");
+		expect(input.attributes().disabled).toBe("disabled");
+	});
 
-  describe('when focus', () => {
-    it('should focus the input', () => {
-      const wrapper = mount(InputText, {
-        propsData: {
-          name: 'test',
-          label: 'test'
-        }
-      })
-      wrapper.vm.focus()
-      expect(wrapper.vm.isFocused).toBeTrue()
-    })
+	it("should be dirty", () => {
+		const wrapper = mount(InputText, {
+			propsData: {
+				name: "test",
+				label: "test",
+				value: "testing",
+			},
+		});
+		expect(wrapper.vm.isDirty).toBeTrue();
+	});
 
-    it('should emit the `focus` event', () => {
-      const wrapper = mount(InputText, {
-        propsData: {
-          name: 'test',
-          label: 'test'
-        }
-      })
-      wrapper.vm.focus()
-      expect(wrapper.emitted('focus')).toBeTruthy()
-    })
-  })
+	it("should show a helper text", () => {
+		const helperText = "testing";
+		const wrapper = mount(InputText, {
+			propsData: {
+				name: "test",
+				label: "test",
+				helperText,
+			},
+		});
+		const helper = wrapper.find(".InputField__helper");
+		expect(helper.text()).toBe(helperText);
+	});
 
-  describe('when vendorfield contains a bip39 passphrase', () => {
-    let wrapper
+	describe("when focus", () => {
+		it("should focus the input", () => {
+			const wrapper = mount(InputText, {
+				propsData: {
+					name: "test",
+					label: "test",
+				},
+			});
+			wrapper.vm.focus();
+			expect(wrapper.vm.isFocused).toBeTrue();
+		});
 
-    const i18n = useI18nGlobally()
-    const mocks = {
-      session_profile: {
-        bip39Language: 'english'
-      }
-    }
+		it("should emit the `focus` event", () => {
+			const wrapper = mount(InputText, {
+				propsData: {
+					name: "test",
+					label: "test",
+				},
+			});
+			wrapper.vm.focus();
+			expect(wrapper.emitted("focus")).toBeTruthy();
+		});
+	});
 
-    beforeEach(() => {
-      wrapper = mount(InputText, {
-        propsData: {
-          name: 'vendorField',
-          label: 'vendorField',
-          bip39Warning: true
-        },
-        i18n,
-        mocks,
-        sync: false
-      })
-    })
+	describe("when vendorfield contains a bip39 passphrase", () => {
+		let wrapper;
 
-    it('should show a warning', async () => {
-      wrapper.find('.InputText input').setValue('one video jaguar gap soldier ill hobby motor bundle couple trophy smoke')
+		const i18n = useI18nGlobally();
+		const mocks = {
+			session_profile: {
+				bip39Language: "english",
+			},
+		};
 
-      wrapper.vm.$v.$touch()
-      await wrapper.vm.$nextTick()
+		beforeEach(() => {
+			wrapper = mount(InputText, {
+				propsData: {
+					name: "vendorField",
+					label: "vendorField",
+					bip39Warning: true,
+				},
+				i18n,
+				mocks,
+				sync: false,
+			});
+		});
 
-      expect(wrapper.vm.warning).toBeTruthy()
+		it("should show a warning", async () => {
+			wrapper
+				.find(".InputText input")
+				.setValue("one video jaguar gap soldier ill hobby motor bundle couple trophy smoke");
 
-      const helper = wrapper.find('.InputField__helper')
-      expect(helper.text()).toMatch(/BIP39/)
-    })
+			wrapper.vm.$v.$touch();
+			await wrapper.vm.$nextTick();
 
-    it('should show a warning when it contains spaces at the end', async () => {
-      wrapper.find('.InputText input').setValue('one video jaguar gap soldier ill hobby motor bundle couple trophy smoke   ')
+			expect(wrapper.vm.warning).toBeTruthy();
 
-      wrapper.vm.$v.$touch()
-      await wrapper.vm.$nextTick()
+			const helper = wrapper.find(".InputField__helper");
+			expect(helper.text()).toMatch(/BIP39/);
+		});
 
-      expect(wrapper.vm.warning).toBeTruthy()
+		it("should show a warning when it contains spaces at the end", async () => {
+			wrapper
+				.find(".InputText input")
+				.setValue("one video jaguar gap soldier ill hobby motor bundle couple trophy smoke   ");
 
-      const helper = wrapper.find('.InputField__helper')
-      expect(helper.text()).toMatch(/BIP39/)
-    })
+			wrapper.vm.$v.$touch();
+			await wrapper.vm.$nextTick();
 
-    it('should show a warning when it contains spaces at the front', async () => {
-      wrapper.find('.InputText input').setValue('   one video jaguar gap soldier ill hobby motor bundle couple trophy smoke')
+			expect(wrapper.vm.warning).toBeTruthy();
 
-      wrapper.vm.$v.$touch()
-      await wrapper.vm.$nextTick()
+			const helper = wrapper.find(".InputField__helper");
+			expect(helper.text()).toMatch(/BIP39/);
+		});
 
-      expect(wrapper.vm.warning).toBeTruthy()
+		it("should show a warning when it contains spaces at the front", async () => {
+			wrapper
+				.find(".InputText input")
+				.setValue("   one video jaguar gap soldier ill hobby motor bundle couple trophy smoke");
 
-      const helper = wrapper.find('.InputField__helper')
-      expect(helper.text()).toMatch(/BIP39/)
-    })
+			wrapper.vm.$v.$touch();
+			await wrapper.vm.$nextTick();
 
-    it('should show a warning when it contains additional spaces in between', async () => {
-      wrapper.find('.InputText input').setValue('one video jaguar   gap soldier ill hobby   motor bundle couple trophy smoke')
+			expect(wrapper.vm.warning).toBeTruthy();
 
-      wrapper.vm.$v.$touch()
-      await wrapper.vm.$nextTick()
+			const helper = wrapper.find(".InputField__helper");
+			expect(helper.text()).toMatch(/BIP39/);
+		});
 
-      expect(wrapper.vm.warning).toBeTruthy()
+		it("should show a warning when it contains additional spaces in between", async () => {
+			wrapper
+				.find(".InputText input")
+				.setValue("one video jaguar   gap soldier ill hobby   motor bundle couple trophy smoke");
 
-      const helper = wrapper.find('.InputField__helper')
-      expect(helper.text()).toMatch(/BIP39/)
-    })
-  })
-})
+			wrapper.vm.$v.$touch();
+			await wrapper.vm.$nextTick();
+
+			expect(wrapper.vm.warning).toBeTruthy();
+
+			const helper = wrapper.find(".InputField__helper");
+			expect(helper.text()).toMatch(/BIP39/);
+		});
+	});
+});

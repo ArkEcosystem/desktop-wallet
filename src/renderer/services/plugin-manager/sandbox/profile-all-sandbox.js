@@ -1,9 +1,9 @@
-export function create (walletApi, app) {
-  return () => {
-    if (!walletApi.profiles) {
-      walletApi.profiles = {}
-    }
+export function create(walletApi, app) {
+	return () => {
+		if (!walletApi.profiles) {
+			walletApi.profiles = {};
+		}
 
-    walletApi.profiles.all = app.$store.getters['profile/public'](true)
-  }
+		walletApi.profiles.all = app.$store.getters["profile/public"](true);
+	};
 }

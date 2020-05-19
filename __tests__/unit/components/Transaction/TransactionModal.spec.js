@@ -1,174 +1,177 @@
-import { shallowMount } from '@vue/test-utils'
-import { useI18nGlobally } from '../../__utils__/i18n'
-import transaction from '../../__fixtures__/models/transaction'
-import TransactionModal from '@/components/Transaction/TransactionModal'
+import { shallowMount } from "@vue/test-utils";
 
-const i18n = useI18nGlobally()
+import TransactionModal from "@/components/Transaction/TransactionModal";
 
-describe('TransactionModal', () => {
-  const profileId = 'exampleId'
-  let wrapper
-  let $store
+import transaction from "../../__fixtures__/models/transaction";
+import { useI18nGlobally } from "../../__utils__/i18n";
 
-  beforeEach(() => {
-    $store = { dispatch: jest.fn() }
+const i18n = useI18nGlobally();
 
-    wrapper = shallowMount(TransactionModal, {
-      i18n,
-      propsData: {
-        type: 0
-      },
-      mocks: {
-        session_profile: { id: profileId },
-        session_network: {
-          version: 12,
-          constants: {
-            epoch: '2017-03-21T13:00:00.000Z'
-          }
-        },
-        $logger: {
-          error: jest.fn()
-        },
-        $store
-      },
-      stubs: {
-        PortalTarget: true
-      }
-    })
-  })
+describe("TransactionModal", () => {
+	const profileId = "exampleId";
+	let wrapper;
+	let $store;
 
-  it('should be instantiated', () => {
-    expect(wrapper.isVueInstance()).toBeTrue()
-  })
+	beforeEach(() => {
+		$store = { dispatch: jest.fn() };
 
-  describe('isSuccessfulResponse', () => {
-    // Only V2
-    const response = {
-      body: { data: {} }
-    }
+		wrapper = shallowMount(TransactionModal, {
+			i18n,
+			propsData: {
+				type: 0,
+			},
+			mocks: {
+				session_profile: { id: profileId },
+				session_network: {
+					version: 12,
+					constants: {
+						epoch: "2017-03-21T13:00:00.000Z",
+					},
+				},
+				$logger: {
+					error: jest.fn(),
+				},
+				$store,
+			},
+			stubs: {
+				PortalTarget: true,
+			},
+		});
+	});
 
-    describe('when the response status is not 200', () => {
-      beforeEach(() => {
-        response.status = 500
-      })
+	it("should be instantiated", () => {
+		expect(wrapper.isVueInstance()).toBeTrue();
+	});
 
-      it('should return `false`', () => {
-        expect(wrapper.vm.isSuccessfulResponse(response)).toBeFalse()
-      })
-    })
+	describe("isSuccessfulResponse", () => {
+		// Only V2
+		const response = {
+			body: { data: {} },
+		};
 
-    describe('when the response status is 200', () => {
-      beforeEach(() => {
-        response.status = 200
-      })
+		describe("when the response status is not 200", () => {
+			beforeEach(() => {
+				response.status = 500;
+			});
 
-      describe('when the response does not include errors', () => {
-        beforeEach(() => {
-          response.body.errors = null
-          response.body.data = {
-            invalid: [],
-            accept: []
-          }
-        })
+			it("should return `false`", () => {
+				expect(wrapper.vm.isSuccessfulResponse(response)).toBeFalse();
+			});
+		});
 
-        it('should return `true`', () => {
-          expect(wrapper.vm.isSuccessfulResponse(response)).toBeTrue()
-        })
-      })
+		describe("when the response status is 200", () => {
+			beforeEach(() => {
+				response.status = 200;
+			});
 
-      describe('when the response includes errors', () => {
-        beforeEach(() => {
-          response.body.errors = {
-            tx1: [{ type: 'ERR_LOW_FEE' }]
-          }
-          response.body.data = {
-            invalid: [],
-            accept: []
-          }
-        })
+			describe("when the response does not include errors", () => {
+				beforeEach(() => {
+					response.body.errors = null;
+					response.body.data = {
+						invalid: [],
+						accept: [],
+					};
+				});
 
-        it('should return `false`', () => {
-          expect(wrapper.vm.isSuccessfulResponse(response)).toBeFalse()
-        })
-      })
+				it("should return `true`", () => {
+					expect(wrapper.vm.isSuccessfulResponse(response)).toBeTrue();
+				});
+			});
 
-      describe('when the response does not include invalid transactions', () => {
-        beforeEach(() => {
-          response.body.errors = null
-          response.body.data.invalid = []
-        })
+			describe("when the response includes errors", () => {
+				beforeEach(() => {
+					response.body.errors = {
+						tx1: [{ type: "ERR_LOW_FEE" }],
+					};
+					response.body.data = {
+						invalid: [],
+						accept: [],
+					};
+				});
 
-        it('should return `true`', () => {
-          expect(wrapper.vm.isSuccessfulResponse(response)).toBeTrue()
-        })
-      })
+				it("should return `false`", () => {
+					expect(wrapper.vm.isSuccessfulResponse(response)).toBeFalse();
+				});
+			});
 
-      describe('when the response includes invalid transactions', () => {
-        beforeEach(() => {
-          response.body.data = {
-            invalid: ['tx1']
-          }
-        })
+			describe("when the response does not include invalid transactions", () => {
+				beforeEach(() => {
+					response.body.errors = null;
+					response.body.data.invalid = [];
+				});
 
-        it('should return `false`', () => {
-          expect(wrapper.vm.isSuccessfulResponse(response)).toBeFalse()
-        })
-      })
-    })
-  })
+				it("should return `true`", () => {
+					expect(wrapper.vm.isSuccessfulResponse(response)).toBeTrue();
+				});
+			});
 
-  describe('storeTransaction', () => {
-    const expectTransactionStored = (transaction, timestamp) => {
-      const { id, type, typeGroup, amount, fee, vendorField } = transaction
+			describe("when the response includes invalid transactions", () => {
+				beforeEach(() => {
+					response.body.data = {
+						invalid: ["tx1"],
+					};
+				});
 
-      const expected = {
-        profileId,
-        id,
-        type,
-        typeGroup,
-        amount,
-        fee,
-        vendorField,
-        confirmations: 0,
-        timestamp,
-        sender: `address of ${transaction.senderPublicKey}`,
-        recipient: transaction.recipientId,
-        raw: transaction
-      }
+				it("should return `false`", () => {
+					expect(wrapper.vm.isSuccessfulResponse(response)).toBeFalse();
+				});
+			});
+		});
+	});
 
-      expect($store.dispatch).toHaveBeenCalledWith('transaction/create', expected)
-    }
+	describe("storeTransaction", () => {
+		const expectTransactionStored = (transaction, timestamp) => {
+			const { id, type, typeGroup, amount, fee, vendorField } = transaction;
 
-    describe('when the transaction has a timestamp (V1)', () => {
-      it('should calculate the timestamp based on the epoch', () => {
-        const dateSpy = jest.spyOn(Date, 'now').mockReturnValue(1000000)
+			const expected = {
+				profileId,
+				id,
+				type,
+				typeGroup,
+				amount,
+				fee,
+				vendorField,
+				confirmations: 0,
+				timestamp,
+				sender: `address of ${transaction.senderPublicKey}`,
+				recipient: transaction.recipientId,
+				raw: transaction,
+			};
 
-        const timestamp = (new Date(wrapper.vm.session_network.constants.epoch)).getTime() + transaction.timestamp * 1000
+			expect($store.dispatch).toHaveBeenCalledWith("transaction/create", expected);
+		};
 
-        wrapper.vm.storeTransaction(transaction)
-        expectTransactionStored(transaction, timestamp)
+		describe("when the transaction has a timestamp (V1)", () => {
+			it("should calculate the timestamp based on the epoch", () => {
+				const dateSpy = jest.spyOn(Date, "now").mockReturnValue(1000000);
 
-        dateSpy.mockRestore()
-      })
-    })
+				const timestamp =
+					new Date(wrapper.vm.session_network.constants.epoch).getTime() + transaction.timestamp * 1000;
 
-    describe('when the transaction has no timestamp (V2)', () => {
-      it('should set the timestamp to the current time', () => {
-        const dateSpy = jest.spyOn(Date, 'now').mockReturnValue(1000000)
+				wrapper.vm.storeTransaction(transaction);
+				expectTransactionStored(transaction, timestamp);
 
-        const v2Transaction = {
-          ...transaction,
-          version: 2,
-          expiration: 0
-        }
+				dateSpy.mockRestore();
+			});
+		});
 
-        delete v2Transaction.timestamp
+		describe("when the transaction has no timestamp (V2)", () => {
+			it("should set the timestamp to the current time", () => {
+				const dateSpy = jest.spyOn(Date, "now").mockReturnValue(1000000);
 
-        wrapper.vm.storeTransaction(v2Transaction)
-        expectTransactionStored(v2Transaction, Date.now())
+				const v2Transaction = {
+					...transaction,
+					version: 2,
+					expiration: 0,
+				};
 
-        dateSpy.mockRestore()
-      })
-    })
-  })
-})
+				delete v2Transaction.timestamp;
+
+				wrapper.vm.storeTransaction(v2Transaction);
+				expectTransactionStored(v2Transaction, Date.now());
+
+				dateSpy.mockRestore();
+			});
+		});
+	});
+});

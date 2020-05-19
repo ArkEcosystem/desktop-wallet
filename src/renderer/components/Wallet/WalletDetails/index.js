@@ -1,7 +1,5 @@
-import WalletDetails from './WalletDetails'
+import WalletDetails from "./WalletDetails";
 
-export default WalletDetails
+export default WalletDetails;
 
-export {
-  WalletDetails
-}
+export { WalletDetails };

@@ -1,271 +1,272 @@
-import { pull } from 'lodash'
-import { mount } from '@vue/test-utils'
-import Vue from 'vue'
-import Vuelidate from 'vuelidate'
-import { useI18nGlobally } from '../../__utils__/i18n'
-import { PassphraseVerification } from '@/components/Passphrase'
+import { mount } from "@vue/test-utils";
+import { pull } from "lodash";
+import Vue from "vue";
+import Vuelidate from "vuelidate";
 
-const i18n = useI18nGlobally()
+import { PassphraseVerification } from "@/components/Passphrase";
 
-Vue.use(Vuelidate)
+import { useI18nGlobally } from "../../__utils__/i18n";
 
-describe('PassphraseVerification', () => {
-  const passphrase = 'one two three four five six seven eight nine ten eleven twelve'
-  const wordArray = passphrase.split(' ')
-  const words = wordArray.reduce((acc, word, index) => {
-    acc[(index + 1).toString()] = word
-    return acc
-  }, {})
+const i18n = useI18nGlobally();
 
-  let wrapper
+Vue.use(Vuelidate);
 
-  beforeEach(() => {
-    wrapper = mount(PassphraseVerification, {
-      i18n,
-      propsData: {
-        passphrase
-      }
-    })
-  })
+describe("PassphraseVerification", () => {
+	const passphrase = "one two three four five six seven eight nine ten eleven twelve";
+	const wordArray = passphrase.split(" ");
+	const words = wordArray.reduce((acc, word, index) => {
+		acc[(index + 1).toString()] = word;
+		return acc;
+	}, {});
 
-  it('should render', () => {
-    expect(wrapper.contains('.PassphraseVerification')).toBeTruthy()
-  })
+	let wrapper;
 
-  it('should display an `InputText` per position', () => {
-    const inputs = wrapper.findAll('.InputText')
-    expect(inputs).toHaveLength(wrapper.vm.wordPositions.length)
-  })
+	beforeEach(() => {
+		wrapper = mount(PassphraseVerification, {
+			i18n,
+			propsData: {
+				passphrase,
+			},
+		});
+	});
 
-  describe('computed passpharseWords', () => {
-    describe('when receiving a String as the `passphrase` props', () => {
-      it('should return it as an Array', () => {
-        expect(wrapper.vm.passphraseWords).toEqual(wordArray)
-      })
-    })
+	it("should render", () => {
+		expect(wrapper.contains(".PassphraseVerification")).toBeTruthy();
+	});
 
-    describe('when receiving an Array as the `passphrase` props', () => {
-      it('should return it as an Array', () => {
-        wrapper.setProps({ passphrase: wordArray })
-        expect(wrapper.vm.passphraseWords).toEqual(wordArray)
-      })
-    })
-  })
+	it("should display an `InputText` per position", () => {
+		const inputs = wrapper.findAll(".InputText");
+		expect(inputs).toHaveLength(wrapper.vm.wordPositions.length);
+	});
 
-  describe('computed words', () => {
-    describe('when receiving a String as the `passphrase` props', () => {
-      it('should return it as an Object', () => {
-        expect(wrapper.vm.words).toEqual(words)
-      })
-    })
+	describe("computed passpharseWords", () => {
+		describe("when receiving a String as the `passphrase` props", () => {
+			it("should return it as an Array", () => {
+				expect(wrapper.vm.passphraseWords).toEqual(wordArray);
+			});
+		});
 
-    describe('when receiving an Array as the `passphrase` props', () => {
-      it('should return it as an Object', () => {
-        wrapper.setProps({ passphrase: wordArray })
-        expect(wrapper.vm.words).toEqual(words)
-      })
-    })
-  })
+		describe("when receiving an Array as the `passphrase` props", () => {
+			it("should return it as an Array", () => {
+				wrapper.setProps({ passphrase: wordArray });
+				expect(wrapper.vm.passphraseWords).toEqual(wordArray);
+			});
+		});
+	});
 
-  describe('suggestedPerPosition', () => {
-    it('should return `suggestionsPerWord` suggestions', () => {
-      let suggested = wrapper.vm.suggestedPerPosition
+	describe("computed words", () => {
+		describe("when receiving a String as the `passphrase` props", () => {
+			it("should return it as an Object", () => {
+				expect(wrapper.vm.words).toEqual(words);
+			});
+		});
 
-      const defaultNumber = 9
-      ;[3, 6, 9].forEach(position => {
-        expect(suggested).toBeInstanceOf(Object)
-        expect(suggested[position.toString()]).toBeArray()
-        expect(suggested[position.toString()]).toHaveLength(defaultNumber)
-      })
+		describe("when receiving an Array as the `passphrase` props", () => {
+			it("should return it as an Object", () => {
+				wrapper.setProps({ passphrase: wordArray });
+				expect(wrapper.vm.words).toEqual(words);
+			});
+		});
+	});
 
-      wrapper.setProps({
-        suggestionsPerWord: 4,
-        wordPositions: [3, 2, 1]
-      })
-      suggested = wrapper.vm.suggestedPerPosition
+	describe("suggestedPerPosition", () => {
+		it("should return `suggestionsPerWord` suggestions", () => {
+			let suggested = wrapper.vm.suggestedPerPosition;
 
-      ;[3, 2, 1].forEach(position => {
-        expect(suggested).toBeInstanceOf(Object)
-        expect(suggested[position.toString()]).toBeArray()
-        expect(suggested[position.toString()]).toHaveLength(4)
-      })
-    })
+			const defaultNumber = 9;
+			[3, 6, 9].forEach((position) => {
+				expect(suggested).toBeInstanceOf(Object);
+				expect(suggested[position.toString()]).toBeArray();
+				expect(suggested[position.toString()]).toHaveLength(defaultNumber);
+			});
 
-    describe('when there are not `additionalSuggestions`', () => {
-      it('should include the passphrase word into the suggestions', () => {
-        const suggested = wrapper.vm.suggestedPerPosition
+			wrapper.setProps({
+				suggestionsPerWord: 4,
+				wordPositions: [3, 2, 1],
+			});
+			suggested = wrapper.vm.suggestedPerPosition;
+			[3, 2, 1].forEach((position) => {
+				expect(suggested).toBeInstanceOf(Object);
+				expect(suggested[position.toString()]).toBeArray();
+				expect(suggested[position.toString()]).toHaveLength(4);
+			});
+		});
 
-        ;[3, 6, 9].forEach(position => {
-          const passphraseWord = words[position.toString()]
-          expect(suggested).toBeInstanceOf(Object)
-          expect(suggested[position.toString()]).toContain(passphraseWord)
-        })
-      })
+		describe("when there are not `additionalSuggestions`", () => {
+			it("should include the passphrase word into the suggestions", () => {
+				const suggested = wrapper.vm.suggestedPerPosition;
 
-      it('should include passphrase words only in the suggestions', () => {
-        const suggested = wrapper.vm.suggestedPerPosition
+				[3, 6, 9].forEach((position) => {
+					const passphraseWord = words[position.toString()];
+					expect(suggested).toBeInstanceOf(Object);
+					expect(suggested[position.toString()]).toContain(passphraseWord);
+				});
+			});
 
-        ;[3, 6, 9].forEach(position => {
-          expect(wordArray).toIncludeAllMembers(suggested[position.toString()])
-        })
-      })
-    })
+			it("should include passphrase words only in the suggestions", () => {
+				const suggested = wrapper.vm.suggestedPerPosition;
 
-    describe('when there are more `additionalSuggestions` than `suggestionPerWord`', () => {
-      const additionalSuggestions = ['word A', 'word B', 'word C']
-      let suggested
+				[3, 6, 9].forEach((position) => {
+					expect(wordArray).toIncludeAllMembers(suggested[position.toString()]);
+				});
+			});
+		});
 
-      beforeEach(() => {
-        wrapper.setProps({
-          suggestionsPerWord: wordArray.length + 3,
-          additionalSuggestions
-        })
+		describe("when there are more `additionalSuggestions` than `suggestionPerWord`", () => {
+			const additionalSuggestions = ["word A", "word B", "word C"];
+			let suggested;
 
-        suggested = wrapper.vm.suggestedPerPosition
-      })
+			beforeEach(() => {
+				wrapper.setProps({
+					suggestionsPerWord: wordArray.length + 3,
+					additionalSuggestions,
+				});
 
-      it('should include the passphrase word into the suggestions', () => {
-        ;[3, 6, 9].forEach(position => {
-          const passphraseWord = words[position.toString()]
-          expect(suggested).toBeInstanceOf(Object)
-          expect(suggested[position.toString()]).toContain(passphraseWord)
-        })
-      })
+				suggested = wrapper.vm.suggestedPerPosition;
+			});
 
-      it('should include several passphrase words and additional suggestions', () => {
-        ;[3, 6, 9].forEach(position => {
-          expect(suggested[position.toString()]).toIncludeAnyMembers(additionalSuggestions)
-          expect(suggested[position.toString()]).toIncludeAnyMembers(wordArray)
-        })
-      })
-    })
+			it("should include the passphrase word into the suggestions", () => {
+				[3, 6, 9].forEach((position) => {
+					const passphraseWord = words[position.toString()];
+					expect(suggested).toBeInstanceOf(Object);
+					expect(suggested[position.toString()]).toContain(passphraseWord);
+				});
+			});
 
-    describe('when there are less `additionalSuggestions` than `suggestionPerWord`', () => {
-      const additionalSuggestions = ['word A', 'word B', 'word C', 'word D', 'word E']
-      let suggested
+			it("should include several passphrase words and additional suggestions", () => {
+				[3, 6, 9].forEach((position) => {
+					expect(suggested[position.toString()]).toIncludeAnyMembers(additionalSuggestions);
+					expect(suggested[position.toString()]).toIncludeAnyMembers(wordArray);
+				});
+			});
+		});
 
-      beforeEach(() => {
-        wrapper.setProps({
-          suggestionsPerWord: additionalSuggestions.length + 1,
-          additionalSuggestions
-        })
+		describe("when there are less `additionalSuggestions` than `suggestionPerWord`", () => {
+			const additionalSuggestions = ["word A", "word B", "word C", "word D", "word E"];
+			let suggested;
 
-        suggested = wrapper.vm.suggestedPerPosition
-      })
+			beforeEach(() => {
+				wrapper.setProps({
+					suggestionsPerWord: additionalSuggestions.length + 1,
+					additionalSuggestions,
+				});
 
-      it('should include the passphrase word into the suggestions', () => {
-        ;[3, 6, 9].forEach(position => {
-          const passphraseWord = words[position.toString()]
-          expect(suggested).toBeInstanceOf(Object)
-          expect(suggested[position.toString()]).toContain(passphraseWord)
-        })
-      })
+				suggested = wrapper.vm.suggestedPerPosition;
+			});
 
-      it('should include the passphrase word with the additional suggestions only', () => {
-        ;[3, 6, 9].forEach(position => {
-          const passphraseWord = words[position.toString()]
-          const withoutPassphraseWord = pull(suggested[position.toString()], passphraseWord)
+			it("should include the passphrase word into the suggestions", () => {
+				[3, 6, 9].forEach((position) => {
+					const passphraseWord = words[position.toString()];
+					expect(suggested).toBeInstanceOf(Object);
+					expect(suggested[position.toString()]).toContain(passphraseWord);
+				});
+			});
 
-          expect(suggested[position.toString()]).toIncludeAnyMembers(additionalSuggestions)
-          expect(withoutPassphraseWord).not.toIncludeAnyMembers(wordArray)
-        })
-      })
-    })
-  })
+			it("should include the passphrase word with the additional suggestions only", () => {
+				[3, 6, 9].forEach((position) => {
+					const passphraseWord = words[position.toString()];
+					const withoutPassphraseWord = pull(suggested[position.toString()], passphraseWord);
 
-  describe('acceptWord', () => {
-    describe('when all words have been verified', () => {
-      it('emits the `verified` event', async () => {
-        wrapper = mount(PassphraseVerification, {
-          i18n,
-          propsData: {
-            passphrase
-          },
-          computed: {
-            allVerified: () => true
-          }
-        })
+					expect(suggested[position.toString()]).toIncludeAnyMembers(additionalSuggestions);
+					expect(withoutPassphraseWord).not.toIncludeAnyMembers(wordArray);
+				});
+			});
+		});
+	});
 
-        wrapper.vm.acceptWord()
+	describe("acceptWord", () => {
+		describe("when all words have been verified", () => {
+			it("emits the `verified` event", async () => {
+				wrapper = mount(PassphraseVerification, {
+					i18n,
+					propsData: {
+						passphrase,
+					},
+					computed: {
+						allVerified: () => true,
+					},
+				});
 
-        // The method waits some milliseconds before emitting the event
-        await setTimeout(() => {
-          expect(wrapper.emitted('verified')).toBeTruthy()
-        }, 1000)
-      })
-    })
-  })
+				wrapper.vm.acceptWord();
 
-  describe('toNextWord', () => {
-    it('should show the suggetions of the next position', () => {
-      jest.spyOn(wrapper.vm, 'showSuggestions')
+				// The method waits some milliseconds before emitting the event
+				await setTimeout(() => {
+					expect(wrapper.emitted("verified")).toBeTruthy();
+				}, 1000);
+			});
+		});
+	});
 
-      let nextPosition = '9'
-      wrapper.setData({ currentPosition: '6' })
-      wrapper.vm.toNextWord()
+	describe("toNextWord", () => {
+		it("should show the suggetions of the next position", () => {
+			jest.spyOn(wrapper.vm, "showSuggestions");
 
-      expect(wrapper.vm.showSuggestions).toHaveBeenCalledWith(nextPosition)
+			let nextPosition = "9";
+			wrapper.setData({ currentPosition: "6" });
+			wrapper.vm.toNextWord();
 
-      nextPosition = '3'
-      wrapper.vm.toNextWord()
+			expect(wrapper.vm.showSuggestions).toHaveBeenCalledWith(nextPosition);
 
-      expect(wrapper.vm.showSuggestions).toHaveBeenCalledWith(nextPosition)
-    })
+			nextPosition = "3";
+			wrapper.vm.toNextWord();
 
-    it('should focus on the next input', () => {
-      const nextPosition = '6'
-      const textInput = wrapper.vm.$refs[`input-${nextPosition}`][0]
+			expect(wrapper.vm.showSuggestions).toHaveBeenCalledWith(nextPosition);
+		});
 
-      jest.spyOn(textInput, 'focus')
-      wrapper.setData({ currentPosition: '3' })
+		it("should focus on the next input", () => {
+			const nextPosition = "6";
+			const textInput = wrapper.vm.$refs[`input-${nextPosition}`][0];
 
-      wrapper.vm.toNextWord()
+			jest.spyOn(textInput, "focus");
+			wrapper.setData({ currentPosition: "3" });
 
-      expect(textInput.focus).toHaveBeenCalled()
-    })
+			wrapper.vm.toNextWord();
 
-    describe('when the next position is already accepted', () => {
-      it('should move to the subsequent position', () => {
-        jest.spyOn(wrapper.vm, 'showSuggestions')
+			expect(textInput.focus).toHaveBeenCalled();
+		});
 
-        let subsequentPosition = '7'
-        wrapper.setProps({
-          wordPositions: [1, 3, 5, 7, 9, 11]
-        })
-        wrapper.setData({
-          currentPosition: '3',
-          acceptedWords: {
-            1: 'former',
-            3: '',
-            5: 'other',
-            7: '',
-            9: 'example',
-            11: 'random'
-          }
-        })
-        wrapper.vm.toNextWord()
+		describe("when the next position is already accepted", () => {
+			it("should move to the subsequent position", () => {
+				jest.spyOn(wrapper.vm, "showSuggestions");
 
-        expect(wrapper.vm.showSuggestions).toHaveBeenCalledWith(subsequentPosition)
+				let subsequentPosition = "7";
+				wrapper.setProps({
+					wordPositions: [1, 3, 5, 7, 9, 11],
+				});
+				wrapper.setData({
+					currentPosition: "3",
+					acceptedWords: {
+						1: "former",
+						3: "",
+						5: "other",
+						7: "",
+						9: "example",
+						11: "random",
+					},
+				});
+				wrapper.vm.toNextWord();
 
-        subsequentPosition = '2'
-        wrapper.setProps({
-          wordPositions: [1, 2, 3, 4, 5, 6]
-        })
-        wrapper.setData({
-          currentPosition: '3',
-          acceptedWords: {
-            1: 'former',
-            2: '',
-            3: '',
-            4: 'random',
-            5: 'other',
-            6: 'example'
-          }
-        })
-        wrapper.vm.toNextWord()
+				expect(wrapper.vm.showSuggestions).toHaveBeenCalledWith(subsequentPosition);
 
-        expect(wrapper.vm.showSuggestions).toHaveBeenCalledWith(subsequentPosition)
-      })
-    })
-  })
-})
+				subsequentPosition = "2";
+				wrapper.setProps({
+					wordPositions: [1, 2, 3, 4, 5, 6],
+				});
+				wrapper.setData({
+					currentPosition: "3",
+					acceptedWords: {
+						1: "former",
+						2: "",
+						3: "",
+						4: "random",
+						5: "other",
+						6: "example",
+					},
+				});
+				wrapper.vm.toNextWord();
+
+				expect(wrapper.vm.showSuggestions).toHaveBeenCalledWith(subsequentPosition);
+			});
+		});
+	});
+});

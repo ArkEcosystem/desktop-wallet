@@ -1,75 +1,75 @@
 <template>
-  <div class="CollapseAccordion">
-    <slot />
-  </div>
+	<div class="CollapseAccordion">
+		<slot />
+	</div>
 </template>
 
 <script>
-import { isEmpty } from '@/utils'
+import { isEmpty } from "@/utils";
 
 export default {
-  name: 'CollapseAccordion',
+	name: "CollapseAccordion",
 
-  model: {
-    prop: 'id',
-    event: 'input'
-  },
+	model: {
+		prop: "id",
+		event: "input",
+	},
 
-  provide () {
-    return {
-      collapseClick: this.collapseClick
-    }
-  },
+	provide() {
+		return {
+			collapseClick: this.collapseClick,
+		};
+	},
 
-  props: {
-    id: {
-      type: [String, Number],
-      required: false,
-      default: null
-    },
-    items: {
-      type: Array,
-      required: false,
-      default: () => this.collections_filterChildren('Collapse') || []
-    }
-  },
+	props: {
+		id: {
+			type: [String, Number],
+			required: false,
+			default: null,
+		},
+		items: {
+			type: Array,
+			required: false,
+			default: () => this.collections_filterChildren("Collapse") || [],
+		},
+	},
 
-  data: vm => ({
-    inputId: vm.id
-  }),
+	data: (vm) => ({
+		inputId: vm.id,
+	}),
 
-  watch: {
-    id (val) {
-      this.$nextTick(() => (this.inputId = val))
-    },
+	watch: {
+		id(val) {
+			this.$nextTick(() => (this.inputId = val));
+		},
 
-    inputId () {
-      this.toggleCollapse()
-    },
+		inputId() {
+			this.toggleCollapse();
+		},
 
-    items () {
-      this.toggleCollapse()
-    }
-  },
+		items() {
+			this.toggleCollapse();
+		},
+	},
 
-  mounted () {
-    if (isEmpty(this.items)) return
+	mounted() {
+		if (isEmpty(this.items)) return;
 
-    this.toggleCollapse()
-  },
+		this.toggleCollapse();
+	},
 
-  methods: {
-    // Called by the child
-    collapseClick (id) {
-      this.$nextTick(() => (this.inputId = id))
-    },
+	methods: {
+		// Called by the child
+		collapseClick(id) {
+			this.$nextTick(() => (this.inputId = id));
+		},
 
-    toggleCollapse () {
-      this.items.forEach(item => {
-        item.collapse(this.inputId)
-      })
-      this.$emit('input', this.inputId)
-    }
-  }
-}
+		toggleCollapse() {
+			this.items.forEach((item) => {
+				item.collapse(this.inputId);
+			});
+			this.$emit("input", this.inputId);
+		},
+	},
+};
 </script>

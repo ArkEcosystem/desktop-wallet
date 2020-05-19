@@ -1,11 +1,6 @@
-import SelectionAvatar from './SelectionAvatar'
-import SelectionBackground from './SelectionBackground'
-import SelectionTheme from './SelectionTheme'
-import SelectionNetwork from './SelectionNetwork'
+import SelectionAvatar from "./SelectionAvatar";
+import SelectionBackground from "./SelectionBackground";
+import SelectionNetwork from "./SelectionNetwork";
+import SelectionTheme from "./SelectionTheme";
 
-export {
-  SelectionAvatar,
-  SelectionBackground,
-  SelectionTheme,
-  SelectionNetwork
-}
+export { SelectionAvatar, SelectionBackground, SelectionTheme, SelectionNetwork };

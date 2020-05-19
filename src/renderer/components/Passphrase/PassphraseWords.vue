@@ -1,42 +1,42 @@
 <template>
-  <div class="PassphraseWords h-full w-full flex flex-wrap">
-    <InputText
-      v-for="(word, index) in passphraseWords"
-      :key="index"
-      :is-read-only="true"
-      :label="(index + 1).toString()"
-      :name="`word-${index}`"
-      :value="word"
-    />
-  </div>
+	<div class="PassphraseWords h-full w-full flex flex-wrap">
+		<InputText
+			v-for="(word, index) in passphraseWords"
+			:key="index"
+			:is-read-only="true"
+			:label="(index + 1).toString()"
+			:name="`word-${index}`"
+			:value="word"
+		/>
+	</div>
 </template>
 
 <script>
-import { InputText } from '@/components/Input'
+import { InputText } from "@/components/Input";
 
 export default {
-  name: 'PassphraseWords',
+	name: "PassphraseWords",
 
-  components: {
-    InputText
-  },
+	components: {
+		InputText,
+	},
 
-  props: {
-    passphraseWords: {
-      type: Array,
-      required: true
-    }
-  }
-}
+	props: {
+		passphraseWords: {
+			type: Array,
+			required: true,
+		},
+	},
+};
 </script>
 
 <style lang="postcss">
 .PassphraseWords .InputText {
-  width: calc(config('width.1/4') - config('margin.2'));
-  @apply mr-2
+	width: calc(config("width.1/4") - config("margin.2"));
+	@apply mr-2;
 }
 
 .PassphraseWords .InputText__input[disabled] {
-  @apply .bg-transparent
+	@apply .bg-transparent;
 }
 </style>

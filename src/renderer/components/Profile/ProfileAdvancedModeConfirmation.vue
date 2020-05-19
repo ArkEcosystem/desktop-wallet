@@ -1,45 +1,45 @@
 <template>
-  <ModalConfirmation
-    :title="$t('PAGES.PROFILE_EDITION.ADVANCED_MODE.TITLE')"
-    :question="$t('PAGES.PROFILE_EDITION.ADVANCED_MODE.QUESTION')"
-    :cancel-button="$t('PAGES.PROFILE_EDITION.ADVANCED_MODE.DECLINE')"
-    :continue-button="$t('PAGES.PROFILE_EDITION.ADVANCED_MODE.ACCEPT')"
-    container-classes="ProfileAdvancedModeConfirmation"
-    @close="emitClose"
-    @cancel="emitClose"
-    @continue="emitSave"
-  />
+	<ModalConfirmation
+		:title="$t('PAGES.PROFILE_EDITION.ADVANCED_MODE.TITLE')"
+		:question="$t('PAGES.PROFILE_EDITION.ADVANCED_MODE.QUESTION')"
+		:cancel-button="$t('PAGES.PROFILE_EDITION.ADVANCED_MODE.DECLINE')"
+		:continue-button="$t('PAGES.PROFILE_EDITION.ADVANCED_MODE.ACCEPT')"
+		container-classes="ProfileAdvancedModeConfirmation"
+		@close="emitClose"
+		@cancel="emitClose"
+		@continue="emitSave"
+	/>
 </template>
 
 <script>
-import { ModalConfirmation } from '@/components/Modal'
+import { ModalConfirmation } from "@/components/Modal";
 
 export default {
-  name: 'ProfileAdvancedModeConfirmation',
+	name: "ProfileAdvancedModeConfirmation",
 
-  components: {
-    ModalConfirmation
-  },
+	components: {
+		ModalConfirmation,
+	},
 
-  methods: {
-    emitSave () {
-      this.$emit('save')
-    },
+	methods: {
+		emitSave() {
+			this.$emit("save");
+		},
 
-    emitClose () {
-      this.$emit('close')
-    }
-  }
-}
+		emitClose() {
+			this.$emit("close");
+		},
+	},
+};
 </script>
 
 <style>
 .ProfileAdvancedModeConfirmation .ModalConfirmation__container {
-  min-width: calc(var(--profile-avatar-xl) + 74px * 2 + 80px);
-  max-width: calc(var(--profile-avatar-xl) + 74px * 2 + 120px)
+	min-width: calc(var(--profile-avatar-xl) + 74px * 2 + 80px);
+	max-width: calc(var(--profile-avatar-xl) + 74px * 2 + 120px);
 }
 .ProfileAdvancedModeConfirmation .ModalConfirmation__container > div:first-child {
-  @apply .mb-0
+	@apply .mb-0;
 }
 /*.ProfileAdvancedModeConfirmation__container__arrow {
   width: 74px;

@@ -1,7 +1,4 @@
-import ContactRenameModal from './ContactRenameModal'
-import ContactRemovalConfirmation from './ContactRemovalConfirmation'
+import ContactRemovalConfirmation from "./ContactRemovalConfirmation";
+import ContactRenameModal from "./ContactRenameModal";
 
-export {
-  ContactRenameModal,
-  ContactRemovalConfirmation
-}
+export { ContactRenameModal, ContactRemovalConfirmation };
