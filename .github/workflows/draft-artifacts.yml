@@ -35,7 +35,7 @@ jobs:
         run: sudo apt-get install libudev-dev libusb-1.0-0-dev
 
       - name: Install
-        run: yarn global add node-gyp && yarn install --immutable --immutable-cache
+        run: yarn install --immutable --immutable-cache
 
       - name: Re-build bcrypto
         run: cd node_modules/bcrypto && npm install && cd ../../
@@ -84,7 +84,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Install
-        run: yarn global add node-gyp && yarn install --immutable --immutable-cache
+        run: yarn install --immutable --immutable-cache
 
       - name: Prepare for app notarization
         run: |
@@ -127,7 +127,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Install
-        run: yarn global add node-gyp && yarn install --immutable --immutable-cache
+        run: yarn install --immutable --immutable-cache
         shell: cmd
 
       - name: Build

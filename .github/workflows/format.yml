@@ -22,7 +22,7 @@ jobs:
         run: sudo apt-get install libudev-dev libusb-1.0-0-dev
 
       - name: Install
-        run: yarn global add node-gyp && yarn yarn install --immutable --immutable-cache
+        run: yarn yarn install --immutable --immutable-cache
 
       - name: Run eslint
         run: yarn lint:fix
