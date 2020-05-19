@@ -445,6 +445,7 @@ describe('Services > Client', () => {
 
       nock('http://127.0.0.1:4003')
         .get('/api/delegates/USERNAME/voters')
+        .query(true)
         .reply(200, {
           meta,
           data: {}
