@@ -577,11 +577,7 @@ export default {
 
         this.$set(this.form, 'vendorField', this.schema.vendorField || '')
       } catch (error) {
-        if (error.name === 'SyntaxError') {
-          error.message = this.$t('VALIDATION.INVALID_FORMAT')
-        }
-
-        this.$error(`${this.$t('TRANSACTION.ERROR.LOAD_FROM_FILE')}: ${error.message}`)
+        this.$error(`${this.$t('TRANSACTION.ERROR.LOAD_FROM_URI')}: ${error.message}`)
       }
 
       if (this.schema.wallet) {
