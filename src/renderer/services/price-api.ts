@@ -3,13 +3,13 @@ import logger from 'electron-log'
 import i18n from '@/i18n'
 import { capitalize } from '@/utils'
 import alertEvents from '@/plugins/alert-events'
-import { PriceTrackerService } from '@arkecosystem/platform-sdk'
+import { MarketService } from '@arkecosystem/platform-sdk-markets'
 
 class PriceApi {
   private adapter = 'cryptocompare';
 
   public getAdapter () {
-    return PriceTrackerService.make(this.adapter)
+    return MarketService.make(this.adapter)
   }
 
   public setAdapter (adapter: string) {
