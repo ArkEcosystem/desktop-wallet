@@ -352,8 +352,6 @@ export default {
 
       try {
         peers = await discoverPeers(await dispatch('getPeerDiscovery', network))
-
-        throw new Error('xxx')
       } catch (error) {
         if (!network) {
           network = rootGetters['session/network']
