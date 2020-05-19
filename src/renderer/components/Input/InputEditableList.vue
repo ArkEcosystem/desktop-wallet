@@ -4,10 +4,9 @@
 			<label
 				v-show="title"
 				class="InputField__label absolute pointer-events-none text-theme-page-text-light truncate"
-			>
-				{{ title
-				}}<span v-if="showCount && items.length">
-					- {{ items.length }}<span v-if="maxItems"> / {{ maxItems }}</span></span
+				>{{ title }}
+				<span v-if="showCount && items.length"
+					>- {{ items.length }}<span v-if="maxItems"> / {{ maxItems }}</span></span
 				>
 			</label>
 		</div>

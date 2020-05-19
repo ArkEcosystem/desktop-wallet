@@ -40,7 +40,7 @@
 <script>
 import SvgIcon from "@/components/SvgIcon";
 
-import { ButtonGeneric } from "./ButtonGeneric";
+import ButtonGeneric from "./ButtonGeneric";
 
 export default {
 	name: "ButtonDropdown",

@@ -43,12 +43,12 @@
 		"pack:renderer": "cross-env NODE_ENV=production webpack --progress --colors --config .electron-vue/webpack.renderer.config.js",
 		"postinstall": "electron-builder install-app-deps",
 		"preversion": "cross-env ./scripts/version-artifacts.sh",
-		"test": " npm run test:unit && npm run test:e2e:full",
-		"test:e2e": " jest --config __tests__/e2e.jest.conf.js",
-		"test:e2e:full": " npm run pack && npm run test:e2e",
-		"test:unit": " jest --config __tests__/unit.jest.conf.js",
-		"test:unit:coverage": " jest --config __tests__/unit.jest.conf.js --coverage",
-		"test:unit:watch": " jest --config __tests__/unit.jest.conf.js --watch"
+		"test": "cross-env NODE_ICU_DATA=node_modules/full-icu npm run test:unit && npm run test:e2e:full",
+		"test:e2e": "cross-env NODE_ICU_DATA=node_modules/full-icu jest --config __tests__/e2e.jest.conf.js",
+		"test:e2e:full": "cross-env NODE_ICU_DATA=node_modules/full-icu npm run pack && npm run test:e2e",
+		"test:unit": "cross-env NODE_ICU_DATA=node_modules/full-icu jest --config __tests__/unit.jest.conf.js",
+		"test:unit:coverage": "cross-env NODE_ICU_DATA=node_modules/full-icu jest --config __tests__/unit.jest.conf.js --coverage",
+		"test:unit:watch": "cross-env NODE_ICU_DATA=node_modules/full-icu jest --config __tests__/unit.jest.conf.js --watch"
 	},
 	"dependencies": {
 		"@arkecosystem/client": "^1.1.3",

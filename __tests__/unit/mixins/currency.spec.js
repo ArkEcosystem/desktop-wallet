@@ -5,6 +5,12 @@ import BigNumber from "@/plugins/bignumber";
 
 import useI18n from "../__utils__/i18n";
 
+// TODO: get rid of this and implement and an environment independent alternative.
+// This Intl polyfill has some problems with number precision, so we store the original
+// implementation to use it instead when that lack of accuracy is an issue
+global.__Intl__ = global.Intl;
+global.Intl = require("intl");
+
 describe("Mixins > Currency", () => {
 	const network = {
 		token: "NET",
