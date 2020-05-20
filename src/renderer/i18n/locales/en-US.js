@@ -1135,6 +1135,7 @@ export default {
     LEDGER_SIGN_FAILED: 'Could not sign transaction with Ledger',
     LEDGER_USER_DECLINED: 'User declined',
     LOAD_FROM_FILE: 'Load transaction from file',
+    LOAD_FROM_URI: 'Load transaction from URI',
     MULTIPLE: 'Multiple',
     NONCE: 'Nonce',
     NO_RECIPIENTS: 'There are no recipient(s)',
