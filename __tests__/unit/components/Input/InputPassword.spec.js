@@ -75,9 +75,29 @@ describe('InputPassword', () => {
     })
   })
 
+  describe('when the password does not include a lowercase character', () => {
+    it('should provide feedback about it', () => {
+      mountData.propsData.value = 'A123'
+      mountData.propsData.minLength = 2
+      const wrapper = mount(InputPassword, mountData)
+
+      expect(wrapper.vm.passwordFeedback()).toEqual('VALIDATION.PASSWORD.LOWER_CASE')
+    })
+  })
+
+  describe('when the password does not include an uppercase character', () => {
+    it('should provide feedback about it', () => {
+      mountData.propsData.value = 'a123'
+      mountData.propsData.minLength = 2
+      const wrapper = mount(InputPassword, mountData)
+
+      expect(wrapper.vm.passwordFeedback()).toEqual('VALIDATION.PASSWORD.UPPER_CASE')
+    })
+  })
+
   describe('when the password does not include a number', () => {
     it('should provide feedback about it', () => {
-      mountData.propsData.value = 'aaaabbbb'
+      mountData.propsData.value = 'aB'
       mountData.propsData.minLength = 2
       const wrapper = mount(InputPassword, mountData)
 
@@ -87,7 +107,7 @@ describe('InputPassword', () => {
 
   describe('when the password does not include a special character', () => {
     it('should provide feedback about it', () => {
-      mountData.propsData.value = 'aaaa0000'
+      mountData.propsData.value = 'aB0'
       mountData.propsData.minLength = 2
       const wrapper = mount(InputPassword, mountData)
 
@@ -97,7 +117,7 @@ describe('InputPassword', () => {
 
   describe('when the password follows all the constraints', () => {
     it('should not provide feedback', () => {
-      const value = 'aaaa000+'
+      const value = 'aB1+'
       mountData.propsData.value = value
       mountData.propsData.minLength = value.length
       const wrapper = mount(InputPassword, mountData)

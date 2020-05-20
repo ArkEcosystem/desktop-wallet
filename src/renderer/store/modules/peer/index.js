@@ -6,11 +6,35 @@ import i18n from '@/i18n'
 import { isEmpty } from '@/utils'
 import PeerModel from '@/models/peer'
 import Vue from 'vue'
+import { fallbackSeeds } from './fallback'
 
 const getBaseUrl = (peer) => {
   const scheme = peer.isHttps ? 'https://' : 'http://'
 
   return `${scheme}${peer.ip}:${peer.port}`
+}
+
+const discoverPeers = async (peerDiscovery) => {
+  peerDiscovery.withLatency(300).sortBy('latency')
+
+  const peers = await peerDiscovery.findPeersWithPlugin('core-api', {
+    additional: [
+      'height',
+      'latency'
+    ]
+  })
+
+  if (peers && peers.length) {
+    return peers
+  }
+
+  return peerDiscovery.findPeersWithPlugin('core-wallet-api', {
+    additional: [
+      'height',
+      'latency',
+      'version'
+    ]
+  })
 }
 
 export default {
@@ -323,35 +347,44 @@ export default {
      * Refresh peer list.
      * @return {void}
      */
-    async refresh ({ dispatch }, network = null) {
+    async refresh ({ dispatch, rootGetters }, network = null) {
       let peers = []
 
       try {
-        const peerDiscovery = await dispatch('getPeerDiscovery', network)
-
-        peerDiscovery.withLatency(300)
-          .sortBy('latency')
-
-        peers = await peerDiscovery
-          .findPeersWithPlugin('core-api', {
-            additional: [
-              'height',
-              'latency'
-            ]
-          })
-
-        if (!peers.length) {
-          peers = await peerDiscovery
-            .findPeersWithPlugin('core-wallet-api', {
-              additional: [
-                'height',
-                'latency',
-                'version'
-              ]
-            })
-        }
+        peers = await discoverPeers(await dispatch('getPeerDiscovery', network))
       } catch (error) {
-        console.error('Could not refresh peer list:', error)
+        if (!network) {
+          network = rootGetters['session/network']
+        }
+
+        const networkLookup = {
+          'ark.mainnet': 'mainnet',
+          'ark.devnet': 'devnet'
+        }
+
+        if (networkLookup[network.id]) {
+          console.log('Could not refresh peer list. Using fallback seeds: ', error)
+
+          let peerDiscoveryFailed = true
+
+          while (peerDiscoveryFailed) {
+            try {
+              const seeds = fallbackSeeds[network.id]
+              const seed = seeds[Math.floor(Math.random() * seeds.length)]
+              const peerDiscovery = await PeerDiscovery.new({ networkOrHost: `http://${seed.ip}:4003/api/peers` })
+
+              peers = await discoverPeers(peerDiscovery)
+
+              peerDiscoveryFailed = false
+            } catch (error) {
+              peerDiscoveryFailed = true
+
+              console.error('Could not refresh peer list:', error)
+            }
+          }
+        } else {
+          console.error('Could not refresh peer list:', error)
+        }
       }
 
       if (!peers.length) {
