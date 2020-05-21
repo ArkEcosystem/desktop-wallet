@@ -1,9 +1,9 @@
 import { Identities, Managers } from "@arkecosystem/crypto";
+import { Utils } from "@arkecosystem/platform-sdk";
 import logger from "electron-log";
 import { cloneDeep } from "lodash";
 import nock from "nock";
 
-import BigNumber from "@/plugins/bignumber";
 import ClientService from "@/services/client";
 import WalletService from "@/services/wallet";
 import store from "@/store";
@@ -597,7 +597,9 @@ describe("Services > Client", () => {
 			transactions.forEach((transaction, i) => {
 				expect(transaction).toHaveProperty("totalAmount");
 				expect(transaction.totalAmount).toBeString();
-				expect(transaction.totalAmount).toEqual(new BigNumber(data[i].amount).plus(data[i].fee).toString());
+				expect(transaction.totalAmount).toEqual(
+					Utils.BigNumber.make(data[i].amount).plus(data[i].fee).toString(),
+				);
 				expect(transaction).toHaveProperty("timestamp", data[i].timestamp.unix * 1000);
 				expect(transaction).toHaveProperty("isSender");
 				expect(transaction).toHaveProperty("isRecipient");
@@ -926,7 +928,7 @@ describe("Services > Client", () => {
 		const rawTransaction = {
 			address,
 			votes: [`+${publicKey}`],
-			fee: new BigNumber(fees[1][3]),
+			fee: Utils.BigNumber.make(fees[1][3]),
 			passphrase: "passphrase",
 			secondPassphrase: "second passphrase",
 			networkWif: 170,
@@ -965,7 +967,7 @@ describe("Services > Client", () => {
 
 		describe("when the fee is bigger than the static fee", () => {
 			it("should throw an Error", async () => {
-				const fee = new BigNumber(fees[1][3] + 1);
+				const fee = Utils.BigNumber.make(fees[1][3] + 1);
 				await expect(client.buildVote({ fee })).rejects.toThrow(/fee/);
 			});
 		});
@@ -977,14 +979,14 @@ describe("Services > Client", () => {
 				await expect(
 					client.buildVote({
 						...rawTransaction,
-						...{ fee: new BigNumber(fees[1][3]) },
+						...{ fee: Utils.BigNumber.make(fees[1][3]) },
 					}),
 				).resolves.not.toThrow(/fee/);
 
 				await expect(
 					client.buildVote({
 						...rawTransaction,
-						...{ fee: new BigNumber(fees[1][3] - 1) },
+						...{ fee: Utils.BigNumber.make(fees[1][3] - 1) },
 					}),
 				).resolves.not.toThrow(/fee/);
 
@@ -999,7 +1001,7 @@ describe("Services > Client", () => {
 		const rawTransaction = {
 			address,
 			username: "bob",
-			fee: new BigNumber(fees[1][2]),
+			fee: Utils.BigNumber.make(fees[1][2]),
 			passphrase: "passphrase",
 			secondPassphrase: "second passphrase",
 			networkWif: 170,
@@ -1035,7 +1037,7 @@ describe("Services > Client", () => {
 
 		describe("when the fee is bigger than the static fee", () => {
 			it("should throw an Error", async () => {
-				const fee = new BigNumber(fees[1][2] + 1);
+				const fee = Utils.BigNumber.make(fees[1][2] + 1);
 				await expect(client.buildDelegateRegistration({ fee })).rejects.toThrow(/fee/);
 			});
 		});
@@ -1047,14 +1049,14 @@ describe("Services > Client", () => {
 				await expect(
 					client.buildDelegateRegistration({
 						...rawTransaction,
-						...{ fee: new BigNumber(fees[1][2]) },
+						...{ fee: Utils.BigNumber.make(fees[1][2]) },
 					}),
 				).resolves.not.toThrow(/fee/);
 
 				await expect(
 					client.buildDelegateRegistration({
 						...rawTransaction,
-						...{ fee: new BigNumber(fees[1][2] - 1) },
+						...{ fee: Utils.BigNumber.make(fees[1][2] - 1) },
 					}),
 				).resolves.not.toThrow(/fee/);
 
@@ -1068,8 +1070,8 @@ describe("Services > Client", () => {
 		const publicKey = Identities.PublicKey.fromPassphrase("passphrase");
 		const rawTransaction = {
 			address,
-			amount: new BigNumber(100 * 1e8),
-			fee: new BigNumber(fees[1][0]),
+			amount: Utils.BigNumber.make(100 * 1e8),
+			fee: Utils.BigNumber.make(fees[1][0]),
 			recipientId: address,
 			vendorField: "this is a test",
 			passphrase: "passphrase",
@@ -1112,7 +1114,7 @@ describe("Services > Client", () => {
 				setAip11AndSpy(false, false);
 				const networkId = "ark.devnet";
 				const transaction = await client.buildTransfer(
-					{ fee: new BigNumber(fees[1][0]), networkId, passphrase: "test" },
+					{ fee: Utils.BigNumber.make(fees[1][0]), networkId, passphrase: "test" },
 					false,
 					true,
 				);
@@ -1122,7 +1124,7 @@ describe("Services > Client", () => {
 
 		describe("when the fee is bigger than the static fee", () => {
 			it("should throw an Error", async () => {
-				const fee = new BigNumber(fees[1][0] + 1);
+				const fee = Utils.BigNumber.make(fees[1][0] + 1);
 				await expect(client.buildTransfer({ fee })).rejects.toThrow(/fee/);
 			});
 		});
@@ -1132,14 +1134,14 @@ describe("Services > Client", () => {
 				await expect(
 					client.buildTransfer({
 						...rawTransaction,
-						...{ fee: new BigNumber(fees[1][0]) },
+						...{ fee: Utils.BigNumber.make(fees[1][0]) },
 					}),
 				).resolves.not.toThrow(/fee/);
 
 				await expect(
 					client.buildTransfer({
 						...rawTransaction,
-						...{ fee: new BigNumber(fees[1][0] - 1) },
+						...{ fee: Utils.BigNumber.make(fees[1][0] - 1) },
 					}),
 				).resolves.not.toThrow(/fee/);
 			});
@@ -1152,7 +1154,7 @@ describe("Services > Client", () => {
 		const secondPublicKey = Identities.PublicKey.fromPassphrase("second passphrase");
 		const rawTransaction = {
 			address,
-			fee: new BigNumber(fees[1][1]),
+			fee: Utils.BigNumber.make(fees[1][1]),
 			passphrase: "passphrase",
 			secondPassphrase: "second passphrase",
 			networkWif: 170,
@@ -1188,7 +1190,7 @@ describe("Services > Client", () => {
 
 		describe("when the fee is bigger than the static fee", () => {
 			it("should throw an Error", async () => {
-				const fee = new BigNumber(fees[1][1] + 1);
+				const fee = Utils.BigNumber.make(fees[1][1] + 1);
 				await expect(client.buildSecondSignatureRegistration({ fee })).rejects.toThrow(/fee/);
 			});
 		});
@@ -1200,14 +1202,14 @@ describe("Services > Client", () => {
 				await expect(
 					client.buildSecondSignatureRegistration({
 						...rawTransaction,
-						...{ fee: new BigNumber(fees[1][1]) },
+						...{ fee: Utils.BigNumber.make(fees[1][1]) },
 					}),
 				).resolves.not.toThrow(/fee/);
 
 				await expect(
 					client.buildSecondSignatureRegistration({
 						...rawTransaction,
-						...{ fee: new BigNumber(fees[1][1] - 1) },
+						...{ fee: Utils.BigNumber.make(fees[1][1] - 1) },
 					}),
 				).resolves.not.toThrow(/fee/);
 
@@ -1230,7 +1232,7 @@ describe("Services > Client", () => {
 			address,
 			publicKeys,
 			minKeys,
-			fee: new BigNumber(fees[1][4]),
+			fee: Utils.BigNumber.make(fees[1][4]),
 			passphrase: "passphrase",
 			secondPassphrase: "second passphrase",
 			networkWif: 170,
@@ -1312,7 +1314,7 @@ describe("Services > Client", () => {
 		describe("when the fee is bigger than the static fee", () => {
 			it("should throw an Error", async () => {
 				const spy = setAip11AndSpy(true);
-				const fee = new BigNumber(fees[1][4] + 1);
+				const fee = Utils.BigNumber.make(fees[1][4] + 1);
 				await expect(client.buildMultiSignature({ fee, minKeys, publicKeys })).rejects.toThrow(/fee/);
 				spy.mockRestore();
 			});
@@ -1325,14 +1327,14 @@ describe("Services > Client", () => {
 				await expect(
 					client.buildMultiSignature({
 						...rawTransaction,
-						...{ fee: new BigNumber(fees[1][4]) },
+						...{ fee: Utils.BigNumber.make(fees[1][4]) },
 					}),
 				).resolves.not.toThrow(/fee/);
 
 				await expect(
 					client.buildMultiSignature({
 						...rawTransaction,
-						...{ fee: new BigNumber(fees[1][4] - 1) },
+						...{ fee: Utils.BigNumber.make(fees[1][4] - 1) },
 					}),
 				).resolves.not.toThrow(/fee/);
 
@@ -1346,7 +1348,7 @@ describe("Services > Client", () => {
 		const publicKey = Identities.PublicKey.fromPassphrase("passphrase");
 		const rawTransaction = {
 			address,
-			fee: new BigNumber(fees[1][5]),
+			fee: Utils.BigNumber.make(fees[1][5]),
 			hash: "QmT9qk3CRYbFDWpDFYeAv8T8H1gnongwKhh5J68NLkLir6",
 			passphrase: "passphrase",
 			secondPassphrase: "second passphrase",
@@ -1393,7 +1395,7 @@ describe("Services > Client", () => {
 		describe("when the fee is bigger than the static fee", () => {
 			it("should throw an Error", async () => {
 				const spy = setAip11AndSpy(true);
-				const fee = new BigNumber(fees[1][5] + 1);
+				const fee = Utils.BigNumber.make(fees[1][5] + 1);
 				await expect(client.buildIpfs({ fee })).rejects.toThrow(/fee/);
 				spy.mockRestore();
 			});
@@ -1406,14 +1408,14 @@ describe("Services > Client", () => {
 				await expect(
 					client.buildIpfs({
 						...rawTransaction,
-						...{ fee: new BigNumber(fees[1][5]) },
+						...{ fee: Utils.BigNumber.make(fees[1][5]) },
 					}),
 				).resolves.not.toThrow(/fee/);
 
 				await expect(
 					client.buildIpfs({
 						...rawTransaction,
-						...{ fee: new BigNumber(fees[1][5] - 1) },
+						...{ fee: Utils.BigNumber.make(fees[1][5] - 1) },
 					}),
 				).resolves.not.toThrow(/fee/);
 
@@ -1427,7 +1429,7 @@ describe("Services > Client", () => {
 		for (let i = 0; i < 5; i++) {
 			recipients.push({
 				address: Identities.Address.fromPassphrase(`passphrase ${i}`, 23),
-				amount: new BigNumber((i + 1) * 1e8),
+				amount: Utils.BigNumber.make((i + 1) * 1e8),
 			});
 		}
 
@@ -1436,7 +1438,7 @@ describe("Services > Client", () => {
 		const rawTransaction = {
 			address,
 			recipients,
-			fee: new BigNumber(fees[1][6]),
+			fee: Utils.BigNumber.make(fees[1][6]),
 			vendorField: "this is a test",
 			passphrase: "passphrase",
 			secondPassphrase: "second passphrase",
@@ -1478,7 +1480,7 @@ describe("Services > Client", () => {
 		describe("when the fee is bigger than the static fee", () => {
 			it("should throw an Error", async () => {
 				const spy = setAip11AndSpy(true);
-				const fee = new BigNumber(fees[1][6] + 1);
+				const fee = Utils.BigNumber.make(fees[1][6] + 1);
 				await expect(client.buildMultiPayment({ fee })).rejects.toThrow(/fee/);
 				spy.mockRestore();
 			});
@@ -1491,14 +1493,14 @@ describe("Services > Client", () => {
 				await expect(
 					client.buildMultiPayment({
 						...rawTransaction,
-						...{ fee: new BigNumber(fees[1][6]) },
+						...{ fee: Utils.BigNumber.make(fees[1][6]) },
 					}),
 				).resolves.not.toThrow(/fee/);
 
 				await expect(
 					client.buildMultiPayment({
 						...rawTransaction,
-						...{ fee: new BigNumber(fees[1][6] - 1) },
+						...{ fee: Utils.BigNumber.make(fees[1][6] - 1) },
 					}),
 				).resolves.not.toThrow(/fee/);
 
@@ -1512,7 +1514,7 @@ describe("Services > Client", () => {
 		const publicKey = Identities.PublicKey.fromPassphrase("passphrase");
 		const rawTransaction = {
 			address,
-			fee: new BigNumber(fees[1][7]),
+			fee: Utils.BigNumber.make(fees[1][7]),
 			passphrase: "passphrase",
 			secondPassphrase: "second passphrase",
 			networkWif: 170,
@@ -1544,7 +1546,7 @@ describe("Services > Client", () => {
 		describe("when the fee is bigger than the static fee", () => {
 			it("should throw an Error", async () => {
 				const spy = setAip11AndSpy(true);
-				const fee = new BigNumber(fees[1][7] + 1);
+				const fee = Utils.BigNumber.make(fees[1][7] + 1);
 				await expect(client.buildDelegateResignation({ fee })).rejects.toThrow(/fee/);
 				spy.mockRestore();
 			});
@@ -1557,14 +1559,14 @@ describe("Services > Client", () => {
 				await expect(
 					client.buildDelegateResignation({
 						...rawTransaction,
-						...{ fee: new BigNumber(fees[1][7]) },
+						...{ fee: Utils.BigNumber.make(fees[1][7]) },
 					}),
 				).resolves.not.toThrow(/fee/);
 
 				await expect(
 					client.buildDelegateResignation({
 						...rawTransaction,
-						...{ fee: new BigNumber(fees[1][7] - 1) },
+						...{ fee: Utils.BigNumber.make(fees[1][7] - 1) },
 					}),
 				).resolves.not.toThrow(/fee/);
 
@@ -1578,7 +1580,7 @@ describe("Services > Client", () => {
 		const publicKey = Identities.PublicKey.fromPassphrase("passphrase");
 		const rawTransaction = {
 			address,
-			fee: new BigNumber(fees[2][0]),
+			fee: Utils.BigNumber.make(fees[2][0]),
 			asset: {
 				name: "google",
 				website: "https://www.google.com",
@@ -1640,7 +1642,7 @@ describe("Services > Client", () => {
 		describe("when the fee is bigger than the static fee", () => {
 			it("should throw an Error", async () => {
 				const spy = setAip11AndSpy(true);
-				const fee = new BigNumber(fees[2][0] + 1);
+				const fee = Utils.BigNumber.make(fees[2][0] + 1);
 				await expect(client.buildBusinessRegistration({ fee })).rejects.toThrow(/fee/);
 				spy.mockRestore();
 			});
@@ -1653,14 +1655,14 @@ describe("Services > Client", () => {
 				await expect(
 					client.buildBusinessRegistration({
 						...rawTransaction,
-						...{ fee: new BigNumber(fees[2][0]) },
+						...{ fee: Utils.BigNumber.make(fees[2][0]) },
 					}),
 				).resolves.not.toThrow(/fee/);
 
 				await expect(
 					client.buildBusinessRegistration({
 						...rawTransaction,
-						...{ fee: new BigNumber(fees[2][0] - 1) },
+						...{ fee: Utils.BigNumber.make(fees[2][0] - 1) },
 					}),
 				).resolves.not.toThrow(/fee/);
 
@@ -1674,7 +1676,7 @@ describe("Services > Client", () => {
 		const publicKey = Identities.PublicKey.fromPassphrase("passphrase");
 		const rawTransaction = {
 			address,
-			fee: new BigNumber(fees[2][2]),
+			fee: Utils.BigNumber.make(fees[2][2]),
 			asset: {
 				name: "google",
 				website: "https://www.google.com",
@@ -1736,7 +1738,7 @@ describe("Services > Client", () => {
 		describe("when the fee is bigger than the static fee", () => {
 			it("should throw an Error", async () => {
 				const spy = setAip11AndSpy(true);
-				const fee = new BigNumber(fees[2][2] + 1);
+				const fee = Utils.BigNumber.make(fees[2][2] + 1);
 				await expect(client.buildBusinessUpdate({ fee })).rejects.toThrow(/fee/);
 				spy.mockRestore();
 			});
@@ -1749,14 +1751,14 @@ describe("Services > Client", () => {
 				await expect(
 					client.buildBusinessUpdate({
 						...rawTransaction,
-						...{ fee: new BigNumber(fees[2][2]) },
+						...{ fee: Utils.BigNumber.make(fees[2][2]) },
 					}),
 				).resolves.not.toThrow(/fee/);
 
 				await expect(
 					client.buildBusinessUpdate({
 						...rawTransaction,
-						...{ fee: new BigNumber(fees[2][2] - 1) },
+						...{ fee: Utils.BigNumber.make(fees[2][2] - 1) },
 					}),
 				).resolves.not.toThrow(/fee/);
 
@@ -1770,7 +1772,7 @@ describe("Services > Client", () => {
 		const publicKey = Identities.PublicKey.fromPassphrase("passphrase");
 		const rawTransaction = {
 			address,
-			fee: new BigNumber(fees[2][1]),
+			fee: Utils.BigNumber.make(fees[2][1]),
 			passphrase: "passphrase",
 			secondPassphrase: "second passphrase",
 			networkWif: 170,
@@ -1803,7 +1805,7 @@ describe("Services > Client", () => {
 		describe("when the fee is bigger than the static fee", () => {
 			it("should throw an Error", async () => {
 				const spy = setAip11AndSpy(true);
-				const fee = new BigNumber(fees[2][1] + 1);
+				const fee = Utils.BigNumber.make(fees[2][1] + 1);
 				await expect(client.buildBusinessResignation({ fee })).rejects.toThrow(/fee/);
 				spy.mockRestore();
 			});
@@ -1816,14 +1818,14 @@ describe("Services > Client", () => {
 				await expect(
 					client.buildBusinessResignation({
 						...rawTransaction,
-						...{ fee: new BigNumber(fees[2][1]) },
+						...{ fee: Utils.BigNumber.make(fees[2][1]) },
 					}),
 				).resolves.not.toThrow(/fee/);
 
 				await expect(
 					client.buildBusinessResignation({
 						...rawTransaction,
-						...{ fee: new BigNumber(fees[2][1] - 1) },
+						...{ fee: Utils.BigNumber.make(fees[2][1] - 1) },
 					}),
 				).resolves.not.toThrow(/fee/);
 
@@ -1837,7 +1839,7 @@ describe("Services > Client", () => {
 		const publicKey = Identities.PublicKey.fromPassphrase("passphrase");
 		const rawTransaction = {
 			address,
-			fee: new BigNumber(fees[2][3]),
+			fee: Utils.BigNumber.make(fees[2][3]),
 			asset: {
 				name: "test_bridgechain",
 				seedNodes: ["1.1.1.1", "2.2.2.2", "3.3.3.3", "4.4.4.4"],
@@ -1880,7 +1882,7 @@ describe("Services > Client", () => {
 		describe("when the fee is bigger than the static fee", () => {
 			it("should throw an Error", async () => {
 				const spy = setAip11AndSpy(true);
-				const fee = new BigNumber(fees[2][3] + 1);
+				const fee = Utils.BigNumber.make(fees[2][3] + 1);
 				await expect(client.buildBridgechainRegistration({ fee })).rejects.toThrow(/fee/);
 				spy.mockRestore();
 			});
@@ -1893,14 +1895,14 @@ describe("Services > Client", () => {
 				await expect(
 					client.buildBridgechainRegistration({
 						...rawTransaction,
-						...{ fee: new BigNumber(fees[2][3]) },
+						...{ fee: Utils.BigNumber.make(fees[2][3]) },
 					}),
 				).resolves.not.toThrow(/fee/);
 
 				await expect(
 					client.buildBridgechainRegistration({
 						...rawTransaction,
-						...{ fee: new BigNumber(fees[2][3] - 1) },
+						...{ fee: Utils.BigNumber.make(fees[2][3] - 1) },
 					}),
 				).resolves.not.toThrow(/fee/);
 
@@ -1914,7 +1916,7 @@ describe("Services > Client", () => {
 		const publicKey = Identities.PublicKey.fromPassphrase("passphrase");
 		const rawTransaction = {
 			address,
-			fee: new BigNumber(fees[2][5]),
+			fee: Utils.BigNumber.make(fees[2][5]),
 			asset: {
 				bridgechainId: "2a44f340d76ffc3df204c5f38cd355b7496c9065a1ade2ef92071436bd72e867",
 				seedNodes: ["1.1.1.1", "2.2.2.2", "3.3.3.3", "4.4.4.4"],
@@ -1955,7 +1957,7 @@ describe("Services > Client", () => {
 		describe("when the fee is bigger than the static fee", () => {
 			it("should throw an Error", async () => {
 				const spy = setAip11AndSpy(true);
-				const fee = new BigNumber(fees[2][5] + 1);
+				const fee = Utils.BigNumber.make(fees[2][5] + 1);
 				await expect(client.buildBridgechainUpdate({ fee })).rejects.toThrow(/fee/);
 				spy.mockRestore();
 			});
@@ -1968,14 +1970,14 @@ describe("Services > Client", () => {
 				await expect(
 					client.buildBridgechainUpdate({
 						...rawTransaction,
-						...{ fee: new BigNumber(fees[2][5]) },
+						...{ fee: Utils.BigNumber.make(fees[2][5]) },
 					}),
 				).resolves.not.toThrow(/fee/);
 
 				await expect(
 					client.buildBridgechainUpdate({
 						...rawTransaction,
-						...{ fee: new BigNumber(fees[2][5] - 1) },
+						...{ fee: Utils.BigNumber.make(fees[2][5] - 1) },
 					}),
 				).resolves.not.toThrow(/fee/);
 
@@ -1989,7 +1991,7 @@ describe("Services > Client", () => {
 		const publicKey = Identities.PublicKey.fromPassphrase("passphrase");
 		const rawTransaction = {
 			address,
-			fee: new BigNumber(fees[2][4]),
+			fee: Utils.BigNumber.make(fees[2][4]),
 			bridgechainId: "2a44f340d76ffc3df204c5f38cd355b7496c9065a1ade2ef92071436bd72e867",
 			passphrase: "passphrase",
 			secondPassphrase: "second passphrase",
@@ -2024,7 +2026,7 @@ describe("Services > Client", () => {
 		describe("when the fee is bigger than the static fee", () => {
 			it("should throw an Error", async () => {
 				const spy = setAip11AndSpy(true);
-				const fee = new BigNumber(fees[2][4] + 1);
+				const fee = Utils.BigNumber.make(fees[2][4] + 1);
 				await expect(client.buildBridgechainResignation({ fee })).rejects.toThrow(/fee/);
 				spy.mockRestore();
 			});
@@ -2037,14 +2039,14 @@ describe("Services > Client", () => {
 				await expect(
 					client.buildBridgechainResignation({
 						...rawTransaction,
-						...{ fee: new BigNumber(fees[2][4]) },
+						...{ fee: Utils.BigNumber.make(fees[2][4]) },
 					}),
 				).resolves.not.toThrow(/fee/);
 
 				await expect(
 					client.buildBridgechainResignation({
 						...rawTransaction,
-						...{ fee: new BigNumber(fees[2][4] - 1) },
+						...{ fee: Utils.BigNumber.make(fees[2][4] - 1) },
 					}),
 				).resolves.not.toThrow(/fee/);
 

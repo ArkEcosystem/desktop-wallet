@@ -1,4 +1,4 @@
-import { dayjs } from "@/services/datetime";
+import { DateTime } from "@arkecosystem/platform-sdk-intl";
 
 export function create(walletApi) {
 	return () => {
@@ -6,6 +6,6 @@ export function create(walletApi) {
 			walletApi.utils = {};
 		}
 
-		walletApi.utils.datetime = dayjs;
+		walletApi.utils.datetime = DateTime;
 	};
 }

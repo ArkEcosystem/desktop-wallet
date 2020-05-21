@@ -120,7 +120,7 @@ export default {
 
 			return mapValues(walletsByNetwork, (wallets) => {
 				return uniqBy(wallets, "address").reduce((total, wallet) => {
-					return this.currency_toBuilder(wallet.balance).add(total).value;
+					return this.currency_toBuilder(wallet.balance).plus(total);
 				}, 0);
 			});
 		},

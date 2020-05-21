@@ -1,10 +1,10 @@
+import { DateTime } from "@arkecosystem/platform-sdk-intl";
 import { APP, TRANSACTION_GROUPS, TRANSACTION_TYPES } from "@config";
 import { unionBy } from "lodash";
 import Vue from "vue";
 
 import TransactionModel from "@/models/transaction";
 import eventBus from "@/plugins/event-bus";
-import { dayjs } from "@/services/datetime";
 import TransactionService from "@/services/transaction";
 
 const includes = (objects, find) => objects.map((a) => a.id).includes(find.id);
@@ -220,7 +220,9 @@ export default {
 				return !ids.includes(vote.id);
 			});
 
-			dispatch("session/setUnconfirmedVotes", pendingVotes, { root: true });
+			dispatch("session/setUnconfirmedVotes", pendingVotes, {
+				root: true,
+			});
 
 			dispatch(
 				"profile/update",
@@ -228,7 +230,9 @@ export default {
 					...profile,
 					unconfirmedVotes: pendingVotes,
 				},
-				{ root: true },
+				{
+					root: true,
+				},
 			);
 		},
 
@@ -245,32 +249,39 @@ export default {
 					return false;
 				}
 
-				return !dayjs().isAfter(dayjs(vote.timestamp).add(6, "hour"));
+				return !DateTime.make().isAfter(DateTime.make(vote.timestamp).addHours(6));
 			});
 
-			await dispatch("session/setUnconfirmedVotes", pendingVotes, { root: true });
+			await dispatch("session/setUnconfirmedVotes", pendingVotes, {
+				root: true,
+			});
 			await dispatch(
 				"profile/update",
 				{
 					...profile,
 					unconfirmedVotes: pendingVotes,
 				},
-				{ root: true },
+				{
+					root: true,
+				},
 			);
 		},
 
 		clearExpired({ commit, getters, rootGetters }) {
 			const expired = [];
 			const profileId = rootGetters["session/profileId"];
-			const threshold = dayjs().subtract(APP.transactionExpiryMinutes, "minute");
+			const threshold = DateTime.make().subMinutes(APP.transactionExpiryMinutes);
 			for (const transaction of getters.byProfileId(profileId)) {
-				if (dayjs(transaction.timestamp).isBefore(threshold)) {
+				if (DateTime.make(transaction.timestamp).isBefore(threshold)) {
 					transaction.isExpired = true;
 					expired.push(transaction.id);
 				}
 			}
 
-			commit("UPDATE_BULK", { transactions: expired, profileId });
+			commit("UPDATE_BULK", {
+				transactions: expired,
+				profileId,
+			});
 
 			return expired;
 		},
@@ -280,7 +291,10 @@ export default {
 		},
 
 		deleteBulk({ commit }, { transactions = [], profileId = null }) {
-			commit("DELETE_BULK", { transactions, profileId });
+			commit("DELETE_BULK", {
+				transactions,
+				profileId,
+			});
 		},
 
 		/**

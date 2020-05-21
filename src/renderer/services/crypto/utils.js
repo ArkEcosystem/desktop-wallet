@@ -1,8 +1,8 @@
-import { cloneDeep } from "lodash";
-
 export class CryptoUtils {
 	static transactionFromData(transaction) {
-		transaction = cloneDeep(transaction);
+		transaction = {
+			...transaction,
+		};
 		transaction.multiSignature = undefined;
 		transaction.timestamp = undefined;
 

@@ -17,7 +17,7 @@ export class BusinessUpdateBuilder {
 		}
 
 		const staticFee = store.getters["transaction/staticFee"](TRANSACTION_TYPES.GROUP_2.BUSINESS_UPDATE, 2);
-		if (!isAdvancedFee && fee.gt(staticFee)) {
+		if (!isAdvancedFee && fee.isGreaterThan(staticFee)) {
 			throw new Error(`Business Update fee should be smaller than ${staticFee}`);
 		}
 

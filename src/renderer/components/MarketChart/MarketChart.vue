@@ -22,9 +22,10 @@
 </template>
 
 <script>
+import { DateTime } from "@arkecosystem/platform-sdk-intl";
+
 import LineChart from "@/components/utils/LineChart";
 import Loader from "@/components/utils/Loader";
-import { dayjs } from "@/services/datetime";
 import priceApi from "@/services/price-api";
 
 export default {
@@ -304,17 +305,20 @@ export default {
 										return this.$t("MARKET_CHART.YESTERDAY_AT", { hour: title });
 									}
 									return this.$t("MARKET_CHART.TODAY_AT", { hour: title });
-								} else if (index === values.length - 1) {
-									return this.$t("MARKET_CHART.TODAY");
-								} else if (this.period === "week") {
-									return this.$t(`MARKET_CHART.WEEK.LONG.${title.toUpperCase()}`);
-								} else {
-									const days = values.length;
-									const today = dayjs();
-									today.date(values[days - 1]);
-									title = today.subtract(days - index - 1, "day");
-									return this.$d(title);
 								}
+
+								if (index === values.length - 1) {
+									return this.$t("MARKET_CHART.TODAY");
+								}
+
+								if (this.period === "week") {
+									return this.$t(`MARKET_CHART.WEEK.LONG.${title.toUpperCase()}`);
+								}
+
+								const days = values.length;
+								const today = DateTime.make().setDayOfMonth(values[days - 1]);
+								title = today.subDays(days - index - 1);
+								return this.$d(title);
 							},
 						},
 					},

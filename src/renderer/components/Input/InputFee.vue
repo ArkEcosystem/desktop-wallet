@@ -138,7 +138,7 @@ export default {
 		},
 		rangePercentage() {
 			const percent =
-				(this.currency_toBuilder(this.fee).subtract(this.feeChoiceMin).value /
+				(this.currency_toBuilder(this.fee).minus(this.feeChoiceMin).valueOf() /
 					(this.feeChoiceMax - this.feeChoiceMin)) *
 				100;
 			return percent > 100 ? 100 : percent < 0 ? 0 : percent;
@@ -326,7 +326,7 @@ export default {
 		 * @param {(String|Number)} fee
 		 */
 		setFee(fee) {
-			fee = this.currency_toBuilder(fee).value.toString();
+			fee = this.currency_toBuilder(fee).toString();
 
 			this.fee = fee;
 			this.$v.fee.$touch();

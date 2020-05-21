@@ -1,7 +1,6 @@
 import { Crypto, Transactions } from "@arkecosystem/crypto";
+import { Utils } from "@arkecosystem/platform-sdk";
 import { TRANSACTION_GROUPS, TRANSACTION_TYPES } from "@config";
-
-import BigNumber from "@/plugins/bignumber";
 
 export default class TransactionService {
 	/*
@@ -32,7 +31,7 @@ export default class TransactionService {
 	 * @return {String}
 	 */
 	static getAmount(vm, transaction, wallet, includeFee = false) {
-		const amount = vm.currency_toBuilder(0);
+		let amount = vm.currency_toBuilder(0);
 		const walletAddress = transaction.walletAddress || (wallet ? wallet.address : null);
 		if (transaction.asset && transaction.asset.payments) {
 			for (const payment of transaction.asset.payments) {
@@ -44,17 +43,17 @@ export default class TransactionService {
 					}
 				}
 
-				amount.add(payment.amount);
+				amount = amount.plus(payment.amount);
 			}
 		} else if (this.isTransfer(transaction)) {
-			amount.add(transaction.amount);
+			amount = amount.plus(transaction.amount);
 		}
 
 		if (includeFee && (!walletAddress || walletAddress === transaction.sender)) {
-			amount.add(transaction.fee);
+			amount = amount.plus(transaction.fee);
 		}
 
-		return amount.value;
+		return amount;
 	}
 
 	/**
@@ -77,7 +76,7 @@ export default class TransactionService {
 	 * @return {String}
 	 */
 	static getTotalAmount(transaction) {
-		return new BigNumber(transaction.amount).plus(transaction.fee).toString();
+		return Utils.BigNumber.make(transaction.amount).plus(transaction.fee).toString();
 	}
 
 	/*

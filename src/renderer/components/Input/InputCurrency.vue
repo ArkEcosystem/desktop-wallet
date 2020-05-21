@@ -34,10 +34,9 @@
 </template>
 
 <script>
+import { Utils } from "@arkecosystem/platform-sdk";
 import { MARKET } from "@config";
 import { required } from "vuelidate/lib/validators";
-
-import BigNumber from "@/plugins/bignumber";
 
 import InputField from "./InputField";
 
@@ -92,7 +91,7 @@ export default {
 			default: "amount",
 		},
 		maximumAmount: {
-			type: BigNumber,
+			type: Utils.BigNumber,
 			required: true,
 		},
 		maximumError: {
@@ -101,7 +100,7 @@ export default {
 			default: null,
 		},
 		minimumAmount: {
-			type: BigNumber,
+			type: Utils.BigNumber,
 			required: true,
 		},
 		minimumError: {
@@ -130,7 +129,7 @@ export default {
 			default: false,
 		},
 		value: {
-			type: [Number, String, BigNumber],
+			type: [Number, String, Utils.BigNumber],
 			required: true,
 		},
 		walletNetwork: {
@@ -248,7 +247,7 @@ export default {
 		 * @return {Boolean}
 		 */
 		checkAmount(amount) {
-			const bigNum = new BigNumber(amount);
+			const bigNum = Utils.BigNumber.make(amount);
 			if (!bigNum.isNaN()) {
 				return bigNum.isPositive() && bigNum.isFinite();
 			} else {

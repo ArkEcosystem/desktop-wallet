@@ -71,10 +71,10 @@ export default {
 			const amount = this.currency_toBuilder(0);
 
 			for (const payment of this.payments) {
-				amount.add(payment.amount);
+				amount.plus(payment.amount);
 			}
 
-			return amount.value;
+			return amount;
 		},
 
 		payments() {
