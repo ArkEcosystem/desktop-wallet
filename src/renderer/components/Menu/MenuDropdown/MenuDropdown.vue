@@ -40,7 +40,7 @@
 			class="MenuDropdown__container absolute min-w-full z-20"
 		>
 			<ul
-				class="MenuDropdown pointer-events-auto shadow list-reset flex flex-col bg-theme-feature rounded py-2 overflow-y-auto max-h-2xs"
+				class="MenuDropdown pointer-events-auto shadow flex flex-col bg-theme-feature rounded py-2 overflow-y-auto max-h-2xs"
 			>
 				<slot>
 					<MenuDropdownItem

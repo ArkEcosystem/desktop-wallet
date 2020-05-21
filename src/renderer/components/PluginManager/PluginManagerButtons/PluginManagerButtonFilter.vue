@@ -73,7 +73,7 @@ export default {
 }
 
 .PluginManagerButtonFilter__options {
-	@apply absolute shadow list-reset flex flex-col bg-theme-feature rounded py-2 overflow-y-auto max-h-2xs z-20;
+	@apply absolute shadow flex flex-col bg-theme-feature rounded py-2 overflow-y-auto max-h-2xs z-20;
 }
 .PluginManagerButtonFilter__options__option {
 	@apply cursor-pointer;

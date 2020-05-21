@@ -86,7 +86,7 @@ export default {
 
 .PluginManagerSideMenu__categories,
 .PluginManagerSideMenu__other-categories {
-	@apply .list-reset .w-full .text-theme-page-text-light;
+	@apply .w-full .text-theme-page-text-light;
 }
 .PluginManagerSideMenu__other-categories {
 	@apply .border-t .border-theme-line-separator;

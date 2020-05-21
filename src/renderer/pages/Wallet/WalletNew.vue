@@ -58,11 +58,7 @@
 							/>
 						</div>
 
-						<TransitionGroup
-							class="WalletNew__wallets list-reset"
-							name="WalletNew__wallets--transition"
-							tag="ul"
-						>
+						<TransitionGroup class="WalletNew__wallets" name="WalletNew__wallets--transition" tag="ul">
 							<template v-for="(passphrase, address) in wallets">
 								<li
 									:key="address"
