@@ -120,7 +120,7 @@ exports.PLUGINS = {
 	sharePath: path.resolve(os.homedir(), ".ark-desktop/share"),
 	updateInterval: {
 		value: 1,
-		unit: "day",
+		method: "addDays",
 	},
 	validation: require("./plugin-validation.json"),
 };

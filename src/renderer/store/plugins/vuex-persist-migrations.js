@@ -41,7 +41,11 @@ export default class VuexMigrations {
 
 				if (this.checkVersion(version)) {
 					const handler = this.migrationsContext(filename).default;
-					this.migrations.push({ version, title, handler });
+					this.migrations.push({
+						version,
+						title,
+						handler,
+					});
 				}
 			});
 	}

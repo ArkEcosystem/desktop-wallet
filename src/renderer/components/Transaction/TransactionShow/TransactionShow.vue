@@ -278,13 +278,13 @@ export default {
 				return null;
 			}
 
-			const amount = this.currency_toBuilder(0);
+			let amount = this.currency_toBuilder(0);
 			for (const payment of this.transaction.asset.payments) {
 				if (payment.recipientId !== walletAddress) {
 					continue;
 				}
 
-				amount.add(payment.amount);
+				amount = amount.plus(payment.amount);
 			}
 
 			if (amount.isEqualTo(0)) {

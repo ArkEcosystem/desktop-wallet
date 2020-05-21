@@ -1,8 +1,8 @@
 import { Identities, Managers, Transactions } from "@arkecosystem/crypto";
+import { Utils } from "@arkecosystem/platform-sdk";
 import { cloneDeep } from "lodash";
 import nock from "nock";
 
-import BigNumber from "@/plugins/bignumber";
 import { TransactionSigner } from "@/services/crypto/transaction-signer";
 import { CryptoUtils } from "@/services/crypto/utils";
 import TransactionService from "@/services/transaction";
@@ -143,8 +143,8 @@ describe("Services > Client", () => {
 
 		beforeEach(() => {
 			transaction = Transactions.BuilderFactory.transfer()
-				.amount(new BigNumber(1 * 1e8))
-				.fee(new BigNumber(0.1 * 1e8))
+				.amount(Utils.BigNumber.make(1 * 1e8))
+				.fee(Utils.BigNumber.make(0.1 * 1e8))
 				.recipientId(address)
 				.vendorField("test vendorfield");
 
@@ -165,8 +165,8 @@ describe("Services > Client", () => {
 			const response = await TransactionSigner.sign(signData);
 
 			expect(response.vendorField).toEqual(transaction.data.vendorField);
-			expect(response.amount).toBe(new BigNumber(1 * 1e8).toString());
-			expect(response.fee).toBe(new BigNumber(0.1 * 1e8).toString());
+			expect(response.amount).toBe(Utils.BigNumber.make(1 * 1e8).toString());
+			expect(response.fee).toBe(Utils.BigNumber.make(0.1 * 1e8).toString());
 			expect(response.senderPublicKey).toEqual(publicKey);
 			expect(response.type).toEqual(0);
 			expect(response.version).toEqual(1);
@@ -469,8 +469,8 @@ describe("Services > Client", () => {
 			aip11Spy = setAip11AndSpy(true);
 
 			transaction = {
-				amount: new BigNumber(1 * 1e8),
-				fee: new BigNumber(0.1 * 1e8),
+				amount: Utils.BigNumber.make(1 * 1e8),
+				fee: Utils.BigNumber.make(0.1 * 1e8),
 				type: 0,
 				typeGroup: 1,
 				recipientId: address,
@@ -603,7 +603,7 @@ describe("Services > Client", () => {
 
 		it("should only sign transaction with sender passphrase for registration", async () => {
 			transaction = {
-				fee: new BigNumber(0.1 * 1e8),
+				fee: Utils.BigNumber.make(0.1 * 1e8),
 				type: 4,
 				typeGroup: 1,
 				version: 2,
@@ -630,7 +630,7 @@ describe("Services > Client", () => {
 
 		it("should sign transaction with sender second passphrase for registration", async () => {
 			transaction = {
-				fee: new BigNumber(0.1 * 1e8),
+				fee: Utils.BigNumber.make(0.1 * 1e8),
 				type: 4,
 				typeGroup: 1,
 				version: 2,

@@ -13,7 +13,7 @@ export class DelegateRegistrationBuilder {
 		returnObject = false,
 	) {
 		const staticFee = store.getters["transaction/staticFee"](TRANSACTION_TYPES.GROUP_1.DELEGATE_REGISTRATION, 1);
-		if (!isAdvancedFee && fee.gt(staticFee)) {
+		if (!isAdvancedFee && fee.isGreaterThan(staticFee)) {
 			throw new Error(`Delegate registration fee should be smaller than ${staticFee}`);
 		}
 

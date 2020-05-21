@@ -26,7 +26,7 @@ export class TransferBuilder {
 		returnObject = false,
 	) {
 		const staticFee = store.getters["transaction/staticFee"](TRANSACTION_TYPES.GROUP_1.TRANSFER, 1);
-		if (!isAdvancedFee && fee.gt(staticFee)) {
+		if (!isAdvancedFee && fee.isGreaterThan(staticFee)) {
 			throw new Error(`Transfer fee should be smaller than ${staticFee}`);
 		}
 

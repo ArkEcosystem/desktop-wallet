@@ -1,11 +1,11 @@
 import { Identities } from "@arkecosystem/crypto";
+import { Utils } from "@arkecosystem/platform-sdk";
 import { createLocalVue, mount } from "@vue/test-utils";
 import Vuelidate from "vuelidate";
 
 import TransactionFormBridgechainRegistration from "@/components/Transaction/TransactionForm/TransactionFormBridgechain/TransactionFormBridgechainRegistration";
 import TransactionFormBridgechainUpdate from "@/components/Transaction/TransactionForm/TransactionFormBridgechain/TransactionFormBridgechainUpdate";
 import CurrencyMixin from "@/mixins/currency";
-import BigNumber from "@/plugins/bignumber";
 
 import installI18n from "../../../../__utils__/i18n";
 
@@ -872,7 +872,7 @@ describe.each([
 					address: "address-1",
 					asset: expectedAsset,
 					passphrase: "passphrase",
-					fee: new BigNumber(0.1 * 1e8),
+					fee: Utils.BigNumber.make(0.1 * 1e8),
 					wif: undefined,
 					networkWif: 170,
 					multiSignature: undefined,
@@ -925,7 +925,7 @@ describe.each([
 					asset: expectedAsset,
 					passphrase: "passphrase",
 					secondPassphrase: "second passphrase",
-					fee: new BigNumber(0.1 * 1e8),
+					fee: Utils.BigNumber.make(0.1 * 1e8),
 					wif: undefined,
 					networkWif: 170,
 					multiSignature: undefined,

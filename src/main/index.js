@@ -8,6 +8,8 @@ import assignMenu from "./menu";
 import { setupPluginManager } from "./plugin-manager";
 import { setupUpdater } from "./updater";
 
+app.allowRendererProcessReuse = false;
+
 // It is necessary to require `electron-log` here to use it on the renderer process
 require("electron-log");
 

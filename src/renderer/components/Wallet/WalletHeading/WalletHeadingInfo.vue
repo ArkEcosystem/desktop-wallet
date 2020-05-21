@@ -150,17 +150,17 @@ export default {
 		},
 
 		pendingBalance() {
-			return this.formatter_networkCurrency(this.pendingTransactionsRawAmount.add(this.rawBalance));
+			return this.formatter_networkCurrency(this.pendingTransactionsRawAmount.plus(this.rawBalance));
 		},
 
 		pendingTransactionsRawAmount() {
 			return this.getStoredTransactions().reduce((sum, transaction) => {
 				if (transaction.recipient === this.currentWallet.address) {
-					sum = sum.add(transaction.amount);
+					sum = sum.plus(transaction.amount);
 				}
 
 				if (transaction.sender === this.currentWallet.address) {
-					sum = sum.subtract(transaction.amount).subtract(transaction.fee);
+					sum = sum.minus(transaction.amount).minus(transaction.fee);
 				}
 
 				return sum;

@@ -338,10 +338,10 @@ export default {
 			const amount = this.currency_toBuilder(0);
 
 			for (const recipient of this.$v.form.recipients.$model) {
-				amount.add(recipient.amount);
+				amount.plus(recipient.amount);
 			}
 
-			return amount.value;
+			return amount;
 		},
 
 		insufficientFundsError() {

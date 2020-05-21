@@ -388,7 +388,7 @@ class Action {
 				if (recipient.length) {
 					type = "RECEIVED";
 					for (const entry of recipient) {
-						amount.add(entry.amount);
+						amount.plus(entry.amount);
 					}
 					recipient = truncateMiddle(wallet.address);
 				} else {
