@@ -25,7 +25,7 @@
 			<div
 				v-if="isMarketEnabled && alternativeCurrency"
 				:title="alternativeCurrency"
-				class="InputCurrency__alternative-amount flex flex-no-shrink items-center text-grey-dark ml-4"
+				class="InputCurrency__alternative-amount flex flex-shrink-0 items-center text-grey-dark ml-4"
 			>
 				{{ alternativeAmount }}
 			</div>

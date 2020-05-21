@@ -78,7 +78,7 @@
 			class="WalletSidebar__wallet opacity-37.5 select-none"
 		>
 			<div class="WalletSidebar__wallet__wrapper flex flex-row transition items-center w-full mx-6 py-6 truncate">
-				<WalletIdenticonPlaceholder :size="50" class="WalletSidebar__wallet__identicon flex-no-shrink" />
+				<WalletIdenticonPlaceholder :size="50" class="WalletSidebar__wallet__identicon flex-shrink-0" />
 				<div
 					class="WalletSidebar__wallet__info flex flex-col font-semibold text-theme-page-text-light overflow-hidden pl-2"
 				>
@@ -130,7 +130,7 @@
 						<WalletIdenticon
 							:size="50"
 							:value="wallet.address"
-							class="WalletSidebar__wallet__identicon flex-no-shrink"
+							class="WalletSidebar__wallet__identicon flex-shrink-0"
 						/>
 						<div
 							:class="{
@@ -145,7 +145,7 @@
 								<span class="block truncate">
 									{{
 										wallet_name(wallet.address) ||
-											wallet_truncate(wallet.address, !isExpanded ? 6 : wallet.isLedger ? 12 : 24)
+										wallet_truncate(wallet.address, !isExpanded ? 6 : wallet.isLedger ? 12 : 24)
 									}}
 								</span>
 								<span

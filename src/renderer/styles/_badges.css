@@ -1,6 +1,6 @@
 .ledger-badge {
   opacity: 0.85;
-  @apply .flex .flex-no-shrink .items-center .justify-center .bg-red-light .text-white .p-1 .h-5 .text-xs .font-bold .rounded .ml-2
+  @apply .flex .flex-shrink-0 .items-center .justify-center .bg-red-light .text-white .p-1 .h-5 .text-xs .font-bold .rounded .ml-2
 }
 
 .vote-badge {

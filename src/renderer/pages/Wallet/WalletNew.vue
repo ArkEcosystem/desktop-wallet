@@ -75,7 +75,7 @@
 											<WalletIdenticon
 												:value="address"
 												:size="35"
-												class="flex-no-shrink identicon"
+												class="flex-shrink-0 identicon"
 											/>
 											<span
 												v-if="isSelected(address)"
@@ -85,7 +85,7 @@
 											</span>
 										</div>
 										<span
-											class="WalletNew__wallets--address text-theme-page-text ml-2 flex-no-shrink font-semibold text-sm"
+											class="WalletNew__wallets--address text-theme-page-text ml-2 flex-shrink-0 font-semibold text-sm"
 										>
 											{{ address }}
 										</span>
@@ -216,7 +216,7 @@
 									v-if="schema.address"
 									:value="schema.address"
 									:size="35"
-									class="flex-no-shrink identicon"
+									class="flex-shrink-0 identicon"
 								/>
 							</div>
 							<InputText
