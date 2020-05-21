@@ -233,7 +233,6 @@ export default {
 	 * retrieving the essential data (session and network) from the database
 	 */
 	async created() {
-		console.log("wat");
 		this.$store._vm.$on("vuex-persist:ready", async () => {
 			// Environments variables are strings
 			this.isScreenshotProtectionEnabled = process.env.ENABLE_SCREENSHOT_PROTECTION !== "false";
@@ -254,7 +253,6 @@ export default {
 	},
 
 	mounted() {
-		console.log("wat");
 		this.__watchProcessURL();
 	},
 
