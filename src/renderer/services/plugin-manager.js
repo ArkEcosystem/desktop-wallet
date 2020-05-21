@@ -1,3 +1,4 @@
+import { DateTime } from "@arkecosystem/platform-sdk-intl";
 import { I18N, PLUGINS } from "@config";
 import * as fs from "fs";
 import * as fsExtra from "fs-extra";
@@ -7,7 +8,6 @@ import semver from "semver";
 import trash from "trash";
 import validatePackageName from "validate-npm-package-name";
 
-import { dayjs } from "@/services/datetime";
 import * as adapters from "@/services/plugin-manager/adapters";
 import releaseService from "@/services/release";
 import { upperFirst } from "@/utils";
@@ -201,7 +201,10 @@ export class PluginManager {
 			await this.unloadLanguages(plugin, profileId);
 		}
 
-		await this.app.$store.dispatch("plugin/deleteLoaded", { pluginId, profileId });
+		await this.app.$store.dispatch("plugin/deleteLoaded", {
+			pluginId,
+			profileId,
+		});
 
 		if (this.pluginSetups[pluginId]) {
 			await this.pluginSetups[pluginId].destroy();
@@ -224,7 +227,11 @@ export class PluginManager {
 
 		const requests = [];
 		for (const imageUrl of images) {
-			requests.push(reqwest(imageUrl, { encoding: null }).then((response) => response.body.toString("base64")));
+			requests.push(
+				reqwest(imageUrl, {
+					encoding: null,
+				}).then((response) => response.body.toString("base64")),
+			);
 		}
 
 		return Promise.all(requests);
@@ -276,7 +283,9 @@ export class PluginManager {
 		});
 
 		const plugins = configs.reduce((plugins, config) => {
-			plugins[config.id] = { config };
+			plugins[config.id] = {
+				config,
+			};
 			return plugins;
 		}, {});
 
@@ -297,7 +306,9 @@ export class PluginManager {
 		const { owner, repository, branch } = this.parsePluginUrl(url);
 
 		const baseUrl = `https://raw.githubusercontent.com/${owner}/${repository}/${branch}`;
-		const { body } = await reqwest(`${baseUrl}/package.json`, { json: true });
+		const { body } = await reqwest(`${baseUrl}/package.json`, {
+			json: true,
+		});
 
 		let plugin;
 
@@ -331,10 +342,9 @@ export class PluginManager {
 
 		if (
 			force ||
-			dayjs().isAfter(
-				dayjs(this.app.$store.getters["plugin/lastFetched"]).add(
+			DateTime.make().isAfter(
+				DateTime.make(this.app.$store.getters["plugin/lastFetched"])[PLUGINS.updateInterval.method](
 					PLUGINS.updateInterval.value,
-					PLUGINS.updateInterval.unit,
 				),
 			)
 		) {
@@ -383,8 +393,14 @@ export class PluginManager {
 			const { body } = await reqwest(`${PLUGINS.pluginsUrl}?ts=${new Date().getTime()}`, {
 				json: true,
 			});
-			this.app.$store.dispatch("plugin/setWhitelisted", { scope: "global", plugins: body.plugins });
-			this.app.$store.dispatch("plugin/setBlacklisted", { scope: "global", plugins: body.blacklist });
+			this.app.$store.dispatch("plugin/setWhitelisted", {
+				scope: "global",
+				plugins: body.plugins,
+			});
+			this.app.$store.dispatch("plugin/setBlacklisted", {
+				scope: "global",
+				plugins: body.blacklist,
+			});
 		} catch (error) {
 			console.error(`Could not fetch plugins from the list '${PLUGINS.pluginsUrl}: ${error.message}`);
 		}

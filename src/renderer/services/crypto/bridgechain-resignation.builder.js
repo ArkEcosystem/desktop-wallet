@@ -17,7 +17,7 @@ export class BridgechainResignationBuilder {
 		}
 
 		const staticFee = store.getters["transaction/staticFee"](TRANSACTION_TYPES.GROUP_2.BRIDGECHAIN_RESIGNATION, 2);
-		if (!isAdvancedFee && fee.gt(staticFee)) {
+		if (!isAdvancedFee && fee.isGreaterThan(staticFee)) {
 			throw new Error(`Bridgechain Resignation fee should be smaller than ${staticFee}`);
 		}
 

@@ -17,7 +17,7 @@ export class BridgechainUpdateBuilder {
 		}
 
 		const staticFee = store.getters["transaction/staticFee"](TRANSACTION_TYPES.GROUP_2.BRIDGECHAIN_UPDATE, 2);
-		if (!isAdvancedFee && fee.gt(staticFee)) {
+		if (!isAdvancedFee && fee.isGreaterThan(staticFee)) {
 			throw new Error(`Bridgechain Update fee should be smaller than ${staticFee}`);
 		}
 

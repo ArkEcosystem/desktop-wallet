@@ -1,10 +1,10 @@
+import { Utils } from "@arkecosystem/platform-sdk";
 import { mount } from "@vue/test-utils";
 import { merge } from "lodash";
 import Vue from "vue";
 import Vuelidate from "vuelidate";
 
 import { InputCurrency } from "@/components/Input";
-import BigNumber from "@/plugins/bignumber";
 import store from "@/store";
 
 import { useI18n } from "../../__utils__/i18n";
@@ -45,8 +45,8 @@ describe("InputCurrency", () => {
 					propsData: {
 						currency: mockNetwork.token,
 						value: "",
-						minimumAmount: new BigNumber(1e8),
-						maximumAmount: new BigNumber(1e8),
+						minimumAmount: Utils.BigNumber.make(1e8),
+						maximumAmount: Utils.BigNumber.make(1e8),
 					},
 					mocks: {
 						currency_format: () => "NET 9.9",

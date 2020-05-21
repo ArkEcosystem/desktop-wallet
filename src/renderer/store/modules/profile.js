@@ -1,10 +1,10 @@
+import { Utils } from "@arkecosystem/platform-sdk";
 import * as base58 from "bs58check";
 import crypto from "crypto";
 import { uniqBy } from "lodash";
 import Vue from "vue";
 
 import ProfileModel from "@/models/profile";
-import BigNumber from "@/plugins/bignumber";
 
 import BaseModule from "../base";
 
@@ -32,7 +32,7 @@ export default new BaseModule(ProfileModel, {
 		balance: (state, _, __, rootGetters) => (id) => {
 			const wallets = rootGetters["wallet/byProfileId"](id);
 			return wallets.reduce((total, wallet) => {
-				return new BigNumber(wallet.balance).plus(total);
+				return Utils.BigNumber.make(wallet.balance).plus(total);
 			}, 0);
 		},
 		balanceWithLedger: (state, _, __, rootGetters) => (id) => {
@@ -45,7 +45,7 @@ export default new BaseModule(ProfileModel, {
 			}
 
 			return uniqBy(wallets, "address").reduce((total, wallet) => {
-				return new BigNumber(wallet.balance).plus(total);
+				return Utils.BigNumber.make(wallet.balance).plus(total);
 			}, 0);
 		},
 
@@ -83,7 +83,10 @@ export default new BaseModule(ProfileModel, {
 		SET_MULTI_SIGNATURE_PEER(state, { host, port, profileId }) {
 			for (const peerId in state.all) {
 				if (state.all[peerId].id === profileId) {
-					Vue.set(state.all[peerId], "multiSignaturePeer", { host, port });
+					Vue.set(state.all[peerId], "multiSignaturePeer", {
+						host,
+						port,
+					});
 
 					break;
 				}
@@ -110,13 +113,31 @@ export default new BaseModule(ProfileModel, {
 			// This getter returns a reference that is modified on each deletion
 			const transactionIds = rootGetters["transaction/byProfileId"](id).map((transaction) => transaction.id);
 			for (const transactionId of transactionIds) {
-				await dispatch("transaction/delete", { id: transactionId, profileId: id }, { root: true });
+				await dispatch(
+					"transaction/delete",
+					{
+						id: transactionId,
+						profileId: id,
+					},
+					{
+						root: true,
+					},
+				);
 			}
 
 			// This getter returns a reference that is modified on each deletion
 			const walletIds = rootGetters["wallet/byProfileId"](id).map((wallet) => wallet.id);
 			for (const walletId of walletIds) {
-				await dispatch("wallet/delete", { id: walletId, profileId: id }, { root: true });
+				await dispatch(
+					"wallet/delete",
+					{
+						id: walletId,
+						profileId: id,
+					},
+					{
+						root: true,
+					},
+				);
 			}
 
 			commit("DELETE", id);
@@ -124,7 +145,11 @@ export default new BaseModule(ProfileModel, {
 
 		setMultiSignaturePeer({ commit, rootGetters }, { host, port }) {
 			const profileId = rootGetters["session/profileId"];
-			commit("SET_MULTI_SIGNATURE_PEER", { host, port, profileId });
+			commit("SET_MULTI_SIGNATURE_PEER", {
+				host,
+				port,
+				profileId,
+			});
 		},
 	},
 });

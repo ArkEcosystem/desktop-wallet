@@ -1,10 +1,10 @@
 import { Identities } from "@arkecosystem/crypto";
+import { Utils } from "@arkecosystem/platform-sdk";
 import { createLocalVue, mount } from "@vue/test-utils";
 import Vuelidate from "vuelidate";
 
 import TransactionFormBridgechainResignation from "@/components/Transaction/TransactionForm/TransactionFormBridgechain/TransactionFormBridgechainResignation";
 import CurrencyMixin from "@/mixins/currency";
-import BigNumber from "@/plugins/bignumber";
 import WalletService from "@/services/wallet";
 
 import installI18n from "../../../../__utils__/i18n";
@@ -187,7 +187,7 @@ describe("TransactionFormBridgechainResignation", () => {
 					address: "address-1",
 					passphrase: "passphrase",
 					bridgechainId: "2a44f340d76ffc3df204c5f38cd355b7496c9065a1ade2ef92071436bd72e867",
-					fee: new BigNumber(0.1 * 1e8),
+					fee: Utils.BigNumber.make(0.1 * 1e8),
 					wif: undefined,
 					networkWif: 170,
 					multiSignature: undefined,
@@ -210,7 +210,7 @@ describe("TransactionFormBridgechainResignation", () => {
 					passphrase: "passphrase",
 					secondPassphrase: "second passphrase",
 					bridgechainId: "2a44f340d76ffc3df204c5f38cd355b7496c9065a1ade2ef92071436bd72e867",
-					fee: new BigNumber(0.1 * 1e8),
+					fee: Utils.BigNumber.make(0.1 * 1e8),
 					wif: undefined,
 					networkWif: 170,
 					multiSignature: undefined,

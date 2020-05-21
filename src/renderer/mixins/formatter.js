@@ -1,6 +1,5 @@
+import { DateTime } from "@arkecosystem/platform-sdk-intl";
 import prettyBytes from "pretty-bytes";
-
-import { dayjs } from "@/services/datetime";
 
 export default {
 	methods: {
@@ -11,7 +10,9 @@ export default {
 		formatter_percentage(value, minimumFractionDigits = 2, maximumFractionDigits = null) {
 			const options = {
 				minimumFractionDigits,
-				...(maximumFractionDigits && { maximumFractionDigits }),
+				...(maximumFractionDigits && {
+					maximumFractionDigits,
+				}),
 			};
 
 			return `${this.$n(value, options)}%`;
@@ -25,7 +26,9 @@ export default {
 		},
 
 		formatter_votes(value) {
-			return this.$n(this.currency_subToUnit(value), { maximumFractionDigits: 2 });
+			return this.$n(this.currency_subToUnit(value), {
+				maximumFractionDigits: 2,
+			});
 		},
 
 		/**
@@ -52,7 +55,7 @@ export default {
 				userLanguage = "en";
 			}
 
-			dayjs.locale(userLanguage);
+			const dateTime = DateTime.make(value, userLanguage);
 
 			if (!format) {
 				const sessionFormat = this.session_profile.timeFormat;
@@ -65,7 +68,7 @@ export default {
 				}
 			}
 
-			return dayjs(value).format(format);
+			return dateTime.format(format);
 		},
 	},
 };

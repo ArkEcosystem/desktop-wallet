@@ -104,17 +104,17 @@ export default {
 
 	computed: {
 		totalAmount() {
-			const amount = this.currency_toBuilder(this.transaction.fee);
+			let amount = this.currency_toBuilder(this.transaction.fee);
 
 			if (this.transaction.asset && this.transaction.asset.payments) {
 				for (const payment of this.transaction.asset.payments) {
-					amount.add(payment.amount);
+					amount = amount.plus(payment.amount);
 				}
 			} else if (this.transaction.amount) {
-				amount.add(this.transaction.amount);
+				amount = amount.plus(this.transaction.amount);
 			}
 
-			return amount.value;
+			return amount;
 		},
 
 		currentWallet() {

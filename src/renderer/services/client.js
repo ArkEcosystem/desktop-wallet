@@ -1,9 +1,9 @@
 import { Connection } from "@arkecosystem/client";
+import { Utils } from "@arkecosystem/platform-sdk";
 import { TRANSACTION_GROUPS, TRANSACTION_TYPES } from "@config";
 import logger from "electron-log";
 import { castArray, chunk, orderBy } from "lodash";
 
-import BigNumber from "@/plugins/bignumber";
 import TransactionService from "@/services/transaction";
 import store from "@/store";
 import { camelToUpperSnake } from "@/utils";
@@ -185,7 +185,10 @@ export default class ClientService {
 	 * @return {Number}
 	 */
 	async fetchDelegateVoters(delegate, { page, limit } = {}) {
-		const { body } = await this.client.api("delegates").voters(delegate.username, { page, limit });
+		const { body } = await this.client.api("delegates").voters(delegate.username, {
+			page,
+			limit,
+		});
 
 		return body.meta.totalCount;
 	}
@@ -498,7 +501,7 @@ export default class ClientService {
 		if (network.constants.aip11) {
 			try {
 				const response = await this.fetchWallet(address);
-				return BigNumber(response.nonce || 0)
+				return Utils.BigNumber.make(response.nonce || 0)
 					.plus(1)
 					.toString();
 			} catch (error) {
@@ -582,7 +585,12 @@ export default class ClientService {
 	// todo: move this out
 	async __buildTransaction(builder, data, isAdvancedFee = false, returnObject = false) {
 		return TransactionBuilderService[builder](
-			{ ...data, ...{ nonce: await this.getNonceForAddress(data) } },
+			{
+				...data,
+				...{
+					nonce: await this.getNonceForAddress(data),
+				},
+			},
 			isAdvancedFee,
 			returnObject,
 		);

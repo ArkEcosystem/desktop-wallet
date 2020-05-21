@@ -17,7 +17,7 @@ export class DelegateResignationBuilder {
 		}
 
 		const staticFee = store.getters["transaction/staticFee"](TRANSACTION_TYPES.GROUP_1.DELEGATE_RESIGNATION, 1);
-		if (!isAdvancedFee && fee.gt(staticFee)) {
+		if (!isAdvancedFee && fee.isGreaterThan(staticFee)) {
 			throw new Error(`Delegate resignation fee should be smaller than ${staticFee}`);
 		}
 

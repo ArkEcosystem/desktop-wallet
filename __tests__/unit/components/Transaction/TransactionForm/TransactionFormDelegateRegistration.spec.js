@@ -1,10 +1,10 @@
 import { Identities } from "@arkecosystem/crypto";
+import { Utils } from "@arkecosystem/platform-sdk";
 import { createLocalVue, mount } from "@vue/test-utils";
 import Vuelidate from "vuelidate";
 
 import { TransactionFormDelegateRegistration } from "@/components/Transaction/TransactionForm";
 import CurrencyMixin from "@/mixins/currency";
-import BigNumber from "@/plugins/bignumber";
 import store from "@/store";
 
 import installI18n from "../../../__utils__/i18n";
@@ -233,7 +233,7 @@ describe("TransactionFormDelegateRegistration", () => {
 					address: "address-1",
 					passphrase: "passphrase",
 					username: "delegate_1",
-					fee: new BigNumber(0.1 * 1e8),
+					fee: Utils.BigNumber.make(0.1 * 1e8),
 					wif: undefined,
 					networkWif: 170,
 					multiSignature: undefined,
@@ -257,7 +257,7 @@ describe("TransactionFormDelegateRegistration", () => {
 					passphrase: "passphrase",
 					secondPassphrase: "second passphrase",
 					username: "delegate_1",
-					fee: new BigNumber(0.1 * 1e8),
+					fee: Utils.BigNumber.make(0.1 * 1e8),
 					wif: undefined,
 					networkWif: 170,
 					multiSignature: undefined,

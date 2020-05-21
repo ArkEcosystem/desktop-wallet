@@ -1,3 +1,4 @@
+import { DateTime } from "@arkecosystem/platform-sdk-intl";
 import dayjs from "dayjs";
 import nock from "nock";
 import Vue from "vue";
@@ -220,11 +221,11 @@ describe("TransactionModule", () => {
 			store.commit("session/SET_UNCONFIRMED_VOTES", [
 				{
 					id: 1,
-					timestamp: dayjs().subtract(6, "hour").valueOf(),
+					timestamp: DateTime.make().subHours(6).valueOf(),
 				},
 				{
 					id: 2,
-					timestamp: dayjs().subtract(5, "hour").valueOf(),
+					timestamp: DateTime.make().subHours(5).valueOf(),
 				},
 				{
 					id: 3,

@@ -1,7 +1,6 @@
+import { Utils } from "@arkecosystem/platform-sdk";
 import { MARKET } from "@config";
 import { merge } from "lodash";
-
-import { NumberBuilder } from "@/plugins/bignumber.js";
 
 export default {
 	methods: {
@@ -111,17 +110,24 @@ export default {
 
 		currency_toBuilder(value, network) {
 			const { fractionDigits } = network || this.session_network;
-			return new NumberBuilder(value).decimalPlaces(fractionDigits);
+			return Utils.BigNumber.make(value).decimalPlaces(fractionDigits);
 		},
 
 		currency_subToUnit(value, network) {
 			const { fractionDigits } = network || this.session_network;
-			return new NumberBuilder(value).decimalPlaces(fractionDigits).toHuman().value;
+
+			const result = Utils.BigNumber.make(value);
+
+			if (fractionDigits) {
+				return result.decimalPlaces(fractionDigits).divide(Math.pow(10, fractionDigits));
+			}
+
+			return result;
 		},
 
 		currency_unitToSub(value, network) {
 			const { fractionDigits } = network || this.session_network;
-			return new NumberBuilder(value).decimalPlaces(fractionDigits).toArktoshi().value;
+			return Utils.BigNumber.make(value).decimalPlaces(fractionDigits).toSatoshi();
 		},
 
 		currency_cryptoToCurrency(value, fromSubUnit = true, fractionDigits = 2) {
@@ -130,7 +136,7 @@ export default {
 			}
 
 			const price = this.$store.getters["market/lastPrice"];
-			return new NumberBuilder(value).decimalPlaces(fractionDigits).multiply(price).value.toFixed();
+			return Utils.BigNumber.make(value).decimalPlaces(fractionDigits).times(price).toFixed();
 		},
 	},
 };

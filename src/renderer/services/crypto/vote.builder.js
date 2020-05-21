@@ -13,7 +13,7 @@ export class VoteBuilder {
 		returnObject = false,
 	) {
 		const staticFee = store.getters["transaction/staticFee"](TRANSACTION_TYPES.GROUP_1.VOTE, 1);
-		if (!isAdvancedFee && fee.gt(staticFee)) {
+		if (!isAdvancedFee && fee.isGreaterThan(staticFee)) {
 			throw new Error(`Vote fee should be smaller than ${staticFee}`);
 		}
 

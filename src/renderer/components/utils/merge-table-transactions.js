@@ -1,4 +1,4 @@
-import BigNumber from "bignumber.js";
+import { Utils } from "@arkecosystem/platform-sdk";
 import { orderBy, uniqBy } from "lodash";
 
 /**
@@ -11,15 +11,18 @@ import { orderBy, uniqBy } from "lodash";
  * @return {Array}
  */
 export default (a, b, order = null) => {
-	const { field, type } = order || { field: "timestamp", type: "desc" };
+	const { field, type } = order || {
+		field: "timestamp",
+		type: "desc",
+	};
 
 	// The order is important: the fetched transactions should override the stored
 	const transactions = uniqBy([...a, ...b], "id");
 
 	if (["amount", "fee"].includes(field)) {
 		return transactions.sort((a, b) => {
-			const bignumA = new BigNumber(a[field]);
-			const bignumB = new BigNumber(b[field]);
+			const bignumA = Utils.BigNumber.make(a[field]);
+			const bignumB = Utils.BigNumber.make(b[field]);
 
 			return type === "asc" ? bignumA.comparedTo(bignumB) : bignumB.comparedTo(bignumA);
 		});

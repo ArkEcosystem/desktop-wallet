@@ -478,19 +478,29 @@ export default {
 		},
 
 		async setBlacklisted({ commit, dispatch, getters, rootGetters }, { scope, plugins }) {
-			commit("SET_BLACKLISTED_PLUGINS", { scope, plugins });
+			commit("SET_BLACKLISTED_PLUGINS", {
+				scope,
+				plugins,
+			});
 
 			for (const plugin of plugins) {
 				for (const profile of rootGetters["profile/all"]) {
 					if (profile.filterBlacklistedPlugins && getters.isEnabled(plugin, profile.id)) {
-						await dispatch("setEnabled", { enabled: false, pluginId: plugin, profileId: profile.id });
+						await dispatch("setEnabled", {
+							enabled: false,
+							pluginId: plugin,
+							profileId: profile.id,
+						});
 					}
 				}
 			}
 		},
 
 		setWhitelisted({ commit }, { scope, plugins }) {
-			commit("SET_WHITELISTED_PLUGINS", { scope, plugins });
+			commit("SET_WHITELISTED_PLUGINS", {
+				scope,
+				plugins,
+			});
 		},
 
 		setLoaded({ commit, getters, rootGetters }, data) {
@@ -517,12 +527,18 @@ export default {
 				});
 
 				if (removeOptions) {
-					dispatch("deletePluginOptionsForProfile", { pluginId, profileId: profile.id });
+					dispatch("deletePluginOptionsForProfile", {
+						pluginId,
+						profileId: profile.id,
+					});
 				}
 			}
 
 			if (removeOptions && getters.profileHasPluginOptions(pluginId, "global")) {
-				dispatch("deletePluginOptionsForProfile", { pluginId, profileId: "global" });
+				dispatch("deletePluginOptionsForProfile", {
+					pluginId,
+					profileId: "global",
+				});
 			}
 
 			try {

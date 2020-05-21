@@ -1,6 +1,6 @@
 import { Identities, Transactions } from "@arkecosystem/crypto";
+import { DateTime } from "@arkecosystem/platform-sdk-intl";
 
-import { dayjs } from "@/services/datetime";
 import TransactionService from "@/services/transaction";
 import WalletService from "@/services/wallet";
 import store from "@/store";
@@ -22,9 +22,8 @@ export class TransactionSigner {
 
 		transaction = transaction.network(network.version);
 
-		// TODO replace with dayjs
-		const epochTime = dayjs(network.constants.epoch).utc().valueOf();
-		const now = dayjs().valueOf();
+		const epochTime = DateTime.make(network.constants.epoch).valueOf();
+		const now = DateTime.make().valueOf();
 		transaction.data.timestamp = Math.floor((now - epochTime) / 1000);
 
 		if (passphrase) {
@@ -100,6 +99,15 @@ export class TransactionSigner {
 			throw new Error("No passphrase or wif provided");
 		}
 
+		// todo: temporary work around for BigInt replacement
+		if (transaction.amount) {
+			transaction.amount = transaction.amount.toString();
+		}
+
+		if (transaction.fee) {
+			transaction.fee = transaction.fee.toString();
+		}
+
 		transaction = CryptoUtils.transactionFromData(transaction);
 
 		const network = store.getters["session/network"];
@@ -111,7 +119,9 @@ export class TransactionSigner {
 		if (passphrase) {
 			keys = Identities.Keys.fromPassphrase(passphrase);
 		} else {
-			keys = Identities.Keys.fromWIF(wif, { wif: networkWif });
+			keys = Identities.Keys.fromWIF(wif, {
+				wif: networkWif,
+			});
 		}
 
 		const isReady = TransactionService.isMultiSignatureReady(
