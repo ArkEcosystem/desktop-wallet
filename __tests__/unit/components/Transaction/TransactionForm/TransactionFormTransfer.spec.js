@@ -1,4 +1,5 @@
 import { Identities } from "@arkecosystem/crypto";
+import { Utils } from "@arkecosystem/platform-sdk";
 import { VENDOR_FIELD } from "@config";
 import { createLocalVue, mount } from "@vue/test-utils";
 import cloneDeep from "lodash/cloneDeep";
@@ -6,7 +7,6 @@ import Vuelidate from "vuelidate";
 
 import { TransactionFormTransfer } from "@/components/Transaction/TransactionForm";
 import CurrencyMixin from "@/mixins/currency";
-import BigNumber from "@/plugins/bignumber";
 import WalletService from "@/services/wallet";
 
 import installI18n from "../../../__utils__/i18n";
@@ -406,7 +406,7 @@ describe("TransactionFormTransfer", () => {
 		describe("maximumAvailableAmount", () => {
 			it("should return value", () => {
 				wrapper.vm.$v.form.fee.$model = 0.1;
-				expect(wrapper.vm.maximumAvailableAmount).toEqual(new BigNumber(1000).minus(0.1));
+				expect(wrapper.vm.maximumAvailableAmount).toEqual(Utils.BigNumber.make(1000).minus(0.1));
 			});
 
 			it("should return value including all recipients", async () => {
@@ -425,13 +425,13 @@ describe("TransactionFormTransfer", () => {
 				wrapper.vm.addRecipient();
 				await wrapper.vm.$nextTick();
 
-				expect(wrapper.vm.maximumAvailableAmount).toEqual(new BigNumber(1000).minus(0.1).minus(30));
+				expect(wrapper.vm.maximumAvailableAmount).toEqual(Utils.BigNumber.make(1000).minus(0.1).minus(30));
 			});
 
 			it("should return value based on different fee", () => {
 				wrapper.vm.form.fee = 10;
 
-				expect(wrapper.vm.maximumAvailableAmount).toEqual(new BigNumber(1000).minus(10));
+				expect(wrapper.vm.maximumAvailableAmount).toEqual(Utils.BigNumber.make(1000).minus(10));
 			});
 		});
 
@@ -848,7 +848,7 @@ describe("TransactionFormTransfer", () => {
 					passphrase: "passphrase",
 					recipientId: "address-2",
 					amount: (1 * 1e8).toString(),
-					fee: new BigNumber(0.1 * 1e8),
+					fee: Utils.BigNumber.make(0.1 * 1e8),
 					vendorField: "vendorfield test",
 					wif: undefined,
 					networkWif: 170,
@@ -885,7 +885,7 @@ describe("TransactionFormTransfer", () => {
 							amount: (1 * 1e8).toString(),
 						},
 					],
-					fee: new BigNumber(0.1 * 1e8),
+					fee: Utils.BigNumber.make(0.1 * 1e8),
 					vendorField: "vendorfield test",
 					wif: undefined,
 					networkWif: 170,
@@ -929,7 +929,7 @@ describe("TransactionFormTransfer", () => {
 							amount: (1 * 1e8).toString(),
 						},
 					],
-					fee: new BigNumber(0.1 * 1e8),
+					fee: Utils.BigNumber.make(0.1 * 1e8),
 					vendorField: "vendorfield test",
 					wif: undefined,
 					networkWif: 170,
@@ -1288,7 +1288,7 @@ describe("TransactionFormTransfer", () => {
 
 		describe("ensureAvailableAmount", () => {
 			it("should set amount to max if send all is enabled", async () => {
-				wrapper.vm.amount = new BigNumber("999.9");
+				wrapper.vm.amount = Utils.BigNumber.make("999.9");
 				wrapper.vm.isSendAllActive = true;
 
 				await wrapper.vm.$nextTick();
@@ -1297,7 +1297,7 @@ describe("TransactionFormTransfer", () => {
 
 				expect(wrapper.vm.isSendAllActive).toBe(true);
 				expect(wrapper.vm.canSendAll).toBe(true);
-				expect(wrapper.vm.amount).toEqual(new BigNumber("999.9"));
+				expect(wrapper.vm.amount).toEqual(Utils.BigNumber.make("999.9"));
 			});
 
 			it("should not set amount to max if send all is disabled", async () => {
@@ -1356,7 +1356,7 @@ describe("TransactionFormTransfer", () => {
 				expect(wrapper.vm.$v.form.recipients.$model).toEqual([
 					{
 						address: address,
-						amount: new BigNumber(100 * 1e8),
+						amount: Utils.BigNumber.make(100 * 1e8),
 						sendAll: false,
 					},
 				]);

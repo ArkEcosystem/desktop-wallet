@@ -1,3 +1,4 @@
+import { Utils } from "@arkecosystem/platform-sdk";
 import { V1 } from "@config";
 import { shallowMount } from "@vue/test-utils";
 import { merge } from "lodash";
@@ -6,7 +7,6 @@ import Vue from "vue";
 import { InputFee } from "@/components/Input";
 import CurrencyMixin from "@/mixins/currency";
 import FormatterMixin from "@/mixins/formatter";
-import BigNumber from "@/plugins/bignumber";
 import store from "@/store";
 
 import { useI18n } from "../../__utils__/i18n";
@@ -90,8 +90,8 @@ describe("InputFee", () => {
 					propsData: {
 						currency: mockNetwork.token,
 						transactionType: 0,
-						minimumAmount: new BigNumber(1e8),
-						maximumAmount: new BigNumber(1e8),
+						minimumAmount: Utils.BigNumber.make(1e8),
+						maximumAmount: Utils.BigNumber.make(1e8),
 					},
 					mixins: [CurrencyMixin, FormatterMixin],
 					mocks: {
@@ -170,8 +170,8 @@ describe("InputFee", () => {
 		const mockedComponent = (min, max) => {
 			return mountComponent({
 				computed: {
-					feeChoiceMin: () => new BigNumber(min),
-					feeChoiceMax: () => new BigNumber(max),
+					feeChoiceMin: () => Utils.BigNumber.make(min),
+					feeChoiceMax: () => Utils.BigNumber.make(max),
 				},
 			});
 		};
@@ -208,9 +208,9 @@ describe("InputFee", () => {
 			return mountComponent({
 				computed: {
 					feeChoices: () => ({
-						MINIMUM: new BigNumber(1e-8),
-						INPUT: new BigNumber(1e-8),
-						ADVANCED: new BigNumber(1e-8),
+						MINIMUM: Utils.BigNumber.make(1e-8),
+						INPUT: Utils.BigNumber.make(1e-8),
+						ADVANCED: Utils.BigNumber.make(1e-8),
 						...fees,
 					}),
 				},
@@ -219,8 +219,8 @@ describe("InputFee", () => {
 
 		it("should be `true` if the current fee matches, average and maximum fee are the same", () => {
 			const wrapper = mockedComponent({
-				AVERAGE: new BigNumber(1),
-				MAXIMUM: new BigNumber(1),
+				AVERAGE: Utils.BigNumber.make(1),
+				MAXIMUM: Utils.BigNumber.make(1),
 			});
 			wrapper.vm.fee = 1;
 			expect(wrapper.vm.isStaticFee).toBeTrue();
@@ -228,22 +228,22 @@ describe("InputFee", () => {
 
 		it("should be `false` if the current fee matches, average and maximum fee are not the same", () => {
 			let wrapper = mockedComponent({
-				AVERAGE: new BigNumber(2),
-				MAXIMUM: new BigNumber(1),
+				AVERAGE: Utils.BigNumber.make(2),
+				MAXIMUM: Utils.BigNumber.make(1),
 			});
 			wrapper.vm.fee = 1;
 			expect(wrapper.vm.isStaticFee).toBeFalse();
 
 			wrapper = mockedComponent({
-				AVERAGE: new BigNumber(1),
-				MAXIMUM: new BigNumber(2),
+				AVERAGE: Utils.BigNumber.make(1),
+				MAXIMUM: Utils.BigNumber.make(2),
 			});
 			wrapper.vm.fee = 1;
 
 			expect(wrapper.vm.isStaticFee).toBeFalse();
 			wrapper = mockedComponent({
-				AVERAGE: new BigNumber(1),
-				MAXIMUM: new BigNumber(1),
+				AVERAGE: Utils.BigNumber.make(1),
+				MAXIMUM: Utils.BigNumber.make(1),
 			});
 			wrapper.vm.fee = 2;
 			expect(wrapper.vm.isStaticFee).toBeFalse();
@@ -303,13 +303,13 @@ describe("InputFee", () => {
 			it("should use the V1 max fee", () => {
 				const wrapper = mountComponent();
 
-				const maxV1fee = new BigNumber(wrapper.vm.maxV1fee * 1e-8);
+				const maxV1fee = Utils.BigNumber.make(wrapper.vm.maxV1fee * 1e-8);
 
-				expect(wrapper.vm.feeChoices.MAXIMUM).toBeInstanceOf(BigNumber);
+				expect(wrapper.vm.feeChoices.MAXIMUM).toBeInstanceOf(Utils.BigNumber);
 				expect(wrapper.vm.feeChoices.MAXIMUM).toEqual(maxV1fee);
-				expect(wrapper.vm.feeChoices.AVERAGE).toBeInstanceOf(BigNumber);
+				expect(wrapper.vm.feeChoices.AVERAGE).toBeInstanceOf(Utils.BigNumber);
 				expect(wrapper.vm.feeChoices.AVERAGE).toEqual(maxV1fee);
-				expect(wrapper.vm.feeChoices.MINIMUM).toBeInstanceOf(BigNumber);
+				expect(wrapper.vm.feeChoices.MINIMUM).toBeInstanceOf(Utils.BigNumber);
 				expect(wrapper.vm.feeChoices.MINIMUM).toEqual(maxV1fee);
 			});
 		});
@@ -331,11 +331,11 @@ describe("InputFee", () => {
 			it("should use it as the fee", () => {
 				const wrapper = mountComponent();
 
-				expect(wrapper.vm.feeChoices.MAXIMUM).toBeInstanceOf(BigNumber);
+				expect(wrapper.vm.feeChoices.MAXIMUM).toBeInstanceOf(Utils.BigNumber);
 				expect(wrapper.vm.feeChoices.MAXIMUM).toBeWithin(0.03, 0.03000001);
-				expect(wrapper.vm.feeChoices.AVERAGE).toBeInstanceOf(BigNumber);
+				expect(wrapper.vm.feeChoices.AVERAGE).toBeInstanceOf(Utils.BigNumber);
 				expect(wrapper.vm.feeChoices.AVERAGE).toBeWithin(0.0048, 0.00480001);
-				expect(wrapper.vm.feeChoices.MINIMUM).toBeInstanceOf(BigNumber);
+				expect(wrapper.vm.feeChoices.MINIMUM).toBeInstanceOf(Utils.BigNumber);
 				expect(wrapper.vm.feeChoices.MINIMUM).toBeWithin(0.0006, 0.00060001);
 			});
 		});
@@ -350,14 +350,14 @@ describe("InputFee", () => {
 
 				const maxV1fee = (wrapper.vm.maxV1fee * 1e-8).toString();
 
-				expect(wrapper.vm.feeChoices.MAXIMUM).toBeInstanceOf(BigNumber);
+				expect(wrapper.vm.feeChoices.MAXIMUM).toBeInstanceOf(Utils.BigNumber);
 				expect(wrapper.vm.feeChoices.MAXIMUM.toString()).toBe(maxV1fee);
 			});
 
 			it("should use the absolute minimum fee (0.00000001) for minimum", () => {
 				const wrapper = mountComponent();
 
-				expect(wrapper.vm.feeChoices.MINIMUM).toBeInstanceOf(BigNumber);
+				expect(wrapper.vm.feeChoices.MINIMUM).toBeInstanceOf(Utils.BigNumber);
 				expect(wrapper.vm.feeChoices.MINIMUM.toString()).toBe("0.00000001");
 			});
 		});

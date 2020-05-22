@@ -17,7 +17,7 @@ export class BusinessRegistrationBuilder {
 		}
 
 		const staticFee = store.getters["transaction/staticFee"](TRANSACTION_TYPES.GROUP_2.BUSINESS_REGISTRATION, 2);
-		if (!isAdvancedFee && fee.gt(staticFee)) {
+		if (!isAdvancedFee && fee.isGreaterThan(staticFee)) {
 			throw new Error(`Business Registration fee should be smaller than ${staticFee}`);
 		}
 

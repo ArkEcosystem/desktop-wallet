@@ -17,7 +17,7 @@ export class MultiSignatureBuilder {
 		}
 
 		const staticFee = store.getters["transaction/staticFee"](TRANSACTION_TYPES.GROUP_1.MULTI_SIGNATURE, 1);
-		if (!isAdvancedFee && fee.gt(staticFee)) {
+		if (!isAdvancedFee && fee.isGreaterThan(staticFee)) {
 			throw new Error(`Multi-Signature fee should be smaller than ${staticFee}`);
 		}
 

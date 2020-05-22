@@ -1,11 +1,11 @@
 import { Identities } from "@arkecosystem/crypto";
+import { Utils } from "@arkecosystem/platform-sdk";
 import { createLocalVue, mount } from "@vue/test-utils";
 import Vuelidate from "vuelidate";
 
 import { TransactionFormVote } from "@/components/Transaction/TransactionForm";
 import CurrencyMixin from "@/mixins/currency";
 import FormatterMixin from "@/mixins/formatter";
-import BigNumber from "@/plugins/bignumber";
 
 import installI18n from "../../../__utils__/i18n";
 
@@ -406,7 +406,7 @@ describe("TransactionFormVote", () => {
 					address: "address-1",
 					passphrase: "passphrase",
 					votes: ["+public-key-1"],
-					fee: new BigNumber(0.1 * 1e8),
+					fee: Utils.BigNumber.make(0.1 * 1e8),
 					wif: undefined,
 					networkWif: 170,
 					multiSignature: undefined,
@@ -425,7 +425,7 @@ describe("TransactionFormVote", () => {
 					address: "address-1",
 					passphrase: "passphrase",
 					votes: ["-public-key-1"],
-					fee: new BigNumber(0.1 * 1e8),
+					fee: Utils.BigNumber.make(0.1 * 1e8),
 					wif: undefined,
 					networkWif: 170,
 					multiSignature: undefined,
@@ -448,7 +448,7 @@ describe("TransactionFormVote", () => {
 					passphrase: "passphrase",
 					secondPassphrase: "second passphrase",
 					votes: ["+public-key-1"],
-					fee: new BigNumber(0.1 * 1e8),
+					fee: Utils.BigNumber.make(0.1 * 1e8),
 					wif: undefined,
 					networkWif: 170,
 					multiSignature: undefined,

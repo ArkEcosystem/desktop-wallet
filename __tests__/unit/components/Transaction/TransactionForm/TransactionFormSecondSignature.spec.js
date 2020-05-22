@@ -1,10 +1,10 @@
+import { Utils } from "@arkecosystem/platform-sdk";
 import { createLocalVue, mount } from "@vue/test-utils";
 import Vuelidate from "vuelidate";
 
 import { TransactionFormSecondSignature } from "@/components/Transaction/TransactionForm";
 import CurrencyMixin from "@/mixins/currency";
 import FormatterMixin from "@/mixins/formatter";
-import BigNumber from "@/plugins/bignumber";
 import WalletService from "@/services/wallet";
 
 import installI18n from "../../../__utils__/i18n";
@@ -274,7 +274,7 @@ describe("TransactionFormSecondSignature", () => {
 					address: "address-1",
 					passphrase: "passphrase",
 					secondPassphrase: "second passphrase",
-					fee: new BigNumber(0.1 * 1e8),
+					fee: Utils.BigNumber.make(0.1 * 1e8),
 					wif: undefined,
 					networkWif: 170,
 					multiSignature: undefined,
