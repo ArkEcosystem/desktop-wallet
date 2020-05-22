@@ -1,8 +1,6 @@
-import resolveConfig from "tailwindcss/resolveConfig";
 import { PulseLoader } from "vue-spinner/dist/vue-spinner.min";
 
 const tailwindConfig = require("@tailwind");
-const tailwindFullConfig = resolveConfig(tailwindConfig);
 
 export default {
 	functional: true,
@@ -11,7 +9,7 @@ export default {
 		color: {
 			type: String,
 			required: false,
-			default: tailwindFullConfig.theme.colors["blue-dark"],
+			default: tailwindConfig.theme.colors["blue-dark"],
 		},
 	},
 
