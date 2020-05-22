@@ -1,7 +1,6 @@
+import tailwindConfig from "@tailwind";
 import Chart from "chart.js";
 import { Line, mixins } from "vue-chartjs";
-
-const tailwindConfig = require("@tailwind");
 
 Chart.defaults.global.defaultFontFamily = tailwindConfig.theme.fontFamily.sans.join(",");
 

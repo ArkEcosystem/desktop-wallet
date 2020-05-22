@@ -1,6 +1,5 @@
+import tailwindConfig from "@tailwind";
 import { PulseLoader } from "vue-spinner/dist/vue-spinner.min";
-
-const tailwindConfig = require("@tailwind");
 
 export default {
 	functional: true,
