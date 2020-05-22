@@ -1012,4 +1012,18 @@ module.exports = {
 		width: ["responsive"],
 		zIndex: ["responsive"],
 	},
+
+	/*
+  |-----------------------------------------------------------------------------
+  | Core Plugins       https://tailwindcss.com/docs/configuration/#core-plugins
+  |-----------------------------------------------------------------------------
+  |
+  | The core plugins section lets you completely disable classes that Tailwind
+  | would normally generate by default if you don't need them for your project.
+  |
+  */
+
+	corePlugins: {
+		transitionProperty: false,
+	},
 };
