@@ -31,8 +31,8 @@
 			v-click-outside.stop="close"
 			:class="[
 				{
-					'pin-b pb-10': pinAbove,
-					'pin-x': pinToInputWidth,
+					'bottom-0 pb-10': pinAbove,
+					'inset-x-0': pinToInputWidth,
 				},
 				containerClasses,
 			]"

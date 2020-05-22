@@ -149,12 +149,12 @@ export default {
 .AppIntroScreen--gradient-top {
 	background: linear-gradient(to top, var(--theme-intro-gradient-1), var(--theme-intro-gradient-2) 100%);
 	z-index: 1;
-	@apply .sticky .pin-t .pin-x .h-6;
+	@apply .sticky .top-0 .inset-x-0 .h-6;
 }
 
 .AppIntroScreen--gradient-bottom {
 	background: linear-gradient(to bottom, var(--theme-intro-gradient-1), var(--theme-intro-gradient-2) 100%);
 	z-index: 1;
-	@apply .sticky .pin-b .pin-x .h-6;
+	@apply .sticky .bottom-0 .inset-x-0 .h-6;
 }
 </style>

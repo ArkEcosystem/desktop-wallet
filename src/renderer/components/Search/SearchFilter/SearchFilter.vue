@@ -1,5 +1,5 @@
 <template>
-	<MenuOptions v-click-outside="emitClose" class="SearchFilter absolute pin-r text-theme-settings-text">
+	<MenuOptions v-click-outside="emitClose" class="SearchFilter absolute right-0 text-theme-settings-text">
 		<ul class="SearchFilter__list flex items-start py-3 px-5">
 			<SearchFilterItem :label="$t('SEARCH.SEARCH_BY')">
 				<MenuDropdown

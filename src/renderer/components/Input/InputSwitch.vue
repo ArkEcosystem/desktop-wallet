@@ -3,7 +3,7 @@
 	<InputField :label="label" :helper-text="helperText" :is-disabled="isDisabled" :is-dirty="true" class="InputSwitch">
 		<div
 			:class="isReverse ? 'flex-row-reverse' : 'flex-row'"
-			class="w-full pt-4 pin-l transition text-theme-page-text h-10 flex items-center justify-flex-start"
+			class="w-full pt-4 left-0 transition text-theme-page-text h-10 flex items-center justify-flex-start"
 		>
 			<slot>
 				<div :class="[isLarge ? 'text-lg' : 'text-base', isReverse ? 'ml-3' : 'mr-3']" class="mt-1">

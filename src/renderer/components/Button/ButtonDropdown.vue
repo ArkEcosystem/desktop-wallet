@@ -154,7 +154,7 @@ export default {
 }
 
 .ButtonDropdown__list {
-	@apply .absolute .pin-l .flex-col .mt-1 .rounded;
+	@apply .absolute .left-0 .flex-col .mt-1 .rounded;
 	top: 100%;
 }
 </style>

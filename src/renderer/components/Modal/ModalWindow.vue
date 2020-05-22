@@ -222,14 +222,14 @@ export default {
 }
 
 .ModalWindow--maximized .ModalWindow__wrapper {
-	@apply pin;
+	@apply inset-0;
 }
 .ModalWindow--minimized .ModalWindow__wrapper {
-	@apply pin-r pin-b mr-5 mb-5;
+	@apply right-0 bottom-0 mr-5 mb-5;
 }
 
 .ModalWindow__container__actions {
-	@apply absolute pin-x pin-t flex justify-end m-2 p-2 z-10;
+	@apply absolute inset-x-0 top-0 flex justify-end m-2 p-2 z-10;
 }
 
 .ModalWindow--maximized .ModalWindow__container__content {

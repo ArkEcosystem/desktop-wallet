@@ -47,7 +47,7 @@ export default {
 <style scoped>
 .Navigation__left,
 .Navigation__right {
-	@apply .absolute .rounded .bg-theme-button .text-theme-button-text .flex .pin-y .my-auto .cursor-pointer .shadow;
+	@apply .absolute .rounded .bg-theme-button .text-theme-button-text .flex .inset-y-0 .my-auto .cursor-pointer .shadow;
 	width: 35px;
 	height: 35px;
 }
@@ -58,12 +58,12 @@ export default {
 }
 
 .Navigation__left {
-	@apply .pin-l;
+	@apply .left-0;
 	padding-right: 0.125rem;
 }
 
 .Navigation__right {
-	@apply .pin-r;
+	@apply .right-0;
 }
 
 .Navigation__left .SvgIcon,

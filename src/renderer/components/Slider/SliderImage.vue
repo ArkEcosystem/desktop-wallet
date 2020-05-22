@@ -239,7 +239,7 @@ export default {
 }
 
 .SliderImage__slide {
-	@apply .absolute .flex .flex-none .h-full .pin .overflow-hidden;
+	@apply .absolute .flex .flex-none .h-full .inset-0 .overflow-hidden;
 }
 
 .SliderImage__slide--row img {
