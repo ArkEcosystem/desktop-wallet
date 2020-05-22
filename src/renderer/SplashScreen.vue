@@ -29,6 +29,7 @@
 				viewBox="0 0 40 40"
 				enable-background="new 0 0 40 40"
 				xml:space="preserve"
+				class="inline-block"
 			>
 				<path
 					fill="#e5f0f8"
