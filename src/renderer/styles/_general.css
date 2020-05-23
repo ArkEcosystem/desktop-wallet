@@ -2,6 +2,14 @@
  * General styling
  */
 
+html {
+	line-height: 1.15;
+}
+
+body {
+	@apply .bg-default-background;
+}
+
 h1,
 h2,
 h3,
@@ -34,10 +42,6 @@ button,
 img {
 	@apply .select-none;
 	-webkit-user-drag: none;
-}
-
-body {
-	@apply .bg-default-background;
 }
 
 .App:not(.mac) *::-webkit-scrollbar {
