@@ -96,23 +96,23 @@ export default {
 	@apply .flex .flex-col .h-full;
 }
 
-.MenuTab__nav__item {
+.MenuTab .MenuTab__nav__item {
 	@apply .self-stretch;
 }
 
-.MenuTab__nav__item--active {
+.MenuTab .MenuTab__nav__item--active {
 	@apply .bg-theme-switch-button .text-theme-button-text;
 }
 
-.MenuTab__nav__item--clickable {
+.MenuTab .MenuTab__nav__item--clickable {
 	@apply .bg-theme-voting-banner-background .text-theme-page-text .opacity-75;
 }
 
-.MenuTab__nav__item--disabled {
+.MenuTab .MenuTab__nav__item--disabled {
 	@apply .text-theme-feature-item-alternative-text .opacity-50;
 }
 
-.MenuTab__nav__item--disabled:hover {
+.MenuTab .MenuTab__nav__item--disabled:hover {
 	@apply .bg-transparent;
 }
 </style>
