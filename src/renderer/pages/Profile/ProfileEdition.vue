@@ -5,7 +5,7 @@
 				class="ProfileNew__instructions theme-dark bg-theme-feature text-theme-page-instructions-text hidden lg:flex flex-1 mr-4 rounded-lg overflow-y-auto"
 			>
 				<div class="m-auto w-3/5 text-center flex flex-col items-center justify-center">
-					<h1 class="text-inherit text-base-xl">
+					<h1 class="text-inherit">
 						{{ $t(`PAGES.PROFILE_EDITION.TAB_${tab.toUpperCase()}.INSTRUCTIONS.HEADER`) }}
 					</h1>
 					<p class="text-center py-2 leading-normal">
@@ -19,7 +19,7 @@
 						/>
 						<h2
 							v-if="isProfileTab"
-							class="ProfileNew__instructions__name text-2xl opacity-75 absolute inset-x-0 z-10 hidden xl:block truncate"
+							class="ProfileNew__instructions__name opacity-75 absolute inset-x-0 z-10 hidden xl:block truncate"
 						>
 							{{ name }}
 						</h2>

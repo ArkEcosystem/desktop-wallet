@@ -4,7 +4,7 @@
 
 		<main class="flex-col px-10">
 			<div class="Announcements__header">
-				<h3 class="text-xl">
+				<h3>
 					{{ $t("ANNOUNCEMENTS.LATEST_NEWS") }}
 				</h3>
 

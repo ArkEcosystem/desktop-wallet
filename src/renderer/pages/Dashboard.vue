@@ -8,7 +8,7 @@
 			</div>
 
 			<div class="p-10">
-				<h3 class="flex items-center text-xl">
+				<h3 class="flex items-center">
 					{{ $t("PAGES.DASHBOARD.LAST_TRANSACTIONS") }}
 				</h3>
 

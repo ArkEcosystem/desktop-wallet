@@ -5,7 +5,7 @@
 				class="WalletNew__instructions theme-dark bg-theme-feature text-theme-page-instructions-text hidden lg:flex flex-1 mr-4 rounded-lg overflow-y-auto"
 			>
 				<div class="m-auto w-3/5 text-center flex flex-col items-center justify-center">
-					<h1 class="text-inherit text-base-xl">
+					<h1 class="text-inherit">
 						{{ $t(`PAGES.WALLET_NEW.STEP${step}.INSTRUCTIONS.HEADER`) }}
 					</h1>
 					<p v-if="step === 1" class="text-center py-2 leading-normal">

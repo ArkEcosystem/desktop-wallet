@@ -5,7 +5,7 @@
 				class="ProfileNew__instructions theme-dark bg-theme-feature text-theme-page-instructions-text hidden lg:flex flex-1 mr-4 rounded-lg overflow-y-auto"
 			>
 				<div class="m-auto w-3/5 text-center flex flex-col items-center justify-center">
-					<h1 class="text-inherit text-base-xl">
+					<h1 class="text-inherit">
 						{{ $t(`PAGES.PROFILE_NEW.STEP${step}.INSTRUCTIONS.HEADER`) }}
 					</h1>
 					<p class="text-center py-2 leading-normal">
@@ -81,7 +81,7 @@
 								class="ProfileNew__avatar flex items-center justify-between mt-5 pt-5 mb-2 border-t border-theme-line-separator border-dashed"
 							>
 								<div class="mr-2">
-									<h5 class="mb-2 text-sm font-bold">
+									<h5 class="mb-2 font-bold">
 										{{ $t("COMMON.AVATAR") }}
 									</h5>
 									<p class="text-theme-page-text-light">
@@ -142,7 +142,7 @@
 						<div class="flex flex-col h-full w-full justify-around">
 							<div class="flex items-center justify-between mb-5 mt-2">
 								<div>
-									<h5 class="mb-2 text-sm font-bold">
+									<h5 class="mb-2 font-bold">
 										{{ $t("COMMON.IS_MARKET_CHART_ENABLED") }}
 									</h5>
 									<p class="text-theme-page-text-light">
@@ -154,7 +154,7 @@
 
 							<div class="flex items-center justify-between mb-5 mt-2">
 								<div>
-									<h5 class="mb-2 text-sm font-bold">
+									<h5 class="mb-2 font-bold">
 										{{ $t("COMMON.THEME") }}
 									</h5>
 									<p class="text-theme-page-text-light">
@@ -166,7 +166,7 @@
 
 							<div class="ProfileNew__background flex items-center justify-between">
 								<div>
-									<h5 class="mb-2 text-sm font-bold">
+									<h5 class="mb-2 font-bold">
 										{{ $t("COMMON.BACKGROUND") }}
 									</h5>
 									<p class="text-theme-page-text-light">
