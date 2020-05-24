@@ -81,7 +81,7 @@
 								class="ProfileNew__avatar flex items-center justify-between mt-5 pt-5 mb-2 border-t border-theme-line-separator border-dashed"
 							>
 								<div class="mr-2">
-									<h5 class="mb-2">
+									<h5 class="mb-2 text-sm font-bold">
 										{{ $t("COMMON.AVATAR") }}
 									</h5>
 									<p class="text-theme-page-text-light">
@@ -142,7 +142,7 @@
 						<div class="flex flex-col h-full w-full justify-around">
 							<div class="flex items-center justify-between mb-5 mt-2">
 								<div>
-									<h5 class="mb-2">
+									<h5 class="mb-2 text-sm font-bold">
 										{{ $t("COMMON.IS_MARKET_CHART_ENABLED") }}
 									</h5>
 									<p class="text-theme-page-text-light">
@@ -154,7 +154,7 @@
 
 							<div class="flex items-center justify-between mb-5 mt-2">
 								<div>
-									<h5 class="mb-2">
+									<h5 class="mb-2 text-sm font-bold">
 										{{ $t("COMMON.THEME") }}
 									</h5>
 									<p class="text-theme-page-text-light">
@@ -166,7 +166,7 @@
 
 							<div class="ProfileNew__background flex items-center justify-between">
 								<div>
-									<h5 class="mb-2">
+									<h5 class="mb-2 text-sm font-bold">
 										{{ $t("COMMON.BACKGROUND") }}
 									</h5>
 									<p class="text-theme-page-text-light">
