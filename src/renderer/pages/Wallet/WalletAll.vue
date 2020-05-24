@@ -20,7 +20,7 @@
 				</div>
 				<div class="flex-col">
 					<div>
-						<h2 class="mb-2">
+						<h2 class="mb-2 text-2xl">
 							{{ session_profile.name | truncate(20) }}
 						</h2>
 						<span class="font-semibold text-theme-page-text-light">
@@ -52,7 +52,7 @@
 		<div class="flex flex-1 bg-theme-feature rounded-lg p-10 overflow-y-auto">
 			<div class="block w-full">
 				<div class="WalletAll__header">
-					<h3 class="flex items-center">
+					<h3 class="flex items-center text-xl">
 						{{ $t("PAGES.WALLET_ALL.HEADER") }}
 						<span
 							v-if="isLedgerLoading"

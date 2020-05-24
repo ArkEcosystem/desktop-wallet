@@ -28,7 +28,7 @@
 		<div class="flex flex-1 flex-col bg-theme-feature rounded-lg p-10 overflow-y-auto">
 			<div class="block w-full">
 				<div class="ContactAll__header">
-					<h3 class="items-center">
+					<h3 class="flex items-center text-xl">
 						{{ $t("PAGES.CONTACT_ALL.HEADER") }}
 					</h3>
 

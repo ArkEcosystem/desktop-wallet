@@ -2,7 +2,7 @@
 	<div class="PluginManager">
 		<div class="PluginManager__heading px-10 py-6 mb-3">
 			<div class="flex flex-row w-full items-center">
-				<h2 class="pr-8 border-r border-theme-line-separator">
+				<h2 class="text-2xl pr-8 border-r border-theme-line-separator">
 					{{ $t("PAGES.PLUGIN_MANAGER.HEADER") }}
 				</h2>
 
@@ -24,11 +24,11 @@
 			}"
 		>
 			<div class="w-full lg:w-3/5 flex flex-col">
-				<h1 :style="{ color: colors.title }">
+				<h1 class="text-base-xl" :style="{ color: colors.title }">
 					{{ $t("PAGES.PLUGIN_MANAGER.BANNER.TITLE") }}
 				</h1>
 
-				<h3 :style="{ color: colors.subtitle }">
+				<h3 class="text-xl" :style="{ color: colors.subtitle }">
 					{{ $t("PAGES.PLUGIN_MANAGER.BANNER.SUBTITLE") }}
 				</h3>
 			</div>
