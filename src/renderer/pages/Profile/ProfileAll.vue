@@ -1,6 +1,8 @@
 <template>
 	<div class="ProfileAll relative bg-theme-feature rounded-lg m-r-4 p-10">
-		<h3 class="text-xl">{{ $t("PAGES.PROFILE_ALL.HEADER") }} ({{ totalBalances.join(", ") }})</h3>
+		<h3 class="text-xl">
+			{{ $t("PAGES.PROFILE_ALL.HEADER") }} ({{ totalBalances.join(", ") }})
+		</h3>
 
 		<div class="ProfileAll__grid mt-10">
 			<RouterLink :to="{ name: 'profile-new' }" class="ProfileAll__grid__profile flex flex-row w-full">
