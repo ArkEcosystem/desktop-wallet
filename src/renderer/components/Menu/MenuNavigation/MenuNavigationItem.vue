@@ -12,7 +12,10 @@
 		<slot :is-active="isActive">
 			<div v-if="icon" :class="{ 'w-full': !isHorizontal }" class="flex items-center justify-center">
 				<SvgIcon :name="icon" :view-box="viewBox" />
-				<div v-if="showBadge" class="MenuNavigationItem__badge rounded-full animated bounce" />
+				<div
+					v-if="showBadge"
+					class="MenuNavigationItem__badge rounded-full animate__animated animate__bounce"
+				/>
 			</div>
 		</slot>
 		<div v-if="isHorizontal" class="MenuNavigationItemHorizontal__border absolute h-full" />

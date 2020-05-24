@@ -1,6 +1,6 @@
 <template>
 	<button v-tooltip="getTooltip()" :disabled="!isCopySupported" class="ButtonClipboard" @click="copy">
-		<div :class="{ 'animated wobble': isCopying }" class="fill-current flex items-center">
+		<div :class="{ 'animate__animated animate__wobble': isCopying }" class="fill-current flex items-center">
 			<SvgIcon :view-box="viewBox" name="copy" />
 		</div>
 	</button>

@@ -1,6 +1,8 @@
 <template>
 	<div class="AppIntroScreen flex flex-row w-full h-full">
-		<div class="AppIntroScreen__container__left flex-1 animated fadeIn rounded-lg hidden lg:block">
+		<div
+			class="AppIntroScreen__container__left flex-1 animate__animated animate__fadeIn rounded-lg hidden lg:block"
+		>
 			<div v-if="showLogo" class="AppIntroScreen__container__left__logo">
 				<img :src="assets_loadImage('ark-logo.png')" class="h-full" />
 			</div>
@@ -16,7 +18,7 @@
 			class="AppIntroScreen__container__right flex-1 flex-col align-center justify-center h-full w-full lg:ml-4 bg-theme-feature rounded-lg"
 		>
 			<div
-				class="flex flex-col items-center h-full w-full animated fadeIn font-medium"
+				class="flex flex-col items-center h-full w-full animate__animated animate__fadeIn font-medium"
 				:class="showFooter ? 'justify-between' : 'justify-center'"
 			>
 				<div :class="contentClasses" class="relative">
