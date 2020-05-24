@@ -247,7 +247,6 @@ export default {
 	@apply flex flex-wrap;
 }
 
-,
 .PassphraseVerification__inputs__input,
 .PassphraseVerification__suggestions__input {
 	width: calc(theme("width.1/3") - theme("margin.2"));

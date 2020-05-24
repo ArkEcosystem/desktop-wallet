@@ -23,7 +23,7 @@
 
 			<button
 				:title="$t(passphraseIsVisible ? 'PASSPHRASE_INPUT.HIDE' : 'PASSPHRASE_INPUT.SHOW')"
-				class="PassphraseInput__visibility-button flex flex-shrink-0 text-grey-dark hover:text-blue focus:text-blue mr-2"
+				class="PassphraseInput__visibility-button flex flex-shrink-0 items-center text-grey-dark hover:text-blue focus:text-blue mr-2"
 				type="button"
 				@click="toggleVisible"
 			>

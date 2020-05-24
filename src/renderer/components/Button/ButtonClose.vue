@@ -3,7 +3,7 @@
 		<SvgIcon
 			:class="iconClass"
 			:name="iconName"
-			class="ButtonClose__cross fill-current text-theme-feature"
+			class="ButtonClose__cross fill-current text-theme-feature align-baseline"
 			view-box="0 0 15 15"
 		/>
 	</button>

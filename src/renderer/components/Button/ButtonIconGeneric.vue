@@ -48,8 +48,8 @@ export default {
 };
 </script>
 
-<style lang="postcss" scoped>
+<style scoped>
 .ButtonIconGeneric {
-	@apply flex items-center px-6;
+	@apply .flex .items-center .px-6;
 }
 </style>
