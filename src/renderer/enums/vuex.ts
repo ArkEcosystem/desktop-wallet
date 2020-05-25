@@ -11,6 +11,7 @@ export enum StoreBinding {
 	AppSetPinCode = "app/setPinCode",
 	AppSetVotingExplanation = "app/setVotingExplanation",
 	// Delegate
+	DelegateAll = "delegate/all",
 	DelegateLoad = "delegate/load",
 	DelegateSet = "delegate/set",
 	// Leder

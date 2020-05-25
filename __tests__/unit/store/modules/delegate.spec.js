@@ -27,7 +27,7 @@ beforeEach(() => {
 
 describe("delegate store module", () => {
 	it("should get delegate list", () => {
-		expect(Object.values(store.getters["delegate/all"][profile1.networkId])).toEqual(delegates);
+		expect(Object.values(store.getters[StoreBinding.DelegateAll][profile1.networkId])).toEqual(delegates);
 	});
 
 	it("should get a single delegate by its address", () => {
@@ -71,7 +71,7 @@ describe("delegate store module", () => {
 
 				await store.dispatch(StoreBinding.AnnouncementsMarkAsReadBulk);
 
-				expect(Object.values(store.getters["delegate/all"][profile1.networkId])).toEqual(delegates);
+				expect(Object.values(store.getters[StoreBinding.DelegateAll][profile1.networkId])).toEqual(delegates);
 			});
 
 			it("should load all pages", async () => {
@@ -95,7 +95,7 @@ describe("delegate store module", () => {
 
 				await store.dispatch(StoreBinding.AnnouncementsMarkAsReadBulk);
 
-				expect(Object.values(store.getters["delegate/all"][profile1.networkId]).length).toEqual(
+				expect(Object.values(store.getters[StoreBinding.DelegateAll][profile1.networkId]).length).toEqual(
 					delegates.length * 10,
 				);
 			});
