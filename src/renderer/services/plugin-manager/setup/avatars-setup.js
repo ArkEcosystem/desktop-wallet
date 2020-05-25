@@ -1,3 +1,5 @@
+import { StoreBinding } from "@/enums";
+
 import { normalizeJson } from "../utils/normalize-json";
 
 export function create(plugin, pluginObject, sandbox, profileId) {
@@ -20,7 +22,7 @@ export function create(plugin, pluginObject, sandbox, profileId) {
 			plugin.avatars = avatars;
 
 			if (avatars.length) {
-				await sandbox.app.$store.dispatch("plugin/setAvatars", {
+				await sandbox.app.$store.dispatch(StoreBinding.PluginSetAvatars, {
 					pluginId: plugin.config.id,
 					avatars,
 					profileId,

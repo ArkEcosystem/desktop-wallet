@@ -2,6 +2,7 @@ import { at, isEqual } from "lodash";
 
 import { TransactionTable } from "@/components/Transaction";
 import mergeTableTransactions from "@/components/utils/merge-table-transactions";
+import { AppEvent, StoreBinding } from "@/enums";
 
 import mixin from "./mixin";
 
@@ -16,12 +17,12 @@ export default {
 
 	created() {
 		this.loadTransactions();
-		this.$eventBus.on("wallet:reload", this.loadTransactions);
+		this.$eventBus.on(AppEvent.WalletReload, this.loadTransactions);
 		this.enableNewTransactionEvent(this.wallet_fromRoute.address);
 	},
 
 	beforeDestroy() {
-		this.$eventBus.off("wallet:reload", this.loadTransactions);
+		this.$eventBus.off(AppEvent.WalletReload, this.loadTransactions);
 		if (this.wallet_fromRoute) {
 			this.disableNewTransactionEvent(this.wallet_fromRoute.address);
 		}
@@ -96,7 +97,7 @@ export default {
 			try {
 				const response = await this.getTransactions(address);
 
-				this.$store.dispatch("transaction/deleteBulk", {
+				this.$store.dispatch(StoreBinding.TransactionDeleteBulk, {
 					transactions: response.transactions,
 					profileId: this.session_profile.id,
 				});

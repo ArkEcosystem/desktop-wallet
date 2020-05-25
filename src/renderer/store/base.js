@@ -1,5 +1,7 @@
 import { merge, unionBy } from "lodash";
 
+import { StoreCommit } from "@/enums";
+
 const includes = (objects, find) => objects.map((a) => a.id).includes(find.id);
 
 /**
@@ -54,22 +56,22 @@ export default class BaseModule {
 			actions: {
 				create({ commit }, model) {
 					const data = modeler.deserialize(model);
-					commit("CREATE", data);
+					commit(StoreCommit.Create, data);
 					return data;
 				},
 
 				store({ commit }, model) {
-					commit("STORE", model);
+					commit(StoreCommit.Store, model);
 				},
 
 				update({ commit }, model) {
 					const data = modeler.deserialize(model);
-					commit("UPDATE", data);
+					commit(StoreCommit.Update, data);
 					return data;
 				},
 
 				delete({ commit }, { id }) {
-					commit("DELETE", id);
+					commit(StoreCommit.Delete, id);
 				},
 			},
 		};

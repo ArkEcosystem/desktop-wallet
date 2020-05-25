@@ -2,6 +2,7 @@ import { ANNOUNCEMENTS as source } from "@config";
 import { unionBy } from "lodash";
 import Vue from "vue";
 
+import { StoreCommit } from "@/enums";
 import Announcement from "@/models/announcement";
 import feedService from "@/services/feed";
 
@@ -60,17 +61,17 @@ export default {
 
 	actions: {
 		markAsRead({ commit }, announcement) {
-			commit("MARK_ANNOUNCEMENT_AS_READ", announcement);
+			commit(StoreCommit.MarkAnnouncementAsRead, announcement);
 		},
 
 		markAsReadBulk({ commit }, announcements) {
-			commit("MARK_ANNOUNCEMENT_AS_READ_BULK", announcements);
+			commit(StoreCommit.MarkAnnouncementAsReadBulk, announcements);
 		},
 
 		async fetch({ commit }) {
 			const items = await feedService.fetchItems(source.rssUrl);
 
-			commit("SAVE_ANNOUNCEMENTS", items);
+			commit(StoreCommit.SaveAnnouncements, items);
 		},
 	},
 };

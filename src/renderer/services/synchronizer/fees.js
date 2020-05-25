@@ -1,3 +1,5 @@
+import { StoreBinding } from "@/enums";
+
 export default async (synchronizer) => {
-	await synchronizer.$store.dispatch("network/fetchFees");
+	await synchronizer.$store.dispatch(StoreBinding.NetworkFetchFees);
 };

@@ -17,7 +17,7 @@
 			@close="closeShowNetworkStatus"
 		>
 			<MenuOptions :is-horizontal="isHorizontal" class="AppSidemenuNetworkStatus__peer">
-				<div class="text-xs mx-6 mb-2 text-theme-settings-heading">
+				<div class="mx-6 mb-2 text-xs text-theme-settings-heading">
 					<span class="float-left">
 						{{ $t("PEER.PEER") }}
 					</span>
@@ -29,10 +29,10 @@
 					</span>
 				</div>
 				<div
-					class="bg-theme-settings-sub inline-block mx-6 rounded text-white relative px-3 py-2 inline-block select-none cursor-pointer"
+					class="relative inline-block px-3 py-2 mx-6 text-white rounded cursor-pointer select-none bg-theme-settings-sub"
 				>
-					<button class="w-full text-left pr-12" @click.stop="toggleSelect('peers-menu')">
-						<div slot="controls" class="pointer-events-none w-full">
+					<button class="w-full pr-12 text-left" @click.stop="toggleSelect('peers-menu')">
+						<div slot="controls" class="w-full pointer-events-none">
 							<MenuDropdown
 								ref="peers-menu"
 								:items="peerIps"
@@ -41,7 +41,7 @@
 									peer ? `${peer.isHttps ? 'https://' : 'http://'}${peer.ip}` : $t('PEER.NONE')
 								"
 								:pin-above="true"
-								class="inline-block text-white fill-white w-full"
+								class="inline-block w-full text-white fill-white"
 								@select="setPeer"
 							/>
 						</div>
@@ -51,12 +51,12 @@
 						:is-refreshing="isRefreshing"
 						text-class="hover:text-white"
 						color-class="AppSidemenuNetworkStatus__ButtonReload-colorClass"
-						class="AppSidemenuNetworkStatus__refresh__button hover:text-white bg-theme-settings-button absolute text-grey-dark"
+						class="absolute AppSidemenuNetworkStatus__refresh__button hover:text-white bg-theme-settings-button text-grey-dark"
 						@click="refreshPeer"
 					/>
 					<button
 						v-else-if="!isRefreshing"
-						class="AppSidemenuNetworkStatus__refresh__button AppSidemenuNetworkStatus__refresh__button--disconnect bg-theme-settings-button w-12 absolute cursor-pointer inline-flex items-center justify-center rounded text-theme-button-light-text hover:bg-theme-option-button-hover hover:text-grey-light"
+						class="absolute inline-flex items-center justify-center w-12 rounded cursor-pointer AppSidemenuNetworkStatus__refresh__button AppSidemenuNetworkStatus__refresh__button--disconnect bg-theme-settings-button text-theme-button-light-text hover:bg-theme-option-button-hover hover:text-grey-light"
 						@click="refreshPeer"
 					>
 						<SvgIcon name="disconnect" view-box="0 0 16 15" />
@@ -64,35 +64,35 @@
 					<ButtonReload
 						v-else
 						:is-refreshing="true"
-						class="AppSidemenuNetworkStatus__refresh__button bg-theme-settings-button absolute"
+						class="absolute AppSidemenuNetworkStatus__refresh__button bg-theme-settings-button"
 					/>
 				</div>
-				<div class="AppSidemenuNetworkStatus__status flex flex-wrap mt-6 mx-auto select-none">
-					<div class="AppSidemenuNetworkStatus__status__height inline-block pr-6 border-r">
-						<div class="text-xs mb-2">
+				<div class="flex flex-wrap mx-auto mt-6 select-none AppSidemenuNetworkStatus__status">
+					<div class="inline-block pr-6 border-r AppSidemenuNetworkStatus__status__height">
+						<div class="mb-2 text-xs">
 							{{ $t("PEER.HEIGHT") }}
 						</div>
-						<div class="text-md text-white">
+						<div class="text-white text-md">
 							{{ peer ? peer.height : "-" }}
 						</div>
 					</div>
-					<div class="AppSidemenuNetworkStatus__status__last-checked inline-block ml-6 pr-6 border-r">
-						<div class="text-xs mb-2">
+					<div class="inline-block pr-6 ml-6 border-r AppSidemenuNetworkStatus__status__last-checked">
+						<div class="mb-2 text-xs">
 							{{ $t("PEER.LAST_CHECKED") }}
 						</div>
-						<div class="text-md text-white">
+						<div class="text-white text-md">
 							{{ formatter_date(peer.lastUpdated || lastUpdated, "LT") }}
 						</div>
 					</div>
-					<div class="AppSidemenuNetworkStatus__status__latency ml-6 inline-block">
-						<div class="text-xs mb-2">
+					<div class="inline-block ml-6 AppSidemenuNetworkStatus__status__latency">
+						<div class="mb-2 text-xs">
 							{{ $t("PEER.LATENCY") }}
 						</div>
 						<div v-if="peer.latency" :class="peer && peer.latency < 500 ? 'text-green' : 'text-red'">
 							<span class="text-md"> {{ peer.latency }} ms </span>
 							<div
 								:class="peer && peer.latency < 500 ? 'bg-green' : 'bg-red'"
-								class="inline-block h-2 w-2 ml-1 rounded-full"
+								class="inline-block w-2 h-2 ml-1 rounded-full"
 							/>
 						</div>
 						<div v-else>
@@ -103,12 +103,12 @@
 					</div>
 				</div>
 			</MenuOptions>
-			<div class="bg-theme-settings mt-2 pt-1 px-10 rounded">
+			<div class="px-10 pt-1 mt-2 rounded bg-theme-settings">
 				<ButtonModal
 					:label="$t('PEER.CONNECT_CUSTOM')"
 					icon="connect"
 					view-box="0 0 30 15"
-					class="AppSidemenuNetworkStatus__ButtonModal cursor-pointer w-full text-left py-4 text-grey-dark hover:text-white border-b border-theme-settings-sub"
+					class="w-full py-4 text-left border-b cursor-pointer AppSidemenuNetworkStatus__ButtonModal text-grey-dark hover:text-white border-theme-settings-sub"
 					@toggle="toggleCustomPeerModal"
 				>
 					<template slot-scope="{ toggle, isOpen }">
@@ -126,7 +126,7 @@
 				<RouterLink
 					:to="{ name: 'networks' }"
 					:class="isHorizontal ? 'flex-row w-22' : 'rounded-t-lg'"
-					class="flex items-center cursor-pointer w-full py-4 text-left text-grey-dark hover:no-underline hover:text-white"
+					class="flex items-center w-full py-4 text-left cursor-pointer text-grey-dark hover:no-underline hover:text-white"
 					@click.native="goToNetworkOverview()"
 				>
 					<SvgIcon name="network-management" view-box="0 0 21 21" class="mr-4" />
@@ -146,6 +146,7 @@ import { ButtonModal, ButtonReload } from "@/components/Button";
 import { MenuDropdown, MenuNavigationItem, MenuOptions } from "@/components/Menu";
 import { ModalLoader, ModalPeer } from "@/components/Modal";
 import SvgIcon from "@/components/SvgIcon";
+import { StoreBinding } from "@/enums";
 
 export default {
 	name: "AppSidemenuNetworkStatus",
@@ -234,7 +235,7 @@ export default {
 		async connectPeer({ peer, closeTrigger }) {
 			this.showLoadingModal = true;
 
-			const response = await this.$store.dispatch("peer/validatePeer", {
+			const response = await this.$store.dispatch(StoreBinding.PeerValidatePeer, {
 				host: peer.host,
 				port: peer.port,
 			});
@@ -247,8 +248,8 @@ export default {
 				this.showLoadingModal = false;
 			} else {
 				response.isCustom = true;
-				await this.$store.dispatch("peer/setCurrentPeer", response);
-				await this.$store.dispatch("peer/updateCurrentPeerStatus");
+				await this.$store.dispatch(StoreBinding.PeerSetCurrentPeer, response);
+				await this.$store.dispatch(StoreBinding.PeerUpdateCurrentPeerStatus);
 				this.$success(`${this.$t("PEER.CONNECTED")}: ${peer.host}:${peer.port}`);
 				if (closeTrigger) {
 					closeTrigger();
@@ -260,7 +261,7 @@ export default {
 
 		async refreshPeer() {
 			this.isRefreshing = true;
-			await this.$store.dispatch("peer/connectToBest", {
+			await this.$store.dispatch(StoreBinding.PeerConnectToBest, {
 				skipIfCustom: false,
 			});
 			this.isRefreshing = false;
@@ -271,7 +272,7 @@ export default {
 			if (!peer) {
 				this.$error("Could not find peer");
 			} else {
-				await this.$store.dispatch("peer/setCurrentPeer", peer);
+				await this.$store.dispatch(StoreBinding.PeerSetCurrentPeer, peer);
 			}
 		},
 

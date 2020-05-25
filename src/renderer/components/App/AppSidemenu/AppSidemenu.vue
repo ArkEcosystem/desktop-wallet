@@ -135,6 +135,7 @@ import { mapGetters } from "vuex";
 import { MenuNavigation, MenuNavigationItem } from "@/components/Menu";
 import { ProfileAvatar } from "@/components/Profile";
 import SvgIcon from "@/components/SvgIcon";
+import { AppEvent } from "@/enums";
 
 import AppSidemenuImportantNotification from "./AppSidemenuImportantNotification";
 import AppSidemenuNetworkStatus from "./AppSidemenuNetworkStatus";
@@ -193,7 +194,7 @@ export default {
 	},
 
 	created() {
-		ipcRenderer.on("app:preferences", () => {
+		ipcRenderer.on(AppEvent.AppPreferences, () => {
 			this.$refs.settings.showSettings();
 		});
 	},

@@ -3,6 +3,7 @@ import { APP, TRANSACTION_GROUPS, TRANSACTION_TYPES } from "@config";
 import { unionBy } from "lodash";
 import Vue from "vue";
 
+import { StoreBinding, StoreCommit } from "@/enums";
 import TransactionModel from "@/models/transaction";
 import eventBus from "@/plugins/event-bus";
 import TransactionService from "@/services/transaction";
@@ -184,7 +185,7 @@ export default {
 	actions: {
 		create({ commit }, transaction) {
 			const data = TransactionModel.deserialize(transaction);
-			commit("CREATE", data);
+			commit(StoreCommit.Create, data);
 
 			eventBus.emit(`wallet:${transaction.sender}:transaction:new`);
 
@@ -192,12 +193,12 @@ export default {
 		},
 
 		store({ commit }, transactions) {
-			commit("STORE", transactions);
+			commit(StoreCommit.Store, transactions);
 		},
 
 		update({ commit }, transaction) {
 			const data = TransactionModel.deserialize(transaction);
-			commit("UPDATE", data);
+			commit(StoreCommit.Update, data);
 
 			return data;
 		},
@@ -220,12 +221,12 @@ export default {
 				return !ids.includes(vote.id);
 			});
 
-			dispatch("session/setUnconfirmedVotes", pendingVotes, {
+			dispatch(StoreBinding.SessionSetUnconfirmedVotes, pendingVotes, {
 				root: true,
 			});
 
 			dispatch(
-				"profile/update",
+				StoreBinding.ProfileUpdate,
 				{
 					...profile,
 					unconfirmedVotes: pendingVotes,
@@ -252,11 +253,11 @@ export default {
 				return !DateTime.make().isAfter(DateTime.make(vote.timestamp).addHours(6));
 			});
 
-			await dispatch("session/setUnconfirmedVotes", pendingVotes, {
+			await dispatch(StoreBinding.SessionSetUnconfirmedVotes, pendingVotes, {
 				root: true,
 			});
 			await dispatch(
-				"profile/update",
+				StoreBinding.ProfileUpdate,
 				{
 					...profile,
 					unconfirmedVotes: pendingVotes,
@@ -278,7 +279,7 @@ export default {
 				}
 			}
 
-			commit("UPDATE_BULK", {
+			commit(StoreCommit.UpdateBulk, {
 				transactions: expired,
 				profileId,
 			});
@@ -287,11 +288,11 @@ export default {
 		},
 
 		delete({ commit }, transaction) {
-			commit("DELETE", transaction);
+			commit(StoreCommit.Delete, transaction);
 		},
 
 		deleteBulk({ commit }, { transactions = [], profileId = null }) {
-			commit("DELETE_BULK", {
+			commit(StoreCommit.DeleteBulk, {
 				transactions,
 				profileId,
 			});
@@ -316,7 +317,7 @@ export default {
 				}
 			}
 
-			commit("SET_STATIC_FEES", {
+			commit(StoreCommit.SetStaticFees, {
 				networkId: rootGetters["session/profile"].networkId,
 				staticFees,
 			});

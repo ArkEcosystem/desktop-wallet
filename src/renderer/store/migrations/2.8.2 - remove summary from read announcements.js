@@ -1,6 +1,8 @@
+import { StoreBinding } from "@/enums";
+
 export default (store) => {
 	const readAnnouncements = store.getters["announcements/read"];
-	store.dispatch("announcements/markAsReadBulk", readAnnouncements);
+	store.dispatch(StoreBinding.AnnouncementsMarkAsReadBulk, readAnnouncements);
 
-	store.dispatch("app/setLatestAppliedMigration", "2.8.2");
+	store.dispatch(StoreBinding.AppSetLatestAppliedMigration, "2.8.2");
 };

@@ -1,5 +1,5 @@
 <template>
-	<div class="WalletMultiSignature mx-4 overflow-hidden">
+	<div class="mx-4 overflow-hidden WalletMultiSignature">
 		<div class="flex flex-row pb-5 border-b border-dashed border-theme-line-separator">
 			<div class="flex flex-col justify-center pl-4">
 				<span class="font-bold">
@@ -8,13 +8,13 @@
 				<span>{{ $t("WALLET_MULTI_SIGNATURE.DESCRIPTION") }}</span>
 			</div>
 
-			<div class="flex-1 flex flex-row items-center ml-4">
-				<div class="flex-1 text-right pr-4">
+			<div class="flex flex-row items-center flex-1 ml-4">
+				<div class="flex-1 pr-4 text-right">
 					<span class="font-bold">{{ $t("PEER.PEER") }}:</span>
 					<span :class="{ 'font-bold': !peer }">{{ peerOutput }}</span>
 				</div>
 
-				<ButtonModal :label="$t('WALLET_MULTI_SIGNATURE.BUTTON_SET_PEER')" class="blue-button mr-2 py-2 px-4">
+				<ButtonModal :label="$t('WALLET_MULTI_SIGNATURE.BUTTON_SET_PEER')" class="px-4 py-2 mr-2 blue-button">
 					<template slot-scope="{ toggle, isOpen }">
 						<ModalPeer
 							v-if="isOpen"
@@ -40,6 +40,7 @@
 import { ButtonModal } from "@/components/Button";
 import { ModalLoader, ModalPeer } from "@/components/Modal";
 import { WalletTransactionsMultiSignature } from "@/components/Wallet/WalletTransactions";
+import { StoreBinding } from "@/enums";
 import MultiSignature from "@/services/client-multisig";
 
 export default {
@@ -77,8 +78,8 @@ export default {
 			this.showLoadingModal = true;
 
 			if (await MultiSignature.performHandshake(peer)) {
-				await this.$store.dispatch("session/setMultiSignaturePeer", peer);
-				await this.$store.dispatch("profile/setMultiSignaturePeer", peer);
+				await this.$store.dispatch(StoreBinding.SessionSetMultiSignaturePeer, peer);
+				await this.$store.dispatch(StoreBinding.ProfileSetMultiSignaturePeer, peer);
 				this.$success(`${this.$t("PEER.CONNECTED")}: ${peer.host}:${peer.port}`);
 
 				if (closeTrigger) {

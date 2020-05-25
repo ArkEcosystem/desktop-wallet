@@ -5,6 +5,7 @@ import { keyBy } from "lodash";
 import semver from "semver";
 import Vue from "vue";
 
+import { AppEvent, StoreCommit } from "@/enums";
 import i18n from "@/i18n";
 import eventBus from "@/plugins/event-bus";
 import ledgerService from "@/services/ledger-service";
@@ -142,7 +143,7 @@ export default {
 		 * Reset store for new session.
 		 */
 		reset({ commit }) {
-			commit("RESET");
+			commit(StoreCommit.Reset);
 		},
 
 		/**
@@ -157,7 +158,7 @@ export default {
 			await dispatch("updateVersion");
 
 			if (!getters.needsUpdate && neededUpdate !== getters.needsUpdate) {
-				eventBus.emit("ledger:connected");
+				eventBus.emit(AppEvent.LedgerConnected);
 			}
 		},
 
@@ -176,7 +177,7 @@ export default {
 				needsUpdate = true;
 			}
 
-			commit("SET_NEEDS_UPDATE", needsUpdate);
+			commit(StoreCommit.SetNeedsUpdate, needsUpdate);
 
 			if (needsUpdate) {
 				this._vm.$error(i18n.t("LEDGER.NEEDS_UPDATE"), 10000);
@@ -192,12 +193,12 @@ export default {
 				return false;
 			}
 
-			commit("SET_CONNECTED", true);
+			commit(StoreCommit.SetConnected, true);
 
 			await dispatch("updateVersion");
 
 			if (!getters.needsUpdate) {
-				eventBus.emit("ledger:connected");
+				eventBus.emit(AppEvent.LedgerConnected);
 			}
 
 			await dispatch("reloadWallets", {});
@@ -210,11 +211,11 @@ export default {
 		 * @return {void}
 		 */
 		async disconnect({ commit, dispatch }) {
-			await commit("STOP_ALL_LOADING_PROCESSES");
-			commit("SET_CONNECTED", false);
+			await commit(StoreCommit.StopAllLoadingProcesses);
+			commit(StoreCommit.SetConnected, false);
 			await ledgerService.disconnect();
-			eventBus.emit("ledger:disconnected");
-			commit("SET_WALLETS", {});
+			eventBus.emit(AppEvent.LedgerDisconnected);
+			commit(StoreCommit.SetWallets, {});
 			dispatch("ensureConnection");
 		},
 
@@ -229,7 +230,7 @@ export default {
 				return;
 			}
 
-			commit("SET_ENSURE_CONNECTION", true);
+			commit(StoreCommit.SetEnsureConnection, true);
 
 			if (state.isConnected && !(await dispatch("checkConnected"))) {
 				await dispatch("disconnect");
@@ -265,7 +266,7 @@ export default {
 		 * @return {void}
 		 */
 		setSlip44({ commit }, slip44) {
-			commit("SET_SLIP44", slip44);
+			commit(StoreCommit.SetSlip44, slip44);
 		},
 
 		/**
@@ -289,7 +290,7 @@ export default {
 					return {};
 				}
 
-				await commit("STOP_ALL_LOADING_PROCESSES");
+				await commit(StoreCommit.StopAllLoadingProcesses);
 			}
 
 			let wallets = {};
@@ -298,11 +299,11 @@ export default {
 				const profileId = rootGetters["session/profileId"];
 
 				if (clearFirst) {
-					commit("SET_WALLETS", {});
-					eventBus.emit("ledger:wallets-updated", {});
+					commit(StoreCommit.SetWallets, {});
+					eventBus.emit(AppEvent.LedgerWalletsUpdated, {});
 				}
 
-				commit("SET_LOADING", processId);
+				commit(StoreCommit.SetLoading, processId);
 				const firstWallet = await dispatch("getWallet", 0);
 				const currentWallets = getters.walletsObject;
 				const cachedWallets = getters.cachedWallets(firstWallet.address);
@@ -322,14 +323,14 @@ export default {
 
 					if (returnWallets) {
 						if (getters.shouldStopLoading(processId)) {
-							commit("CLEAR_LOADING_PROCESS", processId);
+							commit(StoreCommit.ClearLoadingProcess, processId);
 
 							return {};
 						}
 
-						commit("SET_WALLETS", wallets);
-						eventBus.emit("ledger:wallets-updated", wallets);
-						commit("CLEAR_LOADING_PROCESS", processId);
+						commit(StoreCommit.SetWallets, wallets);
+						eventBus.emit(AppEvent.LedgerWalletsUpdated, wallets);
+						commit(StoreCommit.ClearLoadingProcess, processId);
 						dispatch("cacheWallets");
 
 						return wallets;
@@ -348,7 +349,7 @@ export default {
 
 				for (let ledgerIndex = startIndex; ; ledgerIndex += batchIncrement) {
 					if (getters.shouldStopLoading(processId)) {
-						commit("CLEAR_LOADING_PROCESS", processId);
+						commit(StoreCommit.ClearLoadingProcess, processId);
 
 						return {};
 					}
@@ -408,14 +409,14 @@ export default {
 			}
 
 			if (getters.shouldStopLoading(processId)) {
-				commit("CLEAR_LOADING_PROCESS", processId);
+				commit(StoreCommit.ClearLoadingProcess, processId);
 
 				return {};
 			}
 
-			commit("SET_WALLETS", wallets);
-			eventBus.emit("ledger:wallets-updated", wallets);
-			commit("CLEAR_LOADING_PROCESS", processId);
+			commit(StoreCommit.SetWallets, wallets);
+			eventBus.emit(AppEvent.LedgerWalletsUpdated, wallets);
+			commit(StoreCommit.ClearLoadingProcess, processId);
 			dispatch("cacheWallets");
 
 			return wallets;
@@ -425,8 +426,8 @@ export default {
 		 * Store ledger wallets in the cache.
 		 */
 		async updateWallet({ commit, dispatch, getters }, updatedWallet) {
-			commit("SET_WALLET", updatedWallet);
-			eventBus.emit("ledger:wallets-updated", getters.walletsObject);
+			commit(StoreCommit.SetWallet, updatedWallet);
+			eventBus.emit(AppEvent.LedgerWalletsUpdated, getters.walletsObject);
 			dispatch("cacheWallets");
 		},
 
@@ -434,11 +435,11 @@ export default {
 		 * Store several Ledger wallets at once and cache them.
 		 */
 		async updateWallets({ commit, dispatch, getters }, walletsToUpdate) {
-			commit("SET_WALLETS", {
+			commit(StoreCommit.SetWallets, {
 				...getters.walletsObject,
 				...walletsToUpdate,
 			});
-			eventBus.emit("ledger:wallets-updated", getters.walletsObject);
+			eventBus.emit(AppEvent.LedgerWalletsUpdated, getters.walletsObject);
 			dispatch("cacheWallets");
 		},
 
@@ -449,7 +450,7 @@ export default {
 		 */
 		async cacheWallets({ commit, getters, rootGetters }) {
 			if (rootGetters["session/ledgerCache"]) {
-				commit("CACHE_WALLETS", {
+				commit(StoreCommit.CacheWallets, {
 					wallets: getters.wallets,
 					profileId: rootGetters["session/profileId"],
 				});
@@ -462,7 +463,7 @@ export default {
 		 * @return {(String|Boolean)}
 		 */
 		async clearWalletCache({ commit, rootGetters }) {
-			commit("CLEAR_WALLET_CACHE", rootGetters["session/profileId"]);
+			commit(StoreCommit.ClearWalletCache, rootGetters["session/profileId"]);
 		},
 
 		/**

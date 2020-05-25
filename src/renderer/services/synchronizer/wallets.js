@@ -1,6 +1,7 @@
 import { TRANSACTION_GROUPS, TRANSACTION_TYPES } from "@config";
 import { groupBy, keyBy, maxBy, partition, uniqBy } from "lodash";
 
+import { StoreBinding } from "@/enums";
 import truncateMiddle from "@/filters/truncate-middle";
 import eventBus from "@/plugins/event-bus";
 import TransactionService from "@/services/transaction";
@@ -108,7 +109,7 @@ class Action {
 		if (this.allWallets.length) {
 			await this.sync();
 		}
-		this.$dispatch("transaction/clearUnconfirmedVotes");
+		this.$dispatch(StoreBinding.TransactionClearUnconfirmedVotes);
 		const expiredTransactions = await this.$dispatch("transaction/clearExpired");
 		for (const transactionId of expiredTransactions) {
 			this.emit(`transaction:${transactionId}:expired`);
@@ -264,12 +265,12 @@ class Action {
 	async processWalletTransactions(wallet, transactions) {
 		try {
 			// TODO delete only 1 time
-			this.$dispatch("transaction/deleteBulk", {
+			this.$dispatch(StoreBinding.TransactionDeleteBulk, {
 				transactions,
 				profileId: wallet.profileId,
 			});
 
-			this.$dispatch("transaction/processVotes", transactions);
+			this.$dispatch(StoreBinding.TransactionProcessVotes, transactions);
 
 			const latestTransaction = maxBy(transactions, "timestamp");
 			const latestAt = latestTransaction.timestamp;
@@ -286,7 +287,7 @@ class Action {
 					];
 
 					if (types.includes(latestTransaction.type)) {
-						this.$dispatch("delegate/load");
+						this.$dispatch(StoreBinding.DelegateLoad);
 					}
 				}
 
@@ -308,7 +309,7 @@ class Action {
 
 		for (const address of addresses) {
 			const votes = await this.$client.fetchWalletVotes(address);
-			await this.$dispatch("transaction/processVotes", votes);
+			await this.$dispatch(StoreBinding.TransactionProcessVotes, votes);
 		}
 	}
 
@@ -516,7 +517,7 @@ class Action {
 				this.$dispatch("wallet/updateBulk", wallets);
 			}
 			if (ledgerWallets.length) {
-				this.$dispatch("ledger/updateWallets", keyBy(ledgerWallets, "address"));
+				this.$dispatch(StoreBinding.LedgerUpdateWallets, keyBy(ledgerWallets, "address"));
 			}
 		} catch (error) {
 			this.$logger.error(error.message);

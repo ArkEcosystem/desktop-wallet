@@ -1,26 +1,26 @@
 <template>
-	<div class="ContactNew relative">
+	<div class="relative ContactNew">
 		<main class="flex h-full">
 			<div
-				class="ContactNew__instructions theme-dark bg-theme-feature text-theme-page-instructions-text hidden lg:flex flex-1 mr-4 rounded-lg overflow-y-auto"
+				class="flex-1 hidden mr-4 overflow-y-auto rounded-lg ContactNew__instructions theme-dark bg-theme-feature text-theme-page-instructions-text lg:flex"
 			>
-				<div class="m-auto w-3/5 text-center flex flex-col items-center justify-center">
+				<div class="flex flex-col items-center justify-center w-3/5 m-auto text-center">
 					<h1 class="text-inherit">
 						{{ $t(`PAGES.CONTACT_NEW.INSTRUCTIONS.HEADER`) }}
 					</h1>
-					<p class="text-center py-2 leading-normal">
+					<p class="py-2 leading-normal text-center">
 						{{ $t(`PAGES.CONTACT_NEW.INSTRUCTIONS.TEXT`) }}
 					</p>
 
 					<img
 						:src="assets_loadImage(backgroundImage)"
 						:title="$t(`PAGES.CONTACT_NEW.INSTRUCTIONS.HEADER`)"
-						class="w-full xl:w-4/5 mt-10"
+						class="w-full mt-10 xl:w-4/5"
 					/>
 				</div>
 			</div>
 
-			<div class="flex-none w-full lg:max-w-sm p-10 bg-theme-feature rounded-lg overflow-y-auto">
+			<div class="flex-none w-full p-10 overflow-y-auto rounded-lg lg:max-w-sm bg-theme-feature">
 				<h3>{{ $t("PAGES.CONTACT_NEW.TITLE") }}</h3>
 
 				<div class="w-full mt-10">
@@ -44,8 +44,8 @@
 						name="name"
 					/>
 
-					<div class="mt-4 border-theme-button-text border-l-4 pl-2">
-						<span class="text-theme-button-text font-bold">
+					<div class="pl-2 mt-4 border-l-4 border-theme-button-text">
+						<span class="font-bold text-theme-button-text">
 							{{ $t("PAGES.CONTACT_NEW.NAME_INFO") }}
 						</span>
 						{{ $t("PAGES.CONTACT_NEW.NAME_DESCRIPTION") }}
@@ -68,6 +68,7 @@
 
 <script>
 import { InputAddress, InputText } from "@/components/Input";
+import { StoreBinding } from "@/enums";
 import Wallet from "@/models/wallet";
 
 export default {
@@ -131,7 +132,7 @@ export default {
 					};
 				}
 
-				const { address } = await this.$store.dispatch("wallet/create", {
+				const { address } = await this.$store.dispatch(StoreBinding.WalletCreate, {
 					...wallet,
 					name: this.schema.name,
 					profileId: this.session_profile.id,

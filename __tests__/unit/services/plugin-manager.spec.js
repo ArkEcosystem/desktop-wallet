@@ -2,6 +2,7 @@ import { PLUGINS } from "@config";
 import { createLocalVue } from "@vue/test-utils";
 import nock from "nock";
 
+import { StoreBinding } from "@/enums";
 import { PluginManager } from "@/services/plugin-manager";
 import npmAdapter from "@/services/plugin-manager/adapters/npm-adapter";
 import { PluginSandbox } from "@/services/plugin-manager/plugin-sandbox";
@@ -70,8 +71,8 @@ beforeEach(() => {
 describe("Plugin Manager", () => {
 	it("should load plugins on init", async () => {
 		await pluginManager.init(app);
-		expect(app.$store.dispatch).toHaveBeenNthCalledWith(1, "plugin/reset");
-		expect(app.$store.dispatch).toHaveBeenNthCalledWith(2, "plugin/loadPluginsForProfiles");
+		expect(app.$store.dispatch).toHaveBeenNthCalledWith(1, StoreBinding.PluginReset);
+		expect(app.$store.dispatch).toHaveBeenNthCalledWith(2, StoreBinding.PluginLoadPluginsForProfiles);
 	});
 
 	describe("Fetch plugins", () => {
@@ -113,7 +114,7 @@ describe("Plugin Manager", () => {
 				pluginManager.setAdapter("npm");
 				await pluginManager.fetchPluginsFromAdapter();
 
-				expect(mockDispatch.mock.calls[0][0]).toBe("plugin/setAvailable");
+				expect(mockDispatch.mock.calls[0][0]).toBe(StoreBinding.PluginSetAvailable);
 				expect(Object.keys(mockDispatch.mock.calls[0][1])).toEqual(["test-plugin-1"]);
 
 				spyNpm.mockRestore();
@@ -172,7 +173,7 @@ describe("Plugin Manager", () => {
 			};
 
 			await pluginManager.enablePlugin(pkg.name, "p-1");
-			expect(mockDispatch).toHaveBeenCalledWith("plugin/setLoaded", expect.any(Object));
+			expect(mockDispatch).toHaveBeenCalledWith(StoreBinding.PluginSetLoaded, expect.any(Object));
 			expect(mockSandboxInstall).toHaveBeenCalled();
 			expect(mockSandboxSetup).toHaveBeenCalled();
 		});
@@ -215,7 +216,7 @@ describe("Plugin Manager", () => {
 			};
 
 			await pluginManager.disablePlugin(`${pkg.name}-disabled`, "p-1");
-			expect(mockDispatch).toHaveBeenCalledWith("plugin/deleteLoaded", {
+			expect(mockDispatch).toHaveBeenCalledWith(StoreBinding.PluginDeleteLoaded, {
 				pluginId: `${pkg.name}-disabled`,
 				profileId: "p-1",
 			});
@@ -239,12 +240,12 @@ describe("Plugin Manager", () => {
 			};
 
 			await pluginManager.disablePlugin(`${pkg.name}-disabled`, "p-1");
-			expect(mockDispatch).toHaveBeenCalledWith("plugin/deleteLoaded", {
+			expect(mockDispatch).toHaveBeenCalledWith(StoreBinding.PluginDeleteLoaded, {
 				pluginId: `${pkg.name}-disabled`,
 				profileId: "p-1",
 			});
-			expect(mockDispatch).toHaveBeenCalledWith("session/setTheme", expect.any(String));
-			expect(mockDispatch).toHaveBeenCalledWith("profile/update", expect.any(Object));
+			expect(mockDispatch).toHaveBeenCalledWith(StoreBinding.SessionSetTheme, expect.any(String));
+			expect(mockDispatch).toHaveBeenCalledWith(StoreBinding.ProfileUpdate, expect.any(Object));
 			expect(pluginManager.pluginSetups[`${pkg.name}-disabled`].destroy).toHaveBeenCalledTimes(1);
 		});
 	});

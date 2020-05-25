@@ -21,7 +21,7 @@
 
 			<button
 				:disabled="$v.schema.name.$invalid"
-				class="blue-button mt-5"
+				class="mt-5 blue-button"
 				type="button"
 				@click="isNewContact ? createWallet() : renameWallet()"
 			>
@@ -33,6 +33,7 @@
 
 <script>
 import { InputText } from "@/components/Input";
+import { StoreBinding } from "@/enums";
 import truncate from "@/filters/truncate";
 import Wallet from "@/models/wallet";
 
@@ -124,7 +125,7 @@ export default {
 			const newName = this.schema.name;
 			if (this.wallet.isLedger) {
 				try {
-					this.$store.dispatch("wallet/setLedgerName", {
+					this.$store.dispatch(StoreBinding.WalletSetLedgerName, {
 						address: this.wallet.address,
 						name: newName,
 					});
@@ -134,7 +135,7 @@ export default {
 				}
 			} else {
 				this.wallet.name = newName;
-				this.$store.dispatch("wallet/update", this.wallet);
+				this.$store.dispatch(StoreBinding.WalletUpdate, this.wallet);
 			}
 			this.emitRenamed();
 		},
@@ -142,7 +143,7 @@ export default {
 		async createWallet() {
 			try {
 				const wallet = await this.$client.fetchWallet(this.wallet.address);
-				await this.$store.dispatch("wallet/create", {
+				await this.$store.dispatch(StoreBinding.WalletCreate, {
 					...wallet,
 					name: this.schema.name,
 					profileId: this.session_profile.id,

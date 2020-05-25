@@ -4,6 +4,7 @@ import logger from "electron-log";
 import { cloneDeep } from "lodash";
 import nock from "nock";
 
+import { StoreBinding } from "@/enums";
 import ClientService from "@/services/client";
 import WalletService from "@/services/wallet";
 import store from "@/store";
@@ -254,7 +255,7 @@ describe("Services > Client", () => {
 			await ClientService.fetchNetworkConfig("http://127.0.0.1");
 			const spy = jest.spyOn(store, "dispatch");
 
-			expect(spy).toHaveBeenCalledWith("network/update", {
+			expect(spy).toHaveBeenCalledWith(StoreBinding.NetworkUpdate, {
 				...sessionNetwork,
 				vendorField: {
 					...sessionNetwork.vendorField,

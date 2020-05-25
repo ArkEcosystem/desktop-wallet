@@ -248,6 +248,7 @@ import { ModalLoader } from "@/components/Modal";
 import { PassphraseVerification, PassphraseWords } from "@/components/Passphrase";
 import { SvgIcon } from "@/components/SvgIcon";
 import WalletIdenticon from "@/components/Wallet/WalletIdenticon";
+import { StoreBinding } from "@/enums";
 import Wallet from "@/models/wallet";
 import WalletService from "@/services/wallet";
 import { flatten } from "@/utils";
@@ -358,7 +359,7 @@ export default {
 
 	methods: {
 		async createWallet() {
-			const { address } = await this.$store.dispatch("wallet/create", this.wallet);
+			const { address } = await this.$store.dispatch(StoreBinding.WalletCreate, this.wallet);
 			this.$router.push({ name: "wallet-show", params: { address } });
 		},
 

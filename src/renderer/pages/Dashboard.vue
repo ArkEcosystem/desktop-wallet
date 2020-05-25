@@ -1,6 +1,6 @@
 <template>
-	<div class="Dashboard relative flex flex-row h-full w-full">
-		<main class="bg-theme-feature rounded-lg lg:mr-4 flex-1 w-full flex-col overflow-y-auto">
+	<div class="relative flex flex-row w-full h-full Dashboard">
+		<main class="flex-col flex-1 w-full overflow-y-auto rounded-lg bg-theme-feature lg:mr-4">
 			<div v-if="isMarketEnabled && isChartEnabled">
 				<MarketChart :period="period" :is-expanded="isChartExpanded">
 					<MarketChartHeader class="mb-5" @period-change="onPeriodChange" @toggle="toggleChart" />
@@ -18,8 +18,8 @@
 			</div>
 		</main>
 
-		<div class="Dashboard__wallets relative bg-theme-feature rounded-lg w-88 overflow-y-auto hidden lg:block">
-			<div class="flex flex-row text-theme-feature-item-alternative-text mt-2">
+		<div class="relative hidden overflow-y-auto rounded-lg Dashboard__wallets bg-theme-feature w-88 lg:block">
+			<div class="flex flex-row mt-2 text-theme-feature-item-alternative-text">
 				<WalletButtonCreate :force-text="true" class="Dashboard__wallets__button" />
 				<WalletButtonImport :force-text="true" class="Dashboard__wallets__button" />
 			</div>
@@ -27,7 +27,7 @@
 				:show-expanded="true"
 				:show-menu="false"
 				:show-filtered-wallets="false"
-				class="Dashboard__wallets__list flex flex-col"
+				class="flex flex-col Dashboard__wallets__list"
 			/>
 		</div>
 	</div>
@@ -37,6 +37,7 @@
 import { DashboardTransactions } from "@/components/Dashboard";
 import { MarketChart, MarketChartHeader } from "@/components/MarketChart";
 import { WalletButtonCreate, WalletButtonImport, WalletSidebar } from "@/components/Wallet";
+import { StoreBinding } from "@/enums";
 import store from "@/store";
 
 export default {
@@ -75,9 +76,9 @@ export default {
 				return this.$store.getters["session/marketChartOptions"];
 			},
 			set(options) {
-				this.$store.dispatch("session/setMarketChartOptions", options);
+				this.$store.dispatch(StoreBinding.SessionSetMarketChartOptions, options);
 
-				this.$store.dispatch("profile/update", {
+				this.$store.dispatch(StoreBinding.ProfileUpdate, {
 					...this.session_profile,
 					marketChartOptions: options,
 				});

@@ -1,5 +1,7 @@
 import { I18N, MARKET } from "@config";
 
+import { StoreBinding, StoreCommit } from "@/enums";
+
 export default {
 	namespaced: true,
 
@@ -313,149 +315,149 @@ export default {
 
 			if (!profile.unconfirmedVotes) {
 				profile.unconfirmedVotes = [];
-				dispatch("profile/update", profile, { root: true });
+				dispatch(StoreBinding.ProfileUpdate, profile, { root: true });
 			}
 
-			commit("REPLACE", profile);
+			commit(StoreCommit.Replace, profile);
 
 			return profile;
 		},
 
 		reset({ commit }) {
-			commit("RESET");
+			commit(StoreCommit.Reset);
 		},
 
 		setAvatar({ commit }, value) {
-			commit("SET_AVATAR", value);
+			commit(StoreCommit.SetAvatar, value);
 		},
 
 		setBackground({ commit }, value) {
-			commit("SET_BACKGROUND", value);
+			commit(StoreCommit.SetBackground, value);
 		},
 
 		setCurrency({ commit }, value) {
-			commit("SET_CURRENCY", value);
+			commit(StoreCommit.SetCurrency, value);
 		},
 
 		setTimeFormat({ commit }, value) {
-			commit("SET_TIME_FORMAT", value);
+			commit(StoreCommit.SetTimeFormat, value);
 		},
 
 		setHideWalletButtonText({ commit }, value) {
-			commit("SET_HIDE_WALLET_BUTTON_TEXT", value);
+			commit(StoreCommit.SetHideWalletButtonText, value);
 		},
 
 		setIsMarketChartEnabled({ commit }, value) {
-			commit("SET_IS_MARKET_CHART_ENABLED", value);
+			commit(StoreCommit.SetIsMarketChartEnabled, value);
 		},
 
 		setIsAdvancedModeEnabled({ commit }, value) {
-			commit("SET_IS_ADVANCED_MODE_ENABLED", value);
+			commit(StoreCommit.SetIsAdvancedModeEnabled, value);
 		},
 
 		setMarketChartOptions({ commit }, value) {
-			commit("SET_MARKET_CHART_OPTIONS", value);
+			commit(StoreCommit.SetMarketChartOptions, value);
 		},
 
 		setLanguage({ commit }, value) {
-			commit("SET_LANGUAGE", value);
+			commit(StoreCommit.SetLanguage, value);
 		},
 
 		setBip39Language({ commit }, value) {
-			commit("SET_BIP39_LANGUAGE", value);
+			commit(StoreCommit.SetBip39Language, value);
 		},
 
 		setName({ commit }, value) {
-			commit("SET_NAME", value);
+			commit(StoreCommit.SetName, value);
 		},
 
 		setScreenshotProtection({ commit }, value) {
-			commit("SET_SCREENSHOT_PROTECTION", value);
+			commit(StoreCommit.SetScreenshotProtection, value);
 		},
 
 		setBackgroundUpdateLedger({ commit }, value) {
-			commit("SET_BACKGROUND_UPDATE_LEDGER", value);
+			commit(StoreCommit.SetBackgroundUpdateLedger, value);
 		},
 
 		setBroadcastPeers({ commit }, value) {
-			commit("SET_BROADCAST_PEERS", value);
+			commit(StoreCommit.SetBroadcastPeers, value);
 		},
 
 		setLedgerCache({ commit }, value) {
-			commit("SET_LEDGER_CACHE", value);
+			commit(StoreCommit.SetLedgerCache, value);
 		},
 
 		async setProfileId({ commit, dispatch }, value) {
-			commit("SET_PROFILE_ID", value);
+			commit(StoreCommit.SetProfileId, value);
 			await dispatch("load", value);
 		},
 
 		setTheme({ commit }, value) {
-			commit("SET_THEME", value);
+			commit(StoreCommit.SetTheme, value);
 		},
 
 		setPluginManagerLayout({ commit }, value) {
-			commit("SET_PLUGIN_MANAGER_LAYOUT", value);
+			commit(StoreCommit.SetPluginManagerLayout, value);
 		},
 
 		setWalletLayout({ commit }, value) {
-			commit("SET_WALLET_LAYOUT", value);
+			commit(StoreCommit.SetWalletLayout, value);
 		},
 
 		setWalletSidebarSortParams({ commit }, value) {
-			commit("SET_WALLET_SIDEBAR_SORT_PARAMS", value);
+			commit(StoreCommit.SetWalletSidebarSortParams, value);
 		},
 
 		setWalletSidebarFilters({ commit }, value) {
-			commit("SET_WALLET_SIDEBAR_FILTERS", value);
+			commit(StoreCommit.SetWalletSidebarFilters, value);
 		},
 
 		setWalletSortParams({ commit }, value) {
-			commit("SET_WALLET_TABLE_SORT_PARAMS", value);
+			commit(StoreCommit.SetWalletTableSortParams, value);
 		},
 
 		setContactSortParams({ commit }, value) {
-			commit("SET_CONTACT_TABLE_SORT_PARAMS", value);
+			commit(StoreCommit.SetContactTableSortParams, value);
 		},
 
 		setPluginSortParams({ commit }, value) {
-			commit("SET_PLUGIN_TABLE_SORT_PARAMS", value);
+			commit(StoreCommit.SetPluginTableSortParams, value);
 		},
 
 		setTransactionTableRowCount({ commit }, value) {
-			commit("SET_TRANSACTION_TABLE_ROW_COUNT", value);
+			commit(StoreCommit.SetTransactionTableRowCount, value);
 		},
 
 		setUnconfirmedVotes({ commit }, value) {
-			commit("SET_UNCONFIRMED_VOTES", value);
+			commit(StoreCommit.SetUnconfirmedVotes, value);
 		},
 
 		setLastFeeByType({ commit }, { fee, type, typeGroup }) {
-			commit("SET_LAST_FEES_BY_TYPE", { fee, type, typeGroup });
+			commit(StoreCommit.SetLastFeesByType, { fee, type, typeGroup });
 		},
 
 		setMultiSignaturePeer({ commit }, { host, port }) {
-			commit("SET_MULTI_SIGNATURE_PEER", { host, port });
+			commit(StoreCommit.SetMultiSignaturePeer, { host, port });
 		},
 
 		setFilterBlacklistedPlugins({ commit }, value) {
-			commit("SET_FILTER_BLACKLISTED_PLUGINS", value);
+			commit(StoreCommit.SetFilterBlacklistedPlugins, value);
 		},
 
 		setPluginAdapter({ commit }, value) {
-			commit("SET_PLUGIN_ADAPTER", value);
+			commit(StoreCommit.SetPluginAdapter, value);
 		},
 
 		setPriceApi({ commit }, value) {
-			commit("SET_PRICE_API", value);
+			commit(StoreCommit.SetPriceApi, value);
 		},
 
 		setPluginMenuOpen({ commit }, value) {
-			commit("SET_PLUGIN_MENU_OPEN", value);
+			commit(StoreCommit.SetPluginMenuOpen, value);
 		},
 
 		setDefaultChosenFee({ commit }, value) {
-			commit("SET_DEFAULT_CHOSEN_FEE", value);
+			commit(StoreCommit.SetDefaultChosenFee, value);
 		},
 	},
 };

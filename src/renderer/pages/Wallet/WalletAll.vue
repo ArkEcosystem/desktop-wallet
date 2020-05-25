@@ -1,6 +1,6 @@
 <template>
 	<div class="WalletAll">
-		<div class="WalletAll__heading px-8 py-6 mb-3">
+		<div class="px-8 py-6 mb-3 WalletAll__heading">
 			<div class="flex flex-row items-center">
 				<div class="hidden sm:block">
 					<ProfileAvatar :profile="session_profile" letter-size="2xl" class="relative">
@@ -28,12 +28,12 @@
 						</span>
 					</div>
 					<div>
-						<span class="transition text-xl sm:text-2xl font-bold whitespace-no-wrap">
+						<span class="text-xl font-bold whitespace-no-wrap transition sm:text-2xl">
 							{{ formatter_networkCurrency(totalBalance) }}
 						</span>
 						<span
 							v-if="isMarketEnabled"
-							class="WalletAll__balance__alternative text-sm font-bold text-theme-page-text-light ml-1"
+							class="ml-1 text-sm font-bold WalletAll__balance__alternative text-theme-page-text-light"
 						>
 							{{ alternativeTotalBalance }}
 						</span>
@@ -49,7 +49,7 @@
 			</div>
 		</div>
 
-		<div class="flex flex-1 bg-theme-feature rounded-lg p-10 overflow-y-auto">
+		<div class="flex flex-1 p-10 overflow-y-auto rounded-lg bg-theme-feature">
 			<div class="block w-full">
 				<div class="WalletAll__header">
 					<h3 class="flex items-center">
@@ -60,7 +60,7 @@
 								content: $t('WALLET_GRID.LOADING_LEDGER'),
 								placement: 'right',
 							}"
-							class="inline-flex items-center self-stretch ml-3 pr-2"
+							class="inline-flex items-center self-stretch pr-2 ml-3"
 						>
 							<SvgIcon class="rotate-360" name="reload" view-box="0 0 16 14" />
 						</span>
@@ -69,7 +69,7 @@
 					<ButtonLayout :grid-layout="hasWalletGridLayout" @click="toggleWalletLayout" />
 				</div>
 
-				<div v-if="isLoading" class="h-full flex items-center">
+				<div v-if="isLoading" class="flex items-center h-full">
 					<div class="m-auto">
 						<Loader />
 					</div>
@@ -85,7 +85,7 @@
 						@remove="openRemovalConfirmation"
 					/>
 
-					<div v-else class="WalletAll__tabular mt-10">
+					<div v-else class="mt-10 WalletAll__tabular">
 						<WalletTable
 							:has-pagination="false"
 							:is-loading="false"
@@ -137,6 +137,7 @@ import {
 	WalletButtonLedgerSettings,
 } from "@/components/Wallet/WalletButtons";
 import WalletTable from "@/components/Wallet/WalletTable";
+import { AppEvent, StoreBinding } from "@/enums";
 
 export default {
 	name: "WalletAll",
@@ -223,9 +224,9 @@ export default {
 				return this.$store.getters["session/walletLayout"];
 			},
 			set(layout) {
-				this.$store.dispatch("session/setWalletLayout", layout);
+				this.$store.dispatch(StoreBinding.SessionSetWalletLayout, layout);
 
-				this.$store.dispatch("profile/update", {
+				this.$store.dispatch(StoreBinding.ProfileUpdate, {
 					...this.session_profile,
 					walletLayout: layout,
 				});
@@ -237,9 +238,9 @@ export default {
 				return this.$store.getters["session/walletSortParams"];
 			},
 			set(sortParams) {
-				this.$store.dispatch("session/setWalletSortParams", sortParams);
+				this.$store.dispatch(StoreBinding.SessionSetWalletSortParams, sortParams);
 
-				this.$store.dispatch("profile/update", {
+				this.$store.dispatch(StoreBinding.ProfileUpdate, {
 					...this.session_profile,
 					walletSortParams: sortParams,
 				});
@@ -259,13 +260,13 @@ export default {
 
 	created() {
 		this.loadWallets();
-		this.$eventBus.on("ledger:wallets-updated", this.includeLedgerWallets);
-		this.$eventBus.on("ledger:disconnected", this.ledgerDisconnected);
+		this.$eventBus.on(AppEvent.LedgerWalletsUpdated, this.includeLedgerWallets);
+		this.$eventBus.on(AppEvent.LedgerDisconnected, this.ledgerDisconnected);
 	},
 
 	beforeDestroy() {
-		this.$eventBus.off("ledger:wallets-updated", this.includeLedgerWallets);
-		this.$eventBus.off("ledger:disconnected", this.ledgerDisconnected);
+		this.$eventBus.off(AppEvent.LedgerWalletsUpdated, this.includeLedgerWallets);
+		this.$eventBus.off(AppEvent.LedgerDisconnected, this.ledgerDisconnected);
 	},
 
 	/**

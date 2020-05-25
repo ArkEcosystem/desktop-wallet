@@ -2,6 +2,7 @@ import { I18N } from "@config";
 import fs from "fs";
 import path from "path";
 
+import { StoreBinding } from "@/enums";
 import { isEmpty } from "@/utils";
 
 import { normalizeJson } from "../utils/normalize-json";
@@ -46,7 +47,7 @@ export function create(plugin, pluginObject, sandbox, profileId) {
 			}, {});
 
 			if (!isEmpty(languages)) {
-				await sandbox.app.$store.dispatch("plugin/setLanguages", {
+				await sandbox.app.$store.dispatch(StoreBinding.PluginSetLanguages, {
 					pluginId: plugin.config.id,
 					languages,
 					profileId,

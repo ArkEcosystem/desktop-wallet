@@ -1,8 +1,9 @@
+import { StoreCommit } from "@/enums";
 import announcementStore from "@/store/modules/announcements";
 
 describe("announcements store module", () => {
 	describe("the announcementStore mutations", () => {
-		it("SAVE_ANNOUNCEMENTS", () => {
+		it(StoreCommit.SaveAnnouncements, () => {
 			// vuex state -- will be modified by mutation
 			const state = {
 				announcements: [],
@@ -26,7 +27,7 @@ describe("announcements store module", () => {
 			expect(firstAnnouncementFromFeed.isRead).toEqual(undefined);
 		});
 
-		it("MARK_ANNOUNCEMENT_AS_READ", () => {
+		it(StoreCommit.MarkAnnouncementAsRead, () => {
 			// create state
 			const state = {
 				announcements: [],
@@ -46,7 +47,7 @@ describe("announcements store module", () => {
 			expect(state.announcements[0].isRead).toBe(true);
 		});
 
-		it("MARK_ANNOUNCEMENT_AS_READ_BULK", () => {
+		it(StoreCommit.MarkAnnouncementAsReadBulk, () => {
 			// create state
 			const state = {
 				announcements: [],

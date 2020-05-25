@@ -1,6 +1,7 @@
 import { shallowMount } from "@vue/test-utils";
 
 import TransactionModal from "@/components/Transaction/TransactionModal";
+import { StoreBinding } from "@/enums";
 
 import transaction from "../../__fixtures__/models/transaction";
 import { useI18nGlobally } from "../../__utils__/i18n";
@@ -138,7 +139,7 @@ describe("TransactionModal", () => {
 				raw: transaction,
 			};
 
-			expect($store.dispatch).toHaveBeenCalledWith("transaction/create", expected);
+			expect($store.dispatch).toHaveBeenCalledWith(StoreBinding.TransactionCreate, expected);
 		};
 
 		describe("when the transaction has a timestamp (V1)", () => {

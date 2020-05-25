@@ -1,3 +1,5 @@
+import { StoreCommit } from "@/enums";
+
 export default {
 	namespaced: true,
 
@@ -23,7 +25,7 @@ export default {
 
 	actions: {
 		setAvailableRelease({ commit }, value) {
-			commit("SET_AVAILABLE_RELEASE", value);
+			commit(StoreCommit.SetAvailableRelease, value);
 		},
 	},
 };

@@ -1,6 +1,7 @@
 import { createLocalVue, mount } from "@vue/test-utils";
 
 import { WalletBusinessBridgechains } from "@/components/Wallet/WalletBusiness";
+import { AppEvent, StoreBinding } from "@/enums";
 
 import installI18n from "../../../__utils__/i18n";
 
@@ -117,8 +118,11 @@ describe("WalletBusinessBridgechains", () => {
 
 		expect(spy).toHaveBeenCalledTimes(1);
 		expect(eventOnMock).toHaveBeenCalledTimes(2);
-		expect(eventOnMock).toHaveBeenCalledWith("wallet:reload", wrapper.vm.loadBridgechains);
-		expect(eventOnMock).toHaveBeenCalledWith("wallet:reload:business-bridgechains", wrapper.vm.loadBridgechains);
+		expect(eventOnMock).toHaveBeenCalledWith(AppEvent.WalletReload, wrapper.vm.loadBridgechains);
+		expect(eventOnMock).toHaveBeenCalledWith(
+			AppEvent.WalletReloadBusinessBridgechains,
+			wrapper.vm.loadBridgechains,
+		);
 
 		spy.mockRestore();
 	});
@@ -126,8 +130,11 @@ describe("WalletBusinessBridgechains", () => {
 	describe("beforeDestroy", () => {
 		wrapper.destroy();
 		expect(eventOffMock).toHaveBeenCalledTimes(2);
-		expect(eventOffMock).toHaveBeenCalledWith("wallet:reload", wrapper.vm.loadBridgechains);
-		expect(eventOffMock).toHaveBeenCalledWith("wallet:reload:business-bridgechains", wrapper.vm.loadBridgechains);
+		expect(eventOffMock).toHaveBeenCalledWith(AppEvent.WalletReload, wrapper.vm.loadBridgechains);
+		expect(eventOffMock).toHaveBeenCalledWith(
+			AppEvent.WalletReloadBusinessBridgechains,
+			wrapper.vm.loadBridgechains,
+		);
 	});
 
 	describe("fetchBridgechains", () => {
@@ -240,8 +247,11 @@ describe("WalletBusinessBridgechains", () => {
 
 			wrapper.vm.onPerPageChange({ currentPerPage });
 
-			expect(storeDispatchMock).toHaveBeenCalledWith("session/setTransactionTableRowCount", currentPerPage);
-			expect(storeDispatchMock).toHaveBeenCalledWith("profile/update", {
+			expect(storeDispatchMock).toHaveBeenCalledWith(
+				StoreBinding.SessionSetTransactionTableRowCount,
+				currentPerPage,
+			);
+			expect(storeDispatchMock).toHaveBeenCalledWith(StoreBinding.ProfileUpdate, {
 				id: 1,
 				transactionTableRowCount: currentPerPage,
 			});

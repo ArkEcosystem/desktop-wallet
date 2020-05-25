@@ -4,6 +4,7 @@ import nock from "nock";
 import Vue from "vue";
 import Vuex from "vuex";
 
+import { StoreBinding, StoreCommit } from "@/enums";
 import apiClient, { client as ClientService } from "@/plugins/api-client";
 import ledgerService from "@/services/ledger-service";
 import LedgerModule from "@/store/modules/ledger";
@@ -57,7 +58,7 @@ const store = new Vuex.Store({
 let spyConnect;
 const disconnectLedger = async () => {
 	spyConnect = jest.spyOn(ledgerService, "connect").mockImplementation(() => false);
-	await store.dispatch("ledger/disconnect");
+	await store.dispatch(StoreBinding.LedgerDisconnect);
 };
 
 const initialState = JSON.parse(JSON.stringify(store.state));
@@ -85,13 +86,13 @@ beforeEach(async () => {
 
 describe("ledger store module", () => {
 	it("should init ledger service", async () => {
-		await store.dispatch("ledger/init", 1234);
+		await store.dispatch(StoreBinding.LedgerInit, 1234);
 
 		expect(store.state.ledger.slip44).toBe(1234);
 	});
 
 	it("should set slip44 value", async () => {
-		await store.dispatch("ledger/init", 4567);
+		await store.dispatch(StoreBinding.LedgerInit, 4567);
 
 		expect(store.state.ledger.slip44).toBe(4567);
 	});
@@ -106,17 +107,17 @@ describe("ledger store module", () => {
 				},
 			});
 
-			await store.dispatch("ledger/connect");
-			await store.dispatch("ledger/setSlip44", 1234);
+			await store.dispatch(StoreBinding.LedgerConnect);
+			await store.dispatch(StoreBinding.LedgerSetSlip44, 1234);
 			await disconnectLedger();
 			store._vm.$error.mockReset();
-			await store.dispatch("ledger/updateVersion");
+			await store.dispatch(StoreBinding.LedgerUpdateVersion);
 
 			expect(store._vm.$error).not.toHaveBeenCalled();
 		});
 
 		it("should not show error if aip11 is false", async () => {
-			await store.dispatch("ledger/updateVersion");
+			await store.dispatch(StoreBinding.LedgerUpdateVersion);
 
 			expect(store._vm.$error).not.toHaveBeenCalled();
 		});
@@ -130,9 +131,9 @@ describe("ledger store module", () => {
 				},
 			});
 
-			await store.dispatch("ledger/connect");
-			await store.dispatch("ledger/setSlip44", 1234);
-			await store.dispatch("ledger/updateVersion");
+			await store.dispatch(StoreBinding.LedgerConnect);
+			await store.dispatch(StoreBinding.LedgerSetSlip44, 1234);
+			await store.dispatch(StoreBinding.LedgerUpdateVersion);
 
 			expect(store._vm.$error).toHaveBeenCalledWith(
 				"Ledger update available! Please update the ARK app via Ledger Live to send transactions on this network",
@@ -143,41 +144,43 @@ describe("ledger store module", () => {
 
 	describe("getVersion", () => {
 		it("should return version", async () => {
-			expect(await store.dispatch("ledger/getVersion")).toEqual("1.0.0");
+			expect(await store.dispatch(StoreBinding.LedgerGetVersion)).toEqual("1.0.0");
 		});
 
 		it("should fail when not connected", async () => {
 			await disconnectLedger();
-			await expect(store.dispatch("ledger/getVersion")).rejects.toThrow(/.*Ledger not connected$/);
+			await expect(store.dispatch(StoreBinding.LedgerGetVersion)).rejects.toThrow(/.*Ledger not connected$/);
 		});
 	});
 
 	describe("getWallet", () => {
 		it("should return address and publicKey", async () => {
-			expect(await store.dispatch("ledger/getWallet", 1)).toEqual({
+			expect(await store.dispatch(StoreBinding.LedgerGetWallet, 1)).toEqual({
 				address: "DLWeBuwSBFYtUFj8kFB8CFswfvN2ht3yKn",
 				publicKey: "0278a28d0eac9916ef46613d9dbac706acc218e64864d4b4c1fcb0c759b6205b2b",
 			});
 		});
 
 		it("should fail with invalid accountIndex", async () => {
-			await expect(store.dispatch("ledger/getWallet")).rejects.toThrow(/.*accountIndex must be a Number$/);
+			await expect(store.dispatch(StoreBinding.LedgerGetWallet)).rejects.toThrow(
+				/.*accountIndex must be a Number$/,
+			);
 		});
 
 		it("should fail when not connected", async () => {
 			await disconnectLedger();
-			await expect(store.dispatch("ledger/getWallet", 1)).rejects.toThrow(/.*Ledger not connected$/);
+			await expect(store.dispatch(StoreBinding.LedgerGetWallet, 1)).rejects.toThrow(/.*Ledger not connected$/);
 		});
 	});
 
 	describe("getAddress", () => {
 		it("should call ledger service", async () => {
-			await store.dispatch("ledger/connect");
-			await store.dispatch("ledger/setSlip44", 1234);
+			await store.dispatch(StoreBinding.LedgerConnect);
+			await store.dispatch(StoreBinding.LedgerSetSlip44, 1234);
 
 			const spy = jest.spyOn(ledgerService, "getPublicKey").mockReturnValue("PUBLIC_KEY");
 
-			const response = await store.dispatch("ledger/getPublicKey", 1);
+			const response = await store.dispatch(StoreBinding.LedgerGetPublicKey, 1);
 
 			expect(response).toBe("PUBLIC_KEY");
 			expect(spy).toHaveBeenNthCalledWith(1, "44'/1234'/1'/0/0");
@@ -186,23 +189,25 @@ describe("ledger store module", () => {
 		});
 
 		it("should fail with invalid accountIndex", async () => {
-			await expect(store.dispatch("ledger/getAddress")).rejects.toThrow(/.*accountIndex must be a Number$/);
+			await expect(store.dispatch(StoreBinding.LedgerGetAddress)).rejects.toThrow(
+				/.*accountIndex must be a Number$/,
+			);
 		});
 
 		it("should fail when not connected", async () => {
 			await disconnectLedger();
-			await expect(store.dispatch("ledger/getAddress", 1)).rejects.toThrow(/.*Ledger not connected$/);
+			await expect(store.dispatch(StoreBinding.LedgerGetAddress, 1)).rejects.toThrow(/.*Ledger not connected$/);
 		});
 	});
 
 	describe("getPublicKey", () => {
 		it("should call ledger service", async () => {
-			await store.dispatch("ledger/connect");
-			await store.dispatch("ledger/setSlip44", 1234);
+			await store.dispatch(StoreBinding.LedgerConnect);
+			await store.dispatch(StoreBinding.LedgerSetSlip44, 1234);
 
 			const spy = jest.spyOn(ledgerService, "getPublicKey").mockReturnValue("PUBLIC_KEY");
 
-			const response = await store.dispatch("ledger/getPublicKey", 1);
+			const response = await store.dispatch(StoreBinding.LedgerGetPublicKey, 1);
 
 			expect(response).toBe("PUBLIC_KEY");
 			expect(spy).toHaveBeenNthCalledWith(1, "44'/1234'/1'/0/0");
@@ -211,23 +216,25 @@ describe("ledger store module", () => {
 		});
 
 		it("should fail with invalid accountIndex", async () => {
-			await expect(store.dispatch("ledger/getPublicKey")).rejects.toThrow(/.*accountIndex must be a Number$/);
+			await expect(store.dispatch(StoreBinding.LedgerGetPublicKey)).rejects.toThrow(
+				/.*accountIndex must be a Number$/,
+			);
 		});
 
 		it("should fail when not connected", async () => {
 			await disconnectLedger();
-			await expect(store.dispatch("ledger/getPublicKey", 1)).rejects.toThrow(/.*Ledger not connected$/);
+			await expect(store.dispatch(StoreBinding.LedgerGetPublicKey, 1)).rejects.toThrow(/.*Ledger not connected$/);
 		});
 	});
 
 	describe("signTransaction", () => {
 		it("should call ledger service", async () => {
-			await store.dispatch("ledger/connect");
-			await store.dispatch("ledger/setSlip44", 1234);
+			await store.dispatch(StoreBinding.LedgerConnect);
+			await store.dispatch(StoreBinding.LedgerSetSlip44, 1234);
 
 			const spy = jest.spyOn(ledgerService, "signTransaction").mockReturnValue("SIGNATURE");
 
-			const response = await store.dispatch("ledger/signTransaction", {
+			const response = await store.dispatch(StoreBinding.LedgerSignTransaction, {
 				accountIndex: 1,
 				transactionBytes: Buffer.from([1, 2, 3, 4]),
 			});
@@ -239,13 +246,15 @@ describe("ledger store module", () => {
 		});
 
 		it("should fail with invalid accountIndex", async () => {
-			await expect(store.dispatch("ledger/signTransaction")).rejects.toThrow(/.*accountIndex must be a Number$/);
+			await expect(store.dispatch(StoreBinding.LedgerSignTransaction)).rejects.toThrow(
+				/.*accountIndex must be a Number$/,
+			);
 		});
 
 		it("should fail when not connected", async () => {
 			await disconnectLedger();
 			await expect(
-				store.dispatch("ledger/signTransaction", {
+				store.dispatch(StoreBinding.LedgerSignTransaction, {
 					accountIndex: 1,
 					transactionBytes: Buffer.from("abc", "utf-8"),
 				}),
@@ -255,12 +264,12 @@ describe("ledger store module", () => {
 
 	describe("signMessage", () => {
 		it("should call ledger service", async () => {
-			await store.dispatch("ledger/connect");
-			await store.dispatch("ledger/setSlip44", 1234);
+			await store.dispatch(StoreBinding.LedgerConnect);
+			await store.dispatch(StoreBinding.LedgerSetSlip44, 1234);
 
 			const spy = jest.spyOn(ledgerService, "signMessage").mockReturnValue("SIGNATURE");
 
-			const response = await store.dispatch("ledger/signMessage", {
+			const response = await store.dispatch(StoreBinding.LedgerSignMessage, {
 				accountIndex: 1,
 				messageBytes: Buffer.from("abc", "utf-8"),
 			});
@@ -272,13 +281,15 @@ describe("ledger store module", () => {
 		});
 
 		it("should fail with invalid accountIndex", async () => {
-			await expect(store.dispatch("ledger/signMessage")).rejects.toThrow(/.*accountIndex must be a Number$/);
+			await expect(store.dispatch(StoreBinding.LedgerSignMessage)).rejects.toThrow(
+				/.*accountIndex must be a Number$/,
+			);
 		});
 
 		it("should fail when not connected", async () => {
 			await disconnectLedger();
 			await expect(
-				store.dispatch("ledger/signMessage", {
+				store.dispatch(StoreBinding.LedgerSignMessage, {
 					accountIndex: 1,
 					messageBytes: Buffer.from("abc", "utf-8"),
 				}),
@@ -328,26 +339,26 @@ describe("ledger store module", () => {
 				expectedWallets[wallet.address] = newWallet;
 			}
 
-			await store.dispatch("ledger/connect");
+			await store.dispatch(StoreBinding.LedgerConnect);
 		});
 
 		it("should not start if not connected", async () => {
 			await disconnectLedger();
-			expect(await store.dispatch("ledger/reloadWallets")).toEqual({});
+			expect(await store.dispatch(StoreBinding.LedgerReloadWallets)).toEqual({});
 		});
 
 		it("should not start if already loading", async () => {
-			store.commit("ledger/SET_LOADING", "test");
-			expect(await store.dispatch("ledger/reloadWallets")).toEqual({});
+			store.commit(StoreCommit.LedgerSetLoading, "test");
+			expect(await store.dispatch(StoreBinding.LedgerReloadWallets)).toEqual({});
 		});
 
 		it("should mark all other processes to stop on force reload", async () => {
-			store.commit("ledger/SET_LOADING", "test1");
-			store.commit("ledger/SET_LOADING", "test2");
-			store.commit("ledger/SET_LOADING", "test3");
+			store.commit(StoreCommit.LedgerSetLoading, "test1");
+			store.commit(StoreCommit.LedgerSetLoading, "test2");
+			store.commit(StoreCommit.LedgerSetLoading, "test3");
 			expect(store.getters["ledger/isLoading"]).toBeTruthy();
 			expect(store.getters["ledger/isConnected"]).toBeTruthy();
-			await store.dispatch("ledger/reloadWallets", {
+			await store.dispatch(StoreBinding.LedgerReloadWallets, {
 				clearFirst: false,
 				forceLoad: true,
 				quantity: null,
@@ -365,8 +376,8 @@ describe("ledger store module", () => {
 					data: ledgerWallets.slice(0, 9),
 				});
 
-			await store.commit("ledger/SET_CONNECTED", true);
-			expect(await store.dispatch("ledger/reloadWallets")).toEqual(expectedWallets);
+			await store.commit(StoreCommit.LedgerSetConnected, true);
+			expect(await store.dispatch(StoreBinding.LedgerReloadWallets)).toEqual(expectedWallets);
 		});
 
 		it("should use ledger name", async () => {
@@ -383,8 +394,8 @@ describe("ledger store module", () => {
 				expectedWallets[walletId].name = expectedWallets[walletId].address;
 			}
 
-			await store.commit("ledger/SET_CONNECTED", true);
-			expect(await store.dispatch("ledger/reloadWallets")).toEqual(expectedWallets);
+			await store.commit(StoreCommit.LedgerSetConnected, true);
+			expect(await store.dispatch(StoreBinding.LedgerReloadWallets)).toEqual(expectedWallets);
 		});
 
 		it.skip("should stop if profile changes", () => {
@@ -394,15 +405,15 @@ describe("ledger store module", () => {
 
 	describe("updateWallet", () => {
 		it("should update a single wallet", async () => {
-			store.commit("ledger/SET_WALLETS", {
+			store.commit(StoreCommit.LedgerSetWallets, {
 				A1: { address: "A1", balance: 0 },
 			});
-			await store.dispatch("ledger/updateWallet", { address: "A1", balance: 10 });
+			await store.dispatch(StoreBinding.LedgerUpdateWallet, { address: "A1", balance: 10 });
 			expect(store.getters["ledger/wallets"]).toEqual([{ address: "A1", balance: 10 }]);
 		});
 
 		it("should throw an error if wallet does not exist", async () => {
-			expect(store.dispatch("ledger/updateWallet", { address: "nope" })).rejects.toThrow(
+			expect(store.dispatch(StoreBinding.LedgerUpdateWallet, { address: "nope" })).rejects.toThrow(
 				/.*not found in ledger wallets$/,
 			);
 		});
@@ -411,19 +422,19 @@ describe("ledger store module", () => {
 	describe("cacheWallets", () => {
 		it("should cache if enabled in session", async () => {
 			ledgerCache = true;
-			await store.commit("ledger/SET_WALLETS", {
+			await store.commit(StoreCommit.LedgerSetWallets, {
 				A1: { address: "A1", balance: 0 },
 			});
-			await store.dispatch("ledger/cacheWallets");
+			await store.dispatch(StoreBinding.LedgerCacheWallets);
 			expect(store.getters["ledger/cachedWallets"]("A1")).toEqual([{ address: "A1", balance: 0 }]);
 		});
 
 		it("should not cache if disabled in session", async () => {
 			ledgerCache = false;
-			await store.commit("ledger/SET_WALLETS", {
+			await store.commit(StoreCommit.LedgerSetWallets, {
 				A1: { address: "A1", balance: 0 },
 			});
-			await store.dispatch("ledger/cacheWallets");
+			await store.dispatch(StoreBinding.LedgerCacheWallets);
 			expect(store.getters["ledger/cachedWallets"]("A1")).toEqual([]);
 		});
 	});
@@ -431,11 +442,11 @@ describe("ledger store module", () => {
 	describe("clearWalletCache", () => {
 		it("should clear the cached wallets", async () => {
 			ledgerCache = true;
-			await store.commit("ledger/SET_WALLETS", {
+			await store.commit(StoreCommit.LedgerSetWallets, {
 				A1: { address: "A1" },
 			});
-			await store.dispatch("ledger/cacheWallets");
-			await store.dispatch("ledger/clearWalletCache");
+			await store.dispatch(StoreBinding.LedgerCacheWallets);
+			await store.dispatch(StoreBinding.LedgerClearWalletCache);
 
 			expect(store.getters["ledger/cachedWallets"]("A1")).toEqual([]);
 		});
@@ -445,18 +456,18 @@ describe("ledger store module", () => {
 		it("should set wallets when the state is empty", async () => {
 			expect(store.getters["ledger/wallets"]).toBeArrayOfSize(0);
 			const wallets = { A1: { address: "A1" } };
-			await store.dispatch("ledger/updateWallets", wallets);
+			await store.dispatch(StoreBinding.LedgerUpdateWallets, wallets);
 			expect(store.getters["ledger/walletsObject"]).toMatchObject(wallets);
 		});
 
 		it("should not remove existing wallets in the state", async () => {
 			expect(store.getters["ledger/wallets"]).toBeArrayOfSize(0);
 			const wallets = { A1: { address: "A1", balance: 0 }, A2: { address: "A2", balance: 1 } };
-			await store.dispatch("ledger/updateWallets", wallets);
+			await store.dispatch(StoreBinding.LedgerUpdateWallets, wallets);
 			expect(store.getters["ledger/wallet"]("A2").balance).toBe(1);
 
 			const walletsToUpdate = { A2: { address: "A2", balance: 0 } };
-			await store.dispatch("ledger/updateWallets", walletsToUpdate);
+			await store.dispatch(StoreBinding.LedgerUpdateWallets, walletsToUpdate);
 			expect(store.getters["ledger/wallet"]("A2").balance).toBe(0);
 			expect(store.getters["ledger/wallet"]("A1")).toBeObject();
 		});

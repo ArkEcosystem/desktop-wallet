@@ -1,6 +1,6 @@
 <template>
-	<div class="Announcements relative overflow-y-auto bg-theme-feature rounded-lg">
-		<div class="Announcements--gradient-top sticky top-0 h-10" />
+	<div class="relative overflow-y-auto rounded-lg Announcements bg-theme-feature">
+		<div class="sticky top-0 h-10 Announcements--gradient-top" />
 
 		<main class="flex-col px-10">
 			<div class="Announcements__header">
@@ -8,7 +8,7 @@
 
 				<button
 					v-if="showReadAll"
-					class="Announcements__ReadAll text-theme-feature-item-text hover:text-theme-page-text transition"
+					class="transition Announcements__ReadAll text-theme-feature-item-text hover:text-theme-page-text"
 					@click="readAll"
 				>
 					<SvgIcon name="mark-all" view-box="0 0 15 15" class="mr-2" />
@@ -21,12 +21,12 @@
 				<div v-for="(announcement, index) in announcements" :key="announcement.guid" class="mb-6">
 					<AnnouncementsPost v-bind="announcement" @read="read(announcement)" />
 
-					<div v-if="index < announcements.length - 1" class="Announcements__line-separator mt-6" />
+					<div v-if="index < announcements.length - 1" class="mt-6 Announcements__line-separator" />
 				</div>
 			</TransitionGroup>
 		</main>
 
-		<div class="Announcements--gradient-bottom sticky bottom-0 h-10" />
+		<div class="sticky bottom-0 h-10 Announcements--gradient-bottom" />
 	</div>
 </template>
 
@@ -36,6 +36,7 @@ import { mapGetters } from "vuex";
 
 import { AnnouncementsPost } from "@/components/Announcements";
 import SvgIcon from "@/components/SvgIcon";
+import { StoreBinding } from "@/enums";
 
 export default {
 	name: "Announcements",
@@ -70,11 +71,11 @@ export default {
 
 	methods: {
 		read(announcement) {
-			this.$store.dispatch("announcements/markAsRead", announcement);
+			this.$store.dispatch(StoreBinding.AnnouncementsMarkAsRead, announcement);
 		},
 
 		readAll() {
-			this.$store.dispatch("announcements/markAsReadBulk", this.unreadAnnouncements);
+			this.$store.dispatch(StoreBinding.AnnouncementsMarkAsReadBulk, this.unreadAnnouncements);
 		},
 	},
 };

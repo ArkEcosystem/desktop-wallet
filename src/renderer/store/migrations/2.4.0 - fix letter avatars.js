@@ -1,3 +1,5 @@
+import { StoreBinding } from "@/enums";
+
 // Update the schema of profile avatars to be consistent and use `null` instead
 // of `null` and `undefined` when to establish a "letter" avatar.
 // It also fixes profiles that have been created, incorrectly, using `extraItems`
@@ -5,7 +7,7 @@
 export default (store) => {
 	store.getters["profile/all"].forEach((profile) => {
 		if (profile.avatar === undefined || (profile.avatar && profile.avatar.onlyLetter)) {
-			store.dispatch("profile/update", {
+			store.dispatch(StoreBinding.ProfileUpdate, {
 				...profile,
 				avatar: null,
 			});
@@ -13,5 +15,5 @@ export default (store) => {
 	});
 
 	// All successful migrations should update this property
-	store.dispatch("app/setLatestAppliedMigration", "2.4.0");
+	store.dispatch(StoreBinding.AppSetLatestAppliedMigration, "2.4.0");
 };

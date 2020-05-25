@@ -1,3 +1,4 @@
+import { StoreBinding, StoreCommit } from "@/enums";
 import store from "@/store";
 
 describe("WalletModule", () => {
@@ -91,16 +92,16 @@ describe("WalletModule", () => {
 		{ message: "hello 2", timestamp: new Date().getTime() + 10 },
 	];
 
-	store.commit("network/CREATE", sessionNetwork);
-	store.commit("profile/CREATE", sessionProfile);
-	store.commit("profile/CREATE", otherProfile);
+	store.commit(StoreCommit.NetworkCreate, sessionNetwork);
+	store.commit(StoreCommit.ProfileCreate, sessionProfile);
+	store.commit(StoreCommit.ProfileCreate, otherProfile);
 
-	store.commit("session/SET_PROFILE_ID", sessionProfile.id);
-	store.commit("ledger/SET_WALLETS", ledgerWallets);
+	store.commit(StoreCommit.SessionSetProfileId, sessionProfile.id);
+	store.commit(StoreCommit.LedgerSetWallets, ledgerWallets);
 
 	beforeEach(() => {
-		models.forEach((model) => store.commit("wallet/STORE", model));
-		messages.forEach((message) => store.commit("wallet/DELETE_SIGNED_MESSAGE", message));
+		models.forEach((model) => store.commit(StoreCommit.WalletStore, model));
+		messages.forEach((message) => store.commit(StoreCommit.WalletDeleteSignedMessage, message));
 	});
 
 	describe("getters byAddress", () => {
@@ -225,21 +226,21 @@ describe("WalletModule", () => {
 
 	describe("Signed Messages", () => {
 		it("should add a signed message", () => {
-			store.dispatch("wallet/addSignedMessage", messages[0]);
+			store.dispatch(StoreBinding.WalletAddSignedMessage, messages[0]);
 			expect(store.getters["wallet/signedMessages"]()).toIncludeSameMembers([messages[0]]);
 		});
 
 		it("should delete a signed message", () => {
-			store.dispatch("wallet/addSignedMessage", messages[0]);
-			store.dispatch("wallet/addSignedMessage", messages[1]);
-			store.dispatch("wallet/deleteSignedMessage", messages[0]);
+			store.dispatch(StoreBinding.WalletAddSignedMessage, messages[0]);
+			store.dispatch(StoreBinding.WalletAddSignedMessage, messages[1]);
+			store.dispatch(StoreBinding.WalletDeleteSignedMessage, messages[0]);
 			expect(store.getters["wallet/signedMessages"]()).toEqual([messages[1]]);
 		});
 	});
 
 	describe("actions", () => {
 		it("should fail to create a new wallet", () => {
-			expect(() => store.dispatch("wallet/create", { id: "test" })).toThrow();
+			expect(() => store.dispatch(StoreBinding.WalletCreate, { id: "test" })).toThrow();
 		});
 	});
 });

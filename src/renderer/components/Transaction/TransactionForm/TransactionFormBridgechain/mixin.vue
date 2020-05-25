@@ -1,5 +1,5 @@
 <template>
-	<form class="TransactionFormBridgechain flex flex-col" @submit.prevent>
+	<form class="flex flex-col TransactionFormBridgechain" @submit.prevent>
 		<template>
 			<ListDivided :is-floating-label="true">
 				<ListDividedItem :label="$t('TRANSACTION.SENDER')" item-value-class="w-full">
@@ -21,13 +21,13 @@
 						:label="$t('TRANSACTION.BRIDGECHAIN.SEED_NODE')"
 						:is-invalid="!!seedNodeError"
 						name="seedNode"
-						class="TransactionFormBridgechain__seed-node mr-4 flex-1"
+						class="flex-1 mr-4 TransactionFormBridgechain__seed-node"
 					/>
 
 					<ButtonGeneric
 						:disabled="seedNodeDisabled"
 						:label="$t('TRANSACTION.BRIDGECHAIN.BUTTON_ADD')"
-						class="TransactionFormBridgechain__add py-1 flex-inline h-8 mt-4 ml-4"
+						class="h-8 py-1 mt-4 ml-4 TransactionFormBridgechain__add flex-inline"
 						@click="addSeedNode"
 					/>
 				</div>
@@ -39,7 +39,7 @@
 					:show-count="true"
 					:is-invalid="hasSeedNodesError"
 					:required="true"
-					class="TransactionFormBridgechain__seed-nodes mt-4"
+					class="mt-4 TransactionFormBridgechain__seed-nodes"
 					@remove="emitRemoveSeedNode"
 				/>
 			</div>
@@ -51,7 +51,7 @@
 						:helper-text="nameError"
 						:label="$t('TRANSACTION.BRIDGECHAIN.NAME')"
 						:is-invalid="!!nameError"
-						class="TransactionFormBridgechain__name mb-5"
+						class="mb-5 TransactionFormBridgechain__name"
 						name="name"
 					/>
 
@@ -60,7 +60,7 @@
 						:helper-text="genesisHashError"
 						:label="$t('TRANSACTION.BRIDGECHAIN.GENESIS_HASH')"
 						:is-invalid="!!genesisHashError"
-						class="TransactionFormBridgechain__genesis-hash mb-5"
+						class="mb-5 TransactionFormBridgechain__genesis-hash"
 						name="genesisHash"
 					/>
 				</div>
@@ -70,7 +70,7 @@
 					:helper-text="bridgechainRepositoryError"
 					:label="$t('TRANSACTION.BRIDGECHAIN.BRIDGECHAIN_REPOSITORY')"
 					:is-invalid="!!bridgechainRepositoryError"
-					class="TransactionFormBridgechain__bridgechain-repository mb-5"
+					class="mb-5 TransactionFormBridgechain__bridgechain-repository"
 					name="repository"
 				/>
 
@@ -79,7 +79,7 @@
 					:helper-text="bridgechainAssetRepositoryError"
 					:label="$t('TRANSACTION.BRIDGECHAIN.BRIDGECHAIN_ASSET_REPOSITORY')"
 					:is-invalid="!!bridgechainAssetRepositoryError"
-					class="TransactionFormBridgechain__bridgechain-asset-repository mb-5"
+					class="mb-5 TransactionFormBridgechain__bridgechain-asset-repository"
 					name="repository"
 				/>
 
@@ -89,7 +89,7 @@
 					:label="$t('TRANSACTION.BRIDGECHAIN.API_PORT')"
 					:is-invalid="!!apiPortError"
 					type="number"
-					class="TransactionFormBridgechain__api-port mb-5"
+					class="mb-5 TransactionFormBridgechain__api-port"
 					name="apiPort"
 				/>
 
@@ -104,7 +104,7 @@
 				/>
 
 				<div v-if="!isMultiSignature">
-					<div v-if="currentWallet.isLedger" class="TransactionFormBridgechain__ledger-notice mt-10">
+					<div v-if="currentWallet.isLedger" class="mt-10 TransactionFormBridgechain__ledger-notice">
 						{{ $t("TRANSACTION.LEDGER_SIGN_NOTICE") }}
 					</div>
 
@@ -114,7 +114,7 @@
 						v-model="$v.form.walletPassword.$model"
 						:label="$t('TRANSACTION.PASSWORD')"
 						:is-required="true"
-						class="TransactionFormBridgechain__password mt-4"
+						class="mt-4 TransactionFormBridgechain__password"
 					/>
 
 					<PassphraseInput
@@ -123,7 +123,7 @@
 						v-model="$v.form.passphrase.$model"
 						:address="currentWallet.address"
 						:pub-key-hash="walletNetwork.version"
-						class="TransactionFormBridgechain__passphrase mt-4"
+						class="mt-4 TransactionFormBridgechain__passphrase"
 					/>
 				</div>
 
@@ -134,11 +134,11 @@
 					:label="$t('TRANSACTION.SECOND_PASSPHRASE')"
 					:pub-key-hash="walletNetwork.version"
 					:public-key="currentWallet.secondPublicKey"
-					class="TransactionFormBridgechain__second-passphrase mt-5"
+					class="mt-5 TransactionFormBridgechain__second-passphrase"
 				/>
 			</div>
 
-			<footer class="mt-4 flex justify-between items-center">
+			<footer class="flex items-center justify-between mt-4">
 				<div class="self-start">
 					<button
 						:disabled="step === 1"
@@ -175,6 +175,7 @@ import { ModalLoader } from "@/components/Modal";
 import { PassphraseInput } from "@/components/Passphrase";
 import mixin from "@/components/Transaction/TransactionForm/mixin";
 import TransactionPeerList from "@/components/Transaction/TransactionPeerList";
+import { StoreBinding } from "@/enums";
 
 const maxNameLength = 40;
 const maxSeedNodes = 10;
@@ -493,7 +494,7 @@ export default {
 				let isValid = true;
 
 				try {
-					const response = await this.$store.dispatch("peer/validatePeer", {
+					const response = await this.$store.dispatch(StoreBinding.PeerValidatePeer, {
 						ip: seedNode.ip,
 						port: this.form.apiPort,
 						nethash: this.form.asset.genesisHash,

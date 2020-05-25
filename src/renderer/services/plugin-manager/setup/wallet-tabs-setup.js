@@ -1,3 +1,5 @@
+import { StoreBinding } from "@/enums";
+
 import { normalizeJson } from "../utils/normalize-json";
 
 export function create(plugin, pluginObject, sandbox, profileId) {
@@ -14,7 +16,7 @@ export function create(plugin, pluginObject, sandbox, profileId) {
 			}, []);
 
 			if (walletTabs.length) {
-				await sandbox.app.$store.dispatch("plugin/setWalletTabs", {
+				await sandbox.app.$store.dispatch(StoreBinding.PluginSetWalletTabs, {
 					pluginId: plugin.config.id,
 					walletTabs,
 					profileId,

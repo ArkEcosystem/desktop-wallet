@@ -1,26 +1,26 @@
 <template>
-	<div class="ProfileNew relative">
+	<div class="relative ProfileNew">
 		<main class="flex h-full">
 			<div
-				class="ProfileNew__instructions theme-dark bg-theme-feature text-theme-page-instructions-text hidden lg:flex flex-1 mr-4 rounded-lg overflow-y-auto"
+				class="flex-1 hidden mr-4 overflow-y-auto rounded-lg ProfileNew__instructions theme-dark bg-theme-feature text-theme-page-instructions-text lg:flex"
 			>
-				<div class="m-auto w-3/5 text-center flex flex-col items-center justify-center">
+				<div class="flex flex-col items-center justify-center w-3/5 m-auto text-center">
 					<h1 class="text-inherit">
 						{{ $t(`PAGES.PROFILE_NEW.STEP${step}.INSTRUCTIONS.HEADER`) }}
 					</h1>
-					<p class="text-center py-2 leading-normal">
+					<p class="py-2 leading-normal text-center">
 						{{ $t(`PAGES.PROFILE_NEW.STEP${step}.INSTRUCTIONS.TEXT`) }}
 					</p>
 
 					<img
 						:src="assets_loadImage(`pages/profile-new/step-${step}.svg`)"
 						:title="$t(`PAGES.PROFILE_NEW.STEP${step}.INSTRUCTIONS.HEADER`)"
-						class="w-full xl:w-4/5 mt-10"
+						class="w-full mt-10 xl:w-4/5"
 					/>
 				</div>
 			</div>
 
-			<div class="flex-none w-full lg:max-w-sm p-10 bg-theme-feature rounded-lg overflow-y-auto">
+			<div class="flex-none w-full p-10 overflow-y-auto rounded-lg lg:max-w-sm bg-theme-feature">
 				<MenuStep v-model="step">
 					<MenuStepItem
 						:step="1"
@@ -78,7 +78,7 @@
 							</div>
 
 							<div
-								class="ProfileNew__avatar flex items-center justify-between mt-5 pt-5 mb-2 border-t border-theme-line-separator border-dashed"
+								class="flex items-center justify-between pt-5 mt-5 mb-2 border-t border-dashed ProfileNew__avatar border-theme-line-separator"
 							>
 								<div class="mr-2">
 									<h5 class="mb-2 font-bold">
@@ -114,10 +114,10 @@
 								@select="selectNetwork"
 							/>
 
-							<p class="mt-5 mb-1 text-theme-page-text font-semibold">
+							<p class="mt-5 mb-1 font-semibold text-theme-page-text">
 								{{ $t("PAGES.PROFILE_NEW.STEP2.CUSTOM_NETWORK") }}
 							</p>
-							<p class="text-theme-page-text-light mb-5">
+							<p class="mb-5 text-theme-page-text-light">
 								{{ $t("PAGES.PROFILE_NEW.STEP2.CUSTOM_NETWORK_EXPLAIN") }}
 							</p>
 							<SelectionNetwork
@@ -139,8 +139,8 @@
 						@back="moveTo(2)"
 						@next="create"
 					>
-						<div class="flex flex-col h-full w-full justify-around">
-							<div class="flex items-center justify-between mb-5 mt-2">
+						<div class="flex flex-col justify-around w-full h-full">
+							<div class="flex items-center justify-between mt-2 mb-5">
 								<div>
 									<h5 class="mb-2 font-bold">
 										{{ $t("COMMON.IS_MARKET_CHART_ENABLED") }}
@@ -152,7 +152,7 @@
 								<ButtonSwitch :is-active="isMarketChartEnabled" @change="selectIsMarketChartEnabled" />
 							</div>
 
-							<div class="flex items-center justify-between mb-5 mt-2">
+							<div class="flex items-center justify-between mt-2 mb-5">
 								<div>
 									<h5 class="mb-2 font-bold">
 										{{ $t("COMMON.THEME") }}
@@ -164,7 +164,7 @@
 								<SelectionTheme v-model="theme" />
 							</div>
 
-							<div class="ProfileNew__background flex items-center justify-between">
+							<div class="flex items-center justify-between ProfileNew__background">
 								<div>
 									<h5 class="mb-2 font-bold">
 										{{ $t("COMMON.BACKGROUND") }}
@@ -190,6 +190,7 @@ import { ButtonSwitch } from "@/components/Button";
 import { InputSelect, InputText } from "@/components/Input";
 import { MenuStep, MenuStepItem } from "@/components/Menu";
 import { SelectionAvatar, SelectionBackground, SelectionNetwork, SelectionTheme } from "@/components/Selection";
+import { StoreBinding } from "@/enums";
 import Profile from "@/models/profile";
 
 export default {
@@ -338,12 +339,12 @@ export default {
 		const defaultThemes = ["light", "dark"];
 		this.schema.theme = defaultThemes.includes(this.theme) ? this.theme : defaultThemes[0];
 		if (this.schema.theme !== this.$store.getters["session/theme"]) {
-			this.$store.dispatch("session/setTheme", this.schema.theme);
+			this.$store.dispatch(StoreBinding.SessionSetTheme, this.schema.theme);
 		}
 	},
 
 	destroyed() {
-		this.$store.dispatch("session/setProfileId", this.session_profile.id);
+		this.$store.dispatch(StoreBinding.SessionSetProfileId, this.session_profile.id);
 	},
 
 	beforeRouteEnter(to, from, next) {
@@ -355,8 +356,8 @@ export default {
 
 	methods: {
 		async create() {
-			const { id } = await this.$store.dispatch("profile/create", this.schema);
-			await this.$store.dispatch("session/setProfileId", id);
+			const { id } = await this.$store.dispatch(StoreBinding.ProfileCreate, this.schema);
+			await this.$store.dispatch(StoreBinding.SessionSetProfileId, id);
 			this.$router.push({ name: "dashboard" });
 		},
 
@@ -381,7 +382,7 @@ export default {
 
 		async selectBackground(background) {
 			this.schema.background = background;
-			await this.$store.dispatch("session/setBackground", background);
+			await this.$store.dispatch(StoreBinding.SessionSetBackground, background);
 		},
 
 		selectCurrency(currency) {
@@ -390,7 +391,7 @@ export default {
 
 		selectBip39Language(bip39Language) {
 			this.schema.bip39Language = bip39Language;
-			this.$store.dispatch("session/setBip39Language", bip39Language);
+			this.$store.dispatch(StoreBinding.SessionSetBip39Language, bip39Language);
 		},
 
 		selectNetwork(network) {
@@ -406,22 +407,22 @@ export default {
 
 		async selectIsMarketChartEnabled(isMarketChartEnabled) {
 			this.schema.isMarketChartEnabled = isMarketChartEnabled;
-			await this.$store.dispatch("session/setIsMarketChartEnabled", isMarketChartEnabled);
+			await this.$store.dispatch(StoreBinding.SessionSetIsMarketChartEnabled, isMarketChartEnabled);
 		},
 
 		async selectTheme(theme) {
 			this.schema.theme = theme;
-			await this.$store.dispatch("session/setTheme", theme);
+			await this.$store.dispatch(StoreBinding.SessionSetTheme, theme);
 		},
 
 		async selectTimeFormat(timeFormat) {
 			this.schema.timeFormat = timeFormat;
-			await this.$store.dispatch("session/setTimeFormat", timeFormat);
+			await this.$store.dispatch(StoreBinding.SessionSetTimeFormat, timeFormat);
 		},
 
 		async selectPriceApi(priceApi) {
 			this.schema.priceApi = priceApi;
-			await this.$store.dispatch("session/setPriceApi", priceApi);
+			await this.$store.dispatch(StoreBinding.SessionSetPriceApi, priceApi);
 		},
 	},
 

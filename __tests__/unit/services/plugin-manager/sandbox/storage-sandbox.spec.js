@@ -1,3 +1,4 @@
+import { StoreBinding } from "@/enums";
 import { create as createStorageSandbox } from "@/services/plugin-manager/sandbox/storage-sandbox";
 
 const plugin = {
@@ -23,12 +24,12 @@ beforeAll(() => {
 				"session/profileId": "1",
 			},
 			dispatch: jest.fn((action, data) => {
-				if (action === "plugin/setPluginOption") {
+				if (action === StoreBinding.PluginSetPluginOption) {
 					if (!db[data.profileId]) {
 						db[data.profileId] = {};
 					}
 					db[data.profileId][data.key] = data.value;
-				} else if (action === "plugin/deletePluginOptionsForProfile") {
+				} else if (action === StoreBinding.PluginDeletePluginOptionsForProfile) {
 					delete db[data.profileId];
 				}
 			}),
@@ -65,12 +66,12 @@ describe("Storage Sandbox", () => {
 	describe("set", () => {
 		it("should set a value to key", () => {
 			walletApi.storage.set(localOptions.key, localOptions.value);
-			expect(app.$store.dispatch).toHaveBeenCalledWith("plugin/setPluginOption", localOptions);
+			expect(app.$store.dispatch).toHaveBeenCalledWith(StoreBinding.PluginSetPluginOption, localOptions);
 		});
 
 		it("should set a value to global key", () => {
 			walletApi.storage.set(globalOptions.key, globalOptions.value, true);
-			expect(app.$store.dispatch).toHaveBeenCalledWith("plugin/setPluginOption", globalOptions);
+			expect(app.$store.dispatch).toHaveBeenCalledWith(StoreBinding.PluginSetPluginOption, globalOptions);
 		});
 	});
 

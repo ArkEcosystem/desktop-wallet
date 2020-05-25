@@ -1,3 +1,4 @@
+import { AppEvent } from "@/enums/events";
 import { create as createMessagingSandbox } from "@/services/plugin-manager/sandbox/messaging-sandbox";
 
 let walletApi;
@@ -27,12 +28,12 @@ describe("Messaging Sandbox", () => {
 	});
 
 	it("should register listeners", () => {
-		walletApi.messages.on("transaction", () => "test");
+		walletApi.messages.on(AppEvent.Transaction, () => "test");
 		expect(Object.keys(walletApi.messages.events)).toHaveLength(1);
 	});
 
 	it("should clear listeners", () => {
-		walletApi.messages.on("transaction", () => "test");
+		walletApi.messages.on(AppEvent.Transaction, () => "test");
 		expect(Object.keys(walletApi.messages.events)).toHaveLength(1);
 		walletApi.messages.clear();
 		expect(Object.keys(walletApi.messages.events)).toHaveLength(0);

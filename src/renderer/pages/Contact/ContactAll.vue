@@ -1,20 +1,20 @@
 <template>
 	<div class="ContactAll">
-		<div class="ContactAll__heading px-10 py-5 mb-3">
+		<div class="px-10 py-5 mb-3 ContactAll__heading">
 			<div>
-				<WalletIdenticonPlaceholder :size="60" class="identicon opacity-50" />
+				<WalletIdenticonPlaceholder :size="60" class="opacity-50 identicon" />
 				<span
-					class="rounded-full flex items-center justify-center absolute ml-8 -mt-8 w-8 h-8 bg-theme-feature text-theme-page-text-light font-black select-none"
+					class="absolute flex items-center justify-center w-8 h-8 ml-8 -mt-8 font-black rounded-full select-none bg-theme-feature text-theme-page-text-light"
 				>
 					i
 				</span>
 			</div>
 
-			<div class="ml-8 p-2 hidden md:flex">
+			<div class="hidden p-2 ml-8 md:flex">
 				{{ $t("PAGES.CONTACT_ALL.INSTRUCTIONS") }}
 			</div>
 
-			<button class="ContactAll__CreateButton ml-12 justify-end" @click="createContact">
+			<button class="justify-end ml-12 ContactAll__CreateButton" @click="createContact">
 				<span class="ContactAll__CreateButton__icon">
 					<SvgIcon name="plus" view-box="0 0 9 9" class="text-center" />
 				</span>
@@ -25,7 +25,7 @@
 			</button>
 		</div>
 
-		<div class="flex flex-1 flex-col bg-theme-feature rounded-lg p-10 overflow-y-auto">
+		<div class="flex flex-col flex-1 p-10 overflow-y-auto rounded-lg bg-theme-feature">
 			<div class="block w-full">
 				<div class="ContactAll__header">
 					<h3 class="items-center">
@@ -44,7 +44,7 @@
 				@remove="openRemovalConfirmation"
 			/>
 
-			<div v-else-if="!hasWalletGridLayout" class="ContactAll__tabular mt-10">
+			<div v-else-if="!hasWalletGridLayout" class="mt-10 ContactAll__tabular">
 				<WalletTable
 					:has-pagination="false"
 					:is-loading="false"
@@ -88,6 +88,7 @@ import { ContactRemovalConfirmation, ContactRenameModal } from "@/components/Con
 import SvgIcon from "@/components/SvgIcon";
 import { WalletGrid, WalletIdenticonPlaceholder } from "@/components/Wallet";
 import WalletTable from "@/components/Wallet/WalletTable";
+import { StoreBinding } from "@/enums";
 
 export default {
 	name: "ContactAll",
@@ -122,9 +123,9 @@ export default {
 				return this.$store.getters["session/walletLayout"];
 			},
 			set(layout) {
-				this.$store.dispatch("session/setWalletLayout", layout);
+				this.$store.dispatch(StoreBinding.SessionSetWalletLayout, layout);
 
-				this.$store.dispatch("profile/update", {
+				this.$store.dispatch(StoreBinding.ProfileUpdate, {
 					...this.session_profile,
 					walletLayout: layout,
 				});
@@ -136,9 +137,9 @@ export default {
 				return this.$store.getters["session/contactSortParams"];
 			},
 			set(sortParams) {
-				this.$store.dispatch("session/setContactSortParams", sortParams);
+				this.$store.dispatch(StoreBinding.SessionSetContactSortParams, sortParams);
 
-				this.$store.dispatch("profile/update", {
+				this.$store.dispatch(StoreBinding.ProfileUpdate, {
 					...this.session_profile,
 					contactSortParams: sortParams,
 				});

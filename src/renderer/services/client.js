@@ -4,6 +4,7 @@ import { TRANSACTION_GROUPS, TRANSACTION_TYPES } from "@config";
 import logger from "electron-log";
 import { castArray, chunk, orderBy } from "lodash";
 
+import { StoreBinding } from "@/enums";
 import TransactionService from "@/services/transaction";
 import store from "@/store";
 import { camelToUpperSnake } from "@/utils";
@@ -47,7 +48,7 @@ export default class ClientService {
 					maxLength: newLength,
 				};
 
-				await store.dispatch("network/update", currentNetwork);
+				await store.dispatch(StoreBinding.NetworkUpdate, currentNetwork);
 			}
 		}
 
@@ -303,7 +304,7 @@ export default class ClientService {
 			return transaction;
 		});
 
-		store.dispatch("transaction/processVotes", transactions);
+		store.dispatch(StoreBinding.TransactionProcessVotes, transactions);
 		totalCount = body.meta.totalCount;
 
 		// Add some utilities for each transactions
@@ -627,7 +628,7 @@ export default class ClientService {
 			if (peers && peers.length) {
 				for (let i = 0; i < peers.length; i++) {
 					try {
-						const client = await store.dispatch("peer/clientServiceFromPeer", peers[i]);
+						const client = await store.dispatch(StoreBinding.PeerClientServiceFromPeer, peers[i]);
 						const transaction = await client.client.api("transactions").create({
 							transactions: castArray(transactions),
 						});

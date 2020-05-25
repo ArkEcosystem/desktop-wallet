@@ -42,7 +42,7 @@
 				class="mt-5"
 			/>
 
-			<button :disabled="$v.form.$invalid" class="blue-button mt-5" type="button" @click="onSignMessage">
+			<button :disabled="$v.form.$invalid" class="mt-5 blue-button" type="button" @click="onSignMessage">
 				{{ $t("SIGN_VERIFY.SIGN") }}
 			</button>
 		</div>
@@ -58,6 +58,7 @@ import { minLength, required } from "vuelidate/lib/validators";
 import { InputPassword, InputText } from "@/components/Input";
 import { ModalLoader, ModalWindow } from "@/components/Modal";
 import { PassphraseInput } from "@/components/Passphrase";
+import { StoreBinding } from "@/enums";
 import Bip38 from "@/services/bip38";
 import TransactionService from "@/services/transaction";
 import WalletService from "@/services/wallet";
@@ -155,7 +156,7 @@ export default {
 
 				message.timestamp = new Date().getTime();
 				message.address = this.wallet.address;
-				this.$store.dispatch("wallet/addSignedMessage", message);
+				this.$store.dispatch(StoreBinding.WalletAddSignedMessage, message);
 
 				this.$success(this.$t("SIGN_VERIFY.SUCCESSFULL_SIGN"));
 

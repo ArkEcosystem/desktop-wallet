@@ -151,6 +151,7 @@ import { ButtonSwitch } from "@/components/Button";
 import { MenuDropdown, MenuNavigationItem, MenuOptions, MenuOptionsItem } from "@/components/Menu";
 import { ModalConfirmation } from "@/components/Modal";
 import { PluginManageBlacklistModal } from "@/components/PluginManager/PluginManagerModals";
+import { StoreBinding } from "@/enums";
 import { isEmpty } from "@/utils";
 
 export default {
@@ -215,9 +216,9 @@ export default {
 				return this.$store.getters["session/currency"];
 			},
 			set(currency) {
-				this.$store.dispatch("session/setCurrency", currency);
+				this.$store.dispatch(StoreBinding.SessionSetCurrency, currency);
 
-				this.$store.dispatch("profile/update", {
+				this.$store.dispatch(StoreBinding.ProfileUpdate, {
 					...this.session_profile,
 					currency,
 				});
@@ -228,9 +229,9 @@ export default {
 				return this.$store.getters["session/broadcastPeers"];
 			},
 			set(broadcast) {
-				this.$store.dispatch("session/setBroadcastPeers", broadcast);
+				this.$store.dispatch(StoreBinding.SessionSetBroadcastPeers, broadcast);
 
-				this.$store.dispatch("profile/update", {
+				this.$store.dispatch(StoreBinding.ProfileUpdate, {
 					...this.session_profile,
 					broadcastPeers: broadcast,
 				});
@@ -241,9 +242,9 @@ export default {
 				return this.$store.getters["session/theme"];
 			},
 			set(theme) {
-				this.$store.dispatch("session/setTheme", theme);
+				this.$store.dispatch(StoreBinding.SessionSetTheme, theme);
 
-				this.$store.dispatch("profile/update", {
+				this.$store.dispatch(StoreBinding.ProfileUpdate, {
 					...this.session_profile,
 					theme,
 				});
@@ -254,10 +255,10 @@ export default {
 				return this.$store.getters["session/screenshotProtection"];
 			},
 			set(protection) {
-				this.$store.dispatch("session/setScreenshotProtection", protection);
+				this.$store.dispatch(StoreBinding.SessionSetScreenshotProtection, protection);
 
 				if (protection || this.saveOnProfile) {
-					this.$store.dispatch("profile/update", {
+					this.$store.dispatch(StoreBinding.ProfileUpdate, {
 						...this.session_profile,
 						screenshotProtection: protection,
 					});
@@ -272,9 +273,9 @@ export default {
 				return this.$store.getters["session/backgroundUpdateLedger"];
 			},
 			set(update) {
-				this.$store.dispatch("session/setBackgroundUpdateLedger", update);
+				this.$store.dispatch(StoreBinding.SessionSetBackgroundUpdateLedger, update);
 
-				this.$store.dispatch("profile/update", {
+				this.$store.dispatch(StoreBinding.ProfileUpdate, {
 					...this.session_profile,
 					backgroundUpdateLedger: update,
 				});
@@ -348,7 +349,7 @@ export default {
 		},
 
 		async onResetData() {
-			await this.$store.dispatch("resetData");
+			await this.$store.dispatch(StoreBinding.ResetData);
 			this.electron_reload();
 		},
 

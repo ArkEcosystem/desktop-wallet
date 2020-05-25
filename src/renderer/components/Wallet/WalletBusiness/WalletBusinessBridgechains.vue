@@ -22,6 +22,8 @@
 <script>
 import { isEqual } from "lodash";
 
+import { AppEvent, StoreBinding } from "@/enums";
+
 import WalletBusinessBridgechainsTable from "./WalletBusinessBridgechainsTable";
 
 export default {
@@ -56,9 +58,9 @@ export default {
 				return this.$store.getters["session/transactionTableRowCount"];
 			},
 			set(count) {
-				this.$store.dispatch("session/setTransactionTableRowCount", count);
+				this.$store.dispatch(StoreBinding.SessionSetTransactionTableRowCount, count);
 
-				this.$store.dispatch("profile/update", {
+				this.$store.dispatch(StoreBinding.ProfileUpdate, {
 					...this.session_profile,
 					transactionTableRowCount: count,
 				});
@@ -78,14 +80,14 @@ export default {
 
 	created() {
 		this.loadBridgechains();
-		this.$eventBus.on("wallet:reload", this.loadBridgechains);
-		this.$eventBus.on("wallet:reload:business-bridgechains", this.loadBridgechains);
+		this.$eventBus.on(AppEvent.WalletReload, this.loadBridgechains);
+		this.$eventBus.on(AppEvent.WalletReloadBusinessBridgechains, this.loadBridgechains);
 	},
 
 	beforeDestroy() {
 		clearTimeout(this.timeout);
-		this.$eventBus.off("wallet:reload", this.loadBridgechains);
-		this.$eventBus.off("wallet:reload:business-bridgechains", this.loadBridgechains);
+		this.$eventBus.off(AppEvent.WalletReload, this.loadBridgechains);
+		this.$eventBus.off(AppEvent.WalletReloadBusinessBridgechains, this.loadBridgechains);
 	},
 
 	methods: {

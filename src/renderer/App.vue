@@ -76,6 +76,7 @@ import { pull, uniq } from "lodash";
 import AlertMessage from "@/components/AlertMessage";
 import { AppFooter, AppIntro, AppSidemenu } from "@/components/App";
 import { TransactionModal } from "@/components/Transaction";
+import { AppEvent, StoreBinding } from "@/enums";
 import i18nSetup from "@/i18n/i18n-setup";
 import priceApi from "@/services/price-api";
 import URIHandler from "@/services/uri-handler";
@@ -125,7 +126,7 @@ export default {
 				return this.$store.getters["app/isScreenshotProtectionEnabled"];
 			},
 			set(protection) {
-				this.$store.dispatch("app/setIsScreenshotProtectionEnabled", protection);
+				this.$store.dispatch(StoreBinding.AppSetIsScreenshotProtectionEnabled, protection);
 			},
 		},
 		hasSeenIntroduction() {
@@ -265,11 +266,11 @@ export default {
 				this.$error("Failed to load plugins. NPM might be down.");
 			}
 
-			await this.$store.dispatch("network/load");
+			await this.$store.dispatch(StoreBinding.NetworkLoad);
 			const currentProfileId = this.$store.getters["session/profileId"];
-			await this.$store.dispatch("session/reset");
-			await this.$store.dispatch("session/setProfileId", currentProfileId);
-			await this.$store.dispatch("ledger/reset");
+			await this.$store.dispatch(StoreBinding.SessionReset);
+			await this.$store.dispatch(StoreBinding.SessionSetProfileId, currentProfileId);
+			await this.$store.dispatch(StoreBinding.LedgerReset);
 		},
 		/**
 		 * These data are used in different parts, but loading them should not
@@ -280,32 +281,32 @@ export default {
 		 */
 		async loadNotEssential() {
 			ipcRenderer.send("updater:check-for-updates");
-			await this.$store.dispatch("peer/refresh");
-			this.$store.dispatch("peer/connectToBest", {});
-			await this.$store.dispatch("network/updateData");
+			await this.$store.dispatch(StoreBinding.PeerRefresh);
+			this.$store.dispatch(StoreBinding.PeerConnectToBest, {});
+			await this.$store.dispatch(StoreBinding.NetworkUpdateData);
 
 			if (this.session_network) {
-				this.$store.dispatch("ledger/init", this.session_network.slip44);
-				this.$store.dispatch("delegate/load");
+				this.$store.dispatch(StoreBinding.LedgerInit, this.session_network.slip44);
+				this.$store.dispatch(StoreBinding.DelegateLoad);
 			}
 
-			this.$eventBus.on("client:changed", async () => {
-				this.$store.dispatch("peer/connectToBest", {});
-				this.$store.dispatch("network/updateData");
-				this.$store.dispatch("delegate/load");
-				await this.$store.dispatch("ledger/init", this.session_network.slip44);
+			this.$eventBus.on(AppEvent.ClientChanged, async () => {
+				this.$store.dispatch(StoreBinding.PeerConnectToBest, {});
+				this.$store.dispatch(StoreBinding.NetworkUpdateData);
+				this.$store.dispatch(StoreBinding.DelegateLoad);
+				await this.$store.dispatch(StoreBinding.LedgerInit, this.session_network.slip44);
 				if (this.$store.getters["ledger/isConnected"]) {
-					this.$store.dispatch("ledger/reloadWallets", { clearFirst: true, forceLoad: true });
+					this.$store.dispatch(StoreBinding.LedgerReloadWallets, { clearFirst: true, forceLoad: true });
 				}
 			});
-			this.$eventBus.on("ledger:connected", async () => {
+			this.$eventBus.on(AppEvent.LedgerConnected, async () => {
 				this.$success("Ledger Connected!");
 			});
-			this.$eventBus.on("ledger:disconnected", async () => {
+			this.$eventBus.on(AppEvent.LedgerDisconnected, async () => {
 				this.$warn("Ledger Disconnected!");
 			});
 
-			ipcRenderer.send("splashscreen:app-ready");
+			ipcRenderer.send(AppEvent.SplashscreenAppReady);
 
 			try {
 				await Promise.all([this.$plugins.fetchPluginsFromAdapter(), this.$plugins.fetchPluginsList()]);
@@ -329,12 +330,12 @@ export default {
 					}
 
 					if (!oldProfile || profile.id !== oldProfile.id) {
-						this.$eventBus.emit("client:changed");
+						this.$eventBus.emit(AppEvent.ClientChanged);
 					}
 
 					priceApi.setAdapter(profile.priceApi);
 
-					this.$store.dispatch("market/refreshTicker");
+					this.$store.dispatch(StoreBinding.MarketRefreshTicker);
 				},
 				{ immediate: true },
 			);
@@ -351,8 +352,8 @@ export default {
 				}
 			});
 
-			ipcRenderer.on("updater:update-available", (_, data) => {
-				this.$store.dispatch("updater/setAvailableRelease", data);
+			ipcRenderer.on(AppEvent.UpdaterUpdateAvailable, (_, data) => {
+				this.$store.dispatch(StoreBinding.UpdaterSetAvailableRelease, data);
 			});
 		},
 
@@ -367,7 +368,7 @@ export default {
 		},
 
 		setIntroDone() {
-			this.$store.dispatch("app/setHasSeenIntroduction", true);
+			this.$store.dispatch(StoreBinding.AppSetHasSeenIntroduction, true);
 			this.$router.push({ name: "profile-new" });
 		},
 

@@ -6,10 +6,10 @@
 			'WalletSidebar--collapsed': !isExpanded,
 			'WalletSidebar--expanded': isExpanded,
 		}"
-		class="WalletSidebar justify-start pt-0"
+		class="justify-start pt-0 WalletSidebar"
 		@input="onSelect"
 	>
-		<div v-if="showMenu" class="WalletSidebar__menu flex flex-row px-4 pt-4 justify-around">
+		<div v-if="showMenu" class="flex flex-row justify-around px-4 pt-4 WalletSidebar__menu">
 			<template v-if="!isExpanded">
 				<div
 					v-tooltip="{
@@ -77,22 +77,22 @@
 			:is-disabled="true"
 			class="WalletSidebar__wallet opacity-37.5 select-none"
 		>
-			<div class="WalletSidebar__wallet__wrapper flex flex-row transition items-center w-full mx-6 py-6 truncate">
-				<WalletIdenticonPlaceholder :size="50" class="WalletSidebar__wallet__identicon flex-shrink-0" />
+			<div class="flex flex-row items-center w-full py-6 mx-6 truncate transition WalletSidebar__wallet__wrapper">
+				<WalletIdenticonPlaceholder :size="50" class="flex-shrink-0 WalletSidebar__wallet__identicon" />
 				<div
-					class="WalletSidebar__wallet__info flex flex-col font-semibold text-theme-page-text-light overflow-hidden pl-2"
+					class="flex flex-col pl-2 overflow-hidden font-semibold WalletSidebar__wallet__info text-theme-page-text-light"
 				>
 					<span class="block truncate">
 						{{ $t("PAGES.DASHBOARD.ADD_WALLET") }}
 					</span>
-					<span class="font-bold mt-2 text-xl">
+					<span class="mt-2 text-xl font-bold">
 						{{ formatter_networkCurrency(0, 2) }}
 					</span>
 				</div>
 				<img
 					title="arrow"
 					:src="assets_loadImage('arrows/arrow-confirmation.svg')"
-					class="WalletIdenticon__placeholder__arrow ml-4"
+					class="ml-4 WalletIdenticon__placeholder__arrow"
 				/>
 			</div>
 		</MenuNavigationItem>
@@ -102,11 +102,11 @@
 			v-if="isLoadingLedger"
 			id="isLoadingLedger"
 			:is-disabled="true"
-			class="WalletSidebar__wallet__ledger-loader select-none"
+			class="select-none WalletSidebar__wallet__ledger-loader"
 		>
-			<div class="WalletSidebar__wallet__wrapper transition text-sm w-full mx-2 py-6 truncate">
+			<div class="w-full py-6 mx-2 text-sm truncate transition WalletSidebar__wallet__wrapper">
 				<Loader />
-				<div class="font-semibold text-theme-page-text text-center">
+				<div class="font-semibold text-center text-theme-page-text">
 					{{ $t("WALLET_SIDEBAR.LOADING_LEDGER") }}
 				</div>
 			</div>
@@ -125,12 +125,12 @@
 					<div
 						slot-scope="{ isActive }"
 						:class="{ 'flex flex-row': isExpanded }"
-						class="WalletSidebar__wallet__wrapper transition items-center w-full mx-6 py-6 truncate"
+						class="items-center w-full py-6 mx-6 truncate transition WalletSidebar__wallet__wrapper"
 					>
 						<WalletIdenticon
 							:size="50"
 							:value="wallet.address"
-							class="WalletSidebar__wallet__identicon flex-shrink-0"
+							class="flex-shrink-0 WalletSidebar__wallet__identicon"
 						/>
 						<div
 							:class="{
@@ -139,7 +139,7 @@
 								'pt-2': !isExpanded,
 								'pl-2': isExpanded,
 							}"
-							class="WalletSidebar__wallet__info flex flex-col font-semibold overflow-hidden"
+							class="flex flex-col overflow-hidden font-semibold WalletSidebar__wallet__info"
 						>
 							<span class="flex items-center" :class="{ 'justify-center': !isExpanded }">
 								<span class="block truncate">
@@ -157,7 +157,7 @@
 									{{ !isExpanded ? $t("COMMON.LEDGER").charAt(0) : $t("COMMON.LEDGER") }}
 								</span>
 							</span>
-							<span v-if="isExpanded" class="font-bold mt-2 text-xl">
+							<span v-if="isExpanded" class="mt-2 text-xl font-bold">
 								{{ formatter_networkCurrency(wallet.balance, 2) }}
 								<!-- TODO display a +/- n ARK on recent transactions -->
 							</span>
@@ -175,6 +175,8 @@ import { uniqBy } from "lodash";
 import { MenuNavigation, MenuNavigationItem } from "@/components/Menu";
 import SvgIcon from "@/components/SvgIcon";
 import Loader from "@/components/utils/Loader";
+import { StoreBinding } from "@/enums";
+import { AppEvent } from "@/enums";
 import { sortByProps } from "@/utils";
 
 import { WalletIdenticon, WalletIdenticonPlaceholder } from "../";
@@ -278,9 +280,9 @@ export default {
 				return this.$store.getters["session/walletSidebarFilters"] || {};
 			},
 			set(filters) {
-				this.$store.dispatch("session/setWalletSidebarFilters", filters);
+				this.$store.dispatch(StoreBinding.SessionSetWalletSidebarFilters, filters);
 
-				this.$store.dispatch("profile/update", {
+				this.$store.dispatch(StoreBinding.ProfileUpdate, {
 					...this.session_profile,
 					walletSidebarFilters: filters,
 				});
@@ -292,9 +294,9 @@ export default {
 				return this.$store.getters["session/walletSidebarSortParams"] || { field: "name", type: "asc" };
 			},
 			set(sortParams) {
-				this.$store.dispatch("session/setWalletSidebarSortParams", sortParams);
+				this.$store.dispatch(StoreBinding.SessionSetWalletSidebarSortParams, sortParams);
 
-				this.$store.dispatch("profile/update", {
+				this.$store.dispatch(StoreBinding.ProfileUpdate, {
 					...this.session_profile,
 					walletSidebarSortParams: sortParams,
 				});
@@ -309,11 +311,11 @@ export default {
 	},
 
 	async created() {
-		this.$eventBus.on("ledger:disconnected", this.ledgerDisconnected);
+		this.$eventBus.on(AppEvent.LedgerDisconnected, this.ledgerDisconnected);
 	},
 
 	beforeDestroy() {
-		this.$eventBus.off("ledger:disconnected", this.ledgerDisconnected);
+		this.$eventBus.off(AppEvent.LedgerDisconnected, this.ledgerDisconnected);
 	},
 
 	methods: {

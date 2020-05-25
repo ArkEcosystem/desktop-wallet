@@ -4,7 +4,7 @@
 		container-classes="w-md max-w-md"
 		@close="emitClose"
 	>
-		<section class="ModalConfirmation__container flex flex-col">
+		<section class="flex flex-col ModalConfirmation__container">
 			<div class="mb-6">
 				<p v-if="!blacklist.length" class="mb-2">
 					{{ $t("MODAL_PLUGIN_MANAGE_BLACKLIST.EMPTY") }}
@@ -13,7 +13,7 @@
 				<ListDivided class="overflow-y-auto max-h-2xs">
 					<ListDividedItem v-for="plugin of blacklist" :key="plugin" :label="plugin">
 						<button
-							class="font-semibold flex text-xs hover:text-red text-theme-page-text-light p-1"
+							class="flex p-1 text-xs font-semibold hover:text-red text-theme-page-text-light"
 							@click="removeFromBlacklist(plugin)"
 						>
 							<SvgIcon name="delete-wallet" view-box="0 0 16 16" />
@@ -22,7 +22,7 @@
 				</ListDivided>
 			</div>
 
-			<div class="mt-2 flex flex-row">
+			<div class="flex flex-row mt-2">
 				<button class="blue-button" @click="removeAll">
 					{{ $t("MODAL_PLUGIN_MANAGE_BLACKLIST.REMOVE_ALL") }}
 				</button>
@@ -39,6 +39,7 @@
 import { ListDivided, ListDividedItem } from "@/components/ListDivided";
 import { ModalWindow } from "@/components/Modal";
 import { SvgIcon } from "@/components/SvgIcon";
+import { StoreBinding } from "@/enums";
 
 export default {
 	name: "PluginManageBlacklistModal",
@@ -63,14 +64,14 @@ export default {
 		},
 
 		removeAll() {
-			this.$store.dispatch("plugin/setBlacklisted", {
+			this.$store.dispatch(StoreBinding.PluginSetBlacklisted, {
 				scope: "local",
 				plugins: [],
 			});
 		},
 
 		removeFromBlacklist(plugin) {
-			this.$store.dispatch("plugin/setBlacklisted", {
+			this.$store.dispatch(StoreBinding.PluginSetBlacklisted, {
 				scope: "local",
 				plugins: this.$store.getters["plugin/blacklisted"].local.filter(
 					(blacklisted) => blacklisted !== plugin,

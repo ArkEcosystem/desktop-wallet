@@ -2,6 +2,7 @@ import { cloneDeep, uniqBy } from "lodash";
 import semver from "semver";
 import Vue from "vue";
 
+import { StoreCommit } from "@/enums";
 import pluginManager from "@/services/plugin-manager";
 import releaseService from "@/services/release";
 import { sortByProps } from "@/utils";
@@ -405,7 +406,7 @@ export default {
 
 	actions: {
 		async reset({ commit }) {
-			commit("RESET_PLUGINS");
+			commit(StoreCommit.ResetPlugins);
 		},
 
 		async loadPluginsForProfiles({ dispatch, rootGetters }) {
@@ -449,7 +450,7 @@ export default {
 				return;
 			}
 
-			commit("SET_IS_PLUGIN_ENABLED", {
+			commit(StoreCommit.SetIsPluginEnabled, {
 				enabled,
 				pluginId,
 				profileId,
@@ -458,7 +459,7 @@ export default {
 			try {
 				await this._vm.$plugins[`${enabled ? "enable" : "disable"}Plugin`](pluginId, profileId);
 			} catch (error) {
-				commit("SET_IS_PLUGIN_ENABLED", {
+				commit(StoreCommit.SetIsPluginEnabled, {
 					enabled: !enabled,
 					pluginId,
 					profileId,
@@ -469,16 +470,16 @@ export default {
 		},
 
 		setAvailable({ commit }, plugins) {
-			commit("SET_AVAILABLE_PLUGINS", plugins);
-			commit("SET_LAST_FETCHED", Date.now());
+			commit(StoreCommit.SetAvailablePlugins, plugins);
+			commit(StoreCommit.SetLastFetched, Date.now());
 		},
 
 		setInstalled({ commit }, plugin) {
-			commit("SET_INSTALLED_PLUGIN", plugin);
+			commit(StoreCommit.SetInstalledPlugin, plugin);
 		},
 
 		async setBlacklisted({ commit, dispatch, getters, rootGetters }, { scope, plugins }) {
-			commit("SET_BLACKLISTED_PLUGINS", {
+			commit(StoreCommit.SetBlacklistedPlugins, {
 				scope,
 				plugins,
 			});
@@ -497,7 +498,7 @@ export default {
 		},
 
 		setWhitelisted({ commit }, { scope, plugins }) {
-			commit("SET_WHITELISTED_PLUGINS", {
+			commit(StoreCommit.SetWhitelistedPlugins, {
 				scope,
 				plugins,
 			});
@@ -508,7 +509,7 @@ export default {
 				throw new Error("Plugin is not enabled");
 			}
 
-			commit("SET_LOADED_PLUGIN", {
+			commit(StoreCommit.SetLoadedPlugin, {
 				...data,
 				profileId: data.profileId || rootGetters["session/profileId"],
 			});
@@ -555,7 +556,7 @@ export default {
 				return;
 			}
 
-			commit("DELETE_LOADED_PLUGIN", {
+			commit(StoreCommit.DeleteLoadedPlugin, {
 				pluginId,
 				profileId,
 			});
@@ -566,7 +567,7 @@ export default {
 				return;
 			}
 
-			commit("DELETE_INSTALLED_PLUGIN", pluginId);
+			commit(StoreCommit.DeleteInstalledPlugin, pluginId);
 		},
 
 		setAvatars({ commit, getters, rootGetters }, data) {
@@ -574,7 +575,7 @@ export default {
 				throw new Error("Plugin is not enabled");
 			}
 
-			commit("SET_PLUGIN_AVATARS", {
+			commit(StoreCommit.SetPluginAvatars, {
 				...data,
 				profileId: data.profileId || rootGetters["session/profileId"],
 			});
@@ -585,7 +586,7 @@ export default {
 				throw new Error("Plugin is not enabled");
 			}
 
-			commit("SET_PLUGIN_MENU_ITEMS", {
+			commit(StoreCommit.SetPluginMenuItems, {
 				...data,
 				profileId: data.profileId || rootGetters["session/profileId"],
 			});
@@ -596,7 +597,7 @@ export default {
 				throw new Error("Plugin is not enabled");
 			}
 
-			commit("SET_PLUGIN_THEMES", {
+			commit(StoreCommit.SetPluginThemes, {
 				...data,
 				profileId: data.profileId || rootGetters["session/profileId"],
 			});
@@ -613,7 +614,7 @@ export default {
 				}
 			}
 
-			commit("SET_PLUGIN_LANGUAGES", {
+			commit(StoreCommit.SetPluginLanguages, {
 				pluginId,
 				languages,
 				profileId: profileId || rootGetters["session/profileId"],
@@ -625,7 +626,7 @@ export default {
 				throw new Error("Plugin is not enabled");
 			}
 
-			commit("SET_PLUGIN_WALLET_TABS", {
+			commit(StoreCommit.SetPluginWalletTabs, {
 				...data,
 				profileId: data.profileId || rootGetters["session/profileId"],
 			});
@@ -636,7 +637,7 @@ export default {
 				throw new Error("Plugin is not enabled");
 			}
 
-			commit("SET_PLUGIN_OPTION", {
+			commit(StoreCommit.SetPluginOption, {
 				pluginId: data.pluginId,
 				profileId: data.profileId === "global" ? "global" : rootGetters["session/profileId"],
 				key: data.key,
@@ -647,7 +648,7 @@ export default {
 		deletePluginOptionsForProfile({ commit, rootGetters }, { pluginId, profileId = null }) {
 			profileId = profileId || rootGetters["session/profileId"];
 
-			commit("DELETE_PLUGIN_OPTIONS", {
+			commit(StoreCommit.DeletePluginOptions, {
 				pluginId,
 				profileId,
 			});

@@ -19,8 +19,8 @@
 				name="quantity"
 			/>
 
-			<div v-if="quantityWarning" class="mt-4 border-theme-button-text border-l-4 pl-2">
-				<span class="text-theme-button-text font-bold">
+			<div v-if="quantityWarning" class="pl-2 mt-4 border-l-4 border-theme-button-text">
+				<span class="font-bold text-theme-button-text">
 					{{ $t("WALLET_DELEGATES.VOTE_INFO") }}
 				</span>
 				<strong>
@@ -46,6 +46,7 @@ import { minValue, numeric, required } from "vuelidate/lib/validators";
 import { ButtonGeneric } from "@/components/Button";
 import { InputText } from "@/components/Input";
 import ModalWindow from "@/components/Modal/ModalWindow";
+import { StoreBinding } from "@/enums";
 
 export default {
 	name: "ModalAdditionalLedgers",
@@ -102,7 +103,7 @@ export default {
 
 	methods: {
 		async submit() {
-			this.$store.dispatch("ledger/reloadWallets", {
+			this.$store.dispatch(StoreBinding.LedgerReloadWallets, {
 				clearFirst: true,
 				forceLoad: true,
 				quantity: this.form.quantity,

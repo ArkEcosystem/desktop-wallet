@@ -152,6 +152,7 @@ import { InputAddress, InputPassword, InputSwitch, InputText } from "@/component
 import { MenuStep, MenuStepItem } from "@/components/Menu";
 import { ModalLoader } from "@/components/Modal";
 import { PassphraseInput } from "@/components/Passphrase";
+import { StoreBinding } from "@/enums";
 import Wallet from "@/models/wallet";
 import WalletService from "@/services/wallet";
 
@@ -251,7 +252,7 @@ export default {
 					//
 				}
 
-				const { address } = await this.$store.dispatch("wallet/create", this.wallet);
+				const { address } = await this.$store.dispatch(StoreBinding.WalletCreate, this.wallet);
 				this.$router.push({ name: "wallet-show", params: { address } });
 			} catch (error) {
 				this.$error(`${this.$t("PAGES.WALLET_IMPORT.FAILED")}: ${error.message}`);

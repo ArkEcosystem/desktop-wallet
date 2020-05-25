@@ -77,6 +77,7 @@ import { ContactRenameModal } from "@/components/Contact";
 import { ModalQrCode } from "@/components/Modal";
 import SvgIcon from "@/components/SvgIcon";
 import { TransactionModal } from "@/components/Transaction";
+import { AppEvent } from "@/enums";
 
 export default {
 	name: "WalletHeadingPrimaryActions",
@@ -121,7 +122,7 @@ export default {
 
 		async refreshWallet() {
 			this.isRefreshing = true;
-			await this.$eventBus.emit("wallet:reload");
+			await this.$eventBus.emit(AppEvent.WalletReload);
 			this.isRefreshing = false;
 		},
 
