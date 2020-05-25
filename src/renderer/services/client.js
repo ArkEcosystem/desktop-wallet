@@ -343,11 +343,16 @@ export default class ClientService {
     let transactions = []
     let hadFailure = false
 
-    for (const addressChunk of chunk(addresses, 20)) {
+    const promises = []
+    for (const address of addresses) {
+      promises.push(
+        this.client.api('wallets').transactions(address)
+      )
+    }
+
+    for (const response of await Promise.all(promises)) {
       try {
-        const { body } = await this.client.api('transactions').search({
-          addresses: addressChunk
-        })
+        const { body } = response
         transactions.push(...body.data)
       } catch (error) {
         logger.error(error)
