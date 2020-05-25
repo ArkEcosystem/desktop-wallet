@@ -350,12 +350,10 @@ export default class ClientService {
       )
     }
 
-    for (const response of await Promise.all(promises)) {
-      try {
-        const { body } = response
-        transactions.push(...body.data)
-      } catch (error) {
-        logger.error(error)
+    for (const promise of await Promise.allSettled(promises)) {
+      if (promise.status === 'fulfilled') {
+        transactions.push(...promise.value.body.data)
+      } else {
         hadFailure = true
       }
     }
