@@ -637,9 +637,9 @@ describe('Services > Client', () => {
       searchTransactionsEndpoint = jest.fn(() => ({ body: { data: transactions } }))
 
       const resource = resource => {
-        if (resource === 'transactions') {
+        if (resource === 'wallets') {
           return {
-            search: searchTransactionsEndpoint
+            transactions: searchTransactionsEndpoint
           }
         }
       }
@@ -655,19 +655,10 @@ describe('Services > Client', () => {
 
       const fetchedWallets = await client.fetchTransactionsForWallets(walletAddresses)
 
-      expect(client.client.api).toHaveBeenNthCalledWith(1, 'transactions')
-      expect(searchTransactionsEndpoint).toHaveBeenNthCalledWith(1, { addresses: walletAddresses })
+      expect(client.client.api).toHaveBeenNthCalledWith(2, 'wallets')
+      expect(searchTransactionsEndpoint).toHaveBeenNthCalledWith(1, walletAddresses[0])
+      expect(searchTransactionsEndpoint).toHaveBeenNthCalledWith(2, walletAddresses[1])
       expect(fetchedWallets).toEqual(walletTransactions)
-    })
-
-    it('should log error if api fails', async () => {
-      const spy = jest.spyOn(logger, 'error').mockImplementation()
-      jest.spyOn(client, 'fetchWalletTransactions').mockReturnValue({})
-
-      await client.fetchTransactionsForWallets(['address-1'], null)
-      expect(spy).toHaveBeenCalledTimes(1)
-
-      spy.mockRestore()
     })
 
     it('should fall back to fetchWalletTransactions if search endpoint fails', async () => {
