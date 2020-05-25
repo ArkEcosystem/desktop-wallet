@@ -1,8 +1,8 @@
 <template>
 	<div class="WalletTransactions">
-		<div v-if="newTransactionsNotice" class="WalletTransactions__notice bg-theme-feature flex flex-row">
+		<div v-if="newTransactionsNotice" class="flex flex-row WalletTransactions__notice bg-theme-feature">
 			<div
-				class="mb-2 py-4 px-6 rounded-l text-theme-voting-banner-text bg-theme-voting-banner-background w-full text-center"
+				class="w-full px-6 py-4 mb-2 text-center rounded-l text-theme-voting-banner-text bg-theme-voting-banner-background"
 			>
 				{{ newTransactionsNotice }}
 			</div>
@@ -26,6 +26,8 @@
 </template>
 
 <script>
+import { StoreBinding } from "@/enums";
+
 export default {
 	props: {
 		transactionType: {
@@ -84,9 +86,9 @@ export default {
 			},
 
 			set(count) {
-				this.$store.dispatch("session/setTransactionTableRowCount", count);
+				this.$store.dispatch(StoreBinding.SessionSetTransactionTableRowCount, count);
 
-				this.$store.dispatch("profile/update", {
+				this.$store.dispatch(StoreBinding.ProfileUpdate, {
 					...this.session_profile,
 					transactionTableRowCount: count,
 				});

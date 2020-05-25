@@ -1,6 +1,7 @@
 import { shallowMount } from "@vue/test-utils";
 
 import { ProfileRemovalConfirmation } from "@/components/Profile";
+import { StoreBinding } from "@/enums";
 
 import useI18nGlobally from "../../__utils__/i18n";
 
@@ -52,13 +53,13 @@ describe("ProfileRemovalConfirmation", () => {
 			it("should set other profile before removal", () => {
 				wrapper.vm.removeProfile();
 
-				expect($store.dispatch.mock.calls[0]).toEqual(["session/setProfileId", profile2.id]);
+				expect($store.dispatch.mock.calls[0]).toEqual([StoreBinding.SessionSetProfileId, profile2.id]);
 			});
 
 			it("should delete the profile", () => {
 				wrapper.vm.removeProfile();
 
-				expect($store.dispatch.mock.calls[1]).toEqual(["profile/delete", profile]);
+				expect($store.dispatch.mock.calls[1]).toEqual([StoreBinding.ProfileDelete, profile]);
 			});
 
 			it("should emit the `removed` event", () => {
@@ -78,13 +79,13 @@ describe("ProfileRemovalConfirmation", () => {
 			it("should reset the session before removal", () => {
 				wrapper.vm.removeProfile();
 
-				expect($store.dispatch.mock.calls[0]).toEqual(["session/reset"]);
+				expect($store.dispatch.mock.calls[0]).toEqual([StoreBinding.SessionReset]);
 			});
 
 			it("should delete the profile", () => {
 				wrapper.vm.removeProfile();
 
-				expect($store.dispatch.mock.calls[1]).toEqual(["profile/delete", profile]);
+				expect($store.dispatch.mock.calls[1]).toEqual([StoreBinding.ProfileDelete, profile]);
 			});
 
 			it("should redirect to the profile creation page", () => {

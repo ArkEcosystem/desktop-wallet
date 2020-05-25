@@ -332,6 +332,7 @@ import { PluginBlacklistDisclaimerModal } from "@/components/PluginManager";
 import { ProfileAdvancedModeConfirmation, ProfileLeavingConfirmation } from "@/components/Profile";
 import { SelectionAvatar, SelectionBackground, SelectionTheme } from "@/components/Selection";
 import SvgIcon from "@/components/SvgIcon";
+import { StoreBinding } from "@/enums";
 import Profile from "@/models/profile";
 import { isEmpty } from "@/utils";
 
@@ -596,7 +597,7 @@ export default {
 			if (hasToSave) {
 				await this.updateProfile();
 			} else {
-				this.$store.dispatch("session/load", this.session_profile.id);
+				this.$store.dispatch(StoreBinding.SessionLoad, this.session_profile.id);
 			}
 
 			this.routeLeaveCallback();
@@ -620,13 +621,13 @@ export default {
 			if (hasNameError) {
 				this.modified.name = this.profile.name;
 			}
-			await this.$store.dispatch("profile/update", {
+			await this.$store.dispatch(StoreBinding.ProfileUpdate, {
 				...this.profile,
 				...this.modified,
 			});
 
 			if (this.isCurrentProfile && this.profile.priceApi !== this.modified.priceApi) {
-				this.$store.dispatch("market/refreshTicker");
+				this.$store.dispatch(StoreBinding.MarketRefreshTicker);
 			}
 
 			if (hasNameError) {
@@ -752,7 +753,7 @@ export default {
 
 		async acceptBlacklistDisclaimer(accepted) {
 			if (accepted) {
-				this.$store.dispatch("app/setHasAcceptedBlacklistDisclaimer", accepted);
+				this.$store.dispatch(StoreBinding.AppSetHasAcceptedBlacklistDisclaimer, accepted);
 			} else {
 				this.$refs.blacklist.toggle();
 			}

@@ -1,3 +1,4 @@
+import { StoreBinding } from "@/enums";
 import store from "@/store";
 
 describe("WalletModule", () => {
@@ -225,21 +226,21 @@ describe("WalletModule", () => {
 
 	describe("Signed Messages", () => {
 		it("should add a signed message", () => {
-			store.dispatch("wallet/addSignedMessage", messages[0]);
+			store.dispatch(StoreBinding.WalletAddSignedMessage, messages[0]);
 			expect(store.getters["wallet/signedMessages"]()).toIncludeSameMembers([messages[0]]);
 		});
 
 		it("should delete a signed message", () => {
-			store.dispatch("wallet/addSignedMessage", messages[0]);
-			store.dispatch("wallet/addSignedMessage", messages[1]);
-			store.dispatch("wallet/deleteSignedMessage", messages[0]);
+			store.dispatch(StoreBinding.WalletAddSignedMessage, messages[0]);
+			store.dispatch(StoreBinding.WalletAddSignedMessage, messages[1]);
+			store.dispatch(StoreBinding.WalletDeleteSignedMessage, messages[0]);
 			expect(store.getters["wallet/signedMessages"]()).toEqual([messages[1]]);
 		});
 	});
 
 	describe("actions", () => {
 		it("should fail to create a new wallet", () => {
-			expect(() => store.dispatch("wallet/create", { id: "test" })).toThrow();
+			expect(() => store.dispatch(StoreBinding.WalletCreate, { id: "test" })).toThrow();
 		});
 	});
 });

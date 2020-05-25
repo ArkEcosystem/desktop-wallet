@@ -1,7 +1,7 @@
 <template>
 	<div class="PluginManager">
-		<div class="PluginManager__heading px-10 py-6 mb-3">
-			<div class="flex flex-row w-full items-center">
+		<div class="px-10 py-6 mb-3 PluginManager__heading">
+			<div class="flex flex-row items-center w-full">
 				<h2 class="pr-8 border-r border-theme-line-separator">
 					{{ $t("PAGES.PLUGIN_MANAGER.HEADER") }}
 				</h2>
@@ -23,7 +23,7 @@
 				backgroundColor: colors.background,
 			}"
 		>
-			<div class="w-full lg:w-3/5 flex flex-col">
+			<div class="flex flex-col w-full lg:w-3/5">
 				<h1 :style="{ color: colors.title }">
 					{{ $t("PAGES.PLUGIN_MANAGER.BANNER.TITLE") }}
 				</h1>
@@ -94,7 +94,7 @@
 					<i18n
 						v-if="query"
 						tag="span"
-						class="text-center mt-4"
+						class="mt-4 text-center"
 						path="PAGES.PLUGIN_MANAGER.NO_SEARCH_RESULTS"
 					>
 						<span slot="query" class="inline-block font-bold">
@@ -102,7 +102,7 @@
 						</span>
 					</i18n>
 
-					<i18n v-else tag="span" class="text-center mt-4" path="PAGES.PLUGIN_MANAGER.NO_RESULTS">
+					<i18n v-else tag="span" class="mt-4 text-center" path="PAGES.PLUGIN_MANAGER.NO_RESULTS">
 						<span v-if="activeFilter !== 'all'" slot="filter">
 							{{ $t(`PAGES.PLUGIN_MANAGER.FILTERS.${activeFilter.toUpperCase()}`) }}
 						</span>
@@ -182,6 +182,7 @@ import {
 	PluginManagerButtonInstallSource,
 	PluginManagerButtonMenu,
 } from "@/components/PluginManager/PluginManagerButtons";
+import { AppEvent, StoreBinding } from "@/enums";
 
 export default {
 	name: "PluginManager",
@@ -318,9 +319,9 @@ export default {
 				return this.$store.getters["session/pluginManagerLayout"];
 			},
 			set(layout) {
-				this.$store.dispatch("session/setPluginManagerLayout", layout);
+				this.$store.dispatch(StoreBinding.SessionSetPluginManagerLayout, layout);
 
-				this.$store.dispatch("profile/update", {
+				this.$store.dispatch(StoreBinding.ProfileUpdate, {
 					...this.session_profile,
 					pluginManagerLayout: layout,
 				});
@@ -332,9 +333,9 @@ export default {
 				return this.$store.getters["session/pluginMenuOpen"];
 			},
 			set(open) {
-				this.$store.dispatch("session/setPluginMenuOpen", open);
+				this.$store.dispatch(StoreBinding.SessionSetPluginMenuOpen, open);
 
-				this.$store.dispatch("profile/update", {
+				this.$store.dispatch(StoreBinding.ProfileUpdate, {
 					...this.session_profile,
 					pluginMenuOpen: open,
 				});
@@ -355,9 +356,9 @@ export default {
 				return this.$store.getters["session/pluginSortParams"];
 			},
 			set(sortParams) {
-				this.$store.dispatch("session/setPluginSortParams", sortParams);
+				this.$store.dispatch(StoreBinding.SessionSetPluginSortParams, sortParams);
 
-				this.$store.dispatch("profile/update", {
+				this.$store.dispatch(StoreBinding.ProfileUpdate, {
 					...this.session_profile,
 					pluginSortParams: sortParams,
 				});
@@ -384,13 +385,13 @@ export default {
 	},
 
 	mounted() {
-		ipcRenderer.on("plugin-manager:plugin-installed", this.onPluginInstalled);
-		ipcRenderer.on("plugin-manager:error", this.onError);
+		ipcRenderer.on(AppEvent.PluginManagerPluginInstalled, this.onPluginInstalled);
+		ipcRenderer.on(AppEvent.PluginManagerError, this.onError);
 	},
 
 	beforeDestroy() {
-		ipcRenderer.removeListener("plugin-manager:plugin-installed", this.onPluginInstalled);
-		ipcRenderer.removeListener("plugin-manager:error", this.onError);
+		ipcRenderer.removeListener(AppEvent.PluginManagerPluginInstalled, this.onPluginInstalled);
+		ipcRenderer.removeListener(AppEvent.PluginManagerError, this.onError);
 	},
 
 	methods: {
@@ -422,7 +423,7 @@ export default {
 				}
 			}
 
-			this.$store.dispatch("plugin/setBlacklisted", {
+			this.$store.dispatch(StoreBinding.PluginSetBlacklisted, {
 				scope: "local",
 				plugins: uniq([...this.$store.getters["plugin/blacklisted"].local, this.selectedPlugin.id]),
 			});
@@ -627,7 +628,7 @@ export default {
 
 		async updateStatus({ enabled, pluginId, profileId = null }) {
 			try {
-				await this.$store.dispatch("plugin/setEnabled", {
+				await this.$store.dispatch(StoreBinding.PluginSetEnabled, {
 					enabled,
 					pluginId,
 					profileId,

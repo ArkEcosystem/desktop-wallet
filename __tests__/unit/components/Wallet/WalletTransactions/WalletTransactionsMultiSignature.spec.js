@@ -2,6 +2,7 @@ import { createLocalVue, mount } from "@vue/test-utils";
 
 import { WalletTransactionsMultiSignature } from "@/components/Wallet/WalletTransactions";
 import WalletTransactionsMixin from "@/components/Wallet/WalletTransactions/mixin";
+import { AppEvent } from "@/enums";
 import MultiSignatureClient from "@/services/client-multisig";
 import WalletService from "@/services/wallet";
 
@@ -119,8 +120,8 @@ describe("WalletTransactionsMultiSignature", () => {
 			createWrapper();
 
 			expect(eventOnMock).toHaveBeenCalledTimes(2);
-			expect(eventOnMock).toHaveBeenCalledWith("wallet:reload", wrapper.vm.loadTransactions);
-			expect(eventOnMock).toHaveBeenCalledWith("wallet:reload:multi-signature", wrapper.vm.loadTransactions);
+			expect(eventOnMock).toHaveBeenCalledWith(AppEvent.WalletReload, wrapper.vm.loadTransactions);
+			expect(eventOnMock).toHaveBeenCalledWith(AppEvent.WalletReloadMultiSignature, wrapper.vm.loadTransactions);
 
 			spy.mockRestore();
 		});
@@ -132,8 +133,8 @@ describe("WalletTransactionsMultiSignature", () => {
 			wrapper.destroy();
 
 			expect(eventOffMock).toHaveBeenCalledTimes(2);
-			expect(eventOffMock).toHaveBeenCalledWith("wallet:reload", wrapper.vm.loadTransactions);
-			expect(eventOffMock).toHaveBeenCalledWith("wallet:reload:multi-signature", wrapper.vm.loadTransactions);
+			expect(eventOffMock).toHaveBeenCalledWith(AppEvent.WalletReload, wrapper.vm.loadTransactions);
+			expect(eventOffMock).toHaveBeenCalledWith(AppEvent.WalletReloadMultiSignature, wrapper.vm.loadTransactions);
 		});
 	});
 

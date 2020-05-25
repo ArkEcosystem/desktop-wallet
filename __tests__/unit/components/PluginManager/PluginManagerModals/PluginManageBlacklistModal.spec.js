@@ -1,6 +1,7 @@
 import { mount } from "@vue/test-utils";
 
 import { PluginManageBlacklistModal } from "@/components/PluginManager/PluginManagerModals";
+import { StoreBinding } from "@/enums";
 import store from "@/store";
 
 import useI18nGlobally from "../../../__utils__/i18n";
@@ -23,7 +24,7 @@ beforeEach(() => {
 		},
 	});
 
-	store.dispatch("plugin/setBlacklisted", {
+	store.dispatch(StoreBinding.PluginSetBlacklisted, {
 		scope: "local",
 		plugins,
 	});

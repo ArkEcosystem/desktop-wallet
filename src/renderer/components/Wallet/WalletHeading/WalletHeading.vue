@@ -1,7 +1,7 @@
 <template>
 	<div
 		:class="justifyClass"
-		class="WalletHeading flex px-10 py-8 w-full bg-theme-heading-background rounded-t-lg lg:rounded-tr-none h-40 overflow-hidden"
+		class="flex w-full h-40 px-10 py-8 overflow-hidden rounded-t-lg WalletHeading bg-theme-heading-background lg:rounded-tr-none"
 	>
 		<WalletHeadingInfo v-if="!secondaryButtonsVisible" ref="heading" />
 		<WalletHeadingActions />
@@ -10,6 +10,8 @@
 
 <script>
 import { mapGetters } from "vuex";
+
+import { AppEvent, StoreBinding } from "@/enums";
 
 import WalletHeadingActions from "./WalletHeadingActions";
 import WalletHeadingInfo from "./WalletHeadingInfo";
@@ -47,11 +49,11 @@ export default {
 	},
 
 	async created() {
-		this.$eventBus.on("ledger:disconnected", this.refreshWallet);
+		this.$eventBus.on(AppEvent.LedgerDisconnected, this.refreshWallet);
 	},
 
 	beforeDestroy() {
-		this.$eventBus.off("ledger:disconnected", this.refreshWallet);
+		this.$eventBus.off(AppEvent.LedgerDisconnected, this.refreshWallet);
 	},
 
 	mounted() {
@@ -61,7 +63,7 @@ export default {
 	methods: {
 		resetHeading() {
 			this.activeWalletAddress = this.currentWallet.address;
-			this.$store.dispatch("wallet/setSecondaryButtonsVisible", false);
+			this.$store.dispatch(StoreBinding.WalletSetSecondaryButtonsVisible, false);
 			this.refreshWallet();
 		},
 

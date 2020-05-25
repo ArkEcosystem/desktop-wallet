@@ -41,6 +41,7 @@ import { TRANSACTION_GROUPS, TRANSACTION_TYPES } from "@config";
 import { camelCase } from "lodash";
 
 import { ModalLoader, ModalWindow } from "@/components/Modal";
+import { AppEvent, StoreBinding } from "@/enums";
 import MultiSignature from "@/services/client-multisig";
 import TransactionService from "@/services/transaction";
 import WalletService from "@/services/wallet";
@@ -163,7 +164,7 @@ export default {
 				TransactionService.isBridgechainUpdate(this.transaction) ||
 				TransactionService.isBridgechainResignation(this.transaction)
 			) {
-				this.$eventBus.emit("wallet:reload:business-bridgechains");
+				this.$eventBus.emit(AppEvent.WalletReloadBusinessBridgechains);
 			}
 		},
 
@@ -181,7 +182,7 @@ export default {
 				this.$error(this.$t(`TRANSACTION.ERROR.${this.transactionKey}`));
 			}
 
-			this.$eventBus.emit("wallet:reload:multi-signature");
+			this.$eventBus.emit(AppEvent.WalletReloadMultiSignature);
 
 			this.showBroadcastingTransactions = false;
 		},
@@ -226,11 +227,11 @@ export default {
 				}
 
 				if (this.walletOverride && this.session_network.id !== this.walletNetwork.id) {
-					const peer = await this.$store.dispatch("peer/findBest", {
+					const peer = await this.$store.dispatch(StoreBinding.PeerFindBest, {
 						refresh: true,
 						network: this.walletNetwork,
 					});
-					const apiClient = await this.$store.dispatch("peer/clientServiceFromPeer", peer);
+					const apiClient = await this.$store.dispatch(StoreBinding.PeerClientServiceFromPeer, peer);
 					responseArray = await apiClient.broadcastTransaction(this.transaction, shouldBroadcast);
 				} else {
 					responseArray = await this.$client.broadcastTransaction(this.transaction, shouldBroadcast);
@@ -356,7 +357,7 @@ export default {
 				timestamp = epoch.getTime() + transaction.timestamp * 1000;
 			}
 
-			this.$store.dispatch("transaction/create", {
+			this.$store.dispatch(StoreBinding.TransactionCreate, {
 				id,
 				type,
 				typeGroup: typeGroup || 1,
@@ -374,9 +375,9 @@ export default {
 		},
 
 		updateLastFeeByType({ fee, type, typeGroup }) {
-			this.$store.dispatch("session/setLastFeeByType", { fee, type, typeGroup });
+			this.$store.dispatch(StoreBinding.SessionSetLastFeeByType, { fee, type, typeGroup });
 
-			this.$store.dispatch("profile/update", {
+			this.$store.dispatch(StoreBinding.ProfileUpdate, {
 				...this.session_profile,
 				lastFees: {
 					...this.session_profile.lastFees,

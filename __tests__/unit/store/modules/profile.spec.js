@@ -1,5 +1,6 @@
 import { Utils } from "@arkecosystem/platform-sdk";
 
+import { StoreBinding } from "@/enums";
 import store from "@/store";
 
 describe("ProfileModule", () => {
@@ -8,7 +9,7 @@ describe("ProfileModule", () => {
 	});
 
 	it("should fail to create a new profile", () => {
-		expect(() => store.dispatch("profile/create", { id: "test" })).toThrow();
+		expect(() => store.dispatch(StoreBinding.ProfileCreate, { id: "test" })).toThrow();
 	});
 
 	describe("getters > balance", () => {
@@ -132,19 +133,19 @@ describe("ProfileModule", () => {
 
 		it("should delete the profile", async () => {
 			expect(store.getters["profile/all"]).toEqual([profile]);
-			await store.dispatch("profile/delete", { id: profileId });
+			await store.dispatch(StoreBinding.ProfileDelete, { id: profileId });
 			expect(store.getters["profile/all"]).toBeEmpty();
 		});
 
 		it("should delete the wallets of the profile", async () => {
 			expect(store.getters["wallet/byProfileId"](profileId)).toIncludeSameMembers(wallets);
-			await store.dispatch("profile/delete", { id: profileId });
+			await store.dispatch(StoreBinding.ProfileDelete, { id: profileId });
 			expect(store.getters["wallet/byProfileId"](profileId)).toBeEmpty();
 		});
 
 		it("should delete the transactions of the profile", async () => {
 			expect(store.getters["transaction/byProfileId"](profileId)).toIncludeSameMembers(transactions);
-			await store.dispatch("profile/delete", { id: profileId });
+			await store.dispatch(StoreBinding.ProfileDelete, { id: profileId });
 			expect(store.getters["transaction/byProfileId"](profileId)).toBeEmpty();
 		});
 	});

@@ -1,5 +1,5 @@
 <template>
-	<main class="WalletDetails flex flex-col">
+	<main class="flex flex-col WalletDetails">
 		<WalletHeading />
 
 		<MenuTab
@@ -9,9 +9,9 @@
 			class="flex-1 overflow-y-auto"
 		>
 			<MenuTabItem key="BackItem" :label="$t('COMMON.BACK')" :on-click="historyBack">
-				<div slot="header" class="WalletDetails__back-button flex items-center">
+				<div slot="header" class="flex items-center WalletDetails__back-button">
 					<SvgIcon name="send" view-box="0 0 8 8" />
-					<span class="text-bold ml-2 text-base">
+					<span class="ml-2 text-base text-bold">
 						{{ $t("COMMON.BACK") }}
 					</span>
 				</div>
@@ -27,14 +27,14 @@
 		</MenuTab>
 		<div
 			v-if="isDelegatesTab && isOwned"
-			class="bg-theme-feature px-5 flex flex-row rounded-b-lg lg:rounded-br-none"
+			class="flex flex-row px-5 rounded-b-lg bg-theme-feature lg:rounded-br-none"
 		>
-			<div class="WalletDetails__button rounded-l" @click="openSelectDelegate">
+			<div class="rounded-l WalletDetails__button" @click="openSelectDelegate">
 				<SvgIcon name="search" view-box="0 0 17 16" class="mr-2" />
 				{{ $t("WALLET_DELEGATES.SEARCH_DELEGATE") }}
 			</div>
 			<div
-				class="mt-4 mb-4 py-4 px-6 text-theme-voting-banner-text bg-theme-voting-banner-background w-full flex"
+				class="flex w-full px-6 py-4 mt-4 mb-4 text-theme-voting-banner-text bg-theme-voting-banner-background"
 				:class="{ 'rounded-r': isOwned && !votedDelegate }"
 			>
 				<div v-if="!isAwaitingConfirmation && isLoadingVote" class="flex">
@@ -61,7 +61,7 @@
 						:class="{
 							'border-r border-theme-line-separator': votedDelegate.rank,
 						}"
-						class="font-semibold pr-6"
+						class="pr-6 font-semibold"
 						:path="isOwned ? 'WALLET_DELEGATES.VOTED_FOR' : 'WALLET_DELEGATES.WALLET_VOTED_FOR'"
 					>
 						<strong place="delegate">
@@ -69,7 +69,7 @@
 						</strong>
 					</i18n>
 					<template v-if="votedDelegate.rank">
-						<i18n tag="span" class="font-semibold px-6" path="WALLET_DELEGATES.RANK_BANNER">
+						<i18n tag="span" class="px-6 font-semibold" path="WALLET_DELEGATES.RANK_BANNER">
 							<strong place="rank">
 								{{ votedDelegate.rank }}
 							</strong>
@@ -84,7 +84,7 @@
 			</div>
 			<div
 				v-if="votedDelegate && !isAwaitingConfirmation && !isLoadingVote"
-				class="WalletDetails__button rounded-r"
+				class="rounded-r WalletDetails__button"
 				@click="openUnvote"
 			>
 				{{ $t("WALLET_DELEGATES.UNVOTE") }}
@@ -120,6 +120,7 @@ import { ButtonGeneric } from "@/components/Button";
 import { MenuTab, MenuTabItem } from "@/components/Menu";
 import SvgIcon from "@/components/SvgIcon";
 import { TransactionModal } from "@/components/Transaction";
+import { AppEvent, StoreBinding } from "@/enums";
 import WalletService from "@/services/wallet";
 
 import {
@@ -287,9 +288,9 @@ export default {
 				return this.$store.getters["session/unconfirmedVotes"];
 			},
 			set(votes) {
-				this.$store.dispatch("session/setUnconfirmedVotes", votes);
+				this.$store.dispatch(StoreBinding.SessionSetUnconfirmedVotes, votes);
 
-				this.$store.dispatch("profile/update", {
+				this.$store.dispatch(StoreBinding.ProfileUpdate, {
 					...this.session_profile,
 					unconfirmedVotes: votes,
 				});
@@ -349,11 +350,11 @@ export default {
 	async created() {
 		await this.$synchronizer.call("wallets");
 		await this.fetchWalletVote();
-		this.$eventBus.on("wallet:reload", this.fetchWalletVote);
+		this.$eventBus.on(AppEvent.WalletReload, this.fetchWalletVote);
 	},
 
 	beforeDestroy() {
-		this.$eventBus.off("wallet:reload", this.fetchWalletVote);
+		this.$eventBus.off(AppEvent.WalletReload, this.fetchWalletVote);
 	},
 
 	mounted() {

@@ -12,7 +12,7 @@
 				:src="assets_loadImage('arrows/arrow-confirmation.svg')"
 				class="ContactRemovalConfirmation__container__arrow"
 			/>
-			<Identicon :value="contact.address" :size="150" class="identicon cursor-pointer" />
+			<Identicon :value="contact.address" :size="150" class="cursor-pointer identicon" />
 			<img
 				:title="contact.name"
 				:src="assets_loadImage('arrows/arrow-confirmation.svg')"
@@ -25,6 +25,7 @@
 <script>
 import { ModalConfirmation } from "@/components/Modal";
 import Identicon from "@/components/utils/Identicon";
+import { StoreBinding } from "@/enums";
 
 export default {
 	name: "ContactRemovalConfirmation",
@@ -43,7 +44,7 @@ export default {
 
 	methods: {
 		removeContact() {
-			this.$store.dispatch("wallet/delete", this.contact);
+			this.$store.dispatch(StoreBinding.WalletDelete, this.contact);
 			this.emitRemoved();
 		},
 

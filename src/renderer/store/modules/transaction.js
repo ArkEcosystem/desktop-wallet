@@ -3,6 +3,7 @@ import { APP, TRANSACTION_GROUPS, TRANSACTION_TYPES } from "@config";
 import { unionBy } from "lodash";
 import Vue from "vue";
 
+import { StoreBinding } from "@/enums";
 import TransactionModel from "@/models/transaction";
 import eventBus from "@/plugins/event-bus";
 import TransactionService from "@/services/transaction";
@@ -220,12 +221,12 @@ export default {
 				return !ids.includes(vote.id);
 			});
 
-			dispatch("session/setUnconfirmedVotes", pendingVotes, {
+			dispatch(StoreBinding.SessionSetUnconfirmedVotes, pendingVotes, {
 				root: true,
 			});
 
 			dispatch(
-				"profile/update",
+				StoreBinding.ProfileUpdate,
 				{
 					...profile,
 					unconfirmedVotes: pendingVotes,
@@ -252,11 +253,11 @@ export default {
 				return !DateTime.make().isAfter(DateTime.make(vote.timestamp).addHours(6));
 			});
 
-			await dispatch("session/setUnconfirmedVotes", pendingVotes, {
+			await dispatch(StoreBinding.SessionSetUnconfirmedVotes, pendingVotes, {
 				root: true,
 			});
 			await dispatch(
-				"profile/update",
+				StoreBinding.ProfileUpdate,
 				{
 					...profile,
 					unconfirmedVotes: pendingVotes,

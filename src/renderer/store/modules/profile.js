@@ -4,6 +4,7 @@ import crypto from "crypto";
 import { uniqBy } from "lodash";
 import Vue from "vue";
 
+import { StoreBinding } from "@/enums";
 import ProfileModel from "@/models/profile";
 
 import BaseModule from "../base";
@@ -114,7 +115,7 @@ export default new BaseModule(ProfileModel, {
 			const transactionIds = rootGetters["transaction/byProfileId"](id).map((transaction) => transaction.id);
 			for (const transactionId of transactionIds) {
 				await dispatch(
-					"transaction/delete",
+					StoreBinding.TransactionDelete,
 					{
 						id: transactionId,
 						profileId: id,
@@ -129,7 +130,7 @@ export default new BaseModule(ProfileModel, {
 			const walletIds = rootGetters["wallet/byProfileId"](id).map((wallet) => wallet.id);
 			for (const walletId of walletIds) {
 				await dispatch(
-					"wallet/delete",
+					StoreBinding.WalletDelete,
 					{
 						id: walletId,
 						profileId: id,

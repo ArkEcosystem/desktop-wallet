@@ -74,6 +74,7 @@
 import { mapValues, sortBy, uniqBy } from "lodash";
 
 import { ProfileAvatar, ProfileRemovalConfirmation } from "@/components/Profile";
+import { StoreBinding } from "@/enums";
 
 export default {
 	name: "ProfileAll",
@@ -179,7 +180,7 @@ export default {
 		},
 
 		selectProfile(profileId) {
-			this.$store.dispatch("session/setProfileId", profileId);
+			this.$store.dispatch(StoreBinding.SessionSetProfileId, profileId);
 		},
 	},
 };

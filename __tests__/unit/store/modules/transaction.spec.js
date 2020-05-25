@@ -1,9 +1,9 @@
 import { DateTime } from "@arkecosystem/platform-sdk-intl";
-import dayjs from "dayjs";
 import nock from "nock";
 import Vue from "vue";
 import Vuex from "vuex";
 
+import { StoreBinding } from "@/enums";
 import apiClient, { client as ClientService } from "@/plugins/api-client";
 import store from "@/store";
 
@@ -206,7 +206,7 @@ describe("TransactionModule", () => {
 					},
 				});
 
-			await store.dispatch("transaction/updateStaticFees");
+			await store.dispatch(StoreBinding.TransactionUpdateStaticFees);
 
 			expect(store.getters["transaction/staticFee"](0)).toEqual(1);
 			expect(store.getters["transaction/staticFee"](1)).toEqual(2);
@@ -235,7 +235,7 @@ describe("TransactionModule", () => {
 
 		it("should clear unconfirmed votes after 6h or no timestamp", async () => {
 			expect(store.getters["session/unconfirmedVotes"].length).toBe(3);
-			await store.dispatch("transaction/clearUnconfirmedVotes");
+			await store.dispatch(StoreBinding.TransactionClearUnconfirmedVotes);
 			expect(store.getters["session/unconfirmedVotes"].length).toBe(1);
 			expect(store.getters["session/unconfirmedVotes"][0].id).toBe(2);
 		});

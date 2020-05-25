@@ -3,6 +3,7 @@ import { NETWORKS } from "@config";
 import { cloneDeep } from "lodash";
 import Vue from "vue";
 
+import { AppEvent, StoreBinding } from "@/enums";
 import NetworkModel from "@/models/network";
 import eventBus from "@/plugins/event-bus";
 import Client from "@/services/client";
@@ -155,8 +156,8 @@ export default new BaseModule(NetworkModel, {
 			// Trigger a profile change/reload if updating current network
 			const currentNetwork = rootGetters["session/network"];
 			if (currentNetwork.id === network.id) {
-				await dispatch("session/setProfileId", rootGetters["session/profileId"], { root: true });
-				eventBus.emit("client:changed");
+				await dispatch(StoreBinding.SessionSetProfileId, rootGetters["session/profileId"], { root: true });
+				eventBus.emit(AppEvent.ClientChanged);
 			}
 
 			await dispatch("fetchFees", network);

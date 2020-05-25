@@ -33,8 +33,10 @@
 								class="AppUpdater__authorized__downloading__header__info"
 							>
 								<span class="font-semibold">{{ formattedPercentage }}</span>
-								<span class="ml-2 text-theme-page-text-light truncate">{{ formatter_bytes(progressUpdate.transferred) }} /
-									{{ formatter_bytes(progressUpdate.total) }}</span>
+								<span class="ml-2 text-theme-page-text-light truncate"
+									>{{ formatter_bytes(progressUpdate.transferred) }} /
+									{{ formatter_bytes(progressUpdate.total) }}</span
+								>
 							</div>
 						</div>
 						<div class="AppUpdater__progress-bar">
@@ -85,6 +87,7 @@ import { mapGetters } from "vuex";
 
 import { ModalWindow } from "@/components/Modal";
 import { ProgressBar } from "@/components/ProgressBar";
+import { AppEvent } from "@/enums";
 import releaseService from "@/services/release";
 
 export default {
@@ -150,17 +153,17 @@ export default {
 	},
 
 	mounted() {
-		ipcRenderer.on("updater:download-progress", (_, data) => {
+		ipcRenderer.on(AppEvent.UpdaterDownloadProgress, (_, data) => {
 			this.progressUpdate.timestamp = Date.now();
 			Object.assign(this.progressUpdate, data);
 		});
 
-		ipcRenderer.on("updater:update-downloaded", () => {
+		ipcRenderer.on(AppEvent.UpdaterUpdateDownloaded, () => {
 			Vue.set(this.progressUpdate, "percent", 100);
 			this.isDownloadFinished = true;
 		});
 
-		ipcRenderer.on("updater:error", (error) => {
+		ipcRenderer.on(AppEvent.UpdaterError, (error) => {
 			this.isDownloadFailed = true;
 			this.errorMessage = error instanceof Error ? error.message : undefined;
 		});

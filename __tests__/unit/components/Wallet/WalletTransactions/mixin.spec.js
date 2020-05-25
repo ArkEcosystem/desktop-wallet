@@ -1,6 +1,7 @@
 import { createLocalVue, mount } from "@vue/test-utils";
 
 import { WalletTransactions, WalletTransactionsMultiSignature } from "@/components/Wallet/WalletTransactions";
+import { StoreBinding } from "@/enums";
 
 import installI18n from "../../../__utils__/i18n";
 
@@ -244,8 +245,8 @@ describe.each([
 
 				wrapper.vm.transactionTableRowCount = 50;
 
-				expect(dispatchMock).toHaveBeenCalledWith("session/setTransactionTableRowCount", 50);
-				expect(dispatchMock).toHaveBeenCalledWith("profile/update", {
+				expect(dispatchMock).toHaveBeenCalledWith(StoreBinding.SessionSetTransactionTableRowCount, 50);
+				expect(dispatchMock).toHaveBeenCalledWith(StoreBinding.ProfileUpdate, {
 					id: "profile-1",
 					transactionTableRowCount: 50,
 				});
@@ -358,7 +359,7 @@ describe.each([
 					expect(updateParamsSpy).toHaveBeenCalledTimes(1);
 					expect(updateParamsSpy).toHaveBeenCalledWith({ limit: 20, page: 1 });
 					expect(loadTransactionsSpy).toHaveBeenCalledTimes(1);
-					expect(dispatchMock).toHaveBeenCalledWith("session/setTransactionTableRowCount", 20);
+					expect(dispatchMock).toHaveBeenCalledWith(StoreBinding.SessionSetTransactionTableRowCount, 20);
 				});
 
 				it("should do nothing if invalid page", () => {
@@ -374,7 +375,7 @@ describe.each([
 					expect(wrapper.vm.queryParams.page).toBe(11);
 					expect(updateParamsSpy).not.toHaveBeenCalled();
 					expect(loadTransactionsSpy).not.toHaveBeenCalled();
-					expect(dispatchMock).not.toHaveBeenCalledWith("session/setTransactionTableRowCount", 20);
+					expect(dispatchMock).not.toHaveBeenCalledWith(StoreBinding.SessionSetTransactionTableRowCount, 20);
 				});
 			});
 		}

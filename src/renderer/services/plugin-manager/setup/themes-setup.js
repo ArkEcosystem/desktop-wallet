@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 
+import { StoreBinding } from "@/enums";
 import { isEmpty } from "@/utils";
 
 import { normalizeJson } from "../utils/normalize-json";
@@ -33,7 +34,7 @@ export function create(plugin, pluginObject, sandbox, profileId) {
 			}, {});
 
 			if (!isEmpty(themes)) {
-				await sandbox.app.$store.dispatch("plugin/setThemes", {
+				await sandbox.app.$store.dispatch(StoreBinding.PluginSetThemes, {
 					pluginId: plugin.config.id,
 					themes,
 					profileId,

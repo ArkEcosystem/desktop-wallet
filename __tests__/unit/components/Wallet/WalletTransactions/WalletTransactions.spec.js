@@ -4,6 +4,7 @@ import nock from "nock";
 import * as mergeTableTransactions from "@/components/utils/merge-table-transactions";
 import { WalletTransactions } from "@/components/Wallet/WalletTransactions";
 import WalletTransactionsMixin from "@/components/Wallet/WalletTransactions/mixin";
+import { AppEvent, StoreBinding } from "@/enums";
 import ClientService from "@/services/client";
 
 import installI18n from "../../../__utils__/i18n";
@@ -133,7 +134,7 @@ describe("WalletTransactions", () => {
 			createWrapper();
 
 			expect(eventOnMock).toHaveBeenCalledTimes(1);
-			expect(eventOnMock).toHaveBeenCalledWith("wallet:reload", wrapper.vm.loadTransactions);
+			expect(eventOnMock).toHaveBeenCalledWith(AppEvent.WalletReload, wrapper.vm.loadTransactions);
 
 			spy.mockRestore();
 		});
@@ -157,7 +158,7 @@ describe("WalletTransactions", () => {
 			wrapper.destroy();
 
 			expect(eventOffMock).toHaveBeenCalledTimes(1);
-			expect(eventOffMock).toHaveBeenCalledWith("wallet:reload", wrapper.vm.loadTransactions);
+			expect(eventOffMock).toHaveBeenCalledWith(AppEvent.WalletReload, wrapper.vm.loadTransactions);
 		});
 
 		it('should disable "new transaction" event', () => {
@@ -377,7 +378,7 @@ describe("WalletTransactions", () => {
 				await wrapper.vm.fetchTransactions();
 
 				expect(dispatchMock).toHaveBeenCalledTimes(1);
-				expect(dispatchMock).toHaveBeenCalledWith("transaction/deleteBulk", {
+				expect(dispatchMock).toHaveBeenCalledWith(StoreBinding.TransactionDeleteBulk, {
 					transactions: remoteTransactions,
 					profileId: "profile-1",
 				});

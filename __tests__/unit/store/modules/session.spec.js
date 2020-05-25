@@ -1,8 +1,9 @@
+import { StoreBinding } from "@/enums";
 import store from "@/store";
 
 describe("SessionModule", () => {
 	beforeEach(() => {
-		store.dispatch("session/reset");
+		store.dispatch(StoreBinding.SessionReset);
 	});
 
 	describe("getters > marketChartOptions", () => {
@@ -35,16 +36,16 @@ describe("SessionModule", () => {
 
 	it("actions > should reset session", () => {
 		expect(store.getters["session/theme"]).toEqual("light");
-		store.dispatch("session/setTheme", "dark");
+		store.dispatch(StoreBinding.SessionSetTheme, "dark");
 		expect(store.getters["session/theme"]).toEqual("dark");
-		store.dispatch("session/reset");
+		store.dispatch(StoreBinding.SessionReset);
 		expect(store.getters["session/theme"]).toEqual("light");
 	});
 
 	describe("actions > setMarketChartOptions", () => {
 		it("should set the market chart options", () => {
 			const params = { foo: "bar" };
-			store.dispatch("session/setMarketChartOptions", params);
+			store.dispatch(StoreBinding.SessionSetMarketChartOptions, params);
 			expect(store.getters["session/marketChartOptions"]).toEqual({ foo: "bar" });
 		});
 	});
@@ -52,7 +53,7 @@ describe("SessionModule", () => {
 	describe("actions > setWalletSortParams", () => {
 		it("should set the wallet sort params", () => {
 			const params = { foo: "bar" };
-			store.dispatch("session/setWalletSortParams", params);
+			store.dispatch(StoreBinding.SessionSetWalletSortParams, params);
 			expect(store.getters["session/walletSortParams"]).toEqual({ foo: "bar" });
 		});
 	});
@@ -60,35 +61,35 @@ describe("SessionModule", () => {
 	describe("actions > setContactSortParams", () => {
 		it("should set the contact sort params", () => {
 			const params = { foo: "bar" };
-			store.dispatch("session/setContactSortParams", params);
+			store.dispatch(StoreBinding.SessionSetContactSortParams, params);
 			expect(store.getters["session/contactSortParams"]).toEqual({ foo: "bar" });
 		});
 	});
 
 	describe("actions > setHideWalletButtonText", () => {
 		it("should set the value for hideWalletButtonText", () => {
-			store.dispatch("session/setHideWalletButtonText", true);
+			store.dispatch(StoreBinding.SessionSetHideWalletButtonText, true);
 			expect(store.getters["session/hideWalletButtonText"]).toEqual(true);
 		});
 	});
 
 	describe("actions > setIsAdvancedModeEnabled", () => {
 		it("should set the value for isAdvancedModeEnabled", () => {
-			store.dispatch("session/setIsAdvancedModeEnabled", true);
+			store.dispatch(StoreBinding.SessionSetIsAdvancedModeEnabled, true);
 			expect(store.getters["session/isAdvancedModeEnabled"]).toEqual(true);
 		});
 	});
 
 	describe("actions > setPriceApi", () => {
 		it("should set the value for priceApi", () => {
-			store.dispatch("session/setPriceApi", "coingecko");
+			store.dispatch(StoreBinding.SessionSetPriceApi, "coingecko");
 			expect(store.getters["session/priceApi"]).toEqual("coingecko");
 		});
 	});
 
 	describe("actions > setLastFeeByType", () => {
 		it("should set the value for the last fee by type", () => {
-			store.dispatch("session/setLastFeeByType", {
+			store.dispatch(StoreBinding.SessionSetLastFeeByType, {
 				fee: "1000",
 				type: 0,
 				typeGroup: 1,
@@ -103,7 +104,7 @@ describe("SessionModule", () => {
 
 	describe("actions > setDefaultChosenFee", () => {
 		it("should set the value for defaultChosenFee", () => {
-			store.dispatch("session/setDefaultChosenFee", "LAST");
+			store.dispatch(StoreBinding.SessionSetDefaultChosenFee, "LAST");
 			expect(store.getters["session/defaultChosenFee"]).toEqual("LAST");
 		});
 	});

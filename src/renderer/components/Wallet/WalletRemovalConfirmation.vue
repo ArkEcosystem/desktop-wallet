@@ -29,6 +29,7 @@
 
 <script>
 import { ModalConfirmation } from "@/components/Modal";
+import { StoreBinding } from "@/enums";
 
 import { WalletIdenticon } from "./";
 
@@ -49,7 +50,7 @@ export default {
 
 	methods: {
 		removeWallet() {
-			this.$store.dispatch("wallet/delete", this.wallet);
+			this.$store.dispatch(StoreBinding.WalletDelete, this.wallet);
 			this.emitRemoved();
 		},
 

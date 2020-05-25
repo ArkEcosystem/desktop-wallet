@@ -1,8 +1,9 @@
+import { StoreBinding } from "@/enums";
 import store from "@/store";
 
 describe("app store module", () => {
 	beforeEach(() => {
-		store.dispatch("app/setPinCode", 123456);
+		store.dispatch(StoreBinding.AppSetPinCode, 123456);
 	});
 
 	it("should set pin code", () => {

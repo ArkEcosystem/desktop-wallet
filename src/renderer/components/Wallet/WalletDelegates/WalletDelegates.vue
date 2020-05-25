@@ -2,14 +2,14 @@
 	<div class="WalletDelegates">
 		<div
 			v-if="!walletVote.username && isExplanationDisplayed"
-			class="WalletDelegates__explanation relative rounded-lg mt-2 mb-6 bg-theme-explanation-background text-theme-explanation-text flex flex-row items-center justify-between"
+			class="relative flex flex-row items-center justify-between mt-2 mb-6 rounded-lg WalletDelegates__explanation bg-theme-explanation-background text-theme-explanation-text"
 		>
-			<div class="WalletDelegates__explanation__text flex text-left text-inherit py-4 pl-6">
+			<div class="flex py-4 pl-6 text-left WalletDelegates__explanation__text text-inherit">
 				<span>
 					{{ $t("WALLET_DELEGATES.EXPLANATION", { delegates: activeDelegates }) }}
 					<a
 						:title="$t('WALLET_DELEGATES.BLOG')"
-						class="cursor-pointer inline"
+						class="inline cursor-pointer"
 						@click="electron_openExternal(votingUrl)"
 					>
 						{{ $t("WALLET_DELEGATES.BLOG") }}
@@ -17,7 +17,7 @@
 				</span>
 			</div>
 
-			<div class="WalletDelegates__explanation__close flex py-4 px-6 z-10">
+			<div class="z-10 flex px-6 py-4 WalletDelegates__explanation__close">
 				<ButtonClose class="cursor-pointer select-none" @click="dismissExplanation" />
 			</div>
 		</div>
@@ -66,6 +66,7 @@ import { isEqual } from "lodash";
 
 import { ButtonClose } from "@/components/Button";
 import TableWrapper from "@/components/utils/TableWrapper";
+import { StoreBinding } from "@/enums";
 
 export default {
 	name: "WalletDelegates",
@@ -159,7 +160,7 @@ export default {
 
 	methods: {
 		dismissExplanation() {
-			this.$store.dispatch("app/setVotingExplanation", false);
+			this.$store.dispatch(StoreBinding.AppSetVotingExplanation, false);
 		},
 
 		async fetchDelegates() {

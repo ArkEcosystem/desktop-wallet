@@ -1,6 +1,7 @@
 import { at, isEqual } from "lodash";
 
 import { TransactionTableMultiSignature } from "@/components/Transaction";
+import { AppEvent } from "@/enums";
 import MultiSignature from "@/services/client-multisig";
 import WalletService from "@/services/wallet";
 
@@ -20,13 +21,13 @@ export default {
 
 	created() {
 		this.loadTransactions();
-		this.$eventBus.on("wallet:reload", this.loadTransactions);
-		this.$eventBus.on("wallet:reload:multi-signature", this.loadTransactions);
+		this.$eventBus.on(AppEvent.WalletReload, this.loadTransactions);
+		this.$eventBus.on(AppEvent.WalletReloadMultiSignature, this.loadTransactions);
 	},
 
 	beforeDestroy() {
-		this.$eventBus.off("wallet:reload", this.loadTransactions);
-		this.$eventBus.off("wallet:reload:multi-signature", this.loadTransactions);
+		this.$eventBus.off(AppEvent.WalletReload, this.loadTransactions);
+		this.$eventBus.off(AppEvent.WalletReloadMultiSignature, this.loadTransactions);
 	},
 
 	methods: {

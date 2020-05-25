@@ -2,6 +2,7 @@ import nock from "nock";
 import Vue from "vue";
 import Vuex from "vuex";
 
+import { StoreBinding } from "@/enums";
 import apiClient, { client } from "@/plugins/api-client";
 import store from "@/store";
 
@@ -45,7 +46,7 @@ beforeAll(() => {
 	store.commit("network/SET_ALL", [network1]);
 	store.commit("profile/CREATE", profile1);
 	store.commit("session/SET_PROFILE_ID", profile1.id);
-	store.dispatch("peer/set", peers);
+	store.dispatch(StoreBinding.PeerSet, peers);
 });
 
 beforeEach(() => {
@@ -93,13 +94,13 @@ describe("peer store module", () => {
 					},
 				});
 		}
-		await store.dispatch("peer/setCurrentPeer", goodPeer1);
+		await store.dispatch(StoreBinding.PeerSetCurrentPeer, goodPeer1);
 		expect(store.getters["peer/current"]()).toEqual(goodPeer1);
-		await store.dispatch("peer/setCurrentPeer", goodPeer2);
+		await store.dispatch(StoreBinding.PeerSetCurrentPeer, goodPeer2);
 		expect(store.getters["peer/current"]()).toEqual(goodPeer2);
-		await store.dispatch("peer/setCurrentPeer", goodPeer4);
+		await store.dispatch(StoreBinding.PeerSetCurrentPeer, goodPeer4);
 		expect(store.getters["peer/current"]()).toEqual(goodPeer4);
-		await store.dispatch("peer/setCurrentPeer", goodPeer5);
+		await store.dispatch(StoreBinding.PeerSetCurrentPeer, goodPeer5);
 		expect(store.getters["peer/current"]()).toEqual(goodPeer5);
 	});
 
@@ -113,7 +114,7 @@ describe("peer store module", () => {
 	});
 
 	it("should reset peer list", () => {
-		store.dispatch("peer/set", [goodPeer1, goodPeer2]);
+		store.dispatch(StoreBinding.PeerSet, [goodPeer1, goodPeer2]);
 		const result = stripPorts([goodPeer1, goodPeer2]);
 
 		expect(store.getters["peer/all"]()).toIncludeAllMembers(result);
@@ -155,8 +156,8 @@ describe("peer store module", () => {
 				});
 		}
 
-		await store.dispatch("peer/setCurrentPeer", goodPeer1);
-		const bestPeer = await store.dispatch("peer/connectToBest", { refresh: false });
+		await store.dispatch(StoreBinding.PeerSetCurrentPeer, goodPeer1);
+		const bestPeer = await store.dispatch(StoreBinding.PeerConnectToBest, { refresh: false });
 		expect(bestPeer).toEqual(store.getters["peer/current"]());
 		expect(bestPeer.ip).toBeOneOf(peerResponse.map((peer) => peer.ip));
 		expect(bestPeer.ip).not.toEqual(badPeer1.ip);
@@ -185,8 +186,8 @@ describe("peer store module", () => {
 			});
 		}
 
-		await store.dispatch("peer/setCurrentPeer", goodPeer1);
-		await store.dispatch("peer/refresh");
+		await store.dispatch(StoreBinding.PeerSetCurrentPeer, goodPeer1);
+		await store.dispatch(StoreBinding.PeerRefresh);
 
 		const allPeers = store.getters["peer/all"]();
 		expect(allPeers.length).toEqual(1);
@@ -218,7 +219,7 @@ describe("peer store module", () => {
 				},
 			});
 
-		const updatedPeer = await store.dispatch("peer/updateCurrentPeerStatus", goodV2Peer);
+		const updatedPeer = await store.dispatch(StoreBinding.PeerUpdateCurrentPeerStatus, goodV2Peer);
 
 		expect(updatedPeer.height).toBe(21000);
 		expect(updatedPeer.latency).not.toBe(123);
@@ -253,11 +254,11 @@ describe("peer store module", () => {
 				},
 			});
 
-		await store.dispatch("peer/setCurrentPeer", goodPeer1);
+		await store.dispatch(StoreBinding.PeerSetCurrentPeer, goodPeer1);
 
 		client.host = `http://${goodPeer1.ip}:${goodPeer1.port}`;
 
-		await store.dispatch("peer/updateCurrentPeerStatus");
+		await store.dispatch(StoreBinding.PeerUpdateCurrentPeerStatus);
 		const currentPeer = store.getters["peer/current"]();
 
 		expect(currentPeer.height).toBe(10000);
@@ -281,7 +282,7 @@ describe("peer store module", () => {
 				},
 			});
 
-		const response = await store.dispatch("peer/validatePeer", { ...goodPeer1, timeout: 100 });
+		const response = await store.dispatch(StoreBinding.PeerValidatePeer, { ...goodPeer1, timeout: 100 });
 
 		expect(response).toBeObject();
 		expect(response).toContainEntries([
@@ -306,7 +307,7 @@ describe("peer store module", () => {
 				},
 			});
 
-		const response = await store.dispatch("peer/validatePeer", {
+		const response = await store.dispatch(StoreBinding.PeerValidatePeer, {
 			...goodPeer1,
 			host: `https://${goodPeer1.ip}`,
 			timeout: 100,
@@ -322,7 +323,7 @@ describe("peer store module", () => {
 	it("should fail validating a v2 peer due to bad network url", async () => {
 		nock(`http://${goodPeer1.ip}:${goodPeer1.port}`).get("/api/node/configuration").reply(400);
 
-		const response = await store.dispatch("peer/validatePeer", { ...goodPeer1, timeout: 100 });
+		const response = await store.dispatch(StoreBinding.PeerValidatePeer, { ...goodPeer1, timeout: 100 });
 		expect(response).toEqual(expect.stringMatching(/^Could not connect$/));
 	});
 
@@ -338,7 +339,7 @@ describe("peer store module", () => {
 			.get("/api/node/syncing")
 			.reply(400);
 
-		const response = await store.dispatch("peer/validatePeer", { ...goodPeer1, timeout: 100 });
+		const response = await store.dispatch(StoreBinding.PeerValidatePeer, { ...goodPeer1, timeout: 100 });
 		expect(response).toEqual(expect.stringMatching(/^Status check failed$/));
 	});
 
@@ -353,7 +354,7 @@ describe("peer store module", () => {
 				},
 			});
 
-		const response = await store.dispatch("peer/validatePeer", { ...goodPeer1, timeout: 100 });
+		const response = await store.dispatch(StoreBinding.PeerValidatePeer, { ...goodPeer1, timeout: 100 });
 		expect(response).toEqual(expect.stringMatching(/^Wrong network$/));
 	});
 });

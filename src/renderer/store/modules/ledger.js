@@ -5,6 +5,7 @@ import { keyBy } from "lodash";
 import semver from "semver";
 import Vue from "vue";
 
+import { AppEvent } from "@/enums";
 import i18n from "@/i18n";
 import eventBus from "@/plugins/event-bus";
 import ledgerService from "@/services/ledger-service";
@@ -157,7 +158,7 @@ export default {
 			await dispatch("updateVersion");
 
 			if (!getters.needsUpdate && neededUpdate !== getters.needsUpdate) {
-				eventBus.emit("ledger:connected");
+				eventBus.emit(AppEvent.LedgerConnected);
 			}
 		},
 
@@ -197,7 +198,7 @@ export default {
 			await dispatch("updateVersion");
 
 			if (!getters.needsUpdate) {
-				eventBus.emit("ledger:connected");
+				eventBus.emit(AppEvent.LedgerConnected);
 			}
 
 			await dispatch("reloadWallets", {});
@@ -213,7 +214,7 @@ export default {
 			await commit("STOP_ALL_LOADING_PROCESSES");
 			commit("SET_CONNECTED", false);
 			await ledgerService.disconnect();
-			eventBus.emit("ledger:disconnected");
+			eventBus.emit(AppEvent.LedgerDisconnected);
 			commit("SET_WALLETS", {});
 			dispatch("ensureConnection");
 		},
@@ -299,7 +300,7 @@ export default {
 
 				if (clearFirst) {
 					commit("SET_WALLETS", {});
-					eventBus.emit("ledger:wallets-updated", {});
+					eventBus.emit(AppEvent.LedgerWalletsUpdated, {});
 				}
 
 				commit("SET_LOADING", processId);
@@ -328,7 +329,7 @@ export default {
 						}
 
 						commit("SET_WALLETS", wallets);
-						eventBus.emit("ledger:wallets-updated", wallets);
+						eventBus.emit(AppEvent.LedgerWalletsUpdated, wallets);
 						commit("CLEAR_LOADING_PROCESS", processId);
 						dispatch("cacheWallets");
 
@@ -414,7 +415,7 @@ export default {
 			}
 
 			commit("SET_WALLETS", wallets);
-			eventBus.emit("ledger:wallets-updated", wallets);
+			eventBus.emit(AppEvent.LedgerWalletsUpdated, wallets);
 			commit("CLEAR_LOADING_PROCESS", processId);
 			dispatch("cacheWallets");
 
@@ -426,7 +427,7 @@ export default {
 		 */
 		async updateWallet({ commit, dispatch, getters }, updatedWallet) {
 			commit("SET_WALLET", updatedWallet);
-			eventBus.emit("ledger:wallets-updated", getters.walletsObject);
+			eventBus.emit(AppEvent.LedgerWalletsUpdated, getters.walletsObject);
 			dispatch("cacheWallets");
 		},
 
@@ -438,7 +439,7 @@ export default {
 				...getters.walletsObject,
 				...walletsToUpdate,
 			});
-			eventBus.emit("ledger:wallets-updated", getters.walletsObject);
+			eventBus.emit(AppEvent.LedgerWalletsUpdated, getters.walletsObject);
 			dispatch("cacheWallets");
 		},
 

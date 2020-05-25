@@ -1,5 +1,6 @@
 import config from "@config";
 
+import { StoreBinding } from "@/enums";
 import { Action } from "@/services/synchronizer/wallets";
 
 describe("Services > Synchronizer > Wallets", () => {
@@ -35,9 +36,9 @@ describe("Services > Synchronizer > Wallets", () => {
 					"session/unconfirmedVotes": [],
 				},
 				dispatch: (action, data) => {
-					if (action === "transaction/deleteBulk") {
+					if (action === StoreBinding.TransactionDeleteBulk) {
 						return transactionDeleteBulk(action, data);
-					} else if (action === "transaction/processVotes") {
+					} else if (action === StoreBinding.TransactionProcessVotes) {
 						return transactionProcessVotes(action, data);
 					} else if (action === "transaction/clearExpired") {
 						return [];
@@ -577,7 +578,7 @@ describe("Services > Synchronizer > Wallets", () => {
 			it("should process the votes", async () => {
 				await action.processWalletTransactions(wallet, transactions);
 				expect(action.synchronizer.$store.dispatch).toHaveBeenCalledWith(
-					"transaction/processVotes",
+					StoreBinding.TransactionProcessVotes,
 					transactions,
 				);
 			});
@@ -610,7 +611,7 @@ describe("Services > Synchronizer > Wallets", () => {
 				await action.processUnconfirmedVotes();
 				expect(action.$client.fetchWalletVotes).toHaveBeenNthCalledWith(1, "test");
 				expect(action.$client.fetchWalletVotes).toHaveBeenNthCalledWith(2, "test-2");
-				expect(transactionProcessVotes).toHaveBeenCalledWith("transaction/processVotes", votes);
+				expect(transactionProcessVotes).toHaveBeenCalledWith(StoreBinding.TransactionProcessVotes, votes);
 			});
 		});
 
@@ -649,7 +650,10 @@ describe("Services > Synchronizer > Wallets", () => {
 		it("should update all Ledger wallets at once", async () => {
 			await action.update(ledgerWallets);
 
-			expect(action.synchronizer.$store.dispatch).toHaveBeenCalledWith("ledger/updateWallets", ledgerWallets);
+			expect(action.synchronizer.$store.dispatch).toHaveBeenCalledWith(
+				StoreBinding.LedgerUpdateWallets,
+				ledgerWallets,
+			);
 		});
 
 		it("should log errors", async () => {

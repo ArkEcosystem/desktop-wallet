@@ -26,6 +26,7 @@
 <script>
 import { ModalConfirmation } from "@/components/Modal";
 import { ProfileAvatar } from "@/components/Profile";
+import { StoreBinding } from "@/enums";
 
 export default {
 	name: "ProfileRemovalConfirmation",
@@ -45,19 +46,19 @@ export default {
 	methods: {
 		removeProfile() {
 			const removeCurrentProfile = () => {
-				this.$store.dispatch("profile/delete", this.profile);
+				this.$store.dispatch(StoreBinding.ProfileDelete, this.profile);
 				this.emitRemoved();
 			};
 
 			const profiles = this.$store.getters["profile/all"];
 
 			if (profiles.length <= 1) {
-				this.$store.dispatch("session/reset");
+				this.$store.dispatch(StoreBinding.SessionReset);
 				removeCurrentProfile();
 				this.$router.push({ name: "profile-new" });
 			} else {
 				const nextProfile = profiles.find((profile) => profile.id !== this.profile.id);
-				this.$store.dispatch("session/setProfileId", nextProfile.id);
+				this.$store.dispatch(StoreBinding.SessionSetProfileId, nextProfile.id);
 				removeCurrentProfile();
 			}
 		},

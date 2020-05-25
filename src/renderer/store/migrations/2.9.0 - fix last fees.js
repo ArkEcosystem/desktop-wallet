@@ -1,6 +1,8 @@
 import { TRANSACTION_GROUPS } from "@config";
 import { clone } from "lodash";
 
+import { StoreBinding } from "@/enums";
+
 export default (store) => {
 	store.getters["profile/all"].forEach((profile) => {
 		const lastFees = profile.lastFees;
@@ -18,8 +20,8 @@ export default (store) => {
 			},
 		};
 
-		store.dispatch("profile/update", updatedProfile);
+		store.dispatch(StoreBinding.ProfileUpdate, updatedProfile);
 	});
 
-	store.dispatch("app/setLatestAppliedMigration", "2.9.0");
+	store.dispatch(StoreBinding.AppSetLatestAppliedMigration, "2.9.0");
 };

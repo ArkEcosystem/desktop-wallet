@@ -39,6 +39,7 @@
 import { ButtonSwitch } from "@/components/Button";
 import { MenuOptions, MenuOptionsItem } from "@/components/Menu";
 import ModalAdditionalLedgers from "@/components/Modal/ModalAdditionalLedgers";
+import { StoreBinding } from "@/enums";
 
 export default {
 	name: "AppSidemenuOptionsSettings",
@@ -79,17 +80,17 @@ export default {
 				return this.$store.getters["session/ledgerCache"];
 			},
 			set(enabled) {
-				this.$store.dispatch("session/setLedgerCache", enabled);
+				this.$store.dispatch(StoreBinding.SessionSetLedgerCache, enabled);
 
-				this.$store.dispatch("profile/update", {
+				this.$store.dispatch(StoreBinding.ProfileUpdate, {
 					...this.session_profile,
 					ledgerCache: enabled,
 				});
 
 				if (enabled) {
-					this.$store.dispatch("ledger/cacheWallets");
+					this.$store.dispatch(StoreBinding.LedgerCacheWallets);
 				} else {
-					this.$store.dispatch("ledger/clearWalletCache");
+					this.$store.dispatch(StoreBinding.LedgerClearWalletCache);
 				}
 			},
 		},

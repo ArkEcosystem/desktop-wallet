@@ -1,3 +1,5 @@
+import { StoreBinding } from "@/enums";
+
 export function create(walletApi, app, plugin) {
 	return () => {
 		const getOptions = (global = false) => {
@@ -14,7 +16,7 @@ export function create(walletApi, app, plugin) {
 			},
 
 			set: (key, value, global = false) => {
-				app.$store.dispatch("plugin/setPluginOption", {
+				app.$store.dispatch(StoreBinding.PluginSetPluginOption, {
 					profileId: global ? "global" : app.$store.getters["session/profileId"],
 					pluginId: plugin.config.id,
 					key,
@@ -23,7 +25,7 @@ export function create(walletApi, app, plugin) {
 			},
 
 			clear: (global = false) => {
-				app.$store.dispatch("plugin/deletePluginOptionsForProfile", {
+				app.$store.dispatch(StoreBinding.PluginDeletePluginOptionsForProfile, {
 					profileId: global ? "global" : app.$store.getters["session/profileId"],
 					pluginId: plugin.config.id,
 				});

@@ -2,6 +2,8 @@ import { Crypto, Transactions } from "@arkecosystem/crypto";
 import { Utils } from "@arkecosystem/platform-sdk";
 import { TRANSACTION_GROUPS, TRANSACTION_TYPES } from "@config";
 
+import { StoreBinding } from "@/enums";
+
 export default class TransactionService {
 	/*
 	 * Get id for transaction.
@@ -96,7 +98,7 @@ export default class TransactionService {
 			transaction.recipientId = wallet.address;
 		}
 
-		transaction.signature = await vm.$store.dispatch("ledger/signTransaction", {
+		transaction.signature = await vm.$store.dispatch(StoreBinding.LedgerSignTransaction, {
 			transactionBytes: this.getBytes(transaction),
 			accountIndex: wallet.ledgerIndex,
 		});
@@ -152,7 +154,7 @@ export default class TransactionService {
 	 * @return {Object}
 	 */
 	static async ledgerSignMessage(wallet, message, vm) {
-		const signature = await vm.$store.dispatch("ledger/signMessage", {
+		const signature = await vm.$store.dispatch(StoreBinding.LedgerSignMessage, {
 			messageBytes: Buffer.from(message, "utf-8"),
 			accountIndex: wallet.ledgerIndex,
 		});

@@ -1,5 +1,7 @@
 import { I18N, MARKET } from "@config";
 
+import { StoreBinding } from "@/enums";
+
 export default {
 	namespaced: true,
 
@@ -313,7 +315,7 @@ export default {
 
 			if (!profile.unconfirmedVotes) {
 				profile.unconfirmedVotes = [];
-				dispatch("profile/update", profile, { root: true });
+				dispatch(StoreBinding.ProfileUpdate, profile, { root: true });
 			}
 
 			commit("REPLACE", profile);

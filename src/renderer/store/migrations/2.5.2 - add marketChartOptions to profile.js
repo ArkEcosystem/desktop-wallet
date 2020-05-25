@@ -1,5 +1,7 @@
 import { clone } from "lodash";
 
+import { StoreBinding } from "@/enums";
+
 export default (store) => {
 	store.getters["profile/all"].forEach((profile) => {
 		if (profile.marketChartOptions === undefined) {
@@ -13,10 +15,10 @@ export default (store) => {
 
 			delete updatedProfile.isMarketChartEnabled;
 
-			store.dispatch("profile/update", updatedProfile);
+			store.dispatch(StoreBinding.ProfileUpdate, updatedProfile);
 		}
 	});
 
 	// All successful migrations should update this property
-	store.dispatch("app/setLatestAppliedMigration", "2.5.2");
+	store.dispatch(StoreBinding.AppSetLatestAppliedMigration, "2.5.2");
 };

@@ -1,3 +1,5 @@
+import { StoreBinding } from "@/enums";
+
 import { getAllRoutes } from "../utils/get-all-routes";
 import { normalizeJson } from "../utils/normalize-json";
 
@@ -25,7 +27,7 @@ export function create(plugin, pluginObject, sandbox, profileId) {
 			}, []);
 
 			if (menuItems.length) {
-				await sandbox.app.$store.dispatch("plugin/setMenuItems", {
+				await sandbox.app.$store.dispatch(StoreBinding.PluginSetMenuItems, {
 					pluginId: plugin.config.id,
 					menuItems,
 					profileId,

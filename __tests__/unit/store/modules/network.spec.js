@@ -1,5 +1,6 @@
 import config from "@config";
 
+import { StoreBinding } from "@/enums";
 import store from "@/store";
 
 const storeSnapshot = JSON.parse(JSON.stringify(store.state));
@@ -62,7 +63,7 @@ describe("NetworkModule", () => {
 	describe("actions load", () => {
 		it("should set the network defaults if empty", () => {
 			expect(store.getters["network/all"]).toBeEmpty();
-			store.dispatch("network/load");
+			store.dispatch(StoreBinding.NetworkLoad);
 
 			expect(store.getters["network/all"]).toEqual(config.NETWORKS);
 		});
@@ -70,7 +71,7 @@ describe("NetworkModule", () => {
 		it("should not set the network if not empty", () => {
 			store.commit("network/STORE", networks[0]);
 			expect(store.getters["network/all"]).toEqual([networks[0]]);
-			store.dispatch("network/load");
+			store.dispatch(StoreBinding.NetworkLoad);
 
 			expect(store.getters["network/all"]).toEqual([networks[0]]);
 		});
@@ -79,7 +80,7 @@ describe("NetworkModule", () => {
 			store.commit("network/STORE", networks[0]);
 			customNetworks.forEach((network) => store.commit("network/ADD_CUSTOM_NETWORK", network));
 			expect(store.getters["network/all"]).toEqual([networks[0]]);
-			store.dispatch("network/load");
+			store.dispatch(StoreBinding.NetworkLoad);
 
 			expect(store.getters["network/all"]).toEqual([networks[0], ...customNetworks]);
 		});

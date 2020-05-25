@@ -1,6 +1,7 @@
 import { createLocalVue, mount } from "@vue/test-utils";
 
 import { WalletMultiSignature } from "@/components/Wallet/WalletMultiSignature";
+import { StoreBinding } from "@/enums";
 import MultiSignatureClient from "@/services/client-multisig";
 
 import installI18n from "../../__utils__/i18n";
@@ -112,8 +113,8 @@ describe("WalletMultiSignature", () => {
 
 			await wrapper.vm.connectPeer({ peer: samplePeer, closeTrigger: null });
 
-			expect(dispatchMock).toHaveBeenCalledWith("session/setMultiSignaturePeer", samplePeer);
-			expect(dispatchMock).toHaveBeenCalledWith("profile/setMultiSignaturePeer", samplePeer);
+			expect(dispatchMock).toHaveBeenCalledWith(StoreBinding.SessionSetMultiSignaturePeer, samplePeer);
+			expect(dispatchMock).toHaveBeenCalledWith(StoreBinding.ProfileSetMultiSignaturePeer, samplePeer);
 			expect(dispatchMock).toHaveBeenCalledTimes(2);
 			expect(successMock).toHaveBeenCalledWith(`PEER.CONNECTED: ${samplePeer.host}:${samplePeer.port}`);
 			expect(successMock).toHaveBeenCalledTimes(1);

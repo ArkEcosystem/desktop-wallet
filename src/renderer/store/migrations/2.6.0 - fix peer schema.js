@@ -1,3 +1,5 @@
+import { StoreBinding } from "@/enums";
+
 // Update the schema of peers to v2
 export default (store) => {
 	for (const networkId of Object.keys(store.state.peer.all)) {
@@ -20,5 +22,5 @@ export default (store) => {
 	}
 
 	// All successful migrations should update this property
-	store.dispatch("app/setLatestAppliedMigration", "2.6.0");
+	store.dispatch(StoreBinding.AppSetLatestAppliedMigration, "2.6.0");
 };

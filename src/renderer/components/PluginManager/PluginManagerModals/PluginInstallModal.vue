@@ -56,6 +56,7 @@ import { ipcRenderer } from "electron";
 
 import { ModalWindow } from "@/components/Modal";
 import { ProgressBar } from "@/components/ProgressBar";
+import { AppEvent } from "@/enums";
 
 export default {
 	name: "PluginInstallModal",
@@ -109,17 +110,17 @@ export default {
 	},
 
 	mounted() {
-		ipcRenderer.on("plugin-manager:download-progress", this.onProgress);
-		ipcRenderer.on("plugin-manager:plugin-downloaded", this.onPluginDownloaded);
-		ipcRenderer.on("plugin-manager:error", this.onError);
+		ipcRenderer.on(AppEvent.PluginManagerDownloadProgress, this.onProgress);
+		ipcRenderer.on(AppEvent.PluginManagerPluginDownloaded, this.onPluginDownloaded);
+		ipcRenderer.on(AppEvent.PluginManagerError, this.onError);
 
 		this.emitDownload();
 	},
 
 	beforeDestroy() {
-		ipcRenderer.removeListener("plugin-manager:download-progress", this.onProgress);
-		ipcRenderer.removeListener("plugin-manager:plugin-downloaded", this.onPluginDownloaded);
-		ipcRenderer.removeListener("plugin-manager:error", this.onError);
+		ipcRenderer.removeListener(AppEvent.PluginManagerDownloadProgress, this.onProgress);
+		ipcRenderer.removeListener(AppEvent.PluginManagerPluginDownloaded, this.onPluginDownloaded);
+		ipcRenderer.removeListener(AppEvent.PluginManagerError, this.onError);
 	},
 
 	methods: {

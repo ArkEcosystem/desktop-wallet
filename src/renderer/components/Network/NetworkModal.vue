@@ -160,31 +160,31 @@
 		<button
 			v-if="!network && !hasFetched"
 			:disabled="$v.form.$invalid"
-			class="blue-button mt-5"
+			class="mt-5 blue-button"
 			type="button"
 			@click="fetchNetworkInfo"
 		>
 			{{ $t("COMMON.FETCH") }}
 		</button>
 		<div v-else>
-			<button :disabled="$v.form.$invalid" class="blue-button mt-5" type="button" @click="updateNetwork">
+			<button :disabled="$v.form.$invalid" class="mt-5 blue-button" type="button" @click="updateNetwork">
 				{{ $t("COMMON.SAVE") }}
 			</button>
 
 			<button
 				v-if="network && !network.isDefault"
 				:disabled="isNetworkInUse"
-				class="blue-button mt-5 ml-4"
+				class="mt-5 ml-4 blue-button"
 				type="button"
 				@click="removeNetwork"
 			>
 				{{ $t("COMMON.REMOVE") }}
 			</button>
 		</div>
-		<div v-if="isNetworkInUse && network && !network.isDefault" class="text-sm text-theme-error mt-2 w-80">
+		<div v-if="isNetworkInUse && network && !network.isDefault" class="mt-2 text-sm text-theme-error w-80">
 			{{ $t("MODAL_NETWORK.NETWORK_IN_USE") }}
 		</div>
-		<div v-if="network && network.isDefault" class="text-sm text-theme-error mt-2 w-80">
+		<div v-if="network && network.isDefault" class="mt-2 text-sm text-theme-error w-80">
 			{{ $t("MODAL_NETWORK.DEFAULT_NETWORK_NO_DELETE") }}
 		</div>
 
@@ -199,6 +199,7 @@ import { numeric, required, requiredIf, url } from "vuelidate/lib/validators";
 
 import { InputText, InputToggle } from "@/components/Input";
 import { ModalLoader, ModalWindow } from "@/components/Modal";
+import { StoreBinding } from "@/enums";
 import ClientService from "@/services/client";
 import priceApi from "@/services/price-api";
 
@@ -441,7 +442,7 @@ export default {
 					port = protocol === "https:" ? 443 : 80;
 				}
 
-				const response = await this.$store.dispatch("peer/validatePeer", {
+				const response = await this.$store.dispatch(StoreBinding.PeerValidatePeer, {
 					host,
 					port,
 					ignoreNetwork: true,
@@ -507,17 +508,20 @@ export default {
 					isHttps,
 				};
 
-				await this.$store.dispatch("network/addCustomNetwork", customNetwork);
-				await this.$store.dispatch("peer/setToNetwork", { peers: [peer], networkId: customNetwork.id });
+				await this.$store.dispatch(StoreBinding.NetworkAddCustomNetwork, customNetwork);
+				await this.$store.dispatch(StoreBinding.PeerSetToNetwork, {
+					peers: [peer],
+					networkId: customNetwork.id,
+				});
 			} else {
 				// Note: this is also used to update the 'default' networks, since the update checks if it exists as custom network
-				await this.$store.dispatch("network/updateCustomNetwork", customNetwork);
+				await this.$store.dispatch(StoreBinding.NetworkUpdateCustomNetwork, customNetwork);
 			}
 			this.emitSaved();
 		},
 
 		removeNetwork() {
-			this.$store.dispatch("network/removeCustomNetwork", this.network.id);
+			this.$store.dispatch(StoreBinding.NetworkRemoveCustomNetwork, this.network.id);
 			this.emitRemoved();
 		},
 

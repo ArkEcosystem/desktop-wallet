@@ -9,7 +9,7 @@
 			</div>
 
 			<div class="flex items-center ml-4">
-				<ButtonModal :label="$t('SIGN_VERIFY.SIGN')" class="blue-button mr-2 py-2 px-4">
+				<ButtonModal :label="$t('SIGN_VERIFY.SIGN')" class="px-4 py-2 mr-2 blue-button">
 					<template slot-scope="{ toggle, isOpen }">
 						<WalletSignModal
 							v-if="isOpen"
@@ -20,7 +20,7 @@
 					</template>
 				</ButtonModal>
 
-				<ButtonModal :label="$t('SIGN_VERIFY.VERIFY')" class="blue-button py-2 px-4">
+				<ButtonModal :label="$t('SIGN_VERIFY.VERIFY')" class="px-4 py-2 blue-button">
 					<template slot-scope="{ toggle, isOpen }">
 						<WalletVerifyModal v-if="isOpen" :wallet="currentWallet" @cancel="toggle" />
 					</template>
@@ -31,21 +31,21 @@
 		<div
 			v-for="message in signedMessages"
 			:key="message.timestamp"
-			class="WalletSignVerify__message flex flex-row justify-between py-5 border-b border-dashed border-theme-line-separator"
+			class="flex flex-row justify-between py-5 border-b border-dashed WalletSignVerify__message border-theme-line-separator"
 			@mouseover="showTimestamp = message.timestamp"
 			@mouseout="showTimestamp = null"
 		>
 			<div class="flex flex-col">
 				<div class="flex items-start">
-					<div class="font-semibold w-30 flex-shrink-none pl-2 text-theme-wallet-sign-verify-message-text">
+					<div class="pl-2 font-semibold w-30 flex-shrink-none text-theme-wallet-sign-verify-message-text">
 						{{ $t("SIGN_VERIFY.MESSAGE") }}:
 					</div>
-					<div class="font-semibold w-full word-break-all">
+					<div class="w-full font-semibold word-break-all">
 						{{ message.message }}
 					</div>
 				</div>
 				<div class="flex items-start">
-					<div class="font-semibold w-30 flex-shrink-none pl-2 text-theme-wallet-sign-verify-message-text">
+					<div class="pl-2 font-semibold w-30 flex-shrink-none text-theme-wallet-sign-verify-message-text">
 						{{ $t("SIGN_VERIFY.SIGNATURE") }}:
 					</div>
 					<div class="w-full word-break-all">
@@ -54,14 +54,14 @@
 				</div>
 			</div>
 
-			<div :class="{ invisible: showTimestamp !== message.timestamp }" class="w-48 flex items-center ml-4">
+			<div :class="{ invisible: showTimestamp !== message.timestamp }" class="flex items-center w-48 ml-4">
 				<ButtonClipboard
 					:value="copyMessage(message)"
-					class="text-theme-button-light-text py-2 px-4 rounded bg-theme-button-light mr-2"
+					class="px-4 py-2 mr-2 rounded text-theme-button-light-text bg-theme-button-light"
 				/>
 				<button
 					v-tooltip="{ content: $t('SIGN_VERIFY.DELETE'), trigger: 'hover' }"
-					class="text-theme-button-light-text py-2 px-4 rounded bg-theme-button-light mr-2"
+					class="px-4 py-2 mr-2 rounded text-theme-button-light-text bg-theme-button-light"
 					@click="deleteMessage(message)"
 				>
 					<SvgIcon name="delete-wallet" view-box="0 0 13 13" />
@@ -77,6 +77,7 @@ import { clone } from "lodash";
 import { ButtonClipboard, ButtonModal } from "@/components/Button";
 import SvgIcon from "@/components/SvgIcon";
 import { WalletSignModal, WalletVerifyModal } from "@/components/Wallet";
+import { StoreBinding } from "@/enums";
 
 export default {
 	name: "WalletSignVerify",
@@ -132,7 +133,7 @@ export default {
 
 		deleteMessage(value) {
 			const message = clone(value, false);
-			this.$store.dispatch("wallet/deleteSignedMessage", message);
+			this.$store.dispatch(StoreBinding.WalletDeleteSignedMessage, message);
 		},
 
 		updateSignedMessages(setWalletId = true) {

@@ -2,6 +2,7 @@ import nock from "nock";
 import Vue from "vue";
 import Vuex from "vuex";
 
+import { StoreBinding } from "@/enums";
 import apiClient, { client as ClientService } from "@/plugins/api-client";
 import store from "@/store";
 
@@ -16,7 +17,7 @@ beforeAll(() => {
 	store.commit("network/SET_ALL", [network1]);
 	store.commit("profile/CREATE", profile1);
 	store.commit("session/SET_PROFILE_ID", profile1.id);
-	store.dispatch("delegate/set", delegates);
+	store.dispatch(StoreBinding.DelegateSet, delegates);
 });
 
 beforeEach(() => {
@@ -68,7 +69,7 @@ describe("delegate store module", () => {
 						},
 					});
 
-				await store.dispatch("delegate/load");
+				await store.dispatch(StoreBinding.AnnouncementsMarkAsReadBulk);
 
 				expect(Object.values(store.getters["delegate/all"][profile1.networkId])).toEqual(delegates);
 			});
@@ -92,7 +93,7 @@ describe("delegate store module", () => {
 						});
 				}
 
-				await store.dispatch("delegate/load");
+				await store.dispatch(StoreBinding.AnnouncementsMarkAsReadBulk);
 
 				expect(Object.values(store.getters["delegate/all"][profile1.networkId]).length).toEqual(
 					delegates.length * 10,

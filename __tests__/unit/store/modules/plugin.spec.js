@@ -2,6 +2,7 @@ import { createLocalVue } from "@vue/test-utils";
 import merge from "lodash/merge";
 import Vuex from "vuex";
 
+import { StoreBinding } from "@/enums";
 import pluginManager from "@/services/plugin-manager";
 import releaseService from "@/services/release";
 import PluginModule from "@/store/modules/plugin";
@@ -80,7 +81,7 @@ describe("PluginModule", () => {
 
 			it("should update lastFetched when setting available plugins", () => {
 				expect(store.getters["plugin/lastFetched"]).toEqual(0);
-				store.dispatch("plugin/setAvailable", {});
+				store.dispatch(StoreBinding.PluginSetAvailable, {});
 				expect(store.getters["plugin/lastFetched"]).toEqual(1);
 			});
 		});
@@ -359,7 +360,7 @@ describe("PluginModule", () => {
 			});
 
 			it("should return all available plugins", () => {
-				store.dispatch("plugin/setAvailable", availablePlugins);
+				store.dispatch(StoreBinding.PluginSetAvailable, availablePlugins);
 				expect(store.getters["plugin/available"]).toEqual(availablePlugins);
 			});
 		});
@@ -378,7 +379,7 @@ describe("PluginModule", () => {
 			});
 
 			it("should return the plugin if it is available", () => {
-				store.dispatch("plugin/setAvailable", [availablePlugins[0]]);
+				store.dispatch(StoreBinding.PluginSetAvailable, [availablePlugins[0]]);
 				expect(store.getters["plugin/availableById"](availablePlugins[0].config.id)).toEqual(
 					availablePlugins[0],
 				);
@@ -391,7 +392,7 @@ describe("PluginModule", () => {
 			});
 
 			it("should be possible to check if a plugin is available", () => {
-				store.dispatch("plugin/setAvailable", [availablePlugins[0]]);
+				store.dispatch(StoreBinding.PluginSetAvailable, [availablePlugins[0]]);
 				expect(store.getters["plugin/isAvailable"](availablePlugins[0].config.id)).toBe(true);
 				expect(store.getters["plugin/isAvailable"]("plugin-not-available")).toBe(false);
 			});
@@ -404,7 +405,7 @@ describe("PluginModule", () => {
 
 			it("should return all installed plugins", () => {
 				for (const plugin of installedPlugins) {
-					store.dispatch("plugin/setInstalled", plugin);
+					store.dispatch(StoreBinding.PluginSetInstalled, plugin);
 				}
 				expect(store.getters["plugin/installed"]).toEqual(installedPlugins);
 			});
@@ -424,7 +425,7 @@ describe("PluginModule", () => {
 			});
 
 			it("should return the plugin if it is installed", () => {
-				store.dispatch("plugin/setInstalled", installedPlugins[0]);
+				store.dispatch(StoreBinding.PluginSetInstalled, installedPlugins[0]);
 				expect(store.getters["plugin/installedById"](installedPlugins[0].config.id)).toEqual(
 					installedPlugins[0],
 				);
@@ -437,7 +438,7 @@ describe("PluginModule", () => {
 			});
 
 			it("should be possible to check if a plugin is installed", () => {
-				store.dispatch("plugin/setInstalled", installedPlugins[0]);
+				store.dispatch(StoreBinding.PluginSetInstalled, installedPlugins[0]);
 				expect(store.getters["plugin/isInstalled"](installedPlugins[0].config.id)).toBe(true);
 				expect(store.getters["plugin/isInstalled"]("plugin-not-installed")).toBe(false);
 			});
@@ -451,26 +452,26 @@ describe("PluginModule", () => {
 			it("should return false if the plugin is not available", () => {
 				const plugin = availablePlugins[0];
 
-				store.dispatch("plugin/setInstalled", plugin);
+				store.dispatch(StoreBinding.PluginSetInstalled, plugin);
 				expect(store.getters["plugin/isUpdateAvailable"](plugin.config.id)).toBe(false);
 			});
 
 			it("should return false if the plugin is not installed", () => {
 				const plugin = availablePlugins[0];
 
-				store.dispatch("plugin/setAvailable", [plugin]);
+				store.dispatch(StoreBinding.PluginSetAvailable, [plugin]);
 				expect(store.getters["plugin/isUpdateAvailable"](plugin.config.id)).toBe(false);
 			});
 
 			it("should return false if the installed version is equal or higher than the available version", () => {
-				store.dispatch("plugin/setAvailable", [availablePlugins[0]]);
-				store.dispatch("plugin/setInstalled", installedPlugins[0]);
+				store.dispatch(StoreBinding.PluginSetAvailable, [availablePlugins[0]]);
+				store.dispatch(StoreBinding.PluginSetInstalled, installedPlugins[0]);
 				expect(store.getters["plugin/isUpdateAvailable"](availablePlugins[0].config.id)).toBe(false);
 			});
 
 			it("should return true if the installed version is lower than the available version", () => {
-				store.dispatch("plugin/setAvailable", [installedPlugins[0]]);
-				store.dispatch("plugin/setInstalled", availablePlugins[0]);
+				store.dispatch(StoreBinding.PluginSetAvailable, [installedPlugins[0]]);
+				store.dispatch(StoreBinding.PluginSetInstalled, availablePlugins[0]);
 				expect(store.getters["plugin/isUpdateAvailable"](availablePlugins[0].config.id)).toBe(true);
 			});
 		});
@@ -485,7 +486,7 @@ describe("PluginModule", () => {
 			});
 
 			it("should return the version of the available plugin", () => {
-				store.dispatch("plugin/setAvailable", [availablePlugins[0]]);
+				store.dispatch(StoreBinding.PluginSetAvailable, [availablePlugins[0]]);
 				expect(store.getters["plugin/latestVersion"](availablePlugins[0].config.id)).toBe(
 					availablePlugins[0].config.version,
 				);
@@ -498,9 +499,9 @@ describe("PluginModule", () => {
 			});
 
 			it("should return all available and installed plugins", () => {
-				store.dispatch("plugin/setAvailable", availablePlugins);
+				store.dispatch(StoreBinding.PluginSetAvailable, availablePlugins);
 				for (const plugin of installedPlugins) {
-					store.dispatch("plugin/setInstalled", plugin);
+					store.dispatch(StoreBinding.PluginSetInstalled, plugin);
 				}
 
 				const all = store.getters["plugin/all"];
@@ -511,9 +512,9 @@ describe("PluginModule", () => {
 			});
 
 			it("should merge all available and installed plugins correctly", () => {
-				store.dispatch("plugin/setAvailable", availablePlugins);
+				store.dispatch(StoreBinding.PluginSetAvailable, availablePlugins);
 				for (const plugin of installedPlugins) {
-					store.dispatch("plugin/setInstalled", plugin);
+					store.dispatch(StoreBinding.PluginSetInstalled, plugin);
 				}
 
 				expect(store.getters["plugin/all"].find((p) => p.config.id === "plugin-1")).toEqual(
@@ -682,7 +683,7 @@ describe("PluginModule", () => {
 			beforeAll(() => {
 				store.replaceState(JSON.parse(JSON.stringify(initialState)));
 
-				store.dispatch("plugin/setWhitelisted", {
+				store.dispatch(StoreBinding.PluginSetWhitelisted, {
 					scope: "global",
 					plugins: {
 						[availablePlugins[0].config.id]: {
@@ -721,7 +722,7 @@ describe("PluginModule", () => {
 			beforeAll(() => {
 				store.replaceState(JSON.parse(JSON.stringify(initialState)));
 
-				store.dispatch("plugin/setWhitelisted", {
+				store.dispatch(StoreBinding.PluginSetWhitelisted, {
 					scope: "global",
 					plugins: {
 						[availablePlugins[0].config.id]: {
@@ -763,12 +764,12 @@ describe("PluginModule", () => {
 			});
 
 			it("should return true if the plugin does not define a min version", () => {
-				store.dispatch("plugin/setInstalled", installedPlugins[0]);
+				store.dispatch(StoreBinding.PluginSetInstalled, installedPlugins[0]);
 				expect(store.getters["plugin/isInstalledSupported"](installedPlugins[0].config.id)).toBe(true);
 			});
 
 			it("should return true if the wallet version is equal or higher than the defined min version", () => {
-				store.dispatch("plugin/setInstalled", {
+				store.dispatch(StoreBinding.PluginSetInstalled, {
 					config: {
 						...installedPlugins[0].config,
 						minimumVersion: "1.0.0",
@@ -778,7 +779,7 @@ describe("PluginModule", () => {
 			});
 
 			it("should return false if the wallet version is lower than the defined min version", () => {
-				store.dispatch("plugin/setInstalled", {
+				store.dispatch(StoreBinding.PluginSetInstalled, {
 					config: {
 						...installedPlugins[0].config,
 						minimumVersion: "3.0.0",
@@ -1143,7 +1144,7 @@ describe("PluginModule", () => {
 			it("should set blacklisted plugins on the given scope", async () => {
 				expect(store.getters["plugin/blacklisted"].global).toEqual([]);
 
-				await store.dispatch("plugin/setBlacklisted", {
+				await store.dispatch(StoreBinding.PluginSetBlacklisted, {
 					scope: "global",
 					plugins,
 				});
@@ -1154,12 +1155,12 @@ describe("PluginModule", () => {
 			it("should disable a plugin if it is enabled on a profile", async () => {
 				const spy = jest.spyOn(store, "dispatch");
 
-				await store.dispatch("plugin/setBlacklisted", {
+				await store.dispatch(StoreBinding.PluginSetBlacklisted, {
 					scope: "global",
 					plugins,
 				});
 
-				expect(spy).toHaveBeenCalledWith("plugin/setEnabled", {
+				expect(spy).toHaveBeenCalledWith(StoreBinding.PluginSetEnabled, {
 					enabled: false,
 					pluginId: availablePlugins[0].config.id,
 					profileId: profile1.id,
@@ -1187,7 +1188,7 @@ describe("PluginModule", () => {
 
 			it("should throw an error if the plugin is not enabled", () => {
 				try {
-					store.dispatch("plugin/setLoaded", {
+					store.dispatch(StoreBinding.PluginSetLoaded, {
 						...availablePlugins[1],
 						profileId: profile1.id,
 					});
@@ -1199,7 +1200,7 @@ describe("PluginModule", () => {
 			it("should load the plugin if it is enabled", () => {
 				expect(store.getters["plugin/isLoaded"](availablePlugins[0].config.id, profile1.id)).toBe(false);
 
-				store.dispatch("plugin/setLoaded", {
+				store.dispatch(StoreBinding.PluginSetLoaded, {
 					...availablePlugins[0],
 					profileId: profile1.id,
 				});
@@ -1210,7 +1211,7 @@ describe("PluginModule", () => {
 			it("should load the plugin on the session profile if no profile id given", () => {
 				expect(store.getters["plugin/isLoaded"](availablePlugins[2].config.id, profile1.id)).toBe(false);
 
-				store.dispatch("plugin/setLoaded", availablePlugins[2]);
+				store.dispatch(StoreBinding.PluginSetLoaded, availablePlugins[2]);
 
 				expect(store.getters["plugin/isLoaded"](availablePlugins[2].config.id, profile1.id)).toBe(true);
 			});
@@ -1232,13 +1233,13 @@ describe("PluginModule", () => {
 
 			it("should reset loaded plugins to empty object", async () => {
 				expect(store.state.plugin.loaded).toEqual(dummy);
-				await store.dispatch("plugin/reset");
+				await store.dispatch(StoreBinding.PluginReset);
 				expect(store.state.plugin.loaded).toEqual({});
 			});
 
 			it("should reset installed plugins to empty object", async () => {
 				expect(store.state.plugin.installed).toEqual(dummy);
-				await store.dispatch("plugin/reset");
+				await store.dispatch(StoreBinding.PluginReset);
 				expect(store.state.plugin.installed).toEqual({});
 			});
 		});
@@ -1251,10 +1252,10 @@ describe("PluginModule", () => {
 			it("should dispatch loadPluginsForProfile for every profile", async () => {
 				const spy = jest.spyOn(store, "dispatch");
 
-				await store.dispatch("plugin/loadPluginsForProfiles");
+				await store.dispatch(StoreBinding.PluginLoadPluginsForProfiles);
 
 				for (const profile of profiles) {
-					expect(spy).toHaveBeenCalledWith("plugin/loadPluginsForProfile", profile);
+					expect(spy).toHaveBeenCalledWith(StoreBinding.PluginLoadPluginsForProfile, profile);
 				}
 
 				spy.mockRestore();
@@ -1293,11 +1294,11 @@ describe("PluginModule", () => {
 			});
 
 			it("should return early if there are no enabled plugins for the given profile", async () => {
-				expect(await store.dispatch("plugin/loadPluginsForProfile", profiles[1])).toBe(undefined);
+				expect(await store.dispatch(StoreBinding.PluginLoadPluginsForProfile, profiles[1])).toBe(undefined);
 			});
 
 			it("should try to enable the plugins for the given profile", async () => {
-				await store.dispatch("plugin/loadPluginsForProfile", profile1);
+				await store.dispatch(StoreBinding.PluginLoadPluginsForProfile, profile1);
 
 				expect(store._vm.$plugins.enablePlugin).toHaveBeenCalledTimes(1);
 				expect(store._vm.$plugins.enablePlugin).toHaveBeenCalledWith(
@@ -1311,7 +1312,7 @@ describe("PluginModule", () => {
 					throw new Error("error");
 				});
 
-				await store.dispatch("plugin/loadPluginsForProfile", profile1);
+				await store.dispatch(StoreBinding.PluginLoadPluginsForProfile, profile1);
 
 				expect(store._vm.$logger.error).toHaveBeenCalledWith(
 					"Could not enable 'plugin-2' for profile 'Profile 1': error",
@@ -1340,7 +1341,7 @@ describe("PluginModule", () => {
 			describe("when enabling a plugin", () => {
 				it("should return early if the plugin is not disabled", async () => {
 					expect(
-						await store.dispatch("plugin/setEnabled", {
+						await store.dispatch(StoreBinding.PluginSetEnabled, {
 							enabled: true,
 							pluginId: availablePlugins[0].config.id,
 						}),
@@ -1355,7 +1356,7 @@ describe("PluginModule", () => {
 					const commitSpy = jest.spyOn(store, "commit");
 
 					try {
-						await store.dispatch("plugin/setEnabled", {
+						await store.dispatch(StoreBinding.PluginSetEnabled, {
 							enabled: true,
 							pluginId: availablePlugins[1].config.id,
 							profileId: profiles[1].id,
@@ -1374,7 +1375,7 @@ describe("PluginModule", () => {
 			describe("when disabling a plugin", () => {
 				it("should return early if the plugin is not enabled", async () => {
 					expect(
-						await store.dispatch("plugin/setEnabled", {
+						await store.dispatch(StoreBinding.PluginSetEnabled, {
 							enabled: false,
 							pluginId: availablePlugins[1].config.id,
 						}),
@@ -1389,7 +1390,7 @@ describe("PluginModule", () => {
 					const commitSpy = jest.spyOn(store, "commit");
 
 					try {
-						await store.dispatch("plugin/setEnabled", {
+						await store.dispatch(StoreBinding.PluginSetEnabled, {
 							enabled: false,
 							pluginId: availablePlugins[0].config.id,
 						});
@@ -1429,7 +1430,7 @@ describe("PluginModule", () => {
 
 				await store.dispatch("plugin/deletePlugin", { pluginId: availablePlugins[0].config.id });
 
-				expect(spy).toHaveBeenCalledWith("plugin/setEnabled", {
+				expect(spy).toHaveBeenCalledWith(StoreBinding.PluginSetEnabled, {
 					enabled: false,
 					pluginId: availablePlugins[0].config.id,
 					profileId: profile.id,
@@ -1446,12 +1447,12 @@ describe("PluginModule", () => {
 					removeOptions: true,
 				});
 
-				expect(spy).toHaveBeenCalledWith("plugin/setEnabled", {
+				expect(spy).toHaveBeenCalledWith(StoreBinding.PluginSetEnabled, {
 					enabled: false,
 					pluginId: availablePlugins[0].config.id,
 					profileId: profile.id,
 				});
-				expect(spy).toHaveBeenCalledWith("plugin/deletePluginOptionsForProfile", {
+				expect(spy).toHaveBeenCalledWith(StoreBinding.PluginDeletePluginOptionsForProfile, {
 					pluginId: availablePlugins[0].config.id,
 					profileId: profile.id,
 				});
@@ -1498,7 +1499,7 @@ describe("PluginModule", () => {
 
 			it("should return early if the plugin is not loaded", async () => {
 				expect(
-					await store.dispatch("plugin/deleteLoaded", {
+					await store.dispatch(StoreBinding.PluginDeleteLoaded, {
 						pluginId: availablePlugins[1].config.id,
 					}),
 				).toBe(undefined);
@@ -1509,7 +1510,7 @@ describe("PluginModule", () => {
 					[availablePlugins[0].config.id]: {},
 				});
 
-				store.dispatch("plugin/deleteLoaded", {
+				store.dispatch(StoreBinding.PluginDeleteLoaded, {
 					pluginId: availablePlugins[0].config.id,
 					profileId,
 				});
@@ -1532,13 +1533,15 @@ describe("PluginModule", () => {
 			});
 
 			it("should return early if the plugin is not installed", async () => {
-				expect(await store.dispatch("plugin/deleteInstalled", availablePlugins[1].config.id)).toBe(undefined);
+				expect(await store.dispatch(StoreBinding.PluginDeleteInstalled, availablePlugins[1].config.id)).toBe(
+					undefined,
+				);
 			});
 
 			it("should delete the installed plugin", () => {
 				expect(store.getters["plugin/installed"]).toEqual([availablePlugins[0]]);
 
-				store.dispatch("plugin/deleteInstalled", availablePlugins[0].config.id);
+				store.dispatch(StoreBinding.PluginDeleteInstalled, availablePlugins[0].config.id);
 
 				expect(store.getters["plugin/installed"]).toEqual([]);
 			});
@@ -1569,7 +1572,7 @@ describe("PluginModule", () => {
 
 			it("should throw an error if the plugin is not enabled", () => {
 				try {
-					store.dispatch("plugin/setAvatars", {
+					store.dispatch(StoreBinding.PluginSetAvatars, {
 						pluginId: availablePlugins[1].config.id,
 						profileId: profile1.id,
 					});
@@ -1591,7 +1594,7 @@ describe("PluginModule", () => {
 					},
 				]);
 
-				store.dispatch("plugin/setAvatars", {
+				store.dispatch(StoreBinding.PluginSetAvatars, {
 					pluginId: availablePlugins[0].config.id,
 					profileId,
 					avatars: {
@@ -1635,7 +1638,7 @@ describe("PluginModule", () => {
 
 			it("should throw an error if the plugin is not enabled", () => {
 				try {
-					store.dispatch("plugin/setMenuItems", {
+					store.dispatch(StoreBinding.PluginSetMenuItems, {
 						pluginId: availablePlugins[1].config.id,
 						profileId: profile1.id,
 					});
@@ -1649,7 +1652,7 @@ describe("PluginModule", () => {
 
 				const menuItems = [{ title: "menu-item-1" }, { title: "menu-item-2" }];
 
-				store.dispatch("plugin/setMenuItems", {
+				store.dispatch(StoreBinding.PluginSetMenuItems, {
 					pluginId: availablePlugins[0].config.id,
 					profileId,
 					menuItems,
@@ -1683,7 +1686,7 @@ describe("PluginModule", () => {
 
 			it("should throw an error if the plugin is not enabled", () => {
 				try {
-					store.dispatch("plugin/setThemes", {
+					store.dispatch(StoreBinding.PluginSetThemes, {
 						pluginId: availablePlugins[1].config.id,
 						profileId: profile1.id,
 					});
@@ -1695,7 +1698,7 @@ describe("PluginModule", () => {
 			it.each([null, profile1.id])("should set the themes if the plugin is enabled", (profileId) => {
 				expect(store.getters["plugin/themes"]).toEqual({});
 
-				store.dispatch("plugin/setThemes", {
+				store.dispatch(StoreBinding.PluginSetThemes, {
 					pluginId: availablePlugins[0].config.id,
 					profileId,
 					themes: {
@@ -1733,7 +1736,7 @@ describe("PluginModule", () => {
 
 			it("should throw an error if the plugin is not enabled", () => {
 				try {
-					store.dispatch("plugin/setLanguages", {
+					store.dispatch(StoreBinding.PluginSetLanguages, {
 						pluginId: availablePlugins[1].config.id,
 						profileId: profile1.id,
 					});
@@ -1745,7 +1748,7 @@ describe("PluginModule", () => {
 			it.each([null, profile1.id])("should set the languages if the plugin is enabled", (profileId) => {
 				expect(store.getters["plugin/languages"]).toEqual({});
 
-				store.dispatch("plugin/setLanguages", {
+				store.dispatch(StoreBinding.PluginSetLanguages, {
 					pluginId: availablePlugins[0].config.id,
 					profileId,
 					languages: {
@@ -1779,7 +1782,7 @@ describe("PluginModule", () => {
 
 			it("should throw an error if the plugin is not enabled", async () => {
 				try {
-					await store.dispatch("plugin/setWalletTabs", {
+					await store.dispatch(StoreBinding.PluginSetWalletTabs, {
 						pluginId: availablePlugins[1].config.id,
 						profileId: profile1.id,
 					});
@@ -1795,7 +1798,7 @@ describe("PluginModule", () => {
 
 				expect(store.getters["plugin/walletTabs"]).toEqual([]);
 
-				store.dispatch("plugin/setWalletTabs", {
+				store.dispatch(StoreBinding.PluginSetWalletTabs, {
 					pluginId: availablePlugins[0].config.id,
 					profileId,
 					walletTabs: [
@@ -1834,7 +1837,7 @@ describe("PluginModule", () => {
 
 			it("should throw an error if the plugin is not enabled", async () => {
 				try {
-					await store.dispatch("plugin/setPluginOption", {
+					await store.dispatch(StoreBinding.PluginSetPluginOption, {
 						pluginId: availablePlugins[1].config.id,
 						profileId: profile1.id,
 					});
@@ -1846,7 +1849,7 @@ describe("PluginModule", () => {
 			it("should set the plugin option", async () => {
 				expect(store.getters["plugin/pluginOptions"](availablePlugins[0].config.id, profile1.id)).toEqual({});
 
-				await store.dispatch("plugin/setPluginOption", {
+				await store.dispatch(StoreBinding.PluginSetPluginOption, {
 					pluginId: availablePlugins[0].config.id,
 					profileId: profile1.id,
 					key: "foo",
@@ -1857,7 +1860,7 @@ describe("PluginModule", () => {
 					foo: "bar",
 				});
 
-				await store.dispatch("plugin/setPluginOption", {
+				await store.dispatch(StoreBinding.PluginSetPluginOption, {
 					pluginId: availablePlugins[0].config.id,
 					profileId: profile1.id,
 					key: "bar",
@@ -1873,7 +1876,7 @@ describe("PluginModule", () => {
 			it("should set a global plugin option", async () => {
 				expect(store.getters["plugin/pluginOptions"](availablePlugins[0].config.id, "global")).toEqual({});
 
-				await store.dispatch("plugin/setPluginOption", {
+				await store.dispatch(StoreBinding.PluginSetPluginOption, {
 					pluginId: availablePlugins[0].config.id,
 					profileId: "global",
 					key: "foo",
@@ -1908,7 +1911,7 @@ describe("PluginModule", () => {
 					options,
 				);
 
-				store.dispatch("plugin/deletePluginOptionsForProfile", {
+				store.dispatch(StoreBinding.PluginDeletePluginOptionsForProfile, {
 					pluginId: availablePlugins[0].config.id,
 				});
 
@@ -1920,7 +1923,7 @@ describe("PluginModule", () => {
 					options,
 				);
 
-				store.dispatch("plugin/deletePluginOptionsForProfile", {
+				store.dispatch(StoreBinding.PluginDeletePluginOptionsForProfile, {
 					pluginId: availablePlugins[0].config.id,
 					profileId: profile1.id,
 				});

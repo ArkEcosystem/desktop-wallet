@@ -15,7 +15,7 @@
 				<ButtonClipboard
 					:value="transaction.id"
 					:class="{ 'mr-2': transaction.confirmations }"
-					class="text-theme-page-text-light ml-2"
+					class="ml-2 text-theme-page-text-light"
 				/>
 				<button
 					v-if="transaction.confirmations"
@@ -45,7 +45,7 @@
 				>
 					{{ transaction.blockId | truncateMiddle(30) }}
 				</span>
-				<ButtonClipboard :value="transaction.blockId" class="text-theme-page-text-light mx-2" />
+				<ButtonClipboard :value="transaction.blockId" class="mx-2 text-theme-page-text-light" />
 				<button
 					v-tooltip="{
 						content: `${$t('TRANSACTION.OPEN_IN_EXPLORER')}`,
@@ -76,7 +76,7 @@
 				item-value-class="flex items-center"
 			>
 				<WalletAddress :address="transaction.sender" @click="emitClose" />
-				<ButtonClipboard :value="transaction.sender" class="text-theme-page-text-light mx-2" />
+				<ButtonClipboard :value="transaction.sender" class="mx-2 text-theme-page-text-light" />
 				<button
 					v-tooltip="{
 						content: `${$t('TRANSACTION.OPEN_IN_EXPLORER')}`,
@@ -97,7 +97,7 @@
 			>
 				<WalletAddress :address="transaction.recipient" @click="emitClose" />
 				<ButtonClipboard
-					class="text-theme-page-text-light mx-2"
+					class="mx-2 text-theme-page-text-light"
 					:value="votedDelegate ? votedDelegate.address : transaction.recipient"
 				/>
 				<button
@@ -165,7 +165,7 @@
 				:value="transaction.vendorField"
 				:label="$t('TRANSACTION.VENDOR_FIELD')"
 				item-label-class="mb-auto"
-				item-value-class="max-w-xs break-words text-justify"
+				item-value-class="max-w-xs text-justify break-words"
 			/>
 
 			<ListDividedItem
@@ -201,6 +201,7 @@ import { ModalWindow } from "@/components/Modal";
 import SvgIcon from "@/components/SvgIcon";
 import { TransactionAmount, TransactionRecipientList, TransactionStatusIcon } from "@/components/Transaction";
 import WalletAddress from "@/components/Wallet/WalletAddress";
+import { AppEvent, StoreBinding } from "@/enums";
 import truncateMiddle from "@/filters/truncate-middle";
 import WalletService from "@/services/wallet";
 
@@ -337,9 +338,9 @@ export default {
 		},
 
 		emitDiscard() {
-			this.$store.dispatch("transaction/delete", this.transaction);
+			this.$store.dispatch(StoreBinding.TransactionDelete, this.transaction);
 			this.$emit("close");
-			this.$eventBus.emit("wallet:reload");
+			this.$eventBus.emit(AppEvent.WalletReload);
 		},
 
 		openAddressInWallet(address) {

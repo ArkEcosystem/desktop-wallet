@@ -1,6 +1,7 @@
 import * as MagistrateCrypto from "@arkecosystem/core-magistrate-crypto";
 import { Crypto, Identities, Managers, Transactions } from "@arkecosystem/crypto";
 
+import { StoreBinding } from "@/enums";
 import currencyMixin from "@/mixins/currency";
 import TransactionService from "@/services/transaction";
 
@@ -869,7 +870,7 @@ describe("Services > Transaction", () => {
 			const signature = transactionObject.data.signature;
 
 			spyDispatch.mockImplementation((key) => {
-				if (key === "ledger/signTransaction") {
+				if (key === StoreBinding.LedgerSignTransaction) {
 					return signature;
 				}
 			});
@@ -894,7 +895,7 @@ describe("Services > Transaction", () => {
 			const signature = transactionObject.data.signature;
 
 			spyDispatch.mockImplementation((key) => {
-				if (key === "ledger/signTransaction") {
+				if (key === StoreBinding.LedgerSignTransaction) {
 					return signature;
 				}
 			});
@@ -921,7 +922,7 @@ describe("Services > Transaction", () => {
 			const signature = transactionObject.data.signature;
 
 			spyDispatch.mockImplementation((key) => {
-				if (key === "ledger/signTransaction") {
+				if (key === StoreBinding.LedgerSignTransaction) {
 					return signature;
 				}
 			});

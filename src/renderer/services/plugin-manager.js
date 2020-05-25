@@ -8,6 +8,7 @@ import semver from "semver";
 import trash from "trash";
 import validatePackageName from "validate-npm-package-name";
 
+import { StoreBinding } from "@/enums";
 import * as adapters from "@/services/plugin-manager/adapters";
 import releaseService from "@/services/release";
 import { upperFirst } from "@/utils";
@@ -53,12 +54,12 @@ export class PluginManager {
 
 		this.pluginsPath = process.env.NODE_ENV !== "development" ? PLUGINS.path : PLUGINS.devPath;
 
-		await this.app.$store.dispatch("plugin/reset");
+		await this.app.$store.dispatch(StoreBinding.PluginReset);
 		await this.fetchPlugins();
 
 		this.hasInit = true;
 
-		await this.app.$store.dispatch("plugin/loadPluginsForProfiles");
+		await this.app.$store.dispatch(StoreBinding.PluginLoadPluginsForProfiles);
 	}
 
 	async deletePlugin(pluginId) {
@@ -82,7 +83,7 @@ export class PluginManager {
 			await trash(plugin.fullPath);
 		}
 
-		this.app.$store.dispatch("plugin/deleteInstalled", plugin.config.id);
+		this.app.$store.dispatch(StoreBinding.PluginDeleteInstalled, plugin.config.id);
 
 		delete this.plugins[pluginId];
 	}
@@ -105,7 +106,7 @@ export class PluginManager {
 			throw new errors.PluginWalletVersionError();
 		}
 
-		await this.app.$store.dispatch("plugin/setLoaded", {
+		await this.app.$store.dispatch(StoreBinding.PluginSetLoaded, {
 			config: plugin.config,
 			fullPath: plugin.fullPath,
 			profileId,
@@ -134,11 +135,11 @@ export class PluginManager {
 		const defaultThemes = ["light", "dark"];
 
 		if (!defaultThemes.includes(this.app.$store.getters["session/theme"])) {
-			await this.app.$store.dispatch("session/setTheme", defaultThemes[0]);
+			await this.app.$store.dispatch(StoreBinding.SessionSetTheme, defaultThemes[0]);
 
 			const profile = this.app.$store.getters["profile/byId"](profileId);
 
-			await this.app.$store.dispatch("profile/update", {
+			await this.app.$store.dispatch(StoreBinding.ProfileUpdate, {
 				...profile,
 				theme: defaultThemes[0],
 			});
@@ -147,11 +148,11 @@ export class PluginManager {
 
 	async unloadLanguages(plugin, profileId) {
 		if (I18N.defaultLocale !== this.app.$store.getters["session/language"]) {
-			await this.app.$store.dispatch("session/setLanguage", I18N.defaultLocale);
+			await this.app.$store.dispatch(StoreBinding.SessionSetLanguage, I18N.defaultLocale);
 
 			const profile = this.app.$store.getters["profile/byId"](profileId);
 
-			await this.app.$store.dispatch("profile/update", {
+			await this.app.$store.dispatch(StoreBinding.ProfileUpdate, {
 				...profile,
 				language: I18N.defaultLocale,
 			});
@@ -201,7 +202,7 @@ export class PluginManager {
 			await this.unloadLanguages(plugin, profileId);
 		}
 
-		await this.app.$store.dispatch("plugin/deleteLoaded", {
+		await this.app.$store.dispatch(StoreBinding.PluginDeleteLoaded, {
 			pluginId,
 			profileId,
 		});
@@ -289,7 +290,7 @@ export class PluginManager {
 			return plugins;
 		}, {});
 
-		this.app.$store.dispatch("plugin/setAvailable", plugins);
+		this.app.$store.dispatch(StoreBinding.PluginSetAvailable, plugins);
 	}
 
 	parsePluginUrl(url) {
@@ -393,11 +394,11 @@ export class PluginManager {
 			const { body } = await reqwest(`${PLUGINS.pluginsUrl}?ts=${new Date().getTime()}`, {
 				json: true,
 			});
-			this.app.$store.dispatch("plugin/setWhitelisted", {
+			this.app.$store.dispatch(StoreBinding.PluginSetWhitelisted, {
 				scope: "global",
 				plugins: body.plugins,
 			});
-			this.app.$store.dispatch("plugin/setBlacklisted", {
+			this.app.$store.dispatch(StoreBinding.PluginSetBlacklisted, {
 				scope: "global",
 				plugins: body.blacklist,
 			});
@@ -442,7 +443,7 @@ export class PluginManager {
 
 		const fullPath = pluginPath.substring(0, 1) === "/" ? pluginPath : path.resolve(pluginPath);
 
-		await this.app.$store.dispatch("plugin/setInstalled", {
+		await this.app.$store.dispatch(StoreBinding.PluginSetInstalled, {
 			config: pluginConfig,
 			fullPath,
 		});

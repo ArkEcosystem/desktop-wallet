@@ -1,6 +1,6 @@
 <template>
 	<div class="flex items-center">
-		<div class="absolute top-0 left-0 h-40 w-40">
+		<div class="absolute top-0 left-0 w-40 h-40">
 			<svg xmlns="http://www.w3.org/2000/svg" :width="160" :height="160" :viewBox="`0 0 100 100`">
 				<rect
 					width="130"
@@ -16,7 +16,7 @@
 			</svg>
 		</div>
 		<WalletIdenticon :value="address" :size="75" class="WalletHeading__identicon" />
-		<div class="flex flex-col justify-center text-white antialiased pl-4 z-10">
+		<div class="z-10 flex flex-col justify-center pl-4 antialiased text-white">
 			<div v-if="name" class="flex flex-row text-lg font-semibold text-theme-heading-text">
 				<span v-tooltip="name.length > 12 ? name : ''" class="block xl:hidden">
 					{{ name | truncate(12) }}
@@ -33,7 +33,7 @@
 				/>
 			</div>
 
-			<p class="WalletHeading__address tracking-wide mb-3 flex items-center text-sm font-semibold">
+			<p class="flex items-center mb-3 text-sm font-semibold tracking-wide WalletHeading__address">
 				<span v-tooltip="label.length > 12 ? label : ''" class="block xl:hidden">
 					{{ wallet_truncate(label, 12) }}
 				</span>
@@ -52,7 +52,7 @@
 				<ButtonClipboard
 					:value="showPublicKey ? publicKey : address"
 					view-box="0 0 15 18"
-					class="text-inherit opacity-50 mx-2"
+					class="mx-2 opacity-50 text-inherit"
 				/>
 
 				<button
@@ -61,14 +61,14 @@
 						content: labelTooltip,
 						trigger: 'hover',
 					}"
-					class="text-inherit opacity-50"
+					class="opacity-50 text-inherit"
 					@click="togglePublicKey"
 				>
 					<SvgIcon :name="showPublicKey ? 'world' : 'key'" view-box="0 0 16 16" />
 				</button>
 			</p>
 
-			<p class="WalletHeading__balance font-semibold tracking-extrawide text-lg">
+			<p class="text-lg font-semibold WalletHeading__balance tracking-extrawide">
 				<span
 					v-tooltip="pendingBalanceTooltip"
 					:class="{ 'cursor-pointer': !pendingTransactionsRawAmount.isEqualTo(0) }"
@@ -77,7 +77,7 @@
 				</span>
 				<span
 					v-if="isMarketEnabled"
-					class="WalletHeading__balance__alternative text-xs text-theme-heading-text"
+					class="text-xs WalletHeading__balance__alternative text-theme-heading-text"
 				>
 					{{ alternativeBalance }}
 				</span>
@@ -89,6 +89,7 @@
 <script>
 import { ButtonClipboard } from "@/components/Button";
 import SvgIcon from "@/components/SvgIcon";
+import { StoreBinding } from "@/enums";
 import WalletService from "@/services/wallet";
 
 import { WalletIdenticon } from "../";
@@ -242,7 +243,7 @@ export default {
 			this.lazyWallet = await this.$client.fetchWallet(this.currentWallet.address);
 			if (updateLedger) {
 				const ledgerWallet = this.$store.getters["ledger/wallet"](this.currentWallet.address);
-				this.$store.dispatch("ledger/updateWallet", {
+				this.$store.dispatch(StoreBinding.LedgerUpdateWallet, {
 					...ledgerWallet,
 					balance: this.lazyWallet.balance,
 				});
