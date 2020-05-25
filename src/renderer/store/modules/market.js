@@ -1,5 +1,6 @@
 import Vue from "vue";
 
+import { StoreCommit } from "@/enums";
 import { MarketTicker } from "@/models/market";
 import priceApi from "@/services/price-api";
 
@@ -56,7 +57,7 @@ export default {
 
 				tickers[marketTicker.id] = marketTicker;
 			}
-			commit("UPDATE_TICKERS", tickers);
+			commit(StoreCommit.UpdateTickers, tickers);
 		},
 	},
 };

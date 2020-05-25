@@ -1,6 +1,6 @@
 import { Utils } from "@arkecosystem/platform-sdk";
 
-import { StoreBinding } from "@/enums";
+import { StoreBinding, StoreCommit } from "@/enums";
 import store from "@/store";
 
 describe("ProfileModule", () => {
@@ -23,13 +23,13 @@ describe("ProfileModule", () => {
 		];
 
 		beforeEach(() => {
-			store.commit("profile/CREATE", profile);
-			wallets.forEach((wallet) => store.commit("wallet/STORE", wallet));
+			store.commit(StoreCommit.ProfileCreate, profile);
+			wallets.forEach((wallet) => store.commit(StoreCommit.WalletStore, wallet));
 		});
 
 		afterEach(() => {
-			wallets.forEach((wallet) => store.commit("wallet/DELETE", wallet));
-			store.commit("profile/DELETE", profile.id);
+			wallets.forEach((wallet) => store.commit(StoreCommit.WalletDelete, wallet));
+			store.commit(StoreCommit.ProfileDelete, profile.id);
 		});
 
 		it("should return the balance of the profile wallets", () => {
@@ -62,20 +62,20 @@ describe("ProfileModule", () => {
 				{ id: "AxLedger2", address: "AxLedger2", balance: 301 },
 			];
 
-			store.commit("network/SET_ALL", networks);
-			store.commit("profile/CREATE", profile);
-			wallets.forEach((wallet) => store.commit("wallet/STORE", wallet));
-			store.commit("session/SET_PROFILE_ID", profileId);
+			store.commit(StoreCommit.NetworkSetAll, networks);
+			store.commit(StoreCommit.ProfileCreate, profile);
+			wallets.forEach((wallet) => store.commit(StoreCommit.WalletStore, wallet));
+			store.commit(StoreCommit.SessionSetProfileId, profileId);
 		});
 
 		afterEach(() => {
-			wallets.forEach((wallet) => store.commit("wallet/DELETE", wallet));
-			store.commit("profile/DELETE", profile.id);
+			wallets.forEach((wallet) => store.commit(StoreCommit.WalletDelete, wallet));
+			store.commit(StoreCommit.ProfileDelete, profile.id);
 		});
 
 		describe("when the Ledger does not have wallets", () => {
 			beforeEach(() => {
-				store.commit("ledger/SET_WALLETS", []);
+				store.commit(StoreCommit.LedgerSetWallets, []);
 			});
 
 			it("should return the balance of the profile wallets only", () => {
@@ -87,7 +87,7 @@ describe("ProfileModule", () => {
 
 		describe("when the Ledger has wallets on the current network", () => {
 			beforeEach(() => {
-				store.commit("ledger/SET_WALLETS", ledgerWallets);
+				store.commit(StoreCommit.LedgerSetWallets, ledgerWallets);
 			});
 
 			it("should return the balance of the profile wallets and the Ledger wallets", () => {
@@ -99,7 +99,7 @@ describe("ProfileModule", () => {
 			describe("when those wallets are already included in the profile", () => {
 				beforeEach(() => {
 					ledgerWallets[0] = wallets[0];
-					store.commit("ledger/SET_WALLETS", ledgerWallets);
+					store.commit(StoreCommit.LedgerSetWallets, ledgerWallets);
 				});
 
 				it("should ignore them", () => {
@@ -126,9 +126,9 @@ describe("ProfileModule", () => {
 		];
 
 		beforeEach(() => {
-			store.commit("profile/CREATE", profile);
-			wallets.forEach((wallet) => store.commit("wallet/STORE", wallet));
-			transactions.forEach((transaction) => store.commit("transaction/STORE", transaction));
+			store.commit(StoreCommit.ProfileCreate, profile);
+			wallets.forEach((wallet) => store.commit(StoreCommit.WalletStore, wallet));
+			transactions.forEach((transaction) => store.commit(StoreCommit.TransactionStore, transaction));
 		});
 
 		it("should delete the profile", async () => {

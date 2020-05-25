@@ -3,7 +3,7 @@ import { NETWORKS } from "@config";
 import { cloneDeep } from "lodash";
 import Vue from "vue";
 
-import { AppEvent, StoreBinding } from "@/enums";
+import { AppEvent, StoreBinding, StoreCommit } from "@/enums";
 import NetworkModel from "@/models/network";
 import eventBus from "@/plugins/event-bus";
 import Client from "@/services/client";
@@ -65,10 +65,10 @@ export default new BaseModule(NetworkModel, {
 					}
 				}
 				if (missingCustom) {
-					commit("SET_ALL", all);
+					commit(StoreCommit.SetAll, all);
 				}
 			} else {
-				commit("SET_ALL", NETWORKS);
+				commit(StoreCommit.SetAll, NETWORKS);
 			}
 
 			const sessionNetwork = rootGetters["session/network"];
@@ -111,7 +111,7 @@ export default new BaseModule(NetworkModel, {
 					}
 				}
 
-				commit("UPDATE", {
+				commit(StoreCommit.Update, {
 					...network,
 					constants,
 				});
@@ -133,7 +133,7 @@ export default new BaseModule(NetworkModel, {
 
 			try {
 				const feeStatistics = await Client.fetchFeeStatistics(network.server);
-				commit("UPDATE", {
+				commit(StoreCommit.Update, {
 					...network,
 					feeStatistics: { ...feeStatistics },
 				});
@@ -143,14 +143,14 @@ export default new BaseModule(NetworkModel, {
 		},
 
 		async addCustomNetwork({ dispatch, commit }, network) {
-			commit("ADD_CUSTOM_NETWORK", network);
+			commit(StoreCommit.AddCustomNetwork, network);
 			dispatch("create", network);
 
 			await dispatch("fetchFees", network);
 		},
 
 		async updateCustomNetwork({ dispatch, commit, rootGetters }, network) {
-			commit("UPDATE_CUSTOM_NETWORK", network);
+			commit(StoreCommit.UpdateCustomNetwork, network);
 			dispatch("update", network);
 
 			// Trigger a profile change/reload if updating current network
@@ -164,7 +164,7 @@ export default new BaseModule(NetworkModel, {
 		},
 
 		removeCustomNetwork({ dispatch, commit }, id) {
-			commit("REMOVE_CUSTOM_NETWORK", id);
+			commit(StoreCommit.RemoveCustomNetwork, id);
 			dispatch("delete", { id });
 		},
 	},

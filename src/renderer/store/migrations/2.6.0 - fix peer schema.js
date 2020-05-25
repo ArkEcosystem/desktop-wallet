@@ -1,4 +1,4 @@
-import { StoreBinding } from "@/enums";
+import { StoreBinding, StoreCommit } from "@/enums";
 
 // Update the schema of peers to v2
 export default (store) => {
@@ -18,7 +18,7 @@ export default (store) => {
 			return { ...peer, latency: peer.delay || 0 };
 		});
 
-		store.commit("peer/SET_PEERS", { peers, networkId });
+		store.commit(StoreCommit.PeerSetPeers, { peers, networkId });
 	}
 
 	// All successful migrations should update this property

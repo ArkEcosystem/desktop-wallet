@@ -182,7 +182,7 @@ import {
 	PluginManagerButtonInstallSource,
 	PluginManagerButtonMenu,
 } from "@/components/PluginManager/PluginManagerButtons";
-import { AppEvent, StoreBinding } from "@/enums";
+import { AppEvent, StoreBinding, StoreCommit } from "@/enums";
 
 export default {
 	name: "PluginManager",
@@ -221,7 +221,7 @@ export default {
 
 	computed: {
 		installSuccessMessage() {
-			return this.$t(`PAGES.PLUGIN_MANAGER.SUCCESS.${this.isUpdate ? "UPDATE" : "INSTALLATION"}`, {
+			return this.$t(`PAGES.PLUGIN_MANAGER.SUCCESS.${this.isUpdate ? StoreCommit.Update : "INSTALLATION"}`, {
 				plugin: this.selectedPlugin.title,
 			});
 		},

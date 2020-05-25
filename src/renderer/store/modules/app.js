@@ -1,3 +1,5 @@
+import { StoreCommit } from "@/enums";
+
 export default {
 	namespaced: true,
 
@@ -43,22 +45,22 @@ export default {
 
 	actions: {
 		setLatestAppliedMigration({ commit }, value) {
-			commit("SET_LATEST_APPLIED_MIGRATION", value);
+			commit(StoreCommit.SetLatestAppliedMigration, value);
 		},
 		setPinCode({ commit }, value) {
-			commit("SET_PIN_CODE", value);
+			commit(StoreCommit.SetPinCode, value);
 		},
 		setHasAcceptedBlacklistDisclaimer({ commit }, value) {
-			commit("SET_HAS_ACCEPTED_BLACKLIST_DISCLAIMER", value);
+			commit(StoreCommit.SetHasAcceptedBlacklistDisclaimer, value);
 		},
 		setHasSeenIntroduction({ commit }, value) {
-			commit("SET_HAS_SEEN_INTRODUCTION", value);
+			commit(StoreCommit.SetHasSeenIntroduction, value);
 		},
 		setVotingExplanation({ commit }, value) {
-			commit("SET_SHOW_VOTING_EXPLANATION", value);
+			commit(StoreCommit.SetShowVotingExplanation, value);
 		},
 		setIsScreenshotProtectionEnabled({ commit }, value) {
-			commit("SET_IS_SCREENSHOT_PROTECTION_ENABLED", value);
+			commit(StoreCommit.SetIsScreenshotProtectionEnabled, value);
 		},
 	},
 };

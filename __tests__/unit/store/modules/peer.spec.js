@@ -2,7 +2,7 @@ import nock from "nock";
 import Vue from "vue";
 import Vuex from "vuex";
 
-import { StoreBinding } from "@/enums";
+import { StoreBinding, StoreCommit } from "@/enums";
 import apiClient, { client } from "@/plugins/api-client";
 import store from "@/store";
 
@@ -43,9 +43,9 @@ const stripPorts = (peers) => {
 
 beforeAll(() => {
 	network1.nethash = nethash;
-	store.commit("network/SET_ALL", [network1]);
-	store.commit("profile/CREATE", profile1);
-	store.commit("session/SET_PROFILE_ID", profile1.id);
+	store.commit(StoreCommit.NetworkSetAll, [network1]);
+	store.commit(StoreCommit.ProfileCreate, profile1);
+	store.commit(StoreCommit.SessionSetProfileId, profile1.id);
 	store.dispatch(StoreBinding.PeerSet, peers);
 });
 
@@ -105,7 +105,7 @@ describe("peer store module", () => {
 	});
 
 	it("should return false if no initial peer", () => {
-		store.commit("peer/SET_CURRENT_PEER", { peer: null, networkId: network1.id });
+		store.commit(StoreCommit.PeerSetCurrentPeer, { peer: null, networkId: network1.id });
 		expect(store.getters["peer/current"]()).toEqual(false);
 	});
 

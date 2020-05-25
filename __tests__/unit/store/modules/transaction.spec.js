@@ -3,7 +3,7 @@ import nock from "nock";
 import Vue from "vue";
 import Vuex from "vuex";
 
-import { StoreBinding } from "@/enums";
+import { StoreBinding, StoreCommit } from "@/enums";
 import apiClient, { client as ClientService } from "@/plugins/api-client";
 import store from "@/store";
 
@@ -35,14 +35,14 @@ describe("TransactionModule", () => {
 	];
 
 	beforeAll(() => {
-		store.commit("network/SET_ALL", [network1]);
-		store.commit("profile/CREATE", profile1);
-		store.commit("session/SET_PROFILE_ID", profile1.id);
+		store.commit(StoreCommit.NetworkSetAll, [network1]);
+		store.commit(StoreCommit.ProfileCreate, profile1);
+		store.commit(StoreCommit.SessionSetProfileId, profile1.id);
 	});
 
 	beforeEach(() => {
-		transactions.forEach((transaction) => store.commit("transaction/STORE", transaction));
-		wallets.forEach((wallet) => store.commit("wallet/STORE", wallet));
+		transactions.forEach((transaction) => store.commit(StoreCommit.TransactionStore, transaction));
+		wallets.forEach((wallet) => store.commit(StoreCommit.WalletStore, wallet));
 		ClientService.host = "http://127.0.0.1:4003";
 		nock.cleanAll();
 	});
@@ -170,7 +170,7 @@ describe("TransactionModule", () => {
 
 	describe("getters staticFee", () => {
 		it("should return a single fee", () => {
-			store.commit("transaction/SET_STATIC_FEES", {
+			store.commit(StoreCommit.TransactionSetStaticFees, {
 				networkId: network1.id,
 				staticFees: [1, 2, 3, 4, 5],
 			});
@@ -183,7 +183,7 @@ describe("TransactionModule", () => {
 		});
 
 		it("should return null if no fee", () => {
-			store.commit("transaction/SET_STATIC_FEES", {
+			store.commit(StoreCommit.TransactionSetStaticFees, {
 				networkId: network1.id,
 				staticFees: [],
 			});
@@ -218,7 +218,7 @@ describe("TransactionModule", () => {
 
 	describe("clear unconfirmed votes", () => {
 		beforeEach(() => {
-			store.commit("session/SET_UNCONFIRMED_VOTES", [
+			store.commit(StoreCommit.SessionSetUnconfirmedVotes, [
 				{
 					id: 1,
 					timestamp: DateTime.make().subHours(6).valueOf(),

@@ -1,4 +1,4 @@
-import { StoreBinding } from "@/enums";
+import { StoreBinding, StoreCommit } from "@/enums";
 import store from "@/store";
 
 describe("WalletModule", () => {
@@ -92,16 +92,16 @@ describe("WalletModule", () => {
 		{ message: "hello 2", timestamp: new Date().getTime() + 10 },
 	];
 
-	store.commit("network/CREATE", sessionNetwork);
-	store.commit("profile/CREATE", sessionProfile);
-	store.commit("profile/CREATE", otherProfile);
+	store.commit(StoreCommit.NetworkCreate, sessionNetwork);
+	store.commit(StoreCommit.ProfileCreate, sessionProfile);
+	store.commit(StoreCommit.ProfileCreate, otherProfile);
 
-	store.commit("session/SET_PROFILE_ID", sessionProfile.id);
-	store.commit("ledger/SET_WALLETS", ledgerWallets);
+	store.commit(StoreCommit.SessionSetProfileId, sessionProfile.id);
+	store.commit(StoreCommit.LedgerSetWallets, ledgerWallets);
 
 	beforeEach(() => {
-		models.forEach((model) => store.commit("wallet/STORE", model));
-		messages.forEach((message) => store.commit("wallet/DELETE_SIGNED_MESSAGE", message));
+		models.forEach((model) => store.commit(StoreCommit.WalletStore, model));
+		messages.forEach((message) => store.commit(StoreCommit.WalletDeleteSignedMessage, message));
 	});
 
 	describe("getters byAddress", () => {

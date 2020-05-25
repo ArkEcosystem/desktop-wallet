@@ -2,7 +2,7 @@ import nock from "nock";
 import Vue from "vue";
 import Vuex from "vuex";
 
-import { StoreBinding } from "@/enums";
+import { StoreBinding, StoreCommit } from "@/enums";
 import apiClient, { client as ClientService } from "@/plugins/api-client";
 import store from "@/store";
 
@@ -14,9 +14,9 @@ Vue.use(Vuex);
 Vue.use(apiClient);
 
 beforeAll(() => {
-	store.commit("network/SET_ALL", [network1]);
-	store.commit("profile/CREATE", profile1);
-	store.commit("session/SET_PROFILE_ID", profile1.id);
+	store.commit(StoreCommit.NetworkSetAll, [network1]);
+	store.commit(StoreCommit.ProfileCreate, profile1);
+	store.commit(StoreCommit.SessionSetProfileId, profile1.id);
 	store.dispatch(StoreBinding.DelegateSet, delegates);
 });
 

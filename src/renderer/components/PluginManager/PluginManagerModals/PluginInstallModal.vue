@@ -36,7 +36,7 @@
 				</button>
 
 				<button v-if="isDownloadFinished && !isDownloadFailed" class="blue-button" @click="emitInstall">
-					{{ $t(`MODAL_PLUGIN_INSTALL.${isUpdate ? "UPDATE" : "INSTALL"}`) }}
+					{{ $t(`MODAL_PLUGIN_INSTALL.${isUpdate ? StoreCommit.Update : "INSTALL"}`) }}
 				</button>
 			</footer>
 		</template>

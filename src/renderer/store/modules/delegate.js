@@ -1,5 +1,6 @@
 import Vue from "vue";
 
+import { StoreCommit } from "@/enums";
 import DelegateModel from "@/models/delegate";
 
 export default {
@@ -121,7 +122,7 @@ export default {
 
 		set({ commit, rootGetters }, delegates) {
 			const network = rootGetters["session/network"];
-			commit("SET_DELEGATES", {
+			commit(StoreCommit.SetDelegates, {
 				delegates: delegates.map((delegate) => DelegateModel.deserialize(delegate)),
 				networkId: network.id,
 			});
@@ -129,7 +130,7 @@ export default {
 
 		add({ commit, rootGetters }, delegate) {
 			const network = rootGetters["session/network"];
-			commit("ADD_DELEGATE", {
+			commit(StoreCommit.AddDelegate, {
 				delegate: DelegateModel.deserialize(delegate),
 				networkId: network.id,
 			});

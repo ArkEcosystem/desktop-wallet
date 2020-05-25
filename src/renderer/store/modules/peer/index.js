@@ -3,7 +3,7 @@ import config from "@config";
 import { random, shuffle } from "lodash";
 import Vue from "vue";
 
-import { StoreBinding } from "@/enums";
+import { StoreBinding, StoreCommit } from "@/enums";
 import i18n from "@/i18n";
 import PeerModel from "@/models/peer";
 import ClientService from "@/services/client";
@@ -242,7 +242,7 @@ export default {
 		 * @return {void}
 		 */
 		setToNetwork({ commit }, { peers, networkId }) {
-			commit("SET_PEERS", {
+			commit(StoreCommit.SetPeers, {
 				peers: peers
 					.map((peer) => {
 						try {
@@ -269,7 +269,7 @@ export default {
 				return;
 			}
 
-			commit("SET_PEERS", {
+			commit(StoreCommit.SetPeers, {
 				peers: peers
 					.map((peer) => {
 						try {
@@ -302,7 +302,7 @@ export default {
 				// TODO only when necessary (when / before sending) (if no dynamic)
 				await dispatch(StoreBinding.TransactionUpdateStaticFees, null, { root: true });
 			}
-			commit("SET_CURRENT_PEER", {
+			commit(StoreCommit.SetCurrentPeer, {
 				peer,
 				networkId: profile.networkId,
 			});

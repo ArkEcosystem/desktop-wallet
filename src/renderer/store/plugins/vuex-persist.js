@@ -2,6 +2,8 @@
 
 import { merge as lodashMerge } from "lodash";
 
+import { StoreCommit } from "@/enums";
+
 const merge = (into, from) => lodashMerge({}, into, from);
 
 class SimplePromiseQueue {
@@ -66,7 +68,7 @@ export class VuexPersistence {
 
 		this.plugin = (store) => {
 			store.restored = this.restoreState(this.key, this.storage).then((savedState) => {
-				store.commit("RESTORE_MUTATION", savedState);
+				store.commit(StoreCommit.RestoreMutation, savedState);
 
 				store.subscribe((mutation, state) =>
 					this._mutex.enqueue(this.saveState(this.key, this.reducer(state), this.storage)),

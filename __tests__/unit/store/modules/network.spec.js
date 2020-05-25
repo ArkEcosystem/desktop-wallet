@@ -1,6 +1,6 @@
 import config from "@config";
 
-import { StoreBinding } from "@/enums";
+import { StoreBinding, StoreCommit } from "@/enums";
 import store from "@/store";
 
 const storeSnapshot = JSON.parse(JSON.stringify(store.state));
@@ -20,10 +20,10 @@ describe("NetworkModule", () => {
 
 	describe("getters bySymbol", () => {
 		beforeEach(() => {
-			networks.forEach((model) => store.commit("network/STORE", model));
+			networks.forEach((model) => store.commit(StoreCommit.NetworkStore, model));
 		});
 		afterEach(() => {
-			networks.forEach((model) => store.commit("network/DELETE", model.id));
+			networks.forEach((model) => store.commit(StoreCommit.NetworkDelete, model.id));
 		});
 
 		describe("when the symbol param does not exist", () => {
@@ -41,10 +41,10 @@ describe("NetworkModule", () => {
 
 	describe("getters byToken", () => {
 		beforeEach(() => {
-			networks.forEach((model) => store.commit("network/STORE", model));
+			networks.forEach((model) => store.commit(StoreCommit.NetworkStore, model));
 		});
 		afterEach(() => {
-			networks.forEach((model) => store.commit("network/DELETE", model.id));
+			networks.forEach((model) => store.commit(StoreCommit.NetworkDelete, model.id));
 		});
 
 		describe("when the token param does not exist", () => {
@@ -69,7 +69,7 @@ describe("NetworkModule", () => {
 		});
 
 		it("should not set the network if not empty", () => {
-			store.commit("network/STORE", networks[0]);
+			store.commit(StoreCommit.NetworkStore, networks[0]);
 			expect(store.getters["network/all"]).toEqual([networks[0]]);
 			store.dispatch(StoreBinding.NetworkLoad);
 
@@ -77,8 +77,8 @@ describe("NetworkModule", () => {
 		});
 
 		it("should load missing custom networks", () => {
-			store.commit("network/STORE", networks[0]);
-			customNetworks.forEach((network) => store.commit("network/ADD_CUSTOM_NETWORK", network));
+			store.commit(StoreCommit.NetworkStore, networks[0]);
+			customNetworks.forEach((network) => store.commit(StoreCommit.NetworkAddCustomNetwork, network));
 			expect(store.getters["network/all"]).toEqual([networks[0]]);
 			store.dispatch(StoreBinding.NetworkLoad);
 

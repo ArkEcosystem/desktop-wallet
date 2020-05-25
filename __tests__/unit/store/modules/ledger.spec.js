@@ -4,7 +4,7 @@ import nock from "nock";
 import Vue from "vue";
 import Vuex from "vuex";
 
-import { StoreBinding } from "@/enums";
+import { StoreBinding, StoreCommit } from "@/enums";
 import apiClient, { client as ClientService } from "@/plugins/api-client";
 import ledgerService from "@/services/ledger-service";
 import LedgerModule from "@/store/modules/ledger";
@@ -348,14 +348,14 @@ describe("ledger store module", () => {
 		});
 
 		it("should not start if already loading", async () => {
-			store.commit("ledger/SET_LOADING", "test");
+			store.commit(StoreCommit.LedgerSetLoading, "test");
 			expect(await store.dispatch(StoreBinding.LedgerReloadWallets)).toEqual({});
 		});
 
 		it("should mark all other processes to stop on force reload", async () => {
-			store.commit("ledger/SET_LOADING", "test1");
-			store.commit("ledger/SET_LOADING", "test2");
-			store.commit("ledger/SET_LOADING", "test3");
+			store.commit(StoreCommit.LedgerSetLoading, "test1");
+			store.commit(StoreCommit.LedgerSetLoading, "test2");
+			store.commit(StoreCommit.LedgerSetLoading, "test3");
 			expect(store.getters["ledger/isLoading"]).toBeTruthy();
 			expect(store.getters["ledger/isConnected"]).toBeTruthy();
 			await store.dispatch(StoreBinding.LedgerReloadWallets, {
@@ -376,7 +376,7 @@ describe("ledger store module", () => {
 					data: ledgerWallets.slice(0, 9),
 				});
 
-			await store.commit("ledger/SET_CONNECTED", true);
+			await store.commit(StoreCommit.LedgerSetConnected, true);
 			expect(await store.dispatch(StoreBinding.LedgerReloadWallets)).toEqual(expectedWallets);
 		});
 
@@ -394,7 +394,7 @@ describe("ledger store module", () => {
 				expectedWallets[walletId].name = expectedWallets[walletId].address;
 			}
 
-			await store.commit("ledger/SET_CONNECTED", true);
+			await store.commit(StoreCommit.LedgerSetConnected, true);
 			expect(await store.dispatch(StoreBinding.LedgerReloadWallets)).toEqual(expectedWallets);
 		});
 
@@ -405,7 +405,7 @@ describe("ledger store module", () => {
 
 	describe("updateWallet", () => {
 		it("should update a single wallet", async () => {
-			store.commit("ledger/SET_WALLETS", {
+			store.commit(StoreCommit.LedgerSetWallets, {
 				A1: { address: "A1", balance: 0 },
 			});
 			await store.dispatch(StoreBinding.LedgerUpdateWallet, { address: "A1", balance: 10 });
@@ -422,7 +422,7 @@ describe("ledger store module", () => {
 	describe("cacheWallets", () => {
 		it("should cache if enabled in session", async () => {
 			ledgerCache = true;
-			await store.commit("ledger/SET_WALLETS", {
+			await store.commit(StoreCommit.LedgerSetWallets, {
 				A1: { address: "A1", balance: 0 },
 			});
 			await store.dispatch(StoreBinding.LedgerCacheWallets);
@@ -431,7 +431,7 @@ describe("ledger store module", () => {
 
 		it("should not cache if disabled in session", async () => {
 			ledgerCache = false;
-			await store.commit("ledger/SET_WALLETS", {
+			await store.commit(StoreCommit.LedgerSetWallets, {
 				A1: { address: "A1", balance: 0 },
 			});
 			await store.dispatch(StoreBinding.LedgerCacheWallets);
@@ -442,7 +442,7 @@ describe("ledger store module", () => {
 	describe("clearWalletCache", () => {
 		it("should clear the cached wallets", async () => {
 			ledgerCache = true;
-			await store.commit("ledger/SET_WALLETS", {
+			await store.commit(StoreCommit.LedgerSetWallets, {
 				A1: { address: "A1" },
 			});
 			await store.dispatch(StoreBinding.LedgerCacheWallets);

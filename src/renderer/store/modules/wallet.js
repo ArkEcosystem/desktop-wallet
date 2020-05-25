@@ -1,6 +1,7 @@
 import { unionBy, uniqBy } from "lodash";
 import Vue from "vue";
 
+import { StoreCommit } from "@/enums";
 import WalletModel from "@/models/wallet";
 
 const includes = (objects, find) => objects.map((a) => a.id).includes(find.id);
@@ -188,27 +189,27 @@ export default {
 	actions: {
 		create({ commit }, wallet) {
 			const data = WalletModel.deserialize(wallet);
-			commit("CREATE", data);
+			commit(StoreCommit.Create, data);
 
 			return data;
 		},
 		store({ commit }, wallets) {
-			commit("STORE", wallets);
+			commit(StoreCommit.Store, wallets);
 		},
 		update({ commit }, wallet) {
 			const data = WalletModel.deserialize(sanitizeWallet(wallet));
-			commit("UPDATE", data);
+			commit(StoreCommit.Update, data);
 
 			return data;
 		},
 		updateBulk({ commit }, wallets) {
 			const data = wallets.map((wallet) => WalletModel.deserialize(sanitizeWallet(wallet)));
-			commit("UPDATE_BULK", data);
+			commit(StoreCommit.UpdateBulk, data);
 
 			return data;
 		},
 		delete({ commit }, wallet) {
-			commit("DELETE", wallet);
+			commit(StoreCommit.Delete, wallet);
 		},
 		setLedgerName({ commit, rootGetters }, { address, name }) {
 			if (!address) {
@@ -219,16 +220,16 @@ export default {
 			}
 
 			const profileId = rootGetters["session/profileId"];
-			commit("SET_LEDGER_NAME", { address, name, profileId });
+			commit(StoreCommit.SetLedgerName, { address, name, profileId });
 		},
 		setSecondaryButtonsVisible({ commit }, visibility) {
-			commit("SET_SECONDARY_BUTTON", visibility);
+			commit(StoreCommit.SetSecondaryButton, visibility);
 		},
 		addSignedMessage({ commit }, message) {
-			commit("ADD_SIGNED_MESSAGE", message);
+			commit(StoreCommit.AddSignedMessage, message);
 		},
 		deleteSignedMessage({ commit }, message) {
-			commit("DELETE_SIGNED_MESSAGE", message);
+			commit(StoreCommit.DeleteSignedMessage, message);
 		},
 	},
 };
