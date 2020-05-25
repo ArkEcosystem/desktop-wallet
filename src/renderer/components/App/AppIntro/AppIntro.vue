@@ -1,8 +1,8 @@
 <template>
 	<div
-		class="AppIntro pt-10 pb-6 px-10 flex flex-col rounded-lg w-full h-full pin-t pin-l fixed animated fadeIn lg:overflow-y-auto"
+		class="AppIntro pt-10 pb-6 px-10 flex flex-col rounded-lg w-full h-full top-0 left-0 fixed animate__animated animate__fadeIn lg:overflow-y-auto"
 	>
-		<div class="flex w-full h-full pin-t pin-l">
+		<div class="flex w-full h-full top-0 left-0">
 			<AppIntroScreen
 				v-if="step === 0"
 				:show-back="false"

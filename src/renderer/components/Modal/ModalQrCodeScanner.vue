@@ -29,7 +29,7 @@
 
 				<span
 					:class="{
-						'absolute pin-b pin-x text-center py-4 bg-black-transparent text-theme-explanation-text': !isLoading,
+						'absolute bottom-0 inset-x-0 text-center py-4 bg-black-transparent text-theme-explanation-text': !isLoading,
 					}"
 				>
 					{{ $t("MODAL_QR_SCANNER.INSTRUCTION") }}
@@ -132,7 +132,7 @@ export default {
 }
 
 .QrCode__crosshair__container {
-	@apply .absolute .flex .items-center .pin;
+	@apply .absolute .flex .items-center .inset-0;
 }
 .QrCode__crosshair__container > div {
 	width: 40%;

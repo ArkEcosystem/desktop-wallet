@@ -14,7 +14,7 @@
 		"baseUrl": "./",
 		"paths": {
 			"@package.json": ["./package.json"],
-			"@tailwind": ["./tailwind.js"],
+			"@tailwind": ["./tailwind.config.js"],
 			"@config": ["./config"],
 			"@/*": ["./src/renderer/*"]
 		},

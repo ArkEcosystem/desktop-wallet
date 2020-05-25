@@ -341,7 +341,10 @@ export default {
 }
 
 .AppSidemenuNetworkStatus__ButtonModal {
-	@apply block;
+	@apply .block;
+}
+.AppSidemenuNetworkStatus__ButtonModal svg {
+	@apply .align-baseline;
 }
 
 .AppSidemenuNetworkStatus__ButtonReload-colorClass:hover {

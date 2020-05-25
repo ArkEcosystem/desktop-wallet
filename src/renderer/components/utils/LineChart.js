@@ -2,8 +2,7 @@ import tailwindConfig from "@tailwind";
 import Chart from "chart.js";
 import { Line, mixins } from "vue-chartjs";
 
-Chart.defaults.global.defaultFontFamily = tailwindConfig.fonts.sans.join(",");
-// TODO: Add theme colors
+Chart.defaults.global.defaultFontFamily = tailwindConfig.theme.fontFamily.sans.join(",");
 
 export default {
 	extends: Line,

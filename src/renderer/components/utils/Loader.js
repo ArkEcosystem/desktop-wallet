@@ -8,7 +8,7 @@ export default {
 		color: {
 			type: String,
 			required: false,
-			default: tailwindConfig.colors["blue-dark"],
+			default: tailwindConfig.theme.colors["blue-dark"],
 		},
 	},
 

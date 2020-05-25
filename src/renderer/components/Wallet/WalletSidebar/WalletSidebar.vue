@@ -78,7 +78,7 @@
 			class="WalletSidebar__wallet opacity-37.5 select-none"
 		>
 			<div class="WalletSidebar__wallet__wrapper flex flex-row transition items-center w-full mx-6 py-6 truncate">
-				<WalletIdenticonPlaceholder :size="50" class="WalletSidebar__wallet__identicon flex-no-shrink" />
+				<WalletIdenticonPlaceholder :size="50" class="WalletSidebar__wallet__identicon flex-shrink-0" />
 				<div
 					class="WalletSidebar__wallet__info flex flex-col font-semibold text-theme-page-text-light overflow-hidden pl-2"
 				>
@@ -130,7 +130,7 @@
 						<WalletIdenticon
 							:size="50"
 							:value="wallet.address"
-							class="WalletSidebar__wallet__identicon flex-no-shrink"
+							class="WalletSidebar__wallet__identicon flex-shrink-0"
 						/>
 						<div
 							:class="{
@@ -438,7 +438,7 @@ export default {
 }
 .WalletSidebar__menu {
 	border-bottom: 0.08rem solid var(--theme-feature-item-alternative);
-	@apply .sticky .z-10 .bg-theme-feature .pin-t;
+	@apply .sticky .z-10 .bg-theme-feature .top-0;
 }
 .WalletSidebar__menu__button {
 	@apply .cursor-pointer .fill-current .text-theme-option-button-text .p-2 .my-6;

@@ -31,8 +31,8 @@
 			v-click-outside.stop="close"
 			:class="[
 				{
-					'pin-b pb-10': pinAbove,
-					'pin-x': pinToInputWidth,
+					'bottom-0 pb-10': pinAbove,
+					'inset-x-0': pinToInputWidth,
 				},
 				containerClasses,
 			]"
@@ -40,7 +40,7 @@
 			class="MenuDropdown__container absolute min-w-full z-20"
 		>
 			<ul
-				class="MenuDropdown pointer-events-auto shadow list-reset flex flex-col bg-theme-feature rounded py-2 overflow-y-auto max-h-2xs"
+				class="MenuDropdown pointer-events-auto shadow flex flex-col bg-theme-feature rounded py-2 overflow-y-auto max-h-2xs"
 			>
 				<slot>
 					<MenuDropdownItem

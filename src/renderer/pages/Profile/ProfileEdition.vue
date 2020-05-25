@@ -19,7 +19,7 @@
 						/>
 						<h2
 							v-if="isProfileTab"
-							class="ProfileNew__instructions__name opacity-75 absolute pin-x z-10 hidden xl:block truncate"
+							class="ProfileNew__instructions__name opacity-75 absolute inset-x-0 z-10 hidden xl:block truncate"
 						>
 							{{ name }}
 						</h2>
@@ -57,7 +57,7 @@
 
 								<button
 									:disabled="$v.modified.name.$dirty && $v.modified.name.$invalid"
-									class="ProfileEdition__name__toggle ml-2 cursor-pointer text-grey hover:text-blue focus:text-blue inline-flex"
+									class="ProfileEdition__name__toggle ml-2 cursor-pointer text-grey hover:text-blue focus:text-blue inline-flex items-center"
 									@click="toggleIsNameEditable"
 								>
 									<SvgIcon name="edit" view-box="0 0 11 14" />
@@ -825,6 +825,7 @@ export default {
 }
 .ProfileEdition__language__handler__flag {
 	height: 12px;
+	@apply inline-block;
 }
 
 .ProfileEdition__name .ProfileEdition__field--modified,
