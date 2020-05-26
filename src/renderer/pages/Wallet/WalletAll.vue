@@ -123,6 +123,7 @@
 </template>
 
 <script>
+import { Vue, Component } from "vue-property-decorator";
 import { isEqual, uniqBy } from "lodash";
 
 import { ButtonLayout } from "@/components/Button";
@@ -139,10 +140,10 @@ import {
 import WalletTable from "@/components/Wallet/WalletTable";
 import { AppEvent, StoreBinding } from "@/enums";
 
-export default {
-	name: "WalletAll",
+@Component({
+    name: "WalletAll",
 
-	components: {
+    components: {
 		ButtonLayout,
 		Loader,
 		ProfileAvatar,
@@ -155,201 +156,171 @@ export default {
 		WalletRemovalConfirmation,
 		WalletRenameModal,
 		WalletTable,
-	},
+	}
+})
+export default class WalletAll extends Vue {
+    selectableWallets = [];
+    walletToRemove = null;
+    walletToRename = null;
+    isLoading = false;
 
-	data: () => ({
-		selectableWallets: [],
-		walletToRemove: null,
-		walletToRename: null,
-		isLoading: false,
-	}),
+    get alternativeCurrency() {
+        return this.$store.getters["session/currency"];
+    }
 
-	computed: {
-		alternativeCurrency() {
-			return this.$store.getters["session/currency"];
-		},
+    get alternativeTotalBalance() {
+        const balance = this.currency_subToUnit(this.totalBalance);
+        return this.currency_format(balance * this.price, { currency: this.alternativeCurrency });
+    }
 
-		alternativeTotalBalance() {
-			const balance = this.currency_subToUnit(this.totalBalance);
-			return this.currency_format(balance * this.price, { currency: this.alternativeCurrency });
-		},
+    get isMarketEnabled() {
+        return this.currentNetwork.market.enabled;
+    }
 
-		isMarketEnabled() {
-			return this.currentNetwork.market.enabled;
-		},
+    get currentSymbol() {
+        return (this.currentNetwork.symbol || "").charAt(0);
+    }
 
-		currentSymbol() {
-			return (this.currentNetwork.symbol || "").charAt(0);
-		},
+    get currentNetwork() {
+        return this.session_network;
+    }
 
-		currentNetwork() {
-			return this.session_network;
-		},
+    get hideText() {
+        return this.$store.getters["session/hideWalletButtonText"];
+    }
 
-		hideText() {
-			return this.$store.getters["session/hideWalletButtonText"];
-		},
+    get totalBalance() {
+        return this.$store.getters["profile/balanceWithLedger"](this.session_profile.id);
+    }
 
-		totalBalance() {
-			return this.$store.getters["profile/balanceWithLedger"](this.session_profile.id);
-		},
+    get price() {
+        return this.$store.getters["market/lastPrice"];
+    }
 
-		price() {
-			return this.$store.getters["market/lastPrice"];
-		},
+    get wallets() {
+        const wallets = this.$store.getters["wallet/byProfileId"](this.session_profile.id);
+        return this.wallet_sortByName(wallets);
+    }
 
-		wallets() {
-			const wallets = this.$store.getters["wallet/byProfileId"](this.session_profile.id);
-			return this.wallet_sortByName(wallets);
-		},
+    get hasWallets() {
+        return this.selectableWallets.length;
+    }
 
-		hasWallets() {
-			return this.selectableWallets.length;
-		},
+    get isLedgerLoading() {
+        return !!(this.$store.getters["ledger/isLoading"] && !this.$store.getters["ledger/wallets"].length);
+    }
 
-		isLedgerLoading() {
-			return !!(this.$store.getters["ledger/isLoading"] && !this.$store.getters["ledger/wallets"].length);
-		},
+    get isLedgerConnected() {
+        return this.$store.getters["ledger/isConnected"];
+    }
 
-		isLedgerConnected() {
-			return this.$store.getters["ledger/isConnected"];
-		},
+    get hasWalletGridLayout() {
+        return this.$store.getters["session/hasWalletGridLayout"];
+    }
 
-		hasWalletGridLayout() {
-			return this.$store.getters["session/hasWalletGridLayout"];
-		},
+    get TODO_walletLayout() {}
+    get TODO_sortParams() {}
 
-		walletLayout: {
-			get() {
-				return this.$store.getters["session/walletLayout"];
-			},
-			set(layout) {
-				this.$store.dispatch(StoreBinding.SessionSetWalletLayout, layout);
+    get showVotedDelegates() {
+        return this.selectableWallets.some((wallet) => Object.prototype.hasOwnProperty.call(wallet, "vote"));
+    }
 
-				this.$store.dispatch(StoreBinding.ProfileUpdate, {
-					...this.session_profile,
-					walletLayout: layout,
-				});
-			},
-		},
-
-		sortParams: {
-			get() {
-				return this.$store.getters["session/walletSortParams"];
-			},
-			set(sortParams) {
-				this.$store.dispatch(StoreBinding.SessionSetWalletSortParams, sortParams);
-
-				this.$store.dispatch(StoreBinding.ProfileUpdate, {
-					...this.session_profile,
-					walletSortParams: sortParams,
-				});
-			},
-		},
-
-		showVotedDelegates() {
-			return this.selectableWallets.some((wallet) => Object.prototype.hasOwnProperty.call(wallet, "vote"));
-		},
-	},
-
-	beforeRouteEnter(to, from, next) {
+    beforeRouteEnter(to, from, next) {
 		next((vm) => {
 			vm.$synchronizer.focus("wallets");
 		});
-	},
+	}
 
-	created() {
+    created() {
 		this.loadWallets();
 		this.$eventBus.on(AppEvent.LedgerWalletsUpdated, this.includeLedgerWallets);
 		this.$eventBus.on(AppEvent.LedgerDisconnected, this.ledgerDisconnected);
-	},
+	}
 
-	beforeDestroy() {
+    beforeDestroy() {
 		this.$eventBus.off(AppEvent.LedgerWalletsUpdated, this.includeLedgerWallets);
 		this.$eventBus.off(AppEvent.LedgerDisconnected, this.ledgerDisconnected);
-	},
+	}
 
-	/**
-	 * On `create` the event listeners are bound, but, every time this page is accessed
-	 * should include the Ledger wallets, if they are available, to the list of wallets
-	 */
-	activated() {
+    //*
+         * On `create` the event listeners are bound, but, every time this page is accessed
+         * should include the Ledger wallets, if they are available, to the list of wallets
+         
+    activated() {
 		this.loadWallets();
-	},
+	}
 
-	methods: {
-		loadWallets() {
-			this.isLoading = true;
+    loadWallets() {
+        this.isLoading = true;
 
-			if (this.$store.getters["ledger/isConnected"]) {
-				this.includeLedgerWallets();
-			} else {
-				this.selectableWallets = this.wallets;
-			}
+        if (this.$store.getters["ledger/isConnected"]) {
+            this.includeLedgerWallets();
+        } else {
+            this.selectableWallets = this.wallets;
+        }
 
-			this.isLoading = false;
-		},
+        this.isLoading = false;
+    }
 
-		hideRemovalConfirmation() {
-			this.walletToRemove = null;
-		},
+    hideRemovalConfirmation() {
+        this.walletToRemove = null;
+    }
 
-		hideRenameModal() {
-			this.walletToRename = null;
-		},
+    hideRenameModal() {
+        this.walletToRename = null;
+    }
 
-		async includeLedgerWallets() {
-			const ledgerWallets = this.$store.getters["ledger/wallets"];
-			this.selectableWallets = this.wallet_sortByName(uniqBy([...ledgerWallets, ...this.wallets], "address"));
-		},
+    includeLedgerWallets() {
+        const ledgerWallets = this.$store.getters["ledger/wallets"];
+        this.selectableWallets = this.wallet_sortByName(uniqBy([...ledgerWallets, ...this.wallets], "address"));
+    }
 
-		ledgerDisconnected() {
-			this.selectableWallets = this.wallets;
-		},
+    ledgerDisconnected() {
+        this.selectableWallets = this.wallets;
+    }
 
-		openRemovalConfirmation(wallet) {
-			this.walletToRemove = wallet;
-		},
+    openRemovalConfirmation(wallet) {
+        this.walletToRemove = wallet;
+    }
 
-		openRenameModal(wallet) {
-			this.walletToRename = wallet;
-		},
+    openRenameModal(wallet) {
+        this.walletToRename = wallet;
+    }
 
-		removeWallet(wallet) {
-			this.hideRemovalConfirmation();
-			this.selectableWallets = this.selectableWallets.filter((w) => {
-				return w.id !== wallet.id;
-			});
-		},
+    removeWallet(wallet) {
+        this.hideRemovalConfirmation();
+        this.selectableWallets = this.selectableWallets.filter((w) => {
+            return w.id !== wallet.id;
+        });
+    }
 
-		toggleWalletLayout() {
-			this.walletLayout = this.walletLayout === "grid" ? "tabular" : "grid";
-		},
+    toggleWalletLayout() {
+        this.walletLayout = this.walletLayout === "grid" ? "tabular" : "grid";
+    }
 
-		onRemoveWallet(wallet) {
-			this.openRemovalConfirmation(wallet);
-		},
+    onRemoveWallet(wallet) {
+        this.openRemovalConfirmation(wallet);
+    }
 
-		onRenameWallet(wallet) {
-			this.openRenameModal(wallet);
-		},
+    onRenameWallet(wallet) {
+        this.openRenameModal(wallet);
+    }
 
-		onWalletRenamed() {
-			this.hideRenameModal();
-			this.loadWallets();
-		},
+    onWalletRenamed() {
+        this.hideRenameModal();
+        this.loadWallets();
+    }
 
-		onSortChange(sortParams) {
-			if (!isEqual(sortParams, this.sortParams)) {
-				this.sortParams = sortParams;
-			}
-		},
+    onSortChange(sortParams) {
+        if (!isEqual(sortParams, this.sortParams)) {
+            this.sortParams = sortParams;
+        }
+    }
 
-		showWallet(walletId) {
-			this.$router.push({ name: "wallet-show", params: { address: walletId } });
-		},
-	},
-};
+    showWallet(walletId) {
+        this.$router.push({ name: "wallet-show", params: { address: walletId } });
+    }
+}
 </script>
 
 <style lang="postcss" scoped>

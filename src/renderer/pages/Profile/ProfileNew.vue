@@ -184,6 +184,7 @@
 </template>
 
 <script>
+import { Vue, Component } from "vue-property-decorator";
 import { BIP39, I18N, MARKET, NETWORKS } from "@config";
 
 import { ButtonSwitch } from "@/components/Button";
@@ -193,10 +194,10 @@ import { SelectionAvatar, SelectionBackground, SelectionNetwork, SelectionTheme 
 import { StoreBinding } from "@/enums";
 import Profile from "@/models/profile";
 
-export default {
-	name: "ProfileNew",
+@Component({
+    name: "ProfileNew",
 
-	components: {
+    components: {
 		ButtonSwitch,
 		InputSelect,
 		InputText,
@@ -206,126 +207,75 @@ export default {
 		SelectionBackground,
 		SelectionNetwork,
 		SelectionTheme,
-	},
+	}
+})
+export default class ProfileNew extends Vue {
+    schema = Profile.schema;
+    step = 1;
+    selectedNetwork = null;
+    get TODO_background() {}
+    get TODO_bip39Language() {}
+    get TODO_currency() {}
+    get TODO_isMarketChartEnabled() {}
+    get TODO_theme() {}
+    get TODO_timeFormat() {}
+    get TODO_priceApi() {}
 
-	schema: Profile.schema,
+    get currencies() {
+        return Object.keys(MARKET.currencies);
+    }
 
-	data: () => ({
-		step: 1,
-		selectedNetwork: null,
-	}),
+    get bip39Languages() {
+        return BIP39.languages.reduce((all, language) => {
+            all[language] = this.$t(`BIP39_LANGUAGES.${language}`);
 
-	computed: {
-		background: {
-			get() {
-				return this.$store.getters["session/background"];
-			},
-			set(background) {
-				this.selectBackground(background);
-			},
-		},
-		bip39Language: {
-			get() {
-				return this.$store.getters["session/bip39Language"] || BIP39.defaultLanguage;
-			},
-			set(bip39language) {
-				this.selectBip39Language(bip39language);
-			},
-		},
-		currency: {
-			get() {
-				return this.$store.getters["session/currency"];
-			},
-			set(currency) {
-				this.selectCurrency(currency);
-			},
-		},
-		isMarketChartEnabled: {
-			get() {
-				return this.$store.getters["session/isMarketChartEnabled"];
-			},
-			set(isMarketChartEnabled) {
-				this.selectIsMarketChartEnabled(isMarketChartEnabled);
-			},
-		},
-		theme: {
-			get() {
-				return this.$store.getters["session/theme"];
-			},
-			set(theme) {
-				this.selectTheme(theme);
-			},
-		},
-		timeFormat: {
-			get() {
-				return this.$store.getters["session/timeFormat"] || "Default";
-			},
-			set(timeFormat) {
-				this.selectTimeFormat(timeFormat);
-			},
-		},
-		priceApi: {
-			get() {
-				return this.$store.getters["session/priceApi"] || "coingecko";
-			},
-			set(priceApi) {
-				this.selectPriceApi(priceApi);
-			},
-		},
-		currencies() {
-			return Object.keys(MARKET.currencies);
-		},
-		bip39Languages() {
-			return BIP39.languages.reduce((all, language) => {
-				all[language] = this.$t(`BIP39_LANGUAGES.${language}`);
+            return all;
+        }, {});
+    }
 
-				return all;
-			}, {});
-		},
-		timeFormats() {
-			return ["Default", "12h", "24h"].reduce((all, format) => {
-				all[format] = this.$t(`TIME_FORMAT.${format.toUpperCase()}`);
-				return all;
-			}, {});
-		},
-		priceApis() {
-			return {
-				coingecko: "CoinGecko",
-				cryptocompare: "CryptoCompare",
-				coincap: "CoinCap",
-			};
-		},
-		defaultNetworks() {
-			return NETWORKS.map((network) => network);
-		},
-		customNetworks() {
-			return this.$store.getters["network/customNetworks"];
-		},
-		availableCustomNetworks: {
-			get() {
-				return Object.values(this.customNetworks);
-			},
-			cache: false,
-		},
-		nameError() {
-			if (this.$v.schema.name.$dirty && this.$v.schema.name.$invalid) {
-				if (!this.$v.schema.name.doesNotExist) {
-					return this.$t("VALIDATION.NAME.DUPLICATED", [this.schema.name]);
-				} else if (!this.$v.schema.name.schemaMaxLength) {
-					return this.$t("VALIDATION.NAME.MAX_LENGTH", [Profile.schema.properties.name.maxLength]);
-				} else if (!this.$v.schema.name.schemaMinLength) {
-					return this.$tc("VALIDATION.NAME.MIN_LENGTH", Profile.schema.properties.name.minLength);
-				}
-			}
+    get timeFormats() {
+        return ["Default", "12h", "24h"].reduce((all, format) => {
+            all[format] = this.$t(`TIME_FORMAT.${format.toUpperCase()}`);
+            return all;
+        }, {});
+    }
 
-			return null;
-		},
-	},
+    get priceApis() {
+        return {
+            coingecko: "CoinGecko",
+            cryptocompare: "CryptoCompare",
+            coincap: "CoinCap",
+        };
+    }
 
-	/**
-	 * Reuse the settings of the current profile every time the page is created
-	 */
-	created() {
+    get defaultNetworks() {
+        return NETWORKS.map((network) => network);
+    }
+
+    get customNetworks() {
+        return this.$store.getters["network/customNetworks"];
+    }
+
+    get TODO_availableCustomNetworks() {}
+
+    get nameError() {
+        if (this.$v.schema.name.$dirty && this.$v.schema.name.$invalid) {
+            if (!this.$v.schema.name.doesNotExist) {
+                return this.$t("VALIDATION.NAME.DUPLICATED", [this.schema.name]);
+            } else if (!this.$v.schema.name.schemaMaxLength) {
+                return this.$t("VALIDATION.NAME.MAX_LENGTH", [Profile.schema.properties.name.maxLength]);
+            } else if (!this.$v.schema.name.schemaMinLength) {
+                return this.$tc("VALIDATION.NAME.MIN_LENGTH", Profile.schema.properties.name.minLength);
+            }
+        }
+
+        return null;
+    }
+
+    //*
+         * Reuse the settings of the current profile every time the page is created
+         
+    created() {
 		this.selectNetwork(this.defaultNetworks.find((network) => network.id === "ark.mainnet"));
 		this.schema.background = this.background;
 		this.schema.bip39Language = this.bip39Language;
@@ -341,92 +291,90 @@ export default {
 		if (this.schema.theme !== this.$store.getters["session/theme"]) {
 			this.$store.dispatch(StoreBinding.SessionSetTheme, this.schema.theme);
 		}
-	},
+	}
 
-	destroyed() {
+    destroyed() {
 		this.$store.dispatch(StoreBinding.SessionSetProfileId, this.session_profile.id);
-	},
+	}
 
-	beforeRouteEnter(to, from, next) {
+    beforeRouteEnter(to, from, next) {
 		next((vm) => {
 			vm.$synchronizer.focus();
 			vm.$synchronizer.pause("market");
 		});
-	},
+	}
 
-	methods: {
-		async create() {
-			const { id } = await this.$store.dispatch(StoreBinding.ProfileCreate, this.schema);
-			await this.$store.dispatch(StoreBinding.SessionSetProfileId, id);
-			this.$router.push({ name: "dashboard" });
-		},
+    create() {
+        const { id } = await this.$store.dispatch(StoreBinding.ProfileCreate, this.schema);
+        await this.$store.dispatch(StoreBinding.SessionSetProfileId, id);
+        this.$router.push({ name: "dashboard" });
+    }
 
-		moveTo(step) {
-			this.step = step;
-		},
+    moveTo(step) {
+        this.step = step;
+    }
 
-		selectAvatar(avatar) {
-			if (typeof avatar === "string") {
-				this.schema.avatar = avatar;
-			} else if (avatar.onlyLetter) {
-				this.schema.avatar = null;
-			} else if (avatar.name) {
-				this.schema.avatar = {
-					avatarName: avatar.name,
-					pluginId: avatar.pluginId,
-				};
-			} else {
-				throw new Error(`Invalid value for avatar: ${avatar}`);
-			}
-		},
+    selectAvatar(avatar) {
+        if (typeof avatar === "string") {
+            this.schema.avatar = avatar;
+        } else if (avatar.onlyLetter) {
+            this.schema.avatar = null;
+        } else if (avatar.name) {
+            this.schema.avatar = {
+                avatarName: avatar.name,
+                pluginId: avatar.pluginId,
+            };
+        } else {
+            throw new Error(`Invalid value for avatar: ${avatar}`);
+        }
+    }
 
-		async selectBackground(background) {
-			this.schema.background = background;
-			await this.$store.dispatch(StoreBinding.SessionSetBackground, background);
-		},
+    selectBackground(background) {
+        this.schema.background = background;
+        await this.$store.dispatch(StoreBinding.SessionSetBackground, background);
+    }
 
-		selectCurrency(currency) {
-			this.schema.currency = currency;
-		},
+    selectCurrency(currency) {
+        this.schema.currency = currency;
+    }
 
-		selectBip39Language(bip39Language) {
-			this.schema.bip39Language = bip39Language;
-			this.$store.dispatch(StoreBinding.SessionSetBip39Language, bip39Language);
-		},
+    selectBip39Language(bip39Language) {
+        this.schema.bip39Language = bip39Language;
+        this.$store.dispatch(StoreBinding.SessionSetBip39Language, bip39Language);
+    }
 
-		selectNetwork(network) {
-			this.schema.networkId = network.id;
-			this.selectedNetwork = network;
-		},
+    selectNetwork(network) {
+        this.schema.networkId = network.id;
+        this.selectedNetwork = network;
+    }
 
-		selectNetworkFromModal(network, toggle) {
-			this.schema.networkId = network.id;
-			this.selectedNetwork = network;
-			toggle();
-		},
+    selectNetworkFromModal(network, toggle) {
+        this.schema.networkId = network.id;
+        this.selectedNetwork = network;
+        toggle();
+    }
 
-		async selectIsMarketChartEnabled(isMarketChartEnabled) {
-			this.schema.isMarketChartEnabled = isMarketChartEnabled;
-			await this.$store.dispatch(StoreBinding.SessionSetIsMarketChartEnabled, isMarketChartEnabled);
-		},
+    selectIsMarketChartEnabled(isMarketChartEnabled) {
+        this.schema.isMarketChartEnabled = isMarketChartEnabled;
+        await this.$store.dispatch(StoreBinding.SessionSetIsMarketChartEnabled, isMarketChartEnabled);
+    }
 
-		async selectTheme(theme) {
-			this.schema.theme = theme;
-			await this.$store.dispatch(StoreBinding.SessionSetTheme, theme);
-		},
+    selectTheme(theme) {
+        this.schema.theme = theme;
+        await this.$store.dispatch(StoreBinding.SessionSetTheme, theme);
+    }
 
-		async selectTimeFormat(timeFormat) {
-			this.schema.timeFormat = timeFormat;
-			await this.$store.dispatch(StoreBinding.SessionSetTimeFormat, timeFormat);
-		},
+    selectTimeFormat(timeFormat) {
+        this.schema.timeFormat = timeFormat;
+        await this.$store.dispatch(StoreBinding.SessionSetTimeFormat, timeFormat);
+    }
 
-		async selectPriceApi(priceApi) {
-			this.schema.priceApi = priceApi;
-			await this.$store.dispatch(StoreBinding.SessionSetPriceApi, priceApi);
-		},
-	},
+    selectPriceApi(priceApi) {
+        this.schema.priceApi = priceApi;
+        await this.$store.dispatch(StoreBinding.SessionSetPriceApi, priceApi);
+    }
 
-	validations: {
+    validations = {
 		step1: ["schema.avatar", "schema.currency", "schema.bip39Language", "schema.name"],
 		step2: ["schema.networkId"],
 		schema: {
@@ -436,8 +384,8 @@ export default {
 				},
 			},
 		},
-	},
-};
+	};
+}
 </script>
 
 <style lang="postcss">

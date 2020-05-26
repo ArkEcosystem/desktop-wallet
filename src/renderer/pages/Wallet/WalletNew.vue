@@ -239,6 +239,7 @@
 </template>
 
 <script>
+import { Vue, Component } from "vue-property-decorator";
 import { required } from "vuelidate/lib/validators";
 
 import { ButtonClipboard, ButtonReload } from "@/components/Button";
@@ -255,10 +256,10 @@ import { flatten } from "@/utils";
 
 import onCreate from "./mixin-on-create";
 
-export default {
-	name: "WalletNew",
+@Component({
+    name: "WalletNew",
 
-	components: {
+    components: {
 		ButtonClipboard,
 		ButtonReload,
 		InputPassword,
@@ -273,145 +274,144 @@ export default {
 		WalletIdenticon,
 	},
 
-	mixins: [onCreate],
+    mixins: [onCreate]
+})
+export default class WalletNew extends Vue {
+    schema = Wallet.schema;
+    isRefreshing = false;
+    isPassphraseVerified = false;
+    ensureEntirePassphrase = false;
+    step = 1;
+    wallets = {};
+    walletPassword = null;
+    walletConfirmPassword = null;
+    showEncryptLoader = false;
 
-	schema: Wallet.schema,
+    backgroundImages = {
+        1: "pages/wallet-new/choose-wallet.svg",
+        2: "pages/wallet-new/backup-wallet.svg",
+        3: "pages/wallet-new/verify-passphrase.svg",
+        4: "pages/wallet-new/encrypt-wallet.svg",
+        5: "pages/wallet-new/protect-wallet.svg",
+    };
 
-	data: () => ({
-		isRefreshing: false,
-		isPassphraseVerified: false,
-		ensureEntirePassphrase: false,
-		step: 1,
-		wallets: {},
-		walletPassword: null,
-		walletConfirmPassword: null,
-		showEncryptLoader: false,
-		backgroundImages: {
-			1: "pages/wallet-new/choose-wallet.svg",
-			2: "pages/wallet-new/backup-wallet.svg",
-			3: "pages/wallet-new/verify-passphrase.svg",
-			4: "pages/wallet-new/encrypt-wallet.svg",
-			5: "pages/wallet-new/protect-wallet.svg",
-		},
-	}),
+    //*
+             * Mixes words from the passphrases of all the generated wallets
+             * @return {Array}
+             
+    get additionalSuggestions() {
+        const passphrases = Object.values(this.wallets);
 
-	computed: {
-		/**
-		 * Mixes words from the passphrases of all the generated wallets
-		 * @return {Array}
-		 */
-		additionalSuggestions() {
-			const passphrases = Object.values(this.wallets);
+        // Check for Japanese "space"
+        return flatten(
+            passphrases.map((passphrase) =>
+                /\u3000/.test(passphrase) ? passphrase.split("\u3000") : passphrase.split(" "),
+            ),
+        );
+    }
 
-			// Check for Japanese "space"
-			return flatten(
-				passphrases.map((passphrase) =>
-					/\u3000/.test(passphrase) ? passphrase.split("\u3000") : passphrase.split(" "),
-				),
-			);
-		},
-		passphraseWords() {
-			const passphrase = this.schema.passphrase;
-			if (passphrase) {
-				// Check for Japanese "space"
-				if (/\u3000/.test(passphrase)) {
-					return this.schema.passphrase.split("\u3000");
-				}
-				return this.schema.passphrase.split(" ");
-			}
-			return [];
-		},
-		wordPositions() {
-			return this.ensureEntirePassphrase ? [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12] : [3, 6, 9];
-		},
-		wordPositionLabel() {
-			return this.ensureEntirePassphrase
-				? this.$t("PAGES.WALLET_NEW.STEP3.INSTRUCTIONS.ALL_WORDS")
-				: this.$t("PAGES.WALLET_NEW.STEP3.INSTRUCTIONS.WORDS", { words: this.wordPositions.join(", ") });
-		},
-		nameError() {
-			if (this.$v.schema.name.$invalid) {
-				if (!this.$v.schema.name.contactDoesNotExist) {
-					return this.$t("VALIDATION.NAME.EXISTS_AS_CONTACT", [this.schema.name]);
-				} else if (!this.$v.schema.name.walletDoesNotExist) {
-					return this.$t("VALIDATION.NAME.EXISTS_AS_WALLET", [this.schema.name]);
-				} else if (!this.$v.schema.name.schemaMaxLength) {
-					return this.$t("VALIDATION.NAME.MAX_LENGTH", [Wallet.schema.properties.name.maxLength]);
-					// NOTE: not used, unless the minimum length is changed
-				} else if (!this.$v.schema.name.schemaMinLength) {
-					return this.$tc("VALIDATION.NAME.MIN_LENGTH", Wallet.schema.properties.name.minLength);
-				}
-			}
-			return null;
-		},
-	},
+    get passphraseWords() {
+        const passphrase = this.schema.passphrase;
+        if (passphrase) {
+            // Check for Japanese "space"
+            if (/\u3000/.test(passphrase)) {
+                return this.schema.passphrase.split("\u3000");
+            }
+            return this.schema.passphrase.split(" ");
+        }
+        return [];
+    }
 
-	beforeRouteEnter(to, from, next) {
+    get wordPositions() {
+        return this.ensureEntirePassphrase ? [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12] : [3, 6, 9];
+    }
+
+    get wordPositionLabel() {
+        return this.ensureEntirePassphrase
+            ? this.$t("PAGES.WALLET_NEW.STEP3.INSTRUCTIONS.ALL_WORDS")
+            : this.$t("PAGES.WALLET_NEW.STEP3.INSTRUCTIONS.WORDS", { words: this.wordPositions.join(", ") });
+    }
+
+    get nameError() {
+        if (this.$v.schema.name.$invalid) {
+            if (!this.$v.schema.name.contactDoesNotExist) {
+                return this.$t("VALIDATION.NAME.EXISTS_AS_CONTACT", [this.schema.name]);
+            } else if (!this.$v.schema.name.walletDoesNotExist) {
+                return this.$t("VALIDATION.NAME.EXISTS_AS_WALLET", [this.schema.name]);
+            } else if (!this.$v.schema.name.schemaMaxLength) {
+                return this.$t("VALIDATION.NAME.MAX_LENGTH", [Wallet.schema.properties.name.maxLength]);
+                // NOTE: not used, unless the minimum length is changed
+            } else if (!this.$v.schema.name.schemaMinLength) {
+                return this.$tc("VALIDATION.NAME.MIN_LENGTH", Wallet.schema.properties.name.minLength);
+            }
+        }
+        return null;
+    }
+
+    beforeRouteEnter(to, from, next) {
 		next((vm) => {
 			vm.$synchronizer.focus();
 			vm.$synchronizer.pause("market");
 		});
-	},
+	}
 
-	created() {
+    created() {
 		this.refreshAddresses();
-	},
+	}
 
-	methods: {
-		async createWallet() {
-			const { address } = await this.$store.dispatch(StoreBinding.WalletCreate, this.wallet);
-			this.$router.push({ name: "wallet-show", params: { address } });
-		},
+    createWallet() {
+        const { address } = await this.$store.dispatch(StoreBinding.WalletCreate, this.wallet);
+        this.$router.push({ name: "wallet-show", params: { address } });
+    }
 
-		moveTo(step) {
-			this.step = step;
-		},
+    moveTo(step) {
+        this.step = step;
+    }
 
-		onSwitch() {
-			this.isPassphraseVerified = false;
-		},
+    onSwitch() {
+        this.isPassphraseVerified = false;
+    }
 
-		onVerification() {
-			this.isPassphraseVerified = true;
-		},
+    onVerification() {
+        this.isPassphraseVerified = true;
+    }
 
-		selectWallet(address, passphrase) {
-			this.schema.address = address;
-			this.schema.passphrase = passphrase;
-			this.isPassphraseVerified = false;
-		},
+    selectWallet(address, passphrase) {
+        this.schema.address = address;
+        this.schema.passphrase = passphrase;
+        this.isPassphraseVerified = false;
+    }
 
-		refreshAddresses() {
-			this.isRefreshing = true;
+    refreshAddresses() {
+        this.isRefreshing = true;
 
-			this.schema.address = null;
-			this.schema.passphrase = null;
-			this.isPassphraseVerified = false;
+        this.schema.address = null;
+        this.schema.passphrase = null;
+        this.isPassphraseVerified = false;
 
-			for (const [address] of Object.entries(this.wallets)) {
-				this.$delete(this.wallets, address);
-			}
+        for (const [address] of Object.entries(this.wallets)) {
+            this.$delete(this.wallets, address);
+        }
 
-			// Delay the generation to play an animation
-			setTimeout(() => {
-				for (let i = 0; i < 3; i++) {
-					const { address, passphrase } = WalletService.generate(
-						this.session_network.version,
-						this.session_profile.bip39Language,
-					);
-					this.$set(this.wallets, address, passphrase);
-				}
+        // Delay the generation to play an animation
+        setTimeout(() => {
+            for (let i = 0; i < 3; i++) {
+                const { address, passphrase } = WalletService.generate(
+                    this.session_network.version,
+                    this.session_profile.bip39Language,
+                );
+                this.$set(this.wallets, address, passphrase);
+            }
 
-				this.isRefreshing = false;
-			}, 300);
-		},
+            this.isRefreshing = false;
+        }, 300);
+    }
 
-		isSelected(address) {
-			return this.schema.address === address;
-		},
-	},
+    isSelected(address) {
+        return this.schema.address === address;
+    }
 
-	validations: {
+    validations = {
 		step1: ["schema.address"],
 		step3: ["isPassphraseVerified"],
 		step4: ["walletPassword", "walletConfirmPassword"],
@@ -458,8 +458,8 @@ export default {
 				return false;
 			},
 		},
-	},
-};
+	};
+}
 </script>
 
 <style>

@@ -34,62 +34,56 @@
 </template>
 
 <script>
+import { Vue, Component } from "vue-property-decorator";
 import { DashboardTransactions } from "@/components/Dashboard";
 import { MarketChart, MarketChartHeader } from "@/components/MarketChart";
 import { WalletButtonCreate, WalletButtonImport, WalletSidebar } from "@/components/Wallet";
 import { StoreBinding } from "@/enums";
 import store from "@/store";
 
-export default {
-	name: "Dashboard",
+@Component({
+    name: "Dashboard",
 
-	components: {
+    components: {
 		DashboardTransactions,
 		MarketChart,
 		MarketChartHeader,
 		WalletSidebar,
 		WalletButtonCreate,
 		WalletButtonImport,
-	},
+	}
+})
+export default class Dashboard extends Vue {
+    get isMarketEnabled() {
+        return this.session_network && this.session_network.market && this.session_network.market.enabled;
+    }
 
-	computed: {
-		isMarketEnabled() {
-			return this.session_network && this.session_network.market && this.session_network.market.enabled;
-		},
-		currency() {
-			return this.$store.getters["session/currency"];
-		},
-		ticker() {
-			return this.session_network.market.ticker;
-		},
-		isChartEnabled() {
-			return this.marketChartOptions.isEnabled;
-		},
-		isChartExpanded() {
-			return this.marketChartOptions.isExpanded;
-		},
-		period() {
-			return this.marketChartOptions.period;
-		},
-		marketChartOptions: {
-			get() {
-				return this.$store.getters["session/marketChartOptions"];
-			},
-			set(options) {
-				this.$store.dispatch(StoreBinding.SessionSetMarketChartOptions, options);
+    get currency() {
+        return this.$store.getters["session/currency"];
+    }
 
-				this.$store.dispatch(StoreBinding.ProfileUpdate, {
-					...this.session_profile,
-					marketChartOptions: options,
-				});
-			},
-		},
-	},
+    get ticker() {
+        return this.session_network.market.ticker;
+    }
 
-	/**
-	 * Redirect to the profile creation page unless there is at least 1 profile
-	 */
-	beforeRouteEnter(to, from, next) {
+    get isChartEnabled() {
+        return this.marketChartOptions.isEnabled;
+    }
+
+    get isChartExpanded() {
+        return this.marketChartOptions.isExpanded;
+    }
+
+    get period() {
+        return this.marketChartOptions.period;
+    }
+
+    get TODO_marketChartOptions() {}
+
+    //*
+         * Redirect to the profile creation page unless there is at least 1 profile
+         
+    beforeRouteEnter(to, from, next) {
 		const chooseNext = async () => {
 			const profiles = await store.getters["profile/all"];
 
@@ -106,24 +100,22 @@ export default {
 		};
 
 		store._IS_READY ? chooseNext() : store._vm.$root.$on("vuex-persist:ready", chooseNext);
-	},
+	}
 
-	methods: {
-		toggleChart(value) {
-			this.marketChartOptions = {
-				...this.marketChartOptions,
-				isExpanded: value,
-			};
-		},
+    toggleChart(value) {
+        this.marketChartOptions = {
+            ...this.marketChartOptions,
+            isExpanded: value,
+        };
+    }
 
-		onPeriodChange(period) {
-			this.marketChartOptions = {
-				...this.marketChartOptions,
-				period,
-			};
-		},
-	},
-};
+    onPeriodChange(period) {
+        this.marketChartOptions = {
+            ...this.marketChartOptions,
+            period,
+        };
+    }
+}
 </script>
 
 <style lang="postcss">

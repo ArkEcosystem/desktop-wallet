@@ -71,119 +71,117 @@
 </template>
 
 <script>
+import { Vue, Component } from "vue-property-decorator";
 import { mapValues, sortBy, uniqBy } from "lodash";
 
 import { ProfileAvatar, ProfileRemovalConfirmation } from "@/components/Profile";
 import { StoreBinding } from "@/enums";
 
-export default {
-	name: "ProfileAll",
+@Component({
+    name: "ProfileAll",
 
-	components: {
+    components: {
 		ProfileAvatar,
 		ProfileRemovalConfirmation,
-	},
+	}
+})
+export default class ProfileAll extends Vue {
+    profileToRemove = null;
 
-	data: () => ({
-		profileToRemove: null,
-	}),
+    get profiles() {
+        return sortBy(this.$store.getters["profile/all"], ["name", "networkId"]);
+    }
 
-	computed: {
-		profiles() {
-			return sortBy(this.$store.getters["profile/all"], ["name", "networkId"]);
-		},
+    get addProfileImagePath() {
+        return "pages/new-profile-avatar.svg";
+    }
 
-		addProfileImagePath() {
-			return "pages/new-profile-avatar.svg";
-		},
-		/**
-		 * Returns the sum of balances of all profile of each network and the Ledger
-		 * wallets
-		 * @return {Object}
-		 */
-		aggregatedBalances() {
-			const walletsByNetwork = this.profiles.reduce((all, profile) => {
-				const wallets = this.$store.getters["wallet/byProfileId"](profile.id);
-				return {
-					...all,
-					[profile.networkId]: (all[profile.networkId] || []).concat(wallets),
-				};
-			}, {});
+    //*
+             * Returns the sum of balances of all profile of each network and the Ledger
+             * wallets
+             * @return {Object}
+             
+    get aggregatedBalances() {
+        const walletsByNetwork = this.profiles.reduce((all, profile) => {
+            const wallets = this.$store.getters["wallet/byProfileId"](profile.id);
+            return {
+                ...all,
+                [profile.networkId]: (all[profile.networkId] || []).concat(wallets),
+            };
+        }, {});
 
-			// Add the Ledger wallets of the current network only
-			if (!walletsByNetwork[this.session_network.id]) {
-				walletsByNetwork[this.session_network.id] = [];
-			}
-			walletsByNetwork[this.session_network.id] = [
-				...walletsByNetwork[this.session_network.id],
-				...this.$store.getters["ledger/wallets"],
-			];
+        // Add the Ledger wallets of the current network only
+        if (!walletsByNetwork[this.session_network.id]) {
+            walletsByNetwork[this.session_network.id] = [];
+        }
+        walletsByNetwork[this.session_network.id] = [
+            ...walletsByNetwork[this.session_network.id],
+            ...this.$store.getters["ledger/wallets"],
+        ];
 
-			return mapValues(walletsByNetwork, (wallets) => {
-				return uniqBy(wallets, "address").reduce((total, wallet) => {
-					return this.currency_toBuilder(wallet.balance).plus(total);
-				}, 0);
-			});
-		},
-		/**
-		 * Returns the balances of each network, as a String
-		 * TODO: when new design is applied, sort by amount in session currency/fiat
-		 * @return {String}
-		 */
-		totalBalances() {
-			const balances = [];
-			for (const networkId in this.aggregatedBalances) {
-				const network = this.$store.getters["network/byId"](networkId);
-				const amount = this.currency_subToUnit(this.aggregatedBalances[networkId], network);
-				const formatted = this.currency_format(amount, {
-					currency: network.symbol,
-					maximumFractionDigits: network.fractionDigits,
-				});
-				balances.push({
-					formatted,
-					amount: Number(amount),
-				});
-			}
-			const sorted = sortBy(balances, ["amount", "formatted"]);
-			return sorted.map((sort) => sort.formatted).reverse();
-		},
-	},
+        return mapValues(walletsByNetwork, (wallets) => {
+            return uniqBy(wallets, "address").reduce((total, wallet) => {
+                return this.currency_toBuilder(wallet.balance).plus(total);
+            }, 0);
+        });
+    }
 
-	beforeRouteEnter(to, from, next) {
+    //*
+             * Returns the balances of each network, as a String
+             * TODO: when new design is applied, sort by amount in session currency/fiat
+             * @return {String}
+             
+    get totalBalances() {
+        const balances = [];
+        for (const networkId in this.aggregatedBalances) {
+            const network = this.$store.getters["network/byId"](networkId);
+            const amount = this.currency_subToUnit(this.aggregatedBalances[networkId], network);
+            const formatted = this.currency_format(amount, {
+                currency: network.symbol,
+                maximumFractionDigits: network.fractionDigits,
+            });
+            balances.push({
+                formatted,
+                amount: Number(amount),
+            });
+        }
+        const sorted = sortBy(balances, ["amount", "formatted"]);
+        return sorted.map((sort) => sort.formatted).reverse();
+    }
+
+    beforeRouteEnter(to, from, next) {
 		next((vm) => {
 			vm.$synchronizer.focus();
 			vm.$synchronizer.pause("market");
 		});
-	},
+	}
 
-	methods: {
-		hideRemovalConfirmation() {
-			this.profileToRemove = null;
-		},
+    hideRemovalConfirmation() {
+        this.profileToRemove = null;
+    }
 
-		onRemoval() {
-			this.hideRemovalConfirmation();
-		},
+    onRemoval() {
+        this.hideRemovalConfirmation();
+    }
 
-		openRemovalConfirmation(profile) {
-			this.profileToRemove = profile;
-		},
+    openRemovalConfirmation(profile) {
+        this.profileToRemove = profile;
+    }
 
-		profileBalance(profile) {
-			const balance = this.$store.getters["profile/balanceWithLedger"](profile.id);
-			const network = this.$store.getters["network/byId"](profile.networkId);
-			const amount = this.currency_subToUnit(balance, network);
-			return this.currency_format(amount, {
-				currency: network.symbol,
-				maximumFractionDigits: network.fractionDigits,
-			});
-		},
+    profileBalance(profile) {
+        const balance = this.$store.getters["profile/balanceWithLedger"](profile.id);
+        const network = this.$store.getters["network/byId"](profile.networkId);
+        const amount = this.currency_subToUnit(balance, network);
+        return this.currency_format(amount, {
+            currency: network.symbol,
+            maximumFractionDigits: network.fractionDigits,
+        });
+    }
 
-		selectProfile(profileId) {
-			this.$store.dispatch(StoreBinding.SessionSetProfileId, profileId);
-		},
-	},
-};
+    selectProfile(profileId) {
+        this.$store.dispatch(StoreBinding.SessionSetProfileId, profileId);
+    }
+}
 </script>
 
 <style lang="postcss" scoped>
