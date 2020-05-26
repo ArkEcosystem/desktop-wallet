@@ -13,35 +13,35 @@
 </template>
 
 <script>
+import { Vue, Component, Prop } from "vue-property-decorator";
 import SvgIcon from "@/components/SvgIcon/SvgIcon";
 
-export default {
-	name: "Navigation",
+@Component({
+    name: "Navigation",
 
-	components: {
+    components: {
 		SvgIcon,
-	},
+	}
+})
+export default class Navigation extends Vue {
+    @Prop({
+        type: String,
+        required: false,
+        default: null,
+    })
+    leftButtonClass;
 
-	props: {
-		leftButtonClass: {
-			type: String,
-			required: false,
-			default: null,
-		},
+    @Prop({
+        type: String,
+        required: false,
+        default: null,
+    })
+    rightButtonClass;
 
-		rightButtonClass: {
-			type: String,
-			required: false,
-			default: null,
-		},
-	},
-
-	methods: {
-		triggerPageAdvance(direction) {
-			this.$emit("navigationclick", direction);
-		},
-	},
-};
+    triggerPageAdvance(direction) {
+        this.$emit("navigationclick", direction);
+    }
+}
 </script>
 
 <style scoped>

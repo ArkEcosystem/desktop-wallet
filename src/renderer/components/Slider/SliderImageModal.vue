@@ -10,57 +10,60 @@
 </template>
 
 <script>
+import { Vue, Component, Prop } from "vue-property-decorator";
 import { ModalWindow } from "@/components/Modal";
 
 import SliderImage from "./SliderImage";
 
-export default {
-	name: "SliderImageModal",
+@Component({
+    name: "SliderImageModal",
 
-	components: {
+    components: {
 		ModalWindow,
 		SliderImage,
-	},
+	}
+})
+export default class SliderImageModal extends Vue {
+    @Prop({
+        type: Array,
+        required: true,
+        default: null,
+    })
+    images;
 
-	props: {
-		images: {
-			type: Array,
-			required: true,
-			default: null,
-		},
+    @Prop({
+        type: Number,
+        required: false,
+        default: 0,
+    })
+    imageIndex;
 
-		imageIndex: {
-			type: Number,
-			required: false,
-			default: 0,
-		},
+    @Prop({
+        type: Boolean,
+        required: false,
+        default: true,
+    })
+    showNavigation;
 
-		showNavigation: {
-			type: Boolean,
-			required: false,
-			default: true,
-		},
+    @Prop({
+        type: Boolean,
+        required: false,
+        default: true,
+    })
+    showPagination;
 
-		showPagination: {
-			type: Boolean,
-			required: false,
-			default: true,
-		},
+    @Prop({
+        type: Function,
+        required: true,
+        default: null,
+    })
+    closeImage;
 
-		closeImage: {
-			type: Function,
-			required: true,
-			default: null,
-		},
-	},
-
-	methods: {
-		emitClose() {
-			this.closeImage();
-			this.$emit("close");
-		},
-	},
-};
+    emitClose() {
+        this.closeImage();
+        this.$emit("close");
+    }
+}
 </script>
 
 <style>
