@@ -22,41 +22,41 @@
 	</ModalConfirmation>
 </template>
 
-<script>
+<script lang="ts">
+import { Component, Prop,Vue } from "vue-property-decorator";
+
 import { ModalConfirmation } from "@/components/Modal";
 import Identicon from "@/components/utils/Identicon";
 import { StoreBinding } from "@/enums";
 
-export default {
-	name: "ContactRemovalConfirmation",
+@Component({
+    name: "ContactRemovalConfirmation",
 
-	components: {
+    components: {
 		Identicon,
 		ModalConfirmation,
-	},
+	}
+})
+export default class ContactRemovalConfirmation extends Vue {
+    @Prop({
+        type: Object,
+        required: true,
+    })
+    contact;
 
-	props: {
-		contact: {
-			type: Object,
-			required: true,
-		},
-	},
+    removeContact() {
+        this.$store.dispatch(StoreBinding.WalletDelete, this.contact);
+        this.emitRemoved();
+    }
 
-	methods: {
-		removeContact() {
-			this.$store.dispatch(StoreBinding.WalletDelete, this.contact);
-			this.emitRemoved();
-		},
+    emitCancel() {
+        this.$emit("cancel");
+    }
 
-		emitCancel() {
-			this.$emit("cancel");
-		},
-
-		emitRemoved() {
-			this.$emit("removed");
-		},
-	},
-};
+    emitRemoved() {
+        this.$emit("removed");
+    }
+}
 </script>
 
 <style>

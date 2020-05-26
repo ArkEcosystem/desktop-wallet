@@ -13,39 +13,41 @@
 	/>
 </template>
 
-<script>
+<script lang="ts">
+import { Component, Prop,Vue } from "vue-property-decorator";
+
 import ModalRename from "@/components/Modal/ModalRename";
 
-export default {
-	name: "ContactRenameModal",
+@Component({
+    name: "ContactRenameModal",
 
-	components: {
+    components: {
 		ModalRename,
-	},
+	}
+})
+export default class ContactRenameModal extends Vue {
+    @Prop({
+        type: Object,
+        required: true,
+    })
+    wallet;
 
-	props: {
-		wallet: {
-			type: Object,
-			required: true,
-		},
-		isNewContact: {
-			type: Boolean,
-			default: false,
-		},
-	},
+    @Prop({
+        type: Boolean,
+        default: false,
+    })
+    isNewContact;
 
-	methods: {
-		emitCancel() {
-			this.$emit("cancel");
-		},
+    emitCancel() {
+        this.$emit("cancel");
+    }
 
-		emitRenamed() {
-			this.$emit("renamed");
-		},
+    emitRenamed() {
+        this.$emit("renamed");
+    }
 
-		emitCreated() {
-			this.$emit("created");
-		},
-	},
-};
+    emitCreated() {
+        this.$emit("created");
+    }
+}
 </script>
