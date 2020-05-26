@@ -10,47 +10,47 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop,Vue } from "vue-property-decorator";
+import { Component, Prop, Vue } from "vue-property-decorator";
 
 import SvgIcon from "@/components/SvgIcon";
 
 @Component({
-    name: "ButtonIconGeneric",
+	name: "ButtonIconGeneric",
 
-    components: {
+	components: {
 		SvgIcon,
-	}
+	},
 })
 export default class ButtonIconGeneric extends Vue {
-    @Prop({
-        type: String,
-        required: true,
-    })
-    icon;
+	@Prop({
+		type: String,
+		required: true,
+	})
+	icon;
 
-    @Prop({
-        type: String,
-        required: true,
-    })
-    viewBox;
+	@Prop({
+		type: String,
+		required: true,
+	})
+	viewBox;
 
-    @Prop({
-        type: Boolean,
-        required: false,
-        default: false,
-    })
-    disabled;
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	disabled;
 
-    @Prop({
-        type: Boolean,
-        required: false,
-        default: false,
-    })
-    isSmall;
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	isSmall;
 
-    emitClick() {
-        this.$emit("click");
-    }
+	emitClick() {
+		this.$emit("click");
+	}
 }
 </script>
 

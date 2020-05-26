@@ -10,35 +10,35 @@
 </template>
 
 <script>
-import { Component,Vue } from "vue-property-decorator";
+import { Component, Vue } from "vue-property-decorator";
 
 import { SearchFilter, SearchFilterButton, SearchInput } from "@/components/Search";
 
 @Component({
-    name: "SearchPage",
+	name: "SearchPage",
 
-    components: {
+	components: {
 		SearchInput,
 		SearchFilter,
 		SearchFilterButton,
-	}
+	},
 })
 export default class SearchPage extends Vue {
-    showFilter = false;
+	showFilter = false;
 
-    beforeRouteEnter(to, from, next) {
+	beforeRouteEnter(to, from, next) {
 		next((vm) => {
 			vm.$synchronizer.focus();
 			vm.$synchronizer.pause("market");
 		});
 	}
 
-    toggleFilter() {
-        this.showFilter = !this.showFilter;
-    }
+	toggleFilter() {
+		this.showFilter = !this.showFilter;
+	}
 
-    hideFilter() {
-        this.showFilter = false;
-    }
+	hideFilter() {
+		this.showFilter = false;
+	}
 }
 </script>

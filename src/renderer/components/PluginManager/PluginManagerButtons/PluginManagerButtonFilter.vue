@@ -29,39 +29,39 @@
 </template>
 
 <script>
-import { Component, Prop,Vue } from "vue-property-decorator";
+import { Component, Prop, Vue } from "vue-property-decorator";
 
 import SvgIcon from "@/components/SvgIcon";
 
 @Component({
-    name: "PluginManagerButtonFilter",
+	name: "PluginManagerButtonFilter",
 
-    components: {
+	components: {
 		SvgIcon,
-	}
+	},
 })
 export default class PluginManagerButtonFilter extends Vue {
-    @Prop({
-        type: String,
-        required: true,
-    })
-    activeFilter;
+	@Prop({
+		type: String,
+		required: true,
+	})
+	activeFilter;
 
-    isOpen = false;
-    filters = ["all", "installed", "official", "funded"];
+	isOpen = false;
+	filters = ["all", "installed", "official", "funded"];
 
-    closeDropdown() {
-        this.isOpen = false;
-    }
+	closeDropdown() {
+		this.isOpen = false;
+	}
 
-    toggleDropdown() {
-        this.isOpen = !this.isOpen;
-    }
+	toggleDropdown() {
+		this.isOpen = !this.isOpen;
+	}
 
-    emitFilterChange(filter) {
-        this.closeDropdown();
-        this.$emit("filter-change", filter);
-    }
+	emitFilterChange(filter) {
+		this.closeDropdown();
+		this.$emit("filter-change", filter);
+	}
 }
 </script>
 

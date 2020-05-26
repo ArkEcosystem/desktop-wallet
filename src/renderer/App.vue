@@ -72,7 +72,7 @@ import CleanCss from "clean-css";
 import { ipcRenderer, remote } from "electron";
 import fs from "fs";
 import { pull, uniq } from "lodash";
-import { Component,Vue } from "vue-property-decorator";
+import { Component, Vue } from "vue-property-decorator";
 
 import AlertMessage from "@/components/AlertMessage";
 import { AppFooter, AppIntro, AppSidemenu } from "@/components/App";
@@ -85,9 +85,9 @@ import URIHandler from "@/services/uri-handler";
 const Menu = remote.Menu;
 
 @Component({
-    name: "DesktopWallet",
+	name: "DesktopWallet",
 
-    components: {
+	components: {
 		AppFooter,
 		AppIntro,
 		AppSidemenu,
@@ -95,7 +95,7 @@ const Menu = remote.Menu;
 		TransactionModal,
 	},
 
-    watch: {
+	watch: {
 		hasScreenshotProtection(value) {
 			if (this.isScreenshotProtectionEnabled) {
 				remote.getCurrentWindow().setContentProtection(value);
@@ -146,15 +146,15 @@ const Menu = remote.Menu;
 		language(value) {
 			this.applyPluginLanguage(value);
 		},
-	}
+	},
 })
 export default class DesktopWallet extends Vue {
-    isReady = false;
-    isUriTransactionOpen = false;
-    uriTransactionSchema = {};
-    aliveRouteComponents = [];
+	isReady = false;
+	isUriTransactionOpen = false;
+	uriTransactionSchema = {};
+	aliveRouteComponents = [];
 
-    keepableRoutes = Object.freeze({
+	keepableRoutes = Object.freeze({
 		profileAgnostic: ["Announcements", "NetworkOverview", "ProfileAll"],
 		profileDependent: ["Dashboard", "ContactAll", "WalletAll"],
 		// This pages could be cached to not delete the current form data, but they
@@ -162,85 +162,83 @@ export default class DesktopWallet extends Vue {
 		dataDependent: ["ContactNew", "ProfileNew", "WalletImport", "WalletNew"],
 	});
 
-    get background() {
-        return (
-            this.$store.getters["session/background"] || `wallpapers/${this.hasSeenIntroduction ? 1 : 2}Default.png`
-        );
-    }
+	get background() {
+		return this.$store.getters["session/background"] || `wallpapers/${this.hasSeenIntroduction ? 1 : 2}Default.png`;
+	}
 
-    get hasProfile() {
-        return !!this.$store.getters["session/profile"];
-    }
+	get hasProfile() {
+		return !!this.$store.getters["session/profile"];
+	}
 
-    get hasScreenshotProtection() {
-        return this.$store.getters["session/screenshotProtection"];
-    }
+	get hasScreenshotProtection() {
+		return this.$store.getters["session/screenshotProtection"];
+	}
 
-      get isScreenshotProtectionEnabled() {
-        return this.$store.getters['app/isScreenshotProtectionEnabled']
-	  }
+	get isScreenshotProtectionEnabled() {
+		return this.$store.getters["app/isScreenshotProtectionEnabled"];
+	}
 
-      set isScreenshotProtectionEnabled(protection) {
-        this.$store.dispatch('app/setIsScreenshotProtectionEnabled', protection)
-      }
+	set isScreenshotProtectionEnabled(protection) {
+		this.$store.dispatch("app/setIsScreenshotProtectionEnabled", protection);
+	}
 
-    get hasSeenIntroduction() {
-        return this.$store.getters["app/hasSeenIntroduction"];
-    }
+	get hasSeenIntroduction() {
+		return this.$store.getters["app/hasSeenIntroduction"];
+	}
 
-    get isWindows() {
-        return process.platform === "win32";
-    }
+	get isWindows() {
+		return process.platform === "win32";
+	}
 
-    get isMac() {
-        return process.platform === "darwin";
-    }
+	get isMac() {
+		return process.platform === "darwin";
+	}
 
-    get isLinux() {
-        return ["freebsd", "linux", "sunos"].includes(process.platform);
-    }
+	get isLinux() {
+		return ["freebsd", "linux", "sunos"].includes(process.platform);
+	}
 
-    get currentProfileId() {
-        return this.session_profile ? this.session_profile.id : null;
-    }
+	get currentProfileId() {
+		return this.session_profile ? this.session_profile.id : null;
+	}
 
-    get keepAliveRoutes() {
-        return uniq([...this.$options.keepableRoutes.profileAgnostic, ...this.aliveRouteComponents]);
-    }
+	get keepAliveRoutes() {
+		return uniq([...this.$options.keepableRoutes.profileAgnostic, ...this.aliveRouteComponents]);
+	}
 
-    get routeComponent() {
-        return this.$route.matched.length ? this.$route.matched[0].components.default.name : null;
-    }
+	get routeComponent() {
+		return this.$route.matched.length ? this.$route.matched[0].components.default.name : null;
+	}
 
-    get pluginThemes() {
-        return this.$store.getters["plugin/themes"];
-    }
+	get pluginThemes() {
+		return this.$store.getters["plugin/themes"];
+	}
 
-    get theme() {
-        const theme = this.$store.getters["session/theme"];
-        const defaultThemes = ["light", "dark"];
+	get theme() {
+		const theme = this.$store.getters["session/theme"];
+		const defaultThemes = ["light", "dark"];
 
-        // Ensure that the plugin theme is available (not deleted from the file system)
-        return defaultThemes.includes(theme) || this.pluginThemes[theme] ? theme : defaultThemes[0];
-    }
+		// Ensure that the plugin theme is available (not deleted from the file system)
+		return defaultThemes.includes(theme) || this.pluginThemes[theme] ? theme : defaultThemes[0];
+	}
 
-    get themeClass() {
-        return `theme-${this.theme}`;
-    }
+	get themeClass() {
+		return `theme-${this.theme}`;
+	}
 
-    get pluginLanguages() {
-        return this.$store.getters["plugin/languages"];
-    }
+	get pluginLanguages() {
+		return this.$store.getters["plugin/languages"];
+	}
 
-    get language() {
-        const language = this.$store.getters["session/language"];
-        const defaultLocale = I18N.defaultLocale;
+	get language() {
+		const language = this.$store.getters["session/language"];
+		const defaultLocale = I18N.defaultLocale;
 
-        // Ensure that the plugin language is available (not deleted from the file system)
-        return defaultLocale === language || this.pluginLanguages[language] ? language : defaultLocale;
-    }
+		// Ensure that the plugin language is available (not deleted from the file system)
+		return defaultLocale === language || this.pluginLanguages[language] ? language : defaultLocale;
+	}
 
-    created() {
+	created() {
 		this.$store._vm.$on("vuex-persist:ready", async () => {
 			// Environments variables are strings
 			this.isScreenshotProtectionEnabled = process.env.ENABLE_SCREENSHOT_PROTECTION !== "false";
@@ -260,168 +258,168 @@ export default class DesktopWallet extends Vue {
 		this.__watchProfile();
 	}
 
-    mounted() {
+	mounted() {
 		this.__watchProcessURL();
 	}
 
-    loadEssential() {
-        // We need to await plugins in order for all plugins to load properly
-        try {
-            await this.$plugins.init(this);
-        } catch {
-            this.$error("Failed to load plugins. NPM might be down.");
-        }
+	loadEssential() {
+		// We need to await plugins in order for all plugins to load properly
+		try {
+			await this.$plugins.init(this);
+		} catch {
+			this.$error("Failed to load plugins. NPM might be down.");
+		}
 
-        await this.$store.dispatch(StoreBinding.NetworkLoad);
-        const currentProfileId = this.$store.getters["session/profileId"];
-        await this.$store.dispatch(StoreBinding.SessionReset);
-        await this.$store.dispatch(StoreBinding.SessionSetProfileId, currentProfileId);
-        await this.$store.dispatch(StoreBinding.LedgerReset);
-    }
+		await this.$store.dispatch(StoreBinding.NetworkLoad);
+		const currentProfileId = this.$store.getters["session/profileId"];
+		await this.$store.dispatch(StoreBinding.SessionReset);
+		await this.$store.dispatch(StoreBinding.SessionSetProfileId, currentProfileId);
+		await this.$store.dispatch(StoreBinding.LedgerReset);
+	}
 
-    loadNotEssential() {
-        ipcRenderer.send("updater:check-for-updates");
-        await this.$store.dispatch(StoreBinding.PeerRefresh);
-        this.$store.dispatch(StoreBinding.PeerConnectToBest, {});
-        await this.$store.dispatch(StoreBinding.NetworkUpdateData);
+	loadNotEssential() {
+		ipcRenderer.send("updater:check-for-updates");
+		await this.$store.dispatch(StoreBinding.PeerRefresh);
+		this.$store.dispatch(StoreBinding.PeerConnectToBest, {});
+		await this.$store.dispatch(StoreBinding.NetworkUpdateData);
 
-        if (this.session_network) {
-            this.$store.dispatch(StoreBinding.LedgerInit, this.session_network.slip44);
-            this.$store.dispatch(StoreBinding.DelegateLoad);
-        }
+		if (this.session_network) {
+			this.$store.dispatch(StoreBinding.LedgerInit, this.session_network.slip44);
+			this.$store.dispatch(StoreBinding.DelegateLoad);
+		}
 
-        this.$eventBus.on(AppEvent.ClientChanged, async () => {
-            this.$store.dispatch(StoreBinding.PeerConnectToBest, {});
-            this.$store.dispatch(StoreBinding.NetworkUpdateData);
-            this.$store.dispatch(StoreBinding.DelegateLoad);
-            await this.$store.dispatch(StoreBinding.LedgerInit, this.session_network.slip44);
-            if (this.$store.getters["ledger/isConnected"]) {
-                this.$store.dispatch(StoreBinding.LedgerReloadWallets, { clearFirst: true, forceLoad: true });
-            }
-        });
-        this.$eventBus.on(AppEvent.LedgerConnected, async () => {
-            this.$success("Ledger Connected!");
-        });
-        this.$eventBus.on(AppEvent.LedgerDisconnected, async () => {
-            this.$warn("Ledger Disconnected!");
-        });
+		this.$eventBus.on(AppEvent.ClientChanged, async () => {
+			this.$store.dispatch(StoreBinding.PeerConnectToBest, {});
+			this.$store.dispatch(StoreBinding.NetworkUpdateData);
+			this.$store.dispatch(StoreBinding.DelegateLoad);
+			await this.$store.dispatch(StoreBinding.LedgerInit, this.session_network.slip44);
+			if (this.$store.getters["ledger/isConnected"]) {
+				this.$store.dispatch(StoreBinding.LedgerReloadWallets, { clearFirst: true, forceLoad: true });
+			}
+		});
+		this.$eventBus.on(AppEvent.LedgerConnected, async () => {
+			this.$success("Ledger Connected!");
+		});
+		this.$eventBus.on(AppEvent.LedgerDisconnected, async () => {
+			this.$warn("Ledger Disconnected!");
+		});
 
-        ipcRenderer.send(AppEvent.SplashscreenAppReady);
+		ipcRenderer.send(AppEvent.SplashscreenAppReady);
 
-        try {
-            await Promise.all([this.$plugins.fetchPluginsFromAdapter(), this.$plugins.fetchPluginsList()]);
-        } catch {
-            this.$error("Failed to load plugins. NPM might be down.");
-        }
-    }
+		try {
+			await Promise.all([this.$plugins.fetchPluginsFromAdapter(), this.$plugins.fetchPluginsList()]);
+		} catch {
+			this.$error("Failed to load plugins. NPM might be down.");
+		}
+	}
 
-    __watchProfile() {
-        this.$store.watch(
-            (_, getters) => getters["session/profile"],
-            async (profile, oldProfile) => {
-                if (!profile) {
-                    return;
-                }
+	__watchProfile() {
+		this.$store.watch(
+			(_, getters) => getters["session/profile"],
+			async (profile, oldProfile) => {
+				if (!profile) {
+					return;
+				}
 
-                const currentPeer = this.$store.getters["peer/current"]();
-                if (currentPeer && currentPeer.ip) {
-                    const scheme = currentPeer.isHttps ? "https://" : "http://";
-                    this.$client.host = `${scheme}${currentPeer.ip}:${currentPeer.port}`;
-                }
+				const currentPeer = this.$store.getters["peer/current"]();
+				if (currentPeer && currentPeer.ip) {
+					const scheme = currentPeer.isHttps ? "https://" : "http://";
+					this.$client.host = `${scheme}${currentPeer.ip}:${currentPeer.port}`;
+				}
 
-                if (!oldProfile || profile.id !== oldProfile.id) {
-                    this.$eventBus.emit(AppEvent.ClientChanged);
-                }
+				if (!oldProfile || profile.id !== oldProfile.id) {
+					this.$eventBus.emit(AppEvent.ClientChanged);
+				}
 
-                priceApi.setAdapter(profile.priceApi);
+				priceApi.setAdapter(profile.priceApi);
 
-                this.$store.dispatch(StoreBinding.MarketRefreshTicker);
-            },
-            { immediate: true },
-        );
-    }
+				this.$store.dispatch(StoreBinding.MarketRefreshTicker);
+			},
+			{ immediate: true },
+		);
+	}
 
-    __watchProcessURL() {
-        ipcRenderer.on("process-url", (_, url) => {
-            const uri = new URIHandler(url);
+	__watchProcessURL() {
+		ipcRenderer.on("process-url", (_, url) => {
+			const uri = new URIHandler(url);
 
-            if (!uri.validate()) {
-                this.$error(this.$t("VALIDATION.INVALID_URI"));
-            } else {
-                this.openUriTransaction(uri.deserialize());
-            }
-        });
+			if (!uri.validate()) {
+				this.$error(this.$t("VALIDATION.INVALID_URI"));
+			} else {
+				this.openUriTransaction(uri.deserialize());
+			}
+		});
 
-        ipcRenderer.on(AppEvent.UpdaterUpdateAvailable, (_, data) => {
-            this.$store.dispatch(StoreBinding.UpdaterSetAvailableRelease, data);
-        });
-    }
+		ipcRenderer.on(AppEvent.UpdaterUpdateAvailable, (_, data) => {
+			this.$store.dispatch(StoreBinding.UpdaterSetAvailableRelease, data);
+		});
+	}
 
-    openUriTransaction(schema) {
-        this.isUriTransactionOpen = true;
-        this.uriTransactionSchema = schema;
-    }
+	openUriTransaction(schema) {
+		this.isUriTransactionOpen = true;
+		this.uriTransactionSchema = schema;
+	}
 
-    closeUriTransaction() {
-        this.isUriTransactionOpen = false;
-        this.uriTransactionSchema = {};
-    }
+	closeUriTransaction() {
+		this.isUriTransactionOpen = false;
+		this.uriTransactionSchema = {};
+	}
 
-    setIntroDone() {
-        this.$store.dispatch(StoreBinding.AppSetHasSeenIntroduction, true);
-        this.$router.push({ name: "profile-new" });
-    }
+	setIntroDone() {
+		this.$store.dispatch(StoreBinding.AppSetHasSeenIntroduction, true);
+		this.$router.push({ name: "profile-new" });
+	}
 
-    // Enable contextmenu (right click) on input / textarea fields
-    setContextMenu() {
-        const InputMenu = Menu.buildFromTemplate([
-            { role: "cut" },
-            { role: "copy" },
-            { role: "paste" },
-            { type: "separator" },
-            { role: "selectall" },
-        ]);
+	// Enable contextmenu (right click) on input / textarea fields
+	setContextMenu() {
+		const InputMenu = Menu.buildFromTemplate([
+			{ role: "cut" },
+			{ role: "copy" },
+			{ role: "paste" },
+			{ type: "separator" },
+			{ role: "selectall" },
+		]);
 
-        document.body.addEventListener("contextmenu", (e) => {
-            e.preventDefault();
-            e.stopPropagation();
+		document.body.addEventListener("contextmenu", (e) => {
+			e.preventDefault();
+			e.stopPropagation();
 
-            let node = e.target;
+			let node = e.target;
 
-            while (node) {
-                if (node.nodeName.match(/^(input|textarea)$/i) || node.isContentEditable) {
-                    InputMenu.popup(remote.getCurrentWindow());
-                    break;
-                }
-                node = node.parentNode;
-            }
-        });
-    }
+			while (node) {
+				if (node.nodeName.match(/^(input|textarea)$/i) || node.isContentEditable) {
+					InputMenu.popup(remote.getCurrentWindow());
+					break;
+				}
+				node = node.parentNode;
+			}
+		});
+	}
 
-    applyPluginTheme(themeName) {
-        const $style = document.querySelector("style[name=plugins]");
+	applyPluginTheme(themeName) {
+		const $style = document.querySelector("style[name=plugins]");
 
-        if (["light", "dark"].includes(themeName)) {
-            $style.innerHTML = null;
-        } else if (themeName && this.pluginThemes) {
-            const theme = this.pluginThemes[themeName];
-            if (theme) {
-                const input = fs.readFileSync(theme.cssPath);
-                const output = new CleanCss().minify(input);
-                $style.innerHTML = output.styles;
-            } else {
-                $style.innerHTML = null;
-            }
-        }
-    }
+		if (["light", "dark"].includes(themeName)) {
+			$style.innerHTML = null;
+		} else if (themeName && this.pluginThemes) {
+			const theme = this.pluginThemes[themeName];
+			if (theme) {
+				const input = fs.readFileSync(theme.cssPath);
+				const output = new CleanCss().minify(input);
+				$style.innerHTML = output.styles;
+			} else {
+				$style.innerHTML = null;
+			}
+		}
+	}
 
-    applyPluginLanguage(languageName) {
-        if (languageName === I18N.defaultLocale) {
-            i18nSetup.setLanguage(languageName);
-        } else if (languageName && this.pluginLanguages[languageName]) {
-            i18nSetup.loadLanguage(languageName, this.pluginLanguages[languageName]);
-        }
-    }
+	applyPluginLanguage(languageName) {
+		if (languageName === I18N.defaultLocale) {
+			i18nSetup.setLanguage(languageName);
+		} else if (languageName && this.pluginLanguages[languageName]) {
+			i18nSetup.loadLanguage(languageName, this.pluginLanguages[languageName]);
+		}
+	}
 }
 </script>
 

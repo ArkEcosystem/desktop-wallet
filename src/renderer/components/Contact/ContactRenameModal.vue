@@ -14,40 +14,40 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop,Vue } from "vue-property-decorator";
+import { Component, Prop, Vue } from "vue-property-decorator";
 
 import ModalRename from "@/components/Modal/ModalRename";
 
 @Component({
-    name: "ContactRenameModal",
+	name: "ContactRenameModal",
 
-    components: {
+	components: {
 		ModalRename,
-	}
+	},
 })
 export default class ContactRenameModal extends Vue {
-    @Prop({
-        type: Object,
-        required: true,
-    })
-    wallet;
+	@Prop({
+		type: Object,
+		required: true,
+	})
+	wallet;
 
-    @Prop({
-        type: Boolean,
-        default: false,
-    })
-    isNewContact;
+	@Prop({
+		type: Boolean,
+		default: false,
+	})
+	isNewContact;
 
-    emitCancel() {
-        this.$emit("cancel");
-    }
+	emitCancel() {
+		this.$emit("cancel");
+	}
 
-    emitRenamed() {
-        this.$emit("renamed");
-    }
+	emitRenamed() {
+		this.$emit("renamed");
+	}
 
-    emitCreated() {
-        this.$emit("created");
-    }
+	emitCreated() {
+		this.$emit("created");
+	}
 }
 </script>

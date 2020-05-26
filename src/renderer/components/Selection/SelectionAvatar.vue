@@ -12,78 +12,78 @@
 </template>
 
 <script>
-import { Component, Prop,Vue } from "vue-property-decorator";
+import { Component, Prop, Vue } from "vue-property-decorator";
 
 import selectionMixin from "./mixin-selection";
 import selectionImageMixin from "./mixin-selection-image";
 
 @Component({
-    name: "SelectionAvatar",
-    mixins: [selectionMixin, selectionImageMixin]
+	name: "SelectionAvatar",
+	mixins: [selectionMixin, selectionImageMixin],
 })
 export default class SelectionAvatar extends Vue {
-    @Prop({
-        type: Array,
-        required: false,
-        default: () => ["avatars"],
-    })
-    categories;
+	@Prop({
+		type: Array,
+		required: false,
+		default: () => ["avatars"],
+	})
+	categories;
 
-    @Prop({
-        type: Boolean,
-        required: false,
-        default: true,
-    })
-    enableModal;
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: true,
+	})
+	enableModal;
 
-    @Prop({
-        type: String,
-        required: false,
-        default: "",
-    })
-    letterValue;
+	@Prop({
+		type: String,
+		required: false,
+		default: "",
+	})
+	letterValue;
 
-    @Prop({
-        type: Object,
-        required: false,
-        default: () => null,
-    })
-    profile;
+	@Prop({
+		type: Object,
+		required: false,
+		default: () => null,
+	})
+	profile;
 
-    get modalHeaderText() {
-        return this.enableModal ? this.$t("SELECTION_AVATAR.MODAL_HEADER") : null;
-    }
+	get modalHeaderText() {
+		return this.enableModal ? this.$t("SELECTION_AVATAR.MODAL_HEADER") : null;
+	}
 
-    get availableAvatars() {
-        const images = { ...this.images };
-        const key = Object.keys(images)[0];
-        images[key] = [this.letterAvatar, ...images[key]];
-        if (this.pluginAvatars && this.pluginAvatars.length) {
-            images[this.$t("SELECTION_AVATAR.ADDITIONAL_AVATARS")] = this.pluginAvatars;
-        }
+	get availableAvatars() {
+		const images = { ...this.images };
+		const key = Object.keys(images)[0];
+		images[key] = [this.letterAvatar, ...images[key]];
+		if (this.pluginAvatars && this.pluginAvatars.length) {
+			images[this.$t("SELECTION_AVATAR.ADDITIONAL_AVATARS")] = this.pluginAvatars;
+		}
 
-        return images;
-    }
+		return images;
+	}
 
-    get letterAvatar() {
-        return {
-            title: this.$t("SELECTION_AVATAR.NO_AVATAR"),
-            textContent: this.letterValue,
-            onlyLetter: true,
-        };
-    }
+	get letterAvatar() {
+		return {
+			title: this.$t("SELECTION_AVATAR.NO_AVATAR"),
+			textContent: this.letterValue,
+			onlyLetter: true,
+		};
+	}
 
-    get additional() {
-        return this.pluginAvatars;
-    }
+	get additional() {
+		return this.pluginAvatars;
+	}
 
-    get pluginAvatars() {
-        if (!this.profile || !this.profile.id) {
-            return [];
-        }
+	get pluginAvatars() {
+		if (!this.profile || !this.profile.id) {
+			return [];
+		}
 
-        return this.$store.getters["plugin/avatars"](this.profile.id);
-    }
+		return this.$store.getters["plugin/avatars"](this.profile.id);
+	}
 }
 </script>
 

@@ -9,43 +9,43 @@
 </template>
 
 <script>
-import { Component, Prop,Vue } from "vue-property-decorator";
+import { Component, Prop, Vue } from "vue-property-decorator";
 @Component({
-    name: "MenuTabItem"
+	name: "MenuTabItem",
 })
 export default class MenuTabItem extends Vue {
-    // You can use the slot `header` to customize the label
-    @Prop({
-        type: String,
-        required: true,
-    })
-    label;
+	// You can use the slot `header` to customize the label
+	@Prop({
+		type: String,
+		required: true,
+	})
+	label;
 
-    @Prop({
-        type: [Number, String],
-        default: null,
-        required: false,
-    })
-    tab;
+	@Prop({
+		type: [Number, String],
+		default: null,
+		required: false,
+	})
+	tab;
 
-    @Prop({
-        type: Boolean,
-        required: false,
-        default: false,
-    })
-    isDisabled;
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	isDisabled;
 
-    @Prop({
-        type: Function,
-        default: null,
-        required: false,
-    })
-    onClick;
+	@Prop({
+		type: Function,
+		default: null,
+		required: false,
+	})
+	onClick;
 
-    isActive = false;
+	isActive = false;
 
-    toggle(isActive) {
-        this.isActive = isActive;
-    }
+	toggle(isActive) {
+		this.isActive = isActive;
+	}
 }
 </script>

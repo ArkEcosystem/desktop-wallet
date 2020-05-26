@@ -28,76 +28,76 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop,Vue } from "vue-property-decorator";
+import { Component, Prop, Vue } from "vue-property-decorator";
 
 import SvgIcon from "@/components/SvgIcon";
 
 @Component({
-    name: "ButtonReload",
+	name: "ButtonReload",
 
-    components: {
+	components: {
 		SvgIcon,
-	}
+	},
 })
 export default class ButtonReload extends Vue {
-    @Prop({
-        type: Boolean,
-        required: false,
-        default: false,
-    })
-    isRefreshing;
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	isRefreshing;
 
-    @Prop({
-        type: String,
-        required: false,
-        default: "",
-    })
-    colorClass;
+	@Prop({
+		type: String,
+		required: false,
+		default: "",
+	})
+	colorClass;
 
-    @Prop({
-        type: String,
-        required: false,
-        default: "",
-    })
-    text;
+	@Prop({
+		type: String,
+		required: false,
+		default: "",
+	})
+	text;
 
-    @Prop({
-        type: String,
-        required: false,
-        default: "text-grey-dark",
-    })
-    textClass;
+	@Prop({
+		type: String,
+		required: false,
+		default: "text-grey-dark",
+	})
+	textClass;
 
-    @Prop({
-        type: Boolean,
-        required: false,
-        default: false,
-    })
-    withoutBackground;
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	withoutBackground;
 
-    @Prop({
-        type: String,
-        required: false,
-        default: "",
-    })
-    title;
+	@Prop({
+		type: String,
+		required: false,
+		default: "",
+	})
+	title;
 
-    @Prop({
-        type: String,
-        required: false,
-        default: "0 0 15 14",
-    })
-    viewBox;
+	@Prop({
+		type: String,
+		required: false,
+		default: "0 0 15 14",
+	})
+	viewBox;
 
-    @Prop({
-        type: String,
-        required: false,
-        default: "",
-    })
-    tooltipPlacement;
+	@Prop({
+		type: String,
+		required: false,
+		default: "",
+	})
+	tooltipPlacement;
 
-    emitClick() {
-        this.$emit("click");
-    }
+	emitClick() {
+		this.$emit("click");
+	}
 }
 </script>

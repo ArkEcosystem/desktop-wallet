@@ -9,15 +9,15 @@
 </template>
 
 <script lang="ts">
-import { Component,Vue } from "vue-property-decorator";
+import { Component, Vue } from "vue-property-decorator";
 @Component({
-    name: "AppFooter"
+	name: "AppFooter",
 })
 export default class AppFooter extends Vue {
-    text = "";
-    url = "https://ark.io";
+	text = "";
+	url = "https://ark.io";
 
-    created() {
+	created() {
 		this.text = this.$t("APP_FOOTER.TEXT");
 	}
 }

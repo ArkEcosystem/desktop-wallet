@@ -7,30 +7,30 @@
 </template>
 
 <script>
-import { Component, Prop,Vue } from "vue-property-decorator";
+import { Component, Prop, Vue } from "vue-property-decorator";
 
 import PluginIdenticon from "@/components/PluginManager/PluginIdenticon";
 
 @Component({
-    name: "PluginLogo",
+	name: "PluginLogo",
 
-    components: {
+	components: {
 		PluginIdenticon,
-	}
+	},
 })
 export default class PluginLogo extends Vue {
-    @Prop({
-        type: Object,
-        required: true,
-    })
-    plugin;
+	@Prop({
+		type: Object,
+		required: true,
+	})
+	plugin;
 
-    @Prop({
-        type: Number,
-        required: false,
-        default: 80,
-    })
-    size;
+	@Prop({
+		type: Number,
+		required: false,
+		default: 80,
+	})
+	size;
 }
 </script>
 

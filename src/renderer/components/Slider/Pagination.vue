@@ -14,26 +14,26 @@
 </template>
 
 <script>
-import { Component, Prop,Vue } from "vue-property-decorator";
+import { Component, Prop, Vue } from "vue-property-decorator";
 @Component({
-    name: "Pagination"
+	name: "Pagination",
 })
 export default class Pagination extends Vue {
-    @Prop({
-        type: Number,
-        required: true,
-    })
-    currentIndex;
+	@Prop({
+		type: Number,
+		required: true,
+	})
+	currentIndex;
 
-    @Prop({
-        type: Number,
-        required: true,
-    })
-    pageCount;
+	@Prop({
+		type: Number,
+		required: true,
+	})
+	pageCount;
 
-    goToPage(page) {
-        this.$emit("paginationclick", page);
-    }
+	goToPage(page) {
+		this.$emit("paginationclick", page);
+	}
 }
 </script>
 

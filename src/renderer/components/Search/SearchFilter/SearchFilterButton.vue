@@ -9,20 +9,20 @@
 </template>
 
 <script>
-import { Component,Vue } from "vue-property-decorator";
+import { Component, Vue } from "vue-property-decorator";
 
 import SvgIcon from "@/components/SvgIcon";
 
 @Component({
-    name: "SearchFilterButton",
+	name: "SearchFilterButton",
 
-    components: {
+	components: {
 		SvgIcon,
-	}
+	},
 })
 export default class SearchFilterButton extends Vue {
-    emitClick() {
-        this.$emit("click");
-    }
+	emitClick() {
+		this.$emit("click");
+	}
 }
 </script>

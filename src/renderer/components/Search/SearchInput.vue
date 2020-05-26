@@ -5,18 +5,18 @@
 </template>
 
 <script>
-import { Component,Vue } from "vue-property-decorator";
+import { Component, Vue } from "vue-property-decorator";
 
 import { InputText } from "@/components/Input";
 import SvgIcon from "@/components/SvgIcon";
 
 @Component({
-    name: "SearchInput",
+	name: "SearchInput",
 
-    components: {
+	components: {
 		InputText,
 		SvgIcon,
-	}
+	},
 })
 export default class SearchInput extends Vue {}
 </script>

@@ -23,39 +23,39 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop,Vue } from "vue-property-decorator";
+import { Component, Prop, Vue } from "vue-property-decorator";
 
 import { ModalConfirmation } from "@/components/Modal";
 import Identicon from "@/components/utils/Identicon";
 import { StoreBinding } from "@/enums";
 
 @Component({
-    name: "ContactRemovalConfirmation",
+	name: "ContactRemovalConfirmation",
 
-    components: {
+	components: {
 		Identicon,
 		ModalConfirmation,
-	}
+	},
 })
 export default class ContactRemovalConfirmation extends Vue {
-    @Prop({
-        type: Object,
-        required: true,
-    })
-    contact;
+	@Prop({
+		type: Object,
+		required: true,
+	})
+	contact;
 
-    removeContact() {
-        this.$store.dispatch(StoreBinding.WalletDelete, this.contact);
-        this.emitRemoved();
-    }
+	removeContact() {
+		this.$store.dispatch(StoreBinding.WalletDelete, this.contact);
+		this.emitRemoved();
+	}
 
-    emitCancel() {
-        this.$emit("cancel");
-    }
+	emitCancel() {
+		this.$emit("cancel");
+	}
 
-    emitRemoved() {
-        this.$emit("removed");
-    }
+	emitRemoved() {
+		this.$emit("removed");
+	}
 }
 </script>
 

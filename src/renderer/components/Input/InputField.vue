@@ -32,63 +32,63 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop,Vue } from "vue-property-decorator";
+import { Component, Prop, Vue } from "vue-property-decorator";
 @Component({
-    name: "InputField"
+	name: "InputField",
 })
 export default class InputField extends Vue {
-    @Prop({
-        type: String,
-        required: false,
-        default: null,
-    })
-    label;
+	@Prop({
+		type: String,
+		required: false,
+		default: null,
+	})
+	label;
 
-    @Prop({
-        type: String,
-        required: false,
-        default: null,
-    })
-    helperText;
+	@Prop({
+		type: String,
+		required: false,
+		default: null,
+	})
+	helperText;
 
-    @Prop({
-        type: Boolean,
-        required: false,
-        default: false,
-    })
-    isDirty;
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	isDirty;
 
-    @Prop({
-        type: Boolean,
-        required: false,
-        default: false,
-    })
-    isDisabled;
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	isDisabled;
 
-    @Prop({
-        type: Boolean,
-        required: false,
-        default: false,
-    })
-    isFocused;
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	isFocused;
 
-    @Prop({
-        type: Boolean,
-        required: false,
-        default: false,
-    })
-    isInvalid;
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	isInvalid;
 
-    @Prop({
-        type: String,
-        required: false,
-        default: null,
-    })
-    warningText;
+	@Prop({
+		type: String,
+		required: false,
+		default: null,
+	})
+	warningText;
 
-    get inputClass() {
-        return "InputField__input w-full pt-3 left-0 bg-transparent transition border-b border-theme-input-field-border text-theme-page-text hover:border-theme-page-text focus:border-blue h-10";
-    }
+	get inputClass() {
+		return "InputField__input w-full pt-3 left-0 bg-transparent transition border-b border-theme-input-field-border text-theme-page-text hover:border-theme-page-text focus:border-blue h-10";
+	}
 }
 </script>
 

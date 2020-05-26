@@ -46,75 +46,75 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop,Vue } from "vue-property-decorator";
+import { Component, Prop, Vue } from "vue-property-decorator";
 
 import { ButtonLetter } from "@/components/Button";
 import { SvgIcon } from "@/components/SvgIcon";
 
 @Component({
-    name: "InputGridItem",
+	name: "InputGridItem",
 
-    components: {
+	components: {
 		ButtonLetter,
 		SvgIcon,
-	}
+	},
 })
 export default class InputGridItem extends Vue {
-    @Prop({
-        type: [String, Boolean],
-        required: false,
-        default: null,
-    })
-    imagePath;
+	@Prop({
+		type: [String, Boolean],
+		required: false,
+		default: null,
+	})
+	imagePath;
 
-    @Prop({
-        type: String,
-        default: null,
-    })
-    textContent;
+	@Prop({
+		type: String,
+		default: null,
+	})
+	textContent;
 
-    @Prop({
-        type: Boolean,
-        required: false,
-        default: false,
-    })
-    onlyLetter;
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	onlyLetter;
 
-    @Prop({
-        type: [Object, Function],
-        required: false,
-        default: () => {},
-    })
-    component;
+	@Prop({
+		type: [Object, Function],
+		required: false,
+		default: () => {},
+	})
+	component;
 
-    @Prop({
-        type: Boolean,
-        required: false,
-        default: true,
-    })
-    isForModal;
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: true,
+	})
+	isForModal;
 
-    @Prop({
-        type: Boolean,
-        required: true,
-    })
-    isSelected;
+	@Prop({
+		type: Boolean,
+		required: true,
+	})
+	isSelected;
 
-    @Prop({
-        type: String,
-        required: false,
-        default: null,
-    })
-    title;
+	@Prop({
+		type: String,
+		required: false,
+		default: null,
+	})
+	title;
 
-    get currentNetwork() {
-        // To avoid failing after removing the current and last profile
-        return this.$store.getters["session/profile"] ? this.session_network : null;
-    }
+	get currentNetwork() {
+		// To avoid failing after removing the current and last profile
+		return this.$store.getters["session/profile"] ? this.session_network : null;
+	}
 
-    get label() {
-        const symbol = this.currentNetwork ? this.currentNetwork.symbol : null;
-        return this.textContent || symbol;
-    }
+	get label() {
+		const symbol = this.currentNetwork ? this.currentNetwork.symbol : null;
+		return this.textContent || symbol;
+	}
 }
 </script>

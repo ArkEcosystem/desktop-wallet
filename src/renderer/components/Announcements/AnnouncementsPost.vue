@@ -46,64 +46,64 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop,Vue } from "vue-property-decorator";
+import { Component, Prop, Vue } from "vue-property-decorator";
 
 import { SvgIcon } from "@/components/SvgIcon";
 
 @Component({
-    name: "AnnouncementsPost",
+	name: "AnnouncementsPost",
 
-    components: {
+	components: {
 		SvgIcon,
-	}
+	},
 })
 export default class AnnouncementsPost extends Vue {
-    @Prop({
-        type: String,
-        required: true,
-    })
-    date;
+	@Prop({
+		type: String,
+		required: true,
+	})
+	date;
 
-    @Prop({
-        type: String,
-        required: true,
-    })
-    title;
+	@Prop({
+		type: String,
+		required: true,
+	})
+	title;
 
-    @Prop({
-        required: true,
-        validator: (value) => typeof value === "string" || value === null,
-    })
-    summary;
+	@Prop({
+		required: true,
+		validator: (value) => typeof value === "string" || value === null,
+	})
+	summary;
 
-    @Prop({
-        type: String,
-        required: true,
-    })
-    url;
+	@Prop({
+		type: String,
+		required: true,
+	})
+	url;
 
-    @Prop({
-        type: Boolean,
-        required: true,
-    })
-    isRead;
+	@Prop({
+		type: Boolean,
+		required: true,
+	})
+	isRead;
 
-    get formattedDate() {
-        return this.formatter_date(this.date, "D MMMM");
-    }
+	get formattedDate() {
+		return this.formatter_date(this.date, "D MMMM");
+	}
 
-    get weekday() {
-        return this.formatter_date(this.date, "dddd");
-    }
+	get weekday() {
+		return this.formatter_date(this.date, "dddd");
+	}
 
-    emitRead() {
-        this.$emit("read", this.announcement);
-    }
+	emitRead() {
+		this.$emit("read", this.announcement);
+	}
 
-    openInBrowser(url) {
-        this.electron_openExternal(url);
-        setTimeout(() => this.emitRead(), 2000);
-    }
+	openInBrowser(url) {
+		this.electron_openExternal(url);
+		setTimeout(() => this.emitRead(), 2000);
+	}
 }
 </script>
 

@@ -36,86 +36,86 @@
 </template>
 
 <script>
-import { Component, Prop,Vue } from "vue-property-decorator";
+import { Component, Prop, Vue } from "vue-property-decorator";
 @Component({
-    name: "ModalCloseConfirmation"
+	name: "ModalCloseConfirmation",
 })
 export default class ModalCloseConfirmation extends Vue {
-    @Prop({
-        type: String,
-        required: false,
-        default() {
-            return this.$t("MODAL_CLOSE_CONFIRMATION.CANCEL");
-        },
-    })
-    cancelButton;
+	@Prop({
+		type: String,
+		required: false,
+		default() {
+			return this.$t("MODAL_CLOSE_CONFIRMATION.CANCEL");
+		},
+	})
+	cancelButton;
 
-    @Prop({
-        type: String,
-        required: false,
-        default() {
-            return this.$t("MODAL_CLOSE_CONFIRMATION.CONFIRM");
-        },
-    })
-    confirmButton;
+	@Prop({
+		type: String,
+		required: false,
+		default() {
+			return this.$t("MODAL_CLOSE_CONFIRMATION.CONFIRM");
+		},
+	})
+	confirmButton;
 
-    @Prop({
-        type: String,
-        required: false,
-        default: "ModalConfirmationClose",
-    })
-    containerClasses;
+	@Prop({
+		type: String,
+		required: false,
+		default: "ModalConfirmationClose",
+	})
+	containerClasses;
 
-    @Prop({
-        type: String,
-        required: false,
-        default: "",
-    })
-    footer;
+	@Prop({
+		type: String,
+		required: false,
+		default: "",
+	})
+	footer;
 
-    @Prop({
-        type: String,
-        required: false,
-        default: null,
-    })
-    note;
+	@Prop({
+		type: String,
+		required: false,
+		default: null,
+	})
+	note;
 
-    @Prop({
-        type: String,
-        required: false,
-        default() {
-            return this.$t("MODAL_CLOSE_CONFIRMATION.QUESTION");
-        },
-    })
-    question;
+	@Prop({
+		type: String,
+		required: false,
+		default() {
+			return this.$t("MODAL_CLOSE_CONFIRMATION.QUESTION");
+		},
+	})
+	question;
 
-    @Prop({
-        type: String,
-        required: false,
-        default() {
-            return this.$t("MODAL_CONFIRMATION.TITLE");
-        },
-    })
-    title;
+	@Prop({
+		type: String,
+		required: false,
+		default() {
+			return this.$t("MODAL_CONFIRMATION.TITLE");
+		},
+	})
+	title;
 
-    @Prop({
-        type: String,
-        required: false,
-        default: "modal",
-    })
-    portalTarget;
+	@Prop({
+		type: String,
+		required: false,
+		default: "modal",
+	})
+	portalTarget;
 
-    emitCancel() {
-        this.$emit("cancel");
-    }
+	emitCancel() {
+		this.$emit("cancel");
+	}
 
-    emitConfirm() {
-        this.$emit("confirm");
-    }
+	emitConfirm() {
+		this.$emit("confirm");
+	}
 
-    onBackdropClick() {
-        this.$emit("cancel");
-    }
+	onBackdropClick() {
+		this.$emit("cancel");
+	}
 }
 </script>
 

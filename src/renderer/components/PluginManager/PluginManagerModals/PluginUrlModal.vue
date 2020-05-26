@@ -28,56 +28,56 @@
 </template>
 
 <script>
-import { Component,Vue } from "vue-property-decorator";
+import { Component, Vue } from "vue-property-decorator";
 import { required, url } from "vuelidate/lib/validators";
 
 import { InputText } from "@/components/Input";
 import { ModalWindow } from "@/components/Modal";
 
 @Component({
-    name: "PluginUrlModal",
+	name: "PluginUrlModal",
 
-    components: {
+	components: {
 		InputText,
 		ModalWindow,
-	}
+	},
 })
 export default class PluginUrlModal extends Vue {
-    form = {
-        url: "",
-    };
+	form = {
+		url: "",
+	};
 
-    get urlError() {
-        if (this.$v.form.url.$dirty) {
-            if (!this.$v.form.url.required) {
-                return this.$t("VALIDATION.REQUIRED", [this.$t("COMMON.URL")]);
-            }
+	get urlError() {
+		if (this.$v.form.url.$dirty) {
+			if (!this.$v.form.url.required) {
+				return this.$t("VALIDATION.REQUIRED", [this.$t("COMMON.URL")]);
+			}
 
-            if (!this.$v.form.url.url) {
-                return this.$t("VALIDATION.URL.INVALID");
-            }
+			if (!this.$v.form.url.url) {
+				return this.$t("VALIDATION.URL.INVALID");
+			}
 
-            if (!this.$v.form.url.isGitHubUrl) {
-                return this.$t("VALIDATION.URL.NO_GITHUB");
-            }
+			if (!this.$v.form.url.isGitHubUrl) {
+				return this.$t("VALIDATION.URL.NO_GITHUB");
+			}
 
-            if (!this.$v.form.url.isAllowed) {
-                return this.$t("VALIDATION.URL.NO_GITHUB_REPOSITORY");
-            }
-        }
+			if (!this.$v.form.url.isAllowed) {
+				return this.$t("VALIDATION.URL.NO_GITHUB_REPOSITORY");
+			}
+		}
 
-        return null;
-    }
+		return null;
+	}
 
-    emitFetchPlugin() {
-        this.$emit("fetch-plugin", this.$v.form.url.$model);
-    }
+	emitFetchPlugin() {
+		this.$emit("fetch-plugin", this.$v.form.url.$model);
+	}
 
-    emitClose() {
-        this.$emit("close");
-    }
+	emitClose() {
+		this.$emit("close");
+	}
 
-    validations = {
+	validations = {
 		form: {
 			url: {
 				required,

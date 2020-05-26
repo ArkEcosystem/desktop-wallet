@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import { Component,Vue } from "vue-property-decorator";
+import { Component, Vue } from "vue-property-decorator";
 import { mapGetters } from "vuex";
 
 import SvgIcon from "@/components/SvgIcon";
@@ -23,19 +23,19 @@ import WalletHeadingPrimaryActions from "./WalletHeadingPrimaryActions";
 import WalletHeadingSecondaryActions from "./WalletHeadingSecondaryActions";
 
 @Component({
-    name: "WalletHeadingActions",
+	name: "WalletHeadingActions",
 
-    components: {
+	components: {
 		WalletHeadingPrimaryActions,
 		WalletHeadingSecondaryActions,
 		SvgIcon,
 	},
 
-	computed: { ...mapGetters("wallet", ["secondaryButtonsVisible"]) }
+	computed: { ...mapGetters("wallet", ["secondaryButtonsVisible"]) },
 })
 export default class WalletHeadingActions extends Vue {
-    get currentWallet() {
-        return this.wallet_fromRoute;
-    }
+	get currentWallet() {
+		return this.wallet_fromRoute;
+	}
 }
 </script>

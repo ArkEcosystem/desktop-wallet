@@ -49,7 +49,7 @@
 </template>
 
 <script>
-import { Component, Prop,Vue } from "vue-property-decorator";
+import { Component, Prop, Vue } from "vue-property-decorator";
 
 import { ButtonGeneric, ButtonIconGeneric } from "@/components/Button";
 import PluginLogo from "@/components/PluginManager/PluginLogo";
@@ -57,38 +57,38 @@ import PluginManagerCheckmark from "@/components/PluginManager/PluginManagerChec
 import PluginManagerGrants from "@/components/PluginManager/PluginManagerGrants";
 
 @Component({
-    name: "PluginManagerGrid",
+	name: "PluginManagerGrid",
 
-    components: {
+	components: {
 		ButtonGeneric,
 		ButtonIconGeneric,
 		PluginManagerCheckmark,
 		PluginManagerGrants,
 		PluginLogo,
-	}
+	},
 })
 export default class PluginManagerGrid extends Vue {
-    @Prop({
-        type: Array,
-        required: true,
-    })
-    plugins;
+	@Prop({
+		type: Array,
+		required: true,
+	})
+	plugins;
 
-    get sortedPlugins() {
-        return this.plugins.concat().sort((a, b) => a.title.localeCompare(b.title));
-    }
+	get sortedPlugins() {
+		return this.plugins.concat().sort((a, b) => a.title.localeCompare(b.title));
+	}
 
-    emitShowDetails(plugin) {
-        this.$emit("show-details", plugin);
-    }
+	emitShowDetails(plugin) {
+		this.$emit("show-details", plugin);
+	}
 
-    isInstalled(pluginId) {
-        return this.$store.getters["plugin/isInstalled"](pluginId);
-    }
+	isInstalled(pluginId) {
+		return this.$store.getters["plugin/isInstalled"](pluginId);
+	}
 
-    isUpdateAvailable(pluginId) {
-        return this.$store.getters["plugin/isUpdateAvailable"](pluginId);
-    }
+	isUpdateAvailable(pluginId) {
+		return this.$store.getters["plugin/isUpdateAvailable"](pluginId);
+	}
 }
 </script>
 

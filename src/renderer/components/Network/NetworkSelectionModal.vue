@@ -28,41 +28,41 @@
 </template>
 
 <script>
-import { Component, Prop,Vue } from "vue-property-decorator";
+import { Component, Prop, Vue } from "vue-property-decorator";
 
 import { ModalWindow } from "@/components/Modal";
 
 @Component({
-    name: "NetworkSelectionModal",
+	name: "NetworkSelectionModal",
 
-    components: {
+	components: {
 		ModalWindow,
-	}
+	},
 })
 export default class NetworkSelectionModal extends Vue {
-    @Prop({
-        type: Function,
-        required: true,
-    })
-    toggle;
+	@Prop({
+		type: Function,
+		required: true,
+	})
+	toggle;
 
-    selectedNetwork = null;
+	selectedNetwork = null;
 
-    getCustomNetworks() {
-        return Object.values(this.$store.getters["network/customNetworks"]);
-    }
+	getCustomNetworks() {
+		return Object.values(this.$store.getters["network/customNetworks"]);
+	}
 
-    selectNetwork(network) {
-        this.selectedNetwork = network;
-    }
+	selectNetwork(network) {
+		this.selectedNetwork = network;
+	}
 
-    emitCancel() {
-        this.$emit("cancel");
-    }
+	emitCancel() {
+		this.$emit("cancel");
+	}
 
-    emitSelected() {
-        this.$emit("selected", this.selectedNetwork, this.toggle);
-    }
+	emitSelected() {
+		this.$emit("selected", this.selectedNetwork, this.toggle);
+	}
 }
 </script>
 

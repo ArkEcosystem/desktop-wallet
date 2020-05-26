@@ -23,45 +23,45 @@
 </template>
 
 <script>
-import { Component,Vue } from "vue-property-decorator";
+import { Component, Vue } from "vue-property-decorator";
 
 import { WalletDetails, WalletSidebar } from "@/components/Wallet";
 
 @Component({
-    name: "WalletShow",
+	name: "WalletShow",
 
-    components: {
+	components: {
 		WalletSidebar,
 		WalletDetails,
 	},
 
-    watch: {
+	watch: {
 		wallet() {
 			if (!this.wallet) {
 				this.$router.push({ name: "wallets" });
 			}
 		},
-	}
+	},
 })
 export default class WalletShow extends Vue {
-    isSidebarExpanded = false;
+	isSidebarExpanded = false;
 
-    get wallet() {
-        return this.wallet_fromRoute;
-    }
+	get wallet() {
+		return this.wallet_fromRoute;
+	}
 
-    created() {
+	created() {
 		if (!this.wallet) {
 			this.$router.push({ name: "wallets" });
 		}
 	}
 
-    onCollapse() {
-        this.isSidebarExpanded = false;
-    }
+	onCollapse() {
+		this.isSidebarExpanded = false;
+	}
 
-    onExpand() {
-        this.isSidebarExpanded = true;
-    }
+	onExpand() {
+		this.isSidebarExpanded = true;
+	}
 }
 </script>

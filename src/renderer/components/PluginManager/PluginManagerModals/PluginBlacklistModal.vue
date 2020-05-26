@@ -10,30 +10,30 @@
 </template>
 
 <script>
-import { Component, Prop,Vue } from "vue-property-decorator";
+import { Component, Prop, Vue } from "vue-property-decorator";
 
 import { ModalConfirmation } from "@/components/Modal";
 
 @Component({
-    name: "PluginBlacklistConfirmation",
+	name: "PluginBlacklistConfirmation",
 
-    components: {
+	components: {
 		ModalConfirmation,
-	}
+	},
 })
 export default class PluginBlacklistConfirmation extends Vue {
-    @Prop({
-        type: Object,
-        required: true,
-    })
-    plugin;
+	@Prop({
+		type: Object,
+		required: true,
+	})
+	plugin;
 
-    emitCancel() {
-        this.$emit("cancel");
-    }
+	emitCancel() {
+		this.$emit("cancel");
+	}
 
-    emitConfirm() {
-        this.$emit("confirm");
-    }
+	emitConfirm() {
+		this.$emit("confirm");
+	}
 }
 </script>

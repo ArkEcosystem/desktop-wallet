@@ -12,21 +12,21 @@
 </template>
 
 <script>
-import { Component, Prop,Vue } from "vue-property-decorator";
+import { Component, Prop, Vue } from "vue-property-decorator";
 @Component({
-    name: "WalletIdenticonPlaceholder"
+	name: "WalletIdenticonPlaceholder",
 })
 export default class WalletIdenticonPlaceholder extends Vue {
-    @Prop({
-        type: Number,
-        required: true,
-    })
-    size;
+	@Prop({
+		type: Number,
+		required: true,
+	})
+	size;
 
-    get imagePath() {
-        const theme = this.session_hasDarkTheme ? "dark" : "light";
-        return `identicons/identicon-placeholder-${theme}.svg`;
-    }
+	get imagePath() {
+		const theme = this.session_hasDarkTheme ? "dark" : "light";
+		return `identicons/identicon-placeholder-${theme}.svg`;
+	}
 }
 </script>
 

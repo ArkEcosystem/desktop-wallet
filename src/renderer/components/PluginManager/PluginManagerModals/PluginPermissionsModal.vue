@@ -32,56 +32,56 @@
 </template>
 
 <script>
-import { Component, Prop,Vue } from "vue-property-decorator";
+import { Component, Prop, Vue } from "vue-property-decorator";
 
 import { ModalWindow } from "@/components/Modal";
 
 @Component({
-    name: "PluginPermissionsModal",
+	name: "PluginPermissionsModal",
 
-    components: {
+	components: {
 		ModalWindow,
-	}
+	},
 })
 export default class PluginPermissionsModal extends Vue {
-    @Prop({
-        type: String,
-        required: false,
-        default: "",
-    })
-    modalRef;
+	@Prop({
+		type: String,
+		required: false,
+		default: "",
+	})
+	modalRef;
 
-    @Prop({
-        type: Object,
-        required: true,
-    })
-    plugin;
+	@Prop({
+		type: Object,
+		required: true,
+	})
+	plugin;
 
-    @Prop({
-        type: Boolean,
-        default: false,
-        required: false,
-    })
-    isUpdate;
+	@Prop({
+		type: Boolean,
+		default: false,
+		required: false,
+	})
+	isUpdate;
 
-    get title() {
-        if (this.isInstalled && !this.isUpdate) {
-            return this.$t("MODAL_PLUGIN_PERMISSIONS.TITLE");
-        }
-        return this.$t("MODAL_PLUGIN_PERMISSIONS.ALTERNATIVE_TITLE");
-    }
+	get title() {
+		if (this.isInstalled && !this.isUpdate) {
+			return this.$t("MODAL_PLUGIN_PERMISSIONS.TITLE");
+		}
+		return this.$t("MODAL_PLUGIN_PERMISSIONS.ALTERNATIVE_TITLE");
+	}
 
-    get isInstalled() {
-        return this.$store.getters["plugin/isInstalled"](this.plugin.id);
-    }
+	get isInstalled() {
+		return this.$store.getters["plugin/isInstalled"](this.plugin.id);
+	}
 
-    emitClose() {
-        this.$emit("close", this.modalRef);
-    }
+	emitClose() {
+		this.$emit("close", this.modalRef);
+	}
 
-    emitConfirm() {
-        this.$emit("confirm", this.plugin);
-    }
+	emitConfirm() {
+		this.$emit("confirm", this.plugin);
+	}
 }
 </script>
 

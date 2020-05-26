@@ -46,86 +46,86 @@
 
 <script>
 import { at } from "lodash";
-import { Component, Prop,Vue } from "vue-property-decorator";
+import { Component, Prop, Vue } from "vue-property-decorator";
 
 import SvgIcon from "@/components/SvgIcon";
 import TransactionService from "@/services/transaction";
 
 @Component({
-    name: "TransactionStatusIcon",
+	name: "TransactionStatusIcon",
 
-    components: {
+	components: {
 		SvgIcon,
-	}
+	},
 })
 export default class TransactionStatusIcon extends Vue {
-    @Prop({
-        type: Boolean,
-        required: false,
-        default: false,
-    })
-    isSender;
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	isSender;
 
-    @Prop({
-        type: Boolean,
-        required: false,
-        default: false,
-    })
-    isRecipient;
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	isRecipient;
 
-    @Prop({
-        type: Number,
-        required: false,
-        default: null,
-    })
-    type;
+	@Prop({
+		type: Number,
+		required: false,
+		default: null,
+	})
+	type;
 
-    @Prop({
-        type: Number,
-        required: false,
-        default: null,
-    })
-    typeGroup;
+	@Prop({
+		type: Number,
+		required: false,
+		default: null,
+	})
+	typeGroup;
 
-    @Prop({
-        type: Number,
-        required: false,
-        default: 0,
-    })
-    confirmations;
+	@Prop({
+		type: Number,
+		required: false,
+		default: 0,
+	})
+	confirmations;
 
-    @Prop({
-        type: Boolean,
-        required: false,
-        default: true,
-    })
-    showWaitingConfirmations;
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: true,
+	})
+	showWaitingConfirmations;
 
-    @Prop({
-        type: Boolean,
-        required: false,
-        default: false,
-    })
-    showTooltip;
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	showTooltip;
 
-    @Prop({
-        type: String,
-        required: false,
-        default: undefined,
-    })
-    tooltipContainer;
+	@Prop({
+		type: String,
+		required: false,
+		default: undefined,
+	})
+	tooltipContainer;
 
-    get isTransferToSelf() {
-        return this.isSender === this.isRecipient && TransactionService.isTransfer(this.$options.propsData);
-    }
+	get isTransferToSelf() {
+		return this.isSender === this.isRecipient && TransactionService.isTransfer(this.$options.propsData);
+	}
 
-    get isWellConfirmed() {
-        return this.confirmations >= this.numberOfActiveDelegates;
-    }
+	get isWellConfirmed() {
+		return this.confirmations >= this.numberOfActiveDelegates;
+	}
 
-    get numberOfActiveDelegates() {
-        return at(this, "session_network.constants.activeDelegates") || 51;
-    }
+	get numberOfActiveDelegates() {
+		return at(this, "session_network.constants.activeDelegates") || 51;
+	}
 }
 </script>
 

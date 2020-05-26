@@ -72,150 +72,150 @@
 </template>
 
 <script>
-import { Component, Prop,Vue } from "vue-property-decorator";
+import { Component, Prop, Vue } from "vue-property-decorator";
 
 import { ButtonClose } from "@/components/Button";
 
 import ModalCloseConfirmation from "./ModalCloseConfirmation";
 
 @Component({
-    name: "ModalWindow",
+	name: "ModalWindow",
 
-    components: {
+	components: {
 		ButtonClose,
 		ModalCloseConfirmation,
-	}
+	},
 })
 export default class ModalWindow extends Vue {
-    @Prop({
-        type: Boolean,
-        required: false,
-        default: false,
-    })
-    canResize;
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	canResize;
 
-    @Prop({
-        type: String,
-        required: false,
-        default: "",
-    })
-    modalClasses;
+	@Prop({
+		type: String,
+		required: false,
+		default: "",
+	})
+	modalClasses;
 
-    @Prop({
-        type: String,
-        required: false,
-        default: "",
-    })
-    headerClasses;
+	@Prop({
+		type: String,
+		required: false,
+		default: "",
+	})
+	headerClasses;
 
-    @Prop({
-        type: String,
-        required: false,
-        default: "",
-    })
-    containerClasses;
+	@Prop({
+		type: String,
+		required: false,
+		default: "",
+	})
+	containerClasses;
 
-    @Prop({
-        type: String,
-        required: false,
-        default: "",
-    })
-    containerClassesMinimized;
+	@Prop({
+		type: String,
+		required: false,
+		default: "",
+	})
+	containerClassesMinimized;
 
-    @Prop({
-        type: String,
-        required: false,
-        default: "",
-    })
-    title;
+	@Prop({
+		type: String,
+		required: false,
+		default: "",
+	})
+	title;
 
-    @Prop({
-        type: String,
-        required: false,
-        default: "",
-    })
-    message;
+	@Prop({
+		type: String,
+		required: false,
+		default: "",
+	})
+	message;
 
-    @Prop({
-        type: Boolean,
-        required: false,
-        default: true,
-    })
-    allowBackdropClick;
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: true,
+	})
+	allowBackdropClick;
 
-    @Prop({
-        type: Boolean,
-        required: false,
-        default: false,
-    })
-    confirmClose;
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	confirmClose;
 
-    @Prop({
-        type: Boolean,
-        required: false,
-        default: true,
-    })
-    allowClose;
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: true,
+	})
+	allowClose;
 
-    @Prop({
-        type: String,
-        required: false,
-        default: "modal",
-    })
-    portalTarget;
+	@Prop({
+		type: String,
+		required: false,
+		default: "modal",
+	})
+	portalTarget;
 
-    isMaximized = true;
-    showConfirmationModal = false;
-    hasChanged = false;
+	isMaximized = true;
+	showConfirmationModal = false;
+	hasChanged = false;
 
-    mounted() {
+	mounted() {
 		document.addEventListener("keyup", this.onEscKey, false);
 		this.$eventBus.on("change", this.onChange);
 	}
 
-    destroyed() {
+	destroyed() {
 		document.removeEventListener("keyup", this.onEscKey);
 	}
 
-    toggleMaximized() {
-        this.isMaximized = !this.isMaximized;
-    }
+	toggleMaximized() {
+		this.isMaximized = !this.isMaximized;
+	}
 
-    onBackdropClick() {
-        if (this.allowBackdropClick) {
-            this.emitClose();
-        }
-    }
+	onBackdropClick() {
+		if (this.allowBackdropClick) {
+			this.emitClose();
+		}
+	}
 
-    emitClose(force = false) {
-        if (!this.allowClose) {
-            return;
-        }
+	emitClose(force = false) {
+		if (!this.allowClose) {
+			return;
+		}
 
-        if (this.confirmClose && this.hasChanged) {
-            this.showConfirmationModal = true;
-            return;
-        }
+		if (this.confirmClose && this.hasChanged) {
+			this.showConfirmationModal = true;
+			return;
+		}
 
-        if (force || this.isMaximized) {
-            this.$emit("close");
-        }
-    }
+		if (force || this.isMaximized) {
+			this.$emit("close");
+		}
+	}
 
-    emitCloseAfterConfirm() {
-        this.showConfirmationModal = false;
-        this.$emit("close");
-    }
+	emitCloseAfterConfirm() {
+		this.showConfirmationModal = false;
+		this.$emit("close");
+	}
 
-    onEscKey(event) {
-        if (event.key === "Escape") {
-            this.emitClose();
-        }
-    }
+	onEscKey(event) {
+		if (event.key === "Escape") {
+			this.emitClose();
+		}
+	}
 
-    onChange() {
-        this.hasChanged = true;
-    }
+	onChange() {
+		this.hasChanged = true;
+	}
 }
 </script>
 

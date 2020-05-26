@@ -45,7 +45,7 @@
 </template>
 
 <script>
-import { Component, Prop,Vue } from "vue-property-decorator";
+import { Component, Prop, Vue } from "vue-property-decorator";
 
 import { InputEditableList } from "@/components/Input";
 import WalletAddress from "@/components/Wallet/WalletAddress";
@@ -53,94 +53,94 @@ import WalletIdenticon from "@/components/Wallet/WalletIdenticon";
 import truncate from "@/filters/truncate";
 
 @Component({
-    name: "TransactionRecipientList",
+	name: "TransactionRecipientList",
 
-    components: {
+	components: {
 		InputEditableList,
 		WalletAddress,
 		WalletIdenticon,
-	}
+	},
 })
 export default class TransactionRecipientList extends Vue {
-    @Prop({
-        type: String,
-        required: false,
-        default: function () {
-            return this.$t("TRANSACTION.RECIPIENTS");
-        },
-    })
-    title;
+	@Prop({
+		type: String,
+		required: false,
+		default: function () {
+			return this.$t("TRANSACTION.RECIPIENTS");
+		},
+	})
+	title;
 
-    @Prop({
-        type: Array,
-        required: true,
-    })
-    items;
+	@Prop({
+		type: Array,
+		required: true,
+	})
+	items;
 
-    @Prop({
-        type: Number,
-        required: false,
-        default: null,
-    })
-    maxItems;
+	@Prop({
+		type: Number,
+		required: false,
+		default: null,
+	})
+	maxItems;
 
-    @Prop({
-        type: Boolean,
-        required: false,
-        default: false,
-    })
-    showCount;
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	showCount;
 
-    @Prop({
-        type: Boolean,
-        required: false,
-        default: false,
-    })
-    showLinks;
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	showLinks;
 
-    @Prop({
-        type: Boolean,
-        required: false,
-        default: false,
-    })
-    readonly;
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	readonly;
 
-    @Prop({
-        type: Boolean,
-        required: false,
-        default: false,
-    })
-    required;
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	required;
 
-    @Prop({
-        type: String,
-        required: false,
-        default: null,
-    })
-    helperText;
+	@Prop({
+		type: String,
+		required: false,
+		default: null,
+	})
+	helperText;
 
-    @Prop({
-        type: Boolean,
-        required: false,
-        default: false,
-    })
-    isInvalid;
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	isInvalid;
 
-    formatWalletAddress(address) {
-        const walletName = this.wallet_name(address);
-        if (walletName && walletName !== address) {
-            address = `${truncate(walletName, 25)} (${this.wallet_truncate(address)})`;
-        }
+	formatWalletAddress(address) {
+		const walletName = this.wallet_name(address);
+		if (walletName && walletName !== address) {
+			address = `${truncate(walletName, 25)} (${this.wallet_truncate(address)})`;
+		}
 
-        return address;
-    }
+		return address;
+	}
 
-    emitRemove(index) {
-        this.$emit("remove", index);
-    }
+	emitRemove(index) {
+		this.$emit("remove", index);
+	}
 
-    emitClick() {
-        this.$emit("click");
-    }
+	emitClick() {
+		this.$emit("click");
+	}
 }
 </script>

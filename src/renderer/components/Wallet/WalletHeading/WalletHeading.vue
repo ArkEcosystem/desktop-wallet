@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import { Component,Vue } from "vue-property-decorator";
+import { Component, Vue } from "vue-property-decorator";
 import { mapGetters } from "vuex";
 
 import { AppEvent, StoreBinding } from "@/enums";
@@ -18,14 +18,14 @@ import WalletHeadingActions from "./WalletHeadingActions";
 import WalletHeadingInfo from "./WalletHeadingInfo";
 
 @Component({
-    name: "WalletHeading",
+	name: "WalletHeading",
 
-    components: {
+	components: {
 		WalletHeadingInfo,
 		WalletHeadingActions,
 	},
 
-    watch: {
+	watch: {
 		currentWallet() {
 			if (this.activeWalletAddress !== this.currentWallet.address) {
 				this.resetHeading();
@@ -33,42 +33,42 @@ import WalletHeadingInfo from "./WalletHeadingInfo";
 		},
 	},
 
-	computed: { ...mapGetters("wallet", ["secondaryButtonsVisible"]) }
+	computed: { ...mapGetters("wallet", ["secondaryButtonsVisible"]) },
 })
 export default class WalletHeading extends Vue {
-    activeWalletAddress = null;
+	activeWalletAddress = null;
 
-    get currentWallet() {
-        return this.wallet_fromRoute;
-    }
+	get currentWallet() {
+		return this.wallet_fromRoute;
+	}
 
-    get justifyClass() {
-        return this.secondaryButtonsVisible ? "justify-end" : "justify-between";
-    }
+	get justifyClass() {
+		return this.secondaryButtonsVisible ? "justify-end" : "justify-between";
+	}
 
-    created() {
+	created() {
 		this.$eventBus.on(AppEvent.LedgerDisconnected, this.refreshWallet);
 	}
 
-    beforeDestroy() {
+	beforeDestroy() {
 		this.$eventBus.off(AppEvent.LedgerDisconnected, this.refreshWallet);
 	}
 
-    mounted() {
+	mounted() {
 		this.resetHeading();
 	}
 
-    resetHeading() {
-        this.activeWalletAddress = this.currentWallet.address;
-        this.$store.dispatch(StoreBinding.WalletSetSecondaryButtonsVisible, false);
-        this.refreshWallet();
-    }
+	resetHeading() {
+		this.activeWalletAddress = this.currentWallet.address;
+		this.$store.dispatch(StoreBinding.WalletSetSecondaryButtonsVisible, false);
+		this.refreshWallet();
+	}
 
-    refreshWallet() {
-        this.$nextTick(() => {
-            this.$refs.heading.refreshWallet();
-        });
-    }
+	refreshWallet() {
+		this.$nextTick(() => {
+			this.$refs.heading.refreshWallet();
+		});
+	}
 }
 </script>
 

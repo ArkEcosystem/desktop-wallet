@@ -32,7 +32,7 @@
 
 <script>
 import { orderBy } from "lodash";
-import { Component,Vue } from "vue-property-decorator";
+import { Component, Vue } from "vue-property-decorator";
 import { mapGetters } from "vuex";
 
 import { AnnouncementsPost } from "@/components/Announcements";
@@ -40,9 +40,9 @@ import SvgIcon from "@/components/SvgIcon";
 import { StoreBinding } from "@/enums";
 
 @Component({
-    name: "Announcements",
+	name: "Announcements",
 
-    components: {
+	components: {
 		AnnouncementsPost,
 		SvgIcon,
 	},
@@ -51,33 +51,33 @@ import { StoreBinding } from "@/enums";
 		...mapGetters({
 			readAnnouncements: "announcements/read",
 			unreadAnnouncements: "announcements/unread",
-		})
-	}
+		}),
+	},
 })
 export default class Announcements extends Vue {
-    get announcements() {
-        const all = this.unreadAnnouncements.concat(this.readAnnouncements);
-        return orderBy(all, ["isRead", "date"], ["asc", "desc"]);
-    }
+	get announcements() {
+		const all = this.unreadAnnouncements.concat(this.readAnnouncements);
+		return orderBy(all, ["isRead", "date"], ["asc", "desc"]);
+	}
 
-    get showReadAll() {
-        return this.unreadAnnouncements && this.unreadAnnouncements.length;
-    }
+	get showReadAll() {
+		return this.unreadAnnouncements && this.unreadAnnouncements.length;
+	}
 
-    beforeRouteEnter(to, from, next) {
+	beforeRouteEnter(to, from, next) {
 		next((vm) => {
 			vm.$synchronizer.focus("announcements");
 			vm.$synchronizer.pause("market");
 		});
 	}
 
-    read(announcement) {
-        this.$store.dispatch(StoreBinding.AnnouncementsMarkAsRead, announcement);
-    }
+	read(announcement) {
+		this.$store.dispatch(StoreBinding.AnnouncementsMarkAsRead, announcement);
+	}
 
-    readAll() {
-        this.$store.dispatch(StoreBinding.AnnouncementsMarkAsReadBulk, this.unreadAnnouncements);
-    }
+	readAll() {
+		this.$store.dispatch(StoreBinding.AnnouncementsMarkAsReadBulk, this.unreadAnnouncements);
+	}
 }
 </script>
 

@@ -28,7 +28,7 @@
 </template>
 
 <script>
-import { Component, Prop,Vue } from "vue-property-decorator";
+import { Component, Prop, Vue } from "vue-property-decorator";
 
 import { ModalConfirmation } from "@/components/Modal";
 import { StoreBinding } from "@/enums";
@@ -36,32 +36,32 @@ import { StoreBinding } from "@/enums";
 import { WalletIdenticon } from "./";
 
 @Component({
-    name: "WalletRemovalConfirmation",
+	name: "WalletRemovalConfirmation",
 
-    components: {
+	components: {
 		WalletIdenticon,
 		ModalConfirmation,
-	}
+	},
 })
 export default class WalletRemovalConfirmation extends Vue {
-    @Prop({
-        type: Object,
-        required: true,
-    })
-    wallet;
+	@Prop({
+		type: Object,
+		required: true,
+	})
+	wallet;
 
-    removeWallet() {
-        this.$store.dispatch(StoreBinding.WalletDelete, this.wallet);
-        this.emitRemoved();
-    }
+	removeWallet() {
+		this.$store.dispatch(StoreBinding.WalletDelete, this.wallet);
+		this.emitRemoved();
+	}
 
-    emitCancel() {
-        this.$emit("cancel");
-    }
+	emitCancel() {
+		this.$emit("cancel");
+	}
 
-    emitRemoved() {
-        this.$emit("removed");
-    }
+	emitRemoved() {
+		this.$emit("removed");
+	}
 }
 </script>
 

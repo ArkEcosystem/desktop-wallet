@@ -87,52 +87,52 @@
 </template>
 
 <script>
-import { Component,Vue } from "vue-property-decorator";
+import { Component, Vue } from "vue-property-decorator";
 
 import { NetworkModal } from "@/components/Network";
 import SelectionNetworkButton from "@/components/Selection/SelectionNetworkButton";
 import { SvgIcon } from "@/components/SvgIcon";
 
 @Component({
-    name: "NetworkOverview",
+	name: "NetworkOverview",
 
-    components: {
+	components: {
 		NetworkModal,
 		SelectionNetworkButton,
 		SvgIcon,
-	}
+	},
 })
 export default class NetworkOverview extends Vue {
-    networks = [];
-    selected = null;
+	networks = [];
+	selected = null;
 
-    mounted() {
+	mounted() {
 		this.getNetworks();
 	}
 
-    getNetworks() {
-        const defaultNetworkIds = ["ark.mainnet", "ark.devnet"];
+	getNetworks() {
+		const defaultNetworkIds = ["ark.mainnet", "ark.devnet"];
 
-        this.networks = Object.values(this.$store.getters["network/all"]).map((network) => {
-            return {
-                ...network,
-                isDefault: defaultNetworkIds.indexOf(network.id) > -1,
-            };
-        });
-    }
+		this.networks = Object.values(this.$store.getters["network/all"]).map((network) => {
+			return {
+				...network,
+				isDefault: defaultNetworkIds.indexOf(network.id) > -1,
+			};
+		});
+	}
 
-    openNetwork(network) {
-        this.selected = network;
-    }
+	openNetwork(network) {
+		this.selected = network;
+	}
 
-    openAddNetwork() {
-        this.selected = "openAddNetwork";
-    }
+	openAddNetwork() {
+		this.selected = "openAddNetwork";
+	}
 
-    toggle() {
-        this.selected = null;
-        this.getNetworks(); // Refresh list
-    }
+	toggle() {
+		this.selected = null;
+		this.getNetworks(); // Refresh list
+	}
 }
 </script>
 

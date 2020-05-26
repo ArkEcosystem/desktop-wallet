@@ -5,7 +5,7 @@
 <script>
 /* eslint-disable vue/no-unused-components */
 import { TRANSACTION_GROUPS } from "@config";
-import { Component, Prop,Vue } from "vue-property-decorator";
+import { Component, Prop, Vue } from "vue-property-decorator";
 
 import TransactionFormBridgechain from "./TransactionFormBridgechain";
 import TransactionFormBusiness from "./TransactionFormBusiness";
@@ -19,9 +19,9 @@ import TransactionFormTransfer from "./TransactionFormTransfer";
 import TransactionFormVote from "./TransactionFormVote";
 
 @Component({
-    name: "TransactionForm",
+	name: "TransactionForm",
 
-    components: {
+	components: {
 		TransactionFormDelegateRegistration,
 		TransactionFormDelegateResignation,
 		TransactionFormIpfs,
@@ -32,26 +32,26 @@ import TransactionFormVote from "./TransactionFormVote";
 		TransactionFormSecondSignature,
 		...TransactionFormBusiness,
 		...TransactionFormBridgechain,
-	}
+	},
 })
 export default class TransactionForm extends Vue {
-    @Prop({
-        type: Number,
-        required: false,
-        default: TRANSACTION_GROUPS.STANDARD,
-    })
-    group;
+	@Prop({
+		type: Number,
+		required: false,
+		default: TRANSACTION_GROUPS.STANDARD,
+	})
+	group;
 
-    @Prop({
-        type: Number,
-        required: true,
-    })
-    type;
+	@Prop({
+		type: Number,
+		required: true,
+	})
+	type;
 
-    activeComponent = null;
+	activeComponent = null;
 
-    // TODO: Fetch fees remotely
-    mounted() {
+	// TODO: Fetch fees remotely
+	mounted() {
 		const group = this.type === -1 ? TRANSACTION_GROUPS.STANDARD : this.group;
 		const component = Object.values(this.$options.components).find((component) => {
 			if ((component.transactionGroup || TRANSACTION_GROUPS.STANDARD) !== group) {
@@ -68,12 +68,12 @@ export default class TransactionForm extends Vue {
 		this.activeComponent = component.name;
 	}
 
-    emitBuilt(transaction) {
-        this.$emit("built", transaction);
-    }
+	emitBuilt(transaction) {
+		this.$emit("built", transaction);
+	}
 
-    emitCancel(reason) {
-        this.$emit("cancel", reason);
-    }
+	emitCancel(reason) {
+		this.$emit("cancel", reason);
+	}
 }
 </script>

@@ -26,41 +26,41 @@
 </template>
 
 <script>
-import { Component, Prop,Vue } from "vue-property-decorator";
+import { Component, Prop, Vue } from "vue-property-decorator";
 
 import { ButtonLetter } from "@/components/Button";
 
 @Component({
-    name: "ProfileAvatar",
+	name: "ProfileAvatar",
 
-    components: {
+	components: {
 		ButtonLetter,
-	}
+	},
 })
 export default class ProfileAvatar extends Vue {
-    @Prop({
-        type: Object,
-        required: true,
-    })
-    profile;
+	@Prop({
+		type: Object,
+		required: true,
+	})
+	profile;
 
-    @Prop({
-        type: String,
-        required: true,
-    })
-    letterSize;
+	@Prop({
+		type: String,
+		required: true,
+	})
+	letterSize;
 
-    get hasStandardAvatar() {
-        return this.profile.avatar && typeof this.profile.avatar === "string";
-    }
+	get hasStandardAvatar() {
+		return this.profile.avatar && typeof this.profile.avatar === "string";
+	}
 
-    get pluginAvatar() {
-        if (this.profile.avatar && this.profile.avatar.pluginId) {
-            return this.$store.getters["plugin/avatar"](this.profile);
-        }
+	get pluginAvatar() {
+		if (this.profile.avatar && this.profile.avatar.pluginId) {
+			return this.$store.getters["plugin/avatar"](this.profile);
+		}
 
-        return null;
-    }
+		return null;
+	}
 }
 </script>
 

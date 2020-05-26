@@ -9,39 +9,39 @@
 </template>
 
 <script>
-import { Component, Prop,Vue } from "vue-property-decorator";
+import { Component, Prop, Vue } from "vue-property-decorator";
 
 import { ButtonSwitch } from "@/components/Button";
 import { SvgIcon } from "@/components/SvgIcon";
 
 @Component({
-    name: "SelectionTheme",
+	name: "SelectionTheme",
 
-    components: {
+	components: {
 		ButtonSwitch,
 		SvgIcon,
-	}
+	},
 })
 export default class SelectionTheme extends Vue {
-    themes = {
+	themes = {
 		light: false,
 		dark: true,
 	};
 
-    @Prop({
-        type: String,
-        required: false,
-        default: null,
-    })
-    value;
+	@Prop({
+		type: String,
+		required: false,
+		default: null,
+	})
+	value;
 
-    get status() {
-        return this.$options.themes[this.value];
-    }
+	get status() {
+		return this.$options.themes[this.value];
+	}
 
-    emitInput(status) {
-        const theme = Object.keys(this.$options.themes).find((theme) => this.$options.themes[theme] === status);
-        this.$emit("input", theme);
-    }
+	emitInput(status) {
+		const theme = Object.keys(this.$options.themes).find((theme) => this.$options.themes[theme] === status);
+		this.$emit("input", theme);
+	}
 }
 </script>

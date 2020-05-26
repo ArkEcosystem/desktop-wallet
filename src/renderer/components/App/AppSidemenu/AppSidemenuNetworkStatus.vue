@@ -142,7 +142,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop,Vue } from "vue-property-decorator";
+import { Component, Prop, Vue } from "vue-property-decorator";
 
 import { ButtonModal, ButtonReload } from "@/components/Button";
 import { MenuDropdown, MenuNavigationItem, MenuOptions } from "@/components/Menu";
@@ -151,9 +151,9 @@ import SvgIcon from "@/components/SvgIcon";
 import { StoreBinding } from "@/enums";
 
 @Component({
-    name: "AppSidemenuNetworkStatus",
+	name: "AppSidemenuNetworkStatus",
 
-    components: {
+	components: {
 		ButtonModal,
 		ButtonReload,
 		MenuDropdown,
@@ -162,139 +162,139 @@ import { StoreBinding } from "@/enums";
 		ModalLoader,
 		ModalPeer,
 		SvgIcon,
-	}
+	},
 })
 export default class AppSidemenuNetworkStatus extends Vue {
-    @Prop({
-        type: Boolean,
-        required: false,
-        default: false,
-    })
-    outsideClick;
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	outsideClick;
 
-    @Prop({
-        type: Boolean,
-        required: false,
-        default: false,
-    })
-    isHorizontal;
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	isHorizontal;
 
-    isNetworkStatusVisible = false;
-    isRefreshing = false;
-    showCustomPeerModal = false;
-    showLoadingModal = false;
+	isNetworkStatusVisible = false;
+	isRefreshing = false;
+	showCustomPeerModal = false;
+	showLoadingModal = false;
 
-    get peer() {
-        return this.$store.getters["peer/current"]();
-    }
+	get peer() {
+		return this.$store.getters["peer/current"]();
+	}
 
-    get bestPeers() {
-        return this.$store.getters["peer/bestPeers"](undefined, false);
-    }
+	get bestPeers() {
+		return this.$store.getters["peer/bestPeers"](undefined, false);
+	}
 
-    get peerIps() {
-        const bestPeers = this.bestPeers;
-        if (!bestPeers) {
-            return {};
-        }
+	get peerIps() {
+		const bestPeers = this.bestPeers;
+		if (!bestPeers) {
+			return {};
+		}
 
-        return bestPeers.reduce((map, peer, index) => {
-            map[index] = `${peer.isHttps ? "https" : "http"}://${peer.ip}`;
+		return bestPeers.reduce((map, peer, index) => {
+			map[index] = `${peer.isHttps ? "https" : "http"}://${peer.ip}`;
 
-            return map;
-        }, {});
-    }
+			return map;
+		}, {});
+	}
 
-    get currentPeerId() {
-        if (this.peer.isCustom) {
-            return null;
-        }
+	get currentPeerId() {
+		if (this.peer.isCustom) {
+			return null;
+		}
 
-        const bestPeers = this.bestPeers;
-        for (const peerId in bestPeers) {
-            const peer = bestPeers[peerId];
-            if (peer.ip === this.peer.ip) {
-                return peerId;
-            }
-        }
+		const bestPeers = this.bestPeers;
+		for (const peerId in bestPeers) {
+			const peer = bestPeers[peerId];
+			if (peer.ip === this.peer.ip) {
+				return peerId;
+			}
+		}
 
-        return null;
-    }
+		return null;
+	}
 
-    get lastUpdated() {
-        return this.$store.getters["peer/lastUpdated"]();
-    }
+	get lastUpdated() {
+		return this.$store.getters["peer/lastUpdated"]();
+	}
 
-    toggleShowNetworkStatus() {
-        this.isNetworkStatusVisible = !this.isNetworkStatusVisible;
-    }
+	toggleShowNetworkStatus() {
+		this.isNetworkStatusVisible = !this.isNetworkStatusVisible;
+	}
 
-    closeShowNetworkStatus() {
-        this.isNetworkStatusVisible = false;
-    }
+	closeShowNetworkStatus() {
+		this.isNetworkStatusVisible = false;
+	}
 
-    connectPeer({ peer, closeTrigger }) {
-        this.showLoadingModal = true;
+	connectPeer({ peer, closeTrigger }) {
+		this.showLoadingModal = true;
 
-        const response = await this.$store.dispatch(StoreBinding.PeerValidatePeer, {
-            host: peer.host,
-            port: peer.port,
-        });
+		const response = await this.$store.dispatch(StoreBinding.PeerValidatePeer, {
+			host: peer.host,
+			port: peer.port,
+		});
 
-        if (response === false) {
-            this.$error(this.$t("PEER.CONNECT_FAILED"));
-            this.showLoadingModal = false;
-        } else if (typeof response === "string") {
-            this.$error(`${this.$t("PEER.CONNECT_FAILED")}: ${response}`);
-            this.showLoadingModal = false;
-        } else {
-            response.isCustom = true;
-            await this.$store.dispatch(StoreBinding.PeerSetCurrentPeer, response);
-            await this.$store.dispatch(StoreBinding.PeerUpdateCurrentPeerStatus);
-            this.$success(`${this.$t("PEER.CONNECTED")}: ${peer.host}:${peer.port}`);
-            if (closeTrigger) {
-                closeTrigger();
-            }
-        }
+		if (response === false) {
+			this.$error(this.$t("PEER.CONNECT_FAILED"));
+			this.showLoadingModal = false;
+		} else if (typeof response === "string") {
+			this.$error(`${this.$t("PEER.CONNECT_FAILED")}: ${response}`);
+			this.showLoadingModal = false;
+		} else {
+			response.isCustom = true;
+			await this.$store.dispatch(StoreBinding.PeerSetCurrentPeer, response);
+			await this.$store.dispatch(StoreBinding.PeerUpdateCurrentPeerStatus);
+			this.$success(`${this.$t("PEER.CONNECTED")}: ${peer.host}:${peer.port}`);
+			if (closeTrigger) {
+				closeTrigger();
+			}
+		}
 
-        this.showLoadingModal = false;
-    }
+		this.showLoadingModal = false;
+	}
 
-    refreshPeer() {
-        this.isRefreshing = true;
-        await this.$store.dispatch(StoreBinding.PeerConnectToBest, {
-            skipIfCustom: false,
-        });
-        this.isRefreshing = false;
-    }
+	refreshPeer() {
+		this.isRefreshing = true;
+		await this.$store.dispatch(StoreBinding.PeerConnectToBest, {
+			skipIfCustom: false,
+		});
+		this.isRefreshing = false;
+	}
 
-    setPeer(peerId) {
-        const peer = this.bestPeers[peerId];
-        if (!peer) {
-            this.$error("Could not find peer");
-        } else {
-            await this.$store.dispatch(StoreBinding.PeerSetCurrentPeer, peer);
-        }
-    }
+	setPeer(peerId) {
+		const peer = this.bestPeers[peerId];
+		if (!peer) {
+			this.$error("Could not find peer");
+		} else {
+			await this.$store.dispatch(StoreBinding.PeerSetCurrentPeer, peer);
+		}
+	}
 
-    toggleSelect(name) {
-        this.$refs[name].toggle();
-    }
+	toggleSelect(name) {
+		this.$refs[name].toggle();
+	}
 
-    toggleCustomPeerModal() {
-        this.showCustomPeerModal = !this.showCustomPeerModal;
-    }
+	toggleCustomPeerModal() {
+		this.showCustomPeerModal = !this.showCustomPeerModal;
+	}
 
-    emitClose() {
-        if (this.outsideClick && !this.showCustomPeerModal) {
-            this.closeShowNetworkStatus();
-        }
-    }
+	emitClose() {
+		if (this.outsideClick && !this.showCustomPeerModal) {
+			this.closeShowNetworkStatus();
+		}
+	}
 
-    goToNetworkOverview() {
-        this.closeShowNetworkStatus();
-        this.$router.push({ name: "networks" });
-    }
+	goToNetworkOverview() {
+		this.closeShowNetworkStatus();
+		this.$router.push({ name: "networks" });
+	}
 }
 </script>
 

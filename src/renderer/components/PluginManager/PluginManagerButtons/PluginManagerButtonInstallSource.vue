@@ -17,46 +17,46 @@
 </template>
 
 <script>
-import { Component, Prop,Vue } from "vue-property-decorator";
+import { Component, Prop, Vue } from "vue-property-decorator";
 
 import SvgIcon from "@/components/SvgIcon";
 
 @Component({
-    name: "PluginManagerButtonInstallSource",
+	name: "PluginManagerButtonInstallSource",
 
-    components: {
+	components: {
 		SvgIcon,
-	}
+	},
 })
 export default class PluginManagerButtonInstallSource extends Vue {
-    @Prop({
-        type: String,
-        required: false,
-        default: "url",
-    })
-    source;
+	@Prop({
+		type: String,
+		required: false,
+		default: "url",
+	})
+	source;
 
-    @Prop({
-        type: Boolean,
-        required: false,
-        default: false,
-    })
-    isDisabled;
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	isDisabled;
 
-    get disabledTooltip() {
-        if (!this.isDisabled) {
-            return null;
-        }
+	get disabledTooltip() {
+		if (!this.isDisabled) {
+			return null;
+		}
 
-        return {
-            content: this.$t("COMMON.ENABLE_ADVANCED_MODE"),
-            placement: "left",
-        };
-    }
+		return {
+			content: this.$t("COMMON.ENABLE_ADVANCED_MODE"),
+			placement: "left",
+		};
+	}
 
-    emitClick() {
-        this.$emit("click");
-    }
+	emitClick() {
+		this.$emit("click");
+	}
 }
 </script>
 

@@ -119,7 +119,7 @@
 </template>
 
 <script>
-import { Component, Prop,Vue } from "vue-property-decorator";
+import { Component, Prop, Vue } from "vue-property-decorator";
 
 import { ButtonClipboard } from "@/components/Button";
 import SvgIcon from "@/components/SvgIcon";
@@ -127,128 +127,128 @@ import TableWrapper from "@/components/utils/TableWrapper";
 import { WalletIdenticon } from "@/components/Wallet";
 
 @Component({
-    name: "WalletTable",
+	name: "WalletTable",
 
-    components: {
+	components: {
 		ButtonClipboard,
 		SvgIcon,
 		TableWrapper,
 		WalletIdenticon,
-	}
+	},
 })
 export default class WalletTable extends Vue {
-    @Prop({
-        type: Boolean,
-        default: false,
-        required: false,
-    })
-    showVotedDelegates;
+	@Prop({
+		type: Boolean,
+		default: false,
+		required: false,
+	})
+	showVotedDelegates;
 
-    get columns() {
-        const columns = [
-            {
-                // label: this.$t('WALLET_DELEGATES.RANK'),
-                label: this.$t("PAGES.WALLET_ALL.ADDRESS"),
-                field: "address",
-            },
-            {
-                label: this.$t("PAGES.WALLET_ALL.NAME"),
-                field: "name",
-                sortFn: this.sortByName,
-                thClass: !this.showVotedDelegates ? "w-full" : "",
-                tdClass: !this.showVotedDelegates ? "w-full" : "",
-            },
-            {
-                label: "",
-                field: "multisignature",
-                sortable: false,
-                thClass: "text-center not-sortable",
-                tdClass: "text-center",
-            },
-            {
-                label: this.$t("PAGES.WALLET_ALL.VOTING_FOR"),
-                field: "vote",
-                sortFn: this.sortByVote,
-                thClass: "w-full whitespace-no-wrap",
-                tdClass: "w-full",
-            },
-            {
-                label: this.$t("PAGES.WALLET_ALL.BALANCE"),
-                field: "balance",
-                type: "number",
-                tdClass: "font-bold whitespace-no-wrap",
-            },
-            {
-                label: this.$t("WALLET_TABLE.ACTIONS"),
-                field: "actions",
-                sortable: false,
-                thClass: "text-center not-sortable",
-                tdClass: "text-center",
-            },
-        ];
+	get columns() {
+		const columns = [
+			{
+				// label: this.$t('WALLET_DELEGATES.RANK'),
+				label: this.$t("PAGES.WALLET_ALL.ADDRESS"),
+				field: "address",
+			},
+			{
+				label: this.$t("PAGES.WALLET_ALL.NAME"),
+				field: "name",
+				sortFn: this.sortByName,
+				thClass: !this.showVotedDelegates ? "w-full" : "",
+				tdClass: !this.showVotedDelegates ? "w-full" : "",
+			},
+			{
+				label: "",
+				field: "multisignature",
+				sortable: false,
+				thClass: "text-center not-sortable",
+				tdClass: "text-center",
+			},
+			{
+				label: this.$t("PAGES.WALLET_ALL.VOTING_FOR"),
+				field: "vote",
+				sortFn: this.sortByVote,
+				thClass: "w-full whitespace-no-wrap",
+				tdClass: "w-full",
+			},
+			{
+				label: this.$t("PAGES.WALLET_ALL.BALANCE"),
+				field: "balance",
+				type: "number",
+				tdClass: "font-bold whitespace-no-wrap",
+			},
+			{
+				label: this.$t("WALLET_TABLE.ACTIONS"),
+				field: "actions",
+				sortable: false,
+				thClass: "text-center not-sortable",
+				tdClass: "text-center",
+			},
+		];
 
-        if (!this.showVotedDelegates) {
-            const index = columns.findIndex((el) => el.field === "delegate");
-            columns.splice(index, 1);
-        }
+		if (!this.showVotedDelegates) {
+			const index = columns.findIndex((el) => el.field === "delegate");
+			columns.splice(index, 1);
+		}
 
-        return columns;
-    }
+		return columns;
+	}
 
-    removeRow(row) {
-        this.$emit("remove-row", row);
-    }
+	removeRow(row) {
+		this.$emit("remove-row", row);
+	}
 
-    renameRow(row) {
-        this.$emit("rename-row", row);
-    }
+	renameRow(row) {
+		this.$emit("rename-row", row);
+	}
 
-    sortByName(x, y, col, rowX, rowY) {
-        const a = rowX.name || this.wallet_name(rowX.address) || "";
-        const b = rowY.name || this.wallet_name(rowY.address) || "";
+	sortByName(x, y, col, rowX, rowY) {
+		const a = rowX.name || this.wallet_name(rowX.address) || "";
+		const b = rowY.name || this.wallet_name(rowY.address) || "";
 
-        return a.localeCompare(b, undefined, { sensitivity: "base", numeric: true });
-    }
+		return a.localeCompare(b, undefined, { sensitivity: "base", numeric: true });
+	}
 
-    sortByVote(x, y) {
-        const a = x ? this.getDelegateProperty(x, "username") : "";
-        const b = y ? this.getDelegateProperty(y, "username") : "";
+	sortByVote(x, y) {
+		const a = x ? this.getDelegateProperty(x, "username") : "";
+		const b = y ? this.getDelegateProperty(y, "username") : "";
 
-        return a.localeCompare(b, undefined, { sensitivity: "base", numeric: true });
-    }
+		return a.localeCompare(b, undefined, { sensitivity: "base", numeric: true });
+	}
 
-    getDelegate(publicKey) {
-        return this.$store.getters["delegate/byPublicKey"](publicKey);
-    }
+	getDelegate(publicKey) {
+		return this.$store.getters["delegate/byPublicKey"](publicKey);
+	}
 
-    getDelegateProperty(publicKey, property) {
-        const delegate = this.getDelegate(publicKey);
-        return delegate && property ? delegate[property] : null;
-    }
+	getDelegateProperty(publicKey, property) {
+		const delegate = this.getDelegate(publicKey);
+		return delegate && property ? delegate[property] : null;
+	}
 
-    isActiveDelegate(publicKey) {
-        const rank = this.getDelegateProperty(publicKey, "rank");
+	isActiveDelegate(publicKey) {
+		const rank = this.getDelegateProperty(publicKey, "rank");
 
-        if (rank) {
-            return rank <= (this.session_network.constants.activeDelegates || 51);
-        }
+		if (rank) {
+			return rank <= (this.session_network.constants.activeDelegates || 51);
+		}
 
-        return false;
-    }
+		return false;
+	}
 
-    walletName(row) {
-        return row.name || this.wallet_name(row.address);
-    }
+	walletName(row) {
+		return row.name || this.wallet_name(row.address);
+	}
 
-    onCellClick({ row, column }) {
-        if (column.field !== "actions") {
-            this.$router.push({ name: "wallet-show", params: { address: row.address } });
-        }
-    }
+	onCellClick({ row, column }) {
+		if (column.field !== "actions") {
+			this.$router.push({ name: "wallet-show", params: { address: row.address } });
+		}
+	}
 
-    onSortChange(sortOptions) {
-        this.$emit("on-sort-change", sortOptions[0]);
-    }
+	onSortChange(sortOptions) {
+		this.$emit("on-sort-change", sortOptions[0]);
+	}
 }
 </script>
 

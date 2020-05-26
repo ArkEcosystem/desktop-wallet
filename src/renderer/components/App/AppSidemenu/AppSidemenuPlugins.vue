@@ -25,47 +25,47 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop,Vue } from "vue-property-decorator";
+import { Component, Prop, Vue } from "vue-property-decorator";
 
 import { MenuOptions, MenuOptionsItem } from "@/components/Menu";
 
 @Component({
-    name: "AppSidemenuPlugins",
+	name: "AppSidemenuPlugins",
 
-    components: {
+	components: {
 		MenuOptions,
 		MenuOptionsItem,
-	}
+	},
 })
 export default class AppSidemenuPlugins extends Vue {
-    @Prop({
-        type: Boolean,
-        required: false,
-        default: false,
-    })
-    outsideClick;
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	outsideClick;
 
-    @Prop({
-        type: Boolean,
-        required: false,
-        default: false,
-    })
-    isHorizontal;
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	isHorizontal;
 
-    get pluginMenuItems() {
-        return this.$store.getters["plugin/menuItems"];
-    }
+	get pluginMenuItems() {
+		return this.$store.getters["plugin/menuItems"];
+	}
 
-    navigateToRoute(routeName) {
-        this.$emit("close", true);
-        this.$router.push({ name: routeName });
-    }
+	navigateToRoute(routeName) {
+		this.$emit("close", true);
+		this.$router.push({ name: routeName });
+	}
 
-    emitClose() {
-        if (this.outsideClick) {
-            this.$emit("close");
-        }
-    }
+	emitClose() {
+		if (this.outsideClick) {
+			this.$emit("close");
+		}
+	}
 }
 </script>
 

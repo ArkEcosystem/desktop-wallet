@@ -93,129 +93,129 @@
 </template>
 
 <script>
-import { Component, Prop,Vue } from "vue-property-decorator";
+import { Component, Prop, Vue } from "vue-property-decorator";
 
 import SvgIcon from "@/components/SvgIcon";
 
 @Component({
-    name: "WalletAddress",
+	name: "WalletAddress",
 
-    components: {
+	components: {
 		SvgIcon,
-	}
+	},
 })
 export default class WalletAddress extends Vue {
-    @Prop({
-        type: String,
-        required: false,
-        default: () => "",
-    })
-    address;
+	@Prop({
+		type: String,
+		required: false,
+		default: () => "",
+	})
+	address;
 
-    @Prop({
-        type: Object,
-        required: false,
-        default: () => {},
-    })
-    asset;
+	@Prop({
+		type: Object,
+		required: false,
+		default: () => {},
+	})
+	asset;
 
-    @Prop({
-        type: Number,
-        required: false,
-        default: () => 0,
-    })
-    type;
+	@Prop({
+		type: Number,
+		required: false,
+		default: () => 0,
+	})
+	type;
 
-    @Prop({
-        type: Number,
-        required: false,
-        default: () => 1,
-    })
-    group;
+	@Prop({
+		type: Number,
+		required: false,
+		default: () => 1,
+	})
+	group;
 
-    @Prop({
-        type: String,
-        required: false,
-        default: () => "#app",
-    })
-    tooltipContainer;
+	@Prop({
+		type: String,
+		required: false,
+		default: () => "#app",
+	})
+	tooltipContainer;
 
-    @Prop({
-        type: Number,
-        required: false,
-        default: 10,
-    })
-    addressLength;
+	@Prop({
+		type: Number,
+		required: false,
+		default: 10,
+	})
+	addressLength;
 
-    showTooltip = false;
+	showTooltip = false;
 
-    get isUnvote() {
-        if (this.asset && this.asset.votes) {
-            const vote = this.asset.votes[0];
-            return vote.charAt(0) === "-";
-        }
-        return false;
-    }
+	get isUnvote() {
+		if (this.asset && this.asset.votes) {
+			const vote = this.asset.votes[0];
+			return vote.charAt(0) === "-";
+		}
+		return false;
+	}
 
-    get votePublicKey() {
-        if (this.asset && this.asset.votes) {
-            const vote = this.asset.votes[0];
-            return vote.substr(1);
-        }
-        return "";
-    }
+	get votePublicKey() {
+		if (this.asset && this.asset.votes) {
+			const vote = this.asset.votes[0];
+			return vote.substr(1);
+		}
+		return "";
+	}
 
-    get votedDelegate() {
-        if (this.votePublicKey) {
-            return this.$store.getters["delegate/byPublicKey"](this.votePublicKey);
-        }
+	get votedDelegate() {
+		if (this.votePublicKey) {
+			return this.$store.getters["delegate/byPublicKey"](this.votePublicKey);
+		}
 
-        return null;
-    }
+		return null;
+	}
 
-    get votedDelegateUsername() {
-        return this.votedDelegate ? this.votedDelegate.username : "";
-    }
+	get votedDelegateUsername() {
+		return this.votedDelegate ? this.votedDelegate.username : "";
+	}
 
-    get votedDelegateAddress() {
-        return this.votedDelegate ? this.votedDelegate.address : "";
-    }
+	get votedDelegateAddress() {
+		return this.votedDelegate ? this.votedDelegate.address : "";
+	}
 
-    get verifiedAddressText() {
-        let verifiedText = "";
-        const knownWallet = this.isKnownWallet();
-        if (knownWallet && knownWallet !== this.wallet_formatAddress(this.address, this.addressLength)) {
-            verifiedText = `${knownWallet} - `;
-        }
+	get verifiedAddressText() {
+		let verifiedText = "";
+		const knownWallet = this.isKnownWallet();
+		if (knownWallet && knownWallet !== this.wallet_formatAddress(this.address, this.addressLength)) {
+			verifiedText = `${knownWallet} - `;
+		}
 
-        return verifiedText + this.$t("COMMON.VERIFIED_ADDRESS");
-    }
+		return verifiedText + this.$t("COMMON.VERIFIED_ADDRESS");
+	}
 
-    isKnownWallet() {
-        return this.session_network.knownWallets[this.address];
-    }
+	isKnownWallet() {
+		return this.session_network.knownWallets[this.address];
+	}
 
-    onClick() {
-        this.showTooltip = false;
-        this.$emit("click");
-        this.openAddress();
-    }
+	onClick() {
+		this.showTooltip = false;
+		this.$emit("click");
+		this.openAddress();
+	}
 
-    onMouseOver() {
-        this.showTooltip = true;
-    }
+	onMouseOver() {
+		this.showTooltip = true;
+	}
 
-    onMouseOut() {
-        this.showTooltip = false;
-    }
+	onMouseOut() {
+		this.showTooltip = false;
+	}
 
-    openAddress() {
-        if (this.votePublicKey) {
-            this.$router.push({ name: "wallet-show", params: { address: this.votedDelegateAddress } });
-        } else {
-            this.$router.push({ name: "wallet-show", params: { address: this.address } });
-        }
-    }
+	openAddress() {
+		if (this.votePublicKey) {
+			this.$router.push({ name: "wallet-show", params: { address: this.votedDelegateAddress } });
+		} else {
+			this.$router.push({ name: "wallet-show", params: { address: this.address } });
+		}
+	}
 }
 </script>
 

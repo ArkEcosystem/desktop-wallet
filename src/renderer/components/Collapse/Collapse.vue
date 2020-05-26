@@ -22,17 +22,17 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop,Vue } from "vue-property-decorator";
+import { Component, Prop, Vue } from "vue-property-decorator";
 @Component({
-    name: "Collapse",
+	name: "Collapse",
 
-    inject: {
+	inject: {
 		collapseClick: {
 			default: null, // avoid throw when using this component alone
 		},
 	},
 
-    watch: {
+	watch: {
 		isOpen(val) {
 			this.inputIsOpen = val;
 		},
@@ -40,87 +40,87 @@ import { Component, Prop,Vue } from "vue-property-decorator";
 		inputIsOpen() {
 			this.$emit(this.inputIsOpen ? "open" : "close");
 		},
-	}
+	},
 })
 export default class Collapse extends Vue {
-    @Prop({
-        type: Boolean,
-        required: false,
-        default: false,
-    })
-    isOpen;
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	isOpen;
 
-    @Prop({
-        type: Boolean,
-        required: false,
-        default: false,
-    })
-    isDisabled;
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	isDisabled;
 
-    // Only required in the accordion
-    @Prop({
-        type: [String, Number],
-        required: false,
-        default: null,
-    })
-    id;
+	// Only required in the accordion
+	@Prop({
+		type: [String, Number],
+		required: false,
+		default: null,
+	})
+	id;
 
-    @Prop({
-        type: Object,
-        required: false,
-        default: () => ({ enter: 100, leave: 200 }),
-    })
-    animationDuration;
+	@Prop({
+		type: Object,
+		required: false,
+		default: () => ({ enter: 100, leave: 200 }),
+	})
+	animationDuration;
 
-    height = 0;
-    inputIsOpen = null;
+	height = 0;
+	inputIsOpen = null;
 
-    mounted() {
+	mounted() {
 		this.inputIsOpen = this.isOpen;
 	}
 
-    // Verify that the `collapseClick` method was injected by the parent
-    clickHandler() {
-        if (this.collapseClick) {
-            this.collapseClick(this.id);
-        } else {
-            this.toggle();
-        }
-    }
+	// Verify that the `collapseClick` method was injected by the parent
+	clickHandler() {
+		if (this.collapseClick) {
+			this.collapseClick(this.id);
+		} else {
+			this.toggle();
+		}
+	}
 
-    // This method is called by the parent
-    collapse(id) {
-        if (!id || !this.id) return;
+	// This method is called by the parent
+	collapse(id) {
+		if (!id || !this.id) return;
 
-        if (this.id === id && !this.isDisabled) {
-            this.inputIsOpen = !this.inputIsOpen;
-            return this.inputIsOpen; // Return this to the parent identify the active item
-        } else {
-            this.inputIsOpen = false;
-        }
-    }
+		if (this.id === id && !this.isDisabled) {
+			this.inputIsOpen = !this.inputIsOpen;
+			return this.inputIsOpen; // Return this to the parent identify the active item
+		} else {
+			this.inputIsOpen = false;
+		}
+	}
 
-    toggle() {
-        if (this.isDisabled) return;
+	toggle() {
+		if (this.isDisabled) return;
 
-        this.inputIsOpen = !this.inputIsOpen;
-    }
+		this.inputIsOpen = !this.inputIsOpen;
+	}
 
-    // Animate content by moving from height 0 to real size
-    enter(el) {
-        const scrollHeight = `${el.scrollHeight}px`;
-        this.height = 0;
-        setTimeout(() => (this.height = scrollHeight || "auto"));
-    }
+	// Animate content by moving from height 0 to real size
+	enter(el) {
+		const scrollHeight = `${el.scrollHeight}px`;
+		this.height = 0;
+		setTimeout(() => (this.height = scrollHeight || "auto"));
+	}
 
-    afterEnter() {
-        setTimeout(() => (this.height = "auto"), 5);
-    }
+	afterEnter() {
+		setTimeout(() => (this.height = "auto"), 5);
+	}
 
-    leave(el) {
-        this.height = getComputedStyle(el).height;
-        setTimeout(() => (this.height = 0));
-    }
+	leave(el) {
+		this.height = getComputedStyle(el).height;
+		setTimeout(() => (this.height = 0));
+	}
 }
 </script>
 

@@ -37,42 +37,42 @@
 
 <script>
 import { PLUGINS } from "@config";
-import { Component, Prop,Vue } from "vue-property-decorator";
+import { Component, Prop, Vue } from "vue-property-decorator";
 
 import { PluginManagerButtonMenu } from "@/components/PluginManager/PluginManagerButtons";
 
 @Component({
-    name: "PluginManagerSideMenu",
+	name: "PluginManagerSideMenu",
 
-    components: {
+	components: {
 		PluginManagerButtonMenu,
-	}
+	},
 })
 export default class PluginManagerSideMenu extends Vue {
-    @Prop({
-        type: String,
-        required: false,
-        default: "all",
-    })
-    activeCategory;
+	@Prop({
+		type: String,
+		required: false,
+		default: "all",
+	})
+	activeCategory;
 
-    get pluginCategories() {
-        return ["all"].concat(PLUGINS.categories.filter((category) => !["theme", "language"].includes(category)));
-    }
+	get pluginCategories() {
+		return ["all"].concat(PLUGINS.categories.filter((category) => !["theme", "language"].includes(category)));
+	}
 
-    get otherCategories() {
-        return ["theme", "language"];
-    }
+	get otherCategories() {
+		return ["theme", "language"];
+	}
 
-    emitToggle() {
-        this.$emit("toggle");
-    }
+	emitToggle() {
+		this.$emit("toggle");
+	}
 
-    emitCategory(category) {
-        if (category !== this.activeCategory) {
-            this.$emit("category-change", category);
-        }
-    }
+	emitCategory(category) {
+		if (category !== this.activeCategory) {
+			this.$emit("category-change", category);
+		}
+	}
 }
 </script>
 

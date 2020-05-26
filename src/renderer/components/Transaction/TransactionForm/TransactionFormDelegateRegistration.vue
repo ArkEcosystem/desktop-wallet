@@ -89,7 +89,7 @@
 
 <script>
 import { TRANSACTION_TYPES } from "@config";
-import { Component,Vue } from "vue-property-decorator";
+import { Component, Vue } from "vue-property-decorator";
 
 import { InputFee, InputPassword, InputText } from "@/components/Input";
 import { ListDivided, ListDividedItem } from "@/components/ListDivided";
@@ -100,9 +100,9 @@ import WalletService from "@/services/wallet";
 import mixin from "./mixin";
 
 @Component({
-    name: "TransactionFormDelegateRegistration",
+	name: "TransactionFormDelegateRegistration",
 
-    components: {
+	components: {
 		InputFee,
 		InputPassword,
 		InputText,
@@ -112,61 +112,61 @@ import mixin from "./mixin";
 		PassphraseInput,
 	},
 
-    mixins: [mixin]
+	mixins: [mixin],
 })
 export default class TransactionFormDelegateRegistration extends Vue {
-    transactionType = TRANSACTION_TYPES.GROUP_1.DELEGATE_REGISTRATION;
+	transactionType = TRANSACTION_TYPES.GROUP_1.DELEGATE_REGISTRATION;
 
-    form = {
-        fee: 0,
-        username: "",
-        passphrase: "",
-        walletPassword: "",
-    };
+	form = {
+		fee: 0,
+		username: "",
+		passphrase: "",
+		walletPassword: "",
+	};
 
-    get usernameError() {
-        if (this.$v.form.username.$dirty && this.$v.form.username.$error) {
-            if (!this.$v.form.username.isNotEmpty) {
-                return this.$t("WALLET_DELEGATES.USERNAME_EMPTY_ERROR");
-            } else if (!this.$v.form.username.isMaxLength) {
-                return this.$t("WALLET_DELEGATES.USERNAME_MAX_LENGTH_ERROR");
-            } else if (!this.$v.form.username.doesNotExist) {
-                return this.$t("WALLET_DELEGATES.USERNAME_EXISTS");
-            }
+	get usernameError() {
+		if (this.$v.form.username.$dirty && this.$v.form.username.$error) {
+			if (!this.$v.form.username.isNotEmpty) {
+				return this.$t("WALLET_DELEGATES.USERNAME_EMPTY_ERROR");
+			} else if (!this.$v.form.username.isMaxLength) {
+				return this.$t("WALLET_DELEGATES.USERNAME_MAX_LENGTH_ERROR");
+			} else if (!this.$v.form.username.doesNotExist) {
+				return this.$t("WALLET_DELEGATES.USERNAME_EXISTS");
+			}
 
-            return this.$t("WALLET_DELEGATES.USERNAME_ERROR");
-        }
+			return this.$t("WALLET_DELEGATES.USERNAME_ERROR");
+		}
 
-        return null;
-    }
+		return null;
+	}
 
-    getTransactionData() {
-        const transactionData = {
-            address: this.currentWallet.address,
-            username: this.form.username,
-            passphrase: this.form.passphrase,
-            fee: this.getFee(),
-            wif: this.form.wif,
-            networkWif: this.walletNetwork.wif,
-            multiSignature: this.currentWallet.multiSignature,
-        };
+	getTransactionData() {
+		const transactionData = {
+			address: this.currentWallet.address,
+			username: this.form.username,
+			passphrase: this.form.passphrase,
+			fee: this.getFee(),
+			wif: this.form.wif,
+			networkWif: this.walletNetwork.wif,
+			multiSignature: this.currentWallet.multiSignature,
+		};
 
-        if (this.currentWallet.secondPublicKey) {
-            transactionData.secondPassphrase = this.form.secondPassphrase;
-        }
+		if (this.currentWallet.secondPublicKey) {
+			transactionData.secondPassphrase = this.form.secondPassphrase;
+		}
 
-        return transactionData;
-    }
+		return transactionData;
+	}
 
-    buildTransaction(transactionData, isAdvancedFee = false, returnObject = false) {
-        return this.$client.buildDelegateRegistration(transactionData, isAdvancedFee, returnObject);
-    }
+	buildTransaction(transactionData, isAdvancedFee = false, returnObject = false) {
+		return this.$client.buildDelegateRegistration(transactionData, isAdvancedFee, returnObject);
+	}
 
-    transactionError() {
-        this.$error(this.$t("TRANSACTION.ERROR.VALIDATION.DELEGATE_REGISTRATION"));
-    }
+	transactionError() {
+		this.$error(this.$t("TRANSACTION.ERROR.VALIDATION.DELEGATE_REGISTRATION"));
+	}
 
-    validations = {
+	validations = {
 		form: {
 			fee: mixin.validators.fee,
 			passphrase: mixin.validators.passphrase,

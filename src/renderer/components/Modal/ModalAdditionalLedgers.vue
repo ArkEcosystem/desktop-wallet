@@ -41,7 +41,7 @@
 </template>
 
 <script>
-import { Component, Prop,Vue } from "vue-property-decorator";
+import { Component, Prop, Vue } from "vue-property-decorator";
 import { minValue, numeric, required } from "vuelidate/lib/validators";
 
 import { ButtonGeneric } from "@/components/Button";
@@ -50,67 +50,67 @@ import ModalWindow from "@/components/Modal/ModalWindow";
 import { StoreBinding } from "@/enums";
 
 @Component({
-    name: "ModalAdditionalLedgers",
+	name: "ModalAdditionalLedgers",
 
-    components: {
+	components: {
 		ButtonGeneric,
 		InputText,
 		ModalWindow,
-	}
+	},
 })
 export default class ModalAdditionalLedgers extends Vue {
-    @Prop({
-        type: Number,
-        required: false,
-        default: 50,
-    })
-    largeQuantity;
+	@Prop({
+		type: Number,
+		required: false,
+		default: 50,
+	})
+	largeQuantity;
 
-    form = {
-        quantity: "",
-    };
+	form = {
+		quantity: "",
+	};
 
-    get currentLedgerQuantity() {
-        return this.$store.getters["ledger/wallets"].length;
-    }
+	get currentLedgerQuantity() {
+		return this.$store.getters["ledger/wallets"].length;
+	}
 
-    get quantityError() {
-        if (this.$v.form.quantity.$dirty) {
-            if (!this.$v.form.quantity.required) {
-                return this.$t("VALIDATION.REQUIRED", [this.$refs["input-quantity"].label]);
-            } else if (!this.$v.form.quantity.numeric) {
-                return this.$t("VALIDATION.NOT_NUMERIC", [this.$refs["input-quantity"].label]);
-            } else if (!this.$v.form.quantity.minValue) {
-                return this.$t("VALIDATION.MUST_BE_GREATER_THAN", [0]);
-            }
-        }
+	get quantityError() {
+		if (this.$v.form.quantity.$dirty) {
+			if (!this.$v.form.quantity.required) {
+				return this.$t("VALIDATION.REQUIRED", [this.$refs["input-quantity"].label]);
+			} else if (!this.$v.form.quantity.numeric) {
+				return this.$t("VALIDATION.NOT_NUMERIC", [this.$refs["input-quantity"].label]);
+			} else if (!this.$v.form.quantity.minValue) {
+				return this.$t("VALIDATION.MUST_BE_GREATER_THAN", [0]);
+			}
+		}
 
-        return null;
-    }
+		return null;
+	}
 
-    get quantityWarning() {
-        if (this.$v.form.quantity.$dirty && this.$v.form.quantity.$model > this.largeQuantity) {
-            return this.$t("MODAL_ADDITIONAL_LEDGERS.LARGE_QUANTITY");
-        }
+	get quantityWarning() {
+		if (this.$v.form.quantity.$dirty && this.$v.form.quantity.$model > this.largeQuantity) {
+			return this.$t("MODAL_ADDITIONAL_LEDGERS.LARGE_QUANTITY");
+		}
 
-        return null;
-    }
+		return null;
+	}
 
-    submit() {
-        this.$store.dispatch(StoreBinding.LedgerReloadWallets, {
-            clearFirst: true,
-            forceLoad: true,
-            quantity: this.form.quantity,
-        });
+	submit() {
+		this.$store.dispatch(StoreBinding.LedgerReloadWallets, {
+			clearFirst: true,
+			forceLoad: true,
+			quantity: this.form.quantity,
+		});
 
-        this.emitClose(true);
-    }
+		this.emitClose(true);
+	}
 
-    emitClose(closeMenu = false) {
-        this.$emit("close", closeMenu);
-    }
+	emitClose(closeMenu = false) {
+		this.$emit("close", closeMenu);
+	}
 
-    validations = {
+	validations = {
 		form: {
 			quantity: {
 				numeric,

@@ -18,29 +18,29 @@
 </template>
 
 <script>
-import { Component,Vue } from "vue-property-decorator";
+import { Component, Vue } from "vue-property-decorator";
 
 import ModalExportWallets from "@/components/Modal/ModalExportWallets";
 import SvgIcon from "@/components/SvgIcon";
 
 @Component({
-    name: "WalletButtonExport",
+	name: "WalletButtonExport",
 
-    components: {
+	components: {
 		ModalExportWallets,
 		SvgIcon,
-	}
+	},
 })
 export default class WalletButtonExport extends Vue {
-    showModal = false;
+	showModal = false;
 
-    get hideText() {
-        return this.$store.getters["session/hideWalletButtonText"];
-    }
+	get hideText() {
+		return this.$store.getters["session/hideWalletButtonText"];
+	}
 
-    toggle() {
-        this.showModal = !this.showModal;
-    }
+	toggle() {
+		this.showModal = !this.showModal;
+	}
 }
 </script>
 

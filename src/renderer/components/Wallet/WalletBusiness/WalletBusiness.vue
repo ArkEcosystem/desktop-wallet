@@ -32,7 +32,7 @@
 
 <script>
 import { TRANSACTION_GROUPS, TRANSACTION_TYPES } from "@config";
-import { Component,Vue } from "vue-property-decorator";
+import { Component, Vue } from "vue-property-decorator";
 
 import { ButtonModal } from "@/components/Button";
 import { TransactionModal } from "@/components/Transaction";
@@ -40,24 +40,24 @@ import { TransactionModal } from "@/components/Transaction";
 import WalletBusinessBridgechains from "./WalletBusinessBridgechains";
 
 @Component({
-    name: "WalletBusiness",
+	name: "WalletBusiness",
 
-    components: {
+	components: {
 		ButtonModal,
 		TransactionModal,
 		WalletBusinessBridgechains,
-	}
+	},
 })
 export default class WalletBusiness extends Vue {
-    bridgechainRegistration = {
-        type: TRANSACTION_TYPES.GROUP_2.BRIDGECHAIN_REGISTRATION,
-        group: TRANSACTION_GROUPS.MAGISTRATE,
-    };
+	bridgechainRegistration = {
+		type: TRANSACTION_TYPES.GROUP_2.BRIDGECHAIN_REGISTRATION,
+		group: TRANSACTION_GROUPS.MAGISTRATE,
+	};
 
-    closeTransactionModal(toggleMethod, isOpen) {
-        if (isOpen) {
-            toggleMethod();
-        }
-    }
+	closeTransactionModal(toggleMethod, isOpen) {
+		if (isOpen) {
+			toggleMethod();
+		}
+	}
 }
 </script>

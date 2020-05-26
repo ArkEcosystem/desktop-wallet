@@ -61,81 +61,81 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop,Vue } from "vue-property-decorator";
+import { Component, Prop, Vue } from "vue-property-decorator";
 
 import { ButtonGeneric } from "@/components/Button";
 
 @Component({
-    name: "AppIntroScreen",
+	name: "AppIntroScreen",
 
-    components: {
+	components: {
 		ButtonGeneric,
-	}
+	},
 })
 export default class AppIntroScreen extends Vue {
-    @Prop({
-        type: Boolean,
-        required: false,
-        default: true,
-    })
-    showBack;
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: true,
+	})
+	showBack;
 
-    @Prop({
-        type: Boolean,
-        required: false,
-        default: true,
-    })
-    showLogo;
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: true,
+	})
+	showLogo;
 
-    @Prop({
-        type: Boolean,
-        required: false,
-        default: true,
-    })
-    showNext;
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: true,
+	})
+	showNext;
 
-    @Prop({
-        type: Boolean,
-        required: false,
-        default: true,
-    })
-    showSkip;
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: true,
+	})
+	showSkip;
 
-    @Prop({
-        type: String,
-        required: true,
-    })
-    image;
+	@Prop({
+		type: String,
+		required: true,
+	})
+	image;
 
-    @Prop({
-        type: Boolean,
-        required: false,
-        default: true,
-    })
-    showGradient;
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: true,
+	})
+	showGradient;
 
-    @Prop({
-        type: String,
-        required: false,
-        default: "font-medium px-16 mt-10 overflow-y-auto",
-    })
-    contentClasses;
+	@Prop({
+		type: String,
+		required: false,
+		default: "font-medium px-16 mt-10 overflow-y-auto",
+	})
+	contentClasses;
 
-    get showFooter() {
-        return this.showBack || this.showNext || this.showSkip;
-    }
+	get showFooter() {
+		return this.showBack || this.showNext || this.showSkip;
+	}
 
-    emitBack() {
-        this.$emit("back");
-    }
+	emitBack() {
+		this.$emit("back");
+	}
 
-    emitNext() {
-        this.$emit("next");
-    }
+	emitNext() {
+		this.$emit("next");
+	}
 
-    emitSkip() {
-        this.$emit("skip");
-    }
+	emitSkip() {
+		this.$emit("skip");
+	}
 }
 </script>
 

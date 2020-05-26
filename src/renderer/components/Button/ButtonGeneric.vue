@@ -7,26 +7,26 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop,Vue } from "vue-property-decorator";
+import { Component, Prop, Vue } from "vue-property-decorator";
 @Component({
-    name: "ButtonGeneric"
+	name: "ButtonGeneric",
 })
 export default class ButtonGeneric extends Vue {
-    @Prop({
-        type: String,
-        required: true,
-    })
-    label;
+	@Prop({
+		type: String,
+		required: true,
+	})
+	label;
 
-    @Prop({
-        type: Boolean,
-        required: false,
-        default: false,
-    })
-    isSmall;
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	isSmall;
 
-    emitClick() {
-        this.$emit("click");
-    }
+	emitClick() {
+		this.$emit("click");
+	}
 }
 </script>

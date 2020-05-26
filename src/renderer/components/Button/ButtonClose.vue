@@ -10,35 +10,35 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop,Vue } from "vue-property-decorator";
+import { Component, Prop, Vue } from "vue-property-decorator";
 
 import SvgIcon from "@/components/SvgIcon";
 
 @Component({
-    name: "ButtonClose",
+	name: "ButtonClose",
 
-    components: {
+	components: {
 		SvgIcon,
-	}
+	},
 })
 export default class ButtonClose extends Vue {
-    @Prop({
-        type: String,
-        required: false,
-        default: "",
-    })
-    iconClass;
+	@Prop({
+		type: String,
+		required: false,
+		default: "",
+	})
+	iconClass;
 
-    @Prop({
-        type: String,
-        required: false,
-        default: "cross",
-    })
-    iconName;
+	@Prop({
+		type: String,
+		required: false,
+		default: "cross",
+	})
+	iconName;
 
-    emitClick() {
-        this.$emit("click");
-    }
+	emitClick() {
+		this.$emit("click");
+	}
 }
 </script>
 

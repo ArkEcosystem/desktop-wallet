@@ -52,88 +52,88 @@
 
 <script>
 import { pullAllBy } from "lodash";
-import { Component, Prop,Vue } from "vue-property-decorator";
+import { Component, Prop, Vue } from "vue-property-decorator";
 
 import { NetworkModal, NetworkSelectionModal } from "@/components/Network";
 
 import SelectionNetworkButton from "./SelectionNetworkButton";
 
 @Component({
-    name: "SelectionNetwork",
+	name: "SelectionNetwork",
 
-    components: {
+	components: {
 		NetworkModal,
 		NetworkSelectionModal,
 		SelectionNetworkButton,
 	},
 
-    model: {
+	model: {
 		prop: "selected",
 		event: "select",
-	}
+	},
 })
 export default class SelectionNetwork extends Vue {
-    maxItems = 2;
-    buttonClasses = "";
+	maxItems = 2;
+	buttonClasses = "";
 
-    @Prop({
-        type: Array,
-        required: true,
-    })
-    networks;
+	@Prop({
+		type: Array,
+		required: true,
+	})
+	networks;
 
-    @Prop({
-        type: [Object],
-        required: false,
-        default: null,
-    })
-    selected;
+	@Prop({
+		type: [Object],
+		required: false,
+		default: null,
+	})
+	selected;
 
-    @Prop({
-        type: Boolean,
-        required: false,
-        default: false,
-    })
-    isCustom;
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	isCustom;
 
-    @Prop({
-        type: Boolean,
-        required: false,
-        default: false,
-    })
-    addButton;
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	addButton;
 
-    isModalOpen = false;
-    showAddNetwork = false;
+	isModalOpen = false;
+	showAddNetwork = false;
 
-    get availableNetworks() {
-        return this.networks.slice(0, this.$options.maxItems);
-    }
+	get availableNetworks() {
+		return this.networks.slice(0, this.$options.maxItems);
+	}
 
-    get othersNetworks() {
-        return pullAllBy(this.networks, this.availableNetworks);
-    }
+	get othersNetworks() {
+		return pullAllBy(this.networks, this.availableNetworks);
+	}
 
-    get isOtherSelected() {
-        return this.othersNetworks.map((n) => n.id).includes(this.selected.id);
-    }
+	get isOtherSelected() {
+		return this.othersNetworks.map((n) => n.id).includes(this.selected.id);
+	}
 
-    select(network) {
-        this.$emit(this.$options.model.event, network);
-        this.closeModal();
-    }
+	select(network) {
+		this.$emit(this.$options.model.event, network);
+		this.closeModal();
+	}
 
-    openModal() {
-        this.isModalOpen = true;
-    }
+	openModal() {
+		this.isModalOpen = true;
+	}
 
-    closeModal() {
-        this.isModalOpen = false;
-    }
+	closeModal() {
+		this.isModalOpen = false;
+	}
 
-    toggleAddNetwork() {
-        this.showAddNetwork = !this.showAddNetwork;
-    }
+	toggleAddNetwork() {
+		this.showAddNetwork = !this.showAddNetwork;
+	}
 }
 </script>
 

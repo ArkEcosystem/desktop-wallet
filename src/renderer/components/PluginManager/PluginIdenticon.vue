@@ -10,56 +10,56 @@
 </template>
 
 <script>
-import { Component, Prop,Vue } from "vue-property-decorator";
+import { Component, Prop, Vue } from "vue-property-decorator";
 
 import Identicon from "@/components/utils/Identicon";
 
 @Component({
-    name: "PluginIdenticon",
+	name: "PluginIdenticon",
 
-    components: {
+	components: {
 		Identicon,
-	}
+	},
 })
 export default class PluginIdenticon extends Vue {
-    @Prop({
-        type: String,
-        required: true,
-    })
-    value;
+	@Prop({
+		type: String,
+		required: true,
+	})
+	value;
 
-    @Prop({
-        type: Number,
-        required: true,
-    })
-    size;
+	@Prop({
+		type: Number,
+		required: true,
+	})
+	size;
 
-    @Prop({
-        type: String,
-        required: false,
-        default: "square",
-    })
-    shape;
+	@Prop({
+		type: String,
+		required: false,
+		default: "square",
+	})
+	shape;
 
-    @Prop({
-        type: Number,
-        required: false,
-        default: 3,
-    })
-    shapeCount;
+	@Prop({
+		type: Number,
+		required: false,
+		default: 3,
+	})
+	shapeCount;
 
-    @Prop({
-        type: Boolean,
-        required: false,
-        default: false,
-    })
-    isDark;
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	isDark;
 
-    @Prop({
-        type: Boolean,
-        required: false,
-        default: false,
-    })
-    showNetworkSymbol;
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	showNetworkSymbol;
 }
 </script>

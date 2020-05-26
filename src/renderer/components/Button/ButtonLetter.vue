@@ -17,44 +17,44 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop,Vue } from "vue-property-decorator";
+import { Component, Prop, Vue } from "vue-property-decorator";
 @Component({
-    name: "ButtonLetter"
+	name: "ButtonLetter",
 })
 export default class ButtonLetter extends Vue {
-    @Prop({
-        type: String,
-        required: false,
-        default: "button",
-        validator: (value) => ["button", "div"].includes(value),
-    })
-    tag;
+	@Prop({
+		type: String,
+		required: false,
+		default: "button",
+		validator: (value) => ["button", "div"].includes(value),
+	})
+	tag;
 
-    @Prop({
-        type: String,
-        required: false,
-        default: null,
-        validator: (value) => (value ? ["sm", "base", "lg", "xl", "2xl", "3xl"].includes(value) : true),
-    })
-    size;
+	@Prop({
+		type: String,
+		required: false,
+		default: null,
+		validator: (value) => (value ? ["sm", "base", "lg", "xl", "2xl", "3xl"].includes(value) : true),
+	})
+	size;
 
-    @Prop({
-        type: Boolean,
-        required: false,
-        default: false,
-    })
-    hasCustomStyle;
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	hasCustomStyle;
 
-    @Prop({
-        type: String,
-        required: false,
-        default: "",
-    })
-    value;
+	@Prop({
+		type: String,
+		required: false,
+		default: "",
+	})
+	value;
 
-    get letter() {
-        return (this.value || "").charAt(0);
-    }
+	get letter() {
+		return (this.value || "").charAt(0);
+	}
 }
 </script>
 

@@ -12,21 +12,21 @@
 
 <script>
 import { PLUGINS } from "@config";
-import { Component,Vue } from "vue-property-decorator";
+import { Component, Vue } from "vue-property-decorator";
 
 import SvgIcon from "@/components/SvgIcon";
 
 @Component({
-    name: "PluginManagerCheckmark",
+	name: "PluginManagerCheckmark",
 
-    components: {
+	components: {
 		SvgIcon,
-	}
+	},
 })
 export default class PluginManagerCheckmark extends Vue {
-    get author() {
-        return PLUGINS.officialAuthor;
-    }
+	get author() {
+		return PLUGINS.officialAuthor;
+	}
 }
 </script>
 

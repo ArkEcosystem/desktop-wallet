@@ -12,23 +12,23 @@
 </template>
 
 <script>
-import { Component, Prop,Vue } from "vue-property-decorator";
+import { Component, Prop, Vue } from "vue-property-decorator";
 
 import { InputText } from "@/components/Input";
 
 @Component({
-    name: "PassphraseWords",
+	name: "PassphraseWords",
 
-    components: {
+	components: {
 		InputText,
-	}
+	},
 })
 export default class PassphraseWords extends Vue {
-    @Prop({
-        type: Array,
-        required: true,
-    })
-    passphraseWords;
+	@Prop({
+		type: Array,
+		required: true,
+	})
+	passphraseWords;
 }
 </script>
 

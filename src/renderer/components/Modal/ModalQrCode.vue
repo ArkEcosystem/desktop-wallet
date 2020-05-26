@@ -13,46 +13,46 @@
 </template>
 
 <script>
-import { Component, Prop,Vue } from "vue-property-decorator";
+import { Component, Prop, Vue } from "vue-property-decorator";
 
 import VueQrcode from "@/components/utils/QRCode";
 
 import ModalWindow from "./ModalWindow";
 
 @Component({
-    name: "ModalQrCode",
+	name: "ModalQrCode",
 
-    components: {
+	components: {
 		ModalWindow,
 		VueQrcode,
-	}
+	},
 })
 export default class ModalQrCode extends Vue {
-    @Prop({
-        type: String,
-        required: true,
-        default: "",
-    })
-    value;
+	@Prop({
+		type: String,
+		required: true,
+		default: "",
+	})
+	value;
 
-    @Prop({
-        type: Object,
-        required: false,
-        default: () => ({
-            size: 160,
-        }),
-    })
-    options;
+	@Prop({
+		type: Object,
+		required: false,
+		default: () => ({
+			size: 160,
+		}),
+	})
+	options;
 
-    @Prop({
-        type: String,
-        required: false,
-        default: "canvas",
-    })
-    tag;
+	@Prop({
+		type: String,
+		required: false,
+		default: "canvas",
+	})
+	tag;
 
-    emitClose() {
-        this.$emit("close");
-    }
+	emitClose() {
+		this.$emit("close");
+	}
 }
 </script>

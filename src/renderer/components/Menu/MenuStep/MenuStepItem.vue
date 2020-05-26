@@ -52,81 +52,81 @@
 </template>
 
 <script>
-import { Component, Prop,Vue } from "vue-property-decorator";
+import { Component, Prop, Vue } from "vue-property-decorator";
 
 import Collapse from "@/components/Collapse";
 
 @Component({
-    name: "MenuStepItem",
+	name: "MenuStepItem",
 
-    components: {
+	components: {
 		Collapse,
-	}
+	},
 })
 export default class MenuStepItem extends Vue {
-    @Prop({
-        type: String,
-        required: true,
-    })
-    title;
+	@Prop({
+		type: String,
+		required: true,
+	})
+	title;
 
-    @Prop({
-        type: [Number, String],
-        required: true,
-    })
-    step;
+	@Prop({
+		type: [Number, String],
+		required: true,
+	})
+	step;
 
-    @Prop({
-        type: Boolean,
-        required: false,
-        default: true,
-    })
-    isBackVisible;
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: true,
+	})
+	isBackVisible;
 
-    @Prop({
-        type: Boolean,
-        required: false,
-        default: true,
-    })
-    isNextVisible;
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: true,
+	})
+	isNextVisible;
 
-    @Prop({
-        type: Boolean,
-        required: false,
-        default: false,
-    })
-    isNextEnabled;
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	isNextEnabled;
 
-    @Prop({
-        type: Boolean,
-        required: false,
-        default: false,
-    })
-    isDisabled;
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	isDisabled;
 
-    isFirstItem = false;
-    isLastItem = false;
-    isLastItemClicked = false;
+	isFirstItem = false;
+	isLastItem = false;
+	isLastItemClicked = false;
 
-    emitBack() {
-        this.$emit("back");
-    }
+	emitBack() {
+		this.$emit("back");
+	}
 
-    emitNext(isLastItem) {
-        if (!this.isLastItemClicked) {
-            this.$emit("next");
-        }
-        if (isLastItem) {
-            this.isLastItemClicked = true;
-        }
-    }
+	emitNext(isLastItem) {
+		if (!this.isLastItemClicked) {
+			this.$emit("next");
+		}
+		if (isLastItem) {
+			this.isLastItemClicked = true;
+		}
+	}
 
-    emitOpen() {
-        this.$emit("open");
-    }
+	emitOpen() {
+		this.$emit("open");
+	}
 
-    emitClose() {
-        this.$emit("close");
-    }
+	emitClose() {
+		this.$emit("close");
+	}
 }
 </script>

@@ -11,27 +11,27 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop,Vue } from "vue-property-decorator";
+import { Component, Prop, Vue } from "vue-property-decorator";
 
 import SvgIcon from "@/components/SvgIcon";
 
 @Component({
-    name: "ButtonLayout",
+	name: "ButtonLayout",
 
-    components: {
+	components: {
 		SvgIcon,
-	}
+	},
 })
 export default class ButtonLayout extends Vue {
-    @Prop({
-        type: Boolean,
-        required: true,
-    })
-    gridLayout;
+	@Prop({
+		type: Boolean,
+		required: true,
+	})
+	gridLayout;
 
-    emitClick() {
-        this.$emit("click");
-    }
+	emitClick() {
+		this.$emit("click");
+	}
 }
 </script>
 

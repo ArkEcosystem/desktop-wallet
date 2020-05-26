@@ -23,33 +23,33 @@
 </template>
 
 <script>
-import { Component, Prop,Vue } from "vue-property-decorator";
+import { Component, Prop, Vue } from "vue-property-decorator";
 @Component({
-    name: "MenuDropdownItem"
+	name: "MenuDropdownItem",
 })
 export default class MenuDropdownItem extends Vue {
-    @Prop({
-        type: String,
-        required: true,
-    })
-    value;
+	@Prop({
+		type: String,
+		required: true,
+	})
+	value;
 
-    @Prop({
-        type: String,
-        required: true,
-    })
-    item;
+	@Prop({
+		type: String,
+		required: true,
+	})
+	item;
 
-    @Prop({
-        type: Boolean,
-        required: false,
-        default: false,
-    })
-    isActive;
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	isActive;
 
-    emitClick() {
-        this.$emit("click", this.value);
-    }
+	emitClick() {
+		this.$emit("click", this.value);
+	}
 }
 </script>
 

@@ -42,56 +42,56 @@
 </template>
 
 <script>
-import { Component,Vue } from "vue-property-decorator";
+import { Component, Vue } from "vue-property-decorator";
 
 import { ButtonSwitch } from "@/components/Button";
 
 @Component({
-    name: "MarketChartHeader",
+	name: "MarketChartHeader",
 
-    inject: {
+	inject: {
 		getPeriod: { default: () => {} },
 		getIsExpanded: { default: () => {} },
 	},
 
-    components: {
+	components: {
 		ButtonSwitch,
-	}
+	},
 })
 export default class MarketChartHeader extends Vue {
-    periods = {
+	periods = {
 		day: "MARKET.DAY",
 		week: "MARKET.WEEK",
 		month: "MARKET.MONTH",
 	};
 
-    get activePeriod() {
-        return this.getPeriod();
-    }
+	get activePeriod() {
+		return this.getPeriod();
+	}
 
-    get isExpanded() {
-        return this.getIsExpanded();
-    }
+	get isExpanded() {
+		return this.getIsExpanded();
+	}
 
-    get currency() {
-        return this.$store.getters["session/currency"];
-    }
+	get currency() {
+		return this.$store.getters["session/currency"];
+	}
 
-    get price() {
-        return this.$store.getters["market/lastPrice"];
-    }
+	get price() {
+		return this.$store.getters["market/lastPrice"];
+	}
 
-    get ticker() {
-        return this.session_network.market.ticker;
-    }
+	get ticker() {
+		return this.session_network.market.ticker;
+	}
 
-    emitToggle(value) {
-        this.$emit("toggle", value);
-    }
+	emitToggle(value) {
+		this.$emit("toggle", value);
+	}
 
-    emitPeriodChange(period) {
-        this.$emit("period-change", period);
-    }
+	emitPeriodChange(period) {
+		this.$emit("period-change", period);
+	}
 }
 </script>
 

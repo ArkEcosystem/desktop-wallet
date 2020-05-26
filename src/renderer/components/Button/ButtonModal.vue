@@ -9,65 +9,65 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop,Vue } from "vue-property-decorator";
+import { Component, Prop, Vue } from "vue-property-decorator";
 
 import SvgIcon from "@/components/SvgIcon";
 
 @Component({
-    name: "ButtonModal",
+	name: "ButtonModal",
 
-    components: {
+	components: {
 		SvgIcon,
-	}
+	},
 })
 export default class ButtonModal extends Vue {
-    @Prop({
-        type: String,
-        required: false,
-        default: null,
-    })
-    classes;
+	@Prop({
+		type: String,
+		required: false,
+		default: null,
+	})
+	classes;
 
-    @Prop({
-        type: String,
-        required: false,
-        default: null,
-    })
-    icon;
+	@Prop({
+		type: String,
+		required: false,
+		default: null,
+	})
+	icon;
 
-    @Prop({
-        type: String,
-        required: false,
-        default: "0 0 20 20",
-    })
-    viewBox;
+	@Prop({
+		type: String,
+		required: false,
+		default: "0 0 20 20",
+	})
+	viewBox;
 
-    @Prop({
-        type: String,
-        required: true,
-    })
-    label;
+	@Prop({
+		type: String,
+		required: true,
+	})
+	label;
 
-    @Prop({
-        type: Boolean,
-        required: false,
-        default: false,
-    })
-    disabled;
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	disabled;
 
-    isOpen = false;
+	isOpen = false;
 
-    emitToggle() {
-        this.$emit("toggle", this.isOpen);
-    }
+	emitToggle() {
+		this.$emit("toggle", this.isOpen);
+	}
 
-    toggle() {
-        if (this.disabled) {
-            return;
-        }
+	toggle() {
+		if (this.disabled) {
+			return;
+		}
 
-        this.isOpen = !this.isOpen;
-        this.emitToggle();
-    }
+		this.isOpen = !this.isOpen;
+		this.emitToggle();
+	}
 }
 </script>

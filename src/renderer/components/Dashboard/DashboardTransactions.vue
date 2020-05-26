@@ -10,46 +10,46 @@
 
 <script lang="ts">
 import { orderBy, uniqBy } from "lodash";
-import { Component, Prop,Vue } from "vue-property-decorator";
+import { Component, Prop, Vue } from "vue-property-decorator";
 
 import { TransactionTable } from "@/components/Transaction";
 import mergeTableTransactions from "@/components/utils/merge-table-transactions";
 
 @Component({
-    name: "DashboardTransactions",
+	name: "DashboardTransactions",
 
-    components: {
+	components: {
 		TransactionTable,
-	}
+	},
 })
 export default class DashboardTransactions extends Vue {
-    @Prop({
-        type: Number,
-        required: false,
-        default: 50,
-    })
-    numberOfTransactions;
+	@Prop({
+		type: Number,
+		required: false,
+		default: 50,
+	})
+	numberOfTransactions;
 
-    fetchedTransactions = [];
-    previousWalletAddresses = [];
-    isLoading = false;
+	fetchedTransactions = [];
+	previousWalletAddresses = [];
+	isLoading = false;
 
-    get lastTransactions() {
-        return mergeTableTransactions(this.fetchedTransactions, this.storedTransactions);
-    }
+	get lastTransactions() {
+		return mergeTableTransactions(this.fetchedTransactions, this.storedTransactions);
+	}
 
-    get storedTransactions() {
-        return this.$store.getters["transaction/byProfileId"](this.session_profile.id, { includeExpired: true });
-    }
+	get storedTransactions() {
+		return this.$store.getters["transaction/byProfileId"](this.session_profile.id, { includeExpired: true });
+	}
 
-    get wallets() {
-        return [
-            ...this.$store.getters["wallet/byProfileId"](this.session_profile.id),
-            ...this.$store.getters["ledger/wallets"],
-        ];
-    }
+	get wallets() {
+		return [
+			...this.$store.getters["wallet/byProfileId"](this.session_profile.id),
+			...this.$store.getters["ledger/wallets"],
+		];
+	}
 
-    created() {
+	created() {
 		if (this.wallets.length) {
 			this.isLoading = true;
 		}
@@ -69,9 +69,9 @@ export default class DashboardTransactions extends Vue {
 		});
 	}
 
-    processTransactions(transactions) {
-        const ordered = orderBy(uniqBy(transactions, "id"), "timestamp", "desc");
-        return ordered.slice(0, this.numberOfTransactions);
-    }
+	processTransactions(transactions) {
+		const ordered = orderBy(uniqBy(transactions, "id"), "timestamp", "desc");
+		return ordered.slice(0, this.numberOfTransactions);
+	}
 }
 </script>

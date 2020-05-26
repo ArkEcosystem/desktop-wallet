@@ -17,24 +17,24 @@
 
 <script>
 import { TRANSACTION_TYPES } from "@config";
-import { Component,Vue } from "vue-property-decorator";
+import { Component, Vue } from "vue-property-decorator";
 
 import { ListDivided, ListDividedItem } from "@/components/ListDivided";
 
 @Component({
-    name: "TransactionConfirmSecondSignature",
-    inject: ["currentWallet"],
+	name: "TransactionConfirmSecondSignature",
+	inject: ["currentWallet"],
 
-    components: {
+	components: {
 		ListDivided,
 		ListDividedItem,
-	}
+	},
 })
 export default class TransactionConfirmSecondSignature extends Vue {
-    transactionType = TRANSACTION_TYPES.GROUP_1.SECOND_SIGNATURE;
+	transactionType = TRANSACTION_TYPES.GROUP_1.SECOND_SIGNATURE;
 
-    get senderLabel() {
-        return this.wallet_formatAddress(this.currentWallet.address);
-    }
+	get senderLabel() {
+		return this.wallet_formatAddress(this.currentWallet.address);
+	}
 }
 </script>

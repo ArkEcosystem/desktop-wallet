@@ -17,38 +17,38 @@
 </template>
 
 <script>
-import { Component, Prop,Vue } from "vue-property-decorator";
+import { Component, Prop, Vue } from "vue-property-decorator";
 
 import SvgIcon from "@/components/SvgIcon";
 
 @Component({
-    name: "MenuDropdownAlternativeHandler",
+	name: "MenuDropdownAlternativeHandler",
 
-    components: {
+	components: {
 		SvgIcon,
-	}
+	},
 })
 export default class MenuDropdownAlternativeHandler extends Vue {
-    @Prop({
-        type: String,
-        required: false,
-        default: null,
-    })
-    value;
+	@Prop({
+		type: String,
+		required: false,
+		default: null,
+	})
+	value;
 
-    @Prop({
-        type: String,
-        required: false,
-        default: null,
-    })
-    placeholder;
+	@Prop({
+		type: String,
+		required: false,
+		default: null,
+	})
+	placeholder;
 
-    @Prop({
-        type: Boolean,
-        required: false,
-        default: false,
-    })
-    isOpen;
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	isOpen;
 }
 </script>
 

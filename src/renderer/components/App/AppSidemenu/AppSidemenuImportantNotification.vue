@@ -20,7 +20,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop,Vue } from "vue-property-decorator";
+import { Component, Prop, Vue } from "vue-property-decorator";
 import { mapGetters } from "vuex";
 
 import AppUpdater from "@/components/App/AppUpdater";
@@ -31,40 +31,40 @@ import SvgIcon from "@/components/SvgIcon";
  * notifications, such as, new relesases
  */
 @Component({
-    name: "AppSidemenuImportantNotification",
+	name: "AppSidemenuImportantNotification",
 
-    components: {
+	components: {
 		SvgIcon,
 		AppUpdater,
 	},
 
-	computed: { ...mapGetters("updater", ["availableRelease"]) }
+	computed: { ...mapGetters("updater", ["availableRelease"]) },
 })
 export default class AppSidemenuImportantNotification extends Vue {
-    @Prop({
-        type: Boolean,
-        required: false,
-        default: false,
-    })
-    isHorizontal;
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	isHorizontal;
 
-    isNotificationVisible = false;
+	isNotificationVisible = false;
 
-    get releaseVersion() {
-        return this.availableRelease && this.availableRelease.version;
-    }
+	get releaseVersion() {
+		return this.availableRelease && this.availableRelease.version;
+	}
 
-    get tooltipText() {
-        return this.$t("APP_SIDEMENU_NOTIFICATION.TOOLTIP", { version: this.releaseVersion });
-    }
+	get tooltipText() {
+		return this.$t("APP_SIDEMENU_NOTIFICATION.TOOLTIP", { version: this.releaseVersion });
+	}
 
-    closeNotification() {
-        this.isNotificationVisible = false;
-    }
+	closeNotification() {
+		this.isNotificationVisible = false;
+	}
 
-    openNotification() {
-        this.isNotificationVisible = true;
-    }
+	openNotification() {
+		this.isNotificationVisible = true;
+	}
 }
 </script>
 

@@ -65,17 +65,17 @@
 <script lang="ts">
 import "@/styles/style.css";
 
-import { Component,Vue } from "vue-property-decorator";
+import { Component, Vue } from "vue-property-decorator";
 
 import packageJson from "../../package.json";
 
 @Component({
-    name: "SplashScreen"
+	name: "SplashScreen",
 })
 export default class SplashScreen extends Vue {
-    get version() {
-        return packageJson.version;
-    }
+	get version() {
+		return packageJson.version;
+	}
 }
 </script>
 

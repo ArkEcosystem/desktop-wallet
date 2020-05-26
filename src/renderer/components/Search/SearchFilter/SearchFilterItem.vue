@@ -8,17 +8,17 @@
 </template>
 
 <script>
-import { Component, Prop,Vue } from "vue-property-decorator";
+import { Component, Prop, Vue } from "vue-property-decorator";
 @Component({
-    name: "SearchFilterItem"
+	name: "SearchFilterItem",
 })
 export default class SearchFilterItem extends Vue {
-    @Prop({
-        type: String,
-        required: false,
-        default: null,
-    })
-    label;
+	@Prop({
+		type: String,
+		required: false,
+		default: null,
+	})
+	label;
 }
 </script>
 

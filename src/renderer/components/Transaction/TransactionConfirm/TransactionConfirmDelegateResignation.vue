@@ -17,24 +17,24 @@
 
 <script>
 import { TRANSACTION_TYPES } from "@config";
-import { Component,Vue } from "vue-property-decorator";
+import { Component, Vue } from "vue-property-decorator";
 
 import { ListDivided, ListDividedItem } from "@/components/ListDivided";
 
 @Component({
-    name: "TransactionConfirmDelegateResignation",
-    inject: ["currentWallet"],
+	name: "TransactionConfirmDelegateResignation",
+	inject: ["currentWallet"],
 
-    components: {
+	components: {
 		ListDivided,
 		ListDividedItem,
-	}
+	},
 })
 export default class TransactionConfirmDelegateResignation extends Vue {
-    transactionType = TRANSACTION_TYPES.GROUP_1.DELEGATE_RESIGNATION;
+	transactionType = TRANSACTION_TYPES.GROUP_1.DELEGATE_RESIGNATION;
 
-    get senderLabel() {
-        return this.wallet_formatAddress(this.currentWallet.address);
-    }
+	get senderLabel() {
+		return this.wallet_formatAddress(this.currentWallet.address);
+	}
 }
 </script>

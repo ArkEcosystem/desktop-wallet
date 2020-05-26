@@ -131,47 +131,47 @@
 </template>
 
 <script lang="ts">
-import { Component,Vue } from "vue-property-decorator";
+import { Component, Vue } from "vue-property-decorator";
 
 import AppFooter from "@/components/App/AppFooter";
 import AppIntroScreen from "@/components/App/AppIntro/AppIntroScreen";
 import { ButtonGeneric } from "@/components/Button";
 
 @Component({
-    name: "AppIntro",
+	name: "AppIntro",
 
-    components: {
+	components: {
 		AppFooter,
 		AppIntroScreen,
 		ButtonGeneric,
-	}
+	},
 })
 export default class AppIntro extends Vue {
-    step = 0;
+	step = 0;
 
-    stepImages = [
-        "pages/intro/welcome.svg",
-        "pages/intro/power.svg",
-        "pages/intro/duty.svg",
-        "pages/intro/responsibility.svg",
-        "pages/intro/turn.svg",
-    ];
+	stepImages = [
+		"pages/intro/welcome.svg",
+		"pages/intro/power.svg",
+		"pages/intro/duty.svg",
+		"pages/intro/responsibility.svg",
+		"pages/intro/turn.svg",
+	];
 
-    get stepImage() {
-        return this.stepImages[this.step];
-    }
+	get stepImage() {
+		return this.stepImages[this.step];
+	}
 
-    done() {
-        this.$emit("done");
-    }
+	done() {
+		this.$emit("done");
+	}
 
-    moveTo(step) {
-        this.step = step;
-    }
+	moveTo(step) {
+		this.step = step;
+	}
 
-    start() {
-        this.step = 0;
-    }
+	start() {
+		this.step = 0;
+	}
 }
 </script>
 

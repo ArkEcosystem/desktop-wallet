@@ -138,7 +138,7 @@
 </template>
 
 <script>
-import { Component, Prop,Vue } from "vue-property-decorator";
+import { Component, Prop, Vue } from "vue-property-decorator";
 
 import { ButtonModal } from "@/components/Button";
 import { ListDivided, ListDividedItem } from "@/components/ListDivided";
@@ -147,39 +147,39 @@ import SvgIcon from "@/components/SvgIcon";
 import { TransactionModal } from "@/components/Transaction";
 
 @Component({
-    name: "WalletBusinessShowBridgechain",
+	name: "WalletBusinessShowBridgechain",
 
-    components: {
+	components: {
 		ListDivided,
 		ListDividedItem,
 		ModalWindow,
 		ButtonModal,
 		SvgIcon,
 		TransactionModal,
-	}
+	},
 })
 export default class WalletBusinessShowBridgechain extends Vue {
-    @Prop({
-        type: Object,
-        required: true,
-    })
-    bridgechain;
+	@Prop({
+		type: Object,
+		required: true,
+	})
+	bridgechain;
 
-    get isResigned() {
-        return !!this.bridgechain.isResigned;
-    }
+	get isResigned() {
+		return !!this.bridgechain.isResigned;
+	}
 
-    closeTransactionModal(toggleMethod, isOpen) {
-        if (isOpen && typeof toggleMethod === "function") {
-            toggleMethod();
-        }
+	closeTransactionModal(toggleMethod, isOpen) {
+		if (isOpen && typeof toggleMethod === "function") {
+			toggleMethod();
+		}
 
-        this.emitClose();
-    }
+		this.emitClose();
+	}
 
-    emitClose() {
-        this.$emit("close", "navigateToTransactions");
-    }
+	emitClose() {
+		this.$emit("close", "navigateToTransactions");
+	}
 }
 </script>
 

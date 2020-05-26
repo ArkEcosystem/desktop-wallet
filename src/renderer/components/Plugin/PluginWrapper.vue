@@ -1,15 +1,15 @@
 <script>
 import { Wormhole } from "portal-vue";
-import { Component,Vue } from "vue-property-decorator";
+import { Component, Vue } from "vue-property-decorator";
 @Component({
-    name: "PluginWrapper"
+	name: "PluginWrapper",
 })
 export default class PluginWrapper extends Vue {
-    get footerSlot() {
-        return this.$slots.footer;
-    }
+	get footerSlot() {
+		return this.$slots.footer;
+	}
 
-    mounted() {
+	mounted() {
 		if (this.footerSlot) {
 			this.$nextTick(() => {
 				Wormhole.open({
@@ -21,7 +21,7 @@ export default class PluginWrapper extends Vue {
 		}
 	}
 
-    beforeDestroy() {
+	beforeDestroy() {
 		if (this.footerSlot) {
 			this.$nextTick(() => {
 				Wormhole.close({
@@ -32,7 +32,7 @@ export default class PluginWrapper extends Vue {
 		}
 	}
 
-    render(h) {
+	render(h) {
 		const children = this.$slots.default;
 		return children ? h("div", children) : h();
 	}

@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import { Component, Prop,Vue } from "vue-property-decorator";
+import { Component, Prop, Vue } from "vue-property-decorator";
 
 /* eslint-disable vue/no-unused-components */
 import { MenuDropdown, MenuDropdownAlternativeHandler, MenuOptions } from "@/components/Menu";
@@ -37,9 +37,9 @@ import SearchFilterItem from "./SearchFilterItem";
 import SearchFilterTransaction from "./SearchFilterTransaction";
 
 @Component({
-    name: "SearchFilter",
+	name: "SearchFilter",
 
-    components: {
+	components: {
 		MenuOptions,
 		MenuDropdown,
 		MenuDropdownAlternativeHandler,
@@ -47,30 +47,30 @@ import SearchFilterTransaction from "./SearchFilterTransaction";
 		SearchFilterTransaction,
 		SearchFilterDelegate,
 		SvgIcon,
-	}
+	},
 })
 export default class SearchFilter extends Vue {
-    @Prop({
-        type: Boolean,
-        required: false,
-        default: false,
-    })
-    outsideClick;
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	outsideClick;
 
-    currentFilter = null;
+	currentFilter = null;
 
-    get filterComponents() {
-        return {
-            SearchFilterTransaction: this.$t("TRANSACTION.TRANSACTION"),
-            SearchFilterDelegate: this.$t("SEARCH.DELEGATE"),
-        };
-    }
+	get filterComponents() {
+		return {
+			SearchFilterTransaction: this.$t("TRANSACTION.TRANSACTION"),
+			SearchFilterDelegate: this.$t("SEARCH.DELEGATE"),
+		};
+	}
 
-    emitClose() {
-        if (this.outsideClick) {
-            this.$emit("close");
-        }
-    }
+	emitClose() {
+		if (this.outsideClick) {
+			this.$emit("close");
+		}
+	}
 }
 </script>
 

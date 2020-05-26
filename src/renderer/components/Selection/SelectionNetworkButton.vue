@@ -18,64 +18,64 @@
 </template>
 
 <script>
-import { Component, Prop,Vue } from "vue-property-decorator";
+import { Component, Prop, Vue } from "vue-property-decorator";
 @Component({
-    name: "SelectionNetworkButton"
+	name: "SelectionNetworkButton",
 })
 export default class SelectionNetworkButton extends Vue {
-    @Prop({
-        type: String,
-        required: false,
-        default: "button",
-        validator: (value) => ["button", "div"].includes(value),
-    })
-    tag;
+	@Prop({
+		type: String,
+		required: false,
+		default: "button",
+		validator: (value) => ["button", "div"].includes(value),
+	})
+	tag;
 
-    @Prop({
-        type: Object,
-        required: false,
-        default: () => ({}),
-    })
-    network;
+	@Prop({
+		type: Object,
+		required: false,
+		default: () => ({}),
+	})
+	network;
 
-    @Prop({
-        type: String,
-        required: false,
-        default: "default",
-        validator: (value) => ["small", "default"].includes(value),
-    })
-    size;
+	@Prop({
+		type: String,
+		required: false,
+		default: "default",
+		validator: (value) => ["small", "default"].includes(value),
+	})
+	size;
 
-    @Prop({
-        type: Boolean,
-        required: false,
-        default: false,
-    })
-    isCustom;
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	isCustom;
 
-    @Prop({
-        type: Boolean,
-        required: false,
-        default: true,
-    })
-    showTitle;
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: true,
+	})
+	showTitle;
 
-    @Prop({
-        type: String,
-        required: false,
-        default: null,
-    })
-    networkImage;
+	@Prop({
+		type: String,
+		required: false,
+		default: null,
+	})
+	networkImage;
 
-    get image() {
-        if (this.networkImage) {
-            return this.assets_loadImage(this.networkImage);
-        } else if (this.isCustom) {
-            return this.assets_loadImage("networks/default.svg");
-        } else {
-            return this.assets_loadImage(`networks/${this.network.id}.svg`);
-        }
-    }
+	get image() {
+		if (this.networkImage) {
+			return this.assets_loadImage(this.networkImage);
+		} else if (this.isCustom) {
+			return this.assets_loadImage("networks/default.svg");
+		} else {
+			return this.assets_loadImage(`networks/${this.network.id}.svg`);
+		}
+	}
 }
 </script>
 

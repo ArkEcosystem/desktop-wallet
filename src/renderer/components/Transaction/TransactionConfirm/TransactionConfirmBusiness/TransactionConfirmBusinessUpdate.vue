@@ -49,25 +49,25 @@
 
 <script>
 import { TRANSACTION_GROUPS, TRANSACTION_TYPES } from "@config";
-import { Component,Vue } from "vue-property-decorator";
+import { Component, Vue } from "vue-property-decorator";
 
 import { ListDivided, ListDividedItem } from "@/components/ListDivided";
 
 @Component({
-    name: "TransactionConfirmBusinessUpdate",
-    inject: ["currentWallet", "transaction"],
+	name: "TransactionConfirmBusinessUpdate",
+	inject: ["currentWallet", "transaction"],
 
-    components: {
+	components: {
 		ListDivided,
 		ListDividedItem,
-	}
+	},
 })
 export default class TransactionConfirmBusinessUpdate extends Vue {
-    transactionGroup = TRANSACTION_GROUPS.MAGISTRATE;
-    transactionType = TRANSACTION_TYPES.GROUP_2.BUSINESS_UPDATE;
+	transactionGroup = TRANSACTION_GROUPS.MAGISTRATE;
+	transactionType = TRANSACTION_TYPES.GROUP_2.BUSINESS_UPDATE;
 
-    get senderLabel() {
-        return this.wallet_formatAddress(this.currentWallet.address);
-    }
+	get senderLabel() {
+		return this.wallet_formatAddress(this.currentWallet.address);
+	}
 }
 </script>

@@ -23,80 +23,80 @@
 </template>
 
 <script>
-import { Component, Prop,Vue } from "vue-property-decorator";
+import { Component, Prop, Vue } from "vue-property-decorator";
 
 import SvgIcon from "@/components/SvgIcon";
 
 @Component({
-    name: "MenuNavigationItem",
-    inject: ["switchToItem"],
+	name: "MenuNavigationItem",
+	inject: ["switchToItem"],
 
-    components: {
+	components: {
 		SvgIcon,
-	}
+	},
 })
 export default class MenuNavigationItem extends Vue {
-    @Prop({
-        type: [String, Number],
-        required: true,
-    })
-    id;
+	@Prop({
+		type: [String, Number],
+		required: true,
+	})
+	id;
 
-    @Prop({
-        type: String,
-        required: false,
-        default: null,
-    })
-    icon;
+	@Prop({
+		type: String,
+		required: false,
+		default: null,
+	})
+	icon;
 
-    @Prop({
-        type: Boolean,
-        required: false,
-        default: false,
-    })
-    showBadge;
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	showBadge;
 
-    @Prop({
-        type: String,
-        required: false,
-        default: "0 0 23 23",
-    })
-    viewBox;
+	@Prop({
+		type: String,
+		required: false,
+		default: "0 0 23 23",
+	})
+	viewBox;
 
-    @Prop({
-        type: Boolean,
-        required: false,
-        default: false,
-    })
-    isDisabled;
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	isDisabled;
 
-    @Prop({
-        type: Boolean,
-        required: false,
-        default: false,
-    })
-    isHorizontal;
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	isHorizontal;
 
-    @Prop({
-        type: Boolean,
-        required: false,
-        default: true,
-    })
-    canActivate;
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: true,
+	})
+	canActivate;
 
-    isActive = false;
+	isActive = false;
 
-    onClick() {
-        if (this.canActivate) {
-            this.switchToItem(this.id);
-        }
+	onClick() {
+		if (this.canActivate) {
+			this.switchToItem(this.id);
+		}
 
-        this.$emit("click", this.id);
-    }
+		this.$emit("click", this.id);
+	}
 
-    toggle(isActive) {
-        this.isActive = isActive;
-    }
+	toggle(isActive) {
+		this.isActive = isActive;
+	}
 }
 </script>
 

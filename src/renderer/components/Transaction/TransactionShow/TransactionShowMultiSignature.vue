@@ -174,7 +174,7 @@
 
 <script>
 import { TRANSACTION_TYPES } from "@config";
-import { Component, Prop,Vue } from "vue-property-decorator";
+import { Component, Prop, Vue } from "vue-property-decorator";
 
 import { ButtonClipboard, ButtonModal } from "@/components/Button";
 import { ListDivided, ListDividedItem } from "@/components/ListDivided";
@@ -186,9 +186,9 @@ import TransactionService from "@/services/transaction";
 import WalletService from "@/services/wallet";
 
 @Component({
-    name: "TransactionShowMultiSignature",
+	name: "TransactionShowMultiSignature",
 
-    components: {
+	components: {
 		ListDivided,
 		ListDividedItem,
 		ModalWindow,
@@ -199,99 +199,96 @@ import WalletService from "@/services/wallet";
 		TransactionModal,
 		TransactionStatusIcon,
 		WalletAddress,
-	}
+	},
 })
 export default class TransactionShowMultiSignature extends Vue {
-    @Prop({
-        type: Object,
-        required: true,
-    })
-    transaction;
+	@Prop({
+		type: Object,
+		required: true,
+	})
+	transaction;
 
-    votedDelegate = null;
+	votedDelegate = null;
 
-    get totalCount() {
-        return this.$t("COMMON.X_OF_Y", [
-            (this.transaction.signatures || []).length,
-            this.transaction.multiSignature.publicKeys.length,
-        ]);
-    }
+	get totalCount() {
+		return this.$t("COMMON.X_OF_Y", [
+			(this.transaction.signatures || []).length,
+			this.transaction.multiSignature.publicKeys.length,
+		]);
+	}
 
-    get canSign() {
-        return TransactionService.needsWalletSignature(
-            this.transaction,
-            WalletService.getPublicKeyFromWallet(this.wallet_fromRoute),
-        );
-    }
+	get canSign() {
+		return TransactionService.needsWalletSignature(
+			this.transaction,
+			WalletService.getPublicKeyFromWallet(this.wallet_fromRoute),
+		);
+	}
 
-    get canBeSent() {
-        return TransactionService.isMultiSignatureReady(this.transaction);
-    }
+	get canBeSent() {
+		return TransactionService.isMultiSignatureReady(this.transaction);
+	}
 
-    get votePublicKey() {
-        if (this.transaction && this.transaction.asset && this.transaction.asset.votes) {
-            const vote = this.transaction.asset.votes[0];
-            return vote.substr(1);
-        }
-        return "";
-    }
+	get votePublicKey() {
+		if (this.transaction && this.transaction.asset && this.transaction.asset.votes) {
+			const vote = this.transaction.asset.votes[0];
+			return vote.substr(1);
+		}
+		return "";
+	}
 
-    get multiSignatureWalletAddress() {
-        if (
-            this.transaction.type !== TRANSACTION_TYPES.GROUP_1.MULTI_SIGNATURE ||
-            !this.transaction.multiSignature
-        ) {
-            return null;
-        }
+	get multiSignatureWalletAddress() {
+		if (this.transaction.type !== TRANSACTION_TYPES.GROUP_1.MULTI_SIGNATURE || !this.transaction.multiSignature) {
+			return null;
+		}
 
-        return WalletService.getAddressFromMultiSignatureAsset(this.transaction.multiSignature);
-    }
+		return WalletService.getAddressFromMultiSignatureAsset(this.transaction.multiSignature);
+	}
 
-    mounted() {
+	mounted() {
 		if (this.votePublicKey) {
 			this.determineVote();
 		}
 	}
 
-    openTransaction() {
-        this.network_openExplorer("transaction", this.transaction.id);
-    }
+	openTransaction() {
+		this.network_openExplorer("transaction", this.transaction.id);
+	}
 
-    openAddress(address) {
-        this.network_openExplorer("address", address);
-    }
+	openAddress(address) {
+		this.network_openExplorer("address", address);
+	}
 
-    openBlock() {
-        this.network_openExplorer("block", this.transaction.blockId);
-    }
+	openBlock() {
+		this.network_openExplorer("block", this.transaction.blockId);
+	}
 
-    closeTransactionModal(toggleMethod, isOpen) {
-        if (isOpen) {
-            toggleMethod();
-        }
+	closeTransactionModal(toggleMethod, isOpen) {
+		if (isOpen) {
+			toggleMethod();
+		}
 
-        this.emitClose();
-    }
+		this.emitClose();
+	}
 
-    emitClose() {
-        this.$emit("close", "navigateToTransactions");
-    }
+	emitClose() {
+		this.$emit("close", "navigateToTransactions");
+	}
 
-    openAddressInWallet(address) {
-        this.$router.push({ name: "wallet-show", params: { address } });
-        this.emitClose();
-    }
+	openAddressInWallet(address) {
+		this.$router.push({ name: "wallet-show", params: { address } });
+		this.emitClose();
+	}
 
-    determineVote() {
-        this.votedDelegate = this.$store.getters["delegate/byPublicKey"](this.votePublicKey);
-    }
+	determineVote() {
+		this.votedDelegate = this.$store.getters["delegate/byPublicKey"](this.votePublicKey);
+	}
 
-    getAddress(transaction) {
-        return (
-            transaction.sender ||
-            WalletService.getAddressFromPublicKey(transaction.senderPublicKey, this.session_network.version)
-        );
-    }
+	getAddress(transaction) {
+		return (
+			transaction.sender ||
+			WalletService.getAddressFromPublicKey(transaction.senderPublicKey, this.session_network.version)
+		);
+	}
 }
 </script>
 
