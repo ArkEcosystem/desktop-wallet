@@ -1,5 +1,4 @@
 <template>
-	<!-- TODO do not show last separator line -->
 	<ul class="ListDivided w-full">
 		<template v-if="items">
 			<ListDividedItem v-for="(value, key) in items" :key="key" :label="key" :value="value" />
@@ -10,35 +9,22 @@
 	</ul>
 </template>
 
-<script>
+<script lang="ts">
+import { Component, Prop, Provide, Vue } from "vue-property-decorator";
+
 import ListDividedItem from "./ListDividedItem";
 
-export default {
-	name: "ListDivided",
-
+@Component({
 	components: {
 		ListDividedItem,
 	},
+})
+export default class ListDivided extends Vue {
+	@Prop({ default: false }) public isFloatingLabel!: boolean;
+	@Prop() public items: object | null = null;
 
-	provide() {
-		return {
-			isFloatingLabel: this.isFloatingLabel,
-		};
-	},
-
-	props: {
-		isFloatingLabel: {
-			type: Boolean,
-			required: false,
-			default: false,
-		},
-		items: {
-			type: Object,
-			required: false,
-			default: null,
-		},
-	},
-};
+	@Provide("isFloatingLabel") public isFloatingLabelData = this.isFloatingLabel;
+}
 </script>
 
 <style>
