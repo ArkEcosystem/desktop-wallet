@@ -163,6 +163,7 @@
 </template>
 
 <script>
+import { Vue, Component, Prop } from "vue-property-decorator";
 import { PLUGINS } from "@config";
 import domain from "getdomain";
 
@@ -173,10 +174,10 @@ import { PluginManagerButtonSwitch } from "@/components/PluginManager/PluginMana
 import { SliderImage, SliderImageModal } from "@/components/Slider";
 import SvgIcon from "@/components/SvgIcon";
 
-export default {
-	name: "PluginDetailsModal",
+@Component({
+    name: "PluginDetailsModal",
 
-	components: {
+    components: {
 		ButtonGeneric,
 		ButtonIconGeneric,
 		PluginManagerCheckmark,
@@ -187,124 +188,120 @@ export default {
 		SliderImage,
 		SliderImageModal,
 		SvgIcon,
-	},
+	}
+})
+export default class PluginDetailsModal extends Vue {
+    @Prop({
+        type: Object,
+        required: true,
+    })
+    plugin;
 
-	props: {
-		plugin: {
-			type: Object,
-			required: true,
-		},
-	},
+    get isEnabled() {
+        return this.$store.getters["plugin/isEnabled"](this.plugin.id);
+    }
 
-	computed: {
-		isEnabled() {
-			return this.$store.getters["plugin/isEnabled"](this.plugin.id);
-		},
+    get isAvailable() {
+        return this.$store.getters["plugin/isAvailable"](this.plugin.id);
+    }
 
-		isAvailable() {
-			return this.$store.getters["plugin/isAvailable"](this.plugin.id);
-		},
+    get isInstalled() {
+        return this.$store.getters["plugin/isInstalled"](this.plugin.id);
+    }
 
-		isInstalled() {
-			return this.$store.getters["plugin/isInstalled"](this.plugin.id);
-		},
+    get isInstalledSupported() {
+        return this.$store.getters["plugin/isInstalledSupported"](this.plugin.id);
+    }
 
-		isInstalledSupported() {
-			return this.$store.getters["plugin/isInstalledSupported"](this.plugin.id);
-		},
+    get isBlacklisted() {
+        return this.$store.getters["plugin/isBlacklisted"](this.plugin.id);
+    }
 
-		isBlacklisted() {
-			return this.$store.getters["plugin/isBlacklisted"](this.plugin.id);
-		},
+    get isUpdateAvailable() {
+        return this.$store.getters["plugin/isUpdateAvailable"](this.plugin.id);
+    }
 
-		isUpdateAvailable() {
-			return this.$store.getters["plugin/isUpdateAvailable"](this.plugin.id);
-		},
+    get updateTooltipContent() {
+        if (this.isUpdateAvailable) {
+            const version = this.$store.getters["plugin/latestVersion"](this.plugin.id);
+            return this.$t("PAGES.PLUGIN_MANAGER.UPDATE.AVAILABLE", { version });
+        }
 
-		updateTooltipContent() {
-			if (this.isUpdateAvailable) {
-				const version = this.$store.getters["plugin/latestVersion"](this.plugin.id);
-				return this.$t("PAGES.PLUGIN_MANAGER.UPDATE.AVAILABLE", { version });
-			}
+        return this.$t("PAGES.PLUGIN_MANAGER.UPDATE.NOT_AVAILABLE");
+    }
 
-			return this.$t("PAGES.PLUGIN_MANAGER.UPDATE.NOT_AVAILABLE");
-		},
+    get categoryTooltip() {
+        if (this.plugin.categories.length <= 1) {
+            return;
+        }
 
-		categoryTooltip() {
-			if (this.plugin.categories.length <= 1) {
-				return;
-			}
+        return {
+            content: this.plugin.categories
+                .map((category) => {
+                    return this.$t(`PAGES.PLUGIN_MANAGER.CATEGORIES.${category.toUpperCase()}`);
+                })
+                .join("\n"),
+            placement: "right",
+        };
+    }
 
-			return {
-				content: this.plugin.categories
-					.map((category) => {
-						return this.$t(`PAGES.PLUGIN_MANAGER.CATEGORIES.${category.toUpperCase()}`);
-					})
-					.join("\n"),
-				placement: "right",
-			};
-		},
+    get keywordsText() {
+        const keywords = this.plugin.keywords.slice(0, PLUGINS.maxKeywords).join(", ");
+        return this.showKeywordsTooltip ? `${keywords}, ` : keywords;
+    }
 
-		keywordsText() {
-			const keywords = this.plugin.keywords.slice(0, PLUGINS.maxKeywords).join(", ");
-			return this.showKeywordsTooltip ? `${keywords}, ` : keywords;
-		},
+    get keywordsTooltip() {
+        return this.plugin.keywords.slice(PLUGINS.maxKeywords).join("\n");
+    }
 
-		keywordsTooltip() {
-			return this.plugin.keywords.slice(PLUGINS.maxKeywords).join("\n");
-		},
+    get showKeywordsTooltip() {
+        return this.plugin.keywords.length > PLUGINS.maxKeywords;
+    }
 
-		showKeywordsTooltip() {
-			return this.plugin.keywords.length > PLUGINS.maxKeywords;
-		},
+    get homepageLink() {
+        try {
+            return domain.get(this.plugin.homepage);
+        } catch (error) {
+            return null;
+        }
+    }
 
-		homepageLink() {
-			try {
-				return domain.get(this.plugin.homepage);
-			} catch (error) {
-				return null;
-			}
-		},
+    get hasImages() {
+        return this.plugin.images && this.plugin.images.length > 0;
+    }
 
-		hasImages() {
-			return this.plugin.images && this.plugin.images.length > 0;
-		},
-	},
+    emitClose() {
+        this.$emit("close");
+    }
 
-	methods: {
-		emitClose() {
-			this.$emit("close");
-		},
+    emitUpdate() {
+        this.$emit("update", this.plugin);
+    }
 
-		emitUpdate() {
-			this.$emit("update", this.plugin);
-		},
+    emitRemove() {
+        this.$emit("remove", this.plugin);
+    }
 
-		emitRemove() {
-			this.$emit("remove", this.plugin);
-		},
+    emitShowPermissions() {
+        this.$emit("show-permissions");
+    }
 
-		emitShowPermissions() {
-			this.$emit("show-permissions");
-		},
+    toggleStatus(enabled) {
+        this.$emit("change-status", enabled, this.plugin.id);
+    }
 
-		toggleStatus(enabled) {
-			this.$emit("change-status", enabled, this.plugin.id);
-		},
+    reportPlugin() {
+        const params = new URLSearchParams({
+            subject: "desktop_wallet_plugin_report",
+            plugin_id: this.plugin.id,
+            plugin_version: this.plugin.version,
+        });
 
-		reportPlugin() {
-			const params = new URLSearchParams({
-				subject: "desktop_wallet_plugin_report",
-				plugin_id: this.plugin.id,
-				plugin_version: this.plugin.version,
-			});
+        this.electron_openExternal(`${PLUGINS.reportUrl}?${params.toString()}`);
 
-			this.electron_openExternal(`${PLUGINS.reportUrl}?${params.toString()}`);
-
-			this.$emit("report");
-		},
-	},
-};
+        this.$emit("report");
+    }
+}
 </script>
 
 <style lang="postcss" scoped>

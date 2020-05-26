@@ -8,27 +8,26 @@
 </template>
 
 <script>
+import { Vue, Component, Prop } from "vue-property-decorator";
 import SvgIcon from "@/components/SvgIcon";
 
-export default {
-	name: "PluginManagerButtonMenu",
+@Component({
+    name: "PluginManagerButtonMenu",
 
-	components: {
+    components: {
 		SvgIcon,
-	},
+	}
+})
+export default class PluginManagerButtonMenu extends Vue {
+    @Prop({
+        type: Boolean,
+        required: false,
+        default: true,
+    })
+    isOpen;
 
-	props: {
-		isOpen: {
-			type: Boolean,
-			required: false,
-			default: true,
-		},
-	},
-
-	methods: {
-		emitClick() {
-			this.$emit("click");
-		},
-	},
-};
+    emitClick() {
+        this.$emit("click");
+    }
+}
 </script>

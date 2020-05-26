@@ -11,15 +11,17 @@
 </template>
 
 <script>
+import { Vue, Component } from "vue-property-decorator";
 import SvgIcon from "@/components/SvgIcon";
 
-export default {
-	name: "PluginManagerGrants",
+@Component({
+    name: "PluginManagerGrants",
 
-	components: {
+    components: {
 		SvgIcon,
-	},
-};
+	}
+})
+export default class PluginManagerGrants extends Vue {}
 </script>
 
 <style lang="postcss" scoped>

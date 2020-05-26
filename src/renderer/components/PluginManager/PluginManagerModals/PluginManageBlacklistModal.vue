@@ -36,48 +36,47 @@
 </template>
 
 <script>
+import { Vue, Component, Prop } from "vue-property-decorator";
 import { ListDivided, ListDividedItem } from "@/components/ListDivided";
 import { ModalWindow } from "@/components/Modal";
 import { SvgIcon } from "@/components/SvgIcon";
 import { StoreBinding } from "@/enums";
 
-export default {
-	name: "PluginManageBlacklistModal",
+@Component({
+    name: "PluginManageBlacklistModal",
 
-	components: {
+    components: {
 		ListDivided,
 		ListDividedItem,
 		ModalWindow,
 		SvgIcon,
-	},
+	}
+})
+export default class PluginManageBlacklistModal extends Vue {
+    @Prop({
+        type: Array,
+        required: true,
+    })
+    blacklist;
 
-	props: {
-		blacklist: {
-			type: Array,
-			required: true,
-		},
-	},
+    emitClose() {
+        this.$emit("close");
+    }
 
-	methods: {
-		emitClose() {
-			this.$emit("close");
-		},
+    removeAll() {
+        this.$store.dispatch(StoreBinding.PluginSetBlacklisted, {
+            scope: "local",
+            plugins: [],
+        });
+    }
 
-		removeAll() {
-			this.$store.dispatch(StoreBinding.PluginSetBlacklisted, {
-				scope: "local",
-				plugins: [],
-			});
-		},
-
-		removeFromBlacklist(plugin) {
-			this.$store.dispatch(StoreBinding.PluginSetBlacklisted, {
-				scope: "local",
-				plugins: this.$store.getters["plugin/blacklisted"].local.filter(
-					(blacklisted) => blacklisted !== plugin,
-				),
-			});
-		},
-	},
-};
+    removeFromBlacklist(plugin) {
+        this.$store.dispatch(StoreBinding.PluginSetBlacklisted, {
+            scope: "local",
+            plugins: this.$store.getters["plugin/blacklisted"].local.filter(
+                (blacklisted) => blacklisted !== plugin,
+            ),
+        });
+    }
+}
 </script>

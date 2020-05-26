@@ -24,71 +24,61 @@
 </template>
 
 <script>
-export default {
-	name: "PluginManagerButtonSwitch",
+import { Vue, Component, Prop } from "vue-property-decorator";
+@Component({
+    name: "PluginManagerButtonSwitch",
 
-	model: {
+    model: {
 		prop: "isActive",
 		event: "change",
 	},
 
-	props: {
-		isActive: {
-			type: Boolean,
-			required: false,
-			default: false,
-		},
-		isDisabled: {
-			type: Boolean,
-			required: false,
-			default: false,
-		},
-		labels: {
-			type: Object,
-			required: false,
-			default: () => ({
-				active: "PAGES.PLUGIN_MANAGER.ENABLED",
-				inactive: "PAGES.PLUGIN_MANAGER.DISABLED",
-			}),
-		},
-	},
-
-	data: (vm) => ({
-		inputIsActive: vm.isActive,
-	}),
-
-	computed: {
-		model: {
-			get() {
-				return this.inputIsActive;
-			},
-			set(value) {
-				this.inputIsActive = value;
-				this.$emit("change", value);
-			},
-		},
-
-		label() {
-			return this.inputIsActive ? this.$t(this.labels.active) : this.$t(this.labels.inactive);
-		},
-	},
-
-	watch: {
+    watch: {
 		isActive(isActive) {
 			this.inputIsActive = isActive;
 		},
-	},
+	}
+})
+export default class PluginManagerButtonSwitch extends Vue {
+    @Prop({
+        type: Boolean,
+        required: false,
+        default: false,
+    })
+    isActive;
 
-	methods: {
-		toggle() {
-			if (this.isDisabled) {
-				return;
-			}
+    @Prop({
+        type: Boolean,
+        required: false,
+        default: false,
+    })
+    isDisabled;
 
-			this.model = !this.model;
-		},
-	},
-};
+    @Prop({
+        type: Object,
+        required: false,
+        default: () => ({
+            active: "PAGES.PLUGIN_MANAGER.ENABLED",
+            inactive: "PAGES.PLUGIN_MANAGER.DISABLED",
+        }),
+    })
+    labels;
+
+    inputIsActive = vm.isActive;
+    get TODO_model() {}
+
+    get label() {
+        return this.inputIsActive ? this.$t(this.labels.active) : this.$t(this.labels.inactive);
+    }
+
+    toggle() {
+        if (this.isDisabled) {
+            return;
+        }
+
+        this.model = !this.model;
+    }
+}
 </script>
 
 <style scoped>
