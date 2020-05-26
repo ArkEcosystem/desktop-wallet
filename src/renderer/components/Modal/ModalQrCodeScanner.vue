@@ -44,85 +44,80 @@
 </template>
 
 <script>
+import { Vue, Component, Prop } from "vue-property-decorator";
 import { QrcodeStream } from "vue-qrcode-reader";
 
 import Loader from "@/components/utils/Loader";
 
 import ModalWindow from "./ModalWindow";
 
-export default {
-	name: "ModalQrCode",
+@Component({
+    name: "ModalQrCode",
 
-	components: {
+    components: {
 		ModalWindow,
 		QrcodeStream,
 		Loader,
-	},
+	}
+})
+export default class ModalQrCode extends Vue {
+    @Prop({
+        type: Function,
+        required: true,
+    })
+    toggle;
 
-	props: {
-		toggle: {
-			type: Function,
-			required: true,
-		},
-	},
+    isLoading = true;
+    errorMessage = null;
 
-	data: () => ({
-		isLoading: true,
-		errorMessage: null,
-	}),
+    get title() {
+        return this.$t("MODAL_QR_SCANNER.TITLE");
+    }
 
-	computed: {
-		title() {
-			return this.$t("MODAL_QR_SCANNER.TITLE");
-		},
-	},
+    onInit(promise) {
+        let promiseSuccessfullyHandled = false;
+        let errorMessage;
 
-	methods: {
-		async onInit(promise) {
-			let promiseSuccessfullyHandled = false;
-			let errorMessage;
+        try {
+            setTimeout(() => {
+                if (!promiseSuccessfullyHandled) {
+                    this.isLoading = false;
+                    this.errorMessage = this.$t("MODAL_QR_SCANNER.ERROR.NOT_READABLE");
+                }
+            }, 10000);
+            await promise;
+            errorMessage = null;
+        } catch (error) {
+            if (error.name === "NotAllowedError") {
+                errorMessage = this.$t("MODAL_QR_SCANNER.ERROR.NOT_ALLOWED");
+            } else if (error.name === "NotFoundError") {
+                errorMessage = this.$t("MODAL_QR_SCANNER.ERROR.NOT_FOUND");
+            } else if (error.name === "NotSupportedError") {
+                errorMessage = this.$t("MODAL_QR_SCANNER.ERROR.NOT_SUPPORTED");
+            } else if (error.name === "NotReadableError") {
+                errorMessage = this.$t("MODAL_QR_SCANNER.ERROR.NOT_READABLE");
+            } else if (error.name === "OverconstrainedError") {
+                errorMessage = this.$t("MODAL_QR_SCANNER.ERROR.OVERCONSTRAINED");
+            } else if (error.name === "StreamApiNotSupportedError") {
+                errorMessage = this.$t("MODAL_QR_SCANNER.ERROR.STREAM");
+            }
+        } finally {
+            setTimeout(() => {
+                promiseSuccessfullyHandled = true;
+                this.isLoading = false;
+                this.errorMessage = errorMessage;
+            }, 1000);
+        }
+    }
 
-			try {
-				setTimeout(() => {
-					if (!promiseSuccessfullyHandled) {
-						this.isLoading = false;
-						this.errorMessage = this.$t("MODAL_QR_SCANNER.ERROR.NOT_READABLE");
-					}
-				}, 10000);
-				await promise;
-				errorMessage = null;
-			} catch (error) {
-				if (error.name === "NotAllowedError") {
-					errorMessage = this.$t("MODAL_QR_SCANNER.ERROR.NOT_ALLOWED");
-				} else if (error.name === "NotFoundError") {
-					errorMessage = this.$t("MODAL_QR_SCANNER.ERROR.NOT_FOUND");
-				} else if (error.name === "NotSupportedError") {
-					errorMessage = this.$t("MODAL_QR_SCANNER.ERROR.NOT_SUPPORTED");
-				} else if (error.name === "NotReadableError") {
-					errorMessage = this.$t("MODAL_QR_SCANNER.ERROR.NOT_READABLE");
-				} else if (error.name === "OverconstrainedError") {
-					errorMessage = this.$t("MODAL_QR_SCANNER.ERROR.OVERCONSTRAINED");
-				} else if (error.name === "StreamApiNotSupportedError") {
-					errorMessage = this.$t("MODAL_QR_SCANNER.ERROR.STREAM");
-				}
-			} finally {
-				setTimeout(() => {
-					promiseSuccessfullyHandled = true;
-					this.isLoading = false;
-					this.errorMessage = errorMessage;
-				}, 1000);
-			}
-		},
+    onDecode(decodedString) {
+        this.$emit("decoded", decodedString, this.toggle);
+    }
 
-		onDecode(decodedString) {
-			this.$emit("decoded", decodedString, this.toggle);
-		},
-
-		emitClose() {
-			this.$emit("close");
-		},
-	},
-};
+    emitClose() {
+        this.$emit("close");
+    }
+}
 </script>
 
 <style>

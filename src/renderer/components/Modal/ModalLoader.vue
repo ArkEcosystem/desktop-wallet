@@ -23,93 +23,98 @@
 </template>
 
 <script>
+import { Vue, Component, Prop } from "vue-property-decorator";
 import PluginLogo from "@/components/PluginManager/PluginLogo";
 import Loader from "@/components/utils/Loader";
 
 import ModalWindow from "./ModalWindow";
 
-export default {
-	name: "ModalLoader",
+@Component({
+    name: "ModalLoader",
 
-	components: {
+    components: {
 		Loader,
 		ModalWindow,
 		PluginLogo,
 	},
 
-	props: {
-		message: {
-			type: String,
-			required: true,
-		},
-		plugin: {
-			type: Object,
-			required: false,
-			default: null,
-		},
-		visible: {
-			type: Boolean,
-			required: false,
-			default: true,
-		},
-		allowClose: {
-			type: Boolean,
-			required: false,
-			default: false,
-		},
-		closeWarningDelay: {
-			type: Number,
-			required: false,
-			default: 15000,
-		},
-		closeWarningMessage: {
-			type: String,
-			required: false,
-			default: null,
-		},
-	},
-
-	data(vm) {
-		return {
-			showClose: false,
-			showCloseTimeout: null,
-			isVisible: vm.visible,
-		};
-	},
-
-	watch: {
+    watch: {
 		visible: function (value) {
 			this.isVisible = value;
 			if (value) {
 				this.triggerShowClose();
 			}
 		},
-	},
+	}
+})
+export default class ModalLoader extends Vue {
+    @Prop({
+        type: String,
+        required: true,
+    })
+    message;
 
-	mounted() {
+    @Prop({
+        type: Object,
+        required: false,
+        default: null,
+    })
+    plugin;
+
+    @Prop({
+        type: Boolean,
+        required: false,
+        default: true,
+    })
+    visible;
+
+    @Prop({
+        type: Boolean,
+        required: false,
+        default: false,
+    })
+    allowClose;
+
+    @Prop({
+        type: Number,
+        required: false,
+        default: 15000,
+    })
+    closeWarningDelay;
+
+    @Prop({
+        type: String,
+        required: false,
+        default: null,
+    })
+    closeWarningMessage;
+
+    showClose = false;
+    showCloseTimeout = null;
+    isVisible = vm.visible;
+
+    mounted() {
 		this.triggerShowClose();
-	},
+	}
 
-	methods: {
-		toggle() {
-			this.isVisible = !this.isVisible;
+    toggle() {
+        this.isVisible = !this.isVisible;
 
-			if (!this.isVisible) {
-				this.$emit("close");
-			}
-		},
+        if (!this.isVisible) {
+            this.$emit("close");
+        }
+    }
 
-		triggerShowClose() {
-			if (this.allowClose) {
-				if (this.showCloseTimeout || this.showClose) {
-					clearInterval(this.showCloseTimeout);
-					this.showClose = false;
-				}
-				this.showCloseTimeout = setTimeout(() => {
-					this.showClose = true;
-				}, this.closeWarningDelay);
-			}
-		},
-	},
-};
+    triggerShowClose() {
+        if (this.allowClose) {
+            if (this.showCloseTimeout || this.showClose) {
+                clearInterval(this.showCloseTimeout);
+                this.showClose = false;
+            }
+            this.showCloseTimeout = setTimeout(() => {
+                this.showClose = true;
+            }, this.closeWarningDelay);
+        }
+    }
+}
 </script>

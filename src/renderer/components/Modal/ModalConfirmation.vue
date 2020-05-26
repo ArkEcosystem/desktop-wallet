@@ -37,81 +37,96 @@
 </template>
 
 <script>
+import { Vue, Component, Prop } from "vue-property-decorator";
 import ModalWindow from "./ModalWindow";
 
-export default {
-	name: "ModalConfirmation",
+@Component({
+    name: "ModalConfirmation",
 
-	components: {
+    components: {
 		ModalWindow,
-	},
+	}
+})
+export default class ModalConfirmation extends Vue {
+    @Prop({
+        type: String,
+        required: false,
+        default() {
+            return this.$t("MODAL_CONFIRMATION.CANCEL");
+        },
+    })
+    cancelButton;
 
-	props: {
-		cancelButton: {
-			type: String,
-			required: false,
-			default() {
-				return this.$t("MODAL_CONFIRMATION.CANCEL");
-			},
-		},
-		showCancelButton: {
-			type: Boolean,
-			required: false,
-			default: true,
-		},
-		containerClasses: {
-			type: String,
-			required: false,
-			default: "ModalConfirmation",
-		},
-		continueButton: {
-			type: String,
-			required: false,
-			default() {
-				return this.$t("MODAL_CONFIRMATION.CONTINUE");
-			},
-		},
-		footer: {
-			type: String,
-			required: false,
-			default: "",
-		},
-		note: {
-			type: String,
-			required: false,
-			default: null,
-		},
-		question: {
-			type: String,
-			required: false,
-			default: null,
-		},
-		title: {
-			type: String,
-			required: false,
-			default() {
-				return this.$t("MODAL_CONFIRMATION.TITLE");
-			},
-		},
-		portalTarget: {
-			type: String,
-			required: false,
-			default: "modal",
-		},
-	},
+    @Prop({
+        type: Boolean,
+        required: false,
+        default: true,
+    })
+    showCancelButton;
 
-	methods: {
-		emitCancel() {
-			this.$emit("cancel");
-		},
+    @Prop({
+        type: String,
+        required: false,
+        default: "ModalConfirmation",
+    })
+    containerClasses;
 
-		emitClose() {
-			this.$emit("close");
-		},
+    @Prop({
+        type: String,
+        required: false,
+        default() {
+            return this.$t("MODAL_CONFIRMATION.CONTINUE");
+        },
+    })
+    continueButton;
 
-		emitContinue() {
-			this.$emit("continue");
-		},
-	},
-};
+    @Prop({
+        type: String,
+        required: false,
+        default: "",
+    })
+    footer;
+
+    @Prop({
+        type: String,
+        required: false,
+        default: null,
+    })
+    note;
+
+    @Prop({
+        type: String,
+        required: false,
+        default: null,
+    })
+    question;
+
+    @Prop({
+        type: String,
+        required: false,
+        default() {
+            return this.$t("MODAL_CONFIRMATION.TITLE");
+        },
+    })
+    title;
+
+    @Prop({
+        type: String,
+        required: false,
+        default: "modal",
+    })
+    portalTarget;
+
+    emitCancel() {
+        this.$emit("cancel");
+    }
+
+    emitClose() {
+        this.$emit("close");
+    }
+
+    emitContinue() {
+        this.$emit("continue");
+    }
+}
 </script>

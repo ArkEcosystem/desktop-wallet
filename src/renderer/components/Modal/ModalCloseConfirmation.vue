@@ -36,74 +36,87 @@
 </template>
 
 <script>
-export default {
-	name: "ModalCloseConfirmation",
+import { Vue, Component, Prop } from "vue-property-decorator";
+@Component({
+    name: "ModalCloseConfirmation"
+})
+export default class ModalCloseConfirmation extends Vue {
+    @Prop({
+        type: String,
+        required: false,
+        default() {
+            return this.$t("MODAL_CLOSE_CONFIRMATION.CANCEL");
+        },
+    })
+    cancelButton;
 
-	props: {
-		cancelButton: {
-			type: String,
-			required: false,
-			default() {
-				return this.$t("MODAL_CLOSE_CONFIRMATION.CANCEL");
-			},
-		},
-		confirmButton: {
-			type: String,
-			required: false,
-			default() {
-				return this.$t("MODAL_CLOSE_CONFIRMATION.CONFIRM");
-			},
-		},
-		containerClasses: {
-			type: String,
-			required: false,
-			default: "ModalConfirmationClose",
-		},
-		footer: {
-			type: String,
-			required: false,
-			default: "",
-		},
-		note: {
-			type: String,
-			required: false,
-			default: null,
-		},
-		question: {
-			type: String,
-			required: false,
-			default() {
-				return this.$t("MODAL_CLOSE_CONFIRMATION.QUESTION");
-			},
-		},
-		title: {
-			type: String,
-			required: false,
-			default() {
-				return this.$t("MODAL_CONFIRMATION.TITLE");
-			},
-		},
-		portalTarget: {
-			type: String,
-			required: false,
-			default: "modal",
-		},
-	},
+    @Prop({
+        type: String,
+        required: false,
+        default() {
+            return this.$t("MODAL_CLOSE_CONFIRMATION.CONFIRM");
+        },
+    })
+    confirmButton;
 
-	methods: {
-		emitCancel() {
-			this.$emit("cancel");
-		},
+    @Prop({
+        type: String,
+        required: false,
+        default: "ModalConfirmationClose",
+    })
+    containerClasses;
 
-		emitConfirm() {
-			this.$emit("confirm");
-		},
+    @Prop({
+        type: String,
+        required: false,
+        default: "",
+    })
+    footer;
 
-		onBackdropClick() {
-			this.$emit("cancel");
-		},
-	},
-};
+    @Prop({
+        type: String,
+        required: false,
+        default: null,
+    })
+    note;
+
+    @Prop({
+        type: String,
+        required: false,
+        default() {
+            return this.$t("MODAL_CLOSE_CONFIRMATION.QUESTION");
+        },
+    })
+    question;
+
+    @Prop({
+        type: String,
+        required: false,
+        default() {
+            return this.$t("MODAL_CONFIRMATION.TITLE");
+        },
+    })
+    title;
+
+    @Prop({
+        type: String,
+        required: false,
+        default: "modal",
+    })
+    portalTarget;
+
+    emitCancel() {
+        this.$emit("cancel");
+    }
+
+    emitConfirm() {
+        this.$emit("confirm");
+    }
+
+    onBackdropClick() {
+        this.$emit("cancel");
+    }
+}
 </script>
 
 <style lang="postcss" scoped>
