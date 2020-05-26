@@ -21,7 +21,7 @@
 
 <script>
 import { isEqual } from "lodash";
-import { Component, Prop, Vue, Watch } from "vue-property-decorator";
+import { Component, Vue, Watch } from "vue-property-decorator";
 
 import { AppEvent } from "@/enums";
 

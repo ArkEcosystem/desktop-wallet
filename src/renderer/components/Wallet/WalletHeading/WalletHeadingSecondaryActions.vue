@@ -80,7 +80,7 @@
 
 <script>
 import { TRANSACTION_TYPES } from "@config";
-import { Component, Prop, Vue, Watch } from "vue-property-decorator";
+import { Component, Vue, Watch } from "vue-property-decorator";
 
 import { ButtonDropdown, ButtonModal } from "@/components/Button";
 import { ContactRenameModal } from "@/components/Contact";

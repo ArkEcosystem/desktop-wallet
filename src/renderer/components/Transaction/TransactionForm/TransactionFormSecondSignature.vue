@@ -137,7 +137,7 @@
 
 <script>
 import { TRANSACTION_TYPES } from "@config";
-import { Component, Prop, Vue, Watch } from "vue-property-decorator";
+import { Component, Vue, Watch } from "vue-property-decorator";
 
 import { ButtonClipboard, ButtonReload } from "@/components/Button";
 import { Collapse } from "@/components/Collapse";

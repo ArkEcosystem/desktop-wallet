@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import { Component, Prop, Vue, Watch } from "vue-property-decorator";
+import { Component, Vue, Watch } from "vue-property-decorator";
 import { mapGetters } from "vuex";
 
 import { AppEvent, StoreBinding } from "@/enums";

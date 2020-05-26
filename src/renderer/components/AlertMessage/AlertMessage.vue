@@ -59,7 +59,6 @@ export default class AlertMessage extends Vue {
 			this.alert = null;
 		}
 
-		// @ts-ignore
 		this.timer = setTimeout(this.showNext, duration);
 	}
 }

@@ -57,7 +57,7 @@
 
 <script>
 import { omitBy, uniqBy } from "lodash";
-import { Component, Prop, Vue, Watch } from "vue-property-decorator";
+import { Component, Vue, Watch } from "vue-property-decorator";
 
 import { ButtonGeneric, ButtonSwitch } from "@/components/Button";
 import { ListDivided, ListDividedItem } from "@/components/ListDivided";
