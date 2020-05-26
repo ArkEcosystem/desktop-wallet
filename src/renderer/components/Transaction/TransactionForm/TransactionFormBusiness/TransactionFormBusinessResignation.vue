@@ -148,13 +148,15 @@ export default class TransactionFormBusinessResignation extends Vue {
 		this.$error(this.$t("TRANSACTION.ERROR.VALIDATION.BUSINESS_RESIGNATION"));
 	}
 
-	validations = {
-		form: {
-			fee: mixin.validators.fee,
-			passphrase: mixin.validators.passphrase,
-			walletPassword: mixin.validators.walletPassword,
-			secondPassphrase: mixin.validators.secondPassphrase,
-		},
+	validations() {
+		return {
+			form: {
+				fee: mixin.validators.fee,
+				passphrase: mixin.validators.passphrase,
+				walletPassword: mixin.validators.walletPassword,
+				secondPassphrase: mixin.validators.secondPassphrase,
+			},
+		}
 	};
 }
 </script>

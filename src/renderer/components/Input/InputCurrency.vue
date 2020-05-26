@@ -437,33 +437,35 @@ export default class InputCurrency extends Vue {
 		});
 	}
 
-	validations = {
-		model: {
-			// @ts-ignore
-			isNumber() {
+	validations() {
+		return {
+			model: {
 				// @ts-ignore
-				return this.inputValue && this.checkAmount(this.inputValue);
-			},
-			// @ts-ignore
-			isMoreThanMinimum() {
+				isNumber() {
+					// @ts-ignore
+					return this.inputValue && this.checkAmount(this.inputValue);
+				},
 				// @ts-ignore
-				return !this.minimumAmount.isGreaterThan(this.inputValue);
-			},
-			// @ts-ignore
-			isLessThanMaximum() {
+				isMoreThanMinimum() {
+					// @ts-ignore
+					return !this.minimumAmount.isGreaterThan(this.inputValue);
+				},
 				// @ts-ignore
-				return !this.maximumAmount.isLessThan(this.inputValue);
-			},
-			// @ts-ignore
-			isRequired(value) {
+				isLessThanMaximum() {
+					// @ts-ignore
+					return !this.maximumAmount.isLessThan(this.inputValue);
+				},
 				// @ts-ignore
-				if (this.required) {
-					return required(value);
-				}
+				isRequired(value) {
+					// @ts-ignore
+					if (this.required) {
+						return required(value);
+					}
 
-				return true;
+					return true;
+				},
 			},
-		},
+		};
 	};
 }
 </script>

@@ -106,12 +106,14 @@ export default class TransactionFormMultiSign extends Vue {
 		this.$error(this.$t("TRANSACTION.ERROR.VALIDATION.MULTI_SIGN"));
 	}
 
-	validations = {
-		form: {
-			passphrase: mixin.validators.passphrase,
-			walletPassword: mixin.validators.walletPassword,
-			secondPassphrase: mixin.validators.secondPassphrase,
-		},
+	validations() {
+		return {
+			form: {
+				passphrase: mixin.validators.passphrase,
+				walletPassword: mixin.validators.walletPassword,
+				secondPassphrase: mixin.validators.secondPassphrase,
+			},
+		}
 	};
 }
 </script>

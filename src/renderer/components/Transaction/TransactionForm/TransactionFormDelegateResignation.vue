@@ -159,13 +159,15 @@ export default class TransactionFormDelegateResignation extends Vue {
 		this.$error(this.$t("TRANSACTION.ERROR.VALIDATION.DELEGATE_RESIGNATION"));
 	}
 
-	validations = {
-		form: {
-			fee: mixin.validators.fee,
-			passphrase: mixin.validators.passphrase,
-			walletPassword: mixin.validators.walletPassword,
-			secondPassphrase: mixin.validators.secondPassphrase,
-		},
+	validations() {
+		return {
+			form: {
+				fee: mixin.validators.fee,
+				passphrase: mixin.validators.passphrase,
+				walletPassword: mixin.validators.walletPassword,
+				secondPassphrase: mixin.validators.secondPassphrase,
+			},
+		};
 	};
 }
 </script>

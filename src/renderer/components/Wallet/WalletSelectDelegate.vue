@@ -55,14 +55,16 @@ export default class ModalSelectDelegate extends Vue {
 		this.isValid = value;
 	}
 
-	validations = {
-		form: {
-			delegate: {
-				isValid() {
-					return this.isValid;
+	validations() {
+		return {
+			form: {
+				delegate: {
+					isValid() {
+						return this.isValid;
+					},
 				},
 			},
-		},
+		};
 	};
 }
 </script>

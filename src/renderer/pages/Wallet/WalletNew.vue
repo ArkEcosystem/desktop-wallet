@@ -407,53 +407,55 @@ export default class WalletNew extends Vue {
 		return this.schema.address === address;
 	}
 
-	validations = {
-		step1: ["schema.address"],
-		step3: ["isPassphraseVerified"],
-		step4: ["walletPassword", "walletConfirmPassword"],
-		step5: ["schema.name"],
-		schema: {
-			name: {
-				contactDoesNotExist(value) {
-					const contact = this.$store.getters["wallet/byName"](value);
-					return value === "" || !(contact && contact.isContact);
+	validations() {
+		return {
+			step1: ["schema.address"],
+			step3: ["isPassphraseVerified"],
+			step4: ["walletPassword", "walletConfirmPassword"],
+			step5: ["schema.name"],
+			schema: {
+				name: {
+					contactDoesNotExist(value) {
+						const contact = this.$store.getters["wallet/byName"](value);
+						return value === "" || !(contact && contact.isContact);
+					},
+					walletDoesNotExist(value) {
+						const wallet = this.$store.getters["wallet/byName"](value);
+						return value === "" || !(wallet && !wallet.isContact);
+					},
 				},
-				walletDoesNotExist(value) {
-					const wallet = this.$store.getters["wallet/byName"](value);
-					return value === "" || !(wallet && !wallet.isContact);
+			},
+			isPassphraseVerified: {
+				required,
+				isVerified: (value) => value,
+			},
+			walletPassword: {
+				isValid() {
+					if (!this.walletPassword || !this.walletPassword.length) {
+						return true;
+					}
+
+					if (this.$refs.password) {
+						return !this.$refs.password.$v.$invalid;
+					}
+
+					return false;
 				},
 			},
-		},
-		isPassphraseVerified: {
-			required,
-			isVerified: (value) => value,
-		},
-		walletPassword: {
-			isValid() {
-				if (!this.walletPassword || !this.walletPassword.length) {
-					return true;
-				}
+			walletConfirmPassword: {
+				isValid() {
+					if (!this.walletPassword || !this.walletPassword.length) {
+						return true;
+					}
 
-				if (this.$refs.password) {
-					return !this.$refs.password.$v.$invalid;
-				}
+					if (this.$refs.confirmPassword) {
+						return !this.$refs.confirmPassword.$v.$invalid;
+					}
 
-				return false;
+					return false;
+				},
 			},
-		},
-		walletConfirmPassword: {
-			isValid() {
-				if (!this.walletPassword || !this.walletPassword.length) {
-					return true;
-				}
-
-				if (this.$refs.confirmPassword) {
-					return !this.$refs.confirmPassword.$v.$invalid;
-				}
-
-				return false;
-			},
-		},
+		};
 	};
 }
 </script>

@@ -511,88 +511,90 @@ export default class AnonymousComponent extends Vue {
 		this.showValidatingModal = false;
 	}
 
-	validations = {
-		seedNode: {
-			isUnique(value) {
-				return !this.form.seedNodes.find((seedNode) => seedNode.ip === value);
-			},
-			isValidSeed(value) {
-				return ipAddress(value);
-			},
-		},
-
-		form: {
-			fee: mixin.validators.fee,
-			passphrase: mixin.validators.passphrase,
-			walletPassword: mixin.validators.walletPassword,
-			secondPassphrase: mixin.validators.secondPassphrase,
-
-			apiPort: {
-				required,
-				isNumeric: numeric,
-
-				isValidPort(value) {
-					return parseInt(value) < 65536;
+	validations() {
+		return {
+			seedNode: {
+				isUnique(value) {
+					return !this.form.seedNodes.find((seedNode) => seedNode.ip === value);
+				},
+				isValidSeed(value) {
+					return ipAddress(value);
 				},
 			},
 
-			seedNodes: {
-				required,
-				belowOrEqualMaximum(value) {
-					return value.length <= maxSeedNodes;
-				},
-			},
+			form: {
+				fee: mixin.validators.fee,
+				passphrase: mixin.validators.passphrase,
+				walletPassword: mixin.validators.walletPassword,
+				secondPassphrase: mixin.validators.secondPassphrase,
 
-			asset: {
-				name: {
-					required(value) {
-						return this.bridgechain ? true : required(value);
-					},
-					tooLong(value) {
-						return this.bridgechain ? true : maxLength(maxNameLength)(value);
-					},
-					validName(value) {
-						return this.bridgechain ? true : /^[a-zA-Z0-9]+(( - |[ ._-])[a-zA-Z0-9]+)*[.]?$/.test(value);
+				apiPort: {
+					required,
+					isNumeric: numeric,
+
+					isValidPort(value) {
+						return parseInt(value) < 65536;
 					},
 				},
 
-				genesisHash: {
-					required(value) {
-						return this.bridgechain ? true : required(value);
-					},
-					isValidHash(value) {
-						return this.bridgechain ? true : /^[a-z0-9]{64}$/.test(value);
+				seedNodes: {
+					required,
+					belowOrEqualMaximum(value) {
+						return value.length <= maxSeedNodes;
 					},
 				},
 
-				bridgechainRepository: {
-					required(value) {
-						return this.bridgechain ? true : required(value);
+				asset: {
+					name: {
+						required(value) {
+							return this.bridgechain ? true : required(value);
+						},
+						tooLong(value) {
+							return this.bridgechain ? true : maxLength(maxNameLength)(value);
+						},
+						validName(value) {
+							return this.bridgechain ? true : /^[a-zA-Z0-9]+(( - |[ ._-])[a-zA-Z0-9]+)*[.]?$/.test(value);
+						},
 					},
-					tooShort(value) {
-						if (this.bridgechain) {
-							if (value) {
-								return minLength(minRepositoryLength)(value);
+
+					genesisHash: {
+						required(value) {
+							return this.bridgechain ? true : required(value);
+						},
+						isValidHash(value) {
+							return this.bridgechain ? true : /^[a-z0-9]{64}$/.test(value);
+						},
+					},
+
+					bridgechainRepository: {
+						required(value) {
+							return this.bridgechain ? true : required(value);
+						},
+						tooShort(value) {
+							if (this.bridgechain) {
+								if (value) {
+									return minLength(minRepositoryLength)(value);
+								}
+								return true;
 							}
-							return true;
-						}
-						return minLength(minRepositoryLength)(value);
+							return minLength(minRepositoryLength)(value);
+						},
+						url(value) {
+							return url(value);
+						},
 					},
-					url(value) {
-						return url(value);
-					},
-				},
 
-				bridgechainAssetRepository: {
-					required(value) {
-						return this.bridgechain && this.bridgechain.bridgechainAssetRepository ? required(value) : true;
-					},
-					url(value) {
-						return url(value);
+					bridgechainAssetRepository: {
+						required(value) {
+							return this.bridgechain && this.bridgechain.bridgechainAssetRepository ? required(value) : true;
+						},
+						url(value) {
+							return url(value);
+						},
 					},
 				},
 			},
-		},
+		};
 	};
 }
 </script>

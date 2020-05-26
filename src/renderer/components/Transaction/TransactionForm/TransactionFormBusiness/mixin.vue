@@ -282,44 +282,46 @@ export default class AnonymousComponent extends Vue {
 		return transactionData;
 	}
 
-	validations = {
-		form: {
-			fee: mixin.validators.fee,
-			passphrase: mixin.validators.passphrase,
-			walletPassword: mixin.validators.walletPassword,
-			secondPassphrase: mixin.validators.secondPassphrase,
+	validations() {
+		return {
+			form: {
+				fee: mixin.validators.fee,
+				passphrase: mixin.validators.passphrase,
+				walletPassword: mixin.validators.walletPassword,
+				secondPassphrase: mixin.validators.secondPassphrase,
 
-			asset: {
-				name: {
-					required,
-					tooLong: maxLength(maxNameLength),
-					validName: (value) => {
-						return /^[a-zA-Z0-9]+(( - |[ ._-])[a-zA-Z0-9]+)*[.]?$/.test(value);
+				asset: {
+					name: {
+						required,
+						tooLong: maxLength(maxNameLength),
+						validName: (value) => {
+							return /^[a-zA-Z0-9]+(( - |[ ._-])[a-zA-Z0-9]+)*[.]?$/.test(value);
+						},
 					},
-				},
 
-				website: {
-					required,
-					url,
-				},
-
-				vat: {
-					required(value) {
-						return this.business && this.business.vat ? required(value) : true;
+					website: {
+						required,
+						url,
 					},
-					tooShort: minLength(minVatLength),
-					tooLong: maxLength(maxVatLength),
-				},
 
-				repository: {
-					required(value) {
-						return this.business && this.business.repository ? required(value) : true;
+					vat: {
+						required(value) {
+							return this.business && this.business.vat ? required(value) : true;
+						},
+						tooShort: minLength(minVatLength),
+						tooLong: maxLength(maxVatLength),
 					},
-					tooShort: minLength(minRepositoryLength),
-					url,
+
+					repository: {
+						required(value) {
+							return this.business && this.business.repository ? required(value) : true;
+						},
+						tooShort: minLength(minRepositoryLength),
+						url,
+					},
 				},
 			},
-		},
+		};
 	};
 }
 </script>

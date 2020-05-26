@@ -247,48 +247,50 @@ export default class InputPassword extends Vue {
 		return "";
 	}
 
-	validations = {
-		model: {
-			isConfirmed(value) {
-				// @ts-ignore
-				return !this.confirm || value === this.confirm;
-			},
-			required(value) {
-				// @ts-ignore
-				if (this.isRequired) {
-					return required(value);
-				}
+	validations() {
+		return {
+			model: {
+				isConfirmed(value) {
+					// @ts-ignore
+					return !this.confirm || value === this.confirm;
+				},
+				required(value) {
+					// @ts-ignore
+					if (this.isRequired) {
+						return required(value);
+					}
 
-				return true;
-			},
-			isValid(value) {
-				if (!value) {
-					return false;
-				}
-
-				// @ts-ignore
-				if (!this.isRequired && !value.length) {
 					return true;
-				}
+				},
+				isValid(value) {
+					if (!value) {
+						return false;
+					}
 
-				// @ts-ignore
-				if (!this.isCreate) {
-					return true;
-				}
+					// @ts-ignore
+					if (!this.isRequired && !value.length) {
+						return true;
+					}
 
-				// @ts-ignore
-				if (this.minLength && value.length < this.minLength) {
-					return false;
-				}
+					// @ts-ignore
+					if (!this.isCreate) {
+						return true;
+					}
 
-				const containsLowercase = /[a-z]/.test(value);
-				const containsUppercase = /[A-Z]/.test(value);
-				const containsNumbers = /[0-9]/.test(value);
-				const containsSpecial = /\W|_/.test(value);
+					// @ts-ignore
+					if (this.minLength && value.length < this.minLength) {
+						return false;
+					}
 
-				return containsLowercase && containsUppercase && containsNumbers && containsSpecial;
+					const containsLowercase = /[a-z]/.test(value);
+					const containsUppercase = /[A-Z]/.test(value);
+					const containsNumbers = /[0-9]/.test(value);
+					const containsSpecial = /\W|_/.test(value);
+
+					return containsLowercase && containsUppercase && containsNumbers && containsSpecial;
+				},
 			},
-		},
+		}
 	};
 }
 </script>

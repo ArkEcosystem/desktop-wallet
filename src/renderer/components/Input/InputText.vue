@@ -208,24 +208,26 @@ export default class InputText extends Vue {
 		});
 	}
 
-	validations = {
-		model: {
-			isBip39(value) {
-				// @ts-ignore
-				if (!this.bip39Warning) {
-					return false;
-				}
+	validations() {
+		return {
+			model: {
+				isBip39(value) {
+					// @ts-ignore
+					if (!this.bip39Warning) {
+						return false;
+					}
 
-				const trimmed = value
-					.toLowerCase()
-					.split(" ")
-					.filter((word) => !!word.length)
-					.join(" ");
+					const trimmed = value
+						.toLowerCase()
+						.split(" ")
+						.filter((word) => !!word.length)
+						.join(" ");
 
-				// @ts-ignore
-				return WalletService.isBip39Passphrase(trimmed, this.session_profile.bip39Language);
+					// @ts-ignore
+					return WalletService.isBip39Passphrase(trimmed, this.session_profile.bip39Language);
+				},
 			},
-		},
+		}
 	};
 }
 </script>

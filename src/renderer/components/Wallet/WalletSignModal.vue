@@ -172,47 +172,49 @@ export default class WalletSignModal extends Vue {
 		this.$emit("signed");
 	}
 
-	validations = {
-		form: {
-			message: {
-				required,
-				minLength: minLength(1),
-			},
-			passphrase: {
-				isValid() {
-					if (this.wallet.passphrase) {
-						return true;
-					} else if (this.wallet && (this.wallet.isLedger || this.wallet.passphrase)) {
-						return true;
-					}
-
-					if (this.$refs.passphrase) {
-						return !this.$refs.passphrase.$v.$invalid;
-					}
-
-					return false;
+	validations() {
+		return {
+			form: {
+				message: {
+					required,
+					minLength: minLength(1),
 				},
-			},
-			walletPassword: {
-				isValid() {
-					if (!this.wallet.passphrase) {
-						return true;
-					} else if (this.wallet && (this.wallet.isLedger || !this.wallet.passphrase)) {
-						return true;
-					}
+				passphrase: {
+					isValid() {
+						if (this.wallet.passphrase) {
+							return true;
+						} else if (this.wallet && (this.wallet.isLedger || this.wallet.passphrase)) {
+							return true;
+						}
 
-					if (!this.form.walletPassword || !this.form.walletPassword.length) {
+						if (this.$refs.passphrase) {
+							return !this.$refs.passphrase.$v.$invalid;
+						}
+
 						return false;
-					}
+					},
+				},
+				walletPassword: {
+					isValid() {
+						if (!this.wallet.passphrase) {
+							return true;
+						} else if (this.wallet && (this.wallet.isLedger || !this.wallet.passphrase)) {
+							return true;
+						}
 
-					if (this.$refs.password) {
-						return !this.$refs.password.$v.$invalid;
-					}
+						if (!this.form.walletPassword || !this.form.walletPassword.length) {
+							return false;
+						}
 
-					return false;
+						if (this.$refs.password) {
+							return !this.$refs.password.$v.$invalid;
+						}
+
+						return false;
+					},
 				},
 			},
-		},
+		};
 	};
 }
 </script>

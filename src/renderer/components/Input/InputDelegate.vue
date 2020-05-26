@@ -379,14 +379,16 @@ export default class InputDelegate extends Vue {
 		});
 	}
 
-	validations = {
-		model: {
-			required,
-			isValid(value) {
-				// @ts-ignore
-				return !!this.$store.getters["delegate/search"](value);
+	validations() {
+		return {
+			model: {
+				required,
+				isValid(value) {
+					// @ts-ignore
+					return !!this.$store.getters["delegate/search"](value);
+				},
 			},
-		},
+		};
 	};
 }
 </script>

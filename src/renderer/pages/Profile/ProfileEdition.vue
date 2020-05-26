@@ -802,21 +802,23 @@ export default class ProfileEdition extends Vue {
 		this.showAdvancedModeDisclaimer = false;
 	}
 
-	validations = {
-		modified: {
-			name: {
-				doesNotExist(value) {
-					const otherProfile = this.$store.getters["profile/doesExist"](value);
-					return !otherProfile || otherProfile.id === this.profile.id;
-				},
-				maxLength(value) {
-					return value.length <= Profile.schema.properties.name.maxLength;
-				},
-				minLength(value) {
-					return value.length >= Profile.schema.properties.name.minLength;
+	validations() {
+		return {
+			modified: {
+				name: {
+					doesNotExist(value) {
+						const otherProfile = this.$store.getters["profile/doesExist"](value);
+						return !otherProfile || otherProfile.id === this.profile.id;
+					},
+					maxLength(value) {
+						return value.length <= Profile.schema.properties.name.maxLength;
+					},
+					minLength(value) {
+						return value.length >= Profile.schema.properties.name.minLength;
+					},
 				},
 			},
-		},
+		};
 	};
 }
 </script>

@@ -245,26 +245,28 @@ export default class PassphraseInput extends Vue {
 		await this.focus();
 	}
 
-	validations = {
-		model: {
-			required,
-			isValid(value) {
-				return WalletService.validatePassphrase(value, this.pubKeyHash);
+	validations() {
+		return {
+			model: {
+				required,
+				isValid(value) {
+					return WalletService.validatePassphrase(value, this.pubKeyHash);
+				},
+				matchAddress(value) {
+					if (this.address) {
+						return WalletService.verifyPassphrase(this.address, value, this.pubKeyHash);
+					}
+					return true;
+				},
+				matchPublicKey(value) {
+					if (this.publicKey) {
+						const generatedPublicKey = WalletService.getPublicKeyFromPassphrase(value);
+						return generatedPublicKey === this.publicKey;
+					}
+					return true;
+				},
 			},
-			matchAddress(value) {
-				if (this.address) {
-					return WalletService.verifyPassphrase(this.address, value, this.pubKeyHash);
-				}
-				return true;
-			},
-			matchPublicKey(value) {
-				if (this.publicKey) {
-					const generatedPublicKey = WalletService.getPublicKeyFromPassphrase(value);
-					return generatedPublicKey === this.publicKey;
-				}
-				return true;
-			},
-		},
+		};
 	};
 }
 </script>

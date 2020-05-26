@@ -460,26 +460,28 @@ export default class InputAddress extends Vue {
 		});
 	}
 
-	validations = {
-		model: {
-			// @ts-ignore
-			required(value) {
+	validations() {
+		return {
+			model: {
 				// @ts-ignore
-				return this.isRequired ? required(value) : true;
-			},
-
-			// @ts-ignore
-			isValid(value) {
-				// @ts-ignore
-				if (!this.isRequired && value.replace(/\s+/, "") === "") {
-					return true;
-				}
+				required(value) {
+					// @ts-ignore
+					return this.isRequired ? required(value) : true;
+				},
 
 				// @ts-ignore
-				return WalletService.validateAddress(value, this.pubKeyHash);
+				isValid(value) {
+					// @ts-ignore
+					if (!this.isRequired && value.replace(/\s+/, "") === "") {
+						return true;
+					}
+
+					// @ts-ignore
+					return WalletService.validateAddress(value, this.pubKeyHash);
+				},
 			},
-		},
-	};
+		};
+	}
 }
 </script>
 

@@ -151,27 +151,29 @@ export default class ModalPeer extends Vue {
 		this.$emit("close");
 	}
 
-	validations = {
-		form: {
-			host: {
-				required,
-				isValid(value) {
-					return /(:\/\/){1}[^\-.]+[a-zA-Z0-9\-_.]*[^\-.]+$/.test(value);
+	validations() {
+		return {
+			form: {
+				host: {
+					required,
+					isValid(value) {
+						return /(:\/\/){1}[^\-.]+[a-zA-Z0-9\-_.]*[^\-.]+$/.test(value);
+					},
+					hasScheme(value) {
+						return /^https?:\/\//.test(value);
+					},
 				},
-				hasScheme(value) {
-					return /^https?:\/\//.test(value);
+				port: {
+					required,
+					isNumeric(value) {
+						return numeric(value);
+					},
+					isValid(value) {
+						return parseInt(value) < 65536;
+					},
 				},
 			},
-			port: {
-				required,
-				isNumeric(value) {
-					return numeric(value);
-				},
-				isValid(value) {
-					return parseInt(value) < 65536;
-				},
-			},
-		},
+		};
 	};
 }
 </script>

@@ -597,81 +597,83 @@ export default class NetworkModal extends Vue {
 		this.$emit("removed");
 	}
 
-	validations = {
-		form: {
-			name: {
-				required,
-				doesNotExist(value) {
-					return (
-						(this.originalName && value === this.originalName) ||
-						!this.$store.getters["network/byName"](value)
-					);
+	validations() {
+		return  {
+			form: {
+				name: {
+					required,
+					doesNotExist(value) {
+						return (
+							(this.originalName && value === this.originalName) ||
+							!this.$store.getters["network/byName"](value)
+						);
+					},
 				},
-			},
-			description: {
-				required,
-			},
-			server: {
-				required,
-				isValid(value) {
-					return /(:\/\/){1}[a-zA-Z0-9][a-zA-Z0-9\-_.]*[a-zA-Z0-9](:[0-9]+)?$/.test(value);
+				description: {
+					required,
 				},
-				hasScheme(value) {
-					return /^https?:\/\//.test(value);
+				server: {
+					required,
+					isValid(value) {
+						return /(:\/\/){1}[a-zA-Z0-9][a-zA-Z0-9\-_.]*[a-zA-Z0-9](:[0-9]+)?$/.test(value);
+					},
+					hasScheme(value) {
+						return /^https?:\/\//.test(value);
+					},
 				},
-			},
-			nethash: {
-				requiredIfFull,
-				isValid(value) {
-					return !this.showFull || /^[a-z0-9]{64}$/.test(value);
+				nethash: {
+					requiredIfFull,
+					isValid(value) {
+						return !this.showFull || /^[a-z0-9]{64}$/.test(value);
+					},
 				},
-			},
-			token: {
-				requiredIfFull,
-			},
-			symbol: {
-				requiredIfFull,
-			},
-			version: {
-				requiredIfFull,
-				numeric,
-			},
-			explorer: {
-				requiredIfFull,
-				isValid(value) {
-					return !this.showFull || /(:\/\/){1}[a-zA-Z0-9][a-zA-Z0-9\-_.]*[a-zA-Z0-9](:[0-9]+)?$/.test(value);
+				token: {
+					requiredIfFull,
 				},
-				hasScheme(value) {
-					return !this.showFull || /^https?:\/\//.test(value);
+				symbol: {
+					requiredIfFull,
 				},
-			},
-			knownWalletsUrl: {
-				required() {
-					return true;
+				version: {
+					requiredIfFull,
+					numeric,
 				},
-				isValid(value) {
-					return !value || url(value);
+				explorer: {
+					requiredIfFull,
+					isValid(value) {
+						return !this.showFull || /(:\/\/){1}[a-zA-Z0-9][a-zA-Z0-9\-_.]*[a-zA-Z0-9](:[0-9]+)?$/.test(value);
+					},
+					hasScheme(value) {
+						return !this.showFull || /^https?:\/\//.test(value);
+					},
 				},
-			},
-			epoch: {
-				requiredIfFull,
-				isValid(value) {
-					return !this.showFull || /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}.\d{3}Z$/.test(value);
+				knownWalletsUrl: {
+					required() {
+						return true;
+					},
+					isValid(value) {
+						return !value || url(value);
+					},
 				},
+				epoch: {
+					requiredIfFull,
+					isValid(value) {
+						return !this.showFull || /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}.\d{3}Z$/.test(value);
+					},
+				},
+				wif: {
+					requiredIfFull,
+					numeric,
+				},
+				slip44: {
+					requiredIfFull,
+				},
+				activeDelegates: {
+					requiredIfFull,
+					numeric,
+				},
+				ticker: {},
 			},
-			wif: {
-				requiredIfFull,
-				numeric,
-			},
-			slip44: {
-				requiredIfFull,
-			},
-			activeDelegates: {
-				requiredIfFull,
-				numeric,
-			},
-			ticker: {},
-		},
+		}
 	};
 }
 </script>

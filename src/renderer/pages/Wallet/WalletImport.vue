@@ -270,88 +270,90 @@ export default class WalletImport extends Vue {
 		this.useOnlyPassphrase = useOnlyPassphrase;
 	}
 
-	validations = {
-		step1: ["schema.address", "schema.passphrase"],
-		step2: ["walletPassword", "walletConfirmPassword"],
-		step3: ["schema.name"],
-		walletPassword: {
-			isValid() {
-				if (!this.walletPassword || !this.walletPassword.length) {
-					return true;
-				}
-
-				if (this.$refs.password) {
-					return !this.$refs.password.$v.$invalid;
-				}
-
-				return false;
-			},
-		},
-		walletConfirmPassword: {
-			isValid() {
-				if (!this.walletPassword || !this.walletPassword.length) {
-					return true;
-				}
-
-				if (this.$refs.confirmPassword) {
-					return !this.$refs.confirmPassword.$v.$invalid;
-				}
-
-				return false;
-			},
-		},
-		schema: {
-			address: {
-				isRequired(value) {
-					return this.useOnlyPassphrase || required(value);
-				},
+	validations() {
+		return {
+			step1: ["schema.address", "schema.passphrase"],
+			step2: ["walletPassword", "walletConfirmPassword"],
+			step3: ["schema.name"],
+			walletPassword: {
 				isValid() {
-					if (this.useOnlyPassphrase) {
+					if (!this.walletPassword || !this.walletPassword.length) {
 						return true;
 					}
 
-					if (this.$refs.addressInput) {
-						return !this.$refs.addressInput.$v.$invalid;
-					}
-
-					return false;
-				},
-				contactDoesNotExist(value) {
-					const contact = this.$store.getters["wallet/byAddress"](value);
-					return value === "" || !(contact && contact.isContact);
-				},
-				walletDoesNotExist(value) {
-					const wallet = this.$store.getters["wallet/byAddress"](value);
-					return value === "" || !(wallet && !wallet.isContact);
-				},
-			},
-			name: {
-				contactDoesNotExist(value) {
-					const contact = this.$store.getters["wallet/byName"](value);
-					return value === "" || !(contact && contact.isContact);
-				},
-				walletDoesNotExist(value) {
-					const wallet = this.$store.getters["wallet/byName"](value);
-					return value === "" || !(wallet && !wallet.isContact);
-				},
-			},
-			passphrase: {
-				isRequired(value) {
-					return this.useOnlyAddress || required(value);
-				},
-				isValid() {
-					if (this.useOnlyAddress) {
-						return true;
-					}
-
-					if (this.$refs.passphrase) {
-						return !this.$refs.passphrase.$v.$invalid;
+					if (this.$refs.password) {
+						return !this.$refs.password.$v.$invalid;
 					}
 
 					return false;
 				},
 			},
-		},
+			walletConfirmPassword: {
+				isValid() {
+					if (!this.walletPassword || !this.walletPassword.length) {
+						return true;
+					}
+
+					if (this.$refs.confirmPassword) {
+						return !this.$refs.confirmPassword.$v.$invalid;
+					}
+
+					return false;
+				},
+			},
+			schema: {
+				address: {
+					isRequired(value) {
+						return this.useOnlyPassphrase || required(value);
+					},
+					isValid() {
+						if (this.useOnlyPassphrase) {
+							return true;
+						}
+
+						if (this.$refs.addressInput) {
+							return !this.$refs.addressInput.$v.$invalid;
+						}
+
+						return false;
+					},
+					contactDoesNotExist(value) {
+						const contact = this.$store.getters["wallet/byAddress"](value);
+						return value === "" || !(contact && contact.isContact);
+					},
+					walletDoesNotExist(value) {
+						const wallet = this.$store.getters["wallet/byAddress"](value);
+						return value === "" || !(wallet && !wallet.isContact);
+					},
+				},
+				name: {
+					contactDoesNotExist(value) {
+						const contact = this.$store.getters["wallet/byName"](value);
+						return value === "" || !(contact && contact.isContact);
+					},
+					walletDoesNotExist(value) {
+						const wallet = this.$store.getters["wallet/byName"](value);
+						return value === "" || !(wallet && !wallet.isContact);
+					},
+				},
+				passphrase: {
+					isRequired(value) {
+						return this.useOnlyAddress || required(value);
+					},
+					isValid() {
+						if (this.useOnlyAddress) {
+							return true;
+						}
+
+						if (this.$refs.passphrase) {
+							return !this.$refs.passphrase.$v.$invalid;
+						}
+
+						return false;
+					},
+				},
+			},
+		};
 	};
 }
 </script>

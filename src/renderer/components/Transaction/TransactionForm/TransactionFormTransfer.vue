@@ -762,47 +762,49 @@ export default class TransactionFormTransfer extends Vue {
 		}
 	}
 
-	validations = {
-		recipientId: {
-			required,
-			isValid() {
-				if (this.$refs.recipient) {
-					return !this.$refs.recipient.$v.$invalid;
-				}
-
-				return false;
-			},
-		},
-		amount: {
-			required,
-			isValid() {
-				if (this.$refs.amount) {
-					return !this.$refs.amount.$v.$invalid;
-				}
-
-				return false;
-			},
-		},
-		wallet: {},
-		form: {
-			recipients: {
-				aboveMinimum() {
-					if (!this.hasAip11) {
-						return true;
+	validations() {
+		return {
+			recipientId: {
+				required,
+				isValid() {
+					if (this.$refs.recipient) {
+						return !this.$refs.recipient.$v.$invalid;
 					}
 
-					return this.form.recipients.length >= 1;
-				},
-				belowOrEqualMaximum() {
-					return this.form.recipients.length <= this.maximumRecipients;
+					return false;
 				},
 			},
-			fee: mixin.validators.fee,
-			passphrase: mixin.validators.passphrase,
-			secondPassphrase: mixin.validators.secondPassphrase,
-			vendorField: {},
-			walletPassword: mixin.validators.walletPassword,
-		},
+			amount: {
+				required,
+				isValid() {
+					if (this.$refs.amount) {
+						return !this.$refs.amount.$v.$invalid;
+					}
+
+					return false;
+				},
+			},
+			wallet: {},
+			form: {
+				recipients: {
+					aboveMinimum() {
+						if (!this.hasAip11) {
+							return true;
+						}
+
+						return this.form.recipients.length >= 1;
+					},
+					belowOrEqualMaximum() {
+						return this.form.recipients.length <= this.maximumRecipients;
+					},
+				},
+				fee: mixin.validators.fee,
+				passphrase: mixin.validators.passphrase,
+				secondPassphrase: mixin.validators.secondPassphrase,
+				vendorField: {},
+				walletPassword: mixin.validators.walletPassword,
+			},
+		};
 	};
 }
 </script>

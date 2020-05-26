@@ -277,12 +277,14 @@ export default class TransactionFormSecondSignature extends Vue {
 		this.$v.$reset();
 	}
 
-	validations = {
-		form: {
-			fee: mixin.validators.fee,
-			passphrase: mixin.validators.passphrase,
-			walletPassword: mixin.validators.walletPassword,
-		},
+	validations() {
+		return {
+			form: {
+				fee: mixin.validators.fee,
+				passphrase: mixin.validators.passphrase,
+				walletPassword: mixin.validators.walletPassword,
+			},
+		};
 	};
 }
 </script>

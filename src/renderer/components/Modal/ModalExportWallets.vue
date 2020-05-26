@@ -266,12 +266,14 @@ export default class ModalExportWallets extends Vue {
 		}
 	}
 
-	validations = {
-		options: {
-			isValid() {
-				return !!this.wallets.length;
+	validations() {
+		return {
+			options: {
+				isValid() {
+					return !!this.wallets.length;
+				},
 			},
-		},
+		}
 	};
 }
 </script>

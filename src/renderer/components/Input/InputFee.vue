@@ -364,17 +364,19 @@ export default class InputFee extends Vue {
 		this.$emit("input", this.fee);
 	}
 
-	validations = {
-		fee: {
-			isValid() {
-				// @ts-ignore
-				if (this.$refs.input) {
+	validations() {
+		return  {
+			fee: {
+				isValid() {
 					// @ts-ignore
-					return !this.$refs.input.$v.$invalid && !this.insufficientFundsError;
-				}
-				return false;
+					if (this.$refs.input) {
+						// @ts-ignore
+						return !this.$refs.input.$v.$invalid && !this.insufficientFundsError;
+					}
+					return false;
+				},
 			},
-		},
+		}
 	};
 }
 </script>

@@ -193,54 +193,56 @@ export default class WalletVerifyModal extends Vue {
 		this.$emit("verified");
 	}
 
-	validations = {
-		form: {
-			message: {
-				isValid(value) {
-					if (this.verifyChoice !== "Verify") {
-						return true;
-					}
-					return value.length >= 1;
+	validations() {
+		return {
+			form: {
+				message: {
+					isValid(value) {
+						if (this.verifyChoice !== "Verify") {
+							return true;
+						}
+						return value.length >= 1;
+					},
 				},
-			},
-			publicKey: {
-				isValid(value) {
-					if (this.verifyChoice !== "Verify") {
-						return true;
-					}
-					return value.length === 66; // Public key length
+				publicKey: {
+					isValid(value) {
+						if (this.verifyChoice !== "Verify") {
+							return true;
+						}
+						return value.length === 66; // Public key length
+					},
 				},
-			},
-			signature: {
-				isValid(value) {
-					if (this.verifyChoice !== "Verify") {
-						return true;
-					}
-					return value.length >= 1;
+				signature: {
+					isValid(value) {
+						if (this.verifyChoice !== "Verify") {
+							return true;
+						}
+						return value.length >= 1;
+					},
 				},
-			},
-			json: {
-				isNotEmpty(value) {
-					if (this.verifyChoice === "Verify") {
-						return true;
-					}
-					return value.length !== 0;
-				},
-				isValid(value) {
-					if (this.verifyChoice === "Verify") {
-						return true;
-					}
+				json: {
+					isNotEmpty(value) {
+						if (this.verifyChoice === "Verify") {
+							return true;
+						}
+						return value.length !== 0;
+					},
+					isValid(value) {
+						if (this.verifyChoice === "Verify") {
+							return true;
+						}
 
-					// Check for valid json
-					try {
-						const json = JSON.parse(value);
-						return !!(json.message && (json.publicKey || json.publickey) && json.signature);
-					} catch (err) {
-						return false;
-					}
+						// Check for valid json
+						try {
+							const json = JSON.parse(value);
+							return !!(json.message && (json.publicKey || json.publickey) && json.signature);
+						} catch (err) {
+							return false;
+						}
+					},
 				},
 			},
-		},
+		};
 	};
 }
 </script>

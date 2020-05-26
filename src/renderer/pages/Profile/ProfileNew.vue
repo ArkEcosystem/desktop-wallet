@@ -422,16 +422,18 @@ export default class ProfileNew extends Vue {
 		await this.$store.dispatch(StoreBinding.SessionSetPriceApi, priceApi);
 	}
 
-	validations = {
-		step1: ["schema.avatar", "schema.currency", "schema.bip39Language", "schema.name"],
-		step2: ["schema.networkId"],
-		schema: {
-			name: {
-				doesNotExist(value) {
-					return !this.$store.getters["profile/doesExist"](value);
+	validations() {
+		return {
+			step1: ["schema.avatar", "schema.currency", "schema.bip39Language", "schema.name"],
+			step2: ["schema.networkId"],
+			schema: {
+				name: {
+					doesNotExist(value) {
+						return !this.$store.getters["profile/doesExist"](value);
+					},
 				},
 			},
-		},
+		};
 	};
 }
 </script>

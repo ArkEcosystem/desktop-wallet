@@ -110,14 +110,16 @@ export default class ModalAdditionalLedgers extends Vue {
 		this.$emit("close", closeMenu);
 	}
 
-	validations = {
-		form: {
-			quantity: {
-				numeric,
-				required,
-				minValue: minValue(1),
+	validations() {
+		return {
+			form: {
+				quantity: {
+					numeric,
+					required,
+					minValue: minValue(1),
+				},
 			},
-		},
+		};
 	};
 }
 </script>

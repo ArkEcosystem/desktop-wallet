@@ -166,39 +166,41 @@ export default class TransactionFormDelegateRegistration extends Vue {
 		this.$error(this.$t("TRANSACTION.ERROR.VALIDATION.DELEGATE_REGISTRATION"));
 	}
 
-	validations = {
-		form: {
-			fee: mixin.validators.fee,
-			passphrase: mixin.validators.passphrase,
-			walletPassword: mixin.validators.walletPassword,
-			secondPassphrase: mixin.validators.secondPassphrase,
+	validations() {
+		return {
+			form: {
+				fee: mixin.validators.fee,
+				passphrase: mixin.validators.passphrase,
+				walletPassword: mixin.validators.walletPassword,
+				secondPassphrase: mixin.validators.secondPassphrase,
 
-			username: {
-				isValid(value) {
-					const validation = WalletService.validateUsername(value);
+				username: {
+					isValid(value) {
+						const validation = WalletService.validateUsername(value);
 
-					return validation.passes;
-				},
+						return validation.passes;
+					},
 
-				isNotEmpty(value) {
-					const validation = WalletService.validateUsername(value);
+					isNotEmpty(value) {
+						const validation = WalletService.validateUsername(value);
 
-					return !validation.passes ? !validation.errors.find((error) => error.type === "empty") : true;
-				},
+						return !validation.passes ? !validation.errors.find((error) => error.type === "empty") : true;
+					},
 
-				isMaxLength(value) {
-					const validation = WalletService.validateUsername(value);
+					isMaxLength(value) {
+						const validation = WalletService.validateUsername(value);
 
-					return !validation.passes ? !validation.errors.find((error) => error.type === "maxLength") : true;
-				},
+						return !validation.passes ? !validation.errors.find((error) => error.type === "maxLength") : true;
+					},
 
-				doesNotExist(value) {
-					const validation = WalletService.validateUsername(value);
+					doesNotExist(value) {
+						const validation = WalletService.validateUsername(value);
 
-					return !validation.passes ? !validation.errors.find((error) => error.type === "exists") : true;
+						return !validation.passes ? !validation.errors.find((error) => error.type === "exists") : true;
+					},
 				},
 			},
-		},
+		}
 	};
 }
 </script>

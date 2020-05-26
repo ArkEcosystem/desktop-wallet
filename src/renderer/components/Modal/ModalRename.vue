@@ -177,29 +177,31 @@ export default class ModalRename extends Vue {
 		this.$emit("created");
 	}
 
-	validations = {
-		step1: ["schema.address"],
-		step3: ["isPassphraseVerified"],
-		schema: {
-			name: {
-				contactDoesNotExist(value) {
-					const contact = this.$store.getters["wallet/byName"](value);
-					return (
-						value === "" ||
-						(this.originalName && value === this.originalName) ||
-						!(contact && contact.isContact)
-					);
-				},
-				walletDoesNotExist(value) {
-					const wallet = this.$store.getters["wallet/byName"](value);
-					return (
-						value === "" ||
-						(this.originalName && value === this.originalName) ||
-						!(wallet && !wallet.isContact)
-					);
+	validations() {
+		return {
+			step1: ["schema.address"],
+			step3: ["isPassphraseVerified"],
+			schema: {
+				name: {
+					contactDoesNotExist(value) {
+						const contact = this.$store.getters["wallet/byName"](value);
+						return (
+							value === "" ||
+							(this.originalName && value === this.originalName) ||
+							!(contact && contact.isContact)
+						);
+					},
+					walletDoesNotExist(value) {
+						const wallet = this.$store.getters["wallet/byName"](value);
+						return (
+							value === "" ||
+							(this.originalName && value === this.originalName) ||
+							!(wallet && !wallet.isContact)
+						);
+					},
 				},
 			},
-		},
+		};
 	};
 }
 </script>

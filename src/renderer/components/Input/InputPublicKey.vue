@@ -90,25 +90,27 @@ export default class InputPublicKey extends Vue {
 		});
 	}
 
-	validations = {
-		model: {
-			isValid(value) {
-				// @ts-ignore
-				if (!this.isRequired && value.replace(/\s+/, "") === "") {
-					return true;
-				}
+	validations() {
+		return {
+			model: {
+				isValid(value) {
+					// @ts-ignore
+					if (!this.isRequired && value.replace(/\s+/, "") === "") {
+						return true;
+					}
 
-				try {
-					Identities.Address.fromPublicKey(value);
+					try {
+						Identities.Address.fromPublicKey(value);
 
-					return true;
-				} catch (error) {
-					//
-				}
+						return true;
+					} catch (error) {
+						//
+					}
 
-				return false;
+					return false;
+				},
 			},
-		},
+		};
 	};
 }
 </script>

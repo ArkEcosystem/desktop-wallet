@@ -77,20 +77,22 @@ export default class PluginUrlModal extends Vue {
 		this.$emit("close");
 	}
 
-	validations = {
-		form: {
-			url: {
-				required,
-				url,
-				isGitHubUrl(value) {
-					return /^((https?:\/\/)?(www.)?)?github\.com/.test(value.toLowerCase());
-				},
-				isAllowed(value) {
-					const regex = RegExp("^((https?://)?(www.)?)?github.com/([A-Za-z0-9_.-]+)/([A-Za-z0-9_.-]+)[/]?$");
-					return regex.test(value.toLowerCase());
+	validations() {
+		return {
+			form: {
+				url: {
+					required,
+					url,
+					isGitHubUrl(value) {
+						return /^((https?:\/\/)?(www.)?)?github\.com/.test(value.toLowerCase());
+					},
+					isAllowed(value) {
+						const regex = RegExp("^((https?://)?(www.)?)?github.com/([A-Za-z0-9_.-]+)/([A-Za-z0-9_.-]+)[/]?$");
+						return regex.test(value.toLowerCase());
+					},
 				},
 			},
-		},
+		};
 	};
 }
 </script>

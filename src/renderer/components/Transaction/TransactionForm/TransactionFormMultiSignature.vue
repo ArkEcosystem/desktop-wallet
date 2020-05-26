@@ -409,59 +409,61 @@ export default class TransactionFormMultiSignature extends Vue {
 		];
 	}
 
-	validations = {
-		publicKey: {
-			isValid() {
-				if (this.$refs.publicKey) {
-					return !this.$refs.publicKey.$v.$invalid;
-				}
+	validations() {
+		return {
+			publicKey: {
+				isValid() {
+					if (this.$refs.publicKey) {
+						return !this.$refs.publicKey.$v.$invalid;
+					}
 
-				return false;
-			},
-		},
-
-		address: {
-			isValid() {
-				if (this.$refs.address) {
-					return !this.$refs.address.$v.$invalid;
-				}
-
-				return false;
-			},
-		},
-
-		form: {
-			publicKeys: {
-				notEmpty() {
-					return !!this.form.publicKeys.length;
-				},
-
-				aboveMinimum() {
-					return this.form.publicKeys.length > 1;
-				},
-
-				belowMaximum() {
-					return this.form.publicKeys.length < this.maximumPublicKeys;
+					return false;
 				},
 			},
 
-			minKeys: {
-				required,
+			address: {
+				isValid() {
+					if (this.$refs.address) {
+						return !this.$refs.address.$v.$invalid;
+					}
 
-				belowMaximum(value) {
-					return value <= this.form.publicKeys.length;
-				},
-
-				aboveMinimum(value) {
-					return value >= 1;
+					return false;
 				},
 			},
 
-			fee: mixin.validators.fee,
-			passphrase: mixin.validators.passphrase,
-			secondPassphrase: mixin.validators.secondPassphrase,
-			walletPassword: mixin.validators.walletPassword,
-		},
+			form: {
+				publicKeys: {
+					notEmpty() {
+						return !!this.form.publicKeys.length;
+					},
+
+					aboveMinimum() {
+						return this.form.publicKeys.length > 1;
+					},
+
+					belowMaximum() {
+						return this.form.publicKeys.length < this.maximumPublicKeys;
+					},
+				},
+
+				minKeys: {
+					required,
+
+					belowMaximum(value) {
+						return value <= this.form.publicKeys.length;
+					},
+
+					aboveMinimum(value) {
+						return value >= 1;
+					},
+				},
+
+				fee: mixin.validators.fee,
+				passphrase: mixin.validators.passphrase,
+				secondPassphrase: mixin.validators.secondPassphrase,
+				walletPassword: mixin.validators.walletPassword,
+			},
+		};
 	};
 }
 </script>

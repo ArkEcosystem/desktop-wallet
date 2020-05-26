@@ -160,32 +160,34 @@ export default class ContactNew extends Vue {
 		return wallet && !wallet.isContact;
 	}
 
-	validations = {
-		schema: {
-			address: {
-				isValid() {
-					if (this.$refs.addressInput) {
-						return !this.$refs.addressInput.$v.$invalid;
-					}
+	validations() {
+		return {
+			schema: {
+				address: {
+					isValid() {
+						if (this.$refs.addressInput) {
+							return !this.$refs.addressInput.$v.$invalid;
+						}
 
-					return false;
+						return false;
+					},
+					contactDoesNotExist(value) {
+						return value === "" || !this.contactExists("byAddress", value);
+					},
+					walletDoesNotExist(value) {
+						return value === "" || !this.walletExists("byAddress", value);
+					},
 				},
-				contactDoesNotExist(value) {
-					return value === "" || !this.contactExists("byAddress", value);
-				},
-				walletDoesNotExist(value) {
-					return value === "" || !this.walletExists("byAddress", value);
+				name: {
+					contactDoesNotExist(value) {
+						return value === "" || !this.contactExists("byName", value);
+					},
+					walletDoesNotExist(value) {
+						return value === "" || !this.walletExists("byName", value);
+					},
 				},
 			},
-			name: {
-				contactDoesNotExist(value) {
-					return value === "" || !this.contactExists("byName", value);
-				},
-				walletDoesNotExist(value) {
-					return value === "" || !this.walletExists("byName", value);
-				},
-			},
-		},
+		};
 	};
 }
 </script>

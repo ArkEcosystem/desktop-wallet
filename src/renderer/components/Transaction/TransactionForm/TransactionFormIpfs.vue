@@ -148,19 +148,21 @@ export default class TransactionFormIpfs extends Vue {
 		this.$error(this.$t("TRANSACTION.ERROR.VALIDATION.IPFS"));
 	}
 
-	validations = {
-		form: {
-			fee: mixin.validators.fee,
-			passphrase: mixin.validators.passphrase,
-			walletPassword: mixin.validators.walletPassword,
-			secondPassphrase: mixin.validators.secondPassphrase,
+	validations() {
+		return {
+			form: {
+				fee: mixin.validators.fee,
+				passphrase: mixin.validators.passphrase,
+				walletPassword: mixin.validators.walletPassword,
+				secondPassphrase: mixin.validators.secondPassphrase,
 
-			hash: {
-				isValid(value) {
-					return value.startsWith("Qm") && value.length >= 2 && value.length <= 90;
+				hash: {
+					isValid(value) {
+						return value.startsWith("Qm") && value.length >= 2 && value.length <= 90;
+					},
 				},
 			},
-		},
+		};
 	};
 }
 </script>
