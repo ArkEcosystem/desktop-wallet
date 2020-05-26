@@ -79,6 +79,7 @@
 </template>
 
 <script>
+import { Vue, Component } from "vue-property-decorator";
 import { TRANSACTION_TYPES } from "@config";
 
 import { ButtonDropdown, ButtonModal } from "@/components/Button";
@@ -87,10 +88,10 @@ import { TransactionModal } from "@/components/Transaction";
 import { WalletRemovalConfirmation, WalletRenameModal } from "@/components/Wallet";
 import WalletService from "@/services/wallet";
 
-export default {
-	name: "WalletHeadingSecondaryActions",
+@Component({
+    name: "WalletHeadingSecondaryActions",
 
-	components: {
+    components: {
 		ButtonDropdown,
 		ButtonModal,
 		ContactRenameModal,
@@ -99,129 +100,124 @@ export default {
 		TransactionModal,
 	},
 
-	data: () => ({
-		registrationTypes: [],
-		isContact: false,
-	}),
-
-	computed: {
-		buttonStyle() {
-			return "option-heading-button whitespace-no-wrap mr-2 px-3 py-2";
-		},
-
-		currentNetwork() {
-			return this.$store.getters["session/network"];
-		},
-
-		currentWallet() {
-			return this.wallet_fromRoute;
-		},
-	},
-
-	watch: {
+    watch: {
 		currentWallet(wallet) {
 			this.isContact = wallet.isContact;
 		},
-	},
+	}
+})
+export default class WalletHeadingSecondaryActions extends Vue {
+    registrationTypes = [];
+    isContact = false;
 
-	async mounted() {
+    get buttonStyle() {
+        return "option-heading-button whitespace-no-wrap mr-2 px-3 py-2";
+    }
+
+    get currentNetwork() {
+        return this.$store.getters["session/network"];
+    }
+
+    get currentWallet() {
+        return this.wallet_fromRoute;
+    }
+
+    mounted() {
 		this.registrationTypes = await this.getRegistrationTypes();
 		this.isContact = this.currentWallet.isContact;
-	},
+	}
 
-	methods: {
-		async onRemoval() {
-			if (this.isContact) {
-				this.$router.push({ name: "contacts" });
-			} else {
-				this.$router.push({ name: "wallets" });
-			}
-		},
+    onRemoval() {
+        if (this.isContact) {
+            this.$router.push({ name: "contacts" });
+        } else {
+            this.$router.push({ name: "wallets" });
+        }
+    }
 
-		closeTransactionModal(toggleMethod, isOpen) {
-			if (isOpen) {
-				toggleMethod();
-			}
-		},
+    closeTransactionModal(toggleMethod, isOpen) {
+        if (isOpen) {
+            toggleMethod();
+        }
+    }
 
-		async getRegistrationTypes() {
-			const types = [];
+    getRegistrationTypes() {
+        const types = [];
 
-			if (this.currentWallet.isContact) {
-				return [];
-			}
+        if (this.currentWallet.isContact) {
+            return [];
+        }
 
-			if (!this.currentWallet.isLedger && !this.currentWallet.multiSignature) {
-				if (!this.currentWallet.secondPublicKey) {
-					types.push({
-						label: this.$t("WALLET_HEADING.ACTIONS.SECOND_PASSPHRASE"),
-						type: TRANSACTION_TYPES.GROUP_1.SECOND_SIGNATURE,
-					});
-				}
+        if (!this.currentWallet.isLedger && !this.currentWallet.multiSignature) {
+            if (!this.currentWallet.secondPublicKey) {
+                types.push({
+                    label: this.$t("WALLET_HEADING.ACTIONS.SECOND_PASSPHRASE"),
+                    type: TRANSACTION_TYPES.GROUP_1.SECOND_SIGNATURE,
+                });
+            }
 
-				if (!this.currentWallet.isDelegate) {
-					types.push({
-						label: this.$t("WALLET_HEADING.ACTIONS.REGISTER_DELEGATE"),
-						type: TRANSACTION_TYPES.GROUP_1.DELEGATE_REGISTRATION,
-					});
-				}
-			}
+            if (!this.currentWallet.isDelegate) {
+                types.push({
+                    label: this.$t("WALLET_HEADING.ACTIONS.REGISTER_DELEGATE"),
+                    type: TRANSACTION_TYPES.GROUP_1.DELEGATE_REGISTRATION,
+                });
+            }
+        }
 
-			// TODO: Remove ledger check when ledger app supports multisig, business & bridgechain transactions
-			if (this.currentWallet.isLedger || !this.currentNetwork.constants || !this.currentNetwork.constants.aip11) {
-				return types;
-			}
+        // TODO: Remove ledger check when ledger app supports multisig, business & bridgechain transactions
+        if (this.currentWallet.isLedger || !this.currentNetwork.constants || !this.currentNetwork.constants.aip11) {
+            return types;
+        }
 
-			if (!this.currentWallet.multiSignature) {
-				types.push({
-					label: this.$t("WALLET_HEADING.ACTIONS.REGISTER_MULTISIGNATURE"),
-					type: TRANSACTION_TYPES.GROUP_1.MULTI_SIGNATURE,
-				});
-			}
+        if (!this.currentWallet.multiSignature) {
+            types.push({
+                label: this.$t("WALLET_HEADING.ACTIONS.REGISTER_MULTISIGNATURE"),
+                type: TRANSACTION_TYPES.GROUP_1.MULTI_SIGNATURE,
+            });
+        }
 
-			if (!this.currentWallet.isLedger && WalletService.canResignDelegate(this.currentWallet)) {
-				types.push({
-					label: this.$t("WALLET_HEADING.ACTIONS.RESIGN_DELEGATE"),
-					type: TRANSACTION_TYPES.GROUP_1.DELEGATE_RESIGNATION,
-				});
-			}
+        if (!this.currentWallet.isLedger && WalletService.canResignDelegate(this.currentWallet)) {
+            types.push({
+                label: this.$t("WALLET_HEADING.ACTIONS.RESIGN_DELEGATE"),
+                type: TRANSACTION_TYPES.GROUP_1.DELEGATE_RESIGNATION,
+            });
+        }
 
-			if (!WalletService.isBusiness(this.currentWallet)) {
-				types.push({
-					label: this.$t("WALLET_HEADING.ACTIONS.BUSINESS.REGISTER"),
-					group: 2,
-					type: TRANSACTION_TYPES.GROUP_2.BUSINESS_REGISTRATION,
-				});
-			} else if (WalletService.isBusiness(this.currentWallet, false)) {
-				types.push({
-					label: this.$t("WALLET_HEADING.ACTIONS.BUSINESS.UPDATE"),
-					group: 2,
-					type: TRANSACTION_TYPES.GROUP_2.BUSINESS_UPDATE,
-				});
-			}
+        if (!WalletService.isBusiness(this.currentWallet)) {
+            types.push({
+                label: this.$t("WALLET_HEADING.ACTIONS.BUSINESS.REGISTER"),
+                group: 2,
+                type: TRANSACTION_TYPES.GROUP_2.BUSINESS_REGISTRATION,
+            });
+        } else if (WalletService.isBusiness(this.currentWallet, false)) {
+            types.push({
+                label: this.$t("WALLET_HEADING.ACTIONS.BUSINESS.UPDATE"),
+                group: 2,
+                type: TRANSACTION_TYPES.GROUP_2.BUSINESS_UPDATE,
+            });
+        }
 
-			if (WalletService.canResignBusiness(this.currentWallet)) {
-				const businessResignOption = {
-					label: this.$t("WALLET_HEADING.ACTIONS.BUSINESS.RESIGN"),
-					group: 2,
-					type: TRANSACTION_TYPES.GROUP_2.BUSINESS_RESIGNATION,
-				};
+        if (WalletService.canResignBusiness(this.currentWallet)) {
+            const businessResignOption = {
+                label: this.$t("WALLET_HEADING.ACTIONS.BUSINESS.RESIGN"),
+                group: 2,
+                type: TRANSACTION_TYPES.GROUP_2.BUSINESS_RESIGNATION,
+            };
 
-				if (await WalletService.hasBridgechains(this.currentWallet, this)) {
-					businessResignOption.disabled = true;
-					businessResignOption.tooltip = {
-						content: this.$root.$t("WALLET_HEADING.ACTIONS.BUSINESS.CANNOT_RESIGN"),
-						placement: "left",
-					};
-				}
+            if (await WalletService.hasBridgechains(this.currentWallet, this)) {
+                businessResignOption.disabled = true;
+                businessResignOption.tooltip = {
+                    content: this.$root.$t("WALLET_HEADING.ACTIONS.BUSINESS.CANNOT_RESIGN"),
+                    placement: "left",
+                };
+            }
 
-				types.push(businessResignOption);
-			}
+            types.push(businessResignOption);
+        }
 
-			return types;
-		},
-	},
-};
+        return types;
+    }
+}
 </script>
 
 <style scoped>

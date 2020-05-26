@@ -74,129 +74,125 @@
 </template>
 
 <script>
+import { Vue, Component, Prop } from "vue-property-decorator";
 import { InputText, InputToggle } from "@/components/Input";
 import { ModalWindow } from "@/components/Modal";
 import WalletService from "@/services/wallet";
 
 import { WalletVerifyDetail } from "./";
 
-export default {
-	name: "WalletVerifyModal",
+@Component({
+    name: "WalletVerifyModal",
 
-	components: {
+    components: {
 		InputText,
 		InputToggle,
 		ModalWindow,
 		WalletVerifyDetail,
-	},
+	}
+})
+export default class WalletVerifyModal extends Vue {
+    @Prop({
+        type: Object,
+        required: true,
+    })
+    wallet;
 
-	props: {
-		wallet: {
-			type: Object,
-			required: true,
-		},
-	},
+    form = {
+        message: "",
+        publicKey: "",
+        signature: "",
+        json: "",
+    };
 
-	data: () => ({
-		form: {
-			message: "",
-			publicKey: "",
-			signature: "",
-			json: "",
-		},
-		verifyChoices: ["Verify", "Verify text"],
-		verifyChoice: "Verify",
-		isVerified: false,
-		isNotVerified: false,
-	}),
+    verifyChoices = ["Verify", "Verify text"];
+    verifyChoice = "Verify";
+    isVerified = false;
+    isNotVerified = false;
 
-	computed: {
-		messageError() {
-			if (this.$v.form.message.$error && !this.$v.form.message.isValid) {
-				return this.$t("VALIDATION.REQUIRED", [this.$refs.message.label]);
-			}
-			return null;
-		},
+    get messageError() {
+        if (this.$v.form.message.$error && !this.$v.form.message.isValid) {
+            return this.$t("VALIDATION.REQUIRED", [this.$refs.message.label]);
+        }
+        return null;
+    }
 
-		publicKeyError() {
-			if (this.$v.form.publicKey.$error && !this.$v.form.publicKey.isValid) {
-				return this.$t("VALIDATION.PUBLIC_KEY.INVALID_LENGTH");
-			}
-			return null;
-		},
+    get publicKeyError() {
+        if (this.$v.form.publicKey.$error && !this.$v.form.publicKey.isValid) {
+            return this.$t("VALIDATION.PUBLIC_KEY.INVALID_LENGTH");
+        }
+        return null;
+    }
 
-		signatureError() {
-			if (this.$v.form.signature.$error && !this.$v.form.signature.isValid) {
-				return this.$t("VALIDATION.REQUIRED", [this.$refs.signature.label]);
-			}
-			return null;
-		},
+    get signatureError() {
+        if (this.$v.form.signature.$error && !this.$v.form.signature.isValid) {
+            return this.$t("VALIDATION.REQUIRED", [this.$refs.signature.label]);
+        }
+        return null;
+    }
 
-		jsonError() {
-			if (this.$v.form.json.$error) {
-				if (!this.$v.form.json.isNotEmpty) {
-					return this.$t("VALIDATION.REQUIRED", [this.$refs.json.label]);
-				} else if (!this.$v.form.json.isValid) {
-					return this.$t("VALIDATION.INVALID_FORMAT");
-				}
-			}
-			return null;
-		},
-	},
+    get jsonError() {
+        if (this.$v.form.json.$error) {
+            if (!this.$v.form.json.isNotEmpty) {
+                return this.$t("VALIDATION.REQUIRED", [this.$refs.json.label]);
+            } else if (!this.$v.form.json.isValid) {
+                return this.$t("VALIDATION.INVALID_FORMAT");
+            }
+        }
+        return null;
+    }
 
-	mounted() {
+    mounted() {
 		this.form.publicKey = this.wallet.publicKey;
-	},
+	}
 
-	methods: {
-		verifyMessage() {
-			try {
-				let verified;
-				if (this.verifyChoice === "Verify") {
-					verified = WalletService.verifyMessage(this.form.message, this.form.publicKey, this.form.signature);
-				} else {
-					const json = JSON.parse(this.form.json);
-					verified = WalletService.verifyMessage(json.message, json.publicKey, json.signature);
-				}
+    verifyMessage() {
+        try {
+            let verified;
+            if (this.verifyChoice === "Verify") {
+                verified = WalletService.verifyMessage(this.form.message, this.form.publicKey, this.form.signature);
+            } else {
+                const json = JSON.parse(this.form.json);
+                verified = WalletService.verifyMessage(json.message, json.publicKey, json.signature);
+            }
 
-				if (verified) {
-					this.isVerified = true;
-				} else {
-					this.isNotVerified = true;
-				}
-			} catch (error) {
-				this.$error(this.$t("SIGN_VERIFY.FAILED_VERIFY"));
-			}
-		},
+            if (verified) {
+                this.isVerified = true;
+            } else {
+                this.isNotVerified = true;
+            }
+        } catch (error) {
+            this.$error(this.$t("SIGN_VERIFY.FAILED_VERIFY"));
+        }
+    }
 
-		getAddress() {
-			if (this.verifyChoice === "Verify") {
-				return WalletService.getAddressFromPublicKey(this.form.publicKey, this.session_network.version);
-			}
-			return WalletService.getAddressFromPublicKey(
-				JSON.parse(this.form.json).publicKey,
-				this.session_network.version,
-			);
-		},
+    getAddress() {
+        if (this.verifyChoice === "Verify") {
+            return WalletService.getAddressFromPublicKey(this.form.publicKey, this.session_network.version);
+        }
+        return WalletService.getAddressFromPublicKey(
+            JSON.parse(this.form.json).publicKey,
+            this.session_network.version,
+        );
+    }
 
-		onChoiceSelect(choice) {
-			this.verifyChoice = choice;
-		},
+    onChoiceSelect(choice) {
+        this.verifyChoice = choice;
+    }
 
-		emitCancel() {
-			this.$emit("cancel");
-		},
+    emitCancel() {
+        this.$emit("cancel");
+    }
 
-		emitNotVerified() {
-			this.$emit("notVerified");
-		},
+    emitNotVerified() {
+        this.$emit("notVerified");
+    }
 
-		emitVerified() {
-			this.$emit("verified");
-		},
-	},
+    emitVerified() {
+        this.$emit("verified");
+    }
 
-	validations: {
+    validations = {
 		form: {
 			message: {
 				isValid(value) {
@@ -244,6 +240,6 @@ export default {
 				},
 			},
 		},
-	},
-};
+	};
+}
 </script>

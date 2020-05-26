@@ -17,28 +17,27 @@
 </template>
 
 <script>
+import { Vue, Component, Prop } from "vue-property-decorator";
 import SvgIcon from "@/components/SvgIcon";
 
-export default {
-	name: "WalletButtonImport",
+@Component({
+    name: "WalletButtonImport",
 
-	components: {
+    components: {
 		SvgIcon,
-	},
+	}
+})
+export default class WalletButtonImport extends Vue {
+    @Prop({
+        type: Boolean,
+        default: false,
+    })
+    forceText;
 
-	props: {
-		forceText: {
-			type: Boolean,
-			default: false,
-		},
-	},
-
-	computed: {
-		hideText() {
-			return !this.forceText && this.$store.getters["session/hideWalletButtonText"];
-		},
-	},
-};
+    get hideText() {
+        return !this.forceText && this.$store.getters["session/hideWalletButtonText"];
+    }
+}
 </script>
 
 <style lang="postcss" scoped>

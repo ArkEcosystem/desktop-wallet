@@ -23,39 +23,38 @@
 </template>
 
 <script>
+import { Vue, Component } from "vue-property-decorator";
 import { InputDelegate } from "@/components/Input";
 import { ModalWindow } from "@/components/Modal";
 
-export default {
-	name: "ModalSelectDelegate",
+@Component({
+    name: "ModalSelectDelegate",
 
-	components: {
+    components: {
 		InputDelegate,
 		ModalWindow,
-	},
+	}
+})
+export default class ModalSelectDelegate extends Vue {
+    form = {
+        delegate: "",
+    };
 
-	data: () => ({
-		form: {
-			delegate: "",
-		},
-		isValid: false,
-	}),
+    isValid = false;
 
-	methods: {
-		emitCancel() {
-			this.$emit("cancel");
-		},
+    emitCancel() {
+        this.$emit("cancel");
+    }
 
-		emitConfirm() {
-			this.$emit("confirm", this.$v.form.delegate.$model);
-		},
+    emitConfirm() {
+        this.$emit("confirm", this.$v.form.delegate.$model);
+    }
 
-		onValid(value) {
-			this.isValid = value;
-		},
-	},
+    onValid(value) {
+        this.isValid = value;
+    }
 
-	validations: {
+    validations = {
 		form: {
 			delegate: {
 				isValid() {
@@ -63,8 +62,8 @@ export default {
 				},
 			},
 		},
-	},
-};
+	};
+}
 </script>
 
 <style lang="postcss">

@@ -27,27 +27,27 @@
 </template>
 
 <script>
+import { Vue, Component } from "vue-property-decorator";
 import { ButtonModal } from "@/components/Button";
 import { TransactionModal } from "@/components/Transaction";
 import WalletTransactions from "@/components/Wallet/WalletTransactions";
 
-export default {
-	name: "WalletIpfs",
+@Component({
+    name: "WalletIpfs",
 
-	components: {
+    components: {
 		ButtonModal,
 		TransactionModal,
 		WalletTransactions,
-	},
-
-	methods: {
-		closeTransactionModal(toggleMethod, isOpen) {
-			if (isOpen && typeof toggleMethod === "function") {
-				toggleMethod();
-			}
-		},
-	},
-};
+	}
+})
+export default class WalletIpfs extends Vue {
+    closeTransactionModal(toggleMethod, isOpen) {
+        if (isOpen && typeof toggleMethod === "function") {
+            toggleMethod();
+        }
+    }
+}
 </script>
 
 <style>

@@ -31,6 +31,7 @@
 </template>
 
 <script>
+import { Vue, Component } from "vue-property-decorator";
 import { TRANSACTION_GROUPS, TRANSACTION_TYPES } from "@config";
 
 import { ButtonModal } from "@/components/Button";
@@ -38,30 +39,25 @@ import { TransactionModal } from "@/components/Transaction";
 
 import WalletBusinessBridgechains from "./WalletBusinessBridgechains";
 
-export default {
-	name: "WalletBusiness",
+@Component({
+    name: "WalletBusiness",
 
-	components: {
+    components: {
 		ButtonModal,
 		TransactionModal,
 		WalletBusinessBridgechains,
-	},
+	}
+})
+export default class WalletBusiness extends Vue {
+    bridgechainRegistration = {
+        type: TRANSACTION_TYPES.GROUP_2.BRIDGECHAIN_REGISTRATION,
+        group: TRANSACTION_GROUPS.MAGISTRATE,
+    };
 
-	data() {
-		return {
-			bridgechainRegistration: {
-				type: TRANSACTION_TYPES.GROUP_2.BRIDGECHAIN_REGISTRATION,
-				group: TRANSACTION_GROUPS.MAGISTRATE,
-			},
-		};
-	},
-
-	methods: {
-		closeTransactionModal(toggleMethod, isOpen) {
-			if (isOpen) {
-				toggleMethod();
-			}
-		},
-	},
-};
+    closeTransactionModal(toggleMethod, isOpen) {
+        if (isOpen) {
+            toggleMethod();
+        }
+    }
+}
 </script>

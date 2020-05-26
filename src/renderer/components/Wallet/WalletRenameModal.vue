@@ -13,34 +13,33 @@
 </template>
 
 <script>
+import { Vue, Component, Prop } from "vue-property-decorator";
 import ModalRename from "@/components/Modal/ModalRename";
 
-export default {
-	name: "WalletRenameModal",
+@Component({
+    name: "WalletRenameModal",
 
-	components: {
+    components: {
 		ModalRename,
-	},
+	}
+})
+export default class WalletRenameModal extends Vue {
+    @Prop({
+        type: Object,
+        required: true,
+    })
+    wallet;
 
-	props: {
-		wallet: {
-			type: Object,
-			required: true,
-		},
-	},
+    emitCancel() {
+        this.$emit("cancel");
+    }
 
-	methods: {
-		emitCancel() {
-			this.$emit("cancel");
-		},
+    emitRenamed() {
+        this.$emit("renamed");
+    }
 
-		emitRenamed() {
-			this.$emit("renamed");
-		},
-
-		emitCreated() {
-			this.$emit("created");
-		},
-	},
-};
+    emitCreated() {
+        this.$emit("created");
+    }
+}
 </script>

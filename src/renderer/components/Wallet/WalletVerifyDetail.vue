@@ -18,26 +18,29 @@
 </template>
 
 <script>
+import { Vue, Component, Prop } from "vue-property-decorator";
 import { WalletIdenticon } from "./";
 
-export default {
-	name: "WalletVerifyDetail",
+@Component({
+    name: "WalletVerifyDetail",
 
-	components: {
+    components: {
 		WalletIdenticon,
-	},
+	}
+})
+export default class WalletVerifyDetail extends Vue {
+    @Prop({
+        type: String,
+        required: true,
+    })
+    address;
 
-	props: {
-		address: {
-			type: String,
-			required: true,
-		},
-		isVerified: {
-			type: Boolean,
-			required: true,
-		},
-	},
-};
+    @Prop({
+        type: Boolean,
+        required: true,
+    })
+    isVerified;
+}
 </script>
 
 <style>

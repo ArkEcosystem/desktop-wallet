@@ -26,77 +26,11 @@
 </template>
 
 <script>
+import { Vue, Component, Prop } from "vue-property-decorator";
 import { StoreBinding } from "@/enums";
 
-export default {
-	props: {
-		transactionType: {
-			type: Number,
-			required: false,
-			default: null,
-		},
-	},
-
-	data: () => ({
-		currentPage: 1,
-		isFetching: false,
-		isLoading: false,
-		fetchedTransactions: [],
-		expiryEvents: [],
-		totalCount: 0,
-		newTransactionsNotice: null,
-		lastStatusRefresh: null,
-		queryParams: {
-			page: 1,
-			limit: 10,
-			sort: {
-				field: "timestamp",
-				type: "desc",
-			},
-		},
-	}),
-
-	computed: {
-		isRemote() {
-			if (this.$options.isRemote !== undefined) {
-				return this.$options.isRemote;
-			}
-
-			return true;
-		},
-
-		hasPagination() {
-			if (this.$options.hasPagination !== undefined) {
-				return this.$options.hasPagination;
-			}
-
-			return this.totalCount > 0;
-		},
-
-		sortQuery() {
-			return {
-				field: this.queryParams.sort.field,
-				type: this.queryParams.sort.type,
-			};
-		},
-
-		transactionTableRowCount: {
-			get() {
-				return this.$store.getters["session/transactionTableRowCount"];
-			},
-
-			set(count) {
-				this.$store.dispatch(StoreBinding.SessionSetTransactionTableRowCount, count);
-
-				this.$store.dispatch(StoreBinding.ProfileUpdate, {
-					...this.session_profile,
-					transactionTableRowCount: count,
-				});
-			},
-		},
-	},
-
-	watch: {
+@Component({
+    watch: {
 		// This watcher would invoke the `fetch` after the `Synchronizer`
 		wallet_fromRoute(newWallet, oldWallet) {
 			const currentTimestamp = Math.round(new Date().getTime() / 1000);
@@ -116,38 +50,87 @@ export default {
 				this.refreshStatus();
 			}
 		},
-	},
+	}
+})
+export default class AnonymousComponent extends Vue {
+    @Prop({
+        type: Number,
+        required: false,
+        default: null,
+    })
+    transactionType;
 
-	methods: {
-		/**
-		 * Fetch the transactions and show the loading animation while the response
-		 * is received
-		 */
-		async loadTransactions() {
-			if (!this.wallet_fromRoute || this.isFetching) {
-				return;
-			}
+    currentPage = 1;
+    isFetching = false;
+    isLoading = false;
+    fetchedTransactions = [];
+    expiryEvents = [];
+    totalCount = 0;
+    newTransactionsNotice = null;
+    lastStatusRefresh = null;
 
-			this.newTransactionsNotice = null;
-			this.isLoading = true;
-			this.fetchTransactions();
-		},
+    queryParams = {
+        page: 1,
+        limit: 10,
+        sort: {
+            field: "timestamp",
+            type: "desc",
+        },
+    };
 
-		onPerPageChange() {
-			// Placeholders if not used
-		},
+    get isRemote() {
+        if (this.$options.isRemote !== undefined) {
+            return this.$options.isRemote;
+        }
 
-		onPageChange() {
-			// Placeholders if not used
-		},
+        return true;
+    }
 
-		__updateParams(newProps) {
-			if (!newProps || typeof newProps !== "object" || newProps === null) {
-				return;
-			}
+    get hasPagination() {
+        if (this.$options.hasPagination !== undefined) {
+            return this.$options.hasPagination;
+        }
 
-			this.queryParams = Object.assign({}, this.queryParams, newProps);
-		},
-	},
-};
+        return this.totalCount > 0;
+    }
+
+    get sortQuery() {
+        return {
+            field: this.queryParams.sort.field,
+            type: this.queryParams.sort.type,
+        };
+    }
+
+    get TODO_transactionTableRowCount() {}
+
+    //*
+             * Fetch the transactions and show the loading animation while the response
+             * is received
+             
+    loadTransactions() {
+        if (!this.wallet_fromRoute || this.isFetching) {
+            return;
+        }
+
+        this.newTransactionsNotice = null;
+        this.isLoading = true;
+        this.fetchTransactions();
+    }
+
+    onPerPageChange() {
+        // Placeholders if not used
+    }
+
+    onPageChange() {
+        // Placeholders if not used
+    }
+
+    __updateParams(newProps) {
+        if (!newProps || typeof newProps !== "object" || newProps === null) {
+            return;
+        }
+
+        this.queryParams = Object.assign({}, this.queryParams, newProps);
+    }
+}
 </script>

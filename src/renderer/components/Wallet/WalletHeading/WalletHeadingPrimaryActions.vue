@@ -72,6 +72,7 @@
 </template>
 
 <script>
+import { Vue, Component } from "vue-property-decorator";
 import { ButtonModal, ButtonReload } from "@/components/Button";
 import { ContactRenameModal } from "@/components/Contact";
 import { ModalQrCode } from "@/components/Modal";
@@ -79,58 +80,52 @@ import SvgIcon from "@/components/SvgIcon";
 import { TransactionModal } from "@/components/Transaction";
 import { AppEvent } from "@/enums";
 
-export default {
-	name: "WalletHeadingPrimaryActions",
+@Component({
+    name: "WalletHeadingPrimaryActions",
+    inject: ["switchToTab", "walletVote"],
 
-	inject: ["switchToTab", "walletVote"],
-
-	components: {
+    components: {
 		ButtonModal,
 		ButtonReload,
 		ModalQrCode,
 		TransactionModal,
 		ContactRenameModal,
 		SvgIcon,
-	},
+	}
+})
+export default class WalletHeadingPrimaryActions extends Vue {
+    isRefreshing = false;
 
-	data: () => ({
-		isRefreshing: false,
-	}),
+    get buttonStyle() {
+        return "option-heading-button mr-2 px-3 py-2";
+    }
 
-	computed: {
-		buttonStyle() {
-			return "option-heading-button mr-2 px-3 py-2";
-		},
+    get currentWallet() {
+        return this.wallet_fromRoute;
+    }
 
-		currentWallet() {
-			return this.wallet_fromRoute;
-		},
+    get doesNotExist() {
+        return !this.$store.getters["wallet/byAddress"](this.currentWallet.address);
+    }
 
-		doesNotExist() {
-			return !this.$store.getters["wallet/byAddress"](this.currentWallet.address);
-		},
+    get isVoting() {
+        return !!this.walletVote.username;
+    }
 
-		isVoting() {
-			return !!this.walletVote.username;
-		},
-	},
+    goToDelegates() {
+        this.switchToTab("WalletDelegates");
+    }
 
-	methods: {
-		goToDelegates() {
-			this.switchToTab("WalletDelegates");
-		},
+    refreshWallet() {
+        this.isRefreshing = true;
+        await this.$eventBus.emit(AppEvent.WalletReload);
+        this.isRefreshing = false;
+    }
 
-		async refreshWallet() {
-			this.isRefreshing = true;
-			await this.$eventBus.emit(AppEvent.WalletReload);
-			this.isRefreshing = false;
-		},
-
-		closeTransactionModal(toggleMethod, isOpen) {
-			if (isOpen) {
-				toggleMethod();
-			}
-		},
-	},
-};
+    closeTransactionModal(toggleMethod, isOpen) {
+        if (isOpen) {
+            toggleMethod();
+        }
+    }
+}
 </script>

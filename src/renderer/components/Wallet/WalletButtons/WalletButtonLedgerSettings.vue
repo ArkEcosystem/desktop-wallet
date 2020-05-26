@@ -23,47 +23,41 @@
 </template>
 
 <script>
+import { Vue, Component } from "vue-property-decorator";
 import SvgIcon from "@/components/SvgIcon";
 import WalletHeadingMenuLedger from "@/components/Wallet/WalletHeading/WalletHeadingMenuLedger";
 
-export default {
-	name: "WalletButtonLedgerSettings",
+@Component({
+    name: "WalletButtonLedgerSettings",
 
-	components: {
+    components: {
 		SvgIcon,
 		WalletHeadingMenuLedger,
-	},
+	}
+})
+export default class WalletButtonLedgerSettings extends Vue {
+    isLedgerSettingsVisible = false;
 
-	data() {
-		return {
-			isLedgerSettingsVisible: false,
-		};
-	},
+    get isLedgerConnected() {
+        return this.$store.getters["ledger/isConnected"];
+    }
 
-	computed: {
-		isLedgerConnected() {
-			return this.$store.getters["ledger/isConnected"];
-		},
+    get hideText() {
+        return this.$store.getters["session/hideWalletButtonText"];
+    }
 
-		hideText() {
-			return this.$store.getters["session/hideWalletButtonText"];
-		},
+    get showTooltip() {
+        return this.hideText && !this.isLedgerSettingsVisible;
+    }
 
-		showTooltip() {
-			return this.hideText && !this.isLedgerSettingsVisible;
-		},
-	},
+    toggleShowLedgerSettings() {
+        this.isLedgerSettingsVisible = !this.isLedgerSettingsVisible;
+    }
 
-	methods: {
-		toggleShowLedgerSettings() {
-			this.isLedgerSettingsVisible = !this.isLedgerSettingsVisible;
-		},
-
-		closeShowLedgerSettings() {
-			this.isLedgerSettingsVisible = false;
-		},
-	},
-};
+    closeShowLedgerSettings() {
+        this.isLedgerSettingsVisible = false;
+    }
+}
 </script>
 
 <style lang="postcss" scoped>

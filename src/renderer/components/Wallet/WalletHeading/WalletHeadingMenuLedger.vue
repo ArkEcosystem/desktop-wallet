@@ -36,90 +36,67 @@
 </template>
 
 <script>
+import { Vue, Component, Prop } from "vue-property-decorator";
 import { ButtonSwitch } from "@/components/Button";
 import { MenuOptions, MenuOptionsItem } from "@/components/Menu";
 import ModalAdditionalLedgers from "@/components/Modal/ModalAdditionalLedgers";
 import { StoreBinding } from "@/enums";
 
-export default {
-	name: "AppSidemenuOptionsSettings",
+@Component({
+    name: "AppSidemenuOptionsSettings",
 
-	components: {
+    components: {
 		MenuOptions,
 		MenuOptionsItem,
 		ModalAdditionalLedgers,
 		ButtonSwitch,
-	},
+	}
+})
+export default class AppSidemenuOptionsSettings extends Vue {
+    @Prop({
+        type: Boolean,
+        required: false,
+        default: false,
+    })
+    outsideClick;
 
-	props: {
-		outsideClick: {
-			type: Boolean,
-			required: false,
-			default: false,
-		},
-		isHorizontal: {
-			type: Boolean,
-			required: false,
-			default: false,
-		},
-	},
+    @Prop({
+        type: Boolean,
+        required: false,
+        default: false,
+    })
+    isHorizontal;
 
-	data() {
-		return {
-			isAdditionalLedgersModalOpen: false,
-		};
-	},
+    isAdditionalLedgersModalOpen = false;
 
-	computed: {
-		hideText() {
-			return this.$store.getters["session/hideWalletButtonText"];
-		},
+    get hideText() {
+        return this.$store.getters["session/hideWalletButtonText"];
+    }
 
-		sessionLedgerCache: {
-			get() {
-				return this.$store.getters["session/ledgerCache"];
-			},
-			set(enabled) {
-				this.$store.dispatch(StoreBinding.SessionSetLedgerCache, enabled);
+    get TODO_sessionLedgerCache() {}
 
-				this.$store.dispatch(StoreBinding.ProfileUpdate, {
-					...this.session_profile,
-					ledgerCache: enabled,
-				});
+    setLedgerCache(enabled) {
+        this.sessionLedgerCache = enabled;
+    }
 
-				if (enabled) {
-					this.$store.dispatch(StoreBinding.LedgerCacheWallets);
-				} else {
-					this.$store.dispatch(StoreBinding.LedgerClearWalletCache);
-				}
-			},
-		},
-	},
+    toggleSelect(name) {
+        this.$refs[name].toggle();
+    }
 
-	methods: {
-		setLedgerCache(enabled) {
-			this.sessionLedgerCache = enabled;
-		},
+    toggleAdditionalLedgersModal(closeMenu) {
+        this.isAdditionalLedgersModalOpen = !this.isAdditionalLedgersModalOpen;
 
-		toggleSelect(name) {
-			this.$refs[name].toggle();
-		},
+        if (closeMenu) {
+            this.$emit("close");
+        }
+    }
 
-		toggleAdditionalLedgersModal(closeMenu) {
-			this.isAdditionalLedgersModalOpen = !this.isAdditionalLedgersModalOpen;
-
-			if (closeMenu) {
-				this.$emit("close");
-			}
-		},
-
-		emitClose() {
-			if (this.outsideClick && !this.isAdditionalLedgersModalOpen) {
-				this.$emit("close");
-			}
-		},
-	},
-};
+    emitClose() {
+        if (this.outsideClick && !this.isAdditionalLedgersModalOpen) {
+            this.$emit("close");
+        }
+    }
+}
 </script>
 
 <style lang="postcss" scoped>

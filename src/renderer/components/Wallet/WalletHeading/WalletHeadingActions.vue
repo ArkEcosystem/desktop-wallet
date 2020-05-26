@@ -14,6 +14,7 @@
 </template>
 
 <script>
+import { Vue, Component } from "vue-property-decorator";
 import { mapGetters } from "vuex";
 
 import SvgIcon from "@/components/SvgIcon";
@@ -21,21 +22,20 @@ import SvgIcon from "@/components/SvgIcon";
 import WalletHeadingPrimaryActions from "./WalletHeadingPrimaryActions";
 import WalletHeadingSecondaryActions from "./WalletHeadingSecondaryActions";
 
-export default {
-	name: "WalletHeadingActions",
+@Component({
+    name: "WalletHeadingActions",
 
-	components: {
+    components: {
 		WalletHeadingPrimaryActions,
 		WalletHeadingSecondaryActions,
 		SvgIcon,
-	},
+	}
+})
+export default class WalletHeadingActions extends Vue {
+    TODO_spread_invalidArgument() {}
 
-	computed: {
-		...mapGetters("wallet", ["secondaryButtonsVisible"]),
-
-		currentWallet() {
-			return this.wallet_fromRoute;
-		},
-	},
-};
+    get currentWallet() {
+        return this.wallet_fromRoute;
+    }
+}
 </script>

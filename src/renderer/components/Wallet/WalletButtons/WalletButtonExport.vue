@@ -18,35 +18,29 @@
 </template>
 
 <script>
+import { Vue, Component } from "vue-property-decorator";
 import ModalExportWallets from "@/components/Modal/ModalExportWallets";
 import SvgIcon from "@/components/SvgIcon";
 
-export default {
-	name: "WalletButtonExport",
+@Component({
+    name: "WalletButtonExport",
 
-	components: {
+    components: {
 		ModalExportWallets,
 		SvgIcon,
-	},
+	}
+})
+export default class WalletButtonExport extends Vue {
+    showModal = false;
 
-	data() {
-		return {
-			showModal: false,
-		};
-	},
+    get hideText() {
+        return this.$store.getters["session/hideWalletButtonText"];
+    }
 
-	computed: {
-		hideText() {
-			return this.$store.getters["session/hideWalletButtonText"];
-		},
-	},
-
-	methods: {
-		toggle() {
-			this.showModal = !this.showModal;
-		},
-	},
-};
+    toggle() {
+        this.showModal = !this.showModal;
+    }
+}
 </script>
 
 <style lang="postcss" scoped>

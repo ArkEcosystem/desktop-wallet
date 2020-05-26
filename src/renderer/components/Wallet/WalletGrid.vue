@@ -105,99 +105,98 @@
 </template>
 
 <script>
+import { Vue, Component, Prop } from "vue-property-decorator";
 import { MenuDropdown } from "@/components/Menu";
 import SvgIcon from "@/components/SvgIcon";
 import Loader from "@/components/utils/Loader";
 
 import WalletIdenticon from "./WalletIdenticon";
 
-export default {
-	name: "WalletGrid",
+@Component({
+    name: "WalletGrid",
 
-	components: {
+    components: {
 		Loader,
 		MenuDropdown,
 		SvgIcon,
 		WalletIdenticon,
-	},
+	}
+})
+export default class WalletGrid extends Vue {
+    @Prop({
+        type: Boolean,
+        required: false,
+        default: false,
+    })
+    isLedgerLoading;
 
-	props: {
-		isLedgerLoading: {
-			type: Boolean,
-			required: false,
-			default: false,
-		},
-		wallets: {
-			type: Array,
-			required: true,
-			default: () => [],
-		},
-	},
+    @Prop({
+        type: Array,
+        required: true,
+        default: () => [],
+    })
+    wallets;
 
-	computed: {
-		isMarketEnabled() {
-			return this.session_network.market.enabled;
-		},
+    get isMarketEnabled() {
+        return this.session_network.market.enabled;
+    }
 
-		alternativeCurrency() {
-			return this.$store.getters["session/currency"];
-		},
+    get alternativeCurrency() {
+        return this.$store.getters["session/currency"];
+    }
 
-		price() {
-			return this.$store.getters["market/lastPrice"];
-		},
-	},
+    get price() {
+        return this.$store.getters["market/lastPrice"];
+    }
 
-	methods: {
-		getAlternativeBalance(balance) {
-			const unitBalance = this.currency_subToUnit(balance);
-			const price = this.price || 0;
-			return this.currency_format(unitBalance * price, { currency: this.alternativeCurrency });
-		},
+    getAlternativeBalance(balance) {
+        const unitBalance = this.currency_subToUnit(balance);
+        const price = this.price || 0;
+        return this.currency_format(unitBalance * price, { currency: this.alternativeCurrency });
+    }
 
-		contextMenuOptions(wallet) {
-			const options = {
-				rename: {
-					value: this.$t("WALLET_TABLE.RENAME"),
-					icon: "edit",
-				},
-			};
+    contextMenuOptions(wallet) {
+        const options = {
+            rename: {
+                value: this.$t("WALLET_TABLE.RENAME"),
+                icon: "edit",
+            },
+        };
 
-			if (!wallet.isLedger) {
-				options.delete = {
-					value: this.$t("WALLET_TABLE.DELETE"),
-					icon: "delete-wallet",
-				};
-			}
+        if (!wallet.isLedger) {
+            options.delete = {
+                value: this.$t("WALLET_TABLE.DELETE"),
+                icon: "delete-wallet",
+            };
+        }
 
-			return options;
-		},
+        return options;
+    }
 
-		toggleDropdown(dropdownId) {
-			this.$refs[dropdownId][0].toggle();
-		},
+    toggleDropdown(dropdownId) {
+        this.$refs[dropdownId][0].toggle();
+    }
 
-		emitShow(wallet) {
-			this.$emit("show", wallet.id);
-		},
+    emitShow(wallet) {
+        this.$emit("show", wallet.id);
+    }
 
-		emitRename(wallet) {
-			this.$emit("rename", wallet);
-		},
+    emitRename(wallet) {
+        this.$emit("rename", wallet);
+    }
 
-		emitRemove(wallet) {
-			this.$emit("remove", wallet);
-		},
+    emitRemove(wallet) {
+        this.$emit("remove", wallet);
+    }
 
-		onSelectDropdown(wallet, item) {
-			if (item === "delete") {
-				this.emitRemove(wallet);
-			} else if (item === "rename") {
-				this.emitRename(wallet);
-			}
-		},
-	},
-};
+    onSelectDropdown(wallet, item) {
+        if (item === "delete") {
+            this.emitRemove(wallet);
+        } else if (item === "rename") {
+            this.emitRename(wallet);
+        }
+    }
+}
 </script>
 
 <style lang="postcss" scoped>

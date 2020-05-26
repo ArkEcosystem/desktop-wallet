@@ -93,124 +93,129 @@
 </template>
 
 <script>
+import { Vue, Component, Prop } from "vue-property-decorator";
 import SvgIcon from "@/components/SvgIcon";
 
-export default {
-	name: "WalletAddress",
+@Component({
+    name: "WalletAddress",
 
-	components: {
+    components: {
 		SvgIcon,
-	},
+	}
+})
+export default class WalletAddress extends Vue {
+    @Prop({
+        type: String,
+        required: false,
+        default: () => "",
+    })
+    address;
 
-	props: {
-		address: {
-			type: String,
-			required: false,
-			default: () => "",
-		},
-		asset: {
-			type: Object,
-			required: false,
-			default: () => {},
-		},
-		type: {
-			type: Number,
-			required: false,
-			default: () => 0,
-		},
-		group: {
-			type: Number,
-			required: false,
-			default: () => 1,
-		},
-		tooltipContainer: {
-			type: String,
-			required: false,
-			default: () => "#app",
-		},
-		addressLength: {
-			type: Number,
-			required: false,
-			default: 10,
-		},
-	},
+    @Prop({
+        type: Object,
+        required: false,
+        default: () => {},
+    })
+    asset;
 
-	data: () => ({
-		showTooltip: false,
-	}),
+    @Prop({
+        type: Number,
+        required: false,
+        default: () => 0,
+    })
+    type;
 
-	computed: {
-		isUnvote() {
-			if (this.asset && this.asset.votes) {
-				const vote = this.asset.votes[0];
-				return vote.charAt(0) === "-";
-			}
-			return false;
-		},
+    @Prop({
+        type: Number,
+        required: false,
+        default: () => 1,
+    })
+    group;
 
-		votePublicKey() {
-			if (this.asset && this.asset.votes) {
-				const vote = this.asset.votes[0];
-				return vote.substr(1);
-			}
-			return "";
-		},
+    @Prop({
+        type: String,
+        required: false,
+        default: () => "#app",
+    })
+    tooltipContainer;
 
-		votedDelegate() {
-			if (this.votePublicKey) {
-				return this.$store.getters["delegate/byPublicKey"](this.votePublicKey);
-			}
+    @Prop({
+        type: Number,
+        required: false,
+        default: 10,
+    })
+    addressLength;
 
-			return null;
-		},
+    showTooltip = false;
 
-		votedDelegateUsername() {
-			return this.votedDelegate ? this.votedDelegate.username : "";
-		},
+    get isUnvote() {
+        if (this.asset && this.asset.votes) {
+            const vote = this.asset.votes[0];
+            return vote.charAt(0) === "-";
+        }
+        return false;
+    }
 
-		votedDelegateAddress() {
-			return this.votedDelegate ? this.votedDelegate.address : "";
-		},
+    get votePublicKey() {
+        if (this.asset && this.asset.votes) {
+            const vote = this.asset.votes[0];
+            return vote.substr(1);
+        }
+        return "";
+    }
 
-		verifiedAddressText() {
-			let verifiedText = "";
-			const knownWallet = this.isKnownWallet();
-			if (knownWallet && knownWallet !== this.wallet_formatAddress(this.address, this.addressLength)) {
-				verifiedText = `${knownWallet} - `;
-			}
+    get votedDelegate() {
+        if (this.votePublicKey) {
+            return this.$store.getters["delegate/byPublicKey"](this.votePublicKey);
+        }
 
-			return verifiedText + this.$t("COMMON.VERIFIED_ADDRESS");
-		},
-	},
+        return null;
+    }
 
-	methods: {
-		isKnownWallet() {
-			return this.session_network.knownWallets[this.address];
-		},
+    get votedDelegateUsername() {
+        return this.votedDelegate ? this.votedDelegate.username : "";
+    }
 
-		onClick() {
-			this.showTooltip = false;
-			this.$emit("click");
-			this.openAddress();
-		},
+    get votedDelegateAddress() {
+        return this.votedDelegate ? this.votedDelegate.address : "";
+    }
 
-		onMouseOver() {
-			this.showTooltip = true;
-		},
+    get verifiedAddressText() {
+        let verifiedText = "";
+        const knownWallet = this.isKnownWallet();
+        if (knownWallet && knownWallet !== this.wallet_formatAddress(this.address, this.addressLength)) {
+            verifiedText = `${knownWallet} - `;
+        }
 
-		onMouseOut() {
-			this.showTooltip = false;
-		},
+        return verifiedText + this.$t("COMMON.VERIFIED_ADDRESS");
+    }
 
-		openAddress() {
-			if (this.votePublicKey) {
-				this.$router.push({ name: "wallet-show", params: { address: this.votedDelegateAddress } });
-			} else {
-				this.$router.push({ name: "wallet-show", params: { address: this.address } });
-			}
-		},
-	},
-};
+    isKnownWallet() {
+        return this.session_network.knownWallets[this.address];
+    }
+
+    onClick() {
+        this.showTooltip = false;
+        this.$emit("click");
+        this.openAddress();
+    }
+
+    onMouseOver() {
+        this.showTooltip = true;
+    }
+
+    onMouseOut() {
+        this.showTooltip = false;
+    }
+
+    openAddress() {
+        if (this.votePublicKey) {
+            this.$router.push({ name: "wallet-show", params: { address: this.votedDelegateAddress } });
+        } else {
+            this.$router.push({ name: "wallet-show", params: { address: this.address } });
+        }
+    }
+}
 </script>
 
 <style lang="postcss" scoped>

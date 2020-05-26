@@ -5,11 +5,10 @@
 </template>
 
 <script>
-export default {
-	name: "WalletStatistics",
-
-	components: {},
-
-	props: {},
-};
+import { Vue, Component } from "vue-property-decorator";
+@Component({
+    name: "WalletStatistics",
+    components: {}
+})
+export default class WalletStatistics extends Vue {}
 </script>

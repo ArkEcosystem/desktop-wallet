@@ -17,53 +17,57 @@
 </template>
 
 <script>
+import { Vue, Component, Prop } from "vue-property-decorator";
 import SvgIcon from "@/components/SvgIcon";
 
-export default {
-	name: "WalletSidebarFiltersInputSearch",
+@Component({
+    name: "WalletSidebarFiltersInputSearch",
 
-	components: {
+    components: {
 		SvgIcon,
 	},
 
-	props: {
-		placeholder: {
-			type: String,
-			required: false,
-			default: "",
-		},
-		value: {
-			type: String,
-			required: true,
-			default: "",
-		},
-	},
-
-	data() {
-		return {
-			inputValue: this.value,
-		};
-	},
-
-	watch: {
+    watch: {
 		value(value) {
 			this.inputValue = value;
 		},
-	},
+	}
+})
+export default class WalletSidebarFiltersInputSearch extends Vue {
+    @Prop({
+        type: String,
+        required: false,
+        default: "",
+    })
+    placeholder;
 
-	methods: {
-		emitInput() {
-			this.$emit("input", this.inputValue);
-		},
+    @Prop({
+        type: String,
+        required: true,
+        default: "",
+    })
+    value;
 
-		updateInput(event) {
-			this.inputValue = event.target.value;
-			this.emitInput();
-		},
+    // vue-convert: This property will initialized in data() method, with `this` reference.
+    inputValue = undefined;
 
-		focus() {
-			this.$refs.input.focus();
-		},
-	},
-};
+    data() {
+		return {
+			inputValue: this.value,
+		};
+	}
+
+    emitInput() {
+        this.$emit("input", this.inputValue);
+    }
+
+    updateInput(event) {
+        this.inputValue = event.target.value;
+        this.emitInput();
+    }
+
+    focus() {
+        this.$refs.input.focus();
+    }
+}
 </script>
