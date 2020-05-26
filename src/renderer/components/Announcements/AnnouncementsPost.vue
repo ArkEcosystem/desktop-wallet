@@ -46,7 +46,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from "vue-property-decorator";
+import { Component, Emit, Prop, Vue } from "vue-property-decorator";
 
 import { SvgIcon } from "@/components/SvgIcon";
 
@@ -72,9 +72,10 @@ export default class AnnouncementsPost extends Vue {
 		return this.formatter_date(this.date, "dddd");
 	}
 
-	private emitRead() {
+	@Emit('read')
+	emitRead() {
 		// @ts-ignore
-		this.$emit("read", this.announcement);
+		return this.announcement;
 	}
 
 	private openInBrowser(url: string) {
