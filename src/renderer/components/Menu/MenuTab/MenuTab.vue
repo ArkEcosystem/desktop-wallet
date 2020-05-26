@@ -31,64 +31,61 @@
 </template>
 
 <script>
+import { Vue, Component, Prop } from "vue-property-decorator";
 import VNodes from "@/components/utils/VNodes";
-export default {
-	name: "MenuTab",
+@Component({
+    name: "MenuTab",
 
-	components: {
+    components: {
 		VNodes,
 	},
 
-	model: {
+    model: {
 		prop: "tab",
 		event: "input",
 	},
 
-	props: {
-		tab: {
-			type: [String, Number],
-			required: false,
-			default: null,
-		},
-	},
-
-	data: (vm) => ({
-		activeTab: vm.tab,
-		items: [],
-	}),
-
-	watch: {
+    watch: {
 		tab() {
 			this.switchToTab(this.tab);
 		},
-	},
+	}
+})
+export default class MenuTab extends Vue {
+    @Prop({
+        type: [String, Number],
+        required: false,
+        default: null,
+    })
+    tab;
 
-	mounted() {
+    activeTab = vm.tab;
+    items = [];
+
+    mounted() {
 		this.collectItems();
 		this.switchToTab(this.activeTab);
-	},
+	}
 
-	methods: {
-		collectItems() {
-			this.items = this.$children.filter((child) => {
-				return child.$options.name === "MenuTabItem";
-			});
-		},
+    collectItems() {
+        this.items = this.$children.filter((child) => {
+            return child.$options.name === "MenuTabItem";
+        });
+    }
 
-		switchToTab(newTab) {
-			this.resetScroll();
-			this.items.forEach((item) => item.toggle(item.tab === newTab));
-			this.activeTab = newTab;
-			this.$emit("input", this.activeTab);
-		},
+    switchToTab(newTab) {
+        this.resetScroll();
+        this.items.forEach((item) => item.toggle(item.tab === newTab));
+        this.activeTab = newTab;
+        this.$emit("input", this.activeTab);
+    }
 
-		resetScroll() {
-			if (this.$el.scrollTop > 0) {
-				this.$el.scrollTo(0, 0);
-			}
-		},
-	},
-};
+    resetScroll() {
+        if (this.$el.scrollTop > 0) {
+            this.$el.scrollTo(0, 0);
+        }
+    }
+}
 </script>
 
 <style lang="postcss" scoped>

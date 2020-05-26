@@ -23,61 +23,64 @@
 </template>
 
 <script>
+import { Vue, Component, Prop } from "vue-property-decorator";
 import SvgIcon from "@/components/SvgIcon";
 
-export default {
-	name: "MenuDropdownHandler",
+@Component({
+    name: "MenuDropdownHandler",
 
-	components: {
+    components: {
 		SvgIcon,
-	},
+	}
+})
+export default class MenuDropdownHandler extends Vue {
+    //*
+             * The value of the selected option
+             
+    @Prop({
+        type: String,
+        required: false,
+        default: null,
+    })
+    value;
 
-	props: {
-		/**
-		 * The value of the selected option
-		 */
-		value: {
-			type: String,
-			required: false,
-			default: null,
-		},
+    //*
+             * The visible text of the selected option
+             
+    @Prop({
+        type: String,
+        required: false,
+        default: null,
+    })
+    item;
 
-		/**
-		 * The visible text of the selected option
-		 */
-		item: {
-			type: String,
-			required: false,
-			default: null,
-		},
+    @Prop({
+        type: String,
+        required: false,
+        default: "Select",
+    })
+    placeholder;
 
-		placeholder: {
-			type: String,
-			required: false,
-			default: "Select",
-		},
+    @Prop({
+        type: Boolean,
+        required: false,
+        default: false,
+    })
+    iconDisabled;
 
-		iconDisabled: {
-			type: Boolean,
-			required: false,
-			default: false,
-		},
+    @Prop({
+        type: String,
+        required: false,
+        default: "",
+    })
+    prefix;
 
-		prefix: {
-			type: String,
-			required: false,
-			default: "",
-		},
-	},
+    emitBlur(event) {
+        this.$emit("blur", event);
+    }
 
-	methods: {
-		emitBlur(event) {
-			this.$emit("blur", event);
-		},
-
-		emitClick() {
-			this.$emit("click");
-		},
-	},
-};
+    emitClick() {
+        this.$emit("click");
+    }
+}
 </script>

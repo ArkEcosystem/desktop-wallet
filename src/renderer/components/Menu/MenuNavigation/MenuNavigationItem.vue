@@ -23,72 +23,80 @@
 </template>
 
 <script>
+import { Vue, Component, Prop } from "vue-property-decorator";
 import SvgIcon from "@/components/SvgIcon";
 
-export default {
-	name: "MenuNavigationItem",
+@Component({
+    name: "MenuNavigationItem",
+    inject: ["switchToItem"],
 
-	inject: ["switchToItem"],
-
-	components: {
+    components: {
 		SvgIcon,
-	},
+	}
+})
+export default class MenuNavigationItem extends Vue {
+    @Prop({
+        type: [String, Number],
+        required: true,
+    })
+    id;
 
-	props: {
-		id: {
-			type: [String, Number],
-			required: true,
-		},
-		icon: {
-			type: String,
-			required: false,
-			default: null,
-		},
-		showBadge: {
-			type: Boolean,
-			required: false,
-			default: false,
-		},
-		viewBox: {
-			type: String,
-			required: false,
-			default: "0 0 23 23",
-		},
-		isDisabled: {
-			type: Boolean,
-			required: false,
-			default: false,
-		},
-		isHorizontal: {
-			type: Boolean,
-			required: false,
-			default: false,
-		},
-		canActivate: {
-			type: Boolean,
-			required: false,
-			default: true,
-		},
-	},
+    @Prop({
+        type: String,
+        required: false,
+        default: null,
+    })
+    icon;
 
-	data: () => ({
-		isActive: false,
-	}),
+    @Prop({
+        type: Boolean,
+        required: false,
+        default: false,
+    })
+    showBadge;
 
-	methods: {
-		onClick() {
-			if (this.canActivate) {
-				this.switchToItem(this.id);
-			}
+    @Prop({
+        type: String,
+        required: false,
+        default: "0 0 23 23",
+    })
+    viewBox;
 
-			this.$emit("click", this.id);
-		},
+    @Prop({
+        type: Boolean,
+        required: false,
+        default: false,
+    })
+    isDisabled;
 
-		toggle(isActive) {
-			this.isActive = isActive;
-		},
-	},
-};
+    @Prop({
+        type: Boolean,
+        required: false,
+        default: false,
+    })
+    isHorizontal;
+
+    @Prop({
+        type: Boolean,
+        required: false,
+        default: true,
+    })
+    canActivate;
+
+    isActive = false;
+
+    onClick() {
+        if (this.canActivate) {
+            this.switchToItem(this.id);
+        }
+
+        this.$emit("click", this.id);
+    }
+
+    toggle(isActive) {
+        this.isActive = isActive;
+    }
+}
 </script>
 
 <style scoped>

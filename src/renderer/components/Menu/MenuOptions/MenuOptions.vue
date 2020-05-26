@@ -7,43 +7,44 @@
 </template>
 
 <script>
-export default {
-	name: "MenuOptions",
+import { Vue, Component, Prop } from "vue-property-decorator";
+@Component({
+    name: "MenuOptions"
+})
+export default class MenuOptions extends Vue {
+    @Prop({
+        type: Boolean,
+        required: false,
+        default: false,
+    })
+    isHorizontal;
 
-	props: {
-		isHorizontal: {
-			type: Boolean,
-			required: false,
-			default: false,
-		},
+    @Prop({
+        type: Boolean,
+        required: false,
+        default: false,
+    })
+    isSettings;
 
-		isSettings: {
-			type: Boolean,
-			required: false,
-			default: false,
-		},
+    @Prop({
+        type: Boolean,
+        required: false,
+        default: true,
+    })
+    singleColumn;
 
-		singleColumn: {
-			type: Boolean,
-			required: false,
-			default: true,
-		},
-	},
+    get classes() {
+        const classes = [this.isHorizontal ? "MenuOptions--horizontal" : "MenuOptions--vertical"];
+        if (!this.isHorizontal) {
+            classes.push(this.isSettings ? "MenuOptions__settings--vertical" : "MenuOptions__default--vertical");
+        }
+        if (this.singleColumn) {
+            classes.push("flex-col");
+        }
 
-	computed: {
-		classes() {
-			const classes = [this.isHorizontal ? "MenuOptions--horizontal" : "MenuOptions--vertical"];
-			if (!this.isHorizontal) {
-				classes.push(this.isSettings ? "MenuOptions__settings--vertical" : "MenuOptions__default--vertical");
-			}
-			if (this.singleColumn) {
-				classes.push("flex-col");
-			}
-
-			return classes.join(" ");
-		},
-	},
-};
+        return classes.join(" ");
+    }
+}
 </script>
 
 <style lang="postcss">

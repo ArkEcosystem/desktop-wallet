@@ -20,33 +20,32 @@
 </template>
 
 <script>
-export default {
-	name: "MenuOptionsItem",
+import { Vue, Component, Prop } from "vue-property-decorator";
+@Component({
+    name: "MenuOptionsItem"
+})
+export default class MenuOptionsItem extends Vue {
+    @Prop({
+        type: String,
+        required: true,
+    })
+    title;
 
-	props: {
-		title: {
-			type: String,
-			required: true,
-		},
-		tooltip: {
-			type: [String, Object],
-			required: false,
-			default: () => {},
-		},
-	},
+    @Prop({
+        type: [String, Object],
+        required: false,
+        default: () => {},
+    })
+    tooltip;
 
-	computed: {
-		hasControls() {
-			return !!this.$slots.controls;
-		},
-	},
+    get hasControls() {
+        return !!this.$slots.controls;
+    }
 
-	methods: {
-		emitClick() {
-			this.$emit("click");
-		},
-	},
-};
+    emitClick() {
+        this.$emit("click");
+    }
+}
 </script>
 
 <style scoped>
