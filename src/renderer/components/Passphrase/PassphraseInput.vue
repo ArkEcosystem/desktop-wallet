@@ -46,7 +46,7 @@
 </template>
 
 <script>
-import { Component, Prop,Vue } from "vue-property-decorator";
+import { Component, Prop, Vue } from "vue-property-decorator";
 import { required } from "vuelidate/lib/validators";
 
 import { ButtonModal } from "@/components/Button";
@@ -56,96 +56,96 @@ import SvgIcon from "@/components/SvgIcon";
 import WalletService from "@/services/wallet";
 
 @Component({
-    name: "PassphraseInput",
+	name: "PassphraseInput",
 
-    components: {
+	components: {
 		ButtonModal,
 		InputField,
 		ModalQrCodeScanner,
 		SvgIcon,
 	},
 
-    watch: {
+	watch: {
 		value(value) {
 			this.inputValue = value;
 		},
-	}
+	},
 })
 export default class PassphraseInput extends Vue {
-    @Prop({
-        type: String,
-        required: false,
-        default: null,
-    })
-    address;
+	@Prop({
+		type: String,
+		required: false,
+		default: null,
+	})
+	address;
 
-    @Prop({
-        type: String,
-        required: false,
-        default: null,
-    })
-    helperText;
+	@Prop({
+		type: String,
+		required: false,
+		default: null,
+	})
+	helperText;
 
-    @Prop({
-        type: Boolean,
-        required: false,
-        default: false,
-    })
-    isDisabled;
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	isDisabled;
 
-    @Prop({
-        type: Boolean,
-        required: false,
-        default: false,
-    })
-    isVisible;
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	isVisible;
 
-    @Prop({
-        type: Boolean,
-        required: false,
-        default: false,
-    })
-    notBip39Warning;
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	notBip39Warning;
 
-    @Prop({
-        type: String,
-        required: false,
-        default() {
-            return this.$t("PASSPHRASE_INPUT.LABEL");
-        },
-    })
-    label;
+	@Prop({
+		type: String,
+		required: false,
+		default() {
+			return this.$t("PASSPHRASE_INPUT.LABEL");
+		},
+	})
+	label;
 
-    @Prop({
-        type: String,
-        required: false,
-        default: "passphrase",
-    })
-    name;
+	@Prop({
+		type: String,
+		required: false,
+		default: "passphrase",
+	})
+	name;
 
-    @Prop({
-        type: Number,
-        required: true,
-    })
-    pubKeyHash;
+	@Prop({
+		type: Number,
+		required: true,
+	})
+	pubKeyHash;
 
-    @Prop({
-        type: String,
-        required: false,
-        default: null,
-    })
-    publicKey;
+	@Prop({
+		type: String,
+		required: false,
+		default: null,
+	})
+	publicKey;
 
-    @Prop({
-        type: String,
-        required: false,
-        default: () => "",
-    })
-    value;
+	@Prop({
+		type: String,
+		required: false,
+		default: () => "",
+	})
+	value;
 
-    inputValue = null;
-    isFocused = false;
-    passphraseIsVisible = null;
+	inputValue = null;
+	isFocused = false;
+	passphraseIsVisible = null;
 
 	data(vm) {
 		return {
@@ -154,100 +154,99 @@ export default class PassphraseInput extends Vue {
 		};
 	}
 
-    get error() {
-        if (this.$v.model.$dirty) {
-            if (!this.$v.model.required) {
-                return this.$t("VALIDATION.REQUIRED", [this.label]);
-            } else if (!this.$v.model.isValid) {
-                return this.$t("VALIDATION.NOT_VALID", [this.label]);
-            } else if (!this.$v.model.matchAddress) {
-                return this.$t("VALIDATION.NOT_MATCH", [this.label, "address"]);
-            } else if (!this.$v.model.matchPublicKey) {
-                return this.$t("VALIDATION.NOT_MATCH", [this.label, "address"]);
-            }
-        }
+	get error() {
+		if (this.$v.model.$dirty) {
+			if (!this.$v.model.required) {
+				return this.$t("VALIDATION.REQUIRED", [this.label]);
+			} else if (!this.$v.model.isValid) {
+				return this.$t("VALIDATION.NOT_VALID", [this.label]);
+			} else if (!this.$v.model.matchAddress) {
+				return this.$t("VALIDATION.NOT_MATCH", [this.label, "address"]);
+			} else if (!this.$v.model.matchPublicKey) {
+				return this.$t("VALIDATION.NOT_MATCH", [this.label, "address"]);
+			}
+		}
 
-        return null;
-    }
+		return null;
+	}
 
-    get warning() {
-        if (this.$v.model.$dirty) {
-            if (this.notBip39Warning && !this.isBip39) {
-                return this.$t("VALIDATION.WARNING_NOT_BIP39", [this.label]);
-            }
-        }
+	get warning() {
+		if (this.$v.model.$dirty) {
+			if (this.notBip39Warning && !this.isBip39) {
+				return this.$t("VALIDATION.WARNING_NOT_BIP39", [this.label]);
+			}
+		}
 
-        return null;
-    }
+		return null;
+	}
 
-    get isInvalid() {
-        return this.$v.model.$dirty && !!this.error;
-    }
+	get isInvalid() {
+		return this.$v.model.$dirty && !!this.error;
+	}
 
-    get isBip39() {
-        return (
-            this.notBip39Warning &&
-            WalletService.isBip39Passphrase(this.inputValue, this.session_profile.bip39Language)
-        );
-    }
+	get isBip39() {
+		return (
+			this.notBip39Warning && WalletService.isBip39Passphrase(this.inputValue, this.session_profile.bip39Language)
+		);
+	}
 
-      get model() {
-        return this.inputValue
-	  }
+	get model() {
+		return this.inputValue;
+	}
 
-      set model(value) {
-        this.updateInputValue(value)
-        this.$emit('input', value)
-      }
+	set model(value) {
+		this.updateInputValue(value);
+		this.$emit("input", value);
+	}
 
-    blur() {
-        this.$refs.input.blur();
-    }
+	blur() {
+		this.$refs.input.blur();
+	}
 
-    focus() {
-        await this.$nextTick();
-        this.$refs.input.focus();
-    }
+	async focus() {
+		await this.$nextTick();
+		this.$refs.input.focus();
+	}
 
-    onBlur() {
-        this.isFocused = false;
-    }
+	onBlur() {
+		this.isFocused = false;
+	}
 
-    onFocus() {
-        this.isFocused = true;
-        this.$emit("focus");
-    }
+	onFocus() {
+		this.isFocused = true;
+		this.$emit("focus");
+	}
 
-    reset() {
-        this.$v.$reset();
-    }
+	reset() {
+		this.$v.$reset();
+	}
 
-    touch() {
-        this.$v.model.$touch();
-    }
+	touch() {
+		this.$v.model.$touch();
+	}
 
-    onDecode(value, toggle) {
-        this.model = this.qr_getPassphrase(value);
+	onDecode(value, toggle) {
+		this.model = this.qr_getPassphrase(value);
 
-        // Check if we were unable to retrieve a passphrase from the qr
-        if ((this.inputValue === "" || this.inputValue === undefined) && this.inputValue !== value) {
-            this.$error(this.$t("MODAL_QR_SCANNER.DECODE_FAILED", { data: value }));
-        }
-        toggle();
-    }
+		// Check if we were unable to retrieve a passphrase from the qr
+		if ((this.inputValue === "" || this.inputValue === undefined) && this.inputValue !== value) {
+			this.$error(this.$t("MODAL_QR_SCANNER.DECODE_FAILED", { data: value }));
+		}
+		toggle();
+	}
 
-    updateInputValue(value) {
-        this.inputValue = value;
-        // Inform Vuelidate that the value changed
-        this.$v.model.$touch();
-    }
+	updateInputValue(value) {
+		this.inputValue = value;
+		// Inform Vuelidate that the value changed
+		this.$v.model.$touch();
+	}
 
-    toggleVisible() {
-        this.passphraseIsVisible = !this.passphraseIsVisible;
-        await this.focus();
-    }
+	async toggleVisible() {
+		this.passphraseIsVisible = !this.passphraseIsVisible;
+		await this.focus();
+	}
 
-    validations = {
+	validations = {
 		model: {
 			required,
 			isValid(value) {

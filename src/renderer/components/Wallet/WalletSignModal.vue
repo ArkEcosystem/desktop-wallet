@@ -53,7 +53,7 @@
 </template>
 
 <script>
-import { Component, Prop,Vue } from "vue-property-decorator";
+import { Component, Prop, Vue } from "vue-property-decorator";
 import { minLength, required } from "vuelidate/lib/validators";
 
 import { InputPassword, InputText } from "@/components/Input";
@@ -65,114 +65,114 @@ import TransactionService from "@/services/transaction";
 import WalletService from "@/services/wallet";
 
 @Component({
-    name: "WalletSignModal",
+	name: "WalletSignModal",
 
-    components: {
+	components: {
 		InputPassword,
 		InputText,
 		ModalLoader,
 		ModalWindow,
 		PassphraseInput,
-	}
+	},
 })
 export default class WalletSignModal extends Vue {
-    @Prop({
-        type: Object,
-        required: true,
-    })
-    wallet;
+	@Prop({
+		type: Object,
+		required: true,
+	})
+	wallet;
 
-    form = {
-        message: "",
-        passphrase: "",
-        walletPassword: "",
-    };
+	form = {
+		message: "",
+		passphrase: "",
+		walletPassword: "",
+	};
 
-    showEncryptLoader = false;
-    showLedgerLoader = false;
+	showEncryptLoader = false;
+	showLedgerLoader = false;
 
-    get messageError() {
-        if (this.$v.form.message.$error && this.$v.form.message.minLength) {
-            return this.$t("VALIDATION.REQUIRED", [this.$refs.message.label]);
-        }
-        return null;
-    }
+	get messageError() {
+		if (this.$v.form.message.$error && this.$v.form.message.minLength) {
+			return this.$t("VALIDATION.REQUIRED", [this.$refs.message.label]);
+		}
+		return null;
+	}
 
-    onSignMessage() {
-        if (this.form.walletPassword && this.form.walletPassword.length) {
-            this.showEncryptLoader = true;
+	async onSignMessage() {
+		if (this.form.walletPassword && this.form.walletPassword.length) {
+			this.showEncryptLoader = true;
 
-            const dataToDecrypt = {
-                bip38key: this.wallet.passphrase,
-                password: this.form.walletPassword,
-                wif: this.session_network.wif,
-            };
+			const dataToDecrypt = {
+				bip38key: this.wallet.passphrase,
+				password: this.form.walletPassword,
+				wif: this.session_network.wif,
+			};
 
-            const bip38 = new Bip38();
-            try {
-                const { encodedWif } = await bip38.decrypt(dataToDecrypt);
-                this.form.passphrase = null;
-                this.form.wif = encodedWif;
-            } catch (_error) {
-                this.$error(this.$t("ENCRYPTION.FAILED_DECRYPT"));
+			const bip38 = new Bip38();
+			try {
+				const { encodedWif } = await bip38.decrypt(dataToDecrypt);
+				this.form.passphrase = null;
+				this.form.wif = encodedWif;
+			} catch (_error) {
+				this.$error(this.$t("ENCRYPTION.FAILED_DECRYPT"));
 
-                return;
-            } finally {
-                bip38.quit();
-                this.showEncryptLoader = false;
-            }
-        }
+				return;
+			} finally {
+				bip38.quit();
+				this.showEncryptLoader = false;
+			}
+		}
 
-        await this.signMessage();
-    }
+		await this.signMessage();
+	}
 
-    signMessage() {
-        try {
-            let message;
-            if (!this.wallet.isLedger) {
-                if (this.form.wif) {
-                    message = WalletService.signMessageWithWif(this.form.message, this.form.wif, {
-                        wif: this.session_network.wif,
-                    });
-                } else {
-                    message = WalletService.signMessage(this.form.message, this.form.passphrase);
-                }
-            } else {
-                this.showLedgerLoader = true;
-                try {
-                    message = {
-                        message: this.form.message,
-                        signature: await TransactionService.ledgerSignMessage(this.wallet, this.form.message, this),
-                    };
-                } catch (ledgerError) {
-                    this.showLedgerLoader = false;
-                    throw ledgerError;
-                }
-                this.showLedgerLoader = false;
-            }
+	async signMessage() {
+		try {
+			let message;
+			if (!this.wallet.isLedger) {
+				if (this.form.wif) {
+					message = WalletService.signMessageWithWif(this.form.message, this.form.wif, {
+						wif: this.session_network.wif,
+					});
+				} else {
+					message = WalletService.signMessage(this.form.message, this.form.passphrase);
+				}
+			} else {
+				this.showLedgerLoader = true;
+				try {
+					message = {
+						message: this.form.message,
+						signature: await TransactionService.ledgerSignMessage(this.wallet, this.form.message, this),
+					};
+				} catch (ledgerError) {
+					this.showLedgerLoader = false;
+					throw ledgerError;
+				}
+				this.showLedgerLoader = false;
+			}
 
-            message.timestamp = new Date().getTime();
-            message.address = this.wallet.address;
-            this.$store.dispatch(StoreBinding.WalletAddSignedMessage, message);
+			message.timestamp = new Date().getTime();
+			message.address = this.wallet.address;
+			this.$store.dispatch(StoreBinding.WalletAddSignedMessage, message);
 
-            this.$success(this.$t("SIGN_VERIFY.SUCCESSFULL_SIGN"));
+			this.$success(this.$t("SIGN_VERIFY.SUCCESSFULL_SIGN"));
 
-            this.emitSigned();
-        } catch (error) {
-            this.$logger.error("Could not sign message: ", error);
-            this.$error(this.$t("SIGN_VERIFY.FAILED_SIGN"));
-        }
-    }
+			this.emitSigned();
+		} catch (error) {
+			this.$logger.error("Could not sign message: ", error);
+			this.$error(this.$t("SIGN_VERIFY.FAILED_SIGN"));
+		}
+	}
 
-    emitCancel() {
-        this.$emit("cancel");
-    }
+	emitCancel() {
+		this.$emit("cancel");
+	}
 
-    emitSigned() {
-        this.$emit("signed");
-    }
+	emitSigned() {
+		this.$emit("signed");
+	}
 
-    validations = {
+	validations = {
 		form: {
 			message: {
 				required,

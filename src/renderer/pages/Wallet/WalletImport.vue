@@ -1,26 +1,26 @@
 <template>
-	<div class="WalletImport relative">
+	<div class="relative WalletImport">
 		<main class="flex h-full">
 			<div
-				class="ProfileNew__instructions theme-dark bg-theme-feature text-theme-page-instructions-text hidden lg:flex flex-1 mr-4 rounded-lg overflow-y-auto"
+				class="flex-1 hidden mr-4 overflow-y-auto rounded-lg ProfileNew__instructions theme-dark bg-theme-feature text-theme-page-instructions-text lg:flex"
 			>
-				<div class="m-auto w-3/5 text-center flex flex-col items-center justify-center">
+				<div class="flex flex-col items-center justify-center w-3/5 m-auto text-center">
 					<h1 class="text-inherit">
 						{{ $t(`PAGES.WALLET_IMPORT.STEP${step}.INSTRUCTIONS.HEADER`) }}
 					</h1>
-					<p class="text-center py-2 leading-normal">
+					<p class="py-2 leading-normal text-center">
 						{{ $t(`PAGES.WALLET_IMPORT.STEP${step}.INSTRUCTIONS.TEXT`) }}
 					</p>
 
 					<img
 						:src="assets_loadImage(backgroundImages[step])"
 						:title="$t(`PAGES.WALLET_IMPORT.STEP${step}.INSTRUCTIONS.HEADER`)"
-						class="w-full xl:w-4/5 mt-10"
+						class="w-full mt-10 xl:w-4/5"
 					/>
 				</div>
 			</div>
 
-			<div class="flex-none w-full lg:max-w-sm bg-theme-feature rounded-lg overflow-y-auto p-10">
+			<div class="flex-none w-full p-10 overflow-y-auto rounded-lg lg:max-w-sm bg-theme-feature">
 				<MenuStep :step="step">
 					<MenuStepItem
 						:step="1"
@@ -28,7 +28,7 @@
 						:title="$t('PAGES.WALLET_IMPORT.STEP1.TITLE')"
 						@next="!useOnlyAddress ? moveTo(2) : moveTo(3)"
 					>
-						<div class="flex flex-col h-full w-full justify-around">
+						<div class="flex flex-col justify-around w-full h-full">
 							<InputSwitch
 								:label="$t('PAGES.WALLET_IMPORT.STEP1.ONLY_ADDRESS')"
 								:text="$t('PAGES.WALLET_IMPORT.STEP1.ONLY_ADDRESS')"
@@ -76,7 +76,7 @@
 						@back="moveTo(1)"
 						@next="moveTo(3)"
 					>
-						<div class="flex flex-col h-full w-full justify-around">
+						<div class="flex flex-col justify-around w-full h-full">
 							<InputPassword
 								ref="password"
 								v-model="walletPassword"
@@ -116,7 +116,7 @@
 						@back="!useOnlyAddress ? moveTo(2) : moveTo(1)"
 						@next="onCreate"
 					>
-						<div class="flex flex-col h-full w-full justify-around">
+						<div class="flex flex-col justify-around w-full h-full">
 							<InputText
 								v-model="schema.name"
 								:label="$t('PAGES.WALLET_IMPORT.STEP3.NAME')"
@@ -146,7 +146,7 @@
 </template>
 
 <script>
-import { Component,Vue } from "vue-property-decorator";
+import { Component, Vue } from "vue-property-decorator";
 import { required } from "vuelidate/lib/validators";
 
 import { InputAddress, InputPassword, InputSwitch, InputText } from "@/components/Input";
@@ -160,9 +160,9 @@ import WalletService from "@/services/wallet";
 import onCreate from "./mixin-on-create";
 
 @Component({
-    name: "WalletImport",
+	name: "WalletImport",
 
-    components: {
+	components: {
 		InputAddress,
 		InputPassword,
 		InputSwitch,
@@ -173,9 +173,9 @@ import onCreate from "./mixin-on-create";
 		PassphraseInput,
 	},
 
-    mixins: [onCreate],
+	mixins: [onCreate],
 
-    watch: {
+	watch: {
 		/**
 		 * Generate always the address when moving to the step 2
 		 */
@@ -186,92 +186,92 @@ import onCreate from "./mixin-on-create";
 				this.schema.address = WalletService.getAddress(this.schema.passphrase, this.session_network.version);
 			}
 		},
-	}
+	},
 })
 export default class WalletImport extends Vue {
-    schema = Wallet.schema;
-    ensureEntirePassphrase = false;
-    step = 1;
-    useOnlyAddress = false;
-    useOnlyPassphrase = false;
-    wallet = {};
-    walletPassword = null;
-    walletConfirmPassword = null;
-    showEncryptLoader = false;
+	schema = Wallet.schema;
+	ensureEntirePassphrase = false;
+	step = 1;
+	useOnlyAddress = false;
+	useOnlyPassphrase = false;
+	wallet = {};
+	walletPassword = null;
+	walletConfirmPassword = null;
+	showEncryptLoader = false;
 
-    backgroundImages = {
-        1: "pages/wallet-new/import-wallet.svg",
-        2: "pages/wallet-new/encrypt-wallet.svg",
-        3: "pages/wallet-new/protect-wallet.svg",
-    };
+	backgroundImages = {
+		1: "pages/wallet-new/import-wallet.svg",
+		2: "pages/wallet-new/encrypt-wallet.svg",
+		3: "pages/wallet-new/protect-wallet.svg",
+	};
 
-    get nameError() {
-        if (this.$v.schema.name.$invalid) {
-            if (!this.$v.schema.name.contactDoesNotExist) {
-                return this.$t("VALIDATION.NAME.EXISTS_AS_CONTACT", [this.schema.name]);
-            } else if (!this.$v.schema.name.walletDoesNotExist) {
-                return this.$t("VALIDATION.NAME.EXISTS_AS_WALLET", [this.schema.name]);
-            } else if (!this.$v.schema.name.schemaMaxLength) {
-                return this.$t("VALIDATION.NAME.MAX_LENGTH", [Wallet.schema.properties.name.maxLength]);
-                // NOTE: not used, unless the minimum length is changed
-            } else if (!this.$v.schema.name.schemaMinLength) {
-                return this.$tc("VALIDATION.NAME.MIN_LENGTH", Wallet.schema.properties.name.minLength);
-            }
-        }
-        return null;
-    }
+	get nameError() {
+		if (this.$v.schema.name.$invalid) {
+			if (!this.$v.schema.name.contactDoesNotExist) {
+				return this.$t("VALIDATION.NAME.EXISTS_AS_CONTACT", [this.schema.name]);
+			} else if (!this.$v.schema.name.walletDoesNotExist) {
+				return this.$t("VALIDATION.NAME.EXISTS_AS_WALLET", [this.schema.name]);
+			} else if (!this.$v.schema.name.schemaMaxLength) {
+				return this.$t("VALIDATION.NAME.MAX_LENGTH", [Wallet.schema.properties.name.maxLength]);
+				// NOTE: not used, unless the minimum length is changed
+			} else if (!this.$v.schema.name.schemaMinLength) {
+				return this.$tc("VALIDATION.NAME.MIN_LENGTH", Wallet.schema.properties.name.minLength);
+			}
+		}
+		return null;
+	}
 
-    get addressError() {
-        if (this.$v.schema.address.$invalid) {
-            if (!this.$v.schema.address.contactDoesNotExist) {
-                return this.$t("VALIDATION.ADDRESS.EXISTS_AS_CONTACT", [this.schema.address]);
-            } else if (!this.$v.schema.address.walletDoesNotExist) {
-                return this.$t("VALIDATION.ADDRESS.EXISTS_AS_WALLET", [this.schema.address]);
-            }
-        }
-        return null;
-    }
+	get addressError() {
+		if (this.$v.schema.address.$invalid) {
+			if (!this.$v.schema.address.contactDoesNotExist) {
+				return this.$t("VALIDATION.ADDRESS.EXISTS_AS_CONTACT", [this.schema.address]);
+			} else if (!this.$v.schema.address.walletDoesNotExist) {
+				return this.$t("VALIDATION.ADDRESS.EXISTS_AS_WALLET", [this.schema.address]);
+			}
+		}
+		return null;
+	}
 
-    beforeRouteEnter(to, from, next) {
+	beforeRouteEnter(to, from, next) {
 		next((vm) => {
 			vm.$synchronizer.focus();
 			vm.$synchronizer.pause("market");
 		});
 	}
 
-    createWallet() {
-        try {
-            try {
-                const wallet = await this.$client.fetchWallet(this.wallet.address);
-                if (wallet.multiSignature) {
-                    this.wallet.multiSignature = wallet.multiSignature;
-                }
-            } catch (error) {
-                //
-            }
+	async createWallet() {
+		try {
+			try {
+				const wallet = await this.$client.fetchWallet(this.wallet.address);
+				if (wallet.multiSignature) {
+					this.wallet.multiSignature = wallet.multiSignature;
+				}
+			} catch (error) {
+				//
+			}
 
-            const { address } = await this.$store.dispatch(StoreBinding.WalletCreate, this.wallet);
-            this.$router.push({ name: "wallet-show", params: { address } });
-        } catch (error) {
-            this.$error(`${this.$t("PAGES.WALLET_IMPORT.FAILED")}: ${error.message}`);
-        }
-    }
+			const { address } = await this.$store.dispatch(StoreBinding.WalletCreate, this.wallet);
+			this.$router.push({ name: "wallet-show", params: { address } });
+		} catch (error) {
+			this.$error(`${this.$t("PAGES.WALLET_IMPORT.FAILED")}: ${error.message}`);
+		}
+	}
 
-    moveTo(step) {
-        this.step = step;
-    }
+	moveTo(step) {
+		this.step = step;
+	}
 
-    setOnlyAddress(useOnlyAddress) {
-        this.useOnlyPassphrase = false;
-        this.useOnlyAddress = useOnlyAddress;
-    }
+	setOnlyAddress(useOnlyAddress) {
+		this.useOnlyPassphrase = false;
+		this.useOnlyAddress = useOnlyAddress;
+	}
 
-    setOnlyPassphrase(useOnlyPassphrase) {
-        this.useOnlyAddress = false;
-        this.useOnlyPassphrase = useOnlyPassphrase;
-    }
+	setOnlyPassphrase(useOnlyPassphrase) {
+		this.useOnlyAddress = false;
+		this.useOnlyPassphrase = useOnlyPassphrase;
+	}
 
-    validations = {
+	validations = {
 		step1: ["schema.address", "schema.passphrase"],
 		step2: ["walletPassword", "walletConfirmPassword"],
 		step3: ["schema.name"],

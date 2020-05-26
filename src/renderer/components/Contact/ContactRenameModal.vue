@@ -16,6 +16,7 @@
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
 
+// @ts-ignore
 import ModalRename from "@/components/Modal/ModalRename";
 
 @Component({

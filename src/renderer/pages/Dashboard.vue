@@ -90,7 +90,7 @@ export default class Dashboard extends Vue {
 		});
 	}
 
-	beforeRouteEnter(to, from, next) {
+	async beforeRouteEnter(to, from, next) {
 		const chooseNext = async () => {
 			const profiles = await store.getters["profile/all"];
 

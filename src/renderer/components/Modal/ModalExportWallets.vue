@@ -57,16 +57,16 @@
 
 <script>
 import { omitBy, uniqBy } from "lodash";
-import { Component,Vue } from "vue-property-decorator";
+import { Component, Vue } from "vue-property-decorator";
 
 import { ButtonGeneric, ButtonSwitch } from "@/components/Button";
 import { ListDivided, ListDividedItem } from "@/components/ListDivided";
 import ModalWindow from "@/components/Modal/ModalWindow";
 
 @Component({
-    name: "ModalExportWallets",
+	name: "ModalExportWallets",
 
-    components: {
+	components: {
 		ButtonGeneric,
 		ButtonSwitch,
 		ListDivided,
@@ -74,29 +74,29 @@ import ModalWindow from "@/components/Modal/ModalWindow";
 		ModalWindow,
 	},
 
-    watch: {
+	watch: {
 		isLedgerConnected: {
 			handler(value) {
 				this.options.excludeLedger.isDisabled = !value;
 			},
 			immediate: true,
 		},
-	}
+	},
 })
 export default class ModalExportWallets extends Vue {
-    isExporting = false;
+	isExporting = false;
 
-    options = undefined;
+	options = undefined;
 
-    advancedOptions = {
-        addNetwork: {
-            active: true,
-        },
-    };
+	advancedOptions = {
+		addNetwork: {
+			active: true,
+		},
+	};
 
-    data() {
+	data() {
 		return {
-            options: {
+			options: {
 				excludeUnnamed: {
 					active: false,
 					filter: (el) => el.name && el.name.length,
@@ -110,167 +110,167 @@ export default class ModalExportWallets extends Vue {
 					isDisabled: !this.isLedgerConnected,
 					filter: (el) => !el.isLedger,
 				},
-			}
-        };
+			},
+		};
 	}
 
-    get isLedgerConnected() {
-        return this.$store.getters["ledger/isConnected"];
-    }
+	get isLedgerConnected() {
+		return this.$store.getters["ledger/isConnected"];
+	}
 
-    get activeOptions() {
-        return Object.values(this.options).filter((option) => {
-            return option.active;
-        });
-    }
+	get activeOptions() {
+		return Object.values(this.options).filter((option) => {
+			return option.active;
+		});
+	}
 
-    get wallets() {
-        let wallets = uniqBy(
-            [...this.$store.getters["wallet/byProfileId"](this.session_profile.id), ...this.ledgerWallets],
-            "address",
-        );
+	get wallets() {
+		let wallets = uniqBy(
+			[...this.$store.getters["wallet/byProfileId"](this.session_profile.id), ...this.ledgerWallets],
+			"address",
+		);
 
-        if (this.activeOptions.length) {
-            for (const option of this.activeOptions) {
-                wallets = wallets.filter(option.filter);
-            }
-        }
+		if (this.activeOptions.length) {
+			for (const option of this.activeOptions) {
+				wallets = wallets.filter(option.filter);
+			}
+		}
 
-        return this.wallet_sortByName(wallets);
-    }
+		return this.wallet_sortByName(wallets);
+	}
 
-    get ledgerWallets() {
-        return this.isLedgerConnected ? this.$store.getters["ledger/wallets"] : [];
-    }
+	get ledgerWallets() {
+		return this.isLedgerConnected ? this.$store.getters["ledger/wallets"] : [];
+	}
 
-    get profileName() {
-        return this.session_profile ? this.session_profile.name : "";
-    }
+	get profileName() {
+		return this.session_profile ? this.session_profile.name : "";
+	}
 
-    toggleOption(option, isAdvanced = false) {
-        const options = isAdvanced ? this.advancedOptions : this.options;
+	toggleOption(option, isAdvanced = false) {
+		const options = isAdvanced ? this.advancedOptions : this.options;
 
-        if (Object.prototype.hasOwnProperty.call(options, option)) {
-            options[option].active = !options[option].active;
-        }
-    }
+		if (Object.prototype.hasOwnProperty.call(options, option)) {
+			options[option].active = !options[option].active;
+		}
+	}
 
-    emitClose() {
-        this.$emit("close");
-    }
+	emitClose() {
+		this.$emit("close");
+	}
 
-    getName(name) {
-        return name && name.length ? name : null;
-    }
+	getName(name) {
+		return name && name.length ? name : null;
+	}
 
-    getUsername(address) {
-        const delegate = this.$store.getters["delegate/byAddress"](address);
+	getUsername(address) {
+		const delegate = this.$store.getters["delegate/byAddress"](address);
 
-        if (delegate) {
-            return delegate.username;
-        }
+		if (delegate) {
+			return delegate.username;
+		}
 
-        return null;
-    }
+		return null;
+	}
 
-    getVote(vote) {
-        const delegate = this.$store.getters["delegate/byPublicKey"](vote);
+	getVote(vote) {
+		const delegate = this.$store.getters["delegate/byPublicKey"](vote);
 
-        if (delegate) {
-            return {
-                username: delegate.username,
-                publicKey: delegate.publicKey,
-            };
-        }
+		if (delegate) {
+			return {
+				username: delegate.username,
+				publicKey: delegate.publicKey,
+			};
+		}
 
-        return null;
-    }
+		return null;
+	}
 
-    getBalances(balance) {
-        const network = this.session_network;
+	getBalances(balance) {
+		const network = this.session_network;
 
-        if (network) {
-            const balances = { [network.token]: this.currency_subToUnit(balance) };
+		if (network) {
+			const balances = { [network.token]: this.currency_subToUnit(balance) };
 
-            if (network.market.enabled) {
-                const currency = this.session_profile.currency;
-                balances[currency] = this.currency_cryptoToCurrency(balance);
-            }
+			if (network.market.enabled) {
+				const currency = this.session_profile.currency;
+				balances[currency] = this.currency_cryptoToCurrency(balance);
+			}
 
-            return balances;
-        }
+			return balances;
+		}
 
-        return null;
-    }
+		return null;
+	}
 
-    transformWallets() {
-        const isNull = (val) => val === null;
+	transformWallets() {
+		const isNull = (val) => val === null;
 
-        return this.wallets.map((wallet) => {
-            return omitBy(
-                {
-                    name: this.getName(wallet.name),
-                    username: this.getUsername(wallet.address),
-                    address: wallet.address,
-                    publicKey: wallet.publicKey,
-                    vote: this.getVote(wallet.vote),
-                    balance: this.getBalances(wallet.balance),
-                },
-                isNull,
-            );
-        });
-    }
+		return this.wallets.map((wallet) => {
+			return omitBy(
+				{
+					name: this.getName(wallet.name),
+					username: this.getUsername(wallet.address),
+					address: wallet.address,
+					publicKey: wallet.publicKey,
+					vote: this.getVote(wallet.vote),
+					balance: this.getBalances(wallet.balance),
+				},
+				isNull,
+			);
+		});
+	}
 
-    transformNetwork() {
-        const network = this.session_network;
+	transformNetwork() {
+		const network = this.session_network;
 
-        if (network) {
-            return {
-                name: network.name,
-                nethash: network.nethash,
-                token: network.token,
-                symbol: network.symbol,
-            };
-        }
+		if (network) {
+			return {
+				name: network.name,
+				nethash: network.nethash,
+				token: network.token,
+				symbol: network.symbol,
+			};
+		}
 
-        return null;
-    }
+		return null;
+	}
 
-    exportWallets() {
-        this.isExporting = true;
+	async exportWallets() {
+		this.isExporting = true;
 
-        const data = {
-            meta: {
-                count: this.wallets.length,
-            },
-        };
+		const data = {
+			meta: {
+				count: this.wallets.length,
+			},
+		};
 
-        if (this.advancedOptions.addNetwork.active) {
-            data.network = this.transformNetwork();
-        }
+		if (this.advancedOptions.addNetwork.active) {
+			data.network = this.transformNetwork();
+		}
 
-        data.wallets = this.transformWallets();
+		data.wallets = this.transformWallets();
 
-        const raw = JSON.stringify(data, null, 2);
-        const defaultPath = `${this.profileName}_wallets.json`;
+		const raw = JSON.stringify(data, null, 2);
+		const defaultPath = `${this.profileName}_wallets.json`;
 
-        try {
-            const path = await this.electron_writeFile(raw, defaultPath);
+		try {
+			const path = await this.electron_writeFile(raw, defaultPath);
 
-            if (path) {
-                this.$success(this.$t("MODAL_EXPORT_WALLETS.SUCCESS.EXPORT_WALLETS", { path }));
-                this.emitClose();
-            } else {
-                return;
-            }
-        } catch (e) {
-            this.$error(this.$t("MODAL_EXPORT_WALLETS.ERROR.EXPORT_WALLETS"));
-        } finally {
-            this.isExporting = false;
-        }
-    }
+			if (path) {
+				this.$success(this.$t("MODAL_EXPORT_WALLETS.SUCCESS.EXPORT_WALLETS", { path }));
+				this.emitClose();
+			} else {
+				return;
+			}
+		} catch (e) {
+			this.$error(this.$t("MODAL_EXPORT_WALLETS.ERROR.EXPORT_WALLETS"));
+		} finally {
+			this.isExporting = false;
+		}
+	}
 
-    validations = {
+	validations = {
 		options: {
 			isValid() {
 				return !!this.wallets.length;

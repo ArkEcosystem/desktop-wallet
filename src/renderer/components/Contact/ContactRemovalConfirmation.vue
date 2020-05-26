@@ -26,6 +26,7 @@
 import { Component, Prop, Vue } from "vue-property-decorator";
 
 import { ModalConfirmation } from "@/components/Modal";
+// @ts-ignore
 import Identicon from "@/components/utils/Identicon";
 import { StoreBinding } from "@/enums";
 

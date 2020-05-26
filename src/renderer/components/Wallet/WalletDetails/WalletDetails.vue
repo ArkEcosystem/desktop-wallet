@@ -114,7 +114,7 @@
 <script>
 import { remote } from "electron";
 import { at } from "lodash";
-import { Component,Vue } from "vue-property-decorator";
+import { Component, Vue } from "vue-property-decorator";
 
 /* eslint-disable vue/no-unused-components */
 import { ButtonGeneric } from "@/components/Button";
@@ -138,7 +138,7 @@ import {
 } from "../";
 
 @Component({
-    components: {
+	components: {
 		ButtonGeneric,
 		MenuTab,
 		MenuTabItem,
@@ -156,7 +156,7 @@ import {
 		SvgIcon,
 	},
 
-    watch: {
+	watch: {
 		currentTab() {
 			switch (this.currentTab) {
 				case "WalletTransactions":
@@ -199,285 +199,285 @@ import {
 				}
 			}
 		},
-	}
+	},
 })
 export default class AnonymousComponent extends Vue {
-    provide() {
+	provide() {
 		return {
 			switchToTab: this.switchToTab,
 			walletVote: this.walletVote,
 		};
 	}
 
-    currentTab = "";
+	currentTab = "";
 
-    walletVote = {
-        username: null,
-    };
+	walletVote = {
+		username: null,
+	};
 
-    isVoting = false;
-    isUnvoting = false;
-    isSelecting = false;
-    isLoadingVote = true;
-    votedDelegate = null;
-    selectedDelegate = null;
+	isVoting = false;
+	isUnvoting = false;
+	isSelecting = false;
+	isLoadingVote = true;
+	votedDelegate = null;
+	selectedDelegate = null;
 
-    get pluginTabs() {
-        return this.$store.getters["plugin/walletTabs"];
-    }
+	get pluginTabs() {
+		return this.$store.getters["plugin/walletTabs"];
+	}
 
-    get tabs() {
-        const tabs = [
-            {
-                component: "WalletTransactions",
-                componentName: "WalletTransactions",
-                text: this.$t("PAGES.WALLET.TRANSACTIONS"),
-            },
-        ];
+	get tabs() {
+		const tabs = [
+			{
+				component: "WalletTransactions",
+				componentName: "WalletTransactions",
+				text: this.$t("PAGES.WALLET.TRANSACTIONS"),
+			},
+		];
 
-        if (this.currentWallet && this.isOwned) {
-            tabs.push({
-                component: "WalletDelegates",
-                componentName: "WalletDelegates",
-                text: this.$t("PAGES.WALLET.DELEGATES"),
-            });
+		if (this.currentWallet && this.isOwned) {
+			tabs.push({
+				component: "WalletDelegates",
+				componentName: "WalletDelegates",
+				text: this.$t("PAGES.WALLET.DELEGATES"),
+			});
 
-            tabs.push({
-                component: "WalletSignVerify",
-                componentName: "WalletSignVerify",
-                text: this.$t("PAGES.WALLET.SIGN_VERIFY"),
-            });
+			tabs.push({
+				component: "WalletSignVerify",
+				componentName: "WalletSignVerify",
+				text: this.$t("PAGES.WALLET.SIGN_VERIFY"),
+			});
 
-            if (this.currentNetwork && this.currentNetwork.market && this.currentNetwork.market.enabled) {
-                tabs.push({
-                    component: "WalletExchange",
-                    componentName: "WalletExchange",
-                    text: this.$t("PAGES.WALLET.PURCHASE", { ticker: this.currentNetwork.market.ticker }),
-                });
-            }
-        }
+			if (this.currentNetwork && this.currentNetwork.market && this.currentNetwork.market.enabled) {
+				tabs.push({
+					component: "WalletExchange",
+					componentName: "WalletExchange",
+					text: this.$t("PAGES.WALLET.PURCHASE", { ticker: this.currentNetwork.market.ticker }),
+				});
+			}
+		}
 
-        if (this.currentNetwork.constants && this.currentNetwork.constants.aip11) {
-            tabs.push({
-                component: "WalletIpfs",
-                componentName: "WalletIpfs",
-                text: this.$t("PAGES.WALLET.IPFS"),
-            });
+		if (this.currentNetwork.constants && this.currentNetwork.constants.aip11) {
+			tabs.push({
+				component: "WalletIpfs",
+				componentName: "WalletIpfs",
+				text: this.$t("PAGES.WALLET.IPFS"),
+			});
 
-            if (this.isOwned) {
-                tabs.push({
-                    component: "WalletMultiSignature",
-                    componentName: "WalletMultiSignature",
-                    text: this.$t("PAGES.WALLET.MULTI_SIGNATURE"),
-                });
-            }
+			if (this.isOwned) {
+				tabs.push({
+					component: "WalletMultiSignature",
+					componentName: "WalletMultiSignature",
+					text: this.$t("PAGES.WALLET.MULTI_SIGNATURE"),
+				});
+			}
 
-            if (WalletService.isBusiness(this.currentWallet, false)) {
-                tabs.push({
-                    component: "WalletBusiness",
-                    componentName: "WalletBusiness",
-                    text: this.$t("PAGES.WALLET.BUSINESS"),
-                });
-            }
-        }
+			if (WalletService.isBusiness(this.currentWallet, false)) {
+				tabs.push({
+					component: "WalletBusiness",
+					componentName: "WalletBusiness",
+					text: this.$t("PAGES.WALLET.BUSINESS"),
+				});
+			}
+		}
 
-        // TODO enable when there is something to show
-        // if (this.session_network.market && this.session_network.market.enabled) {
-        //   tabs.push({
-        //     component: 'WalletStatistics',
-        //     text: this.$t('PAGES.WALLET.STATISTICS')
-        //   })
-        // }
+		// TODO enable when there is something to show
+		// if (this.session_network.market && this.session_network.market.enabled) {
+		//   tabs.push({
+		//     component: 'WalletStatistics',
+		//     text: this.$t('PAGES.WALLET.STATISTICS')
+		//   })
+		// }
 
-        if (this.pluginTabs) {
-            this.pluginTabs.forEach((pluginTab) => {
-                tabs.push({
-                    component: pluginTab.component,
-                    componentName: pluginTab.componentName,
-                    text: pluginTab.tabTitle,
-                });
-            });
-        }
+		if (this.pluginTabs) {
+			this.pluginTabs.forEach((pluginTab) => {
+				tabs.push({
+					component: pluginTab.component,
+					componentName: pluginTab.componentName,
+					text: pluginTab.tabTitle,
+				});
+			});
+		}
 
-        return tabs;
-    }
+		return tabs;
+	}
 
-    get currentNetwork() {
-        return this.session_network;
-    }
+	get currentNetwork() {
+		return this.session_network;
+	}
 
-    get currentWallet() {
-        return this.wallet_fromRoute;
-    }
+	get currentWallet() {
+		return this.wallet_fromRoute;
+	}
 
-    get isDelegatesTab() {
-        return this.currentTab === "WalletDelegates";
-    }
+	get isDelegatesTab() {
+		return this.currentTab === "WalletDelegates";
+	}
 
-    get isOwned() {
-        return [
-            ...this.$store.getters["wallet/byProfileId"](this.session_profile.id),
-            ...this.$store.getters["ledger/wallets"],
-        ].some((wallet) => wallet.address === this.currentWallet.address);
-    }
+	get isOwned() {
+		return [
+			...this.$store.getters["wallet/byProfileId"](this.session_profile.id),
+			...this.$store.getters["ledger/wallets"],
+		].some((wallet) => wallet.address === this.currentWallet.address);
+	}
 
-    get unconfirmedVote() {
-        return this.unconfirmedVotes.find((vote) => {
-            return vote.address === this.currentWallet.address;
-        });
-    }
+	get unconfirmedVote() {
+		return this.unconfirmedVotes.find((vote) => {
+			return vote.address === this.currentWallet.address;
+		});
+	}
 
-      get unconfirmedVotes() {
-        return this.$store.getters['session/unconfirmedVotes']
-	  }
+	get unconfirmedVotes() {
+		return this.$store.getters["session/unconfirmedVotes"];
+	}
 
-      set unconfirmedVotes (votes) {
-        this.$store.dispatch('session/setUnconfirmedVotes', votes)
-        this.$store.dispatch('profile/update', {
-          ...this.session_profile,
-          unconfirmedVotes: votes
-        })
-      }
+	set unconfirmedVotes(votes) {
+		this.$store.dispatch("session/setUnconfirmedVotes", votes);
+		this.$store.dispatch("profile/update", {
+			...this.session_profile,
+			unconfirmedVotes: votes,
+		});
+	}
 
-    get isAwaitingConfirmation() {
-        return !!this.unconfirmedVote;
-    }
+	get isAwaitingConfirmation() {
+		return !!this.unconfirmedVote;
+	}
 
-    created() {
+	async created() {
 		await this.$synchronizer.call("wallets");
 		await this.fetchWalletVote();
 		this.$eventBus.on(AppEvent.WalletReload, this.fetchWalletVote);
 	}
 
-    beforeDestroy() {
+	beforeDestroy() {
 		this.$eventBus.off(AppEvent.WalletReload, this.fetchWalletVote);
 	}
 
-    mounted() {
+	mounted() {
 		this.currentTab = this.tabs[0].component;
 	}
 
-    historyBack() {
-        const webContents = remote.getCurrentWindow().webContents;
+	historyBack() {
+		const webContents = remote.getCurrentWindow().webContents;
 
-        if (webContents.canGoBack()) {
-            webContents.goBack();
-        } else {
-            try {
-                if (this.currentWallet.isContact) {
-                    this.$router.push({ name: "contacts" });
-                } else {
-                    this.$router.push({ name: "wallets" });
-                }
-            } catch (error) {
-                throw new Error("It is not possible to go back in history");
-            }
-        }
-    }
+		if (webContents.canGoBack()) {
+			webContents.goBack();
+		} else {
+			try {
+				if (this.currentWallet.isContact) {
+					this.$router.push({ name: "contacts" });
+				} else {
+					this.$router.push({ name: "wallets" });
+				}
+			} catch (error) {
+				throw new Error("It is not possible to go back in history");
+			}
+		}
+	}
 
-    switchToTab(component) {
-        if (this.tabs.map((tab) => tab.componentName).includes(component)) {
-            this.currentTab = component;
-        }
-    }
+	switchToTab(component) {
+		if (this.tabs.map((tab) => tab.componentName).includes(component)) {
+			this.currentTab = component;
+		}
+	}
 
-    getVoteTitle() {
-        if (this.isUnvoting && this.votedDelegate) {
-            return this.$t("WALLET_DELEGATES.UNVOTE_DELEGATE", { delegate: this.votedDelegate.username });
-        } else if (this.isVoting && this.selectedDelegate && !this.selectedDelegate.isResigned) {
-            return this.$t("WALLET_DELEGATES.VOTE_DELEGATE", { delegate: this.selectedDelegate.username });
-        } else {
-            return `${this.$t("COMMON.DELEGATE")} ${this.selectedDelegate.username}`;
-        }
-    }
+	getVoteTitle() {
+		if (this.isUnvoting && this.votedDelegate) {
+			return this.$t("WALLET_DELEGATES.UNVOTE_DELEGATE", { delegate: this.votedDelegate.username });
+		} else if (this.isVoting && this.selectedDelegate && !this.selectedDelegate.isResigned) {
+			return this.$t("WALLET_DELEGATES.VOTE_DELEGATE", { delegate: this.selectedDelegate.username });
+		} else {
+			return `${this.$t("COMMON.DELEGATE")} ${this.selectedDelegate.username}`;
+		}
+	}
 
-    fetchWalletVote() {
-        if (!this.currentWallet) {
-            return;
-        }
+	async fetchWalletVote() {
+		if (!this.currentWallet) {
+			return;
+		}
 
-        try {
-            this.isLoadingVote = true;
-            const walletVote = await this.$client.fetchWalletVote(this.currentWallet.address);
+		try {
+			this.isLoadingVote = true;
+			const walletVote = await this.$client.fetchWalletVote(this.currentWallet.address);
 
-            if (walletVote) {
-                this.votedDelegate = this.$store.getters["delegate/byPublicKey"](walletVote);
-                this.walletVote.username = this.votedDelegate.username;
-            } else {
-                this.votedDelegate = null;
-                this.walletVote.username = null;
-            }
-        } catch (error) {
-            this.votedDelegate = null;
-            this.walletVote.username = null;
+			if (walletVote) {
+				this.votedDelegate = this.$store.getters["delegate/byPublicKey"](walletVote);
+				this.walletVote.username = this.votedDelegate.username;
+			} else {
+				this.votedDelegate = null;
+				this.walletVote.username = null;
+			}
+		} catch (error) {
+			this.votedDelegate = null;
+			this.walletVote.username = null;
 
-            const messages = at(error, "response.body.message");
-            if (messages[0] !== "Wallet not found") {
-                this.$logger.error(error);
-                this.$error(
-                    this.$t("COMMON.FAILED_FETCH", {
-                        name: "fetch vote",
-                        msg: error.message,
-                    }),
-                );
-            }
-        } finally {
-            this.isLoadingVote = false;
-        }
-    }
+			const messages = at(error, "response.body.message");
+			if (messages[0] !== "Wallet not found") {
+				this.$logger.error(error);
+				this.$error(
+					this.$t("COMMON.FAILED_FETCH", {
+						name: "fetch vote",
+						msg: error.message,
+					}),
+				);
+			}
+		} finally {
+			this.isLoadingVote = false;
+		}
+	}
 
-    openUnvote() {
-        this.selectedDelegate = this.votedDelegate;
-        this.isUnvoting = true;
-    }
+	openUnvote() {
+		this.selectedDelegate = this.votedDelegate;
+		this.isUnvoting = true;
+	}
 
-    openSelectDelegate() {
-        this.isSelecting = true;
-    }
+	openSelectDelegate() {
+		this.isSelecting = true;
+	}
 
-    onCancel(reason) {
-        this.isUnvoting = false;
-        this.isVoting = false;
-        this.selectedDelegate = null;
+	onCancel(reason) {
+		this.isUnvoting = false;
+		this.isVoting = false;
+		this.selectedDelegate = null;
 
-        // To navigate to the transaction tab instead of the delegate tab when the
-        // user clicks on a link of the transaction show modal
-        if (reason && reason === "navigateToTransactions") {
-            this.switchToTab("WalletTransactions");
-        }
-    }
+		// To navigate to the transaction tab instead of the delegate tab when the
+		// user clicks on a link of the transaction show modal
+		if (reason && reason === "navigateToTransactions") {
+			this.switchToTab("WalletTransactions");
+		}
+	}
 
-    onCancelSelect() {
-        this.isSelecting = false;
-    }
+	onCancelSelect() {
+		this.isSelecting = false;
+	}
 
-    onConfirmSelect(value) {
-        this.selectedDelegate = this.$store.getters["delegate/search"](value);
-    }
+	onConfirmSelect(value) {
+		this.selectedDelegate = this.$store.getters["delegate/search"](value);
+	}
 
-    onSent(success, transaction) {
-        if (success) {
-            const votes = [
-                ...this.unconfirmedVotes,
-                {
-                    id: transaction.id,
-                    address: this.currentWallet.address,
-                    publicKey: transaction.asset.votes[0],
-                    timestamp: Date.now(),
-                },
-            ];
+	onSent(success, transaction) {
+		if (success) {
+			const votes = [
+				...this.unconfirmedVotes,
+				{
+					id: transaction.id,
+					address: this.currentWallet.address,
+					publicKey: transaction.asset.votes[0],
+					timestamp: Date.now(),
+				},
+			];
 
-            this.unconfirmedVotes = votes;
-        }
+			this.unconfirmedVotes = votes;
+		}
 
-        this.selectedDelegate = null;
-        this.isUnvoting = false;
-        this.isVoting = false;
-    }
+		this.selectedDelegate = null;
+		this.isUnvoting = false;
+		this.isVoting = false;
+	}
 
-    onRowClickDelegate(delegate) {
-        this.selectedDelegate = delegate;
-    }
+	onRowClickDelegate(delegate) {
+		this.selectedDelegate = delegate;
+	}
 }
 </script>
 

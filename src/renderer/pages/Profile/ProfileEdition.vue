@@ -1,25 +1,25 @@
 <template>
-	<div class="ProfileEdition relative">
+	<div class="relative ProfileEdition">
 		<main class="flex h-full">
 			<div
-				class="ProfileNew__instructions theme-dark bg-theme-feature text-theme-page-instructions-text hidden lg:flex flex-1 mr-4 rounded-lg overflow-y-auto"
+				class="flex-1 hidden mr-4 overflow-y-auto rounded-lg ProfileNew__instructions theme-dark bg-theme-feature text-theme-page-instructions-text lg:flex"
 			>
-				<div class="m-auto w-3/5 text-center flex flex-col items-center justify-center">
+				<div class="flex flex-col items-center justify-center w-3/5 m-auto text-center">
 					<h1 class="text-inherit">
 						{{ $t(`PAGES.PROFILE_EDITION.TAB_${tab.toUpperCase()}.INSTRUCTIONS.HEADER`) }}
 					</h1>
-					<p class="text-center py-2 leading-normal">
+					<p class="py-2 leading-normal text-center">
 						{{ $t(`PAGES.PROFILE_EDITION.TAB_${tab.toUpperCase()}.INSTRUCTIONS.TEXT`) }}
 					</p>
 
-					<div class="relative w-full xl:w-4/5 mt-10">
+					<div class="relative w-full mt-10 xl:w-4/5">
 						<img
 							:src="assets_loadImage(instructionsImage)"
 							:title="$t(`PAGES.PROFILE_EDITION.TAB_${tab.toUpperCase()}.INSTRUCTIONS.HEADER`)"
 						/>
 						<h2
 							v-if="isProfileTab"
-							class="ProfileNew__instructions__name opacity-75 absolute inset-x-0 z-10 hidden xl:block truncate"
+							class="absolute inset-x-0 z-10 hidden truncate opacity-75 ProfileNew__instructions__name xl:block"
 						>
 							{{ name }}
 						</h2>
@@ -27,7 +27,7 @@
 				</div>
 			</div>
 
-			<div class="flex-none w-full lg:max-w-sm bg-theme-feature rounded-lg overflow-y-auto">
+			<div class="flex-none w-full overflow-y-auto rounded-lg lg:max-w-sm bg-theme-feature">
 				<MenuTab v-model="tab">
 					<MenuTabItem :label="$t('PAGES.PROFILE_EDITION.TAB_PROFILE.TITLE')" tab="profile" class="p-5">
 						<ListDivided>
@@ -38,7 +38,7 @@
 									label=""
 									:is-invalid="$v.modified.name.$dirty && $v.modified.name.$invalid"
 									:helper-text="nameError"
-									class="bg-transparent text-theme-page-text flex-1"
+									class="flex-1 bg-transparent text-theme-page-text"
 									name="name"
 									@input="setName"
 									@keyup.enter.native="toggleIsNameEditable"
@@ -50,14 +50,14 @@
 										'ProfileEdition__field--modified':
 											modified.name && modified.name !== profile.name,
 									}"
-									class="leading-tight border-b border-transparent flex-1 truncate"
+									class="flex-1 leading-tight truncate border-b border-transparent"
 								>
 									{{ name }}
 								</div>
 
 								<button
 									:disabled="$v.modified.name.$dirty && $v.modified.name.$invalid"
-									class="ProfileEdition__name__toggle ml-2 cursor-pointer text-grey hover:text-blue focus:text-blue inline-flex items-center"
+									class="inline-flex items-center ml-2 cursor-pointer ProfileEdition__name__toggle text-grey hover:text-blue focus:text-blue"
 									@click="toggleIsNameEditable"
 								>
 									<SvgIcon name="edit" view-box="0 0 11 14" />
@@ -78,7 +78,7 @@
 										<img
 											:src="flagImage(itemScope.value)"
 											:title="itemScope.item"
-											class="ProfileEdition__language__item__flag mr-2"
+											class="mr-2 ProfileEdition__language__item__flag"
 										/>
 										<span class="font-semibold">
 											{{ itemScope.item }}
@@ -96,7 +96,7 @@
 											<img
 												:src="flagImage(handlerScope.value)"
 												:title="handlerScope.item"
-												class="ProfileEdition__language__handler__flag mr-1"
+												class="mr-1 ProfileEdition__language__handler__flag"
 											/>
 											{{ handlerScope.item }}
 										</MenuDropdownHandler>
@@ -197,7 +197,7 @@
 							</ListDividedItem>
 						</ListDivided>
 
-						<footer class="ProfileEdition__footer pb-10">
+						<footer class="pb-10 ProfileEdition__footer">
 							<button :disabled="!isModified || nameError" class="blue-button" @click="save">
 								{{ $t("COMMON.SAVE") }}
 							</button>
@@ -250,7 +250,7 @@
 							</ListDividedItem>
 						</ListDivided>
 
-						<footer class="ProfileEdition__footer pb-10">
+						<footer class="pb-10 ProfileEdition__footer">
 							<button :disabled="!isModified || nameError" class="blue-button" @click="save">
 								{{ $t("COMMON.SAVE") }}
 							</button>
@@ -288,7 +288,7 @@
 							</ListDividedItem>
 						</ListDivided>
 
-						<footer class="ProfileEdition__footer pb-10">
+						<footer class="pb-10 ProfileEdition__footer">
 							<button :disabled="!isModified || nameError" class="blue-button" @click="save">
 								{{ $t("COMMON.SAVE") }}
 							</button>
@@ -323,7 +323,7 @@
 <script>
 import { BIP39, I18N, MARKET, PLUGINS } from "@config";
 import { clone } from "lodash";
-import { Component,Vue } from "vue-property-decorator";
+import { Component, Vue } from "vue-property-decorator";
 
 import { ButtonSwitch } from "@/components/Button";
 import { InputText } from "@/components/Input";
@@ -342,9 +342,9 @@ import { isEmpty } from "@/utils";
  * the edition and to highlight the fields that have been changed in blue.
  */
 @Component({
-    name: "ProfileEdition",
+	name: "ProfileEdition",
 
-    components: {
+	components: {
 		ButtonSwitch,
 		InputText,
 		ListDivided,
@@ -360,245 +360,245 @@ import { isEmpty } from "@/utils";
 		SelectionBackground,
 		SelectionTheme,
 		SvgIcon,
-	}
+	},
 })
 export default class ProfileEdition extends Vue {
-    isNameEditable = false;
+	isNameEditable = false;
 
-    modified = {
-        name: "",
-        language: "",
-        bip39Language: "",
-        currency: "",
-        timeFormat: "",
-        isAdvancedModeEnabled: false,
-        marketChartOptions: {},
-        priceApi: "coingecko",
-        defaultChosenFee: "AVERAGE",
-    };
+	modified = {
+		name: "",
+		language: "",
+		bip39Language: "",
+		currency: "",
+		timeFormat: "",
+		isAdvancedModeEnabled: false,
+		marketChartOptions: {},
+		priceApi: "coingecko",
+		defaultChosenFee: "AVERAGE",
+	};
 
-    routeLeaveCallback = null;
-    tab = "profile";
-    showBlacklistDisclaimer = false;
-    showAdvancedModeDisclaimer = false;
+	routeLeaveCallback = null;
+	tab = "profile";
+	showBlacklistDisclaimer = false;
+	showAdvancedModeDisclaimer = false;
 
-    get currencies() {
-        return Object.keys(MARKET.currencies);
-    }
+	get currencies() {
+		return Object.keys(MARKET.currencies);
+	}
 
-    get timeFormats() {
-        return ["Default", "12h", "24h"].reduce((all, format) => {
-            all[format] = this.$t(`TIME_FORMAT.${format.toUpperCase()}`);
-            return all;
-        }, {});
-    }
+	get timeFormats() {
+		return ["Default", "12h", "24h"].reduce((all, format) => {
+			all[format] = this.$t(`TIME_FORMAT.${format.toUpperCase()}`);
+			return all;
+		}, {});
+	}
 
-    get bip39Languages() {
-        return BIP39.languages.reduce((all, language) => {
-            all[language] = this.$t(`BIP39_LANGUAGES.${language}`);
+	get bip39Languages() {
+		return BIP39.languages.reduce((all, language) => {
+			all[language] = this.$t(`BIP39_LANGUAGES.${language}`);
 
-            return all;
-        }, {});
-    }
+			return all;
+		}, {});
+	}
 
-    get networks() {
-        return this.$store.getters["network/all"].reduce((acc, network) => {
-            acc[network.id] = network.name;
-            return acc;
-        }, {});
-    }
+	get networks() {
+		return this.$store.getters["network/all"].reduce((acc, network) => {
+			acc[network.id] = network.name;
+			return acc;
+		}, {});
+	}
 
-    get priceApis() {
-        return {
-            coingecko: "CoinGecko",
-            cryptocompare: "CryptoCompare",
-            coincap: "CoinCap",
-        };
-    }
+	get priceApis() {
+		return {
+			coingecko: "CoinGecko",
+			cryptocompare: "CryptoCompare",
+			coincap: "CoinCap",
+		};
+	}
 
-    get defaultFees() {
-        return {
-            LAST: this.$t("INPUT_FEE.LAST"),
-            AVERAGE: this.$t("INPUT_FEE.AVERAGE"),
-        };
-    }
+	get defaultFees() {
+		return {
+			LAST: this.$t("INPUT_FEE.LAST"),
+			AVERAGE: this.$t("INPUT_FEE.AVERAGE"),
+		};
+	}
 
-    get hasWallets() {
-        const wallets = this.$store.getters["wallet/byProfileId"](this.profile.id);
-        return !isEmpty(wallets);
-    }
+	get hasWallets() {
+		const wallets = this.$store.getters["wallet/byProfileId"](this.profile.id);
+		return !isEmpty(wallets);
+	}
 
-    get isModified() {
-        return Object.keys(this.modified).some((property) => {
-            if (property === "marketChartOptions") {
-                return this.modified.marketChartOptions.isEnabled !== this.profile.marketChartOptions.isEnabled;
-            }
+	get isModified() {
+		return Object.keys(this.modified).some((property) => {
+			if (property === "marketChartOptions") {
+				return this.modified.marketChartOptions.isEnabled !== this.profile.marketChartOptions.isEnabled;
+			}
 
-            if (property === "avatar" || Object.prototype.hasOwnProperty.call(this.modified, property)) {
-                return this.modified[property] !== this.profile[property];
-            }
+			if (property === "avatar" || Object.prototype.hasOwnProperty.call(this.modified, property)) {
+				return this.modified[property] !== this.profile[property];
+			}
 
-            return false;
-        });
-    }
+			return false;
+		});
+	}
 
-    get profile() {
-        const profileId = this.$route.params.profileId;
-        return this.$store.getters["profile/byId"](profileId);
-    }
+	get profile() {
+		const profileId = this.$route.params.profileId;
+		return this.$store.getters["profile/byId"](profileId);
+	}
 
-    get isCurrentProfile() {
-        return this.session_profile.id === this.profile.id;
-    }
+	get isCurrentProfile() {
+		return this.session_profile.id === this.profile.id;
+	}
 
-    get filterBlacklistedPlugins() {
-        return this.modified.filterBlacklistedPlugins || this.profile.filterBlacklistedPlugins;
-    }
+	get filterBlacklistedPlugins() {
+		return this.modified.filterBlacklistedPlugins || this.profile.filterBlacklistedPlugins;
+	}
 
-    get isAdapterDropdownEnabled() {
-        return this.availablePluginAdapters && Object.keys(this.availablePluginAdapters).length > 1;
-    }
+	get isAdapterDropdownEnabled() {
+		return this.availablePluginAdapters && Object.keys(this.availablePluginAdapters).length > 1;
+	}
 
-    get availablePluginAdapters() {
-        return PLUGINS.adapters.reduce((all, adapter) => {
-            all[adapter] = adapter;
+	get availablePluginAdapters() {
+		return PLUGINS.adapters.reduce((all, adapter) => {
+			all[adapter] = adapter;
 
-            return all;
-        }, {});
-    }
+			return all;
+		}, {});
+	}
 
-    get pluginAdapter() {
-        return this.modified.pluginAdapter || this.profile.pluginAdapter || PLUGINS.adapters[0];
-    }
+	get pluginAdapter() {
+		return this.modified.pluginAdapter || this.profile.pluginAdapter || PLUGINS.adapters[0];
+	}
 
-    get avatar() {
-        return this.modified.avatar || this.profile.avatar;
-    }
+	get avatar() {
+		return this.modified.avatar || this.profile.avatar;
+	}
 
-    get background() {
-        return this.modified.background || this.profile.background;
-    }
+	get background() {
+		return this.modified.background || this.profile.background;
+	}
 
-    // TODO update it when modified, but it's changed on the sidemenu
-    get currency() {
-        return this.modified.currency || this.profile.currency;
-    }
+	// TODO update it when modified, but it's changed on the sidemenu
+	get currency() {
+		return this.modified.currency || this.profile.currency;
+	}
 
-    get timeFormat() {
-        return this.modified.timeFormat || this.profile.timeFormat;
-    }
+	get timeFormat() {
+		return this.modified.timeFormat || this.profile.timeFormat;
+	}
 
-    get language() {
-        return this.modified.language || this.profile.language;
-    }
+	get language() {
+		return this.modified.language || this.profile.language;
+	}
 
-    get bip39Language() {
-        return this.modified.bip39Language || this.profile.bip39Language || BIP39.defaultLanguage;
-    }
+	get bip39Language() {
+		return this.modified.bip39Language || this.profile.bip39Language || BIP39.defaultLanguage;
+	}
 
-    get name() {
-        return this.modified.name || this.profile.name;
-    }
+	get name() {
+		return this.modified.name || this.profile.name;
+	}
 
-    get networkId() {
-        return this.modified.networkId || this.profile.networkId;
-    }
+	get networkId() {
+		return this.modified.networkId || this.profile.networkId;
+	}
 
-    get priceApi() {
-        return this.modified.priceApi || this.profile.priceApi;
-    }
+	get priceApi() {
+		return this.modified.priceApi || this.profile.priceApi;
+	}
 
-    get defaultChosenFee() {
-        return this.modified.defaultChosenFee || this.profile.defaultChosenFee;
-    }
+	get defaultChosenFee() {
+		return this.modified.defaultChosenFee || this.profile.defaultChosenFee;
+	}
 
-    // TODO update it when modified, but it's changed on the sidemenu
-    get theme() {
-        return this.modified.theme || this.profile.theme;
-    }
+	// TODO update it when modified, but it's changed on the sidemenu
+	get theme() {
+		return this.modified.theme || this.profile.theme;
+	}
 
-    get hideWalletButtonText() {
-        return this.modified.hideWalletButtonText || this.profile.hideWalletButtonText;
-    }
+	get hideWalletButtonText() {
+		return this.modified.hideWalletButtonText || this.profile.hideWalletButtonText;
+	}
 
-    get isAdvancedModeEnabled() {
-        return this.modified.isAdvancedModeEnabled || this.profile.isAdvancedModeEnabled;
-    }
+	get isAdvancedModeEnabled() {
+		return this.modified.isAdvancedModeEnabled || this.profile.isAdvancedModeEnabled;
+	}
 
-    get isMarketChartEnabled() {
-        return this.modified.marketChartOptions.isEnabled || this.profile.marketChartOptions.isEnabled;
-    }
+	get isMarketChartEnabled() {
+		return this.modified.marketChartOptions.isEnabled || this.profile.marketChartOptions.isEnabled;
+	}
 
-    get isMarketEnabled() {
-        return this.session_network && this.session_network.market && this.session_network.market.enabled;
-    }
+	get isMarketEnabled() {
+		return this.session_network && this.session_network.market && this.session_network.market.enabled;
+	}
 
-    get isProfileTab() {
-        return this.tab === "profile";
-    }
+	get isProfileTab() {
+		return this.tab === "profile";
+	}
 
-    get instructionsImage() {
-        const name = this.isProfileTab ? "step-1" : "step-3";
-        return `pages/profile-new/${name}.svg`;
-    }
+	get instructionsImage() {
+		const name = this.isProfileTab ? "step-1" : "step-3";
+		return `pages/profile-new/${name}.svg`;
+	}
 
-    get nameError() {
-        if (this.$v.modified.name.$dirty && this.$v.modified.name.$invalid) {
-            if (!this.$v.modified.name.doesNotExist) {
-                return this.$t("VALIDATION.NAME.DUPLICATED", [this.modified.name]);
-            } else if (!this.$v.modified.name.maxLength) {
-                return this.$t("VALIDATION.NAME.MAX_LENGTH", [Profile.schema.properties.name.maxLength]);
-            } else if (!this.$v.modified.name.minLength) {
-                return this.$tc("VALIDATION.NAME.MIN_LENGTH", Profile.schema.properties.name.minLength);
-            }
-        }
+	get nameError() {
+		if (this.$v.modified.name.$dirty && this.$v.modified.name.$invalid) {
+			if (!this.$v.modified.name.doesNotExist) {
+				return this.$t("VALIDATION.NAME.DUPLICATED", [this.modified.name]);
+			} else if (!this.$v.modified.name.maxLength) {
+				return this.$t("VALIDATION.NAME.MAX_LENGTH", [Profile.schema.properties.name.maxLength]);
+			} else if (!this.$v.modified.name.minLength) {
+				return this.$tc("VALIDATION.NAME.MIN_LENGTH", Profile.schema.properties.name.minLength);
+			}
+		}
 
-        return null;
-    }
+		return null;
+	}
 
-    get pluginThemes() {
-        return isEmpty(this.$store.getters["plugin/themes"]) ? null : this.$store.getters["plugin/themes"];
-    }
+	get pluginThemes() {
+		return isEmpty(this.$store.getters["plugin/themes"]) ? null : this.$store.getters["plugin/themes"];
+	}
 
-    get themes() {
-        const pluginThemes = {};
+	get themes() {
+		const pluginThemes = {};
 
-        for (const [themeId, config] of Object.entries(this.pluginThemes)) {
-            pluginThemes[themeId] = config.name;
-        }
+		for (const [themeId, config] of Object.entries(this.pluginThemes)) {
+			pluginThemes[themeId] = config.name;
+		}
 
-        return {
-            light: this.$t("COMMON.THEMES.LIGHT"),
-            dark: this.$t("COMMON.THEMES.DARK"),
-            ...pluginThemes,
-        };
-    }
+		return {
+			light: this.$t("COMMON.THEMES.LIGHT"),
+			dark: this.$t("COMMON.THEMES.DARK"),
+			...pluginThemes,
+		};
+	}
 
-    get pluginLanguages() {
-        return isEmpty(this.$store.getters["plugin/languages"]) ? null : this.$store.getters["plugin/languages"];
-    }
+	get pluginLanguages() {
+		return isEmpty(this.$store.getters["plugin/languages"]) ? null : this.$store.getters["plugin/languages"];
+	}
 
-    get languages() {
-        const pluginLanguages = {};
+	get languages() {
+		const pluginLanguages = {};
 
-        for (const [languageId, config] of Object.entries(this.pluginLanguages || {})) {
-            pluginLanguages[languageId] = config.name;
-        }
+		for (const [languageId, config] of Object.entries(this.pluginLanguages || {})) {
+			pluginLanguages[languageId] = config.name;
+		}
 
-        return {
-            [I18N.defaultLocale]: this.$t(`LANGUAGES.${I18N.defaultLocale}`),
-            ...pluginLanguages,
-        };
-    }
+		return {
+			[I18N.defaultLocale]: this.$t(`LANGUAGES.${I18N.defaultLocale}`),
+			...pluginLanguages,
+		};
+	}
 
-    beforeRouteEnter(to, from, next) {
+	beforeRouteEnter(to, from, next) {
 		next((vm) => {
 			vm.$synchronizer.focus();
 			vm.$synchronizer.pause("market");
 		});
 	}
 
-    beforeRouteLeave(to, from, next) {
+	beforeRouteLeave(to, from, next) {
 		if (this.isModified) {
 			// Capture the callback to trigger it when user has decided to update or not the profile
 			this.routeLeaveCallback = next;
@@ -607,7 +607,7 @@ export default class ProfileEdition extends Vue {
 		}
 	}
 
-    mounted() {
+	mounted() {
 		this.modified.name = this.profile.name;
 		this.modified.language = this.profile.language;
 		this.modified.bip39Language = this.profile.bip39Language;
@@ -619,190 +619,190 @@ export default class ProfileEdition extends Vue {
 		this.modified.defaultChosenFee = this.profile.defaultChosenFee || "AVERAGE";
 	}
 
-    onStopLeaving() {
-        this.routeLeaveCallback = null;
-    }
+	onStopLeaving() {
+		this.routeLeaveCallback = null;
+	}
 
-    onLeave(hasToSave) {
-        if (hasToSave) {
-            await this.updateProfile();
-        } else {
-            this.$store.dispatch(StoreBinding.SessionLoad, this.session_profile.id);
-        }
+	async onLeave(hasToSave) {
+		if (hasToSave) {
+			await this.updateProfile();
+		} else {
+			this.$store.dispatch(StoreBinding.SessionLoad, this.session_profile.id);
+		}
 
-        this.routeLeaveCallback();
-    }
+		this.routeLeaveCallback();
+	}
 
-    flagImage(language) {
-        return this.assets_loadImage(`flags/${language}.svg`);
-    }
+	flagImage(language) {
+		return this.assets_loadImage(`flags/${language}.svg`);
+	}
 
-    toggleIsNameEditable() {
-        if (!this.nameError || !this.isNameEditable) {
-            if (!this.isNameEditable && !this.modified.name) {
-                this.$set(this.modified, "name", this.profile.name);
-            }
-            this.isNameEditable = !this.isNameEditable;
-        }
-    }
+	toggleIsNameEditable() {
+		if (!this.nameError || !this.isNameEditable) {
+			if (!this.isNameEditable && !this.modified.name) {
+				this.$set(this.modified, "name", this.profile.name);
+			}
+			this.isNameEditable = !this.isNameEditable;
+		}
+	}
 
-    updateProfile() {
-        const hasNameError = this.nameError;
-        if (hasNameError) {
-            this.modified.name = this.profile.name;
-        }
-        await this.$store.dispatch(StoreBinding.ProfileUpdate, {
-            ...this.profile,
-            ...this.modified,
-        });
+	async updateProfile() {
+		const hasNameError = this.nameError;
+		if (hasNameError) {
+			this.modified.name = this.profile.name;
+		}
+		await this.$store.dispatch(StoreBinding.ProfileUpdate, {
+			...this.profile,
+			...this.modified,
+		});
 
-        if (this.isCurrentProfile && this.profile.priceApi !== this.modified.priceApi) {
-            this.$store.dispatch(StoreBinding.MarketRefreshTicker);
-        }
+		if (this.isCurrentProfile && this.profile.priceApi !== this.modified.priceApi) {
+			this.$store.dispatch(StoreBinding.MarketRefreshTicker);
+		}
 
-        if (hasNameError) {
-            this.$error(
-                this.$t("COMMON.FAILED_UPDATE", {
-                    name: this.$t("COMMON.PROFILE_NAME"),
-                    reason: this.$t("PAGES.PROFILE_EDITION.ERROR.DUPLICATE_PROFILE"),
-                }),
-            );
-        }
-    }
+		if (hasNameError) {
+			this.$error(
+				this.$t("COMMON.FAILED_UPDATE", {
+					name: this.$t("COMMON.PROFILE_NAME"),
+					reason: this.$t("PAGES.PROFILE_EDITION.ERROR.DUPLICATE_PROFILE"),
+				}),
+			);
+		}
+	}
 
-    save() {
-        this.toggleIsNameEditable();
-        await this.updateProfile();
+	async save() {
+		this.toggleIsNameEditable();
+		await this.updateProfile();
 
-        this.$router.push({ name: "profiles" });
-    }
+		this.$router.push({ name: "profiles" });
+	}
 
-    selectAvatar(avatar) {
-        let newAvatar;
+	selectAvatar(avatar) {
+		let newAvatar;
 
-        if (typeof avatar === "string") {
-            newAvatar = avatar;
-        } else if (avatar.onlyLetter) {
-            newAvatar = null;
-        } else if (avatar.name) {
-            newAvatar = {
-                avatarName: avatar.name,
-                pluginId: avatar.pluginId,
-            };
-        } else {
-            throw new Error(`Invalid value for avatar: ${avatar}`);
-        }
+		if (typeof avatar === "string") {
+			newAvatar = avatar;
+		} else if (avatar.onlyLetter) {
+			newAvatar = null;
+		} else if (avatar.name) {
+			newAvatar = {
+				avatarName: avatar.name,
+				pluginId: avatar.pluginId,
+			};
+		} else {
+			throw new Error(`Invalid value for avatar: ${avatar}`);
+		}
 
-        this.__updateSession("avatar", newAvatar);
-    }
+		this.__updateSession("avatar", newAvatar);
+	}
 
-    selectBackground(background) {
-        this.__updateSession("background", background);
-    }
+	selectBackground(background) {
+		this.__updateSession("background", background);
+	}
 
-    selectCurrency(currency) {
-        this.__updateSession("currency", currency);
-    }
+	selectCurrency(currency) {
+		this.__updateSession("currency", currency);
+	}
 
-    selectTimeFormat(format) {
-        this.__updateSession("timeFormat", format);
-    }
+	selectTimeFormat(format) {
+		this.__updateSession("timeFormat", format);
+	}
 
-    selectLanguage(language) {
-        this.__updateSession("language", language);
-    }
+	selectLanguage(language) {
+		this.__updateSession("language", language);
+	}
 
-    selectBip39Language(bip39Language) {
-        this.__updateSession("bip39Language", bip39Language);
-    }
+	selectBip39Language(bip39Language) {
+		this.__updateSession("bip39Language", bip39Language);
+	}
 
-    selectNetwork(network) {
-        this.$set(this.modified, "networkId", network);
-    }
+	selectNetwork(network) {
+		this.$set(this.modified, "networkId", network);
+	}
 
-    selectPriceApi(priceApi) {
-        this.__updateSession("priceApi", priceApi);
-    }
+	selectPriceApi(priceApi) {
+		this.__updateSession("priceApi", priceApi);
+	}
 
-    selectDefaultChosenFee(defaultChosenFee) {
-        this.__updateSession("defaultChosenFee", defaultChosenFee);
-    }
+	selectDefaultChosenFee(defaultChosenFee) {
+		this.__updateSession("defaultChosenFee", defaultChosenFee);
+	}
 
-    setAdvancedMode(mode) {
-        this.__updateSession("isAdvancedModeEnabled", mode);
-    }
+	setAdvancedMode(mode) {
+		this.__updateSession("isAdvancedModeEnabled", mode);
+	}
 
-    selectTheme(theme) {
-        this.__updateSession("theme", theme);
-    }
+	selectTheme(theme) {
+		this.__updateSession("theme", theme);
+	}
 
-    selectHideWalletButtonText(hideWalletButtonText) {
-        this.__updateSession("hideWalletButtonText", hideWalletButtonText);
-    }
+	selectHideWalletButtonText(hideWalletButtonText) {
+		this.__updateSession("hideWalletButtonText", hideWalletButtonText);
+	}
 
-    selectFilterBlacklistedPlugins(filterBlacklistedPlugins) {
-        if (!filterBlacklistedPlugins && !this.$store.getters["app/hasAcceptedBlacklistDisclaimer"]) {
-            this.showBlacklistDisclaimer = true;
-        } else {
-            this.__updateSession("filterBlacklistedPlugins", filterBlacklistedPlugins);
-        }
-    }
+	selectFilterBlacklistedPlugins(filterBlacklistedPlugins) {
+		if (!filterBlacklistedPlugins && !this.$store.getters["app/hasAcceptedBlacklistDisclaimer"]) {
+			this.showBlacklistDisclaimer = true;
+		} else {
+			this.__updateSession("filterBlacklistedPlugins", filterBlacklistedPlugins);
+		}
+	}
 
-    selectEnableAdvancedMode(enableAdvancedMode) {
-        if (enableAdvancedMode) {
-            this.showAdvancedModeDisclaimer = true;
-        } else {
-            this.setAdvancedMode(enableAdvancedMode);
-        }
-    }
+	selectEnableAdvancedMode(enableAdvancedMode) {
+		if (enableAdvancedMode) {
+			this.showAdvancedModeDisclaimer = true;
+		} else {
+			this.setAdvancedMode(enableAdvancedMode);
+		}
+	}
 
-    selectPluginAdapter(pluginAdapter) {
-        this.__updateSession("pluginAdapter", pluginAdapter);
-    }
+	selectPluginAdapter(pluginAdapter) {
+		this.__updateSession("pluginAdapter", pluginAdapter);
+	}
 
-    selectIsMarketChartEnabled(isMarketChartEnabled) {
-        const marketChartOptions = clone(this.$store.getters["session/marketChartOptions"]);
-        marketChartOptions.isEnabled = isMarketChartEnabled;
+	selectIsMarketChartEnabled(isMarketChartEnabled) {
+		const marketChartOptions = clone(this.$store.getters["session/marketChartOptions"]);
+		marketChartOptions.isEnabled = isMarketChartEnabled;
 
-        this.__updateSession("marketChartOptions", marketChartOptions);
-    }
+		this.__updateSession("marketChartOptions", marketChartOptions);
+	}
 
-    setName() {
-        this.__updateSession("name", this.modified.name);
-        this.$v.modified.name.$touch();
-    }
+	setName() {
+		this.__updateSession("name", this.modified.name);
+		this.$v.modified.name.$touch();
+	}
 
-    __updateSession(propertyName, value) {
-        this.$set(this.modified, propertyName, value);
+	async __updateSession(propertyName, value) {
+		this.$set(this.modified, propertyName, value);
 
-        if (this.isCurrentProfile) {
-            const action = `session/set${this.strings_capitalizeFirst(propertyName)}`;
-            await this.$store.dispatch(action, value);
-        }
-    }
+		if (this.isCurrentProfile) {
+			const action = `session/set${this.strings_capitalizeFirst(propertyName)}`;
+			await this.$store.dispatch(action, value);
+		}
+	}
 
-    acceptBlacklistDisclaimer(accepted) {
-        if (accepted) {
-            this.$store.dispatch(StoreBinding.AppSetHasAcceptedBlacklistDisclaimer, accepted);
-        } else {
-            this.$refs.blacklist.toggle();
-        }
+	acceptBlacklistDisclaimer(accepted) {
+		if (accepted) {
+			this.$store.dispatch(StoreBinding.AppSetHasAcceptedBlacklistDisclaimer, accepted);
+		} else {
+			this.$refs.blacklist.toggle();
+		}
 
-        this.selectFilterBlacklistedPlugins(!accepted);
-        this.showBlacklistDisclaimer = false;
-    }
+		this.selectFilterBlacklistedPlugins(!accepted);
+		this.showBlacklistDisclaimer = false;
+	}
 
-    acceptAdvancedModeDisclaimer(accepted) {
-        if (accepted) {
-            this.setAdvancedMode(accepted);
-        } else {
-            this.$refs.advancedMode.toggle();
-        }
+	acceptAdvancedModeDisclaimer(accepted) {
+		if (accepted) {
+			this.setAdvancedMode(accepted);
+		} else {
+			this.$refs.advancedMode.toggle();
+		}
 
-        this.showAdvancedModeDisclaimer = false;
-    }
+		this.showAdvancedModeDisclaimer = false;
+	}
 
-    validations = {
+	validations = {
 		modified: {
 			name: {
 				doesNotExist(value) {
