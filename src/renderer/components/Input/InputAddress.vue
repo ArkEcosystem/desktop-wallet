@@ -17,7 +17,7 @@
 			:is-focused="isFocused"
 			:is-invalid="invalid"
 			:warning-text="warningText"
-			class="InputAddress text-left"
+			class="text-left InputAddress"
 		>
 			<div slot-scope="{ inputClass }" :class="inputClass" class="flex flex-row">
 				<input
@@ -26,7 +26,7 @@
 					:name="name"
 					:disabled="isDisabled"
 					type="text"
-					class="InputAddress__input flex flex-grow bg-transparent text-theme-page-text"
+					class="flex flex-grow bg-transparent InputAddress__input text-theme-page-text"
 					@blur="onBlur"
 					@focus="onFocus"
 					@click.self.stop
@@ -38,7 +38,7 @@
 				<ButtonModal
 					ref="button-qr"
 					:label="''"
-					class="InputAddress__qr-button flex flex-shrink-0 text-grey-dark hover:text-blue"
+					class="flex flex-shrink-0 InputAddress__qr-button text-grey-dark hover:text-blue"
 					icon="qr"
 					view-box="0 0 20 20"
 				>
@@ -52,9 +52,9 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component, Prop } from "vue-property-decorator";
 import Cycled from "cycled";
 import { orderBy, unionBy } from "lodash";
+import { Component, Prop, Vue } from "vue-property-decorator";
 import { required } from "vuelidate/lib/validators";
 
 import { ButtonModal } from "@/components/Button";
@@ -67,16 +67,16 @@ import { isEmpty } from "@/utils";
 import InputField from "./InputField";
 
 @Component({
-    name: "InputAddress",
+	name: "InputAddress",
 
-    components: {
+	components: {
 		ButtonModal,
 		InputField,
 		ModalQrCodeScanner,
 		MenuDropdown,
 	},
 
-    watch: {
+	watch: {
 		value(val) {
 			this.updateInputValue(val);
 		},
@@ -107,296 +107,302 @@ import InputField from "./InputField";
 				}
 			}
 		},
-	}
+	},
 })
 export default class InputAddress extends Vue {
-    @Prop({
-        type: String,
-        required: false,
-        default: null,
-    })
-    helperText;
+	@Prop({
+		type: String,
+		required: false,
+		default: null,
+	})
+	helperText;
 
-    @Prop({
-        type: Boolean,
-        required: false,
-        default: false,
-    })
-    isDisabled;
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	isDisabled;
 
-    @Prop({
-        type: Boolean,
-        required: false,
-        default: true,
-    })
-    isRequired;
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: true,
+	})
+	isRequired;
 
-    @Prop({
-        type: String,
-        required: false,
-        default() {
-            return this.$t("INPUT_ADDRESS.LABEL");
-        },
-    })
-    label;
+	@Prop({
+		type: String,
+		required: false,
+		default() {
+			return this.$t("INPUT_ADDRESS.LABEL");
+		},
+	})
+	label;
 
-    @Prop({
-        type: String,
-        required: false,
-        default: "address",
-    })
-    name;
+	@Prop({
+		type: String,
+		required: false,
+		default: "address",
+	})
+	name;
 
-    @Prop({
-        type: Number,
-        required: true,
-    })
-    pubKeyHash;
+	@Prop({
+		type: Number,
+		required: true,
+	})
+	pubKeyHash;
 
-    @Prop({
-        type: Boolean,
-        required: false,
-        default: false,
-    })
-    showSuggestions;
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	showSuggestions;
 
-    @Prop({
-        type: String,
-        required: true,
-    })
-    value;
+	@Prop({
+		type: String,
+		required: true,
+	})
+	value;
 
-    @Prop({
-        type: Boolean,
-        required: false,
-        default: false,
-    })
-    isInvalid;
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	isInvalid;
 
-    @Prop({
-        type: String,
-        required: false,
-        default: null,
-    })
-    warningText;
+	@Prop({
+		type: String,
+		required: false,
+		default: null,
+	})
+	warningText;
 
-    inputValue = vm.value;
-    dropdownValue = null;
-    isFocused = false;
-    neoCheckedAddressess = {};
-    notice = null;
+	inputValue = null;
+	dropdownValue = null;
+	isFocused = false;
+	neoCheckedAddressess = {};
+	notice = null;
 
-    get currentProfile() {
-        return this.session_profile;
-    }
+	data(vm) {
+		return {
+			inputValue: vm.value,
+		};
+	}
 
-    get error() {
-        let error = null;
+	get currentProfile() {
+		return this.session_profile;
+	}
 
-        if (!this.isDisabled && this.$v.model.$dirty && !(this.hasSuggestions && this.isFocused)) {
-            if (!this.$v.model.required) {
-                error = this.$t("INPUT_ADDRESS.ERROR.REQUIRED");
-            } else if (!this.$v.model.isValid) {
-                error = this.$t("INPUT_ADDRESS.ERROR.NOT_VALID");
-            }
-        }
+	get error() {
+		let error = null;
 
-        return error;
-    }
+		if (!this.isDisabled && this.$v.model.$dirty && !(this.hasSuggestions && this.isFocused)) {
+			if (!this.$v.model.required) {
+				error = this.$t("INPUT_ADDRESS.ERROR.REQUIRED");
+			} else if (!this.$v.model.isValid) {
+				error = this.$t("INPUT_ADDRESS.ERROR.NOT_VALID");
+			}
+		}
 
-    get hasSuggestions() {
-        return !isEmpty(this.suggestions);
-    }
+		return error;
+	}
 
-    get invalid() {
-        return this.$v.model.$dirty && (this.isInvalid || !!this.error);
-    }
+	get hasSuggestions() {
+		return !isEmpty(this.suggestions);
+	}
 
-    get TODO_model() {}
+	get invalid() {
+		return this.$v.model.$dirty && (this.isInvalid || !!this.error);
+	}
 
-    get suggestions() {
-        if (!this.currentProfile || !this.showSuggestions) {
-            return [];
-        }
+	get model() {
+		return this.dropdownValue || this.inputValue;
+	}
 
-        const ledgerWallets = this.$store.getters["ledger/isConnected"]
-            ? this.$store.getters["ledger/wallets"]
-            : [];
-        const wallets = [...this.$store.getters["wallet/byProfileId"](this.currentProfile.id), ...ledgerWallets];
-        const contacts = this.$store.getters["wallet/contactsByProfileId"](this.currentProfile.id);
+	set model(value) {
+		this.updateInputValue(value);
+		this.$emit("input", value);
+	}
 
-        const source = unionBy(wallets, contacts, "address").filter((wallet) => wallet && !!wallet.address);
+	get suggestions() {
+		if (!this.currentProfile || !this.showSuggestions) {
+			return [];
+		}
 
-        const addresses = source.map((wallet) => {
-            const address = {
-                name: null,
-                address: wallet.address,
-            };
+		const ledgerWallets = this.$store.getters["ledger/isConnected"] ? this.$store.getters["ledger/wallets"] : [];
+		const wallets = [...this.$store.getters["wallet/byProfileId"](this.currentProfile.id), ...ledgerWallets];
+		const contacts = this.$store.getters["wallet/contactsByProfileId"](this.currentProfile.id);
 
-            const walletName = this.wallet_name(wallet.address);
-            if (walletName && walletName !== wallet.address) {
-                address.name = `${truncate(walletName, 25)} (${this.wallet_truncate(wallet.address)})`;
-            }
+		const source = unionBy(wallets, contacts, "address").filter((wallet) => wallet && !!wallet.address);
 
-            return address;
-        });
+		const addresses = source.map((wallet) => {
+			const address = {
+				name: null,
+				address: wallet.address,
+			};
 
-        const results = orderBy(addresses, (object) => {
-            return (object.name || object.address).toLowerCase();
-        });
+			const walletName = this.wallet_name(wallet.address);
+			if (walletName && walletName !== wallet.address) {
+				address.name = `${truncate(walletName, 25)} (${this.wallet_truncate(wallet.address)})`;
+			}
 
-        return results.reduce((wallets, wallet) => {
-            const value = wallet.name || wallet.address;
-            const searchValue = value.toLowerCase();
+			return address;
+		});
 
-            if (searchValue && searchValue.includes(this.inputValue.toLowerCase())) {
-                wallets[wallet.address] = value;
-            }
+		const results = orderBy(addresses, (object) => {
+			return (object.name || object.address).toLowerCase();
+		});
 
-            return wallets;
-        }, {});
-    }
+		return results.reduce((wallets, wallet) => {
+			const value = wallet.name || wallet.address;
+			const searchValue = value.toLowerCase();
 
-    get suggestionsKeys() {
-        return new Cycled(Object.keys(this.suggestions));
-    }
+			if (searchValue && searchValue.includes(this.inputValue.toLowerCase())) {
+				wallets[wallet.address] = value;
+			}
 
-    mounted() {
+			return wallets;
+		}, {});
+	}
+
+	get suggestionsKeys() {
+		return new Cycled(Object.keys(this.suggestions));
+	}
+
+	mounted() {
 		if (this.value) {
 			this.updateInputValue(this.value);
 		}
 	}
 
-    blur() {
-        this.$refs.input.blur();
-    }
+	blur() {
+		this.$refs.input.blur();
+	}
 
-    focus() {
-        this.$refs.input.focus();
-    }
+	focus() {
+		this.$refs.input.focus();
+	}
 
-    //*
-             * Checks if there is a NEO wallet with the same address and memoizes the result
-             * @param {String}
-             * @result {Boolean}
+	checkNeoAddress(address) {
+		const wasChecked = Object.prototype.hasOwnProperty.call(this.neoCheckedAddressess, address);
+		if (!wasChecked) {
+			this.neoCheckedAddressess[address] = await WalletService.isNeoAddress(address);
+		}
+		return this.neoCheckedAddressess[address];
+	}
 
-    checkNeoAddress(address) {
-        const wasChecked = Object.prototype.hasOwnProperty.call(this.neoCheckedAddressess, address);
-        if (!wasChecked) {
-            this.neoCheckedAddressess[address] = await WalletService.isNeoAddress(address);
-        }
-        return this.neoCheckedAddressess[address];
-    }
+	onBlur(event) {
+		// Verifies that the element that generated the blur was a dropdown item
+		if (event.relatedTarget) {
+			const classList = event.relatedTarget.classList;
 
-    onBlur(event) {
-        // Verifies that the element that generated the blur was a dropdown item
-        if (event.relatedTarget) {
-            const classList = event.relatedTarget.classList;
+			const isDropdownItem =
+				classList && typeof classList.contains === "function"
+					? classList.contains("MenuDropdownItem__button")
+					: false;
 
-            const isDropdownItem =
-                classList && typeof classList.contains === "function"
-                    ? classList.contains("MenuDropdownItem__button")
-                    : false;
+			if (!isDropdownItem) {
+				this.closeDropdown();
+			}
+		} else if (this.$refs.dropdown.isOpen) {
+			this.closeDropdown();
+		}
 
-            if (!isDropdownItem) {
-                this.closeDropdown();
-            }
-        } else if (this.$refs.dropdown.isOpen) {
-            this.closeDropdown();
-        }
+		this.isFocused = false;
 
-        this.isFocused = false;
+		// If the user selects a suggestion and leaves the input
+		if (this.dropdownValue) {
+			this.onEnter();
+		}
+	}
 
-        // If the user selects a suggestion and leaves the input
-        if (this.dropdownValue) {
-            this.onEnter();
-        }
-    }
+	onDropdownSelect(value) {
+		this.model = value;
+		this.$nextTick(() => this.closeDropdown());
+	}
 
-    onDropdownSelect(value) {
-        this.model = value;
-        this.$nextTick(() => this.closeDropdown());
-    }
+	onFocus() {
+		this.isFocused = true;
+		this.$emit("focus");
+	}
 
-    onFocus() {
-        this.isFocused = true;
-        this.$emit("focus");
-    }
+	onEnter() {
+		if (!this.dropdownValue) {
+			return;
+		}
 
-    onEnter() {
-        if (!this.dropdownValue) {
-            return;
-        }
+		this.model = this.dropdownValue;
 
-        this.model = this.dropdownValue;
+		this.$nextTick(() => {
+			this.closeDropdown();
+			this.$refs.input.setSelectionRange(this.inputValue.length, this.inputValue.length);
+		});
+	}
 
-        this.$nextTick(() => {
-            this.closeDropdown();
-            this.$refs.input.setSelectionRange(this.inputValue.length, this.inputValue.length);
-        });
-    }
+	onEsc() {
+		this.dropdownValue = null;
+		this.closeDropdown();
+	}
 
-    onEsc() {
-        this.dropdownValue = null;
-        this.closeDropdown();
-    }
+	onKeyUp() {
+		const next = this.dropdownValue ? this.suggestionsKeys.previous() : this.suggestionsKeys.current();
+		this.__setSuggestion(next);
+	}
 
-    onKeyUp() {
-        const next = this.dropdownValue ? this.suggestionsKeys.previous() : this.suggestionsKeys.current();
-        this.__setSuggestion(next);
-    }
+	onKeyDown() {
+		const next = this.dropdownValue ? this.suggestionsKeys.next() : this.suggestionsKeys.current();
+		this.__setSuggestion(next);
+	}
 
-    onKeyDown() {
-        const next = this.dropdownValue ? this.suggestionsKeys.next() : this.suggestionsKeys.current();
-        this.__setSuggestion(next);
-    }
+	onDecodeQR(value, toggle) {
+		this.model = this.qr_getAddress(value);
 
-    onDecodeQR(value, toggle) {
-        this.model = this.qr_getAddress(value);
+		// Check if we were unable to retrieve an address from the qr
+		if ((this.inputValue === "" || this.inputValue === undefined) && this.inputValue !== value) {
+			this.$error(this.$t("MODAL_QR_SCANNER.DECODE_FAILED", { data: value }));
+		}
+		toggle();
+	}
 
-        // Check if we were unable to retrieve an address from the qr
-        if ((this.inputValue === "" || this.inputValue === undefined) && this.inputValue !== value) {
-            this.$error(this.$t("MODAL_QR_SCANNER.DECODE_FAILED", { data: value }));
-        }
-        toggle();
-    }
+	closeDropdown() {
+		this.$refs.dropdown.close();
+	}
 
-    closeDropdown() {
-        this.$refs.dropdown.close();
-    }
+	openDropdown() {
+		this.$refs.dropdown.open();
+	}
 
-    openDropdown() {
-        this.$refs.dropdown.open();
-    }
+	updateInputValue(value) {
+		this.inputValue = value;
 
-    updateInputValue(value) {
-        this.inputValue = value;
+		this.$eventBus.emit("change");
 
-        this.$eventBus.emit("change");
+		// Inform Vuelidate that the value changed
+		this.$v.model.$touch();
+	}
 
-        // Inform Vuelidate that the value changed
-        this.$v.model.$touch();
-    }
+	__setSuggestion(value) {
+		if (!this.hasSuggestions) {
+			return;
+		}
 
-    __setSuggestion(value) {
-        if (!this.hasSuggestions) {
-            return;
-        }
+		this.dropdownValue = value;
+		this.$nextTick(() => {
+			this.$refs.input.setSelectionRange(this.inputValue.length, this.dropdownValue.length);
+		});
+	}
 
-        this.dropdownValue = value;
-        this.$nextTick(() => {
-            this.$refs.input.setSelectionRange(this.inputValue.length, this.dropdownValue.length);
-        });
-    }
+	reset() {
+		this.model = "";
+		this.$nextTick(() => {
+			this.$v.$reset();
+		});
+	}
 
-    reset() {
-        this.model = "";
-        this.$nextTick(() => {
-            this.$v.$reset();
-        });
-    }
-
-    validations = {
+	validations = {
 		model: {
 			required(value) {
 				return this.isRequired ? required(value) : true;

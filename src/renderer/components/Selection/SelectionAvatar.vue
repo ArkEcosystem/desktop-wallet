@@ -12,7 +12,8 @@
 </template>
 
 <script>
-import { Vue, Component, Prop } from "vue-property-decorator";
+import { Component, Prop,Vue } from "vue-property-decorator";
+
 import selectionMixin from "./mixin-selection";
 import selectionImageMixin from "./mixin-selection-image";
 

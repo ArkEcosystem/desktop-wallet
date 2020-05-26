@@ -16,7 +16,7 @@
 
 						<div class="PluginInstallModal__authorized__downloading__header__info">
 							<span class="font-semibold">{{ formatter_percentage(normalizedPercentage, 2, 2) }}</span>
-							<span v-if="progress.totalBytes" class="ml-2 text-theme-page-text-light truncate">
+							<span v-if="progress.totalBytes" class="ml-2 truncate text-theme-page-text-light">
 								{{ transferred }} / {{ total }}
 							</span>
 						</div>
@@ -52,72 +52,71 @@
 </template>
 
 <script>
-import { Vue, Component, Prop } from "vue-property-decorator";
 import { ipcRenderer } from "electron";
+import { Component, Prop, Vue } from "vue-property-decorator";
 
 import { ModalWindow } from "@/components/Modal";
 import { ProgressBar } from "@/components/ProgressBar";
 import { AppEvent } from "@/enums";
 
 @Component({
-    name: "PluginInstallModal",
+	name: "PluginInstallModal",
 
-    components: {
+	components: {
 		ModalWindow,
 		ProgressBar,
-	}
+	},
 })
 export default class PluginInstallModal extends Vue {
-    @Prop({
-        type: Object,
-        required: true,
-    })
-    plugin;
+	@Prop({
+		type: Object,
+		required: true,
+	})
+	plugin;
 
-    @Prop({
-        type: Boolean,
-        default: false,
-        required: false,
-    })
-    isUpdate;
+	@Prop({
+		type: Boolean,
+		default: false,
+		required: false,
+	})
+	isUpdate;
 
-    // vue-convert: vue-class-component ignores property with undefined, so data() method is required for this property.
-    errorMessage = undefined;
+	errorMessage = undefined;
 
-    isDownloadFinished = false;
-    isDownloadFailed = false;
-    isDownloadCancelled = false;
+	isDownloadFinished = false;
+	isDownloadFailed = false;
+	isDownloadCancelled = false;
 
-    progress = {
-        percent: 0,
-        transferredBytes: 0,
-        totalBytes: 0,
-    };
+	progress = {
+		percent: 0,
+		transferredBytes: 0,
+		totalBytes: 0,
+	};
 
-    data() {
-        return {
-            errorMessage: undefined
-        };
-    }
+	data() {
+		return {
+			errorMessage: undefined,
+		};
+	}
 
-    get installImage() {
-        const image = this.session_hasDarkTheme ? "dark" : "light";
-        return this.assets_loadImage(`pages/updater/computer-${image}.svg`);
-    }
+	get installImage() {
+		const image = this.session_hasDarkTheme ? "dark" : "light";
+		return this.assets_loadImage(`pages/updater/computer-${image}.svg`);
+	}
 
-    get normalizedPercentage() {
-        return parseInt(this.progress.percent * 100, 10);
-    }
+	get normalizedPercentage() {
+		return parseInt(this.progress.percent * 100, 10);
+	}
 
-    get transferred() {
-        return this.formatter_bytes(this.progress.transferredBytes);
-    }
+	get transferred() {
+		return this.formatter_bytes(this.progress.transferredBytes);
+	}
 
-    get total() {
-        return this.formatter_bytes(this.progress.totalBytes);
-    }
+	get total() {
+		return this.formatter_bytes(this.progress.totalBytes);
+	}
 
-    mounted() {
+	mounted() {
 		ipcRenderer.on(AppEvent.PluginManagerDownloadProgress, this.onProgress);
 		ipcRenderer.on(AppEvent.PluginManagerPluginDownloaded, this.onPluginDownloaded);
 		ipcRenderer.on(AppEvent.PluginManagerError, this.onError);
@@ -125,57 +124,57 @@ export default class PluginInstallModal extends Vue {
 		this.emitDownload();
 	}
 
-    beforeDestroy() {
+	beforeDestroy() {
 		ipcRenderer.removeListener(AppEvent.PluginManagerDownloadProgress, this.onProgress);
 		ipcRenderer.removeListener(AppEvent.PluginManagerPluginDownloaded, this.onPluginDownloaded);
 		ipcRenderer.removeListener(AppEvent.PluginManagerError, this.onError);
 	}
 
-    cancel() {
-        this.isDownloadCancelled = true;
-        ipcRenderer.send("plugin-manager:cancel");
-    }
+	cancel() {
+		this.isDownloadCancelled = true;
+		ipcRenderer.send("plugin-manager:cancel");
+	}
 
-    cleanup() {
-        ipcRenderer.send("plugin-manager:cleanup");
-    }
+	cleanup() {
+		ipcRenderer.send("plugin-manager:cleanup");
+	}
 
-    emitDownload() {
-        let source = this.plugin.source;
+	emitDownload() {
+		let source = this.plugin.source;
 
-        if (this.isUpdate) {
-            source = this.$store.getters["plugin/availableById"](this.plugin.id).config.source;
-        }
+		if (this.isUpdate) {
+			source = this.$store.getters["plugin/availableById"](this.plugin.id).config.source;
+		}
 
-        this.$emit("download", source);
-    }
+		this.$emit("download", source);
+	}
 
-    emitInstall() {
-        this.$emit("install");
-    }
+	emitInstall() {
+		this.$emit("install");
+	}
 
-    emitClose() {
-        if (!this.isDownloadFailed && !this.isDownloadFinished) {
-            this.cancel();
-        } else {
-            this.cleanup();
-        }
+	emitClose() {
+		if (!this.isDownloadFailed && !this.isDownloadFinished) {
+			this.cancel();
+		} else {
+			this.cleanup();
+		}
 
-        this.$emit("close");
-    }
+		this.$emit("close");
+	}
 
-    onProgress(_, progress) {
-        Object.assign(this.progress, progress);
-    }
+	onProgress(_, progress) {
+		Object.assign(this.progress, progress);
+	}
 
-    onPluginDownloaded() {
-        this.isDownloadFinished = true;
-    }
+	onPluginDownloaded() {
+		this.isDownloadFinished = true;
+	}
 
-    onError(_, error) {
-        this.isDownloadFailed = true;
-        this.errorMessage = error instanceof Error ? error.message : undefined;
-    }
+	onError(_, error) {
+		this.isDownloadFailed = true;
+		this.errorMessage = error instanceof Error ? error.message : undefined;
+	}
 }
 </script>
 

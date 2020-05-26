@@ -105,7 +105,8 @@
 </template>
 
 <script>
-import { Vue, Component, Prop } from "vue-property-decorator";
+import { Component, Prop,Vue } from "vue-property-decorator";
+
 import { MenuDropdown } from "@/components/Menu";
 import SvgIcon from "@/components/SvgIcon";
 import Loader from "@/components/utils/Loader";

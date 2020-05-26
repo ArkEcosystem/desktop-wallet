@@ -1,16 +1,16 @@
 <template>
-	<div class="flex justify-center items-center">
+	<div class="flex items-center justify-center">
 		<button
 			v-tooltip="{
 				content: tooltipText,
 				placement: isHorizontal ? 'bottom' : 'right',
 				boundariesElement: 'body',
 			}"
-			class="AppSidemenuImportantNotification relative cursor-pointer flex items-center justify-center h-8 w-8"
+			class="relative flex items-center justify-center w-8 h-8 cursor-pointer AppSidemenuImportantNotification"
 			@click="openNotification"
 		>
 			<div
-				class="AppSidemenuImportantNotification__circle flex items-center justify-center h-8 w-8 rounded-full text-theme-feature bg-theme-feature-item-indicator hover:text-theme-feature-item-indicator hover:bg-theme-feature"
+				class="flex items-center justify-center w-8 h-8 rounded-full AppSidemenuImportantNotification__circle text-theme-feature bg-theme-feature-item-indicator hover:text-theme-feature-item-indicator hover:bg-theme-feature"
 			>
 				<SvgIcon name="notification" view-box="0 0 15 15" />
 			</div>
@@ -36,7 +36,9 @@ import SvgIcon from "@/components/SvgIcon";
     components: {
 		SvgIcon,
 		AppUpdater,
-	}
+	},
+
+	computed: { ...mapGetters("updater", ["availableRelease"]) }
 })
 export default class AppSidemenuImportantNotification extends Vue {
     @Prop({
@@ -47,7 +49,6 @@ export default class AppSidemenuImportantNotification extends Vue {
     isHorizontal;
 
     isNotificationVisible = false;
-    TODO_spread_invalidArgument() {}
 
     get releaseVersion() {
         return this.availableRelease && this.availableRelease.version;

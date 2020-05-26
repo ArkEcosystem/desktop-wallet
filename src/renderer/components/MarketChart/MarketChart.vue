@@ -22,8 +22,8 @@
 </template>
 
 <script>
-import { Vue, Component, Prop } from "vue-property-decorator";
 import { DateTime } from "@arkecosystem/platform-sdk-intl";
+import { Component, Prop,Vue } from "vue-property-decorator";
 
 import LineChart from "@/components/utils/LineChart";
 import Loader from "@/components/utils/Loader";
@@ -366,11 +366,6 @@ export default class MarketChart extends Vue {
         return this.isExpanded;
     }
 
-    //*
-             * Returns the hour in the configured format (24h or 12h)
-             * @param {String} HH:mm
-             * @return {String}
-             
     formatHour(time) {
         if (this.session_profile.timeFormat !== "12h") {
             return time;

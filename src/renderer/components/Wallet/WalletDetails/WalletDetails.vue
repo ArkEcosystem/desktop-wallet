@@ -112,16 +112,16 @@
 </template>
 
 <script>
-import { Vue, Component } from "vue-property-decorator";
 import { remote } from "electron";
 import { at } from "lodash";
+import { Component,Vue } from "vue-property-decorator";
 
 /* eslint-disable vue/no-unused-components */
 import { ButtonGeneric } from "@/components/Button";
 import { MenuTab, MenuTabItem } from "@/components/Menu";
 import SvgIcon from "@/components/SvgIcon";
 import { TransactionModal } from "@/components/Transaction";
-import { AppEvent, StoreBinding } from "@/enums";
+import { AppEvent } from "@/enums";
 import WalletService from "@/services/wallet";
 
 import {
@@ -327,7 +327,17 @@ export default class AnonymousComponent extends Vue {
         });
     }
 
-    get TODO_unconfirmedVotes() {}
+      get unconfirmedVotes() {
+        return this.$store.getters['session/unconfirmedVotes']
+	  }
+
+      set unconfirmedVotes (votes) {
+        this.$store.dispatch('session/setUnconfirmedVotes', votes)
+        this.$store.dispatch('profile/update', {
+          ...this.session_profile,
+          unconfirmedVotes: votes
+        })
+      }
 
     get isAwaitingConfirmation() {
         return !!this.unconfirmedVote;

@@ -23,7 +23,8 @@
 </template>
 
 <script>
-import { Vue, Component } from "vue-property-decorator";
+import { Component,Vue } from "vue-property-decorator";
+
 import SvgIcon from "@/components/SvgIcon";
 import WalletHeadingMenuLedger from "@/components/Wallet/WalletHeading/WalletHeadingMenuLedger";
 

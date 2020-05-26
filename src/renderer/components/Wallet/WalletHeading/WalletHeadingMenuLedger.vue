@@ -36,66 +36,81 @@
 </template>
 
 <script>
-import { Vue, Component, Prop } from "vue-property-decorator";
+import { Component, Prop, Vue } from "vue-property-decorator";
+
 import { ButtonSwitch } from "@/components/Button";
 import { MenuOptions, MenuOptionsItem } from "@/components/Menu";
 import ModalAdditionalLedgers from "@/components/Modal/ModalAdditionalLedgers";
-import { StoreBinding } from "@/enums";
 
 @Component({
-    name: "AppSidemenuOptionsSettings",
+	name: "AppSidemenuOptionsSettings",
 
-    components: {
+	components: {
 		MenuOptions,
 		MenuOptionsItem,
 		ModalAdditionalLedgers,
 		ButtonSwitch,
-	}
+	},
 })
 export default class AppSidemenuOptionsSettings extends Vue {
-    @Prop({
-        type: Boolean,
-        required: false,
-        default: false,
-    })
-    outsideClick;
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	outsideClick;
 
-    @Prop({
-        type: Boolean,
-        required: false,
-        default: false,
-    })
-    isHorizontal;
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	isHorizontal;
 
-    isAdditionalLedgersModalOpen = false;
+	isAdditionalLedgersModalOpen = false;
 
-    get hideText() {
-        return this.$store.getters["session/hideWalletButtonText"];
-    }
+	get hideText() {
+		return this.$store.getters["session/hideWalletButtonText"];
+	}
 
-    get TODO_sessionLedgerCache() {}
+	get sessionLedgerCache() {
+		return this.$store.getters["session/ledgerCache"];
+	}
 
-    setLedgerCache(enabled) {
-        this.sessionLedgerCache = enabled;
-    }
+	set sessionLedgerCache(enabled) {
+		this.$store.dispatch("session/setLedgerCache", enabled);
+		this.$store.dispatch("profile/update", {
+			...this.session_profile,
+			ledgerCache: enabled,
+		});
+		if (enabled) {
+			this.$store.dispatch("ledger/cacheWallets");
+		} else {
+			this.$store.dispatch("ledger/clearWalletCache");
+		}
+	}
 
-    toggleSelect(name) {
-        this.$refs[name].toggle();
-    }
+	setLedgerCache(enabled) {
+		this.sessionLedgerCache = enabled;
+	}
 
-    toggleAdditionalLedgersModal(closeMenu) {
-        this.isAdditionalLedgersModalOpen = !this.isAdditionalLedgersModalOpen;
+	toggleSelect(name) {
+		this.$refs[name].toggle();
+	}
 
-        if (closeMenu) {
-            this.$emit("close");
-        }
-    }
+	toggleAdditionalLedgersModal(closeMenu) {
+		this.isAdditionalLedgersModalOpen = !this.isAdditionalLedgersModalOpen;
 
-    emitClose() {
-        if (this.outsideClick && !this.isAdditionalLedgersModalOpen) {
-            this.$emit("close");
-        }
-    }
+		if (closeMenu) {
+			this.$emit("close");
+		}
+	}
+
+	emitClose() {
+		if (this.outsideClick && !this.isAdditionalLedgersModalOpen) {
+			this.$emit("close");
+		}
+	}
 }
 </script>
 

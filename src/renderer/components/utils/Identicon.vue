@@ -42,10 +42,10 @@
 </template>
 
 <script>
-import { Vue, Component, Prop } from "vue-property-decorator";
 import Color from "color";
 import crypto from "crypto";
 import MersenneTwister from "mersenne-twister";
+import { Component, Prop,Vue } from "vue-property-decorator";
 
 import colors from "@/components/utils/IdenticonColors";
 

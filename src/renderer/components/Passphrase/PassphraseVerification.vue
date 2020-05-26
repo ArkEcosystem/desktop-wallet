@@ -1,5 +1,5 @@
 <template>
-	<div class="PassphraseVerification flex flex-col h-full w-full justify-around">
+	<div class="flex flex-col justify-around w-full h-full PassphraseVerification">
 		<div class="PassphraseVerification__inputs">
 			<InputText
 				v-for="(input, position) in inputs"
@@ -26,7 +26,7 @@
 						: 'hover:text-theme-button-text'
 				"
 				:title="suggestion"
-				class="PassphraseVerification__suggestions__input cursor-pointer py-2 px-1 text-center text-theme-page-text"
+				class="px-1 py-2 text-center cursor-pointer PassphraseVerification__suggestions__input text-theme-page-text"
 				@click="updateCurrentWord(suggestion)"
 			>
 				{{ suggestion }}
@@ -36,8 +36,8 @@
 </template>
 
 <script>
-import { Vue, Component, Prop } from "vue-property-decorator";
 import { isEqual, shuffle, uniq } from "lodash";
+import { Component, Prop,Vue } from "vue-property-decorator";
 
 import { InputText } from "@/components/Input";
 
@@ -67,9 +67,6 @@ export default class PassphraseVerification extends Vue {
     })
     passphrase;
 
-    //*
-             * Positions of the words to verify (starting from 1)
-             
     @Prop({
         type: Array,
         required: false,
@@ -91,7 +88,9 @@ export default class PassphraseVerification extends Vue {
     })
     suggestionsPerWord;
 
-    TODO_data() {}
+  data () {
+    return this.resetData({})
+  }
 
     get allVerified() {
         return this.positions.every((position) => {
@@ -105,10 +104,6 @@ export default class PassphraseVerification extends Vue {
             : this.additionalSuggestions.concat(this.passphraseWords);
     }
 
-    //*
-             * Return the suggested words per each position
-             * @return {Object}
-             
     get suggestedPerPosition() {
         return this.positions.reduce((acc, position) => {
             const passphraseWord = this.words[position];
@@ -121,9 +116,6 @@ export default class PassphraseVerification extends Vue {
         }, {});
     }
 
-    //*
-             * @return {Array}
-             
     get passphraseWords() {
         return Array.isArray(this.passphrase) ? this.passphrase : this.passphrase.split(" ");
     }
@@ -132,9 +124,6 @@ export default class PassphraseVerification extends Vue {
         return this.wordPositions.map((p) => p.toString());
     }
 
-    //*
-             * @return {Object}
-             
     get words() {
         return this.passphraseWords.reduce((acc, word, i) => {
             acc[(i + 1).toString()] = word;
@@ -161,10 +150,6 @@ export default class PassphraseVerification extends Vue {
         });
     }
 
-    //*
-             * @param {String} position
-             * @param {String} word
-             
     isAccepted(position, word) {
         return typeof word === "string" && word !== "" && isEqual(this.acceptedWords[position], word);
     }
@@ -187,9 +172,6 @@ export default class PassphraseVerification extends Vue {
         return data;
     }
 
-    //*
-             * @param {String} position
-             
     showSuggestions(position) {
         this.currentPosition = position;
         this.suggestions = this.suggestedPerPosition[position];

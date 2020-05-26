@@ -136,8 +136,8 @@
 </template>
 
 <script>
-import { Vue, Component } from "vue-property-decorator";
 import { TRANSACTION_TYPES } from "@config";
+import { Component,Vue } from "vue-property-decorator";
 
 import { ButtonClipboard, ButtonReload } from "@/components/Button";
 import { Collapse } from "@/components/Collapse";

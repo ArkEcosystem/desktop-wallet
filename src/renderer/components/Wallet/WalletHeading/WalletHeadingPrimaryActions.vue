@@ -72,7 +72,8 @@
 </template>
 
 <script>
-import { Vue, Component } from "vue-property-decorator";
+import { Component,Vue } from "vue-property-decorator";
+
 import { ButtonModal, ButtonReload } from "@/components/Button";
 import { ContactRenameModal } from "@/components/Contact";
 import { ModalQrCode } from "@/components/Modal";

@@ -16,14 +16,14 @@
 				:name="name"
 				:disabled="isDisabled"
 				:type="passphraseIsVisible ? 'text' : 'password'"
-				class="PassphraseInput__input flex flex-grow bg-transparent text-theme-page-text mr-2"
+				class="flex flex-grow mr-2 bg-transparent PassphraseInput__input text-theme-page-text"
 				@blur="onBlur"
 				@focus="onFocus"
 			/>
 
 			<button
 				:title="$t(passphraseIsVisible ? 'PASSPHRASE_INPUT.HIDE' : 'PASSPHRASE_INPUT.SHOW')"
-				class="PassphraseInput__visibility-button flex flex-shrink-0 items-center text-grey-dark hover:text-blue focus:text-blue mr-2"
+				class="flex items-center flex-shrink-0 mr-2 PassphraseInput__visibility-button text-grey-dark hover:text-blue focus:text-blue"
 				type="button"
 				@click="toggleVisible"
 			>
@@ -33,7 +33,7 @@
 			<ButtonModal
 				ref="button-qr"
 				:label="''"
-				class="PassphraseInput__qr-button flex flex-shrink-0 text-grey-dark hover:text-blue focus:text-blue"
+				class="flex flex-shrink-0 PassphraseInput__qr-button text-grey-dark hover:text-blue focus:text-blue"
 				icon="qr"
 				view-box="0 0 20 20"
 			>
@@ -46,7 +46,7 @@
 </template>
 
 <script>
-import { Vue, Component, Prop } from "vue-property-decorator";
+import { Component, Prop,Vue } from "vue-property-decorator";
 import { required } from "vuelidate/lib/validators";
 
 import { ButtonModal } from "@/components/Button";
@@ -143,9 +143,16 @@ export default class PassphraseInput extends Vue {
     })
     value;
 
-    inputValue = vm.value;
+    inputValue = null;
     isFocused = false;
-    passphraseIsVisible = vm.isVisible;
+    passphraseIsVisible = null;
+
+	data(vm) {
+		return {
+			inputValue: vm.value,
+			passphraseIsVisible: vm.isVisible,
+		};
+	}
 
     get error() {
         if (this.$v.model.$dirty) {
@@ -184,7 +191,14 @@ export default class PassphraseInput extends Vue {
         );
     }
 
-    get TODO_model() {}
+      get model() {
+        return this.inputValue
+	  }
+
+      set model(value) {
+        this.updateInputValue(value)
+        this.$emit('input', value)
+      }
 
     blur() {
         this.$refs.input.blur();

@@ -8,10 +8,10 @@
 		<template #header>
 			<PluginLogo :plugin="plugin" :size="120" />
 
-			<div class="flex flex-col ml-5 justify-between">
+			<div class="flex flex-col justify-between ml-5">
 				<div>
 					<div class="flex items-center">
-						<span class="text-theme-page-text font-semibold text-xl">
+						<span class="text-xl font-semibold text-theme-page-text">
 							{{ plugin.title }}
 						</span>
 						<PluginManagerCheckmark v-if="plugin.isOfficial" />
@@ -129,7 +129,7 @@
 			<div class="PluginDetailsModal__stats">
 				<div>
 					<span>{{ $t("COMMON.CATEGORY") }}</span>
-					<span v-tooltip="categoryTooltip" class="mr-auto pr-1">
+					<span v-tooltip="categoryTooltip" class="pr-1 mr-auto">
 						{{ $t(`PAGES.PLUGIN_MANAGER.CATEGORIES.${plugin.categories[0].toUpperCase()}`) }}
 					</span>
 				</div>
@@ -141,7 +141,7 @@
 						@click.stop="electron_openExternal(plugin.homepage)"
 					>
 						{{ homepageLink }}
-						<SvgIcon name="open-external" view-box="0 0 12 12" class="text-theme-page-text-light ml-1" />
+						<SvgIcon name="open-external" view-box="0 0 12 12" class="ml-1 text-theme-page-text-light" />
 					</button>
 					<span v-else>n.a.</span>
 				</div>
@@ -163,9 +163,9 @@
 </template>
 
 <script>
-import { Vue, Component, Prop } from "vue-property-decorator";
 import { PLUGINS } from "@config";
 import domain from "getdomain";
+import { Component, Prop, Vue } from "vue-property-decorator";
 
 import { ButtonGeneric, ButtonIconGeneric } from "@/components/Button";
 import { ModalWindow } from "@/components/Modal";
@@ -175,9 +175,9 @@ import { SliderImage, SliderImageModal } from "@/components/Slider";
 import SvgIcon from "@/components/SvgIcon";
 
 @Component({
-    name: "PluginDetailsModal",
+	name: "PluginDetailsModal",
 
-    components: {
+	components: {
 		ButtonGeneric,
 		ButtonIconGeneric,
 		PluginManagerCheckmark,
@@ -188,119 +188,119 @@ import SvgIcon from "@/components/SvgIcon";
 		SliderImage,
 		SliderImageModal,
 		SvgIcon,
-	}
+	},
 })
 export default class PluginDetailsModal extends Vue {
-    @Prop({
-        type: Object,
-        required: true,
-    })
-    plugin;
+	@Prop({
+		type: Object,
+		required: true,
+	})
+	plugin;
 
-    get isEnabled() {
-        return this.$store.getters["plugin/isEnabled"](this.plugin.id);
-    }
+	get isEnabled() {
+		return this.$store.getters["plugin/isEnabled"](this.plugin.id);
+	}
 
-    get isAvailable() {
-        return this.$store.getters["plugin/isAvailable"](this.plugin.id);
-    }
+	get isAvailable() {
+		return this.$store.getters["plugin/isAvailable"](this.plugin.id);
+	}
 
-    get isInstalled() {
-        return this.$store.getters["plugin/isInstalled"](this.plugin.id);
-    }
+	get isInstalled() {
+		return this.$store.getters["plugin/isInstalled"](this.plugin.id);
+	}
 
-    get isInstalledSupported() {
-        return this.$store.getters["plugin/isInstalledSupported"](this.plugin.id);
-    }
+	get isInstalledSupported() {
+		return this.$store.getters["plugin/isInstalledSupported"](this.plugin.id);
+	}
 
-    get isBlacklisted() {
-        return this.$store.getters["plugin/isBlacklisted"](this.plugin.id);
-    }
+	get isBlacklisted() {
+		return this.$store.getters["plugin/isBlacklisted"](this.plugin.id);
+	}
 
-    get isUpdateAvailable() {
-        return this.$store.getters["plugin/isUpdateAvailable"](this.plugin.id);
-    }
+	get isUpdateAvailable() {
+		return this.$store.getters["plugin/isUpdateAvailable"](this.plugin.id);
+	}
 
-    get updateTooltipContent() {
-        if (this.isUpdateAvailable) {
-            const version = this.$store.getters["plugin/latestVersion"](this.plugin.id);
-            return this.$t("PAGES.PLUGIN_MANAGER.UPDATE.AVAILABLE", { version });
-        }
+	get updateTooltipContent() {
+		if (this.isUpdateAvailable) {
+			const version = this.$store.getters["plugin/latestVersion"](this.plugin.id);
+			return this.$t("PAGES.PLUGIN_MANAGER.UPDATE.AVAILABLE", { version });
+		}
 
-        return this.$t("PAGES.PLUGIN_MANAGER.UPDATE.NOT_AVAILABLE");
-    }
+		return this.$t("PAGES.PLUGIN_MANAGER.UPDATE.NOT_AVAILABLE");
+	}
 
-    get categoryTooltip() {
-        if (this.plugin.categories.length <= 1) {
-            return;
-        }
+	get categoryTooltip() {
+		if (this.plugin.categories.length <= 1) {
+			return null;
+		}
 
-        return {
-            content: this.plugin.categories
-                .map((category) => {
-                    return this.$t(`PAGES.PLUGIN_MANAGER.CATEGORIES.${category.toUpperCase()}`);
-                })
-                .join("\n"),
-            placement: "right",
-        };
-    }
+		return {
+			content: this.plugin.categories
+				.map((category) => {
+					return this.$t(`PAGES.PLUGIN_MANAGER.CATEGORIES.${category.toUpperCase()}`);
+				})
+				.join("\n"),
+			placement: "right",
+		};
+	}
 
-    get keywordsText() {
-        const keywords = this.plugin.keywords.slice(0, PLUGINS.maxKeywords).join(", ");
-        return this.showKeywordsTooltip ? `${keywords}, ` : keywords;
-    }
+	get keywordsText() {
+		const keywords = this.plugin.keywords.slice(0, PLUGINS.maxKeywords).join(", ");
+		return this.showKeywordsTooltip ? `${keywords}, ` : keywords;
+	}
 
-    get keywordsTooltip() {
-        return this.plugin.keywords.slice(PLUGINS.maxKeywords).join("\n");
-    }
+	get keywordsTooltip() {
+		return this.plugin.keywords.slice(PLUGINS.maxKeywords).join("\n");
+	}
 
-    get showKeywordsTooltip() {
-        return this.plugin.keywords.length > PLUGINS.maxKeywords;
-    }
+	get showKeywordsTooltip() {
+		return this.plugin.keywords.length > PLUGINS.maxKeywords;
+	}
 
-    get homepageLink() {
-        try {
-            return domain.get(this.plugin.homepage);
-        } catch (error) {
-            return null;
-        }
-    }
+	get homepageLink() {
+		try {
+			return domain.get(this.plugin.homepage);
+		} catch (error) {
+			return null;
+		}
+	}
 
-    get hasImages() {
-        return this.plugin.images && this.plugin.images.length > 0;
-    }
+	get hasImages() {
+		return this.plugin.images && this.plugin.images.length > 0;
+	}
 
-    emitClose() {
-        this.$emit("close");
-    }
+	emitClose() {
+		this.$emit("close");
+	}
 
-    emitUpdate() {
-        this.$emit("update", this.plugin);
-    }
+	emitUpdate() {
+		this.$emit("update", this.plugin);
+	}
 
-    emitRemove() {
-        this.$emit("remove", this.plugin);
-    }
+	emitRemove() {
+		this.$emit("remove", this.plugin);
+	}
 
-    emitShowPermissions() {
-        this.$emit("show-permissions");
-    }
+	emitShowPermissions() {
+		this.$emit("show-permissions");
+	}
 
-    toggleStatus(enabled) {
-        this.$emit("change-status", enabled, this.plugin.id);
-    }
+	toggleStatus(enabled) {
+		this.$emit("change-status", enabled, this.plugin.id);
+	}
 
-    reportPlugin() {
-        const params = new URLSearchParams({
-            subject: "desktop_wallet_plugin_report",
-            plugin_id: this.plugin.id,
-            plugin_version: this.plugin.version,
-        });
+	reportPlugin() {
+		const params = new URLSearchParams({
+			subject: "desktop_wallet_plugin_report",
+			plugin_id: this.plugin.id,
+			plugin_version: this.plugin.version,
+		});
 
-        this.electron_openExternal(`${PLUGINS.reportUrl}?${params.toString()}`);
+		this.electron_openExternal(`${PLUGINS.reportUrl}?${params.toString()}`);
 
-        this.$emit("report");
-    }
+		this.$emit("report");
+	}
 }
 </script>
 

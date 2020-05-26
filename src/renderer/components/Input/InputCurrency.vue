@@ -16,7 +16,7 @@
 				:disabled="isDisabled"
 				:name="name"
 				autocomplete="off"
-				class="InputCurrency__input flex flex-grow bg-transparent text-theme-page-text"
+				class="flex flex-grow bg-transparent InputCurrency__input text-theme-page-text"
 				type="text"
 				@blur="onBlur"
 				@change="onChange"
@@ -25,7 +25,7 @@
 			<div
 				v-if="isMarketEnabled && alternativeCurrency"
 				:title="alternativeCurrency"
-				class="InputCurrency__alternative-amount flex flex-shrink-0 items-center text-grey-dark ml-4"
+				class="flex items-center flex-shrink-0 ml-4 InputCurrency__alternative-amount text-grey-dark"
 			>
 				{{ alternativeAmount }}
 			</div>
@@ -34,9 +34,9 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component, Prop } from "vue-property-decorator";
 import { Utils } from "@arkecosystem/platform-sdk";
 import { MARKET } from "@config";
+import { Component, Prop, Vue } from "vue-property-decorator";
 import { required } from "vuelidate/lib/validators";
 
 import InputField from "./InputField";
@@ -48,367 +48,351 @@ import InputField from "./InputField";
  * the internal String value.
  */
 @Component({
-    name: "InputCurrency",
+	name: "InputCurrency",
 
-    components: {
+	components: {
 		InputField,
 	},
 
-    model: {
+	model: {
 		prop: "value",
 		event: "input",
 	},
 
-    watch: {
+	watch: {
 		value: {
 			handler(val) {
 				this.updateInputValue(val);
 			},
 			immediate: true,
 		},
-	}
+	},
 })
 export default class InputCurrency extends Vue {
-    @Prop({
-        type: String,
-        required: false,
-        default: null,
-    })
-    alternativeCurrency;
+	@Prop({
+		type: String,
+		required: false,
+		default: null,
+	})
+	alternativeCurrency;
 
-    @Prop({
-        type: String,
-        required: true,
-    })
-    currency;
+	@Prop({
+		type: String,
+		required: true,
+	})
+	currency;
 
-    @Prop({
-        type: String,
-        required: false,
-        default: null,
-    })
-    helperText;
+	@Prop({
+		type: String,
+		required: false,
+		default: null,
+	})
+	helperText;
 
-    @Prop({
-        type: Boolean,
-        required: false,
-        default: false,
-    })
-    isDisabled;
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	isDisabled;
 
-    @Prop({
-        type: String,
-        required: false,
-        default() {
-            return this.$t("INPUT_CURRENCY.LABEL");
-        },
-    })
-    label;
+	@Prop({
+		type: String,
+		required: false,
+		default() {
+			return this.$t("INPUT_CURRENCY.LABEL");
+		},
+	})
+	label;
 
-    @Prop({
-        type: String,
-        required: false,
-        default: "amount",
-    })
-    name;
+	@Prop({
+		type: String,
+		required: false,
+		default: "amount",
+	})
+	name;
 
-    @Prop({
-        type: Utils.BigNumber,
-        required: true,
-    })
-    maximumAmount;
+	@Prop({
+		type: Utils.BigNumber,
+		required: true,
+	})
+	maximumAmount;
 
-    @Prop({
-        type: String,
-        required: false,
-        default: null,
-    })
-    maximumError;
+	@Prop({
+		type: String,
+		required: false,
+		default: null,
+	})
+	maximumError;
 
-    @Prop({
-        type: Utils.BigNumber,
-        required: true,
-    })
-    minimumAmount;
+	@Prop({
+		type: Utils.BigNumber,
+		required: true,
+	})
+	minimumAmount;
 
-    @Prop({
-        type: String,
-        required: false,
-        default: null,
-    })
-    minimumError;
+	@Prop({
+		type: String,
+		required: false,
+		default: null,
+	})
+	minimumError;
 
-    @Prop({
-        type: String,
-        required: false,
-        default: null,
-    })
-    customError;
+	@Prop({
+		type: String,
+		required: false,
+		default: null,
+	})
+	customError;
 
-    @Prop({
-        type: String,
-        required: false,
-        default: null,
-    })
-    warningText;
+	@Prop({
+		type: String,
+		required: false,
+		default: null,
+	})
+	warningText;
 
-    @Prop({
-        type: String,
-        required: false,
-        default: null,
-    })
-    notValidError;
+	@Prop({
+		type: String,
+		required: false,
+		default: null,
+	})
+	notValidError;
 
-    @Prop({
-        type: Boolean,
-        required: false,
-        default: false,
-    })
-    required;
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	required;
 
-    @Prop({
-        type: [Number, String, Utils.BigNumber],
-        required: true,
-    })
-    value;
+	@Prop({
+		type: [Number, String, Utils.BigNumber],
+		required: true,
+	})
+	value;
 
-    @Prop({
-        type: Object,
-        required: false,
-        default: null,
-    })
-    walletNetwork;
+	@Prop({
+		type: Object,
+		required: false,
+		default: null,
+	})
+	walletNetwork;
 
-    inputValue = vm.value;
-    isFocused = false;
+	inputValue = null;
+	isFocused = false;
 
-    get alternativeAmount() {
-        const amount = this.checkAmount(this.inputValue) ? this.inputValue : 0;
+	data(vm) {
+		return {
+			inputValue: vm.value,
+		};
+	}
 
-        return this.currency_format(amount * this.price, { currency: this.alternativeCurrency });
-    }
+	get alternativeAmount() {
+		const amount = this.checkAmount(this.inputValue) ? this.inputValue : 0;
 
-    get error() {
-        if (!this.isDisabled && this.$v.model.$dirty) {
-            if (!this.currencyValidator(this.currency)) {
-                return "INVALID CURRENCY";
-            } else if (this.alternativeCurrency && !this.currencyValidator(this.alternativeCurrency)) {
-                return "INVALID CURRENCY";
-            } else if (this.required && !this.$v.model.isRequired) {
-                return this.$t("INPUT_CURRENCY.ERROR.REQUIRED");
-            } else if (!this.$v.model.isNumber) {
-                if (this.notValidError) {
-                    return this.notValidError;
-                } else {
-                    return this.$t("INPUT_CURRENCY.ERROR.NOT_VALID");
-                }
-            } else if (!this.$v.model.isLessThanMaximum) {
-                if (this.maximumError) {
-                    return this.maximumError;
-                } else {
-                    const amount = this.currency_format(this.maximumAmount, { currency: this.currency });
-                    return this.$t("INPUT_CURRENCY.ERROR.NOT_ENOUGH_AMOUNT", { amount });
-                }
-            } else if (!this.$v.model.isMoreThanMinimum) {
-                if (this.minimumError) {
-                    return this.minimumError;
-                } else {
-                    const amount = this.currency_format(this.minimumAmount, { currency: this.currency });
-                    return this.$t("INPUT_CURRENCY.ERROR.LESS_THAN_MINIMUM", { amount });
-                }
-            } else if (this.customError) {
-                return this.customError;
-            }
-        }
+		return this.currency_format(amount * this.price, { currency: this.alternativeCurrency });
+	}
 
-        return null;
-    }
+	get error() {
+		if (!this.isDisabled && this.$v.model.$dirty) {
+			if (!this.currencyValidator(this.currency)) {
+				return "INVALID CURRENCY";
+			} else if (this.alternativeCurrency && !this.currencyValidator(this.alternativeCurrency)) {
+				return "INVALID CURRENCY";
+			} else if (this.required && !this.$v.model.isRequired) {
+				return this.$t("INPUT_CURRENCY.ERROR.REQUIRED");
+			} else if (!this.$v.model.isNumber) {
+				if (this.notValidError) {
+					return this.notValidError;
+				} else {
+					return this.$t("INPUT_CURRENCY.ERROR.NOT_VALID");
+				}
+			} else if (!this.$v.model.isLessThanMaximum) {
+				if (this.maximumError) {
+					return this.maximumError;
+				} else {
+					const amount = this.currency_format(this.maximumAmount, { currency: this.currency });
+					return this.$t("INPUT_CURRENCY.ERROR.NOT_ENOUGH_AMOUNT", { amount });
+				}
+			} else if (!this.$v.model.isMoreThanMinimum) {
+				if (this.minimumError) {
+					return this.minimumError;
+				} else {
+					const amount = this.currency_format(this.minimumAmount, { currency: this.currency });
+					return this.$t("INPUT_CURRENCY.ERROR.LESS_THAN_MINIMUM", { amount });
+				}
+			} else if (this.customError) {
+				return this.customError;
+			}
+		}
 
-    get formattedValue() {
-        return this.checkAmount(this.inputValue)
-            ? this.currency_format(this.inputValue, { currency: this.currency })
-            : this.inputValue;
-    }
+		return null;
+	}
 
-    //*
-             * When in doubt, the separator of the current locale may be used.
-             * An example is "9,999": is it 9.999 or is it 9999?
+	get formattedValue() {
+		return this.checkAmount(this.inputValue)
+			? this.currency_format(this.inputValue, { currency: this.currency })
+			: this.inputValue;
+	}
 
-    get decimalSeparator() {
-        const example = this.currency_format(9.9, { currency: this.currency });
-        return example.match(/9(.)9/)[1];
-    }
+	get decimalSeparator() {
+		const example = this.currency_format(9.9, { currency: this.currency });
+		return example.match(/9(.)9/)[1];
+	}
 
-    get thousandSeparator() {
-        return this.decimalSeparator === "." ? "," : ".";
-    }
+	get thousandSeparator() {
+		return this.decimalSeparator === "." ? "," : ".";
+	}
 
-    get isInvalid() {
-        return this.$v.model.$dirty && !!this.error;
-    }
+	get isInvalid() {
+		return this.$v.model.$dirty && !!this.error;
+	}
 
-    get isMarketEnabled() {
-        return this.session_network.market.enabled;
-    }
+	get isMarketEnabled() {
+		return this.session_network.market.enabled;
+	}
 
-    get TODO_model() {}
+	get model() {
+		return this.isFocused ? this.inputValue : this.formattedValue;
+	}
 
-    get price() {
-        return this.$store.getters["market/lastPrice"];
-    }
+	set model(value) {
+		if (this.updateInputValue(value)) {
+			this.emitInput(value);
+		}
+	}
 
-    //*
-             * Checks that an amount, either a Number or String, is valid or it could
-             * be sanitized to a valid Number
-             * @param {(Number|String)} amount
-             * @return {Boolean}
+	get price() {
+		return this.$store.getters["market/lastPrice"];
+	}
 
-    checkAmount(amount) {
-        const bigNum = Utils.BigNumber.make(amount);
-        if (!bigNum.isNaN()) {
-            return bigNum.isPositive() && bigNum.isFinite();
-        } else {
-            return !!(typeof amount === "string" && amount.match(/^\s*[0-9.,]+([,. _]+[0-9]+)*\s*$/));
-        }
-    }
+	checkAmount(amount) {
+		const bigNum = Utils.BigNumber.make(amount);
+		if (!bigNum.isNaN()) {
+			return bigNum.isPositive() && bigNum.isFinite();
+		} else {
+			return !!(typeof amount === "string" && amount.match(/^\s*[0-9.,]+([,. _]+[0-9]+)*\s*$/));
+		}
+	}
 
-    //*
-             * Emits the raw input value (`raw`), as String, and the Number value (`input`)
+	emitInput(value) {
+		this.$emit("raw", value);
+		const numeric = value ? this.sanitizeNumeric(value) : "0";
+		this.$emit("input", isNaN(numeric) ? "0" : numeric);
+	}
 
-    emitInput(value) {
-        this.$emit("raw", value);
-        const numeric = value ? this.sanitizeNumeric(value) : "0";
-        this.$emit("input", isNaN(numeric) ? "0" : numeric);
-    }
+	focus() {
+		this.$refs.input.focus();
+	}
 
-    focus() {
-        this.$refs.input.focus();
-    }
+	onBlur() {
+		this.isFocused = false;
+		this.$emit("blur");
+	}
 
-    onBlur() {
-        this.isFocused = false;
-        this.$emit("blur");
-    }
+	onChange(event) {
+		const value = event.target.value;
+		const numeric = value ? this.sanitizeNumeric(value) : "0";
+		this.$emit("change", isNaN(numeric) ? "0" : numeric);
+	}
 
-    onChange(event) {
-        const value = event.target.value;
-        const numeric = value ? this.sanitizeNumeric(value) : "0";
-        this.$emit("change", isNaN(numeric) ? "0" : numeric);
-    }
+	onFocus() {
+		this.isFocused = true;
+		this.$v.model.$touch();
+		this.$emit("focus");
+	}
 
-    onFocus() {
-        this.isFocused = true;
-        this.$v.model.$touch();
-        this.$emit("focus");
-    }
+	sanitizeNumeric(value) {
+		let numeric = value.toString();
+		let includesThousandSeparator = numeric.includes(this.thousandSeparator);
 
-    //*
-             * Parses a numeric value (Number o String) and returns it as a String, but
-             * keeping the same format that a float would use (e.g: 12.12 instead of 12,12).
-             * It is able to recognize that 9,999 is 9999, but 1,1 is 1.1.
-             * @param {(Number|String)}
-             * @return String
+		// On tiny numbers with exponential notation (1e-8), use their exponent as the number of decimals
+		if (numeric.includes("e-")) {
+			return Number(numeric).toFixed(numeric.toString().split("-")[1]);
+		} else {
+			if (numeric.startsWith(".")) {
+				numeric = `0${numeric}`;
+			} else if (numeric.startsWith(",")) {
+				numeric = `0.${numeric.slice(1)}`;
+				// The separator has been modified
+				includesThousandSeparator = false;
+			}
 
-    sanitizeNumeric(value) {
-        let numeric = value.toString();
-        let includesThousandSeparator = numeric.includes(this.thousandSeparator);
+			const dot = numeric.includes(".");
+			const colon = numeric.includes(",");
 
-        // On tiny numbers with exponential notation (1e-8), use their exponent as the number of decimals
-        if (numeric.includes("e-")) {
-            return Number(numeric).toFixed(numeric.toString().split("-")[1]);
-        } else {
-            if (numeric.startsWith(".")) {
-                numeric = `0${numeric}`;
-            } else if (numeric.startsWith(",")) {
-                numeric = `0.${numeric.slice(1)}`;
-                // The separator has been modified
-                includesThousandSeparator = false;
-            }
+			if (dot && colon) {
+				numeric = numeric.replace(/,/g, ".");
+				// If only includes 1 kind of ambiguous separator, convert it to '.'
+			}
+			if (dot || colon) {
+				numeric = numeric.replace(/[.,]+/, ".");
+			}
 
-            const dot = numeric.includes(".");
-            const colon = numeric.includes(",");
+			// These characters are always thousand separators
+			const nonAmbiguousSeparators = /[ _]/g;
+			let hasNonAmbiguosAndDecimalSeparators = false;
 
-            if (dot && colon) {
-                numeric = numeric.replace(/,/g, ".");
-                // If only includes 1 kind of ambiguous separator, convert it to '.'
-            }
-            if (dot || colon) {
-                numeric = numeric.replace(/[.,]+/, ".");
-            }
+			if (numeric.match(nonAmbiguousSeparators)) {
+				numeric = numeric.replace(nonAmbiguousSeparators, "");
+				// So, if there is other separator, it is for the decimals
+				if (dot || colon) {
+					hasNonAmbiguosAndDecimalSeparators = true;
+				}
+			}
 
-            // These characters are always thousand separators
-            const nonAmbiguousSeparators = /[ _]/g;
-            let hasNonAmbiguosAndDecimalSeparators = false;
+			const digits = numeric.split(".");
 
-            if (numeric.match(nonAmbiguousSeparators)) {
-                numeric = numeric.replace(nonAmbiguousSeparators, "");
-                // So, if there is other separator, it is for the decimals
-                if (dot || colon) {
-                    hasNonAmbiguosAndDecimalSeparators = true;
-                }
-            }
+			if (digits.length === 1) {
+				return digits[0];
+			} else {
+				const last = digits.slice(-1)[0];
 
-            const digits = numeric.split(".");
+				// Cases like "1 000,001" should be treated like 1000.001 independently of the locale
+				if (last.length === 3 && includesThousandSeparator && !hasNonAmbiguosAndDecimalSeparators) {
+					return `${digits.slice(0, -1).join("")}${last}`;
+				} else {
+					return `${digits.slice(0, -1).join("")}.${last}`;
+				}
+			}
+		}
+	}
 
-            if (digits.length === 1) {
-                return digits[0];
-            } else {
-                const last = digits.slice(-1)[0];
+	updateInputValue(value) {
+		if (value === "") {
+			this.inputValue = "";
+			return true;
+		} else if (value && this.checkAmount(value)) {
+			this.inputValue = this.sanitizeNumeric(value);
 
-                // Cases like "1 000,001" should be treated like 1000.001 independently of the locale
-                if (last.length === 3 && includesThousandSeparator && !hasNonAmbiguosAndDecimalSeparators) {
-                    return `${digits.slice(0, -1).join("")}${last}`;
-                } else {
-                    return `${digits.slice(0, -1).join("")}.${last}`;
-                }
-            }
-        }
-    }
+			// Inform Vuelidate that the value changed
+			this.$v.model.$touch();
+			return true;
+		}
+		return false;
+	}
 
-    //
-             * Establishes the "internal" value (`inputValue`) of the component
-             * @param {(String|Number)} value
-             * @return Boolean
+	currencyValidator(currency) {
+		const currentNetwork = this.walletNetwork || this.$store.getters["session/network"];
+		const currencies = [
+			currentNetwork.token,
+			currentNetwork.subunit,
+			currentNetwork.symbol,
+			...Object.keys(MARKET.currencies),
+			...Object.values(MARKET.currencies).map((currency) => currency.symbol),
+		];
+		return currencies.includes(currency);
+	}
 
-    updateInputValue(value) {
-        if (value === "") {
-            this.inputValue = "";
-            return true;
-        } else if (value && this.checkAmount(value)) {
-            this.inputValue = this.sanitizeNumeric(value);
+	reset() {
+		this.inputValue = "";
+		this.$nextTick(() => {
+			this.$v.model.$reset();
+		});
+	}
 
-            // Inform Vuelidate that the value changed
-            this.$v.model.$touch();
-            return true;
-        }
-        return false;
-    }
-
-    //*
-             * Checks if a currency is valid, either as a symbol (€) or code (EUR)
-             * @param {String} currency
-             * @return {Boolean}
-
-    currencyValidator(currency) {
-        const currentNetwork = this.walletNetwork || this.$store.getters["session/network"];
-        const currencies = [
-            currentNetwork.token,
-            currentNetwork.subunit,
-            currentNetwork.symbol,
-            ...Object.keys(MARKET.currencies),
-            ...Object.values(MARKET.currencies).map((currency) => currency.symbol),
-        ];
-        return currencies.includes(currency);
-    }
-
-    reset() {
-        this.inputValue = "";
-        this.$nextTick(() => {
-            this.$v.model.$reset();
-        });
-    }
-
-    validations = {
+	validations = {
 		model: {
 			isNumber() {
 				return this.inputValue && this.checkAmount(this.inputValue);

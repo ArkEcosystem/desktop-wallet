@@ -7,19 +7,19 @@
 		}"
 		class="AppSidemenu"
 	>
-		<div class="AppSidemenu__container flexify w-full md:h-full justify-between">
+		<div class="justify-between w-full AppSidemenu__container flexify md:h-full">
 			<!-- ARK logo -->
 			<RouterLink
 				:title="$t('APP_SIDEMENU.DASHBOARD')"
 				:to="{ name: 'dashboard' }"
-				class="AppSidemenu__logo bg-red hover:opacity-85 flex justify-center items-center"
+				class="flex items-center justify-center AppSidemenu__logo bg-red hover:opacity-85"
 				@click.native="redirect('dashboard')"
 			>
 				<img src="@/assets/images/ark-logo.png" />
 			</RouterLink>
 
 			<div
-				class="AppSidemenu__container__scrollable flex-1 overflow-y-auto flexify justify-between bg-theme-feature"
+				class="justify-between flex-1 overflow-y-auto AppSidemenu__container__scrollable flexify bg-theme-feature"
 			>
 				<div class="flexify">
 					<!-- Wallets -->
@@ -102,7 +102,7 @@
 					<!-- Profile settings -->
 					<div
 						:class="isHorizontal ? 'ml-2 mr-4 py-3' : 'mt-2 mb-4 px-3'"
-						class="AppSidemenu__avatar__container relative cursor-pointer flex items-center justify-center hover:opacity-50"
+						class="relative flex items-center justify-center cursor-pointer AppSidemenu__avatar__container hover:opacity-50"
 					>
 						<RouterLink :to="{ name: 'profiles' }" class="AppSidemenu__avatar">
 							<ProfileAvatar
@@ -130,7 +130,7 @@
 
 <script lang="ts">
 import { ipcRenderer } from "electron";
-import { Component, Prop,Vue } from "vue-property-decorator";
+import { Component, Prop, Vue } from "vue-property-decorator";
 import { mapGetters } from "vuex";
 
 import { MenuNavigation, MenuNavigationItem } from "@/components/Menu";
@@ -144,9 +144,9 @@ import AppSidemenuPlugins from "./AppSidemenuPlugins";
 import AppSidemenuSettings from "./AppSidemenuSettings";
 
 @Component({
-    name: "AppSidemenu",
+	name: "AppSidemenu",
 
-    components: {
+	components: {
 		AppSidemenuPlugins,
 		AppSidemenuSettings,
 		AppSidemenuNetworkStatus,
@@ -155,71 +155,83 @@ import AppSidemenuSettings from "./AppSidemenuSettings";
 		MenuNavigationItem,
 		ProfileAvatar,
 		SvgIcon,
-	}
+	},
+
+	computed: {
+		...mapGetters({
+			hasAvailableRelease: "updater/hasAvailableRelease",
+			unreadAnnouncements: "announcements/unread",
+		}),
+	},
 })
 export default class AppSidemenu extends Vue {
-    @Prop({
-        type: Boolean,
-        required: false,
-        default: false,
-    })
-    isHorizontal;
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	isHorizontal;
 
-    isImportantNotificationVisible = true;
-    isPluginMenuVisible = false;
-    activeItem = vm.$route.name;
-    TODO_spread_invalidArgument() {}
+	isImportantNotificationVisible = true;
+	isPluginMenuVisible = false;
+	activeItem = null;
 
-    get showUnread() {
-        return this.unreadAnnouncements.length > 0;
-    }
+	data(vm) {
+		return {
+			activeItem: vm.$route.name,
+		};
+	}
 
-    get hasPluginMenuItems() {
-        return this.$store.getters["plugin/menuItems"].length;
-    }
+	get showUnread() {
+		return this.unreadAnnouncements.length > 0;
+	}
 
-    get hasStandardAvatar() {
-        return this.session_profile.avatar && typeof this.session_profile.avatar === "string";
-    }
+	get hasPluginMenuItems() {
+		return this.$store.getters["plugin/menuItems"].length;
+	}
 
-    get pluginAvatar() {
-        if (this.session_profile.avatar && this.session_profile.avatar.pluginId) {
-            return this.$store.getters["plugin/avatar"](this.session_profile.avatar);
-        }
+	get hasStandardAvatar() {
+		return this.session_profile.avatar && typeof this.session_profile.avatar === "string";
+	}
 
-        return null;
-    }
+	get pluginAvatar() {
+		if (this.session_profile.avatar && this.session_profile.avatar.pluginId) {
+			return this.$store.getters["plugin/avatar"](this.session_profile.avatar);
+		}
 
-    created() {
+		return null;
+	}
+
+	created() {
 		ipcRenderer.on(AppEvent.AppPreferences, () => {
 			this.$refs.settings.showSettings();
 		});
 	}
 
-    redirect(name) {
-        this.setActive(name);
-        this.$router.push({ name });
-    }
+	redirect(name) {
+		this.setActive(name);
+		this.$router.push({ name });
+	}
 
-    setActive(name) {
-        this.activeItem = name;
-    }
+	setActive(name) {
+		this.activeItem = name;
+	}
 
-    hideImportantNotification() {
-        this.isImportantNotificationVisible = false;
-    }
+	hideImportantNotification() {
+		this.isImportantNotificationVisible = false;
+	}
 
-    toggleShowPluginMenu() {
-        this.isPluginMenuVisible = !this.isPluginMenuVisible;
-    }
+	toggleShowPluginMenu() {
+		this.isPluginMenuVisible = !this.isPluginMenuVisible;
+	}
 
-    closeShowPlugins(setActive) {
-        if (setActive) {
-            this.setActive("plugin-pages");
-        }
+	closeShowPlugins(setActive) {
+		if (setActive) {
+			this.setActive("plugin-pages");
+		}
 
-        this.isPluginMenuVisible = false;
-    }
+		this.isPluginMenuVisible = false;
+	}
 }
 </script>
 

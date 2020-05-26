@@ -148,8 +148,8 @@
 </template>
 
 <script>
-import { Vue, Component } from "vue-property-decorator";
 import { TRANSACTION_TYPES } from "@config";
+import { Component,Vue } from "vue-property-decorator";
 import { required } from "vuelidate/lib/validators";
 
 import { ButtonGeneric } from "@/components/Button";

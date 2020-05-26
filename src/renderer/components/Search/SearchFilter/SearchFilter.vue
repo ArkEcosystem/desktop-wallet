@@ -26,7 +26,8 @@
 </template>
 
 <script>
-import { Vue, Component, Prop } from "vue-property-decorator";
+import { Component, Prop,Vue } from "vue-property-decorator";
+
 /* eslint-disable vue/no-unused-components */
 import { MenuDropdown, MenuDropdownAlternativeHandler, MenuOptions } from "@/components/Menu";
 import SvgIcon from "@/components/SvgIcon";

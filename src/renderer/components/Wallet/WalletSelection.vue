@@ -26,25 +26,25 @@
 </template>
 
 <script>
-import { Vue, Component, Prop } from "vue-property-decorator";
 import { orderBy } from "lodash";
+import { Component, Prop, Vue } from "vue-property-decorator";
 
 import { InputSelect } from "@/components/Input";
 import truncate from "@/filters/truncate";
 
 @Component({
-    name: "WalletSelection",
+	name: "WalletSelection",
 
-    components: {
+	components: {
 		InputSelect,
 	},
 
-    model: {
+	model: {
 		prop: "value",
 		event: "input",
 	},
 
-    watch: {
+	watch: {
 		value(val) {
 			this.wallet = val;
 		},
@@ -65,132 +65,168 @@ import truncate from "@/filters/truncate";
 		walletId(walletId) {
 			this.wallet = this.wallets.find((wallet) => wallet.id === walletId);
 		},
-	}
+	},
 })
 export default class WalletSelection extends Vue {
-    @Prop({
-        type: Object,
-        required: false,
-        default: undefined,
-    })
-    value;
+	@Prop({
+		type: Object,
+		required: false,
+		default: undefined,
+	})
+	value;
 
-    @Prop({
-        type: String,
-        required: false,
-        default: undefined,
-    })
-    compatibleAddress;
+	@Prop({
+		type: String,
+		required: false,
+		default: undefined,
+	})
+	compatibleAddress;
 
-    @Prop({
-        type: String,
-        required: false,
-        default: undefined,
-    })
-    profileClass;
+	@Prop({
+		type: String,
+		required: false,
+		default: undefined,
+	})
+	profileClass;
 
-    @Prop({
-        type: String,
-        required: false,
-        default: undefined,
-    })
-    walletClass;
+	@Prop({
+		type: String,
+		required: false,
+		default: undefined,
+	})
+	walletClass;
 
-    currentProfileId = vm.value ? vm.value.profileId : null;
-    currentWalletId = vm.value ? vm.value.id : null;
-    wallet = vm.value;
-    isProfileFocused = false;
-    isWalletFocused = false;
-    get TODO_model() {}
-    get TODO_profileId() {}
-    get TODO_walletId() {}
+	currentProfileId = null;
+	currentWalletId = null;
+	wallet = null;
+	isProfileFocused = false;
+	isWalletFocused = false;
 
-    get profiles() {
-        if (this.compatibleAddress) {
-            return this.$store.getters["profile/byCompatibleAddress"](this.compatibleAddress);
-        } else {
-            return this.$store.getters["profile/all"];
-        }
-    }
+	data(vm) {
+		return {
+			currentProfileId: vm.value ? vm.value.profileId : null,
+			currentWalletId: vm.value ? vm.value.id : null,
+			wallet: vm.value,
+		};
+	}
 
-    get profileList() {
-        return this.profiles.reduce((map, profile) => {
-            map[profile.id] = profile.name;
+	get model() {
+		return this.wallet;
+	}
 
-            return map;
-        }, {});
-    }
+	set model(value) {
+		if (value) {
+			this.walletId = value.id;
+			this.$emit("input", value);
+		}
+	}
 
-    get profile() {
-        return this.$store.getters["profile/byId"](this.profileId);
-    }
+	get profileId() {
+		if (this.profiles.length === 1) {
+			return this.profiles[0].id;
+		}
+		return this.currentProfileId;
+	}
 
-    get wallets() {
-        if (!this.profileId) {
-            return [];
-        }
+	set profileId(profileId) {
+		this.currentProfileId = profileId;
+	}
 
-        const wallets = this.$store.getters["wallet/byProfileId"](this.profileId);
-        const ledgerWallets = this.$store.getters["ledger/isConnected"]
-            ? this.$store.getters["ledger/wallets"]
-            : [];
-        if (ledgerWallets.length && this.profile && this.profile.networkId === this.session_network.id) {
-            wallets.push(...ledgerWallets);
-        }
+	get walletId() {
+		if (this.wallets.length === 1) {
+			return this.wallets[0].id;
+		}
+		return this.currentWalletId;
+	}
 
-        return wallets;
-    }
+	set walletId(walletId) {
+		this.currentWalletId = walletId;
+	}
 
-    get walletList() {
-        const addresses = this.wallets.map((wallet) => {
-            const address = {
-                name: null,
-                address: wallet.address,
-            };
+	get profiles() {
+		if (this.compatibleAddress) {
+			return this.$store.getters["profile/byCompatibleAddress"](this.compatibleAddress);
+		} else {
+			return this.$store.getters["profile/all"];
+		}
+	}
 
-            const walletName = this.wallet_name(wallet.address);
-            if (walletName && walletName !== wallet.address) {
-                address.name = `${truncate(walletName, 25)} (${this.wallet_truncate(wallet.address)})`;
-            }
+	get profileList() {
+		return this.profiles.reduce((map, profile) => {
+			map[profile.id] = profile.name;
 
-            return address;
-        });
+			return map;
+		}, {});
+	}
 
-        const results = orderBy(addresses, (object) => {
-            return object.name || object.address.toLowerCase();
-        });
+	get profile() {
+		return this.$store.getters["profile/byId"](this.profileId);
+	}
 
-        return results.reduce((wallets, wallet) => {
-            const value = wallet.name || wallet.address;
-            wallets[wallet.address] = value;
+	get wallets() {
+		if (!this.profileId) {
+			return [];
+		}
 
-            return wallets;
-        }, {});
-    }
+		const wallets = this.$store.getters["wallet/byProfileId"](this.profileId);
+		const ledgerWallets = this.$store.getters["ledger/isConnected"] ? this.$store.getters["ledger/wallets"] : [];
+		if (ledgerWallets.length && this.profile && this.profile.networkId === this.session_network.id) {
+			wallets.push(...ledgerWallets);
+		}
 
-    focusProfile() {
-        this.$refs["input-profile"].focus();
-    }
+		return wallets;
+	}
 
-    blurProfile() {
-        this.$refs["input-profile"].blur();
-    }
+	get walletList() {
+		const addresses = this.wallets.map((wallet) => {
+			const address = {
+				name: null,
+				address: wallet.address,
+			};
 
-    blurDropdown() {
-        this.$refs["input-profile"].blur();
-        this.$refs["input-wallet"].blur();
-    }
+			const walletName = this.wallet_name(wallet.address);
+			if (walletName && walletName !== wallet.address) {
+				address.name = `${truncate(walletName, 25)} (${this.wallet_truncate(wallet.address)})`;
+			}
 
-    focusWallet() {
-        this.$refs["input-wallet"].focus();
-    }
+			return address;
+		});
 
-    blurWallet() {
-        this.$refs["input-wallet"].blur();
-    }
+		const results = orderBy(addresses, (object) => {
+			return object.name || object.address.toLowerCase();
+		});
 
-    onSelect() {
-        this.$emit("select");
-    }
+		return results.reduce((wallets, wallet) => {
+			const value = wallet.name || wallet.address;
+			wallets[wallet.address] = value;
+
+			return wallets;
+		}, {});
+	}
+
+	focusProfile() {
+		this.$refs["input-profile"].focus();
+	}
+
+	blurProfile() {
+		this.$refs["input-profile"].blur();
+	}
+
+	blurDropdown() {
+		this.$refs["input-profile"].blur();
+		this.$refs["input-wallet"].blur();
+	}
+
+	focusWallet() {
+		this.$refs["input-wallet"].focus();
+	}
+
+	blurWallet() {
+		this.$refs["input-wallet"].blur();
+	}
+
+	onSelect() {
+		this.$emit("select");
+	}
 }
 </script>

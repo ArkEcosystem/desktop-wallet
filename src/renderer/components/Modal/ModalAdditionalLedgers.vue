@@ -41,7 +41,7 @@
 </template>
 
 <script>
-import { Vue, Component, Prop } from "vue-property-decorator";
+import { Component, Prop,Vue } from "vue-property-decorator";
 import { minValue, numeric, required } from "vuelidate/lib/validators";
 
 import { ButtonGeneric } from "@/components/Button";

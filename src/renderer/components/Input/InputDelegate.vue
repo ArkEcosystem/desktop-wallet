@@ -15,7 +15,7 @@
 			:is-dirty="$v.model.$dirty"
 			:is-focused="isFocused"
 			:is-invalid="invalid"
-			class="InputDelegate text-left"
+			class="text-left InputDelegate"
 		>
 			<div slot-scope="{ inputClass }" :class="inputClass" class="flex flex-row">
 				<input
@@ -23,7 +23,7 @@
 					v-model="model"
 					:name="name"
 					type="text"
-					class="InputDelegate__input flex flex-grow bg-transparent text-theme-page-text"
+					class="flex flex-grow bg-transparent InputDelegate__input text-theme-page-text"
 					@blur="onBlur"
 					@focus="onFocus"
 					@click.self.stop
@@ -35,7 +35,7 @@
 				<ButtonModal
 					ref="button-qr"
 					:label="''"
-					class="InputDelegate__qr-button flex flex-shrink-0 text-grey-dark hover:text-blue"
+					class="flex flex-shrink-0 InputDelegate__qr-button text-grey-dark hover:text-blue"
 					icon="qr"
 					view-box="0 0 20 20"
 					@click.stop
@@ -52,7 +52,7 @@
 <script lang="ts">
 import Cycled from "cycled";
 import { orderBy } from "lodash";
-import { Component, Prop,Vue } from "vue-property-decorator";
+import { Component, Prop, Vue } from "vue-property-decorator";
 import { required } from "vuelidate/lib/validators";
 
 import { ButtonModal } from "@/components/Button";
@@ -63,16 +63,16 @@ import { isEmpty } from "@/utils";
 import InputField from "./InputField";
 
 @Component({
-    name: "InputDelegate",
+	name: "InputDelegate",
 
-    components: {
+	components: {
 		ButtonModal,
 		InputField,
 		ModalQrCodeScanner,
 		MenuDropdown,
 	},
 
-    watch: {
+	watch: {
 		value(val) {
 			this.updateInputValue(val);
 		},
@@ -89,255 +89,266 @@ import InputField from "./InputField";
 				this.openDropdown();
 			}
 		},
-	}
+	},
 })
 export default class InputDelegate extends Vue {
-    @Prop({
-        type: String,
-        required: false,
-        default() {
-            return this.$t("SEARCH.DELEGATE");
-        },
-    })
-    label;
+	@Prop({
+		type: String,
+		required: false,
+		default() {
+			return this.$t("SEARCH.DELEGATE");
+		},
+	})
+	label;
 
-    @Prop({
-        type: String,
-        required: false,
-        default: "delegate",
-    })
-    name;
+	@Prop({
+		type: String,
+		required: false,
+		default: "delegate",
+	})
+	name;
 
-    @Prop({
-        type: String,
-        required: false,
-        default: () => "",
-    })
-    helperText;
+	@Prop({
+		type: String,
+		required: false,
+		default: () => "",
+	})
+	helperText;
 
-    @Prop({
-        type: String,
-        required: true,
-        default: () => "",
-    })
-    value;
+	@Prop({
+		type: String,
+		required: true,
+		default: () => "",
+	})
+	value;
 
-    @Prop({
-        type: Boolean,
-        required: false,
-        default: false,
-    })
-    isInvalid;
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	isInvalid;
 
-    inputValue = vm.value;
-    dropdownValue = null;
-    isFocused = false;
+	inputValue = null;
+	dropdownValue = null;
+	isFocused = false;
 
-    get currentProfile() {
-        return this.session_profile;
-    }
+	data(vm) {
+		return {
+			inputValue: vm.value,
+		};
+	}
 
-    get delegates() {
-        return Object.values(this.$store.getters["delegate/bySessionNetwork"] || {});
-    }
+	get currentProfile() {
+		return this.session_profile;
+	}
 
-    get error() {
-        if (this.$v.model.$dirty && (!this.hasSuggestions || !this.$refs.dropdown.isOpen)) {
-            if (!this.$v.model.required) {
-                return this.$t("INPUT_DELEGATE.ERROR.REQUIRED");
-            } else if (!this.$v.model.isValid) {
-                if (this.inputValue.length <= 20) {
-                    return this.$t("INPUT_DELEGATE.ERROR.USERNAME_NOT_FOUND", [this.inputValue]);
-                } else if (this.inputValue.length <= 34) {
-                    return this.$t("INPUT_DELEGATE.ERROR.ADDRESS_NOT_FOUND", [
-                        this.wallet_truncate(this.inputValue),
-                    ]);
-                } else {
-                    return this.$t("INPUT_DELEGATE.ERROR.PUBLIC_KEY_NOT_FOUND", [
-                        this.wallet_truncate(this.inputValue),
-                    ]);
-                }
-            } else {
-                this.$emit("valid", true);
-            }
-        } else {
-            this.$emit("valid", false);
-        }
+	get delegates() {
+		return Object.values(this.$store.getters["delegate/bySessionNetwork"] || {});
+	}
 
-        return null;
-    }
+	get error() {
+		if (this.$v.model.$dirty && (!this.hasSuggestions || !this.$refs.dropdown.isOpen)) {
+			if (!this.$v.model.required) {
+				return this.$t("INPUT_DELEGATE.ERROR.REQUIRED");
+			} else if (!this.$v.model.isValid) {
+				if (this.inputValue.length <= 20) {
+					return this.$t("INPUT_DELEGATE.ERROR.USERNAME_NOT_FOUND", [this.inputValue]);
+				} else if (this.inputValue.length <= 34) {
+					return this.$t("INPUT_DELEGATE.ERROR.ADDRESS_NOT_FOUND", [this.wallet_truncate(this.inputValue)]);
+				} else {
+					return this.$t("INPUT_DELEGATE.ERROR.PUBLIC_KEY_NOT_FOUND", [
+						this.wallet_truncate(this.inputValue),
+					]);
+				}
+			} else {
+				this.$emit("valid", true);
+			}
+		} else {
+			this.$emit("valid", false);
+		}
 
-    get hasSuggestions() {
-        return !isEmpty(this.suggestions);
-    }
+		return null;
+	}
 
-    get invalid() {
-        return this.$v.model.$dirty && (this.isInvalid || !!this.error);
-    }
+	get hasSuggestions() {
+		return !isEmpty(this.suggestions);
+	}
 
-    get TODO_model() {}
+	get invalid() {
+		return this.$v.model.$dirty && (this.isInvalid || !!this.error);
+	}
 
-    get suggestions() {
-        if (!this.currentProfile) {
-            return [];
-        }
+	get model() {
+		return this.dropdownValue || this.inputValue;
+	}
 
-        const delegates = this.delegates.map((object) => {
-            const delegate = {
-                name: null,
-                username: object.username,
-                address: object.address,
-                publicKey: object.publicKey,
-            };
+	set model(value) {
+		this.updateInputValue(value);
+		this.$emit("input", value);
+	}
 
-            delegate.name = `${object.username} (${this.wallet_truncate(object.address)})`;
+	get suggestions() {
+		if (!this.currentProfile) {
+			return [];
+		}
 
-            return delegate;
-        });
+		const delegates = this.delegates.map((object) => {
+			const delegate = {
+				name: null,
+				username: object.username,
+				address: object.address,
+				publicKey: object.publicKey,
+			};
 
-        const results = orderBy(delegates, (object) => {
-            return object.name || object.address.toLowerCase();
-        });
+			delegate.name = `${object.username} (${this.wallet_truncate(object.address)})`;
 
-        return results.reduce((delegates, delegate) => {
-            Object.values(delegate).forEach((prop) => {
-                if (prop.toLowerCase().includes(this.inputValue.toLowerCase())) {
-                    delegates[delegate.username] = delegate.name;
-                }
-            });
+			return delegate;
+		});
 
-            return delegates;
-        }, {});
-    }
+		const results = orderBy(delegates, (object) => {
+			return object.name || object.address.toLowerCase();
+		});
 
-    get suggestionsKeys() {
-        return new Cycled(Object.keys(this.suggestions));
-    }
+		return results.reduce((delegates, delegate) => {
+			Object.values(delegate).forEach((prop) => {
+				if (prop.toLowerCase().includes(this.inputValue.toLowerCase())) {
+					delegates[delegate.username] = delegate.name;
+				}
+			});
 
-    mounted() {
+			return delegates;
+		}, {});
+	}
+
+	get suggestionsKeys() {
+		return new Cycled(Object.keys(this.suggestions));
+	}
+
+	mounted() {
 		if (this.value) {
 			this.updateInputValue(this.value);
 		}
 	}
 
-    getHelperText() {
-        return !this.$refs.dropdown || !this.$refs.dropdown.isOpen ? this.helperText : "";
-    }
+	getHelperText() {
+		return !this.$refs.dropdown || !this.$refs.dropdown.isOpen ? this.helperText : "";
+	}
 
-    blur() {
-        this.$refs.input.blur();
-    }
+	blur() {
+		this.$refs.input.blur();
+	}
 
-    focus() {
-        this.$refs.input.focus();
-    }
+	focus() {
+		this.$refs.input.focus();
+	}
 
-    onBlur(event) {
-        // Verifies that the element that generated the blur was a dropdown item
-        if (event.relatedTarget) {
-            const classList = event.relatedTarget.classList;
+	onBlur(event) {
+		// Verifies that the element that generated the blur was a dropdown item
+		if (event.relatedTarget) {
+			const classList = event.relatedTarget.classList;
 
-            const isDropdownItem =
-                classList && typeof classList.contains === "function"
-                    ? classList.contains("MenuDropdownItem__button")
-                    : false;
+			const isDropdownItem =
+				classList && typeof classList.contains === "function"
+					? classList.contains("MenuDropdownItem__button")
+					: false;
 
-            if (!isDropdownItem) {
-                this.closeDropdown();
-            }
-        } else if (this.$refs.dropdown.isOpen) {
-            this.closeDropdown();
-        }
+			if (!isDropdownItem) {
+				this.closeDropdown();
+			}
+		} else if (this.$refs.dropdown.isOpen) {
+			this.closeDropdown();
+		}
 
-        this.isFocused = false;
+		this.isFocused = false;
 
-        // If the user selects a suggestion and leaves the input
-        if (this.dropdownValue) {
-            this.onEnter();
-        }
-    }
+		// If the user selects a suggestion and leaves the input
+		if (this.dropdownValue) {
+			this.onEnter();
+		}
+	}
 
-    onDropdownSelect(value) {
-        this.model = value;
-        this.$nextTick(() => this.closeDropdown());
-    }
+	onDropdownSelect(value) {
+		this.model = value;
+		this.$nextTick(() => this.closeDropdown());
+	}
 
-    onFocus() {
-        this.isFocused = true;
-        this.$emit("focus");
-    }
+	onFocus() {
+		this.isFocused = true;
+		this.$emit("focus");
+	}
 
-    onEnter() {
-        if (!this.dropdownValue) {
-            return;
-        }
+	onEnter() {
+		if (!this.dropdownValue) {
+			return;
+		}
 
-        this.model = this.dropdownValue;
+		this.model = this.dropdownValue;
 
-        this.$nextTick(() => {
-            this.closeDropdown();
-            this.$refs.input.setSelectionRange(this.inputValue.length, this.inputValue.length);
-        });
-    }
+		this.$nextTick(() => {
+			this.closeDropdown();
+			this.$refs.input.setSelectionRange(this.inputValue.length, this.inputValue.length);
+		});
+	}
 
-    onEsc() {
-        this.dropdownValue = null;
-        this.closeDropdown();
-    }
+	onEsc() {
+		this.dropdownValue = null;
+		this.closeDropdown();
+	}
 
-    onKeyUp() {
-        const next = this.dropdownValue ? this.suggestionsKeys.previous() : this.suggestionsKeys.current();
-        this.__setSuggestion(next);
-    }
+	onKeyUp() {
+		const next = this.dropdownValue ? this.suggestionsKeys.previous() : this.suggestionsKeys.current();
+		this.__setSuggestion(next);
+	}
 
-    onKeyDown() {
-        const next = this.dropdownValue ? this.suggestionsKeys.next() : this.suggestionsKeys.current();
-        this.__setSuggestion(next);
-    }
+	onKeyDown() {
+		const next = this.dropdownValue ? this.suggestionsKeys.next() : this.suggestionsKeys.current();
+		this.__setSuggestion(next);
+	}
 
-    onDecodeQR(value, toggle) {
-        const address = this.qr_getAddress(value);
+	onDecodeQR(value, toggle) {
+		const address = this.qr_getAddress(value);
 
-        // Check if we were unable to retrieve an address from the qr
-        if ((address === "" || address === undefined) && address !== value) {
-            this.$error(this.$t("MODAL_QR_SCANNER.DECODE_FAILED", { data: value }));
-        }
+		// Check if we were unable to retrieve an address from the qr
+		if ((address === "" || address === undefined) && address !== value) {
+			this.$error(this.$t("MODAL_QR_SCANNER.DECODE_FAILED", { data: value }));
+		}
 
-        const delegate = this.$store.getters["delegate/byAddress"](address);
-        this.model = delegate ? delegate.username : address;
+		const delegate = this.$store.getters["delegate/byAddress"](address);
+		this.model = delegate ? delegate.username : address;
 
-        this.$nextTick(() => {
-            this.closeDropdown();
-            toggle();
-        });
-    }
+		this.$nextTick(() => {
+			this.closeDropdown();
+			toggle();
+		});
+	}
 
-    closeDropdown() {
-        this.$refs.dropdown.close();
-    }
+	closeDropdown() {
+		this.$refs.dropdown.close();
+	}
 
-    openDropdown() {
-        this.$refs.dropdown.open();
-    }
+	openDropdown() {
+		this.$refs.dropdown.open();
+	}
 
-    updateInputValue(value) {
-        this.inputValue = value;
-        // Inform Vuelidate that the value changed
-        this.$v.model.$touch();
-    }
+	updateInputValue(value) {
+		this.inputValue = value;
+		// Inform Vuelidate that the value changed
+		this.$v.model.$touch();
+	}
 
-    __setSuggestion(value) {
-        if (!this.hasSuggestions) {
-            return;
-        }
+	__setSuggestion(value) {
+		if (!this.hasSuggestions) {
+			return;
+		}
 
-        this.dropdownValue = value;
-        this.$nextTick(() => {
-            this.$refs.input.setSelectionRange(this.inputValue.length, this.dropdownValue.length);
-        });
-    }
+		this.dropdownValue = value;
+		this.$nextTick(() => {
+			this.$refs.input.setSelectionRange(this.inputValue.length, this.dropdownValue.length);
+		});
+	}
 
-    validations = {
+	validations = {
 		model: {
 			required,
 			isValid(value) {

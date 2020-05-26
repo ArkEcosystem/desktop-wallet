@@ -87,7 +87,8 @@
 </template>
 
 <script>
-import { Vue, Component } from "vue-property-decorator";
+import { Component,Vue } from "vue-property-decorator";
+
 import { ButtonClipboard } from "@/components/Button";
 import SvgIcon from "@/components/SvgIcon";
 import { StoreBinding } from "@/enums";

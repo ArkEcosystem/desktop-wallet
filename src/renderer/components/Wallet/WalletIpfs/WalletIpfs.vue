@@ -27,7 +27,8 @@
 </template>
 
 <script>
-import { Vue, Component } from "vue-property-decorator";
+import { Component,Vue } from "vue-property-decorator";
+
 import { ButtonModal } from "@/components/Button";
 import { TransactionModal } from "@/components/Transaction";
 import WalletTransactions from "@/components/Wallet/WalletTransactions";

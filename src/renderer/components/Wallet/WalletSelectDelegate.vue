@@ -23,7 +23,8 @@
 </template>
 
 <script>
-import { Vue, Component } from "vue-property-decorator";
+import { Component,Vue } from "vue-property-decorator";
+
 import { InputDelegate } from "@/components/Input";
 import { ModalWindow } from "@/components/Modal";
 

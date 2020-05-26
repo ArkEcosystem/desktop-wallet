@@ -18,7 +18,8 @@
 </template>
 
 <script>
-import { Vue, Component, Prop } from "vue-property-decorator";
+import { Component, Prop,Vue } from "vue-property-decorator";
+
 import { ButtonSwitch } from "@/components/Button";
 import { ListDivided, ListDividedItem } from "@/components/ListDivided";
 import { ModalConfirmation } from "@/components/Modal";

@@ -75,7 +75,8 @@
 </template>
 
 <script>
-import { Vue, Component, Prop } from "vue-property-decorator";
+import { Component, Prop,Vue } from "vue-property-decorator";
+
 import { TransactionShowMultiSignature } from "@/components/Transaction";
 import TableWrapper from "@/components/utils/TableWrapper";
 import WalletAddress from "@/components/Wallet/WalletAddress";

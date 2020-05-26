@@ -1,6 +1,6 @@
 <script>
-import { Vue, Component } from "vue-property-decorator";
 import { Wormhole } from "portal-vue";
+import { Component,Vue } from "vue-property-decorator";
 @Component({
     name: "PluginWrapper"
 })

@@ -70,7 +70,8 @@
 </template>
 
 <script>
-import { Vue, Component, Prop } from "vue-property-decorator";
+import { Component, Prop,Vue } from "vue-property-decorator";
+
 import { ButtonGeneric, ButtonIconGeneric } from "@/components/Button";
 import PluginLogo from "@/components/PluginManager/PluginLogo";
 import PluginManagerCheckmark from "@/components/PluginManager/PluginManagerCheckmark";

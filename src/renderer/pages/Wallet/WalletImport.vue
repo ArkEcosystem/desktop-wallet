@@ -146,7 +146,7 @@
 </template>
 
 <script>
-import { Vue, Component } from "vue-property-decorator";
+import { Component,Vue } from "vue-property-decorator";
 import { required } from "vuelidate/lib/validators";
 
 import { InputAddress, InputPassword, InputSwitch, InputText } from "@/components/Input";

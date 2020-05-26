@@ -23,8 +23,8 @@
 </template>
 
 <script>
-import { Vue, Component } from "vue-property-decorator";
 import { TRANSACTION_TYPES } from "@config";
+import { Component,Vue } from "vue-property-decorator";
 
 import { ListDivided, ListDividedItem } from "@/components/ListDivided";
 

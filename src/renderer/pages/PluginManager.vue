@@ -160,9 +160,9 @@
 </template>
 
 <script>
-import { Vue, Component } from "vue-property-decorator";
 import { ipcRenderer } from "electron";
 import { isEqual, sortBy, uniq } from "lodash";
+import { Component,Vue } from "vue-property-decorator";
 
 import { ButtonLayout, ButtonReload } from "@/components/Button";
 import { ModalLoader } from "@/components/Modal";
@@ -312,9 +312,29 @@ export default class PluginManager extends Vue {
     get hasGridLayout() {
         return this.layout === "grid";
     }
+      get layout() {
+        return this.$store.getters['session/pluginManagerLayout']
+	  }
 
-    get TODO_layout() {}
-    get TODO_isMenuOpen() {}
+      set layout(layout) {
+        this.$store.dispatch('session/setPluginManagerLayout', layout)
+        this.$store.dispatch('profile/update', {
+          ...this.session_profile,
+          pluginManagerLayout: layout
+        })
+	  }
+
+      get isMenuOpen() {
+        return this.$store.getters['session/pluginMenuOpen']
+	  }
+
+      set isMenuOpen (open) {
+        this.$store.dispatch('session/setPluginMenuOpen', open)
+        this.$store.dispatch('profile/update', {
+          ...this.session_profile,
+          pluginMenuOpen: open
+        })
+      }
 
     get plugins() {
         const plugins = this.$store.getters["plugin/filtered"](this.query, this.activeCategory, this.activeFilter);
@@ -325,7 +345,17 @@ export default class PluginManager extends Vue {
         );
     }
 
-    get TODO_sortParams() {}
+      get sortParams() {
+        return this.$store.getters['session/pluginSortParams']
+	  }
+
+      set sortParams(sortParams) {
+        this.$store.dispatch('session/setPluginSortParams', sortParams)
+        this.$store.dispatch('profile/update', {
+          ...this.session_profile,
+          pluginSortParams: sortParams
+        })
+      }
 
     get loadingModalText() {
         if (!this.selectedPlugin) {

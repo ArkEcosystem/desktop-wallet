@@ -5,7 +5,8 @@
 </template>
 
 <script>
-import { Vue, Component, Prop } from "vue-property-decorator";
+import { Component, Prop,Vue } from "vue-property-decorator";
+
 import { CollapseAccordion } from "@/components/Collapse";
 
 @Component({
@@ -28,8 +29,15 @@ export default class MenuStep extends Vue {
     })
     step;
 
-    items = [];
-    get TODO_model() {}
+	items = [];
+
+      get model() {
+        return this.step
+	  }
+
+      set model(val) {
+        this.$emit('change', val)
+      }
 
     mounted() {
 		this.items = this.collectItems();

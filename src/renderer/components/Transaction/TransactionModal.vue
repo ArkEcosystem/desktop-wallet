@@ -37,9 +37,9 @@
 </template>
 
 <script>
-import { Vue, Component, Prop } from "vue-property-decorator";
 import { TRANSACTION_GROUPS, TRANSACTION_TYPES } from "@config";
 import { camelCase } from "lodash";
+import { Component, Prop,Vue } from "vue-property-decorator";
 
 import { ModalLoader, ModalWindow } from "@/components/Modal";
 import { AppEvent, StoreBinding } from "@/enums";
@@ -99,8 +99,14 @@ export default class TransactionModal extends Vue {
 
     showBroadcastingTransactions = false;
     step = 0;
-    transaction = vm.transactionOverride;
+    transaction = null;
     walletOverride = null;
+
+	data(vm) {
+		return {
+    		transaction: vm.transactionOverride,
+		};
+	}
 
     get transactionKey() {
         if (this.type === TRANSACTION_TYPES.MULTI_SIGN) {
@@ -322,12 +328,6 @@ export default class TransactionModal extends Vue {
         this.$emit("close");
     }
 
-    //*
-             * Checks if the response is successful: in case the transaction is rejected
-             * due a low fee, but it is broadcasted too, it cannot be declared as invalid yet
-             * @param {Object} response
-             * @return {Boolean}
-             
     isSuccessfulResponse(response) {
         if (response.status !== 200) {
             this.$logger.error(response);

@@ -1,12 +1,12 @@
 <template>
-	<div class="InputFee relative inline-block w-full">
+	<div class="relative inline-block w-full InputFee">
 		<div class="w-full">
-			<div class="InputFee__gradient absolute w-full" />
-			<div :style="rangeTrackStyle" class="InputFee__range-track absolute w-full z-30" />
-			<div :style="hiddenGradientStyle" class="InputFee__hidden-gradient absolute w-full z-10" />
+			<div class="absolute w-full InputFee__gradient" />
+			<div :style="rangeTrackStyle" class="absolute z-30 w-full InputFee__range-track" />
+			<div :style="hiddenGradientStyle" class="absolute z-10 w-full InputFee__hidden-gradient" />
 		</div>
 
-		<div class="InputFee__currency-input-container absolute z-20">
+		<div class="absolute z-20 InputFee__currency-input-container">
 			<InputCurrency
 				ref="input"
 				:currency="currency"
@@ -34,17 +34,17 @@
 			:step="step"
 			:disabled="isDisabled"
 			type="range"
-			class="w-full m-0 py-2 z-10"
+			class="z-10 w-full py-2 m-0"
 			name="fee"
 			@input="onSlider($event.target.value)"
 		/>
-		<p class="InputFee__choices absolute z-30">
+		<p class="absolute z-30 InputFee__choices">
 			<button
 				v-for="choice in Object.keys(feeChoices)"
 				:key="choice"
 				:class="{ 'InputFee__choice--active': choice === chosenFee }"
 				:disabled="isDisabled"
-				class="InputFee__choice cursor-pointer font-semibold text-xs"
+				class="text-xs font-semibold cursor-pointer InputFee__choice"
 				@click="onChoice(choice)"
 			>
 				{{ $t(`INPUT_FEE.${choice}`) }}
@@ -58,8 +58,8 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component, Prop } from "vue-property-decorator";
 import { V1 } from "@config";
+import { Component, Prop,Vue } from "vue-property-decorator";
 
 import InputCurrency from "./InputCurrency";
 
@@ -308,18 +308,10 @@ export default class InputFee extends Vue {
         this.emitFee(fee);
     }
 
-    //*
-             * Emit the value after the user finishes changes. This prevents premature parsing the input.
-             * @param {(String|Number)} fee
-
     onChange(fee) {
         fee = fee.toString();
         this.emitFee(fee);
     }
-
-    //*
-             * Receives the `InputCurrency` value as String
-             * @param {String} fee
 
     onRawInput(fee) {
         if (!["INPUT", "ADVANCED"].includes(this.chosenFee)) {
@@ -330,10 +322,6 @@ export default class InputFee extends Vue {
         this.$set(this.feeChoices, this.chosenFee, fee);
     }
 
-    //*
-             * The native slider uses Strings
-             * @param {String} fee
-
     onSlider(fee) {
         if (!["INPUT", "ADVANCED"].includes(this.chosenFee)) {
             this.chosenFee = "INPUT";
@@ -343,21 +331,12 @@ export default class InputFee extends Vue {
         this.emitFee(fee);
     }
 
-    //*
-             * Establishes the fee as String to avoid the exponential notation
-             * @param {(String|Number)} fee
-
     setFee(fee) {
         fee = this.currency_toBuilder(fee).toString();
 
         this.fee = fee;
         this.$v.fee.$touch();
     }
-
-    //*
-             * Establishes the fee as String to avoid the exponential notation, although
-             * it emits the value as a Number
-             * @param {String} fee
 
     emitFee(fee) {
         this.setFee(fee);

@@ -20,10 +20,10 @@
 </template>
 
 <script>
-import { Vue, Component } from "vue-property-decorator";
 import { isEqual } from "lodash";
+import { Component,Vue } from "vue-property-decorator";
 
-import { AppEvent, StoreBinding } from "@/enums";
+import { AppEvent } from "@/enums";
 
 import WalletBusinessBridgechainsTable from "./WalletBusinessBridgechainsTable";
 
@@ -53,7 +53,6 @@ export default class WalletBusinessBridgechains extends Vue {
     totalCount = 0;
     interval = 60000;
 
-    // vue-convert: vue-class-component ignores property with undefined, so data() method is required for this property.
     timeout = undefined;
 
     queryParams = {
@@ -71,7 +70,17 @@ export default class WalletBusinessBridgechains extends Vue {
         };
     }
 
-    get TODO_tableRowCount() {}
+      get tableRowCount() {
+        return this.$store.getters['session/transactionTableRowCount']
+	  }
+
+      set tableRowCount(count) {
+        this.$store.dispatch('session/setTransactionTableRowCount', count)
+        this.$store.dispatch('profile/update', {
+          ...this.session_profile,
+          transactionTableRowCount: count
+        })
+      }
 
     created() {
 		this.loadBridgechains();
@@ -119,10 +128,6 @@ export default class WalletBusinessBridgechains extends Vue {
         }
     }
 
-    //*
-             * Fetch the bridgechains and show the loading animation while the response
-             * is received
-             
     loadBridgechains(showLoading = true) {
         try {
             if (!this.wallet_fromRoute || this.isFetching) {

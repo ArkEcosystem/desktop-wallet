@@ -1,6 +1,6 @@
 <template>
-	<div class="WalletSidebarFiltersSearchInput flex flex-row">
-		<div class="cursor-pointer mr-4 text-theme-settings-text" @click="focus">
+	<div class="flex flex-row WalletSidebarFiltersSearchInput">
+		<div class="mr-4 cursor-pointer text-theme-settings-text" @click="focus">
 			<SvgIcon name="search" view-box="0 0 17 16" />
 		</div>
 
@@ -8,7 +8,7 @@
 			ref="input"
 			:placeholder="placeholder"
 			:value="inputValue"
-			class="WalletSidebarFiltersSearchInput____input flex flex-grow bg-transparent text-theme-settings-text font-semibold"
+			class="flex flex-grow font-semibold bg-transparent WalletSidebarFiltersSearchInput____input text-theme-settings-text"
 			name="wallet-sidebar-filters-search"
 			type="text"
 			@input="updateInput"
@@ -17,57 +17,57 @@
 </template>
 
 <script>
-import { Vue, Component, Prop } from "vue-property-decorator";
+import { Component, Prop, Vue } from "vue-property-decorator";
+
 import SvgIcon from "@/components/SvgIcon";
 
 @Component({
-    name: "WalletSidebarFiltersInputSearch",
+	name: "WalletSidebarFiltersInputSearch",
 
-    components: {
+	components: {
 		SvgIcon,
 	},
 
-    watch: {
+	watch: {
 		value(value) {
 			this.inputValue = value;
 		},
-	}
+	},
 })
 export default class WalletSidebarFiltersInputSearch extends Vue {
-    @Prop({
-        type: String,
-        required: false,
-        default: "",
-    })
-    placeholder;
+	@Prop({
+		type: String,
+		required: false,
+		default: "",
+	})
+	placeholder;
 
-    @Prop({
-        type: String,
-        required: true,
-        default: "",
-    })
-    value;
+	@Prop({
+		type: String,
+		required: true,
+		default: "",
+	})
+	value;
 
-    // vue-convert: This property will initialized in data() method, with `this` reference.
-    inputValue = undefined;
+	inputValue = undefined;
 
-    data() {
+	data() {
 		return {
 			inputValue: this.value,
 		};
 	}
 
-    emitInput() {
-        this.$emit("input", this.inputValue);
-    }
+	emitInput() {
+		this.$emit("input", this.inputValue);
+	}
 
-    updateInput(event) {
-        this.inputValue = event.target.value;
-        this.emitInput();
-    }
+	updateInput(event) {
+		this.inputValue = event.target.value;
+		this.emitInput();
+	}
 
-    focus() {
-        this.$refs.input.focus();
-    }
+	focus() {
+		this.$refs.input.focus();
+	}
 }
 </script>

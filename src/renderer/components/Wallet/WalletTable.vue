@@ -119,7 +119,8 @@
 </template>
 
 <script>
-import { Vue, Component, Prop } from "vue-property-decorator";
+import { Component, Prop,Vue } from "vue-property-decorator";
+
 import { ButtonClipboard } from "@/components/Button";
 import SvgIcon from "@/components/SvgIcon";
 import TableWrapper from "@/components/utils/TableWrapper";

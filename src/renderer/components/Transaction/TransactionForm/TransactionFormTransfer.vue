@@ -1,5 +1,5 @@
 <template>
-	<form class="TransactionFormTransfer flex flex-col" @submit.prevent>
+	<form class="flex flex-col TransactionFormTransfer" @submit.prevent>
 		<ListDivided v-if="senderLabel" :is-floating-label="true">
 			<ListDividedItem :label="$t('TRANSACTION.SENDER')" item-value-class="w-full">
 				<span class="break-words">
@@ -15,7 +15,7 @@
 			v-if="schema && schema.address"
 			v-model="$v.wallet.$model"
 			:compatible-address="$v.recipientId.$model"
-			class="TransactionFormTransfer__wallet mb-5"
+			class="mb-5 TransactionFormTransfer__wallet"
 			profile-class="mb-5"
 			@select="ensureAvailableAmount"
 		/>
@@ -29,7 +29,7 @@
 			:is-disabled="!currentWallet"
 			:warning-text="recipientWarning"
 			name="recipientId"
-			class="TransactionFormTransfer__recipient mb-5"
+			class="mb-5 TransactionFormTransfer__recipient"
 		/>
 
 		<div class="flex items-baseline mb-5">
@@ -47,7 +47,7 @@
 				:required="true"
 				:is-disabled="!currentWallet"
 				:wallet-network="walletNetwork"
-				class="TransactionFormTransfer__amount flex-1 mr-3"
+				class="flex-1 mr-3 TransactionFormTransfer__amount"
 				@blur="ensureAvailableAmount"
 				@input="setSendAll(false, false)"
 			/>
@@ -56,7 +56,7 @@
 				v-if="hasAip11"
 				:disabled="!isValidRecipient"
 				:label="$t('TRANSACTION.BUTTON_ADD')"
-				class="TransactionFormTransfer__add py-1 flex-inline h-8 mt-4 mr-3"
+				class="h-8 py-1 mt-4 mr-3 TransactionFormTransfer__add flex-inline"
 				@click="addRecipient"
 			/>
 
@@ -76,7 +76,7 @@
 			:show-count="true"
 			:is-invalid="hasMoreThanMaximumRecipients"
 			:required="true"
-			class="TransactionFormTransfer__recipients mt-4"
+			class="mt-4 TransactionFormTransfer__recipients"
 			@remove="emitRemoveRecipient"
 		/>
 
@@ -88,7 +88,7 @@
 			:helper-text="vendorFieldHelperText"
 			:maxlength="vendorFieldMaxLength"
 			name="vendorField"
-			class="TransactionFormTransfer__vendorfield mb-5"
+			class="mb-5 TransactionFormTransfer__vendorfield"
 		/>
 
 		<div class="mt-4">
@@ -105,13 +105,13 @@
 				}"
 				@input="onFee"
 			/>
-			<p v-if="isMultiPayment && insufficientFundsError" class="text-red-dark text-theme-page-text-light text-xs">
+			<p v-if="isMultiPayment && insufficientFundsError" class="text-xs text-red-dark text-theme-page-text-light">
 				{{ insufficientFundsError }}
 			</p>
 		</div>
 
 		<div v-if="!isMultiSignature">
-			<div v-if="isLedger" class="TransactionFormTransfer__ledger-notice mt-10">
+			<div v-if="isLedger" class="mt-10 TransactionFormTransfer__ledger-notice">
 				{{ $t("TRANSACTION.LEDGER_SIGN_NOTICE") }}
 			</div>
 
@@ -121,7 +121,7 @@
 				v-model="$v.form.walletPassword.$model"
 				:label="$t('TRANSACTION.PASSWORD')"
 				:is-required="true"
-				class="TransactionFormTransfer__password mt-4"
+				class="mt-4 TransactionFormTransfer__password"
 			/>
 
 			<PassphraseInput
@@ -131,7 +131,7 @@
 				:address="currentWallet && currentWallet.address"
 				:pub-key-hash="walletNetwork.version"
 				:is-disabled="!currentWallet"
-				class="TransactionFormTransfer__passphrase mt-4"
+				class="mt-4 TransactionFormTransfer__passphrase"
 			/>
 		</div>
 
@@ -142,10 +142,10 @@
 			:label="$t('TRANSACTION.SECOND_PASSPHRASE')"
 			:pub-key-hash="walletNetwork.version"
 			:public-key="currentWallet.secondPublicKey"
-			class="TransactionFormTransfer__second-passphrase mt-5"
+			class="mt-5 TransactionFormTransfer__second-passphrase"
 		/>
 
-		<footer class="mt-10 flex justify-between items-center">
+		<footer class="flex items-center justify-between mt-10">
 			<div class="self-start">
 				<button :disabled="!isFormValid" class="TransactionFormTransfer__next blue-button" @click="nextStep">
 					{{ $t("COMMON.NEXT") }}
@@ -155,7 +155,7 @@
 			<div>
 				<button
 					v-tooltip="{ content: $t('TRANSACTION.LOAD_FROM_FILE'), toggle: 'hover' }"
-					class="TransactionFormTransfer__load-tx action-button pull-right flex items-center"
+					class="flex items-center TransactionFormTransfer__load-tx action-button pull-right"
 					@click="loadTransaction"
 				>
 					<SvgIcon name="load" view-box="0 0 21 15" class="mr-1" />
@@ -181,8 +181,8 @@
 </template>
 
 <script>
-import { Vue, Component, Prop } from "vue-property-decorator";
 import { TRANSACTION_TYPES, VENDOR_FIELD } from "@config";
+import { Component, Prop,Vue } from "vue-property-decorator";
 import { required } from "vuelidate/lib/validators";
 
 import { ButtonGeneric } from "@/components/Button";
@@ -397,7 +397,14 @@ export default class TransactionFormTransfer extends Vue {
         return this.$store.getters["network/byId"](profile.networkId) || sessionNetwork;
     }
 
-    get TODO_currentWallet() {}
+      get currentWallet() {
+        return this.senderWallet || this.wallet_fromRoute
+	  }
+
+      set currentWallet(wallet) {
+        this.wallet = wallet
+      }
+
 
     get vendorFieldLabel() {
         return `${this.$t("TRANSACTION.VENDOR_FIELD")} - ${this.$t("VALIDATION.MAX_LENGTH", [

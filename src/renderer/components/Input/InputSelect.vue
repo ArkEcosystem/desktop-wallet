@@ -39,139 +39,143 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component, Prop } from "vue-property-decorator";
+import { Component, Prop, Vue } from "vue-property-decorator";
+
 import { MenuDropdown, MenuDropdownHandler } from "@/components/Menu";
 
 import InputField from "./InputField";
 
 @Component({
-    name: "InputSelect",
+	name: "InputSelect",
 
-    components: {
+	components: {
 		InputField,
 		MenuDropdown,
 		MenuDropdownHandler,
 	},
 
-    model: {
+	model: {
 		prop: "value",
 		event: "input",
 	},
 
-    watch: {
+	watch: {
 		value(value) {
 			this.optionValue = value;
 		},
-	}
+	},
 })
 export default class InputSelect extends Vue {
-    @Prop({
-        type: [Array, Object],
-        required: true,
-        default: () => [],
-    })
-    items;
+	@Prop({
+		type: [Array, Object],
+		required: true,
+		default: () => [],
+	})
+	items;
 
-    @Prop({
-        type: String,
-        required: true,
-    })
-    label;
+	@Prop({
+		type: String,
+		required: true,
+	})
+	label;
 
-    @Prop({
-        type: String,
-        required: true,
-    })
-    name;
+	@Prop({
+		type: String,
+		required: true,
+	})
+	name;
 
-    @Prop({
-        type: Boolean,
-        required: false,
-        default: false,
-    })
-    isDisabled;
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	isDisabled;
 
-    @Prop({
-        type: Boolean,
-        required: false,
-        default: false,
-    })
-    isInvalid;
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	isInvalid;
 
-    @Prop({
-        type: String,
-        required: false,
-        default: undefined,
-    })
-    value;
+	@Prop({
+		type: String,
+		required: false,
+		default: undefined,
+	})
+	value;
 
-    isFocused = false;
-    optionValue = vm.value;
+	isFocused = false;
+	optionValue = null;
 
-    // When the text of the option is empty the label/placeholder is shown instead by the MenuHandler
-    get inputLabel() {
-        return this.optionText ? this.label : "";
-    }
+	data(vm) {
+		return {
+			optionValue: vm.value,
+		};
+	}
 
-    get hasHandlerSlot() {
-        return !!this.$scopedSlots["input-handler"];
-    }
+	// When the text of the option is empty the label/placeholder is shown instead by the MenuHandler
+	get inputLabel() {
+		return this.optionText ? this.label : "";
+	}
 
-    get hasItemSlot() {
-        return !!this.$scopedSlots["input-item"];
-    }
+	get hasHandlerSlot() {
+		return !!this.$scopedSlots["input-handler"];
+	}
 
-    get isDirty() {
-        return !!this.optionValue;
-    }
+	get hasItemSlot() {
+		return !!this.$scopedSlots["input-item"];
+	}
 
-    //*
-             * This is the text that is visible on the InputField
+	get isDirty() {
+		return !!this.optionValue;
+	}
 
-    get optionText() {
-        if (!Array.isArray(this.items)) {
-            return this.items[this.optionValue];
-        }
+	get optionText() {
+		if (!Array.isArray(this.items)) {
+			return this.items[this.optionValue];
+		}
 
-        // Ensure that the value could be valid
-        if (this.items.indexOf(this.optionValue) !== -1) {
-            return this.optionValue;
-        }
+		// Ensure that the value could be valid
+		if (this.items.indexOf(this.optionValue) !== -1) {
+			return this.optionValue;
+		}
 
-        return "";
-    }
+		return "";
+	}
 
-    emitInput() {
-        this.$emit("input", this.optionValue);
-    }
+	emitInput() {
+		this.$emit("input", this.optionValue);
+	}
 
-    onBlur(event) {
-        // To ensure that the code is evaluated after other tasks
-        setTimeout(() => {
-            const classList = document.activeElement.classList;
+	onBlur(event) {
+		// To ensure that the code is evaluated after other tasks
+		setTimeout(() => {
+			const classList = document.activeElement.classList;
 
-            const isDropdownItem =
-                classList && typeof classList.contains === "function"
-                    ? classList.contains("MenuDropdownItem__button")
-                    : false;
+			const isDropdownItem =
+				classList && typeof classList.contains === "function"
+					? classList.contains("MenuDropdownItem__button")
+					: false;
 
-            if (isDropdownItem) {
-                event.preventDefault();
-            } else {
-                this.$refs.dropdown.close();
-            }
-        }, 0);
-    }
+			if (isDropdownItem) {
+				event.preventDefault();
+			} else {
+				this.$refs.dropdown.close();
+			}
+		}, 0);
+	}
 
-    onHandlerClick() {
-        this.isFocused = true;
-    }
+	onHandlerClick() {
+		this.isFocused = true;
+	}
 
-    onDropdownSelect(selectedValue) {
-        this.isFocused = false;
-        this.optionValue = selectedValue;
+	onDropdownSelect(selectedValue) {
+		this.isFocused = false;
+		this.optionValue = selectedValue;
 
-        this.emitInput();
-    }
+		this.emitInput();
+	}
 }
 </script>

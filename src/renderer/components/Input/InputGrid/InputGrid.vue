@@ -11,7 +11,7 @@
 						<InputGridItem
 							:title="$t('INPUT_GRID.MORE')"
 							:is-selected="false"
-							class="text-4xl text-center p-1 align-middle border-2 border-theme-line-separator text-theme-option-button-text hover:text-theme-button-text"
+							class="p-1 text-4xl text-center align-middle border-2 border-theme-line-separator text-theme-option-button-text hover:text-theme-button-text"
 							text-content="..."
 						/>
 					</button>
@@ -33,7 +33,8 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component, Prop } from "vue-property-decorator";
+import { Component, Prop, Vue } from "vue-property-decorator";
+
 import { flatten } from "@/utils";
 
 import InputGridItem from "./InputGridItem";
@@ -44,119 +45,113 @@ import InputGridModal from "./InputGridModal";
  * by clicking on it.
  */
 @Component({
-    name: "InputGrid",
+	name: "InputGrid",
 
-    components: {
+	components: {
 		InputGridItem,
 		InputGridModal,
-	}
+	},
 })
 export default class InputGrid extends Vue {
-    @Prop({
-        type: [Array, Object],
-        required: true,
-    })
-    items;
+	@Prop({
+		type: [Array, Object],
+		required: true,
+	})
+	items;
 
-    // Attributes that would be yielded when using the `item` slot
-    @Prop({
-        type: Array,
-        required: false,
-        default: () => ["title", "imagePath"],
-    })
-    itemAttrs;
+	// Attributes that would be yielded when using the `item` slot
+	@Prop({
+		type: Array,
+		required: false,
+		default: () => ["title", "imagePath"],
+	})
+	itemAttrs;
 
-    @Prop({
-        type: String,
-        required: true,
-    })
-    itemKey;
+	@Prop({
+		type: String,
+		required: true,
+	})
+	itemKey;
 
-    @Prop({
-        type: Object,
-        required: false,
-        default: null,
-    })
-    selected;
+	@Prop({
+		type: Object,
+		required: false,
+		default: null,
+	})
+	selected;
 
-    @Prop({
-        type: String,
-        required: false,
-        default: null,
-    })
-    modalContainerClasses;
+	@Prop({
+		type: String,
+		required: false,
+		default: null,
+	})
+	modalContainerClasses;
 
-    @Prop({
-        type: String,
-        required: false,
-        default: null,
-    })
-    modalHeaderText;
+	@Prop({
+		type: String,
+		required: false,
+		default: null,
+	})
+	modalHeaderText;
 
-    @Prop({
-        type: Boolean,
-        required: false,
-        default: false,
-    })
-    autoSelectFirst;
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	autoSelectFirst;
 
-    isModalOpen = null;
+	isModalOpen = null;
 
-    // vue-convert: This property will initialized in data() method, with `this` reference.
-    selectedItem = undefined;
+	selectedItem = undefined;
 
-    data() {
+	data() {
 		return {
-            selectedItem: this.selected
-        };
+			selectedItem: this.selected,
+		};
 	}
 
-    get allItems() {
-        return flatten(Object.values(this.items));
-    }
+	get allItems() {
+		return flatten(Object.values(this.items));
+	}
 
-    get activeItem() {
-        return this.allItems.find((item) => {
-            if (!this.selectedItem || this.selectedItem.onlyLetter) {
-                return item.onlyLetter;
-            }
+	get activeItem() {
+		return this.allItems.find((item) => {
+			if (!this.selectedItem || this.selectedItem.onlyLetter) {
+				return item.onlyLetter;
+			}
 
-            return this.selectedItem.pluginId
-                ? item.name === this.selectedItem.name
-                : item.title === this.selectedItem.title;
-        });
-    }
+			return this.selectedItem.pluginId
+				? item.name === this.selectedItem.name
+				: item.title === this.selectedItem.title;
+		});
+	}
 
-    mounted() {
+	mounted() {
 		if (this.autoSelectFirst && !this.selected) {
 			this.select(this.allItems[0]);
 		}
 	}
 
-    //*
-             * Returns an Object with `{ attributeName: attributeValue }` for each item.
-             * This could be used later on the `item` slot.
-             * @return {Object}
+	itemSlotAttrs(item) {
+		return this.itemAttrs.reduce((itemAttrs, attr) => {
+			itemAttrs[attr] = item[attr];
+			return itemAttrs;
+		}, {});
+	}
 
-    itemSlotAttrs(item) {
-        return this.itemAttrs.reduce((itemAttrs, attr) => {
-            itemAttrs[attr] = item[attr];
-            return itemAttrs;
-        }, {});
-    }
+	openModal() {
+		this.isModalOpen = true;
+	}
 
-    openModal() {
-        this.isModalOpen = true;
-    }
+	closeModal() {
+		this.isModalOpen = false;
+	}
 
-    closeModal() {
-        this.isModalOpen = false;
-    }
-
-    select(item) {
-        this.selectedItem = item;
-        this.$emit("input", this.activeItem);
-    }
+	select(item) {
+		this.selectedItem = item;
+		this.$emit("input", this.activeItem);
+	}
 }
 </script>
 

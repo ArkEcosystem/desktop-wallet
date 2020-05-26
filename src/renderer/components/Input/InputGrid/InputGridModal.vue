@@ -1,7 +1,7 @@
 <template>
 	<ModalWindow :title="modalHeaderText" :container-classes="containerClasses" @close="emitClose">
-		<section class="InputGridModal flex flex-col">
-			<div class="InputGridModal__container overflow-y-auto p-1">
+		<section class="flex flex-col InputGridModal">
+			<div class="p-1 overflow-y-auto InputGridModal__container">
 				<div
 					v-for="(categoryItems, category) in items"
 					:key="category"
@@ -34,7 +34,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop,Vue } from "vue-property-decorator";
+import { Component, Prop, Vue } from "vue-property-decorator";
 
 import ModalWindow from "@/components/Modal/ModalWindow";
 
@@ -45,74 +45,73 @@ import InputGridItem from "./InputGridItem";
  * confirmed.
  */
 @Component({
-    name: "InputGridModal",
+	name: "InputGridModal",
 
-    components: {
+	components: {
 		InputGridItem,
 		ModalWindow,
-	}
+	},
 })
 export default class InputGridModal extends Vue {
-    @Prop({
-        type: String,
-        required: false,
-        default: "InputGridModal",
-    })
-    containerClasses;
+	@Prop({
+		type: String,
+		required: false,
+		default: "InputGridModal",
+	})
+	containerClasses;
 
-    @Prop({
-        type: [Array, Object],
-        required: true,
-    })
-    items;
+	@Prop({
+		type: [Array, Object],
+		required: true,
+	})
+	items;
 
-    @Prop({
-        type: String,
-        required: true,
-    })
-    itemKey;
+	@Prop({
+		type: String,
+		required: true,
+	})
+	itemKey;
 
-    @Prop({
-        type: Object,
-        required: false,
-        default: null,
-    })
-    selected;
+	@Prop({
+		type: Object,
+		required: false,
+		default: null,
+	})
+	selected;
 
-    @Prop({
-        type: String,
-        required: false,
-        default() {
-            return this.$t("INPUT_GRID_MODAL.TITLE");
-        },
-    })
-    modalHeaderText;
+	@Prop({
+		type: String,
+		required: false,
+		default() {
+			return this.$t("INPUT_GRID_MODAL.TITLE");
+		},
+	})
+	modalHeaderText;
 
-    // vue-convert: This property will initialized in data() method, with `this` reference.
-    clicked = undefined;
+	clicked = undefined;
 
-    data() {
+	data() {
 		return {
 			clicked: this.selected,
 		};
 	}
 
-    click(item) {
-        this.clicked = item;
-    }
+	click(item) {
+		this.clicked = item;
+	}
 
-    isClicked(item) {
-        return this.clicked.pluginId ? this.clicked.name === item.name : this.clicked.title === item.title;
-    }
+	isClicked(item) {
+		return this.clicked.pluginId ? this.clicked.name === item.name : this.clicked.title === item.title;
+	}
 
-    emitClose() {
-        this.$emit("close");
-    }
+	emitClose() {
+		this.$emit("close");
+	}
 
-    emitSelect() {
-        this.$emit("select", this.clicked);
-        this.emitClose();
-    }
+	emitSelect() {
+		this.$emit("select", this.clicked);
+		this.emitClose();
+	}
 }
 </script>
 

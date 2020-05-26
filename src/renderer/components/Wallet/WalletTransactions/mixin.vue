@@ -26,11 +26,10 @@
 </template>
 
 <script>
-import { Vue, Component, Prop } from "vue-property-decorator";
-import { StoreBinding } from "@/enums";
+import { Component, Prop, Vue } from "vue-property-decorator";
 
 @Component({
-    watch: {
+	watch: {
 		// This watcher would invoke the `fetch` after the `Synchronizer`
 		wallet_fromRoute(newWallet, oldWallet) {
 			const currentTimestamp = Math.round(new Date().getTime() / 1000);
@@ -50,87 +49,93 @@ import { StoreBinding } from "@/enums";
 				this.refreshStatus();
 			}
 		},
-	}
+	},
 })
 export default class AnonymousComponent extends Vue {
-    @Prop({
-        type: Number,
-        required: false,
-        default: null,
-    })
-    transactionType;
+	@Prop({
+		type: Number,
+		required: false,
+		default: null,
+	})
+	transactionType;
 
-    currentPage = 1;
-    isFetching = false;
-    isLoading = false;
-    fetchedTransactions = [];
-    expiryEvents = [];
-    totalCount = 0;
-    newTransactionsNotice = null;
-    lastStatusRefresh = null;
+	currentPage = 1;
+	isFetching = false;
+	isLoading = false;
+	fetchedTransactions = [];
+	expiryEvents = [];
+	totalCount = 0;
+	newTransactionsNotice = null;
+	lastStatusRefresh = null;
 
-    queryParams = {
-        page: 1,
-        limit: 10,
-        sort: {
-            field: "timestamp",
-            type: "desc",
-        },
-    };
+	queryParams = {
+		page: 1,
+		limit: 10,
+		sort: {
+			field: "timestamp",
+			type: "desc",
+		},
+	};
 
-    get isRemote() {
-        if (this.$options.isRemote !== undefined) {
-            return this.$options.isRemote;
-        }
+	get isRemote() {
+		if (this.$options.isRemote !== undefined) {
+			return this.$options.isRemote;
+		}
 
-        return true;
-    }
+		return true;
+	}
 
-    get hasPagination() {
-        if (this.$options.hasPagination !== undefined) {
-            return this.$options.hasPagination;
-        }
+	get hasPagination() {
+		if (this.$options.hasPagination !== undefined) {
+			return this.$options.hasPagination;
+		}
 
-        return this.totalCount > 0;
-    }
+		return this.totalCount > 0;
+	}
 
-    get sortQuery() {
-        return {
-            field: this.queryParams.sort.field,
-            type: this.queryParams.sort.type,
-        };
-    }
+	get sortQuery() {
+		return {
+			field: this.queryParams.sort.field,
+			type: this.queryParams.sort.type,
+		};
+	}
 
-    get TODO_transactionTableRowCount() {}
+	get transactionTableRowCount() {
+		return this.$store.getters["session/transactionTableRowCount"];
+	}
 
-    //*
-             * Fetch the transactions and show the loading animation while the response
-             * is received
-             
-    loadTransactions() {
-        if (!this.wallet_fromRoute || this.isFetching) {
-            return;
-        }
+	set transactionTableRowCount(count) {
+		this.$store.dispatch("session/setTransactionTableRowCount", count);
+		this.$store.dispatch("profile/update", {
+			...this.session_profile,
+			transactionTableRowCount: count,
+		});
+	}
 
-        this.newTransactionsNotice = null;
-        this.isLoading = true;
-        this.fetchTransactions();
-    }
+	loadTransactions() {
+		if (!this.wallet_fromRoute || this.isFetching) {
+			return;
+		}
 
-    onPerPageChange() {
-        // Placeholders if not used
-    }
+		this.newTransactionsNotice = null;
+		this.isLoading = true;
+		this.fetchTransactions();
+	}
 
-    onPageChange() {
-        // Placeholders if not used
-    }
+	onPerPageChange() {
+		// Placeholders if not used
+	}
 
-    __updateParams(newProps) {
-        if (!newProps || typeof newProps !== "object" || newProps === null) {
-            return;
-        }
+	onPageChange() {
+		// Placeholders if not used
+	}
 
-        this.queryParams = Object.assign({}, this.queryParams, newProps);
-    }
+	__updateParams(newProps) {
+		if (!newProps || typeof newProps !== "object" || newProps === null) {
+			return;
+		}
+
+		this.queryParams = Object.assign({}, this.queryParams, newProps);
+	}
 }
 </script>

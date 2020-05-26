@@ -84,8 +84,8 @@
 </template>
 
 <script>
-import { Vue, Component, Prop } from "vue-property-decorator";
 import { TRANSACTION_GROUPS, TRANSACTION_TYPES } from "@config";
+import { Component, Prop,Vue } from "vue-property-decorator";
 
 import { InputFee, InputPassword } from "@/components/Input";
 import { ListDivided, ListDividedItem } from "@/components/ListDivided";

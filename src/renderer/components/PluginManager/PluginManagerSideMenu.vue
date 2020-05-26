@@ -36,8 +36,8 @@
 </template>
 
 <script>
-import { Vue, Component, Prop } from "vue-property-decorator";
 import { PLUGINS } from "@config";
+import { Component, Prop,Vue } from "vue-property-decorator";
 
 import { PluginManagerButtonMenu } from "@/components/PluginManager/PluginManagerButtons";
 

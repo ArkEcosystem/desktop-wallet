@@ -50,9 +50,9 @@
 </template>
 
 <script>
-import { Vue, Component } from "vue-property-decorator";
 import { MARKET } from "@config";
 import { format } from "util";
+import { Component,Vue } from "vue-property-decorator";
 
 import { InputSwitch } from "@/components/Input";
 

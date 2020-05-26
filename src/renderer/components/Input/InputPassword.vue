@@ -15,14 +15,14 @@
 				:name="name"
 				:disabled="isDisabled"
 				:type="passwordIsVisible ? 'text' : 'password'"
-				class="InputPassword__input flex flex-grow bg-transparent text-theme-page-text mr-2"
+				class="flex flex-grow mr-2 bg-transparent InputPassword__input text-theme-page-text"
 				@blur="onBlur"
 				@focus="onFocus"
 			/>
 
 			<button
 				:title="$t(passwordIsVisible ? 'PASSWORD_INPUT.HIDE' : 'PASSWORD_INPUT.SHOW')"
-				class="InputPassword__visibility-button flex flex-shrink-0 items-center text-grey-dark hover:text-blue focus:text-blue mr-2"
+				class="flex items-center flex-shrink-0 mr-2 InputPassword__visibility-button text-grey-dark hover:text-blue focus:text-blue"
 				type="button"
 				@click="toggleVisible"
 			>
@@ -33,192 +33,208 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop,Vue } from "vue-property-decorator";
+import { Component, Prop, Vue } from "vue-property-decorator";
 import { required } from "vuelidate/lib/validators";
 
 import { InputField } from "@/components/Input";
 import SvgIcon from "@/components/SvgIcon";
 
 @Component({
-    name: "InputPassword",
+	name: "InputPassword",
 
-    components: {
+	components: {
 		InputField,
 		SvgIcon,
 	},
 
-    watch: {
+	watch: {
 		value(value) {
 			this.inputValue = value;
 		},
-	}
+	},
 })
 export default class InputPassword extends Vue {
-    @Prop({
-        type: String,
-        required: false,
-        default: null,
-    })
-    helperText;
+	@Prop({
+		type: String,
+		required: false,
+		default: null,
+	})
+	helperText;
 
-    @Prop({
-        type: Boolean,
-        required: false,
-        default: false,
-    })
-    isDisabled;
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	isDisabled;
 
-    @Prop({
-        type: Boolean,
-        required: false,
-        default: false,
-    })
-    isVisible;
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	isVisible;
 
-    @Prop({
-        type: Boolean,
-        required: false,
-        default: true,
-    })
-    isRequired;
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: true,
+	})
+	isRequired;
 
-    @Prop({
-        type: Boolean,
-        required: false,
-        default: false,
-    })
-    isCreate;
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	isCreate;
 
-    @Prop({
-        type: Number,
-        required: false,
-        default: 0,
-    })
-    minLength;
+	@Prop({
+		type: Number,
+		required: false,
+		default: 0,
+	})
+	minLength;
 
-    @Prop({
-        type: String,
-        required: false,
-        default: "password",
-    })
-    name;
+	@Prop({
+		type: String,
+		required: false,
+		default: "password",
+	})
+	name;
 
-    @Prop({
-        type: String,
-        required: false,
-        default: () => "",
-    })
-    value;
+	@Prop({
+		type: String,
+		required: false,
+		default: () => "",
+	})
+	value;
 
-    @Prop({
-        type: String,
-        required: false,
-        default() {
-            return this.$t("PASSWORD_INPUT.LABEL");
-        },
-    })
-    label;
+	@Prop({
+		type: String,
+		required: false,
+		default() {
+			return this.$t("PASSWORD_INPUT.LABEL");
+		},
+	})
+	label;
 
-    @Prop({
-        type: Boolean,
-        required: false,
-        default: true,
-    })
-    giveFeedback;
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: true,
+	})
+	giveFeedback;
 
-    @Prop({
-        type: String,
-        required: false,
-        default: null,
-    })
-    confirm;
+	@Prop({
+		type: String,
+		required: false,
+		default: null,
+	})
+	confirm;
 
-    inputValue = vm.value;
-    isFocused = false;
-    passwordIsVisible = vm.isVisible;
+	inputValue = null;
+	isFocused = false;
+	passwordIsVisible = null;
 
-    get error() {
-        let error = null;
+	data(vm) {
+		return {
+			inputValue: vm.value,
+			passwordIsVisible: vm.isVisible,
+		};
+	}
 
-        if (this.$v.model.$dirty) {
-            if (!this.$v.model.required) {
-                error = this.$t("VALIDATION.REQUIRED", [this.label]);
-            } else if (!this.$v.model.isValid) {
-                error = this.passwordFeedback();
-            } else if (!this.$v.model.isConfirmed) {
-                error = this.$t("VALIDATION.PASSWORD.NO_MATCH");
-            }
-        }
+	get error() {
+		let error = null;
 
-        return error;
-    }
+		if (this.$v.model.$dirty) {
+			if (!this.$v.model.required) {
+				error = this.$t("VALIDATION.REQUIRED", [this.label]);
+			} else if (!this.$v.model.isValid) {
+				error = this.passwordFeedback();
+			} else if (!this.$v.model.isConfirmed) {
+				error = this.$t("VALIDATION.PASSWORD.NO_MATCH");
+			}
+		}
 
-    get isInvalid() {
-        return this.$v.model.$dirty && !!this.error;
-    }
+		return error;
+	}
 
-    get TODO_model() {}
+	get isInvalid() {
+		return this.$v.model.$dirty && !!this.error;
+	}
 
-    blur() {
-        this.$refs.input.blur();
-    }
+	get model() {
+		return this.inputValue;
+	}
 
-    focus() {
-        await this.$nextTick();
-        this.$refs.input.focus();
-    }
+	set model(value) {
+		this.inputValue = value;
+		// Inform Vuelidate that the value changed
+		this.$v.model.$touch();
+		this.$emit("input", value);
+	}
 
-    onBlur() {
-        this.isFocused = false;
-    }
+	blur() {
+		this.$refs.input.blur();
+	}
 
-    onFocus() {
-        this.isFocused = true;
-        this.$emit("focus");
-    }
+	focus() {
+		await this.$nextTick();
+		this.$refs.input.focus();
+	}
 
-    reset() {
-        this.$v.$reset();
-    }
+	onBlur() {
+		this.isFocused = false;
+	}
 
-    touch() {
-        this.$v.model.$touch();
-    }
+	onFocus() {
+		this.isFocused = true;
+		this.$emit("focus");
+	}
 
-    toggleVisible() {
-        this.passwordIsVisible = !this.passwordIsVisible;
-        await this.focus();
-    }
+	reset() {
+		this.$v.$reset();
+	}
 
-    passwordFeedback() {
-        if (!this.giveFeedback || (!this.isRequired && !this.model.length)) {
-            return "";
-        }
+	touch() {
+		this.$v.model.$touch();
+	}
 
-        if (this.minLength && this.model.length < this.minLength) {
-            return this.$t("VALIDATION.PASSWORD.TOO_SHORT", [this.minLength]);
-        }
+	toggleVisible() {
+		this.passwordIsVisible = !this.passwordIsVisible;
+		await this.focus();
+	}
 
-        if (!this.model.match(/[a-z]/)) {
-            return this.$t("VALIDATION.PASSWORD.LOWER_CASE");
-        }
+	passwordFeedback() {
+		if (!this.giveFeedback || (!this.isRequired && !this.model.length)) {
+			return "";
+		}
 
-        if (!this.model.match(/[A-Z]/)) {
-            return this.$t("VALIDATION.PASSWORD.UPPER_CASE");
-        }
+		if (this.minLength && this.model.length < this.minLength) {
+			return this.$t("VALIDATION.PASSWORD.TOO_SHORT", [this.minLength]);
+		}
 
-        if (!this.model.match(/[0-9]/)) {
-            return this.$t("VALIDATION.PASSWORD.NUMBERS");
-        }
+		if (!this.model.match(/[a-z]/)) {
+			return this.$t("VALIDATION.PASSWORD.LOWER_CASE");
+		}
 
-        if (!this.model.match(/\W|_/)) {
-            return this.$t("VALIDATION.PASSWORD.SPECIAL_CHARACTERS");
-        }
+		if (!this.model.match(/[A-Z]/)) {
+			return this.$t("VALIDATION.PASSWORD.UPPER_CASE");
+		}
 
-        return "";
-    }
+		if (!this.model.match(/[0-9]/)) {
+			return this.$t("VALIDATION.PASSWORD.NUMBERS");
+		}
 
-    validations = {
+		if (!this.model.match(/\W|_/)) {
+			return this.$t("VALIDATION.PASSWORD.SPECIAL_CHARACTERS");
+		}
+
+		return "";
+	}
+
+	validations = {
 		model: {
 			isConfirmed(value) {
 				return !this.confirm || value === this.confirm;

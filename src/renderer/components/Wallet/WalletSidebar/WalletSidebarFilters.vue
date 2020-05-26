@@ -2,9 +2,9 @@
 	<div
 		v-click-outside.capture="emitClose"
 		:class="isSidebarExpanded ? 'WalletSidebarFilters--expanded' : 'WalletSidebarFilters--collapsed'"
-		class="WalletSidebarFilters absolute z-20 rounded-lg"
+		class="absolute z-20 rounded-lg WalletSidebarFilters"
 	>
-		<div class="bg-theme-settings p-10 rounded-lg shadow font-bold">
+		<div class="p-10 font-bold rounded-lg shadow bg-theme-settings">
 			<WalletSidebarFiltersSearchInput
 				v-model="filters.searchQuery"
 				:placeholder="
@@ -16,8 +16,8 @@
 			/>
 		</div>
 
-		<MenuOptions class="WalletSidebarFilters__sorting mt-2 rounded-lg shadow font-bold">
-			<div class="mx-10 py-5 mb-2 text-theme-settings-heading select-none">
+		<MenuOptions class="mt-2 font-bold rounded-lg shadow WalletSidebarFilters__sorting">
+			<div class="py-5 mx-10 mb-2 select-none text-theme-settings-heading">
 				{{ $t("WALLET_SIDEBAR.SORT.BY") }}
 			</div>
 			<MenuOptionsItem
@@ -29,7 +29,7 @@
 			/>
 		</MenuOptions>
 
-		<MenuOptions class="WalletSidebarFilters__settings mt-2 rounded-lg shadow font-medium">
+		<MenuOptions class="mt-2 font-medium rounded-lg shadow WalletSidebarFilters__settings">
 			<MenuOptionsItem
 				:title="
 					hasContacts
@@ -66,8 +66,8 @@
 </template>
 
 <script>
-import { Vue, Component, Prop } from "vue-property-decorator";
 import Vue from "vue";
+import { Component, Prop } from "vue-property-decorator";
 
 import { ButtonSwitch } from "@/components/Button";
 import { MenuOptions, MenuOptionsItem } from "@/components/Menu";
@@ -75,16 +75,16 @@ import { MenuOptions, MenuOptionsItem } from "@/components/Menu";
 import WalletSidebarFiltersSearchInput from "./WalletSidebarFiltersSearchInput";
 
 @Component({
-    name: "WalletSidebarFilters",
+	name: "WalletSidebarFilters",
 
-    components: {
+	components: {
 		ButtonSwitch,
 		MenuOptions,
 		MenuOptionsItem,
 		WalletSidebarFiltersSearchInput,
 	},
 
-    watch: {
+	watch: {
 		filters(filters) {
 			this.currentFilters = filters;
 		},
@@ -92,70 +92,67 @@ import WalletSidebarFiltersSearchInput from "./WalletSidebarFiltersSearchInput";
 		searchQuery(query) {
 			this.currentSearchQuery = query;
 		},
-	}
+	},
 })
 export default class WalletSidebarFilters extends Vue {
-    sortOptions = ["name-asc", "name-desc", "balance-asc", "balance-desc"];
+	sortOptions = ["name-asc", "name-desc", "balance-asc", "balance-desc"];
 
-    @Prop({
-        type: Boolean,
-        required: false,
-        default: false,
-    })
-    hasContacts;
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	hasContacts;
 
-    // Show the Ledger options or not
-    @Prop({
-        type: Boolean,
-        required: false,
-        default: false,
-    })
-    hasLedger;
+	// Show the Ledger options or not
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	hasLedger;
 
-    @Prop({
-        type: Boolean,
-        required: false,
-        default: false,
-    })
-    isSidebarExpanded;
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	isSidebarExpanded;
 
-    @Prop({
-        type: Boolean,
-        required: false,
-        default: false,
-    })
-    outsideClick;
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	outsideClick;
 
-    @Prop({
-        type: Object,
-        required: true,
-    })
-    filters;
+	@Prop({
+		type: Object,
+		required: true,
+	})
+	filters;
 
-    @Prop({
-        type: String,
-        required: false,
-        default: "",
-    })
-    searchQuery;
+	@Prop({
+		type: String,
+		required: false,
+		default: "",
+	})
+	searchQuery;
 
-    @Prop({
-        type: Object,
-        required: false,
-        default: () => ({ field: "name", type: "asc" }),
-    })
-    sortOrder;
+	@Prop({
+		type: Object,
+		required: false,
+		default: () => ({ field: "name", type: "asc" }),
+	})
+	sortOrder;
 
-    // vue-convert: This property will initialized in data() method, with `this` reference.
-    currentSearchQuery = undefined;
+	currentSearchQuery = undefined;
 
-    // vue-convert: This property will initialized in data() method, with `this` reference.
-    currentFilters = undefined;
+	currentFilters = undefined;
 
-    // vue-convert: This property will initialized in data() method, with `this` reference.
-    currentSortOrder = undefined;
+	currentSortOrder = undefined;
 
-    data() {
+	data() {
 		return {
 			currentSearchQuery: this.searchQuery,
 			currentFilters: this.filters,
@@ -163,53 +160,53 @@ export default class WalletSidebarFilters extends Vue {
 		};
 	}
 
-    get stringifiedSortOrder() {
-        return Object.values(this.currentSortOrder).join("-");
-    }
+	get stringifiedSortOrder() {
+		return Object.values(this.currentSortOrder).join("-");
+	}
 
-    setSearchQuery(query) {
-        this.currentSearchQuery = query;
-        this.emitSearch();
-    }
+	setSearchQuery(query) {
+		this.currentSearchQuery = query;
+		this.emitSearch();
+	}
 
-    setHideEmpty(isHidden) {
-        this.setFilter("hideEmpty", isHidden);
-    }
+	setHideEmpty(isHidden) {
+		this.setFilter("hideEmpty", isHidden);
+	}
 
-    setHideLedger(isHidden) {
-        this.setFilter("hideLedger", isHidden);
-    }
+	setHideLedger(isHidden) {
+		this.setFilter("hideLedger", isHidden);
+	}
 
-    setFilter(filter, value) {
-        Vue.set(this.currentFilters, filter, value);
-        this.emitFilter();
-    }
+	setFilter(filter, value) {
+		Vue.set(this.currentFilters, filter, value);
+		this.emitFilter();
+	}
 
-    setSort(value) {
-        const [field, type] = value.split("-");
-        this.currentSortOrder = { field, type };
-        this.emitSort();
-    }
+	setSort(value) {
+		const [field, type] = value.split("-");
+		this.currentSortOrder = { field, type };
+		this.emitSort();
+	}
 
-    toggleSelect(name) {
-        this.$refs[name].toggle();
-    }
+	toggleSelect(name) {
+		this.$refs[name].toggle();
+	}
 
-    emitFilter() {
-        this.$emit("filter", this.currentFilters);
-    }
+	emitFilter() {
+		this.$emit("filter", this.currentFilters);
+	}
 
-    emitSearch() {
-        this.$emit("search", this.currentSearchQuery);
-    }
+	emitSearch() {
+		this.$emit("search", this.currentSearchQuery);
+	}
 
-    emitSort() {
-        this.$emit("sort", this.currentSortOrder);
-    }
+	emitSort() {
+		this.$emit("sort", this.currentSortOrder);
+	}
 
-    emitClose(context) {
-        this.$emit("close", context);
-    }
+	emitClose(context) {
+		this.$emit("close", context);
+	}
 }
 </script>
 

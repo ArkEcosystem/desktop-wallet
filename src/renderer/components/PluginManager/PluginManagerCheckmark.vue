@@ -11,8 +11,8 @@
 </template>
 
 <script>
-import { Vue, Component } from "vue-property-decorator";
 import { PLUGINS } from "@config";
+import { Component,Vue } from "vue-property-decorator";
 
 import SvgIcon from "@/components/SvgIcon";
 

@@ -31,8 +31,8 @@
 </template>
 
 <script>
-import { Vue, Component } from "vue-property-decorator";
 import { TRANSACTION_GROUPS, TRANSACTION_TYPES } from "@config";
+import { Component,Vue } from "vue-property-decorator";
 
 import { ButtonModal } from "@/components/Button";
 import { TransactionModal } from "@/components/Transaction";

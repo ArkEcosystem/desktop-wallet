@@ -184,8 +184,8 @@
 </template>
 
 <script>
-import { Vue, Component } from "vue-property-decorator";
 import { BIP39, I18N, MARKET, NETWORKS } from "@config";
+import { Component,Vue } from "vue-property-decorator";
 
 import { ButtonSwitch } from "@/components/Button";
 import { InputSelect, InputText } from "@/components/Input";
@@ -213,13 +213,63 @@ export default class ProfileNew extends Vue {
     schema = Profile.schema;
     step = 1;
     selectedNetwork = null;
-    get TODO_background() {}
-    get TODO_bip39Language() {}
-    get TODO_currency() {}
-    get TODO_isMarketChartEnabled() {}
-    get TODO_theme() {}
-    get TODO_timeFormat() {}
-    get TODO_priceApi() {}
+
+      get background () {
+        return this.$store.getters['session/background']
+	  }
+
+      set background (background) {
+        this.selectBackground(background)
+      }
+
+get bip39Language () {
+        return this.$store.getters['session/bip39Language'] || BIP39.defaultLanguage
+	  }
+
+      set bip39Language (bip39language) {
+        this.selectBip39Language(bip39language)
+      }
+
+get currency () {
+        return this.$store.getters['session/currency']
+	  }
+
+      set currency (currency) {
+        this.selectCurrency(currency)
+      }
+
+get isMarketChartEnabled () {
+        return this.$store.getters['session/isMarketChartEnabled']
+	  }
+
+      set isMarketChartEnabled (isMarketChartEnabled) {
+        this.selectIsMarketChartEnabled(isMarketChartEnabled)
+      }
+
+get theme () {
+        return this.$store.getters['session/theme']
+	  }
+
+      set theme (theme) {
+        this.selectTheme(theme)
+      }
+
+get timeFormat () {
+        return this.$store.getters['session/timeFormat'] || 'Default'
+	  }
+
+      set timeFormat (timeFormat) {
+        this.selectTimeFormat(timeFormat)
+      }
+
+get priceApi () {
+        return this.$store.getters['session/priceApi'] || 'coingecko'
+	  }
+
+      set priceApi (priceApi) {
+        this.selectPriceApi(priceApi)
+      }
+
 
     get currencies() {
         return Object.keys(MARKET.currencies);
@@ -256,7 +306,9 @@ export default class ProfileNew extends Vue {
         return this.$store.getters["network/customNetworks"];
     }
 
-    get TODO_availableCustomNetworks() {}
+      get availableCustomNetworks () {
+        return Object.values(this.customNetworks)
+      }
 
     get nameError() {
         if (this.$v.schema.name.$dirty && this.$v.schema.name.$invalid) {
@@ -272,9 +324,6 @@ export default class ProfileNew extends Vue {
         return null;
     }
 
-    //*
-         * Reuse the settings of the current profile every time the page is created
-         
     created() {
 		this.selectNetwork(this.defaultNetworks.find((network) => network.id === "ark.mainnet"));
 		this.schema.background = this.background;

@@ -1,15 +1,15 @@
 <template>
-	<div class="ProfileAll relative bg-theme-feature rounded-lg m-r-4 p-10">
+	<div class="relative p-10 rounded-lg ProfileAll bg-theme-feature m-r-4">
 		<h3>{{ $t("PAGES.PROFILE_ALL.HEADER") }} ({{ totalBalances.join(", ") }})</h3>
 
-		<div class="ProfileAll__grid mt-10">
-			<RouterLink :to="{ name: 'profile-new' }" class="ProfileAll__grid__profile flex flex-row w-full">
+		<div class="mt-10 ProfileAll__grid">
+			<RouterLink :to="{ name: 'profile-new' }" class="flex flex-row w-full ProfileAll__grid__profile">
 				<div
 					:style="`backgroundImage: url('${assets_loadImage(addProfileImagePath)}')`"
 					:title="$t('PAGES.PROFILE_ALL.ADD_PROFILE')"
-					class="ProfileAvatar__image profile-avatar-xl background-image flex"
+					class="flex ProfileAvatar__image profile-avatar-xl background-image"
 				/>
-				<div class="ProfileAll__grid__profile__name font-semibold flex items-center">
+				<div class="flex items-center font-semibold ProfileAll__grid__profile__name">
 					{{ $t("PAGES.PROFILE_ALL.ADD_PROFILE") }}
 				</div>
 			</RouterLink>
@@ -20,13 +20,13 @@
 				:class="{
 					'ProfileAll__grid__profile--selected': profile.id === session_profile.id,
 				}"
-				class="ProfileAll__grid__profile flex flex-row w-full"
+				class="flex flex-row w-full ProfileAll__grid__profile"
 			>
 				<ProfileAvatar :profile="profile" letter-size="2xl" @click="selectProfile(profile.id)" />
 
 				<div class="flex flex-col justify-between">
 					<div class="pl-1">
-						<div class="ProfileAll__grid__profile__name font-semibold flex text-lg">
+						<div class="flex text-lg font-semibold ProfileAll__grid__profile__name">
 							{{ profile.name | truncate(12) }}
 						</div>
 
@@ -36,14 +36,14 @@
 
 						<RouterLink
 							:to="{ name: 'profile-edition', params: { profileId: profile.id } }"
-							class="ProfileAll__grid__profile__edition-link font-semibold flex text-xs mt-2 mb-1"
+							class="flex mt-2 mb-1 text-xs font-semibold ProfileAll__grid__profile__edition-link"
 						>
 							{{ $t("PAGES.PROFILE_ALL.EDIT_PROFILE") }}
 						</RouterLink>
 
 						<button
 							v-if="profiles.length > 1"
-							class="ProfileAll__grid__profile__delete font-semibold flex text-xs cursor-pointer text-theme-page-text-light hover:underline hover:text-red"
+							class="flex text-xs font-semibold cursor-pointer ProfileAll__grid__profile__delete text-theme-page-text-light hover:underline hover:text-red"
 							@click="openRemovalConfirmation(profile)"
 						>
 							{{ $t("PAGES.PROFILE_ALL.REMOVE_PROFILE") }}
@@ -52,7 +52,7 @@
 
 					<a
 						v-show="profile.id !== session_profile.id"
-						class="ProfileAll__grid__profile__select font-semibold flex text-xs cursor-pointer pl-1 hover:underline mt-4"
+						class="flex pl-1 mt-4 text-xs font-semibold cursor-pointer ProfileAll__grid__profile__select hover:underline"
 						@click="selectProfile(profile.id)"
 					>
 						{{ $t("PAGES.PROFILE_ALL.SELECT_PROFILE") }}
@@ -71,8 +71,8 @@
 </template>
 
 <script>
-import { Vue, Component } from "vue-property-decorator";
 import { mapValues, sortBy, uniqBy } from "lodash";
+import { Component,Vue } from "vue-property-decorator";
 
 import { ProfileAvatar, ProfileRemovalConfirmation } from "@/components/Profile";
 import { StoreBinding } from "@/enums";
@@ -96,11 +96,6 @@ export default class ProfileAll extends Vue {
         return "pages/new-profile-avatar.svg";
     }
 
-    //*
-             * Returns the sum of balances of all profile of each network and the Ledger
-             * wallets
-             * @return {Object}
-             
     get aggregatedBalances() {
         const walletsByNetwork = this.profiles.reduce((all, profile) => {
             const wallets = this.$store.getters["wallet/byProfileId"](profile.id);
@@ -126,11 +121,6 @@ export default class ProfileAll extends Vue {
         });
     }
 
-    //*
-             * Returns the balances of each network, as a String
-             * TODO: when new design is applied, sort by amount in session currency/fiat
-             * @return {String}
-             
     get totalBalances() {
         const balances = [];
         for (const networkId in this.aggregatedBalances) {

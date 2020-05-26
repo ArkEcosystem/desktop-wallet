@@ -72,8 +72,8 @@
 </template>
 
 <script>
-import { Vue, Component } from "vue-property-decorator";
 import { clone } from "lodash";
+import { Component,Vue } from "vue-property-decorator";
 
 import { ButtonClipboard, ButtonModal } from "@/components/Button";
 import SvgIcon from "@/components/SvgIcon";

@@ -123,8 +123,8 @@
 </template>
 
 <script>
-import { Vue, Component } from "vue-property-decorator";
 import { isEqual, uniqBy } from "lodash";
+import { Component,Vue } from "vue-property-decorator";
 
 import { ButtonLayout } from "@/components/Button";
 import { ProfileAvatar } from "@/components/Profile";
@@ -218,8 +218,29 @@ export default class WalletAll extends Vue {
         return this.$store.getters["session/hasWalletGridLayout"];
     }
 
-    get TODO_walletLayout() {}
-    get TODO_sortParams() {}
+	get walletLayout() {
+		return this.$store.getters["session/walletLayout"];
+	}
+
+	set walletLayout(layout) {
+		this.$store.dispatch(StoreBinding.SessionSetWalletLayout, layout);
+		this.$store.dispatch(StoreBinding.ProfileUpdate, {
+			...this.session_profile,
+			walletLayout: layout,
+		});
+	}
+
+	get sortParams() {
+		return this.$store.getters["session/walletSortParams"];
+	}
+
+	set sortParams(sortParams) {
+		this.$store.dispatch(StoreBinding.SessionSetWalletSortParams, sortParams);
+		this.$store.dispatch(StoreBinding.ProfileUpdate, {
+			...this.session_profile,
+			walletSortParams: sortParams,
+		});
+	}
 
     get showVotedDelegates() {
         return this.selectableWallets.some((wallet) => Object.prototype.hasOwnProperty.call(wallet, "vote"));
@@ -242,10 +263,6 @@ export default class WalletAll extends Vue {
 		this.$eventBus.off(AppEvent.LedgerDisconnected, this.ledgerDisconnected);
 	}
 
-    //*
-         * On `create` the event listeners are bound, but, every time this page is accessed
-         * should include the Ledger wallets, if they are available, to the list of wallets
-         
     activated() {
 		this.loadWallets();
 	}

@@ -13,68 +13,83 @@
 
 <script lang="ts">
 import { Identities } from "@arkecosystem/crypto";
-import { Component, Prop,Vue } from "vue-property-decorator";
+import { Component, Prop, Vue } from "vue-property-decorator";
 
 import InputText from "./InputText";
 
 @Component({
-    name: "InputPublicKey",
+	name: "InputPublicKey",
 
-    components: {
+	components: {
 		InputText,
 	},
 
-    model: {
+	model: {
 		prop: "value",
 		event: "input",
 	},
 
-    watch: {
+	watch: {
 		value(value) {
 			this.inputValue = value;
 		},
-	}
+	},
 })
 export default class InputPublicKey extends Vue {
-    @Prop({
-        type: Boolean,
-        required: false,
-        default: true,
-    })
-    isRequired;
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: true,
+	})
+	isRequired;
 
-    @Prop({
-        type: String,
-        required: false,
-        default: "",
-    })
-    value;
+	@Prop({
+		type: String,
+		required: false,
+		default: "",
+	})
+	value;
 
-    inputValue = vm.value;
-    get TODO_model() {}
+	inputValue = null;
 
-    get publicKeyLabel() {
-        return this.$t("INPUT_PUBLIC_KEY.TITLE");
-    }
+	data(vm) {
+		return {
+			inputValue: vm.value,
+		};
+	}
 
-    get error() {
-        if (this.$v.model.$dirty && this.$v.model.$invalid) {
-            if (!this.$v.model.isValid) {
-                return this.$t("INPUT_PUBLIC_KEY.ERROR.NOT_VALID");
-            }
-        }
+	get model() {
+		return this.inputValue;
+	}
 
-        return null;
-    }
+	set model(value) {
+		this.inputValue = value;
+		this.$v.model.$touch();
+		this.$emit("input", value);
+	}
 
-    reset() {
-        this.model = "";
-        this.$nextTick(() => {
-            this.$v.$reset();
-        });
-    }
+	get publicKeyLabel() {
+		return this.$t("INPUT_PUBLIC_KEY.TITLE");
+	}
 
-    validations = {
+	get error() {
+		if (this.$v.model.$dirty && this.$v.model.$invalid) {
+			if (!this.$v.model.isValid) {
+				return this.$t("INPUT_PUBLIC_KEY.ERROR.NOT_VALID");
+			}
+		}
+
+		return null;
+	}
+
+	reset() {
+		this.model = "";
+		this.$nextTick(() => {
+			this.$v.$reset();
+		});
+	}
+
+	validations = {
 		model: {
 			isValid(value) {
 				if (!this.isRequired && value.replace(/\s+/, "") === "") {

@@ -42,9 +42,9 @@
 </template>
 
 <script>
-import { Vue, Component, Prop } from "vue-property-decorator";
 /* eslint-disable vue/no-unused-components */
 import { TRANSACTION_GROUPS } from "@config";
+import { Component, Prop,Vue } from "vue-property-decorator";
 
 import SvgIcon from "@/components/SvgIcon";
 import TransactionService from "@/services/transaction";

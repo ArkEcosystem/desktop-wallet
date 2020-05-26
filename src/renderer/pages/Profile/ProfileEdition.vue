@@ -321,9 +321,9 @@
 </template>
 
 <script>
-import { Vue, Component } from "vue-property-decorator";
 import { BIP39, I18N, MARKET, PLUGINS } from "@config";
 import { clone } from "lodash";
+import { Component,Vue } from "vue-property-decorator";
 
 import { ButtonSwitch } from "@/components/Button";
 import { InputText } from "@/components/Input";

@@ -51,8 +51,8 @@
 </template>
 
 <script>
-import { Vue, Component, Prop } from "vue-property-decorator";
 import { pullAllBy } from "lodash";
+import { Component, Prop,Vue } from "vue-property-decorator";
 
 import { NetworkModal, NetworkSelectionModal } from "@/components/Network";
 

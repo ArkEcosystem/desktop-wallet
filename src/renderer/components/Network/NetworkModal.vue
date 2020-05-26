@@ -193,9 +193,9 @@
 </template>
 
 <script>
-import { Vue, Component, Prop } from "vue-property-decorator";
 import { NETWORKS } from "@config";
 import { URL } from "url";
+import { Component, Prop,Vue } from "vue-property-decorator";
 import { numeric, required, requiredIf, url } from "vuelidate/lib/validators";
 
 import { InputText, InputToggle } from "@/components/Input";

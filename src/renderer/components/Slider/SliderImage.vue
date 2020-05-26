@@ -37,11 +37,11 @@
 							<div
 								v-for="(image, imageId) in getPageImages(index)"
 								:key="imageId"
-								class="flex w-1/3 justify-center overflow-hidden mx-1 rounded-xl border-2 border-theme-line-separator hover:border-grey"
+								class="flex justify-center w-1/3 mx-1 overflow-hidden border-2 rounded-xl border-theme-line-separator hover:border-grey"
 							>
 								<img
 									:src="`data:image/png;base64,${image}`"
-									class="m-auto h-full"
+									class="h-full m-auto"
 									@click="openImage(imageId)"
 								/>
 							</div>
@@ -72,152 +72,159 @@
 </template>
 
 <script>
-import { Vue, Component, Prop } from "vue-property-decorator";
+import { Component, Prop, Vue } from "vue-property-decorator";
+
 import Navigation from "./Navigation.vue";
 import Pagination from "./Pagination.vue";
 
 @Component({
-    name: "SliderImage",
+	name: "SliderImage",
 
-    components: {
+	components: {
 		Navigation,
 		Pagination,
-	}
+	},
 })
 export default class SliderImage extends Vue {
-    @Prop({
-        type: Boolean,
-        required: false,
-        default: false,
-    })
-    isRow;
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	isRow;
 
-    @Prop({
-        type: Array,
-        required: true,
-        default: null,
-    })
-    images;
+	@Prop({
+		type: Array,
+		required: true,
+		default: null,
+	})
+	images;
 
-    @Prop({
-        type: Number,
-        required: false,
-        default: 0,
-    })
-    imageIndex;
+	@Prop({
+		type: Number,
+		required: false,
+		default: 0,
+	})
+	imageIndex;
 
-    @Prop({
-        type: Number,
-        required: false,
-        default: 3,
-    })
-    perPage;
+	@Prop({
+		type: Number,
+		required: false,
+		default: 3,
+	})
+	perPage;
 
-    @Prop({
-        type: Boolean,
-        required: false,
-        default: true,
-    })
-    showNavigation;
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: true,
+	})
+	showNavigation;
 
-    @Prop({
-        type: Boolean,
-        required: false,
-        default: true,
-    })
-    showPagination;
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: true,
+	})
+	showPagination;
 
-    currentIndex = vm.imageIndex;
-    isTransitioning = false;
-    sliderClass = "slides-right";
-    selectedImage = null;
+	currentIndex = null;
+	isTransitioning = false;
+	sliderClass = "slides-right";
+	selectedImage = null;
 
-    get hasImages() {
-        return this.images && this.images.length > 0;
-    }
+	data(vm) {
+		return {
+			currentIndex: vm.imageIndex,
+		};
+	}
 
-    get pageCount() {
-        return this.isRow ? Math.ceil(this.images.length / this.perPage) : this.images.length;
-    }
+	get hasImages() {
+		return this.images && this.images.length > 0;
+	}
 
-    mounted() {
+	get pageCount() {
+		return this.isRow ? Math.ceil(this.images.length / this.perPage) : this.images.length;
+	}
+
+	mounted() {
 		if (!this.isRow) {
 			document.addEventListener("keyup", this.onArrowKeys, false);
 		}
 	}
 
-    destroyed() {
+	destroyed() {
 		if (!this.isRow) {
 			document.removeEventListener("keyup", this.onArrowKeys);
 		}
 	}
 
-    getPageImages(pageIndex) {
-        return this.images.slice(pageIndex * this.perPage, pageIndex * this.perPage + this.perPage);
-    }
+	getPageImages(pageIndex) {
+		return this.images.slice(pageIndex * this.perPage, pageIndex * this.perPage + this.perPage);
+	}
 
-    transitionEnd() {
-        this.isTransitioning = false;
-    }
+	transitionEnd() {
+		this.isTransitioning = false;
+	}
 
-    handleNavigation(direction) {
-        if (this.isTransitioning) {
-            return;
-        }
+	handleNavigation(direction) {
+		if (this.isTransitioning) {
+			return;
+		}
 
-        const imageCount = this.isRow ? this.pageCount - 1 : this.images.length - 1;
+		const imageCount = this.isRow ? this.pageCount - 1 : this.images.length - 1;
 
-        this.isTransitioning = true;
+		this.isTransitioning = true;
 
-        if (direction === "backward") {
-            if (this.currentIndex === 0) {
-                this.sliderClass = "slides-right";
-                this.currentIndex = imageCount;
-            } else {
-                this.sliderClass = "slides-left";
-                this.currentIndex--;
-            }
-        } else if (direction === "forward") {
-            if (this.currentIndex >= imageCount) {
-                this.sliderClass = "slides-left";
-                this.currentIndex = 0;
-            } else {
-                this.sliderClass = "slides-right";
-                this.currentIndex++;
-            }
-        }
-    }
+		if (direction === "backward") {
+			if (this.currentIndex === 0) {
+				this.sliderClass = "slides-right";
+				this.currentIndex = imageCount;
+			} else {
+				this.sliderClass = "slides-left";
+				this.currentIndex--;
+			}
+		} else if (direction === "forward") {
+			if (this.currentIndex >= imageCount) {
+				this.sliderClass = "slides-left";
+				this.currentIndex = 0;
+			} else {
+				this.sliderClass = "slides-right";
+				this.currentIndex++;
+			}
+		}
+	}
 
-    goToPage(page) {
-        if (page < this.currentIndex + 1) {
-            this.sliderClass = "slides-left";
-        } else if (page > this.currentIndex + 1) {
-            this.sliderClass = "slides-right";
-        } else {
-            return;
-        }
+	goToPage(page) {
+		if (page < this.currentIndex + 1) {
+			this.sliderClass = "slides-left";
+		} else if (page > this.currentIndex + 1) {
+			this.sliderClass = "slides-right";
+		} else {
+			return;
+		}
 
-        this.isTransitioning = true;
-        this.currentIndex = page - 1;
-    }
+		this.isTransitioning = true;
+		this.currentIndex = page - 1;
+	}
 
-    onArrowKeys(event) {
-        if (event.key === "ArrowLeft") {
-            this.transitionEnd();
-            this.handleNavigation("backward");
-        } else if (event.key === "ArrowRight") {
-            this.transitionEnd();
-            this.handleNavigation("forward");
-        }
-    }
+	onArrowKeys(event) {
+		if (event.key === "ArrowLeft") {
+			this.transitionEnd();
+			this.handleNavigation("backward");
+		} else if (event.key === "ArrowRight") {
+			this.transitionEnd();
+			this.handleNavigation("forward");
+		}
+	}
 
-    openImage(imageId) {
-        this.selectedImage = this.currentIndex * this.perPage + imageId;
-    }
+	openImage(imageId) {
+		this.selectedImage = this.currentIndex * this.perPage + imageId;
+	}
 
-    closeImage() {
-        this.selectedImage = null;
-    }
+	closeImage() {
+		this.selectedImage = null;
+	}
 }
 </script>
 

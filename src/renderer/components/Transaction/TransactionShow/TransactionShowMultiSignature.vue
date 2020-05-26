@@ -173,8 +173,8 @@
 </template>
 
 <script>
-import { Vue, Component, Prop } from "vue-property-decorator";
 import { TRANSACTION_TYPES } from "@config";
+import { Component, Prop,Vue } from "vue-property-decorator";
 
 import { ButtonClipboard, ButtonModal } from "@/components/Button";
 import { ListDivided, ListDividedItem } from "@/components/ListDivided";

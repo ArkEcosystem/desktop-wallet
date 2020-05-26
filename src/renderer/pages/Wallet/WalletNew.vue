@@ -1,39 +1,39 @@
 <template>
-	<div class="WalletNew relative">
+	<div class="relative WalletNew">
 		<main class="flex h-full">
 			<div
-				class="WalletNew__instructions theme-dark bg-theme-feature text-theme-page-instructions-text hidden lg:flex flex-1 mr-4 rounded-lg overflow-y-auto"
+				class="flex-1 hidden mr-4 overflow-y-auto rounded-lg WalletNew__instructions theme-dark bg-theme-feature text-theme-page-instructions-text lg:flex"
 			>
-				<div class="m-auto w-3/5 text-center flex flex-col items-center justify-center">
+				<div class="flex flex-col items-center justify-center w-3/5 m-auto text-center">
 					<h1 class="text-inherit">
 						{{ $t(`PAGES.WALLET_NEW.STEP${step}.INSTRUCTIONS.HEADER`) }}
 					</h1>
-					<p v-if="step === 1" class="text-center py-2 leading-normal">
+					<p v-if="step === 1" class="py-2 leading-normal text-center">
 						{{ $t("PAGES.WALLET_NEW.STEP1.INSTRUCTIONS.TEXT_BEFORE_BUTTON") }}
 
 						<ButtonReload
 							:is-refreshing="isRefreshing"
 							:without-background="true"
-							class="WalletNew__refresh-button inline"
+							class="inline WalletNew__refresh-button"
 							text-class="text-theme-page-instructions-text"
 							@click="refreshAddresses"
 						/>
 
 						{{ $t("PAGES.WALLET_NEW.STEP1.INSTRUCTIONS.TEXT_AFTER_BUTTON") }}
 					</p>
-					<p v-else class="text-center py-2 leading-normal">
+					<p v-else class="py-2 leading-normal text-center">
 						{{ $t(`PAGES.WALLET_NEW.STEP${step}.INSTRUCTIONS.TEXT`, { words: wordPositionLabel }) }}
 					</p>
 
 					<img
 						:src="assets_loadImage(backgroundImages[step])"
 						:title="$t(`PAGES.WALLET_NEW.STEP${step}.INSTRUCTIONS.HEADER`)"
-						class="w-full xl:w-4/5 mt-10"
+						class="w-full mt-10 xl:w-4/5"
 					/>
 				</div>
 			</div>
 
-			<div class="flex-none w-full lg:max-w-sm p-10 bg-theme-feature rounded-lg overflow-y-auto">
+			<div class="flex-none w-full p-10 overflow-y-auto rounded-lg lg:max-w-sm bg-theme-feature">
 				<MenuStep :step="step">
 					<MenuStepItem
 						:step="1"
@@ -41,7 +41,7 @@
 						:title="$t('PAGES.WALLET_NEW.STEP1.TITLE')"
 						@next="moveTo(2)"
 					>
-						<div slot="header" slot-scope="{ title }" class="flex flex-row justify-between items-center">
+						<div slot="header" slot-scope="{ title }" class="flex flex-row items-center justify-between">
 							<div class="">
 								{{ title }}
 							</div>
@@ -67,10 +67,10 @@
 											? 'WalletNew__wallets__address--selected'
 											: 'WalletNew__wallets__address--unselected',
 									]"
-									class="WalletNew__wallets__address py-4 w-full truncate cursor-pointer"
+									class="w-full py-4 truncate cursor-pointer WalletNew__wallets__address"
 									@click="selectWallet(address, passphrase)"
 								>
-									<div class="WalletNew__wallets__address__mask flex items-center">
+									<div class="flex items-center WalletNew__wallets__address__mask">
 										<div class="relative">
 											<WalletIdenticon
 												:value="address"
@@ -79,13 +79,13 @@
 											/>
 											<span
 												v-if="isSelected(address)"
-												class="WalletNew_wallets__check absolute rounded-full flex items-center justify-center -mb-1 w-6 h-6 bg-green border-4 border-theme-feature text-white"
+												class="absolute flex items-center justify-center w-6 h-6 -mb-1 text-white border-4 rounded-full WalletNew_wallets__check bg-green border-theme-feature"
 											>
 												<SvgIcon name="checkmark" view-box="0 0 8 7" />
 											</span>
 										</div>
 										<span
-											class="WalletNew__wallets--address text-theme-page-text ml-2 flex-shrink-0 font-semibold text-sm"
+											class="flex-shrink-0 ml-2 text-sm font-semibold WalletNew__wallets--address text-theme-page-text"
 										>
 											{{ address }}
 										</span>
@@ -105,7 +105,7 @@
 						@back="moveTo(1)"
 						@next="moveTo(3)"
 					>
-						<div slot="header" slot-scope="{ title }" class="flex flex-row justify-between items-center">
+						<div slot="header" slot-scope="{ title }" class="flex flex-row items-center justify-between">
 							<div class="">
 								{{ title }}
 							</div>
@@ -114,7 +114,7 @@
 							<ButtonClipboard
 								v-if="step === 2"
 								:value="schema.passphrase"
-								class="text-theme-button-light-text py-2 px-4 rounded bg-theme-button-light"
+								class="px-4 py-2 rounded text-theme-button-light-text bg-theme-button-light"
 							/>
 						</div>
 
@@ -129,7 +129,7 @@
 						@back="moveTo(2)"
 						@next="moveTo(4)"
 					>
-						<div class="flex flex-col h-full w-full justify-around">
+						<div class="flex flex-col justify-around w-full h-full">
 							<InputSwitch
 								v-model="ensureEntirePassphrase"
 								:label="$t('PAGES.WALLET_NEW.STEP3.CHECK_ENTIRE_PASSPHRASE')"
@@ -155,7 +155,7 @@
 						@back="moveTo(3)"
 						@next="moveTo(5)"
 					>
-						<div class="flex flex-col h-full w-full justify-around">
+						<div class="flex flex-col justify-around w-full h-full">
 							<InputPassword
 								ref="password"
 								v-model="walletPassword"
@@ -195,11 +195,11 @@
 						@back="moveTo(4)"
 						@next="onCreate"
 					>
-						<div class="flex flex-col h-full w-full justify-around">
+						<div class="flex flex-col justify-around w-full h-full">
 							<div class="flex items-center justify-between mt-4">
 								<div class="flex flex-col">
 									<div class="flex items-center">
-										<span class="text-base font-semibold mr-1">
+										<span class="mr-1 text-base font-semibold">
 											{{ schema.address }}
 										</span>
 										<ButtonClipboard
@@ -208,7 +208,7 @@
 											class="text-theme-page-text hover:text-blue"
 										/>
 									</div>
-									<span class="text-sm text-theme-page-text-light font-semibold mt-1">
+									<span class="mt-1 text-sm font-semibold text-theme-page-text-light">
 										{{ $t("PAGES.WALLET_NEW.STEP5.ADDRESS") }}
 									</span>
 								</div>
@@ -239,7 +239,7 @@
 </template>
 
 <script>
-import { Vue, Component } from "vue-property-decorator";
+import { Component,Vue } from "vue-property-decorator";
 import { required } from "vuelidate/lib/validators";
 
 import { ButtonClipboard, ButtonReload } from "@/components/Button";
@@ -295,10 +295,6 @@ export default class WalletNew extends Vue {
         5: "pages/wallet-new/protect-wallet.svg",
     };
 
-    //*
-             * Mixes words from the passphrases of all the generated wallets
-             * @return {Array}
-             
     get additionalSuggestions() {
         const passphrases = Object.values(this.wallets);
 

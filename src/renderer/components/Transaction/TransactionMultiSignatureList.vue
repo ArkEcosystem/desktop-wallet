@@ -21,7 +21,8 @@
 </template>
 
 <script>
-import { Vue, Component, Prop } from "vue-property-decorator";
+import { Component, Prop,Vue } from "vue-property-decorator";
+
 import { InputEditableList } from "@/components/Input";
 import truncateMiddle from "@/filters/truncate-middle";
 

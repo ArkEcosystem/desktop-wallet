@@ -45,7 +45,8 @@
 </template>
 
 <script>
-import { Vue, Component, Prop } from "vue-property-decorator";
+import { Component, Prop,Vue } from "vue-property-decorator";
+
 import { InputEditableList } from "@/components/Input";
 import WalletAddress from "@/components/Wallet/WalletAddress";
 import WalletIdenticon from "@/components/Wallet/WalletIdenticon";

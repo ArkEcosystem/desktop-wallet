@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import { Vue, Component } from "vue-property-decorator";
+import { Component,Vue } from "vue-property-decorator";
 import { mapGetters } from "vuex";
 
 import { AppEvent, StoreBinding } from "@/enums";
@@ -31,11 +31,12 @@ import WalletHeadingInfo from "./WalletHeadingInfo";
 				this.resetHeading();
 			}
 		},
-	}
+	},
+
+	computed: { ...mapGetters("wallet", ["secondaryButtonsVisible"]) }
 })
 export default class WalletHeading extends Vue {
     activeWalletAddress = null;
-    TODO_spread_invalidArgument() {}
 
     get currentWallet() {
         return this.wallet_fromRoute;

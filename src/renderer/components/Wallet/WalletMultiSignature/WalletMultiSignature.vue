@@ -37,7 +37,8 @@
 </template>
 
 <script>
-import { Vue, Component } from "vue-property-decorator";
+import { Component,Vue } from "vue-property-decorator";
+
 import { ButtonModal } from "@/components/Button";
 import { ModalLoader, ModalPeer } from "@/components/Modal";
 import { WalletTransactionsMultiSignature } from "@/components/Wallet/WalletTransactions";

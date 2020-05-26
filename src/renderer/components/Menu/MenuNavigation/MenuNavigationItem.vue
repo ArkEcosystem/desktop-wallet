@@ -23,7 +23,8 @@
 </template>
 
 <script>
-import { Vue, Component, Prop } from "vue-property-decorator";
+import { Component, Prop,Vue } from "vue-property-decorator";
+
 import SvgIcon from "@/components/SvgIcon";
 
 @Component({

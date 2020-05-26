@@ -23,7 +23,8 @@
 </template>
 
 <script>
-import { Vue, Component, Prop } from "vue-property-decorator";
+import { Component, Prop,Vue } from "vue-property-decorator";
+
 import SvgIcon from "@/components/SvgIcon";
 
 @Component({
@@ -34,9 +35,6 @@ import SvgIcon from "@/components/SvgIcon";
 	}
 })
 export default class MenuDropdownHandler extends Vue {
-    //*
-             * The value of the selected option
-             
     @Prop({
         type: String,
         required: false,
@@ -44,9 +42,6 @@ export default class MenuDropdownHandler extends Vue {
     })
     value;
 
-    //*
-             * The visible text of the selected option
-             
     @Prop({
         type: String,
         required: false,

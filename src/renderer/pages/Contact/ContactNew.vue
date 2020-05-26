@@ -67,7 +67,8 @@
 </template>
 
 <script>
-import { Vue, Component } from "vue-property-decorator";
+import { Component,Vue } from "vue-property-decorator";
+
 import { InputAddress, InputText } from "@/components/Input";
 import { StoreBinding } from "@/enums";
 import Wallet from "@/models/wallet";

@@ -166,7 +166,7 @@
 </template>
 
 <script type="text/javascript">
-import { Vue, Component } from "vue-property-decorator";
+import { Component,Vue } from "vue-property-decorator";
 import { ipAddress, maxLength, minLength, numeric, required, url } from "vuelidate/lib/validators";
 
 import { ButtonGeneric } from "@/components/Button";

@@ -74,7 +74,8 @@
 </template>
 
 <script>
-import { Vue, Component, Prop } from "vue-property-decorator";
+import { Component, Prop,Vue } from "vue-property-decorator";
+
 import { InputText, InputToggle } from "@/components/Input";
 import { ModalWindow } from "@/components/Modal";
 import WalletService from "@/services/wallet";

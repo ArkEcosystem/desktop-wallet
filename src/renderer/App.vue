@@ -11,12 +11,12 @@
 				linux: isLinux,
 			},
 		]"
-		class="App bg-theme-page text-theme-page-text font-sans"
+		class="font-sans App bg-theme-page text-theme-page-text"
 	>
 		<div
 			v-if="!hasSeenIntroduction"
 			:style="`backgroundImage: url('${assets_loadImage(background)}')`"
-			class="px-20 py-16 w-screen h-screen relative"
+			class="relative w-screen h-screen px-20 py-16"
 		>
 			<AppIntro @done="setIntroDone" />
 		</div>
@@ -25,16 +25,16 @@
 			<AppSidemenu v-if="hasProfile" :is-horizontal="true" class="block md:hidden z-1" />
 			<section
 				:style="background ? `backgroundImage: url('${assets_loadImage(background)}')` : ''"
-				class="App__main flex flex-col items-center px-4 pb-4 lg:pt-4 w-screen h-screen-adjusted overflow-hidden"
+				class="flex flex-col items-center w-screen px-4 pb-4 overflow-hidden App__main lg:pt-4 h-screen-adjusted"
 			>
-				<div :class="{ 'ml-6': !hasProfile }" class="App__container w-full h-full flex mt-4 mb-4 lg:mr-6">
-					<div class="hidden md:flex flex-col">
+				<div :class="{ 'ml-6': !hasProfile }" class="flex w-full h-full mt-4 mb-4 App__container lg:mr-6">
+					<div class="flex-col hidden md:flex">
 						<AppSidemenu v-if="hasProfile" class="flex flex-1" />
 					</div>
 
 					<!-- Updating the maximum number of routes to keep alive means that Vue will destroy the rest of cached route components -->
 					<KeepAlive :include="keepAliveRoutes" :max="keepAliveRoutes.length">
-						<RouterView class="App__page flex-1 overflow-y-auto" />
+						<RouterView class="flex-1 overflow-y-auto App__page" />
 					</KeepAlive>
 				</div>
 
@@ -65,7 +65,6 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component } from "vue-property-decorator";
 import "@/styles/style.css";
 
 import { I18N } from "@config";
@@ -73,6 +72,7 @@ import CleanCss from "clean-css";
 import { ipcRenderer, remote } from "electron";
 import fs from "fs";
 import { pull, uniq } from "lodash";
+import { Component,Vue } from "vue-property-decorator";
 
 import AlertMessage from "@/components/AlertMessage";
 import { AppFooter, AppIntro, AppSidemenu } from "@/components/App";
@@ -176,7 +176,13 @@ export default class DesktopWallet extends Vue {
         return this.$store.getters["session/screenshotProtection"];
     }
 
-    get TODO_isScreenshotProtectionEnabled() {}
+      get isScreenshotProtectionEnabled() {
+        return this.$store.getters['app/isScreenshotProtectionEnabled']
+	  }
+
+      set isScreenshotProtectionEnabled(protection) {
+        this.$store.dispatch('app/setIsScreenshotProtectionEnabled', protection)
+      }
 
     get hasSeenIntroduction() {
         return this.$store.getters["app/hasSeenIntroduction"];
@@ -234,11 +240,6 @@ export default class DesktopWallet extends Vue {
         return defaultLocale === language || this.pluginLanguages[language] ? language : defaultLocale;
     }
 
-    //*
-         * Vue hooks ignore the `async` modifier.
-         * The `isReady` property is used here to delay the application while is
-         * retrieving the essential data (session and network) from the database
-         
     created() {
 		this.$store._vm.$on("vuex-persist:ready", async () => {
 			// Environments variables are strings
@@ -278,13 +279,6 @@ export default class DesktopWallet extends Vue {
         await this.$store.dispatch(StoreBinding.LedgerReset);
     }
 
-    //*
-             * These data are used in different parts, but loading them should not
-             * delay the application
-             * TODO move some parts to the synchronizer and make it aware of when the
-             * network has changed
-             * @return {void}
-             
     loadNotEssential() {
         ipcRenderer.send("updater:check-for-updates");
         await this.$store.dispatch(StoreBinding.PeerRefresh);
@@ -404,11 +398,6 @@ export default class DesktopWallet extends Vue {
         });
     }
 
-    //*
-             * Webpack cannot require assets without knowing the path or, at least, part of it
-             * (https://webpack.js.org/guides/dependency-management/#require-context), so,
-             * instead of that, those assets are loaded manually and then injected directly on the DOM.
-             
     applyPluginTheme(themeName) {
         const $style = document.querySelector("style[name=plugins]");
 

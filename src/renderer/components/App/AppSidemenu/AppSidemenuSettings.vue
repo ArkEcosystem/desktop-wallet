@@ -217,16 +217,72 @@ export default class AppSidemenuOptionsSettings extends Vue {
         return [...this.$store.getters["plugin/blacklisted"].local].sort();
     }
 
-    get TODO_sessionCurrency() {}
-    get TODO_sessionBroadcastPeers() {}
-    get TODO_sessionTheme() {}
-    get TODO_hasScreenshotProtection() {}
+      get sessionCurrency () {
+        return this.$store.getters['session/currency']
+	  }
+
+      set sessionCurrency (currency) {
+        this.$store.dispatch('session/setCurrency', currency)
+        this.$store.dispatch('profile/update', {
+          ...this.session_profile,
+          currency
+        })
+	  }
+
+      get sessionBroadcastPeers () {
+        return this.$store.getters['session/broadcastPeers']
+	  }
+
+      set sessionBroadcastPeers (broadcast) {
+        this.$store.dispatch('session/setBroadcastPeers', broadcast)
+        this.$store.dispatch('profile/update', {
+          ...this.session_profile,
+          broadcastPeers: broadcast
+        })
+	  }
+
+      get sessionTheme () {
+        return this.$store.getters['session/theme']
+	  }
+
+      set sessionTheme (theme) {
+        this.$store.dispatch('session/setTheme', theme)
+        this.$store.dispatch('profile/update', {
+          ...this.session_profile,
+          theme
+        })
+	  }
+
+      get hasScreenshotProtection () {
+        return this.$store.getters['session/screenshotProtection']
+	  }
+
+      set hasScreenshotProtection (protection) {
+        this.$store.dispatch('session/setScreenshotProtection', protection)
+        if (protection || this.saveOnProfile) {
+          this.$store.dispatch('profile/update', {
+            ...this.session_profile,
+            screenshotProtection: protection
+          })
+        }
+      }
+
 
     get isScreenshotProtectionEnabled() {
         return this.$store.getters["app/isScreenshotProtectionEnabled"];
     }
 
-    get TODO_sessionBackgroundUpdateLedger() {}
+      get sessionBackgroundUpdateLedger () {
+        return this.$store.getters['session/backgroundUpdateLedger']
+	  }
+
+      set sessionBackgroundUpdateLedger (update) {
+        this.$store.dispatch('session/setBackgroundUpdateLedger', update)
+        this.$store.dispatch('profile/update', {
+          ...this.session_profile,
+          backgroundUpdateLedger: update
+        })
+      }
 
     get pluginThemes() {
         return isEmpty(this.$store.getters["plugin/themes"]) ? null : this.$store.getters["plugin/themes"];

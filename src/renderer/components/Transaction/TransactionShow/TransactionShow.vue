@@ -192,9 +192,9 @@
 </template>
 
 <script>
-import { Vue, Component, Prop } from "vue-property-decorator";
 import { TRANSACTION_GROUPS, TRANSACTION_TYPES } from "@config";
 import { at } from "lodash";
+import { Component, Prop,Vue } from "vue-property-decorator";
 
 import { ButtonClipboard, ButtonGeneric } from "@/components/Button";
 import { ListDivided, ListDividedItem } from "@/components/ListDivided";

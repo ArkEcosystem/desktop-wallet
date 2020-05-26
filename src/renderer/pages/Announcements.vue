@@ -31,8 +31,8 @@
 </template>
 
 <script>
-import { Vue, Component } from "vue-property-decorator";
 import { orderBy } from "lodash";
+import { Component,Vue } from "vue-property-decorator";
 import { mapGetters } from "vuex";
 
 import { AnnouncementsPost } from "@/components/Announcements";
@@ -45,11 +45,16 @@ import { StoreBinding } from "@/enums";
     components: {
 		AnnouncementsPost,
 		SvgIcon,
+	},
+
+	computed: {
+		...mapGetters({
+			readAnnouncements: "announcements/read",
+			unreadAnnouncements: "announcements/unread",
+		})
 	}
 })
 export default class Announcements extends Vue {
-    TODO_spread_invalidArgument() {}
-
     get announcements() {
         const all = this.unreadAnnouncements.concat(this.readAnnouncements);
         return orderBy(all, ["isRead", "date"], ["asc", "desc"]);

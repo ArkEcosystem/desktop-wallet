@@ -62,8 +62,8 @@
 </template>
 
 <script>
-import { Vue, Component } from "vue-property-decorator";
 import { isEqual } from "lodash";
+import { Component,Vue } from "vue-property-decorator";
 
 import { ButtonClose } from "@/components/Button";
 import TableWrapper from "@/components/utils/TableWrapper";

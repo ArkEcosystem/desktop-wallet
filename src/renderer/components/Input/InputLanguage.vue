@@ -10,14 +10,14 @@
 		@input="select"
 	>
 		<div slot="input-item" slot-scope="itemScope" class="flex flex-row space-between">
-			<img :src="flagImage(itemScope.value)" :title="itemScope.item" class="InputLanguage__item__flag mr-2" />
+			<img :src="flagImage(itemScope.value)" :title="itemScope.item" class="mr-2 InputLanguage__item__flag" />
 			<span class="font-semibold">
 				{{ itemScope.item }}
 			</span>
 		</div>
 
 		<div slot="input-handler" slot-scope="handlerScope">
-			<img :src="flagImage(selected)" :title="handlerScope.value" class="InputLanguage__handler__flag mr-1" />
+			<img :src="flagImage(selected)" :title="handlerScope.value" class="mr-1 InputLanguage__handler__flag" />
 			{{ handlerScope.item }}
 		</div>
 	</InputSelect>
@@ -25,94 +25,101 @@
 
 <script lang="ts">
 import { I18N } from "@config";
-import { Component, Prop,Vue } from "vue-property-decorator";
+import { Component, Prop, Vue } from "vue-property-decorator";
 
 import InputSelect from "./InputSelect";
 
 @Component({
-    name: "InputLanguage",
+	name: "InputLanguage",
 
-    components: {
+	components: {
 		InputSelect,
 	},
 
-    model: {
+	model: {
 		prop: "value",
 		event: "input",
 	},
 
-    watch: {
+	watch: {
 		value(value) {
 			this.selected = value;
 		},
-	}
+	},
 })
 export default class InputLanguage extends Vue {
-    @Prop({
-        type: Array,
-        required: false,
-        default: () => I18N.enabledLocales,
-    })
-    languages;
+	@Prop({
+		type: Array,
+		required: false,
+		default: () => I18N.enabledLocales,
+	})
+	languages;
 
-    @Prop({
-        type: String,
-        required: false,
-        default: "",
-    })
-    label;
+	@Prop({
+		type: String,
+		required: false,
+		default: "",
+	})
+	label;
 
-    @Prop({
-        type: String,
-        required: false,
-        default: "language",
-    })
-    name;
+	@Prop({
+		type: String,
+		required: false,
+		default: "language",
+	})
+	name;
 
-    @Prop({
-        type: Boolean,
-        required: false,
-        default: false,
-    })
-    isDisabled;
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	isDisabled;
 
-    @Prop({
-        type: String,
-        required: false,
-        default: undefined,
-    })
-    value;
+	@Prop({
+		type: String,
+		required: false,
+		default: undefined,
+	})
+	value;
 
-    inputLabel = vm.label;
-    isFocused = false;
-    selected = vm.value;
+	inputLabel = null;
+	isFocused = false;
+	selected = null;
 
-    // These are the options that are visible on the dropdown
-    get options() {
-        return (this.languages || I18N.enabledLocales).reduce((all, locale) => {
-            all[locale] = this.$t(`LANGUAGES.${locale}`);
-            return all;
-        }, {});
-    }
+	data(vm) {
+		return {
+			inputLabel: vm.label,
+			selected: vm.value,
+		};
+	}
 
-    mounted() {
+	// These are the options that are visible on the dropdown
+	get options() {
+		return (this.languages || I18N.enabledLocales).reduce((all, locale) => {
+			all[locale] = this.$t(`LANGUAGES.${locale}`);
+			return all;
+		}, {});
+	}
+
+	mounted() {
 		if (!this.inputLabel) {
 			this.inputLabel = this.$t("COMMON.LANGUAGE");
 		}
 	}
 
-    flagImage(language) {
-        return this.assets_loadImage(`flags/${language}.svg`);
-    }
+	flagImage(language) {
+		return this.assets_loadImage(`flags/${language}.svg`);
+	}
 
-    select(language) {
-        this.selected = language;
-        this.emitInput();
-    }
+	select(language) {
+		this.selected = language;
+		this.emitInput();
+	}
 
-    emitInput() {
-        this.$emit("input", this.selected);
-    }
+	emitInput() {
+		this.$emit("input", this.selected);
+	}
 }
 </script>
 
