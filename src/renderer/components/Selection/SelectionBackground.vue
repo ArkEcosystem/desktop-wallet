@@ -12,20 +12,20 @@
 </template>
 
 <script>
+import { Vue, Component, Prop } from "vue-property-decorator";
 import selectionMixin from "./mixin-selection";
 import selectionImageMixin from "./mixin-selection-image";
 
-export default {
-	name: "SelectionBackground",
-
-	mixins: [selectionMixin, selectionImageMixin],
-
-	props: {
-		categories: {
-			type: Array,
-			required: false,
-			default: () => ["wallpapers", "textures"],
-		},
-	},
-};
+@Component({
+    name: "SelectionBackground",
+    mixins: [selectionMixin, selectionImageMixin]
+})
+export default class SelectionBackground extends Vue {
+    @Prop({
+        type: Array,
+        required: false,
+        default: () => ["wallpapers", "textures"],
+    })
+    categories;
+}
 </script>
