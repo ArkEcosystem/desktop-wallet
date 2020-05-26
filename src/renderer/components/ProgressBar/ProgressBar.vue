@@ -9,43 +9,46 @@
 </template>
 
 <script>
-export default {
-	name: "ProgressBar",
+import { Vue, Component, Prop } from "vue-property-decorator";
+@Component({
+    name: "ProgressBar"
+})
+export default class ProgressBar extends Vue {
+    @Prop({
+        type: [String, Number],
+        required: false,
+        default: 0,
+    })
+    percent;
 
-	props: {
-		percent: {
-			type: [String, Number],
-			required: false,
-			default: 0,
-		},
-		status: {
-			type: String,
-			required: false,
-			default: "active",
-			validator: (value) => ["active", "exception", "success"].includes(value),
-		},
-		size: {
-			type: String,
-			required: false,
-			default: "normal",
-			validator: (value) => ["normal", "small", "large"].includes(value),
-		},
-	},
+    @Prop({
+        type: String,
+        required: false,
+        default: "active",
+        validator: (value) => ["active", "exception", "success"].includes(value),
+    })
+    status;
 
-	computed: {
-		getCurrentPercent() {
-			return parseInt(this.percent.toString(), 10);
-		},
+    @Prop({
+        type: String,
+        required: false,
+        default: "normal",
+        validator: (value) => ["normal", "small", "large"].includes(value),
+    })
+    size;
 
-		getStatus() {
-			if (this.status === "active" && this.getCurrentPercent >= 100) {
-				return "success";
-			}
+    get getCurrentPercent() {
+        return parseInt(this.percent.toString(), 10);
+    }
 
-			return this.status;
-		},
-	},
-};
+    get getStatus() {
+        if (this.status === "active" && this.getCurrentPercent >= 100) {
+            return "success";
+        }
+
+        return this.status;
+    }
+}
 </script>
 
 <style lang="postcss" scoped>
