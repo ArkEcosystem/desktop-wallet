@@ -65,7 +65,7 @@ export default class CollapseAccordion extends Vue {
 		this.toggleCollapse();
 	}
 
-	@Provide('collapseClick')
+	@Provide("collapseClick")
 	collapseClick(id) {
 		this.$nextTick(() => (this.inputId = id));
 	}

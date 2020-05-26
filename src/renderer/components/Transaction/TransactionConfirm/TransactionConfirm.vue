@@ -80,7 +80,7 @@ import TransactionConfirmVote from "./TransactionConfirmVote";
 	},
 })
 export default class TransactionConfirm extends Vue {
-	@Provide('transaction')
+	@Provide("transaction")
 	@Prop({
 		type: Object,
 		required: true,
@@ -111,7 +111,7 @@ export default class TransactionConfirm extends Vue {
 		return amount;
 	}
 
-	@Provide('currentWallet')
+	@Provide("currentWallet")
 	get currentWallet() {
 		return this.wallet || this.wallet_fromRoute;
 	}

@@ -145,7 +145,7 @@
 								<span class="block truncate">
 									{{
 										wallet_name(wallet.address) ||
-											wallet_truncate(wallet.address, !isExpanded ? 6 : wallet.isLedger ? 12 : 24)
+										wallet_truncate(wallet.address, !isExpanded ? 6 : wallet.isLedger ? 12 : 24)
 									}}
 								</span>
 								<span

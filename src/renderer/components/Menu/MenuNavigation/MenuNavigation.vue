@@ -56,7 +56,7 @@ export default class MenuNavigation extends Vue {
 		this.activeId = itemId;
 	}
 
-	@Provide('switchToItem')
+	@Provide("switchToItem")
 	switchToItem(itemId) {
 		if (this.activeId !== itemId) {
 			this.activateItem(itemId);

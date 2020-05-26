@@ -159,7 +159,7 @@ import {
 export default class AnonymousComponent extends Vue {
 	currentTab = "";
 
-	@Provide('walletVote')
+	@Provide("walletVote")
 	walletVote = {
 		username: null,
 	};
@@ -376,7 +376,7 @@ export default class AnonymousComponent extends Vue {
 		}
 	}
 
-	@Provide('switchToTab')
+	@Provide("switchToTab")
 	switchToTab(component) {
 		if (this.tabs.map((tab) => tab.componentName).includes(component)) {
 			this.currentTab = component;

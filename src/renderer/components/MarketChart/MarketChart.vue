@@ -355,12 +355,12 @@ export default class MarketChart extends Vue {
 		this.gradient.addColorStop(1, this.colours.gradient[3]);
 	}
 
-	@Provide('getPeriod')
+	@Provide("getPeriod")
 	getPeriod() {
 		return this.period;
 	}
 
-	@Provide('getIsExpanded')
+	@Provide("getIsExpanded")
 	getIsExpanded() {
 		return this.isExpanded;
 	}
