@@ -12,28 +12,29 @@
 </template>
 
 <script>
-export default {
-	name: "SvgIcon",
+import { Vue, Component, Prop } from "vue-property-decorator";
+@Component({
+    name: "SvgIcon"
+})
+export default class SvgIcon extends Vue {
+    @Prop({
+        type: String,
+        required: true,
+    })
+    name;
 
-	props: {
-		name: {
-			type: String,
-			required: true,
-		},
-		viewBox: {
-			type: [Array, String],
-			required: false,
-			default: "0 0 50 50",
-		},
-	},
+    @Prop({
+        type: [Array, String],
+        required: false,
+        default: "0 0 50 50",
+    })
+    viewBox;
 
-	computed: {
-		styles() {
-			const size = Array.isArray(this.viewBox) ? this.viewBox : this.viewBox.split(" ");
-			const [x, y, width, height] = size.map((i) => i + "px");
+    get styles() {
+        const size = Array.isArray(this.viewBox) ? this.viewBox : this.viewBox.split(" ");
+        const [x, y, width, height] = size.map((i) => i + "px");
 
-			return { x, y, width, height };
-		},
-	},
-};
+        return { x, y, width, height };
+    }
+}
 </script>
