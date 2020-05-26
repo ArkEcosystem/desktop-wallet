@@ -16,26 +16,25 @@
 </template>
 
 <script>
+import { Vue, Component } from "vue-property-decorator";
 import { TRANSACTION_TYPES } from "@config";
 
 import { ListDivided, ListDividedItem } from "@/components/ListDivided";
 
-export default {
-	name: "TransactionConfirmVote",
+@Component({
+    name: "TransactionConfirmVote",
+    inject: ["currentWallet"],
 
-	transactionType: TRANSACTION_TYPES.GROUP_1.VOTE,
-
-	inject: ["currentWallet"],
-
-	components: {
+    components: {
 		ListDivided,
 		ListDividedItem,
-	},
+	}
+})
+export default class TransactionConfirmVote extends Vue {
+    transactionType = TRANSACTION_TYPES.GROUP_1.VOTE;
 
-	computed: {
-		senderLabel() {
-			return this.wallet_formatAddress(this.currentWallet.address);
-		},
-	},
-};
+    get senderLabel() {
+        return this.wallet_formatAddress(this.currentWallet.address);
+    }
+}
 </script>

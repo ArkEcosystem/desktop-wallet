@@ -11,26 +11,25 @@
 </template>
 
 <script>
+import { Vue, Component, Prop } from "vue-property-decorator";
 import TransactionService from "@/services/transaction";
 
-export default {
-	name: "TransactionAmount",
+@Component({
+    name: "TransactionAmount"
+})
+export default class TransactionAmount extends Vue {
+    @Prop({
+        type: Object,
+        required: true,
+    })
+    transaction;
 
-	props: {
-		transaction: {
-			type: Object,
-			required: true,
-		},
-	},
+    get totalAmount() {
+        return TransactionService.getAmount(this, this.transaction, this.wallet_fromRoute);
+    }
 
-	computed: {
-		totalAmount() {
-			return TransactionService.getAmount(this, this.transaction, this.wallet_fromRoute);
-		},
-
-		isTransfer() {
-			return TransactionService.isTransfer(this.transaction);
-		},
-	},
-};
+    get isTransfer() {
+        return TransactionService.isTransfer(this.transaction);
+    }
+}
 </script>

@@ -3,6 +3,7 @@
 </template>
 
 <script>
+import { Vue, Component, Prop } from "vue-property-decorator";
 /* eslint-disable vue/no-unused-components */
 import { TRANSACTION_GROUPS } from "@config";
 
@@ -17,10 +18,10 @@ import TransactionFormSecondSignature from "./TransactionFormSecondSignature";
 import TransactionFormTransfer from "./TransactionFormTransfer";
 import TransactionFormVote from "./TransactionFormVote";
 
-export default {
-	name: "TransactionForm",
+@Component({
+    name: "TransactionForm",
 
-	components: {
+    components: {
 		TransactionFormDelegateRegistration,
 		TransactionFormDelegateResignation,
 		TransactionFormIpfs,
@@ -31,27 +32,26 @@ export default {
 		TransactionFormSecondSignature,
 		...TransactionFormBusiness,
 		...TransactionFormBridgechain,
-	},
+	}
+})
+export default class TransactionForm extends Vue {
+    @Prop({
+        type: Number,
+        required: false,
+        default: TRANSACTION_GROUPS.STANDARD,
+    })
+    group;
 
-	props: {
-		group: {
-			type: Number,
-			required: false,
-			default: TRANSACTION_GROUPS.STANDARD,
-		},
+    @Prop({
+        type: Number,
+        required: true,
+    })
+    type;
 
-		type: {
-			type: Number,
-			required: true,
-		},
-	},
+    activeComponent = null;
 
-	data: () => ({
-		activeComponent: null,
-	}),
-
-	// TODO: Fetch fees remotely
-	mounted() {
+    // TODO: Fetch fees remotely
+    mounted() {
 		const group = this.type === -1 ? TRANSACTION_GROUPS.STANDARD : this.group;
 		const component = Object.values(this.$options.components).find((component) => {
 			if ((component.transactionGroup || TRANSACTION_GROUPS.STANDARD) !== group) {
@@ -66,16 +66,14 @@ export default {
 		}
 
 		this.activeComponent = component.name;
-	},
+	}
 
-	methods: {
-		emitBuilt(transaction) {
-			this.$emit("built", transaction);
-		},
+    emitBuilt(transaction) {
+        this.$emit("built", transaction);
+    }
 
-		emitCancel(reason) {
-			this.$emit("cancel", reason);
-		},
-	},
-};
+    emitCancel(reason) {
+        this.$emit("cancel", reason);
+    }
+}
 </script>

@@ -40,28 +40,26 @@
 </template>
 
 <script>
+import { Vue, Component } from "vue-property-decorator";
 import { TRANSACTION_GROUPS, TRANSACTION_TYPES } from "@config";
 
 import { ListDivided, ListDividedItem } from "@/components/ListDivided";
 
-export default {
-	name: "TransactionConfirmBusinessRegistration",
+@Component({
+    name: "TransactionConfirmBusinessRegistration",
+    inject: ["currentWallet", "transaction"],
 
-	transactionGroup: TRANSACTION_GROUPS.MAGISTRATE,
-
-	transactionType: TRANSACTION_TYPES.GROUP_2.BUSINESS_REGISTRATION,
-
-	inject: ["currentWallet", "transaction"],
-
-	components: {
+    components: {
 		ListDivided,
 		ListDividedItem,
-	},
+	}
+})
+export default class TransactionConfirmBusinessRegistration extends Vue {
+    transactionGroup = TRANSACTION_GROUPS.MAGISTRATE;
+    transactionType = TRANSACTION_TYPES.GROUP_2.BUSINESS_REGISTRATION;
 
-	computed: {
-		senderLabel() {
-			return this.wallet_formatAddress(this.currentWallet.address);
-		},
-	},
-};
+    get senderLabel() {
+        return this.wallet_formatAddress(this.currentWallet.address);
+    }
+}
 </script>

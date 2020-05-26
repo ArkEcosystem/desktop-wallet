@@ -70,40 +70,38 @@
 </template>
 
 <script>
+import { Vue, Component } from "vue-property-decorator";
 import { TRANSACTION_GROUPS, TRANSACTION_TYPES } from "@config";
 
 import { ListDivided, ListDividedItem } from "@/components/ListDivided";
 
-export default {
-	name: "TransactionConfirmBridgechainRegistration",
+@Component({
+    name: "TransactionConfirmBridgechainRegistration",
+    inject: ["currentWallet", "transaction"],
 
-	transactionGroup: TRANSACTION_GROUPS.MAGISTRATE,
-
-	transactionType: TRANSACTION_TYPES.GROUP_2.BRIDGECHAIN_REGISTRATION,
-
-	inject: ["currentWallet", "transaction"],
-
-	components: {
+    components: {
 		ListDivided,
 		ListDividedItem,
-	},
+	}
+})
+export default class TransactionConfirmBridgechainRegistration extends Vue {
+    transactionGroup = TRANSACTION_GROUPS.MAGISTRATE;
+    transactionType = TRANSACTION_TYPES.GROUP_2.BRIDGECHAIN_REGISTRATION;
 
-	computed: {
-		senderLabel() {
-			return this.wallet_formatAddress(this.currentWallet.address);
-		},
+    get senderLabel() {
+        return this.wallet_formatAddress(this.currentWallet.address);
+    }
 
-		apiPort() {
-			if (
-				!this.transaction.asset.bridgechainRegistration.ports ||
-				(this.transaction.asset.bridgechainRegistration.ports &&
-					!this.transaction.asset.bridgechainRegistration.ports["@arkecosystem/core-api"])
-			) {
-				return null;
-			}
+    get apiPort() {
+        if (
+            !this.transaction.asset.bridgechainRegistration.ports ||
+            (this.transaction.asset.bridgechainRegistration.ports &&
+                !this.transaction.asset.bridgechainRegistration.ports["@arkecosystem/core-api"])
+        ) {
+            return null;
+        }
 
-			return this.transaction.asset.bridgechainRegistration.ports["@arkecosystem/core-api"];
-		},
-	},
-};
+        return this.transaction.asset.bridgechainRegistration.ports["@arkecosystem/core-api"];
+    }
+}
 </script>

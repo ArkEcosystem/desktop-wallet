@@ -37,6 +37,7 @@
 </template>
 
 <script>
+import { Vue, Component, Prop } from "vue-property-decorator";
 import { TRANSACTION_GROUPS, TRANSACTION_TYPES } from "@config";
 import { camelCase } from "lodash";
 
@@ -50,346 +51,346 @@ import { upperFirst } from "@/utils";
 import TransactionConfirm from "./TransactionConfirm";
 import TransactionForm from "./TransactionForm";
 
-export default {
-	name: "TransactionModal",
+@Component({
+    name: "TransactionModal",
 
-	components: {
+    components: {
 		ModalLoader,
 		ModalWindow,
 		TransactionForm,
 		TransactionConfirm,
-	},
+	}
+})
+export default class TransactionModal extends Vue {
+    @Prop({
+        type: Object,
+        required: false,
+        default: null,
+    })
+    transactionOverride;
 
-	props: {
-		transactionOverride: {
-			type: Object,
-			required: false,
-			default: null,
-		},
+    @Prop({
+        type: Number,
+        required: false,
+        default: 1,
+        validator: (value) => {
+            return Object.keys(TRANSACTION_TYPES).includes(`GROUP_${value}`);
+        },
+    })
+    group;
 
-		group: {
-			type: Number,
-			required: false,
-			default: 1,
-			validator: (value) => {
-				return Object.keys(TRANSACTION_TYPES).includes(`GROUP_${value}`);
-			},
-		},
+    @Prop({
+        type: Number,
+        required: true,
+        validator: (value) => {
+            return (
+                value === TRANSACTION_TYPES.MULTI_SIGN || Object.values(TRANSACTION_TYPES.GROUP_1).includes(value)
+            );
+        },
+    })
+    type;
 
-		type: {
-			type: Number,
-			required: true,
-			validator: (value) => {
-				return (
-					value === TRANSACTION_TYPES.MULTI_SIGN || Object.values(TRANSACTION_TYPES.GROUP_1).includes(value)
-				);
-			},
-		},
+    @Prop({
+        type: String,
+        required: false,
+        default: null,
+    })
+    title;
 
-		title: {
-			type: String,
-			required: false,
-			default: null,
-		},
-	},
+    showBroadcastingTransactions = false;
+    step = 0;
+    transaction = vm.transactionOverride;
+    walletOverride = null;
 
-	data: (vm) => ({
-		showBroadcastingTransactions: false,
-		step: 0,
-		transaction: vm.transactionOverride,
-		walletOverride: null,
-	}),
+    get transactionKey() {
+        if (this.type === TRANSACTION_TYPES.MULTI_SIGN) {
+            return "MULTI_SIGN";
+        }
 
-	computed: {
-		transactionKey() {
-			if (this.type === TRANSACTION_TYPES.MULTI_SIGN) {
-				return "MULTI_SIGN";
-			}
+        const transactionTypes = TRANSACTION_TYPES[`GROUP_${this.group}`];
+        const key = Object.keys(transactionTypes).find((type) => transactionTypes[type] === this.type);
 
-			const transactionTypes = TRANSACTION_TYPES[`GROUP_${this.group}`];
-			const key = Object.keys(transactionTypes).find((type) => transactionTypes[type] === this.type);
+        if (key === "VOTE" && this.transaction.asset.votes.length) {
+            if (this.transaction.asset.votes[0].substring(0, 1) === "-") {
+                return "UNVOTE";
+            }
+        }
 
-			if (key === "VOTE" && this.transaction.asset.votes.length) {
-				if (this.transaction.asset.votes[0].substring(0, 1) === "-") {
-					return "UNVOTE";
-				}
-			}
+        return key;
+    }
 
-			return key;
-		},
-		typeClass() {
-			if (this.type === TRANSACTION_TYPES.MULTI_SIGN) {
-				return "TransactionModalMultiSign";
-			}
+    get typeClass() {
+        if (this.type === TRANSACTION_TYPES.MULTI_SIGN) {
+            return "TransactionModalMultiSign";
+        }
 
-			const transactionTypes = TRANSACTION_TYPES[`GROUP_${this.group}`];
-			const type = Object.keys(transactionTypes).find((type) => transactionTypes[type] === this.type);
+        const transactionTypes = TRANSACTION_TYPES[`GROUP_${this.group}`];
+        const type = Object.keys(transactionTypes).find((type) => transactionTypes[type] === this.type);
 
-			return `TransactionModal${upperFirst(camelCase(type))}`;
-		},
-		typeName() {
-			return this.$t(`TRANSACTION.TYPE.${this.transactionKey}`);
-		},
-		walletNetwork() {
-			const sessionNetwork = this.session_network;
-			if (!this.walletOverride || !this.walletOverride.id) {
-				return sessionNetwork;
-			}
+        return `TransactionModal${upperFirst(camelCase(type))}`;
+    }
 
-			const profile = this.$store.getters["profile/byId"](this.walletOverride.profileId);
+    get typeName() {
+        return this.$t(`TRANSACTION.TYPE.${this.transactionKey}`);
+    }
 
-			if (!profile.id) {
-				return sessionNetwork;
-			}
+    get walletNetwork() {
+        const sessionNetwork = this.session_network;
+        if (!this.walletOverride || !this.walletOverride.id) {
+            return sessionNetwork;
+        }
 
-			return this.$store.getters["network/byId"](profile.networkId) || sessionNetwork;
-		},
-	},
+        const profile = this.$store.getters["profile/byId"](this.walletOverride.profileId);
 
-	methods: {
-		onBuilt({ transaction, wallet }) {
-			this.step = 1;
-			this.transaction = transaction;
-			this.walletOverride = wallet;
-		},
+        if (!profile.id) {
+            return sessionNetwork;
+        }
 
-		onBack() {
-			this.step = 0;
-			this.transaction = null;
-		},
+        return this.$store.getters["network/byId"](profile.networkId) || sessionNetwork;
+    }
 
-		emitWalletReload() {
-			if (
-				TransactionService.isBridgechainRegistration(this.transaction) ||
-				TransactionService.isBridgechainUpdate(this.transaction) ||
-				TransactionService.isBridgechainResignation(this.transaction)
-			) {
-				this.$eventBus.emit(AppEvent.WalletReloadBusinessBridgechains);
-			}
-		},
+    onBuilt({ transaction, wallet }) {
+        this.step = 1;
+        this.transaction = transaction;
+        this.walletOverride = wallet;
+    }
 
-		async pushMultiSignature(sendToNetwork) {
-			const peer = this.$store.getters["session/multiSignaturePeer"];
-			if (!peer) {
-				return;
-			}
+    onBack() {
+        this.step = 0;
+        this.transaction = null;
+    }
 
-			const response = await MultiSignature.sendTransaction(peer, this.transaction);
-			if (response && !sendToNetwork) {
-				this.$success(this.$t(`TRANSACTION.SUCCESS.${this.transactionKey}`));
-				this.emitSent(true, this.transaction);
-			} else if (!response) {
-				this.$error(this.$t(`TRANSACTION.ERROR.${this.transactionKey}`));
-			}
+    emitWalletReload() {
+        if (
+            TransactionService.isBridgechainRegistration(this.transaction) ||
+            TransactionService.isBridgechainUpdate(this.transaction) ||
+            TransactionService.isBridgechainResignation(this.transaction)
+        ) {
+            this.$eventBus.emit(AppEvent.WalletReloadBusinessBridgechains);
+        }
+    }
 
-			this.$eventBus.emit(AppEvent.WalletReloadMultiSignature);
+    pushMultiSignature(sendToNetwork) {
+        const peer = this.$store.getters["session/multiSignaturePeer"];
+        if (!peer) {
+            return;
+        }
 
-			this.showBroadcastingTransactions = false;
-		},
+        const response = await MultiSignature.sendTransaction(peer, this.transaction);
+        if (response && !sendToNetwork) {
+            this.$success(this.$t(`TRANSACTION.SUCCESS.${this.transactionKey}`));
+            this.emitSent(true, this.transaction);
+        } else if (!response) {
+            this.$error(this.$t(`TRANSACTION.ERROR.${this.transactionKey}`));
+        }
 
-		async onConfirm() {
-			if (TransactionService.isMultiSignature(this.transaction)) {
-				const isReady = TransactionService.isMultiSignatureReady(this.transaction);
-				await this.pushMultiSignature(isReady);
+        this.$eventBus.emit(AppEvent.WalletReloadMultiSignature);
 
-				if (!isReady) {
-					return;
-				}
+        this.showBroadcastingTransactions = false;
+    }
 
-				this.transaction.timestamp = undefined;
-			}
+    onConfirm() {
+        if (TransactionService.isMultiSignature(this.transaction)) {
+            const isReady = TransactionService.isMultiSignatureReady(this.transaction);
+            await this.pushMultiSignature(isReady);
 
-			// Produce the messages before closing the modal to avoid `$t` scope errors
-			const messages = {
-				success: this.$t(`TRANSACTION.SUCCESS.${this.transactionKey}`),
-				error: this.$t(`TRANSACTION.ERROR.${this.transactionKey}`),
-				errorLowFee: this.$t("TRANSACTION.ERROR.FEE_TOO_LOW", {
-					fee: this.formatter_networkCurrency(this.transaction.fee),
-				}),
-				warningBroadcast: this.$t("TRANSACTION.WARNING.BROADCAST"),
-				nothingSent: this.$t("TRANSACTION.ERROR.NOTHING_SENT"),
-				wrongNonce: this.$t("TRANSACTION.ERROR.WRONG_NONCE"),
-			};
+            if (!isReady) {
+                return;
+            }
 
-			let responseArray;
-			let success = false;
-			try {
-				let shouldBroadcast = false;
-				if (this.walletOverride) {
-					const walletProfile = this.$store.getters["profile/byId"](this.walletOverride.profileId);
-					shouldBroadcast = walletProfile.broadcastPeers;
-				} else {
-					shouldBroadcast = this.$store.getters["session/broadcastPeers"];
-				}
+            this.transaction.timestamp = undefined;
+        }
 
-				if (shouldBroadcast) {
-					this.showBroadcastingTransactions = true;
-				}
+        // Produce the messages before closing the modal to avoid `$t` scope errors
+        const messages = {
+            success: this.$t(`TRANSACTION.SUCCESS.${this.transactionKey}`),
+            error: this.$t(`TRANSACTION.ERROR.${this.transactionKey}`),
+            errorLowFee: this.$t("TRANSACTION.ERROR.FEE_TOO_LOW", {
+                fee: this.formatter_networkCurrency(this.transaction.fee),
+            }),
+            warningBroadcast: this.$t("TRANSACTION.WARNING.BROADCAST"),
+            nothingSent: this.$t("TRANSACTION.ERROR.NOTHING_SENT"),
+            wrongNonce: this.$t("TRANSACTION.ERROR.WRONG_NONCE"),
+        };
 
-				if (this.walletOverride && this.session_network.id !== this.walletNetwork.id) {
-					const peer = await this.$store.dispatch(StoreBinding.PeerFindBest, {
-						refresh: true,
-						network: this.walletNetwork,
-					});
-					const apiClient = await this.$store.dispatch(StoreBinding.PeerClientServiceFromPeer, peer);
-					responseArray = await apiClient.broadcastTransaction(this.transaction, shouldBroadcast);
-				} else {
-					responseArray = await this.$client.broadcastTransaction(this.transaction, shouldBroadcast);
-				}
+        let responseArray;
+        let success = false;
+        try {
+            let shouldBroadcast = false;
+            if (this.walletOverride) {
+                const walletProfile = this.$store.getters["profile/byId"](this.walletOverride.profileId);
+                shouldBroadcast = walletProfile.broadcastPeers;
+            } else {
+                shouldBroadcast = this.$store.getters["session/broadcastPeers"];
+            }
 
-				if (responseArray.length > 0) {
-					for (let i = 0; i < responseArray.length; i++) {
-						const response = responseArray[i];
+            if (shouldBroadcast) {
+                this.showBroadcastingTransactions = true;
+            }
 
-						if (this.isSuccessfulResponse(response)) {
-							this.storeTransaction(this.transaction);
-							this.updateLastFeeByType({
-								fee: this.transaction.fee.toString(),
-								type: this.transaction.type,
-								typeGroup: this.transaction.typeGroup || TRANSACTION_GROUPS.STANDARD,
-							});
+            if (this.walletOverride && this.session_network.id !== this.walletNetwork.id) {
+                const peer = await this.$store.dispatch(StoreBinding.PeerFindBest, {
+                    refresh: true,
+                    network: this.walletNetwork,
+                });
+                const apiClient = await this.$store.dispatch(StoreBinding.PeerClientServiceFromPeer, peer);
+                responseArray = await apiClient.broadcastTransaction(this.transaction, shouldBroadcast);
+            } else {
+                responseArray = await this.$client.broadcastTransaction(this.transaction, shouldBroadcast);
+            }
 
-							const { data } = response.body;
+            if (responseArray.length > 0) {
+                for (let i = 0; i < responseArray.length; i++) {
+                    const response = responseArray[i];
 
-							if (data && data.accept.length === 0 && data.broadcast.length > 0) {
-								this.$warn(messages.warningBroadcast);
-							}
+                    if (this.isSuccessfulResponse(response)) {
+                        this.storeTransaction(this.transaction);
+                        this.updateLastFeeByType({
+                            fee: this.transaction.fee.toString(),
+                            type: this.transaction.type,
+                            typeGroup: this.transaction.typeGroup || TRANSACTION_GROUPS.STANDARD,
+                        });
 
-							this.emitWalletReload();
+                        const { data } = response.body;
 
-							success = true;
-							this.$success(messages.success);
+                        if (data && data.accept.length === 0 && data.broadcast.length > 0) {
+                            this.$warn(messages.warningBroadcast);
+                        }
 
-							return;
-						}
-					}
+                        this.emitWalletReload();
 
-					// If we get here, it means that none of the responses was successful, so pick one and show the error
-					const response = responseArray[0];
-					const { errors } = response.body;
+                        success = true;
+                        this.$success(messages.success);
 
-					const anyLowFee = Object.keys(errors).some((transactionId) => {
-						return errors[transactionId].some((error) => error.type === "ERR_LOW_FEE");
-					});
-					const anyNotDuplicate = Object.keys(errors).some((transactionId) => {
-						return errors[transactionId].some(
-							(error) =>
-								!["ERR_DUPLICATE", "ERR_FORGED", "ERR_ALREADY_IN_POOL", "ERR_LOW_FEE"].includes(
-									error.type,
-								),
-						);
-					});
-					const wrongNonce = Object.keys(errors).some((transactionId) => {
-						return errors[transactionId].some((error) => {
-							return (
-								error.type === "ERR_APPLY" &&
-								error.message.includes("Cannot apply a transaction with nonce")
-							);
-						});
-					});
+                        return;
+                    }
+                }
 
-					// Be clear with the user about the error cause
-					if (anyLowFee) {
-						this.$error(messages.errorLowFee);
-					} else if (wrongNonce) {
-						this.$error(messages.wrongNonce);
-					} else if (anyNotDuplicate) {
-						this.$error(messages.error);
-					}
-				} else {
-					this.$error(messages.nothingSent);
-				}
-			} catch (error) {
-				this.$logger.error(error);
-				this.$error(messages.error);
-			} finally {
-				this.showBroadcastingTransactions = false;
-				this.emitSent(success, this.transaction);
-			}
-		},
+                // If we get here, it means that none of the responses was successful, so pick one and show the error
+                const response = responseArray[0];
+                const { errors } = response.body;
 
-		emitSent(success, transaction = null) {
-			this.$emit("sent", success, transaction);
-		},
+                const anyLowFee = Object.keys(errors).some((transactionId) => {
+                    return errors[transactionId].some((error) => error.type === "ERR_LOW_FEE");
+                });
+                const anyNotDuplicate = Object.keys(errors).some((transactionId) => {
+                    return errors[transactionId].some(
+                        (error) =>
+                            !["ERR_DUPLICATE", "ERR_FORGED", "ERR_ALREADY_IN_POOL", "ERR_LOW_FEE"].includes(
+                                error.type,
+                            ),
+                    );
+                });
+                const wrongNonce = Object.keys(errors).some((transactionId) => {
+                    return errors[transactionId].some((error) => {
+                        return (
+                            error.type === "ERR_APPLY" &&
+                            error.message.includes("Cannot apply a transaction with nonce")
+                        );
+                    });
+                });
 
-		emitCancel(reason) {
-			this.$emit("cancel", reason);
-		},
+                // Be clear with the user about the error cause
+                if (anyLowFee) {
+                    this.$error(messages.errorLowFee);
+                } else if (wrongNonce) {
+                    this.$error(messages.wrongNonce);
+                } else if (anyNotDuplicate) {
+                    this.$error(messages.error);
+                }
+            } else {
+                this.$error(messages.nothingSent);
+            }
+        } catch (error) {
+            this.$logger.error(error);
+            this.$error(messages.error);
+        } finally {
+            this.showBroadcastingTransactions = false;
+            this.emitSent(success, this.transaction);
+        }
+    }
 
-		emitClose() {
-			this.$emit("close");
-		},
+    emitSent(success, transaction = null) {
+        this.$emit("sent", success, transaction);
+    }
 
-		/**
-		 * Checks if the response is successful: in case the transaction is rejected
-		 * due a low fee, but it is broadcasted too, it cannot be declared as invalid yet
-		 * @param {Object} response
-		 * @return {Boolean}
-		 */
-		isSuccessfulResponse(response) {
-			if (response.status !== 200) {
-				this.$logger.error(response);
-				return false;
-			}
+    emitCancel(reason) {
+        this.$emit("cancel", reason);
+    }
 
-			const { data, errors } = response.body;
-			return data && data.invalid.length === 0 && !errors;
-		},
+    emitClose() {
+        this.$emit("close");
+    }
 
-		storeTransaction(transaction) {
-			const { type, typeGroup, amount, fee, senderPublicKey, vendorField, asset } = transaction;
+    //*
+             * Checks if the response is successful: in case the transaction is rejected
+             * due a low fee, but it is broadcasted too, it cannot be declared as invalid yet
+             * @param {Object} response
+             * @return {Boolean}
+             
+    isSuccessfulResponse(response) {
+        if (response.status !== 200) {
+            this.$logger.error(response);
+            return false;
+        }
 
-			let id = transaction.id;
-			if (transaction.signatures) {
-				id = TransactionService.getId(transaction);
-			}
+        const { data, errors } = response.body;
+        return data && data.invalid.length === 0 && !errors;
+    }
 
-			let timestamp;
+    storeTransaction(transaction) {
+        const { type, typeGroup, amount, fee, senderPublicKey, vendorField, asset } = transaction;
 
-			if (!transaction.timestamp || transaction.timestamp <= Math.floor(Date.now() / 1000)) {
-				timestamp = Date.now();
-			} else {
-				timestamp = transaction.timestamp;
-			}
+        let id = transaction.id;
+        if (transaction.signatures) {
+            id = TransactionService.getId(transaction);
+        }
 
-			if (transaction.version === 1) {
-				const epoch = new Date(this.walletNetwork.constants.epoch);
-				timestamp = epoch.getTime() + transaction.timestamp * 1000;
-			}
+        let timestamp;
 
-			this.$store.dispatch(StoreBinding.TransactionCreate, {
-				id,
-				type,
-				typeGroup: typeGroup || 1,
-				amount,
-				fee,
-				asset,
-				sender: WalletService.getAddressFromPublicKey(senderPublicKey, this.walletNetwork.version),
-				timestamp,
-				vendorField,
-				confirmations: 0,
-				recipient: transaction.recipientId || transaction.sender,
-				profileId: this.walletOverride ? this.walletOverride.profileId : this.session_profile.id,
-				raw: transaction,
-			});
-		},
+        if (!transaction.timestamp || transaction.timestamp <= Math.floor(Date.now() / 1000)) {
+            timestamp = Date.now();
+        } else {
+            timestamp = transaction.timestamp;
+        }
 
-		updateLastFeeByType({ fee, type, typeGroup }) {
-			this.$store.dispatch(StoreBinding.SessionSetLastFeeByType, { fee, type, typeGroup });
+        if (transaction.version === 1) {
+            const epoch = new Date(this.walletNetwork.constants.epoch);
+            timestamp = epoch.getTime() + transaction.timestamp * 1000;
+        }
 
-			this.$store.dispatch(StoreBinding.ProfileUpdate, {
-				...this.session_profile,
-				lastFees: {
-					...this.session_profile.lastFees,
-					[typeGroup]: {
-						...this.session_profile.lastFees[typeGroup],
-						[type]: fee,
-					},
-				},
-			});
-		},
-	},
-};
+        this.$store.dispatch(StoreBinding.TransactionCreate, {
+            id,
+            type,
+            typeGroup: typeGroup || 1,
+            amount,
+            fee,
+            asset,
+            sender: WalletService.getAddressFromPublicKey(senderPublicKey, this.walletNetwork.version),
+            timestamp,
+            vendorField,
+            confirmations: 0,
+            recipient: transaction.recipientId || transaction.sender,
+            profileId: this.walletOverride ? this.walletOverride.profileId : this.session_profile.id,
+            raw: transaction,
+        });
+    }
+
+    updateLastFeeByType({ fee, type, typeGroup }) {
+        this.$store.dispatch(StoreBinding.SessionSetLastFeeByType, { fee, type, typeGroup });
+
+        this.$store.dispatch(StoreBinding.ProfileUpdate, {
+            ...this.session_profile,
+            lastFees: {
+                ...this.session_profile.lastFees,
+                [typeGroup]: {
+                    ...this.session_profile.lastFees[typeGroup],
+                    [type]: fee,
+                },
+            },
+        });
+    }
+}
 </script>
 
 <style>

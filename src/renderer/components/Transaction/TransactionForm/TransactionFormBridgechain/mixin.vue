@@ -166,6 +166,7 @@
 </template>
 
 <script type="text/javascript">
+import { Vue, Component } from "vue-property-decorator";
 import { ipAddress, maxLength, minLength, numeric, required, url } from "vuelidate/lib/validators";
 
 import { ButtonGeneric } from "@/components/Button";
@@ -181,8 +182,8 @@ const maxNameLength = 40;
 const maxSeedNodes = 10;
 const minRepositoryLength = 12;
 
-export default {
-	components: {
+@Component({
+    components: {
 		ButtonGeneric,
 		InputFee,
 		InputPassword,
@@ -194,336 +195,332 @@ export default {
 		TransactionPeerList,
 	},
 
-	mixins: [mixin],
+    mixins: [mixin]
+})
+export default class AnonymousComponent extends Vue {
+    step = 1;
+    seedNode = "";
+    showValidatingModal = false;
+    invalidSeeds = [];
 
-	data: () => ({
-		step: 1,
-		seedNode: "",
-		showValidatingModal: false,
-		invalidSeeds: [],
-		form: {
-			fee: 0,
-			passphrase: "",
-			walletPassword: "",
-			apiPort: 4003,
-			seedNodes: [],
-			asset: {
-				name: "",
-				ports: {},
-				genesisHash: "",
-				bridgechainRepository: "",
-				bridgechainAssetRepository: "",
-			},
-		},
-	}),
+    form = {
+        fee: 0,
+        passphrase: "",
+        walletPassword: "",
+        apiPort: 4003,
+        seedNodes: [],
+        asset: {
+            name: "",
+            ports: {},
+            genesisHash: "",
+            bridgechainRepository: "",
+            bridgechainAssetRepository: "",
+        },
+    };
 
-	computed: {
-		maxSeedNodes() {
-			return maxSeedNodes;
-		},
+    get maxSeedNodes() {
+        return maxSeedNodes;
+    }
 
-		isUpdate() {
-			return !!this.bridgechain;
-		},
+    get isUpdate() {
+        return !!this.bridgechain;
+    }
 
-		isFormValid() {
-			if (this.step === 1) {
-				return !this.$v.form.seedNodes.$invalid;
-			}
+    get isFormValid() {
+        if (this.step === 1) {
+            return !this.$v.form.seedNodes.$invalid;
+        }
 
-			if (this.step === 2 && this.isUpdate) {
-				return (
-					!this.$v.form.$invalid &&
-					!(
-						this.hasSameRepository &&
-						this.hasSameAssetRepository &&
-						this.hasSameSeedNodes &&
-						this.hasSamePorts
-					)
-				);
-			}
+        if (this.step === 2 && this.isUpdate) {
+            return (
+                !this.$v.form.$invalid &&
+                !(
+                    this.hasSameRepository &&
+                    this.hasSameAssetRepository &&
+                    this.hasSameSeedNodes &&
+                    this.hasSamePorts
+                )
+            );
+        }
 
-			return !this.$v.form.$invalid;
-		},
+        return !this.$v.form.$invalid;
+    }
 
-		hasSameRepository() {
-			return this.form.asset.bridgechainRepository === this.bridgechain.bridgechainRepository;
-		},
+    get hasSameRepository() {
+        return this.form.asset.bridgechainRepository === this.bridgechain.bridgechainRepository;
+    }
 
-		hasSameAssetRepository() {
-			return (
-				this.form.asset.bridgechainAssetRepository === this.bridgechain.bridgechainAssetRepository ||
-				(!this.form.asset.bridgechainAssetRepository &&
-					this.bridgechain.bridgechainAssetRepository === undefined)
-			);
-		},
+    get hasSameAssetRepository() {
+        return (
+            this.form.asset.bridgechainAssetRepository === this.bridgechain.bridgechainAssetRepository ||
+            (!this.form.asset.bridgechainAssetRepository &&
+                this.bridgechain.bridgechainAssetRepository === undefined)
+        );
+    }
 
-		hasSameSeedNodes() {
-			return (
-				this.form.seedNodes.length === this.bridgechain.seedNodes.length &&
-				this.form.seedNodes.every((seedNode) => this.bridgechain.seedNodes.includes(seedNode.ip))
-			);
-		},
+    get hasSameSeedNodes() {
+        return (
+            this.form.seedNodes.length === this.bridgechain.seedNodes.length &&
+            this.form.seedNodes.every((seedNode) => this.bridgechain.seedNodes.includes(seedNode.ip))
+        );
+    }
 
-		// will have to be adjusted when multiple ports are supported in the wallet
-		hasSamePorts() {
-			return parseInt(this.form.apiPort) === this.bridgechain.ports["@arkecosystem/core-api"];
-		},
+    // will have to be adjusted when multiple ports are supported in the wallet
+    get hasSamePorts() {
+        return parseInt(this.form.apiPort) === this.bridgechain.ports["@arkecosystem/core-api"];
+    }
 
-		nameError() {
-			if (this.$v.form.asset.name.$dirty && this.$v.form.asset.name.$invalid) {
-				if (!this.$v.form.asset.name.required) {
-					return this.$t("VALIDATION.REQUIRED", [this.$t("TRANSACTION.BRIDGECHAIN.NAME")]);
-				} else if (!this.$v.form.asset.name.tooLong) {
-					return this.$t("VALIDATION.TOO_LONG", [this.$t("TRANSACTION.BRIDGECHAIN.NAME")]);
-				} else if (!this.$v.form.asset.name.validName) {
-					return this.$t("VALIDATION.NOT_VALID", [this.$t("TRANSACTION.BRIDGECHAIN.NAME")]);
-				}
-			}
+    get nameError() {
+        if (this.$v.form.asset.name.$dirty && this.$v.form.asset.name.$invalid) {
+            if (!this.$v.form.asset.name.required) {
+                return this.$t("VALIDATION.REQUIRED", [this.$t("TRANSACTION.BRIDGECHAIN.NAME")]);
+            } else if (!this.$v.form.asset.name.tooLong) {
+                return this.$t("VALIDATION.TOO_LONG", [this.$t("TRANSACTION.BRIDGECHAIN.NAME")]);
+            } else if (!this.$v.form.asset.name.validName) {
+                return this.$t("VALIDATION.NOT_VALID", [this.$t("TRANSACTION.BRIDGECHAIN.NAME")]);
+            }
+        }
 
-			return null;
-		},
+        return null;
+    }
 
-		seedNodeDisabled() {
-			return !this.$v.seedNode.$model.length || !!this.seedNodeError;
-		},
+    get seedNodeDisabled() {
+        return !this.$v.seedNode.$model.length || !!this.seedNodeError;
+    }
 
-		hasSeedNodesError() {
-			return this.invalidSeeds.length > 0 || this.form.seedNodes.length > this.maxSeedNodes;
-		},
+    get hasSeedNodesError() {
+        return this.invalidSeeds.length > 0 || this.form.seedNodes.length > this.maxSeedNodes;
+    }
 
-		seedNodeError() {
-			if (this.$v.seedNode.$dirty && this.$v.seedNode.$invalid) {
-				if (!this.$v.seedNode.isValidSeed) {
-					return this.$t("VALIDATION.INVALID_SEED");
-				} else if (!this.$v.seedNode.isUnique) {
-					return this.$t("TRANSACTION.BRIDGECHAIN.ERROR_DUPLICATE");
-				}
-			}
+    get seedNodeError() {
+        if (this.$v.seedNode.$dirty && this.$v.seedNode.$invalid) {
+            if (!this.$v.seedNode.isValidSeed) {
+                return this.$t("VALIDATION.INVALID_SEED");
+            } else if (!this.$v.seedNode.isUnique) {
+                return this.$t("TRANSACTION.BRIDGECHAIN.ERROR_DUPLICATE");
+            }
+        }
 
-			return null;
-		},
+        return null;
+    }
 
-		genesisHashError() {
-			if (this.$v.form.asset.genesisHash.$dirty && this.$v.form.asset.genesisHash.$invalid) {
-				if (!this.$v.form.asset.genesisHash.required) {
-					return this.$t("VALIDATION.REQUIRED", [this.$t("TRANSACTION.BRIDGECHAIN.GENESIS_HASH")]);
-				} else if (!this.$v.form.asset.genesisHash.isValidHash) {
-					return this.$t("VALIDATION.NOT_VALID", [this.$t("TRANSACTION.BRIDGECHAIN.GENESIS_HASH")]);
-				}
-			}
+    get genesisHashError() {
+        if (this.$v.form.asset.genesisHash.$dirty && this.$v.form.asset.genesisHash.$invalid) {
+            if (!this.$v.form.asset.genesisHash.required) {
+                return this.$t("VALIDATION.REQUIRED", [this.$t("TRANSACTION.BRIDGECHAIN.GENESIS_HASH")]);
+            } else if (!this.$v.form.asset.genesisHash.isValidHash) {
+                return this.$t("VALIDATION.NOT_VALID", [this.$t("TRANSACTION.BRIDGECHAIN.GENESIS_HASH")]);
+            }
+        }
 
-			return null;
-		},
+        return null;
+    }
 
-		bridgechainRepositoryError() {
-			if (this.$v.form.asset.bridgechainRepository.$dirty && this.$v.form.asset.bridgechainRepository.$invalid) {
-				if (!this.$v.form.asset.bridgechainRepository.required) {
-					return this.$t("VALIDATION.REQUIRED", [this.$t("TRANSACTION.BRIDGECHAIN.BRIDGECHAIN_REPOSITORY")]);
-				} else if (!this.$v.form.asset.bridgechainRepository.url) {
-					return this.$t("VALIDATION.INVALID_URL");
-				} else if (!this.$v.form.asset.bridgechainRepository.tooShort) {
-					return this.$t("VALIDATION.TOO_SHORT", [this.$t("TRANSACTION.BRIDGECHAIN.BRIDGECHAIN_REPOSITORY")]);
-				}
-			}
+    get bridgechainRepositoryError() {
+        if (this.$v.form.asset.bridgechainRepository.$dirty && this.$v.form.asset.bridgechainRepository.$invalid) {
+            if (!this.$v.form.asset.bridgechainRepository.required) {
+                return this.$t("VALIDATION.REQUIRED", [this.$t("TRANSACTION.BRIDGECHAIN.BRIDGECHAIN_REPOSITORY")]);
+            } else if (!this.$v.form.asset.bridgechainRepository.url) {
+                return this.$t("VALIDATION.INVALID_URL");
+            } else if (!this.$v.form.asset.bridgechainRepository.tooShort) {
+                return this.$t("VALIDATION.TOO_SHORT", [this.$t("TRANSACTION.BRIDGECHAIN.BRIDGECHAIN_REPOSITORY")]);
+            }
+        }
 
-			return null;
-		},
+        return null;
+    }
 
-		bridgechainAssetRepositoryError() {
-			if (
-				this.$v.form.asset.bridgechainAssetRepository.$dirty &&
-				this.$v.form.asset.bridgechainAssetRepository.$invalid
-			) {
-				if (!this.$v.form.asset.bridgechainAssetRepository.required) {
-					return this.$t("VALIDATION.REQUIRED", [
-						this.$t("TRANSACTION.BRIDGECHAIN.BRIDGECHAIN_ASSET_REPOSITORY"),
-					]);
-				} else if (!this.$v.form.asset.bridgechainAssetRepository.url) {
-					return this.$t("VALIDATION.INVALID_URL");
-				}
-			}
+    get bridgechainAssetRepositoryError() {
+        if (
+            this.$v.form.asset.bridgechainAssetRepository.$dirty &&
+            this.$v.form.asset.bridgechainAssetRepository.$invalid
+        ) {
+            if (!this.$v.form.asset.bridgechainAssetRepository.required) {
+                return this.$t("VALIDATION.REQUIRED", [
+                    this.$t("TRANSACTION.BRIDGECHAIN.BRIDGECHAIN_ASSET_REPOSITORY"),
+                ]);
+            } else if (!this.$v.form.asset.bridgechainAssetRepository.url) {
+                return this.$t("VALIDATION.INVALID_URL");
+            }
+        }
 
-			return null;
-		},
+        return null;
+    }
 
-		apiPortError() {
-			if (this.$v.form.apiPort.$dirty && this.$v.form.apiPort.$invalid) {
-				if (!this.$v.form.apiPort.required) {
-					return this.$t("VALIDATION.REQUIRED", [this.$t("TRANSACTION.BRIDGECHAIN.API_PORT")]);
-				} else if (!this.$v.form.apiPort.isNumeric) {
-					return this.$t("VALIDATION.NOT_NUMERIC", [this.$t("TRANSACTION.BRIDGECHAIN.API_PORT")]);
-				} else if (!this.$v.form.apiPort.isValidPort) {
-					return this.$t("VALIDATION.INVALID_PORT");
-				}
-			}
+    get apiPortError() {
+        if (this.$v.form.apiPort.$dirty && this.$v.form.apiPort.$invalid) {
+            if (!this.$v.form.apiPort.required) {
+                return this.$t("VALIDATION.REQUIRED", [this.$t("TRANSACTION.BRIDGECHAIN.API_PORT")]);
+            } else if (!this.$v.form.apiPort.isNumeric) {
+                return this.$t("VALIDATION.NOT_NUMERIC", [this.$t("TRANSACTION.BRIDGECHAIN.API_PORT")]);
+            } else if (!this.$v.form.apiPort.isValidPort) {
+                return this.$t("VALIDATION.INVALID_PORT");
+            }
+        }
 
-			return null;
-		},
-	},
+        return null;
+    }
 
-	methods: {
-		getTransactionData() {
-			const bridgechainAsset = Object.assign({}, this.form.asset);
+    getTransactionData() {
+        const bridgechainAsset = Object.assign({}, this.form.asset);
 
-			// will have to be adjusted when multiple ports are supported in the wallet
-			bridgechainAsset.ports["@arkecosystem/core-api"] = parseInt(this.form.apiPort);
-			bridgechainAsset.seedNodes = this.form.seedNodes.map((seedNode) => seedNode.ip);
+        // will have to be adjusted when multiple ports are supported in the wallet
+        bridgechainAsset.ports["@arkecosystem/core-api"] = parseInt(this.form.apiPort);
+        bridgechainAsset.seedNodes = this.form.seedNodes.map((seedNode) => seedNode.ip);
 
-			if (this.isUpdate) {
-				bridgechainAsset.bridgechainId = bridgechainAsset.genesisHash;
+        if (this.isUpdate) {
+            bridgechainAsset.bridgechainId = bridgechainAsset.genesisHash;
 
-				delete bridgechainAsset.name;
-				delete bridgechainAsset.genesisHash;
+            delete bridgechainAsset.name;
+            delete bridgechainAsset.genesisHash;
 
-				if (this.hasSameRepository) {
-					delete bridgechainAsset.bridgechainRepository;
-				}
+            if (this.hasSameRepository) {
+                delete bridgechainAsset.bridgechainRepository;
+            }
 
-				if (this.hasSameAssetRepository) {
-					delete bridgechainAsset.bridgechainAssetRepository;
-				}
+            if (this.hasSameAssetRepository) {
+                delete bridgechainAsset.bridgechainAssetRepository;
+            }
 
-				if (this.hasSameSeedNodes) {
-					delete bridgechainAsset.seedNodes;
-				}
+            if (this.hasSameSeedNodes) {
+                delete bridgechainAsset.seedNodes;
+            }
 
-				if (this.hasSamePorts) {
-					delete bridgechainAsset.ports;
-				}
-			} else {
-				if (
-					!bridgechainAsset.bridgechainAssetRepository ||
-					!bridgechainAsset.bridgechainAssetRepository.length
-				) {
-					delete bridgechainAsset.bridgechainAssetRepository;
-				}
-			}
+            if (this.hasSamePorts) {
+                delete bridgechainAsset.ports;
+            }
+        } else {
+            if (
+                !bridgechainAsset.bridgechainAssetRepository ||
+                !bridgechainAsset.bridgechainAssetRepository.length
+            ) {
+                delete bridgechainAsset.bridgechainAssetRepository;
+            }
+        }
 
-			const transactionData = {
-				address: this.currentWallet.address,
-				asset: bridgechainAsset,
-				passphrase: this.form.passphrase,
-				fee: this.getFee(),
-				wif: this.form.wif,
-				networkWif: this.walletNetwork.wif,
-				multiSignature: this.currentWallet.multiSignature,
-			};
+        const transactionData = {
+            address: this.currentWallet.address,
+            asset: bridgechainAsset,
+            passphrase: this.form.passphrase,
+            fee: this.getFee(),
+            wif: this.form.wif,
+            networkWif: this.walletNetwork.wif,
+            multiSignature: this.currentWallet.multiSignature,
+        };
 
-			if (this.currentWallet.secondPublicKey) {
-				transactionData.secondPassphrase = this.form.secondPassphrase;
-			}
+        if (this.currentWallet.secondPublicKey) {
+            transactionData.secondPassphrase = this.form.secondPassphrase;
+        }
 
-			return transactionData;
-		},
+        return transactionData;
+    }
 
-		previousStep() {
-			if (this.step === 2) {
-				this.step = 1;
-			}
-		},
+    previousStep() {
+        if (this.step === 2) {
+            this.step = 1;
+        }
+    }
 
-		async nextStep() {
-			if (this.step === 1) {
-				this.step = 2;
+    nextStep() {
+        if (this.step === 1) {
+            this.step = 2;
 
-				const fee = this.$v.form.fee.$model;
+            const fee = this.$v.form.fee.$model;
 
-				await this.$nextTick();
+            await this.$nextTick();
 
-				// TODO: Figure out why fee vuelidate intermittently doesn't
-				//       trigger resulting in an "invalid" flag when it's not.
-				//       Remove assigning fee to zero initially as a workaround.
-				if (this.$refs.fee && fee) {
-					this.$refs.fee.emitFee(0);
-					await this.$nextTick();
-					this.$refs.fee.emitFee(fee);
-				}
+            // TODO: Figure out why fee vuelidate intermittently doesn't
+            //       trigger resulting in an "invalid" flag when it's not.
+            //       Remove assigning fee to zero initially as a workaround.
+            if (this.$refs.fee && fee) {
+                this.$refs.fee.emitFee(0);
+                await this.$nextTick();
+                this.$refs.fee.emitFee(fee);
+            }
 
-				if (this.$v.form.passphrase.$model) {
-					this.$refs.passphrase.touch();
-				} else if (this.$v.form.walletPassword.$model) {
-					this.$v.form.walletPassword.$touch();
-				}
+            if (this.$v.form.passphrase.$model) {
+                this.$refs.passphrase.touch();
+            } else if (this.$v.form.walletPassword.$model) {
+                this.$v.form.walletPassword.$touch();
+            }
 
-				if (this.$v.form.secondPassphrase.$model) {
-					this.$refs.secondPassphrase.touch();
-				}
-			} else {
-				await this.validateSeeds();
+            if (this.$v.form.secondPassphrase.$model) {
+                this.$refs.secondPassphrase.touch();
+            }
+        } else {
+            await this.validateSeeds();
 
-				if (!this.invalidSeeds.length) {
-					this.$v.form.fee.$model = this.$refs.fee.fee;
-					this.onSubmit();
-				} else {
-					this.step = 1;
-				}
-			}
-		},
+            if (!this.invalidSeeds.length) {
+                this.$v.form.fee.$model = this.$refs.fee.fee;
+                this.onSubmit();
+            } else {
+                this.step = 1;
+            }
+        }
+    }
 
-		addSeedNode() {
-			if (this.$v.seedNode.$invalid) {
-				return;
-			}
+    addSeedNode() {
+        if (this.$v.seedNode.$invalid) {
+            return;
+        }
 
-			this.$v.form.seedNodes.$model.push({
-				ip: this.seedNode,
-				isInvalid: false,
-			});
+        this.$v.form.seedNodes.$model.push({
+            ip: this.seedNode,
+            isInvalid: false,
+        });
 
-			this.$refs.seedNode.reset();
-			this.$v.seedNode.$reset();
-		},
+        this.$refs.seedNode.reset();
+        this.$v.seedNode.$reset();
+    }
 
-		emitRemoveSeedNode(index) {
-			if (!Object.prototype.hasOwnProperty.call(this.$v.form.seedNodes.$model, index)) {
-				return;
-			}
+    emitRemoveSeedNode(index) {
+        if (!Object.prototype.hasOwnProperty.call(this.$v.form.seedNodes.$model, index)) {
+            return;
+        }
 
-			this.$v.form.seedNodes.$model = [
-				...this.form.seedNodes.slice(0, index),
-				...this.form.seedNodes.slice(index + 1),
-			];
-		},
+        this.$v.form.seedNodes.$model = [
+            ...this.form.seedNodes.slice(0, index),
+            ...this.form.seedNodes.slice(index + 1),
+        ];
+    }
 
-		async validateSeeds() {
-			this.showValidatingModal = true;
+    validateSeeds() {
+        this.showValidatingModal = true;
 
-			const invalidSeeds = [];
-			for (const seedNode of this.form.seedNodes) {
-				let isValid = true;
+        const invalidSeeds = [];
+        for (const seedNode of this.form.seedNodes) {
+            let isValid = true;
 
-				try {
-					const response = await this.$store.dispatch(StoreBinding.PeerValidatePeer, {
-						ip: seedNode.ip,
-						port: this.form.apiPort,
-						nethash: this.form.asset.genesisHash,
-					});
+            try {
+                const response = await this.$store.dispatch(StoreBinding.PeerValidatePeer, {
+                    ip: seedNode.ip,
+                    port: this.form.apiPort,
+                    nethash: this.form.asset.genesisHash,
+                });
 
-					if (response === false || typeof response === "string") {
-						isValid = false;
-					}
-				} catch (error) {
-					isValid = false;
-					this.$logger.error("Could not validate seeds: ", error);
-				}
+                if (response === false || typeof response === "string") {
+                    isValid = false;
+                }
+            } catch (error) {
+                isValid = false;
+                this.$logger.error("Could not validate seeds: ", error);
+            }
 
-				if (!isValid) {
-					seedNode.isInvalid = true;
-					invalidSeeds.push(seedNode);
-				}
-			}
+            if (!isValid) {
+                seedNode.isInvalid = true;
+                invalidSeeds.push(seedNode);
+            }
+        }
 
-			this.invalidSeeds = invalidSeeds;
-			if (invalidSeeds.length) {
-				this.$error(this.$tc("TRANSACTION.BRIDGECHAIN.INVALID_SEEDS", invalidSeeds.length));
-			}
+        this.invalidSeeds = invalidSeeds;
+        if (invalidSeeds.length) {
+            this.$error(this.$tc("TRANSACTION.BRIDGECHAIN.INVALID_SEEDS", invalidSeeds.length));
+        }
 
-			this.showValidatingModal = false;
-		},
-	},
+        this.showValidatingModal = false;
+    }
 
-	validations: {
+    validations = {
 		seedNode: {
 			isUnique(value) {
 				return !this.form.seedNodes.find((seedNode) => seedNode.ip === value);
@@ -605,8 +602,8 @@ export default {
 				},
 			},
 		},
-	},
-};
+	};
+}
 </script>
 
 <style>

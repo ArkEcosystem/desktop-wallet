@@ -114,6 +114,7 @@
 </template>
 
 <script>
+import { Vue, Component, Prop } from "vue-property-decorator";
 import { TRANSACTION_TYPES } from "@config";
 
 import { Collapse } from "@/components/Collapse";
@@ -125,12 +126,10 @@ import WalletAddress from "@/components/Wallet/WalletAddress";
 
 import mixin from "./mixin";
 
-export default {
-	name: "TransactionFormVote",
+@Component({
+    name: "TransactionFormVote",
 
-	transactionType: TRANSACTION_TYPES.GROUP_1.VOTE,
-
-	components: {
+    components: {
 		Collapse,
 		InputFee,
 		InputPassword,
@@ -141,95 +140,9 @@ export default {
 		WalletAddress,
 	},
 
-	mixins: [mixin],
+    mixins: [mixin],
 
-	props: {
-		delegate: {
-			type: Object,
-			required: true,
-		},
-		isVoter: {
-			type: Boolean,
-			required: false,
-			default: false,
-		},
-		votedDelegate: {
-			type: Object,
-			required: false,
-			default: null,
-		},
-	},
-
-	data: () => ({
-		isPassphraseStep: false,
-		form: {
-			fee: 0,
-			passphrase: "",
-			walletPassword: "",
-		},
-		forged: 0,
-		voters: "0",
-	}),
-
-	computed: {
-		delegateStatus() {
-			const activeThreshold = this.session_network.constants.activeDelegates;
-			if (this.delegate.isResigned) {
-				return {
-					text: this.$t("WALLET_DELEGATES.STATUS.RESIGNED"),
-					class: "text-red",
-				};
-			}
-			if (this.delegate.rank && this.delegate.rank <= activeThreshold) {
-				return {
-					text: this.$t("WALLET_DELEGATES.STATUS.ACTIVE"),
-					class: "text-green",
-				};
-			}
-			return {
-				text: this.$t("WALLET_DELEGATES.STATUS.STANDBY"),
-				class: "text-orange",
-			};
-		},
-
-		rankLabel() {
-			if (this.delegate.rank === undefined && this.delegate.isResigned) {
-				return this.$t("WALLET_DELEGATES.RANK_NOT_APPLICABLE");
-			}
-
-			if (this.delegate.rank === undefined) {
-				return this.$t("WALLET_DELEGATES.RANK_NOT_AVAILABLE");
-			}
-
-			return this.delegate.rank;
-		},
-
-		blocksProduced() {
-			if (!this.delegate.blocks || !this.delegate.blocks.produced) {
-				return 0;
-			}
-
-			return this.delegate.blocks.produced;
-		},
-
-		showVoteUnvoteButton() {
-			if (
-				this.currentWallet.isContact ||
-				(!!this.votedDelegate && !this.isVoter) ||
-				(this.delegate.isResigned && !this.isVoter)
-			) {
-				return false;
-			}
-
-			return !this.votedDelegate || (!!this.votedDelegate && this.isVoter);
-		},
-
-		showCurrentlyVoting() {
-			return !!this.votedDelegate && !this.isVoter;
-		},
-	},
-
-	watch: {
+    watch: {
 		isPassphraseStep() {
 			// Ignore Ledger wallets
 			if (this.currentWallet.isLedger || this.isMultiSignature) {
@@ -243,85 +156,173 @@ export default {
 				this.$refs.passphrase.focus();
 			}
 		},
-	},
+	}
+})
+export default class TransactionFormVote extends Vue {
+    transactionType = TRANSACTION_TYPES.GROUP_1.VOTE;
 
-	mounted() {
+    @Prop({
+        type: Object,
+        required: true,
+    })
+    delegate;
+
+    @Prop({
+        type: Boolean,
+        required: false,
+        default: false,
+    })
+    isVoter;
+
+    @Prop({
+        type: Object,
+        required: false,
+        default: null,
+    })
+    votedDelegate;
+
+    isPassphraseStep = false;
+
+    form = {
+        fee: 0,
+        passphrase: "",
+        walletPassword: "",
+    };
+
+    forged = 0;
+    voters = "0";
+
+    get delegateStatus() {
+        const activeThreshold = this.session_network.constants.activeDelegates;
+        if (this.delegate.isResigned) {
+            return {
+                text: this.$t("WALLET_DELEGATES.STATUS.RESIGNED"),
+                class: "text-red",
+            };
+        }
+        if (this.delegate.rank && this.delegate.rank <= activeThreshold) {
+            return {
+                text: this.$t("WALLET_DELEGATES.STATUS.ACTIVE"),
+                class: "text-green",
+            };
+        }
+        return {
+            text: this.$t("WALLET_DELEGATES.STATUS.STANDBY"),
+            class: "text-orange",
+        };
+    }
+
+    get rankLabel() {
+        if (this.delegate.rank === undefined && this.delegate.isResigned) {
+            return this.$t("WALLET_DELEGATES.RANK_NOT_APPLICABLE");
+        }
+
+        if (this.delegate.rank === undefined) {
+            return this.$t("WALLET_DELEGATES.RANK_NOT_AVAILABLE");
+        }
+
+        return this.delegate.rank;
+    }
+
+    get blocksProduced() {
+        if (!this.delegate.blocks || !this.delegate.blocks.produced) {
+            return 0;
+        }
+
+        return this.delegate.blocks.produced;
+    }
+
+    get showVoteUnvoteButton() {
+        if (
+            this.currentWallet.isContact ||
+            (!!this.votedDelegate && !this.isVoter) ||
+            (this.delegate.isResigned && !this.isVoter)
+        ) {
+            return false;
+        }
+
+        return !this.votedDelegate || (!!this.votedDelegate && this.isVoter);
+    }
+
+    get showCurrentlyVoting() {
+        return !!this.votedDelegate && !this.isVoter;
+    }
+
+    mounted() {
 		this.fetchForged();
 		this.fetchVoters();
-	},
+	}
 
-	methods: {
-		getTransactionData() {
-			const transactionData = {
-				address: this.currentWallet.address,
-				passphrase: this.form.passphrase,
-				votes: [`${this.isVoter ? "-" : "+"}${this.delegate.publicKey}`],
-				fee: this.getFee(),
-				wif: this.form.wif,
-				networkWif: this.walletNetwork.wif,
-				multiSignature: this.currentWallet.multiSignature,
-			};
+    getTransactionData() {
+        const transactionData = {
+            address: this.currentWallet.address,
+            passphrase: this.form.passphrase,
+            votes: [`${this.isVoter ? "-" : "+"}${this.delegate.publicKey}`],
+            fee: this.getFee(),
+            wif: this.form.wif,
+            networkWif: this.walletNetwork.wif,
+            multiSignature: this.currentWallet.multiSignature,
+        };
 
-			if (this.currentWallet.secondPublicKey) {
-				transactionData.secondPassphrase = this.form.secondPassphrase;
-			}
+        if (this.currentWallet.secondPublicKey) {
+            transactionData.secondPassphrase = this.form.secondPassphrase;
+        }
 
-			return transactionData;
-		},
+        return transactionData;
+    }
 
-		async buildTransaction(transactionData, isAdvancedFee = false, returnObject = false) {
-			return this.$client.buildVote(transactionData, isAdvancedFee, returnObject);
-		},
+    buildTransaction(transactionData, isAdvancedFee = false, returnObject = false) {
+        return this.$client.buildVote(transactionData, isAdvancedFee, returnObject);
+    }
 
-		transactionError() {
-			this.$error(this.$t("TRANSACTION.ERROR.VALIDATION.VOTE"));
-		},
+    transactionError() {
+        this.$error(this.$t("TRANSACTION.ERROR.VALIDATION.VOTE"));
+    }
 
-		postSubmit() {
-			this.reset();
-		},
+    postSubmit() {
+        this.reset();
+    }
 
-		toggleStep() {
-			this.isPassphraseStep = !this.isPassphraseStep;
-		},
+    toggleStep() {
+        this.isPassphraseStep = !this.isPassphraseStep;
+    }
 
-		fetchForged() {
-			const forged = this.$client.fetchDelegateForged(this.delegate);
-			this.forged = this.currency_format(this.currency_subToUnit(forged), { currencyFrom: "network" });
-		},
+    fetchForged() {
+        const forged = this.$client.fetchDelegateForged(this.delegate);
+        this.forged = this.currency_format(this.currency_subToUnit(forged), { currencyFrom: "network" });
+    }
 
-		async fetchVoters() {
-			this.voters = (await this.$client.fetchDelegateVoters(this.delegate)) || "0";
-		},
+    fetchVoters() {
+        this.voters = (await this.$client.fetchDelegateVoters(this.delegate)) || "0";
+    }
 
-		reset() {
-			this.isPassphraseStep = false;
-			if (!this.isMultiSignature) {
-				if (!this.currentWallet.passphrase && !this.currentWallet.isLedger) {
-					this.$set(this.form, "passphrase", "");
-					this.$refs.passphrase.reset();
-				} else if (!this.currentWallet.isLedger) {
-					this.$set(this.form, "walletPassword", "");
-					this.$refs.password.reset();
-				}
-			}
-			this.$v.$reset();
-		},
+    reset() {
+        this.isPassphraseStep = false;
+        if (!this.isMultiSignature) {
+            if (!this.currentWallet.passphrase && !this.currentWallet.isLedger) {
+                this.$set(this.form, "passphrase", "");
+                this.$refs.passphrase.reset();
+            } else if (!this.currentWallet.isLedger) {
+                this.$set(this.form, "walletPassword", "");
+                this.$refs.password.reset();
+            }
+        }
+        this.$v.$reset();
+    }
 
-		emitCancel() {
-			this.$emit("cancel", "navigateToTransactions");
-		},
-	},
+    emitCancel() {
+        this.$emit("cancel", "navigateToTransactions");
+    }
 
-	validations: {
+    validations = {
 		form: {
 			fee: mixin.validators.fee,
 			passphrase: mixin.validators.passphrase,
 			walletPassword: mixin.validators.walletPassword,
 			secondPassphrase: mixin.validators.secondPassphrase,
 		},
-	},
-};
+	};
+}
 </script>
 
 <style scoped>

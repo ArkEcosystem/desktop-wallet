@@ -46,30 +46,29 @@
 </template>
 
 <script>
+import { Vue, Component } from "vue-property-decorator";
 import { TRANSACTION_TYPES } from "@config";
 
 import { ListDivided, ListDividedItem } from "@/components/ListDivided";
 
-export default {
-	name: "TransactionConfirmTransfer",
+@Component({
+    name: "TransactionConfirmTransfer",
+    inject: ["currentWallet", "transaction"],
 
-	transactionType: TRANSACTION_TYPES.GROUP_1.TRANSFER,
-
-	inject: ["currentWallet", "transaction"],
-
-	components: {
+    components: {
 		ListDivided,
 		ListDividedItem,
-	},
+	}
+})
+export default class TransactionConfirmTransfer extends Vue {
+    transactionType = TRANSACTION_TYPES.GROUP_1.TRANSFER;
 
-	computed: {
-		recipientLabel() {
-			return this.wallet_formatAddress(this.transaction.recipientId);
-		},
+    get recipientLabel() {
+        return this.wallet_formatAddress(this.transaction.recipientId);
+    }
 
-		senderLabel() {
-			return this.wallet_formatAddress(this.currentWallet.address);
-		},
-	},
-};
+    get senderLabel() {
+        return this.wallet_formatAddress(this.currentWallet.address);
+    }
+}
 </script>

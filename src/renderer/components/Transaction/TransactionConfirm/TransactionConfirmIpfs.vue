@@ -16,26 +16,25 @@
 </template>
 
 <script>
+import { Vue, Component } from "vue-property-decorator";
 import { TRANSACTION_TYPES } from "@config";
 
 import { ListDivided, ListDividedItem } from "@/components/ListDivided";
 
-export default {
-	name: "TransactionConfirmIpfs",
+@Component({
+    name: "TransactionConfirmIpfs",
+    inject: ["currentWallet"],
 
-	transactionType: TRANSACTION_TYPES.GROUP_1.IPFS,
-
-	inject: ["currentWallet"],
-
-	components: {
+    components: {
 		ListDivided,
 		ListDividedItem,
-	},
+	}
+})
+export default class TransactionConfirmIpfs extends Vue {
+    transactionType = TRANSACTION_TYPES.GROUP_1.IPFS;
 
-	computed: {
-		senderLabel() {
-			return this.wallet_formatAddress(this.currentWallet.address);
-		},
-	},
-};
+    get senderLabel() {
+        return this.wallet_formatAddress(this.currentWallet.address);
+    }
+}
 </script>

@@ -18,68 +18,74 @@
 </template>
 
 <script>
+import { Vue, Component, Prop } from "vue-property-decorator";
 import { InputEditableList } from "@/components/Input";
 
-export default {
-	name: "TransactionPeerList",
+@Component({
+    name: "TransactionPeerList",
 
-	components: {
+    components: {
 		InputEditableList,
-	},
+	}
+})
+export default class TransactionPeerList extends Vue {
+    @Prop({
+        type: String,
+        required: false,
+        default: "Peers",
+    })
+    title;
 
-	props: {
-		title: {
-			type: String,
-			required: false,
-			default: "Peers",
-		},
+    @Prop({
+        type: Array,
+        required: true,
+    })
+    items;
 
-		items: {
-			type: Array,
-			required: true,
-		},
+    @Prop({
+        type: Number,
+        required: false,
+        default: null,
+    })
+    maxItems;
 
-		maxItems: {
-			type: Number,
-			required: false,
-			default: null,
-		},
+    @Prop({
+        type: Boolean,
+        required: false,
+        default: false,
+    })
+    showCount;
 
-		showCount: {
-			type: Boolean,
-			required: false,
-			default: false,
-		},
+    @Prop({
+        type: Boolean,
+        required: false,
+        default: false,
+    })
+    readonly;
 
-		readonly: {
-			type: Boolean,
-			required: false,
-			default: false,
-		},
+    @Prop({
+        type: Boolean,
+        required: false,
+        default: false,
+    })
+    required;
 
-		required: {
-			type: Boolean,
-			required: false,
-			default: false,
-		},
+    @Prop({
+        type: String,
+        required: false,
+        default: null,
+    })
+    helperText;
 
-		helperText: {
-			type: String,
-			required: false,
-			default: null,
-		},
+    @Prop({
+        type: Boolean,
+        required: false,
+        default: false,
+    })
+    isInvalid;
 
-		isInvalid: {
-			type: Boolean,
-			required: false,
-			default: false,
-		},
-	},
-
-	methods: {
-		emitRemove(index) {
-			this.$emit("remove", index);
-		},
-	},
-};
+    emitRemove(index) {
+        this.$emit("remove", index);
+    }
+}
 </script>

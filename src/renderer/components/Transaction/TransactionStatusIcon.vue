@@ -45,75 +45,88 @@
 </template>
 
 <script>
+import { Vue, Component, Prop } from "vue-property-decorator";
 import { at } from "lodash";
 
 import SvgIcon from "@/components/SvgIcon";
 import TransactionService from "@/services/transaction";
 
-export default {
-	name: "TransactionStatusIcon",
+@Component({
+    name: "TransactionStatusIcon",
 
-	components: {
+    components: {
 		SvgIcon,
-	},
+	}
+})
+export default class TransactionStatusIcon extends Vue {
+    @Prop({
+        type: Boolean,
+        required: false,
+        default: false,
+    })
+    isSender;
 
-	props: {
-		isSender: {
-			type: Boolean,
-			required: false,
-			default: false,
-		},
-		isRecipient: {
-			type: Boolean,
-			required: false,
-			default: false,
-		},
-		type: {
-			type: Number,
-			required: false,
-			default: null,
-		},
-		typeGroup: {
-			type: Number,
-			required: false,
-			default: null,
-		},
-		confirmations: {
-			type: Number,
-			required: false,
-			default: 0,
-		},
-		showWaitingConfirmations: {
-			type: Boolean,
-			required: false,
-			default: true,
-		},
-		showTooltip: {
-			type: Boolean,
-			required: false,
-			default: false,
-		},
-		tooltipContainer: {
-			type: String,
-			required: false,
-			default: undefined,
-		},
-	},
+    @Prop({
+        type: Boolean,
+        required: false,
+        default: false,
+    })
+    isRecipient;
 
-	computed: {
-		isTransferToSelf() {
-			return this.isSender === this.isRecipient && TransactionService.isTransfer(this.$options.propsData);
-		},
+    @Prop({
+        type: Number,
+        required: false,
+        default: null,
+    })
+    type;
 
-		isWellConfirmed() {
-			return this.confirmations >= this.numberOfActiveDelegates;
-		},
+    @Prop({
+        type: Number,
+        required: false,
+        default: null,
+    })
+    typeGroup;
 
-		numberOfActiveDelegates() {
-			return at(this, "session_network.constants.activeDelegates") || 51;
-		},
-	},
-};
+    @Prop({
+        type: Number,
+        required: false,
+        default: 0,
+    })
+    confirmations;
+
+    @Prop({
+        type: Boolean,
+        required: false,
+        default: true,
+    })
+    showWaitingConfirmations;
+
+    @Prop({
+        type: Boolean,
+        required: false,
+        default: false,
+    })
+    showTooltip;
+
+    @Prop({
+        type: String,
+        required: false,
+        default: undefined,
+    })
+    tooltipContainer;
+
+    get isTransferToSelf() {
+        return this.isSender === this.isRecipient && TransactionService.isTransfer(this.$options.propsData);
+    }
+
+    get isWellConfirmed() {
+        return this.confirmations >= this.numberOfActiveDelegates;
+    }
+
+    get numberOfActiveDelegates() {
+        return at(this, "session_network.constants.activeDelegates") || 51;
+    }
+}
 </script>
 
 <style scoped>

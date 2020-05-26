@@ -42,6 +42,7 @@
 </template>
 
 <script>
+import { Vue, Component, Prop } from "vue-property-decorator";
 /* eslint-disable vue/no-unused-components */
 import { TRANSACTION_GROUPS } from "@config";
 
@@ -60,17 +61,10 @@ import TransactionConfirmSecondSignature from "./TransactionConfirmSecondSignatu
 import TransactionConfirmTransfer from "./TransactionConfirmTransfer";
 import TransactionConfirmVote from "./TransactionConfirmVote";
 
-export default {
-	name: "TransactionConfirm",
+@Component({
+    name: "TransactionConfirm",
 
-	provide() {
-		return {
-			currentWallet: this.currentWallet,
-			transaction: this.transaction,
-		};
-	},
-
-	components: {
+    components: {
 		TransactionConfirmDelegateRegistration,
 		TransactionConfirmDelegateResignation,
 		TransactionConfirmIpfs,
@@ -83,52 +77,59 @@ export default {
 		...TransactionConfirmBridgechain,
 		TransactionDetail,
 		SvgIcon,
-	},
+	}
+})
+export default class TransactionConfirm extends Vue {
+    provide() {
+		return {
+			currentWallet: this.currentWallet,
+			transaction: this.transaction,
+		};
+	}
 
-	props: {
-		transaction: {
-			type: Object,
-			required: true,
-		},
-		wallet: {
-			type: Object,
-			required: false,
-			default: null,
-		},
-	},
+    @Prop({
+        type: Object,
+        required: true,
+    })
+    transaction;
 
-	data: () => ({
-		activeComponent: null,
-		wasClicked: false,
-	}),
+    @Prop({
+        type: Object,
+        required: false,
+        default: null,
+    })
+    wallet;
 
-	computed: {
-		totalAmount() {
-			let amount = this.currency_toBuilder(this.transaction.fee);
+    activeComponent = null;
+    wasClicked = false;
 
-			if (this.transaction.asset && this.transaction.asset.payments) {
-				for (const payment of this.transaction.asset.payments) {
-					amount = amount.plus(payment.amount);
-				}
-			} else if (this.transaction.amount) {
-				amount = amount.plus(this.transaction.amount);
-			}
+    get totalAmount() {
+        let amount = this.currency_toBuilder(this.transaction.fee);
 
-			return amount;
-		},
+        if (this.transaction.asset && this.transaction.asset.payments) {
+            for (const payment of this.transaction.asset.payments) {
+                amount = amount.plus(payment.amount);
+            }
+        } else if (this.transaction.amount) {
+            amount = amount.plus(this.transaction.amount);
+        }
 
-		currentWallet() {
-			return this.wallet || this.wallet_fromRoute;
-		},
-		address() {
-			return this.currentWallet.address;
-		},
-		showSave() {
-			return !TransactionService.isMultiSignature(this.transaction);
-		},
-	},
+        return amount;
+    }
 
-	mounted() {
+    get currentWallet() {
+        return this.wallet || this.wallet_fromRoute;
+    }
+
+    get address() {
+        return this.currentWallet.address;
+    }
+
+    get showSave() {
+        return !TransactionService.isMultiSignature(this.transaction);
+    }
+
+    mounted() {
 		const transactionGroup = this.transaction.typeGroup || TRANSACTION_GROUPS.STANDARD;
 		const component = Object.values(this.$options.components).find((component) => {
 			const group = component.transactionGroup || TRANSACTION_GROUPS.STANDARD;
@@ -143,34 +144,32 @@ export default {
 		}
 
 		this.activeComponent = component.name;
-	},
+	}
 
-	methods: {
-		emitBack() {
-			this.$emit("back");
-		},
+    emitBack() {
+        this.$emit("back");
+    }
 
-		emitConfirm() {
-			if (!this.wasClicked) {
-				this.wasClicked = true;
+    emitConfirm() {
+        if (!this.wasClicked) {
+            this.wasClicked = true;
 
-				this.$emit("confirm");
-			}
-		},
+            this.$emit("confirm");
+        }
+    }
 
-		async saveTransaction() {
-			const raw = JSON.stringify(this.transaction);
-			const defaultPath = `${this.transaction.id}.json`;
+    saveTransaction() {
+        const raw = JSON.stringify(this.transaction);
+        const defaultPath = `${this.transaction.id}.json`;
 
-			try {
-				const path = await this.electron_writeFile(raw, defaultPath);
-				this.$success(this.$t("TRANSACTION.SUCCESS.SAVE_OFFLINE", { path }));
-			} catch (e) {
-				this.$error(this.$t("TRANSACTION.ERROR.SAVE_OFFLINE", { error: e.message }));
-			}
-		},
-	},
-};
+        try {
+            const path = await this.electron_writeFile(raw, defaultPath);
+            this.$success(this.$t("TRANSACTION.SUCCESS.SAVE_OFFLINE", { path }));
+        } catch (e) {
+            this.$error(this.$t("TRANSACTION.ERROR.SAVE_OFFLINE", { error: e.message }));
+        }
+    }
+}
 </script>
 
 <style lang="postcss" scoped>

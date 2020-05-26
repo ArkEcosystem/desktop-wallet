@@ -23,34 +23,33 @@
 </template>
 
 <script>
+import { Vue, Component } from "vue-property-decorator";
 import { TRANSACTION_TYPES } from "@config";
 
 import { ListDivided, ListDividedItem } from "@/components/ListDivided";
 
-export default {
-	name: "TransactionConfirmDelegateRegistration",
+@Component({
+    name: "TransactionConfirmDelegateRegistration",
+    inject: ["currentWallet", "transaction"],
 
-	transactionType: TRANSACTION_TYPES.GROUP_1.DELEGATE_REGISTRATION,
-
-	inject: ["currentWallet", "transaction"],
-
-	components: {
+    components: {
 		ListDivided,
 		ListDividedItem,
-	},
+	}
+})
+export default class TransactionConfirmDelegateRegistration extends Vue {
+    transactionType = TRANSACTION_TYPES.GROUP_1.DELEGATE_REGISTRATION;
 
-	computed: {
-		senderLabel() {
-			return this.wallet_formatAddress(this.currentWallet.address);
-		},
+    get senderLabel() {
+        return this.wallet_formatAddress(this.currentWallet.address);
+    }
 
-		username() {
-			if (this.transaction.asset && this.transaction.asset.delegate) {
-				return this.transaction.asset.delegate.username;
-			}
+    get username() {
+        if (this.transaction.asset && this.transaction.asset.delegate) {
+            return this.transaction.asset.delegate.username;
+        }
 
-			return "";
-		},
-	},
-};
+        return "";
+    }
+}
 </script>

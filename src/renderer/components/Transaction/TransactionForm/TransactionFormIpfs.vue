@@ -79,6 +79,7 @@
 </template>
 
 <script>
+import { Vue, Component } from "vue-property-decorator";
 import { TRANSACTION_TYPES } from "@config";
 
 import { InputFee, InputPassword, InputText } from "@/components/Input";
@@ -88,12 +89,10 @@ import { PassphraseInput } from "@/components/Passphrase";
 
 import mixin from "./mixin";
 
-export default {
-	name: "TransactionFormIpfs",
+@Component({
+    name: "TransactionFormIpfs",
 
-	transactionType: TRANSACTION_TYPES.GROUP_1.IPFS,
-
-	components: {
+    components: {
 		InputFee,
 		InputPassword,
 		InputText,
@@ -103,56 +102,53 @@ export default {
 		PassphraseInput,
 	},
 
-	mixins: [mixin],
+    mixins: [mixin]
+})
+export default class TransactionFormIpfs extends Vue {
+    transactionType = TRANSACTION_TYPES.GROUP_1.IPFS;
 
-	data: () => ({
-		form: {
-			fee: 0,
-			hash: "",
-			passphrase: "",
-			walletPassword: "",
-		},
-	}),
+    form = {
+        fee: 0,
+        hash: "",
+        passphrase: "",
+        walletPassword: "",
+    };
 
-	computed: {
-		hashError() {
-			if (this.$v.form.hash.$dirty && !this.$v.form.hash.isValid) {
-				return this.$t("WALLET_IPFS.HASH_ERROR");
-			}
+    get hashError() {
+        if (this.$v.form.hash.$dirty && !this.$v.form.hash.isValid) {
+            return this.$t("WALLET_IPFS.HASH_ERROR");
+        }
 
-			return null;
-		},
-	},
+        return null;
+    }
 
-	methods: {
-		getTransactionData() {
-			const transactionData = {
-				address: this.currentWallet.address,
-				hash: this.form.hash,
-				passphrase: this.form.passphrase,
-				fee: this.getFee(),
-				wif: this.form.wif,
-				networkWif: this.walletNetwork.wif,
-				multiSignature: this.currentWallet.multiSignature,
-			};
+    getTransactionData() {
+        const transactionData = {
+            address: this.currentWallet.address,
+            hash: this.form.hash,
+            passphrase: this.form.passphrase,
+            fee: this.getFee(),
+            wif: this.form.wif,
+            networkWif: this.walletNetwork.wif,
+            multiSignature: this.currentWallet.multiSignature,
+        };
 
-			if (this.currentWallet.secondPublicKey) {
-				transactionData.secondPassphrase = this.form.secondPassphrase;
-			}
+        if (this.currentWallet.secondPublicKey) {
+            transactionData.secondPassphrase = this.form.secondPassphrase;
+        }
 
-			return transactionData;
-		},
+        return transactionData;
+    }
 
-		async buildTransaction(transactionData, isAdvancedFee = false, returnObject = false) {
-			return this.$client.buildIpfs(transactionData, isAdvancedFee, returnObject);
-		},
+    buildTransaction(transactionData, isAdvancedFee = false, returnObject = false) {
+        return this.$client.buildIpfs(transactionData, isAdvancedFee, returnObject);
+    }
 
-		transactionError() {
-			this.$error(this.$t("TRANSACTION.ERROR.VALIDATION.IPFS"));
-		},
-	},
+    transactionError() {
+        this.$error(this.$t("TRANSACTION.ERROR.VALIDATION.IPFS"));
+    }
 
-	validations: {
+    validations = {
 		form: {
 			fee: mixin.validators.fee,
 			passphrase: mixin.validators.passphrase,
@@ -165,6 +161,6 @@ export default {
 				},
 			},
 		},
-	},
-};
+	};
+}
 </script>
