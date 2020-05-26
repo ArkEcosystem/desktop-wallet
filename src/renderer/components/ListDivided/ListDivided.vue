@@ -21,8 +21,7 @@ import ListDividedItem from "./ListDividedItem";
 })
 export default class ListDivided extends Vue {
 	@Prop({ default: false }) public isFloatingLabel!: boolean;
-	@Prop() public items: object | null = null;
-
+	@Prop({ default: null }) public items!: object | null;
 	@Provide("isFloatingLabel") public isFloatingLabelData = this.isFloatingLabel;
 }
 </script>
