@@ -5,7 +5,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue, Watch } from "vue-property-decorator";
+import { Component, Prop, Provide, Vue, Watch } from "vue-property-decorator";
 
 import { isEmpty } from "@/utils";
 
@@ -18,12 +18,6 @@ import { isEmpty } from "@/utils";
 	},
 })
 export default class CollapseAccordion extends Vue {
-	provide() {
-		return {
-			collapseClick: this.collapseClick,
-		};
-	}
-
 	@Prop({
 		type: [String, Number],
 		required: false,
@@ -71,7 +65,7 @@ export default class CollapseAccordion extends Vue {
 		this.toggleCollapse();
 	}
 
-	// Called by the child
+	@Provide('collapseClick')
 	collapseClick(id) {
 		this.$nextTick(() => (this.inputId = id));
 	}

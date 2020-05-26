@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import { Component, Prop, Vue, Watch } from "vue-property-decorator";
+import { Component, Prop, Provide, Vue, Watch } from "vue-property-decorator";
 
 @Component({
 	name: "MenuNavigation",
@@ -16,12 +16,6 @@ import { Component, Prop, Vue, Watch } from "vue-property-decorator";
 	},
 })
 export default class MenuNavigation extends Vue {
-	provide() {
-		return {
-			switchToItem: this.switchToItem,
-		};
-	}
-
 	@Prop({
 		type: [Number, String],
 		required: false,
@@ -62,6 +56,7 @@ export default class MenuNavigation extends Vue {
 		this.activeId = itemId;
 	}
 
+	@Provide('switchToItem')
 	switchToItem(itemId) {
 		if (this.activeId !== itemId) {
 			this.activateItem(itemId);

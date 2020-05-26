@@ -23,7 +23,7 @@
 
 <script>
 import { DateTime } from "@arkecosystem/platform-sdk-intl";
-import { Component, Prop, Vue, Watch } from "vue-property-decorator";
+import { Component, Prop, Provide, Vue, Watch } from "vue-property-decorator";
 
 import LineChart from "@/components/utils/LineChart";
 import Loader from "@/components/utils/Loader";
@@ -38,13 +38,6 @@ import priceApi from "@/services/price-api";
 	},
 })
 export default class MarketChart extends Vue {
-	provide() {
-		return {
-			getPeriod: this.getPeriod,
-			getIsExpanded: this.getIsExpanded,
-		};
-	}
-
 	@Prop({
 		type: String,
 		required: true,
@@ -362,10 +355,12 @@ export default class MarketChart extends Vue {
 		this.gradient.addColorStop(1, this.colours.gradient[3]);
 	}
 
+	@Provide('getPeriod')
 	getPeriod() {
 		return this.period;
 	}
 
+	@Provide('getIsExpanded')
 	getIsExpanded() {
 		return this.isExpanded;
 	}

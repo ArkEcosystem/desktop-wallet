@@ -114,7 +114,7 @@
 <script>
 import { remote } from "electron";
 import { at } from "lodash";
-import { Component, Prop, Vue, Watch } from "vue-property-decorator";
+import { Component, Provide, Vue, Watch } from "vue-property-decorator";
 
 /* eslint-disable vue/no-unused-components */
 import { ButtonGeneric } from "@/components/Button";
@@ -157,15 +157,9 @@ import {
 	},
 })
 export default class AnonymousComponent extends Vue {
-	provide() {
-		return {
-			switchToTab: this.switchToTab,
-			walletVote: this.walletVote,
-		};
-	}
-
 	currentTab = "";
 
+	@Provide('walletVote')
 	walletVote = {
 		username: null,
 	};
@@ -382,6 +376,7 @@ export default class AnonymousComponent extends Vue {
 		}
 	}
 
+	@Provide('switchToTab')
 	switchToTab(component) {
 		if (this.tabs.map((tab) => tab.componentName).includes(component)) {
 			this.currentTab = component;

@@ -88,7 +88,7 @@ export default class MenuNavigationItem extends Vue {
 
 	onClick() {
 		if (this.canActivate) {
-			this.$parent.switchToItem(this.id);
+			this.switchToItem(this.id);
 		}
 
 		this.$emit("click", this.id);

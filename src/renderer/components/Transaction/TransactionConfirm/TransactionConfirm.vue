@@ -44,7 +44,7 @@
 <script>
 /* eslint-disable vue/no-unused-components */
 import { TRANSACTION_GROUPS } from "@config";
-import { Component, Prop, Vue } from "vue-property-decorator";
+import { Component, Prop, Provide, Vue } from "vue-property-decorator";
 
 import SvgIcon from "@/components/SvgIcon";
 import TransactionService from "@/services/transaction";
@@ -80,13 +80,7 @@ import TransactionConfirmVote from "./TransactionConfirmVote";
 	},
 })
 export default class TransactionConfirm extends Vue {
-	provide() {
-		return {
-			currentWallet: this.currentWallet,
-			transaction: this.transaction,
-		};
-	}
-
+	@Provide('transaction')
 	@Prop({
 		type: Object,
 		required: true,
@@ -117,6 +111,7 @@ export default class TransactionConfirm extends Vue {
 		return amount;
 	}
 
+	@Provide('currentWallet')
 	get currentWallet() {
 		return this.wallet || this.wallet_fromRoute;
 	}
