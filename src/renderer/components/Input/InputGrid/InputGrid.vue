@@ -32,7 +32,8 @@
 	</div>
 </template>
 
-<script>
+<script lang="ts">
+import { Vue, Component, Prop } from "vue-property-decorator";
 import { flatten } from "@/utils";
 
 import InputGridItem from "./InputGridItem";
@@ -42,108 +43,121 @@ import InputGridModal from "./InputGridModal";
  * The InputGrid displays a grid of items. One of those items could be selected
  * by clicking on it.
  */
-export default {
-	name: "InputGrid",
+@Component({
+    name: "InputGrid",
 
-	components: {
+    components: {
 		InputGridItem,
 		InputGridModal,
-	},
+	}
+})
+export default class InputGrid extends Vue {
+    @Prop({
+        type: [Array, Object],
+        required: true,
+    })
+    items;
 
-	props: {
-		items: {
-			type: [Array, Object],
-			required: true,
-		},
-		// Attributes that would be yielded when using the `item` slot
-		itemAttrs: {
-			type: Array,
-			required: false,
-			default: () => ["title", "imagePath"],
-		},
-		itemKey: {
-			type: String,
-			required: true,
-		},
-		selected: {
-			type: Object,
-			required: false,
-			default: null,
-		},
-		modalContainerClasses: {
-			type: String,
-			required: false,
-			default: null,
-		},
-		modalHeaderText: {
-			type: String,
-			required: false,
-			default: null,
-		},
-		autoSelectFirst: {
-			type: Boolean,
-			required: false,
-			default: false,
-		},
-	},
+    // Attributes that would be yielded when using the `item` slot
+    @Prop({
+        type: Array,
+        required: false,
+        default: () => ["title", "imagePath"],
+    })
+    itemAttrs;
 
-	data() {
+    @Prop({
+        type: String,
+        required: true,
+    })
+    itemKey;
+
+    @Prop({
+        type: Object,
+        required: false,
+        default: null,
+    })
+    selected;
+
+    @Prop({
+        type: String,
+        required: false,
+        default: null,
+    })
+    modalContainerClasses;
+
+    @Prop({
+        type: String,
+        required: false,
+        default: null,
+    })
+    modalHeaderText;
+
+    @Prop({
+        type: Boolean,
+        required: false,
+        default: false,
+    })
+    autoSelectFirst;
+
+    isModalOpen = null;
+
+    // vue-convert: This property will initialized in data() method, with `this` reference.
+    selectedItem = undefined;
+
+    data() {
 		return {
-			isModalOpen: null,
-			selectedItem: this.selected,
-		};
-	},
+            selectedItem: this.selected
+        };
+	}
 
-	computed: {
-		allItems() {
-			return flatten(Object.values(this.items));
-		},
+    get allItems() {
+        return flatten(Object.values(this.items));
+    }
 
-		activeItem() {
-			return this.allItems.find((item) => {
-				if (!this.selectedItem || this.selectedItem.onlyLetter) {
-					return item.onlyLetter;
-				}
+    get activeItem() {
+        return this.allItems.find((item) => {
+            if (!this.selectedItem || this.selectedItem.onlyLetter) {
+                return item.onlyLetter;
+            }
 
-				return this.selectedItem.pluginId
-					? item.name === this.selectedItem.name
-					: item.title === this.selectedItem.title;
-			});
-		},
-	},
+            return this.selectedItem.pluginId
+                ? item.name === this.selectedItem.name
+                : item.title === this.selectedItem.title;
+        });
+    }
 
-	mounted() {
+    mounted() {
 		if (this.autoSelectFirst && !this.selected) {
 			this.select(this.allItems[0]);
 		}
-	},
+	}
 
-	methods: {
-		/**
-		 * Returns an Object with `{ attributeName: attributeValue }` for each item.
-		 * This could be used later on the `item` slot.
-		 * @return {Object}
-		 */
-		itemSlotAttrs(item) {
-			return this.itemAttrs.reduce((itemAttrs, attr) => {
-				itemAttrs[attr] = item[attr];
-				return itemAttrs;
-			}, {});
-		},
+    //*
+             * Returns an Object with `{ attributeName: attributeValue }` for each item.
+             * This could be used later on the `item` slot.
+             * @return {Object}
 
-		openModal() {
-			this.isModalOpen = true;
-		},
-		closeModal() {
-			this.isModalOpen = false;
-		},
+    itemSlotAttrs(item) {
+        return this.itemAttrs.reduce((itemAttrs, attr) => {
+            itemAttrs[attr] = item[attr];
+            return itemAttrs;
+        }, {});
+    }
 
-		select(item) {
-			this.selectedItem = item;
-			this.$emit("input", this.activeItem);
-		},
-	},
-};
+    openModal() {
+        this.isModalOpen = true;
+    }
+
+    closeModal() {
+        this.isModalOpen = false;
+    }
+
+    select(item) {
+        this.selectedItem = item;
+        this.$emit("input", this.activeItem);
+    }
+}
 </script>
 
 <style lang="postcss" scoped>

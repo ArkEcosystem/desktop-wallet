@@ -36,7 +36,7 @@
 	</InputField>
 </template>
 
-<script>
+<script lang="ts">
 import WalletService from "@/services/wallet";
 
 import InputField from "./InputField";

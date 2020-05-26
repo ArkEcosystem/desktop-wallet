@@ -12,7 +12,7 @@
 	</span>
 </template>
 
-<script>
+<script lang="ts">
 import InputToggleChoice from "./InputToggleChoice";
 
 export default {

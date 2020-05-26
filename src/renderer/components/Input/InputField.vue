@@ -31,54 +31,65 @@
 	</section>
 </template>
 
-<script>
-export default {
-	name: "InputField",
+<script lang="ts">
+import { Component, Prop,Vue } from "vue-property-decorator";
+@Component({
+    name: "InputField"
+})
+export default class InputField extends Vue {
+    @Prop({
+        type: String,
+        required: false,
+        default: null,
+    })
+    label;
 
-	props: {
-		label: {
-			type: String,
-			required: false,
-			default: null,
-		},
-		helperText: {
-			type: String,
-			required: false,
-			default: null,
-		},
-		isDirty: {
-			type: Boolean,
-			required: false,
-			default: false,
-		},
-		isDisabled: {
-			type: Boolean,
-			required: false,
-			default: false,
-		},
-		isFocused: {
-			type: Boolean,
-			required: false,
-			default: false,
-		},
-		isInvalid: {
-			type: Boolean,
-			required: false,
-			default: false,
-		},
-		warningText: {
-			type: String,
-			required: false,
-			default: null,
-		},
-	},
+    @Prop({
+        type: String,
+        required: false,
+        default: null,
+    })
+    helperText;
 
-	computed: {
-		inputClass() {
-			return "InputField__input w-full pt-3 left-0 bg-transparent transition border-b border-theme-input-field-border text-theme-page-text hover:border-theme-page-text focus:border-blue h-10";
-		},
-	},
-};
+    @Prop({
+        type: Boolean,
+        required: false,
+        default: false,
+    })
+    isDirty;
+
+    @Prop({
+        type: Boolean,
+        required: false,
+        default: false,
+    })
+    isDisabled;
+
+    @Prop({
+        type: Boolean,
+        required: false,
+        default: false,
+    })
+    isFocused;
+
+    @Prop({
+        type: Boolean,
+        required: false,
+        default: false,
+    })
+    isInvalid;
+
+    @Prop({
+        type: String,
+        required: false,
+        default: null,
+    })
+    warningText;
+
+    get inputClass() {
+        return "InputField__input w-full pt-3 left-0 bg-transparent transition border-b border-theme-input-field-border text-theme-page-text hover:border-theme-page-text focus:border-blue h-10";
+    }
+}
 </script>
 
 <style lang="postcss" scoped>

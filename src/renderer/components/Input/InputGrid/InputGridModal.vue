@@ -33,7 +33,9 @@
 	</ModalWindow>
 </template>
 
-<script>
+<script lang="ts">
+import { Component, Prop,Vue } from "vue-property-decorator";
+
 import ModalWindow from "@/components/Modal/ModalWindow";
 
 import InputGridItem from "./InputGridItem";
@@ -42,67 +44,76 @@ import InputGridItem from "./InputGridItem";
  * This component only emits the `selected` event when the background has been
  * confirmed.
  */
-export default {
-	name: "InputGridModal",
+@Component({
+    name: "InputGridModal",
 
-	components: {
+    components: {
 		InputGridItem,
 		ModalWindow,
-	},
+	}
+})
+export default class InputGridModal extends Vue {
+    @Prop({
+        type: String,
+        required: false,
+        default: "InputGridModal",
+    })
+    containerClasses;
 
-	props: {
-		containerClasses: {
-			type: String,
-			required: false,
-			default: "InputGridModal",
-		},
-		items: {
-			type: [Array, Object],
-			required: true,
-		},
-		itemKey: {
-			type: String,
-			required: true,
-		},
-		selected: {
-			type: Object,
-			required: false,
-			default: null,
-		},
-		modalHeaderText: {
-			type: String,
-			required: false,
-			default() {
-				return this.$t("INPUT_GRID_MODAL.TITLE");
-			},
-		},
-	},
+    @Prop({
+        type: [Array, Object],
+        required: true,
+    })
+    items;
 
-	data() {
+    @Prop({
+        type: String,
+        required: true,
+    })
+    itemKey;
+
+    @Prop({
+        type: Object,
+        required: false,
+        default: null,
+    })
+    selected;
+
+    @Prop({
+        type: String,
+        required: false,
+        default() {
+            return this.$t("INPUT_GRID_MODAL.TITLE");
+        },
+    })
+    modalHeaderText;
+
+    // vue-convert: This property will initialized in data() method, with `this` reference.
+    clicked = undefined;
+
+    data() {
 		return {
 			clicked: this.selected,
 		};
-	},
+	}
 
-	methods: {
-		click(item) {
-			this.clicked = item;
-		},
+    click(item) {
+        this.clicked = item;
+    }
 
-		isClicked(item) {
-			return this.clicked.pluginId ? this.clicked.name === item.name : this.clicked.title === item.title;
-		},
+    isClicked(item) {
+        return this.clicked.pluginId ? this.clicked.name === item.name : this.clicked.title === item.title;
+    }
 
-		emitClose() {
-			this.$emit("close");
-		},
+    emitClose() {
+        this.$emit("close");
+    }
 
-		emitSelect() {
-			this.$emit("select", this.clicked);
-			this.emitClose();
-		},
-	},
-};
+    emitSelect() {
+        this.$emit("select", this.clicked);
+        this.emitClose();
+    }
+}
 </script>
 
 <style scoped>

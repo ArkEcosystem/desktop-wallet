@@ -31,95 +31,99 @@
 	</div>
 </template>
 
-<script>
+<script lang="ts">
+import { Component, Prop,Vue } from "vue-property-decorator";
+
 import { ButtonClose } from "@/components/Button";
 
-export default {
-	name: "InputEditableList",
+@Component({
+    name: "InputEditableList",
 
-	components: {
+    components: {
 		ButtonClose,
 	},
 
-	props: {
-		title: {
-			type: String,
-			required: false,
-			default: null,
-		},
-
-		showCount: {
-			type: Boolean,
-			required: false,
-			default: false,
-		},
-
-		maxItems: {
-			type: Number,
-			required: false,
-			default: null,
-		},
-
-		value: {
-			type: Array,
-			required: true,
-		},
-
-		required: {
-			type: Boolean,
-			required: false,
-			default: true,
-		},
-
-		readonly: {
-			type: Boolean,
-			required: false,
-			default: false,
-		},
-
-		helperText: {
-			type: String,
-			required: false,
-			default: null,
-		},
-
-		isInvalid: {
-			type: Boolean,
-			required: false,
-			default: false,
-		},
-
-		noItemsMessage: {
-			type: String,
-			required: false,
-			default: function () {
-				return this.$t("INPUT_EDITABLE_LIST.NO_ITEMS");
-			},
-		},
-	},
-
-	data: (vm) => ({
-		items: vm.value,
-	}),
-
-	computed: {
-		requiredAndEmpty() {
-			return this.required && (!this.items || !this.items.length);
-		},
-	},
-
-	watch: {
+    watch: {
 		value(newValue) {
 			this.items = newValue;
 		},
-	},
+	}
+})
+export default class InputEditableList extends Vue {
+    @Prop({
+        type: String,
+        required: false,
+        default: null,
+    })
+    title;
 
-	methods: {
-		emitRemove(index) {
-			this.$emit("remove", index);
-		},
-	},
-};
+    @Prop({
+        type: Boolean,
+        required: false,
+        default: false,
+    })
+    showCount;
+
+    @Prop({
+        type: Number,
+        required: false,
+        default: null,
+    })
+    maxItems;
+
+    @Prop({
+        type: Array,
+        required: true,
+    })
+    value;
+
+    @Prop({
+        type: Boolean,
+        required: false,
+        default: true,
+    })
+    required;
+
+    @Prop({
+        type: Boolean,
+        required: false,
+        default: false,
+    })
+    readonly;
+
+    @Prop({
+        type: String,
+        required: false,
+        default: null,
+    })
+    helperText;
+
+    @Prop({
+        type: Boolean,
+        required: false,
+        default: false,
+    })
+    isInvalid;
+
+    @Prop({
+        type: String,
+        required: false,
+        default: function () {
+            return this.$t("INPUT_EDITABLE_LIST.NO_ITEMS");
+        },
+    })
+    noItemsMessage;
+
+    items = vm.value;
+
+    get requiredAndEmpty() {
+        return this.required && (!this.items || !this.items.length);
+    }
+
+    emitRemove(index) {
+        this.$emit("remove", index);
+    }
+}
 </script>
 
 <style scoped>
