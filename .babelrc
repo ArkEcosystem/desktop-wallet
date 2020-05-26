@@ -1,38 +1,46 @@
 {
-  "comments": false,
-  "env": {
-    "main": {
-      "presets": [
-        ["@babel/preset-env", {
-          "targets": { "node": 7 }
-        }]
-      ]
-    },
-    "renderer": {
-      "presets": [
-        ["@babel/preset-env", {
-          "modules": false
-        }]
-      ]
-    },
-    "test": {
-      "presets": [
-        ["@babel/preset-env", {
-          "targets": { "node": 7 }
-        }]
-      ],
-      "plugins": [
-        "require-context-hook"
-      ]
-    },
-    "web": {
-      "presets": [
-        ["@babel/preset-env", {
-          "modules": false
-        }]
-      ]
-    }
-  },
-  "plugins": ["@babel/plugin-transform-runtime"],
-  "sourceType": "unambiguous"
+	"comments": false,
+	"env": {
+		"main": {
+			"presets": [
+				["@babel/preset-env", {
+					"targets": {
+						"node": 7
+					}
+				}]
+			]
+		},
+		"renderer": {
+			"presets": [
+				["@babel/preset-env", {
+					"modules": false
+				}]
+			]
+		},
+		"test": {
+			"presets": [
+				["@babel/preset-env", {
+					"targets": {
+						"node": 7
+					}
+				}]
+			],
+			"plugins": [
+				"require-context-hook"
+			]
+		},
+		"web": {
+			"presets": [
+				["@babel/preset-env", {
+					"modules": false
+				}]
+			]
+		}
+	},
+	"plugins": ["@babel/plugin-transform-runtime",
+		["@babel/plugin-proposal-decorators", {
+			"legacy": true
+		}]
+	],
+	"sourceType": "unambiguous"
 }

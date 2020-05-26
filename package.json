@@ -129,6 +129,7 @@
 	},
 	"devDependencies": {
 		"@babel/core": "^7.9.6",
+		"@babel/plugin-proposal-decorators": "^7.8.3",
 		"@babel/plugin-transform-runtime": "^7.9.6",
 		"@babel/preset-env": "^7.9.6",
 		"@types/got": "^9.6.11",
@@ -286,11 +287,6 @@
 			"perMachine": true,
 			"oneClick": false,
 			"allowToChangeInstallationDirectory": true
-		}
-	},
-	"husky": {
-		"hooks": {
-			"pre-commit": "lint-staged"
 		}
 	}
 }
