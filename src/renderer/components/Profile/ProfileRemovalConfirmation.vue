@@ -24,54 +24,53 @@
 </template>
 
 <script>
+import { Vue, Component, Prop } from "vue-property-decorator";
 import { ModalConfirmation } from "@/components/Modal";
 import { ProfileAvatar } from "@/components/Profile";
 import { StoreBinding } from "@/enums";
 
-export default {
-	name: "ProfileRemovalConfirmation",
+@Component({
+    name: "ProfileRemovalConfirmation",
 
-	components: {
+    components: {
 		ModalConfirmation,
 		ProfileAvatar,
-	},
+	}
+})
+export default class ProfileRemovalConfirmation extends Vue {
+    @Prop({
+        type: Object,
+        required: true,
+    })
+    profile;
 
-	props: {
-		profile: {
-			type: Object,
-			required: true,
-		},
-	},
+    removeProfile() {
+        const removeCurrentProfile = () => {
+            this.$store.dispatch(StoreBinding.ProfileDelete, this.profile);
+            this.emitRemoved();
+        };
 
-	methods: {
-		removeProfile() {
-			const removeCurrentProfile = () => {
-				this.$store.dispatch(StoreBinding.ProfileDelete, this.profile);
-				this.emitRemoved();
-			};
+        const profiles = this.$store.getters["profile/all"];
 
-			const profiles = this.$store.getters["profile/all"];
+        if (profiles.length <= 1) {
+            this.$store.dispatch(StoreBinding.SessionReset);
+            removeCurrentProfile();
+            this.$router.push({ name: "profile-new" });
+        } else {
+            const nextProfile = profiles.find((profile) => profile.id !== this.profile.id);
+            this.$store.dispatch(StoreBinding.SessionSetProfileId, nextProfile.id);
+            removeCurrentProfile();
+        }
+    }
 
-			if (profiles.length <= 1) {
-				this.$store.dispatch(StoreBinding.SessionReset);
-				removeCurrentProfile();
-				this.$router.push({ name: "profile-new" });
-			} else {
-				const nextProfile = profiles.find((profile) => profile.id !== this.profile.id);
-				this.$store.dispatch(StoreBinding.SessionSetProfileId, nextProfile.id);
-				removeCurrentProfile();
-			}
-		},
+    emitCancel() {
+        this.$emit("cancel");
+    }
 
-		emitCancel() {
-			this.$emit("cancel");
-		},
-
-		emitRemoved() {
-			this.$emit("removed");
-		},
-	},
-};
+    emitRemoved() {
+        this.$emit("removed");
+    }
+}
 </script>
 
 <style>

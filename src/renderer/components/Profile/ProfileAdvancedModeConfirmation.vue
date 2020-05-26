@@ -12,25 +12,25 @@
 </template>
 
 <script>
+import { Vue, Component } from "vue-property-decorator";
 import { ModalConfirmation } from "@/components/Modal";
 
-export default {
-	name: "ProfileAdvancedModeConfirmation",
+@Component({
+    name: "ProfileAdvancedModeConfirmation",
 
-	components: {
+    components: {
 		ModalConfirmation,
-	},
+	}
+})
+export default class ProfileAdvancedModeConfirmation extends Vue {
+    emitSave() {
+        this.$emit("save");
+    }
 
-	methods: {
-		emitSave() {
-			this.$emit("save");
-		},
-
-		emitClose() {
-			this.$emit("close");
-		},
-	},
-};
+    emitClose() {
+        this.$emit("close");
+    }
+}
 </script>
 
 <style>

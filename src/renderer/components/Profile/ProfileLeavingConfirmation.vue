@@ -25,38 +25,37 @@
 </template>
 
 <script>
+import { Vue, Component, Prop } from "vue-property-decorator";
 import { ModalConfirmation } from "@/components/Modal";
 import { ProfileAvatar } from "@/components/Profile";
 
-export default {
-	name: "ProfileLeavingConfirmation",
+@Component({
+    name: "ProfileLeavingConfirmation",
 
-	components: {
+    components: {
 		ModalConfirmation,
 		ProfileAvatar,
-	},
+	}
+})
+export default class ProfileLeavingConfirmation extends Vue {
+    @Prop({
+        type: Object,
+        required: true,
+    })
+    profile;
 
-	props: {
-		profile: {
-			type: Object,
-			required: true,
-		},
-	},
+    emitIgnore() {
+        this.$emit("ignore");
+    }
 
-	methods: {
-		emitIgnore() {
-			this.$emit("ignore");
-		},
+    emitSave() {
+        this.$emit("save");
+    }
 
-		emitSave() {
-			this.$emit("save");
-		},
-
-		emitClose() {
-			this.$emit("close");
-		},
-	},
-};
+    emitClose() {
+        this.$emit("close");
+    }
+}
 </script>
 
 <style>
