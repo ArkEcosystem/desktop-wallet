@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import { Component, Prop, Vue } from "vue-property-decorator";
+import { Component, Prop, Vue, Watch } from "vue-property-decorator";
 
 import PluginLogo from "@/components/PluginManager/PluginLogo";
 import Loader from "@/components/utils/Loader";
@@ -37,15 +37,6 @@ import ModalWindow from "./ModalWindow";
 		Loader,
 		ModalWindow,
 		PluginLogo,
-	},
-
-	watch: {
-		visible: function (value) {
-			this.isVisible = value;
-			if (value) {
-				this.triggerShowClose();
-			}
-		},
 	},
 })
 export default class ModalLoader extends Vue {
@@ -93,6 +84,14 @@ export default class ModalLoader extends Vue {
 	showClose = false;
 	showCloseTimeout = null;
 	isVisible = null;
+
+	@Watch("visible")
+	onVisible(value) {
+		this.isVisible = value;
+		if (value) {
+			this.triggerShowClose();
+		}
+	}
 
 	data(vm) {
 		return {

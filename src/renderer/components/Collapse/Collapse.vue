@@ -22,25 +22,14 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from "vue-property-decorator";
+import { Component, Prop, Vue, Watch } from "vue-property-decorator";
+
 @Component({
 	name: "Collapse",
 
 	inject: {
 		collapseClick: {
 			default: null, // avoid throw when using this component alone
-		},
-	},
-
-	watch: {
-		isOpen(val) {
-			// @ts-ignore
-			this.inputIsOpen = val;
-		},
-
-		inputIsOpen() {
-			// @ts-ignore
-			this.$emit(this.inputIsOpen ? "open" : "close");
 		},
 	},
 })
@@ -76,6 +65,18 @@ export default class Collapse extends Vue {
 
 	height = 0;
 	inputIsOpen = null;
+
+	@Watch("isOpen")
+	onIsOpen(val) {
+		// @ts-ignore
+		this.inputIsOpen = val;
+	}
+
+	@Watch("inputIsOpen")
+	onInputIsOpen() {
+		// @ts-ignore
+		this.$emit(this.inputIsOpen ? "open" : "close");
+	}
 
 	mounted() {
 		this.inputIsOpen = this.isOpen;

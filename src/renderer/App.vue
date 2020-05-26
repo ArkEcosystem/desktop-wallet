@@ -73,7 +73,7 @@ import CleanCss from "clean-css";
 import { ipcRenderer, remote } from "electron";
 import fs from "fs";
 import { pull, uniq } from "lodash";
-import { Component, Vue } from "vue-property-decorator";
+import { Component, Vue, Watch } from "vue-property-decorator";
 
 import AlertMessage from "@/components/AlertMessage";
 import { AppFooter, AppIntro, AppSidemenu } from "@/components/App";
@@ -95,74 +95,6 @@ const Menu = remote.Menu;
 		AlertMessage,
 		TransactionModal,
 	},
-
-	watch: {
-		hasScreenshotProtection(value) {
-			// @ts-ignore
-			if (this.isScreenshotProtectionEnabled) {
-				remote.getCurrentWindow().setContentProtection(value);
-			}
-		},
-		routeComponent(value) {
-			// @ts-ignore
-			if (this.aliveRouteComponents.includes(value)) {
-				// @ts-ignore
-				pull(this.aliveRouteComponents, value);
-			}
-			// Not all routes can be cached flawlessly
-			const keepable = [
-				// @ts-ignore
-				...this.$options.keepableRoutes.profileAgnostic,
-				// @ts-ignore
-				...this.$options.keepableRoutes.profileDependent,
-			];
-			if (keepable.includes(value)) {
-				// @ts-ignore
-				this.aliveRouteComponents.push(value);
-			}
-		},
-		currentProfileId(value, oldValue) {
-			if (value && oldValue) {
-				// If the profile changes, remove all the cached routes, except the latest
-				// if they are profile independent
-				if (value !== oldValue) {
-					// @ts-ignore
-					const profileAgnostic = this.$options.keepableRoutes.profileAgnostic;
-
-					const aliveRouteComponents = [];
-					for (let i = profileAgnostic.length; i >= 0; i--) {
-						// @ts-ignore
-						const length = this.aliveRouteComponents.length;
-						// @ts-ignore
-						const route = this.aliveRouteComponents[length - i];
-
-						if (profileAgnostic.includes(route)) {
-							// @ts-ignore
-							aliveRouteComponents.push(route);
-						}
-					}
-					// @ts-ignore
-					this.aliveRouteComponents = aliveRouteComponents;
-				}
-			}
-		},
-		pluginThemes() {
-			// @ts-ignore
-			this.applyPluginTheme(this.theme);
-		},
-		theme(value) {
-			// @ts-ignore
-			this.applyPluginTheme(value);
-		},
-		pluginLanguages() {
-			// @ts-ignore
-			this.applyPluginLanguage(this.language);
-		},
-		language(value) {
-			// @ts-ignore
-			this.applyPluginLanguage(value);
-		},
-	},
 })
 export default class DesktopWallet extends Vue {
 	isReady = false;
@@ -177,6 +109,85 @@ export default class DesktopWallet extends Vue {
 		// would not support switching profiles, which would be confusing for some users
 		dataDependent: ["ContactNew", "ProfileNew", "WalletImport", "WalletNew"],
 	});
+
+	@Watch("hasScreenshotProtection")
+	onHasScreenshotProtection(value) {
+		// @ts-ignore
+		if (this.isScreenshotProtectionEnabled) {
+			remote.getCurrentWindow().setContentProtection(value);
+		}
+	}
+
+	@Watch("routeComponent")
+	onRouteComponent(value) {
+		// @ts-ignore
+		if (this.aliveRouteComponents.includes(value)) {
+			// @ts-ignore
+			pull(this.aliveRouteComponents, value);
+		}
+		// Not all routes can be cached flawlessly
+		const keepable = [
+			// @ts-ignore
+			...this.keepableRoutes.profileAgnostic,
+			// @ts-ignore
+			...this.keepableRoutes.profileDependent,
+		];
+		if (keepable.includes(value)) {
+			// @ts-ignore
+			this.aliveRouteComponents.push(value);
+		}
+	}
+
+	@Watch("currentProfileId")
+	onCurrentProfileId(value, oldValue) {
+		if (value && oldValue) {
+			// If the profile changes, remove all the cached routes, except the latest
+			// if they are profile independent
+			if (value !== oldValue) {
+				// @ts-ignore
+				const profileAgnostic = this.keepableRoutes.profileAgnostic;
+
+				const aliveRouteComponents = [];
+				for (let i = profileAgnostic.length; i >= 0; i--) {
+					// @ts-ignore
+					const length = this.aliveRouteComponents.length;
+					// @ts-ignore
+					const route = this.aliveRouteComponents[length - i];
+
+					if (profileAgnostic.includes(route)) {
+						// @ts-ignore
+						aliveRouteComponents.push(route);
+					}
+				}
+				// @ts-ignore
+				this.aliveRouteComponents = aliveRouteComponents;
+			}
+		}
+	}
+
+	@Watch("pluginThemes")
+	onPluginThemes() {
+		// @ts-ignore
+		this.applyPluginTheme(this.theme);
+	}
+
+	@Watch("theme")
+	onTheme(value) {
+		// @ts-ignore
+		this.applyPluginTheme(value);
+	}
+
+	@Watch("pluginLanguages")
+	onPluginLanguages() {
+		// @ts-ignore
+		this.applyPluginLanguage(this.language);
+	}
+
+	@Watch("language")
+	onLanguage(value) {
+		// @ts-ignore
+		this.applyPluginLanguage(value);
+	}
 
 	get background() {
 		return this.$store.getters["session/background"] || `wallpapers/${this.hasSeenIntroduction ? 1 : 2}Default.png`;
@@ -221,7 +232,7 @@ export default class DesktopWallet extends Vue {
 
 	get keepAliveRoutes() {
 		// @ts-ignore
-		return uniq([...this.$options.keepableRoutes.profileAgnostic, ...this.aliveRouteComponents]);
+		return uniq([...this.keepableRoutes.profileAgnostic, ...this.aliveRouteComponents]);
 	}
 
 	get routeComponent() {

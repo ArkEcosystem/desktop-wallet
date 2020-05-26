@@ -27,7 +27,7 @@
 
 <script>
 import { orderBy } from "lodash";
-import { Component, Prop, Vue } from "vue-property-decorator";
+import { Component, Prop, Vue, Watch } from "vue-property-decorator";
 
 import { InputSelect } from "@/components/Input";
 import truncate from "@/filters/truncate";
@@ -42,29 +42,6 @@ import truncate from "@/filters/truncate";
 	model: {
 		prop: "value",
 		event: "input",
-	},
-
-	watch: {
-		value(val) {
-			this.wallet = val;
-		},
-
-		wallet(wallet) {
-			let profileId = null;
-			let walletId = null;
-			if (wallet && wallet.profileId) {
-				profileId = wallet.profileId;
-				walletId = wallet.id;
-			}
-
-			this.profileId = profileId;
-			this.walletId = walletId;
-			this.model = wallet;
-		},
-
-		walletId(walletId) {
-			this.wallet = this.wallets.find((wallet) => wallet.id === walletId);
-		},
 	},
 })
 export default class WalletSelection extends Vue {
@@ -101,6 +78,30 @@ export default class WalletSelection extends Vue {
 	wallet = null;
 	isProfileFocused = false;
 	isWalletFocused = false;
+
+	@Watch("value")
+	onValue(val) {
+		this.wallet = val;
+	}
+
+	@Watch("wallet")
+	onWallet(wallet) {
+		let profileId = null;
+		let walletId = null;
+		if (wallet && wallet.profileId) {
+			profileId = wallet.profileId;
+			walletId = wallet.id;
+		}
+
+		this.profileId = profileId;
+		this.walletId = walletId;
+		this.model = wallet;
+	}
+
+	@Watch("walletId")
+	onWalletId(walletId) {
+		this.wallet = this.wallets.find((wallet) => wallet.id === walletId);
+	}
 
 	data(vm) {
 		return {

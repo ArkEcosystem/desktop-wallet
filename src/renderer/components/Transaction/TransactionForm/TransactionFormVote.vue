@@ -115,7 +115,7 @@
 
 <script>
 import { TRANSACTION_TYPES } from "@config";
-import { Component, Prop, Vue } from "vue-property-decorator";
+import { Component, Prop, Vue, Watch } from "vue-property-decorator";
 
 import { Collapse } from "@/components/Collapse";
 import { InputFee, InputPassword } from "@/components/Input";
@@ -141,22 +141,6 @@ import mixin from "./mixin";
 	},
 
 	mixins: [mixin],
-
-	watch: {
-		isPassphraseStep() {
-			// Ignore Ledger wallets
-			if (this.currentWallet.isLedger || this.isMultiSignature) {
-				return;
-			}
-
-			// The passphrase is stored: focus on the custom password input
-			if (this.currentWallet.passphrase) {
-				this.$refs.password.focus();
-			} else {
-				this.$refs.passphrase.focus();
-			}
-		},
-	},
 })
 export default class TransactionFormVote extends Vue {
 	transactionType = TRANSACTION_TYPES.GROUP_1.VOTE;
@@ -191,6 +175,21 @@ export default class TransactionFormVote extends Vue {
 
 	forged = 0;
 	voters = "0";
+
+	@Watch("isPassphraseStep")
+	onIsPassphraseStep() {
+		// Ignore Ledger wallets
+		if (this.currentWallet.isLedger || this.isMultiSignature) {
+			return;
+		}
+
+		// The passphrase is stored: focus on the custom password input
+		if (this.currentWallet.passphrase) {
+			this.$refs.password.focus();
+		} else {
+			this.$refs.passphrase.focus();
+		}
+	}
 
 	get delegateStatus() {
 		const activeThreshold = this.session_network.constants.activeDelegates;

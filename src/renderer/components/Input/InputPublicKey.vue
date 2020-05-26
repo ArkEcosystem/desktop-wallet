@@ -13,7 +13,7 @@
 
 <script lang="ts">
 import { Identities } from "@arkecosystem/crypto";
-import { Component, Prop, Vue } from "vue-property-decorator";
+import { Component, Prop, Vue, Watch } from "vue-property-decorator";
 
 import InputText from "./InputText";
 
@@ -27,13 +27,6 @@ import InputText from "./InputText";
 	model: {
 		prop: "value",
 		event: "input",
-	},
-
-	watch: {
-		value(value) {
-			// @ts-ignore
-			this.inputValue = value;
-		},
 	},
 })
 export default class InputPublicKey extends Vue {
@@ -52,6 +45,12 @@ export default class InputPublicKey extends Vue {
 	value;
 
 	inputValue = null;
+
+	@Watch("value")
+	onValue(value) {
+		// @ts-ignore
+		this.inputValue = value;
+	}
 
 	data(vm) {
 		return {

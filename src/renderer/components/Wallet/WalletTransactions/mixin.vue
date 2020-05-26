@@ -26,31 +26,9 @@
 </template>
 
 <script>
-import { Component, Prop, Vue } from "vue-property-decorator";
+import { Component, Prop, Vue, Watch } from "vue-property-decorator";
 
-@Component({
-	watch: {
-		// This watcher would invoke the `fetch` after the `Synchronizer`
-		wallet_fromRoute(newWallet, oldWallet) {
-			const currentTimestamp = Math.round(new Date().getTime() / 1000);
-			if (
-				(newWallet && !oldWallet) ||
-				(!newWallet && oldWallet) ||
-				(newWallet && oldWallet && newWallet.address !== oldWallet.address)
-			) {
-				this.reset();
-				this.loadTransactions();
-
-				if (this.onWalletChange) {
-					this.onWalletChange(newWallet, oldWallet);
-				}
-			} else if (this.lastStatusRefresh < currentTimestamp - 1) {
-				this.lastStatusRefresh = currentTimestamp;
-				this.refreshStatus();
-			}
-		},
-	},
-})
+@Component({})
 export default class AnonymousComponent extends Vue {
 	@Prop({
 		type: Number,
@@ -76,6 +54,27 @@ export default class AnonymousComponent extends Vue {
 			type: "desc",
 		},
 	};
+
+	@Watch("wallet_fromRoute")
+	// This watcher would invoke the `fetch` after the `Synchronizer`
+	onWalletFromRoute(newWallet, oldWallet) {
+		const currentTimestamp = Math.round(new Date().getTime() / 1000);
+		if (
+			(newWallet && !oldWallet) ||
+			(!newWallet && oldWallet) ||
+			(newWallet && oldWallet && newWallet.address !== oldWallet.address)
+		) {
+			this.reset();
+			this.loadTransactions();
+
+			if (this.onWalletChange) {
+				this.onWalletChange(newWallet, oldWallet);
+			}
+		} else if (this.lastStatusRefresh < currentTimestamp - 1) {
+			this.lastStatusRefresh = currentTimestamp;
+			this.refreshStatus();
+		}
+	}
 
 	get isRemote() {
 		if (this.$options.isRemote !== undefined) {

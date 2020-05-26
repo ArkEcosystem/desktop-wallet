@@ -35,7 +35,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from "vue-property-decorator";
+import { Component, Prop, Vue, Watch } from "vue-property-decorator";
 
 import { ButtonClose } from "@/components/Button";
 
@@ -44,13 +44,6 @@ import { ButtonClose } from "@/components/Button";
 
 	components: {
 		ButtonClose,
-	},
-
-	watch: {
-		value(newValue) {
-			// @ts-ignore
-			this.items = newValue;
-		},
 	},
 })
 export default class InputEditableList extends Vue {
@@ -120,6 +113,12 @@ export default class InputEditableList extends Vue {
 	noItemsMessage;
 
 	items = null;
+
+	@Watch("value")
+	onValue(newValue) {
+		// @ts-ignore
+		this.items = newValue;
+	}
 
 	data(vm) {
 		return {

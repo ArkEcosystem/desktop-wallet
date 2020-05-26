@@ -37,7 +37,7 @@
 
 <script>
 import { isEqual, shuffle, uniq } from "lodash";
-import { Component, Prop, Vue } from "vue-property-decorator";
+import { Component, Prop, Vue, Watch } from "vue-property-decorator";
 
 import { InputText } from "@/components/Input";
 
@@ -46,18 +46,6 @@ import { InputText } from "@/components/Input";
 
 	components: {
 		InputText,
-	},
-
-	watch: {
-		/**
-		 * Reset the accepted words if the passphrase changes
-		 */
-		passphrase() {
-			this.resetData(this.$data);
-		},
-		wordPositions() {
-			this.resetData(this.$data);
-		},
 	},
 })
 export default class PassphraseVerification extends Vue {
@@ -87,6 +75,16 @@ export default class PassphraseVerification extends Vue {
 		default: 9,
 	})
 	suggestionsPerWord;
+
+	@Watch("passphrase")
+	onPassphrase() {
+		this.resetData(this.$data);
+	}
+
+	@Watch("wordPositions")
+	onWordPositions() {
+		this.resetData(this.$data);
+	}
 
 	data() {
 		return this.resetData({});

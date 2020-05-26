@@ -80,7 +80,7 @@
 
 <script>
 import { TRANSACTION_TYPES } from "@config";
-import { Component, Vue } from "vue-property-decorator";
+import { Component, Prop, Vue, Watch } from "vue-property-decorator";
 
 import { ButtonDropdown, ButtonModal } from "@/components/Button";
 import { ContactRenameModal } from "@/components/Contact";
@@ -99,16 +99,15 @@ import WalletService from "@/services/wallet";
 		WalletRemovalConfirmation,
 		TransactionModal,
 	},
-
-	watch: {
-		currentWallet(wallet) {
-			this.isContact = wallet.isContact;
-		},
-	},
 })
 export default class WalletHeadingSecondaryActions extends Vue {
 	registrationTypes = [];
 	isContact = false;
+
+	@Watch("currentWallet")
+	onCurrentWallet(wallet) {
+		this.isContact = wallet.isContact;
+	}
 
 	get buttonStyle() {
 		return "option-heading-button whitespace-no-wrap mr-2 px-3 py-2";

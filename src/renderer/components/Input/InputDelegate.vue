@@ -52,7 +52,7 @@
 <script lang="ts">
 import Cycled from "cycled";
 import { orderBy } from "lodash";
-import { Component, Prop, Vue } from "vue-property-decorator";
+import { Component, Prop, Vue, Watch } from "vue-property-decorator";
 import { required } from "vuelidate/lib/validators";
 
 import { ButtonModal } from "@/components/Button";
@@ -72,31 +72,6 @@ import InputField from "./InputField";
 		InputField,
 		ModalQrCodeScanner,
 		MenuDropdown,
-	},
-
-	watch: {
-		value(val) {
-			// @ts-ignore
-			this.updateInputValue(val);
-		},
-
-		isFocused() {
-			// @ts-ignore
-			if (this.isFocused && this.hasSuggestions) {
-				// @ts-ignore
-				this.openDropdown();
-			}
-		},
-
-		inputValue() {
-			// @ts-ignore
-			this.dropdownValue = null;
-			// @ts-ignore
-			if (this.isFocused && this.hasSuggestions) {
-				// @ts-ignore
-				this.openDropdown();
-			}
-		},
 	},
 })
 export default class InputDelegate extends Vue {
@@ -141,6 +116,32 @@ export default class InputDelegate extends Vue {
 	inputValue = null;
 	dropdownValue = null;
 	isFocused = false;
+
+	@Watch("value")
+	onValue(val) {
+		// @ts-ignore
+		this.updateInputValue(val);
+	}
+
+	@Watch("isFocused")
+	onIsFocused() {
+		// @ts-ignore
+		if (this.isFocused && this.hasSuggestions) {
+			// @ts-ignore
+			this.openDropdown();
+		}
+	}
+
+	@Watch("inputValue")
+	onInputValue() {
+		// @ts-ignore
+		this.dropdownValue = null;
+		// @ts-ignore
+		if (this.isFocused && this.hasSuggestions) {
+			// @ts-ignore
+			this.openDropdown();
+		}
+	}
 
 	data(vm) {
 		return {

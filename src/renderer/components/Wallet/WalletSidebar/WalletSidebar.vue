@@ -171,7 +171,7 @@
 
 <script>
 import { uniqBy } from "lodash";
-import { Component, Prop, Vue } from "vue-property-decorator";
+import { Component, Prop, Vue, Watch } from "vue-property-decorator";
 
 import { MenuNavigation, MenuNavigationItem } from "@/components/Menu";
 import SvgIcon from "@/components/SvgIcon";
@@ -193,12 +193,6 @@ import WalletSidebarFilters from "./WalletSidebarFilters";
 		WalletIdenticon,
 		WalletIdenticonPlaceholder,
 		WalletSidebarFilters,
-	},
-
-	watch: {
-		wallets() {
-			this.$refs.MenuNavigation.collectItems();
-		},
 	},
 })
 export default class WalletSidebar extends Vue {
@@ -227,6 +221,11 @@ export default class WalletSidebar extends Vue {
 	isFiltersVisible = false;
 	isResizing = false;
 	searchQuery = "";
+
+	@Watch("wallets")
+	onWallets() {
+		this.$refs.MenuNavigation.collectItems();
+	}
 
 	get areFiltersActive() {
 		return !!this.searchQuery.length || Object.values(this.filters).some((value) => !!value);

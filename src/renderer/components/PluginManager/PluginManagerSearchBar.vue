@@ -15,7 +15,7 @@
 
 <script>
 import { debounce } from "lodash";
-import { Component, Vue } from "vue-property-decorator";
+import { Component, Vue, Watch } from "vue-property-decorator";
 
 import SvgIcon from "@/components/SvgIcon";
 
@@ -25,15 +25,14 @@ import SvgIcon from "@/components/SvgIcon";
 	components: {
 		SvgIcon,
 	},
-
-	watch: {
-		query() {
-			this.emitSearch();
-		},
-	},
 })
 export default class PluginManagerSearchBar extends Vue {
 	query = null;
+
+	@Watch("query")
+	onQuery() {
+		this.emitSearch();
+	}
 
 	update() {
 		return debounce(function (event) {

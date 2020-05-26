@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import { Component, Prop, Vue } from "vue-property-decorator";
+import { Component, Prop, Vue, Watch } from "vue-property-decorator";
 
 import SvgIcon from "@/components/SvgIcon";
 
@@ -26,12 +26,6 @@ import SvgIcon from "@/components/SvgIcon";
 
 	components: {
 		SvgIcon,
-	},
-
-	watch: {
-		value(value) {
-			this.inputValue = value;
-		},
 	},
 })
 export default class WalletSidebarFiltersInputSearch extends Vue {
@@ -50,6 +44,11 @@ export default class WalletSidebarFiltersInputSearch extends Vue {
 	value;
 
 	inputValue = undefined;
+
+	@Watch("value")
+	onValue(value) {
+		this.inputValue = value;
+	}
 
 	data() {
 		return {

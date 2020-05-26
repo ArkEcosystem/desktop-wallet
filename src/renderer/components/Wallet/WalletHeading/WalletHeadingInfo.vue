@@ -87,7 +87,7 @@
 </template>
 
 <script>
-import { Component, Vue } from "vue-property-decorator";
+import { Component, Vue, Watch } from "vue-property-decorator";
 
 import { ButtonClipboard } from "@/components/Button";
 import SvgIcon from "@/components/SvgIcon";
@@ -104,16 +104,15 @@ import { WalletIdenticon } from "../";
 		WalletIdenticon,
 		SvgIcon,
 	},
-
-	watch: {
-		publicKey() {
-			if (!this.publicKey) this.showPublicKey = false;
-		},
-	},
 })
 export default class WalletHeadingInfo extends Vue {
 	showPublicKey = false;
 	lazyWallet = {};
+
+	@Watch("publicKey")
+	onPublicKey() {
+		if (!this.publicKey) this.showPublicKey = false;
+	}
 
 	get address() {
 		return this.currentWallet ? this.currentWallet.address : "";

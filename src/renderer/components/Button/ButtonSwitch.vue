@@ -25,20 +25,13 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from "vue-property-decorator";
+import { Component, Prop, Vue, Watch } from "vue-property-decorator";
 @Component({
 	name: "ButtonSwitch",
 
 	model: {
 		prop: "isActive",
 		event: "change",
-	},
-
-	watch: {
-		isActive(isActive) {
-			// @ts-ignore
-			this.inputIsActive = isActive;
-		},
 	},
 })
 export default class ButtonSwitch extends Vue {
@@ -64,6 +57,12 @@ export default class ButtonSwitch extends Vue {
 	backgroundColor;
 
 	inputIsActive = null;
+
+	@Watch("isActive")
+	onIsActive(isActive) {
+		// @ts-ignore
+		this.inputIsActive = isActive;
+	}
 
 	data(vm) {
 		return {

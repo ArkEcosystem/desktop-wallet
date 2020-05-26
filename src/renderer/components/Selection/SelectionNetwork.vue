@@ -28,11 +28,11 @@
 		>
 			<div class="flex flex-col justify-between p-1">
 				<span
-					class="text-3xl tracking-wide w-16 h-16 flex mx-auto justify-center items-center text-theme-page-text-light"
+					class="flex items-center justify-center w-16 h-16 mx-auto text-3xl tracking-wide text-theme-page-text-light"
 				>
 					...
 				</span>
-				<span class="w-full block text-theme-page-text font-semibold truncate text-theme-page-text-light">
+				<span class="block w-full font-semibold truncate text-theme-page-text text-theme-page-text-light">
 					{{ $t("COMMON.OTHER") }}
 				</span>
 			</div>

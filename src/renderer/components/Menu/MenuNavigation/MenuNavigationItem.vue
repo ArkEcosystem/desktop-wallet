@@ -5,20 +5,20 @@
 			'w-full': !isHorizontal,
 		}"
 		:disabled="isDisabled"
-		class="MenuNavigationItem relative cursor-pointer flex items-center justify-center text-theme-feature-item-text hover:bg-theme-feature-item-hover hover:text-theme-feature-item-hover-text"
+		class="relative flex items-center justify-center cursor-pointer MenuNavigationItem text-theme-feature-item-text hover:bg-theme-feature-item-hover hover:text-theme-feature-item-hover-text"
 		@click.capture.stop="onClick"
 	>
-		<div v-if="!isHorizontal" class="MenuNavigationItem__border absolute w-full" />
+		<div v-if="!isHorizontal" class="absolute w-full MenuNavigationItem__border" />
 		<slot :is-active="isActive">
 			<div v-if="icon" :class="{ 'w-full': !isHorizontal }" class="flex items-center justify-center">
 				<SvgIcon :name="icon" :view-box="viewBox" />
 				<div
 					v-if="showBadge"
-					class="MenuNavigationItem__badge rounded-full animate__animated animate__bounce"
+					class="rounded-full MenuNavigationItem__badge animate__animated animate__bounce"
 				/>
 			</div>
 		</slot>
-		<div v-if="isHorizontal" class="MenuNavigationItemHorizontal__border absolute h-full" />
+		<div v-if="isHorizontal" class="absolute h-full MenuNavigationItemHorizontal__border" />
 	</button>
 </template>
 
@@ -88,7 +88,7 @@ export default class MenuNavigationItem extends Vue {
 
 	onClick() {
 		if (this.canActivate) {
-			this.switchToItem(this.id);
+			this.$parent.switchToItem(this.id);
 		}
 
 		this.$emit("click", this.id);

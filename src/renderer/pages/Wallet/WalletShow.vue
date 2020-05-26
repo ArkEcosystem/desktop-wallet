@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import { Component, Vue } from "vue-property-decorator";
+import { Component, Vue, Watch } from "vue-property-decorator";
 
 import { WalletDetails, WalletSidebar } from "@/components/Wallet";
 
@@ -34,17 +34,16 @@ import { WalletDetails, WalletSidebar } from "@/components/Wallet";
 		WalletSidebar,
 		WalletDetails,
 	},
-
-	watch: {
-		wallet() {
-			if (!this.wallet) {
-				this.$router.push({ name: "wallets" });
-			}
-		},
-	},
 })
 export default class WalletShow extends Vue {
 	isSidebarExpanded = false;
+
+	@Watch("wallet")
+	onWallet() {
+		if (!this.wallet) {
+			this.$router.push({ name: "wallets" });
+		}
+	}
 
 	get wallet() {
 		return this.wallet_fromRoute;

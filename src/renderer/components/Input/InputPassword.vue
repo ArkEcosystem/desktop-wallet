@@ -33,7 +33,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from "vue-property-decorator";
+import { Component, Prop, Vue, Watch } from "vue-property-decorator";
 import { required } from "vuelidate/lib/validators";
 
 import { InputField } from "@/components/Input";
@@ -45,13 +45,6 @@ import SvgIcon from "@/components/SvgIcon";
 	components: {
 		InputField,
 		SvgIcon,
-	},
-
-	watch: {
-		value(value) {
-			// @ts-ignore
-			this.inputValue = value;
-		},
 	},
 })
 export default class InputPassword extends Vue {
@@ -138,6 +131,12 @@ export default class InputPassword extends Vue {
 	inputValue = null;
 	isFocused = false;
 	passwordIsVisible = null;
+
+	@Watch("value")
+	onValue(value) {
+		// @ts-ignore
+		this.inputValue = value;
+	}
 
 	data(vm) {
 		return {

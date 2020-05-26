@@ -5,21 +5,14 @@
 </template>
 
 <script>
-import { Component, Prop, Vue } from "vue-property-decorator";
+import { Component, Prop, Vue, Watch } from "vue-property-decorator";
+
 @Component({
 	name: "MenuNavigation",
 
 	model: {
 		prop: "id",
 		event: "input",
-	},
-
-	watch: {
-		id(value) {
-			if (this.activeId !== value) {
-				this.activateItem(value);
-			}
-		},
 	},
 })
 export default class MenuNavigation extends Vue {
@@ -38,6 +31,13 @@ export default class MenuNavigation extends Vue {
 
 	items = [];
 	activeId = null;
+
+	@Watch("id")
+	onId(value) {
+		if (this.activeId !== value) {
+			this.activateItem(value);
+		}
+	}
 
 	data(vm) {
 		return {

@@ -82,8 +82,7 @@
 <script lang="ts">
 import cheerio from "cheerio";
 import { ipcRenderer } from "electron";
-import Vue from "vue";
-import { Component } from "vue-property-decorator";
+import { Component, Vue } from "vue-property-decorator";
 import { mapGetters } from "vuex";
 
 import { ModalWindow } from "@/components/Modal";

@@ -114,7 +114,7 @@
 <script>
 import { remote } from "electron";
 import { at } from "lodash";
-import { Component, Vue } from "vue-property-decorator";
+import { Component, Prop, Vue, Watch } from "vue-property-decorator";
 
 /* eslint-disable vue/no-unused-components */
 import { ButtonGeneric } from "@/components/Button";
@@ -155,51 +155,6 @@ import {
 		WalletTransactions,
 		SvgIcon,
 	},
-
-	watch: {
-		currentTab() {
-			switch (this.currentTab) {
-				case "WalletTransactions":
-					this.$synchronizer.focus("wallets", "contacts");
-					break;
-				case "WalletDelegates":
-					this.$synchronizer.focus("wallets", "contacts", "delegates");
-					break;
-				case "WalletSignVerify":
-					// TODO
-					break;
-			}
-		},
-		async currentWallet(newValue, prevValue) {
-			await this.fetchWalletVote();
-			if (!newValue || !prevValue || newValue.address !== prevValue.address) {
-				this.currentTab = "WalletTransactions";
-			}
-		},
-		tabs() {
-			this.$nextTick(() => {
-				this.$refs.menutab.collectItems();
-			});
-		},
-		async isAwaitingConfirmation(newValue, oldValue) {
-			if (!newValue && oldValue) {
-				await this.fetchWalletVote();
-			}
-		},
-		selectedDelegate(delegate) {
-			if (delegate) {
-				this.isSelecting = false;
-
-				if (this.votedDelegate) {
-					if (delegate.publicKey === this.votedDelegate.publicKey) {
-						this.isUnvoting = true;
-					}
-				} else {
-					this.isVoting = true;
-				}
-			}
-		},
-	},
 })
 export default class AnonymousComponent extends Vue {
 	provide() {
@@ -221,6 +176,58 @@ export default class AnonymousComponent extends Vue {
 	isLoadingVote = true;
 	votedDelegate = null;
 	selectedDelegate = null;
+
+	@Watch("currentTab")
+	onCurrentTab() {
+		switch (this.currentTab) {
+			case "WalletTransactions":
+				this.$synchronizer.focus("wallets", "contacts");
+				break;
+			case "WalletDelegates":
+				this.$synchronizer.focus("wallets", "contacts", "delegates");
+				break;
+			case "WalletSignVerify":
+				// TODO
+				break;
+		}
+	}
+
+	@Watch("currentWallet")
+	async onCurrentWallet(newValue, prevValue) {
+		await this.fetchWalletVote();
+		if (!newValue || !prevValue || newValue.address !== prevValue.address) {
+			this.currentTab = "WalletTransactions";
+		}
+	}
+
+	@Watch("tabs")
+	onTabs() {
+		this.$nextTick(() => {
+			this.$refs.menutab.collectItems();
+		});
+	}
+
+	@Watch("isAwaitingConfirmation")
+	async onIsAwaitingConfirmation(newValue, oldValue) {
+		if (!newValue && oldValue) {
+			await this.fetchWalletVote();
+		}
+	}
+
+	@Watch("selectedDelegate")
+	onSelectedDelegate(delegate) {
+		if (delegate) {
+			this.isSelecting = false;
+
+			if (this.votedDelegate) {
+				if (delegate.publicKey === this.votedDelegate.publicKey) {
+					this.isUnvoting = true;
+				}
+			} else {
+				this.isVoting = true;
+			}
+		}
+	}
 
 	get pluginTabs() {
 		return this.$store.getters["plugin/walletTabs"];

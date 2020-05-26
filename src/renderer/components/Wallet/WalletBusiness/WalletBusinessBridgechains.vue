@@ -21,7 +21,7 @@
 
 <script>
 import { isEqual } from "lodash";
-import { Component, Vue } from "vue-property-decorator";
+import { Component, Prop, Vue, Watch } from "vue-property-decorator";
 
 import { AppEvent } from "@/enums";
 
@@ -32,16 +32,6 @@ import WalletBusinessBridgechainsTable from "./WalletBusinessBridgechainsTable";
 
 	components: {
 		WalletBusinessBridgechainsTable,
-	},
-
-	watch: {
-		// This watcher would invoke the `fetch` after the `Synchronizer`
-		wallet_fromRoute(newValue, oldValue) {
-			if (newValue.address !== oldValue.address) {
-				this.reset();
-				this.loadBridgechains();
-			}
-		},
 	},
 })
 export default class WalletBusinessBridgechains extends Vue {
@@ -63,6 +53,15 @@ export default class WalletBusinessBridgechains extends Vue {
 			type: "asc",
 		},
 	};
+
+	@Watch("wallet_fromRoute")
+	// This watcher would invoke the `fetch` after the `Synchronizer`
+	onWalletFromRoute(newValue, oldValue) {
+		if (newValue.address !== oldValue.address) {
+			this.reset();
+			this.loadBridgechains();
+		}
+	}
 
 	data() {
 		return {

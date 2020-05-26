@@ -25,7 +25,7 @@
 
 <script lang="ts">
 import { I18N } from "@config";
-import { Component, Prop, Vue } from "vue-property-decorator";
+import { Component, Prop, Vue, Watch } from "vue-property-decorator";
 
 import InputSelect from "./InputSelect";
 
@@ -39,13 +39,6 @@ import InputSelect from "./InputSelect";
 	model: {
 		prop: "value",
 		event: "input",
-	},
-
-	watch: {
-		value(value) {
-			// @ts-ignore
-			this.selected = value;
-		},
 	},
 })
 export default class InputLanguage extends Vue {
@@ -87,6 +80,12 @@ export default class InputLanguage extends Vue {
 	inputLabel = null;
 	isFocused = false;
 	selected = null;
+
+	@Watch("value")
+	onValue(value) {
+		// @ts-ignore
+		this.selected = value;
+	}
 
 	data(vm) {
 		return {

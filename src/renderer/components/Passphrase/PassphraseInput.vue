@@ -46,7 +46,7 @@
 </template>
 
 <script>
-import { Component, Prop, Vue } from "vue-property-decorator";
+import { Component, Prop, Vue, Watch } from "vue-property-decorator";
 import { required } from "vuelidate/lib/validators";
 
 import { ButtonModal } from "@/components/Button";
@@ -63,12 +63,6 @@ import WalletService from "@/services/wallet";
 		InputField,
 		ModalQrCodeScanner,
 		SvgIcon,
-	},
-
-	watch: {
-		value(value) {
-			this.inputValue = value;
-		},
 	},
 })
 export default class PassphraseInput extends Vue {
@@ -146,6 +140,11 @@ export default class PassphraseInput extends Vue {
 	inputValue = null;
 	isFocused = false;
 	passphraseIsVisible = null;
+
+	@Watch("value")
+	onValue(value) {
+		this.inputValue = value;
+	}
 
 	data(vm) {
 		return {

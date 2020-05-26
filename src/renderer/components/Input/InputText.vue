@@ -37,7 +37,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from "vue-property-decorator";
+import { Component, Prop, Vue, Watch } from "vue-property-decorator";
 
 import WalletService from "@/services/wallet";
 
@@ -53,13 +53,6 @@ import InputField from "./InputField";
 	model: {
 		prop: "value",
 		event: "input",
-	},
-
-	watch: {
-		value(val) {
-			// @ts-ignore
-			this.inputValue = val;
-		},
 	},
 })
 export default class InputText extends Vue {
@@ -147,6 +140,12 @@ export default class InputText extends Vue {
 
 	inputValue = null;
 	isFocused = false;
+
+	@Watch("value")
+	onValue(value) {
+		// @ts-ignore
+		this.inputValue = value;
+	}
 
 	// @ts-ignore
 	data(vm) {

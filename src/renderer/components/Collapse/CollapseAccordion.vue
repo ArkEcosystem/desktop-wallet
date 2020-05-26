@@ -5,7 +5,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from "vue-property-decorator";
+import { Component, Prop, Vue, Watch } from "vue-property-decorator";
 
 import { isEmpty } from "@/utils";
 
@@ -15,23 +15,6 @@ import { isEmpty } from "@/utils";
 	model: {
 		prop: "id",
 		event: "input",
-	},
-
-	watch: {
-		id(val) {
-			// @ts-ignore
-			this.$nextTick(() => (this.inputId = val));
-		},
-
-		inputId() {
-			// @ts-ignore
-			this.toggleCollapse();
-		},
-
-		items() {
-			// @ts-ignore
-			this.toggleCollapse();
-		},
 	},
 })
 export default class CollapseAccordion extends Vue {
@@ -57,6 +40,24 @@ export default class CollapseAccordion extends Vue {
 	items;
 
 	inputId = null;
+
+	@Watch("id")
+	onId(val) {
+		// @ts-ignore
+		this.$nextTick(() => (this.inputId = val));
+	}
+
+	@Watch("inputId")
+	onInputId() {
+		// @ts-ignore
+		this.toggleCollapse();
+	}
+
+	@Watch("items")
+	onItems() {
+		// @ts-ignore
+		this.toggleCollapse();
+	}
 
 	data(vm) {
 		return {

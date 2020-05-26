@@ -36,7 +36,7 @@
 <script lang="ts">
 import { Utils } from "@arkecosystem/platform-sdk";
 import { MARKET } from "@config";
-import { Component, Prop, Vue } from "vue-property-decorator";
+import { Component, Prop, Vue, Watch } from "vue-property-decorator";
 // @ts-ignore
 import { required } from "vuelidate/lib/validators";
 
@@ -58,16 +58,6 @@ import InputField from "./InputField";
 	model: {
 		prop: "value",
 		event: "input",
-	},
-
-	watch: {
-		value: {
-			handler(val) {
-				// @ts-ignore
-				this.updateInputValue(val);
-			},
-			immediate: true,
-		},
 	},
 })
 export default class InputCurrency extends Vue {
@@ -203,6 +193,12 @@ export default class InputCurrency extends Vue {
 
 	inputValue = null;
 	isFocused = false;
+
+	@Watch("value", { immediate: true })
+	onValue(val) {
+		// @ts-ignore
+		this.updateInputValue(val);
+	}
 
 	// @ts-ignore
 	data(vm) {

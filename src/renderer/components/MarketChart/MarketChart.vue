@@ -23,7 +23,7 @@
 
 <script>
 import { DateTime } from "@arkecosystem/platform-sdk-intl";
-import { Component, Prop, Vue } from "vue-property-decorator";
+import { Component, Prop, Vue, Watch } from "vue-property-decorator";
 
 import LineChart from "@/components/utils/LineChart";
 import Loader from "@/components/utils/Loader";
@@ -35,34 +35,6 @@ import priceApi from "@/services/price-api";
 	components: {
 		LineChart,
 		Loader,
-	},
-
-	watch: {
-		currency() {
-			this.renderChart();
-		},
-
-		priceApi() {
-			this.renderChart();
-		},
-
-		theme() {
-			this.renderChart();
-		},
-
-		ticker() {
-			this.renderChart();
-		},
-
-		period() {
-			this.renderChart();
-		},
-
-		isExpanded(value, oldValue) {
-			if (!oldValue && value) {
-				this.renderChart();
-			}
-		},
 	},
 })
 export default class MarketChart extends Vue {
@@ -94,6 +66,38 @@ export default class MarketChart extends Vue {
 	gradient = null;
 	lastCurrency = null;
 	lastPriceApi = null;
+
+	@Watch("currency")
+	onCurrency() {
+		this.renderChart();
+	}
+
+	@Watch("priceApi")
+	onPriceApi() {
+		this.renderChart();
+	}
+
+	@Watch("theme")
+	onTheme() {
+		this.renderChart();
+	}
+
+	@Watch("ticker")
+	onTicker() {
+		this.renderChart();
+	}
+
+	@Watch("period")
+	onPeriod() {
+		this.renderChart();
+	}
+
+	@Watch("isExpanded")
+	onIsExpanded(value, oldValue) {
+		if (!oldValue && value) {
+			this.renderChart();
+		}
+	}
 
 	get colours() {
 		const coloursByTheme = {

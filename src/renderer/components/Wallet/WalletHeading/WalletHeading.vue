@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import { Component, Vue } from "vue-property-decorator";
+import { Component, Prop, Vue, Watch } from "vue-property-decorator";
 import { mapGetters } from "vuex";
 
 import { AppEvent, StoreBinding } from "@/enums";
@@ -25,18 +25,17 @@ import WalletHeadingInfo from "./WalletHeadingInfo";
 		WalletHeadingActions,
 	},
 
-	watch: {
-		currentWallet() {
-			if (this.activeWalletAddress !== this.currentWallet.address) {
-				this.resetHeading();
-			}
-		},
-	},
-
 	computed: { ...mapGetters("wallet", ["secondaryButtonsVisible"]) },
 })
 export default class WalletHeading extends Vue {
 	activeWalletAddress = null;
+
+	@Watch("currentWallet")
+	onCurrentWallet() {
+		if (this.activeWalletAddress !== this.currentWallet.address) {
+			this.resetHeading();
+		}
+	}
 
 	get currentWallet() {
 		return this.wallet_fromRoute;

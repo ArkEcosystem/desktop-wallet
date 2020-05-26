@@ -182,7 +182,7 @@
 
 <script>
 import { TRANSACTION_TYPES, VENDOR_FIELD } from "@config";
-import { Component, Prop, Vue } from "vue-property-decorator";
+import { Component, Prop, Vue, Watch } from "vue-property-decorator";
 import { required } from "vuelidate/lib/validators";
 
 import { ButtonGeneric } from "@/components/Button";
@@ -219,14 +219,6 @@ import mixin from "./mixin";
 	},
 
 	mixins: [mixin],
-
-	watch: {
-		wallet() {
-			this.ensureAvailableAmount();
-			this.$v.recipientId.$touch();
-			this.$v.amount.$touch();
-		},
-	},
 })
 export default class TransactionFormTransfer extends Vue {
 	transactionType = TRANSACTION_TYPES.GROUP_1.TRANSFER;
@@ -252,6 +244,13 @@ export default class TransactionFormTransfer extends Vue {
 		walletPassword: "",
 		vendorField: "",
 	};
+
+	@Watch("wallet")
+	onWallet() {
+		this.ensureAvailableAmount();
+		this.$v.recipientId.$touch();
+		this.$v.amount.$touch();
+	}
 
 	get alternativeCurrency() {
 		return this.$store.getters["session/currency"];

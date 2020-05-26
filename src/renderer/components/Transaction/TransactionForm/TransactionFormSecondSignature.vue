@@ -37,7 +37,7 @@
 					:disabled="isGenerating || !showPassphraseWords"
 					:class="{ hidden: !showPassphraseWords }"
 					type="button"
-					class="TransactionFormSecondSignature__step-1__next blue-button mt-5"
+					class="mt-5 TransactionFormSecondSignature__step-1__next blue-button"
 					@click="toggleStep"
 				>
 					{{ $t("COMMON.NEXT") }}
@@ -49,7 +49,7 @@
 					ref="passphraseVerification"
 					:passphrase="passphraseWords"
 					:word-positions="wordPositions"
-					class="TransactionFormSecondSignature__passphrase-verification mb-10"
+					class="mb-10 TransactionFormSecondSignature__passphrase-verification"
 					@verified="onVerification"
 				/>
 
@@ -63,7 +63,7 @@
 				/>
 
 				<div v-if="!isMultiSignature">
-					<div v-if="currentWallet.isLedger" class="TransactionFormSecondSignature__ledger-notice mt-10">
+					<div v-if="currentWallet.isLedger" class="mt-10 TransactionFormSecondSignature__ledger-notice">
 						{{ $t("TRANSACTION.LEDGER_SIGN_NOTICE") }}
 					</div>
 
@@ -73,7 +73,7 @@
 						v-model="$v.form.walletPassword.$model"
 						:label="$t('TRANSACTION.PASSWORD')"
 						:is-required="true"
-						class="TransactionFormSecondSignature__password mt-4"
+						class="mt-4 TransactionFormSecondSignature__password"
 					/>
 
 					<PassphraseInput
@@ -82,13 +82,13 @@
 						v-model="$v.form.passphrase.$model"
 						:address="currentWallet.address"
 						:pub-key-hash="walletNetwork.version"
-						class="TransactionFormSecondSignature__passphrase mt-4"
+						class="mt-4 TransactionFormSecondSignature__passphrase"
 					/>
 				</div>
 
 				<button
 					type="button"
-					class="TransactionFormSecondSignature__back blue-button mt-5 mr-4"
+					class="mt-5 mr-4 TransactionFormSecondSignature__back blue-button"
 					@click="toggleStep"
 				>
 					{{ $t("COMMON.BACK") }}
@@ -97,7 +97,7 @@
 				<button
 					:disabled="$v.form.$invalid || !isPassphraseVerified"
 					type="button"
-					class="TransactionFormSecondSignature__step-2__next blue-button mt-5"
+					class="mt-5 TransactionFormSecondSignature__step-2__next blue-button"
 					@click="onSubmit"
 				>
 					{{ $t("COMMON.NEXT") }}
@@ -116,14 +116,14 @@
 						<ButtonReload
 							:is-refreshing="isGenerating"
 							:title="$t('WALLET_SECOND_SIGNATURE.NEW')"
-							class="bg-theme-modal-footer-button mr-2"
+							class="mr-2 bg-theme-modal-footer-button"
 							text-class="text-theme-modal-footer-button-text"
 							@click="generateNewPassphrase"
 						/>
 
 						<ButtonClipboard
 							:value="secondPassphrase"
-							class="flex py-2 px-4 rounded bg-theme-modal-footer-button text-theme-modal-footer-button-text"
+							class="flex px-4 py-2 rounded bg-theme-modal-footer-button text-theme-modal-footer-button-text"
 						/>
 					</div>
 				</footer>
@@ -137,7 +137,7 @@
 
 <script>
 import { TRANSACTION_TYPES } from "@config";
-import { Component, Vue } from "vue-property-decorator";
+import { Component, Prop, Vue, Watch } from "vue-property-decorator";
 
 import { ButtonClipboard, ButtonReload } from "@/components/Button";
 import { Collapse } from "@/components/Collapse";
@@ -167,14 +167,6 @@ import mixin from "./mixin";
 	},
 
 	mixins: [mixin],
-
-	watch: {
-		isPassphraseStep() {
-			if (this.isPassphraseStep) {
-				this.$refs.passphraseVerification.focusFirst();
-			}
-		},
-	},
 })
 export default class TransactionFormSecondSignature extends Vue {
 	transactionType = TRANSACTION_TYPES.GROUP_1.SECOND_SIGNATURE;
@@ -190,6 +182,13 @@ export default class TransactionFormSecondSignature extends Vue {
 	};
 
 	showPassphraseWords = false;
+
+	@Watch("isPassphraseStep")
+	onIsPassphraseStep() {
+		if (this.isPassphraseStep) {
+			this.$refs.passphraseVerification.focusFirst();
+		}
+	}
 
 	// TODO: doesn't need to be computed
 	get wordPositions() {

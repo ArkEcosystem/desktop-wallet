@@ -73,7 +73,7 @@
 
 <script>
 import { clone } from "lodash";
-import { Component, Vue } from "vue-property-decorator";
+import { Component, Vue, Watch } from "vue-property-decorator";
 
 import { ButtonClipboard, ButtonModal } from "@/components/Button";
 import SvgIcon from "@/components/SvgIcon";
@@ -90,19 +90,18 @@ import { StoreBinding } from "@/enums";
 		WalletSignModal,
 		WalletVerifyModal,
 	},
-
-	watch: {
-		currentWallet() {
-			if (this.activeWalletId !== this.currentWallet.id) {
-				this.updateSignedMessages();
-			}
-		},
-	},
 })
 export default class WalletSignVerify extends Vue {
 	signedMessages = [];
 	showTimestamp = null;
 	activeWalletId = null;
+
+	@Watch("currentWallet")
+	onCurrentWallet() {
+		if (this.activeWalletId !== this.currentWallet.id) {
+			this.updateSignedMessages();
+		}
+	}
 
 	get currentWallet() {
 		return this.wallet_fromRoute;

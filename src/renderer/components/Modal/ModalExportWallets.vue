@@ -57,7 +57,7 @@
 
 <script>
 import { omitBy, uniqBy } from "lodash";
-import { Component, Vue } from "vue-property-decorator";
+import { Component, Prop, Vue, Watch } from "vue-property-decorator";
 
 import { ButtonGeneric, ButtonSwitch } from "@/components/Button";
 import { ListDivided, ListDividedItem } from "@/components/ListDivided";
@@ -73,15 +73,6 @@ import ModalWindow from "@/components/Modal/ModalWindow";
 		ListDividedItem,
 		ModalWindow,
 	},
-
-	watch: {
-		isLedgerConnected: {
-			handler(value) {
-				this.options.excludeLedger.isDisabled = !value;
-			},
-			immediate: true,
-		},
-	},
 })
 export default class ModalExportWallets extends Vue {
 	isExporting = false;
@@ -93,6 +84,11 @@ export default class ModalExportWallets extends Vue {
 			active: true,
 		},
 	};
+
+	@Watch("currentWallet", { immediate: true })
+	onIsLedgerConnectedChange(value) {
+		this.options.excludeLedger.isDisabled = !value;
+	}
 
 	data() {
 		return {

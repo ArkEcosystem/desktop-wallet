@@ -61,7 +61,7 @@
 
 <script>
 import { zipObject } from "lodash";
-import { Component, Prop, Vue } from "vue-property-decorator";
+import { Component, Prop, Vue, Watch } from "vue-property-decorator";
 
 import { isEmpty } from "@/utils";
 
@@ -79,12 +79,6 @@ import MenuDropdownItem from "./MenuDropdownItem";
 	model: {
 		prop: "value",
 		event: "select",
-	},
-
-	watch: {
-		value(value) {
-			this.activeValue = value;
-		},
 	},
 })
 export default class MenuDropdown extends Vue {
@@ -160,6 +154,11 @@ export default class MenuDropdown extends Vue {
 
 	isOpen = true;
 	activeValue = null;
+
+	@Watch("value")
+	onValue(value) {
+		this.activeValue = value;
+	}
 
 	data(vm) {
 		return {

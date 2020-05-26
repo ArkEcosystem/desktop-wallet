@@ -54,8 +54,7 @@
 <script lang="ts">
 import Cycled from "cycled";
 import { orderBy, unionBy } from "lodash";
-import { Component, Prop, Vue } from "vue-property-decorator";
-// @ts-ignore
+import { Component, Prop, Vue, Watch } from "vue-property-decorator";
 import { required } from "vuelidate/lib/validators";
 
 import { ButtonModal } from "@/components/Button";
@@ -76,52 +75,6 @@ import InputField from "./InputField";
 		InputField,
 		ModalQrCodeScanner,
 		MenuDropdown,
-	},
-
-	watch: {
-		value(val) {
-			// @ts-ignore
-			this.updateInputValue(val);
-		},
-
-		isFocused() {
-			// @ts-ignore
-			if (this.isFocused && this.hasSuggestions) {
-				// @ts-ignore
-				this.openDropdown();
-			}
-		},
-
-		async inputValue() {
-			// @ts-ignore
-			this.dropdownValue = null;
-			// @ts-ignore
-			if (this.isFocused && this.hasSuggestions) {
-				// @ts-ignore
-				this.openDropdown();
-			}
-
-			// @ts-ignore
-			if (this.invalid) {
-				// @ts-ignore
-				this.notice = null;
-			} else {
-				// @ts-ignore
-				const knownAddress = this.wallet_name(this.inputValue);
-
-				if (knownAddress) {
-					// @ts-ignore
-					this.notice = this.$t("INPUT_ADDRESS.KNOWN_ADDRESS", { address: knownAddress });
-					// @ts-ignore
-				} else if (await this.checkNeoAddress(this.inputValue)) {
-					// @ts-ignore
-					this.notice = this.$t("INPUT_ADDRESS.NEO_ADDRESS");
-				} else {
-					// @ts-ignore
-					this.notice = null;
-				}
-			}
-		},
 	},
 })
 export default class InputAddress extends Vue {
@@ -211,6 +164,53 @@ export default class InputAddress extends Vue {
 	isFocused = false;
 	neoCheckedAddressess = {};
 	notice = null;
+
+	@Watch("value")
+	onValue(val) {
+		// @ts-ignore
+		this.updateInputValue(val);
+	}
+
+	@Watch("isFocused")
+	onIsFocused() {
+		// @ts-ignore
+		if (this.isFocused && this.hasSuggestions) {
+			// @ts-ignore
+			this.openDropdown();
+		}
+	}
+
+	@Watch("inputValue")
+	async onInputValue() {
+		// @ts-ignore
+		this.dropdownValue = null;
+		// @ts-ignore
+		if (this.isFocused && this.hasSuggestions) {
+			// @ts-ignore
+			this.openDropdown();
+		}
+
+		// @ts-ignore
+		if (this.invalid) {
+			// @ts-ignore
+			this.notice = null;
+		} else {
+			// @ts-ignore
+			const knownAddress = this.wallet_name(this.inputValue);
+
+			if (knownAddress) {
+				// @ts-ignore
+				this.notice = this.$t("INPUT_ADDRESS.KNOWN_ADDRESS", { address: knownAddress });
+				// @ts-ignore
+			} else if (await this.checkNeoAddress(this.inputValue)) {
+				// @ts-ignore
+				this.notice = this.$t("INPUT_ADDRESS.NEO_ADDRESS");
+			} else {
+				// @ts-ignore
+				this.notice = null;
+			}
+		}
+	}
 
 	// @ts-ignore
 	data(vm) {

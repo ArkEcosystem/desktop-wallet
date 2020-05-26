@@ -146,7 +146,7 @@
 </template>
 
 <script>
-import { Component, Vue } from "vue-property-decorator";
+import { Component, Vue, Watch } from "vue-property-decorator";
 import { required } from "vuelidate/lib/validators";
 
 import { InputAddress, InputPassword, InputSwitch, InputText } from "@/components/Input";
@@ -174,19 +174,6 @@ import onCreate from "./mixin-on-create";
 	},
 
 	mixins: [onCreate],
-
-	watch: {
-		/**
-		 * Generate always the address when moving to the step 2
-		 */
-		step() {
-			if (this.step === 2 && !this.useOnlyAddress) {
-				// Important: .normalize('NFD') is needed to properly work with Korean bip39 words
-				// It alters the passphrase string, so no need to normalize again in the onCreate function
-				this.schema.address = WalletService.getAddress(this.schema.passphrase, this.session_network.version);
-			}
-		},
-	},
 })
 export default class WalletImport extends Vue {
 	schema = Wallet.schema;
@@ -204,6 +191,18 @@ export default class WalletImport extends Vue {
 		2: "pages/wallet-new/encrypt-wallet.svg",
 		3: "pages/wallet-new/protect-wallet.svg",
 	};
+
+	@Watch("step")
+	onStep() {
+		/**
+		 * Generate always the address when moving to the step 2
+		 */
+		if (this.step === 2 && !this.useOnlyAddress) {
+			// Important: .normalize('NFD') is needed to properly work with Korean bip39 words
+			// It alters the passphrase string, so no need to normalize again in the onCreate function
+			this.schema.address = WalletService.getAddress(this.schema.passphrase, this.session_network.version);
+		}
+	}
 
 	get nameError() {
 		if (this.$v.schema.name.$invalid) {

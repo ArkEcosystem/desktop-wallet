@@ -1,6 +1,6 @@
 <template>
 	<div class="Identicon__wrapper">
-		<div :style="{ height: `${size}px`, width: `${size}px` }" class="Identicon select-none">
+		<div :style="{ height: `${size}px`, width: `${size}px` }" class="select-none Identicon">
 			<svg xmlns="http://www.w3.org/2000/svg" :width="size" :height="size" :viewBox="`0 0 100 100`">
 				<defs>
 					<mask :id="maskId">
@@ -45,18 +45,12 @@
 import Color from "color";
 import crypto from "crypto";
 import MersenneTwister from "mersenne-twister";
-import { Component, Prop, Vue } from "vue-property-decorator";
+import { Component, Prop, Vue, Watch } from "vue-property-decorator";
 
 import colors from "@/components/utils/IdenticonColors";
 
 @Component({
 	name: "Identicon",
-
-	watch: {
-		value() {
-			this.generate(this.value);
-		},
-	},
 })
 export default class Identicon extends Vue {
 	@Prop({
@@ -102,6 +96,11 @@ export default class Identicon extends Vue {
 	rectangles = [];
 	logo = null;
 	backgroundColor = "";
+
+	@Watch("value")
+	onValue() {
+		this.generate(this.value);
+	}
 
 	get networkSymbol() {
 		return this.session_network && this.session_network.symbol.length ? this.session_network.symbol[0] : "";

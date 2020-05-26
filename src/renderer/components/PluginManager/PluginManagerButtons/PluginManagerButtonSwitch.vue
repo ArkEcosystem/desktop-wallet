@@ -24,19 +24,14 @@
 </template>
 
 <script>
-import { Component, Prop, Vue } from "vue-property-decorator";
+import { Component, Prop, Vue, Watch } from "vue-property-decorator";
+
 @Component({
 	name: "PluginManagerButtonSwitch",
 
 	model: {
 		prop: "isActive",
 		event: "change",
-	},
-
-	watch: {
-		isActive(isActive) {
-			this.inputIsActive = isActive;
-		},
 	},
 })
 export default class PluginManagerButtonSwitch extends Vue {
@@ -65,6 +60,11 @@ export default class PluginManagerButtonSwitch extends Vue {
 	labels;
 
 	inputIsActive = false;
+
+	@Watch("isActive")
+	onIsActive(isActive) {
+		this.inputIsActive = isActive;
+	}
 
 	data(vm) {
 		return {

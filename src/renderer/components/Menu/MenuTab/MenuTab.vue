@@ -31,9 +31,10 @@
 </template>
 
 <script>
-import { Component, Prop, Vue } from "vue-property-decorator";
+import { Component, Prop, Vue, Watch } from "vue-property-decorator";
 
 import VNodes from "@/components/utils/VNodes";
+
 @Component({
 	name: "MenuTab",
 
@@ -44,12 +45,6 @@ import VNodes from "@/components/utils/VNodes";
 	model: {
 		prop: "tab",
 		event: "input",
-	},
-
-	watch: {
-		tab() {
-			this.switchToTab(this.tab);
-		},
 	},
 })
 export default class MenuTab extends Vue {
@@ -62,6 +57,11 @@ export default class MenuTab extends Vue {
 
 	activeTab = null;
 	items = [];
+
+	@Watch("tab")
+	onTab() {
+		this.switchToTab(this.tab);
+	}
 
 	data(vm) {
 		return {

@@ -66,8 +66,7 @@
 </template>
 
 <script>
-import Vue from "vue";
-import { Component, Prop } from "vue-property-decorator";
+import { Component, Prop, Vue, Watch } from "vue-property-decorator";
 
 import { ButtonSwitch } from "@/components/Button";
 import { MenuOptions, MenuOptionsItem } from "@/components/Menu";
@@ -82,16 +81,6 @@ import WalletSidebarFiltersSearchInput from "./WalletSidebarFiltersSearchInput";
 		MenuOptions,
 		MenuOptionsItem,
 		WalletSidebarFiltersSearchInput,
-	},
-
-	watch: {
-		filters(filters) {
-			this.currentFilters = filters;
-		},
-
-		searchQuery(query) {
-			this.currentSearchQuery = query;
-		},
 	},
 })
 export default class WalletSidebarFilters extends Vue {
@@ -151,6 +140,16 @@ export default class WalletSidebarFilters extends Vue {
 	currentFilters = undefined;
 
 	currentSortOrder = undefined;
+
+	@Watch("filters")
+	onFilters(filters) {
+		this.currentFilters = filters;
+	}
+
+	@Watch("searchQuery")
+	onSearchQuery(query) {
+		this.currentSearchQuery = query;
+	}
 
 	data() {
 		return {
