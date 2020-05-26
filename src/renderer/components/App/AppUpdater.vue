@@ -77,10 +77,11 @@
 	</ModalWindow>
 </template>
 
-<script>
+<script lang="ts">
 import cheerio from "cheerio";
 import { ipcRenderer } from "electron";
 import Vue from "vue";
+import { Component,Vue } from "vue-property-decorator";
 import { mapGetters } from "vuex";
 
 import { ModalWindow } from "@/components/Modal";
@@ -88,69 +89,78 @@ import { ProgressBar } from "@/components/ProgressBar";
 import { AppEvent } from "@/enums";
 import releaseService from "@/services/release";
 
-export default {
-	name: "AppUpdater",
+@Component({
+    name: "AppUpdater",
 
-	components: {
+    components: {
 		ModalWindow,
 		ProgressBar,
-	},
+	}
+})
+export default class AppUpdater extends Vue {
+    isDownloadAuthorized = false;
+    isDownloadFinished = false;
+    isDownloadFailed = false;
+    isDownloadCancelled = false;
 
-	data: () => ({
-		isDownloadAuthorized: false,
-		isDownloadFinished: false,
-		isDownloadFailed: false,
-		isDownloadCancelled: false,
-		errorMessage: undefined,
-		progressUpdate: {
-			bytesPerSecond: 0,
-			delta: 0,
-			percent: 0,
-			total: 0,
-			transferred: 0,
-			timestamp: undefined,
-		},
-		inactivityListener: undefined,
-	}),
+    // vue-convert: vue-class-component ignores property with undefined, so data() method is required for this property.
+    errorMessage = undefined;
 
-	computed: {
-		...mapGetters("updater", ["availableRelease"]),
+    progressUpdate = {
+        bytesPerSecond: 0,
+        delta: 0,
+        percent: 0,
+        total: 0,
+        transferred: 0,
+        timestamp: undefined,
+    };
 
-		formattedPercentage() {
-			return `${(this.progressUpdate.percent || 0).toFixed(2)}%`;
-		},
+    // vue-convert: vue-class-component ignores property with undefined, so data() method is required for this property.
+    inactivityListener = undefined;
 
-		isLinux() {
-			return ["freebsd", "linux", "sunos"].includes(process.platform);
-		},
+    data() {
+        return {
+            errorMessage: undefined,
+            inactivityListener: undefined
+        };
+    }
 
-		isAppImage() {
-			return !!process.env.APPIMAGE;
-		},
+    TODO_spread_invalidArgument() {}
 
-		title() {
-			if (this.isDownloadAuthorized) {
-				return;
-			}
+    get formattedPercentage() {
+        return `${(this.progressUpdate.percent || 0).toFixed(2)}%`;
+    }
 
-			return `${this.$t("APP_UPDATER.RELEASE_NOTES")} - ${this.availableRelease.version}`;
-		},
+    get isLinux() {
+        return ["freebsd", "linux", "sunos"].includes(process.platform);
+    }
 
-		releaseNotes() {
-			return this.__formatReleaseNotes(this.availableRelease.releaseNotes);
-		},
+    get isAppImage() {
+        return !!process.env.APPIMAGE;
+    }
 
-		descriptionImage() {
-			const image = this.session_hasDarkTheme ? "dark" : "light";
-			return this.assets_loadImage(`pages/updater/computer-${image}.svg`);
-		},
+    get title() {
+        if (this.isDownloadAuthorized) {
+            return;
+        }
 
-		hasFooter() {
-			return !this.isDownloadAuthorized || this.isDownloadFinished || this.isDownloadFailed;
-		},
-	},
+        return `${this.$t("APP_UPDATER.RELEASE_NOTES")} - ${this.availableRelease.version}`;
+    }
 
-	mounted() {
+    get releaseNotes() {
+        return this.__formatReleaseNotes(this.availableRelease.releaseNotes);
+    }
+
+    get descriptionImage() {
+        const image = this.session_hasDarkTheme ? "dark" : "light";
+        return this.assets_loadImage(`pages/updater/computer-${image}.svg`);
+    }
+
+    get hasFooter() {
+        return !this.isDownloadAuthorized || this.isDownloadFinished || this.isDownloadFailed;
+    }
+
+    mounted() {
 		ipcRenderer.on(AppEvent.UpdaterDownloadProgress, (_, data) => {
 			this.progressUpdate.timestamp = Date.now();
 			Object.assign(this.progressUpdate, data);
@@ -169,70 +179,68 @@ export default {
 		this.inactivityListener = setInterval(() => {
 			this.verifyInactivity();
 		}, 30000);
-	},
+	}
 
-	destroyed() {
+    destroyed() {
 		clearInterval(this.inactivityListener);
 		if (this.isDownloadCancelled) {
 			// Recreate the cancellation token
 			setTimeout(() => ipcRenderer.send("updater:check-for-updates"), 200);
 		}
-	},
+	}
 
-	methods: {
-		emitClose() {
-			if (this.isDownloadAuthorized && !this.isDownloadFinished && !this.isDownloadFailed) {
-				// Cancel if file is being downloaded
-				this.cancel();
-			}
-			this.$emit("close");
-		},
+    emitClose() {
+        if (this.isDownloadAuthorized && !this.isDownloadFinished && !this.isDownloadFailed) {
+            // Cancel if file is being downloaded
+            this.cancel();
+        }
+        this.$emit("close");
+    }
 
-		cancel() {
-			this.isDownloadCancelled = true;
-			ipcRenderer.send("updater:cancel");
-		},
+    cancel() {
+        this.isDownloadCancelled = true;
+        ipcRenderer.send("updater:cancel");
+    }
 
-		startDownload() {
-			// Auto update is only supported for AppImage files on Linux
-			if (this.isLinux && !this.isAppImage) {
-				this.electron_openExternal(releaseService.latestReleaseUrl);
-				this.emitClose();
-				return;
-			}
+    startDownload() {
+        // Auto update is only supported for AppImage files on Linux
+        if (this.isLinux && !this.isAppImage) {
+            this.electron_openExternal(releaseService.latestReleaseUrl);
+            this.emitClose();
+            return;
+        }
 
-			this.isDownloadAuthorized = true;
-			ipcRenderer.send("updater:download-update");
-		},
+        this.isDownloadAuthorized = true;
+        ipcRenderer.send("updater:download-update");
+    }
 
-		quitAndInstall() {
-			ipcRenderer.send("updater:quit-and-install");
-		},
+    quitAndInstall() {
+        ipcRenderer.send("updater:quit-and-install");
+    }
 
-		verifyInactivity() {
-			if (!this.progressUpdate.timestamp || this.isDownloadFinished || this.isDownloadFailed) {
-				return;
-			}
-			// Is the download idle for >1min?
-			const diff = Date.now() - this.progressUpdate.timestamp;
-			if (diff >= 60000) {
-				this.isDownloadFailed = true;
-				this.errorMessage = this.$t("APP_UPDATER.NETWORK_ERROR");
-				this.cancel();
-			}
-		},
+    verifyInactivity() {
+        if (!this.progressUpdate.timestamp || this.isDownloadFinished || this.isDownloadFailed) {
+            return;
+        }
+        // Is the download idle for >1min?
+        const diff = Date.now() - this.progressUpdate.timestamp;
+        if (diff >= 60000) {
+            this.isDownloadFailed = true;
+            this.errorMessage = this.$t("APP_UPDATER.NETWORK_ERROR");
+            this.cancel();
+        }
+    }
 
-		__formatReleaseNotes(notes) {
-			const $ = cheerio.load(notes);
-			const hashTable = $("table").last();
-			hashTable.prev("h3").remove(); // Hash title
-			hashTable.remove();
-			// Convert anchor to span elements
-			$("a").each((_, item) => (item.tagName = "span"));
-			return $.html();
-		},
-	},
-};
+    __formatReleaseNotes(notes) {
+        const $ = cheerio.load(notes);
+        const hashTable = $("table").last();
+        hashTable.prev("h3").remove(); // Hash title
+        hashTable.remove();
+        // Convert anchor to span elements
+        $("a").each((_, item) => (item.tagName = "span"));
+        return $.html();
+    }
+}
 </script>
 
 <style lang="postcss">

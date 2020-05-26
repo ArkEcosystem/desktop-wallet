@@ -128,8 +128,9 @@
 	</MenuNavigation>
 </template>
 
-<script>
+<script lang="ts">
 import { ipcRenderer } from "electron";
+import { Component, Prop,Vue } from "vue-property-decorator";
 import { mapGetters } from "vuex";
 
 import { MenuNavigation, MenuNavigationItem } from "@/components/Menu";
@@ -142,10 +143,10 @@ import AppSidemenuNetworkStatus from "./AppSidemenuNetworkStatus";
 import AppSidemenuPlugins from "./AppSidemenuPlugins";
 import AppSidemenuSettings from "./AppSidemenuSettings";
 
-export default {
-	name: "AppSidemenu",
+@Component({
+    name: "AppSidemenu",
 
-	components: {
+    components: {
 		AppSidemenuPlugins,
 		AppSidemenuSettings,
 		AppSidemenuNetworkStatus,
@@ -154,78 +155,72 @@ export default {
 		MenuNavigationItem,
 		ProfileAvatar,
 		SvgIcon,
-	},
+	}
+})
+export default class AppSidemenu extends Vue {
+    @Prop({
+        type: Boolean,
+        required: false,
+        default: false,
+    })
+    isHorizontal;
 
-	props: {
-		isHorizontal: {
-			type: Boolean,
-			required: false,
-			default: false,
-		},
-	},
+    isImportantNotificationVisible = true;
+    isPluginMenuVisible = false;
+    activeItem = vm.$route.name;
+    TODO_spread_invalidArgument() {}
 
-	data: (vm) => ({
-		isImportantNotificationVisible: true,
-		isPluginMenuVisible: false,
-		activeItem: vm.$route.name,
-	}),
+    get showUnread() {
+        return this.unreadAnnouncements.length > 0;
+    }
 
-	computed: {
-		...mapGetters({
-			hasAvailableRelease: "updater/hasAvailableRelease",
-			unreadAnnouncements: "announcements/unread",
-		}),
-		showUnread() {
-			return this.unreadAnnouncements.length > 0;
-		},
-		hasPluginMenuItems() {
-			return this.$store.getters["plugin/menuItems"].length;
-		},
-		hasStandardAvatar() {
-			return this.session_profile.avatar && typeof this.session_profile.avatar === "string";
-		},
-		pluginAvatar() {
-			if (this.session_profile.avatar && this.session_profile.avatar.pluginId) {
-				return this.$store.getters["plugin/avatar"](this.session_profile.avatar);
-			}
+    get hasPluginMenuItems() {
+        return this.$store.getters["plugin/menuItems"].length;
+    }
 
-			return null;
-		},
-	},
+    get hasStandardAvatar() {
+        return this.session_profile.avatar && typeof this.session_profile.avatar === "string";
+    }
 
-	created() {
+    get pluginAvatar() {
+        if (this.session_profile.avatar && this.session_profile.avatar.pluginId) {
+            return this.$store.getters["plugin/avatar"](this.session_profile.avatar);
+        }
+
+        return null;
+    }
+
+    created() {
 		ipcRenderer.on(AppEvent.AppPreferences, () => {
 			this.$refs.settings.showSettings();
 		});
-	},
+	}
 
-	methods: {
-		redirect(name) {
-			this.setActive(name);
-			this.$router.push({ name });
-		},
+    redirect(name) {
+        this.setActive(name);
+        this.$router.push({ name });
+    }
 
-		setActive(name) {
-			this.activeItem = name;
-		},
+    setActive(name) {
+        this.activeItem = name;
+    }
 
-		hideImportantNotification() {
-			this.isImportantNotificationVisible = false;
-		},
+    hideImportantNotification() {
+        this.isImportantNotificationVisible = false;
+    }
 
-		toggleShowPluginMenu() {
-			this.isPluginMenuVisible = !this.isPluginMenuVisible;
-		},
+    toggleShowPluginMenu() {
+        this.isPluginMenuVisible = !this.isPluginMenuVisible;
+    }
 
-		closeShowPlugins(setActive) {
-			if (setActive) {
-				this.setActive("plugin-pages");
-			}
+    closeShowPlugins(setActive) {
+        if (setActive) {
+            this.setActive("plugin-pages");
+        }
 
-			this.isPluginMenuVisible = false;
-		},
-	},
-};
+        this.isPluginMenuVisible = false;
+    }
+}
 </script>
 
 <style lang="postcss" scoped>

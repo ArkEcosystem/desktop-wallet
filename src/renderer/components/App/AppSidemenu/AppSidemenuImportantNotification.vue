@@ -19,7 +19,8 @@
 	</div>
 </template>
 
-<script>
+<script lang="ts">
+import { Component, Prop,Vue } from "vue-property-decorator";
 import { mapGetters } from "vuex";
 
 import AppUpdater from "@/components/App/AppUpdater";
@@ -29,45 +30,41 @@ import SvgIcon from "@/components/SvgIcon";
  * A component to display a notification icon (a bell) and display important
  * notifications, such as, new relesases
  */
-export default {
-	name: "AppSidemenuImportantNotification",
+@Component({
+    name: "AppSidemenuImportantNotification",
 
-	components: {
+    components: {
 		SvgIcon,
 		AppUpdater,
-	},
+	}
+})
+export default class AppSidemenuImportantNotification extends Vue {
+    @Prop({
+        type: Boolean,
+        required: false,
+        default: false,
+    })
+    isHorizontal;
 
-	props: {
-		isHorizontal: {
-			type: Boolean,
-			required: false,
-			default: false,
-		},
-	},
+    isNotificationVisible = false;
+    TODO_spread_invalidArgument() {}
 
-	data: () => ({
-		isNotificationVisible: false,
-	}),
+    get releaseVersion() {
+        return this.availableRelease && this.availableRelease.version;
+    }
 
-	computed: {
-		...mapGetters("updater", ["availableRelease"]),
-		releaseVersion() {
-			return this.availableRelease && this.availableRelease.version;
-		},
-		tooltipText() {
-			return this.$t("APP_SIDEMENU_NOTIFICATION.TOOLTIP", { version: this.releaseVersion });
-		},
-	},
+    get tooltipText() {
+        return this.$t("APP_SIDEMENU_NOTIFICATION.TOOLTIP", { version: this.releaseVersion });
+    }
 
-	methods: {
-		closeNotification() {
-			this.isNotificationVisible = false;
-		},
-		openNotification() {
-			this.isNotificationVisible = true;
-		},
-	},
-};
+    closeNotification() {
+        this.isNotificationVisible = false;
+    }
+
+    openNotification() {
+        this.isNotificationVisible = true;
+    }
+}
 </script>
 
 <style scoped>

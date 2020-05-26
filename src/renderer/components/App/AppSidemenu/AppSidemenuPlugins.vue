@@ -24,50 +24,49 @@
 	</div>
 </template>
 
-<script>
+<script lang="ts">
+import { Component, Prop,Vue } from "vue-property-decorator";
+
 import { MenuOptions, MenuOptionsItem } from "@/components/Menu";
 
-export default {
-	name: "AppSidemenuPlugins",
+@Component({
+    name: "AppSidemenuPlugins",
 
-	components: {
+    components: {
 		MenuOptions,
 		MenuOptionsItem,
-	},
+	}
+})
+export default class AppSidemenuPlugins extends Vue {
+    @Prop({
+        type: Boolean,
+        required: false,
+        default: false,
+    })
+    outsideClick;
 
-	props: {
-		outsideClick: {
-			type: Boolean,
-			required: false,
-			default: false,
-		},
+    @Prop({
+        type: Boolean,
+        required: false,
+        default: false,
+    })
+    isHorizontal;
 
-		isHorizontal: {
-			type: Boolean,
-			required: false,
-			default: false,
-		},
-	},
+    get pluginMenuItems() {
+        return this.$store.getters["plugin/menuItems"];
+    }
 
-	computed: {
-		pluginMenuItems() {
-			return this.$store.getters["plugin/menuItems"];
-		},
-	},
+    navigateToRoute(routeName) {
+        this.$emit("close", true);
+        this.$router.push({ name: routeName });
+    }
 
-	methods: {
-		navigateToRoute(routeName) {
-			this.$emit("close", true);
-			this.$router.push({ name: routeName });
-		},
-
-		emitClose() {
-			if (this.outsideClick) {
-				this.$emit("close");
-			}
-		},
-	},
-};
+    emitClose() {
+        if (this.outsideClick) {
+            this.$emit("close");
+        }
+    }
+}
 </script>
 
 <style lang="postcss" scoped>

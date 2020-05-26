@@ -143,9 +143,10 @@
 	</div>
 </template>
 
-<script>
+<script lang="ts">
 import { MARKET } from "@config";
 import os from "os";
+import { Component, Prop,Vue } from "vue-property-decorator";
 
 import { ButtonSwitch } from "@/components/Button";
 import { MenuDropdown, MenuNavigationItem, MenuOptions, MenuOptionsItem } from "@/components/Menu";
@@ -154,10 +155,10 @@ import { PluginManageBlacklistModal } from "@/components/PluginManager/PluginMan
 import { StoreBinding } from "@/enums";
 import { isEmpty } from "@/utils";
 
-export default {
-	name: "AppSidemenuOptionsSettings",
+@Component({
+    name: "AppSidemenuOptionsSettings",
 
-	components: {
+    components: {
 		ButtonSwitch,
 		MenuDropdown,
 		MenuNavigationItem,
@@ -165,207 +166,151 @@ export default {
 		MenuOptionsItem,
 		ModalConfirmation,
 		PluginManageBlacklistModal,
-	},
+	}
+})
+export default class AppSidemenuOptionsSettings extends Vue {
+    @Prop({
+        type: Boolean,
+        required: false,
+        default: false,
+    })
+    outsideClick;
 
-	props: {
-		outsideClick: {
-			type: Boolean,
-			required: false,
-			default: false,
-		},
-		isHorizontal: {
-			type: Boolean,
-			required: false,
-			default: false,
-		},
-	},
+    @Prop({
+        type: Boolean,
+        required: false,
+        default: false,
+    })
+    isHorizontal;
 
-	data: () => ({
-		isResetDataModalOpen: false,
-		isManageBlacklistModalOpen: false,
-		isScreenshotProtectionModalOpen: false,
-		isSettingsVisible: false,
-		saveOnProfile: false,
-	}),
+    isResetDataModalOpen = false;
+    isManageBlacklistModalOpen = false;
+    isScreenshotProtectionModalOpen = false;
+    isSettingsVisible = false;
+    saveOnProfile = false;
 
-	computed: {
-		isAllowedToClose() {
-			return (
-				this.outsideClick &&
-				!(this.isResetDataModalOpen || this.isScreenshotProtectionModalOpen || this.isManageBlacklistModalOpen)
-			);
-		},
-		isLinux() {
-			// You can find the possible options here: https://nodejs.org/api/os.html#os_os_platform
-			return os.platform() !== "darwin" && os.platform() !== "win32";
-		},
-		isMarketEnabled() {
-			return this.session_network && this.session_network.market && this.session_network.market.enabled;
-		},
-		currencies() {
-			return Object.keys(MARKET.currencies);
-		},
-		backgroundUpdateLedger() {
-			return this.$store.getters["session/backgroundUpdateLedger"];
-		},
-		blacklist() {
-			return [...this.$store.getters["plugin/blacklisted"].local].sort();
-		},
-		sessionCurrency: {
-			get() {
-				return this.$store.getters["session/currency"];
-			},
-			set(currency) {
-				this.$store.dispatch(StoreBinding.SessionSetCurrency, currency);
+    get isAllowedToClose() {
+        return (
+            this.outsideClick &&
+            !(this.isResetDataModalOpen || this.isScreenshotProtectionModalOpen || this.isManageBlacklistModalOpen)
+        );
+    }
 
-				this.$store.dispatch(StoreBinding.ProfileUpdate, {
-					...this.session_profile,
-					currency,
-				});
-			},
-		},
-		sessionBroadcastPeers: {
-			get() {
-				return this.$store.getters["session/broadcastPeers"];
-			},
-			set(broadcast) {
-				this.$store.dispatch(StoreBinding.SessionSetBroadcastPeers, broadcast);
+    get isLinux() {
+        // You can find the possible options here: https://nodejs.org/api/os.html#os_os_platform
+        return os.platform() !== "darwin" && os.platform() !== "win32";
+    }
 
-				this.$store.dispatch(StoreBinding.ProfileUpdate, {
-					...this.session_profile,
-					broadcastPeers: broadcast,
-				});
-			},
-		},
-		sessionTheme: {
-			get() {
-				return this.$store.getters["session/theme"];
-			},
-			set(theme) {
-				this.$store.dispatch(StoreBinding.SessionSetTheme, theme);
+    get isMarketEnabled() {
+        return this.session_network && this.session_network.market && this.session_network.market.enabled;
+    }
 
-				this.$store.dispatch(StoreBinding.ProfileUpdate, {
-					...this.session_profile,
-					theme,
-				});
-			},
-		},
-		hasScreenshotProtection: {
-			get() {
-				return this.$store.getters["session/screenshotProtection"];
-			},
-			set(protection) {
-				this.$store.dispatch(StoreBinding.SessionSetScreenshotProtection, protection);
+    get currencies() {
+        return Object.keys(MARKET.currencies);
+    }
 
-				if (protection || this.saveOnProfile) {
-					this.$store.dispatch(StoreBinding.ProfileUpdate, {
-						...this.session_profile,
-						screenshotProtection: protection,
-					});
-				}
-			},
-		},
-		isScreenshotProtectionEnabled() {
-			return this.$store.getters["app/isScreenshotProtectionEnabled"];
-		},
-		sessionBackgroundUpdateLedger: {
-			get() {
-				return this.$store.getters["session/backgroundUpdateLedger"];
-			},
-			set(update) {
-				this.$store.dispatch(StoreBinding.SessionSetBackgroundUpdateLedger, update);
+    get backgroundUpdateLedger() {
+        return this.$store.getters["session/backgroundUpdateLedger"];
+    }
 
-				this.$store.dispatch(StoreBinding.ProfileUpdate, {
-					...this.session_profile,
-					backgroundUpdateLedger: update,
-				});
-			},
-		},
-		pluginThemes() {
-			return isEmpty(this.$store.getters["plugin/themes"]) ? null : this.$store.getters["plugin/themes"];
-		},
-		themes() {
-			const pluginThemes = {};
+    get blacklist() {
+        return [...this.$store.getters["plugin/blacklisted"].local].sort();
+    }
 
-			for (const [themeId, config] of Object.entries(this.pluginThemes)) {
-				pluginThemes[themeId] = config.name;
-			}
+    get TODO_sessionCurrency() {}
+    get TODO_sessionBroadcastPeers() {}
+    get TODO_sessionTheme() {}
+    get TODO_hasScreenshotProtection() {}
 
-			return {
-				light: this.$t("COMMON.THEMES.LIGHT"),
-				dark: this.$t("COMMON.THEMES.DARK"),
-				...pluginThemes,
-			};
-		},
-	},
+    get isScreenshotProtectionEnabled() {
+        return this.$store.getters["app/isScreenshotProtectionEnabled"];
+    }
 
-	methods: {
-		toggleShowSettings() {
-			this.isSettingsVisible = !this.isSettingsVisible;
-		},
+    get TODO_sessionBackgroundUpdateLedger() {}
 
-		showSettings() {
-			this.isSettingsVisible = true;
-		},
+    get pluginThemes() {
+        return isEmpty(this.$store.getters["plugin/themes"]) ? null : this.$store.getters["plugin/themes"];
+    }
 
-		closeShowSettings() {
-			this.isSettingsVisible = false;
-		},
+    get themes() {
+        const pluginThemes = {};
 
-		setCurrency(newCurrency) {
-			this.sessionCurrency = newCurrency;
-		},
+        for (const [themeId, config] of Object.entries(this.pluginThemes)) {
+            pluginThemes[themeId] = config.name;
+        }
 
-		setTheme(theme) {
-			this.sessionTheme = typeof theme === "string" ? theme : theme ? "dark" : "light";
-		},
+        return {
+            light: this.$t("COMMON.THEMES.LIGHT"),
+            dark: this.$t("COMMON.THEMES.DARK"),
+            ...pluginThemes,
+        };
+    }
 
-		setBackgroundUpdateLedger(update) {
-			this.sessionBackgroundUpdateLedger = update;
-		},
+    toggleShowSettings() {
+        this.isSettingsVisible = !this.isSettingsVisible;
+    }
 
-		setBroadcastPeers(broadcast) {
-			this.sessionBroadcastPeers = broadcast;
-		},
+    showSettings() {
+        this.isSettingsVisible = true;
+    }
 
-		toggleSelect(name) {
-			this.$refs[name].toggle();
-		},
+    closeShowSettings() {
+        this.isSettingsVisible = false;
+    }
 
-		toggleScreenshotProtectionModal() {
-			if (this.hasScreenshotProtection || this.isScreenshotProtectionModalOpen) {
-				this.isScreenshotProtectionModalOpen = !this.isScreenshotProtectionModalOpen;
-			} else {
-				this.hasScreenshotProtection = true;
-			}
-		},
+    setCurrency(newCurrency) {
+        this.sessionCurrency = newCurrency;
+    }
 
-		toggleResetDataModal() {
-			this.isResetDataModalOpen = !this.isResetDataModalOpen;
-		},
+    setTheme(theme) {
+        this.sessionTheme = typeof theme === "string" ? theme : theme ? "dark" : "light";
+    }
 
-		toggleManageBlacklistModal() {
-			this.isManageBlacklistModalOpen = !this.isManageBlacklistModalOpen;
-		},
+    setBackgroundUpdateLedger(update) {
+        this.sessionBackgroundUpdateLedger = update;
+    }
 
-		async onResetData() {
-			await this.$store.dispatch(StoreBinding.ResetData);
-			this.electron_reload();
-		},
+    setBroadcastPeers(broadcast) {
+        this.sessionBroadcastPeers = broadcast;
+    }
 
-		onDisableScreenshotProtection(saveOnProfile = false) {
-			this.saveOnProfile = saveOnProfile;
-			this.hasScreenshotProtection = false;
-			this.toggleScreenshotProtectionModal();
-		},
+    toggleSelect(name) {
+        this.$refs[name].toggle();
+    }
 
-		emitClose() {
-			if (this.isAllowedToClose) {
-				this.closeShowSettings();
-			}
-		},
-	},
-};
+    toggleScreenshotProtectionModal() {
+        if (this.hasScreenshotProtection || this.isScreenshotProtectionModalOpen) {
+            this.isScreenshotProtectionModalOpen = !this.isScreenshotProtectionModalOpen;
+        } else {
+            this.hasScreenshotProtection = true;
+        }
+    }
+
+    toggleResetDataModal() {
+        this.isResetDataModalOpen = !this.isResetDataModalOpen;
+    }
+
+    toggleManageBlacklistModal() {
+        this.isManageBlacklistModalOpen = !this.isManageBlacklistModalOpen;
+    }
+
+    onResetData() {
+        await this.$store.dispatch(StoreBinding.ResetData);
+        this.electron_reload();
+    }
+
+    onDisableScreenshotProtection(saveOnProfile = false) {
+        this.saveOnProfile = saveOnProfile;
+        this.hasScreenshotProtection = false;
+        this.toggleScreenshotProtectionModal();
+    }
+
+    emitClose() {
+        if (this.isAllowedToClose) {
+            this.closeShowSettings();
+        }
+    }
+}
 </script>
 
 <style lang="postcss" scoped>

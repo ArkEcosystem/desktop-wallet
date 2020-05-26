@@ -8,17 +8,17 @@
 	</footer>
 </template>
 
-<script>
-export default {
-	name: "AppFooter",
+<script lang="ts">
+import { Component,Vue } from "vue-property-decorator";
+@Component({
+    name: "AppFooter"
+})
+export default class AppFooter extends Vue {
+    text = "";
+    url = "https://ark.io";
 
-	data: () => ({
-		text: "",
-		url: "https://ark.io",
-	}),
-
-	created() {
+    created() {
 		this.text = this.$t("APP_FOOTER.TEXT");
-	},
-};
+	}
+}
 </script>
