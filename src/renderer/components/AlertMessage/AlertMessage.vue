@@ -68,23 +68,28 @@ export default class AlertMessage extends Vue {
 .AlertMessage {
 	transition: opacity, hidden 0.2s ease-in, background-color 0.1s ease-in;
 }
+
+.AlertMessage .ButtonClose {
+	@apply .float-right .cursor-pointer .select-none .ml-4;
+}
+
 .AlertMessage--error {
-	@apply bg-theme-error;
+	@apply .bg-theme-error;
 	box-shadow: 0 0 15px var(--theme-error-shadow);
 }
+
 .AlertMessage--success {
-	@apply bg-theme-success;
+	@apply .bg-theme-success;
 	box-shadow: 0 0 15px var(--theme-success-shadow);
 }
+
 .AlertMessage--info {
-	@apply bg-theme-info;
+	@apply .bg-theme-info;
 	box-shadow: 0 0 15px var(--theme-info-shadow);
 }
+
 .AlertMessage--warn {
-	@apply bg-theme-warn text-theme-warn-text;
+	@apply .bg-theme-warn .text-theme-warn-text;
 	box-shadow: 0 0 15px var(--theme-warn-shadow);
-}
-.AlertMessage .ButtonClose {
-	@apply float-right cursor-pointer select-none ml-4;
 }
 </style>
