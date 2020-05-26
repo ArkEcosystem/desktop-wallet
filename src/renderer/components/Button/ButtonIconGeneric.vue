@@ -9,43 +9,49 @@
 	</button>
 </template>
 
-<script>
+<script lang="ts">
+import { Component, Prop,Vue } from "vue-property-decorator";
+
 import SvgIcon from "@/components/SvgIcon";
 
-export default {
-	name: "ButtonIconGeneric",
+@Component({
+    name: "ButtonIconGeneric",
 
-	components: {
+    components: {
 		SvgIcon,
-	},
+	}
+})
+export default class ButtonIconGeneric extends Vue {
+    @Prop({
+        type: String,
+        required: true,
+    })
+    icon;
 
-	props: {
-		icon: {
-			type: String,
-			required: true,
-		},
-		viewBox: {
-			type: String,
-			required: true,
-		},
-		disabled: {
-			type: Boolean,
-			required: false,
-			default: false,
-		},
-		isSmall: {
-			type: Boolean,
-			required: false,
-			default: false,
-		},
-	},
+    @Prop({
+        type: String,
+        required: true,
+    })
+    viewBox;
 
-	methods: {
-		emitClick() {
-			this.$emit("click");
-		},
-	},
-};
+    @Prop({
+        type: Boolean,
+        required: false,
+        default: false,
+    })
+    disabled;
+
+    @Prop({
+        type: Boolean,
+        required: false,
+        default: false,
+    })
+    isSmall;
+
+    emitClick() {
+        this.$emit("click");
+    }
+}
 </script>
 
 <style scoped>

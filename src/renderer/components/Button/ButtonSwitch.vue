@@ -24,65 +24,55 @@
 	</button>
 </template>
 
-<script>
-export default {
-	name: "ButtonSwitch",
+<script lang="ts">
+import { Component, Prop,Vue } from "vue-property-decorator";
+@Component({
+    name: "ButtonSwitch",
 
-	model: {
+    model: {
 		prop: "isActive",
 		event: "change",
 	},
 
-	props: {
-		isActive: {
-			type: Boolean,
-			required: false,
-			default: false,
-		},
-		isDisabled: {
-			type: Boolean,
-			required: false,
-			default: false,
-		},
-		backgroundColor: {
-			type: String,
-			required: false,
-			default: null,
-		},
-	},
-
-	data: (vm) => ({
-		inputIsActive: vm.isActive,
-	}),
-
-	computed: {
-		model: {
-			get() {
-				return this.inputIsActive;
-			},
-			set(value) {
-				this.inputIsActive = value;
-				this.$emit("change", value);
-			},
-		},
-	},
-
-	watch: {
+    watch: {
 		isActive(isActive) {
 			this.inputIsActive = isActive;
 		},
-	},
+	}
+})
+export default class ButtonSwitch extends Vue {
+    @Prop({
+        type: Boolean,
+        required: false,
+        default: false,
+    })
+    isActive;
 
-	methods: {
-		toggle() {
-			if (this.isDisabled) {
-				return;
-			}
+    @Prop({
+        type: Boolean,
+        required: false,
+        default: false,
+    })
+    isDisabled;
 
-			this.model = !this.model;
-		},
-	},
-};
+    @Prop({
+        type: String,
+        required: false,
+        default: null,
+    })
+    backgroundColor;
+
+    inputIsActive = vm.isActive;
+    get TODO_model() {}
+
+    toggle() {
+        if (this.isDisabled) {
+            return;
+        }
+
+        this.model = !this.model;
+    }
+}
 </script>
 
 <style scoped>

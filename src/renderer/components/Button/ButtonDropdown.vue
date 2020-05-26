@@ -37,111 +37,107 @@
 	</div>
 </template>
 
-<script>
+<script lang="ts">
+import { Component, Prop,Vue } from "vue-property-decorator";
+
 import SvgIcon from "@/components/SvgIcon";
 
 import ButtonGeneric from "./ButtonGeneric";
 
-export default {
-	name: "ButtonDropdown",
+@Component({
+    name: "ButtonDropdown",
 
-	components: {
+    components: {
 		ButtonGeneric,
 		SvgIcon,
-	},
+	}
+})
+export default class ButtonDropdown extends Vue {
+    @Prop({
+        type: String,
+        required: false,
+        default: "",
+    })
+    classes;
 
-	props: {
-		classes: {
-			type: String,
-			required: false,
-			default: "",
-		},
+    @Prop({
+        type: Array,
+        required: true,
+    })
+    items;
 
-		items: {
-			type: Array,
-			required: true,
-		},
+    @Prop({
+        type: String,
+        required: false,
+        default: null,
+    })
+    title;
 
-		title: {
-			type: String,
-			required: false,
-			default: null,
-		},
-	},
+    showDropdown = false;
+    dropdownStyle = "";
 
-	data() {
-		return {
-			showDropdown: false,
-			dropdownStyle: "",
-		};
-	},
+    get hasPrimaryButton() {
+        return !!this.$slots.primaryButton;
+    }
 
-	computed: {
-		hasPrimaryButton() {
-			return !!this.$slots.primaryButton;
-		},
+    get dropdownButtonClasses() {
+        return {
+            ...this.classes.split(" ").reduce((classes, className) => {
+                classes[className] = true;
 
-		dropdownButtonClasses() {
-			return {
-				...this.classes.split(" ").reduce((classes, className) => {
-					classes[className] = true;
+                return classes;
+            }, {}),
+            "ButtonDropdown__button--nolabel": this.hasPrimaryButton,
+        };
+    }
 
-					return classes;
-				}, {}),
-				"ButtonDropdown__button--nolabel": this.hasPrimaryButton,
-			};
-		},
+    get arrowViewbox() {
+        if (this.showDropdown) {
+            return "0 2 12 16";
+        }
 
-		arrowViewbox() {
-			if (this.showDropdown) {
-				return "0 2 12 16";
-			}
+        return "0 -2 12 16";
+    }
 
-			return "0 -2 12 16";
-		},
-	},
-
-	mounted() {
+    mounted() {
 		this.setDropdownStyle();
 
 		window.addEventListener("resize", this.handleResize);
-	},
+	}
 
-	destroyed() {
+    destroyed() {
 		window.removeEventListener("resize", this.handleResize);
-	},
+	}
 
-	methods: {
-		toggleDropdown() {
-			this.showDropdown = !this.showDropdown;
-		},
+    toggleDropdown() {
+        this.showDropdown = !this.showDropdown;
+    }
 
-		triggerClose() {
-			this.showDropdown = false;
-		},
+    triggerClose() {
+        this.showDropdown = false;
+    }
 
-		handleResize() {
-			this.setDropdownStyle();
-		},
+    handleResize() {
+        this.setDropdownStyle();
+    }
 
-		setDropdownStyle() {
-			const buttonDropdown = this.$refs.buttonDropdown;
+    setDropdownStyle() {
+        const buttonDropdown = this.$refs.buttonDropdown;
 
-			if (buttonDropdown) {
-				const height = buttonDropdown.clientHeight;
-				const position = buttonDropdown.getBoundingClientRect();
+        if (buttonDropdown) {
+            const height = buttonDropdown.clientHeight;
+            const position = buttonDropdown.getBoundingClientRect();
 
-				this.dropdownStyle = [
-					`top: ${position.top + height}px`,
-					`left: ${position.left}px`,
-					"z-index: 10",
-				].join(";");
-			} else {
-				this.dropdownStyle = "";
-			}
-		},
-	},
-};
+            this.dropdownStyle = [
+                `top: ${position.top + height}px`,
+                `left: ${position.left}px`,
+                "z-index: 10",
+            ].join(";");
+        } else {
+            this.dropdownStyle = "";
+        }
+    }
+}
 </script>
 
 <style scoped>

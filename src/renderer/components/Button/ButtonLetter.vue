@@ -16,41 +16,46 @@
 	</Component>
 </template>
 
-<script>
-export default {
-	name: "ButtonLetter",
+<script lang="ts">
+import { Component, Prop,Vue } from "vue-property-decorator";
+@Component({
+    name: "ButtonLetter"
+})
+export default class ButtonLetter extends Vue {
+    @Prop({
+        type: String,
+        required: false,
+        default: "button",
+        validator: (value) => ["button", "div"].includes(value),
+    })
+    tag;
 
-	props: {
-		tag: {
-			type: String,
-			required: false,
-			default: "button",
-			validator: (value) => ["button", "div"].includes(value),
-		},
-		size: {
-			type: String,
-			required: false,
-			default: null,
-			validator: (value) => (value ? ["sm", "base", "lg", "xl", "2xl", "3xl"].includes(value) : true),
-		},
-		hasCustomStyle: {
-			type: Boolean,
-			required: false,
-			default: false,
-		},
-		value: {
-			type: String,
-			required: false,
-			default: "",
-		},
-	},
+    @Prop({
+        type: String,
+        required: false,
+        default: null,
+        validator: (value) => (value ? ["sm", "base", "lg", "xl", "2xl", "3xl"].includes(value) : true),
+    })
+    size;
 
-	computed: {
-		letter() {
-			return (this.value || "").charAt(0);
-		},
-	},
-};
+    @Prop({
+        type: Boolean,
+        required: false,
+        default: false,
+    })
+    hasCustomStyle;
+
+    @Prop({
+        type: String,
+        required: false,
+        default: "",
+    })
+    value;
+
+    get letter() {
+        return (this.value || "").charAt(0);
+    }
+}
 </script>
 
 <style lang="postcss" scoped>
