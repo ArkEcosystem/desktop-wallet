@@ -107,8 +107,7 @@
 						placement: 'right',
 					}"
 					class="pr-1"
-					>...</span
-				>
+				>...</span>
 			</p>
 
 			<a
