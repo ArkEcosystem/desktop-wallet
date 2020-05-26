@@ -4,41 +4,20 @@
 	</div>
 </template>
 
-<script>
+<script lang="ts">
+import { Component, Prop,Vue } from "vue-property-decorator";
+
 import { isEmpty } from "@/utils";
 
-export default {
-	name: "CollapseAccordion",
+@Component({
+    name: "CollapseAccordion",
 
-	model: {
+    model: {
 		prop: "id",
 		event: "input",
 	},
 
-	provide() {
-		return {
-			collapseClick: this.collapseClick,
-		};
-	},
-
-	props: {
-		id: {
-			type: [String, Number],
-			required: false,
-			default: null,
-		},
-		items: {
-			type: Array,
-			required: false,
-			default: () => this.collections_filterChildren("Collapse") || [],
-		},
-	},
-
-	data: (vm) => ({
-		inputId: vm.id,
-	}),
-
-	watch: {
+    watch: {
 		id(val) {
 			this.$nextTick(() => (this.inputId = val));
 		},
@@ -50,26 +29,47 @@ export default {
 		items() {
 			this.toggleCollapse();
 		},
-	},
+	}
+})
+export default class CollapseAccordion extends Vue {
+    provide() {
+		return {
+			collapseClick: this.collapseClick,
+		};
+	}
 
-	mounted() {
+    @Prop({
+        type: [String, Number],
+        required: false,
+        default: null,
+    })
+    id;
+
+    @Prop({
+        type: Array,
+        required: false,
+        default: () => this.collections_filterChildren("Collapse") || [],
+    })
+    items;
+
+    inputId = vm.id;
+
+    mounted() {
 		if (isEmpty(this.items)) return;
 
 		this.toggleCollapse();
-	},
+	}
 
-	methods: {
-		// Called by the child
-		collapseClick(id) {
-			this.$nextTick(() => (this.inputId = id));
-		},
+    // Called by the child
+    collapseClick(id) {
+        this.$nextTick(() => (this.inputId = id));
+    }
 
-		toggleCollapse() {
-			this.items.forEach((item) => {
-				item.collapse(this.inputId);
-			});
-			this.$emit("input", this.inputId);
-		},
-	},
-};
+    toggleCollapse() {
+        this.items.forEach((item) => {
+            item.collapse(this.inputId);
+        });
+        this.$emit("input", this.inputId);
+    }
+}
 </script>
