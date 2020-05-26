@@ -48,6 +48,7 @@ import { ButtonClose } from "@/components/Button";
 
 	watch: {
 		value(newValue) {
+			// @ts-ignore
 			this.items = newValue;
 		},
 	},
@@ -112,6 +113,7 @@ export default class InputEditableList extends Vue {
 		type: String,
 		required: false,
 		default: function () {
+			// @ts-ignore
 			return this.$t("INPUT_EDITABLE_LIST.NO_ITEMS");
 		},
 	})
@@ -126,6 +128,7 @@ export default class InputEditableList extends Vue {
 	}
 
 	get requiredAndEmpty() {
+		// @ts-ignore
 		return this.required && (!this.items || !this.items.length);
 	}
 

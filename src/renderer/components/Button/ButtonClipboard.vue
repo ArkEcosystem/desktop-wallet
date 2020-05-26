@@ -1,6 +1,6 @@
 <template>
 	<button v-tooltip="getTooltip()" :disabled="!isCopySupported" class="ButtonClipboard" @click="copy">
-		<div :class="{ 'animate__animated animate__wobble': isCopying }" class="fill-current flex items-center">
+		<div :class="{ 'animate__animated animate__wobble': isCopying }" class="flex items-center fill-current">
 			<SvgIcon :view-box="viewBox" name="copy" />
 		</div>
 	</button>
@@ -50,11 +50,13 @@ export default class ButtonClipboard extends Vue {
 		// when using portals. Probably is this bug:
 		// https://github.com/LinusBorg/portal-vue/issues/159
 		if (this.$i18n) {
+			// @ts-ignore
 			this.copyText = this.$t("BUTTON_CLIPBOARD.COPY_TO_CLIPBOARD", [this.subject]);
 		}
 	}
 
 	beforeDestroy() {
+		// @ts-ignore
 		clearTimeout(this.timeout);
 	}
 
@@ -66,9 +68,13 @@ export default class ButtonClipboard extends Vue {
 		document.body.appendChild(textArea);
 		textArea.select();
 
+		// @ts-ignore
 		this.isCopying = true;
+		// @ts-ignore
 		this.timeout = setTimeout(() => (this.isCopying = false), 1000);
+		// @ts-ignore
 		this.timeout = setTimeout(
+			// @ts-ignore
 			() => (this.copyText = this.$t("BUTTON_CLIPBOARD.COPY_TO_CLIPBOARD", [this.subject])),
 			1500,
 		);
@@ -77,6 +83,7 @@ export default class ButtonClipboard extends Vue {
 			document.execCommand("copy");
 		} catch (err) {
 			this.isCopySupported = false;
+			// @ts-ignore
 			this.$logger.error("Clipboard not supported!");
 		}
 
@@ -92,13 +99,18 @@ export default class ButtonClipboard extends Vue {
 		};
 
 		if (this.isCopying) {
+			// @ts-ignore
 			tooltip.delay = { show: 0, hide: 1000 };
 
 			if (this.isCopySupported) {
+				// @ts-ignore
 				this.copyText = this.$t("BUTTON_CLIPBOARD.DONE");
+				// @ts-ignore
 				tooltip.classes = "success";
 			} else {
+				// @ts-ignore
 				this.copyText = this.$t("BUTTON_CLIPBOARD.NOT_SUPPORTED");
+				// @ts-ignore
 				tooltip.classes = "error";
 			}
 		}

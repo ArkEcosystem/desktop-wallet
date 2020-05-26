@@ -21,11 +21,11 @@
 			</button>
 
 			<Portal to="button-dropdown">
-				<div v-show="showDropdown" class="ButtonDropdown__list transition" :style="dropdownStyle">
+				<div v-show="showDropdown" class="transition ButtonDropdown__list" :style="dropdownStyle">
 					<div
 						v-for="(item, key) of items"
 						:key="key"
-						class="ButtonDropdown__list__item flex-1 whitespace-no-wrap"
+						class="flex-1 whitespace-no-wrap ButtonDropdown__list__item"
 					>
 						<slot name="button" v-bind="{ item, triggerClose }">
 							<ButtonGeneric :label="item" @click="triggerClose" />
@@ -125,7 +125,9 @@ export default class ButtonDropdown extends Vue {
 		const buttonDropdown = this.$refs.buttonDropdown;
 
 		if (buttonDropdown) {
+			// @ts-ignore
 			const height = buttonDropdown.clientHeight;
+			// @ts-ignore
 			const position = buttonDropdown.getBoundingClientRect();
 
 			this.dropdownStyle = [`top: ${position.top + height}px`, `left: ${position.left}px`, "z-index: 10"].join(

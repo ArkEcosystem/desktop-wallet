@@ -31,6 +31,7 @@ import InputText from "./InputText";
 
 	watch: {
 		value(value) {
+			// @ts-ignore
 			this.inputValue = value;
 		},
 	},
@@ -83,6 +84,7 @@ export default class InputPublicKey extends Vue {
 	}
 
 	reset() {
+		// @ts-ignore
 		this.model = "";
 		this.$nextTick(() => {
 			this.$v.$reset();
@@ -92,6 +94,7 @@ export default class InputPublicKey extends Vue {
 	validations = {
 		model: {
 			isValid(value) {
+				// @ts-ignore
 				if (!this.isRequired && value.replace(/\s+/, "") === "") {
 					return true;
 				}

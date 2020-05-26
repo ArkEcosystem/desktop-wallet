@@ -68,6 +68,7 @@
 import "@/styles/style.css";
 
 import { I18N } from "@config";
+// @ts-ignore
 import CleanCss from "clean-css";
 import { ipcRenderer, remote } from "electron";
 import fs from "fs";
@@ -97,20 +98,26 @@ const Menu = remote.Menu;
 
 	watch: {
 		hasScreenshotProtection(value) {
+			// @ts-ignore
 			if (this.isScreenshotProtectionEnabled) {
 				remote.getCurrentWindow().setContentProtection(value);
 			}
 		},
 		routeComponent(value) {
+			// @ts-ignore
 			if (this.aliveRouteComponents.includes(value)) {
+				// @ts-ignore
 				pull(this.aliveRouteComponents, value);
 			}
 			// Not all routes can be cached flawlessly
 			const keepable = [
+				// @ts-ignore
 				...this.$options.keepableRoutes.profileAgnostic,
+				// @ts-ignore
 				...this.$options.keepableRoutes.profileDependent,
 			];
 			if (keepable.includes(value)) {
+				// @ts-ignore
 				this.aliveRouteComponents.push(value);
 			}
 		},
@@ -119,31 +126,40 @@ const Menu = remote.Menu;
 				// If the profile changes, remove all the cached routes, except the latest
 				// if they are profile independent
 				if (value !== oldValue) {
+					// @ts-ignore
 					const profileAgnostic = this.$options.keepableRoutes.profileAgnostic;
 
 					const aliveRouteComponents = [];
 					for (let i = profileAgnostic.length; i >= 0; i--) {
+						// @ts-ignore
 						const length = this.aliveRouteComponents.length;
+						// @ts-ignore
 						const route = this.aliveRouteComponents[length - i];
 
 						if (profileAgnostic.includes(route)) {
+							// @ts-ignore
 							aliveRouteComponents.push(route);
 						}
 					}
+					// @ts-ignore
 					this.aliveRouteComponents = aliveRouteComponents;
 				}
 			}
 		},
 		pluginThemes() {
+			// @ts-ignore
 			this.applyPluginTheme(this.theme);
 		},
 		theme(value) {
+			// @ts-ignore
 			this.applyPluginTheme(value);
 		},
 		pluginLanguages() {
+			// @ts-ignore
 			this.applyPluginLanguage(this.language);
 		},
 		language(value) {
+			// @ts-ignore
 			this.applyPluginLanguage(value);
 		},
 	},
@@ -199,10 +215,12 @@ export default class DesktopWallet extends Vue {
 	}
 
 	get currentProfileId() {
+		// @ts-ignore
 		return this.session_profile ? this.session_profile.id : null;
 	}
 
 	get keepAliveRoutes() {
+		// @ts-ignore
 		return uniq([...this.$options.keepableRoutes.profileAgnostic, ...this.aliveRouteComponents]);
 	}
 
@@ -239,6 +257,7 @@ export default class DesktopWallet extends Vue {
 	}
 
 	created() {
+		// @ts-ignore
 		this.$store._vm.$on("vuex-persist:ready", async () => {
 			// Environments variables are strings
 			this.isScreenshotProtectionEnabled = process.env.ENABLE_SCREENSHOT_PROTECTION !== "false";
@@ -246,10 +265,12 @@ export default class DesktopWallet extends Vue {
 			await this.loadEssential();
 			this.isReady = true;
 
+			// @ts-ignore
 			this.$synchronizer.defineAll();
 
 			await this.loadNotEssential();
 
+			// @ts-ignore
 			this.$synchronizer.ready();
 		});
 
@@ -262,11 +283,13 @@ export default class DesktopWallet extends Vue {
 		this.__watchProcessURL();
 	}
 
-	loadEssential() {
+	async loadEssential() {
 		// We need to await plugins in order for all plugins to load properly
 		try {
+			// @ts-ignore
 			await this.$plugins.init(this);
 		} catch {
+			// @ts-ignore
 			this.$error("Failed to load plugins. NPM might be down.");
 		}
 
@@ -277,13 +300,15 @@ export default class DesktopWallet extends Vue {
 		await this.$store.dispatch(StoreBinding.LedgerReset);
 	}
 
-	loadNotEssential() {
+	async loadNotEssential() {
 		ipcRenderer.send("updater:check-for-updates");
 		await this.$store.dispatch(StoreBinding.PeerRefresh);
 		this.$store.dispatch(StoreBinding.PeerConnectToBest, {});
 		await this.$store.dispatch(StoreBinding.NetworkUpdateData);
 
+		// @ts-ignore
 		if (this.session_network) {
+			// @ts-ignore
 			this.$store.dispatch(StoreBinding.LedgerInit, this.session_network.slip44);
 			this.$store.dispatch(StoreBinding.DelegateLoad);
 		}
@@ -292,23 +317,28 @@ export default class DesktopWallet extends Vue {
 			this.$store.dispatch(StoreBinding.PeerConnectToBest, {});
 			this.$store.dispatch(StoreBinding.NetworkUpdateData);
 			this.$store.dispatch(StoreBinding.DelegateLoad);
+			// @ts-ignore
 			await this.$store.dispatch(StoreBinding.LedgerInit, this.session_network.slip44);
 			if (this.$store.getters["ledger/isConnected"]) {
 				this.$store.dispatch(StoreBinding.LedgerReloadWallets, { clearFirst: true, forceLoad: true });
 			}
 		});
 		this.$eventBus.on(AppEvent.LedgerConnected, async () => {
+			// @ts-ignore
 			this.$success("Ledger Connected!");
 		});
 		this.$eventBus.on(AppEvent.LedgerDisconnected, async () => {
+			// @ts-ignore
 			this.$warn("Ledger Disconnected!");
 		});
 
 		ipcRenderer.send(AppEvent.SplashscreenAppReady);
 
 		try {
+			// @ts-ignore
 			await Promise.all([this.$plugins.fetchPluginsFromAdapter(), this.$plugins.fetchPluginsList()]);
 		} catch {
+			// @ts-ignore
 			this.$error("Failed to load plugins. NPM might be down.");
 		}
 	}
@@ -324,6 +354,7 @@ export default class DesktopWallet extends Vue {
 				const currentPeer = this.$store.getters["peer/current"]();
 				if (currentPeer && currentPeer.ip) {
 					const scheme = currentPeer.isHttps ? "https://" : "http://";
+					// @ts-ignore
 					this.$client.host = `${scheme}${currentPeer.ip}:${currentPeer.port}`;
 				}
 
@@ -344,6 +375,7 @@ export default class DesktopWallet extends Vue {
 			const uri = new URIHandler(url);
 
 			if (!uri.validate()) {
+				// @ts-ignore
 				this.$error(this.$t("VALIDATION.INVALID_URI"));
 			} else {
 				this.openUriTransaction(uri.deserialize());
@@ -355,6 +387,7 @@ export default class DesktopWallet extends Vue {
 		});
 	}
 
+	// @ts-ignore
 	openUriTransaction(schema) {
 		this.isUriTransactionOpen = true;
 		this.uriTransactionSchema = schema;
@@ -373,10 +406,15 @@ export default class DesktopWallet extends Vue {
 	// Enable contextmenu (right click) on input / textarea fields
 	setContextMenu() {
 		const InputMenu = Menu.buildFromTemplate([
+			// @ts-ignore
 			{ role: "cut" },
+			// @ts-ignore
 			{ role: "copy" },
+			// @ts-ignore
 			{ role: "paste" },
+			// @ts-ignore
 			{ type: "separator" },
+			// @ts-ignore
 			{ role: "selectall" },
 		]);
 
@@ -387,32 +425,40 @@ export default class DesktopWallet extends Vue {
 			let node = e.target;
 
 			while (node) {
+				// @ts-ignore
 				if (node.nodeName.match(/^(input|textarea)$/i) || node.isContentEditable) {
+					// @ts-ignore
 					InputMenu.popup(remote.getCurrentWindow());
 					break;
 				}
+				// @ts-ignore
 				node = node.parentNode;
 			}
 		});
 	}
 
+	// @ts-ignore
 	applyPluginTheme(themeName) {
 		const $style = document.querySelector("style[name=plugins]");
 
 		if (["light", "dark"].includes(themeName)) {
+			// @ts-ignore
 			$style.innerHTML = null;
 		} else if (themeName && this.pluginThemes) {
 			const theme = this.pluginThemes[themeName];
 			if (theme) {
 				const input = fs.readFileSync(theme.cssPath);
 				const output = new CleanCss().minify(input);
+				// @ts-ignore
 				$style.innerHTML = output.styles;
 			} else {
+				// @ts-ignore
 				$style.innerHTML = null;
 			}
 		}
 	}
 
+	// @ts-ignore
 	applyPluginLanguage(languageName) {
 		if (languageName === I18N.defaultLocale) {
 			i18nSetup.setLanguage(languageName);

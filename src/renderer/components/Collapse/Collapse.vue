@@ -34,10 +34,12 @@ import { Component, Prop, Vue } from "vue-property-decorator";
 
 	watch: {
 		isOpen(val) {
+			// @ts-ignore
 			this.inputIsOpen = val;
 		},
 
 		inputIsOpen() {
+			// @ts-ignore
 			this.$emit(this.inputIsOpen ? "open" : "close");
 		},
 	},
@@ -81,7 +83,9 @@ export default class Collapse extends Vue {
 
 	// Verify that the `collapseClick` method was injected by the parent
 	clickHandler() {
+		// @ts-ignore
 		if (this.collapseClick) {
+			// @ts-ignore
 			this.collapseClick(this.id);
 		} else {
 			this.toggle();
@@ -93,9 +97,11 @@ export default class Collapse extends Vue {
 		if (!id || !this.id) return;
 
 		if (this.id === id && !this.isDisabled) {
+			// @ts-ignore
 			this.inputIsOpen = !this.inputIsOpen;
 			return this.inputIsOpen; // Return this to the parent identify the active item
 		} else {
+			// @ts-ignore
 			this.inputIsOpen = false;
 		}
 	}
@@ -103,6 +109,7 @@ export default class Collapse extends Vue {
 	toggle() {
 		if (this.isDisabled) return;
 
+		// @ts-ignore
 		this.inputIsOpen = !this.inputIsOpen;
 	}
 
@@ -110,14 +117,17 @@ export default class Collapse extends Vue {
 	enter(el) {
 		const scrollHeight = `${el.scrollHeight}px`;
 		this.height = 0;
+		// @ts-ignore
 		setTimeout(() => (this.height = scrollHeight || "auto"));
 	}
 
 	afterEnter() {
+		// @ts-ignore
 		setTimeout(() => (this.height = "auto"), 5);
 	}
 
 	leave(el) {
+		// @ts-ignore
 		this.height = getComputedStyle(el).height;
 		setTimeout(() => (this.height = 0));
 	}

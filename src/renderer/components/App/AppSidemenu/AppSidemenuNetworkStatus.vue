@@ -233,7 +233,7 @@ export default class AppSidemenuNetworkStatus extends Vue {
 		this.isNetworkStatusVisible = false;
 	}
 
-	connectPeer({ peer, closeTrigger }) {
+	async connectPeer({ peer, closeTrigger }) {
 		this.showLoadingModal = true;
 
 		const response = await this.$store.dispatch(StoreBinding.PeerValidatePeer, {
@@ -242,15 +242,18 @@ export default class AppSidemenuNetworkStatus extends Vue {
 		});
 
 		if (response === false) {
+			// @ts-ignore
 			this.$error(this.$t("PEER.CONNECT_FAILED"));
 			this.showLoadingModal = false;
 		} else if (typeof response === "string") {
+			// @ts-ignore
 			this.$error(`${this.$t("PEER.CONNECT_FAILED")}: ${response}`);
 			this.showLoadingModal = false;
 		} else {
 			response.isCustom = true;
 			await this.$store.dispatch(StoreBinding.PeerSetCurrentPeer, response);
 			await this.$store.dispatch(StoreBinding.PeerUpdateCurrentPeerStatus);
+			// @ts-ignore
 			this.$success(`${this.$t("PEER.CONNECTED")}: ${peer.host}:${peer.port}`);
 			if (closeTrigger) {
 				closeTrigger();
@@ -260,7 +263,7 @@ export default class AppSidemenuNetworkStatus extends Vue {
 		this.showLoadingModal = false;
 	}
 
-	refreshPeer() {
+	async refreshPeer() {
 		this.isRefreshing = true;
 		await this.$store.dispatch(StoreBinding.PeerConnectToBest, {
 			skipIfCustom: false,
@@ -268,9 +271,10 @@ export default class AppSidemenuNetworkStatus extends Vue {
 		this.isRefreshing = false;
 	}
 
-	setPeer(peerId) {
+	async setPeer(peerId) {
 		const peer = this.bestPeers[peerId];
 		if (!peer) {
+			// @ts-ignore
 			this.$error("Could not find peer");
 		} else {
 			await this.$store.dispatch(StoreBinding.PeerSetCurrentPeer, peer);
@@ -278,6 +282,7 @@ export default class AppSidemenuNetworkStatus extends Vue {
 	}
 
 	toggleSelect(name) {
+		// @ts-ignore
 		this.$refs[name].toggle();
 	}
 

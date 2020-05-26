@@ -19,14 +19,17 @@ import { isEmpty } from "@/utils";
 
 	watch: {
 		id(val) {
+			// @ts-ignore
 			this.$nextTick(() => (this.inputId = val));
 		},
 
 		inputId() {
+			// @ts-ignore
 			this.toggleCollapse();
 		},
 
 		items() {
+			// @ts-ignore
 			this.toggleCollapse();
 		},
 	},
@@ -48,6 +51,7 @@ export default class CollapseAccordion extends Vue {
 	@Prop({
 		type: Array,
 		required: false,
+		// @ts-ignore
 		default: () => this.collections_filterChildren("Collapse") || [],
 	})
 	items;

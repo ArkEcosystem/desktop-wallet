@@ -55,10 +55,12 @@
 import Cycled from "cycled";
 import { orderBy, unionBy } from "lodash";
 import { Component, Prop, Vue } from "vue-property-decorator";
+// @ts-ignore
 import { required } from "vuelidate/lib/validators";
 
 import { ButtonModal } from "@/components/Button";
 import { MenuDropdown } from "@/components/Menu";
+// @ts-ignore
 import ModalQrCodeScanner from "@/components/Modal/ModalQrCodeScanner";
 import truncate from "@/filters/truncate";
 import WalletService from "@/services/wallet";
@@ -78,31 +80,44 @@ import InputField from "./InputField";
 
 	watch: {
 		value(val) {
+			// @ts-ignore
 			this.updateInputValue(val);
 		},
 
 		isFocused() {
+			// @ts-ignore
 			if (this.isFocused && this.hasSuggestions) {
+				// @ts-ignore
 				this.openDropdown();
 			}
 		},
 
 		async inputValue() {
+			// @ts-ignore
 			this.dropdownValue = null;
+			// @ts-ignore
 			if (this.isFocused && this.hasSuggestions) {
+				// @ts-ignore
 				this.openDropdown();
 			}
 
+			// @ts-ignore
 			if (this.invalid) {
+				// @ts-ignore
 				this.notice = null;
 			} else {
+				// @ts-ignore
 				const knownAddress = this.wallet_name(this.inputValue);
 
 				if (knownAddress) {
+					// @ts-ignore
 					this.notice = this.$t("INPUT_ADDRESS.KNOWN_ADDRESS", { address: knownAddress });
+					// @ts-ignore
 				} else if (await this.checkNeoAddress(this.inputValue)) {
+					// @ts-ignore
 					this.notice = this.$t("INPUT_ADDRESS.NEO_ADDRESS");
 				} else {
+					// @ts-ignore
 					this.notice = null;
 				}
 			}
@@ -115,6 +130,7 @@ export default class InputAddress extends Vue {
 		required: false,
 		default: null,
 	})
+	// @ts-ignore
 	helperText;
 
 	@Prop({
@@ -122,6 +138,7 @@ export default class InputAddress extends Vue {
 		required: false,
 		default: false,
 	})
+	// @ts-ignore
 	isDisabled;
 
 	@Prop({
@@ -129,15 +146,18 @@ export default class InputAddress extends Vue {
 		required: false,
 		default: true,
 	})
+	// @ts-ignore
 	isRequired;
 
 	@Prop({
 		type: String,
 		required: false,
 		default() {
+			// @ts-ignore
 			return this.$t("INPUT_ADDRESS.LABEL");
 		},
 	})
+	// @ts-ignore
 	label;
 
 	@Prop({
@@ -145,12 +165,14 @@ export default class InputAddress extends Vue {
 		required: false,
 		default: "address",
 	})
+	// @ts-ignore
 	name;
 
 	@Prop({
 		type: Number,
 		required: true,
 	})
+	// @ts-ignore
 	pubKeyHash;
 
 	@Prop({
@@ -158,12 +180,14 @@ export default class InputAddress extends Vue {
 		required: false,
 		default: false,
 	})
+	// @ts-ignore
 	showSuggestions;
 
 	@Prop({
 		type: String,
 		required: true,
 	})
+	// @ts-ignore
 	value;
 
 	@Prop({
@@ -171,6 +195,7 @@ export default class InputAddress extends Vue {
 		required: false,
 		default: false,
 	})
+	// @ts-ignore
 	isInvalid;
 
 	@Prop({
@@ -178,6 +203,7 @@ export default class InputAddress extends Vue {
 		required: false,
 		default: null,
 	})
+	// @ts-ignore
 	warningText;
 
 	inputValue = null;
@@ -186,6 +212,7 @@ export default class InputAddress extends Vue {
 	neoCheckedAddressess = {};
 	notice = null;
 
+	// @ts-ignore
 	data(vm) {
 		return {
 			inputValue: vm.value,
@@ -193,16 +220,22 @@ export default class InputAddress extends Vue {
 	}
 
 	get currentProfile() {
+		// @ts-ignore
 		return this.session_profile;
 	}
 
 	get error() {
 		let error = null;
 
+		// @ts-ignore
 		if (!this.isDisabled && this.$v.model.$dirty && !(this.hasSuggestions && this.isFocused)) {
+			// @ts-ignore
 			if (!this.$v.model.required) {
+				// @ts-ignore
 				error = this.$t("INPUT_ADDRESS.ERROR.REQUIRED");
+				// @ts-ignore
 			} else if (!this.$v.model.isValid) {
+				// @ts-ignore
 				error = this.$t("INPUT_ADDRESS.ERROR.NOT_VALID");
 			}
 		}
@@ -215,6 +248,7 @@ export default class InputAddress extends Vue {
 	}
 
 	get invalid() {
+		// @ts-ignore
 		return this.$v.model.$dirty && (this.isInvalid || !!this.error);
 	}
 
@@ -244,8 +278,10 @@ export default class InputAddress extends Vue {
 				address: wallet.address,
 			};
 
+			// @ts-ignore
 			const walletName = this.wallet_name(wallet.address);
 			if (walletName && walletName !== wallet.address) {
+				// @ts-ignore
 				address.name = `${truncate(walletName, 25)} (${this.wallet_truncate(wallet.address)})`;
 			}
 
@@ -260,7 +296,9 @@ export default class InputAddress extends Vue {
 			const value = wallet.name || wallet.address;
 			const searchValue = value.toLowerCase();
 
+			// @ts-ignore
 			if (searchValue && searchValue.includes(this.inputValue.toLowerCase())) {
+				// @ts-ignore
 				wallets[wallet.address] = value;
 			}
 
@@ -279,21 +317,27 @@ export default class InputAddress extends Vue {
 	}
 
 	blur() {
+		// @ts-ignore
 		this.$refs.input.blur();
 	}
 
 	focus() {
+		// @ts-ignore
 		this.$refs.input.focus();
 	}
 
-	checkNeoAddress(address) {
+	// @ts-ignore
+	async checkNeoAddress(address) {
 		const wasChecked = Object.prototype.hasOwnProperty.call(this.neoCheckedAddressess, address);
 		if (!wasChecked) {
+			// @ts-ignore
 			this.neoCheckedAddressess[address] = await WalletService.isNeoAddress(address);
 		}
+		// @ts-ignore
 		return this.neoCheckedAddressess[address];
 	}
 
+	// @ts-ignore
 	onBlur(event) {
 		// Verifies that the element that generated the blur was a dropdown item
 		if (event.relatedTarget) {
@@ -307,6 +351,7 @@ export default class InputAddress extends Vue {
 			if (!isDropdownItem) {
 				this.closeDropdown();
 			}
+			// @ts-ignore
 		} else if (this.$refs.dropdown.isOpen) {
 			this.closeDropdown();
 		}
@@ -319,6 +364,7 @@ export default class InputAddress extends Vue {
 		}
 	}
 
+	// @ts-ignore
 	onDropdownSelect(value) {
 		this.model = value;
 		this.$nextTick(() => this.closeDropdown());
@@ -338,6 +384,7 @@ export default class InputAddress extends Vue {
 
 		this.$nextTick(() => {
 			this.closeDropdown();
+			// @ts-ignore
 			this.$refs.input.setSelectionRange(this.inputValue.length, this.inputValue.length);
 		});
 	}
@@ -357,33 +404,41 @@ export default class InputAddress extends Vue {
 		this.__setSuggestion(next);
 	}
 
+	// @ts-ignore
 	onDecodeQR(value, toggle) {
+		// @ts-ignore
 		this.model = this.qr_getAddress(value);
 
 		// Check if we were unable to retrieve an address from the qr
 		if ((this.inputValue === "" || this.inputValue === undefined) && this.inputValue !== value) {
+			// @ts-ignore
 			this.$error(this.$t("MODAL_QR_SCANNER.DECODE_FAILED", { data: value }));
 		}
 		toggle();
 	}
 
 	closeDropdown() {
+		// @ts-ignore
 		this.$refs.dropdown.close();
 	}
 
 	openDropdown() {
+		// @ts-ignore
 		this.$refs.dropdown.open();
 	}
 
+	// @ts-ignore
 	updateInputValue(value) {
 		this.inputValue = value;
 
 		this.$eventBus.emit("change");
 
 		// Inform Vuelidate that the value changed
+		// @ts-ignore
 		this.$v.model.$touch();
 	}
 
+	// @ts-ignore
 	__setSuggestion(value) {
 		if (!this.hasSuggestions) {
 			return;
@@ -391,28 +446,36 @@ export default class InputAddress extends Vue {
 
 		this.dropdownValue = value;
 		this.$nextTick(() => {
+			// @ts-ignore
 			this.$refs.input.setSelectionRange(this.inputValue.length, this.dropdownValue.length);
 		});
 	}
 
 	reset() {
+		// @ts-ignore
 		this.model = "";
 		this.$nextTick(() => {
+			// @ts-ignore
 			this.$v.$reset();
 		});
 	}
 
 	validations = {
 		model: {
+			// @ts-ignore
 			required(value) {
+				// @ts-ignore
 				return this.isRequired ? required(value) : true;
 			},
 
+			// @ts-ignore
 			isValid(value) {
+				// @ts-ignore
 				if (!this.isRequired && value.replace(/\s+/, "") === "") {
 					return true;
 				}
 
+				// @ts-ignore
 				return WalletService.validateAddress(value, this.pubKeyHash);
 			},
 		},

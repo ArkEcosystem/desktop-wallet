@@ -39,11 +39,13 @@ export default class DashboardTransactions extends Vue {
 	}
 
 	get storedTransactions() {
+		// @ts-ignore
 		return this.$store.getters["transaction/byProfileId"](this.session_profile.id, { includeExpired: true });
 	}
 
 	get wallets() {
 		return [
+			// @ts-ignore
 			...this.$store.getters["wallet/byProfileId"](this.session_profile.id),
 			...this.$store.getters["ledger/wallets"],
 		];
@@ -58,12 +60,15 @@ export default class DashboardTransactions extends Vue {
 			const transactions = [];
 			for (const address of Object.keys(transactionsByWallet)) {
 				for (const transaction of Object.values(transactionsByWallet[address])) {
+					// @ts-ignore
 					transaction.walletAddress = address;
 
+					// @ts-ignore
 					transactions.push(transaction);
 				}
 			}
 
+			// @ts-ignore
 			this.fetchedTransactions = this.processTransactions(transactions);
 			this.isLoading = false;
 		});

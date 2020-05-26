@@ -170,12 +170,14 @@ export default class AppSidemenu extends Vue {
 		required: false,
 		default: false,
 	})
+	// @ts-ignore
 	isHorizontal;
 
 	isImportantNotificationVisible = true;
 	isPluginMenuVisible = false;
 	activeItem = null;
 
+	// @ts-ignore
 	data(vm) {
 		return {
 			activeItem: vm.$route.name,
@@ -183,6 +185,7 @@ export default class AppSidemenu extends Vue {
 	}
 
 	get showUnread() {
+		// @ts-ignore
 		return this.unreadAnnouncements.length > 0;
 	}
 
@@ -191,11 +194,14 @@ export default class AppSidemenu extends Vue {
 	}
 
 	get hasStandardAvatar() {
+		// @ts-ignore
 		return this.session_profile.avatar && typeof this.session_profile.avatar === "string";
 	}
 
 	get pluginAvatar() {
+		// @ts-ignore
 		if (this.session_profile.avatar && this.session_profile.avatar.pluginId) {
+			// @ts-ignore
 			return this.$store.getters["plugin/avatar"](this.session_profile.avatar);
 		}
 
@@ -204,15 +210,18 @@ export default class AppSidemenu extends Vue {
 
 	created() {
 		ipcRenderer.on(AppEvent.AppPreferences, () => {
+			// @ts-ignore
 			this.$refs.settings.showSettings();
 		});
 	}
 
+	// @ts-ignore
 	redirect(name) {
 		this.setActive(name);
 		this.$router.push({ name });
 	}
 
+	// @ts-ignore
 	setActive(name) {
 		this.activeItem = name;
 	}
@@ -225,6 +234,7 @@ export default class AppSidemenu extends Vue {
 		this.isPluginMenuVisible = !this.isPluginMenuVisible;
 	}
 
+	// @ts-ignore
 	closeShowPlugins(setActive) {
 		if (setActive) {
 			this.setActive("plugin-pages");

@@ -51,6 +51,7 @@ export default class AppSidemenuImportantNotification extends Vue {
 	isNotificationVisible = false;
 
 	get releaseVersion() {
+		// @ts-ignore
 		return this.availableRelease && this.availableRelease.version;
 	}
 

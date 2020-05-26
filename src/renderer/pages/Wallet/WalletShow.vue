@@ -1,5 +1,5 @@
 <template>
-	<div class="WalletShow relative flex h-full">
+	<div class="relative flex h-full WalletShow">
 		<WalletDetails
 			v-if="wallet"
 			ref="WalletDetails"
@@ -11,7 +11,7 @@
 		/>
 		<WalletSidebar
 			v-if="wallet"
-			class="border-l border-theme-line-separator rounded-r-lg hidden lg:block"
+			class="hidden border-l rounded-r-lg border-theme-line-separator lg:block"
 			:class="{
 				'w-1/3': isSidebarExpanded,
 				'w-1/8': !isSidebarExpanded,

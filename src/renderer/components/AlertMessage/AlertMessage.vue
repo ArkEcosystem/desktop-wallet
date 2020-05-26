@@ -1,9 +1,9 @@
 <template>
 	<button
 		:class="alert ? `AlertMessage--${alert.type}` : 'opacity-0 hidden'"
-		class="AlertMessage absolute z-50 max-w-1/2 min-w-1/4 rounded-lg inline bottom-0 left-0 m-4 p-4 text-white"
+		class="absolute bottom-0 left-0 z-50 inline p-4 m-4 text-white rounded-lg AlertMessage max-w-1/2 min-w-1/4"
 	>
-		<div class="text-left message font-bold">
+		<div class="font-bold text-left message">
 			<ButtonClose icon-class="text-white" @click="showNext" />
 			<span class="break-words">{{ alert ? alert.message : "&nbsp;" }}</span>
 		</div>
@@ -59,6 +59,7 @@ export default class AlertMessage extends Vue {
 			this.alert = null;
 		}
 
+		// @ts-ignore
 		this.timer = setTimeout(this.showNext, duration);
 	}
 }

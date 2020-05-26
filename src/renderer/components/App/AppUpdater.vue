@@ -144,15 +144,19 @@ export default class AppUpdater extends Vue {
 			return null;
 		}
 
+		// @ts-ignore
 		return `${this.$t("APP_UPDATER.RELEASE_NOTES")} - ${this.availableRelease.version}`;
 	}
 
 	get releaseNotes() {
+		// @ts-ignore
 		return this.__formatReleaseNotes(this.availableRelease.releaseNotes);
 	}
 
 	get descriptionImage() {
+		// @ts-ignore
 		const image = this.session_hasDarkTheme ? "dark" : "light";
+		// @ts-ignore
 		return this.assets_loadImage(`pages/updater/computer-${image}.svg`);
 	}
 
@@ -162,6 +166,7 @@ export default class AppUpdater extends Vue {
 
 	mounted() {
 		ipcRenderer.on(AppEvent.UpdaterDownloadProgress, (_, data) => {
+			// @ts-ignore
 			this.progressUpdate.timestamp = Date.now();
 			Object.assign(this.progressUpdate, data);
 		});
@@ -173,9 +178,11 @@ export default class AppUpdater extends Vue {
 
 		ipcRenderer.on(AppEvent.UpdaterError, (error) => {
 			this.isDownloadFailed = true;
+			// @ts-ignore
 			this.errorMessage = error instanceof Error ? error.message : undefined;
 		});
 
+		// @ts-ignore
 		this.inactivityListener = setInterval(() => {
 			this.verifyInactivity();
 		}, 30000);
@@ -205,6 +212,7 @@ export default class AppUpdater extends Vue {
 	startDownload() {
 		// Auto update is only supported for AppImage files on Linux
 		if (this.isLinux && !this.isAppImage) {
+			// @ts-ignore
 			this.electron_openExternal(releaseService.latestReleaseUrl);
 			this.emitClose();
 			return;
@@ -223,9 +231,11 @@ export default class AppUpdater extends Vue {
 			return;
 		}
 		// Is the download idle for >1min?
+		// @ts-ignore
 		const diff = Date.now() - this.progressUpdate.timestamp;
 		if (diff >= 60000) {
 			this.isDownloadFailed = true;
+			// @ts-ignore
 			this.errorMessage = this.$t("APP_UPDATER.NETWORK_ERROR");
 			this.cancel();
 		}

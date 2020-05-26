@@ -202,6 +202,7 @@ export default class AppSidemenuOptionsSettings extends Vue {
 	}
 
 	get isMarketEnabled() {
+		// @ts-ignore
 		return this.session_network && this.session_network.market && this.session_network.market.enabled;
 	}
 
@@ -224,6 +225,7 @@ export default class AppSidemenuOptionsSettings extends Vue {
 	set sessionCurrency(currency) {
 		this.$store.dispatch("session/setCurrency", currency);
 		this.$store.dispatch("profile/update", {
+			// @ts-ignore
 			...this.session_profile,
 			currency,
 		});
@@ -236,6 +238,7 @@ export default class AppSidemenuOptionsSettings extends Vue {
 	set sessionBroadcastPeers(broadcast) {
 		this.$store.dispatch("session/setBroadcastPeers", broadcast);
 		this.$store.dispatch("profile/update", {
+			// @ts-ignore
 			...this.session_profile,
 			broadcastPeers: broadcast,
 		});
@@ -248,6 +251,7 @@ export default class AppSidemenuOptionsSettings extends Vue {
 	set sessionTheme(theme) {
 		this.$store.dispatch("session/setTheme", theme);
 		this.$store.dispatch("profile/update", {
+			// @ts-ignore
 			...this.session_profile,
 			theme,
 		});
@@ -261,6 +265,7 @@ export default class AppSidemenuOptionsSettings extends Vue {
 		this.$store.dispatch("session/setScreenshotProtection", protection);
 		if (protection || this.saveOnProfile) {
 			this.$store.dispatch("profile/update", {
+				// @ts-ignore
 				...this.session_profile,
 				screenshotProtection: protection,
 			});
@@ -278,6 +283,7 @@ export default class AppSidemenuOptionsSettings extends Vue {
 	set sessionBackgroundUpdateLedger(update) {
 		this.$store.dispatch("session/setBackgroundUpdateLedger", update);
 		this.$store.dispatch("profile/update", {
+			// @ts-ignore
 			...this.session_profile,
 			backgroundUpdateLedger: update,
 		});
@@ -291,6 +297,7 @@ export default class AppSidemenuOptionsSettings extends Vue {
 		const pluginThemes = {};
 
 		for (const [themeId, config] of Object.entries(this.pluginThemes)) {
+			// @ts-ignore
 			pluginThemes[themeId] = config.name;
 		}
 
@@ -330,6 +337,7 @@ export default class AppSidemenuOptionsSettings extends Vue {
 	}
 
 	toggleSelect(name) {
+		// @ts-ignore
 		this.$refs[name].toggle();
 	}
 
@@ -349,8 +357,9 @@ export default class AppSidemenuOptionsSettings extends Vue {
 		this.isManageBlacklistModalOpen = !this.isManageBlacklistModalOpen;
 	}
 
-	onResetData() {
+	async onResetData() {
 		await this.$store.dispatch(StoreBinding.ResetData);
+		// @ts-ignore
 		this.electron_reload();
 	}
 

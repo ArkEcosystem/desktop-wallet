@@ -36,6 +36,7 @@
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
 
+// @ts-ignore
 import ModalWindow from "@/components/Modal/ModalWindow";
 
 import InputGridItem from "./InputGridItem";
@@ -83,6 +84,7 @@ export default class InputGridModal extends Vue {
 		type: String,
 		required: false,
 		default() {
+			// @ts-ignore
 			return this.$t("INPUT_GRID_MODAL.TITLE");
 		},
 	})
@@ -101,6 +103,7 @@ export default class InputGridModal extends Vue {
 	}
 
 	isClicked(item) {
+		// @ts-ignore
 		return this.clicked.pluginId ? this.clicked.name === item.name : this.clicked.title === item.title;
 	}
 

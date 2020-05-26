@@ -57,6 +57,7 @@ export default class InputGrid extends Vue {
 		type: [Array, Object],
 		required: true,
 	})
+	// @ts-ignore
 	items;
 
 	// Attributes that would be yielded when using the `item` slot
@@ -65,12 +66,14 @@ export default class InputGrid extends Vue {
 		required: false,
 		default: () => ["title", "imagePath"],
 	})
+	// @ts-ignore	// @ts-ignore
 	itemAttrs;
 
 	@Prop({
 		type: String,
 		required: true,
 	})
+	// @ts-ignore
 	itemKey;
 
 	@Prop({
@@ -78,6 +81,7 @@ export default class InputGrid extends Vue {
 		required: false,
 		default: null,
 	})
+	// @ts-ignore
 	selected;
 
 	@Prop({
@@ -85,6 +89,7 @@ export default class InputGrid extends Vue {
 		required: false,
 		default: null,
 	})
+	// @ts-ignore
 	modalContainerClasses;
 
 	@Prop({
@@ -92,6 +97,7 @@ export default class InputGrid extends Vue {
 		required: false,
 		default: null,
 	})
+	// @ts-ignore
 	modalHeaderText;
 
 	@Prop({
@@ -99,6 +105,7 @@ export default class InputGrid extends Vue {
 		required: false,
 		default: false,
 	})
+	// @ts-ignore
 	autoSelectFirst;
 
 	isModalOpen = null;
@@ -117,13 +124,19 @@ export default class InputGrid extends Vue {
 
 	get activeItem() {
 		return this.allItems.find((item) => {
+			// @ts-ignore
 			if (!this.selectedItem || this.selectedItem.onlyLetter) {
 				return item.onlyLetter;
 			}
 
-			return this.selectedItem.pluginId
-				? item.name === this.selectedItem.name
-				: item.title === this.selectedItem.title;
+			// @ts-ignore
+			if (this.selectedItem.pluginId) {
+				// @ts-ignore
+				return item.name === this.selectedItem.name;
+			}
+
+			// @ts-ignore
+			return item.title === this.selectedItem.title;
 		});
 	}
 
@@ -133,7 +146,9 @@ export default class InputGrid extends Vue {
 		}
 	}
 
+	// @ts-ignore
 	itemSlotAttrs(item) {
+		// @ts-ignore
 		return this.itemAttrs.reduce((itemAttrs, attr) => {
 			itemAttrs[attr] = item[attr];
 			return itemAttrs;
@@ -141,13 +156,16 @@ export default class InputGrid extends Vue {
 	}
 
 	openModal() {
+		// @ts-ignore
 		this.isModalOpen = true;
 	}
 
 	closeModal() {
+		// @ts-ignore
 		this.isModalOpen = false;
 	}
 
+	// @ts-ignore
 	select(item) {
 		this.selectedItem = item;
 		this.$emit("input", this.activeItem);

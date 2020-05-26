@@ -52,7 +52,7 @@
 					/>
 				</div>
 
-				<button :disabled="$v.form.$invalid" class="blue-button mt-5" type="button" @click="verifyMessage">
+				<button :disabled="$v.form.$invalid" class="mt-5 blue-button" type="button" @click="verifyMessage">
 					{{ $t("SIGN_VERIFY.VERIFY") }}
 				</button>
 			</div>

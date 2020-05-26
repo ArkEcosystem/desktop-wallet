@@ -1,5 +1,5 @@
 <template>
-	<footer class="AppFooter flex justify-center mt-1">
+	<footer class="flex justify-center mt-1 AppFooter">
 		<PortalTarget name="plugin-footer">
 			<a :title="text" class="cursor-pointer text-theme-footer-text" @click="electron_openExternal(url)">
 				{{ text }}
@@ -18,6 +18,7 @@ export default class AppFooter extends Vue {
 	url = "https://ark.io";
 
 	created() {
+		// @ts-ignore
 		this.text = this.$t("APP_FOOTER.TEXT");
 	}
 }

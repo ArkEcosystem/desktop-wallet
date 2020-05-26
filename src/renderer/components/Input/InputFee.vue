@@ -128,6 +128,7 @@ export default class InputFee extends Vue {
 	fee = 0;
 
 	get currentWallet() {
+		// @ts-ignore
 		return this.wallet || this.wallet_fromRoute;
 	}
 
@@ -145,6 +146,7 @@ export default class InputFee extends Vue {
 
 	get rangePercentage() {
 		const percent =
+			// @ts-ignore
 			(this.currency_toBuilder(this.fee).minus(this.feeChoiceMin).valueOf() /
 				(this.feeChoiceMax - this.feeChoiceMin)) *
 			100;
@@ -173,6 +175,7 @@ export default class InputFee extends Vue {
 	}
 
 	get feeNetwork() {
+		// @ts-ignore
 		return this.walletNetwork || this.session_network;
 	}
 
@@ -186,10 +189,12 @@ export default class InputFee extends Vue {
 			let transactionStatistics;
 			if (feeStatistics[0]) {
 				transactionStatistics = Object.values(feeStatistics).find(
+					// @ts-ignore
 					(feeConfig) => feeConfig.type === this.transactionType,
 				);
 			} else if (feeStatistics[this.transactionGroup]) {
 				transactionStatistics = Object.values(feeStatistics[this.transactionGroup]).find(
+					// @ts-ignore
 					(feeConfig) => feeConfig.type === this.transactionType,
 				);
 			}
@@ -211,6 +216,7 @@ export default class InputFee extends Vue {
 	}
 
 	get feeChoiceMin() {
+		// @ts-ignore
 		return this.currency_subToUnit(1);
 	}
 
@@ -222,8 +228,11 @@ export default class InputFee extends Vue {
 		const { avgFee, maxFee, minFee } = this.feeStatistics;
 
 		// If any of the fees are higher than the maximum V1 fee, than use the maximum.
+		// @ts-ignore
 		const average = this.currency_subToUnit(avgFee < this.maxV1fee ? avgFee : this.maxV1fee);
+		// @ts-ignore
 		const minimum = this.currency_subToUnit(minFee < this.maxV1fee ? minFee : this.maxV1fee);
+		// @ts-ignore
 		const maximum = this.currency_subToUnit(maxFee < this.maxV1fee ? maxFee : this.maxV1fee);
 
 		const fees = {
@@ -234,11 +243,14 @@ export default class InputFee extends Vue {
 			ADVANCED: average,
 		};
 
+		// @ts-ignore
 		return this.lastFee ? Object.assign({}, { LAST: this.currency_subToUnit(this.lastFee) }, fees) : fees;
 	}
 
 	get minimumError() {
+		// @ts-ignore
 		const min = this.feeChoiceMin;
+		// @ts-ignore
 		const fee = this.currency_format(min, { currency: this.currency, currencyDisplay: "code" });
 		return this.$t("INPUT_FEE.ERROR.LESS_THAN_MINIMUM", { fee });
 	}
@@ -246,6 +258,7 @@ export default class InputFee extends Vue {
 	get maximumError() {
 		if (!this.isAdvancedFee) {
 			const max = this.feeChoices.MAXIMUM;
+			// @ts-ignore
 			const fee = this.currency_format(max, { currency: this.currency, currencyDisplay: "code" });
 			return this.$t("INPUT_FEE.ERROR.MORE_THAN_MAXIMUM", { fee });
 		}
@@ -261,8 +274,10 @@ export default class InputFee extends Vue {
 			return null;
 		}
 
+		// @ts-ignore
 		const funds = this.currency_subToUnit(this.currentWallet.balance);
 		if (funds.isLessThan(this.fee)) {
+			// @ts-ignore
 			const balance = this.formatter_networkCurrency(this.currentWallet.balance);
 			return this.$t("TRANSACTION_FORM.ERROR.NOT_ENOUGH_BALANCE", { balance });
 		}
@@ -281,9 +296,12 @@ export default class InputFee extends Vue {
 
 	created() {
 		// Fees should be synchronized only when this component is active
+		// @ts-ignore
 		this.$synchronizer.appendFocus("fees");
 
+		// @ts-ignore
 		if (this.lastFee && this.session_profile.defaultChosenFee === "LAST") {
+			// @ts-ignore
 			this.onChoice(this.session_profile.defaultChosenFee);
 		} else {
 			this.emitFee(this.feeChoices.AVERAGE);
@@ -291,10 +309,12 @@ export default class InputFee extends Vue {
 	}
 
 	beforeDestroy() {
+		// @ts-ignore
 		this.$synchronizer.removeFocus("fees");
 	}
 
 	focusInput() {
+		// @ts-ignore
 		this.$refs.input.focus();
 	}
 
@@ -332,6 +352,7 @@ export default class InputFee extends Vue {
 	}
 
 	setFee(fee) {
+		// @ts-ignore
 		fee = this.currency_toBuilder(fee).toString();
 
 		this.fee = fee;
@@ -346,7 +367,9 @@ export default class InputFee extends Vue {
 	validations = {
 		fee: {
 			isValid() {
+				// @ts-ignore
 				if (this.$refs.input) {
+					// @ts-ignore
 					return !this.$refs.input.$v.$invalid && !this.insufficientFundsError;
 				}
 				return false;

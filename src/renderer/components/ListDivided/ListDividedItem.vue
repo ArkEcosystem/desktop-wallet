@@ -1,9 +1,9 @@
 <template>
-	<li class="ListDividedItem flex flex-col py-4 w-full border-b border-dashed border-theme-line-separator">
+	<li class="flex flex-col w-full py-4 border-b border-dashed ListDividedItem border-theme-line-separator">
 		<div :class="isFloatingLabel ? 'flex-col items-start' : 'items-center'" class="flex justify-between">
 			<span
 				:class="[{ 'font-semibold text-xs mb-1': isFloatingLabel }, itemLabelClass]"
-				class="ListDividedItem__label text-theme-page-text-light mr-5"
+				class="mr-5 ListDividedItem__label text-theme-page-text-light"
 			>
 				{{ label }}
 			</span>
@@ -23,7 +23,9 @@
 </template>
 
 <script lang="ts">
-export default {
+import { Component, Prop, Vue } from "vue-property-decorator";
+
+@Component({
 	name: "ListDividedItem",
 
 	inject: {
@@ -31,27 +33,33 @@ export default {
 			default: false,
 		},
 	},
+})
+export default class ListDividedItem extends Vue {
+	@Prop({
+		type: String,
+		required: true,
+	})
+	label;
 
-	props: {
-		label: {
-			type: String,
-			required: true,
-		},
-		value: {
-			type: [String, Number],
-			required: false,
-			default: null,
-		},
-		itemLabelClass: {
-			type: String,
-			required: false,
-			default: "",
-		},
-		itemValueClass: {
-			type: String,
-			required: false,
-			default: "",
-		},
-	},
-};
+	@Prop({
+		type: [String, Number],
+		required: false,
+		default: null,
+	})
+	value;
+
+	@Prop({
+		type: String,
+		required: false,
+		default: "",
+	})
+	itemLabelClass;
+
+	@Prop({
+		type: String,
+		required: false,
+		default: "",
+	})
+	itemValueClass;
+}
 </script>

@@ -27,7 +27,7 @@
 				:value="value"
 				:maxlength="maxlength"
 				:placeholder="placeholder"
-				class="InputText__input flex-1"
+				class="flex-1 InputText__input"
 				@focus="onFocus"
 				@blur="onBlur"
 			/>
@@ -37,11 +37,13 @@
 </template>
 
 <script lang="ts">
+import { Component, Prop, Vue } from "vue-property-decorator";
+
 import WalletService from "@/services/wallet";
 
 import InputField from "./InputField";
 
-export default {
+@Component({
 	name: "InputText",
 
 	components: {
@@ -53,136 +55,164 @@ export default {
 		event: "input",
 	},
 
-	props: {
-		label: {
-			type: String,
-			required: true,
-		},
-		placeholder: {
-			type: String,
-			required: false,
-			default: "",
-		},
-		name: {
-			type: String,
-			required: true,
-		},
-		type: {
-			type: String,
-			required: false,
-			default: "text",
-		},
-		helperText: {
-			type: String,
-			required: false,
-			default: null,
-		},
-		isLarge: {
-			type: Boolean,
-			required: false,
-			default: false,
-		},
-		isDisabled: {
-			type: Boolean,
-			required: false,
-			default: false,
-		},
-		isInvalid: {
-			type: Boolean,
-			required: false,
-			default: false,
-		},
-		isReadOnly: {
-			type: Boolean,
-			required: false,
-			default: false,
-		},
-		bip39Warning: {
-			type: Boolean,
-			required: false,
-			default: false,
-		},
-		maxlength: {
-			type: Number,
-			required: false,
-			default: undefined,
-		},
-		value: {
-			type: [String, Number],
-			required: false,
-			default: undefined,
-		},
-	},
-
-	data: (vm) => ({
-		inputValue: vm.value,
-		isFocused: false,
-	}),
-
-	computed: {
-		model: {
-			get() {
-				return this.inputValue;
-			},
-			set(value) {
-				this.inputValue = value;
-				// Inform Vuelidate that the value changed
-				this.$v.model.$touch();
-				this.$emit("input", value);
-			},
-		},
-		isDirty() {
-			return !!this.inputValue;
-		},
-		isWarning() {
-			return !!this.isDirty && !!this.warning;
-		},
-		warning() {
-			if (this.$v.model.$dirty) {
-				if (this.$v.model.isBip39) {
-					return this.$t("VALIDATION.WARNING_BIP39", [this.label.split(" - ")[0]]);
-				}
-			}
-
-			return null;
-		},
-	},
-
 	watch: {
 		value(val) {
+			// @ts-ignore
 			this.inputValue = val;
 		},
 	},
+})
+export default class InputText extends Vue {
+	@Prop({
+		type: String,
+		required: true,
+	})
+	label;
 
-	methods: {
-		onFocus() {
-			this.isFocused = true;
-			this.$emit("focus");
-		},
+	@Prop({
+		type: String,
+		required: false,
+		default: "",
+	})
+	placeholder;
 
-		onBlur() {
-			this.isFocused = false;
-		},
+	@Prop({
+		type: String,
+		required: true,
+	})
+	name;
 
-		focus() {
-			this.$refs.input.focus();
-		},
+	@Prop({
+		type: String,
+		required: false,
+		default: "text",
+	})
+	type;
 
-		blur() {
-			this.$refs.input.blur();
-		},
+	@Prop({
+		type: String,
+		required: false,
+		default: null,
+	})
+	helperText;
 
-		reset() {
-			this.model = "";
-			this.$nextTick(() => {
-				this.$v.$reset();
-			});
-		},
-	},
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	isLarge;
 
-	validations: {
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	isDisabled;
+
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	isInvalid;
+
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	isReadOnly;
+
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	bip39Warning;
+
+	@Prop({
+		type: Number,
+		required: false,
+		default: undefined,
+	})
+	maxlength;
+
+	@Prop({
+		type: [String, Number],
+		required: false,
+		default: undefined,
+	})
+	value;
+
+	inputValue = null;
+	isFocused = false;
+
+	// @ts-ignore
+	data(vm) {
+		return {
+			inputValue: vm.value,
+		};
+	}
+
+	get isDirty() {
+		// @ts-ignore
+		return !!this.inputValue;
+	}
+
+	get isWarning() {
+		// @ts-ignore
+		return !!this.isDirty && !!this.warning;
+	}
+
+	get warning() {
+		// @ts-ignore
+		if (this.$v.model.$dirty) {
+			// @ts-ignore
+			if (this.$v.model.isBip39) {
+				return this.$t("VALIDATION.WARNING_BIP39", [this.label.split(" - ")[0]]);
+			}
+		}
+
+		return null;
+	}
+
+	onFocus() {
+		// @ts-ignore
+		this.isFocused = true;
+		// @ts-ignore
+		this.$emit("focus");
+	}
+
+	onBlur() {
+		// @ts-ignore
+		this.isFocused = false;
+	}
+
+	focus() {
+		// @ts-ignore
+		this.$refs.input.focus();
+	}
+
+	blur() {
+		// @ts-ignore
+		this.$refs.input.blur();
+	}
+
+	reset() {
+		// @ts-ignore
+		this.model = "";
+		// @ts-ignore
+		this.$nextTick(() => {
+			// @ts-ignore
+			this.$v.$reset();
+		});
+	}
+
+	validations = {
 		model: {
 			isBip39(value) {
+				// @ts-ignore
 				if (!this.bip39Warning) {
 					return false;
 				}
@@ -193,11 +223,12 @@ export default {
 					.filter((word) => !!word.length)
 					.join(" ");
 
+				// @ts-ignore
 				return WalletService.isBip39Passphrase(trimmed, this.session_profile.bip39Language);
 			},
 		},
-	},
-};
+	};
+}
 </script>
 
 <style lang="postcss" scoped>

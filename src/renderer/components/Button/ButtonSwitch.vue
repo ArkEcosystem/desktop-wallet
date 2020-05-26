@@ -36,6 +36,7 @@ import { Component, Prop, Vue } from "vue-property-decorator";
 
 	watch: {
 		isActive(isActive) {
+			// @ts-ignore
 			this.inputIsActive = isActive;
 		},
 	},
@@ -84,6 +85,7 @@ export default class ButtonSwitch extends Vue {
 			return;
 		}
 
+		// @ts-ignore
 		this.model = !this.model;
 	}
 }

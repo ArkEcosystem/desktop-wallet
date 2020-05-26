@@ -24,6 +24,7 @@
 				"destructuring": "all"
 			}
 		],
+		"@typescript-eslint/ban-ts-ignore": "off",
 		"@typescript-eslint/await-thenable": "off",
 		"@typescript-eslint/camelcase": "off",
 		"@typescript-eslint/explicit-function-return-type": "off",
@@ -45,7 +46,12 @@
 		"jest/no-standalone-expect": "off",
 		"jest/no-try-expect": "off",
 		"jest/valid-expect": "off",
-		"prettier/prettier": ["off", { "endOfLine": "auto" }],
+		"prettier/prettier": [
+			"off",
+			{
+				"endOfLine": "auto"
+			}
+		],
 		"simple-import-sort/sort": "error",
 		"vue/html-indent": ["warn", "tab"],
 		"vue/html-self-closing": "off",

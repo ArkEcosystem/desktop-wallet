@@ -57,9 +57,11 @@ import { required } from "vuelidate/lib/validators";
 
 import { ButtonModal } from "@/components/Button";
 import { MenuDropdown } from "@/components/Menu";
+// @ts-ignore
 import ModalQrCodeScanner from "@/components/Modal/ModalQrCodeScanner";
 import { isEmpty } from "@/utils";
 
+// @ts-ignore
 import InputField from "./InputField";
 
 @Component({
@@ -74,18 +76,24 @@ import InputField from "./InputField";
 
 	watch: {
 		value(val) {
+			// @ts-ignore
 			this.updateInputValue(val);
 		},
 
 		isFocused() {
+			// @ts-ignore
 			if (this.isFocused && this.hasSuggestions) {
+				// @ts-ignore
 				this.openDropdown();
 			}
 		},
 
 		inputValue() {
+			// @ts-ignore
 			this.dropdownValue = null;
+			// @ts-ignore
 			if (this.isFocused && this.hasSuggestions) {
+				// @ts-ignore
 				this.openDropdown();
 			}
 		},
@@ -96,6 +104,7 @@ export default class InputDelegate extends Vue {
 		type: String,
 		required: false,
 		default() {
+			// @ts-ignore
 			return this.$t("SEARCH.DELEGATE");
 		},
 	})
@@ -140,6 +149,7 @@ export default class InputDelegate extends Vue {
 	}
 
 	get currentProfile() {
+		// @ts-ignore
 		return this.session_profile;
 	}
 
@@ -148,16 +158,21 @@ export default class InputDelegate extends Vue {
 	}
 
 	get error() {
+		// @ts-ignore
 		if (this.$v.model.$dirty && (!this.hasSuggestions || !this.$refs.dropdown.isOpen)) {
 			if (!this.$v.model.required) {
 				return this.$t("INPUT_DELEGATE.ERROR.REQUIRED");
 			} else if (!this.$v.model.isValid) {
+				// @ts-ignore
 				if (this.inputValue.length <= 20) {
 					return this.$t("INPUT_DELEGATE.ERROR.USERNAME_NOT_FOUND", [this.inputValue]);
+					// @ts-ignore
 				} else if (this.inputValue.length <= 34) {
+					// @ts-ignore
 					return this.$t("INPUT_DELEGATE.ERROR.ADDRESS_NOT_FOUND", [this.wallet_truncate(this.inputValue)]);
 				} else {
 					return this.$t("INPUT_DELEGATE.ERROR.PUBLIC_KEY_NOT_FOUND", [
+						// @ts-ignore
 						this.wallet_truncate(this.inputValue),
 					]);
 				}
@@ -196,11 +211,15 @@ export default class InputDelegate extends Vue {
 		const delegates = this.delegates.map((object) => {
 			const delegate = {
 				name: null,
+				// @ts-ignore
 				username: object.username,
+				// @ts-ignore
 				address: object.address,
+				// @ts-ignore
 				publicKey: object.publicKey,
 			};
 
+			// @ts-ignore
 			delegate.name = `${object.username} (${this.wallet_truncate(object.address)})`;
 
 			return delegate;
@@ -212,6 +231,7 @@ export default class InputDelegate extends Vue {
 
 		return results.reduce((delegates, delegate) => {
 			Object.values(delegate).forEach((prop) => {
+				// @ts-ignore
 				if (prop.toLowerCase().includes(this.inputValue.toLowerCase())) {
 					delegates[delegate.username] = delegate.name;
 				}
@@ -232,14 +252,17 @@ export default class InputDelegate extends Vue {
 	}
 
 	getHelperText() {
+		// @ts-ignore
 		return !this.$refs.dropdown || !this.$refs.dropdown.isOpen ? this.helperText : "";
 	}
 
 	blur() {
+		// @ts-ignore
 		this.$refs.input.blur();
 	}
 
 	focus() {
+		// @ts-ignore
 		this.$refs.input.focus();
 	}
 
@@ -256,6 +279,7 @@ export default class InputDelegate extends Vue {
 			if (!isDropdownItem) {
 				this.closeDropdown();
 			}
+			// @ts-ignore
 		} else if (this.$refs.dropdown.isOpen) {
 			this.closeDropdown();
 		}
@@ -287,6 +311,7 @@ export default class InputDelegate extends Vue {
 
 		this.$nextTick(() => {
 			this.closeDropdown();
+			// @ts-ignore
 			this.$refs.input.setSelectionRange(this.inputValue.length, this.inputValue.length);
 		});
 	}
@@ -307,10 +332,12 @@ export default class InputDelegate extends Vue {
 	}
 
 	onDecodeQR(value, toggle) {
+		// @ts-ignore
 		const address = this.qr_getAddress(value);
 
 		// Check if we were unable to retrieve an address from the qr
 		if ((address === "" || address === undefined) && address !== value) {
+			// @ts-ignore
 			this.$error(this.$t("MODAL_QR_SCANNER.DECODE_FAILED", { data: value }));
 		}
 
@@ -324,10 +351,12 @@ export default class InputDelegate extends Vue {
 	}
 
 	closeDropdown() {
+		// @ts-ignore
 		this.$refs.dropdown.close();
 	}
 
 	openDropdown() {
+		// @ts-ignore
 		this.$refs.dropdown.open();
 	}
 
@@ -344,6 +373,7 @@ export default class InputDelegate extends Vue {
 
 		this.dropdownValue = value;
 		this.$nextTick(() => {
+			// @ts-ignore
 			this.$refs.input.setSelectionRange(this.inputValue.length, this.dropdownValue.length);
 		});
 	}
@@ -352,6 +382,7 @@ export default class InputDelegate extends Vue {
 		model: {
 			required,
 			isValid(value) {
+				// @ts-ignore
 				return !!this.$store.getters["delegate/search"](value);
 			},
 		},

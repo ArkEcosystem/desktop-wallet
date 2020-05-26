@@ -43,6 +43,7 @@ import InputSelect from "./InputSelect";
 
 	watch: {
 		value(value) {
+			// @ts-ignore
 			this.selected = value;
 		},
 	},
@@ -104,11 +105,13 @@ export default class InputLanguage extends Vue {
 
 	mounted() {
 		if (!this.inputLabel) {
+			// @ts-ignore
 			this.inputLabel = this.$t("COMMON.LANGUAGE");
 		}
 	}
 
 	flagImage(language) {
+		// @ts-ignore
 		return this.assets_loadImage(`flags/${language}.svg`);
 	}
 

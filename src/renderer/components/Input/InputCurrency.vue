@@ -37,6 +37,7 @@
 import { Utils } from "@arkecosystem/platform-sdk";
 import { MARKET } from "@config";
 import { Component, Prop, Vue } from "vue-property-decorator";
+// @ts-ignore
 import { required } from "vuelidate/lib/validators";
 
 import InputField from "./InputField";
@@ -62,6 +63,7 @@ import InputField from "./InputField";
 	watch: {
 		value: {
 			handler(val) {
+				// @ts-ignore
 				this.updateInputValue(val);
 			},
 			immediate: true,
@@ -74,12 +76,14 @@ export default class InputCurrency extends Vue {
 		required: false,
 		default: null,
 	})
+	// @ts-ignore
 	alternativeCurrency;
 
 	@Prop({
 		type: String,
 		required: true,
 	})
+	// @ts-ignore
 	currency;
 
 	@Prop({
@@ -87,6 +91,7 @@ export default class InputCurrency extends Vue {
 		required: false,
 		default: null,
 	})
+	// @ts-ignore
 	helperText;
 
 	@Prop({
@@ -94,15 +99,18 @@ export default class InputCurrency extends Vue {
 		required: false,
 		default: false,
 	})
+	// @ts-ignore
 	isDisabled;
 
 	@Prop({
 		type: String,
 		required: false,
 		default() {
+			// @ts-ignore
 			return this.$t("INPUT_CURRENCY.LABEL");
 		},
 	})
+	// @ts-ignore
 	label;
 
 	@Prop({
@@ -110,12 +118,15 @@ export default class InputCurrency extends Vue {
 		required: false,
 		default: "amount",
 	})
+	// @ts-ignore
 	name;
 
+	// @ts-ignore
 	@Prop({
 		type: Utils.BigNumber,
 		required: true,
 	})
+	// @ts-ignore
 	maximumAmount;
 
 	@Prop({
@@ -123,12 +134,15 @@ export default class InputCurrency extends Vue {
 		required: false,
 		default: null,
 	})
+	// @ts-ignore
 	maximumError;
 
+	// @ts-ignore
 	@Prop({
 		type: Utils.BigNumber,
 		required: true,
 	})
+	// @ts-ignore
 	minimumAmount;
 
 	@Prop({
@@ -136,6 +150,7 @@ export default class InputCurrency extends Vue {
 		required: false,
 		default: null,
 	})
+	// @ts-ignore
 	minimumError;
 
 	@Prop({
@@ -143,6 +158,7 @@ export default class InputCurrency extends Vue {
 		required: false,
 		default: null,
 	})
+	// @ts-ignore
 	customError;
 
 	@Prop({
@@ -150,6 +166,7 @@ export default class InputCurrency extends Vue {
 		required: false,
 		default: null,
 	})
+	// @ts-ignore
 	warningText;
 
 	@Prop({
@@ -157,6 +174,7 @@ export default class InputCurrency extends Vue {
 		required: false,
 		default: null,
 	})
+	// @ts-ignore
 	notValidError;
 
 	@Prop({
@@ -164,12 +182,15 @@ export default class InputCurrency extends Vue {
 		required: false,
 		default: false,
 	})
+	// @ts-ignore
 	required;
 
+	// @ts-ignore
 	@Prop({
 		type: [Number, String, Utils.BigNumber],
 		required: true,
 	})
+	// @ts-ignore
 	value;
 
 	@Prop({
@@ -177,11 +198,13 @@ export default class InputCurrency extends Vue {
 		required: false,
 		default: null,
 	})
+	// @ts-ignore
 	walletNetwork;
 
 	inputValue = null;
 	isFocused = false;
 
+	// @ts-ignore
 	data(vm) {
 		return {
 			inputValue: vm.value,
@@ -191,34 +214,42 @@ export default class InputCurrency extends Vue {
 	get alternativeAmount() {
 		const amount = this.checkAmount(this.inputValue) ? this.inputValue : 0;
 
+		// @ts-ignore
 		return this.currency_format(amount * this.price, { currency: this.alternativeCurrency });
 	}
 
 	get error() {
+		// @ts-ignore
 		if (!this.isDisabled && this.$v.model.$dirty) {
 			if (!this.currencyValidator(this.currency)) {
 				return "INVALID CURRENCY";
 			} else if (this.alternativeCurrency && !this.currencyValidator(this.alternativeCurrency)) {
 				return "INVALID CURRENCY";
+				// @ts-ignore
 			} else if (this.required && !this.$v.model.isRequired) {
 				return this.$t("INPUT_CURRENCY.ERROR.REQUIRED");
+				// @ts-ignore
 			} else if (!this.$v.model.isNumber) {
 				if (this.notValidError) {
 					return this.notValidError;
 				} else {
 					return this.$t("INPUT_CURRENCY.ERROR.NOT_VALID");
 				}
+				// @ts-ignore
 			} else if (!this.$v.model.isLessThanMaximum) {
 				if (this.maximumError) {
 					return this.maximumError;
 				} else {
+					// @ts-ignore
 					const amount = this.currency_format(this.maximumAmount, { currency: this.currency });
 					return this.$t("INPUT_CURRENCY.ERROR.NOT_ENOUGH_AMOUNT", { amount });
 				}
+				// @ts-ignore
 			} else if (!this.$v.model.isMoreThanMinimum) {
 				if (this.minimumError) {
 					return this.minimumError;
 				} else {
+					// @ts-ignore
 					const amount = this.currency_format(this.minimumAmount, { currency: this.currency });
 					return this.$t("INPUT_CURRENCY.ERROR.LESS_THAN_MINIMUM", { amount });
 				}
@@ -231,12 +262,16 @@ export default class InputCurrency extends Vue {
 	}
 
 	get formattedValue() {
-		return this.checkAmount(this.inputValue)
-			? this.currency_format(this.inputValue, { currency: this.currency })
-			: this.inputValue;
+		if (this.checkAmount(this.inputValue)) {
+			// @ts-ignore
+			return this.currency_format(this.inputValue, { currency: this.currency });
+		}
+
+		return this.inputValue;
 	}
 
 	get decimalSeparator() {
+		// @ts-ignore
 		const example = this.currency_format(9.9, { currency: this.currency });
 		return example.match(/9(.)9/)[1];
 	}
@@ -246,10 +281,12 @@ export default class InputCurrency extends Vue {
 	}
 
 	get isInvalid() {
+		// @ts-ignore
 		return this.$v.model.$dirty && !!this.error;
 	}
 
 	get isMarketEnabled() {
+		// @ts-ignore
 		return this.session_network.market.enabled;
 	}
 
@@ -267,6 +304,7 @@ export default class InputCurrency extends Vue {
 		return this.$store.getters["market/lastPrice"];
 	}
 
+	// @ts-ignore
 	checkAmount(amount) {
 		const bigNum = Utils.BigNumber.make(amount);
 		if (!bigNum.isNaN()) {
@@ -276,6 +314,7 @@ export default class InputCurrency extends Vue {
 		}
 	}
 
+	// @ts-ignore
 	emitInput(value) {
 		this.$emit("raw", value);
 		const numeric = value ? this.sanitizeNumeric(value) : "0";
@@ -283,6 +322,7 @@ export default class InputCurrency extends Vue {
 	}
 
 	focus() {
+		// @ts-ignore
 		this.$refs.input.focus();
 	}
 
@@ -291,6 +331,7 @@ export default class InputCurrency extends Vue {
 		this.$emit("blur");
 	}
 
+	// @ts-ignore
 	onChange(event) {
 		const value = event.target.value;
 		const numeric = value ? this.sanitizeNumeric(value) : "0";
@@ -299,10 +340,12 @@ export default class InputCurrency extends Vue {
 
 	onFocus() {
 		this.isFocused = true;
+		// @ts-ignore
 		this.$v.model.$touch();
 		this.$emit("focus");
 	}
 
+	// @ts-ignore
 	sanitizeNumeric(value) {
 		let numeric = value.toString();
 		let includesThousandSeparator = numeric.includes(this.thousandSeparator);
@@ -359,20 +402,24 @@ export default class InputCurrency extends Vue {
 		}
 	}
 
+	// @ts-ignore
 	updateInputValue(value) {
 		if (value === "") {
+			// @ts-ignore
 			this.inputValue = "";
 			return true;
 		} else if (value && this.checkAmount(value)) {
 			this.inputValue = this.sanitizeNumeric(value);
 
 			// Inform Vuelidate that the value changed
+			// @ts-ignore
 			this.$v.model.$touch();
 			return true;
 		}
 		return false;
 	}
 
+	// @ts-ignore
 	currencyValidator(currency) {
 		const currentNetwork = this.walletNetwork || this.$store.getters["session/network"];
 		const currencies = [
@@ -386,27 +433,38 @@ export default class InputCurrency extends Vue {
 	}
 
 	reset() {
+		// @ts-ignore
 		this.inputValue = "";
 		this.$nextTick(() => {
+			// @ts-ignore
 			this.$v.model.$reset();
 		});
 	}
 
 	validations = {
 		model: {
+			// @ts-ignore
 			isNumber() {
+				// @ts-ignore
 				return this.inputValue && this.checkAmount(this.inputValue);
 			},
+			// @ts-ignore
 			isMoreThanMinimum() {
+				// @ts-ignore
 				return !this.minimumAmount.isGreaterThan(this.inputValue);
 			},
+			// @ts-ignore
 			isLessThanMaximum() {
+				// @ts-ignore
 				return !this.maximumAmount.isLessThan(this.inputValue);
 			},
+			// @ts-ignore
 			isRequired(value) {
+				// @ts-ignore
 				if (this.required) {
 					return required(value);
 				}
+
 				return true;
 			},
 		},

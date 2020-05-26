@@ -49,6 +49,7 @@ import SvgIcon from "@/components/SvgIcon";
 
 	watch: {
 		value(value) {
+			// @ts-ignore
 			this.inputValue = value;
 		},
 	},
@@ -114,6 +115,7 @@ export default class InputPassword extends Vue {
 		type: String,
 		required: false,
 		default() {
+			// @ts-ignore
 			return this.$t("PASSWORD_INPUT.LABEL");
 		},
 	})
@@ -149,10 +151,13 @@ export default class InputPassword extends Vue {
 
 		if (this.$v.model.$dirty) {
 			if (!this.$v.model.required) {
+				// @ts-ignore
 				error = this.$t("VALIDATION.REQUIRED", [this.label]);
 			} else if (!this.$v.model.isValid) {
+				// @ts-ignore
 				error = this.passwordFeedback();
 			} else if (!this.$v.model.isConfirmed) {
+				// @ts-ignore
 				error = this.$t("VALIDATION.PASSWORD.NO_MATCH");
 			}
 		}
@@ -176,11 +181,13 @@ export default class InputPassword extends Vue {
 	}
 
 	blur() {
+		// @ts-ignore
 		this.$refs.input.blur();
 	}
 
-	focus() {
+	async focus() {
 		await this.$nextTick();
+		// @ts-ignore
 		this.$refs.input.focus();
 	}
 
@@ -201,32 +208,39 @@ export default class InputPassword extends Vue {
 		this.$v.model.$touch();
 	}
 
-	toggleVisible() {
+	async toggleVisible() {
+		// @ts-ignore
 		this.passwordIsVisible = !this.passwordIsVisible;
 		await this.focus();
 	}
 
 	passwordFeedback() {
+		// @ts-ignore
 		if (!this.giveFeedback || (!this.isRequired && !this.model.length)) {
 			return "";
 		}
 
+		// @ts-ignore
 		if (this.minLength && this.model.length < this.minLength) {
 			return this.$t("VALIDATION.PASSWORD.TOO_SHORT", [this.minLength]);
 		}
 
+		// @ts-ignore
 		if (!this.model.match(/[a-z]/)) {
 			return this.$t("VALIDATION.PASSWORD.LOWER_CASE");
 		}
 
+		// @ts-ignore
 		if (!this.model.match(/[A-Z]/)) {
 			return this.$t("VALIDATION.PASSWORD.UPPER_CASE");
 		}
 
+		// @ts-ignore
 		if (!this.model.match(/[0-9]/)) {
 			return this.$t("VALIDATION.PASSWORD.NUMBERS");
 		}
 
+		// @ts-ignore
 		if (!this.model.match(/\W|_/)) {
 			return this.$t("VALIDATION.PASSWORD.SPECIAL_CHARACTERS");
 		}
@@ -237,9 +251,11 @@ export default class InputPassword extends Vue {
 	validations = {
 		model: {
 			isConfirmed(value) {
+				// @ts-ignore
 				return !this.confirm || value === this.confirm;
 			},
 			required(value) {
+				// @ts-ignore
 				if (this.isRequired) {
 					return required(value);
 				}
@@ -251,14 +267,17 @@ export default class InputPassword extends Vue {
 					return false;
 				}
 
+				// @ts-ignore
 				if (!this.isRequired && !value.length) {
 					return true;
 				}
 
+				// @ts-ignore
 				if (!this.isCreate) {
 					return true;
 				}
 
+				// @ts-ignore
 				if (this.minLength && value.length < this.minLength) {
 					return false;
 				}

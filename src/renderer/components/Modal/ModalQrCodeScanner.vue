@@ -1,6 +1,6 @@
 <template>
 	<ModalWindow :title="title" :allow-close="!isLoading" portal-target="qr-scan" @close="emitClose">
-		<section class="QrCode__container overflow-hidden flex flex-col justify-center items-center">
+		<section class="flex flex-col items-center justify-center overflow-hidden QrCode__container">
 			<div v-if="isLoading" class="flex flex-col items-center justify-center my-auto">
 				<Loader />
 
@@ -13,15 +13,15 @@
 				<QrcodeStream :track="false" @decode="onDecode" @init="onInit" />
 
 				<div class="QrCode__crosshair__container">
-					<div class="m-auto relative">
+					<div class="relative m-auto">
 						<div class="QrCode__crosshair">
 							<div class="flex justify-between w-full">
-								<span class="corner border-l-2 border-t-2 rounded-tl-lg" />
-								<span class="corner border-r-2 border-t-2 rounded-tr-lg" />
+								<span class="border-t-2 border-l-2 rounded-tl-lg corner" />
+								<span class="border-t-2 border-r-2 rounded-tr-lg corner" />
 							</div>
 							<div class="flex justify-between w-full">
-								<span class="corner border-l-2 border-b-2 rounded-bl-lg" />
-								<span class="corner border-r-2 border-b-2 rounded-br-lg" />
+								<span class="border-b-2 border-l-2 rounded-bl-lg corner" />
+								<span class="border-b-2 border-r-2 rounded-br-lg corner" />
 							</div>
 						</div>
 					</div>

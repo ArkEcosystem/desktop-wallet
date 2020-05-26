@@ -61,6 +61,7 @@ import InputField from "./InputField";
 
 	watch: {
 		value(value) {
+			// @ts-ignore
 			this.optionValue = value;
 		},
 	},
@@ -134,6 +135,7 @@ export default class InputSelect extends Vue {
 
 	get optionText() {
 		if (!Array.isArray(this.items)) {
+			// @ts-ignore
 			return this.items[this.optionValue];
 		}
 
@@ -152,6 +154,7 @@ export default class InputSelect extends Vue {
 	onBlur(event) {
 		// To ensure that the code is evaluated after other tasks
 		setTimeout(() => {
+			// @ts-ignore
 			const classList = document.activeElement.classList;
 
 			const isDropdownItem =
@@ -162,6 +165,7 @@ export default class InputSelect extends Vue {
 			if (isDropdownItem) {
 				event.preventDefault();
 			} else {
+				// @ts-ignore
 				this.$refs.dropdown.close();
 			}
 		}, 0);
