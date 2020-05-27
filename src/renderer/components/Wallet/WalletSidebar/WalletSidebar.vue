@@ -305,7 +305,7 @@ export default class WalletSidebar extends Vue {
 	}
 
 	beforeDestroy() {
-		this.$eventBus.off(AppEvent.LedgerDisconnected, this.ledgerDisconnected);
+		this.$eventBus.$off(AppEvent.LedgerDisconnected, this.ledgerDisconnected);
 	}
 
 	collapse() {
