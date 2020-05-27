@@ -170,7 +170,7 @@ export default class TransactionModal extends Vue {
 			TransactionService.isBridgechainUpdate(this.transaction) ||
 			TransactionService.isBridgechainResignation(this.transaction)
 		) {
-			this.$eventBus.emit(AppEvent.WalletReloadBusinessBridgechains);
+			this.$eventBus.$emit(AppEvent.WalletReloadBusinessBridgechains);
 		}
 	}
 
@@ -188,7 +188,7 @@ export default class TransactionModal extends Vue {
 			this.$error(this.$t(`TRANSACTION.ERROR.${this.transactionKey}`));
 		}
 
-		this.$eventBus.emit(AppEvent.WalletReloadMultiSignature);
+		this.$eventBus.$emit(AppEvent.WalletReloadMultiSignature);
 
 		this.showBroadcastingTransactions = false;
 	}

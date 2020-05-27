@@ -46,7 +46,7 @@ export default class WalletHeading extends Vue {
 	}
 
 	created() {
-		this.$eventBus.on(AppEvent.LedgerDisconnected, this.refreshWallet);
+		this.$eventBus.$on(AppEvent.LedgerDisconnected, this.refreshWallet);
 	}
 
 	beforeDestroy() {

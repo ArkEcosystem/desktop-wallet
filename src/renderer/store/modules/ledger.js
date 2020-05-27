@@ -158,7 +158,7 @@ export default {
 			await dispatch("updateVersion");
 
 			if (!getters.needsUpdate && neededUpdate !== getters.needsUpdate) {
-				eventBus.emit(AppEvent.LedgerConnected);
+				eventBus.$emit(AppEvent.LedgerConnected);
 			}
 		},
 
@@ -198,7 +198,7 @@ export default {
 			await dispatch("updateVersion");
 
 			if (!getters.needsUpdate) {
-				eventBus.emit(AppEvent.LedgerConnected);
+				eventBus.$emit(AppEvent.LedgerConnected);
 			}
 
 			await dispatch("reloadWallets", {});
@@ -214,7 +214,7 @@ export default {
 			await commit(StoreCommit.StopAllLoadingProcesses);
 			commit(StoreCommit.SetConnected, false);
 			await ledgerService.disconnect();
-			eventBus.emit(AppEvent.LedgerDisconnected);
+			eventBus.$emit(AppEvent.LedgerDisconnected);
 			commit(StoreCommit.SetWallets, {});
 			dispatch("ensureConnection");
 		},
@@ -300,7 +300,7 @@ export default {
 
 				if (clearFirst) {
 					commit(StoreCommit.SetWallets, {});
-					eventBus.emit(AppEvent.LedgerWalletsUpdated, {});
+					eventBus.$emit(AppEvent.LedgerWalletsUpdated, {});
 				}
 
 				commit(StoreCommit.SetLoading, processId);
@@ -329,7 +329,7 @@ export default {
 						}
 
 						commit(StoreCommit.SetWallets, wallets);
-						eventBus.emit(AppEvent.LedgerWalletsUpdated, wallets);
+						eventBus.$emit(AppEvent.LedgerWalletsUpdated, wallets);
 						commit(StoreCommit.ClearLoadingProcess, processId);
 						dispatch("cacheWallets");
 
@@ -415,7 +415,7 @@ export default {
 			}
 
 			commit(StoreCommit.SetWallets, wallets);
-			eventBus.emit(AppEvent.LedgerWalletsUpdated, wallets);
+			eventBus.$emit(AppEvent.LedgerWalletsUpdated, wallets);
 			commit(StoreCommit.ClearLoadingProcess, processId);
 			dispatch("cacheWallets");
 
@@ -427,7 +427,7 @@ export default {
 		 */
 		async updateWallet({ commit, dispatch, getters }, updatedWallet) {
 			commit(StoreCommit.SetWallet, updatedWallet);
-			eventBus.emit(AppEvent.LedgerWalletsUpdated, getters.walletsObject);
+			eventBus.$emit(AppEvent.LedgerWalletsUpdated, getters.walletsObject);
 			dispatch("cacheWallets");
 		},
 
@@ -439,7 +439,7 @@ export default {
 				...getters.walletsObject,
 				...walletsToUpdate,
 			});
-			eventBus.emit(AppEvent.LedgerWalletsUpdated, getters.walletsObject);
+			eventBus.$emit(AppEvent.LedgerWalletsUpdated, getters.walletsObject);
 			dispatch("cacheWallets");
 		},
 

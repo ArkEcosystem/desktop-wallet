@@ -4,7 +4,7 @@ import Vue from "vue";
 declare module "vue/types/vue" {
 	interface Vue {
 		$env: Environment;
-		$eventBus: any;
+		$eventBus: Vue;
 		$v: any;
 	}
 }

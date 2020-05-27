@@ -157,7 +157,7 @@ export default new BaseModule(NetworkModel, {
 			const currentNetwork = rootGetters["session/network"];
 			if (currentNetwork.id === network.id) {
 				await dispatch(StoreBinding.SessionSetProfileId, rootGetters["session/profileId"], { root: true });
-				eventBus.emit(AppEvent.ClientChanged);
+				eventBus.$emit(AppEvent.ClientChanged);
 			}
 
 			await dispatch("fetchFees", network);

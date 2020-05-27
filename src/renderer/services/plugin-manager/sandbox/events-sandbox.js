@@ -11,9 +11,9 @@ class PluginEvents {
 
 		if (typeof criteria.test === "function") {
 			action = this.__parseAction(criteria, action);
-			this.eventBus.onAny(action);
+			this.eventBus.$onAny(action);
 		} else {
-			this.eventBus.on(criteria, action);
+			this.eventBus.$on(criteria, action);
 		}
 		this.events[criteria].push(action);
 	}

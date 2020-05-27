@@ -56,7 +56,7 @@ export default class DashboardTransactions extends Vue {
 			this.isLoading = true;
 		}
 
-		this.$eventBus.on("transactions:fetched", (transactionsByWallet) => {
+		this.$eventBus.$on("transactions:fetched", (transactionsByWallet) => {
 			const transactions = [];
 			for (const address of Object.keys(transactionsByWallet)) {
 				for (const transaction of Object.values(transactionsByWallet[address])) {
