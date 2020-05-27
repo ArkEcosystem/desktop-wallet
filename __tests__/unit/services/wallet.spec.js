@@ -2,8 +2,6 @@ import { Identities } from "@arkecosystem/crypto";
 import * as bip39 from "bip39";
 import nock from "nock";
 
-import { CryptoUtils } from "@/services/crypto/utils";
-
 import WalletService from "../../../src/renderer/services/wallet";
 
 jest.mock("@/store", () => ({

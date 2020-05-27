@@ -1,7 +1,6 @@
 import { Crypto, Identities } from "@arkecosystem/crypto";
 import { BIP39 } from "@arkecosystem/platform-sdk-crypto";
 import { version as mainnetVersion } from "@config/networks/mainnet";
-import * as bip39 from "bip39";
 
 import store from "@/store";
 import { reqwest } from "@/utils/http";
@@ -14,7 +13,7 @@ export default class WalletService {
 	 * @return {Object}
 	 */
 	static generate(pubKeyHash, language) {
-		const passphrase = bip39.generateMnemonic(null, null, bip39.wordlists[language]);
+		const passphrase = BIP39.generate(language);
 		const publicKey = Identities.Keys.fromPassphrase(BIP39.normalize(passphrase)).publicKey;
 		return {
 			address: Identities.Address.fromPublicKey(publicKey, pubKeyHash),
@@ -26,7 +25,7 @@ export default class WalletService {
 	 * Generates a new passphrase to be used for a second passphrase
 	 */
 	static generateSecondPassphrase(language) {
-		return bip39.generateMnemonic(null, null, bip39.wordlists[language]);
+		return BIP39.generate(language);
 	}
 
 	/**
@@ -236,7 +235,7 @@ export default class WalletService {
 	 * @return {Boolean}
 	 */
 	static isBip39Passphrase(passphrase, language) {
-		return bip39.validateMnemonic(BIP39.normalize(passphrase), bip39.wordlists[language]);
+		return BIP39.validate(passphrase, language);
 	}
 
 	/**

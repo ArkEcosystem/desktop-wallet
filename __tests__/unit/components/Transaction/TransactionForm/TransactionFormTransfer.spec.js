@@ -311,7 +311,7 @@ describe("TransactionFormTransfer", () => {
 			});
 		});
 
-		describe.only("hasAip11", () => {
+		describe("hasAip11", () => {
 			it("should return true if it is aip11", () => {
 				const response = TransactionFormTransfer.computed.walletNetwork.call({
 					session_network: globalNetwork,
