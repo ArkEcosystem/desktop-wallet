@@ -34,7 +34,7 @@
 </template>
 
 <script lang="ts">
-import { Utils } from "@arkecosystem/platform-sdk";
+import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { MARKET } from "@config";
 import { Component, Prop, Vue, Watch } from "vue-property-decorator";
 // @ts-ignore
@@ -113,7 +113,7 @@ export default class InputCurrency extends Vue {
 
 	// @ts-ignore
 	@Prop({
-		type: Utils.BigNumber,
+		type: BigNumber,
 		required: true,
 	})
 	// @ts-ignore
@@ -129,7 +129,7 @@ export default class InputCurrency extends Vue {
 
 	// @ts-ignore
 	@Prop({
-		type: Utils.BigNumber,
+		type: BigNumber,
 		required: true,
 	})
 	// @ts-ignore
@@ -177,7 +177,7 @@ export default class InputCurrency extends Vue {
 
 	// @ts-ignore
 	@Prop({
-		type: [Number, String, Utils.BigNumber],
+		type: [Number, String, BigNumber],
 		required: true,
 	})
 	// @ts-ignore
@@ -302,7 +302,7 @@ export default class InputCurrency extends Vue {
 
 	// @ts-ignore
 	checkAmount(amount) {
-		const bigNum = Utils.BigNumber.make(amount);
+		const bigNum = BigNumber.make(amount);
 		if (!bigNum.isNaN()) {
 			return bigNum.isPositive() && bigNum.isFinite();
 		} else {

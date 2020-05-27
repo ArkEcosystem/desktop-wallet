@@ -195,29 +195,6 @@ describe("Services > Client", () => {
 			networkByIdSpy.mockRestore();
 		});
 
-		it("should normalize passphrase if provided", async () => {
-			const spy = jest.spyOn(CryptoUtils, "normalizePassphrase");
-
-			await TransactionSigner.sign(signData);
-
-			expect(spy).toHaveBeenCalledWith(signData.passphrase);
-			expect(spy).toHaveBeenCalledWith(signData.secondPassphrase);
-		});
-
-		it("should not normalize if no passphrase is provided", async () => {
-			const spy = jest.spyOn(CryptoUtils, "normalizePassphrase");
-			const wif = Identities.WIF.fromPassphrase(passphrase, { wif: 170 });
-
-			await TransactionSigner.sign({
-				...signData,
-				passphrase: null,
-				secondPassphrase: null,
-				wif,
-			});
-
-			expect(spy).not.toHaveBeenCalled();
-		});
-
 		it("should create v1 transaction if aip11 disabled", async () => {
 			const response = await TransactionSigner.sign(signData);
 

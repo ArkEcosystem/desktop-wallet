@@ -1,10 +1,10 @@
 import { Transactions } from "@arkecosystem/crypto";
+import { BIP39 } from "@arkecosystem/platform-sdk-crypto";
 import { TRANSACTION_TYPES } from "@config";
 
 import store from "@/store";
 
 import { TransactionSigner } from "./transaction-signer";
-import { CryptoUtils } from "./utils";
 
 export class SecondSignatureRegistrationBuilder {
 	static async build(
@@ -19,7 +19,7 @@ export class SecondSignatureRegistrationBuilder {
 
 		const transaction = Transactions.BuilderFactory.secondSignature().signatureAsset(secondPassphrase).fee(fee);
 
-		passphrase = CryptoUtils.normalizePassphrase(passphrase);
+		passphrase = BIP39.normalize(passphrase);
 
 		return TransactionSigner.sign(
 			{

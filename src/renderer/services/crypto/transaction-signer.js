@@ -1,4 +1,5 @@
 import { Identities, Transactions } from "@arkecosystem/crypto";
+import { BIP39 } from "@arkecosystem/platform-sdk-crypto";
 import { DateTime } from "@arkecosystem/platform-sdk-intl";
 
 import TransactionService from "@/services/transaction";
@@ -27,7 +28,7 @@ export class TransactionSigner {
 		transaction.data.timestamp = Math.floor((now - epochTime) / 1000);
 
 		if (passphrase) {
-			passphrase = CryptoUtils.normalizePassphrase(passphrase);
+			passphrase = BIP39.normalize(passphrase);
 		}
 
 		if (network.constants.aip11) {
@@ -66,7 +67,7 @@ export class TransactionSigner {
 			}
 
 			if (secondPassphrase) {
-				transaction.secondSign(CryptoUtils.normalizePassphrase(secondPassphrase));
+				transaction.secondSign(BIP39.normalize(secondPassphrase));
 			}
 		}
 

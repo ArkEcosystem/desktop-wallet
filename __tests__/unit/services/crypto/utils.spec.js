@@ -48,26 +48,3 @@ describe("transactionFromData", () => {
 		expect(clonedTransaction.multiSignature).toBe(undefined);
 	});
 });
-
-describe("normalizePassphrase", () => {
-	it("should normalize if provided", () => {
-		const spy = jest.spyOn(String.prototype, "normalize");
-
-		const passphrase = CryptoUtils.normalizePassphrase("test");
-
-		expect(spy).toHaveBeenNthCalledWith(1, "NFD");
-		expect(passphrase).toBe("test");
-
-		spy.mockRestore();
-	});
-
-	it("should not normalize if no passphrase", () => {
-		const spy = jest.spyOn(String.prototype, "normalize");
-
-		CryptoUtils.normalizePassphrase(null);
-
-		expect(spy).not.toHaveBeenCalled();
-
-		spy.mockRestore();
-	});
-});

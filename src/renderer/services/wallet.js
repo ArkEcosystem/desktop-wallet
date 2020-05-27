@@ -1,11 +1,10 @@
 import { Crypto, Identities } from "@arkecosystem/crypto";
+import { BIP39 } from "@arkecosystem/platform-sdk-crypto";
 import { version as mainnetVersion } from "@config/networks/mainnet";
 import * as bip39 from "bip39";
 
 import store from "@/store";
 import { reqwest } from "@/utils/http";
-
-import { CryptoUtils } from "./crypto/utils";
 
 export default class WalletService {
 	/*
@@ -16,7 +15,7 @@ export default class WalletService {
 	 */
 	static generate(pubKeyHash, language) {
 		const passphrase = bip39.generateMnemonic(null, null, bip39.wordlists[language]);
-		const publicKey = Identities.Keys.fromPassphrase(CryptoUtils.normalizePassphrase(passphrase)).publicKey;
+		const publicKey = Identities.Keys.fromPassphrase(BIP39.normalize(passphrase)).publicKey;
 		return {
 			address: Identities.Address.fromPublicKey(publicKey, pubKeyHash),
 			passphrase,
@@ -37,7 +36,7 @@ export default class WalletService {
 	 * @return {String}
 	 */
 	static getAddress(passphrase, pubKeyHash) {
-		return Identities.Address.fromPassphrase(CryptoUtils.normalizePassphrase(passphrase), pubKeyHash);
+		return Identities.Address.fromPassphrase(BIP39.normalize(passphrase), pubKeyHash);
 	}
 
 	static getAddressFromPublicKey(publicKey, pubKeyHash) {
@@ -76,7 +75,7 @@ export default class WalletService {
 	 * @return {String}
 	 */
 	static getPublicKeyFromPassphrase(passphrase) {
-		return Identities.PublicKey.fromPassphrase(CryptoUtils.normalizePassphrase(passphrase));
+		return Identities.PublicKey.fromPassphrase(BIP39.normalize(passphrase));
 	}
 
 	/**
@@ -183,7 +182,7 @@ export default class WalletService {
 	 * @return {String}
 	 */
 	static signMessage(message, passphrase) {
-		return Crypto.Message.sign(message, CryptoUtils.normalizePassphrase(passphrase));
+		return Crypto.Message.sign(message, BIP39.normalize(passphrase));
 	}
 
 	/**
@@ -226,7 +225,7 @@ export default class WalletService {
 	 * @return {Boolean}
 	 */
 	static validatePassphrase(passphrase, pubKeyHash) {
-		const publicKey = Identities.Keys.fromPassphrase(CryptoUtils.normalizePassphrase(passphrase)).publicKey;
+		const publicKey = Identities.Keys.fromPassphrase(BIP39.normalize(passphrase)).publicKey;
 		return Identities.PublicKey.validate(publicKey, pubKeyHash);
 	}
 
@@ -237,7 +236,7 @@ export default class WalletService {
 	 * @return {Boolean}
 	 */
 	static isBip39Passphrase(passphrase, language) {
-		return bip39.validateMnemonic(CryptoUtils.normalizePassphrase(passphrase), bip39.wordlists[language]);
+		return bip39.validateMnemonic(BIP39.normalize(passphrase), bip39.wordlists[language]);
 	}
 
 	/**
@@ -274,6 +273,6 @@ export default class WalletService {
 	 * @return {Boolean}
 	 */
 	static verifyPassphrase(address, passphrase, pubKeyHash) {
-		return address === WalletService.getAddress(CryptoUtils.normalizePassphrase(passphrase), pubKeyHash);
+		return address === WalletService.getAddress(BIP39.normalize(passphrase), pubKeyHash);
 	}
 }

@@ -1,5 +1,5 @@
 import { Connection } from "@arkecosystem/client";
-import { Utils } from "@arkecosystem/platform-sdk";
+import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { TRANSACTION_GROUPS, TRANSACTION_TYPES } from "@config";
 import logger from "electron-log";
 import { castArray, chunk, orderBy } from "lodash";
@@ -502,7 +502,7 @@ export default class ClientService {
 		if (network.constants.aip11) {
 			try {
 				const response = await this.fetchWallet(address);
-				return Utils.BigNumber.make(response.nonce || 0)
+				return BigNumber.make(response.nonce || 0)
 					.plus(1)
 					.toString();
 			} catch (error) {

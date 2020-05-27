@@ -4,7 +4,6 @@ import { TRANSACTION_TYPES } from "@config";
 import store from "@/store";
 
 import { TransactionSigner } from "./transaction-signer";
-import { CryptoUtils } from "./utils";
 
 export class BusinessUpdateBuilder {
 	static async build(
@@ -38,8 +37,8 @@ export class BusinessUpdateBuilder {
 			.businessUpdateAsset(businessAsset)
 			.fee(fee);
 
-		passphrase = CryptoUtils.normalizePassphrase(passphrase);
-		secondPassphrase = CryptoUtils.normalizePassphrase(secondPassphrase);
+		passphrase = BIP39.normalize(passphrase);
+		secondPassphrase = BIP39.normalize(secondPassphrase);
 
 		return TransactionSigner.sign(
 			{

@@ -1,5 +1,5 @@
 import { Crypto, Transactions } from "@arkecosystem/crypto";
-import { Utils } from "@arkecosystem/platform-sdk";
+import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { TRANSACTION_GROUPS, TRANSACTION_TYPES } from "@config";
 
 import { StoreBinding } from "@/enums";
@@ -78,7 +78,7 @@ export default class TransactionService {
 	 * @return {String}
 	 */
 	static getTotalAmount(transaction) {
-		return Utils.BigNumber.make(transaction.amount).plus(transaction.fee).toString();
+		return BigNumber.make(transaction.amount).plus(transaction.fee).toString();
 	}
 
 	/*

@@ -4,7 +4,6 @@ import { TRANSACTION_TYPES } from "@config";
 import store from "@/store";
 
 import { TransactionSigner } from "./transaction-signer";
-import { CryptoUtils } from "./utils";
 
 export class BusinessResignationBuilder {
 	static async build(
@@ -23,8 +22,8 @@ export class BusinessResignationBuilder {
 
 		const transaction = new MagistrateCrypto.Builders.BusinessResignationBuilder().fee(fee);
 
-		passphrase = CryptoUtils.normalizePassphrase(passphrase);
-		secondPassphrase = CryptoUtils.normalizePassphrase(secondPassphrase);
+		passphrase = BIP39.normalize(passphrase);
+		secondPassphrase = BIP39.normalize(secondPassphrase);
 
 		return TransactionSigner.sign(
 			{

@@ -1,4 +1,4 @@
-import { Utils } from "@arkecosystem/platform-sdk";
+import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import * as base58 from "bs58check";
 import crypto from "crypto";
 import { uniqBy } from "lodash";
@@ -33,7 +33,7 @@ export default new BaseModule(ProfileModel, {
 		balance: (state, _, __, rootGetters) => (id) => {
 			const wallets = rootGetters["wallet/byProfileId"](id);
 			return wallets.reduce((total, wallet) => {
-				return Utils.BigNumber.make(wallet.balance).plus(total);
+				return BigNumber.make(wallet.balance).plus(total);
 			}, 0);
 		},
 		balanceWithLedger: (state, _, __, rootGetters) => (id) => {
@@ -46,7 +46,7 @@ export default new BaseModule(ProfileModel, {
 			}
 
 			return uniqBy(wallets, "address").reduce((total, wallet) => {
-				return Utils.BigNumber.make(wallet.balance).plus(total);
+				return BigNumber.make(wallet.balance).plus(total);
 			}, 0);
 		},
 

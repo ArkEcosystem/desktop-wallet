@@ -1,10 +1,10 @@
 import { Transactions } from "@arkecosystem/crypto";
+import { BIP39 } from "@arkecosystem/platform-sdk-crypto";
 import { TRANSACTION_TYPES } from "@config";
 
 import store from "@/store";
 
 import { TransactionSigner } from "./transaction-signer";
-import { CryptoUtils } from "./utils";
 
 export class IpfsBuilder {
 	static async build(
@@ -23,8 +23,8 @@ export class IpfsBuilder {
 
 		const transaction = Transactions.BuilderFactory.ipfs().ipfsAsset(hash).fee(fee);
 
-		passphrase = CryptoUtils.normalizePassphrase(passphrase);
-		secondPassphrase = CryptoUtils.normalizePassphrase(secondPassphrase);
+		passphrase = BIP39.normalize(passphrase);
+		secondPassphrase = BIP39.normalize(secondPassphrase);
 
 		return TransactionSigner.sign(
 			{

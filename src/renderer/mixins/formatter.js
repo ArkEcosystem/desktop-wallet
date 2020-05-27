@@ -49,12 +49,6 @@ export default {
 				userLanguage = language;
 			}
 
-			try {
-				require(`dayjs/locale/${userLanguage}`);
-			} catch {
-				userLanguage = "en";
-			}
-
 			const dateTime = DateTime.make(value, userLanguage);
 
 			if (!format) {
