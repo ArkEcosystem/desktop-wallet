@@ -36,8 +36,13 @@ export class TransferBuilder {
 			.recipientId(recipientId)
 			.vendorField(vendorField);
 
-		passphrase = BIP39.normalize(passphrase);
-		secondPassphrase = BIP39.normalize(secondPassphrase);
+		if (passphrase) {
+			passphrase = BIP39.normalize(passphrase);
+		}
+
+		if (secondPassphrase) {
+			secondPassphrase = BIP39.normalize(secondPassphrase);
+		}
 
 		return TransactionSigner.sign(
 			{

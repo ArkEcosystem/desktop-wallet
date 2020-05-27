@@ -30,8 +30,13 @@ export class MultiPaymentBuilder {
 			transaction.addPayment(recipient.address, recipient.amount);
 		}
 
-		passphrase = BIP39.normalize(passphrase);
-		secondPassphrase = BIP39.normalize(secondPassphrase);
+		if (passphrase) {
+			passphrase = BIP39.normalize(passphrase);
+		}
+
+		if (secondPassphrase) {
+			secondPassphrase = BIP39.normalize(secondPassphrase);
+		}
 
 		return TransactionSigner.sign(
 			{

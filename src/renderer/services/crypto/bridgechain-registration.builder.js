@@ -25,8 +25,13 @@ export class BridgechainRegistrationBuilder {
 			.bridgechainRegistrationAsset(asset)
 			.fee(fee);
 
-		passphrase = BIP39.normalize(passphrase);
-		secondPassphrase = BIP39.normalize(secondPassphrase);
+		if (passphrase) {
+			passphrase = BIP39.normalize(passphrase);
+		}
+
+		if (secondPassphrase) {
+			secondPassphrase = BIP39.normalize(secondPassphrase);
+		}
 
 		return TransactionSigner.sign(
 			{
