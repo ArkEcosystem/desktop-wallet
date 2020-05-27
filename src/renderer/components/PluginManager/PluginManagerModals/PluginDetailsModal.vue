@@ -164,7 +164,6 @@
 
 <script>
 import { PLUGINS } from "@config";
-import domain from "getdomain";
 import { Component, Prop, Vue } from "vue-property-decorator";
 
 import { ButtonGeneric, ButtonIconGeneric } from "@/components/Button";
@@ -260,7 +259,7 @@ export default class PluginDetailsModal extends Vue {
 
 	get homepageLink() {
 		try {
-			return domain.get(this.plugin.homepage);
+			return new URL(this.plugin.homepage).hostname;
 		} catch (error) {
 			return null;
 		}
