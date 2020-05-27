@@ -17,7 +17,7 @@ export default {
 
 	created() {
 		this.loadTransactions();
-		this.$eventBus.on(AppEvent.WalletReload, this.loadTransactions);
+		this.$eventBus.$on(AppEvent.WalletReload, this.loadTransactions);
 		this.enableNewTransactionEvent(this.wallet_fromRoute.address);
 	},
 
@@ -35,7 +35,7 @@ export default {
 			}
 
 			this.disableNewTransactionEvent(address);
-			this.$eventBus.on(`wallet:${address}:transaction:new`, this.refreshStatusEvent);
+			this.$eventBus.$on(`wallet:${address}:transaction:new`, this.refreshStatusEvent);
 		},
 
 		disableNewTransactionEvent(address) {

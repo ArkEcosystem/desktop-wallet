@@ -347,7 +347,7 @@ export default class AnonymousComponent extends Vue {
 	async created() {
 		await this.$synchronizer.call("wallets");
 		await this.fetchWalletVote();
-		this.$eventBus.on(AppEvent.WalletReload, this.fetchWalletVote);
+		this.$eventBus.$on(AppEvent.WalletReload, this.fetchWalletVote);
 	}
 
 	beforeDestroy() {

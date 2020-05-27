@@ -339,7 +339,7 @@ export default class TransactionShow extends Vue {
 	emitDiscard() {
 		this.$store.dispatch(StoreBinding.TransactionDelete, this.transaction);
 		this.$emit("close");
-		this.$eventBus.emit(AppEvent.WalletReload);
+		this.$eventBus.$emit(AppEvent.WalletReload);
 	}
 
 	openAddressInWallet(address) {

@@ -187,7 +187,7 @@ export default {
 			const data = TransactionModel.deserialize(transaction);
 			commit(StoreCommit.Create, data);
 
-			eventBus.emit(`wallet:${transaction.sender}:transaction:new`);
+			eventBus.$emit(`wallet:${transaction.sender}:transaction:new`);
 
 			return data;
 		},

@@ -254,8 +254,8 @@ export default class WalletAll extends Vue {
 
 	created() {
 		this.loadWallets();
-		this.$eventBus.on(AppEvent.LedgerWalletsUpdated, this.includeLedgerWallets);
-		this.$eventBus.on(AppEvent.LedgerDisconnected, this.ledgerDisconnected);
+		this.$eventBus.$on(AppEvent.LedgerWalletsUpdated, this.includeLedgerWallets);
+		this.$eventBus.$on(AppEvent.LedgerDisconnected, this.ledgerDisconnected);
 	}
 
 	beforeDestroy() {

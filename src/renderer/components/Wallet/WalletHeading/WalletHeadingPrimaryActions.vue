@@ -119,7 +119,7 @@ export default class WalletHeadingPrimaryActions extends Vue {
 
 	async refreshWallet() {
 		this.isRefreshing = true;
-		await this.$eventBus.emit(AppEvent.WalletReload);
+		await this.$eventBus.$emit(AppEvent.WalletReload);
 		this.isRefreshing = false;
 	}
 

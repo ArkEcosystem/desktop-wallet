@@ -431,7 +431,7 @@ export default class InputAddress extends Vue {
 	updateInputValue(value) {
 		this.inputValue = value;
 
-		this.$eventBus.emit("change");
+		this.$eventBus.$emit("change");
 
 		// Inform Vuelidate that the value changed
 		// @ts-ignore

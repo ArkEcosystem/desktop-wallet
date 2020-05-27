@@ -29,7 +29,7 @@ export default class AlertMessage extends Vue {
 	private alert: { [key: string]: any } | null = null;
 
 	public mounted() {
-		this.$eventBus.on(AppEvent.Alert, this.queueAlert);
+		this.$eventBus.$on(AppEvent.Alert, this.queueAlert);
 	}
 
 	private queueAlert(alert: object) {

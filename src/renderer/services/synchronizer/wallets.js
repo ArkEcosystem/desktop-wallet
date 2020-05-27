@@ -525,7 +525,7 @@ class Action {
 	}
 
 	emit(event, data) {
-		eventBus.emit(event, data);
+		eventBus.$emit(event, data);
 	}
 }
 

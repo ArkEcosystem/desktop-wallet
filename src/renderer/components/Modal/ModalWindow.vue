@@ -170,7 +170,7 @@ export default class ModalWindow extends Vue {
 
 	mounted() {
 		document.addEventListener("keyup", this.onEscKey, false);
-		this.$eventBus.on("change", this.onChange);
+		this.$eventBus.$on("change", this.onChange);
 	}
 
 	destroyed() {

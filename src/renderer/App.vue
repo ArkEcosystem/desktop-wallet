@@ -324,7 +324,7 @@ export default class DesktopWallet extends Vue {
 			this.$store.dispatch(StoreBinding.DelegateLoad);
 		}
 
-		this.$eventBus.on(AppEvent.ClientChanged, async () => {
+		this.$eventBus.$on(AppEvent.ClientChanged, async () => {
 			this.$store.dispatch(StoreBinding.PeerConnectToBest, {});
 			this.$store.dispatch(StoreBinding.NetworkUpdateData);
 			this.$store.dispatch(StoreBinding.DelegateLoad);
@@ -334,11 +334,11 @@ export default class DesktopWallet extends Vue {
 				this.$store.dispatch(StoreBinding.LedgerReloadWallets, { clearFirst: true, forceLoad: true });
 			}
 		});
-		this.$eventBus.on(AppEvent.LedgerConnected, async () => {
+		this.$eventBus.$on(AppEvent.LedgerConnected, async () => {
 			// @ts-ignore
 			this.$success("Ledger Connected!");
 		});
-		this.$eventBus.on(AppEvent.LedgerDisconnected, async () => {
+		this.$eventBus.$on(AppEvent.LedgerDisconnected, async () => {
 			// @ts-ignore
 			this.$warn("Ledger Disconnected!");
 		});
@@ -370,7 +370,7 @@ export default class DesktopWallet extends Vue {
 				}
 
 				if (!oldProfile || profile.id !== oldProfile.id) {
-					this.$eventBus.emit(AppEvent.ClientChanged);
+					this.$eventBus.$emit(AppEvent.ClientChanged);
 				}
 
 				priceApi.setAdapter(profile.priceApi);

@@ -21,8 +21,8 @@ export default {
 
 	created() {
 		this.loadTransactions();
-		this.$eventBus.on(AppEvent.WalletReload, this.loadTransactions);
-		this.$eventBus.on(AppEvent.WalletReloadMultiSignature, this.loadTransactions);
+		this.$eventBus.$on(AppEvent.WalletReload, this.loadTransactions);
+		this.$eventBus.$on(AppEvent.WalletReloadMultiSignature, this.loadTransactions);
 	},
 
 	beforeDestroy() {
