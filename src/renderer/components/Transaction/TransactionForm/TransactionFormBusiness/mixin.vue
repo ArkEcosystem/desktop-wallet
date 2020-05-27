@@ -107,6 +107,7 @@
 </template>
 
 <script type="text/javascript">
+import { Component, Vue } from "vue-property-decorator";
 import { maxLength, minLength, required, url } from "vuelidate/lib/validators";
 
 import { InputFee, InputPassword, InputText } from "@/components/Input";
@@ -120,7 +121,7 @@ const minVatLength = 8;
 const maxVatLength = 15;
 const minRepositoryLength = 12;
 
-export default {
+@Component({
 	components: {
 		InputFee,
 		InputPassword,
@@ -132,202 +133,195 @@ export default {
 	},
 
 	mixins: [mixin],
-
-	data: () => ({
-		form: {
-			fee: 0,
-			passphrase: "",
-			walletPassword: "",
-			asset: {
-				name: "",
-				website: "",
-				vat: "",
-				repository: "",
-			},
+})
+export default class AnonymousComponent extends Vue {
+	form = {
+		fee: 0,
+		passphrase: "",
+		walletPassword: "",
+		asset: {
+			name: "",
+			website: "",
+			vat: "",
+			repository: "",
 		},
-	}),
+	};
 
-	computed: {
-		business() {
-			return this.wallet_fromRoute.business;
-		},
+	get business() {
+		return this.wallet_fromRoute.business;
+	}
 
-		isUpdate() {
-			return !!this.business;
-		},
+	get isUpdate() {
+		return !!this.business;
+	}
 
-		hasSameName() {
-			return this.form.asset.name === this.business.name;
-		},
+	get hasSameName() {
+		return this.form.asset.name === this.business.name;
+	}
 
-		hasSameWebsite() {
-			return this.form.asset.website === this.business.website;
-		},
+	get hasSameWebsite() {
+		return this.form.asset.website === this.business.website;
+	}
 
-		hasSameVat() {
+	get hasSameVat() {
+		return this.form.asset.vat === this.business.vat || (!this.form.asset.vat && this.business.vat === undefined);
+	}
+
+	get hasSameRepository() {
+		return (
+			this.form.asset.repository === this.business.repository ||
+			(!this.form.asset.repository && this.business.repository === undefined)
+		);
+	}
+
+	get nameLabel() {
+		return `${this.$t("WALLET_BUSINESS.NAME")} - ${this.$t("VALIDATION.MAX_LENGTH", [maxNameLength])}`;
+	}
+
+	get isFormValid() {
+		if (this.isUpdate) {
 			return (
-				this.form.asset.vat === this.business.vat || (!this.form.asset.vat && this.business.vat === undefined)
+				!this.$v.form.$invalid &&
+				!(this.hasSameName && this.hasSameWebsite && this.hasSameVat && this.hasSameRepository)
 			);
-		},
+		}
 
-		hasSameRepository() {
-			return (
-				this.form.asset.repository === this.business.repository ||
-				(!this.form.asset.repository && this.business.repository === undefined)
-			);
-		},
+		return !this.$v.form.$invalid;
+	}
 
-		nameLabel() {
-			return `${this.$t("WALLET_BUSINESS.NAME")} - ${this.$t("VALIDATION.MAX_LENGTH", [maxNameLength])}`;
-		},
-
-		isFormValid() {
-			if (this.isUpdate) {
-				return (
-					!this.$v.form.$invalid &&
-					!(this.hasSameName && this.hasSameWebsite && this.hasSameVat && this.hasSameRepository)
-				);
+	get nameError() {
+		if (this.$v.form.asset.name.$dirty && this.$v.form.asset.name.$invalid) {
+			if (!this.$v.form.asset.name.required) {
+				return this.$t("VALIDATION.REQUIRED", [this.$t("WALLET_BUSINESS.NAME")]);
+			} else if (!this.$v.form.asset.name.tooLong) {
+				return this.$t("VALIDATION.TOO_LONG", [this.$t("WALLET_BUSINESS.NAME")]);
+			} else if (!this.$v.form.asset.name.validName) {
+				return this.$t("VALIDATION.NOT_VALID", [this.$t("WALLET_BUSINESS.NAME")]);
 			}
+		}
 
-			return !this.$v.form.$invalid;
-		},
+		return null;
+	}
 
-		nameError() {
-			if (this.$v.form.asset.name.$dirty && this.$v.form.asset.name.$invalid) {
-				if (!this.$v.form.asset.name.required) {
-					return this.$t("VALIDATION.REQUIRED", [this.$t("WALLET_BUSINESS.NAME")]);
-				} else if (!this.$v.form.asset.name.tooLong) {
-					return this.$t("VALIDATION.TOO_LONG", [this.$t("WALLET_BUSINESS.NAME")]);
-				} else if (!this.$v.form.asset.name.validName) {
-					return this.$t("VALIDATION.NOT_VALID", [this.$t("WALLET_BUSINESS.NAME")]);
-				}
+	get websiteError() {
+		if (this.$v.form.asset.website.$dirty && this.$v.form.asset.website.$invalid) {
+			if (!this.$v.form.asset.website.required) {
+				return this.$t("VALIDATION.REQUIRED", [this.$t("WALLET_BUSINESS.WEBSITE")]);
+			} else if (!this.$v.form.asset.website.url) {
+				return this.$t("VALIDATION.INVALID_URL");
 			}
+		}
 
-			return null;
-		},
+		return null;
+	}
 
-		websiteError() {
-			if (this.$v.form.asset.website.$dirty && this.$v.form.asset.website.$invalid) {
-				if (!this.$v.form.asset.website.required) {
-					return this.$t("VALIDATION.REQUIRED", [this.$t("WALLET_BUSINESS.WEBSITE")]);
-				} else if (!this.$v.form.asset.website.url) {
-					return this.$t("VALIDATION.INVALID_URL");
-				}
+	get vatLabel() {
+		return `${this.$t("WALLET_BUSINESS.VAT")} - ${this.$t("VALIDATION.MIN_LENGTH", [
+			minVatLength,
+		])} ${this.$t("VALIDATION.MAX_LENGTH", [maxVatLength])}`;
+	}
+
+	get vatError() {
+		if (this.$v.form.asset.vat.$dirty && this.$v.form.asset.vat.$invalid) {
+			if (!this.$v.form.asset.vat.required) {
+				return this.$t("VALIDATION.REQUIRED", [this.$t("WALLET_BUSINESS.VAT")]);
+			} else if (!this.$v.form.asset.vat.tooShort) {
+				return this.$t("VALIDATION.TOO_SHORT", [this.$t("WALLET_BUSINESS.VAT")]);
+			} else if (!this.$v.form.asset.vat.tooLong) {
+				return this.$t("VALIDATION.TOO_LONG", [this.$t("WALLET_BUSINESS.VAT")]);
 			}
+		}
 
-			return null;
-		},
+		return null;
+	}
 
-		vatLabel() {
-			return `${this.$t("WALLET_BUSINESS.VAT")} - ${this.$t("VALIDATION.MIN_LENGTH", [
-				minVatLength,
-			])} ${this.$t("VALIDATION.MAX_LENGTH", [maxVatLength])}`;
-		},
+	get repositoryLabel() {
+		return `${this.$t("WALLET_BUSINESS.REPOSITORY")} - ${this.$t("VALIDATION.MIN_LENGTH", [minRepositoryLength])}`;
+	}
 
-		vatError() {
-			if (this.$v.form.asset.vat.$dirty && this.$v.form.asset.vat.$invalid) {
-				if (!this.$v.form.asset.vat.required) {
-					return this.$t("VALIDATION.REQUIRED", [this.$t("WALLET_BUSINESS.VAT")]);
-				} else if (!this.$v.form.asset.vat.tooShort) {
-					return this.$t("VALIDATION.TOO_SHORT", [this.$t("WALLET_BUSINESS.VAT")]);
-				} else if (!this.$v.form.asset.vat.tooLong) {
-					return this.$t("VALIDATION.TOO_LONG", [this.$t("WALLET_BUSINESS.VAT")]);
-				}
+	get repositoryError() {
+		if (this.$v.form.asset.repository.$dirty && this.$v.form.asset.repository.$invalid) {
+			if (!this.$v.form.asset.repository.required) {
+				return this.$t("VALIDATION.REQUIRED", [this.$t("WALLET_BUSINESS.REPOSITORY")]);
+			} else if (!this.$v.form.asset.repository.url) {
+				return this.$t("VALIDATION.INVALID_URL");
+			} else if (!this.$v.form.asset.repository.tooShort) {
+				return this.$t("VALIDATION.TOO_SHORT", [this.$t("WALLET_BUSINESS.REPOSITORY")]);
 			}
+		}
 
-			return null;
-		},
+		return null;
+	}
 
-		repositoryLabel() {
-			return `${this.$t("WALLET_BUSINESS.REPOSITORY")} - ${this.$t("VALIDATION.MIN_LENGTH", [
-				minRepositoryLength,
-			])}`;
-		},
+	getTransactionData() {
+		const businessAsset = Object.assign({}, this.form.asset);
 
-		repositoryError() {
-			if (this.$v.form.asset.repository.$dirty && this.$v.form.asset.repository.$invalid) {
-				if (!this.$v.form.asset.repository.required) {
-					return this.$t("VALIDATION.REQUIRED", [this.$t("WALLET_BUSINESS.REPOSITORY")]);
-				} else if (!this.$v.form.asset.repository.url) {
-					return this.$t("VALIDATION.INVALID_URL");
-				} else if (!this.$v.form.asset.repository.tooShort) {
-					return this.$t("VALIDATION.TOO_SHORT", [this.$t("WALLET_BUSINESS.REPOSITORY")]);
-				}
+		for (const property of Object.keys(this.form.asset)) {
+			if (
+				(this.isUpdate && this[`hasSame${this.strings_capitalizeFirst(property)}`]) ||
+				!businessAsset[property].length
+			) {
+				delete businessAsset[property];
 			}
+		}
 
-			return null;
-		},
-	},
+		const transactionData = {
+			address: this.currentWallet.address,
+			asset: businessAsset,
+			passphrase: this.form.passphrase,
+			fee: this.getFee(),
+			wif: this.form.wif,
+			networkWif: this.walletNetwork.wif,
+			multiSignature: this.currentWallet.multiSignature,
+		};
 
-	methods: {
-		getTransactionData() {
-			const businessAsset = Object.assign({}, this.form.asset);
+		if (this.currentWallet.secondPublicKey) {
+			transactionData.secondPassphrase = this.form.secondPassphrase;
+		}
 
-			for (const property of Object.keys(this.form.asset)) {
-				if (
-					(this.isUpdate && this[`hasSame${this.strings_capitalizeFirst(property)}`]) ||
-					!businessAsset[property].length
-				) {
-					delete businessAsset[property];
-				}
-			}
+		return transactionData;
+	}
 
-			const transactionData = {
-				address: this.currentWallet.address,
-				asset: businessAsset,
-				passphrase: this.form.passphrase,
-				fee: this.getFee(),
-				wif: this.form.wif,
-				networkWif: this.walletNetwork.wif,
-				multiSignature: this.currentWallet.multiSignature,
-			};
+	validations() {
+		return {
+			form: {
+				fee: mixin.validators.fee,
+				passphrase: mixin.validators.passphrase,
+				walletPassword: mixin.validators.walletPassword,
+				secondPassphrase: mixin.validators.secondPassphrase,
 
-			if (this.currentWallet.secondPublicKey) {
-				transactionData.secondPassphrase = this.form.secondPassphrase;
-			}
-
-			return transactionData;
-		},
-	},
-
-	validations: {
-		form: {
-			fee: mixin.validators.fee,
-			passphrase: mixin.validators.passphrase,
-			walletPassword: mixin.validators.walletPassword,
-			secondPassphrase: mixin.validators.secondPassphrase,
-
-			asset: {
-				name: {
-					required,
-					tooLong: maxLength(maxNameLength),
-					validName: (value) => {
-						return /^[a-zA-Z0-9]+(( - |[ ._-])[a-zA-Z0-9]+)*[.]?$/.test(value);
+				asset: {
+					name: {
+						required,
+						tooLong: maxLength(maxNameLength),
+						validName: (value) => {
+							return /^[a-zA-Z0-9]+(( - |[ ._-])[a-zA-Z0-9]+)*[.]?$/.test(value);
+						},
 					},
-				},
 
-				website: {
-					required,
-					url,
-				},
-
-				vat: {
-					required(value) {
-						return this.business && this.business.vat ? required(value) : true;
+					website: {
+						required,
+						url,
 					},
-					tooShort: minLength(minVatLength),
-					tooLong: maxLength(maxVatLength),
-				},
 
-				repository: {
-					required(value) {
-						return this.business && this.business.repository ? required(value) : true;
+					vat: {
+						required(value) {
+							return this.business && this.business.vat ? required(value) : true;
+						},
+						tooShort: minLength(minVatLength),
+						tooLong: maxLength(maxVatLength),
 					},
-					tooShort: minLength(minRepositoryLength),
-					url,
+
+					repository: {
+						required(value) {
+							return this.business && this.business.repository ? required(value) : true;
+						},
+						tooShort: minLength(minRepositoryLength),
+						url,
+					},
 				},
 			},
-		},
-	},
-};
+		};
+	};
+}
 </script>

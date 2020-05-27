@@ -21,11 +21,11 @@
 			</button>
 
 			<Portal to="button-dropdown">
-				<div v-show="showDropdown" class="ButtonDropdown__list transition" :style="dropdownStyle">
+				<div v-show="showDropdown" class="transition ButtonDropdown__list" :style="dropdownStyle">
 					<div
 						v-for="(item, key) of items"
 						:key="key"
-						class="ButtonDropdown__list__item flex-1 whitespace-no-wrap"
+						class="flex-1 whitespace-no-wrap ButtonDropdown__list__item"
 					>
 						<slot name="button" v-bind="{ item, triggerClose }">
 							<ButtonGeneric :label="item" @click="triggerClose" />
@@ -37,111 +37,107 @@
 	</div>
 </template>
 
-<script>
+<script lang="ts">
+import { Component, Prop, Vue } from "vue-property-decorator";
+
 import SvgIcon from "@/components/SvgIcon";
 
 import ButtonGeneric from "./ButtonGeneric";
 
-export default {
+@Component({
 	name: "ButtonDropdown",
 
 	components: {
 		ButtonGeneric,
 		SvgIcon,
 	},
+})
+export default class ButtonDropdown extends Vue {
+	@Prop({
+		type: String,
+		required: false,
+		default: "",
+	})
+	classes;
 
-	props: {
-		classes: {
-			type: String,
-			required: false,
-			default: "",
-		},
+	@Prop({
+		type: Array,
+		required: true,
+	})
+	items;
 
-		items: {
-			type: Array,
-			required: true,
-		},
+	@Prop({
+		type: String,
+		required: false,
+		default: null,
+	})
+	title;
 
-		title: {
-			type: String,
-			required: false,
-			default: null,
-		},
-	},
+	showDropdown = false;
+	dropdownStyle = "";
 
-	data() {
+	get hasPrimaryButton() {
+		return !!this.$slots.primaryButton;
+	}
+
+	get dropdownButtonClasses() {
 		return {
-			showDropdown: false,
-			dropdownStyle: "",
+			...this.classes.split(" ").reduce((classes, className) => {
+				classes[className] = true;
+
+				return classes;
+			}, {}),
+			"ButtonDropdown__button--nolabel": this.hasPrimaryButton,
 		};
-	},
+	}
 
-	computed: {
-		hasPrimaryButton() {
-			return !!this.$slots.primaryButton;
-		},
+	get arrowViewbox() {
+		if (this.showDropdown) {
+			return "0 2 12 16";
+		}
 
-		dropdownButtonClasses() {
-			return {
-				...this.classes.split(" ").reduce((classes, className) => {
-					classes[className] = true;
-
-					return classes;
-				}, {}),
-				"ButtonDropdown__button--nolabel": this.hasPrimaryButton,
-			};
-		},
-
-		arrowViewbox() {
-			if (this.showDropdown) {
-				return "0 2 12 16";
-			}
-
-			return "0 -2 12 16";
-		},
-	},
+		return "0 -2 12 16";
+	}
 
 	mounted() {
 		this.setDropdownStyle();
 
 		window.addEventListener("resize", this.handleResize);
-	},
+	}
 
 	destroyed() {
 		window.removeEventListener("resize", this.handleResize);
-	},
+	}
 
-	methods: {
-		toggleDropdown() {
-			this.showDropdown = !this.showDropdown;
-		},
+	toggleDropdown() {
+		this.showDropdown = !this.showDropdown;
+	}
 
-		triggerClose() {
-			this.showDropdown = false;
-		},
+	triggerClose() {
+		this.showDropdown = false;
+	}
 
-		handleResize() {
-			this.setDropdownStyle();
-		},
+	handleResize() {
+		this.setDropdownStyle();
+	}
 
-		setDropdownStyle() {
-			const buttonDropdown = this.$refs.buttonDropdown;
+	setDropdownStyle() {
+		const buttonDropdown = this.$refs.buttonDropdown;
 
-			if (buttonDropdown) {
-				const height = buttonDropdown.clientHeight;
-				const position = buttonDropdown.getBoundingClientRect();
+		if (buttonDropdown) {
+			// @ts-ignore
+			const height = buttonDropdown.clientHeight;
+			// @ts-ignore
+			const position = buttonDropdown.getBoundingClientRect();
 
-				this.dropdownStyle = [
-					`top: ${position.top + height}px`,
-					`left: ${position.left}px`,
-					"z-index: 10",
-				].join(";");
-			} else {
-				this.dropdownStyle = "";
-			}
-		},
-	},
-};
+			this.dropdownStyle = [`top: ${position.top + height}px`, `left: ${position.left}px`, "z-index: 10"].join(
+				";",
+			);
+		} else {
+			this.dropdownStyle = "";
+		}
+	}
+}
 </script>
 
 <style scoped>

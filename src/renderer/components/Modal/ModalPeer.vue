@@ -41,6 +41,7 @@
 </template>
 
 <script>
+import { Component, Prop, Vue } from "vue-property-decorator";
 import { numeric, required } from "vuelidate/lib/validators";
 
 import { ButtonGeneric } from "@/components/Button";
@@ -48,7 +49,7 @@ import { InputText } from "@/components/Input";
 
 import ModalWindow from "./ModalWindow";
 
-export default {
+@Component({
 	name: "ModalPeer",
 
 	components: {
@@ -56,70 +57,67 @@ export default {
 		InputText,
 		ModalWindow,
 	},
+})
+export default class ModalPeer extends Vue {
+	@Prop({
+		type: String,
+		required: true,
+	})
+	title;
 
-	props: {
-		title: {
-			type: String,
-			required: true,
-		},
+	@Prop({
+		type: Object,
+		required: false,
+		default: () => ({}),
+	})
+	currentPeer;
 
-		currentPeer: {
-			type: Object,
-			required: false,
-			default: () => ({}),
-		},
+	@Prop({
+		type: Function,
+		required: false,
+		default: null,
+	})
+	closeTrigger;
 
-		closeTrigger: {
-			type: Function,
-			required: false,
-			default: null,
-		},
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	allowClose;
 
-		allowClose: {
-			type: Boolean,
-			required: false,
-			default: false,
-		},
-	},
+	form = {
+		host: "",
+		port: "",
+	};
 
-	data() {
-		return {
-			form: {
-				host: "",
-				port: "",
-			},
-		};
-	},
-
-	computed: {
-		hostError() {
-			let error;
-			if (this.$v.form.host.$dirty) {
-				if (!this.$v.form.host.required) {
-					error = this.$t("VALIDATION.REQUIRED", [this.$refs["input-host"].label]);
-				} else if (!this.$v.form.host.hasScheme) {
-					error = this.$t("VALIDATION.NO_SCHEME", [this.$refs["input-host"].label]);
-				} else if (!this.$v.form.host.isValid) {
-					error = this.$t("VALIDATION.NOT_VALID", [this.$refs["input-host"].label]);
-				}
+	get hostError() {
+		let error;
+		if (this.$v.form.host.$dirty) {
+			if (!this.$v.form.host.required) {
+				error = this.$t("VALIDATION.REQUIRED", [this.$refs["input-host"].label]);
+			} else if (!this.$v.form.host.hasScheme) {
+				error = this.$t("VALIDATION.NO_SCHEME", [this.$refs["input-host"].label]);
+			} else if (!this.$v.form.host.isValid) {
+				error = this.$t("VALIDATION.NOT_VALID", [this.$refs["input-host"].label]);
 			}
-			return error;
-		},
+		}
+		return error;
+	}
 
-		portError() {
-			let error;
-			if (this.$v.form.port.$dirty) {
-				if (!this.$v.form.port.required) {
-					error = this.$t("VALIDATION.REQUIRED", [this.$refs["input-port"].label]);
-				} else if (!this.$v.form.port.isNumeric) {
-					error = this.$t("VALIDATION.NOT_NUMERIC", [this.$refs["input-port"].label]);
-				} else if (!this.$v.form.port.isValid) {
-					error = this.$t("VALIDATION.NOT_VALID", [this.$refs["input-port"].label]);
-				}
+	get portError() {
+		let error;
+		if (this.$v.form.port.$dirty) {
+			if (!this.$v.form.port.required) {
+				error = this.$t("VALIDATION.REQUIRED", [this.$refs["input-port"].label]);
+			} else if (!this.$v.form.port.isNumeric) {
+				error = this.$t("VALIDATION.NOT_NUMERIC", [this.$refs["input-port"].label]);
+			} else if (!this.$v.form.port.isValid) {
+				error = this.$t("VALIDATION.NOT_VALID", [this.$refs["input-port"].label]);
 			}
-			return error;
-		},
-	},
+		}
+		return error;
+	}
 
 	mounted() {
 		if (this.currentPeer) {
@@ -136,46 +134,46 @@ export default {
 				this.form.port = this.currentPeer.port;
 			}
 		}
-	},
+	}
 
-	methods: {
-		emitConnect() {
-			const host = this.form.host;
-			if (host.endsWith("/")) {
-				this.form.host = host.slice(0, -1);
-			}
-			this.$emit("connect", {
-				peer: this.form,
-				closeTrigger: this.closeTrigger,
-			});
-		},
+	emitConnect() {
+		const host = this.form.host;
+		if (host.endsWith("/")) {
+			this.form.host = host.slice(0, -1);
+		}
+		this.$emit("connect", {
+			peer: this.form,
+			closeTrigger: this.closeTrigger,
+		});
+	}
 
-		emitClose() {
-			this.$emit("close");
-		},
-	},
+	emitClose() {
+		this.$emit("close");
+	}
 
-	validations: {
-		form: {
-			host: {
-				required,
-				isValid(value) {
-					return /(:\/\/){1}[^\-.]+[a-zA-Z0-9\-_.]*[^\-.]+$/.test(value);
+	validations() {
+		return {
+			form: {
+				host: {
+					required,
+					isValid(value) {
+						return /(:\/\/){1}[^\-.]+[a-zA-Z0-9\-_.]*[^\-.]+$/.test(value);
+					},
+					hasScheme(value) {
+						return /^https?:\/\//.test(value);
+					},
 				},
-				hasScheme(value) {
-					return /^https?:\/\//.test(value);
+				port: {
+					required,
+					isNumeric(value) {
+						return numeric(value);
+					},
+					isValid(value) {
+						return parseInt(value) < 65536;
+					},
 				},
 			},
-			port: {
-				required,
-				isNumeric(value) {
-					return numeric(value);
-				},
-				isValid(value) {
-					return parseInt(value) < 65536;
-				},
-			},
-		},
-	},
-};
+		};
+	};
+}
 </script>

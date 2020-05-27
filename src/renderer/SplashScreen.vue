@@ -62,20 +62,21 @@
 	</div>
 </template>
 
-<script>
+<script lang="ts">
 import "@/styles/style.css";
+
+import { Component, Vue } from "vue-property-decorator";
 
 import packageJson from "../../package.json";
 
-export default {
+@Component({
 	name: "SplashScreen",
-
-	computed: {
-		version() {
-			return packageJson.version;
-		},
-	},
-};
+})
+export default class SplashScreen extends Vue {
+	get version() {
+		return packageJson.version;
+	}
+}
 </script>
 
 <style scoped>

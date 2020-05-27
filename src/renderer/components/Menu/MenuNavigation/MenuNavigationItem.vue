@@ -5,90 +5,99 @@
 			'w-full': !isHorizontal,
 		}"
 		:disabled="isDisabled"
-		class="MenuNavigationItem relative cursor-pointer flex items-center justify-center text-theme-feature-item-text hover:bg-theme-feature-item-hover hover:text-theme-feature-item-hover-text"
+		class="relative flex items-center justify-center cursor-pointer MenuNavigationItem text-theme-feature-item-text hover:bg-theme-feature-item-hover hover:text-theme-feature-item-hover-text"
 		@click.capture.stop="onClick"
 	>
-		<div v-if="!isHorizontal" class="MenuNavigationItem__border absolute w-full" />
+		<div v-if="!isHorizontal" class="absolute w-full MenuNavigationItem__border" />
 		<slot :is-active="isActive">
 			<div v-if="icon" :class="{ 'w-full': !isHorizontal }" class="flex items-center justify-center">
 				<SvgIcon :name="icon" :view-box="viewBox" />
 				<div
 					v-if="showBadge"
-					class="MenuNavigationItem__badge rounded-full animate__animated animate__bounce"
+					class="rounded-full MenuNavigationItem__badge animate__animated animate__bounce"
 				/>
 			</div>
 		</slot>
-		<div v-if="isHorizontal" class="MenuNavigationItemHorizontal__border absolute h-full" />
+		<div v-if="isHorizontal" class="absolute h-full MenuNavigationItemHorizontal__border" />
 	</button>
 </template>
 
 <script>
+import { Component, Prop, Vue } from "vue-property-decorator";
+
 import SvgIcon from "@/components/SvgIcon";
 
-export default {
+@Component({
 	name: "MenuNavigationItem",
-
 	inject: ["switchToItem"],
 
 	components: {
 		SvgIcon,
 	},
+})
+export default class MenuNavigationItem extends Vue {
+	@Prop({
+		type: [String, Number],
+		required: true,
+	})
+	id;
 
-	props: {
-		id: {
-			type: [String, Number],
-			required: true,
-		},
-		icon: {
-			type: String,
-			required: false,
-			default: null,
-		},
-		showBadge: {
-			type: Boolean,
-			required: false,
-			default: false,
-		},
-		viewBox: {
-			type: String,
-			required: false,
-			default: "0 0 23 23",
-		},
-		isDisabled: {
-			type: Boolean,
-			required: false,
-			default: false,
-		},
-		isHorizontal: {
-			type: Boolean,
-			required: false,
-			default: false,
-		},
-		canActivate: {
-			type: Boolean,
-			required: false,
-			default: true,
-		},
-	},
+	@Prop({
+		type: String,
+		required: false,
+		default: null,
+	})
+	icon;
 
-	data: () => ({
-		isActive: false,
-	}),
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	showBadge;
 
-	methods: {
-		onClick() {
-			if (this.canActivate) {
-				this.switchToItem(this.id);
-			}
+	@Prop({
+		type: String,
+		required: false,
+		default: "0 0 23 23",
+	})
+	viewBox;
 
-			this.$emit("click", this.id);
-		},
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	isDisabled;
 
-		toggle(isActive) {
-			this.isActive = isActive;
-		},
-	},
-};
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	isHorizontal;
+
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: true,
+	})
+	canActivate;
+
+	isActive = false;
+
+	onClick() {
+		if (this.canActivate) {
+			this.switchToItem(this.id);
+		}
+
+		this.$emit("click", this.id);
+	}
+
+	toggle(isActive) {
+		this.isActive = isActive;
+	}
+}
 </script>
 
 <style scoped>

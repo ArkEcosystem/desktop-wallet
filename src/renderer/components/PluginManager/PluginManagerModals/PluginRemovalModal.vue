@@ -18,11 +18,13 @@
 </template>
 
 <script>
+import { Component, Prop, Vue } from "vue-property-decorator";
+
 import { ButtonSwitch } from "@/components/Button";
 import { ListDivided, ListDividedItem } from "@/components/ListDivided";
 import { ModalConfirmation } from "@/components/Modal";
 
-export default {
+@Component({
 	name: "PluginRemovalConfirmation",
 
 	components: {
@@ -31,40 +33,34 @@ export default {
 		ListDividedItem,
 		ModalConfirmation,
 	},
+})
+export default class PluginRemovalConfirmation extends Vue {
+	@Prop({
+		type: Object,
+		required: true,
+	})
+	plugin;
 
-	props: {
-		plugin: {
-			type: Object,
-			required: true,
-		},
-	},
+	removeOptions = false;
 
-	data: () => ({
-		removeOptions: false,
-	}),
+	get hasStorage() {
+		return (
+			this.plugin.permissions.includes("STORAGE") &&
+			(this.$store.getters["plugin/profileHasPluginOptions"](this.plugin.id) ||
+				this.$store.getters["plugin/profileHasPluginOptions"](this.plugin.id, "global"))
+		);
+	}
 
-	computed: {
-		hasStorage() {
-			return (
-				this.plugin.permissions.includes("STORAGE") &&
-				(this.$store.getters["plugin/profileHasPluginOptions"](this.plugin.id) ||
-					this.$store.getters["plugin/profileHasPluginOptions"](this.plugin.id, "global"))
-			);
-		},
-	},
+	emitCancel() {
+		this.$emit("cancel");
+	}
 
-	methods: {
-		emitCancel() {
-			this.$emit("cancel");
-		},
+	emitConfirm() {
+		this.$emit("confirm", this.removeOptions);
+	}
 
-		emitConfirm() {
-			this.$emit("confirm", this.removeOptions);
-		},
-
-		toggleRemoveOptions() {
-			this.removeOptions = !this.removeOptions;
-		},
-	},
-};
+	toggleRemoveOptions() {
+		this.removeOptions = !this.removeOptions;
+	}
+}
 </script>

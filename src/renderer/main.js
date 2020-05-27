@@ -1,4 +1,5 @@
 import "reflect-metadata";
+import "./registerComponentHooks";
 
 import logger from "electron-log";
 import PortalVue from "portal-vue";

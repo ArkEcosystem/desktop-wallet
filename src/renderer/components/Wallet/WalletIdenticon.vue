@@ -10,44 +10,56 @@
 </template>
 
 <script>
+import { Component, Prop, Vue } from "vue-property-decorator";
+
 import Identicon from "@/components/utils/Identicon";
 
-export default {
+@Component({
 	name: "WalletIdenticon",
 
 	components: {
 		Identicon,
 	},
+})
+export default class WalletIdenticon extends Vue {
+	@Prop({
+		type: String,
+		required: true,
+	})
+	value;
 
-	props: {
-		value: {
-			type: String,
-			required: true,
-		},
-		size: {
-			type: Number,
-			required: true,
-		},
-		shape: {
-			type: String,
-			required: false,
-			default: () => "circle",
-		},
-		shapeCount: {
-			type: Number,
-			required: false,
-			default: 3,
-		},
-		isDark: {
-			type: Boolean,
-			required: false,
-			default: false,
-		},
-		showNetworkSymbol: {
-			type: Boolean,
-			required: false,
-			default: true,
-		},
-	},
-};
+	@Prop({
+		type: Number,
+		required: true,
+	})
+	size;
+
+	@Prop({
+		type: String,
+		required: false,
+		default: () => "circle",
+	})
+	shape;
+
+	@Prop({
+		type: Number,
+		required: false,
+		default: 3,
+	})
+	shapeCount;
+
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	isDark;
+
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: true,
+	})
+	showNetworkSymbol;
+}
 </script>

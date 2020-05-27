@@ -12,22 +12,22 @@
 
 <script>
 import { PLUGINS } from "@config";
+import { Component, Vue } from "vue-property-decorator";
 
 import SvgIcon from "@/components/SvgIcon";
 
-export default {
+@Component({
 	name: "PluginManagerCheckmark",
 
 	components: {
 		SvgIcon,
 	},
-
-	computed: {
-		author() {
-			return PLUGINS.officialAuthor;
-		},
-	},
-};
+})
+export default class PluginManagerCheckmark extends Vue {
+	get author() {
+		return PLUGINS.officialAuthor;
+	}
+}
 </script>
 
 <style lang="postcss" scoped>

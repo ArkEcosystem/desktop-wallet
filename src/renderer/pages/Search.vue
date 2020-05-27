@@ -10,9 +10,11 @@
 </template>
 
 <script>
+import { Component, Vue } from "vue-property-decorator";
+
 import { SearchFilter, SearchFilterButton, SearchInput } from "@/components/Search";
 
-export default {
+@Component({
 	name: "SearchPage",
 
 	components: {
@@ -20,26 +22,23 @@ export default {
 		SearchFilter,
 		SearchFilterButton,
 	},
-
-	data: () => ({
-		showFilter: false,
-	}),
+})
+export default class SearchPage extends Vue {
+	showFilter = false;
 
 	beforeRouteEnter(to, from, next) {
 		next((vm) => {
 			vm.$synchronizer.focus();
 			vm.$synchronizer.pause("market");
 		});
-	},
+	}
 
-	methods: {
-		toggleFilter() {
-			this.showFilter = !this.showFilter;
-		},
+	toggleFilter() {
+		this.showFilter = !this.showFilter;
+	}
 
-		hideFilter() {
-			this.showFilter = false;
-		},
-	},
-};
+	hideFilter() {
+		this.showFilter = false;
+	}
+}
 </script>

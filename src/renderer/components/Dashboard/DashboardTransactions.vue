@@ -8,47 +8,48 @@
 	/>
 </template>
 
-<script>
+<script lang="ts">
 import { orderBy, uniqBy } from "lodash";
+import { Component, Prop, Vue } from "vue-property-decorator";
 
 import { TransactionTable } from "@/components/Transaction";
 import mergeTableTransactions from "@/components/utils/merge-table-transactions";
 
-export default {
+@Component({
 	name: "DashboardTransactions",
 
 	components: {
 		TransactionTable,
 	},
+})
+export default class DashboardTransactions extends Vue {
+	@Prop({
+		type: Number,
+		required: false,
+		default: 50,
+	})
+	numberOfTransactions;
 
-	props: {
-		numberOfTransactions: {
-			type: Number,
-			required: false,
-			default: 50,
-		},
-	},
+	fetchedTransactions = [];
+	previousWalletAddresses = [];
+	isLoading = false;
 
-	data: () => ({
-		fetchedTransactions: [],
-		previousWalletAddresses: [],
-		isLoading: false,
-	}),
+	get lastTransactions() {
+		return mergeTableTransactions(this.fetchedTransactions, this.storedTransactions);
+	}
 
-	computed: {
-		lastTransactions() {
-			return mergeTableTransactions(this.fetchedTransactions, this.storedTransactions);
-		},
-		storedTransactions() {
-			return this.$store.getters["transaction/byProfileId"](this.session_profile.id, { includeExpired: true });
-		},
-		wallets() {
-			return [
-				...this.$store.getters["wallet/byProfileId"](this.session_profile.id),
-				...this.$store.getters["ledger/wallets"],
-			];
-		},
-	},
+	get storedTransactions() {
+		// @ts-ignore
+		return this.$store.getters["transaction/byProfileId"](this.session_profile.id, { includeExpired: true });
+	}
+
+	get wallets() {
+		return [
+			// @ts-ignore
+			...this.$store.getters["wallet/byProfileId"](this.session_profile.id),
+			...this.$store.getters["ledger/wallets"],
+		];
+	}
 
 	created() {
 		if (this.wallets.length) {
@@ -59,22 +60,23 @@ export default {
 			const transactions = [];
 			for (const address of Object.keys(transactionsByWallet)) {
 				for (const transaction of Object.values(transactionsByWallet[address])) {
+					// @ts-ignore
 					transaction.walletAddress = address;
 
+					// @ts-ignore
 					transactions.push(transaction);
 				}
 			}
 
+			// @ts-ignore
 			this.fetchedTransactions = this.processTransactions(transactions);
 			this.isLoading = false;
 		});
-	},
+	}
 
-	methods: {
-		processTransactions(transactions) {
-			const ordered = orderBy(uniqBy(transactions, "id"), "timestamp", "desc");
-			return ordered.slice(0, this.numberOfTransactions);
-		},
-	},
-};
+	processTransactions(transactions) {
+		const ordered = orderBy(uniqBy(transactions, "id"), "timestamp", "desc");
+		return ordered.slice(0, this.numberOfTransactions);
+	}
+}
 </script>

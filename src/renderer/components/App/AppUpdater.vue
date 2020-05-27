@@ -33,7 +33,7 @@
 								class="AppUpdater__authorized__downloading__header__info"
 							>
 								<span class="font-semibold">{{ formattedPercentage }}</span>
-								<span class="ml-2 text-theme-page-text-light truncate">{{ formatter_bytes(progressUpdate.transferred) }} /
+								<span class="ml-2 truncate text-theme-page-text-light">{{ formatter_bytes(progressUpdate.transferred) }} /
 									{{ formatter_bytes(progressUpdate.total) }}</span>
 							</div>
 						</div>
@@ -50,17 +50,17 @@
 
 			<footer>
 				<div v-if="!isDownloadAuthorized" class="AppUpdater__footer">
-					<button class="blue-button mx-1" @click="startDownload">
+					<button class="mx-1 blue-button" @click="startDownload">
 						{{ $t("APP_UPDATER.DOWNLOAD_NOW") }}
 					</button>
 
-					<button class="action-button px-8 mx-1" @click="emitClose">
+					<button class="px-8 mx-1 action-button" @click="emitClose">
 						{{ $t("APP_UPDATER.MAYBE_LATER") }}
 					</button>
 				</div>
 
 				<div v-if="isDownloadFinished" class="AppUpdater__footer">
-					<button class="blue-button mx-1" @click="quitAndInstall">
+					<button class="mx-1 blue-button" @click="quitAndInstall">
 						{{ $t("APP_UPDATER.QUIT_AND_INSTALL") }}
 					</button>
 				</div>
@@ -77,10 +77,10 @@
 	</ModalWindow>
 </template>
 
-<script>
+<script lang="ts">
 import cheerio from "cheerio";
 import { ipcRenderer } from "electron";
-import Vue from "vue";
+import { Component, Vue } from "vue-property-decorator";
 import { mapGetters } from "vuex";
 
 import { ModalWindow } from "@/components/Modal";
@@ -88,7 +88,7 @@ import { ProgressBar } from "@/components/ProgressBar";
 import { AppEvent } from "@/enums";
 import releaseService from "@/services/release";
 
-export default {
+@Component({
 	name: "AppUpdater",
 
 	components: {
@@ -96,62 +96,74 @@ export default {
 		ProgressBar,
 	},
 
-	data: () => ({
-		isDownloadAuthorized: false,
-		isDownloadFinished: false,
-		isDownloadFailed: false,
-		isDownloadCancelled: false,
-		errorMessage: undefined,
-		progressUpdate: {
-			bytesPerSecond: 0,
-			delta: 0,
-			percent: 0,
-			total: 0,
-			transferred: 0,
-			timestamp: undefined,
-		},
-		inactivityListener: undefined,
-	}),
+	computed: { ...mapGetters("updater", ["availableRelease"]) },
+})
+export default class AppUpdater extends Vue {
+	isDownloadAuthorized = false;
+	isDownloadFinished = false;
+	isDownloadFailed = false;
+	isDownloadCancelled = false;
 
-	computed: {
-		...mapGetters("updater", ["availableRelease"]),
+	errorMessage = undefined;
 
-		formattedPercentage() {
-			return `${(this.progressUpdate.percent || 0).toFixed(2)}%`;
-		},
+	progressUpdate = {
+		bytesPerSecond: 0,
+		delta: 0,
+		percent: 0,
+		total: 0,
+		transferred: 0,
+		timestamp: undefined,
+	};
 
-		isLinux() {
-			return ["freebsd", "linux", "sunos"].includes(process.platform);
-		},
+	inactivityListener = undefined;
 
-		isAppImage() {
-			return !!process.env.APPIMAGE;
-		},
+	data() {
+		return {
+			errorMessage: undefined,
+			inactivityListener: undefined,
+		};
+	}
 
-		title() {
-			if (this.isDownloadAuthorized) {
-				return;
-			}
+	get formattedPercentage() {
+		return `${(this.progressUpdate.percent || 0).toFixed(2)}%`;
+	}
 
-			return `${this.$t("APP_UPDATER.RELEASE_NOTES")} - ${this.availableRelease.version}`;
-		},
+	get isLinux() {
+		return ["freebsd", "linux", "sunos"].includes(process.platform);
+	}
 
-		releaseNotes() {
-			return this.__formatReleaseNotes(this.availableRelease.releaseNotes);
-		},
+	get isAppImage() {
+		return !!process.env.APPIMAGE;
+	}
 
-		descriptionImage() {
-			const image = this.session_hasDarkTheme ? "dark" : "light";
-			return this.assets_loadImage(`pages/updater/computer-${image}.svg`);
-		},
+	get title() {
+		if (this.isDownloadAuthorized) {
+			return null;
+		}
 
-		hasFooter() {
-			return !this.isDownloadAuthorized || this.isDownloadFinished || this.isDownloadFailed;
-		},
-	},
+		// @ts-ignore
+		return `${this.$t("APP_UPDATER.RELEASE_NOTES")} - ${this.availableRelease.version}`;
+	}
+
+	get releaseNotes() {
+		// @ts-ignore
+		return this.__formatReleaseNotes(this.availableRelease.releaseNotes);
+	}
+
+	get descriptionImage() {
+		// @ts-ignore
+		const image = this.session_hasDarkTheme ? "dark" : "light";
+		// @ts-ignore
+		return this.assets_loadImage(`pages/updater/computer-${image}.svg`);
+	}
+
+	get hasFooter() {
+		return !this.isDownloadAuthorized || this.isDownloadFinished || this.isDownloadFailed;
+	}
 
 	mounted() {
 		ipcRenderer.on(AppEvent.UpdaterDownloadProgress, (_, data) => {
+			// @ts-ignore
 			this.progressUpdate.timestamp = Date.now();
 			Object.assign(this.progressUpdate, data);
 		});
@@ -163,13 +175,15 @@ export default {
 
 		ipcRenderer.on(AppEvent.UpdaterError, (error) => {
 			this.isDownloadFailed = true;
+			// @ts-ignore
 			this.errorMessage = error instanceof Error ? error.message : undefined;
 		});
 
+		// @ts-ignore
 		this.inactivityListener = setInterval(() => {
 			this.verifyInactivity();
 		}, 30000);
-	},
+	}
 
 	destroyed() {
 		clearInterval(this.inactivityListener);
@@ -177,62 +191,63 @@ export default {
 			// Recreate the cancellation token
 			setTimeout(() => ipcRenderer.send("updater:check-for-updates"), 200);
 		}
-	},
+	}
 
-	methods: {
-		emitClose() {
-			if (this.isDownloadAuthorized && !this.isDownloadFinished && !this.isDownloadFailed) {
-				// Cancel if file is being downloaded
-				this.cancel();
-			}
-			this.$emit("close");
-		},
+	emitClose() {
+		if (this.isDownloadAuthorized && !this.isDownloadFinished && !this.isDownloadFailed) {
+			// Cancel if file is being downloaded
+			this.cancel();
+		}
+		this.$emit("close");
+	}
 
-		cancel() {
-			this.isDownloadCancelled = true;
-			ipcRenderer.send("updater:cancel");
-		},
+	cancel() {
+		this.isDownloadCancelled = true;
+		ipcRenderer.send("updater:cancel");
+	}
 
-		startDownload() {
-			// Auto update is only supported for AppImage files on Linux
-			if (this.isLinux && !this.isAppImage) {
-				this.electron_openExternal(releaseService.latestReleaseUrl);
-				this.emitClose();
-				return;
-			}
+	startDownload() {
+		// Auto update is only supported for AppImage files on Linux
+		if (this.isLinux && !this.isAppImage) {
+			// @ts-ignore
+			this.electron_openExternal(releaseService.latestReleaseUrl);
+			this.emitClose();
+			return;
+		}
 
-			this.isDownloadAuthorized = true;
-			ipcRenderer.send("updater:download-update");
-		},
+		this.isDownloadAuthorized = true;
+		ipcRenderer.send("updater:download-update");
+	}
 
-		quitAndInstall() {
-			ipcRenderer.send("updater:quit-and-install");
-		},
+	quitAndInstall() {
+		ipcRenderer.send("updater:quit-and-install");
+	}
 
-		verifyInactivity() {
-			if (!this.progressUpdate.timestamp || this.isDownloadFinished || this.isDownloadFailed) {
-				return;
-			}
-			// Is the download idle for >1min?
-			const diff = Date.now() - this.progressUpdate.timestamp;
-			if (diff >= 60000) {
-				this.isDownloadFailed = true;
-				this.errorMessage = this.$t("APP_UPDATER.NETWORK_ERROR");
-				this.cancel();
-			}
-		},
+	verifyInactivity() {
+		if (!this.progressUpdate.timestamp || this.isDownloadFinished || this.isDownloadFailed) {
+			return;
+		}
+		// Is the download idle for >1min?
+		// @ts-ignore
+		const diff = Date.now() - this.progressUpdate.timestamp;
+		if (diff >= 60000) {
+			this.isDownloadFailed = true;
+			// @ts-ignore
+			this.errorMessage = this.$t("APP_UPDATER.NETWORK_ERROR");
+			this.cancel();
+		}
+	}
 
-		__formatReleaseNotes(notes) {
-			const $ = cheerio.load(notes);
-			const hashTable = $("table").last();
-			hashTable.prev("h3").remove(); // Hash title
-			hashTable.remove();
-			// Convert anchor to span elements
-			$("a").each((_, item) => (item.tagName = "span"));
-			return $.html();
-		},
-	},
-};
+	__formatReleaseNotes(notes) {
+		const $ = cheerio.load(notes);
+		const hashTable = $("table").last();
+		hashTable.prev("h3").remove(); // Hash title
+		hashTable.remove();
+		// Convert anchor to span elements
+		$("a").each((_, item) => (item.tagName = "span"));
+		return $.html();
+	}
+}
 </script>
 
 <style lang="postcss">

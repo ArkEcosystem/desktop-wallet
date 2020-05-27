@@ -1,15 +1,16 @@
 <template>
 	<div class="InputEditableList" :class="{ 'InputEditableList--invalid': isInvalid || requiredAndEmpty }">
-		<div class="InputField__wrapper relative appearance-none inline-flex items-end w-full">
+		<div class="relative inline-flex items-end w-full appearance-none InputField__wrapper">
 			<label
 				v-show="title"
-				class="InputField__label absolute pointer-events-none text-theme-page-text-light truncate"
-			>{{ title }} <span v-if="showCount && items.length">- {{ items.length }}<span v-if="maxItems"> / {{ maxItems }}</span></span>
+				class="absolute truncate pointer-events-none InputField__label text-theme-page-text-light"
+			>{{ title }}
+				<span v-if="showCount && items.length">- {{ items.length }}<span v-if="maxItems"> / {{ maxItems }}</span></span>
 			</label>
 		</div>
 
 		<div class="InputEditableList__list">
-			<div v-for="(item, key) of items" :key="key" class="InputEditableList__list__item flex py-2 select-none">
+			<div v-for="(item, key) of items" :key="key" class="flex py-2 select-none InputEditableList__list__item">
 				<slot :item="item" />
 
 				<ButtonClose
@@ -31,95 +32,107 @@
 	</div>
 </template>
 
-<script>
+<script lang="ts">
+import { Component, Prop, Vue, Watch } from "vue-property-decorator";
+
 import { ButtonClose } from "@/components/Button";
 
-export default {
+@Component({
 	name: "InputEditableList",
 
 	components: {
 		ButtonClose,
 	},
+})
+export default class InputEditableList extends Vue {
+	@Prop({
+		type: String,
+		required: false,
+		default: null,
+	})
+	title;
 
-	props: {
-		title: {
-			type: String,
-			required: false,
-			default: null,
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	showCount;
+
+	@Prop({
+		type: Number,
+		required: false,
+		default: null,
+	})
+	maxItems;
+
+	@Prop({
+		type: Array,
+		required: true,
+	})
+	value;
+
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: true,
+	})
+	required;
+
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	readonly;
+
+	@Prop({
+		type: String,
+		required: false,
+		default: null,
+	})
+	helperText;
+
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	isInvalid;
+
+	@Prop({
+		type: String,
+		required: false,
+		default: function () {
+			// @ts-ignore
+			return this.$t("INPUT_EDITABLE_LIST.NO_ITEMS");
 		},
+	})
+	noItemsMessage;
 
-		showCount: {
-			type: Boolean,
-			required: false,
-			default: false,
-		},
+	items = null;
 
-		maxItems: {
-			type: Number,
-			required: false,
-			default: null,
-		},
+	@Watch("value")
+	onValue(newValue) {
+		// @ts-ignore
+		this.items = newValue;
+	}
 
-		value: {
-			type: Array,
-			required: true,
-		},
+	data(vm) {
+		return {
+			items: vm.value,
+		};
+	}
 
-		required: {
-			type: Boolean,
-			required: false,
-			default: true,
-		},
+	get requiredAndEmpty() {
+		// @ts-ignore
+		return this.required && (!this.items || !this.items.length);
+	}
 
-		readonly: {
-			type: Boolean,
-			required: false,
-			default: false,
-		},
-
-		helperText: {
-			type: String,
-			required: false,
-			default: null,
-		},
-
-		isInvalid: {
-			type: Boolean,
-			required: false,
-			default: false,
-		},
-
-		noItemsMessage: {
-			type: String,
-			required: false,
-			default: function () {
-				return this.$t("INPUT_EDITABLE_LIST.NO_ITEMS");
-			},
-		},
-	},
-
-	data: (vm) => ({
-		items: vm.value,
-	}),
-
-	computed: {
-		requiredAndEmpty() {
-			return this.required && (!this.items || !this.items.length);
-		},
-	},
-
-	watch: {
-		value(newValue) {
-			this.items = newValue;
-		},
-	},
-
-	methods: {
-		emitRemove(index) {
-			this.$emit("remove", index);
-		},
-	},
-};
+	emitRemove(index) {
+		this.$emit("remove", index);
+	}
+}
 </script>
 
 <style scoped>

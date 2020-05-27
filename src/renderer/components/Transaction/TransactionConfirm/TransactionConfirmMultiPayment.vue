@@ -45,15 +45,13 @@
 
 <script>
 import { TRANSACTION_TYPES } from "@config";
+import { Component, Vue } from "vue-property-decorator";
 
 import { ListDivided, ListDividedItem } from "@/components/ListDivided";
 import TransactionRecipientList from "@/components/Transaction/TransactionRecipientList";
 
-export default {
+@Component({
 	name: "TransactionConfirmMultiPayment",
-
-	transactionType: TRANSACTION_TYPES.GROUP_1.MULTI_PAYMENT,
-
 	inject: ["currentWallet", "transaction"],
 
 	components: {
@@ -61,27 +59,28 @@ export default {
 		ListDividedItem,
 		TransactionRecipientList,
 	},
+})
+export default class TransactionConfirmMultiPayment extends Vue {
+	transactionType = TRANSACTION_TYPES.GROUP_1.MULTI_PAYMENT;
 
-	computed: {
-		senderLabel() {
-			return this.wallet_formatAddress(this.currentWallet.address);
-		},
+	get senderLabel() {
+		return this.wallet_formatAddress(this.currentWallet.address);
+	}
 
-		totalAmount() {
-			const amount = this.currency_toBuilder(0);
+	get totalAmount() {
+		const amount = this.currency_toBuilder(0);
 
-			for (const payment of this.payments) {
-				amount.plus(payment.amount);
-			}
+		for (const payment of this.payments) {
+			amount.plus(payment.amount);
+		}
 
-			return amount;
-		},
+		return amount;
+	}
 
-		payments() {
-			return this.transaction.asset.payments;
-		},
-	},
-};
+	get payments() {
+		return this.transaction.asset.payments;
+	}
+}
 </script>
 
 <style scoped>

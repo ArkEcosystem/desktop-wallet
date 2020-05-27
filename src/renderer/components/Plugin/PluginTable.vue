@@ -54,77 +54,76 @@
 </template>
 
 <script>
+import { Component, Vue } from "vue-property-decorator";
+
 import SvgIcon from "@/components/SvgIcon";
 import TableWrapper from "@/components/utils/TableWrapper";
 
-export default {
+@Component({
 	name: "PluginTable",
 
 	components: {
 		SvgIcon,
 		TableWrapper,
 	},
+})
+export default class PluginTable extends Vue {
+	get columns() {
+		const columns = [
+			{
+				label: this.$t("PLUGIN_TABLE.ID"),
+				field: "id",
+			},
+			{
+				label: this.$t("PLUGIN_TABLE.NAME"),
+				field: "name",
+			},
+			{
+				label: this.$t("PLUGIN_TABLE.DESCRIPTION"),
+				field: "description",
+			},
+			{
+				label: this.$t("PLUGIN_TABLE.PERMISSIONS"),
+				field: "permissions",
+				sortFn: this.sortByPermissions,
+			},
+			{
+				label: this.$t("PLUGIN_TABLE.STATUS"),
+				field: "isEnabled",
+				type: "boolean",
+				thClass: "text-left",
+				tdClass: "text-left",
+			},
+			{
+				label: this.$t("PLUGIN_TABLE.ACTIONS"),
+				field: "actions",
+				sortable: false,
+				thClass: "text-center not-sortable",
+				tdClass: "text-center",
+			},
+		];
 
-	computed: {
-		columns() {
-			const columns = [
-				{
-					label: this.$t("PLUGIN_TABLE.ID"),
-					field: "id",
-				},
-				{
-					label: this.$t("PLUGIN_TABLE.NAME"),
-					field: "name",
-				},
-				{
-					label: this.$t("PLUGIN_TABLE.DESCRIPTION"),
-					field: "description",
-				},
-				{
-					label: this.$t("PLUGIN_TABLE.PERMISSIONS"),
-					field: "permissions",
-					sortFn: this.sortByPermissions,
-				},
-				{
-					label: this.$t("PLUGIN_TABLE.STATUS"),
-					field: "isEnabled",
-					type: "boolean",
-					thClass: "text-left",
-					tdClass: "text-left",
-				},
-				{
-					label: this.$t("PLUGIN_TABLE.ACTIONS"),
-					field: "actions",
-					sortable: false,
-					thClass: "text-center not-sortable",
-					tdClass: "text-center",
-				},
-			];
+		return columns;
+	}
 
-			return columns;
-		},
-	},
+	onSortChange(sortOptions) {
+		this.$emit("on-sort-change", sortOptions[0]);
+	}
 
-	methods: {
-		onSortChange(sortOptions) {
-			this.$emit("on-sort-change", sortOptions[0]);
-		},
+	sortByPermissions(x, y) {
+		const values = [];
 
-		sortByPermissions(x, y) {
-			const values = [];
+		for (const perms of [x, y]) {
+			values.push(perms ? perms.join(", ") : "");
+		}
 
-			for (const perms of [x, y]) {
-				values.push(perms ? perms.join(", ") : "");
-			}
+		return values[0].localeCompare(values[1], undefined, { sensitivity: "base", numeric: true });
+	}
 
-			return values[0].localeCompare(values[1], undefined, { sensitivity: "base", numeric: true });
-		},
-
-		toggleStatus(plugin) {
-			this.$emit("toggle", plugin);
-		},
-	},
-};
+	toggleStatus(plugin) {
+		this.$emit("toggle", plugin);
+	}
+}
 </script>
 
 <style lang="postcss" scoped>

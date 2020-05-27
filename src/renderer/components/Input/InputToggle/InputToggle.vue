@@ -12,10 +12,12 @@
 	</span>
 </template>
 
-<script>
+<script lang="ts">
+import { Component, Prop, Vue } from "vue-property-decorator";
+
 import InputToggleChoice from "./InputToggleChoice";
 
-export default {
+@Component({
 	name: "InputToggle",
 
 	components: {
@@ -26,23 +28,23 @@ export default {
 		prop: "selectedChoice",
 		event: "choice-select",
 	},
+})
+export default class InputToggle extends Vue {
+	@Prop({
+		type: Array,
+		required: true,
+	})
+	choices;
 
-	props: {
-		choices: {
-			type: Array,
-			required: true,
-		},
+	@Prop({
+		type: String,
+		required: true,
+	})
+	selectedChoice;
 
-		selectedChoice: {
-			type: String,
-			required: true,
-		},
-	},
-
-	methods: {
-		emitSelect(choice) {
-			this.$emit("select", choice);
-		},
-	},
-};
+	emitSelect(choice) {
+		// @ts-ignore
+		this.$emit("select", choice);
+	}
+}
 </script>

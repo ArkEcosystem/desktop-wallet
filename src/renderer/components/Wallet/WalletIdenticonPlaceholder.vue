@@ -12,23 +12,22 @@
 </template>
 
 <script>
-export default {
+import { Component, Prop, Vue } from "vue-property-decorator";
+@Component({
 	name: "WalletIdenticonPlaceholder",
+})
+export default class WalletIdenticonPlaceholder extends Vue {
+	@Prop({
+		type: Number,
+		required: true,
+	})
+	size;
 
-	props: {
-		size: {
-			type: Number,
-			required: true,
-		},
-	},
-
-	computed: {
-		imagePath() {
-			const theme = this.session_hasDarkTheme ? "dark" : "light";
-			return `identicons/identicon-placeholder-${theme}.svg`;
-		},
-	},
-};
+	get imagePath() {
+		const theme = this.session_hasDarkTheme ? "dark" : "light";
+		return `identicons/identicon-placeholder-${theme}.svg`;
+	}
+}
 </script>
 
 <style>

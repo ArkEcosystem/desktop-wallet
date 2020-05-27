@@ -2,7 +2,7 @@
 	<div
 		:style="imagePath ? `backgroundImage: url('${assets_loadImage(imagePath)}')` : ''"
 		:class="{ 'InputGridItem--selected': isSelected }"
-		class="InputGridItem relative bg-cover bg-no-repeat bg-center rounded-full w-16 h-16 cursor-pointer transition text-center hover:opacity-75"
+		class="relative w-16 h-16 text-center transition bg-center bg-no-repeat bg-cover rounded-full cursor-pointer InputGridItem hover:opacity-75"
 	>
 		<span v-if="textContent && !onlyLetter" class="InputGridItem__text">
 			{{ textContent }}
@@ -12,7 +12,7 @@
 			:class="{
 				'pt-5 pb-0': isForModal,
 			}"
-			class="flex h-full flex-col items-center justify-between"
+			class="flex flex-col items-center justify-between h-full"
 		>
 			<span v-if="isForModal" class="font-semibold text-theme-button-text">
 				{{ title }}
@@ -31,78 +31,91 @@
 			:class="{
 				'pt-5 pb-0': isForModal,
 			}"
-			class="flex h-full flex-col items-center justify-between"
+			class="flex flex-col items-center justify-between h-full"
 		>
 			<Component :is="component" />
 		</div>
 
 		<span
 			v-if="isSelected"
-			class="InputGridItem__check rounded-full p-1 flex items-center justify-center absolute bottom-0 right-0 w-6 h-6 bg-green border-2 border-theme-feature text-white"
+			class="absolute bottom-0 right-0 flex items-center justify-center w-6 h-6 p-1 text-white border-2 rounded-full InputGridItem__check bg-green border-theme-feature"
 		>
 			<SvgIcon name="checkmark" view-box="0 0 10 9" />
 		</span>
 	</div>
 </template>
 
-<script>
+<script lang="ts">
+import { Component, Prop, Vue } from "vue-property-decorator";
+
 import { ButtonLetter } from "@/components/Button";
 import { SvgIcon } from "@/components/SvgIcon";
 
-export default {
+@Component({
 	name: "InputGridItem",
 
 	components: {
 		ButtonLetter,
 		SvgIcon,
 	},
+})
+export default class InputGridItem extends Vue {
+	@Prop({
+		type: [String, Boolean],
+		required: false,
+		default: null,
+	})
+	imagePath;
 
-	props: {
-		imagePath: {
-			type: [String, Boolean],
-			required: false,
-			default: null,
-		},
-		textContent: {
-			type: String,
-			default: null,
-		},
-		onlyLetter: {
-			type: Boolean,
-			required: false,
-			default: false,
-		},
-		component: {
-			type: [Object, Function],
-			required: false,
-			default: () => {},
-		},
-		isForModal: {
-			type: Boolean,
-			required: false,
-			default: true,
-		},
-		isSelected: {
-			type: Boolean,
-			required: true,
-		},
-		title: {
-			type: String,
-			required: false,
-			default: null,
-		},
-	},
+	@Prop({
+		type: String,
+		default: null,
+	})
+	textContent;
 
-	computed: {
-		currentNetwork() {
-			// To avoid failing after removing the current and last profile
-			return this.$store.getters["session/profile"] ? this.session_network : null;
-		},
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	onlyLetter;
 
-		label() {
-			const symbol = this.currentNetwork ? this.currentNetwork.symbol : null;
-			return this.textContent || symbol;
-		},
-	},
-};
+	@Prop({
+		type: [Object, Function],
+		required: false,
+		default: () => {},
+	})
+	component;
+
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: true,
+	})
+	isForModal;
+
+	@Prop({
+		type: Boolean,
+		required: true,
+	})
+	isSelected;
+
+	@Prop({
+		type: String,
+		required: false,
+		default: null,
+	})
+	title;
+
+	get currentNetwork() {
+		// To avoid failing after removing the current and last profile
+		// @ts-ignore
+		return this.$store.getters["session/profile"] ? this.session_network : null;
+	}
+
+	get label() {
+		const symbol = this.currentNetwork ? this.currentNetwork.symbol : null;
+		return this.textContent || symbol;
+	}
+}
 </script>

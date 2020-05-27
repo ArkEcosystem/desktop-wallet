@@ -12,74 +12,79 @@
 </template>
 
 <script>
+import { Component, Prop, Vue } from "vue-property-decorator";
+
 import selectionMixin from "./mixin-selection";
 import selectionImageMixin from "./mixin-selection-image";
 
-export default {
+@Component({
 	name: "SelectionAvatar",
-
 	mixins: [selectionMixin, selectionImageMixin],
+})
+export default class SelectionAvatar extends Vue {
+	@Prop({
+		type: Array,
+		required: false,
+		default: () => ["avatars"],
+	})
+	categories;
 
-	props: {
-		categories: {
-			type: Array,
-			required: false,
-			default: () => ["avatars"],
-		},
-		enableModal: {
-			type: Boolean,
-			required: false,
-			default: true,
-		},
-		letterValue: {
-			type: String,
-			required: false,
-			default: "",
-		},
-		profile: {
-			type: Object,
-			required: false,
-			default: () => null,
-		},
-	},
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: true,
+	})
+	enableModal;
 
-	computed: {
-		modalHeaderText() {
-			return this.enableModal ? this.$t("SELECTION_AVATAR.MODAL_HEADER") : null;
-		},
+	@Prop({
+		type: String,
+		required: false,
+		default: "",
+	})
+	letterValue;
 
-		availableAvatars() {
-			const images = { ...this.images };
-			const key = Object.keys(images)[0];
-			images[key] = [this.letterAvatar, ...images[key]];
-			if (this.pluginAvatars && this.pluginAvatars.length) {
-				images[this.$t("SELECTION_AVATAR.ADDITIONAL_AVATARS")] = this.pluginAvatars;
-			}
+	@Prop({
+		type: Object,
+		required: false,
+		default: () => null,
+	})
+	profile;
 
-			return images;
-		},
+	get modalHeaderText() {
+		return this.enableModal ? this.$t("SELECTION_AVATAR.MODAL_HEADER") : null;
+	}
 
-		letterAvatar() {
-			return {
-				title: this.$t("SELECTION_AVATAR.NO_AVATAR"),
-				textContent: this.letterValue,
-				onlyLetter: true,
-			};
-		},
+	get availableAvatars() {
+		const images = { ...this.images };
+		const key = Object.keys(images)[0];
+		images[key] = [this.letterAvatar, ...images[key]];
+		if (this.pluginAvatars && this.pluginAvatars.length) {
+			images[this.$t("SELECTION_AVATAR.ADDITIONAL_AVATARS")] = this.pluginAvatars;
+		}
 
-		additional() {
-			return this.pluginAvatars;
-		},
+		return images;
+	}
 
-		pluginAvatars() {
-			if (!this.profile || !this.profile.id) {
-				return [];
-			}
+	get letterAvatar() {
+		return {
+			title: this.$t("SELECTION_AVATAR.NO_AVATAR"),
+			textContent: this.letterValue,
+			onlyLetter: true,
+		};
+	}
 
-			return this.$store.getters["plugin/avatars"](this.profile.id);
-		},
-	},
-};
+	get additional() {
+		return this.pluginAvatars;
+	}
+
+	get pluginAvatars() {
+		if (!this.profile || !this.profile.id) {
+			return [];
+		}
+
+		return this.$store.getters["plugin/avatars"](this.profile.id);
+	}
+}
 </script>
 
 <style>

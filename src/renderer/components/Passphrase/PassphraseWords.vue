@@ -12,22 +12,24 @@
 </template>
 
 <script>
+import { Component, Prop, Vue } from "vue-property-decorator";
+
 import { InputText } from "@/components/Input";
 
-export default {
+@Component({
 	name: "PassphraseWords",
 
 	components: {
 		InputText,
 	},
-
-	props: {
-		passphraseWords: {
-			type: Array,
-			required: true,
-		},
-	},
-};
+})
+export default class PassphraseWords extends Vue {
+	@Prop({
+		type: Array,
+		required: true,
+	})
+	passphraseWords;
+}
 </script>
 
 <style lang="postcss">

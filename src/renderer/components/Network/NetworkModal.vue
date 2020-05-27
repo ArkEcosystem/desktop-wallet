@@ -195,6 +195,7 @@
 <script>
 import { NETWORKS } from "@config";
 import { URL } from "url";
+import { Component, Prop, Vue } from "vue-property-decorator";
 import { numeric, required, requiredIf, url } from "vuelidate/lib/validators";
 
 import { InputText, InputToggle } from "@/components/Input";
@@ -207,7 +208,7 @@ const requiredIfFull = requiredIf(function () {
 	return this.showFull;
 });
 
-export default {
+@Component({
 	name: "NetworkModal",
 
 	components: {
@@ -216,116 +217,115 @@ export default {
 		ModalLoader,
 		ModalWindow,
 	},
+})
+export default class NetworkModal extends Vue {
+	@Prop({
+		type: String,
+		required: true,
+	})
+	title;
 
-	props: {
-		title: {
-			type: String,
-			required: true,
-		},
-		network: {
-			type: Object,
-			required: false,
-			default: () => {},
-		},
-	},
+	@Prop({
+		type: Object,
+		required: false,
+		default: () => {},
+	})
+	network;
 
-	data: () => ({
-		form: {
-			name: "",
-			description: "",
-			server: "",
-			nethash: "",
-			token: "",
-			symbol: "",
-			version: "",
-			explorer: "",
-			knownWalletsUrl: "",
-			epoch: "",
-			wif: "",
-			slip44: "",
-			activeDelegates: "",
-			ticker: "",
-		},
-		configChoices: ["Basic", "Advanced"],
-		originalName: null,
-		configChoice: "Basic",
-		hasFetched: false,
-		showFull: false,
-		showLoadingModal: false,
-	}),
+	form = {
+		name: "",
+		description: "",
+		server: "",
+		nethash: "",
+		token: "",
+		symbol: "",
+		version: "",
+		explorer: "",
+		knownWalletsUrl: "",
+		epoch: "",
+		wif: "",
+		slip44: "",
+		activeDelegates: "",
+		ticker: "",
+	};
 
-	computed: {
-		isNetworkInUse() {
-			if (this.network) {
-				const profiles = this.$store.getters["profile/all"];
-				return !!profiles.find((profile) => {
-					return profile.networkId === this.network.id;
-				});
+	configChoices = ["Basic", "Advanced"];
+	originalName = null;
+	configChoice = "Basic";
+	hasFetched = false;
+	showFull = false;
+	showLoadingModal = false;
+
+	get isNetworkInUse() {
+		if (this.network) {
+			const profiles = this.$store.getters["profile/all"];
+			return !!profiles.find((profile) => {
+				return profile.networkId === this.network.id;
+			});
+		}
+		return false;
+	}
+
+	get nameError() {
+		const isRequired = this.requiredFieldError(this.$v.form.name, this.$refs["input-name"]);
+		if (isRequired) {
+			return isRequired;
+		}
+		if (this.$v.form.name.$dirty) {
+			if (!this.$v.form.name.doesNotExist) {
+				return this.$t("VALIDATION.NAME.DUPLICATED", [this.form.name]);
 			}
-			return false;
-		},
+		}
+		return null;
+	}
 
-		nameError() {
-			const isRequired = this.requiredFieldError(this.$v.form.name, this.$refs["input-name"]);
-			if (isRequired) {
-				return isRequired;
-			}
-			if (this.$v.form.name.$dirty) {
-				if (!this.$v.form.name.doesNotExist) {
-					return this.$t("VALIDATION.NAME.DUPLICATED", [this.form.name]);
-				}
-			}
-			return null;
-		},
+	get descriptionError() {
+		return this.requiredFieldError(this.$v.form.description, this.$refs["input-description"]);
+	}
 
-		descriptionError() {
-			return this.requiredFieldError(this.$v.form.description, this.$refs["input-description"]);
-		},
+	get tokenError() {
+		return this.requiredFieldError(this.$v.form.token, this.$refs["input-token"]);
+	}
 
-		tokenError() {
-			return this.requiredFieldError(this.$v.form.token, this.$refs["input-token"]);
-		},
+	get symbolError() {
+		return this.requiredFieldError(this.$v.form.symbol, this.$refs["input-symbol"]);
+	}
 
-		symbolError() {
-			return this.requiredFieldError(this.$v.form.symbol, this.$refs["input-symbol"]);
-		},
+	get slip44Error() {
+		return this.requiredFieldError(this.$v.form.slip44, this.$refs["input-slip44"]);
+	}
 
-		slip44Error() {
-			return this.requiredFieldError(this.$v.form.slip44, this.$refs["input-slip44"]);
-		},
+	get versionError() {
+		return this.requiredNumericFieldError(this.$v.form.version, this.$refs["input-version"]);
+	}
 
-		versionError() {
-			return this.requiredNumericFieldError(this.$v.form.version, this.$refs["input-version"]);
-		},
+	get wifError() {
+		return this.requiredNumericFieldError(this.$v.form.wif, this.$refs["input-wif"]);
+	}
 
-		wifError() {
-			return this.requiredNumericFieldError(this.$v.form.wif, this.$refs["input-wif"]);
-		},
+	get activeDelegatesError() {
+		return this.requiredNumericFieldError(this.$v.form.activeDelegates, this.$refs["input-activeDelegates"]);
+	}
 
-		activeDelegatesError() {
-			return this.requiredNumericFieldError(this.$v.form.activeDelegates, this.$refs["input-activeDelegates"]);
-		},
+	get serverError() {
+		return this.requiredUrlFieldError(this.$v.form.server, this.$refs["input-server"]);
+	}
 
-		serverError() {
-			return this.requiredUrlFieldError(this.$v.form.server, this.$refs["input-server"]);
-		},
+	get explorerError() {
+		return this.requiredUrlFieldError(this.$v.form.explorer, this.$refs["input-explorer"]);
+	}
 
-		explorerError() {
-			return this.requiredUrlFieldError(this.$v.form.explorer, this.$refs["input-explorer"]);
-		},
+	get knownWalletsUrlError() {
+		return this.requiredValidFieldError(this.$v.form.knownWalletsUrl, this.$refs["input-known-wallets-url"]);
+	}
 
-		knownWalletsUrlError() {
-			return this.requiredValidFieldError(this.$v.form.knownWalletsUrl, this.$refs["input-known-wallets-url"]);
-		},
+	get nethashError() {
+		return this.requiredValidFieldError(this.$v.form.nethash, this.$refs["input-nethash"]);
+	}
 
-		nethashError() {
-			return this.requiredValidFieldError(this.$v.form.nethash, this.$refs["input-nethash"]);
-		},
-
-		epochError() {
-			return this.requiredValidFieldError(this.$v.form.epoch, this.$refs["input-epoch"]);
-		},
-	},
+	get epochError() {
+		return this.requiredValidFieldError(this.$v.form.epoch, this.$refs["input-epoch"]);
+	}
 
 	mounted() {
 		// Set network values if one is passed along
@@ -372,310 +372,310 @@ export default {
 
 			this.showFull = true;
 		}
-	},
+	}
 
-	methods: {
-		requiredFieldError(fieldValidator, inputRef) {
-			if (fieldValidator.$dirty && inputRef && inputRef.model.length === 0) {
-				if (!fieldValidator.required) {
-					return this.$t("VALIDATION.REQUIRED", [inputRef.label]);
-				}
+	requiredFieldError(fieldValidator, inputRef) {
+		if (fieldValidator.$dirty && inputRef && inputRef.model.length === 0) {
+			if (!fieldValidator.required) {
+				return this.$t("VALIDATION.REQUIRED", [inputRef.label]);
+			}
+		}
+
+		return null;
+	}
+
+	requiredNumericFieldError(fieldValidator, inputRef) {
+		const isRequired = this.requiredFieldError(fieldValidator, inputRef);
+		if (isRequired) {
+			return isRequired;
+		}
+
+		if (fieldValidator.$dirty) {
+			if (!fieldValidator.numeric) {
+				return this.$t("VALIDATION.NOT_NUMERIC", [inputRef.label]);
+			}
+		}
+
+		return null;
+	}
+
+	requiredValidFieldError(fieldValidator, inputRef) {
+		const isRequired = this.requiredFieldError(fieldValidator, inputRef);
+		if (isRequired) {
+			return isRequired;
+		}
+
+		if (fieldValidator.$dirty) {
+			if (!fieldValidator.isValid) {
+				return this.$t("VALIDATION.NOT_VALID", [inputRef.label]);
+			}
+		}
+
+		return null;
+	}
+
+	requiredUrlFieldError(fieldValidator, inputRef) {
+		const isRequired = this.requiredFieldError(fieldValidator, inputRef);
+		if (isRequired) {
+			return isRequired;
+		}
+
+		if (fieldValidator.$dirty) {
+			if (!fieldValidator.hasScheme) {
+				return this.$t("VALIDATION.NO_SCHEME", [inputRef.label]);
+			} else if (!fieldValidator.isValid) {
+				return this.$t("VALIDATION.NOT_VALID", [inputRef.label]);
+			}
+		}
+
+		return null;
+	}
+
+	async validateSeed() {
+		this.showLoadingModal = true;
+
+		try {
+			let { hostname: host, port, protocol } = new URL(this.form.server);
+
+			if (!port) {
+				port = protocol === "https:" ? 443 : 80;
 			}
 
-			return null;
-		},
-
-		requiredNumericFieldError(fieldValidator, inputRef) {
-			const isRequired = this.requiredFieldError(fieldValidator, inputRef);
-			if (isRequired) {
-				return isRequired;
-			}
-
-			if (fieldValidator.$dirty) {
-				if (!fieldValidator.numeric) {
-					return this.$t("VALIDATION.NOT_NUMERIC", [inputRef.label]);
-				}
-			}
-
-			return null;
-		},
-
-		requiredValidFieldError(fieldValidator, inputRef) {
-			const isRequired = this.requiredFieldError(fieldValidator, inputRef);
-			if (isRequired) {
-				return isRequired;
-			}
-
-			if (fieldValidator.$dirty) {
-				if (!fieldValidator.isValid) {
-					return this.$t("VALIDATION.NOT_VALID", [inputRef.label]);
-				}
-			}
-
-			return null;
-		},
-
-		requiredUrlFieldError(fieldValidator, inputRef) {
-			const isRequired = this.requiredFieldError(fieldValidator, inputRef);
-			if (isRequired) {
-				return isRequired;
-			}
-
-			if (fieldValidator.$dirty) {
-				if (!fieldValidator.hasScheme) {
-					return this.$t("VALIDATION.NO_SCHEME", [inputRef.label]);
-				} else if (!fieldValidator.isValid) {
-					return this.$t("VALIDATION.NOT_VALID", [inputRef.label]);
-				}
-			}
-
-			return null;
-		},
-
-		async validateSeed() {
-			this.showLoadingModal = true;
-
-			try {
-				let { hostname: host, port, protocol } = new URL(this.form.server);
-
-				if (!port) {
-					port = protocol === "https:" ? 443 : 80;
-				}
-
-				const response = await this.$store.dispatch(StoreBinding.PeerValidatePeer, {
-					host,
-					port,
-					ignoreNetwork: true,
-				});
-				let success = false;
-				if (response === false) {
-					this.$error(this.$t("MODAL_NETWORK.SEED_VALIDATE_FAILED"));
-				} else if (typeof response === "string") {
-					this.$error(`${this.$t("MODAL_NETWORK.SEED_VALIDATE_FAILED")}: ${response}`);
-				} else {
-					success = true;
-				}
-				this.showLoadingModal = false;
-
-				return success;
-			} catch (error) {
-				//
-			}
-
-			return false;
-		},
-
-		async updateNetwork() {
-			const isValid = await this.validateSeed();
-			if (!isValid) {
-				return;
-			}
-
-			const customNetwork = this.form;
-			customNetwork.constants = {
-				activeDelegates: parseInt(this.form.activeDelegates),
-				epoch: this.form.epoch,
-			};
-			delete customNetwork.epoch;
-			customNetwork.id = this.network ? this.network.id : this.form.name.toLowerCase().split(" ").join("_"); // TODO: something else for id?
-			customNetwork.title = this.form.name;
-			customNetwork.slip44 = this.form.slip44;
-			customNetwork.market = {
-				enabled: this.form.ticker !== "",
-				ticker: this.form.ticker !== "" ? this.form.ticker : null,
-			};
-			customNetwork.version = parseInt(customNetwork.version); // Important: needs to be a Number
-			customNetwork.subunit = this.form.token.toLowerCase() + "toshi";
-			customNetwork.fractionDigits = 8;
-			customNetwork.wif = parseInt(this.form.wif);
-			customNetwork.knownWallets = {};
-
-			if (this.showFull && this.hasFetched) {
-				let { hostname: ip, port, protocol } = new URL(this.form.server);
-
-				const isHttps = protocol === "https:";
-
-				if (!port) {
-					port = isHttps ? 443 : 80;
-				}
-
-				const peer = {
-					version: "0",
-					height: 0,
-					latency: 0,
-					port: parseInt(port),
-					ip,
-					isHttps,
-				};
-
-				await this.$store.dispatch(StoreBinding.NetworkAddCustomNetwork, customNetwork);
-				await this.$store.dispatch(StoreBinding.PeerSetToNetwork, {
-					peers: [peer],
-					networkId: customNetwork.id,
-				});
+			const response = await this.$store.dispatch(StoreBinding.PeerValidatePeer, {
+				host,
+				port,
+				ignoreNetwork: true,
+			});
+			let success = false;
+			if (response === false) {
+				this.$error(this.$t("MODAL_NETWORK.SEED_VALIDATE_FAILED"));
+			} else if (typeof response === "string") {
+				this.$error(`${this.$t("MODAL_NETWORK.SEED_VALIDATE_FAILED")}: ${response}`);
 			} else {
-				// Note: this is also used to update the 'default' networks, since the update checks if it exists as custom network
-				await this.$store.dispatch(StoreBinding.NetworkUpdateCustomNetwork, customNetwork);
+				success = true;
 			}
-			this.emitSaved();
-		},
+			this.showLoadingModal = false;
 
-		removeNetwork() {
-			this.$store.dispatch(StoreBinding.NetworkRemoveCustomNetwork, this.network.id);
-			this.emitRemoved();
-		},
+			return success;
+		} catch (error) {
+			//
+		}
 
-		async fetchNetworkInfo() {
-			// Save filled in values first
-			const prefilled = {
-				name: this.form.name,
-				description: this.form.description,
-				server: this.form.server,
-				// Default values during the core API transition stage
-				wif: "170",
-				slip44: "1",
-				activeDelegates: "51",
+		return false;
+	}
+
+	async updateNetwork() {
+		const isValid = await this.validateSeed();
+		if (!isValid) {
+			return;
+		}
+
+		const customNetwork = this.form;
+		customNetwork.constants = {
+			activeDelegates: parseInt(this.form.activeDelegates),
+			epoch: this.form.epoch,
+		};
+		delete customNetwork.epoch;
+		customNetwork.id = this.network ? this.network.id : this.form.name.toLowerCase().split(" ").join("_"); // TODO: something else for id?
+		customNetwork.title = this.form.name;
+		customNetwork.slip44 = this.form.slip44;
+		customNetwork.market = {
+			enabled: this.form.ticker !== "",
+			ticker: this.form.ticker !== "" ? this.form.ticker : null,
+		};
+		customNetwork.version = parseInt(customNetwork.version); // Important: needs to be a Number
+		customNetwork.subunit = this.form.token.toLowerCase() + "toshi";
+		customNetwork.fractionDigits = 8;
+		customNetwork.wif = parseInt(this.form.wif);
+		customNetwork.knownWallets = {};
+
+		if (this.showFull && this.hasFetched) {
+			let { hostname: ip, port, protocol } = new URL(this.form.server);
+
+			const isHttps = protocol === "https:";
+
+			if (!port) {
+				port = isHttps ? 443 : 80;
+			}
+
+			const peer = {
+				version: "0",
+				height: 0,
+				latency: 0,
+				port: parseInt(port),
+				ip,
+				isHttps,
 			};
 
-			const fetchAndFill = async (callback = null) => {
-				const network = await ClientService.fetchNetworkConfig(this.form.server);
+			await this.$store.dispatch(StoreBinding.NetworkAddCustomNetwork, customNetwork);
+			await this.$store.dispatch(StoreBinding.PeerSetToNetwork, {
+				peers: [peer],
+				networkId: customNetwork.id,
+			});
+		} else {
+			// Note: this is also used to update the 'default' networks, since the update checks if it exists as custom network
+			await this.$store.dispatch(StoreBinding.NetworkUpdateCustomNetwork, customNetwork);
+		}
+		this.emitSaved();
+	}
 
-				if (network) {
-					const tokenFound = await priceApi.verifyToken(network.token);
+	removeNetwork() {
+		this.$store.dispatch(StoreBinding.NetworkRemoveCustomNetwork, this.network.id);
+		this.emitRemoved();
+	}
 
-					for (const key of Object.keys(this.form)) {
-						if (Object.prototype.hasOwnProperty.call(network, key)) {
-							this.form[key] = network[key];
-						} else if (Object.prototype.hasOwnProperty.call(prefilled, key)) {
-							this.form[key] = prefilled[key];
-						}
-					}
-					this.form.ticker = tokenFound ? network.token : "";
-					if (tokenFound && network.version) {
-						this.form.version = network.version.toString();
-					}
+	async fetchNetworkInfo() {
+		// Save filled in values first
+		const prefilled = {
+			name: this.form.name,
+			description: this.form.description,
+			server: this.form.server,
+			// Default values during the core API transition stage
+			wif: "170",
+			slip44: "1",
+			activeDelegates: "51",
+		};
 
-					this.showFull = true;
-					this.hasFetched = true;
+		const fetchAndFill = async (callback = null) => {
+			const network = await ClientService.fetchNetworkConfig(this.form.server);
 
-					if (callback) {
-						callback(network);
+			if (network) {
+				const tokenFound = await priceApi.verifyToken(network.token);
+
+				for (const key of Object.keys(this.form)) {
+					if (Object.prototype.hasOwnProperty.call(network, key)) {
+						this.form[key] = network[key];
+					} else if (Object.prototype.hasOwnProperty.call(prefilled, key)) {
+						this.form[key] = prefilled[key];
 					}
 				}
-			};
+				this.form.ticker = tokenFound ? network.token : "";
+				if (tokenFound && network.version) {
+					this.form.version = network.version.toString();
+				}
 
-			try {
-				await fetchAndFill((network) => {
-					this.form.epoch = network.constants.epoch;
-					if (network.constants.activeDelegates) {
-						this.form.activeDelegates = network.constants.activeDelegates.toString();
-						this.form.vendorField = { maxLength: network.constants.vendorFieldLength };
-					}
-				});
-			} catch (error) {
-				this.$logger.error(error);
-				this.$error(this.$t("MODAL_NETWORK.FAILED_FETCH"));
+				this.showFull = true;
+				this.hasFetched = true;
+
+				if (callback) {
+					callback(network);
+				}
 			}
-		},
+		};
 
-		getStringOrDefault(value, defaultValue) {
-			return value ? value.toString() : defaultValue;
-		},
+		try {
+			await fetchAndFill((network) => {
+				this.form.epoch = network.constants.epoch;
+				if (network.constants.activeDelegates) {
+					this.form.activeDelegates = network.constants.activeDelegates.toString();
+					this.form.vendorField = { maxLength: network.constants.vendorFieldLength };
+				}
+			});
+		} catch (error) {
+			this.$logger.error(error);
+			this.$error(this.$t("MODAL_NETWORK.FAILED_FETCH"));
+		}
+	}
 
-		onChoiceSelect(choice) {
-			this.configChoice = choice;
-		},
+	getStringOrDefault(value, defaultValue) {
+		return value ? value.toString() : defaultValue;
+	}
 
-		emitCancel() {
-			this.$emit("cancel");
-		},
+	onChoiceSelect(choice) {
+		this.configChoice = choice;
+	}
 
-		emitSaved() {
-			this.$emit("saved");
-		},
+	emitCancel() {
+		this.$emit("cancel");
+	}
 
-		emitRemoved() {
-			this.$emit("removed");
-		},
-	},
+	emitSaved() {
+		this.$emit("saved");
+	}
 
-	validations: {
-		form: {
-			name: {
-				required,
-				doesNotExist(value) {
-					return (
-						(this.originalName && value === this.originalName) ||
-						!this.$store.getters["network/byName"](value)
-					);
+	emitRemoved() {
+		this.$emit("removed");
+	}
+
+	validations() {
+		return  {
+			form: {
+				name: {
+					required,
+					doesNotExist(value) {
+						return (
+							(this.originalName && value === this.originalName) ||
+							!this.$store.getters["network/byName"](value)
+						);
+					},
 				},
-			},
-			description: {
-				required,
-			},
-			server: {
-				required,
-				isValid(value) {
-					return /(:\/\/){1}[a-zA-Z0-9][a-zA-Z0-9\-_.]*[a-zA-Z0-9](:[0-9]+)?$/.test(value);
+				description: {
+					required,
 				},
-				hasScheme(value) {
-					return /^https?:\/\//.test(value);
+				server: {
+					required,
+					isValid(value) {
+						return /(:\/\/){1}[a-zA-Z0-9][a-zA-Z0-9\-_.]*[a-zA-Z0-9](:[0-9]+)?$/.test(value);
+					},
+					hasScheme(value) {
+						return /^https?:\/\//.test(value);
+					},
 				},
-			},
-			nethash: {
-				requiredIfFull,
-				isValid(value) {
-					return !this.showFull || /^[a-z0-9]{64}$/.test(value);
+				nethash: {
+					requiredIfFull,
+					isValid(value) {
+						return !this.showFull || /^[a-z0-9]{64}$/.test(value);
+					},
 				},
-			},
-			token: {
-				requiredIfFull,
-			},
-			symbol: {
-				requiredIfFull,
-			},
-			version: {
-				requiredIfFull,
-				numeric,
-			},
-			explorer: {
-				requiredIfFull,
-				isValid(value) {
-					return !this.showFull || /(:\/\/){1}[a-zA-Z0-9][a-zA-Z0-9\-_.]*[a-zA-Z0-9](:[0-9]+)?$/.test(value);
+				token: {
+					requiredIfFull,
 				},
-				hasScheme(value) {
-					return !this.showFull || /^https?:\/\//.test(value);
+				symbol: {
+					requiredIfFull,
 				},
-			},
-			knownWalletsUrl: {
-				required() {
-					return true;
+				version: {
+					requiredIfFull,
+					numeric,
 				},
-				isValid(value) {
-					return !value || url(value);
+				explorer: {
+					requiredIfFull,
+					isValid(value) {
+						return !this.showFull || /(:\/\/){1}[a-zA-Z0-9][a-zA-Z0-9\-_.]*[a-zA-Z0-9](:[0-9]+)?$/.test(value);
+					},
+					hasScheme(value) {
+						return !this.showFull || /^https?:\/\//.test(value);
+					},
 				},
-			},
-			epoch: {
-				requiredIfFull,
-				isValid(value) {
-					return !this.showFull || /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}.\d{3}Z$/.test(value);
+				knownWalletsUrl: {
+					required() {
+						return true;
+					},
+					isValid(value) {
+						return !value || url(value);
+					},
 				},
+				epoch: {
+					requiredIfFull,
+					isValid(value) {
+						return !this.showFull || /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}.\d{3}Z$/.test(value);
+					},
+				},
+				wif: {
+					requiredIfFull,
+					numeric,
+				},
+				slip44: {
+					requiredIfFull,
+				},
+				activeDelegates: {
+					requiredIfFull,
+					numeric,
+				},
+				ticker: {},
 			},
-			wif: {
-				requiredIfFull,
-				numeric,
-			},
-			slip44: {
-				requiredIfFull,
-			},
-			activeDelegates: {
-				requiredIfFull,
-				numeric,
-			},
-			ticker: {},
-		},
-	},
-};
+		}
+	};
+}
 </script>
 
 <style>

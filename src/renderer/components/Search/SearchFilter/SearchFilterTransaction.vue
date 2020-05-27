@@ -13,13 +13,16 @@
 </template>
 
 <script>
+import { Component, Vue } from "vue-property-decorator";
+
 import SearchFilterItem from "./SearchFilterItem";
 
-export default {
+@Component({
 	name: "SearchFilterTransaction",
 
 	components: {
 		SearchFilterItem,
 	},
-};
+})
+export default class SearchFilterTransaction extends Vue {}
 </script>

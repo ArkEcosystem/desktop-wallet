@@ -1,9 +1,9 @@
 <template>
-	<div key="PrimaryActions" class="WalletHeading__PrimaryActions flex items-center">
+	<div key="PrimaryActions" class="flex items-center WalletHeading__PrimaryActions">
 		<SvgIcon
 			v-if="currentWallet.multiSignature"
 			v-tooltip="$t('PAGES.WALLET.MULTI_SIGNATURE_WALLET')"
-			class="w-5 h-5 text-theme-heading-text opacity-50"
+			class="w-5 h-5 opacity-50 text-theme-heading-text"
 			name="multi-signature"
 			view-box="0 0 16 16"
 		/>
@@ -16,14 +16,14 @@
 				trigger: 'hover',
 			}"
 			:class="isVoting ? 'bg-theme-button-special-choice' : 'bg-transparent'"
-			class="cursor-pointer border border-theme-button-special-choice rounded-full w-2 h-2 m-3 transition"
+			class="w-2 h-2 m-3 transition border rounded-full cursor-pointer border-theme-button-special-choice"
 			@click="goToDelegates"
 		/>
 
 		<ButtonReload
 			:color-class="buttonStyle"
 			:is-refreshing="isRefreshing"
-			class="WalletNew__refresh-button mr-2"
+			class="mr-2 WalletNew__refresh-button"
 			text-class="hover:text-white"
 			@click="refreshWallet"
 		/>
@@ -72,6 +72,8 @@
 </template>
 
 <script>
+import { Component, Vue } from "vue-property-decorator";
+
 import { ButtonModal, ButtonReload } from "@/components/Button";
 import { ContactRenameModal } from "@/components/Contact";
 import { ModalQrCode } from "@/components/Modal";
@@ -79,9 +81,8 @@ import SvgIcon from "@/components/SvgIcon";
 import { TransactionModal } from "@/components/Transaction";
 import { AppEvent } from "@/enums";
 
-export default {
+@Component({
 	name: "WalletHeadingPrimaryActions",
-
 	inject: ["switchToTab", "walletVote"],
 
 	components: {
@@ -92,45 +93,40 @@ export default {
 		ContactRenameModal,
 		SvgIcon,
 	},
+})
+export default class WalletHeadingPrimaryActions extends Vue {
+	isRefreshing = false;
 
-	data: () => ({
-		isRefreshing: false,
-	}),
+	get buttonStyle() {
+		return "option-heading-button mr-2 px-3 py-2";
+	}
 
-	computed: {
-		buttonStyle() {
-			return "option-heading-button mr-2 px-3 py-2";
-		},
+	get currentWallet() {
+		return this.wallet_fromRoute;
+	}
 
-		currentWallet() {
-			return this.wallet_fromRoute;
-		},
+	get doesNotExist() {
+		return !this.$store.getters["wallet/byAddress"](this.currentWallet.address);
+	}
 
-		doesNotExist() {
-			return !this.$store.getters["wallet/byAddress"](this.currentWallet.address);
-		},
+	get isVoting() {
+		return !!this.walletVote.username;
+	}
 
-		isVoting() {
-			return !!this.walletVote.username;
-		},
-	},
+	goToDelegates() {
+		this.switchToTab("WalletDelegates");
+	}
 
-	methods: {
-		goToDelegates() {
-			this.switchToTab("WalletDelegates");
-		},
+	async refreshWallet() {
+		this.isRefreshing = true;
+		await this.$eventBus.emit(AppEvent.WalletReload);
+		this.isRefreshing = false;
+	}
 
-		async refreshWallet() {
-			this.isRefreshing = true;
-			await this.$eventBus.emit(AppEvent.WalletReload);
-			this.isRefreshing = false;
-		},
-
-		closeTransactionModal(toggleMethod, isOpen) {
-			if (isOpen) {
-				toggleMethod();
-			}
-		},
-	},
-};
+	closeTransactionModal(toggleMethod, isOpen) {
+		if (isOpen) {
+			toggleMethod();
+		}
+	}
+}
 </script>

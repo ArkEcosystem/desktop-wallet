@@ -28,41 +28,41 @@
 </template>
 
 <script>
+import { Component, Prop, Vue } from "vue-property-decorator";
+
 import { ModalConfirmation } from "@/components/Modal";
 import { StoreBinding } from "@/enums";
 
 import { WalletIdenticon } from "./";
 
-export default {
+@Component({
 	name: "WalletRemovalConfirmation",
 
 	components: {
 		WalletIdenticon,
 		ModalConfirmation,
 	},
+})
+export default class WalletRemovalConfirmation extends Vue {
+	@Prop({
+		type: Object,
+		required: true,
+	})
+	wallet;
 
-	props: {
-		wallet: {
-			type: Object,
-			required: true,
-		},
-	},
+	removeWallet() {
+		this.$store.dispatch(StoreBinding.WalletDelete, this.wallet);
+		this.emitRemoved();
+	}
 
-	methods: {
-		removeWallet() {
-			this.$store.dispatch(StoreBinding.WalletDelete, this.wallet);
-			this.emitRemoved();
-		},
+	emitCancel() {
+		this.$emit("cancel");
+	}
 
-		emitCancel() {
-			this.$emit("cancel");
-		},
-
-		emitRemoved() {
-			this.$emit("removed");
-		},
-	},
-};
+	emitRemoved() {
+		this.$emit("removed");
+	}
+}
 </script>
 
 <style>

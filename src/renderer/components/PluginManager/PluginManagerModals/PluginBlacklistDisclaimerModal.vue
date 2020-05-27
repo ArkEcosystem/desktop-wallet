@@ -12,23 +12,24 @@
 </template>
 
 <script>
+import { Component, Vue } from "vue-property-decorator";
+
 import { ModalConfirmation } from "@/components/Modal";
 
-export default {
+@Component({
 	name: "PluginBlacklistDisclaimerConfirmation",
 
 	components: {
 		ModalConfirmation,
 	},
+})
+export default class PluginBlacklistDisclaimerConfirmation extends Vue {
+	emitContinue() {
+		this.$emit("continue");
+	}
 
-	methods: {
-		emitContinue() {
-			this.$emit("continue");
-		},
-
-		emitClose() {
-			this.$emit("close");
-		},
-	},
-};
+	emitClose() {
+		this.$emit("close");
+	}
+}
 </script>

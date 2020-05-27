@@ -5,9 +5,11 @@
 </template>
 
 <script>
+import { Component, Prop, Vue } from "vue-property-decorator";
+
 import { CollapseAccordion } from "@/components/Collapse";
 
-export default {
+@Component({
 	name: "MenuStep",
 
 	components: {
@@ -18,52 +20,45 @@ export default {
 		prop: "step",
 		event: "change",
 	},
+})
+export default class MenuStep extends Vue {
+	@Prop({
+		type: [Number, String],
+		required: false,
+		default: null,
+	})
+	step;
 
-	props: {
-		step: {
-			type: [Number, String],
-			required: false,
-			default: null,
-		},
-	},
+	items = [];
 
-	data: () => ({
-		items: [],
-	}),
+	get model() {
+		return this.step;
+	}
 
-	computed: {
-		model: {
-			get() {
-				return this.step;
-			},
-			set(val) {
-				this.$emit("change", val);
-			},
-		},
-	},
+	set model(val) {
+		this.$emit("change", val);
+	}
 
 	mounted() {
 		this.items = this.collectItems();
-	},
+	}
 
-	methods: {
-		collectItems() {
-			const steps = this.collections_filterChildren("MenuStepItem", this.$refs.accordion) || [];
-			const collapses = steps.map((step) => step.$refs.collapse);
+	collectItems() {
+		const steps = this.collections_filterChildren("MenuStepItem", this.$refs.accordion) || [];
+		const collapses = steps.map((step) => step.$refs.collapse);
 
-			// The first and last items has a different style and text on the default footer
-			const firstStep = steps[0];
-			if (firstStep) {
-				firstStep.isFirstItem = true;
-			}
+		// The first and last items has a different style and text on the default footer
+		const firstStep = steps[0];
+		if (firstStep) {
+			firstStep.isFirstItem = true;
+		}
 
-			const lastStep = steps[steps.length - 1];
-			if (lastStep) {
-				lastStep.isLastItem = true;
-			}
+		const lastStep = steps[steps.length - 1];
+		if (lastStep) {
+			lastStep.isLastItem = true;
+		}
 
-			return collapses;
-		},
-	},
-};
+		return collapses;
+	}
+}
 </script>

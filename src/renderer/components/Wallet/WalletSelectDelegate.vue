@@ -23,48 +23,50 @@
 </template>
 
 <script>
+import { Component, Vue } from "vue-property-decorator";
+
 import { InputDelegate } from "@/components/Input";
 import { ModalWindow } from "@/components/Modal";
 
-export default {
+@Component({
 	name: "ModalSelectDelegate",
 
 	components: {
 		InputDelegate,
 		ModalWindow,
 	},
+})
+export default class ModalSelectDelegate extends Vue {
+	form = {
+		delegate: "",
+	};
 
-	data: () => ({
-		form: {
-			delegate: "",
-		},
-		isValid: false,
-	}),
+	isValid = false;
 
-	methods: {
-		emitCancel() {
-			this.$emit("cancel");
-		},
+	emitCancel() {
+		this.$emit("cancel");
+	}
 
-		emitConfirm() {
-			this.$emit("confirm", this.$v.form.delegate.$model);
-		},
+	emitConfirm() {
+		this.$emit("confirm", this.$v.form.delegate.$model);
+	}
 
-		onValid(value) {
-			this.isValid = value;
-		},
-	},
+	onValid(value) {
+		this.isValid = value;
+	}
 
-	validations: {
-		form: {
-			delegate: {
-				isValid() {
-					return this.isValid;
+	validations() {
+		return {
+			form: {
+				delegate: {
+					isValid() {
+						return this.isValid;
+					},
 				},
 			},
-		},
-	},
-};
+		};
+	};
+}
 </script>
 
 <style lang="postcss">

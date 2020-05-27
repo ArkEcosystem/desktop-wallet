@@ -5,13 +5,16 @@
 </template>
 
 <script>
+import { Component, Vue } from "vue-property-decorator";
+
 import SearchFilterItem from "./SearchFilterItem";
 
-export default {
+@Component({
 	name: "SearchFilterDelegate",
 
 	components: {
 		SearchFilterItem,
 	},
-};
+})
+export default class SearchFilterDelegate extends Vue {}
 </script>

@@ -185,6 +185,7 @@
 
 <script>
 import { BIP39, I18N, MARKET, NETWORKS } from "@config";
+import { Component, Vue } from "vue-property-decorator";
 
 import { ButtonSwitch } from "@/components/Button";
 import { InputSelect, InputText } from "@/components/Input";
@@ -193,7 +194,7 @@ import { SelectionAvatar, SelectionBackground, SelectionNetwork, SelectionTheme 
 import { StoreBinding } from "@/enums";
 import Profile from "@/models/profile";
 
-export default {
+@Component({
 	name: "ProfileNew",
 
 	components: {
@@ -207,124 +208,121 @@ export default {
 		SelectionNetwork,
 		SelectionTheme,
 	},
+})
+export default class ProfileNew extends Vue {
+	schema = Profile.schema;
+	step = 1;
+	selectedNetwork = null;
 
-	schema: Profile.schema,
+	get background() {
+		return this.$store.getters["session/background"];
+	}
 
-	data: () => ({
-		step: 1,
-		selectedNetwork: null,
-	}),
+	set background(background) {
+		this.selectBackground(background);
+	}
 
-	computed: {
-		background: {
-			get() {
-				return this.$store.getters["session/background"];
-			},
-			set(background) {
-				this.selectBackground(background);
-			},
-		},
-		bip39Language: {
-			get() {
-				return this.$store.getters["session/bip39Language"] || BIP39.defaultLanguage;
-			},
-			set(bip39language) {
-				this.selectBip39Language(bip39language);
-			},
-		},
-		currency: {
-			get() {
-				return this.$store.getters["session/currency"];
-			},
-			set(currency) {
-				this.selectCurrency(currency);
-			},
-		},
-		isMarketChartEnabled: {
-			get() {
-				return this.$store.getters["session/isMarketChartEnabled"];
-			},
-			set(isMarketChartEnabled) {
-				this.selectIsMarketChartEnabled(isMarketChartEnabled);
-			},
-		},
-		theme: {
-			get() {
-				return this.$store.getters["session/theme"];
-			},
-			set(theme) {
-				this.selectTheme(theme);
-			},
-		},
-		timeFormat: {
-			get() {
-				return this.$store.getters["session/timeFormat"] || "Default";
-			},
-			set(timeFormat) {
-				this.selectTimeFormat(timeFormat);
-			},
-		},
-		priceApi: {
-			get() {
-				return this.$store.getters["session/priceApi"] || "coingecko";
-			},
-			set(priceApi) {
-				this.selectPriceApi(priceApi);
-			},
-		},
-		currencies() {
-			return Object.keys(MARKET.currencies);
-		},
-		bip39Languages() {
-			return BIP39.languages.reduce((all, language) => {
-				all[language] = this.$t(`BIP39_LANGUAGES.${language}`);
+	get bip39Language() {
+		return this.$store.getters["session/bip39Language"] || BIP39.defaultLanguage;
+	}
 
-				return all;
-			}, {});
-		},
-		timeFormats() {
-			return ["Default", "12h", "24h"].reduce((all, format) => {
-				all[format] = this.$t(`TIME_FORMAT.${format.toUpperCase()}`);
-				return all;
-			}, {});
-		},
-		priceApis() {
-			return {
-				coingecko: "CoinGecko",
-				cryptocompare: "CryptoCompare",
-				coincap: "CoinCap",
-			};
-		},
-		defaultNetworks() {
-			return NETWORKS.map((network) => network);
-		},
-		customNetworks() {
-			return this.$store.getters["network/customNetworks"];
-		},
-		availableCustomNetworks: {
-			get() {
-				return Object.values(this.customNetworks);
-			},
-			cache: false,
-		},
-		nameError() {
-			if (this.$v.schema.name.$dirty && this.$v.schema.name.$invalid) {
-				if (!this.$v.schema.name.doesNotExist) {
-					return this.$t("VALIDATION.NAME.DUPLICATED", [this.schema.name]);
-				} else if (!this.$v.schema.name.schemaMaxLength) {
-					return this.$t("VALIDATION.NAME.MAX_LENGTH", [Profile.schema.properties.name.maxLength]);
-				} else if (!this.$v.schema.name.schemaMinLength) {
-					return this.$tc("VALIDATION.NAME.MIN_LENGTH", Profile.schema.properties.name.minLength);
-				}
+	set bip39Language(bip39language) {
+		this.selectBip39Language(bip39language);
+	}
+
+	get currency() {
+		return this.$store.getters["session/currency"];
+	}
+
+	set currency(currency) {
+		this.selectCurrency(currency);
+	}
+
+	get isMarketChartEnabled() {
+		return this.$store.getters["session/isMarketChartEnabled"];
+	}
+
+	set isMarketChartEnabled(isMarketChartEnabled) {
+		this.selectIsMarketChartEnabled(isMarketChartEnabled);
+	}
+
+	get theme() {
+		return this.$store.getters["session/theme"];
+	}
+
+	set theme(theme) {
+		this.selectTheme(theme);
+	}
+
+	get timeFormat() {
+		return this.$store.getters["session/timeFormat"] || "Default";
+	}
+
+	set timeFormat(timeFormat) {
+		this.selectTimeFormat(timeFormat);
+	}
+
+	get priceApi() {
+		return this.$store.getters["session/priceApi"] || "coingecko";
+	}
+
+	set priceApi(priceApi) {
+		this.selectPriceApi(priceApi);
+	}
+
+	get currencies() {
+		return Object.keys(MARKET.currencies);
+	}
+
+	get bip39Languages() {
+		return BIP39.languages.reduce((all, language) => {
+			all[language] = this.$t(`BIP39_LANGUAGES.${language}`);
+
+			return all;
+		}, {});
+	}
+
+	get timeFormats() {
+		return ["Default", "12h", "24h"].reduce((all, format) => {
+			all[format] = this.$t(`TIME_FORMAT.${format.toUpperCase()}`);
+			return all;
+		}, {});
+	}
+
+	get priceApis() {
+		return {
+			coingecko: "CoinGecko",
+			cryptocompare: "CryptoCompare",
+			coincap: "CoinCap",
+		};
+	}
+
+	get defaultNetworks() {
+		return NETWORKS.map((network) => network);
+	}
+
+	get customNetworks() {
+		return this.$store.getters["network/customNetworks"];
+	}
+
+	get availableCustomNetworks() {
+		return Object.values(this.customNetworks);
+	}
+
+	get nameError() {
+		if (this.$v.schema.name.$dirty && this.$v.schema.name.$invalid) {
+			if (!this.$v.schema.name.doesNotExist) {
+				return this.$t("VALIDATION.NAME.DUPLICATED", [this.schema.name]);
+			} else if (!this.$v.schema.name.schemaMaxLength) {
+				return this.$t("VALIDATION.NAME.MAX_LENGTH", [Profile.schema.properties.name.maxLength]);
+			} else if (!this.$v.schema.name.schemaMinLength) {
+				return this.$tc("VALIDATION.NAME.MIN_LENGTH", Profile.schema.properties.name.minLength);
 			}
+		}
 
-			return null;
-		},
-	},
+		return null;
+	}
 
-	/**
-	 * Reuse the settings of the current profile every time the page is created
-	 */
 	created() {
 		this.selectNetwork(this.defaultNetworks.find((network) => network.id === "ark.mainnet"));
 		this.schema.background = this.background;
@@ -341,103 +339,107 @@ export default {
 		if (this.schema.theme !== this.$store.getters["session/theme"]) {
 			this.$store.dispatch(StoreBinding.SessionSetTheme, this.schema.theme);
 		}
-	},
+	}
 
 	destroyed() {
 		this.$store.dispatch(StoreBinding.SessionSetProfileId, this.session_profile.id);
-	},
+	}
 
 	beforeRouteEnter(to, from, next) {
 		next((vm) => {
 			vm.$synchronizer.focus();
 			vm.$synchronizer.pause("market");
 		});
-	},
+	}
 
-	methods: {
-		async create() {
-			const { id } = await this.$store.dispatch(StoreBinding.ProfileCreate, this.schema);
-			await this.$store.dispatch(StoreBinding.SessionSetProfileId, id);
-			this.$router.push({ name: "dashboard" });
-		},
+	async create() {
+		const { id } = await this.$store.dispatch(StoreBinding.ProfileCreate, this.schema);
+		await this.$store.dispatch(StoreBinding.SessionSetProfileId, id);
+		this.$router.push({ name: "dashboard" });
+	}
 
-		moveTo(step) {
-			this.step = step;
-		},
+	moveTo(step) {
+		this.step = step;
+	}
 
-		selectAvatar(avatar) {
-			if (typeof avatar === "string") {
-				this.schema.avatar = avatar;
-			} else if (avatar.onlyLetter) {
-				this.schema.avatar = null;
-			} else if (avatar.name) {
-				this.schema.avatar = {
-					avatarName: avatar.name,
-					pluginId: avatar.pluginId,
-				};
-			} else {
-				throw new Error(`Invalid value for avatar: ${avatar}`);
-			}
-		},
+	selectAvatar(avatar) {
+		if (typeof avatar === "string") {
+			this.schema.avatar = avatar;
+		} else if (avatar.onlyLetter) {
+			this.schema.avatar = null;
+		} else if (avatar.name) {
+			this.schema.avatar = {
+				avatarName: avatar.name,
+				pluginId: avatar.pluginId,
+			};
+		} else {
+			throw new Error(`Invalid value for avatar: ${avatar}`);
+		}
+	}
 
-		async selectBackground(background) {
-			this.schema.background = background;
-			await this.$store.dispatch(StoreBinding.SessionSetBackground, background);
-		},
+	async selectBackground(background) {
+		this.schema.background = background;
+		await this.$store.dispatch(StoreBinding.SessionSetBackground, background);
+	}
 
-		selectCurrency(currency) {
-			this.schema.currency = currency;
-		},
+	selectCurrency(currency) {
+		this.schema.currency = currency;
+	}
 
-		selectBip39Language(bip39Language) {
-			this.schema.bip39Language = bip39Language;
-			this.$store.dispatch(StoreBinding.SessionSetBip39Language, bip39Language);
-		},
+	selectBip39Language(bip39Language) {
+		this.schema.bip39Language = bip39Language;
+		this.$store.dispatch(StoreBinding.SessionSetBip39Language, bip39Language);
+	}
 
-		selectNetwork(network) {
-			this.schema.networkId = network.id;
-			this.selectedNetwork = network;
-		},
+	selectNetwork(network) {
+		this.schema.networkId = network.id;
+		this.selectedNetwork = network;
+	}
 
-		selectNetworkFromModal(network, toggle) {
-			this.schema.networkId = network.id;
-			this.selectedNetwork = network;
-			toggle();
-		},
+	selectNetworkFromModal(network, toggle) {
+		this.schema.networkId = network.id;
+		this.selectedNetwork = network;
+		toggle();
+	}
 
-		async selectIsMarketChartEnabled(isMarketChartEnabled) {
-			this.schema.isMarketChartEnabled = isMarketChartEnabled;
-			await this.$store.dispatch(StoreBinding.SessionSetIsMarketChartEnabled, isMarketChartEnabled);
-		},
+	async selectIsMarketChartEnabled(isMarketChartEnabled) {
+		this.schema.isMarketChartEnabled = isMarketChartEnabled;
+		await this.$store.dispatch(StoreBinding.SessionSetIsMarketChartEnabled, isMarketChartEnabled);
+	}
 
-		async selectTheme(theme) {
-			this.schema.theme = theme;
-			await this.$store.dispatch(StoreBinding.SessionSetTheme, theme);
-		},
+	async selectTheme(theme) {
+		this.schema.theme = theme;
+		await this.$store.dispatch(StoreBinding.SessionSetTheme, theme);
+	}
 
-		async selectTimeFormat(timeFormat) {
-			this.schema.timeFormat = timeFormat;
-			await this.$store.dispatch(StoreBinding.SessionSetTimeFormat, timeFormat);
-		},
+	async selectTimeFormat(timeFormat) {
+		this.schema.timeFormat = timeFormat;
+		await this.$store.dispatch(StoreBinding.SessionSetTimeFormat, timeFormat);
+	}
 
-		async selectPriceApi(priceApi) {
-			this.schema.priceApi = priceApi;
-			await this.$store.dispatch(StoreBinding.SessionSetPriceApi, priceApi);
-		},
-	},
+	async selectPriceApi(priceApi) {
+		this.schema.priceApi = priceApi;
+		await this.$store.dispatch(StoreBinding.SessionSetPriceApi, priceApi);
+	}
 
-	validations: {
-		step1: ["schema.avatar", "schema.currency", "schema.bip39Language", "schema.name"],
-		step2: ["schema.networkId"],
-		schema: {
-			name: {
-				doesNotExist(value) {
-					return !this.$store.getters["profile/doesExist"](value);
+	validations() {
+		return {
+			step1: ["schema.avatar", "schema.currency", "schema.bip39Language", "schema.name"],
+			step2: ["schema.networkId"],
+			schema: {
+				name: {
+					doesNotExist(value) {
+						if (value) {
+							return !this.$store.getters["profile/doesExist"](value);
+						}
+
+						return false;
+					},
 				},
 			},
-		},
-	},
-};
+		};
+	};
+}
 </script>
 
 <style lang="postcss">

@@ -85,6 +85,7 @@
 
 <script>
 import { TRANSACTION_GROUPS, TRANSACTION_TYPES } from "@config";
+import { Component, Prop, Vue } from "vue-property-decorator";
 
 import { InputFee, InputPassword } from "@/components/Input";
 import { ListDivided, ListDividedItem } from "@/components/ListDivided";
@@ -93,12 +94,8 @@ import { PassphraseInput } from "@/components/Passphrase";
 
 import mixin from "../mixin";
 
-export default {
+@Component({
 	name: "TransactionFormBridgechainResignation",
-
-	transactionGroup: TRANSACTION_GROUPS.MAGISTRATE,
-
-	transactionType: TRANSACTION_TYPES.GROUP_2.BRIDGECHAIN_RESIGNATION,
 
 	components: {
 		InputFee,
@@ -110,57 +107,58 @@ export default {
 	},
 
 	mixins: [mixin],
+})
+export default class TransactionFormBridgechainResignation extends Vue {
+	transactionGroup = TRANSACTION_GROUPS.MAGISTRATE;
+	transactionType = TRANSACTION_TYPES.GROUP_2.BRIDGECHAIN_RESIGNATION;
 
-	props: {
-		bridgechain: {
-			type: Object,
-			required: true,
-		},
-	},
+	@Prop({
+		type: Object,
+		required: true,
+	})
+	bridgechain;
 
-	data: () => ({
-		form: {
-			fee: 0,
-			passphrase: "",
-			walletPassword: "",
-		},
-	}),
+	form = {
+		fee: 0,
+		passphrase: "",
+		walletPassword: "",
+	};
 
-	methods: {
-		getTransactionData() {
-			const transactionData = {
-				bridgechainId: this.bridgechain.genesisHash,
-				address: this.currentWallet.address,
-				passphrase: this.form.passphrase,
-				fee: this.getFee(),
-				wif: this.form.wif,
-				networkWif: this.walletNetwork.wif,
-				multiSignature: this.currentWallet.multiSignature,
-			};
+	getTransactionData() {
+		const transactionData = {
+			bridgechainId: this.bridgechain.genesisHash,
+			address: this.currentWallet.address,
+			passphrase: this.form.passphrase,
+			fee: this.getFee(),
+			wif: this.form.wif,
+			networkWif: this.walletNetwork.wif,
+			multiSignature: this.currentWallet.multiSignature,
+		};
 
-			if (this.currentWallet.secondPublicKey) {
-				transactionData.secondPassphrase = this.form.secondPassphrase;
-			}
+		if (this.currentWallet.secondPublicKey) {
+			transactionData.secondPassphrase = this.form.secondPassphrase;
+		}
 
-			return transactionData;
-		},
+		return transactionData;
+	}
 
-		async buildTransaction(transactionData, isAdvancedFee = false, returnObject = false) {
-			return this.$client.buildBridgechainResignation(transactionData, isAdvancedFee, returnObject);
-		},
+	buildTransaction(transactionData, isAdvancedFee = false, returnObject = false) {
+		return this.$client.buildBridgechainResignation(transactionData, isAdvancedFee, returnObject);
+	}
 
-		transactionError() {
-			this.$error(this.$t("TRANSACTION.ERROR.VALIDATION.BRIDGECHAIN_RESIGNATION"));
-		},
-	},
+	transactionError() {
+		this.$error(this.$t("TRANSACTION.ERROR.VALIDATION.BRIDGECHAIN_RESIGNATION"));
+	}
 
-	validations: {
-		form: {
-			fee: mixin.validators.fee,
-			passphrase: mixin.validators.passphrase,
-			walletPassword: mixin.validators.walletPassword,
-			secondPassphrase: mixin.validators.secondPassphrase,
-		},
-	},
-};
+	validations() {
+		return {
+			form: {
+				fee: mixin.validators.fee,
+				passphrase: mixin.validators.passphrase,
+				walletPassword: mixin.validators.walletPassword,
+				secondPassphrase: mixin.validators.secondPassphrase,
+			},
+		}
+	};
+}
 </script>

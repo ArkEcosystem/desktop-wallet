@@ -52,89 +52,85 @@
 <script>
 import { MARKET } from "@config";
 import { format } from "util";
+import { Component, Vue } from "vue-property-decorator";
 
 import { InputSwitch } from "@/components/Input";
 
-export default {
+@Component({
 	name: "WalletExchange",
 
 	components: {
 		InputSwitch,
 	},
+})
+export default class WalletExchange extends Vue {
+	isChangellyEnabled = false;
+	isPurchaseEnabled = false;
 
-	data: () => ({
-		isChangellyEnabled: false,
-		isPurchaseEnabled: false,
-	}),
+	get hasDarkTheme() {
+		return this.session_hasDarkTheme;
+	}
 
-	computed: {
-		hasDarkTheme() {
-			return this.session_hasDarkTheme;
-		},
+	get currentNetwork() {
+		return this.session_network;
+	}
 
-		currentNetwork() {
-			return this.session_network;
-		},
+	get currentTicker() {
+		return this.currentNetwork.market.ticker;
+	}
 
-		currentTicker() {
-			return this.currentNetwork.market.ticker;
-		},
+	get currentCurrency() {
+		return this.session_currency;
+	}
 
-		currentCurrency() {
-			return this.session_currency;
-		},
+	get changellyLogo() {
+		const filename = this.hasDarkTheme ? "changelly-logo-dark" : "changelly-logo";
+		return this.assets_loadImage(`pages/${filename}.png`);
+	}
 
-		changellyLogo() {
-			const filename = this.hasDarkTheme ? "changelly-logo-dark" : "changelly-logo";
-			return this.assets_loadImage(`pages/${filename}.png`);
-		},
+	get changellyWidgetURL() {
+		const from = this.currentCurrency;
+		const baseUrl =
+			"https://widget.changelly.com?fiat=true&currencies=*&fixedTo=true&merchant_id=bab9de3731aa&theme=aqua";
 
-		changellyWidgetURL() {
-			const from = this.currentCurrency;
-			const baseUrl =
-				"https://widget.changelly.com?fiat=true&currencies=*&fixedTo=true&merchant_id=bab9de3731aa&theme=aqua";
-
-			return format(
-				baseUrl + "&from=%s&to=%s&address=%s&amount=%d",
-				from,
-				this.currentNetwork.token,
-				this.wallet_fromRoute.address,
-				MARKET.crypto.includes(from) ? 1 : 300,
-			);
-		},
-	},
+		return format(
+			baseUrl + "&from=%s&to=%s&address=%s&amount=%d",
+			from,
+			this.currentNetwork.token,
+			this.wallet_fromRoute.address,
+			MARKET.crypto.includes(from) ? 1 : 300,
+		);
+	}
 
 	deactivated() {
 		this.isPurchaseEnabled = false;
 		this.isChangellyEnabled = false;
-	},
+	}
 
-	methods: {
-		openChangellyWebsite() {
-			this.electron_openExternal("https://changelly.com");
-		},
+	openChangellyWebsite() {
+		this.electron_openExternal("https://changelly.com");
+	}
 
-		openChangellyTerms() {
-			this.electron_openExternal("https://changelly.com/terms-of-use");
-		},
+	openChangellyTerms() {
+		this.electron_openExternal("https://changelly.com/terms-of-use");
+	}
 
-		openChangellyPrivacyPolicy() {
-			this.electron_openExternal("https://changelly.com/privacy-policy");
-		},
+	openChangellyPrivacyPolicy() {
+		this.electron_openExternal("https://changelly.com/privacy-policy");
+	}
 
-		openChangellyKYC() {
-			this.electron_openExternal("https://changelly.com/aml-kyc");
-		},
+	openChangellyKYC() {
+		this.electron_openExternal("https://changelly.com/aml-kyc");
+	}
 
-		openPopup(event) {
-			this.electron_openExternal(event.url);
-		},
+	openPopup(event) {
+		this.electron_openExternal(event.url);
+	}
 
-		setConfirmed() {
-			this.isPurchaseEnabled = true;
-		},
-	},
-};
+	setConfirmed() {
+		this.isPurchaseEnabled = true;
+	}
+}
 </script>
 
 <style scoped>

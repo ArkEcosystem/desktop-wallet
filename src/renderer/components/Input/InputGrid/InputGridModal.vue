@@ -1,7 +1,7 @@
 <template>
 	<ModalWindow :title="modalHeaderText" :container-classes="containerClasses" @close="emitClose">
-		<section class="InputGridModal flex flex-col">
-			<div class="InputGridModal__container overflow-y-auto p-1">
+		<section class="flex flex-col InputGridModal">
+			<div class="p-1 overflow-y-auto InputGridModal__container">
 				<div
 					v-for="(categoryItems, category) in items"
 					:key="category"
@@ -33,7 +33,10 @@
 	</ModalWindow>
 </template>
 
-<script>
+<script lang="ts">
+import { Component, Prop, Vue } from "vue-property-decorator";
+
+// @ts-ignore
 import ModalWindow from "@/components/Modal/ModalWindow";
 
 import InputGridItem from "./InputGridItem";
@@ -42,67 +45,77 @@ import InputGridItem from "./InputGridItem";
  * This component only emits the `selected` event when the background has been
  * confirmed.
  */
-export default {
+@Component({
 	name: "InputGridModal",
 
 	components: {
 		InputGridItem,
 		ModalWindow,
 	},
+})
+export default class InputGridModal extends Vue {
+	@Prop({
+		type: String,
+		required: false,
+		default: "InputGridModal",
+	})
+	containerClasses;
 
-	props: {
-		containerClasses: {
-			type: String,
-			required: false,
-			default: "InputGridModal",
+	@Prop({
+		type: [Array, Object],
+		required: true,
+	})
+	items;
+
+	@Prop({
+		type: String,
+		required: true,
+	})
+	itemKey;
+
+	@Prop({
+		type: Object,
+		required: false,
+		default: null,
+	})
+	selected;
+
+	@Prop({
+		type: String,
+		required: false,
+		default() {
+			// @ts-ignore
+			return this.$t("INPUT_GRID_MODAL.TITLE");
 		},
-		items: {
-			type: [Array, Object],
-			required: true,
-		},
-		itemKey: {
-			type: String,
-			required: true,
-		},
-		selected: {
-			type: Object,
-			required: false,
-			default: null,
-		},
-		modalHeaderText: {
-			type: String,
-			required: false,
-			default() {
-				return this.$t("INPUT_GRID_MODAL.TITLE");
-			},
-		},
-	},
+	})
+	modalHeaderText;
+
+	clicked = undefined;
 
 	data() {
 		return {
 			clicked: this.selected,
 		};
-	},
+	}
 
-	methods: {
-		click(item) {
-			this.clicked = item;
-		},
+	click(item) {
+		this.clicked = item;
+	}
 
-		isClicked(item) {
-			return this.clicked.pluginId ? this.clicked.name === item.name : this.clicked.title === item.title;
-		},
+	isClicked(item) {
+		// @ts-ignore
+		return this.clicked.pluginId ? this.clicked.name === item.name : this.clicked.title === item.title;
+	}
 
-		emitClose() {
-			this.$emit("close");
-		},
+	emitClose() {
+		this.$emit("close");
+	}
 
-		emitSelect() {
-			this.$emit("select", this.clicked);
-			this.emitClose();
-		},
-	},
-};
+	emitSelect() {
+		this.$emit("select", this.clicked);
+		this.emitClose();
+	}
+}
 </script>
 
 <style scoped>

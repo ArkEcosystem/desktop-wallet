@@ -7,7 +7,7 @@
 			'background-color': backgroundColor,
 		}"
 		:disabled="isDisabled"
-		class="ButtonSwitch appearance-none rounded-full flex items-center relative cursor-pointer w-12 h-6 bg-theme-switch-button"
+		class="relative flex items-center w-12 h-6 rounded-full appearance-none cursor-pointer ButtonSwitch bg-theme-switch-button"
 		type="button"
 		@click="toggle"
 	>
@@ -19,70 +19,75 @@
 			:style="{
 				'border-color': backgroundColor,
 			}"
-			class="ButtonSwitch__circle transition rounded-full w-6 h-full absolute border-2 border-theme-button"
+			class="absolute w-6 h-full transition border-2 rounded-full ButtonSwitch__circle border-theme-button"
 		/>
 	</button>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { Component, Prop, Vue, Watch } from "vue-property-decorator";
+@Component({
 	name: "ButtonSwitch",
 
 	model: {
 		prop: "isActive",
 		event: "change",
 	},
+})
+export default class ButtonSwitch extends Vue {
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	isActive;
 
-	props: {
-		isActive: {
-			type: Boolean,
-			required: false,
-			default: false,
-		},
-		isDisabled: {
-			type: Boolean,
-			required: false,
-			default: false,
-		},
-		backgroundColor: {
-			type: String,
-			required: false,
-			default: null,
-		},
-	},
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	isDisabled;
 
-	data: (vm) => ({
-		inputIsActive: vm.isActive,
-	}),
+	@Prop({
+		type: String,
+		required: false,
+		default: null,
+	})
+	backgroundColor;
 
-	computed: {
-		model: {
-			get() {
-				return this.inputIsActive;
-			},
-			set(value) {
-				this.inputIsActive = value;
-				this.$emit("change", value);
-			},
-		},
-	},
+	inputIsActive = null;
 
-	watch: {
-		isActive(isActive) {
-			this.inputIsActive = isActive;
-		},
-	},
+	@Watch("isActive")
+	onIsActive(isActive) {
+		// @ts-ignore
+		this.inputIsActive = isActive;
+	}
 
-	methods: {
-		toggle() {
-			if (this.isDisabled) {
-				return;
-			}
+	data(vm) {
+		return {
+			inputIsActive: vm.isActive,
+		};
+	}
 
-			this.model = !this.model;
-		},
-	},
-};
+	get model() {
+		return this.inputIsActive;
+	}
+
+	set model(value) {
+		this.inputIsActive = value;
+		this.$emit("change", value);
+	}
+
+	toggle() {
+		if (this.isDisabled) {
+			return;
+		}
+
+		// @ts-ignore
+		this.model = !this.model;
+	}
+}
 </script>
 
 <style scoped>

@@ -5,6 +5,7 @@
 <script>
 /* eslint-disable vue/no-unused-components */
 import { TRANSACTION_GROUPS } from "@config";
+import { Component, Prop, Vue } from "vue-property-decorator";
 
 import TransactionFormBridgechain from "./TransactionFormBridgechain";
 import TransactionFormBusiness from "./TransactionFormBusiness";
@@ -17,7 +18,7 @@ import TransactionFormSecondSignature from "./TransactionFormSecondSignature";
 import TransactionFormTransfer from "./TransactionFormTransfer";
 import TransactionFormVote from "./TransactionFormVote";
 
-export default {
+@Component({
 	name: "TransactionForm",
 
 	components: {
@@ -32,23 +33,22 @@ export default {
 		...TransactionFormBusiness,
 		...TransactionFormBridgechain,
 	},
+})
+export default class TransactionForm extends Vue {
+	@Prop({
+		type: Number,
+		required: false,
+		default: TRANSACTION_GROUPS.STANDARD,
+	})
+	group;
 
-	props: {
-		group: {
-			type: Number,
-			required: false,
-			default: TRANSACTION_GROUPS.STANDARD,
-		},
+	@Prop({
+		type: Number,
+		required: true,
+	})
+	type;
 
-		type: {
-			type: Number,
-			required: true,
-		},
-	},
-
-	data: () => ({
-		activeComponent: null,
-	}),
+	activeComponent = null;
 
 	// TODO: Fetch fees remotely
 	mounted() {
@@ -66,16 +66,14 @@ export default {
 		}
 
 		this.activeComponent = component.name;
-	},
+	}
 
-	methods: {
-		emitBuilt(transaction) {
-			this.$emit("built", transaction);
-		},
+	emitBuilt(transaction) {
+		this.$emit("built", transaction);
+	}
 
-		emitCancel(reason) {
-			this.$emit("cancel", reason);
-		},
-	},
-};
+	emitCancel(reason) {
+		this.$emit("cancel", reason);
+	}
+}
 </script>

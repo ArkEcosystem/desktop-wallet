@@ -17,7 +17,7 @@
 			:is-focused="isFocused"
 			:is-invalid="invalid"
 			:warning-text="warningText"
-			class="InputAddress text-left"
+			class="text-left InputAddress"
 		>
 			<div slot-scope="{ inputClass }" :class="inputClass" class="flex flex-row">
 				<input
@@ -26,7 +26,7 @@
 					:name="name"
 					:disabled="isDisabled"
 					type="text"
-					class="InputAddress__input flex flex-grow bg-transparent text-theme-page-text"
+					class="flex flex-grow bg-transparent InputAddress__input text-theme-page-text"
 					@blur="onBlur"
 					@focus="onFocus"
 					@click.self.stop
@@ -38,7 +38,7 @@
 				<ButtonModal
 					ref="button-qr"
 					:label="''"
-					class="InputAddress__qr-button flex flex-shrink-0 text-grey-dark hover:text-blue"
+					class="flex flex-shrink-0 InputAddress__qr-button text-grey-dark hover:text-blue"
 					icon="qr"
 					view-box="0 0 20 20"
 				>
@@ -51,13 +51,15 @@
 	</MenuDropdown>
 </template>
 
-<script>
+<script lang="ts">
 import Cycled from "cycled";
 import { orderBy, unionBy } from "lodash";
+import { Component, Prop, Vue, Watch } from "vue-property-decorator";
 import { required } from "vuelidate/lib/validators";
 
 import { ButtonModal } from "@/components/Button";
 import { MenuDropdown } from "@/components/Menu";
+// @ts-ignore
 import ModalQrCodeScanner from "@/components/Modal/ModalQrCodeScanner";
 import truncate from "@/filters/truncate";
 import WalletService from "@/services/wallet";
@@ -65,7 +67,7 @@ import { isEmpty } from "@/utils";
 
 import InputField from "./InputField";
 
-export default {
+@Component({
 	name: "InputAddress",
 
 	components: {
@@ -74,339 +76,413 @@ export default {
 		ModalQrCodeScanner,
 		MenuDropdown,
 	},
+})
+export default class InputAddress extends Vue {
+	@Prop({
+		type: String,
+		required: false,
+		default: null,
+	})
+	// @ts-ignore
+	helperText;
 
-	props: {
-		helperText: {
-			type: String,
-			required: false,
-			default: null,
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	// @ts-ignore
+	isDisabled;
+
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: true,
+	})
+	// @ts-ignore
+	isRequired;
+
+	@Prop({
+		type: String,
+		required: false,
+		default() {
+			// @ts-ignore
+			return this.$t("INPUT_ADDRESS.LABEL");
 		},
-		isDisabled: {
-			type: Boolean,
-			required: false,
-			default: false,
-		},
-		isRequired: {
-			type: Boolean,
-			required: false,
-			default: true,
-		},
-		label: {
-			type: String,
-			required: false,
-			default() {
-				return this.$t("INPUT_ADDRESS.LABEL");
-			},
-		},
-		name: {
-			type: String,
-			required: false,
-			default: "address",
-		},
-		pubKeyHash: {
-			type: Number,
-			required: true,
-		},
-		showSuggestions: {
-			type: Boolean,
-			required: false,
-			default: false,
-		},
-		value: {
-			type: String,
-			required: true,
-		},
-		isInvalid: {
-			type: Boolean,
-			required: false,
-			default: false,
-		},
-		warningText: {
-			type: String,
-			required: false,
-			default: null,
-		},
-	},
+	})
+	// @ts-ignore
+	label;
 
-	data: (vm) => ({
-		inputValue: vm.value,
-		dropdownValue: null,
-		isFocused: false,
-		neoCheckedAddressess: {},
-		notice: null,
-	}),
+	@Prop({
+		type: String,
+		required: false,
+		default: "address",
+	})
+	// @ts-ignore
+	name;
 
-	computed: {
-		currentProfile() {
-			return this.session_profile;
-		},
+	@Prop({
+		type: Number,
+		required: true,
+	})
+	// @ts-ignore
+	pubKeyHash;
 
-		error() {
-			let error = null;
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	// @ts-ignore
+	showSuggestions;
 
-			if (!this.isDisabled && this.$v.model.$dirty && !(this.hasSuggestions && this.isFocused)) {
-				if (!this.$v.model.required) {
-					error = this.$t("INPUT_ADDRESS.ERROR.REQUIRED");
-				} else if (!this.$v.model.isValid) {
-					error = this.$t("INPUT_ADDRESS.ERROR.NOT_VALID");
-				}
-			}
+	@Prop({
+		type: String,
+		required: true,
+	})
+	// @ts-ignore
+	value;
 
-			return error;
-		},
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	// @ts-ignore
+	isInvalid;
 
-		hasSuggestions() {
-			return !isEmpty(this.suggestions);
-		},
+	@Prop({
+		type: String,
+		required: false,
+		default: null,
+	})
+	// @ts-ignore
+	warningText;
 
-		invalid() {
-			return this.$v.model.$dirty && (this.isInvalid || !!this.error);
-		},
+	inputValue = null;
+	dropdownValue = null;
+	isFocused = false;
+	neoCheckedAddressess = {};
+	notice = null;
 
-		model: {
-			get() {
-				return this.dropdownValue || this.inputValue;
-			},
-			set(value) {
-				this.updateInputValue(value);
-				this.$emit("input", value);
-			},
-		},
+	@Watch("value")
+	onValue(val) {
+		// @ts-ignore
+		this.updateInputValue(val);
+	}
 
-		suggestions() {
-			if (!this.currentProfile || !this.showSuggestions) {
-				return [];
-			}
+	@Watch("isFocused")
+	onIsFocused() {
+		// @ts-ignore
+		if (this.isFocused && this.hasSuggestions) {
+			// @ts-ignore
+			this.openDropdown();
+		}
+	}
 
-			const ledgerWallets = this.$store.getters["ledger/isConnected"]
-				? this.$store.getters["ledger/wallets"]
-				: [];
-			const wallets = [...this.$store.getters["wallet/byProfileId"](this.currentProfile.id), ...ledgerWallets];
-			const contacts = this.$store.getters["wallet/contactsByProfileId"](this.currentProfile.id);
+	@Watch("inputValue")
+	async onInputValue() {
+		// @ts-ignore
+		this.dropdownValue = null;
+		// @ts-ignore
+		if (this.isFocused && this.hasSuggestions) {
+			// @ts-ignore
+			this.openDropdown();
+		}
 
-			const source = unionBy(wallets, contacts, "address").filter((wallet) => wallet && !!wallet.address);
+		// @ts-ignore
+		if (this.invalid) {
+			// @ts-ignore
+			this.notice = null;
+		} else {
+			// @ts-ignore
+			const knownAddress = this.wallet_name(this.inputValue);
 
-			const addresses = source.map((wallet) => {
-				const address = {
-					name: null,
-					address: wallet.address,
-				};
-
-				const walletName = this.wallet_name(wallet.address);
-				if (walletName && walletName !== wallet.address) {
-					address.name = `${truncate(walletName, 25)} (${this.wallet_truncate(wallet.address)})`;
-				}
-
-				return address;
-			});
-
-			const results = orderBy(addresses, (object) => {
-				return (object.name || object.address).toLowerCase();
-			});
-
-			return results.reduce((wallets, wallet) => {
-				const value = wallet.name || wallet.address;
-				const searchValue = value.toLowerCase();
-
-				if (searchValue && searchValue.includes(this.inputValue.toLowerCase())) {
-					wallets[wallet.address] = value;
-				}
-
-				return wallets;
-			}, {});
-		},
-
-		suggestionsKeys() {
-			return new Cycled(Object.keys(this.suggestions));
-		},
-	},
-
-	watch: {
-		value(val) {
-			this.updateInputValue(val);
-		},
-
-		isFocused() {
-			if (this.isFocused && this.hasSuggestions) {
-				this.openDropdown();
-			}
-		},
-
-		async inputValue() {
-			this.dropdownValue = null;
-			if (this.isFocused && this.hasSuggestions) {
-				this.openDropdown();
-			}
-
-			if (this.invalid) {
-				this.notice = null;
+			if (knownAddress) {
+				// @ts-ignore
+				this.notice = this.$t("INPUT_ADDRESS.KNOWN_ADDRESS", { address: knownAddress });
+				// @ts-ignore
+			} else if (await this.checkNeoAddress(this.inputValue)) {
+				// @ts-ignore
+				this.notice = this.$t("INPUT_ADDRESS.NEO_ADDRESS");
 			} else {
-				const knownAddress = this.wallet_name(this.inputValue);
-
-				if (knownAddress) {
-					this.notice = this.$t("INPUT_ADDRESS.KNOWN_ADDRESS", { address: knownAddress });
-				} else if (await this.checkNeoAddress(this.inputValue)) {
-					this.notice = this.$t("INPUT_ADDRESS.NEO_ADDRESS");
-				} else {
-					this.notice = null;
-				}
+				// @ts-ignore
+				this.notice = null;
 			}
-		},
-	},
+		}
+	}
+
+	// @ts-ignore
+	data(vm) {
+		return {
+			inputValue: vm.value,
+		};
+	}
+
+	get currentProfile() {
+		// @ts-ignore
+		return this.session_profile;
+	}
+
+	get error() {
+		let error = null;
+
+		// @ts-ignore
+		if (!this.isDisabled && this.$v.model.$dirty && !(this.hasSuggestions && this.isFocused)) {
+			// @ts-ignore
+			if (!this.$v.model.required) {
+				// @ts-ignore
+				error = this.$t("INPUT_ADDRESS.ERROR.REQUIRED");
+				// @ts-ignore
+			} else if (!this.$v.model.isValid) {
+				// @ts-ignore
+				error = this.$t("INPUT_ADDRESS.ERROR.NOT_VALID");
+			}
+		}
+
+		return error;
+	}
+
+	get hasSuggestions() {
+		return !isEmpty(this.suggestions);
+	}
+
+	get invalid() {
+		// @ts-ignore
+		return this.$v.model.$dirty && (this.isInvalid || !!this.error);
+	}
+
+	get model() {
+		return this.dropdownValue || this.inputValue;
+	}
+
+	set model(value) {
+		this.updateInputValue(value);
+		this.$emit("input", value);
+	}
+
+	get suggestions() {
+		if (!this.currentProfile || !this.showSuggestions) {
+			return [];
+		}
+
+		const ledgerWallets = this.$store.getters["ledger/isConnected"] ? this.$store.getters["ledger/wallets"] : [];
+		const wallets = [...this.$store.getters["wallet/byProfileId"](this.currentProfile.id), ...ledgerWallets];
+		const contacts = this.$store.getters["wallet/contactsByProfileId"](this.currentProfile.id);
+
+		const source = unionBy(wallets, contacts, "address").filter((wallet) => wallet && !!wallet.address);
+
+		const addresses = source.map((wallet) => {
+			const address = {
+				name: null,
+				address: wallet.address,
+			};
+
+			// @ts-ignore
+			const walletName = this.wallet_name(wallet.address);
+			if (walletName && walletName !== wallet.address) {
+				// @ts-ignore
+				address.name = `${truncate(walletName, 25)} (${this.wallet_truncate(wallet.address)})`;
+			}
+
+			return address;
+		});
+
+		const results = orderBy(addresses, (object) => {
+			return (object.name || object.address).toLowerCase();
+		});
+
+		return results.reduce((wallets, wallet) => {
+			const value = wallet.name || wallet.address;
+			const searchValue = value.toLowerCase();
+
+			// @ts-ignore
+			if (searchValue && searchValue.includes(this.inputValue.toLowerCase())) {
+				// @ts-ignore
+				wallets[wallet.address] = value;
+			}
+
+			return wallets;
+		}, {});
+	}
+
+	get suggestionsKeys() {
+		return new Cycled(Object.keys(this.suggestions));
+	}
 
 	mounted() {
 		if (this.value) {
 			this.updateInputValue(this.value);
 		}
-	},
+	}
 
-	methods: {
-		blur() {
-			this.$refs.input.blur();
-		},
+	blur() {
+		// @ts-ignore
+		this.$refs.input.blur();
+	}
 
-		focus() {
-			this.$refs.input.focus();
-		},
+	focus() {
+		// @ts-ignore
+		this.$refs.input.focus();
+	}
 
-		/**
-		 * Checks if there is a NEO wallet with the same address and memoizes the result
-		 * @param {String}
-		 * @result {Boolean}
-		 */
-		async checkNeoAddress(address) {
-			const wasChecked = Object.prototype.hasOwnProperty.call(this.neoCheckedAddressess, address);
-			if (!wasChecked) {
-				this.neoCheckedAddressess[address] = await WalletService.isNeoAddress(address);
-			}
-			return this.neoCheckedAddressess[address];
-		},
+	// @ts-ignore
+	async checkNeoAddress(address) {
+		const wasChecked = Object.prototype.hasOwnProperty.call(this.neoCheckedAddressess, address);
+		if (!wasChecked) {
+			// @ts-ignore
+			this.neoCheckedAddressess[address] = await WalletService.isNeoAddress(address);
+		}
+		// @ts-ignore
+		return this.neoCheckedAddressess[address];
+	}
 
-		onBlur(event) {
-			// Verifies that the element that generated the blur was a dropdown item
-			if (event.relatedTarget) {
-				const classList = event.relatedTarget.classList;
+	// @ts-ignore
+	onBlur(event) {
+		// Verifies that the element that generated the blur was a dropdown item
+		if (event.relatedTarget) {
+			const classList = event.relatedTarget.classList;
 
-				const isDropdownItem =
-					classList && typeof classList.contains === "function"
-						? classList.contains("MenuDropdownItem__button")
-						: false;
+			const isDropdownItem =
+				classList && typeof classList.contains === "function"
+					? classList.contains("MenuDropdownItem__button")
+					: false;
 
-				if (!isDropdownItem) {
-					this.closeDropdown();
-				}
-			} else if (this.$refs.dropdown.isOpen) {
+			if (!isDropdownItem) {
 				this.closeDropdown();
 			}
-
-			this.isFocused = false;
-
-			// If the user selects a suggestion and leaves the input
-			if (this.dropdownValue) {
-				this.onEnter();
-			}
-		},
-
-		onDropdownSelect(value) {
-			this.model = value;
-			this.$nextTick(() => this.closeDropdown());
-		},
-
-		onFocus() {
-			this.isFocused = true;
-			this.$emit("focus");
-		},
-
-		onEnter() {
-			if (!this.dropdownValue) {
-				return;
-			}
-
-			this.model = this.dropdownValue;
-
-			this.$nextTick(() => {
-				this.closeDropdown();
-				this.$refs.input.setSelectionRange(this.inputValue.length, this.inputValue.length);
-			});
-		},
-
-		onEsc() {
-			this.dropdownValue = null;
+			// @ts-ignore
+		} else if (this.$refs.dropdown.isOpen) {
 			this.closeDropdown();
-		},
+		}
 
-		onKeyUp() {
-			const next = this.dropdownValue ? this.suggestionsKeys.previous() : this.suggestionsKeys.current();
-			this.__setSuggestion(next);
-		},
+		this.isFocused = false;
 
-		onKeyDown() {
-			const next = this.dropdownValue ? this.suggestionsKeys.next() : this.suggestionsKeys.current();
-			this.__setSuggestion(next);
-		},
+		// If the user selects a suggestion and leaves the input
+		if (this.dropdownValue) {
+			this.onEnter();
+		}
+	}
 
-		onDecodeQR(value, toggle) {
-			this.model = this.qr_getAddress(value);
+	// @ts-ignore
+	onDropdownSelect(value) {
+		this.model = value;
+		this.$nextTick(() => this.closeDropdown());
+	}
 
-			// Check if we were unable to retrieve an address from the qr
-			if ((this.inputValue === "" || this.inputValue === undefined) && this.inputValue !== value) {
-				this.$error(this.$t("MODAL_QR_SCANNER.DECODE_FAILED", { data: value }));
-			}
-			toggle();
-		},
+	onFocus() {
+		this.isFocused = true;
+		this.$emit("focus");
+	}
 
-		closeDropdown() {
-			this.$refs.dropdown.close();
-		},
+	onEnter() {
+		if (!this.dropdownValue) {
+			return;
+		}
 
-		openDropdown() {
-			this.$refs.dropdown.open();
-		},
+		this.model = this.dropdownValue;
 
-		updateInputValue(value) {
-			this.inputValue = value;
+		this.$nextTick(() => {
+			this.closeDropdown();
+			// @ts-ignore
+			this.$refs.input.setSelectionRange(this.inputValue.length, this.inputValue.length);
+		});
+	}
 
-			this.$eventBus.emit("change");
+	onEsc() {
+		this.dropdownValue = null;
+		this.closeDropdown();
+	}
 
-			// Inform Vuelidate that the value changed
-			this.$v.model.$touch();
-		},
+	onKeyUp() {
+		const next = this.dropdownValue ? this.suggestionsKeys.previous() : this.suggestionsKeys.current();
+		this.__setSuggestion(next);
+	}
 
-		__setSuggestion(value) {
-			if (!this.hasSuggestions) {
-				return;
-			}
+	onKeyDown() {
+		const next = this.dropdownValue ? this.suggestionsKeys.next() : this.suggestionsKeys.current();
+		this.__setSuggestion(next);
+	}
 
-			this.dropdownValue = value;
-			this.$nextTick(() => {
-				this.$refs.input.setSelectionRange(this.inputValue.length, this.dropdownValue.length);
-			});
-		},
+	// @ts-ignore
+	onDecodeQR(value, toggle) {
+		// @ts-ignore
+		this.model = this.qr_getAddress(value);
 
-		reset() {
-			this.model = "";
-			this.$nextTick(() => {
-				this.$v.$reset();
-			});
-		},
-	},
+		// Check if we were unable to retrieve an address from the qr
+		if ((this.inputValue === "" || this.inputValue === undefined) && this.inputValue !== value) {
+			// @ts-ignore
+			this.$error(this.$t("MODAL_QR_SCANNER.DECODE_FAILED", { data: value }));
+		}
+		toggle();
+	}
 
-	validations: {
-		model: {
-			required(value) {
-				return this.isRequired ? required(value) : true;
+	closeDropdown() {
+		// @ts-ignore
+		this.$refs.dropdown.close();
+	}
+
+	openDropdown() {
+		// @ts-ignore
+		this.$refs.dropdown.open();
+	}
+
+	// @ts-ignore
+	updateInputValue(value) {
+		this.inputValue = value;
+
+		this.$eventBus.emit("change");
+
+		// Inform Vuelidate that the value changed
+		// @ts-ignore
+		this.$v.model.$touch();
+	}
+
+	// @ts-ignore
+	__setSuggestion(value) {
+		if (!this.hasSuggestions) {
+			return;
+		}
+
+		this.dropdownValue = value;
+		this.$nextTick(() => {
+			// @ts-ignore
+			this.$refs.input.setSelectionRange(this.inputValue.length, this.dropdownValue.length);
+		});
+	}
+
+	reset() {
+		// @ts-ignore
+		this.model = "";
+		this.$nextTick(() => {
+			// @ts-ignore
+			this.$v.$reset();
+		});
+	}
+
+	validations() {
+		return {
+			model: {
+				// @ts-ignore
+				required(value) {
+					// @ts-ignore
+					return this.isRequired ? required(value) : true;
+				},
+
+				// @ts-ignore
+				isValid(value) {
+					// @ts-ignore
+					if (!this.isRequired && value.replace(/\s+/, "") === "") {
+						return true;
+					}
+
+					// @ts-ignore
+					return WalletService.validateAddress(value, this.pubKeyHash);
+				},
 			},
-
-			isValid(value) {
-				if (!this.isRequired && value.replace(/\s+/, "") === "") {
-					return true;
-				}
-
-				return WalletService.validateAddress(value, this.pubKeyHash);
-			},
-		},
-	},
-};
+		};
+	}
+}
 </script>
 
 <style lang="postcss" scoped>

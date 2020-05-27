@@ -7,19 +7,19 @@
 		}"
 		class="AppSidemenu"
 	>
-		<div class="AppSidemenu__container flexify w-full md:h-full justify-between">
+		<div class="justify-between w-full AppSidemenu__container flexify md:h-full">
 			<!-- ARK logo -->
 			<RouterLink
 				:title="$t('APP_SIDEMENU.DASHBOARD')"
 				:to="{ name: 'dashboard' }"
-				class="AppSidemenu__logo bg-red hover:opacity-85 flex justify-center items-center"
+				class="flex items-center justify-center AppSidemenu__logo bg-red hover:opacity-85"
 				@click.native="redirect('dashboard')"
 			>
 				<img src="@/assets/images/ark-logo.png" />
 			</RouterLink>
 
 			<div
-				class="AppSidemenu__container__scrollable flex-1 overflow-y-auto flexify justify-between bg-theme-feature"
+				class="justify-between flex-1 overflow-y-auto AppSidemenu__container__scrollable flexify bg-theme-feature"
 			>
 				<div class="flexify">
 					<!-- Wallets -->
@@ -102,7 +102,7 @@
 					<!-- Profile settings -->
 					<div
 						:class="isHorizontal ? 'ml-2 mr-4 py-3' : 'mt-2 mb-4 px-3'"
-						class="AppSidemenu__avatar__container relative cursor-pointer flex items-center justify-center hover:opacity-50"
+						class="relative flex items-center justify-center cursor-pointer AppSidemenu__avatar__container hover:opacity-50"
 					>
 						<RouterLink :to="{ name: 'profiles' }" class="AppSidemenu__avatar">
 							<ProfileAvatar
@@ -128,8 +128,9 @@
 	</MenuNavigation>
 </template>
 
-<script>
+<script lang="ts">
 import { ipcRenderer } from "electron";
+import { Component, Prop, Vue } from "vue-property-decorator";
 import { mapGetters } from "vuex";
 
 import { MenuNavigation, MenuNavigationItem } from "@/components/Menu";
@@ -142,7 +143,7 @@ import AppSidemenuNetworkStatus from "./AppSidemenuNetworkStatus";
 import AppSidemenuPlugins from "./AppSidemenuPlugins";
 import AppSidemenuSettings from "./AppSidemenuSettings";
 
-export default {
+@Component({
 	name: "AppSidemenu",
 
 	components: {
@@ -156,76 +157,92 @@ export default {
 		SvgIcon,
 	},
 
-	props: {
-		isHorizontal: {
-			type: Boolean,
-			required: false,
-			default: false,
-		},
-	},
-
-	data: (vm) => ({
-		isImportantNotificationVisible: true,
-		isPluginMenuVisible: false,
-		activeItem: vm.$route.name,
-	}),
-
 	computed: {
 		...mapGetters({
 			hasAvailableRelease: "updater/hasAvailableRelease",
 			unreadAnnouncements: "announcements/unread",
 		}),
-		showUnread() {
-			return this.unreadAnnouncements.length > 0;
-		},
-		hasPluginMenuItems() {
-			return this.$store.getters["plugin/menuItems"].length;
-		},
-		hasStandardAvatar() {
-			return this.session_profile.avatar && typeof this.session_profile.avatar === "string";
-		},
-		pluginAvatar() {
-			if (this.session_profile.avatar && this.session_profile.avatar.pluginId) {
-				return this.$store.getters["plugin/avatar"](this.session_profile.avatar);
-			}
-
-			return null;
-		},
 	},
+})
+export default class AppSidemenu extends Vue {
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	// @ts-ignore
+	isHorizontal;
+
+	isImportantNotificationVisible = true;
+	isPluginMenuVisible = false;
+	activeItem = null;
+
+	// @ts-ignore
+	data(vm) {
+		return {
+			activeItem: vm.$route.name,
+		};
+	}
+
+	get showUnread() {
+		// @ts-ignore
+		return this.unreadAnnouncements.length > 0;
+	}
+
+	get hasPluginMenuItems() {
+		return this.$store.getters["plugin/menuItems"].length;
+	}
+
+	get hasStandardAvatar() {
+		// @ts-ignore
+		return this.session_profile.avatar && typeof this.session_profile.avatar === "string";
+	}
+
+	get pluginAvatar() {
+		// @ts-ignore
+		if (this.session_profile.avatar && this.session_profile.avatar.pluginId) {
+			// @ts-ignore
+			return this.$store.getters["plugin/avatar"](this.session_profile.avatar);
+		}
+
+		return null;
+	}
 
 	created() {
 		ipcRenderer.on(AppEvent.AppPreferences, () => {
+			// @ts-ignore
 			this.$refs.settings.showSettings();
 		});
-	},
+	}
 
-	methods: {
-		redirect(name) {
-			this.setActive(name);
-			this.$router.push({ name });
-		},
+	// @ts-ignore
+	redirect(name) {
+		this.setActive(name);
+		this.$router.push({ name });
+	}
 
-		setActive(name) {
-			this.activeItem = name;
-		},
+	// @ts-ignore
+	setActive(name) {
+		this.activeItem = name;
+	}
 
-		hideImportantNotification() {
-			this.isImportantNotificationVisible = false;
-		},
+	hideImportantNotification() {
+		this.isImportantNotificationVisible = false;
+	}
 
-		toggleShowPluginMenu() {
-			this.isPluginMenuVisible = !this.isPluginMenuVisible;
-		},
+	toggleShowPluginMenu() {
+		this.isPluginMenuVisible = !this.isPluginMenuVisible;
+	}
 
-		closeShowPlugins(setActive) {
-			if (setActive) {
-				this.setActive("plugin-pages");
-			}
+	// @ts-ignore
+	closeShowPlugins(setActive) {
+		if (setActive) {
+			this.setActive("plugin-pages");
+		}
 
-			this.isPluginMenuVisible = false;
-		},
-	},
-};
+		this.isPluginMenuVisible = false;
+	}
+}
 </script>
 
 <style lang="postcss" scoped>

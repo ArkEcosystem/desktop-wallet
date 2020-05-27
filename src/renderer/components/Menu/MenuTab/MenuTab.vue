@@ -1,7 +1,7 @@
 <template>
-	<div class="MenuTab bg-theme-feature overflow-hidden">
+	<div class="overflow-hidden MenuTab bg-theme-feature">
 		<nav class="MenuTab__nav bg-theme-feature-item-alternative text-theme-feature-item-alternative-text">
-			<div class="MenuTab__nav__items inline-flex justify-start items-center">
+			<div class="inline-flex items-center justify-start MenuTab__nav__items">
 				<button
 					v-for="item in items"
 					:key="item.tab"
@@ -11,7 +11,7 @@
 						'MenuTab__nav__item--clickable': !!item.onClick,
 					}"
 					:disabled="item.isDisabled"
-					class="MenuTab__nav__item text-inherit appearance-none cursor-pointer font-semibold px-5 py-4 flex justify-center items-center bg-theme-feature-item-alternative hover:bg-theme-feature-item-hover hover:text-theme-feature-item-selected-text"
+					class="flex items-center justify-center px-5 py-4 font-semibold appearance-none cursor-pointer MenuTab__nav__item text-inherit bg-theme-feature-item-alternative hover:bg-theme-feature-item-hover hover:text-theme-feature-item-selected-text"
 					@click="item.onClick ? item.onClick() : switchToTab(item.tab)"
 				>
 					<template v-if="item.$slots.header">
@@ -24,15 +24,18 @@
 				</button>
 			</div>
 		</nav>
-		<section class="MenuTab__content p-5 overflow-y-auto">
+		<section class="p-5 overflow-y-auto MenuTab__content">
 			<slot />
 		</section>
 	</div>
 </template>
 
 <script>
+import { Component, Prop, Vue, Watch } from "vue-property-decorator";
+
 import VNodes from "@/components/utils/VNodes";
-export default {
+
+@Component({
 	name: "MenuTab",
 
 	components: {
@@ -43,52 +46,53 @@ export default {
 		prop: "tab",
 		event: "input",
 	},
+})
+export default class MenuTab extends Vue {
+	@Prop({
+		type: [String, Number],
+		required: false,
+		default: null,
+	})
+	tab;
 
-	props: {
-		tab: {
-			type: [String, Number],
-			required: false,
-			default: null,
-		},
-	},
+	activeTab = null;
+	items = [];
 
-	data: (vm) => ({
-		activeTab: vm.tab,
-		items: [],
-	}),
+	@Watch("tab")
+	onTab() {
+		this.switchToTab(this.tab);
+	}
 
-	watch: {
-		tab() {
-			this.switchToTab(this.tab);
-		},
-	},
+	data(vm) {
+		return {
+			activeTab: vm.tab,
+		};
+	}
 
 	mounted() {
 		this.collectItems();
 		this.switchToTab(this.activeTab);
-	},
+	}
 
-	methods: {
-		collectItems() {
-			this.items = this.$children.filter((child) => {
-				return child.$options.name === "MenuTabItem";
-			});
-		},
+	collectItems() {
+		this.items = this.$children.filter((child) => {
+			return child.$options.name === "MenuTabItem";
+		});
+	}
 
-		switchToTab(newTab) {
-			this.resetScroll();
-			this.items.forEach((item) => item.toggle(item.tab === newTab));
-			this.activeTab = newTab;
-			this.$emit("input", this.activeTab);
-		},
+	switchToTab(newTab) {
+		this.resetScroll();
+		this.items.forEach((item) => item.toggle(item.tab === newTab));
+		this.activeTab = newTab;
+		this.$emit("input", this.activeTab);
+	}
 
-		resetScroll() {
-			if (this.$el.scrollTop > 0) {
-				this.$el.scrollTo(0, 0);
-			}
-		},
-	},
-};
+	resetScroll() {
+		if (this.$el.scrollTop > 0) {
+			this.$el.scrollTo(0, 0);
+		}
+	}
+}
 </script>
 
 <style lang="postcss" scoped>

@@ -73,13 +73,14 @@
 
 <script>
 import { clone } from "lodash";
+import { Component, Vue, Watch } from "vue-property-decorator";
 
 import { ButtonClipboard, ButtonModal } from "@/components/Button";
 import SvgIcon from "@/components/SvgIcon";
 import { WalletSignModal, WalletVerifyModal } from "@/components/Wallet";
 import { StoreBinding } from "@/enums";
 
-export default {
+@Component({
 	name: "WalletSignVerify",
 
 	components: {
@@ -89,66 +90,58 @@ export default {
 		WalletSignModal,
 		WalletVerifyModal,
 	},
+})
+export default class WalletSignVerify extends Vue {
+	signedMessages = [];
+	showTimestamp = null;
+	activeWalletId = null;
 
-	props: {},
+	@Watch("currentWallet")
+	onCurrentWallet() {
+		if (this.activeWalletId !== this.currentWallet.id) {
+			this.updateSignedMessages();
+		}
+	}
 
-	data: () => ({
-		signedMessages: [],
-		showTimestamp: null,
-		activeWalletId: null,
-	}),
-
-	computed: {
-		currentWallet() {
-			return this.wallet_fromRoute;
-		},
-	},
-
-	watch: {
-		currentWallet() {
-			if (this.activeWalletId !== this.currentWallet.id) {
-				this.updateSignedMessages();
-			}
-		},
-	},
+	get currentWallet() {
+		return this.wallet_fromRoute;
+	}
 
 	mounted() {
 		this.updateSignedMessages();
-	},
+	}
 
-	methods: {
-		truncate(value, length) {
-			if (value.length > length + 3) {
-				return `${value.slice(0, length)}...`;
-			}
-			return value;
-		},
+	truncate(value, length) {
+		if (value.length > length + 3) {
+			return `${value.slice(0, length)}...`;
+		}
+		return value;
+	}
 
-		copyMessage(value) {
-			const message = clone(value, false);
-			delete message.timestamp;
-			delete message.address;
-			return JSON.stringify(message);
-		},
+	copyMessage(value) {
+		const message = clone(value, false);
+		delete message.timestamp;
+		delete message.address;
+		return JSON.stringify(message);
+	}
 
-		deleteMessage(value) {
-			const message = clone(value, false);
-			this.$store.dispatch(StoreBinding.WalletDeleteSignedMessage, message);
-		},
+	deleteMessage(value) {
+		const message = clone(value, false);
+		this.$store.dispatch(StoreBinding.WalletDeleteSignedMessage, message);
+	}
 
-		updateSignedMessages(setWalletId = true) {
-			if (setWalletId) {
-				this.activeWalletId = this.currentWallet.id;
-			}
-			this.signedMessages = this.$store.getters["wallet/signedMessages"](this.currentWallet.address);
-		},
+	updateSignedMessages(setWalletId = true) {
+		if (setWalletId) {
+			this.activeWalletId = this.currentWallet.id;
+		}
+		this.signedMessages = this.$store.getters["wallet/signedMessages"](this.currentWallet.address);
+	}
 
-		onSigned(toggle) {
-			toggle();
-			this.updateSignedMessages(false);
-		},
-	},
-};
+	onSigned(toggle) {
+		toggle();
+		this.updateSignedMessages(false);
+	}
+}
 </script>
 
 <style>

@@ -7,7 +7,7 @@
 		portal-target="loading"
 		@close="toggle"
 	>
-		<PluginLogo v-if="plugin" :plugin="plugin" class="mb-5 mx-auto" />
+		<PluginLogo v-if="plugin" :plugin="plugin" class="mx-auto mb-5" />
 
 		<h2 class="text-center">
 			{{ message }}
@@ -16,19 +16,21 @@
 			<Loader />
 		</div>
 
-		<div v-if="showClose" class="text-center text-theme-warn-text border-theme-warn border-t-2 p-2">
+		<div v-if="showClose" class="p-2 text-center border-t-2 text-theme-warn-text border-theme-warn">
 			{{ closeWarningMessage || $t("MODAL_LOADER.CLOSE_WARNING") }}
 		</div>
 	</ModalWindow>
 </template>
 
 <script>
+import { Component, Prop, Vue, Watch } from "vue-property-decorator";
+
 import PluginLogo from "@/components/PluginManager/PluginLogo";
 import Loader from "@/components/utils/Loader";
 
 import ModalWindow from "./ModalWindow";
 
-export default {
+@Component({
 	name: "ModalLoader",
 
 	components: {
@@ -36,80 +38,89 @@ export default {
 		ModalWindow,
 		PluginLogo,
 	},
+})
+export default class ModalLoader extends Vue {
+	@Prop({
+		type: String,
+		required: true,
+	})
+	message;
 
-	props: {
-		message: {
-			type: String,
-			required: true,
-		},
-		plugin: {
-			type: Object,
-			required: false,
-			default: null,
-		},
-		visible: {
-			type: Boolean,
-			required: false,
-			default: true,
-		},
-		allowClose: {
-			type: Boolean,
-			required: false,
-			default: false,
-		},
-		closeWarningDelay: {
-			type: Number,
-			required: false,
-			default: 15000,
-		},
-		closeWarningMessage: {
-			type: String,
-			required: false,
-			default: null,
-		},
-	},
+	@Prop({
+		type: Object,
+		required: false,
+		default: null,
+	})
+	plugin;
+
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: true,
+	})
+	visible;
+
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	allowClose;
+
+	@Prop({
+		type: Number,
+		required: false,
+		default: 15000,
+	})
+	closeWarningDelay;
+
+	@Prop({
+		type: String,
+		required: false,
+		default: null,
+	})
+	closeWarningMessage;
+
+	showClose = false;
+	showCloseTimeout = null;
+	isVisible = null;
+
+	@Watch("visible")
+	onVisible(value) {
+		this.isVisible = value;
+		if (value) {
+			this.triggerShowClose();
+		}
+	}
 
 	data(vm) {
 		return {
-			showClose: false,
-			showCloseTimeout: null,
 			isVisible: vm.visible,
 		};
-	},
-
-	watch: {
-		visible: function (value) {
-			this.isVisible = value;
-			if (value) {
-				this.triggerShowClose();
-			}
-		},
-	},
+	}
 
 	mounted() {
 		this.triggerShowClose();
-	},
+	}
 
-	methods: {
-		toggle() {
-			this.isVisible = !this.isVisible;
+	toggle() {
+		this.isVisible = !this.isVisible;
 
-			if (!this.isVisible) {
-				this.$emit("close");
+		if (!this.isVisible) {
+			this.$emit("close");
+		}
+	}
+
+	triggerShowClose() {
+		if (this.allowClose) {
+			if (this.showCloseTimeout || this.showClose) {
+				clearInterval(this.showCloseTimeout);
+				this.showClose = false;
 			}
-		},
-
-		triggerShowClose() {
-			if (this.allowClose) {
-				if (this.showCloseTimeout || this.showClose) {
-					clearInterval(this.showCloseTimeout);
-					this.showClose = false;
-				}
-				this.showCloseTimeout = setTimeout(() => {
-					this.showClose = true;
-				}, this.closeWarningDelay);
-			}
-		},
-	},
-};
+			this.showCloseTimeout = setTimeout(() => {
+				this.showClose = true;
+			}, this.closeWarningDelay);
+		}
+	}
+}
 </script>

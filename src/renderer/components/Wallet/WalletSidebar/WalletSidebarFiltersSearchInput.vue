@@ -1,6 +1,6 @@
 <template>
-	<div class="WalletSidebarFiltersSearchInput flex flex-row">
-		<div class="cursor-pointer mr-4 text-theme-settings-text" @click="focus">
+	<div class="flex flex-row WalletSidebarFiltersSearchInput">
+		<div class="mr-4 cursor-pointer text-theme-settings-text" @click="focus">
 			<SvgIcon name="search" view-box="0 0 17 16" />
 		</div>
 
@@ -8,7 +8,7 @@
 			ref="input"
 			:placeholder="placeholder"
 			:value="inputValue"
-			class="WalletSidebarFiltersSearchInput____input flex flex-grow bg-transparent text-theme-settings-text font-semibold"
+			class="flex flex-grow font-semibold bg-transparent WalletSidebarFiltersSearchInput____input text-theme-settings-text"
 			name="wallet-sidebar-filters-search"
 			type="text"
 			@input="updateInput"
@@ -17,53 +17,56 @@
 </template>
 
 <script>
+import { Component, Prop, Vue, Watch } from "vue-property-decorator";
+
 import SvgIcon from "@/components/SvgIcon";
 
-export default {
+@Component({
 	name: "WalletSidebarFiltersInputSearch",
 
 	components: {
 		SvgIcon,
 	},
+})
+export default class WalletSidebarFiltersInputSearch extends Vue {
+	@Prop({
+		type: String,
+		required: false,
+		default: "",
+	})
+	placeholder;
 
-	props: {
-		placeholder: {
-			type: String,
-			required: false,
-			default: "",
-		},
-		value: {
-			type: String,
-			required: true,
-			default: "",
-		},
-	},
+	@Prop({
+		type: String,
+		required: true,
+		default: "",
+	})
+	value;
+
+	inputValue = undefined;
+
+	@Watch("value")
+	onValue(value) {
+		this.inputValue = value;
+	}
 
 	data() {
 		return {
 			inputValue: this.value,
 		};
-	},
+	}
 
-	watch: {
-		value(value) {
-			this.inputValue = value;
-		},
-	},
+	emitInput() {
+		this.$emit("input", this.inputValue);
+	}
 
-	methods: {
-		emitInput() {
-			this.$emit("input", this.inputValue);
-		},
+	updateInput(event) {
+		this.inputValue = event.target.value;
+		this.emitInput();
+	}
 
-		updateInput(event) {
-			this.inputValue = event.target.value;
-			this.emitInput();
-		},
-
-		focus() {
-			this.$refs.input.focus();
-		},
-	},
-};
+	focus() {
+		this.$refs.input.focus();
+	}
+}
 </script>

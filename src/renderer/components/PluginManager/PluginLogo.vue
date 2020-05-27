@@ -7,27 +7,31 @@
 </template>
 
 <script>
+import { Component, Prop, Vue } from "vue-property-decorator";
+
 import PluginIdenticon from "@/components/PluginManager/PluginIdenticon";
 
-export default {
+@Component({
 	name: "PluginLogo",
 
 	components: {
 		PluginIdenticon,
 	},
+})
+export default class PluginLogo extends Vue {
+	@Prop({
+		type: Object,
+		required: true,
+	})
+	plugin;
 
-	props: {
-		plugin: {
-			type: Object,
-			required: true,
-		},
-		size: {
-			type: Number,
-			required: false,
-			default: 80,
-		},
-	},
-};
+	@Prop({
+		type: Number,
+		required: false,
+		default: 80,
+	})
+	size;
+}
 </script>
 
 <style lang="postcss" scoped>

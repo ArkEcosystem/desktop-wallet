@@ -8,17 +8,18 @@
 </template>
 
 <script>
-export default {
+import { Component, Prop, Vue } from "vue-property-decorator";
+@Component({
 	name: "SearchFilterItem",
-
-	props: {
-		label: {
-			type: String,
-			required: false,
-			default: null,
-		},
-	},
-};
+})
+export default class SearchFilterItem extends Vue {
+	@Prop({
+		type: String,
+		required: false,
+		default: null,
+	})
+	label;
+}
 </script>
 
 <style lang="postcss" scoped>

@@ -85,6 +85,7 @@
 
 <script>
 import { TRANSACTION_GROUPS, TRANSACTION_TYPES } from "@config";
+import { Component, Vue } from "vue-property-decorator";
 
 import { InputFee, InputPassword } from "@/components/Input";
 import { ListDivided, ListDividedItem } from "@/components/ListDivided";
@@ -94,12 +95,8 @@ import WalletService from "@/services/wallet";
 
 import mixin from "../mixin";
 
-export default {
+@Component({
 	name: "TransactionFormBusinessResignation",
-
-	transactionGroup: TRANSACTION_GROUPS.MAGISTRATE,
-
-	transactionType: TRANSACTION_TYPES.GROUP_2.BUSINESS_RESIGNATION,
 
 	components: {
 		InputFee,
@@ -111,55 +108,55 @@ export default {
 	},
 
 	mixins: [mixin],
+})
+export default class TransactionFormBusinessResignation extends Vue {
+	transactionGroup = TRANSACTION_GROUPS.MAGISTRATE;
+	transactionType = TRANSACTION_TYPES.GROUP_2.BUSINESS_RESIGNATION;
 
-	data: () => ({
-		form: {
-			fee: 0,
-			passphrase: "",
-			walletPassword: "",
-		},
-	}),
+	form = {
+		fee: 0,
+		passphrase: "",
+		walletPassword: "",
+	};
 
-	computed: {
-		canResignBusiness() {
-			return WalletService.canResignBusiness(this.currentWallet);
-		},
-	},
+	get canResignBusiness() {
+		return WalletService.canResignBusiness(this.currentWallet);
+	}
 
-	methods: {
-		getTransactionData() {
-			const transactionData = {
-				address: this.currentWallet.address,
-				passphrase: this.form.passphrase,
-				fee: this.getFee(),
-				wif: this.form.wif,
-				networkWif: this.walletNetwork.wif,
-				multiSignature: this.currentWallet.multiSignature,
-			};
+	getTransactionData() {
+		const transactionData = {
+			address: this.currentWallet.address,
+			passphrase: this.form.passphrase,
+			fee: this.getFee(),
+			wif: this.form.wif,
+			networkWif: this.walletNetwork.wif,
+			multiSignature: this.currentWallet.multiSignature,
+		};
 
-			if (this.currentWallet.secondPublicKey) {
-				transactionData.secondPassphrase = this.form.secondPassphrase;
-			}
+		if (this.currentWallet.secondPublicKey) {
+			transactionData.secondPassphrase = this.form.secondPassphrase;
+		}
 
-			return transactionData;
-		},
+		return transactionData;
+	}
 
-		async buildTransaction(transactionData, isAdvancedFee = false, returnObject = false) {
-			return this.$client.buildBusinessResignation(transactionData, isAdvancedFee, returnObject);
-		},
+	buildTransaction(transactionData, isAdvancedFee = false, returnObject = false) {
+		return this.$client.buildBusinessResignation(transactionData, isAdvancedFee, returnObject);
+	}
 
-		transactionError() {
-			this.$error(this.$t("TRANSACTION.ERROR.VALIDATION.BUSINESS_RESIGNATION"));
-		},
-	},
+	transactionError() {
+		this.$error(this.$t("TRANSACTION.ERROR.VALIDATION.BUSINESS_RESIGNATION"));
+	}
 
-	validations: {
-		form: {
-			fee: mixin.validators.fee,
-			passphrase: mixin.validators.passphrase,
-			walletPassword: mixin.validators.walletPassword,
-			secondPassphrase: mixin.validators.secondPassphrase,
-		},
-	},
-};
+	validations() {
+		return {
+			form: {
+				fee: mixin.validators.fee,
+				passphrase: mixin.validators.passphrase,
+				walletPassword: mixin.validators.walletPassword,
+				secondPassphrase: mixin.validators.secondPassphrase,
+			},
+		}
+	};
+}
 </script>

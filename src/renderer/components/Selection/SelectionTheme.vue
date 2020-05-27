@@ -8,42 +8,38 @@
 	</div>
 </template>
 
-<script>
+<script lang="ts">
+import { Component, Emit, Prop, Vue } from "vue-property-decorator";
+
 import { ButtonSwitch } from "@/components/Button";
 import { SvgIcon } from "@/components/SvgIcon";
 
-export default {
-	name: "SelectionTheme",
-
-	themes: {
-		light: false,
-		dark: true,
-	},
-
+@Component({
 	components: {
 		ButtonSwitch,
 		SvgIcon,
 	},
+})
+export default class SelectionTheme extends Vue {
+	@Prop({ default: null }) public value!: string | null;
 
-	props: {
-		value: {
-			type: String,
-			required: false,
-			default: null,
-		},
-	},
+	private themes: object = {
+		light: false,
+		dark: true,
+	};
 
-	computed: {
-		status() {
-			return this.$options.themes[this.value];
-		},
-	},
+	get status() {
+		if (this.value) {
+			return this.themes[this.value];
+		}
 
-	methods: {
-		emitInput(status) {
-			const theme = Object.keys(this.$options.themes).find((theme) => this.$options.themes[theme] === status);
-			this.$emit("input", theme);
-		},
-	},
-};
+		return false;
+	}
+
+	@Emit('input')
+	emitInput(status) {
+		const theme = Object.keys(this.themes).find((theme) => this.themes[theme] === status);
+		return theme;
+	}
+}
 </script>

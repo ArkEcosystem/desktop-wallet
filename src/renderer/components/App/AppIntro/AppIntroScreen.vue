@@ -60,73 +60,83 @@
 	</div>
 </template>
 
-<script>
+<script lang="ts">
+import { Component, Prop, Vue } from "vue-property-decorator";
+
 import { ButtonGeneric } from "@/components/Button";
 
-export default {
+@Component({
 	name: "AppIntroScreen",
 
 	components: {
 		ButtonGeneric,
 	},
+})
+export default class AppIntroScreen extends Vue {
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: true,
+	})
+	showBack;
 
-	props: {
-		showBack: {
-			type: Boolean,
-			required: false,
-			default: true,
-		},
-		showLogo: {
-			type: Boolean,
-			required: false,
-			default: true,
-		},
-		showNext: {
-			type: Boolean,
-			required: false,
-			default: true,
-		},
-		showSkip: {
-			type: Boolean,
-			required: false,
-			default: true,
-		},
-		image: {
-			type: String,
-			required: true,
-		},
-		showGradient: {
-			type: Boolean,
-			required: false,
-			default: true,
-		},
-		contentClasses: {
-			type: String,
-			required: false,
-			default: "font-medium px-16 mt-10 overflow-y-auto",
-		},
-	},
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: true,
+	})
+	showLogo;
 
-	computed: {
-		showFooter() {
-			return this.showBack || this.showNext || this.showSkip;
-		},
-	},
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: true,
+	})
+	showNext;
 
-	methods: {
-		emitBack() {
-			this.$emit("back");
-		},
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: true,
+	})
+	showSkip;
 
-		emitNext() {
-			this.$emit("next");
-		},
+	@Prop({
+		type: String,
+		required: true,
+	})
+	image;
 
-		emitSkip() {
-			this.$emit("skip");
-		},
-	},
-};
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: true,
+	})
+	showGradient;
+
+	@Prop({
+		type: String,
+		required: false,
+		default: "font-medium px-16 mt-10 overflow-y-auto",
+	})
+	contentClasses;
+
+	get showFooter() {
+		return this.showBack || this.showNext || this.showSkip;
+	}
+
+	emitBack() {
+		this.$emit("back");
+	}
+
+	emitNext() {
+		this.$emit("next");
+	}
+
+	emitSkip() {
+		this.$emit("skip");
+	}
+}
 </script>
 
 <style lang="postcss" scoped>

@@ -21,67 +21,73 @@
 </template>
 
 <script>
+import { Component, Prop, Vue } from "vue-property-decorator";
+
 import { InputEditableList } from "@/components/Input";
 import truncateMiddle from "@/filters/truncate-middle";
 
-export default {
+@Component({
 	name: "TransactionMultiSignatureList",
 
 	components: {
 		InputEditableList,
 	},
+})
+export default class TransactionMultiSignatureList extends Vue {
+	@Prop({
+		type: String,
+		required: false,
+		default: "Public Keys",
+	})
+	title;
 
-	props: {
-		title: {
-			type: String,
-			required: false,
-			default: "Public Keys",
-		},
+	@Prop({
+		type: Array,
+		required: true,
+	})
+	items;
 
-		items: {
-			type: Array,
-			required: true,
-		},
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	showCount;
 
-		showCount: {
-			type: Boolean,
-			required: false,
-			default: false,
-		},
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	readonly;
 
-		readonly: {
-			type: Boolean,
-			required: false,
-			default: false,
-		},
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	required;
 
-		required: {
-			type: Boolean,
-			required: false,
-			default: false,
-		},
+	@Prop({
+		type: String,
+		required: false,
+		default: null,
+	})
+	helperText;
 
-		helperText: {
-			type: String,
-			required: false,
-			default: null,
-		},
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	isInvalid;
 
-		isInvalid: {
-			type: Boolean,
-			required: false,
-			default: false,
-		},
-	},
+	emitRemove(index) {
+		this.$emit("remove", index);
+	}
 
-	methods: {
-		emitRemove(index) {
-			this.$emit("remove", index);
-		},
-
-		formatItem(value, limit = 10) {
-			return truncateMiddle(value, limit);
-		},
-	},
-};
+	formatItem(value, limit = 10) {
+		return truncateMiddle(value, limit);
+	}
+}
 </script>

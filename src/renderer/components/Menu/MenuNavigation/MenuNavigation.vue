@@ -5,40 +5,39 @@
 </template>
 
 <script>
-export default {
-	name: "MenuNavigation",
+import { Component, Prop, Provide, Vue, Watch } from "vue-property-decorator";
 
-	provide() {
-		return {
-			switchToItem: this.switchToItem,
-		};
-	},
+@Component({
+	name: "MenuNavigation",
 
 	model: {
 		prop: "id",
 		event: "input",
 	},
+})
+export default class MenuNavigation extends Vue {
+	@Prop({
+		type: [Number, String],
+		required: false,
+		default: null,
+	})
+	id;
 
-	props: {
-		id: {
-			type: [Number, String],
-			required: false,
-			default: null,
-		},
-	},
+	items = [];
+	activeId = null;
 
-	data: (vm) => ({
-		items: [],
-		activeId: vm.id,
-	}),
+	@Watch("id")
+	onId(value) {
+		if (this.activeId !== value) {
+			this.activateItem(value);
+		}
+	}
 
-	watch: {
-		id(value) {
-			if (this.activeId !== value) {
-				this.activateItem(value);
-			}
-		},
-	},
+	data(vm) {
+		return {
+			activeId: vm.id,
+		};
+	}
 
 	mounted() {
 		this.collectItems();
@@ -46,24 +45,23 @@ export default {
 		if (this.activeId) {
 			this.activateItem(this.activeId);
 		}
-	},
+	}
 
-	methods: {
-		collectItems() {
-			this.items = this.collections_filterChildren("MenuNavigationItem") || [];
-		},
+	collectItems() {
+		this.items = this.collections_filterChildren("MenuNavigationItem") || [];
+	}
 
-		activateItem(itemId) {
-			this.items.forEach((item) => item.toggle(item.id === itemId));
-			this.activeId = itemId;
-		},
+	activateItem(itemId) {
+		this.items.forEach((item) => item.toggle(item.id === itemId));
+		this.activeId = itemId;
+	}
 
-		switchToItem(itemId) {
-			if (this.activeId !== itemId) {
-				this.activateItem(itemId);
-				this.$emit("input", this.activeId);
-			}
-		},
-	},
-};
+	@Provide("switchToItem")
+	switchToItem(itemId) {
+		if (this.activeId !== itemId) {
+			this.activateItem(itemId);
+			this.$emit("input", this.activeId);
+		}
+	}
+}
 </script>

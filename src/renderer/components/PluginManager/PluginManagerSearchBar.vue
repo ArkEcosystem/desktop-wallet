@@ -15,43 +15,42 @@
 
 <script>
 import { debounce } from "lodash";
+import { Component, Vue, Watch } from "vue-property-decorator";
 
 import SvgIcon from "@/components/SvgIcon";
 
-export default {
+@Component({
 	name: "PluginManagerSearchBar",
 
 	components: {
 		SvgIcon,
 	},
+})
+export default class PluginManagerSearchBar extends Vue {
+	query = null;
 
-	data: () => ({
-		query: null,
-	}),
+	@Watch("query")
+	onQuery() {
+		this.emitSearch();
+	}
 
-	watch: {
-		query() {
-			this.emitSearch();
-		},
-	},
-
-	methods: {
-		update: debounce(function (event) {
+	update() {
+		return debounce(function (event) {
 			this.query = event.target.value;
-		}, 500),
+		}, 500);
+	}
 
-		emitSearch() {
-			const query = this.query ? this.query.toLowerCase() : null;
+	emitSearch() {
+		const query = this.query ? this.query.toLowerCase() : null;
 
-			if (!query || query.length >= 3) {
-				this.$emit("search", query);
-			}
-		},
+		if (!query || query.length >= 3) {
+			this.$emit("search", query);
+		}
+	}
 
-		onEscKey() {
-			this.query = null;
-			this.$refs.search.blur();
-		},
-	},
-};
+	onEscKey() {
+		this.query = null;
+		this.$refs.search.blur();
+	}
+}
 </script>

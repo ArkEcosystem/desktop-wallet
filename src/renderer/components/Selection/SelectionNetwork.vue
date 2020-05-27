@@ -28,11 +28,11 @@
 		>
 			<div class="flex flex-col justify-between p-1">
 				<span
-					class="text-3xl tracking-wide w-16 h-16 flex mx-auto justify-center items-center text-theme-page-text-light"
+					class="flex items-center justify-center w-16 h-16 mx-auto text-3xl tracking-wide text-theme-page-text-light"
 				>
 					...
 				</span>
-				<span class="w-full block text-theme-page-text font-semibold truncate text-theme-page-text-light">
+				<span class="block w-full font-semibold truncate text-theme-page-text text-theme-page-text-light">
 					{{ $t("COMMON.OTHER") }}
 				</span>
 			</div>
@@ -52,16 +52,14 @@
 
 <script>
 import { pullAllBy } from "lodash";
+import { Component, Prop, Vue } from "vue-property-decorator";
 
 import { NetworkModal, NetworkSelectionModal } from "@/components/Network";
 
 import SelectionNetworkButton from "./SelectionNetworkButton";
 
-export default {
+@Component({
 	name: "SelectionNetwork",
-
-	maxItems: 2,
-	buttonClasses: "",
 
 	components: {
 		NetworkModal,
@@ -73,67 +71,70 @@ export default {
 		prop: "selected",
 		event: "select",
 	},
+})
+export default class SelectionNetwork extends Vue {
+	maxItems = 2;
+	buttonClasses = "";
 
-	props: {
-		networks: {
-			type: Array,
-			required: true,
-		},
-		selected: {
-			type: [Object],
-			required: false,
-			default: null,
-		},
-		isCustom: {
-			type: Boolean,
-			required: false,
-			default: false,
-		},
-		addButton: {
-			type: Boolean,
-			required: false,
-			default: false,
-		},
-	},
+	@Prop({
+		type: Array,
+		required: true,
+	})
+	networks;
 
-	data: () => ({
-		isModalOpen: false,
-		showAddNetwork: false,
-	}),
+	@Prop({
+		type: [Object],
+		required: false,
+		default: null,
+	})
+	selected;
 
-	computed: {
-		availableNetworks() {
-			return this.networks.slice(0, this.$options.maxItems);
-		},
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	isCustom;
 
-		othersNetworks() {
-			return pullAllBy(this.networks, this.availableNetworks);
-		},
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	addButton;
 
-		isOtherSelected() {
-			return this.othersNetworks.map((n) => n.id).includes(this.selected.id);
-		},
-	},
+	isModalOpen = false;
+	showAddNetwork = false;
 
-	methods: {
-		select(network) {
-			this.$emit(this.$options.model.event, network);
-			this.closeModal();
-		},
+	get availableNetworks() {
+		return this.networks.slice(0, this.$options.maxItems);
+	}
 
-		openModal() {
-			this.isModalOpen = true;
-		},
+	get othersNetworks() {
+		return pullAllBy(this.networks, this.availableNetworks);
+	}
 
-		closeModal() {
-			this.isModalOpen = false;
-		},
+	get isOtherSelected() {
+		return this.othersNetworks.map((n) => n.id).includes(this.selected.id);
+	}
 
-		toggleAddNetwork() {
-			this.showAddNetwork = !this.showAddNetwork;
-		},
-	},
-};
+	select(network) {
+		this.$emit(this.$options.model.event, network);
+		this.closeModal();
+	}
+
+	openModal() {
+		this.isModalOpen = true;
+	}
+
+	closeModal() {
+		this.isModalOpen = false;
+	}
+
+	toggleAddNetwork() {
+		this.showAddNetwork = !this.showAddNetwork;
+	}
+}
 </script>
 
 <style lang="postcss" scoped>

@@ -89,6 +89,7 @@
 
 <script>
 import { TRANSACTION_TYPES } from "@config";
+import { Component, Vue } from "vue-property-decorator";
 
 import { InputFee, InputPassword, InputText } from "@/components/Input";
 import { ListDivided, ListDividedItem } from "@/components/ListDivided";
@@ -98,10 +99,8 @@ import WalletService from "@/services/wallet";
 
 import mixin from "./mixin";
 
-export default {
+@Component({
 	name: "TransactionFormDelegateRegistration",
-
-	transactionType: TRANSACTION_TYPES.GROUP_1.DELEGATE_REGISTRATION,
 
 	components: {
 		InputFee,
@@ -114,95 +113,94 @@ export default {
 	},
 
 	mixins: [mixin],
+})
+export default class TransactionFormDelegateRegistration extends Vue {
+	transactionType = TRANSACTION_TYPES.GROUP_1.DELEGATE_REGISTRATION;
 
-	data: () => ({
-		form: {
-			fee: 0,
-			username: "",
-			passphrase: "",
-			walletPassword: "",
-		},
-	}),
+	form = {
+		fee: 0,
+		username: "",
+		passphrase: "",
+		walletPassword: "",
+	};
 
-	computed: {
-		usernameError() {
-			if (this.$v.form.username.$dirty && this.$v.form.username.$error) {
-				if (!this.$v.form.username.isNotEmpty) {
-					return this.$t("WALLET_DELEGATES.USERNAME_EMPTY_ERROR");
-				} else if (!this.$v.form.username.isMaxLength) {
-					return this.$t("WALLET_DELEGATES.USERNAME_MAX_LENGTH_ERROR");
-				} else if (!this.$v.form.username.doesNotExist) {
-					return this.$t("WALLET_DELEGATES.USERNAME_EXISTS");
-				}
-
-				return this.$t("WALLET_DELEGATES.USERNAME_ERROR");
+	get usernameError() {
+		if (this.$v.form.username.$dirty && this.$v.form.username.$error) {
+			if (!this.$v.form.username.isNotEmpty) {
+				return this.$t("WALLET_DELEGATES.USERNAME_EMPTY_ERROR");
+			} else if (!this.$v.form.username.isMaxLength) {
+				return this.$t("WALLET_DELEGATES.USERNAME_MAX_LENGTH_ERROR");
+			} else if (!this.$v.form.username.doesNotExist) {
+				return this.$t("WALLET_DELEGATES.USERNAME_EXISTS");
 			}
 
-			return null;
-		},
-	},
+			return this.$t("WALLET_DELEGATES.USERNAME_ERROR");
+		}
 
-	methods: {
-		getTransactionData() {
-			const transactionData = {
-				address: this.currentWallet.address,
-				username: this.form.username,
-				passphrase: this.form.passphrase,
-				fee: this.getFee(),
-				wif: this.form.wif,
-				networkWif: this.walletNetwork.wif,
-				multiSignature: this.currentWallet.multiSignature,
-			};
+		return null;
+	}
 
-			if (this.currentWallet.secondPublicKey) {
-				transactionData.secondPassphrase = this.form.secondPassphrase;
-			}
+	getTransactionData() {
+		const transactionData = {
+			address: this.currentWallet.address,
+			username: this.form.username,
+			passphrase: this.form.passphrase,
+			fee: this.getFee(),
+			wif: this.form.wif,
+			networkWif: this.walletNetwork.wif,
+			multiSignature: this.currentWallet.multiSignature,
+		};
 
-			return transactionData;
-		},
+		if (this.currentWallet.secondPublicKey) {
+			transactionData.secondPassphrase = this.form.secondPassphrase;
+		}
 
-		async buildTransaction(transactionData, isAdvancedFee = false, returnObject = false) {
-			return this.$client.buildDelegateRegistration(transactionData, isAdvancedFee, returnObject);
-		},
+		return transactionData;
+	}
 
-		transactionError() {
-			this.$error(this.$t("TRANSACTION.ERROR.VALIDATION.DELEGATE_REGISTRATION"));
-		},
-	},
+	buildTransaction(transactionData, isAdvancedFee = false, returnObject = false) {
+		return this.$client.buildDelegateRegistration(transactionData, isAdvancedFee, returnObject);
+	}
 
-	validations: {
-		form: {
-			fee: mixin.validators.fee,
-			passphrase: mixin.validators.passphrase,
-			walletPassword: mixin.validators.walletPassword,
-			secondPassphrase: mixin.validators.secondPassphrase,
+	transactionError() {
+		this.$error(this.$t("TRANSACTION.ERROR.VALIDATION.DELEGATE_REGISTRATION"));
+	}
 
-			username: {
-				isValid(value) {
-					const validation = WalletService.validateUsername(value);
+	validations() {
+		return {
+			form: {
+				fee: mixin.validators.fee,
+				passphrase: mixin.validators.passphrase,
+				walletPassword: mixin.validators.walletPassword,
+				secondPassphrase: mixin.validators.secondPassphrase,
 
-					return validation.passes;
-				},
+				username: {
+					isValid(value) {
+						const validation = WalletService.validateUsername(value);
 
-				isNotEmpty(value) {
-					const validation = WalletService.validateUsername(value);
+						return validation.passes;
+					},
 
-					return !validation.passes ? !validation.errors.find((error) => error.type === "empty") : true;
-				},
+					isNotEmpty(value) {
+						const validation = WalletService.validateUsername(value);
 
-				isMaxLength(value) {
-					const validation = WalletService.validateUsername(value);
+						return !validation.passes ? !validation.errors.find((error) => error.type === "empty") : true;
+					},
 
-					return !validation.passes ? !validation.errors.find((error) => error.type === "maxLength") : true;
-				},
+					isMaxLength(value) {
+						const validation = WalletService.validateUsername(value);
 
-				doesNotExist(value) {
-					const validation = WalletService.validateUsername(value);
+						return !validation.passes ? !validation.errors.find((error) => error.type === "maxLength") : true;
+					},
 
-					return !validation.passes ? !validation.errors.find((error) => error.type === "exists") : true;
+					doesNotExist(value) {
+						const validation = WalletService.validateUsername(value);
+
+						return !validation.passes ? !validation.errors.find((error) => error.type === "exists") : true;
+					},
 				},
 			},
-		},
-	},
-};
+		}
+	};
+}
 </script>

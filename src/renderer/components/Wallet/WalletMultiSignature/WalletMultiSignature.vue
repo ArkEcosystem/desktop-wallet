@@ -37,13 +37,15 @@
 </template>
 
 <script>
+import { Component, Vue } from "vue-property-decorator";
+
 import { ButtonModal } from "@/components/Button";
 import { ModalLoader, ModalPeer } from "@/components/Modal";
 import { WalletTransactionsMultiSignature } from "@/components/Wallet/WalletTransactions";
 import { StoreBinding } from "@/enums";
 import MultiSignature from "@/services/client-multisig";
 
-export default {
+@Component({
 	name: "WalletMultiSignature",
 
 	components: {
@@ -52,47 +54,40 @@ export default {
 		ModalPeer,
 		WalletTransactionsMultiSignature,
 	},
+})
+export default class WalletMultiSignature extends Vue {
+	showLoadingModal = false;
 
-	data() {
-		return {
-			showLoadingModal: false,
-		};
-	},
+	get peer() {
+		return this.$store.getters["session/multiSignaturePeer"];
+	}
 
-	computed: {
-		peer() {
-			return this.$store.getters["session/multiSignaturePeer"];
-		},
+	get peerOutput() {
+		if (!this.peer) {
+			return this.$t("PEER.NONE");
+		}
 
-		peerOutput() {
-			if (!this.peer) {
-				return this.$t("PEER.NONE");
+		return `${this.peer.host}:${this.peer.port}`;
+	}
+
+	async connectPeer({ peer, closeTrigger }) {
+		this.showLoadingModal = true;
+
+		if (await MultiSignature.performHandshake(peer)) {
+			await this.$store.dispatch(StoreBinding.SessionSetMultiSignaturePeer, peer);
+			await this.$store.dispatch(StoreBinding.ProfileSetMultiSignaturePeer, peer);
+			this.$success(`${this.$t("PEER.CONNECTED")}: ${peer.host}:${peer.port}`);
+
+			if (closeTrigger) {
+				closeTrigger();
 			}
+		} else {
+			this.$error(this.$t("PEER.CONNECT_FAILED"));
+		}
 
-			return `${this.peer.host}:${this.peer.port}`;
-		},
-	},
-
-	methods: {
-		async connectPeer({ peer, closeTrigger }) {
-			this.showLoadingModal = true;
-
-			if (await MultiSignature.performHandshake(peer)) {
-				await this.$store.dispatch(StoreBinding.SessionSetMultiSignaturePeer, peer);
-				await this.$store.dispatch(StoreBinding.ProfileSetMultiSignaturePeer, peer);
-				this.$success(`${this.$t("PEER.CONNECTED")}: ${peer.host}:${peer.port}`);
-
-				if (closeTrigger) {
-					closeTrigger();
-				}
-			} else {
-				this.$error(this.$t("PEER.CONNECT_FAILED"));
-			}
-
-			this.showLoadingModal = false;
-		},
-	},
-};
+		this.showLoadingModal = false;
+	}
+}
 </script>
 
 <style>

@@ -1,12 +1,12 @@
 <template>
-	<div class="InputFee relative inline-block w-full">
+	<div class="relative inline-block w-full InputFee">
 		<div class="w-full">
-			<div class="InputFee__gradient absolute w-full" />
-			<div :style="rangeTrackStyle" class="InputFee__range-track absolute w-full z-30" />
-			<div :style="hiddenGradientStyle" class="InputFee__hidden-gradient absolute w-full z-10" />
+			<div class="absolute w-full InputFee__gradient" />
+			<div :style="rangeTrackStyle" class="absolute z-30 w-full InputFee__range-track" />
+			<div :style="hiddenGradientStyle" class="absolute z-10 w-full InputFee__hidden-gradient" />
 		</div>
 
-		<div class="InputFee__currency-input-container absolute z-20">
+		<div class="absolute z-20 InputFee__currency-input-container">
 			<InputCurrency
 				ref="input"
 				:currency="currency"
@@ -34,17 +34,17 @@
 			:step="step"
 			:disabled="isDisabled"
 			type="range"
-			class="w-full m-0 py-2 z-10"
+			class="z-10 w-full py-2 m-0"
 			name="fee"
 			@input="onSlider($event.target.value)"
 		/>
-		<p class="InputFee__choices absolute z-30">
+		<p class="absolute z-30 InputFee__choices">
 			<button
 				v-for="choice in Object.keys(feeChoices)"
 				:key="choice"
 				:class="{ 'InputFee__choice--active': choice === chosenFee }"
 				:disabled="isDisabled"
-				class="InputFee__choice cursor-pointer font-semibold text-xs"
+				class="text-xs font-semibold cursor-pointer InputFee__choice"
 				@click="onChoice(choice)"
 			>
 				{{ $t(`INPUT_FEE.${choice}`) }}
@@ -57,8 +57,9 @@
 	</div>
 </template>
 
-<script>
+<script lang="ts">
 import { V1 } from "@config";
+import { Component, Prop, Vue } from "vue-property-decorator";
 
 import InputCurrency from "./InputCurrency";
 
@@ -67,292 +68,317 @@ import InputCurrency from "./InputCurrency";
  * avoid several problems, such as showing the exponential notation, although
  * it emits a Number always
  */
-export default {
+@Component({
 	name: "InputFee",
 
 	components: {
 		InputCurrency,
 	},
+})
+export default class InputFee extends Vue {
+	@Prop({
+		type: String,
+		required: true,
+	})
+	currency;
 
-	props: {
-		currency: {
-			type: String,
-			required: true,
-		},
+	@Prop({
+		type: Number,
+		required: true,
+	})
+	transactionType;
 
-		transactionType: {
-			type: Number,
-			required: true,
-		},
+	@Prop({
+		type: Number,
+		required: false,
+		default: 1,
+	})
+	transactionGroup;
 
-		transactionGroup: {
-			type: Number,
-			required: false,
-			default: 1,
-		},
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: true,
+	})
+	showInsufficientFunds;
 
-		showInsufficientFunds: {
-			type: Boolean,
-			required: false,
-			default: true,
-		},
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	isDisabled;
 
-		isDisabled: {
-			type: Boolean,
-			required: false,
-			default: false,
-		},
+	@Prop({
+		type: Object,
+		required: false,
+		default: null,
+	})
+	wallet;
 
-		wallet: {
-			type: Object,
-			required: false,
-			default: null,
-		},
+	@Prop({
+		type: Object,
+		required: false,
+		default: null,
+	})
+	walletNetwork;
 
-		walletNetwork: {
-			type: Object,
-			required: false,
-			default: null,
-		},
-	},
+	chosenFee = "AVERAGE";
+	step = 1e-8;
+	fee = 0;
 
-	data: () => ({
-		chosenFee: "AVERAGE",
-		step: 1e-8,
-		fee: 0,
-	}),
+	get currentWallet() {
+		// @ts-ignore
+		return this.wallet || this.wallet_fromRoute;
+	}
 
-	computed: {
-		currentWallet() {
-			return this.wallet || this.wallet_fromRoute;
-		},
-		hiddenGradientStyle() {
-			return {
-				width: `${100 - this.rangePercentage}%`,
-			};
-		},
-		rangeTrackStyle() {
-			return {
-				width: `${this.rangePercentage}%`,
-			};
-		},
-		rangePercentage() {
-			const percent =
-				(this.currency_toBuilder(this.fee).minus(this.feeChoiceMin).valueOf() /
-					(this.feeChoiceMax - this.feeChoiceMin)) *
-				100;
-			return percent > 100 ? 100 : percent < 0 ? 0 : percent;
-		},
-		notValidError() {
-			return this.$t("INPUT_FEE.ERROR.NOT_VALID");
-		},
-		maxV1fee() {
-			const defaultMaxV1Fee = V1.fees[`GROUP_${this.transactionGroup}`][this.transactionType];
-			const staticFee = this.$store.getters["transaction/staticFee"](this.transactionType, this.transactionGroup);
-			return staticFee || defaultMaxV1Fee;
-		},
-		isStaticFee() {
-			if (this.feeChoices.MAXIMUM.isEqualTo(this.feeChoices.AVERAGE)) {
-				return this.feeChoices.AVERAGE.isEqualTo(this.fee);
+	get hiddenGradientStyle() {
+		return {
+			width: `${100 - this.rangePercentage}%`,
+		};
+	}
+
+	get rangeTrackStyle() {
+		return {
+			width: `${this.rangePercentage}%`,
+		};
+	}
+
+	get rangePercentage() {
+		const percent =
+			// @ts-ignore
+			(this.currency_toBuilder(this.fee).minus(this.feeChoiceMin).valueOf() /
+				(this.feeChoiceMax - this.feeChoiceMin)) *
+			100;
+		return percent > 100 ? 100 : percent < 0 ? 0 : percent;
+	}
+
+	get notValidError() {
+		return this.$t("INPUT_FEE.ERROR.NOT_VALID");
+	}
+
+	get maxV1fee() {
+		const defaultMaxV1Fee = V1.fees[`GROUP_${this.transactionGroup}`][this.transactionType];
+		const staticFee = this.$store.getters["transaction/staticFee"](this.transactionType, this.transactionGroup);
+		return staticFee || defaultMaxV1Fee;
+	}
+
+	get isStaticFee() {
+		if (this.feeChoices.MAXIMUM.isEqualTo(this.feeChoices.AVERAGE)) {
+			return this.feeChoices.AVERAGE.isEqualTo(this.fee);
+		}
+		return false;
+	}
+
+	get isAdvancedFee() {
+		return this.chosenFee === "ADVANCED";
+	}
+
+	get feeNetwork() {
+		// @ts-ignore
+		return this.walletNetwork || this.session_network;
+	}
+
+	get feeStatistics() {
+		if (!this.feeNetwork) {
+			throw new Error("No active network to fetch fees");
+		}
+
+		const { feeStatistics } = this.feeNetwork;
+		if (feeStatistics) {
+			let transactionStatistics;
+			if (feeStatistics[0]) {
+				transactionStatistics = Object.values(feeStatistics).find(
+					// @ts-ignore
+					(feeConfig) => feeConfig.type === this.transactionType,
+				);
+			} else if (feeStatistics[this.transactionGroup]) {
+				transactionStatistics = Object.values(feeStatistics[this.transactionGroup]).find(
+					// @ts-ignore
+					(feeConfig) => feeConfig.type === this.transactionType,
+				);
 			}
-			return false;
-		},
-		isAdvancedFee() {
-			return this.chosenFee === "ADVANCED";
-		},
-		feeNetwork() {
-			return this.walletNetwork || this.session_network;
-		},
-		feeStatistics() {
-			if (!this.feeNetwork) {
-				throw new Error("No active network to fetch fees");
+
+			if (transactionStatistics) {
+				return transactionStatistics.fees;
 			}
+		}
 
-			const { feeStatistics } = this.feeNetwork;
-			if (feeStatistics) {
-				let transactionStatistics;
-				if (feeStatistics[0]) {
-					transactionStatistics = Object.values(feeStatistics).find(
-						(feeConfig) => feeConfig.type === this.transactionType,
-					);
-				} else if (feeStatistics[this.transactionGroup]) {
-					transactionStatistics = Object.values(feeStatistics[this.transactionGroup]).find(
-						(feeConfig) => feeConfig.type === this.transactionType,
-					);
-				}
+		return {
+			avgFee: this.maxV1fee,
+			maxFee: this.maxV1fee,
+			minFee: 1,
+		};
+	}
 
-				if (transactionStatistics) {
-					return transactionStatistics.fees;
-				}
-			}
+	get lastFee() {
+		return this.$store.getters["session/lastFeeByType"](this.transactionType, this.transactionGroup);
+	}
 
-			return {
-				avgFee: this.maxV1fee,
-				maxFee: this.maxV1fee,
-				minFee: 1,
-			};
-		},
-		lastFee() {
-			return this.$store.getters["session/lastFeeByType"](this.transactionType, this.transactionGroup);
-		},
-		feeChoiceMin() {
-			return this.currency_subToUnit(1);
-		},
-		feeChoiceMax() {
-			return this.isAdvancedFee ? this.feeChoices.MAXIMUM.multipliedBy(10) : this.feeChoices.MAXIMUM;
-		},
-		feeChoices() {
-			const { avgFee, maxFee, minFee } = this.feeStatistics;
+	get feeChoiceMin() {
+		// @ts-ignore
+		return this.currency_subToUnit(1);
+	}
 
-			// If any of the fees are higher than the maximum V1 fee, than use the maximum.
-			const average = this.currency_subToUnit(avgFee < this.maxV1fee ? avgFee : this.maxV1fee);
-			const minimum = this.currency_subToUnit(minFee < this.maxV1fee ? minFee : this.maxV1fee);
-			const maximum = this.currency_subToUnit(maxFee < this.maxV1fee ? maxFee : this.maxV1fee);
+	get feeChoiceMax() {
+		return this.isAdvancedFee ? this.feeChoices.MAXIMUM.multipliedBy(10) : this.feeChoices.MAXIMUM;
+	}
 
-			const fees = {
-				MINIMUM: minimum,
-				AVERAGE: average,
-				MAXIMUM: maximum,
-				INPUT: average,
-				ADVANCED: average,
-			};
+	get feeChoices() {
+		const { avgFee, maxFee, minFee } = this.feeStatistics;
 
-			return this.lastFee ? Object.assign({}, { LAST: this.currency_subToUnit(this.lastFee) }, fees) : fees;
-		},
-		minimumError() {
-			const min = this.feeChoiceMin;
-			const fee = this.currency_format(min, { currency: this.currency, currencyDisplay: "code" });
-			return this.$t("INPUT_FEE.ERROR.LESS_THAN_MINIMUM", { fee });
-		},
-		maximumError() {
-			if (!this.isAdvancedFee) {
-				const max = this.feeChoices.MAXIMUM;
-				const fee = this.currency_format(max, { currency: this.currency, currencyDisplay: "code" });
-				return this.$t("INPUT_FEE.ERROR.MORE_THAN_MAXIMUM", { fee });
-			}
+		// If any of the fees are higher than the maximum V1 fee, than use the maximum.
+		// @ts-ignore
+		const average = this.currency_subToUnit(avgFee < this.maxV1fee ? avgFee : this.maxV1fee);
+		// @ts-ignore
+		const minimum = this.currency_subToUnit(minFee < this.maxV1fee ? minFee : this.maxV1fee);
+		// @ts-ignore
+		const maximum = this.currency_subToUnit(maxFee < this.maxV1fee ? maxFee : this.maxV1fee);
+
+		const fees = {
+			MINIMUM: minimum,
+			AVERAGE: average,
+			MAXIMUM: maximum,
+			INPUT: average,
+			ADVANCED: average,
+		};
+
+		// @ts-ignore
+		return this.lastFee ? Object.assign({}, { LAST: this.currency_subToUnit(this.lastFee) }, fees) : fees;
+	}
+
+	get minimumError() {
+		// @ts-ignore
+		const min = this.feeChoiceMin;
+		// @ts-ignore
+		const fee = this.currency_format(min, { currency: this.currency, currencyDisplay: "code" });
+		return this.$t("INPUT_FEE.ERROR.LESS_THAN_MINIMUM", { fee });
+	}
+
+	get maximumError() {
+		if (!this.isAdvancedFee) {
+			const max = this.feeChoices.MAXIMUM;
+			// @ts-ignore
+			const fee = this.currency_format(max, { currency: this.currency, currencyDisplay: "code" });
+			return this.$t("INPUT_FEE.ERROR.MORE_THAN_MAXIMUM", { fee });
+		}
+		return null;
+	}
+
+	get insufficientFundsError() {
+		if (!this.showInsufficientFunds) {
 			return null;
-		},
-		insufficientFundsError() {
-			if (!this.showInsufficientFunds) {
-				return null;
-			}
+		}
 
-			if (!this.currentWallet) {
-				return null;
-			}
+		if (!this.currentWallet) {
+			return null;
+		}
 
-			const funds = this.currency_subToUnit(this.currentWallet.balance);
-			if (funds.isLessThan(this.fee)) {
-				const balance = this.formatter_networkCurrency(this.currentWallet.balance);
-				return this.$t("TRANSACTION_FORM.ERROR.NOT_ENOUGH_BALANCE", { balance });
-			}
-			return null;
-		},
-		warningText() {
-			if (this.isAdvancedFee) {
-				return this.$t("INPUT_FEE.ADVANCED_NOTICE");
-			}
-			if (this.feeChoices.AVERAGE.isGreaterThan(this.fee)) {
-				return this.$t("INPUT_FEE.LOW_FEE_NOTICE");
-			}
-			return null;
-		},
-	},
+		// @ts-ignore
+		const funds = this.currency_subToUnit(this.currentWallet.balance);
+		if (funds.isLessThan(this.fee)) {
+			// @ts-ignore
+			const balance = this.formatter_networkCurrency(this.currentWallet.balance);
+			return this.$t("TRANSACTION_FORM.ERROR.NOT_ENOUGH_BALANCE", { balance });
+		}
+		return null;
+	}
+
+	get warningText() {
+		if (this.isAdvancedFee) {
+			return this.$t("INPUT_FEE.ADVANCED_NOTICE");
+		}
+		if (this.feeChoices.AVERAGE.isGreaterThan(this.fee)) {
+			return this.$t("INPUT_FEE.LOW_FEE_NOTICE");
+		}
+		return null;
+	}
 
 	created() {
 		// Fees should be synchronized only when this component is active
+		// @ts-ignore
 		this.$synchronizer.appendFocus("fees");
 
+		// @ts-ignore
 		if (this.lastFee && this.session_profile.defaultChosenFee === "LAST") {
+			// @ts-ignore
 			this.onChoice(this.session_profile.defaultChosenFee);
 		} else {
 			this.emitFee(this.feeChoices.AVERAGE);
 		}
-	},
+	}
 
 	beforeDestroy() {
+		// @ts-ignore
 		this.$synchronizer.removeFocus("fees");
-	},
+	}
 
-	methods: {
-		focusInput() {
-			this.$refs.input.focus();
-		},
-		onChoice(choice) {
-			this.chosenFee = choice;
-			if (["INPUT", "ADVANCED"].includes(this.chosenFee)) {
-				this.focusInput();
-			}
+	focusInput() {
+		// @ts-ignore
+		this.$refs.input.focus();
+	}
 
-			const fee = this.feeChoices[choice];
-			this.emitFee(fee);
-		},
+	onChoice(choice) {
+		this.chosenFee = choice;
+		if (["INPUT", "ADVANCED"].includes(this.chosenFee)) {
+			this.focusInput();
+		}
 
-		/**
-		 * Emit the value after the user finishes changes. This prevents premature parsing the input.
-		 * @param {(String|Number)} fee
-		 */
-		onChange(fee) {
-			fee = fee.toString();
-			this.emitFee(fee);
-		},
+		const fee = this.feeChoices[choice];
+		this.emitFee(fee);
+	}
 
-		/**
-		 * Receives the `InputCurrency` value as String
-		 * @param {String} fee
-		 */
-		onRawInput(fee) {
-			if (!["INPUT", "ADVANCED"].includes(this.chosenFee)) {
-				this.chosenFee = "INPUT";
-			}
+	onChange(fee) {
+		fee = fee.toString();
+		this.emitFee(fee);
+	}
 
-			fee = fee.toString();
-			this.$set(this.feeChoices, this.chosenFee, fee);
-		},
-		/**
-		 * The native slider uses Strings
-		 * @param {String} fee
-		 */
-		onSlider(fee) {
-			if (!["INPUT", "ADVANCED"].includes(this.chosenFee)) {
-				this.chosenFee = "INPUT";
-			}
+	onRawInput(fee) {
+		if (!["INPUT", "ADVANCED"].includes(this.chosenFee)) {
+			this.chosenFee = "INPUT";
+		}
 
-			this.$set(this.feeChoices, this.chosenFee, fee);
-			this.emitFee(fee);
-		},
-		/**
-		 * Establishes the fee as String to avoid the exponential notation
-		 * @param {(String|Number)} fee
-		 */
-		setFee(fee) {
-			fee = this.currency_toBuilder(fee).toString();
+		fee = fee.toString();
+		this.$set(this.feeChoices, this.chosenFee, fee);
+	}
 
-			this.fee = fee;
-			this.$v.fee.$touch();
-		},
-		/**
-		 * Establishes the fee as String to avoid the exponential notation, although
-		 * it emits the value as a Number
-		 * @param {String} fee
-		 */
-		emitFee(fee) {
-			this.setFee(fee);
-			this.$emit("input", this.fee);
-		},
-	},
+	onSlider(fee) {
+		if (!["INPUT", "ADVANCED"].includes(this.chosenFee)) {
+			this.chosenFee = "INPUT";
+		}
 
-	validations: {
-		fee: {
-			isValid() {
-				if (this.$refs.input) {
-					return !this.$refs.input.$v.$invalid && !this.insufficientFundsError;
-				}
-				return false;
+		this.$set(this.feeChoices, this.chosenFee, fee);
+		this.emitFee(fee);
+	}
+
+	setFee(fee) {
+		// @ts-ignore
+		fee = this.currency_toBuilder(fee).toString();
+
+		this.fee = fee;
+		this.$v.fee.$touch();
+	}
+
+	emitFee(fee) {
+		this.setFee(fee);
+		this.$emit("input", this.fee);
+	}
+
+	validations() {
+		return  {
+			fee: {
+				isValid() {
+					// @ts-ignore
+					if (this.$refs.input) {
+						// @ts-ignore
+						return !this.$refs.input.$v.$invalid && !this.insufficientFundsError;
+					}
+					return false;
+				},
 			},
-		},
-	},
-};
+		}
+	};
+}
 </script>
 
 <style>

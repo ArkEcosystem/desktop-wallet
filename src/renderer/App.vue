@@ -11,12 +11,12 @@
 				linux: isLinux,
 			},
 		]"
-		class="App bg-theme-page text-theme-page-text font-sans"
+		class="font-sans App bg-theme-page text-theme-page-text"
 	>
 		<div
 			v-if="!hasSeenIntroduction"
 			:style="`backgroundImage: url('${assets_loadImage(background)}')`"
-			class="px-20 py-16 w-screen h-screen relative"
+			class="relative w-screen h-screen px-20 py-16"
 		>
 			<AppIntro @done="setIntroDone" />
 		</div>
@@ -25,16 +25,16 @@
 			<AppSidemenu v-if="hasProfile" :is-horizontal="true" class="block md:hidden z-1" />
 			<section
 				:style="background ? `backgroundImage: url('${assets_loadImage(background)}')` : ''"
-				class="App__main flex flex-col items-center px-4 pb-4 lg:pt-4 w-screen h-screen-adjusted overflow-hidden"
+				class="flex flex-col items-center w-screen px-4 pb-4 overflow-hidden App__main lg:pt-4 h-screen-adjusted"
 			>
-				<div :class="{ 'ml-6': !hasProfile }" class="App__container w-full h-full flex mt-4 mb-4 lg:mr-6">
-					<div class="hidden md:flex flex-col">
+				<div :class="{ 'ml-6': !hasProfile }" class="flex w-full h-full mt-4 mb-4 App__container lg:mr-6">
+					<div class="flex-col hidden md:flex">
 						<AppSidemenu v-if="hasProfile" class="flex flex-1" />
 					</div>
 
 					<!-- Updating the maximum number of routes to keep alive means that Vue will destroy the rest of cached route components -->
 					<KeepAlive :include="keepAliveRoutes" :max="keepAliveRoutes.length">
-						<RouterView class="App__page flex-1 overflow-y-auto" />
+						<RouterView class="flex-1 overflow-y-auto App__page" />
 					</KeepAlive>
 				</div>
 
@@ -64,14 +64,16 @@
 	</div>
 </template>
 
-<script>
+<script lang="ts">
 import "@/styles/style.css";
 
 import { I18N } from "@config";
+// @ts-ignore
 import CleanCss from "clean-css";
 import { ipcRenderer, remote } from "electron";
 import fs from "fs";
 import { pull, uniq } from "lodash";
+import { Component, Vue, Watch } from "vue-property-decorator";
 
 import AlertMessage from "@/components/AlertMessage";
 import { AppFooter, AppIntro, AppSidemenu } from "@/components/App";
@@ -83,7 +85,7 @@ import URIHandler from "@/services/uri-handler";
 
 const Menu = remote.Menu;
 
-export default {
+@Component({
 	name: "DesktopWallet",
 
 	components: {
@@ -93,147 +95,180 @@ export default {
 		AlertMessage,
 		TransactionModal,
 	},
+})
+export default class DesktopWallet extends Vue {
+	isReady = false;
+	isUriTransactionOpen = false;
+	uriTransactionSchema = {};
+	aliveRouteComponents = [];
 
-	data: () => ({
-		isReady: false,
-		isUriTransactionOpen: false,
-		uriTransactionSchema: {},
-		aliveRouteComponents: [],
-	}),
-
-	keepableRoutes: Object.freeze({
+	keepableRoutes = Object.freeze({
 		profileAgnostic: ["Announcements", "NetworkOverview", "ProfileAll"],
 		profileDependent: ["Dashboard", "ContactAll", "WalletAll"],
 		// This pages could be cached to not delete the current form data, but they
 		// would not support switching profiles, which would be confusing for some users
 		dataDependent: ["ContactNew", "ProfileNew", "WalletImport", "WalletNew"],
-	}),
+	});
 
-	computed: {
-		background() {
-			return (
-				this.$store.getters["session/background"] || `wallpapers/${this.hasSeenIntroduction ? 1 : 2}Default.png`
-			);
-		},
-		hasProfile() {
-			return !!this.$store.getters["session/profile"];
-		},
-		hasScreenshotProtection() {
-			return this.$store.getters["session/screenshotProtection"];
-		},
-		isScreenshotProtectionEnabled: {
-			get() {
-				return this.$store.getters["app/isScreenshotProtectionEnabled"];
-			},
-			set(protection) {
-				this.$store.dispatch(StoreBinding.AppSetIsScreenshotProtectionEnabled, protection);
-			},
-		},
-		hasSeenIntroduction() {
-			return this.$store.getters["app/hasSeenIntroduction"];
-		},
-		isWindows() {
-			return process.platform === "win32";
-		},
-		isMac() {
-			return process.platform === "darwin";
-		},
-		isLinux() {
-			return ["freebsd", "linux", "sunos"].includes(process.platform);
-		},
-		currentProfileId() {
-			return this.session_profile ? this.session_profile.id : null;
-		},
-		keepAliveRoutes() {
-			return uniq([...this.$options.keepableRoutes.profileAgnostic, ...this.aliveRouteComponents]);
-		},
-		routeComponent() {
-			return this.$route.matched.length ? this.$route.matched[0].components.default.name : null;
-		},
-		pluginThemes() {
-			return this.$store.getters["plugin/themes"];
-		},
-		theme() {
-			const theme = this.$store.getters["session/theme"];
-			const defaultThemes = ["light", "dark"];
+	@Watch("hasScreenshotProtection")
+	onHasScreenshotProtection(value) {
+		// @ts-ignore
+		if (this.isScreenshotProtectionEnabled) {
+			remote.getCurrentWindow().setContentProtection(value);
+		}
+	}
 
-			// Ensure that the plugin theme is available (not deleted from the file system)
-			return defaultThemes.includes(theme) || this.pluginThemes[theme] ? theme : defaultThemes[0];
-		},
-		themeClass() {
-			return `theme-${this.theme}`;
-		},
-		pluginLanguages() {
-			return this.$store.getters["plugin/languages"];
-		},
-		language() {
-			const language = this.$store.getters["session/language"];
-			const defaultLocale = I18N.defaultLocale;
+	@Watch("routeComponent")
+	onRouteComponent(value) {
+		// @ts-ignore
+		if (this.aliveRouteComponents.includes(value)) {
+			// @ts-ignore
+			pull(this.aliveRouteComponents, value);
+		}
+		// Not all routes can be cached flawlessly
+		const keepable = [
+			// @ts-ignore
+			...this.keepableRoutes.profileAgnostic,
+			// @ts-ignore
+			...this.keepableRoutes.profileDependent,
+		];
+		if (keepable.includes(value)) {
+			// @ts-ignore
+			this.aliveRouteComponents.push(value);
+		}
+	}
 
-			// Ensure that the plugin language is available (not deleted from the file system)
-			return defaultLocale === language || this.pluginLanguages[language] ? language : defaultLocale;
-		},
-	},
+	@Watch("currentProfileId")
+	onCurrentProfileId(value, oldValue) {
+		if (value && oldValue) {
+			// If the profile changes, remove all the cached routes, except the latest
+			// if they are profile independent
+			if (value !== oldValue) {
+				// @ts-ignore
+				const profileAgnostic = this.keepableRoutes.profileAgnostic;
 
-	watch: {
-		hasScreenshotProtection(value) {
-			if (this.isScreenshotProtectionEnabled) {
-				remote.getCurrentWindow().setContentProtection(value);
-			}
-		},
-		routeComponent(value) {
-			if (this.aliveRouteComponents.includes(value)) {
-				pull(this.aliveRouteComponents, value);
-			}
-			// Not all routes can be cached flawlessly
-			const keepable = [
-				...this.$options.keepableRoutes.profileAgnostic,
-				...this.$options.keepableRoutes.profileDependent,
-			];
-			if (keepable.includes(value)) {
-				this.aliveRouteComponents.push(value);
-			}
-		},
-		currentProfileId(value, oldValue) {
-			if (value && oldValue) {
-				// If the profile changes, remove all the cached routes, except the latest
-				// if they are profile independent
-				if (value !== oldValue) {
-					const profileAgnostic = this.$options.keepableRoutes.profileAgnostic;
+				const aliveRouteComponents = [];
+				for (let i = profileAgnostic.length; i >= 0; i--) {
+					// @ts-ignore
+					const length = this.aliveRouteComponents.length;
+					// @ts-ignore
+					const route = this.aliveRouteComponents[length - i];
 
-					const aliveRouteComponents = [];
-					for (let i = profileAgnostic.length; i >= 0; i--) {
-						const length = this.aliveRouteComponents.length;
-						const route = this.aliveRouteComponents[length - i];
-
-						if (profileAgnostic.includes(route)) {
-							aliveRouteComponents.push(route);
-						}
+					if (profileAgnostic.includes(route)) {
+						// @ts-ignore
+						aliveRouteComponents.push(route);
 					}
-					this.aliveRouteComponents = aliveRouteComponents;
 				}
+				// @ts-ignore
+				this.aliveRouteComponents = aliveRouteComponents;
 			}
-		},
-		pluginThemes() {
-			this.applyPluginTheme(this.theme);
-		},
-		theme(value) {
-			this.applyPluginTheme(value);
-		},
-		pluginLanguages() {
-			this.applyPluginLanguage(this.language);
-		},
-		language(value) {
-			this.applyPluginLanguage(value);
-		},
-	},
+		}
+	}
 
-	/**
-	 * Vue hooks ignore the `async` modifier.
-	 * The `isReady` property is used here to delay the application while is
-	 * retrieving the essential data (session and network) from the database
-	 */
-	async created() {
+	@Watch("pluginThemes")
+	onPluginThemes() {
+		// @ts-ignore
+		this.applyPluginTheme(this.theme);
+	}
+
+	@Watch("theme")
+	onTheme(value) {
+		// @ts-ignore
+		this.applyPluginTheme(value);
+	}
+
+	@Watch("pluginLanguages")
+	onPluginLanguages() {
+		// @ts-ignore
+		this.applyPluginLanguage(this.language);
+	}
+
+	@Watch("language")
+	onLanguage(value) {
+		// @ts-ignore
+		this.applyPluginLanguage(value);
+	}
+
+	get background() {
+		return this.$store.getters["session/background"] || `wallpapers/${this.hasSeenIntroduction ? 1 : 2}Default.png`;
+	}
+
+	get hasProfile() {
+		return !!this.$store.getters["session/profile"];
+	}
+
+	get hasScreenshotProtection() {
+		return this.$store.getters["session/screenshotProtection"];
+	}
+
+	get isScreenshotProtectionEnabled() {
+		return this.$store.getters["app/isScreenshotProtectionEnabled"];
+	}
+
+	set isScreenshotProtectionEnabled(protection) {
+		this.$store.dispatch("app/setIsScreenshotProtectionEnabled", protection);
+	}
+
+	get hasSeenIntroduction() {
+		return this.$store.getters["app/hasSeenIntroduction"];
+	}
+
+	get isWindows() {
+		return process.platform === "win32";
+	}
+
+	get isMac() {
+		return process.platform === "darwin";
+	}
+
+	get isLinux() {
+		return ["freebsd", "linux", "sunos"].includes(process.platform);
+	}
+
+	get currentProfileId() {
+		// @ts-ignore
+		return this.session_profile ? this.session_profile.id : null;
+	}
+
+	get keepAliveRoutes() {
+		// @ts-ignore
+		return uniq([...this.keepableRoutes.profileAgnostic, ...this.aliveRouteComponents]);
+	}
+
+	get routeComponent() {
+		return this.$route.matched.length ? this.$route.matched[0].components.default.name : null;
+	}
+
+	get pluginThemes() {
+		return this.$store.getters["plugin/themes"];
+	}
+
+	get theme() {
+		const theme = this.$store.getters["session/theme"];
+		const defaultThemes = ["light", "dark"];
+
+		// Ensure that the plugin theme is available (not deleted from the file system)
+		return defaultThemes.includes(theme) || this.pluginThemes[theme] ? theme : defaultThemes[0];
+	}
+
+	get themeClass() {
+		return `theme-${this.theme}`;
+	}
+
+	get pluginLanguages() {
+		return this.$store.getters["plugin/languages"];
+	}
+
+	get language() {
+		const language = this.$store.getters["session/language"];
+		const defaultLocale = I18N.defaultLocale;
+
+		// Ensure that the plugin language is available (not deleted from the file system)
+		return defaultLocale === language || this.pluginLanguages[language] ? language : defaultLocale;
+	}
+
+	created() {
+		// @ts-ignore
 		this.$store._vm.$on("vuex-persist:ready", async () => {
 			// Environments variables are strings
 			this.isScreenshotProtectionEnabled = process.env.ENABLE_SCREENSHOT_PROTECTION !== "false";
@@ -241,194 +276,208 @@ export default {
 			await this.loadEssential();
 			this.isReady = true;
 
+			// @ts-ignore
 			this.$synchronizer.defineAll();
 
 			await this.loadNotEssential();
 
+			// @ts-ignore
 			this.$synchronizer.ready();
 		});
 
 		this.setContextMenu();
 
 		this.__watchProfile();
-	},
+	}
 
 	mounted() {
 		this.__watchProcessURL();
-	},
+	}
 
-	methods: {
-		async loadEssential() {
-			// We need to await plugins in order for all plugins to load properly
-			try {
-				await this.$plugins.init(this);
-			} catch {
-				this.$error("Failed to load plugins. NPM might be down.");
-			}
+	async loadEssential() {
+		// We need to await plugins in order for all plugins to load properly
+		try {
+			// @ts-ignore
+			await this.$plugins.init(this);
+		} catch {
+			// @ts-ignore
+			this.$error("Failed to load plugins. NPM might be down.");
+		}
 
-			await this.$store.dispatch(StoreBinding.NetworkLoad);
-			const currentProfileId = this.$store.getters["session/profileId"];
-			await this.$store.dispatch(StoreBinding.SessionReset);
-			await this.$store.dispatch(StoreBinding.SessionSetProfileId, currentProfileId);
-			await this.$store.dispatch(StoreBinding.LedgerReset);
-		},
-		/**
-		 * These data are used in different parts, but loading them should not
-		 * delay the application
-		 * TODO move some parts to the synchronizer and make it aware of when the
-		 * network has changed
-		 * @return {void}
-		 */
-		async loadNotEssential() {
-			ipcRenderer.send("updater:check-for-updates");
-			await this.$store.dispatch(StoreBinding.PeerRefresh);
+		await this.$store.dispatch(StoreBinding.NetworkLoad);
+		const currentProfileId = this.$store.getters["session/profileId"];
+		await this.$store.dispatch(StoreBinding.SessionReset);
+		await this.$store.dispatch(StoreBinding.SessionSetProfileId, currentProfileId);
+		await this.$store.dispatch(StoreBinding.LedgerReset);
+	}
+
+	async loadNotEssential() {
+		ipcRenderer.send("updater:check-for-updates");
+		await this.$store.dispatch(StoreBinding.PeerRefresh);
+		this.$store.dispatch(StoreBinding.PeerConnectToBest, {});
+		await this.$store.dispatch(StoreBinding.NetworkUpdateData);
+
+		// @ts-ignore
+		if (this.session_network) {
+			// @ts-ignore
+			this.$store.dispatch(StoreBinding.LedgerInit, this.session_network.slip44);
+			this.$store.dispatch(StoreBinding.DelegateLoad);
+		}
+
+		this.$eventBus.on(AppEvent.ClientChanged, async () => {
 			this.$store.dispatch(StoreBinding.PeerConnectToBest, {});
-			await this.$store.dispatch(StoreBinding.NetworkUpdateData);
-
-			if (this.session_network) {
-				this.$store.dispatch(StoreBinding.LedgerInit, this.session_network.slip44);
-				this.$store.dispatch(StoreBinding.DelegateLoad);
+			this.$store.dispatch(StoreBinding.NetworkUpdateData);
+			this.$store.dispatch(StoreBinding.DelegateLoad);
+			// @ts-ignore
+			await this.$store.dispatch(StoreBinding.LedgerInit, this.session_network.slip44);
+			if (this.$store.getters["ledger/isConnected"]) {
+				this.$store.dispatch(StoreBinding.LedgerReloadWallets, { clearFirst: true, forceLoad: true });
 			}
+		});
+		this.$eventBus.on(AppEvent.LedgerConnected, async () => {
+			// @ts-ignore
+			this.$success("Ledger Connected!");
+		});
+		this.$eventBus.on(AppEvent.LedgerDisconnected, async () => {
+			// @ts-ignore
+			this.$warn("Ledger Disconnected!");
+		});
 
-			this.$eventBus.on(AppEvent.ClientChanged, async () => {
-				this.$store.dispatch(StoreBinding.PeerConnectToBest, {});
-				this.$store.dispatch(StoreBinding.NetworkUpdateData);
-				this.$store.dispatch(StoreBinding.DelegateLoad);
-				await this.$store.dispatch(StoreBinding.LedgerInit, this.session_network.slip44);
-				if (this.$store.getters["ledger/isConnected"]) {
-					this.$store.dispatch(StoreBinding.LedgerReloadWallets, { clearFirst: true, forceLoad: true });
+		ipcRenderer.send(AppEvent.SplashscreenAppReady);
+
+		try {
+			// @ts-ignore
+			await Promise.all([this.$plugins.fetchPluginsFromAdapter(), this.$plugins.fetchPluginsList()]);
+		} catch {
+			// @ts-ignore
+			this.$error("Failed to load plugins. NPM might be down.");
+		}
+	}
+
+	__watchProfile() {
+		this.$store.watch(
+			(_, getters) => getters["session/profile"],
+			async (profile, oldProfile) => {
+				if (!profile) {
+					return;
 				}
-			});
-			this.$eventBus.on(AppEvent.LedgerConnected, async () => {
-				this.$success("Ledger Connected!");
-			});
-			this.$eventBus.on(AppEvent.LedgerDisconnected, async () => {
-				this.$warn("Ledger Disconnected!");
-			});
 
-			ipcRenderer.send(AppEvent.SplashscreenAppReady);
+				const currentPeer = this.$store.getters["peer/current"]();
+				if (currentPeer && currentPeer.ip) {
+					const scheme = currentPeer.isHttps ? "https://" : "http://";
+					// @ts-ignore
+					this.$client.host = `${scheme}${currentPeer.ip}:${currentPeer.port}`;
+				}
 
-			try {
-				await Promise.all([this.$plugins.fetchPluginsFromAdapter(), this.$plugins.fetchPluginsList()]);
-			} catch {
-				this.$error("Failed to load plugins. NPM might be down.");
+				if (!oldProfile || profile.id !== oldProfile.id) {
+					this.$eventBus.emit(AppEvent.ClientChanged);
+				}
+
+				priceApi.setAdapter(profile.priceApi);
+
+				this.$store.dispatch(StoreBinding.MarketRefreshTicker);
+			},
+			{ immediate: true },
+		);
+	}
+
+	__watchProcessURL() {
+		ipcRenderer.on("process-url", (_, url) => {
+			const uri = new URIHandler(url);
+
+			if (!uri.validate()) {
+				// @ts-ignore
+				this.$error(this.$t("VALIDATION.INVALID_URI"));
+			} else {
+				this.openUriTransaction(uri.deserialize());
 			}
-		},
+		});
 
-		__watchProfile() {
-			this.$store.watch(
-				(_, getters) => getters["session/profile"],
-				async (profile, oldProfile) => {
-					if (!profile) {
-						return;
-					}
+		ipcRenderer.on(AppEvent.UpdaterUpdateAvailable, (_, data) => {
+			this.$store.dispatch(StoreBinding.UpdaterSetAvailableRelease, data);
+		});
+	}
 
-					const currentPeer = this.$store.getters["peer/current"]();
-					if (currentPeer && currentPeer.ip) {
-						const scheme = currentPeer.isHttps ? "https://" : "http://";
-						this.$client.host = `${scheme}${currentPeer.ip}:${currentPeer.port}`;
-					}
+	// @ts-ignore
+	openUriTransaction(schema) {
+		this.isUriTransactionOpen = true;
+		this.uriTransactionSchema = schema;
+	}
 
-					if (!oldProfile || profile.id !== oldProfile.id) {
-						this.$eventBus.emit(AppEvent.ClientChanged);
-					}
+	closeUriTransaction() {
+		this.isUriTransactionOpen = false;
+		this.uriTransactionSchema = {};
+	}
 
-					priceApi.setAdapter(profile.priceApi);
+	setIntroDone() {
+		this.$store.dispatch(StoreBinding.AppSetHasSeenIntroduction, true);
+		this.$router.push({ name: "profile-new" });
+	}
 
-					this.$store.dispatch(StoreBinding.MarketRefreshTicker);
-				},
-				{ immediate: true },
-			);
-		},
+	// Enable contextmenu (right click) on input / textarea fields
+	setContextMenu() {
+		const InputMenu = Menu.buildFromTemplate([
+			// @ts-ignore
+			{ role: "cut" },
+			// @ts-ignore
+			{ role: "copy" },
+			// @ts-ignore
+			{ role: "paste" },
+			// @ts-ignore
+			{ type: "separator" },
+			// @ts-ignore
+			{ role: "selectall" },
+		]);
 
-		__watchProcessURL() {
-			ipcRenderer.on("process-url", (_, url) => {
-				const uri = new URIHandler(url);
+		document.body.addEventListener("contextmenu", (e) => {
+			e.preventDefault();
+			e.stopPropagation();
 
-				if (!uri.validate()) {
-					this.$error(this.$t("VALIDATION.INVALID_URI"));
-				} else {
-					this.openUriTransaction(uri.deserialize());
+			let node = e.target;
+
+			while (node) {
+				// @ts-ignore
+				if (node.nodeName.match(/^(input|textarea)$/i) || node.isContentEditable) {
+					// @ts-ignore
+					InputMenu.popup(remote.getCurrentWindow());
+					break;
 				}
-			});
+				// @ts-ignore
+				node = node.parentNode;
+			}
+		});
+	}
 
-			ipcRenderer.on(AppEvent.UpdaterUpdateAvailable, (_, data) => {
-				this.$store.dispatch(StoreBinding.UpdaterSetAvailableRelease, data);
-			});
-		},
+	// @ts-ignore
+	applyPluginTheme(themeName) {
+		const $style = document.querySelector("style[name=plugins]");
 
-		openUriTransaction(schema) {
-			this.isUriTransactionOpen = true;
-			this.uriTransactionSchema = schema;
-		},
-
-		closeUriTransaction() {
-			this.isUriTransactionOpen = false;
-			this.uriTransactionSchema = {};
-		},
-
-		setIntroDone() {
-			this.$store.dispatch(StoreBinding.AppSetHasSeenIntroduction, true);
-			this.$router.push({ name: "profile-new" });
-		},
-
-		// Enable contextmenu (right click) on input / textarea fields
-		setContextMenu() {
-			const InputMenu = Menu.buildFromTemplate([
-				{ role: "cut" },
-				{ role: "copy" },
-				{ role: "paste" },
-				{ type: "separator" },
-				{ role: "selectall" },
-			]);
-
-			document.body.addEventListener("contextmenu", (e) => {
-				e.preventDefault();
-				e.stopPropagation();
-
-				let node = e.target;
-
-				while (node) {
-					if (node.nodeName.match(/^(input|textarea)$/i) || node.isContentEditable) {
-						InputMenu.popup(remote.getCurrentWindow());
-						break;
-					}
-					node = node.parentNode;
-				}
-			});
-		},
-
-		/**
-		 * Webpack cannot require assets without knowing the path or, at least, part of it
-		 * (https://webpack.js.org/guides/dependency-management/#require-context), so,
-		 * instead of that, those assets are loaded manually and then injected directly on the DOM.
-		 */
-		applyPluginTheme(themeName) {
-			const $style = document.querySelector("style[name=plugins]");
-
-			if (["light", "dark"].includes(themeName)) {
+		if (["light", "dark"].includes(themeName)) {
+			// @ts-ignore
+			$style.innerHTML = null;
+		} else if (themeName && this.pluginThemes) {
+			const theme = this.pluginThemes[themeName];
+			if (theme) {
+				const input = fs.readFileSync(theme.cssPath);
+				const output = new CleanCss().minify(input);
+				// @ts-ignore
+				$style.innerHTML = output.styles;
+			} else {
+				// @ts-ignore
 				$style.innerHTML = null;
-			} else if (themeName && this.pluginThemes) {
-				const theme = this.pluginThemes[themeName];
-				if (theme) {
-					const input = fs.readFileSync(theme.cssPath);
-					const output = new CleanCss().minify(input);
-					$style.innerHTML = output.styles;
-				} else {
-					$style.innerHTML = null;
-				}
 			}
-		},
+		}
+	}
 
-		applyPluginLanguage(languageName) {
-			if (languageName === I18N.defaultLocale) {
-				i18nSetup.setLanguage(languageName);
-			} else if (languageName && this.pluginLanguages[languageName]) {
-				i18nSetup.loadLanguage(languageName, this.pluginLanguages[languageName]);
-			}
-		},
-	},
-};
+	// @ts-ignore
+	applyPluginLanguage(languageName) {
+		if (languageName === I18N.defaultLocale) {
+			i18nSetup.setLanguage(languageName);
+		} else if (languageName && this.pluginLanguages[languageName]) {
+			i18nSetup.loadLanguage(languageName, this.pluginLanguages[languageName]);
+		}
+	}
+}
 </script>
 
 <style scoped>

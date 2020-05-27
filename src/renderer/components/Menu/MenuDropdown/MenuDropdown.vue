@@ -3,7 +3,7 @@
 		<button
 			v-if="!hasDefaultSlot"
 			:disabled="isDisabled"
-			class="appearance-none text-inherit w-full"
+			class="w-full appearance-none text-inherit"
 			@click.stop="handlerWrapperClick"
 		>
 			<slot
@@ -37,10 +37,10 @@
 				containerClasses,
 			]"
 			:style="{ right: adjustedPosition.x, top: pinAbove ? null : adjustedPosition.y }"
-			class="MenuDropdown__container absolute min-w-full z-20"
+			class="absolute z-20 min-w-full MenuDropdown__container"
 		>
 			<ul
-				class="MenuDropdown pointer-events-auto shadow flex flex-col bg-theme-feature rounded py-2 overflow-y-auto max-h-2xs"
+				class="flex flex-col py-2 overflow-y-auto rounded shadow pointer-events-auto MenuDropdown bg-theme-feature max-h-2xs"
 			>
 				<slot>
 					<MenuDropdownItem
@@ -61,13 +61,14 @@
 
 <script>
 import { zipObject } from "lodash";
+import { Component, Prop, Vue, Watch } from "vue-property-decorator";
 
 import { isEmpty } from "@/utils";
 
 import MenuDropdownHandler from "./MenuDropdownHandler";
 import MenuDropdownItem from "./MenuDropdownItem";
 
-export default {
+@Component({
 	name: "MenuDropdown",
 
 	components: {
@@ -79,133 +80,154 @@ export default {
 		prop: "value",
 		event: "select",
 	},
+})
+export default class MenuDropdown extends Vue {
+	@Prop({
+		type: String,
+		required: false,
+		default: "",
+	})
+	containerClasses;
 
-	props: {
-		containerClasses: {
-			type: String,
-			required: false,
-			default: "",
-		},
-		placeholder: {
-			type: String,
-			required: false,
-			default: null,
-		},
-		items: {
-			type: [Array, Object],
-			required: false,
-			default: () => [],
-		},
-		value: {
-			type: String,
-			required: false,
-			default: null,
-		},
-		position: {
-			type: Object,
-			required: false,
-			default: () => {},
-		},
-		pinAbove: {
-			type: Boolean,
-			required: false,
-			default: false,
-		},
-		pinToInputWidth: {
-			type: Boolean,
-			required: false,
-			default: false,
-		},
-		prefix: {
-			type: String,
-			required: false,
-			default: "",
-		},
-		isDisabled: {
-			type: Boolean,
-			required: false,
-			default: false,
-		},
-		isHighlighting: {
-			type: Boolean,
-			required: false,
-			default: true,
-		},
-	},
+	@Prop({
+		type: String,
+		required: false,
+		default: null,
+	})
+	placeholder;
 
-	data: (vm) => ({
-		isOpen: true,
-		activeValue: vm.value,
-	}),
+	@Prop({
+		type: [Array, Object],
+		required: false,
+		default: () => [],
+	})
+	items;
 
-	computed: {
-		adjustedPosition() {
-			return {
-				x: "0",
-				y: "120%",
-				...this.position,
-			};
-		},
-		entries() {
-			return Array.isArray(this.items) ? zipObject(this.items, this.items) : this.items;
-		},
-		hasDefaultSlot() {
-			return !!this.$slots.default;
-		},
-		hasItems() {
-			return !isEmpty(this.items);
-		},
-		isOnlySelectedItem() {
-			if (Object.keys(this.entries).length > 1) {
-				return false;
-			}
-			if (
-				Object.keys(this.entries).length === 1 &&
-				this.entries[this.activeValue] !== Object.values(this.entries)[0]
-			) {
-				return false;
-			}
+	@Prop({
+		type: String,
+		required: false,
+		default: null,
+	})
+	value;
 
-			return true;
-		},
-	},
+	@Prop({
+		type: Object,
+		required: false,
+		default: () => {},
+	})
+	position;
 
-	watch: {
-		value(value) {
-			this.activeValue = value;
-		},
-	},
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	pinAbove;
+
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	pinToInputWidth;
+
+	@Prop({
+		type: String,
+		required: false,
+		default: "",
+	})
+	prefix;
+
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	isDisabled;
+
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: true,
+	})
+	isHighlighting;
+
+	isOpen = true;
+	activeValue = null;
+
+	@Watch("value")
+	onValue(value) {
+		this.activeValue = value;
+	}
+
+	data(vm) {
+		return {
+			activeValue: vm.value,
+		};
+	}
+
+	get adjustedPosition() {
+		return {
+			x: "0",
+			y: "120%",
+			...this.position,
+		};
+	}
+
+	get entries() {
+		return Array.isArray(this.items) ? zipObject(this.items, this.items) : this.items;
+	}
+
+	get hasDefaultSlot() {
+		return !!this.$slots.default;
+	}
+
+	get hasItems() {
+		return !isEmpty(this.items);
+	}
+
+	get isOnlySelectedItem() {
+		if (Object.keys(this.entries).length > 1) {
+			return false;
+		}
+		if (
+			Object.keys(this.entries).length === 1 &&
+			this.entries[this.activeValue] !== Object.values(this.entries)[0]
+		) {
+			return false;
+		}
+
+		return true;
+	}
 
 	mounted() {
 		this.isOpen = this.hasDefaultSlot;
-	},
+	}
 
-	methods: {
-		select(item) {
-			this.activeValue = item;
-			this.isOpen = false;
+	select(item) {
+		this.activeValue = item;
+		this.isOpen = false;
 
-			this.$emit("select", item);
-		},
+		this.$emit("select", item);
+	}
 
-		handlerWrapperClick() {
-			this.toggle();
-			this.$emit("click");
-		},
+	handlerWrapperClick() {
+		this.toggle();
+		this.$emit("click");
+	}
 
-		toggle() {
-			this.isOpen = !this.isOpen;
-		},
+	toggle() {
+		this.isOpen = !this.isOpen;
+	}
 
-		open() {
-			this.isOpen = true;
-		},
+	open() {
+		this.isOpen = true;
+	}
 
-		close() {
-			this.isOpen = false;
-		},
-	},
-};
+	close() {
+		this.isOpen = false;
+	}
+}
 </script>
 
 <style lang="postcss">

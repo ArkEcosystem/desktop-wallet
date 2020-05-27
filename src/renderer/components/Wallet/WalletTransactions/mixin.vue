@@ -26,128 +26,115 @@
 </template>
 
 <script>
-import { StoreBinding } from "@/enums";
+import { Component, Prop, Vue, Watch } from "vue-property-decorator";
 
-export default {
-	props: {
-		transactionType: {
-			type: Number,
-			required: false,
-			default: null,
+@Component({})
+export default class AnonymousComponent extends Vue {
+	@Prop({
+		type: Number,
+		required: false,
+		default: null,
+	})
+	transactionType;
+
+	currentPage = 1;
+	isFetching = false;
+	isLoading = false;
+	fetchedTransactions = [];
+	expiryEvents = [];
+	totalCount = 0;
+	newTransactionsNotice = null;
+	lastStatusRefresh = null;
+
+	queryParams = {
+		page: 1,
+		limit: 10,
+		sort: {
+			field: "timestamp",
+			type: "desc",
 		},
-	},
+	};
 
-	data: () => ({
-		currentPage: 1,
-		isFetching: false,
-		isLoading: false,
-		fetchedTransactions: [],
-		expiryEvents: [],
-		totalCount: 0,
-		newTransactionsNotice: null,
-		lastStatusRefresh: null,
-		queryParams: {
-			page: 1,
-			limit: 10,
-			sort: {
-				field: "timestamp",
-				type: "desc",
-			},
-		},
-	}),
+	@Watch("wallet_fromRoute")
+	// This watcher would invoke the `fetch` after the `Synchronizer`
+	onWalletFromRoute(newWallet, oldWallet) {
+		const currentTimestamp = Math.round(new Date().getTime() / 1000);
+		if (
+			(newWallet && !oldWallet) ||
+			(!newWallet && oldWallet) ||
+			(newWallet && oldWallet && newWallet.address !== oldWallet.address)
+		) {
+			this.reset();
+			this.loadTransactions();
 
-	computed: {
-		isRemote() {
-			if (this.$options.isRemote !== undefined) {
-				return this.$options.isRemote;
+			if (this.onWalletChange) {
+				this.onWalletChange(newWallet, oldWallet);
 			}
+		} else if (this.lastStatusRefresh < currentTimestamp - 1) {
+			this.lastStatusRefresh = currentTimestamp;
+			this.refreshStatus();
+		}
+	}
 
-			return true;
-		},
+	get isRemote() {
+		if (this.$options.isRemote !== undefined) {
+			return this.$options.isRemote;
+		}
 
-		hasPagination() {
-			if (this.$options.hasPagination !== undefined) {
-				return this.$options.hasPagination;
-			}
+		return true;
+	}
 
-			return this.totalCount > 0;
-		},
+	get hasPagination() {
+		if (this.$options.hasPagination !== undefined) {
+			return this.$options.hasPagination;
+		}
 
-		sortQuery() {
-			return {
-				field: this.queryParams.sort.field,
-				type: this.queryParams.sort.type,
-			};
-		},
+		return this.totalCount > 0;
+	}
 
-		transactionTableRowCount: {
-			get() {
-				return this.$store.getters["session/transactionTableRowCount"];
-			},
+	get sortQuery() {
+		return {
+			field: this.queryParams.sort.field,
+			type: this.queryParams.sort.type,
+		};
+	}
 
-			set(count) {
-				this.$store.dispatch(StoreBinding.SessionSetTransactionTableRowCount, count);
+	get transactionTableRowCount() {
+		return this.$store.getters["session/transactionTableRowCount"];
+	}
 
-				this.$store.dispatch(StoreBinding.ProfileUpdate, {
-					...this.session_profile,
-					transactionTableRowCount: count,
-				});
-			},
-		},
-	},
+	set transactionTableRowCount(count) {
+		this.$store.dispatch("session/setTransactionTableRowCount", count);
+		this.$store.dispatch("profile/update", {
+			...this.session_profile,
+			transactionTableRowCount: count,
+		});
+	}
 
-	watch: {
-		// This watcher would invoke the `fetch` after the `Synchronizer`
-		wallet_fromRoute(newWallet, oldWallet) {
-			const currentTimestamp = Math.round(new Date().getTime() / 1000);
-			if (
-				(newWallet && !oldWallet) ||
-				(!newWallet && oldWallet) ||
-				(newWallet && oldWallet && newWallet.address !== oldWallet.address)
-			) {
-				this.reset();
-				this.loadTransactions();
+	loadTransactions() {
+		if (!this.wallet_fromRoute || this.isFetching) {
+			return;
+		}
 
-				if (this.onWalletChange) {
-					this.onWalletChange(newWallet, oldWallet);
-				}
-			} else if (this.lastStatusRefresh < currentTimestamp - 1) {
-				this.lastStatusRefresh = currentTimestamp;
-				this.refreshStatus();
-			}
-		},
-	},
+		this.newTransactionsNotice = null;
+		this.isLoading = true;
+		this.fetchTransactions();
+	}
 
-	methods: {
-		/**
-		 * Fetch the transactions and show the loading animation while the response
-		 * is received
-		 */
-		async loadTransactions() {
-			if (!this.wallet_fromRoute || this.isFetching) {
-				return;
-			}
+	onPerPageChange() {
+		// Placeholders if not used
+	}
 
-			this.newTransactionsNotice = null;
-			this.isLoading = true;
-			this.fetchTransactions();
-		},
+	onPageChange() {
+		// Placeholders if not used
+	}
 
-		onPerPageChange() {
-			// Placeholders if not used
-		},
+	__updateParams(newProps) {
+		if (!newProps || typeof newProps !== "object" || newProps === null) {
+			return;
+		}
 
-		onPageChange() {
-			// Placeholders if not used
-		},
-
-		__updateParams(newProps) {
-			if (!newProps || typeof newProps !== "object" || newProps === null) {
-				return;
-			}
-
-			this.queryParams = Object.assign({}, this.queryParams, newProps);
-		},
-	},
-};
+		this.queryParams = Object.assign({}, this.queryParams, newProps);
+	}
+}
 </script>

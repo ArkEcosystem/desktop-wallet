@@ -1,16 +1,16 @@
 <template>
-	<div class="flex justify-center items-center">
+	<div class="flex items-center justify-center">
 		<button
 			v-tooltip="{
 				content: tooltipText,
 				placement: isHorizontal ? 'bottom' : 'right',
 				boundariesElement: 'body',
 			}"
-			class="AppSidemenuImportantNotification relative cursor-pointer flex items-center justify-center h-8 w-8"
+			class="relative flex items-center justify-center w-8 h-8 cursor-pointer AppSidemenuImportantNotification"
 			@click="openNotification"
 		>
 			<div
-				class="AppSidemenuImportantNotification__circle flex items-center justify-center h-8 w-8 rounded-full text-theme-feature bg-theme-feature-item-indicator hover:text-theme-feature-item-indicator hover:bg-theme-feature"
+				class="flex items-center justify-center w-8 h-8 rounded-full AppSidemenuImportantNotification__circle text-theme-feature bg-theme-feature-item-indicator hover:text-theme-feature-item-indicator hover:bg-theme-feature"
 			>
 				<SvgIcon name="notification" view-box="0 0 15 15" />
 			</div>
@@ -19,7 +19,8 @@
 	</div>
 </template>
 
-<script>
+<script lang="ts">
+import { Component, Prop, Vue } from "vue-property-decorator";
 import { mapGetters } from "vuex";
 
 import AppUpdater from "@/components/App/AppUpdater";
@@ -29,7 +30,7 @@ import SvgIcon from "@/components/SvgIcon";
  * A component to display a notification icon (a bell) and display important
  * notifications, such as, new relesases
  */
-export default {
+@Component({
 	name: "AppSidemenuImportantNotification",
 
 	components: {
@@ -37,37 +38,35 @@ export default {
 		AppUpdater,
 	},
 
-	props: {
-		isHorizontal: {
-			type: Boolean,
-			required: false,
-			default: false,
-		},
-	},
+	computed: { ...mapGetters("updater", ["availableRelease"]) },
+})
+export default class AppSidemenuImportantNotification extends Vue {
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	isHorizontal;
 
-	data: () => ({
-		isNotificationVisible: false,
-	}),
+	isNotificationVisible = false;
 
-	computed: {
-		...mapGetters("updater", ["availableRelease"]),
-		releaseVersion() {
-			return this.availableRelease && this.availableRelease.version;
-		},
-		tooltipText() {
-			return this.$t("APP_SIDEMENU_NOTIFICATION.TOOLTIP", { version: this.releaseVersion });
-		},
-	},
+	get releaseVersion() {
+		// @ts-ignore
+		return this.availableRelease && this.availableRelease.version;
+	}
 
-	methods: {
-		closeNotification() {
-			this.isNotificationVisible = false;
-		},
-		openNotification() {
-			this.isNotificationVisible = true;
-		},
-	},
-};
+	get tooltipText() {
+		return this.$t("APP_SIDEMENU_NOTIFICATION.TOOLTIP", { version: this.releaseVersion });
+	}
+
+	closeNotification() {
+		this.isNotificationVisible = false;
+	}
+
+	openNotification() {
+		this.isNotificationVisible = true;
+	}
+}
 </script>
 
 <style scoped>

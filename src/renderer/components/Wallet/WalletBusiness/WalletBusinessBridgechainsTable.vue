@@ -52,13 +52,15 @@
 </template>
 
 <script>
+import { Component, Vue } from "vue-property-decorator";
+
 import SvgIcon from "@/components/SvgIcon";
 import TableWrapper from "@/components/utils/TableWrapper";
 import truncateMiddle from "@/filters/truncate-middle";
 
 import WalletBusinessShowBridgechain from "./WalletBusinessShowBridgechain";
 
-export default {
+@Component({
 	name: "WalletBusinessBridgechainsTable",
 
 	components: {
@@ -66,56 +68,51 @@ export default {
 		TableWrapper,
 		WalletBusinessShowBridgechain,
 	},
+})
+export default class WalletBusinessBridgechainsTable extends Vue {
+	selected = null;
 
-	data: () => ({
-		selected: null,
-	}),
-
-	computed: {
-		columns() {
-			return [
-				{
-					label: this.$t("WALLET_BUSINESS.COLUMN.NAME"),
-					field: "name",
+	get columns() {
+		return [
+			{
+				label: this.$t("WALLET_BUSINESS.COLUMN.NAME"),
+				field: "name",
+			},
+			{
+				label: this.$t("WALLET_BUSINESS.COLUMN.SEEDS"),
+				field: "seedNodes",
+				formatFn: (value) => {
+					return value.length;
 				},
-				{
-					label: this.$t("WALLET_BUSINESS.COLUMN.SEEDS"),
-					field: "seedNodes",
-					formatFn: (value) => {
-						return value.length;
-					},
-					sortable: false,
+				sortable: false,
+			},
+			{
+				label: this.$t("WALLET_BUSINESS.COLUMN.GENESIS_HASH"),
+				field: "genesisHash",
+				formatFn: (value) => {
+					return truncateMiddle(value, 14);
 				},
-				{
-					label: this.$t("WALLET_BUSINESS.COLUMN.GENESIS_HASH"),
-					field: "genesisHash",
-					formatFn: (value) => {
-						return truncateMiddle(value, 14);
-					},
-				},
-				{
-					label: this.$t("WALLET_BUSINESS.COLUMN.REPOSITORY"),
-					field: "bridgechainRepository",
-				},
-			];
-		},
-	},
+			},
+			{
+				label: this.$t("WALLET_BUSINESS.COLUMN.REPOSITORY"),
+				field: "bridgechainRepository",
+			},
+		];
+	}
 
-	methods: {
-		onSortChange(sortOptions) {
-			this.$emit("on-sort-change", {
-				source: "bridgechainsTab",
-				...sortOptions[0],
-			});
-		},
+	onSortChange(sortOptions) {
+		this.$emit("on-sort-change", {
+			source: "bridgechainsTab",
+			...sortOptions[0],
+		});
+	}
 
-		onRowClick({ row }) {
-			this.selected = row;
-		},
+	onRowClick({ row }) {
+		this.selected = row;
+	}
 
-		onCloseModal() {
-			this.selected = null;
-		},
-	},
-};
+	onCloseModal() {
+		this.selected = null;
+	}
+}
 </script>

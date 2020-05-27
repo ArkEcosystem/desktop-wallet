@@ -14,46 +14,54 @@
 	</button>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { Component, Prop, Vue } from "vue-property-decorator";
+@Component({
 	name: "InputToggleChoice",
+})
+export default class InputToggleChoice extends Vue {
+	@Prop({
+		type: String,
+		required: true,
+	})
+	choice;
 
-	props: {
-		choice: {
-			type: String,
-			required: true,
-		},
-		selectedChoice: {
-			type: String,
-			required: true,
-		},
-		index: {
-			type: Number,
-			required: true,
-		},
-		length: {
-			type: Number,
-			required: true,
-		},
-	},
-	computed: {
-		isSelected() {
-			return this.choice === this.selectedChoice;
-		},
+	@Prop({
+		type: String,
+		required: true,
+	})
+	selectedChoice;
 
-		isFirst() {
-			return this.index === 0;
-		},
+	@Prop({
+		type: Number,
+		required: true,
+	})
+	index;
 
-		isLast() {
-			return this.index === this.length - 1;
-		},
-	},
+	@Prop({
+		type: Number,
+		required: true,
+	})
+	length;
 
-	methods: {
-		emitSelect(choice) {
-			this.$emit("select", choice);
-		},
-	},
-};
+	get isSelected() {
+		// @ts-ignore
+		return this.choice === this.selectedChoice;
+	}
+
+	get isFirst() {
+		// @ts-ignore
+		return this.index === 0;
+	}
+
+	get isLast() {
+		// @ts-ignore
+		return this.index === this.length - 1;
+	}
+
+	emitSelect(choice) {
+		// @ts-ignore
+		this.$emit("select", choice);
+	}
+}
 </script>

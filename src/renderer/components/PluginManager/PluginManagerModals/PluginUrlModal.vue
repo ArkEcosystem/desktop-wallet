@@ -28,75 +28,73 @@
 </template>
 
 <script>
+import { Component, Vue } from "vue-property-decorator";
 import { required, url } from "vuelidate/lib/validators";
 
 import { InputText } from "@/components/Input";
 import { ModalWindow } from "@/components/Modal";
 
-export default {
+@Component({
 	name: "PluginUrlModal",
 
 	components: {
 		InputText,
 		ModalWindow,
 	},
+})
+export default class PluginUrlModal extends Vue {
+	form = {
+		url: "",
+	};
 
-	data: () => ({
-		form: {
-			url: "",
-		},
-	}),
-
-	computed: {
-		urlError() {
-			if (this.$v.form.url.$dirty) {
-				if (!this.$v.form.url.required) {
-					return this.$t("VALIDATION.REQUIRED", [this.$t("COMMON.URL")]);
-				}
-
-				if (!this.$v.form.url.url) {
-					return this.$t("VALIDATION.URL.INVALID");
-				}
-
-				if (!this.$v.form.url.isGitHubUrl) {
-					return this.$t("VALIDATION.URL.NO_GITHUB");
-				}
-
-				if (!this.$v.form.url.isAllowed) {
-					return this.$t("VALIDATION.URL.NO_GITHUB_REPOSITORY");
-				}
+	get urlError() {
+		if (this.$v.form.url.$dirty) {
+			if (!this.$v.form.url.required) {
+				return this.$t("VALIDATION.REQUIRED", [this.$t("COMMON.URL")]);
 			}
 
-			return null;
-		},
-	},
+			if (!this.$v.form.url.url) {
+				return this.$t("VALIDATION.URL.INVALID");
+			}
 
-	methods: {
-		emitFetchPlugin() {
-			this.$emit("fetch-plugin", this.$v.form.url.$model);
-		},
+			if (!this.$v.form.url.isGitHubUrl) {
+				return this.$t("VALIDATION.URL.NO_GITHUB");
+			}
 
-		emitClose() {
-			this.$emit("close");
-		},
-	},
+			if (!this.$v.form.url.isAllowed) {
+				return this.$t("VALIDATION.URL.NO_GITHUB_REPOSITORY");
+			}
+		}
 
-	validations: {
-		form: {
-			url: {
-				required,
-				url,
-				isGitHubUrl(value) {
-					return /^((https?:\/\/)?(www.)?)?github\.com/.test(value.toLowerCase());
-				},
-				isAllowed(value) {
-					const regex = RegExp("^((https?://)?(www.)?)?github.com/([A-Za-z0-9_.-]+)/([A-Za-z0-9_.-]+)[/]?$");
-					return regex.test(value.toLowerCase());
+		return null;
+	}
+
+	emitFetchPlugin() {
+		this.$emit("fetch-plugin", this.$v.form.url.$model);
+	}
+
+	emitClose() {
+		this.$emit("close");
+	}
+
+	validations() {
+		return {
+			form: {
+				url: {
+					required,
+					url,
+					isGitHubUrl(value) {
+						return /^((https?:\/\/)?(www.)?)?github\.com/.test(value.toLowerCase());
+					},
+					isAllowed(value) {
+						const regex = RegExp("^((https?://)?(www.)?)?github.com/([A-Za-z0-9_.-]+)/([A-Za-z0-9_.-]+)[/]?$");
+						return regex.test(value.toLowerCase());
+					},
 				},
 			},
-		},
-	},
-};
+		};
+	};
+}
 </script>
 
 <style lang="postcss" scoped>

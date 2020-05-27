@@ -17,78 +17,82 @@
 					'bg-theme-option-button-text': !inputIsActive,
 					'bg-blue': inputIsActive,
 				}"
-				class="PluginManagerButtonSwitch__circle transition"
+				class="transition PluginManagerButtonSwitch__circle"
 			/>
 		</span>
 	</button>
 </template>
 
 <script>
-export default {
+import { Component, Prop, Vue, Watch } from "vue-property-decorator";
+
+@Component({
 	name: "PluginManagerButtonSwitch",
 
 	model: {
 		prop: "isActive",
 		event: "change",
 	},
+})
+export default class PluginManagerButtonSwitch extends Vue {
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	isActive;
 
-	props: {
-		isActive: {
-			type: Boolean,
-			required: false,
-			default: false,
-		},
-		isDisabled: {
-			type: Boolean,
-			required: false,
-			default: false,
-		},
-		labels: {
-			type: Object,
-			required: false,
-			default: () => ({
-				active: "PAGES.PLUGIN_MANAGER.ENABLED",
-				inactive: "PAGES.PLUGIN_MANAGER.DISABLED",
-			}),
-		},
-	},
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	isDisabled;
 
-	data: (vm) => ({
-		inputIsActive: vm.isActive,
-	}),
+	@Prop({
+		type: Object,
+		required: false,
+		default: () => ({
+			active: "PAGES.PLUGIN_MANAGER.ENABLED",
+			inactive: "PAGES.PLUGIN_MANAGER.DISABLED",
+		}),
+	})
+	labels;
 
-	computed: {
-		model: {
-			get() {
-				return this.inputIsActive;
-			},
-			set(value) {
-				this.inputIsActive = value;
-				this.$emit("change", value);
-			},
-		},
+	inputIsActive = false;
 
-		label() {
-			return this.inputIsActive ? this.$t(this.labels.active) : this.$t(this.labels.inactive);
-		},
-	},
+	@Watch("isActive")
+	onIsActive(isActive) {
+		this.inputIsActive = isActive;
+	}
 
-	watch: {
-		isActive(isActive) {
-			this.inputIsActive = isActive;
-		},
-	},
+	data(vm) {
+		return {
+			inputIsActive: vm.isActive,
+		};
+	}
 
-	methods: {
-		toggle() {
-			if (this.isDisabled) {
-				return;
-			}
+	get model() {
+		return this.inputIsActive;
+	}
 
-			this.model = !this.model;
-		},
-	},
-};
+	set model(value) {
+		this.inputIsActive = value;
+		this.$emit("change", value);
+	}
+
+	get label() {
+		return this.inputIsActive ? this.$t(this.labels.active) : this.$t(this.labels.inactive);
+	}
+
+	toggle() {
+		if (this.isDisabled) {
+			return;
+		}
+
+		this.model = !this.model;
+	}
+}
 </script>
 
 <style scoped>

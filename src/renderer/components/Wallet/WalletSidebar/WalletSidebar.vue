@@ -171,18 +171,18 @@
 
 <script>
 import { uniqBy } from "lodash";
+import { Component, Prop, Vue, Watch } from "vue-property-decorator";
 
 import { MenuNavigation, MenuNavigationItem } from "@/components/Menu";
 import SvgIcon from "@/components/SvgIcon";
 import Loader from "@/components/utils/Loader";
-import { StoreBinding } from "@/enums";
 import { AppEvent } from "@/enums";
 import { sortByProps } from "@/utils";
 
 import { WalletIdenticon, WalletIdenticonPlaceholder } from "../";
 import WalletSidebarFilters from "./WalletSidebarFilters";
 
-export default {
+@Component({
 	name: "WalletSidebar",
 
 	components: {
@@ -194,243 +194,231 @@ export default {
 		WalletIdenticonPlaceholder,
 		WalletSidebarFilters,
 	},
+})
+export default class WalletSidebar extends Vue {
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	showExpanded;
 
-	props: {
-		showExpanded: {
-			type: Boolean,
-			required: false,
-			default: false,
-		},
-		showMenu: {
-			type: Boolean,
-			required: false,
-			default: true,
-		},
-		showFilteredWallets: {
-			type: Boolean,
-			required: false,
-			default: true,
-		},
-	},
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: true,
+	})
+	showMenu;
 
-	data: () => ({
-		hasBeenExpanded: false,
-		isFiltersVisible: false,
-		isResizing: false,
-		searchQuery: "",
-	}),
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: true,
+	})
+	showFilteredWallets;
 
-	computed: {
-		areFiltersActive() {
-			return !!this.searchQuery.length || Object.values(this.filters).some((value) => !!value);
-		},
+	hasBeenExpanded = false;
+	isFiltersVisible = false;
+	isResizing = false;
+	searchQuery = "";
 
-		currentWallet() {
-			return this.wallet_fromRoute || {};
-		},
+	@Watch("wallets")
+	onWallets() {
+		this.$refs.MenuNavigation.collectItems();
+	}
 
-		hasContactsOnly() {
-			return this.currentWallet && this.currentWallet.isContact && !this.currentWallet.isWatchOnly;
-		},
+	get areFiltersActive() {
+		return !!this.searchQuery.length || Object.values(this.filters).some((value) => !!value);
+	}
 
-		isExpanded() {
-			return this.showExpanded || this.hasBeenExpanded;
-		},
+	get currentWallet() {
+		return this.wallet_fromRoute || {};
+	}
 
-		isLedgerConnected() {
-			return this.$store.getters["ledger/isConnected"];
-		},
+	get hasContactsOnly() {
+		return this.currentWallet && this.currentWallet.isContact && !this.currentWallet.isWatchOnly;
+	}
 
-		isLoadingLedger() {
-			return this.$store.getters["ledger/isLoading"] && !this.ledgerWallets.length;
-		},
+	get isExpanded() {
+		return this.showExpanded || this.hasBeenExpanded;
+	}
 
-		wallets() {
-			return this.hasContactsOnly
-				? this.$store.getters["wallet/contactsByProfileId"](this.session_profile.id)
-				: this.$store.getters["wallet/byProfileId"](this.session_profile.id);
-		},
+	get isLedgerConnected() {
+		return this.$store.getters["ledger/isConnected"];
+	}
 
-		ledgerWallets() {
-			return this.$store.getters["ledger/wallets"];
-		},
+	get isLoadingLedger() {
+		return this.$store.getters["ledger/isLoading"] && !this.ledgerWallets.length;
+	}
 
-		/**
-		 * Wallets before filtering
-		 */
-		availableWallets() {
-			let wallets = this.wallets;
+	get wallets() {
+		return this.hasContactsOnly
+			? this.$store.getters["wallet/contactsByProfileId"](this.session_profile.id)
+			: this.$store.getters["wallet/byProfileId"](this.session_profile.id);
+	}
 
-			if (this.isLedgerConnected && !this.hasContactsOnly) {
-				wallets = uniqBy([...this.ledgerWallets, ...wallets], "address");
-			}
+	get ledgerWallets() {
+		return this.$store.getters["ledger/wallets"];
+	}
 
-			return wallets;
-		},
+	get availableWallets() {
+		let wallets = this.wallets;
 
-		selectableWallets() {
-			const wallets = this.showFilteredWallets
-				? this.filterWallets(this.availableWallets)
-				: this.availableWallets;
-			return this.sortWallets(wallets);
-		},
+		if (this.isLedgerConnected && !this.hasContactsOnly) {
+			wallets = uniqBy([...this.ledgerWallets, ...wallets], "address");
+		}
 
-		filters: {
-			get() {
-				return this.$store.getters["session/walletSidebarFilters"] || {};
-			},
-			set(filters) {
-				this.$store.dispatch(StoreBinding.SessionSetWalletSidebarFilters, filters);
+		return wallets;
+	}
 
-				this.$store.dispatch(StoreBinding.ProfileUpdate, {
-					...this.session_profile,
-					walletSidebarFilters: filters,
-				});
-			},
-		},
+	get selectableWallets() {
+		const wallets = this.showFilteredWallets ? this.filterWallets(this.availableWallets) : this.availableWallets;
+		return this.sortWallets(wallets);
+	}
 
-		sortOrder: {
-			get() {
-				return this.$store.getters["session/walletSidebarSortParams"] || { field: "name", type: "asc" };
-			},
-			set(sortParams) {
-				this.$store.dispatch(StoreBinding.SessionSetWalletSidebarSortParams, sortParams);
+	get filters() {
+		return this.$store.getters["session/walletSidebarFilters"] || {};
+	}
 
-				this.$store.dispatch(StoreBinding.ProfileUpdate, {
-					...this.session_profile,
-					walletSidebarSortParams: sortParams,
-				});
-			},
-		},
-	},
+	set filters(filters) {
+		this.$store.dispatch("session/setWalletSidebarFilters", filters);
+		this.$store.dispatch("profile/update", {
+			...this.session_profile,
+			walletSidebarFilters: filters,
+		});
+	}
 
-	watch: {
-		wallets() {
-			this.$refs.MenuNavigation.collectItems();
-		},
-	},
+	get sortOrder() {
+		return this.$store.getters["session/walletSidebarSortParams"] || { field: "name", type: "asc" };
+	}
 
-	async created() {
+	set sortOrder(sortParams) {
+		this.$store.dispatch("session/setWalletSidebarSortParams", sortParams);
+		this.$store.dispatch("profile/update", {
+			...this.session_profile,
+			walletSidebarSortParams: sortParams,
+		});
+	}
+
+	created() {
 		this.$eventBus.on(AppEvent.LedgerDisconnected, this.ledgerDisconnected);
-	},
+	}
 
 	beforeDestroy() {
 		this.$eventBus.off(AppEvent.LedgerDisconnected, this.ledgerDisconnected);
-	},
+	}
 
-	methods: {
-		collapse() {
-			this.toggleExpanded(false);
-		},
+	collapse() {
+		this.toggleExpanded(false);
+	}
 
-		expand() {
-			this.toggleExpanded(true);
-		},
+	expand() {
+		this.toggleExpanded(true);
+	}
 
-		toggleExpanded(toExpand) {
-			this.isResizing = true;
-			setTimeout(() => {
-				setTimeout(() => (this.isResizing = false), 125);
+	toggleExpanded(toExpand) {
+		this.isResizing = true;
+		setTimeout(() => {
+			setTimeout(() => (this.isResizing = false), 125);
 
-				this.hasBeenExpanded = toExpand;
-				this.$emit(toExpand ? "expanded" : "collapsed");
-			}, 75);
-		},
+			this.hasBeenExpanded = toExpand;
+			this.$emit(toExpand ? "expanded" : "collapsed");
+		}, 75);
+	}
 
-		onSelect(address) {
-			if (!address) {
-				throw new Error("Selecting an address is required");
+	onSelect(address) {
+		if (!address) {
+			throw new Error("Selecting an address is required");
+		}
+
+		this.$router.push({ name: "wallet-show", params: { address } });
+	}
+
+	closeFilters(context) {
+		// To not hide the filters when expanding or collapsing
+		const wasToggleExpand = context.path.some((path) => {
+			if (path.className) {
+				return path.className.toString().includes("WalletSidebar__menu__button");
 			}
+		});
 
-			this.$router.push({ name: "wallet-show", params: { address } });
-		},
+		if (!wasToggleExpand) {
+			this.isFiltersVisible = false;
+		}
+	}
 
-		closeFilters(context) {
-			// To not hide the filters when expanding or collapsing
-			const wasToggleExpand = context.path.some((path) => {
-				if (path.className) {
-					return path.className.toString().includes("WalletSidebar__menu__button");
+	toggleFilters() {
+		this.isFiltersVisible = !this.isFiltersVisible;
+	}
+
+	applyFilters(filters) {
+		this.filters = filters;
+	}
+
+	filterWallets(wallets) {
+		let filtered = wallets;
+
+		if (this.filters.hideLedger) {
+			filtered = filtered.filter((wallet) => !wallet.isLedger);
+		}
+		if (this.filters.hideEmpty) {
+			filtered = filtered.filter((wallet) => wallet.balance > 0);
+		}
+		if (this.searchQuery) {
+			filtered = filtered.filter(({ address, balance, name }) => {
+				let match = [address, balance.toString()].some((text) => text.includes(this.searchQuery));
+
+				if (!match) {
+					const alternativeName = this.wallet_name(address);
+					const names = alternativeName ? [name, alternativeName] : [name];
+
+					const query = this.searchQuery.toLowerCase();
+					match = names.some((name) => name.toLowerCase().includes(query));
 				}
+
+				return match;
 			});
+		}
 
-			if (!wasToggleExpand) {
-				this.isFiltersVisible = false;
-			}
-		},
+		return filtered;
+	}
 
-		toggleFilters() {
-			this.isFiltersVisible = !this.isFiltersVisible;
-		},
+	applySearch(query) {
+		this.searchQuery = query;
+	}
 
-		applyFilters(filters) {
-			this.filters = filters;
-		},
+	applySortOrder(params) {
+		this.sortOrder = params;
+	}
 
-		filterWallets(wallets) {
-			let filtered = wallets;
+	sortWallets(wallets) {
+		const { field, type } = this.sortOrder;
 
-			if (this.filters.hideLedger) {
-				filtered = filtered.filter((wallet) => !wallet.isLedger);
-			}
-			if (this.filters.hideEmpty) {
-				filtered = filtered.filter((wallet) => wallet.balance > 0);
-			}
-			if (this.searchQuery) {
-				filtered = filtered.filter(({ address, balance, name }) => {
-					let match = [address, balance.toString()].some((text) => text.includes(this.searchQuery));
+		if (field === "name") {
+			wallets = this.wallet_sortByName(wallets);
+		} else if (field === "balance") {
+			wallets = wallets.sort(sortByProps(["balance", "name", "address"]));
+		} else {
+			throw new Error(`Sorting by "${field}" is not implemented`);
+		}
 
-					if (!match) {
-						const alternativeName = this.wallet_name(address);
-						const names = alternativeName ? [name, alternativeName] : [name];
+		return type === "asc" ? wallets : wallets.reverse();
+	}
 
-						const query = this.searchQuery.toLowerCase();
-						match = names.some((name) => name.toLowerCase().includes(query));
-					}
+	ledgerDisconnected() {
+		const hasCurrentWallet = this.currentWallet && this.currentWallet.address;
 
-					return match;
-				});
-			}
-
-			return filtered;
-		},
-
-		applySearch(query) {
-			this.searchQuery = query;
-		},
-
-		applySortOrder(params) {
-			this.sortOrder = params;
-		},
-
-		sortWallets(wallets) {
-			const { field, type } = this.sortOrder;
-
-			if (field === "name") {
-				wallets = this.wallet_sortByName(wallets);
-			} else if (field === "balance") {
-				wallets = wallets.sort(sortByProps(["balance", "name", "address"]));
-			} else {
-				throw new Error(`Sorting by "${field}" is not implemented`);
-			}
-
-			return type === "asc" ? wallets : wallets.reverse();
-		},
-
-		ledgerDisconnected() {
-			const hasCurrentWallet = this.currentWallet && this.currentWallet.address;
-
-			if (!hasCurrentWallet || this.currentWallet.isLedger) {
-				if (this.$refs.MenuNavigation && this.$route.name === "wallet-show") {
-					if (this.selectableWallets.length) {
-						this.$refs.MenuNavigation.switchToItem(this.selectableWallets[0].address);
-					} else {
-						this.$router.push({ name: "wallets" });
-					}
+		if (!hasCurrentWallet || this.currentWallet.isLedger) {
+			if (this.$refs.MenuNavigation && this.$route.name === "wallet-show") {
+				if (this.selectableWallets.length) {
+					this.$refs.MenuNavigation.switchToItem(this.selectableWallets[0].address);
+				} else {
+					this.$router.push({ name: "wallets" });
 				}
 			}
-		},
-	},
-};
+		}
+	}
+}
 </script>
 
 <style lang="postcss" scoped>

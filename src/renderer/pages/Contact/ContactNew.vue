@@ -67,124 +67,129 @@
 </template>
 
 <script>
+import { Component, Vue } from "vue-property-decorator";
+
 import { InputAddress, InputText } from "@/components/Input";
 import { StoreBinding } from "@/enums";
 import Wallet from "@/models/wallet";
 
-export default {
+@Component({
 	name: "ContactNew",
 
 	components: {
 		InputAddress,
 		InputText,
 	},
+})
+export default class ContactNew extends Vue {
+	schema = Wallet.schema;
 
-	schema: Wallet.schema,
+	get backgroundImage() {
+		return "pages/contact-new/wallet.svg";
+	}
 
-	computed: {
-		backgroundImage() {
-			return "pages/contact-new/wallet.svg";
-		},
-		addressError() {
-			if (this.$v.schema.address.$invalid) {
-				if (!this.$v.schema.address.contactDoesNotExist) {
-					return this.$t("VALIDATION.ADDRESS.EXISTS_AS_CONTACT", [this.schema.address]);
-				} else if (!this.$v.schema.address.walletDoesNotExist) {
-					return this.$t("VALIDATION.ADDRESS.EXISTS_AS_WALLET", [this.schema.address]);
-				}
+	get addressError() {
+		if (this.$v.schema.address.$invalid) {
+			if (!this.$v.schema.address.contactDoesNotExist) {
+				return this.$t("VALIDATION.ADDRESS.EXISTS_AS_CONTACT", [this.schema.address]);
+			} else if (!this.$v.schema.address.walletDoesNotExist) {
+				return this.$t("VALIDATION.ADDRESS.EXISTS_AS_WALLET", [this.schema.address]);
 			}
-			return null;
-		},
-		nameError() {
-			if (this.$v.schema.name.$invalid) {
-				if (!this.$v.schema.name.contactDoesNotExist) {
-					return this.$t("VALIDATION.NAME.EXISTS_AS_CONTACT", [this.schema.name]);
-				} else if (!this.$v.schema.name.walletDoesNotExist) {
-					return this.$t("VALIDATION.NAME.EXISTS_AS_WALLET", [this.schema.name]);
-				} else if (!this.$v.schema.name.schemaMaxLength) {
-					return this.$t("VALIDATION.NAME.MAX_LENGTH", [Wallet.schema.properties.name.maxLength]);
-					// NOTE: not used, unless the minimum length is changed
-				} else if (!this.$v.schema.name.schemaMinLength) {
-					return this.$tc("VALIDATION.NAME.MIN_LENGTH", Wallet.schema.properties.name.minLength);
-				}
+		}
+		return null;
+	}
+
+	get nameError() {
+		if (this.$v.schema.name.$invalid) {
+			if (!this.$v.schema.name.contactDoesNotExist) {
+				return this.$t("VALIDATION.NAME.EXISTS_AS_CONTACT", [this.schema.name]);
+			} else if (!this.$v.schema.name.walletDoesNotExist) {
+				return this.$t("VALIDATION.NAME.EXISTS_AS_WALLET", [this.schema.name]);
+			} else if (!this.$v.schema.name.schemaMaxLength) {
+				return this.$t("VALIDATION.NAME.MAX_LENGTH", [Wallet.schema.properties.name.maxLength]);
+				// NOTE: not used, unless the minimum length is changed
+			} else if (!this.$v.schema.name.schemaMinLength) {
+				return this.$tc("VALIDATION.NAME.MIN_LENGTH", Wallet.schema.properties.name.minLength);
 			}
-			return null;
-		},
-	},
+		}
+		return null;
+	}
 
 	beforeRouteEnter(to, from, next) {
 		next((vm) => {
 			vm.$synchronizer.focus();
 		});
-	},
+	}
 
-	methods: {
-		async create() {
+	async create() {
+		try {
+			let wallet;
+
 			try {
-				let wallet;
-
-				try {
-					wallet = await this.$client.fetchWallet(this.schema.address);
-				} catch (error) {
-					wallet = {
-						address: this.schema.address,
-						balance: "0",
-					};
-				}
-
-				const { address } = await this.$store.dispatch(StoreBinding.WalletCreate, {
-					...wallet,
-					name: this.schema.name,
-					profileId: this.session_profile.id,
-					isContact: true,
-				});
-
-				const name = this.schema.name.length ? this.wallet_name(address) : this.wallet_truncate(address);
-
-				this.$success(this.$t("PAGES.CONTACT_NEW.SUCCESS", [name]));
-				this.$router.push({ name: "contacts" });
+				wallet = await this.$client.fetchWallet(this.schema.address);
 			} catch (error) {
-				this.$error(`${this.$t("PAGES.CONTACT_NEW.FAILED")}: ${error.message}`);
+				wallet = {
+					address: this.schema.address,
+					balance: "0",
+				};
 			}
-		},
-		contactExists(byAttr, value) {
-			const contact = this.$store.getters[`wallet/${byAttr}`](value);
-			return contact && contact.isContact;
-		},
-		walletExists(byAttr, value) {
-			const wallet = this.$store.getters[`wallet/${byAttr}`](value);
-			return wallet && !wallet.isContact;
-		},
-	},
 
-	validations: {
-		schema: {
-			address: {
-				isValid() {
-					if (this.$refs.addressInput) {
-						return !this.$refs.addressInput.$v.$invalid;
-					}
+			const { address } = await this.$store.dispatch(StoreBinding.WalletCreate, {
+				...wallet,
+				name: this.schema.name,
+				profileId: this.session_profile.id,
+				isContact: true,
+			});
 
-					return false;
+			const name = this.schema.name.length ? this.wallet_name(address) : this.wallet_truncate(address);
+
+			this.$success(this.$t("PAGES.CONTACT_NEW.SUCCESS", [name]));
+			this.$router.push({ name: "contacts" });
+		} catch (error) {
+			this.$error(`${this.$t("PAGES.CONTACT_NEW.FAILED")}: ${error.message}`);
+		}
+	}
+
+	contactExists(byAttr, value) {
+		const contact = this.$store.getters[`wallet/${byAttr}`](value);
+		return contact && contact.isContact;
+	}
+
+	walletExists(byAttr, value) {
+		const wallet = this.$store.getters[`wallet/${byAttr}`](value);
+		return wallet && !wallet.isContact;
+	}
+
+	validations() {
+		return {
+			schema: {
+				address: {
+					isValid() {
+						if (this.$refs.addressInput) {
+							return !this.$refs.addressInput.$v.$invalid;
+						}
+
+						return false;
+					},
+					contactDoesNotExist(value) {
+						return value === "" || !this.contactExists("byAddress", value);
+					},
+					walletDoesNotExist(value) {
+						return value === "" || !this.walletExists("byAddress", value);
+					},
 				},
-				contactDoesNotExist(value) {
-					return value === "" || !this.contactExists("byAddress", value);
-				},
-				walletDoesNotExist(value) {
-					return value === "" || !this.walletExists("byAddress", value);
+				name: {
+					contactDoesNotExist(value) {
+						return value === "" || !this.contactExists("byName", value);
+					},
+					walletDoesNotExist(value) {
+						return value === "" || !this.walletExists("byName", value);
+					},
 				},
 			},
-			name: {
-				contactDoesNotExist(value) {
-					return value === "" || !this.contactExists("byName", value);
-				},
-				walletDoesNotExist(value) {
-					return value === "" || !this.walletExists("byName", value);
-				},
-			},
-		},
-	},
-};
+		};
+	};
+}
 </script>
 
 <style>

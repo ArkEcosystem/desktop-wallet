@@ -194,6 +194,7 @@
 <script>
 import { TRANSACTION_GROUPS, TRANSACTION_TYPES } from "@config";
 import { at } from "lodash";
+import { Component, Prop, Vue } from "vue-property-decorator";
 
 import { ButtonClipboard, ButtonGeneric } from "@/components/Button";
 import { ListDivided, ListDividedItem } from "@/components/ListDivided";
@@ -205,7 +206,7 @@ import { AppEvent, StoreBinding } from "@/enums";
 import truncateMiddle from "@/filters/truncate-middle";
 import WalletService from "@/services/wallet";
 
-export default {
+@Component({
 	name: "TransactionShow",
 
 	components: {
@@ -220,139 +221,136 @@ export default {
 		TransactionStatusIcon,
 		WalletAddress,
 	},
+})
+export default class TransactionShow extends Vue {
+	@Prop({
+		type: Object,
+		required: true,
+	})
+	transaction;
 
-	props: {
-		transaction: {
-			type: Object,
-			required: true,
-		},
-	},
+	votedDelegate = null;
 
-	data: () => ({
-		votedDelegate: null,
-	}),
+	get isWellConfirmed() {
+		return this.transaction.confirmations >= (this.numberOfActiveDelegates || 51);
+	}
 
-	computed: {
-		isWellConfirmed() {
-			return this.transaction.confirmations >= (this.numberOfActiveDelegates || 51);
-		},
-		isMultiPayment() {
-			return this.transaction.asset && this.transaction.asset.payments;
-		},
-		numberOfActiveDelegates() {
-			return at(this, "session_network.constants.activeDelegates") || 51;
-		},
-		votePublicKey() {
-			const transaction = this.getTransaction();
-			if (transaction && transaction.asset && transaction.asset.votes) {
-				const vote = transaction.asset.votes[0];
-				return vote.substr(1);
-			}
-			return "";
-		},
+	get isMultiPayment() {
+		return this.transaction.asset && this.transaction.asset.payments;
+	}
 
-		multiSignatureWalletAddress() {
-			const transaction = this.getTransaction();
-			if (!transaction.asset || !transaction.asset.multiSignature) {
-				return null;
-			}
+	get numberOfActiveDelegates() {
+		return at(this, "session_network.constants.activeDelegates") || 51;
+	}
 
-			return WalletService.getAddressFromMultiSignatureAsset(transaction.asset.multiSignature);
-		},
+	get votePublicKey() {
+		const transaction = this.getTransaction();
+		if (transaction && transaction.asset && transaction.asset.votes) {
+			const vote = transaction.asset.votes[0];
+			return vote.substr(1);
+		}
+		return "";
+	}
 
-		showRecipient() {
-			if (this.transaction.asset && this.transaction.asset.payments) {
-				return false;
-			}
+	get multiSignatureWalletAddress() {
+		const transaction = this.getTransaction();
+		if (!transaction.asset || !transaction.asset.multiSignature) {
+			return null;
+		}
 
-			return this.transaction.recipient;
-		},
+		return WalletService.getAddressFromMultiSignatureAsset(transaction.asset.multiSignature);
+	}
 
-		amountTooltip() {
-			const walletAddress =
-				this.transaction.walletAddress || (this.wallet_fromRoute ? this.wallet_fromRoute.address : null);
-			if (!walletAddress || this.transaction.sender !== walletAddress) {
-				return null;
-			} else if (this.transaction.typeGroup === TRANSACTION_GROUPS.MAGISTRATE) {
-				return null;
-			} else if (this.transaction.type !== TRANSACTION_TYPES.GROUP_1.MULTI_PAYMENT) {
-				return null;
-			}
+	get showRecipient() {
+		if (this.transaction.asset && this.transaction.asset.payments) {
+			return false;
+		}
 
-			let amount = this.currency_toBuilder(0);
-			for (const payment of this.transaction.asset.payments) {
-				if (payment.recipientId !== walletAddress) {
-					continue;
-				}
+		return this.transaction.recipient;
+	}
 
-				amount = amount.plus(payment.amount);
+	get amountTooltip() {
+		const walletAddress =
+			this.transaction.walletAddress || (this.wallet_fromRoute ? this.wallet_fromRoute.address : null);
+		if (!walletAddress || this.transaction.sender !== walletAddress) {
+			return null;
+		} else if (this.transaction.typeGroup === TRANSACTION_GROUPS.MAGISTRATE) {
+			return null;
+		} else if (this.transaction.type !== TRANSACTION_TYPES.GROUP_1.MULTI_PAYMENT) {
+			return null;
+		}
+
+		let amount = this.currency_toBuilder(0);
+		for (const payment of this.transaction.asset.payments) {
+			if (payment.recipientId !== walletAddress) {
+				continue;
 			}
 
-			if (amount.isEqualTo(0)) {
-				return null;
-			}
+			amount = amount.plus(payment.amount);
+		}
 
-			return this.$t("TRANSACTION.ERROR.MULTI_PAYMENT_TO_SELF", {
-				amount: this.formatter_networkCurrency(amount),
-			});
-		},
-	},
+		if (amount.isEqualTo(0)) {
+			return null;
+		}
+
+		return this.$t("TRANSACTION.ERROR.MULTI_PAYMENT_TO_SELF", {
+			amount: this.formatter_networkCurrency(amount),
+		});
+	}
 
 	mounted() {
 		if (this.votePublicKey) {
 			this.determineVote();
 		}
-	},
+	}
 
-	methods: {
-		getTransaction() {
-			if (this.transaction.raw) {
-				return this.transaction.raw;
-			}
+	getTransaction() {
+		if (this.transaction.raw) {
+			return this.transaction.raw;
+		}
 
-			return this.transaction;
-		},
+		return this.transaction;
+	}
 
-		openTransaction() {
-			this.network_openExplorer("transaction", this.transaction.id);
-		},
+	openTransaction() {
+		this.network_openExplorer("transaction", this.transaction.id);
+	}
 
-		openAddress(address) {
-			this.network_openExplorer("address", address);
-		},
+	openAddress(address) {
+		this.network_openExplorer("address", address);
+	}
 
-		openBlock() {
-			this.network_openExplorer("block", this.transaction.blockId);
-		},
+	openBlock() {
+		this.network_openExplorer("block", this.transaction.blockId);
+	}
 
-		emitClose() {
-			this.$emit("close", "navigateToTransactions");
-		},
+	emitClose() {
+		this.$emit("close", "navigateToTransactions");
+	}
 
-		async emitResend() {
-			const shouldBroadcast = this.$store.getters["session/broadcastPeers"];
-			await this.$client.broadcastTransaction(this.transaction.raw, shouldBroadcast);
+	async emitResend() {
+		const shouldBroadcast = this.$store.getters["session/broadcastPeers"];
+		await this.$client.broadcastTransaction(this.transaction.raw, shouldBroadcast);
 
-			this.$success(this.$t("TRANSACTION.RESENT_NOTICE", { transactionId: truncateMiddle(this.transaction.id) }));
-			this.$emit("close");
-		},
+		this.$success(this.$t("TRANSACTION.RESENT_NOTICE", { transactionId: truncateMiddle(this.transaction.id) }));
+		this.$emit("close");
+	}
 
-		emitDiscard() {
-			this.$store.dispatch(StoreBinding.TransactionDelete, this.transaction);
-			this.$emit("close");
-			this.$eventBus.emit(AppEvent.WalletReload);
-		},
+	emitDiscard() {
+		this.$store.dispatch(StoreBinding.TransactionDelete, this.transaction);
+		this.$emit("close");
+		this.$eventBus.emit(AppEvent.WalletReload);
+	}
 
-		openAddressInWallet(address) {
-			this.$router.push({ name: "wallet-show", params: { address } });
-			this.emitClose();
-		},
+	openAddressInWallet(address) {
+		this.$router.push({ name: "wallet-show", params: { address } });
+		this.emitClose();
+	}
 
-		determineVote() {
-			this.votedDelegate = this.$store.getters["delegate/byPublicKey"](this.votePublicKey);
-		},
-	},
-};
+	determineVote() {
+		this.votedDelegate = this.$store.getters["delegate/byPublicKey"](this.votePublicKey);
+	}
+}
 </script>
 
 <style>

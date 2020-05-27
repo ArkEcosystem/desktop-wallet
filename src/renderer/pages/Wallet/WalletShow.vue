@@ -1,5 +1,5 @@
 <template>
-	<div class="WalletShow relative flex h-full">
+	<div class="relative flex h-full WalletShow">
 		<WalletDetails
 			v-if="wallet"
 			ref="WalletDetails"
@@ -11,7 +11,7 @@
 		/>
 		<WalletSidebar
 			v-if="wallet"
-			class="border-l border-theme-line-separator rounded-r-lg hidden lg:block"
+			class="hidden border-l rounded-r-lg border-theme-line-separator lg:block"
 			:class="{
 				'w-1/3': isSidebarExpanded,
 				'w-1/8': !isSidebarExpanded,
@@ -23,47 +23,44 @@
 </template>
 
 <script>
+import { Component, Vue, Watch } from "vue-property-decorator";
+
 import { WalletDetails, WalletSidebar } from "@/components/Wallet";
 
-export default {
+@Component({
 	name: "WalletShow",
 
 	components: {
 		WalletSidebar,
 		WalletDetails,
 	},
+})
+export default class WalletShow extends Vue {
+	isSidebarExpanded = false;
 
-	data: () => ({
-		isSidebarExpanded: false,
-	}),
+	@Watch("wallet")
+	onWallet() {
+		if (!this.wallet) {
+			this.$router.push({ name: "wallets" });
+		}
+	}
 
-	computed: {
-		wallet() {
-			return this.wallet_fromRoute;
-		},
-	},
-
-	watch: {
-		wallet() {
-			if (!this.wallet) {
-				this.$router.push({ name: "wallets" });
-			}
-		},
-	},
+	get wallet() {
+		return this.wallet_fromRoute;
+	}
 
 	created() {
 		if (!this.wallet) {
 			this.$router.push({ name: "wallets" });
 		}
-	},
+	}
 
-	methods: {
-		onCollapse() {
-			this.isSidebarExpanded = false;
-		},
-		onExpand() {
-			this.isSidebarExpanded = true;
-		},
-	},
-};
+	onCollapse() {
+		this.isSidebarExpanded = false;
+	}
+
+	onExpand() {
+		this.isSidebarExpanded = true;
+	}
+}
 </script>

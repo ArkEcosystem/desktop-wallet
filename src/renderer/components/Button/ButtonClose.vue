@@ -9,35 +9,37 @@
 	</button>
 </template>
 
-<script>
+<script lang="ts">
+import { Component, Prop, Vue } from "vue-property-decorator";
+
 import SvgIcon from "@/components/SvgIcon";
 
-export default {
+@Component({
 	name: "ButtonClose",
 
 	components: {
 		SvgIcon,
 	},
+})
+export default class ButtonClose extends Vue {
+	@Prop({
+		type: String,
+		required: false,
+		default: "",
+	})
+	iconClass;
 
-	props: {
-		iconClass: {
-			type: String,
-			required: false,
-			default: "",
-		},
-		iconName: {
-			type: String,
-			required: false,
-			default: "cross",
-		},
-	},
+	@Prop({
+		type: String,
+		required: false,
+		default: "cross",
+	})
+	iconName;
 
-	methods: {
-		emitClick() {
-			this.$emit("click");
-		},
-	},
-};
+	emitClick() {
+		this.$emit("click");
+	}
+}
 </script>
 
 <style scoped>

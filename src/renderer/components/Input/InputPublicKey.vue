@@ -11,12 +11,13 @@
 	/>
 </template>
 
-<script>
+<script lang="ts">
 import { Identities } from "@arkecosystem/crypto";
+import { Component, Prop, Vue, Watch } from "vue-property-decorator";
 
 import InputText from "./InputText";
 
-export default {
+@Component({
 	name: "InputPublicKey",
 
 	components: {
@@ -27,86 +28,89 @@ export default {
 		prop: "value",
 		event: "input",
 	},
+})
+export default class InputPublicKey extends Vue {
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: true,
+	})
+	isRequired;
 
-	props: {
-		isRequired: {
-			type: Boolean,
-			required: false,
-			default: true,
-		},
+	@Prop({
+		type: String,
+		required: false,
+		default: "",
+	})
+	value;
 
-		value: {
-			type: String,
-			required: false,
-			default: "",
-		},
-	},
+	inputValue = null;
 
-	data: (vm) => ({
-		inputValue: vm.value,
-	}),
+	@Watch("value")
+	onValue(value) {
+		// @ts-ignore
+		this.inputValue = value;
+	}
 
-	computed: {
-		model: {
-			get() {
-				return this.inputValue;
-			},
+	data(vm) {
+		return {
+			inputValue: vm.value,
+		};
+	}
 
-			set(value) {
-				this.inputValue = value;
-				this.$v.model.$touch();
-				this.$emit("input", value);
-			},
-		},
+	get model() {
+		return this.inputValue;
+	}
 
-		publicKeyLabel() {
-			return this.$t("INPUT_PUBLIC_KEY.TITLE");
-		},
+	set model(value) {
+		this.inputValue = value;
+		this.$v.model.$touch();
+		this.$emit("input", value);
+	}
 
-		error() {
-			if (this.$v.model.$dirty && this.$v.model.$invalid) {
-				if (!this.$v.model.isValid) {
-					return this.$t("INPUT_PUBLIC_KEY.ERROR.NOT_VALID");
-				}
+	get publicKeyLabel() {
+		return this.$t("INPUT_PUBLIC_KEY.TITLE");
+	}
+
+	get error() {
+		if (this.$v.model.$dirty && this.$v.model.$invalid) {
+			if (!this.$v.model.isValid) {
+				return this.$t("INPUT_PUBLIC_KEY.ERROR.NOT_VALID");
 			}
+		}
 
-			return null;
-		},
-	},
+		return null;
+	}
 
-	watch: {
-		value(value) {
-			this.inputValue = value;
-		},
-	},
+	reset() {
+		// @ts-ignore
+		this.model = "";
+		this.$nextTick(() => {
+			this.$v.$reset();
+		});
+	}
 
-	methods: {
-		reset() {
-			this.model = "";
-			this.$nextTick(() => {
-				this.$v.$reset();
-			});
-		},
-	},
+	validations() {
+		return {
+			model: {
+				isValid(value) {
+					// @ts-ignore
+					if (!this.isRequired && value.replace(/\s+/, "") === "") {
+						return true;
+					}
 
-	validations: {
-		model: {
-			isValid(value) {
-				if (!this.isRequired && value.replace(/\s+/, "") === "") {
-					return true;
-				}
+					try {
+						Identities.Address.fromPublicKey(value);
 
-				try {
-					Identities.Address.fromPublicKey(value);
+						return true;
+					} catch (error) {
+						//
+					}
 
-					return true;
-				} catch (error) {
-					//
-				}
-
-				return false;
+					return false;
+				},
 			},
-		},
-	},
-};
+		};
+	};
+}
 </script>

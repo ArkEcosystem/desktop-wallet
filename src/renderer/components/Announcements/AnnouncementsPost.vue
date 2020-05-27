@@ -1,23 +1,23 @@
 <template>
-	<div class="AnnouncementsPost flex flex-col md:flex-row items-top relative">
+	<div class="relative flex flex-col AnnouncementsPost md:flex-row items-top">
 		<button
 			v-show="!isRead"
-			class="AnnouncementsPost__close absolute top-0 right-0 transition"
+			class="absolute top-0 right-0 transition AnnouncementsPost__close"
 			:disabled="isRead"
 			@click="emitRead"
 		>
 			<SvgIcon class="fill-current" name="cross" view-box="0 0 15 15" />
 		</button>
 
-		<div class="flex flex-col flex-none justify-start w-48">
-			<span class="AnnouncementsPost__date font-semibold">
+		<div class="flex flex-col justify-start flex-none w-48">
+			<span class="font-semibold AnnouncementsPost__date">
 				{{ formattedDate }}
 				<span class="text-theme-page-text-light">
 					{{ weekday }}
 				</span>
 			</span>
 
-			<a :title="title" class="hidden md:flex items-center mt-2 cursor-pointer" @click="openInBrowser(url)">
+			<a :title="title" class="items-center hidden mt-2 cursor-pointer md:flex" @click="openInBrowser(url)">
 				<SvgIcon class="mr-2" name="open-external" view-box="0 0 12 12" />
 
 				{{ $t("ANNOUNCEMENTS.READ_MORE") }}
@@ -27,16 +27,16 @@
 		<div class="pr-12">
 			<h2
 				:class="isRead ? 'text-theme-page-text-light' : 'text-theme-page-text'"
-				class="AnnouncementsPost__title text-2xl mt-4 md:mt-0"
+				class="mt-4 text-2xl AnnouncementsPost__title md:mt-0"
 			>
 				{{ title }}
 			</h2>
 
-			<p v-if="!isRead" class="AnnouncementsPost__summary mt-2">
+			<p v-if="!isRead" class="mt-2 AnnouncementsPost__summary">
 				{{ summary }}
 			</p>
 
-			<a :title="title" class="flex md:hidden items-center mt-4 cursor-pointer" @click="openInBrowser(url)">
+			<a :title="title" class="flex items-center mt-4 cursor-pointer md:hidden" @click="openInBrowser(url)">
 				<SvgIcon class="mr-2" name="open-external" view-box="0 0 12 12" />
 
 				{{ $t("ANNOUNCEMENTS.READ_MORE") }}
@@ -45,76 +45,66 @@
 	</div>
 </template>
 
-<script>
+<script lang="ts">
+import { Component, Emit, Prop, Vue } from "vue-property-decorator";
+
 import { SvgIcon } from "@/components/SvgIcon";
 
-export default {
-	name: "AnnouncementsPost",
-
+@Component({
 	components: {
 		SvgIcon,
 	},
+})
+export default class AnnouncementsPost extends Vue {
+	@Prop({ required: true }) public date!: string;
+	@Prop({ required: true }) public title!: string;
+  @Prop({ default: null, required: true, validator: (value) => typeof value === "string" || value === null }) public summary!: string | null;
+	@Prop({ required: true }) public url!: string;
+	@Prop({ required: true, default: false }) public isRead!: boolean;
 
-	props: {
-		date: {
-			type: String,
-			required: true,
-		},
-		title: {
-			type: String,
-			required: true,
-		},
-		summary: {
-			required: true,
-			validator: (value) => typeof value === "string" || value === null,
-		},
-		url: {
-			type: String,
-			required: true,
-		},
-		isRead: {
-			type: Boolean,
-			required: true,
-		},
-	},
+	get formattedDate() {
+		// @ts-ignore
+		return this.formatter_date(this.date, "D MMMM");
+	}
 
-	computed: {
-		formattedDate() {
-			return this.formatter_date(this.date, "D MMMM");
-		},
+	get weekday() {
+		// @ts-ignore
+		return this.formatter_date(this.date, "dddd");
+	}
 
-		weekday() {
-			return this.formatter_date(this.date, "dddd");
-		},
-	},
+	@Emit('read')
+	emitRead() {
+		// @ts-ignore
+		return this.announcement;
+	}
 
-	methods: {
-		emitRead() {
-			this.$emit("read", this.announcement);
-		},
-		openInBrowser(url) {
-			this.electron_openExternal(url);
-			setTimeout(() => this.emitRead(), 2000);
-		},
-	},
-};
+	private openInBrowser(url: string) {
+		// @ts-ignore
+		this.electron_openExternal(url);
+		setTimeout(() => this.emitRead(), 2000);
+	}
+}
 </script>
 
 <style scoped>
 .AnnouncementsPost__close {
-	/* The close button is shown only on hover over the entire announcement */
-	@apply .flex .cursor-pointer .text-theme-option-button-text .bg-theme-button .rounded .p-2 .-mt-px .opacity-0;
+  /* The close button is shown only on hover over the entire announcement */
+  @apply .flex .cursor-pointer .text-theme-option-button-text .bg-theme-button .rounded .p-2 .-mt-px .opacity-0;
 }
+
 .AnnouncementsPost:hover > .AnnouncementsPost__close {
-	@apply .opacity-100;
+  @apply .opacity-100;
 }
+
 .AnnouncementsPost:hover > .AnnouncementsPost__close:hover {
-	@apply .opacity-50;
+  @apply .opacity-50;
 }
+
 .AnnouncementsPost__date {
-	line-height: 1.75rem;
+  line-height: 1.75rem;
 }
+
 .AnnouncementsPost__title {
-	line-height: 1.75rem;
+  line-height: 1.75rem;
 }
 </style>

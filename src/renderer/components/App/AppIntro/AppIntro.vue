@@ -130,12 +130,14 @@
 	</div>
 </template>
 
-<script>
+<script lang="ts">
+import { Component, Vue } from "vue-property-decorator";
+
 import AppFooter from "@/components/App/AppFooter";
 import AppIntroScreen from "@/components/App/AppIntro/AppIntroScreen";
 import { ButtonGeneric } from "@/components/Button";
 
-export default {
+@Component({
 	name: "AppIntro",
 
 	components: {
@@ -143,36 +145,34 @@ export default {
 		AppIntroScreen,
 		ButtonGeneric,
 	},
+})
+export default class AppIntro extends Vue {
+	step = 0;
 
-	data: () => ({
-		step: 0,
-		stepImages: [
-			"pages/intro/welcome.svg",
-			"pages/intro/power.svg",
-			"pages/intro/duty.svg",
-			"pages/intro/responsibility.svg",
-			"pages/intro/turn.svg",
-		],
-	}),
+	stepImages = [
+		"pages/intro/welcome.svg",
+		"pages/intro/power.svg",
+		"pages/intro/duty.svg",
+		"pages/intro/responsibility.svg",
+		"pages/intro/turn.svg",
+	];
 
-	computed: {
-		stepImage() {
-			return this.stepImages[this.step];
-		},
-	},
+	get stepImage() {
+		return this.stepImages[this.step];
+	}
 
-	methods: {
-		done() {
-			this.$emit("done");
-		},
-		moveTo(step) {
-			this.step = step;
-		},
-		start() {
-			this.step = 0;
-		},
-	},
-};
+	done() {
+		this.$emit("done");
+	}
+
+	moveTo(step) {
+		this.step = step;
+	}
+
+	start() {
+		this.step = 0;
+	}
+}
 </script>
 
 <style lang="postcss" scoped>

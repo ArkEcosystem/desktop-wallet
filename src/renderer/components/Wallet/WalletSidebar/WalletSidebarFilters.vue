@@ -2,9 +2,9 @@
 	<div
 		v-click-outside.capture="emitClose"
 		:class="isSidebarExpanded ? 'WalletSidebarFilters--expanded' : 'WalletSidebarFilters--collapsed'"
-		class="WalletSidebarFilters absolute z-20 rounded-lg"
+		class="absolute z-20 rounded-lg WalletSidebarFilters"
 	>
-		<div class="bg-theme-settings p-10 rounded-lg shadow font-bold">
+		<div class="p-10 font-bold rounded-lg shadow bg-theme-settings">
 			<WalletSidebarFiltersSearchInput
 				v-model="filters.searchQuery"
 				:placeholder="
@@ -16,8 +16,8 @@
 			/>
 		</div>
 
-		<MenuOptions class="WalletSidebarFilters__sorting mt-2 rounded-lg shadow font-bold">
-			<div class="mx-10 py-5 mb-2 text-theme-settings-heading select-none">
+		<MenuOptions class="mt-2 font-bold rounded-lg shadow WalletSidebarFilters__sorting">
+			<div class="py-5 mx-10 mb-2 select-none text-theme-settings-heading">
 				{{ $t("WALLET_SIDEBAR.SORT.BY") }}
 			</div>
 			<MenuOptionsItem
@@ -29,7 +29,7 @@
 			/>
 		</MenuOptions>
 
-		<MenuOptions class="WalletSidebarFilters__settings mt-2 rounded-lg shadow font-medium">
+		<MenuOptions class="mt-2 font-medium rounded-lg shadow WalletSidebarFilters__settings">
 			<MenuOptionsItem
 				:title="
 					hasContacts
@@ -66,14 +66,14 @@
 </template>
 
 <script>
-import Vue from "vue";
+import { Component, Prop, Vue, Watch } from "vue-property-decorator";
 
 import { ButtonSwitch } from "@/components/Button";
 import { MenuOptions, MenuOptionsItem } from "@/components/Menu";
 
 import WalletSidebarFiltersSearchInput from "./WalletSidebarFiltersSearchInput";
 
-export default {
+@Component({
 	name: "WalletSidebarFilters",
 
 	components: {
@@ -82,46 +82,74 @@ export default {
 		MenuOptionsItem,
 		WalletSidebarFiltersSearchInput,
 	},
+})
+export default class WalletSidebarFilters extends Vue {
+	sortOptions = ["name-asc", "name-desc", "balance-asc", "balance-desc"];
 
-	sortOptions: ["name-asc", "name-desc", "balance-asc", "balance-desc"],
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	hasContacts;
 
-	props: {
-		hasContacts: {
-			type: Boolean,
-			required: false,
-			default: false,
-		},
-		// Show the Ledger options or not
-		hasLedger: {
-			type: Boolean,
-			required: false,
-			default: false,
-		},
-		isSidebarExpanded: {
-			type: Boolean,
-			required: false,
-			default: false,
-		},
-		outsideClick: {
-			type: Boolean,
-			required: false,
-			default: false,
-		},
-		filters: {
-			type: Object,
-			required: true,
-		},
-		searchQuery: {
-			type: String,
-			required: false,
-			default: "",
-		},
-		sortOrder: {
-			type: Object,
-			required: false,
-			default: () => ({ field: "name", type: "asc" }),
-		},
-	},
+	// Show the Ledger options or not
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	hasLedger;
+
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	isSidebarExpanded;
+
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	outsideClick;
+
+	@Prop({
+		type: Object,
+		required: true,
+	})
+	filters;
+
+	@Prop({
+		type: String,
+		required: false,
+		default: "",
+	})
+	searchQuery;
+
+	@Prop({
+		type: Object,
+		required: false,
+		default: () => ({ field: "name", type: "asc" }),
+	})
+	sortOrder;
+
+	currentSearchQuery = undefined;
+
+	currentFilters = undefined;
+
+	currentSortOrder = undefined;
+
+	@Watch("filters")
+	onFilters(filters) {
+		this.currentFilters = filters;
+	}
+
+	@Watch("searchQuery")
+	onSearchQuery(query) {
+		this.currentSearchQuery = query;
+	}
 
 	data() {
 		return {
@@ -129,70 +157,56 @@ export default {
 			currentFilters: this.filters,
 			currentSortOrder: this.sortOrder,
 		};
-	},
+	}
 
-	computed: {
-		stringifiedSortOrder() {
-			return Object.values(this.currentSortOrder).join("-");
-		},
-	},
+	get stringifiedSortOrder() {
+		return Object.values(this.currentSortOrder).join("-");
+	}
 
-	watch: {
-		filters(filters) {
-			this.currentFilters = filters;
-		},
+	setSearchQuery(query) {
+		this.currentSearchQuery = query;
+		this.emitSearch();
+	}
 
-		searchQuery(query) {
-			this.currentSearchQuery = query;
-		},
-	},
+	setHideEmpty(isHidden) {
+		this.setFilter("hideEmpty", isHidden);
+	}
 
-	methods: {
-		setSearchQuery(query) {
-			this.currentSearchQuery = query;
-			this.emitSearch();
-		},
+	setHideLedger(isHidden) {
+		this.setFilter("hideLedger", isHidden);
+	}
 
-		setHideEmpty(isHidden) {
-			this.setFilter("hideEmpty", isHidden);
-		},
+	setFilter(filter, value) {
+		Vue.set(this.currentFilters, filter, value);
+		this.emitFilter();
+	}
 
-		setHideLedger(isHidden) {
-			this.setFilter("hideLedger", isHidden);
-		},
+	setSort(value) {
+		const [field, type] = value.split("-");
+		this.currentSortOrder = { field, type };
+		this.emitSort();
+	}
 
-		setFilter(filter, value) {
-			Vue.set(this.currentFilters, filter, value);
-			this.emitFilter();
-		},
+	toggleSelect(name) {
+		this.$refs[name].toggle();
+	}
 
-		setSort(value) {
-			const [field, type] = value.split("-");
-			this.currentSortOrder = { field, type };
-			this.emitSort();
-		},
+	emitFilter() {
+		this.$emit("filter", this.currentFilters);
+	}
 
-		toggleSelect(name) {
-			this.$refs[name].toggle();
-		},
+	emitSearch() {
+		this.$emit("search", this.currentSearchQuery);
+	}
 
-		emitFilter() {
-			this.$emit("filter", this.currentFilters);
-		},
+	emitSort() {
+		this.$emit("sort", this.currentSortOrder);
+	}
 
-		emitSearch() {
-			this.$emit("search", this.currentSearchQuery);
-		},
-
-		emitSort() {
-			this.$emit("sort", this.currentSortOrder);
-		},
-
-		emitClose(context) {
-			this.$emit("close", context);
-		},
-	},
-};
+	emitClose(context) {
+		this.$emit("close", context);
+	}
+}
 </script>
 
 <style lang="postcss" scoped>

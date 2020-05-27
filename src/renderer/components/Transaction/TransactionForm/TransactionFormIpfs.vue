@@ -80,6 +80,7 @@
 
 <script>
 import { TRANSACTION_TYPES } from "@config";
+import { Component, Vue } from "vue-property-decorator";
 
 import { InputFee, InputPassword, InputText } from "@/components/Input";
 import { ListDivided, ListDividedItem } from "@/components/ListDivided";
@@ -88,10 +89,8 @@ import { PassphraseInput } from "@/components/Passphrase";
 
 import mixin from "./mixin";
 
-export default {
+@Component({
 	name: "TransactionFormIpfs",
-
-	transactionType: TRANSACTION_TYPES.GROUP_1.IPFS,
 
 	components: {
 		InputFee,
@@ -104,67 +103,66 @@ export default {
 	},
 
 	mixins: [mixin],
+})
+export default class TransactionFormIpfs extends Vue {
+	transactionType = TRANSACTION_TYPES.GROUP_1.IPFS;
 
-	data: () => ({
-		form: {
-			fee: 0,
-			hash: "",
-			passphrase: "",
-			walletPassword: "",
-		},
-	}),
+	form = {
+		fee: 0,
+		hash: "",
+		passphrase: "",
+		walletPassword: "",
+	};
 
-	computed: {
-		hashError() {
-			if (this.$v.form.hash.$dirty && !this.$v.form.hash.isValid) {
-				return this.$t("WALLET_IPFS.HASH_ERROR");
-			}
+	get hashError() {
+		if (this.$v.form.hash.$dirty && !this.$v.form.hash.isValid) {
+			return this.$t("WALLET_IPFS.HASH_ERROR");
+		}
 
-			return null;
-		},
-	},
+		return null;
+	}
 
-	methods: {
-		getTransactionData() {
-			const transactionData = {
-				address: this.currentWallet.address,
-				hash: this.form.hash,
-				passphrase: this.form.passphrase,
-				fee: this.getFee(),
-				wif: this.form.wif,
-				networkWif: this.walletNetwork.wif,
-				multiSignature: this.currentWallet.multiSignature,
-			};
+	getTransactionData() {
+		const transactionData = {
+			address: this.currentWallet.address,
+			hash: this.form.hash,
+			passphrase: this.form.passphrase,
+			fee: this.getFee(),
+			wif: this.form.wif,
+			networkWif: this.walletNetwork.wif,
+			multiSignature: this.currentWallet.multiSignature,
+		};
 
-			if (this.currentWallet.secondPublicKey) {
-				transactionData.secondPassphrase = this.form.secondPassphrase;
-			}
+		if (this.currentWallet.secondPublicKey) {
+			transactionData.secondPassphrase = this.form.secondPassphrase;
+		}
 
-			return transactionData;
-		},
+		return transactionData;
+	}
 
-		async buildTransaction(transactionData, isAdvancedFee = false, returnObject = false) {
-			return this.$client.buildIpfs(transactionData, isAdvancedFee, returnObject);
-		},
+	buildTransaction(transactionData, isAdvancedFee = false, returnObject = false) {
+		return this.$client.buildIpfs(transactionData, isAdvancedFee, returnObject);
+	}
 
-		transactionError() {
-			this.$error(this.$t("TRANSACTION.ERROR.VALIDATION.IPFS"));
-		},
-	},
+	transactionError() {
+		this.$error(this.$t("TRANSACTION.ERROR.VALIDATION.IPFS"));
+	}
 
-	validations: {
-		form: {
-			fee: mixin.validators.fee,
-			passphrase: mixin.validators.passphrase,
-			walletPassword: mixin.validators.walletPassword,
-			secondPassphrase: mixin.validators.secondPassphrase,
+	validations() {
+		return {
+			form: {
+				fee: mixin.validators.fee,
+				passphrase: mixin.validators.passphrase,
+				walletPassword: mixin.validators.walletPassword,
+				secondPassphrase: mixin.validators.secondPassphrase,
 
-			hash: {
-				isValid(value) {
-					return value.startsWith("Qm") && value.length >= 2 && value.length <= 90;
+				hash: {
+					isValid(value) {
+						return value.startsWith("Qm") && value.length >= 2 && value.length <= 90;
+					},
 				},
 			},
-		},
-	},
-};
+		};
+	};
+}
 </script>

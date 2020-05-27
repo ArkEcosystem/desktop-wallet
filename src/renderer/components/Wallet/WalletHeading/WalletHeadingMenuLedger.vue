@@ -36,12 +36,13 @@
 </template>
 
 <script>
+import { Component, Prop, Vue } from "vue-property-decorator";
+
 import { ButtonSwitch } from "@/components/Button";
 import { MenuOptions, MenuOptionsItem } from "@/components/Menu";
 import ModalAdditionalLedgers from "@/components/Modal/ModalAdditionalLedgers";
-import { StoreBinding } from "@/enums";
 
-export default {
+@Component({
 	name: "AppSidemenuOptionsSettings",
 
 	components: {
@@ -50,76 +51,67 @@ export default {
 		ModalAdditionalLedgers,
 		ButtonSwitch,
 	},
+})
+export default class AppSidemenuOptionsSettings extends Vue {
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	outsideClick;
 
-	props: {
-		outsideClick: {
-			type: Boolean,
-			required: false,
-			default: false,
-		},
-		isHorizontal: {
-			type: Boolean,
-			required: false,
-			default: false,
-		},
-	},
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	isHorizontal;
 
-	data() {
-		return {
-			isAdditionalLedgersModalOpen: false,
-		};
-	},
+	isAdditionalLedgersModalOpen = false;
 
-	computed: {
-		hideText() {
-			return this.$store.getters["session/hideWalletButtonText"];
-		},
+	get hideText() {
+		return this.$store.getters["session/hideWalletButtonText"];
+	}
 
-		sessionLedgerCache: {
-			get() {
-				return this.$store.getters["session/ledgerCache"];
-			},
-			set(enabled) {
-				this.$store.dispatch(StoreBinding.SessionSetLedgerCache, enabled);
+	get sessionLedgerCache() {
+		return this.$store.getters["session/ledgerCache"];
+	}
 
-				this.$store.dispatch(StoreBinding.ProfileUpdate, {
-					...this.session_profile,
-					ledgerCache: enabled,
-				});
+	set sessionLedgerCache(enabled) {
+		this.$store.dispatch("session/setLedgerCache", enabled);
+		this.$store.dispatch("profile/update", {
+			...this.session_profile,
+			ledgerCache: enabled,
+		});
+		if (enabled) {
+			this.$store.dispatch("ledger/cacheWallets");
+		} else {
+			this.$store.dispatch("ledger/clearWalletCache");
+		}
+	}
 
-				if (enabled) {
-					this.$store.dispatch(StoreBinding.LedgerCacheWallets);
-				} else {
-					this.$store.dispatch(StoreBinding.LedgerClearWalletCache);
-				}
-			},
-		},
-	},
+	setLedgerCache(enabled) {
+		this.sessionLedgerCache = enabled;
+	}
 
-	methods: {
-		setLedgerCache(enabled) {
-			this.sessionLedgerCache = enabled;
-		},
+	toggleSelect(name) {
+		this.$refs[name].toggle();
+	}
 
-		toggleSelect(name) {
-			this.$refs[name].toggle();
-		},
+	toggleAdditionalLedgersModal(closeMenu) {
+		this.isAdditionalLedgersModalOpen = !this.isAdditionalLedgersModalOpen;
 
-		toggleAdditionalLedgersModal(closeMenu) {
-			this.isAdditionalLedgersModalOpen = !this.isAdditionalLedgersModalOpen;
+		if (closeMenu) {
+			this.$emit("close");
+		}
+	}
 
-			if (closeMenu) {
-				this.$emit("close");
-			}
-		},
-
-		emitClose() {
-			if (this.outsideClick && !this.isAdditionalLedgersModalOpen) {
-				this.$emit("close");
-			}
-		},
-	},
-};
+	emitClose() {
+		if (this.outsideClick && !this.isAdditionalLedgersModalOpen) {
+			this.$emit("close");
+		}
+	}
+}
 </script>
 
 <style lang="postcss" scoped>

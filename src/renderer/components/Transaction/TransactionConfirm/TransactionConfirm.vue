@@ -9,19 +9,19 @@
 		/>
 		<Component :is="activeComponent" v-if="activeComponent" />
 
-		<footer class="mt-10 flex justify-between items-center">
+		<footer class="flex items-center justify-between mt-10">
 			<div>
-				<button class="TransactionConfirm__back-button blue-button mr-2 px-5" @click="emitBack">
+				<button class="px-5 mr-2 TransactionConfirm__back-button blue-button" @click="emitBack">
 					{{ $t("COMMON.BACK") }}
 				</button>
 
 				<button
-					class="TransactionConfirm__send-button blue-button px-2"
+					class="px-2 TransactionConfirm__send-button blue-button"
 					:disabled="wasClicked"
 					@click="emitConfirm"
 				>
 					{{ $t("TRANSACTION.SEND") }}
-					<span class="px-2 py-1 bg-theme-button-inner-box rounded">
+					<span class="px-2 py-1 rounded bg-theme-button-inner-box">
 						{{ formatter_networkCurrency(totalAmount) }}
 					</span>
 				</button>
@@ -30,7 +30,7 @@
 			<div v-if="showSave">
 				<button
 					v-tooltip="{ content: $t('TRANSACTION.SAVE_OFFLINE'), toggle: 'hover' }"
-					class="TransactionConfirm__save-tx action-button pull-right flex items-center"
+					class="flex items-center TransactionConfirm__save-tx action-button pull-right"
 					@click="saveTransaction"
 				>
 					<SvgIcon name="save" view-box="0 0 15 15" class="mr-1" />
@@ -44,6 +44,7 @@
 <script>
 /* eslint-disable vue/no-unused-components */
 import { TRANSACTION_GROUPS } from "@config";
+import { Component, Prop, Provide, Vue } from "vue-property-decorator";
 
 import SvgIcon from "@/components/SvgIcon";
 import TransactionService from "@/services/transaction";
@@ -60,15 +61,8 @@ import TransactionConfirmSecondSignature from "./TransactionConfirmSecondSignatu
 import TransactionConfirmTransfer from "./TransactionConfirmTransfer";
 import TransactionConfirmVote from "./TransactionConfirmVote";
 
-export default {
+@Component({
 	name: "TransactionConfirm",
-
-	provide() {
-		return {
-			currentWallet: this.currentWallet,
-			transaction: this.transaction,
-		};
-	},
 
 	components: {
 		TransactionConfirmDelegateRegistration,
@@ -84,49 +78,51 @@ export default {
 		TransactionDetail,
 		SvgIcon,
 	},
+})
+export default class TransactionConfirm extends Vue {
+	@Provide("transaction")
+	@Prop({
+		type: Object,
+		required: true,
+	})
+	transaction;
 
-	props: {
-		transaction: {
-			type: Object,
-			required: true,
-		},
-		wallet: {
-			type: Object,
-			required: false,
-			default: null,
-		},
-	},
+	@Prop({
+		type: Object,
+		required: false,
+		default: null,
+	})
+	wallet;
 
-	data: () => ({
-		activeComponent: null,
-		wasClicked: false,
-	}),
+	activeComponent = null;
+	wasClicked = false;
 
-	computed: {
-		totalAmount() {
-			let amount = this.currency_toBuilder(this.transaction.fee);
+	get totalAmount() {
+		let amount = this.currency_toBuilder(this.transaction.fee);
 
-			if (this.transaction.asset && this.transaction.asset.payments) {
-				for (const payment of this.transaction.asset.payments) {
-					amount = amount.plus(payment.amount);
-				}
-			} else if (this.transaction.amount) {
-				amount = amount.plus(this.transaction.amount);
+		if (this.transaction.asset && this.transaction.asset.payments) {
+			for (const payment of this.transaction.asset.payments) {
+				amount = amount.plus(payment.amount);
 			}
+		} else if (this.transaction.amount) {
+			amount = amount.plus(this.transaction.amount);
+		}
 
-			return amount;
-		},
+		return amount;
+	}
 
-		currentWallet() {
-			return this.wallet || this.wallet_fromRoute;
-		},
-		address() {
-			return this.currentWallet.address;
-		},
-		showSave() {
-			return !TransactionService.isMultiSignature(this.transaction);
-		},
-	},
+	@Provide("currentWallet")
+	get currentWallet() {
+		return this.wallet || this.wallet_fromRoute;
+	}
+
+	get address() {
+		return this.currentWallet.address;
+	}
+
+	get showSave() {
+		return !TransactionService.isMultiSignature(this.transaction);
+	}
 
 	mounted() {
 		const transactionGroup = this.transaction.typeGroup || TRANSACTION_GROUPS.STANDARD;
@@ -143,34 +139,32 @@ export default {
 		}
 
 		this.activeComponent = component.name;
-	},
+	}
 
-	methods: {
-		emitBack() {
-			this.$emit("back");
-		},
+	emitBack() {
+		this.$emit("back");
+	}
 
-		emitConfirm() {
-			if (!this.wasClicked) {
-				this.wasClicked = true;
+	emitConfirm() {
+		if (!this.wasClicked) {
+			this.wasClicked = true;
 
-				this.$emit("confirm");
-			}
-		},
+			this.$emit("confirm");
+		}
+	}
 
-		async saveTransaction() {
-			const raw = JSON.stringify(this.transaction);
-			const defaultPath = `${this.transaction.id}.json`;
+	async saveTransaction() {
+		const raw = JSON.stringify(this.transaction);
+		const defaultPath = `${this.transaction.id}.json`;
 
-			try {
-				const path = await this.electron_writeFile(raw, defaultPath);
-				this.$success(this.$t("TRANSACTION.SUCCESS.SAVE_OFFLINE", { path }));
-			} catch (e) {
-				this.$error(this.$t("TRANSACTION.ERROR.SAVE_OFFLINE", { error: e.message }));
-			}
-		},
-	},
-};
+		try {
+			const path = await this.electron_writeFile(raw, defaultPath);
+			this.$success(this.$t("TRANSACTION.SUCCESS.SAVE_OFFLINE", { path }));
+		} catch (e) {
+			this.$error(this.$t("TRANSACTION.ERROR.SAVE_OFFLINE", { error: e.message }));
+		}
+	}
+}
 </script>
 
 <style lang="postcss" scoped>

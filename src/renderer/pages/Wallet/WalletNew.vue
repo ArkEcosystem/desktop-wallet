@@ -1,39 +1,39 @@
 <template>
-	<div class="WalletNew relative">
+	<div class="relative WalletNew">
 		<main class="flex h-full">
 			<div
-				class="WalletNew__instructions theme-dark bg-theme-feature text-theme-page-instructions-text hidden lg:flex flex-1 mr-4 rounded-lg overflow-y-auto"
+				class="flex-1 hidden mr-4 overflow-y-auto rounded-lg WalletNew__instructions theme-dark bg-theme-feature text-theme-page-instructions-text lg:flex"
 			>
-				<div class="m-auto w-3/5 text-center flex flex-col items-center justify-center">
+				<div class="flex flex-col items-center justify-center w-3/5 m-auto text-center">
 					<h1 class="text-inherit">
 						{{ $t(`PAGES.WALLET_NEW.STEP${step}.INSTRUCTIONS.HEADER`) }}
 					</h1>
-					<p v-if="step === 1" class="text-center py-2 leading-normal">
+					<p v-if="step === 1" class="py-2 leading-normal text-center">
 						{{ $t("PAGES.WALLET_NEW.STEP1.INSTRUCTIONS.TEXT_BEFORE_BUTTON") }}
 
 						<ButtonReload
 							:is-refreshing="isRefreshing"
 							:without-background="true"
-							class="WalletNew__refresh-button inline"
+							class="inline WalletNew__refresh-button"
 							text-class="text-theme-page-instructions-text"
 							@click="refreshAddresses"
 						/>
 
 						{{ $t("PAGES.WALLET_NEW.STEP1.INSTRUCTIONS.TEXT_AFTER_BUTTON") }}
 					</p>
-					<p v-else class="text-center py-2 leading-normal">
+					<p v-else class="py-2 leading-normal text-center">
 						{{ $t(`PAGES.WALLET_NEW.STEP${step}.INSTRUCTIONS.TEXT`, { words: wordPositionLabel }) }}
 					</p>
 
 					<img
 						:src="assets_loadImage(backgroundImages[step])"
 						:title="$t(`PAGES.WALLET_NEW.STEP${step}.INSTRUCTIONS.HEADER`)"
-						class="w-full xl:w-4/5 mt-10"
+						class="w-full mt-10 xl:w-4/5"
 					/>
 				</div>
 			</div>
 
-			<div class="flex-none w-full lg:max-w-sm p-10 bg-theme-feature rounded-lg overflow-y-auto">
+			<div class="flex-none w-full p-10 overflow-y-auto rounded-lg lg:max-w-sm bg-theme-feature">
 				<MenuStep :step="step">
 					<MenuStepItem
 						:step="1"
@@ -41,7 +41,7 @@
 						:title="$t('PAGES.WALLET_NEW.STEP1.TITLE')"
 						@next="moveTo(2)"
 					>
-						<div slot="header" slot-scope="{ title }" class="flex flex-row justify-between items-center">
+						<div slot="header" slot-scope="{ title }" class="flex flex-row items-center justify-between">
 							<div class="">
 								{{ title }}
 							</div>
@@ -67,10 +67,10 @@
 											? 'WalletNew__wallets__address--selected'
 											: 'WalletNew__wallets__address--unselected',
 									]"
-									class="WalletNew__wallets__address py-4 w-full truncate cursor-pointer"
+									class="w-full py-4 truncate cursor-pointer WalletNew__wallets__address"
 									@click="selectWallet(address, passphrase)"
 								>
-									<div class="WalletNew__wallets__address__mask flex items-center">
+									<div class="flex items-center WalletNew__wallets__address__mask">
 										<div class="relative">
 											<WalletIdenticon
 												:value="address"
@@ -79,13 +79,13 @@
 											/>
 											<span
 												v-if="isSelected(address)"
-												class="WalletNew_wallets__check absolute rounded-full flex items-center justify-center -mb-1 w-6 h-6 bg-green border-4 border-theme-feature text-white"
+												class="absolute flex items-center justify-center w-6 h-6 -mb-1 text-white border-4 rounded-full WalletNew_wallets__check bg-green border-theme-feature"
 											>
 												<SvgIcon name="checkmark" view-box="0 0 8 7" />
 											</span>
 										</div>
 										<span
-											class="WalletNew__wallets--address text-theme-page-text ml-2 flex-shrink-0 font-semibold text-sm"
+											class="flex-shrink-0 ml-2 text-sm font-semibold WalletNew__wallets--address text-theme-page-text"
 										>
 											{{ address }}
 										</span>
@@ -105,7 +105,7 @@
 						@back="moveTo(1)"
 						@next="moveTo(3)"
 					>
-						<div slot="header" slot-scope="{ title }" class="flex flex-row justify-between items-center">
+						<div slot="header" slot-scope="{ title }" class="flex flex-row items-center justify-between">
 							<div class="">
 								{{ title }}
 							</div>
@@ -114,7 +114,7 @@
 							<ButtonClipboard
 								v-if="step === 2"
 								:value="schema.passphrase"
-								class="text-theme-button-light-text py-2 px-4 rounded bg-theme-button-light"
+								class="px-4 py-2 rounded text-theme-button-light-text bg-theme-button-light"
 							/>
 						</div>
 
@@ -129,7 +129,7 @@
 						@back="moveTo(2)"
 						@next="moveTo(4)"
 					>
-						<div class="flex flex-col h-full w-full justify-around">
+						<div class="flex flex-col justify-around w-full h-full">
 							<InputSwitch
 								v-model="ensureEntirePassphrase"
 								:label="$t('PAGES.WALLET_NEW.STEP3.CHECK_ENTIRE_PASSPHRASE')"
@@ -155,7 +155,7 @@
 						@back="moveTo(3)"
 						@next="moveTo(5)"
 					>
-						<div class="flex flex-col h-full w-full justify-around">
+						<div class="flex flex-col justify-around w-full h-full">
 							<InputPassword
 								ref="password"
 								v-model="walletPassword"
@@ -195,11 +195,11 @@
 						@back="moveTo(4)"
 						@next="onCreate"
 					>
-						<div class="flex flex-col h-full w-full justify-around">
+						<div class="flex flex-col justify-around w-full h-full">
 							<div class="flex items-center justify-between mt-4">
 								<div class="flex flex-col">
 									<div class="flex items-center">
-										<span class="text-base font-semibold mr-1">
+										<span class="mr-1 text-base font-semibold">
 											{{ schema.address }}
 										</span>
 										<ButtonClipboard
@@ -208,7 +208,7 @@
 											class="text-theme-page-text hover:text-blue"
 										/>
 									</div>
-									<span class="text-sm text-theme-page-text-light font-semibold mt-1">
+									<span class="mt-1 text-sm font-semibold text-theme-page-text-light">
 										{{ $t("PAGES.WALLET_NEW.STEP5.ADDRESS") }}
 									</span>
 								</div>
@@ -239,6 +239,7 @@
 </template>
 
 <script>
+import { Component, Vue } from "vue-property-decorator";
 import { required } from "vuelidate/lib/validators";
 
 import { ButtonClipboard, ButtonReload } from "@/components/Button";
@@ -255,7 +256,7 @@ import { flatten } from "@/utils";
 
 import onCreate from "./mixin-on-create";
 
-export default {
+@Component({
 	name: "WalletNew",
 
 	components: {
@@ -274,192 +275,189 @@ export default {
 	},
 
 	mixins: [onCreate],
+})
+export default class WalletNew extends Vue {
+	schema = Wallet.schema;
+	isRefreshing = false;
+	isPassphraseVerified = false;
+	ensureEntirePassphrase = false;
+	step = 1;
+	wallets = {};
+	walletPassword = null;
+	walletConfirmPassword = null;
+	showEncryptLoader = false;
 
-	schema: Wallet.schema,
+	backgroundImages = {
+		1: "pages/wallet-new/choose-wallet.svg",
+		2: "pages/wallet-new/backup-wallet.svg",
+		3: "pages/wallet-new/verify-passphrase.svg",
+		4: "pages/wallet-new/encrypt-wallet.svg",
+		5: "pages/wallet-new/protect-wallet.svg",
+	};
 
-	data: () => ({
-		isRefreshing: false,
-		isPassphraseVerified: false,
-		ensureEntirePassphrase: false,
-		step: 1,
-		wallets: {},
-		walletPassword: null,
-		walletConfirmPassword: null,
-		showEncryptLoader: false,
-		backgroundImages: {
-			1: "pages/wallet-new/choose-wallet.svg",
-			2: "pages/wallet-new/backup-wallet.svg",
-			3: "pages/wallet-new/verify-passphrase.svg",
-			4: "pages/wallet-new/encrypt-wallet.svg",
-			5: "pages/wallet-new/protect-wallet.svg",
-		},
-	}),
+	get additionalSuggestions() {
+		const passphrases = Object.values(this.wallets);
 
-	computed: {
-		/**
-		 * Mixes words from the passphrases of all the generated wallets
-		 * @return {Array}
-		 */
-		additionalSuggestions() {
-			const passphrases = Object.values(this.wallets);
+		// Check for Japanese "space"
+		return flatten(
+			passphrases.map((passphrase) =>
+				/\u3000/.test(passphrase) ? passphrase.split("\u3000") : passphrase.split(" "),
+			),
+		);
+	}
 
+	get passphraseWords() {
+		const passphrase = this.schema.passphrase;
+		if (passphrase) {
 			// Check for Japanese "space"
-			return flatten(
-				passphrases.map((passphrase) =>
-					/\u3000/.test(passphrase) ? passphrase.split("\u3000") : passphrase.split(" "),
-				),
-			);
-		},
-		passphraseWords() {
-			const passphrase = this.schema.passphrase;
-			if (passphrase) {
-				// Check for Japanese "space"
-				if (/\u3000/.test(passphrase)) {
-					return this.schema.passphrase.split("\u3000");
-				}
-				return this.schema.passphrase.split(" ");
+			if (/\u3000/.test(passphrase)) {
+				return this.schema.passphrase.split("\u3000");
 			}
-			return [];
-		},
-		wordPositions() {
-			return this.ensureEntirePassphrase ? [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12] : [3, 6, 9];
-		},
-		wordPositionLabel() {
-			return this.ensureEntirePassphrase
-				? this.$t("PAGES.WALLET_NEW.STEP3.INSTRUCTIONS.ALL_WORDS")
-				: this.$t("PAGES.WALLET_NEW.STEP3.INSTRUCTIONS.WORDS", { words: this.wordPositions.join(", ") });
-		},
-		nameError() {
-			if (this.$v.schema.name.$invalid) {
-				if (!this.$v.schema.name.contactDoesNotExist) {
-					return this.$t("VALIDATION.NAME.EXISTS_AS_CONTACT", [this.schema.name]);
-				} else if (!this.$v.schema.name.walletDoesNotExist) {
-					return this.$t("VALIDATION.NAME.EXISTS_AS_WALLET", [this.schema.name]);
-				} else if (!this.$v.schema.name.schemaMaxLength) {
-					return this.$t("VALIDATION.NAME.MAX_LENGTH", [Wallet.schema.properties.name.maxLength]);
-					// NOTE: not used, unless the minimum length is changed
-				} else if (!this.$v.schema.name.schemaMinLength) {
-					return this.$tc("VALIDATION.NAME.MIN_LENGTH", Wallet.schema.properties.name.minLength);
-				}
+			return this.schema.passphrase.split(" ");
+		}
+		return [];
+	}
+
+	get wordPositions() {
+		return this.ensureEntirePassphrase ? [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12] : [3, 6, 9];
+	}
+
+	get wordPositionLabel() {
+		return this.ensureEntirePassphrase
+			? this.$t("PAGES.WALLET_NEW.STEP3.INSTRUCTIONS.ALL_WORDS")
+			: this.$t("PAGES.WALLET_NEW.STEP3.INSTRUCTIONS.WORDS", { words: this.wordPositions.join(", ") });
+	}
+
+	get nameError() {
+		if (this.$v.schema.name.$invalid) {
+			if (!this.$v.schema.name.contactDoesNotExist) {
+				return this.$t("VALIDATION.NAME.EXISTS_AS_CONTACT", [this.schema.name]);
+			} else if (!this.$v.schema.name.walletDoesNotExist) {
+				return this.$t("VALIDATION.NAME.EXISTS_AS_WALLET", [this.schema.name]);
+			} else if (!this.$v.schema.name.schemaMaxLength) {
+				return this.$t("VALIDATION.NAME.MAX_LENGTH", [Wallet.schema.properties.name.maxLength]);
+				// NOTE: not used, unless the minimum length is changed
+			} else if (!this.$v.schema.name.schemaMinLength) {
+				return this.$tc("VALIDATION.NAME.MIN_LENGTH", Wallet.schema.properties.name.minLength);
 			}
-			return null;
-		},
-	},
+		}
+		return null;
+	}
 
 	beforeRouteEnter(to, from, next) {
 		next((vm) => {
 			vm.$synchronizer.focus();
 			vm.$synchronizer.pause("market");
 		});
-	},
+	}
 
 	created() {
 		this.refreshAddresses();
-	},
+	}
 
-	methods: {
-		async createWallet() {
-			const { address } = await this.$store.dispatch(StoreBinding.WalletCreate, this.wallet);
-			this.$router.push({ name: "wallet-show", params: { address } });
-		},
+	async createWallet() {
+		const { address } = await this.$store.dispatch(StoreBinding.WalletCreate, this.wallet);
+		this.$router.push({ name: "wallet-show", params: { address } });
+	}
 
-		moveTo(step) {
-			this.step = step;
-		},
+	moveTo(step) {
+		this.step = step;
+	}
 
-		onSwitch() {
-			this.isPassphraseVerified = false;
-		},
+	onSwitch() {
+		this.isPassphraseVerified = false;
+	}
 
-		onVerification() {
-			this.isPassphraseVerified = true;
-		},
+	onVerification() {
+		this.isPassphraseVerified = true;
+	}
 
-		selectWallet(address, passphrase) {
-			this.schema.address = address;
-			this.schema.passphrase = passphrase;
-			this.isPassphraseVerified = false;
-		},
+	selectWallet(address, passphrase) {
+		this.schema.address = address;
+		this.schema.passphrase = passphrase;
+		this.isPassphraseVerified = false;
+	}
 
-		refreshAddresses() {
-			this.isRefreshing = true;
+	refreshAddresses() {
+		this.isRefreshing = true;
 
-			this.schema.address = null;
-			this.schema.passphrase = null;
-			this.isPassphraseVerified = false;
+		this.schema.address = null;
+		this.schema.passphrase = null;
+		this.isPassphraseVerified = false;
 
-			for (const [address] of Object.entries(this.wallets)) {
-				this.$delete(this.wallets, address);
+		for (const [address] of Object.entries(this.wallets)) {
+			this.$delete(this.wallets, address);
+		}
+
+		// Delay the generation to play an animation
+		setTimeout(() => {
+			for (let i = 0; i < 3; i++) {
+				const { address, passphrase } = WalletService.generate(
+					this.session_network.version,
+					this.session_profile.bip39Language,
+				);
+				this.$set(this.wallets, address, passphrase);
 			}
 
-			// Delay the generation to play an animation
-			setTimeout(() => {
-				for (let i = 0; i < 3; i++) {
-					const { address, passphrase } = WalletService.generate(
-						this.session_network.version,
-						this.session_profile.bip39Language,
-					);
-					this.$set(this.wallets, address, passphrase);
-				}
+			this.isRefreshing = false;
+		}, 300);
+	}
 
-				this.isRefreshing = false;
-			}, 300);
-		},
+	isSelected(address) {
+		return this.schema.address === address;
+	}
 
-		isSelected(address) {
-			return this.schema.address === address;
-		},
-	},
-
-	validations: {
-		step1: ["schema.address"],
-		step3: ["isPassphraseVerified"],
-		step4: ["walletPassword", "walletConfirmPassword"],
-		step5: ["schema.name"],
-		schema: {
-			name: {
-				contactDoesNotExist(value) {
-					const contact = this.$store.getters["wallet/byName"](value);
-					return value === "" || !(contact && contact.isContact);
-				},
-				walletDoesNotExist(value) {
-					const wallet = this.$store.getters["wallet/byName"](value);
-					return value === "" || !(wallet && !wallet.isContact);
+	validations() {
+		return {
+			step1: ["schema.address"],
+			step3: ["isPassphraseVerified"],
+			step4: ["walletPassword", "walletConfirmPassword"],
+			step5: ["schema.name"],
+			schema: {
+				name: {
+					contactDoesNotExist(value) {
+						const contact = this.$store.getters["wallet/byName"](value);
+						return value === "" || !(contact && contact.isContact);
+					},
+					walletDoesNotExist(value) {
+						const wallet = this.$store.getters["wallet/byName"](value);
+						return value === "" || !(wallet && !wallet.isContact);
+					},
 				},
 			},
-		},
-		isPassphraseVerified: {
-			required,
-			isVerified: (value) => value,
-		},
-		walletPassword: {
-			isValid() {
-				if (!this.walletPassword || !this.walletPassword.length) {
-					return true;
-				}
-
-				if (this.$refs.password) {
-					return !this.$refs.password.$v.$invalid;
-				}
-
-				return false;
+			isPassphraseVerified: {
+				required,
+				isVerified: (value) => value,
 			},
-		},
-		walletConfirmPassword: {
-			isValid() {
-				if (!this.walletPassword || !this.walletPassword.length) {
-					return true;
-				}
+			walletPassword: {
+				isValid() {
+					if (!this.walletPassword || !this.walletPassword.length) {
+						return true;
+					}
 
-				if (this.$refs.confirmPassword) {
-					return !this.$refs.confirmPassword.$v.$invalid;
-				}
+					if (this.$refs.password) {
+						return !this.$refs.password.$v.$invalid;
+					}
 
-				return false;
+					return false;
+				},
 			},
-		},
-	},
-};
+			walletConfirmPassword: {
+				isValid() {
+					if (!this.walletPassword || !this.walletPassword.length) {
+						return true;
+					}
+
+					if (this.$refs.confirmPassword) {
+						return !this.$refs.confirmPassword.$v.$invalid;
+					}
+
+					return false;
+				},
+			},
+		};
+	};
+}
 </script>
 
 <style>

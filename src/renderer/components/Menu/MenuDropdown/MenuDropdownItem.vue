@@ -6,11 +6,11 @@
 					? 'MenuDropdownItem--active bg-theme-feature-item-hover text-theme-feature-item-selected-text'
 					: 'text-grey-dark hover:bg-theme-feature-item-alternative border-grey-light'
 			"
-			class="MenuDropdownItem__button cursor-pointer bg-theme-feature w-full"
+			class="w-full cursor-pointer MenuDropdownItem__button bg-theme-feature"
 			@click.capture.stop="emitClick"
 		>
 			<div
-				class="MenuDropdownItem__container mx-8 py-4 px-5 border-b border-theme-line-separator text-center transition break-words"
+				class="px-5 py-4 mx-8 text-center break-words transition border-b MenuDropdownItem__container border-theme-line-separator"
 			>
 				<slot>
 					<span class="font-semibold">
@@ -23,37 +23,34 @@
 </template>
 
 <script>
-export default {
+import { Component, Prop, Vue } from "vue-property-decorator";
+@Component({
 	name: "MenuDropdownItem",
+})
+export default class MenuDropdownItem extends Vue {
+	@Prop({
+		type: String,
+		required: true,
+	})
+	value;
 
-	props: {
-		/**
-		 * The value of the item
-		 */
-		value: {
-			type: String,
-			required: true,
-		},
-		/**
-		 * The visible text of the item
-		 */
-		item: {
-			type: String,
-			required: true,
-		},
-		isActive: {
-			type: Boolean,
-			required: false,
-			default: false,
-		},
-	},
+	@Prop({
+		type: String,
+		required: true,
+	})
+	item;
 
-	methods: {
-		emitClick() {
-			this.$emit("click", this.value);
-		},
-	},
-};
+	@Prop({
+		type: Boolean,
+		required: false,
+		default: false,
+	})
+	isActive;
+
+	emitClick() {
+		this.$emit("click", this.value);
+	}
+}
 </script>
 
 <style scoped>

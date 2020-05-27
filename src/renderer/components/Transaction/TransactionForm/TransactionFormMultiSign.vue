@@ -49,6 +49,7 @@
 
 <script>
 import { TRANSACTION_TYPES } from "@config";
+import { Component, Prop, Vue } from "vue-property-decorator";
 
 import { InputPassword } from "@/components/Input";
 import { ModalLoader } from "@/components/Modal";
@@ -56,10 +57,8 @@ import { PassphraseInput } from "@/components/Passphrase";
 
 import mixin from "./mixin";
 
-export default {
+@Component({
 	name: "TransactionFormMultiSign",
-
-	transactionType: TRANSACTION_TYPES.MULTI_SIGN,
 
 	components: {
 		InputPassword,
@@ -68,53 +67,53 @@ export default {
 	},
 
 	mixins: [mixin],
+})
+export default class TransactionFormMultiSign extends Vue {
+	transactionType = TRANSACTION_TYPES.MULTI_SIGN;
 
-	props: {
-		transaction: {
-			type: Object,
-			required: true,
-		},
-	},
+	@Prop({
+		type: Object,
+		required: true,
+	})
+	transaction;
 
-	data: () => ({
-		form: {
-			passphrase: "",
-			walletPassword: "",
-		},
-	}),
+	form = {
+		passphrase: "",
+		walletPassword: "",
+	};
 
-	methods: {
-		getTransactionData() {
-			const transactionData = {
-				publicKey: this.currentWallet.publicKey,
-				passphrase: this.form.passphrase,
-				wif: this.form.wif,
-				networkWif: this.walletNetwork.wif,
-				multiSignature: this.transaction.multiSignature,
-			};
+	getTransactionData() {
+		const transactionData = {
+			publicKey: this.currentWallet.publicKey,
+			passphrase: this.form.passphrase,
+			wif: this.form.wif,
+			networkWif: this.walletNetwork.wif,
+			multiSignature: this.transaction.multiSignature,
+		};
 
-			if (this.currentWallet.secondPublicKey) {
-				transactionData.secondPassphrase = this.form.secondPassphrase;
-			}
+		if (this.currentWallet.secondPublicKey) {
+			transactionData.secondPassphrase = this.form.secondPassphrase;
+		}
 
-			return transactionData;
-		},
+		return transactionData;
+	}
 
-		async buildTransaction(transactionData) {
-			return this.$client.multiSign(this.transaction, transactionData);
-		},
+	buildTransaction(transactionData) {
+		return this.$client.multiSign(this.transaction, transactionData);
+	}
 
-		transactionError() {
-			this.$error(this.$t("TRANSACTION.ERROR.VALIDATION.MULTI_SIGN"));
-		},
-	},
+	transactionError() {
+		this.$error(this.$t("TRANSACTION.ERROR.VALIDATION.MULTI_SIGN"));
+	}
 
-	validations: {
-		form: {
-			passphrase: mixin.validators.passphrase,
-			walletPassword: mixin.validators.walletPassword,
-			secondPassphrase: mixin.validators.secondPassphrase,
-		},
-	},
-};
+	validations() {
+		return {
+			form: {
+				passphrase: mixin.validators.passphrase,
+				walletPassword: mixin.validators.walletPassword,
+				secondPassphrase: mixin.validators.secondPassphrase,
+			},
+		}
+	};
+}
 </script>
