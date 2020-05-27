@@ -1,4 +1,5 @@
 import * as MagistrateCrypto from "@arkecosystem/core-magistrate-crypto";
+import { BIP39 } from "@arkecosystem/platform-sdk-crypto";
 import { TRANSACTION_TYPES } from "@config";
 
 import store from "@/store";
