@@ -120,6 +120,6 @@ export default class ModalAdditionalLedgers extends Vue {
 				},
 			},
 		};
-	};
+	}
 }
 </script>

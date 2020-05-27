@@ -598,7 +598,7 @@ export default class NetworkModal extends Vue {
 	}
 
 	validations() {
-		return  {
+		return {
 			form: {
 				name: {
 					required,
@@ -640,7 +640,9 @@ export default class NetworkModal extends Vue {
 				explorer: {
 					requiredIfFull,
 					isValid(value) {
-						return !this.showFull || /(:\/\/){1}[a-zA-Z0-9][a-zA-Z0-9\-_.]*[a-zA-Z0-9](:[0-9]+)?$/.test(value);
+						return (
+							!this.showFull || /(:\/\/){1}[a-zA-Z0-9][a-zA-Z0-9\-_.]*[a-zA-Z0-9](:[0-9]+)?$/.test(value)
+						);
 					},
 					hasScheme(value) {
 						return !this.showFull || /^https?:\/\//.test(value);
@@ -673,8 +675,8 @@ export default class NetworkModal extends Vue {
 				},
 				ticker: {},
 			},
-		}
-	};
+		};
+	}
 }
 </script>
 

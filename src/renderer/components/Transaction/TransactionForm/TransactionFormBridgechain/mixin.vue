@@ -553,7 +553,9 @@ export default class AnonymousComponent extends Vue {
 							return this.bridgechain ? true : maxLength(maxNameLength)(value);
 						},
 						validName(value) {
-							return this.bridgechain ? true : /^[a-zA-Z0-9]+(( - |[ ._-])[a-zA-Z0-9]+)*[.]?$/.test(value);
+							return this.bridgechain
+								? true
+								: /^[a-zA-Z0-9]+(( - |[ ._-])[a-zA-Z0-9]+)*[.]?$/.test(value);
 						},
 					},
 
@@ -586,7 +588,9 @@ export default class AnonymousComponent extends Vue {
 
 					bridgechainAssetRepository: {
 						required(value) {
-							return this.bridgechain && this.bridgechain.bridgechainAssetRepository ? required(value) : true;
+							return this.bridgechain && this.bridgechain.bridgechainAssetRepository
+								? required(value)
+								: true;
 						},
 						url(value) {
 							return url(value);
@@ -595,7 +599,7 @@ export default class AnonymousComponent extends Vue {
 				},
 			},
 		};
-	};
+	}
 }
 </script>
 

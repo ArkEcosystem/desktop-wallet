@@ -1,5 +1,5 @@
 import { Identities } from "@arkecosystem/crypto";
-import { Utils } from "@arkecosystem/platform-sdk";
+import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { createLocalVue, mount } from "@vue/test-utils";
 import cloneDeep from "lodash/cloneDeep";
 import Vuelidate from "vuelidate";
@@ -769,7 +769,7 @@ describe("TransactionFormMultiSignature", () => {
 					passphrase: "passphrase",
 					publicKeys: ["public-key-2", "public-key-3", "public-key-4"],
 					minKeys: 3,
-					fee: Utils.BigNumber.make(0.1 * 1e8),
+					fee: BigNumber.make(0.1 * 1e8),
 					wif: undefined,
 					networkWif: 170,
 				});
@@ -807,7 +807,7 @@ describe("TransactionFormMultiSignature", () => {
 					secondPassphrase: "second passphrase",
 					publicKeys: ["public-key-2", "public-key-3", "public-key-4"],
 					minKeys: 3,
-					fee: Utils.BigNumber.make(0.1 * 1e8),
+					fee: BigNumber.make(0.1 * 1e8),
 					wif: undefined,
 					networkWif: 170,
 				});

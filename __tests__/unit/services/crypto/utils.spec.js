@@ -1,5 +1,5 @@
 import { Managers } from "@arkecosystem/crypto";
-import { Utils } from "@arkecosystem/platform-sdk";
+import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import nock from "nock";
 
 import { CryptoUtils } from "@/services/crypto/utils";
@@ -15,8 +15,8 @@ describe("transactionFromData", () => {
 
 	beforeEach(() => {
 		transaction = {
-			amount: Utils.BigNumber.make(1).times(1e8),
-			fee: Utils.BigNumber.make(0.1).times(1e8),
+			amount: BigNumber.make(1).times(1e8),
+			fee: BigNumber.make(0.1).times(1e8),
 			type: 0,
 			typeGroup: 1,
 			recipientId: "address-1",
@@ -36,7 +36,7 @@ describe("transactionFromData", () => {
 
 	it("should do a deep clone", () => {
 		const clonedTransaction = CryptoUtils.transactionFromData(transaction);
-		transaction.amount = Utils.BigNumber.make(2).times(1e8);
+		transaction.amount = BigNumber.make(2).times(1e8);
 
 		expect(clonedTransaction.amount.toString()).toEqual("100000000");
 	});

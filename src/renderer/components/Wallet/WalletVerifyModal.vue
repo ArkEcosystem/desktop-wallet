@@ -243,6 +243,6 @@ export default class WalletVerifyModal extends Vue {
 				},
 			},
 		};
-	};
+	}
 }
 </script>

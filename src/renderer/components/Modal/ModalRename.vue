@@ -202,7 +202,7 @@ export default class ModalRename extends Vue {
 				},
 			},
 		};
-	};
+	}
 }
 </script>
 

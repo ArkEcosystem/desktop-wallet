@@ -1,15 +1,11 @@
 <template>
-	<li
-		class="flex flex-col w-full py-4 border-b border-dashed ListDividedItem border-theme-line-separator"
-	>
-		<div
-			:class="isFloatingLabel ? 'flex-col items-start' : 'items-center'"
-			class="flex justify-between"
-		>
+	<li class="flex flex-col w-full py-4 border-b border-dashed ListDividedItem border-theme-line-separator">
+		<div :class="isFloatingLabel ? 'flex-col items-start' : 'items-center'" class="flex justify-between">
 			<span
 				:class="[{ 'font-semibold text-xs mb-1': isFloatingLabel }, itemLabelClass]"
 				class="mr-5 ListDividedItem__label text-theme-page-text-light"
-			>{{ label }}</span>
+				>{{ label }}</span
+			>
 
 			<div :class="itemValueClass" class="ListDividedItem__value">
 				<slot>

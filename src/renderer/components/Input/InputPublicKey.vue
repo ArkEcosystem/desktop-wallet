@@ -111,6 +111,6 @@ export default class InputPublicKey extends Vue {
 				},
 			},
 		};
-	};
+	}
 }
 </script>

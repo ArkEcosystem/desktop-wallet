@@ -290,8 +290,8 @@ export default class InputPassword extends Vue {
 					return containsLowercase && containsUppercase && containsNumbers && containsSpecial;
 				},
 			},
-		}
-	};
+		};
+	}
 }
 </script>
 

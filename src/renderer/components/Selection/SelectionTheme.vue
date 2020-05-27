@@ -36,7 +36,7 @@ export default class SelectionTheme extends Vue {
 		return false;
 	}
 
-	@Emit('input')
+	@Emit("input")
 	emitInput(status) {
 		const theme = Object.keys(this.themes).find((theme) => this.themes[theme] === status);
 		return theme;

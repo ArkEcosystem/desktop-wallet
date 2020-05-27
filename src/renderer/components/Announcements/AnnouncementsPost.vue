@@ -58,7 +58,8 @@ import { SvgIcon } from "@/components/SvgIcon";
 export default class AnnouncementsPost extends Vue {
 	@Prop({ required: true }) public date!: string;
 	@Prop({ required: true }) public title!: string;
-  @Prop({ default: null, required: true, validator: (value) => typeof value === "string" || value === null }) public summary!: string | null;
+	@Prop({ default: null, required: true, validator: (value) => typeof value === "string" || value === null })
+	public summary!: string | null;
 	@Prop({ required: true }) public url!: string;
 	@Prop({ required: true, default: false }) public isRead!: boolean;
 
@@ -72,7 +73,7 @@ export default class AnnouncementsPost extends Vue {
 		return this.formatter_date(this.date, "dddd");
 	}
 
-	@Emit('read')
+	@Emit("read")
 	emitRead() {
 		// @ts-ignore
 		return this.announcement;
@@ -88,23 +89,23 @@ export default class AnnouncementsPost extends Vue {
 
 <style scoped>
 .AnnouncementsPost__close {
-  /* The close button is shown only on hover over the entire announcement */
-  @apply .flex .cursor-pointer .text-theme-option-button-text .bg-theme-button .rounded .p-2 .-mt-px .opacity-0;
+	/* The close button is shown only on hover over the entire announcement */
+	@apply .flex .cursor-pointer .text-theme-option-button-text .bg-theme-button .rounded .p-2 .-mt-px .opacity-0;
 }
 
 .AnnouncementsPost:hover > .AnnouncementsPost__close {
-  @apply .opacity-100;
+	@apply .opacity-100;
 }
 
 .AnnouncementsPost:hover > .AnnouncementsPost__close:hover {
-  @apply .opacity-50;
+	@apply .opacity-50;
 }
 
 .AnnouncementsPost__date {
-  line-height: 1.75rem;
+	line-height: 1.75rem;
 }
 
 .AnnouncementsPost__title {
-  line-height: 1.75rem;
+	line-height: 1.75rem;
 }
 </style>

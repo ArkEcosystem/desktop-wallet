@@ -322,7 +322,7 @@ export default class TransactionFormVote extends Vue {
 				secondPassphrase: mixin.validators.secondPassphrase,
 			},
 		};
-	};
+	}
 }
 </script>
 

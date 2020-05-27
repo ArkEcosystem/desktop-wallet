@@ -464,7 +464,7 @@ export default class TransactionFormMultiSignature extends Vue {
 				walletPassword: mixin.validators.walletPassword,
 			},
 		};
-	};
+	}
 }
 </script>
 

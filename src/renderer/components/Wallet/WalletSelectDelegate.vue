@@ -65,7 +65,7 @@ export default class ModalSelectDelegate extends Vue {
 				},
 			},
 		};
-	};
+	}
 }
 </script>
 

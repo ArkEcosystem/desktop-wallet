@@ -215,6 +215,6 @@ export default class WalletSignModal extends Vue {
 				},
 			},
 		};
-	};
+	}
 }
 </script>

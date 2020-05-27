@@ -1,4 +1,4 @@
-import { Utils } from "@arkecosystem/platform-sdk";
+import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { createLocalVue, shallowMount } from "@vue/test-utils";
 
 import CurrencyMixin from "@/mixins/currency";
@@ -200,7 +200,7 @@ describe("Mixins > Currency", () => {
 			it("should use the session network to convert an amount from arktoshi to ARK", () => {
 				let amount = Math.pow(10, 9);
 				let unit = subToUnit(amount);
-				expect(unit).toBeInstanceOf(Utils.BigNumber);
+				expect(unit).toBeInstanceOf(BigNumber);
 				expect(unit.toString()).toEqual("10");
 
 				amount = Math.pow(10, 12) + 9800 + 1;
@@ -215,7 +215,7 @@ describe("Mixins > Currency", () => {
 
 				let amount = Math.pow(10, 3);
 				let unit = subToUnit(amount, network);
-				expect(unit).toBeInstanceOf(Utils.BigNumber);
+				expect(unit).toBeInstanceOf(BigNumber);
 				expect(unit.toString()).toEqual("1");
 
 				amount = Math.pow(10, 9) + 9800 + 1;

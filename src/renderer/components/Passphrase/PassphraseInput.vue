@@ -267,7 +267,7 @@ export default class PassphraseInput extends Vue {
 				},
 			},
 		};
-	};
+	}
 }
 </script>
 

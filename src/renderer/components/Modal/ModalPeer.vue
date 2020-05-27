@@ -174,6 +174,6 @@ export default class ModalPeer extends Vue {
 				},
 			},
 		};
-	};
+	}
 }
 </script>

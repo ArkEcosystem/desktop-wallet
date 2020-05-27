@@ -190,7 +190,9 @@ export default class TransactionFormDelegateRegistration extends Vue {
 					isMaxLength(value) {
 						const validation = WalletService.validateUsername(value);
 
-						return !validation.passes ? !validation.errors.find((error) => error.type === "maxLength") : true;
+						return !validation.passes
+							? !validation.errors.find((error) => error.type === "maxLength")
+							: true;
 					},
 
 					doesNotExist(value) {
@@ -200,7 +202,7 @@ export default class TransactionFormDelegateRegistration extends Vue {
 					},
 				},
 			},
-		}
-	};
+		};
+	}
 }
 </script>

@@ -168,6 +168,6 @@ export default class TransactionFormDelegateResignation extends Vue {
 				secondPassphrase: mixin.validators.secondPassphrase,
 			},
 		};
-	};
+	}
 }
 </script>

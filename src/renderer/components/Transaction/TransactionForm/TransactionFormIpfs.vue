@@ -163,6 +163,6 @@ export default class TransactionFormIpfs extends Vue {
 				},
 			},
 		};
-	};
+	}
 }
 </script>

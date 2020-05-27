@@ -188,7 +188,7 @@ export default class ContactNew extends Vue {
 				},
 			},
 		};
-	};
+	}
 }
 </script>
 

@@ -805,7 +805,7 @@ export default class TransactionFormTransfer extends Vue {
 				walletPassword: mixin.validators.walletPassword,
 			},
 		};
-	};
+	}
 }
 </script>
 

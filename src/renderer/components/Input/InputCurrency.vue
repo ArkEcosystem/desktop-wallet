@@ -466,7 +466,7 @@ export default class InputCurrency extends Vue {
 				},
 			},
 		};
-	};
+	}
 }
 </script>
 
