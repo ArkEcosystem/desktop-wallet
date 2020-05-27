@@ -35,9 +35,9 @@ class PluginEvents {
 		if (index > -1) {
 			action = this.events[criteria][index];
 			if (forceRegex || typeof criteria.test === "function") {
-				this.eventBus.offAny(action);
+				this.eventBus.$offAny(action);
 			} else {
-				this.eventBus.off(criteria, action);
+				this.eventBus.$off(criteria, action);
 			}
 
 			this.events[criteria] = [

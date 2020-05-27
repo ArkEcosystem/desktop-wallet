@@ -22,7 +22,7 @@ export default {
 	},
 
 	beforeDestroy() {
-		this.$eventBus.off(AppEvent.WalletReload, this.loadTransactions);
+		this.$eventBus.$off(AppEvent.WalletReload, this.loadTransactions);
 		if (this.wallet_fromRoute) {
 			this.disableNewTransactionEvent(this.wallet_fromRoute.address);
 		}
@@ -44,7 +44,7 @@ export default {
 			}
 
 			try {
-				this.$eventBus.off(`wallet:${address}:transaction:new`, this.refreshStatusEvent);
+				this.$eventBus.$off(`wallet:${address}:transaction:new`, this.refreshStatusEvent);
 			} catch (error) {
 				//
 			}

@@ -351,7 +351,7 @@ export default class AnonymousComponent extends Vue {
 	}
 
 	beforeDestroy() {
-		this.$eventBus.off(AppEvent.WalletReload, this.fetchWalletVote);
+		this.$eventBus.$off(AppEvent.WalletReload, this.fetchWalletVote);
 	}
 
 	mounted() {

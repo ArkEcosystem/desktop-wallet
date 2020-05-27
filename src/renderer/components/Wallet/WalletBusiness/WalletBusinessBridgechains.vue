@@ -89,8 +89,8 @@ export default class WalletBusinessBridgechains extends Vue {
 
 	beforeDestroy() {
 		clearTimeout(this.timeout);
-		this.$eventBus.off(AppEvent.WalletReload, this.loadBridgechains);
-		this.$eventBus.off(AppEvent.WalletReloadBusinessBridgechains, this.loadBridgechains);
+		this.$eventBus.$off(AppEvent.WalletReload, this.loadBridgechains);
+		this.$eventBus.$off(AppEvent.WalletReloadBusinessBridgechains, this.loadBridgechains);
 	}
 
 	async fetchBridgechains() {
