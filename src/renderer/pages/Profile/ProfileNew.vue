@@ -429,7 +429,11 @@ export default class ProfileNew extends Vue {
 			schema: {
 				name: {
 					doesNotExist(value) {
-						return !this.$store.getters["profile/doesExist"](value);
+						if (value) {
+							return !this.$store.getters["profile/doesExist"](value);
+						}
+
+						return false;
 					},
 				},
 			},
