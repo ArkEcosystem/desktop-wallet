@@ -53,7 +53,7 @@ const createWrapper = (component, wallet, network, props = {}) => {
 	}
 
 	const mountNetwork = network || cloneDeep(globalNetwork);
-
+	console.log(TransactionFormTransfer)
 	wrapper = mount(TransactionFormTransfer, {
 		i18n,
 		localVue,
@@ -311,7 +311,7 @@ describe("TransactionFormTransfer", () => {
 			});
 		});
 
-		describe("hasAip11", () => {
+		describe.only("hasAip11", () => {
 			it("should return true if it is aip11", () => {
 				const response = TransactionFormTransfer.computed.walletNetwork.call({
 					session_network: globalNetwork,
