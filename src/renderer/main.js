@@ -11,6 +11,7 @@ import Vuelidate from "vuelidate";
 
 import alertEvents from "@/plugins/alert-events";
 import apiClient from "@/plugins/api-client";
+import env from "@/plugins/env";
 import eventBus from "@/plugins/event-bus";
 import pluginManager from "@/plugins/plugin-manager";
 import synchronizer from "@/plugins/synchronizer";
@@ -41,6 +42,7 @@ Vue.use(VTooltip, {
 });
 Vue.use(alertEvents);
 Vue.use(apiClient);
+Vue.use(env);
 Vue.use(synchronizer);
 Vue.use(PortalVue);
 
