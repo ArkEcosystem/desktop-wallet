@@ -1,4 +1,4 @@
-import { Utils } from "@arkecosystem/platform-sdk";
+import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { orderBy, uniqBy } from "lodash";
 
 /**
@@ -21,8 +21,8 @@ export default (a, b, order = null) => {
 
 	if (["amount", "fee"].includes(field)) {
 		return transactions.sort((a, b) => {
-			const bignumA = Utils.BigNumber.make(a[field]);
-			const bignumB = Utils.BigNumber.make(b[field]);
+			const bignumA = BigNumber.make(a[field]);
+			const bignumB = BigNumber.make(b[field]);
 
 			return type === "asc" ? bignumA.comparedTo(bignumB) : bignumB.comparedTo(bignumA);
 		});

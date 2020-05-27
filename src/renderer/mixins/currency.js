@@ -1,4 +1,4 @@
-import { Utils } from "@arkecosystem/platform-sdk";
+import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { MARKET } from "@config";
 import { merge } from "lodash";
 
@@ -110,13 +110,13 @@ export default {
 
 		currency_toBuilder(value, network) {
 			const { fractionDigits } = network || this.session_network;
-			return Utils.BigNumber.make(value).decimalPlaces(fractionDigits);
+			return BigNumber.make(value).decimalPlaces(fractionDigits);
 		},
 
 		currency_subToUnit(value, network) {
 			const { fractionDigits } = network || this.session_network;
 
-			const result = Utils.BigNumber.make(value);
+			const result = BigNumber.make(value);
 
 			if (fractionDigits) {
 				return result.decimalPlaces(fractionDigits).divide(Math.pow(10, fractionDigits));
@@ -127,7 +127,7 @@ export default {
 
 		currency_unitToSub(value, network) {
 			const { fractionDigits } = network || this.session_network;
-			return Utils.BigNumber.make(value).decimalPlaces(fractionDigits).toSatoshi();
+			return BigNumber.make(value).decimalPlaces(fractionDigits).toSatoshi();
 		},
 
 		currency_cryptoToCurrency(value, fromSubUnit = true, fractionDigits = 2) {
@@ -136,7 +136,7 @@ export default {
 			}
 
 			const price = this.$store.getters["market/lastPrice"];
-			return Utils.BigNumber.make(value).decimalPlaces(fractionDigits).times(price).toFixed();
+			return BigNumber.make(value).decimalPlaces(fractionDigits).times(price).toFixed();
 		},
 	},
 };

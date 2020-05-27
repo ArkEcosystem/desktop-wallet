@@ -819,7 +819,7 @@ export default class ProfileEdition extends Vue {
 				},
 			},
 		};
-	};
+	}
 }
 </script>
 

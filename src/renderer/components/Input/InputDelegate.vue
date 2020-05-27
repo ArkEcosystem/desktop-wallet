@@ -389,7 +389,7 @@ export default class InputDelegate extends Vue {
 				},
 			},
 		};
-	};
+	}
 }
 </script>
 

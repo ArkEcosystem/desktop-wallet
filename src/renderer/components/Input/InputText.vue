@@ -227,8 +227,8 @@ export default class InputText extends Vue {
 					return WalletService.isBip39Passphrase(trimmed, this.session_profile.bip39Language);
 				},
 			},
-		}
-	};
+		};
+	}
 }
 </script>
 

@@ -1,10 +1,10 @@
 import * as MagistrateCrypto from "@arkecosystem/core-magistrate-crypto";
+import { BIP39 } from "@arkecosystem/platform-sdk-crypto";
 import { TRANSACTION_TYPES } from "@config";
 
 import store from "@/store";
 
 import { TransactionSigner } from "./transaction-signer";
-import { CryptoUtils } from "./utils";
 
 export class BusinessResignationBuilder {
 	static async build(
@@ -23,8 +23,13 @@ export class BusinessResignationBuilder {
 
 		const transaction = new MagistrateCrypto.Builders.BusinessResignationBuilder().fee(fee);
 
-		passphrase = CryptoUtils.normalizePassphrase(passphrase);
-		secondPassphrase = CryptoUtils.normalizePassphrase(secondPassphrase);
+		if (passphrase) {
+			passphrase = BIP39.normalize(passphrase);
+		}
+
+		if (secondPassphrase) {
+			secondPassphrase = BIP39.normalize(secondPassphrase);
+		}
 
 		return TransactionSigner.sign(
 			{

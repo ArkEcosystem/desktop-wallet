@@ -365,7 +365,7 @@ export default class InputFee extends Vue {
 	}
 
 	validations() {
-		return  {
+		return {
 			fee: {
 				isValid() {
 					// @ts-ignore
@@ -376,8 +376,8 @@ export default class InputFee extends Vue {
 					return false;
 				},
 			},
-		}
-	};
+		};
+	}
 }
 </script>
 

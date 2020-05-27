@@ -456,7 +456,7 @@ export default class WalletNew extends Vue {
 				},
 			},
 		};
-	};
+	}
 }
 </script>
 

@@ -1,5 +1,5 @@
 import { Identities } from "@arkecosystem/crypto";
-import { Utils } from "@arkecosystem/platform-sdk";
+import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { createLocalVue, mount } from "@vue/test-utils";
 import Vuelidate from "vuelidate";
 
@@ -211,7 +211,7 @@ describe("TransactionFormDelegateResignation", () => {
 				expect(wrapper.vm.getTransactionData()).toEqual({
 					address: "address-1",
 					passphrase: "passphrase",
-					fee: Utils.BigNumber.make(0.1 * 1e8),
+					fee: BigNumber.make(0.1 * 1e8),
 					wif: undefined,
 					networkWif: 170,
 					multiSignature: undefined,
@@ -233,7 +233,7 @@ describe("TransactionFormDelegateResignation", () => {
 					address: "address-1",
 					passphrase: "passphrase",
 					secondPassphrase: "second passphrase",
-					fee: Utils.BigNumber.make(0.1 * 1e8),
+					fee: BigNumber.make(0.1 * 1e8),
 					wif: undefined,
 					networkWif: 170,
 					multiSignature: undefined,

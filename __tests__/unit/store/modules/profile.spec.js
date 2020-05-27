@@ -1,4 +1,4 @@
-import { Utils } from "@arkecosystem/platform-sdk";
+import { BigNumber } from "@arkecosystem/platform-sdk-support";
 
 import { StoreBinding, StoreCommit } from "@/enums";
 import store from "@/store";
@@ -34,7 +34,7 @@ describe("ProfileModule", () => {
 
 		it("should return the balance of the profile wallets", () => {
 			const balance = store.getters["profile/balance"](profileId);
-			expect(balance).toBeInstanceOf(Utils.BigNumber);
+			expect(balance).toBeInstanceOf(BigNumber);
 			expect(balance.toString()).toEqual("1270");
 		});
 	});
@@ -80,7 +80,7 @@ describe("ProfileModule", () => {
 
 			it("should return the balance of the profile wallets only", () => {
 				const balance = store.getters["profile/balanceWithLedger"](profileId);
-				expect(balance).toBeInstanceOf(Utils.BigNumber);
+				expect(balance).toBeInstanceOf(BigNumber);
 				expect(balance.toString()).toEqual("1270");
 			});
 		});
@@ -92,7 +92,7 @@ describe("ProfileModule", () => {
 
 			it("should return the balance of the profile wallets and the Ledger wallets", () => {
 				const balance = store.getters["profile/balanceWithLedger"](profileId);
-				expect(balance).toBeInstanceOf(Utils.BigNumber);
+				expect(balance).toBeInstanceOf(BigNumber);
 				expect(balance.toString()).toEqual("2901");
 			});
 
@@ -104,7 +104,7 @@ describe("ProfileModule", () => {
 
 				it("should ignore them", () => {
 					const balance = store.getters["profile/balanceWithLedger"](profileId);
-					expect(balance).toBeInstanceOf(Utils.BigNumber);
+					expect(balance).toBeInstanceOf(BigNumber);
 					expect(balance.toString()).toEqual("1571");
 				});
 			});

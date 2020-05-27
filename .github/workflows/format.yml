@@ -1,38 +1,40 @@
 name: Format
 
 on:
-  pull_request:
-    paths:
-      - "**.css"
-      - "**.js"
-      - "**.ts"
-      - "**.vue"
+    pull_request:
+        paths:
+            - "**.css"
+            - "**.js"
+            - "**.ts"
+            - "**.vue"
 
 jobs:
-  eslint:
-    runs-on: ubuntu-latest
+    eslint:
+        runs-on: ubuntu-latest
 
-    steps:
-      - uses: actions/checkout@v2
-        with:
-          ref: ${{ github.head_ref }}
+        steps:
+            - uses: actions/checkout@v2
+              with:
+                  ref: ${{ github.head_ref }}
 
-      - name: Update System
-        run: sudo apt-get update
+            - name: Update System
+              run: sudo apt-get update
 
-      - name: Ledger
-        run: sudo apt-get install libudev-dev libusb-1.0-0-dev
+            - name: Ledger
+              run: sudo apt-get install libudev-dev libusb-1.0-0-dev
 
-      - name: Install
-        run: yarn global add node-gyp && yarn install --frozen-lockfile --ignore-engines && npm rebuild
+            - name: Install
+              run: yarn global add node-gyp && yarn install --frozen-lockfile --ignore-engines && npm rebuild
 
-      - name: Lint source
-        run: yarn lint
+            - name: Lint source
+              run: yarn lint
 
-      - name: Lint tests
-        run: yarn lint:test
+            - name: Lint tests
+              run: yarn lint:test
 
-      - uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          commit_message: "style: resolve style guide violations"
-          branch: ${{ github.head_ref }}
+            - uses: stefanzweifel/git-auto-commit-action@v4
+              with:
+                  commit_message: "style: resolve style guide violations"
+                  branch: ${{ github.head_ref }}
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}

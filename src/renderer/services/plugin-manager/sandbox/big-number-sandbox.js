@@ -1,4 +1,4 @@
-import { Utils } from "@arkecosystem/platform-sdk";
+import { BigNumber } from "@arkecosystem/platform-sdk-support";
 
 export function create(walletApi) {
 	return () => {
@@ -6,6 +6,6 @@ export function create(walletApi) {
 			walletApi.utils = {};
 		}
 
-		walletApi.utils.bigNumber = Utils.BigNumber;
+		walletApi.utils.bigNumber = BigNumber;
 	};
 }

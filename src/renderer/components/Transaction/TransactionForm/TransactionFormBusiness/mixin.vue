@@ -322,6 +322,6 @@ export default class AnonymousComponent extends Vue {
 				},
 			},
 		};
-	};
+	}
 }
 </script>

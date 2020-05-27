@@ -354,7 +354,7 @@ export default class WalletImport extends Vue {
 				},
 			},
 		};
-	};
+	}
 }
 </script>
 

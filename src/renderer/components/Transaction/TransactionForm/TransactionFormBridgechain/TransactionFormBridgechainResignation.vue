@@ -158,7 +158,7 @@ export default class TransactionFormBridgechainResignation extends Vue {
 				walletPassword: mixin.validators.walletPassword,
 				secondPassphrase: mixin.validators.secondPassphrase,
 			},
-		}
-	};
+		};
+	}
 }
 </script>

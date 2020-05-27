@@ -438,7 +438,7 @@ export default class ProfileNew extends Vue {
 				},
 			},
 		};
-	};
+	}
 }
 </script>
 

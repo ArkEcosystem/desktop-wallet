@@ -1,4 +1,4 @@
-import { Utils } from "@arkecosystem/platform-sdk";
+import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { createLocalVue, mount } from "@vue/test-utils";
 import VueRouter from "vue-router";
 
@@ -38,7 +38,7 @@ describe("pages > ProfileAll", () => {
 						"network/byToken": (token) => networkBy("token", token),
 						"network/bySymbol": (symbol) => networkBy("symbol", symbol),
 						"profile/all": profiles,
-						"profile/balanceWithLedger": () => Utils.BigNumber.make(13700000),
+						"profile/balanceWithLedger": () => BigNumber.make(13700000),
 						"wallet/byProfileId": (id) => wallets[id],
 					},
 				},
@@ -91,9 +91,9 @@ describe("pages > ProfileAll", () => {
 	describe("aggregatedBalances", () => {
 		it("should aggregate the sum of the balances of all profiles by network", () => {
 			wrapper = mountPage();
-			expect(wrapper.vm.aggregatedBalances).toHaveProperty("main", Utils.BigNumber.make(50015090900));
-			expect(wrapper.vm.aggregatedBalances).toHaveProperty("other", Utils.BigNumber.make(12190000));
-			expect(wrapper.vm.aggregatedBalances).toHaveProperty("dev", Utils.BigNumber.make(52010000));
+			expect(wrapper.vm.aggregatedBalances).toHaveProperty("main", BigNumber.make(50015090900));
+			expect(wrapper.vm.aggregatedBalances).toHaveProperty("other", BigNumber.make(12190000));
+			expect(wrapper.vm.aggregatedBalances).toHaveProperty("dev", BigNumber.make(52010000));
 		});
 
 		describe("when there are profiles with the same wallets", () => {
@@ -103,9 +103,9 @@ describe("pages > ProfileAll", () => {
 
 			it("should include those wallets only 1 time", () => {
 				wrapper = mountPage();
-				expect(wrapper.vm.aggregatedBalances).toHaveProperty("main", Utils.BigNumber.make(15090900));
-				expect(wrapper.vm.aggregatedBalances).toHaveProperty("other", Utils.BigNumber.make(12190000));
-				expect(wrapper.vm.aggregatedBalances).toHaveProperty("dev", Utils.BigNumber.make(52010000));
+				expect(wrapper.vm.aggregatedBalances).toHaveProperty("main", BigNumber.make(15090900));
+				expect(wrapper.vm.aggregatedBalances).toHaveProperty("other", BigNumber.make(12190000));
+				expect(wrapper.vm.aggregatedBalances).toHaveProperty("dev", BigNumber.make(52010000));
 			});
 		});
 
@@ -119,9 +119,9 @@ describe("pages > ProfileAll", () => {
 
 			it("should include their balances", () => {
 				wrapper = mountPage();
-				expect(wrapper.vm.aggregatedBalances).toHaveProperty("main", Utils.BigNumber.make(66622093608));
-				expect(wrapper.vm.aggregatedBalances).toHaveProperty("other", Utils.BigNumber.make(12190000));
-				expect(wrapper.vm.aggregatedBalances).toHaveProperty("dev", Utils.BigNumber.make(52010000));
+				expect(wrapper.vm.aggregatedBalances).toHaveProperty("main", BigNumber.make(66622093608));
+				expect(wrapper.vm.aggregatedBalances).toHaveProperty("other", BigNumber.make(12190000));
+				expect(wrapper.vm.aggregatedBalances).toHaveProperty("dev", BigNumber.make(52010000));
 			});
 
 			describe("when they are included as non-Ledger wallets", () => {
@@ -131,9 +131,9 @@ describe("pages > ProfileAll", () => {
 
 				it("should include those wallets only 1 time", () => {
 					wrapper = mountPage();
-					expect(wrapper.vm.aggregatedBalances).toHaveProperty("main", Utils.BigNumber.make(59898192907));
-					expect(wrapper.vm.aggregatedBalances).toHaveProperty("other", Utils.BigNumber.make(12190000));
-					expect(wrapper.vm.aggregatedBalances).toHaveProperty("dev", Utils.BigNumber.make(52010000));
+					expect(wrapper.vm.aggregatedBalances).toHaveProperty("main", BigNumber.make(59898192907));
+					expect(wrapper.vm.aggregatedBalances).toHaveProperty("other", BigNumber.make(12190000));
+					expect(wrapper.vm.aggregatedBalances).toHaveProperty("dev", BigNumber.make(52010000));
 				});
 			});
 		});

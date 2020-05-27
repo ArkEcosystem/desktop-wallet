@@ -1,5 +1,5 @@
 import { Identities, Managers, Transactions } from "@arkecosystem/crypto";
-import { Utils } from "@arkecosystem/platform-sdk";
+import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { cloneDeep } from "lodash";
 import nock from "nock";
 
@@ -143,8 +143,8 @@ describe("Services > Client", () => {
 
 		beforeEach(() => {
 			transaction = Transactions.BuilderFactory.transfer()
-				.amount(Utils.BigNumber.make(1 * 1e8))
-				.fee(Utils.BigNumber.make(0.1 * 1e8))
+				.amount(BigNumber.make(1 * 1e8))
+				.fee(BigNumber.make(0.1 * 1e8))
 				.recipientId(address)
 				.vendorField("test vendorfield");
 
@@ -165,8 +165,8 @@ describe("Services > Client", () => {
 			const response = await TransactionSigner.sign(signData);
 
 			expect(response.vendorField).toEqual(transaction.data.vendorField);
-			expect(response.amount).toBe(Utils.BigNumber.make(1 * 1e8).toString());
-			expect(response.fee).toBe(Utils.BigNumber.make(0.1 * 1e8).toString());
+			expect(response.amount).toBe(BigNumber.make(1 * 1e8).toString());
+			expect(response.fee).toBe(BigNumber.make(0.1 * 1e8).toString());
 			expect(response.senderPublicKey).toEqual(publicKey);
 			expect(response.type).toEqual(0);
 			expect(response.version).toEqual(1);
@@ -193,29 +193,6 @@ describe("Services > Client", () => {
 			expect(networkByIdSpy).toHaveBeenCalledWith("ark.mainnet");
 
 			networkByIdSpy.mockRestore();
-		});
-
-		it("should normalize passphrase if provided", async () => {
-			const spy = jest.spyOn(CryptoUtils, "normalizePassphrase");
-
-			await TransactionSigner.sign(signData);
-
-			expect(spy).toHaveBeenCalledWith(signData.passphrase);
-			expect(spy).toHaveBeenCalledWith(signData.secondPassphrase);
-		});
-
-		it("should not normalize if no passphrase is provided", async () => {
-			const spy = jest.spyOn(CryptoUtils, "normalizePassphrase");
-			const wif = Identities.WIF.fromPassphrase(passphrase, { wif: 170 });
-
-			await TransactionSigner.sign({
-				...signData,
-				passphrase: null,
-				secondPassphrase: null,
-				wif,
-			});
-
-			expect(spy).not.toHaveBeenCalled();
 		});
 
 		it("should create v1 transaction if aip11 disabled", async () => {
@@ -469,8 +446,8 @@ describe("Services > Client", () => {
 			aip11Spy = setAip11AndSpy(true);
 
 			transaction = {
-				amount: Utils.BigNumber.make(1 * 1e8),
-				fee: Utils.BigNumber.make(0.1 * 1e8),
+				amount: BigNumber.make(1 * 1e8),
+				fee: BigNumber.make(0.1 * 1e8),
 				type: 0,
 				typeGroup: 1,
 				recipientId: address,
@@ -603,7 +580,7 @@ describe("Services > Client", () => {
 
 		it("should only sign transaction with sender passphrase for registration", async () => {
 			transaction = {
-				fee: Utils.BigNumber.make(0.1 * 1e8),
+				fee: BigNumber.make(0.1 * 1e8),
 				type: 4,
 				typeGroup: 1,
 				version: 2,
@@ -630,7 +607,7 @@ describe("Services > Client", () => {
 
 		it("should sign transaction with sender second passphrase for registration", async () => {
 			transaction = {
-				fee: Utils.BigNumber.make(0.1 * 1e8),
+				fee: BigNumber.make(0.1 * 1e8),
 				type: 4,
 				typeGroup: 1,
 				version: 2,

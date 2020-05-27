@@ -87,13 +87,15 @@ export default class PluginUrlModal extends Vue {
 						return /^((https?:\/\/)?(www.)?)?github\.com/.test(value.toLowerCase());
 					},
 					isAllowed(value) {
-						const regex = RegExp("^((https?://)?(www.)?)?github.com/([A-Za-z0-9_.-]+)/([A-Za-z0-9_.-]+)[/]?$");
+						const regex = RegExp(
+							"^((https?://)?(www.)?)?github.com/([A-Za-z0-9_.-]+)/([A-Za-z0-9_.-]+)[/]?$",
+						);
 						return regex.test(value.toLowerCase());
 					},
 				},
 			},
 		};
-	};
+	}
 }
 </script>
 

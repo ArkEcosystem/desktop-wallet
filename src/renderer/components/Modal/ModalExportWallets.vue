@@ -273,7 +273,7 @@ export default class ModalExportWallets extends Vue {
 					return !!this.wallets.length;
 				},
 			},
-		}
-	};
+		};
+	}
 }
 </script>
