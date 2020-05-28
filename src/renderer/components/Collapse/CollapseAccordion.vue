@@ -12,10 +12,11 @@ import { isEmpty } from "@/utils";
 @Component({
 	name: "CollapseAccordion",
 
-	model: {
-		prop: "id",
-		event: "input",
-	},
+	// @TODO
+	// model: {
+	// 	prop: "id",
+	// 	event: "input",
+	// },
 })
 export default class CollapseAccordion extends Vue {
 	@Prop({

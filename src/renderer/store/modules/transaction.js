@@ -5,7 +5,7 @@ import Vue from "vue";
 
 import { StoreBinding, StoreCommit } from "@/enums";
 import TransactionModel from "@/models/transaction";
-import eventBus from "@/plugins/event-bus";
+import { eventBus } from "@/plugins/event-bus";
 import TransactionService from "@/services/transaction";
 
 const includes = (objects, find) => objects.map((a) => a.id).includes(find.id);

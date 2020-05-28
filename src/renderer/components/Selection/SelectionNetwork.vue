@@ -67,10 +67,11 @@ import SelectionNetworkButton from "./SelectionNetworkButton";
 		SelectionNetworkButton,
 	},
 
-	model: {
-		prop: "selected",
-		event: "select",
-	},
+	// @TODO
+	// model: {
+	// 	prop: "selected",
+	// 	event: "select",
+	// },
 })
 export default class SelectionNetwork extends Vue {
 	maxItems = 2;

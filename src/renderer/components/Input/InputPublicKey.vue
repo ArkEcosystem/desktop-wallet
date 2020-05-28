@@ -24,10 +24,11 @@ import InputText from "./InputText";
 		InputText,
 	},
 
-	model: {
-		prop: "value",
-		event: "input",
-	},
+	// @TODO
+	// model: {
+	// 	prop: "value",
+	// 	event: "input",
+	// },
 })
 export default class InputPublicKey extends Vue {
 	@Prop({

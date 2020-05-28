@@ -5,7 +5,7 @@ import Vue from "vue";
 
 import { AppEvent, StoreBinding, StoreCommit } from "@/enums";
 import NetworkModel from "@/models/network";
-import eventBus from "@/plugins/event-bus";
+import { eventBus } from "@/plugins/event-bus";
 import Client from "@/services/client";
 import { isEmpty } from "@/utils";
 import { reqwest } from "@/utils/http";

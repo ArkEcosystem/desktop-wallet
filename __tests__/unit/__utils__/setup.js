@@ -4,7 +4,7 @@ import Vue from "vue";
 
 import directives from "@/directives";
 import filters from "@/filters";
-import eventBus from "@/plugins/event-bus";
+import { eventBus } from "@/plugins/event-bus";
 
 require("babel-plugin-require-context-hook/register")();
 

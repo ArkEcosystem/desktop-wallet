@@ -54,10 +54,11 @@ import InputField from "./InputField";
 		MenuDropdownHandler,
 	},
 
-	model: {
-		prop: "value",
-		event: "input",
-	},
+	// @TODO
+	// model: {
+	// 	prop: "value",
+	// 	event: "input",
+	// },
 })
 export default class InputSelect extends Vue {
 	@Prop({

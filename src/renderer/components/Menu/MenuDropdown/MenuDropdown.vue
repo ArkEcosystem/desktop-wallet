@@ -76,10 +76,11 @@ import MenuDropdownItem from "./MenuDropdownItem";
 		MenuDropdownHandler,
 	},
 
-	model: {
-		prop: "value",
-		event: "select",
-	},
+	// @TODO
+	// model: {
+	// 	prop: "value",
+	// 	event: "select",
+	// },
 })
 export default class MenuDropdown extends Vue {
 	@Prop({

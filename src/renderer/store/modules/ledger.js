@@ -7,7 +7,7 @@ import Vue from "vue";
 
 import { AppEvent, StoreCommit } from "@/enums";
 import i18n from "@/i18n";
-import eventBus from "@/plugins/event-bus";
+import { eventBus } from "@/plugins/event-bus";
 import ledgerService from "@/services/ledger-service";
 
 export default {

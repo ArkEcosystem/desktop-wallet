@@ -16,10 +16,11 @@ import { CollapseAccordion } from "@/components/Collapse";
 		CollapseAccordion,
 	},
 
-	model: {
-		prop: "step",
-		event: "change",
-	},
+	// @TODO
+	// model: {
+	// 	prop: "step",
+	// 	event: "change",
+	// },
 })
 export default class MenuStep extends Vue {
 	@Prop({

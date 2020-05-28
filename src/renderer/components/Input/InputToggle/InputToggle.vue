@@ -24,10 +24,11 @@ import InputToggleChoice from "./InputToggleChoice";
 		InputToggleChoice,
 	},
 
-	model: {
-		prop: "selectedChoice",
-		event: "choice-select",
-	},
+	// @TODO
+	// model: {
+	// 	prop: "selectedChoice",
+	// 	event: "choice-select",
+	// },
 })
 export default class InputToggle extends Vue {
 	@Prop({

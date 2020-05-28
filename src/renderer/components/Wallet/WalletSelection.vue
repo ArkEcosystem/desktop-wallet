@@ -39,10 +39,11 @@ import truncate from "@/filters/truncate";
 		InputSelect,
 	},
 
-	model: {
-		prop: "value",
-		event: "input",
-	},
+	// @TODO
+	// model: {
+	// 	prop: "value",
+	// 	event: "input",
+	// },
 })
 export default class WalletSelection extends Vue {
 	@Prop({
