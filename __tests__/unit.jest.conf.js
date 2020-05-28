@@ -9,7 +9,7 @@ module.exports = {
 	rootDir: require("path").resolve(__dirname, "../"),
 	moduleFileExtensions: ["js", "ts", "tsx", "json", "vue"],
 	moduleNameMapper: {
-		"^@tailwind": "<rootDir>/tailwind.config.js",
+		"^@tailwind": "<rootDir>/new_tailwind.config.js",
 		"^@package.json$": "<rootDir>/package.json",
 		"^@config/(.*)$": "<rootDir>/config/$1",
 		"^@config": "<rootDir>/config/index.js",

@@ -16,10 +16,15 @@ Vue.use(Router);
 // of `App.vue`: only routes that do not depend on params or the profile should be kept alive
 const router = new Router({
 	routes: [
+		// {
+		// 	path: "/",
+		// 	name: "dashboard",
+		// 	component: require("@/pages/Dashboard").default,
+		// },
 		{
-			path: "/",
+			path: "/profile-design-new",
 			name: "dashboard",
-			component: require("@/pages/Dashboard").default,
+			component: require("@/new/pages/Profile/ProfileMain").default,
 		},
 		{
 			path: "/announcements",

@@ -87,7 +87,8 @@
 </template>
 
 <script lang="ts">
-	import "@/styles/style.css";
+	// import "@/styles/style.css";
+	import "@/new/assets/css/style.css";
 
 	import { I18N } from "@config";
 	// @ts-ignore
