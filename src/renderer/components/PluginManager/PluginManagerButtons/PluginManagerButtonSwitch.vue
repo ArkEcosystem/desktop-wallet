@@ -24,19 +24,13 @@
 </template>
 
 <script>
-import { Component, Prop, Vue, Watch } from "vue-property-decorator";
+import { Component, Model, Prop, Vue, Watch } from "vue-property-decorator";
 
 @Component({
 	name: "PluginManagerButtonSwitch",
-
-	// @TODO
-	// model: {
-	// 	prop: "isActive",
-	// 	event: "change",
-	// },
 })
 export default class PluginManagerButtonSwitch extends Vue {
-	@Prop({
+	@Model("change", {
 		type: Boolean,
 		required: false,
 		default: false,

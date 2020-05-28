@@ -52,7 +52,7 @@
 
 <script>
 import { pullAllBy } from "lodash";
-import { Component, Prop, Vue } from "vue-property-decorator";
+import { Component, Model, Prop, Vue } from "vue-property-decorator";
 
 import { NetworkModal, NetworkSelectionModal } from "@/components/Network";
 
@@ -66,29 +66,23 @@ import SelectionNetworkButton from "./SelectionNetworkButton";
 		NetworkSelectionModal,
 		SelectionNetworkButton,
 	},
-
-	// @TODO
-	// model: {
-	// 	prop: "selected",
-	// 	event: "select",
-	// },
 })
 export default class SelectionNetwork extends Vue {
 	maxItems = 2;
 	buttonClasses = "";
+
+	@Model("select", {
+		type: [Object],
+		required: false,
+		default: null,
+	})
+	selected;
 
 	@Prop({
 		type: Array,
 		required: true,
 	})
 	networks;
-
-	@Prop({
-		type: [Object],
-		required: false,
-		default: null,
-	})
-	selected;
 
 	@Prop({
 		type: Boolean,

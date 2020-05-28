@@ -25,18 +25,12 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue, Watch } from "vue-property-decorator";
+import { Component, Model, Prop, Vue, Watch } from "vue-property-decorator";
 @Component({
 	name: "ButtonSwitch",
-
-	// @TODO
-	// model: {
-	// 	prop: "isActive",
-	// 	event: "change",
-	// },
 })
 export default class ButtonSwitch extends Vue {
-	@Prop({
+	@Model("change", {
 		type: Boolean,
 		required: false,
 		default: false,

@@ -13,7 +13,7 @@
 
 <script lang="ts">
 import { Identities } from "@arkecosystem/crypto";
-import { Component, Prop, Vue, Watch } from "vue-property-decorator";
+import { Component, Model, Prop, Vue, Watch } from "vue-property-decorator";
 
 import InputText from "./InputText";
 
@@ -23,27 +23,21 @@ import InputText from "./InputText";
 	components: {
 		InputText,
 	},
-
-	// @TODO
-	// model: {
-	// 	prop: "value",
-	// 	event: "input",
-	// },
 })
 export default class InputPublicKey extends Vue {
+	@Model("input", {
+		type: String,
+		required: false,
+		default: "",
+	})
+	value;
+
 	@Prop({
 		type: Boolean,
 		required: false,
 		default: true,
 	})
 	isRequired;
-
-	@Prop({
-		type: String,
-		required: false,
-		default: "",
-	})
-	value;
 
 	inputValue = null;
 

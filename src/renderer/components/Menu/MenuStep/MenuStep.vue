@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import { Component, Prop, Vue } from "vue-property-decorator";
+import { Component, Model, Vue } from "vue-property-decorator";
 
 import { CollapseAccordion } from "@/components/Collapse";
 
@@ -15,15 +15,9 @@ import { CollapseAccordion } from "@/components/Collapse";
 	components: {
 		CollapseAccordion,
 	},
-
-	// @TODO
-	// model: {
-	// 	prop: "step",
-	// 	event: "change",
-	// },
 })
 export default class MenuStep extends Vue {
-	@Prop({
+	@Model("change", {
 		type: [Number, String],
 		required: false,
 		default: null,

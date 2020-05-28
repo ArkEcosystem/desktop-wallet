@@ -61,7 +61,7 @@
 
 <script>
 import { zipObject } from "lodash";
-import { Component, Prop, Vue, Watch } from "vue-property-decorator";
+import { Component, Model, Prop, Vue, Watch } from "vue-property-decorator";
 
 import { isEmpty } from "@/utils";
 
@@ -75,14 +75,15 @@ import MenuDropdownItem from "./MenuDropdownItem";
 		MenuDropdownItem,
 		MenuDropdownHandler,
 	},
-
-	// @TODO
-	// model: {
-	// 	prop: "value",
-	// 	event: "select",
-	// },
 })
 export default class MenuDropdown extends Vue {
+	@Model("select", {
+		type: String,
+		required: false,
+		default: null,
+	})
+	value;
+
 	@Prop({
 		type: String,
 		required: false,
@@ -103,13 +104,6 @@ export default class MenuDropdown extends Vue {
 		default: () => [],
 	})
 	items;
-
-	@Prop({
-		type: String,
-		required: false,
-		default: null,
-	})
-	value;
 
 	@Prop({
 		type: Object,

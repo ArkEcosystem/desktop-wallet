@@ -39,7 +39,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue, Watch } from "vue-property-decorator";
+import { Component, Model, Prop, Vue, Watch } from "vue-property-decorator";
 
 import { MenuDropdown, MenuDropdownHandler } from "@/components/Menu";
 
@@ -53,14 +53,15 @@ import InputField from "./InputField";
 		MenuDropdown,
 		MenuDropdownHandler,
 	},
-
-	// @TODO
-	// model: {
-	// 	prop: "value",
-	// 	event: "input",
-	// },
 })
 export default class InputSelect extends Vue {
+	@Model("input", {
+		type: String,
+		required: false,
+		default: undefined,
+	})
+	value;
+
 	@Prop({
 		type: [Array, Object],
 		required: true,
@@ -93,13 +94,6 @@ export default class InputSelect extends Vue {
 		default: false,
 	})
 	isInvalid;
-
-	@Prop({
-		type: String,
-		required: false,
-		default: undefined,
-	})
-	value;
 
 	isFocused = false;
 	optionValue = null;

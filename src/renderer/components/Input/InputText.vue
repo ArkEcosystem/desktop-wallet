@@ -37,7 +37,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue, Watch } from "vue-property-decorator";
+import { Component, Model, Prop, Vue, Watch } from "vue-property-decorator";
 
 import WalletService from "@/services/wallet";
 
@@ -49,14 +49,15 @@ import InputField from "./InputField";
 	components: {
 		InputField,
 	},
-
-	// @TODO
-	// model: {
-	// 	prop: "value",
-	// 	event: "input",
-	// },
 })
 export default class InputText extends Vue {
+	@Model("input", {
+		type: [String, Number],
+		required: false,
+		default: undefined,
+	})
+	value;
+
 	@Prop({
 		type: String,
 		required: true,
@@ -131,13 +132,6 @@ export default class InputText extends Vue {
 		default: undefined,
 	})
 	maxlength;
-
-	@Prop({
-		type: [String, Number],
-		required: false,
-		default: undefined,
-	})
-	value;
 
 	inputValue = null;
 	isFocused = false;
