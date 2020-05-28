@@ -77,12 +77,12 @@ export default class PassphraseVerification extends Vue {
 	suggestionsPerWord;
 
 	@Watch("passphrase")
-	onPassphrase() {
+	onPassphraseChanged() {
 		this.resetData(this.$data);
 	}
 
 	@Watch("wordPositions")
-	onWordPositions() {
+	onWordPositionsChanged() {
 		this.resetData(this.$data);
 	}
 

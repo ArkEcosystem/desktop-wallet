@@ -86,7 +86,7 @@ export default class ModalExportWallets extends Vue {
 	};
 
 	@Watch("currentWallet", { immediate: true })
-	onIsLedgerConnectedChange(value) {
+	onIsLedgerConnectedChanged(value) {
 		this.options.excludeLedger.isDisabled = !value;
 	}
 

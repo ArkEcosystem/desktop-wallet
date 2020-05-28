@@ -142,7 +142,7 @@ export default class PassphraseInput extends Vue {
 	passphraseIsVisible = null;
 
 	@Watch("value")
-	onValue(value) {
+	onValueChanged(value) {
 		this.inputValue = value;
 	}
 

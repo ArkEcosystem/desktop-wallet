@@ -55,8 +55,8 @@ export default class WalletBusinessBridgechains extends Vue {
 	};
 
 	@Watch("wallet_fromRoute")
-	// This watcher would invoke the `fetch` after the `Synchronizer`
-	onWalletFromRoute(newValue, oldValue) {
+	onWalletFromRouteChanged(newValue, oldValue) {
+		// This watcher would invoke the `fetch` after the `Synchronizer`
 		if (newValue.address !== oldValue.address) {
 			this.reset();
 			this.loadBridgechains();

@@ -77,7 +77,7 @@ export default class InputLanguage extends Vue {
 	selected = null;
 
 	@Watch("value")
-	onValue(value) {
+	onValueChanged(value) {
 		// @ts-ignore
 		this.selected = value;
 	}

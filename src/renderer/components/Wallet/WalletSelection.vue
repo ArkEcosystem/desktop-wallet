@@ -75,12 +75,12 @@ export default class WalletSelection extends Vue {
 	isWalletFocused = false;
 
 	@Watch("value")
-	onValue(val) {
+	onValueChanged(val) {
 		this.wallet = val;
 	}
 
 	@Watch("wallet")
-	onWallet(wallet) {
+	onWalletChanged(wallet) {
 		let profileId = null;
 		let walletId = null;
 		if (wallet && wallet.profileId) {
@@ -94,7 +94,7 @@ export default class WalletSelection extends Vue {
 	}
 
 	@Watch("walletId")
-	onWalletId(walletId) {
+	onWalletIdChanged(walletId) {
 		this.wallet = this.wallets.find((wallet) => wallet.id === walletId);
 	}
 

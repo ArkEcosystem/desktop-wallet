@@ -97,7 +97,7 @@ export default class WalletSignVerify extends Vue {
 	activeWalletId = null;
 
 	@Watch("currentWallet")
-	onCurrentWallet() {
+	onCurrentWalletChanged() {
 		if (this.activeWalletId !== this.currentWallet.id) {
 			this.updateSignedMessages();
 		}

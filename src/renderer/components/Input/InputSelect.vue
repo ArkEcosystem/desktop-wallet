@@ -99,7 +99,7 @@ export default class InputSelect extends Vue {
 	optionValue = null;
 
 	@Watch("value")
-	onValue(value) {
+	onValueChanged(value) {
 		// @ts-ignore
 		this.optionValue = value;
 	}

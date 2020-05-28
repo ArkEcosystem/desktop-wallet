@@ -31,19 +31,19 @@ export default class CollapseAccordion extends Vue {
 	inputId = null;
 
 	@Watch("id")
-	onId(val) {
+	onIdChanged(val) {
 		// @ts-ignore
 		this.$nextTick(() => (this.inputId = val));
 	}
 
 	@Watch("inputId")
-	onInputId() {
+	onInputIdChanged() {
 		// @ts-ignore
 		this.toggleCollapse();
 	}
 
 	@Watch("items")
-	onItems() {
+	onItemsChanged() {
 		// @ts-ignore
 		this.toggleCollapse();
 	}

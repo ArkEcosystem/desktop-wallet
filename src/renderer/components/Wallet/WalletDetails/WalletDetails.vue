@@ -172,7 +172,7 @@ export default class AnonymousComponent extends Vue {
 	selectedDelegate = null;
 
 	@Watch("currentTab")
-	onCurrentTab() {
+	onCurrentTabChanged() {
 		switch (this.currentTab) {
 			case "WalletTransactions":
 				this.$synchronizer.focus("wallets", "contacts");
@@ -187,7 +187,7 @@ export default class AnonymousComponent extends Vue {
 	}
 
 	@Watch("currentWallet")
-	async onCurrentWallet(newValue, prevValue) {
+	async onCurrentWalletChanged(newValue, prevValue) {
 		await this.fetchWalletVote();
 		if (!newValue || !prevValue || newValue.address !== prevValue.address) {
 			this.currentTab = "WalletTransactions";
@@ -195,21 +195,21 @@ export default class AnonymousComponent extends Vue {
 	}
 
 	@Watch("tabs")
-	onTabs() {
+	onTabsChanged() {
 		this.$nextTick(() => {
 			this.$refs.menutab.collectItems();
 		});
 	}
 
 	@Watch("isAwaitingConfirmation")
-	async onIsAwaitingConfirmation(newValue, oldValue) {
+	async onIsAwaitingConfirmationChanged(newValue, oldValue) {
 		if (!newValue && oldValue) {
 			await this.fetchWalletVote();
 		}
 	}
 
 	@Watch("selectedDelegate")
-	onSelectedDelegate(delegate) {
+	onSelectedDelegateChanged(delegate) {
 		if (delegate) {
 			this.isSelecting = false;
 

@@ -177,7 +177,7 @@ export default class TransactionFormVote extends Vue {
 	voters = "0";
 
 	@Watch("isPassphraseStep")
-	onIsPassphraseStep() {
+	onIsPassphraseStepChanged() {
 		// Ignore Ledger wallets
 		if (this.currentWallet.isLedger || this.isMultiSignature) {
 			return;

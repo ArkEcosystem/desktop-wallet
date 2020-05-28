@@ -54,7 +54,7 @@ export default class MenuTab extends Vue {
 	items = [];
 
 	@Watch("tab")
-	onTab() {
+	onTabChanged() {
 		this.switchToTab(this.tab);
 	}
 

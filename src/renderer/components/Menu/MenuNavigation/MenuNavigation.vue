@@ -22,7 +22,7 @@ export default class MenuNavigation extends Vue {
 	activeId = null;
 
 	@Watch("id")
-	onId(value) {
+	onIdChanged(value) {
 		if (this.activeId !== value) {
 			this.activateItem(value);
 		}

@@ -137,7 +137,7 @@ export default class InputText extends Vue {
 	isFocused = false;
 
 	@Watch("model")
-	onValue(value) {
+	onValueChanged(value) {
 		// @ts-ignore
 		this.inputValue = value;
 	}

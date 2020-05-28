@@ -30,7 +30,7 @@ export default class PluginManagerSearchBar extends Vue {
 	query = null;
 
 	@Watch("query")
-	onQuery() {
+	onQueryChanged() {
 		this.emitSearch();
 	}
 

@@ -133,7 +133,7 @@ export default class InputPassword extends Vue {
 	passwordIsVisible = null;
 
 	@Watch("value")
-	onValue(value) {
+	onValueChanged(value) {
 		// @ts-ignore
 		this.inputValue = value;
 	}

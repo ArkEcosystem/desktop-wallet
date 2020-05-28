@@ -86,7 +86,7 @@ export default class ModalLoader extends Vue {
 	isVisible = null;
 
 	@Watch("visible")
-	onVisible(value) {
+	onVisibleChanged(value) {
 		this.isVisible = value;
 		if (value) {
 			this.triggerShowClose();

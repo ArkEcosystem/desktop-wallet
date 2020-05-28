@@ -31,7 +31,7 @@ export default class WalletHeading extends Vue {
 	activeWalletAddress = null;
 
 	@Watch("currentWallet")
-	onCurrentWallet() {
+	onCurrentWalletChanged() {
 		if (this.activeWalletAddress !== this.currentWallet.address) {
 			this.resetHeading();
 		}

@@ -110,7 +110,7 @@ export default class WalletHeadingInfo extends Vue {
 	lazyWallet = {};
 
 	@Watch("publicKey")
-	onPublicKey() {
+	onPublicKeyChanged() {
 		if (!this.publicKey) this.showPublicKey = false;
 	}
 

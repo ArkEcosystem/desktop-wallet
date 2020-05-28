@@ -105,7 +105,7 @@ export default class WalletHeadingSecondaryActions extends Vue {
 	isContact = false;
 
 	@Watch("currentWallet")
-	onCurrentWallet(wallet) {
+	onCurrentWalletChanged(wallet) {
 		this.isContact = wallet.isContact;
 	}
 

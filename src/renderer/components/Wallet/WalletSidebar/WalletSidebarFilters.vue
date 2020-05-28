@@ -142,12 +142,12 @@ export default class WalletSidebarFilters extends Vue {
 	currentSortOrder = undefined;
 
 	@Watch("filters")
-	onFilters(filters) {
+	onFiltersChanged(filters) {
 		this.currentFilters = filters;
 	}
 
 	@Watch("searchQuery")
-	onSearchQuery(query) {
+	onSearchQueryChanged(query) {
 		this.currentSearchQuery = query;
 	}
 
