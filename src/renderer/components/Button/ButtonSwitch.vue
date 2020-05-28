@@ -29,10 +29,11 @@ import { Component, Prop, Vue, Watch } from "vue-property-decorator";
 @Component({
 	name: "ButtonSwitch",
 
-	model: {
-		prop: "isActive",
-		event: "change",
-	},
+	// @TODO
+	// model: {
+	// 	prop: "isActive",
+	// 	event: "change",
+	// },
 })
 export default class ButtonSwitch extends Vue {
 	@Prop({

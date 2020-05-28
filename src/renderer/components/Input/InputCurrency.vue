@@ -55,10 +55,11 @@ import InputField from "./InputField";
 		InputField,
 	},
 
-	model: {
-		prop: "value",
-		event: "input",
-	},
+	// @TODO
+	// model: {
+	// 	prop: "value",
+	// 	event: "input",
+	// },
 })
 export default class InputCurrency extends Vue {
 	@Prop({

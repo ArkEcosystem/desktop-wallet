@@ -36,10 +36,11 @@ import InputSelect from "./InputSelect";
 		InputSelect,
 	},
 
-	model: {
-		prop: "value",
-		event: "input",
-	},
+	// @TODO
+	// model: {
+	// 	prop: "value",
+	// 	event: "input",
+	// },
 })
 export default class InputLanguage extends Vue {
 	@Prop({

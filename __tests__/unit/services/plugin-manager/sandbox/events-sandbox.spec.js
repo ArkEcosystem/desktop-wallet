@@ -1,6 +1,6 @@
 import Vue from "vue";
 
-import eventBus from "@/plugins/event-bus";
+import { eventBus } from "@/plugins/event-bus";
 import { create as createEventsSandbox } from "@/services/plugin-manager/sandbox/events-sandbox";
 
 Vue.prototype.$eventBus = eventBus;

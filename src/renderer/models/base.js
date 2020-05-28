@@ -1,7 +1,13 @@
-import { validate as jsonValidate } from "jsonschema";
-import { transform } from "lodash";
+import {
+	validate as jsonValidate
+} from "jsonschema";
+import {
+	transform
+} from "lodash";
 
-import { isNil } from "@/utils";
+import {
+	isNil
+} from "@/utils";
 
 export default class BaseModel {
 	constructor(schema) {
@@ -43,8 +49,7 @@ export default class BaseModel {
 					writable: true,
 					value,
 				};
-			},
-			{},
+			}, {},
 		);
 	}
 
@@ -57,9 +62,7 @@ export default class BaseModel {
 				this.schema,
 				null,
 				2,
-			)} Cannot be instantiated due to errors: ${errors}
-        input: ${JSON.stringify(input)}
-      `);
+			)} Cannot be instantiated due to errors: ${errors} input: ${JSON.stringify(input)}`);
 		}
 	}
 }

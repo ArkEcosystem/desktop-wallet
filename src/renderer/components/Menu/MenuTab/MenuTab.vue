@@ -42,10 +42,11 @@ import VNodes from "@/components/utils/VNodes";
 		VNodes,
 	},
 
-	model: {
-		prop: "tab",
-		event: "input",
-	},
+	// @TODO
+	// model: {
+	// 	prop: "tab",
+	// 	event: "input",
+	// },
 })
 export default class MenuTab extends Vue {
 	@Prop({

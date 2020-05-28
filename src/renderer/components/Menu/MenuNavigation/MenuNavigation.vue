@@ -10,10 +10,11 @@ import { Component, Prop, Provide, Vue, Watch } from "vue-property-decorator";
 @Component({
 	name: "MenuNavigation",
 
-	model: {
-		prop: "id",
-		event: "input",
-	},
+	// @TODO
+	// model: {
+	// 	prop: "id",
+	// 	event: "input",
+	// },
 })
 export default class MenuNavigation extends Vue {
 	@Prop({

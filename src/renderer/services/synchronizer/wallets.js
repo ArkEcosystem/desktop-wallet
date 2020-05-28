@@ -3,7 +3,7 @@ import { groupBy, keyBy, maxBy, partition, uniqBy } from "lodash";
 
 import { StoreBinding } from "@/enums";
 import truncateMiddle from "@/filters/truncate-middle";
-import eventBus from "@/plugins/event-bus";
+import { eventBus } from "@/plugins/event-bus";
 import TransactionService from "@/services/transaction";
 
 class Action {

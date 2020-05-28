@@ -50,10 +50,11 @@ import InputField from "./InputField";
 		InputField,
 	},
 
-	model: {
-		prop: "value",
-		event: "input",
-	},
+	// @TODO
+	// model: {
+	// 	prop: "value",
+	// 	event: "input",
+	// },
 })
 export default class InputText extends Vue {
 	@Prop({
@@ -141,7 +142,7 @@ export default class InputText extends Vue {
 	inputValue = null;
 	isFocused = false;
 
-	@Watch("value")
+	@Watch("model")
 	onValue(value) {
 		// @ts-ignore
 		this.inputValue = value;
@@ -152,6 +153,17 @@ export default class InputText extends Vue {
 		return {
 			inputValue: vm.value,
 		};
+	}
+
+	get model() {
+		return this.inputValue;
+	}
+
+	set model(value) {
+		this.inputValue = value;
+		// Inform Vuelidate that the value changed
+		this.$v.model.$touch();
+		this.$emit("input", value);
 	}
 
 	get isDirty() {

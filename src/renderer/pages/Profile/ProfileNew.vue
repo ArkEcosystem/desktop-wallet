@@ -1,7 +1,9 @@
 <template>
 	<div class="relative ProfileNew">
 		<main class="flex h-full">
-			<div class="flex-1 hidden mr-4 overflow-y-auto rounded-lg ProfileNew__instructions theme-dark bg-theme-feature text-theme-page-instructions-text lg:flex">
+			<div
+				class="flex-1 hidden mr-4 overflow-y-auto rounded-lg ProfileNew__instructions theme-dark bg-theme-feature text-theme-page-instructions-text lg:flex"
+			>
 				<div class="flex flex-col items-center justify-center w-3/5 m-auto text-center">
 					<h1 class="text-inherit">
 						{{ $t(`PAGES.PROFILE_NEW.STEP${step}.INSTRUCTIONS.HEADER`) }}
@@ -75,7 +77,9 @@
 								/>
 							</div>
 
-							<div class="flex items-center justify-between pt-5 mt-5 mb-2 border-t border-dashed ProfileNew__avatar border-theme-line-separator">
+							<div
+								class="flex items-center justify-between pt-5 mt-5 mb-2 border-t border-dashed ProfileNew__avatar border-theme-line-separator"
+							>
 								<div class="mr-2">
 									<h5 class="mb-2 font-bold">
 										{{ $t("COMMON.AVATAR") }}
@@ -145,10 +149,7 @@
 										{{ $t("PAGES.PROFILE_NEW.STEP3.MARKET_CHART") }}
 									</p>
 								</div>
-								<ButtonSwitch
-									:is-active="isMarketChartEnabled"
-									@change="selectIsMarketChartEnabled"
-								/>
+								<ButtonSwitch :is-active="isMarketChartEnabled" @change="selectIsMarketChartEnabled" />
 							</div>
 
 							<div class="flex items-center justify-between mt-2 mb-5">
@@ -172,10 +173,7 @@
 										{{ $t("PAGES.PROFILE_NEW.STEP3.BACKGROUND") }}
 									</p>
 								</div>
-								<SelectionBackground
-									:selected="background"
-									@select="selectBackground"
-								/>
+								<SelectionBackground :selected="background" @select="selectBackground" />
 							</div>
 						</div>
 					</MenuStepItem>
@@ -445,13 +443,13 @@ export default class ProfileNew extends Vue {
 </script>
 
 <style lang="postcss">
-	.ProfileNew__avatar .SelectionAvatar .InputGrid__container button:first-child,
-	.ProfileNew__avatar .SelectionAvatar .InputGrid__container button:first-child .InputGridItem {
-		@apply .cursor-default .opacity-100;
-	}
+.ProfileNew__avatar .SelectionAvatar .InputGrid__container button:first-child,
+.ProfileNew__avatar .SelectionAvatar .InputGrid__container button:first-child .InputGridItem {
+	@apply .cursor-default .opacity-100;
+}
 
-	.ProfileNew__background .SelectionBackgroundGrid .InputGrid__container button:first-child,
-	.ProfileNew__background .SelectionBackgroundGrid .InputGrid__container button:first-child .InputGridItem {
-		@apply .cursor-default .opacity-100;
-	}
+.ProfileNew__background .SelectionBackgroundGrid .InputGrid__container button:first-child,
+.ProfileNew__background .SelectionBackgroundGrid .InputGrid__container button:first-child .InputGridItem {
+	@apply .cursor-default .opacity-100;
+}
 </style>
