@@ -30,8 +30,12 @@ Vue.use(pluginManager);
 
 Vue.config.productionTip = false;
 Vue.logger = Vue.prototype.$logger = logger;
-Vue.prototype.$eventBus = eventBus;
 
+// Platform SDK
+Vue.use(env);
+Vue.use(http);
+
+// Vue & App
 Vue.use(filters);
 Vue.use(directives);
 Vue.use(VueVuelidateJsonschema);
@@ -43,8 +47,7 @@ Vue.use(VTooltip, {
 });
 Vue.use(alertEvents);
 Vue.use(apiClient);
-Vue.use(env);
-Vue.use(http);
+Vue.use(eventBus);
 Vue.use(synchronizer);
 Vue.use(PortalVue);
 
