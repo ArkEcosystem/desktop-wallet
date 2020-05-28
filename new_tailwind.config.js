@@ -108,9 +108,6 @@ module.exports = {
       },
       fontFamily: {
         sans: ["Inter", ...defaultConfig.theme.fontFamily.sans]
-      },
-      screens: {
-        xxl: "1550px"
       }
     },
 
