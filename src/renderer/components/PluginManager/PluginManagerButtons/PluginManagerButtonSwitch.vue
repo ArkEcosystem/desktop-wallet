@@ -57,7 +57,7 @@ export default class PluginManagerButtonSwitch extends Vue {
 	inputIsActive = false;
 
 	@Watch("isActive")
-	onIsActive(isActive) {
+	onIsActiveChanged(isActive) {
 		this.inputIsActive = isActive;
 	}
 

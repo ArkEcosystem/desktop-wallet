@@ -246,7 +246,7 @@ export default class TransactionFormTransfer extends Vue {
 	};
 
 	@Watch("wallet")
-	onWallet() {
+	onWalletChanged() {
 		this.ensureAvailableAmount();
 		this.$v.recipientId.$touch();
 		this.$v.amount.$touch();

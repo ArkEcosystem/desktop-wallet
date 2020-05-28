@@ -39,7 +39,7 @@ export default class WalletShow extends Vue {
 	isSidebarExpanded = false;
 
 	@Watch("wallet")
-	onWallet() {
+	onWalletChanged() {
 		if (!this.wallet) {
 			this.$router.push({ name: "wallets" });
 		}

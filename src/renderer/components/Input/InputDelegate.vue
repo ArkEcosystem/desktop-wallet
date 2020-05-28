@@ -118,13 +118,13 @@ export default class InputDelegate extends Vue {
 	isFocused = false;
 
 	@Watch("value")
-	onValue(val) {
+	onValueChanged(val) {
 		// @ts-ignore
 		this.updateInputValue(val);
 	}
 
 	@Watch("isFocused")
-	onIsFocused() {
+	onIsFocusedChanged() {
 		// @ts-ignore
 		if (this.isFocused && this.hasSuggestions) {
 			// @ts-ignore
@@ -133,7 +133,7 @@ export default class InputDelegate extends Vue {
 	}
 
 	@Watch("inputValue")
-	onInputValue() {
+	onInputValueChanged() {
 		// @ts-ignore
 		this.dropdownValue = null;
 		// @ts-ignore

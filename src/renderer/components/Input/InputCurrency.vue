@@ -190,7 +190,7 @@ export default class InputCurrency extends Vue {
 	isFocused = false;
 
 	@Watch("value", { immediate: true })
-	onValue(val) {
+	onValueChanged(val) {
 		// @ts-ignore
 		this.updateInputValue(val);
 	}

@@ -57,7 +57,7 @@ export default class AnonymousComponent extends Vue {
 
 	@Watch("wallet_fromRoute")
 	// This watcher would invoke the `fetch` after the `Synchronizer`
-	onWalletFromRoute(newWallet, oldWallet) {
+	onWalletFromRouteChanged(newWallet, oldWallet) {
 		const currentTimestamp = Math.round(new Date().getTime() / 1000);
 		if (
 			(newWallet && !oldWallet) ||

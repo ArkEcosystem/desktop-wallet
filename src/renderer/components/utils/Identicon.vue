@@ -98,7 +98,7 @@ export default class Identicon extends Vue {
 	backgroundColor = "";
 
 	@Watch("value")
-	onValue() {
+	onValueChanged() {
 		this.generate(this.value);
 	}
 

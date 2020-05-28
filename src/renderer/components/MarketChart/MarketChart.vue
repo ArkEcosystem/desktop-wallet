@@ -61,32 +61,32 @@ export default class MarketChart extends Vue {
 	lastPriceApi = null;
 
 	@Watch("currency")
-	onCurrency() {
+	onCurrencyChanged() {
 		this.renderChart();
 	}
 
 	@Watch("priceApi")
-	onPriceApi() {
+	onPriceApiChanged() {
 		this.renderChart();
 	}
 
 	@Watch("theme")
-	onTheme() {
+	onThemeChanged() {
 		this.renderChart();
 	}
 
 	@Watch("ticker")
-	onTicker() {
+	onTickerChanged() {
 		this.renderChart();
 	}
 
 	@Watch("period")
-	onPeriod() {
+	onPeriodChanged() {
 		this.renderChart();
 	}
 
 	@Watch("isExpanded")
-	onIsExpanded(value, oldValue) {
+	onIsExpandedChanged(value, oldValue) {
 		if (!oldValue && value) {
 			this.renderChart();
 		}

@@ -4,8 +4,10 @@
 			<label
 				v-show="title"
 				class="absolute truncate pointer-events-none InputField__label text-theme-page-text-light"
-			>{{ title }}
-				<span v-if="showCount && items.length">- {{ items.length }}<span v-if="maxItems"> / {{ maxItems }}</span></span>
+				>{{ title }}
+				<span v-if="showCount && items.length"
+					>- {{ items.length }}<span v-if="maxItems"> / {{ maxItems }}</span></span
+				>
 			</label>
 		</div>
 
@@ -113,7 +115,7 @@ export default class InputEditableList extends Vue {
 	items = null;
 
 	@Watch("value")
-	onValue(newValue) {
+	onValueChanged(newValue) {
 		// @ts-ignore
 		this.items = newValue;
 	}

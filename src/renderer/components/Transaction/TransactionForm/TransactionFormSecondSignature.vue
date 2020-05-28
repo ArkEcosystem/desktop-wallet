@@ -184,7 +184,7 @@ export default class TransactionFormSecondSignature extends Vue {
 	showPassphraseWords = false;
 
 	@Watch("isPassphraseStep")
-	onIsPassphraseStep() {
+	onIsPassphraseStepChanged() {
 		if (this.isPassphraseStep) {
 			this.$refs.passphraseVerification.focusFirst();
 		}

@@ -166,13 +166,13 @@ export default class InputAddress extends Vue {
 	notice = null;
 
 	@Watch("value")
-	onValue(val) {
+	onValueChanged(val) {
 		// @ts-ignore
 		this.updateInputValue(val);
 	}
 
 	@Watch("isFocused")
-	onIsFocused() {
+	onIsFocusedChanged() {
 		// @ts-ignore
 		if (this.isFocused && this.hasSuggestions) {
 			// @ts-ignore
@@ -181,7 +181,7 @@ export default class InputAddress extends Vue {
 	}
 
 	@Watch("inputValue")
-	async onInputValue() {
+	async onInputValueChanged() {
 		// @ts-ignore
 		this.dropdownValue = null;
 		// @ts-ignore

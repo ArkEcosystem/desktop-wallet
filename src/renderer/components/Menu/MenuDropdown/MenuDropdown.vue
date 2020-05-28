@@ -151,7 +151,7 @@ export default class MenuDropdown extends Vue {
 	activeValue = null;
 
 	@Watch("value")
-	onValue(value) {
+	onValueChanged(value) {
 		this.activeValue = value;
 	}
 

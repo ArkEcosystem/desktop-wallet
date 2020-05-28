@@ -46,7 +46,7 @@ export default class WalletSidebarFiltersInputSearch extends Vue {
 	inputValue = undefined;
 
 	@Watch("value")
-	onValue(value) {
+	onValueChanged(value) {
 		this.inputValue = value;
 	}
 

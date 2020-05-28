@@ -223,7 +223,7 @@ export default class WalletSidebar extends Vue {
 	searchQuery = "";
 
 	@Watch("wallets")
-	onWallets() {
+	onWalletsChanged() {
 		this.$refs.MenuNavigation.collectItems();
 	}
 

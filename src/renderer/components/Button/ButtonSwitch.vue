@@ -54,7 +54,7 @@ export default class ButtonSwitch extends Vue {
 	inputIsActive = null;
 
 	@Watch("isActive")
-	onIsActive(isActive) {
+	onIsActiveChanged(isActive) {
 		// @ts-ignore
 		this.inputIsActive = isActive;
 	}

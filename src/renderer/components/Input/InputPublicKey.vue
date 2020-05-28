@@ -42,7 +42,7 @@ export default class InputPublicKey extends Vue {
 	inputValue = null;
 
 	@Watch("value")
-	onValue(value) {
+	onValueChanged(value) {
 		// @ts-ignore
 		this.inputValue = value;
 	}

@@ -67,13 +67,13 @@ export default class Collapse extends Vue {
 	inputIsOpen = null;
 
 	@Watch("isOpen")
-	onIsOpen(val) {
+	onIsOpenChanged(val) {
 		// @ts-ignore
 		this.inputIsOpen = val;
 	}
 
 	@Watch("inputIsOpen")
-	onInputIsOpen() {
+	onInputIsOpenChanged() {
 		// @ts-ignore
 		this.$emit(this.inputIsOpen ? "open" : "close");
 	}

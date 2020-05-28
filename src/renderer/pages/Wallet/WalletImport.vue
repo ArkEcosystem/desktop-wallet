@@ -193,7 +193,7 @@ export default class WalletImport extends Vue {
 	};
 
 	@Watch("step")
-	onStep() {
+	onStepChanged() {
 		/**
 		 * Generate always the address when moving to the step 2
 		 */
