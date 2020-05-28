@@ -5,19 +5,13 @@
 </template>
 
 <script>
-import { Component, Prop, Provide, Vue, Watch } from "vue-property-decorator";
+import { Component, Model, Provide, Vue, Watch } from "vue-property-decorator";
 
 @Component({
 	name: "MenuNavigation",
-
-	// @TODO
-	// model: {
-	// 	prop: "id",
-	// 	event: "input",
-	// },
 })
 export default class MenuNavigation extends Vue {
-	@Prop({
+	@Model("input", {
 		type: [Number, String],
 		required: false,
 		default: null,

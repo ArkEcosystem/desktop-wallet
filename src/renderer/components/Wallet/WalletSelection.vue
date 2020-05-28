@@ -27,7 +27,7 @@
 
 <script>
 import { orderBy } from "lodash";
-import { Component, Prop, Vue, Watch } from "vue-property-decorator";
+import { Component, Model, Prop, Vue, Watch } from "vue-property-decorator";
 
 import { InputSelect } from "@/components/Input";
 import truncate from "@/filters/truncate";
@@ -38,15 +38,9 @@ import truncate from "@/filters/truncate";
 	components: {
 		InputSelect,
 	},
-
-	// @TODO
-	// model: {
-	// 	prop: "value",
-	// 	event: "input",
-	// },
 })
 export default class WalletSelection extends Vue {
-	@Prop({
+	@Model("input", {
 		type: Object,
 		required: false,
 		default: undefined,

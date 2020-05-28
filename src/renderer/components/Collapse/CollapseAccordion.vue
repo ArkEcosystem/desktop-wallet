@@ -5,21 +5,15 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Provide, Vue, Watch } from "vue-property-decorator";
+import { Component, Model, Prop, Provide, Vue, Watch } from "vue-property-decorator";
 
 import { isEmpty } from "@/utils";
 
 @Component({
 	name: "CollapseAccordion",
-
-	// @TODO
-	// model: {
-	// 	prop: "id",
-	// 	event: "input",
-	// },
 })
 export default class CollapseAccordion extends Vue {
-	@Prop({
+	@Model("input", {
 		type: [String, Number],
 		required: false,
 		default: null,

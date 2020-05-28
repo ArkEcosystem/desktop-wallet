@@ -31,7 +31,7 @@
 </template>
 
 <script>
-import { Component, Prop, Vue, Watch } from "vue-property-decorator";
+import { Component, Model, Vue, Watch } from "vue-property-decorator";
 
 import VNodes from "@/components/utils/VNodes";
 
@@ -41,15 +41,9 @@ import VNodes from "@/components/utils/VNodes";
 	components: {
 		VNodes,
 	},
-
-	// @TODO
-	// model: {
-	// 	prop: "tab",
-	// 	event: "input",
-	// },
 })
 export default class MenuTab extends Vue {
-	@Prop({
+	@Model("input", {
 		type: [String, Number],
 		required: false,
 		default: null,

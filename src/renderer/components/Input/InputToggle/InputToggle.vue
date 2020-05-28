@@ -13,7 +13,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from "vue-property-decorator";
+import { Component, Model, Prop, Vue } from "vue-property-decorator";
 
 import InputToggleChoice from "./InputToggleChoice";
 
@@ -23,25 +23,19 @@ import InputToggleChoice from "./InputToggleChoice";
 	components: {
 		InputToggleChoice,
 	},
-
-	// @TODO
-	// model: {
-	// 	prop: "selectedChoice",
-	// 	event: "choice-select",
-	// },
 })
 export default class InputToggle extends Vue {
+	@Model("choice-select", {
+		type: String,
+		required: true,
+	})
+	selectedChoice;
+
 	@Prop({
 		type: Array,
 		required: true,
 	})
 	choices;
-
-	@Prop({
-		type: String,
-		required: true,
-	})
-	selectedChoice;
 
 	emitSelect(choice) {
 		// @ts-ignore

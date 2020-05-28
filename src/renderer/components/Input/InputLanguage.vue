@@ -25,7 +25,7 @@
 
 <script lang="ts">
 import { I18N } from "@config";
-import { Component, Prop, Vue, Watch } from "vue-property-decorator";
+import { Component, Model, Prop, Vue, Watch } from "vue-property-decorator";
 
 import InputSelect from "./InputSelect";
 
@@ -35,14 +35,15 @@ import InputSelect from "./InputSelect";
 	components: {
 		InputSelect,
 	},
-
-	// @TODO
-	// model: {
-	// 	prop: "value",
-	// 	event: "input",
-	// },
 })
 export default class InputLanguage extends Vue {
+	@Model("input", {
+		type: String,
+		required: false,
+		default: undefined,
+	})
+	value;
+
 	@Prop({
 		type: Array,
 		required: false,
@@ -70,13 +71,6 @@ export default class InputLanguage extends Vue {
 		default: false,
 	})
 	isDisabled;
-
-	@Prop({
-		type: String,
-		required: false,
-		default: undefined,
-	})
-	value;
 
 	inputLabel = null;
 	isFocused = false;

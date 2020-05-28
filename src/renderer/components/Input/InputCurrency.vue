@@ -36,7 +36,7 @@
 <script lang="ts">
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { MARKET } from "@config";
-import { Component, Prop, Vue, Watch } from "vue-property-decorator";
+import { Component, Model, Prop, Vue, Watch } from "vue-property-decorator";
 // @ts-ignore
 import { required } from "vuelidate/lib/validators";
 
@@ -54,14 +54,16 @@ import InputField from "./InputField";
 	components: {
 		InputField,
 	},
-
-	// @TODO
-	// model: {
-	// 	prop: "value",
-	// 	event: "input",
-	// },
 })
 export default class InputCurrency extends Vue {
+	// @ts-ignore
+	@Model("input", {
+		type: [Number, String, BigNumber],
+		required: true,
+	})
+	// @ts-ignore
+	value;
+
 	@Prop({
 		type: String,
 		required: false,
@@ -175,14 +177,6 @@ export default class InputCurrency extends Vue {
 	})
 	// @ts-ignore
 	required;
-
-	// @ts-ignore
-	@Prop({
-		type: [Number, String, BigNumber],
-		required: true,
-	})
-	// @ts-ignore
-	value;
 
 	@Prop({
 		type: Object,
