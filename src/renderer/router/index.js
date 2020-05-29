@@ -86,6 +86,22 @@ const router = new Router({
 			name: "wallet-show",
 			component: require("@/pages/Wallet/WalletShow").default,
 		},
+		// New
+		{
+			path: "/new/pages/Profile/ProfileMain",
+			name: "new-profile-main",
+			component: require("@/new/pages/Profile/ProfileMain").default,
+		},
+		{
+			path: "/new/pages/Profile/ProfileNew",
+			name: "new-profile-new",
+			component: require("@/new/pages/Profile/ProfileNew").default,
+		},
+		{
+			path: "/new/pages/Profile/ProfileSelect",
+			name: "new-profile-select",
+			component: require("@/new/pages/Profile/ProfileSelect").default,
+		},
 		{
 			path: "*",
 			redirect: "/",
