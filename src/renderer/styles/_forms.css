@@ -1,18 +1,13 @@
-/* TODO: use a different name - this is already used by TailwindUI */
-/* .form-input {
-	@apply border border-gray-300 rounded;
-} */
-
 .input-group {
 	@apply my-2;
 }
 
 .input-label {
-	@apply block text-sm font-semibold leading-5 text-gray-700 transition;
+	@apply block text-sm font-semibold leading-5 text-gray-700 transition-default;
 }
 
 .input-label--toggle {
-	@apply mr-3 text-base font-semibold leading-5 text-gray-700 transition;
+	@apply mr-3 text-base font-semibold leading-5 text-gray-700 transition-default;
 }
 
 .input-wrapper {
@@ -20,7 +15,7 @@
 }
 
 .input-text {
-	@apply block w-full px-4 py-3 transition form-input;
+	@apply block w-full px-4 py-3 transition-default form-input;
 }
 
 .input-wrapper-with-icon {
@@ -49,7 +44,7 @@
 
 /* Radio buttons */
 .input-radio {
-	@apply w-4 h-4 text-green-600 transition duration-150 ease-in-out;
+	@apply w-4 h-4 text-green-600 transition-default duration-150 ease-in-out;
 }
 
 .input-radio[disabled] {
@@ -69,7 +64,7 @@
 
 /* Checkboxes */
 .input-checkbox {
-	@apply w-4 h-4 text-green-600 transition duration-150 ease-in-out;
+	@apply w-4 h-4 text-green-600 transition-default duration-150 ease-in-out;
 }
 
 .input-checkbox[disabled] {
