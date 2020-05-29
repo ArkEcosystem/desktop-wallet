@@ -226,21 +226,6 @@
 								/>
 							</ListDividedItem>
 
-							<ListDividedItem :label="$t('COMMON.THEME')" class="ProfileEdition__theme">
-								<MenuDropdown
-									v-if="pluginThemes"
-									:class="{
-										'ProfileEdition__field--modified':
-											modified.theme && modified.theme !== profile.theme,
-									}"
-									container-classes="whitespace-no-wrap"
-									:items="themes"
-									:value="theme"
-									@select="selectTheme"
-								/>
-								<SelectionTheme v-else :value="theme" @input="selectTheme" />
-							</ListDividedItem>
-
 							<ListDividedItem :label="$t('COMMON.BACKGROUND')" class="ProfileEdition__background">
 								<SelectionBackground
 									:max-visible-items="5"
@@ -331,7 +316,7 @@ import { ListDivided, ListDividedItem } from "@/components/ListDivided";
 import { MenuDropdown, MenuDropdownHandler, MenuTab, MenuTabItem } from "@/components/Menu";
 import { PluginBlacklistDisclaimerModal } from "@/components/PluginManager";
 import { ProfileAdvancedModeConfirmation, ProfileLeavingConfirmation } from "@/components/Profile";
-import { SelectionAvatar, SelectionBackground, SelectionTheme } from "@/components/Selection";
+import { SelectionAvatar, SelectionBackground } from "@/components/Selection";
 import SvgIcon from "@/components/SvgIcon";
 import { StoreBinding } from "@/enums";
 import Profile from "@/models/profile";
@@ -358,7 +343,6 @@ import { isEmpty } from "@/utils";
 		ProfileLeavingConfirmation,
 		SelectionAvatar,
 		SelectionBackground,
-		SelectionTheme,
 		SvgIcon,
 	},
 })

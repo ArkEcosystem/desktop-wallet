@@ -13,15 +13,7 @@
 		]"
 		class="font-sans App bg-theme-page text-theme-page-text"
 	>
-		<div
-			v-if="!hasSeenIntroduction"
-			:style="`backgroundImage: url('${assets_loadImage(background)}')`"
-			class="relative w-screen h-screen px-20 py-16"
-		>
-			<AppIntro @done="setIntroDone" />
-		</div>
-
-		<div v-else class="overflow-hidden">
+		<div class="overflow-hidden">
 			<AppSidemenu v-if="hasProfile" :is-horizontal="true" class="block md:hidden z-1" />
 			<section
 				:style="background ? `backgroundImage: url('${assets_loadImage(background)}')` : ''"
@@ -76,7 +68,7 @@ import { pull, uniq } from "lodash";
 import { Component, Vue, Watch } from "vue-property-decorator";
 
 import AlertMessage from "@/components/AlertMessage";
-import { AppFooter, AppIntro, AppSidemenu } from "@/components/App";
+import { AppFooter, AppSidemenu } from "@/components/App";
 import { TransactionModal } from "@/components/Transaction";
 import { AppEvent, StoreBinding } from "@/enums";
 import i18nSetup from "@/i18n/i18n-setup";
@@ -90,7 +82,6 @@ const Menu = remote.Menu;
 
 	components: {
 		AppFooter,
-		AppIntro,
 		AppSidemenu,
 		AlertMessage,
 		TransactionModal,
@@ -267,23 +258,20 @@ export default class DesktopWallet extends Vue {
 		return defaultLocale === language || this.pluginLanguages[language] ? language : defaultLocale;
 	}
 
-	created() {
-		// @ts-ignore
-		this.$store._vm.$on("vuex-persist:ready", async () => {
-			// Environments variables are strings
-			this.isScreenshotProtectionEnabled = process.env.ENABLE_SCREENSHOT_PROTECTION !== "false";
+	async created() {
+		// Environments variables are strings
+		this.isScreenshotProtectionEnabled = process.env.ENABLE_SCREENSHOT_PROTECTION !== "false";
 
-			await this.loadEssential();
-			this.isReady = true;
+		await this.loadEssential();
+		this.isReady = true;
 
-			// @ts-ignore
-			this.$synchronizer.defineAll();
+		// // @ts-ignore
+		// this.$synchronizer.defineAll();
 
-			await this.loadNotEssential();
+		// await this.loadNotEssential();
 
-			// @ts-ignore
-			this.$synchronizer.ready();
-		});
+		// // @ts-ignore
+		// this.$synchronizer.ready();
 
 		this.setContextMenu();
 
@@ -409,7 +397,7 @@ export default class DesktopWallet extends Vue {
 		this.uriTransactionSchema = {};
 	}
 
-	setIntroDone() {
+	async setIntroDone() {
 		this.$store.dispatch(StoreBinding.AppSetHasSeenIntroduction, true);
 		this.$router.push({ name: "profile-new" });
 	}

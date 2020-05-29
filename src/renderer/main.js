@@ -53,8 +53,7 @@ Vue.use(PortalVue);
 
 Vue.mixin(mixins);
 
-/* eslint-disable no-new */
-new Vue({
+const app = new Vue({
 	components: {
 		App,
 	},
@@ -62,4 +61,8 @@ new Vue({
 	router,
 	store,
 	template: "<App/>",
-}).$mount("#app");
+})
+
+store.$app = app;
+
+app.$mount("#app");

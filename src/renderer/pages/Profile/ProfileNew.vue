@@ -151,30 +151,6 @@
 								</div>
 								<ButtonSwitch :is-active="isMarketChartEnabled" @change="selectIsMarketChartEnabled" />
 							</div>
-
-							<div class="flex items-center justify-between mt-2 mb-5">
-								<div>
-									<h5 class="mb-2 font-bold">
-										{{ $t("COMMON.THEME") }}
-									</h5>
-									<p class="text-theme-page-text-light">
-										{{ $t("PAGES.PROFILE_NEW.STEP3.THEME") }}
-									</p>
-								</div>
-								<SelectionTheme v-model="theme" />
-							</div>
-
-							<div class="flex items-center justify-between ProfileNew__background">
-								<div>
-									<h5 class="mb-2 font-bold">
-										{{ $t("COMMON.BACKGROUND") }}
-									</h5>
-									<p class="text-theme-page-text-light">
-										{{ $t("PAGES.PROFILE_NEW.STEP3.BACKGROUND") }}
-									</p>
-								</div>
-								<SelectionBackground :selected="background" @select="selectBackground" />
-							</div>
 						</div>
 					</MenuStepItem>
 				</MenuStep>
@@ -190,7 +166,7 @@ import { Component, Vue } from "vue-property-decorator";
 import { ButtonSwitch } from "@/components/Button";
 import { InputSelect, InputText } from "@/components/Input";
 import { MenuStep, MenuStepItem } from "@/components/Menu";
-import { SelectionAvatar, SelectionBackground, SelectionNetwork, SelectionTheme } from "@/components/Selection";
+import { SelectionAvatar, SelectionBackground, SelectionNetwork } from "@/components/Selection";
 import { StoreBinding } from "@/enums";
 import Profile from "@/models/profile";
 
@@ -206,7 +182,6 @@ import Profile from "@/models/profile";
 		SelectionAvatar,
 		SelectionBackground,
 		SelectionNetwork,
-		SelectionTheme,
 	},
 })
 export default class ProfileNew extends Vue {
@@ -214,16 +189,8 @@ export default class ProfileNew extends Vue {
 	step = 1;
 	selectedNetwork = null;
 
-	get background() {
-		return this.$store.getters["session/background"];
-	}
-
-	set background(background) {
-		this.selectBackground(background);
-	}
-
 	get bip39Language() {
-		return this.$store.getters["session/bip39Language"] || BIP39.defaultLanguage;
+		return BIP39.defaultLanguage;
 	}
 
 	set bip39Language(bip39language) {
@@ -231,7 +198,7 @@ export default class ProfileNew extends Vue {
 	}
 
 	get currency() {
-		return this.$store.getters["session/currency"];
+		return "BTC";
 	}
 
 	set currency(currency) {
@@ -239,23 +206,15 @@ export default class ProfileNew extends Vue {
 	}
 
 	get isMarketChartEnabled() {
-		return this.$store.getters["session/isMarketChartEnabled"];
+		return true;
 	}
 
 	set isMarketChartEnabled(isMarketChartEnabled) {
 		this.selectIsMarketChartEnabled(isMarketChartEnabled);
 	}
 
-	get theme() {
-		return this.$store.getters["session/theme"];
-	}
-
-	set theme(theme) {
-		this.selectTheme(theme);
-	}
-
 	get timeFormat() {
-		return this.$store.getters["session/timeFormat"] || "Default";
+		return "Default";
 	}
 
 	set timeFormat(timeFormat) {
@@ -263,7 +222,7 @@ export default class ProfileNew extends Vue {
 	}
 
 	get priceApi() {
-		return this.$store.getters["session/priceApi"] || "coingecko";
+		return "coingecko";
 	}
 
 	set priceApi(priceApi) {
@@ -313,9 +272,13 @@ export default class ProfileNew extends Vue {
 		if (this.$v.schema.name.$dirty && this.$v.schema.name.$invalid) {
 			if (!this.$v.schema.name.doesNotExist) {
 				return this.$t("VALIDATION.NAME.DUPLICATED", [this.schema.name]);
-			} else if (!this.$v.schema.name.schemaMaxLength) {
+			}
+
+			if (!this.$v.schema.name.schemaMaxLength) {
 				return this.$t("VALIDATION.NAME.MAX_LENGTH", [Profile.schema.properties.name.maxLength]);
-			} else if (!this.$v.schema.name.schemaMinLength) {
+			}
+
+			if (!this.$v.schema.name.schemaMinLength) {
 				return this.$tc("VALIDATION.NAME.MIN_LENGTH", Profile.schema.properties.name.minLength);
 			}
 		}
@@ -325,20 +288,13 @@ export default class ProfileNew extends Vue {
 
 	created() {
 		this.selectNetwork(this.defaultNetworks.find((network) => network.id === "ark.mainnet"));
-		this.schema.background = this.background;
 		this.schema.bip39Language = this.bip39Language;
 		this.schema.currency = this.currency;
 		this.schema.isMarketChartEnabled = this.isMarketChartEnabled;
 		this.schema.language = I18N.defaultLocale;
 		this.schema.timeFormat = this.timeFormat;
 		this.schema.priceApi = this.priceApi;
-
-		// In case we came from a profile using a plugin theme, revert back to default
-		const defaultThemes = ["light", "dark"];
-		this.schema.theme = defaultThemes.includes(this.theme) ? this.theme : defaultThemes[0];
-		if (this.schema.theme !== this.$store.getters["session/theme"]) {
-			this.$store.dispatch(StoreBinding.SessionSetTheme, this.schema.theme);
-		}
+		this.schema.theme = "light";
 	}
 
 	destroyed() {
@@ -377,11 +333,6 @@ export default class ProfileNew extends Vue {
 		}
 	}
 
-	async selectBackground(background) {
-		this.schema.background = background;
-		await this.$store.dispatch(StoreBinding.SessionSetBackground, background);
-	}
-
 	selectCurrency(currency) {
 		this.schema.currency = currency;
 	}
@@ -405,11 +356,6 @@ export default class ProfileNew extends Vue {
 	async selectIsMarketChartEnabled(isMarketChartEnabled) {
 		this.schema.isMarketChartEnabled = isMarketChartEnabled;
 		await this.$store.dispatch(StoreBinding.SessionSetIsMarketChartEnabled, isMarketChartEnabled);
-	}
-
-	async selectTheme(theme) {
-		this.schema.theme = theme;
-		await this.$store.dispatch(StoreBinding.SessionSetTheme, theme);
 	}
 
 	async selectTimeFormat(timeFormat) {
@@ -445,11 +391,6 @@ export default class ProfileNew extends Vue {
 <style lang="postcss">
 .ProfileNew__avatar .SelectionAvatar .InputGrid__container button:first-child,
 .ProfileNew__avatar .SelectionAvatar .InputGrid__container button:first-child .InputGridItem {
-	@apply .cursor-default .opacity-100;
-}
-
-.ProfileNew__background .SelectionBackgroundGrid .InputGrid__container button:first-child,
-.ProfileNew__background .SelectionBackgroundGrid .InputGrid__container button:first-child .InputGridItem {
 	@apply .cursor-default .opacity-100;
 }
 </style>
