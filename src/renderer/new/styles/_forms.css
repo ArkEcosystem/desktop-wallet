@@ -1,0 +1,108 @@
+.form-input {
+  @apply border border-gray-300 rounded;
+}
+
+.input-group {
+  @apply my-2;
+}
+
+.input-label {
+  @apply block text-sm font-semibold leading-5 text-gray-700 transition;
+}
+
+.input-label--toggle {
+  @apply text-base font-semibold leading-5 text-gray-700 transition mr-3;
+}
+
+.input-wrapper {
+  @apply mt-2 relative rounded-md shadow-sm text-gray-900;
+}
+
+.input-text {
+  @apply form-input px-4 py-3 block w-full transition;
+}
+
+.input-wrapper-with-icon {
+  @apply mt-2 relative rounded overflow-hidden shadow-sm text-gray-900;
+}
+
+.input-text-with-icon {
+  @apply input-text rounded-none;
+}
+
+.input-group:focus-within .input-label,
+.input-group:hover .input-label {
+  @apply text-blue-600;
+}
+
+.input-group:focus-within .input-text {
+  @apply border-blue-600;
+}
+
+.input-group:focus-within .input-text-with-icon:read-only,
+.input-text-with-icon:read-only,
+.input-group:focus-within .input-text:read-only,
+.input-text:read-only {
+  @apply border-gray-400 bg-gray-100 cursor-not-allowed;
+}
+
+/* Radio buttons */
+.input-radio {
+  @apply h-4 w-4 text-green-600 transition duration-150 ease-in-out;
+}
+
+.input-radio[disabled] {
+  @apply border-gray-300 bg-gray-100 text-gray-300;
+}
+
+.input-radio:checked[disabled] {
+  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='gray' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='8' cy='8' r='3'/%3e%3c/svg%3e");
+}
+
+.form-radio:checked.radio-checkmark {
+  @apply text-green-500;
+  padding: 2px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 17 13'%3E%3Cpath d='M13.9.2L6.4 7.4 2.9 4 .4 6.4l6 5.8 10-9.6L13.9.2z'/%3E%3C/svg%3E");
+  background-origin: content-box;
+}
+
+/* Checkboxes */
+.input-checkbox {
+  @apply h-4 w-4 text-green-600 transition duration-150 ease-in-out;
+}
+
+.input-checkbox[disabled] {
+  @apply border-gray-300 bg-gray-100 text-gray-300;
+}
+
+.input-checkbox:checked[disabled] {
+  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='gray' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M5.707 7.293a1 1 0 0 0-1.414 1.414l2 2a1 1 0 0 0 1.414 0l4-4a1 1 0 0 0-1.414-1.414L7 8.586 5.707 7.293z'/%3e%3c/svg%3e");
+}
+
+/* Errors */
+.input-group:focus-within .input-label--error,
+.input-group:hover .input-label--error,
+.input-label--error {
+  @apply text-red-500;
+}
+
+.input-text-with-icon--error,
+.input-text--error {
+  @apply pr-10 border-red-500;
+}
+
+.input-group:focus-within .input-text-with-icon--error,
+.input-text-with-icon--error:focus,
+.input-group:focus-within .input-text--error,
+.input-text--error:focus {
+  @apply border-red-300 shadow-outline-red;
+}
+
+.input-text-with-icon--error::placeholder,
+.input-text--error::placeholder {
+  @apply text-red-300;
+}
+
+.input-help--error {
+  @apply mt-2 text-sm text-red-500;
+}
