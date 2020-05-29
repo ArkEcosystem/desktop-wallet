@@ -94,6 +94,16 @@
 									</div>
 								</div>
 							</div>
+
+							<div class="mb-4">
+								<div class="flex flex-1">
+									<div class="w-full">
+										<ListDivided>
+											<ListDividedItem label="Dark Theme" />
+										</ListDivided>
+									</div>
+								</div>
+							</div>
 						</div>
 
 						<div class="mx-4 mt-5 mb-10 md:mx-8 xl:mx-16">
@@ -116,8 +126,12 @@
 import { ValidationObserver, ValidationProvider } from "vee-validate/dist/vee-validate.full.esm";
 import { Component, Vue } from "vue-property-decorator";
 
+import { ListDivided, ListDividedItem } from "@/app/ListDivided";
+
 @Component({
 	components: {
+		ListDivided,
+		ListDividedItem,
 		ValidationObserver,
 		ValidationProvider,
 	},
