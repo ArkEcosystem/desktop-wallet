@@ -1,7 +1,7 @@
 import { Crypto, Identities } from "@arkecosystem/crypto";
 import { BIP39 } from "@arkecosystem/platform-sdk-crypto";
-
 import { version as mainnetVersion } from "@config/networks/mainnet";
+
 import { httpClient } from "@/plugins/http-client";
 import store from "@/store";
 

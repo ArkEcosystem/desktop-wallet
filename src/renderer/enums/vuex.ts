@@ -143,8 +143,6 @@ export enum StoreCommit {
 	LedgerSetConnected = "ledger/SET_CONNECTED",
 	LedgerSetLoading = "ledger/SET_LOADING",
 	LedgerSetWallets = "ledger/SET_WALLETS",
-	MarkAnnouncementAsRead = "MARK_ANNOUNCEMENT_AS_READ",
-	MarkAnnouncementAsReadBulk = "MARK_ANNOUNCEMENT_AS_READ_BULK",
 	NetworkAddCustomNetwork = "network/ADD_CUSTOM_NETWORK",
 	NetworkCreate = "network/CREATE",
 	NetworkDelete = "network/DELETE",
