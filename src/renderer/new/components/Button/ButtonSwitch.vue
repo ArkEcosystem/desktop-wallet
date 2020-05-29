@@ -1,23 +1,23 @@
 <template>
-  <button
-    :class="{
-      'ButtonSwitch--active': inputIsActive
-    }"
-    :disabled="isDisabled"
-    class="ButtonSwitch"
-    type="button"
-    @click="toggle"
-  >
-    <span class="ButtonSwitch__line">
-      <span
-        :class="{
-          'bg-theme-switch-button-circle': !inputIsActive,
-          'bg-blue': inputIsActive
-        }"
-        class="ButtonSwitch__circle transition"
-      />
-    </span>
-  </button>
+	<button
+		:class="{
+			'ButtonSwitch--active': inputIsActive
+		}"
+		:disabled="isDisabled"
+		class="ButtonSwitch"
+		type="button"
+		@click="toggle"
+	>
+		<span class="ButtonSwitch__line">
+			<span
+				:class="{
+					'bg-theme-switch-button-circle': !inputIsActive,
+					'bg-blue': inputIsActive
+				}"
+				class="ButtonSwitch__circle transition"
+			/>
+		</span>
+	</button>
 </template>
 
 <script lang="ts">
