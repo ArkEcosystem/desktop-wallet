@@ -4,7 +4,7 @@ import { app, BrowserWindow, ipcMain, screen } from "electron";
 import winState from "electron-window-state";
 
 import packageJson from "../../package.json";
-import assignMenu from "./menu";
+// import assignMenu from "./menu";
 import { setupPluginManager } from "./plugin-manager";
 import { setupUpdater } from "./updater";
 
@@ -38,30 +38,30 @@ let deeplinkingUrl = null;
 
 const winURL = process.env.NODE_ENV === "development" ? "http://localhost:9080" : `file://${__dirname}/index.html`;
 
-const loadingURL =
-	process.env.NODE_ENV === "development"
-		? "http://localhost:9080/splashscreen.html"
-		: `file://${__dirname}/splashscreen.html`;
+// const loadingURL =
+// 	process.env.NODE_ENV === "development"
+// 		? "http://localhost:9080/splashscreen.html"
+// 		: `file://${__dirname}/splashscreen.html`;
 
-const createLoadingWindow = () => {
-	windows.loading = new BrowserWindow({
-		width: 800,
-		height: 600,
-		backgroundColor: "#f7fafb",
-		skipTaskbar: true,
-		frame: false,
-		autoHideMenuBar: true,
-		resizable: false,
-		webPreferences: {
-			nodeIntegration: true,
-		},
-	});
-	windows.loading.loadURL(loadingURL);
-	windows.loading.show();
-	windows.loading.on("close", () => (windows.loading = null));
-	windows.loading.on("closed", () => (windows.loading = null));
-	windows.loading.webContents.on("did-finish-load", () => windows.loading.show());
-};
+// const createLoadingWindow = () => {
+// 	windows.loading = new BrowserWindow({
+// 		width: 800,
+// 		height: 600,
+// 		backgroundColor: "#f7fafb",
+// 		skipTaskbar: true,
+// 		frame: false,
+// 		autoHideMenuBar: true,
+// 		resizable: false,
+// 		webPreferences: {
+// 			nodeIntegration: true,
+// 		},
+// 	});
+// 	windows.loading.loadURL(loadingURL);
+// 	windows.loading.show();
+// 	windows.loading.on("close", () => (windows.loading = null));
+// 	windows.loading.on("closed", () => (windows.loading = null));
+// 	windows.loading.webContents.on("did-finish-load", () => windows.loading.show());
+// };
 
 function broadcastURL(url) {
 	if (!url || typeof url !== "string") {
@@ -74,16 +74,16 @@ function broadcastURL(url) {
 	}
 }
 
-assignMenu({ createLoadingWindow });
+// assignMenu({ createLoadingWindow });
 
-// The `window.main.show()` is executed after the opening splash screen
-ipcMain.on("splashscreen:app-ready", () => {
-	if (windows.loading) {
-		windows.loading.close();
-	}
-	windows.main.show();
-	windows.main.setFullScreen(windowState ? Boolean(windowState.isFullScreen) : false);
-});
+// // The `window.main.show()` is executed after the opening splash screen
+// ipcMain.on("splashscreen:app-ready", () => {
+// 	if (windows.loading) {
+// 		windows.loading.close();
+// 	}
+// 	windows.main.show();
+// 	windows.main.setFullScreen(windowState ? Boolean(windowState.isFullScreen) : false);
+// });
 
 ipcMain.on("disable-iframe-protection", function (_event, urls) {
 	const filter = { urls };
@@ -119,7 +119,7 @@ function createWindow() {
 		y: windowState.y,
 		backgroundColor: "#f7fafb",
 		center: true,
-		show: false,
+		show: true,
 		webPreferences: {
 			nodeIntegration: true,
 			webviewTag: true,
@@ -129,7 +129,7 @@ function createWindow() {
 
 	windowState.manage(windows.main);
 	windows.main.loadURL(winURL);
-	windows.main.hide();
+	// windows.main.hide();
 	windows.main.setBackgroundColor("#f7fafb");
 
 	windows.main.on("close", () => (windows.main = null));
@@ -145,14 +145,14 @@ function createWindow() {
 	});
 }
 
-ipcMain.on("show-loading-window-on-reload", () => {
-	if (windows.main && windows.main.isMain) {
-		windows.main.reload();
-		windows.main.webContents.clearHistory();
-		windows.main.hide();
-		createLoadingWindow();
-	}
-});
+// ipcMain.on("show-loading-window-on-reload", () => {
+// 	if (windows.main && windows.main.isMain) {
+// 		windows.main.reload();
+// 		windows.main.webContents.clearHistory();
+// 		windows.main.hide();
+// 		createLoadingWindow();
+// 	}
+// });
 
 function sendToWindow(key, value) {
 	if (windows.main && windows.main.webContents) {
@@ -198,7 +198,7 @@ if (!gotTheLock) {
 }
 
 app.on("ready", () => {
-	createLoadingWindow();
+	// createLoadingWindow();
 	createWindow();
 	setupPluginManager({ sendToWindow, windows, ipcMain });
 	setupUpdater({ sendToWindow, ipcMain });
@@ -212,7 +212,7 @@ app.on("window-all-closed", () => {
 
 app.on("activate", () => {
 	if (windows.main === null) {
-		createLoadingWindow();
+		// createLoadingWindow();
 		createWindow();
 	}
 });
