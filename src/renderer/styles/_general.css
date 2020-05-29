@@ -1,113 +1,64 @@
-/**
- * General styling
- */
-
 html {
-	line-height: 1.15;
+  @apply min-h-full bg-white;
 }
 
 body {
-	@apply .bg-default-background;
-}
-
-/* Default CSS headings */
-
-h1 {
-  font-size: 2rem;
-}
-
-h2 {
-  font-size: 1.5rem;
-}
-
-h3 {
-  font-size: 1.17rem;
-}
-
-h4 {
-  font-size: 1rem;
-}
-
-h5 {
-  font-size: 0.83rem;
-}
-
-h6 {
-  font-size: 0.67rem;
-}
-
-h1,
-h2,
-h3,
-h4 {
-	@apply .font-bold;
-	color: var(--theme-header-text);
-}
-
-a {
-	@apply .no-underline .text-blue .transition;
-}
-
-a:hover {
-	@apply .text-blue-dark .underline;
-}
-
-a:active {
-	color: #8690bd;
+  @apply font-sans antialiased text-gray-700;
 }
 
 a:focus,
 button:focus,
 textarea:focus,
 input:focus {
-	@apply .outline-none;
+  @apply outline-none;
 }
 
-a,
 button,
 img {
-	@apply .select-none;
-	-webkit-user-drag: none;
+  @apply select-none;
+  -webkit-user-drag: none;
 }
 
-.App:not(.mac) *::-webkit-scrollbar {
-	@apply .w-2 .h-2 .rounded-full;
-	background-color: rgba(0, 0, 0, 0);
-}
-.App:not(.mac) *::-webkit-scrollbar-track:hover {
-	background-color: rgba(0, 0, 0, 0.05);
-}
-.App:not(.mac) *::-webkit-scrollbar-thumb {
-	@apply .rounded-full;
-	background-color: rgba(0, 0, 0, 0.3);
-}
-.App:not(.mac) *::-webkit-scrollbar-thumb:hover {
-	background-color: rgba(0, 0, 0, 0.4);
-}
-.App:not(.mac) *::-webkit-scrollbar-thumb:active {
-	background-color: rgba(0, 0, 0, 0.5);
+h1,
+h2,
+h3,
+h4 {
+  @apply font-bold text-gray-900;
 }
 
-.rotate-90 {
-	transform: rotate(90deg);
+h1 {
+  @apply mb-2 text-4xl leading-none;
 }
 
-.rotate-180 {
-	transform: rotate(180deg);
+h2 {
+  @apply mb-1 text-2xl;
 }
 
-.instructions-text {
-	@apply .mt-16 .mx-16 .w-1/2 .p-4 .rounded-lg .text-theme-page-instructions-text .bg-theme-page-instructions-background;
+h3 {
+  @apply mb-1 text-xl;
 }
 
-.word-break-all {
-	word-break: break-all;
+h4 {
+  @apply mb-1 text-lg;
 }
 
-.shadow-outline-green {
-	box-shadow: 0 0 0 2px theme("colors.green");
+/* Headings without H */
+.header-1 {
+  @apply text-4xl leading-none mb-2 font-bold text-gray-900;
 }
 
-.blur {
-	filter: blur(4px);
+.header-2 {
+  @apply text-2xl mb-1 font-bold text-gray-900;
+}
+
+.header-3 {
+  @apply text-xl mb-1 font-bold text-gray-900;
+}
+
+.header-4 {
+  @apply text-lg mb-1 font-bold text-gray-900;
+}
+
+.debug {
+  border: 1px solid #000;
 }

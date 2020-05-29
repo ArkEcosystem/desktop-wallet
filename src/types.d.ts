@@ -1,7 +1,7 @@
 import { Environment } from "@arkecosystem/platform-sdk-profiles";
 import Vue from "vue";
 
-import { HttpClient } from "@/services/http";
+import { HttpClient } from "@/support/services/http";
 
 declare module "vue/types/vue" {
 	interface Vue {
@@ -11,6 +11,7 @@ declare module "vue/types/vue" {
 
 		// Platform SDK
 		$env: Environment;
+		$profiles: any;
 		$http: HttpClient;
 	}
 }
