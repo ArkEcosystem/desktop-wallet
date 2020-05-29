@@ -35,7 +35,7 @@ let rendererConfig = {
 	devtool: "#cheap-module-eval-source-map",
 	entry: {
 		renderer: path.join(__dirname, "../src/renderer/main.js"),
-		splashscreen: path.join(__dirname, "../src/renderer/splashscreen.js"),
+		// splashscreen: path.join(__dirname, "../src/renderer/splashscreen.js"),
 	},
 	externals: [...Object.keys(dependencies || {}).filter((d) => !whiteListedModules.includes(d))],
 	module: {
