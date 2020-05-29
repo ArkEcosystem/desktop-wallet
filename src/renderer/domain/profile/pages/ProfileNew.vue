@@ -19,7 +19,7 @@
 
 				<div class="mx-4 mt-5 md:mx-8 xl:mx-16">
 					<button class="w-full button-primary">
-						Sign in to MarketSquare
+						Login with MarketSquare
 					</button>
 					<div class="pt-4 mt-8 border-t border-gray-200"></div>
 				</div>
