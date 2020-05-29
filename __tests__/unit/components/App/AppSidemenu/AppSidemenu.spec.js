@@ -18,7 +18,6 @@ const mockData = {
 	},
 	$store: {
 		getters: {
-			"announcements/unread": () => 0,
 			"plugin/menuItems": () => [],
 			"plugin/avatar": () => "pluginAvatar",
 			"updater/hasAvailableRelease": () => false,

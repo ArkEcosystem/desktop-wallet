@@ -1,7 +1,7 @@
 import { Crypto, Identities } from "@arkecosystem/crypto";
 import { BIP39 } from "@arkecosystem/platform-sdk-crypto";
 
-import { version as mainnetVersion } from "@/config/networks/mainnet";
+import { version as mainnetVersion } from "@config/networks/mainnet";
 import { httpClient } from "@/plugins/http-client";
 import store from "@/store";
 
@@ -252,12 +252,18 @@ export default class WalletService {
 
 		if (username.length < 1) {
 			errors.push({ type: "empty" });
-		} else if (username.length > 20) {
+		}
+
+		if (username.length > 20) {
 			errors.push({ type: "maxLength" });
-		} else if (store.getters["delegate/byUsername"](username)) {
+		}
+
+		if (store.getters["delegate/byUsername"](username)) {
 			errors.push({ type: "exists" });
 			// Regex from `@arkecosystem/crypto`
-		} else if (!username.match(/^[a-z0-9!@$&_.]+$/)) {
+		}
+
+		if (!username.match(/^[a-z0-9!@$&_.]+$/)) {
 			errors.push({ type: "invalidFormat" });
 		}
 

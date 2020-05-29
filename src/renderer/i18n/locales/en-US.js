@@ -62,12 +62,6 @@ export default {
 		DEFAULT_CHOSEN_FEE: "Default fee type",
 	},
 
-	ANNOUNCEMENTS: {
-		LATEST_NEWS: "Latest News",
-		READ_MORE: "Read more",
-		ALL_READ: "Mark all as read",
-	},
-
 	INTRODUCTION: {
 		WELCOME: {
 			TITLE: "Welcome to {APP}",
@@ -274,7 +268,6 @@ export default {
 	},
 
 	APP_SIDEMENU: {
-		ANNOUNCEMENTS: "Announcements",
 		CONTACTS: "My contacts",
 		CURRENT_PROFILE: 'Your current profile is "{profileName}"',
 		DASHBOARD: "Dashboard",

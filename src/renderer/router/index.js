@@ -21,11 +21,6 @@ const router = new Router({
 			name: "dashboard",
 			component: require("@/pages/Dashboard").default,
 		},
-		{
-			path: "/announcements",
-			name: "announcements",
-			component: require("@/pages/Announcements").default,
-		},
 		// {
 		//   path: '/search',
 		//   name: 'search',

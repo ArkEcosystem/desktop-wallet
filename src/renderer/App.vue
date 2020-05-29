@@ -103,7 +103,7 @@ export default class DesktopWallet extends Vue {
 	aliveRouteComponents = [];
 
 	keepableRoutes = Object.freeze({
-		profileAgnostic: ["Announcements", "NetworkOverview", "ProfileAll"],
+		profileAgnostic: ["NetworkOverview", "ProfileAll"],
 		profileDependent: ["Dashboard", "ContactAll", "WalletAll"],
 		// This pages could be cached to not delete the current form data, but they
 		// would not support switching profiles, which would be confusing for some users

@@ -42,17 +42,6 @@
 						@click="redirect($event)"
 					/>
 
-					<!-- Announcements -->
-					<MenuNavigationItem
-						id="announcements"
-						:title="$t('APP_SIDEMENU.ANNOUNCEMENTS')"
-						class="AppSidemenu__item"
-						:is-horizontal="isHorizontal"
-						:show-badge="showUnread"
-						icon="whitepaper"
-						@click="redirect($event)"
-					/>
-
 					<!-- Plugin Manager -->
 					<MenuNavigationItem
 						id="plugin-manager"
@@ -160,7 +149,6 @@ import AppSidemenuSettings from "./AppSidemenuSettings";
 	computed: {
 		...mapGetters({
 			hasAvailableRelease: "updater/hasAvailableRelease",
-			unreadAnnouncements: "announcements/unread",
 		}),
 	},
 })
@@ -182,11 +170,6 @@ export default class AppSidemenu extends Vue {
 		return {
 			activeItem: vm.$route.name,
 		};
-	}
-
-	get showUnread() {
-		// @ts-ignore
-		return this.unreadAnnouncements.length > 0;
 	}
 
 	get hasPluginMenuItems() {

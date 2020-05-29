@@ -14,10 +14,6 @@ exports.PEERS = {
 	"ark.devnet": require("./peers/devnet.json"),
 };
 
-exports.ANNOUNCEMENTS = {
-	rssUrl: "https://blog.ark.io/feed",
-};
-
 exports.VENDOR_FIELD = {
 	defaultMaxLength: 64,
 };

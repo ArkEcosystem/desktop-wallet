@@ -1,9 +1,5 @@
 // todo: split this down into getters, setters, actions and mutators after the initial reworks
 export enum StoreBinding {
-	// Announcements
-	AnnouncementsFetch = "announcements/fetch",
-	AnnouncementsMarkAsRead = "announcements/markAsRead",
-	AnnouncementsMarkAsReadBulk = "announcements/markAsReadBulk",
 	// Application
 	AppSetHasAcceptedBlacklistDisclaimer = "app/setHasAcceptedBlacklistDisclaimer",
 	AppSetHasSeenIntroduction = "app/setHasSeenIntroduction",
@@ -163,7 +159,6 @@ export enum StoreCommit {
 	Reset = "RESET",
 	ResetPlugins = "RESET_PLUGINS",
 	RestoreMutation = "RESTORE_MUTATION",
-	SaveAnnouncements = "SAVE_ANNOUNCEMENTS",
 	SessionSetProfileId = "session/SET_PROFILE_ID",
 	SessionSetUnconfirmedVotes = "session/SET_UNCONFIRMED_VOTES",
 	SetAll = "SET_ALL",

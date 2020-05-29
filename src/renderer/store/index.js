@@ -4,7 +4,6 @@ import { merge, pullAll } from "lodash";
 import Vue from "vue";
 import Vuex from "vuex";
 
-import AnnouncementsModule from "@/store/modules/announcements";
 import AppModule from "@/store/modules/app";
 import DelegateModule from "@/store/modules/delegate";
 import LedgerModule from "@/store/modules/ledger";
@@ -24,7 +23,6 @@ import vuexPersistReady from "@/store/plugins/vuex-persist-ready";
 Vue.use(Vuex);
 
 const modules = {
-	announcements: AnnouncementsModule,
 	app: AppModule,
 	delegate: DelegateModule,
 	ledger: LedgerModule,

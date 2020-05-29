@@ -7,14 +7,14 @@ import alertEvents from "@/plugins/alert-events";
 import { capitalize } from "@/utils";
 
 class PriceApi {
-	private adapter = "cryptocompare";
+	#adapter = "cryptocompare";
 
 	public getAdapter() {
-		return MarketService.make(this.adapter);
+		return MarketService.make(this.#adapter);
 	}
 
 	public setAdapter(adapter: string) {
-		this.adapter = adapter;
+		this.#adapter = adapter;
 	}
 
 	public async verifyToken(token: string) {
@@ -39,7 +39,7 @@ class PriceApi {
 			const marketData = this.getAdapter().marketData(token);
 
 			if (!marketData) {
-				logger.warn(`${token} market data does not exist on ${this.adapter}`);
+				logger.warn(`${token} market data does not exist on ${this.#adapter}`);
 			}
 
 			return marketData;

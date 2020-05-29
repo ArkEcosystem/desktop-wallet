@@ -2,7 +2,7 @@ import { pullAll } from "lodash";
 
 import { flatten } from "@/utils";
 
-import { announcements, fees, ledger, market, peer, wallets } from "./synchronizer/";
+import { fees, ledger, market, peer, wallets } from "./synchronizer/";
 /**
  * This class adds the possibility to define actions (not to confuse with Vuex actions)
  * that could be dispatched using 2 modes: `default` and `focus`.
@@ -38,10 +38,6 @@ export default class Synchronizer {
 		const { loop, shortest, shorter, medium, longer, longest } = this.intervals;
 
 		const config = {
-			announcements: {
-				default: { interval: longest, delay: loop * 6 },
-				focus: { interval: medium },
-			},
 			delegates: {
 				default: { interval: longer, delay: loop * 3 },
 				focus: { interval: longer },
@@ -244,10 +240,6 @@ export default class Synchronizer {
 	}
 
 	defineAll() {
-		this.define("announcements", this.config.announcements, async () => {
-			await announcements(this);
-		});
-
 		// TODO focus on contacts only (currently wallets and contacts are the same)
 		// this.define('contacts', this.config.contacts, async () => {
 		//   console.log('defined CONTACTS')
