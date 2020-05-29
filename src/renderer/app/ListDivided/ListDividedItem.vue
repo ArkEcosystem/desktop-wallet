@@ -1,6 +1,6 @@
 <template>
 	<li
-		class="flex flex-col w-full py-4 border-b border-dashed ListDividedItem border-theme-line-separator"
+		class="flex flex-col w-full py-4 border-b border-dashed ListDividedItem"
 	>
 		<div
 			:class="isFloatingLabel ? 'flex-col items-start' : 'items-center'"
@@ -8,12 +8,12 @@
 		>
 			<span
 				:class="[{ 'font-semibold text-xs mb-1': isFloatingLabel }, itemLabelClass]"
-				class="mr-5 ListDividedItem__label text-theme-page-text-light"
+				class="mr-5 ListDividedItem__label"
 			>{{ label }}</span>
 
 			<div :class="itemValueClass" class="ListDividedItem__value">
 				<slot>
-					<span v-if="value" class="text-theme-page-text">{{ value }}</span>
+					<span v-if="value">{{ value }}</span>
 				</slot>
 			</div>
 		</div>
@@ -35,3 +35,17 @@ export default class ListDividedItem extends Vue {
 	@Inject({ from: "isFloatingLabel", default: false }) public isFloatingLabel!: boolean;
 }
 </script>
+
+<style scoped>
+.ListDividedItem {
+	border-color: #dae1e7;
+}
+
+.ListDividedItem__label {
+	color: #9ea7bc;
+}
+
+.ListDividedItem__value > span {
+	color: #3b4559;
+}
+</style>
