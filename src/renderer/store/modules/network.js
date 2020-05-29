@@ -6,9 +6,9 @@ import Vue from "vue";
 import { AppEvent, StoreBinding, StoreCommit } from "@/enums";
 import NetworkModel from "@/models/network";
 import { eventBus } from "@/plugins/event-bus";
+import { httpClient } from "@/plugins/http-client";
 import Client from "@/services/client";
 import { isEmpty } from "@/utils";
-import { reqwest } from "@/utils/http";
 
 import BaseModule from "../base";
 
@@ -102,10 +102,7 @@ export default new BaseModule(NetworkModel, {
 
 				if (network.knownWalletsUrl) {
 					try {
-						const knownWallets = await reqwest(network.knownWalletsUrl, {
-							json: true,
-						});
-						network.knownWallets = knownWallets.body;
+						network.knownWallets = await httpClient.get(network.knownWalletsUrl);
 					} catch (error) {
 						this._vm.$logger.error("Could not retrieve known wallets: ", error);
 					}

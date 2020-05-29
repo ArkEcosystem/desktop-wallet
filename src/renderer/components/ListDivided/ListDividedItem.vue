@@ -4,7 +4,8 @@
 			<span
 				:class="[{ 'font-semibold text-xs mb-1': isFloatingLabel }, itemLabelClass]"
 				class="mr-5 ListDividedItem__label text-theme-page-text-light"
-			>{{ label }}</span>
+				>{{ label }}</span
+			>
 
 			<div :class="itemValueClass" class="ListDividedItem__value">
 				<slot>

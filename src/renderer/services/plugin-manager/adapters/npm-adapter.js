@@ -2,7 +2,7 @@ import { PLUGINS } from "@config";
 import { chunk } from "lodash";
 import packageJson from "package-json";
 
-import { reqwest } from "@/utils/http";
+import { httpClient } from "@/plugins/http-client";
 
 const CHUNKSIZE = 50;
 
@@ -48,16 +48,11 @@ class NpmAdapter {
 	async fetchPlugins(options = {}) {
 		const keywords = PLUGINS.keywords.join(" ");
 
-		const { body } = await reqwest("/-/v1/search", {
-			query: {
-				text: `keywords:${keywords}`,
-				from: options.from || 0,
-				size: options.size || 250,
-				t: Date.now(),
-			},
-			baseUrl: this.baseUrl,
-			json: true,
-			timeout: 3000,
+		const body = await httpClient.timeout(3000).get(`${this.baseUrl}/-/v1/search`, {
+			text: `keywords:${keywords}`,
+			from: options.from || 0,
+			size: options.size || 250,
+			t: Date.now(),
 		});
 
 		return {

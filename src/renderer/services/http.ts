@@ -1,10 +1,27 @@
+import { Contracts } from "@arkecosystem/platform-sdk";
 import { Reqwest } from "@kodekeep/reqwest";
 
-export class HttpClient {
+export class HttpClient implements Contracts.HttpClient {
 	readonly #client: Reqwest;
 
 	public constructor() {
 		this.#client = new Reqwest();
+
+		this.#client.retry(0, 0);
+	}
+
+	public timeout(seconds: number): HttpClient {
+		this.#client.timeout(seconds);
+
+		return this;
+	}
+
+	public withoutEncoding(): HttpClient {
+		this.#client.withOptions({
+			encoding: null,
+		});
+
+		return this;
 	}
 
 	public async get(path: string, query: object = {}): Promise<Record<string, any>> {

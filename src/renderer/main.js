@@ -56,7 +56,7 @@ Vue.mixin(mixins);
 /* eslint-disable no-new */
 new Vue({
 	components: {
-		App
+		App,
 	},
 	i18n,
 	router,
