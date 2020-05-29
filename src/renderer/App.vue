@@ -1,8 +1,12 @@
 <template>
-	<div>Hello World</div>
+	<div id="app">
+		<router-view></router-view>
+	</div>
 </template>
 
 <script lang="ts">
+import "@/styles/style.css";
+
 import { Component, Vue } from "vue-property-decorator";
 
 @Component({})

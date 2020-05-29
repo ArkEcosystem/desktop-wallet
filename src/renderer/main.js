@@ -4,9 +4,6 @@ import "./registerComponentHooks";
 import logger from "electron-log";
 import PortalVue from "portal-vue";
 import VTooltip from "v-tooltip";
-import {
-	ValidationProvider
-} from "vee-validate/dist/vee-validate.full.esm";
 import Vue from "vue";
 import VueGoodTablePlugin from "vue-good-table";
 
@@ -45,7 +42,6 @@ Vue.mixin(mixins);
 const app = new Vue({
 	components: {
 		App,
-		ValidationProvider,
 	},
 	i18n,
 	router,

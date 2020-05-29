@@ -1,45 +1,33 @@
 @font-face {
-	font-family: "Proxima Nova";
-	src: url("../assets/fonts/Proxima_Nova_Thin.otf");
-	font-weight: 200;
+  font-family: "Inter";
+  src: url("../assets/fonts/Inter-Regular.otf");
+  font-weight: 400;
 }
 
 @font-face {
-	font-family: "Proxima Nova";
-	src: url("../assets/fonts/Proxima_Nova_Light.otf");
-	font-weight: 300;
+  font-family: "Inter";
+  src: url("../assets/fonts/Inter-Medium.otf");
+  font-weight: 500;
 }
 
 @font-face {
-	font-family: "Proxima Nova";
-	src: url("../assets/fonts/Proxima_Nova_Regular.otf");
-	font-weight: normal;
+  font-family: "Inter";
+  src: url("../assets/fonts/Inter-SemiBold.otf");
+  font-weight: 600;
 }
 
 @font-face {
-	font-family: "Proxima Nova";
-	src: url("../assets/fonts/Proxima_Nova_Semibold.otf");
-	font-weight: 600;
+  font-family: "Inter";
+  src: url("../assets/fonts/Inter-Bold.otf");
+  font-weight: 700;
 }
 
 @font-face {
-	font-family: "Proxima Nova";
-	src: url("../assets/fonts/Proxima_Nova_Bold.otf");
-	font-weight: 700;
+  font-family: "Inter";
+  src: url("../assets/fonts/Inter-ExtraBold.otf");
+  font-weight: 800;
 }
 
-@font-face {
-	font-family: "Proxima Nova Condensed";
-	src: url("../assets/fonts/Proxima_Nova_Condensed_Regular.otf");
-	font-weight: normal;
-}
-
-@font-face {
-	font-family: "Proxima Nova Condensed";
-	src: url("../assets/fonts/Proxima_Nova_Condensed_Semibold.otf");
-	font-weight: 600;
-}
-
-.font-condensed {
-	font-family: "Proxima Nova Condensed", sans-serif;
+.semibold {
+  font-family: "Inter Semibold";
 }
