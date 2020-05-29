@@ -1,10 +1,7 @@
 module.exports = {
 	purge: {
 		enabled: true,
-		content: [
-			'./src/**/*.html',
-			'./src/**/*.vue',
-		],
+		content: ["./src/**/*.html", "./src/**/*.vue"],
 	},
 
 	theme: {
@@ -216,20 +213,20 @@ module.exports = {
 			sm: "576px",
 			md: "768px",
 			"max-md": {
-				max: "991px"
+				max: "991px",
 			},
 			lg: "992px",
 			"minmax-lg": {
 				min: "992px",
-				max: "1199px"
+				max: "1199px",
 			},
 			"min-xl": {
-				min: "1200px"
+				min: "1200px",
 			},
 			xl: "1200px",
 			xxl: "1375px",
 			"min-xxl": {
-				min: "1375px"
+				min: "1375px",
 			},
 		},
 

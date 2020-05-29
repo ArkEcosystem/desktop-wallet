@@ -9,10 +9,10 @@ import trash from "trash";
 import validatePackageName from "validate-npm-package-name";
 
 import { StoreBinding } from "@/enums";
+import { httpClient } from "@/plugins/http-client";
 import * as adapters from "@/services/plugin-manager/adapters";
 import releaseService from "@/services/release";
 import { upperFirst } from "@/utils";
-import { reqwest } from "@/utils/http";
 
 import * as errors from "./plugin-manager/errors";
 import { Plugin } from "./plugin-manager/plugin";
@@ -213,11 +213,7 @@ export class PluginManager {
 	}
 
 	async fetchLogo(url) {
-		const { body } = await reqwest(url, {
-			encoding: null,
-			timeout: 100,
-			retry: 0,
-		});
+		const body = await httpClient.timeout(100).withoutEncoding().get(url);
 		return body.toString("base64");
 	}
 
@@ -229,9 +225,10 @@ export class PluginManager {
 		const requests = [];
 		for (const imageUrl of images) {
 			requests.push(
-				reqwest(imageUrl, {
-					encoding: null,
-				}).then((response) => response.body.toString("base64")),
+				httpClient
+					.withoutEncoding()
+					.get(imageUrl)
+					.then((response) => response.toString("base64")),
 			);
 		}
 
@@ -307,9 +304,7 @@ export class PluginManager {
 		const { owner, repository, branch } = this.parsePluginUrl(url);
 
 		const baseUrl = `https://raw.githubusercontent.com/${owner}/${repository}/${branch}`;
-		const { body } = await reqwest(`${baseUrl}/package.json`, {
-			json: true,
-		});
+		const body = await httpClient.get(`${baseUrl}/package.json`);
 
 		let plugin;
 
@@ -391,9 +386,7 @@ export class PluginManager {
 
 	async fetchPluginsList() {
 		try {
-			const { body } = await reqwest(`${PLUGINS.pluginsUrl}?ts=${new Date().getTime()}`, {
-				json: true,
-			});
+			const body = await httpClient.get(`${PLUGINS.pluginsUrl}?ts=${new Date().getTime()}`);
 			this.app.$store.dispatch(StoreBinding.PluginSetWhitelisted, {
 				scope: "global",
 				plugins: body.plugins,

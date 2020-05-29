@@ -53,7 +53,7 @@ const createWrapper = (component, wallet, network, props = {}) => {
 	}
 
 	const mountNetwork = network || cloneDeep(globalNetwork);
-	console.log(TransactionFormTransfer)
+	console.log(TransactionFormTransfer);
 	wrapper = mount(TransactionFormTransfer, {
 		i18n,
 		localVue,

@@ -1,9 +1,9 @@
 import { Crypto, Identities } from "@arkecosystem/crypto";
 import { BIP39 } from "@arkecosystem/platform-sdk-crypto";
-import { version as mainnetVersion } from "@config/networks/mainnet";
 
+import { version as mainnetVersion } from "@/config/networks/mainnet";
+import { httpClient } from "@/plugins/http-client";
 import store from "@/store";
-import { reqwest } from "@/utils/http";
 
 export default class WalletService {
 	/*
@@ -105,12 +105,15 @@ export default class WalletService {
 			return false;
 		}
 
-		const neoUrl = "https://neoscan.io/api/main_net/v1/get_last_transactions_by_address/";
-		const response = await reqwest(neoUrl + address, {
-			json: true,
-		});
+		try {
+			const response = await httpClient.get(
+				`https://neoscan.io/api/main_net/v1/get_last_transactions_by_address/${address}`,
+			);
 
-		return response.statusCode === 200 && response.body && response.body.length > 0;
+			return response && response.length > 0;
+		} catch {
+			return false;
+		}
 	}
 
 	/**
