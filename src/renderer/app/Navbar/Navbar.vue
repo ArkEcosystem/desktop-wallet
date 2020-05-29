@@ -4,10 +4,7 @@
 			<div class="relative flex justify-between h-20 md:h-24">
 				<div class="flex-shrink-0 flex items-center">
 					<div class="flex rounded-lg p-2 bg-red">
-						<img
-							src="@/assets/images/ark-logo.png"
-							class="h-6 md:h-8 lg:h-10"
-						/>
+						<img src="@/assets/images/ark-logo.png" class="h-6 md:h-8 lg:h-10" />
 					</div>
 				</div>
 			</div>

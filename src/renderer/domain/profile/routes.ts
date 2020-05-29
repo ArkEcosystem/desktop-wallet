@@ -1,18 +1,13 @@
 export const routes = [
 	{
 		path: "/",
-		name: "profile-main",
-		component: require("./Pages/ProfileNew").default,
+		name: "profiles.welcome",
+		component: require("./Pages/ProfileWelcome").default,
 	},
 	{
 		path: "/profile/create",
-		name: "profile-new",
+		name: "profiles.create",
 		component: require("./Pages/ProfileNew").default,
-	},
-	{
-		path: "/profile/select",
-		name: "profile-select",
-		component: require("./Pages/ProfileSelect").default,
 	},
 	// {
 	// 	path: "*",

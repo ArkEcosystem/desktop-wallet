@@ -1,7 +1,7 @@
 <template>
 	<button
 		:class="{
-			'ButtonSwitch--active': inputIsActive
+			'ButtonSwitch--active': inputIsActive,
 		}"
 		:disabled="isDisabled"
 		class="ButtonSwitch"
@@ -12,7 +12,7 @@
 			<span
 				:class="{
 					'bg-theme-switch-button-circle': !inputIsActive,
-					'bg-blue': inputIsActive
+					'bg-blue': inputIsActive,
 				}"
 				class="ButtonSwitch__circle transition"
 			/>
@@ -24,52 +24,52 @@
 import { Component, Model, Prop, Vue, Watch } from "vue-property-decorator";
 
 @Component({
-  data: (vm: ButtonSwitch) => ({
-    inputIsActive: vm.isActive
-  })
+	data: (vm: ButtonSwitch) => ({
+		inputIsActive: vm.isActive,
+	}),
 })
 export default class ButtonSwitch extends Vue {
-  @Model("change", { default: false }) public isActive!: boolean;
-  @Prop({ default: false }) public isDisabled!: boolean;
-  private inputIsActive: boolean;
+	@Model("change", { default: false }) public isActive!: boolean;
+	@Prop({ default: false }) public isDisabled!: boolean;
+	private inputIsActive: boolean;
 
-  get model() {
-    return this.inputIsActive;
-  }
+	get model() {
+		return this.inputIsActive;
+	}
 
-  set model(value: boolean) {
-    this.inputIsActive = value;
-    this.$emit("change", value);
-  }
+	set model(value: boolean) {
+		this.inputIsActive = value;
+		this.$emit("change", value);
+	}
 
-  @Watch("isActive")
-  public onIsActiveChanged(isActive: boolean) {
-    this.inputIsActive = isActive;
-  }
+	@Watch("isActive")
+	public onIsActiveChanged(isActive: boolean) {
+		this.inputIsActive = isActive;
+	}
 
-  public toggle() {
-    if (this.isDisabled) {
-      return;
-    }
+	public toggle() {
+		if (this.isDisabled) {
+			return;
+		}
 
-    this.model = !this.model;
-  }
+		this.model = !this.model;
+	}
 }
 </script>
 
 <style scoped>
 .ButtonSwitch {
-  @apply .flex .appearance-none .cursor-pointer;
+	@apply .flex .appearance-none .cursor-pointer;
 }
 .ButtonSwitch .ButtonSwitch__line {
-  @apply .relative .w-8 .h-1 .rounded-full .relative .bg-theme-switch-button;
+	@apply .relative .w-8 .h-1 .rounded-full .relative .bg-theme-switch-button;
 }
 .ButtonSwitch .ButtonSwitch__circle {
-  @apply .absolute .rounded-full .w-4 .h-4 .-mt-2;
-  transform: translateX(-100%);
-  top: 50%;
+	@apply .absolute .rounded-full .w-4 .h-4 .-mt-2;
+	transform: translateX(-100%);
+	top: 50%;
 }
 .ButtonSwitch--active .ButtonSwitch__circle {
-  transform: translateX(0%);
+	transform: translateX(0%);
 }
 </style>
