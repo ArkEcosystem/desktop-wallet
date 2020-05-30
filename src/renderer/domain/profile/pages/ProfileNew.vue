@@ -99,7 +99,11 @@
 								<div class="flex flex-1">
 									<div class="w-full">
 										<ListDivided>
-											<ListDividedItem label="Dark Theme">
+											<ListDividedItem
+												label="Dark Theme"
+												label-description="Want to set the wallet to dark mode?"
+												item-label-class="text-gray-700 font-semibold"
+											>
 												<ButtonSwitch />
 											</ListDividedItem>
 										</ListDivided>
