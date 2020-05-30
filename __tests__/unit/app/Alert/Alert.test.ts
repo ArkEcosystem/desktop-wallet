@@ -1,4 +1,4 @@
-import { mount } from '@vue/test-utils';
+import { mount } from "@vue/test-utils";
 
 import Alert from "@/app/Alert/Alert.vue";
 
@@ -11,8 +11,8 @@ describe("Alert", () => {
 	it("should render with title", () => {
 		const wrapper = mount(Alert, {
 			propsData: {
-				title: 'Test'
-			}
+				title: "Test",
+			},
 		});
 		const title = wrapper.find(`[data-testid="Alert__title"]`);
 		expect(title.text()).toBe("Test");

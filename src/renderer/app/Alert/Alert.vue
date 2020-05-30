@@ -13,11 +13,7 @@
 			</svg>
 		</div>
 		<div class="Alert__content Alert--padding flex-1">
-			<p
-				data-testid="Alert__title"
-				v-if="title"
-				class="Alert__content__title"
-			>
+			<p v-if="title" data-testid="Alert__title" class="Alert__content__title">
 				{{ title }}
 			</p>
 			<slot></slot>
@@ -26,7 +22,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Prop } from "vue-property-decorator";
+import { Component, Prop, Vue } from "vue-property-decorator";
 
 @Component
 export default class Alert extends Vue {

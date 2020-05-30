@@ -4,5 +4,5 @@ export default { title: "UI / Navbar" };
 
 export const Default = () => ({
 	components: { Navbar },
-	template: "<Navbar />"
+	template: "<Navbar />",
 });
