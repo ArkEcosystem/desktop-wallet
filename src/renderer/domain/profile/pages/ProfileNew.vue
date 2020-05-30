@@ -99,7 +99,9 @@
 								<div class="flex flex-1">
 									<div class="w-full">
 										<ListDivided>
-											<ListDividedItem label="Dark Theme" />
+											<ListDividedItem label="Dark Theme">
+												<ButtonSwitch />
+											</ListDividedItem>
 										</ListDivided>
 									</div>
 								</div>
@@ -126,10 +128,12 @@
 import { ValidationObserver, ValidationProvider } from "vee-validate/dist/vee-validate.full.esm";
 import { Component, Vue } from "vue-property-decorator";
 
+import { ButtonSwitch } from "@/app/Button";
 import { ListDivided, ListDividedItem } from "@/app/ListDivided";
 
 @Component({
 	components: {
+		ButtonSwitch,
 		ListDivided,
 		ListDividedItem,
 		ValidationObserver,

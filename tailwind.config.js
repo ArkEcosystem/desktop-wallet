@@ -7,6 +7,12 @@ module.exports = {
 				full: "100%",
 			},
 			colors: {
+				"theme-page-text": "var(--theme-page-text)",
+				"theme-page-text-light": "var(--theme-page-text-light)",
+				"theme-line-separator": "var(--theme-line-separator)",
+				"theme-switch-button": "var(--theme-switch-button)",
+				"theme-switch-button-circle": "var(--theme-switch-button-circle)",
+
 				black: "#1e212b",
 
 				// Tailwind overrides
@@ -31,6 +37,7 @@ module.exports = {
 				"red-800": "#5b1b1b",
 				"red-900": "#391919",
 
+				blue: "#037cff", // UPDATED
 				"blue-100": "#e5f0f8",
 				"blue-200": "#bad6f0",
 				"blue-300": "#99c7ee",
