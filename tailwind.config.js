@@ -141,7 +141,7 @@ module.exports = {
 			},
 			fontFamily: {
 				sans: ["Inter", ...defaultConfig.theme.fontFamily.sans],
-			},
+			}
 		},
 
 		customForms: (theme) => ({
@@ -163,6 +163,7 @@ module.exports = {
 	variants: {
 		borderRadius: [...defaultConfig.variants.borderRadius, "first", "last"],
 		borderWidth: [...defaultConfig.variants.borderWidth, "last"],
+
 	},
 	plugins: [require("@tailwindcss/ui")],
 };
