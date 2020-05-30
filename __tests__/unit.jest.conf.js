@@ -36,6 +36,6 @@ module.exports = {
 	coverageReporters: ["json", "lcov", "text", "clover", "html"],
 	coverageDirectory: "<rootDir>/__tests__/unit/.coverage",
 	collectCoverageFrom: ["src/renderer/**/*.{js,ts,tsx,vue}"],
-	setupFilesAfterEnv: ["jest-extended", "<rootDir>/__tests__/unit/__utils__/setup.js"],
+	// setupFilesAfterEnv: ["jest-extended", "<rootDir>/__tests__/unit/__utils__/setup.js"],
 	watchman: false,
 };
