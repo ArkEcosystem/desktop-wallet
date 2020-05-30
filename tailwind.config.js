@@ -7,11 +7,11 @@ module.exports = {
 				full: "100%",
 			},
 			colors: {
-				"theme-page-text": "var(--theme-page-text)",
-				"theme-page-text-light": "var(--theme-page-text-light)",
-				"theme-line-separator": "var(--theme-line-separator)",
-				"theme-switch-button": "var(--theme-switch-button)",
-				"theme-switch-button-circle": "var(--theme-switch-button-circle)",
+        "theme-page-text": "var(--theme-page-text)",
+        "theme-page-text-light": "var(--theme-page-text-light)",
+        "theme-line-separator": "var(--theme-line-separator)",
+        "theme-switch-button": "var(--theme-switch-button)",
+        "theme-switch-button-circle": "var(--theme-switch-button-circle)",
 
 				black: "#1e212b",
 
@@ -40,19 +40,8 @@ module.exports = {
 					"900": "#391919",
 				},
 
-<<<<<<< HEAD
-				blue: "#037cff", // UPDATED
-				"blue-100": "#e5f0f8",
-				"blue-200": "#bad6f0",
-				"blue-300": "#99c7ee",
-				"blue-400": "#77b9f3",
-				"blue-500": "#3e9dff",
-				"blue-600": "#007dff",
-				"blue-700": "#075af2",
-				"blue-800": "#0b4dc7",
-				"blue-900": "#173e85",
-=======
 				blue: {
+					default: "#037cff", // UPDATED
 					"100": "#e5f0f8",
 					"200": "#bad6f0",
 					"300": "#99c7ee",
@@ -63,7 +52,6 @@ module.exports = {
 					"800": "#0b4dc7",
 					"900": "#173e85",
 				},
->>>>>>> c301f717020332ee3af7c2d8257d1bb85060ebf9
 
 				yellow: {
 					"100": "#ffe6b8",
