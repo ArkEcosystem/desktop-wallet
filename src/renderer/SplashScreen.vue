@@ -1,7 +1,7 @@
 <template>
 	<div class="SplashScreen bg-default-background absolute h-full w-full flex flex-col text-center select-none">
 		<div class="flex flex-1 justify-center">
-			<div class="flex rounded-lg mb-3 p-5 bg-red m-auto">
+			<div class="flex rounded-lg mb-3 p-5 bg-red-logo m-auto">
 				<img src="@/assets/images/ark-logo.png" class="h-12" />
 			</div>
 		</div>

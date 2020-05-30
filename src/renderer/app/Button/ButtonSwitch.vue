@@ -12,7 +12,7 @@
 			<span
 				:class="{
 					'bg-theme-switch-button-circle': !inputIsActive,
-					'bg-blue': inputIsActive,
+					'bg-blue-default': inputIsActive,
 				}"
 				class="ButtonSwitch__circle transition"
 			/>
