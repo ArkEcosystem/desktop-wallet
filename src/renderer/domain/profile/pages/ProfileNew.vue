@@ -21,12 +21,39 @@
 					<button class="w-full button-primary">
 						Login with MarketSquare
 					</button>
-					<div class="pt-4 mt-8 border-t border-gray-200"></div>
+					<div class="pt-4 mt-8 border-t border-gray-300"></div>
 				</div>
 
 				<validation-observer v-slot="{ handleSubmit, reset }">
 					<form @submit.prevent="handleSubmit(onSubmit)" @reset.prevent="reset">
 						<div class="mx-4 mt-5 md:mx-8 xl:mx-16">
+							<div class="mb-4">
+								<div class="flex flex-1">
+									<div class="w-full">
+										<ListDivided :is-floating-label="true">
+											<ListDividedItem
+												label="New Profile"
+												label-description="Select Profile Image"
+												item-label-class="text-2xl text-black font-semibold"
+												item-label-description-class="text-sm text-gray-700 font-semibold"
+											>
+												<div class="flex flex-row mt-2">
+													<div class="flex items-center justify-center w-24 h-24 border-2 border-dashed border-gray-300 rounded mr-6">
+														<button class="w-20 h-20 bg-blue-100 rounded-full"></button>
+													</div>
+													<!-- TODO (BP): use for avatar: background-image: url("data:image/svg+xml...") -->
+													<div class="w-24 h-24 relative bg-gray-400 rounded">
+														<button class="flex items-center justify-center bg-red-100 absolute -top-3 -right-3 w-6 h-6 p-1 rounded">
+															<img src="@/assets/images/close.svg" class="h-3" />
+														</button>
+													</div>
+												</div>
+											</ListDividedItem>
+										</ListDivided>
+									</div>
+								</div>
+							</div>
+
 							<div class="mb-4">
 								<div class="flex flex-1">
 									<div class="w-full">
@@ -113,7 +140,7 @@
 						</div>
 
 						<div class="mx-4 mt-5 mb-10 md:mx-8 xl:mx-16">
-							<div class="pt-4 mb-4 border-t border-gray-200 border-dashed"></div>
+							<div class="pt-4 mb-4 border-t border-gray-300 border-dashed"></div>
 							<button type="button" class="mr-2 button-secondary" @click="backToWelcome">
 								Back
 							</button>
