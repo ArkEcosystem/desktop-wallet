@@ -50,9 +50,7 @@
 									<div class="w-full">
 										<validation-provider v-slot="{ errors }" rules="required">
 											<div class="input-group">
-												<label for="default-price-provider" class="input-label"
-													>Default Price Provider</label
-												>
+												<label for="default-price-provider" class="input-label">Default Price Provider</label>
 												<div class="input-wrapper">
 													<select
 														name="default-price-provider"
