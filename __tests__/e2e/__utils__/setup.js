@@ -24,7 +24,7 @@ export default {
 
 		return app;
 	},
-	async stopApp(scope) {
+	stopApp(scope) {
 		shortcuts.forEach((shortcut) => {
 			delete scope[shortcut];
 		});
