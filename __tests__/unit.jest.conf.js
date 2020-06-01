@@ -2,9 +2,6 @@ module.exports = {
 	verbose: false,
 	globals: {
 		__static: __dirname,
-		"ts-jest": {
-			packageJson: "../package.json",
-		},
 		"vue-jest": {
 			hideStyleWarn: true,
 		},
@@ -24,7 +21,7 @@ module.exports = {
 	transform: {
 		".+\\.(css|styl|less|sass|scss|svg|png|jpg|ttf|woff|woff2)$": "jest-transform-stub",
 		"^.+\\.js$": "babel-jest",
-		"^.+\\.ts$": "babel-jest",
+		"^.+\\.ts$": "ts-jest",
 		"^.+\\.tsx?$": "ts-jest",
 		"^.+\\.vue$": "vue-jest",
 	},
