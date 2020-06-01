@@ -16,8 +16,7 @@
 				<img src="@/assets/images/pages/profile/onboarding-banner.svg" />
 			</div>
 
-			<!-- TODO: only show this if there are profiles to select from -->
-			<div class="container mx-auto">
+			<div v-if="profiles" class="container mx-auto">
 				<div class="mx-auto my-8 md:w-3/4 lg:w-3/5 xl:w-1/2">
 					<h1 class="mx-4 text-2xl font-bold md:mx-8 xl:mx-16">
 						Select Profile
@@ -27,7 +26,11 @@
 					</div>
 				</div>
 
-				<div class="max-w-lg mx-auto mb-3 overflow-hidden bg-white border-2 border-gray-300 rounded-lg">
+				<div
+					v-for="profile in profiles"
+					:key="profile.id()"
+					class="max-w-lg mx-auto mb-3 overflow-hidden bg-white border-2 border-gray-300 rounded-lg"
+				>
 					<div class="relative px-6 sm:flex sm:items-center py-7">
 						<button class="absolute top-0 right-0 flex items-center justify-center w-6 h-6 p-1 mt-3">
 							<img src="@/assets/images/settings.svg" class="h-5" />
@@ -35,51 +38,19 @@
 
 						<div class="flex flex-row justify-between w-full">
 							<div class="flex items-center">
-								<img
-									src="https://randomuser.me/api/portraits/men/3.jpg"
-									class="block object-cover h-12 mx-auto rounded-full sm:mx-0 sm:flex-shrink-0"
-								/>
+								<div
+									:style="{
+										'background-color': '#c1272a',
+										'background-image': profile.avatar(),
+									}"
+									class="block object-cover w-12 h-12 mx-auto rounded-full sm:mx-0 sm:flex-shrink-0"
+								></div>
 								<div class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-left">
 									<p class="text-sm font-semibold text-gray-500">
 										Name
 									</p>
 									<p class="font-semibold text-black">
-										ROBank
-									</p>
-								</div>
-							</div>
-							<div class="flex items-center">
-								<div class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-right">
-									<p class="text-sm font-semibold text-gray-500">
-										Total Balance
-									</p>
-									<p class="font-semibold text-black">
-										234,500.46 USD
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="max-w-lg mx-auto overflow-hidden bg-white border-2 border-gray-300 rounded-lg">
-					<div class="relative px-6 sm:flex sm:items-center py-7">
-						<button class="absolute top-0 right-0 flex items-center justify-center w-6 h-6 p-1 mt-3">
-							<img src="@/assets/images/settings.svg" class="h-5" />
-						</button>
-
-						<div class="flex flex-row justify-between w-full">
-							<div class="flex items-center">
-								<img
-									src="https://randomuser.me/api/portraits/women/21.jpg"
-									class="block object-cover h-12 mx-auto rounded-full sm:mx-0 sm:flex-shrink-0"
-								/>
-								<div class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-left">
-									<p class="text-sm font-semibold text-gray-500">
-										Name
-									</p>
-									<p class="font-semibold text-black">
-										OLEBank
+										{{ profile.name() }}
 									</p>
 								</div>
 							</div>
@@ -116,10 +87,17 @@
 </template>
 
 <script lang="ts">
+	import { Profile } from "@arkecosystem/platform-sdk-profiles";
 	import { Component, Vue } from "vue-property-decorator";
 
 	@Component
 	export default class ProfileWelcome extends Vue {
+		profiles: Profile[] = [];
+
+		async mounted() {
+			this.profiles = await this.$profiles.all();
+		}
+
 		createProfile() {
 			this.$router.push({ name: "profiles.create" });
 		}
