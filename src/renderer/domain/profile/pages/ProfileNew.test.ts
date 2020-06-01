@@ -22,7 +22,8 @@ const createStubbedVue = () => {
 			},
 		},
 		stubs: {
-			ButtonSwitch: true,
+			XButton: true,
+			Toggle: true,
 			FormError: true,
 			ListDivided: true,
 			ListDividedItem: true,
