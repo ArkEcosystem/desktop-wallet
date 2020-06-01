@@ -63,7 +63,7 @@
 </template>
 
 <script lang="ts">
-	import "@/styles/style.css";
+	import "@/app/styles/style.css";
 
 	import { Component, Vue } from "vue-property-decorator";
 
