@@ -1,8 +1,9 @@
 <template>
-	<ul class="ListDivided w-full">
+	<ul class="w-full ListDivided">
 		<template v-if="items">
 			<ListDividedItem v-for="(value, key) in items" :key="key" :label="key" :value="value" />
 		</template>
+
 		<template v-else>
 			<slot />
 		</template>
@@ -15,6 +16,7 @@
 	import ListDividedItem from "./ListDividedItem";
 
 	@Component({
+		name: "ListDivided",
 		components: {
 			ListDividedItem,
 		},

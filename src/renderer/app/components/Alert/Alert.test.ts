@@ -5,7 +5,9 @@ import Alert from "@/app/components/Alert/Alert.vue";
 describe("Alert", () => {
 	it("should render", () => {
 		const wrapper = shallowMount(Alert);
+
 		expect(wrapper.find(".Alert")).toBeTruthy();
+		expect(wrapper.html()).toMatchSnapshot();
 	});
 
 	it("should render with title", () => {
@@ -14,7 +16,9 @@ describe("Alert", () => {
 				title: "Test",
 			},
 		});
+
 		const title = wrapper.find(`[data-testid="Alert__title"]`);
 		expect(title.text()).toBe("Test");
+		expect(wrapper.html()).toMatchSnapshot();
 	});
 });

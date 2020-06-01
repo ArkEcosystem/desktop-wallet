@@ -1,7 +1,7 @@
 <template>
 	<li class="flex flex-col w-full py-4 border-b border-dashed ListDividedItem border-theme-line-separator">
 		<div :class="isFloatingLabel ? 'flex-col items-start' : 'items-center'" class="flex justify-between">
-			<div class="ListDividedItem__container__label flex flex-col">
+			<div class="flex flex-col ListDividedItem__container__label">
 				<span
 					:class="[
 						{ 'font-semibold text-xs mb-1': isFloatingLabel },
@@ -9,14 +9,12 @@
 						itemLabelClass,
 					]"
 					class="mr-5 ListDividedItem__label"
-					>{{ label }}</span
-				>
+				>{{ label }}</span>
 				<span
 					v-if="labelDescription"
 					:class="itemLabelDescriptionClass"
-					class="ListDividedItem__label__description text-gray-500 text-sm"
-					>{{ labelDescription }}</span
-				>
+					class="text-sm text-gray-500 ListDividedItem__label__description"
+				>{{ labelDescription }}</span>
 			</div>
 
 			<div :class="itemValueClass" class="ListDividedItem__value">
@@ -34,7 +32,9 @@
 <script lang="ts">
 	import { Component, Inject, Prop, Vue } from "vue-property-decorator";
 
-	@Component
+	@Component({
+		name: "ListDividedItem",
+	})
 	export default class ListDividedItem extends Vue {
 		@Prop({ required: true }) public label!: string;
 		@Prop({ default: null }) public labelDescription!: string | null;

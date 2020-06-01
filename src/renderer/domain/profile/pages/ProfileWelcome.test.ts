@@ -9,5 +9,6 @@ describe("ProfileWelcome", () => {
 		expect(wrapper.text()).toContain("Select Profile");
 		expect(wrapper.text()).toContain("Sign in to MarketSquare");
 		expect(wrapper.text()).toContain("Create Profile");
+		expect(wrapper.html()).toMatchSnapshot();
 	});
 });
