@@ -1,36 +1,23 @@
 import electron from "electron";
-import { Application } from "spectron";
+import {
+	Application
+} from "spectron";
 
-process.env.TEMP_USER_DATA = "true";
-const timeout = 30000;
-const shortcuts = ["element", "getAttribute", "getSource", "getText", "isExisting", "isVisible", "url", "click"];
+jest.setTimeout(10000);
 
-jest.setTimeout(timeout);
+export const startApp = () => {
+	const app = new Application({
+		path: electron,
+		args: ["dist/electron/main.js"],
+		startTimeout: 10000,
+		waitTimeout: 10000,
+	});
 
-export default {
-	async startApp(scope) {
-		scope.app = new Application({
-			path: electron,
-			args: ["dist/electron/main.js"],
-			startTimeout: 30000,
-			waitTimeout: timeout,
-		});
+	return app.start();
+}
 
-		const app = await scope.app.start();
-
-		shortcuts.forEach((shortcut) => {
-			scope[shortcut] = app.client[shortcut];
-		});
-
-		return app;
-	},
-	stopApp(scope) {
-		shortcuts.forEach((shortcut) => {
-			delete scope[shortcut];
-		});
-
-		if (scope.app && scope.app.isRunning()) {
-			return scope.app.stop();
-		}
-	},
-};
+export const stopApp = (app) => {
+	if (app && app.isRunning()) {
+		return app.stop();
+	}
+}

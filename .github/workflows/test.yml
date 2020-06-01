@@ -1,174 +1,211 @@
 name: Test & Build
 
 on:
-  push:
-    branches:
-      - "master"
-      - "staging"
-      - "develop"
-  pull_request:
-    types: [ready_for_review, synchronize, opened]
+    push:
+        branches:
+            - "master"
+            - "staging"
+            - "develop"
+    pull_request:
+        types: [ready_for_review, synchronize, opened]
 
 jobs:
-  lint-unit:
-    runs-on: ubuntu-latest
+    unit:
+        runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [12.x]
+        strategy:
+            matrix:
+                node-version: [12.x]
 
-    steps:
-      - uses: actions/checkout@v2
+        steps:
+            - uses: actions/checkout@v2
 
-      - name: Cache node modules
-        uses: actions/cache@v1
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: ${{ runner.os }}-node-
+            - name: Cache node modules
+              uses: actions/cache@v1
+              with:
+                  path: node_modules
+                  key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: ${{ runner.os }}-node-
 
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node-version }}
 
-      - name: Update System
-        run: sudo apt-get update
+            - name: Update System
+              run: sudo apt-get update
 
-      - name: Ledger
-        run: sudo apt-get install libudev-dev libusb-1.0-0-dev
+            - name: Ledger
+              run: sudo apt-get install libudev-dev libusb-1.0-0-dev
 
-      - name: Install
-        run: yarn global add node-gyp && yarn install --frozen-lockfile --ignore-engines && npm rebuild
+            - name: Install
+              run: yarn global add node-gyp && yarn install --frozen-lockfile --ignore-engines && npm rebuild
 
-      - name: Test
-        run: node --max-old-space-size=4096 ./node_modules/.bin/jest --config __tests__/unit.jest.conf.js __tests__/unit/ --logHeapUsage --coverage
+            - name: Test
+              run: yarn test:unit:coverage
 
-      - name: Codecov
-        run: ./node_modules/.bin/codecov --token=${{ secrets.CODECOV_TOKEN }}
+            - name: Codecov
+              run: ./node_modules/.bin/codecov --token=${{ secrets.CODECOV_TOKEN }}
 
-  build-linux:
-    runs-on: ubuntu-latest
+    e2e:
+        runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [12.x]
+        strategy:
+            matrix:
+                node-version: [12.x]
 
-    steps:
-      - uses: actions/checkout@v2
+        steps:
+            - uses: actions/checkout@v2
 
-      - name: Cache node modules
-        uses: actions/cache@v1
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: ${{ runner.os }}-node-
+            - name: Cache node modules
+              uses: actions/cache@v1
+              with:
+                  path: node_modules
+                  key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: ${{ runner.os }}-node-
 
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node-version }}
 
-      - name: Update System
-        run: sudo apt-get update
+            - name: Update System
+              run: sudo apt-get update
 
-      - name: Ledger
-        run: sudo apt-get install libudev-dev libusb-1.0-0-dev
+            - name: Ledger
+              run: sudo apt-get install libudev-dev libusb-1.0-0-dev
 
-      - name: Install
-        run: yarn global add node-gyp && yarn install --frozen-lockfile --ignore-engines
+            - name: Install
+              run: yarn global add node-gyp && yarn install --frozen-lockfile --ignore-engines && npm rebuild
 
-      - name: Re-build bcrypto
-        run: cd node_modules/bcrypto && npm install && cd ../../
+            - name: Test
+              run: yarn test:e2e
 
-      - name: Build
-        run: yarn build:linux
+            - name: Codecov
+              run: ./node_modules/.bin/codecov --token=${{ secrets.CODECOV_TOKEN }}
 
-      # - name: Upload .AppImage
-      #   uses: actions/upload-artifact@master
-      #   with:
-      #     name: ark-desktop-wallet-linux-2.9.1.AppImage
-      #     path: build/target/ark-desktop-wallet-linux-x86_64-2.9.1.AppImage
+    build-linux:
+        runs-on: ubuntu-latest
 
-      # - name: Upload .tar.gz
-      #   uses: actions/upload-artifact@master
-      #   with:
-      #     name: ark-desktop-wallet-linux-2.9.1.tar.gz
-      #     path: build/target/ark-desktop-wallet-linux-x64-2.9.1.tar.gz
+        strategy:
+            matrix:
+                node-version: [12.x]
 
-      - name: Upload .deb
-        uses: actions/upload-artifact@master
-        with:
-          name: ark-desktop-wallet-linux-2.9.1-${{ github.sha }}.deb
-          path: build/target/ark-desktop-wallet-linux-amd64-2.9.1.deb
+        steps:
+            - uses: actions/checkout@v2
 
-  build-macOS:
-    runs-on: macos-latest
+            - name: Cache node modules
+              uses: actions/cache@v1
+              with:
+                  path: node_modules
+                  key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: ${{ runner.os }}-node-
 
-    strategy:
-      matrix:
-        node-version: [12.x]
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node-version }}
 
-    steps:
-      - uses: actions/checkout@v2
+            - name: Update System
+              run: sudo apt-get update
 
-      - name: Cache node modules
-        uses: actions/cache@v1
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: ${{ runner.os }}-node-
+            - name: Ledger
+              run: sudo apt-get install libudev-dev libusb-1.0-0-dev
 
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
+            - name: Install
+              run: yarn global add node-gyp && yarn install --frozen-lockfile --ignore-engines
 
-      - name: Install
-        run: yarn global add node-gyp && yarn install --frozen-lockfile --ignore-engines
+            - name: Re-build bcrypto
+              run: cd node_modules/bcrypto && npm install && cd ../../
 
-      - name: Build
-        run: yarn build:mac
-        env:
-          SKIP_NOTARIZE: true
+            - name: Build
+              run: yarn build:linux
 
-      # - name: Upload .zip
-      #   uses: actions/upload-artifact@master
-      #   with:
-      #     name: ark-desktop-wallet-mac-2.9.1.zip
-      #     path: build/target/ark-desktop-wallet-mac-2.9.1.zip
+            # - name: Upload .AppImage
+            #   uses: actions/upload-artifact@master
+            #   with:
+            #     name: ark-desktop-wallet-linux-2.9.1.AppImage
+            #     path: build/target/ark-desktop-wallet-linux-x86_64-2.9.1.AppImage
 
-      - name: Upload .dmg
-        uses: actions/upload-artifact@v1
-        with:
-          name: ark-desktop-wallet-mac-2.9.1-${{ github.sha }}.dmg
-          path: build/target/ark-desktop-wallet-mac-2.9.1.dmg
+            # - name: Upload .tar.gz
+            #   uses: actions/upload-artifact@master
+            #   with:
+            #     name: ark-desktop-wallet-linux-2.9.1.tar.gz
+            #     path: build/target/ark-desktop-wallet-linux-x64-2.9.1.tar.gz
 
-  build-windows:
-    runs-on: windows-latest
+            - name: Upload .deb
+              uses: actions/upload-artifact@master
+              with:
+                  name: ark-desktop-wallet-linux-2.9.1-${{ github.sha }}.deb
+                  path: build/target/ark-desktop-wallet-linux-amd64-2.9.1.deb
 
-    strategy:
-      matrix:
-        node-version: [12.x]
+    build-macOS:
+        runs-on: macos-latest
 
-    steps:
-      - uses: actions/checkout@v2
+        strategy:
+            matrix:
+                node-version: [12.x]
 
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
+        steps:
+            - uses: actions/checkout@v2
 
-      - name: Install
-        run: yarn global add node-gyp && yarn install --frozen-lockfile --ignore-engines
-        shell: cmd
+            - name: Cache node modules
+              uses: actions/cache@v1
+              with:
+                  path: node_modules
+                  key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: ${{ runner.os }}-node-
 
-      - name: Build
-        run: yarn build:win
-        shell: cmd
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node-version }}
 
-      - name: Upload .exe
-        uses: actions/upload-artifact@v1
-        with:
-          name: ark-desktop-wallet-win-2.9.1-${{ github.sha }}.exe
-          path: build/target/ark-desktop-wallet-win-2.9.1.exe
+            - name: Install
+              run: yarn global add node-gyp && yarn install --frozen-lockfile --ignore-engines
+
+            - name: Build
+              run: yarn build:mac
+              env:
+                  SKIP_NOTARIZE: true
+
+            # - name: Upload .zip
+            #   uses: actions/upload-artifact@master
+            #   with:
+            #     name: ark-desktop-wallet-mac-2.9.1.zip
+            #     path: build/target/ark-desktop-wallet-mac-2.9.1.zip
+
+            - name: Upload .dmg
+              uses: actions/upload-artifact@v1
+              with:
+                  name: ark-desktop-wallet-mac-2.9.1-${{ github.sha }}.dmg
+                  path: build/target/ark-desktop-wallet-mac-2.9.1.dmg
+
+    build-windows:
+        runs-on: windows-latest
+
+        strategy:
+            matrix:
+                node-version: [12.x]
+
+        steps:
+            - uses: actions/checkout@v2
+
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node-version }}
+
+            - name: Install
+              run: yarn global add node-gyp && yarn install --frozen-lockfile --ignore-engines
+              shell: cmd
+
+            - name: Build
+              run: yarn build:win
+              shell: cmd
+
+            - name: Upload .exe
+              uses: actions/upload-artifact@v1
+              with:
+                  name: ark-desktop-wallet-win-2.9.1-${{ github.sha }}.exe
+                  path: build/target/ark-desktop-wallet-win-2.9.1.exe
