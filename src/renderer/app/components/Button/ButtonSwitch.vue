@@ -44,6 +44,7 @@
 
 		@Watch("isActive")
 		public onIsActiveChanged(isActive: boolean) {
+			console.log("called");
 			this.inputIsActive = isActive;
 		}
 

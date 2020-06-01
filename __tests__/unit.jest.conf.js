@@ -35,8 +35,8 @@ module.exports = {
 		"<rootDir>/node_modules/(?!vee-validate/dist/rules)",
 	],
 	snapshotSerializers: ["jest-serializer-vue"],
+	coverageDirectory: "<rootDir>/.coverage",
 	coverageReporters: ["json", "lcov", "text", "clover", "html"],
-	coverageDirectory: "<rootDir>/__tests__/unit/.coverage",
 	collectCoverageFrom: ["src/renderer/**/*.{js,ts,tsx,vue}"],
 	coveragePathIgnorePatterns: [
 		"i18n.ts",
