@@ -1,20 +1,28 @@
-import setup from "@setup";
+import packageJson from "@package.json";
+import { startApp, stopApp } from "@setup";
 
-import windowSpecs from "./pages/1-window.spec";
-import welcomeSpecs from "./pages/2-welcome.spec";
-import profileNewSpecs from "./pages/3-profile-new.spec";
+let app;
 
 describe("App", () => {
-	const scope = {};
+	beforeAll(async () => (app = await startApp()));
+	afterAll(() => stopApp(app));
 
-	beforeAll(async () => {
-		await setup.startApp(scope);
-		await scope.app.client.waitUntilWindowLoaded();
+	describe("Window", () => {
+		it("shows the proper application title", async () => {
+			const title = await app.client.getTitle();
+			expect(title.toLowerCase()).toContain(packageJson.build.productName.toLowerCase());
+		});
 	});
 
-	afterAll(() => setup.stopApp(scope));
+	describe("ProfileWelcome", () => {
+		it("click on create profile button", async () => {
+			const buttonText = await app.client.getText(".button-secondary");
+			expect(buttonText).toEqual("Create Profile");
 
-	describe("Window", () => windowSpecs(scope));
-	describe("Welcome", () => welcomeSpecs(scope));
-	describe("Profile new", () => profileNewSpecs(scope));
+			await app.client.click(".button-secondary").pause(200);
+
+			const headline = await app.client.getText("div");
+			expect(headline).toContain("Create a new Profile or login with your MarketSquare account to get started.");
+		});
+	});
 });
