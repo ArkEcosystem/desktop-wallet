@@ -33,7 +33,10 @@
 				>
 					<div class="relative px-6 sm:flex sm:items-center py-7">
 						<button class="absolute top-0 right-0 flex items-center justify-center w-6 h-6 p-1 mt-3">
-							<img src="@/assets/images/settings.svg" class="h-5" />
+							<SvgIcon
+								name="settings"
+								view-box="0 0 20 20"
+							/>
 						</button>
 
 						<div class="flex flex-row justify-between w-full">
@@ -91,9 +94,13 @@
 	import { Component, Vue } from "vue-property-decorator";
 
 	import { XButton } from "@/app/components/Button";
+	import { SvgIcon } from "@/app/components/SvgIcon";
 
 	@Component({
-		components: { XButton },
+		components: {
+			SvgIcon,
+			XButton,
+		},
 	})
 	export default class ProfileWelcome extends Vue {
 		profiles: Profile[] = [];

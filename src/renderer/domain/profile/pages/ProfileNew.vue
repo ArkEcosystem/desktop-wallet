@@ -46,7 +46,11 @@
 															class="flex items-center justify-center w-20 h-20 bg-blue-100 rounded-full"
 															@click="selectAvatar"
 														>
-															<img src="@/assets/images/upload_button.svg" class="h-5" />
+															<SvgIcon
+																class="text-blue-600"
+																name="upload"
+																view-box="0 0 20 20"
+															/>
 														</button>
 													</div>
 													<!-- TODO (BP): use for avatar: background-image: url("data:image/svg+xml...") -->
@@ -58,7 +62,10 @@
 														<button
 															class="absolute flex items-center justify-center w-6 h-6 p-1 bg-red-100 rounded -top-3 -right-3"
 														>
-															<img src="@/assets/images/close.svg" class="h-3" />
+															<SvgIcon
+																name="close"
+																view-box="0 0 12 12"
+															/>
 														</button>
 													</div>
 												</div>
@@ -189,15 +196,17 @@
 	import { XButton } from "@/app/components/Button";
 	import { FormError } from "@/app/components/Form";
 	import { ListDivided, ListDividedItem } from "@/app/components/ListDivided";
+	import { SvgIcon } from "@/app/components/SvgIcon";
 	import { Toggle } from "@/app/components/Toggle";
 
 	@Component({
 		components: {
-			XButton,
-			Toggle,
 			FormError,
 			ListDivided,
 			ListDividedItem,
+			SvgIcon,
+			Toggle,
+			XButton,
 		},
 	})
 	export default class ProfileNew extends Vue {
