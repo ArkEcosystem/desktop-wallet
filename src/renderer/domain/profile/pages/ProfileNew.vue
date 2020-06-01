@@ -39,7 +39,9 @@
 											>
 												<div class="flex flex-row mt-2">
 													<div class="flex items-center justify-center w-24 h-24 border-2 border-dashed border-gray-300 rounded mr-6">
-														<button class="w-20 h-20 bg-blue-100 rounded-full"></button>
+														<button class="flex items-center justify-center w-20 h-20 bg-blue-100 rounded-full">
+															<img src="@/assets/images/upload_button.svg" class="h-5" />
+														</button>
 													</div>
 													<!-- TODO (BP): use for avatar: background-image: url("data:image/svg+xml...") -->
 													<div class="w-24 h-24 relative bg-gray-400 rounded">
