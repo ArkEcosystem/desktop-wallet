@@ -3,7 +3,9 @@
 process.env.BABEL_ENV = "renderer";
 
 const path = require("path");
-const { dependencies } = require("../package.json");
+const {
+	dependencies
+} = require("../package.json");
 const webpack = require("webpack");
 const glob = require("glob-all");
 
@@ -12,7 +14,9 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const PurgecssPlugin = require("purgecss-webpack-plugin");
 const SpriteLoaderPlugin = require("svg-sprite-loader/plugin");
-const { VueLoaderPlugin } = require("vue-loader");
+const {
+	VueLoaderPlugin
+} = require("vue-loader");
 
 /**
  * List of node_modules to include in webpack bundle
@@ -39,8 +43,7 @@ let rendererConfig = {
 	},
 	externals: [...Object.keys(dependencies || {}).filter((d) => !whiteListedModules.includes(d))],
 	module: {
-		rules: [
-			{
+		rules: [{
 				test: /\.(js|vue|ts)$/,
 				enforce: "pre",
 				exclude: /node_modules/,
@@ -126,8 +129,7 @@ let rendererConfig = {
 					{
 						loader: "svgo-loader",
 						options: {
-							plugins: [
-								{
+							plugins: [{
 									convertColors: {
 										currentColor: true,
 									},
@@ -231,8 +233,7 @@ if (process.env.NODE_ENV === "production") {
 
 	rendererConfig.plugins.push(
 		new CopyWebpackPlugin({
-			patterns: [
-				{
+			patterns: [{
 					from: path.join(__dirname, "../static"),
 					to: path.join(__dirname, "../dist/electron/static"),
 					globOptions: {
@@ -246,13 +247,14 @@ if (process.env.NODE_ENV === "production") {
 						ignore: [".*"],
 					},
 				},
-				{
-					from: path.join(__dirname, "../src/renderer/workers"),
-					to: path.join(__dirname, "../dist/electron/workers"),
-					globOptions: {
-						ignore: [".*"],
-					},
-				},
+				// TODO: enable again when bip38 is done
+				// {
+				// 	from: path.join(__dirname, "../src/renderer/workers"),
+				// 	to: path.join(__dirname, "../dist/electron/workers"),
+				// 	globOptions: {
+				// 		ignore: [".*"],
+				// 	},
+				// },
 			],
 		}),
 		new webpack.DefinePlugin({
