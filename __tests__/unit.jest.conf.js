@@ -20,6 +20,7 @@ module.exports = {
 	preset: "ts-jest/presets/js-with-ts",
 	transform: {
 		"^.+\\.js$": "babel-jest",
+		"^.+\\.ts$": "babel-jest",
 		".*\\.vue$": "vue-jest",
 		"^.+\\.tsx?$": "ts-jest",
 		".+\\.(css|styl|less|sass|scss|svg|png|jpg|ttf|woff|woff2)$": "jest-transform-stub",

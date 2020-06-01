@@ -1,15 +1,15 @@
-import { mount } from "@vue/test-utils";
+import { shallowMount } from "@vue/test-utils";
 
-import Alert from "@/app/Alert/Alert.vue";
+import Alert from "@/app/components/Alert/Alert.vue";
 
 describe("Alert", () => {
 	it("should render", () => {
-		const wrapper = mount(Alert);
-		expect(wrapper.isVueInstance()).toBeTruthy();
+		const wrapper = shallowMount(Alert);
+		expect(wrapper.find(".Alert")).toBeTruthy();
 	});
 
 	it("should render with title", () => {
-		const wrapper = mount(Alert, {
+		const wrapper = shallowMount(Alert, {
 			propsData: {
 				title: "Test",
 			},
