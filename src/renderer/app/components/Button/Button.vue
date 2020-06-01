@@ -30,33 +30,33 @@ export default class Button extends Vue {
 	&-primary {
 		--color: theme('colors.blue.600');
 		--shadow-color: theme('colors.blue.200');
-		@apply bg-blue-600 text-blue-100;
+		@apply bg-blue-700 text-blue-100;
 	}
 
 	&-success {
 		--color: theme('colors.green.700');
 		--shadow-color: theme('colors.green.200');
-		@apply bg-green-600 text-green-100;
+		@apply bg-green-700 text-green-100;
 	}
 
 	&-danger {
 		--color: theme('colors.red.600');
 		--shadow-color: theme('colors.red.100');
-		@apply bg-red-400 text-white;
+		@apply bg-red-500 text-white;
 	}
 
 	&-light {
 		--color: theme('colors.gray.700');
 		--shadow-color: theme('colors.gray.200');
-		@apply bg-gray-500 text-gray-100;
+		@apply bg-gray-600 text-gray-100;
 	}
 }
 
 .Button--variant {
 	&-solid {
-		@apply bg-opacity-100;
+		--bg-opacity: 0.9;
 		&:not(:disabled):hover {
-			--bg-opacity: 0.9;
+			--bg-opacity: 1;
 			&:not(:focus) {
 				box-shadow: 2px 3px 10px 2px var(--shadow-color);
 			}
@@ -64,10 +64,10 @@ export default class Button extends Vue {
 	}
 
 	&-plain {
-		--bg-opacity: 0.15;
+		--bg-opacity: 0.1;
 		color: var(--color);
 		&:not(:disabled):hover {
-			--bg-opacity: 0.2;
+			--bg-opacity: 0.15;
 		}
 	}
 
@@ -76,7 +76,7 @@ export default class Button extends Vue {
 		color: var(--color);
 		box-shadow: 0 0 0 2px var(--shadow-color);
 		&:not(:disabled):hover {
-			opacity: 0.85;
+			--bg-opacity: 0.05;
 		}
 	}
 }

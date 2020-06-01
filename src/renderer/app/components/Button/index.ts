@@ -1,3 +1,3 @@
-import ButtonSwitch from "./ButtonSwitch.vue";
+import XButton from "./Button.vue";
 
-export { ButtonSwitch };
+export { XButton };

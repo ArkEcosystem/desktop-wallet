@@ -18,9 +18,9 @@
 				</div>
 
 				<div class="mx-4 mt-5 md:mx-8 xl:mx-16">
-					<button class="w-full button-primary">
+					<XButton class="w-full">
 						Login with MarketSquare
-					</button>
+					</XButton>
 					<div class="pt-4 mt-8 border-t border-gray-300"></div>
 				</div>
 
@@ -157,7 +157,7 @@
 												label-description="Want to set the wallet to dark mode?"
 												item-label-class="font-semibold text-gray-700"
 											>
-												<ButtonSwitch v-model="form.darkTheme" name="dark_theme" />
+												<Toggle v-model="form.darkTheme" name="dark_theme" />
 											</ListDividedItem>
 										</ListDivided>
 									</div>
@@ -167,12 +167,12 @@
 
 						<div class="mx-4 mt-5 mb-10 md:mx-8 xl:mx-16">
 							<div class="pt-4 mb-4 border-t border-gray-300 border-dashed"></div>
-							<button type="button" class="mr-2 button-secondary" @click="backToWelcome">
+							<XButton type="button" variant="plain" class="mr-2" @click="backToWelcome">
 								Back
-							</button>
-							<button type="submit" class="button-primary">
+							</XButton>
+							<XButton type="submit">
 								Complete
-							</button>
+							</XButton>
 						</div>
 					</form>
 				</ValidationObserver>
@@ -186,13 +186,15 @@
 	import { CURRENCIES, MARKET_PROVIDERS } from "@config";
 	import { Component, Vue } from "vue-property-decorator";
 
-	import { ButtonSwitch } from "@/app/components/Button";
+	import { XButton } from "@/app/components/Button";
 	import { FormError } from "@/app/components/Form";
 	import { ListDivided, ListDividedItem } from "@/app/components/ListDivided";
+	import { Toggle } from "@/app/components/Toggle";
 
 	@Component({
 		components: {
-			ButtonSwitch,
+			XButton,
+			Toggle,
 			FormError,
 			ListDivided,
 			ListDividedItem,
