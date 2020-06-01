@@ -1,10 +1,10 @@
 import { shallowMount } from "@vue/test-utils";
 
-import Splashscreen from "@/app/Splashscreen.vue";
+import SplashScreen from "@/app/SplashScreen.vue";
 
-describe("Splashscreen", () => {
+describe("SplashScreen", () => {
 	it("should render", () => {
-		const wrapper = shallowMount(Splashscreen, { mocks: { $t: (input) => input } });
+		const wrapper = shallowMount(SplashScreen, { mocks: { $t: (input) => input } });
 
 		expect(wrapper.html()).toMatchSnapshot();
 	});

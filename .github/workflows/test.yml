@@ -46,3 +46,39 @@ jobs:
 
             - name: Codecov
               run: ./node_modules/.bin/codecov --token=${{ secrets.CODECOV_TOKEN }}
+
+    e2e:
+        runs-on: macos-latest
+
+        strategy:
+            matrix:
+                node-version: [12.x]
+
+        steps:
+            - uses: actions/checkout@v2
+
+            - name: Cache node modules
+              uses: actions/cache@v1
+              with:
+                  path: node_modules
+                  key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: ${{ runner.os }}-node-
+
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node-version }}
+
+            - name: Install
+              run: yarn global add node-gyp && yarn install --frozen-lockfile --ignore-engines && npm rebuild
+
+            - name: Build
+              run: yarn build:mac
+              env:
+                  CSC_IDENTITY_AUTO_DISCOVERY: false
+                  SKIP_NOTARIZE: true
+
+            - name: Run headless test
+              uses: GabrielBB/xvfb-action@v1.2
+              with:
+                  run: yarn test:e2e
