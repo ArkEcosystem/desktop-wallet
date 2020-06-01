@@ -35,7 +35,10 @@
 
 						<div class="flex flex-row justify-between w-full">
 							<div class="flex items-center">
-								<img src="https://randomuser.me/api/portraits/men/3.jpg" class="block mx-auto sm:mx-0 sm:flex-shrink-0 h-12 rounded-full object-cover" />
+								<img
+									src="https://randomuser.me/api/portraits/men/3.jpg"
+									class="block mx-auto sm:mx-0 sm:flex-shrink-0 h-12 rounded-full object-cover"
+								/>
 								<div class="mt-4 sm:mt-0 sm:ml-4 text-center sm:text-left">
 									<p class="text-sm font-semibold text-gray-500">
 										Name
@@ -67,7 +70,10 @@
 
 						<div class="flex flex-row justify-between w-full">
 							<div class="flex items-center">
-								<img src="https://randomuser.me/api/portraits/women/21.jpg" class="block mx-auto sm:mx-0 sm:flex-shrink-0 h-12 rounded-full object-cover" />
+								<img
+									src="https://randomuser.me/api/portraits/women/21.jpg"
+									class="block mx-auto sm:mx-0 sm:flex-shrink-0 h-12 rounded-full object-cover"
+								/>
 								<div class="mt-4 sm:mt-0 sm:ml-4 text-center sm:text-left">
 									<p class="text-sm font-semibold text-gray-500">
 										Name
@@ -110,12 +116,12 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
+	import { Component, Vue } from "vue-property-decorator";
 
-@Component
-export default class ProfileWelcome extends Vue {
-  createProfile() {
-    this.$router.push({ name: "profiles.create" });
-  }
-}
+	@Component
+	export default class ProfileWelcome extends Vue {
+		createProfile() {
+			this.$router.push({ name: "profiles.create" });
+		}
+	}
 </script>

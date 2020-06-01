@@ -7,17 +7,16 @@ import VTooltip from "v-tooltip";
 import Vue from "vue";
 import VueGoodTablePlugin from "vue-good-table";
 
-import i18n from "@/i18n";
-import router from "@/router";
-import store from "@/store";
+import App from "@/app/App";
+import i18n from "@/app/i18n";
+import router from "@/app/router";
+import store from "@/app/store";
 import directives from "@/support/directives";
 import filters from "@/support/filters";
 import mixins from "@/support/mixins";
 import env from "@/support/plugins/env";
 import eventBus from "@/support/plugins/event-bus";
 import http from "@/support/plugins/http-client";
-
-import App from "./App";
 
 Vue.config.productionTip = false;
 Vue.logger = Vue.prototype.$logger = logger;

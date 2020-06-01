@@ -1,18 +1,18 @@
 <template>
-	<div class="SplashScreen bg-default-background absolute h-full w-full flex flex-col text-center select-none">
-		<div class="flex flex-1 justify-center">
-			<div class="flex rounded-lg mb-3 p-5 bg-red-logo m-auto">
+	<div class="absolute flex flex-col w-full h-full text-center select-none SplashScreen bg-default-background">
+		<div class="flex justify-center flex-1">
+			<div class="flex p-5 m-auto mb-3 rounded-lg bg-red-logo">
 				<img src="@/assets/images/ark-logo.png" class="h-12" />
 			</div>
 		</div>
 
 		<div class="flex-inline">
-			<div class="text-4xl mb-4">
+			<div class="mb-4 text-4xl">
 				<span class="font-semibold">{{ $t("COMMON.ARK") }}</span>
 				{{ $t("COMMON.DESKTOP_WALLET") }}
 			</div>
 
-			<div class="text-sm mb-2">
+			<div class="mb-2 text-sm">
 				{{ $t("COMMON.INITIALIZING") }}
 			</div>
 		</div>
@@ -56,31 +56,31 @@
 			</svg>
 		</div>
 
-		<div class="flex-inline text-sm pb-4">
+		<div class="pb-4 text-sm flex-inline">
 			{{ `${$t("COMMON.VERSION")} ${version}` }}
 		</div>
 	</div>
 </template>
 
 <script lang="ts">
-import "@/styles/style.css";
+	import "@/styles/style.css";
 
-import { Component, Vue } from "vue-property-decorator";
+	import { Component, Vue } from "vue-property-decorator";
 
-import packageJson from "../../package.json";
+	import packageJson from "../../../package.json";
 
-@Component({
-	name: "SplashScreen",
-})
-export default class SplashScreen extends Vue {
-	get version() {
-		return packageJson.version;
+	@Component({
+		name: "SplashScreen",
+	})
+	export default class SplashScreen extends Vue {
+		get version() {
+			return packageJson.version;
+		}
 	}
-}
 </script>
 
 <style scoped>
-.SplashScreen {
-	color: #3c4249;
-}
+	.SplashScreen {
+		color: #3c4249;
+	}
 </style>
