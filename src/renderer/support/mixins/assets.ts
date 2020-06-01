@@ -2,7 +2,7 @@ import { ImageManager } from "@/support/services/image-manager";
 
 const imageManager = new ImageManager();
 
-export const assets = {
+export default {
 	methods: {
 		assets_loadImage(source: string) {
 			try {

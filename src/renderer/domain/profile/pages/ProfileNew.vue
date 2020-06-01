@@ -3,7 +3,7 @@
 		<div class="px-4 sm:px-6 lg:px-8">
 			<div class="flex items-center h-20 md:h-24">
 				<div class="flex p-2 rounded-lg bg-red-logo">
-					<img src="@/assets/images/ark-logo.png" class="h-6 md:h-8 lg:h-10" />
+					<img :src="assets_loadImage('ark-logo.png')" class="h-6 md:h-8 lg:h-10" />
 				</div>
 			</div>
 		</div>
