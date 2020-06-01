@@ -34,19 +34,28 @@
 											<ListDividedItem
 												label="New Profile"
 												label-description="Select Profile Image"
-												item-label-class="text-2xl text-black font-semibold"
-												item-label-description-class="text-sm text-gray-700 font-semibold"
+												item-label-class="text-2xl font-semibold text-black"
+												item-label-description-class="text-sm font-semibold text-gray-700"
 											>
 												<div class="flex flex-row mt-2">
-													<div class="flex items-center justify-center w-24 h-24 border-2 border-dashed border-gray-300 rounded mr-6">
-														<button class="flex items-center justify-center w-20 h-20 bg-blue-100 rounded-full">
+													<div
+														class="flex items-center justify-center w-24 h-24 mr-6 border-2 border-gray-300 border-dashed rounded"
+													>
+														<button
+															class="flex items-center justify-center w-20 h-20 bg-blue-100 rounded-full"
+														>
 															<img src="@/assets/images/upload_button.svg" class="h-5" />
 														</button>
 													</div>
 													<!-- TODO (BP): use for avatar: background-image: url("data:image/svg+xml...") -->
-													<div class="w-24 h-24 relative bg-gray-400 rounded">
-														<img src="https://randomuser.me/api/portraits/men/3.jpg" class="object-cover rounded" />
-														<button class="flex items-center justify-center bg-red-100 absolute -top-3 -right-3 w-6 h-6 p-1 rounded">
+													<div class="relative w-24 h-24 bg-gray-400 rounded">
+														<img
+															src="https://randomuser.me/api/portraits/men/3.jpg"
+															class="object-cover rounded"
+														/>
+														<button
+															class="absolute flex items-center justify-center w-6 h-6 p-1 bg-red-100 rounded -top-3 -right-3"
+														>
 															<img src="@/assets/images/close.svg" class="h-3" />
 														</button>
 													</div>
@@ -80,7 +89,9 @@
 									<div class="w-full">
 										<validation-provider v-slot="{ errors }" rules="required">
 											<div class="input-group">
-												<label for="default-price-provider" class="input-label">Default Price Provider</label>
+												<label for="default-price-provider" class="input-label"
+													>Default Price Provider</label
+												>
 												<div class="input-wrapper">
 													<select
 														name="default-price-provider"
@@ -132,7 +143,7 @@
 											<ListDividedItem
 												label="Dark Theme"
 												label-description="Want to set the wallet to dark mode?"
-												item-label-class="text-gray-700 font-semibold"
+												item-label-class="font-semibold text-gray-700"
 											>
 												<ButtonSwitch />
 											</ListDividedItem>
@@ -159,34 +170,34 @@
 </template>
 
 <script lang="ts">
-import { ValidationObserver, ValidationProvider } from "vee-validate/dist/vee-validate.full.esm";
-import { Component, Vue } from "vue-property-decorator";
+	import { ValidationObserver, ValidationProvider } from "vee-validate/dist/vee-validate.full.esm";
+	import { Component, Vue } from "vue-property-decorator";
 
-import { ButtonSwitch } from "@/app/Button";
-import { ListDivided, ListDividedItem } from "@/app/ListDivided";
+	import { ButtonSwitch } from "@/app/components/Button";
+	import { ListDivided, ListDividedItem } from "@/app/components/ListDivided";
 
-@Component({
-	components: {
-		ButtonSwitch,
-		ListDivided,
-		ListDividedItem,
-		ValidationObserver,
-		ValidationProvider,
-	},
-})
-export default class ProfileNew extends Vue {
-	form = {
-		name: null,
-		provider: null,
-		currency: null,
-	};
+	@Component({
+		components: {
+			ButtonSwitch,
+			ListDivided,
+			ListDividedItem,
+			ValidationObserver,
+			ValidationProvider,
+		},
+	})
+	export default class ProfileNew extends Vue {
+		form = {
+			name: null,
+			provider: null,
+			currency: null,
+		};
 
-	backToWelcome() {
-		this.$router.push({ name: "profiles.welcome" });
+		backToWelcome() {
+			this.$router.push({ name: "profiles.welcome" });
+		}
+
+		async onSubmit() {
+			// TODO: create a profile and store the settings on it
+		}
 	}
-
-	async onSubmit() {
-		// TODO: create a profile and store the settings on it
-	}
-}
 </script>

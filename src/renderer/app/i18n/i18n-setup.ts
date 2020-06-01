@@ -1,7 +1,7 @@
 import { I18N } from "@config";
 import { readFileSync } from "fs";
 
-import i18n from "@/i18n";
+import i18n from "@/app/i18n";
 
 const loadedLanguages = {
 	[I18N.defaultLocale]: true,

@@ -24,11 +24,11 @@ module.exports = {
 				"-64": "-16rem",
 			},
 			colors: {
-        "theme-page-text": "var(--theme-page-text)",
-        "theme-page-text-light": "var(--theme-page-text-light)",
-        "theme-line-separator": "var(--theme-line-separator)",
-        "theme-switch-button": "var(--theme-switch-button)",
-        "theme-switch-button-circle": "var(--theme-switch-button-circle)",
+				"theme-page-text": "var(--theme-page-text)",
+				"theme-page-text-light": "var(--theme-page-text-light)",
+				"theme-line-separator": "var(--theme-line-separator)",
+				"theme-switch-button": "var(--theme-switch-button)",
+				"theme-switch-button-circle": "var(--theme-switch-button-circle)",
 
 				black: "#1e212b",
 
