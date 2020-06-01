@@ -78,6 +78,9 @@ jobs:
             - name: Install
               run: yarn global add node-gyp && yarn install --frozen-lockfile --ignore-engines && npm rebuild
 
+            - name: Pack
+              run: yarn pack
+
             - name: Test
               run: yarn test:e2e
 
