@@ -21,4 +21,4 @@ for (const property of ["messages", "dateTimeFormats", "numberFormats"]) {
 	config[property][language.locale] = language[property];
 }
 
-export default new VueI18n(config);
+export const i18n = new VueI18n(config);

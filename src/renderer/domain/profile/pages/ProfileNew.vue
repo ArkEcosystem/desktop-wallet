@@ -24,7 +24,7 @@
 					<div class="pt-4 mt-8 border-t border-gray-300"></div>
 				</div>
 
-				<validation-observer v-slot="{ handleSubmit, reset }">
+				<ValidationObserver v-slot="{ handleSubmit, reset }">
 					<form @submit.prevent="handleSubmit(onSubmit)" @reset.prevent="reset">
 						<div class="mx-4 mt-5 md:mx-8 xl:mx-16">
 							<div class="mb-4">
@@ -42,7 +42,9 @@
 														class="flex items-center justify-center w-24 h-24 mr-6 border-2 border-gray-300 border-dashed rounded"
 													>
 														<button
+															type="button"
 															class="flex items-center justify-center w-20 h-20 bg-blue-100 rounded-full"
+															@click="selectAvatar"
 														>
 															<img src="@/assets/images/upload_button.svg" class="h-5" />
 														</button>
@@ -69,17 +71,21 @@
 							<div class="mb-4">
 								<div class="flex flex-1">
 									<div class="w-full">
-										<validation-provider v-slot="{ errors }" rules="required">
+										<ValidationProvider v-slot="{ errors }" rules="required">
 											<div class="input-group">
 												<label for="name" class="input-label">Name</label>
 												<div class="input-wrapper">
-													<input type="text" class="input-text" />
+													<input
+														v-model="form.name"
+														type="text"
+														class="input-text"
+														name="name"
+													/>
 												</div>
 
-												<!-- TODO: add error styling -->
-												<span>{{ errors[0] }}</span>
+												<FormError :errors="errors" />
 											</div>
-										</validation-provider>
+										</ValidationProvider>
 									</div>
 								</div>
 							</div>
@@ -87,26 +93,28 @@
 							<div class="mb-4">
 								<div class="flex flex-1">
 									<div class="w-full">
-										<validation-provider v-slot="{ errors }" rules="required">
+										<ValidationProvider v-slot="{ errors }" rules="required">
 											<div class="input-group">
-												<label for="default-price-provider" class="input-label"
-													>Price Provider</label
-												>
+												<label for="market_provider" class="input-label">Market Provider</label>
 												<div class="input-wrapper">
 													<select
-														name="default-price-provider"
+														v-model="form.marketProvider"
+														name="market_provider"
 														class="block w-full py-3 pl-4 pr-8 form-select"
 													>
-														<option value="">
-															CoinGecko
+														<option
+															v-for="(value, key) in allowedMarketProviders"
+															:key="key"
+															:value="key"
+														>
+															{{ value }}
 														</option>
 													</select>
 												</div>
 
-												<!-- TODO: add error styling -->
-												<span>{{ errors[0] }}</span>
+												<FormError :errors="errors" />
 											</div>
-										</validation-provider>
+										</ValidationProvider>
 									</div>
 								</div>
 							</div>
@@ -114,24 +122,28 @@
 							<div class="mb-4">
 								<div class="flex flex-1">
 									<div class="w-full">
-										<validation-provider v-slot="{ errors }" rules="required">
+										<ValidationProvider v-slot="{ errors }" rules="required">
 											<div class="input-group">
-												<label for="name" class="input-label">Currency</label>
+												<label for="currency" class="input-label">Currency</label>
 												<div class="input-wrapper">
 													<select
-														name="default-price-provider"
+														v-model="form.currency"
+														name="currency"
 														class="block w-full py-3 pl-4 pr-8 form-select"
 													>
-														<option value="">
-															USD
+														<option
+															v-for="(value, key) in allowedCurrencies"
+															:key="key"
+															:value="key"
+														>
+															{{ value }}
 														</option>
 													</select>
 												</div>
 
-												<!-- TODO: add error styling -->
-												<span>{{ errors[0] }}</span>
+												<FormError :errors="errors" />
 											</div>
-										</validation-provider>
+										</ValidationProvider>
 									</div>
 								</div>
 							</div>
@@ -145,7 +157,7 @@
 												label-description="Want to set the wallet to dark mode?"
 												item-label-class="font-semibold text-gray-700"
 											>
-												<ButtonSwitch />
+												<ButtonSwitch v-model="form.darkTheme" name="dark_theme" />
 											</ListDividedItem>
 										</ListDivided>
 									</div>
@@ -163,44 +175,86 @@
 							</button>
 						</div>
 					</form>
-				</validation-observer>
+				</ValidationObserver>
 			</div>
 		</div>
 	</div>
 </template>
 
 <script lang="ts">
-	import { ValidationObserver, ValidationProvider } from "vee-validate";
+	import { Enums, Profile } from "@arkecosystem/platform-sdk-profiles";
+	import { CURRENCIES, MARKET_PROVIDERS } from "@config";
 	import { Component, Vue } from "vue-property-decorator";
 
 	import { ButtonSwitch } from "@/app/components/Button";
+	import { FormError } from "@/app/components/Form";
 	import { ListDivided, ListDividedItem } from "@/app/components/ListDivided";
 
 	@Component({
 		components: {
 			ButtonSwitch,
+			FormError,
 			ListDivided,
 			ListDividedItem,
-			ValidationObserver,
-			ValidationProvider,
 		},
 	})
 	export default class ProfileNew extends Vue {
 		form = {
-			name: null,
-			provider: null,
-			currency: null,
+			name: "",
+			marketProvider: "coingecko",
+			currency: "btc",
+			darkTheme: false,
 		};
 
+		created() {
+			this.form.darkTheme =
+				(window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) || false;
+		}
+
+		selectAvatar() {
+			// TODO: implement
+		}
+
+		/**
+		 * TODO:
+		 * - support more settings during setup?
+		 * - let user select time locale
+		 * - let user select date locale
+		 * - let user select bip39 locale
+		 */
+		async onSubmit() {
+			const profile: Profile = await this.$profiles.push(this.form.name);
+
+			await profile.settings().set(Enums.ProfileSetting.MarketProvider, this.form.marketProvider);
+			await profile.settings().set(Enums.ProfileSetting.ChartCurrency, this.form.currency);
+			await profile.settings().set(Enums.ProfileSetting.Theme, this.form.darkTheme ? "dark" : "light");
+
+			this.resetForm();
+
+			// TODO: redirect to the onboarding page
+		}
+
 		backToWelcome() {
+			this.resetForm();
+
 			this.$router.push({ name: "profiles.welcome" });
 		}
 
-		async onSubmit() {
-			console.log(this.form);
+		get allowedMarketProviders() {
+			return MARKET_PROVIDERS;
+		}
 
-			await this.$profiles.all();
-			// TODO: create a profile and store the settings on it
+		get allowedCurrencies() {
+			return CURRENCIES;
+		}
+
+		private resetForm() {
+			this.form = {
+				name: "",
+				marketProvider: "coingecko",
+				currency: "btc",
+				darkTheme: false,
+			};
 		}
 	}
 </script>
