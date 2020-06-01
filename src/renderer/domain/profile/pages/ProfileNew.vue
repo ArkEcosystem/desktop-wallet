@@ -45,6 +45,7 @@
 													</div>
 													<!-- TODO (BP): use for avatar: background-image: url("data:image/svg+xml...") -->
 													<div class="w-24 h-24 relative bg-gray-400 rounded">
+														<img src="https://randomuser.me/api/portraits/men/3.jpg" class="object-cover rounded" />
 														<button class="flex items-center justify-center bg-red-100 absolute -top-3 -right-3 w-6 h-6 p-1 rounded">
 															<img src="@/assets/images/close.svg" class="h-3" />
 														</button>
