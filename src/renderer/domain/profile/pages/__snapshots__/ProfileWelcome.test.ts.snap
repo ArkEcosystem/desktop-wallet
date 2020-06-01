@@ -16,11 +16,14 @@ exports[`ProfileWelcome should render without profiles 1`] = `
     <div class="mx-4 mt-8 mb-4 text-gray-700 md:mx-8 xl:mx-16">
       Create a new Profile or login with your MarketSquare account to get started
     </div>
-    <div class="flex justify-center w-full mb-10"><button type="button" class="w-1/5 mr-2 button-primary">
+    <div class="flex justify-center w-full mb-10">
+      <xbutton-stub type="button" class="w-1/5 mr-2">
         Sign in to MarketSquare
-      </button> <button type="button" class="w-1/5 button-secondary">
+      </xbutton-stub>
+      <xbutton-stub type="button" variant="plain" class="w-1/5">
         Create Profile
-      </button></div>
+      </xbutton-stub>
+    </div>
   </div>
 </div>
 `;

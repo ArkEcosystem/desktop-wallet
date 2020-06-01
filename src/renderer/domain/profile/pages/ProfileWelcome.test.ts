@@ -13,6 +13,8 @@ const createStubbedVue = () => {
 			},
 		},
 		stubs: {
+			XButton: true,
+			Toggle: true,
 			ProfileWelcome: true,
 		},
 		sync: false,
