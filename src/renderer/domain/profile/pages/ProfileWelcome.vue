@@ -2,7 +2,7 @@
 	<div class="w-full h-full bg-white">
 		<div class="px-4 sm:px-6 lg:px-8">
 			<div class="flex items-center h-20 md:h-24">
-				<div class="flex p-2 rounded-lg bg-red">
+				<div class="flex p-2 rounded-lg bg-red-logo">
 					<img src="@/assets/images/ark-logo.png" class="h-6 md:h-8 lg:h-10" />
 				</div>
 			</div>
@@ -26,6 +26,72 @@
 						You already have a profile, you can choose any of them
 					</div>
 				</div>
+
+				<div class="max-w-lg mx-auto mb-3 bg-white border-2 border-gray-300 rounded-lg overflow-hidden">
+					<div class="sm:flex sm:items-center px-6 py-7 relative">
+						<button class="flex items-center justify-center absolute top-0 right-0 w-6 h-6 mt-3 p-1">
+							<img src="@/assets/images/settings.svg" class="h-5" />
+						</button>
+
+						<div class="flex flex-row justify-between w-full">
+							<div class="flex items-center">
+								<img src="https://randomuser.me/api/portraits/men/3.jpg" class="block mx-auto sm:mx-0 sm:flex-shrink-0 h-12 rounded-full object-cover" />
+								<div class="mt-4 sm:mt-0 sm:ml-4 text-center sm:text-left">
+									<p class="text-sm font-semibold text-gray-500">
+										Name
+									</p>
+									<p class="font-semibold text-black">
+										ROBank
+									</p>
+								</div>
+							</div>
+							<div class="flex items-center">
+								<div class="mt-4 sm:mt-0 sm:ml-4 text-center sm:text-right">
+									<p class="text-sm font-semibold text-gray-500">
+										Total Balance
+									</p>
+									<p class="font-semibold text-black">
+										234,500.46 USD
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="max-w-lg mx-auto bg-white border-2 border-gray-300 rounded-lg overflow-hidden">
+					<div class="sm:flex sm:items-center px-6 py-7 relative">
+						<button class="flex items-center justify-center absolute top-0 right-0 w-6 h-6 mt-3 p-1">
+							<img src="@/assets/images/settings.svg" class="h-5" />
+						</button>
+
+						<div class="flex flex-row justify-between w-full">
+							<div class="flex items-center">
+								<img src="https://randomuser.me/api/portraits/women/21.jpg" class="block mx-auto sm:mx-0 sm:flex-shrink-0 h-12 rounded-full object-cover" />
+								<div class="mt-4 sm:mt-0 sm:ml-4 text-center sm:text-left">
+									<p class="text-sm font-semibold text-gray-500">
+										Name
+									</p>
+									<p class="font-semibold text-black">
+										OLEBank
+									</p>
+								</div>
+							</div>
+							<div class="flex items-center">
+								<div class="mt-4 sm:mt-0 sm:ml-4 text-center sm:text-right">
+									<p class="text-sm font-semibold text-gray-500">
+										Total Balance
+									</p>
+									<p class="font-semibold text-black">
+										234,500.46 USD
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="max-w-lg mx-auto mt-10 border-t border-gray-300"></div>
 			</div>
 
 			<div class="mx-4 mt-8 mb-4 text-gray-700 md:mx-8 xl:mx-16">
@@ -48,8 +114,8 @@ import { Component, Vue } from "vue-property-decorator";
 
 @Component
 export default class ProfileWelcome extends Vue {
-	createProfile() {
-		this.$router.push({ name: "profiles.create" });
-	}
+  createProfile() {
+    this.$router.push({ name: "profiles.create" });
+  }
 }
 </script>

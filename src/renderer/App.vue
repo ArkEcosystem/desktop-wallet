@@ -1,6 +1,6 @@
 <template>
-	<div id="app">
-		<router-view></router-view>
+	<div id="app" class="theme-light">
+		<router-view />
 	</div>
 </template>
 
@@ -9,6 +9,6 @@ import "@/styles/style.css";
 
 import { Component, Vue } from "vue-property-decorator";
 
-@Component({})
+@Component
 export default class App extends Vue {}
 </script>
