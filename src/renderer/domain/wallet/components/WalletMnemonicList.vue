@@ -1,9 +1,9 @@
 <template>
 	<ul class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 row-gap-5 col-gap-3">
 		<li
-			data-testid="WalletMnemonicList__item"
 			v-for="(word, index) in mnemonic"
 			:key="word"
+			data-testid="WalletMnemonicList__item"
 			class="rounded border border-gray-300 relative px-3 py-3"
 		>
 			<span
