@@ -1,4 +1,4 @@
-import { select,withKnobs } from "@storybook/addon-knobs";
+import { select, withKnobs } from "@storybook/addon-knobs";
 
 import XButton from "./Button.vue";
 
@@ -8,7 +8,7 @@ export const Default = () => ({
 	components: { XButton },
 	props: {
 		size: {
-			default: select('Size', ['small', 'default', 'large'], 'default')
+			default: select("Size", ["small", "default", "large"], "default"),
 		},
 	},
 	template: `
@@ -34,8 +34,8 @@ export const Default = () => ({
 				<XButton color="light" variant="outline" :size="size">Light</XButton>
 			</div>
 		</div>
-	`
-})
+	`,
+});
 
 export const Circle = () => ({
 	components: { XButton },
@@ -46,8 +46,8 @@ export const Circle = () => ({
 			<XButton color="danger" variant="plain" shape="circle">Ѧ</XButton>
 			<XButton color="light" variant="plain" shape="circle">Ѧ</XButton>
 		</div>
-	`
-})
+	`,
+});
 
 export const Disabled = () => ({
 	components: { XButton },
@@ -56,5 +56,5 @@ export const Disabled = () => ({
 			<XButton color="primary" disabled>Disabled</XButton>
 			<XButton color="primary" shape="circle" disabled>Ѧ</XButton>
 		</div>
-	`
-})
+	`,
+});

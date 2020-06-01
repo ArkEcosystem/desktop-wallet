@@ -93,7 +93,7 @@
 	import { XButton } from "@/app/components/Button";
 
 	@Component({
-		components: { XButton }
+		components: { XButton },
 	})
 	export default class ProfileWelcome extends Vue {
 		profiles: Profile[] = [];

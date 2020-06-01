@@ -1,5 +1,5 @@
 <template>
-	<label class="Toggle" :class="{'Toggle--checked': inputChecked, 'Toggle--disabled': disabled}">
+	<label class="Toggle" :class="{ 'Toggle--checked': inputChecked, 'Toggle--disabled': disabled }">
 		<input type="checkbox" class="Toggle__input sr-only" :checked="model" :disabled="disabled" @change="toggle" />
 		<div
 			aria-hidden="true"
@@ -13,57 +13,57 @@
 </template>
 
 <script lang="ts">
-import { Component, Model, Prop, Vue, Watch } from "vue-property-decorator";
+	import { Component, Model, Prop, Vue, Watch } from "vue-property-decorator";
 
-@Component({
-	data: (vm: Toggle) => ({
-		inputChecked: vm.checked,
-	}),
-})
-export default class Toggle extends Vue {
-	@Model("change", { default: false }) public checked!: boolean;
-	@Prop({ default: false }) public disabled!: boolean;
+	@Component({
+		data: (vm: Toggle) => ({
+			inputChecked: vm.checked,
+		}),
+	})
+	export default class Toggle extends Vue {
+		@Model("change", { default: false }) public checked!: boolean;
+		@Prop({ default: false }) public disabled!: boolean;
 
-	private inputChecked!: boolean;
+		private inputChecked!: boolean;
 
-	get model() {
-		return this.inputChecked;
+		get model() {
+			return this.inputChecked;
+		}
+
+		set model(value: boolean) {
+			this.inputChecked = value;
+			this.$emit("change", value);
+		}
+
+		@Watch("checked")
+		public onCheckedChanged(checked: boolean) {
+			this.inputChecked = checked;
+		}
+
+		public toggle() {
+			this.model = !this.model;
+		}
 	}
-
-	set model(value: boolean) {
-		this.inputChecked = value;
-		this.$emit("change", value);
-	}
-
-	@Watch("checked")
-	public onCheckedChanged(checked: boolean) {
-		this.inputChecked = checked;
-	}
-
-	public toggle() {
-		this.model = !this.model;
-	}
-}
 </script>
 
 <style lang="postcss" scoped>
-.Toggle--checked .Toggle__handle__inner {
-	@apply translate-x-full bg-blue-600;
-}
-
-.Toggle--disabled {
-	.Toggle__handle {
-		@apply cursor-not-allowed;
+	.Toggle--checked .Toggle__handle__inner {
+		@apply translate-x-full bg-blue-600;
 	}
 
-	.Toggle__handle__inner {
-		@apply border border-4 bg-white;
-	}
-}
+	.Toggle--disabled {
+		.Toggle__handle {
+			@apply cursor-not-allowed;
+		}
 
-.Toggle__input:focus + .Toggle__handle {
-	.Toggle__handle__inner {
-		@apply shadow-outline;
+		.Toggle__handle__inner {
+			@apply border border-4 bg-white;
+		}
 	}
-}
+
+	.Toggle__input:focus + .Toggle__handle {
+		.Toggle__handle__inner {
+			@apply shadow-outline;
+		}
+	}
 </style>

@@ -10,19 +10,19 @@ describe("Toggle", () => {
 
 	it("should toggle on click", () => {
 		const wrapper = shallowMount(Toggle);
-		wrapper.trigger('click');
-		wrapper.trigger('click');
-		expect(wrapper.emitted().change).toEqual([[true],[false]]);
+		wrapper.trigger("click");
+		wrapper.trigger("click");
+		expect(wrapper.emitted().change).toEqual([[true], [false]]);
 		expect(wrapper.html()).toMatchSnapshot();
 	});
 
 	it("should be disabled", () => {
 		const wrapper = shallowMount(Toggle, {
 			propsData: {
-				disabled: true
-			}
+				disabled: true,
+			},
 		});
-		wrapper.trigger('click');
+		wrapper.trigger("click");
 		expect(wrapper.emitted().change).toBeUndefined();
 		expect(wrapper.html()).toMatchSnapshot();
 	});
@@ -30,8 +30,8 @@ describe("Toggle", () => {
 	it("should toggle by prop", async () => {
 		const wrapper = shallowMount(Toggle, {
 			propsData: {
-				checked: true
-			}
+				checked: true,
+			},
 		});
 		expect(wrapper.find("input:checked").exists()).toBeTruthy();
 		wrapper.setProps({ checked: false });

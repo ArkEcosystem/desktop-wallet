@@ -19,4 +19,4 @@ describe("Button", () => {
 		wrapper.trigger("click");
 		expect(wrapper.emitted()).not.toBeUndefined();
 	});
-})
+});
