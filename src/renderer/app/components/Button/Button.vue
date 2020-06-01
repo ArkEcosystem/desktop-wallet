@@ -1,7 +1,7 @@
 <template>
 	<button
 		:class="['Button--color-' + color, 'Button--variant-' + variant, 'Button--shape-' + shape, 'Button--size-' + size]"
-		class="Button border border-transparent focus:shadow-outline font-semibold text-center transition-all ease-linear duration-100"
+		class="Button focus:shadow-outline font-semibold text-center transition-all ease-linear duration-100"
 		v-bind="$attrs"
 		v-on="$listeners"
 	>

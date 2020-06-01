@@ -1,6 +1,6 @@
 <template>
-	<label class="Toggle">
-		<input type="checkbox" class="Toggle__input sr-only" :checked="model" @change="toggle" :disabled="disabled" />
+	<label class="Toggle" :class="{'Toggle--checked': inputChecked, 'Toggle--disabled': disabled}">
+		<input type="checkbox" class="Toggle__input sr-only" :checked="model" :disabled="disabled" @change="toggle" />
 		<div
 			aria-hidden="true"
 			class="Toggle__handle inline-flex rounded-full relative h-2 w-10 cursor-pointer bg-gray-300"
@@ -47,21 +47,23 @@ export default class Toggle extends Vue {
 </script>
 
 <style lang="postcss" scoped>
-.Toggle__input {
-	&:checked + .Toggle__handle {
-		.Toggle__handle__inner {
-			@apply translate-x-full bg-blue-600;
-		}
+.Toggle--checked .Toggle__handle__inner {
+	@apply translate-x-full bg-blue-600;
+}
+
+.Toggle--disabled {
+	.Toggle__handle {
+		@apply cursor-not-allowed;
 	}
 
-	&:focus + .Toggle__handle {
-		.Toggle__handle__inner {
-			@apply shadow-outline;
-		}
+	.Toggle__handle__inner {
+		@apply border border-4 bg-white;
 	}
+}
 
-	&:disabled + .Toggle__handle {
-		@apply opacity-50 cursor-not-allowed;
+.Toggle__input:focus + .Toggle__handle {
+	.Toggle__handle__inner {
+		@apply shadow-outline;
 	}
 }
 </style>
