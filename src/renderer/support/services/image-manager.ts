@@ -19,3 +19,9 @@ export class ImageManager {
 		}
 	}
 }
+
+if (process.env.NODE_ENV !== "test") {
+	// Load all SVGs to be injected into the browser
+	const svgs = require.context("@/assets/svg", true, /\.svg$/);
+	svgs.keys().forEach(svgs);
+}
