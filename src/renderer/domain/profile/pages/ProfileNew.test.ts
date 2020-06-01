@@ -1,6 +1,6 @@
 import { Enums } from "@arkecosystem/platform-sdk-profiles";
 import { createLocalVue, mount } from "@vue/test-utils";
-import flushPromises from "flush-promises";
+import * as flushPromises from "flush-promises";
 import { ValidationObserver, ValidationProvider } from "vee-validate/dist/vee-validate.full";
 
 import ProfileNew from "@/domain/profile/pages/ProfileNew.vue";

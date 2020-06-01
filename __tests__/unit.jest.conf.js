@@ -2,6 +2,9 @@ module.exports = {
 	verbose: false,
 	globals: {
 		__static: __dirname,
+		"ts-jest": {
+			packageJson: "../package.json",
+		},
 		"vue-jest": {
 			hideStyleWarn: true,
 		},
@@ -21,7 +24,7 @@ module.exports = {
 	transform: {
 		".+\\.(css|styl|less|sass|scss|svg|png|jpg|ttf|woff|woff2)$": "jest-transform-stub",
 		"^.+\\.js$": "babel-jest",
-		"^.+\\.ts$": "babel-jest",
+		"^.+\\.ts$": "ts-jest",
 		"^.+\\.tsx?$": "ts-jest",
 		"^.+\\.vue$": "vue-jest",
 	},
@@ -38,5 +41,18 @@ module.exports = {
 	coverageReporters: ["json", "lcov", "text", "clover", "html"],
 	coverageDirectory: "<rootDir>/__tests__/unit/.coverage",
 	collectCoverageFrom: ["src/renderer/**/*.{js,ts,tsx,vue}"],
+	coveragePathIgnorePatterns: [
+		"i18n.ts",
+		"index.ts",
+		"routes.ts",
+		"src/renderer/app/i18n",
+		"src/renderer/app/router",
+		"src/renderer/app/store",
+		"src/renderer/main.js",
+		"src/renderer/registerComponentHooks.ts",
+		"src/renderer/splashscreen.js",
+		"src/renderer/support/enums",
+		"stories.ts",
+	],
 	watchman: false,
 };
