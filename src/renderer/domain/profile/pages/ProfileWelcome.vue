@@ -16,7 +16,7 @@
 				<img src="@/assets/images/pages/profile/onboarding-banner.svg" />
 			</div>
 
-			<div v-if="profiles" class="container mx-auto">
+			<div v-if="profiles.length" class="container mx-auto">
 				<div class="mx-auto my-8 md:w-3/4 lg:w-3/5 xl:w-1/2">
 					<h1 class="mx-4 text-2xl font-bold md:mx-8 xl:mx-16">
 						Select Profile
