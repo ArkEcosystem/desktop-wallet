@@ -18,7 +18,6 @@ module.exports = {
 		vue$: "<rootDir>/node_modules/vue/dist/vue.common.js",
 		'vee-validate/dist/rules': 'babel-jest',
 	},
-	// preset: "ts-jest/presets/js-with-ts",
 	transform: {
 		".+\\.(css|styl|less|sass|scss|svg|png|jpg|ttf|woff|woff2)$": "jest-transform-stub",
 		"^.+\\.js$": "babel-jest",
@@ -39,6 +38,5 @@ module.exports = {
 	coverageReporters: ["json", "lcov", "text", "clover", "html"],
 	coverageDirectory: "<rootDir>/__tests__/unit/.coverage",
 	collectCoverageFrom: ["src/renderer/**/*.{js,ts,tsx,vue}"],
-	// setupFilesAfterEnv: ["jest-extended", "<rootDir>/__tests__/unit/__support__/setup.js"],
 	watchman: false,
 };
