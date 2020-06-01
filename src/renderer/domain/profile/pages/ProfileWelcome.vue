@@ -75,12 +75,12 @@
 				Create a new Profile or login with your MarketSquare account to get started
 			</div>
 			<div class="flex justify-center w-full mb-10">
-				<button type="button" class="w-1/5 mr-2 button-primary">
+				<XButton type="button" class="w-1/5 mr-2">
 					Sign in to MarketSquare
-				</button>
-				<button type="button" class="w-1/5 button-secondary" @click="createProfile">
+				</XButton>
+				<XButton type="button" variant="plain" class="w-1/5" @click="createProfile">
 					Create Profile
-				</button>
+				</XButton>
 			</div>
 		</div>
 	</div>
@@ -90,7 +90,11 @@
 	import { Profile } from "@arkecosystem/platform-sdk-profiles";
 	import { Component, Vue } from "vue-property-decorator";
 
-	@Component
+	import { XButton } from "@/app/components/Button";
+
+	@Component({
+		components: { XButton },
+	})
 	export default class ProfileWelcome extends Vue {
 		profiles: Profile[] = [];
 
