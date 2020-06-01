@@ -16,7 +16,7 @@ module.exports = {
 		"^@/(.*)$": "<rootDir>/src/renderer/$1",
 		"^@tests/(.*)$": "<rootDir>/__tests__/$1",
 		vue$: "<rootDir>/node_modules/vue/dist/vue.common.js",
-		'vee-validate/dist/rules': 'babel-jest',
+		"vee-validate/dist/rules": "babel-jest",
 	},
 	transform: {
 		".+\\.(css|styl|less|sass|scss|svg|png|jpg|ttf|woff|woff2)$": "jest-transform-stub",
@@ -32,7 +32,7 @@ module.exports = {
 		"<rootDir>/__tests__/unit/__fixtures__",
 		"<rootDir>/__tests__/unit/__mocks__",
 		"<rootDir>/__tests__/unit/__support__",
-		'<rootDir>/node_modules/(?!vee-validate/dist/rules)',
+		"<rootDir>/node_modules/(?!vee-validate/dist/rules)",
 	],
 	snapshotSerializers: ["jest-serializer-vue"],
 	coverageReporters: ["json", "lcov", "text", "clover", "html"],

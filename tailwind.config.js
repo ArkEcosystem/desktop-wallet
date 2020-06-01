@@ -1,11 +1,7 @@
 const defaultConfig = require("tailwindcss/defaultConfig");
 
 module.exports = {
-	purge: [
-		'./src/renderer/**/*.html',
-		'./src/renderer/**/*.vue',
-		'./src/renderer/**/*.jsx',
-	],
+	purge: ["./src/renderer/**/*.html", "./src/renderer/**/*.vue", "./src/renderer/**/*.jsx"],
 	theme: {
 		extend: {
 			inset: {

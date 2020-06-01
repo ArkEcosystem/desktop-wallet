@@ -1,7 +1,5 @@
 import electron from "electron";
-import {
-	Application
-} from "spectron";
+import { Application } from "spectron";
 
 jest.setTimeout(10000);
 
@@ -14,10 +12,10 @@ export const startApp = () => {
 	});
 
 	return app.start();
-}
+};
 
 export const stopApp = (app) => {
 	if (app && app.isRunning()) {
 		return app.stop();
 	}
-}
+};

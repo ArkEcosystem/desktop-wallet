@@ -9,7 +9,8 @@
 						itemLabelClass,
 					]"
 					class="mr-5 ListDividedItem__label"
-				>{{ label }}</span>
+					>{{ label }}</span
+				>
 				<span
 					v-if="labelDescription"
 					:class="itemLabelDescriptionClass"
