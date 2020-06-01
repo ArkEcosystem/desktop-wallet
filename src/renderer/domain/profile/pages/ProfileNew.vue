@@ -90,7 +90,7 @@
 										<validation-provider v-slot="{ errors }" rules="required">
 											<div class="input-group">
 												<label for="default-price-provider" class="input-label"
-													>Default Price Provider</label
+													>Price Provider</label
 												>
 												<div class="input-wrapper">
 													<select
@@ -116,7 +116,7 @@
 									<div class="w-full">
 										<validation-provider v-slot="{ errors }" rules="required">
 											<div class="input-group">
-												<label for="name" class="input-label">Default Currency</label>
+												<label for="name" class="input-label">Currency</label>
 												<div class="input-wrapper">
 													<select
 														name="default-price-provider"
@@ -170,7 +170,7 @@
 </template>
 
 <script lang="ts">
-	import { ValidationObserver, ValidationProvider } from "vee-validate/dist/vee-validate.full.esm";
+	import { ValidationObserver, ValidationProvider } from "vee-validate";
 	import { Component, Vue } from "vue-property-decorator";
 
 	import { ButtonSwitch } from "@/app/components/Button";
@@ -197,6 +197,9 @@
 		}
 
 		async onSubmit() {
+			console.log(this.form);
+
+			await this.$profiles.all();
 			// TODO: create a profile and store the settings on it
 		}
 	}

@@ -27,9 +27,9 @@
 					</div>
 				</div>
 
-				<div class="max-w-lg mx-auto mb-3 bg-white border-2 border-gray-300 rounded-lg overflow-hidden">
-					<div class="sm:flex sm:items-center px-6 py-7 relative">
-						<button class="flex items-center justify-center absolute top-0 right-0 w-6 h-6 mt-3 p-1">
+				<div class="max-w-lg mx-auto mb-3 overflow-hidden bg-white border-2 border-gray-300 rounded-lg">
+					<div class="relative px-6 sm:flex sm:items-center py-7">
+						<button class="absolute top-0 right-0 flex items-center justify-center w-6 h-6 p-1 mt-3">
 							<img src="@/assets/images/settings.svg" class="h-5" />
 						</button>
 
@@ -37,9 +37,9 @@
 							<div class="flex items-center">
 								<img
 									src="https://randomuser.me/api/portraits/men/3.jpg"
-									class="block mx-auto sm:mx-0 sm:flex-shrink-0 h-12 rounded-full object-cover"
+									class="block object-cover h-12 mx-auto rounded-full sm:mx-0 sm:flex-shrink-0"
 								/>
-								<div class="mt-4 sm:mt-0 sm:ml-4 text-center sm:text-left">
+								<div class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-left">
 									<p class="text-sm font-semibold text-gray-500">
 										Name
 									</p>
@@ -49,7 +49,7 @@
 								</div>
 							</div>
 							<div class="flex items-center">
-								<div class="mt-4 sm:mt-0 sm:ml-4 text-center sm:text-right">
+								<div class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-right">
 									<p class="text-sm font-semibold text-gray-500">
 										Total Balance
 									</p>
@@ -62,9 +62,9 @@
 					</div>
 				</div>
 
-				<div class="max-w-lg mx-auto bg-white border-2 border-gray-300 rounded-lg overflow-hidden">
-					<div class="sm:flex sm:items-center px-6 py-7 relative">
-						<button class="flex items-center justify-center absolute top-0 right-0 w-6 h-6 mt-3 p-1">
+				<div class="max-w-lg mx-auto overflow-hidden bg-white border-2 border-gray-300 rounded-lg">
+					<div class="relative px-6 sm:flex sm:items-center py-7">
+						<button class="absolute top-0 right-0 flex items-center justify-center w-6 h-6 p-1 mt-3">
 							<img src="@/assets/images/settings.svg" class="h-5" />
 						</button>
 
@@ -72,9 +72,9 @@
 							<div class="flex items-center">
 								<img
 									src="https://randomuser.me/api/portraits/women/21.jpg"
-									class="block mx-auto sm:mx-0 sm:flex-shrink-0 h-12 rounded-full object-cover"
+									class="block object-cover h-12 mx-auto rounded-full sm:mx-0 sm:flex-shrink-0"
 								/>
-								<div class="mt-4 sm:mt-0 sm:ml-4 text-center sm:text-left">
+								<div class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-left">
 									<p class="text-sm font-semibold text-gray-500">
 										Name
 									</p>
@@ -84,7 +84,7 @@
 								</div>
 							</div>
 							<div class="flex items-center">
-								<div class="mt-4 sm:mt-0 sm:ml-4 text-center sm:text-right">
+								<div class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-right">
 									<p class="text-sm font-semibold text-gray-500">
 										Total Balance
 									</p>
