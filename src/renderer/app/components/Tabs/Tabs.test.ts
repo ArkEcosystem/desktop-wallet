@@ -14,8 +14,7 @@ localVue.use(CompositionApi);
 
 const tabContextMock = {
 	state: reactive({
-		currentId: "1",
-		manual: false,
+		currentId: "1"
 	}),
 	isIdActive: jest.fn(() => ref(false)),
 	setCurrentId: jest.fn(() => ""),

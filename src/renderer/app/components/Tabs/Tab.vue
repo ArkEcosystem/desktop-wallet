@@ -10,6 +10,12 @@ import { defineComponent, inject } from "@vue/composition-api";
 import { TabContextSymbol } from "./useTab";
 
 const Tab = defineComponent({
+	props: {
+		id: {
+			type: [String, Number],
+			required: true,
+		}
+	},
 	setup(props) {
 		const context = inject(TabContextSymbol, undefined);
 		const isActive = context?.isIdActive(props.id);
@@ -19,12 +25,6 @@ const Tab = defineComponent({
 		}
 
 		return { handleClick, isActive }
-	},
-	props: {
-		id: {
-			type: [String, Number],
-			required: true,
-		}
 	}
 })
 

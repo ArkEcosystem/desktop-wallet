@@ -3,7 +3,7 @@ import TabList from "./TabList.vue";
 import TabPanel from "./TabPanel.vue";
 import Tabs from "./Tabs.vue";
 
-export default { title: "Navigation / Tab" };
+export default { title: "Navigation / Tabs" };
 
 export const Default = () => ({
 	components: {
