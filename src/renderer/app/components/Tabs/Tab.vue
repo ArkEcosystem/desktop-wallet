@@ -11,20 +11,18 @@ import { TabContext, TabContextSymbol } from "./useTab";
 
 const Tab = defineComponent({
 	setup(props) {
-		const context = inject<TabContext | undefined>(TabContextSymbol, undefined);
+		const context = inject(TabContextSymbol, undefined);
 		const isActive = context?.isIdActive(props.id);
 
 		const handleClick = () => {
-			if (!context?.state.manual) {
-				context?.setCurrentId(props.id);
-			}
+			context?.setCurrentId(props.id);
 		}
 
 		return { handleClick, isActive }
 	},
 	props: {
 		id: {
-			type: String,
+			type: [String, Number],
 			required: true,
 		}
 	}

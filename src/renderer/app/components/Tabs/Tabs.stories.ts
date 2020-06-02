@@ -31,7 +31,7 @@ export const Default = () => ({
 					Delegate
 				</TabPanel>
 				<TabPanel id="3">
-					Buy Ark
+					Buy ARK
 				</TabPanel>
 				<TabPanel id="4">
 					Statistics

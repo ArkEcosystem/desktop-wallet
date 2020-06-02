@@ -1,5 +1,5 @@
 <template>
-	<div class="TabList inline-flex justify-start items-center rounded bg-gray-200 px-3">
+	<div class="TabList inline-flex justify-start items-stretch rounded bg-gray-200 px-3">
 		<slot></slot>
 	</div>
 </template>
@@ -20,7 +20,8 @@ export default TabList;
 		@apply border-blue-600 text-opacity-100;
 	}
 
-	&:hover {
+	&:hover,
+	&:focus {
 		@apply text-opacity-100;
 	}
 

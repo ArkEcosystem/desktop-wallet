@@ -1,9 +1,8 @@
-import { computed, reactive } from "@vue/composition-api";
+import { computed, InjectionKey,reactive } from "@vue/composition-api";
 
-export function useTabContext(options: { initialId?: string | number; manual?: boolean }) {
-	const state = reactive<{ currentId: string | number | undefined; manual: boolean }>({
-		currentId: options?.initialId,
-		manual: options?.manual || false
+export function useTabContext(options: { initialId?: string | number }) {
+	const state = reactive<{ currentId: string | number | undefined; }>({
+		currentId: options?.initialId
 	});
 
 	const setCurrentId = (id: string | number) => (state.currentId = id);
@@ -14,4 +13,4 @@ export function useTabContext(options: { initialId?: string | number; manual?: b
 }
 
 export type TabContext = ReturnType<typeof useTabContext>;
-export const TabContextSymbol = Symbol("[TabContext]");
+export const TabContextSymbol: InjectionKey<TabContext> = Symbol("TabContext");

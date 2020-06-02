@@ -1,5 +1,5 @@
 <template>
-	<div v-if="isActive" class="block">
+	<div data-testid="TabPanel" v-if="isActive">
 		<slot></slot>
 	</div>
 </template>
@@ -11,14 +11,14 @@ import { TabContext, TabContextSymbol } from "./useTab";
 
 const TabPanel = defineComponent({
 	setup(props) {
-		const context = inject<TabContext | undefined>(TabContextSymbol, undefined);
+		const context = inject(TabContextSymbol, undefined);
 		const isActive = context?.isIdActive(props.id);
 
 		return { isActive }
 	},
 	props: {
 		id: {
-			type: String,
+			type: [String, Number],
 			required: true,
 		}
 	}
