@@ -23,7 +23,8 @@
 					"targets": {
 						"node": 12
 					}
-				}]
+				}],
+				"@babel/preset-typescript"
 			],
 			"plugins": [
 				"require-context-hook"
@@ -45,7 +46,8 @@
 		}],
 		["@babel/plugin-proposal-class-properties", {
 			"loose": true
-		}]
+		}],
+		"@babel/plugin-proposal-optional-chaining"
 	],
 	"sourceType": "unambiguous"
 }
