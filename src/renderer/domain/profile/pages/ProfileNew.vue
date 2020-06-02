@@ -3,7 +3,7 @@
 		<div class="px-4 sm:px-6 lg:px-8">
 			<div class="flex items-center h-20 md:h-24">
 				<div class="flex p-2 rounded-lg bg-red-logo">
-					<img :src="assets_loadImage('ark-logo.png')" class="h-6 md:h-8 lg:h-10" />
+					<img :src="loadImageFromAssets('ark-logo.png')" class="h-6 md:h-8 lg:h-10" />
 				</div>
 			</div>
 		</div>
@@ -44,7 +44,6 @@
 														<button
 															type="button"
 															class="flex items-center justify-center w-20 h-20 bg-blue-100 rounded-full"
-															@click="selectAvatar"
 														>
 															<SvgIcon
 																class="text-blue-600"
@@ -62,10 +61,7 @@
 														<button
 															class="absolute flex items-center justify-center w-6 h-6 p-1 bg-red-100 rounded -top-3 -right-3"
 														>
-															<SvgIcon
-																name="close"
-																view-box="0 0 12 12"
-															/>
+															<SvgIcon name="close" view-box="0 0 12 12" />
 														</button>
 													</div>
 												</div>
@@ -220,10 +216,6 @@
 		created() {
 			this.form.darkTheme =
 				(window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) || false;
-		}
-
-		selectAvatar() {
-			// TODO: implement
 		}
 
 		/**

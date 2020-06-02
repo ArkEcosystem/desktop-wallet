@@ -3,7 +3,7 @@
 		<div class="px-4 sm:px-6 lg:px-8">
 			<div class="flex items-center h-20 md:h-24">
 				<div class="flex p-2 rounded-lg bg-red-logo">
-					<img :src="assets_loadImage('ark-logo.png')" class="h-6 md:h-8 lg:h-10" />
+					<img :src="loadImageFromAssets('ark-logo.png')" class="h-6 md:h-8 lg:h-10" />
 				</div>
 			</div>
 		</div>
@@ -13,7 +13,7 @@
 				Welcome to ARK
 			</h1>
 			<div class="container w-3/5 mx-auto">
-				<img :src="assets_loadImage('pages/profile/onboarding-banner.svg')" />
+				<img :src="loadImageFromAssets('pages/profile/onboarding-banner.svg')" />
 			</div>
 
 			<div v-if="profiles.length" class="container mx-auto">
@@ -33,10 +33,7 @@
 				>
 					<div class="relative px-6 sm:flex sm:items-center py-7">
 						<button class="absolute top-0 right-0 flex items-center justify-center w-6 h-6 p-1 mt-3">
-							<SvgIcon
-								name="settings"
-								view-box="0 0 20 20"
-							/>
+							<SvgIcon name="settings" view-box="0 0 20 20" />
 						</button>
 
 						<div class="flex flex-row justify-between w-full">

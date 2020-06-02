@@ -1,20 +1,50 @@
 export class ImageManager {
 	readonly #context: any;
 
-	public constructor() {
-		this.#context = require.context("@/assets/images", true, /\.(png|jpe?g|svg)$/);
+	constructor() {
+		this.#context = require.context("../../assets/images", true, /\.(png|jpe?g|svg)$/);
+	}
+
+	public images() {
+		return this.#context.keys();
+	}
+
+	public tree() {
+		return this.images().reduce((stash, current) => {
+			const path = current.replace("./", "");
+			const [category, filename] = path.split("/");
+
+			if (category && filename) {
+				const previous = stash[category] || [];
+
+				stash[category] = [...previous, `${category}/${filename}`];
+			}
+
+			return stash;
+		}, {});
+	}
+
+	public inline(...filter) {
+		const tree = this.tree();
+
+		let result = [];
+		for (const item of filter) {
+			result = result.concat(tree[item] || []);
+		}
+
+		return result;
 	}
 
 	public loadImage(filename: string) {
 		try {
 			return this.#context(`./${filename}`);
-		} catch (error) {
-			// In case the image could not be found:
+		} catch {
 			return this.#context("./default.svg");
 		}
 	}
 }
 
+/* istanbul ignore next */
 if (process.env.NODE_ENV !== "test") {
 	// Load all SVGs to be injected into the browser
 	const svgs = require.context("@/assets/svg", true, /\.svg$/);

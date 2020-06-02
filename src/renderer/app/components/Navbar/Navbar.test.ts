@@ -3,12 +3,12 @@ import { createLocalVue, shallowMount } from "@vue/test-utils";
 import Navbar from "@/app/components/Navbar/Navbar.vue";
 
 const createStubbedVue = () => {
-  return {
-    localVue: createLocalVue(),
-    mocks: {
-      assets_loadImage: jest.fn(),
-    },
-  };
+	return {
+		localVue: createLocalVue(),
+		mocks: {
+			loadImageFromAssets: jest.fn(),
+		},
+	};
 };
 
 describe("Navbar", () => {

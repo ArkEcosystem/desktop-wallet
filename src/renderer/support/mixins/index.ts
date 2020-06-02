@@ -1,5 +1,8 @@
-import { merge } from "lodash";
+import { assetMixins } from "./assets";
 
-const allMixins = [require("./assets").default];
-
-export const mixins = merge(...(allMixins as [any, any]));
+export const mixins = {
+	computed: {},
+	methods: {
+		...assetMixins.methods,
+	},
+};
