@@ -6,6 +6,7 @@ import { ValidationObserver, ValidationProvider } from "vee-validate/dist/vee-va
 import ProfileNew from "@/domain/profile/pages/ProfileNew.vue";
 
 const profileSettings = { set: jest.fn() };
+const router = { push: jest.fn() };
 
 const createStubbedVue = () => {
 	const localVue = createLocalVue();
@@ -21,6 +22,7 @@ const createStubbedVue = () => {
 					return { settings: jest.fn(() => profileSettings) };
 				},
 			},
+			$router: router,
 		},
 		stubs: {
 			FormError: true,
@@ -85,5 +87,41 @@ describe("ProfileNew", () => {
 		expect(profileSettings.set).toHaveBeenNthCalledWith(1, Enums.ProfileSetting.MarketProvider, "coincap");
 		expect(profileSettings.set).toHaveBeenNthCalledWith(2, Enums.ProfileSetting.ChartCurrency, "eth");
 		expect(profileSettings.set).toHaveBeenNthCalledWith(3, Enums.ProfileSetting.Theme, "light");
+	});
+
+	it("should go back to the welcome page", () => {
+		const wrapper = shallowMount(ProfileNew, createStubbedVue());
+
+		wrapper.setData({
+			form: {
+				name: "John Doe",
+				marketProvider: "coincap",
+				currency: "eth",
+				darkTheme: false,
+			},
+		});
+
+		expect(wrapper.vm.$data).toEqual({
+			form: {
+				name: "John Doe",
+				marketProvider: "coincap",
+				currency: "eth",
+				darkTheme: false,
+			},
+		});
+
+		// @ts-ignore
+		wrapper.vm.backToWelcome();
+
+		expect(wrapper.vm.$data).toEqual({
+			form: {
+				name: "",
+				marketProvider: "coingecko",
+				currency: "btc",
+				darkTheme: false,
+			},
+		});
+
+		expect(router.push).toHaveBeenCalledWith({ name: "profiles.welcome" });
 	});
 });
