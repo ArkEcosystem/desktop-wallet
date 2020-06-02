@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tab should render 1`] = `<button class="Tab Tab--active"></button>`;
+
+exports[`TabList should render 1`] = `<div class="TabList inline-flex justify-start items-center rounded bg-gray-200 px-3"></div>`;
+
+exports[`TabPanel should render 1`] = `""`;
+
+exports[`TabPanel should show if is active 1`] = `<div data-testid="TabPanel">Test 1</div>`;
+
+exports[`Tabs should render 1`] = `<div></div>`;
+
+exports[`Tabs should render all together 1`] = `
+<div>
+  <div class="TabList inline-flex justify-start items-center rounded bg-gray-200 px-3"><button class="Tab Tab--active">Test 1</button> <button class="Tab">Test 2</button></div>
+  <div data-testid="TabPanel">Test 1</div>
+  <!---->
+</div>
+`;

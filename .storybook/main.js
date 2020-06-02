@@ -9,10 +9,15 @@ module.exports = {
 		config.module.rules.push(
 			{
 				test: /\.tsx?$/,
-				loaders: "ts-loader",
-				options: {
-					appendTsSuffixTo: [/\.vue$/],
-				},
+				use: [
+					"babel-loader",
+					{
+						loader: "ts-loader",
+						options: {
+							appendTsSuffixTo: [/\.vue$/],
+						},
+					}
+				]
 			},
 			{
 				test: /\.postcss$/,
