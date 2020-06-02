@@ -15,6 +15,7 @@ const createStubbedVue = () => {
 	return {
 		localVue,
 		mocks: {
+			assets_loadImage: jest.fn(),
 			$profiles: {
 				push() {
 					return { settings: jest.fn(() => profileSettings) };

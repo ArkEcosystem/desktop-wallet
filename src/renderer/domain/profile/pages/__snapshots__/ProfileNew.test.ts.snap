@@ -4,7 +4,7 @@ exports[`ProfileNew should render 1`] = `
 <div class="w-full h-full bg-white">
   <div class="px-4 sm:px-6 lg:px-8">
     <div class="flex items-center h-20 md:h-24">
-      <div class="flex p-2 rounded-lg bg-red-logo"><img src="@/assets/images/ark-logo.png" class="h-6 md:h-8 lg:h-10"></div>
+      <div class="flex p-2 rounded-lg bg-red-logo"><img class="h-6 md:h-8 lg:h-10"></div>
     </div>
   </div>
   <div class="container mx-auto">
@@ -20,7 +20,7 @@ exports[`ProfileNew should render 1`] = `
           Login with MarketSquare
         </xbutton-stub>
         <div class="pt-4 mt-8 border-t border-gray-300"></div>
-      </div> <span><form><div class="mx-4 mt-5 md:mx-8 xl:mx-16"><div class="mb-4"><div class="flex flex-1"><div class="w-full"><listdivided-stub is-floating-label="true"><listdivideditem-stub label="New Profile" label-description="Select Profile Image" item-label-class="text-2xl font-semibold text-black" item-label-description-class="text-sm font-semibold text-gray-700"><div class="flex flex-row mt-2"><div class="flex items-center justify-center w-24 h-24 mr-6 border-2 border-gray-300 border-dashed rounded"><button type="button" class="flex items-center justify-center w-20 h-20 bg-blue-100 rounded-full"><img src="@/assets/images/upload_button.svg" class="h-5"></button></div> <div class="relative w-24 h-24 bg-gray-400 rounded"><img src="https://randomuser.me/api/portraits/men/3.jpg" class="object-cover rounded"> <button class="absolute flex items-center justify-center w-6 h-6 p-1 bg-red-100 rounded -top-3 -right-3"><img src="@/assets/images/close.svg" class="h-3"></button></div></div></listdivideditem-stub></listdivided-stub></div></div></div> <div class="mb-4"><div class="flex flex-1"><div class="w-full"><span><div class="input-group"><label for="name" class="input-label">Name</label> <div class="input-wrapper"><input type="text" name="name" class="input-text"></div> <formerror-stub errors=""></formerror-stub></div></span>
+      </div> <span><form><div class="mx-4 mt-5 md:mx-8 xl:mx-16"><div class="mb-4"><div class="flex flex-1"><div class="w-full"><listdivided-stub is-floating-label="true"><listdivideditem-stub label="New Profile" label-description="Select Profile Image" item-label-class="text-2xl font-semibold text-black" item-label-description-class="text-sm font-semibold text-gray-700"><div class="flex flex-row mt-2"><div class="flex items-center justify-center w-24 h-24 mr-6 border-2 border-gray-300 border-dashed rounded"><button type="button" class="flex items-center justify-center w-20 h-20 bg-blue-100 rounded-full"><svgicon name="upload" view-box="0 0 20 20" class="text-blue-600"></svgicon></button></div> <div class="relative w-24 h-24 bg-gray-400 rounded"><img src="https://randomuser.me/api/portraits/men/3.jpg" class="object-cover rounded"> <button class="absolute flex items-center justify-center w-6 h-6 p-1 bg-red-100 rounded -top-3 -right-3"><svgicon name="close" view-box="0 0 12 12"></svgicon></button></div></div></listdivideditem-stub></listdivided-stub></div></div></div> <div class="mb-4"><div class="flex flex-1"><div class="w-full"><span><div class="input-group"><label for="name" class="input-label">Name</label> <div class="input-wrapper"><input type="text" name="name" class="input-text"></div> <formerror-stub errors=""></formerror-stub></div></span>
     </div>
   </div>
 </div>
