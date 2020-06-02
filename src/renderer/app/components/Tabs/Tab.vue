@@ -7,7 +7,7 @@
 <script lang="ts">
 import { defineComponent, inject } from "@vue/composition-api";
 
-import { TabContext, TabContextSymbol } from "./useTab";
+import { TabContextSymbol } from "./useTab";
 
 const Tab = defineComponent({
 	setup(props) {

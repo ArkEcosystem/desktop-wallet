@@ -1,5 +1,5 @@
 <template>
-	<div data-testid="TabPanel" v-if="isActive">
+	<div v-if="isActive" data-testid="TabPanel">
 		<slot></slot>
 	</div>
 </template>
@@ -7,7 +7,7 @@
 <script lang="ts">
 import { defineComponent, inject } from "@vue/composition-api";
 
-import { TabContext, TabContextSymbol } from "./useTab";
+import { TabContextSymbol } from "./useTab";
 
 const TabPanel = defineComponent({
 	setup(props) {
