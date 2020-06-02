@@ -18,7 +18,8 @@ export class HttpClient implements Contracts.HttpClient {
 
 	public withoutEncoding(): HttpClient {
 		this.#client.withOptions({
-			encoding: null,
+			// encoding: null,
+			responseType: "buffer",
 		});
 
 		return this;

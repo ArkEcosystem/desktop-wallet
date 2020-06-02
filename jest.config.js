@@ -35,7 +35,7 @@ module.exports = {
 	],
 	snapshotSerializers: ["jest-serializer-vue"],
 	coverageReporters: ["json", "lcov", "text", "clover", "html"],
-	coverageDirectory: "<rootDir>/__tests__/unit/.coverage",
+	coverageDirectory: "<rootDir>/.coverage",
 	collectCoverageFrom: ["src/renderer/**/*.{js,ts,tsx,vue}"],
 	coveragePathIgnorePatterns: [
 		"i18n.ts",

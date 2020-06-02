@@ -1,6 +1,6 @@
-import Vue from "vue";
+import Emittery from "emittery";
 
-export const eventBus = new Vue();
+export const eventBus = new Emittery();
 
 export default {
 	install(Vue) {
