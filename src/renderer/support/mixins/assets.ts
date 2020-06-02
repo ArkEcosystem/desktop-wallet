@@ -5,11 +5,7 @@ const imageManager = new ImageManager();
 export const assetMixins = {
 	methods: {
 		loadImageFromAssets(source: string) {
-			try {
-				return imageManager.loadImage(source);
-			} catch {
-				return "";
-			}
+			return imageManager.loadImage(source);
 		},
 	},
 };

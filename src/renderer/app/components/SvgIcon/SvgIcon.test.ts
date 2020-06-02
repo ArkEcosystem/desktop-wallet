@@ -9,6 +9,18 @@ describe("SvgIcon", () => {
 				name: "test",
 			},
 		});
+
+		expect(wrapper.html()).toMatchSnapshot();
+	});
+
+	it("should render with a viewBox", () => {
+		const wrapper = shallowMount(SvgIcon, {
+			propsData: {
+				name: "test",
+				viewBox: "0 0 50 50",
+			},
+		});
+
 		expect(wrapper.html()).toMatchSnapshot();
 	});
 });

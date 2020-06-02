@@ -25,9 +25,9 @@ export class ImageManager {
 	}
 
 	public inline(...filter) {
-		let result = [];
 		const tree = this.tree();
 
+		let result = [];
 		for (const item of filter) {
 			result = result.concat(tree[item] || []);
 		}
@@ -35,7 +35,7 @@ export class ImageManager {
 		return result;
 	}
 
-	public loadImage(filename) {
+	public loadImage(filename: string) {
 		try {
 			return this.#context(`./${filename}`);
 		} catch {

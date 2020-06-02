@@ -44,7 +44,6 @@
 														<button
 															type="button"
 															class="flex items-center justify-center w-20 h-20 bg-blue-100 rounded-full"
-															@click="selectAvatar"
 														>
 															<SvgIcon
 																class="text-blue-600"
@@ -217,10 +216,6 @@
 		created() {
 			this.form.darkTheme =
 				(window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) || false;
-		}
-
-		selectAvatar() {
-			// TODO: implement
 		}
 
 		/**
