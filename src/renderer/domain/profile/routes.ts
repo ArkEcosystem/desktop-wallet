@@ -7,7 +7,7 @@ export const routes = [
 	{
 		path: "/profile/create",
 		name: "profiles.create",
-		component: require("./pages/ProfileNew").default,
+		component: require("./pages/CreateProfile").default,
 	},
 	// {
 	// 	path: "*",
