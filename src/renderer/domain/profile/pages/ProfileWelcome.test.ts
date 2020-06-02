@@ -6,6 +6,7 @@ const createStubbedVue = () => {
 	return {
 		localVue: createLocalVue(),
 		mocks: {
+			assets_loadImage: jest.fn(),
 			$profiles: {
 				all() {
 					return {};

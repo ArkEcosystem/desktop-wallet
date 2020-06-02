@@ -140,6 +140,12 @@ module.exports = {
 			fontFamily: {
 				sans: ["Inter", ...defaultConfig.theme.fontFamily.sans],
 			},
+			fill: {
+				"current": "currentColor",
+			},
+			stroke: {
+				"current": "currentColor",
+			},
 		},
 
 		customForms: (theme) => ({
