@@ -9,14 +9,12 @@
 						itemLabelClass,
 					]"
 					class="mr-5 ListDividedItem__label"
-					>{{ label }}</span
-				>
+				>{{ label }}</span>
 				<span
 					v-if="labelDescription"
 					:class="itemLabelDescriptionClass"
 					class="text-sm text-gray-500 ListDividedItem__label__description"
-					>{{ labelDescription }}</span
-				>
+				>{{ labelDescription }}</span>
 			</div>
 
 			<div :class="itemValueClass" class="ListDividedItem__value">
