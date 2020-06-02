@@ -5,8 +5,8 @@ import Toggle from "@/app/components/Toggle/Toggle.vue";
 export default { title: "Basic / ListDivided" };
 
 export const Default = () => ({
-  components: { ListDivided, ListDividedItem },
-  template: `
+	components: { ListDivided, ListDividedItem },
+	template: `
     <div class="max-w-lg p-5 space-y-5">
       <ListDivided>
         <ListDividedItem label="Recipient">
@@ -24,8 +24,8 @@ export const Default = () => ({
 });
 
 export const FloatingLabel = () => ({
-  components: { ListDivided, ListDividedItem },
-  template: `
+	components: { ListDivided, ListDividedItem },
+	template: `
     <div class="max-w-lg p-5 space-y-5">
       <ListDivided :is-floating-label="true">
         <ListDividedItem label="Recipient">
@@ -43,8 +43,8 @@ export const FloatingLabel = () => ({
 });
 
 export const LabelDescription = () => ({
-  components: { ListDivided, ListDividedItem, Toggle },
-  template: `
+	components: { ListDivided, ListDividedItem, Toggle },
+	template: `
     <div class="max-w-lg p-5 space-y-5">
       <ListDivided>
         <ListDividedItem label="Dark Theme" label-description="Want to set the wallet to dark mode?">

@@ -29,9 +29,9 @@
 </script>
 
 <style lang="postcss">
-  .ListDivided {
-    .ListDividedItem:last-child {
-      border-bottom-color: transparent;
-    }
-  }
+	.ListDivided {
+		.ListDividedItem:last-child {
+			border-bottom-color: transparent;
+		}
+	}
 </style>

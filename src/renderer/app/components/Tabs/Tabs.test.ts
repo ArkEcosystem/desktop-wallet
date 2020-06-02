@@ -1,4 +1,3 @@
-
 import CompositionApi, { reactive, ref } from "@vue/composition-api";
 import { createLocalVue, mount, shallowMount } from "@vue/test-utils";
 
@@ -14,7 +13,7 @@ localVue.use(CompositionApi);
 
 const tabContextMock = {
 	state: reactive({
-		currentId: "1"
+		currentId: "1",
 	}),
 	isIdActive: jest.fn(() => ref(false)),
 	setCurrentId: jest.fn(() => ""),
@@ -44,7 +43,7 @@ describe("Tabs", () => {
 					TabList,
 				},
 				data: () => ({
-					value: "1"
+					value: "1",
 				}),
 				template: `
 				<Tabs :value="value">
@@ -92,8 +91,8 @@ describe("TabPanel", () => {
 			},
 			localVue,
 			slots: {
-				default: `Test 1`
-			}
+				default: `Test 1`,
+			},
 		});
 		// @ts-ignore
 		expect(wrapper.vm.isActive).toEqual(true);

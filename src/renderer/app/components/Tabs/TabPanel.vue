@@ -5,24 +5,24 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, inject } from "@vue/composition-api";
+	import { defineComponent, inject } from "@vue/composition-api";
 
-import { TabContextSymbol } from "./useTab";
+	import { TabContextSymbol } from "./useTab";
 
-const TabPanel = defineComponent({
-	props: {
-		id: {
-			type: [String, Number],
-			required: true,
-		}
-	},
-	setup(props) {
-		const context = inject(TabContextSymbol, undefined);
-		const isActive = context?.isIdActive(props.id);
+	const TabPanel = defineComponent({
+		props: {
+			id: {
+				type: [String, Number],
+				required: true,
+			},
+		},
+		setup(props) {
+			const context = inject(TabContextSymbol, undefined);
+			const isActive = context?.isIdActive(props.id);
 
-		return { isActive }
-	}
-})
+			return { isActive };
+		},
+	});
 
-export default TabPanel;
+	export default TabPanel;
 </script>
