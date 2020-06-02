@@ -2,12 +2,12 @@ import { ImageManager } from "@/support/services/image-manager";
 
 const imageManager = new ImageManager();
 
-export default {
+export const assetMixins = {
 	methods: {
-		assets_loadImage(source: string) {
+		loadImageFromAssets(source: string) {
 			try {
 				return imageManager.loadImage(source);
-			} catch (error) {
+			} catch {
 				return "";
 			}
 		},

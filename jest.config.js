@@ -6,7 +6,6 @@ module.exports = {
 			hideStyleWarn: true,
 		},
 	},
-	rootDir: require("path").resolve(__dirname, "../"),
 	moduleFileExtensions: ["js", "ts", "tsx", "json", "vue"],
 	moduleNameMapper: {
 		"^@tailwind": "<rootDir>/tailwind.config.js",
@@ -21,7 +20,7 @@ module.exports = {
 	transform: {
 		".+\\.(css|styl|less|sass|scss|svg|png|jpg|ttf|woff|woff2)$": "jest-transform-stub",
 		"^.+\\.js$": "babel-jest",
-		"^.+\\.ts$": "ts-jest",
+		"^.+\\.ts$": "babel-jest",
 		"^.+\\.tsx?$": "ts-jest",
 		"^.+\\.vue$": "vue-jest",
 	},
@@ -51,5 +50,6 @@ module.exports = {
 		"src/renderer/support/enums",
 		"stories.ts",
 	],
+	setupFilesAfterEnv: ["jest-extended", "<rootDir>/__tests__/unit/__support__/setup.js"],
 	watchman: false,
 };

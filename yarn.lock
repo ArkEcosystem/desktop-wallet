@@ -699,6 +699,13 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.10.1"
 
+"@babel/plugin-syntax-typescript@^7.10.1":
+  version "7.10.1"
+  resolved "https://registry.yarnpkg.com/@babel/plugin-syntax-typescript/-/plugin-syntax-typescript-7.10.1.tgz#5e82bc27bb4202b93b949b029e699db536733810"
+  integrity sha512-X/d8glkrAtra7CaQGMiGs/OGa6XgUzqPcBXCIGFCpCqnfGlT0Wfbzo/B89xHhnInTaItPK8LALblVXcUOEh95Q==
+  dependencies:
+    "@babel/helper-plugin-utils" "^7.10.1"
+
 "@babel/plugin-transform-arrow-functions@^7.10.1":
   version "7.10.1"
   resolved "https://registry.yarnpkg.com/@babel/plugin-transform-arrow-functions/-/plugin-transform-arrow-functions-7.10.1.tgz#cb5ee3a36f0863c06ead0b409b4cc43a889b295b"
@@ -951,6 +958,15 @@
   integrity sha512-qX8KZcmbvA23zDi+lk9s6hC1FM7jgLHYIjuLgULgc8QtYnmB3tAVIYkNoKRQ75qWBeyzcoMoK8ZQmogGtC/w0g==
   dependencies:
     "@babel/helper-plugin-utils" "^7.10.1"
+
+"@babel/plugin-transform-typescript@^7.10.1":
+  version "7.10.1"
+  resolved "https://registry.yarnpkg.com/@babel/plugin-transform-typescript/-/plugin-transform-typescript-7.10.1.tgz#2c54daea231f602468686d9faa76f182a94507a6"
+  integrity sha512-v+QWKlmCnsaimLeqq9vyCsVRMViZG1k2SZTlcZvB+TqyH570Zsij8nvVUZzOASCRiQFUxkLrn9Wg/kH0zgy5OQ==
+  dependencies:
+    "@babel/helper-create-class-features-plugin" "^7.10.1"
+    "@babel/helper-plugin-utils" "^7.10.1"
+    "@babel/plugin-syntax-typescript" "^7.10.1"
 
 "@babel/plugin-transform-unicode-escapes@^7.10.1":
   version "7.10.1"

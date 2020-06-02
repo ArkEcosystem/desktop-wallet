@@ -12,18 +12,18 @@
 </template>
 
 <script lang="ts">
-  import { Component, Prop, Vue } from "vue-property-decorator";
+	import { Component, Prop, Vue } from "vue-property-decorator";
 
-  @Component
-  export default class SvgIcon extends Vue {
-    @Prop({ required: true }) public name!: string;
-    @Prop({ default: "0 0 50 50" }) public viewBox!: string | string[];
+	@Component
+	export default class SvgIcon extends Vue {
+		@Prop({ required: true }) public name!: string;
+		@Prop({ default: "0 0 50 50" }) public viewBox!: string | string[];
 
-    get styles() {
-      const size = Array.isArray(this.viewBox) ? this.viewBox : this.viewBox.split(" ");
-      const [x, y, width, height] = size.map((i) => `${i}px`);
+		get styles() {
+			const size = Array.isArray(this.viewBox) ? this.viewBox : this.viewBox.split(" ");
+			const [x, y, width, height] = size.map((i) => `${i}px`);
 
-      return { x, y, width, height };
-    }
-  }
+			return { x, y, width, height };
+		}
+	}
 </script>

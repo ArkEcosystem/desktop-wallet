@@ -1,15 +1,44 @@
 export class ImageManager {
 	readonly #context: any;
 
-	public constructor() {
-		this.#context = require.context("@/assets/images", true, /\.(png|jpe?g|svg)$/);
+	constructor() {
+		this.#context = require.context("../../assets/images", true, /\.(png|jpe?g|svg)$/);
 	}
 
-	public loadImage(filename: string) {
+	public images() {
+		return this.#context.keys();
+	}
+
+	public tree() {
+		return this.images().reduce((stash, current) => {
+			const path = current.replace("./", "");
+			const [category, filename] = path.split("/");
+
+			if (category && filename) {
+				const previous = stash[category] || [];
+
+				stash[category] = [...previous, `${category}/${filename}`];
+			}
+
+			return stash;
+		}, {});
+	}
+
+	public inline(...filter) {
+		let result = [];
+		const tree = this.tree();
+
+		for (const item of filter) {
+			result = result.concat(tree[item] || []);
+		}
+
+		return result;
+	}
+
+	public loadImage(filename) {
 		try {
 			return this.#context(`./${filename}`);
-		} catch (error) {
-			// In case the image could not be found:
+		} catch {
 			return this.#context("./default.svg");
 		}
 	}

@@ -141,10 +141,10 @@ module.exports = {
 				sans: ["Inter", ...defaultConfig.theme.fontFamily.sans],
 			},
 			fill: {
-				"current": "currentColor",
+				current: "currentColor",
 			},
 			stroke: {
-				"current": "currentColor",
+				current: "currentColor",
 			},
 		},
 

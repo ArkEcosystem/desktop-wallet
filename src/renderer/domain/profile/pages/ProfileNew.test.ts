@@ -1,6 +1,6 @@
 import { Enums } from "@arkecosystem/platform-sdk-profiles";
 import { createLocalVue, mount } from "@vue/test-utils";
-import * as flushPromises from "flush-promises";
+import flushPromises from "flush-promises";
 import { ValidationObserver, ValidationProvider } from "vee-validate/dist/vee-validate.full";
 
 import ProfileNew from "@/domain/profile/pages/ProfileNew.vue";
@@ -15,7 +15,7 @@ const createStubbedVue = () => {
 	return {
 		localVue,
 		mocks: {
-			assets_loadImage: jest.fn(),
+			loadImageFromAssets: jest.fn(),
 			$profiles: {
 				push() {
 					return { settings: jest.fn(() => profileSettings) };
@@ -23,11 +23,12 @@ const createStubbedVue = () => {
 			},
 		},
 		stubs: {
-			XButton: true,
-			Toggle: true,
 			FormError: true,
 			ListDivided: true,
 			ListDividedItem: true,
+			SvgIcon: true,
+			Toggle: true,
+			XButton: true,
 		},
 		sync: false,
 	};
