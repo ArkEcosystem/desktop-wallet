@@ -3,7 +3,7 @@ import { createLocalVue, mount, shallowMount } from "@vue/test-utils";
 import flushPromises from "flush-promises";
 import { ValidationObserver, ValidationProvider } from "vee-validate/dist/vee-validate.full";
 
-import ProfileNew from "@/domain/profile/pages/ProfileNew.vue";
+import CreateProfile from "@/domain/profile/pages/CreateProfile.vue";
 
 const profileSettings = { set: jest.fn() };
 const router = { push: jest.fn() };
@@ -36,7 +36,7 @@ const createStubbedVue = () => {
 	};
 };
 
-describe("ProfileNew", () => {
+describe("CreateProfile", () => {
 	describe.each([true, false])(".darkTheme(%s)", (darkModeEnabled) => {
 		beforeEach(() => {
 			// @ts-ignore
@@ -48,14 +48,14 @@ describe("ProfileNew", () => {
 		});
 
 		it("should render", () => {
-			const wrapper = mount(ProfileNew, createStubbedVue());
+			const wrapper = mount(CreateProfile, createStubbedVue());
 
 			expect(wrapper.text()).toContain("Create Profile");
 			expect(wrapper.html()).toMatchSnapshot();
 		});
 
 		it("should submit the form and create a profile without any errors", async () => {
-			const wrapper = mount(ProfileNew, createStubbedVue());
+			const wrapper = mount(CreateProfile, createStubbedVue());
 
 			expect(wrapper.vm.$data).toEqual({
 				form: {
@@ -106,7 +106,7 @@ describe("ProfileNew", () => {
 		});
 
 		it("should go back to the welcome page", () => {
-			const wrapper = shallowMount(ProfileNew, createStubbedVue());
+			const wrapper = shallowMount(CreateProfile, createStubbedVue());
 
 			wrapper.setData({
 				form: {

@@ -205,7 +205,7 @@
 			XButton,
 		},
 	})
-	export default class ProfileNew extends Vue {
+	export default class CreateProfile extends Vue {
 		form = {
 			name: "",
 			marketProvider: "coingecko",
