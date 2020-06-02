@@ -2,19 +2,13 @@
 	<li class="flex flex-col w-full py-4 border-b border-dashed ListDividedItem border-theme-line-separator">
 		<div :class="isFloatingLabel ? 'flex-col items-start' : 'items-center'" class="flex justify-between">
 			<div class="flex flex-col ListDividedItem__container__label">
-				<span
-					:class="[
-						{ 'font-semibold text-xs mb-1': isFloatingLabel },
-						{ 'text-theme-page-text-light': !itemLabelClass },
-						itemLabelClass,
-					]"
-					class="mr-5 ListDividedItem__label"
-				>{{ label }}</span>
+				<span :class="labelClass" class="mr-5 ListDividedItem__label">{{ label }}</span>
 				<span
 					v-if="labelDescription"
 					:class="itemLabelDescriptionClass"
 					class="text-sm text-gray-500 ListDividedItem__label__description"
-				>{{ labelDescription }}</span>
+					>{{ labelDescription }}</span
+				>
 			</div>
 
 			<div :class="itemValueClass" class="ListDividedItem__value">
@@ -43,5 +37,13 @@
 		@Prop({ default: "" }) public itemLabelDescriptionClass!: string;
 		@Prop({ default: "" }) public itemValueClass!: string;
 		@Inject({ from: "isFloatingLabel", default: false }) public isFloatingLabel!: boolean;
+
+		get labelClass() {
+			return [
+				{ "font-semibold text-xs mb-1": this.isFloatingLabel },
+				{ "text-theme-page-text-light": !this.itemLabelClass },
+				this.itemLabelClass,
+			];
+		}
 	}
 </script>
