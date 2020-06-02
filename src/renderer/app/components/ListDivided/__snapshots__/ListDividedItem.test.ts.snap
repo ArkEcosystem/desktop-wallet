@@ -1,11 +1,49 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`ListDividedItem should accept default slot 1`] = `
+<li class="flex flex-col w-full py-4 border-b border-dashed ListDividedItem border-theme-line-separator">
+  <div class="flex justify-between items-center">
+    <div class="flex flex-col ListDividedItem__container__label"><span class="mr-5 ListDividedItem__label text-theme-page-text-light">test</span>
+      <!---->
+    </div>
+    <div class="ListDividedItem__value"><strong>test</strong></div>
+  </div>
+  <!---->
+</li>
+`;
+
 exports[`ListDividedItem should render 1`] = `
 <li class="flex flex-col w-full py-4 border-b border-dashed ListDividedItem border-theme-line-separator">
   <div class="flex justify-between items-center">
     <div class="flex flex-col ListDividedItem__container__label"><span class="mr-5 ListDividedItem__label text-theme-page-text-light">Item</span>
       <!---->
     </div>
+    <div class="ListDividedItem__value">
+      <!---->
+    </div>
+  </div>
+  <!---->
+</li>
+`;
+
+exports[`ListDividedItem should show the label 1`] = `
+<li class="flex flex-col w-full py-4 border-b border-dashed ListDividedItem border-theme-line-separator">
+  <div class="flex justify-between items-center">
+    <div class="flex flex-col ListDividedItem__container__label"><span class="mr-5 ListDividedItem__label text-theme-page-text-light">Item</span>
+      <!---->
+    </div>
+    <div class="ListDividedItem__value">
+      <!---->
+    </div>
+  </div>
+  <!---->
+</li>
+`;
+
+exports[`ListDividedItem should show the label description 1`] = `
+<li class="flex flex-col w-full py-4 border-b border-dashed ListDividedItem border-theme-line-separator">
+  <div class="flex justify-between items-center">
+    <div class="flex flex-col ListDividedItem__container__label"><span class="mr-5 ListDividedItem__label text-theme-page-text-light">test</span> <span class="text-sm text-gray-500 ListDividedItem__label__description">Lorem ipsum dolor sit amet</span></div>
     <div class="ListDividedItem__value">
       <!---->
     </div>
