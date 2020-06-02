@@ -1,7 +1,7 @@
 import "reflect-metadata";
 import "./registerComponentHooks";
 
-import CompositionApi from '@vue/composition-api'
+import CompositionApi from "@vue/composition-api";
 import logger from "electron-log";
 import PortalVue from "portal-vue";
 import VTooltip from "v-tooltip";
@@ -19,7 +19,6 @@ import { mixins } from "@/support/mixins";
 import env from "@/support/plugins/env";
 import eventBus from "@/support/plugins/event-bus";
 import http from "@/support/plugins/http-client";
-
 
 Vue.config.productionTip = false;
 Vue.logger = Vue.prototype.$logger = logger;

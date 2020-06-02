@@ -10,10 +10,10 @@ export const Default = () => ({
 		Tab,
 		Tabs,
 		TabList,
-		TabPanel
+		TabPanel,
 	},
 	data: () => ({
-		value: "1"
+		value: "1",
 	}),
 	template: `
 		<Tabs class="p-5" v-model="value">
@@ -38,5 +38,5 @@ export const Default = () => ({
 				</TabPanel>
 			</div>
 		</Tabs>
-	`
-})
+	`,
+});

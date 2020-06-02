@@ -16,8 +16,8 @@ module.exports = {
 						options: {
 							appendTsSuffixTo: [/\.vue$/],
 						},
-					}
-				]
+					},
+				],
 			},
 			{
 				test: /\.postcss$/,
