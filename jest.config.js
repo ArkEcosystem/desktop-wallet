@@ -18,7 +18,6 @@ module.exports = {
 		"src/renderer/app/router",
 		"src/renderer/app/store",
 		"src/renderer/main.js",
-		"src/renderer/registerComponentHooks.ts",
 		"src/renderer/splashscreen.js",
 		"src/renderer/support/enums",
 		"stories.ts",

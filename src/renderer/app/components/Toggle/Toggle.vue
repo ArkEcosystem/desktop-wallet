@@ -1,19 +1,5 @@
-<template>
-	<label class="Toggle" :class="{ 'Toggle--checked': inputChecked, 'Toggle--disabled': disabled }">
-		<input type="checkbox" class="Toggle__input sr-only" :checked="model" :disabled="disabled" @change="toggle" />
-		<div
-			aria-hidden="true"
-			class="Toggle__handle inline-flex rounded-full relative h-2 w-10 cursor-pointer bg-gray-300"
-		>
-			<span
-				class="Toggle__handle__inner h-5 w-5 bg-gray-300 rounded-full absolute transform -translate-y-1/2 mt-1 transition transition-colors transition-transform ease-in-out duration-200"
-			></span>
-		</div>
-	</label>
-</template>
-
 <script lang="ts">
-	import { Component, Model, Prop, Vue, Watch } from "vue-property-decorator";
+	import { computed, defineComponent, inject, ref } from "vue";
 
 	@Component({
 		data: (vm: Toggle) => ({
@@ -45,6 +31,20 @@
 		}
 	}
 </script>
+
+<template>
+	<label class="Toggle" :class="{ 'Toggle--checked': inputChecked, 'Toggle--disabled': disabled }">
+		<input type="checkbox" class="sr-only Toggle__input" :checked="model" :disabled="disabled" @change="toggle" />
+		<div
+			aria-hidden="true"
+			class="relative inline-flex w-10 h-2 bg-gray-300 rounded-full cursor-pointer Toggle__handle"
+		>
+			<span
+				class="absolute w-5 h-5 mt-1 transition transition-colors transition-transform duration-200 ease-in-out transform -translate-y-1/2 bg-gray-300 rounded-full Toggle__handle__inner"
+			></span>
+		</div>
+	</label>
+</template>
 
 <style lang="postcss" scoped>
 	.Toggle--checked .Toggle__handle__inner {

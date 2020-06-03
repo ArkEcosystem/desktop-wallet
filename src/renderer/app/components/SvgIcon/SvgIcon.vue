@@ -1,3 +1,26 @@
+<script lang="ts">
+	import { defineComponent } from "vue";
+
+	export default defineComponent({
+		props: {
+			name: {
+				type: String,
+				required: true,
+			},
+			viewBox: {
+				type: String,
+				required: false,
+				default: "0 0 50 50",
+			},
+		},
+		setup(props) {
+			const [x, y, width, height] = props.viewBox.split(" ").map((i) => `${i}px`);
+
+			return { styles: { x, y, width, height } };
+		},
+	});
+</script>
+
 <template>
 	<svg
 		v-bind="styles"
@@ -10,19 +33,3 @@
 		<use :xlink:href="`#${name}`" />
 	</svg>
 </template>
-
-<script lang="ts">
-	import { Component, Prop, Vue } from "vue-property-decorator";
-
-	@Component
-	export default class SvgIcon extends Vue {
-		@Prop({ required: true }) public name!: string;
-		@Prop({ default: "0 0 50 50" }) public viewBox!: string;
-
-		get styles() {
-			const [x, y, width, height] = this.viewBox.split(" ").map((i) => `${i}px`);
-
-			return { x, y, width, height };
-		}
-	}
-</script>

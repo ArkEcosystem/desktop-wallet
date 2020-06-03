@@ -1,10 +1,34 @@
+<script lang="ts">
+	import { defineComponent } from "vue";
+
+	export default defineComponent({
+		props: {
+			status: {
+				type: String,
+				required: false,
+				default: "warning",
+			},
+			size: {
+				type: String,
+				required: false,
+				default: "default",
+			},
+			title: {
+				type: String,
+				required: false,
+				default: "",
+			},
+		},
+	});
+</script>
+
 <template>
 	<div
 		role="alert"
-		class="Alert flex rounded-lg overflow-hidden"
+		class="flex overflow-hidden rounded-lg Alert"
 		:class="['Alert--status-' + status, 'Alert--size-' + size]"
 	>
-		<div class="Alert__icon Alert--padding w-24 flex items-center justify-center">
+		<div class="flex items-center justify-center w-24 Alert__icon Alert--padding">
 			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="w-8 h-8">
 				<path
 					d="M0 10C0 4.5 4.5 0 10 0s10 4.5 10 10-4.5 10-10 10S0 15.5 0 10zm2 0c0 4.4 3.6 8 8 8s8-3.6 8-8-3.6-8-8-8-8 3.6-8 8zm7 4c0-.6.4-1 1-1s1 .4 1 1-.4 1-1 1-1-.4-1-1zm0-3V6c0-.6.4-1 1-1s1 .4 1 1v5c0 .6-.4 1-1 1s-1-.4-1-1z"
@@ -12,7 +36,7 @@
 				/>
 			</svg>
 		</div>
-		<div class="Alert__content Alert--padding flex-1">
+		<div class="flex-1 Alert__content Alert--padding">
 			<p v-if="title" data-testid="Alert__title" class="Alert__content__title">
 				{{ title }}
 			</p>
@@ -20,17 +44,6 @@
 		</div>
 	</div>
 </template>
-
-<script lang="ts">
-	import { Component, Prop, Vue } from "vue-property-decorator";
-
-	@Component
-	export default class Alert extends Vue {
-		@Prop({ default: "warning" }) public status!: "error" | "success" | "warning" | "info";
-		@Prop({ default: "default" }) public size!: "small" | "default" | "large";
-		@Prop({ default: "" }) public title!: string;
-	}
-</script>
 
 <style lang="postcss" scoped>
 	.Alert {

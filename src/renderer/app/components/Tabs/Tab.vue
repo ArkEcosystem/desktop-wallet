@@ -1,15 +1,9 @@
-<template>
-	<button class="Tab" :class="{ 'Tab--active': isActive }" @click="handleClick">
-		<slot />
-	</button>
-</template>
-
 <script lang="ts">
-	import { defineComponent, inject } from "@vue/composition-api";
+	import { defineComponent, inject } from "vue";
 
 	import { TabContextSymbol } from "./useTab";
 
-	const Tab = defineComponent({
+	export default defineComponent({
 		props: {
 			id: {
 				type: [String, Number],
@@ -27,6 +21,10 @@
 			return { handleClick, isActive };
 		},
 	});
-
-	export default Tab;
 </script>
+
+<template>
+	<button class="Tab" :class="{ 'Tab--active': isActive }" @click="handleClick">
+		<slot />
+	</button>
+</template>

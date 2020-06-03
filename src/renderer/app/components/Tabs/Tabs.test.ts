@@ -1,4 +1,4 @@
-import CompositionApi, { reactive, ref } from "@vue/composition-api";
+import { defineComponent, inject, computed, ref } from "vue";
 import { createLocalVue, mount, shallowMount } from "@vue/test-utils";
 
 import Tab from "@/app/components/Tabs/Tab.vue";
@@ -9,7 +9,6 @@ import Tabs from "@/app/components/Tabs/Tabs.vue";
 import { TabContextSymbol } from "./useTab";
 
 const localVue = createLocalVue();
-localVue.use(CompositionApi);
 
 const tabContextMock = {
 	state: reactive({

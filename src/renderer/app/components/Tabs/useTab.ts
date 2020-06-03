@@ -1,4 +1,4 @@
-import { computed, InjectionKey, reactive } from "@vue/composition-api";
+import { computed, InjectionKey, reactive } from "vue";
 
 export function useTabContext(options: { initialId?: string | number }) {
 	const state = reactive<{ currentId: string | number | undefined }>({

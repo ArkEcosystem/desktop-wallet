@@ -1,16 +1,14 @@
+<script lang="ts">
+	import { defineComponent } from "vue";
+
+	export default defineComponent({});
+</script>
+
 <template>
-	<div class="TabList inline-flex justify-start items-stretch rounded bg-gray-200 px-3">
+	<div class="inline-flex items-stretch justify-start px-3 bg-gray-200 rounded TabList">
 		<slot></slot>
 	</div>
 </template>
-
-<script lang="ts">
-	import { defineComponent } from "@vue/composition-api";
-
-	const TabList = defineComponent({});
-
-	export default TabList;
-</script>
 
 <style lang="postcss" scoped>
 	.TabList > .Tab {

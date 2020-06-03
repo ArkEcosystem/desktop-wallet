@@ -1,11 +1,10 @@
-import Vue from "vue";
-import Router from "vue-router";
+import { createRouter, createWebHistory } from "vue-router";
 
 import { routes } from "@/domain/profile";
 
-Vue.use(Router);
-
-const router = new Router({
+export const router = createRouter({
+	history: createWebHistory(),
+	strict: true,
 	routes: [
 		...routes,
 		{
@@ -14,5 +13,3 @@ const router = new Router({
 		},
 	],
 });
-
-export default router;

@@ -1,21 +1,30 @@
 import "reflect-metadata";
-import "./registerComponentHooks";
 
-import CompositionApi from "@vue/composition-api";
 import logger from "electron-log";
 import PortalVue from "portal-vue";
 import VTooltip from "v-tooltip";
-import { ValidationObserver, ValidationProvider } from "vee-validate/dist/vee-validate.full.esm";
+import {
+	ValidationObserver,
+	ValidationProvider
+} from "vee-validate/dist/vee-validate.full.esm";
 import Vue from "vue";
 import VueGoodTablePlugin from "vue-good-table";
 
 import App from "@/app/App";
-import { i18n } from "@/app/i18n";
-import router from "@/app/router";
-import store from "@/app/store";
+import {
+	i18n
+} from "@/app/i18n";
+import {
+	router
+} from "@/app/router";
+import {
+	store
+} from "@/app/store";
 import directives from "@/support/directives";
 import filters from "@/support/filters";
-import { mixins } from "@/support/mixins";
+import {
+	mixins
+} from "@/support/mixins";
 import env from "@/support/plugins/env";
 import eventBus from "@/support/plugins/event-bus";
 import http from "@/support/plugins/http-client";
@@ -41,7 +50,6 @@ Vue.use(VTooltip, {
 });
 Vue.use(eventBus);
 Vue.use(PortalVue);
-Vue.use(CompositionApi);
 
 // Mixins
 Vue.mixin(mixins);
@@ -51,11 +59,12 @@ const app = new Vue({
 		App,
 	},
 	i18n,
-	router,
-	store,
 	template: "<App/>",
 });
 
 store.$app = app;
+
+app.use(router)
+app.use(store)
 
 app.$mount("#app");

@@ -1,3 +1,55 @@
+<script lang="ts">
+	import { defineComponent, inject } from "vue";
+
+	import { FloatingLabelSymbol } from "./types";
+
+	export default defineComponent({
+		props: {
+			label: {
+				type: String,
+				required: true,
+			},
+			labelDescription: {
+				type: String,
+				required: false,
+				default: null,
+			},
+			value: {
+				type: [String, Boolean],
+				required: false,
+				default: null,
+			},
+			itemLabelClass: {
+				type: String,
+				required: false,
+				default: "",
+			},
+			itemLabelDescriptionClass: {
+				type: String,
+				required: false,
+				default: "",
+			},
+			itemValueClass: {
+				type: String,
+				required: false,
+				default: "",
+			},
+		},
+		setup(props) {
+			const isFloatingLabel = inject(FloatingLabelSymbol);
+
+			return {
+				isFloatingLabel,
+				labelClass: [
+					{ "font-semibold text-xs mb-1": isFloatingLabel },
+					{ "text-theme-page-text-light": !props.itemLabelClass },
+					props.itemLabelClass,
+				],
+			};
+		},
+	});
+</script>
+
 <template>
 	<li class="flex flex-col w-full py-4 border-b border-dashed ListDividedItem border-theme-line-separator">
 		<div :class="isFloatingLabel ? 'flex-col items-start' : 'items-center'" class="flex justify-between">
@@ -7,8 +59,7 @@
 					v-if="labelDescription"
 					:class="itemLabelDescriptionClass"
 					class="text-sm text-gray-500 ListDividedItem__label__description"
-					>{{ labelDescription }}</span
-				>
+				>{{ labelDescription }}</span>
 			</div>
 
 			<div :class="itemValueClass" class="ListDividedItem__value">
@@ -22,28 +73,3 @@
 		</div>
 	</li>
 </template>
-
-<script lang="ts">
-	import { Component, Inject, Prop, Vue } from "vue-property-decorator";
-
-	@Component({
-		name: "ListDividedItem",
-	})
-	export default class ListDividedItem extends Vue {
-		@Prop({ required: true }) public label!: string;
-		@Prop({ default: null }) public labelDescription!: string | null;
-		@Prop({ default: null }) public value!: string | boolean | null;
-		@Prop({ default: "" }) public itemLabelClass!: string;
-		@Prop({ default: "" }) public itemLabelDescriptionClass!: string;
-		@Prop({ default: "" }) public itemValueClass!: string;
-		@Inject({ from: "isFloatingLabel", default: false }) public isFloatingLabel!: boolean;
-
-		get labelClass() {
-			return [
-				{ "font-semibold text-xs mb-1": this.isFloatingLabel },
-				{ "text-theme-page-text-light": !this.itemLabelClass },
-				this.itemLabelClass,
-			];
-		}
-	}
-</script>

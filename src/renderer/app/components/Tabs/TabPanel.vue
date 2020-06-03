@@ -1,15 +1,9 @@
-<template>
-	<div v-if="isActive" data-testid="TabPanel">
-		<slot></slot>
-	</div>
-</template>
-
 <script lang="ts">
-	import { defineComponent, inject } from "@vue/composition-api";
+	import { defineComponent, inject } from "vue";
 
 	import { TabContextSymbol } from "./useTab";
 
-	const TabPanel = defineComponent({
+	export default defineComponent({
 		props: {
 			id: {
 				type: [String, Number],
@@ -23,6 +17,10 @@
 			return { isActive };
 		},
 	});
-
-	export default TabPanel;
 </script>
+
+<template>
+	<div v-if="isActive" data-testid="TabPanel">
+		<slot></slot>
+	</div>
+</template>

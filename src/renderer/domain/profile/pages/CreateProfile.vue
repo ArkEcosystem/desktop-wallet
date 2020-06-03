@@ -1,3 +1,81 @@
+<script lang="ts">
+	import { Enums, Profile } from "@arkecosystem/platform-sdk-profiles";
+	import { CURRENCIES, MARKET_PROVIDERS } from "@config";
+	import { computed, defineComponent, inject, ref } from "vue";
+
+	import { XButton } from "@/app/components/Button";
+	import { FormError } from "@/app/components/Form";
+	import { ListDivided, ListDividedItem } from "@/app/components/ListDivided";
+	import { SvgIcon } from "@/app/components/SvgIcon";
+	import { Toggle } from "@/app/components/Toggle";
+
+	@Component({
+		components: {
+			FormError,
+			ListDivided,
+			ListDividedItem,
+			SvgIcon,
+			Toggle,
+			XButton,
+		},
+	})
+	export default class CreateProfile extends Vue {
+		form = {
+			name: "",
+			marketProvider: "coingecko",
+			currency: "btc",
+			darkTheme: false,
+		};
+
+		created() {
+			this.form.darkTheme =
+				(window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) || false;
+		}
+
+		/**
+		 * TODO:
+		 * - support more settings during setup?
+		 * - let user select time locale
+		 * - let user select date locale
+		 * - let user select bip39 locale
+		 */
+		async onSubmit() {
+			const profile: Profile = await this.$profiles.push(this.form.name);
+
+			await profile.settings().set(Enums.ProfileSetting.MarketProvider, this.form.marketProvider);
+			await profile.settings().set(Enums.ProfileSetting.ChartCurrency, this.form.currency);
+			await profile.settings().set(Enums.ProfileSetting.Theme, this.form.darkTheme ? "dark" : "light");
+
+			this.resetForm();
+
+			// TODO: redirect to the onboarding page
+		}
+
+		backToWelcome() {
+			this.resetForm();
+
+			this.$router.push({ name: "profiles.welcome" });
+		}
+
+		get allowedMarketProviders() {
+			return MARKET_PROVIDERS;
+		}
+
+		get allowedCurrencies() {
+			return CURRENCIES;
+		}
+
+		private resetForm() {
+			this.form = {
+				name: "",
+				marketProvider: "coingecko",
+				currency: "btc",
+				darkTheme: false,
+			};
+		}
+	}
+</script>
+
 <template>
 	<div class="w-full h-full bg-white">
 		<div class="px-4 sm:px-6 lg:px-8">
@@ -183,81 +261,3 @@
 		</div>
 	</div>
 </template>
-
-<script lang="ts">
-	import { Enums, Profile } from "@arkecosystem/platform-sdk-profiles";
-	import { CURRENCIES, MARKET_PROVIDERS } from "@config";
-	import { Component, Vue } from "vue-property-decorator";
-
-	import { XButton } from "@/app/components/Button";
-	import { FormError } from "@/app/components/Form";
-	import { ListDivided, ListDividedItem } from "@/app/components/ListDivided";
-	import { SvgIcon } from "@/app/components/SvgIcon";
-	import { Toggle } from "@/app/components/Toggle";
-
-	@Component({
-		components: {
-			FormError,
-			ListDivided,
-			ListDividedItem,
-			SvgIcon,
-			Toggle,
-			XButton,
-		},
-	})
-	export default class CreateProfile extends Vue {
-		form = {
-			name: "",
-			marketProvider: "coingecko",
-			currency: "btc",
-			darkTheme: false,
-		};
-
-		created() {
-			this.form.darkTheme =
-				(window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) || false;
-		}
-
-		/**
-		 * TODO:
-		 * - support more settings during setup?
-		 * - let user select time locale
-		 * - let user select date locale
-		 * - let user select bip39 locale
-		 */
-		async onSubmit() {
-			const profile: Profile = await this.$profiles.push(this.form.name);
-
-			await profile.settings().set(Enums.ProfileSetting.MarketProvider, this.form.marketProvider);
-			await profile.settings().set(Enums.ProfileSetting.ChartCurrency, this.form.currency);
-			await profile.settings().set(Enums.ProfileSetting.Theme, this.form.darkTheme ? "dark" : "light");
-
-			this.resetForm();
-
-			// TODO: redirect to the onboarding page
-		}
-
-		backToWelcome() {
-			this.resetForm();
-
-			this.$router.push({ name: "profiles.welcome" });
-		}
-
-		get allowedMarketProviders() {
-			return MARKET_PROVIDERS;
-		}
-
-		get allowedCurrencies() {
-			return CURRENCIES;
-		}
-
-		private resetForm() {
-			this.form = {
-				name: "",
-				marketProvider: "coingecko",
-				currency: "btc",
-				darkTheme: false,
-			};
-		}
-	}
-</script>

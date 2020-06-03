@@ -1,3 +1,31 @@
+<script lang="ts">
+	import { defineComponent, provide } from "vue";
+
+	import ListDividedItem from "./ListDividedItem";
+	import { FloatingLabelSymbol } from "./types";
+
+	export default defineComponent({
+		components: {
+			ListDividedItem,
+		},
+		props: {
+			isFloatingLabel: {
+				type: Boolean,
+				required: false,
+				default: false,
+			},
+			errors: {
+				type: Array,
+				required: false,
+				default: null,
+			},
+		},
+		setup(props) {
+			provide(FloatingLabelSymbol, props.isFloatingLabel);
+		},
+	});
+</script>
+
 <template>
 	<ul class="w-full ListDivided">
 		<template v-if="items">
@@ -9,24 +37,6 @@
 		</template>
 	</ul>
 </template>
-
-<script lang="ts">
-	import { Component, Prop, Provide, Vue } from "vue-property-decorator";
-
-	import ListDividedItem from "./ListDividedItem";
-
-	@Component({
-		name: "ListDivided",
-		components: {
-			ListDividedItem,
-		},
-	})
-	export default class ListDivided extends Vue {
-		@Prop({ default: false }) public isFloatingLabel!: boolean;
-		@Prop({ default: null }) public items!: object | null;
-		@Provide("isFloatingLabel") public isFloatingLabelData = this.isFloatingLabel;
-	}
-</script>
 
 <style lang="postcss">
 	.ListDivided {

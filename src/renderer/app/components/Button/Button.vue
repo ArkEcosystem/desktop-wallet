@@ -1,3 +1,32 @@
+<script lang="ts">
+	import { defineComponent } from "vue";
+
+	export default defineComponent({
+		props: {
+			variant: {
+				type: String,
+				required: false,
+				default: "solid",
+			},
+			color: {
+				type: String,
+				required: false,
+				default: "primary",
+			},
+			size: {
+				type: String,
+				required: false,
+				default: "default",
+			},
+			shape: {
+				type: String,
+				required: false,
+				default: "rounded",
+			},
+		},
+	});
+</script>
+
 <template>
 	<button
 		:class="[
@@ -6,25 +35,13 @@
 			'Button--shape-' + shape,
 			'Button--size-' + size,
 		]"
-		class="Button focus:shadow-outline font-semibold text-center transition-all ease-linear duration-100"
+		class="font-semibold text-center transition-all duration-100 ease-linear Button focus:shadow-outline"
 		v-bind="$attrs"
 		v-on="$listeners"
 	>
 		<slot></slot>
 	</button>
 </template>
-
-<script lang="ts">
-	import { Component, Prop, Vue } from "vue-property-decorator";
-
-	@Component
-	export default class Button extends Vue {
-		@Prop({ default: "solid" }) public variant!: "solid" | "plain" | "outline";
-		@Prop({ default: "primary" }) public color!: "primary" | "success" | "danger" | "light";
-		@Prop({ default: "default" }) public size!: "small" | "default" | "large";
-		@Prop({ default: "rounded" }) public shape!: "rounded" | "circle";
-	}
-</script>
 
 <style lang="postcss" scoped>
 	.Button:disabled {

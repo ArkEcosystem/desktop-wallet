@@ -1,3 +1,17 @@
+<script lang="ts">
+	import "@/app/styles/style.css";
+
+	import { defineComponent } from "vue";
+
+	import packageJson from "../../../package.json";
+
+	export default defineComponent({
+		setup() {
+			return { version: packageJson.version };
+		},
+	});
+</script>
+
 <template>
 	<div class="absolute flex flex-col w-full h-full text-center select-none SplashScreen bg-default-background">
 		<div class="flex justify-center flex-1">
@@ -61,23 +75,6 @@
 		</div>
 	</div>
 </template>
-
-<script lang="ts">
-	import "@/app/styles/style.css";
-
-	import { Component, Vue } from "vue-property-decorator";
-
-	import packageJson from "../../../package.json";
-
-	@Component({
-		name: "SplashScreen",
-	})
-	export default class SplashScreen extends Vue {
-		get version() {
-			return packageJson.version;
-		}
-	}
-</script>
 
 <style scoped>
 	.SplashScreen {

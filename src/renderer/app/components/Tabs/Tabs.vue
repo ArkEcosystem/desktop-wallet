@@ -1,19 +1,14 @@
-<template>
-	<div>
-		<slot></slot>
-	</div>
-</template>
-
 <script lang="ts">
-	import { defineComponent, provide, watch } from "@vue/composition-api";
+	import { defineComponent, provide, watch } from "vue";
 
 	import { TabContextSymbol, useTabContext } from "./useTab";
 
-	const Tabs = defineComponent({
+	export default defineComponent({
 		props: {
 			value: {
 				type: [String, Number],
 				required: false,
+				default: "",
 			},
 		},
 		setup(props, { emit }) {
@@ -24,12 +19,17 @@
 				() => props.value,
 				(id) => id && context?.setCurrentId(id),
 			);
+
 			watch(
 				() => context?.state.currentId,
 				(id) => emit("input", id),
 			);
 		},
 	});
-
-	export default Tabs;
 </script>
+
+<template>
+	<div>
+		<slot></slot>
+	</div>
+</template>
