@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Profile } from "@arkecosystem/platform-sdk-profiles";
-	import { computed, defineComponent, inject, ref } from 'vue';
+	import { computed, defineComponent, inject, ref } from "vue";
 
 	import { XButton } from "@/app/components/Button";
 	import { SvgIcon } from "@/app/components/SvgIcon";
@@ -29,10 +29,7 @@
 		<div class="px-4 sm:px-6 lg:px-8">
 			<div class="flex items-center h-20 md:h-24">
 				<div class="flex p-2 rounded-lg bg-red-logo">
-					<img
-						:src="loadImageFromAssets('ark-logo.png')"
-						class="h-6 md:h-8 lg:h-10"
-					/>
+					<img :src="loadImageFromAssets('ark-logo.png')" class="h-6 md:h-8 lg:h-10" />
 				</div>
 			</div>
 		</div>
@@ -45,10 +42,7 @@
 				<img :src="loadImageFromAssets('pages/profile/onboarding-banner.svg')" />
 			</div>
 
-			<div
-				v-if="profiles.length"
-				class="container mx-auto"
-			>
+			<div v-if="profiles.length" class="container mx-auto">
 				<div class="mx-auto my-8 md:w-3/4 lg:w-3/5 xl:w-1/2">
 					<h1 class="mx-4 text-2xl font-bold md:mx-8 xl:mx-16">
 						Select Profile
@@ -65,10 +59,7 @@
 				>
 					<div class="relative px-6 sm:flex sm:items-center py-7">
 						<button class="absolute top-0 right-0 flex items-center justify-center w-6 h-6 p-1 mt-3">
-							<SvgIcon
-								name="settings"
-								view-box="0 0 20 20"
-							/>
+							<SvgIcon name="settings" view-box="0 0 20 20" />
 						</button>
 
 						<div class="flex flex-row justify-between w-full">
@@ -110,18 +101,10 @@
 				Create a new Profile or login with your MarketSquare account to get started
 			</div>
 			<div class="flex justify-center w-full mb-10">
-				<XButton
-					type="button"
-					class="w-1/5 mr-2"
-				>
+				<XButton type="button" class="w-1/5 mr-2">
 					Sign in to MarketSquare
 				</XButton>
-				<XButton
-					type="button"
-					variant="plain"
-					class="w-1/5"
-					@click="createProfile"
-				>
+				<XButton type="button" variant="plain" class="w-1/5" @click="createProfile">
 					Create Profile
 				</XButton>
 			</div>
