@@ -1,8 +1,10 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
 import { Reqwest } from "@kodekeep/reqwest";
+import { SocksProxyAgent } from "socks-proxy-agent";
 
 export class HttpClient implements Contracts.HttpClient {
 	readonly #client: Reqwest;
+	readonly #socksHost: string = "socks5h://127.0.0.1:9050";
 
 	public constructor() {
 		this.#client = new Reqwest();
@@ -20,6 +22,16 @@ export class HttpClient implements Contracts.HttpClient {
 		this.#client.withOptions({
 			// encoding: null,
 			responseType: "buffer",
+		});
+
+		return this;
+	}
+
+	public withSocks(): HttpClient {
+		this.#client.withAgent({
+			http: new SocksProxyAgent(this.#socksHost),
+			// @ts-ignore
+			https: new SocksProxyAgent(this.#socksHost),
 		});
 
 		return this;
