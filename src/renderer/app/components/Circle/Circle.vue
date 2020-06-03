@@ -39,7 +39,7 @@
                         }
 
 			&-default {
-				--circle-size: theme("spacing.12");
+				--circle-size: theme("spacing.10");
 				@apply text-base px-4 py-2;
 			}
 		}
