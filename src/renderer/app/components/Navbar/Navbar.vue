@@ -15,6 +15,10 @@
 <script lang="ts">
 	import { Component, Vue } from "vue-property-decorator";
 
-	@Component
+	import { mixins } from "@/support/mixins";
+
+	@Component({
+		mixins: [mixins],
+	})
 	export default class Navbar extends Vue {}
 </script>
