@@ -69,4 +69,22 @@ describe("Dropdown", () => {
 		expect(wrapper.find(".Dropdown__content").text()).toContain("Custom dropdown content");
 		done();
 	});
+
+	it("should emit select event on selection", async (done) => {
+		const wrapper = mount(Dropdown, {
+			propsData: {
+				options: ["Option 1", "Option 2", "Option 3"]
+			},
+		});
+
+		wrapper.find(".Dropdown__toggle").trigger("click");
+		await wrapper.vm.$nextTick();
+
+		wrapper.find(".Dropdown__content a:first-child").trigger("click");
+		await wrapper.vm.$nextTick();
+
+		expect(wrapper.emitted().select).toBeTruthy();
+
+		done();
+	});
 });
