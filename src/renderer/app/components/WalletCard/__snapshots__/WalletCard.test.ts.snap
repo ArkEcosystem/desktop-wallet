@@ -2,15 +2,14 @@
 
 exports[`WalletCardBlank should render 1`] = `
 <div class="WalletCard WalletCard--blank">
-  <div>
-    <xcircle-stub size="default" class="border-gray-200 -mr-3"></xcircle-stub>
-    <xcircle-stub size="default" class="border-gray-200"></xcircle-stub>
-  </div>
-  <div class="WalletCard__address">
-    New wallet
-  </div>
-  <div class="WalletCard__balance">
-    Balance
-  </div>
+  <!---->
+  <!---->
+</div>
+`;
+
+exports[`WalletCardFilled should render 1`] = `
+<div class="WalletCard WalletCard--blank">
+  <!---->
+  <!---->
 </div>
 `;
