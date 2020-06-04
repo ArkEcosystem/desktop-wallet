@@ -107,7 +107,7 @@ class LedgerService {
   }
 
   /**
-   * Sign transaction for ledger wallet.
+   * Sign transaction for ledger wallet using ecdsa signatures.
    * @param  {string} path Path for wallet location.
    * @param  {Buffer} transactionBytes bytes of transaction.
    * @return {Promise<string>}
@@ -119,7 +119,19 @@ class LedgerService {
   }
 
   /**
-   * Sign message for wallet.
+   * Sign transaction for ledger wallet using schnorr signatures.
+   * @param  {string} path Path for wallet location.
+   * @param  {Buffer} transactionBytes bytes of transaction.
+   * @return {Promise<string>}
+   */
+  async signTransactionWithSchnorr (path, transactionBytes) {
+    return this.__performAction(async () => {
+      return this.ledger.signTransactionWithSchnorr(path, transactionBytes)
+    })
+  }
+
+  /**
+   * Sign message for ledger wallet using ecdsa signatures.
    * @param  {string} path Path for wallet location.
    * @param  {Buffer} messageBytes bytes to sign.
    * @return {Promise<string>}
@@ -131,7 +143,19 @@ class LedgerService {
   }
 
   /**
-   * Get version from ledger app.
+   * Sign message for ledger wallet using schnorr signatures.
+   * @param  {string} path Path for wallet location.
+   * @param  {Buffer} messageBytes bytes to sign.
+   * @return {Promise<string>}
+   */
+  async signMessageWithSchnorr (path, messageBytes) {
+    return this.__performAction(async () => {
+      return this.ledger.signMessageWithSchnorr(path, messageBytes)
+    })
+  }
+
+  /**
+   * Get version of ledger wallet.
    * @return {Promise<string>}
    */
   async getVersion () {
