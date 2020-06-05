@@ -185,10 +185,10 @@
 		"collectCoverageFrom": [
 			"src/**/*.{js,jsx,ts,tsx}",
 			"!src/**/*.stories.{js,jsx,ts,tsx}",
-			"!src/resources/",
-			"!src/i18n/",
-			"!<rootDir>/build/",
-			"!<rootDir>/dist/"
+			"!src/resources/**/*",
+			"!src/i18n/**/*",
+			"!<rootDir>/build/*",
+			"!<rootDir>/dist/*"
 		],
 		"coverageThreshold": {
 			"global": {
