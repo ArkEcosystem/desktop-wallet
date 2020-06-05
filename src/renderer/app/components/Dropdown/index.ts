@@ -1,3 +1,3 @@
-import WalletCard from "./WalletCard.vue";
+import Dropdown from "./Dropdown.vue";
 
-export { WalletCard };
+export { Dropdown };
