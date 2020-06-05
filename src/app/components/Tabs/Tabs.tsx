@@ -37,7 +37,12 @@ export const Tab = React.forwardRef<HTMLButtonElement, TabProps>((props: TabProp
 	const isActive = context?.isIdActive(props.tabId);
 
 	return (
-		<TabButton ref={ref} aria-selected={isActive} onClick={() => context?.setCurrentId(props.tabId)}>
+		<TabButton
+			data-testid={`tabs__tab-button-${props.tabId}`}
+			ref={ref}
+			aria-selected={isActive}
+			onClick={() => context?.setCurrentId(props.tabId)}
+		>
 			{props.children}
 		</TabButton>
 	);
@@ -82,6 +87,10 @@ export const TabPanel = React.forwardRef<HTMLDivElement, TabProps>((props: TabPa
 		return <></>;
 	}
 
-	return <div ref={ref}>{props.children}</div>;
+	return (
+		<div data-testid="tab-pabel__active-panel" ref={ref}>
+			{props.children}
+		</div>
+	);
 });
 TabPanel.displayName = "TabPanel";
