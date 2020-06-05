@@ -21,7 +21,7 @@ jobs:
         run: sudo apt-get install libudev-dev libusb-1.0-0-dev
 
       - name: Install
-        run: yarn global add node-gyp && yarn install --frozen-lockfile && npm rebuild
+        run: yarn install --frozen-lockfile
 
       - name: Run eslint
         run: yarn lint
