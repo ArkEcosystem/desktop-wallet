@@ -9,4 +9,40 @@ exports[`Button should render 1`] = `
 </div>
 `;
 
+exports[`Button should render a large one 1`] = `
+<div>
+  <button
+    class="sc-AxjAm iHJcKA"
+    color="primary"
+  />
+</div>
+`;
+
+exports[`Button should render a small one 1`] = `
+<div>
+  <button
+    class="sc-AxjAm bjceaN"
+    color="primary"
+  />
+</div>
+`;
+
+exports[`Button should render as outline 1`] = `
+<div>
+  <button
+    class="sc-AxjAm dDaLsr"
+    color="primary"
+  />
+</div>
+`;
+
+exports[`Button should render as plain 1`] = `
+<div>
+  <button
+    class="sc-AxjAm lhSfbA"
+    color="primary"
+  />
+</div>
+`;
+
 exports[`Button should render if disabled 1`] = `[Function]`;

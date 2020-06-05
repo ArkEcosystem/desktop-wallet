@@ -10,6 +10,30 @@ describe("Button", () => {
 		expect(container).toMatchSnapshot();
 	});
 
+	it("should render as plain", () => {
+		const { container } = render(<Button variant="plain" />);
+
+		expect(container).toMatchSnapshot();
+	});
+
+	it("should render as outline", () => {
+		const { container } = render(<Button variant="outline" />);
+
+		expect(container).toMatchSnapshot();
+	});
+
+	it("should render a small one", () => {
+		const { container } = render(<Button size="small" />);
+
+		expect(container).toMatchSnapshot();
+	});
+
+	it("should render a large one", () => {
+		const { container } = render(<Button size="large" />);
+
+		expect(container).toMatchSnapshot();
+	});
+
 	it("should render if disabled", () => {
 		const { asFragment, getByText } = render(<Button disabled>Click</Button>);
 
