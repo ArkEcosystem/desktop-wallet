@@ -13,7 +13,7 @@ module.exports = {
 		node: true,
 		es6: true,
 	},
-	plugins: ["@typescript-eslint", "prettier", "testing-library"],
+	plugins: ["@typescript-eslint", "prettier", "testing-library", "cypress"],
 	extends: [
 		"eslint:recommended",
 		"plugin:@typescript-eslint/eslint-recommended",
@@ -23,6 +23,7 @@ module.exports = {
 		"plugin:react/recommended",
 		"prettier/@typescript-eslint",
 		"plugin:testing-library/react",
+		"plugin:cypress/recommended",
 	],
 	rules: {
 		"prefer-const": [
