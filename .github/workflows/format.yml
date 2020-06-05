@@ -2,23 +2,19 @@ name: Format
 
 on:
   pull_request:
-    paths:
-      - "**.js"
-      - "**.ts"
-      - "**.tsx"
+    types: [ready_for_review, synchronize, opened]
 
 jobs:
   eslint:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.head_ref }}
 
       - name: Update System
         run: sudo apt-get update
-
-      - name: Ledger
-        run: sudo apt-get install libudev-dev libusb-1.0-0-dev
 
       - name: Install
         run: yarn install --frozen-lockfile
@@ -26,9 +22,8 @@ jobs:
       - name: Run eslint
         run: yarn lint
 
-      - uses: stefanzweifel/git-auto-commit-action@v4.1.2
+      - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: "style: resolve style guide violations"
-          branch: ${{ github.head_ref }}
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
