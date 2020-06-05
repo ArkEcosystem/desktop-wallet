@@ -41,26 +41,33 @@ Translations are no longer accepted for the Desktop Wallet. We are using plugins
 ### Requirements
 
 #### Ubuntu
+
 In Ubuntu the development files of `libudev` are necessary:
+
 ```
 sudo apt-get install libudev-dev libusb-1.0-0-dev
 ```
 
 #### Windows
-- Python 2.7
-- Visual Studio 2017
+
+-   Python 2.7
+-   Visual Studio 2017
 
 #### Node 12
+
 To download, head over to [here](https://nodejs.org/en/) and download Node 12.
 
 If you already have npm installed, you can run
+
 ```
 npm install -g n
 sudo n 12
 ```
 
 #### Yarn
+
 Install the Yarn dependency manager
+
 ```
 npm install -g yarn
 ```
@@ -69,51 +76,39 @@ npm install -g yarn
 
 <details><summary>List of commands</summary>
 
-``` bash
+```bash
 # Install dependencies
 yarn install
 
-# Execute the application. Making changes in the code, updates the application (hot reloading).
+# Execute the electron application. Making changes in the code, updates the application (hot reloading).
 yarn dev
 
-# Lint all JS/Vue files in the `src` and `__tests__`
+# Execute the browser version application. Making changes in the code, updates the application (hot reloading) good for designing :3.
+yarn start
+
+# Runs linter over the files
 yarn lint
 
-# Lint, and fix, all JS/Vue files in `src` and `__tests__`
+# Try to automatically fix lint errors
 yarn lint:fix
 
-# Collect the code and produce a compressed file
-yarn pack
-
-# Build electron application for production (Current OS)
+# Builds the production code for the react application
 yarn build
 
-# Build electron application for production (Windows)
-yarn build:win
-
-# Build electron application for production (Mac)
+# Build and electron application for production (Mac)
 yarn build:mac
 
-# Build electron application for production (Linux)
+# Build and electron application for production (Linux)
 yarn build:linux
 
-# Run unit and end-to-end tests
+# Build electron application for production (Windows - x32 and x64)
+yarn build:wind
+
+# Run the default test switch in default watch mode
 yarn test
 
-# Run unit tests
-yarn test:unit
-
 # Run unit tests and generate and display the coverage report
-yarn test:unit:coverage
-
-# Run unit tests and watch for changes to re-run the tests
-yarn test:unit:watch
-
-# Run end-to-end tests, without building the application
-yarn test:e2e
-
-# Build the application and run end-to-end tests
-yarn test:e2e:full
+yarn test:coverage
 ```
 
 </details>

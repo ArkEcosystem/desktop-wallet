@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ListDivided should render an empty list divided 1`] = `
+<DocumentFragment>
+  <span
+    data-testid="list-divided__empty"
+  >
+    empty
+  </span>
+</DocumentFragment>
+`;
+
+exports[`ListDivided should render an list divided with items 1`] = `
+<DocumentFragment>
+  <ul>
+    <li
+      class="flex flex-col w-full py-4 mb-5"
+      data-testid="list-divided-item__wrapper"
+    >
+      <div
+        class="flex justify-between flex-col items-start"
+        data-testid="list-divided-item__inner-wrapper"
+      >
+        <div
+          class="flex flex-col"
+        >
+          <span
+            class="mr-5 "
+            data-testid="list-divided-item__label"
+          >
+            New Profile
+          </span>
+          <span
+            class="text-sm text-theme-neutral text-sm font-semibold text-neutral-dark"
+            data-testid="list-divided-item__label--description"
+          >
+            Select Profile Image
+          </span>
+        </div>
+      </div>
+      <div
+        class="mt-4"
+        data-testid="list-divided-item__content"
+      >
+        <div
+          class="flex flex-row mt-2"
+        >
+          <div
+            class="flex items-center justify-center w-24 h-24 mr-6 border-2 border-theme-neutral border-dashed rounded"
+          />
+          <div
+            class="relative w-24 h-24 bg-theme-neutral rounded"
+          >
+            <img
+              alt="random avatar"
+              class="object-cover rounded"
+              src="https://randomuser.me/api/portraits/men/3.jpg"
+            />
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+</DocumentFragment>
+`;

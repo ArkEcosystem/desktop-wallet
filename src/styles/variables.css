@@ -1,0 +1,79 @@
+:root {
+	--theme-background-color: #ffffff;
+	--theme-text-color: "#212225";
+
+	--theme-color-primary: var(--theme-color-primary-600);
+	--theme-color-primary-rgb: 0, 125, 255;
+	--theme-color-primary-contrast: var(--theme-color-primary-100);
+	--theme-color-primary-dark: var(--theme-color-primary-700);
+	--theme-color-primary-light: var(--theme-color-primary-200);
+	--theme-color-primary-900: #173e85;
+	--theme-color-primary-800: #0b4dc7;
+	--theme-color-primary-700: #075af2;
+	--theme-color-primary-600: #007dff;
+	--theme-color-primary-500: #3e9dff;
+	--theme-color-primary-400: #77b9fe;
+	--theme-color-primary-300: #99c7ee;
+	--theme-color-primary-200: #bad6f0;
+	--theme-color-primary-100: #e0ecf5;
+
+	--theme-color-success: var(--theme-color-success-600);
+	--theme-color-success-rgb: 40, 149, 72;
+	--theme-color-success-contrast: var(--theme-color-success-100);
+	--theme-color-success-dark: var(--theme-color-success-700);
+	--theme-color-success-light: var(--theme-color-success-400);
+	--theme-color-success-900: #26372b;
+	--theme-color-success-800: #2b4f35;
+	--theme-color-success-700: #307845;
+	--theme-color-success-600: #289548;
+	--theme-color-success-500: #42b263;
+	--theme-color-success-400: #8cc69d;
+	--theme-color-success-300: #b0dbbc;
+	--theme-color-success-200: #e2f0e6;
+	--theme-color-success-100: #f5fdf6;
+
+	--theme-color-warning: var(--theme-color-warning-600);
+	--theme-color-warning-rgb: 255, 174, 16;
+	--theme-color-warning-contrast: var(--theme-color-warning-100);
+	--theme-color-warning-dark: var(--theme-color-warning-700);
+	--theme-color-warning-light: var(--theme-color-warning-300);
+	--theme-color-warning-900: #ec5c08;
+	--theme-color-warning-800: #f27c0b;
+	--theme-color-warning-700: #f88e0d;
+	--theme-color-warning-600: #fc9f0f;
+	--theme-color-warning-500: #ffae10;
+	--theme-color-warning-400: #feb933;
+	--theme-color-warning-300: #ffc359;
+	--theme-color-warning-200: #ffd486;
+	--theme-color-warning-100: #ffe2b3;
+
+	--theme-color-danger: var(--theme-color-danger-500);
+	--theme-color-danger-rgb: 201, 41, 44;
+	--theme-color-danger-contrast: var(--theme-color-danger-100);
+	--theme-color-danger-dark: var(--theme-color-danger-600);
+	--theme-color-danger-light: var(--theme-color-danger-200);
+	--theme-color-danger-900: #391919;
+	--theme-color-danger-800: #5b1b1b;
+	--theme-color-danger-700: #881a1b;
+	--theme-color-danger-600: #b01e20;
+	--theme-color-danger-500: #c9292c;
+	--theme-color-danger-400: #de5846;
+	--theme-color-danger-300: #ef7c6d;
+	--theme-color-danger-200: #feb8ae;
+	--theme-color-danger-100: #ffdfda;
+
+	--theme-color-neutral: var(--theme-color-neutral-500);
+	--theme-color-neutral-rgb: 165, 173, 185;
+	--theme-color-neutral-contrast: var(--theme-color-neutral-100);
+	--theme-color-neutral-dark: var(--theme-color-neutral-700);
+	--theme-color-neutral-light: var(--theme-color-neutral-400);
+	--theme-color-neutral-900: #212225;
+	--theme-color-neutral-800: #3c4249;
+	--theme-color-neutral-700: #637282;
+	--theme-color-neutral-600: #7e8a9c;
+	--theme-color-neutral-500: #a5adb9;
+	--theme-color-neutral-400: #c4c8cf;
+	--theme-color-neutral-300: #dbdee5;
+	--theme-color-neutral-200: #eef3f5;
+	--theme-color-neutral-100: #f7fafb;
+}

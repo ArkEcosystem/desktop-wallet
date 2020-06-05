@@ -1,281 +1,200 @@
 {
-  "private": true,
-  "name": "ark-desktop-wallet",
-  "version": "2.9.1",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ArkEcosystem/desktop-wallet.git"
-  },
-  "author": "ArkEcosystem <info@ark.io>",
-  "contributors": [
-    "Alex Barnsley <alex@ark.io>",
-    "ItsANameToo <itsanametoo@protonmail.com>",
-    "Juan A. Martín <juan@ark.io>",
-    "Lúcio Rubens <lucio@ark.io>"
-  ],
-  "description": "Ark Ecosystem Desktop Wallet",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/ArkEcosystem/desktop-wallet/issues"
-  },
-  "homepage": "https://github.com/ArkEcosystem/desktop-wallet#readme",
-  "main": "./dist/electron/main.js",
-  "scripts": {
-    "build": "node .electron-vue/build.js && electron-builder --publish never",
-    "build:win": "node .electron-vue/build.js && electron-builder --win --x64 --ia32 --publish never",
-    "build:win:publish": "node .electron-vue/build.js && electron-builder --win --x64 --ia32 --publish onTagOrDraft",
-    "build:win32": "node .electron-vue/build.js && electron-builder --win --ia32 --publish never",
-    "build:win64": "node .electron-vue/build.js && electron-builder --win --x64 --publish never",
-    "build:mac": "node .electron-vue/build.js && electron-builder --mac --publish never",
-    "build:mac:publish": "node .electron-vue/build.js && electron-builder --mac --publish onTagOrDraft",
-    "build:linux": "node .electron-vue/build.js && electron-builder --linux --publish never",
-    "build:linux:publish": "node .electron-vue/build.js && electron-builder --linux --publish onTagOrDraft",
-    "build:dir": "node .electron-vue/build.js && electron-builder --dir",
-    "build:clean": "cross-env BUILD_TARGET=clean node .electron-vue/build.js",
-    "build:web": "cross-env BUILD_TARGET=web node .electron-vue/build.js",
-    "dev": "cross-env ENABLE_SCREENSHOT_PROTECTION=false node .electron-vue/dev-runner.js",
-    "lint": "eslint --ext .js,.vue -f ./node_modules/eslint-friendly-formatter src __tests__",
-    "lint:fix": "eslint --ext .js,.vue -f ./node_modules/eslint-friendly-formatter --fix src __tests__",
-    "pack": "npm run pack:main && npm run pack:renderer",
-    "pack:main": "cross-env NODE_ENV=production webpack --progress --colors --config .electron-vue/webpack.main.config.js",
-    "pack:renderer": "cross-env NODE_ENV=production webpack --progress --colors --config .electron-vue/webpack.renderer.config.js",
-    "postinstall": "electron-builder install-app-deps",
-    "preversion": "cross-env ./scripts/version-artifacts.sh",
-    "test": "npm run test:unit && npm run test:e2e:full",
-    "test:e2e": "jest --config __tests__/e2e.jest.conf.js",
-    "test:e2e:full": "npm run pack && npm run test:e2e",
-    "test:unit": "jest --config __tests__/unit.jest.conf.js",
-    "test:unit:coverage": "jest --config __tests__/unit.jest.conf.js --coverage",
-    "test:unit:watch": "jest --config __tests__/unit.jest.conf.js --watch"
-  },
-  "dependencies": {
-    "@arkecosystem/client": "^1.0.5",
-    "@arkecosystem/core-magistrate-crypto": "^2.6.27",
-    "@arkecosystem/crypto": "^2.6.27",
-    "@arkecosystem/ledger-transport": "^1.0.5",
-    "@arkecosystem/peers": "^0.3.0",
-    "@arkecosystem/platform-sdk": "^0.0.2",
-    "@babel/runtime": "^7.4.2",
-    "@fortawesome/fontawesome-svg-core": "^1.2.21",
-    "@fortawesome/free-solid-svg-icons": "^5.10.1",
-    "@fortawesome/vue-fontawesome": "^0.1.6",
-    "@ledgerhq/hw-transport-node-hid-singleton": "^5.7.0",
-    "about-window": "^1.13.1",
-    "animate.css": "^4.0.0",
-    "async": "^3.0.0",
-    "bignumber.js": "^9.0.0",
-    "bip38": "^3.0.0",
-    "bip39": "^3.0.0",
-    "bs58check": "^2.1.2",
-    "chart.js": "^2.8.0",
-    "cheerio": "^1.0.0-rc.3",
-    "clean-css": "^4.2.1",
-    "color": "^3.1.0",
-    "cycled": "^1.0.0",
-    "dayjs": "^1.8.11",
-    "decompress": "^4.2.0",
-    "deepmerge": "^4.1.1",
-    "du": "^1.0.0",
-    "electron-dl": "^3.0.0",
-    "electron-log": "^4.0.0",
-    "electron-updater": "^4.1.2",
-    "electron-window-state": "^5.0.3",
-    "emittery": "^0.6.0",
-    "fs-extra": "^9.0.0",
-    "getdomain": "^1.3.1",
-    "got": "^9.6.0",
-    "jsonschema": "^1.2.4",
-    "localforage": "^1.7.3",
-    "lodash": "^4.17.13",
-    "mersenne-twister": "^1.1.0",
-    "package-json": "^6.5.0",
-    "parse-author": "^2.0.0",
-    "portal-vue": "^2.1.5",
-    "postcss-import": "^12.0.1",
-    "pretty-bytes": "^5.3.0",
-    "qrious": "^4.0.2",
-    "reflect-metadata": "^0.1.13",
-    "semver": "^7.0.0",
-    "stream-http": "^3.0.0",
-    "titlecase": "^1.1.3",
-    "trash": "^6.0.0",
-    "trunc-html": "^1.1.2",
-    "v-tooltip": "^2.0.0",
-    "validate-npm-package-name": "^3.0.0",
-    "vm2": "^3.8.4",
-    "vue": "^2.6.10",
-    "vue-chartjs": "^3.4.2",
-    "vue-class-component": "^7.1.0",
-    "vue-good-table": "^2.18.0",
-    "vue-i18n": "^8.12.0",
-    "vue-property-decorator": "^8.2.2",
-    "vue-qrcode-reader": "^2.0.3",
-    "vue-router": "^3.0.7",
-    "vue-spinner": "^1.0.3",
-    "vue-vuelidate-jsonschema": "^0.13.4",
-    "vuelidate": "^0.7.4",
-    "vuex": "^3.1.1",
-    "vuex-persist": "^2.0.1",
-    "wif": "^2.0.6"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.4.0",
-    "@babel/plugin-transform-runtime": "^7.4.0",
-    "@babel/preset-env": "^7.4.2",
-    "@types/got": "^9.6.7",
-    "@types/jest": "^24.9.0",
-    "@types/lodash": "^4.14.137",
-    "@types/nock": "^10.0.3",
-    "@types/node": "^12.7.2",
-    "@typescript-eslint/eslint-plugin": "^2.0.0",
-    "@typescript-eslint/parser": "^2.0.0",
-    "@vue/test-utils": "^1.0.0-beta.29",
-    "autoprefixer": "^9.5.0",
-    "babel-core": "^7.0.0-0",
-    "babel-eslint": "^10.0.1",
-    "babel-jest": "^25.0.0",
-    "babel-loader": "^8.0.6",
-    "babel-plugin-require-context-hook": "^1.0.0",
-    "babel-register": "^6.26.0",
-    "cfonts": "^2.4.2",
-    "chalk": "^4.0.0",
-    "codecov": "^3.6.5",
-    "copy-webpack-plugin": "^5.0.2",
-    "cross-env": "^7.0.0",
-    "css-loader": "^3.1.0",
-    "del": "^5.0.0",
-    "devtron": "^1.4.0",
-    "electron": "^8.0.0",
-    "electron-builder": "22.6.0",
-    "electron-debug": "^3.0.1",
-    "electron-devtools-installer": "^3.0.0",
-    "electron-notarize": "^0.3.0",
-    "eslint": "^7.0.0",
-    "eslint-config-standard": "^14.0.0",
-    "eslint-friendly-formatter": "^4.0.1",
-    "eslint-loader": "^4.0.0",
-    "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-node": "^11.0.0",
-    "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-standard": "^4.0.0",
-    "eslint-plugin-vue": "^6.0.0",
-    "file-loader": "^6.0.0",
-    "glob-all": "^3.1.0",
-    "html-webpack-plugin": "^4.0.0",
-    "husky": "^4.0.0",
-    "intl": "^1.2.5",
-    "jest": "^24.9.0",
-    "jest-extended": "^0.11.1",
-    "jest-serializer-vue": "^2.0.2",
-    "jest-transform-stub": "^2.0.0",
-    "lint-staged": "^10.0.0",
-    "mini-css-extract-plugin": "^0.9.0",
-    "mock-socket": "^9.0.0",
-    "multispinner": "^0.2.1",
-    "nock": "^12.0.0",
-    "node-abi": "^2.11.0",
-    "node-loader": "^0.6.0",
-    "postcss-loader": "^3.0.0",
-    "purgecss": "^2.0.5",
-    "purgecss-webpack-plugin": "^2.0.5",
-    "rss-parser": "^3.7.0",
-    "spectron": "^10.0.0",
-    "svg-sprite-loader": "^4.1.6",
-    "svgo": "^1.2.0",
-    "svgo-loader": "^2.2.0",
-    "tailwindcss": "^0.7.4",
-    "tempy": "^0.5.0",
-    "ts-jest": "^25.0.0",
-    "ts-loader": "^7.0.0",
-    "typescript": "^3.5.3",
-    "url-loader": "^4.0.0",
-    "vue-html-loader": "^1.2.4",
-    "vue-jest": "^3.0.4",
-    "vue-loader": "^15.7.1",
-    "vue-style-loader": "^4.1.2",
-    "vue-template-compiler": "^2.6.10",
-    "webpack": "^4.38.0",
-    "webpack-cli": "^3.3.6",
-    "webpack-dev-server": "^3.7.2",
-    "webpack-hot-middleware": "^2.25.0"
-  },
-  "build": {
-    "productName": "ARK Desktop Wallet",
-    "appId": "io.ark.desktop-wallet",
-    "artifactName": "${name}-${os}-${arch}-${version}.${ext}",
-    "afterSign": "scripts/notarize.js",
-    "npmRebuild": false,
-    "publish": {
-      "provider": "github",
-      "vPrefixedTagName": false
-    },
-    "extraResources": [
-      "app-update.yml"
-    ],
-    "protocols": {
-      "name": "Ark URI scheme",
-      "schemes": [
-        "ark"
-      ],
-      "role": "Viewer"
-    },
-    "directories": {
-      "output": "build/target"
-    },
-    "files": [
-      "dist/electron/**/*"
-    ],
-    "mac": {
-      "category": "public.app-category.finance",
-      "icon": "build/icons/icon.icns",
-      "hardenedRuntime": true,
-      "gatekeeperAssess": false,
-      "asarUnpack": [
-        "**/*.node"
-      ],
-      "entitlements": "build/entitlements.mac.plist",
-      "entitlementsInherit": "build/entitlements.mac.plist"
-    },
-    "win": {
-      "target": "nsis",
-      "icon": "build/icons/icon.ico"
-    },
-    "linux": {
-      "category": "Utility",
-      "icon": "build/icons",
-      "target": [
-        "AppImage",
-        "deb",
-        "tar.gz",
-        "snap"
-      ],
-      "desktop": {
-        "MimeType": "x-scheme-handler/ark;"
-      }
-    },
-    "deb": {
-      "depends": [
-        "gconf2",
-        "gconf-service",
-        "libnotify4",
-        "libappindicator1",
-        "libxtst6",
-        "libnss3",
-        "libudev-dev"
-      ]
-    },
-    "dmg": {
-      "icon": "build/icons/icon.icns"
-    },
-    "nsis": {
-      "perMachine": true,
-      "oneClick": false,
-      "allowToChangeInstallationDirectory": true
-    }
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  }
+	"name": "ark-desktop-wallet",
+	"version": "0.1.0",
+	"private": true,
+	"homepage": "./",
+	"main": "public/electron.js",
+	"dependencies": {
+		"@testing-library/jest-dom": "^4.2.4",
+		"@testing-library/react": "^9.3.2",
+		"@testing-library/user-event": "^7.1.2",
+		"@types/jest": "^24.0.0",
+		"@types/node": "^12.0.0",
+		"@types/react": "^16.9.0",
+		"@types/react-dom": "^16.9.0",
+		"@types/react-router-config": "^5.0.1",
+		"@types/react-router-dom": "^5.1.5",
+		"autoprefixer": "^9.8.0",
+		"electron-is-dev": "^1.2.0",
+		"electron-notarize": "^0.3.0",
+		"electron-root-path": "^1.0.16",
+		"electron-window-state": "^5.0.3",
+		"eslint-config-react-app": "^5.2.1",
+		"postcss": "^7.0.32",
+		"postcss-cli": "^7.1.1",
+		"react": "^16.13.1",
+		"react-dom": "^16.13.1",
+		"react-hook-form": "^5.7.2",
+		"react-inlinesvg": "^1.2.0",
+		"react-intl": "^4.6.4",
+		"react-router-config": "^5.1.1",
+		"react-router-dom": "^5.2.0",
+		"react-scripts": "3.4.1",
+		"storybook-addon-intl": "^2.4.1",
+		"styled-components": "^5.1.1",
+		"twin.macro": "^1.3.0",
+		"typescript": "~3.7.2"
+	},
+	"scripts": {
+		"dev": "concurrently \"BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electron .\"",
+		"build": "react-app-rewired build",
+		"lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
+		"storybook": "start-storybook -p 5000",
+		"start": "react-app-rewired start",
+		"test": "react-app-rewired test",
+		"test:coverage": "react-app-rewired test --coverage --watchAll=false",
+		"eject": "react-app-rewired eject",
+		"build:mac": "yarn build && electron-builder --mac --publish never",
+		"build:linux": "yarn build && electron-builder --linux --publish never",
+		"build:win": "yarn build && electron-builder --win --x64 --ia32 --publish never"
+	},
+	"babelMacros": {
+		"twin": {
+			"preset": "styled-components",
+			"config": "src/tailwind.config.js",
+			"autoCssProp": true
+		}
+	},
+	"eslintConfig": {
+		"extends": "react-app"
+	},
+	"browserslist": {
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version"
+		]
+	},
+	"devDependencies": {
+		"@storybook/addon-actions": "^5.3.19",
+		"@storybook/addon-knobs": "^5.3.19",
+		"@storybook/addons": "^5.3.19",
+		"@storybook/preset-create-react-app": "^3.0.0",
+		"@storybook/react": "^5.3.19",
+		"@tailwindcss/ui": "^0.3.0",
+		"@types/react-intl": "^3.0.0",
+		"@types/styled-components": "^5.1.0",
+		"@typescript-eslint/eslint-plugin": "^3.1.0",
+		"@typescript-eslint/parser": "^3.1.0",
+		"babel-loader": "^8.1.0",
+		"concurrently": "^5.2.0",
+		"customize-cra": "^1.0.0",
+		"electron": "^9.0.2",
+		"electron-builder": "^22.7.0",
+		"electron-devtools-installer": "^3.0.0",
+		"eslint-config-prettier": "^6.11.0",
+		"eslint-plugin-import": "^2.20.2",
+		"eslint-plugin-jsx-a11y": "^6.2.3",
+		"eslint-plugin-prettier": "^3.1.3",
+		"eslint-plugin-react": "^7.20.0",
+		"eslint-plugin-testing-library": "^3.2.0",
+		"husky": "^4.2.5",
+		"lint-staged": "^10.2.7",
+		"postcss-import": "^12.0.1",
+		"prettier": "^2.0.5",
+		"react-app-rewired": "^2.1.6",
+		"react-docgen-typescript-loader": "^3.7.2",
+		"tailwindcss": "^1.4.6",
+		"wait-on": "^5.0.0"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged"
+		}
+	},
+	"lint-staged": {
+		"*/**/*.{js,ts,tsx}": [
+			"eslint --fix"
+		]
+	},
+	"build": {
+		"productName": "ARK Desktop Wallet",
+		"appId": "io.ark.desktop-wallet",
+		"artifactName": "${name}-${os}-${arch}-${version}.${ext}",
+		"npmRebuild": false,
+		"publish": {
+			"provider": "github",
+			"vPrefixedTagName": false
+		},
+		"extraResources": [
+			"app-update.yml"
+		],
+		"protocols": {
+			"name": "ARK URI scheme",
+			"schemes": [
+				"ark"
+			],
+			"role": "Viewer"
+		},
+		"directories": {
+			"output": "dist/target"
+		},
+		"mac": {
+			"category": "public.app-category.finance",
+			"icon": "src/resources/assets/icons/icon.icns",
+			"hardenedRuntime": true,
+			"gatekeeperAssess": false,
+			"asarUnpack": [
+				"**/*.node"
+			]
+		},
+		"win": {
+			"target": "nsis",
+			"icon": "src/resources/assets/icons/icon.ico"
+		},
+		"linux": {
+			"category": "Utility",
+			"icon": "src/resources/assets/icons",
+			"target": [
+				"AppImage",
+				"deb",
+				"tar.gz",
+				"snap"
+			],
+			"desktop": {
+				"MimeType": "x-scheme-handler/ark;"
+			}
+		},
+		"deb": {
+			"depends": [
+				"gconf2",
+				"gconf-service",
+				"libnotify4",
+				"libappindicator1",
+				"libxtst6",
+				"libnss3",
+				"libudev-dev"
+			]
+		},
+		"dmg": {
+			"icon": "src/resources/assets/icons/icon.icns"
+		},
+		"nsis": {
+			"perMachine": true,
+			"oneClick": false,
+			"allowToChangeInstallationDirectory": true
+		}
+	},
+	"jest": {
+		"collectCoverageFrom": [
+			"src/**/*.{js,jsx,ts,tsx}",
+			"!src/resources/",
+			"!src/i18n/",
+			"!<rootDir>/build/",
+			"!<rootDir>/dist/"
+		],
+		"coverageThreshold": {
+			"global": {
+				"branches": 100,
+				"functions": 100,
+				"lines": 100,
+				"statements": 100
+			}
+		}
+	}
 }

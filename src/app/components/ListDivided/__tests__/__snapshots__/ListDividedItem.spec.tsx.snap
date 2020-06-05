@@ -1,0 +1,162 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ListDividedItem should render an ListDividedItem 1`] = `
+<DocumentFragment>
+  <li
+    class="flex flex-col w-full py-4 mb-5"
+    data-testid="list-divided-item__wrapper"
+  >
+    <div
+      class="flex justify-between items-center"
+      data-testid="list-divided-item__inner-wrapper"
+    >
+      <div
+        class="flex flex-col"
+      >
+        <span
+          class="mr-5 undefined"
+          data-testid="list-divided-item__label"
+        />
+      </div>
+    </div>
+  </li>
+</DocumentFragment>
+`;
+
+exports[`ListDividedItem should render as floating label 1`] = `
+<DocumentFragment>
+  <li
+    class="flex flex-col w-full py-4 mb-5"
+    data-testid="list-divided-item__wrapper"
+  >
+    <div
+      class="flex justify-between flex-col items-start"
+      data-testid="list-divided-item__inner-wrapper"
+    >
+      <div
+        class="flex flex-col"
+      >
+        <span
+          class="mr-5 undefined"
+          data-testid="list-divided-item__label"
+        />
+      </div>
+    </div>
+  </li>
+</DocumentFragment>
+`;
+
+exports[`ListDividedItem should render the content 1`] = `
+<DocumentFragment>
+  <li
+    class="flex flex-col w-full py-4 mb-5"
+    data-testid="list-divided-item__wrapper"
+  >
+    <div
+      class="flex justify-between items-center"
+      data-testid="list-divided-item__inner-wrapper"
+    >
+      <div
+        class="flex flex-col"
+      >
+        <span
+          class="mr-5 undefined"
+          data-testid="list-divided-item__label"
+        />
+      </div>
+    </div>
+    <div
+      class="mt-4"
+      data-testid="list-divided-item__content"
+    >
+      Content
+    </div>
+  </li>
+</DocumentFragment>
+`;
+
+exports[`ListDividedItem should render the label 1`] = `
+<DocumentFragment>
+  <li
+    class="flex flex-col w-full py-4 mb-5"
+    data-testid="list-divided-item__wrapper"
+  >
+    <div
+      class="flex justify-between items-center"
+      data-testid="list-divided-item__inner-wrapper"
+    >
+      <div
+        class="flex flex-col"
+      >
+        <span
+          class="mr-5 undefined"
+          data-testid="list-divided-item__label"
+        >
+          Label
+        </span>
+      </div>
+    </div>
+  </li>
+</DocumentFragment>
+`;
+
+exports[`ListDividedItem should render the labelDescription 1`] = `
+<DocumentFragment>
+  <li
+    class="flex flex-col w-full py-4 mb-5"
+    data-testid="list-divided-item__wrapper"
+  >
+    <div
+      class="flex justify-between items-center"
+      data-testid="list-divided-item__inner-wrapper"
+    >
+      <div
+        class="flex flex-col"
+      >
+        <span
+          class="mr-5 undefined"
+          data-testid="list-divided-item__label"
+        />
+        <span
+          class="text-sm text-theme-neutral undefined"
+          data-testid="list-divided-item__label--description"
+        >
+          Label Desc
+        </span>
+      </div>
+    </div>
+  </li>
+</DocumentFragment>
+`;
+
+exports[`ListDividedItem should render the value 1`] = `
+<DocumentFragment>
+  <li
+    class="flex flex-col w-full py-4 mb-5"
+    data-testid="list-divided-item__wrapper"
+  >
+    <div
+      class="flex justify-between items-center"
+      data-testid="list-divided-item__inner-wrapper"
+    >
+      <div
+        class="flex flex-col"
+      >
+        <span
+          class="mr-5 undefined"
+          data-testid="list-divided-item__label"
+        />
+      </div>
+      <div
+        class="undefined"
+      >
+        <span
+          data-testid="list-divided-item__value"
+        >
+          Value
+        </span>
+      </div>
+    </div>
+  </li>
+</DocumentFragment>
+`;

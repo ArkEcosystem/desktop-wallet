@@ -1,0 +1,115 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input should render an input 1`] = `
+<DocumentFragment>
+  <div
+    class="flex flex-col"
+    data-testid="input__wrapper"
+  >
+    <label
+      class="text-theme-medium"
+      data-testid="input__label"
+    >
+      Input Label
+      <div
+        class="mt-2 pb-2 flex relative items-center"
+      >
+        <input
+          class="form-input transition-colors duration-200 w-full"
+          name="input"
+          type="text"
+        />
+      </div>
+    </label>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Input should render an input with an error 1`] = `
+<DocumentFragment>
+  <div
+    class="flex flex-col"
+    data-testid="input__wrapper"
+  >
+    <label
+      class="text-theme-medium"
+      data-testid="input__label"
+    >
+      Input Label
+      <div
+        class="mt-2 pb-2 flex relative items-center"
+      >
+        <input
+          class="form-input transition-colors duration-200 w-full"
+          name="input"
+          type="text"
+        />
+      </div>
+    </label>
+    <span
+      class="inline-block mt-1 text-theme-danger-500"
+      data-testid="form__input--error"
+    >
+      Hug is required
+    </span>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Input should render an input with configured inner slot 1`] = `
+<DocumentFragment>
+  <div
+    class="flex flex-col"
+    data-testid="input__wrapper"
+  >
+    <label
+      class="text-theme-medium"
+      data-testid="input__label"
+    >
+      Input Label
+      <div
+        class="mt-2 pb-2 flex relative items-center"
+      >
+        <input
+          class="form-input transition-colors duration-200 w-full"
+          name="input"
+          type="text"
+        />
+        <div
+          class="absolute right-0 mr-4 mt-1"
+          data-testid="input__inner-slot"
+        >
+          <span>
+            Hug me inner slot
+          </span>
+        </div>
+      </div>
+    </label>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Input should render an input with configured label 1`] = `
+<DocumentFragment>
+  <div
+    class="flex flex-col"
+    data-testid="input__wrapper"
+  >
+    <label
+      class="text-theme-medium"
+      data-testid="input__label"
+    >
+      Hug me
+      <div
+        class="mt-2 pb-2 flex relative items-center"
+      >
+        <input
+          class="form-input transition-colors duration-200 w-full"
+          name="input"
+          type="text"
+        />
+      </div>
+    </label>
+  </div>
+</DocumentFragment>
+`;

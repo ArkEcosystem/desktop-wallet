@@ -1,25 +1,24 @@
-!.gitkeep
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# production
+/build
+/dist
+
+# misc
 .DS_Store
-thumbs.db
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
 
-dist/electron/*
-dist/web/*
-
-build/*
-!build/background.png
-!build/icons
-build/target/*
-!build/target/.gitkeep
-
-node_modules/
-
-npm-debug.log
-npm-debug.log.*
-yarn-error.log
-
-__tests__/*/.coverage
-
-plugins/*
-
-!build/entitlements.mac.plist
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
