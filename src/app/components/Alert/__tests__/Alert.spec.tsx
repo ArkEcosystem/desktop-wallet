@@ -16,4 +16,16 @@ describe("Alert", () => {
 
 		expect(getByTestId("alert__title")).toHaveTextContent("Hello!");
 	});
+
+	it("should render a small one", () => {
+		const { container } = render(<Alert size="small" />);
+
+		expect(container).toMatchSnapshot();
+	});
+
+	it("should render a large one", () => {
+		const { container } = render(<Alert size="large" />);
+
+		expect(container).toMatchSnapshot();
+	});
 });

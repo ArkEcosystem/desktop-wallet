@@ -32,7 +32,7 @@ const StateStyle = styled.div`
 
 export const CardControlState = () => {
 	return (
-		<StateStyle>
+		<StateStyle data-testid="card__control-state">
 			<svg tw="w-3 h-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
 				<path
 					fill="currentColor"

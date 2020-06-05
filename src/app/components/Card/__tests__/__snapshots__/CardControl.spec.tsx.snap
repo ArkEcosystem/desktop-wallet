@@ -16,3 +16,43 @@ exports[`Card Control should render 1`] = `
   </label>
 </DocumentFragment>
 `;
+
+exports[`Card Control should render with a control state 1`] = `
+<DocumentFragment>
+  <label
+    class="CardControl___StyledLabel-sc-28luv0-4 gNrkXm grid"
+  >
+    <input
+      class="CardControl__Input-sc-28luv0-0 lbnjeC"
+      type="checkbox"
+      value=""
+    />
+    <div
+      class="sc-AxjAm CardControl__CustomCard-sc-28luv0-1 kWIYfA"
+    >
+      <div
+        class="flex flex-col h-full justify-between items-center"
+      >
+        <span>
+          Bitcoin
+        </span>
+        <div
+          class="CardControl__StateStyle-sc-28luv0-2 iismIz"
+          data-testid="card__control-state"
+        >
+          <svg
+            class="CardControl___StyledSvg-sc-28luv0-3 dIzewJ"
+            viewBox="0 0 16 16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M5.707 7.293a1 1 0 0 0-1.414 1.414l2 2a1 1 0 0 0 1.414 0l4-4a1 1 0 0 0-1.414-1.414L7 8.586 5.707 7.293z"
+              fill="currentColor"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </label>
+</DocumentFragment>
+`;
