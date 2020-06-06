@@ -77,7 +77,7 @@ const CreateProfile = injectIntl(({ intl: { formatMessage }, handleSubmit }: Pro
 										type="text"
 										label="Name"
 										name="name"
-										ref={register({ required: true })}
+										reference={register({ required: true })}
 										error={errors["name"]}
 									/>
 								</Form>
