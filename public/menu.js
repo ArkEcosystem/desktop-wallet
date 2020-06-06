@@ -1,5 +1,4 @@
 const { Menu, shell } = require("electron");
-const { APP } = require("../config");
 const aboutWindow = require("about-window").default;
 const path = require("path");
 const packageJson = require("../package.json");
@@ -73,7 +72,7 @@ module.exports = function ({ createLoadingWindow }) {
         {
           label: "Learn More",
           click() {
-            shell.openExternal(APP.website);
+            shell.openExternal("https://ark.io");
           },
         },
         {
