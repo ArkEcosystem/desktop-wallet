@@ -1,11 +1,12 @@
 import React from "react";
 import { injectIntl, WrappedComponentProps } from "react-intl";
-//TODO: Deal with relative paths
-import { imagesConfig } from "../../../../resources/assets/images";
+
+import { imagesConfig } from "resources/assets/images";
+
 // UI Elements
-import { Button } from "../../../../app/components/Button";
-import { NavBar } from "../../../../app/components/NavBar";
-import { ProfileCard } from "../../components/ProfileCard";
+import { Button } from "app/components/Button";
+import { NavBar } from "app/components/NavBar";
+import { ProfileCard } from "domains/profile/components/ProfileCard";
 
 type Props = {
 	profiles: Array<any>;

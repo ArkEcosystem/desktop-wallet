@@ -1,5 +1,5 @@
 import React from "react";
-import { FormError } from "../Form/FormError";
+import { FormError } from "app/components/Form/FormError";
 
 type Props = {
 	type: string;

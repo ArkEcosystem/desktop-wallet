@@ -1,6 +1,6 @@
 import React from "react";
-import { Card } from "../../../../app/components/Card";
-import { SvgIcon } from "../../../../app/components/SvgIcon";
+import { Card } from "app/components/Card";
+import { SvgIcon } from "app/components/SvgIcon";
 
 type Props = {
 	avatar: string;
