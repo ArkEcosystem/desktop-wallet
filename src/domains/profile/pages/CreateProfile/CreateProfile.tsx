@@ -10,7 +10,7 @@ import { ListDivided } from "app/components/ListDivided";
 import { SvgIcon } from "app/components/SvgIcon";
 
 type Props = {
-	handleSubmit: func;
+	handleSubmit?: any;
 } & WrappedComponentProps;
 
 const item = {
@@ -77,7 +77,7 @@ const CreateProfile = injectIntl(({ intl: { formatMessage }, handleSubmit }: Pro
 										type="text"
 										label="Name"
 										name="name"
-										register={register({ required: true })}
+										ref={register({ required: true })}
 										error={errors["name"]}
 									/>
 								</Form>
