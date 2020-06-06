@@ -1,5 +1,7 @@
 import React from "react";
 import SVG from "react-inlinesvg";
+// Assets
+import SvgCollection from "resources/assets/svg";
 
 type Props = {
 	name: string;
@@ -8,13 +10,7 @@ type Props = {
 };
 
 const SvgIcon = ({ name, width, height }: Props) => {
-	// TODO: Find a better way to deal with this require, this shouldn't be done
-	// this way since it's gonna be impossible to test once the test file will override
-	// the require relative location :/
-	// eslint-disable-next-line @typescript-eslint/no-var-requires
-	const Icon = require(`../../../resources/assets/svg/${name}.svg`);
-
-	return <SVG src={Icon} width={width} height={height} />;
+	return <SVG src={SvgCollection[name]} width={width} height={height} />;
 };
 
 SvgIcon.defaultProps = {
