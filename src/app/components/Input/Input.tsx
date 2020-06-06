@@ -10,16 +10,12 @@ type Props = {
 	ref?: any;
 };
 
-const Input = ({ type, label, name, error, innerSlot }: Props) => (
+const Input = ({ type, label, name, error, innerSlot, ref }: Props) => (
 	<div className="flex flex-col" data-testid="input__wrapper">
 		<label className="text-theme-medium" data-testid="input__label">
 			{label}
 			<div className="mt-2 pb-2 flex relative items-center">
-				<input
-					className="form-input transition-colors duration-200 w-full"
-					type={type}
-					name={name}
-				/>
+				<input className="form-input transition-colors duration-200 w-full" type={type} name={name} {...ref} />
 				{innerSlot && (
 					<div className="absolute right-0 mr-4 mt-1" data-testid="input__inner-slot">
 						{innerSlot}
