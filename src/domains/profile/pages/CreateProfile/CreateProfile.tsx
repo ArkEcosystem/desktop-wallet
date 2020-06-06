@@ -9,7 +9,9 @@ import { NavBar } from "app/components/NavBar";
 import { ListDivided } from "app/components/ListDivided";
 import { SvgIcon } from "app/components/SvgIcon";
 
-type Props = {} & WrappedComponentProps;
+type Props = {
+	handleSubmit: func;
+} & WrappedComponentProps;
 
 const item = {
 	isFloatingLabel: true,
@@ -41,8 +43,7 @@ const item = {
 	),
 };
 
-const CreateProfile = injectIntl(({ intl: { formatMessage } }: Props) => {
-	const submitProfile = (data: any) => console.log(data);
+const CreateProfile = injectIntl(({ intl: { formatMessage }, handleSubmit }: Props) => {
 	const { register, errors } = useForm();
 
 	return (
@@ -69,14 +70,14 @@ const CreateProfile = injectIntl(({ intl: { formatMessage } }: Props) => {
 				<div className="mx-auto my-5 md:w-3/4 lg:w-3/5 xl:w-1/2">
 					<div className="mx-4 md:mx-8 xl:mx-16 mb-4 pb-5 border-b border-dashed border-theme-neutral-light">
 						<div className="flex flex-1">
-							<div className="w-full">
+							<div className="w-full" data-testid="create-profile__form">
 								<ListDivided items={[item]} />
-								<Form handleOnSubmit={submitProfile}>
+								<Form id="create-profile__form" handleOnSubmit={handleSubmit}>
 									<Input
 										type="text"
 										label="Name"
 										name="name"
-										ref={register({ required: true })}
+										register={register({ required: true })}
 										error={errors["name"]}
 									/>
 								</Form>
@@ -87,7 +88,14 @@ const CreateProfile = injectIntl(({ intl: { formatMessage } }: Props) => {
 						<Button color="primary" variant="plain">
 							Back
 						</Button>
-						<Button color="primary" variant="solid" className="ml-2">
+						<Button
+							color="primary"
+							variant="solid"
+							className="ml-2"
+							type="submit"
+							form="create-profile__form"
+							data-testid="create-profile__form--submit"
+						>
 							Complete
 						</Button>
 					</div>
