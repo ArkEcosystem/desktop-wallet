@@ -7,7 +7,7 @@ type Props = {
 };
 
 const renderItems = (items: any) => (
-	<ul>
+	<ul data-testid="list-divided__items">
 		{items.map((item: any, index: number) => (
 			<ListDividedItem {...item} key={index} />
 		))}
