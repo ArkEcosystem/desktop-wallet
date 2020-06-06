@@ -35,7 +35,13 @@ const ImportWallet = ({ networks }: Props) => {
 
 		if (!isAddressOnly) {
 			return (
-				<Input type="text" label="Your password" name="password" ref={register} error={errors["password"]} />
+				<Input
+					type="text"
+					label="Your password"
+					name="password"
+					reference={register}
+					error={errors["password"]}
+				/>
 			);
 		}
 
@@ -45,7 +51,7 @@ const ImportWallet = ({ networks }: Props) => {
 				label="Address"
 				name="address"
 				innerSlot={innerSlot}
-				ref={register}
+				reference={register}
 				error={errors["address"]}
 			/>
 		);

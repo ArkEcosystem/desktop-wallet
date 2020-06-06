@@ -1,5 +1,6 @@
 import React from "react";
-import SVG from "react-inlinesvg";
+import { ReactSVG } from "react-svg";
+import styled from "styled-components";
 // Assets
 import SvgCollection from "resources/assets/svg";
 
@@ -9,8 +10,22 @@ type Props = {
 	height: number;
 };
 
+type WrapperProps = {
+	width: number;
+	height: number;
+};
+
+const Wrapper = styled.div(({ width, height }: WrapperProps) => ({
+	width,
+	height,
+}));
+
 const SvgIcon = ({ name, width, height }: Props) => {
-	return <SVG src={SvgCollection[name]} width={width} height={height} />;
+	return (
+		<Wrapper width={width} height={height}>
+			<ReactSVG src={SvgCollection[name]} />
+		</Wrapper>
+	);
 };
 
 SvgIcon.defaultProps = {

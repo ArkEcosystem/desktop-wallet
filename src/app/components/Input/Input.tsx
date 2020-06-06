@@ -7,10 +7,10 @@ type Props = {
 	name: string;
 	error: string;
 	innerSlot?: React.ReactNode;
-	ref?: any;
+	reference?: any;
 };
 
-const Input = ({ type, label, name, error, innerSlot }: Props) => (
+const Input = ({ type, label, name, error, innerSlot, reference }: Props) => (
 	<div className="flex flex-col" data-testid="input__wrapper">
 		<label className="text-theme-medium" data-testid="input__label">
 			{label}
@@ -19,6 +19,7 @@ const Input = ({ type, label, name, error, innerSlot }: Props) => (
 					className="form-input transition-colors duration-200 w-full"
 					type={type}
 					name={name}
+					ref={reference}
 				/>
 				{innerSlot && (
 					<div className="absolute right-0 mr-4 mt-1" data-testid="input__inner-slot">
