@@ -60,11 +60,7 @@ const getSize = (size: string): any => {
 };
 
 export const getStyles = ({ variant, color, size }: { variant?: string; color?: string; size?: string }) => {
-	return [
-		getSize(size!),
-		...baseStyle,
-		...getVariant(variant!, getColorsVariable(color!)),
-	];
+	return [getSize(size!), ...baseStyle, ...getVariant(variant!, getColorsVariable(color!))];
 };
 
 export default getStyles;
