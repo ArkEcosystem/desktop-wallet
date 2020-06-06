@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tabs should override the active index 1`] = `
+<DocumentFragment>
+  <div>
+    <div
+      data-testid="tab-pabel__active-panel"
+    >
+      2
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Tabs should react to use effect call 1`] = `
+<DocumentFragment>
+  <div>
+    <div
+      class="sc-AxirZ gDcVEE"
+    >
+      <button
+        aria-selected="true"
+        class="sc-AxjAm StDqN"
+        data-testid="tabs__tab-button-1"
+      >
+        First
+      </button>
+      <button
+        aria-selected="false"
+        class="sc-AxjAm StDqN"
+        data-testid="tabs__tab-button-2"
+      >
+        Second
+      </button>
+    </div>
+    <div
+      data-testid="tab-pabel__active-panel"
+    >
+      1
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Tabs should render 1`] = `
+<DocumentFragment>
+  <div>
+    <div
+      class="sc-AxirZ gDcVEE"
+    >
+      <button
+        aria-selected="false"
+        class="sc-AxjAm StDqN"
+        data-testid="tabs__tab-button-1"
+      >
+        First
+      </button>
+      <button
+        aria-selected="false"
+        class="sc-AxjAm StDqN"
+        data-testid="tabs__tab-button-2"
+      >
+        Second
+      </button>
+      <button
+        aria-selected="false"
+        class="sc-AxjAm StDqN"
+        data-testid="tabs__tab-button-3"
+      >
+        Third
+      </button>
+    </div>
+    <div
+      class="mt-5"
+    />
+  </div>
+</DocumentFragment>
+`;
