@@ -10,7 +10,12 @@ type Props = {
 	height: number;
 };
 
-const Wrapper = styled.div(({ width, height }) => ({
+type WrapperProps = {
+	width: number;
+	height: number;
+};
+
+const Wrapper = styled.div(({ width, height }: WrapperProps) => ({
 	width,
 	height,
 }));

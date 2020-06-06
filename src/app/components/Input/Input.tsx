@@ -7,7 +7,7 @@ type Props = {
 	name: string;
 	error: string;
 	innerSlot?: React.ReactNode;
-	reference: any;
+	reference?: any;
 };
 
 const Input = ({ type, label, name, error, innerSlot, reference }: Props) => (
