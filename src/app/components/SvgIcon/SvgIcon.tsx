@@ -1,5 +1,5 @@
 import React from "react";
-import SVG from "react-inlinesvg";
+import { ReactSVG } from "react-svg";
 // Assets
 import SvgCollection from "resources/assets/svg";
 
@@ -10,7 +10,7 @@ type Props = {
 };
 
 const SvgIcon = ({ name, width, height }: Props) => {
-	return <SVG src={SvgCollection[name]} width={width} height={height} />;
+	return <ReactSVG src={SvgCollection[name]} width={width} height={height} />;
 };
 
 SvgIcon.defaultProps = {
