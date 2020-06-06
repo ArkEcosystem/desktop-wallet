@@ -16,8 +16,10 @@ type WrapperProps = {
 };
 
 const Wrapper = styled.div(({ width, height }: WrapperProps) => ({
-	width,
-	height,
+	svg: {
+		width,
+		height,
+	},
 }));
 
 const SvgIcon = ({ name, width, height }: Props) => {
