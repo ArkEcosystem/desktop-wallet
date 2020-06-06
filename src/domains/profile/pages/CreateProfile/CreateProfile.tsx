@@ -2,12 +2,12 @@ import React from "react";
 import { injectIntl, WrappedComponentProps } from "react-intl";
 import { useForm } from "react-hook-form";
 // UI Elements
-import { Button } from "../../../../app/components/Button";
-import { Input } from "../../../../app/components/Input";
-import { Form } from "../../../../app/components/Form";
-import { NavBar } from "../../../../app/components/NavBar";
-import { ListDivided } from "../../../../app/components/ListDivided";
-import { SvgIcon } from "../../../../app/components/SvgIcon";
+import { Button } from "app/components/Button";
+import { Input } from "app/components/Input";
+import { Form } from "app/components/Form";
+import { NavBar } from "app/components/NavBar";
+import { ListDivided } from "app/components/ListDivided";
+import { SvgIcon } from "app/components/SvgIcon";
 
 type Props = {} & WrappedComponentProps;
 
@@ -27,7 +27,6 @@ const item = {
 					<SvgIcon name="upload" />
 				</button>
 			</div>
-			{/* <!-- TODO (BP): use for avatar: background-image: url("data:image/svg+xml...") --> */}
 			<div className="relative w-24 h-24 bg-theme-neutral-light rounded">
 				<img
 					src="https://randomuser.me/api/portraits/men/3.jpg"

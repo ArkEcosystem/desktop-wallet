@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 // UI Elements
-import { Button } from "../../../../app/components/Button";
-import { CardControl } from "../../../../app/components/Card";
-import { Form } from "../../../../app/components/Form";
-import { Input } from "../../../../app/components/Input";
-import { StepIndicator } from "../../../../app/components/StepIndicator";
-import { SvgIcon } from "../../../../app/components/SvgIcon";
-import { Tabs, TabPanel } from "../../../../app/components/Tabs";
-import { Toggle } from "../../../../app/components/Toggle";
+import { Button } from "app/components/Button";
+import { CardControl } from "app/components/Card";
+import { Form } from "app/components/Form";
+import { Input } from "app/components/Input";
+import { StepIndicator } from "app/components/StepIndicator";
+import { SvgIcon } from "app/components/SvgIcon";
+import { Tabs, TabPanel } from "app/components/Tabs";
+import { Toggle } from "app/components/Toggle";
 
 type Props = {
 	networks: any;

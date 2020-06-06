@@ -1,6 +1,5 @@
 import React from "react";
-//TODO: Deal with relative paths
-import { imagesConfig } from "../../../resources/assets/images";
+import { imagesConfig } from "resources/assets/images";
 
 const commonAssets = imagesConfig.common;
 
