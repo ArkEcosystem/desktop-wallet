@@ -1,24 +1,24 @@
 {
-  "private": true,
-  "name": "ark-desktop-wallet",
-  "version": "3.0.0",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ArkEcosystem/desktop-wallet.git"
-  },
-  "author": "ArkEcosystem <info@ark.io>",
-  "contributors": [
-    "Alex Barnsley <alex@ark.io>",
-    "Brian Faust <brian@ark.io>",
-    "ItsANameToo <itsanametoo@protonmail.com>",
-    "Lúcio Rubens <lucio@ark.io>"
-  ],
-  "description": "Ark Ecosystem Desktop Wallet",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/ArkEcosystem/desktop-wallet/issues"
-  },
-  "homepage": "./",
+	"private": true,
+	"name": "ark-desktop-wallet",
+	"version": "3.0.0",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/ArkEcosystem/desktop-wallet.git"
+	},
+	"author": "ArkEcosystem <info@ark.io>",
+	"contributors": [
+		"Alex Barnsley <alex@ark.io>",
+		"Brian Faust <brian@ark.io>",
+		"ItsANameToo <itsanametoo@protonmail.com>",
+		"Lúcio Rubens <lucio@ark.io>"
+	],
+	"description": "Ark Ecosystem Desktop Wallet",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/ArkEcosystem/desktop-wallet/issues"
+	},
+	"homepage": "./",
 	"main": "public/electron.js",
 	"dependencies": {
 		"@testing-library/jest-dom": "^5.9.0",
@@ -55,7 +55,9 @@
 	"scripts": {
 		"dev": "concurrently \"BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electron .\"",
 		"build": "react-app-rewired build",
+		"format": "yarn lint && yarn prettier",
 		"lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
+		"prettier": "prettier --write \"./*.{ts,js,json,md,vue}\" \"./**/*.{ts,js,json,md,vue}\"",
 		"storybook": "start-storybook -p 5000",
 		"start": "react-app-rewired start",
 		"test": "react-app-rewired test",

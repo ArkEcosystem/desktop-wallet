@@ -8,10 +8,10 @@ module.exports = {
 		sourceType: "module",
 		projectFolderIgnoreList: ["node_modules", "public"],
 	},
-  env: {
-    browser: true,
-    node: true,
-  },
+	env: {
+		browser: true,
+		node: true,
+	},
 	plugins: ["@typescript-eslint", "prettier", "testing-library"],
 	extends: [
 		"eslint:recommended",
