@@ -2,6 +2,7 @@ const electron = require("electron");
 const path = require("path");
 const isDev = require("electron-is-dev");
 const winState = require("electron-window-state");
+const assignMenu = require("./menu");
 
 const { BrowserWindow, app, screen, ipcMain } = electron;
 
@@ -95,6 +96,8 @@ function createWindow() {
 	}
 }
 
+assignMenu({ createWindow });
+
 app.on("ready", createWindow);
 
 app.on("window-all-closed", () => {
@@ -106,12 +109,6 @@ app.on("window-all-closed", () => {
 app.on("activate", () => {
 	if (mainWindow === null) {
 		createWindow();
-	}
-});
-
-app.on("window-all-closed", () => {
-	if (process.platform !== "darwin") {
-		app.quit();
 	}
 });
 
