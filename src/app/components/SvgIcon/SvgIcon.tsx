@@ -23,7 +23,12 @@ const Wrapper = styled.div(({ width, height }: WrapperProps) => ({
 const SvgIcon = ({ name, width, height }: Props) => {
 	return (
 		<Wrapper width={width} height={height}>
-			<ReactSVG src={SvgCollection[name]} />
+			<ReactSVG
+				src={SvgCollection[name]}
+				beforeInjection={(svg) => {
+					svg.setAttribute("style", `width: ${width}; height: ${height}`);
+				}}
+			/>
 		</Wrapper>
 	);
 };
