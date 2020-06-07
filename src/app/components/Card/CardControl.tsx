@@ -50,7 +50,6 @@ export const CardControl = React.forwardRef<HTMLInputElement, CardControlProps>(
 				<Input
 					ref={ref}
 					type={type}
-					checked={checked}
 					defaultChecked={defaultChecked}
 					readOnly={readOnly}
 					value={value}
