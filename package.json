@@ -211,7 +211,9 @@
 			"!src/resources/**/*",
 			"!src/i18n/**/*",
 			"!<rootDir>/build/*",
-			"!<rootDir>/dist/*"
+			"!<rootDir>/dist/*",
+			"!src/index.tsx",
+			"!src/tailwind.config.js"
 		],
 		"coverageThreshold": {
 			"global": {
