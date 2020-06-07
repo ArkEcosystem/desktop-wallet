@@ -44,13 +44,15 @@ export const CardControlState = () => {
 };
 
 export const CardControl = React.forwardRef<HTMLInputElement, CardControlProps>(
-	({ children, type, checked, defaultChecked, readOnly, value, name, ...props }: CardControlProps, ref) => {
+	({ children, type, checked, defaultChecked, onChange, readOnly, value, name, ...props }: CardControlProps, ref) => {
 		return (
 			<label tw="cursor-pointer" {...props}>
 				<Input
+					data-testid={`card-control__${name}`}
 					ref={ref}
 					type={type}
 					checked={checked}
+					onChange={onChange}
 					defaultChecked={defaultChecked}
 					readOnly={readOnly}
 					value={value}

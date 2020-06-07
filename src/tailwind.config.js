@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
+/* eslint-disable no-undef */
 const defaultConfig = require("tailwindcss/defaultConfig");
 const tailwindUI = require("@tailwindcss/ui");
 

@@ -1,0 +1,172 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Welcome should render 1`] = `
+<DocumentFragment>
+  <div
+    class="w-full h-full"
+  >
+    <nav
+      class="bg-white shadow-header-smooth relative"
+    >
+      <div
+        class="px-4 sm:px-6 lg:px-8"
+      >
+        <div
+          class="relative flex justify-between h-20 md:h-24"
+        >
+          <div
+            class="flex-shrink-0 flex items-center"
+          >
+            <div
+              class="flex rounded-lg p-2 bg-logo"
+            >
+              <img
+                alt="ARK Logo"
+                class="h-6 md:h-8 lg:h-10"
+                src="ark-logo.png"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div
+      class="flex flex-col items-center justify-center text-center"
+    >
+      <h1
+        class="mb-8 text-4xl font-bold"
+      >
+        Welcome to ARK
+      </h1>
+      <div
+        class="container w-3/5 mx-auto"
+      >
+        <img
+          alt="Onboarding Banner"
+          src="onboarding-banner.svg"
+        />
+      </div>
+      <div
+        class="container w-2/5 mx-auto"
+      >
+        <div
+          class="w-full my-8"
+        >
+          <h1
+            class="mx-4 text-2xl font-bold md:mx-8 xl:mx-16"
+          >
+            Select Profile
+          </h1>
+          <div
+            class="mx-4 mt-2 text-theme-neutral-dark md:mx-8 xl:mx-16"
+          >
+            You already have a profile, you can choose any of them
+          </div>
+        </div>
+        <div
+          class="sc-AxirZ bEjdEN"
+        >
+          <div
+            class="relative px-6 sm:flex sm:items-center py-4"
+          >
+            <button
+              class="absolute top-0 -mt-2 -mr-4 right-0 flex items-center justify-center w-6 h-6 p-1 mt-3"
+            >
+              <div
+                class="sc-AxiKw dklFyP"
+                height="20"
+                width="20"
+              >
+                <div>
+                  <div>
+                    <div
+                      data-src="settings.svg"
+                      src=""
+                    />
+                  </div>
+                </div>
+              </div>
+            </button>
+            <div
+              class="flex flex-row justify-between w-full"
+            >
+              <div
+                class="flex items-center"
+              >
+                <div
+                  class="block w-12 h-12 mx-auto rounded-full sm:mx-0 sm:flex-shrink-0"
+                >
+                  <img
+                    alt="User Avatar"
+                    class="rounded-full"
+                    data-testid="profile-card__user--avatar"
+                    src="https://www.w3schools.com/howto/img_avatar.png"
+                  />
+                </div>
+                <div
+                  class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-left"
+                >
+                  <p
+                    class="text-sm font-semibold text-theme-neutral"
+                  >
+                    Name
+                  </p>
+                  <p
+                    class="font-semibold text-theme-neutral-dark"
+                    data-testid="profile-card__user--name"
+                  >
+                    Oleg Gelo
+                  </p>
+                </div>
+              </div>
+              <div
+                class="flex items-center"
+              >
+                <div
+                  class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-right"
+                >
+                  <p
+                    class="text-sm font-semibold text-theme-neutral"
+                  >
+                    Total Balance
+                  </p>
+                  <p
+                    class="font-semibold text-theme-neutral-dark"
+                    data-testid="profile-card__user--balance"
+                  >
+                    234,500.46 USD
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="max-w-lg mx-auto mt-10 border-t border-neutral-light"
+        />
+      </div>
+      <div
+        class="mx-4 mt-8 mb-4 text-theme-neutral-dark md:mx-8 xl:mx-16"
+      >
+        Create a new Profile or login with your MarketSquare account to get started
+      </div>
+      <div
+        class="flex justify-center w-full mb-10"
+      >
+        <button
+          class="sc-AxjAm kujxw w-1/5 mr-2"
+          color="primary"
+        >
+          Sign in to MarketSquare
+        </button>
+        <button
+          class="sc-AxjAm lhSfbA w-1/5"
+          color="primary"
+        >
+          Create Profile
+        </button>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
