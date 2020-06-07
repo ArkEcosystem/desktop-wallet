@@ -11,6 +11,7 @@ module.exports = {
 	env: {
 		browser: true,
 		node: true,
+		es6: true,
 	},
 	plugins: ["@typescript-eslint", "prettier", "testing-library"],
 	extends: [
