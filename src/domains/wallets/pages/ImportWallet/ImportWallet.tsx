@@ -27,6 +27,12 @@ const ImportWallet = ({ networks, handleSubmit }: Props) => {
 	const [isAddressOnly, setIsAddressOnly] = useState(false);
 	const { register, errors } = useForm();
 
+	const onPreviousBtnClick = (event: any) => {
+		// Prevent btn click event propagation to form submittion
+		event.preventDefault();
+		setActiveIndex(1);
+	};
+
 	const renderImportInput = () => {
 		const innerSlot = (
 			<button className="text-theme-neutral-600">
@@ -99,7 +105,7 @@ const ImportWallet = ({ networks, handleSubmit }: Props) => {
 								color="primary"
 								variant="solid"
 								onClick={() => setActiveIndex(2)}
-								data-testid="import-wallet__next-step--buton"
+								data-testid="import-wallet__next-step--button"
 							>
 								Continue
 							</Button>
@@ -132,14 +138,16 @@ const ImportWallet = ({ networks, handleSubmit }: Props) => {
 										data-testid="import-wallet__address-toggle"
 									/>
 								</div>
-								<div className="mt-8">{renderImportInput()}</div>
+								<div className="mt-8" data-testid="import-wallet__password">
+									{renderImportInput()}
+								</div>
 							</div>
 							<div className="mt-10">
 								<Button
-									data-testid="import-wallet__prev-step--buton"
+									data-testid="import-wallet__prev-step--button"
 									color="primary"
 									variant="plain"
-									onClick={() => setActiveIndex(1)}
+									onClick={onPreviousBtnClick}
 								>
 									Back
 								</Button>
