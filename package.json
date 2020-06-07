@@ -19,7 +19,22 @@
 		"url": "https://github.com/ArkEcosystem/desktop-wallet/issues"
 	},
 	"homepage": "./",
-	"main": "public/electron.js",
+	"main": "src/electron/index.js",
+	"scripts": {
+		"dev": "concurrently \"BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electron .\"",
+		"build": "react-app-rewired build",
+		"format": "yarn lint && yarn prettier",
+		"lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
+		"prettier": "prettier --write \"./*.{ts,js,json,md,vue}\" \"./**/*.{ts,js,json,md,vue}\"",
+		"storybook": "start-storybook -p 5000",
+		"start": "react-app-rewired start",
+		"test": "react-app-rewired test",
+		"test:coverage": "react-app-rewired test --coverage --watchAll=false",
+		"eject": "react-app-rewired eject",
+		"build:mac": "yarn build && electron-builder --mac --publish never",
+		"build:linux": "yarn build && electron-builder --linux --publish never",
+		"build:win": "yarn build && electron-builder --win --x64 --ia32 --publish never"
+	},
 	"dependencies": {
 		"@testing-library/jest-dom": "^5.9.0",
 		"@testing-library/react": "^9.3.2",
@@ -52,43 +67,6 @@
 		"styled-components": "^5.1.1",
 		"twin.macro": "^1.3.0",
 		"typescript": "~3.7.2"
-	},
-	"scripts": {
-		"dev": "concurrently \"BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electron .\"",
-		"build": "react-app-rewired build",
-		"format": "yarn lint && yarn prettier",
-		"lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
-		"prettier": "prettier --write \"./*.{ts,js,json,md,vue}\" \"./**/*.{ts,js,json,md,vue}\"",
-		"storybook": "start-storybook -p 5000",
-		"start": "react-app-rewired start",
-		"test": "react-app-rewired test",
-		"test:coverage": "react-app-rewired test --coverage --watchAll=false",
-		"eject": "react-app-rewired eject",
-		"build:mac": "yarn build && electron-builder --mac --publish never",
-		"build:linux": "yarn build && electron-builder --linux --publish never",
-		"build:win": "yarn build && electron-builder --win --x64 --ia32 --publish never"
-	},
-	"babelMacros": {
-		"twin": {
-			"preset": "styled-components",
-			"config": "src/tailwind.config.js",
-			"autoCssProp": true
-		}
-	},
-	"eslintConfig": {
-		"extends": "react-app"
-	},
-	"browserslist": {
-		"production": [
-			">0.2%",
-			"not dead",
-			"not op_mini all"
-		],
-		"development": [
-			"last 1 chrome version",
-			"last 1 firefox version",
-			"last 1 safari version"
-		]
 	},
 	"devDependencies": {
 		"@storybook/addon-actions": "^5.3.19",
@@ -124,6 +102,28 @@
 		"react-docgen-typescript-loader": "^3.7.2",
 		"tailwindcss": "^1.4.6",
 		"wait-on": "^5.0.0"
+	},
+	"babelMacros": {
+		"twin": {
+			"preset": "styled-components",
+			"config": "src/tailwind.config.js",
+			"autoCssProp": true
+		}
+	},
+	"eslintConfig": {
+		"extends": "react-app"
+	},
+	"browserslist": {
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version"
+		]
 	},
 	"husky": {
 		"hooks": {
