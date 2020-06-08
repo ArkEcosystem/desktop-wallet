@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { Button } from "app/components/Button";
 import { CardControl } from "app/components/Card";
 import { Form, FormField, FormLabel } from "app/components/Form";
-import { Input } from "app/components/Input";
+import { Input, InputPassword } from "app/components/Input";
 import { StepIndicator } from "app/components/StepIndicator";
 import { Icon } from "app/components/Icon";
 import { Tabs, TabPanel } from "app/components/Tabs";
@@ -36,11 +36,10 @@ const ImportWallet = ({ networks, onSubmit }: Props) => {
 
 	const renderImportInput = () => {
 		if (!isAddressOnly) {
-			// TODO: Change to InputPassword
 			return (
 				<FormField name="password">
 					<FormLabel label="Your Password" />
-					<Input data-testid="import-wallet__password-input" ref={register} />
+					<InputPassword data-testid="import-wallet__password-input" ref={register} />
 				</FormField>
 			);
 		}
