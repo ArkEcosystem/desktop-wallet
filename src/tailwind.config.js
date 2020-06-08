@@ -1,5 +1,6 @@
 const defaultConfig = require("tailwindcss/defaultConfig");
 const tailwindUI = require("@tailwindcss/ui");
+const tailwindcssDebugScreens = require("tailwindcss-debug-screens");
 
 module.exports = {
 	purge: ["./src/renderer/**/*.html", "./src/renderer/**/*.tsx?"],
@@ -172,5 +173,5 @@ module.exports = {
 		borderRadius: [...defaultConfig.variants.borderRadius, "first", "last"],
 		borderWidth: [...defaultConfig.variants.borderWidth, "last"],
 	},
-	plugins: [tailwindUI],
+	plugins: [tailwindUI, tailwindcssDebugScreens],
 };

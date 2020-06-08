@@ -20,7 +20,9 @@ ReactDOM.render(
 			// @ts-ignore
 			messages={locales["en-US"].messages}
 		>
-			{renderRoutes(routes)}
+			<main className={process.env.NODE_ENV === "development" ? "debug-screens" : ""}>
+				{renderRoutes(routes)}
+			</main>
 		</IntlProvider>
 	</HashRouter>,
 	document.getElementById("root"),
