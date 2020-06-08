@@ -4,6 +4,10 @@ import { render } from "@testing-library/react";
 import { Modal } from "../";
 
 describe("Modal", () => {
+	beforeEach(() => {
+		jest.spyOn(console, "error").mockImplementation(() => null);
+	});
+
 	it("should render", () => {
 		const { container, asFragment } = render(<Modal title="ark" isOpen={true} />);
 
