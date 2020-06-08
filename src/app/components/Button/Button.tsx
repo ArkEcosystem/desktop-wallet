@@ -11,6 +11,7 @@ type ButtonProps = {
 export const Button = styled.button<ButtonProps>(getStyles);
 
 Button.defaultProps = {
+	type: "button",
 	color: "primary",
 	variant: "solid",
 	size: "default",

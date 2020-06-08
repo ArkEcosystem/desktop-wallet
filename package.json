@@ -79,6 +79,7 @@
 		"@storybook/preset-create-react-app": "^3.0.0",
 		"@storybook/react": "^5.3.19",
 		"@tailwindcss/ui": "^0.3.0",
+		"@testing-library/react-hooks": "^3.3.0",
 		"@types/react-intl": "^3.0.0",
 		"@types/styled-components": "^5.1.0",
 		"@typescript-eslint/eslint-plugin": "^3.1.0",
@@ -106,6 +107,8 @@
 		"prettier": "^2.0.5",
 		"react-app-rewired": "^2.1.6",
 		"react-docgen-typescript-loader": "^3.7.2",
+		"storybook-react-router": "^1.0.8",
+		"react-test-renderer": "^16.13.1",
 		"tailwindcss": "^1.4.6",
 		"wait-on": "^5.0.0"
 	},
@@ -137,8 +140,12 @@
 		}
 	},
 	"lint-staged": {
-		"*/**/*.{js,ts,tsx}": [
+		"*.{js,ts,tsx}": [
+			"prettier --write",
 			"eslint --fix"
+		],
+		"*.{css,html,json,md}": [
+			"prettier --write"
 		]
 	},
 	"build": {
@@ -220,6 +227,10 @@
 			"!src/tailwind.config.js",
 			"!<rootDir>/build/*",
 			"!<rootDir>/dist/*"
+		],
+		"coveragePathIgnorePatterns": [
+			"index.ts",
+			"index.tsx"
 		],
 		"coverageThreshold": {
 			"global": {

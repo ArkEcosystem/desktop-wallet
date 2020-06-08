@@ -1,18 +1,27 @@
 import React from "react";
-import { useForm } from "react-hook-form";
+import { FormContextValues, FormContext, OnSubmit } from "react-hook-form";
 
-type Props = {
-	handleOnSubmit: any;
-	children: React.ReactNode;
-	id?: string;
-};
+type FormProps = {
+	onSubmit: OnSubmit<Record<string, any>>;
+	context: FormContextValues<any>;
+} & React.FormHTMLAttributes<any>;
 
-export const Form = ({ handleOnSubmit, children, id }: Props) => {
-	const { handleSubmit } = useForm();
+export const Form = React.forwardRef<HTMLFormElement, FormProps>(
+	({ children, context, onSubmit, ...props }: FormProps, ref) => {
+		return (
+			<FormContext {...context}>
+				<form
+					data-testid="Form"
+					ref={ref}
+					className="space-y-6"
+					onSubmit={context.handleSubmit(onSubmit)}
+					{...props}
+				>
+					{children}
+				</form>
+			</FormContext>
+		);
+	},
+);
 
-	return (
-		<form id={id} onSubmit={handleSubmit(handleOnSubmit)}>
-			{children}
-		</form>
-	);
-};
+Form.displayName = "Form";

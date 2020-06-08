@@ -2,7 +2,7 @@ import React from "react";
 import { ListDividedItem } from "./ListDividedItem";
 
 export default {
-	title: "Components / List Divided / List Divided Item",
+	title: "Basic / List Divided / List Divided Item",
 };
 
 const item = {

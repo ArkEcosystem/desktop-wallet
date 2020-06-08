@@ -1,11 +1,11 @@
 import React from "react";
 import { render } from "@testing-library/react";
 
-import { SvgIcon } from "../";
+import { Icon } from "../Icon";
 
-describe("SvgIcon", () => {
+describe("Icon", () => {
 	it("should render", () => {
-		const { container, asFragment } = render(<SvgIcon name="ark" />);
+		const { container, asFragment } = render(<Icon name="ark" />);
 
 		expect(container).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();

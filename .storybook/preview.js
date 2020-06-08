@@ -1,6 +1,7 @@
 import React from "react";
 import { addDecorator, addParameters } from "@storybook/react";
 import { setIntlConfig, withIntl } from "storybook-addon-intl";
+import StoryRouter from "storybook-react-router";
 // Preview layout
 import { Layout } from "./Layout";
 // i18n
@@ -21,4 +22,5 @@ addParameters({
 });
 
 addDecorator(withIntl);
+addDecorator(StoryRouter());
 addDecorator((storyFn) => <Layout>{storyFn()}</Layout>);

@@ -1,0 +1,132 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SideBar should render empty 1`] = `
+<DocumentFragment>
+  <div>
+    <ul />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`SideBar should render with items 1`] = `
+<DocumentFragment>
+  <div>
+    <ul>
+      <div
+        class="relative cursor-pointer"
+        data-testid="side-menu__item--undefined"
+      >
+        <div
+          class="sc-AxirZ dA-dDXy absolute top-0 left-0 rounded-lg bg-theme-primary"
+        />
+        <li
+          class="rounded-lg p-5 flex 
+        text-theme-primary
+        bg-theme-primary-contrast
+    "
+        >
+          <div
+            class="text-theme-primary"
+          >
+            <div
+              class="sc-AxjAm cpczEI"
+              height="1em"
+              width="1em"
+            >
+              <div>
+                <div>
+                  <div
+                    data-src="general.svg"
+                    src=""
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <span
+            class="font-semibold ml-2"
+          >
+            General
+          </span>
+        </li>
+      </div>
+      <div
+        class="relative cursor-pointer"
+        data-testid="side-menu__item--undefined"
+      >
+        <div
+          class="sc-AxirZ dA-dDXy absolute top-0 left-0 rounded-lg bg-theme-primary"
+        />
+        <li
+          class="rounded-lg p-5 flex 
+        text-theme-primary
+        bg-theme-primary-contrast
+    "
+        >
+          <div
+            class="text-theme-primary"
+          >
+            <div
+              class="sc-AxjAm cpczEI"
+              height="1em"
+              width="1em"
+            >
+              <div>
+                <div>
+                  <div
+                    data-src="peer.svg"
+                    src=""
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <span
+            class="font-semibold ml-2"
+          >
+            Peer
+          </span>
+        </li>
+      </div>
+      <div
+        class="relative cursor-pointer"
+        data-testid="side-menu__item--undefined"
+      >
+        <div
+          class="sc-AxirZ dA-dDXy absolute top-0 left-0 rounded-lg bg-theme-primary"
+        />
+        <li
+          class="rounded-lg p-5 flex 
+        text-theme-primary
+        bg-theme-primary-contrast
+    "
+        >
+          <div
+            class="text-theme-primary"
+          >
+            <div
+              class="sc-AxjAm cpczEI"
+              height="1em"
+              width="1em"
+            >
+              <div>
+                <div>
+                  <div
+                    data-src="plugin.svg"
+                    src=""
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <span
+            class="font-semibold ml-2"
+          >
+            Plugins
+          </span>
+        </li>
+      </div>
+    </ul>
+  </div>
+</DocumentFragment>
+`;

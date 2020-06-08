@@ -1,33 +1,24 @@
 import React from "react";
-import { Input } from "./Input";
-import { SvgIcon } from "../SvgIcon";
+import { Input, InputPassword } from "./index";
 
 export default {
-	title: "Components / Input",
+	title: "Input / Input",
 };
 
-export const Text = () => (
-	<div className="p-4">
-		<Input label="Input" type="text" error="" />
-	</div>
-);
-
-export const TextWithError = () => (
-	<div className="p-4">
-		<Input label="Input" type="text" error="This field is required" />
-	</div>
-);
-
-export const TextWithIcon = () => {
-	const innerSlot = (
-		<button className="text-theme-neutral-600 w-full">
-			<SvgIcon name="qrcode" />
-		</button>
-	);
-
+export const Default = () => {
 	return (
-		<div className="p-4">
-			<Input label="Input" type="text" error="" innerSlot={innerSlot} />
+		<div className="max-w-xs space-y-4">
+			<Input type="text" placeholder="Enabled" />
+			<Input type="text" placeholder="Invalid" aria-invalid={true} />
+			<Input type="text" placeholder="Disabled" disabled />
+		</div>
+	);
+};
+
+export const Password = () => {
+	return (
+		<div className="max-w-xs">
+			<InputPassword defaultValue="secret" />
 		</div>
 	);
 };

@@ -3,16 +3,16 @@ import { useForm } from "react-hook-form";
 // UI Elements
 import { Button } from "app/components/Button";
 import { CardControl } from "app/components/Card";
-import { Form } from "app/components/Form";
-import { Input } from "app/components/Input";
+import { Form, FormField, FormLabel } from "app/components/Form";
+import { Input, InputPassword } from "app/components/Input";
 import { StepIndicator } from "app/components/StepIndicator";
-import { SvgIcon } from "app/components/SvgIcon";
+import { Icon } from "app/components/Icon";
 import { Tabs, TabPanel } from "app/components/Tabs";
 import { Toggle } from "app/components/Toggle";
 
 type Props = {
 	networks: any;
-	handleSubmit?: any;
+	onSubmit?: any;
 };
 
 type NetworkProps = {
@@ -21,11 +21,12 @@ type NetworkProps = {
 	name: string;
 };
 
-const ImportWallet = ({ networks, handleSubmit }: Props) => {
+const ImportWallet = ({ networks, onSubmit }: Props) => {
 	const [activeIndex, setActiveIndex] = useState(1);
 	const [selected, setSelected] = useState(null);
 	const [isAddressOnly, setIsAddressOnly] = useState(false);
-	const { register, errors } = useForm();
+	const form = useForm();
+	const { register } = form;
 
 	const onPreviousBtnClick = (event: any) => {
 		// Prevent btn click event propagation to form submittion
@@ -34,35 +35,21 @@ const ImportWallet = ({ networks, handleSubmit }: Props) => {
 	};
 
 	const renderImportInput = () => {
-		const innerSlot = (
-			<button className="text-theme-neutral-600">
-				<SvgIcon name="qrcode" />
-			</button>
-		);
-
 		if (!isAddressOnly) {
 			return (
-				<Input
-					data-testid="import-wallet__password-input"
-					type="text"
-					label="Your password"
-					name="password"
-					reference={register}
-					error={errors["password"]}
-				/>
+				<FormField name="password">
+					<FormLabel label="Your Password" />
+					<InputPassword data-testid="import-wallet__password-input" ref={register} />
+				</FormField>
 			);
 		}
 
 		return (
-			<Input
-				data-testid="import-wallet__address-input"
-				type="text"
-				label="Address"
-				name="address"
-				innerSlot={innerSlot}
-				reference={register}
-				error={errors["address"]}
-			/>
+			// TODO: Change to InputAddress
+			<FormField name="address">
+				<FormLabel label="Address" />
+				<Input data-testid="import-wallet__address-input" ref={register} />
+			</FormField>
 		);
 	};
 
@@ -89,7 +76,7 @@ const ImportWallet = ({ networks, handleSubmit }: Props) => {
 												<div className="flex flex-row h-full items-center py-3">
 													{network.icon && (
 														<div className="rounded-full border border-theme-primary-contrast w-12 h-12 flex justify-center items-center mr-3">
-															<SvgIcon name={network.icon} height={25} width={25} />
+															<Icon name={network.icon} height={25} width={25} />
 														</div>
 													)}
 													<span>{network.name}</span>
@@ -118,7 +105,7 @@ const ImportWallet = ({ networks, handleSubmit }: Props) => {
 				<div className="flex justify-center w-full">
 					<div className="w-2/4">
 						<StepIndicator size={2} activeIndex={activeIndex} />
-						<Form id="import-wallet__form" handleOnSubmit={handleSubmit}>
+						<Form id="import-wallet__form" context={form} onSubmit={onSubmit}>
 							<div className="mt-10 ">
 								<div className="_header">
 									<p className="text-4xl font-bold">Import Wallet</p>
