@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 // UI Elements
 import { Button } from "app/components/Button";
 import { CardControl } from "app/components/Card";
-import { Form } from "app/components/Form";
+import { Form, FormField, FormLabel } from "app/components/Form";
 import { Input } from "app/components/Input";
 import { StepIndicator } from "app/components/StepIndicator";
 import { SvgIcon } from "app/components/SvgIcon";
@@ -35,33 +35,22 @@ const ImportWallet = ({ networks, onSubmit }: Props) => {
 	};
 
 	const renderImportInput = () => {
-		const innerSlot = (
-			<button className="text-theme-neutral-600">
-				<SvgIcon name="qrcode" />
-			</button>
-		);
-
 		if (!isAddressOnly) {
+			// TODO: Change to InputPassword
 			return (
-				<Input
-					data-testid="import-wallet__password-input"
-					type="text"
-					label="Your password"
-					name="password"
-					reference={register}
-				/>
+				<FormField name="password">
+					<FormLabel label="Your Password" />
+					<Input data-testid="import-wallet__password-input" ref={register} />
+				</FormField>
 			);
 		}
 
 		return (
-			<Input
-				data-testid="import-wallet__address-input"
-				type="text"
-				label="Address"
-				name="address"
-				innerSlot={innerSlot}
-				reference={register}
-			/>
+			// TODO: Change to InputAddress
+			<FormField name="address">
+				<FormLabel label="Address" />
+				<Input data-testid="import-wallet__address-input" ref={register} />
+			</FormField>
 		);
 	};
 

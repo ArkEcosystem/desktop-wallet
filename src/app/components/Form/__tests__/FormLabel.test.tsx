@@ -29,7 +29,8 @@ describe("FormLabel", () => {
 				<FormLabel label={label} />
 			</FormFieldProvider>
 		);
-		const { queryByTestId } = render(tree);
+		const { queryByTestId, asFragment } = render(tree);
 		expect(queryByTestId("FormLabel")).toHaveAttribute("for", context.name);
+		expect(asFragment()).toMatchSnapshot();
 	});
 });

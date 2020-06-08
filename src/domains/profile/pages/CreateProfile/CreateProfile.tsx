@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 // UI Elements
 import { Button } from "app/components/Button";
 import { Input } from "app/components/Input";
-import { Form } from "app/components/Form";
+import { Form, FormLabel, FormField, FormHelperText } from "app/components/Form";
 import { NavBar } from "app/components/NavBar";
 import { ListDivided } from "app/components/ListDivided";
 import { SvgIcon } from "app/components/SvgIcon";
@@ -74,12 +74,11 @@ const CreateProfile = injectIntl(({ intl: { formatMessage }, onSubmit }: Props) 
 							<div className="w-full" data-testid="create-profile__form">
 								<ListDivided items={[item]} />
 								<Form id="create-profile__form" context={form} onSubmit={onSubmit}>
-									<Input
-										type="text"
-										label="Name"
-										name="name"
-										reference={register({ required: true })}
-									/>
+									<FormField name="name">
+										<FormLabel label="Name" />
+										<Input ref={register({ required: true })} />
+										<FormHelperText />
+									</FormField>
 								</Form>
 							</div>
 						</div>

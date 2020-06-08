@@ -7,8 +7,11 @@ describe("FormHelperText", () => {
 	it("should render hint text", () => {
 		const hintMessage = "Test Message";
 		const errorMessage = "Error Message";
-		const { queryByText } = render(<FormHelperText errorMessage={errorMessage}>{hintMessage}</FormHelperText>);
+		const { queryByText, asFragment } = render(
+			<FormHelperText errorMessage={errorMessage}>{hintMessage}</FormHelperText>,
+		);
 		expect(queryByText(hintMessage)).toBeTruthy();
+		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should not show hint if is invalid", () => {
@@ -20,12 +23,13 @@ describe("FormHelperText", () => {
 	it("should render error message", () => {
 		const hintMessage = "Test Message";
 		const errorMessage = "Error Message";
-		const { queryByText } = render(
+		const { queryByText, asFragment } = render(
 			<FormHelperText errorMessage={errorMessage} isInvalid>
 				{hintMessage}
 			</FormHelperText>,
 		);
 		expect(queryByText(errorMessage)).toBeTruthy();
+		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should not render if nothing is provided", () => {
