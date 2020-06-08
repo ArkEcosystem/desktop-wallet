@@ -35,7 +35,7 @@ export const SideBarItem = withRouter(
 				data-testid={`side-menu__item--${itemKey}`}
 			>
 				{isActive && <ActiveIndicator className="absolute top-0 left-0 rounded-lg bg-theme-primary" />}
-				<li className={`p-5 flex ${getActiveClass()}`}>
+				<li className={`rounded-lg p-5 flex ${getActiveClass()}`}>
 					{icon && (
 						<div className={`text-theme-${isActive ? "primary" : "primary-contrast"}`}>
 							<SvgIcon name={icon} />
