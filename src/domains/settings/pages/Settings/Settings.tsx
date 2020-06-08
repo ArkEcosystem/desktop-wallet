@@ -6,6 +6,9 @@ import { SideBar } from "app/components/SideBar";
 import { ListDivided } from "app/components/ListDivided";
 import { Icon } from "app/components/Icon";
 import { Input } from "app/components/Input";
+import { Button } from "app/components/Button";
+import { Select } from "app/components/Select";
+import { FormLabel } from "app/components/Form";
 import { Toggle } from "app/components/Toggle";
 
 type PageConfig = {
@@ -24,7 +27,7 @@ const personalDetails = {
 	isFloatingLabel: true,
 	label: "Personal Details",
 	labelDescription: "Select Profile Image",
-	labelClass: "text-2xl font-bold",
+	labelClass: "text-3xl font-bold",
 	labelDescriptionClass: "mt-3",
 	content: (
 		<div className="flex flex-row mt-2">
@@ -50,7 +53,7 @@ const personalDetails = {
 	),
 };
 
-const securityItems = [
+const getSecurityItems = (register) => [
 	{
 		isFloatingLabel: true,
 		label: "Screenshot Protection",
@@ -69,7 +72,52 @@ const securityItems = [
 	{
 		isFloatingLabel: true,
 		label: "Advanced Mode",
+		labelClass: "text-xl font-bold text-theme-neutral-dark -mt-5",
+		content: (
+			<div className="flex flex-row justify-between">
+				<span className="text-sm text-theme-neutral-dark w-3/4">
+					You hereby assume the risk associated with downloading files and installing said files from a direct
+					URL link.
+				</span>
+				<div className="-mt-2">
+					<Toggle className="-mt-3" />
+				</div>
+			</div>
+		),
+	},
+	{
+		isFloatingLabel: true,
+		label: "Auto-logoff",
+		labelClass:
+			"FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark",
+		content: (
+			<Select placeholder="Select Language" reference={register({ required: true })}>
+				<option value="option1">Option 1</option>
+				<option value="option2">Option 2</option>
+				<option value="option3">Option 3</option>
+			</Select>
+		),
+	},
+];
+
+const otherItems = [
+	{
+		isFloatingLabel: true,
+		label: "Dark Theme",
 		labelClass: "text-xl font-bold text-theme-neutral-dark",
+		content: (
+			<div className="flex flex-row justify-between">
+				<span className="text-sm text-theme-neutral-dark w-3/4">Want to set the wallet to dark mode?</span>
+				<div className="-mt-2">
+					<Toggle />
+				</div>
+			</div>
+		),
+	},
+	{
+		isFloatingLabel: true,
+		label: "Update Ledger in Background",
+		labelClass: "text-xl font-bold text-theme-neutral-dark -mt-5",
 		content: (
 			<div className="flex flex-row justify-between">
 				<span className="text-sm text-theme-neutral-dark w-3/4">
@@ -92,58 +140,82 @@ export const Settings = ({ settings, pageConfig, activeSettings, setActiveSettin
 			<div className="w-1/4 h-full">
 				<SideBar items={settings} activeItem={activeSettings} handleActiveItem={setActiveSettings} />
 			</div>
-			<div className="mx-12 border-l-1 pl-32 border-theme-primary-contrast w-3/4">
+			<div className="mx-12 border-l-1 pl-20 border-theme-primary-contrast w-3/5">
 				<Header title={pageConfig.title} subheader={pageConfig.subheader} />
-				<div className="mt-10">
+				<div className="mt-5">
 					<ListDivided items={[personalDetails]} />
-					<div className="flex justify-between flex-wrap">
-						<Input
-							type="text"
-							label="Profile Name"
-							name="profile-name"
-							reference={register({ required: true })}
-							error={errors["profile-name"]}
-						/>
-						<Input
-							type="text"
-							label="Language"
-							name="language"
-							reference={register({ required: true })}
-							error={errors["language"]}
-						/>
-						<Input
-							type="text"
-							label="Passphrase Language"
-							name="passphrase-language"
-							reference={register({ required: true })}
-							error={errors["passphrase-language"]}
-						/>
-						<Input
-							type="text"
-							label="Price Source"
-							name="price-source"
-							reference={register({ required: true })}
-							error={errors["price-source"]}
-						/>
-						<Input
-							type="text"
-							label="Currency"
-							name="currency"
-							reference={register({ required: true })}
-							error={errors["currency"]}
-						/>
-						<Input
-							type="text"
-							label="Time Format"
-							name="time-format"
-							reference={register({ required: true })}
-							error={errors["time-format"]}
-						/>
+					<div className="w-full flex justify-between">
+						<div className="flex flex-col w-2/4">
+							<div>
+								<FormLabel label="Profile Name" />
+								<Input
+									type="text"
+									name="profile-name"
+									reference={register({ required: true })}
+									error={errors["profile-name"]}
+								/>
+							</div>
+							<div className="mt-3">
+								<FormLabel label="Passphrase Language" />
+								<Select placeholder="Select Language" reference={register({ required: true })}>
+									<option value="option1">Option 1</option>
+									<option value="option2">Option 2</option>
+									<option value="option3">Option 3</option>
+								</Select>
+							</div>
+							<div className="mt-3">
+								<FormLabel label="Currency" />
+								<Select placeholder="Select Language" reference={register({ required: true })}>
+									<option value="option1">Option 1</option>
+									<option value="option2">Option 2</option>
+									<option value="option3">Option 3</option>
+								</Select>
+							</div>
+						</div>
+						<div className="flex flex-col w-2/4 ml-5">
+							<div>
+								<FormLabel label="Language" />
+								<Select placeholder="Select Language" reference={register({ required: true })}>
+									<option value="option1">Option 1</option>
+									<option value="option2">Option 2</option>
+									<option value="option3">Option 3</option>
+								</Select>
+							</div>
+							<div className="mt-3">
+								<FormLabel label="Price Source" />
+								<Select placeholder="Select Language" reference={register({ required: true })}>
+									<option value="option1">Option 1</option>
+									<option value="option2">Option 2</option>
+									<option value="option3">Option 3</option>
+								</Select>
+							</div>
+							<div className="mt-3">
+								<FormLabel label="Time Format" />
+								<Select placeholder="Select Language" reference={register({ required: true })}>
+									<option value="option1">Option 1</option>
+									<option value="option2">Option 2</option>
+									<option value="option3">Option 3</option>
+								</Select>
+							</div>
+						</div>
 					</div>
 				</div>
-				<div className="mt-10 relative">
-					<h1 className="text-2xl font-bold">Security</h1>
-					<ListDivided items={securityItems} />
+				<div className="mt-5 relative">
+					<Header title="Security" />
+					<ListDivided items={getSecurityItems(register)} />
+				</div>
+				<div className="mt-5 relative">
+					<Header title="Other" />
+					<ListDivided items={otherItems} />
+				</div>
+				<div className="flex items-center">
+					<Button color="primary" variant="solid" size="large">
+						Save
+					</Button>
+					<span className="font-semibold text-theme-neutral-dark px-2">or</span>
+					<Button color="primary" variant="plain" size="large">
+						Reset Data
+					</Button>
 				</div>
 			</div>
 		</div>
