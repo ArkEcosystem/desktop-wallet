@@ -71,11 +71,7 @@ describe("Wallet / Import", () => {
 			fireEvent.click(addressToggle);
 		});
 
-		const qrCodeBtn = getByTestId("input__inner-slot");
-		expect(qrCodeBtn).toBeTruthy();
-
 		const passwordInput = getByTestId("import-wallet__password");
-		expect(qrCodeBtn).toBeTruthy();
 
 		act(() => {
 			// Change password input value

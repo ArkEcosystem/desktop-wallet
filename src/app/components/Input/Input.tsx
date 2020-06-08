@@ -1,41 +1,41 @@
 import React from "react";
-import { FormError } from "app/components/Form/FormError";
+import tw, { styled } from "twin.macro";
+import { useFormField } from "../Form/useFormField";
 
-type Props = {
-	type: string;
-	label: string;
-	name: string;
-	error: string;
-	innerSlot?: React.ReactNode;
-	reference?: any;
-};
+type InputProps = { as?: React.ElementType; isInvalid?: boolean } & React.HTMLProps<any>;
 
-const Input = ({ type, label, name, error, innerSlot, reference }: Props) => (
-	<div className="flex flex-col" data-testid="input__wrapper">
-		<label className="text-theme-medium" data-testid="input__label">
-			{label}
-			<div className="mt-2 pb-2 flex relative items-center">
-				<input
-					className="form-input transition-colors duration-200 w-full"
-					type={type}
-					name={name}
-					ref={reference}
-				/>
-				{innerSlot && (
-					<div className="absolute right-0 mr-4 mt-1" data-testid="input__inner-slot">
-						{innerSlot}
-					</div>
-				)}
-			</div>
-		</label>
-		{error && <FormError error={error} />}
-	</div>
+const InputStyled = styled.input`
+	&::placeholder {
+		${tw`text-theme-neutral-light`}
+	}
+	&:disabled {
+		${tw`border-theme-neutral-300 bg-theme-neutral-contrast text-theme-neutral-dark`}
+	}
+	&[aria-invalid="true"] {
+		${tw`border-theme-danger`}
+	}
+`;
+
+type InputElement = HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement;
+
+export const Input = React.forwardRef<InputElement, InputProps>(
+	({ isInvalid, className, ...props }: InputProps, ref) => {
+		const fieldContext = useFormField();
+
+		return (
+			<InputStyled
+				data-testid="Input"
+				className={`overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary ${
+					className || ""
+				}`}
+				name={fieldContext?.name}
+				aria-invalid={fieldContext?.isInvalid || isInvalid}
+				ref={ref}
+				{...props}
+			/>
+		);
+	},
 );
 
-Input.defaultProps = {
-	type: "text",
-	label: "Input Label",
-	name: "input",
-};
-
-export { Input };
+Input.displayName = "Input";
+Input.defaultProps = {};

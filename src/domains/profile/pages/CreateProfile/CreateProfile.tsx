@@ -4,13 +4,13 @@ import { useForm } from "react-hook-form";
 // UI Elements
 import { Button } from "app/components/Button";
 import { Input } from "app/components/Input";
-import { Form } from "app/components/Form";
+import { Form, FormLabel, FormField, FormHelperText } from "app/components/Form";
 import { NavBar } from "app/components/NavBar";
 import { ListDivided } from "app/components/ListDivided";
 import { SvgIcon } from "app/components/SvgIcon";
 
 type Props = {
-	handleSubmit?: any;
+	onSubmit?: any;
 } & WrappedComponentProps;
 
 const item = {
@@ -43,8 +43,9 @@ const item = {
 	),
 };
 
-const CreateProfile = injectIntl(({ intl: { formatMessage }, handleSubmit }: Props) => {
-	const { register, errors } = useForm();
+const CreateProfile = injectIntl(({ intl: { formatMessage }, onSubmit }: Props) => {
+	const form = useForm();
+	const { register } = form;
 
 	return (
 		<div className="w-full h-full">
@@ -72,14 +73,12 @@ const CreateProfile = injectIntl(({ intl: { formatMessage }, handleSubmit }: Pro
 						<div className="flex flex-1">
 							<div className="w-full" data-testid="create-profile__form">
 								<ListDivided items={[item]} />
-								<Form id="create-profile__form" handleOnSubmit={handleSubmit}>
-									<Input
-										type="text"
-										label="Name"
-										name="name"
-										reference={register({ required: true })}
-										error={errors["name"]}
-									/>
+								<Form id="create-profile__form" context={form} onSubmit={onSubmit}>
+									<FormField name="name">
+										<FormLabel label="Name" />
+										<Input ref={register({ required: true })} />
+										<FormHelperText />
+									</FormField>
 								</Form>
 							</div>
 						</div>

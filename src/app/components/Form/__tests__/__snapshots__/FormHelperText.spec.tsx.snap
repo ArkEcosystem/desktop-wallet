@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FormHelperText should render error message 1`] = `
+<DocumentFragment>
+  <p
+    class="text-sm text-theme-danger"
+  >
+    Error Message
+  </p>
+</DocumentFragment>
+`;
+
+exports[`FormHelperText should render hint text 1`] = `
+<DocumentFragment>
+  <p
+    class="text-sm text-theme-neutral"
+  >
+    Test Message
+  </p>
+</DocumentFragment>
+`;
