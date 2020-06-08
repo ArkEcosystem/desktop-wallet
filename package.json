@@ -209,7 +209,9 @@
 			"src/**/*.{js,jsx,ts,tsx}",
 			"!src/**/*.stories.{js,jsx,ts,tsx}",
 			"!src/resources/**/*",
+			"!src/electron/**/*",
 			"!src/i18n/**/*",
+			"!src/tailwind.config.js",
 			"!<rootDir>/build/*",
 			"!<rootDir>/dist/*"
 		],

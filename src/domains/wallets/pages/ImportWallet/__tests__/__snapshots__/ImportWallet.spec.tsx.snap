@@ -1,0 +1,193 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Wallet / Import should render 1`] = `
+<DocumentFragment>
+  <div>
+    <div
+      data-testid="tab-pabel__active-panel"
+    >
+      <div
+        class="flex justify-center w-full"
+      >
+        <div
+          class="w-2/4"
+        >
+          <ul
+            class="StepIndicator___StyledUl-sc-15t41is-1 dhAbBb"
+          >
+            <li
+              class="StepIndicator__StepStyled-sc-15t41is-0 ihHeLm"
+            />
+            <li
+              class="StepIndicator__StepStyled-sc-15t41is-0 dpEcnP"
+            />
+          </ul>
+          <div
+            class="mt-10"
+          >
+            <div>
+              <p
+                class="text-4xl font-bold"
+              >
+                Network for import
+              </p>
+              <p
+                class="text-medium"
+              >
+                Select the network where you want to import your wallet
+              </p>
+            </div>
+            <div
+              class="mt-5"
+            >
+              <div
+                class="mb-3"
+              >
+                <label
+                  class="CardControl___StyledLabel-sc-28luv0-4 gNrkXm"
+                >
+                  <input
+                    class="CardControl__Input-sc-28luv0-0 lbnjeC"
+                    data-testid="card-control__ARK Ecosystem"
+                    name="ARK Ecosystem"
+                    type="checkbox"
+                    value=""
+                  />
+                  <div
+                    class="sc-AxirZ CardControl__CustomCard-sc-28luv0-1 kWIYfA"
+                  >
+                    <div
+                      class="flex flex-row h-full items-center py-3"
+                    >
+                      <div
+                        class="rounded-full border border-theme-primary-contrast w-12 h-12 flex justify-center items-center mr-3"
+                      >
+                        <div
+                          class="sc-AxiKw iQZLaj"
+                          height="25"
+                          width="25"
+                        >
+                          <div>
+                            <div>
+                              <div
+                                data-src="ark.svg"
+                                src=""
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <span>
+                        ARK Ecosystem
+                      </span>
+                    </div>
+                  </div>
+                </label>
+              </div>
+              <div
+                class="mb-3"
+              >
+                <label
+                  class="CardControl___StyledLabel-sc-28luv0-4 gNrkXm"
+                >
+                  <input
+                    class="CardControl__Input-sc-28luv0-0 lbnjeC"
+                    data-testid="card-control__Ethereum"
+                    name="Ethereum"
+                    type="checkbox"
+                    value=""
+                  />
+                  <div
+                    class="sc-AxirZ CardControl__CustomCard-sc-28luv0-1 kWIYfA"
+                  >
+                    <div
+                      class="flex flex-row h-full items-center py-3"
+                    >
+                      <div
+                        class="rounded-full border border-theme-primary-contrast w-12 h-12 flex justify-center items-center mr-3"
+                      >
+                        <div
+                          class="sc-AxiKw iQZLaj"
+                          height="25"
+                          width="25"
+                        >
+                          <div>
+                            <div>
+                              <div
+                                data-src="eth.svg"
+                                src=""
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <span>
+                        Ethereum
+                      </span>
+                    </div>
+                  </div>
+                </label>
+              </div>
+              <div
+                class="mb-3"
+              >
+                <label
+                  class="CardControl___StyledLabel-sc-28luv0-4 gNrkXm"
+                >
+                  <input
+                    class="CardControl__Input-sc-28luv0-0 lbnjeC"
+                    data-testid="card-control__Bitcoin"
+                    name="Bitcoin"
+                    type="checkbox"
+                    value=""
+                  />
+                  <div
+                    class="sc-AxirZ CardControl__CustomCard-sc-28luv0-1 kWIYfA"
+                  >
+                    <div
+                      class="flex flex-row h-full items-center py-3"
+                    >
+                      <div
+                        class="rounded-full border border-theme-primary-contrast w-12 h-12 flex justify-center items-center mr-3"
+                      >
+                        <div
+                          class="sc-AxiKw iQZLaj"
+                          height="25"
+                          width="25"
+                        >
+                          <div>
+                            <div>
+                              <div
+                                data-src="btc.svg"
+                                src=""
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <span>
+                        Bitcoin
+                      </span>
+                    </div>
+                  </div>
+                </label>
+              </div>
+            </div>
+          </div>
+          <div
+            class="mt-10"
+          >
+            <button
+              class="sc-AxjAm kujxw"
+              color="primary"
+              data-testid="import-wallet__next-step--button"
+            >
+              Continue
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

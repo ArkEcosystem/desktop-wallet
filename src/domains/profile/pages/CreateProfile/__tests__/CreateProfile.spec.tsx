@@ -1,6 +1,6 @@
 import React from "react";
 import { IntlProvider } from "react-intl";
-import { fireEvent, render, act } from "@testing-library/react";
+import { render } from "@testing-library/react";
 
 import { CreateProfile } from "../";
 
