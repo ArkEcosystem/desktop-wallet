@@ -8,6 +8,6 @@ describe("Modal", () => {
 		const { container, asFragment } = render(<Modal title="ark" />);
 
 		expect(container).toBeTruthy();
-		// expect(asFragment()).toMatchSnapshot();
+		expect(asFragment()).toMatchSnapshot();
 	});
 });
