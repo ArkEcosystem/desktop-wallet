@@ -2,7 +2,7 @@ import React from "react";
 import { Select } from "./Select";
 
 export default {
-	title: "Components / Select",
+	title: "Input / Select",
 };
 
 export const Default = () => (

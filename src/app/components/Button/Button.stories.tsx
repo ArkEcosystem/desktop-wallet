@@ -2,7 +2,7 @@ import React from "react";
 import { Button } from "./Button";
 
 export default {
-	title: "Components / Button",
+	title: "Basic / Button",
 };
 
 export const Primary = () => (
@@ -60,4 +60,3 @@ export const Neutral = () => (
 		</Button>
 	</div>
 );
-
