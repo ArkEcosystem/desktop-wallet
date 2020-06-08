@@ -33,9 +33,6 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: Update System
-        run: sudo apt-get update
-
       - name: Install
         run: yarn install --frozen-lockfile
 
@@ -69,11 +66,14 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: Update System
-        run: sudo apt-get update
-
-      - name: Install
+      - name: Install (Yarn)
         run: yarn install --frozen-lockfile
+
+      - name: Install (Cypress)
+        run: yarn cy:install
+
+      - name: Start App
+        run: yarn start &
 
       - name: Test
         run: yarn test:e2e

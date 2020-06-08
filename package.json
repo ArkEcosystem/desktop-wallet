@@ -33,6 +33,7 @@
 		"test:e2e": "cypress run --headless",
 		"cy:run": "cypress run",
 		"cy:open": "cypress open",
+		"cy:install": "cypress install --force",
 		"eject": "react-app-rewired eject",
 		"build:mac": "yarn build && electron-builder --mac --publish never",
 		"build:linux": "yarn build && electron-builder --linux --publish never",
