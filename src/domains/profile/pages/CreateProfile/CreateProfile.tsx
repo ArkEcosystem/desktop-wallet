@@ -7,7 +7,7 @@ import { Input } from "app/components/Input";
 import { Form, FormLabel, FormField, FormHelperText } from "app/components/Form";
 import { NavBar } from "app/components/NavBar";
 import { ListDivided } from "app/components/ListDivided";
-import { SvgIcon } from "app/components/SvgIcon";
+import { Icon } from "app/components/Icon";
 
 type Props = {
 	onSubmit?: any;
@@ -26,7 +26,7 @@ const item = {
 					type="button"
 					className="flex items-center justify-center w-20 h-20 bg-theme-primary-contrast rounded-full"
 				>
-					<SvgIcon name="upload" />
+					<Icon name="upload" />
 				</button>
 			</div>
 			<div className="relative w-24 h-24 bg-theme-neutral-light rounded">
@@ -36,7 +36,7 @@ const item = {
 					alt="random avatar"
 				/>
 				<button className="absolute flex items-center justify-center w-6 h-6 p-1 bg-theme-danger-contrast text-theme-danger rounded -top-3 -right-3">
-					<SvgIcon name="close" height={12} width={12} />
+					<Icon name="close" height={12} width={12} />
 				</button>
 			</div>
 		</div>

@@ -1,12 +1,12 @@
 import React from "react";
-import { SvgIcon } from "./";
+import { Icon } from "./Icon";
 
 export default {
-	title: "Components / SvgIcon",
+	title: "Components / Icon",
 };
 
 export const Default = () => (
 	<div className="inline-flex space-x-4">
-		<SvgIcon name="upload" />
+		<Icon name="upload" />
 	</div>
 );

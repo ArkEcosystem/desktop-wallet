@@ -3,7 +3,7 @@ import { withRouter } from "react-router";
 import { RouteComponentProps } from "react-router";
 import styled from "styled-components";
 // UI Elements
-import { SvgIcon } from "app/components/SvgIcon";
+import { Icon } from "app/components/Icon";
 // Types
 import { ItemProps } from "../SideBar";
 
@@ -38,7 +38,7 @@ export const SideBarItem = withRouter(
 				<li className={`rounded-lg p-5 flex ${getActiveClass()}`}>
 					{icon && (
 						<div className={`text-theme-${isActive ? "primary" : "primary-contrast"}`}>
-							<SvgIcon name={icon} />
+							<Icon name={icon} />
 						</div>
 					)}
 					<span className="font-semibold ml-2">{label}</span>

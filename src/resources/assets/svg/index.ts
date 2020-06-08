@@ -8,6 +8,8 @@ import upload from "./upload.svg";
 import general from "./general.svg";
 import peer from "./peer.svg";
 import plugin from "./plugin.svg";
+import eyeOff from "./eye-off.svg";
+import eye from "./eye.svg";
 
 export const SvgCollection: any = {
 	ark,
@@ -20,4 +22,6 @@ export const SvgCollection: any = {
 	general,
 	peer,
 	plugin,
+	eyeOff,
+	eye,
 };
