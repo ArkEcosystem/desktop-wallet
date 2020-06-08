@@ -34,6 +34,12 @@ describe("Button", () => {
 		expect(container).toMatchSnapshot();
 	});
 
+	it("should render an icon", () => {
+		const { container } = render(<Button size="icon" />);
+
+		expect(container).toMatchSnapshot();
+	});
+
 	it("should render if disabled", () => {
 		const { asFragment, getByText } = render(<Button disabled>Click</Button>);
 
