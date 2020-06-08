@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SideBarItem should render 1`] = `
+<DocumentFragment>
+  <div
+    class="relative cursor-pointer"
+    data-testid="side-menu__item--plugin"
+  >
+    <li
+      class="rounded-lg p-5 flex text-theme-medium"
+    >
+      <div
+        class="text-theme-primary-contrast"
+      >
+        <div
+          class="sc-AxjAm buCJuk"
+          height="20"
+          width="20"
+        >
+          <div>
+            <div>
+              <div
+                data-src="plugin.svg"
+                src=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <span
+        class="font-semibold ml-2"
+      >
+        General
+      </span>
+    </li>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`SideBarItem should render as active 1`] = `
+<DocumentFragment>
+  <div
+    class="relative cursor-pointer"
+    data-testid="side-menu__item--plugin"
+  >
+    <div
+      class="sc-AxirZ dA-dDXy absolute top-0 left-0 rounded-lg bg-theme-primary"
+    />
+    <li
+      class="rounded-lg p-5 flex 
+        text-theme-primary
+        bg-theme-primary-contrast
+    "
+    >
+      <div
+        class="text-theme-primary"
+      >
+        <div
+          class="sc-AxjAm buCJuk"
+          height="20"
+          width="20"
+        >
+          <div>
+            <div>
+              <div
+                data-src="plugin.svg"
+                src=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <span
+        class="font-semibold ml-2"
+      >
+        General
+      </span>
+    </li>
+  </div>
+</DocumentFragment>
+`;
