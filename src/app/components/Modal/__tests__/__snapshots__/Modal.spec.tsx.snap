@@ -9,7 +9,7 @@ exports[`Modal should render 1`] = `
     data-testid="modal__overlay"
   />
   <div
-    class="fixed z-10 left-0 right-0 max-w-lg max-h-1/2 rounded-xl bg-theme-background mx-auto mt-24 pt-6 pb-8 px-10"
+    class="fixed flex flex-col z-10 left-0 right-0 max-w-lg max-h-1/2 rounded-xl bg-theme-background mx-auto mt-24 pt-6 pb-8 px-10"
     data-testid="modal__inner"
   >
     <div
@@ -18,6 +18,7 @@ exports[`Modal should render 1`] = `
       <button
         class="sc-AxjAm jZZsoN"
         color="neutral"
+        type="button"
       >
         <div
           class="sc-AxirZ fttODj"
@@ -38,6 +39,9 @@ exports[`Modal should render 1`] = `
     <h2>
       ark
     </h2>
+    <div
+      class="flex-1 overflow-auto"
+    />
   </div>
 </DocumentFragment>
 `;
@@ -49,7 +53,7 @@ exports[`Modal should render a modal with content 1`] = `
     data-testid="modal__overlay"
   />
   <div
-    class="fixed z-10 left-0 right-0 max-w-lg max-h-1/2 rounded-xl bg-theme-background mx-auto mt-24 pt-6 pb-8 px-10"
+    class="fixed flex flex-col z-10 left-0 right-0 max-w-lg max-h-1/2 rounded-xl bg-theme-background mx-auto mt-24 pt-6 pb-8 px-10"
     data-testid="modal__inner"
   >
     <div
@@ -58,6 +62,7 @@ exports[`Modal should render a modal with content 1`] = `
       <button
         class="sc-AxjAm jZZsoN"
         color="neutral"
+        type="button"
       >
         <div
           class="sc-AxirZ fttODj"
@@ -78,7 +83,11 @@ exports[`Modal should render a modal with content 1`] = `
     <h2>
       ark
     </h2>
-    This is the Modal content
+    <div
+      class="flex-1 overflow-auto"
+    >
+      This is the Modal content
+    </div>
   </div>
 </DocumentFragment>
 `;
@@ -90,7 +99,7 @@ exports[`Modal should render a modal with description 1`] = `
     data-testid="modal__overlay"
   />
   <div
-    class="fixed z-10 left-0 right-0 max-w-lg max-h-1/2 rounded-xl bg-theme-background mx-auto mt-24 pt-6 pb-8 px-10"
+    class="fixed flex flex-col z-10 left-0 right-0 max-w-lg max-h-1/2 rounded-xl bg-theme-background mx-auto mt-24 pt-6 pb-8 px-10"
     data-testid="modal__inner"
   >
     <div
@@ -99,6 +108,7 @@ exports[`Modal should render a modal with description 1`] = `
       <button
         class="sc-AxjAm jZZsoN"
         color="neutral"
+        type="button"
       >
         <div
           class="sc-AxirZ fttODj"
@@ -120,9 +130,13 @@ exports[`Modal should render a modal with description 1`] = `
       ark
     </h2>
     <div
-      class="text-theme-neutral-500"
+      class="flex-1 overflow-auto"
     >
-      This is the Modal description
+      <div
+        class="text-theme-neutral-500"
+      >
+        This is the Modal description
+      </div>
     </div>
   </div>
 </DocumentFragment>
@@ -135,7 +149,7 @@ exports[`Modal should render a modal with overlay 1`] = `
     data-testid="modal__overlay"
   />
   <div
-    class="fixed z-10 left-0 right-0 max-w-lg max-h-1/2 rounded-xl bg-theme-background mx-auto mt-24 pt-6 pb-8 px-10"
+    class="fixed flex flex-col z-10 left-0 right-0 max-w-lg max-h-1/2 rounded-xl bg-theme-background mx-auto mt-24 pt-6 pb-8 px-10"
     data-testid="modal__inner"
   >
     <div
@@ -144,6 +158,7 @@ exports[`Modal should render a modal with overlay 1`] = `
       <button
         class="sc-AxjAm jZZsoN"
         color="neutral"
+        type="button"
       >
         <div
           class="sc-AxirZ fttODj"
@@ -164,7 +179,11 @@ exports[`Modal should render a modal with overlay 1`] = `
     <h2>
       ark
     </h2>
-    This is the Modal content
+    <div
+      class="flex-1 overflow-auto"
+    >
+      This is the Modal content
+    </div>
   </div>
 </DocumentFragment>
 `;
