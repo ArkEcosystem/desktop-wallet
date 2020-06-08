@@ -6,6 +6,7 @@ export default { title: "Components / Side Bar / Side Bar Item", decorators: [wi
 
 const item = {
 	label: text("Label", "General"),
+	itemKey: "key",
 	icon: text("Icon name", "plugin"),
 	route: text("Route", "/settings/general"),
 	isActive: boolean("isActive", false),

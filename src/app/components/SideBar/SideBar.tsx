@@ -14,6 +14,7 @@ export type ItemProps = {
 	icon: string;
 	route: string;
 	isActive: boolean;
+	handleActiveItem?: any;
 };
 
 export const SideBar = ({ activeItem, handleActiveItem, items }: Props) => (
