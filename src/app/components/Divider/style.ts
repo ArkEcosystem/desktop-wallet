@@ -22,6 +22,20 @@ const getType = (type: string): any => {
 	}
 };
 
-export const getStyles = ({ type }: { type?: string }) => {
-	return [getType(type!), ...baseStyle];
+const isDashed = (dashed: boolean): any => {
+	if (dashed) {
+		return [
+			tw`border-dashed`,
+			css`
+				background: none;
+				border-width: 1px 0 0;
+			`,
+		];
+	}
+
+	return null;
+};
+
+export const getStyles = ({ type, dashed }: { type?: string; dashed?: boolean }) => {
+	return [...baseStyle, getType(type!), isDashed(dashed!)];
 };

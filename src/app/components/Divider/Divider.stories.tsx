@@ -1,6 +1,6 @@
 import React from "react";
 import { Divider } from "./Divider";
-import { withKnobs, select } from "@storybook/addon-knobs";
+import { boolean, select, withKnobs } from "@storybook/addon-knobs";
 
 export default {
 	title: "Components / Divider",
@@ -9,6 +9,7 @@ export default {
 
 export const Default = () => {
 	const type = select("Type", ["horizontal", "vertical"], "horizontal");
+	const dashed = boolean("dashed", false);
 
-	return <Divider type={type} />;
+	return <Divider type={type} dashed={dashed} />;
 };
