@@ -1,4 +1,6 @@
 import React from "react";
+import styled from "styled-components";
+import tw from "twin.macro";
 // UI Elements
 import { ListDividedItem } from "./ListDividedItem";
 
@@ -6,12 +8,19 @@ type Props = {
 	items: any;
 };
 
+const StyledList = styled.ul({
+	li: tw`border-b border-dashed border-theme-neutral-light`,
+	"li:last-child": tw`
+		border-b-0
+	`,
+});
+
 const renderItems = (items: any) => (
-	<ul data-testid="list-divided__items">
+	<StyledList data-testid="list-divided__items">
 		{items.map((item: any, index: number) => (
 			<ListDividedItem {...item} key={index} />
 		))}
-	</ul>
+	</StyledList>
 );
 
 const ListDivided = ({ items }: Props) => {

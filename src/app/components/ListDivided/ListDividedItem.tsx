@@ -5,7 +5,7 @@ type Props = {
 	labelClass: string;
 	label: string;
 	labelDescription: string;
-	itemLabelDescriptionClass: string;
+	labelDescriptionClass: string;
 	value: string;
 	itemValueClass: string;
 	content: React.ReactNode;
@@ -16,12 +16,12 @@ export const ListDividedItem = ({
 	labelClass,
 	label,
 	labelDescription,
-	itemLabelDescriptionClass,
+	labelDescriptionClass,
 	value,
 	itemValueClass,
 	content,
 }: Props) => (
-	<li className="flex flex-col w-full py-4 mb-5" data-testid="list-divided-item__wrapper">
+	<li className="flex flex-col w-full py-8 mb-5" data-testid="list-divided-item__wrapper">
 		<div
 			className={`flex justify-between ${isFloatingLabel ? "flex-col items-start" : "items-center"}`}
 			data-testid="list-divided-item__inner-wrapper"
@@ -32,7 +32,7 @@ export const ListDividedItem = ({
 				</span>
 				{labelDescription && (
 					<span
-						className={`text-sm text-theme-neutral ${itemLabelDescriptionClass}`}
+						className={`text-sm text-theme-neutral ${labelDescriptionClass}`}
 						data-testid="list-divided-item__label--description"
 					>
 						{labelDescription}
