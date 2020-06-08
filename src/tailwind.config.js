@@ -167,51 +167,6 @@ module.exports = {
 				outline: "0 0 0 3px rgba(var(--theme-color-primary-rgb), 0.4)",
 			},
 		},
-
-		customForms: (theme) => ({
-			default: {
-				input: {
-					textColor: theme("colors.theme-neutral-900"),
-					backgroundColor: theme("colors.theme-background"),
-					paddingTop: theme("spacing.3"),
-					paddingBottom: theme("spacing.3"),
-					paddingLeft: theme("spacing.3"),
-					paddingRight: theme("spacing.3"),
-					"&::placeholder": {
-						color: theme("colors.theme-neutral-light"),
-						opacity: "1",
-					},
-					"&:not(:disabled):focus": {
-						outline: "none",
-						boxShadow: theme("boxShadow.sm"),
-						borderColor: theme("colors.theme-primary"),
-					},
-					"&:not(:disabled):hover": {
-						borderColor: theme("colors.theme-primary"),
-					},
-				},
-				select: {
-					backgroundColor: theme("colors.theme-background"),
-					paddingTop: theme("spacing.3"),
-					paddingBottom: theme("spacing.3"),
-					paddingLeft: theme("spacing.4"),
-					icon: (iconColor) => `
-						<svg xmlns="http://www.w3.org/2000/svg" fill="${iconColor}" viewBox="0 0 20 20">
-							<path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-						</svg>
-					`,
-					iconColor: "#3c4249",
-					"&:not(:disabled):focus": {
-						outline: "none",
-						boxShadow: theme("boxShadow.sm"),
-						borderColor: theme("colors.theme-primary"),
-					},
-					"&:not(:disabled):hover": {
-						borderColor: theme("colors.theme-primary"),
-					},
-				},
-			},
-		}),
 	},
 	variants: {
 		borderRadius: [...defaultConfig.variants.borderRadius, "first", "last"],
