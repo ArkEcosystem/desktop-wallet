@@ -30,6 +30,7 @@
 		"start": "react-app-rewired start",
 		"test": "react-app-rewired test",
 		"test:coverage": "react-app-rewired test --coverage --watchAll=false",
+		"test:e2e": "cypress run --headless",
 		"cy:run": "cypress run",
 		"cy:open": "cypress open",
 		"eject": "react-app-rewired eject",
