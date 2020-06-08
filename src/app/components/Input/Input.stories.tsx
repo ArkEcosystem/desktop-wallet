@@ -8,13 +8,7 @@ export default {
 
 export const Text = () => (
 	<div className="p-4">
-		<Input label="Input" type="text" error="" />
-	</div>
-);
-
-export const TextWithError = () => (
-	<div className="p-4">
-		<Input label="Input" type="text" error="This field is required" />
+		<Input label="Input" type="text" />
 	</div>
 );
 
@@ -27,7 +21,7 @@ export const TextWithIcon = () => {
 
 	return (
 		<div className="p-4">
-			<Input label="Input" type="text" error="" innerSlot={innerSlot} />
+			<Input label="Input" type="text" innerSlot={innerSlot} />
 		</div>
 	);
 };

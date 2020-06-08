@@ -10,7 +10,7 @@ import { ListDivided } from "app/components/ListDivided";
 import { SvgIcon } from "app/components/SvgIcon";
 
 type Props = {
-	handleSubmit?: any;
+	onSubmit?: any;
 } & WrappedComponentProps;
 
 const item = {
@@ -43,8 +43,9 @@ const item = {
 	),
 };
 
-const CreateProfile = injectIntl(({ intl: { formatMessage }, handleSubmit }: Props) => {
-	const { register, errors } = useForm();
+const CreateProfile = injectIntl(({ intl: { formatMessage }, onSubmit }: Props) => {
+	const form = useForm();
+	const { register } = form;
 
 	return (
 		<div className="w-full h-full">
@@ -72,13 +73,12 @@ const CreateProfile = injectIntl(({ intl: { formatMessage }, handleSubmit }: Pro
 						<div className="flex flex-1">
 							<div className="w-full" data-testid="create-profile__form">
 								<ListDivided items={[item]} />
-								<Form id="create-profile__form" handleOnSubmit={handleSubmit}>
+								<Form id="create-profile__form" context={form} onSubmit={onSubmit}>
 									<Input
 										type="text"
 										label="Name"
 										name="name"
 										reference={register({ required: true })}
-										error={errors["name"]}
 									/>
 								</Form>
 							</div>

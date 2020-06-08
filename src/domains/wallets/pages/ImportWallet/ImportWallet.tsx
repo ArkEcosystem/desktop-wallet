@@ -12,7 +12,7 @@ import { Toggle } from "app/components/Toggle";
 
 type Props = {
 	networks: any;
-	handleSubmit?: any;
+	onSubmit?: any;
 };
 
 type NetworkProps = {
@@ -21,11 +21,12 @@ type NetworkProps = {
 	name: string;
 };
 
-const ImportWallet = ({ networks, handleSubmit }: Props) => {
+const ImportWallet = ({ networks, onSubmit }: Props) => {
 	const [activeIndex, setActiveIndex] = useState(1);
 	const [selected, setSelected] = useState(null);
 	const [isAddressOnly, setIsAddressOnly] = useState(false);
-	const { register, errors } = useForm();
+	const form = useForm();
+	const { register } = form;
 
 	const onPreviousBtnClick = (event: any) => {
 		// Prevent btn click event propagation to form submittion
@@ -48,7 +49,6 @@ const ImportWallet = ({ networks, handleSubmit }: Props) => {
 					label="Your password"
 					name="password"
 					reference={register}
-					error={errors["password"]}
 				/>
 			);
 		}
@@ -61,7 +61,6 @@ const ImportWallet = ({ networks, handleSubmit }: Props) => {
 				name="address"
 				innerSlot={innerSlot}
 				reference={register}
-				error={errors["address"]}
 			/>
 		);
 	};
@@ -118,7 +117,7 @@ const ImportWallet = ({ networks, handleSubmit }: Props) => {
 				<div className="flex justify-center w-full">
 					<div className="w-2/4">
 						<StepIndicator size={2} activeIndex={activeIndex} />
-						<Form id="import-wallet__form" handleOnSubmit={handleSubmit}>
+						<Form id="import-wallet__form" context={form} onSubmit={onSubmit}>
 							<div className="mt-10 ">
 								<div className="_header">
 									<p className="text-4xl font-bold">Import Wallet</p>

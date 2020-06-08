@@ -24,11 +24,4 @@ describe("Input", () => {
 		expect(getByTestId("input__inner-slot")).toHaveTextContent("Hug me inner slot");
 		expect(asFragment()).toMatchSnapshot();
 	});
-
-	it("should render an input with an error", () => {
-		const { asFragment, getByTestId } = render(<Input error="Hug is required" />);
-
-		expect(getByTestId("form__input--error")).toHaveTextContent("Hug is required");
-		expect(asFragment()).toMatchSnapshot();
-	});
 });

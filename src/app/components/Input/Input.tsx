@@ -1,16 +1,14 @@
 import React from "react";
-import { FormError } from "app/components/Form/FormError";
 
 type Props = {
 	type: string;
 	label: string;
 	name: string;
-	error: string;
 	innerSlot?: React.ReactNode;
 	reference?: any;
 };
 
-const Input = ({ type, label, name, error, innerSlot, reference }: Props) => (
+const Input = ({ type, label, name, innerSlot, reference }: Props) => (
 	<div className="flex flex-col" data-testid="input__wrapper">
 		<label className="text-theme-medium" data-testid="input__label">
 			{label}
@@ -28,7 +26,6 @@ const Input = ({ type, label, name, error, innerSlot, reference }: Props) => (
 				)}
 			</div>
 		</label>
-		{error && <FormError error={error} />}
 	</div>
 );
 
