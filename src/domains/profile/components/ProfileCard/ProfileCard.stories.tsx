@@ -2,7 +2,7 @@ import React from "react";
 import { ProfileCard } from "./ProfileCard";
 import { withKnobs, text } from "@storybook/addon-knobs";
 
-export default { title: "Components / Profile Card", decorators: [withKnobs] };
+export default { title: "Profile / Components / Profile Card", decorators: [withKnobs] };
 
 export const Default = () => {
 	const name = text("Profile name", "Oleg Gelo");

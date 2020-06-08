@@ -2,7 +2,7 @@ import React from "react";
 import { CreateProfile } from "./CreateProfile";
 
 export default {
-	title: "Pages / Profile / Create Profile",
+	title: "Profile / Pages / Create Profile",
 };
 
 export const Default = () => (
