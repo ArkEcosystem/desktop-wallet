@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { FormHelperText } from "./FormHelperText";
 import { Input } from "app/components/Input";
 import { Select } from "app/components/Select";
+import { Textarea } from "app/components/Textarea";
 
 export default { title: "Form / Form" };
 
@@ -53,6 +54,15 @@ export const Default = () => {
 						<option value="ark">ARK</option>
 						<option value="bitcoin">Bitcoin</option>
 					</Select>
+				</FormField>
+
+				<FormField name="message">
+					<FormLabel>Message</FormLabel>
+					<Textarea
+						ref={methods.register({
+							required: "Message required",
+						})}
+					/>
 				</FormField>
 			</Form>
 		</div>
