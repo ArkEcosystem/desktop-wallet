@@ -5,7 +5,7 @@ import { renderRoutes } from "react-router-config";
 import { IntlProvider } from "react-intl";
 
 // i18n
-import translations from "./i18n/locales";
+import { locales } from "./i18n/locales";
 // Routes
 import { routes } from "./router";
 // Styles
@@ -18,7 +18,7 @@ ReactDOM.render(
 		<IntlProvider
 			locale={locale}
 			// @ts-ignore
-			messages={translations["en-US"].messages}
+			messages={locales["en-US"].messages}
 		>
 			{renderRoutes(routes)}
 		</IntlProvider>

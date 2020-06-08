@@ -5,16 +5,14 @@ const baseStyle = [tw`flex overflow-hidden`];
 const getSize = (size: string): any => {
 	switch (size) {
 		case "small":
-			return tw`py-4 px-2`;
+			return tw`px-2 py-4`;
 		case "default":
-			return tw`py-8 px-4`;
+			return tw`px-4 py-8`;
 		case "large":
-			return tw`py-12 px-8`;
+			return tw`px-8 py-12`;
 	}
 };
 
 export const getStyles = ({ size }: { size?: string }) => {
 	return [getSize(size!), ...baseStyle];
 };
-
-export default getStyles;

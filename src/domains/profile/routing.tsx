@@ -1,6 +1,6 @@
 import { CreateProfile, Welcome } from "./pages";
 
-export default [
+export const ProfileRoutes = [
 	{
 		path: "/",
 		exact: true,

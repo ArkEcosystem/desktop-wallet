@@ -2,7 +2,7 @@ import React from "react";
 import { ReactSVG } from "react-svg";
 import styled from "styled-components";
 // Assets
-import SvgCollection from "resources/assets/svg";
+import { SvgCollection } from "resources/assets/svg";
 
 type Props = {
 	name: string;
@@ -35,4 +35,4 @@ SvgIcon.defaultProps = {
 	height: 20,
 };
 
-export default SvgIcon;
+export { SvgIcon };

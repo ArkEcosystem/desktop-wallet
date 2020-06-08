@@ -3,7 +3,7 @@ import { IntlProvider } from "react-intl";
 import { act, fireEvent, render, RenderResult } from "@testing-library/react";
 import { ImportWallet } from "../";
 // i18n
-import translations from "i18n/locales";
+import { locales } from "i18n/locales";
 
 describe("Wallet / Import", () => {
 	let rendered: RenderResult;
@@ -27,7 +27,7 @@ describe("Wallet / Import", () => {
 
 	beforeEach(() => {
 		rendered = render(
-			<IntlProvider locale="en-US" messages={translations["en-US"].messages}>
+			<IntlProvider locale="en-US" messages={locales["en-US"].messages}>
 				<ImportWallet networks={networks} />
 			</IntlProvider>,
 		);

@@ -1,4 +1,4 @@
-export default {
+export const messages = {
 	COMMON_ADAPTER: "Adapter",
 	COMMON_ADDRESS: "Address",
 	COMMON_ALL: "All",
