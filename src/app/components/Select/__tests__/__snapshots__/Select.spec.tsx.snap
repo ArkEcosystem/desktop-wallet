@@ -1,34 +1,85 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Select should render an select input 1`] = `
+exports[`Select should render a select input with options 1`] = `
 <DocumentFragment>
-  <select
-    class="appearance-none block w-full form-select transition-colors duration-200"
-    data-testid="select-input"
-    placeholder="Select option"
-  />
+  <div
+    class="sc-AxhUy fNzmXy"
+  >
+    <select
+      class="sc-AxjAm bcybyt overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
+      data-testid="Select"
+    >
+      <option
+        data-testid="select-option"
+        selected=""
+        value="1"
+      >
+        Option 1
+      </option>
+      <option
+        data-testid="select-option"
+        value="2"
+      >
+        Option 2
+      </option>
+    </select>
+    <div
+      class="sc-AxirZ sc-AxhCb egOFvk text-theme-neutral-dark pointer-events-none w-12 text-lg"
+    >
+      <div
+        class="sc-AxgMl jouCcI"
+        height="1em"
+        width="1em"
+      >
+        <div>
+          <div>
+            <div
+              data-src="chevron-down.svg"
+              src=""
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </DocumentFragment>
 `;
 
-exports[`Select should render an select input with options 1`] = `
+exports[`Select should render a select input with placeholder 1`] = `
 <DocumentFragment>
-  <select
-    class="appearance-none block w-full form-select transition-colors duration-200"
-    data-testid="select-input"
-    placeholder="Select option"
+  <div
+    class="sc-AxhUy fNzmXy"
   >
-    <option
-      data-testid="select-option"
-      value="1"
+    <select
+      class="sc-AxjAm bcybyt overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
+      data-testid="Select"
     >
-      Option 1
-    </option>
-    <option
-      data-testid="select-option"
-      value="2"
+      <option
+        disabled=""
+        selected=""
+        value=""
+      >
+        Select option
+      </option>
+    </select>
+    <div
+      class="sc-AxirZ sc-AxhCb egOFvk text-theme-neutral-dark pointer-events-none w-12 text-lg"
     >
-      Option 2
-    </option>
-  </select>
+      <div
+        class="sc-AxgMl jouCcI"
+        height="1em"
+        width="1em"
+      >
+        <div>
+          <div>
+            <div
+              data-src="chevron-down.svg"
+              src=""
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </DocumentFragment>
 `;

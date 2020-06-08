@@ -4,16 +4,17 @@ import { render, fireEvent } from "@testing-library/react";
 import { Select } from "../";
 
 describe("Select", () => {
-	it("should render an select input", () => {
-		const { container, asFragment } = render(<Select placeholder="Select option" />);
+	it("should render a select input with placeholder", () => {
+		const placeholder = "Select option";
+		const { asFragment, getByText } = render(<Select placeholder="Select option" />);
 
-		expect(container).toBeTruthy();
+		expect(getByText(placeholder)).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render an select input with options", () => {
+	it("should render a select input with options", () => {
 		const { getByTestId, getAllByTestId, asFragment } = render(
-			<Select placeholder="Select option">
+			<Select defaultValue={1}>
 				<option data-testid="select-option" value={1}>
 					Option 1
 				</option>
@@ -23,10 +24,10 @@ describe("Select", () => {
 			</Select>,
 		);
 
-		fireEvent.change(getByTestId("select-input"), { target: { value: 2 } });
+		fireEvent.change(getByTestId("Select"), { target: { value: 2 } });
 		const options = getAllByTestId("select-option");
-		expect(options[0].selected).toBeFalsy();
-		expect(options[1].selected).toBeTruthy();
+		expect((options[0] as HTMLOptionElement).selected).toBeFalsy();
+		expect((options[1] as HTMLOptionElement).selected).toBeTruthy();
 
 		expect(asFragment()).toMatchSnapshot();
 	});

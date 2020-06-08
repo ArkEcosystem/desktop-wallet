@@ -10,6 +10,7 @@ import peer from "./peer.svg";
 import plugin from "./plugin.svg";
 import eyeOff from "./eye-off.svg";
 import eye from "./eye.svg";
+import chevronDown from "./chevron-down.svg";
 
 export const SvgCollection: any = {
 	ark,
@@ -24,4 +25,5 @@ export const SvgCollection: any = {
 	plugin,
 	eyeOff,
 	eye,
+	chevronDown,
 };
