@@ -4,7 +4,7 @@ import { render } from "@testing-library/react";
 
 import { Welcome } from "../";
 // i18n
-import translations from "i18n/locales";
+import { locales } from "i18n/locales";
 
 describe("Welcome", () => {
 	it("should render", () => {
@@ -18,7 +18,7 @@ describe("Welcome", () => {
 		];
 
 		const { container, asFragment } = render(
-			<IntlProvider locale="en-US" messages={translations["en-US"].messages}>
+			<IntlProvider locale="en-US" messages={locales["en-US"].messages}>
 				<Welcome profiles={profiles} />
 			</IntlProvider>,
 		);

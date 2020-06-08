@@ -24,4 +24,4 @@ ListDivided.defaultProps = {
 	items: [],
 };
 
-export default ListDivided;
+export { ListDivided };

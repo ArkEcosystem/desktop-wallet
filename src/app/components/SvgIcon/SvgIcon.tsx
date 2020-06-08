@@ -35,4 +35,4 @@ SvgIcon.defaultProps = {
 	height: 20,
 };
 
-export default SvgIcon;
+export { SvgIcon };

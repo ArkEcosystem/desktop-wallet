@@ -1,7 +1,7 @@
 import tw, { css } from "twin.macro";
 
 const baseStyle = [
-	tw`rounded focus:outline-none focus:shadow-outline font-semibold text-center transition-all ease-linear duration-100`,
+	tw`font-semibold text-center transition-all duration-100 ease-linear rounded focus:outline-none focus:shadow-outline`,
 	css`
 		&:disabled {
 			${tw`cursor-not-allowed bg-theme-neutral-light text-theme-neutral`}
@@ -51,16 +51,14 @@ const getVariant = (name: string, color: ReturnType<typeof getColorsVariable>): 
 const getSize = (size: string): any => {
 	switch (size) {
 		case "small":
-			return tw`text-sm px-2 py-1`;
+			return tw`px-2 py-1 text-sm`;
 		case "default":
-			return tw`text-base px-4 py-2`;
+			return tw`px-4 py-2 text-base`;
 		case "large":
-			return tw`text-lg px-5 py-3`;
+			return tw`px-5 py-3 text-lg`;
 	}
 };
 
 export const getStyles = ({ variant, color, size }: { variant?: string; color?: string; size?: string }) => {
 	return [getSize(size!), ...baseStyle, ...getVariant(variant!, getColorsVariable(color!))];
 };
-
-export default getStyles;

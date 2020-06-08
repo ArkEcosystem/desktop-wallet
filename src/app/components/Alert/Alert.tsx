@@ -43,4 +43,4 @@ Alert.defaultProps = {
 	size: "default",
 };
 
-export default Alert;
+export { Alert };

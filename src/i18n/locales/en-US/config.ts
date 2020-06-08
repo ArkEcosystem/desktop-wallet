@@ -1,6 +1,6 @@
-import messages from "./messages";
+import { messages } from "./messages";
 
-export default {
+export const config = {
 	locale: "en-US",
 
 	messages,

@@ -1,5 +1,5 @@
-import locales from "./locales";
+import { locales } from "./locales";
 
-export default {
+export const translations = {
 	"en-US": locales["en-US"].messages,
 };

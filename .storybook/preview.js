@@ -2,9 +2,9 @@ import React from "react";
 import { addDecorator, addParameters } from "@storybook/react";
 import { setIntlConfig, withIntl } from "storybook-addon-intl";
 // Preview layout
-import Layout from "./Layout";
+import { Layout } from "./Layout";
 // i18n
-import translations from "../src/i18n";
+import { translations } from "../src/i18n";
 
 const getMessages = (locale) => translations[locale];
 
