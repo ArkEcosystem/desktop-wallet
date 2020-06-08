@@ -8,13 +8,6 @@ describe("Modal", () => {
 		jest.spyOn(console, "error").mockImplementation(() => null);
 	});
 
-	it("should render", () => {
-		const { container, asFragment } = render(<Modal title="ark" isOpen={true} />);
-
-		expect(container).toBeTruthy();
-		expect(asFragment()).toMatchSnapshot();
-	});
-
 	it("should not render if not open", () => {
 		const { asFragment, getByTestId } = render(<Modal title="ark" isOpen={false} />);
 
