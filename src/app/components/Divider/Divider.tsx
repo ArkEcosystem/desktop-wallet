@@ -3,7 +3,7 @@ import { getStyles } from "./style";
 
 type DividerProps = {
 	type?: "horizontal" | "vertical";
-	dashed: boolean;
+	dashed?: boolean;
 };
 
 export const Divider = styled.div<DividerProps>(getStyles);
