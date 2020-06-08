@@ -6,7 +6,7 @@ import qrcode from "./qrcode.svg";
 import settings from "./settings.svg";
 import upload from "./upload.svg";
 
-const SvgCollection: any = {
+export const SvgCollection: any = {
 	ark,
 	btc,
 	close,
@@ -15,5 +15,3 @@ const SvgCollection: any = {
 	settings,
 	upload,
 };
-
-export default SvgCollection;
