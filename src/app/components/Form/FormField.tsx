@@ -27,7 +27,7 @@ export function FormField({ name, ...props }: FormFieldProps) {
 			isInvalid: !!error,
 			errorMessage: error?.message,
 		};
-	}, [formContext?.errors[name]]);
+	}, [formContext, name]);
 
 	return (
 		<FormFieldStyled isInvalid={isInvalid} className="flex flex-col space-y-2" {...props}>
