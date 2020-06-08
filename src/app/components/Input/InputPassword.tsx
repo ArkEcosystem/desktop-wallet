@@ -14,6 +14,7 @@ export const InputPassword = React.forwardRef<HTMLInputElement, InputPasswordPro
 			<Input ref={ref} type={show ? "text" : "password"} className="pr-12" {...props} />
 			<InputAddonEnd className="w-12">
 				<button
+					data-testid="InputPassword__toggle"
 					type="button"
 					onClick={handleClick}
 					className="focus:outline-none bg-theme-background text-theme-primary-400 w-full h-full flex justify-center text-2xl"
