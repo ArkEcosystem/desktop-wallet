@@ -23,5 +23,5 @@ export const SvgCollection: any = {
 	peer,
 	plugin,
 	eyeOff,
-	eye
+	eye,
 };
