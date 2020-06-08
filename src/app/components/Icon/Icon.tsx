@@ -22,7 +22,7 @@ const Wrapper = styled.div(({ width, height }: WrapperProps) => ({
 	},
 }));
 
-const SvgIcon = ({ name, width, height }: Props) => {
+export const Icon = ({ name, width, height }: Props) => {
 	return (
 		<Wrapper width={width} height={height}>
 			<ReactSVG src={SvgCollection[name]} />
@@ -30,9 +30,7 @@ const SvgIcon = ({ name, width, height }: Props) => {
 	);
 };
 
-SvgIcon.defaultProps = {
-	width: 20,
-	height: 20,
+Icon.defaultProps = {
+	width: "1em",
+	height: "1em",
 };
-
-export { SvgIcon };

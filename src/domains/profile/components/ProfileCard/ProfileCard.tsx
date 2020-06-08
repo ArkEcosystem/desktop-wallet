@@ -1,6 +1,6 @@
 import React from "react";
 import { Card } from "app/components/Card";
-import { SvgIcon } from "app/components/SvgIcon";
+import { Icon } from "app/components/Icon";
 
 type Props = {
 	avatar: string;
@@ -12,7 +12,7 @@ export const ProfileCard = ({ avatar, name, balance }: Props) => (
 	<Card>
 		<div className="relative px-6 sm:flex sm:items-center py-4">
 			<button className="absolute top-0 -mt-2 -mr-4 right-0 flex items-center justify-center w-6 h-6 p-1 mt-3">
-				<SvgIcon name="settings" />
+				<Icon name="settings" />
 			</button>
 
 			<div className="flex flex-row justify-between w-full">

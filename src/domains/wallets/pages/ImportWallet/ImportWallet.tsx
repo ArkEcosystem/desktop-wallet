@@ -6,7 +6,7 @@ import { CardControl } from "app/components/Card";
 import { Form, FormField, FormLabel } from "app/components/Form";
 import { Input } from "app/components/Input";
 import { StepIndicator } from "app/components/StepIndicator";
-import { SvgIcon } from "app/components/SvgIcon";
+import { Icon } from "app/components/Icon";
 import { Tabs, TabPanel } from "app/components/Tabs";
 import { Toggle } from "app/components/Toggle";
 
@@ -77,7 +77,7 @@ const ImportWallet = ({ networks, onSubmit }: Props) => {
 												<div className="flex flex-row h-full items-center py-3">
 													{network.icon && (
 														<div className="rounded-full border border-theme-primary-contrast w-12 h-12 flex justify-center items-center mr-3">
-															<SvgIcon name={network.icon} height={25} width={25} />
+															<Icon name={network.icon} height={25} width={25} />
 														</div>
 													)}
 													<span>{network.name}</span>
