@@ -1,7 +1,7 @@
 import React from "react";
 // UI Elements
 import { Button } from "app/components/Button";
-import { SvgIcon } from "app/components/SvgIcon";
+import { Icon } from "app/components/Icon";
 
 type ModalProps = {
 	children: React.ReactNode;
@@ -24,12 +24,12 @@ const ModalContent = (props: ModalContentProps) => {
 		>
 			<div className="absolute right-0 top-0 mt-4 mr-4">
 				<Button color="neutral" variant="plain" size="icon" onClick={props.onClick}>
-					<SvgIcon name="crossSlim" width={10} height={10} />
+					<Icon name="crossSlim" width={10} height={10} />
 				</Button>
 			</div>
 
 			<h2>{props.title}</h2>
-			{props.description ? <div className="text-theme-neutral-500">{props.description}</div> : ''}
+			{props.description ? <div className="text-theme-neutral-500">{props.description}</div> : ""}
 
 			{props.children}
 		</div>
@@ -43,10 +43,7 @@ export const Modal = (props: ModalProps) => {
 
 	return (
 		<>
-			<div
-				className="fixed inset-0 z-10 bg-black opacity-50"
-				data-testid="modal__overlay"
-			/>
+			<div className="fixed inset-0 z-10 bg-black opacity-50" data-testid="modal__overlay" />
 
 			<ModalContent
 				aria-selected={props.isOpen}
@@ -60,8 +57,6 @@ export const Modal = (props: ModalProps) => {
 	);
 };
 
-Modal.defaultProps = {
-
-}
+Modal.defaultProps = {};
 
 Modal.displayName = "Modal";
