@@ -1,14 +1,14 @@
 import React from "react";
-import Alert from "./Alert";
+import { Alert } from "./Alert";
 import { withKnobs, select, text } from "@storybook/addon-knobs";
 
 export default {
 	title: "Components / Alert",
-	decorators: [withKnobs]
+	decorators: [withKnobs],
 };
 
 export const Default = () => {
-	const variant = select("Variant", ["primary","success","warning","danger","neutral"], "warning");
+	const variant = select("Variant", ["primary", "success", "warning", "danger", "neutral"], "warning");
 	const size = select("Size", ["small", "default", "large"], "default");
 	const title = text("Title", "Titlle");
 
