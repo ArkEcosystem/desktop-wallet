@@ -2,7 +2,7 @@ import React from "react";
 import { Input, InputPassword } from "./index";
 
 export default {
-	title: "Components / Input",
+	title: "Input / Input",
 };
 
 export const Default = () => {

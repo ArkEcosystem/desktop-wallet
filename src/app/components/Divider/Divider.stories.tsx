@@ -3,7 +3,7 @@ import { Divider } from "./Divider";
 import { boolean, select, withKnobs } from "@storybook/addon-knobs";
 
 export default {
-	title: "Components / Divider",
+	title: "Basic / Divider",
 	decorators: [withKnobs],
 };
 

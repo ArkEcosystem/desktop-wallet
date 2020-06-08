@@ -2,7 +2,7 @@ import React from "react";
 import { ListDivided } from ".";
 
 export default {
-	title: "Components / List Divided / List Divided",
+	title: "Basic / List Divided / List Divided",
 };
 
 export const Default = () => (

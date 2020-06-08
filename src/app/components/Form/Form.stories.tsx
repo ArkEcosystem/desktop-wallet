@@ -3,6 +3,8 @@ import { Form, FormField, FormLabel } from "./index";
 import { useForm } from "react-hook-form";
 import { FormHelperText } from "./FormHelperText";
 import { Input } from "app/components/Input";
+import { Select } from "app/components/Select";
+import { Textarea } from "app/components/Textarea";
 
 export default { title: "Form / Form" };
 
@@ -39,6 +41,28 @@ export const Default = () => {
 						Password must be 3–10 characters, and include a number, a symbol, a lower and a upper case
 						letter.
 					</FormHelperText>
+				</FormField>
+
+				<FormField name="coin">
+					<FormLabel>Coin</FormLabel>
+					<Select
+						ref={methods.register({
+							required: "Coin required",
+						})}
+					>
+						<option value="">Select</option>
+						<option value="ark">ARK</option>
+						<option value="bitcoin">Bitcoin</option>
+					</Select>
+				</FormField>
+
+				<FormField name="message">
+					<FormLabel>Message</FormLabel>
+					<Textarea
+						ref={methods.register({
+							required: "Message required",
+						})}
+					/>
 				</FormField>
 			</Form>
 		</div>

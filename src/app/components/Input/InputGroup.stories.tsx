@@ -2,7 +2,7 @@ import React from "react";
 import { Input, InputGroup, InputAddonEnd, InputAddonStart } from "./index";
 
 export default {
-	title: "Components / Input / InputGroup",
+	title: "Input / Input / InputGroup",
 };
 
 export const Start = () => {

@@ -3,7 +3,7 @@ import { Alert } from "./Alert";
 import { withKnobs, select, text } from "@storybook/addon-knobs";
 
 export default {
-	title: "Components / Alert",
+	title: "Basic / Alert",
 	decorators: [withKnobs],
 };
 
