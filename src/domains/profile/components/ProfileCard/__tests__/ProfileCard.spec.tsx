@@ -25,6 +25,13 @@ describe("ProfileCard", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it("should render settings button", () => {
+		const { container, getByTestId } = render(<ProfileCard {...profile} />);
+
+		expect(container).toMatchSnapshot();
+		expect(getByTestId("dropdown__toggle")).toBeTruthy();
+	});
+
 	it("should open dropdown settings on icon click", () => {
 		const { getByTestId } = render(<ProfileCard {...profile} />);
 		const toggle = getByTestId("dropdown__toggle");
