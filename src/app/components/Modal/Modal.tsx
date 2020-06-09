@@ -20,7 +20,7 @@ const ModalContent = (props: ModalContentProps) => {
 	return (
 		<div
 			data-testid="modal__inner"
-			className="fixed flex flex-col z-10 left-0 right-0 max-w-lg max-h-1/2 rounded-xl bg-theme-background mx-auto mt-24 pt-6 pb-8 px-10"
+			className="fixed flex flex-col z-10 left-0 right-0 max-w-2xl rounded-xl bg-theme-background mx-auto mt-24 pt-6 pb-8 px-16"
 		>
 			<div className="absolute right-0 top-0 mt-4 mr-4">
 				<Button color="neutral" variant="plain" size="icon" onClick={props.onClick}>
@@ -28,12 +28,14 @@ const ModalContent = (props: ModalContentProps) => {
 				</Button>
 			</div>
 
-			<h2>{props.title}</h2>
+			<div className="py-4">
+				<h2>{props.title}</h2>
 
-			<div className="flex-1 overflow-auto">
-				{props.description ? <div className="text-theme-neutral-500">{props.description}</div> : ""}
+				<div className="flex-1 overflow-auto">
+					{props.description ? <div className="text-theme-neutral-500">{props.description}</div> : ""}
 
-				{props.children}
+					{props.children}
+				</div>
 			</div>
 		</div>
 	);
