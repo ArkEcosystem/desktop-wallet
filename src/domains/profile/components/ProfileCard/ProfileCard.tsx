@@ -19,13 +19,13 @@ const DropdownOptions = [
 export const ProfileCard = ({ avatar, name, balance }: Props) => (
 	<Card>
 		<div className="relative px-6 sm:flex sm:items-center py-4">
-			<button className="absolute top-0 -mt-2 -mr-4 right-0 flex items-center justify-center w-6 h-6 p-1 mt-3">
+			<div className="absolute top-0 -mt-2 -mr-4 right-0 flex items-center justify-center w-6 h-6 p-1 mt-3">
 				<Dropdown
 					toggleIcon="settings"
 					options={DropdownOptions}
 					onSelect={(option: any) => console.log(option)}
-				></Dropdown>
-			</button>
+				/>
+			</div>
 
 			<div className="flex flex-row justify-between w-full">
 				<div className="flex items-center">
