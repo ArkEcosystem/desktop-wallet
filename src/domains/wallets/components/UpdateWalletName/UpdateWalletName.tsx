@@ -2,19 +2,19 @@ import React from "react";
 import { injectIntl, WrappedComponentProps } from "react-intl";
 import { useForm } from "react-hook-form";
 // UI Elements
-import { Modal } from "./Modal";
+import { Modal } from "app/components/Modal";
 import { Button } from "app/components/Button";
 import { Form, FormField, FormLabel, FormHelperText } from "app/components/Form";
 import { Input } from "app/components/Input";
 
-type ModalProps = {
+type UpdateWalletNameProps = {
 	isOpen: boolean;
 	onClose?: React.MouseEventHandler;
 	onCancel?: React.MouseEventHandler;
 	onSave: React.MouseEventHandler;
 } & WrappedComponentProps;
 
-export const ModalNameWallet = injectIntl(({ intl: { formatMessage }, ...props }: ModalProps) => {
+export const UpdateWalletName = injectIntl(({ intl: { formatMessage }, ...props }: UpdateWalletNameProps) => {
 	const methods = useForm({ mode: "onChange" });
 
 	return (
@@ -45,8 +45,8 @@ export const ModalNameWallet = injectIntl(({ intl: { formatMessage }, ...props }
 	);
 });
 
-ModalNameWallet.defaultProps = {
+UpdateWalletName.defaultProps = {
 	isOpen: false,
 };
 
-ModalNameWallet.displayName = "ModalNameWallet";
+UpdateWalletName.displayName = "UpdateWalletName";

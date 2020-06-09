@@ -1,5 +1,5 @@
 import React from "react";
-import { Modal, ModalNameWallet } from "./";
+import { Modal } from "./";
 import { Button } from "app/components/Button";
 import { withKnobs, boolean, text } from "@storybook/addon-knobs";
 
@@ -27,13 +27,4 @@ export const Default = () => (
 			</Button>
 		</div>
 	</Modal>
-);
-
-export const NameWallet = () => (
-	<ModalNameWallet
-		isOpen={boolean("Is Open", true)}
-		onClose={() => alert("closed")}
-		onCancel={() => alert("cancelled")}
-		onSave={() => alert("saved")}
-	/>
 );

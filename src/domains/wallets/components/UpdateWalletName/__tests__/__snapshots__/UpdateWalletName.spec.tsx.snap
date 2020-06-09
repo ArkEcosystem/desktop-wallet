@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ModalNameWallet should not render if not open 1`] = `<DocumentFragment />`;
+exports[`UpdateWalletName should not render if not open 1`] = `<DocumentFragment />`;
 
-exports[`ModalNameWallet should render a modal 1`] = `
+exports[`UpdateWalletName should render a modal 1`] = `
 <DocumentFragment>
   <div
     class="fixed inset-0 z-10 bg-black opacity-50"
@@ -88,6 +88,5 @@ exports[`ModalNameWallet should render a modal 1`] = `
       </form>
     </div>
   </div>
-  ,
 </DocumentFragment>
 `;
