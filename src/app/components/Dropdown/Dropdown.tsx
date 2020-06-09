@@ -33,7 +33,7 @@ const renderOptions = (options: Option[], onSelect: any) => (
 	</ul>
 );
 
-export const Dropdown = ({ children, options, onSelect, toggleIcon }: Props) => {
+export const Dropdown = ({ children, options = [], onSelect, toggleIcon }: Props) => {
 	const [isOpen, setIsOpen] = useState(false);
 
 	const toggle = () => setIsOpen(!isOpen);
