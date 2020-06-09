@@ -9,8 +9,68 @@ on:
         types: [ready_for_review, synchronize, opened]
 
 jobs:
-    build:
+    linux:
         runs-on: ubuntu-latest
+
+        strategy:
+            matrix:
+                node-version: [12.x]
+
+        steps:
+            - uses: actions/checkout@v2
+              with:
+                  ref: ${{ github.head_ref }}
+
+            - name: Cache node modules
+              uses: actions/cache@v2
+              with:
+                  path: node_modules
+                  key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: ${{ runner.os }}-node-
+
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node-version }}
+
+            - name: Install
+              run: yarn install --frozen-lockfile
+
+            - name: Build
+              run: yarn build
+
+    mac:
+        runs-on: macos-latest
+
+        strategy:
+            matrix:
+                node-version: [12.x]
+
+        steps:
+            - uses: actions/checkout@v2
+              with:
+                  ref: ${{ github.head_ref }}
+
+            - name: Cache node modules
+              uses: actions/cache@v2
+              with:
+                  path: node_modules
+                  key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: ${{ runner.os }}-node-
+
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node-version }}
+
+            - name: Install
+              run: yarn install --frozen-lockfile
+
+            - name: Build
+              run: yarn build
+
+    windows:
+        runs-on: windows-latest
 
         strategy:
             matrix:
