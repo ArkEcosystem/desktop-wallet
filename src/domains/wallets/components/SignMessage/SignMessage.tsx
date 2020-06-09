@@ -25,7 +25,7 @@ export const SignMessage = ({ onSubmit, signatoryAddress, isOpen, handleClose }:
 			description="Insert a message below to sign using your private key"
 			onClick={handleClose}
 		>
-			<div className="mt-10">
+			<div className="mt-5">
 				<Form id="sign-message__form" context={form} onSubmit={onSubmit}>
 					<FormField name="signatory-address" className="relative">
 						<FormLabel label="Signatory" />
