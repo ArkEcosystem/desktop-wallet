@@ -11,6 +11,7 @@ export const messages = {
 	COMMON_BACKGROUND: "Background",
 	COMMON_BIP39_LANGUAGE: "Passphrase Language (BIP39)",
 	COMMON_CATEGORY: "Category",
+	COMMON_CANCEL: "Cancel",
 	COMMON_CONFIRM: "Confirm",
 	COMMON_CURRENCY: "Currency",
 	COMMON_DATE: "Date",
@@ -40,7 +41,9 @@ export const messages = {
 	COMMON_PROFILE_NAME: "Profile name",
 	COMMON_PRICE_PROVIDER: "Price Provider",
 	COMMON_REMOVE: "Remove",
+	COMMON_SELECT: "Select",
 	COMMON_SAVE: "Save",
+	COMMON_SEND: "Send",
 	COMMON_SIZE: "Size",
 	COMMON_SKIP: "Skip",
 	COMMON_START: "Start",
@@ -56,4 +59,22 @@ export const messages = {
 	COMMON_X_OF_Y: "{0} of {1}",
 	COMMON_ADVANCED_MODE: "Advanced Mode",
 	COMMON_DEFAULT_CHOSEN_FEE: "Default fee type",
+
+	HELP: {
+		MODAL_CONTACT_US: {
+			TITLE: "Contact Us",
+			DESCRIPTION: "We'd be happy to answer your questions",
+			FIELD_NAME: "Name",
+			FIELD_EMAIL: "Email",
+			FIELD_SUBJECT: "Subject",
+			FIELD_MESSAGE: "Message",
+			MESSAGE_REQUIRED: "Message is Required",
+			SUBJECT_REQUIRED: "Subject is Required",
+
+			SUBJECT_OPTION: {
+				SECURITY: "Security",
+				OTHER: "Other",
+			},
+		},
+	},
 };
