@@ -31,7 +31,7 @@ exports[`Welcome should render 1`] = `
       </div>
     </nav>
     <div
-      class="flex flex-col items-center justify-center text-center"
+      class="container mx-auto text-center px-4 sm:px-6 lg:px-0"
     >
       <h1
         class="mb-8 font-bold"
@@ -39,7 +39,7 @@ exports[`Welcome should render 1`] = `
         Welcome to ARK
       </h1>
       <div
-        class="container w-3/5 mx-auto"
+        class="mx-auto w-full lg:w-4/5 xl:w-2/3"
       >
         <img
           alt="Onboarding Banner"
@@ -47,126 +47,127 @@ exports[`Welcome should render 1`] = `
         />
       </div>
       <div
-        class="container w-2/5 mx-auto"
+        class="max-w-lg mx-auto md:max-w-xl my-8"
       >
-        <div
-          class="w-full my-8"
+        <h2
+          class="mx-4 text-xl font-bold md:text-2xl"
         >
-          <h2
-            class="mx-4 text-2xl font-bold md:mx-8 xl:mx-16"
-          >
-            Select Profile
-          </h2>
-          <div
-            class="mx-4 mt-2 text-theme-neutral-dark md:mx-8 xl:mx-16"
-          >
-            You already have a profile, you can choose any of them
-          </div>
-        </div>
+          Select Profile
+        </h2>
+        <p
+          class="text-sm text-theme-neutral-dark md:text-base"
+        >
+          You already have a profile, you can choose any of them
+        </p>
         <div
-          class="sc-AxirZ bEjdEN"
+          class="mt-6 mb-8"
         >
           <div
-            class="relative px-6 sm:flex sm:items-center py-4"
+            class="sc-AxiKw kcQTnN"
           >
-            <button
-              class="absolute top-0 -mt-2 -mr-4 right-0 flex items-center justify-center w-6 h-6 p-1 mt-3"
+            <div
+              class="relative px-6 sm:flex sm:items-center py-4"
             >
-              <div
-                class="sc-AxiKw dzBdqj"
-                height="1em"
-                width="1em"
+              <button
+                class="absolute top-0 -mt-2 -mr-4 right-0 flex items-center justify-center w-6 h-6 p-1 mt-3"
               >
-                <div>
+                <div
+                  class="sc-AxhCb fxrKLH"
+                  height="1em"
+                  width="1em"
+                >
                   <div>
-                    <div
-                      data-src="settings.svg"
-                      src=""
-                    />
+                    <div>
+                      <div
+                        data-src="settings.svg"
+                        src=""
+                      />
+                    </div>
                   </div>
                 </div>
-              </div>
-            </button>
-            <div
-              class="flex flex-row justify-between w-full"
-            >
+              </button>
               <div
-                class="flex items-center"
+                class="flex flex-row justify-between w-full"
               >
                 <div
-                  class="block w-12 h-12 mx-auto rounded-full sm:mx-0 sm:flex-shrink-0"
+                  class="flex items-center"
                 >
-                  <img
-                    alt="User Avatar"
-                    class="rounded-full"
-                    data-testid="profile-card__user--avatar"
-                    src="https://www.w3schools.com/howto/img_avatar.png"
-                  />
+                  <div
+                    class="block w-12 h-12 mx-auto rounded-full sm:mx-0 sm:flex-shrink-0"
+                  >
+                    <img
+                      alt="User Avatar"
+                      class="rounded-full"
+                      data-testid="profile-card__user--avatar"
+                      src="https://www.w3schools.com/howto/img_avatar.png"
+                    />
+                  </div>
+                  <div
+                    class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-left"
+                  >
+                    <p
+                      class="text-sm font-semibold text-theme-neutral"
+                    >
+                      Name
+                    </p>
+                    <p
+                      class="font-semibold text-theme-neutral-dark"
+                      data-testid="profile-card__user--name"
+                    >
+                      Oleg Gelo
+                    </p>
+                  </div>
                 </div>
                 <div
-                  class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-left"
+                  class="flex items-center"
                 >
-                  <p
-                    class="text-sm font-semibold text-theme-neutral"
+                  <div
+                    class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-right"
                   >
-                    Name
-                  </p>
-                  <p
-                    class="font-semibold text-theme-neutral-dark"
-                    data-testid="profile-card__user--name"
-                  >
-                    Oleg Gelo
-                  </p>
-                </div>
-              </div>
-              <div
-                class="flex items-center"
-              >
-                <div
-                  class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-right"
-                >
-                  <p
-                    class="text-sm font-semibold text-theme-neutral"
-                  >
-                    Total Balance
-                  </p>
-                  <p
-                    class="font-semibold text-theme-neutral-dark"
-                    data-testid="profile-card__user--balance"
-                  >
-                    234,500.46 USD
-                  </p>
+                    <p
+                      class="text-sm font-semibold text-theme-neutral"
+                    >
+                      Total Balance
+                    </p>
+                    <p
+                      class="font-semibold text-theme-neutral-dark"
+                      data-testid="profile-card__user--balance"
+                    >
+                      234,500.46 USD
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
         <div
-          class="max-w-lg mx-auto mt-10 border-t border-neutral-light"
+          class="sc-AxirZ jzxvZY"
+          type="horizontal"
         />
-      </div>
-      <div
-        class="mx-4 mt-8 mb-4 text-theme-neutral-dark md:mx-8 xl:mx-16"
-      >
-        Create a new Profile or login with your MarketSquare account to get started
-      </div>
-      <div
-        class="flex justify-center w-full mb-10"
-      >
-        <button
-          class="sc-AxjAm gYunbo w-1/5 mr-2"
-          color="primary"
-          type="button"
+        <p
+          class="text-sm text-theme-neutral-dark mb-4 md:text-base"
         >
-          Sign in to MarketSquare
-        </button>
-        <button
-          class="sc-AxjAm GWdpI w-1/5"
-          color="primary"
-          type="button"
+          Create a new Profile or login with your MarketSquare account to get started
+        </p>
+        <div
+          class="flex flex-col md:flex-row"
         >
-          Create Profile
-        </button>
+          <button
+            class="sc-AxjAm gYunbo button-primary w-full mr-2"
+            color="primary"
+            type="button"
+          >
+            Sign in to MarketSquare
+          </button>
+          <button
+            class="sc-AxjAm GWdpI button-secondary w-full mt-2 md:mt-0"
+            color="primary"
+            type="button"
+          >
+            Create Profile
+          </button>
+        </div>
       </div>
     </div>
   </div>
