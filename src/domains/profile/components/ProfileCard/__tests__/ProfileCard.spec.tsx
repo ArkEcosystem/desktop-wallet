@@ -25,11 +25,17 @@ describe("ProfileCard", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render settings button", () => {
-		const { container, getByTestId } = render(<ProfileCard {...profile} />);
+	it("should render the settings icon", () => {
+		const { container, getByTestId } = render(<ProfileCard {...profile} showSettings />);
 
 		expect(container).toMatchSnapshot();
 		expect(getByTestId("dropdown__toggle")).toBeTruthy();
+	});
+
+	it("should hide the settings icon", () => {
+		const { container, getByTestId } = render(<ProfileCard {...profile} showSettings={false} />);
+
+		expect(container).toMatchSnapshot();
 	});
 
 	it("should open dropdown settings on icon click", () => {
@@ -41,5 +47,54 @@ describe("ProfileCard", () => {
 		});
 
 		expect(getByTestId("dropdown__content")).toBeTruthy();
+	});
+
+	it("should select an option in the settings", () => {
+		const options = [
+			{ label: "Option 1", value: "1" },
+			{ label: "Option 2", value: "2" },
+		];
+		const onSelect = jest.fn();
+		const { container, getByTestId } = render(<ProfileCard {...profile} actions={options} onSelect={onSelect} />);
+		const toggle = getByTestId("dropdown__toggle");
+
+		act(() => {
+			fireEvent.click(toggle);
+		});
+
+		expect(getByTestId("dropdown__content")).toBeTruthy();
+
+		const firstOption = getByTestId("dropdown__option--0");
+		expect(firstOption).toBeTruthy();
+
+		act(() => {
+			fireEvent.click(firstOption);
+		});
+
+		expect(onSelect).toBeCalledWith({ label: "Option 1", value: "1" });
+	});
+
+	it("should ignore triggering onSelect callback if not exists", () => {
+		const options = [
+			{ label: "Option 1", value: "1" },
+			{ label: "Option 2", value: "2" },
+		];
+		const { container, getByTestId } = render(<ProfileCard {...profile} actions={options} />);
+		const toggle = getByTestId("dropdown__toggle");
+
+		act(() => {
+			fireEvent.click(toggle);
+		});
+
+		expect(getByTestId("dropdown__content")).toBeTruthy();
+
+		const firstOption = getByTestId("dropdown__option--0");
+		expect(firstOption).toBeTruthy();
+
+		act(() => {
+			fireEvent.click(firstOption);
+		});
+
+		expect(container.querySelectorAll("ul").length).toEqual(0);
 	});
 });
