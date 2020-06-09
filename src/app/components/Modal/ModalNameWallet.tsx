@@ -24,7 +24,7 @@ export const ModalNameWallet = injectIntl(({ intl: { formatMessage }, ...props }
 			isOpen={props.isOpen}
 			onClose={props.onClose}
 		>
-			<Form context={methods} onSubmit={(e) => props.onSave(e)}>
+			<Form context={methods} onSubmit={props.onSave}>
 				<FormField name="name">
 					<FormLabel>{formatMessage({ id: "WALLET.MODAL_NAME_WALLET.FIELD_NAME" })}</FormLabel>
 					<Input ref={methods.register({ required: "Field required" })} />
