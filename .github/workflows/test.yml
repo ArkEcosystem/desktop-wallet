@@ -1,86 +1,86 @@
 name: Test
 
 on:
-  push:
-    branches:
-      - "master"
-      - "develop"
-  pull_request:
-    types: [ready_for_review, synchronize, opened]
+    push:
+        branches:
+            - "master"
+            - "develop"
+    pull_request:
+        types: [ready_for_review, synchronize, opened]
 
 jobs:
-  unit:
-    runs-on: ubuntu-latest
+    unit:
+        runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [12.x]
+        strategy:
+            matrix:
+                node-version: [12.x]
 
-    steps:
-      - uses: actions/checkout@v2
-        with:
-          ref: ${{ github.head_ref }}
+        steps:
+            - uses: actions/checkout@v2
+              with:
+                  ref: ${{ github.head_ref }}
 
-      - name: Cache node modules
-        uses: actions/cache@v2
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: ${{ runner.os }}-node-
+            - name: Cache node modules
+              uses: actions/cache@v2
+              with:
+                  path: node_modules
+                  key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: ${{ runner.os }}-node-
 
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node-version }}
 
-      - name: Install
-        run: yarn install --frozen-lockfile
+            - name: Install
+              run: yarn install --frozen-lockfile
 
-      - name: Test
-        run: yarn test:coverage
+            - name: Test
+              run: yarn test:coverage
 
-      - name: Codecov
-        run: ./node_modules/.bin/codecov --token=${{ secrets.CODECOV_TOKEN }}
+            - name: Codecov
+              run: ./node_modules/.bin/codecov --token=${{ secrets.CODECOV_TOKEN }}
 
-  e2e:
-    runs-on: ubuntu-latest
+    e2e:
+        runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [12.x]
+        strategy:
+            matrix:
+                node-version: [12.x]
 
-    steps:
-      - uses: actions/checkout@v2
-        with:
-          ref: ${{ github.head_ref }}
+        steps:
+            - uses: actions/checkout@v2
+              with:
+                  ref: ${{ github.head_ref }}
 
-      - name: Cache node modules
-        uses: actions/cache@v2
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: ${{ runner.os }}-node-
+            - name: Cache node modules
+              uses: actions/cache@v2
+              with:
+                  path: node_modules
+                  key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: ${{ runner.os }}-node-
 
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node-version }}
 
-      - name: Install (Yarn)
-        run: yarn install --frozen-lockfile
+            - name: Install (Yarn)
+              run: yarn install --frozen-lockfile
 
-      - name: Install (Cypress)
-        run: yarn cy:install
+            - name: Install (Cypress)
+              run: yarn cy:install
 
-      - name: Start App
-        run: yarn start &
+            - name: Start App
+              run: yarn start &
 
-      - name: Test
-        run: yarn test:e2e
+            - name: Test
+              run: yarn test:e2e
 
-      - name: Upload Screenshots
-        uses: actions/upload-artifact@v1
-        if: failure()
-        with:
-          name: cypress-screenshots
-          path: __tests__/e2e/screenshots
+            - name: Upload Screenshots
+              uses: actions/upload-artifact@v1
+              if: failure()
+              with:
+                  name: cypress-screenshots
+                  path: __tests__/e2e/screenshots
