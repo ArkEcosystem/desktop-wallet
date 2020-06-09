@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header should render an header 1`] = `
+<DocumentFragment>
+  <div
+    class="flex flex-col items-start"
+  >
+    <h1
+      class="text-3xl font-bold md:text-4xl"
+      data-testid="header__title"
+    >
+      Header test
+    </h1>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Header should render an header with a subtitle 1`] = `
+<DocumentFragment>
+  <div
+    class="flex flex-col items-start"
+  >
+    <h1
+      class="text-3xl font-bold md:text-4xl"
+      data-testid="header__title"
+    >
+      Header test
+    </h1>
+    <div
+      class="mt-2 text-theme-neutral-dark"
+      data-testid="header__subtitle"
+    >
+      Subtitle test
+    </div>
+  </div>
+</DocumentFragment>
+`;
