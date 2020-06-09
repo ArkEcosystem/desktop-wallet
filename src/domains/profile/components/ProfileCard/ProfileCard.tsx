@@ -1,5 +1,8 @@
 import React from "react";
+
+// UI Elements
 import { Card } from "app/components/Card";
+import { Dropdown } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
 
 type Props = {
@@ -8,11 +11,20 @@ type Props = {
 	balance: string;
 };
 
+const DropdownOptions = [
+	{ label: "Setting", value: "setting" },
+	{ label: "Delete", value: "delete" },
+];
+
 export const ProfileCard = ({ avatar, name, balance }: Props) => (
 	<Card>
 		<div className="relative px-6 sm:flex sm:items-center py-4">
 			<button className="absolute top-0 -mt-2 -mr-4 right-0 flex items-center justify-center w-6 h-6 p-1 mt-3">
-				<Icon name="settings" />
+				<Dropdown
+					toggleIcon="settings"
+					options={DropdownOptions}
+					onSelect={(option: any) => console.log(option)}
+				></Dropdown>
 			</button>
 
 			<div className="flex flex-row justify-between w-full">
