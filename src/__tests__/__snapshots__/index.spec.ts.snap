@@ -24,6 +24,7 @@ exports[`Application root should render without crashing 1`] = `
               "COMMON_BACK": "Back",
               "COMMON_BACKGROUND": "Background",
               "COMMON_BIP39_LANGUAGE": "Passphrase Language (BIP39)",
+              "COMMON_CANCEL": "Cancel",
               "COMMON_CATEGORY": "Category",
               "COMMON_CONFIRM": "Confirm",
               "COMMON_CURRENCY": "Currency",
@@ -56,6 +57,8 @@ exports[`Application root should render without crashing 1`] = `
               "COMMON_PROFILE_NAME": "Profile name",
               "COMMON_REMOVE": "Remove",
               "COMMON_SAVE": "Save",
+              "COMMON_SELECT": "Select",
+              "COMMON_SEND": "Send",
               "COMMON_SIZE": "Size",
               "COMMON_SKIP": "Skip",
               "COMMON_START": "Start",
@@ -69,6 +72,22 @@ exports[`Application root should render without crashing 1`] = `
               "COMMON_WELCOME": "Welcome to ARK",
               "COMMON_WILL": "will",
               "COMMON_X_OF_Y": "{0} of {1}",
+              "HELP": Object {
+                "MODAL_CONTACT_US": Object {
+                  "DESCRIPTION": "We'd be happy to answer your questions",
+                  "FIELD_EMAIL": "Email",
+                  "FIELD_MESSAGE": "Message",
+                  "FIELD_NAME": "Name",
+                  "FIELD_SUBJECT": "Subject",
+                  "MESSAGE_REQUIRED": "Message is Required",
+                  "SUBJECT_OPTION": Object {
+                    "OTHER": "Other",
+                    "SECURITY": "Security",
+                  },
+                  "SUBJECT_REQUIRED": "Subject is Required",
+                  "TITLE": "Contact Us",
+                },
+              },
             }
           }
           onError={[Function]}
