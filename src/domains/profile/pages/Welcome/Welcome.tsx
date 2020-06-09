@@ -8,49 +8,39 @@ import { Button } from "app/components/Button";
 import { NavBar } from "app/components/NavBar";
 import { ProfileCard } from "domains/profile/components/ProfileCard";
 
-type Props = {
+type WelcomeProps = {
 	profiles: Array<any>;
 } & WrappedComponentProps;
 
 const profileAssets = imagesConfig.pages.profile;
 
-const Welcome = injectIntl(({ intl: { formatMessage }, profiles }: Props) => {
+const Welcome = injectIntl(({ intl: { formatMessage }, profiles }: WelcomeProps) => {
 	return (
 		<div className="w-full h-full">
 			<NavBar />
 
-			<div className="flex flex-col items-center justify-center text-center">
-				<h1 className="mb-8 text-4xl font-bold">{formatMessage({ id: "COMMON_WELCOME" })}</h1>
-				<div className="container w-3/5 mx-auto">
+			<div className="container px-4 mx-auto text-center sm:px-6 lg:px-0">
+				<h1 className="text-2xl font-bold mb-8 md:text-3xl lg:text-4xl">Welcome to ARK</h1>
+				<div className="mx-auto w-full lg:w-4/5 xl:w-2/3">
 					<img src={profileAssets.OnboardingBanner} alt="Onboarding Banner" />
 				</div>
 
-				{profiles.length > 0 && (
-					<div className="container w-2/5 mx-auto">
-						<div className="w-full my-8">
-							<h1 className="mx-4 text-2xl font-bold md:mx-8 xl:mx-16">Select Profile</h1>
-							<div className="mx-4 mt-2 text-theme-neutral-dark md:mx-8 xl:mx-16">
-								You already have a profile, you can choose any of them
-							</div>
-						</div>
-
-						{profiles.map((profile) => (
-							<ProfileCard {...profile} key={profile.id} />
-						))}
-						<div className="max-w-lg mx-auto mt-10 border-t border-neutral-light"></div>
+				<div className="mx-auto max-w-lg md:max-w-xl my-8">
+					<h2 className="mx-4 text-xl font-bold md:text-2xl">Select Profile</h2>
+					<p className="text-sm text-theme-neutral-dark md:text-base">
+						You already have a profile, you can choose any of them
+					</p>
+					<p className="text-sm text-theme-neutral-dark mb-4 md:text-base">
+						Create a new Profile or login with your MarketSquare account to get started
+					</p>
+					<div className="flex flex-col md:flex-row">
+						<Button color="primary" variant="solid" className="button-primary w-full mr-2">
+							Sign in to MarketSquare
+						</Button>
+						<Button color="primary" variant="plain" className="button-secondary w-full mt-2 md:mt-0">
+							Create Profile
+						</Button>
 					</div>
-				)}
-
-				<div className="mx-4 mt-8 mb-4 text-theme-neutral-dark md:mx-8 xl:mx-16">
-					Create a new Profile or login with your MarketSquare account to get started
-				</div>
-				<div className="flex justify-center w-full mb-10">
-					<Button color="primary" variant="solid" className="w-1/5 mr-2">
-						Sign in to MarketSquare
-					</Button>
-					<Button color="primary" variant="plain" className="w-1/5">
-						Create Profile
-					</Button>
 				</div>
 			</div>
 		</div>
