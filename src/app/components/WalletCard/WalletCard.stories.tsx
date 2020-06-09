@@ -15,7 +15,7 @@ export const Default = () => {
 					avatarId="test"
 					walletName="Primary"
 					address="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
-					balance="100,000 BTC"
+					balance="100,000 ETH"
 					actions={[
 						{ label: "Action 1", value: "1" },
 						{ label: "Action 1", value: "1" },
@@ -30,7 +30,7 @@ export const Default = () => {
 					avatarId="test"
 					walletName="Secondary"
 					address="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
-					balance="100,000 BTC"
+					balance="100,000 ETH"
 					actions={[
 						{ label: "Action 1", value: "1" },
 						{ label: "Action 1", value: "1" },
@@ -42,7 +42,7 @@ export const Default = () => {
 					avatarId="test"
 					walletName="My wallet"
 					address="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
-					balance="100,000 BTC"
+					balance="100,000 ETH"
 					actions={[
 						{ label: "Action 1", value: "1" },
 						{ label: "Action 1", value: "1" },
