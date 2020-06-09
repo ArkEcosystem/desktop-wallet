@@ -36,24 +36,14 @@ const renderOptions = (options: Option[], onSelect: any) => (
 export const Dropdown = ({ children, options, onSelect, toggleIcon }: Props) => {
 	const [isOpen, setIsOpen] = useState(false);
 
-	/*
-	 * Toggle & hide dropdown content.
-	 */
 	const toggle = () => setIsOpen(!isOpen);
 	const hide = () => setIsOpen(false);
 
-	/*
-	 * Hide dropdown upon option click.
-	 * Call `onSelect` and close dropdown.
-	 */
 	const select = (option: Option) => {
 		setIsOpen(false);
 		if (typeof onSelect === "function") onSelect(option);
 	};
 
-	/*
-	 * Hook to hide dropdown on outside click event.
-	 */
 	const ref = useRef(null);
 	useEffect(() => clickOutsideHandler(ref, hide), [ref]);
 
