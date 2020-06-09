@@ -91,7 +91,7 @@ const getSecurityItems = (register) => [
 		labelClass:
 			"FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark",
 		content: (
-			<Select placeholder="Select Language" reference={register({ required: true })}>
+			<Select name="auto-logoff" placeholder="Select Language" ref={register({ required: true })}>
 				<option value="option1">Option 1</option>
 				<option value="option2">Option 2</option>
 				<option value="option3">Option 3</option>
@@ -141,7 +141,7 @@ export const Settings = ({ settings, pageConfig, activeSettings, setActiveSettin
 				<SideBar items={settings} activeItem={activeSettings} handleActiveItem={setActiveSettings} />
 			</div>
 			<div className="mx-12 border-l-1 pl-20 border-theme-primary-contrast w-3/5">
-				<Header title={pageConfig.title} subheader={pageConfig.subheader} />
+				<Header title={pageConfig?.title} subtitle={pageConfig?.subheader} />
 				<div className="mt-5">
 					<ListDivided items={[personalDetails]} />
 					<div className="w-full flex justify-between">
@@ -157,7 +157,11 @@ export const Settings = ({ settings, pageConfig, activeSettings, setActiveSettin
 							</div>
 							<div className="mt-3">
 								<FormLabel label="Passphrase Language" />
-								<Select placeholder="Select Language" reference={register({ required: true })}>
+								<Select
+									name="passphrase-language"
+									placeholder="Select Language"
+									ref={register({ required: true })}
+								>
 									<option value="option1">Option 1</option>
 									<option value="option2">Option 2</option>
 									<option value="option3">Option 3</option>
@@ -165,7 +169,11 @@ export const Settings = ({ settings, pageConfig, activeSettings, setActiveSettin
 							</div>
 							<div className="mt-3">
 								<FormLabel label="Currency" />
-								<Select placeholder="Select Language" reference={register({ required: true })}>
+								<Select
+									placeholder="Select Language"
+									name="currency"
+									ref={register({ required: true })}
+								>
 									<option value="option1">Option 1</option>
 									<option value="option2">Option 2</option>
 									<option value="option3">Option 3</option>
@@ -175,7 +183,11 @@ export const Settings = ({ settings, pageConfig, activeSettings, setActiveSettin
 						<div className="flex flex-col w-2/4 ml-5">
 							<div>
 								<FormLabel label="Language" />
-								<Select placeholder="Select Language" reference={register({ required: true })}>
+								<Select
+									placeholder="Select Language"
+									name="language"
+									ref={register({ required: true })}
+								>
 									<option value="option1">Option 1</option>
 									<option value="option2">Option 2</option>
 									<option value="option3">Option 3</option>
@@ -183,7 +195,11 @@ export const Settings = ({ settings, pageConfig, activeSettings, setActiveSettin
 							</div>
 							<div className="mt-3">
 								<FormLabel label="Price Source" />
-								<Select placeholder="Select Language" reference={register({ required: true })}>
+								<Select
+									placeholder="Select Language"
+									name="price-source"
+									ref={register({ required: true })}
+								>
 									<option value="option1">Option 1</option>
 									<option value="option2">Option 2</option>
 									<option value="option3">Option 3</option>
@@ -191,7 +207,11 @@ export const Settings = ({ settings, pageConfig, activeSettings, setActiveSettin
 							</div>
 							<div className="mt-3">
 								<FormLabel label="Time Format" />
-								<Select placeholder="Select Language" reference={register({ required: true })}>
+								<Select
+									placeholder="Select Language"
+									name="time-format"
+									ref={register({ required: true })}
+								>
 									<option value="option1">Option 1</option>
 									<option value="option2">Option 2</option>
 									<option value="option3">Option 3</option>
