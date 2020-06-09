@@ -14,7 +14,7 @@ describe("ModalNameWallet", () => {
 	it("should not render if not open", () => {
 		const { asFragment, getByTestId } = render(
 			<IntlProvider locale="en-US" messages={locales["en-US"].messages}>
-				<ModalNameWallet isOpen={false} />
+				<ModalNameWallet isOpen={false} onSave={() => void 0} />
 			</IntlProvider>,
 		);
 
@@ -25,7 +25,7 @@ describe("ModalNameWallet", () => {
 	it("should render a modal", () => {
 		const { asFragment, getByTestId } = render(
 			<IntlProvider locale="en-US" messages={locales["en-US"].messages}>
-				<ModalNameWallet isOpen={true} />,
+				<ModalNameWallet isOpen={true} onSave={() => void 0} />
 			</IntlProvider>,
 		);
 
