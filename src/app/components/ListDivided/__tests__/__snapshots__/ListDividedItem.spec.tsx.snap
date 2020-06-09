@@ -3,7 +3,7 @@
 exports[`ListDividedItem should render an ListDividedItem 1`] = `
 <DocumentFragment>
   <li
-    class="flex flex-col w-full py-4 mb-5"
+    class="flex flex-col w-full py-8 mb-5"
     data-testid="list-divided-item__wrapper"
   >
     <div
@@ -26,7 +26,7 @@ exports[`ListDividedItem should render an ListDividedItem 1`] = `
 exports[`ListDividedItem should render as floating label 1`] = `
 <DocumentFragment>
   <li
-    class="flex flex-col w-full py-4 mb-5"
+    class="flex flex-col w-full py-8 mb-5"
     data-testid="list-divided-item__wrapper"
   >
     <div
@@ -49,7 +49,7 @@ exports[`ListDividedItem should render as floating label 1`] = `
 exports[`ListDividedItem should render the content 1`] = `
 <DocumentFragment>
   <li
-    class="flex flex-col w-full py-4 mb-5"
+    class="flex flex-col w-full py-8 mb-5"
     data-testid="list-divided-item__wrapper"
   >
     <div
@@ -78,7 +78,7 @@ exports[`ListDividedItem should render the content 1`] = `
 exports[`ListDividedItem should render the label 1`] = `
 <DocumentFragment>
   <li
-    class="flex flex-col w-full py-4 mb-5"
+    class="flex flex-col w-full py-8 mb-5"
     data-testid="list-divided-item__wrapper"
   >
     <div
@@ -103,7 +103,7 @@ exports[`ListDividedItem should render the label 1`] = `
 exports[`ListDividedItem should render the labelDescription 1`] = `
 <DocumentFragment>
   <li
-    class="flex flex-col w-full py-4 mb-5"
+    class="flex flex-col w-full py-8 mb-5"
     data-testid="list-divided-item__wrapper"
   >
     <div
@@ -118,7 +118,7 @@ exports[`ListDividedItem should render the labelDescription 1`] = `
           data-testid="list-divided-item__label"
         />
         <span
-          class="text-sm text-theme-neutral undefined"
+          class="text-sm text-theme-neutral "
           data-testid="list-divided-item__label--description"
         >
           Label Desc
@@ -132,7 +132,7 @@ exports[`ListDividedItem should render the labelDescription 1`] = `
 exports[`ListDividedItem should render the value 1`] = `
 <DocumentFragment>
   <li
-    class="flex flex-col w-full py-4 mb-5"
+    class="flex flex-col w-full py-8 mb-5"
     data-testid="list-divided-item__wrapper"
   >
     <div
@@ -148,7 +148,7 @@ exports[`ListDividedItem should render the value 1`] = `
         />
       </div>
       <div
-        class="undefined"
+        class=""
       >
         <span
           data-testid="list-divided-item__value"

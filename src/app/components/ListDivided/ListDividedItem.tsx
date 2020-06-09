@@ -32,7 +32,7 @@ export const ListDividedItem = ({
 				</span>
 				{labelDescription && (
 					<span
-						className={`text-sm text-theme-neutral ${labelDescriptionClass}`}
+						className={`text-sm text-theme-neutral ${labelDescriptionClass || ""}`}
 						data-testid="list-divided-item__label--description"
 					>
 						{labelDescription}
@@ -40,7 +40,7 @@ export const ListDividedItem = ({
 				)}
 			</div>
 			{value && (
-				<div className={`${itemValueClass}`}>
+				<div className={`${itemValueClass || ""}`}>
 					<span data-testid="list-divided-item__value">{value}</span>
 				</div>
 			)}
