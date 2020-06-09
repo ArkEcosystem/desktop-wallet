@@ -4,6 +4,10 @@ import { render, fireEvent } from "@testing-library/react";
 import { InputPassword } from "../InputPassword";
 
 describe("InputPassword", () => {
+	beforeEach(() => {
+		jest.spyOn(console, "error").mockImplementation(() => null);
+	});
+
 	it("should render as a password field", () => {
 		const { asFragment, getByTestId } = render(<InputPassword />);
 		const input = getByTestId("Input");
@@ -19,5 +23,14 @@ describe("InputPassword", () => {
 		expect(input).toHaveAttribute("type", "text");
 		fireEvent.click(toggle);
 		expect(input).toHaveAttribute("type", "password");
+	});
+
+	it("should qrcode be clickable", () => {
+		const { asFragment, getByTestId } = render(<InputPassword />);
+
+		const qrcode = getByTestId("InputPassword__qrcode");
+		fireEvent.click(qrcode);
+		expect(qrcode).toBeTruthy();
+		expect(asFragment()).toMatchSnapshot();
 	});
 });
