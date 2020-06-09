@@ -4,10 +4,10 @@ import { getStyles } from "./style";
 type CircleProps = {
 	as?: React.ElementType;
 	children?: React.ReactNode;
-	avatarId: string | null;
-	size: string | null;
-	className: string | null;
-} & React.ButtonHTMLAttributes<any>;
+	avatarId?: string | null;
+	size?: "small" | "default";
+	className?: string | null;
+};
 
 export const Circle = styled.div<CircleProps>(getStyles);
 
