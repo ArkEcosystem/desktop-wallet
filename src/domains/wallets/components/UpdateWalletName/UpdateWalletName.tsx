@@ -9,9 +9,9 @@ import { Input } from "app/components/Input";
 
 type UpdateWalletNameProps = {
 	isOpen: boolean;
-	onClose?: React.MouseEventHandler;
-	onCancel?: React.MouseEventHandler;
-	onSave: React.MouseEventHandler;
+	onClose?: any;
+	onCancel?: any;
+	onSave: any;
 } & WrappedComponentProps;
 
 export const UpdateWalletName = injectIntl(({ intl: { formatMessage }, ...props }: UpdateWalletNameProps) => {

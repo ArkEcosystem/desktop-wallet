@@ -8,14 +8,14 @@ type ModalProps = {
 	title: string;
 	description?: string;
 	isOpen: boolean;
-	onClose?: React.MouseEventHandler;
+	onClose?: any;
 };
 
 type ModalContentProps = {
 	children: React.ReactNode;
 	title: string;
 	description?: string;
-	onClose?: React.MouseEventHandler;
+	onClose?: any;
 };
 
 const ModalContent = (props: ModalContentProps) => {
