@@ -29,7 +29,12 @@ export const VerifyMessage = ({ onSubmit, publicKey, isOpen, handleClose }: Prop
 					</Alert>
 					<FormField name="signet-message-content" className="mt-10">
 						<FormLabel label="Signet message content" />
-						<Input type="text" ref={register({ required: true })} />
+						<Input
+							type="text"
+							name="signet-message-content"
+							defaultValue={""}
+							ref={register({ required: true })}
+						/>
 						<FormHelperText />
 					</FormField>
 				</div>
@@ -44,7 +49,7 @@ export const VerifyMessage = ({ onSubmit, publicKey, isOpen, handleClose }: Prop
 				</FormField>
 				<FormField name="public-key" className="mt-3">
 					<FormLabel label="Public key" />
-					<Input type="text" ref={register({ required: true })} />
+					<Input type="text" disabled defaultValue={publicKey} ref={register({ required: true })} />
 					<FormHelperText />
 				</FormField>
 				<FormField name="signature" className="mt-3">
