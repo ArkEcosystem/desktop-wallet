@@ -1,24 +1,30 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 // UI Elements
-import { Circle } from "app/components/Circle";
 import { Button } from "app/components/Button";
+import { Circle } from "app/components/Circle";
 import { Form, FormField, FormLabel, FormHelperText } from "app/components/Form";
-import { Header } from "app/components/Header";
 import { Input, InputPassword } from "app/components/Input";
+import { Modal } from "app/components/Modal";
 
 type Props = {
 	onSubmit?: any;
+	isOpen?: boolean;
+	handleClose?: any;
 	signatory: string;
 };
 
-export const SignMessage = ({ onSubmit, signatoryAddress }: Props) => {
+export const SignMessage = ({ onSubmit, signatoryAddress, isOpen, handleClose }: Props) => {
 	const form = useForm();
 	const { register, errors } = form;
 
 	return (
-		<div>
-			<Header title="Sign Message" subtitle="Insert a message below to sign using your private key" />
+		<Modal
+			isOpen={isOpen}
+			title="Sign Message"
+			description="Insert a message below to sign using your private key"
+			onClick={handleClose}
+		>
 			<div className="mt-10">
 				<Form id="sign-message__form" context={form} onSubmit={onSubmit}>
 					<FormField className="relative">
@@ -49,6 +55,10 @@ export const SignMessage = ({ onSubmit, signatoryAddress }: Props) => {
 					</div>
 				</Form>
 			</div>
-		</div>
+		</Modal>
 	);
+};
+
+SignMessage.defaultProps = {
+	isOpen: false,
 };
