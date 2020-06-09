@@ -126,7 +126,12 @@ class LedgerService {
    */
   async signTransactionWithSchnorr (path, transactionBytes) {
     return this.__performAction(async () => {
-      return this.ledger.signTransactionWithSchnorr(path, transactionBytes)
+      try {
+        return await this.ledger.signTransactionWithSchnorr(path, transactionBytes)
+      } catch {
+        console.warn('Schnorr Signatures Unsupported; Trying Ecdsa..')
+        return this.ledger.signTransaction(path, transactionBytes)
+      }
     })
   }
 
