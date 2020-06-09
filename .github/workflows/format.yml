@@ -1,29 +1,29 @@
 name: Format
 
 on:
-  pull_request:
-    types: [ready_for_review, synchronize, opened]
+    pull_request:
+        types: [ready_for_review, synchronize, opened]
 
 jobs:
-  eslint:
-    runs-on: ubuntu-latest
+    eslint:
+        runs-on: ubuntu-latest
 
-    steps:
-      - uses: actions/checkout@v2
-        with:
-          ref: ${{ github.head_ref }}
+        steps:
+            - uses: actions/checkout@v2
+              with:
+                  ref: ${{ github.head_ref }}
 
-      - name: Update System
-        run: sudo apt-get update
+            - name: Update System
+              run: sudo apt-get update
 
-      - name: Install
-        run: yarn install --frozen-lockfile
+            - name: Install
+              run: yarn install --frozen-lockfile
 
-      - name: Run eslint
-        run: yarn format
+            - name: Run eslint
+              run: yarn format
 
-      - uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          commit_message: "style: resolve style guide violations"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+            - uses: stefanzweifel/git-auto-commit-action@v4
+              with:
+                  commit_message: "style: resolve style guide violations"
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
