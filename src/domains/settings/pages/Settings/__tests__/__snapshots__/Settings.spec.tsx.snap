@@ -9,7 +9,110 @@ exports[`Settings should render 1`] = `
       class="w-1/4 h-full"
     >
       <div>
-        <ul />
+        <ul>
+          <div
+            class="relative cursor-pointer"
+            data-testid="side-menu__item--General"
+          >
+            <div
+              class="sc-AxirZ dA-dDXy absolute top-0 left-0 rounded-lg bg-theme-primary"
+            />
+            <li
+              class="rounded-lg p-5 flex 
+        text-theme-primary
+        bg-theme-primary-contrast
+    "
+            >
+              <div
+                class="text-theme-primary"
+              >
+                <div
+                  class="sc-AxjAm cpczEI"
+                  height="1em"
+                  width="1em"
+                >
+                  <div>
+                    <div>
+                      <div
+                        data-src="general.svg"
+                        src=""
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <span
+                class="font-semibold ml-2"
+              >
+                General
+              </span>
+            </li>
+          </div>
+          <div
+            class="relative cursor-pointer"
+            data-testid="side-menu__item--Peer"
+          >
+            <li
+              class="rounded-lg p-5 flex text-theme-medium"
+            >
+              <div
+                class="text-theme-primary-contrast"
+              >
+                <div
+                  class="sc-AxjAm cpczEI"
+                  height="1em"
+                  width="1em"
+                >
+                  <div>
+                    <div>
+                      <div
+                        data-src="peer.svg"
+                        src=""
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <span
+                class="font-semibold ml-2"
+              >
+                Peer
+              </span>
+            </li>
+          </div>
+          <div
+            class="relative cursor-pointer"
+            data-testid="side-menu__item--Plugins"
+          >
+            <li
+              class="rounded-lg p-5 flex text-theme-medium"
+            >
+              <div
+                class="text-theme-primary-contrast"
+              >
+                <div
+                  class="sc-AxjAm cpczEI"
+                  height="1em"
+                  width="1em"
+                >
+                  <div>
+                    <div>
+                      <div
+                        data-src="plugin.svg"
+                        src=""
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <span
+                class="font-semibold ml-2"
+              >
+                Plugins
+              </span>
+            </li>
+          </div>
+        </ul>
       </div>
     </div>
     <div
@@ -21,7 +124,15 @@ exports[`Settings should render 1`] = `
         <h1
           class="text-3xl font-bold md:text-4xl"
           data-testid="header__title"
-        />
+        >
+          Wallet Settings
+        </h1>
+        <div
+          class="mt-2 text-theme-neutral-dark"
+          data-testid="header__subtitle"
+        >
+          Customize your wallet to suit your needs.
+        </div>
       </div>
       <div
         class="mt-5"
@@ -619,6 +730,132 @@ exports[`Settings should render 1`] = `
           Reset Data
         </button>
       </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Settings should render a not found information 1`] = `
+<DocumentFragment>
+  <div
+    class="w-full h-full flex"
+  >
+    <div
+      class="w-1/4 h-full"
+    >
+      <div>
+        <ul>
+          <div
+            class="relative cursor-pointer"
+            data-testid="side-menu__item--General"
+          >
+            <li
+              class="rounded-lg p-5 flex text-theme-medium"
+            >
+              <div
+                class="text-theme-primary-contrast"
+              >
+                <div
+                  class="sc-AxjAm cpczEI"
+                  height="1em"
+                  width="1em"
+                >
+                  <div>
+                    <div>
+                      <div
+                        data-src="general.svg"
+                        src=""
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <span
+                class="font-semibold ml-2"
+              >
+                General
+              </span>
+            </li>
+          </div>
+          <div
+            class="relative cursor-pointer"
+            data-testid="side-menu__item--Peer"
+          >
+            <div
+              class="sc-AxirZ dA-dDXy absolute top-0 left-0 rounded-lg bg-theme-primary"
+            />
+            <li
+              class="rounded-lg p-5 flex 
+        text-theme-primary
+        bg-theme-primary-contrast
+    "
+            >
+              <div
+                class="text-theme-primary"
+              >
+                <div
+                  class="sc-AxjAm cpczEI"
+                  height="1em"
+                  width="1em"
+                >
+                  <div>
+                    <div>
+                      <div
+                        data-src="peer.svg"
+                        src=""
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <span
+                class="font-semibold ml-2"
+              >
+                Peer
+              </span>
+            </li>
+          </div>
+          <div
+            class="relative cursor-pointer"
+            data-testid="side-menu__item--Plugins"
+          >
+            <li
+              class="rounded-lg p-5 flex text-theme-medium"
+            >
+              <div
+                class="text-theme-primary-contrast"
+              >
+                <div
+                  class="sc-AxjAm cpczEI"
+                  height="1em"
+                  width="1em"
+                >
+                  <div>
+                    <div>
+                      <div
+                        data-src="plugin.svg"
+                        src=""
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <span
+                class="font-semibold ml-2"
+              >
+                Plugins
+              </span>
+            </li>
+          </div>
+        </ul>
+      </div>
+    </div>
+    <div
+      class="mx-12 border-l-1 pl-20 border-theme-primary-contrast w-3/5"
+    >
+      <span>
+        Peer settings not found
+      </span>
     </div>
   </div>
 </DocumentFragment>
