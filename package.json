@@ -40,6 +40,7 @@
 		"build:win": "yarn build && electron-builder --win --x64 --ia32 --publish never"
 	},
 	"dependencies": {
+		"@arkecosystem/utils": "^1.1.8",
 		"@testing-library/jest-dom": "^5.9.0",
 		"@testing-library/react": "^9.3.2",
 		"@testing-library/user-event": "^7.1.2",
@@ -56,6 +57,7 @@
 		"electron-root-path": "^1.0.16",
 		"electron-window-state": "^5.0.3",
 		"eslint-config-react-app": "^5.2.1",
+		"framer-motion": "^1.11.0",
 		"postcss": "^7.0.32",
 		"postcss-cli": "^7.1.1",
 		"react": "^16.13.1",
