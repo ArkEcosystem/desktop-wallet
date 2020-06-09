@@ -31,7 +31,7 @@ const ModalContent = (props: ModalContentProps) => {
 			<div className="py-4">
 				<h2>{props.title}</h2>
 
-				<div className="flex-1 overflow-auto">
+				<div className="flex-1">
 					{props.description ? <div className="text-theme-neutral-500">{props.description}</div> : ""}
 
 					{props.children}
