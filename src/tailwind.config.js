@@ -6,6 +6,7 @@ module.exports = {
 	purge: ["./src/renderer/**/*.html", "./src/renderer/**/*.tsx?"],
 	theme: {
 		colors: {
+			black: "#121213",
 			logo: "#c9292c",
 			transparent: "transparent",
 

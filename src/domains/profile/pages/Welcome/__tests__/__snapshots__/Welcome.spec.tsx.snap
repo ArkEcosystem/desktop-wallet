@@ -34,7 +34,7 @@ exports[`Welcome should render 1`] = `
       class="flex flex-col items-center justify-center text-center"
     >
       <h1
-        class="mb-8 text-4xl font-bold"
+        class="mb-8 font-bold"
       >
         Welcome to ARK
       </h1>
@@ -52,11 +52,11 @@ exports[`Welcome should render 1`] = `
         <div
           class="w-full my-8"
         >
-          <h1
+          <h2
             class="mx-4 text-2xl font-bold md:mx-8 xl:mx-16"
           >
             Select Profile
-          </h1>
+          </h2>
           <div
             class="mx-4 mt-2 text-theme-neutral-dark md:mx-8 xl:mx-16"
           >

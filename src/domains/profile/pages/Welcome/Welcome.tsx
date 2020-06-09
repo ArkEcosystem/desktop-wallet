@@ -20,7 +20,7 @@ const Welcome = injectIntl(({ intl: { formatMessage }, profiles }: Props) => {
 			<NavBar />
 
 			<div className="flex flex-col items-center justify-center text-center">
-				<h1 className="mb-8 text-4xl font-bold">{formatMessage({ id: "COMMON_WELCOME" })}</h1>
+				<h1 className="mb-8 font-bold">{formatMessage({ id: "COMMON_WELCOME" })}</h1>
 				<div className="container w-3/5 mx-auto">
 					<img src={profileAssets.OnboardingBanner} alt="Onboarding Banner" />
 				</div>
@@ -28,7 +28,7 @@ const Welcome = injectIntl(({ intl: { formatMessage }, profiles }: Props) => {
 				{profiles.length > 0 && (
 					<div className="container w-2/5 mx-auto">
 						<div className="w-full my-8">
-							<h1 className="mx-4 text-2xl font-bold md:mx-8 xl:mx-16">Select Profile</h1>
+							<h2 className="mx-4 text-2xl font-bold md:mx-8 xl:mx-16">Select Profile</h2>
 							<div className="mx-4 mt-2 text-theme-neutral-dark md:mx-8 xl:mx-16">
 								You already have a profile, you can choose any of them
 							</div>

@@ -56,6 +56,8 @@ const getSize = (size: string): any => {
 			return tw`px-4 py-2 text-base`;
 		case "large":
 			return tw`px-5 py-3 text-lg`;
+		case "icon":
+			return tw`p-3`;
 	}
 };
 
