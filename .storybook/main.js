@@ -25,7 +25,7 @@ module.exports = {
 				],
 			},
 		]),
-		storybookConfig.resolve.extensions.push(".ts", ".tsx");
+			storybookConfig.resolve.extensions.push(".ts", ".tsx");
 
 		return {
 			...storybookConfig,

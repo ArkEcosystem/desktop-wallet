@@ -29,5 +29,5 @@ export const SvgCollection: any = {
 	eyeOff,
 	eye,
 	chevronDown,
-	checkmark
+	checkmark,
 };

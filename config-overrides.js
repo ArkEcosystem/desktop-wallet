@@ -8,8 +8,8 @@ module.exports = override(
 	]),
 	(config) => {
 		config.node = {
-			fs: "empty"
+			fs: "empty",
 		};
 		return config;
-	}
+	},
 );
