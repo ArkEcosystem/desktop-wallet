@@ -5,7 +5,7 @@ type Props = {
 	labelClass: string;
 	label: string;
 	labelDescription: string;
-	labelDescriptionClass: string;
+	labelDescriptionClass?: string;
 	value: string;
 	itemValueClass: string;
 	content: React.ReactNode;

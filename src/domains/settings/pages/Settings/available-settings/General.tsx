@@ -12,6 +12,7 @@ import { Toggle } from "app/components/Toggle";
 type Props = {
 	formConfig: any;
 	pageConfig: any;
+	onSubmit?: any;
 };
 
 export const General = ({ formConfig, pageConfig, onSubmit }: Props) => {
@@ -136,11 +137,7 @@ export const General = ({ formConfig, pageConfig, onSubmit }: Props) => {
 						<div className="flex flex-col w-2/4">
 							<FormField name="profile-name">
 								<FormLabel label="Profile Name" />
-								<Input
-									type="text"
-									reference={formConfig.register({ required: true })}
-									error={formConfig.errors["profile-name"]}
-								/>
+								<Input type="text" ref={formConfig.register({ required: true })} />
 								<FormHelperText />
 							</FormField>
 							<FormField className="mt-3" name="passphrase-language">
