@@ -32,6 +32,14 @@ const getAvatarCss = (avatarId: any): any => {
 	];
 };
 
-export const getStyles = ({ size, noShadow, avatarId }: { size?: string; avatarId?: string; noShadow?: boolean }) => {
-	return [...defaultStyle(noShadow), getSize(size!), ...getAvatarCss(avatarId)];
+export const getStyles = ({
+	size,
+	avatarId,
+	noShadow,
+}: {
+	size?: string;
+	avatarId?: string | null;
+	noShadow?: boolean;
+}) => {
+	return [...defaultStyle(noShadow!), getSize(size!), ...getAvatarCss(avatarId)];
 };

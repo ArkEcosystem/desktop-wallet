@@ -9,14 +9,14 @@ import { Modal } from "app/components/Modal";
 
 type Props = {
 	onSubmit?: any;
-	isOpen?: boolean;
+	isOpen: boolean;
 	handleClose?: any;
-	signatory: string;
+	signatoryAddress: string;
 };
 
 export const SignMessage = ({ onSubmit, signatoryAddress, isOpen, handleClose }: Props) => {
 	const form = useForm();
-	const { register, errors } = form;
+	const { register } = form;
 
 	return (
 		<Modal
@@ -27,7 +27,7 @@ export const SignMessage = ({ onSubmit, signatoryAddress, isOpen, handleClose }:
 		>
 			<div className="mt-10">
 				<Form id="sign-message__form" context={form} onSubmit={onSubmit}>
-					<FormField className="relative">
+					<FormField name="signatory-address" className="relative">
 						<FormLabel label="Signatory" />
 						<Input type="text" disabled />
 						<div className="absolute top-0 mt-10 ml-4">
@@ -37,7 +37,7 @@ export const SignMessage = ({ onSubmit, signatoryAddress, isOpen, handleClose }:
 					</FormField>
 					<FormField name="message">
 						<FormLabel label="Message" />
-						<Input type="text" reference={register({ required: true })} error={errors["message"]} />
+						<Input type="text" ref={register({ required: true })} />
 						<FormHelperText />
 					</FormField>
 					<FormField name="passphrase">
