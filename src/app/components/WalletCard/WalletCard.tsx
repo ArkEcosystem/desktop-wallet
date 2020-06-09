@@ -17,6 +17,7 @@ type WalletCardProps = {
 	address?: string;
 	balance?: string;
 	actions?: any;
+	onSelect?: any;
 };
 
 const renderCoin = (coinIcon?: string) => {
@@ -36,6 +37,7 @@ export const WalletCard = ({
 	coinIcon,
 	coinIconClass,
 	actions,
+	onSelect,
 }: WalletCardProps) => {
 	if (isBlank) {
 		return (
@@ -57,7 +59,7 @@ export const WalletCard = ({
 		<div className={`w-64 inline-block ${className}`}>
 			<Card>
 				<div>
-					<Dropdown options={actions}></Dropdown>
+					<Dropdown options={actions} onSelect={onSelect}></Dropdown>
 					<div></div>
 				</div>
 				<div>

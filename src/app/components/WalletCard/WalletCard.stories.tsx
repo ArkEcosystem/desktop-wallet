@@ -20,6 +20,7 @@ export const Default = () => {
 						{ label: "Action 1", value: "1" },
 						{ label: "Action 1", value: "1" },
 					]}
+					onSelect={(selected: any) => console.log(selected)}
 				/>
 			</div>
 			<div className="mb-10">
