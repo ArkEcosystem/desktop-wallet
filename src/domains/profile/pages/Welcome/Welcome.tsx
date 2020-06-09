@@ -5,6 +5,7 @@ import { imagesConfig } from "resources/assets/images";
 
 // UI Elements
 import { Button } from "app/components/Button";
+import { Divider } from "app/components/Divider";
 import { NavBar } from "app/components/NavBar";
 import { ProfileCard } from "domains/profile/components/ProfileCard";
 
@@ -20,16 +21,30 @@ const Welcome = injectIntl(({ intl: { formatMessage }, profiles }: WelcomeProps)
 			<NavBar />
 
 			<div className="container px-4 mx-auto text-center sm:px-6 lg:px-0">
-				<h1 className="text-2xl font-bold mb-8 md:text-3xl lg:text-4xl">Welcome to ARK</h1>
+				<h1 className="text-2xl font-bold mb-8 md:text-3xl lg:text-4xl">
+					{formatMessage({ id: "COMMON_WELCOME" })}
+				</h1>
 				<div className="mx-auto w-full lg:w-4/5 xl:w-2/3">
 					<img src={profileAssets.OnboardingBanner} alt="Onboarding Banner" />
 				</div>
 
 				<div className="mx-auto max-w-lg md:max-w-xl my-8">
-					<h2 className="mx-4 text-xl font-bold md:text-2xl">Select Profile</h2>
-					<p className="text-sm text-theme-neutral-dark md:text-base">
-						You already have a profile, you can choose any of them
-					</p>
+					{profiles.length > 0 && (
+						<>
+							<h2 className="mx-4 text-xl font-bold md:text-2xl">Select Profile</h2>
+							<p className="text-sm text-theme-neutral-dark md:text-base">
+								You already have a profile, you can choose any of them
+							</p>
+
+							<div className="mt-6 mb-8">
+								{profiles.map((profile) => (
+									<ProfileCard {...profile} key={profile.id} />
+								))}
+							</div>
+
+							<Divider />
+						</>
+					)}
 					<p className="text-sm text-theme-neutral-dark mb-4 md:text-base">
 						Create a new Profile or login with your MarketSquare account to get started
 					</p>
