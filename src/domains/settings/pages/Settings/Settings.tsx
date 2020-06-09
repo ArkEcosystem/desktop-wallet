@@ -12,18 +12,26 @@ type PageConfig = {
 type Props = {
 	settings: any;
 	setActiveSettings: any;
-	activeSettings: string;
+	submitSettings?: any;
 	pageConfig: PageConfig;
+	activeSettings: string;
 };
 
-export const Settings = ({ settings, pageConfig, activeSettings, setActiveSettings }: Props) => {
-	const { register, errors } = useForm();
+export const Settings = ({ settings, pageConfig, activeSettings, setActiveSettings, submitSettings }: Props) => {
+	const form = useForm();
+	const { register, errors } = form;
 
 	const renderSettings = () => {
 		const ActiveSettings = availableSettings[activeSettings];
 		if (!ActiveSettings) return <span>{activeSettings} settings not found</span>;
 
-		return <ActiveSettings formConfig={{ register, errors }} pageConfig={pageConfig} />;
+		return (
+			<ActiveSettings
+				formConfig={{ context: form, register, errors }}
+				pageConfig={pageConfig}
+				onSubmit={submitSettings}
+			/>
+		);
 	};
 
 	return (

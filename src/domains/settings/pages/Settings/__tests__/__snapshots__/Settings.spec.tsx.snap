@@ -134,602 +134,618 @@ exports[`Settings should render 1`] = `
           Customize your wallet to suit your needs.
         </div>
       </div>
-      <div
-        class="mt-5"
+      <form
+        class="space-y-6"
+        data-testid="Form"
+        id="general-settings__form"
       >
-        <ul
-          class="sc-AxiKw nYuWr"
-          data-testid="list-divided__items"
+        <div
+          class="mt-5"
         >
-          <li
-            class="flex flex-col w-full py-8 mb-5"
-            data-testid="list-divided-item__wrapper"
+          <ul
+            class="sc-AxiKw nYuWr"
+            data-testid="list-divided__items"
           >
-            <div
-              class="flex justify-between flex-col items-start"
-              data-testid="list-divided-item__inner-wrapper"
+            <li
+              class="flex flex-col w-full py-8 mb-5"
+              data-testid="list-divided-item__wrapper"
             >
               <div
-                class="flex flex-col"
-              >
-                <span
-                  class="mr-5 text-3xl font-bold"
-                  data-testid="list-divided-item__label"
-                >
-                  Personal Details
-                </span>
-                <span
-                  class="text-sm text-theme-neutral mt-3"
-                  data-testid="list-divided-item__label--description"
-                >
-                  Select Profile Image
-                </span>
-              </div>
-            </div>
-            <div
-              class="mt-4"
-              data-testid="list-divided-item__content"
-            >
-              <div
-                class="flex flex-row mt-2"
+                class="flex justify-between flex-col items-start"
+                data-testid="list-divided-item__inner-wrapper"
               >
                 <div
-                  class="flex items-center justify-center w-24 h-24 mr-6 border-2 border-theme-neutral-light border-dashed rounded"
+                  class="flex flex-col"
                 >
-                  <button
-                    class="flex items-center justify-center w-20 h-20 bg-theme-primary-contrast rounded-full"
-                    type="button"
+                  <span
+                    class="mr-5 text-3xl font-bold"
+                    data-testid="list-divided-item__label"
                   >
-                    <div
-                      class="sc-AxjAm cpczEI"
-                      height="1em"
-                      width="1em"
+                    Personal Details
+                  </span>
+                  <span
+                    class="text-sm text-theme-neutral mt-3"
+                    data-testid="list-divided-item__label--description"
+                  >
+                    Select Profile Image
+                  </span>
+                </div>
+              </div>
+              <div
+                class="mt-4"
+                data-testid="list-divided-item__content"
+              >
+                <div
+                  class="flex flex-row mt-2"
+                >
+                  <div
+                    class="flex items-center justify-center w-24 h-24 mr-6 border-2 border-theme-neutral-light border-dashed rounded"
+                  >
+                    <button
+                      class="flex items-center justify-center w-20 h-20 bg-theme-primary-contrast rounded-full"
+                      type="button"
                     >
-                      <div>
+                      <div
+                        class="sc-AxjAm cpczEI"
+                        height="1em"
+                        width="1em"
+                      >
                         <div>
-                          <div
-                            data-src="upload.svg"
-                            src=""
-                          />
+                          <div>
+                            <div
+                              data-src="upload.svg"
+                              src=""
+                            />
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </button>
-                </div>
-                <div
-                  class="relative w-24 h-24 bg-theme-neutral-light rounded"
-                >
-                  <img
-                    alt="random avatar"
-                    class="object-cover rounded"
-                    src="https://randomuser.me/api/portraits/men/3.jpg"
-                  />
-                  <button
-                    class="absolute flex items-center justify-center w-6 h-6 p-1 bg-theme-danger-contrast text-theme-danger rounded -top-3 -right-3"
+                    </button>
+                  </div>
+                  <div
+                    class="relative w-24 h-24 bg-theme-neutral-light rounded"
                   >
-                    <div
-                      class="sc-AxjAm HWmvM"
-                      height="12"
-                      width="12"
+                    <img
+                      alt="random avatar"
+                      class="object-cover rounded"
+                      src="https://randomuser.me/api/portraits/men/3.jpg"
+                    />
+                    <button
+                      class="absolute flex items-center justify-center w-6 h-6 p-1 bg-theme-danger-contrast text-theme-danger rounded -top-3 -right-3"
                     >
-                      <div>
+                      <div
+                        class="sc-AxjAm HWmvM"
+                        height="12"
+                        width="12"
+                      >
                         <div>
-                          <div
-                            data-src="close.svg"
-                            src=""
-                          />
+                          <div>
+                            <div
+                              data-src="close.svg"
+                              src=""
+                            />
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </button>
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>
-          </li>
-        </ul>
-        <div
-          class="w-full flex justify-between"
-        >
+            </li>
+          </ul>
           <div
-            class="flex flex-col w-2/4"
+            class="w-full flex justify-between"
           >
-            <div>
-              <label
-                class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark pb-2"
-                data-testid="FormLabel"
-                label="Profile Name"
+            <div
+              class="flex flex-col w-2/4"
+            >
+              <fieldset
+                class="sc-fzozJi kVxApt flex flex-col space-y-2"
               >
-                Profile Name
-              </label>
-              <input
-                class="sc-AxhCb clCjoe overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
-                data-testid="Input"
-                name="profile-name"
-                type="text"
-              />
+                <label
+                  class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark pb-2"
+                  data-testid="FormLabel"
+                  for="profile-name"
+                  label="Profile Name"
+                >
+                  Profile Name
+                </label>
+                <input
+                  class="sc-AxhCb clCjoe overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+                  data-testid="Input"
+                  name="profile-name"
+                  type="text"
+                />
+              </fieldset>
+              <fieldset
+                class="sc-fzozJi kVxApt mt-3"
+              >
+                <label
+                  class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark pb-2"
+                  data-testid="FormLabel"
+                  for="passphrase-language"
+                  label="Passphrase Language"
+                >
+                  Passphrase Language
+                </label>
+                <select
+                  class="appearance-none block w-full form-select transition-colors duration-200"
+                  data-testid="select-input"
+                  name="passphrase-language"
+                  placeholder="Select Language"
+                >
+                  <option
+                    value="option1"
+                  >
+                    Option 1
+                  </option>
+                  <option
+                    value="option2"
+                  >
+                    Option 2
+                  </option>
+                  <option
+                    value="option3"
+                  >
+                    Option 3
+                  </option>
+                </select>
+              </fieldset>
+              <fieldset
+                class="sc-fzozJi kVxApt mt-3"
+              >
+                <label
+                  class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark pb-2"
+                  data-testid="FormLabel"
+                  for="currency"
+                  label="Currency"
+                >
+                  Currency
+                </label>
+                <select
+                  class="appearance-none block w-full form-select transition-colors duration-200"
+                  data-testid="select-input"
+                  name="currency"
+                  placeholder="Select Language"
+                >
+                  <option
+                    value="option1"
+                  >
+                    Option 1
+                  </option>
+                  <option
+                    value="option2"
+                  >
+                    Option 2
+                  </option>
+                  <option
+                    value="option3"
+                  >
+                    Option 3
+                  </option>
+                </select>
+              </fieldset>
             </div>
             <div
-              class="mt-3"
+              class="flex flex-col w-2/4 ml-5"
             >
-              <label
-                class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark pb-2"
-                data-testid="FormLabel"
-                label="Passphrase Language"
+              <fieldset
+                class="sc-fzozJi kVxApt flex flex-col space-y-2"
               >
-                Passphrase Language
-              </label>
-              <select
-                class="appearance-none block w-full form-select transition-colors duration-200"
-                data-testid="select-input"
-                name="passphrase-language"
-                placeholder="Select Language"
+                <label
+                  class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark pb-2"
+                  data-testid="FormLabel"
+                  for="language"
+                  label="Language"
+                >
+                  Language
+                </label>
+                <select
+                  class="appearance-none block w-full form-select transition-colors duration-200"
+                  data-testid="select-input"
+                  name="language"
+                  placeholder="Select Language"
+                >
+                  <option
+                    value="option1"
+                  >
+                    Option 1
+                  </option>
+                  <option
+                    value="option2"
+                  >
+                    Option 2
+                  </option>
+                  <option
+                    value="option3"
+                  >
+                    Option 3
+                  </option>
+                </select>
+              </fieldset>
+              <fieldset
+                class="sc-fzozJi kVxApt mt-3"
               >
-                <option
-                  value="option1"
+                <label
+                  class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark pb-2"
+                  data-testid="FormLabel"
+                  for="price-source"
+                  label="Price Source"
                 >
-                  Option 1
-                </option>
-                <option
-                  value="option2"
+                  Price Source
+                </label>
+                <select
+                  class="appearance-none block w-full form-select transition-colors duration-200"
+                  data-testid="select-input"
+                  name="price-source"
+                  placeholder="Select Language"
                 >
-                  Option 2
-                </option>
-                <option
-                  value="option3"
-                >
-                  Option 3
-                </option>
-              </select>
-            </div>
-            <div
-              class="mt-3"
-            >
-              <label
-                class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark pb-2"
-                data-testid="FormLabel"
-                label="Currency"
+                  <option
+                    value="option1"
+                  >
+                    Option 1
+                  </option>
+                  <option
+                    value="option2"
+                  >
+                    Option 2
+                  </option>
+                  <option
+                    value="option3"
+                  >
+                    Option 3
+                  </option>
+                </select>
+              </fieldset>
+              <fieldset
+                class="sc-fzozJi kVxApt mt-3"
               >
-                Currency
-              </label>
-              <select
-                class="appearance-none block w-full form-select transition-colors duration-200"
-                data-testid="select-input"
-                name="currency"
-                placeholder="Select Language"
-              >
-                <option
-                  value="option1"
+                <label
+                  class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark pb-2"
+                  data-testid="FormLabel"
+                  for="time-format"
+                  label="Time Format"
                 >
-                  Option 1
-                </option>
-                <option
-                  value="option2"
+                  Time Format
+                </label>
+                <select
+                  class="appearance-none block w-full form-select transition-colors duration-200"
+                  data-testid="select-input"
+                  name="time-format"
+                  placeholder="Select Language"
                 >
-                  Option 2
-                </option>
-                <option
-                  value="option3"
-                >
-                  Option 3
-                </option>
-              </select>
+                  <option
+                    value="option1"
+                  >
+                    Option 1
+                  </option>
+                  <option
+                    value="option2"
+                  >
+                    Option 2
+                  </option>
+                  <option
+                    value="option3"
+                  >
+                    Option 3
+                  </option>
+                </select>
+              </fieldset>
             </div>
           </div>
+        </div>
+        <div
+          class="mt-5 relative"
+        >
           <div
-            class="flex flex-col w-2/4 ml-5"
+            class="flex flex-col items-start"
           >
-            <div>
-              <label
-                class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark pb-2"
-                data-testid="FormLabel"
-                label="Language"
-              >
-                Language
-              </label>
-              <select
-                class="appearance-none block w-full form-select transition-colors duration-200"
-                data-testid="select-input"
-                name="language"
-                placeholder="Select Language"
-              >
-                <option
-                  value="option1"
-                >
-                  Option 1
-                </option>
-                <option
-                  value="option2"
-                >
-                  Option 2
-                </option>
-                <option
-                  value="option3"
-                >
-                  Option 3
-                </option>
-              </select>
-            </div>
-            <div
-              class="mt-3"
+            <h1
+              class="text-3xl font-bold md:text-4xl"
+              data-testid="header__title"
             >
-              <label
-                class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark pb-2"
-                data-testid="FormLabel"
-                label="Price Source"
-              >
-                Price Source
-              </label>
-              <select
-                class="appearance-none block w-full form-select transition-colors duration-200"
-                data-testid="select-input"
-                name="price-source"
-                placeholder="Select Language"
-              >
-                <option
-                  value="option1"
-                >
-                  Option 1
-                </option>
-                <option
-                  value="option2"
-                >
-                  Option 2
-                </option>
-                <option
-                  value="option3"
-                >
-                  Option 3
-                </option>
-              </select>
-            </div>
-            <div
-              class="mt-3"
-            >
-              <label
-                class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark pb-2"
-                data-testid="FormLabel"
-                label="Time Format"
-              >
-                Time Format
-              </label>
-              <select
-                class="appearance-none block w-full form-select transition-colors duration-200"
-                data-testid="select-input"
-                name="time-format"
-                placeholder="Select Language"
-              >
-                <option
-                  value="option1"
-                >
-                  Option 1
-                </option>
-                <option
-                  value="option2"
-                >
-                  Option 2
-                </option>
-                <option
-                  value="option3"
-                >
-                  Option 3
-                </option>
-              </select>
-            </div>
+              Security
+            </h1>
           </div>
+          <ul
+            class="sc-AxiKw nYuWr"
+            data-testid="list-divided__items"
+          >
+            <li
+              class="flex flex-col w-full py-8 mb-5"
+              data-testid="list-divided-item__wrapper"
+            >
+              <div
+                class="flex justify-between flex-col items-start"
+                data-testid="list-divided-item__inner-wrapper"
+              >
+                <div
+                  class="flex flex-col"
+                >
+                  <span
+                    class="mr-5 text-xl font-bold text-theme-neutral-dark"
+                    data-testid="list-divided-item__label"
+                  >
+                    Screenshot Protection
+                  </span>
+                </div>
+              </div>
+              <div
+                class="mt-4"
+                data-testid="list-divided-item__content"
+              >
+                <div
+                  class="flex flex-row justify-between"
+                >
+                  <span
+                    class="text-sm text-theme-neutral-dark w-3/4"
+                  >
+                    This protection. will protect your money from unwanted Screenshot you PC.
+                  </span>
+                  <div
+                    class="-mt-2"
+                  >
+                    <label>
+                      <input
+                        class="sc-fzoLsD cepnXb"
+                        type="checkbox"
+                      />
+                      <div
+                        class="sc-fzpans hZvDwV"
+                      >
+                        <span
+                          class="sc-fzplWN fjCJze"
+                        />
+                      </div>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li
+              class="flex flex-col w-full py-8 mb-5"
+              data-testid="list-divided-item__wrapper"
+            >
+              <div
+                class="flex justify-between flex-col items-start"
+                data-testid="list-divided-item__inner-wrapper"
+              >
+                <div
+                  class="flex flex-col"
+                >
+                  <span
+                    class="mr-5 text-xl font-bold text-theme-neutral-dark -mt-5"
+                    data-testid="list-divided-item__label"
+                  >
+                    Advanced Mode
+                  </span>
+                </div>
+              </div>
+              <div
+                class="mt-4"
+                data-testid="list-divided-item__content"
+              >
+                <div
+                  class="flex flex-row justify-between"
+                >
+                  <span
+                    class="text-sm text-theme-neutral-dark w-3/4"
+                  >
+                    You hereby assume the risk associated with downloading files and installing said files from a direct URL link.
+                  </span>
+                  <div
+                    class="-mt-2"
+                  >
+                    <label>
+                      <input
+                        class="sc-fzoLsD cepnXb -mt-3"
+                        type="checkbox"
+                      />
+                      <div
+                        class="sc-fzpans hZvDwV"
+                      >
+                        <span
+                          class="sc-fzplWN fjCJze"
+                        />
+                      </div>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li
+              class="flex flex-col w-full py-8 mb-5"
+              data-testid="list-divided-item__wrapper"
+            >
+              <div
+                class="flex justify-between flex-col items-start"
+                data-testid="list-divided-item__inner-wrapper"
+              >
+                <div
+                  class="flex flex-col"
+                >
+                  <span
+                    class="mr-5 FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
+                    data-testid="list-divided-item__label"
+                  >
+                    Auto-logoff
+                  </span>
+                </div>
+              </div>
+              <div
+                class="mt-4"
+                data-testid="list-divided-item__content"
+              >
+                <select
+                  class="appearance-none block w-full form-select transition-colors duration-200"
+                  data-testid="select-input"
+                  name="auto-logoff"
+                  placeholder="Select Language"
+                >
+                  <option
+                    value="option1"
+                  >
+                    Option 1
+                  </option>
+                  <option
+                    value="option2"
+                  >
+                    Option 2
+                  </option>
+                  <option
+                    value="option3"
+                  >
+                    Option 3
+                  </option>
+                </select>
+              </div>
+            </li>
+          </ul>
         </div>
-      </div>
-      <div
-        class="mt-5 relative"
-      >
         <div
-          class="flex flex-col items-start"
+          class="mt-5 relative"
         >
-          <h1
-            class="text-3xl font-bold md:text-4xl"
-            data-testid="header__title"
+          <div
+            class="flex flex-col items-start"
           >
-            Security
-          </h1>
+            <h1
+              class="text-3xl font-bold md:text-4xl"
+              data-testid="header__title"
+            >
+              Other
+            </h1>
+          </div>
+          <ul
+            class="sc-AxiKw nYuWr"
+            data-testid="list-divided__items"
+          >
+            <li
+              class="flex flex-col w-full py-8 mb-5"
+              data-testid="list-divided-item__wrapper"
+            >
+              <div
+                class="flex justify-between flex-col items-start"
+                data-testid="list-divided-item__inner-wrapper"
+              >
+                <div
+                  class="flex flex-col"
+                >
+                  <span
+                    class="mr-5 text-xl font-bold text-theme-neutral-dark"
+                    data-testid="list-divided-item__label"
+                  >
+                    Dark Theme
+                  </span>
+                </div>
+              </div>
+              <div
+                class="mt-4"
+                data-testid="list-divided-item__content"
+              >
+                <div
+                  class="flex flex-row justify-between"
+                >
+                  <span
+                    class="text-sm text-theme-neutral-dark w-3/4"
+                  >
+                    Want to set the wallet to dark mode?
+                  </span>
+                  <div
+                    class="-mt-2"
+                  >
+                    <label>
+                      <input
+                        class="sc-fzoLsD cepnXb"
+                        type="checkbox"
+                      />
+                      <div
+                        class="sc-fzpans hZvDwV"
+                      >
+                        <span
+                          class="sc-fzplWN fjCJze"
+                        />
+                      </div>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li
+              class="flex flex-col w-full py-8 mb-5"
+              data-testid="list-divided-item__wrapper"
+            >
+              <div
+                class="flex justify-between flex-col items-start"
+                data-testid="list-divided-item__inner-wrapper"
+              >
+                <div
+                  class="flex flex-col"
+                >
+                  <span
+                    class="mr-5 text-xl font-bold text-theme-neutral-dark -mt-5"
+                    data-testid="list-divided-item__label"
+                  >
+                    Update Ledger in Background
+                  </span>
+                </div>
+              </div>
+              <div
+                class="mt-4"
+                data-testid="list-divided-item__content"
+              >
+                <div
+                  class="flex flex-row justify-between"
+                >
+                  <span
+                    class="text-sm text-theme-neutral-dark w-3/4"
+                  >
+                    You hereby assume the risk associated with downloading files and installing said files from a direct URL link.
+                  </span>
+                  <div
+                    class="-mt-2"
+                  >
+                    <label>
+                      <input
+                        class="sc-fzoLsD cepnXb -mt-3"
+                        type="checkbox"
+                      />
+                      <div
+                        class="sc-fzpans hZvDwV"
+                      >
+                        <span
+                          class="sc-fzplWN fjCJze"
+                        />
+                      </div>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
         </div>
-        <ul
-          class="sc-AxiKw nYuWr"
-          data-testid="list-divided__items"
-        >
-          <li
-            class="flex flex-col w-full py-8 mb-5"
-            data-testid="list-divided-item__wrapper"
-          >
-            <div
-              class="flex justify-between flex-col items-start"
-              data-testid="list-divided-item__inner-wrapper"
-            >
-              <div
-                class="flex flex-col"
-              >
-                <span
-                  class="mr-5 text-xl font-bold text-theme-neutral-dark"
-                  data-testid="list-divided-item__label"
-                >
-                  Screenshot Protection
-                </span>
-              </div>
-            </div>
-            <div
-              class="mt-4"
-              data-testid="list-divided-item__content"
-            >
-              <div
-                class="flex flex-row justify-between"
-              >
-                <span
-                  class="text-sm text-theme-neutral-dark w-3/4"
-                >
-                  This protection. will protect your money from unwanted Screenshot you PC.
-                </span>
-                <div
-                  class="-mt-2"
-                >
-                  <label>
-                    <input
-                      class="sc-fzoLsD cepnXb"
-                      type="checkbox"
-                    />
-                    <div
-                      class="sc-fzpans hZvDwV"
-                    >
-                      <span
-                        class="sc-fzplWN fjCJze"
-                      />
-                    </div>
-                  </label>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li
-            class="flex flex-col w-full py-8 mb-5"
-            data-testid="list-divided-item__wrapper"
-          >
-            <div
-              class="flex justify-between flex-col items-start"
-              data-testid="list-divided-item__inner-wrapper"
-            >
-              <div
-                class="flex flex-col"
-              >
-                <span
-                  class="mr-5 text-xl font-bold text-theme-neutral-dark -mt-5"
-                  data-testid="list-divided-item__label"
-                >
-                  Advanced Mode
-                </span>
-              </div>
-            </div>
-            <div
-              class="mt-4"
-              data-testid="list-divided-item__content"
-            >
-              <div
-                class="flex flex-row justify-between"
-              >
-                <span
-                  class="text-sm text-theme-neutral-dark w-3/4"
-                >
-                  You hereby assume the risk associated with downloading files and installing said files from a direct URL link.
-                </span>
-                <div
-                  class="-mt-2"
-                >
-                  <label>
-                    <input
-                      class="sc-fzoLsD cepnXb -mt-3"
-                      type="checkbox"
-                    />
-                    <div
-                      class="sc-fzpans hZvDwV"
-                    >
-                      <span
-                        class="sc-fzplWN fjCJze"
-                      />
-                    </div>
-                  </label>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li
-            class="flex flex-col w-full py-8 mb-5"
-            data-testid="list-divided-item__wrapper"
-          >
-            <div
-              class="flex justify-between flex-col items-start"
-              data-testid="list-divided-item__inner-wrapper"
-            >
-              <div
-                class="flex flex-col"
-              >
-                <span
-                  class="mr-5 FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
-                  data-testid="list-divided-item__label"
-                >
-                  Auto-logoff
-                </span>
-              </div>
-            </div>
-            <div
-              class="mt-4"
-              data-testid="list-divided-item__content"
-            >
-              <select
-                class="appearance-none block w-full form-select transition-colors duration-200"
-                data-testid="select-input"
-                name="auto-logoff"
-                placeholder="Select Language"
-              >
-                <option
-                  value="option1"
-                >
-                  Option 1
-                </option>
-                <option
-                  value="option2"
-                >
-                  Option 2
-                </option>
-                <option
-                  value="option3"
-                >
-                  Option 3
-                </option>
-              </select>
-            </div>
-          </li>
-        </ul>
-      </div>
-      <div
-        class="mt-5 relative"
-      >
         <div
-          class="flex flex-col items-start"
+          class="flex items-center"
         >
-          <h1
-            class="text-3xl font-bold md:text-4xl"
-            data-testid="header__title"
+          <button
+            class="sc-AxmLO eZuBgA"
+            color="primary"
+            type="button"
           >
-            Other
-          </h1>
+            Save
+          </button>
+          <span
+            class="font-semibold text-theme-neutral-dark px-2"
+          >
+            or
+          </span>
+          <button
+            class="sc-AxmLO fexZZc"
+            color="primary"
+            type="button"
+          >
+            Reset Data
+          </button>
         </div>
-        <ul
-          class="sc-AxiKw nYuWr"
-          data-testid="list-divided__items"
-        >
-          <li
-            class="flex flex-col w-full py-8 mb-5"
-            data-testid="list-divided-item__wrapper"
-          >
-            <div
-              class="flex justify-between flex-col items-start"
-              data-testid="list-divided-item__inner-wrapper"
-            >
-              <div
-                class="flex flex-col"
-              >
-                <span
-                  class="mr-5 text-xl font-bold text-theme-neutral-dark"
-                  data-testid="list-divided-item__label"
-                >
-                  Dark Theme
-                </span>
-              </div>
-            </div>
-            <div
-              class="mt-4"
-              data-testid="list-divided-item__content"
-            >
-              <div
-                class="flex flex-row justify-between"
-              >
-                <span
-                  class="text-sm text-theme-neutral-dark w-3/4"
-                >
-                  Want to set the wallet to dark mode?
-                </span>
-                <div
-                  class="-mt-2"
-                >
-                  <label>
-                    <input
-                      class="sc-fzoLsD cepnXb"
-                      type="checkbox"
-                    />
-                    <div
-                      class="sc-fzpans hZvDwV"
-                    >
-                      <span
-                        class="sc-fzplWN fjCJze"
-                      />
-                    </div>
-                  </label>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li
-            class="flex flex-col w-full py-8 mb-5"
-            data-testid="list-divided-item__wrapper"
-          >
-            <div
-              class="flex justify-between flex-col items-start"
-              data-testid="list-divided-item__inner-wrapper"
-            >
-              <div
-                class="flex flex-col"
-              >
-                <span
-                  class="mr-5 text-xl font-bold text-theme-neutral-dark -mt-5"
-                  data-testid="list-divided-item__label"
-                >
-                  Update Ledger in Background
-                </span>
-              </div>
-            </div>
-            <div
-              class="mt-4"
-              data-testid="list-divided-item__content"
-            >
-              <div
-                class="flex flex-row justify-between"
-              >
-                <span
-                  class="text-sm text-theme-neutral-dark w-3/4"
-                >
-                  You hereby assume the risk associated with downloading files and installing said files from a direct URL link.
-                </span>
-                <div
-                  class="-mt-2"
-                >
-                  <label>
-                    <input
-                      class="sc-fzoLsD cepnXb -mt-3"
-                      type="checkbox"
-                    />
-                    <div
-                      class="sc-fzpans hZvDwV"
-                    >
-                      <span
-                        class="sc-fzplWN fjCJze"
-                      />
-                    </div>
-                  </label>
-                </div>
-              </div>
-            </div>
-          </li>
-        </ul>
-      </div>
-      <div
-        class="flex items-center"
-      >
-        <button
-          class="sc-AxmLO eZuBgA"
-          color="primary"
-          type="button"
-        >
-          Save
-        </button>
-        <span
-          class="font-semibold text-theme-neutral-dark px-2"
-        >
-          or
-        </span>
-        <button
-          class="sc-AxmLO fexZZc"
-          color="primary"
-          type="button"
-        >
-          Reset Data
-        </button>
-      </div>
+      </form>
     </div>
   </div>
 </DocumentFragment>

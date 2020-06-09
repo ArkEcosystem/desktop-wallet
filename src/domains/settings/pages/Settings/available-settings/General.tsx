@@ -6,7 +6,7 @@ import { Icon } from "app/components/Icon";
 import { Input } from "app/components/Input";
 import { Button } from "app/components/Button";
 import { Select } from "app/components/Select";
-import { FormLabel } from "app/components/Form";
+import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Toggle } from "app/components/Toggle";
 
 type Props = {
@@ -14,7 +14,7 @@ type Props = {
 	pageConfig: any;
 };
 
-export const General = ({ formConfig, pageConfig }: Props) => {
+export const General = ({ formConfig, pageConfig, onSubmit }: Props) => {
 	const personalDetails = [
 		{
 			isFloatingLabel: true,
@@ -129,101 +129,108 @@ export const General = ({ formConfig, pageConfig }: Props) => {
 	return (
 		<>
 			<Header title={pageConfig?.title} subtitle={pageConfig?.subheader} />
-			<div className="mt-5">
-				<ListDivided items={personalDetails} />
-				<div className="w-full flex justify-between">
-					<div className="flex flex-col w-2/4">
-						<div>
-							<FormLabel label="Profile Name" />
-							<Input
-								type="text"
-								name="profile-name"
-								reference={formConfig.register({ required: true })}
-								error={formConfig.errors["profile-name"]}
-							/>
+			<Form id="general-settings__form" context={formConfig.context} onSubmit={onSubmit}>
+				<div className="mt-5">
+					<ListDivided items={personalDetails} />
+					<div className="w-full flex justify-between">
+						<div className="flex flex-col w-2/4">
+							<FormField name="profile-name">
+								<FormLabel label="Profile Name" />
+								<Input
+									type="text"
+									reference={formConfig.register({ required: true })}
+									error={formConfig.errors["profile-name"]}
+								/>
+								<FormHelperText />
+							</FormField>
+							<FormField className="mt-3" name="passphrase-language">
+								<FormLabel label="Passphrase Language" />
+								<Select
+									name="passphrase-language"
+									placeholder="Select Language"
+									ref={formConfig.register({ required: true })}
+								>
+									<option value="option1">Option 1</option>
+									<option value="option2">Option 2</option>
+									<option value="option3">Option 3</option>
+								</Select>
+								<FormHelperText />
+							</FormField>
+							<FormField className="mt-3" name="currency">
+								<FormLabel label="Currency" />
+								<Select
+									placeholder="Select Language"
+									name="currency"
+									ref={formConfig.register({ required: true })}
+								>
+									<option value="option1">Option 1</option>
+									<option value="option2">Option 2</option>
+									<option value="option3">Option 3</option>
+								</Select>
+								<FormHelperText />
+							</FormField>
 						</div>
-						<div className="mt-3">
-							<FormLabel label="Passphrase Language" />
-							<Select
-								name="passphrase-language"
-								placeholder="Select Language"
-								ref={formConfig.register({ required: true })}
-							>
-								<option value="option1">Option 1</option>
-								<option value="option2">Option 2</option>
-								<option value="option3">Option 3</option>
-							</Select>
-						</div>
-						<div className="mt-3">
-							<FormLabel label="Currency" />
-							<Select
-								placeholder="Select Language"
-								name="currency"
-								ref={formConfig.register({ required: true })}
-							>
-								<option value="option1">Option 1</option>
-								<option value="option2">Option 2</option>
-								<option value="option3">Option 3</option>
-							</Select>
-						</div>
-					</div>
-					<div className="flex flex-col w-2/4 ml-5">
-						<div>
-							<FormLabel label="Language" />
-							<Select
-								placeholder="Select Language"
-								name="language"
-								ref={formConfig.register({ required: true })}
-							>
-								<option value="option1">Option 1</option>
-								<option value="option2">Option 2</option>
-								<option value="option3">Option 3</option>
-							</Select>
-						</div>
-						<div className="mt-3">
-							<FormLabel label="Price Source" />
-							<Select
-								placeholder="Select Language"
-								name="price-source"
-								ref={formConfig.register({ required: true })}
-							>
-								<option value="option1">Option 1</option>
-								<option value="option2">Option 2</option>
-								<option value="option3">Option 3</option>
-							</Select>
-						</div>
-						<div className="mt-3">
-							<FormLabel label="Time Format" />
-							<Select
-								placeholder="Select Language"
-								name="time-format"
-								ref={formConfig.register({ required: true })}
-							>
-								<option value="option1">Option 1</option>
-								<option value="option2">Option 2</option>
-								<option value="option3">Option 3</option>
-							</Select>
+						<div className="flex flex-col w-2/4 ml-5">
+							<FormField name="language">
+								<FormLabel label="Language" />
+								<Select
+									placeholder="Select Language"
+									name="language"
+									ref={formConfig.register({ required: true })}
+								>
+									<option value="option1">Option 1</option>
+									<option value="option2">Option 2</option>
+									<option value="option3">Option 3</option>
+								</Select>
+								<FormHelperText />
+							</FormField>
+							<FormField className="mt-3" name="price-source">
+								<FormLabel label="Price Source" />
+								<Select
+									placeholder="Select Language"
+									name="price-source"
+									ref={formConfig.register({ required: true })}
+								>
+									<option value="option1">Option 1</option>
+									<option value="option2">Option 2</option>
+									<option value="option3">Option 3</option>
+								</Select>
+								<FormHelperText />
+							</FormField>
+							<FormField className="mt-3" name="time-format">
+								<FormLabel label="Time Format" />
+								<Select
+									placeholder="Select Language"
+									name="time-format"
+									ref={formConfig.register({ required: true })}
+								>
+									<option value="option1">Option 1</option>
+									<option value="option2">Option 2</option>
+									<option value="option3">Option 3</option>
+								</Select>
+								<FormHelperText />
+							</FormField>
 						</div>
 					</div>
 				</div>
-			</div>
-			<div className="mt-5 relative">
-				<Header title="Security" />
-				<ListDivided items={securityItems} />
-			</div>
-			<div className="mt-5 relative">
-				<Header title="Other" />
-				<ListDivided items={otherItems} />
-			</div>
-			<div className="flex items-center">
-				<Button color="primary" variant="solid" size="large">
-					Save
-				</Button>
-				<span className="font-semibold text-theme-neutral-dark px-2">or</span>
-				<Button color="primary" variant="plain" size="large">
-					Reset Data
-				</Button>
-			</div>
+				<div className="mt-5 relative">
+					<Header title="Security" />
+					<ListDivided items={securityItems} />
+				</div>
+				<div className="mt-5 relative">
+					<Header title="Other" />
+					<ListDivided items={otherItems} />
+				</div>
+				<div className="flex items-center">
+					<Button color="primary" variant="solid" size="large">
+						Save
+					</Button>
+					<span className="font-semibold text-theme-neutral-dark px-2">or</span>
+					<Button color="primary" variant="plain" size="large">
+						Reset Data
+					</Button>
+				</div>
+			</Form>
 		</>
 	);
 };
