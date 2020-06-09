@@ -42,12 +42,12 @@ export const VerifyMessage = ({ onSubmit, publicKey, isOpen, handleClose }: Prop
 					<Input type="text" ref={register({ required: true })} />
 					<FormHelperText />
 				</FormField>
-				<FormField name="public-key">
+				<FormField name="public-key" className="mt-3">
 					<FormLabel label="Public key" />
-					<Input type="text" value={publicKey} ref={register({ required: true })} />
+					<Input type="text" ref={register({ required: true })} />
 					<FormHelperText />
 				</FormField>
-				<FormField name="signature">
+				<FormField name="signature" className="mt-3">
 					<FormLabel label="Signature" />
 					<Input type="text" ref={register({ required: true })} />
 					<FormHelperText />
@@ -69,7 +69,7 @@ export const VerifyMessage = ({ onSubmit, publicKey, isOpen, handleClose }: Prop
 						<span className="text-sm text-theme-neutral-light w-3/4">
 							You can verify only text using a JSON public key
 						</span>
-						<div className="-mt-2 mr-3">
+						<div className="-mt-2 mr-1">
 							<Toggle
 								data-testid="verify-address__togle"
 								className="-mt-3"
