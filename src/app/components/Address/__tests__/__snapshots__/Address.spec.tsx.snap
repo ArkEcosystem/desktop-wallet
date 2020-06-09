@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Formatted Address should not render without address 1`] = `<div />`;
+
+exports[`Formatted Address should render address only 1`] = `
+<div>
+  <div
+    class="truncate inline-block"
+  >
+    <span
+      class="text-theme-neutral-800 font-semibold text-sm"
+    >
+      ASuusX...GQ3kqT
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Formatted Address should render with wallet name 1`] = `
+<div>
+  <div
+    class="truncate inline-block"
+  >
+    <span
+      class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 text-sm mr-1"
+    >
+      Sample Wallet
+    </span>
+    <span
+      class="text-theme-neutral-400 font-semibold text-sm"
+    >
+      ASuusX...GQ3kqT
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Formatted Address should render with wallet name 2`] = `
+<div>
+  <div
+    class="truncate inline-block"
+  >
+    <span
+      class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 text-sm mr-1"
+    >
+      Sample Wallet
+    </span>
+    <span
+      class="text-theme-neutral-400 font-semibold text-sm"
+    >
+      ASuusX...GQ3kqT
+    </span>
+  </div>
+</div>
+`;
