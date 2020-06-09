@@ -4,7 +4,7 @@ import { MnemonicVerification } from "../MnemonicVerification";
 
 describe("MnemonicVerification", () => {
 	it("should verify mnemonic", () => {
-		const mnemonic = ["ark", "btc", "usd", "bnb", "eth", "ltc", "etc", "lsk", "trx", "dash", "xtz", "eur"];
+		const mnemonic = ["ark", "btc", "usd", "bnb", "eth", "ltc"];
 		const limit = 6;
 		const wordPositions = [1, 2, 3];
 		const handleComplete = jest.fn();
@@ -16,23 +16,23 @@ describe("MnemonicVerification", () => {
 				wordPositions={wordPositions}
 				handleComplete={handleComplete}
 			/>,
-        );
-        const firstTabFragment = asFragment();
-        const rightFirstButton = getByText(mnemonic[wordPositions[0] - 1]);
-        fireEvent.click(rightFirstButton);
-        
-        const secondTabFragment = asFragment();
-        expect(firstTabFragment).not.toEqual(secondTabFragment);
+		);
 
-        const rightSecondButton = getByText(mnemonic[wordPositions[1] - 1]);
-        fireEvent.click(rightSecondButton);
-        
-        const thirdTabFragment = asFragment();
-        expect(secondTabFragment).not.toEqual(thirdTabFragment);
+		const firstTab = asFragment();
+		const wrongButton = getByText(mnemonic[4]);
+		fireEvent.click(wrongButton);
+		expect(firstTab).toEqual(asFragment());
 
-        const rightThirdButton = getByText(mnemonic[wordPositions[2] - 1]);
-        fireEvent.click(rightThirdButton);
+		const firstButton = getByText(mnemonic[wordPositions[0] - 1]);
+		fireEvent.click(firstButton);
+		expect(firstTab).not.toEqual(asFragment());
 
-        expect(handleComplete).toHaveBeenCalled();
+		const secondButton = getByText(mnemonic[wordPositions[1] - 1]);
+		fireEvent.click(secondButton);
+
+		const thirdButton = getByText(mnemonic[wordPositions[2] - 1]);
+		fireEvent.click(thirdButton);
+
+		expect(handleComplete).toHaveBeenCalled();
 	});
 });
