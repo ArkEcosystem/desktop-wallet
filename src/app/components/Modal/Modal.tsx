@@ -62,6 +62,8 @@ export const Modal = (props: ModalProps) => {
 	);
 };
 
-Modal.defaultProps = {};
+Modal.defaultProps = {
+	isOpen: false,
+};
 
 Modal.displayName = "Modal";
