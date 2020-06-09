@@ -38,7 +38,6 @@ const Alert = ({ variant, title, size, children }: AlertProps) => (
 );
 
 Alert.defaultProps = {
-	title: "Alert",
 	variant: "warning",
 	size: "default",
 };
