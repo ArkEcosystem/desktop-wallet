@@ -1,0 +1,93 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ModalNameWallet should not render if not open 1`] = `<DocumentFragment />`;
+
+exports[`ModalNameWallet should render a modal 1`] = `
+<DocumentFragment>
+  <div
+    class="fixed inset-0 z-10 bg-black opacity-50"
+    data-testid="modal__overlay"
+  />
+  <div
+    class="fixed flex flex-col z-10 left-0 right-0 max-w-lg max-h-1/2 rounded-xl bg-theme-background mx-auto mt-24 pt-6 pb-8 px-10"
+    data-testid="modal__inner"
+  >
+    <div
+      class="absolute right-0 top-0 mt-4 mr-4"
+    >
+      <button
+        class="sc-AxjAm jZZsoN"
+        color="neutral"
+        type="button"
+      >
+        <div
+          class="sc-AxirZ fttODj"
+          height="10"
+          width="10"
+        >
+          <div>
+            <div>
+              <div
+                data-src="cross-slim.svg"
+                src=""
+              />
+            </div>
+          </div>
+        </div>
+      </button>
+    </div>
+    <h2>
+      WALLET.MODAL_NAME_WALLET.TITLE
+    </h2>
+    <div
+      class="flex-1 overflow-auto"
+    >
+      <div
+        class="text-theme-neutral-500"
+      >
+        WALLET.MODAL_NAME_WALLET.DESCRIPTION
+      </div>
+      <form
+        class="space-y-6"
+        data-testid="Form"
+      >
+        <fieldset
+          class="sc-AxiKw iQzisX flex flex-col space-y-2"
+        >
+          <label
+            class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark pt-2"
+            data-testid="FormLabel"
+            for="name"
+          >
+            WALLET.MODAL_NAME_WALLET.FIELD_NAME
+          </label>
+          <input
+            class="sc-AxhCb clCjoe overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+            data-testid="Input"
+            name="name"
+          />
+        </fieldset>
+        <div
+          class="mt-4"
+        >
+          <button
+            class="sc-AxjAm GWdpI mr-2"
+            color="primary"
+            type="button"
+          >
+            Cancel
+          </button>
+          <button
+            class="sc-AxjAm gYunbo"
+            color="primary"
+            type="submit"
+          >
+            Save
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  ,
+</DocumentFragment>
+`;
