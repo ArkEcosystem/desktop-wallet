@@ -17,12 +17,19 @@ type Props = {
 	activeSettings: string;
 };
 
+type AvailableSettings = {
+	[index: string]: any;
+};
+
 export const Settings = ({ settings, pageConfig, activeSettings, setActiveSettings, submitSettings }: Props) => {
 	const form = useForm();
 	const { register, errors } = form;
 
+	let providedSettings: AvailableSettings = {};
+	providedSettings = availableSettings;
+
 	const renderSettings = () => {
-		const ActiveSettings = availableSettings[activeSettings];
+		const ActiveSettings = providedSettings[activeSettings];
 		if (!ActiveSettings) return <span>{activeSettings} settings not found</span>;
 
 		return (

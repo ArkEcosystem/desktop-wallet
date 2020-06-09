@@ -267,28 +267,56 @@ exports[`Settings should render 1`] = `
                 >
                   Passphrase Language
                 </label>
-                <select
-                  class="appearance-none block w-full form-select transition-colors duration-200"
-                  data-testid="select-input"
-                  name="passphrase-language"
-                  placeholder="Select Language"
+                <div
+                  class="sc-Axmtr jzhOwR"
                 >
-                  <option
-                    value="option1"
+                  <select
+                    class="sc-AxhCb clCjoe overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
+                    data-testid="Select"
+                    name="passphrase-language"
                   >
-                    Option 1
-                  </option>
-                  <option
-                    value="option2"
+                    <option
+                      disabled=""
+                      selected=""
+                      value=""
+                    >
+                      Select Language
+                    </option>
+                    <option
+                      value="option1"
+                    >
+                      Option 1
+                    </option>
+                    <option
+                      value="option2"
+                    >
+                      Option 2
+                    </option>
+                    <option
+                      value="option3"
+                    >
+                      Option 3
+                    </option>
+                  </select>
+                  <div
+                    class="sc-AxhUy sc-AxheI bSLhdh text-theme-neutral-dark pointer-events-none w-12 text-lg"
                   >
-                    Option 2
-                  </option>
-                  <option
-                    value="option3"
-                  >
-                    Option 3
-                  </option>
-                </select>
+                    <div
+                      class="sc-AxjAm cpczEI"
+                      height="1em"
+                      width="1em"
+                    >
+                      <div>
+                        <div>
+                          <div
+                            data-src="chevron-down.svg"
+                            src=""
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </fieldset>
               <fieldset
                 class="sc-fzozJi kVxApt mt-3"
@@ -301,28 +329,56 @@ exports[`Settings should render 1`] = `
                 >
                   Currency
                 </label>
-                <select
-                  class="appearance-none block w-full form-select transition-colors duration-200"
-                  data-testid="select-input"
-                  name="currency"
-                  placeholder="Select Language"
+                <div
+                  class="sc-Axmtr jzhOwR"
                 >
-                  <option
-                    value="option1"
+                  <select
+                    class="sc-AxhCb clCjoe overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
+                    data-testid="Select"
+                    name="currency"
                   >
-                    Option 1
-                  </option>
-                  <option
-                    value="option2"
+                    <option
+                      disabled=""
+                      selected=""
+                      value=""
+                    >
+                      Select Language
+                    </option>
+                    <option
+                      value="option1"
+                    >
+                      Option 1
+                    </option>
+                    <option
+                      value="option2"
+                    >
+                      Option 2
+                    </option>
+                    <option
+                      value="option3"
+                    >
+                      Option 3
+                    </option>
+                  </select>
+                  <div
+                    class="sc-AxhUy sc-AxheI bSLhdh text-theme-neutral-dark pointer-events-none w-12 text-lg"
                   >
-                    Option 2
-                  </option>
-                  <option
-                    value="option3"
-                  >
-                    Option 3
-                  </option>
-                </select>
+                    <div
+                      class="sc-AxjAm cpczEI"
+                      height="1em"
+                      width="1em"
+                    >
+                      <div>
+                        <div>
+                          <div
+                            data-src="chevron-down.svg"
+                            src=""
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </fieldset>
             </div>
             <div
@@ -339,28 +395,56 @@ exports[`Settings should render 1`] = `
                 >
                   Language
                 </label>
-                <select
-                  class="appearance-none block w-full form-select transition-colors duration-200"
-                  data-testid="select-input"
-                  name="language"
-                  placeholder="Select Language"
+                <div
+                  class="sc-Axmtr jzhOwR"
                 >
-                  <option
-                    value="option1"
+                  <select
+                    class="sc-AxhCb clCjoe overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
+                    data-testid="Select"
+                    name="language"
                   >
-                    Option 1
-                  </option>
-                  <option
-                    value="option2"
+                    <option
+                      disabled=""
+                      selected=""
+                      value=""
+                    >
+                      Select Language
+                    </option>
+                    <option
+                      value="option1"
+                    >
+                      Option 1
+                    </option>
+                    <option
+                      value="option2"
+                    >
+                      Option 2
+                    </option>
+                    <option
+                      value="option3"
+                    >
+                      Option 3
+                    </option>
+                  </select>
+                  <div
+                    class="sc-AxhUy sc-AxheI bSLhdh text-theme-neutral-dark pointer-events-none w-12 text-lg"
                   >
-                    Option 2
-                  </option>
-                  <option
-                    value="option3"
-                  >
-                    Option 3
-                  </option>
-                </select>
+                    <div
+                      class="sc-AxjAm cpczEI"
+                      height="1em"
+                      width="1em"
+                    >
+                      <div>
+                        <div>
+                          <div
+                            data-src="chevron-down.svg"
+                            src=""
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </fieldset>
               <fieldset
                 class="sc-fzozJi kVxApt mt-3"
@@ -373,28 +457,56 @@ exports[`Settings should render 1`] = `
                 >
                   Price Source
                 </label>
-                <select
-                  class="appearance-none block w-full form-select transition-colors duration-200"
-                  data-testid="select-input"
-                  name="price-source"
-                  placeholder="Select Language"
+                <div
+                  class="sc-Axmtr jzhOwR"
                 >
-                  <option
-                    value="option1"
+                  <select
+                    class="sc-AxhCb clCjoe overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
+                    data-testid="Select"
+                    name="price-source"
                   >
-                    Option 1
-                  </option>
-                  <option
-                    value="option2"
+                    <option
+                      disabled=""
+                      selected=""
+                      value=""
+                    >
+                      Select Language
+                    </option>
+                    <option
+                      value="option1"
+                    >
+                      Option 1
+                    </option>
+                    <option
+                      value="option2"
+                    >
+                      Option 2
+                    </option>
+                    <option
+                      value="option3"
+                    >
+                      Option 3
+                    </option>
+                  </select>
+                  <div
+                    class="sc-AxhUy sc-AxheI bSLhdh text-theme-neutral-dark pointer-events-none w-12 text-lg"
                   >
-                    Option 2
-                  </option>
-                  <option
-                    value="option3"
-                  >
-                    Option 3
-                  </option>
-                </select>
+                    <div
+                      class="sc-AxjAm cpczEI"
+                      height="1em"
+                      width="1em"
+                    >
+                      <div>
+                        <div>
+                          <div
+                            data-src="chevron-down.svg"
+                            src=""
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </fieldset>
               <fieldset
                 class="sc-fzozJi kVxApt mt-3"
@@ -407,28 +519,56 @@ exports[`Settings should render 1`] = `
                 >
                   Time Format
                 </label>
-                <select
-                  class="appearance-none block w-full form-select transition-colors duration-200"
-                  data-testid="select-input"
-                  name="time-format"
-                  placeholder="Select Language"
+                <div
+                  class="sc-Axmtr jzhOwR"
                 >
-                  <option
-                    value="option1"
+                  <select
+                    class="sc-AxhCb clCjoe overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
+                    data-testid="Select"
+                    name="time-format"
                   >
-                    Option 1
-                  </option>
-                  <option
-                    value="option2"
+                    <option
+                      disabled=""
+                      selected=""
+                      value=""
+                    >
+                      Select Language
+                    </option>
+                    <option
+                      value="option1"
+                    >
+                      Option 1
+                    </option>
+                    <option
+                      value="option2"
+                    >
+                      Option 2
+                    </option>
+                    <option
+                      value="option3"
+                    >
+                      Option 3
+                    </option>
+                  </select>
+                  <div
+                    class="sc-AxhUy sc-AxheI bSLhdh text-theme-neutral-dark pointer-events-none w-12 text-lg"
                   >
-                    Option 2
-                  </option>
-                  <option
-                    value="option3"
-                  >
-                    Option 3
-                  </option>
-                </select>
+                    <div
+                      class="sc-AxjAm cpczEI"
+                      height="1em"
+                      width="1em"
+                    >
+                      <div>
+                        <div>
+                          <div
+                            data-src="chevron-down.svg"
+                            src=""
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </fieldset>
             </div>
           </div>
@@ -575,28 +715,56 @@ exports[`Settings should render 1`] = `
                 class="mt-4"
                 data-testid="list-divided-item__content"
               >
-                <select
-                  class="appearance-none block w-full form-select transition-colors duration-200"
-                  data-testid="select-input"
-                  name="auto-logoff"
-                  placeholder="Select Language"
+                <div
+                  class="sc-Axmtr jzhOwR"
                 >
-                  <option
-                    value="option1"
+                  <select
+                    class="sc-AxhCb clCjoe overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
+                    data-testid="Select"
+                    name="auto-logoff"
                   >
-                    Option 1
-                  </option>
-                  <option
-                    value="option2"
+                    <option
+                      disabled=""
+                      selected=""
+                      value=""
+                    >
+                      Select Language
+                    </option>
+                    <option
+                      value="option1"
+                    >
+                      Option 1
+                    </option>
+                    <option
+                      value="option2"
+                    >
+                      Option 2
+                    </option>
+                    <option
+                      value="option3"
+                    >
+                      Option 3
+                    </option>
+                  </select>
+                  <div
+                    class="sc-AxhUy sc-AxheI bSLhdh text-theme-neutral-dark pointer-events-none w-12 text-lg"
                   >
-                    Option 2
-                  </option>
-                  <option
-                    value="option3"
-                  >
-                    Option 3
-                  </option>
-                </select>
+                    <div
+                      class="sc-AxjAm cpczEI"
+                      height="1em"
+                      width="1em"
+                    >
+                      <div>
+                        <div>
+                          <div
+                            data-src="chevron-down.svg"
+                            src=""
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </li>
           </ul>
