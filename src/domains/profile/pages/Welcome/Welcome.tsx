@@ -20,15 +20,13 @@ const Welcome = injectIntl(({ intl: { formatMessage }, profiles }: WelcomeProps)
 		<div className="w-full h-full">
 			<NavBar />
 
-			<div className="container px-4 mx-auto text-center sm:px-6 lg:px-0">
-				<h1 className="text-2xl font-bold mb-8 md:text-3xl lg:text-4xl">
-					{formatMessage({ id: "COMMON_WELCOME" })}
-				</h1>
+			<div className="container mx-auto text-center px-4 sm:px-6 lg:px-0">
+				<h1 className="mb-8 font-bold">{formatMessage({ id: "COMMON_WELCOME" })}</h1>
 				<div className="mx-auto w-full lg:w-4/5 xl:w-2/3">
 					<img src={profileAssets.OnboardingBanner} alt="Onboarding Banner" />
 				</div>
 
-				<div className="mx-auto max-w-lg md:max-w-xl my-8">
+				<div className="max-w-lg mx-auto md:max-w-xl my-8">
 					{profiles.length > 0 && (
 						<>
 							<h2 className="mx-4 text-xl font-bold md:text-2xl">Select Profile</h2>

@@ -74,18 +74,22 @@ exports[`Application root should render without crashing 1`] = `
           onError={[Function]}
           textComponent={Symbol(react.fragment)}
         >
-          <Switch>
-            <Route
-              exact={true}
-              path="/"
-              render={[Function]}
-            />
-            <Route
-              exact={true}
-              path="/profile/create"
-              render={[Function]}
-            />
-          </Switch>
+          <main
+            className=""
+          >
+            <Switch>
+              <Route
+                exact={true}
+                path="/"
+                render={[Function]}
+              />
+              <Route
+                exact={true}
+                path="/profile/create"
+                render={[Function]}
+              />
+            </Switch>
+          </main>
         </IntlProvider>
       </HashRouter>,
       <div

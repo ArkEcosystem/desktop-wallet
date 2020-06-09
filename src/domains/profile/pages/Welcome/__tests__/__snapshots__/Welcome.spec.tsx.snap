@@ -31,10 +31,10 @@ exports[`Welcome should render 1`] = `
       </div>
     </nav>
     <div
-      class="container px-4 mx-auto text-center sm:px-6 lg:px-0"
+      class="container mx-auto text-center px-4 sm:px-6 lg:px-0"
     >
       <h1
-        class="text-2xl font-bold mb-8 md:text-3xl lg:text-4xl"
+        class="mb-8 font-bold"
       >
         Welcome to ARK
       </h1>
@@ -47,7 +47,7 @@ exports[`Welcome should render 1`] = `
         />
       </div>
       <div
-        class="mx-auto max-w-lg md:max-w-xl my-8"
+        class="max-w-lg mx-auto md:max-w-xl my-8"
       >
         <h2
           class="mx-4 text-xl font-bold md:text-2xl"

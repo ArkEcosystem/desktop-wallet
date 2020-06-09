@@ -5,7 +5,7 @@ import { getStyles } from "./style";
 type ButtonProps = {
 	color?: "primary" | "success" | "danger" | "warning" | "neutral";
 	variant?: "solid" | "plain" | "outline";
-	size?: "small" | "default" | "large";
+	size?: "small" | "default" | "large" | "icon";
 } & React.ButtonHTMLAttributes<any>;
 
 export const Button = styled.button<ButtonProps>(getStyles);

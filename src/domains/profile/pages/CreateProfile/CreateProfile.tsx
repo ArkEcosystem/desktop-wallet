@@ -53,7 +53,7 @@ const CreateProfile = injectIntl(({ intl: { formatMessage }, onSubmit }: Props) 
 
 			<div className="container mx-auto">
 				<div className="mx-auto my-8 md:w-3/4 lg:w-3/5 xl:w-1/2">
-					<h1 className="mx-4 text-2xl font-bold md:text-4xl md:mx-8 xl:mx-16">Create Profile</h1>
+					<h1 className="mx-4 md:mx-8 xl:mx-16">Create Profile</h1>
 					<div className="mx-4 mt-2 text-theme-neutral-dark md:mx-8 xl:mx-16">
 						Create a new Profile or login with your MarketSquare account to get started.
 					</div>
