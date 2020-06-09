@@ -11,14 +11,14 @@ type Props = {
 	as?: React.ElementType;
 	children?: React.ReactNode;
 	onSelect?: any;
-	options?: Option[];
+	options?: any;
 	toggleIcon: string;
 };
 
 /*
  * Dropdown options list
  */
-const renderOptions = (options: Option[], onSelect: any) => (
+const renderOptions = (options: any[], onSelect: any) => (
 	<ul data-testid="dropdown__options">
 		{options.map((option: Option, key: number) => (
 			<li
