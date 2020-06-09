@@ -3,7 +3,6 @@ import React from "react";
 // UI Elements
 import { Card } from "app/components/Card";
 import { Dropdown } from "app/components/Dropdown";
-import { Icon } from "app/components/Icon";
 
 type Props = {
 	avatar: string;
