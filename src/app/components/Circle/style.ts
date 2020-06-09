@@ -1,6 +1,6 @@
 import tw, { css } from "twin.macro";
 
-const defaultStyle = (noShadow) => [
+const defaultStyle = (noShadow: boolean) => [
 	tw`rounded-full inline-flex items-center justify-center border-2 align-middle bg-theme-background`,
 	!noShadow &&
 		css`
@@ -32,6 +32,6 @@ const getAvatarCss = (avatarId: any): any => {
 	];
 };
 
-export const getStyles = ({ size, noShadow, avatarId }: { size?: string; avatarId?: string }) => {
+export const getStyles = ({ size, noShadow, avatarId }: { size?: string; avatarId?: string; noShadow?: boolean }) => {
 	return [...defaultStyle(noShadow), getSize(size!), ...getAvatarCss(avatarId)];
 };
