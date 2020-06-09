@@ -3,4 +3,4 @@ import { SignMessage } from "./SignMessage";
 
 export default { title: "Components / Sign Message" };
 
-export const Default = () => <SignMessage />;
+export const Default = () => <SignMessage signatoryAddress="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />;
