@@ -11,6 +11,10 @@ import msq from "./msq.svg";
 import qrcode from "./qrcode.svg";
 import peer from "./peer.svg";
 import plugin from "./plugin.svg";
+import eyeOff from "./eye-off.svg";
+import eye from "./eye.svg";
+import chevronDown from "./chevron-down.svg";
+import checkmark from "./checkmark.svg";
 import settings from "./settings.svg";
 import upload from "./upload.svg";
 
@@ -28,6 +32,10 @@ export const SvgCollection: any = {
 	qrcode,
 	peer,
 	plugin,
-	settings,
-	upload,
+	eyeOff,
+	eye,
+	chevronDown,
+	checkmark,
+  settings,
+  upload,
 };

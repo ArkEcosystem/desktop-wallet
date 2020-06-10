@@ -24,26 +24,9 @@ describe("Tabs", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should override the active index", () => {
-		const { container, asFragment, getByTestId } = render(
-			<Tabs>
-				<TabPanel tabId={1} overrideActiveIndex={2}>
-					1
-				</TabPanel>
-				<TabPanel tabId={2} overrideActiveIndex={2}>
-					2
-				</TabPanel>
-			</Tabs>,
-		);
-
-		expect(container).toBeTruthy();
-		expect(getByTestId("tab-pabel__active-panel")).toHaveTextContent("2");
-		expect(asFragment()).toMatchSnapshot();
-	});
-
 	it("should react to use effect call", () => {
 		const { container, asFragment, getByTestId } = render(
-			<Tabs initialId={2}>
+			<Tabs activeId={2}>
 				<TabList>
 					<Tab tabId={1}>First</Tab>
 					<Tab tabId={2}>Second</Tab>

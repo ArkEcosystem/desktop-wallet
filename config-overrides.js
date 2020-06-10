@@ -6,4 +6,10 @@ module.exports = override(
 		require("tailwindcss")("./src/tailwind.config.js"),
 		require("autoprefixer"),
 	]),
+	(config) => {
+		config.node = {
+			fs: "empty",
+		};
+		return config;
+	},
 );
