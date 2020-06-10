@@ -2,28 +2,21 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { HashRouter } from "react-router-dom";
 import { renderRoutes } from "react-router-config";
-import { IntlProvider } from "react-intl";
-
+import { I18nextProvider } from "react-i18next";
 // i18n
-import { locales } from "./i18n/locales";
+import i18n from "./app/i18n";
 // Routes
 import { routes } from "./router";
 // Styles
 import "./styles/app.css";
 
-const locale = "en-US";
-
 ReactDOM.render(
 	<HashRouter>
-		<IntlProvider
-			locale={locale}
-			// @ts-ignore
-			messages={locales["en-US"].messages}
-		>
+		<I18nextProvider i18n={i18n}>
 			<main className={process.env.NODE_ENV === "development" ? "debug-screens" : ""}>
 				{renderRoutes(routes)}
 			</main>
-		</IntlProvider>
+		</I18nextProvider>
 	</HashRouter>,
 	document.getElementById("root"),
 );
