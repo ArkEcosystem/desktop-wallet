@@ -63,29 +63,40 @@ exports[`Welcome should render 1`] = `
           class="mt-6 mb-8"
         >
           <div
-            class="sc-AxiKw kcQTnN"
+            class="sc-AxhCb bRWSdR"
           >
             <div
               class="relative px-6 sm:flex sm:items-center py-4"
             >
-              <button
+              <div
                 class="absolute top-0 -mt-2 -mr-4 right-0 flex items-center justify-center w-6 h-6 p-1 mt-3"
               >
                 <div
-                  class="sc-AxhCb fxrKLH"
+                  class="sc-AxiKw dzBdqj"
                   height="1em"
                   width="1em"
                 >
-                  <div>
-                    <div>
-                      <div
-                        data-src="settings.svg"
-                        src=""
-                      />
+                  <button
+                    class="outline-none focus:outline-none float-right"
+                    data-testid="dropdown__toggle"
+                  >
+                    <div
+                      class="sc-AxhCb VoPpj"
+                      height="20"
+                      width="20"
+                    >
+                      <div>
+                        <div>
+                          <div
+                            data-src="settings.svg"
+                            src=""
+                          />
+                        </div>
+                      </div>
                     </div>
-                  </div>
+                  </button>
                 </div>
-              </button>
+              </div>
               <div
                 class="flex flex-row justify-between w-full"
               >
@@ -154,14 +165,32 @@ exports[`Welcome should render 1`] = `
           class="flex flex-col md:flex-row"
         >
           <button
-            class="sc-AxjAm gYunbo button-primary w-full mr-2"
+            class="sc-AxjAm gYunbo flex justify-center items-center w-full mr-2"
             color="primary"
             type="button"
           >
-            Sign in to MarketSquare
+            <div
+              class="sc-AxiKw dklFyP"
+              height="20"
+              width="20"
+            >
+              <div>
+                <div>
+                  <div
+                    data-src="msq.svg"
+                    src=""
+                  />
+                </div>
+              </div>
+            </div>
+            <span
+              class="ml-2"
+            >
+              Sign in to MarketSquare
+            </span>
           </button>
           <button
-            class="sc-AxjAm GWdpI button-secondary w-full mt-2 md:mt-0"
+            class="sc-AxjAm GWdpI w-full mt-2 md:mt-0"
             color="primary"
             type="button"
           >

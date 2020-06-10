@@ -54,8 +54,8 @@ const ImportWallet = ({ networks, onSubmit }: Props) => {
 	};
 
 	return (
-		<Tabs initialId={1}>
-			<TabPanel tabId={1} overrideActiveIndex={activeIndex}>
+		<Tabs activeId={activeIndex}>
+			<TabPanel tabId={1}>
 				<div className="flex justify-center w-full">
 					<div className="w-2/4">
 						<StepIndicator size={2} activeIndex={activeIndex} />
@@ -101,7 +101,7 @@ const ImportWallet = ({ networks, onSubmit }: Props) => {
 				</div>
 			</TabPanel>
 
-			<TabPanel tabId={2} overrideActiveIndex={activeIndex}>
+			<TabPanel tabId={2}>
 				<div className="flex justify-center w-full">
 					<div className="w-2/4">
 						<StepIndicator size={2} activeIndex={activeIndex} />

@@ -1,5 +1,5 @@
 import React from "react";
-import { Modal } from "./Modal";
+import { Modal } from "./";
 import { Button } from "app/components/Button";
 import { withKnobs, boolean, text } from "@storybook/addon-knobs";
 
@@ -13,7 +13,7 @@ export const Default = () => (
 		title={text("Title", "Title")}
 		description={text("Description", "Description")}
 		isOpen={boolean("Is Open", true)}
-		onClick={() => alert("closed")}
+		onClose={() => alert("closed")}
 	>
 		<div>{text("Content", "Modal Content")}</div>
 

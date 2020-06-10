@@ -1,19 +1,31 @@
 import React from "react";
-import { Card } from "app/components/Card";
-import { Icon } from "app/components/Icon";
 
-type Props = {
-	avatar: string;
-	name: string;
-	balance: string;
+// UI Elements
+import { Card } from "app/components/Card";
+import { Dropdown } from "app/components/Dropdown";
+
+interface ISettingsOptions {
+	label: string;
+	value: string | number;
+}
+
+type ProfileCardProps = {
+	avatar?: string;
+	name?: string;
+	balance?: string;
+	actions?: ISettingsOptions[];
+	onSelect?: any;
+	showSettings?: boolean;
 };
 
-export const ProfileCard = ({ avatar, name, balance }: Props) => (
+export const ProfileCard = ({ avatar, name, balance, actions, onSelect, showSettings }: ProfileCardProps) => (
 	<Card>
 		<div className="relative px-6 sm:flex sm:items-center py-4">
-			<button className="absolute top-0 -mt-2 -mr-4 right-0 flex items-center justify-center w-6 h-6 p-1 mt-3">
-				<Icon name="settings" />
-			</button>
+			{showSettings && (
+				<div className="absolute top-0 -mt-2 -mr-4 right-0 flex items-center justify-center w-6 h-6 p-1 mt-3">
+					<Dropdown toggleIcon="settings" options={actions} onSelect={onSelect} />
+				</div>
+			)}
 
 			<div className="flex flex-row justify-between w-full">
 				<div className="flex items-center">
@@ -44,3 +56,7 @@ export const ProfileCard = ({ avatar, name, balance }: Props) => (
 		</div>
 	</Card>
 );
+
+ProfileCard.defaultProps = {
+	showSettings: true,
+};
