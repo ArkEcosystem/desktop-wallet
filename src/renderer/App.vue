@@ -118,7 +118,8 @@ export default {
     isReady: false,
     isUriTransactionOpen: false,
     uriTransactionSchema: {},
-    aliveRouteComponents: []
+    aliveRouteComponents: [],
+    onLineStatus: window.navigator.onLine || false
   }),
 
   keepableRoutes: Object.freeze({
@@ -254,6 +255,13 @@ export default {
     },
     language (value) {
       this.applyPluginLanguage(value)
+    },
+    onLineStatus (connected) {
+      if (connected) {
+        this.$success(this.$t('COMMON.INTERNET_STATUS.WITH_INTERNET_CONNECTION'))
+      } else {
+        this.$error(this.$t('COMMON.INTERNET_STATUS.NO_INTERNET_CONNECTION'))
+      }
     }
   },
 
@@ -284,9 +292,15 @@ export default {
 
   mounted () {
     this.__watchProcessURL()
+    window.addEventListener('online', this.updateOnlineStatus)
+    window.addEventListener('offline', this.updateOnlineStatus)
   },
 
   methods: {
+    updateOnlineStatus (event) {
+      this.onLineStatus = event.type === 'online'
+    },
+
     async loadEssential () {
       // We need to await plugins in order for all plugins to load properly
       try {

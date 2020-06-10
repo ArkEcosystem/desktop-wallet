@@ -28,6 +28,10 @@ export default {
     IS_MARKET_CHART_ENABLED: 'Price chart on the dashboard',
     INITIALIZING: 'Initializing...',
     NO_INTERNET_CONNECTION: 'Initialization is taking longer than expected. Please check your internet connectivity.',
+    INTERNET_STATUS: {
+      NO_INTERNET_CONNECTION: 'No internet connection. Please check your internet connectivity!',
+      WITH_INTERNET_CONNECTION: 'Internet connectivity established!'
+    },
     LANGUAGE: 'Application Language',
     LEDGER: 'Ledger',
     LEDGER_WALLET: 'This is a Ledger wallet',
