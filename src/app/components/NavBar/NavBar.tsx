@@ -1,7 +1,7 @@
 import React from "react";
-import { imagesConfig } from "resources/assets/images";
+import { images } from "app/assets/images";
 
-const commonAssets = imagesConfig.common;
+const commonAssets = images.common;
 
 export const NavBar = () => (
 	<nav className="bg-white shadow-header-smooth relative">

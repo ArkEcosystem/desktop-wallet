@@ -19,7 +19,7 @@ module.exports = function () {
 				adjust_window_size: true,
 				icon_path: isProduction
 					? path.resolve(__dirname, "./static/128x128.png")
-					: path.resolve(__dirname, "../resources/assets/icons/128x128.png"),
+					: path.resolve(__dirname, "../app/assets/icons/128x128.png"),
 				copyright: [
 					`<p style="text-align: center">Distributed under ${packageJson.license} license</p>`,
 					'<p>Flag icons made by <a href="https://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">flaticon.com</a> are licensed by <a href="https://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC 3.0 BY</a></p>',

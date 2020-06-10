@@ -41,10 +41,9 @@ exports[`Welcome should render 1`] = `
       <div
         class="mx-auto w-full lg:w-4/5 xl:w-2/3"
       >
-        <img
-          alt="Onboarding Banner"
-          src="onboarding-banner.svg"
-        />
+        <svg>
+          welcome-banner.svg
+        </svg>
       </div>
       <div
         class="max-w-lg mx-auto md:max-w-xl my-8"

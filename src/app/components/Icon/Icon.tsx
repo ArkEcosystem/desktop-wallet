@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 // Assets
-import { SvgCollection } from "resources/assets/svg";
+import { SvgCollection } from "app/assets/svg";
 
 type Props = {
 	name: string;
