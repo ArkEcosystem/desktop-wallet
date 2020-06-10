@@ -1,0 +1,182 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`VerifyMessage should render 1`] = `<DocumentFragment />`;
+
+exports[`VerifyMessage should render the non verify address content 1`] = `
+<DocumentFragment>
+  <div
+    class="fixed inset-0 z-10 bg-black opacity-50"
+    data-testid="modal__overlay"
+  />
+  <div
+    class="fixed flex flex-col z-10 left-0 right-0 max-w-2xl rounded-xl bg-theme-background mx-auto mt-24 pt-6 pb-8 px-16"
+    data-testid="modal__inner"
+  >
+    <div
+      class="absolute right-0 top-0 mt-4 mr-4"
+    >
+      <button
+        class="sc-AxirZ iBHVQG"
+        color="neutral"
+        type="button"
+      >
+        <div
+          class="sc-AxmLO cgCtOs"
+          height="10"
+          width="10"
+        >
+          <div>
+            <div>
+              <div
+                data-src="cross-slim.svg"
+                src=""
+              />
+            </div>
+          </div>
+        </div>
+      </button>
+    </div>
+    <div
+      class="py-4"
+    >
+      <h2>
+        Verify
+      </h2>
+      <div
+        class="flex-1 overflow-auto"
+      >
+        <div
+          class="text-theme-neutral-500"
+        >
+          To make sure that you are the owner of this wallet, you can pass the check. and this more text.
+        </div>
+        <div
+          class="mt-10"
+        >
+          <div
+            class="flex flex-col border-b border-dashed border-theme-neutral-light pb-5"
+          >
+            <span
+              class="text-base font-bold pb-2"
+            >
+              Verify
+            </span>
+            <div
+              class="flex flex-row justify-between"
+            >
+              <span
+                class="text-sm text-theme-neutral-light w-3/4"
+              >
+                You can verify only text using a JSON public key
+              </span>
+              <div
+                class="-mt-2 mr-1"
+              >
+                <label>
+                  <input
+                    checked=""
+                    class="sc-fzozJi ffhyTJ -mt-3"
+                    data-testid="verify-address__togle"
+                    type="checkbox"
+                  />
+                  <div
+                    class="sc-fzoLsD fiovtd"
+                  >
+                    <span
+                      class="sc-fzpans kxodWr"
+                    />
+                  </div>
+                </label>
+              </div>
+            </div>
+          </div>
+          <form
+            class="space-y-6"
+            data-testid="Form"
+            id="verify-message__form"
+          >
+            <div
+              data-testid="noverify-address__content"
+            >
+              <fieldset
+                class="sc-AxiKw iQzisX mt-10"
+              >
+                <label
+                  class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark pb-2"
+                  data-testid="FormLabel"
+                  for="message-content"
+                  label="Message"
+                >
+                  Message
+                </label>
+                <input
+                  class="sc-AxhCb clCjoe overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+                  data-testid="Input"
+                  name="message-content"
+                  type="text"
+                />
+              </fieldset>
+              <fieldset
+                class="sc-AxiKw iQzisX mt-3"
+              >
+                <label
+                  class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark pb-2"
+                  data-testid="FormLabel"
+                  for="public-key"
+                  label="Public key"
+                >
+                  Public key
+                </label>
+                <input
+                  class="sc-AxhCb clCjoe overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+                  data-testid="Input"
+                  disabled=""
+                  name="public-key"
+                  type="text"
+                  value=""
+                />
+              </fieldset>
+              <fieldset
+                class="sc-AxiKw iQzisX mt-3"
+              >
+                <label
+                  class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark pb-2"
+                  data-testid="FormLabel"
+                  for="signature"
+                  label="Signature"
+                >
+                  Signature
+                </label>
+                <input
+                  class="sc-AxhCb clCjoe overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+                  data-testid="Input"
+                  name="signature"
+                  type="text"
+                />
+              </fieldset>
+            </div>
+            <div
+              class="flex items-center"
+            >
+              <button
+                class="sc-AxirZ hPxmGH"
+                color="primary"
+                type="button"
+              >
+                Cancel
+              </button>
+              <button
+                class="sc-AxirZ jfgHPP ml-5"
+                color="primary"
+                type="button"
+              >
+                Verify
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
