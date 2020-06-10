@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { SignMessage } from "./SignMessage";
 import { Button } from "app/components/Button";
 
-export default { title: "Components / Sign Message" };
+export default { title: "Modals / Sign Message" };
 
 export const Default = () => {
 	const [isOpen, setIsOpen] = useState(false);
