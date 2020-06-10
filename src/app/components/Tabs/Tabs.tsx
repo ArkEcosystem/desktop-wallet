@@ -4,18 +4,22 @@ import { TabContext, useTab, TabId } from "./useTab";
 
 type TabsProps = {
 	children: React.ReactNode;
-	initialId?: TabId;
+	activeId?: TabId;
 	onChange?: (id: TabId) => void;
 };
 
-export function Tabs({ children, initialId, onChange }: TabsProps) {
-	const context = useTab({ initialId });
+export function Tabs({ children, activeId, onChange }: TabsProps) {
+	const context = useTab({ initialId: activeId });
 
 	React.useEffect(() => {
 		if (context.currentId) {
 			onChange?.(context.currentId);
 		}
-	}, [context.currentId, onChange]);
+	}, [context.currentId, onChange, context]);
+
+	React.useEffect(() => {
+		context.setCurrentId(activeId);
+	}, [activeId]);
 
 	return (
 		<TabContext.Provider value={context}>
@@ -27,7 +31,6 @@ export function Tabs({ children, initialId, onChange }: TabsProps) {
 type TabProps = {
 	children: React.ReactNode;
 	tabId: string | number;
-	overrideActiveIndex?: string | number;
 };
 
 const TabButton = styled.button``;
@@ -75,13 +78,11 @@ export const TabList = styled.div`
 type TabPanelProps = {
 	children: React.ReactNode;
 	tabId: string | number;
-	overrideActiveIndex?: string | number;
 };
 
 export const TabPanel = React.forwardRef<HTMLDivElement, TabProps>((props: TabPanelProps, ref) => {
 	const context = React.useContext(TabContext);
-	const overrideIndexIsActive = props.overrideActiveIndex === props.tabId;
-	const isActive = props.overrideActiveIndex ? overrideIndexIsActive : context?.isIdActive(props.tabId);
+	const isActive = context?.isIdActive(props.tabId);
 
 	if (!isActive) {
 		return <></>;

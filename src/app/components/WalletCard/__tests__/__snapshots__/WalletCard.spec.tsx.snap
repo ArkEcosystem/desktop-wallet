@@ -1,0 +1,248 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Formatted Address should render 1`] = `
+<div>
+  <div
+    class="w-64 inline-block undefined"
+  >
+    <div
+      class="sc-AxjAm hsiRAq"
+    >
+      <div>
+        <div
+          class="relative"
+        >
+          <button
+            class="outline-none focus:outline-none float-right"
+            data-testid="dropdown__toggle"
+          >
+            <div
+              class="sc-AxiKw dklFyP"
+              height="20"
+              width="20"
+            >
+              <div>
+                <div>
+                  <div
+                    data-src="settings.svg"
+                    src=""
+                  />
+                </div>
+              </div>
+            </div>
+          </button>
+        </div>
+        <div />
+      </div>
+      <div>
+        <div
+          class="sc-AxirZ kFgwHB border-theme-primary-contrast -mr-2 undefined"
+        />
+        <div
+          class="sc-AxirZ kFgwHB border-theme-primary-contrast"
+        />
+      </div>
+      <div
+        class="mt-4 max-w-12 truncate"
+      />
+      <div
+        class="font-bold text-theme-neutral-800"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Formatted Address should render blank 1`] = `
+<div>
+  <div
+    class="w-64 inline-block undefined"
+  >
+    <div
+      class="sc-AxjAm hsiRAq"
+    >
+      <div>
+        <div
+          class="sc-AxirZ kFgwHB border-theme-primary-contrast -mr-2"
+        />
+        <div
+          class="sc-AxirZ kFgwHB border-theme-primary-contrast"
+        />
+      </div>
+      <div
+        class="mt-4 text-sm text-theme-primary-contrast"
+      >
+        New wallet
+      </div>
+      <div
+        class="mt-1 text-sm text-theme-primary-contrast"
+      >
+        Balance
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Formatted Address should render with wallet data 1`] = `
+<div>
+  <div
+    class="w-64 inline-block undefined"
+  >
+    <div
+      class="sc-AxjAm hsiRAq"
+    >
+      <div>
+        <div
+          class="relative"
+        >
+          <button
+            class="outline-none focus:outline-none float-right"
+            data-testid="dropdown__toggle"
+          >
+            <div
+              class="sc-AxiKw dklFyP"
+              height="20"
+              width="20"
+            >
+              <div>
+                <div>
+                  <div
+                    data-src="settings.svg"
+                    src=""
+                  />
+                </div>
+              </div>
+            </div>
+          </button>
+        </div>
+        <div />
+      </div>
+      <div>
+        <div
+          class="sc-AxirZ kFgwHB border-theme-primary-contrast -mr-2 border-theme-warning-200"
+        >
+          <div
+            class="sc-AxiKw bctdez"
+            height="16"
+            width="16"
+          >
+            <div>
+              <div>
+                <div
+                  data-src="btc.svg"
+                  src=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="sc-AxirZ gaboTh border-theme-primary-contrast"
+        />
+      </div>
+      <div
+        class="mt-4 max-w-12 truncate"
+      >
+        <div
+          class="truncate inline-block"
+        >
+          <span
+            class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 text-sm mr-1"
+          >
+            My wallet
+          </span>
+          <span
+            class="text-theme-neutral-400 font-semibold text-sm"
+          >
+            ASuu...3kqT
+          </span>
+        </div>
+      </div>
+      <div
+        class="font-bold text-theme-neutral-800"
+      >
+        100,000 BTC
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Formatted Address should render with wallet data and optional icon 1`] = `
+<div>
+  <div
+    class="w-64 inline-block undefined"
+  >
+    <div
+      class="sc-AxjAm hsiRAq"
+    >
+      <div>
+        <div
+          class="relative"
+        >
+          <button
+            class="outline-none focus:outline-none float-right"
+            data-testid="dropdown__toggle"
+          >
+            <div
+              class="sc-AxiKw dklFyP"
+              height="20"
+              width="20"
+            >
+              <div />
+            </div>
+          </button>
+        </div>
+        <div />
+      </div>
+      <div>
+        <div
+          class="sc-AxirZ kFgwHB border-theme-primary-contrast -mr-2 border-theme-warning-200"
+        >
+          <div
+            class="sc-AxiKw bctdez"
+            height="16"
+            width="16"
+          >
+            <div>
+              <div>
+                <div
+                  data-src="btc.svg"
+                  src=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="sc-AxirZ gaboTh border-theme-primary-contrast"
+        />
+      </div>
+      <div
+        class="mt-4 max-w-12 truncate"
+      >
+        <div
+          class="truncate inline-block"
+        >
+          <span
+            class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 text-sm mr-1"
+          >
+            My wallet
+          </span>
+          <span
+            class="text-theme-neutral-400 font-semibold text-sm"
+          >
+            ASuu...3kqT
+          </span>
+        </div>
+      </div>
+      <div
+        class="font-bold text-theme-neutral-800"
+      >
+        100,000 BTC
+      </div>
+    </div>
+  </div>
+</div>
+`;
