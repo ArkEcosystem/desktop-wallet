@@ -75,10 +75,12 @@
     tiny-glob "^0.2.6"
     wif "^2.0.6"
 
-"@arkecosystem/ledger-transport@^1.0.5":
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/@arkecosystem/ledger-transport/-/ledger-transport-1.0.5.tgz#7b3a1186709d7bfeb680fe428223a7a402bb22cd"
-  integrity sha512-xag/HeOrkiY3nGnvF6SpP5gEBjXbx6lKjjR+RsQU4bqIfJKhxQmaOw+mGKxwFp/lJ5uEyObn1SNbRnMu0HLvsg==
+"@arkecosystem/ledger-transport@^1.1.2":
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/ledger-transport/-/ledger-transport-1.1.2.tgz#bac586bbbe6efaa103f1fc9a37deed364f15832d"
+  integrity sha512-c2jKvdxKEucCCOq3E7KXv4gYj7r12YOzYL7+gIpyT1BlwRfUZcZTFIHYSR1t/LE01ISencJkt1eXC/K3wfkQ2A==
+  dependencies:
+    "@ledgerhq/errors" "^5.13.1"
 
 "@arkecosystem/peers@^0.3.0":
   version "0.3.0"
@@ -1206,6 +1208,11 @@
     "@ledgerhq/errors" "^5.7.0"
     "@ledgerhq/logs" "^5.6.0"
     rxjs "^6.5.4"
+
+"@ledgerhq/errors@^5.13.1":
+  version "5.15.0"
+  resolved "https://registry.yarnpkg.com/@ledgerhq/errors/-/errors-5.15.0.tgz#e5d5b5ad48fc07f6308b78b065242e158bc044a2"
+  integrity sha512-ZlLhR7qaChPgEbvcqOptRepWGm8VhhwOM6kC1gx3WErutbtaOjUX8lLA4ButWFU2f+xTl2rS/5c86wC7qGqGXQ==
 
 "@ledgerhq/errors@^5.7.0":
   version "5.7.0"

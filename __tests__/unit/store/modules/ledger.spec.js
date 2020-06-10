@@ -249,6 +249,37 @@ describe('ledger store module', () => {
     })
   })
 
+  describe('signTransactionWithSchnorr', () => {
+    it('should call ledger service', async () => {
+      await store.dispatch('ledger/connect')
+      await store.dispatch('ledger/setSlip44', 1234)
+
+      const spy = jest.spyOn(ledgerService, 'signTransactionWithSchnorr').mockReturnValue('SIGNATURE')
+
+      const response = await store.dispatch('ledger/signTransactionWithSchnorr', {
+        accountIndex: 1,
+        transactionBytes: 'abc'
+      })
+
+      expect(response).toBe('SIGNATURE')
+      expect(spy).toHaveBeenNthCalledWith(1, '44\'/1234\'/1\'/0/0', 'abc')
+
+      spy.mockRestore()
+    })
+
+    it('should fail with invalid accountIndex', async () => {
+      await expect(store.dispatch('ledger/signTransactionWithSchnorr')).rejects.toThrow(/.*accountIndex must be a Number$/)
+    })
+
+    it('should fail when not connected', async () => {
+      await disconnectLedger()
+      await expect(store.dispatch('ledger/signTransactionWithSchnorr', {
+        accountIndex: 1,
+        transactionBytes: 'abc'
+      })).rejects.toThrow(/.*Ledger not connected$/)
+    })
+  })
+
   describe('signMessage', () => {
     it('should call ledger service', async () => {
       await store.dispatch('ledger/connect')
@@ -276,6 +307,37 @@ describe('ledger store module', () => {
       await expect(store.dispatch('ledger/signMessage', {
         accountIndex: 1,
         messageBytes: Buffer.from('abc', 'utf-8')
+      })).rejects.toThrow(/.*Ledger not connected$/)
+    })
+  })
+
+  describe('signMessageWithSchnorr', () => {
+    it('should call ledger service', async () => {
+      await store.dispatch('ledger/connect')
+      await store.dispatch('ledger/setSlip44', 1234)
+
+      const spy = jest.spyOn(ledgerService, 'signMessageWithSchnorr').mockReturnValue('SIGNATURE')
+
+      const response = await store.dispatch('ledger/signMessageWithSchnorr', {
+        accountIndex: 1,
+        messageBytes: 'abc'
+      })
+
+      expect(response).toBe('SIGNATURE')
+      expect(spy).toHaveBeenNthCalledWith(1, '44\'/1234\'/1\'/0/0', 'abc')
+
+      spy.mockRestore()
+    })
+
+    it('should fail with invalid accountIndex', async () => {
+      await expect(store.dispatch('ledger/signMessageWithSchnorr')).rejects.toThrow(/.*accountIndex must be a Number$/)
+    })
+
+    it('should fail when not connected', async () => {
+      await disconnectLedger()
+      await expect(store.dispatch('ledger/signMessageWithSchnorr', {
+        accountIndex: 1,
+        messageBytes: 'abc'
       })).rejects.toThrow(/.*Ledger not connected$/)
     })
   })
