@@ -9,11 +9,11 @@ exports[`Modal should render a modal with content 1`] = `
     data-testid="modal__overlay"
   />
   <div
-    class="fixed flex flex-col z-10 left-0 right-0 max-w-2xl rounded-xl bg-theme-background mx-auto mt-24 pt-6 pb-8 px-16"
+    class="fixed left-0 right-0 z-10 flex flex-col max-w-2xl px-16 pt-6 pb-8 mx-auto mt-24 rounded-xl bg-theme-background"
     data-testid="modal__inner"
   >
     <div
-      class="absolute right-0 top-0 mt-4 mr-4"
+      class="absolute top-0 right-0 mt-4 mr-4"
     >
       <button
         class="sc-AxjAm jZZsoN"
@@ -43,7 +43,7 @@ exports[`Modal should render a modal with content 1`] = `
         ark
       </h2>
       <div
-        class="flex-1 overflow-auto"
+        class="flex-1"
       >
         This is the Modal content
       </div>
@@ -59,11 +59,11 @@ exports[`Modal should render a modal with description 1`] = `
     data-testid="modal__overlay"
   />
   <div
-    class="fixed flex flex-col z-10 left-0 right-0 max-w-2xl rounded-xl bg-theme-background mx-auto mt-24 pt-6 pb-8 px-16"
+    class="fixed left-0 right-0 z-10 flex flex-col max-w-2xl px-16 pt-6 pb-8 mx-auto mt-24 rounded-xl bg-theme-background"
     data-testid="modal__inner"
   >
     <div
-      class="absolute right-0 top-0 mt-4 mr-4"
+      class="absolute top-0 right-0 mt-4 mr-4"
     >
       <button
         class="sc-AxjAm jZZsoN"
@@ -93,7 +93,7 @@ exports[`Modal should render a modal with description 1`] = `
         ark
       </h2>
       <div
-        class="flex-1 overflow-auto"
+        class="flex-1"
       >
         <div
           class="text-theme-neutral-500"
@@ -113,11 +113,11 @@ exports[`Modal should render a modal with overlay 1`] = `
     data-testid="modal__overlay"
   />
   <div
-    class="fixed flex flex-col z-10 left-0 right-0 max-w-2xl rounded-xl bg-theme-background mx-auto mt-24 pt-6 pb-8 px-16"
+    class="fixed left-0 right-0 z-10 flex flex-col max-w-2xl px-16 pt-6 pb-8 mx-auto mt-24 rounded-xl bg-theme-background"
     data-testid="modal__inner"
   >
     <div
-      class="absolute right-0 top-0 mt-4 mr-4"
+      class="absolute top-0 right-0 mt-4 mr-4"
     >
       <button
         class="sc-AxjAm jZZsoN"
@@ -147,7 +147,7 @@ exports[`Modal should render a modal with overlay 1`] = `
         ark
       </h2>
       <div
-        class="flex-1 overflow-auto"
+        class="flex-1"
       >
         This is the Modal content
       </div>

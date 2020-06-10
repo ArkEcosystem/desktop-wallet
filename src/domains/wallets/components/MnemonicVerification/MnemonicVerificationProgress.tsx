@@ -27,7 +27,13 @@ const Tab = ({ activeTab, tabId, wordPosition }: TabProps) => {
 	);
 
 	return (
-		<TabStyled disabled data-testid="MnemonicVerificationProgress__Tab" isActive={isActive} isComplete={isComplete} isPending={isPending}>
+		<TabStyled
+			disabled
+			data-testid="MnemonicVerificationProgress__Tab"
+			isActive={isActive}
+			isComplete={isComplete}
+			isPending={isPending}
+		>
 			{isComplete ? (
 				<span className="text-2xl text-theme-success">
 					<Icon name="checkmark" />

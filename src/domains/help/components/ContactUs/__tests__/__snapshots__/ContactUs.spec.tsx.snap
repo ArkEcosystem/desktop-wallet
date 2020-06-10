@@ -1,0 +1,279 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ContactUs should not render if not open 1`] = `<DocumentFragment />`;
+
+exports[`ContactUs should render a modal 1`] = `
+<DocumentFragment>
+  <div
+    class="fixed inset-0 z-10 bg-black opacity-50"
+    data-testid="modal__overlay"
+  />
+  <div
+    class="fixed left-0 right-0 z-10 flex flex-col max-w-2xl px-16 pt-6 pb-8 mx-auto mt-24 rounded-xl bg-theme-background"
+    data-testid="modal__inner"
+  >
+    <div
+      class="absolute top-0 right-0 mt-4 mr-4"
+    >
+      <button
+        class="sc-AxjAm jZZsoN"
+        color="neutral"
+        type="button"
+      >
+        <div
+          class="sc-AxirZ fttODj"
+          height="10"
+          width="10"
+        >
+          <div>
+            <div>
+              <div
+                data-src="cross-slim.svg"
+                src=""
+              />
+            </div>
+          </div>
+        </div>
+      </button>
+    </div>
+    <div
+      class="py-4"
+    >
+      <h2>
+        HELP.MODAL_CONTACT_US.TITLE
+      </h2>
+      <div
+        class="flex-1"
+      >
+        <div
+          class="text-theme-neutral-500"
+        >
+          HELP.MODAL_CONTACT_US.DESCRIPTION
+        </div>
+        <div
+          class="flex border-b border-gray-500 text-black mt-2 mb-8 -mx-16 px-16 pb-8"
+        >
+          <a
+            class="rounded-full mr-2 hover:bg-theme-neutral-300"
+            href="https://twitter.ark.io"
+          >
+            <div
+              class="sc-AxiKw jZxIMT border-black hover:bg-transparent"
+            >
+              <div
+                class="sc-AxirZ iQaTP"
+                height="1em"
+                width="1em"
+              >
+                <div>
+                  <div>
+                    <div
+                      data-src="twitter.svg"
+                      src=""
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a
+            class="rounded-full mr-2 hover:bg-theme-neutral-300"
+            href="https://slack.ark.io"
+          >
+            <div
+              class="sc-AxiKw jZxIMT border-black hover:bg-transparent"
+            >
+              <div
+                class="sc-AxirZ iQaTP"
+                height="1em"
+                width="1em"
+              >
+                <div>
+                  <div>
+                    <div
+                      data-src="slack.svg"
+                      src=""
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a
+            class="rounded-full mr-2 hover:bg-theme-neutral-300"
+            href="https://discord.ark.io/"
+          >
+            <div
+              class="sc-AxiKw jZxIMT border-black hover:bg-transparent"
+            >
+              <div
+                class="sc-AxirZ iQaTP"
+                height="1em"
+                width="1em"
+              >
+                <div>
+                  <div>
+                    <div
+                      data-src="discord.svg"
+                      src=""
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a
+            class="rounded-full hover:bg-theme-neutral-300"
+            href="mailto:info@ark.io"
+          >
+            <div
+              class="sc-AxiKw jZxIMT border-black hover:bg-transparent"
+            >
+              <div
+                class="sc-AxirZ iQaTP"
+                height="1em"
+                width="1em"
+              >
+                <div>
+                  <div>
+                    <div
+                      data-src="send.svg"
+                      src=""
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <form
+          class="space-y-6"
+          data-testid="Form"
+        >
+          <fieldset
+            class="sc-AxhCb ckQmOL flex flex-col space-y-2"
+          >
+            <label
+              class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark pt-2"
+              data-testid="FormLabel"
+              for="name"
+            >
+              HELP.MODAL_CONTACT_US.FIELD_NAME
+            </label>
+            <input
+              class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+              data-testid="Input"
+              name="name"
+            />
+          </fieldset>
+          <fieldset
+            class="sc-AxhCb ckQmOL flex flex-col space-y-2"
+          >
+            <label
+              class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark pt-2"
+              data-testid="FormLabel"
+              for="email"
+            >
+              HELP.MODAL_CONTACT_US.FIELD_EMAIL
+            </label>
+            <input
+              class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+              data-testid="Input"
+              name="email"
+            />
+          </fieldset>
+          <fieldset
+            class="sc-AxhCb ckQmOL flex flex-col space-y-2"
+          >
+            <label
+              class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark pt-2"
+              data-testid="FormLabel"
+              for="subject"
+            >
+              HELP.MODAL_CONTACT_US.FIELD_SUBJECT
+            </label>
+            <div
+              class="sc-AxmLO kuiknc"
+            >
+              <select
+                class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
+                data-testid="Select"
+                name="subject"
+              >
+                <option
+                  selected=""
+                  value=""
+                >
+                  Select
+                </option>
+                <option
+                  value="security"
+                >
+                  HELP.MODAL_CONTACT_US.SUBJECT_OPTION.SECURITY
+                </option>
+                <option
+                  value="other"
+                >
+                  HELP.MODAL_CONTACT_US.SUBJECT_OPTION.OTHER
+                </option>
+              </select>
+              <div
+                class="sc-AxgMl sc-Axmtr cPxyjO text-theme-neutral-dark pointer-events-none w-12 text-lg"
+              >
+                <div
+                  class="sc-AxirZ iQaTP"
+                  height="1em"
+                  width="1em"
+                >
+                  <div>
+                    <div>
+                      <div
+                        data-src="chevron-down.svg"
+                        src=""
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+          <fieldset
+            class="sc-AxhCb ckQmOL flex flex-col space-y-2"
+          >
+            <label
+              class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark pt-2"
+              data-testid="FormLabel"
+              for="message"
+            >
+              HELP.MODAL_CONTACT_US.FIELD_MESSAGE
+            </label>
+            <textarea
+              class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+              data-testid="Textarea"
+              name="message"
+            />
+          </fieldset>
+          <div
+            class="mt-4"
+          >
+            <button
+              class="sc-AxjAm GWdpI mr-2"
+              color="primary"
+              type="button"
+            >
+              Cancel
+            </button>
+            <button
+              class="sc-AxjAm gYunbo"
+              color="primary"
+              type="submit"
+            >
+              Send
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

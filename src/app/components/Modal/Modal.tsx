@@ -9,6 +9,7 @@ type ModalProps = {
 	description?: string;
 	isOpen: boolean;
 	onClose?: any;
+	onClick?: any;
 };
 
 type ModalContentProps = {
@@ -22,9 +23,9 @@ const ModalContent = (props: ModalContentProps) => {
 	return (
 		<div
 			data-testid="modal__inner"
-			className="fixed flex flex-col z-10 left-0 right-0 max-w-2xl rounded-xl bg-theme-background mx-auto mt-24 pt-6 pb-8 px-16"
+			className="fixed left-0 right-0 z-10 flex flex-col max-w-2xl px-16 pt-6 pb-8 mx-auto mt-24 rounded-xl bg-theme-background"
 		>
-			<div className="absolute right-0 top-0 mt-4 mr-4">
+			<div className="absolute top-0 right-0 mt-4 mr-4">
 				<Button color="neutral" variant="plain" size="icon" onClick={props.onClose}>
 					<Icon name="crossSlim" width={10} height={10} />
 				</Button>
@@ -33,7 +34,7 @@ const ModalContent = (props: ModalContentProps) => {
 			<div className="py-4">
 				<h2>{props.title}</h2>
 
-				<div className="flex-1 overflow-auto">
+				<div className="flex-1">
 					{props.description ? <div className="text-theme-neutral-500">{props.description}</div> : ""}
 
 					{props.children}
