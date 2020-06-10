@@ -1,0 +1,90 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ContactUs should not render if not open 1`] = `<DocumentFragment />`;
+
+exports[`ContactUs should render a modal 1`] = `
+<DocumentFragment>
+  <div
+    class="fixed inset-0 z-10 bg-black opacity-50"
+    data-testid="modal__overlay"
+  />
+  <div
+    class="fixed left-0 right-0 z-10 flex flex-col max-w-2xl px-16 pt-6 pb-8 mx-auto mt-24 rounded-xl bg-theme-background"
+    data-testid="modal__inner"
+  >
+    <div
+      class="absolute top-0 right-0 mt-4 mr-4"
+    >
+      <button
+        class="sc-AxjAm jZZsoN"
+        color="neutral"
+        type="button"
+      >
+        <div
+          class="sc-AxirZ fttODj"
+          height="10"
+          width="10"
+        >
+          <svg>
+            cross-slim.svg
+          </svg>
+        </div>
+      </button>
+    </div>
+    <div
+      class="py-4"
+    >
+      <h2>
+        Profile Created!
+      </h2>
+      <div
+        class="flex-1"
+      >
+        <div
+          class="container"
+        >
+          <div
+            class="my-10"
+          >
+            <svg>
+              profile-created-banner.svg
+            </svg>
+          </div>
+          <div
+            class="text-center mb-6"
+          >
+            <p
+              class="text-sm text-theme-neutral-dark mb-1 md:text-base"
+            >
+              If you are new to the ARK Desktop Wallet, view our tutorial to get started.
+            </p>
+            <p
+              class="text-sm text-theme-neutral-dark md:text-base"
+            >
+              If not, you can skip the tutorial to go directly to your portfolio.
+            </p>
+          </div>
+          <div
+            class="flex flex-col justify-center sm:flex-row"
+          >
+            <button
+              class="sc-AxjAm gYunbo mr-2"
+              color="primary"
+              type="button"
+            >
+              Start Tutorial
+            </button>
+            <button
+              class="sc-AxjAm GWdpI mt-2 sm:mt-0"
+              color="primary"
+              type="button"
+            >
+              Skip Tutorial
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
