@@ -18,7 +18,7 @@ type CreateProfileProps = {
 
 export const CreateProfile = ({ onSubmit }: CreateProfileProps) => {
 	const form = useForm();
-	const { register, errors } = form;
+	const { register } = form;
 
 	const personalDetails = [
 		{
