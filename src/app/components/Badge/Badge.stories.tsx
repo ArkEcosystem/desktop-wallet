@@ -71,24 +71,24 @@ export const WithIcon = () => {
 		<div>
 			<div className="mt-3 mb-10">
 				<Circle className="relative border-theme-success-500 text-theme-success-500">
-					<Icon name="ark"></Icon>
+					<Icon name="Ark"></Icon>
 					<Badge
 						className="-bottom-1 -right-4 bg-theme-success-500 text-theme-success-contrast"
-						icon="checkmark"
+						icon="Checkmark"
 					></Badge>
 				</Circle>
 				<Circle className="relative border-theme-success-500 text-theme-success-500 ml-5">
-					<Icon name="eth"></Icon>
+					<Icon name="Eth"></Icon>
 					<Badge
 						className="bg-theme-success-500 -bottom-1 -right-4 text-theme-success-contrast"
-						icon="checkmark"
+						icon="Checkmark"
 					></Badge>
 				</Circle>
 				<Circle className="relative border-theme-success-500 text-theme-success-500 ml-5">
-					<Icon name="btc"></Icon>
+					<Icon name="Btc"></Icon>
 					<Badge
 						className="bg-theme-success-500 -bottom-1 -right-4 text-theme-success-contrast"
-						icon="checkmark"
+						icon="Checkmark"
 					></Badge>
 				</Circle>
 				<Circle className="relative border-theme-neutral-200 ml-5">
@@ -103,7 +103,7 @@ export const WithIcon = () => {
 					<div className="text-xs text-theme-primary-500">All</div>
 					<Badge
 						className="border-theme-primary-100 -bottom-1 -right-4 text-theme-primary-500"
-						icon="chevronDown"
+						icon="ChevronDown"
 					></Badge>
 				</Circle>
 			</div>
