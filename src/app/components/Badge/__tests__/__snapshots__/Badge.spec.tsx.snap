@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Badge should render 1`] = `
+<div>
+  <span
+    class="style__Wrapper-ik37et-0 chXxec flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent undefined"
+  >
+    <span />
+  </span>
+</div>
+`;
+
+exports[`Badge should render with icon 1`] = `
+<div>
+  <span
+    class="style__Wrapper-ik37et-0 chXxec flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent undefined"
+  >
+    <div
+      class="sc-AxjAm HWmvM"
+      height="12"
+      width="12"
+    >
+      <div>
+        <div>
+          <div
+            data-src="settings.svg"
+            src=""
+          />
+        </div>
+      </div>
+    </div>
+    <span />
+  </span>
+</div>
+`;
