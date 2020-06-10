@@ -10,7 +10,7 @@ type Network = {
 
 type NetworkProps = {
 	networks?: any;
-	onSelect?: any;
+	onChange?: any;
 	onViewAll?: any;
 };
 
@@ -44,7 +44,7 @@ const renderNetworks = (networks: any[], onClick: any) => (
 	</ul>
 );
 
-export const SelectNetwork = ({ networks, onSelect, onViewAll }: NetworkProps) => {
+export const SelectNetwork = ({ networks, onChange, onViewAll }: NetworkProps) => {
 	const [networkList, setNetworkList] = useState(networks.concat());
 
 	const onClick = (network: Network, index: number) => {
@@ -53,8 +53,7 @@ export const SelectNetwork = ({ networks, onSelect, onViewAll }: NetworkProps) =
 		const list = networkList.concat();
 		list.splice(index, 1, network);
 		setNetworkList(list);
-		console.log("clicked");
-		if (typeof onSelect === "function") onSelect(network, list);
+		if (typeof onChange === "function") onChange(network, list);
 	};
 
 	return (

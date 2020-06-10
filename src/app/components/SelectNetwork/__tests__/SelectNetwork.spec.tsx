@@ -30,20 +30,20 @@ describe("SelectNetwork", () => {
 		expect(container).toMatchSnapshot();
 	});
 
-	it("should call onSelect callback upon change", () => {
-		const onSelect = jest.fn();
-		const { getByTestId } = render(<SelectNetwork networks={networks} onSelect={onSelect}></SelectNetwork>);
+	it("should call onChange callback upon change", () => {
+		const onChange = jest.fn();
+		const { getByTestId } = render(<SelectNetwork networks={networks} onChange={onChange}></SelectNetwork>);
 		const firstNetwork = getByTestId("network__option--0");
 
 		act(() => {
 			fireEvent.click(firstNetwork);
 		});
 
-		expect(onSelect).toBeCalled();
+		expect(onChange).toBeCalled();
 	});
 
-	it("should ignore onSelect callback upon selection if not provided", () => {
-		const onSelect = jest.fn();
+	it("should ignore onChange callback upon selection if not provided", () => {
+		const onChange = jest.fn();
 		const { getByTestId } = render(<SelectNetwork networks={networks}></SelectNetwork>);
 		const firstNetwork = getByTestId("network__option--0");
 
@@ -51,6 +51,6 @@ describe("SelectNetwork", () => {
 			fireEvent.click(firstNetwork);
 		});
 
-		expect(onSelect).not.toHaveBeenCalled();
+		expect(onChange).not.toHaveBeenCalled();
 	});
 });
