@@ -16,6 +16,7 @@ import { ReactComponent as Qrcode } from "./qrcode.svg";
 import { ReactComponent as Send } from "./send.svg";
 import { ReactComponent as Settings } from "./settings.svg";
 import { ReactComponent as Slack } from "./slack.svg";
+import { ReactComponent as Trash } from "./trash.svg";
 import { ReactComponent as Twitter } from "./twitter.svg";
 import { ReactComponent as Upload } from "./upload.svg";
 
@@ -38,6 +39,7 @@ export const SvgCollection: any = {
 	Send,
 	Settings,
 	Slack,
+	Trash,
 	Twitter,
 	Upload,
 };
