@@ -1,4 +1,5 @@
 import { ReactComponent as Ark } from "./ark.svg";
+import { ReactComponent as ArrowBack } from "./arrow-back.svg";
 import { ReactComponent as Btc } from "./btc.svg";
 import { ReactComponent as Checkmark } from "./checkmark.svg";
 import { ReactComponent as ChevronDown } from "./chevron-down.svg";
@@ -21,6 +22,7 @@ import { ReactComponent as Upload } from "./upload.svg";
 
 export const SvgCollection: any = {
 	Ark,
+	ArrowBack,
 	Btc,
 	Checkmark,
 	ChevronDown,
