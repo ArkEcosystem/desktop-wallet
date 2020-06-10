@@ -1,10 +1,10 @@
 import { ReactComponent as WelcomeBanner } from "./welcome-banner.svg";
-import { ReactComponent as ProfileCreated } from "./profile-created.svg";
+import { ReactComponent as ProfileCreatedBanner } from "./profile-created-banner.svg";
 
 export const profile = {
 	components: {
 		profileCreated: {
-			ProfileCreated,
+			ProfileCreatedBanner,
 		},
 	},
 	pages: {
