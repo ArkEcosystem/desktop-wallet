@@ -1,7 +1,7 @@
 import React from "react";
 import { injectIntl, WrappedComponentProps } from "react-intl";
 
-import { imagesConfig } from "resources/assets/images";
+import { imagesConfig } from "app/assets/images";
 
 // UI Elements
 import { Button } from "app/components/Button";

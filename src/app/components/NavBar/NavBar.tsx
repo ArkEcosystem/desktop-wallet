@@ -1,5 +1,5 @@
 import React from "react";
-import { imagesConfig } from "resources/assets/images";
+import { imagesConfig } from "app/assets/images";
 
 const commonAssets = imagesConfig.common;
 
