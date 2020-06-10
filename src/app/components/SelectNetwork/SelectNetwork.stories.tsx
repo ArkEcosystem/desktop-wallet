@@ -8,15 +8,15 @@ export default {
 export const Default = () => {
 	const networks = [
 		{
-			name: "ark",
+			name: "Ark",
 			isSelected: true,
 		},
 		{
-			name: "eth",
+			name: "Eth",
 			isSelected: true,
 		},
 		{
-			name: "btc",
+			name: "Btc",
 			isSelected: false,
 		},
 	];

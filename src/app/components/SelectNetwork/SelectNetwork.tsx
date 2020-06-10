@@ -35,7 +35,7 @@ const renderNetworks = (networks: any[], onClick: any) => (
 						<Icon name={option.name}></Icon>
 						<Badge
 							className="-bottom-1 -right-4 bg-theme-success-500 text-theme-success-contrast"
-							icon="checkmark"
+							icon="Checkmark"
 						></Badge>
 					</Circle>
 				)}
@@ -68,7 +68,7 @@ export const SelectNetwork = ({ networks, onSelect, onViewAll }: NetworkProps) =
 				<div className="text-xs text-theme-primary-500">All</div>
 				<Badge
 					className="border-theme-primary-100 -bottom-1 -right-4 text-theme-primary-500"
-					icon="chevronDown"
+					icon="ChevronDown"
 				></Badge>
 			</Circle>
 		</div>

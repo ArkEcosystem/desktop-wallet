@@ -7,15 +7,15 @@ import { SelectNetwork } from "../SelectNetwork";
 describe("SelectNetwork", () => {
 	const networks = [
 		{
-			name: "ark",
+			name: "Ark",
 			isSelected: false,
 		},
 		{
-			name: "eth",
+			name: "Eth",
 			isSelected: true,
 		},
 		{
-			name: "btc",
+			name: "Btc",
 			isSelected: false,
 		},
 	];
