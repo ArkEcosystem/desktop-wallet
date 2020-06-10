@@ -63,6 +63,15 @@ describe('LedgerService', () => {
     })
   })
 
+  describe('signTransactionWithSchnorr', () => {
+    it('should run', async () => {
+      const response = await ledgerService.signTransactionWithSchnorr('44\'/1\'/0\'/0/0', '1234')
+
+      expect(response).toBeTruthy()
+      expect(ledgerService.ledger.signTransactionWithSchnorr).toHaveBeenCalledTimes(1)
+    })
+  })
+
   describe('signMessage', () => {
     it('should run', async () => {
       ledgerService.ledger.signMessage.mockClear()
@@ -71,6 +80,17 @@ describe('LedgerService', () => {
 
       expect(response).toBeTruthy()
       expect(ledgerService.ledger.signMessage).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('signMessageWithSchnorr', () => {
+    it('should run', async () => {
+      ledgerService.ledger.signMessageWithSchnorr.mockClear()
+
+      const response = await ledgerService.signMessageWithSchnorr('44\'/1\'/0\'/0/0', Buffer.from('1234'))
+
+      expect(response).toBeTruthy()
+      expect(ledgerService.ledger.signMessageWithSchnorr).toHaveBeenCalledTimes(1)
     })
   })
 
