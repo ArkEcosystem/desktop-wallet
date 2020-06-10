@@ -1,4 +1,4 @@
-export default {
+export const translations = {
 	MODAL_CONTACT_US: {
 		TITLE: "Contact Us",
 		DESCRIPTION: "We'd be happy to answer your questions",

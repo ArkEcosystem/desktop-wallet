@@ -1,4 +1,4 @@
-export default {
+export const translations = {
 	ADAPTER: "Adapter",
 	ADDRESS: "Address",
 	ALL: "All",

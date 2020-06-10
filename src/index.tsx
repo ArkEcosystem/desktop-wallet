@@ -4,7 +4,7 @@ import { HashRouter } from "react-router-dom";
 import { renderRoutes } from "react-router-config";
 import { I18nextProvider } from "react-i18next";
 // i18n
-import i18n from "./app/i18n";
+import { i18n } from "./app/i18n";
 // Routes
 import { routes } from "./router";
 // Styles

@@ -1,5 +1,5 @@
-import enUS from "./locales/en-US";
+import { translations } from "./i18n";
 
 export default {
-	"en-US": enUS,
+	"en-US": translations,
 };
