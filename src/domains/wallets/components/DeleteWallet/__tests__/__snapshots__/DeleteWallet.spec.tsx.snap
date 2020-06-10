@@ -40,6 +40,11 @@ exports[`DeleteWallet should render a modal 1`] = `
       <div
         class="flex-1"
       >
+        <svg
+          class="m-auto w-3/5 mb-8"
+        >
+          delete-banner.svg
+        </svg>
         <div
           class="text-theme-neutral-500"
         >
@@ -64,7 +69,11 @@ exports[`DeleteWallet should render a modal 1`] = `
               class="sc-AxirZ iQaTP"
               height="1em"
               width="1em"
-            />
+            >
+              <svg>
+                trash.svg
+              </svg>
+            </div>
             <span
               class="ml-2"
             >
