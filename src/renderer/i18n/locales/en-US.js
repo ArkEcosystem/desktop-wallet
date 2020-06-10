@@ -1029,6 +1029,7 @@ export default {
       BRIDGECHAIN_UPDATE: 'Bridgechain update was unsuccessful',
       SAVE_OFFLINE: 'Failed to save transaction file: {error}',
       LOAD_FROM_FILE: 'Failed to load transaction file',
+      LOAD_FROM_URI: 'Failed to load transaction URI',
       EXPIRED: 'Transaction expired before it was processed: {transactionId}',
       FEE_TOO_LOW: 'Transaction could not be sent because the fee ({fee}) is too low',
       NOT_ENOUGH_BALANCE: 'The total amount of the recipients + fee is greater than the balance ({balance}) of the wallet',
