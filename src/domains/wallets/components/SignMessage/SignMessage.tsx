@@ -23,7 +23,7 @@ export const SignMessage = ({ onSubmit, signatoryAddress, isOpen, handleClose }:
 			isOpen={isOpen}
 			title="Sign Message"
 			description="Insert a message below to sign using your private key"
-			onClick={handleClose}
+			onClose={handleClose}
 		>
 			<div className="mt-5">
 				<Form id="sign-message__form" context={form} onSubmit={onSubmit}>

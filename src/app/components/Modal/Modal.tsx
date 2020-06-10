@@ -8,13 +8,15 @@ type ModalProps = {
 	title: string;
 	description?: string;
 	isOpen: boolean;
-} & React.HTMLProps<any>;
+	onClose?: any;
+};
 
 type ModalContentProps = {
 	children: React.ReactNode;
 	title: string;
 	description?: string;
-} & React.HTMLProps<any>;
+	onClose?: any;
+};
 
 const ModalContent = (props: ModalContentProps) => {
 	return (
@@ -23,7 +25,7 @@ const ModalContent = (props: ModalContentProps) => {
 			className="fixed flex flex-col z-10 left-0 right-0 max-w-2xl rounded-xl bg-theme-background mx-auto mt-24 pt-6 pb-8 px-16"
 		>
 			<div className="absolute right-0 top-0 mt-4 mr-4">
-				<Button color="neutral" variant="plain" size="icon" onClick={props.onClick}>
+				<Button color="neutral" variant="plain" size="icon" onClick={props.onClose}>
 					<Icon name="crossSlim" width={10} height={10} />
 				</Button>
 			</div>
@@ -54,7 +56,7 @@ export const Modal = (props: ModalProps) => {
 				aria-selected={props.isOpen}
 				title={props.title}
 				description={props.description}
-				onClick={props.onClick}
+				onClose={props.onClose}
 			>
 				{props.children}
 			</ModalContent>
@@ -62,6 +64,8 @@ export const Modal = (props: ModalProps) => {
 	);
 };
 
-Modal.defaultProps = {};
+Modal.defaultProps = {
+	isOpen: false,
+};
 
 Modal.displayName = "Modal";
