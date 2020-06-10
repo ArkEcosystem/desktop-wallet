@@ -27,6 +27,7 @@ export default {
     HIDE_WALLET_BUTTON_TEXT: 'Hide text from wallet buttons',
     IS_MARKET_CHART_ENABLED: 'Price chart on the dashboard',
     INITIALIZING: 'Initializing...',
+    NO_INTERNET_CONNECTION: 'Initializing is taking longer than expected, please check internet connectivity.',
     LANGUAGE: 'Application Language',
     LEDGER: 'Ledger',
     LEDGER_WALLET: 'This is a Ledger wallet',
