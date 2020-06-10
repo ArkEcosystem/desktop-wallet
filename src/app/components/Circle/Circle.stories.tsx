@@ -74,28 +74,28 @@ export const WithIcon = () => {
 		<div className="p-5">
 			<div className="mb-5"></div>
 			<Circle className="border-theme-neutral-600 -mr-2" size={size}>
-				<Icon name="upload" width={16} height={16} />
+				<Icon name="Upload" width={16} height={16} />
 			</Circle>
 
 			<div className="mb-5"></div>
 			<Circle className="border-theme-neutral-800 -mr-2" size={size}>
-				<Icon name="eth" width={16} height={16} />
+				<Icon name="Eth" width={16} height={16} />
 			</Circle>
 			<Circle avatarId="test" className="-mr-2" size={size}></Circle>
 
 			<div className="mb-5"></div>
 			<Circle avatarId="test" className="-mr-2" size={size}></Circle>
 			<Circle className="border-theme-danger-200 -mr-2" size={size}>
-				<Icon name="ark" />
+				<Icon name="Ark" />
 			</Circle>
 
 			<div className="mb-5"></div>
 			<Circle avatarId="test" className="-mr-2" size={size}></Circle>
 			<Circle className="border-theme-neutral-800 -mr-2" size={size}>
-				<Icon name="eth" width={16} height={16} />
+				<Icon name="Eth" width={16} height={16} />
 			</Circle>
 			<Circle className="border-theme-danger-200 -mr-2" size={size}>
-				<Icon name="ark" />
+				<Icon name="Ark" />
 			</Circle>
 		</div>
 	);

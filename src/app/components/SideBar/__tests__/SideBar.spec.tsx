@@ -17,19 +17,19 @@ describe("SideBar", () => {
 			{
 				key: "general",
 				label: "General",
-				icon: "general",
+				icon: "General",
 				route: "/settings/general",
 			},
 			{
 				key: "peer",
 				label: "Peer",
-				icon: "peer",
+				icon: "Peer",
 				route: "/settings/peer",
 			},
 			{
 				key: "plugins",
 				label: "Plugins",
-				icon: "plugin",
+				icon: "Plugin",
 				route: "/settings/plugins",
 			},
 		];

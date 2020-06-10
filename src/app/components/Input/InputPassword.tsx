@@ -20,7 +20,7 @@ export const InputPassword = React.forwardRef<HTMLInputElement, InputPasswordPro
 					onClick={togglePasswordVisibilty}
 					className="focus:outline-none bg-theme-background text-theme-primary-400 w-full h-full flex justify-center items-center text-2xl"
 				>
-					<Icon name={show ? "eyeOff" : "eye"} />
+					<Icon name={show ? "EyeOff" : "Eye"} />
 				</button>
 				<button
 					data-testid="InputPassword__qrcode"
@@ -28,7 +28,7 @@ export const InputPassword = React.forwardRef<HTMLInputElement, InputPasswordPro
 					onClick={handleQrCode}
 					className="focus:outline-none bg-theme-background text-theme-primary-400 w-full h-full flex justify-center items-center text-2xl mr-2"
 				>
-					<Icon name="qrcode" />
+					<Icon name="Qrcode" />
 				</button>
 			</InputAddonEnd>
 		</InputGroup>

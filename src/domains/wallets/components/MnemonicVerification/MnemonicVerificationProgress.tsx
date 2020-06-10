@@ -36,7 +36,7 @@ const Tab = ({ activeTab, tabId, wordPosition }: TabProps) => {
 		>
 			{isComplete ? (
 				<span className="text-2xl text-theme-success">
-					<Icon name="checkmark" />
+					<Icon name="Checkmark" />
 				</span>
 			) : (
 				<span>The #{wordPosition} word</span>

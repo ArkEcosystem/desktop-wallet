@@ -34,7 +34,7 @@ export const CreateProfile = ({ onSubmit }: CreateProfileProps) => {
 							type="button"
 							className="flex items-center justify-center w-20 h-20 bg-theme-primary-contrast rounded-full"
 						>
-							<Icon name="upload" />
+							<Icon name="Upload" />
 						</button>
 					</div>
 					<div className="relative w-24 h-24 bg-theme-neutral-light rounded">
@@ -44,7 +44,7 @@ export const CreateProfile = ({ onSubmit }: CreateProfileProps) => {
 							alt="random avatar"
 						/>
 						<button className="absolute flex items-center justify-center w-6 h-6 p-1 bg-theme-danger-contrast text-theme-danger rounded -top-3 -right-3">
-							<Icon name="close" height={12} width={12} />
+							<Icon name="Close" height={12} width={12} />
 						</button>
 					</div>
 				</div>
