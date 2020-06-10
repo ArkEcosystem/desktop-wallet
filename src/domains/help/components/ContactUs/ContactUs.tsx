@@ -18,7 +18,7 @@ type ContactUsProps = {
 	onSend: any;
 };
 
-export const ContactUs = ({ ...props }: ContactUsProps) => {
+export const ContactUs = (props: ContactUsProps) => {
 	const methods = useForm({ mode: "onChange" });
 	const { t } = useTranslation();
 
