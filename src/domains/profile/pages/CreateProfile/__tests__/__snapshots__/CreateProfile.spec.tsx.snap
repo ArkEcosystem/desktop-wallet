@@ -163,7 +163,7 @@ exports[`CreateProfile should render 1`] = `
               class="sc-AxiKw iQzisX flex flex-col space-y-2"
             >
               <label
-                class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark pb-2"
+                class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark pt-2"
                 data-testid="FormLabel"
                 for="name"
                 label="Name"
@@ -180,7 +180,7 @@ exports[`CreateProfile should render 1`] = `
               class="sc-AxiKw iQzisX mt-10"
             >
               <label
-                class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark pb-2"
+                class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark pt-2"
                 data-testid="FormLabel"
                 for="market-provider"
                 label="Market Provider"
@@ -242,7 +242,7 @@ exports[`CreateProfile should render 1`] = `
               class="sc-AxiKw iQzisX mt-10"
             >
               <label
-                class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark pb-2"
+                class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark pt-2"
                 data-testid="FormLabel"
                 for="currency"
                 label="Currency"
@@ -359,29 +359,6 @@ exports[`CreateProfile should render 1`] = `
                   </div>
                 </li>
               </ul>
-              <form
-                class="space-y-6"
-                data-testid="Form"
-                id="create-profile__form"
-              >
-                <fieldset
-                  class="sc-Axmtr bqoVnZ flex flex-col space-y-2"
-                >
-                  <label
-                    class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark pt-2"
-                    data-testid="FormLabel"
-                    for="name"
-                    label="Name"
-                  >
-                    Name
-                  </label>
-                  <input
-                    class="sc-AxirZ brHQwS overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
-                    data-testid="Input"
-                    name="name"
-                  />
-                </fieldset>
-              </form>
             </div>
           </div>
           <div

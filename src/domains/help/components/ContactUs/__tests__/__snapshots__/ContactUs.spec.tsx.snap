@@ -9,11 +9,11 @@ exports[`ContactUs should render a modal 1`] = `
     data-testid="modal__overlay"
   />
   <div
-    class="fixed flex flex-col z-10 left-0 right-0 max-w-2xl rounded-xl bg-theme-background mx-auto mt-24 pt-6 pb-8 px-16"
+    class="fixed left-0 right-0 z-10 flex flex-col max-w-2xl px-16 pt-6 pb-8 mx-auto mt-24 rounded-xl bg-theme-background"
     data-testid="modal__inner"
   >
     <div
-      class="absolute right-0 top-0 mt-4 mr-4"
+      class="absolute top-0 right-0 mt-4 mr-4"
     >
       <button
         class="sc-AxjAm jZZsoN"
@@ -154,7 +154,7 @@ exports[`ContactUs should render a modal 1`] = `
             class="sc-AxhCb ckQmOL flex flex-col space-y-2"
           >
             <label
-              class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark pb-2"
+              class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark pt-2"
               data-testid="FormLabel"
               for="name"
             >
@@ -170,7 +170,7 @@ exports[`ContactUs should render a modal 1`] = `
             class="sc-AxhCb ckQmOL flex flex-col space-y-2"
           >
             <label
-              class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark pb-2"
+              class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark pt-2"
               data-testid="FormLabel"
               for="email"
             >
@@ -186,7 +186,7 @@ exports[`ContactUs should render a modal 1`] = `
             class="sc-AxhCb ckQmOL flex flex-col space-y-2"
           >
             <label
-              class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark pb-2"
+              class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark pt-2"
               data-testid="FormLabel"
               for="subject"
             >
@@ -241,7 +241,7 @@ exports[`ContactUs should render a modal 1`] = `
             class="sc-AxhCb ckQmOL flex flex-col space-y-2"
           >
             <label
-              class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark pb-2"
+              class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark pt-2"
               data-testid="FormLabel"
               for="message"
             >
