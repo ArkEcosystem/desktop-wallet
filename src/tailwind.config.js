@@ -17,7 +17,7 @@ module.exports = {
 			"theme-primary": "var(--theme-color-primary)",
 			"theme-primary-contrast": "var(--theme-color-primary-contrast)",
 			"theme-primary-dark": "var(--theme-color-primary-contrast)",
-			"theme-primary-light": "var(--theme-color-primary-contrast)",
+			"theme-primary-light": "var(--theme-color-primary-light)",
 			"theme-primary-100": "var(--theme-color-primary-100)",
 			"theme-primary-200": "var(--theme-color-primary-200)",
 			"theme-primary-300": "var(--theme-color-primary-300)",

@@ -6,6 +6,7 @@ import { imagesConfig } from "resources/assets/images";
 // UI Elements
 import { Button } from "app/components/Button";
 import { Divider } from "app/components/Divider";
+import { Icon } from "app/components/Icon";
 import { NavBar } from "app/components/NavBar";
 import { ProfileCard } from "domains/profile/components/ProfileCard";
 
@@ -52,10 +53,15 @@ const Welcome = injectIntl(({ intl: { formatMessage }, profiles }: WelcomeProps)
 						Create a new Profile or login with your MarketSquare account to get started
 					</p>
 					<div className="flex flex-col md:flex-row">
-						<Button color="primary" variant="solid" className="button-primary w-full mr-2">
-							Sign in to MarketSquare
+						<Button
+							color="primary"
+							variant="solid"
+							className="flex justify-center items-center w-full mr-2"
+						>
+							<Icon name="msq" width={20} height={20} />
+							<span className="ml-2">Sign in to MarketSquare</span>
 						</Button>
-						<Button color="primary" variant="plain" className="button-secondary w-full mt-2 md:mt-0">
+						<Button color="primary" variant="plain" className="w-full mt-2 md:mt-0">
 							Create Profile
 						</Button>
 					</div>
