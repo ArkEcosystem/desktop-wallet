@@ -21,14 +21,9 @@ exports[`Formatted Address should render 1`] = `
               height="20"
               width="20"
             >
-              <div>
-                <div>
-                  <div
-                    data-src="settings.svg"
-                    src=""
-                  />
-                </div>
-              </div>
+              <svg>
+                settings.svg
+              </svg>
             </div>
           </button>
         </div>
@@ -105,14 +100,9 @@ exports[`Formatted Address should render with wallet data 1`] = `
               height="20"
               width="20"
             >
-              <div>
-                <div>
-                  <div
-                    data-src="settings.svg"
-                    src=""
-                  />
-                </div>
-              </div>
+              <svg>
+                settings.svg
+              </svg>
             </div>
           </button>
         </div>
@@ -126,16 +116,7 @@ exports[`Formatted Address should render with wallet data 1`] = `
             class="sc-AxiKw bctdez"
             height="16"
             width="16"
-          >
-            <div>
-              <div>
-                <div
-                  data-src="btc.svg"
-                  src=""
-                />
-              </div>
-            </div>
-          </div>
+          />
         </div>
         <div
           class="sc-AxirZ gaboTh border-theme-primary-contrast"
@@ -190,14 +171,9 @@ exports[`Formatted Address should render with wallet data and optional icon 1`] 
               height="20"
               width="20"
             >
-              <div>
-                <div>
-                  <div
-                    data-src="settings.svg"
-                    src=""
-                  />
-                </div>
-              </div>
+              <svg>
+                settings.svg
+              </svg>
             </div>
           </button>
         </div>
@@ -211,16 +187,7 @@ exports[`Formatted Address should render with wallet data and optional icon 1`] 
             class="sc-AxiKw bctdez"
             height="16"
             width="16"
-          >
-            <div>
-              <div>
-                <div
-                  data-src="btc.svg"
-                  src=""
-                />
-              </div>
-            </div>
-          </div>
+          />
         </div>
         <div
           class="sc-AxirZ gaboTh border-theme-primary-contrast"

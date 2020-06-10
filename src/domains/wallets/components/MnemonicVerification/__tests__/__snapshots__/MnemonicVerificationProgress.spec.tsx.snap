@@ -18,14 +18,9 @@ exports[`MnemonicVerificationProgress should render tabs 1`] = `
           height="1em"
           width="1em"
         >
-          <div>
-            <div>
-              <div
-                data-src="checkmark.svg"
-                src=""
-              />
-            </div>
-          </div>
+          <svg>
+            checkmark.svg
+          </svg>
         </div>
       </span>
     </button>

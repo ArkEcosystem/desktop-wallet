@@ -23,7 +23,7 @@ exports[`SideBar should render with items 1`] = `
           class="rounded-lg p-5 flex 
         text-theme-primary
         bg-theme-primary-contrast
-    "
+     flex items-center"
         >
           <div
             class="text-theme-primary"
@@ -33,14 +33,9 @@ exports[`SideBar should render with items 1`] = `
               height="1em"
               width="1em"
             >
-              <div>
-                <div>
-                  <div
-                    data-src="general.svg"
-                    src=""
-                  />
-                </div>
-              </div>
+              <svg>
+                general.svg
+              </svg>
             </div>
           </div>
           <span
@@ -61,7 +56,7 @@ exports[`SideBar should render with items 1`] = `
           class="rounded-lg p-5 flex 
         text-theme-primary
         bg-theme-primary-contrast
-    "
+     flex items-center"
         >
           <div
             class="text-theme-primary"
@@ -71,14 +66,9 @@ exports[`SideBar should render with items 1`] = `
               height="1em"
               width="1em"
             >
-              <div>
-                <div>
-                  <div
-                    data-src="peer.svg"
-                    src=""
-                  />
-                </div>
-              </div>
+              <svg>
+                peer.svg
+              </svg>
             </div>
           </div>
           <span
@@ -99,7 +89,7 @@ exports[`SideBar should render with items 1`] = `
           class="rounded-lg p-5 flex 
         text-theme-primary
         bg-theme-primary-contrast
-    "
+     flex items-center"
         >
           <div
             class="text-theme-primary"
@@ -109,14 +99,9 @@ exports[`SideBar should render with items 1`] = `
               height="1em"
               width="1em"
             >
-              <div>
-                <div>
-                  <div
-                    data-src="plugin.svg"
-                    src=""
-                  />
-                </div>
-              </div>
+              <svg>
+                plugin.svg
+              </svg>
             </div>
           </div>
           <span

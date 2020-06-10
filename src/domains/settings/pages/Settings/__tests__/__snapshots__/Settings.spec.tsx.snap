@@ -21,7 +21,7 @@ exports[`Settings should render 1`] = `
               class="rounded-lg p-5 flex 
         text-theme-primary
         bg-theme-primary-contrast
-    "
+     flex items-center"
             >
               <div
                 class="text-theme-primary"
@@ -31,14 +31,9 @@ exports[`Settings should render 1`] = `
                   height="1em"
                   width="1em"
                 >
-                  <div>
-                    <div>
-                      <div
-                        data-src="general.svg"
-                        src=""
-                      />
-                    </div>
-                  </div>
+                  <svg>
+                    general.svg
+                  </svg>
                 </div>
               </div>
               <span
@@ -53,7 +48,7 @@ exports[`Settings should render 1`] = `
             data-testid="side-menu__item--Peer"
           >
             <li
-              class="rounded-lg p-5 flex text-theme-medium"
+              class="rounded-lg p-5 flex text-theme-medium flex items-center"
             >
               <div
                 class="text-theme-primary-contrast"
@@ -63,14 +58,9 @@ exports[`Settings should render 1`] = `
                   height="1em"
                   width="1em"
                 >
-                  <div>
-                    <div>
-                      <div
-                        data-src="peer.svg"
-                        src=""
-                      />
-                    </div>
-                  </div>
+                  <svg>
+                    peer.svg
+                  </svg>
                 </div>
               </div>
               <span
@@ -85,7 +75,7 @@ exports[`Settings should render 1`] = `
             data-testid="side-menu__item--Plugins"
           >
             <li
-              class="rounded-lg p-5 flex text-theme-medium"
+              class="rounded-lg p-5 flex text-theme-medium flex items-center"
             >
               <div
                 class="text-theme-primary-contrast"
@@ -95,14 +85,9 @@ exports[`Settings should render 1`] = `
                   height="1em"
                   width="1em"
                 >
-                  <div>
-                    <div>
-                      <div
-                        data-src="plugin.svg"
-                        src=""
-                      />
-                    </div>
-                  </div>
+                  <svg>
+                    plugin.svg
+                  </svg>
                 </div>
               </div>
               <span
@@ -190,14 +175,9 @@ exports[`Settings should render 1`] = `
                         height="1em"
                         width="1em"
                       >
-                        <div>
-                          <div>
-                            <div
-                              data-src="upload.svg"
-                              src=""
-                            />
-                          </div>
-                        </div>
+                        <svg>
+                          upload.svg
+                        </svg>
                       </div>
                     </button>
                   </div>
@@ -217,14 +197,9 @@ exports[`Settings should render 1`] = `
                         height="12"
                         width="12"
                       >
-                        <div>
-                          <div>
-                            <div
-                              data-src="close.svg"
-                              src=""
-                            />
-                          </div>
-                        </div>
+                        <svg>
+                          close.svg
+                        </svg>
                       </div>
                     </button>
                   </div>
@@ -306,14 +281,9 @@ exports[`Settings should render 1`] = `
                       height="1em"
                       width="1em"
                     >
-                      <div>
-                        <div>
-                          <div
-                            data-src="chevron-down.svg"
-                            src=""
-                          />
-                        </div>
-                      </div>
+                      <svg>
+                        chevron-down.svg
+                      </svg>
                     </div>
                   </div>
                 </div>
@@ -368,14 +338,9 @@ exports[`Settings should render 1`] = `
                       height="1em"
                       width="1em"
                     >
-                      <div>
-                        <div>
-                          <div
-                            data-src="chevron-down.svg"
-                            src=""
-                          />
-                        </div>
-                      </div>
+                      <svg>
+                        chevron-down.svg
+                      </svg>
                     </div>
                   </div>
                 </div>
@@ -434,14 +399,9 @@ exports[`Settings should render 1`] = `
                       height="1em"
                       width="1em"
                     >
-                      <div>
-                        <div>
-                          <div
-                            data-src="chevron-down.svg"
-                            src=""
-                          />
-                        </div>
-                      </div>
+                      <svg>
+                        chevron-down.svg
+                      </svg>
                     </div>
                   </div>
                 </div>
@@ -496,14 +456,9 @@ exports[`Settings should render 1`] = `
                       height="1em"
                       width="1em"
                     >
-                      <div>
-                        <div>
-                          <div
-                            data-src="chevron-down.svg"
-                            src=""
-                          />
-                        </div>
-                      </div>
+                      <svg>
+                        chevron-down.svg
+                      </svg>
                     </div>
                   </div>
                 </div>
@@ -558,14 +513,9 @@ exports[`Settings should render 1`] = `
                       height="1em"
                       width="1em"
                     >
-                      <div>
-                        <div>
-                          <div
-                            data-src="chevron-down.svg"
-                            src=""
-                          />
-                        </div>
-                      </div>
+                      <svg>
+                        chevron-down.svg
+                      </svg>
                     </div>
                   </div>
                 </div>
@@ -754,14 +704,9 @@ exports[`Settings should render 1`] = `
                       height="1em"
                       width="1em"
                     >
-                      <div>
-                        <div>
-                          <div
-                            data-src="chevron-down.svg"
-                            src=""
-                          />
-                        </div>
-                      </div>
+                      <svg>
+                        chevron-down.svg
+                      </svg>
                     </div>
                   </div>
                 </div>
@@ -934,7 +879,7 @@ exports[`Settings should render a not found information 1`] = `
             data-testid="side-menu__item--General"
           >
             <li
-              class="rounded-lg p-5 flex text-theme-medium"
+              class="rounded-lg p-5 flex text-theme-medium flex items-center"
             >
               <div
                 class="text-theme-primary-contrast"
@@ -944,14 +889,9 @@ exports[`Settings should render a not found information 1`] = `
                   height="1em"
                   width="1em"
                 >
-                  <div>
-                    <div>
-                      <div
-                        data-src="general.svg"
-                        src=""
-                      />
-                    </div>
-                  </div>
+                  <svg>
+                    general.svg
+                  </svg>
                 </div>
               </div>
               <span
@@ -972,7 +912,7 @@ exports[`Settings should render a not found information 1`] = `
               class="rounded-lg p-5 flex 
         text-theme-primary
         bg-theme-primary-contrast
-    "
+     flex items-center"
             >
               <div
                 class="text-theme-primary"
@@ -982,14 +922,9 @@ exports[`Settings should render a not found information 1`] = `
                   height="1em"
                   width="1em"
                 >
-                  <div>
-                    <div>
-                      <div
-                        data-src="peer.svg"
-                        src=""
-                      />
-                    </div>
-                  </div>
+                  <svg>
+                    peer.svg
+                  </svg>
                 </div>
               </div>
               <span
@@ -1004,7 +939,7 @@ exports[`Settings should render a not found information 1`] = `
             data-testid="side-menu__item--Plugins"
           >
             <li
-              class="rounded-lg p-5 flex text-theme-medium"
+              class="rounded-lg p-5 flex text-theme-medium flex items-center"
             >
               <div
                 class="text-theme-primary-contrast"
@@ -1014,14 +949,9 @@ exports[`Settings should render a not found information 1`] = `
                   height="1em"
                   width="1em"
                 >
-                  <div>
-                    <div>
-                      <div
-                        data-src="plugin.svg"
-                        src=""
-                      />
-                    </div>
-                  </div>
+                  <svg>
+                    plugin.svg
+                  </svg>
                 </div>
               </div>
               <span
