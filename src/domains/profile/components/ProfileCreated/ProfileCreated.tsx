@@ -24,19 +24,19 @@ export const ProfileCreated = ({ ...props }: ProfileCreatedProps) => {
 				</div>
 
 				<div className="text-center mb-6">
-					<p className="text-theme-neutral-dark mb-1">
+					<p className="text-sm text-theme-neutral-dark mb-1 md:text-base">
 						If you are new to the ARK Desktop Wallet, view our tutorial to get started.
 					</p>
-					<p className="text-theme-neutral-dark">
+					<p className="text-sm text-theme-neutral-dark md:text-base">
 						If not, you can skip the tutorial to go directly to your portfolio.
 					</p>
 				</div>
 
-				<div className="flex justify-center">
+				<div className="flex flex-col justify-center sm:flex-row">
 					<Button color="primary" variant="solid" className="mr-2" onClick={props.onSend}>
 						Start Tutorial
 					</Button>
-					<Button color="primary" variant="plain" onClick={props.onCancel}>
+					<Button color="primary" variant="plain" className="mt-2 sm:mt-0" onClick={props.onCancel}>
 						Skip Tutorial
 					</Button>
 				</div>
