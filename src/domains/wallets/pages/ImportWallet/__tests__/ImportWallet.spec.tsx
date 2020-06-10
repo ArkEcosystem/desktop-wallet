@@ -1,9 +1,10 @@
 import React from "react";
-import { IntlProvider } from "react-intl";
 import { act, fireEvent, render, RenderResult } from "@testing-library/react";
+import { I18nextProvider } from "react-i18next";
+
+import { i18n } from "app/i18n";
+
 import { ImportWallet } from "../";
-// i18n
-import { locales } from "i18n/locales";
 
 describe("Wallet / Import", () => {
 	let rendered: RenderResult;
@@ -27,9 +28,9 @@ describe("Wallet / Import", () => {
 
 	beforeEach(() => {
 		rendered = render(
-			<IntlProvider locale="en-US" messages={locales["en-US"].messages}>
+			<I18nextProvider i18n={i18n}>
 				<ImportWallet networks={networks} />
-			</IntlProvider>,
+			</I18nextProvider>,
 		);
 	});
 
