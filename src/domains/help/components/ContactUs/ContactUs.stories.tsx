@@ -1,7 +1,6 @@
 import React from "react";
 import { ContactUs } from "./";
-import { Button } from "app/components/Button";
-import { withKnobs, boolean, text } from "@storybook/addon-knobs";
+import { boolean } from "@storybook/addon-knobs";
 
 export default { title: "Help / Components / ContactUs" };
 
