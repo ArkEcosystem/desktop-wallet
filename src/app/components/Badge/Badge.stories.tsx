@@ -71,21 +71,21 @@ export const WithIcon = () => {
 		<div>
 			<div className="mt-3 mb-10">
 				<Circle className="relative border-theme-success-500 text-theme-success-500">
-					<Icon name="ark" color="success-600"></Icon>
+					<Icon name="ark"></Icon>
 					<Badge
 						className="-bottom-1 -right-4 bg-theme-success-500 text-theme-success-contrast"
 						icon="checkmark"
 					></Badge>
 				</Circle>
 				<Circle className="relative border-theme-success-500 text-theme-success-500 ml-5">
-					<Icon name="eth" color="success-600"></Icon>
+					<Icon name="eth"></Icon>
 					<Badge
 						className="bg-theme-success-500 -bottom-1 -right-4 text-theme-success-contrast"
 						icon="checkmark"
 					></Badge>
 				</Circle>
 				<Circle className="relative border-theme-success-500 text-theme-success-500 ml-5">
-					<Icon name="btc" color="success-600"></Icon>
+					<Icon name="btc"></Icon>
 					<Badge
 						className="bg-theme-success-500 -bottom-1 -right-4 text-theme-success-contrast"
 						icon="checkmark"

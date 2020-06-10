@@ -10,7 +10,7 @@ type BadgeProps = {
 	iconHeight?: number;
 };
 
-export const Badge = ({ className, children, icon, iconWidth, iconHeight, iconColor }: BadgeProps) => {
+export const Badge = ({ className, children, icon, iconWidth, iconHeight }: BadgeProps) => {
 	return (
 		<Wrapper className={`${defaultClasses} ${className}`}>
 			{!!icon && <Icon name={icon} width={iconWidth} height={iconHeight}></Icon>}
