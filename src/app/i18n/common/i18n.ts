@@ -1,4 +1,4 @@
-export const translations = {
+export const translations: { [key: string]: any } = {
 	ADAPTER: "Adapter",
 	ADDRESS: "Address",
 	ALL: "All",

@@ -1,4 +1,4 @@
-export const translations = {
+export const translations: { [key: string]: any } = {
 	MODAL_CONTACT_US: {
 		TITLE: "Contact Us",
 		DESCRIPTION: "We'd be happy to answer your questions",

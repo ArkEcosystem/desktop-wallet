@@ -5,7 +5,7 @@ import { buildTranslations } from "./helpers";
 
 const resources = {
 	en: {
-		translation: buildTranslations("en-US"),
+		translation: buildTranslations(),
 	},
 };
 

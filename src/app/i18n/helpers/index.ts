@@ -1,10 +1,10 @@
 // Translations
-import common from "../common";
-import help from "../../../domains/help/i18n";
-import wallets from "../../../domains/wallets/i18n";
+import { translations as COMMON } from "../common/i18n";
+import { translations as HELP } from "../../../domains/help/i18n";
+import { translations as WALLETS } from "../../../domains/wallets/i18n";
 
-export const buildTranslations = (locale) => ({
-	COMMON: common[locale],
-	HELP: help[locale],
-	WALLETS: wallets[locale],
+export const buildTranslations = (): any => ({
+	COMMON,
+	HELP,
+	WALLETS,
 });
