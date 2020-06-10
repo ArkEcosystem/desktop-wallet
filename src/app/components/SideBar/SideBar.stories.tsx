@@ -7,19 +7,19 @@ const items = [
 	{
 		itemKey: "general",
 		label: "General",
-		icon: "general",
+		icon: "General",
 		route: "/settings/general",
 	},
 	{
 		itemKey: "peer",
 		label: "Peer",
-		icon: "peer",
+		icon: "Peer",
 		route: "/settings/peer",
 	},
 	{
 		itemKey: "plugins",
 		label: "Plugins",
-		icon: "plugin",
+		icon: "Plugin",
 		route: "/settings/plugins",
 	},
 ];

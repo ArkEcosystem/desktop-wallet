@@ -17,7 +17,7 @@ export const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
 					{children}
 				</Input>
 				<InputAddonEnd className="text-theme-neutral-dark pointer-events-none w-12 text-lg">
-					<Icon name="chevronDown" />
+					<Icon name="ChevronDown" />
 				</InputAddonEnd>
 			</InputGroup>
 		);

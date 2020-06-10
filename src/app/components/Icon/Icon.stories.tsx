@@ -7,6 +7,6 @@ export default {
 
 export const Default = () => (
 	<div className="inline-flex space-x-4">
-		<Icon name="upload" />
+		<Icon name="Upload" />
 	</div>
 );

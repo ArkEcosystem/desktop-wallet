@@ -10,19 +10,19 @@ describe("Settings", () => {
 			{
 				itemKey: "General",
 				label: "General",
-				icon: "general",
+				icon: "General",
 				route: "/settings/general",
 			},
 			{
 				itemKey: "Peer",
 				label: "Peer",
-				icon: "peer",
+				icon: "Peer",
 				route: "/settings/peer",
 			},
 			{
 				itemKey: "Plugins",
 				label: "Plugins",
-				icon: "plugin",
+				icon: "Plugin",
 				route: "/settings/plugins",
 			},
 		];
@@ -48,19 +48,19 @@ describe("Settings", () => {
 			{
 				itemKey: "General",
 				label: "General",
-				icon: "general",
+				icon: "General",
 				route: "/settings/general",
 			},
 			{
 				itemKey: "Peer",
 				label: "Peer",
-				icon: "peer",
+				icon: "Peer",
 				route: "/settings/peer",
 			},
 			{
 				itemKey: "Plugins",
 				label: "Plugins",
-				icon: "plugin",
+				icon: "Plugin",
 				route: "/settings/plugins",
 			},
 		];

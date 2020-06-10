@@ -58,7 +58,7 @@ const Welcome = injectIntl(({ intl: { formatMessage }, profiles }: WelcomeProps)
 							variant="solid"
 							className="flex justify-center items-center w-full mr-2"
 						>
-							<Icon name="msq" width={20} height={20} />
+							<Icon name="Msq" width={20} height={20} />
 							<span className="ml-2">Sign in to MarketSquare</span>
 						</Button>
 						<Button color="primary" variant="plain" className="w-full mt-2 md:mt-0">

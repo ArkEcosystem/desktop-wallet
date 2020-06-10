@@ -11,7 +11,7 @@ describe("SideBarItem", () => {
 	const item = {
 		label: "General",
 		itemKey: "plugin",
-		icon: "plugin",
+		icon: "Plugin",
 		route: "/settings/general",
 		isActive: false,
 	};

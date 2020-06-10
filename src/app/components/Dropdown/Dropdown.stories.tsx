@@ -18,7 +18,7 @@ export const Default = () => {
 			Default with options array
 			<div className="w-20 ml-40 mt-10">
 				<Dropdown
-					toggleIcon="settings"
+					toggleIcon="Settings"
 					options={options}
 					onSelect={(option: any) => console.log(option)}
 				></Dropdown>
@@ -32,7 +32,7 @@ export const ContentAsSlot = () => {
 		<div className="">
 			Custom html dropdown content
 			<div className="w-20 ml-40 mt-10">
-				<Dropdown toggleIcon="settings" onSelect={(option: any) => console.log(option)}>
+				<Dropdown toggleIcon="Settings" onSelect={(option: any) => console.log(option)}>
 					<div className="p-5">Custom content (default slot)</div>
 				</Dropdown>
 			</div>
@@ -45,7 +45,7 @@ export const CustomToggleIcon = () => {
 		<div className="">
 			Custom toggle svg icon:
 			<div className="w-20 ml-40 mt-10">
-				<Dropdown toggleIcon="upload" onSelect={(option: any) => console.log(option)}>
+				<Dropdown toggleIcon="Upload" onSelect={(option: any) => console.log(option)}>
 					<div className="p-5">Custom content (default slot)</div>
 				</Dropdown>
 			</div>

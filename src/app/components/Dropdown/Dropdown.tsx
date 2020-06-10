@@ -73,5 +73,5 @@ export const Dropdown = ({ children, options, onSelect, toggleIcon }: Props) => 
 
 Dropdown.defaultProps = {
 	options: [],
-	toggleIcon: "settings",
+	toggleIcon: "Settings",
 };

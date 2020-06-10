@@ -31,25 +31,25 @@ export const ContactUs = injectIntl(({ intl: { formatMessage }, ...props }: Cont
 			<div className="flex border-b border-gray-500 text-black mt-2 mb-8 -mx-16 px-16 pb-8">
 				<a href="https://twitter.ark.io" className="rounded-full mr-2 hover:bg-theme-neutral-300">
 					<Circle className="border-black hover:bg-transparent" noShadow={true}>
-						<Icon name="twitter" />
+						<Icon name="Twitter" />
 					</Circle>
 				</a>
 
 				<a href="https://slack.ark.io" className="rounded-full mr-2 hover:bg-theme-neutral-300">
 					<Circle className="border-black hover:bg-transparent" noShadow={true}>
-						<Icon name="slack" />
+						<Icon name="Slack" />
 					</Circle>
 				</a>
 
 				<a href="https://discord.ark.io/" className="rounded-full mr-2 hover:bg-theme-neutral-300">
 					<Circle className="border-black hover:bg-transparent" noShadow={true}>
-						<Icon name="discord" />
+						<Icon name="Discord" />
 					</Circle>
 				</a>
 
 				<a href="mailto:info@ark.io" className="rounded-full hover:bg-theme-neutral-300">
 					<Circle className="border-black hover:bg-transparent" noShadow={true}>
-						<Icon name="send" />
+						<Icon name="Send" />
 					</Circle>
 				</a>
 			</div>

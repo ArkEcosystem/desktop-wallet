@@ -3,7 +3,7 @@ import { UpdateWalletName } from "./";
 import { withKnobs, boolean } from "@storybook/addon-knobs";
 
 export default {
-	title: "Wallets / Components / UpdateWalletName",
+	title: "Wallets / Components / Update Wallet Name",
 	decorators: [withKnobs],
 };
 

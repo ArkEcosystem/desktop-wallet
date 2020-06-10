@@ -27,7 +27,7 @@ const ModalContent = (props: ModalContentProps) => {
 		>
 			<div className="absolute top-0 right-0 mt-4 mr-4">
 				<Button color="neutral" variant="plain" size="icon" onClick={props.onClose}>
-					<Icon name="crossSlim" width={10} height={10} />
+					<Icon name="CrossSlim" width={10} height={10} />
 				</Button>
 			</div>
 

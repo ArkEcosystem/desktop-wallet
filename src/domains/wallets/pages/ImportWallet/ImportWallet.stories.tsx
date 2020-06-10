@@ -9,17 +9,17 @@ const networks = [
 	{
 		id: 1,
 		name: "ARK Ecosystem",
-		icon: "ark",
+		icon: "Ark",
 	},
 	{
 		id: 2,
 		name: "Ethereum",
-		icon: "eth",
+		icon: "Eth",
 	},
 	{
 		id: 3,
 		name: "Bitcoin",
-		icon: "btc",
+		icon: "Btc",
 	},
 ];
 
