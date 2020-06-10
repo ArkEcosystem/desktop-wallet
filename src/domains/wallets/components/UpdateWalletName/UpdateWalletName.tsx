@@ -19,14 +19,14 @@ export const UpdateWalletName = injectIntl(({ intl: { formatMessage }, ...props 
 
 	return (
 		<Modal
-			title={formatMessage({ id: "WALLET.MODAL_NAME_WALLET.TITLE" })}
-			description={formatMessage({ id: "WALLET.MODAL_NAME_WALLET.DESCRIPTION" })}
+			title={formatMessage({ id: "WALLETS_MODAL_NAME_WALLET_TITLE" })}
+			description={formatMessage({ id: "WALLETS_MODAL_NAME_WALLET_DESCRIPTION" })}
 			isOpen={props.isOpen}
 			onClose={props.onClose}
 		>
 			<Form context={methods} onSubmit={props.onSave}>
 				<FormField name="name">
-					<FormLabel>{formatMessage({ id: "WALLET.MODAL_NAME_WALLET.FIELD_NAME" })}</FormLabel>
+					<FormLabel>{formatMessage({ id: "WALLETS_MODAL_NAME_WALLET_FIELD_NAME" })}</FormLabel>
 					<Input ref={methods.register({ required: "Field required" })} />
 					<FormHelperText />
 				</FormField>

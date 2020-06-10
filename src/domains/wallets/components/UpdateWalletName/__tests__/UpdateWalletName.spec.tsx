@@ -7,10 +7,6 @@ import { UpdateWalletName } from "../";
 import { locales } from "i18n/locales";
 
 describe("UpdateWalletName", () => {
-	beforeEach(() => {
-		jest.spyOn(console, "error").mockImplementation(() => null);
-	});
-
 	it("should not render if not open", () => {
 		const { asFragment, getByTestId } = render(
 			<IntlProvider locale="en-US" messages={locales["en-US"].messages}>
@@ -29,9 +25,15 @@ describe("UpdateWalletName", () => {
 			</IntlProvider>,
 		);
 
-		expect(getByTestId("modal__inner")).toHaveTextContent("WALLET.MODAL_NAME_WALLET.TITLE");
-		expect(getByTestId("modal__inner")).toHaveTextContent("WALLET.MODAL_NAME_WALLET.DESCRIPTION");
-		expect(getByTestId("modal__inner")).toHaveTextContent("WALLET.MODAL_NAME_WALLET.FIELD_NAME");
+		expect(getByTestId("modal__inner")).toHaveTextContent(
+			locales["en-US"].messages["WALLETS_MODAL_NAME_WALLET_TITLE"],
+		);
+		expect(getByTestId("modal__inner")).toHaveTextContent(
+			locales["en-US"].messages["WALLETS_MODAL_NAME_WALLET_DESCRIPTION"],
+		);
+		expect(getByTestId("modal__inner")).toHaveTextContent(
+			locales["en-US"].messages["WALLETS_MODAL_NAME_WALLET_FIELD_NAME"],
+		);
 		expect(asFragment()).toMatchSnapshot();
 	});
 });

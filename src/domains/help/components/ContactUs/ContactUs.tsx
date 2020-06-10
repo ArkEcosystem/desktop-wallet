@@ -23,8 +23,8 @@ export const ContactUs = injectIntl(({ intl: { formatMessage }, ...props }: Cont
 
 	return (
 		<Modal
-			title={formatMessage({ id: "HELP.MODAL_CONTACT_US.TITLE" })}
-			description={formatMessage({ id: "HELP.MODAL_CONTACT_US.DESCRIPTION" })}
+			title={formatMessage({ id: "MODAL_CONTACT_US_TITLE" })}
+			description={formatMessage({ id: "MODAL_CONTACT_US_DESCRIPTION" })}
 			isOpen={props.isOpen}
 			onClose={props.onClose}
 		>
@@ -56,39 +56,37 @@ export const ContactUs = injectIntl(({ intl: { formatMessage }, ...props }: Cont
 
 			<Form context={methods} onSubmit={props.onSend}>
 				<FormField name="name">
-					<FormLabel>{formatMessage({ id: "HELP.MODAL_CONTACT_US.FIELD_NAME" })}</FormLabel>
+					<FormLabel>{formatMessage({ id: "MODAL_CONTACT_US_FIELD_NAME" })}</FormLabel>
 					<Input ref={methods.register({ required: "Field required" })} />
 					<FormHelperText />
 				</FormField>
 
 				<FormField name="email">
-					<FormLabel>{formatMessage({ id: "HELP.MODAL_CONTACT_US.FIELD_EMAIL" })}</FormLabel>
+					<FormLabel>{formatMessage({ id: "MODAL_CONTACT_US_FIELD_EMAIL" })}</FormLabel>
 					<Input ref={methods.register({ required: "Field required" })} />
 					<FormHelperText />
 				</FormField>
 
 				<FormField name="subject">
-					<FormLabel>{formatMessage({ id: "HELP.MODAL_CONTACT_US.FIELD_SUBJECT" })}</FormLabel>
+					<FormLabel>{formatMessage({ id: "MODAL_CONTACT_US_FIELD_SUBJECT" })}</FormLabel>
 					<Select
 						ref={methods.register({
-							required: formatMessage({ id: "HELP.MODAL_CONTACT_US.SUBJECT_REQUIRED" }),
+							required: formatMessage({ id: "MODAL_CONTACT_US_SUBJECT_REQUIRED" }),
 						})}
 					>
 						<option value="">{formatMessage({ id: "COMMON_SELECT" })}</option>
 						<option value="security">
-							{formatMessage({ id: "HELP.MODAL_CONTACT_US.SUBJECT_OPTION.SECURITY" })}
+							{formatMessage({ id: "MODAL_CONTACT_US_SUBJECT_OPTION_SECURITY" })}
 						</option>
-						<option value="other">
-							{formatMessage({ id: "HELP.MODAL_CONTACT_US.SUBJECT_OPTION.OTHER" })}
-						</option>
+						<option value="other">{formatMessage({ id: "MODAL_CONTACT_US_SUBJECT_OPTION_OTHER" })}</option>
 					</Select>
 				</FormField>
 
 				<FormField name="message">
-					<FormLabel>{formatMessage({ id: "HELP.MODAL_CONTACT_US.FIELD_MESSAGE" })}</FormLabel>
+					<FormLabel>{formatMessage({ id: "MODAL_CONTACT_US_FIELD_MESSAGE" })}</FormLabel>
 					<Textarea
 						ref={methods.register({
-							required: formatMessage({ id: "HELP.MODAL_CONTACT_US.MESSAGE_REQUIRED" }),
+							required: formatMessage({ id: "MODAL_CONTACT_US_MESSAGE_REQUIRED" }),
 						})}
 					/>
 				</FormField>

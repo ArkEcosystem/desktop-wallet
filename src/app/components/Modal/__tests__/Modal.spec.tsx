@@ -4,10 +4,6 @@ import { render } from "@testing-library/react";
 import { Modal } from "../";
 
 describe("Modal", () => {
-	beforeEach(() => {
-		jest.spyOn(console, "error").mockImplementation(() => null);
-	});
-
 	it("should not render if not open", () => {
 		const { asFragment, getByTestId } = render(<Modal title="ark" isOpen={false} />);
 

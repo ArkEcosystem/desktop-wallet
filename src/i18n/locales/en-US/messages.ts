@@ -1,4 +1,5 @@
 export const messages = {
+	// COMMON
 	COMMON_ADAPTER: "Adapter",
 	COMMON_ADDRESS: "Address",
 	COMMON_ALL: "All",
@@ -59,30 +60,20 @@ export const messages = {
 	COMMON_X_OF_Y: "{0} of {1}",
 	COMMON_ADVANCED_MODE: "Advanced Mode",
 	COMMON_DEFAULT_CHOSEN_FEE: "Default fee type",
+	// HELP
+	MODAL_CONTACT_US_TITLE: "Contact Us",
+	MODAL_CONTACT_US_DESCRIPTION: "We'd be happy to answer your questions",
+	MODAL_CONTACT_US_FIELD_NAME: "Name",
+	MODAL_CONTACT_US_FIELD_EMAIL: "Email",
+	MODAL_CONTACT_US_FIELD_SUBJECT: "Subject",
+	MODAL_CONTACT_US_FIELD_MESSAGE: "Message",
+	MODAL_CONTACT_US_MESSAGE_REQUIRED: "Message is Required",
+	MODAL_CONTACT_US_SUBJECT_REQUIRED: "Subject is Required",
+	MODAL_CONTACT_US_SUBJECT_OPTION_SECURITY: "Security",
+	MODAL_CONTACT_US_SUBJECT_OPTION_OTHER: "Other",
 
-	HELP: {
-		MODAL_CONTACT_US: {
-			TITLE: "Contact Us",
-			DESCRIPTION: "We'd be happy to answer your questions",
-			FIELD_NAME: "Name",
-			FIELD_EMAIL: "Email",
-			FIELD_SUBJECT: "Subject",
-			FIELD_MESSAGE: "Message",
-			MESSAGE_REQUIRED: "Message is Required",
-			SUBJECT_REQUIRED: "Subject is Required",
-
-			SUBJECT_OPTION: {
-				SECURITY: "Security",
-				OTHER: "Other",
-			},
-		},
-	},
-
-	WALLET: {
-		MODAL_NAME_WALLET: {
-			TITLE: "Name Wallet",
-			DESCRIPTION: "You can enter the name of your wallet for a quick search in your wallet.",
-			FIELD_NAME: "Enter a name",
-		},
-	},
+	// Wallets
+	WALLETS_MODAL_NAME_WALLET_TITLE: "Name Wallet",
+	WALLETS_MODAL_NAME_WALLET_DESCRIPTION: "You can enter the name of your wallet for a quick search in your wallet.",
+	WALLETS_MODAL_NAME_WALLET_FIELD_NAME: "Enter a name",
 };

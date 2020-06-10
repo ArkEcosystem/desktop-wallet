@@ -7,10 +7,6 @@ import { ContactUs } from "../";
 import { locales } from "i18n/locales";
 
 describe("ContactUs", () => {
-	beforeEach(() => {
-		jest.spyOn(console, "error").mockImplementation(() => null);
-	});
-
 	it("should not render if not open", () => {
 		const { asFragment, getByTestId } = render(
 			<IntlProvider locale="en-US" messages={locales["en-US"].messages}>
@@ -29,12 +25,20 @@ describe("ContactUs", () => {
 			</IntlProvider>,
 		);
 
-		expect(getByTestId("modal__inner")).toHaveTextContent("HELP.MODAL_CONTACT_US.TITLE");
-		expect(getByTestId("modal__inner")).toHaveTextContent("HELP.MODAL_CONTACT_US.DESCRIPTION");
-		expect(getByTestId("modal__inner")).toHaveTextContent("HELP.MODAL_CONTACT_US.FIELD_NAME");
-		expect(getByTestId("modal__inner")).toHaveTextContent("HELP.MODAL_CONTACT_US.FIELD_EMAIL");
-		expect(getByTestId("modal__inner")).toHaveTextContent("HELP.MODAL_CONTACT_US.FIELD_SUBJECT");
-		expect(getByTestId("modal__inner")).toHaveTextContent("HELP.MODAL_CONTACT_US.FIELD_MESSAGE");
+		expect(getByTestId("modal__inner")).toHaveTextContent(locales["en-US"].messages["MODAL_CONTACT_US_TITLE"]);
+		expect(getByTestId("modal__inner")).toHaveTextContent(
+			locales["en-US"].messages["MODAL_CONTACT_US_DESCRIPTION"],
+		);
+		expect(getByTestId("modal__inner")).toHaveTextContent(locales["en-US"].messages["MODAL_CONTACT_US_FIELD_NAME"]);
+		expect(getByTestId("modal__inner")).toHaveTextContent(
+			locales["en-US"].messages["MODAL_CONTACT_US_FIELD_EMAIL"],
+		);
+		expect(getByTestId("modal__inner")).toHaveTextContent(
+			locales["en-US"].messages["MODAL_CONTACT_US_FIELD_SUBJECT"],
+		);
+		expect(getByTestId("modal__inner")).toHaveTextContent(
+			locales["en-US"].messages["MODAL_CONTACT_US_FIELD_MESSAGE"],
+		);
 		expect(asFragment()).toMatchSnapshot();
 	});
 });
