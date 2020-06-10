@@ -17,6 +17,11 @@ type WelcomeProps = {
 const profileAssets = imagesConfig.pages.profile;
 
 const Welcome = injectIntl(({ intl: { formatMessage }, profiles }: WelcomeProps) => {
+	const profileCardActions = [
+		{ label: "Setting", value: "setting" },
+		{ label: "Delete", value: "delete" },
+	];
+
 	return (
 		<div className="w-full h-full">
 			<NavBar />
@@ -37,7 +42,7 @@ const Welcome = injectIntl(({ intl: { formatMessage }, profiles }: WelcomeProps)
 
 							<div className="mt-6 mb-8">
 								{profiles.map((profile) => (
-									<ProfileCard {...profile} key={profile.id} />
+									<ProfileCard {...profile} key={profile.id} actions={profileCardActions} />
 								))}
 							</div>
 
