@@ -1,7 +1,7 @@
 import React from "react";
 import { injectIntl, WrappedComponentProps } from "react-intl";
 
-import { imagesConfig } from "app/assets/images";
+import imagesConfig from "app/assets/images";
 
 // UI Elements
 import { Button } from "app/components/Button";
@@ -14,7 +14,7 @@ type WelcomeProps = {
 	profiles: Array<any>;
 } & WrappedComponentProps;
 
-const profileAssets = imagesConfig.pages.profile;
+const WelcomeBanner = imagesConfig.profile.pages.welcome.WelcomeBanner;
 
 const Welcome = injectIntl(({ intl: { formatMessage }, profiles }: WelcomeProps) => {
 	const profileCardActions = [
@@ -29,7 +29,7 @@ const Welcome = injectIntl(({ intl: { formatMessage }, profiles }: WelcomeProps)
 			<div className="container mx-auto text-center px-4 sm:px-6 lg:px-0">
 				<h1 className="mb-8 font-bold">{formatMessage({ id: "COMMON_WELCOME" })}</h1>
 				<div className="mx-auto w-full lg:w-4/5 xl:w-2/3">
-					<img src={profileAssets.OnboardingBanner} alt="Onboarding Banner" />
+					<WelcomeBanner />
 				</div>
 
 				<div className="max-w-lg mx-auto md:max-w-xl my-8">

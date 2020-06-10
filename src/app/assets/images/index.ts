@@ -1,11 +1,7 @@
 import ARKLogo from "./ark-logo.png";
-import OnboardingBanner from "./pages/profile/onboarding-banner.svg";
+import profile from "domains/profile/images";
 
-export const imagesConfig = {
+export default {
 	common: { ARKLogo },
-	pages: {
-		profile: {
-			OnboardingBanner,
-		},
-	},
+	profile,
 };
