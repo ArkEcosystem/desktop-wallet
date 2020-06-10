@@ -2,7 +2,7 @@ import React from "react";
 import { ContactUs } from "./";
 import { boolean } from "@storybook/addon-knobs";
 
-export default { title: "Modals / ContactUs" };
+export default { title: "Help / Components / Contact Us" };
 
 export const Default = () => (
 	<ContactUs
