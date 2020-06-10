@@ -72,7 +72,7 @@ export const ContactUs = ({ ...props }: ContactUsProps) => {
 					<FormLabel>{t("HELP.MODAL_CONTACT_US.FIELD_SUBJECT")}</FormLabel>
 					<Select
 						ref={methods.register({
-							required: t({ id: "HELP.MODAL_CONTACT_US.SUBJECT_REQUIRED" }),
+							required: t("HELP.MODAL_CONTACT_US.SUBJECT_REQUIRED").toString(),
 						})}
 					>
 						<option value="">{t("COMMON.SELECT")}</option>
@@ -85,7 +85,7 @@ export const ContactUs = ({ ...props }: ContactUsProps) => {
 					<FormLabel>{t("HELP.MODAL_CONTACT_US.FIELD_MESSAGE")}</FormLabel>
 					<Textarea
 						ref={methods.register({
-							required: t("HELP.MODAL_CONTACT_US.MESSAGE_REQUIRED"),
+							required: t("HELP.MODAL_CONTACT_US.MESSAGE_REQUIRED").toString(),
 						})}
 					/>
 				</FormField>
