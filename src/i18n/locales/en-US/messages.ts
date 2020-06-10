@@ -16,6 +16,7 @@ export const messages = {
 	COMMON_CURRENCY: "Currency",
 	COMMON_DATE: "Date",
 	COMMON_DELEGATE: "Delegate",
+	COMMON_DELETE: "Delete",
 	COMMON_DESKTOP_WALLET: "Desktop Wallet",
 	COMMON_DONE: "Done",
 	COMMON_ENABLE_ADVANCED_MODE: "Enable Advanced Mode to use this feature",
