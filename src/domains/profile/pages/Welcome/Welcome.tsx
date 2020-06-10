@@ -1,7 +1,7 @@
 import React from "react";
 import { injectIntl, WrappedComponentProps } from "react-intl";
 
-import imagesConfig from "app/assets/images";
+import { images } from "app/assets/images";
 
 // UI Elements
 import { Button } from "app/components/Button";
@@ -14,7 +14,7 @@ type WelcomeProps = {
 	profiles: Array<any>;
 } & WrappedComponentProps;
 
-const WelcomeBanner = imagesConfig.profile.pages.welcome.WelcomeBanner;
+const WelcomeBanner = images.profile.pages.welcome.WelcomeBanner;
 
 const Welcome = injectIntl(({ intl: { formatMessage }, profiles }: WelcomeProps) => {
 	const profileCardActions = [

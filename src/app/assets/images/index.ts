@@ -1,7 +1,7 @@
 import ARKLogo from "./ark-logo.png";
-import profile from "domains/profile/images";
+import { profile } from "domains/profile/images";
 
-export default {
+export const images = {
 	common: { ARKLogo },
 	profile,
 };

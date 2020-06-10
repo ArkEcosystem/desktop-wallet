@@ -1,6 +1,6 @@
 import { ReactComponent as WelcomeBanner } from "./welcome-banner.svg";
 
-export default {
+export const profile = {
 	pages: {
 		welcome: {
 			WelcomeBanner,
