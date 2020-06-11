@@ -23,7 +23,7 @@ export default class URIHandler {
     return {
       address: schema[1],
       label: this.__fullyDecode(scheme.label),
-      amount: scheme.amount || '',
+      amount: (Number(scheme.amount) || '').toString(),
       nethash: this.__fullyDecode(scheme.nethash),
       vendorField: this.__fullyDecode(scheme.vendorField) || '',
       wallet: this.__fullyDecode(scheme.wallet),

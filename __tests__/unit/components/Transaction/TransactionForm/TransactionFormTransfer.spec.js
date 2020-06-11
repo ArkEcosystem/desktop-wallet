@@ -366,6 +366,7 @@ describe('TransactionFormTransfer', () => {
         const $tSpy = jest.fn(translation => translation)
         const formatterNetworkCurrencySpy = jest.fn(value => value)
         const response = TransactionFormTransfer.computed.notEnoughBalanceError.call({
+          walletNetwork: {},
           currentWallet: {
             balance: (10 * 1e8).toString()
           },

@@ -601,10 +601,12 @@ export default {
             amount: this.currency_unitToSub(this.amount),
             sendAll: false
           }]
-        }
 
-        this.$refs.amount.reset()
-        this.$refs.recipient.reset()
+          this.$nextTick(() => {
+            this.$refs.amount.reset()
+            this.$refs.recipient.reset()
+          })
+        }
       } else {
         this.$v.form.recipients.$model = []
       }
