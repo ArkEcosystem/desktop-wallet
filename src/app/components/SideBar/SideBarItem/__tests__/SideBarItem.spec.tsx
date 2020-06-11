@@ -5,9 +5,6 @@ import { MemoryRouter } from "react-router-dom";
 import { SideBarItem } from "../";
 
 describe("SideBarItem", () => {
-	beforeEach(() => {
-		jest.spyOn(console, "error").mockImplementation(() => null);
-	});
 	const item = {
 		label: "General",
 		itemKey: "plugin",

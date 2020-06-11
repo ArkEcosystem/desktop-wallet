@@ -35,7 +35,7 @@ exports[`UpdateWalletName should render a modal 1`] = `
       class="py-4"
     >
       <h2>
-        WALLET.MODAL_NAME_WALLET.TITLE
+        Name Wallet
       </h2>
       <div
         class="flex-1"
@@ -43,7 +43,7 @@ exports[`UpdateWalletName should render a modal 1`] = `
         <div
           class="text-theme-neutral-500"
         >
-          WALLET.MODAL_NAME_WALLET.DESCRIPTION
+          You can enter the name of your wallet for a quick search in your wallet.
         </div>
         <form
           class="space-y-6"
@@ -53,11 +53,11 @@ exports[`UpdateWalletName should render a modal 1`] = `
             class="sc-AxiKw iQzisX flex flex-col space-y-2"
           >
             <label
-              class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark pt-2"
+              class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
               data-testid="FormLabel"
               for="name"
             >
-              WALLET.MODAL_NAME_WALLET.FIELD_NAME
+              Enter a name
             </label>
             <input
               class="sc-AxhCb clCjoe overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "

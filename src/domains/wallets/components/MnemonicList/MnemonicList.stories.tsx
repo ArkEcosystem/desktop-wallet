@@ -1,5 +1,5 @@
 import React from "react";
-import { WalletMnemonicList } from "./WalletMnemonicList";
+import { MnemonicList } from "./MnemonicList";
 
 export default {
 	title: "Wallets / Components / MnemonicList",
@@ -20,4 +20,4 @@ const mnemonic = [
 	"adipisci",
 ];
 
-export const Default = () => <WalletMnemonicList mnemonic={mnemonic} />;
+export const Default = () => <MnemonicList mnemonic={mnemonic} />;

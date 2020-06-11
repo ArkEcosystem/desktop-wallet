@@ -35,7 +35,7 @@ exports[`ContactUs should render a modal 1`] = `
       class="py-4"
     >
       <h2>
-        HELP.MODAL_CONTACT_US.TITLE
+        Contact Us
       </h2>
       <div
         class="flex-1"
@@ -43,7 +43,7 @@ exports[`ContactUs should render a modal 1`] = `
         <div
           class="text-theme-neutral-500"
         >
-          HELP.MODAL_CONTACT_US.DESCRIPTION
+          We'd be happy to answer your questions
         </div>
         <div
           class="flex border-b border-gray-500 text-black mt-2 mb-8 -mx-16 px-16 pb-8"
@@ -129,11 +129,11 @@ exports[`ContactUs should render a modal 1`] = `
             class="sc-AxhCb ckQmOL flex flex-col space-y-2"
           >
             <label
-              class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark pt-2"
+              class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
               data-testid="FormLabel"
               for="name"
             >
-              HELP.MODAL_CONTACT_US.FIELD_NAME
+              Name
             </label>
             <input
               class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
@@ -145,11 +145,11 @@ exports[`ContactUs should render a modal 1`] = `
             class="sc-AxhCb ckQmOL flex flex-col space-y-2"
           >
             <label
-              class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark pt-2"
+              class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
               data-testid="FormLabel"
               for="email"
             >
-              HELP.MODAL_CONTACT_US.FIELD_EMAIL
+              Email
             </label>
             <input
               class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
@@ -161,11 +161,11 @@ exports[`ContactUs should render a modal 1`] = `
             class="sc-AxhCb ckQmOL flex flex-col space-y-2"
           >
             <label
-              class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark pt-2"
+              class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
               data-testid="FormLabel"
               for="subject"
             >
-              HELP.MODAL_CONTACT_US.FIELD_SUBJECT
+              Subject
             </label>
             <div
               class="sc-AxmLO kuiknc"
@@ -184,12 +184,12 @@ exports[`ContactUs should render a modal 1`] = `
                 <option
                   value="security"
                 >
-                  HELP.MODAL_CONTACT_US.SUBJECT_OPTION.SECURITY
+                  Security
                 </option>
                 <option
                   value="other"
                 >
-                  HELP.MODAL_CONTACT_US.SUBJECT_OPTION.OTHER
+                  Other
                 </option>
               </select>
               <div
@@ -211,11 +211,11 @@ exports[`ContactUs should render a modal 1`] = `
             class="sc-AxhCb ckQmOL flex flex-col space-y-2"
           >
             <label
-              class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark pt-2"
+              class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
               data-testid="FormLabel"
               for="message"
             >
-              HELP.MODAL_CONTACT_US.FIELD_MESSAGE
+              Message
             </label>
             <textarea
               class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
