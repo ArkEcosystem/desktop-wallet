@@ -4,7 +4,7 @@ import tw, { styled } from "twin.macro";
 
 import twConfig from "tailwind.config";
 
-type CircleProgressBarBaseProps = {
+type CircleProgressBarProps = {
 	size: string;
 	trailStrokeWidth?: number;
 	trailStrokeColor?: string;
@@ -43,7 +43,7 @@ export const CircleProgressBar = ({
 	percentage,
 	percentageColor,
 	speed,
-}: CircleProgressBarBaseProps) => {
+}: CircleProgressBarProps) => {
 	const [progressBar, setProgressBar] = useState(0);
 	const paces = percentage / speed;
 	const circleConfig = {
