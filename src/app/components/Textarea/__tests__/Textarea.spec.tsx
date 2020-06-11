@@ -1,23 +1,23 @@
 import React from "react";
 import { render } from "@testing-library/react";
-import { Textarea } from "../Textarea";
+import { TextArea } from "../TextArea";
 
-describe("Textarea", () => {
+describe("TextArea", () => {
 	it("should render", () => {
-		const { getByTestId, asFragment } = render(<Textarea />);
-		const textarea = getByTestId("Textarea");
+		const { getByTestId, asFragment } = render(<TextArea />);
+		const textarea = getByTestId("TextArea");
 		expect(textarea.tagName).toEqual("TEXTAREA");
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should render as invalid", () => {
-		const { asFragment } = render(<Textarea isInvalid />);
+		const { asFragment } = render(<TextArea isInvalid />);
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should render as disabled", () => {
-		const { getByTestId, asFragment } = render(<Textarea disabled />);
-		const textarea = getByTestId("Textarea");
+		const { getByTestId, asFragment } = render(<TextArea disabled />);
+		const textarea = getByTestId("TextArea");
 		expect(textarea).toBeDisabled();
 		expect(asFragment()).toMatchSnapshot();
 	});

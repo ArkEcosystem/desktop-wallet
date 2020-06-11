@@ -1,14 +1,14 @@
 import React from "react";
-import { Textarea } from "./Textarea";
+import { TextArea } from "./TextArea";
 
-export default { title: "Input / Textarea" };
+export default { title: "Input / TextArea" };
 
 export const Default = () => {
 	return (
 		<div className="space-y-4 max-w-xs">
-			<Textarea placeholder="Enabled" />
-			<Textarea placeholder="Invalid" isInvalid />
-			<Textarea placeholder="Disabled" disabled />
+			<TextArea placeholder="Enabled" />
+			<TextArea placeholder="Invalid" isInvalid />
+			<TextArea placeholder="Disabled" disabled />
 		</div>
 	);
 };

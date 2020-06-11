@@ -9,7 +9,7 @@ import { Form, FormField, FormLabel, FormHelperText } from "app/components/Form"
 import { Input } from "app/components/Input";
 import { Select } from "app/components/Select";
 import { Icon } from "app/components/Icon";
-import { Textarea } from "app/components/Textarea";
+import { TextArea } from "app/components/TextArea";
 
 type ContactUsProps = {
 	isOpen: boolean;
@@ -85,7 +85,7 @@ export const ContactUs = (props: ContactUsProps) => {
 
 				<FormField name="message">
 					<FormLabel>{t("HELP.MODAL_CONTACT_US.FIELD_MESSAGE")}</FormLabel>
-					<Textarea
+					<TextArea
 						ref={methods.register({
 							required: t("HELP.MODAL_CONTACT_US.MESSAGE_REQUIRED").toString(),
 						})}
