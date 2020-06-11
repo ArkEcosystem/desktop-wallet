@@ -17,11 +17,6 @@ describe("Formatted Address", () => {
 		expect(container).toMatchSnapshot();
 	});
 
-	it("should render with wallet name", () => {
-		const { container } = render(<Address address={sampleAddress} walletName="Sample Wallet"></Address>);
-		expect(container).toMatchSnapshot();
-	});
-
 	it("should not render without address", () => {
 		const { container } = render(<Address />);
 		expect(container).toMatchSnapshot();
