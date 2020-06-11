@@ -7,12 +7,16 @@ import { Button } from "app/components/Button";
 import { Form, FormField, FormLabel, FormHelperText } from "app/components/Form";
 import { Input } from "app/components/Input";
 
+import { images } from "app/assets/images";
+
 type UpdateWalletNameProps = {
 	isOpen: boolean;
 	onClose?: any;
 	onCancel?: any;
 	onSave: any;
 };
+
+const NameWalletBanner = images.wallet.components.updateWalletName.NameWalletBanner;
 
 export const UpdateWalletName = ({ ...props }: UpdateWalletNameProps) => {
 	const methods = useForm({ mode: "onChange" });
@@ -22,10 +26,11 @@ export const UpdateWalletName = ({ ...props }: UpdateWalletNameProps) => {
 		<Modal
 			title={t("WALLETS.MODAL_NAME_WALLET.TITLE")}
 			description={t("WALLETS.MODAL_NAME_WALLET.DESCRIPTION")}
+			image={<NameWalletBanner className="mb-8" />}
 			isOpen={props.isOpen}
 			onClose={props.onClose}
 		>
-			<Form context={methods} onSubmit={props.onSave}>
+			<Form context={methods} onSubmit={props.onSave} className="mt-4">
 				<FormField name="name">
 					<FormLabel>{t("WALLETS.MODAL_NAME_WALLET.FIELD_NAME")}</FormLabel>
 					<Input ref={methods.register({ required: "Field required" })} />
