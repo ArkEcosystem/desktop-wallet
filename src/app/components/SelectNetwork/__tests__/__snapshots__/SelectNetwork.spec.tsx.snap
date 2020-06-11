@@ -1,0 +1,150 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SelectNetwork should render 1`] = `
+<div>
+  <div>
+    <ul
+      class="inline-block"
+      data-testid="network__option"
+    />
+    <div
+      class="sc-AxjAm jQEjKi relative border-theme-primary-100 ml-2 cursor-pointer"
+      data-testid="network__viewall"
+    >
+      <div
+        class="text-xs text-theme-primary-500"
+      >
+        All
+      </div>
+      <span
+        class="style__Wrapper-ik37et-0 chXxec flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent border-theme-primary-100 -bottom-1 -right-4 text-theme-primary-500"
+      >
+        <div
+          class="sc-AxirZ hDwaov"
+          height="12"
+          width="12"
+        >
+          <svg>
+            chevron-down.svg
+          </svg>
+        </div>
+        <span />
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`SelectNetwork should render with icon 1`] = `
+<div>
+  <div>
+    <ul
+      class="inline-block"
+      data-testid="network__option"
+    >
+      <li
+        class="inline-block cursor-pointer mr-5"
+        data-testid="network__option--0"
+      >
+        <div
+          class="sc-AxjAm jQEjKi relative border-theme-neutral-200 text-theme-neutral-300"
+        >
+          <div
+            class="sc-AxirZ iQaTP"
+            height="1em"
+            width="1em"
+          >
+            <svg>
+              ark.svg
+            </svg>
+          </div>
+          <span
+            class="style__Wrapper-ik37et-0 chXxec flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent border-theme-neutral-200 -bottom-1 -right-4"
+          >
+            <span />
+          </span>
+        </div>
+      </li>
+      <li
+        class="inline-block cursor-pointer mr-5"
+        data-testid="network__option--1"
+      >
+        <div
+          class="sc-AxjAm jQEjKi relative border-theme-success-500 text-theme-success-500"
+        >
+          <div
+            class="sc-AxirZ iQaTP"
+            height="1em"
+            width="1em"
+          >
+            <svg>
+              eth.svg
+            </svg>
+          </div>
+          <span
+            class="style__Wrapper-ik37et-0 chXxec flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent -bottom-1 -right-4 bg-theme-success-500 text-theme-success-contrast"
+          >
+            <div
+              class="sc-AxirZ hDwaov"
+              height="12"
+              width="12"
+            >
+              <svg>
+                checkmark.svg
+              </svg>
+            </div>
+            <span />
+          </span>
+        </div>
+      </li>
+      <li
+        class="inline-block cursor-pointer mr-5"
+        data-testid="network__option--2"
+      >
+        <div
+          class="sc-AxjAm jQEjKi relative border-theme-neutral-200 text-theme-neutral-300"
+        >
+          <div
+            class="sc-AxirZ iQaTP"
+            height="1em"
+            width="1em"
+          >
+            <svg>
+              btc.svg
+            </svg>
+          </div>
+          <span
+            class="style__Wrapper-ik37et-0 chXxec flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent border-theme-neutral-200 -bottom-1 -right-4"
+          >
+            <span />
+          </span>
+        </div>
+      </li>
+    </ul>
+    <div
+      class="sc-AxjAm jQEjKi relative border-theme-primary-100 ml-2 cursor-pointer"
+      data-testid="network__viewall"
+    >
+      <div
+        class="text-xs text-theme-primary-500"
+      >
+        All
+      </div>
+      <span
+        class="style__Wrapper-ik37et-0 chXxec flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent border-theme-primary-100 -bottom-1 -right-4 text-theme-primary-500"
+      >
+        <div
+          class="sc-AxirZ hDwaov"
+          height="12"
+          width="12"
+        >
+          <svg>
+            chevron-down.svg
+          </svg>
+        </div>
+        <span />
+      </span>
+    </div>
+  </div>
+</div>
+`;
