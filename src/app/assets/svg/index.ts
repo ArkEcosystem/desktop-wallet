@@ -1,6 +1,7 @@
 import { ReactComponent as Ark } from "./ark.svg";
 import { ReactComponent as ArrowBack } from "./arrow-back.svg";
 import { ReactComponent as Btc } from "./btc.svg";
+import { ReactComponent as Confirmed } from "./confirmed.svg";
 import { ReactComponent as Checkmark } from "./checkmark.svg";
 import { ReactComponent as ChevronDown } from "./chevron-down.svg";
 import { ReactComponent as Close } from "./close.svg";
@@ -13,6 +14,7 @@ import { ReactComponent as Eye } from "./eye.svg";
 import { ReactComponent as EyeOff } from "./eye-off.svg";
 import { ReactComponent as FilePassword } from "./file-password.svg";
 import { ReactComponent as General } from "./general.svg";
+import { ReactComponent as Mistake } from "./mistake.svg";
 import { ReactComponent as Msq } from "./msq.svg";
 import { ReactComponent as Peer } from "./peer.svg";
 import { ReactComponent as Plugin } from "./plugin.svg";
@@ -33,6 +35,7 @@ export const SvgCollection: any = {
 	Ark,
 	ArrowBack,
 	Btc,
+	Confirmed,
 	Checkmark,
 	ChevronDown,
 	Close,
@@ -45,6 +48,7 @@ export const SvgCollection: any = {
 	EyeOff,
 	FilePassword,
 	General,
+	Mistake,
 	Msq,
 	Peer,
 	Plugin,
