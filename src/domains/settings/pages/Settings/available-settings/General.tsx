@@ -220,7 +220,7 @@ export const General = ({ formConfig, pageConfig, onSubmit }: Props) => {
 				</div>
 				<div className="w-full flex justify-between">
 					<Button color="danger" variant="plain" size="large">
-						<div className="flex items-center justify-between">
+						<div className="flex items-center justify-between px-1">
 							<Icon name="Reset" />
 							<span className="ml-2">Reset Data</span>
 						</div>
