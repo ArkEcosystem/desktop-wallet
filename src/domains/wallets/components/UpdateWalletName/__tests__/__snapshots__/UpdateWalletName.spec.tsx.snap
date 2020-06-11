@@ -40,13 +40,18 @@ exports[`UpdateWalletName should render a modal 1`] = `
       <div
         class="flex-1"
       >
+        <svg
+          class="mb-8"
+        >
+          name-wallet.svg
+        </svg>
         <div
-          class="text-theme-neutral-500"
+          class="text-theme-neutral-700"
         >
           You can enter the name of your wallet for a quick search in your wallet.
         </div>
         <form
-          class="space-y-6"
+          class="mt-4"
           data-testid="Form"
         >
           <fieldset
