@@ -3,11 +3,14 @@ import { ReactComponent as Btc } from "./btc.svg";
 import { ReactComponent as Checkmark } from "./checkmark.svg";
 import { ReactComponent as ChevronDown } from "./chevron-down.svg";
 import { ReactComponent as Close } from "./close.svg";
+import { ReactComponent as Copy } from "./copy.svg";
 import { ReactComponent as CrossSlim } from "./cross-slim.svg";
 import { ReactComponent as Discord } from "./discord.svg";
+import { ReactComponent as Download } from "./download.svg";
 import { ReactComponent as Eth } from "./eth.svg";
 import { ReactComponent as Eye } from "./eye.svg";
 import { ReactComponent as EyeOff } from "./eye-off.svg";
+import { ReactComponent as FilePassword } from "./file-password.svg";
 import { ReactComponent as General } from "./general.svg";
 import { ReactComponent as Msq } from "./msq.svg";
 import { ReactComponent as Peer } from "./peer.svg";
@@ -25,11 +28,14 @@ export const SvgCollection: any = {
 	Checkmark,
 	ChevronDown,
 	Close,
+	Copy,
 	CrossSlim,
 	Discord,
+	Download,
 	Eth,
 	Eye,
 	EyeOff,
+	FilePassword,
 	General,
 	Msq,
 	Peer,
