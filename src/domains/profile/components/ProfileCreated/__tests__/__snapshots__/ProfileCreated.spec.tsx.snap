@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ContactUs should not render if not open 1`] = `<DocumentFragment />`;
+exports[`ProfileCreated should not render if not open 1`] = `<DocumentFragment />`;
 
-exports[`ContactUs should render a modal 1`] = `
+exports[`ProfileCreated should render a modal 1`] = `
 <DocumentFragment>
   <div
     class="fixed inset-0 z-10 bg-black opacity-50"
@@ -40,16 +40,14 @@ exports[`ContactUs should render a modal 1`] = `
       <div
         class="flex-1"
       >
+        <svg
+          class="my-10"
+        >
+          profile-created-banner.svg
+        </svg>
         <div
           class="container"
         >
-          <div
-            class="my-10"
-          >
-            <svg>
-              profile-created-banner.svg
-            </svg>
-          </div>
           <div
             class="text-center mb-6"
           >
