@@ -2,16 +2,18 @@
 import React, { useState, useEffect } from "react";
 import tw, { styled } from "twin.macro";
 
+import twConfig from "tailwind.config";
+
 type CircleProgressBarBaseProps = {
-	strokeColor?: string;
-	strokeWidth?: number;
-	percentage: number;
-	percentageColor: string;
+	maxSize: string;
 	trailStrokeWidth?: number;
 	trailStrokeColor?: string;
 	trailSpaced?: boolean;
+	strokeWidth?: number;
+	strokeColor?: string;
+	percentage: number;
+	percentageColor: string;
 	speed: number;
-	maxSize: string;
 };
 
 const Container = styled.figure<{ maxSize: string }>`
@@ -32,15 +34,15 @@ const Text = styled.text`
 `;
 
 export const CircleProgressBar = ({
-	strokeColor,
-	strokeWidth,
-	percentage,
+	maxSize,
 	trailStrokeWidth,
 	trailStrokeColor,
 	trailSpaced,
-	speed,
+	strokeWidth,
+	strokeColor,
+	percentage,
 	percentageColor,
-	maxSize,
+	speed,
 }: CircleProgressBarBaseProps) => {
 	const [progressBar, setProgressBar] = useState(0);
 	const paces = percentage / speed;
@@ -102,13 +104,13 @@ export const CircleProgressBar = ({
 };
 
 CircleProgressBar.defaultProps = {
-	strokeColor: "blue",
-	strokeWidth: 1,
-	percentage: 0,
-	percentageColor: "black",
-	trailStrokeWidth: 1,
-	trailStrokeColor: "#ddd",
-	trailSpaced: false,
-	speed: 1,
 	maxSize: "100vh",
+	trailStrokeWidth: 1,
+	trailStrokeColor: twConfig.theme.colors["theme-success-200"],
+	trailSpaced: false,
+	strokeWidth: 1,
+	strokeColor: twConfig.theme.colors["theme-success-600"],
+	percentage: 0,
+	percentageColor: twConfig.theme.colors["theme-success-600"],
+	speed: 1,
 };
