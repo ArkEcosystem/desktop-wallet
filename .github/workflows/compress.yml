@@ -19,7 +19,7 @@ jobs:
               run: |
                   yarn global add svgo
                   export PATH="$(yarn global bin):$PATH"
-                  svgo src/**/*.svg
+                  svgo $GITHUB_WORKSPACE/src/**/*.svg
 
             - uses: stefanzweifel/git-auto-commit-action@v4
               with:
