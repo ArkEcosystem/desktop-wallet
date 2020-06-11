@@ -1,10 +1,10 @@
 import React from "react";
-import { IntlProvider } from "react-intl";
 import { render } from "@testing-library/react";
+import { I18nextProvider } from "react-i18next";
+
+import { i18n } from "app/i18n";
 
 import { Welcome } from "../";
-// i18n
-import { locales } from "i18n/locales";
 
 describe("Welcome", () => {
 	it("should render", () => {
@@ -18,9 +18,9 @@ describe("Welcome", () => {
 		];
 
 		const { container, asFragment } = render(
-			<IntlProvider locale="en-US" messages={locales["en-US"].messages}>
+			<I18nextProvider i18n={i18n}>
 				<Welcome profiles={profiles} />
-			</IntlProvider>,
+			</I18nextProvider>,
 		);
 
 		expect(container).toBeTruthy();

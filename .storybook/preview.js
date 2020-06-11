@@ -1,19 +1,11 @@
 import React from "react";
 import { addDecorator, addParameters } from "@storybook/react";
-import { setIntlConfig, withIntl } from "storybook-addon-intl";
+import { withI18next } from "storybook-addon-i18next";
 import StoryRouter from "storybook-react-router";
 // Preview layout
 import { Layout } from "./Layout";
 // i18n
-import { translations } from "../src/i18n";
-
-const getMessages = (locale) => translations[locale];
-
-setIntlConfig({
-	locales: ["en-US"],
-	defaultLocale: "en-US",
-	getMessages,
-});
+import { i18n } from "app/i18n";
 
 addParameters({
 	options: {
@@ -21,6 +13,13 @@ addParameters({
 	},
 });
 
-addDecorator(withIntl);
+addDecorator(
+	withI18next({
+		i18n,
+		languages: {
+			en: "English",
+		},
+	}),
+);
 addDecorator(StoryRouter());
 addDecorator((storyFn) => <Layout>{storyFn()}</Layout>);
