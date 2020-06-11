@@ -1,5 +1,5 @@
 import React from "react";
-import { injectIntl, WrappedComponentProps } from "react-intl";
+import { useTranslation } from "react-i18next";
 
 import { images } from "app/assets/images";
 
@@ -12,22 +12,24 @@ import { ProfileCard } from "domains/profile/components/ProfileCard";
 
 type WelcomeProps = {
 	profiles: Array<any>;
-} & WrappedComponentProps;
+};
 
 const WelcomeBanner = images.profile.pages.welcome.WelcomeBanner;
 
-const Welcome = injectIntl(({ intl: { formatMessage }, profiles }: WelcomeProps) => {
+const Welcome = ({ profiles }: WelcomeProps) => {
 	const profileCardActions = [
 		{ label: "Setting", value: "setting" },
 		{ label: "Delete", value: "delete" },
 	];
+
+	const { t } = useTranslation();
 
 	return (
 		<div className="w-full h-full">
 			<NavBar />
 
 			<div className="container mx-auto text-center px-4 sm:px-6 lg:px-0">
-				<h1 className="mb-8 font-bold">{formatMessage({ id: "COMMON_WELCOME" })}</h1>
+				<h1 className="mb-8 font-bold">{t("COMMON.WELCOME")}</h1>
 				<div className="mx-auto w-full lg:w-4/5 xl:w-2/3">
 					<WelcomeBanner />
 				</div>
@@ -69,7 +71,7 @@ const Welcome = injectIntl(({ intl: { formatMessage }, profiles }: WelcomeProps)
 			</div>
 		</div>
 	);
-});
+};
 
 Welcome.defaultProps = {
 	profiles: [],
