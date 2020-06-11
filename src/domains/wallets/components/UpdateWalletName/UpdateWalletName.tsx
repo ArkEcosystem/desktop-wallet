@@ -30,7 +30,7 @@ export const UpdateWalletName = ({ ...props }: UpdateWalletNameProps) => {
 			isOpen={props.isOpen}
 			onClose={props.onClose}
 		>
-			<Form context={methods} onSubmit={props.onSave}>
+			<Form context={methods} onSubmit={props.onSave} className="mt-4">
 				<FormField name="name">
 					<FormLabel>{t("WALLETS.MODAL_NAME_WALLET.FIELD_NAME")}</FormLabel>
 					<Input ref={methods.register({ required: "Field required" })} />
