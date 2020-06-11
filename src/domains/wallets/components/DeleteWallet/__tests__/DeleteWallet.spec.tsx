@@ -31,8 +31,8 @@ describe("DeleteWallet", () => {
 			</I18nextProvider>,
 		);
 
-		expect(getByTestId("modal__inner")).toHaveTextContent("WALLET.MODAL_DELETE_WALLET.TITLE");
-		expect(getByTestId("modal__inner")).toHaveTextContent("WALLET.MODAL_DELETE_WALLET.DESCRIPTION");
+		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_DELETE_WALLET.TITLE);
+		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_DELETE_WALLET.DESCRIPTION);
 		expect(asFragment()).toMatchSnapshot();
 	});
 });
