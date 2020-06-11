@@ -1,43 +1,49 @@
+// Packages
 import React from "react";
+import { useTranslation } from "react-i18next";
 
-import { images } from "app/assets/images";
-
-// UI Elements
+// Components
 import { Button } from "app/components/Button";
 import { Modal } from "app/components/Modal";
+
+// Assets
+import { images } from "app/assets/images";
 
 type ProfileCreatedProps = {
 	isOpen: boolean;
 	onClose?: any;
-	onCancel?: any;
-	onSend: any;
+	onSkip?: any;
+	onStart: any;
 };
 
 const { ProfileCreatedBanner } = images.profile.components.profileCreated;
 
-export const ProfileCreated = ({ ...props }: ProfileCreatedProps) => {
-	return (
-		<Modal title="Profile Created!" isOpen={props.isOpen} onClose={props.onClose}>
-			<div className="container">
-				<div className="my-10">
-					<ProfileCreatedBanner />
-				</div>
+export const ProfileCreated = (props: ProfileCreatedProps) => {
+	const { t } = useTranslation();
 
+	return (
+		<Modal
+			title={t("PROFILE.MODAL_PROFILE_CREATED.TITLE")}
+			image={<ProfileCreatedBanner className="my-10" />}
+			isOpen={props.isOpen}
+			onClose={props.onClose}
+		>
+			<div className="container">
 				<div className="text-center mb-6">
 					<p className="text-sm text-theme-neutral-dark mb-1 md:text-base">
-						If you are new to the ARK Desktop Wallet, view our tutorial to get started.
+						{t("PROFILE.MODAL_PROFILE_CREATED.DESCRIPTION_1")}
 					</p>
 					<p className="text-sm text-theme-neutral-dark md:text-base">
-						If not, you can skip the tutorial to go directly to your portfolio.
+						{t("PROFILE.MODAL_PROFILE_CREATED.DESCRIPTION_2")}
 					</p>
 				</div>
 
 				<div className="flex flex-col justify-center sm:flex-row">
-					<Button color="primary" variant="solid" className="mr-2" onClick={props.onSend}>
-						Start Tutorial
+					<Button color="primary" variant="solid" className="mr-2" onClick={props.onStart}>
+						{t("PROFILE.MODAL_PROFILE_CREATED.START_TUTORIAL")}
 					</Button>
-					<Button color="primary" variant="plain" className="mt-2 sm:mt-0" onClick={props.onCancel}>
-						Skip Tutorial
+					<Button color="primary" variant="plain" className="mt-2 sm:mt-0" onClick={props.onSkip}>
+						{t("PROFILE.MODAL_PROFILE_CREATED.SKIP_TUTORIAL")}
 					</Button>
 				</div>
 			</div>

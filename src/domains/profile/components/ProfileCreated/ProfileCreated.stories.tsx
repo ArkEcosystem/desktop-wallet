@@ -8,7 +8,7 @@ export const Default = () => (
 	<ProfileCreated
 		isOpen={boolean("Is Open", true)}
 		onClose={() => alert("closed")}
-		onCancel={() => alert("skip")}
-		onSend={() => alert("start")}
+		onSkip={() => alert("skipped")}
+		onStart={() => alert("started")}
 	/>
 );
