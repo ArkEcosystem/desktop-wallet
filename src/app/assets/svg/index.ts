@@ -31,6 +31,9 @@ import { ReactComponent as Grid } from "./grid.svg";
 import { ReactComponent as List } from "./list.svg";
 import { ReactComponent as Filters } from "./filters.svg";
 import { ReactComponent as Import } from "./import.svg";
+import { ReactComponent as Sort } from "./sort.svg";
+import { ReactComponent as ArrowUp } from "./arrowup.svg";
+import { ReactComponent as ArrowDown } from "./arrowdown.svg";
 
 export const SvgCollection: any = {
 	Ark,
@@ -66,4 +69,7 @@ export const SvgCollection: any = {
 	List,
 	Filters,
 	Import,
+	Sort,
+	ArrowUp,
+	ArrowDown,
 };

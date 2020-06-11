@@ -1,0 +1,186 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Table should render 1`] = `
+<div>
+  <div
+    class="sc-AxjAm iKMLVh"
+    role="table"
+  >
+    <table
+      class="table-fixed"
+    >
+      <thead>
+        <tr
+          role="row"
+        >
+          <th
+            class="text-theme-neutral-400 text-left text-xs select-none pb-3}"
+            colspan="1"
+            data-testid="table__th--0"
+            role="columnheader"
+            style="cursor: pointer;"
+            title="Toggle SortBy"
+          >
+            <div
+              class="flex flex-inline align-top  undefined"
+            >
+              <div
+                class="mr-1"
+              >
+                Header 1
+              </div>
+              <div
+                class="mt-1"
+                data-testid="table__Sort"
+              >
+                <div
+                  class="sc-AxirZ fttODj"
+                  height="10"
+                  width="10"
+                >
+                  <svg>
+                    sort.svg
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </th>
+          <th
+            class="text-theme-neutral-400 text-left text-xs select-none pb-3}"
+            colspan="1"
+            data-testid="table__th--1"
+            role="columnheader"
+            style="cursor: pointer;"
+            title="Toggle SortBy"
+          >
+            <div
+              class="flex flex-inline align-top  undefined"
+            >
+              <div
+                class="mr-1"
+              >
+                Header 2
+              </div>
+              <div
+                class="mt-1"
+                data-testid="table__Sort"
+              >
+                <div
+                  class="sc-AxirZ fttODj"
+                  height="10"
+                  width="10"
+                >
+                  <svg>
+                    sort.svg
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody
+        role="rowgroup"
+      >
+        <tr>
+          <td>
+            1
+          </td>
+          <td>
+            2
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;
+
+exports[`Table should render empty rows if template not provided 1`] = `
+<div>
+  <div
+    class="sc-AxjAm iKMLVh"
+    role="table"
+  >
+    <table
+      class="table-fixed"
+    >
+      <thead>
+        <tr
+          role="row"
+        >
+          <th
+            class="text-theme-neutral-400 text-left text-xs select-none pb-3}"
+            colspan="1"
+            data-testid="table__th--0"
+            role="columnheader"
+            style="cursor: pointer;"
+            title="Toggle SortBy"
+          >
+            <div
+              class="flex flex-inline align-top  undefined"
+            >
+              <div
+                class="mr-1"
+              >
+                Header 1
+              </div>
+              <div
+                class="mt-1"
+                data-testid="table__Sort"
+              >
+                <div
+                  class="sc-AxirZ fttODj"
+                  height="10"
+                  width="10"
+                >
+                  <svg>
+                    sort.svg
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </th>
+          <th
+            class="text-theme-neutral-400 text-left text-xs select-none pb-3}"
+            colspan="1"
+            data-testid="table__th--1"
+            role="columnheader"
+            style="cursor: pointer;"
+            title="Toggle SortBy"
+          >
+            <div
+              class="flex flex-inline align-top  undefined"
+            >
+              <div
+                class="mr-1"
+              >
+                Header 2
+              </div>
+              <div
+                class="mt-1"
+                data-testid="table__Sort"
+              >
+                <div
+                  class="sc-AxirZ fttODj"
+                  height="10"
+                  width="10"
+                >
+                  <svg>
+                    sort.svg
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody
+        role="rowgroup"
+      >
+        <tr />
+      </tbody>
+    </table>
+  </div>
+</div>
+`;
