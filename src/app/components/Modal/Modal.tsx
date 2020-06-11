@@ -39,7 +39,11 @@ const ModalContent = (props: ModalContentProps) => {
 				<div className="flex-1">
 					{props.image}
 
-					{props.description ? <div className="text-theme-neutral-500">{props.description}</div> : ""}
+					{props.description ? (
+						<div className="font-medium text-theme-neutral-700">{props.description}</div>
+					) : (
+						""
+					)}
 
 					{props.children}
 				</div>
