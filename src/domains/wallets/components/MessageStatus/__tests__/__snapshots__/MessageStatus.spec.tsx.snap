@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MessageStatus should render a success verify status 1`] = `
+<DocumentFragment>
+  <div
+    class="fixed inset-0 z-10 bg-black opacity-50"
+    data-testid="modal__overlay"
+  />
+  <div
+    class="fixed left-0 right-0 z-10 flex flex-col max-w-2xl px-16 pt-6 pb-8 mx-auto mt-24 rounded-xl bg-theme-background"
+    data-testid="modal__inner"
+  >
+    <div
+      class="absolute top-0 right-0 mt-4 mr-4"
+    >
+      <button
+        class="sc-AxjAm jZZsoN"
+        color="neutral"
+        type="button"
+      >
+        <div
+          class="sc-AxirZ fttODj"
+          height="10"
+          width="10"
+        >
+          <svg>
+            cross-slim.svg
+          </svg>
+        </div>
+      </button>
+    </div>
+    <div
+      class="py-4"
+    >
+      <h2 />
+      <div
+        class="flex-1"
+      >
+        <div>
+          <div
+            class="flex flex-col items-start"
+          >
+            <h1
+              class="text-3xl font-bold md:text-4xl"
+              data-testid="header__title"
+            >
+              Confirmed
+            </h1>
+            <div
+              class="mt-2 text-theme-neutral-dark"
+              data-testid="header__subtitle"
+            >
+              Verify was successfully confirmed
+            </div>
+          </div>
+          <svg
+            class="mt-10"
+          >
+            confirmed.svg
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`MessageStatus should render empty since is close 1`] = `<DocumentFragment />`;

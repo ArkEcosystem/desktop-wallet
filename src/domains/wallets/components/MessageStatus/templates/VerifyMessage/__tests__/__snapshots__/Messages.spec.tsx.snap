@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`VerifyMessage should render verify message error 1`] = `
+<DocumentFragment>
+  <div>
+    <div
+      class="flex flex-col items-start"
+    >
+      <h1
+        class="text-3xl font-bold md:text-4xl"
+        data-testid="header__title"
+      >
+        Mistake
+      </h1>
+      <div
+        class="mt-2 text-theme-neutral-dark"
+        data-testid="header__subtitle"
+      >
+        Mistake subtitle
+      </div>
+    </div>
+    <svg
+      class="mt-10"
+    >
+      mistake.svg
+    </svg>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`VerifyMessage should render verify message success 1`] = `
+<DocumentFragment>
+  <div>
+    <div
+      class="flex flex-col items-start"
+    >
+      <h1
+        class="text-3xl font-bold md:text-4xl"
+        data-testid="header__title"
+      >
+        Confirmed
+      </h1>
+      <div
+        class="mt-2 text-theme-neutral-dark"
+        data-testid="header__subtitle"
+      >
+        Verify was successfully confirmed
+      </div>
+    </div>
+    <svg
+      class="mt-10"
+    >
+      confirmed.svg
+    </svg>
+  </div>
+</DocumentFragment>
+`;
