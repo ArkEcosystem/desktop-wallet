@@ -337,7 +337,7 @@ describe('TransactionFormTransfer', () => {
           amount: '0.00000001 ARK'
         })
         expect(response).toBe('INPUT_CURRENCY.ERROR.LESS_THAN_MINIMUM')
-        expect(simpleFormatCryptoSpy).toHaveBeenCalledWith('0.00000001')
+        expect(simpleFormatCryptoSpy).toHaveBeenCalledWith('0.00000001', expect.anything())
       })
 
       it('should return formatted value with different fraction digits', () => {
@@ -357,7 +357,7 @@ describe('TransactionFormTransfer', () => {
           amount: '0.01 ARK'
         })
         expect(response).toBe('INPUT_CURRENCY.ERROR.LESS_THAN_MINIMUM')
-        expect(simpleFormatCryptoSpy).toHaveBeenCalledWith('0.01')
+        expect(simpleFormatCryptoSpy).toHaveBeenCalledWith('0.01', expect.anything())
       })
     })
 
@@ -378,7 +378,7 @@ describe('TransactionFormTransfer', () => {
         expect($tSpy).toHaveBeenCalledWith('TRANSACTION_FORM.ERROR.NOT_ENOUGH_BALANCE', {
           balance: '1000000000'
         })
-        expect(formatterNetworkCurrencySpy).toHaveBeenCalledWith('1000000000')
+        expect(formatterNetworkCurrencySpy).toHaveBeenCalledWith('1000000000', expect.anything())
       })
     })
 

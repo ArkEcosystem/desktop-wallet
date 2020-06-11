@@ -587,10 +587,10 @@ export default {
       }
 
       for (const [key, value] of Object.entries(this.schema)) {
-        if (['amount', 'recipientId'].includes(key)) {
-          this.$set(this, key, value)
+        if (key === 'address') {
+          this.$set(this, 'recipientId', value)
         } else {
-          this.$set(this.form, key, value)
+          this.$set(key === 'amount' ? this : this.form, key, value)
         }
       }
 

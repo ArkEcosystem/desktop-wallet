@@ -21,7 +21,8 @@ export default class URIHandler {
     }
 
     return {
-      recipientId: schema[1],
+      address: schema[1],
+      label: this.__fullyDecode(scheme.label),
       amount: scheme.amount || '',
       nethash: this.__fullyDecode(scheme.nethash),
       vendorField: this.__fullyDecode(scheme.vendorField) || '',
