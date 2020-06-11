@@ -19,6 +19,7 @@ import { ReactComponent as Msq } from "./msq.svg";
 import { ReactComponent as Peer } from "./peer.svg";
 import { ReactComponent as Plugin } from "./plugin.svg";
 import { ReactComponent as Qrcode } from "./qrcode.svg";
+import { ReactComponent as Reset } from "./reset.svg";
 import { ReactComponent as Send } from "./send.svg";
 import { ReactComponent as Settings } from "./settings.svg";
 import { ReactComponent as Slack } from "./slack.svg";
@@ -53,6 +54,7 @@ export const SvgCollection: any = {
 	Peer,
 	Plugin,
 	Qrcode,
+	Reset,
 	Send,
 	Settings,
 	Slack,
