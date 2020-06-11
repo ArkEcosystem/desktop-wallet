@@ -4,10 +4,6 @@ import { render, fireEvent } from "@testing-library/react";
 import { InputPassword } from "../InputPassword";
 
 describe("InputPassword", () => {
-	beforeEach(() => {
-		jest.spyOn(console, "error").mockImplementation(() => null);
-	});
-
 	it("should render as a password field", () => {
 		const { asFragment, getByTestId } = render(<InputPassword />);
 		const input = getByTestId("Input");
