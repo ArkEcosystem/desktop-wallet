@@ -1,10 +1,12 @@
 import React from "react";
-import { IntlProvider } from "react-intl";
 import { render } from "@testing-library/react";
+import { I18nextProvider } from "react-i18next";
+
+import { i18n } from "app/i18n";
 
 import { DeleteWallet } from "../";
 // i18n
-import { locales } from "i18n/locales";
+import { translations } from "../../../i18n.ts";
 
 describe("DeleteWallet", () => {
 	beforeEach(() => {
@@ -13,9 +15,9 @@ describe("DeleteWallet", () => {
 
 	it("should not render if not open", () => {
 		const { asFragment, getByTestId } = render(
-			<IntlProvider locale="en-US" messages={locales["en-US"].messages}>
+			<I18nextProvider i18n={i18n}>
 				<DeleteWallet isOpen={false} onDelete={() => void 0} />
-			</IntlProvider>,
+			</I18nextProvider>,
 		);
 
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
@@ -24,9 +26,9 @@ describe("DeleteWallet", () => {
 
 	it("should render a modal", () => {
 		const { asFragment, getByTestId } = render(
-			<IntlProvider locale="en-US" messages={locales["en-US"].messages}>
+			<I18nextProvider i18n={i18n}>
 				<DeleteWallet isOpen={true} onDelete={() => void 0} />
-			</IntlProvider>,
+			</I18nextProvider>,
 		);
 
 		expect(getByTestId("modal__inner")).toHaveTextContent("WALLET.MODAL_DELETE_WALLET.TITLE");

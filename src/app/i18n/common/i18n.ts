@@ -16,6 +16,7 @@ export const translations: { [key: string]: any } = {
 	CURRENCY: "Currency",
 	DATE: "Date",
 	DELEGATE: "Delegate",
+	DELETE: "Delete",
 	DESKTOP_WALLET: "Desktop Wallet",
 	DONE: "Done",
 	ENABLE_ADVANCED_MODE: "Enable Advanced Mode to use this feature",
