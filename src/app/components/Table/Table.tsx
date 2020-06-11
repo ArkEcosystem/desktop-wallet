@@ -26,14 +26,10 @@ export const Table = ({ children, data, columns }: TableProps) => {
 		return <tr></tr>;
 	};
 
-	const renderSortIcon = (isSorted: boolean, isSortedDesc: boolean) => {
-		if (isSorted && isSortedDesc) return "🔽";
-		if (isSorted && !isSortedDesc) return "🔼";
-		return (
-			<div className="mt-1 ml-1">
-				<Icon name="Sort" width={10} height={10}></Icon>
-			</div>
-		);
+	const getSortIconName = (isSorted: boolean, isSortedDesc: boolean) => {
+		if (isSorted && isSortedDesc) return "ArrowDown";
+		if (isSorted && !isSortedDesc) return "ArrowUp";
+		return "Sort";
 	};
 
 	return (
@@ -51,7 +47,19 @@ export const Table = ({ children, data, columns }: TableProps) => {
 								>
 									<div className={`flex flex-inline align-top  ${column.className}`}>
 										<div className="mr-1">{column.render("Header")}</div>
-										<div>{renderSortIcon(column.isSorted, column.isSortedDesc)}</div>
+										<div
+											className="mt-1"
+											data-testid={`table__${getSortIconName(
+												column.isSorted,
+												column.isSortedDesc,
+											)}`}
+										>
+											<Icon
+												name={getSortIconName(column.isSorted, column.isSortedDesc)}
+												width={10}
+												height={10}
+											></Icon>
+										</div>
 									</div>
 								</th>
 							))}

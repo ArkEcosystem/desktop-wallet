@@ -43,17 +43,18 @@ describe("Table", () => {
 	});
 
 	it("should change sort order on th click", () => {
-		const { getByTestId, getByText } = render(<Table columns={columns} data={data} />);
+		const { getByTestId } = render(<Table columns={columns} data={data} />);
 		const th = getByTestId("table__th--0");
 		act(() => {
 			fireEvent.click(th);
 		});
 
-		expect(getByText("🔼")).toBeTruthy();
+		expect(getByTestId("table__ArrowUp")).toBeTruthy();
+
 		act(() => {
 			fireEvent.click(th);
 		});
 
-		expect(getByText("🔽")).toBeTruthy();
+		expect(getByTestId("table__ArrowDown")).toBeTruthy();
 	});
 });
