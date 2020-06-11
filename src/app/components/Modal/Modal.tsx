@@ -7,6 +7,7 @@ type ModalProps = {
 	children: React.ReactNode;
 	title: string;
 	description?: string;
+	image?: React.ReactNode;
 	isOpen: boolean;
 	onClose?: any;
 	onClick?: any;
@@ -16,6 +17,7 @@ type ModalContentProps = {
 	children: React.ReactNode;
 	title: string;
 	description?: string;
+	image?: React.ReactNode;
 	onClose?: any;
 };
 
@@ -35,6 +37,8 @@ const ModalContent = (props: ModalContentProps) => {
 				<h2>{props.title}</h2>
 
 				<div className="flex-1">
+					{props.image}
+
 					{props.description ? <div className="text-theme-neutral-500">{props.description}</div> : ""}
 
 					{props.children}
@@ -57,6 +61,7 @@ export const Modal = (props: ModalProps) => {
 				aria-selected={props.isOpen}
 				title={props.title}
 				description={props.description}
+				image={props.image}
 				onClose={props.onClose}
 			>
 				{props.children}
