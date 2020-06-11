@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavigationHeader should render 1`] = `
+<DocumentFragment>
+  <div
+    class="h-16 w-full flex justify-center bg-theme-neutral-100 md:px-4"
+  >
+    <div
+      class="container mx-auto w-full h-full flex items-center justify-start text-sm text-theme-neutral-500 leading-none font-semibold"
+    >
+      <span>
+        <a
+          class="flex font-semibold hover:underline transition-default"
+          href="#/portfolio"
+        >
+          <div
+            class="sc-AxjAm pXfjM"
+            height="15"
+            width="15"
+          >
+            <svg>
+              arrow-back.svg
+            </svg>
+          </div>
+          <span
+            class="ml-3"
+            data-testid="navigation-header__title"
+          >
+            Go back to Portfolio
+          </span>
+        </a>
+      </span>
+    </div>
+  </div>
+</DocumentFragment>
+`;
