@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useRef } from "react";
 import { useForm } from "react-hook-form";
 // UI Elements
 import { Address } from "app/components/Address";
@@ -14,7 +14,9 @@ import { TextArea } from "app/components/TextArea";
 type Props = {
 	onSubmit?: any;
 	isOpen: boolean;
+	isSigned?: boolean;
 	handleClose?: any;
+	handleSign?: any;
 	signatoryAddress: string;
 };
 
@@ -25,9 +27,8 @@ const mockSignature = {
 	message: "Xp879878687z6xc876Z*6cz87c68zx76c8x7zc68zx7cvsa7dc5as8d765as87d5sa8d7as65dsadasdsad",
 };
 
-export const SignMessage = ({ onSubmit, signatoryAddress, isOpen, handleClose }: Props) => {
+export const SignMessage = ({ onSubmit, signatoryAddress, isOpen, isSigned, handleClose, handleSign }: Props) => {
 	const form = useForm();
-	const [isSigned, setIsSigned] = useState(false);
 	const { register, getValues } = form;
 	const messageRef = useRef();
 
@@ -58,7 +59,9 @@ export const SignMessage = ({ onSubmit, signatoryAddress, isOpen, handleClose }:
 			isFloatingLabel: true,
 			label: "Signature",
 			labelClass: "font-bold text-theme-neutral-light -mt-5",
-			content: <TextArea name="signature" wrap="hard" ref={messageRef} value={JSON.stringify(mockSignature)} />,
+			content: (
+				<TextArea name="signature" wrap="hard" ref={messageRef} defaultValue={JSON.stringify(mockSignature)} />
+			),
 		},
 	];
 
@@ -86,7 +89,14 @@ export const SignMessage = ({ onSubmit, signatoryAddress, isOpen, handleClose }:
 				<Button color="primary" variant="plain" size="large">
 					Cancel
 				</Button>
-				<Button color="primary" variant="solid" size="large" className="ml-5" onClick={() => setIsSigned(true)}>
+				<Button
+					data-testid="sign-message__sign-button"
+					color="primary"
+					variant="solid"
+					size="large"
+					className="ml-5"
+					onClick={() => handleSign()}
+				>
 					Sign
 				</Button>
 			</div>
@@ -114,11 +124,7 @@ export const SignMessage = ({ onSubmit, signatoryAddress, isOpen, handleClose }:
 			isOpen={isOpen}
 			title={!isSigned ? "Sign Message" : "Message Successfully Signed"}
 			description={!isSigned ? "Insert a message below to sign using your private key" : null}
-			onClose={() => {
-				setIsSigned(false);
-
-				return handleClose();
-			}}
+			onClose={() => handleClose()}
 		>
 			<div className="mt-5">{renderSignedMessageContent()}</div>
 		</Modal>
@@ -127,4 +133,5 @@ export const SignMessage = ({ onSubmit, signatoryAddress, isOpen, handleClose }:
 
 SignMessage.defaultProps = {
 	isOpen: false,
+	isSigned: false,
 };

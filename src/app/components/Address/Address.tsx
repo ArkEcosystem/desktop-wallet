@@ -12,17 +12,10 @@ type Props = {
 export const Address = ({ address, walletName, maxChars, size }: Props) => {
 	if (!address) return null;
 
-	const getFontSize = () => {
-		switch (size) {
-			case "small":
-				return "text-sm";
-			case "default":
-				return "text-base";
-			case "large":
-				return "text-xl";
-			default:
-				return "text-base";
-		}
+	const fontSizes = {
+		small: "text-sm",
+		default: "text-base",
+		large: "text-xl",
 	};
 
 	return (
@@ -30,16 +23,14 @@ export const Address = ({ address, walletName, maxChars, size }: Props) => {
 			{walletName && (
 				<span
 					data-testid="address__wallet-name"
-					className={`text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 ${getFontSize(
-						size,
-					)}`}
+					className={`text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 ${fontSizes[size]}`}
 				>
 					{walletName}
 				</span>
 			)}
 			<span
 				data-testid="address__wallet-address"
-				className={`text-theme-neutral-400 font-semibold ${getFontSize(size)}`}
+				className={`text-theme-neutral-400 font-semibold ${fontSizes[size]}`}
 			>
 				{truncateStringMiddle(address, maxChars)}
 			</span>
