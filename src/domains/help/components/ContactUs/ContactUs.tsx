@@ -57,6 +57,8 @@ export const ContactUs = (props: ContactUsProps) => {
 
 			<Form context={methods} onSubmit={props.onSend}>
 				<FormField name="name">
+					<h2 className="mb-0">Feedback</h2>
+
 					<FormLabel>{t("HELP.MODAL_CONTACT_US.FIELD_NAME")}</FormLabel>
 					<Input ref={methods.register({ required: "Field required" })} />
 					<FormHelperText />

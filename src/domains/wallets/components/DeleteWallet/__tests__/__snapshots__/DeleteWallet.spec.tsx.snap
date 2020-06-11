@@ -1,0 +1,88 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DeleteWallet should not render if not open 1`] = `<DocumentFragment />`;
+
+exports[`DeleteWallet should render a modal 1`] = `
+<DocumentFragment>
+  <div
+    class="fixed inset-0 z-10 bg-black opacity-50"
+    data-testid="modal__overlay"
+  />
+  <div
+    class="fixed left-0 right-0 z-10 flex flex-col max-w-2xl px-16 pt-6 pb-8 mx-auto mt-24 rounded-xl bg-theme-background"
+    data-testid="modal__inner"
+  >
+    <div
+      class="absolute top-0 right-0 mt-4 mr-4"
+    >
+      <button
+        class="sc-AxjAm jZZsoN"
+        color="neutral"
+        type="button"
+      >
+        <div
+          class="sc-AxirZ fttODj"
+          height="10"
+          width="10"
+        >
+          <svg>
+            cross-slim.svg
+          </svg>
+        </div>
+      </button>
+    </div>
+    <div
+      class="py-4"
+    >
+      <h2>
+        Delete Wallet
+      </h2>
+      <div
+        class="flex-1"
+      >
+        <svg
+          class="m-auto w-3/5 mb-8"
+        >
+          delete-banner.svg
+        </svg>
+        <div
+          class="text-theme-neutral-700"
+        >
+          Do you really want to remove your wallet? Before deleting, make sure that you have the passphrase for this wallet.
+        </div>
+        <div
+          class="flex justify-end mt-8"
+        >
+          <button
+            class="sc-AxjAm GWdpI mr-2"
+            color="primary"
+            type="button"
+          >
+            Cancel
+          </button>
+          <button
+            class="sc-AxjAm gYunbo flex items-center"
+            color="primary"
+            type="submit"
+          >
+            <div
+              class="sc-AxirZ iQaTP"
+              height="1em"
+              width="1em"
+            >
+              <svg>
+                trash.svg
+              </svg>
+            </div>
+            <span
+              class="ml-2"
+            >
+              Delete
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

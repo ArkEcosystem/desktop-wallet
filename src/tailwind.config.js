@@ -5,6 +5,9 @@ const tailwindcssDebugScreens = require("tailwindcss-debug-screens");
 module.exports = {
 	purge: ["./src/renderer/**/*.html", "./src/renderer/**/*.tsx?"],
 	theme: {
+		fontFamily: {
+			sans: ["Inter", ...defaultConfig.theme.fontFamily.sans],
+		},
 		colors: {
 			black: "#121213",
 			white: "#fff",
