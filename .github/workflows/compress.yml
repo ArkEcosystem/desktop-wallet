@@ -1,9 +1,12 @@
 name: Compress
 
 on:
+    push:
+        branches:
+            - "master"
+            - "develop"
     pull_request:
-        paths:
-            - "**.svg"
+        types: [ready_for_review, synchronize, opened]
 
 jobs:
     svg:
