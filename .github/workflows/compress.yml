@@ -15,15 +15,10 @@ jobs:
         steps:
             - uses: actions/checkout@v2
 
-            - name: Install
-              run: |
-                  yarn global add svgo
-                  export PATH="$(yarn global bin):$PATH"
-                  svgo $GITHUB_WORKSPACE/src/**/*.svg
-
-            - uses: stefanzweifel/git-auto-commit-action@v4
+            - uses: ericcornelissen/svgo-action@v1.0.1
               with:
-                  commit_message: "chore: compress SVG assets"
-                  branch: ${{ github.head_ref }}
+                  commit: "chore: compress SVG assets"
+                  comment: true
+                  conventional-commits: true
               env:
                   GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
