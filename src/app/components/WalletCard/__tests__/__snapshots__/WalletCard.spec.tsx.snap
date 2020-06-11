@@ -130,11 +130,13 @@ exports[`Formatted Address should render with wallet data 1`] = `
         >
           <span
             class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-base"
+            data-testid="address__wallet-name"
           >
             My wallet
           </span>
           <span
             class="text-theme-neutral-400 font-semibold text-base"
+            data-testid="address__wallet-address"
           >
             ASuu...3kqT
           </span>
@@ -201,11 +203,13 @@ exports[`Formatted Address should render with wallet data and optional icon 1`] 
         >
           <span
             class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-base"
+            data-testid="address__wallet-name"
           >
             My wallet
           </span>
           <span
             class="text-theme-neutral-400 font-semibold text-base"
+            data-testid="address__wallet-address"
           >
             ASuu...3kqT
           </span>

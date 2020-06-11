@@ -29,6 +29,7 @@ export const Address = ({ address, walletName, maxChars, size }: Props) => {
 		<div className="truncate inline-block">
 			{walletName && (
 				<span
+					data-testid="address__wallet-name"
 					className={`text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 ${getFontSize(
 						size,
 					)}`}
@@ -36,7 +37,10 @@ export const Address = ({ address, walletName, maxChars, size }: Props) => {
 					{walletName}
 				</span>
 			)}
-			<span className={`text-theme-neutral-400 font-semibold ${getFontSize(size)}`}>
+			<span
+				data-testid="address__wallet-address"
+				className={`text-theme-neutral-400 font-semibold ${getFontSize(size)}`}
+			>
 				{truncateStringMiddle(address, maxChars)}
 			</span>
 		</div>

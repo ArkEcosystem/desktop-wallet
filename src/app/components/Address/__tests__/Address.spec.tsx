@@ -21,6 +21,21 @@ describe("Formatted Address", () => {
 		const { container } = render(<Address />);
 		expect(container).toMatchSnapshot();
 	});
+
+	it("should render a small one", () => {
+		const { getByTestId } = render(<Address address={sampleAddress} walletName="Sample Wallet" size="small" />);
+		expect(getByTestId("address__wallet-name")).toHaveClass("text-sm");
+	});
+
+	it("should render a default one", () => {
+		const { getByTestId } = render(<Address address={sampleAddress} walletName="Sample Wallet" />);
+		expect(getByTestId("address__wallet-name")).toHaveClass("text-base");
+	});
+
+	it("should render a large one", () => {
+		const { getByTestId } = render(<Address address={sampleAddress} walletName="Sample Wallet" size="large" />);
+		expect(getByTestId("address__wallet-name")).toHaveClass("text-xl");
+	});
 });
 
 describe("Truncate string utility", () => {
