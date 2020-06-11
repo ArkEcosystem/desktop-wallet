@@ -108,7 +108,7 @@ export const SignMessage = ({ onSubmit, signatoryAddress, isOpen, isSigned, hand
 	const MessageSigned = (
 		<div className="-mt-8">
 			<ListDivided items={signedItems} />
-			<div className="flex items-center">
+			<div className="flex items-center mt-3">
 				<Button color="primary" variant="plain" size="large">
 					<div className="flex items-center justify-between px-1">
 						<Icon name="Copy" />
