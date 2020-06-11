@@ -7,6 +7,7 @@ import { ReactComponent as ChevronDown } from "./chevron-down.svg";
 import { ReactComponent as Close } from "./close.svg";
 import { ReactComponent as Copy } from "./copy.svg";
 import { ReactComponent as CrossSlim } from "./cross-slim.svg";
+import { ReactComponent as Delegate } from "./delegate.svg";
 import { ReactComponent as Discord } from "./discord.svg";
 import { ReactComponent as Download } from "./download.svg";
 import { ReactComponent as Eth } from "./eth.svg";
@@ -19,10 +20,12 @@ import { ReactComponent as Msq } from "./msq.svg";
 import { ReactComponent as Peer } from "./peer.svg";
 import { ReactComponent as Plugin } from "./plugin.svg";
 import { ReactComponent as Qrcode } from "./qrcode.svg";
+import { ReactComponent as Received } from "./received.svg";
 import { ReactComponent as Reset } from "./reset.svg";
 import { ReactComponent as Send } from "./send.svg";
 import { ReactComponent as Settings } from "./settings.svg";
 import { ReactComponent as Slack } from "./slack.svg";
+import { ReactComponent as Smartbridge } from "./smartbridge.svg";
 import { ReactComponent as Trash } from "./trash.svg";
 import { ReactComponent as Twitter } from "./twitter.svg";
 import { ReactComponent as Upload } from "./upload.svg";
@@ -45,6 +48,7 @@ export const SvgCollection: any = {
 	Close,
 	Copy,
 	CrossSlim,
+	Delegate,
 	Discord,
 	Download,
 	Eth,
@@ -57,10 +61,12 @@ export const SvgCollection: any = {
 	Peer,
 	Plugin,
 	Qrcode,
+	Received,
 	Reset,
 	Send,
 	Settings,
 	Slack,
+	Smartbridge,
 	Trash,
 	Twitter,
 	Upload,
