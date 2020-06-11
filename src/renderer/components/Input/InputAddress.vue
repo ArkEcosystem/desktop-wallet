@@ -4,6 +4,7 @@
     :items="suggestions"
     :value="dropdownValue"
     :pin-to-input-width="true"
+    :is-disabled="isDisabled"
     class="InputAddress__MenuDropdown"
     @select="onDropdownSelect"
     @click="focus"
@@ -119,6 +120,11 @@ export default {
       required: false,
       default: false
     },
+    profileId: {
+      type: String,
+      required: false,
+      default: null
+    },
     value: {
       type: String,
       required: true
@@ -145,6 +151,10 @@ export default {
 
   computed: {
     currentProfile () {
+      if (this.profileId) {
+        return this.$store.getters['profile/byId'](this.profileId) || this.session_profile
+      }
+
       return this.session_profile
     },
 

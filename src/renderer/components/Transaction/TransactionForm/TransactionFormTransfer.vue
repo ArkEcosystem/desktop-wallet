@@ -4,7 +4,7 @@
     @submit.prevent
   >
     <ListDivided
-      v-if="senderLabel"
+      v-if="senderLabel && !hasSchema"
       :is-floating-label="true"
     >
       <ListDividedItem
@@ -24,171 +24,179 @@
     </ListDivided>
 
     <WalletSelection
-      v-if="schema && schema.address"
+      v-if="hasSchema"
       v-model="$v.wallet.$model"
-      :compatible-address="$v.recipientId.$model"
+      :compatible-address="compatibleAddress"
       class="TransactionFormTransfer__wallet mb-5"
       profile-class="mb-5"
-      @select="ensureAvailableAmount"
+      @select="refreshSchema"
     />
 
-    <InputAddress
-      ref="recipient"
-      v-model="$v.recipientId.$model"
-      :label="$t('TRANSACTION.RECIPIENT')"
-      :pub-key-hash="walletNetwork.version"
-      :show-suggestions="true"
-      :is-disabled="!currentWallet"
-      :warning-text="recipientWarning"
-      name="recipientId"
-      class="TransactionFormTransfer__recipient mb-5"
-    />
-
-    <div class="flex items-baseline mb-5">
-      <InputCurrency
-        ref="amount"
-        v-model="$v.amount.$model"
-        :alternative-currency="alternativeCurrency"
-        :currency="walletNetwork.token"
-        :is-invalid="$v.amount.$dirty && $v.amount.$invalid"
-        :label="$t('TRANSACTION.AMOUNT')"
-        :minimum-error="amountTooLowError"
-        :minimum-amount="minimumAmount"
-        :maximum-amount="maximumAvailableAmount"
-        :maximum-error="notEnoughBalanceError"
-        :required="true"
+    <div
+      class="flex flex-col"
+      :class="{ 'blur opacity-50': !currentWallet }"
+    >
+      <InputAddress
+        ref="recipient"
+        v-model="$v.recipientId.$model"
+        :label="$t('TRANSACTION.RECIPIENT')"
+        :pub-key-hash="walletNetwork.version"
+        :profile-id="currentWallet ? currentWallet.profileId : null"
+        :show-suggestions="true"
         :is-disabled="!currentWallet"
-        :wallet-network="walletNetwork"
-        class="TransactionFormTransfer__amount flex-1 mr-3"
-        @blur="ensureAvailableAmount"
-        @input="setSendAll(false, false)"
+        :warning-text="recipientWarning"
+        name="recipientId"
+        class="TransactionFormTransfer__recipient mb-5"
       />
 
-      <ButtonGeneric
-        v-if="hasAip11"
-        :disabled="!isValidRecipient"
-        :label="$t('TRANSACTION.BUTTON_ADD')"
-        class="TransactionFormTransfer__add py-1 flex-inline h-8 mt-4 mr-3"
-        @click="addRecipient"
-      />
+      <div class="flex items-baseline mb-5">
+        <InputCurrency
+          ref="amount"
+          v-model="$v.amount.$model"
+          :alternative-currency="alternativeCurrency"
+          :currency="walletNetwork.token"
+          :is-invalid="$v.amount.$dirty && $v.amount.$invalid"
+          :label="$t('TRANSACTION.AMOUNT')"
+          :minimum-error="amountTooLowError"
+          :minimum-amount="minimumAmount"
+          :maximum-amount="maximumAvailableAmount"
+          :maximum-error="notEnoughBalanceError"
+          :required="true"
+          :is-disabled="!currentWallet"
+          :wallet-network="walletNetwork"
+          class="TransactionFormTransfer__amount flex-1 mr-3"
+          @blur="ensureAvailableAmount"
+          @input="setSendAll(false, false)"
+        />
 
-      <InputSwitch
-        v-model="isSendAllActive"
-        :text="$t('TRANSACTION.SEND_ALL')"
-        :is-disabled="isRecipientSendAll || !canSendAll || !currentWallet"
-        class="TransactionFormTransfer__send-all"
-        @change="setSendAll"
-      />
-    </div>
+        <ButtonGeneric
+          v-if="hasAip11"
+          :disabled="!isValidRecipient"
+          :label="$t('TRANSACTION.BUTTON_ADD')"
+          class="TransactionFormTransfer__add py-1 flex-inline h-8 mt-4 mr-3"
+          @click="addRecipient"
+        />
 
-    <TransactionRecipientList
-      v-if="hasAip11"
-      :items="$v.form.recipients.$model"
-      :max-items="maximumRecipients"
-      :show-count="true"
-      :is-invalid="hasMoreThanMaximumRecipients"
-      :required="true"
-      class="TransactionFormTransfer__recipients mt-4"
-      @remove="emitRemoveRecipient"
-    />
-
-    <InputText
-      ref="vendorField"
-      v-model="$v.form.vendorField.$model"
-      :label="vendorFieldLabel"
-      :bip39-warning="true"
-      :helper-text="vendorFieldHelperText"
-      :maxlength="vendorFieldMaxLength"
-      name="vendorField"
-      class="TransactionFormTransfer__vendorfield mb-5"
-    />
-
-    <div class="mt-4">
-      <InputFee
-        ref="fee"
-        :currency="walletNetwork.token"
-        :transaction-type="transactionTypeFee"
-        :is-disabled="!currentWallet"
-        :wallet="currentWallet"
-        :wallet-network="walletNetwork"
-        class="TransactionFormTransfer__fee"
-        :class="{
-          'TransactionFormTransfer__fee--helper': isMultiPayment && insufficientFundsError
-        }"
-        @input="onFee"
-      />
-      <p
-        v-if="isMultiPayment && insufficientFundsError"
-        class="text-red-dark text-theme-page-text-light text-xs"
-      >
-        {{ insufficientFundsError }}
-      </p>
-    </div>
-
-    <div v-if="!isMultiSignature">
-      <div
-        v-if="isLedger"
-        class="TransactionFormTransfer__ledger-notice mt-10"
-      >
-        {{ $t('TRANSACTION.LEDGER_SIGN_NOTICE') }}
+        <InputSwitch
+          v-model="isSendAllActive"
+          :text="$t('TRANSACTION.SEND_ALL')"
+          :is-disabled="isRecipientSendAll || !canSendAll || !currentWallet"
+          class="TransactionFormTransfer__send-all"
+          @change="setSendAll"
+        />
       </div>
 
-      <InputPassword
-        v-else-if="currentWallet && currentWallet.passphrase"
-        ref="password"
-        v-model="$v.form.walletPassword.$model"
-        :label="$t('TRANSACTION.PASSWORD')"
-        :is-required="true"
-        class="TransactionFormTransfer__password mt-4"
+      <TransactionRecipientList
+        v-if="hasAip11"
+        :items="$v.form.recipients.$model"
+        :max-items="maximumRecipients"
+        :show-count="true"
+        :is-invalid="hasMoreThanMaximumRecipients"
+        :required="true"
+        :wallet-network="walletNetwork"
+        class="TransactionFormTransfer__recipients mt-4"
+        @remove="emitRemoveRecipient"
       />
+
+      <InputText
+        ref="vendorField"
+        v-model="$v.form.vendorField.$model"
+        :label="vendorFieldLabel"
+        :bip39-warning="true"
+        :helper-text="vendorFieldHelperText"
+        :is-disabled="!currentWallet"
+        :maxlength="vendorFieldMaxLength"
+        name="vendorField"
+        class="TransactionFormTransfer__vendorfield mb-5"
+      />
+
+      <div class="mt-4">
+        <InputFee
+          ref="fee"
+          :currency="walletNetwork.token"
+          :transaction-type="transactionTypeFee"
+          :is-disabled="!currentWallet"
+          :wallet="currentWallet"
+          :wallet-network="walletNetwork"
+          class="TransactionFormTransfer__fee"
+          :class="{
+            'TransactionFormTransfer__fee--helper': isMultiPayment && insufficientFundsError
+          }"
+          @input="onFee"
+        />
+        <p
+          v-if="isMultiPayment && insufficientFundsError"
+          class="text-red-dark text-theme-page-text-light text-xs"
+        >
+          {{ insufficientFundsError }}
+        </p>
+      </div>
+
+      <div v-if="!isMultiSignature">
+        <div
+          v-if="isLedger"
+          class="TransactionFormTransfer__ledger-notice mt-10"
+        >
+          {{ $t('TRANSACTION.LEDGER_SIGN_NOTICE') }}
+        </div>
+
+        <InputPassword
+          v-else-if="currentWallet && currentWallet.passphrase"
+          ref="password"
+          v-model="$v.form.walletPassword.$model"
+          :label="$t('TRANSACTION.PASSWORD')"
+          :is-required="true"
+          class="TransactionFormTransfer__password mt-4"
+        />
+
+        <PassphraseInput
+          v-else
+          ref="passphrase"
+          v-model="$v.form.passphrase.$model"
+          :address="currentWallet && currentWallet.address"
+          :pub-key-hash="walletNetwork.version"
+          :is-disabled="!currentWallet"
+          class="TransactionFormTransfer__passphrase mt-4"
+        />
+      </div>
 
       <PassphraseInput
-        v-else
-        ref="passphrase"
-        v-model="$v.form.passphrase.$model"
-        :address="currentWallet && currentWallet.address"
+        v-if="currentWallet && currentWallet.secondPublicKey"
+        ref="secondPassphrase"
+        v-model="$v.form.secondPassphrase.$model"
+        :label="$t('TRANSACTION.SECOND_PASSPHRASE')"
         :pub-key-hash="walletNetwork.version"
-        :is-disabled="!currentWallet"
-        class="TransactionFormTransfer__passphrase mt-4"
+        :public-key="currentWallet.secondPublicKey"
+        class="TransactionFormTransfer__second-passphrase mt-5"
       />
+
+      <footer class="mt-10 flex justify-between items-center">
+        <div class="self-start">
+          <button
+            :disabled="!isFormValid"
+            class="TransactionFormTransfer__next blue-button"
+            @click="nextStep"
+          >
+            {{ $t('COMMON.NEXT') }}
+          </button>
+        </div>
+
+        <div v-if="!hasSchema">
+          <button
+            v-tooltip="{ content: $t('TRANSACTION.LOAD_FROM_FILE'), toggle: 'hover' }"
+            class="TransactionFormTransfer__load-tx action-button pull-right flex items-center"
+            @click="loadTransaction"
+          >
+            <SvgIcon
+              name="load"
+              view-box="0 0 21 15"
+              class="mr-1"
+            />
+            {{ $t('COMMON.LOAD') }}
+          </button>
+        </div>
+      </footer>
     </div>
-
-    <PassphraseInput
-      v-if="currentWallet && currentWallet.secondPublicKey"
-      ref="secondPassphrase"
-      v-model="$v.form.secondPassphrase.$model"
-      :label="$t('TRANSACTION.SECOND_PASSPHRASE')"
-      :pub-key-hash="walletNetwork.version"
-      :public-key="currentWallet.secondPublicKey"
-      class="TransactionFormTransfer__second-passphrase mt-5"
-    />
-
-    <footer class="mt-10 flex justify-between items-center">
-      <div class="self-start">
-        <button
-          :disabled="!isFormValid"
-          class="TransactionFormTransfer__next blue-button"
-          @click="nextStep"
-        >
-          {{ $t('COMMON.NEXT') }}
-        </button>
-      </div>
-
-      <div>
-        <button
-          v-tooltip="{ content: $t('TRANSACTION.LOAD_FROM_FILE'), toggle: 'hover' }"
-          class="TransactionFormTransfer__load-tx action-button pull-right flex items-center"
-          @click="loadTransaction"
-        >
-          <SvgIcon
-            name="load"
-            view-box="0 0 21 15"
-            class="mr-1"
-          />
-          {{ $t('COMMON.LOAD') }}
-        </button>
-      </div>
-    </footer>
 
     <ModalConfirmation
       v-if="showConfirmSendAll"
@@ -312,8 +320,20 @@ export default {
       return this.walletNetwork.constants && !!this.walletNetwork.constants.aip11 && !this.isLedger
     },
 
+    hasSchema () {
+      return this.schema && !!Object.keys(this.schema).length
+    },
+
     hasMoreThanMaximumRecipients () {
       return this.form.recipients.length > this.maximumRecipients
+    },
+
+    compatibleAddress () {
+      if (this.hasAip11 && this.form.recipients.length) {
+        return this.form.recipients[0].address
+      }
+
+      return this.$v.recipientId.$model
     },
 
     transactionTypeFee () {
@@ -326,7 +346,7 @@ export default {
       const minimumAmount = Math.pow(10, -fractionDigits)
 
       return this.$t('INPUT_CURRENCY.ERROR.LESS_THAN_MINIMUM', {
-        amount: this.currency_simpleFormatCrypto(minimumAmount.toFixed(fractionDigits))
+        amount: this.currency_simpleFormatCrypto(minimumAmount.toFixed(fractionDigits), this.walletNetwork)
       })
     },
 
@@ -336,7 +356,7 @@ export default {
       }
 
       return this.$t('TRANSACTION_FORM.ERROR.NOT_ENOUGH_BALANCE', {
-        balance: this.formatter_networkCurrency(this.currentWallet.balance)
+        balance: this.formatter_networkCurrency(this.currentWallet.balance, this.walletNetwork)
       })
     },
 
@@ -491,6 +511,13 @@ export default {
   mounted () {
     this.populateSchema()
 
+    if (this.schema && this.schema.fee) {
+      this.$refs.fee.setFee(this.schema.fee)
+      this.$refs.fee.chosenFee = 'INPUT'
+    } else if (this.$refs.fee) {
+      this.form.fee = this.$refs.fee.fee
+    }
+
     if (this.currentWallet && this.currentWallet.id) {
       this.$set(this, 'wallet', this.currentWallet)
       this.$v.wallet.$touch()
@@ -559,25 +586,27 @@ export default {
         return
       }
 
-      try {
-        if (this.schema.address && this.schema.amount) {
-          if (WalletService.validateAddress(this.schema.address, this.session_network.version)) {
-            this.$v.form.recipients.$model = []
-            this.$v.form.recipients.$model.push({
-              address: this.schema.address,
-              amount: this.currency_unitToSub(this.schema.amount),
-              sendAll: false
-            })
-          } else {
-            throw new Error(this.$t('VALIDATION.RECIPIENT_DIFFERENT_NETWORK', [
-              this.wallet_truncate(this.schema.address)
-            ]))
-          }
+      for (const [key, value] of Object.entries(this.schema)) {
+        if (['amount', 'recipientId'].includes(key)) {
+          this.$set(this, key, value)
+        } else {
+          this.$set(this.form, key, value)
+        }
+      }
+
+      if (this.hasAip11) {
+        if (this.amount && WalletService.validateAddress(this.recipientId, this.walletNetwork.version)) {
+          this.$v.form.recipients.$model = [{
+            address: this.recipientId,
+            amount: this.currency_unitToSub(this.amount),
+            sendAll: false
+          }]
         }
 
-        this.$set(this.form, 'vendorField', this.schema.vendorField || '')
-      } catch (error) {
-        this.$error(`${this.$t('TRANSACTION.ERROR.LOAD_FROM_URI')}: ${error.message}`)
+        this.$refs.amount.reset()
+        this.$refs.recipient.reset()
+      } else {
+        this.$v.form.recipients.$model = []
       }
 
       if (this.schema.wallet) {
@@ -675,6 +704,15 @@ export default {
         this.isSendAllActive = isActive
         this.ensureAvailableAmount()
       }
+    },
+
+    refreshSchema () {
+      this.$nextTick(() => {
+        if (this.wallet) {
+          this.populateSchema()
+          this.ensureAvailableAmount()
+        }
+      })
     },
 
     ensureAvailableAmount () {

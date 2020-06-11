@@ -9,20 +9,22 @@
       :label="$t('WALLET_SELECTION.PROFILE')"
       name="profile"
       :class="profileClass"
-      class="flex-1 mr-2"
-      @select="onSelect"
+      class="flex-1"
+      @input="onInput"
     />
 
     <InputSelect
       ref="input-wallet"
       v-model="walletId"
       :is-disabled="!profileId"
+      :is-invalid="!!walletError"
+      :error="walletError"
       :items="walletList"
       :label="$t('WALLET_SELECTION.WALLET')"
       name="wallet"
       :class="walletClass"
-      class="flex-1 mr-2"
-      @select="onSelect"
+      class="flex-1"
+      @input="onInput"
     />
   </div>
 </template>
@@ -61,6 +63,11 @@ export default {
       default: undefined
     },
     walletClass: {
+      type: String,
+      required: false,
+      default: undefined
+    },
+    walletError: {
       type: String,
       required: false,
       default: undefined
@@ -184,20 +191,22 @@ export default {
     },
 
     wallet (wallet) {
-      let profileId = null
-      let walletId = null
       if (wallet && wallet.profileId) {
-        profileId = wallet.profileId
-        walletId = wallet.id
+        this.profileId = wallet.profileId
+        this.walletId = wallet.id
       }
 
-      this.profileId = profileId
-      this.walletId = walletId
       this.model = wallet
     },
 
     walletId (walletId) {
       this.wallet = this.wallets.find(wallet => wallet.id === walletId)
+    },
+
+    profileId (newValue, oldValue) {
+      if (oldValue && this.currentWalletId) {
+        this.currentWalletId = null
+      }
     }
   },
 
@@ -223,7 +232,7 @@ export default {
       this.$refs['input-wallet'].blur()
     },
 
-    onSelect () {
+    onInput () {
       this.$emit('select')
     }
   }

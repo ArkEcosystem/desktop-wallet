@@ -109,7 +109,7 @@
             {{ $t('PAGES.DASHBOARD.ADD_WALLET') }}
           </span>
           <span class="font-bold mt-2 text-xl">
-            {{ formatter_networkCurrency(0, 2) }}
+            {{ formatter_networkCurrency(0, { fractionDigits: 2 }) }}
           </span>
         </div>
         <img
@@ -192,7 +192,7 @@
                 v-if="isExpanded"
                 class="font-bold mt-2 text-xl"
               >
-                {{ formatter_networkCurrency(wallet.balance, 2) }}
+                {{ formatter_networkCurrency(wallet.balance, { fractionDigits: 2 }) }}
                 <!-- TODO display a +/- n ARK on recent transactions -->
               </span>
             </div>

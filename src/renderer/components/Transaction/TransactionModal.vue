@@ -381,22 +381,8 @@ export default {
 
 <style>
 .TransactionModal {
-  max-width: 45rem
-}
-
-.TransactionModalTransfer {
-  /* To allow more space on the fee slider */
   min-width: 38rem;
-  max-height: 100%;
-}
-
-.TransactionModalBridgechainRegistration,
-.TransactionModalBridgechainUpdate,
-.TransactionModalBusinessRegistration,
-.TransactionModalBusinessUpdate,
-.TransactionModalIpfs,
-.TransactionModalMultiSignature {
-  min-width: 35rem;
+  max-width: 45rem;
   max-height: 80vh;
 }
 </style>
