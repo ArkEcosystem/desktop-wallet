@@ -7,12 +7,12 @@ exports[`FilterWallets should render 1`] = `
       class="mb-4"
     >
       <div
-        class="text-lg text-theme-neutral-800 mb-1"
+        class="text-sm text-theme-neutral-800 mb-1"
       >
         Filter Network
       </div>
       <div
-        class="text-sm text-theme-neutral-500"
+        class="text-xs text-theme-neutral-500"
       >
         Select the types of networks
       </div>
@@ -58,12 +58,12 @@ exports[`FilterWallets should render 1`] = `
         class="w-4/5"
       >
         <div
-          class="text-lg text-theme-neutral-800 mb-1"
+          class="text-sm text-theme-neutral-800 mb-1"
         >
           Your Wallets
         </div>
         <div
-          class="text-sm text-theme-neutral-500"
+          class="text-xs text-theme-neutral-500"
         >
           Select the display of your wallets
         </div>
@@ -72,7 +72,7 @@ exports[`FilterWallets should render 1`] = `
         class="w-1/5 text-right"
       >
         <div
-          class="text-theme-neutral-800 relative mt-3 mr-10 h-6 cursor-pointer"
+          class="text-sm text-theme-neutral-800 relative mt-3 mr-5 h-6 cursor-pointer"
           data-testid="filter-wallets__wallets"
         >
           All 
@@ -104,18 +104,18 @@ exports[`FilterWallets should render 1`] = `
         class="w-4/5"
       >
         <div
-          class="text-lg text-theme-neutral-800 mb-1"
+          class="text-sm text-theme-neutral-800 mb-1"
         >
           Portfolio Chart
         </div>
         <div
-          class="text-sm text-theme-neutral-500"
+          class="text-xs text-theme-neutral-500"
         >
           You an hide this unit if you like
         </div>
       </div>
       <div
-        class="w-1/5 text-right pr-7 pt-3"
+        class="w-1/5 text-right pt-3"
       >
         <label>
           <input
@@ -144,25 +144,24 @@ exports[`FilterWallets should render 1`] = `
         class="w-4/5"
       >
         <div
-          class="text-lg text-theme-neutral-800 mb-1"
+          class="text-sm text-theme-neutral-800 mb-1"
         >
           Transaction History
         </div>
         <div
-          class="text-sm text-theme-neutral-500"
+          class="text-xs text-theme-neutral-500"
         >
           You can hide this unit if you like
         </div>
       </div>
       <div
-        class="w-1/5 text-right pr-7 pt-3"
+        class="w-1/5 text-right pt-3"
       >
         <label>
           <input
             class="sc-AxhCb crfxJX"
             data-testid="filter-wallets_toggle--transactions"
             type="checkbox"
-            value="false"
           />
           <div
             class="sc-AxhUy gvyvto"
@@ -174,10 +173,6 @@ exports[`FilterWallets should render 1`] = `
         </label>
       </div>
     </div>
-    <div
-      class="sc-AxiKw flUcMs"
-      type="horizontal"
-    />
   </div>
 </div>
 `;
@@ -189,12 +184,12 @@ exports[`FilterWallets should render with networks selection 1`] = `
       class="mb-4"
     >
       <div
-        class="text-lg text-theme-neutral-800 mb-1"
+        class="text-sm text-theme-neutral-800 mb-1"
       >
         Filter Network
       </div>
       <div
-        class="text-sm text-theme-neutral-500"
+        class="text-xs text-theme-neutral-500"
       >
         Select the types of networks
       </div>
@@ -328,12 +323,12 @@ exports[`FilterWallets should render with networks selection 1`] = `
         class="w-4/5"
       >
         <div
-          class="text-lg text-theme-neutral-800 mb-1"
+          class="text-sm text-theme-neutral-800 mb-1"
         >
           Your Wallets
         </div>
         <div
-          class="text-sm text-theme-neutral-500"
+          class="text-xs text-theme-neutral-500"
         >
           Select the display of your wallets
         </div>
@@ -342,7 +337,7 @@ exports[`FilterWallets should render with networks selection 1`] = `
         class="w-1/5 text-right"
       >
         <div
-          class="text-theme-neutral-800 relative mt-3 mr-10 h-6 cursor-pointer"
+          class="text-sm text-theme-neutral-800 relative mt-3 mr-5 h-6 cursor-pointer"
           data-testid="filter-wallets__wallets"
         >
           All 
@@ -374,18 +369,18 @@ exports[`FilterWallets should render with networks selection 1`] = `
         class="w-4/5"
       >
         <div
-          class="text-lg text-theme-neutral-800 mb-1"
+          class="text-sm text-theme-neutral-800 mb-1"
         >
           Portfolio Chart
         </div>
         <div
-          class="text-sm text-theme-neutral-500"
+          class="text-xs text-theme-neutral-500"
         >
           You an hide this unit if you like
         </div>
       </div>
       <div
-        class="w-1/5 text-right pr-7 pt-3"
+        class="w-1/5 text-right pt-3"
       >
         <label>
           <input
@@ -414,25 +409,24 @@ exports[`FilterWallets should render with networks selection 1`] = `
         class="w-4/5"
       >
         <div
-          class="text-lg text-theme-neutral-800 mb-1"
+          class="text-sm text-theme-neutral-800 mb-1"
         >
           Transaction History
         </div>
         <div
-          class="text-sm text-theme-neutral-500"
+          class="text-xs text-theme-neutral-500"
         >
           You can hide this unit if you like
         </div>
       </div>
       <div
-        class="w-1/5 text-right pr-7 pt-3"
+        class="w-1/5 text-right pt-3"
       >
         <label>
           <input
             class="sc-AxhCb crfxJX"
             data-testid="filter-wallets_toggle--transactions"
             type="checkbox"
-            value="false"
           />
           <div
             class="sc-AxhUy gvyvto"
@@ -444,10 +438,6 @@ exports[`FilterWallets should render with networks selection 1`] = `
         </label>
       </div>
     </div>
-    <div
-      class="sc-AxiKw flUcMs"
-      type="horizontal"
-    />
   </div>
 </div>
 `;
