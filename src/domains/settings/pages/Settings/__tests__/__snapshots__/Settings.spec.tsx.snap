@@ -836,27 +836,48 @@ exports[`Settings should render 1`] = `
           </ul>
         </div>
         <div
-          class="flex items-center"
+          class="w-full flex justify-between"
         >
           <button
-            class="sc-AxmLO eZuBgA"
-            color="primary"
+            class="sc-AxmLO ZXVTL"
+            color="danger"
             type="button"
           >
-            Save
+            <div
+              class="flex items-center justify-between px-1"
+            >
+              <div
+                class="sc-AxjAm cpczEI"
+                height="1em"
+                width="1em"
+              >
+                <svg>
+                  reset.svg
+                </svg>
+              </div>
+              <span
+                class="ml-2"
+              >
+                Reset Data
+              </span>
+            </div>
           </button>
-          <span
-            class="font-semibold text-theme-neutral-dark px-2"
-          >
-            or
-          </span>
-          <button
-            class="sc-AxmLO fexZZc"
-            color="primary"
-            type="button"
-          >
-            Reset Data
-          </button>
+          <div>
+            <button
+              class="sc-AxmLO fexZZc mr-3"
+              color="primary"
+              type="button"
+            >
+              Cancel
+            </button>
+            <button
+              class="sc-AxmLO eZuBgA"
+              color="primary"
+              type="button"
+            >
+              Save
+            </button>
+          </div>
         </div>
       </form>
     </div>

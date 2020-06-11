@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Settings } from "./Settings";
 import { withKnobs, text } from "@storybook/addon-knobs";
 
-export default { title: "Pages / Settings", decorators: [withKnobs] };
+export default { title: "Settings / Pages", decorators: [withKnobs] };
 
 const items = [
 	{
@@ -32,7 +32,7 @@ const settingsProps = {
 	},
 };
 
-export const Default = () => {
+export const GeneralSettings = () => {
 	const [activeSettings, setActiveSettings] = useState("General");
 
 	return (
