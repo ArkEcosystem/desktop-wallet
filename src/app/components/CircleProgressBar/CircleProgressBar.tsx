@@ -5,7 +5,7 @@ import tw, { styled } from "twin.macro";
 import twConfig from "tailwind.config";
 
 type CircleProgressBarBaseProps = {
-	maxSize: string;
+	size: string;
 	trailStrokeWidth?: number;
 	trailStrokeColor?: string;
 	trailSpaced?: boolean;
@@ -16,25 +16,25 @@ type CircleProgressBarBaseProps = {
 	speed: number;
 };
 
-const Container = styled.figure<{ maxSize: string }>`
-	max-width: ${(props) => props.maxSize};
+const Container = styled.figure<{ size: string }>`
+	max-width: ${(props) => `${props.size}%`};
 	vertical-align: middle;
 `;
 
 const InnerContainer = styled.g<{ percentageColor: string }>`
 	fill: ${(props) => props.percentageColor};
-	transform: translateY(0.25rem);
+	transform: translateY(0.45rem);
 `;
 
 const Text = styled.text`
-	${tw`leading-none`}
-	font-size: 0.6rem;
+	${tw`font-semibold leading-none`}
+	font-size: 0.5rem;
 	text-anchor: middle;
 	transform: translateY(-0.25rem);
 `;
 
 export const CircleProgressBar = ({
-	maxSize,
+	size,
 	trailStrokeWidth,
 	trailStrokeColor,
 	trailSpaced,
@@ -70,7 +70,7 @@ export const CircleProgressBar = ({
 	}, [progressBar]);
 
 	return (
-		<Container maxSize={maxSize}>
+		<Container size={size}>
 			<svg viewBox={circleConfig.viewBox}>
 				<circle
 					cx={circleConfig.x}
@@ -104,11 +104,11 @@ export const CircleProgressBar = ({
 };
 
 CircleProgressBar.defaultProps = {
-	maxSize: "100vh",
-	trailStrokeWidth: 1,
+	size: "10",
+	trailStrokeWidth: 2,
 	trailStrokeColor: twConfig.theme.colors["theme-success-200"],
 	trailSpaced: false,
-	strokeWidth: 1,
+	strokeWidth: 2,
 	strokeColor: twConfig.theme.colors["theme-success-600"],
 	percentage: 0,
 	percentageColor: twConfig.theme.colors["theme-success-600"],

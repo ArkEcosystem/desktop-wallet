@@ -6,5 +6,5 @@ export default {
 };
 
 export const Default = () => {
-	return <CircleProgressBar percentage={50} />;
+	return <CircleProgressBar percentage={100} />;
 };
