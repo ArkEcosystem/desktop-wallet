@@ -20,5 +20,4 @@ jobs:
                   commit: "chore: compress SVG assets"
                   comment: true
                   conventional-commits: true
-              env:
-                  GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+                  repo-token: ${{ secrets.GH_TOKEN }}
