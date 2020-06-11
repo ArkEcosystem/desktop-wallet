@@ -23,6 +23,11 @@ import { ReactComponent as Slack } from "./slack.svg";
 import { ReactComponent as Trash } from "./trash.svg";
 import { ReactComponent as Twitter } from "./twitter.svg";
 import { ReactComponent as Upload } from "./upload.svg";
+import { ReactComponent as Plus } from "./plus.svg";
+import { ReactComponent as Grid } from "./grid.svg";
+import { ReactComponent as List } from "./list.svg";
+import { ReactComponent as Filters } from "./filters.svg";
+import { ReactComponent as Import } from "./import.svg";
 
 export const SvgCollection: any = {
 	Ark,
@@ -50,4 +55,9 @@ export const SvgCollection: any = {
 	Trash,
 	Twitter,
 	Upload,
+	Plus,
+	Grid,
+	List,
+	Filters,
+	Import,
 };

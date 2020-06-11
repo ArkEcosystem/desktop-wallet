@@ -23,7 +23,7 @@ export const ProfileCard = ({ avatar, name, balance, actions, onSelect, showSett
 		<div className="relative px-6 sm:flex sm:items-center py-4">
 			{showSettings && (
 				<div className="absolute top-0 -mt-2 -mr-4 right-0 flex items-center justify-center w-6 h-6 p-1 mt-3">
-					<Dropdown toggleIcon="settings" options={actions} onSelect={onSelect} />
+					<Dropdown toggleIcon="Settings" options={actions} onSelect={onSelect} />
 				</div>
 			)}
 

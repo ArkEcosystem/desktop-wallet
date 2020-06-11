@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { clickOutsideHandler } from "./hooks";
 import { Icon } from "app/components/Icon";
+import { Wrapper } from "./style";
 
 export type Option = {
 	label: string;
@@ -63,10 +64,10 @@ export const Dropdown = ({ children, options, onSelect, toggleIcon }: Props) => 
 				<Icon name={toggleIcon} width={20} height={20} />
 			</button>
 
-			<div className="mt-8 py-3 w-48 absolute right-0 z-10 bg-theme-background rounded-lg shadow-xl border-theme-neutral-100 border-1">
+			<Wrapper>
 				<div data-testid="dropdown__content">{renderOptions(options, select)}</div>
 				<div>{children}</div>
-			</div>
+			</Wrapper>
 		</div>
 	);
 };
