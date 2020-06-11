@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { createRef } from "react";
 import { useForm } from "react-hook-form";
 // UI Elements
 import { Address } from "app/components/Address";
@@ -30,7 +30,7 @@ const mockSignature = {
 export const SignMessage = ({ onSubmit, signatoryAddress, isOpen, isSigned, handleClose, handleSign }: Props) => {
 	const form = useForm();
 	const { register, getValues } = form;
-	const messageRef = useRef();
+	const messageRef = createRef();
 
 	const signedItems = [
 		{
@@ -53,7 +53,9 @@ export const SignMessage = ({ onSubmit, signatoryAddress, isOpen, isSigned, hand
 			isFloatingLabel: true,
 			label: "Message",
 			labelClass: "font-bold text-theme-neutral-light -mt-5",
-			content: <span className="font-bold text-xl text-theme-neutral-800 w-3/4">{getValues("message")}</span>,
+			content: (
+				<span className="font-bold text-xl text-theme-neutral-800 w-3/4">{"Oleg Happy in the Oleg Bank"}</span>
+			),
 		},
 		{
 			isFloatingLabel: true,
@@ -123,7 +125,7 @@ export const SignMessage = ({ onSubmit, signatoryAddress, isOpen, isSigned, hand
 		<Modal
 			isOpen={isOpen}
 			title={!isSigned ? "Sign Message" : "Message Successfully Signed"}
-			description={!isSigned ? "Insert a message below to sign using your private key" : null}
+			description={!isSigned ? "Insert a message below to sign using your private key" : ""}
 			onClose={() => handleClose()}
 		>
 			<div className="mt-5">{renderSignedMessageContent()}</div>

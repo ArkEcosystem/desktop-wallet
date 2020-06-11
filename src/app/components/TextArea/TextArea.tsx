@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { Input } from "../Input";
 
-type TextareaProps = { isInvalid?: boolean } & React.TextareaHTMLAttributes<any>;
+type TextareaProps = { isInvalid?: boolean; palceholder?: string } & React.TextareaHTMLAttributes<any>;
 
-export const TextArea = React.forwardRef<HTMLTextAreaElement, TextareaProps>((props: TextareaProps, ref) => {
+export const TextArea = React.forwardRef((props: TextareaProps, ref: any) => {
 	useEffect(() => {
 		const current = ref?.current;
 		if (current) {
