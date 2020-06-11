@@ -1,15 +1,15 @@
 import React from "react";
 
-type WalletMnemonicListProps = {
+type Props = {
 	mnemonic: string[];
 };
 
-export function WalletMnemonicList({ mnemonic }: WalletMnemonicListProps) {
+export function MnemonicList({ mnemonic }: Props) {
 	return (
 		<ul className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 row-gap-5 col-gap-3">
 			{mnemonic.map((word, index) => (
 				<li
-					data-testid="WalletMnemonicList__item"
+					data-testid="MnemonicList__item"
 					key={word}
 					className="rounded border border-theme-neutral-light relative px-3 py-3"
 				>

@@ -1,6 +1,6 @@
 import React from "react";
-import { injectIntl, WrappedComponentProps } from "react-intl";
 import { useForm } from "react-hook-form";
+import { useTranslation } from "react-i18next";
 // UI Elements
 import { Modal } from "app/components/Modal";
 import { Button } from "app/components/Button";
@@ -16,15 +16,16 @@ type ContactUsProps = {
 	onClose?: any;
 	onCancel?: any;
 	onSend: any;
-} & WrappedComponentProps;
+};
 
-export const ContactUs = injectIntl(({ intl: { formatMessage }, ...props }: ContactUsProps) => {
+export const ContactUs = (props: ContactUsProps) => {
 	const methods = useForm({ mode: "onChange" });
+	const { t } = useTranslation();
 
 	return (
 		<Modal
-			title={formatMessage({ id: "HELP.MODAL_CONTACT_US.TITLE" })}
-			description={formatMessage({ id: "HELP.MODAL_CONTACT_US.DESCRIPTION" })}
+			title={t("HELP.MODAL_CONTACT_US.TITLE")}
+			description={t("HELP.MODAL_CONTACT_US.DESCRIPTION")}
 			isOpen={props.isOpen}
 			onClose={props.onClose}
 		>
@@ -56,56 +57,52 @@ export const ContactUs = injectIntl(({ intl: { formatMessage }, ...props }: Cont
 
 			<Form context={methods} onSubmit={props.onSend}>
 				<FormField name="name">
-					<FormLabel>{formatMessage({ id: "HELP.MODAL_CONTACT_US.FIELD_NAME" })}</FormLabel>
+					<FormLabel>{t("HELP.MODAL_CONTACT_US.FIELD_NAME")}</FormLabel>
 					<Input ref={methods.register({ required: "Field required" })} />
 					<FormHelperText />
 				</FormField>
 
 				<FormField name="email">
-					<FormLabel>{formatMessage({ id: "HELP.MODAL_CONTACT_US.FIELD_EMAIL" })}</FormLabel>
+					<FormLabel>{t("HELP.MODAL_CONTACT_US.FIELD_EMAIL")}</FormLabel>
 					<Input ref={methods.register({ required: "Field required" })} />
 					<FormHelperText />
 				</FormField>
 
 				<FormField name="subject">
-					<FormLabel>{formatMessage({ id: "HELP.MODAL_CONTACT_US.FIELD_SUBJECT" })}</FormLabel>
+					<FormLabel>{t("HELP.MODAL_CONTACT_US.FIELD_SUBJECT")}</FormLabel>
 					<Select
 						ref={methods.register({
-							required: formatMessage({ id: "HELP.MODAL_CONTACT_US.SUBJECT_REQUIRED" }),
+							required: t("HELP.MODAL_CONTACT_US.SUBJECT_REQUIRED").toString(),
 						})}
 					>
-						<option value="">{formatMessage({ id: "COMMON_SELECT" })}</option>
-						<option value="security">
-							{formatMessage({ id: "HELP.MODAL_CONTACT_US.SUBJECT_OPTION.SECURITY" })}
-						</option>
-						<option value="other">
-							{formatMessage({ id: "HELP.MODAL_CONTACT_US.SUBJECT_OPTION.OTHER" })}
-						</option>
+						<option value="">{t("COMMON.SELECT")}</option>
+						<option value="security">{t("HELP.MODAL_CONTACT_US.SUBJECT_OPTION.SECURITY")}</option>
+						<option value="other">{t("HELP.MODAL_CONTACT_US.SUBJECT_OPTION.OTHER")}</option>
 					</Select>
 				</FormField>
 
 				<FormField name="message">
-					<FormLabel>{formatMessage({ id: "HELP.MODAL_CONTACT_US.FIELD_MESSAGE" })}</FormLabel>
+					<FormLabel>{t("HELP.MODAL_CONTACT_US.FIELD_MESSAGE")}</FormLabel>
 					<Textarea
 						ref={methods.register({
-							required: formatMessage({ id: "HELP.MODAL_CONTACT_US.MESSAGE_REQUIRED" }),
+							required: t("HELP.MODAL_CONTACT_US.MESSAGE_REQUIRED").toString(),
 						})}
 					/>
 				</FormField>
 
 				<div className="mt-4">
 					<Button color="primary" variant="plain" onClick={props.onCancel} className="mr-2">
-						{formatMessage({ id: "COMMON_CANCEL" })}
+						{t("COMMON.CANCEL")}
 					</Button>
 
 					<Button type="submit" color="primary" variant="solid">
-						{formatMessage({ id: "COMMON_SEND" })}
+						{t("COMMON.SEND")}
 					</Button>
 				</div>
 			</Form>
 		</Modal>
 	);
-});
+};
 
 ContactUs.defaultProps = {
 	isOpen: false,

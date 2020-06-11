@@ -11,10 +11,6 @@ describe("ProfileCard", () => {
 		avatar: "https://www.w3schools.com/howto/img_avatar.png",
 	};
 
-	beforeEach(() => {
-		jest.spyOn(console, "error").mockImplementation(() => null);
-	});
-
 	it("should render", () => {
 		const { container, asFragment, getByTestId } = render(<ProfileCard {...profile} />);
 
