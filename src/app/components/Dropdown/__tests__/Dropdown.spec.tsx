@@ -6,10 +6,6 @@ import { Dropdown } from "../Dropdown";
 import { clickOutsideHandler } from "../hooks";
 
 describe("Dropdown", () => {
-	beforeEach(() => {
-		jest.spyOn(console, "error").mockImplementation(() => null);
-	});
-
 	it("should render", () => {
 		const { container } = render(<Dropdown></Dropdown>);
 		expect(container).toMatchSnapshot();

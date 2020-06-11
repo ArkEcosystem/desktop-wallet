@@ -1,5 +1,5 @@
 import React from "react";
-import { injectIntl, WrappedComponentProps } from "react-intl";
+import { useTranslation } from "react-i18next";
 import { useForm } from "react-hook-form";
 // UI Elements
 import { Modal } from "app/components/Modal";
@@ -12,21 +12,22 @@ type UpdateWalletNameProps = {
 	onClose?: any;
 	onCancel?: any;
 	onSave: any;
-} & WrappedComponentProps;
+};
 
-export const UpdateWalletName = injectIntl(({ intl: { formatMessage }, ...props }: UpdateWalletNameProps) => {
+export const UpdateWalletName = ({ ...props }: UpdateWalletNameProps) => {
 	const methods = useForm({ mode: "onChange" });
+	const { t } = useTranslation();
 
 	return (
 		<Modal
-			title={formatMessage({ id: "WALLET.MODAL_NAME_WALLET.TITLE" })}
-			description={formatMessage({ id: "WALLET.MODAL_NAME_WALLET.DESCRIPTION" })}
+			title={t("WALLETS.MODAL_NAME_WALLET.TITLE")}
+			description={t("WALLETS.MODAL_NAME_WALLET.DESCRIPTION")}
 			isOpen={props.isOpen}
 			onClose={props.onClose}
 		>
 			<Form context={methods} onSubmit={props.onSave}>
 				<FormField name="name">
-					<FormLabel>{formatMessage({ id: "WALLET.MODAL_NAME_WALLET.FIELD_NAME" })}</FormLabel>
+					<FormLabel>{t("WALLETS.MODAL_NAME_WALLET.FIELD_NAME")}</FormLabel>
 					<Input ref={methods.register({ required: "Field required" })} />
 					<FormHelperText />
 				</FormField>
@@ -43,7 +44,7 @@ export const UpdateWalletName = injectIntl(({ intl: { formatMessage }, ...props 
 			</Form>
 		</Modal>
 	);
-});
+};
 
 UpdateWalletName.defaultProps = {
 	isOpen: false,

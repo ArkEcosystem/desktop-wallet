@@ -5,6 +5,7 @@ module.exports = {
 	addons: [
 		"@storybook/addon-actions/register",
 		"@storybook/addon-knobs/register",
+		"storybook-addon-i18next/register",
 		"@storybook/preset-create-react-app",
 	],
 	webpackFinal: async (storybookConfig) => {
