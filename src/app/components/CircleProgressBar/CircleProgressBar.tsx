@@ -12,7 +12,6 @@ type CircleProgressBarProps = {
 	strokeColor?: string;
 	percentage: number;
 	percentageColor: string;
-	speed: number;
 };
 
 const Container = styled.figure<{ size: number }>`
@@ -47,17 +46,15 @@ export const CircleProgressBar = ({
 	strokeColor,
 	percentage,
 	percentageColor,
-	speed,
 }: CircleProgressBarProps) => {
 	const [progressBar, setProgressBar] = useState(0);
-	const paces = percentage / speed;
 
 	const updatePercentage = () => {
-		setTimeout(() => setProgressBar(progressBar + 1), paces);
+		setProgressBar(progressBar + 1);
 	};
 
 	useEffect(() => {
-		if (percentage > 0) {
+		if (percentage > 0 && percentage < 100) {
 			updatePercentage();
 		}
 	}, [percentage]);
@@ -110,5 +107,4 @@ CircleProgressBar.defaultProps = {
 	strokeColor: twConfig.theme.colors["theme-success-600"],
 	percentage: 0,
 	percentageColor: twConfig.theme.colors["theme-success-600"],
-	speed: 1,
 };

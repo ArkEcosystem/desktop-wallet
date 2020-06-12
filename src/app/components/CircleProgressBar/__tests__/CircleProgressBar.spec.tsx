@@ -1,6 +1,5 @@
 import React from "react";
-import { render, RenderResult, waitFor } from "@testing-library/react";
-import { act } from "@testing-library/react-hooks";
+import { render } from "@testing-library/react";
 
 import { CircleProgressBar } from "../CircleProgressBar";
 
@@ -14,7 +13,7 @@ describe("CircleProgressBar", () => {
 	});
 
 	it("should render the percentage of progress", () => {
-		const { container } = render(<CircleProgressBar percentage={100} />);
+		const { container } = render(<CircleProgressBar percentage={50} />);
 
 		expect(container).toMatchSnapshot();
 	});
@@ -43,14 +42,5 @@ describe("CircleProgressBar", () => {
 		const { container } = render(<CircleProgressBar percentage={50} strokeWidth={5} strokeColor="#00f" />);
 
 		expect(container).toMatchSnapshot();
-	});
-
-	it("should render the progress with speed", async () => {
-		let rendered: RenderResult;
-
-		await act(async () => {
-			rendered = render(<CircleProgressBar percentage={50} speed={1} />);
-			await waitFor(() => expect(rendered.getByTestId("circle-progress-bar__progress")).toBeTruthy());
-		});
 	});
 });
