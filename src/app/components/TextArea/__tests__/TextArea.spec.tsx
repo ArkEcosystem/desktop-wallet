@@ -6,7 +6,7 @@ describe("TextArea", () => {
 	it("should render", () => {
 		const { getByTestId, asFragment } = render(<TextArea />);
 		const textarea = getByTestId("TextArea");
-		expect(textarea.tagName).toEqual("TextArea");
+		expect(textarea.tagName).toEqual("TEXTAREA");
 		expect(asFragment()).toMatchSnapshot();
 	});
 
