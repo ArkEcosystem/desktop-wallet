@@ -17,11 +17,20 @@ type WalletUpdateProps = {
 	onClose?: any;
 	onCancel?: any;
 	onUpdate: any;
+	onInstall?: any;
 };
 
 const { WalletUpdateBanner, WalletUpdateReadyBanner } = images.wallet.components.walletUpdate;
 
-export const WalletUpdate = ({ isOpen, isUpdate, isReady, onClose, onCancel, onUpdate }: WalletUpdateProps) => {
+export const WalletUpdate = ({
+	isOpen,
+	isUpdate,
+	isReady,
+	onClose,
+	onCancel,
+	onUpdate,
+	onInstall,
+}: WalletUpdateProps) => {
 	const { t } = useTranslation();
 
 	return (
@@ -40,10 +49,22 @@ export const WalletUpdate = ({ isOpen, isUpdate, isReady, onClose, onCancel, onU
 							</p>
 						</div>
 						<div className="flex flex-col justify-center sm:flex-row">
-							<Button color="primary" variant="solid" className="mr-2" onClick={onUpdate}>
+							<Button
+								color="primary"
+								variant="solid"
+								className="mr-2"
+								onClick={onUpdate}
+								data-testid="wallet-update__update-button"
+							>
 								{t("COMMON.UPDATE_NOW")}
 							</Button>
-							<Button color="primary" variant="plain" className="mt-2 sm:mt-0" onClick={onCancel}>
+							<Button
+								color="primary"
+								variant="plain"
+								className="mt-2 sm:mt-0"
+								onClick={onCancel}
+								data-testid="wallet-update__cancel-button"
+							>
 								{t("COMMON.UPDATE_LATER")}
 							</Button>
 						</div>
@@ -59,7 +80,7 @@ export const WalletUpdate = ({ isOpen, isUpdate, isReady, onClose, onCancel, onU
 							</div>
 							<div className="flex-1">
 								<div className="w-full mx-10">
-									<CircleProgressBar percentage={100} size={45} />
+									<CircleProgressBar percentage={50} size={45} />
 								</div>
 							</div>
 						</div>
@@ -74,7 +95,12 @@ export const WalletUpdate = ({ isOpen, isUpdate, isReady, onClose, onCancel, onU
 							</p>
 						</div>
 						<div className="flex justify-center">
-							<Button color="primary" variant="solid">
+							<Button
+								color="primary"
+								variant="solid"
+								onClick={onInstall}
+								data-testid="wallet-update__install-button"
+							>
 								{t("COMMON.INSTALL")}
 							</Button>
 						</div>
