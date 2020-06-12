@@ -50,7 +50,7 @@ exports[`CreateProfile should render 1`] = `
           class="mx-4 mt-5 md:mx-8 xl:mx-16"
         >
           <button
-            class="w-full mb-5 sc-AxjAm gYunbo"
+            class="sc-AxjAm gYunbo w-full mb-5"
             color="primary"
             type="button"
           >
@@ -78,7 +78,7 @@ exports[`CreateProfile should render 1`] = `
                 data-testid="list-divided-item__wrapper"
               >
                 <div
-                  class="flex flex-col items-start justify-between mt-5"
+                  class="flex justify-between flex-col items-start mt-5"
                   data-testid="list-divided-item__inner-wrapper"
                 >
                   <div
@@ -91,7 +91,7 @@ exports[`CreateProfile should render 1`] = `
                       New Profile
                     </span>
                     <span
-                      class="mt-3 text-sm text-theme-neutral"
+                      class="text-sm text-theme-neutral mt-3"
                       data-testid="list-divided-item__label--description"
                     >
                       Select Profile Image
@@ -150,10 +150,10 @@ exports[`CreateProfile should render 1`] = `
               </li>
             </ul>
             <fieldset
-              class="flex flex-col sc-AxiKw iQzisX space-y-2"
+              class="sc-AxiKw iQzisX flex flex-col space-y-2"
             >
               <label
-                class="inline-block text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
                 data-testid="FormLabel"
                 for="name"
                 label="Name"
@@ -161,16 +161,16 @@ exports[`CreateProfile should render 1`] = `
                 Name
               </label>
               <input
-                class="w-full px-4 py-3 overflow-hidden border rounded appearance-none sc-AxhUy fvuHTn shadow-sm bg-theme-background border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+                class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
                 data-testid="Input"
                 name="name"
               />
             </fieldset>
             <fieldset
-              class="mt-10 sc-AxiKw iQzisX"
+              class="sc-AxiKw iQzisX mt-10"
             >
               <label
-                class="inline-block text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
                 data-testid="FormLabel"
                 for="market-provider"
                 label="Market Provider"
@@ -181,7 +181,7 @@ exports[`CreateProfile should render 1`] = `
                 class="sc-AxmLO kuiknc"
               >
                 <select
-                  class="w-full px-4 py-3 pr-12 overflow-hidden border rounded appearance-none sc-AxhUy fvuHTn shadow-sm bg-theme-background border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary"
+                  class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
                   data-testid="Select"
                   name="market-provider"
                 >
@@ -209,7 +209,7 @@ exports[`CreateProfile should render 1`] = `
                   </option>
                 </select>
                 <div
-                  class="w-12 text-lg pointer-events-none sc-AxgMl sc-Axmtr cPxyjO text-theme-neutral-dark"
+                  class="sc-AxgMl sc-Axmtr cPxyjO w-12 text-lg pointer-events-none text-theme-neutral-dark"
                 >
                   <div
                     class="sc-AxhCb fxrKLH"
@@ -224,10 +224,10 @@ exports[`CreateProfile should render 1`] = `
               </div>
             </fieldset>
             <fieldset
-              class="mt-10 sc-AxiKw iQzisX"
+              class="sc-AxiKw iQzisX mt-10"
             >
               <label
-                class="inline-block text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
                 data-testid="FormLabel"
                 for="currency"
                 label="Currency"
@@ -238,7 +238,7 @@ exports[`CreateProfile should render 1`] = `
                 class="sc-AxmLO kuiknc"
               >
                 <select
-                  class="w-full px-4 py-3 pr-12 overflow-hidden border rounded appearance-none sc-AxhUy fvuHTn shadow-sm bg-theme-background border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary"
+                  class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
                   data-testid="Select"
                   name="currency"
                 >
@@ -266,7 +266,7 @@ exports[`CreateProfile should render 1`] = `
                   </option>
                 </select>
                 <div
-                  class="w-12 text-lg pointer-events-none sc-AxgMl sc-Axmtr cPxyjO text-theme-neutral-dark"
+                  class="sc-AxgMl sc-Axmtr cPxyjO w-12 text-lg pointer-events-none text-theme-neutral-dark"
                 >
                   <div
                     class="sc-AxhCb fxrKLH"
@@ -292,7 +292,7 @@ exports[`CreateProfile should render 1`] = `
                   data-testid="list-divided-item__wrapper"
                 >
                   <div
-                    class="flex flex-col items-start justify-between mt-5"
+                    class="flex justify-between flex-col items-start mt-5"
                     data-testid="list-divided-item__inner-wrapper"
                   >
                     <div
@@ -352,7 +352,7 @@ exports[`CreateProfile should render 1`] = `
               Back
             </button>
             <button
-              class="ml-2 sc-AxjAm gYunbo"
+              class="sc-AxjAm gYunbo ml-2"
               color="primary"
               type="button"
             >

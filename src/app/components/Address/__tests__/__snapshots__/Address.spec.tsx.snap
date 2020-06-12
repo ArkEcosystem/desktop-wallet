@@ -8,7 +8,7 @@ exports[`Formatted Address should render address only 1`] = `
     class="inline-block truncate"
   >
     <span
-      class="text-base font-semibold text-theme-neutral-400"
+      class="text-theme-neutral-400 font-semibold text-base"
       data-testid="address__wallet-address"
     >
       ASuusX...GQ3kqT
@@ -23,13 +23,13 @@ exports[`Formatted Address should render with wallet name 1`] = `
     class="inline-block truncate"
   >
     <span
-      class="flex-auto mt-4 mr-1 text-base font-semibold truncate text-theme-neutral-800 max-w-24"
+      class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-base"
       data-testid="address__wallet-name"
     >
       Sample Wallet
     </span>
     <span
-      class="text-base font-semibold text-theme-neutral-400"
+      class="text-theme-neutral-400 font-semibold text-base"
       data-testid="address__wallet-address"
     >
       ASuusX...GQ3kqT
