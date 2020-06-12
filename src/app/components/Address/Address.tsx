@@ -19,7 +19,7 @@ export const Address = ({ address, walletName, maxChars, size }: Props) => {
 	};
 
 	return (
-		<div className="truncate inline-block">
+		<div className="inline-block truncate">
 			{walletName && (
 				<span
 					data-testid="address__wallet-name"

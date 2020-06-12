@@ -6,7 +6,7 @@ exports[`ProfileCard should hide the settings icon 1`] = `
     class="sc-AxjAm hsiRAq"
   >
     <div
-      class="relative px-6 sm:flex sm:items-center py-4"
+      class="relative px-6 py-4 sm:flex sm:items-center"
     >
       <div
         class="flex flex-row justify-between w-full"
@@ -71,16 +71,16 @@ exports[`ProfileCard should render 1`] = `
     class="sc-AxjAm hsiRAq"
   >
     <div
-      class="relative px-6 sm:flex sm:items-center py-4"
+      class="relative px-6 py-4 sm:flex sm:items-center"
     >
       <div
-        class="absolute top-0 -mt-2 -mr-4 right-0 flex items-center justify-center w-6 h-6 p-1 mt-3"
+        class="absolute top-0 right-0 flex items-center justify-center w-6 h-6 p-1 mt-3 -mt-2 -mr-4"
       >
         <div
           class="relative"
         >
           <button
-            class="outline-none focus:outline-none float-right"
+            class="float-right outline-none focus:outline-none"
             data-testid="dropdown__toggle"
           >
             <div
@@ -158,16 +158,16 @@ exports[`ProfileCard should render the settings icon 1`] = `
     class="sc-AxjAm hsiRAq"
   >
     <div
-      class="relative px-6 sm:flex sm:items-center py-4"
+      class="relative px-6 py-4 sm:flex sm:items-center"
     >
       <div
-        class="absolute top-0 -mt-2 -mr-4 right-0 flex items-center justify-center w-6 h-6 p-1 mt-3"
+        class="absolute top-0 right-0 flex items-center justify-center w-6 h-6 p-1 mt-3 -mt-2 -mr-4"
       >
         <div
           class="relative"
         >
           <button
-            class="outline-none focus:outline-none float-right"
+            class="float-right outline-none focus:outline-none"
             data-testid="dropdown__toggle"
           >
             <div

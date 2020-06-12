@@ -3,7 +3,7 @@
 exports[`Settings should render 1`] = `
 <DocumentFragment>
   <div
-    class="w-full h-full flex"
+    class="flex w-full h-full"
   >
     <div
       class="w-1/4 h-full"
@@ -37,7 +37,7 @@ exports[`Settings should render 1`] = `
                 </div>
               </div>
               <span
-                class="font-semibold ml-2"
+                class="ml-2 font-semibold"
               >
                 General
               </span>
@@ -64,7 +64,7 @@ exports[`Settings should render 1`] = `
                 </div>
               </div>
               <span
-                class="font-semibold ml-2"
+                class="ml-2 font-semibold"
               >
                 Peer
               </span>
@@ -91,7 +91,7 @@ exports[`Settings should render 1`] = `
                 </div>
               </div>
               <span
-                class="font-semibold ml-2"
+                class="ml-2 font-semibold"
               >
                 Plugins
               </span>
@@ -101,7 +101,7 @@ exports[`Settings should render 1`] = `
       </div>
     </div>
     <div
-      class="mx-12 border-l-1 pl-20 border-theme-primary-contrast w-3/5"
+      class="w-3/5 pl-20 mx-12 border-l-1 border-theme-primary-contrast"
     >
       <div
         class="flex flex-col items-start"
@@ -164,10 +164,10 @@ exports[`Settings should render 1`] = `
                   class="flex flex-row mt-2"
                 >
                   <div
-                    class="flex items-center justify-center w-24 h-24 mr-6 border-2 border-theme-neutral-light border-dashed rounded"
+                    class="flex items-center justify-center w-24 h-24 mr-6 border-2 border-dashed rounded border-theme-neutral-light"
                   >
                     <button
-                      class="flex items-center justify-center w-20 h-20 bg-theme-primary-contrast rounded-full"
+                      class="flex items-center justify-center w-20 h-20 rounded-full bg-theme-primary-contrast"
                       type="button"
                     >
                       <div
@@ -182,7 +182,7 @@ exports[`Settings should render 1`] = `
                     </button>
                   </div>
                   <div
-                    class="relative w-24 h-24 bg-theme-neutral-light rounded"
+                    class="relative w-24 h-24 rounded bg-theme-neutral-light"
                   >
                     <img
                       alt="random avatar"
@@ -190,7 +190,7 @@ exports[`Settings should render 1`] = `
                       src="https://randomuser.me/api/portraits/men/3.jpg"
                     />
                     <button
-                      class="absolute flex items-center justify-center w-6 h-6 p-1 bg-theme-danger-contrast text-theme-danger rounded -top-3 -right-3"
+                      class="absolute flex items-center justify-center w-6 h-6 p-1 rounded bg-theme-danger-contrast text-theme-danger -top-3 -right-3"
                     >
                       <div
                         class="sc-AxjAm HWmvM"
@@ -208,7 +208,7 @@ exports[`Settings should render 1`] = `
             </li>
           </ul>
           <div
-            class="w-full flex justify-between"
+            class="flex justify-between w-full"
           >
             <div
               class="flex flex-col w-2/4"
@@ -274,7 +274,7 @@ exports[`Settings should render 1`] = `
                     </option>
                   </select>
                   <div
-                    class="sc-AxhUy sc-AxheI bSLhdh text-theme-neutral-dark pointer-events-none w-12 text-lg"
+                    class="sc-AxhUy sc-AxheI bSLhdh w-12 text-lg pointer-events-none text-theme-neutral-dark"
                   >
                     <div
                       class="sc-AxjAm cpczEI"
@@ -331,7 +331,7 @@ exports[`Settings should render 1`] = `
                     </option>
                   </select>
                   <div
-                    class="sc-AxhUy sc-AxheI bSLhdh text-theme-neutral-dark pointer-events-none w-12 text-lg"
+                    class="sc-AxhUy sc-AxheI bSLhdh w-12 text-lg pointer-events-none text-theme-neutral-dark"
                   >
                     <div
                       class="sc-AxjAm cpczEI"
@@ -392,7 +392,7 @@ exports[`Settings should render 1`] = `
                     </option>
                   </select>
                   <div
-                    class="sc-AxhUy sc-AxheI bSLhdh text-theme-neutral-dark pointer-events-none w-12 text-lg"
+                    class="sc-AxhUy sc-AxheI bSLhdh w-12 text-lg pointer-events-none text-theme-neutral-dark"
                   >
                     <div
                       class="sc-AxjAm cpczEI"
@@ -449,7 +449,7 @@ exports[`Settings should render 1`] = `
                     </option>
                   </select>
                   <div
-                    class="sc-AxhUy sc-AxheI bSLhdh text-theme-neutral-dark pointer-events-none w-12 text-lg"
+                    class="sc-AxhUy sc-AxheI bSLhdh w-12 text-lg pointer-events-none text-theme-neutral-dark"
                   >
                     <div
                       class="sc-AxjAm cpczEI"
@@ -506,7 +506,7 @@ exports[`Settings should render 1`] = `
                     </option>
                   </select>
                   <div
-                    class="sc-AxhUy sc-AxheI bSLhdh text-theme-neutral-dark pointer-events-none w-12 text-lg"
+                    class="sc-AxhUy sc-AxheI bSLhdh w-12 text-lg pointer-events-none text-theme-neutral-dark"
                   >
                     <div
                       class="sc-AxjAm cpczEI"
@@ -524,7 +524,7 @@ exports[`Settings should render 1`] = `
           </div>
         </div>
         <div
-          class="mt-5 relative"
+          class="relative mt-5"
         >
           <div
             class="flex flex-col items-start"
@@ -567,7 +567,7 @@ exports[`Settings should render 1`] = `
                   class="flex flex-row justify-between"
                 >
                   <span
-                    class="text-sm text-theme-neutral-dark w-3/4"
+                    class="w-3/4 text-sm text-theme-neutral-dark"
                   >
                     This protection. will protect your money from unwanted Screenshot you PC.
                   </span>
@@ -618,7 +618,7 @@ exports[`Settings should render 1`] = `
                   class="flex flex-row justify-between"
                 >
                   <span
-                    class="text-sm text-theme-neutral-dark w-3/4"
+                    class="w-3/4 text-sm text-theme-neutral-dark"
                   >
                     You hereby assume the risk associated with downloading files and installing said files from a direct URL link.
                   </span>
@@ -697,7 +697,7 @@ exports[`Settings should render 1`] = `
                     </option>
                   </select>
                   <div
-                    class="sc-AxhUy sc-AxheI bSLhdh text-theme-neutral-dark pointer-events-none w-12 text-lg"
+                    class="sc-AxhUy sc-AxheI bSLhdh w-12 text-lg pointer-events-none text-theme-neutral-dark"
                   >
                     <div
                       class="sc-AxjAm cpczEI"
@@ -715,7 +715,7 @@ exports[`Settings should render 1`] = `
           </ul>
         </div>
         <div
-          class="mt-5 relative"
+          class="relative mt-5"
         >
           <div
             class="flex flex-col items-start"
@@ -758,7 +758,7 @@ exports[`Settings should render 1`] = `
                   class="flex flex-row justify-between"
                 >
                   <span
-                    class="text-sm text-theme-neutral-dark w-3/4"
+                    class="w-3/4 text-sm text-theme-neutral-dark"
                   >
                     Want to set the wallet to dark mode?
                   </span>
@@ -809,7 +809,7 @@ exports[`Settings should render 1`] = `
                   class="flex flex-row justify-between"
                 >
                   <span
-                    class="text-sm text-theme-neutral-dark w-3/4"
+                    class="w-3/4 text-sm text-theme-neutral-dark"
                   >
                     You hereby assume the risk associated with downloading files and installing said files from a direct URL link.
                   </span>
@@ -836,7 +836,7 @@ exports[`Settings should render 1`] = `
           </ul>
         </div>
         <div
-          class="w-full flex justify-between"
+          class="flex justify-between w-full"
         >
           <button
             class="sc-AxmLO ZXVTL"
@@ -888,7 +888,7 @@ exports[`Settings should render 1`] = `
 exports[`Settings should render a not found information 1`] = `
 <DocumentFragment>
   <div
-    class="w-full h-full flex"
+    class="flex w-full h-full"
   >
     <div
       class="w-1/4 h-full"
@@ -916,7 +916,7 @@ exports[`Settings should render a not found information 1`] = `
                 </div>
               </div>
               <span
-                class="font-semibold ml-2"
+                class="ml-2 font-semibold"
               >
                 General
               </span>
@@ -949,7 +949,7 @@ exports[`Settings should render a not found information 1`] = `
                 </div>
               </div>
               <span
-                class="font-semibold ml-2"
+                class="ml-2 font-semibold"
               >
                 Peer
               </span>
@@ -976,7 +976,7 @@ exports[`Settings should render a not found information 1`] = `
                 </div>
               </div>
               <span
-                class="font-semibold ml-2"
+                class="ml-2 font-semibold"
               >
                 Plugins
               </span>
@@ -986,7 +986,7 @@ exports[`Settings should render a not found information 1`] = `
       </div>
     </div>
     <div
-      class="mx-12 border-l-1 pl-20 border-theme-primary-contrast w-3/5"
+      class="w-3/5 pl-20 mx-12 border-l-1 border-theme-primary-contrast"
     >
       <span>
         Peer settings not found

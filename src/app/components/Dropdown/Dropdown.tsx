@@ -23,7 +23,7 @@ const renderOptions = (options: any[], onSelect: any) => (
 	<ul data-testid="dropdown__options">
 		{options.map((option: Option, key: number) => (
 			<li
-				className="block cursor-pointer px-8 py-4 text-sm font-semibold text-theme-neutral-800 hover:bg-theme-neutral-200 hover:text-theme-primary-600"
+				className="block px-8 py-4 text-sm font-semibold cursor-pointer text-theme-neutral-800 hover:bg-theme-neutral-200 hover:text-theme-primary-600"
 				key={key}
 				data-testid={`dropdown__option--${key}`}
 				onClick={() => onSelect(option)}
@@ -51,7 +51,7 @@ export const Dropdown = ({ children, options, onSelect, toggleIcon }: Props) => 
 	if (!isOpen) {
 		return (
 			<div onClick={toggle} ref={ref} className="relative">
-				<button data-testid="dropdown__toggle" className="outline-none focus:outline-none float-right">
+				<button data-testid="dropdown__toggle" className="float-right outline-none focus:outline-none">
 					<Icon name={toggleIcon} width={20} height={20} />
 				</button>
 			</div>
@@ -60,7 +60,7 @@ export const Dropdown = ({ children, options, onSelect, toggleIcon }: Props) => 
 
 	return (
 		<div ref={ref} className="relative">
-			<button onClick={toggle} className="outline-none focus:outline-none float-right">
+			<button onClick={toggle} className="float-right outline-none focus:outline-none">
 				<Icon name={toggleIcon} width={20} height={20} />
 			</button>
 
