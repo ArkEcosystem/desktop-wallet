@@ -3,7 +3,7 @@
 exports[`Card Control should render 1`] = `
 <DocumentFragment>
   <label
-    class="CardControl___StyledLabel-sc-28luv0-4 gNrkXm"
+    class="CardControl___StyledLabel-sc-28luv0-3 PNVuh"
   >
     <input
       class="CardControl__Input-sc-28luv0-0 lbnjeC"
@@ -12,7 +12,7 @@ exports[`Card Control should render 1`] = `
       value=""
     />
     <div
-      class="sc-AxjAm CardControl__CustomCard-sc-28luv0-1 kWIYfA"
+      class="sc-AxjAm CardControl__CustomCard-sc-28luv0-1 hbehcc"
     />
   </label>
 </DocumentFragment>
@@ -21,7 +21,7 @@ exports[`Card Control should render 1`] = `
 exports[`Card Control should render with a control state 1`] = `
 <DocumentFragment>
   <label
-    class="CardControl___StyledLabel-sc-28luv0-4 gNrkXm grid"
+    class="CardControl___StyledLabel-sc-28luv0-3 PNVuh grid"
   >
     <input
       class="CardControl__Input-sc-28luv0-0 lbnjeC"
@@ -30,7 +30,7 @@ exports[`Card Control should render with a control state 1`] = `
       value=""
     />
     <div
-      class="sc-AxjAm CardControl__CustomCard-sc-28luv0-1 kWIYfA"
+      class="sc-AxjAm CardControl__CustomCard-sc-28luv0-1 hbehcc"
     >
       <div
         class="flex flex-col items-center justify-between h-full"
@@ -42,16 +42,15 @@ exports[`Card Control should render with a control state 1`] = `
           class="CardControl__StateStyle-sc-28luv0-2 iismIz"
           data-testid="card__control-state"
         >
-          <svg
-            class="CardControl___StyledSvg-sc-28luv0-3 dIzewJ"
-            viewBox="0 0 16 16"
-            xmlns="http://www.w3.org/2000/svg"
+          <div
+            class="sc-AxirZ iQaTP"
+            height="1em"
+            width="1em"
           >
-            <path
-              d="M5.707 7.293a1 1 0 0 0-1.414 1.414l2 2a1 1 0 0 0 1.414 0l4-4a1 1 0 0 0-1.414-1.414L7 8.586 5.707 7.293z"
-              fill="currentColor"
-            />
-          </svg>
+            <svg>
+              checkmark.svg
+            </svg>
+          </div>
         </div>
       </div>
     </div>

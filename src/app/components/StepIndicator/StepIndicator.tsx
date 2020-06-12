@@ -7,7 +7,7 @@ type StepIndicatorProps = {
 };
 
 const StepStyled = styled.li<{ isActive: boolean }>`
-	${tw`flex-1 bg-theme-neutral-light rounded-lg transition-colors duration-300`}
+	${tw`flex-1 bg-theme-neutral-300 rounded-lg transition-colors duration-300`}
 	height: 2px;
 	${({ isActive }) => isActive && tw`bg-theme-warning`}
 `;

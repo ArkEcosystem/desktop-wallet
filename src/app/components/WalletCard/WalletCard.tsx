@@ -44,8 +44,8 @@ export const WalletCard = ({
 			<div className={`w-64 inline-block ${className}`}>
 				<Card>
 					<div>
-						<Circle className="-mr-2 border-theme-primary-contrast"></Circle>
-						<Circle className="border-theme-primary-contrast"></Circle>
+						<Circle className="-mr-2 bg-theme-background border-theme-primary-contrast"></Circle>
+						<Circle className="border-theme-primary-contrast bg-theme-background"></Circle>
 					</div>
 
 					<div className="mt-4 text-sm text-theme-primary-contrast">{blankTitle}</div>
@@ -63,7 +63,7 @@ export const WalletCard = ({
 					<div></div>
 				</div>
 				<div>
-					<Circle className={`border-theme-primary-contrast -mr-2 ${coinIconClass}`}>
+					<Circle className={`border-theme-primary-contrast -mr-2 bg-theme-background ${coinIconClass}`}>
 						{renderCoin(coinIcon)}
 					</Circle>
 					<Circle avatarId={avatarId} className="border-theme-primary-contrast"></Circle>
