@@ -1,6 +1,8 @@
 import React from "react";
-import { Icon } from "../Icon";
-import { Wrapper, defaultClasses } from "./style";
+import { styled, css } from "twin.macro";
+
+import { Icon } from "app/components/Icon";
+import { defaultStyle, defaultClasses } from "./style";
 
 type BadgeProps = {
 	className?: string;
@@ -9,6 +11,10 @@ type BadgeProps = {
 	iconWidth?: number;
 	iconHeight?: number;
 };
+
+export const Wrapper = styled.span`
+	${defaultStyle}
+`;
 
 export const Badge = ({ className, children, icon, iconWidth, iconHeight }: BadgeProps) => {
 	return (
