@@ -63,9 +63,9 @@ export const MultiSignatureDetail = (props: MultiSignatureDetailProps) => {
 
 				<div className="flex">
 					<div>
-						<div className="text-sm font-semibold text-theme-neutral-500 mb-2">{t("COMMON.YOU")}</div>
+						<div className="mb-2 text-sm font-semibold text-theme-neutral-500">{t("COMMON.YOU")}</div>
 
-						<div className="border-r border-theme-neutral-300 mr-2 pr-4">
+						<div className="pr-4 mr-2 border-r border-theme-neutral-300">
 							<Circle avatarId="test" className="relative ml-2">
 								<Badge
 									className="bottom-0 -right-1 bg-theme-success-200 text-theme-success-500"
@@ -76,7 +76,7 @@ export const MultiSignatureDetail = (props: MultiSignatureDetailProps) => {
 					</div>
 
 					<div>
-						<div className="text-sm font-semibold text-theme-neutral-500 mb-2 ml-2">
+						<div className="mb-2 ml-2 text-sm font-semibold text-theme-neutral-500">
 							{t("COMMON.OTHER")}
 						</div>
 
