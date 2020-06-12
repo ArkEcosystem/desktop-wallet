@@ -9,6 +9,15 @@ exports[`Spinner should render 1`] = `
 </div>
 `;
 
+exports[`Spinner should render a danger color 1`] = `
+<div>
+  <div
+    class="sc-AxjAm igzdRB"
+    color="danger"
+  />
+</div>
+`;
+
 exports[`Spinner should render a large one 1`] = `
 <div>
   <div
@@ -32,6 +41,24 @@ exports[`Spinner should render a small one 1`] = `
   <div
     class="sc-AxjAm fxkZZe"
     color="primary"
+  />
+</div>
+`;
+
+exports[`Spinner should render a success color 1`] = `
+<div>
+  <div
+    class="sc-AxjAm iPOnKF"
+    color="success"
+  />
+</div>
+`;
+
+exports[`Spinner should render a warning color 1`] = `
+<div>
+  <div
+    class="sc-AxjAm SoQYo"
+    color="warning"
   />
 </div>
 `;

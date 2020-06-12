@@ -16,6 +16,24 @@ describe("Spinner", () => {
 		expect(container).toMatchSnapshot();
 	});
 
+	it("should render a success color", () => {
+		const { container } = render(<Spinner color="success" />);
+
+		expect(container).toMatchSnapshot();
+	});
+
+	it("should render a danger color", () => {
+		const { container } = render(<Spinner color="danger" />);
+
+		expect(container).toMatchSnapshot();
+	});
+
+	it("should render a warning color", () => {
+		const { container } = render(<Spinner color="warning" />);
+
+		expect(container).toMatchSnapshot();
+	});
+
 	it("should render a small one", () => {
 		const { container } = render(<Spinner size="small" />);
 
