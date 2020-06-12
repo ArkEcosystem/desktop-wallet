@@ -1,6 +1,7 @@
 import tw, { css } from "twin.macro";
 
 const baseStyle = [
+	tw`rounded-full`,
 	css`
 		@keyframes spin {
 			to {
@@ -24,11 +25,11 @@ const getColorsVariable = (name: string): any => {
 const getSize = (size: string): any => {
 	switch (size) {
 		case "small":
-			return tw`w-5`;
+			return tw`w-5 h-5`;
 		case "default":
-			return tw`w-12`;
+			return tw`w-12 h-12`;
 		case "large":
-			return tw`w-24`;
+			return tw`w-24 h-24`;
 	}
 };
 
