@@ -47,10 +47,10 @@ exports[`ContactUs should render a modal 1`] = `
           We'd be happy to answer your questions
         </div>
         <div
-          class="flex border-b border-gray-500 text-black mt-2 mb-8 -mx-16 px-16 pb-8"
+          class="flex px-16 pb-8 mt-2 mb-8 -mx-16 text-black border-b border-gray-500"
         >
           <a
-            class="rounded-full mr-2 hover:bg-theme-neutral-300"
+            class="mr-2 rounded-full hover:bg-theme-neutral-300"
             href="https://twitter.ark.io"
           >
             <div
@@ -68,7 +68,7 @@ exports[`ContactUs should render a modal 1`] = `
             </div>
           </a>
           <a
-            class="rounded-full mr-2 hover:bg-theme-neutral-300"
+            class="mr-2 rounded-full hover:bg-theme-neutral-300"
             href="https://slack.ark.io"
           >
             <div
@@ -86,7 +86,7 @@ exports[`ContactUs should render a modal 1`] = `
             </div>
           </a>
           <a
-            class="rounded-full mr-2 hover:bg-theme-neutral-300"
+            class="mr-2 rounded-full hover:bg-theme-neutral-300"
             href="https://discord.ark.io/"
           >
             <div

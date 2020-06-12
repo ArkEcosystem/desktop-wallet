@@ -5,7 +5,7 @@ export default { title: "Input / TextArea" };
 
 export const Default = () => {
 	return (
-		<div className="space-y-4 max-w-xs">
+		<div className="max-w-xs space-y-4">
 			<TextArea placeholder="Enabled" />
 			<TextArea placeholder="Invalid" isInvalid />
 			<TextArea placeholder="Disabled" disabled />

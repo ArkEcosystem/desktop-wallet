@@ -29,20 +29,20 @@ export const ContactUs = (props: ContactUsProps) => {
 			isOpen={props.isOpen}
 			onClose={props.onClose}
 		>
-			<div className="flex border-b border-gray-500 text-black mt-2 mb-8 -mx-16 px-16 pb-8">
-				<a href="https://twitter.ark.io" className="rounded-full mr-2 hover:bg-theme-neutral-300">
+			<div className="flex px-16 pb-8 mt-2 mb-8 -mx-16 text-black border-b border-gray-500">
+				<a href="https://twitter.ark.io" className="mr-2 rounded-full hover:bg-theme-neutral-300">
 					<Circle className="border-black hover:bg-transparent" noShadow={true}>
 						<Icon name="Twitter" />
 					</Circle>
 				</a>
 
-				<a href="https://slack.ark.io" className="rounded-full mr-2 hover:bg-theme-neutral-300">
+				<a href="https://slack.ark.io" className="mr-2 rounded-full hover:bg-theme-neutral-300">
 					<Circle className="border-black hover:bg-transparent" noShadow={true}>
 						<Icon name="Slack" />
 					</Circle>
 				</a>
 
-				<a href="https://discord.ark.io/" className="rounded-full mr-2 hover:bg-theme-neutral-300">
+				<a href="https://discord.ark.io/" className="mr-2 rounded-full hover:bg-theme-neutral-300">
 					<Circle className="border-black hover:bg-transparent" noShadow={true}>
 						<Icon name="Discord" />
 					</Circle>
