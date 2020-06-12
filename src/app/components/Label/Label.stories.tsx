@@ -5,6 +5,16 @@ export default {
 	title: "Basic / Label",
 };
 
+export const All = () => (
+	<div className="space-x-4">
+		<Label color="primary">Label</Label>
+		<Label color="success">Label</Label>
+		<Label color="danger">Label</Label>
+		<Label color="warning">Label</Label>
+		<Label color="neutral">Label</Label>
+	</div>
+);
+
 export const Primary = () => (
 	<div className="space-x-4">
 		<Label color="primary">Label</Label>
