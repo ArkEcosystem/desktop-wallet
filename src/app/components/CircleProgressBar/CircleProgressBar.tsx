@@ -93,7 +93,7 @@ export const CircleProgressBar = ({
 				/>
 
 				<InnerContainer percentageColor={percentageColor}>
-					<Text x="50%" y="50%">
+					<Text x="50%" y="50%" data-testid="circle-progress-bar__progress">
 						{progressBar}%
 					</Text>
 				</InnerContainer>
