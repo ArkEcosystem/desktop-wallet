@@ -62,7 +62,7 @@ export const WalletsControls = ({
 
 			<div className="relative inline-block px-3 text-theme-primary-400">
 				<Dropdown toggleIcon="Filters">
-					<div className="w-128 px-11 py-8">
+					<div className="py-8 w-128 px-11">
 						<FilterWallets {...filterProperties}></FilterWallets>
 					</div>
 				</Dropdown>
@@ -71,13 +71,13 @@ export const WalletsControls = ({
 			<Divider type="vertical"></Divider>
 
 			<Button onClick={onCreateWallet} color="primary" variant="solid" className="ml-8 mr-1">
-				<div className="flex justify-center align-middle items-center mr-2 text-sm">
+				<div className="flex items-center justify-center mr-2 text-sm align-middle">
 					<Icon name="Plus" width={10}></Icon>
 					<span className="ml-2">Create</span>
 				</div>
 			</Button>
 			<Button onClick={onImportWallet} color="primary" variant="plain">
-				<div className="flex justify-center align-middle items-center mr-2 text-sm">
+				<div className="flex items-center justify-center mr-2 text-sm align-middle">
 					<Icon name="Import"></Icon>
 					<span className="ml-2">Import</span>
 				</div>

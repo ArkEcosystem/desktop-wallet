@@ -91,7 +91,7 @@ export function SecondStep({
 						onClick={onDownload}
 						data-testid="CreateWallet__download"
 						variant="plain"
-						className="mt-4 flex items-center space-x-2"
+						className="flex items-center mt-4 space-x-2"
 					>
 						<Icon name="Download" />
 						<span>Download</span>
@@ -127,7 +127,7 @@ export function ThirdStep({ skipVerification, mnemonic }: { skipVerification: bo
 	return (
 		<section data-testid="CreateWallet__third-step">
 			<h1 className="mb-0">Select Network</h1>
-			<p className="text-theme-neutral-dark mb-8">Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+			<p className="mb-8 text-theme-neutral-dark">Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
 
 			<MnemonicVerification
 				mnemonic={mnemonic}
@@ -148,7 +148,7 @@ export function FourthStep() {
 	return (
 		<section data-testid="CreateWallet__fourth-step">
 			<h1 className="mb-0">Select Network</h1>
-			<p className="text-theme-neutral-dark mb-8">Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+			<p className="mb-8 text-theme-neutral-dark">Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
 
 			<ul>
 				<li className="flex justify-between">
@@ -230,7 +230,7 @@ export function CreateWallet({ networks, mnemonic, onSubmit, onCopy, onDownload,
 							<FourthStep />
 						</TabPanel>
 
-						<div className="mt-6 flex space-x-2 justify-end">
+						<div className="flex justify-end mt-6 space-x-2">
 							{activeTab > 1 && (
 								<Button data-testid="CreateWallet__back-button" variant="plain" onClick={handleBack}>
 									Back

@@ -7,7 +7,7 @@ exports[`FilterWallets should render 1`] = `
       class="mb-4"
     >
       <div
-        class="text-sm text-theme-neutral-800 mb-1"
+        class="mb-1 text-sm text-theme-neutral-800"
       >
         Filter Network
       </div>
@@ -23,7 +23,7 @@ exports[`FilterWallets should render 1`] = `
         data-testid="network__option"
       />
       <div
-        class="sc-AxjAm jQEjKi relative border-theme-primary-100 ml-2 cursor-pointer"
+        class="sc-AxjAm jQEjKi relative ml-2 cursor-pointer border-theme-primary-100"
         data-testid="network__viewall"
       >
         <div
@@ -52,13 +52,13 @@ exports[`FilterWallets should render 1`] = `
       type="horizontal"
     />
     <div
-      class="mb-4 flex flex-row"
+      class="flex flex-row mb-4"
     >
       <div
         class="w-4/5"
       >
         <div
-          class="text-sm text-theme-neutral-800 mb-1"
+          class="mb-1 text-sm text-theme-neutral-800"
         >
           Your Wallets
         </div>
@@ -72,7 +72,7 @@ exports[`FilterWallets should render 1`] = `
         class="w-1/5 text-right"
       >
         <div
-          class="text-sm text-theme-neutral-800 relative mt-3 mr-5 h-6 cursor-pointer"
+          class="relative h-6 mt-3 mr-5 text-sm cursor-pointer text-theme-neutral-800"
           data-testid="filter-wallets__wallets"
         >
           All 
@@ -98,13 +98,13 @@ exports[`FilterWallets should render 1`] = `
       type="horizontal"
     />
     <div
-      class="mb-4 flex flex-row"
+      class="flex flex-row mb-4"
     >
       <div
         class="w-4/5"
       >
         <div
-          class="text-sm text-theme-neutral-800 mb-1"
+          class="mb-1 text-sm text-theme-neutral-800"
         >
           Portfolio Chart
         </div>
@@ -115,7 +115,7 @@ exports[`FilterWallets should render 1`] = `
         </div>
       </div>
       <div
-        class="w-1/5 text-right pt-3"
+        class="w-1/5 pt-3 text-right"
       >
         <label>
           <input
@@ -138,13 +138,13 @@ exports[`FilterWallets should render 1`] = `
       type="horizontal"
     />
     <div
-      class="mb-4 flex flex-row"
+      class="flex flex-row mb-4"
     >
       <div
         class="w-4/5"
       >
         <div
-          class="text-sm text-theme-neutral-800 mb-1"
+          class="mb-1 text-sm text-theme-neutral-800"
         >
           Transaction History
         </div>
@@ -155,7 +155,7 @@ exports[`FilterWallets should render 1`] = `
         </div>
       </div>
       <div
-        class="w-1/5 text-right pt-3"
+        class="w-1/5 pt-3 text-right"
       >
         <label>
           <input
@@ -184,7 +184,7 @@ exports[`FilterWallets should render with networks selection 1`] = `
       class="mb-4"
     >
       <div
-        class="text-sm text-theme-neutral-800 mb-1"
+        class="mb-1 text-sm text-theme-neutral-800"
       >
         Filter Network
       </div>
@@ -200,7 +200,7 @@ exports[`FilterWallets should render with networks selection 1`] = `
         data-testid="network__option"
       >
         <li
-          class="inline-block cursor-pointer mr-5"
+          class="inline-block mr-5 cursor-pointer"
           data-testid="network__option--0"
         >
           <div
@@ -232,7 +232,7 @@ exports[`FilterWallets should render with networks selection 1`] = `
           </div>
         </li>
         <li
-          class="inline-block cursor-pointer mr-5"
+          class="inline-block mr-5 cursor-pointer"
           data-testid="network__option--1"
         >
           <div
@@ -264,7 +264,7 @@ exports[`FilterWallets should render with networks selection 1`] = `
           </div>
         </li>
         <li
-          class="inline-block cursor-pointer mr-5"
+          class="inline-block mr-5 cursor-pointer"
           data-testid="network__option--2"
         >
           <div
@@ -288,7 +288,7 @@ exports[`FilterWallets should render with networks selection 1`] = `
         </li>
       </ul>
       <div
-        class="sc-AxjAm jQEjKi relative border-theme-primary-100 ml-2 cursor-pointer"
+        class="sc-AxjAm jQEjKi relative ml-2 cursor-pointer border-theme-primary-100"
         data-testid="network__viewall"
       >
         <div
@@ -317,13 +317,13 @@ exports[`FilterWallets should render with networks selection 1`] = `
       type="horizontal"
     />
     <div
-      class="mb-4 flex flex-row"
+      class="flex flex-row mb-4"
     >
       <div
         class="w-4/5"
       >
         <div
-          class="text-sm text-theme-neutral-800 mb-1"
+          class="mb-1 text-sm text-theme-neutral-800"
         >
           Your Wallets
         </div>
@@ -337,7 +337,7 @@ exports[`FilterWallets should render with networks selection 1`] = `
         class="w-1/5 text-right"
       >
         <div
-          class="text-sm text-theme-neutral-800 relative mt-3 mr-5 h-6 cursor-pointer"
+          class="relative h-6 mt-3 mr-5 text-sm cursor-pointer text-theme-neutral-800"
           data-testid="filter-wallets__wallets"
         >
           All 
@@ -363,13 +363,13 @@ exports[`FilterWallets should render with networks selection 1`] = `
       type="horizontal"
     />
     <div
-      class="mb-4 flex flex-row"
+      class="flex flex-row mb-4"
     >
       <div
         class="w-4/5"
       >
         <div
-          class="text-sm text-theme-neutral-800 mb-1"
+          class="mb-1 text-sm text-theme-neutral-800"
         >
           Portfolio Chart
         </div>
@@ -380,7 +380,7 @@ exports[`FilterWallets should render with networks selection 1`] = `
         </div>
       </div>
       <div
-        class="w-1/5 text-right pt-3"
+        class="w-1/5 pt-3 text-right"
       >
         <label>
           <input
@@ -403,13 +403,13 @@ exports[`FilterWallets should render with networks selection 1`] = `
       type="horizontal"
     />
     <div
-      class="mb-4 flex flex-row"
+      class="flex flex-row mb-4"
     >
       <div
         class="w-4/5"
       >
         <div
-          class="text-sm text-theme-neutral-800 mb-1"
+          class="mb-1 text-sm text-theme-neutral-800"
         >
           Transaction History
         </div>
@@ -420,7 +420,7 @@ exports[`FilterWallets should render with networks selection 1`] = `
         </div>
       </div>
       <div
-        class="w-1/5 text-right pt-3"
+        class="w-1/5 pt-3 text-right"
       >
         <label>
           <input

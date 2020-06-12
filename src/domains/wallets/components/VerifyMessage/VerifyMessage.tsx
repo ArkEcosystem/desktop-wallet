@@ -68,13 +68,13 @@ export const VerifyMessage = ({ onSubmit, publicKey, isOpen, handleClose }: Prop
 			onClick={handleClose}
 		>
 			<div className="mt-10">
-				<div className="flex flex-col border-b border-dashed border-theme-neutral-light pb-5">
-					<span className="text-base font-bold pb-2">Verify</span>
+				<div className="flex flex-col pb-5 border-b border-dashed border-theme-neutral-light">
+					<span className="pb-2 text-base font-bold">Verify</span>
 					<div className="flex flex-row justify-between">
-						<span className="text-sm text-theme-neutral-light w-3/4">
+						<span className="w-3/4 text-sm text-theme-neutral-light">
 							You can verify only text using a JSON public key
 						</span>
-						<div className="-mt-2 mr-1">
+						<div className="mr-1 -mt-2">
 							<Toggle
 								data-testid="verify-address__togle"
 								className="-mt-3"

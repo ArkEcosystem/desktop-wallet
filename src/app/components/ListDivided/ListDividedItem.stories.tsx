@@ -16,8 +16,8 @@ const item = {
 	itemValueClass: "",
 	content: (
 		<div className="flex flex-row mt-2">
-			<div className="flex items-center justify-center w-24 h-24 mr-6 border-2 border-theme-neutral border-dashed rounded"></div>
-			<div className="relative w-24 h-24 bg-theme-neutral rounded">
+			<div className="flex items-center justify-center w-24 h-24 mr-6 border-2 border-dashed rounded border-theme-neutral"></div>
+			<div className="relative w-24 h-24 rounded bg-theme-neutral">
 				<img
 					src="https://randomuser.me/api/portraits/men/3.jpg"
 					className="object-cover rounded"

@@ -38,10 +38,10 @@ export const SignMessage = ({ onSubmit, signatoryAddress, isOpen, isSigned, hand
 			label: "Signatory",
 			labelClass: "font-bold text-theme-neutral-light",
 			content: (
-				<div className="flex justify-between w-full items-center">
+				<div className="flex items-center justify-between w-full">
 					<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} size="large" />
 					<div className="-mt-3">
-						<Circle className="border-theme-neutral-800 -mr-2">
+						<Circle className="-mr-2 border-theme-neutral-800">
 							<Icon name="Delegate" width={20} height={20} />
 						</Circle>
 						<Circle avatarId="test" className="-mr-2"></Circle>
@@ -54,7 +54,7 @@ export const SignMessage = ({ onSubmit, signatoryAddress, isOpen, isSigned, hand
 			label: "Message",
 			labelClass: "font-bold text-theme-neutral-light -mt-5",
 			content: (
-				<span className="font-bold text-xl text-theme-neutral-800 w-3/4">{"Oleg Happy in the Oleg Bank"}</span>
+				<span className="w-3/4 text-xl font-bold text-theme-neutral-800">{"Oleg Happy in the Oleg Bank"}</span>
 			),
 		},
 		{
@@ -72,7 +72,7 @@ export const SignMessage = ({ onSubmit, signatoryAddress, isOpen, isSigned, hand
 			<FormField name="signatory-address" className="relative">
 				<FormLabel label="Signatory" />
 				<Input type="text" disabled />
-				<div className="absolute top-0 mt-8 ml-4 flex items-center">
+				<div className="absolute top-0 flex items-center mt-8 ml-4">
 					<Circle avatarId="test" size="small" noShadow />
 					<span className="ml-3 font-semibold ">{signatoryAddress}</span>
 				</div>

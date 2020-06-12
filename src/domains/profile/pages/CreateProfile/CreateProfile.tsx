@@ -29,21 +29,21 @@ export const CreateProfile = ({ onSubmit }: CreateProfileProps) => {
 			labelDescriptionClass: "mt-3",
 			content: (
 				<div className="flex flex-row mt-2">
-					<div className="flex items-center justify-center w-24 h-24 mr-6 border-2 border-theme-neutral-light border-dashed rounded">
+					<div className="flex items-center justify-center w-24 h-24 mr-6 border-2 border-dashed rounded border-theme-neutral-light">
 						<button
 							type="button"
-							className="flex items-center justify-center w-20 h-20 bg-theme-primary-contrast rounded-full"
+							className="flex items-center justify-center w-20 h-20 rounded-full bg-theme-primary-contrast"
 						>
 							<Icon name="Upload" />
 						</button>
 					</div>
-					<div className="relative w-24 h-24 bg-theme-neutral-light rounded">
+					<div className="relative w-24 h-24 rounded bg-theme-neutral-light">
 						<img
 							src="https://randomuser.me/api/portraits/men/3.jpg"
 							className="object-cover rounded"
 							alt="random avatar"
 						/>
-						<button className="absolute flex items-center justify-center w-6 h-6 p-1 bg-theme-danger-contrast text-theme-danger rounded -top-3 -right-3">
+						<button className="absolute flex items-center justify-center w-6 h-6 p-1 rounded bg-theme-danger-contrast text-theme-danger -top-3 -right-3">
 							<Icon name="Close" height={12} width={12} />
 						</button>
 					</div>
@@ -59,7 +59,7 @@ export const CreateProfile = ({ onSubmit }: CreateProfileProps) => {
 			labelClass: "text-xl font-bold text-theme-neutral-dark",
 			content: (
 				<div className="flex flex-row justify-between">
-					<span className="text-sm text-theme-neutral-dark w-3/4">Want to set the wallet to dark mode?</span>
+					<span className="w-3/4 text-sm text-theme-neutral-dark">Want to set the wallet to dark mode?</span>
 					<div className="-mt-2">
 						<Toggle />
 					</div>

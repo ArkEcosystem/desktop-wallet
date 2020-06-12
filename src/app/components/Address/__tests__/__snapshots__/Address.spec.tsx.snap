@@ -5,7 +5,7 @@ exports[`Formatted Address should not render without address 1`] = `<div />`;
 exports[`Formatted Address should render address only 1`] = `
 <div>
   <div
-    class="truncate inline-block"
+    class="inline-block truncate"
   >
     <span
       class="text-theme-neutral-400 font-semibold text-base"
@@ -20,7 +20,7 @@ exports[`Formatted Address should render address only 1`] = `
 exports[`Formatted Address should render with wallet name 1`] = `
 <div>
   <div
-    class="truncate inline-block"
+    class="inline-block truncate"
   >
     <span
       class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-base"
