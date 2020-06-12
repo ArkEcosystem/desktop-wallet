@@ -13,10 +13,10 @@ jobs:
               with:
                   ref: ${{ github.head_ref }}
 
-            - name: Update System
-              run: sudo apt-get update
+            - name: Install (Ledger Requirements)
+              run: sudo apt-get install libudev-dev libusb-1.0-0-dev
 
-            - name: Install
+            - name: Install (Yarn)
               run: yarn install --frozen-lockfile
 
             - name: Run eslint
