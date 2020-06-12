@@ -1,7 +1,9 @@
 import React, { useState, useRef, useEffect } from "react";
-import { clickOutsideHandler } from "./hooks";
+import { styled } from "twin.macro";
+
 import { Icon } from "app/components/Icon";
-import { Wrapper } from "./style";
+import { clickOutsideHandler } from "./hooks";
+import { defaultStyles, defaultClasses } from "./style";
 
 export type Option = {
 	label: string;
@@ -15,6 +17,11 @@ type Props = {
 	options?: any;
 	toggleIcon: string;
 };
+
+export const Wrapper = styled.div`
+	${defaultStyles}
+	${defaultClasses}
+`;
 
 /*
  * Dropdown options list

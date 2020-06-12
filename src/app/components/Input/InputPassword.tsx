@@ -8,12 +8,11 @@ type InputPasswordProps = React.InputHTMLAttributes<any>;
 export const InputPassword = React.forwardRef<HTMLInputElement, InputPasswordProps>((props, ref) => {
 	const [show, setShow] = React.useState(false);
 	const togglePasswordVisibilty = () => setShow(!show);
-	const handleQrCode = () => null;
 
 	return (
 		<InputGroup className="max-w-20">
 			<Input ref={ref} type={show ? "text" : "password"} className="pr-12" {...props} />
-			<InputAddonEnd className="w-24">
+			<InputAddonEnd className="mr-4">
 				<button
 					data-testid="InputPassword__toggle"
 					type="button"
@@ -21,14 +20,6 @@ export const InputPassword = React.forwardRef<HTMLInputElement, InputPasswordPro
 					className="flex items-center justify-center w-full h-full text-2xl focus:outline-none bg-theme-background text-theme-primary-400"
 				>
 					<Icon name={show ? "EyeOff" : "Eye"} />
-				</button>
-				<button
-					data-testid="InputPassword__qrcode"
-					type="button"
-					onClick={handleQrCode}
-					className="flex items-center justify-center w-full h-full mr-2 text-2xl focus:outline-none bg-theme-background text-theme-primary-400"
-				>
-					<Icon name="Qrcode" />
 				</button>
 			</InputAddonEnd>
 		</InputGroup>

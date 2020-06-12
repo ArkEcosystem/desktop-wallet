@@ -1,6 +1,8 @@
 import React, { useMemo } from "react";
-import { TableWrapper } from "./style";
 import { useTable, useSortBy } from "react-table";
+import { styled } from "twin.macro";
+
+import { defaultTableStyle } from "./style";
 import { Icon } from "../Icon";
 
 type TableProps = {
@@ -8,6 +10,10 @@ type TableProps = {
 	data: any[];
 	columns: any[];
 };
+
+const TableWrapper = styled.div`
+	${defaultTableStyle}
+`;
 
 export const Table = ({ children, data, columns }: TableProps) => {
 	const tableData = useMemo(() => data, []);
@@ -54,11 +60,13 @@ export const Table = ({ children, data, columns }: TableProps) => {
 												column.isSortedDesc,
 											)}`}
 										>
-											<Icon
-												name={getSortIconName(column.isSorted, column.isSortedDesc)}
-												width={10}
-												height={10}
-											></Icon>
+											{column.canSort && (
+												<Icon
+													name={getSortIconName(column.isSorted, column.isSortedDesc)}
+													width={10}
+													height={10}
+												></Icon>
+											)}
 										</div>
 									</div>
 								</th>
