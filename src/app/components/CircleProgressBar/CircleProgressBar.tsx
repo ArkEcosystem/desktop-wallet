@@ -15,7 +15,7 @@ type CircleProgressBarProps = {
 	speed: number;
 };
 
-const Container = styled.figure<{ size: string }>`
+const Container = styled.figure<{ size: number }>`
 	max-width: ${(props) => `${props.size}%`};
 	vertical-align: middle;
 `;
