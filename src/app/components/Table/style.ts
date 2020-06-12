@@ -1,6 +1,4 @@
-import { styled } from "twin.macro";
-
-export const TableWrapper = styled.div`
+export const defaultTableStyle = `
 	padding: 1rem;
 
 	table {

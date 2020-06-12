@@ -17,7 +17,7 @@ export const InputPassword = React.forwardRef<HTMLInputElement, InputPasswordPro
 					data-testid="InputPassword__toggle"
 					type="button"
 					onClick={togglePasswordVisibilty}
-					className="focus:outline-none bg-theme-background text-theme-primary-400 flex items-center justify-center w-full h-full text-2xl"
+					className="flex items-center justify-center w-full h-full text-2xl focus:outline-none bg-theme-background text-theme-primary-400"
 				>
 					<Icon name={show ? "EyeOff" : "Eye"} />
 				</button>
