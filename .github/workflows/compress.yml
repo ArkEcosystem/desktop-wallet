@@ -11,6 +11,9 @@ jobs:
 
         steps:
             - uses: actions/checkout@v2
+              with:
+                  ref: ${{ github.head_ref }}
+                  token: ${{ secrets.GH_TOKEN }}
 
             - uses: ericcornelissen/svgo-action@v1.0.1
               with:
