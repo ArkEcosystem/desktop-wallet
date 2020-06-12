@@ -25,6 +25,7 @@ jobs:
             - uses: stefanzweifel/git-auto-commit-action@v4
               with:
                   commit_message: "style: resolve style guide violations"
+                  branch: ${{ github.head_ref }}
               env:
                   GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
@@ -51,5 +52,6 @@ jobs:
             - uses: stefanzweifel/git-auto-commit-action@v4
               with:
                   commit_message: "style: resolve style guide violations"
+                  branch: ${{ github.head_ref }}
               env:
                   GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
