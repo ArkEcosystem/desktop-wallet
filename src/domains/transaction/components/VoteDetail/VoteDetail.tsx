@@ -37,7 +37,7 @@ export const VoteDetail = (props: VoteDetailProps) => {
 				extra={
 					<div>
 						<Circle className="-mr-2 border-black">
-							<Icon name="Delegate" width={25} height={25} />
+							<Icon name="Voted" width={13} height={13} />
 						</Circle>
 						<Circle avatarId="test"></Circle>
 					</div>
