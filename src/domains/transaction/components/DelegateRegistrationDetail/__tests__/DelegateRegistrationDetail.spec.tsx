@@ -4,15 +4,15 @@ import { I18nextProvider } from "react-i18next";
 
 import { i18n } from "app/i18n";
 
-import { DelegateDetail } from "../";
+import { DelegateRegistrationDetail } from "../";
 // i18n
 import { translations } from "../../../i18n";
 
-describe("DelegateDetail", () => {
+describe("DelegateRegistrationDetail", () => {
 	it("should not render if not open", () => {
 		const { asFragment, getByTestId } = render(
 			<I18nextProvider i18n={i18n}>
-				<DelegateDetail isOpen={false} onDelete={() => void 0} />
+				<DelegateRegistrationDetail isOpen={false} onDelete={() => void 0} />
 			</I18nextProvider>,
 		);
 
@@ -23,11 +23,11 @@ describe("DelegateDetail", () => {
 	it("should render a modal", () => {
 		const { asFragment, getByTestId } = render(
 			<I18nextProvider i18n={i18n}>
-				<DelegateDetail isOpen={true} onDelete={() => void 0} />
+				<DelegateRegistrationDetail isOpen={true} onDelete={() => void 0} />
 			</I18nextProvider>,
 		);
 
-		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_DELEGATE_DETAIL.TITLE);
+		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_DELEGATE_REGISTRATION_DETAIL.TITLE);
 		expect(asFragment()).toMatchSnapshot();
 	});
 });

@@ -7,14 +7,14 @@ import { Icon } from "app/components/Icon";
 import { Label } from "app/components/Label";
 import { TransactionDetail } from "app/components/TransactionDetail";
 
-type DelegateDetailProps = {
+type DelegateRegistrationDetailProps = {
 	isOpen: boolean;
 	onClose?: any;
 	onCancel?: any;
 	onDelete: any;
 };
 
-export const DelegateDetail = (props: DelegateDetailProps) => {
+export const DelegateRegistrationDetail = (props: DelegateRegistrationDetailProps) => {
 	const { t } = useTranslation();
 
 	return (
@@ -86,8 +86,8 @@ export const DelegateDetail = (props: DelegateDetailProps) => {
 	);
 };
 
-DelegateDetail.defaultProps = {
+DelegateRegistrationDetail.defaultProps = {
 	isOpen: false,
 };
 
-DelegateDetail.displayName = "DelegateDetail";
+DelegateRegistrationDetail.displayName = "DelegateRegistrationDetail";
