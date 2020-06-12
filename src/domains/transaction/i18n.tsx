@@ -13,4 +13,8 @@ export const translations: { [key: string]: any } = {
 	MODAL_TRANSFER_DETAIL: {
 		TITLE: "Transfer",
 	},
+
+	MODAL_DELEGATE_REGISTRATION_DETAIL: {
+		TITLE: "Delegate Registration",
+	},
 };
