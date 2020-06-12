@@ -21,7 +21,7 @@ export const translations: { [key: string]: any } = {
 	DELETE: "Delete",
 	DESKTOP_WALLET: "Desktop Wallet",
 	DONE: "Done",
-	DOWNLOADED: "DOWNLOADED",
+	DOWNLOADED: "Downloaded",
 	ENABLE_ADVANCED_MODE: "Enable Advanced Mode to use this feature",
 	FAILED_FETCH: "Failed to fetch {{name}}. Reason {{msg}}",
 	FAILED_UPDATE: "Failed to update {{name}}. Reaso: {{reason}}",
