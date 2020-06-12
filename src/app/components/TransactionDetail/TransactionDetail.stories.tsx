@@ -25,7 +25,7 @@ export const WithExtra = () => (
 		label={text("Label", "Label")}
 		extra={
 			<div>
-				<Circle className="border-black -mr-2">
+				<Circle className="-mr-2 border-black">
 					<Icon name="Delegate" width={25} height={25} />
 				</Circle>
 				<Circle avatarId="test"></Circle>

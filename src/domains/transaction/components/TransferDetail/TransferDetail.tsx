@@ -35,20 +35,20 @@ export const TransferDetail = (props: TransferDetailProps) => {
 				}
 			>
 				ROBank
-				<span className="text-theme-neutral-500 ml-2">ADDR...ESSS</span>
+				<span className="ml-2 text-theme-neutral-500">ADDR...ESSS</span>
 			</TransactionDetail>
 
 			<TransactionDetail
 				label="Amount"
 				extra={
-					<Circle className="border-theme-success-200 text-theme-success-700 -mr-2">
+					<Circle className="-mr-2 border-theme-success-200 text-theme-success-700">
 						<Icon name="Received" width={40} height={40} />
 					</Circle>
 				}
 			>
 				<Label color="success">2,088.84557 ARK</Label>
 
-				<span className="text-theme-neutral-500 ml-2">23,000.00 USD</span>
+				<span className="ml-2 text-theme-neutral-500">23,000.00 USD</span>
 			</TransactionDetail>
 
 			<TransactionDetail label="Transaction Fee">0.09812015 ARK</TransactionDetail>
@@ -65,7 +65,7 @@ export const TransferDetail = (props: TransferDetailProps) => {
 			<TransactionDetail label="Confirmations">
 				<div className="flex">
 					Well Confirmed
-					<div className="bg-theme-success-200 text-theme-success-500 flex w-6 h-6 ml-2 rounded-full">
+					<div className="flex w-6 h-6 ml-2 rounded-full bg-theme-success-200 text-theme-success-500">
 						<div className="m-auto">
 							<Icon name="Checkmark" width={15} height={15} />
 						</div>
@@ -76,7 +76,7 @@ export const TransferDetail = (props: TransferDetailProps) => {
 			<TransactionDetail label="ID">
 				<span className="text-theme-primary-700">1234678...12312313</span>
 
-				<span className="text-theme-primary-300 inline-block ml-4">
+				<span className="inline-block ml-4 text-theme-primary-300">
 					<Icon name="Copy" />
 				</span>
 			</TransactionDetail>
@@ -84,7 +84,7 @@ export const TransferDetail = (props: TransferDetailProps) => {
 			<TransactionDetail label="Block ID">
 				<span className="text-theme-primary-700">1234678...12312313</span>
 
-				<span className="text-theme-primary-300 inline-block ml-4">
+				<span className="inline-block ml-4 text-theme-primary-300">
 					<Icon name="Copy" />
 				</span>
 			</TransactionDetail>

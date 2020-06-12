@@ -15,9 +15,9 @@ export const TransactionDetail = (props: TransactionDetailProps) => (
 		}`}
 	>
 		<div className="flex-1">
-			<div className="font-semibold text-sm text-theme-neutral-500">{props.label}</div>
+			<div className="text-sm font-semibold text-theme-neutral-500">{props.label}</div>
 
-			<div className="font-semibold mt-2">{props.children}</div>
+			<div className="mt-2 font-semibold">{props.children}</div>
 		</div>
 
 		{props.extra ? props.extra : null}
