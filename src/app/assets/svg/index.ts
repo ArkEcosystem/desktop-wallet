@@ -1,3 +1,6 @@
+import { ReactComponent as AlertDanger } from "./alert-danger.svg";
+import { ReactComponent as AlertDefault } from "./alert-default.svg";
+import { ReactComponent as AlertSuccess } from "./alert-success.svg";
 import { ReactComponent as Ark } from "./ark.svg";
 import { ReactComponent as ArrowBack } from "./arrow-back.svg";
 import { ReactComponent as ArrowDown } from "./arrowdown.svg";
@@ -25,6 +28,7 @@ import { ReactComponent as List } from "./list.svg";
 import { ReactComponent as Mistake } from "./mistake.svg";
 import { ReactComponent as Msq } from "./msq.svg";
 import { ReactComponent as Multisig } from "./multisig.svg";
+import { ReactComponent as Ok } from "./ok.svg";
 import { ReactComponent as Peer } from "./peer.svg";
 import { ReactComponent as Plugin } from "./plugin.svg";
 import { ReactComponent as Plus } from "./plus.svg";
@@ -35,7 +39,6 @@ import { ReactComponent as Send } from "./send.svg";
 import { ReactComponent as Sent } from "./sent.svg";
 import { ReactComponent as Settings } from "./settings.svg";
 import { ReactComponent as Slack } from "./slack.svg";
-import { ReactComponent as Smartbridge } from "./smartbridge.svg";
 import { ReactComponent as Sort } from "./sort.svg";
 import { ReactComponent as Star } from "./star.svg";
 import { ReactComponent as Trash } from "./trash.svg";
@@ -43,6 +46,9 @@ import { ReactComponent as Twitter } from "./twitter.svg";
 import { ReactComponent as Upload } from "./upload.svg";
 
 export const SvgCollection: any = {
+	AlertDanger,
+	AlertDefault,
+	AlertSuccess,
 	Ark,
 	ArrowBack,
 	ArrowDown,
@@ -70,6 +76,7 @@ export const SvgCollection: any = {
 	Mistake,
 	Msq,
 	Multisig,
+	Ok,
 	Peer,
 	Plugin,
 	Plus,
@@ -80,7 +87,6 @@ export const SvgCollection: any = {
 	Sent,
 	Settings,
 	Slack,
-	Smartbridge,
 	Sort,
 	Star,
 	Trash,

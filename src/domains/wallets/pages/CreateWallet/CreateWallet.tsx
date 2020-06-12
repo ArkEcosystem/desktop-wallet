@@ -1,4 +1,5 @@
 import React from "react";
+import tw, { styled } from "twin.macro";
 import { StepIndicator } from "app/components/StepIndicator";
 import { Tabs, TabPanel } from "app/components/Tabs";
 import { Form, FormField, FormLabel } from "app/components/Form";
@@ -14,12 +15,24 @@ import { CardControl } from "app/components/Card";
 import { Input } from "app/components/Input";
 import { useForm, useFormContext } from "react-hook-form";
 
-export function FirstStep({ networks }: { networks: Network[] }) {
+const NetworkItem = styled.div`
+	[aria-checked="true"] & > .NetworkItemIcon {
+		${tw`text-theme-success`}
+	}
+`;
+
+export const FirstStep = ({ networks }: { networks: Network[] }) => {
 	const { register, setValue } = useFormContext();
+	const [activeNetwork, setActiveNetwork] = React.useState<Network | undefined>(undefined);
 
 	React.useEffect(() => {
 		register("network", { required: true });
 	}, [register]);
+
+	const handleChange = (network: Network) => {
+		setActiveNetwork(network);
+		setValue("network", network, true);
+	};
 
 	return (
 		<section data-testid="CreateWallet__first-step" className="space-y-8">
@@ -35,22 +48,26 @@ export function FirstStep({ networks }: { networks: Network[] }) {
 						key={network.name}
 						value={network.name}
 						name="network"
-						onChange={() => setValue("network", network, true)}
+						onChange={() => handleChange(network)}
+						aria-checked={activeNetwork?.name === network.name}
 					>
-						<div className="flex items-center py-2">
-							<Circle noShadow>
+						<NetworkItem className="flex items-center py-2">
+							<Circle
+								className="NetworkItemIcon transition-colors duration-100 border-theme-neutral-300"
+								noShadow
+							>
 								<Icon name={network.icon} />
 							</Circle>
-							<span className="ml-4">{network.name}</span>
-						</div>
+							<span className="ml-4 text-theme-text">{network.name}</span>
+						</NetworkItem>
 					</CardControl>
 				))}
 			</div>
 		</section>
 	);
-}
+};
 
-export function SecondStep({
+export const SecondStep = ({
 	mnemonic,
 	onCopy,
 	onDownload,
@@ -58,7 +75,7 @@ export function SecondStep({
 	mnemonic: string[];
 	onCopy: () => void;
 	onDownload: () => void;
-}) {
+}) => {
 	return (
 		<section data-testid="CreateWallet__second-step">
 			<Header title="Your Passphrase" />
@@ -85,7 +102,7 @@ export function SecondStep({
 
 			<div className="flex py-3">
 				<div className="flex-1">
-					<h3 className="mb-1">Your password in the file</h3>
+					<h3 className="mb-1 text-theme-neutral-dark">Your password in the file</h3>
 					<p className="text-theme-neutral">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
 					<Button
 						onClick={onDownload}
@@ -105,9 +122,9 @@ export function SecondStep({
 			<Divider dashed />
 		</section>
 	);
-}
+};
 
-export function ThirdStep({ skipVerification, mnemonic }: { skipVerification: boolean; mnemonic: string[] }) {
+export const ThirdStep = ({ skipVerification, mnemonic }: { skipVerification: boolean; mnemonic: string[] }) => {
 	const { register, unregister, setValue } = useFormContext();
 
 	React.useEffect(() => {
@@ -126,7 +143,7 @@ export function ThirdStep({ skipVerification, mnemonic }: { skipVerification: bo
 
 	return (
 		<section data-testid="CreateWallet__third-step">
-			<h1 className="mb-0">Select Network</h1>
+			<h1 className="mb-0">Confirm your passphrase</h1>
 			<p className="mb-8 text-theme-neutral-dark">Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
 
 			<MnemonicVerification
@@ -139,15 +156,15 @@ export function ThirdStep({ skipVerification, mnemonic }: { skipVerification: bo
 			<Divider dashed />
 		</section>
 	);
-}
+};
 
-export function FourthStep() {
+export const FourthStep = () => {
 	const { getValues, register } = useFormContext();
 	const network: Network = getValues("network");
 
 	return (
 		<section data-testid="CreateWallet__fourth-step">
-			<h1 className="mb-0">Select Network</h1>
+			<h1 className="mb-0">Completed</h1>
 			<p className="mb-8 text-theme-neutral-dark">Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
 
 			<ul>
@@ -182,7 +199,7 @@ export function FourthStep() {
 			</FormField>
 		</section>
 	);
-}
+};
 
 type Network = { name: string; icon: string };
 
@@ -195,7 +212,7 @@ type Props = {
 	skipMnemonicVerification?: boolean;
 };
 
-export function CreateWallet({ networks, mnemonic, onSubmit, onCopy, onDownload, skipMnemonicVerification }: Props) {
+export const CreateWallet = ({ networks, mnemonic, onSubmit, onCopy, onDownload, skipMnemonicVerification }: Props) => {
 	const [activeTab, setActiveTab] = React.useState(1);
 
 	const form = useForm({ mode: "onChange" });
@@ -211,7 +228,7 @@ export function CreateWallet({ networks, mnemonic, onSubmit, onCopy, onDownload,
 	};
 
 	return (
-		<div className="max-w-lg mx-auto">
+		<div className="max-w-xl mx-auto">
 			<Form context={form} onSubmit={(data: any) => onSubmit(data)}>
 				<Tabs activeId={activeTab}>
 					<StepIndicator size={4} activeIndex={activeTab} />
@@ -262,4 +279,4 @@ export function CreateWallet({ networks, mnemonic, onSubmit, onCopy, onDownload,
 			</Form>
 		</div>
 	);
-}
+};
