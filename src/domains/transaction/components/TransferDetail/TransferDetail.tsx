@@ -10,8 +10,6 @@ import { TransactionDetail } from "app/components/TransactionDetail";
 type TransferDetailProps = {
 	isOpen: boolean;
 	onClose?: any;
-	onCancel?: any;
-	onDelete: any;
 };
 
 export const TransferDetail = (props: TransferDetailProps) => {
