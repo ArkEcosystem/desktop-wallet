@@ -33,7 +33,10 @@ jobs:
               with:
                   node-version: ${{ matrix.node-version }}
 
-            - name: Install
+            - name: Install (Ledger Requirements)
+              run: sudo apt-get install libudev-dev libusb-1.0-0-dev
+
+            - name: Install (Yarn)
               run: yarn install --frozen-lockfile
 
             - name: Build
