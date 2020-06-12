@@ -14,10 +14,10 @@ const AlertContent = styled.div<{ size: string }>`
 		switch (size) {
 			case "small":
 				return tw`px-6 py-4`;
-			case "default":
-				return tw`px-8 py-6`;
 			case "large":
 				return tw`px-10 py-8`;
+			default:
+				return tw`px-8 py-6`;
 		}
 	}}
 `;
@@ -27,10 +27,10 @@ const AlertIconWrapper = styled.div<{ size: string }>`
 		switch (size) {
 			case "small":
 				return tw`px-4 py-2`;
-			case "default":
-				return tw`px-6 py-4`;
 			case "large":
 				return tw`px-8 py-6`;
+			default:
+				return tw`px-6 py-4`;
 		}
 	}}
 `;
