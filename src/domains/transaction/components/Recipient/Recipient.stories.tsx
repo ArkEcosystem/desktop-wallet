@@ -12,7 +12,9 @@ export default {
 
 export const Default = () => <Recipient address={text("Address", "Address")} amount="-88.84557 ARK" />;
 
-export const WithoutBorder = () => <Recipient address={text("Address", "Address")} border={false} />;
+export const WithoutBorder = () => (
+	<Recipient address={text("Address", "Address")} amount="-88.84557 ARK" border={false} />
+);
 
 export const WithExtra = () => <Recipient address={text("Address", "Address")} amount="-88.84557 ARK" />;
 
