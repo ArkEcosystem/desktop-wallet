@@ -60,11 +60,13 @@ export const Table = ({ children, data, columns }: TableProps) => {
 												column.isSortedDesc,
 											)}`}
 										>
-											<Icon
-												name={getSortIconName(column.isSorted, column.isSortedDesc)}
-												width={10}
-												height={10}
-											></Icon>
+											{column.canSort && (
+												<Icon
+													name={getSortIconName(column.isSorted, column.isSortedDesc)}
+													width={10}
+													height={10}
+												></Icon>
+											)}
 										</div>
 									</div>
 								</th>

@@ -38,6 +38,8 @@ import { ReactComponent as ArrowDown } from "./arrowdown.svg";
 import { ReactComponent as Ledger } from "./ledger.svg";
 import { ReactComponent as Multisig } from "./multisig.svg";
 import { ReactComponent as Star } from "./star.svg";
+import { ReactComponent as Sent } from "./sent.svg";
+import { ReactComponent as Received } from "./received.svg";
 
 export const SvgCollection: any = {
 	Ark,
@@ -80,4 +82,6 @@ export const SvgCollection: any = {
 	Ledger,
 	Multisig,
 	Star,
+	Sent,
+	Received,
 };
