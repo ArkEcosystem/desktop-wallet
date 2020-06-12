@@ -37,6 +37,9 @@ import { ReactComponent as Import } from "./import.svg";
 import { ReactComponent as Sort } from "./sort.svg";
 import { ReactComponent as ArrowUp } from "./arrowup.svg";
 import { ReactComponent as ArrowDown } from "./arrowdown.svg";
+import { ReactComponent as Ledger } from "./ledger.svg";
+import { ReactComponent as Multisig } from "./multisig.svg";
+import { ReactComponent as Star } from "./star.svg";
 
 export const SvgCollection: any = {
 	Ark,
@@ -78,4 +81,7 @@ export const SvgCollection: any = {
 	Sort,
 	ArrowUp,
 	ArrowDown,
+	Ledger,
+	Multisig,
+	Star,
 };
