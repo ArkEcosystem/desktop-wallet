@@ -31,7 +31,7 @@ exports[`Formatted Address should render 1`] = `
       </div>
       <div>
         <div
-          class="sc-AxiKw dYzaxp border-theme-primary-contrast -mr-2 undefined"
+          class="sc-AxiKw dYzaxp border-theme-primary-contrast -mr-2 bg-theme-background undefined"
         />
         <div
           class="sc-AxiKw dYzaxp border-theme-primary-contrast"
@@ -58,10 +58,10 @@ exports[`Formatted Address should render blank 1`] = `
     >
       <div>
         <div
-          class="sc-AxiKw dYzaxp border-theme-primary-contrast -mr-2"
+          class="sc-AxiKw dYzaxp -mr-2 bg-theme-background border-theme-primary-contrast"
         />
         <div
-          class="sc-AxiKw dYzaxp border-theme-primary-contrast"
+          class="sc-AxiKw dYzaxp border-theme-primary-contrast bg-theme-background"
         />
       </div>
       <div
@@ -110,7 +110,7 @@ exports[`Formatted Address should render with wallet data 1`] = `
       </div>
       <div>
         <div
-          class="sc-AxiKw dYzaxp border-theme-primary-contrast -mr-2 border-theme-warning-200"
+          class="sc-AxiKw dYzaxp border-theme-primary-contrast -mr-2 bg-theme-background border-theme-warning-200"
         >
           <div
             class="sc-AxirZ hPsuTj"
@@ -183,7 +183,7 @@ exports[`Formatted Address should render with wallet data and optional icon 1`] 
       </div>
       <div>
         <div
-          class="sc-AxiKw dYzaxp border-theme-primary-contrast -mr-2 border-theme-warning-200"
+          class="sc-AxiKw dYzaxp border-theme-primary-contrast -mr-2 bg-theme-background border-theme-warning-200"
         >
           <div
             class="sc-AxirZ hPsuTj"
@@ -224,4 +224,3 @@ exports[`Formatted Address should render with wallet data and optional icon 1`] 
   </div>
 </div>
 `;
-s

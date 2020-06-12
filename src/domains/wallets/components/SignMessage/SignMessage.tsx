@@ -41,10 +41,10 @@ export const SignMessage = ({ onSubmit, signatoryAddress, isOpen, isSigned, hand
 				<div className="flex items-center justify-between w-full">
 					<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} size="large" />
 					<div className="-mt-3">
-						<Circle className="-mr-2 border-theme-neutral-800">
+						<Circle className="-mr-2 bg-theme-background border-theme-neutral-800">
 							<Icon name="Delegate" width={20} height={20} />
 						</Circle>
-						<Circle avatarId="test" className="-mr-2"></Circle>
+						<Circle avatarId="test" className="-mr-2 bg-theme-background"></Circle>
 					</div>
 				</div>
 			),
