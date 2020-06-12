@@ -29,8 +29,8 @@ export const ProfileCreated = (props: ProfileCreatedProps) => {
 			onClose={props.onClose}
 		>
 			<div className="container">
-				<div className="text-center mb-6">
-					<p className="text-sm text-theme-neutral-dark mb-1 md:text-base">
+				<div className="mb-6 text-center">
+					<p className="mb-1 text-sm text-theme-neutral-dark md:text-base">
 						{t("PROFILE.MODAL_PROFILE_CREATED.DESCRIPTION_1")}
 					</p>
 					<p className="text-sm text-theme-neutral-dark md:text-base">

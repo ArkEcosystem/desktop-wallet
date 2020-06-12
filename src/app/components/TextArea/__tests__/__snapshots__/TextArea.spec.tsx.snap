@@ -3,7 +3,7 @@
 exports[`TextArea should render 1`] = `
 <DocumentFragment>
   <textarea
-    class="sc-AxjAm bcybyt overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+    class="w-full px-4 py-3 overflow-hidden border rounded appearance-none sc-AxjAm bcybyt shadow-sm bg-theme-background border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
     data-testid="TextArea"
     style="height: 4px;"
   />
@@ -13,7 +13,7 @@ exports[`TextArea should render 1`] = `
 exports[`TextArea should render as disabled 1`] = `
 <DocumentFragment>
   <textarea
-    class="sc-AxjAm bcybyt overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+    class="w-full px-4 py-3 overflow-hidden border rounded appearance-none sc-AxjAm bcybyt shadow-sm bg-theme-background border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
     data-testid="TextArea"
     disabled=""
   />
@@ -24,7 +24,7 @@ exports[`TextArea should render as invalid 1`] = `
 <DocumentFragment>
   <textarea
     aria-invalid="true"
-    class="sc-AxjAm bcybyt overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+    class="w-full px-4 py-3 overflow-hidden border rounded appearance-none sc-AxjAm bcybyt shadow-sm bg-theme-background border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
     data-testid="TextArea"
   />
 </DocumentFragment>

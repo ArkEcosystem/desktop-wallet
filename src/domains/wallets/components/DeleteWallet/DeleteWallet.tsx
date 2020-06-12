@@ -24,7 +24,7 @@ export const DeleteWallet = (props: DeleteWalletProps) => {
 	return (
 		<Modal
 			title={t("WALLETS.MODAL_DELETE_WALLET.TITLE")}
-			image={<DeleteBanner className="m-auto w-3/5 mb-8" />}
+			image={<DeleteBanner className="w-3/5 m-auto mb-8" />}
 			description={t("WALLETS.MODAL_DELETE_WALLET.DESCRIPTION")}
 			isOpen={props.isOpen}
 			onClose={props.onClose}

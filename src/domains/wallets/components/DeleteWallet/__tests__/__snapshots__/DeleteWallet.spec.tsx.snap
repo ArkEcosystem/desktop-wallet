@@ -42,7 +42,7 @@ exports[`DeleteWallet should render a modal 1`] = `
         class="flex-1"
       >
         <svg
-          class="m-auto w-3/5 mb-8"
+          class="w-3/5 m-auto mb-8"
         >
           delete-banner.svg
         </svg>
@@ -55,14 +55,14 @@ exports[`DeleteWallet should render a modal 1`] = `
           class="flex justify-end mt-8"
         >
           <button
-            class="sc-AxjAm GWdpI mr-2"
+            class="mr-2 sc-AxjAm GWdpI"
             color="primary"
             type="button"
           >
             Cancel
           </button>
           <button
-            class="sc-AxjAm gYunbo flex items-center"
+            class="flex items-center sc-AxjAm gYunbo"
             color="primary"
             type="submit"
           >

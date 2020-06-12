@@ -50,10 +50,10 @@ exports[`ProfileCreated should render a modal 1`] = `
           class="container"
         >
           <div
-            class="text-center mb-6"
+            class="mb-6 text-center"
           >
             <p
-              class="text-sm text-theme-neutral-dark mb-1 md:text-base"
+              class="mb-1 text-sm text-theme-neutral-dark md:text-base"
             >
               If you are new to the ARK Desktop Wallet, view our tutorial to get started.
             </p>
@@ -67,14 +67,14 @@ exports[`ProfileCreated should render a modal 1`] = `
             class="flex flex-col justify-center sm:flex-row"
           >
             <button
-              class="sc-AxjAm gYunbo mr-2"
+              class="mr-2 sc-AxjAm gYunbo"
               color="primary"
               type="button"
             >
               Start Tutorial
             </button>
             <button
-              class="sc-AxjAm GWdpI mt-2 sm:mt-0"
+              class="mt-2 sc-AxjAm GWdpI sm:mt-0"
               color="primary"
               type="button"
             >

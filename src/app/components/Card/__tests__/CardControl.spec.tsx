@@ -14,7 +14,7 @@ describe("Card Control", () => {
 	it("should render with a control state", () => {
 		const { getByTestId, container, asFragment } = render(
 			<CardControl className="grid">
-				<div className="flex flex-col h-full justify-between items-center">
+				<div className="flex flex-col items-center justify-between h-full">
 					<span>Bitcoin</span>
 					<CardControlState />
 				</div>

@@ -73,9 +73,9 @@ const ImportWallet = ({ networks, onSubmit }: Props) => {
 												checked={network.id === selected}
 												onChange={() => setSelected(network.id)}
 											>
-												<div className="flex flex-row h-full items-center py-3">
+												<div className="flex flex-row items-center h-full py-3">
 													{network.icon && (
-														<div className="rounded-full border border-theme-primary-contrast w-12 h-12 flex justify-center items-center mr-3">
+														<div className="flex items-center justify-center w-12 h-12 mr-3 border rounded-full border-theme-primary-contrast">
 															<Icon name={network.icon} height={25} width={25} />
 														</div>
 													)}

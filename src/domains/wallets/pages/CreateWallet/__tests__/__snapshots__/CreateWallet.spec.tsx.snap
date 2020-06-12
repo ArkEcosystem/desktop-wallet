@@ -166,7 +166,7 @@ exports[`CreateWallet should render 1`] = `
             </section>
           </div>
           <div
-            class="mt-6 flex space-x-2 justify-end"
+            class="flex justify-end mt-6 space-x-2"
           >
             <button
               class="sc-Axmtr gmSGZJ"
@@ -178,7 +178,7 @@ exports[`CreateWallet should render 1`] = `
               Continue
             </button>
             <button
-              class="sc-Axmtr gmSGZJ hidden"
+              class="hidden sc-Axmtr gmSGZJ"
               color="primary"
               data-testid="CreateWallet__save-button"
               type="submit"
@@ -349,10 +349,10 @@ exports[`CreateWallet should render 2nd step 1`] = `
       class="space-y-8"
     >
       <div
-        class="flex rounded-lg overflow-hidden bg-theme-warning"
+        class="flex overflow-hidden rounded-lg bg-theme-warning"
       >
         <div
-          class="sc-AxhCb ekFvce w-24 flex items-center justify-center text-theme-warning bg-theme-warning-200"
+          class="flex items-center justify-center w-24 sc-AxhCb ekFvce text-theme-warning bg-theme-warning-200"
         >
           <svg
             class="w-8 h-8"
@@ -366,7 +366,7 @@ exports[`CreateWallet should render 2nd step 1`] = `
           </svg>
         </div>
         <div
-          class="sc-AxhCb fwQhed flex-1 bg-theme-warning-100 pl-5"
+          class="flex-1 pl-5 sc-AxhCb fwQhed bg-theme-warning-100"
         >
           <div
             class="flex flex-col justify-center"
@@ -379,11 +379,11 @@ exports[`CreateWallet should render 2nd step 1`] = `
         class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 row-gap-5 col-gap-3"
       >
         <li
-          class="rounded border border-theme-neutral-light relative px-3 py-3"
+          class="relative px-3 py-3 border rounded border-theme-neutral-light"
           data-testid="MnemonicList__item"
         >
           <span
-            class="absolute left-0 top-0 transform translate-x-2 -translate-y-2 text-xs px-1 bg-theme-background font-semibold text-theme-neutral"
+            class="absolute top-0 left-0 px-1 text-xs font-semibold transform translate-x-2 -translate-y-2 bg-theme-background text-theme-neutral"
           >
             1
           </span>
@@ -394,11 +394,11 @@ exports[`CreateWallet should render 2nd step 1`] = `
           </span>
         </li>
         <li
-          class="rounded border border-theme-neutral-light relative px-3 py-3"
+          class="relative px-3 py-3 border rounded border-theme-neutral-light"
           data-testid="MnemonicList__item"
         >
           <span
-            class="absolute left-0 top-0 transform translate-x-2 -translate-y-2 text-xs px-1 bg-theme-background font-semibold text-theme-neutral"
+            class="absolute top-0 left-0 px-1 text-xs font-semibold transform translate-x-2 -translate-y-2 bg-theme-background text-theme-neutral"
           >
             2
           </span>
@@ -409,11 +409,11 @@ exports[`CreateWallet should render 2nd step 1`] = `
           </span>
         </li>
         <li
-          class="rounded border border-theme-neutral-light relative px-3 py-3"
+          class="relative px-3 py-3 border rounded border-theme-neutral-light"
           data-testid="MnemonicList__item"
         >
           <span
-            class="absolute left-0 top-0 transform translate-x-2 -translate-y-2 text-xs px-1 bg-theme-background font-semibold text-theme-neutral"
+            class="absolute top-0 left-0 px-1 text-xs font-semibold transform translate-x-2 -translate-y-2 bg-theme-background text-theme-neutral"
           >
             3
           </span>
@@ -424,11 +424,11 @@ exports[`CreateWallet should render 2nd step 1`] = `
           </span>
         </li>
         <li
-          class="rounded border border-theme-neutral-light relative px-3 py-3"
+          class="relative px-3 py-3 border rounded border-theme-neutral-light"
           data-testid="MnemonicList__item"
         >
           <span
-            class="absolute left-0 top-0 transform translate-x-2 -translate-y-2 text-xs px-1 bg-theme-background font-semibold text-theme-neutral"
+            class="absolute top-0 left-0 px-1 text-xs font-semibold transform translate-x-2 -translate-y-2 bg-theme-background text-theme-neutral"
           >
             4
           </span>
@@ -439,11 +439,11 @@ exports[`CreateWallet should render 2nd step 1`] = `
           </span>
         </li>
         <li
-          class="rounded border border-theme-neutral-light relative px-3 py-3"
+          class="relative px-3 py-3 border rounded border-theme-neutral-light"
           data-testid="MnemonicList__item"
         >
           <span
-            class="absolute left-0 top-0 transform translate-x-2 -translate-y-2 text-xs px-1 bg-theme-background font-semibold text-theme-neutral"
+            class="absolute top-0 left-0 px-1 text-xs font-semibold transform translate-x-2 -translate-y-2 bg-theme-background text-theme-neutral"
           >
             5
           </span>
@@ -454,11 +454,11 @@ exports[`CreateWallet should render 2nd step 1`] = `
           </span>
         </li>
         <li
-          class="rounded border border-theme-neutral-light relative px-3 py-3"
+          class="relative px-3 py-3 border rounded border-theme-neutral-light"
           data-testid="MnemonicList__item"
         >
           <span
-            class="absolute left-0 top-0 transform translate-x-2 -translate-y-2 text-xs px-1 bg-theme-background font-semibold text-theme-neutral"
+            class="absolute top-0 left-0 px-1 text-xs font-semibold transform translate-x-2 -translate-y-2 bg-theme-background text-theme-neutral"
           >
             6
           </span>
@@ -470,7 +470,7 @@ exports[`CreateWallet should render 2nd step 1`] = `
         </li>
       </ul>
       <button
-        class="sc-Axmtr hzMboR flex items-center space-x-2"
+        class="flex items-center sc-Axmtr hzMboR space-x-2"
         color="primary"
         data-testid="CreateWallet__copy"
         type="button"
@@ -510,7 +510,7 @@ exports[`CreateWallet should render 2nd step 1`] = `
           Lorem ipsum dolor, sit amet consectetur adipisicing elit.
         </p>
         <button
-          class="sc-Axmtr hzMboR mt-4 flex items-center space-x-2"
+          class="flex items-center mt-4 sc-Axmtr hzMboR space-x-2"
           color="primary"
           data-testid="CreateWallet__download"
           type="button"
@@ -562,7 +562,7 @@ exports[`CreateWallet should render 4th step 1`] = `
       Select Network
     </h1>
     <p
-      class="text-theme-neutral-dark mb-8"
+      class="mb-8 text-theme-neutral-dark"
     >
       Lorem ipsum dolor sit amet consectetur adipisicing elit
     </p>
@@ -628,10 +628,10 @@ exports[`CreateWallet should render 4th step 1`] = `
       type="horizontal"
     />
     <fieldset
-      class="sc-AxiKw iQzisX flex flex-col space-y-2"
+      class="flex flex-col sc-AxiKw iQzisX space-y-2"
     >
       <label
-        class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
+        class="inline-block text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
         data-testid="FormLabel"
         for="name"
         label="Wallet name (optional)"
@@ -639,7 +639,7 @@ exports[`CreateWallet should render 4th step 1`] = `
         Wallet name (optional)
       </label>
       <input
-        class="sc-fzpans kjTXzO overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+        class="w-full px-4 py-3 overflow-hidden border rounded appearance-none sc-fzpans kjTXzO shadow-sm bg-theme-background border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
         data-testid="CreateWallet__wallet-name"
         name="name"
       />

@@ -7,7 +7,7 @@ exports[`SideBarItem should render 1`] = `
     data-testid="side-menu__item--plugin"
   >
     <li
-      class="rounded-lg p-5 flex text-theme-medium flex items-center"
+      class="flex items-center p-5 rounded-lg text-theme-medium"
     >
       <div
         class="text-theme-primary-contrast"
@@ -23,7 +23,7 @@ exports[`SideBarItem should render 1`] = `
         </div>
       </div>
       <span
-        class="font-semibold ml-2"
+        class="ml-2 font-semibold"
       >
         General
       </span>
@@ -39,13 +39,13 @@ exports[`SideBarItem should render as active 1`] = `
     data-testid="side-menu__item--plugin"
   >
     <div
-      class="sc-AxirZ dA-dDXy absolute top-0 left-0 rounded-lg bg-theme-primary"
+      class="absolute top-0 left-0 rounded-lg sc-AxirZ dA-dDXy bg-theme-primary"
     />
     <li
-      class="rounded-lg p-5 flex 
-        text-theme-primary
-        bg-theme-primary-contrast
-     flex items-center"
+      class="flex items-center p-5 rounded-lg 
+  text-theme-primary
+ bg-theme-primary-contrast
+"
     >
       <div
         class="text-theme-primary"
@@ -61,7 +61,7 @@ exports[`SideBarItem should render as active 1`] = `
         </div>
       </div>
       <span
-        class="font-semibold ml-2"
+        class="ml-2 font-semibold"
       >
         General
       </span>

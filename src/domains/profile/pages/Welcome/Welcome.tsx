@@ -28,13 +28,13 @@ const Welcome = ({ profiles }: WelcomeProps) => {
 		<div className="w-full h-full">
 			<NavBar />
 
-			<div className="container mx-auto text-center px-4 sm:px-6 lg:px-0">
+			<div className="container px-4 mx-auto text-center sm:px-6 lg:px-0">
 				<h1 className="mb-8 font-bold">{t("COMMON.WELCOME")}</h1>
-				<div className="mx-auto w-full lg:w-4/5 xl:w-2/3">
+				<div className="w-full mx-auto lg:w-4/5 xl:w-2/3">
 					<WelcomeBanner />
 				</div>
 
-				<div className="max-w-lg mx-auto md:max-w-xl my-8">
+				<div className="max-w-lg mx-auto my-8 md:max-w-xl">
 					{profiles.length > 0 && (
 						<>
 							<h2 className="mx-4 text-xl font-bold md:text-2xl">Select Profile</h2>
@@ -51,14 +51,14 @@ const Welcome = ({ profiles }: WelcomeProps) => {
 							<Divider />
 						</>
 					)}
-					<p className="text-sm text-theme-neutral-dark mb-4 md:text-base">
+					<p className="mb-4 text-sm text-theme-neutral-dark md:text-base">
 						Create a new Profile or login with your MarketSquare account to get started
 					</p>
 					<div className="flex flex-col md:flex-row">
 						<Button
 							color="primary"
 							variant="solid"
-							className="flex justify-center items-center w-full mr-2"
+							className="flex items-center justify-center w-full mr-2"
 						>
 							<Icon name="Msq" width={20} height={20} />
 							<span className="ml-2">Sign in to MarketSquare</span>
