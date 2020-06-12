@@ -4,7 +4,7 @@ import { TextArea } from "../TextArea";
 
 describe("TextArea", () => {
 	it("should render", () => {
-		const { getByTestId, asFragment } = render(<TextArea />);
+		const { getByTestId, asFragment } = render(<TextArea ref={React.createRef()} />);
 		const textarea = getByTestId("TextArea");
 		expect(textarea.tagName).toEqual("TEXTAREA");
 		expect(asFragment()).toMatchSnapshot();
