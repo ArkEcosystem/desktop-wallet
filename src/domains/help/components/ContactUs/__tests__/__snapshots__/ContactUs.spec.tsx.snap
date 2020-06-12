@@ -54,7 +54,7 @@ exports[`ContactUs should render a modal 1`] = `
             href="https://twitter.ark.io"
           >
             <div
-              class="sc-AxiKw jZxIMT border-black hover:bg-transparent"
+              class="border-black sc-AxiKw jZxIMT hover:bg-transparent"
             >
               <div
                 class="sc-AxirZ iQaTP"
@@ -72,7 +72,7 @@ exports[`ContactUs should render a modal 1`] = `
             href="https://slack.ark.io"
           >
             <div
-              class="sc-AxiKw jZxIMT border-black hover:bg-transparent"
+              class="border-black sc-AxiKw jZxIMT hover:bg-transparent"
             >
               <div
                 class="sc-AxirZ iQaTP"
@@ -90,7 +90,7 @@ exports[`ContactUs should render a modal 1`] = `
             href="https://discord.ark.io/"
           >
             <div
-              class="sc-AxiKw jZxIMT border-black hover:bg-transparent"
+              class="border-black sc-AxiKw jZxIMT hover:bg-transparent"
             >
               <div
                 class="sc-AxirZ iQaTP"
@@ -108,7 +108,7 @@ exports[`ContactUs should render a modal 1`] = `
             href="mailto:info@ark.io"
           >
             <div
-              class="sc-AxiKw jZxIMT border-black hover:bg-transparent"
+              class="border-black sc-AxiKw jZxIMT hover:bg-transparent"
             >
               <div
                 class="sc-AxirZ iQaTP"
@@ -127,7 +127,7 @@ exports[`ContactUs should render a modal 1`] = `
           data-testid="Form"
         >
           <fieldset
-            class="sc-AxhCb ckQmOL flex flex-col space-y-2"
+            class="flex flex-col sc-AxhCb ckQmOL space-y-2"
           >
             <h2
               class="mb-0"
@@ -135,39 +135,39 @@ exports[`ContactUs should render a modal 1`] = `
               Feedback
             </h2>
             <label
-              class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
+              class="inline-block text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
               data-testid="FormLabel"
               for="name"
             >
               Name
             </label>
             <input
-              class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+              class="w-full px-4 py-3 overflow-hidden border rounded appearance-none sc-AxhUy fvuHTn shadow-sm bg-theme-background border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
               data-testid="Input"
               name="name"
             />
           </fieldset>
           <fieldset
-            class="sc-AxhCb ckQmOL flex flex-col space-y-2"
+            class="flex flex-col sc-AxhCb ckQmOL space-y-2"
           >
             <label
-              class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
+              class="inline-block text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
               data-testid="FormLabel"
               for="email"
             >
               Email
             </label>
             <input
-              class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+              class="w-full px-4 py-3 overflow-hidden border rounded appearance-none sc-AxhUy fvuHTn shadow-sm bg-theme-background border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
               data-testid="Input"
               name="email"
             />
           </fieldset>
           <fieldset
-            class="sc-AxhCb ckQmOL flex flex-col space-y-2"
+            class="flex flex-col sc-AxhCb ckQmOL space-y-2"
           >
             <label
-              class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
+              class="inline-block text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
               data-testid="FormLabel"
               for="subject"
             >
@@ -177,7 +177,7 @@ exports[`ContactUs should render a modal 1`] = `
               class="sc-AxmLO kuiknc"
             >
               <select
-                class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
+                class="w-full px-4 py-3 pr-12 overflow-hidden border rounded appearance-none sc-AxhUy fvuHTn shadow-sm bg-theme-background border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary"
                 data-testid="Select"
                 name="subject"
               >
@@ -199,7 +199,7 @@ exports[`ContactUs should render a modal 1`] = `
                 </option>
               </select>
               <div
-                class="sc-AxgMl sc-Axmtr cPxyjO text-theme-neutral-dark pointer-events-none w-12 text-lg"
+                class="w-12 text-lg pointer-events-none sc-AxgMl sc-Axmtr cPxyjO text-theme-neutral-dark"
               >
                 <div
                   class="sc-AxirZ iQaTP"
@@ -214,17 +214,17 @@ exports[`ContactUs should render a modal 1`] = `
             </div>
           </fieldset>
           <fieldset
-            class="sc-AxhCb ckQmOL flex flex-col space-y-2"
+            class="flex flex-col sc-AxhCb ckQmOL space-y-2"
           >
             <label
-              class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
+              class="inline-block text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
               data-testid="FormLabel"
               for="message"
             >
               Message
             </label>
             <textarea
-              class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+              class="w-full px-4 py-3 overflow-hidden border rounded appearance-none sc-AxhUy fvuHTn shadow-sm bg-theme-background border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
               data-testid="TextArea"
               name="message"
             />
@@ -233,7 +233,7 @@ exports[`ContactUs should render a modal 1`] = `
             class="mt-4"
           >
             <button
-              class="sc-AxjAm GWdpI mr-2"
+              class="mr-2 sc-AxjAm GWdpI"
               color="primary"
               type="button"
             >

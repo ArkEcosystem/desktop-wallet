@@ -16,7 +16,7 @@ export const Default = () => {
 	return (
 		<div className="">
 			Default with options array
-			<div className="w-20 ml-40 mt-10">
+			<div className="w-20 mt-10 ml-40">
 				<Dropdown
 					toggleIcon="Settings"
 					options={options}
@@ -31,7 +31,7 @@ export const ContentAsSlot = () => {
 	return (
 		<div className="">
 			Custom html dropdown content
-			<div className="w-20 ml-40 mt-10">
+			<div className="w-20 mt-10 ml-40">
 				<Dropdown toggleIcon="Settings" onSelect={(option: any) => console.log(option)}>
 					<div className="p-5">Custom content (default slot)</div>
 				</Dropdown>
@@ -44,7 +44,7 @@ export const CustomToggleIcon = () => {
 	return (
 		<div className="">
 			Custom toggle svg icon:
-			<div className="w-20 ml-40 mt-10">
+			<div className="w-20 mt-10 ml-40">
 				<Dropdown toggleIcon="Upload" onSelect={(option: any) => console.log(option)}>
 					<div className="p-5">Custom content (default slot)</div>
 				</Dropdown>

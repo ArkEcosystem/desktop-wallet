@@ -37,7 +37,7 @@ export const MnemonicVerificationOptions = ({ handleChange, options, limit, answ
 
 	return (
 		<div>
-			<p data-testid="MnemonicVerificationOptions__title" className="text-theme-neutral-dark font-semibold mb-2">
+			<p data-testid="MnemonicVerificationOptions__title" className="mb-2 font-semibold text-theme-neutral-dark">
 				Select word #{position}
 			</p>
 			<div className="grid grid-cols-3 gap-2">

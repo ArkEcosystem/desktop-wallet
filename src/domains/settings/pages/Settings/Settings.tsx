@@ -42,11 +42,11 @@ export const Settings = ({ settings, pageConfig, activeSettings, setActiveSettin
 	};
 
 	return (
-		<div className="w-full h-full flex">
+		<div className="flex w-full h-full">
 			<div className="w-1/4 h-full">
 				<SideBar items={settings} activeItem={activeSettings} handleActiveItem={setActiveSettings} />
 			</div>
-			<div className="mx-12 border-l-1 pl-20 border-theme-primary-contrast w-3/5">{renderSettings()}</div>
+			<div className="w-3/5 pl-20 mx-12 border-l-1 border-theme-primary-contrast">{renderSettings()}</div>
 		</div>
 	);
 };

@@ -25,21 +25,21 @@ export const General = ({ formConfig, pageConfig, onSubmit }: Props) => {
 			labelDescriptionClass: "mt-3",
 			content: (
 				<div className="flex flex-row mt-2">
-					<div className="flex items-center justify-center w-24 h-24 mr-6 border-2 border-theme-neutral-light border-dashed rounded">
+					<div className="flex items-center justify-center w-24 h-24 mr-6 border-2 border-dashed rounded border-theme-neutral-light">
 						<button
 							type="button"
-							className="flex items-center justify-center w-20 h-20 bg-theme-primary-contrast rounded-full"
+							className="flex items-center justify-center w-20 h-20 rounded-full bg-theme-primary-contrast"
 						>
 							<Icon name="Upload" />
 						</button>
 					</div>
-					<div className="relative w-24 h-24 bg-theme-neutral-light rounded">
+					<div className="relative w-24 h-24 rounded bg-theme-neutral-light">
 						<img
 							src="https://randomuser.me/api/portraits/men/3.jpg"
 							className="object-cover rounded"
 							alt="random avatar"
 						/>
-						<button className="absolute flex items-center justify-center w-6 h-6 p-1 bg-theme-danger-contrast text-theme-danger rounded -top-3 -right-3">
+						<button className="absolute flex items-center justify-center w-6 h-6 p-1 rounded bg-theme-danger-contrast text-theme-danger -top-3 -right-3">
 							<Icon name="Close" height={12} width={12} />
 						</button>
 					</div>
@@ -55,7 +55,7 @@ export const General = ({ formConfig, pageConfig, onSubmit }: Props) => {
 			labelClass: "text-xl font-bold text-theme-neutral-dark",
 			content: (
 				<div className="flex flex-row justify-between">
-					<span className="text-sm text-theme-neutral-dark w-3/4">
+					<span className="w-3/4 text-sm text-theme-neutral-dark">
 						This protection. will protect your money from unwanted Screenshot you PC.
 					</span>
 					<div className="-mt-2">
@@ -70,7 +70,7 @@ export const General = ({ formConfig, pageConfig, onSubmit }: Props) => {
 			labelClass: "text-xl font-bold text-theme-neutral-dark -mt-5",
 			content: (
 				<div className="flex flex-row justify-between">
-					<span className="text-sm text-theme-neutral-dark w-3/4">
+					<span className="w-3/4 text-sm text-theme-neutral-dark">
 						You hereby assume the risk associated with downloading files and installing said files from a
 						direct URL link.
 					</span>
@@ -102,7 +102,7 @@ export const General = ({ formConfig, pageConfig, onSubmit }: Props) => {
 			labelClass: "text-xl font-bold text-theme-neutral-dark",
 			content: (
 				<div className="flex flex-row justify-between">
-					<span className="text-sm text-theme-neutral-dark w-3/4">Want to set the wallet to dark mode?</span>
+					<span className="w-3/4 text-sm text-theme-neutral-dark">Want to set the wallet to dark mode?</span>
 					<div className="-mt-2">
 						<Toggle />
 					</div>
@@ -115,7 +115,7 @@ export const General = ({ formConfig, pageConfig, onSubmit }: Props) => {
 			labelClass: "text-xl font-bold text-theme-neutral-dark -mt-5",
 			content: (
 				<div className="flex flex-row justify-between">
-					<span className="text-sm text-theme-neutral-dark w-3/4">
+					<span className="w-3/4 text-sm text-theme-neutral-dark">
 						You hereby assume the risk associated with downloading files and installing said files from a
 						direct URL link.
 					</span>
@@ -133,7 +133,7 @@ export const General = ({ formConfig, pageConfig, onSubmit }: Props) => {
 			<Form id="general-settings__form" context={formConfig.context} onSubmit={onSubmit}>
 				<div className="mt-5">
 					<ListDivided items={personalDetails} />
-					<div className="w-full flex justify-between">
+					<div className="flex justify-between w-full">
 						<div className="flex flex-col w-2/4">
 							<FormField name="profile-name">
 								<FormLabel label="Profile Name" />
@@ -210,15 +210,15 @@ export const General = ({ formConfig, pageConfig, onSubmit }: Props) => {
 						</div>
 					</div>
 				</div>
-				<div className="mt-5 relative">
+				<div className="relative mt-5">
 					<Header title="Security" />
 					<ListDivided items={securityItems} />
 				</div>
-				<div className="mt-5 relative">
+				<div className="relative mt-5">
 					<Header title="Other" />
 					<ListDivided items={otherItems} />
 				</div>
-				<div className="w-full flex justify-between">
+				<div className="flex justify-between w-full">
 					<Button color="danger" variant="plain" size="large">
 						<div className="flex items-center justify-between px-1">
 							<Icon name="Reset" />

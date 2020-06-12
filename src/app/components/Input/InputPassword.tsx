@@ -18,7 +18,7 @@ export const InputPassword = React.forwardRef<HTMLInputElement, InputPasswordPro
 					data-testid="InputPassword__toggle"
 					type="button"
 					onClick={togglePasswordVisibilty}
-					className="focus:outline-none bg-theme-background text-theme-primary-400 w-full h-full flex justify-center items-center text-2xl"
+					className="flex items-center justify-center w-full h-full text-2xl focus:outline-none bg-theme-background text-theme-primary-400"
 				>
 					<Icon name={show ? "EyeOff" : "Eye"} />
 				</button>
@@ -26,7 +26,7 @@ export const InputPassword = React.forwardRef<HTMLInputElement, InputPasswordPro
 					data-testid="InputPassword__qrcode"
 					type="button"
 					onClick={handleQrCode}
-					className="focus:outline-none bg-theme-background text-theme-primary-400 w-full h-full flex justify-center items-center text-2xl mr-2"
+					className="flex items-center justify-center w-full h-full mr-2 text-2xl focus:outline-none bg-theme-background text-theme-primary-400"
 				>
 					<Icon name="Qrcode" />
 				</button>

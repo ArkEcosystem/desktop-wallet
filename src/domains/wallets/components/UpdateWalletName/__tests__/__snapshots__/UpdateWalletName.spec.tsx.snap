@@ -56,17 +56,17 @@ exports[`UpdateWalletName should render a modal 1`] = `
           data-testid="Form"
         >
           <fieldset
-            class="sc-AxiKw iQzisX flex flex-col space-y-2"
+            class="flex flex-col sc-AxiKw iQzisX space-y-2"
           >
             <label
-              class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
+              class="inline-block text-sm font-semibold FormLabel transition-colors duration-100 text-theme-neutral-dark"
               data-testid="FormLabel"
               for="name"
             >
               Enter a name
             </label>
             <input
-              class="sc-AxhCb clCjoe overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+              class="w-full px-4 py-3 overflow-hidden border rounded appearance-none sc-AxhCb clCjoe shadow-sm bg-theme-background border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
               data-testid="Input"
               name="name"
             />
@@ -75,7 +75,7 @@ exports[`UpdateWalletName should render a modal 1`] = `
             class="mt-4"
           >
             <button
-              class="sc-AxjAm GWdpI mr-2"
+              class="mr-2 sc-AxjAm GWdpI"
               color="primary"
               type="button"
             >

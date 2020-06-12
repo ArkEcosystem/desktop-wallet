@@ -41,7 +41,7 @@ export const SideBarItem = withRouter(
 							<Icon name={icon} />
 						</div>
 					)}
-					<span className="font-semibold ml-2">{label}</span>
+					<span className="ml-2 font-semibold">{label}</span>
 				</li>
 			</div>
 		);

@@ -3,7 +3,7 @@
 exports[`Formatted Address should render 1`] = `
 <div>
   <div
-    class="w-64 inline-block undefined"
+    class="inline-block w-64 undefined"
   >
     <div
       class="sc-AxjAm hsiRAq"
@@ -13,7 +13,7 @@ exports[`Formatted Address should render 1`] = `
           class="relative"
         >
           <button
-            class="outline-none focus:outline-none float-right"
+            class="float-right outline-none focus:outline-none"
             data-testid="dropdown__toggle"
           >
             <div
@@ -31,14 +31,14 @@ exports[`Formatted Address should render 1`] = `
       </div>
       <div>
         <div
-          class="sc-AxirZ kFgwHB border-theme-primary-contrast -mr-2 undefined"
+          class="-mr-2 sc-AxirZ kFgwHB border-theme-primary-contrast undefined"
         />
         <div
           class="sc-AxirZ kFgwHB border-theme-primary-contrast"
         />
       </div>
       <div
-        class="mt-4 max-w-12 truncate"
+        class="mt-4 truncate max-w-12"
       />
       <div
         class="font-bold text-theme-neutral-800"
@@ -51,14 +51,14 @@ exports[`Formatted Address should render 1`] = `
 exports[`Formatted Address should render blank 1`] = `
 <div>
   <div
-    class="w-64 inline-block undefined"
+    class="inline-block w-64 undefined"
   >
     <div
       class="sc-AxjAm hsiRAq"
     >
       <div>
         <div
-          class="sc-AxirZ kFgwHB border-theme-primary-contrast -mr-2"
+          class="-mr-2 sc-AxirZ kFgwHB border-theme-primary-contrast"
         />
         <div
           class="sc-AxirZ kFgwHB border-theme-primary-contrast"
@@ -82,7 +82,7 @@ exports[`Formatted Address should render blank 1`] = `
 exports[`Formatted Address should render with wallet data 1`] = `
 <div>
   <div
-    class="w-64 inline-block undefined"
+    class="inline-block w-64 undefined"
   >
     <div
       class="sc-AxjAm hsiRAq"
@@ -92,7 +92,7 @@ exports[`Formatted Address should render with wallet data 1`] = `
           class="relative"
         >
           <button
-            class="outline-none focus:outline-none float-right"
+            class="float-right outline-none focus:outline-none"
             data-testid="dropdown__toggle"
           >
             <div
@@ -110,7 +110,7 @@ exports[`Formatted Address should render with wallet data 1`] = `
       </div>
       <div>
         <div
-          class="sc-AxirZ kFgwHB border-theme-primary-contrast -mr-2 border-theme-warning-200"
+          class="-mr-2 sc-AxirZ kFgwHB border-theme-primary-contrast border-theme-warning-200"
         >
           <div
             class="sc-AxiKw bctdez"
@@ -123,19 +123,19 @@ exports[`Formatted Address should render with wallet data 1`] = `
         />
       </div>
       <div
-        class="mt-4 max-w-12 truncate"
+        class="mt-4 truncate max-w-12"
       >
         <div
-          class="truncate inline-block"
+          class="inline-block truncate"
         >
           <span
-            class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-base"
+            class="flex-auto mt-4 mr-1 text-base font-semibold truncate text-theme-neutral-800 max-w-24"
             data-testid="address__wallet-name"
           >
             My wallet
           </span>
           <span
-            class="text-theme-neutral-400 font-semibold text-base"
+            class="text-base font-semibold text-theme-neutral-400"
             data-testid="address__wallet-address"
           >
             ASuu...3kqT
@@ -155,7 +155,7 @@ exports[`Formatted Address should render with wallet data 1`] = `
 exports[`Formatted Address should render with wallet data and optional icon 1`] = `
 <div>
   <div
-    class="w-64 inline-block undefined"
+    class="inline-block w-64 undefined"
   >
     <div
       class="sc-AxjAm hsiRAq"
@@ -165,7 +165,7 @@ exports[`Formatted Address should render with wallet data and optional icon 1`] 
           class="relative"
         >
           <button
-            class="outline-none focus:outline-none float-right"
+            class="float-right outline-none focus:outline-none"
             data-testid="dropdown__toggle"
           >
             <div
@@ -183,7 +183,7 @@ exports[`Formatted Address should render with wallet data and optional icon 1`] 
       </div>
       <div>
         <div
-          class="sc-AxirZ kFgwHB border-theme-primary-contrast -mr-2 border-theme-warning-200"
+          class="-mr-2 sc-AxirZ kFgwHB border-theme-primary-contrast border-theme-warning-200"
         >
           <div
             class="sc-AxiKw bctdez"
@@ -196,19 +196,19 @@ exports[`Formatted Address should render with wallet data and optional icon 1`] 
         />
       </div>
       <div
-        class="mt-4 max-w-12 truncate"
+        class="mt-4 truncate max-w-12"
       >
         <div
-          class="truncate inline-block"
+          class="inline-block truncate"
         >
           <span
-            class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-base"
+            class="flex-auto mt-4 mr-1 text-base font-semibold truncate text-theme-neutral-800 max-w-24"
             data-testid="address__wallet-name"
           >
             My wallet
           </span>
           <span
-            class="text-theme-neutral-400 font-semibold text-base"
+            class="text-base font-semibold text-theme-neutral-400"
             data-testid="address__wallet-address"
           >
             ASuu...3kqT
