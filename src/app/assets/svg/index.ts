@@ -7,6 +7,7 @@ import { ReactComponent as ChevronDown } from "./chevron-down.svg";
 import { ReactComponent as Close } from "./close.svg";
 import { ReactComponent as Copy } from "./copy.svg";
 import { ReactComponent as CrossSlim } from "./cross-slim.svg";
+import { ReactComponent as Delegate } from "./delegate.svg";
 import { ReactComponent as Discord } from "./discord.svg";
 import { ReactComponent as Download } from "./download.svg";
 import { ReactComponent as Eth } from "./eth.svg";
@@ -48,6 +49,7 @@ export const SvgCollection: any = {
 	Close,
 	Copy,
 	CrossSlim,
+	Delegate,
 	Discord,
 	Download,
 	Eth,

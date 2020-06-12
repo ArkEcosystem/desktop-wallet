@@ -21,9 +21,9 @@ export const ListDividedItem = ({
 	itemValueClass,
 	content,
 }: Props) => (
-	<li className="flex flex-col w-full py-8 mb-5" data-testid="list-divided-item__wrapper">
+	<li className="flex flex-col w-full py-4" data-testid="list-divided-item__wrapper">
 		<div
-			className={`flex justify-between ${isFloatingLabel ? "flex-col items-start" : "items-center"}`}
+			className={`flex justify-between ${isFloatingLabel ? "flex-col items-start" : "items-center"} mt-5`}
 			data-testid="list-divided-item__inner-wrapper"
 		>
 			<div className="flex flex-col">
