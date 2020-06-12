@@ -16,8 +16,7 @@ const getColors = (name: string): any => {
 const getSize = (size: string): any => {
 	switch (size) {
 		case "small":
-			return tw`px-1 text-base rounded-sm`;
-		case "default":
+		default:
 			return tw`px-2 text-base rounded-sm`;
 		case "large":
 			return tw`px-2 text-lg rounded`;
