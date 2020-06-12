@@ -3,7 +3,7 @@
 exports[`CreateWallet should render 1`] = `
 <DocumentFragment>
   <div
-    class="max-w-lg mx-auto"
+    class="max-w-xl mx-auto"
   >
     <form
       class="space-y-6"
@@ -14,16 +14,16 @@ exports[`CreateWallet should render 1`] = `
           class="StepIndicator___StyledUl-sc-15t41is-1 dhAbBb"
         >
           <li
-            class="StepIndicator__StepStyled-sc-15t41is-0 ihHeLm"
+            class="StepIndicator__StepStyled-sc-15t41is-0 crUtTP"
           />
           <li
-            class="StepIndicator__StepStyled-sc-15t41is-0 dpEcnP"
+            class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
           />
           <li
-            class="StepIndicator__StepStyled-sc-15t41is-0 dpEcnP"
+            class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
           />
           <li
-            class="StepIndicator__StepStyled-sc-15t41is-0 dpEcnP"
+            class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
           />
         </ul>
         <div
@@ -52,7 +52,8 @@ exports[`CreateWallet should render 1`] = `
                 class="grid grid-flow-row gap-2"
               >
                 <label
-                  class="CardControl___StyledLabel-sc-28luv0-4 gNrkXm"
+                  aria-checked="false"
+                  class="CardControl___StyledLabel-sc-28luv0-3 PNVuh"
                 >
                   <input
                     class="CardControl__Input-sc-28luv0-0 lbnjeC"
@@ -62,16 +63,16 @@ exports[`CreateWallet should render 1`] = `
                     value="ARK"
                   />
                   <div
-                    class="sc-fzoLsD CardControl__CustomCard-sc-28luv0-1 kWIYfA"
+                    class="sc-fzpans CardControl__CustomCard-sc-28luv0-1 hbehcc"
                   >
                     <div
-                      class="flex items-center py-2"
+                      class="sc-fzqBZW jnVvtM flex items-center py-2"
                     >
                       <div
-                        class="sc-fzozJi kdWTKd"
+                        class="sc-fzoLsD drFzZv NetworkItemIcon transition-colors duration-100 border-theme-neutral-300"
                       >
                         <div
-                          class="sc-AxhUy cPXLjK"
+                          class="sc-AxhCb fxrKLH"
                           height="1em"
                           width="1em"
                         >
@@ -81,7 +82,7 @@ exports[`CreateWallet should render 1`] = `
                         </div>
                       </div>
                       <span
-                        class="ml-4"
+                        class="ml-4 text-theme-text"
                       >
                         ARK
                       </span>
@@ -89,7 +90,8 @@ exports[`CreateWallet should render 1`] = `
                   </div>
                 </label>
                 <label
-                  class="CardControl___StyledLabel-sc-28luv0-4 gNrkXm"
+                  aria-checked="false"
+                  class="CardControl___StyledLabel-sc-28luv0-3 PNVuh"
                 >
                   <input
                     class="CardControl__Input-sc-28luv0-0 lbnjeC"
@@ -99,16 +101,16 @@ exports[`CreateWallet should render 1`] = `
                     value="Ethereum"
                   />
                   <div
-                    class="sc-fzoLsD CardControl__CustomCard-sc-28luv0-1 kWIYfA"
+                    class="sc-fzpans CardControl__CustomCard-sc-28luv0-1 hbehcc"
                   >
                     <div
-                      class="flex items-center py-2"
+                      class="sc-fzqBZW jnVvtM flex items-center py-2"
                     >
                       <div
-                        class="sc-fzozJi kdWTKd"
+                        class="sc-fzoLsD drFzZv NetworkItemIcon transition-colors duration-100 border-theme-neutral-300"
                       >
                         <div
-                          class="sc-AxhUy cPXLjK"
+                          class="sc-AxhCb fxrKLH"
                           height="1em"
                           width="1em"
                         >
@@ -118,7 +120,7 @@ exports[`CreateWallet should render 1`] = `
                         </div>
                       </div>
                       <span
-                        class="ml-4"
+                        class="ml-4 text-theme-text"
                       >
                         Ethereum
                       </span>
@@ -126,7 +128,8 @@ exports[`CreateWallet should render 1`] = `
                   </div>
                 </label>
                 <label
-                  class="CardControl___StyledLabel-sc-28luv0-4 gNrkXm"
+                  aria-checked="false"
+                  class="CardControl___StyledLabel-sc-28luv0-3 PNVuh"
                 >
                   <input
                     class="CardControl__Input-sc-28luv0-0 lbnjeC"
@@ -136,16 +139,16 @@ exports[`CreateWallet should render 1`] = `
                     value="Bitcoin"
                   />
                   <div
-                    class="sc-fzoLsD CardControl__CustomCard-sc-28luv0-1 kWIYfA"
+                    class="sc-fzpans CardControl__CustomCard-sc-28luv0-1 hbehcc"
                   >
                     <div
-                      class="flex items-center py-2"
+                      class="sc-fzqBZW jnVvtM flex items-center py-2"
                     >
                       <div
-                        class="sc-fzozJi kdWTKd"
+                        class="sc-fzoLsD drFzZv NetworkItemIcon transition-colors duration-100 border-theme-neutral-300"
                       >
                         <div
-                          class="sc-AxhUy cPXLjK"
+                          class="sc-AxhCb fxrKLH"
                           height="1em"
                           width="1em"
                         >
@@ -155,7 +158,7 @@ exports[`CreateWallet should render 1`] = `
                         </div>
                       </div>
                       <span
-                        class="ml-4"
+                        class="ml-4 text-theme-text"
                       >
                         Bitcoin
                       </span>
@@ -169,7 +172,7 @@ exports[`CreateWallet should render 1`] = `
             class="flex justify-end mt-6 space-x-2"
           >
             <button
-              class="sc-Axmtr gmSGZJ"
+              class="sc-AxmLO gpsVkI"
               color="primary"
               data-testid="CreateWallet__continue-button"
               disabled=""
@@ -178,7 +181,7 @@ exports[`CreateWallet should render 1`] = `
               Continue
             </button>
             <button
-              class="sc-Axmtr gmSGZJ hidden"
+              class="sc-AxmLO gpsVkI hidden"
               color="primary"
               data-testid="CreateWallet__save-button"
               type="submit"
@@ -215,7 +218,8 @@ exports[`CreateWallet should render 1st step 1`] = `
       class="grid grid-flow-row gap-2"
     >
       <label
-        class="CardControl___StyledLabel-sc-28luv0-4 gNrkXm"
+        aria-checked="false"
+        class="CardControl___StyledLabel-sc-28luv0-3 PNVuh"
       >
         <input
           class="CardControl__Input-sc-28luv0-0 lbnjeC"
@@ -225,16 +229,16 @@ exports[`CreateWallet should render 1st step 1`] = `
           value="ARK"
         />
         <div
-          class="sc-fzoLsD CardControl__CustomCard-sc-28luv0-1 kWIYfA"
+          class="sc-fzpans CardControl__CustomCard-sc-28luv0-1 hbehcc"
         >
           <div
-            class="flex items-center py-2"
+            class="sc-fzqBZW jnVvtM flex items-center py-2"
           >
             <div
-              class="sc-fzozJi kdWTKd"
+              class="sc-fzoLsD drFzZv NetworkItemIcon transition-colors duration-100 border-theme-neutral-300"
             >
               <div
-                class="sc-AxhUy cPXLjK"
+                class="sc-AxhCb fxrKLH"
                 height="1em"
                 width="1em"
               >
@@ -244,7 +248,7 @@ exports[`CreateWallet should render 1st step 1`] = `
               </div>
             </div>
             <span
-              class="ml-4"
+              class="ml-4 text-theme-text"
             >
               ARK
             </span>
@@ -252,7 +256,8 @@ exports[`CreateWallet should render 1st step 1`] = `
         </div>
       </label>
       <label
-        class="CardControl___StyledLabel-sc-28luv0-4 gNrkXm"
+        aria-checked="false"
+        class="CardControl___StyledLabel-sc-28luv0-3 PNVuh"
       >
         <input
           class="CardControl__Input-sc-28luv0-0 lbnjeC"
@@ -262,16 +267,16 @@ exports[`CreateWallet should render 1st step 1`] = `
           value="Ethereum"
         />
         <div
-          class="sc-fzoLsD CardControl__CustomCard-sc-28luv0-1 kWIYfA"
+          class="sc-fzpans CardControl__CustomCard-sc-28luv0-1 hbehcc"
         >
           <div
-            class="flex items-center py-2"
+            class="sc-fzqBZW jnVvtM flex items-center py-2"
           >
             <div
-              class="sc-fzozJi kdWTKd"
+              class="sc-fzoLsD drFzZv NetworkItemIcon transition-colors duration-100 border-theme-neutral-300"
             >
               <div
-                class="sc-AxhUy cPXLjK"
+                class="sc-AxhCb fxrKLH"
                 height="1em"
                 width="1em"
               >
@@ -281,7 +286,7 @@ exports[`CreateWallet should render 1st step 1`] = `
               </div>
             </div>
             <span
-              class="ml-4"
+              class="ml-4 text-theme-text"
             >
               Ethereum
             </span>
@@ -289,7 +294,8 @@ exports[`CreateWallet should render 1st step 1`] = `
         </div>
       </label>
       <label
-        class="CardControl___StyledLabel-sc-28luv0-4 gNrkXm"
+        aria-checked="false"
+        class="CardControl___StyledLabel-sc-28luv0-3 PNVuh"
       >
         <input
           class="CardControl__Input-sc-28luv0-0 lbnjeC"
@@ -299,16 +305,16 @@ exports[`CreateWallet should render 1st step 1`] = `
           value="Bitcoin"
         />
         <div
-          class="sc-fzoLsD CardControl__CustomCard-sc-28luv0-1 kWIYfA"
+          class="sc-fzpans CardControl__CustomCard-sc-28luv0-1 hbehcc"
         >
           <div
-            class="flex items-center py-2"
+            class="sc-fzqBZW jnVvtM flex items-center py-2"
           >
             <div
-              class="sc-fzozJi kdWTKd"
+              class="sc-fzoLsD drFzZv NetworkItemIcon transition-colors duration-100 border-theme-neutral-300"
             >
               <div
-                class="sc-AxhUy cPXLjK"
+                class="sc-AxhCb fxrKLH"
                 height="1em"
                 width="1em"
               >
@@ -318,7 +324,7 @@ exports[`CreateWallet should render 1st step 1`] = `
               </div>
             </div>
             <span
-              class="ml-4"
+              class="ml-4 text-theme-text"
             >
               Bitcoin
             </span>
@@ -352,27 +358,22 @@ exports[`CreateWallet should render 2nd step 1`] = `
         class="flex rounded-lg overflow-hidden bg-theme-warning"
       >
         <div
-          class="sc-AxhCb ekFvce w-24 flex items-center justify-center text-theme-warning bg-theme-warning-200"
-        >
-          <svg
-            class="w-8 h-8"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M0 10C0 4.5 4.5 0 10 0s10 4.5 10 10-4.5 10-10 10S0 15.5 0 10zm2 0c0 4.4 3.6 8 8 8s8-3.6 8-8-3.6-8-8-8-8 3.6-8 8zm7 4c0-.6.4-1 1-1s1 .4 1 1-.4 1-1 1-1-.4-1-1zm0-3V6c0-.6.4-1 1-1s1 .4 1 1v5c0 .6-.4 1-1 1s-1-.4-1-1z"
-              fill="currentColor"
-            />
-          </svg>
-        </div>
-        <div
-          class="sc-AxhCb fwQhed flex-1 bg-theme-warning-100 pl-5"
+          class="sc-AxgMl jQYRWs flex items-center justify-center text-theme-warning bg-theme-warning-200"
         >
           <div
-            class="flex flex-col justify-center"
+            class="sc-AxhCb gCvBAn"
+            height="30"
+            width="30"
           >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, optio ipsum, porro in dolore ex ab iste labore illo perferendis maiores. Ratione quo ipsa adipisci repellendus consectetur ipsam facere nostrum.
+            <svg>
+              alert-default.svg
+            </svg>
           </div>
+        </div>
+        <div
+          class="sc-AxhUy hSQApu flex-1 bg-theme-warning-100"
+        >
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, optio ipsum, porro in dolore ex ab iste labore illo perferendis maiores. Ratione quo ipsa adipisci repellendus consectetur ipsam facere nostrum.
         </div>
       </div>
       <ul
@@ -470,13 +471,13 @@ exports[`CreateWallet should render 2nd step 1`] = `
         </li>
       </ul>
       <button
-        class="sc-Axmtr hzMboR flex items-center space-x-2"
+        class="sc-AxmLO kQVELY flex items-center space-x-2"
         color="primary"
         data-testid="CreateWallet__copy"
         type="button"
       >
         <div
-          class="sc-AxhUy cPXLjK"
+          class="sc-AxhCb fxrKLH"
           height="1em"
           width="1em"
         >
@@ -490,7 +491,7 @@ exports[`CreateWallet should render 2nd step 1`] = `
       </button>
     </div>
     <div
-      class="sc-AxmLO gXeSsB"
+      class="sc-fzozJi flemNY"
       type="horizontal"
     />
     <div
@@ -500,7 +501,7 @@ exports[`CreateWallet should render 2nd step 1`] = `
         class="flex-1"
       >
         <h3
-          class="mb-1"
+          class="mb-1 text-theme-neutral-dark"
         >
           Your password in the file
         </h3>
@@ -510,13 +511,13 @@ exports[`CreateWallet should render 2nd step 1`] = `
           Lorem ipsum dolor, sit amet consectetur adipisicing elit.
         </p>
         <button
-          class="sc-Axmtr hzMboR flex items-center mt-4 space-x-2"
+          class="sc-AxmLO kQVELY flex items-center mt-4 space-x-2"
           color="primary"
           data-testid="CreateWallet__download"
           type="button"
         >
           <div
-            class="sc-AxhUy cPXLjK"
+            class="sc-AxhCb fxrKLH"
             height="1em"
             width="1em"
           >
@@ -533,7 +534,7 @@ exports[`CreateWallet should render 2nd step 1`] = `
         class="ml-10"
       >
         <div
-          class="sc-AxhUy gKvjXe"
+          class="sc-AxhCb cCYhIn"
           height="40"
           width="40"
         >
@@ -544,7 +545,7 @@ exports[`CreateWallet should render 2nd step 1`] = `
       </div>
     </div>
     <div
-      class="sc-AxmLO gXeSsB"
+      class="sc-fzozJi flemNY"
       type="horizontal"
     />
   </section>
@@ -559,7 +560,7 @@ exports[`CreateWallet should render 4th step 1`] = `
     <h1
       class="mb-0"
     >
-      Select Network
+      Completed
     </h1>
     <p
       class="mb-8 text-theme-neutral-dark"
@@ -584,10 +585,10 @@ exports[`CreateWallet should render 4th step 1`] = `
           </p>
         </div>
         <div
-          class="sc-fzozJi jzfixr"
+          class="sc-fzoLsD fOXLmF"
         >
           <div
-            class="sc-AxhUy cPXLjK"
+            class="sc-AxhCb fxrKLH"
             height="1em"
             width="1em"
           >
@@ -599,7 +600,7 @@ exports[`CreateWallet should render 4th step 1`] = `
       </li>
       <li>
         <div
-          class="sc-AxmLO gXeSsB"
+          class="sc-fzozJi flemNY"
           type="horizontal"
         />
       </li>
@@ -619,12 +620,12 @@ exports[`CreateWallet should render 4th step 1`] = `
           </p>
         </div>
         <div
-          class="sc-fzozJi jzfixr"
+          class="sc-fzoLsD fOXLmF"
         />
       </li>
     </ul>
     <div
-      class="sc-AxmLO gXeSsB"
+      class="sc-fzozJi flemNY"
       type="horizontal"
     />
     <fieldset
@@ -639,7 +640,7 @@ exports[`CreateWallet should render 4th step 1`] = `
         Wallet name (optional)
       </label>
       <input
-        class="sc-fzpans kjTXzO overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+        class="sc-fzplWN gSscHr overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
         data-testid="CreateWallet__wallet-name"
         name="name"
       />
