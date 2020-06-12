@@ -144,7 +144,7 @@ export const ThirdStep = ({ skipVerification, mnemonic }: { skipVerification: bo
 	return (
 		<section data-testid="CreateWallet__third-step">
 			<h1 className="mb-0">Confirm your passphrase</h1>
-			<p className="text-theme-neutral-dark mb-8">Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+			<p className="mb-8 text-theme-neutral-dark">Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
 
 			<MnemonicVerification
 				mnemonic={mnemonic}
@@ -165,7 +165,7 @@ export const FourthStep = () => {
 	return (
 		<section data-testid="CreateWallet__fourth-step">
 			<h1 className="mb-0">Completed</h1>
-			<p className="text-theme-neutral-dark mb-8">Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+			<p className="mb-8 text-theme-neutral-dark">Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
 
 			<ul>
 				<li className="flex justify-between">
