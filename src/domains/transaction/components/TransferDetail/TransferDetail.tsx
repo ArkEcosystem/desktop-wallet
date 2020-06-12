@@ -19,12 +19,12 @@ export const TransferDetail = (props: TransferDetailProps) => {
 
 	return (
 		<Modal title={t("TRANSACTION.MODAL_TRANSFER_DETAIL.TITLE")} isOpen={props.isOpen} onClose={props.onClose}>
-			<TransactionDetail label="Sender" extra={<Circle avatarId="test"></Circle>} border={false}>
+			<TransactionDetail label={t("TRANSACTION.SENDER")} extra={<Circle avatarId="test"></Circle>} border={false}>
 				<div className="mt-2 font-semibold">ADDRESS</div>
 			</TransactionDetail>
 
 			<TransactionDetail
-				label="Recipient"
+				label={t("TRANSACTION.RECIPIENT")}
 				extra={
 					<div>
 						<Circle className="-mr-2 border-black">
@@ -39,7 +39,7 @@ export const TransferDetail = (props: TransferDetailProps) => {
 			</TransactionDetail>
 
 			<TransactionDetail
-				label="Amount"
+				label={t("TRANSACTION.AMOUNT")}
 				extra={
 					<Circle className="-mr-2 border-theme-success-200 text-theme-success-700">
 						<Icon name="Received" width={40} height={40} />
@@ -51,18 +51,18 @@ export const TransferDetail = (props: TransferDetailProps) => {
 				<span className="ml-2 text-theme-neutral-500">23,000.00 USD</span>
 			</TransactionDetail>
 
-			<TransactionDetail label="Transaction Fee">0.09812015 ARK</TransactionDetail>
+			<TransactionDetail label={t("TRANSACTION.TRANSACTION_FEE")}>0.09812015 ARK</TransactionDetail>
 
-			<TransactionDetail label="Smartbridge">
+			<TransactionDetail label={t("TRANSACTION.SMARTBRIDGE")}>
 				<div className="flex justify-between">
 					Hello!
 					<Icon name="Smartbridge" width={20} height={20} />
 				</div>
 			</TransactionDetail>
 
-			<TransactionDetail label="Timestamp">14.04.2020 21:42:40</TransactionDetail>
+			<TransactionDetail label={t("TRANSACTION.TIMESTAMP")}>14.04.2020 21:42:40</TransactionDetail>
 
-			<TransactionDetail label="Confirmations">
+			<TransactionDetail label={t("TRANSACTION.CONFIRMATIONS")}>
 				<div className="flex">
 					Well Confirmed
 					<div className="flex w-6 h-6 ml-2 rounded-full bg-theme-success-200 text-theme-success-500">
@@ -73,7 +73,7 @@ export const TransferDetail = (props: TransferDetailProps) => {
 				</div>
 			</TransactionDetail>
 
-			<TransactionDetail label="ID">
+			<TransactionDetail label={t("TRANSACTION.ID")}>
 				<span className="text-theme-primary-700">1234678...12312313</span>
 
 				<span className="inline-block ml-4 text-theme-primary-300">
@@ -81,7 +81,7 @@ export const TransferDetail = (props: TransferDetailProps) => {
 				</span>
 			</TransactionDetail>
 
-			<TransactionDetail label="Block ID">
+			<TransactionDetail label={t("TRANSACTION.BLOCK_ID")}>
 				<span className="text-theme-primary-700">1234678...12312313</span>
 
 				<span className="inline-block ml-4 text-theme-primary-300">
