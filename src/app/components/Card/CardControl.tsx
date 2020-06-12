@@ -1,6 +1,7 @@
 import React from "react";
 import tw, { styled } from "twin.macro";
 import { Card } from "./Card";
+import { Icon } from "../Icon";
 
 type CardControlProps = {
 	children: React.ReactNode;
@@ -33,12 +34,7 @@ const StateStyle = styled.div`
 export const CardControlState = () => {
 	return (
 		<StateStyle data-testid="card__control-state">
-			<svg tw="w-3 h-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-				<path
-					fill="currentColor"
-					d="M5.707 7.293a1 1 0 0 0-1.414 1.414l2 2a1 1 0 0 0 1.414 0l4-4a1 1 0 0 0-1.414-1.414L7 8.586 5.707 7.293z"
-				/>
-			</svg>
+			<Icon name="Checkmark" />
 		</StateStyle>
 	);
 };

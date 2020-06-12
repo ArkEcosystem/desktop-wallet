@@ -1,7 +1,7 @@
 import tw, { css } from "twin.macro";
 
 const defaultStyle = (noShadow: boolean) => [
-	tw`rounded-full inline-flex items-center justify-center border-2 align-middle bg-theme-background`,
+	tw`rounded-full inline-flex items-center justify-center border-2 align-middle`,
 	!noShadow &&
 		css`
 			& {
@@ -20,7 +20,7 @@ const getSize = (size: string): any => {
 };
 
 const getAvatarCss = (avatarId: any): any => {
-	if (!avatarId) return [tw`bg-theme-background`];
+	if (!avatarId) return [];
 
 	return [
 		tw`border-0`,
