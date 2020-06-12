@@ -5,10 +5,9 @@ import tw, { styled } from "twin.macro";
 import twConfig from "tailwind.config";
 
 type CircleProgressBarProps = {
-	size: string;
+	size: number;
 	trailStrokeWidth?: number;
 	trailStrokeColor?: string;
-	trailSpaced?: boolean;
 	strokeWidth?: number;
 	strokeColor?: string;
 	percentage: number;
@@ -44,7 +43,6 @@ export const CircleProgressBar = ({
 	size,
 	trailStrokeWidth,
 	trailStrokeColor,
-	trailSpaced,
 	strokeWidth,
 	strokeColor,
 	percentage,
@@ -80,7 +78,7 @@ export const CircleProgressBar = ({
 					fill="transparent"
 					stroke={trailStrokeColor}
 					strokeWidth={trailStrokeWidth}
-					strokeDasharray={trailSpaced ? 1 : 0}
+					strokeDasharray={0}
 				/>
 
 				<circle
@@ -105,10 +103,9 @@ export const CircleProgressBar = ({
 };
 
 CircleProgressBar.defaultProps = {
-	size: "10",
+	size: 10,
 	trailStrokeWidth: 2,
 	trailStrokeColor: twConfig.theme.colors["theme-success-200"],
-	trailSpaced: false,
 	strokeWidth: 2,
 	strokeColor: twConfig.theme.colors["theme-success-600"],
 	percentage: 0,
