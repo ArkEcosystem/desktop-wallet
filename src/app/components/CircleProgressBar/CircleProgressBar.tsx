@@ -33,6 +33,13 @@ const Text = styled.text`
 	transform: translateY(-0.25rem);
 `;
 
+const CIRCLE_CONFIG = {
+	viewBox: "0 0 38 38",
+	x: "19",
+	y: "19",
+	radio: "15.91549430918954",
+};
+
 export const CircleProgressBar = ({
 	size,
 	trailStrokeWidth,
@@ -46,12 +53,6 @@ export const CircleProgressBar = ({
 }: CircleProgressBarProps) => {
 	const [progressBar, setProgressBar] = useState(0);
 	const paces = percentage / speed;
-	const circleConfig = {
-		viewBox: "0 0 38 38",
-		x: "19",
-		y: "19",
-		radio: "15.91549430918954",
-	};
 
 	const updatePercentage = () => {
 		setTimeout(() => setProgressBar(progressBar + 1), paces);
@@ -71,11 +72,11 @@ export const CircleProgressBar = ({
 
 	return (
 		<Container size={size}>
-			<svg viewBox={circleConfig.viewBox}>
+			<svg viewBox={CIRCLE_CONFIG.viewBox}>
 				<circle
-					cx={circleConfig.x}
-					cy={circleConfig.y}
-					r={circleConfig.radio}
+					cx={CIRCLE_CONFIG.x}
+					cy={CIRCLE_CONFIG.y}
+					r={CIRCLE_CONFIG.radio}
 					fill="transparent"
 					stroke={trailStrokeColor}
 					strokeWidth={trailStrokeWidth}
@@ -83,9 +84,9 @@ export const CircleProgressBar = ({
 				/>
 
 				<circle
-					cx={circleConfig.x}
-					cy={circleConfig.y}
-					r={circleConfig.radio}
+					cx={CIRCLE_CONFIG.x}
+					cy={CIRCLE_CONFIG.y}
+					r={CIRCLE_CONFIG.radio}
 					fill="transparent"
 					stroke={strokeColor}
 					strokeWidth={strokeWidth}
