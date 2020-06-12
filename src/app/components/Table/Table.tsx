@@ -1,6 +1,8 @@
 import React, { useMemo } from "react";
-import { TableWrapper } from "./style";
 import { useTable, useSortBy } from "react-table";
+import { styled } from "twin.macro";
+
+import { defaultTableStyle } from "./style";
 import { Icon } from "../Icon";
 
 type TableProps = {
@@ -8,6 +10,10 @@ type TableProps = {
 	data: any[];
 	columns: any[];
 };
+
+const TableWrapper = styled.div`
+	${defaultTableStyle}
+`;
 
 export const Table = ({ children, data, columns }: TableProps) => {
 	const tableData = useMemo(() => data, []);
