@@ -73,10 +73,10 @@ export const WalletUpdate = ({
 					!isReady && (
 						<div className="flex w-2/5 mx-auto">
 							<div className="flex-1">
-								<p className="text-sm text-theme-neutral-light font-semibold">
+								<p className="text-sm font-semibold text-theme-neutral-light">
 									{t("COMMON.DOWNLOADED")}
 								</p>
-								<p className="text-sm text-theme-neutral-dark font-bold">154 KB / 154 KB</p>
+								<p className="text-sm font-bold text-theme-neutral-dark">154 KB / 154 KB</p>
 							</div>
 							<div className="flex-1">
 								<div className="w-full mx-10">
