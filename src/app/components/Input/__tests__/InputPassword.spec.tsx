@@ -20,13 +20,4 @@ describe("InputPassword", () => {
 		fireEvent.click(toggle);
 		expect(input).toHaveAttribute("type", "password");
 	});
-
-	it("should qrcode be clickable", () => {
-		const { asFragment, getByTestId } = render(<InputPassword />);
-
-		const qrcode = getByTestId("InputPassword__qrcode");
-		fireEvent.click(qrcode);
-		expect(qrcode).toBeTruthy();
-		expect(asFragment()).toMatchSnapshot();
-	});
 });
