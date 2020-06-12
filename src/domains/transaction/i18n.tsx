@@ -1,4 +1,5 @@
 export const translations: { [key: string]: any } = {
+	ACCOUNT: "Account",
 	ACCOUNT_NICKNAME: "Account Nickname",
 	AMOUNT: "Amount",
 	BLOCK_ID: "Block ID",
@@ -9,6 +10,7 @@ export const translations: { [key: string]: any } = {
 	SMARTBRIDGE: "Smartbridge",
 	TIMESTAMP: "Timestamp",
 	TRANSACTION_FEE: "Transaction Fee",
+	VOTER: "Voter",
 
 	MODAL_TRANSFER_DETAIL: {
 		TITLE: "Transfer",
@@ -16,5 +18,9 @@ export const translations: { [key: string]: any } = {
 
 	MODAL_DELEGATE_REGISTRATION_DETAIL: {
 		TITLE: "Delegate Registration",
+	},
+
+	MODAL_VOTE_DETAIL: {
+		TITLE: "Delegate Vote",
 	},
 };
