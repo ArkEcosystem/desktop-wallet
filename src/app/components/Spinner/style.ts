@@ -9,6 +9,7 @@ const baseStyle = [
 			}
 		}
 		animation: spin 1.2s linear infinite;
+		border: 8px solid #e4eff8;
 	`,
 ];
 
@@ -20,6 +21,27 @@ const getColorsVariable = (name: string): any => {
 		dark: `var(--theme-color-${name}-dark)`,
 		light: `var(--theme-color-${name}-light)`,
 	};
+};
+
+const getColor = (type: string, color: ReturnType<typeof getColorsVariable>): any => {
+	switch (type) {
+		case "primary":
+			return css`
+				border-left-color: #22a6b3;
+			`;
+		case "success":
+			return css`
+				border-left-color: #22a6b3;
+			`;
+		case "danger":
+			return css`
+				border-left-color: #22a6b3;
+			`;
+		case "warning":
+			return css`
+				border-left-color: #22a6b3;
+			`;
+	}
 };
 
 const getSize = (size: string): any => {
@@ -34,5 +56,5 @@ const getSize = (size: string): any => {
 };
 
 export const getStyles = ({ color, size }: { color?: string; size?: string }) => {
-	return [...baseStyle, getSize(size!)];
+	return [...baseStyle, getSize(size!), ...getColor(color!, getColorsVariable(color!))];
 };
