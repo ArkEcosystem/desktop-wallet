@@ -3,7 +3,7 @@
 exports[`NavBar should render 1`] = `
 <DocumentFragment>
   <nav
-    class="bg-white shadow-header-smooth relative"
+    class="relative bg-white shadow-header-smooth"
   >
     <div
       class="px-4 sm:px-6 lg:px-8"
@@ -12,10 +12,10 @@ exports[`NavBar should render 1`] = `
         class="relative flex justify-between h-20 md:h-24"
       >
         <div
-          class="flex-shrink-0 flex items-center"
+          class="flex items-center flex-shrink-0"
         >
           <div
-            class="flex rounded-lg p-2 bg-logo"
+            class="flex p-2 rounded-lg bg-logo"
           >
             <img
               alt="ARK Logo"

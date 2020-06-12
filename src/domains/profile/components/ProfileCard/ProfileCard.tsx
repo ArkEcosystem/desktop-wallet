@@ -20,9 +20,9 @@ type ProfileCardProps = {
 
 export const ProfileCard = ({ avatar, name, balance, actions, onSelect, showSettings }: ProfileCardProps) => (
 	<Card>
-		<div className="relative px-6 sm:flex sm:items-center py-4">
+		<div className="relative px-6 py-4 sm:flex sm:items-center">
 			{showSettings && (
-				<div className="absolute top-0 -mt-2 -mr-4 right-0 flex items-center justify-center w-6 h-6 p-1 mt-3">
+				<div className="absolute top-0 right-0 flex items-center justify-center w-6 h-6 p-1 mt-3 -mt-2 -mr-4">
 					<Dropdown toggleIcon="Settings" options={actions} onSelect={onSelect} />
 				</div>
 			)}

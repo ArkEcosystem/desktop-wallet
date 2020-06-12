@@ -18,7 +18,7 @@ const renderNetworks = (networks: any[], onClick: any) => (
 	<ul data-testid="network__option" className="inline-block">
 		{networks.map((option: Network, key: number) => (
 			<li
-				className="inline-block cursor-pointer mr-5"
+				className="inline-block mr-5 cursor-pointer"
 				key={key}
 				data-testid={`network__option--${key}`}
 				onClick={() => onClick(option, key)}
@@ -61,7 +61,7 @@ export const SelectNetwork = ({ networks, onChange, onViewAll }: NetworkProps) =
 			{renderNetworks(networkList, onClick)}
 			<Circle
 				data-testid="network__viewall"
-				className="relative border-theme-primary-100 ml-2 cursor-pointer"
+				className="relative ml-2 cursor-pointer border-theme-primary-100"
 				onClick={onViewAll}
 			>
 				<div className="text-xs text-theme-primary-500">All</div>

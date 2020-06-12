@@ -13,7 +13,7 @@ exports[`Formatted Address should render 1`] = `
           class="relative"
         >
           <button
-            class="outline-none focus:outline-none float-right"
+            class="float-right outline-none focus:outline-none"
             data-testid="dropdown__toggle"
           >
             <div
@@ -38,7 +38,7 @@ exports[`Formatted Address should render 1`] = `
         />
       </div>
       <div
-        class="mt-4 max-w-12 truncate"
+        class="mt-4 truncate max-w-12"
       />
       <div
         class="font-bold text-theme-neutral-800"
@@ -58,7 +58,7 @@ exports[`Formatted Address should render blank 1`] = `
     >
       <div>
         <div
-          class="sc-AxirZ kFgwHB border-theme-primary-contrast -mr-2"
+          class="sc-AxirZ kFgwHB -mr-2 border-theme-primary-contrast"
         />
         <div
           class="sc-AxirZ kFgwHB border-theme-primary-contrast"
@@ -92,7 +92,7 @@ exports[`Formatted Address should render with wallet data 1`] = `
           class="relative"
         >
           <button
-            class="outline-none focus:outline-none float-right"
+            class="float-right outline-none focus:outline-none"
             data-testid="dropdown__toggle"
           >
             <div
@@ -123,10 +123,10 @@ exports[`Formatted Address should render with wallet data 1`] = `
         />
       </div>
       <div
-        class="mt-4 max-w-12 truncate"
+        class="mt-4 truncate max-w-12"
       >
         <div
-          class="truncate inline-block"
+          class="inline-block truncate"
         >
           <span
             class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-base"
@@ -165,7 +165,7 @@ exports[`Formatted Address should render with wallet data and optional icon 1`] 
           class="relative"
         >
           <button
-            class="outline-none focus:outline-none float-right"
+            class="float-right outline-none focus:outline-none"
             data-testid="dropdown__toggle"
           >
             <div
@@ -196,10 +196,10 @@ exports[`Formatted Address should render with wallet data and optional icon 1`] 
         />
       </div>
       <div
-        class="mt-4 max-w-12 truncate"
+        class="mt-4 truncate max-w-12"
       >
         <div
-          class="truncate inline-block"
+          class="inline-block truncate"
         >
           <span
             class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-base"

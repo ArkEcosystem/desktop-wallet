@@ -40,10 +40,14 @@ jobs:
               run: yarn install --frozen-lockfile
 
             - name: Test
-              run: yarn test:coverage
+              run: yarn test:coverage --coverageDirectory .coverage/unit
 
             - name: Codecov
-              run: ./node_modules/.bin/codecov --token=${{ secrets.CODECOV_TOKEN }}
+              uses: codecov/codecov-action@v1
+              with:
+                  file: .coverage/unit/lcov.info
+                  flags: unit
+                  fail_ci_if_error: true
 
     e2e:
         runs-on: ubuntu-latest

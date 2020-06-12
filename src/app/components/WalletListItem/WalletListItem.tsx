@@ -49,7 +49,7 @@ export const WalletListItem = ({
 			<td className="py-1">
 				<Address walletName={walletName} address={address}></Address>
 			</td>
-			<td className="py-1 font-bold text-sm">
+			<td className="py-1 text-sm font-bold">
 				{walletTypeIcons &&
 					walletTypeIcons.map((type: string, index: number) => {
 						return (
@@ -59,10 +59,10 @@ export const WalletListItem = ({
 						);
 					})}
 			</td>
-			<td className="py-1 font-bold text-right text-sm">
+			<td className="py-1 text-sm font-bold text-right">
 				<div>{balance}</div>
 			</td>
-			<td className="py-1 font-bold text-right text-sm text-theme-neutral-400">
+			<td className="py-1 text-sm font-bold text-right text-theme-neutral-400">
 				<div>{fiat}</div>
 			</td>
 			<td>

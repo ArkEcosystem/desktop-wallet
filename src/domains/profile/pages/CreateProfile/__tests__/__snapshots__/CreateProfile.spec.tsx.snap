@@ -6,7 +6,7 @@ exports[`CreateProfile should render 1`] = `
     class="w-full h-full"
   >
     <nav
-      class="bg-white shadow-header-smooth relative"
+      class="relative bg-white shadow-header-smooth"
     >
       <div
         class="px-4 sm:px-6 lg:px-8"
@@ -15,10 +15,10 @@ exports[`CreateProfile should render 1`] = `
           class="relative flex justify-between h-20 md:h-24"
         >
           <div
-            class="flex-shrink-0 flex items-center"
+            class="flex items-center flex-shrink-0"
           >
             <div
-              class="flex rounded-lg p-2 bg-logo"
+              class="flex p-2 rounded-lg bg-logo"
             >
               <img
                 alt="ARK Logo"
@@ -106,10 +106,10 @@ exports[`CreateProfile should render 1`] = `
                     class="flex flex-row mt-2"
                   >
                     <div
-                      class="flex items-center justify-center w-24 h-24 mr-6 border-2 border-theme-neutral-light border-dashed rounded"
+                      class="flex items-center justify-center w-24 h-24 mr-6 border-2 border-dashed rounded border-theme-neutral-light"
                     >
                       <button
-                        class="flex items-center justify-center w-20 h-20 bg-theme-primary-contrast rounded-full"
+                        class="flex items-center justify-center w-20 h-20 rounded-full bg-theme-primary-contrast"
                         type="button"
                       >
                         <div
@@ -124,7 +124,7 @@ exports[`CreateProfile should render 1`] = `
                       </button>
                     </div>
                     <div
-                      class="relative w-24 h-24 bg-theme-neutral-light rounded"
+                      class="relative w-24 h-24 rounded bg-theme-neutral-light"
                     >
                       <img
                         alt="random avatar"
@@ -132,7 +132,7 @@ exports[`CreateProfile should render 1`] = `
                         src="https://randomuser.me/api/portraits/men/3.jpg"
                       />
                       <button
-                        class="absolute flex items-center justify-center w-6 h-6 p-1 bg-theme-danger-contrast text-theme-danger rounded -top-3 -right-3"
+                        class="absolute flex items-center justify-center w-6 h-6 p-1 rounded bg-theme-danger-contrast text-theme-danger -top-3 -right-3"
                       >
                         <div
                           class="sc-AxhCb koOqYD"
@@ -209,7 +209,7 @@ exports[`CreateProfile should render 1`] = `
                   </option>
                 </select>
                 <div
-                  class="sc-AxgMl sc-Axmtr cPxyjO text-theme-neutral-dark pointer-events-none w-12 text-lg"
+                  class="sc-AxgMl sc-Axmtr cPxyjO w-12 text-lg pointer-events-none text-theme-neutral-dark"
                 >
                   <div
                     class="sc-AxhCb fxrKLH"
@@ -266,7 +266,7 @@ exports[`CreateProfile should render 1`] = `
                   </option>
                 </select>
                 <div
-                  class="sc-AxgMl sc-Axmtr cPxyjO text-theme-neutral-dark pointer-events-none w-12 text-lg"
+                  class="sc-AxgMl sc-Axmtr cPxyjO w-12 text-lg pointer-events-none text-theme-neutral-dark"
                 >
                   <div
                     class="sc-AxhCb fxrKLH"
@@ -314,7 +314,7 @@ exports[`CreateProfile should render 1`] = `
                       class="flex flex-row justify-between"
                     >
                       <span
-                        class="text-sm text-theme-neutral-dark w-3/4"
+                        class="w-3/4 text-sm text-theme-neutral-dark"
                       >
                         Want to set the wallet to dark mode?
                       </span>
