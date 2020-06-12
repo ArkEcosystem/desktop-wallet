@@ -34,7 +34,7 @@ export const Table = ({ children, data, columns }: TableProps) => {
 
 	return (
 		<TableWrapper {...getTableProps()}>
-			<table className="table-fixed">
+			<table className="table-auto">
 				<thead>
 					{headerGroups.map((headerGroup: any, index: number) => (
 						<tr key={index} {...headerGroup.getHeaderGroupProps()}>
