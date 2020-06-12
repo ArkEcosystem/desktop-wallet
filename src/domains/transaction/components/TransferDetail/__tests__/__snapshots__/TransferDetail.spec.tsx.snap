@@ -18,6 +18,7 @@ exports[`TransferDetail should render a modal 1`] = `
       <button
         class="sc-AxjAm jZZsoN"
         color="neutral"
+        data-testid="modal__close-btn"
         type="button"
       >
         <div
@@ -48,12 +49,14 @@ exports[`TransferDetail should render a modal 1`] = `
           >
             <div
               class="font-semibold text-sm text-theme-neutral-500"
-            />
+            >
+              Sender
+            </div>
             <div
               class="font-semibold mt-2"
             >
               <div
-                class="font-semibold mt-2"
+                class="mt-2 font-semibold"
               >
                 ADDRESS
               </div>
@@ -71,7 +74,9 @@ exports[`TransferDetail should render a modal 1`] = `
           >
             <div
               class="font-semibold text-sm text-theme-neutral-500"
-            />
+            >
+              Recipient
+            </div>
             <div
               class="font-semibold mt-2"
             >
@@ -85,7 +90,7 @@ exports[`TransferDetail should render a modal 1`] = `
           </div>
           <div>
             <div
-              class="sc-AxiKw dLSXwt border-black -mr-2"
+              class="sc-AxiKw dLSXwt -mr-2 border-black"
             >
               <div
                 class="sc-AxirZ dCVESD"
@@ -110,7 +115,9 @@ exports[`TransferDetail should render a modal 1`] = `
           >
             <div
               class="font-semibold text-sm text-theme-neutral-500"
-            />
+            >
+              Amount
+            </div>
             <div
               class="font-semibold mt-2"
             >
@@ -149,7 +156,9 @@ exports[`TransferDetail should render a modal 1`] = `
           >
             <div
               class="font-semibold text-sm text-theme-neutral-500"
-            />
+            >
+              Transaction Fee
+            </div>
             <div
               class="font-semibold mt-2"
             >
@@ -165,7 +174,9 @@ exports[`TransferDetail should render a modal 1`] = `
           >
             <div
               class="font-semibold text-sm text-theme-neutral-500"
-            />
+            >
+              Smartbridge
+            </div>
             <div
               class="font-semibold mt-2"
             >
@@ -194,7 +205,9 @@ exports[`TransferDetail should render a modal 1`] = `
           >
             <div
               class="font-semibold text-sm text-theme-neutral-500"
-            />
+            >
+              Timestamp
+            </div>
             <div
               class="font-semibold mt-2"
             >
@@ -210,7 +223,9 @@ exports[`TransferDetail should render a modal 1`] = `
           >
             <div
               class="font-semibold text-sm text-theme-neutral-500"
-            />
+            >
+              Confirmations
+            </div>
             <div
               class="font-semibold mt-2"
             >
@@ -219,7 +234,7 @@ exports[`TransferDetail should render a modal 1`] = `
               >
                 Well Confirmed
                 <div
-                  class="flex w-6 h-6 bg-theme-success-200 text-theme-success-500 rounded-full ml-2"
+                  class="bg-theme-success-200 text-theme-success-500 flex w-6 h-6 ml-2 rounded-full"
                 >
                   <div
                     class="m-auto"
@@ -247,7 +262,9 @@ exports[`TransferDetail should render a modal 1`] = `
           >
             <div
               class="font-semibold text-sm text-theme-neutral-500"
-            />
+            >
+              ID
+            </div>
             <div
               class="font-semibold mt-2"
             >
@@ -257,7 +274,7 @@ exports[`TransferDetail should render a modal 1`] = `
                 1234678...12312313
               </span>
               <span
-                class="inline-block text-theme-primary-300 ml-4"
+                class="text-theme-primary-300 inline-block ml-4"
               >
                 <div
                   class="sc-AxirZ iQaTP"
@@ -280,7 +297,9 @@ exports[`TransferDetail should render a modal 1`] = `
           >
             <div
               class="font-semibold text-sm text-theme-neutral-500"
-            />
+            >
+              Block ID
+            </div>
             <div
               class="font-semibold mt-2"
             >
@@ -290,7 +309,7 @@ exports[`TransferDetail should render a modal 1`] = `
                 1234678...12312313
               </span>
               <span
-                class="inline-block text-theme-primary-300 ml-4"
+                class="text-theme-primary-300 inline-block ml-4"
               >
                 <div
                   class="sc-AxirZ iQaTP"

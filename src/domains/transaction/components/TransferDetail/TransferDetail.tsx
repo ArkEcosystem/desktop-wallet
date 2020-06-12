@@ -19,15 +19,15 @@ export const TransferDetail = (props: TransferDetailProps) => {
 
 	return (
 		<Modal title={t("TRANSACTION.MODAL_TRANSFER_DETAIL.TITLE")} isOpen={props.isOpen} onClose={props.onClose}>
-			<TransactionDetail title="Sender" extra={<Circle avatarId="test"></Circle>} border={false}>
-				<div className="font-semibold mt-2">ADDRESS</div>
+			<TransactionDetail label="Sender" extra={<Circle avatarId="test"></Circle>} border={false}>
+				<div className="mt-2 font-semibold">ADDRESS</div>
 			</TransactionDetail>
 
 			<TransactionDetail
-				title="Recipient"
+				label="Recipient"
 				extra={
 					<div>
-						<Circle className="border-black -mr-2">
+						<Circle className="-mr-2 border-black">
 							<Icon name="Delegate" width={25} height={25} />
 						</Circle>
 						<Circle avatarId="test"></Circle>
@@ -39,7 +39,7 @@ export const TransferDetail = (props: TransferDetailProps) => {
 			</TransactionDetail>
 
 			<TransactionDetail
-				title="Amount"
+				label="Amount"
 				extra={
 					<Circle className="border-theme-success-200 text-theme-success-700 -mr-2">
 						<Icon name="Received" width={40} height={40} />
@@ -51,21 +51,21 @@ export const TransferDetail = (props: TransferDetailProps) => {
 				<span className="text-theme-neutral-500 ml-2">23,000.00 USD</span>
 			</TransactionDetail>
 
-			<TransactionDetail title="Transaction Fee">0.09812015 ARK</TransactionDetail>
+			<TransactionDetail label="Transaction Fee">0.09812015 ARK</TransactionDetail>
 
-			<TransactionDetail title="Smartbridge">
+			<TransactionDetail label="Smartbridge">
 				<div className="flex justify-between">
 					Hello!
 					<Icon name="Smartbridge" width={20} height={20} />
 				</div>
 			</TransactionDetail>
 
-			<TransactionDetail title="Timestamp">14.04.2020 21:42:40</TransactionDetail>
+			<TransactionDetail label="Timestamp">14.04.2020 21:42:40</TransactionDetail>
 
-			<TransactionDetail title="Confirmations">
+			<TransactionDetail label="Confirmations">
 				<div className="flex">
 					Well Confirmed
-					<div className="flex w-6 h-6 bg-theme-success-200 text-theme-success-500 rounded-full ml-2">
+					<div className="bg-theme-success-200 text-theme-success-500 flex w-6 h-6 ml-2 rounded-full">
 						<div className="m-auto">
 							<Icon name="Checkmark" width={15} height={15} />
 						</div>
@@ -73,18 +73,18 @@ export const TransferDetail = (props: TransferDetailProps) => {
 				</div>
 			</TransactionDetail>
 
-			<TransactionDetail title="ID">
+			<TransactionDetail label="ID">
 				<span className="text-theme-primary-700">1234678...12312313</span>
 
-				<span className="inline-block text-theme-primary-300 ml-4">
+				<span className="text-theme-primary-300 inline-block ml-4">
 					<Icon name="Copy" />
 				</span>
 			</TransactionDetail>
 
-			<TransactionDetail title="Block ID">
+			<TransactionDetail label="Block ID">
 				<span className="text-theme-primary-700">1234678...12312313</span>
 
-				<span className="inline-block text-theme-primary-300 ml-4">
+				<span className="text-theme-primary-300 inline-block ml-4">
 					<Icon name="Copy" />
 				</span>
 			</TransactionDetail>
