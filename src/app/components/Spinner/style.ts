@@ -9,37 +9,29 @@ const baseStyle = [
 			}
 		}
 		animation: spin 1.2s linear infinite;
-		border: 8px solid #e4eff8;
+		border: 5px solid var(--theme-color-neutral-200);
 	`,
 ];
 
-const getColorsVariable = (name: string): any => {
-	return {
-		base: `var(--theme-color-${name})`,
-		contrast: `var(--theme-color-${name}-contrast)`,
-		rgb: `var(--theme-color-${name}-rgb)`,
-		dark: `var(--theme-color-${name}-dark)`,
-		light: `var(--theme-color-${name}-light)`,
-	};
-};
+const getColor = (color: string): any => {
+	const colorBase = `var(--theme-color-${color})`;
 
-const getColor = (type: string, color: ReturnType<typeof getColorsVariable>): any => {
-	switch (type) {
+	switch (color) {
 		case "primary":
 			return css`
-				border-left-color: #22a6b3;
+				border-left-color: ${colorBase};
 			`;
 		case "success":
 			return css`
-				border-left-color: #22a6b3;
+				border-left-color: ${colorBase};
 			`;
 		case "danger":
 			return css`
-				border-left-color: #22a6b3;
+				border-left-color: ${colorBase};
 			`;
 		case "warning":
 			return css`
-				border-left-color: #22a6b3;
+				border-left-color: ${colorBase};
 			`;
 	}
 };
@@ -49,12 +41,12 @@ const getSize = (size: string): any => {
 		case "small":
 			return tw`w-5 h-5`;
 		case "default":
-			return tw`w-12 h-12`;
+			return tw`w-8 h-8`;
 		case "large":
-			return tw`w-24 h-24`;
+			return tw`w-12 h-12`;
 	}
 };
 
 export const getStyles = ({ color, size }: { color?: string; size?: string }) => {
-	return [...baseStyle, getSize(size!), ...getColor(color!, getColorsVariable(color!))];
+	return [...baseStyle, getSize(size!), ...getColor(color!)];
 };
