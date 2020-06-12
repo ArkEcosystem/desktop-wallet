@@ -19,7 +19,7 @@ jobs:
             - name: Install (Yarn)
               run: yarn install --frozen-lockfile
 
-            - name: Run eslint
+            - name: Format
               run: yarn format
 
             - uses: stefanzweifel/git-auto-commit-action@v4
@@ -44,6 +44,9 @@ jobs:
 
             - name: Format
               run: ./node_modules/rustywind/bin/rustywind --write src
+
+            - name: Update Snapshots
+              run: yarn test --update-snapshot
 
             - uses: stefanzweifel/git-auto-commit-action@v4
               with:
