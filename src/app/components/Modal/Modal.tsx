@@ -28,7 +28,13 @@ const ModalContent = (props: ModalContentProps) => {
 			className="fixed left-0 right-0 z-10 flex flex-col max-w-2xl px-16 pt-6 pb-8 mx-auto mt-24 rounded-xl bg-theme-background"
 		>
 			<div className="absolute top-0 right-0 mt-4 mr-4">
-				<Button color="neutral" variant="plain" size="icon" onClick={props.onClose}>
+				<Button
+					data-testid="modal__close-btn"
+					color="neutral"
+					variant="plain"
+					size="icon"
+					onClick={props.onClose}
+				>
 					<Icon name="CrossSlim" width={10} height={10} />
 				</Button>
 			</div>
