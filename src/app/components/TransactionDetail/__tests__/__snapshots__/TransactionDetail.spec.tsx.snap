@@ -45,3 +45,26 @@ exports[`TransactionDetail should render without border 1`] = `
   </div>
 </div>
 `;
+
+exports[`TransactionDetail should render without padding 1`] = `
+<div>
+  <div
+    class="flex items-center true border-t border-dashed border-theme-neutral-300 "
+  >
+    <div
+      class="flex-1"
+    >
+      <div
+        class="text-sm font-semibold text-theme-neutral-500"
+      >
+        Test
+      </div>
+      <div
+        class="mt-2 font-semibold"
+      >
+        test
+      </div>
+    </div>
+  </div>
+</div>
+`;

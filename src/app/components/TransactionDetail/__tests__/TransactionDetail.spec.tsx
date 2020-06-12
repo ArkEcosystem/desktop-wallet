@@ -17,4 +17,13 @@ describe("TransactionDetail", () => {
 		);
 		expect(container).toMatchSnapshot();
 	});
+
+	it("should render without padding", () => {
+		const { container } = render(
+			<TransactionDetail label="Test" padding={false}>
+				test
+			</TransactionDetail>,
+		);
+		expect(container).toMatchSnapshot();
+	});
 });
