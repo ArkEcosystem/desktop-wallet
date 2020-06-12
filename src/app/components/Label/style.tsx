@@ -3,8 +3,12 @@ import tw, { css } from "twin.macro";
 const baseStyle = tw`inline-block font-semibold`;
 
 const getColors = (name: string): any => {
-	const color = `var(--theme-color-${name}-500)`;
-	const bg = `var(--theme-color-${name}-200)`;
+	const textColor =
+		({ primary: 500, success: 500, danger: 400, warning: 700 } as Record<string, number>)[name] || 600;
+	const bgColor = ({ primary: 100, success: 200, danger: 100, warning: 100 } as Record<string, number>)[name] || 200;
+
+	const color = `var(--theme-color-${name}-${textColor})`;
+	const bg = `var(--theme-color-${name}-${bgColor})`;
 
 	return css`
 		color: ${color};

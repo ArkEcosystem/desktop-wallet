@@ -7,24 +7,24 @@ import { Icon } from "app/components/Icon";
 import { Label } from "app/components/Label";
 import { TransactionDetail } from "app/components/TransactionDetail";
 
-type TransferDetailProps = {
+type DelegateRegistrationDetailProps = {
 	isOpen: boolean;
 	onClose?: any;
 	onCancel?: any;
 	onDelete: any;
 };
 
-export const TransferDetail = (props: TransferDetailProps) => {
+export const DelegateRegistrationDetail = (props: DelegateRegistrationDetailProps) => {
 	const { t } = useTranslation();
 
 	return (
-		<Modal title={t("TRANSACTION.MODAL_TRANSFER_DETAIL.TITLE")} isOpen={props.isOpen} onClose={props.onClose}>
-			<TransactionDetail label={t("TRANSACTION.SENDER")} extra={<Circle avatarId="test"></Circle>} border={false}>
-				<div className="mt-2 font-semibold">ADDRESS</div>
-			</TransactionDetail>
-
+		<Modal
+			title={t("TRANSACTION.MODAL_DELEGATE_REGISTRATION_DETAIL.TITLE")}
+			isOpen={props.isOpen}
+			onClose={props.onClose}
+		>
 			<TransactionDetail
-				label={t("TRANSACTION.RECIPIENT")}
+				label={t("TRANSACTION.ACCOUNT_NICKNAME")}
 				extra={
 					<div>
 						<Circle className="-mr-2 border-black">
@@ -33,6 +33,7 @@ export const TransferDetail = (props: TransferDetailProps) => {
 						<Circle avatarId="test"></Circle>
 					</div>
 				}
+				border={false}
 			>
 				ROBank
 				<span className="ml-2 text-theme-neutral-500">ADDR...ESSS</span>
@@ -41,24 +42,17 @@ export const TransferDetail = (props: TransferDetailProps) => {
 			<TransactionDetail
 				label={t("TRANSACTION.AMOUNT")}
 				extra={
-					<Circle className="-mr-2 border-theme-success-200 text-theme-success-700">
-						<Icon name="Received" width={40} height={40} />
+					<Circle className="-mr-2 border-theme-danger-100 text-theme-danger-400">
+						<Icon name="Sent" width={40} height={40} />
 					</Circle>
 				}
 			>
-				<Label color="success">2,088.84557 ARK</Label>
+				<Label color="danger">-5 ARK</Label>
 
-				<span className="ml-2 text-theme-neutral-500">23,000.00 USD</span>
+				<span className="ml-2 text-theme-neutral-500">50.00 USD</span>
 			</TransactionDetail>
 
 			<TransactionDetail label={t("TRANSACTION.TRANSACTION_FEE")}>0.09812015 ARK</TransactionDetail>
-
-			<TransactionDetail label={t("TRANSACTION.SMARTBRIDGE")}>
-				<div className="flex justify-between">
-					Hello!
-					<Icon name="Smartbridge" width={20} height={20} />
-				</div>
-			</TransactionDetail>
 
 			<TransactionDetail label={t("TRANSACTION.TIMESTAMP")}>14.04.2020 21:42:40</TransactionDetail>
 
@@ -92,8 +86,8 @@ export const TransferDetail = (props: TransferDetailProps) => {
 	);
 };
 
-TransferDetail.defaultProps = {
+DelegateRegistrationDetail.defaultProps = {
 	isOpen: false,
 };
 
-TransferDetail.displayName = "TransferDetail";
+DelegateRegistrationDetail.displayName = "DelegateRegistrationDetail";
