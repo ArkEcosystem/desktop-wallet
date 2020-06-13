@@ -8,6 +8,8 @@ export const translations: { [key: string]: any } = {
 	RECIPIENT: "Recipient",
 	RECIPIENTS: "Recipients",
 	SENDER: "Sender",
+	SIGN: "Sign",
+	SIGNATURES: "Signatures",
 	SMARTBRIDGE: "Smartbridge",
 	TIMESTAMP: "Timestamp",
 	TOTAL_AMOUNT: "Total Amount",
@@ -20,6 +22,11 @@ export const translations: { [key: string]: any } = {
 
 	MODAL_DELEGATE_REGISTRATION_DETAIL: {
 		TITLE: "Delegate Registration",
+	},
+
+	MODAL_MULTISIGNATURE_DETAIL: {
+		TITLE: "Multisignature",
+		WAITING_FOR_SIGNATURES: "Waiting for Signatures",
 	},
 
 	MODAL_VOTE_DETAIL: {
