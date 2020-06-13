@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Recipient should render 1`] = `
+<div>
+  <div
+    class="flex justify-between items-center py-4 border-t border-dashed border-theme-neutral-300 "
+  >
+    <div>
+      <div
+        class="sc-AxjAm dSRTci"
+      />
+      <span
+        class="ml-4"
+      >
+        Address
+      </span>
+    </div>
+    <div
+      class="sc-AxirZ glOzFU"
+      color="danger"
+    >
+      -88.84557 ARK
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Recipient should render without border 1`] = `
+<div>
+  <div
+    class="flex justify-between items-center py-4 true "
+  >
+    <div>
+      <div
+        class="sc-AxjAm dSRTci"
+      />
+      <span
+        class="ml-4"
+      >
+        Address
+      </span>
+    </div>
+    <div
+      class="sc-AxirZ glOzFU"
+      color="danger"
+    >
+      -88.84557 ARK
+    </div>
+  </div>
+</div>
+`;

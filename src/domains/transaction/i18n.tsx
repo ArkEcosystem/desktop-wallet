@@ -6,9 +6,11 @@ export const translations: { [key: string]: any } = {
 	CONFIRMATIONS: "Confirmations",
 	ID: "ID",
 	RECIPIENT: "Recipient",
+	RECIPIENTS: "Recipients",
 	SENDER: "Sender",
 	SMARTBRIDGE: "Smartbridge",
 	TIMESTAMP: "Timestamp",
+	TOTAL_AMOUNT: "Total Amount",
 	TRANSACTION_FEE: "Transaction Fee",
 	VOTER: "Voter",
 
