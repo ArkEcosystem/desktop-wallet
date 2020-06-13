@@ -3,7 +3,7 @@ import { styled } from "twin.macro";
 
 import { Icon } from "app/components/Icon";
 import { clickOutsideHandler } from "./hooks";
-import { defaultStyles, defaultClasses } from "./style";
+import { defaultStyles, defaultClasses } from "./Dropdown.styles";
 
 export type Option = {
 	label: string;

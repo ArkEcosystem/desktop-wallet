@@ -1,5 +1,5 @@
 import { styled } from "twin.macro";
-import { getStyles } from "./style";
+import { getStyles } from "./Circle.styles";
 
 type CircleProps = {
 	as?: React.ElementType;

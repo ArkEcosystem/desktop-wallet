@@ -2,7 +2,7 @@ import React, { useMemo } from "react";
 import { useTable, useSortBy } from "react-table";
 import { styled } from "twin.macro";
 
-import { defaultTableStyle } from "./style";
+import { defaultTableStyle } from "./Table.styles";
 import { Icon } from "../Icon";
 
 type TableProps = {
