@@ -1,5 +1,5 @@
 import { styled } from "twin.macro";
-import { getStyles } from "./style";
+import { getStyles } from "./Divider.styles";
 
 type DividerProps = {
 	type?: "horizontal" | "vertical";

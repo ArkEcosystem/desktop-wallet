@@ -1,8 +1,8 @@
 import React from "react";
-import { styled, css } from "twin.macro";
+import { styled } from "twin.macro";
 
 import { Icon } from "app/components/Icon";
-import { defaultStyle, defaultClasses } from "./style";
+import { defaultStyle, defaultClasses } from "./Badge.styles";
 
 type BadgeProps = {
 	className?: string;

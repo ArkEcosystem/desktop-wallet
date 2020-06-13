@@ -1,6 +1,6 @@
 import React from "react";
 import { styled } from "twin.macro";
-import { getStyles } from "./style";
+import { getStyles } from "./Button.styles";
 
 type ButtonProps = {
 	color?: "primary" | "success" | "danger" | "warning" | "neutral";
