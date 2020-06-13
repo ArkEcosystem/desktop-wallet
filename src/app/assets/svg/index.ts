@@ -45,6 +45,7 @@ import { ReactComponent as StatusClock } from "./status-clock.svg";
 import { ReactComponent as Trash } from "./trash.svg";
 import { ReactComponent as Twitter } from "./twitter.svg";
 import { ReactComponent as Upload } from "./upload.svg";
+import { ReactComponent as Voted } from "./voted.svg";
 
 export const SvgCollection: any = {
 	AlertDanger,
@@ -94,4 +95,5 @@ export const SvgCollection: any = {
 	Trash,
 	Twitter,
 	Upload,
+	Voted,
 };

@@ -7,22 +7,18 @@ import { Icon } from "app/components/Icon";
 import { Label } from "app/components/Label";
 import { TransactionDetail } from "app/components/TransactionDetail";
 
-type DelegateRegistrationDetailProps = {
+type VoteDetailProps = {
 	isOpen: boolean;
 	onClose?: any;
 };
 
-export const DelegateRegistrationDetail = (props: DelegateRegistrationDetailProps) => {
+export const VoteDetail = (props: VoteDetailProps) => {
 	const { t } = useTranslation();
 
 	return (
-		<Modal
-			title={t("TRANSACTION.MODAL_DELEGATE_REGISTRATION_DETAIL.TITLE")}
-			isOpen={props.isOpen}
-			onClose={props.onClose}
-		>
+		<Modal title={t("TRANSACTION.MODAL_VOTE_DETAIL.TITLE")} isOpen={props.isOpen} onClose={props.onClose}>
 			<TransactionDetail
-				label={t("TRANSACTION.ACCOUNT_NICKNAME")}
+				label={t("TRANSACTION.ACCOUNT")}
 				extra={
 					<div>
 						<Circle className="-mr-2 border-black">
@@ -31,23 +27,23 @@ export const DelegateRegistrationDetail = (props: DelegateRegistrationDetailProp
 						<Circle avatarId="test"></Circle>
 					</div>
 				}
-				border={false}
 			>
 				ROBank
 				<span className="ml-2 text-theme-neutral-500">ADDR...ESSS</span>
 			</TransactionDetail>
 
 			<TransactionDetail
-				label={t("TRANSACTION.AMOUNT")}
+				label={t("TRANSACTION.VOTER")}
 				extra={
-					<Circle className="-mr-2 border-theme-danger-100 text-theme-danger-400">
-						<Icon name="Sent" width={40} height={40} />
-					</Circle>
+					<div>
+						<Circle className="-mr-2 border-black">
+							<Icon name="Voted" width={13} height={13} />
+						</Circle>
+						<Circle avatarId="test"></Circle>
+					</div>
 				}
 			>
-				<Label color="danger">-5 ARK</Label>
-
-				<span className="ml-2 text-theme-neutral-500">50.00 USD</span>
+				Delegate 3<span className="ml-2 text-theme-neutral-500">ADDR...ESSS</span>
 			</TransactionDetail>
 
 			<TransactionDetail label={t("TRANSACTION.TRANSACTION_FEE")}>0.09812015 ARK</TransactionDetail>
@@ -84,8 +80,8 @@ export const DelegateRegistrationDetail = (props: DelegateRegistrationDetailProp
 	);
 };
 
-DelegateRegistrationDetail.defaultProps = {
+VoteDetail.defaultProps = {
 	isOpen: false,
 };
 
-DelegateRegistrationDetail.displayName = "DelegateRegistrationDetail";
+VoteDetail.displayName = "VoteDetail";

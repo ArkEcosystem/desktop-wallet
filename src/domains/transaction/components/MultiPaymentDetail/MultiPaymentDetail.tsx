@@ -5,24 +5,23 @@ import { Modal } from "app/components/Modal";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
 import { Label } from "app/components/Label";
+import { Recipient } from "domains/transaction/components/Recipient";
 import { TransactionDetail } from "app/components/TransactionDetail";
 
-type DelegateRegistrationDetailProps = {
+type MultiPaymentDetailProps = {
 	isOpen: boolean;
 	onClose?: any;
+	onCancel?: any;
+	onDelete: any;
 };
 
-export const DelegateRegistrationDetail = (props: DelegateRegistrationDetailProps) => {
+export const MultiPaymentDetail = (props: MultiPaymentDetailProps) => {
 	const { t } = useTranslation();
 
 	return (
-		<Modal
-			title={t("TRANSACTION.MODAL_DELEGATE_REGISTRATION_DETAIL.TITLE")}
-			isOpen={props.isOpen}
-			onClose={props.onClose}
-		>
+		<Modal title={t("TRANSACTION.MODAL_TRANSFER_DETAIL.TITLE")} isOpen={props.isOpen} onClose={props.onClose}>
 			<TransactionDetail
-				label={t("TRANSACTION.ACCOUNT_NICKNAME")}
+				label={t("TRANSACTION.SENDER")}
 				extra={
 					<div>
 						<Circle className="-mr-2 border-black">
@@ -37,20 +36,39 @@ export const DelegateRegistrationDetail = (props: DelegateRegistrationDetailProp
 				<span className="ml-2 text-theme-neutral-500">ADDR...ESSS</span>
 			</TransactionDetail>
 
+			<TransactionDetail label={t("TRANSACTION.RECIPIENTS")} className="last:pb-0">
+				<div className="flex justify-between text-sm font-semibold text-theme-neutral-500">
+					<div className="ml-12">{t("COMMON.ADDRESS")}</div>
+					<div className="ml-12">{t("TRANSACTION.AMOUNT")}</div>
+				</div>
+
+				<Recipient address="ADDR...ESSS" amount="-88.84557 ARK" border={false} className="pt-2" />
+				<Recipient address="ADDR...ESSS" amount="-88.84557 ARK" />
+				<Recipient address="ADDR...ESSS" amount="-88.84557 ARK" />
+				<Recipient address="ADDR...ESSS" amount="-88.84557 ARK" className="pb-0" />
+			</TransactionDetail>
+
 			<TransactionDetail
-				label={t("TRANSACTION.AMOUNT")}
+				label={t("TRANSACTION.TOTAL_AMOUNT")}
 				extra={
 					<Circle className="-mr-2 border-theme-danger-100 text-theme-danger-400">
 						<Icon name="Sent" width={40} height={40} />
 					</Circle>
 				}
 			>
-				<Label color="danger">-5 ARK</Label>
+				<Label color="danger">2,088.84557 ARK</Label>
 
-				<span className="ml-2 text-theme-neutral-500">50.00 USD</span>
+				<span className="ml-2 text-theme-neutral-500">23,000.00 USD</span>
 			</TransactionDetail>
 
 			<TransactionDetail label={t("TRANSACTION.TRANSACTION_FEE")}>0.09812015 ARK</TransactionDetail>
+
+			<TransactionDetail label={t("TRANSACTION.SMARTBRIDGE")}>
+				<div className="flex justify-between">
+					Hello!
+					<Icon name="Smartbridge" width={20} height={20} />
+				</div>
+			</TransactionDetail>
 
 			<TransactionDetail label={t("TRANSACTION.TIMESTAMP")}>14.04.2020 21:42:40</TransactionDetail>
 
@@ -84,8 +102,8 @@ export const DelegateRegistrationDetail = (props: DelegateRegistrationDetailProp
 	);
 };
 
-DelegateRegistrationDetail.defaultProps = {
+MultiPaymentDetail.defaultProps = {
 	isOpen: false,
 };
 
-DelegateRegistrationDetail.displayName = "DelegateRegistrationDetail";
+MultiPaymentDetail.displayName = "MultiPaymentDetail";
