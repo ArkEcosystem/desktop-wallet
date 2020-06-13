@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WalletUpdate should not render if not open 1`] = `<DocumentFragment />`;
+
+exports[`WalletUpdate should render a modal 1`] = `
+<DocumentFragment>
+  <div
+    class="fixed inset-0 z-10 bg-black opacity-50"
+    data-testid="modal__overlay"
+  />
+  <div
+    class="fixed left-0 right-0 z-10 flex flex-col max-w-2xl px-16 pt-6 pb-8 mx-auto mt-24 rounded-xl bg-theme-background"
+    data-testid="modal__inner"
+  >
+    <div
+      class="absolute top-0 right-0 mt-4 mr-4"
+    >
+      <button
+        class="sc-AxjAm jZZsoN"
+        color="neutral"
+        data-testid="modal__close-btn"
+        type="button"
+      >
+        <div
+          class="sc-AxhUy gKrfcW"
+          height="10"
+          width="10"
+        >
+          <svg>
+            cross-slim.svg
+          </svg>
+        </div>
+      </button>
+    </div>
+    <div
+      class="py-4"
+    >
+      <h2>
+        Wallet Update 3.0.7
+      </h2>
+      <div
+        class="flex-1"
+      >
+        <svg
+          class="my-10"
+        >
+          wallet-update.svg
+        </svg>
+        <div
+          class="container"
+        >
+          <div
+            class="mb-6 text-center"
+          >
+            <p
+              class="text-sm text-theme-neutral-dark md:text-base"
+            >
+              We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.
+            </p>
+          </div>
+          <div
+            class="flex flex-col justify-center sm:flex-row"
+          >
+            <button
+              class="sc-AxjAm gYunbo mr-2"
+              color="primary"
+              data-testid="wallet-update__update-button"
+              type="button"
+            >
+              Update Now
+            </button>
+            <button
+              class="sc-AxjAm GWdpI mt-2 sm:mt-0"
+              color="primary"
+              data-testid="wallet-update__cancel-button"
+              type="button"
+            >
+              Update Later
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
