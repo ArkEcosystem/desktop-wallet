@@ -44,7 +44,10 @@ jobs:
               run: yarn install --frozen-lockfile
 
             - name: Format
-              run: ./node_modules/rustywind/bin/rustywind --write src
+              run: |
+                  export PATH="$(yarn global bin):$PATH"
+                  yarn global add rustywind
+                  rustywind --write src
 
             - name: Update Snapshots
               run: yarn test --update-snapshot
