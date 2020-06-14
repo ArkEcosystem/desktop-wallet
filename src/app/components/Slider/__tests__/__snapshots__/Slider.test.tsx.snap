@@ -3,11 +3,11 @@
 exports[`Slider should render 1`] = `
 <div>
   <div
-    class="swiper-container swiper-container-initialized swiper-container-horizontal swiper-container-multirow swiper-container-multirow-column"
-    style="height: 468px;"
+    class="swiper-container swiper-container-initialized swiper-container-horizontal"
+    style="height: 234px;"
   >
     <div
-      class="swiper-wrapper"
+      class="swiper-wrapper h-full"
       style="webkit-transition-duration: 0ms; transition-duration: 0ms; webkit-transform: translate3d(NaNpx, 0px, 0px); transform: translate3d(NaNpx, 0px, 0px);"
     >
       <div
@@ -19,6 +19,9 @@ exports[`Slider should render 1`] = `
         </div>
       </div>
     </div>
+    <div
+      class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"
+    />
     <span
       aria-atomic="true"
       aria-live="assertive"
@@ -31,11 +34,11 @@ exports[`Slider should render 1`] = `
 exports[`Slider should render empty rows if template not provided 1`] = `
 <div>
   <div
-    class="swiper-container swiper-container-initialized swiper-container-horizontal swiper-container-multirow swiper-container-multirow-column"
-    style="height: 468px;"
+    class="swiper-container swiper-container-initialized swiper-container-horizontal"
+    style="height: 234px;"
   >
     <div
-      class="swiper-wrapper"
+      class="swiper-wrapper h-full"
       style="webkit-transition-duration: 0ms; transition-duration: 0ms; webkit-transform: translate3d(NaNpx, 0px, 0px); transform: translate3d(NaNpx, 0px, 0px);"
     >
       <div
@@ -45,6 +48,9 @@ exports[`Slider should render empty rows if template not provided 1`] = `
         <div />
       </div>
     </div>
+    <div
+      class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"
+    />
     <span
       aria-atomic="true"
       aria-live="assertive"
@@ -57,11 +63,11 @@ exports[`Slider should render empty rows if template not provided 1`] = `
 exports[`Slider should render pagination 1`] = `
 <div>
   <div
-    class="swiper-container swiper-container-initialized swiper-container-horizontal swiper-container-multirow swiper-container-multirow-column"
-    style="height: 468px;"
+    class="swiper-container swiper-container-initialized swiper-container-horizontal"
+    style="height: 234px;"
   >
     <div
-      class="swiper-wrapper"
+      class="swiper-wrapper h-full"
       style="webkit-transition-duration: 0ms; transition-duration: 0ms; webkit-transform: translate3d(NaNpx, 0px, 0px); transform: translate3d(NaNpx, 0px, 0px);"
     >
       <div
