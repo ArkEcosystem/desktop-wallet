@@ -5,8 +5,8 @@ import { Address } from "app/components/Address";
 import { Dropdown } from "../Dropdown";
 
 type WalletListItemProps = {
-	coin: string;
-	coinClassName?: string;
+	coinIcon: string;
+	coinClass?: string;
 	avatarId?: string;
 	address?: string;
 	walletName?: string;
@@ -18,8 +18,8 @@ type WalletListItemProps = {
 };
 
 export const WalletListItem = ({
-	coin,
-	coinClassName,
+	coinIcon,
+	coinClass,
 	avatarId,
 	address,
 	walletName,
@@ -41,13 +41,13 @@ export const WalletListItem = ({
 	return (
 		<tr className="border-b border-theme-neutral-200">
 			<td className="py-4 mt-1">
-				<Circle className={coinClassName}>
-					<Icon name={coin}></Icon>
+				<Circle className={coinClass}>
+					<Icon name={coinIcon}></Icon>
 				</Circle>
 				<Circle avatarId={avatarId}></Circle>
 			</td>
 			<td className="py-1">
-				<Address walletName={walletName} address={address}></Address>
+				<Address walletName={walletName} address={address} size="small" maxChars={22}></Address>
 			</td>
 			<td className="py-1 text-sm font-bold">
 				{walletTypeIcons &&
