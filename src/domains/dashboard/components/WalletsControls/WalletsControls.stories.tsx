@@ -2,7 +2,7 @@ import React from "react";
 import { WalletsControls } from "./WalletsControls";
 
 export default {
-	title: "Wallets / Components / WalletsControls",
+	title: "Dashboard / Components / WalletsControls",
 };
 
 export const Default = () => {
