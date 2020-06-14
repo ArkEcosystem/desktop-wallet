@@ -1,6 +1,6 @@
 import React from "react";
 import { styled } from "twin.macro";
-import { getStyles } from "./style";
+import { getStyles } from "./Checkbox.styles";
 
 type CheckboxProps = {
 	color?: "primary" | "success" | "danger" | "warning";
