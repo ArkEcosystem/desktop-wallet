@@ -1,5 +1,4 @@
 export const defaultTableStyle = `
-	padding: 1rem;
 
 	table {
 		margin: 0;
