@@ -40,10 +40,10 @@ const getSize = (size: string): any => {
 	switch (size) {
 		case "small":
 			return tw`w-5 h-5`;
-		case "default":
-			return tw`w-8 h-8`;
 		case "large":
 			return tw`w-12 h-12`;
+		default:
+			return tw`w-8 h-8`;
 	}
 };
 
