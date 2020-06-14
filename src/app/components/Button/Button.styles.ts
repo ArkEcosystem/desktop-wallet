@@ -1,10 +1,10 @@
 import tw, { css } from "twin.macro";
 
 const baseStyle = [
-	tw`font-semibold text-center transition-all duration-100 ease-linear rounded focus:outline-none focus:shadow-outline`,
+	tw`focus:outline-none focus:shadow-outline font-semibold text-center transition-all duration-100 ease-linear rounded`,
 	css`
 		&:disabled {
-			${tw`cursor-not-allowed bg-theme-neutral-light text-theme-neutral`}
+			${tw`bg-theme-neutral-light text-theme-neutral cursor-not-allowed`}
 		}
 	`,
 ];
@@ -52,12 +52,12 @@ const getSize = (size: string): any => {
 	switch (size) {
 		case "small":
 			return tw`px-2 py-1 text-sm`;
-		case "default":
-			return tw`px-4 py-2 text-base`;
 		case "large":
 			return tw`px-5 py-3 text-lg`;
 		case "icon":
 			return tw`p-3`;
+		default:
+			return tw`px-4 py-2 text-base`;
 	}
 };
 

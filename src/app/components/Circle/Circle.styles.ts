@@ -1,7 +1,7 @@
 import tw, { css } from "twin.macro";
 
 const defaultStyle = (noShadow: boolean) => [
-	tw`rounded-full inline-flex items-center justify-center border-2 align-middle`,
+	tw`inline-flex items-center justify-center align-middle border-2 rounded-full`,
 	!noShadow &&
 		css`
 			& {
@@ -13,9 +13,9 @@ const defaultStyle = (noShadow: boolean) => [
 const getSize = (size: string): any => {
 	switch (size) {
 		case "small":
-			return tw`w-8 h-8 text-sm px-2 py-1`;
-		case "default":
-			return tw`w-10 h-10 text-base px-4 py-2`;
+			return tw`w-8 h-8 px-2 py-1 text-sm`;
+		default:
+			return tw`w-10 h-10 px-4 py-2 text-base`;
 	}
 };
 
