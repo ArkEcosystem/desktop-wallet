@@ -8,11 +8,14 @@ const Track = styled.div`
 `;
 
 const TrackFilled = styled.div`
-	${tw`h-1 w-full rounded self-center`}
+	${tw`p-0 border-0 h-1 w-full rounded self-center`}
 `;
 
 const Thumb = styled.div`
-	${tw`w-4 h-4 rounded-full bg-theme-background border-3 border-theme-primary focus:outline-none focus:shadow-outline`}
+	&:active {
+		${tw`bg-theme-primary`}
+	}
+	${tw`m-0 transition-colors duration-100 w-4 h-4 rounded-full bg-theme-background border-3 border-theme-primary focus:outline-none focus:shadow-outline`}
 `;
 
 type Props = {
