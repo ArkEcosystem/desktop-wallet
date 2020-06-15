@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CircularProgressBar should render 1`] = `
+<DocumentFragment>
+  <svg
+    height="130"
+    viewBox="0 0 130 130"
+    width="130"
+  >
+    <circle
+      cx="65"
+      cy="65"
+      fill="transparent"
+      r="60"
+      stroke="var(--theme-color-success-200)"
+      stroke-width="10"
+    />
+    <circle
+      cx="65"
+      cy="65"
+      fill="transparent"
+      r="60"
+      stroke="var(--theme-color-success-600)"
+      stroke-dasharray="376.99111843077515"
+      stroke-dashoffset="188.49555921538757"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="10"
+      transform="rotate(-90 65 65)"
+    />
+    <text
+      data-testid="circular-progress-bar__percentage"
+      dy="0.3em"
+      fill="var(--theme-color-success-600)"
+      font-size="2rem"
+      font-weight="600"
+      text-anchor="middle"
+      x="50%"
+      y="50%"
+    >
+      50%
+    </text>
+  </svg>
+</DocumentFragment>
+`;
