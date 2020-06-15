@@ -14,6 +14,8 @@ const getSize = (size: string): any => {
 	switch (size) {
 		case "small":
 			return tw`w-8 h-8 px-2 py-1 text-sm`;
+		case "large":
+			return tw`w-11 h-11 px-2 py-1 text-sm`;
 		default:
 			return tw`w-10 h-10 px-4 py-2 text-base`;
 	}
