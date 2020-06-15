@@ -134,7 +134,7 @@ exports[`Wallets should render 1`] = `
         style="height: 546px;"
       >
         <div
-          class="swiper-wrapper"
+          class="h-full swiper-wrapper"
           style="webkit-transition-duration: 0ms; transition-duration: 0ms; webkit-transform: translate3d(NaNpx, 0px, 0px); transform: translate3d(NaNpx, 0px, 0px);"
         >
           <div
@@ -1680,10 +1680,10 @@ exports[`Wallets should render with empty wallets list 1`] = `
     >
       <div
         class="swiper-container swiper-container-initialized swiper-container-horizontal swiper-container-multirow swiper-container-multirow-column"
-        style="height: 546px;"
+        style="height: 273px;"
       >
         <div
-          class="swiper-wrapper"
+          class="h-full swiper-wrapper"
           style="webkit-transition-duration: 0ms; transition-duration: 0ms; webkit-transform: translate3d(NaNpx, 0px, 0px); transform: translate3d(NaNpx, 0px, 0px);"
         >
           <div
@@ -1835,6 +1835,9 @@ exports[`Wallets should render with empty wallets list 1`] = `
             </div>
           </div>
         </div>
+        <div
+          class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"
+        />
         <span
           aria-atomic="true"
           aria-live="assertive"
@@ -1977,7 +1980,7 @@ exports[`Wallets should render with list view enabled as default 1`] = `
     >
       <div>
         <div
-          class="sc-AxirZ jPcsYg"
+          class="sc-AxirZ TRNdQ"
           role="table"
         >
           <table
@@ -3618,7 +3621,7 @@ exports[`Wallets should render with list view enabled as default and empty walle
     >
       <div>
         <div
-          class="sc-AxirZ jPcsYg"
+          class="sc-AxirZ TRNdQ"
           role="table"
         >
           <table
@@ -3927,7 +3930,7 @@ exports[`Wallets should render with list view enabled as default and empty walle
     >
       <div>
         <div
-          class="sc-AxirZ jPcsYg"
+          class="sc-AxirZ TRNdQ"
           role="table"
         >
           <table
