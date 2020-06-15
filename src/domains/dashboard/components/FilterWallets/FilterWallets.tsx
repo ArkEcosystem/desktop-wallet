@@ -43,7 +43,7 @@ export const FilterWallets = ({
 	};
 
 	return (
-		<div>
+		<div className="text-left">
 			<div className="mb-4">
 				<div className="mb-1 text-sm text-theme-neutral-800">Filter Network</div>
 				<div className="text-xs text-theme-neutral-500">Select the types of networks</div>
