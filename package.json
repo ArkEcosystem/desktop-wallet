@@ -21,6 +21,7 @@
 	"homepage": "./",
 	"main": "src/electron/index.js",
 	"scripts": {
+		"electron-rebuild": "electron-rebuild .",
 		"dev": "concurrently \"BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electron .\"",
 		"postinstall": "electron-builder install-app-deps",
 		"build": "react-app-rewired build",
