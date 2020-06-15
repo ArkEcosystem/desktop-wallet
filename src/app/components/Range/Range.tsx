@@ -29,7 +29,7 @@ type Props = {
 
 export const Range = ({ values, min, max, step, onChange, colors }: Props) => {
 	return (
-		<div data-testid="Range" className="flex justify-center flex-wrap">
+		<div data-testid="Range" className="flex flex-wrap justify-center">
 			<ReactRange
 				values={values}
 				step={step}
