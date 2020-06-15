@@ -16,24 +16,13 @@ const baseStyle = [
 const getColor = (color: string): any => {
 	const colorBase = `var(--theme-color-${color})`;
 
-	switch (color) {
-		case "primary":
-			return css`
-				border-left-color: ${colorBase};
-			`;
-		case "success":
-			return css`
-				border-left-color: ${colorBase};
-			`;
-		case "danger":
-			return css`
-				border-left-color: ${colorBase};
-			`;
-		case "warning":
-			return css`
-				border-left-color: ${colorBase};
-			`;
+	if (!["primary", "success", "danger", "warning"].includes(color)) {
+		throw new Error(`Failed to find a color for "${color}"`);
 	}
+
+	return css`
+		border-left-color: ${colorBase};
+	`;
 };
 
 const getSize = (size: string): any => {
