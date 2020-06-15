@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 // Contexts
 import { EnvironmentContext } from "app/contexts";
@@ -13,21 +13,26 @@ import { ProfileCard } from "domains/profile/components/ProfileCard";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-type WelcomeProps = {
-	profiles: Array<any>;
-};
-
 const WelcomeBanner = images.profile.pages.welcome.WelcomeBanner;
 
-const Welcome = ({ profiles }: WelcomeProps) => {
+const Welcome = () => {
 	const profileCardActions = [
 		{ label: "Setting", value: "setting" },
 		{ label: "Delete", value: "delete" },
 	];
-
+	const { env }: any = useContext(EnvironmentContext);
 	const { t } = useTranslation();
-	const env = useContext(EnvironmentContext);
-	console.log({ env });
+
+	const [profiles, setProfiles] = useState([]);
+
+	const loadProfiles = async () => {
+		const profiles = await env.profiles().all();
+		setProfiles(profiles);
+	};
+
+	useEffect(() => {
+		loadProfiles();
+	});
 
 	return (
 		<div className="w-full h-full">
@@ -48,7 +53,7 @@ const Welcome = ({ profiles }: WelcomeProps) => {
 							</p>
 
 							<div className="mt-6 mb-8">
-								{profiles.map((profile) => (
+								{profiles.map((profile: any) => (
 									<ProfileCard {...profile} key={profile.id} actions={profileCardActions} />
 								))}
 							</div>
