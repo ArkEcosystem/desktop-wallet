@@ -1,3 +1,8 @@
+import React, { useContext } from "react";
+import { useTranslation } from "react-i18next";
+// Contexts
+import { EnvironmentContext } from "app/contexts";
+// Assets
 import { images } from "app/assets/images";
 // UI Elements
 import { Button } from "app/components/Button";
@@ -21,6 +26,8 @@ const Welcome = ({ profiles }: WelcomeProps) => {
 	];
 
 	const { t } = useTranslation();
+	const env = useContext(EnvironmentContext);
+	console.log({ env });
 
 	return (
 		<div className="w-full h-full">
