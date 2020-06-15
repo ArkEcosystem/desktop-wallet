@@ -4,7 +4,7 @@ exports[`RadioButton should render 1`] = `
 <DocumentFragment>
   <button
     aria-checked="true"
-    class="sc-AxjAm gXajyD transition-colors duration-300 py-3 px-5 focus:outline-none relative border-b-3 border-transparent"
+    class="sc-AxjAm gXajyD relative px-5 py-3 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
     data-testid="RadioButton"
     role="radio"
   >
@@ -12,7 +12,7 @@ exports[`RadioButton should render 1`] = `
   </button>
   <button
     aria-checked="false"
-    class="sc-AxjAm gXajyD transition-colors duration-300 py-3 px-5 focus:outline-none relative border-b-3 border-transparent"
+    class="sc-AxjAm gXajyD relative px-5 py-3 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
     data-testid="RadioButton"
     role="radio"
   >
@@ -25,7 +25,7 @@ exports[`RadioButton should render 1`] = `
 exports[`RadioButtonGroup should render 1`] = `
 <DocumentFragment>
   <div
-    class="overflow-hidden rounded border border-theme-neutral-300 shadow-sm inline-flex items-center"
+    class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300 shadow-sm"
     data-testid="RadioButtonGroup"
     role="radiogroup"
   />

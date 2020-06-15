@@ -10,7 +10,7 @@ export const RadioButtonGroup = ({ children }: GroupProps) => {
 		<div
 			data-testid="RadioButtonGroup"
 			role="radiogroup"
-			className="overflow-hidden rounded border border-theme-neutral-300 shadow-sm inline-flex flex-shrink-0 items-center"
+			className="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300 shadow-sm"
 		>
 			{children}
 		</div>
@@ -44,7 +44,7 @@ export const RadioButton = ({ value, isValueChecked, setCheckedValue, children }
 			role="radio"
 			aria-checked={isChecked}
 			onClick={() => setCheckedValue(value)}
-			className="transition-colors duration-300 py-3 px-5 focus:outline-none relative border-b-3 border-transparent"
+			className="relative px-5 py-3 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
 		>
 			{children}
 		</RadioButtonStyled>
