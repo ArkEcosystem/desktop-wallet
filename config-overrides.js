@@ -33,8 +33,6 @@ module.exports = override(
 			use: "node-loader",
 		});
 
-		console.log(config);
-
 		return overridedConfig;
 	},
 );
