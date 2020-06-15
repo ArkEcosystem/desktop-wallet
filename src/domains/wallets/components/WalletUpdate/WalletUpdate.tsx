@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 
 // Components
 import { Button } from "app/components/Button";
-import { CircleProgressBar } from "app/components/CircleProgressBar";
+import { CircularProgressBar } from "app/components/CircularProgressBar";
 import { Modal } from "app/components/Modal";
 
 // Assets
@@ -79,8 +79,8 @@ export const WalletUpdate = ({
 								<p className="text-sm font-bold text-theme-neutral-dark">154 KB / 154 KB</p>
 							</div>
 							<div className="flex-1">
-								<div className="w-full mx-10">
-									<CircleProgressBar percentage={50} size={45} />
+								<div className="flex justify-center">
+									<CircularProgressBar value={78} size={50} strokeWidth={5} fontSize={0.8} />
 								</div>
 							</div>
 						</div>
