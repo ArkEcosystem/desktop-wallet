@@ -172,6 +172,15 @@ exports[`CreateWallet should render 1`] = `
             class="flex justify-end mt-6 space-x-2"
           >
             <button
+              class="sc-AxmLO cUFKdA"
+              color="primary"
+              data-testid="CreateWallet__back-button"
+              disabled=""
+              type="button"
+            >
+              Back
+            </button>
+            <button
               class="sc-AxmLO Nlvyk"
               color="primary"
               data-testid="CreateWallet__continue-button"

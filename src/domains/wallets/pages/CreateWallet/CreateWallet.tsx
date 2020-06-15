@@ -248,11 +248,14 @@ export const CreateWallet = ({ networks, mnemonic, onSubmit, onCopy, onDownload,
 						</TabPanel>
 
 						<div className="flex justify-end mt-6 space-x-2">
-							{activeTab > 1 && (
-								<Button data-testid="CreateWallet__back-button" variant="plain" onClick={handleBack}>
-									Back
-								</Button>
-							)}
+							<Button
+								disabled={activeTab === 1}
+								data-testid="CreateWallet__back-button"
+								variant="plain"
+								onClick={handleBack}
+							>
+								Back
+							</Button>
 
 							{activeTab < 4 && (
 								<Button
