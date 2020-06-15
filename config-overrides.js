@@ -7,9 +7,12 @@ module.exports = override(
 		require("autoprefixer"),
 	]),
 	(config) => {
-		config.node = {
-			fs: "empty",
-		};
+		(config.target = "electron-renderer"),
+			(config.node = {
+				net: "empty",
+				dns: "empty",
+				tls: "empty",
+			});
 		return config;
 	},
 );
