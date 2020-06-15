@@ -40,15 +40,15 @@ export const TransactionListItem = ({
 
 	return (
 		<tr className="border-b border-theme-neutral-200">
-			<td className="w-40 py-1 text-sm text-theme-neutral-600"> {date} </td>
-			<td className="w-24 py-4 mt-1">
+			<td className="w-48 py-1 text-sm text-theme-neutral-600"> {date} </td>
+			<td className="w-32 py-4 mt-1">
 				<Circle className={`${iconClasses[type]} -mr-1`}>
 					<Icon name={iconName[type]} width={40} height={40}></Icon>
 				</Circle>
 				<Circle avatarId={avatarId}></Circle>
 			</td>
 			<td className="w-56 py-1">
-				<Address walletName={walletName} address={address}></Address>
+				<Address walletName={walletName} address={address} maxChars={24} size="small"></Address>
 			</td>
 			<td className="py-1 text-sm text-right">
 				<Label color={amountLabelColor[type]} size="small">

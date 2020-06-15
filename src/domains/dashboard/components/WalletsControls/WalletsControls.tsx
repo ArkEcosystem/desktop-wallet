@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { Button } from "../Button";
-import { Icon } from "../Icon";
-import { Divider } from "../Divider";
-import { Dropdown } from "../Dropdown";
-import { FilterWallets, FilterWalletsProps } from "../FilterWallets";
+import { Button } from "app/components/Button";
+import { Icon } from "app/components//Icon";
+import { Divider } from "app/components/Divider";
+import { Dropdown } from "app/components/Dropdown";
+import { FilterWallets, FilterWalletsProps } from "domains/dashboard/components/FilterWallets";
 
 type WalletsControlsProps = {
 	filterProperties?: FilterWalletsProps;
@@ -24,8 +24,9 @@ export const WalletsControls = ({
 }: WalletsControlsProps) => {
 	const [walletsViewType, setWalletsViewType] = useState(viewType);
 
-	const gridIconColorClass = walletsViewType === "grid" ? "text-theme-danger-400" : "text-theme-primary-400";
-	const listIconColorClass = walletsViewType === "list" ? "text-theme-danger-400" : "text-theme-primary-400";
+	const getViewTypeIconClass = (viewType: any) => {
+		return walletsViewType === viewType ? "text-theme-danger-400" : "text-theme-primary-400";
+	};
 
 	const onClickGridView = () => {
 		if (walletsViewType === "grid") return;
@@ -45,14 +46,14 @@ export const WalletsControls = ({
 		<div>
 			<div
 				data-testid="controls__grid"
-				className={`mr-4 px-1 inline-block cursor-pointer ${gridIconColorClass}`}
+				className={`mr-4 px-1 inline-block cursor-pointer ${getViewTypeIconClass("grid")}`}
 				onClick={onClickGridView}
 			>
 				<Icon name="Grid" width={20} height={20}></Icon>
 			</div>
 			<div
 				data-testid="controls__list"
-				className={`mr-6 px-1 inline-block cursor-pointer ${listIconColorClass}`}
+				className={`mr-6 px-1 inline-block cursor-pointer ${getViewTypeIconClass("list")}`}
 				onClick={onClickListview}
 			>
 				<Icon name="List" width={20} height={20}></Icon>
