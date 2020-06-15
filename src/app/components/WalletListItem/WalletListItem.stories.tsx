@@ -1,8 +1,5 @@
 import React from "react";
 import { Table } from "app/components/Table";
-import { Circle } from "app/components/Circle";
-import { Icon } from "app/components/Icon";
-import { Address } from "app/components/Address";
 import { WalletListItem } from "./WalletListItem";
 
 export default {
