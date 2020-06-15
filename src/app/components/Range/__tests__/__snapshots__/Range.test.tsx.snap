@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Range should render 1`] = `
+<DocumentFragment>
+  <div
+    class="flex flex-wrap justify-center"
+    data-testid="Range"
+  >
+    <div
+      class="sc-AxjAm gVIMxU"
+      data-testid="Range__track"
+      style="transform: scale(1); cursor: pointer;"
+    >
+      <div
+        class="sc-AxirZ iCiXDi"
+        data-testid="Range__track__filled"
+      >
+        <div
+          aria-valuemax="100"
+          aria-valuemin="1"
+          aria-valuenow="10"
+          class="sc-AxiKw jKNfZI"
+          data-testid="Range__thumb"
+          draggable="false"
+          role="slider"
+          style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
+          tabindex="0"
+        />
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
