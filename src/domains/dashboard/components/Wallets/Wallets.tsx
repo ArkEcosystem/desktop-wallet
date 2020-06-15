@@ -72,7 +72,7 @@ export const Wallets = ({
 	};
 
 	return (
-		<div className="bg-theme-background p-10">
+		<div className="p-10 bg-theme-background">
 			<div className="flex w-full pb-4">
 				<h2 className="w-2/4 mt-1">{title}</h2>
 				<div className="w-2/4 text-right">

@@ -50,7 +50,7 @@ export const WalletCard = ({
 		return (
 			<div className={`w-64 inline-block ${className}`}>
 				<Card>
-					<div className="py-2 px-1">
+					<div className="px-1 py-2">
 						<div className="mt-1">
 							<Circle className="-mr-2 border-theme-primary-contrast"></Circle>
 							<Circle className="border-theme-primary-contrast"></Circle>
@@ -67,7 +67,7 @@ export const WalletCard = ({
 	return (
 		<div className={`w-64 inline-block ${className}`}>
 			<Card>
-				<div className="py-2 px-1 relative">
+				<div className="relative px-1 py-2">
 					<div className="-mr-2">
 						<Dropdown options={actions} onSelect={onSelect}></Dropdown>
 					</div>
