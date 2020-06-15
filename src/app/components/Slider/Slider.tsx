@@ -49,7 +49,7 @@ export const Slider = ({ children, data, options }: SliderProps) => {
 
 	return (
 		<div className="swiper-container" style={{ height: `${getContainerHeight()}px` }}>
-			<div className="swiper-wrapper h-full">
+			<div className="h-full swiper-wrapper">
 				{data.map((item: any, index: number) => {
 					return (
 						<div className="swiper-slide" key={index} style={{ height: `${swiperOptions.slideHeight}px` }}>
