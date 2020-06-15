@@ -27,12 +27,13 @@ const Welcome = () => {
 
 	const loadProfiles = async () => {
 		const profiles = await env.profiles().all();
+
 		setProfiles(profiles);
 	};
 
 	useEffect(() => {
 		loadProfiles();
-	});
+	}, []);
 
 	return (
 		<div className="w-full h-full">
