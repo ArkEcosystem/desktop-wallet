@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RadioButton should render 1`] = `
+<DocumentFragment>
+  <button
+    aria-checked="true"
+    class="sc-AxjAm gXajyD relative px-5 py-3 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+    data-testid="RadioButton"
+    role="radio"
+  >
+    Test 1
+  </button>
+  <button
+    aria-checked="false"
+    class="sc-AxjAm gXajyD relative px-5 py-3 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+    data-testid="RadioButton"
+    role="radio"
+  >
+    Test 2
+  </button>
+  ,
+</DocumentFragment>
+`;
+
+exports[`RadioButtonGroup should render 1`] = `
+<DocumentFragment>
+  <div
+    class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300 shadow-sm"
+    data-testid="RadioButtonGroup"
+    role="radiogroup"
+  />
+</DocumentFragment>
+`;
