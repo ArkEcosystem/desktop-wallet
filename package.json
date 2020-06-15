@@ -23,7 +23,7 @@
 	"scripts": {
 		"electron-rebuild": "electron-rebuild .",
 		"dev": "concurrently \"BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electron .\"",
-		"postinstall": "electron-builder install-app-deps",
+		"postinstall": "electron-builder install-app-deps && npm rebuild",
 		"build": "react-app-rewired build",
 		"format": "yarn lint && yarn prettier",
 		"lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
