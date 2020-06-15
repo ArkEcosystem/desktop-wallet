@@ -1,6 +1,6 @@
 const path = require("path");
 const { override, addPostcssPlugins } = require("customize-cra");
-const { dependencies } = require("../package.json");
+const { dependencies } = require("./package.json");
 
 const customConfig = {
 	target: "electron-renderer",
