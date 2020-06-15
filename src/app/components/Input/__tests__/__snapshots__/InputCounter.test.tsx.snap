@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InputCounter should render 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-AxhUy fNzmXy"
+  >
+    <input
+      class="sc-AxjAm bcybyt overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-18"
+      data-testid="InputCounter__input"
+      maxlength="10"
+      type="text"
+    />
+    <div
+      class="sc-AxirZ sc-AxhCb egOFvk pointer-events-none text-sm px-2 text-theme-neutral"
+      data-testid="InputCounter__counter"
+    >
+      0/10
+    </div>
+  </div>
+</DocumentFragment>
+`;
