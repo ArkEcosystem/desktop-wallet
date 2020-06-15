@@ -125,6 +125,18 @@ describe("Dropdown", () => {
 
 		expect(container.querySelectorAll("ul").length).toEqual(0);
 	});
+
+	it("should render with custom toggle content as react element", () => {
+		const { container } = render(<Dropdown toggleContent={<div>custom toggle</div>}></Dropdown>);
+		expect(container).toMatchSnapshot();
+	});
+
+	it("should render with custom toggle content as function", () => {
+		const { container } = render(
+			<Dropdown toggleContent={(isOpen) => <div>Dropdown is open: {isOpen}</div>}></Dropdown>,
+		);
+		expect(container).toMatchSnapshot();
+	});
 });
 
 describe("ClickOutside Hook", () => {
