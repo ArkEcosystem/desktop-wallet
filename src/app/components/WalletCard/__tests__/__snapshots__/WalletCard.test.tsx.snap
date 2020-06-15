@@ -8,41 +8,51 @@ exports[`Formatted Address should render 1`] = `
     <div
       class="sc-AxjAm hQFgsK"
     >
-      <div>
+      <div
+        class="relative px-1 py-2"
+      >
         <div
-          class="relative"
+          class="-mr-2"
         >
-          <button
-            class="float-right outline-none focus:outline-none"
-            data-testid="dropdown__toggle"
+          <div
+            class="relative"
           >
-            <div
-              class="sc-AxirZ eEbZjj"
-              height="20"
-              width="20"
+            <button
+              class="float-right outline-none focus:outline-none"
+              data-testid="dropdown__toggle"
             >
-              <svg>
-                settings.svg
-              </svg>
-            </div>
-          </button>
+              <div
+                class="sc-AxirZ eEbZjj"
+                height="20"
+                width="20"
+              >
+                <svg>
+                  settings.svg
+                </svg>
+              </div>
+            </button>
+          </div>
         </div>
-        <div />
-      </div>
-      <div>
         <div
-          class="sc-AxiKw fLDWFV border-theme-primary-contrast -mr-2 bg-theme-background undefined"
+          class="absolute right-3"
         />
         <div
-          class="sc-AxiKw fLDWFV border-theme-primary-contrast"
+          class="mt-1"
+        >
+          <div
+            class="sc-AxiKw fLDWFV border-theme-primary-contrast -mr-2 undefined"
+          />
+          <div
+            class="sc-AxiKw fLDWFV border-theme-primary-contrast"
+          />
+        </div>
+        <div
+          class="mt-4 truncate max-w-12"
+        />
+        <div
+          class="font-bold text-theme-neutral-800"
         />
       </div>
-      <div
-        class="mt-4 truncate max-w-12"
-      />
-      <div
-        class="font-bold text-theme-neutral-800"
-      />
     </div>
   </div>
 </div>
@@ -56,23 +66,29 @@ exports[`Formatted Address should render blank 1`] = `
     <div
       class="sc-AxjAm hQFgsK"
     >
-      <div>
-        <div
-          class="sc-AxiKw fLDWFV -mr-2 bg-theme-background border-theme-primary-contrast"
-        />
-        <div
-          class="sc-AxiKw fLDWFV border-theme-primary-contrast bg-theme-background"
-        />
-      </div>
       <div
-        class="mt-4 text-sm text-theme-primary-contrast"
+        class="px-1 py-2"
       >
-        New wallet
-      </div>
-      <div
-        class="mt-1 text-sm text-theme-primary-contrast"
-      >
-        Balance
+        <div
+          class="mt-1"
+        >
+          <div
+            class="sc-AxiKw fLDWFV -mr-2 border-theme-primary-contrast"
+          />
+          <div
+            class="sc-AxiKw fLDWFV border-theme-primary-contrast"
+          />
+        </div>
+        <div
+          class="mt-4 text-md text-theme-primary-contrast"
+        >
+          New wallet
+        </div>
+        <div
+          class="mt-1 text-md text-theme-primary-contrast"
+        >
+          Balance
+        </div>
       </div>
     </div>
   </div>
@@ -87,65 +103,75 @@ exports[`Formatted Address should render with wallet data 1`] = `
     <div
       class="sc-AxjAm hQFgsK"
     >
-      <div>
+      <div
+        class="relative px-1 py-2"
+      >
         <div
-          class="relative"
-        >
-          <button
-            class="float-right outline-none focus:outline-none"
-            data-testid="dropdown__toggle"
-          >
-            <div
-              class="sc-AxirZ eEbZjj"
-              height="20"
-              width="20"
-            >
-              <svg>
-                settings.svg
-              </svg>
-            </div>
-          </button>
-        </div>
-        <div />
-      </div>
-      <div>
-        <div
-          class="sc-AxiKw fLDWFV border-theme-primary-contrast -mr-2 bg-theme-background border-theme-warning-200"
+          class="-mr-2"
         >
           <div
-            class="sc-AxirZ hPsuTj"
-            height="16"
-            width="16"
+            class="relative"
+          >
+            <button
+              class="float-right outline-none focus:outline-none"
+              data-testid="dropdown__toggle"
+            >
+              <div
+                class="sc-AxirZ eEbZjj"
+                height="20"
+                width="20"
+              >
+                <svg>
+                  settings.svg
+                </svg>
+              </div>
+            </button>
+          </div>
+        </div>
+        <div
+          class="absolute right-3"
+        />
+        <div
+          class="mt-1"
+        >
+          <div
+            class="sc-AxiKw fLDWFV border-theme-primary-contrast -mr-2 border-theme-warning-200"
+          >
+            <div
+              class="sc-AxirZ hPsuTj"
+              height="16"
+              width="16"
+            />
+          </div>
+          <div
+            class="sc-AxiKw dmxJbI border-theme-primary-contrast"
           />
         </div>
         <div
-          class="sc-AxiKw dmxJbI border-theme-primary-contrast"
-        />
-      </div>
-      <div
-        class="mt-4 truncate max-w-12"
-      >
-        <div
-          class="inline-block truncate"
+          class="mt-4 truncate max-w-12"
         >
-          <span
-            class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-base"
-            data-testid="address__wallet-name"
+          <div
+            class="inline-block truncate"
           >
-            My wallet
-          </span>
-          <span
-            class="text-theme-neutral-400 font-semibold text-base"
-            data-testid="address__wallet-address"
-          >
-            ASuu...3kqT
-          </span>
+            <span
+              class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-base"
+              data-testid="address__wallet-name"
+            >
+              My wallet
+            </span>
+            <span
+              class="text-theme-neutral-400 font-semibold text-base"
+              data-testid="address__wallet-address"
+            >
+              ASuu...3kqT
+            </span>
+          </div>
         </div>
-      </div>
-      <div
-        class="font-bold text-theme-neutral-800"
-      >
-        100,000 BTC
+        <div
+          class="font-bold text-theme-neutral-800"
+        >
+          100,000 BTC
+        </div>
       </div>
     </div>
   </div>
@@ -160,65 +186,75 @@ exports[`Formatted Address should render with wallet data and optional icon 1`] 
     <div
       class="sc-AxjAm hQFgsK"
     >
-      <div>
+      <div
+        class="relative px-1 py-2"
+      >
         <div
-          class="relative"
-        >
-          <button
-            class="float-right outline-none focus:outline-none"
-            data-testid="dropdown__toggle"
-          >
-            <div
-              class="sc-AxirZ eEbZjj"
-              height="20"
-              width="20"
-            >
-              <svg>
-                settings.svg
-              </svg>
-            </div>
-          </button>
-        </div>
-        <div />
-      </div>
-      <div>
-        <div
-          class="sc-AxiKw fLDWFV border-theme-primary-contrast -mr-2 bg-theme-background border-theme-warning-200"
+          class="-mr-2"
         >
           <div
-            class="sc-AxirZ hPsuTj"
-            height="16"
-            width="16"
+            class="relative"
+          >
+            <button
+              class="float-right outline-none focus:outline-none"
+              data-testid="dropdown__toggle"
+            >
+              <div
+                class="sc-AxirZ eEbZjj"
+                height="20"
+                width="20"
+              >
+                <svg>
+                  settings.svg
+                </svg>
+              </div>
+            </button>
+          </div>
+        </div>
+        <div
+          class="absolute right-3"
+        />
+        <div
+          class="mt-1"
+        >
+          <div
+            class="sc-AxiKw fLDWFV border-theme-primary-contrast -mr-2 border-theme-warning-200"
+          >
+            <div
+              class="sc-AxirZ hPsuTj"
+              height="16"
+              width="16"
+            />
+          </div>
+          <div
+            class="sc-AxiKw dmxJbI border-theme-primary-contrast"
           />
         </div>
         <div
-          class="sc-AxiKw dmxJbI border-theme-primary-contrast"
-        />
-      </div>
-      <div
-        class="mt-4 truncate max-w-12"
-      >
-        <div
-          class="inline-block truncate"
+          class="mt-4 truncate max-w-12"
         >
-          <span
-            class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-base"
-            data-testid="address__wallet-name"
+          <div
+            class="inline-block truncate"
           >
-            My wallet
-          </span>
-          <span
-            class="text-theme-neutral-400 font-semibold text-base"
-            data-testid="address__wallet-address"
-          >
-            ASuu...3kqT
-          </span>
+            <span
+              class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-base"
+              data-testid="address__wallet-name"
+            >
+              My wallet
+            </span>
+            <span
+              class="text-theme-neutral-400 font-semibold text-base"
+              data-testid="address__wallet-address"
+            >
+              ASuu...3kqT
+            </span>
+          </div>
         </div>
-      </div>
-      <div
-        class="font-bold text-theme-neutral-800"
-      >
-        100,000 BTC
+        <div
+          class="font-bold text-theme-neutral-800"
+        >
+          100,000 BTC
+        </div>
       </div>
     </div>
   </div>
