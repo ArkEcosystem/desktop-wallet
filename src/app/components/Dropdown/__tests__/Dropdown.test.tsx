@@ -133,7 +133,7 @@ describe("Dropdown", () => {
 
 	it("should render with custom toggle content as function", () => {
 		const { container } = render(
-			<Dropdown toggleContent={(isOpen) => <div>Dropdown is open: {isOpen}</div>}></Dropdown>,
+			<Dropdown toggleContent={(isOpen: boolean) => <div>Dropdown is open: {isOpen}</div>}></Dropdown>,
 		);
 		expect(container).toMatchSnapshot();
 	});

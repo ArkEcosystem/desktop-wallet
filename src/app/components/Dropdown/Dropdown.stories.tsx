@@ -59,7 +59,7 @@ export const CustomToggleContent = () => {
 			Custom toggle html:
 			<div className="w-20 mt-10 ml-40">
 				<Dropdown
-					toggleContent={(isOpen) => <div>{isOpen ? "open" : "closed"}</div>}
+					toggleContent={(isOpen: boolean) => <div>{isOpen ? "open" : "closed"}</div>}
 					toggleIcon="Upload"
 					onSelect={(option: any) => console.log(option)}
 				>
