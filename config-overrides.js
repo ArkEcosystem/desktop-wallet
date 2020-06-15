@@ -1,4 +1,20 @@
+const path = require("path");
 const { override, addPostcssPlugins } = require("customize-cra");
+const { dependencies } = require("../package.json");
+
+const customConfig = {
+	target: "electron-renderer",
+	node: {
+		__dirname: process.env.NODE_ENV !== "production",
+		__filename: process.env.NODE_ENV !== "production",
+		net: "empty",
+		dns: "empty",
+		tls: "empty",
+	},
+	externals: {
+		"usb-detection": "commonjs usb-detection",
+	},
+};
 
 module.exports = override(
 	addPostcssPlugins([
@@ -7,12 +23,18 @@ module.exports = override(
 		require("autoprefixer"),
 	]),
 	(config) => {
-		(config.target = "electron-renderer"),
-			(config.node = {
-				net: "empty",
-				dns: "empty",
-				tls: "empty",
-			});
-		return config;
+		const overridedConfig = {
+			...config,
+			...customConfig,
+		};
+
+		overridedConfig.module.rules.push({
+			test: /\.node$/,
+			use: "node-loader",
+		});
+
+		console.log(config);
+
+		return overridedConfig;
 	},
 );
