@@ -54,7 +54,7 @@ export const Table = ({ children, data, columns }: TableProps) => {
 									<div className={`flex flex-inline align-top  ${column.className}`}>
 										<div className="mr-1">{column.render("Header")}</div>
 										<div
-											className="mt-1"
+											className="text-theme-color-neutral-500 mt-1"
 											data-testid={`table__${getSortIconName(
 												column.isSorted,
 												column.isSortedDesc,
