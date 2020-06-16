@@ -1,5 +1,6 @@
-import React from "react";
 import { boolean, text, withKnobs } from "@storybook/addon-knobs";
+import React from "react";
+
 import { ProfileCard } from "./ProfileCard";
 
 export default { title: "Profile / Components / Profile Card", decorators: [withKnobs] };

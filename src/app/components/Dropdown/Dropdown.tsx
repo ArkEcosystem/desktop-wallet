@@ -1,9 +1,9 @@
-import React, { useState, useRef, useEffect } from "react";
+import { Icon } from "app/components/Icon";
+import React, { useEffect, useRef, useState } from "react";
 import { styled } from "twin.macro";
 
-import { Icon } from "app/components/Icon";
+import { defaultClasses, defaultStyles } from "./Dropdown.styles";
 import { clickOutsideHandler } from "./hooks";
-import { defaultStyles, defaultClasses } from "./Dropdown.styles";
 
 export type Option = {
 	label: string;

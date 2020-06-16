@@ -1,6 +1,7 @@
+import { select, text, withKnobs } from "@storybook/addon-knobs";
 import React from "react";
+
 import { Alert } from "./Alert";
-import { withKnobs, select, text } from "@storybook/addon-knobs";
 
 export default {
 	title: "Basic / Alert",

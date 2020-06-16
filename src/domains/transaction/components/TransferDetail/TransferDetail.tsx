@@ -1,11 +1,11 @@
-import React from "react";
-import { useTranslation } from "react-i18next";
-// UI Elements
-import { Modal } from "app/components/Modal";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
 import { Label } from "app/components/Label";
+// UI Elements
+import { Modal } from "app/components/Modal";
 import { TransactionDetail } from "app/components/TransactionDetail";
+import React from "react";
+import { useTranslation } from "react-i18next";
 
 type TransferDetailProps = {
 	isOpen: boolean;

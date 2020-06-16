@@ -1,13 +1,11 @@
-import React from "react";
-import { render, fireEvent } from "@testing-library/react";
-import { I18nextProvider } from "react-i18next";
-
+import { fireEvent, render } from "@testing-library/react";
 import { i18n } from "app/i18n";
 import { translations as COMMON } from "app/i18n/common/i18n";
-
-import { WalletUpdate } from "./";
+import React from "react";
+import { I18nextProvider } from "react-i18next";
 
 import { translations as WALLETS } from "../../i18n";
+import { WalletUpdate } from "./";
 
 describe("WalletUpdate", () => {
 	it("should not render if not open", () => {

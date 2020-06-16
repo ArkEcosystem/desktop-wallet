@@ -1,7 +1,8 @@
+import { fireEvent, render } from "@testing-library/react";
+import { act, renderHook } from "@testing-library/react-hooks";
 import React from "react";
-import { render, fireEvent } from "@testing-library/react";
-import { renderHook, act } from "@testing-library/react-hooks";
-import { RadioButtonGroup, RadioButton, useRadioState } from "./index";
+
+import { RadioButton, RadioButtonGroup, useRadioState } from "./index";
 
 describe("RadioButtonGroup", () => {
 	it("should render", () => {

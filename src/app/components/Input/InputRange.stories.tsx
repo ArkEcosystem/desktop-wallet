@@ -1,4 +1,5 @@
 import React from "react";
+
 import { InputRange } from "./InputRange";
 
 export default { title: "Input / Input / InputRange" };

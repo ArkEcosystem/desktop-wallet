@@ -1,14 +1,12 @@
-import React from "react";
-import { useTranslation } from "react-i18next";
-
 import { images } from "app/assets/images";
-
 // UI Elements
 import { Button } from "app/components/Button";
 import { Divider } from "app/components/Divider";
 import { Icon } from "app/components/Icon";
 import { NavBar } from "app/components/NavBar";
 import { ProfileCard } from "domains/profile/components/ProfileCard";
+import React from "react";
+import { useTranslation } from "react-i18next";
 
 type WelcomeProps = {
 	profiles: Array<any>;

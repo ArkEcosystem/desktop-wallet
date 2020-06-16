@@ -1,6 +1,6 @@
-import React from "react";
 import { fireEvent, render } from "@testing-library/react";
 import { act } from "@testing-library/react-hooks";
+import React from "react";
 
 import { ProfileCard } from "./";
 

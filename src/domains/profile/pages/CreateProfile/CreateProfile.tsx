@@ -1,16 +1,15 @@
-import React from "react";
-import { useForm } from "react-hook-form";
-
 // UI Elements
 import { Button } from "app/components/Button";
 import { Divider } from "app/components/Divider";
-import { Form, FormLabel, FormField, FormHelperText } from "app/components/Form";
+import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { Input } from "app/components/Input";
 import { ListDivided } from "app/components/ListDivided";
 import { NavBar } from "app/components/NavBar";
 import { Select } from "app/components/Select";
 import { Toggle } from "app/components/Toggle";
+import React from "react";
+import { useForm } from "react-hook-form";
 
 type CreateProfileProps = {
 	onSubmit?: any;

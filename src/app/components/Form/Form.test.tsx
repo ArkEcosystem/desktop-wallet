@@ -1,8 +1,9 @@
+import { fireEvent, render } from "@testing-library/react";
+import { act, renderHook } from "@testing-library/react-hooks";
 import React from "react";
-import { render, fireEvent } from "@testing-library/react";
-import { Form } from "./Form";
 import { useForm } from "react-hook-form";
-import { renderHook, act } from "@testing-library/react-hooks";
+
+import { Form } from "./Form";
 
 describe("Form", () => {
 	it("should render with provider", async () => {

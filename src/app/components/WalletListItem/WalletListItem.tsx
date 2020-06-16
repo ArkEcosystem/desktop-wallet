@@ -1,7 +1,8 @@
-import React from "react";
+import { Address } from "app/components/Address";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
-import { Address } from "app/components/Address";
+import React from "react";
+
 import { Dropdown } from "../Dropdown";
 
 type WalletListItemProps = {

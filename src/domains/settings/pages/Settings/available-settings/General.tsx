@@ -1,13 +1,13 @@
-import React from "react";
+import { Button } from "app/components/Button";
+import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
 // UI Elements
 import { Header } from "app/components/Header";
-import { ListDivided } from "app/components/ListDivided";
 import { Icon } from "app/components/Icon";
 import { Input } from "app/components/Input";
-import { Button } from "app/components/Button";
+import { ListDivided } from "app/components/ListDivided";
 import { Select } from "app/components/Select";
-import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Toggle } from "app/components/Toggle";
+import React from "react";
 
 type Props = {
 	formConfig: any;

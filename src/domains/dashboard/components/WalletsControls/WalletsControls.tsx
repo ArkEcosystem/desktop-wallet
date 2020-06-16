@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import { Button } from "app/components/Button";
 import { Icon } from "app/components//Icon";
+import { Button } from "app/components/Button";
 import { Divider } from "app/components/Divider";
 import { Dropdown } from "app/components/Dropdown";
 import { FilterWallets, FilterWalletsProps } from "domains/dashboard/components/FilterWallets";
+import React, { useState } from "react";
 
 type WalletsControlsProps = {
 	filterProperties?: FilterWalletsProps;

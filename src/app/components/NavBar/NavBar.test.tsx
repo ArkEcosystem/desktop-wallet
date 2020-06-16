@@ -1,9 +1,9 @@
+import { fireEvent, render } from "@testing-library/react";
 import React from "react";
-import { render, fireEvent } from "@testing-library/react";
+import { act } from "react-dom/test-utils";
 import { BrowserRouter as Router } from "react-router-dom";
 
 import { NavBar } from "./";
-import { act } from "react-dom/test-utils";
 
 describe("NavBar", () => {
 	it("should render", () => {

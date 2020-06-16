@@ -1,19 +1,20 @@
-import React from "react";
-import tw, { styled } from "twin.macro";
-import { StepIndicator } from "app/components/StepIndicator";
-import { Tabs, TabPanel } from "app/components/Tabs";
+import { Alert } from "app/components/Alert";
+import { Button } from "app/components/Button";
+import { CardControl } from "app/components/Card";
+import { Circle } from "app/components/Circle";
+import { Divider } from "app/components/Divider";
 import { Form, FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
-import { Alert } from "app/components/Alert";
+import { Icon } from "app/components/Icon";
+import { Input } from "app/components/Input";
+import { StepIndicator } from "app/components/StepIndicator";
+import { TabPanel, Tabs } from "app/components/Tabs";
+import React from "react";
+import { useForm, useFormContext } from "react-hook-form";
+import tw, { styled } from "twin.macro";
+
 import { MnemonicList } from "../../components/MnemonicList";
 import { MnemonicVerification } from "../../components/MnemonicVerification";
-import { Button } from "app/components/Button";
-import { Icon } from "app/components/Icon";
-import { Divider } from "app/components/Divider";
-import { Circle } from "app/components/Circle";
-import { CardControl } from "app/components/Card";
-import { Input } from "app/components/Input";
-import { useForm, useFormContext } from "react-hook-form";
 
 const NetworkItem = styled.div`
 	[aria-checked="true"] & > .NetworkItemIcon {

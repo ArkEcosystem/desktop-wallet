@@ -1,7 +1,7 @@
-import React from "react";
 import { render } from "@testing-library/react";
+import React from "react";
 
-import { InputGroup, InputAddonStart, InputAddonEnd, Input } from "./index";
+import { Input, InputAddonEnd, InputAddonStart, InputGroup } from "./index";
 
 describe("InputGroup", () => {
 	it("should render with element on the left", () => {

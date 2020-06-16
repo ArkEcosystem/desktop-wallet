@@ -1,7 +1,8 @@
 import React from "react";
-import { FormFieldProvider } from "./useFormField";
 import { useFormContext } from "react-hook-form";
 import tw, { styled } from "twin.macro";
+
+import { FormFieldProvider } from "./useFormField";
 
 type FormFieldProps = {
 	name: string;

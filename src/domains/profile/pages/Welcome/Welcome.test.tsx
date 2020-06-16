@@ -1,9 +1,8 @@
-import React from "react";
 import { render } from "@testing-library/react";
+import { i18n } from "app/i18n";
+import React from "react";
 import { I18nextProvider } from "react-i18next";
 import { BrowserRouter as Router } from "react-router-dom";
-
-import { i18n } from "app/i18n";
 
 import { Welcome } from "./";
 

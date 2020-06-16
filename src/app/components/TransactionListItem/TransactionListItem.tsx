@@ -1,8 +1,8 @@
-import React from "react";
+import { Address } from "app/components/Address";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
-import { Address } from "app/components/Address";
 import { Label } from "app/components/Label";
+import React from "react";
 
 type TransactionListItemProps = {
 	date: string;
