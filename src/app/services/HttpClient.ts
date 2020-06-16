@@ -12,18 +12,6 @@ export class HttpClient implements Contracts.HttpClient {
 		this.client = axios.create(config);
 	}
 
-	// public timeout(seconds: number): HttpClient {
-	// 	this.client.timeout(seconds);
-
-	// 	return this;
-	// }
-
-	// public withoutEncoding(): HttpClient {
-	// 	this.client.responseType = "arraybuffer";
-
-	// 	return this;
-	// }
-
 	public async get(path: string, query: object = {}): Promise<Record<string, any>> {
 		return await this.client.get(path, { params: { ...query } });
 	}
