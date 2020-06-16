@@ -1,7 +1,3 @@
-import React, { useContext, useEffect, useState } from "react";
-import { useTranslation } from "react-i18next";
-// Contexts
-import { EnvironmentContext } from "app/contexts";
 // Assets
 import { images } from "app/assets/images";
 // UI Elements
@@ -9,8 +5,10 @@ import { Button } from "app/components/Button";
 import { Divider } from "app/components/Divider";
 import { Icon } from "app/components/Icon";
 import { NavBar } from "app/components/NavBar";
+// Contexts
+import { EnvironmentContext } from "app/contexts";
 import { ProfileCard } from "domains/profile/components/ProfileCard";
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 const WelcomeBanner = images.profile.pages.welcome.WelcomeBanner;
