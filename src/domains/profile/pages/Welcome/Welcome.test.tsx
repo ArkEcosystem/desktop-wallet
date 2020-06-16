@@ -1,4 +1,5 @@
-import { render } from "@testing-library/react";
+import React from "react";
+import { screen, render, waitFor } from "@testing-library/react";
 import { I18nextProvider } from "react-i18next";
 // Contexts
 import { EnvironmentProvider } from "app/contexts";
@@ -11,23 +12,20 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { Welcome } from "./";
 
 describe("Welcome", () => {
-	it("should render", () => {
-		const profiles = [
-			{
-				id: 1,
-				name: "Oleg Gelo",
-				balance: "234,500.46 USD",
-				avatar: "https://www.w3schools.com/howto/img_avatar.png",
-			},
-		];
-
+	it("should render", async () => {
 		const { container, asFragment } = render(
 			<I18nextProvider i18n={i18n}>
-				<EnvironmentProvider value={{ injected: true }}>
-					<Welcome profiles={profiles} />
+				<EnvironmentProvider>
+					<Welcome />
 				</EnvironmentProvider>
 			</I18nextProvider>,
 		);
+
+		await waitFor(async () => {
+			expect(
+				await screen.findByText("Create a new Profile or login with your MarketSquare account to get started"),
+			).toBeInTheDocument();
+		});
 
 		expect(container).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();

@@ -11114,18 +11114,20 @@ exports[`Application root should render without crashing 1`] = `
           <main
             className=""
           >
-            <Switch>
-              <Route
-                exact={true}
-                path="/"
-                render={[Function]}
-              />
-              <Route
-                exact={true}
-                path="/profile/create"
-                render={[Function]}
-              />
-            </Switch>
+            <EnvironmentProvider>
+              <Switch>
+                <Route
+                  exact={true}
+                  path="/"
+                  render={[Function]}
+                />
+                <Route
+                  exact={true}
+                  path="/profile/create"
+                  render={[Function]}
+                />
+              </Switch>
+            </EnvironmentProvider>
           </main>
         </I18nextProvider>
       </HashRouter>,
