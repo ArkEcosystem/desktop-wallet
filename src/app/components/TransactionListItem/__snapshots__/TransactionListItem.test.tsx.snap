@@ -5,7 +5,7 @@ exports[`TransactionListItem should render a received transaction 1`] = `
   <table>
     <tbody>
       <tr
-        class="border-b border-theme-neutral-200 cursor-pointer"
+        class="border-b cursor-pointer border-theme-neutral-200"
         data-testid="transaction__row"
       >
         <td
@@ -83,7 +83,7 @@ exports[`TransactionListItem should render a send transaction 1`] = `
   <table>
     <tbody>
       <tr
-        class="border-b border-theme-neutral-200 cursor-pointer"
+        class="border-b cursor-pointer border-theme-neutral-200"
         data-testid="transaction__row"
       >
         <td
@@ -161,7 +161,7 @@ exports[`TransactionListItem should render compact variant 1`] = `
   <table>
     <tbody>
       <tr
-        class="border-b border-theme-neutral-200 cursor-pointer"
+        class="border-b cursor-pointer border-theme-neutral-200"
         data-testid="transaction__row"
       >
         <td

@@ -50,7 +50,7 @@ export const TransactionListItem = ({
 		return (
 			<tr
 				onClick={onTxClick}
-				className="border-b border-theme-neutral-200 cursor-pointer"
+				className="border-b cursor-pointer border-theme-neutral-200"
 				data-testid="transaction__row"
 			>
 				<td className="w-20 py-4 mt-1">
@@ -74,7 +74,7 @@ export const TransactionListItem = ({
 	return (
 		<tr
 			onClick={onTxClick}
-			className="border-b border-theme-neutral-200 cursor-pointer"
+			className="border-b cursor-pointer border-theme-neutral-200"
 			data-testid="transaction__row"
 		>
 			<td className="w-48 py-1 text-sm text-theme-neutral-600"> {date} </td>
