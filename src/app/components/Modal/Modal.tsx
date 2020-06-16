@@ -1,5 +1,5 @@
 import React from "react";
-// UI Elements
+import tw, { styled } from "twin.macro";
 import { Button } from "app/components/Button";
 import { Icon } from "app/components/Icon";
 
@@ -8,6 +8,7 @@ type ModalProps = {
 	title: string;
 	description?: string;
 	image?: React.ReactNode;
+	size?: "small" | "medium" | "large" | "xlarge" | "default";
 	isOpen: boolean;
 	onClose?: any;
 	onClick?: any;
@@ -18,14 +19,33 @@ type ModalContentProps = {
 	title: string;
 	description?: string;
 	image?: React.ReactNode;
+	size?: "small" | "medium" | "large" | "xlarge" | "default";
 	onClose?: any;
 };
 
+const ModalContainer = styled.div<{ size: string }>`
+	${({ size }) => {
+		switch (size) {
+			case "small":
+				return tw`max-w-sm`;
+			case "medium":
+				return tw`max-w-md`;
+			case "large":
+				return tw`max-w-lg`;
+			case "xlarge":
+				return tw`max-w-xl`;
+			default:
+				return tw`max-w-2xl`;
+		}
+	}}
+`;
+
 const ModalContent = (props: ModalContentProps) => {
 	return (
-		<div
+		<ModalContainer
+			size={props.size!}
+			className="fixed left-0 right-0 z-10 flex flex-col px-16 pt-6 pb-8 mx-auto mt-24 rounded-xl bg-theme-background"
 			data-testid="modal__inner"
-			className="fixed left-0 right-0 z-10 flex flex-col max-w-2xl px-16 pt-6 pb-8 mx-auto mt-24 rounded-xl bg-theme-background"
 		>
 			<div className="absolute top-0 right-0 mt-4 mr-4">
 				<Button
@@ -50,7 +70,7 @@ const ModalContent = (props: ModalContentProps) => {
 					{props.children}
 				</div>
 			</div>
-		</div>
+		</ModalContainer>
 	);
 };
 
@@ -68,6 +88,7 @@ export const Modal = (props: ModalProps) => {
 				title={props.title}
 				description={props.description}
 				image={props.image}
+				size={props.size}
 				onClose={props.onClose}
 			>
 				{props.children}
@@ -77,6 +98,7 @@ export const Modal = (props: ModalProps) => {
 };
 
 Modal.defaultProps = {
+	size: "default",
 	isOpen: false,
 };
 
