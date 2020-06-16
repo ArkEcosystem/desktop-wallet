@@ -1,5 +1,6 @@
 import { Table } from "app/components/Table";
-import { TransactionListItem, TransactionListItemProps } from "app/components/TransactionListItem";
+import { TransactionListItem } from "app/components/TransactionListItem";
+import { TransactionListItemProps } from "app/components/TransactionListItem/models";
 import React from "react";
 
 type Action = {
