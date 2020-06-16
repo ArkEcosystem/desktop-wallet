@@ -22,15 +22,15 @@ const Welcome = () => {
 	const { t } = useTranslation();
 	const [profiles, setProfiles] = useState([]);
 
-	const loadProfiles = async () => {
-		const profiles = await env.profiles().all();
-
-		setProfiles(profiles);
-	};
-
 	useEffect(() => {
+		const loadProfiles = async () => {
+			const profiles = await env.profiles().all();
+
+			setProfiles(profiles);
+		};
+
 		loadProfiles();
-	}, []);
+	}, [env]);
 
 	return (
 		<div className="w-full h-full">
