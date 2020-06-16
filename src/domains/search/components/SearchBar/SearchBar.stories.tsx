@@ -1,4 +1,5 @@
 import { text, withKnobs } from "@storybook/addon-knobs";
+import { SearchBarOptions } from "domains/search/components/SearchBarOptions";
 import React from "react";
 
 import { SearchBar } from "./SearchBar";
@@ -8,7 +9,7 @@ export default { title: "Search / Search Bar", decorators: [withKnobs] };
 export const Default = () => {
 	return (
 		<div className="w-full h-full">
-			<SearchBar onTypeSelect={(option: any) => void 0} />
+			<SearchBar />
 		</div>
 	);
 };
@@ -23,7 +24,15 @@ export const WithOptions = () => {
 
 	return (
 		<div className="w-full h-full">
-			<SearchBar options={options} selectedOption={selectedOption} onTypeSelect={(option: any) => void 0} />
+			<SearchBar
+				extra={
+					<SearchBarOptions
+						options={options}
+						selectedOption={selectedOption}
+						onSelect={(option: any) => void 0}
+					/>
+				}
+			/>
 		</div>
 	);
 };
