@@ -9,6 +9,6 @@ export const Default = () => (
 	<MultiSignatureDetail
 		isOpen={boolean("Is Open", true)}
 		onClose={() => alert("closed")}
-		onDelete={() => alert("deleted")}
+		onCancel={() => alert("cancelled")}
 	/>
 );
