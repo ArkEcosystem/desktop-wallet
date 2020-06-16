@@ -88,5 +88,5 @@ export const Table = ({ children, data, columns }: TableProps) => {
 
 Table.defaultProps = {
 	data: [],
-	colums: [],
+	columns: [],
 };
