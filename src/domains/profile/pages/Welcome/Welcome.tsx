@@ -22,7 +22,6 @@ const Welcome = () => {
 	];
 	const { env }: any = useContext(EnvironmentContext);
 	const { t } = useTranslation();
-
 	const [profiles, setProfiles] = useState([]);
 
 	const loadProfiles = async () => {
@@ -82,10 +81,6 @@ const Welcome = () => {
 			</div>
 		</div>
 	);
-};
-
-Welcome.defaultProps = {
-	profiles: [],
 };
 
 export { Welcome };
