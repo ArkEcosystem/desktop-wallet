@@ -1,11 +1,12 @@
-import React from "react";
+import { Icon } from "app/components/Icon";
+import React, { useRef } from "react";
 import tw, { css, styled } from "twin.macro";
 
 type ClipboardProps = {
 	data: string;
 	children: React.ReactNode;
-	onSuccess?: () => void;
-	onError?: () => void;
+	onSuccess?: any;
+	onError?: any;
 };
 
 const TextArea = styled.textarea(() => [
@@ -18,38 +19,25 @@ const TextArea = styled.textarea(() => [
 ]);
 
 export const Clipboard = ({ data, children, onSuccess, onError }: ClipboardProps) => {
-	const textAreaRef = React.useRef<HTMLTextAreaElement>(null);
-
-	if (!children) {
-		return null;
-	}
+	const textAreaRef = useRef(null);
 
 	const onCopy = () => {
 		try {
-			textAreaRef?.current?.select();
+			textAreaRef.current.select();
 			document.execCommand("copy");
-
-			if (onSuccess) {
-				onSuccess();
-			}
+			onSuccess();
 		} catch {
-			if (onError) {
-				onError();
-			}
+			onError();
 		}
 	};
 
 	return (
 		<>
-			<div data-testid="clipboard__inner" className="inline-block cursor-pointer" onClick={onCopy}>
+			<div className="inline-block cursor-pointer" onClick={onCopy}>
 				{children}
 			</div>
 
-			<TextArea data-testid="clipboard__textarea" ref={textAreaRef} value={data} readOnly={true} />
+			<TextArea ref={textAreaRef} value={data} />
 		</>
 	);
-};
-
-Clipboard.defaultProps = {
-	data: "",
 };
