@@ -1,4 +1,4 @@
-const configOverrides = require("../config-overrides");
+const configOverrides = require("./config-overrides");
 
 module.exports = {
 	stories: ["../src/**/**/*.stories.tsx"],
@@ -8,10 +8,10 @@ module.exports = {
 		"storybook-addon-i18next/register",
 		"@storybook/preset-create-react-app",
 	],
-	webpackFinal: async (storybookConfig) => {
+	webpackFinal: (storybookConfig) => {
 		const customConfig = configOverrides(storybookConfig);
 
-		(storybookConfig.module.rules = [
+		storybookConfig.module.rules = [
 			...storybookConfig.module.rules,
 			{
 				test: /\.(ts|tsx)$/,
@@ -25,8 +25,9 @@ module.exports = {
 					require.resolve("react-docgen-typescript-loader"),
 				],
 			},
-		]),
-			storybookConfig.resolve.extensions.push(".ts", ".tsx");
+		];
+
+		storybookConfig.resolve.extensions.push(".ts", ".tsx");
 
 		return {
 			...storybookConfig,

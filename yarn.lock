@@ -1754,6 +1754,16 @@
     node-hid "^1.2.0"
     usb-detection "^4.9.0"
 
+"@ledgerhq/hw-transport-u2f@^5.15.0":
+  version "5.15.0"
+  resolved "https://registry.yarnpkg.com/@ledgerhq/hw-transport-u2f/-/hw-transport-u2f-5.15.0.tgz#8da4f9cf33e91c99cee560d47c1645d4f273f1e3"
+  integrity sha512-oJLznJjibDVxXReFGAXnRimopiz5xf2cv2l5RxVKhSbaiJRq4Pgurl0YKTORVEucvdyzAGGwwinjghEdJCh8Jg==
+  dependencies:
+    "@ledgerhq/errors" "^5.15.0"
+    "@ledgerhq/hw-transport" "^5.15.0"
+    "@ledgerhq/logs" "^5.15.0"
+    u2f-api "0.2.7"
+
 "@ledgerhq/hw-transport@^5.15.0":
   version "5.15.0"
   resolved "https://registry.yarnpkg.com/@ledgerhq/hw-transport/-/hw-transport-5.15.0.tgz#01dc22adb156061728dbb937df2f310c761d06b9"
@@ -16050,6 +16060,11 @@ typescript@^3.9.5:
   version "3.9.5"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.9.5.tgz#586f0dba300cde8be52dd1ac4f7e1009c1b13f36"
   integrity sha512-hSAifV3k+i6lEoCJ2k6R2Z/rp/H3+8sdmcn5NrS3/3kE7+RyZXm9aqvxWqjEXHAd8b0pShatpcdMTvEdvAJltQ==
+
+u2f-api@0.2.7:
+  version "0.2.7"
+  resolved "https://registry.yarnpkg.com/u2f-api/-/u2f-api-0.2.7.tgz#17bf196b242f6bf72353d9858e6a7566cc192720"
+  integrity sha512-fqLNg8vpvLOD5J/z4B6wpPg4Lvowz1nJ9xdHcCzdUPKcFE/qNCceV2gNZxSJd5vhAZemHr/K/hbzVA0zxB5mkg==
 
 uc.micro@^1.0.1:
   version "1.0.6"
