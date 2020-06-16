@@ -1,0 +1,245 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ReceiveFunds should not render if not open 1`] = `<DocumentFragment />`;
+
+exports[`ReceiveFunds should render with a wallet name 1`] = `
+<DocumentFragment>
+  <div
+    class="fixed inset-0 z-10 bg-black opacity-50"
+    data-testid="modal__overlay"
+  />
+  <div
+    class="fixed left-0 right-0 z-10 flex flex-col max-w-2xl px-16 pt-6 pb-8 mx-auto mt-24 rounded-xl bg-theme-background"
+    data-testid="modal__inner"
+  >
+    <div
+      class="absolute top-0 right-0 mt-4 mr-4"
+    >
+      <button
+        class="sc-AxiKw kigsVG"
+        color="neutral"
+        data-testid="modal__close-btn"
+        type="button"
+      >
+        <div
+          class="sc-AxirZ fttODj"
+          height="10"
+          width="10"
+        >
+          <svg>
+            cross-slim.svg
+          </svg>
+        </div>
+      </button>
+    </div>
+    <div
+      class="py-4"
+    >
+      <h2>
+        Receive Funds
+      </h2>
+      <div
+        class="flex-1"
+      >
+        <div>
+          <div
+            class="flex items-center mt-8 mb-6"
+          >
+            <div
+              class="flex-1"
+            >
+              <div
+                class="text-sm font-semibold text-theme-neutral-500"
+              >
+                Wallet
+              </div>
+              <div
+                class="flex items-center font-semibold"
+              >
+                My Wallet
+              </div>
+            </div>
+            <div
+              class="sc-AxjAm BXGDK ml-4"
+            >
+              <div
+                class="sc-AxirZ iQaTP"
+                height="1em"
+                width="1em"
+              >
+                <svg>
+                  ark.svg
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div
+            class="sc-AxhCb ieJuUm"
+            type="horizontal"
+          />
+        </div>
+        <div>
+          <div
+            class="flex items-center mt-8 mb-6"
+          >
+            <div
+              class="flex-1"
+            >
+              <div
+                class="text-sm font-semibold text-theme-neutral-500"
+              >
+                Address
+              </div>
+              <div
+                class="flex items-center font-semibold"
+              >
+                ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT
+                <span
+                  class="inline-block ml-4 text-theme-primary-300"
+                >
+                  <div
+                    class="sc-AxirZ iQaTP"
+                    height="1em"
+                    width="1em"
+                  >
+                    <svg>
+                      copy.svg
+                    </svg>
+                  </div>
+                </span>
+              </div>
+            </div>
+            <div
+              class="ml-4"
+            >
+              <div
+                class="sc-AxjAm bBtBOL"
+              />
+            </div>
+          </div>
+          <div
+            class="sc-AxhCb ieJuUm"
+            type="horizontal"
+          />
+        </div>
+        <div
+          class="mt-8"
+        >
+          <img
+            class="mx-auto w-64 h-64"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`ReceiveFunds should render without a wallet name 1`] = `
+<DocumentFragment>
+  <div
+    class="fixed inset-0 z-10 bg-black opacity-50"
+    data-testid="modal__overlay"
+  />
+  <div
+    class="fixed left-0 right-0 z-10 flex flex-col max-w-2xl px-16 pt-6 pb-8 mx-auto mt-24 rounded-xl bg-theme-background"
+    data-testid="modal__inner"
+  >
+    <div
+      class="absolute top-0 right-0 mt-4 mr-4"
+    >
+      <button
+        class="sc-AxiKw kigsVG"
+        color="neutral"
+        data-testid="modal__close-btn"
+        type="button"
+      >
+        <div
+          class="sc-AxirZ fttODj"
+          height="10"
+          width="10"
+        >
+          <svg>
+            cross-slim.svg
+          </svg>
+        </div>
+      </button>
+    </div>
+    <div
+      class="py-4"
+    >
+      <h2>
+        Receive Funds
+      </h2>
+      <div
+        class="flex-1"
+      >
+        <div>
+          <div
+            class="flex items-center mt-8 mb-6"
+          >
+            <div
+              class="flex-1"
+            >
+              <div
+                class="text-sm font-semibold text-theme-neutral-500"
+              >
+                Address
+              </div>
+              <div
+                class="flex items-center font-semibold"
+              >
+                ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT
+                <span
+                  class="inline-block ml-4 text-theme-primary-300"
+                >
+                  <div
+                    class="sc-AxirZ iQaTP"
+                    height="1em"
+                    width="1em"
+                  >
+                    <svg>
+                      copy.svg
+                    </svg>
+                  </div>
+                </span>
+              </div>
+            </div>
+            <div
+              class="ml-4"
+            >
+              <div
+                class="sc-AxjAm BXGDK -mr-2"
+              >
+                <div
+                  class="sc-AxirZ iQaTP"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    ark.svg
+                  </svg>
+                </div>
+              </div>
+              <div
+                class="sc-AxjAm bBtBOL"
+              />
+            </div>
+          </div>
+          <div
+            class="sc-AxhCb ieJuUm"
+            type="horizontal"
+          />
+        </div>
+        <div
+          class="mt-8"
+        >
+          <img
+            class="mx-auto w-64 h-64"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
