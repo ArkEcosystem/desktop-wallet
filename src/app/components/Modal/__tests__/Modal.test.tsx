@@ -43,25 +43,25 @@ describe("Modal", () => {
 	});
 
 	it("should render a small one", () => {
-		const { container } = render(<Modal title="ark" size="small" isOpen={true} />);
+		const { container } = render(<Modal title="ark" size="sm" isOpen={true} />);
 
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should render a medium one", () => {
-		const { container } = render(<Modal title="ark" size="medium" isOpen={true} />);
+		const { container } = render(<Modal title="ark" size="md" isOpen={true} />);
 
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should render a large one", () => {
-		const { container } = render(<Modal title="ark" size="large" isOpen={true} />);
+		const { container } = render(<Modal title="ark" size="lg" isOpen={true} />);
 
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should render a xlarge one", () => {
-		const { container } = render(<Modal title="ark" size="xlarge" isOpen={true} />);
+		const { container } = render(<Modal title="ark" size="xl" isOpen={true} />);
 
 		expect(container).toMatchSnapshot();
 	});

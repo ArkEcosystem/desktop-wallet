@@ -8,7 +8,7 @@ type ModalProps = {
 	title: string;
 	description?: string;
 	image?: React.ReactNode;
-	size?: "small" | "medium" | "large" | "xlarge" | "default";
+	size?: "sm" | "md" | "lg" | "xl" | "default";
 	isOpen: boolean;
 	onClose?: any;
 	onClick?: any;
@@ -19,20 +19,20 @@ type ModalContentProps = {
 	title: string;
 	description?: string;
 	image?: React.ReactNode;
-	size?: "small" | "medium" | "large" | "xlarge" | "default";
+	size?: "sm" | "md" | "lg" | "xl" | "default";
 	onClose?: any;
 };
 
 const ModalContainer = styled.div<{ size: string }>`
 	${({ size }) => {
 		switch (size) {
-			case "small":
+			case "sm":
 				return tw`max-w-sm`;
-			case "medium":
+			case "md":
 				return tw`max-w-md`;
-			case "large":
+			case "lg":
 				return tw`max-w-lg`;
-			case "xlarge":
+			case "xl":
 				return tw`max-w-xl`;
 			default:
 				return tw`max-w-2xl`;
