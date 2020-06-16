@@ -11,14 +11,14 @@ const Plugin = ({ logoUrl, logoClassName, title, description, action, onAction }
 			<div className={logoClassName}>{logoUrl && <img src={logoUrl} alt={title} />}</div>
 		</td>
 		<td>
-			<span className="text-md font-bold text-theme-neutral-600">{title}</span>
+			<span className="font-bold text-md text-theme-neutral-600">{title}</span>
 			<span className="text-md text-theme-neutral-600"> {description}</span>
 		</td>
 		<td>
 			{action && action.label && (
 				<div
 					data-testid="notifications__plugin-action"
-					className="text-md font-bold text-right cursor-pointer text-theme-primary-500"
+					className="font-bold text-right cursor-pointer text-md text-theme-primary-500"
 					onClick={() => onAction(action.value)}
 				>
 					{action.label}

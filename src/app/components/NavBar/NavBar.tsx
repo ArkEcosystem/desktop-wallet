@@ -49,7 +49,7 @@ const NotificationsDropdown = ({
 				</div>
 			}
 		>
-			<div className="w-128 p-8 py-3 mt-2">
+			<div className="p-8 py-3 mt-2 w-128">
 				<Notifications
 					pluginsHeader={pluginsHeader}
 					plugins={plugins}
