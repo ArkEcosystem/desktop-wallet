@@ -29,7 +29,7 @@ export const NavBar = ({ menu, userActions, onUserAction, currencyIcon }: Navbar
 		<div className="px-4 sm:px-6 lg:px-8">
 			<div className="relative flex justify-between h-20 md:h-24">
 				<div className="flex items-center flex-shrink-0">
-					<div className="flex p-2 rounded-lg bg-logo mr-4">
+					<div className="flex p-2 mr-4 rounded-lg bg-logo">
 						<img src={commonAssets.ARKLogo} className="h-6 md:h-8 lg:h-10" alt="ARK Logo" />
 					</div>
 					<ul className="flex h-20 md:h-24">
@@ -38,7 +38,7 @@ export const NavBar = ({ menu, userActions, onUserAction, currencyIcon }: Navbar
 								<NavLink
 									to={menuItem.path}
 									title={menuItem.title}
-									className="flex items-center mx-4 text-md font-bold text-theme-neutral-500"
+									className="flex items-center mx-4 font-bold text-md text-theme-neutral-500"
 								>
 									{menuItem.title}
 								</NavLink>
@@ -48,25 +48,25 @@ export const NavBar = ({ menu, userActions, onUserAction, currencyIcon }: Navbar
 				</div>
 
 				<div className="flex items-center flex-shrink-0">
-					<div className="flex h-full items-center text-theme-primary-300 px-6 cursor-pointer">
+					<div className="flex items-center h-full px-6 cursor-pointer text-theme-primary-300">
 						<Icon name="Notification" width={22} height={22} />
 					</div>
 
-					<div className="border-r h-8 border-theme-neutral-200"></div>
-					<div className="flex h-full items-center text-theme-primary-300 -mt-1 px-3 cursor-pointer">
+					<div className="h-8 border-r border-theme-neutral-200"></div>
+					<div className="flex items-center h-full px-3 -mt-1 cursor-pointer text-theme-primary-300">
 						<Icon name="Sent" width={42} height={42} />
 					</div>
 
-					<div className="border-r h-8 border-theme-neutral-200"></div>
-					<div className="flex h-full items-center text-theme-primary-300 px-6 cursor-pointer">
+					<div className="h-8 border-r border-theme-neutral-200"></div>
+					<div className="flex items-center h-full px-6 cursor-pointer text-theme-primary-300">
 						<Icon name="Receive" width={22} height={22} />
 					</div>
 
-					<div className="border-r h-8 border-theme-neutral-200"></div>
+					<div className="h-8 border-r border-theme-neutral-200"></div>
 
-					<div className="p-2 text-right ml-4">
+					<div className="p-2 ml-4 text-right">
 						<div className="text-xs text-theme-neutral-500">Your balance</div>
-						<div className="text-sm text-theme-neutral-700 font-bold">34,253.75</div>
+						<div className="text-sm font-bold text-theme-neutral-700">34,253.75</div>
 					</div>
 
 					<div className="flex p-1 cusror-pointer">
@@ -75,16 +75,16 @@ export const NavBar = ({ menu, userActions, onUserAction, currencyIcon }: Navbar
 							options={userActions}
 							toggleContent={(isOpen: boolean) => (
 								<div className="cursor-pointer" data-testid="navbar__useractions">
-									<Circle className="border-theme-neutral-300 -mr-1" size="large">
+									<Circle className="-mr-1 border-theme-neutral-300" size="large">
 										<span className="text-theme-neutral-600">
 											<Icon name={currencyIcon}></Icon>
 										</span>
 									</Circle>
 									<Circle
-										className="rotate-90 bg-theme-primary-600 border-theme-primary-600 relative"
+										className="relative rotate-90 bg-theme-primary-600 border-theme-primary-600"
 										size="large"
 									>
-										<span className="text-theme-background text-sm">IO</span>
+										<span className="text-sm text-theme-background">IO</span>
 										<Badge
 											className={`transform ${
 												isOpen ? "rotate-180" : ""

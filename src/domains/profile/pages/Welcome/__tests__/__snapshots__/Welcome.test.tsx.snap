@@ -19,7 +19,7 @@ exports[`Welcome should render 1`] = `
             class="flex items-center flex-shrink-0"
           >
             <div
-              class="flex p-2 rounded-lg bg-logo mr-4"
+              class="flex p-2 mr-4 rounded-lg bg-logo"
             >
               <img
                 alt="ARK Logo"
@@ -34,7 +34,7 @@ exports[`Welcome should render 1`] = `
                 class="flex"
               >
                 <a
-                  class="flex items-center mx-4 text-md font-bold text-theme-neutral-500"
+                  class="flex items-center mx-4 font-bold text-md text-theme-neutral-500"
                   href="/portfolio"
                   title="Portfolio"
                 >
@@ -45,7 +45,7 @@ exports[`Welcome should render 1`] = `
                 class="flex"
               >
                 <a
-                  class="flex items-center mx-4 text-md font-bold text-theme-neutral-500"
+                  class="flex items-center mx-4 font-bold text-md text-theme-neutral-500"
                   href="/plugins"
                   title="Plugins"
                 >
@@ -56,7 +56,7 @@ exports[`Welcome should render 1`] = `
                 class="flex"
               >
                 <a
-                  class="flex items-center mx-4 text-md font-bold text-theme-neutral-500"
+                  class="flex items-center mx-4 font-bold text-md text-theme-neutral-500"
                   href="/exchange"
                   title="Exchange"
                 >
@@ -67,7 +67,7 @@ exports[`Welcome should render 1`] = `
                 class="flex"
               >
                 <a
-                  class="flex items-center mx-4 text-md font-bold text-theme-neutral-500"
+                  class="flex items-center mx-4 font-bold text-md text-theme-neutral-500"
                   href="/news"
                   title="News"
                 >
@@ -80,7 +80,7 @@ exports[`Welcome should render 1`] = `
             class="flex items-center flex-shrink-0"
           >
             <div
-              class="flex h-full items-center text-theme-primary-300 px-6 cursor-pointer"
+              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
               <div
                 class="sc-AxiKw fFXzuz"
@@ -93,10 +93,10 @@ exports[`Welcome should render 1`] = `
               </div>
             </div>
             <div
-              class="border-r h-8 border-theme-neutral-200"
+              class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex h-full items-center text-theme-primary-300 -mt-1 px-3 cursor-pointer"
+              class="flex items-center h-full px-3 -mt-1 cursor-pointer text-theme-primary-300"
             >
               <div
                 class="sc-AxiKw ldtbjv"
@@ -109,10 +109,10 @@ exports[`Welcome should render 1`] = `
               </div>
             </div>
             <div
-              class="border-r h-8 border-theme-neutral-200"
+              class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="flex h-full items-center text-theme-primary-300 px-6 cursor-pointer"
+              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
               <div
                 class="sc-AxiKw fFXzuz"
@@ -125,10 +125,10 @@ exports[`Welcome should render 1`] = `
               </div>
             </div>
             <div
-              class="border-r h-8 border-theme-neutral-200"
+              class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="p-2 text-right ml-4"
+              class="p-2 ml-4 text-right"
             >
               <div
                 class="text-xs text-theme-neutral-500"
@@ -136,7 +136,7 @@ exports[`Welcome should render 1`] = `
                 Your balance
               </div>
               <div
-                class="text-sm text-theme-neutral-700 font-bold"
+                class="text-sm font-bold text-theme-neutral-700"
               >
                 34,253.75
               </div>
@@ -152,7 +152,7 @@ exports[`Welcome should render 1`] = `
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-AxhCb cHcNfE border-theme-neutral-300 -mr-1"
+                    class="sc-AxhCb cHcNfE -mr-1 border-theme-neutral-300"
                   >
                     <span
                       class="text-theme-neutral-600"
@@ -169,10 +169,10 @@ exports[`Welcome should render 1`] = `
                     </span>
                   </div>
                   <div
-                    class="sc-AxhCb cHcNfE rotate-90 bg-theme-primary-600 border-theme-primary-600 relative"
+                    class="sc-AxhCb cHcNfE relative rotate-90 bg-theme-primary-600 border-theme-primary-600"
                   >
                     <span
-                      class="text-theme-background text-sm"
+                      class="text-sm text-theme-background"
                     >
                       IO
                     </span>
