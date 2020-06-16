@@ -8,7 +8,7 @@ type ModalProps = {
 	title: string;
 	description?: string;
 	image?: React.ReactNode;
-	size?: "sm" | "md" | "lg" | "xl" | "default";
+	size?: "sm" | "md" | "lg" | "xl" | "2xl" | "3xl";
 	isOpen: boolean;
 	onClose?: any;
 	onClick?: any;
@@ -19,7 +19,7 @@ type ModalContentProps = {
 	title: string;
 	description?: string;
 	image?: React.ReactNode;
-	size?: "sm" | "md" | "lg" | "xl" | "default";
+	size?: "sm" | "md" | "lg" | "xl" | "2xl" | "3xl";
 	onClose?: any;
 };
 
@@ -34,6 +34,8 @@ const ModalContainer = styled.div<{ size: string }>`
 				return tw`max-w-lg`;
 			case "xl":
 				return tw`max-w-xl`;
+			case "3xl":
+				return tw`max-w-3xl`;
 			default:
 				return tw`max-w-2xl`;
 		}
@@ -65,7 +67,7 @@ const ModalContent = (props: ModalContentProps) => {
 				<div className="flex-1">
 					{props.image}
 
-					{props.description ? <div className="text-theme-neutral-700">{props.description}</div> : ""}
+					{props.description && <div className="text-theme-neutral-700">{props.description}</div>}
 
 					{props.children}
 				</div>
@@ -98,7 +100,7 @@ export const Modal = (props: ModalProps) => {
 };
 
 Modal.defaultProps = {
-	size: "default",
+	size: "2xl",
 	isOpen: false,
 };
 

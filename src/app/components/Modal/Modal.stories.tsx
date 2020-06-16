@@ -13,7 +13,7 @@ export const Default = () => (
 	<Modal
 		title={text("Title", "Title")}
 		description={text("Description", "Description")}
-		size={select("Size", ["sm", "md", "lg", "xl", "default"], "default")}
+		size={select("Size", ["sm", "md", "lg", "xl", "2xl", "3xl"], "2xl")}
 		isOpen={boolean("Is Open", true)}
 		onClose={() => alert("closed")}
 	>
