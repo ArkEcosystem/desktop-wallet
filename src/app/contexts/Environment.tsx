@@ -1,10 +1,10 @@
-import React, { createContext } from "react";
-// Env
-import { Environment } from "@arkecosystem/platform-sdk-profiles";
 // Coins
 import { ARK } from "@arkecosystem/platform-sdk-ark";
+// Env
+import { Environment } from "@arkecosystem/platform-sdk-profiles";
 // Services
 import { httpClient } from "app/services";
+import React, { createContext } from "react";
 
 type Props = {
 	children: React.ReactNode;
