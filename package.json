@@ -22,7 +22,7 @@
 	"main": "src/electron/index.js",
 	"scripts": {
 		"electron-rebuild": "electron-rebuild .",
-		"dev": "concurrently \"BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electron .\"",
+		"dev": "yarn electron-rebuild && concurrently \"BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electron .\"",
 		"postinstall": "electron-builder install-app-deps && npm rebuild",
 		"build": "react-app-rewired build",
 		"format": "yarn lint && yarn prettier",
