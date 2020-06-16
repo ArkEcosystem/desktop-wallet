@@ -7,6 +7,7 @@ const customConfig = {
 	node: {
 		__dirname: process.env.NODE_ENV !== "production",
 		__filename: process.env.NODE_ENV !== "production",
+		fs: "empty",
 		net: "empty",
 		dns: "empty",
 		tls: "empty",
