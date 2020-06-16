@@ -33,14 +33,14 @@ const Plugin = ({ logoUrl, logoClassName, title, description, action, onAction }
 			</div>
 		</td>
 		<td>
-			<span className="text-theme-neutral-700 font-bold text-sm">{title}</span>
-			<span className="text-theme-neutral-600 text-sm"> {description}</span>
+			<span className="text-sm font-bold text-theme-neutral-700">{title}</span>
+			<span className="text-sm text-theme-neutral-600"> {description}</span>
 		</td>
 		<td>
 			{action && action.label && (
 				<div
 					data-testid="notifications__plugin-action"
-					className="cursor-pointer text-theme-primary-600 text-sm text-right font-bold"
+					className="text-sm font-bold text-right cursor-pointer text-theme-primary-600"
 					onClick={() => onAction(action.value)}
 				>
 					{action.label}
@@ -65,13 +65,13 @@ export const Notifications = ({
 
 	return (
 		<div>
-			<div className="text-sm text-theme-neutral-400 font-bold">{pluginsHeader}</div>
+			<div className="text-sm font-bold text-theme-neutral-400">{pluginsHeader}</div>
 			<Table columns={hiddenTableHeaders} data={plugins}>
 				{(plugin: PluginNotification) => (
 					<Plugin {...plugin} onAction={(name: string) => onNotificationAction(name, plugin)} />
 				)}
 			</Table>
-			<div className="mt-9 -mb-2 text-sm text-theme-neutral-400 font-bold">{transactionsHeader}</div>
+			<div className="-mb-2 text-sm font-bold mt-9 text-theme-neutral-400">{transactionsHeader}</div>
 			<Table columns={hiddenTableHeaders} data={transactions}>
 				{(tx: TransactionListItemProps) => (
 					<TransactionListItem onClick={() => onNotificationAction("click", tx)} variant="compact" {...tx} />
