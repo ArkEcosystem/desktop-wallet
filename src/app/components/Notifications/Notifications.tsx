@@ -3,27 +3,7 @@ import { TransactionListItem } from "app/components/TransactionListItem";
 import { TransactionListItemProps } from "app/components/TransactionListItem/models";
 import React from "react";
 
-type Action = {
-	label: string;
-	value: string;
-};
-
-type PluginNotification = {
-	logoUrl: string;
-	logoClassName: string;
-	title: string;
-	description: string;
-	action?: Action;
-	onAction?: any;
-};
-
-type NotificationsProps = {
-	plugins?: PluginNotification[];
-	pluginsHeader?: string;
-	transactions?: TransactionListItemProps[];
-	transactionsHeader?: string;
-	onAction?: any;
-};
+import { NotificationsProps,PluginNotification } from "./models";
 
 const Plugin = ({ logoUrl, logoClassName, title, description, action, onAction }: PluginNotification) => (
 	<tr>
