@@ -46,6 +46,8 @@ import { ReactComponent as Trash } from "./trash.svg";
 import { ReactComponent as Twitter } from "./twitter.svg";
 import { ReactComponent as Upload } from "./upload.svg";
 import { ReactComponent as Voted } from "./voted.svg";
+import { ReactComponent as Receive } from "./receive.svg";
+import { ReactComponent as Notification } from "./notification.svg";
 
 export const SvgCollection: any = {
 	AlertDanger,
@@ -96,4 +98,6 @@ export const SvgCollection: any = {
 	Twitter,
 	Upload,
 	Voted,
+	Notification,
+	Receive,
 };

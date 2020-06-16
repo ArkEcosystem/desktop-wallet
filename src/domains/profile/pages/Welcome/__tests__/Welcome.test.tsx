@@ -1,6 +1,7 @@
 import React from "react";
 import { render } from "@testing-library/react";
 import { I18nextProvider } from "react-i18next";
+import { BrowserRouter as Router } from "react-router-dom";
 
 import { i18n } from "app/i18n";
 
@@ -18,9 +19,11 @@ describe("Welcome", () => {
 		];
 
 		const { container, asFragment } = render(
-			<I18nextProvider i18n={i18n}>
-				<Welcome profiles={profiles} />
-			</I18nextProvider>,
+			<Router>
+				<I18nextProvider i18n={i18n}>
+					<Welcome profiles={profiles} />
+				</I18nextProvider>
+			</Router>,
 		);
 
 		expect(container).toBeTruthy();
