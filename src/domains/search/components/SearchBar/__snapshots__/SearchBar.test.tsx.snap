@@ -7,7 +7,7 @@ exports[`SearchBar should render 1`] = `
     data-testid="SearchBar"
   >
     <div
-      class="flex bg-white rounded shadow-xl px-6 py-4"
+      class="flex px-6 py-4 bg-white rounded shadow-xl"
     >
       <div
         class="flex-1 mr-4"
@@ -24,7 +24,7 @@ exports[`SearchBar should render 1`] = `
         type="button"
       >
         <span
-          class="text-sm px-2"
+          class="px-2 text-sm"
         >
           Find it
         </span>
@@ -41,10 +41,10 @@ exports[`SearchBar should render with options 1`] = `
     data-testid="SearchBar"
   >
     <div
-      class="flex bg-white rounded shadow-xl px-6 py-4"
+      class="flex px-6 py-4 bg-white rounded shadow-xl"
     >
       <div
-        class="flex items-center border-r border-theme-neutral-200 my-1 pr-6 pl-2"
+        class="flex items-center pl-2 pr-6 my-1 border-r border-theme-neutral-200"
       >
         <div
           class="relative"
@@ -54,7 +54,7 @@ exports[`SearchBar should render with options 1`] = `
           >
             Type 
             <svg
-              class="inline-block text-black w-2 ml-1"
+              class="inline-block w-2 ml-1 text-black"
             >
               arrowdown.svg
             </svg>
@@ -76,7 +76,7 @@ exports[`SearchBar should render with options 1`] = `
         type="button"
       >
         <span
-          class="text-sm px-2"
+          class="px-2 text-sm"
         >
           Find it
         </span>
@@ -93,10 +93,10 @@ exports[`SearchBar should render with selected option 1`] = `
     data-testid="SearchBar"
   >
     <div
-      class="flex bg-white rounded shadow-xl px-6 py-4"
+      class="flex px-6 py-4 bg-white rounded shadow-xl"
     >
       <div
-        class="flex items-center border-r border-theme-neutral-200 my-1 pr-6 pl-2"
+        class="flex items-center pl-2 pr-6 my-1 border-r border-theme-neutral-200"
       >
         <div
           class="relative"
@@ -119,7 +119,7 @@ exports[`SearchBar should render with selected option 1`] = `
         type="button"
       >
         <span
-          class="text-sm px-2"
+          class="px-2 text-sm"
         >
           Find it
         </span>

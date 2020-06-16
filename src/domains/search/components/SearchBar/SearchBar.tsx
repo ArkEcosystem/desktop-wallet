@@ -18,9 +18,9 @@ export const SearchBar = (props: SearchBarProps) => {
 
 	return (
 		<div data-testid="SearchBar" className={`bg-theme-neutral-200 px-16 pt-8 pb-10 ${props.className}`}>
-			<div className="flex bg-white rounded shadow-xl px-6 py-4">
+			<div className="flex px-6 py-4 bg-white rounded shadow-xl">
 				{props.options && props.options.length && (
-					<div className="flex items-center border-r border-theme-neutral-200 my-1 pr-6 pl-2">
+					<div className="flex items-center pl-2 pr-6 my-1 border-r border-theme-neutral-200">
 						<Dropdown
 							toggleContent={
 								props.selectedOption ? (
@@ -28,7 +28,7 @@ export const SearchBar = (props: SearchBarProps) => {
 								) : (
 									<span className="font-semibold cursor-pointer select-none">
 										{t("COMMON.TYPE")}{" "}
-										<SvgCollection.ArrowDown className="inline-block text-black w-2 ml-1" />
+										<SvgCollection.ArrowDown className="inline-block w-2 ml-1 text-black" />
 									</span>
 								)
 							}
@@ -47,7 +47,7 @@ export const SearchBar = (props: SearchBarProps) => {
 				</div>
 
 				<Button color="primary" variant="solid" size="small" className="my-1">
-					<span className="text-sm px-2">{t("SEARCH.FIND_IT")}</span>
+					<span className="px-2 text-sm">{t("SEARCH.FIND_IT")}</span>
 				</Button>
 			</div>
 		</div>
