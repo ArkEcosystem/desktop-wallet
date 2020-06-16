@@ -46,6 +46,30 @@ exports[`Dropdown should render toggle icon 1`] = `
 </div>
 `;
 
+exports[`Dropdown should render with custom toggle content as function 1`] = `
+<div>
+  <div
+    class="relative"
+  >
+    <div>
+      Dropdown is open: 
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Dropdown should render with custom toggle content as react element 1`] = `
+<div>
+  <div
+    class="relative"
+  >
+    <div>
+      custom toggle
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Dropdown should render with options 1`] = `
 <div>
   <div
