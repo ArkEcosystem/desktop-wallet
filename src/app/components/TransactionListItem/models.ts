@@ -6,6 +6,6 @@ export type TransactionListItemProps = {
 	walletName?: string;
 	amount: string;
 	fiat: string;
-	variant?: "default" | "compact";
+	variant?: "compact";
 	onClick?: any;
 };
