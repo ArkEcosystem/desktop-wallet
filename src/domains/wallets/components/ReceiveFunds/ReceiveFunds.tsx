@@ -10,7 +10,7 @@ type Props = {
 	isOpen: boolean;
 	wallet: any;
 	qrCode: string;
-	onCopy: any;
+	onCopy: () => void;
 	handleClose?: any;
 };
 
@@ -19,10 +19,10 @@ type WrapperProps = {
 	value: string;
 	children?: React.ReactNode;
 	className?: string;
-	showCopy: boolean;
+	onCopy?: () => void;
 };
 
-const Wrapper = ({ label, value, children, className, showCopy = false }: WrapperProps) => {
+const Wrapper = ({ label, value, children, className, onCopy }: WrapperProps) => {
 	return (
 		<div className={className}>
 			<div className="flex items-center mt-8 mb-6">
@@ -30,10 +30,10 @@ const Wrapper = ({ label, value, children, className, showCopy = false }: Wrappe
 					<div className="text-sm font-semibold text-theme-neutral-500">{label}</div>
 					<div className="flex items-center font-semibold">
 						{value}
-						{showCopy && (
-							<span className="inline-block ml-4 text-theme-primary-300">
+						{typeof onCopy === "function" && (
+							<button onClick={onCopy} className="inline-block ml-4 text-theme-primary-300">
 								<Icon name="Copy" />
-							</span>
+							</button>
 						)}
 					</div>
 				</div>
@@ -59,7 +59,7 @@ export const ReceiveFunds = ({ isOpen, wallet, qrCode, onCopy, handleClose }: Pr
 				</Wrapper>
 			)}
 
-			<Wrapper label={t("COMMON.ADDRESS")} value={wallet.address} showCopy={true}>
+			<Wrapper label={t("COMMON.ADDRESS")} value={wallet.address} onCopy={onCopy}>
 				<div className="ml-4">
 					{!wallet.walletName && (
 						<Circle className="-mr-2">
