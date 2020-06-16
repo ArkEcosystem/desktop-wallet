@@ -1,0 +1,130 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchBar should render 1`] = `
+<DocumentFragment>
+  <div
+    class="bg-theme-neutral-200 px-16 pt-8 pb-10 undefined"
+    data-testid="SearchBar"
+  >
+    <div
+      class="flex bg-white rounded shadow-xl px-6 py-4"
+    >
+      <div
+        class="flex-1 mr-4"
+      >
+        <input
+          class="sc-AxhCb clCjoe overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary border-none shadow-none"
+          data-testid="Input"
+          placeholder="What would you like to search for?"
+        />
+      </div>
+      <button
+        class="sc-AxjAm jPIcLJ my-1"
+        color="primary"
+        type="button"
+      >
+        <span
+          class="text-sm px-2"
+        >
+          Find it
+        </span>
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`SearchBar should render with options 1`] = `
+<DocumentFragment>
+  <div
+    class="bg-theme-neutral-200 px-16 pt-8 pb-10 undefined"
+    data-testid="SearchBar"
+  >
+    <div
+      class="flex bg-white rounded shadow-xl px-6 py-4"
+    >
+      <div
+        class="flex items-center border-r border-theme-neutral-200 my-1 pr-6 pl-2"
+      >
+        <div
+          class="relative"
+        >
+          <span
+            class="font-semibold cursor-pointer select-none"
+          >
+            Type 
+            <svg
+              class="inline-block text-black w-2 ml-1"
+            >
+              arrowdown.svg
+            </svg>
+          </span>
+        </div>
+      </div>
+      <div
+        class="flex-1 mr-4"
+      >
+        <input
+          class="sc-AxhCb clCjoe overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary border-none shadow-none"
+          data-testid="Input"
+          placeholder="What would you like to search for?"
+        />
+      </div>
+      <button
+        class="sc-AxjAm jPIcLJ my-1"
+        color="primary"
+        type="button"
+      >
+        <span
+          class="text-sm px-2"
+        >
+          Find it
+        </span>
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`SearchBar should render with selected option 1`] = `
+<DocumentFragment>
+  <div
+    class="bg-theme-neutral-200 px-16 pt-8 pb-10 undefined"
+    data-testid="SearchBar"
+  >
+    <div
+      class="flex bg-white rounded shadow-xl px-6 py-4"
+    >
+      <div
+        class="flex items-center border-r border-theme-neutral-200 my-1 pr-6 pl-2"
+      >
+        <div
+          class="relative"
+        >
+          TESTING LABEL
+        </div>
+      </div>
+      <div
+        class="flex-1 mr-4"
+      >
+        <input
+          class="sc-AxhCb clCjoe overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary border-none shadow-none"
+          data-testid="Input"
+          placeholder="What would you like to search for?"
+        />
+      </div>
+      <button
+        class="sc-AxjAm jPIcLJ my-1"
+        color="primary"
+        type="button"
+      >
+        <span
+          class="text-sm px-2"
+        >
+          Find it
+        </span>
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;
