@@ -1,6 +1,4 @@
 /* eslint-disable @typescript-eslint/unbound-method */
-import axios from "axios";
-
 import { httpClient } from "../";
 
 jest.mock("axios", () => ({
