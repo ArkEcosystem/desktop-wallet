@@ -71,7 +71,7 @@ export const ReceiveFunds = ({ isOpen, wallet, qrCode, onCopy, handleClose }: Pr
 			</Wrapper>
 
 			<div className="mt-8">
-				<img src={qrCode} className="mx-auto w-64 h-64" />
+				<img src={qrCode} className="w-64 h-64 mx-auto" />
 			</div>
 		</Modal>
 	);
