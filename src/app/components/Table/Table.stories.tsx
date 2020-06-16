@@ -1,8 +1,9 @@
 import React from "react";
-import { Table } from "./Table";
+
+import { Address } from "../Address";
 import { Circle } from "../Circle";
 import { Icon } from "../Icon";
-import { Address } from "../Address";
+import { Table } from "./Table";
 
 export default {
 	title: "Components / Table",

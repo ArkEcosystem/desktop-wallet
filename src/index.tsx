@@ -1,14 +1,16 @@
+// Styles
+import "./styles/app.css";
+
 import React from "react";
 import ReactDOM from "react-dom";
-import { HashRouter } from "react-router-dom";
-import { renderRoutes } from "react-router-config";
 import { I18nextProvider } from "react-i18next";
+import { renderRoutes } from "react-router-config";
+import { HashRouter } from "react-router-dom";
+
 // i18n
 import { i18n } from "./app/i18n";
 // Routes
 import { routes } from "./router";
-// Styles
-import "./styles/app.css";
 
 ReactDOM.render(
 	<HashRouter>

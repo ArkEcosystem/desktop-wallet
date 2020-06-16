@@ -1,0 +1,255 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ContactUs should not render if not open 1`] = `<DocumentFragment />`;
+
+exports[`ContactUs should render a modal 1`] = `
+<DocumentFragment>
+  <div
+    class="fixed inset-0 z-10 bg-black opacity-50"
+    data-testid="modal__overlay"
+  />
+  <div
+    class="sc-fzplWN jxRzUr fixed left-0 right-0 z-10 flex flex-col px-16 pt-6 pb-8 mx-auto mt-24 rounded-xl bg-theme-background"
+    data-testid="modal__inner"
+  >
+    <div
+      class="absolute top-0 right-0 mt-4 mr-4"
+    >
+      <button
+        class="sc-AxjAm eYrebl"
+        color="neutral"
+        data-testid="modal__close-btn"
+        type="button"
+      >
+        <div
+          class="sc-AxhCb idmnCf"
+          height="10"
+          width="10"
+        >
+          <svg>
+            cross-slim.svg
+          </svg>
+        </div>
+      </button>
+    </div>
+    <div
+      class="py-4"
+    >
+      <h2>
+        Contact Us
+      </h2>
+      <div
+        class="flex-1"
+      >
+        <div
+          class="text-theme-neutral-700"
+        >
+          We'd be happy to answer your questions
+        </div>
+        <div
+          class="flex px-16 pb-8 mt-2 mb-8 -mx-16 text-black border-b border-gray-500"
+        >
+          <a
+            class="mr-2 rounded-full hover:bg-theme-neutral-300"
+            href="https://twitter.ark.io"
+          >
+            <div
+              class="sc-AxirZ paroP border-black hover:bg-transparent"
+            >
+              <div
+                class="sc-AxhCb fxrKLH"
+                height="1em"
+                width="1em"
+              >
+                <svg>
+                  twitter.svg
+                </svg>
+              </div>
+            </div>
+          </a>
+          <a
+            class="mr-2 rounded-full hover:bg-theme-neutral-300"
+            href="https://slack.ark.io"
+          >
+            <div
+              class="sc-AxirZ paroP border-black hover:bg-transparent"
+            >
+              <div
+                class="sc-AxhCb fxrKLH"
+                height="1em"
+                width="1em"
+              >
+                <svg>
+                  slack.svg
+                </svg>
+              </div>
+            </div>
+          </a>
+          <a
+            class="mr-2 rounded-full hover:bg-theme-neutral-300"
+            href="https://discord.ark.io/"
+          >
+            <div
+              class="sc-AxirZ paroP border-black hover:bg-transparent"
+            >
+              <div
+                class="sc-AxhCb fxrKLH"
+                height="1em"
+                width="1em"
+              >
+                <svg>
+                  discord.svg
+                </svg>
+              </div>
+            </div>
+          </a>
+          <a
+            class="rounded-full hover:bg-theme-neutral-300"
+            href="mailto:info@ark.io"
+          >
+            <div
+              class="sc-AxirZ paroP border-black hover:bg-transparent"
+            >
+              <div
+                class="sc-AxhCb fxrKLH"
+                height="1em"
+                width="1em"
+              >
+                <svg>
+                  send.svg
+                </svg>
+              </div>
+            </div>
+          </a>
+        </div>
+        <form
+          class="space-y-6"
+          data-testid="Form"
+        >
+          <fieldset
+            class="sc-AxiKw iQzisX flex flex-col space-y-2"
+          >
+            <h2
+              class="mb-0"
+            >
+              Feedback
+            </h2>
+            <label
+              class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
+              data-testid="FormLabel"
+              for="name"
+            >
+              Name
+            </label>
+            <input
+              class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+              data-testid="Input"
+              name="name"
+            />
+          </fieldset>
+          <fieldset
+            class="sc-AxiKw iQzisX flex flex-col space-y-2"
+          >
+            <label
+              class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
+              data-testid="FormLabel"
+              for="email"
+            >
+              Email
+            </label>
+            <input
+              class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+              data-testid="Input"
+              name="email"
+            />
+          </fieldset>
+          <fieldset
+            class="sc-AxiKw iQzisX flex flex-col space-y-2"
+          >
+            <label
+              class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
+              data-testid="FormLabel"
+              for="subject"
+            >
+              Subject
+            </label>
+            <div
+              class="sc-AxmLO kuiknc"
+            >
+              <select
+                class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
+                data-testid="Select"
+                name="subject"
+              >
+                <option
+                  selected=""
+                  value=""
+                >
+                  Select
+                </option>
+                <option
+                  value="security"
+                >
+                  Security
+                </option>
+                <option
+                  value="other"
+                >
+                  Other
+                </option>
+              </select>
+              <div
+                class="sc-AxgMl sc-Axmtr cPxyjO w-12 text-lg pointer-events-none text-theme-neutral-dark"
+              >
+                <div
+                  class="sc-AxhCb fxrKLH"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    chevron-down.svg
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+          <fieldset
+            class="sc-AxiKw iQzisX flex flex-col space-y-2"
+          >
+            <label
+              class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
+              data-testid="FormLabel"
+              for="message"
+            >
+              Message
+            </label>
+            <textarea
+              class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+              data-testid="TextArea"
+              name="message"
+            />
+          </fieldset>
+          <div
+            class="mt-4"
+          >
+            <button
+              class="sc-AxjAm gSuvFI mr-2"
+              color="primary"
+              type="button"
+            >
+              Cancel
+            </button>
+            <button
+              class="sc-AxjAm jTpTok"
+              color="primary"
+              type="submit"
+            >
+              Send
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

@@ -1,6 +1,7 @@
-import React from "react";
-import { TransferDetail } from "./";
 import { boolean } from "@storybook/addon-knobs";
+import React from "react";
+
+import { TransferDetail } from "./";
 
 export default { title: "Transaction / Components / Transfer Detail" };
 

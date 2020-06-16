@@ -1,6 +1,7 @@
-import React from "react";
-import { Divider } from "./Divider";
 import { boolean, select, withKnobs } from "@storybook/addon-knobs";
+import React from "react";
+
+import { Divider } from "./Divider";
 
 export default {
 	title: "Basic / Divider",

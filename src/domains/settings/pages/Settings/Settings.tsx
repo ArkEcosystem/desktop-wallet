@@ -1,7 +1,8 @@
-import React from "react";
-import { useForm } from "react-hook-form";
 // UI Elements
 import { SideBar } from "app/components/SideBar";
+import React from "react";
+import { useForm } from "react-hook-form";
+
 import * as availableSettings from "./available-settings";
 
 type PageConfig = {

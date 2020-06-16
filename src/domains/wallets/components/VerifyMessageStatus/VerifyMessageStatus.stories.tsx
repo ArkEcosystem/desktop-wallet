@@ -1,7 +1,8 @@
-import React, { useState } from "react";
-import { withKnobs, select, text } from "@storybook/addon-knobs";
-import { VerifyMessageStatus } from "./VerifyMessageStatus";
+import { select, text, withKnobs } from "@storybook/addon-knobs";
 import { Button } from "app/components/Button";
+import React, { useState } from "react";
+
+import { VerifyMessageStatus } from "./VerifyMessageStatus";
 
 export default { title: "Wallets / Components / Verify Message Status Modal", decorators: [withKnobs] };
 

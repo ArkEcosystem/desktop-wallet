@@ -1,7 +1,8 @@
-import React from "react";
-import { Modal } from "./";
-import { Button } from "app/components/Button";
 import { boolean, select, text, withKnobs } from "@storybook/addon-knobs";
+import { Button } from "app/components/Button";
+import React from "react";
+
+import { Modal } from "./";
 
 export default {
 	title: "Components / Modal",

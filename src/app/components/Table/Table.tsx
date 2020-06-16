@@ -1,9 +1,9 @@
 import React, { useMemo } from "react";
-import { useTable, useSortBy } from "react-table";
+import { useSortBy, useTable } from "react-table";
 import { styled } from "twin.macro";
 
-import { defaultTableStyle } from "./Table.styles";
 import { Icon } from "../Icon";
+import { defaultTableStyle } from "./Table.styles";
 
 type TableProps = {
 	children?: any;

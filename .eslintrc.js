@@ -13,7 +13,7 @@ module.exports = {
 		node: true,
 		es6: true,
 	},
-	plugins: ["@typescript-eslint", "prettier", "testing-library", "cypress"],
+	plugins: ["@typescript-eslint", "prettier", "testing-library", "cypress", "simple-import-sort"],
 	extends: [
 		"eslint:recommended",
 		"plugin:@typescript-eslint/eslint-recommended",
@@ -51,6 +51,7 @@ module.exports = {
 				endOfLine: "auto",
 			},
 		],
+		"simple-import-sort/sort": "error",
 	},
 	settings: {
 		react: {

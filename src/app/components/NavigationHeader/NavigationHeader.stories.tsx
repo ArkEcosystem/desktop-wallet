@@ -1,4 +1,5 @@
 import React from "react";
+
 import { NavigationHeader } from "./NavigationHeader";
 
 export default { title: "Navigation / NavigationHeader" };

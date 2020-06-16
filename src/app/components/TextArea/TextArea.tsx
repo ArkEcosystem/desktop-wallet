@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+
 import { Input } from "../Input";
 
 type TextareaProps = { isInvalid?: boolean; palceholder?: string } & React.TextareaHTMLAttributes<any>;

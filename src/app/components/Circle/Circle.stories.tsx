@@ -1,7 +1,8 @@
-import React from "react";
-import { Circle } from "./Circle";
+import { select, withKnobs } from "@storybook/addon-knobs";
 import { Icon } from "app/components/Icon";
-import { withKnobs, select } from "@storybook/addon-knobs";
+import React from "react";
+
+import { Circle } from "./Circle";
 
 export default {
 	title: "Components / Circle",

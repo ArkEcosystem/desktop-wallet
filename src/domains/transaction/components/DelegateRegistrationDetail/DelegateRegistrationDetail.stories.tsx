@@ -1,6 +1,7 @@
-import React from "react";
-import { DelegateRegistrationDetail } from "./";
 import { boolean } from "@storybook/addon-knobs";
+import React from "react";
+
+import { DelegateRegistrationDetail } from "./";
 
 export default { title: "Transaction / Components / Delegate Registration Detail" };
 

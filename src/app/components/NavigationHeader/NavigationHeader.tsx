@@ -1,8 +1,7 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
-
 // UI Elements
 import { Icon } from "app/components/Icon";
+import React from "react";
+import { NavLink } from "react-router-dom";
 
 type NavigationHeaderProps = {
 	title?: string;

@@ -1,6 +1,7 @@
 import React from "react";
+
+import { networks, transactions, wallets } from "../../data";
 import { Dashboard } from "./Dashboard";
-import { networks, wallets, transactions } from "../../data";
 
 export default { title: "Dashboard / Pages" };
 

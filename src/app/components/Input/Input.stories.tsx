@@ -1,5 +1,6 @@
 import React from "react";
-import { Input, InputPassword, InputCounter } from "./index";
+
+import { Input, InputCounter, InputPassword } from "./index";
 
 export default {
 	title: "Input / Input",

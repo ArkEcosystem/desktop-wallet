@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UpdateWalletName should not render if not open 1`] = `<DocumentFragment />`;
+
+exports[`UpdateWalletName should render a modal 1`] = `
+<DocumentFragment>
+  <div
+    class="fixed inset-0 z-10 bg-black opacity-50"
+    data-testid="modal__overlay"
+  />
+  <div
+    class="sc-fzpans hGJZle fixed left-0 right-0 z-10 flex flex-col px-16 pt-6 pb-8 mx-auto mt-24 rounded-xl bg-theme-background"
+    data-testid="modal__inner"
+  >
+    <div
+      class="absolute top-0 right-0 mt-4 mr-4"
+    >
+      <button
+        class="sc-AxjAm eYrebl"
+        color="neutral"
+        data-testid="modal__close-btn"
+        type="button"
+      >
+        <div
+          class="sc-Axmtr fmuEnd"
+          height="10"
+          width="10"
+        >
+          <svg>
+            cross-slim.svg
+          </svg>
+        </div>
+      </button>
+    </div>
+    <div
+      class="py-4"
+    >
+      <h2>
+        Name Wallet
+      </h2>
+      <div
+        class="flex-1"
+      >
+        <svg
+          class="mb-8"
+        >
+          name-wallet.svg
+        </svg>
+        <div
+          class="text-theme-neutral-700"
+        >
+          You can enter the name of your wallet for a quick search in your wallet.
+        </div>
+        <form
+          class="mt-4"
+          data-testid="Form"
+        >
+          <fieldset
+            class="sc-AxirZ izhStr flex flex-col space-y-2"
+          >
+            <label
+              class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
+              data-testid="FormLabel"
+              for="name"
+            >
+              Enter a name
+            </label>
+            <input
+              class="sc-AxiKw jrntKW overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+              data-testid="Input"
+              name="name"
+            />
+          </fieldset>
+          <div
+            class="mt-4"
+          >
+            <button
+              class="sc-AxjAm gSuvFI mr-2"
+              color="primary"
+              type="button"
+            >
+              Cancel
+            </button>
+            <button
+              class="sc-AxjAm jTpTok"
+              color="primary"
+              type="submit"
+            >
+              Save
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

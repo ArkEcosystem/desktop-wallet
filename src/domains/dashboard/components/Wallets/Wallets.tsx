@@ -1,11 +1,10 @@
-import React, { useState } from "react";
-
-import { Table } from "app/components/Table";
-import { Slider } from "app/components/Slider";
-import { WalletsControls } from "domains/dashboard/components/WalletsControls";
-import { WalletListItem } from "app/components/WalletListItem";
-import { WalletCard } from "app/components/WalletCard";
 import { Button } from "app/components/Button";
+import { Slider } from "app/components/Slider";
+import { Table } from "app/components/Table";
+import { WalletCard } from "app/components/WalletCard";
+import { WalletListItem } from "app/components/WalletListItem";
+import { WalletsControls } from "domains/dashboard/components/WalletsControls";
+import React, { useState } from "react";
 
 type WalletsProps = {
 	wallets?: any;

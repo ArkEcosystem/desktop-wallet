@@ -1,7 +1,7 @@
-import React from "react";
-import tw, { styled } from "twin.macro";
 import { Button } from "app/components/Button";
 import { Icon } from "app/components/Icon";
+import React from "react";
+import tw, { styled } from "twin.macro";
 
 type ModalProps = {
 	children: React.ReactNode;

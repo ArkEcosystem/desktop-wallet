@@ -1,12 +1,11 @@
-import React from "react";
-import { useTranslation } from "react-i18next";
-import { useForm } from "react-hook-form";
-// UI Elements
-import { Modal } from "app/components/Modal";
+import { images } from "app/assets/images";
 import { Button } from "app/components/Button";
 import { Icon } from "app/components/Icon";
-
-import { images } from "app/assets/images";
+// UI Elements
+import { Modal } from "app/components/Modal";
+import React from "react";
+import { useForm } from "react-hook-form";
+import { useTranslation } from "react-i18next";
 
 type DeleteWalletProps = {
 	isOpen: boolean;

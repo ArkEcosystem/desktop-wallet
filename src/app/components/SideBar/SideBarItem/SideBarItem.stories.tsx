@@ -1,5 +1,6 @@
+import { boolean, text, withKnobs } from "@storybook/addon-knobs";
 import React from "react";
-import { text, boolean, withKnobs } from "@storybook/addon-knobs";
+
 import { SideBarItem } from "./SideBarItem";
 
 export default { title: "Navigation / Side Bar / Side Bar Item", decorators: [withKnobs] };

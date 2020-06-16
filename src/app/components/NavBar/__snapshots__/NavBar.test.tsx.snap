@@ -1,0 +1,375 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavBar should render 1`] = `
+<DocumentFragment>
+  <nav
+    aria-labelledby="main menu"
+    class="sc-AxhUy guUjqR"
+  >
+    <div
+      class="px-4 sm:px-6 lg:px-8"
+    >
+      <div
+        class="relative flex justify-between h-20 md:h-24"
+      >
+        <div
+          class="flex items-center flex-shrink-0"
+        >
+          <div
+            class="flex p-2 mr-4 rounded-lg bg-logo"
+          >
+            <img
+              alt="ARK Logo"
+              class="h-6 md:h-8 lg:h-10"
+              src="ark-logo.png"
+            />
+          </div>
+          <ul
+            class="flex h-20 md:h-24"
+          >
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral-500"
+                href="/portfolio"
+                title="Portfolio"
+              >
+                Portfolio
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral-500"
+                href="/plugins"
+                title="Plugins"
+              >
+                Plugins
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral-500"
+                href="/exchange"
+                title="Exchange"
+              >
+                Exchange
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral-500"
+                href="/news"
+                title="News"
+              >
+                News
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div
+          class="flex items-center flex-shrink-0"
+        >
+          <div
+            class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+          >
+            <div
+              class="sc-AxjAm jmgDQY"
+              height="22"
+              width="22"
+            >
+              <svg>
+                notification.svg
+              </svg>
+            </div>
+          </div>
+          <div
+            class="h-8 border-r border-theme-neutral-200"
+          />
+          <div
+            class="flex items-center h-full px-3 -mt-1 cursor-pointer text-theme-primary-300"
+          >
+            <div
+              class="sc-AxjAm bsDiDM"
+              height="42"
+              width="42"
+            >
+              <svg>
+                sent.svg
+              </svg>
+            </div>
+          </div>
+          <div
+            class="h-8 border-r border-theme-neutral-200"
+          />
+          <div
+            class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+          >
+            <div
+              class="sc-AxjAm jmgDQY"
+              height="22"
+              width="22"
+            >
+              <svg>
+                receive.svg
+              </svg>
+            </div>
+          </div>
+          <div
+            class="h-8 border-r border-theme-neutral-200"
+          />
+          <div
+            class="p-2 ml-4 text-right"
+          >
+            <div
+              class="text-xs text-theme-neutral-500"
+            >
+              Your balance
+            </div>
+            <div
+              class="text-sm font-bold text-theme-neutral-700"
+            >
+              34,253.75
+            </div>
+          </div>
+          <div
+            class="flex p-1 cusror-pointer"
+          >
+            <div
+              class="relative"
+            >
+              <div
+                class="cursor-pointer"
+                data-testid="navbar__useractions"
+              >
+                <div
+                  class="sc-AxiKw bYONXQ -mr-1 border-theme-neutral-300"
+                >
+                  <span
+                    class="text-theme-neutral-600"
+                  >
+                    <div
+                      class="sc-AxjAm cpczEI"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        btc.svg
+                      </svg>
+                    </div>
+                  </span>
+                </div>
+                <div
+                  class="sc-AxiKw bYONXQ relative rotate-90 bg-theme-primary-600 border-theme-primary-600"
+                >
+                  <span
+                    class="text-sm text-theme-background"
+                  >
+                    IO
+                  </span>
+                  <span
+                    class="sc-AxirZ nnMcM flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent transform  bg-theme-primary-100 border-theme-primary-100 bottom-2 -right-4 text-theme-primary-500"
+                  >
+                    <div
+                      class="sc-AxjAm vZRQY"
+                      height="16"
+                      width="16"
+                    >
+                      <svg>
+                        chevron-down.svg
+                      </svg>
+                    </div>
+                    <span />
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</DocumentFragment>
+`;
+
+exports[`NavBar should render with custom menu 1`] = `
+<DocumentFragment>
+  <nav
+    aria-labelledby="main menu"
+    class="sc-AxhUy guUjqR"
+  >
+    <div
+      class="px-4 sm:px-6 lg:px-8"
+    >
+      <div
+        class="relative flex justify-between h-20 md:h-24"
+      >
+        <div
+          class="flex items-center flex-shrink-0"
+        >
+          <div
+            class="flex p-2 mr-4 rounded-lg bg-logo"
+          >
+            <img
+              alt="ARK Logo"
+              class="h-6 md:h-8 lg:h-10"
+              src="ark-logo.png"
+            />
+          </div>
+          <ul
+            class="flex h-20 md:h-24"
+          >
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral-500"
+                href="/portfolio"
+                title="Portfolio"
+              >
+                Portfolio
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral-500"
+                href="/test"
+                title="test"
+              >
+                test
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div
+          class="flex items-center flex-shrink-0"
+        >
+          <div
+            class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+          >
+            <div
+              class="sc-AxjAm jmgDQY"
+              height="22"
+              width="22"
+            >
+              <svg>
+                notification.svg
+              </svg>
+            </div>
+          </div>
+          <div
+            class="h-8 border-r border-theme-neutral-200"
+          />
+          <div
+            class="flex items-center h-full px-3 -mt-1 cursor-pointer text-theme-primary-300"
+          >
+            <div
+              class="sc-AxjAm bsDiDM"
+              height="42"
+              width="42"
+            >
+              <svg>
+                sent.svg
+              </svg>
+            </div>
+          </div>
+          <div
+            class="h-8 border-r border-theme-neutral-200"
+          />
+          <div
+            class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+          >
+            <div
+              class="sc-AxjAm jmgDQY"
+              height="22"
+              width="22"
+            >
+              <svg>
+                receive.svg
+              </svg>
+            </div>
+          </div>
+          <div
+            class="h-8 border-r border-theme-neutral-200"
+          />
+          <div
+            class="p-2 ml-4 text-right"
+          >
+            <div
+              class="text-xs text-theme-neutral-500"
+            >
+              Your balance
+            </div>
+            <div
+              class="text-sm font-bold text-theme-neutral-700"
+            >
+              34,253.75
+            </div>
+          </div>
+          <div
+            class="flex p-1 cusror-pointer"
+          >
+            <div
+              class="relative"
+            >
+              <div
+                class="cursor-pointer"
+                data-testid="navbar__useractions"
+              >
+                <div
+                  class="sc-AxiKw bYONXQ -mr-1 border-theme-neutral-300"
+                >
+                  <span
+                    class="text-theme-neutral-600"
+                  >
+                    <div
+                      class="sc-AxjAm cpczEI"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        btc.svg
+                      </svg>
+                    </div>
+                  </span>
+                </div>
+                <div
+                  class="sc-AxiKw bYONXQ relative rotate-90 bg-theme-primary-600 border-theme-primary-600"
+                >
+                  <span
+                    class="text-sm text-theme-background"
+                  >
+                    IO
+                  </span>
+                  <span
+                    class="sc-AxirZ nnMcM flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent transform  bg-theme-primary-100 border-theme-primary-100 bottom-2 -right-4 text-theme-primary-500"
+                  >
+                    <div
+                      class="sc-AxjAm vZRQY"
+                      height="16"
+                      width="16"
+                    >
+                      <svg>
+                        chevron-down.svg
+                      </svg>
+                    </div>
+                    <span />
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</DocumentFragment>
+`;

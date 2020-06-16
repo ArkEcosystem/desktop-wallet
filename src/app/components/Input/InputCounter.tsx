@@ -1,6 +1,7 @@
 import React from "react";
+
 import { Input } from "./Input";
-import { InputGroup, InputAddonEnd } from "./InputGroup";
+import { InputAddonEnd, InputGroup } from "./InputGroup";
 
 type Props = { maxLength: number; defaultValue?: string } & React.InputHTMLAttributes<any>;
 

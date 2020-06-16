@@ -1,6 +1,7 @@
+import "swiper/css/swiper.min.css";
+
 import React, { useEffect } from "react";
 import Swiper from "swiper";
-import "swiper/css/swiper.min.css";
 
 type SliderProps = {
 	children?: any;
