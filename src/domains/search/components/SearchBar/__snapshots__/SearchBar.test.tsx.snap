@@ -44,7 +44,7 @@ exports[`SearchBar should render with options 1`] = `
       class="flex px-6 py-4 bg-white rounded shadow-xl"
     >
       <div
-        class="flex items-center border-r border-theme-neutral-200 my-1 pr-6 pl-2"
+        class="flex items-center pl-2 pr-6 my-1 border-r border-theme-neutral-200"
         data-testid="SearchBarOptions"
       >
         <div
@@ -55,7 +55,7 @@ exports[`SearchBar should render with options 1`] = `
           >
             Type 
             <svg
-              class="inline-block text-black w-2 ml-1"
+              class="inline-block w-2 ml-1 text-black"
             >
               arrowdown.svg
             </svg>
@@ -97,7 +97,7 @@ exports[`SearchBar should render with selected option 1`] = `
       class="flex px-6 py-4 bg-white rounded shadow-xl"
     >
       <div
-        class="flex items-center border-r border-theme-neutral-200 my-1 pr-6 pl-2"
+        class="flex items-center pl-2 pr-6 my-1 border-r border-theme-neutral-200"
         data-testid="SearchBarOptions"
       >
         <div
