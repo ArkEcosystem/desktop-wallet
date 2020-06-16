@@ -19,7 +19,7 @@ export const InstallPlugin = ({ step, isOpen, onClose, onCancel }: Props) => {
 						<p className="mt-4 text-base font-semibold text-theme-neutral-dark md:text-lg">
 							This plugin needs the following permissions:
 						</p>
-						<ul className="mt-2 text-sm leading-8 list-inside list-circle text-theme-neutral-dark md:text-base">
+						<ul className="mt-2 text-sm list-inside leading-8 list-circle text-theme-neutral-dark md:text-base">
 							<li>Allows access to the Desktop Wallet alerts</li>
 							<li>Allows access to play audio from within the Desktop Wallet</li>
 							<li>Allows access to the Desktop Wallet events</li>
@@ -36,7 +36,7 @@ export const InstallPlugin = ({ step, isOpen, onClose, onCancel }: Props) => {
 				)}
 
 				{step === 2 && (
-					<div className="grid grid-cols-3 gap-1 mt-4">
+					<div className="mt-4 grid grid-cols-3 gap-1">
 						<div>
 							<img
 								className="rounded-xl"
