@@ -1,6 +1,7 @@
+import { number, text, withKnobs } from "@storybook/addon-knobs";
 import React from "react";
+
 import { Address } from "./Address";
-import { withKnobs, text, number } from "@storybook/addon-knobs";
 
 export default {
 	title: "Components / Formatted Address",

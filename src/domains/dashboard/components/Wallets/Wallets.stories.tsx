@@ -1,6 +1,7 @@
 import React from "react";
-import { Wallets } from "./Wallets";
+
 import { networks, wallets } from "../../data";
+import { Wallets } from "./Wallets";
 
 export default { title: "Dashboard / Components / Wallets" };
 

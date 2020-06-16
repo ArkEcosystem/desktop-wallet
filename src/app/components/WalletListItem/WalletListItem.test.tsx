@@ -1,8 +1,8 @@
+import { fireEvent, render } from "@testing-library/react";
 import React from "react";
-import { render, fireEvent } from "@testing-library/react";
+import { act } from "react-dom/test-utils";
 
 import { WalletListItem } from "./WalletListItem";
-import { act } from "react-dom/test-utils";
 
 describe("WalletListItem", () => {
 	it("should render", () => {

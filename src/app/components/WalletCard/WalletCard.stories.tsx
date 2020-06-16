@@ -1,4 +1,5 @@
 import React from "react";
+
 import { WalletCard } from "./WalletCard";
 
 export default {

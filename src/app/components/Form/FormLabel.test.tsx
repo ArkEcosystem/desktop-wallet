@@ -1,8 +1,10 @@
-import React from "react";
+import "@testing-library/jest-dom/extend-expect";
+
 import { render } from "@testing-library/react";
+import React from "react";
+
 import { FormLabel } from "./FormLabel";
 import { FormFieldProvider } from "./useFormField";
-import "@testing-library/jest-dom/extend-expect";
 
 describe("FormLabel", () => {
 	it("should render from children", () => {

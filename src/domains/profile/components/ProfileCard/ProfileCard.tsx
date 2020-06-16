@@ -1,8 +1,7 @@
-import React from "react";
-
 // UI Elements
 import { Card } from "app/components/Card";
 import { Dropdown } from "app/components/Dropdown";
+import React from "react";
 
 interface ISettingsOptions {
 	label: string;

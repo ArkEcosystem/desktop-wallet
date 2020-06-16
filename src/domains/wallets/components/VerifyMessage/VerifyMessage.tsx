@@ -1,12 +1,12 @@
-import React, { useState } from "react";
-import { useForm } from "react-hook-form";
 // UI Elements
 import { Alert } from "app/components/Alert";
 import { Button } from "app/components/Button";
-import { Form, FormField, FormLabel, FormHelperText } from "app/components/Form";
+import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Input } from "app/components/Input";
 import { Modal } from "app/components/Modal";
 import { Toggle } from "app/components/Toggle";
+import React, { useState } from "react";
+import { useForm } from "react-hook-form";
 
 type Props = {
 	onSubmit?: any;

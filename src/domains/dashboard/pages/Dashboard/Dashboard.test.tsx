@@ -1,7 +1,7 @@
-import React from "react";
 import { act, fireEvent, render } from "@testing-library/react";
-import { transactions, wallets } from "../../data";
+import React from "react";
 
+import { transactions, wallets } from "../../data";
 import { Dashboard } from "./Dashboard";
 
 describe("Dashboard", () => {

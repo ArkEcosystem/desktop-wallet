@@ -1,5 +1,6 @@
 import React from "react";
-import { RadioButtonGroup, RadioButton } from "./RadioButton";
+
+import { RadioButton, RadioButtonGroup } from "./RadioButton";
 import { useRadioState } from "./useRadioState";
 
 export default { title: "Basic / RadioButton" };

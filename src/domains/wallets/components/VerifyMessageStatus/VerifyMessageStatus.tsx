@@ -1,8 +1,8 @@
-import React from "react";
-// UI Elements
-import { Modal } from "app/components/Modal";
 // Assets
 import { SvgCollection } from "app/assets/svg";
+// UI Elements
+import { Modal } from "app/components/Modal";
+import React from "react";
 
 type Props = {
 	type: "success" | "error";

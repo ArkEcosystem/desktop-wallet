@@ -1,6 +1,7 @@
+import { motion, useAnimation } from "framer-motion";
 import React from "react";
 import tw, { styled } from "twin.macro";
-import { motion, useAnimation } from "framer-motion";
+
 import { shuffleOptions } from "./utils/shuffleOptions";
 
 export const OptionButton = styled(motion.button)`

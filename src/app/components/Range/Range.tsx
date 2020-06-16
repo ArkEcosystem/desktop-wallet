@@ -1,6 +1,6 @@
 import React from "react";
+import { getTrackBackground, Range as ReactRange } from "react-range";
 import tw, { styled } from "twin.macro";
-import { Range as ReactRange, getTrackBackground } from "react-range";
 
 const Track = styled.div`
 	height: 1px;

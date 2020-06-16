@@ -1,7 +1,8 @@
 import React from "react";
 import tw, { styled } from "twin.macro";
-import { Card } from "./Card";
+
 import { Icon } from "../Icon";
+import { Card } from "./Card";
 
 type CardControlProps = {
 	children: React.ReactNode;

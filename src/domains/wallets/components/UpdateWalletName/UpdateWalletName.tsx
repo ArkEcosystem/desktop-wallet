@@ -1,13 +1,12 @@
-import React from "react";
-import { useTranslation } from "react-i18next";
-import { useForm } from "react-hook-form";
+import { images } from "app/assets/images";
+import { Button } from "app/components/Button";
+import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
+import { Input } from "app/components/Input";
 // UI Elements
 import { Modal } from "app/components/Modal";
-import { Button } from "app/components/Button";
-import { Form, FormField, FormLabel, FormHelperText } from "app/components/Form";
-import { Input } from "app/components/Input";
-
-import { images } from "app/assets/images";
+import React from "react";
+import { useForm } from "react-hook-form";
+import { useTranslation } from "react-i18next";
 
 type UpdateWalletNameProps = {
 	isOpen: boolean;

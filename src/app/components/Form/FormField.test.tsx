@@ -1,9 +1,10 @@
-import React from "react";
 import { render } from "@testing-library/react";
+import { act, renderHook } from "@testing-library/react-hooks";
+import React from "react";
+import { FormContext, useForm } from "react-hook-form";
+
 import { FormField } from "./FormField";
 import { FormFieldConsumer } from "./useFormField";
-import { useForm, FormContext } from "react-hook-form";
-import { renderHook, act } from "@testing-library/react-hooks";
 
 describe("FormField", () => {
 	it("should render without FormContext", () => {

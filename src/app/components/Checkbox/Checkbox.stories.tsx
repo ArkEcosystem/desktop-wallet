@@ -1,5 +1,6 @@
-import React from "react";
 import { select, withKnobs } from "@storybook/addon-knobs";
+import React from "react";
+
 import { Checkbox } from "./Checkbox";
 
 export default {

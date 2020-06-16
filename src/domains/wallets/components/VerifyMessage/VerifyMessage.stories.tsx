@@ -1,7 +1,7 @@
+import { Button } from "app/components/Button";
 import React, { useState } from "react";
 
 import { VerifyMessage } from "./VerifyMessage";
-import { Button } from "app/components/Button";
 
 export default { title: "Wallets / Components / Verify Message" };
 

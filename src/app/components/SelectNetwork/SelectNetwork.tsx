@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { Circle } from "../Circle";
+
 import { Badge } from "../Badge";
+import { Circle } from "../Circle";
 import { Icon } from "../Icon";
 
 type Network = {

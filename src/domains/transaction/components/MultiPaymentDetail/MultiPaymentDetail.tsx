@@ -1,12 +1,12 @@
-import React from "react";
-import { useTranslation } from "react-i18next";
-// UI Elements
-import { Modal } from "app/components/Modal";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
 import { Label } from "app/components/Label";
-import { Recipient } from "domains/transaction/components/Recipient";
+// UI Elements
+import { Modal } from "app/components/Modal";
 import { TransactionDetail } from "app/components/TransactionDetail";
+import { Recipient } from "domains/transaction/components/Recipient";
+import React from "react";
+import { useTranslation } from "react-i18next";
 
 type MultiPaymentDetailProps = {
 	isOpen: boolean;

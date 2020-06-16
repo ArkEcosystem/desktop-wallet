@@ -1,6 +1,7 @@
-import React from "react";
-import { CreateWallet } from "./CreateWallet";
 import { action } from "@storybook/addon-actions";
+import React from "react";
+
+import { CreateWallet } from "./CreateWallet";
 
 export default { title: "Wallets / Pages / Create Wallet" };
 

@@ -1,8 +1,9 @@
+import { Range } from "app/components/Range";
 import React from "react";
+import { getTrackBackground } from "react-range";
+
 import { Input } from "./Input";
 import { InputGroup } from "./InputGroup";
-import { getTrackBackground } from "react-range";
-import { Range } from "app/components/Range";
 
 type Props = {
 	defaultValue: number;

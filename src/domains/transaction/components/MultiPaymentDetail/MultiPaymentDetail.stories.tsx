@@ -1,6 +1,7 @@
-import React from "react";
-import { MultiPaymentDetail } from "./";
 import { boolean } from "@storybook/addon-knobs";
+import React from "react";
+
+import { MultiPaymentDetail } from "./";
 
 export default { title: "Transaction / Components / MultiPayment Detail" };
 

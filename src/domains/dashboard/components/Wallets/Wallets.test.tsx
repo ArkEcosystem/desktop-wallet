@@ -1,8 +1,8 @@
-import React from "react";
 import { act, fireEvent, render } from "@testing-library/react";
+import React from "react";
 
-import { Wallets } from "./Wallets";
 import { networks, wallets } from "../../data";
+import { Wallets } from "./Wallets";
 
 describe("Wallets", () => {
 	// Wallet filter properties

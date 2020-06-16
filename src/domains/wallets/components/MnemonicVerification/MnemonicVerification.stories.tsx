@@ -1,4 +1,5 @@
 import React from "react";
+
 import { MnemonicVerification } from "./MnemonicVerification";
 
 export default { title: "Wallets / Components / MnemonicVerification" };

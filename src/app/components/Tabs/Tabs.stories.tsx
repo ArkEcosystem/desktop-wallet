@@ -1,5 +1,6 @@
 import React from "react";
-import { Tabs, Tab, TabList, TabPanel } from "./Tabs";
+
+import { Tab, TabList, TabPanel, Tabs } from "./Tabs";
 
 export default {
 	title: "Navigation / Tabs",

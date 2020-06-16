@@ -1,14 +1,13 @@
+import { images } from "app/assets/images";
+import { Badge } from "app/components/Badge";
+import { Circle } from "app/components/Circle";
+import { Dropdown } from "app/components/Dropdown";
+import { Icon } from "app/components/Icon";
 import React from "react";
 import { NavLink } from "react-router-dom";
 import tw, { styled } from "twin.macro";
 
-import { images } from "app/assets/images";
 import { defaultStyle } from "./style";
-
-import { Circle } from "app/components/Circle";
-import { Icon } from "app/components/Icon";
-import { Badge } from "app/components/Badge";
-import { Dropdown } from "app/components/Dropdown";
 
 const commonAssets = images.common;
 

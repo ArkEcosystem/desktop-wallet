@@ -1,7 +1,8 @@
-import React from "react";
-import { Badge } from "./Badge";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
+import React from "react";
+
+import { Badge } from "./Badge";
 
 export default {
 	title: "Components / Badge",

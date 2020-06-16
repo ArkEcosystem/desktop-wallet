@@ -1,6 +1,7 @@
-import React from "react";
 import { fireEvent, render } from "@testing-library/react";
+import React from "react";
 import { ErrorBoundary } from "react-error-boundary";
+
 import { Checkbox } from "./Checkbox";
 
 describe("Checkbox", () => {

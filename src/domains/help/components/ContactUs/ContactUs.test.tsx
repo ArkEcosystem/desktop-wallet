@@ -1,10 +1,9 @@
-import React from "react";
 import { render } from "@testing-library/react";
+import { i18n } from "app/i18n";
+import React from "react";
 import { I18nextProvider } from "react-i18next";
 
-import { i18n } from "app/i18n";
 import { translations } from "../../i18n";
-
 import { ContactUs } from "./";
 
 describe("ContactUs", () => {

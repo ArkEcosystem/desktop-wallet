@@ -1,9 +1,10 @@
 /* eslint-disable @typescript-eslint/require-await */
+import { fireEvent, render, RenderResult, waitFor } from "@testing-library/react";
+import { act, renderHook } from "@testing-library/react-hooks";
 import React from "react";
-import { render, RenderResult, fireEvent, waitFor } from "@testing-library/react";
-import { CreateWallet, FirstStep, SecondStep, ThirdStep, FourthStep } from "./CreateWallet";
-import { renderHook, act } from "@testing-library/react-hooks";
-import { useForm, FormContext } from "react-hook-form";
+import { FormContext, useForm } from "react-hook-form";
+
+import { CreateWallet, FirstStep, FourthStep, SecondStep, ThirdStep } from "./CreateWallet";
 
 describe("CreateWallet", () => {
 	const mnemonic = ["lorem", "ipsum", "dolor", "sit", "amet", "consectetur"];
