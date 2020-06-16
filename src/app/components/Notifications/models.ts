@@ -6,7 +6,7 @@ export type Action = {
 };
 
 export type PluginNotification = {
-	logoUrl: string;
+	logoUrl?: string;
 	logoClassName: string;
 	title: string;
 	description: string;
