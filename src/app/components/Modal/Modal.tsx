@@ -8,7 +8,7 @@ type ModalProps = {
 	title: string;
 	description?: string;
 	image?: React.ReactNode;
-	size?: "sm" | "md" | "lg" | "xl" | "2xl" | "3xl";
+	size?: "sm" | "md" | "lg" | "xl" | "2xl" | "3xl" | "4xl";
 	isOpen: boolean;
 	onClose?: any;
 	onClick?: any;
@@ -19,7 +19,7 @@ type ModalContentProps = {
 	title: string;
 	description?: string;
 	image?: React.ReactNode;
-	size?: "sm" | "md" | "lg" | "xl" | "2xl" | "3xl";
+	size?: "sm" | "md" | "lg" | "xl" | "2xl" | "3xl" | "4xl";
 	onClose?: any;
 };
 
