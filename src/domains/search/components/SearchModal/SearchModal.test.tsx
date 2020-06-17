@@ -11,7 +11,7 @@ describe("SearchModal", () => {
 	it("should not render if not open", () => {
 		const { asFragment, getByTestId } = render(
 			<I18nextProvider i18n={i18n}>
-				<SearchModal isOpen={false} onDelete={() => void 0} />
+				<SearchModal isOpen={false} />
 			</I18nextProvider>,
 		);
 
@@ -22,7 +22,7 @@ describe("SearchModal", () => {
 	it("should render a modal", () => {
 		const { asFragment, getByTestId } = render(
 			<I18nextProvider i18n={i18n}>
-				<SearchModal isOpen={true} onDelete={() => void 0} />
+				<SearchModal isOpen={true} />
 			</I18nextProvider>,
 		);
 
