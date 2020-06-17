@@ -23,8 +23,6 @@ const Welcome = () => {
 	const [profiles, setProfiles] = useState([]);
 
 	useEffect(() => {
-		env.profiles().create("John Doe");
-
 		setProfiles(env.profiles().all());
 	}, [env]);
 
