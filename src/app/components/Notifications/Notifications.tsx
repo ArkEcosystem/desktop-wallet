@@ -3,44 +3,22 @@ import { TransactionListItem } from "app/components/TransactionListItem";
 import { TransactionListItemProps } from "app/components/TransactionListItem/models";
 import React from "react";
 
-type Action = {
-	label: string;
-	value: string;
-};
-
-type PluginNotification = {
-	logoUrl: string;
-	logoClassName: string;
-	title: string;
-	description: string;
-	action?: Action;
-	onAction?: any;
-};
-
-type NotificationsProps = {
-	plugins?: PluginNotification[];
-	pluginsHeader?: string;
-	transactions?: TransactionListItemProps[];
-	transactionsHeader?: string;
-	onAction?: any;
-};
+import { NotificationsProps, PluginNotification } from "./models";
 
 const Plugin = ({ logoUrl, logoClassName, title, description, action, onAction }: PluginNotification) => (
 	<tr>
-		<td className="w-16">
-			<div className={logoClassName}>
-				<img src={logoUrl} className="h-6 md:h-8 lg:h-10" alt={title} />
-			</div>
+		<td className="w-8">
+			<div className={logoClassName}>{logoUrl && <img src={logoUrl} alt={title} />}</div>
 		</td>
 		<td>
-			<span className="text-sm font-bold text-theme-neutral-700">{title}</span>
-			<span className="text-sm text-theme-neutral-600"> {description}</span>
+			<span className="font-bold text-md text-theme-neutral-600">{title}</span>
+			<span className="text-md text-theme-neutral-600"> {description}</span>
 		</td>
 		<td>
 			{action && action.label && (
 				<div
 					data-testid="notifications__plugin-action"
-					className="text-sm font-bold text-right cursor-pointer text-theme-primary-600"
+					className="font-bold text-right cursor-pointer text-md text-theme-primary-500"
 					onClick={() => onAction(action.value)}
 				>
 					{action.label}
@@ -65,13 +43,13 @@ export const Notifications = ({
 
 	return (
 		<div>
-			<div className="text-sm font-bold text-theme-neutral-400">{pluginsHeader}</div>
+			<div className="text-sm font-bold text-theme-neutral-500">{pluginsHeader}</div>
 			<Table columns={hiddenTableHeaders} data={plugins}>
 				{(plugin: PluginNotification) => (
 					<Plugin {...plugin} onAction={(name: string) => onNotificationAction(name, plugin)} />
 				)}
 			</Table>
-			<div className="-mb-2 text-sm font-bold mt-9 text-theme-neutral-400">{transactionsHeader}</div>
+			<div className="-mb-2 text-sm font-bold mt-9 text-theme-neutral-500">{transactionsHeader}</div>
 			<Table columns={hiddenTableHeaders} data={transactions}>
 				{(tx: TransactionListItemProps) => (
 					<TransactionListItem onClick={() => onNotificationAction("click", tx)} variant="compact" {...tx} />

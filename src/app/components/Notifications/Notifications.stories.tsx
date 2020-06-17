@@ -9,8 +9,7 @@ export default {
 export const Default = () => {
 	const plugins = [
 		{
-			logoUrl: "/static/media/ark-logo.bafd72bb.png",
-			logoClassName: "flex p-2 mr-4 rounded-lg bg-logo",
+			logoClassName: "w-8 h-8 p-2 mr-4 rounded-lg bg-logo",
 			title: "ARK Explorer",
 			description: "- update v2.5.6",
 			action: {

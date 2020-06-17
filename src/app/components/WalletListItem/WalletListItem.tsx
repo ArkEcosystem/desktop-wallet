@@ -1,4 +1,5 @@
 import { Address } from "app/components/Address";
+import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
 import React from "react";
@@ -13,8 +14,9 @@ type WalletListItemProps = {
 	walletName?: string;
 	balance?: string;
 	fiat?: string;
-	walletTypeIcons?: any[];
+	walletTypeIcons?: any[] | null;
 	actions?: any[];
+	variant?: "singleAction";
 	onAction?: any;
 };
 
@@ -28,6 +30,7 @@ export const WalletListItem = ({
 	fiat,
 	walletTypeIcons,
 	actions,
+	variant,
 	onAction,
 }: WalletListItemProps) => {
 	const getIconTypeClass = (icon: string) => {
@@ -50,16 +53,17 @@ export const WalletListItem = ({
 			<td className="py-1">
 				<Address walletName={walletName} address={address} size="small" maxChars={22}></Address>
 			</td>
-			<td className="py-1 text-sm font-bold">
-				{walletTypeIcons &&
-					walletTypeIcons.map((type: string, index: number) => {
+			{walletTypeIcons && (
+				<td className="py-1 text-sm font-bold">
+					{walletTypeIcons.map((type: string, index: number) => {
 						return (
 							<div key={index} className={`inline-block mr-2 text ${getIconTypeClass(type)}`}>
 								<Icon name={type} />
 							</div>
 						);
 					})}
-			</td>
+				</td>
+			)}
 			<td className="py-1 text-sm font-bold text-right">
 				<div>{balance}</div>
 			</td>
@@ -67,7 +71,19 @@ export const WalletListItem = ({
 				<div>{fiat}</div>
 			</td>
 			<td>
-				{actions && actions.length > 0 && <Dropdown options={actions} onSelect={onDropdownAction}></Dropdown>}
+				{actions &&
+					actions.length &&
+					(() => {
+						if (variant === "singleAction") {
+							return (
+								<Button data-testid="button" className="ml-6" onClick={onDropdownAction}>
+									{actions[0].label}
+								</Button>
+							);
+						}
+
+						return <Dropdown options={actions} onSelect={onDropdownAction} />;
+					})()}
 			</td>
 		</tr>
 	);

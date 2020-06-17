@@ -2,7 +2,492 @@
 
 exports[`MultiSignatureDetail should not render if not open 1`] = `<DocumentFragment />`;
 
-exports[`MultiSignatureDetail should render a modal 1`] = `
+exports[`MultiSignatureDetail should render 1st step 1`] = `
+<DocumentFragment>
+  <section
+    data-testid="MultiSignatureDetail__first-step"
+  >
+    <div
+      class="flex items-center py-4 true "
+    >
+      <div
+        class="flex-1"
+      >
+        <div
+          class="text-sm font-semibold text-theme-neutral-500"
+        >
+          Sender
+        </div>
+        <div
+          class="mt-2 font-semibold"
+        >
+          <div
+            class="mt-2 font-semibold"
+          >
+            ADDRESS
+          </div>
+        </div>
+      </div>
+      <div
+        class="sc-AxhCb eqgyTU"
+      />
+    </div>
+    <div
+      class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+    >
+      <div
+        class="flex-1"
+      >
+        <div
+          class="text-sm font-semibold text-theme-neutral-500"
+        >
+          Recipient
+        </div>
+        <div
+          class="mt-2 font-semibold"
+        >
+          Bank
+          <span
+            class="ml-2 text-theme-neutral-500"
+          >
+            ADDR...ESSS
+          </span>
+        </div>
+      </div>
+      <div
+        class="sc-AxhCb eqgyTU"
+      />
+    </div>
+    <div
+      class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+    >
+      <div
+        class="flex-1"
+      >
+        <div
+          class="text-sm font-semibold text-theme-neutral-500"
+        >
+          Amount
+        </div>
+        <div
+          class="mt-2 font-semibold"
+        >
+          <div
+            class="sc-fznyAO fDRtLd"
+            color="danger"
+          >
+            2,088.84557 ARK
+          </div>
+          <span
+            class="ml-2 text-theme-neutral-500"
+          >
+            23,000.00 USD
+          </span>
+        </div>
+      </div>
+      <div
+        class="sc-AxhCb dqZRJJ -mr-2 border-theme-danger-100 text-theme-danger-400"
+      >
+        <div
+          class="sc-AxjAm hoUaGk"
+          height="40"
+          width="40"
+        >
+          <svg>
+            sent.svg
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+    >
+      <div
+        class="flex-1"
+      >
+        <div
+          class="text-sm font-semibold text-theme-neutral-500"
+        >
+          Transaction Fee
+        </div>
+        <div
+          class="mt-2 font-semibold"
+        >
+          0.09812015 ARK
+        </div>
+      </div>
+    </div>
+    <div
+      class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+    >
+      <div
+        class="flex-1"
+      >
+        <div
+          class="text-sm font-semibold text-theme-neutral-500"
+        >
+          Smartbridge
+        </div>
+        <div
+          class="mt-2 font-semibold"
+        >
+          <div
+            class="flex justify-between"
+          >
+            Hello!
+            <div
+              class="sc-AxjAm buCJuk"
+              height="20"
+              width="20"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+    >
+      <div
+        class="flex-1"
+      >
+        <div
+          class="text-sm font-semibold text-theme-neutral-500"
+        >
+          Timestamp
+        </div>
+        <div
+          class="mt-2 font-semibold"
+        >
+          14.04.2020 21:42:40
+        </div>
+      </div>
+    </div>
+    <div
+      class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 pb-0"
+    >
+      <div
+        class="flex-1"
+      >
+        <div
+          class="text-sm font-semibold text-theme-neutral-500"
+        >
+          Confirmations
+        </div>
+        <div
+          class="mt-2 font-semibold"
+        >
+          Waiting for Signatures
+        </div>
+      </div>
+    </div>
+    <div
+      class="px-16 pt-8 mt-2 mt-8 -mx-16 text-black border-t border-gray-500"
+    >
+      <div>
+        <h2
+          class="mb-0"
+        >
+          Signatures
+        </h2>
+        <div
+          class="flex"
+        >
+          <div>
+            <div
+              class="mb-2 text-sm font-semibold text-theme-neutral-500"
+            >
+              You
+            </div>
+            <div
+              class="pr-4 mr-2 border-r border-theme-neutral-300"
+            >
+              <div
+                class="sc-AxhCb eqgyTU relative ml-2"
+              >
+                <span
+                  class="sc-AxirZ nnMcM flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent bottom-0 -right-1 bg-theme-success-200 text-theme-success-500"
+                >
+                  <div
+                    class="sc-AxjAm HWmvM"
+                    height="12"
+                    width="12"
+                  >
+                    <svg>
+                      checkmark.svg
+                    </svg>
+                  </div>
+                  <span />
+                </span>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div
+              class="mb-2 ml-2 text-sm font-semibold text-theme-neutral-500"
+            >
+              Other
+            </div>
+            <div
+              class="sc-AxhCb eqgyTU relative ml-2"
+            >
+              <span
+                class="sc-AxirZ nnMcM flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent bottom-0 -right-1 bg-theme-danger-100 text-theme-danger-400"
+              >
+                <div
+                  class="sc-AxjAm HWmvM"
+                  height="12"
+                  width="12"
+                >
+                  <svg>
+                    status-clock.svg
+                  </svg>
+                </div>
+                <span />
+              </span>
+            </div>
+            <div
+              class="sc-AxhCb eqgyTU relative ml-4"
+            >
+              <span
+                class="sc-AxirZ nnMcM flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent bottom-0 -right-1 bg-theme-danger-100 text-theme-danger-400"
+              >
+                <div
+                  class="sc-AxjAm HWmvM"
+                  height="12"
+                  width="12"
+                >
+                  <svg>
+                    status-clock.svg
+                  </svg>
+                </div>
+                <span />
+              </span>
+            </div>
+            <div
+              class="sc-AxhCb eqgyTU relative ml-4"
+            >
+              <span
+                class="sc-AxirZ nnMcM flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent bottom-0 -right-1 bg-theme-success-200 text-theme-success-500"
+              >
+                <div
+                  class="sc-AxjAm HWmvM"
+                  height="12"
+                  width="12"
+                >
+                  <svg>
+                    checkmark.svg
+                  </svg>
+                </div>
+                <span />
+              </span>
+            </div>
+            <div
+              class="sc-AxhCb eqgyTU relative ml-4"
+            >
+              <span
+                class="sc-AxirZ nnMcM flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent bottom-0 -right-1 bg-theme-danger-100 text-theme-danger-400"
+              >
+                <div
+                  class="sc-AxjAm HWmvM"
+                  height="12"
+                  width="12"
+                >
+                  <svg>
+                    status-clock.svg
+                  </svg>
+                </div>
+                <span />
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</DocumentFragment>
+`;
+
+exports[`MultiSignatureDetail should render 2nd step 1`] = `
+<DocumentFragment>
+  <section
+    data-testid="MultiSignatureDetail__second-step"
+  >
+    <fieldset
+      class="sc-AxhUy dJlYTe flex flex-col space-y-2"
+    >
+      <label
+        class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
+        data-testid="FormLabel"
+        for="passphrase"
+        label="Your Passphrase"
+      >
+        Your Passphrase
+      </label>
+      <div
+        class="sc-fzozJi OgXfh max-w-20"
+      >
+        <input
+          class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
+          data-testid="import-wallet__passphrase-input"
+          name="passphrase"
+          type="password"
+        />
+        <div
+          class="sc-AxheI sc-AxmLO ecniej mr-4"
+        >
+          <button
+            class="flex items-center justify-center w-full h-full text-2xl focus:outline-none bg-theme-background text-theme-primary-400"
+            data-testid="InputPassword__toggle"
+            type="button"
+          >
+            <div
+              class="sc-AxjAm cpczEI"
+              height="1em"
+              width="1em"
+            >
+              <svg>
+                eye.svg
+              </svg>
+            </div>
+          </button>
+        </div>
+      </div>
+    </fieldset>
+  </section>
+  ,
+</DocumentFragment>
+`;
+
+exports[`MultiSignatureDetail should render 3rd step 1`] = `
+<DocumentFragment>
+  <section
+    class="my-4 text-black"
+    data-testid="MultiSignatureDetail__third-step"
+  >
+    <div>
+      <h2
+        class="mb-0"
+      >
+        Signatures
+      </h2>
+      <div
+        class="flex"
+      >
+        <div>
+          <div
+            class="mb-2 text-sm font-semibold text-theme-neutral-500"
+          >
+            You
+          </div>
+          <div
+            class="pr-4 mr-2 border-r border-theme-neutral-300"
+          >
+            <div
+              class="sc-AxhCb eqgyTU relative ml-2"
+            >
+              <span
+                class="sc-AxirZ nnMcM flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent bottom-0 -right-1 bg-theme-success-200 text-theme-success-500"
+              >
+                <div
+                  class="sc-AxjAm HWmvM"
+                  height="12"
+                  width="12"
+                >
+                  <svg>
+                    checkmark.svg
+                  </svg>
+                </div>
+                <span />
+              </span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div
+            class="mb-2 ml-2 text-sm font-semibold text-theme-neutral-500"
+          >
+            Other
+          </div>
+          <div
+            class="sc-AxhCb eqgyTU relative ml-2"
+          >
+            <span
+              class="sc-AxirZ nnMcM flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent bottom-0 -right-1 bg-theme-danger-100 text-theme-danger-400"
+            >
+              <div
+                class="sc-AxjAm HWmvM"
+                height="12"
+                width="12"
+              >
+                <svg>
+                  status-clock.svg
+                </svg>
+              </div>
+              <span />
+            </span>
+          </div>
+          <div
+            class="sc-AxhCb eqgyTU relative ml-4"
+          >
+            <span
+              class="sc-AxirZ nnMcM flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent bottom-0 -right-1 bg-theme-danger-100 text-theme-danger-400"
+            >
+              <div
+                class="sc-AxjAm HWmvM"
+                height="12"
+                width="12"
+              >
+                <svg>
+                  status-clock.svg
+                </svg>
+              </div>
+              <span />
+            </span>
+          </div>
+          <div
+            class="sc-AxhCb eqgyTU relative ml-4"
+          >
+            <span
+              class="sc-AxirZ nnMcM flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent bottom-0 -right-1 bg-theme-success-200 text-theme-success-500"
+            >
+              <div
+                class="sc-AxjAm HWmvM"
+                height="12"
+                width="12"
+              >
+                <svg>
+                  checkmark.svg
+                </svg>
+              </div>
+              <span />
+            </span>
+          </div>
+          <div
+            class="sc-AxhCb eqgyTU relative ml-4"
+          >
+            <span
+              class="sc-AxirZ nnMcM flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent bottom-0 -right-1 bg-theme-danger-100 text-theme-danger-400"
+            >
+              <div
+                class="sc-AxjAm HWmvM"
+                height="12"
+                width="12"
+              >
+                <svg>
+                  status-clock.svg
+                </svg>
+              </div>
+              <span />
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</DocumentFragment>
+`;
+
+exports[`MultiSignatureDetail should render a modal and get to step 3 1`] = `
 <DocumentFragment>
   <div
     class="fixed inset-0 z-10 bg-black opacity-50"
@@ -41,318 +526,761 @@ exports[`MultiSignatureDetail should render a modal 1`] = `
       <div
         class="flex-1"
       >
-        <div
-          class="flex items-center py-4 true "
+        <form
+          class="space-y-6"
+          data-testid="Form"
         >
-          <div
-            class="flex-1"
-          >
+          <div>
             <div
-              class="text-sm font-semibold text-theme-neutral-500"
+              data-testid="tab-pabel__active-panel"
             >
-              Sender
-            </div>
-            <div
-              class="mt-2 font-semibold"
-            >
-              <div
-                class="mt-2 font-semibold"
-              >
-                ADDRESS
-              </div>
-            </div>
-          </div>
-          <div
-            class="sc-AxhCb eqgyTU"
-          />
-        </div>
-        <div
-          class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
-        >
-          <div
-            class="flex-1"
-          >
-            <div
-              class="text-sm font-semibold text-theme-neutral-500"
-            >
-              Recipient
-            </div>
-            <div
-              class="mt-2 font-semibold"
-            >
-              Bank
-              <span
-                class="ml-2 text-theme-neutral-500"
-              >
-                ADDR...ESSS
-              </span>
-            </div>
-          </div>
-          <div
-            class="sc-AxhCb eqgyTU"
-          />
-        </div>
-        <div
-          class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
-        >
-          <div
-            class="flex-1"
-          >
-            <div
-              class="text-sm font-semibold text-theme-neutral-500"
-            >
-              Amount
-            </div>
-            <div
-              class="mt-2 font-semibold"
-            >
-              <div
-                class="sc-AxhUy gRLEpJ"
-                color="danger"
-              >
-                2,088.84557 ARK
-              </div>
-              <span
-                class="ml-2 text-theme-neutral-500"
-              >
-                23,000.00 USD
-              </span>
-            </div>
-          </div>
-          <div
-            class="sc-AxhCb dqZRJJ -mr-2 border-theme-danger-100 text-theme-danger-400"
-          >
-            <div
-              class="sc-AxjAm hoUaGk"
-              height="40"
-              width="40"
-            >
-              <svg>
-                sent.svg
-              </svg>
-            </div>
-          </div>
-        </div>
-        <div
-          class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
-        >
-          <div
-            class="flex-1"
-          >
-            <div
-              class="text-sm font-semibold text-theme-neutral-500"
-            >
-              Transaction Fee
-            </div>
-            <div
-              class="mt-2 font-semibold"
-            >
-              0.09812015 ARK
-            </div>
-          </div>
-        </div>
-        <div
-          class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
-        >
-          <div
-            class="flex-1"
-          >
-            <div
-              class="text-sm font-semibold text-theme-neutral-500"
-            >
-              Smartbridge
-            </div>
-            <div
-              class="mt-2 font-semibold"
-            >
-              <div
-                class="flex justify-between"
-              >
-                Hello!
-                <div
-                  class="sc-AxjAm buCJuk"
-                  height="20"
-                  width="20"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
-        >
-          <div
-            class="flex-1"
-          >
-            <div
-              class="text-sm font-semibold text-theme-neutral-500"
-            >
-              Timestamp
-            </div>
-            <div
-              class="mt-2 font-semibold"
-            >
-              14.04.2020 21:42:40
-            </div>
-          </div>
-        </div>
-        <div
-          class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 pb-0"
-        >
-          <div
-            class="flex-1"
-          >
-            <div
-              class="text-sm font-semibold text-theme-neutral-500"
-            >
-              Confirmations
-            </div>
-            <div
-              class="mt-2 font-semibold"
-            >
-              Waiting for Signatures
-            </div>
-          </div>
-        </div>
-        <div
-          class="px-16 pt-8 mt-2 mt-8 -mx-16 text-black border-t border-gray-500"
-        >
-          <h2
-            class="mb-0"
-          >
-            Signatures
-          </h2>
-          <div
-            class="flex"
-          >
-            <div>
-              <div
-                class="mb-2 text-sm font-semibold text-theme-neutral-500"
-              >
-                You
-              </div>
-              <div
-                class="pr-4 mr-2 border-r border-theme-neutral-300"
+              <section
+                data-testid="MultiSignatureDetail__first-step"
               >
                 <div
-                  class="sc-AxhCb eqgyTU relative ml-2"
+                  class="flex items-center py-4 true "
                 >
-                  <span
-                    class="sc-AxirZ nnMcM flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent bottom-0 -right-1 bg-theme-success-200 text-theme-success-500"
+                  <div
+                    class="flex-1"
                   >
                     <div
-                      class="sc-AxjAm HWmvM"
-                      height="12"
-                      width="12"
+                      class="text-sm font-semibold text-theme-neutral-500"
+                    >
+                      Sender
+                    </div>
+                    <div
+                      class="mt-2 font-semibold"
+                    >
+                      <div
+                        class="mt-2 font-semibold"
+                      >
+                        ADDRESS
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="sc-AxhCb eqgyTU"
+                  />
+                </div>
+                <div
+                  class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+                >
+                  <div
+                    class="flex-1"
+                  >
+                    <div
+                      class="text-sm font-semibold text-theme-neutral-500"
+                    >
+                      Recipient
+                    </div>
+                    <div
+                      class="mt-2 font-semibold"
+                    >
+                      Bank
+                      <span
+                        class="ml-2 text-theme-neutral-500"
+                      >
+                        ADDR...ESSS
+                      </span>
+                    </div>
+                  </div>
+                  <div
+                    class="sc-AxhCb eqgyTU"
+                  />
+                </div>
+                <div
+                  class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+                >
+                  <div
+                    class="flex-1"
+                  >
+                    <div
+                      class="text-sm font-semibold text-theme-neutral-500"
+                    >
+                      Amount
+                    </div>
+                    <div
+                      class="mt-2 font-semibold"
+                    >
+                      <div
+                        class="sc-fznyAO fDRtLd"
+                        color="danger"
+                      >
+                        2,088.84557 ARK
+                      </div>
+                      <span
+                        class="ml-2 text-theme-neutral-500"
+                      >
+                        23,000.00 USD
+                      </span>
+                    </div>
+                  </div>
+                  <div
+                    class="sc-AxhCb dqZRJJ -mr-2 border-theme-danger-100 text-theme-danger-400"
+                  >
+                    <div
+                      class="sc-AxjAm hoUaGk"
+                      height="40"
+                      width="40"
                     >
                       <svg>
-                        checkmark.svg
+                        sent.svg
                       </svg>
                     </div>
-                    <span />
-                  </span>
+                  </div>
                 </div>
-              </div>
+                <div
+                  class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+                >
+                  <div
+                    class="flex-1"
+                  >
+                    <div
+                      class="text-sm font-semibold text-theme-neutral-500"
+                    >
+                      Transaction Fee
+                    </div>
+                    <div
+                      class="mt-2 font-semibold"
+                    >
+                      0.09812015 ARK
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+                >
+                  <div
+                    class="flex-1"
+                  >
+                    <div
+                      class="text-sm font-semibold text-theme-neutral-500"
+                    >
+                      Smartbridge
+                    </div>
+                    <div
+                      class="mt-2 font-semibold"
+                    >
+                      <div
+                        class="flex justify-between"
+                      >
+                        Hello!
+                        <div
+                          class="sc-AxjAm buCJuk"
+                          height="20"
+                          width="20"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+                >
+                  <div
+                    class="flex-1"
+                  >
+                    <div
+                      class="text-sm font-semibold text-theme-neutral-500"
+                    >
+                      Timestamp
+                    </div>
+                    <div
+                      class="mt-2 font-semibold"
+                    >
+                      14.04.2020 21:42:40
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 pb-0"
+                >
+                  <div
+                    class="flex-1"
+                  >
+                    <div
+                      class="text-sm font-semibold text-theme-neutral-500"
+                    >
+                      Confirmations
+                    </div>
+                    <div
+                      class="mt-2 font-semibold"
+                    >
+                      Waiting for Signatures
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="px-16 pt-8 mt-2 mt-8 -mx-16 text-black border-t border-gray-500"
+                >
+                  <div>
+                    <h2
+                      class="mb-0"
+                    >
+                      Signatures
+                    </h2>
+                    <div
+                      class="flex"
+                    >
+                      <div>
+                        <div
+                          class="mb-2 text-sm font-semibold text-theme-neutral-500"
+                        >
+                          You
+                        </div>
+                        <div
+                          class="pr-4 mr-2 border-r border-theme-neutral-300"
+                        >
+                          <div
+                            class="sc-AxhCb eqgyTU relative ml-2"
+                          >
+                            <span
+                              class="sc-AxirZ nnMcM flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent bottom-0 -right-1 bg-theme-success-200 text-theme-success-500"
+                            >
+                              <div
+                                class="sc-AxjAm HWmvM"
+                                height="12"
+                                width="12"
+                              >
+                                <svg>
+                                  checkmark.svg
+                                </svg>
+                              </div>
+                              <span />
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div>
+                        <div
+                          class="mb-2 ml-2 text-sm font-semibold text-theme-neutral-500"
+                        >
+                          Other
+                        </div>
+                        <div
+                          class="sc-AxhCb eqgyTU relative ml-2"
+                        >
+                          <span
+                            class="sc-AxirZ nnMcM flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent bottom-0 -right-1 bg-theme-danger-100 text-theme-danger-400"
+                          >
+                            <div
+                              class="sc-AxjAm HWmvM"
+                              height="12"
+                              width="12"
+                            >
+                              <svg>
+                                status-clock.svg
+                              </svg>
+                            </div>
+                            <span />
+                          </span>
+                        </div>
+                        <div
+                          class="sc-AxhCb eqgyTU relative ml-4"
+                        >
+                          <span
+                            class="sc-AxirZ nnMcM flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent bottom-0 -right-1 bg-theme-danger-100 text-theme-danger-400"
+                          >
+                            <div
+                              class="sc-AxjAm HWmvM"
+                              height="12"
+                              width="12"
+                            >
+                              <svg>
+                                status-clock.svg
+                              </svg>
+                            </div>
+                            <span />
+                          </span>
+                        </div>
+                        <div
+                          class="sc-AxhCb eqgyTU relative ml-4"
+                        >
+                          <span
+                            class="sc-AxirZ nnMcM flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent bottom-0 -right-1 bg-theme-success-200 text-theme-success-500"
+                          >
+                            <div
+                              class="sc-AxjAm HWmvM"
+                              height="12"
+                              width="12"
+                            >
+                              <svg>
+                                checkmark.svg
+                              </svg>
+                            </div>
+                            <span />
+                          </span>
+                        </div>
+                        <div
+                          class="sc-AxhCb eqgyTU relative ml-4"
+                        >
+                          <span
+                            class="sc-AxirZ nnMcM flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent bottom-0 -right-1 bg-theme-danger-100 text-theme-danger-400"
+                          >
+                            <div
+                              class="sc-AxjAm HWmvM"
+                              height="12"
+                              width="12"
+                            >
+                              <svg>
+                                status-clock.svg
+                              </svg>
+                            </div>
+                            <span />
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
             </div>
-            <div>
+            <div
+              class="flex justify-end mt-6"
+            >
               <div
-                class="mb-2 ml-2 text-sm font-semibold text-theme-neutral-500"
+                class="flex-1"
               >
-                Other
+                <button
+                  class="sc-AxiKw eWMVSn mr-2"
+                  color="primary"
+                  type="button"
+                >
+                  Cancel
+                </button>
               </div>
               <div
-                class="sc-AxhCb eqgyTU relative ml-2"
+                class="space-x-2"
               >
-                <span
-                  class="sc-AxirZ nnMcM flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent bottom-0 -right-1 bg-theme-danger-100 text-theme-danger-400"
+                <button
+                  class="sc-AxiKw eWMVSn"
+                  color="primary"
+                  data-testid="MultiSignatureDetail__back-button"
+                  disabled=""
+                  type="button"
                 >
-                  <div
-                    class="sc-AxjAm HWmvM"
-                    height="12"
-                    width="12"
-                  >
-                    <svg>
-                      status-clock.svg
-                    </svg>
-                  </div>
-                  <span />
-                </span>
-              </div>
-              <div
-                class="sc-AxhCb eqgyTU relative ml-4"
-              >
-                <span
-                  class="sc-AxirZ nnMcM flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent bottom-0 -right-1 bg-theme-danger-100 text-theme-danger-400"
+                  Back
+                </button>
+                <button
+                  class="sc-AxiKw bWeKCr inline-block"
+                  color="primary"
+                  data-testid="MultiSignatureDetail__sign-button"
+                  type="button"
                 >
-                  <div
-                    class="sc-AxjAm HWmvM"
-                    height="12"
-                    width="12"
-                  >
-                    <svg>
-                      status-clock.svg
-                    </svg>
-                  </div>
-                  <span />
-                </span>
-              </div>
-              <div
-                class="sc-AxhCb eqgyTU relative ml-4"
-              >
-                <span
-                  class="sc-AxirZ nnMcM flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent bottom-0 -right-1 bg-theme-success-200 text-theme-success-500"
+                  Sign
+                </button>
+                <button
+                  class="sc-AxiKw bWeKCr hidden"
+                  color="primary"
+                  data-testid="MultiSignatureDetail__submit-button"
+                  type="submit"
                 >
-                  <div
-                    class="sc-AxjAm HWmvM"
-                    height="12"
-                    width="12"
-                  >
-                    <svg>
-                      checkmark.svg
-                    </svg>
-                  </div>
-                  <span />
-                </span>
-              </div>
-              <div
-                class="sc-AxhCb eqgyTU relative ml-4"
-              >
-                <span
-                  class="sc-AxirZ nnMcM flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent bottom-0 -right-1 bg-theme-danger-100 text-theme-danger-400"
-                >
-                  <div
-                    class="sc-AxjAm HWmvM"
-                    height="12"
-                    width="12"
-                  >
-                    <svg>
-                      status-clock.svg
-                    </svg>
-                  </div>
-                  <span />
-                </span>
+                  Continue
+                </button>
               </div>
             </div>
           </div>
-        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`MultiSignatureDetail should render a modal and go back 1`] = `
+<DocumentFragment>
+  <div
+    class="fixed inset-0 z-10 bg-black opacity-50"
+    data-testid="modal__overlay"
+  />
+  <div
+    class="fixed left-0 right-0 z-10 flex flex-col max-w-2xl px-16 pt-6 pb-8 mx-auto mt-24 rounded-xl bg-theme-background"
+    data-testid="modal__inner"
+  >
+    <div
+      class="absolute top-0 right-0 mt-4 mr-4"
+    >
+      <button
+        class="sc-AxiKw kigsVG"
+        color="neutral"
+        data-testid="modal__close-btn"
+        type="button"
+      >
         <div
-          class="flex justify-end mt-8"
+          class="sc-AxjAm iepfoc"
+          height="10"
+          width="10"
         >
-          <button
-            class="sc-AxiKw eWMVSn mr-2"
-            color="primary"
-            type="button"
-          >
-            Cancel
-          </button>
-          <button
-            class="sc-AxiKw bWeKCr flex items-center"
-            color="primary"
-            type="submit"
-          >
-            Sign
-          </button>
+          <svg>
+            cross-slim.svg
+          </svg>
         </div>
+      </button>
+    </div>
+    <div
+      class="py-4"
+    >
+      <h2>
+        Multisignature
+      </h2>
+      <div
+        class="flex-1"
+      >
+        <form
+          class="space-y-6"
+          data-testid="Form"
+        >
+          <div>
+            <div
+              data-testid="tab-pabel__active-panel"
+            >
+              <section
+                data-testid="MultiSignatureDetail__first-step"
+              >
+                <div
+                  class="flex items-center py-4 true "
+                >
+                  <div
+                    class="flex-1"
+                  >
+                    <div
+                      class="text-sm font-semibold text-theme-neutral-500"
+                    >
+                      Sender
+                    </div>
+                    <div
+                      class="mt-2 font-semibold"
+                    >
+                      <div
+                        class="mt-2 font-semibold"
+                      >
+                        ADDRESS
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="sc-AxhCb eqgyTU"
+                  />
+                </div>
+                <div
+                  class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+                >
+                  <div
+                    class="flex-1"
+                  >
+                    <div
+                      class="text-sm font-semibold text-theme-neutral-500"
+                    >
+                      Recipient
+                    </div>
+                    <div
+                      class="mt-2 font-semibold"
+                    >
+                      Bank
+                      <span
+                        class="ml-2 text-theme-neutral-500"
+                      >
+                        ADDR...ESSS
+                      </span>
+                    </div>
+                  </div>
+                  <div
+                    class="sc-AxhCb eqgyTU"
+                  />
+                </div>
+                <div
+                  class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+                >
+                  <div
+                    class="flex-1"
+                  >
+                    <div
+                      class="text-sm font-semibold text-theme-neutral-500"
+                    >
+                      Amount
+                    </div>
+                    <div
+                      class="mt-2 font-semibold"
+                    >
+                      <div
+                        class="sc-fznyAO fDRtLd"
+                        color="danger"
+                      >
+                        2,088.84557 ARK
+                      </div>
+                      <span
+                        class="ml-2 text-theme-neutral-500"
+                      >
+                        23,000.00 USD
+                      </span>
+                    </div>
+                  </div>
+                  <div
+                    class="sc-AxhCb dqZRJJ -mr-2 border-theme-danger-100 text-theme-danger-400"
+                  >
+                    <div
+                      class="sc-AxjAm hoUaGk"
+                      height="40"
+                      width="40"
+                    >
+                      <svg>
+                        sent.svg
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+                >
+                  <div
+                    class="flex-1"
+                  >
+                    <div
+                      class="text-sm font-semibold text-theme-neutral-500"
+                    >
+                      Transaction Fee
+                    </div>
+                    <div
+                      class="mt-2 font-semibold"
+                    >
+                      0.09812015 ARK
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+                >
+                  <div
+                    class="flex-1"
+                  >
+                    <div
+                      class="text-sm font-semibold text-theme-neutral-500"
+                    >
+                      Smartbridge
+                    </div>
+                    <div
+                      class="mt-2 font-semibold"
+                    >
+                      <div
+                        class="flex justify-between"
+                      >
+                        Hello!
+                        <div
+                          class="sc-AxjAm buCJuk"
+                          height="20"
+                          width="20"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+                >
+                  <div
+                    class="flex-1"
+                  >
+                    <div
+                      class="text-sm font-semibold text-theme-neutral-500"
+                    >
+                      Timestamp
+                    </div>
+                    <div
+                      class="mt-2 font-semibold"
+                    >
+                      14.04.2020 21:42:40
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 pb-0"
+                >
+                  <div
+                    class="flex-1"
+                  >
+                    <div
+                      class="text-sm font-semibold text-theme-neutral-500"
+                    >
+                      Confirmations
+                    </div>
+                    <div
+                      class="mt-2 font-semibold"
+                    >
+                      Waiting for Signatures
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="px-16 pt-8 mt-2 mt-8 -mx-16 text-black border-t border-gray-500"
+                >
+                  <div>
+                    <h2
+                      class="mb-0"
+                    >
+                      Signatures
+                    </h2>
+                    <div
+                      class="flex"
+                    >
+                      <div>
+                        <div
+                          class="mb-2 text-sm font-semibold text-theme-neutral-500"
+                        >
+                          You
+                        </div>
+                        <div
+                          class="pr-4 mr-2 border-r border-theme-neutral-300"
+                        >
+                          <div
+                            class="sc-AxhCb eqgyTU relative ml-2"
+                          >
+                            <span
+                              class="sc-AxirZ nnMcM flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent bottom-0 -right-1 bg-theme-success-200 text-theme-success-500"
+                            >
+                              <div
+                                class="sc-AxjAm HWmvM"
+                                height="12"
+                                width="12"
+                              >
+                                <svg>
+                                  checkmark.svg
+                                </svg>
+                              </div>
+                              <span />
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div>
+                        <div
+                          class="mb-2 ml-2 text-sm font-semibold text-theme-neutral-500"
+                        >
+                          Other
+                        </div>
+                        <div
+                          class="sc-AxhCb eqgyTU relative ml-2"
+                        >
+                          <span
+                            class="sc-AxirZ nnMcM flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent bottom-0 -right-1 bg-theme-danger-100 text-theme-danger-400"
+                          >
+                            <div
+                              class="sc-AxjAm HWmvM"
+                              height="12"
+                              width="12"
+                            >
+                              <svg>
+                                status-clock.svg
+                              </svg>
+                            </div>
+                            <span />
+                          </span>
+                        </div>
+                        <div
+                          class="sc-AxhCb eqgyTU relative ml-4"
+                        >
+                          <span
+                            class="sc-AxirZ nnMcM flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent bottom-0 -right-1 bg-theme-danger-100 text-theme-danger-400"
+                          >
+                            <div
+                              class="sc-AxjAm HWmvM"
+                              height="12"
+                              width="12"
+                            >
+                              <svg>
+                                status-clock.svg
+                              </svg>
+                            </div>
+                            <span />
+                          </span>
+                        </div>
+                        <div
+                          class="sc-AxhCb eqgyTU relative ml-4"
+                        >
+                          <span
+                            class="sc-AxirZ nnMcM flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent bottom-0 -right-1 bg-theme-success-200 text-theme-success-500"
+                          >
+                            <div
+                              class="sc-AxjAm HWmvM"
+                              height="12"
+                              width="12"
+                            >
+                              <svg>
+                                checkmark.svg
+                              </svg>
+                            </div>
+                            <span />
+                          </span>
+                        </div>
+                        <div
+                          class="sc-AxhCb eqgyTU relative ml-4"
+                        >
+                          <span
+                            class="sc-AxirZ nnMcM flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent bottom-0 -right-1 bg-theme-danger-100 text-theme-danger-400"
+                          >
+                            <div
+                              class="sc-AxjAm HWmvM"
+                              height="12"
+                              width="12"
+                            >
+                              <svg>
+                                status-clock.svg
+                              </svg>
+                            </div>
+                            <span />
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+            <div
+              class="flex justify-end mt-6"
+            >
+              <div
+                class="flex-1"
+              >
+                <button
+                  class="sc-AxiKw eWMVSn mr-2"
+                  color="primary"
+                  type="button"
+                >
+                  Cancel
+                </button>
+              </div>
+              <div
+                class="space-x-2"
+              >
+                <button
+                  class="sc-AxiKw eWMVSn"
+                  color="primary"
+                  data-testid="MultiSignatureDetail__back-button"
+                  disabled=""
+                  type="button"
+                >
+                  Back
+                </button>
+                <button
+                  class="sc-AxiKw bWeKCr inline-block"
+                  color="primary"
+                  data-testid="MultiSignatureDetail__sign-button"
+                  type="button"
+                >
+                  Sign
+                </button>
+                <button
+                  class="sc-AxiKw bWeKCr hidden"
+                  color="primary"
+                  data-testid="MultiSignatureDetail__submit-button"
+                  type="submit"
+                >
+                  Continue
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
   </div>
