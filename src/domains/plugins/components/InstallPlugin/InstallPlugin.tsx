@@ -1,6 +1,8 @@
 import React from "react";
 import { Button } from "app/components/Button";
+import { Circle } from "app/components/Circle";
 import { CircularProgressBar } from "app/components/CircularProgressBar";
+import { Icon } from "app/components/Icon";
 import { Modal } from "app/components/Modal";
 
 type InstallPluginProps = {
@@ -83,8 +85,23 @@ export const InstallPlugin = ({ step, isOpen, onClose, onCancel }: InstallPlugin
 											<p className="text-sm font-semibold text-theme-neutral-light">Downloaded</p>
 											<p className="text-sm font-bold text-theme-neutral-dark">Completed</p>
 										</span>
-										<div className="mr-2">
-											<CircularProgressBar value={78} size={50} strokeWidth={4} fontSize={0.8} />
+										<div className="">
+											<Circle
+												size="large"
+												className="relative z-10 bg-theme-background border-theme-neutral-300"
+											>
+												<span className="text-theme-success-600">
+													<Icon name="Checkmark" width={28} height={28} />
+												</span>
+											</Circle>
+											<Circle
+												size="large"
+												className="relative z-0 -ml-1 bg-theme-background border-theme-success-600"
+											>
+												<span className="text-xs font-semibold text-theme-success-600">
+													100%
+												</span>
+											</Circle>
 										</div>
 									</div>
 								</div>

@@ -35,6 +35,12 @@ describe("Circle", () => {
 		expect(container).toMatchSnapshot();
 	});
 
+	it("should render large", () => {
+		const { container } = render(<Circle size="large" />);
+
+		expect(container).toMatchSnapshot();
+	});
+
 	it("should render with no shadow", () => {
 		const { container } = render(<Circle size="small" noShadow />);
 
