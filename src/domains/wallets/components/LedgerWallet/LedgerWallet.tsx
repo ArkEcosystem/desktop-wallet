@@ -1,5 +1,6 @@
 import { images } from "app/assets/images";
 import { Modal } from "app/components/Modal";
+import { Spinner } from "app/components/Spinner";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
@@ -20,6 +21,12 @@ export const LedgerWallet = ({ isOpen, onClose }: LedgerWalletProps) => {
 					{t("WALLETS.MODAL_LEDGER_WALLET.DESCRIPTION")}
 				</p>
 				<WaitingLedger className="my-8" />
+				<div className="inline-flex items-center space-x-4">
+					<Spinner color="primary" size="default" />
+					<span className="font-semibold text-black">
+						{t("WALLETS.MODAL_LEDGER_WALLET.WAITING_FOR_LEDGER")}
+					</span>
+				</div>
 			</div>
 		</Modal>
 	);
