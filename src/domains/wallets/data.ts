@@ -5,7 +5,7 @@ export const wallets = [
 		avatarId: "test",
 		address: "ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
 		walletName: "My Wallet",
-		balance: "100 BTC",
+		balance: "100 ARK",
 		fiat: "1,000,000 USD",
 		walletTypeIcons: null,
 		actions: [
@@ -19,7 +19,7 @@ export const wallets = [
 		coinIcon: "Btc",
 		coinClass: "text-theme-warning-400 border-theme-warning-200",
 		avatarId: "test",
-		address: "ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
+		address: "15pyr1HRAxpq3x64duXav1csmyCtXXu9G8",
 		walletName: "My Wallet",
 		balance: "100 BTC",
 		fiat: "1,000,000 USD",

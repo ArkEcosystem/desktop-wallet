@@ -36,6 +36,8 @@ const ModalContainer = styled.div<{ size: string }>`
 				return tw`max-w-xl`;
 			case "3xl":
 				return tw`max-w-3xl`;
+			case "4xl":
+				return tw`max-w-4xl`;
 			default:
 				return tw`max-w-2xl`;
 		}

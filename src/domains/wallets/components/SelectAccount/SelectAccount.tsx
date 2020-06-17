@@ -2,21 +2,37 @@ import { Button } from "app/components/Button";
 import { Divider } from "app/components/Divider";
 import { Dropdown } from "app/components/Dropdown";
 import { Modal } from "app/components/Modal";
+// import { SearchBarFilters } from "domains/search/components/SearchBarFilters";
 import { Table } from "app/components/Table";
 import { WalletListItem } from "app/components/WalletListItem";
+import { SearchBar } from "domains/search/components/SearchBar";
+import { SearchBarFilters } from "domains/search/components/SearchBarFilters";
+import { useTranslation } from "react-i18next";
 import React from "react";
 
-type Props = {
+type SelectAccountProps = {
 	isOpen: boolean;
 	wallets?: any;
+	networks?: any;
+	onNetworkChange?: any;
+	onViewAllNetworks?: any;
 	handleClose?: any;
 	handleSelect?: any;
 };
 
-export const SelectAccount = ({ isOpen, wallets, handleClose }: Props) => {
+export const SelectAccount = ({
+	isOpen,
+	wallets,
+	networks,
+	onNetworkChange,
+	onViewAllNetworks,
+	handleClose,
+}: SelectAccountProps) => {
+	const { t } = useTranslation();
+
 	const listColumns = [
 		{
-			Header: "Asset Type",
+			Header: t("COMMON.ASSET_TYPE"),
 			accessor: "avatarId",
 		},
 		{
@@ -37,30 +53,21 @@ export const SelectAccount = ({ isOpen, wallets, handleClose }: Props) => {
 
 	return (
 		<Modal
+			size={"4xl"}
 			isOpen={isOpen}
-			title={"Select Account"}
-			description={"Find and select the account you want to receive funds to"}
+			title={t("WALLETS.MODAL_SELECT_ACCOUNT.TITLE")}
+			description={t("WALLETS.MODAL_SELECT_ACCOUNT.DESCRIPTION")}
 			onClose={() => handleClose()}
 		>
-			<div className="bg-theme-neutral-100 mt-8 -mx-16 px-16 py-8">
-				<div className="flex items-center bg-white rounded shadow px-10 py-6">
-					<div className="relative inline-block text-theme-primary-400 mr-6">
-						<Dropdown toggleIcon="Filters">Filters?</Dropdown>
-					</div>
-
-					<Divider type="vertical"></Divider>
-
-					<div className="flex-1"></div>
-
-					<Divider type="vertical"></Divider>
-
-					<Button className="ml-6">Find it</Button>
-				</div>
+			<div className="-mx-16">
+				<SearchBar className="mt-8">
+					<SearchBarFilters networks={networks} onNetworkChange={onNetworkChange} onViewAllNetworks={onViewAllNetworks} />
+				</SearchBar>
 			</div>
 
 			<div className="mt-8">
 				<Table columns={listColumns} data={wallets}>
-					{(rowData: any) => <WalletListItem {...rowData}></WalletListItem>}
+					{(rowData: any) => <WalletListItem variant="singleAction" {...rowData} />}
 				</Table>
 			</div>
 		</Modal>
@@ -68,5 +75,7 @@ export const SelectAccount = ({ isOpen, wallets, handleClose }: Props) => {
 };
 
 SelectAccount.defaultProps = {
+	isOpen: false,
 	wallets: [],
+	networks: [],
 };

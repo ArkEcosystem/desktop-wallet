@@ -11,10 +11,26 @@ export default {
 };
 
 export const Default = () => {
+	const networks = [
+		{
+			name: "Ark",
+			isSelected: true,
+		},
+		{
+			name: "Eth",
+			isSelected: false,
+		},
+		{
+			name: "Btc",
+			isSelected: true,
+		},
+	];
+
 	return (
 		<SelectAccount
 			isOpen={boolean("isOpen", true)}
 			wallets={wallets}
+			networks={networks}
 			handleClose={action("handleClose")}
 			handleSelect={action("handleSelect")}
 		/>

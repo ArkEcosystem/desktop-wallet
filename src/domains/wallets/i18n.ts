@@ -21,4 +21,9 @@ export const translations: { [key: string]: any } = {
 	MODAL_RECEIVE_FUNDS: {
 		TITLE: "Receive Funds",
 	},
+
+	MODAL_SELECT_ACCOUNT: {
+		TITLE: "Select Account",
+		DESCRIPTION: "Find and select the account you want to receive funds to",
+	},
 };
