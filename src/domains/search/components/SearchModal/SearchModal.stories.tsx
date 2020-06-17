@@ -6,5 +6,5 @@ import { SearchModal } from "./SearchModal";
 export default { title: "Search / Search Modal", decorators: [withKnobs] };
 
 export const Default = () => {
-	return <SearchModal isOpen={true} onTypeSelect={(option: any) => void 0} />;
+	return <SearchModal isOpen={true} />;
 };
