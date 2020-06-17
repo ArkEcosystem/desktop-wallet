@@ -17,7 +17,7 @@ describe("ProfileCard", () => {
 		expect(container).toBeTruthy();
 		expect(getByTestId("profile-card__user--name")).toHaveTextContent(profile.name);
 		expect(getByTestId("profile-card__user--balance")).toHaveTextContent(profile.balance);
-		expect(getByTestId("profile-card__user--avatar")).toHaveAttribute("src", profile.avatar);
+		expect(getByTestId("profile-card__user--avatar")).toHaveAttribute("style");
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -29,7 +29,7 @@ describe("ProfileCard", () => {
 	});
 
 	it("should hide the settings icon", () => {
-		const { container, getByTestId } = render(<ProfileCard {...profile} showSettings={false} />);
+		const { container } = render(<ProfileCard {...profile} showSettings={false} />);
 
 		expect(container).toMatchSnapshot();
 	});
