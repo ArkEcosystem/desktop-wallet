@@ -19,7 +19,7 @@ const TextArea = styled.textarea(() => [
 ]);
 
 export const Clipboard = ({ data, children, onSuccess, onError }: ClipboardProps) => {
-	const textAreaRef = useRef(null);
+	const textAreaRef = useRef<HTMLTextAreaElement>(null);
 
 	if (!children) {
 		return null;
@@ -27,10 +27,15 @@ export const Clipboard = ({ data, children, onSuccess, onError }: ClipboardProps
 
 	const onCopy = () => {
 		try {
-			textAreaRef.current.select();
-			document.execCommand("copy");
-			if (onSuccess) {
-				onSuccess();
+			const node = textAreaRef.current;
+
+			if (node) {
+				node.select();
+				document.execCommand("copy");
+
+				if (onSuccess) {
+					onSuccess();
+				}
 			}
 		} catch (error) {
 			if (onError) {
