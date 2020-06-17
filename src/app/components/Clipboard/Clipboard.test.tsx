@@ -66,11 +66,17 @@ describe("Clipboard", () => {
 	});
 
 	describe("on error", () => {
-		it("should execute the onError callback if given", () => {
+		beforeAll(() => {
 			document.execCommand = jest.fn().mockImplementation(() => {
 				throw new Error();
 			});
+		});
 
+		afterAll(() => {
+			document.execCommand.mockRestore();
+		});
+
+		it("should execute the onError callback if given", () => {
 			const onError = jest.fn();
 
 			const { getByTestId } = render(
@@ -85,10 +91,6 @@ describe("Clipboard", () => {
 		});
 
 		it("should execute no callback if missing", () => {
-			document.execCommand = jest.fn().mockImplementation(() => {
-				throw new Error();
-			});
-
 			const onError = jest.fn();
 
 			const { getByTestId } = render(

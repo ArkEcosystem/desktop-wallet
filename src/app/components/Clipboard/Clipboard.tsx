@@ -1,5 +1,5 @@
 import { Icon } from "app/components/Icon";
-import React, { useRef } from "react";
+import React from "react";
 import tw, { css, styled } from "twin.macro";
 
 type ClipboardProps = {
@@ -19,7 +19,7 @@ const TextArea = styled.textarea(() => [
 ]);
 
 export const Clipboard = ({ data, children, onSuccess, onError }: ClipboardProps) => {
-	const textAreaRef = useRef<HTMLTextAreaElement>(null);
+	const textAreaRef = React.useRef<HTMLTextAreaElement>(null);
 
 	if (!children) {
 		return null;
@@ -27,17 +27,13 @@ export const Clipboard = ({ data, children, onSuccess, onError }: ClipboardProps
 
 	const onCopy = () => {
 		try {
-			const node = textAreaRef.current;
+			textAreaRef?.current?.select();
+			document.execCommand("copy");
 
-			if (node) {
-				node.select();
-				document.execCommand("copy");
-
-				if (onSuccess) {
-					onSuccess();
-				}
+			if (onSuccess) {
+				onSuccess();
 			}
-		} catch (error) {
+		} catch {
 			if (onError) {
 				onError();
 			}
