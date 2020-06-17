@@ -4,7 +4,7 @@ exports[`NavBar should render 1`] = `
 <DocumentFragment>
   <nav
     aria-labelledby="main menu"
-    class="sc-AxhUy guUjqR"
+    class="sc-AxheI cyQaAZ"
   >
     <div
       class="px-4 sm:px-6 lg:px-8"
@@ -74,19 +74,24 @@ exports[`NavBar should render 1`] = `
           </ul>
         </div>
         <div
-          class="flex items-center flex-shrink-0"
+          class="flex items-center"
         >
           <div
-            class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+            class="relative"
+            data-testid="dropdown__toggle"
           >
             <div
-              class="sc-AxjAm jmgDQY"
-              height="22"
-              width="22"
+              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <svg>
-                notification.svg
-              </svg>
+              <div
+                class="sc-AxjAm jmgDQY"
+                height="22"
+                width="22"
+              >
+                <svg>
+                  notification.svg
+                </svg>
+              </div>
             </div>
           </div>
           <div
@@ -134,22 +139,21 @@ exports[`NavBar should render 1`] = `
             </div>
             <div
               class="text-sm font-bold text-theme-neutral-700"
-            >
-              34,253.75
-            </div>
+            />
           </div>
           <div
             class="flex p-1 cusror-pointer"
           >
             <div
               class="relative"
+              data-testid="dropdown__toggle"
             >
               <div
                 class="cursor-pointer"
                 data-testid="navbar__useractions"
               >
                 <div
-                  class="sc-AxiKw bYONXQ -mr-1 border-theme-neutral-300"
+                  class="sc-AxiKw klOYdQ -mr-1 border-theme-neutral-300"
                 >
                   <span
                     class="text-theme-neutral-600"
@@ -166,13 +170,11 @@ exports[`NavBar should render 1`] = `
                   </span>
                 </div>
                 <div
-                  class="sc-AxiKw bYONXQ relative rotate-90 bg-theme-primary-600 border-theme-primary-600"
+                  class="sc-AxiKw klOYdQ relative rotate-90 bg-theme-primary-600 border-theme-primary-600"
                 >
                   <span
                     class="text-sm text-theme-background"
-                  >
-                    IO
-                  </span>
+                  />
                   <span
                     class="sc-AxirZ nnMcM flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent transform  bg-theme-primary-100 border-theme-primary-100 bottom-2 -right-4 text-theme-primary-500"
                   >
@@ -202,7 +204,7 @@ exports[`NavBar should render with custom menu 1`] = `
 <DocumentFragment>
   <nav
     aria-labelledby="main menu"
-    class="sc-AxhUy guUjqR"
+    class="sc-AxheI cyQaAZ"
   >
     <div
       class="px-4 sm:px-6 lg:px-8"
@@ -250,19 +252,24 @@ exports[`NavBar should render with custom menu 1`] = `
           </ul>
         </div>
         <div
-          class="flex items-center flex-shrink-0"
+          class="flex items-center"
         >
           <div
-            class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+            class="relative"
+            data-testid="dropdown__toggle"
           >
             <div
-              class="sc-AxjAm jmgDQY"
-              height="22"
-              width="22"
+              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <svg>
-                notification.svg
-              </svg>
+              <div
+                class="sc-AxjAm jmgDQY"
+                height="22"
+                width="22"
+              >
+                <svg>
+                  notification.svg
+                </svg>
+              </div>
             </div>
           </div>
           <div
@@ -310,22 +317,21 @@ exports[`NavBar should render with custom menu 1`] = `
             </div>
             <div
               class="text-sm font-bold text-theme-neutral-700"
-            >
-              34,253.75
-            </div>
+            />
           </div>
           <div
             class="flex p-1 cusror-pointer"
           >
             <div
               class="relative"
+              data-testid="dropdown__toggle"
             >
               <div
                 class="cursor-pointer"
                 data-testid="navbar__useractions"
               >
                 <div
-                  class="sc-AxiKw bYONXQ -mr-1 border-theme-neutral-300"
+                  class="sc-AxiKw klOYdQ -mr-1 border-theme-neutral-300"
                 >
                   <span
                     class="text-theme-neutral-600"
@@ -342,13 +348,11 @@ exports[`NavBar should render with custom menu 1`] = `
                   </span>
                 </div>
                 <div
-                  class="sc-AxiKw bYONXQ relative rotate-90 bg-theme-primary-600 border-theme-primary-600"
+                  class="sc-AxiKw klOYdQ relative rotate-90 bg-theme-primary-600 border-theme-primary-600"
                 >
                   <span
                     class="text-sm text-theme-background"
-                  >
-                    IO
-                  </span>
+                  />
                   <span
                     class="sc-AxirZ nnMcM flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent transform  bg-theme-primary-100 border-theme-primary-100 bottom-2 -right-4 text-theme-primary-500"
                   >

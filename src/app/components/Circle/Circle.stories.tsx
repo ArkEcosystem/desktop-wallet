@@ -10,7 +10,7 @@ export default {
 };
 
 export const Blank = () => {
-	const size = select("Size", ["small", "default"], "default");
+	const size = select("Size", ["small", "default", "large"], "default");
 	return (
 		<div className="p-5">
 			<div className="mb-5"></div>
@@ -30,7 +30,7 @@ export const Blank = () => {
 };
 
 export const Colored = () => {
-	const size = select("Size", ["small", "default"], "default");
+	const size = select("Size", ["small", "default", "large"], "default");
 	return (
 		<div className="p-5">
 			<div className="mb-5"></div>
@@ -50,7 +50,7 @@ export const Colored = () => {
 };
 
 export const Avatar = () => {
-	const size = select("Size", ["small", "default"], "default");
+	const size = select("Size", ["small", "default", "large"], "default");
 	return (
 		<div className="p-5">
 			<div className="mb-5"></div>
@@ -70,7 +70,7 @@ export const Avatar = () => {
 };
 
 export const WithIcon = () => {
-	const size = select("Size", ["small", "default"], "default");
+	const size = select("Size", ["small", "default", "large"], "default");
 	return (
 		<div className="p-5">
 			<div className="mb-5"></div>

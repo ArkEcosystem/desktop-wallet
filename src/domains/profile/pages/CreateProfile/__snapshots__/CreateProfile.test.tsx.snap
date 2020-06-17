@@ -7,7 +7,7 @@ exports[`CreateProfile should render 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzokOt bHvHZz"
+      class="sc-fzqNJr dHVexX"
     >
       <div
         class="px-4 sm:px-6 lg:px-8"
@@ -77,19 +77,24 @@ exports[`CreateProfile should render 1`] = `
             </ul>
           </div>
           <div
-            class="flex items-center flex-shrink-0"
+            class="flex items-center"
           >
             <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              class="relative"
+              data-testid="dropdown__toggle"
             >
               <div
-                class="sc-AxhCb draJkT"
-                height="22"
-                width="22"
+                class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
               >
-                <svg>
-                  notification.svg
-                </svg>
+                <div
+                  class="sc-AxhCb draJkT"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    notification.svg
+                  </svg>
+                </div>
               </div>
             </div>
             <div
@@ -137,22 +142,21 @@ exports[`CreateProfile should render 1`] = `
               </div>
               <div
                 class="text-sm font-bold text-theme-neutral-700"
-              >
-                34,253.75
-              </div>
+              />
             </div>
             <div
               class="flex p-1 cusror-pointer"
             >
               <div
                 class="relative"
+                data-testid="dropdown__toggle"
               >
                 <div
                   class="cursor-pointer"
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-fznKkj kcwjto -mr-1 border-theme-neutral-300"
+                    class="sc-fznKkj gPZsmc -mr-1 border-theme-neutral-300"
                   >
                     <span
                       class="text-theme-neutral-600"
@@ -169,13 +173,11 @@ exports[`CreateProfile should render 1`] = `
                     </span>
                   </div>
                   <div
-                    class="sc-fznKkj kcwjto relative rotate-90 bg-theme-primary-600 border-theme-primary-600"
+                    class="sc-fznKkj gPZsmc relative rotate-90 bg-theme-primary-600 border-theme-primary-600"
                   >
                     <span
                       class="text-sm text-theme-background"
-                    >
-                      IO
-                    </span>
+                    />
                     <span
                       class="sc-fznyAO bxiLWJ flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent transform  bg-theme-primary-100 border-theme-primary-100 bottom-2 -right-4 text-theme-primary-500"
                     >
@@ -491,14 +493,14 @@ exports[`CreateProfile should render 1`] = `
                       >
                         <label>
                           <input
-                            class="sc-fzqBZW koofcx"
+                            class="sc-fzoyAV bYqIqq"
                             type="checkbox"
                           />
                           <div
-                            class="sc-fzqNJr fYWleC"
+                            class="sc-fzoLag kjwIeU"
                           >
                             <span
-                              class="sc-fzoyAV cQFWNG"
+                              class="sc-fzoXzr lvhro"
                             />
                           </div>
                         </label>

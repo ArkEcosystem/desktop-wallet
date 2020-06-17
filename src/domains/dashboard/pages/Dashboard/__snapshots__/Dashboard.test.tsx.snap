@@ -60,10 +60,10 @@ exports[`Dashboard should render 1`] = `
               >
                 <div
                   class="relative"
+                  data-testid="dropdown__toggle"
                 >
                   <button
                     class="float-right outline-none focus:outline-none"
-                    data-testid="dropdown__toggle"
                   >
                     <div
                       class="sc-AxirZ eEbZjj"
@@ -160,47 +160,10 @@ exports[`Dashboard should render 1`] = `
                         class="mt-1"
                       >
                         <div
-                          class="sc-AxhCb iQwDlB -mr-2 border-theme-primary-contrast"
+                          class="sc-AxhCb dqZRJJ -mr-2 border-theme-primary-contrast"
                         />
                         <div
-                          class="sc-AxhCb iQwDlB border-theme-primary-contrast"
-                        />
-                      </div>
-                      <div
-                        class="mt-4 text-md text-theme-primary-contrast"
-                      >
-                        New wallet
-                      </div>
-                      <div
-                        class="mt-1 text-md text-theme-primary-contrast"
-                      >
-                        Balance
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div
-                class="swiper-slide"
-                style="height: 210px;"
-              >
-                <div
-                  class="w-64 inline-block undefined"
-                >
-                  <div
-                    class="sc-AxgMl ctFYhG"
-                  >
-                    <div
-                      class="px-1 py-2"
-                    >
-                      <div
-                        class="mt-1"
-                      >
-                        <div
-                          class="sc-AxhCb iQwDlB -mr-2 border-theme-primary-contrast"
-                        />
-                        <div
-                          class="sc-AxhCb iQwDlB border-theme-primary-contrast"
+                          class="sc-AxhCb dqZRJJ border-theme-primary-contrast"
                         />
                       </div>
                       <div
@@ -234,10 +197,10 @@ exports[`Dashboard should render 1`] = `
                         class="mt-1"
                       >
                         <div
-                          class="sc-AxhCb iQwDlB -mr-2 border-theme-primary-contrast"
+                          class="sc-AxhCb dqZRJJ -mr-2 border-theme-primary-contrast"
                         />
                         <div
-                          class="sc-AxhCb iQwDlB border-theme-primary-contrast"
+                          class="sc-AxhCb dqZRJJ border-theme-primary-contrast"
                         />
                       </div>
                       <div
@@ -271,10 +234,47 @@ exports[`Dashboard should render 1`] = `
                         class="mt-1"
                       >
                         <div
-                          class="sc-AxhCb iQwDlB -mr-2 border-theme-primary-contrast"
+                          class="sc-AxhCb dqZRJJ -mr-2 border-theme-primary-contrast"
                         />
                         <div
-                          class="sc-AxhCb iQwDlB border-theme-primary-contrast"
+                          class="sc-AxhCb dqZRJJ border-theme-primary-contrast"
+                        />
+                      </div>
+                      <div
+                        class="mt-4 text-md text-theme-primary-contrast"
+                      >
+                        New wallet
+                      </div>
+                      <div
+                        class="mt-1 text-md text-theme-primary-contrast"
+                      >
+                        Balance
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="swiper-slide"
+                style="height: 210px;"
+              >
+                <div
+                  class="w-64 inline-block undefined"
+                >
+                  <div
+                    class="sc-AxgMl ctFYhG"
+                  >
+                    <div
+                      class="px-1 py-2"
+                    >
+                      <div
+                        class="mt-1"
+                      >
+                        <div
+                          class="sc-AxhCb dqZRJJ -mr-2 border-theme-primary-contrast"
+                        />
+                        <div
+                          class="sc-AxhCb dqZRJJ border-theme-primary-contrast"
                         />
                       </div>
                       <div
@@ -315,7 +315,7 @@ exports[`Dashboard should render 1`] = `
             Transactions History
           </h2>
           <div
-            class="sc-AxiKw fbCrjE"
+            class="sc-AxiKw jaovnp"
             role="table"
           >
             <table
@@ -340,7 +340,7 @@ exports[`Dashboard should render 1`] = `
                         Date
                       </div>
                       <div
-                        class="mt-1"
+                        class="mt-1 text-theme-color-neutral-500"
                         data-testid="table__Sort"
                       />
                     </div>
@@ -360,7 +360,7 @@ exports[`Dashboard should render 1`] = `
                         Type
                       </div>
                       <div
-                        class="mt-1"
+                        class="mt-1 text-theme-color-neutral-500"
                         data-testid="table__Sort"
                       />
                     </div>
@@ -380,7 +380,7 @@ exports[`Dashboard should render 1`] = `
                         Wallet Address
                       </div>
                       <div
-                        class="mt-1"
+                        class="mt-1 text-theme-color-neutral-500"
                         data-testid="table__Sort"
                       />
                     </div>
@@ -400,7 +400,7 @@ exports[`Dashboard should render 1`] = `
                         Amount
                       </div>
                       <div
-                        class="mt-1"
+                        class="mt-1 text-theme-color-neutral-500"
                         data-testid="table__Sort"
                       />
                     </div>
@@ -420,7 +420,7 @@ exports[`Dashboard should render 1`] = `
                         Fiat Value
                       </div>
                       <div
-                        class="mt-1"
+                        class="mt-1 text-theme-color-neutral-500"
                         data-testid="table__Sort"
                       />
                     </div>

@@ -1,6 +1,9 @@
 // Styles
 import "./styles/app.css";
 
+// Context
+import { EnvironmentProvider } from "app/contexts";
+// React
 import React from "react";
 import ReactDOM from "react-dom";
 import { I18nextProvider } from "react-i18next";
@@ -16,7 +19,7 @@ ReactDOM.render(
 	<HashRouter>
 		<I18nextProvider i18n={i18n}>
 			<main className={process.env.NODE_ENV === "development" ? "debug-screens" : ""}>
-				{renderRoutes(routes)}
+				<EnvironmentProvider>{renderRoutes(routes)}</EnvironmentProvider>
 			</main>
 		</I18nextProvider>
 	</HashRouter>,

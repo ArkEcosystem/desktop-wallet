@@ -16,8 +16,8 @@ const TableWrapper = styled.div`
 `;
 
 export const Table = ({ children, data, columns }: TableProps) => {
-	const tableData = useMemo(() => data, []);
-	const tableColumns = useMemo(() => columns, []);
+	const tableData = useMemo(() => data, [data]);
+	const tableColumns = useMemo(() => columns, [columns]);
 
 	const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } = useTable(
 		{
@@ -54,7 +54,7 @@ export const Table = ({ children, data, columns }: TableProps) => {
 									<div className={`flex flex-inline align-top  ${column.className}`}>
 										<div className="mr-1">{column.render("Header")}</div>
 										<div
-											className="mt-1"
+											className="mt-1 text-theme-color-neutral-500"
 											data-testid={`table__${getSortIconName(
 												column.isSorted,
 												column.isSortedDesc,

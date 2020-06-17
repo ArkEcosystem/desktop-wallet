@@ -1,0 +1,143 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchBar should render 1`] = `
+<DocumentFragment>
+  <div
+    class="bg-theme-neutral-200 px-16 pt-8 pb-10 undefined"
+    data-testid="SearchBar"
+  >
+    <div
+      class="flex px-6 py-4 bg-white rounded shadow-xl"
+    >
+      <div
+        class="flex-1 mr-4"
+      >
+        <input
+          class="sc-AxhCb clCjoe overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary border-none shadow-none"
+          data-testid="Input"
+          placeholder="What would you like to search for?"
+        />
+      </div>
+      <button
+        class="sc-AxiKw epgGYm my-1"
+        color="primary"
+        type="button"
+      >
+        <span
+          class="px-2 text-sm"
+        >
+          Find it
+        </span>
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`SearchBar should render with options 1`] = `
+<DocumentFragment>
+  <div
+    class="bg-theme-neutral-200 px-16 pt-8 pb-10 undefined"
+    data-testid="SearchBar"
+  >
+    <div
+      class="flex px-6 py-4 bg-white rounded shadow-xl"
+    >
+      <div
+        class="flex items-center pl-2 pr-6 my-1 border-r border-theme-neutral-200"
+        data-testid="SearchBarOptions"
+      >
+        <div
+          class="relative"
+          data-testid="dropdown__toggle"
+        >
+          <span
+            class="font-semibold cursor-pointer select-none"
+          >
+            Type
+            <svg
+              class="inline-block w-2 ml-2 text-black"
+            >
+              arrowdown.svg
+            </svg>
+          </span>
+        </div>
+      </div>
+      <div
+        class="flex-1 mr-4"
+      >
+        <input
+          class="sc-AxhCb clCjoe overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary border-none shadow-none"
+          data-testid="Input"
+          placeholder="What would you like to search for?"
+        />
+      </div>
+      <button
+        class="sc-AxiKw epgGYm my-1"
+        color="primary"
+        type="button"
+      >
+        <span
+          class="px-2 text-sm"
+        >
+          Find it
+        </span>
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`SearchBar should render with selected option 1`] = `
+<DocumentFragment>
+  <div
+    class="bg-theme-neutral-200 px-16 pt-8 pb-10 undefined"
+    data-testid="SearchBar"
+  >
+    <div
+      class="flex px-6 py-4 bg-white rounded shadow-xl"
+    >
+      <div
+        class="flex items-center pl-2 pr-6 my-1 border-r border-theme-neutral-200"
+        data-testid="SearchBarOptions"
+      >
+        <div
+          class="relative"
+          data-testid="dropdown__toggle"
+        >
+          <span
+            class="font-semibold cursor-pointer select-none"
+          >
+            TESTING LABEL
+            <svg
+              class="inline-block w-2 ml-2 text-black"
+            >
+              arrowdown.svg
+            </svg>
+          </span>
+        </div>
+      </div>
+      <div
+        class="flex-1 mr-4"
+      >
+        <input
+          class="sc-AxhCb clCjoe overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary border-none shadow-none"
+          data-testid="Input"
+          placeholder="What would you like to search for?"
+        />
+      </div>
+      <button
+        class="sc-AxiKw epgGYm my-1"
+        color="primary"
+        type="button"
+      >
+        <span
+          class="px-2 text-sm"
+        >
+          Find it
+        </span>
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;
