@@ -13,12 +13,13 @@ type SearchModalProps = {
 export const SearchModal = (props: SearchModalProps) => {
 	const { t } = useTranslation();
 	const options = [
+		{ label: "All", value: "all" },
 		{ label: "Delegate", value: "delegate" },
 		{ label: "Plugin", value: "plugin" },
 		{ label: "Transaction", value: "transaction" },
 		{ label: "Wallet", value: "wallet" },
 	];
-	let selectedOption: any;
+	const [selectedOption, setSelectedOption] = React.useState(options[0]);
 
 	const data = [
 		{
@@ -64,7 +65,7 @@ export const SearchModal = (props: SearchModalProps) => {
 					<SearchBarOptions
 						options={options}
 						selectedOption={selectedOption}
-						onSelect={(option: any) => (selectedOption = option)}
+						onSelect={(option: any) => setSelectedOption(option)}
 					/>
 				</SearchBar>
 			</div>
