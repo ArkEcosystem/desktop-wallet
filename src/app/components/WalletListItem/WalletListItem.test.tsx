@@ -16,6 +16,22 @@ describe("WalletListItem", () => {
 		expect(container).toMatchSnapshot();
 	});
 
+	it("should render a button if variant is 'singleAction'", () => {
+		const actions = [{ label: "Option 1", value: "1" }];
+
+		const { container, getByTestId } = render(
+			<table>
+				<tbody>
+					<WalletListItem actions={actions} variant="singleAction" />
+				</tbody>
+			</table>,
+		);
+
+		expect(() => getByTestId("dropdown__toggle")).toThrow(/Unable to find an element by/);
+		expect(getByTestId("button")).toHaveTextContent(actions[0].label);
+		expect(container).toMatchSnapshot();
+	});
+
 	it("should trigger onAction callback if provided", () => {
 		const fn = jest.fn();
 		const options = [

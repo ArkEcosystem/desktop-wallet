@@ -13,6 +13,10 @@ export const defaultTableStyle = `
 			vertical-align: middle;
 		}
 
+        tr:last-child {
+            border-bottom: none;
+        }
+
 		tbody:before {
 			content: "-";
 			display: block;

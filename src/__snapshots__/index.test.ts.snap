@@ -94,6 +94,7 @@ exports[`Application root should render without crashing 1`] = `
                           "CANCEL": "Cancel",
                           "CATEGORY": "Category",
                           "CONFIRM": "Confirm",
+                          "CONTINUE": "Continue",
                           "CURRENCY": "Currency",
                           "DATE": "Date",
                           "DEFAULT_CHOSEN_FEE": "Default fee type",
@@ -129,11 +130,13 @@ exports[`Application root should render without crashing 1`] = `
                           "SAVE": "Save",
                           "SELECT": "Select",
                           "SEND": "Send",
+                          "SIGN": "Sign",
                           "SIZE": "Size",
                           "SKIP": "Skip",
                           "START": "Start",
                           "THEME": "Theme",
                           "TIME_FORMAT": "Time format",
+                          "TYPE": "Type",
                           "UPDATE_LATER": "Update Later",
                           "UPDATE_NOW": "Update Now",
                           "URL": "URL",
@@ -145,6 +148,7 @@ exports[`Application root should render without crashing 1`] = `
                           "WILL": "will",
                           "X_OF_Y": "{{0}} of {{1}}",
                           "YOU": "You",
+                          "YOUR_PASSPHRASE": "Your Passphrase",
                         },
                         "HELP": Object {
                           "MODAL_CONTACT_US": Object {
@@ -171,6 +175,10 @@ exports[`Application root should render without crashing 1`] = `
                             "TITLE": "Profile Created!",
                           },
                         },
+                        "SEARCH": Object {
+                          "FIND_IT": "Find it",
+                          "PLACEHOLDER": "What would you like to search for?",
+                        },
                         "TRANSACTION": Object {
                           "ACCOUNT": "Account",
                           "ACCOUNT_NICKNAME": "Account Nickname",
@@ -182,7 +190,17 @@ exports[`Application root should render without crashing 1`] = `
                             "TITLE": "Delegate Registration",
                           },
                           "MODAL_MULTISIGNATURE_DETAIL": Object {
-                            "TITLE": "Multisignature",
+                            "STEP_1": Object {
+                              "TITLE": "Multisignature",
+                            },
+                            "STEP_2": Object {
+                              "DESCRIPTION": "Enter your passphrase in order to sign the Multisignature transaction.",
+                              "TITLE": "Multisignature Passphrase",
+                            },
+                            "STEP_3": Object {
+                              "DESCRIPTION": "Your signature was successfully confirmed and sent.",
+                              "TITLE": "Transaction Successful",
+                            },
                             "WAITING_FOR_SIGNATURES": "Waiting for Signatures",
                           },
                           "MODAL_TRANSFER_DETAIL": Object {
@@ -211,6 +229,9 @@ exports[`Application root should render without crashing 1`] = `
                             "DESCRIPTION": "You can enter the name of your wallet for a quick search in your wallet.",
                             "FIELD_NAME": "Enter a name",
                             "TITLE": "Name Wallet",
+                          },
+                          "MODAL_RECEIVE_FUNDS": Object {
+                            "TITLE": "Receive Funds",
                           },
                           "MODAL_WALLET_UPDATE": Object {
                             "DESCRIPTION_1": "We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.",
@@ -305,6 +326,7 @@ exports[`Application root should render without crashing 1`] = `
                         "CANCEL": "Cancel",
                         "CATEGORY": "Category",
                         "CONFIRM": "Confirm",
+                        "CONTINUE": "Continue",
                         "CURRENCY": "Currency",
                         "DATE": "Date",
                         "DEFAULT_CHOSEN_FEE": "Default fee type",
@@ -340,11 +362,13 @@ exports[`Application root should render without crashing 1`] = `
                         "SAVE": "Save",
                         "SELECT": "Select",
                         "SEND": "Send",
+                        "SIGN": "Sign",
                         "SIZE": "Size",
                         "SKIP": "Skip",
                         "START": "Start",
                         "THEME": "Theme",
                         "TIME_FORMAT": "Time format",
+                        "TYPE": "Type",
                         "UPDATE_LATER": "Update Later",
                         "UPDATE_NOW": "Update Now",
                         "URL": "URL",
@@ -356,6 +380,7 @@ exports[`Application root should render without crashing 1`] = `
                         "WILL": "will",
                         "X_OF_Y": "{{0}} of {{1}}",
                         "YOU": "You",
+                        "YOUR_PASSPHRASE": "Your Passphrase",
                       },
                       "HELP": Object {
                         "MODAL_CONTACT_US": Object {
@@ -382,6 +407,10 @@ exports[`Application root should render without crashing 1`] = `
                           "TITLE": "Profile Created!",
                         },
                       },
+                      "SEARCH": Object {
+                        "FIND_IT": "Find it",
+                        "PLACEHOLDER": "What would you like to search for?",
+                      },
                       "TRANSACTION": Object {
                         "ACCOUNT": "Account",
                         "ACCOUNT_NICKNAME": "Account Nickname",
@@ -393,7 +422,17 @@ exports[`Application root should render without crashing 1`] = `
                           "TITLE": "Delegate Registration",
                         },
                         "MODAL_MULTISIGNATURE_DETAIL": Object {
-                          "TITLE": "Multisignature",
+                          "STEP_1": Object {
+                            "TITLE": "Multisignature",
+                          },
+                          "STEP_2": Object {
+                            "DESCRIPTION": "Enter your passphrase in order to sign the Multisignature transaction.",
+                            "TITLE": "Multisignature Passphrase",
+                          },
+                          "STEP_3": Object {
+                            "DESCRIPTION": "Your signature was successfully confirmed and sent.",
+                            "TITLE": "Transaction Successful",
+                          },
                           "WAITING_FOR_SIGNATURES": "Waiting for Signatures",
                         },
                         "MODAL_TRANSFER_DETAIL": Object {
@@ -422,6 +461,9 @@ exports[`Application root should render without crashing 1`] = `
                           "DESCRIPTION": "You can enter the name of your wallet for a quick search in your wallet.",
                           "FIELD_NAME": "Enter a name",
                           "TITLE": "Name Wallet",
+                        },
+                        "MODAL_RECEIVE_FUNDS": Object {
+                          "TITLE": "Receive Funds",
                         },
                         "MODAL_WALLET_UPDATE": Object {
                           "DESCRIPTION_1": "We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.",
@@ -520,6 +562,7 @@ exports[`Application root should render without crashing 1`] = `
                                 "CANCEL": "Cancel",
                                 "CATEGORY": "Category",
                                 "CONFIRM": "Confirm",
+                                "CONTINUE": "Continue",
                                 "CURRENCY": "Currency",
                                 "DATE": "Date",
                                 "DEFAULT_CHOSEN_FEE": "Default fee type",
@@ -555,11 +598,13 @@ exports[`Application root should render without crashing 1`] = `
                                 "SAVE": "Save",
                                 "SELECT": "Select",
                                 "SEND": "Send",
+                                "SIGN": "Sign",
                                 "SIZE": "Size",
                                 "SKIP": "Skip",
                                 "START": "Start",
                                 "THEME": "Theme",
                                 "TIME_FORMAT": "Time format",
+                                "TYPE": "Type",
                                 "UPDATE_LATER": "Update Later",
                                 "UPDATE_NOW": "Update Now",
                                 "URL": "URL",
@@ -571,6 +616,7 @@ exports[`Application root should render without crashing 1`] = `
                                 "WILL": "will",
                                 "X_OF_Y": "{{0}} of {{1}}",
                                 "YOU": "You",
+                                "YOUR_PASSPHRASE": "Your Passphrase",
                               },
                               "HELP": Object {
                                 "MODAL_CONTACT_US": Object {
@@ -597,6 +643,10 @@ exports[`Application root should render without crashing 1`] = `
                                   "TITLE": "Profile Created!",
                                 },
                               },
+                              "SEARCH": Object {
+                                "FIND_IT": "Find it",
+                                "PLACEHOLDER": "What would you like to search for?",
+                              },
                               "TRANSACTION": Object {
                                 "ACCOUNT": "Account",
                                 "ACCOUNT_NICKNAME": "Account Nickname",
@@ -608,7 +658,17 @@ exports[`Application root should render without crashing 1`] = `
                                   "TITLE": "Delegate Registration",
                                 },
                                 "MODAL_MULTISIGNATURE_DETAIL": Object {
-                                  "TITLE": "Multisignature",
+                                  "STEP_1": Object {
+                                    "TITLE": "Multisignature",
+                                  },
+                                  "STEP_2": Object {
+                                    "DESCRIPTION": "Enter your passphrase in order to sign the Multisignature transaction.",
+                                    "TITLE": "Multisignature Passphrase",
+                                  },
+                                  "STEP_3": Object {
+                                    "DESCRIPTION": "Your signature was successfully confirmed and sent.",
+                                    "TITLE": "Transaction Successful",
+                                  },
                                   "WAITING_FOR_SIGNATURES": "Waiting for Signatures",
                                 },
                                 "MODAL_TRANSFER_DETAIL": Object {
@@ -637,6 +697,9 @@ exports[`Application root should render without crashing 1`] = `
                                   "DESCRIPTION": "You can enter the name of your wallet for a quick search in your wallet.",
                                   "FIELD_NAME": "Enter a name",
                                   "TITLE": "Name Wallet",
+                                },
+                                "MODAL_RECEIVE_FUNDS": Object {
+                                  "TITLE": "Receive Funds",
                                 },
                                 "MODAL_WALLET_UPDATE": Object {
                                   "DESCRIPTION_1": "We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.",
@@ -722,6 +785,7 @@ exports[`Application root should render without crashing 1`] = `
                               "CANCEL": "Cancel",
                               "CATEGORY": "Category",
                               "CONFIRM": "Confirm",
+                              "CONTINUE": "Continue",
                               "CURRENCY": "Currency",
                               "DATE": "Date",
                               "DEFAULT_CHOSEN_FEE": "Default fee type",
@@ -757,11 +821,13 @@ exports[`Application root should render without crashing 1`] = `
                               "SAVE": "Save",
                               "SELECT": "Select",
                               "SEND": "Send",
+                              "SIGN": "Sign",
                               "SIZE": "Size",
                               "SKIP": "Skip",
                               "START": "Start",
                               "THEME": "Theme",
                               "TIME_FORMAT": "Time format",
+                              "TYPE": "Type",
                               "UPDATE_LATER": "Update Later",
                               "UPDATE_NOW": "Update Now",
                               "URL": "URL",
@@ -773,6 +839,7 @@ exports[`Application root should render without crashing 1`] = `
                               "WILL": "will",
                               "X_OF_Y": "{{0}} of {{1}}",
                               "YOU": "You",
+                              "YOUR_PASSPHRASE": "Your Passphrase",
                             },
                             "HELP": Object {
                               "MODAL_CONTACT_US": Object {
@@ -799,6 +866,10 @@ exports[`Application root should render without crashing 1`] = `
                                 "TITLE": "Profile Created!",
                               },
                             },
+                            "SEARCH": Object {
+                              "FIND_IT": "Find it",
+                              "PLACEHOLDER": "What would you like to search for?",
+                            },
                             "TRANSACTION": Object {
                               "ACCOUNT": "Account",
                               "ACCOUNT_NICKNAME": "Account Nickname",
@@ -810,7 +881,17 @@ exports[`Application root should render without crashing 1`] = `
                                 "TITLE": "Delegate Registration",
                               },
                               "MODAL_MULTISIGNATURE_DETAIL": Object {
-                                "TITLE": "Multisignature",
+                                "STEP_1": Object {
+                                  "TITLE": "Multisignature",
+                                },
+                                "STEP_2": Object {
+                                  "DESCRIPTION": "Enter your passphrase in order to sign the Multisignature transaction.",
+                                  "TITLE": "Multisignature Passphrase",
+                                },
+                                "STEP_3": Object {
+                                  "DESCRIPTION": "Your signature was successfully confirmed and sent.",
+                                  "TITLE": "Transaction Successful",
+                                },
                                 "WAITING_FOR_SIGNATURES": "Waiting for Signatures",
                               },
                               "MODAL_TRANSFER_DETAIL": Object {
@@ -839,6 +920,9 @@ exports[`Application root should render without crashing 1`] = `
                                 "DESCRIPTION": "You can enter the name of your wallet for a quick search in your wallet.",
                                 "FIELD_NAME": "Enter a name",
                                 "TITLE": "Name Wallet",
+                              },
+                              "MODAL_RECEIVE_FUNDS": Object {
+                                "TITLE": "Receive Funds",
                               },
                               "MODAL_WALLET_UPDATE": Object {
                                 "DESCRIPTION_1": "We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.",
@@ -934,6 +1018,7 @@ exports[`Application root should render without crashing 1`] = `
                               "CANCEL": "Cancel",
                               "CATEGORY": "Category",
                               "CONFIRM": "Confirm",
+                              "CONTINUE": "Continue",
                               "CURRENCY": "Currency",
                               "DATE": "Date",
                               "DEFAULT_CHOSEN_FEE": "Default fee type",
@@ -969,11 +1054,13 @@ exports[`Application root should render without crashing 1`] = `
                               "SAVE": "Save",
                               "SELECT": "Select",
                               "SEND": "Send",
+                              "SIGN": "Sign",
                               "SIZE": "Size",
                               "SKIP": "Skip",
                               "START": "Start",
                               "THEME": "Theme",
                               "TIME_FORMAT": "Time format",
+                              "TYPE": "Type",
                               "UPDATE_LATER": "Update Later",
                               "UPDATE_NOW": "Update Now",
                               "URL": "URL",
@@ -985,6 +1072,7 @@ exports[`Application root should render without crashing 1`] = `
                               "WILL": "will",
                               "X_OF_Y": "{{0}} of {{1}}",
                               "YOU": "You",
+                              "YOUR_PASSPHRASE": "Your Passphrase",
                             },
                             "HELP": Object {
                               "MODAL_CONTACT_US": Object {
@@ -1011,6 +1099,10 @@ exports[`Application root should render without crashing 1`] = `
                                 "TITLE": "Profile Created!",
                               },
                             },
+                            "SEARCH": Object {
+                              "FIND_IT": "Find it",
+                              "PLACEHOLDER": "What would you like to search for?",
+                            },
                             "TRANSACTION": Object {
                               "ACCOUNT": "Account",
                               "ACCOUNT_NICKNAME": "Account Nickname",
@@ -1022,7 +1114,17 @@ exports[`Application root should render without crashing 1`] = `
                                 "TITLE": "Delegate Registration",
                               },
                               "MODAL_MULTISIGNATURE_DETAIL": Object {
-                                "TITLE": "Multisignature",
+                                "STEP_1": Object {
+                                  "TITLE": "Multisignature",
+                                },
+                                "STEP_2": Object {
+                                  "DESCRIPTION": "Enter your passphrase in order to sign the Multisignature transaction.",
+                                  "TITLE": "Multisignature Passphrase",
+                                },
+                                "STEP_3": Object {
+                                  "DESCRIPTION": "Your signature was successfully confirmed and sent.",
+                                  "TITLE": "Transaction Successful",
+                                },
                                 "WAITING_FOR_SIGNATURES": "Waiting for Signatures",
                               },
                               "MODAL_TRANSFER_DETAIL": Object {
@@ -1051,6 +1153,9 @@ exports[`Application root should render without crashing 1`] = `
                                 "DESCRIPTION": "You can enter the name of your wallet for a quick search in your wallet.",
                                 "FIELD_NAME": "Enter a name",
                                 "TITLE": "Name Wallet",
+                              },
+                              "MODAL_RECEIVE_FUNDS": Object {
+                                "TITLE": "Receive Funds",
                               },
                               "MODAL_WALLET_UPDATE": Object {
                                 "DESCRIPTION_1": "We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.",
@@ -1141,6 +1246,7 @@ exports[`Application root should render without crashing 1`] = `
                             "CANCEL": "Cancel",
                             "CATEGORY": "Category",
                             "CONFIRM": "Confirm",
+                            "CONTINUE": "Continue",
                             "CURRENCY": "Currency",
                             "DATE": "Date",
                             "DEFAULT_CHOSEN_FEE": "Default fee type",
@@ -1176,11 +1282,13 @@ exports[`Application root should render without crashing 1`] = `
                             "SAVE": "Save",
                             "SELECT": "Select",
                             "SEND": "Send",
+                            "SIGN": "Sign",
                             "SIZE": "Size",
                             "SKIP": "Skip",
                             "START": "Start",
                             "THEME": "Theme",
                             "TIME_FORMAT": "Time format",
+                            "TYPE": "Type",
                             "UPDATE_LATER": "Update Later",
                             "UPDATE_NOW": "Update Now",
                             "URL": "URL",
@@ -1192,6 +1300,7 @@ exports[`Application root should render without crashing 1`] = `
                             "WILL": "will",
                             "X_OF_Y": "{{0}} of {{1}}",
                             "YOU": "You",
+                            "YOUR_PASSPHRASE": "Your Passphrase",
                           },
                           "HELP": Object {
                             "MODAL_CONTACT_US": Object {
@@ -1218,6 +1327,10 @@ exports[`Application root should render without crashing 1`] = `
                               "TITLE": "Profile Created!",
                             },
                           },
+                          "SEARCH": Object {
+                            "FIND_IT": "Find it",
+                            "PLACEHOLDER": "What would you like to search for?",
+                          },
                           "TRANSACTION": Object {
                             "ACCOUNT": "Account",
                             "ACCOUNT_NICKNAME": "Account Nickname",
@@ -1229,7 +1342,17 @@ exports[`Application root should render without crashing 1`] = `
                               "TITLE": "Delegate Registration",
                             },
                             "MODAL_MULTISIGNATURE_DETAIL": Object {
-                              "TITLE": "Multisignature",
+                              "STEP_1": Object {
+                                "TITLE": "Multisignature",
+                              },
+                              "STEP_2": Object {
+                                "DESCRIPTION": "Enter your passphrase in order to sign the Multisignature transaction.",
+                                "TITLE": "Multisignature Passphrase",
+                              },
+                              "STEP_3": Object {
+                                "DESCRIPTION": "Your signature was successfully confirmed and sent.",
+                                "TITLE": "Transaction Successful",
+                              },
                               "WAITING_FOR_SIGNATURES": "Waiting for Signatures",
                             },
                             "MODAL_TRANSFER_DETAIL": Object {
@@ -1258,6 +1381,9 @@ exports[`Application root should render without crashing 1`] = `
                               "DESCRIPTION": "You can enter the name of your wallet for a quick search in your wallet.",
                               "FIELD_NAME": "Enter a name",
                               "TITLE": "Name Wallet",
+                            },
+                            "MODAL_RECEIVE_FUNDS": Object {
+                              "TITLE": "Receive Funds",
                             },
                             "MODAL_WALLET_UPDATE": Object {
                               "DESCRIPTION_1": "We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.",
@@ -1301,6 +1427,7 @@ exports[`Application root should render without crashing 1`] = `
                           "CANCEL": "Cancel",
                           "CATEGORY": "Category",
                           "CONFIRM": "Confirm",
+                          "CONTINUE": "Continue",
                           "CURRENCY": "Currency",
                           "DATE": "Date",
                           "DEFAULT_CHOSEN_FEE": "Default fee type",
@@ -1336,11 +1463,13 @@ exports[`Application root should render without crashing 1`] = `
                           "SAVE": "Save",
                           "SELECT": "Select",
                           "SEND": "Send",
+                          "SIGN": "Sign",
                           "SIZE": "Size",
                           "SKIP": "Skip",
                           "START": "Start",
                           "THEME": "Theme",
                           "TIME_FORMAT": "Time format",
+                          "TYPE": "Type",
                           "UPDATE_LATER": "Update Later",
                           "UPDATE_NOW": "Update Now",
                           "URL": "URL",
@@ -1352,6 +1481,7 @@ exports[`Application root should render without crashing 1`] = `
                           "WILL": "will",
                           "X_OF_Y": "{{0}} of {{1}}",
                           "YOU": "You",
+                          "YOUR_PASSPHRASE": "Your Passphrase",
                         },
                         "HELP": Object {
                           "MODAL_CONTACT_US": Object {
@@ -1378,6 +1508,10 @@ exports[`Application root should render without crashing 1`] = `
                             "TITLE": "Profile Created!",
                           },
                         },
+                        "SEARCH": Object {
+                          "FIND_IT": "Find it",
+                          "PLACEHOLDER": "What would you like to search for?",
+                        },
                         "TRANSACTION": Object {
                           "ACCOUNT": "Account",
                           "ACCOUNT_NICKNAME": "Account Nickname",
@@ -1389,7 +1523,17 @@ exports[`Application root should render without crashing 1`] = `
                             "TITLE": "Delegate Registration",
                           },
                           "MODAL_MULTISIGNATURE_DETAIL": Object {
-                            "TITLE": "Multisignature",
+                            "STEP_1": Object {
+                              "TITLE": "Multisignature",
+                            },
+                            "STEP_2": Object {
+                              "DESCRIPTION": "Enter your passphrase in order to sign the Multisignature transaction.",
+                              "TITLE": "Multisignature Passphrase",
+                            },
+                            "STEP_3": Object {
+                              "DESCRIPTION": "Your signature was successfully confirmed and sent.",
+                              "TITLE": "Transaction Successful",
+                            },
                             "WAITING_FOR_SIGNATURES": "Waiting for Signatures",
                           },
                           "MODAL_TRANSFER_DETAIL": Object {
@@ -1418,6 +1562,9 @@ exports[`Application root should render without crashing 1`] = `
                             "DESCRIPTION": "You can enter the name of your wallet for a quick search in your wallet.",
                             "FIELD_NAME": "Enter a name",
                             "TITLE": "Name Wallet",
+                          },
+                          "MODAL_RECEIVE_FUNDS": Object {
+                            "TITLE": "Receive Funds",
                           },
                           "MODAL_WALLET_UPDATE": Object {
                             "DESCRIPTION_1": "We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.",
@@ -1507,6 +1654,7 @@ exports[`Application root should render without crashing 1`] = `
                               "CANCEL": "Cancel",
                               "CATEGORY": "Category",
                               "CONFIRM": "Confirm",
+                              "CONTINUE": "Continue",
                               "CURRENCY": "Currency",
                               "DATE": "Date",
                               "DEFAULT_CHOSEN_FEE": "Default fee type",
@@ -1542,11 +1690,13 @@ exports[`Application root should render without crashing 1`] = `
                               "SAVE": "Save",
                               "SELECT": "Select",
                               "SEND": "Send",
+                              "SIGN": "Sign",
                               "SIZE": "Size",
                               "SKIP": "Skip",
                               "START": "Start",
                               "THEME": "Theme",
                               "TIME_FORMAT": "Time format",
+                              "TYPE": "Type",
                               "UPDATE_LATER": "Update Later",
                               "UPDATE_NOW": "Update Now",
                               "URL": "URL",
@@ -1558,6 +1708,7 @@ exports[`Application root should render without crashing 1`] = `
                               "WILL": "will",
                               "X_OF_Y": "{{0}} of {{1}}",
                               "YOU": "You",
+                              "YOUR_PASSPHRASE": "Your Passphrase",
                             },
                             "HELP": Object {
                               "MODAL_CONTACT_US": Object {
@@ -1584,6 +1735,10 @@ exports[`Application root should render without crashing 1`] = `
                                 "TITLE": "Profile Created!",
                               },
                             },
+                            "SEARCH": Object {
+                              "FIND_IT": "Find it",
+                              "PLACEHOLDER": "What would you like to search for?",
+                            },
                             "TRANSACTION": Object {
                               "ACCOUNT": "Account",
                               "ACCOUNT_NICKNAME": "Account Nickname",
@@ -1595,7 +1750,17 @@ exports[`Application root should render without crashing 1`] = `
                                 "TITLE": "Delegate Registration",
                               },
                               "MODAL_MULTISIGNATURE_DETAIL": Object {
-                                "TITLE": "Multisignature",
+                                "STEP_1": Object {
+                                  "TITLE": "Multisignature",
+                                },
+                                "STEP_2": Object {
+                                  "DESCRIPTION": "Enter your passphrase in order to sign the Multisignature transaction.",
+                                  "TITLE": "Multisignature Passphrase",
+                                },
+                                "STEP_3": Object {
+                                  "DESCRIPTION": "Your signature was successfully confirmed and sent.",
+                                  "TITLE": "Transaction Successful",
+                                },
                                 "WAITING_FOR_SIGNATURES": "Waiting for Signatures",
                               },
                               "MODAL_TRANSFER_DETAIL": Object {
@@ -1624,6 +1789,9 @@ exports[`Application root should render without crashing 1`] = `
                                 "DESCRIPTION": "You can enter the name of your wallet for a quick search in your wallet.",
                                 "FIELD_NAME": "Enter a name",
                                 "TITLE": "Name Wallet",
+                              },
+                              "MODAL_RECEIVE_FUNDS": Object {
+                                "TITLE": "Receive Funds",
                               },
                               "MODAL_WALLET_UPDATE": Object {
                                 "DESCRIPTION_1": "We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.",
@@ -1714,6 +1882,7 @@ exports[`Application root should render without crashing 1`] = `
                             "CANCEL": "Cancel",
                             "CATEGORY": "Category",
                             "CONFIRM": "Confirm",
+                            "CONTINUE": "Continue",
                             "CURRENCY": "Currency",
                             "DATE": "Date",
                             "DEFAULT_CHOSEN_FEE": "Default fee type",
@@ -1749,11 +1918,13 @@ exports[`Application root should render without crashing 1`] = `
                             "SAVE": "Save",
                             "SELECT": "Select",
                             "SEND": "Send",
+                            "SIGN": "Sign",
                             "SIZE": "Size",
                             "SKIP": "Skip",
                             "START": "Start",
                             "THEME": "Theme",
                             "TIME_FORMAT": "Time format",
+                            "TYPE": "Type",
                             "UPDATE_LATER": "Update Later",
                             "UPDATE_NOW": "Update Now",
                             "URL": "URL",
@@ -1765,6 +1936,7 @@ exports[`Application root should render without crashing 1`] = `
                             "WILL": "will",
                             "X_OF_Y": "{{0}} of {{1}}",
                             "YOU": "You",
+                            "YOUR_PASSPHRASE": "Your Passphrase",
                           },
                           "HELP": Object {
                             "MODAL_CONTACT_US": Object {
@@ -1791,6 +1963,10 @@ exports[`Application root should render without crashing 1`] = `
                               "TITLE": "Profile Created!",
                             },
                           },
+                          "SEARCH": Object {
+                            "FIND_IT": "Find it",
+                            "PLACEHOLDER": "What would you like to search for?",
+                          },
                           "TRANSACTION": Object {
                             "ACCOUNT": "Account",
                             "ACCOUNT_NICKNAME": "Account Nickname",
@@ -1802,7 +1978,17 @@ exports[`Application root should render without crashing 1`] = `
                               "TITLE": "Delegate Registration",
                             },
                             "MODAL_MULTISIGNATURE_DETAIL": Object {
-                              "TITLE": "Multisignature",
+                              "STEP_1": Object {
+                                "TITLE": "Multisignature",
+                              },
+                              "STEP_2": Object {
+                                "DESCRIPTION": "Enter your passphrase in order to sign the Multisignature transaction.",
+                                "TITLE": "Multisignature Passphrase",
+                              },
+                              "STEP_3": Object {
+                                "DESCRIPTION": "Your signature was successfully confirmed and sent.",
+                                "TITLE": "Transaction Successful",
+                              },
                               "WAITING_FOR_SIGNATURES": "Waiting for Signatures",
                             },
                             "MODAL_TRANSFER_DETAIL": Object {
@@ -1831,6 +2017,9 @@ exports[`Application root should render without crashing 1`] = `
                               "DESCRIPTION": "You can enter the name of your wallet for a quick search in your wallet.",
                               "FIELD_NAME": "Enter a name",
                               "TITLE": "Name Wallet",
+                            },
+                            "MODAL_RECEIVE_FUNDS": Object {
+                              "TITLE": "Receive Funds",
                             },
                             "MODAL_WALLET_UPDATE": Object {
                               "DESCRIPTION_1": "We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.",
@@ -1933,6 +2122,7 @@ exports[`Application root should render without crashing 1`] = `
                               "CANCEL": "Cancel",
                               "CATEGORY": "Category",
                               "CONFIRM": "Confirm",
+                              "CONTINUE": "Continue",
                               "CURRENCY": "Currency",
                               "DATE": "Date",
                               "DEFAULT_CHOSEN_FEE": "Default fee type",
@@ -1968,11 +2158,13 @@ exports[`Application root should render without crashing 1`] = `
                               "SAVE": "Save",
                               "SELECT": "Select",
                               "SEND": "Send",
+                              "SIGN": "Sign",
                               "SIZE": "Size",
                               "SKIP": "Skip",
                               "START": "Start",
                               "THEME": "Theme",
                               "TIME_FORMAT": "Time format",
+                              "TYPE": "Type",
                               "UPDATE_LATER": "Update Later",
                               "UPDATE_NOW": "Update Now",
                               "URL": "URL",
@@ -1984,6 +2176,7 @@ exports[`Application root should render without crashing 1`] = `
                               "WILL": "will",
                               "X_OF_Y": "{{0}} of {{1}}",
                               "YOU": "You",
+                              "YOUR_PASSPHRASE": "Your Passphrase",
                             },
                             "HELP": Object {
                               "MODAL_CONTACT_US": Object {
@@ -2010,6 +2203,10 @@ exports[`Application root should render without crashing 1`] = `
                                 "TITLE": "Profile Created!",
                               },
                             },
+                            "SEARCH": Object {
+                              "FIND_IT": "Find it",
+                              "PLACEHOLDER": "What would you like to search for?",
+                            },
                             "TRANSACTION": Object {
                               "ACCOUNT": "Account",
                               "ACCOUNT_NICKNAME": "Account Nickname",
@@ -2021,7 +2218,17 @@ exports[`Application root should render without crashing 1`] = `
                                 "TITLE": "Delegate Registration",
                               },
                               "MODAL_MULTISIGNATURE_DETAIL": Object {
-                                "TITLE": "Multisignature",
+                                "STEP_1": Object {
+                                  "TITLE": "Multisignature",
+                                },
+                                "STEP_2": Object {
+                                  "DESCRIPTION": "Enter your passphrase in order to sign the Multisignature transaction.",
+                                  "TITLE": "Multisignature Passphrase",
+                                },
+                                "STEP_3": Object {
+                                  "DESCRIPTION": "Your signature was successfully confirmed and sent.",
+                                  "TITLE": "Transaction Successful",
+                                },
                                 "WAITING_FOR_SIGNATURES": "Waiting for Signatures",
                               },
                               "MODAL_TRANSFER_DETAIL": Object {
@@ -2050,6 +2257,9 @@ exports[`Application root should render without crashing 1`] = `
                                 "DESCRIPTION": "You can enter the name of your wallet for a quick search in your wallet.",
                                 "FIELD_NAME": "Enter a name",
                                 "TITLE": "Name Wallet",
+                              },
+                              "MODAL_RECEIVE_FUNDS": Object {
+                                "TITLE": "Receive Funds",
                               },
                               "MODAL_WALLET_UPDATE": Object {
                                 "DESCRIPTION_1": "We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.",
@@ -2135,6 +2345,7 @@ exports[`Application root should render without crashing 1`] = `
                             "CANCEL": "Cancel",
                             "CATEGORY": "Category",
                             "CONFIRM": "Confirm",
+                            "CONTINUE": "Continue",
                             "CURRENCY": "Currency",
                             "DATE": "Date",
                             "DEFAULT_CHOSEN_FEE": "Default fee type",
@@ -2170,11 +2381,13 @@ exports[`Application root should render without crashing 1`] = `
                             "SAVE": "Save",
                             "SELECT": "Select",
                             "SEND": "Send",
+                            "SIGN": "Sign",
                             "SIZE": "Size",
                             "SKIP": "Skip",
                             "START": "Start",
                             "THEME": "Theme",
                             "TIME_FORMAT": "Time format",
+                            "TYPE": "Type",
                             "UPDATE_LATER": "Update Later",
                             "UPDATE_NOW": "Update Now",
                             "URL": "URL",
@@ -2186,6 +2399,7 @@ exports[`Application root should render without crashing 1`] = `
                             "WILL": "will",
                             "X_OF_Y": "{{0}} of {{1}}",
                             "YOU": "You",
+                            "YOUR_PASSPHRASE": "Your Passphrase",
                           },
                           "HELP": Object {
                             "MODAL_CONTACT_US": Object {
@@ -2212,6 +2426,10 @@ exports[`Application root should render without crashing 1`] = `
                               "TITLE": "Profile Created!",
                             },
                           },
+                          "SEARCH": Object {
+                            "FIND_IT": "Find it",
+                            "PLACEHOLDER": "What would you like to search for?",
+                          },
                           "TRANSACTION": Object {
                             "ACCOUNT": "Account",
                             "ACCOUNT_NICKNAME": "Account Nickname",
@@ -2223,7 +2441,17 @@ exports[`Application root should render without crashing 1`] = `
                               "TITLE": "Delegate Registration",
                             },
                             "MODAL_MULTISIGNATURE_DETAIL": Object {
-                              "TITLE": "Multisignature",
+                              "STEP_1": Object {
+                                "TITLE": "Multisignature",
+                              },
+                              "STEP_2": Object {
+                                "DESCRIPTION": "Enter your passphrase in order to sign the Multisignature transaction.",
+                                "TITLE": "Multisignature Passphrase",
+                              },
+                              "STEP_3": Object {
+                                "DESCRIPTION": "Your signature was successfully confirmed and sent.",
+                                "TITLE": "Transaction Successful",
+                              },
                               "WAITING_FOR_SIGNATURES": "Waiting for Signatures",
                             },
                             "MODAL_TRANSFER_DETAIL": Object {
@@ -2252,6 +2480,9 @@ exports[`Application root should render without crashing 1`] = `
                               "DESCRIPTION": "You can enter the name of your wallet for a quick search in your wallet.",
                               "FIELD_NAME": "Enter a name",
                               "TITLE": "Name Wallet",
+                            },
+                            "MODAL_RECEIVE_FUNDS": Object {
+                              "TITLE": "Receive Funds",
                             },
                             "MODAL_WALLET_UPDATE": Object {
                               "DESCRIPTION_1": "We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.",
@@ -2346,6 +2577,7 @@ exports[`Application root should render without crashing 1`] = `
                             "CANCEL": "Cancel",
                             "CATEGORY": "Category",
                             "CONFIRM": "Confirm",
+                            "CONTINUE": "Continue",
                             "CURRENCY": "Currency",
                             "DATE": "Date",
                             "DEFAULT_CHOSEN_FEE": "Default fee type",
@@ -2381,11 +2613,13 @@ exports[`Application root should render without crashing 1`] = `
                             "SAVE": "Save",
                             "SELECT": "Select",
                             "SEND": "Send",
+                            "SIGN": "Sign",
                             "SIZE": "Size",
                             "SKIP": "Skip",
                             "START": "Start",
                             "THEME": "Theme",
                             "TIME_FORMAT": "Time format",
+                            "TYPE": "Type",
                             "UPDATE_LATER": "Update Later",
                             "UPDATE_NOW": "Update Now",
                             "URL": "URL",
@@ -2397,6 +2631,7 @@ exports[`Application root should render without crashing 1`] = `
                             "WILL": "will",
                             "X_OF_Y": "{{0}} of {{1}}",
                             "YOU": "You",
+                            "YOUR_PASSPHRASE": "Your Passphrase",
                           },
                           "HELP": Object {
                             "MODAL_CONTACT_US": Object {
@@ -2423,6 +2658,10 @@ exports[`Application root should render without crashing 1`] = `
                               "TITLE": "Profile Created!",
                             },
                           },
+                          "SEARCH": Object {
+                            "FIND_IT": "Find it",
+                            "PLACEHOLDER": "What would you like to search for?",
+                          },
                           "TRANSACTION": Object {
                             "ACCOUNT": "Account",
                             "ACCOUNT_NICKNAME": "Account Nickname",
@@ -2434,7 +2673,17 @@ exports[`Application root should render without crashing 1`] = `
                               "TITLE": "Delegate Registration",
                             },
                             "MODAL_MULTISIGNATURE_DETAIL": Object {
-                              "TITLE": "Multisignature",
+                              "STEP_1": Object {
+                                "TITLE": "Multisignature",
+                              },
+                              "STEP_2": Object {
+                                "DESCRIPTION": "Enter your passphrase in order to sign the Multisignature transaction.",
+                                "TITLE": "Multisignature Passphrase",
+                              },
+                              "STEP_3": Object {
+                                "DESCRIPTION": "Your signature was successfully confirmed and sent.",
+                                "TITLE": "Transaction Successful",
+                              },
                               "WAITING_FOR_SIGNATURES": "Waiting for Signatures",
                             },
                             "MODAL_TRANSFER_DETAIL": Object {
@@ -2463,6 +2712,9 @@ exports[`Application root should render without crashing 1`] = `
                               "DESCRIPTION": "You can enter the name of your wallet for a quick search in your wallet.",
                               "FIELD_NAME": "Enter a name",
                               "TITLE": "Name Wallet",
+                            },
+                            "MODAL_RECEIVE_FUNDS": Object {
+                              "TITLE": "Receive Funds",
                             },
                             "MODAL_WALLET_UPDATE": Object {
                               "DESCRIPTION_1": "We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.",
@@ -2560,6 +2812,7 @@ exports[`Application root should render without crashing 1`] = `
                                 "CANCEL": "Cancel",
                                 "CATEGORY": "Category",
                                 "CONFIRM": "Confirm",
+                                "CONTINUE": "Continue",
                                 "CURRENCY": "Currency",
                                 "DATE": "Date",
                                 "DEFAULT_CHOSEN_FEE": "Default fee type",
@@ -2595,11 +2848,13 @@ exports[`Application root should render without crashing 1`] = `
                                 "SAVE": "Save",
                                 "SELECT": "Select",
                                 "SEND": "Send",
+                                "SIGN": "Sign",
                                 "SIZE": "Size",
                                 "SKIP": "Skip",
                                 "START": "Start",
                                 "THEME": "Theme",
                                 "TIME_FORMAT": "Time format",
+                                "TYPE": "Type",
                                 "UPDATE_LATER": "Update Later",
                                 "UPDATE_NOW": "Update Now",
                                 "URL": "URL",
@@ -2611,6 +2866,7 @@ exports[`Application root should render without crashing 1`] = `
                                 "WILL": "will",
                                 "X_OF_Y": "{{0}} of {{1}}",
                                 "YOU": "You",
+                                "YOUR_PASSPHRASE": "Your Passphrase",
                               },
                               "HELP": Object {
                                 "MODAL_CONTACT_US": Object {
@@ -2637,6 +2893,10 @@ exports[`Application root should render without crashing 1`] = `
                                   "TITLE": "Profile Created!",
                                 },
                               },
+                              "SEARCH": Object {
+                                "FIND_IT": "Find it",
+                                "PLACEHOLDER": "What would you like to search for?",
+                              },
                               "TRANSACTION": Object {
                                 "ACCOUNT": "Account",
                                 "ACCOUNT_NICKNAME": "Account Nickname",
@@ -2648,7 +2908,17 @@ exports[`Application root should render without crashing 1`] = `
                                   "TITLE": "Delegate Registration",
                                 },
                                 "MODAL_MULTISIGNATURE_DETAIL": Object {
-                                  "TITLE": "Multisignature",
+                                  "STEP_1": Object {
+                                    "TITLE": "Multisignature",
+                                  },
+                                  "STEP_2": Object {
+                                    "DESCRIPTION": "Enter your passphrase in order to sign the Multisignature transaction.",
+                                    "TITLE": "Multisignature Passphrase",
+                                  },
+                                  "STEP_3": Object {
+                                    "DESCRIPTION": "Your signature was successfully confirmed and sent.",
+                                    "TITLE": "Transaction Successful",
+                                  },
                                   "WAITING_FOR_SIGNATURES": "Waiting for Signatures",
                                 },
                                 "MODAL_TRANSFER_DETAIL": Object {
@@ -2677,6 +2947,9 @@ exports[`Application root should render without crashing 1`] = `
                                   "DESCRIPTION": "You can enter the name of your wallet for a quick search in your wallet.",
                                   "FIELD_NAME": "Enter a name",
                                   "TITLE": "Name Wallet",
+                                },
+                                "MODAL_RECEIVE_FUNDS": Object {
+                                  "TITLE": "Receive Funds",
                                 },
                                 "MODAL_WALLET_UPDATE": Object {
                                   "DESCRIPTION_1": "We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.",
@@ -2762,6 +3035,7 @@ exports[`Application root should render without crashing 1`] = `
                               "CANCEL": "Cancel",
                               "CATEGORY": "Category",
                               "CONFIRM": "Confirm",
+                              "CONTINUE": "Continue",
                               "CURRENCY": "Currency",
                               "DATE": "Date",
                               "DEFAULT_CHOSEN_FEE": "Default fee type",
@@ -2797,11 +3071,13 @@ exports[`Application root should render without crashing 1`] = `
                               "SAVE": "Save",
                               "SELECT": "Select",
                               "SEND": "Send",
+                              "SIGN": "Sign",
                               "SIZE": "Size",
                               "SKIP": "Skip",
                               "START": "Start",
                               "THEME": "Theme",
                               "TIME_FORMAT": "Time format",
+                              "TYPE": "Type",
                               "UPDATE_LATER": "Update Later",
                               "UPDATE_NOW": "Update Now",
                               "URL": "URL",
@@ -2813,6 +3089,7 @@ exports[`Application root should render without crashing 1`] = `
                               "WILL": "will",
                               "X_OF_Y": "{{0}} of {{1}}",
                               "YOU": "You",
+                              "YOUR_PASSPHRASE": "Your Passphrase",
                             },
                             "HELP": Object {
                               "MODAL_CONTACT_US": Object {
@@ -2839,6 +3116,10 @@ exports[`Application root should render without crashing 1`] = `
                                 "TITLE": "Profile Created!",
                               },
                             },
+                            "SEARCH": Object {
+                              "FIND_IT": "Find it",
+                              "PLACEHOLDER": "What would you like to search for?",
+                            },
                             "TRANSACTION": Object {
                               "ACCOUNT": "Account",
                               "ACCOUNT_NICKNAME": "Account Nickname",
@@ -2850,7 +3131,17 @@ exports[`Application root should render without crashing 1`] = `
                                 "TITLE": "Delegate Registration",
                               },
                               "MODAL_MULTISIGNATURE_DETAIL": Object {
-                                "TITLE": "Multisignature",
+                                "STEP_1": Object {
+                                  "TITLE": "Multisignature",
+                                },
+                                "STEP_2": Object {
+                                  "DESCRIPTION": "Enter your passphrase in order to sign the Multisignature transaction.",
+                                  "TITLE": "Multisignature Passphrase",
+                                },
+                                "STEP_3": Object {
+                                  "DESCRIPTION": "Your signature was successfully confirmed and sent.",
+                                  "TITLE": "Transaction Successful",
+                                },
                                 "WAITING_FOR_SIGNATURES": "Waiting for Signatures",
                               },
                               "MODAL_TRANSFER_DETAIL": Object {
@@ -2879,6 +3170,9 @@ exports[`Application root should render without crashing 1`] = `
                                 "DESCRIPTION": "You can enter the name of your wallet for a quick search in your wallet.",
                                 "FIELD_NAME": "Enter a name",
                                 "TITLE": "Name Wallet",
+                              },
+                              "MODAL_RECEIVE_FUNDS": Object {
+                                "TITLE": "Receive Funds",
                               },
                               "MODAL_WALLET_UPDATE": Object {
                                 "DESCRIPTION_1": "We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.",
@@ -2974,6 +3268,7 @@ exports[`Application root should render without crashing 1`] = `
                               "CANCEL": "Cancel",
                               "CATEGORY": "Category",
                               "CONFIRM": "Confirm",
+                              "CONTINUE": "Continue",
                               "CURRENCY": "Currency",
                               "DATE": "Date",
                               "DEFAULT_CHOSEN_FEE": "Default fee type",
@@ -3009,11 +3304,13 @@ exports[`Application root should render without crashing 1`] = `
                               "SAVE": "Save",
                               "SELECT": "Select",
                               "SEND": "Send",
+                              "SIGN": "Sign",
                               "SIZE": "Size",
                               "SKIP": "Skip",
                               "START": "Start",
                               "THEME": "Theme",
                               "TIME_FORMAT": "Time format",
+                              "TYPE": "Type",
                               "UPDATE_LATER": "Update Later",
                               "UPDATE_NOW": "Update Now",
                               "URL": "URL",
@@ -3025,6 +3322,7 @@ exports[`Application root should render without crashing 1`] = `
                               "WILL": "will",
                               "X_OF_Y": "{{0}} of {{1}}",
                               "YOU": "You",
+                              "YOUR_PASSPHRASE": "Your Passphrase",
                             },
                             "HELP": Object {
                               "MODAL_CONTACT_US": Object {
@@ -3051,6 +3349,10 @@ exports[`Application root should render without crashing 1`] = `
                                 "TITLE": "Profile Created!",
                               },
                             },
+                            "SEARCH": Object {
+                              "FIND_IT": "Find it",
+                              "PLACEHOLDER": "What would you like to search for?",
+                            },
                             "TRANSACTION": Object {
                               "ACCOUNT": "Account",
                               "ACCOUNT_NICKNAME": "Account Nickname",
@@ -3062,7 +3364,17 @@ exports[`Application root should render without crashing 1`] = `
                                 "TITLE": "Delegate Registration",
                               },
                               "MODAL_MULTISIGNATURE_DETAIL": Object {
-                                "TITLE": "Multisignature",
+                                "STEP_1": Object {
+                                  "TITLE": "Multisignature",
+                                },
+                                "STEP_2": Object {
+                                  "DESCRIPTION": "Enter your passphrase in order to sign the Multisignature transaction.",
+                                  "TITLE": "Multisignature Passphrase",
+                                },
+                                "STEP_3": Object {
+                                  "DESCRIPTION": "Your signature was successfully confirmed and sent.",
+                                  "TITLE": "Transaction Successful",
+                                },
                                 "WAITING_FOR_SIGNATURES": "Waiting for Signatures",
                               },
                               "MODAL_TRANSFER_DETAIL": Object {
@@ -3091,6 +3403,9 @@ exports[`Application root should render without crashing 1`] = `
                                 "DESCRIPTION": "You can enter the name of your wallet for a quick search in your wallet.",
                                 "FIELD_NAME": "Enter a name",
                                 "TITLE": "Name Wallet",
+                              },
+                              "MODAL_RECEIVE_FUNDS": Object {
+                                "TITLE": "Receive Funds",
                               },
                               "MODAL_WALLET_UPDATE": Object {
                                 "DESCRIPTION_1": "We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.",
@@ -4078,6 +4393,7 @@ exports[`Application root should render without crashing 1`] = `
                         "CANCEL": "Cancel",
                         "CATEGORY": "Category",
                         "CONFIRM": "Confirm",
+                        "CONTINUE": "Continue",
                         "CURRENCY": "Currency",
                         "DATE": "Date",
                         "DEFAULT_CHOSEN_FEE": "Default fee type",
@@ -4113,11 +4429,13 @@ exports[`Application root should render without crashing 1`] = `
                         "SAVE": "Save",
                         "SELECT": "Select",
                         "SEND": "Send",
+                        "SIGN": "Sign",
                         "SIZE": "Size",
                         "SKIP": "Skip",
                         "START": "Start",
                         "THEME": "Theme",
                         "TIME_FORMAT": "Time format",
+                        "TYPE": "Type",
                         "UPDATE_LATER": "Update Later",
                         "UPDATE_NOW": "Update Now",
                         "URL": "URL",
@@ -4129,6 +4447,7 @@ exports[`Application root should render without crashing 1`] = `
                         "WILL": "will",
                         "X_OF_Y": "{{0}} of {{1}}",
                         "YOU": "You",
+                        "YOUR_PASSPHRASE": "Your Passphrase",
                       },
                       "HELP": Object {
                         "MODAL_CONTACT_US": Object {
@@ -4155,6 +4474,10 @@ exports[`Application root should render without crashing 1`] = `
                           "TITLE": "Profile Created!",
                         },
                       },
+                      "SEARCH": Object {
+                        "FIND_IT": "Find it",
+                        "PLACEHOLDER": "What would you like to search for?",
+                      },
                       "TRANSACTION": Object {
                         "ACCOUNT": "Account",
                         "ACCOUNT_NICKNAME": "Account Nickname",
@@ -4166,7 +4489,17 @@ exports[`Application root should render without crashing 1`] = `
                           "TITLE": "Delegate Registration",
                         },
                         "MODAL_MULTISIGNATURE_DETAIL": Object {
-                          "TITLE": "Multisignature",
+                          "STEP_1": Object {
+                            "TITLE": "Multisignature",
+                          },
+                          "STEP_2": Object {
+                            "DESCRIPTION": "Enter your passphrase in order to sign the Multisignature transaction.",
+                            "TITLE": "Multisignature Passphrase",
+                          },
+                          "STEP_3": Object {
+                            "DESCRIPTION": "Your signature was successfully confirmed and sent.",
+                            "TITLE": "Transaction Successful",
+                          },
                           "WAITING_FOR_SIGNATURES": "Waiting for Signatures",
                         },
                         "MODAL_TRANSFER_DETAIL": Object {
@@ -4195,6 +4528,9 @@ exports[`Application root should render without crashing 1`] = `
                           "DESCRIPTION": "You can enter the name of your wallet for a quick search in your wallet.",
                           "FIELD_NAME": "Enter a name",
                           "TITLE": "Name Wallet",
+                        },
+                        "MODAL_RECEIVE_FUNDS": Object {
+                          "TITLE": "Receive Funds",
                         },
                         "MODAL_WALLET_UPDATE": Object {
                           "DESCRIPTION_1": "We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.",
@@ -4228,6 +4564,7 @@ exports[`Application root should render without crashing 1`] = `
                       "CANCEL": "Cancel",
                       "CATEGORY": "Category",
                       "CONFIRM": "Confirm",
+                      "CONTINUE": "Continue",
                       "CURRENCY": "Currency",
                       "DATE": "Date",
                       "DEFAULT_CHOSEN_FEE": "Default fee type",
@@ -4263,11 +4600,13 @@ exports[`Application root should render without crashing 1`] = `
                       "SAVE": "Save",
                       "SELECT": "Select",
                       "SEND": "Send",
+                      "SIGN": "Sign",
                       "SIZE": "Size",
                       "SKIP": "Skip",
                       "START": "Start",
                       "THEME": "Theme",
                       "TIME_FORMAT": "Time format",
+                      "TYPE": "Type",
                       "UPDATE_LATER": "Update Later",
                       "UPDATE_NOW": "Update Now",
                       "URL": "URL",
@@ -4279,6 +4618,7 @@ exports[`Application root should render without crashing 1`] = `
                       "WILL": "will",
                       "X_OF_Y": "{{0}} of {{1}}",
                       "YOU": "You",
+                      "YOUR_PASSPHRASE": "Your Passphrase",
                     },
                     "HELP": Object {
                       "MODAL_CONTACT_US": Object {
@@ -4305,6 +4645,10 @@ exports[`Application root should render without crashing 1`] = `
                         "TITLE": "Profile Created!",
                       },
                     },
+                    "SEARCH": Object {
+                      "FIND_IT": "Find it",
+                      "PLACEHOLDER": "What would you like to search for?",
+                    },
                     "TRANSACTION": Object {
                       "ACCOUNT": "Account",
                       "ACCOUNT_NICKNAME": "Account Nickname",
@@ -4316,7 +4660,17 @@ exports[`Application root should render without crashing 1`] = `
                         "TITLE": "Delegate Registration",
                       },
                       "MODAL_MULTISIGNATURE_DETAIL": Object {
-                        "TITLE": "Multisignature",
+                        "STEP_1": Object {
+                          "TITLE": "Multisignature",
+                        },
+                        "STEP_2": Object {
+                          "DESCRIPTION": "Enter your passphrase in order to sign the Multisignature transaction.",
+                          "TITLE": "Multisignature Passphrase",
+                        },
+                        "STEP_3": Object {
+                          "DESCRIPTION": "Your signature was successfully confirmed and sent.",
+                          "TITLE": "Transaction Successful",
+                        },
                         "WAITING_FOR_SIGNATURES": "Waiting for Signatures",
                       },
                       "MODAL_TRANSFER_DETAIL": Object {
@@ -4345,6 +4699,9 @@ exports[`Application root should render without crashing 1`] = `
                         "DESCRIPTION": "You can enter the name of your wallet for a quick search in your wallet.",
                         "FIELD_NAME": "Enter a name",
                         "TITLE": "Name Wallet",
+                      },
+                      "MODAL_RECEIVE_FUNDS": Object {
+                        "TITLE": "Receive Funds",
                       },
                       "MODAL_WALLET_UPDATE": Object {
                         "DESCRIPTION_1": "We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.",
@@ -4431,6 +4788,7 @@ exports[`Application root should render without crashing 1`] = `
                                 "CANCEL": "Cancel",
                                 "CATEGORY": "Category",
                                 "CONFIRM": "Confirm",
+                                "CONTINUE": "Continue",
                                 "CURRENCY": "Currency",
                                 "DATE": "Date",
                                 "DEFAULT_CHOSEN_FEE": "Default fee type",
@@ -4466,11 +4824,13 @@ exports[`Application root should render without crashing 1`] = `
                                 "SAVE": "Save",
                                 "SELECT": "Select",
                                 "SEND": "Send",
+                                "SIGN": "Sign",
                                 "SIZE": "Size",
                                 "SKIP": "Skip",
                                 "START": "Start",
                                 "THEME": "Theme",
                                 "TIME_FORMAT": "Time format",
+                                "TYPE": "Type",
                                 "UPDATE_LATER": "Update Later",
                                 "UPDATE_NOW": "Update Now",
                                 "URL": "URL",
@@ -4482,6 +4842,7 @@ exports[`Application root should render without crashing 1`] = `
                                 "WILL": "will",
                                 "X_OF_Y": "{{0}} of {{1}}",
                                 "YOU": "You",
+                                "YOUR_PASSPHRASE": "Your Passphrase",
                               },
                               "HELP": Object {
                                 "MODAL_CONTACT_US": Object {
@@ -4508,6 +4869,10 @@ exports[`Application root should render without crashing 1`] = `
                                   "TITLE": "Profile Created!",
                                 },
                               },
+                              "SEARCH": Object {
+                                "FIND_IT": "Find it",
+                                "PLACEHOLDER": "What would you like to search for?",
+                              },
                               "TRANSACTION": Object {
                                 "ACCOUNT": "Account",
                                 "ACCOUNT_NICKNAME": "Account Nickname",
@@ -4519,7 +4884,17 @@ exports[`Application root should render without crashing 1`] = `
                                   "TITLE": "Delegate Registration",
                                 },
                                 "MODAL_MULTISIGNATURE_DETAIL": Object {
-                                  "TITLE": "Multisignature",
+                                  "STEP_1": Object {
+                                    "TITLE": "Multisignature",
+                                  },
+                                  "STEP_2": Object {
+                                    "DESCRIPTION": "Enter your passphrase in order to sign the Multisignature transaction.",
+                                    "TITLE": "Multisignature Passphrase",
+                                  },
+                                  "STEP_3": Object {
+                                    "DESCRIPTION": "Your signature was successfully confirmed and sent.",
+                                    "TITLE": "Transaction Successful",
+                                  },
                                   "WAITING_FOR_SIGNATURES": "Waiting for Signatures",
                                 },
                                 "MODAL_TRANSFER_DETAIL": Object {
@@ -4548,6 +4923,9 @@ exports[`Application root should render without crashing 1`] = `
                                   "DESCRIPTION": "You can enter the name of your wallet for a quick search in your wallet.",
                                   "FIELD_NAME": "Enter a name",
                                   "TITLE": "Name Wallet",
+                                },
+                                "MODAL_RECEIVE_FUNDS": Object {
+                                  "TITLE": "Receive Funds",
                                 },
                                 "MODAL_WALLET_UPDATE": Object {
                                   "DESCRIPTION_1": "We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.",
@@ -4633,6 +5011,7 @@ exports[`Application root should render without crashing 1`] = `
                               "CANCEL": "Cancel",
                               "CATEGORY": "Category",
                               "CONFIRM": "Confirm",
+                              "CONTINUE": "Continue",
                               "CURRENCY": "Currency",
                               "DATE": "Date",
                               "DEFAULT_CHOSEN_FEE": "Default fee type",
@@ -4668,11 +5047,13 @@ exports[`Application root should render without crashing 1`] = `
                               "SAVE": "Save",
                               "SELECT": "Select",
                               "SEND": "Send",
+                              "SIGN": "Sign",
                               "SIZE": "Size",
                               "SKIP": "Skip",
                               "START": "Start",
                               "THEME": "Theme",
                               "TIME_FORMAT": "Time format",
+                              "TYPE": "Type",
                               "UPDATE_LATER": "Update Later",
                               "UPDATE_NOW": "Update Now",
                               "URL": "URL",
@@ -4684,6 +5065,7 @@ exports[`Application root should render without crashing 1`] = `
                               "WILL": "will",
                               "X_OF_Y": "{{0}} of {{1}}",
                               "YOU": "You",
+                              "YOUR_PASSPHRASE": "Your Passphrase",
                             },
                             "HELP": Object {
                               "MODAL_CONTACT_US": Object {
@@ -4710,6 +5092,10 @@ exports[`Application root should render without crashing 1`] = `
                                 "TITLE": "Profile Created!",
                               },
                             },
+                            "SEARCH": Object {
+                              "FIND_IT": "Find it",
+                              "PLACEHOLDER": "What would you like to search for?",
+                            },
                             "TRANSACTION": Object {
                               "ACCOUNT": "Account",
                               "ACCOUNT_NICKNAME": "Account Nickname",
@@ -4721,7 +5107,17 @@ exports[`Application root should render without crashing 1`] = `
                                 "TITLE": "Delegate Registration",
                               },
                               "MODAL_MULTISIGNATURE_DETAIL": Object {
-                                "TITLE": "Multisignature",
+                                "STEP_1": Object {
+                                  "TITLE": "Multisignature",
+                                },
+                                "STEP_2": Object {
+                                  "DESCRIPTION": "Enter your passphrase in order to sign the Multisignature transaction.",
+                                  "TITLE": "Multisignature Passphrase",
+                                },
+                                "STEP_3": Object {
+                                  "DESCRIPTION": "Your signature was successfully confirmed and sent.",
+                                  "TITLE": "Transaction Successful",
+                                },
                                 "WAITING_FOR_SIGNATURES": "Waiting for Signatures",
                               },
                               "MODAL_TRANSFER_DETAIL": Object {
@@ -4750,6 +5146,9 @@ exports[`Application root should render without crashing 1`] = `
                                 "DESCRIPTION": "You can enter the name of your wallet for a quick search in your wallet.",
                                 "FIELD_NAME": "Enter a name",
                                 "TITLE": "Name Wallet",
+                              },
+                              "MODAL_RECEIVE_FUNDS": Object {
+                                "TITLE": "Receive Funds",
                               },
                               "MODAL_WALLET_UPDATE": Object {
                                 "DESCRIPTION_1": "We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.",
@@ -4845,6 +5244,7 @@ exports[`Application root should render without crashing 1`] = `
                               "CANCEL": "Cancel",
                               "CATEGORY": "Category",
                               "CONFIRM": "Confirm",
+                              "CONTINUE": "Continue",
                               "CURRENCY": "Currency",
                               "DATE": "Date",
                               "DEFAULT_CHOSEN_FEE": "Default fee type",
@@ -4880,11 +5280,13 @@ exports[`Application root should render without crashing 1`] = `
                               "SAVE": "Save",
                               "SELECT": "Select",
                               "SEND": "Send",
+                              "SIGN": "Sign",
                               "SIZE": "Size",
                               "SKIP": "Skip",
                               "START": "Start",
                               "THEME": "Theme",
                               "TIME_FORMAT": "Time format",
+                              "TYPE": "Type",
                               "UPDATE_LATER": "Update Later",
                               "UPDATE_NOW": "Update Now",
                               "URL": "URL",
@@ -4896,6 +5298,7 @@ exports[`Application root should render without crashing 1`] = `
                               "WILL": "will",
                               "X_OF_Y": "{{0}} of {{1}}",
                               "YOU": "You",
+                              "YOUR_PASSPHRASE": "Your Passphrase",
                             },
                             "HELP": Object {
                               "MODAL_CONTACT_US": Object {
@@ -4922,6 +5325,10 @@ exports[`Application root should render without crashing 1`] = `
                                 "TITLE": "Profile Created!",
                               },
                             },
+                            "SEARCH": Object {
+                              "FIND_IT": "Find it",
+                              "PLACEHOLDER": "What would you like to search for?",
+                            },
                             "TRANSACTION": Object {
                               "ACCOUNT": "Account",
                               "ACCOUNT_NICKNAME": "Account Nickname",
@@ -4933,7 +5340,17 @@ exports[`Application root should render without crashing 1`] = `
                                 "TITLE": "Delegate Registration",
                               },
                               "MODAL_MULTISIGNATURE_DETAIL": Object {
-                                "TITLE": "Multisignature",
+                                "STEP_1": Object {
+                                  "TITLE": "Multisignature",
+                                },
+                                "STEP_2": Object {
+                                  "DESCRIPTION": "Enter your passphrase in order to sign the Multisignature transaction.",
+                                  "TITLE": "Multisignature Passphrase",
+                                },
+                                "STEP_3": Object {
+                                  "DESCRIPTION": "Your signature was successfully confirmed and sent.",
+                                  "TITLE": "Transaction Successful",
+                                },
                                 "WAITING_FOR_SIGNATURES": "Waiting for Signatures",
                               },
                               "MODAL_TRANSFER_DETAIL": Object {
@@ -4962,6 +5379,9 @@ exports[`Application root should render without crashing 1`] = `
                                 "DESCRIPTION": "You can enter the name of your wallet for a quick search in your wallet.",
                                 "FIELD_NAME": "Enter a name",
                                 "TITLE": "Name Wallet",
+                              },
+                              "MODAL_RECEIVE_FUNDS": Object {
+                                "TITLE": "Receive Funds",
                               },
                               "MODAL_WALLET_UPDATE": Object {
                                 "DESCRIPTION_1": "We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.",
@@ -5052,6 +5472,7 @@ exports[`Application root should render without crashing 1`] = `
                             "CANCEL": "Cancel",
                             "CATEGORY": "Category",
                             "CONFIRM": "Confirm",
+                            "CONTINUE": "Continue",
                             "CURRENCY": "Currency",
                             "DATE": "Date",
                             "DEFAULT_CHOSEN_FEE": "Default fee type",
@@ -5087,11 +5508,13 @@ exports[`Application root should render without crashing 1`] = `
                             "SAVE": "Save",
                             "SELECT": "Select",
                             "SEND": "Send",
+                            "SIGN": "Sign",
                             "SIZE": "Size",
                             "SKIP": "Skip",
                             "START": "Start",
                             "THEME": "Theme",
                             "TIME_FORMAT": "Time format",
+                            "TYPE": "Type",
                             "UPDATE_LATER": "Update Later",
                             "UPDATE_NOW": "Update Now",
                             "URL": "URL",
@@ -5103,6 +5526,7 @@ exports[`Application root should render without crashing 1`] = `
                             "WILL": "will",
                             "X_OF_Y": "{{0}} of {{1}}",
                             "YOU": "You",
+                            "YOUR_PASSPHRASE": "Your Passphrase",
                           },
                           "HELP": Object {
                             "MODAL_CONTACT_US": Object {
@@ -5129,6 +5553,10 @@ exports[`Application root should render without crashing 1`] = `
                               "TITLE": "Profile Created!",
                             },
                           },
+                          "SEARCH": Object {
+                            "FIND_IT": "Find it",
+                            "PLACEHOLDER": "What would you like to search for?",
+                          },
                           "TRANSACTION": Object {
                             "ACCOUNT": "Account",
                             "ACCOUNT_NICKNAME": "Account Nickname",
@@ -5140,7 +5568,17 @@ exports[`Application root should render without crashing 1`] = `
                               "TITLE": "Delegate Registration",
                             },
                             "MODAL_MULTISIGNATURE_DETAIL": Object {
-                              "TITLE": "Multisignature",
+                              "STEP_1": Object {
+                                "TITLE": "Multisignature",
+                              },
+                              "STEP_2": Object {
+                                "DESCRIPTION": "Enter your passphrase in order to sign the Multisignature transaction.",
+                                "TITLE": "Multisignature Passphrase",
+                              },
+                              "STEP_3": Object {
+                                "DESCRIPTION": "Your signature was successfully confirmed and sent.",
+                                "TITLE": "Transaction Successful",
+                              },
                               "WAITING_FOR_SIGNATURES": "Waiting for Signatures",
                             },
                             "MODAL_TRANSFER_DETAIL": Object {
@@ -5169,6 +5607,9 @@ exports[`Application root should render without crashing 1`] = `
                               "DESCRIPTION": "You can enter the name of your wallet for a quick search in your wallet.",
                               "FIELD_NAME": "Enter a name",
                               "TITLE": "Name Wallet",
+                            },
+                            "MODAL_RECEIVE_FUNDS": Object {
+                              "TITLE": "Receive Funds",
                             },
                             "MODAL_WALLET_UPDATE": Object {
                               "DESCRIPTION_1": "We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.",
@@ -5271,6 +5712,7 @@ exports[`Application root should render without crashing 1`] = `
                                   "CANCEL": "Cancel",
                                   "CATEGORY": "Category",
                                   "CONFIRM": "Confirm",
+                                  "CONTINUE": "Continue",
                                   "CURRENCY": "Currency",
                                   "DATE": "Date",
                                   "DEFAULT_CHOSEN_FEE": "Default fee type",
@@ -5306,11 +5748,13 @@ exports[`Application root should render without crashing 1`] = `
                                   "SAVE": "Save",
                                   "SELECT": "Select",
                                   "SEND": "Send",
+                                  "SIGN": "Sign",
                                   "SIZE": "Size",
                                   "SKIP": "Skip",
                                   "START": "Start",
                                   "THEME": "Theme",
                                   "TIME_FORMAT": "Time format",
+                                  "TYPE": "Type",
                                   "UPDATE_LATER": "Update Later",
                                   "UPDATE_NOW": "Update Now",
                                   "URL": "URL",
@@ -5322,6 +5766,7 @@ exports[`Application root should render without crashing 1`] = `
                                   "WILL": "will",
                                   "X_OF_Y": "{{0}} of {{1}}",
                                   "YOU": "You",
+                                  "YOUR_PASSPHRASE": "Your Passphrase",
                                 },
                                 "HELP": Object {
                                   "MODAL_CONTACT_US": Object {
@@ -5348,6 +5793,10 @@ exports[`Application root should render without crashing 1`] = `
                                     "TITLE": "Profile Created!",
                                   },
                                 },
+                                "SEARCH": Object {
+                                  "FIND_IT": "Find it",
+                                  "PLACEHOLDER": "What would you like to search for?",
+                                },
                                 "TRANSACTION": Object {
                                   "ACCOUNT": "Account",
                                   "ACCOUNT_NICKNAME": "Account Nickname",
@@ -5359,7 +5808,17 @@ exports[`Application root should render without crashing 1`] = `
                                     "TITLE": "Delegate Registration",
                                   },
                                   "MODAL_MULTISIGNATURE_DETAIL": Object {
-                                    "TITLE": "Multisignature",
+                                    "STEP_1": Object {
+                                      "TITLE": "Multisignature",
+                                    },
+                                    "STEP_2": Object {
+                                      "DESCRIPTION": "Enter your passphrase in order to sign the Multisignature transaction.",
+                                      "TITLE": "Multisignature Passphrase",
+                                    },
+                                    "STEP_3": Object {
+                                      "DESCRIPTION": "Your signature was successfully confirmed and sent.",
+                                      "TITLE": "Transaction Successful",
+                                    },
                                     "WAITING_FOR_SIGNATURES": "Waiting for Signatures",
                                   },
                                   "MODAL_TRANSFER_DETAIL": Object {
@@ -5388,6 +5847,9 @@ exports[`Application root should render without crashing 1`] = `
                                     "DESCRIPTION": "You can enter the name of your wallet for a quick search in your wallet.",
                                     "FIELD_NAME": "Enter a name",
                                     "TITLE": "Name Wallet",
+                                  },
+                                  "MODAL_RECEIVE_FUNDS": Object {
+                                    "TITLE": "Receive Funds",
                                   },
                                   "MODAL_WALLET_UPDATE": Object {
                                     "DESCRIPTION_1": "We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.",
@@ -5478,6 +5940,7 @@ exports[`Application root should render without crashing 1`] = `
                                 "CANCEL": "Cancel",
                                 "CATEGORY": "Category",
                                 "CONFIRM": "Confirm",
+                                "CONTINUE": "Continue",
                                 "CURRENCY": "Currency",
                                 "DATE": "Date",
                                 "DEFAULT_CHOSEN_FEE": "Default fee type",
@@ -5513,11 +5976,13 @@ exports[`Application root should render without crashing 1`] = `
                                 "SAVE": "Save",
                                 "SELECT": "Select",
                                 "SEND": "Send",
+                                "SIGN": "Sign",
                                 "SIZE": "Size",
                                 "SKIP": "Skip",
                                 "START": "Start",
                                 "THEME": "Theme",
                                 "TIME_FORMAT": "Time format",
+                                "TYPE": "Type",
                                 "UPDATE_LATER": "Update Later",
                                 "UPDATE_NOW": "Update Now",
                                 "URL": "URL",
@@ -5529,6 +5994,7 @@ exports[`Application root should render without crashing 1`] = `
                                 "WILL": "will",
                                 "X_OF_Y": "{{0}} of {{1}}",
                                 "YOU": "You",
+                                "YOUR_PASSPHRASE": "Your Passphrase",
                               },
                               "HELP": Object {
                                 "MODAL_CONTACT_US": Object {
@@ -5555,6 +6021,10 @@ exports[`Application root should render without crashing 1`] = `
                                   "TITLE": "Profile Created!",
                                 },
                               },
+                              "SEARCH": Object {
+                                "FIND_IT": "Find it",
+                                "PLACEHOLDER": "What would you like to search for?",
+                              },
                               "TRANSACTION": Object {
                                 "ACCOUNT": "Account",
                                 "ACCOUNT_NICKNAME": "Account Nickname",
@@ -5566,7 +6036,17 @@ exports[`Application root should render without crashing 1`] = `
                                   "TITLE": "Delegate Registration",
                                 },
                                 "MODAL_MULTISIGNATURE_DETAIL": Object {
-                                  "TITLE": "Multisignature",
+                                  "STEP_1": Object {
+                                    "TITLE": "Multisignature",
+                                  },
+                                  "STEP_2": Object {
+                                    "DESCRIPTION": "Enter your passphrase in order to sign the Multisignature transaction.",
+                                    "TITLE": "Multisignature Passphrase",
+                                  },
+                                  "STEP_3": Object {
+                                    "DESCRIPTION": "Your signature was successfully confirmed and sent.",
+                                    "TITLE": "Transaction Successful",
+                                  },
                                   "WAITING_FOR_SIGNATURES": "Waiting for Signatures",
                                 },
                                 "MODAL_TRANSFER_DETAIL": Object {
@@ -5595,6 +6075,9 @@ exports[`Application root should render without crashing 1`] = `
                                   "DESCRIPTION": "You can enter the name of your wallet for a quick search in your wallet.",
                                   "FIELD_NAME": "Enter a name",
                                   "TITLE": "Name Wallet",
+                                },
+                                "MODAL_RECEIVE_FUNDS": Object {
+                                  "TITLE": "Receive Funds",
                                 },
                                 "MODAL_WALLET_UPDATE": Object {
                                   "DESCRIPTION_1": "We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.",
@@ -5697,6 +6180,7 @@ exports[`Application root should render without crashing 1`] = `
                                   "CANCEL": "Cancel",
                                   "CATEGORY": "Category",
                                   "CONFIRM": "Confirm",
+                                  "CONTINUE": "Continue",
                                   "CURRENCY": "Currency",
                                   "DATE": "Date",
                                   "DEFAULT_CHOSEN_FEE": "Default fee type",
@@ -5732,11 +6216,13 @@ exports[`Application root should render without crashing 1`] = `
                                   "SAVE": "Save",
                                   "SELECT": "Select",
                                   "SEND": "Send",
+                                  "SIGN": "Sign",
                                   "SIZE": "Size",
                                   "SKIP": "Skip",
                                   "START": "Start",
                                   "THEME": "Theme",
                                   "TIME_FORMAT": "Time format",
+                                  "TYPE": "Type",
                                   "UPDATE_LATER": "Update Later",
                                   "UPDATE_NOW": "Update Now",
                                   "URL": "URL",
@@ -5748,6 +6234,7 @@ exports[`Application root should render without crashing 1`] = `
                                   "WILL": "will",
                                   "X_OF_Y": "{{0}} of {{1}}",
                                   "YOU": "You",
+                                  "YOUR_PASSPHRASE": "Your Passphrase",
                                 },
                                 "HELP": Object {
                                   "MODAL_CONTACT_US": Object {
@@ -5774,6 +6261,10 @@ exports[`Application root should render without crashing 1`] = `
                                     "TITLE": "Profile Created!",
                                   },
                                 },
+                                "SEARCH": Object {
+                                  "FIND_IT": "Find it",
+                                  "PLACEHOLDER": "What would you like to search for?",
+                                },
                                 "TRANSACTION": Object {
                                   "ACCOUNT": "Account",
                                   "ACCOUNT_NICKNAME": "Account Nickname",
@@ -5785,7 +6276,17 @@ exports[`Application root should render without crashing 1`] = `
                                     "TITLE": "Delegate Registration",
                                   },
                                   "MODAL_MULTISIGNATURE_DETAIL": Object {
-                                    "TITLE": "Multisignature",
+                                    "STEP_1": Object {
+                                      "TITLE": "Multisignature",
+                                    },
+                                    "STEP_2": Object {
+                                      "DESCRIPTION": "Enter your passphrase in order to sign the Multisignature transaction.",
+                                      "TITLE": "Multisignature Passphrase",
+                                    },
+                                    "STEP_3": Object {
+                                      "DESCRIPTION": "Your signature was successfully confirmed and sent.",
+                                      "TITLE": "Transaction Successful",
+                                    },
                                     "WAITING_FOR_SIGNATURES": "Waiting for Signatures",
                                   },
                                   "MODAL_TRANSFER_DETAIL": Object {
@@ -5814,6 +6315,9 @@ exports[`Application root should render without crashing 1`] = `
                                     "DESCRIPTION": "You can enter the name of your wallet for a quick search in your wallet.",
                                     "FIELD_NAME": "Enter a name",
                                     "TITLE": "Name Wallet",
+                                  },
+                                  "MODAL_RECEIVE_FUNDS": Object {
+                                    "TITLE": "Receive Funds",
                                   },
                                   "MODAL_WALLET_UPDATE": Object {
                                     "DESCRIPTION_1": "We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.",
@@ -5899,6 +6403,7 @@ exports[`Application root should render without crashing 1`] = `
                                 "CANCEL": "Cancel",
                                 "CATEGORY": "Category",
                                 "CONFIRM": "Confirm",
+                                "CONTINUE": "Continue",
                                 "CURRENCY": "Currency",
                                 "DATE": "Date",
                                 "DEFAULT_CHOSEN_FEE": "Default fee type",
@@ -5934,11 +6439,13 @@ exports[`Application root should render without crashing 1`] = `
                                 "SAVE": "Save",
                                 "SELECT": "Select",
                                 "SEND": "Send",
+                                "SIGN": "Sign",
                                 "SIZE": "Size",
                                 "SKIP": "Skip",
                                 "START": "Start",
                                 "THEME": "Theme",
                                 "TIME_FORMAT": "Time format",
+                                "TYPE": "Type",
                                 "UPDATE_LATER": "Update Later",
                                 "UPDATE_NOW": "Update Now",
                                 "URL": "URL",
@@ -5950,6 +6457,7 @@ exports[`Application root should render without crashing 1`] = `
                                 "WILL": "will",
                                 "X_OF_Y": "{{0}} of {{1}}",
                                 "YOU": "You",
+                                "YOUR_PASSPHRASE": "Your Passphrase",
                               },
                               "HELP": Object {
                                 "MODAL_CONTACT_US": Object {
@@ -5976,6 +6484,10 @@ exports[`Application root should render without crashing 1`] = `
                                   "TITLE": "Profile Created!",
                                 },
                               },
+                              "SEARCH": Object {
+                                "FIND_IT": "Find it",
+                                "PLACEHOLDER": "What would you like to search for?",
+                              },
                               "TRANSACTION": Object {
                                 "ACCOUNT": "Account",
                                 "ACCOUNT_NICKNAME": "Account Nickname",
@@ -5987,7 +6499,17 @@ exports[`Application root should render without crashing 1`] = `
                                   "TITLE": "Delegate Registration",
                                 },
                                 "MODAL_MULTISIGNATURE_DETAIL": Object {
-                                  "TITLE": "Multisignature",
+                                  "STEP_1": Object {
+                                    "TITLE": "Multisignature",
+                                  },
+                                  "STEP_2": Object {
+                                    "DESCRIPTION": "Enter your passphrase in order to sign the Multisignature transaction.",
+                                    "TITLE": "Multisignature Passphrase",
+                                  },
+                                  "STEP_3": Object {
+                                    "DESCRIPTION": "Your signature was successfully confirmed and sent.",
+                                    "TITLE": "Transaction Successful",
+                                  },
                                   "WAITING_FOR_SIGNATURES": "Waiting for Signatures",
                                 },
                                 "MODAL_TRANSFER_DETAIL": Object {
@@ -6016,6 +6538,9 @@ exports[`Application root should render without crashing 1`] = `
                                   "DESCRIPTION": "You can enter the name of your wallet for a quick search in your wallet.",
                                   "FIELD_NAME": "Enter a name",
                                   "TITLE": "Name Wallet",
+                                },
+                                "MODAL_RECEIVE_FUNDS": Object {
+                                  "TITLE": "Receive Funds",
                                 },
                                 "MODAL_WALLET_UPDATE": Object {
                                   "DESCRIPTION_1": "We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.",
@@ -6110,6 +6635,7 @@ exports[`Application root should render without crashing 1`] = `
                                 "CANCEL": "Cancel",
                                 "CATEGORY": "Category",
                                 "CONFIRM": "Confirm",
+                                "CONTINUE": "Continue",
                                 "CURRENCY": "Currency",
                                 "DATE": "Date",
                                 "DEFAULT_CHOSEN_FEE": "Default fee type",
@@ -6145,11 +6671,13 @@ exports[`Application root should render without crashing 1`] = `
                                 "SAVE": "Save",
                                 "SELECT": "Select",
                                 "SEND": "Send",
+                                "SIGN": "Sign",
                                 "SIZE": "Size",
                                 "SKIP": "Skip",
                                 "START": "Start",
                                 "THEME": "Theme",
                                 "TIME_FORMAT": "Time format",
+                                "TYPE": "Type",
                                 "UPDATE_LATER": "Update Later",
                                 "UPDATE_NOW": "Update Now",
                                 "URL": "URL",
@@ -6161,6 +6689,7 @@ exports[`Application root should render without crashing 1`] = `
                                 "WILL": "will",
                                 "X_OF_Y": "{{0}} of {{1}}",
                                 "YOU": "You",
+                                "YOUR_PASSPHRASE": "Your Passphrase",
                               },
                               "HELP": Object {
                                 "MODAL_CONTACT_US": Object {
@@ -6187,6 +6716,10 @@ exports[`Application root should render without crashing 1`] = `
                                   "TITLE": "Profile Created!",
                                 },
                               },
+                              "SEARCH": Object {
+                                "FIND_IT": "Find it",
+                                "PLACEHOLDER": "What would you like to search for?",
+                              },
                               "TRANSACTION": Object {
                                 "ACCOUNT": "Account",
                                 "ACCOUNT_NICKNAME": "Account Nickname",
@@ -6198,7 +6731,17 @@ exports[`Application root should render without crashing 1`] = `
                                   "TITLE": "Delegate Registration",
                                 },
                                 "MODAL_MULTISIGNATURE_DETAIL": Object {
-                                  "TITLE": "Multisignature",
+                                  "STEP_1": Object {
+                                    "TITLE": "Multisignature",
+                                  },
+                                  "STEP_2": Object {
+                                    "DESCRIPTION": "Enter your passphrase in order to sign the Multisignature transaction.",
+                                    "TITLE": "Multisignature Passphrase",
+                                  },
+                                  "STEP_3": Object {
+                                    "DESCRIPTION": "Your signature was successfully confirmed and sent.",
+                                    "TITLE": "Transaction Successful",
+                                  },
                                   "WAITING_FOR_SIGNATURES": "Waiting for Signatures",
                                 },
                                 "MODAL_TRANSFER_DETAIL": Object {
@@ -6227,6 +6770,9 @@ exports[`Application root should render without crashing 1`] = `
                                   "DESCRIPTION": "You can enter the name of your wallet for a quick search in your wallet.",
                                   "FIELD_NAME": "Enter a name",
                                   "TITLE": "Name Wallet",
+                                },
+                                "MODAL_RECEIVE_FUNDS": Object {
+                                  "TITLE": "Receive Funds",
                                 },
                                 "MODAL_WALLET_UPDATE": Object {
                                   "DESCRIPTION_1": "We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.",
@@ -6324,6 +6870,7 @@ exports[`Application root should render without crashing 1`] = `
                                     "CANCEL": "Cancel",
                                     "CATEGORY": "Category",
                                     "CONFIRM": "Confirm",
+                                    "CONTINUE": "Continue",
                                     "CURRENCY": "Currency",
                                     "DATE": "Date",
                                     "DEFAULT_CHOSEN_FEE": "Default fee type",
@@ -6359,11 +6906,13 @@ exports[`Application root should render without crashing 1`] = `
                                     "SAVE": "Save",
                                     "SELECT": "Select",
                                     "SEND": "Send",
+                                    "SIGN": "Sign",
                                     "SIZE": "Size",
                                     "SKIP": "Skip",
                                     "START": "Start",
                                     "THEME": "Theme",
                                     "TIME_FORMAT": "Time format",
+                                    "TYPE": "Type",
                                     "UPDATE_LATER": "Update Later",
                                     "UPDATE_NOW": "Update Now",
                                     "URL": "URL",
@@ -6375,6 +6924,7 @@ exports[`Application root should render without crashing 1`] = `
                                     "WILL": "will",
                                     "X_OF_Y": "{{0}} of {{1}}",
                                     "YOU": "You",
+                                    "YOUR_PASSPHRASE": "Your Passphrase",
                                   },
                                   "HELP": Object {
                                     "MODAL_CONTACT_US": Object {
@@ -6401,6 +6951,10 @@ exports[`Application root should render without crashing 1`] = `
                                       "TITLE": "Profile Created!",
                                     },
                                   },
+                                  "SEARCH": Object {
+                                    "FIND_IT": "Find it",
+                                    "PLACEHOLDER": "What would you like to search for?",
+                                  },
                                   "TRANSACTION": Object {
                                     "ACCOUNT": "Account",
                                     "ACCOUNT_NICKNAME": "Account Nickname",
@@ -6412,7 +6966,17 @@ exports[`Application root should render without crashing 1`] = `
                                       "TITLE": "Delegate Registration",
                                     },
                                     "MODAL_MULTISIGNATURE_DETAIL": Object {
-                                      "TITLE": "Multisignature",
+                                      "STEP_1": Object {
+                                        "TITLE": "Multisignature",
+                                      },
+                                      "STEP_2": Object {
+                                        "DESCRIPTION": "Enter your passphrase in order to sign the Multisignature transaction.",
+                                        "TITLE": "Multisignature Passphrase",
+                                      },
+                                      "STEP_3": Object {
+                                        "DESCRIPTION": "Your signature was successfully confirmed and sent.",
+                                        "TITLE": "Transaction Successful",
+                                      },
                                       "WAITING_FOR_SIGNATURES": "Waiting for Signatures",
                                     },
                                     "MODAL_TRANSFER_DETAIL": Object {
@@ -6441,6 +7005,9 @@ exports[`Application root should render without crashing 1`] = `
                                       "DESCRIPTION": "You can enter the name of your wallet for a quick search in your wallet.",
                                       "FIELD_NAME": "Enter a name",
                                       "TITLE": "Name Wallet",
+                                    },
+                                    "MODAL_RECEIVE_FUNDS": Object {
+                                      "TITLE": "Receive Funds",
                                     },
                                     "MODAL_WALLET_UPDATE": Object {
                                       "DESCRIPTION_1": "We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.",
@@ -6526,6 +7093,7 @@ exports[`Application root should render without crashing 1`] = `
                                   "CANCEL": "Cancel",
                                   "CATEGORY": "Category",
                                   "CONFIRM": "Confirm",
+                                  "CONTINUE": "Continue",
                                   "CURRENCY": "Currency",
                                   "DATE": "Date",
                                   "DEFAULT_CHOSEN_FEE": "Default fee type",
@@ -6561,11 +7129,13 @@ exports[`Application root should render without crashing 1`] = `
                                   "SAVE": "Save",
                                   "SELECT": "Select",
                                   "SEND": "Send",
+                                  "SIGN": "Sign",
                                   "SIZE": "Size",
                                   "SKIP": "Skip",
                                   "START": "Start",
                                   "THEME": "Theme",
                                   "TIME_FORMAT": "Time format",
+                                  "TYPE": "Type",
                                   "UPDATE_LATER": "Update Later",
                                   "UPDATE_NOW": "Update Now",
                                   "URL": "URL",
@@ -6577,6 +7147,7 @@ exports[`Application root should render without crashing 1`] = `
                                   "WILL": "will",
                                   "X_OF_Y": "{{0}} of {{1}}",
                                   "YOU": "You",
+                                  "YOUR_PASSPHRASE": "Your Passphrase",
                                 },
                                 "HELP": Object {
                                   "MODAL_CONTACT_US": Object {
@@ -6603,6 +7174,10 @@ exports[`Application root should render without crashing 1`] = `
                                     "TITLE": "Profile Created!",
                                   },
                                 },
+                                "SEARCH": Object {
+                                  "FIND_IT": "Find it",
+                                  "PLACEHOLDER": "What would you like to search for?",
+                                },
                                 "TRANSACTION": Object {
                                   "ACCOUNT": "Account",
                                   "ACCOUNT_NICKNAME": "Account Nickname",
@@ -6614,7 +7189,17 @@ exports[`Application root should render without crashing 1`] = `
                                     "TITLE": "Delegate Registration",
                                   },
                                   "MODAL_MULTISIGNATURE_DETAIL": Object {
-                                    "TITLE": "Multisignature",
+                                    "STEP_1": Object {
+                                      "TITLE": "Multisignature",
+                                    },
+                                    "STEP_2": Object {
+                                      "DESCRIPTION": "Enter your passphrase in order to sign the Multisignature transaction.",
+                                      "TITLE": "Multisignature Passphrase",
+                                    },
+                                    "STEP_3": Object {
+                                      "DESCRIPTION": "Your signature was successfully confirmed and sent.",
+                                      "TITLE": "Transaction Successful",
+                                    },
                                     "WAITING_FOR_SIGNATURES": "Waiting for Signatures",
                                   },
                                   "MODAL_TRANSFER_DETAIL": Object {
@@ -6643,6 +7228,9 @@ exports[`Application root should render without crashing 1`] = `
                                     "DESCRIPTION": "You can enter the name of your wallet for a quick search in your wallet.",
                                     "FIELD_NAME": "Enter a name",
                                     "TITLE": "Name Wallet",
+                                  },
+                                  "MODAL_RECEIVE_FUNDS": Object {
+                                    "TITLE": "Receive Funds",
                                   },
                                   "MODAL_WALLET_UPDATE": Object {
                                     "DESCRIPTION_1": "We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.",
@@ -6738,6 +7326,7 @@ exports[`Application root should render without crashing 1`] = `
                                   "CANCEL": "Cancel",
                                   "CATEGORY": "Category",
                                   "CONFIRM": "Confirm",
+                                  "CONTINUE": "Continue",
                                   "CURRENCY": "Currency",
                                   "DATE": "Date",
                                   "DEFAULT_CHOSEN_FEE": "Default fee type",
@@ -6773,11 +7362,13 @@ exports[`Application root should render without crashing 1`] = `
                                   "SAVE": "Save",
                                   "SELECT": "Select",
                                   "SEND": "Send",
+                                  "SIGN": "Sign",
                                   "SIZE": "Size",
                                   "SKIP": "Skip",
                                   "START": "Start",
                                   "THEME": "Theme",
                                   "TIME_FORMAT": "Time format",
+                                  "TYPE": "Type",
                                   "UPDATE_LATER": "Update Later",
                                   "UPDATE_NOW": "Update Now",
                                   "URL": "URL",
@@ -6789,6 +7380,7 @@ exports[`Application root should render without crashing 1`] = `
                                   "WILL": "will",
                                   "X_OF_Y": "{{0}} of {{1}}",
                                   "YOU": "You",
+                                  "YOUR_PASSPHRASE": "Your Passphrase",
                                 },
                                 "HELP": Object {
                                   "MODAL_CONTACT_US": Object {
@@ -6815,6 +7407,10 @@ exports[`Application root should render without crashing 1`] = `
                                     "TITLE": "Profile Created!",
                                   },
                                 },
+                                "SEARCH": Object {
+                                  "FIND_IT": "Find it",
+                                  "PLACEHOLDER": "What would you like to search for?",
+                                },
                                 "TRANSACTION": Object {
                                   "ACCOUNT": "Account",
                                   "ACCOUNT_NICKNAME": "Account Nickname",
@@ -6826,7 +7422,17 @@ exports[`Application root should render without crashing 1`] = `
                                     "TITLE": "Delegate Registration",
                                   },
                                   "MODAL_MULTISIGNATURE_DETAIL": Object {
-                                    "TITLE": "Multisignature",
+                                    "STEP_1": Object {
+                                      "TITLE": "Multisignature",
+                                    },
+                                    "STEP_2": Object {
+                                      "DESCRIPTION": "Enter your passphrase in order to sign the Multisignature transaction.",
+                                      "TITLE": "Multisignature Passphrase",
+                                    },
+                                    "STEP_3": Object {
+                                      "DESCRIPTION": "Your signature was successfully confirmed and sent.",
+                                      "TITLE": "Transaction Successful",
+                                    },
                                     "WAITING_FOR_SIGNATURES": "Waiting for Signatures",
                                   },
                                   "MODAL_TRANSFER_DETAIL": Object {
@@ -6855,6 +7461,9 @@ exports[`Application root should render without crashing 1`] = `
                                     "DESCRIPTION": "You can enter the name of your wallet for a quick search in your wallet.",
                                     "FIELD_NAME": "Enter a name",
                                     "TITLE": "Name Wallet",
+                                  },
+                                  "MODAL_RECEIVE_FUNDS": Object {
+                                    "TITLE": "Receive Funds",
                                   },
                                   "MODAL_WALLET_UPDATE": Object {
                                     "DESCRIPTION_1": "We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.",
@@ -7842,6 +8451,7 @@ exports[`Application root should render without crashing 1`] = `
                             "CANCEL": "Cancel",
                             "CATEGORY": "Category",
                             "CONFIRM": "Confirm",
+                            "CONTINUE": "Continue",
                             "CURRENCY": "Currency",
                             "DATE": "Date",
                             "DEFAULT_CHOSEN_FEE": "Default fee type",
@@ -7877,11 +8487,13 @@ exports[`Application root should render without crashing 1`] = `
                             "SAVE": "Save",
                             "SELECT": "Select",
                             "SEND": "Send",
+                            "SIGN": "Sign",
                             "SIZE": "Size",
                             "SKIP": "Skip",
                             "START": "Start",
                             "THEME": "Theme",
                             "TIME_FORMAT": "Time format",
+                            "TYPE": "Type",
                             "UPDATE_LATER": "Update Later",
                             "UPDATE_NOW": "Update Now",
                             "URL": "URL",
@@ -7893,6 +8505,7 @@ exports[`Application root should render without crashing 1`] = `
                             "WILL": "will",
                             "X_OF_Y": "{{0}} of {{1}}",
                             "YOU": "You",
+                            "YOUR_PASSPHRASE": "Your Passphrase",
                           },
                           "HELP": Object {
                             "MODAL_CONTACT_US": Object {
@@ -7919,6 +8532,10 @@ exports[`Application root should render without crashing 1`] = `
                               "TITLE": "Profile Created!",
                             },
                           },
+                          "SEARCH": Object {
+                            "FIND_IT": "Find it",
+                            "PLACEHOLDER": "What would you like to search for?",
+                          },
                           "TRANSACTION": Object {
                             "ACCOUNT": "Account",
                             "ACCOUNT_NICKNAME": "Account Nickname",
@@ -7930,7 +8547,17 @@ exports[`Application root should render without crashing 1`] = `
                               "TITLE": "Delegate Registration",
                             },
                             "MODAL_MULTISIGNATURE_DETAIL": Object {
-                              "TITLE": "Multisignature",
+                              "STEP_1": Object {
+                                "TITLE": "Multisignature",
+                              },
+                              "STEP_2": Object {
+                                "DESCRIPTION": "Enter your passphrase in order to sign the Multisignature transaction.",
+                                "TITLE": "Multisignature Passphrase",
+                              },
+                              "STEP_3": Object {
+                                "DESCRIPTION": "Your signature was successfully confirmed and sent.",
+                                "TITLE": "Transaction Successful",
+                              },
                               "WAITING_FOR_SIGNATURES": "Waiting for Signatures",
                             },
                             "MODAL_TRANSFER_DETAIL": Object {
@@ -7959,6 +8586,9 @@ exports[`Application root should render without crashing 1`] = `
                               "DESCRIPTION": "You can enter the name of your wallet for a quick search in your wallet.",
                               "FIELD_NAME": "Enter a name",
                               "TITLE": "Name Wallet",
+                            },
+                            "MODAL_RECEIVE_FUNDS": Object {
+                              "TITLE": "Receive Funds",
                             },
                             "MODAL_WALLET_UPDATE": Object {
                               "DESCRIPTION_1": "We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.",
@@ -7993,6 +8623,7 @@ exports[`Application root should render without crashing 1`] = `
                           "CANCEL": "Cancel",
                           "CATEGORY": "Category",
                           "CONFIRM": "Confirm",
+                          "CONTINUE": "Continue",
                           "CURRENCY": "Currency",
                           "DATE": "Date",
                           "DEFAULT_CHOSEN_FEE": "Default fee type",
@@ -8028,11 +8659,13 @@ exports[`Application root should render without crashing 1`] = `
                           "SAVE": "Save",
                           "SELECT": "Select",
                           "SEND": "Send",
+                          "SIGN": "Sign",
                           "SIZE": "Size",
                           "SKIP": "Skip",
                           "START": "Start",
                           "THEME": "Theme",
                           "TIME_FORMAT": "Time format",
+                          "TYPE": "Type",
                           "UPDATE_LATER": "Update Later",
                           "UPDATE_NOW": "Update Now",
                           "URL": "URL",
@@ -8044,6 +8677,7 @@ exports[`Application root should render without crashing 1`] = `
                           "WILL": "will",
                           "X_OF_Y": "{{0}} of {{1}}",
                           "YOU": "You",
+                          "YOUR_PASSPHRASE": "Your Passphrase",
                         },
                         "HELP": Object {
                           "MODAL_CONTACT_US": Object {
@@ -8070,6 +8704,10 @@ exports[`Application root should render without crashing 1`] = `
                             "TITLE": "Profile Created!",
                           },
                         },
+                        "SEARCH": Object {
+                          "FIND_IT": "Find it",
+                          "PLACEHOLDER": "What would you like to search for?",
+                        },
                         "TRANSACTION": Object {
                           "ACCOUNT": "Account",
                           "ACCOUNT_NICKNAME": "Account Nickname",
@@ -8081,7 +8719,17 @@ exports[`Application root should render without crashing 1`] = `
                             "TITLE": "Delegate Registration",
                           },
                           "MODAL_MULTISIGNATURE_DETAIL": Object {
-                            "TITLE": "Multisignature",
+                            "STEP_1": Object {
+                              "TITLE": "Multisignature",
+                            },
+                            "STEP_2": Object {
+                              "DESCRIPTION": "Enter your passphrase in order to sign the Multisignature transaction.",
+                              "TITLE": "Multisignature Passphrase",
+                            },
+                            "STEP_3": Object {
+                              "DESCRIPTION": "Your signature was successfully confirmed and sent.",
+                              "TITLE": "Transaction Successful",
+                            },
                             "WAITING_FOR_SIGNATURES": "Waiting for Signatures",
                           },
                           "MODAL_TRANSFER_DETAIL": Object {
@@ -8110,6 +8758,9 @@ exports[`Application root should render without crashing 1`] = `
                             "DESCRIPTION": "You can enter the name of your wallet for a quick search in your wallet.",
                             "FIELD_NAME": "Enter a name",
                             "TITLE": "Name Wallet",
+                          },
+                          "MODAL_RECEIVE_FUNDS": Object {
+                            "TITLE": "Receive Funds",
                           },
                           "MODAL_WALLET_UPDATE": Object {
                             "DESCRIPTION_1": "We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.",
@@ -8199,6 +8850,7 @@ exports[`Application root should render without crashing 1`] = `
                               "CANCEL": "Cancel",
                               "CATEGORY": "Category",
                               "CONFIRM": "Confirm",
+                              "CONTINUE": "Continue",
                               "CURRENCY": "Currency",
                               "DATE": "Date",
                               "DEFAULT_CHOSEN_FEE": "Default fee type",
@@ -8234,11 +8886,13 @@ exports[`Application root should render without crashing 1`] = `
                               "SAVE": "Save",
                               "SELECT": "Select",
                               "SEND": "Send",
+                              "SIGN": "Sign",
                               "SIZE": "Size",
                               "SKIP": "Skip",
                               "START": "Start",
                               "THEME": "Theme",
                               "TIME_FORMAT": "Time format",
+                              "TYPE": "Type",
                               "UPDATE_LATER": "Update Later",
                               "UPDATE_NOW": "Update Now",
                               "URL": "URL",
@@ -8250,6 +8904,7 @@ exports[`Application root should render without crashing 1`] = `
                               "WILL": "will",
                               "X_OF_Y": "{{0}} of {{1}}",
                               "YOU": "You",
+                              "YOUR_PASSPHRASE": "Your Passphrase",
                             },
                             "HELP": Object {
                               "MODAL_CONTACT_US": Object {
@@ -8276,6 +8931,10 @@ exports[`Application root should render without crashing 1`] = `
                                 "TITLE": "Profile Created!",
                               },
                             },
+                            "SEARCH": Object {
+                              "FIND_IT": "Find it",
+                              "PLACEHOLDER": "What would you like to search for?",
+                            },
                             "TRANSACTION": Object {
                               "ACCOUNT": "Account",
                               "ACCOUNT_NICKNAME": "Account Nickname",
@@ -8287,7 +8946,17 @@ exports[`Application root should render without crashing 1`] = `
                                 "TITLE": "Delegate Registration",
                               },
                               "MODAL_MULTISIGNATURE_DETAIL": Object {
-                                "TITLE": "Multisignature",
+                                "STEP_1": Object {
+                                  "TITLE": "Multisignature",
+                                },
+                                "STEP_2": Object {
+                                  "DESCRIPTION": "Enter your passphrase in order to sign the Multisignature transaction.",
+                                  "TITLE": "Multisignature Passphrase",
+                                },
+                                "STEP_3": Object {
+                                  "DESCRIPTION": "Your signature was successfully confirmed and sent.",
+                                  "TITLE": "Transaction Successful",
+                                },
                                 "WAITING_FOR_SIGNATURES": "Waiting for Signatures",
                               },
                               "MODAL_TRANSFER_DETAIL": Object {
@@ -8316,6 +8985,9 @@ exports[`Application root should render without crashing 1`] = `
                                 "DESCRIPTION": "You can enter the name of your wallet for a quick search in your wallet.",
                                 "FIELD_NAME": "Enter a name",
                                 "TITLE": "Name Wallet",
+                              },
+                              "MODAL_RECEIVE_FUNDS": Object {
+                                "TITLE": "Receive Funds",
                               },
                               "MODAL_WALLET_UPDATE": Object {
                                 "DESCRIPTION_1": "We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.",
@@ -8406,6 +9078,7 @@ exports[`Application root should render without crashing 1`] = `
                             "CANCEL": "Cancel",
                             "CATEGORY": "Category",
                             "CONFIRM": "Confirm",
+                            "CONTINUE": "Continue",
                             "CURRENCY": "Currency",
                             "DATE": "Date",
                             "DEFAULT_CHOSEN_FEE": "Default fee type",
@@ -8441,11 +9114,13 @@ exports[`Application root should render without crashing 1`] = `
                             "SAVE": "Save",
                             "SELECT": "Select",
                             "SEND": "Send",
+                            "SIGN": "Sign",
                             "SIZE": "Size",
                             "SKIP": "Skip",
                             "START": "Start",
                             "THEME": "Theme",
                             "TIME_FORMAT": "Time format",
+                            "TYPE": "Type",
                             "UPDATE_LATER": "Update Later",
                             "UPDATE_NOW": "Update Now",
                             "URL": "URL",
@@ -8457,6 +9132,7 @@ exports[`Application root should render without crashing 1`] = `
                             "WILL": "will",
                             "X_OF_Y": "{{0}} of {{1}}",
                             "YOU": "You",
+                            "YOUR_PASSPHRASE": "Your Passphrase",
                           },
                           "HELP": Object {
                             "MODAL_CONTACT_US": Object {
@@ -8483,6 +9159,10 @@ exports[`Application root should render without crashing 1`] = `
                               "TITLE": "Profile Created!",
                             },
                           },
+                          "SEARCH": Object {
+                            "FIND_IT": "Find it",
+                            "PLACEHOLDER": "What would you like to search for?",
+                          },
                           "TRANSACTION": Object {
                             "ACCOUNT": "Account",
                             "ACCOUNT_NICKNAME": "Account Nickname",
@@ -8494,7 +9174,17 @@ exports[`Application root should render without crashing 1`] = `
                               "TITLE": "Delegate Registration",
                             },
                             "MODAL_MULTISIGNATURE_DETAIL": Object {
-                              "TITLE": "Multisignature",
+                              "STEP_1": Object {
+                                "TITLE": "Multisignature",
+                              },
+                              "STEP_2": Object {
+                                "DESCRIPTION": "Enter your passphrase in order to sign the Multisignature transaction.",
+                                "TITLE": "Multisignature Passphrase",
+                              },
+                              "STEP_3": Object {
+                                "DESCRIPTION": "Your signature was successfully confirmed and sent.",
+                                "TITLE": "Transaction Successful",
+                              },
                               "WAITING_FOR_SIGNATURES": "Waiting for Signatures",
                             },
                             "MODAL_TRANSFER_DETAIL": Object {
@@ -8523,6 +9213,9 @@ exports[`Application root should render without crashing 1`] = `
                               "DESCRIPTION": "You can enter the name of your wallet for a quick search in your wallet.",
                               "FIELD_NAME": "Enter a name",
                               "TITLE": "Name Wallet",
+                            },
+                            "MODAL_RECEIVE_FUNDS": Object {
+                              "TITLE": "Receive Funds",
                             },
                             "MODAL_WALLET_UPDATE": Object {
                               "DESCRIPTION_1": "We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.",
@@ -8626,6 +9319,7 @@ exports[`Application root should render without crashing 1`] = `
                               "CANCEL": "Cancel",
                               "CATEGORY": "Category",
                               "CONFIRM": "Confirm",
+                              "CONTINUE": "Continue",
                               "CURRENCY": "Currency",
                               "DATE": "Date",
                               "DEFAULT_CHOSEN_FEE": "Default fee type",
@@ -8661,11 +9355,13 @@ exports[`Application root should render without crashing 1`] = `
                               "SAVE": "Save",
                               "SELECT": "Select",
                               "SEND": "Send",
+                              "SIGN": "Sign",
                               "SIZE": "Size",
                               "SKIP": "Skip",
                               "START": "Start",
                               "THEME": "Theme",
                               "TIME_FORMAT": "Time format",
+                              "TYPE": "Type",
                               "UPDATE_LATER": "Update Later",
                               "UPDATE_NOW": "Update Now",
                               "URL": "URL",
@@ -8677,6 +9373,7 @@ exports[`Application root should render without crashing 1`] = `
                               "WILL": "will",
                               "X_OF_Y": "{{0}} of {{1}}",
                               "YOU": "You",
+                              "YOUR_PASSPHRASE": "Your Passphrase",
                             },
                             "HELP": Object {
                               "MODAL_CONTACT_US": Object {
@@ -8703,6 +9400,10 @@ exports[`Application root should render without crashing 1`] = `
                                 "TITLE": "Profile Created!",
                               },
                             },
+                            "SEARCH": Object {
+                              "FIND_IT": "Find it",
+                              "PLACEHOLDER": "What would you like to search for?",
+                            },
                             "TRANSACTION": Object {
                               "ACCOUNT": "Account",
                               "ACCOUNT_NICKNAME": "Account Nickname",
@@ -8714,7 +9415,17 @@ exports[`Application root should render without crashing 1`] = `
                                 "TITLE": "Delegate Registration",
                               },
                               "MODAL_MULTISIGNATURE_DETAIL": Object {
-                                "TITLE": "Multisignature",
+                                "STEP_1": Object {
+                                  "TITLE": "Multisignature",
+                                },
+                                "STEP_2": Object {
+                                  "DESCRIPTION": "Enter your passphrase in order to sign the Multisignature transaction.",
+                                  "TITLE": "Multisignature Passphrase",
+                                },
+                                "STEP_3": Object {
+                                  "DESCRIPTION": "Your signature was successfully confirmed and sent.",
+                                  "TITLE": "Transaction Successful",
+                                },
                                 "WAITING_FOR_SIGNATURES": "Waiting for Signatures",
                               },
                               "MODAL_TRANSFER_DETAIL": Object {
@@ -8743,6 +9454,9 @@ exports[`Application root should render without crashing 1`] = `
                                 "DESCRIPTION": "You can enter the name of your wallet for a quick search in your wallet.",
                                 "FIELD_NAME": "Enter a name",
                                 "TITLE": "Name Wallet",
+                              },
+                              "MODAL_RECEIVE_FUNDS": Object {
+                                "TITLE": "Receive Funds",
                               },
                               "MODAL_WALLET_UPDATE": Object {
                                 "DESCRIPTION_1": "We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.",
@@ -8828,6 +9542,7 @@ exports[`Application root should render without crashing 1`] = `
                             "CANCEL": "Cancel",
                             "CATEGORY": "Category",
                             "CONFIRM": "Confirm",
+                            "CONTINUE": "Continue",
                             "CURRENCY": "Currency",
                             "DATE": "Date",
                             "DEFAULT_CHOSEN_FEE": "Default fee type",
@@ -8863,11 +9578,13 @@ exports[`Application root should render without crashing 1`] = `
                             "SAVE": "Save",
                             "SELECT": "Select",
                             "SEND": "Send",
+                            "SIGN": "Sign",
                             "SIZE": "Size",
                             "SKIP": "Skip",
                             "START": "Start",
                             "THEME": "Theme",
                             "TIME_FORMAT": "Time format",
+                            "TYPE": "Type",
                             "UPDATE_LATER": "Update Later",
                             "UPDATE_NOW": "Update Now",
                             "URL": "URL",
@@ -8879,6 +9596,7 @@ exports[`Application root should render without crashing 1`] = `
                             "WILL": "will",
                             "X_OF_Y": "{{0}} of {{1}}",
                             "YOU": "You",
+                            "YOUR_PASSPHRASE": "Your Passphrase",
                           },
                           "HELP": Object {
                             "MODAL_CONTACT_US": Object {
@@ -8905,6 +9623,10 @@ exports[`Application root should render without crashing 1`] = `
                               "TITLE": "Profile Created!",
                             },
                           },
+                          "SEARCH": Object {
+                            "FIND_IT": "Find it",
+                            "PLACEHOLDER": "What would you like to search for?",
+                          },
                           "TRANSACTION": Object {
                             "ACCOUNT": "Account",
                             "ACCOUNT_NICKNAME": "Account Nickname",
@@ -8916,7 +9638,17 @@ exports[`Application root should render without crashing 1`] = `
                               "TITLE": "Delegate Registration",
                             },
                             "MODAL_MULTISIGNATURE_DETAIL": Object {
-                              "TITLE": "Multisignature",
+                              "STEP_1": Object {
+                                "TITLE": "Multisignature",
+                              },
+                              "STEP_2": Object {
+                                "DESCRIPTION": "Enter your passphrase in order to sign the Multisignature transaction.",
+                                "TITLE": "Multisignature Passphrase",
+                              },
+                              "STEP_3": Object {
+                                "DESCRIPTION": "Your signature was successfully confirmed and sent.",
+                                "TITLE": "Transaction Successful",
+                              },
                               "WAITING_FOR_SIGNATURES": "Waiting for Signatures",
                             },
                             "MODAL_TRANSFER_DETAIL": Object {
@@ -8945,6 +9677,9 @@ exports[`Application root should render without crashing 1`] = `
                               "DESCRIPTION": "You can enter the name of your wallet for a quick search in your wallet.",
                               "FIELD_NAME": "Enter a name",
                               "TITLE": "Name Wallet",
+                            },
+                            "MODAL_RECEIVE_FUNDS": Object {
+                              "TITLE": "Receive Funds",
                             },
                             "MODAL_WALLET_UPDATE": Object {
                               "DESCRIPTION_1": "We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.",
@@ -9040,6 +9775,7 @@ exports[`Application root should render without crashing 1`] = `
                             "CANCEL": "Cancel",
                             "CATEGORY": "Category",
                             "CONFIRM": "Confirm",
+                            "CONTINUE": "Continue",
                             "CURRENCY": "Currency",
                             "DATE": "Date",
                             "DEFAULT_CHOSEN_FEE": "Default fee type",
@@ -9075,11 +9811,13 @@ exports[`Application root should render without crashing 1`] = `
                             "SAVE": "Save",
                             "SELECT": "Select",
                             "SEND": "Send",
+                            "SIGN": "Sign",
                             "SIZE": "Size",
                             "SKIP": "Skip",
                             "START": "Start",
                             "THEME": "Theme",
                             "TIME_FORMAT": "Time format",
+                            "TYPE": "Type",
                             "UPDATE_LATER": "Update Later",
                             "UPDATE_NOW": "Update Now",
                             "URL": "URL",
@@ -9091,6 +9829,7 @@ exports[`Application root should render without crashing 1`] = `
                             "WILL": "will",
                             "X_OF_Y": "{{0}} of {{1}}",
                             "YOU": "You",
+                            "YOUR_PASSPHRASE": "Your Passphrase",
                           },
                           "HELP": Object {
                             "MODAL_CONTACT_US": Object {
@@ -9117,6 +9856,10 @@ exports[`Application root should render without crashing 1`] = `
                               "TITLE": "Profile Created!",
                             },
                           },
+                          "SEARCH": Object {
+                            "FIND_IT": "Find it",
+                            "PLACEHOLDER": "What would you like to search for?",
+                          },
                           "TRANSACTION": Object {
                             "ACCOUNT": "Account",
                             "ACCOUNT_NICKNAME": "Account Nickname",
@@ -9128,7 +9871,17 @@ exports[`Application root should render without crashing 1`] = `
                               "TITLE": "Delegate Registration",
                             },
                             "MODAL_MULTISIGNATURE_DETAIL": Object {
-                              "TITLE": "Multisignature",
+                              "STEP_1": Object {
+                                "TITLE": "Multisignature",
+                              },
+                              "STEP_2": Object {
+                                "DESCRIPTION": "Enter your passphrase in order to sign the Multisignature transaction.",
+                                "TITLE": "Multisignature Passphrase",
+                              },
+                              "STEP_3": Object {
+                                "DESCRIPTION": "Your signature was successfully confirmed and sent.",
+                                "TITLE": "Transaction Successful",
+                              },
                               "WAITING_FOR_SIGNATURES": "Waiting for Signatures",
                             },
                             "MODAL_TRANSFER_DETAIL": Object {
@@ -9157,6 +9910,9 @@ exports[`Application root should render without crashing 1`] = `
                               "DESCRIPTION": "You can enter the name of your wallet for a quick search in your wallet.",
                               "FIELD_NAME": "Enter a name",
                               "TITLE": "Name Wallet",
+                            },
+                            "MODAL_RECEIVE_FUNDS": Object {
+                              "TITLE": "Receive Funds",
                             },
                             "MODAL_WALLET_UPDATE": Object {
                               "DESCRIPTION_1": "We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.",
@@ -9247,6 +10003,7 @@ exports[`Application root should render without crashing 1`] = `
                           "CANCEL": "Cancel",
                           "CATEGORY": "Category",
                           "CONFIRM": "Confirm",
+                          "CONTINUE": "Continue",
                           "CURRENCY": "Currency",
                           "DATE": "Date",
                           "DEFAULT_CHOSEN_FEE": "Default fee type",
@@ -9282,11 +10039,13 @@ exports[`Application root should render without crashing 1`] = `
                           "SAVE": "Save",
                           "SELECT": "Select",
                           "SEND": "Send",
+                          "SIGN": "Sign",
                           "SIZE": "Size",
                           "SKIP": "Skip",
                           "START": "Start",
                           "THEME": "Theme",
                           "TIME_FORMAT": "Time format",
+                          "TYPE": "Type",
                           "UPDATE_LATER": "Update Later",
                           "UPDATE_NOW": "Update Now",
                           "URL": "URL",
@@ -9298,6 +10057,7 @@ exports[`Application root should render without crashing 1`] = `
                           "WILL": "will",
                           "X_OF_Y": "{{0}} of {{1}}",
                           "YOU": "You",
+                          "YOUR_PASSPHRASE": "Your Passphrase",
                         },
                         "HELP": Object {
                           "MODAL_CONTACT_US": Object {
@@ -9324,6 +10084,10 @@ exports[`Application root should render without crashing 1`] = `
                             "TITLE": "Profile Created!",
                           },
                         },
+                        "SEARCH": Object {
+                          "FIND_IT": "Find it",
+                          "PLACEHOLDER": "What would you like to search for?",
+                        },
                         "TRANSACTION": Object {
                           "ACCOUNT": "Account",
                           "ACCOUNT_NICKNAME": "Account Nickname",
@@ -9335,7 +10099,17 @@ exports[`Application root should render without crashing 1`] = `
                             "TITLE": "Delegate Registration",
                           },
                           "MODAL_MULTISIGNATURE_DETAIL": Object {
-                            "TITLE": "Multisignature",
+                            "STEP_1": Object {
+                              "TITLE": "Multisignature",
+                            },
+                            "STEP_2": Object {
+                              "DESCRIPTION": "Enter your passphrase in order to sign the Multisignature transaction.",
+                              "TITLE": "Multisignature Passphrase",
+                            },
+                            "STEP_3": Object {
+                              "DESCRIPTION": "Your signature was successfully confirmed and sent.",
+                              "TITLE": "Transaction Successful",
+                            },
                             "WAITING_FOR_SIGNATURES": "Waiting for Signatures",
                           },
                           "MODAL_TRANSFER_DETAIL": Object {
@@ -9364,6 +10138,9 @@ exports[`Application root should render without crashing 1`] = `
                             "DESCRIPTION": "You can enter the name of your wallet for a quick search in your wallet.",
                             "FIELD_NAME": "Enter a name",
                             "TITLE": "Name Wallet",
+                          },
+                          "MODAL_RECEIVE_FUNDS": Object {
+                            "TITLE": "Receive Funds",
                           },
                           "MODAL_WALLET_UPDATE": Object {
                             "DESCRIPTION_1": "We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.",
@@ -9459,6 +10236,7 @@ exports[`Application root should render without crashing 1`] = `
                                 "CANCEL": "Cancel",
                                 "CATEGORY": "Category",
                                 "CONFIRM": "Confirm",
+                                "CONTINUE": "Continue",
                                 "CURRENCY": "Currency",
                                 "DATE": "Date",
                                 "DEFAULT_CHOSEN_FEE": "Default fee type",
@@ -9494,11 +10272,13 @@ exports[`Application root should render without crashing 1`] = `
                                 "SAVE": "Save",
                                 "SELECT": "Select",
                                 "SEND": "Send",
+                                "SIGN": "Sign",
                                 "SIZE": "Size",
                                 "SKIP": "Skip",
                                 "START": "Start",
                                 "THEME": "Theme",
                                 "TIME_FORMAT": "Time format",
+                                "TYPE": "Type",
                                 "UPDATE_LATER": "Update Later",
                                 "UPDATE_NOW": "Update Now",
                                 "URL": "URL",
@@ -9510,6 +10290,7 @@ exports[`Application root should render without crashing 1`] = `
                                 "WILL": "will",
                                 "X_OF_Y": "{{0}} of {{1}}",
                                 "YOU": "You",
+                                "YOUR_PASSPHRASE": "Your Passphrase",
                               },
                               "HELP": Object {
                                 "MODAL_CONTACT_US": Object {
@@ -9536,6 +10317,10 @@ exports[`Application root should render without crashing 1`] = `
                                   "TITLE": "Profile Created!",
                                 },
                               },
+                              "SEARCH": Object {
+                                "FIND_IT": "Find it",
+                                "PLACEHOLDER": "What would you like to search for?",
+                              },
                               "TRANSACTION": Object {
                                 "ACCOUNT": "Account",
                                 "ACCOUNT_NICKNAME": "Account Nickname",
@@ -9547,7 +10332,17 @@ exports[`Application root should render without crashing 1`] = `
                                   "TITLE": "Delegate Registration",
                                 },
                                 "MODAL_MULTISIGNATURE_DETAIL": Object {
-                                  "TITLE": "Multisignature",
+                                  "STEP_1": Object {
+                                    "TITLE": "Multisignature",
+                                  },
+                                  "STEP_2": Object {
+                                    "DESCRIPTION": "Enter your passphrase in order to sign the Multisignature transaction.",
+                                    "TITLE": "Multisignature Passphrase",
+                                  },
+                                  "STEP_3": Object {
+                                    "DESCRIPTION": "Your signature was successfully confirmed and sent.",
+                                    "TITLE": "Transaction Successful",
+                                  },
                                   "WAITING_FOR_SIGNATURES": "Waiting for Signatures",
                                 },
                                 "MODAL_TRANSFER_DETAIL": Object {
@@ -9576,6 +10371,9 @@ exports[`Application root should render without crashing 1`] = `
                                   "DESCRIPTION": "You can enter the name of your wallet for a quick search in your wallet.",
                                   "FIELD_NAME": "Enter a name",
                                   "TITLE": "Name Wallet",
+                                },
+                                "MODAL_RECEIVE_FUNDS": Object {
+                                  "TITLE": "Receive Funds",
                                 },
                                 "MODAL_WALLET_UPDATE": Object {
                                   "DESCRIPTION_1": "We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.",
@@ -9661,6 +10459,7 @@ exports[`Application root should render without crashing 1`] = `
                               "CANCEL": "Cancel",
                               "CATEGORY": "Category",
                               "CONFIRM": "Confirm",
+                              "CONTINUE": "Continue",
                               "CURRENCY": "Currency",
                               "DATE": "Date",
                               "DEFAULT_CHOSEN_FEE": "Default fee type",
@@ -9696,11 +10495,13 @@ exports[`Application root should render without crashing 1`] = `
                               "SAVE": "Save",
                               "SELECT": "Select",
                               "SEND": "Send",
+                              "SIGN": "Sign",
                               "SIZE": "Size",
                               "SKIP": "Skip",
                               "START": "Start",
                               "THEME": "Theme",
                               "TIME_FORMAT": "Time format",
+                              "TYPE": "Type",
                               "UPDATE_LATER": "Update Later",
                               "UPDATE_NOW": "Update Now",
                               "URL": "URL",
@@ -9712,6 +10513,7 @@ exports[`Application root should render without crashing 1`] = `
                               "WILL": "will",
                               "X_OF_Y": "{{0}} of {{1}}",
                               "YOU": "You",
+                              "YOUR_PASSPHRASE": "Your Passphrase",
                             },
                             "HELP": Object {
                               "MODAL_CONTACT_US": Object {
@@ -9738,6 +10540,10 @@ exports[`Application root should render without crashing 1`] = `
                                 "TITLE": "Profile Created!",
                               },
                             },
+                            "SEARCH": Object {
+                              "FIND_IT": "Find it",
+                              "PLACEHOLDER": "What would you like to search for?",
+                            },
                             "TRANSACTION": Object {
                               "ACCOUNT": "Account",
                               "ACCOUNT_NICKNAME": "Account Nickname",
@@ -9749,7 +10555,17 @@ exports[`Application root should render without crashing 1`] = `
                                 "TITLE": "Delegate Registration",
                               },
                               "MODAL_MULTISIGNATURE_DETAIL": Object {
-                                "TITLE": "Multisignature",
+                                "STEP_1": Object {
+                                  "TITLE": "Multisignature",
+                                },
+                                "STEP_2": Object {
+                                  "DESCRIPTION": "Enter your passphrase in order to sign the Multisignature transaction.",
+                                  "TITLE": "Multisignature Passphrase",
+                                },
+                                "STEP_3": Object {
+                                  "DESCRIPTION": "Your signature was successfully confirmed and sent.",
+                                  "TITLE": "Transaction Successful",
+                                },
                                 "WAITING_FOR_SIGNATURES": "Waiting for Signatures",
                               },
                               "MODAL_TRANSFER_DETAIL": Object {
@@ -9778,6 +10594,9 @@ exports[`Application root should render without crashing 1`] = `
                                 "DESCRIPTION": "You can enter the name of your wallet for a quick search in your wallet.",
                                 "FIELD_NAME": "Enter a name",
                                 "TITLE": "Name Wallet",
+                              },
+                              "MODAL_RECEIVE_FUNDS": Object {
+                                "TITLE": "Receive Funds",
                               },
                               "MODAL_WALLET_UPDATE": Object {
                                 "DESCRIPTION_1": "We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.",
@@ -9873,6 +10692,7 @@ exports[`Application root should render without crashing 1`] = `
                               "CANCEL": "Cancel",
                               "CATEGORY": "Category",
                               "CONFIRM": "Confirm",
+                              "CONTINUE": "Continue",
                               "CURRENCY": "Currency",
                               "DATE": "Date",
                               "DEFAULT_CHOSEN_FEE": "Default fee type",
@@ -9908,11 +10728,13 @@ exports[`Application root should render without crashing 1`] = `
                               "SAVE": "Save",
                               "SELECT": "Select",
                               "SEND": "Send",
+                              "SIGN": "Sign",
                               "SIZE": "Size",
                               "SKIP": "Skip",
                               "START": "Start",
                               "THEME": "Theme",
                               "TIME_FORMAT": "Time format",
+                              "TYPE": "Type",
                               "UPDATE_LATER": "Update Later",
                               "UPDATE_NOW": "Update Now",
                               "URL": "URL",
@@ -9924,6 +10746,7 @@ exports[`Application root should render without crashing 1`] = `
                               "WILL": "will",
                               "X_OF_Y": "{{0}} of {{1}}",
                               "YOU": "You",
+                              "YOUR_PASSPHRASE": "Your Passphrase",
                             },
                             "HELP": Object {
                               "MODAL_CONTACT_US": Object {
@@ -9950,6 +10773,10 @@ exports[`Application root should render without crashing 1`] = `
                                 "TITLE": "Profile Created!",
                               },
                             },
+                            "SEARCH": Object {
+                              "FIND_IT": "Find it",
+                              "PLACEHOLDER": "What would you like to search for?",
+                            },
                             "TRANSACTION": Object {
                               "ACCOUNT": "Account",
                               "ACCOUNT_NICKNAME": "Account Nickname",
@@ -9961,7 +10788,17 @@ exports[`Application root should render without crashing 1`] = `
                                 "TITLE": "Delegate Registration",
                               },
                               "MODAL_MULTISIGNATURE_DETAIL": Object {
-                                "TITLE": "Multisignature",
+                                "STEP_1": Object {
+                                  "TITLE": "Multisignature",
+                                },
+                                "STEP_2": Object {
+                                  "DESCRIPTION": "Enter your passphrase in order to sign the Multisignature transaction.",
+                                  "TITLE": "Multisignature Passphrase",
+                                },
+                                "STEP_3": Object {
+                                  "DESCRIPTION": "Your signature was successfully confirmed and sent.",
+                                  "TITLE": "Transaction Successful",
+                                },
                                 "WAITING_FOR_SIGNATURES": "Waiting for Signatures",
                               },
                               "MODAL_TRANSFER_DETAIL": Object {
@@ -9990,6 +10827,9 @@ exports[`Application root should render without crashing 1`] = `
                                 "DESCRIPTION": "You can enter the name of your wallet for a quick search in your wallet.",
                                 "FIELD_NAME": "Enter a name",
                                 "TITLE": "Name Wallet",
+                              },
+                              "MODAL_RECEIVE_FUNDS": Object {
+                                "TITLE": "Receive Funds",
                               },
                               "MODAL_WALLET_UPDATE": Object {
                                 "DESCRIPTION_1": "We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.",
@@ -10977,6 +11817,7 @@ exports[`Application root should render without crashing 1`] = `
                         "CANCEL": "Cancel",
                         "CATEGORY": "Category",
                         "CONFIRM": "Confirm",
+                        "CONTINUE": "Continue",
                         "CURRENCY": "Currency",
                         "DATE": "Date",
                         "DEFAULT_CHOSEN_FEE": "Default fee type",
@@ -11012,11 +11853,13 @@ exports[`Application root should render without crashing 1`] = `
                         "SAVE": "Save",
                         "SELECT": "Select",
                         "SEND": "Send",
+                        "SIGN": "Sign",
                         "SIZE": "Size",
                         "SKIP": "Skip",
                         "START": "Start",
                         "THEME": "Theme",
                         "TIME_FORMAT": "Time format",
+                        "TYPE": "Type",
                         "UPDATE_LATER": "Update Later",
                         "UPDATE_NOW": "Update Now",
                         "URL": "URL",
@@ -11028,6 +11871,7 @@ exports[`Application root should render without crashing 1`] = `
                         "WILL": "will",
                         "X_OF_Y": "{{0}} of {{1}}",
                         "YOU": "You",
+                        "YOUR_PASSPHRASE": "Your Passphrase",
                       },
                       "HELP": Object {
                         "MODAL_CONTACT_US": Object {
@@ -11054,6 +11898,10 @@ exports[`Application root should render without crashing 1`] = `
                           "TITLE": "Profile Created!",
                         },
                       },
+                      "SEARCH": Object {
+                        "FIND_IT": "Find it",
+                        "PLACEHOLDER": "What would you like to search for?",
+                      },
                       "TRANSACTION": Object {
                         "ACCOUNT": "Account",
                         "ACCOUNT_NICKNAME": "Account Nickname",
@@ -11065,7 +11913,17 @@ exports[`Application root should render without crashing 1`] = `
                           "TITLE": "Delegate Registration",
                         },
                         "MODAL_MULTISIGNATURE_DETAIL": Object {
-                          "TITLE": "Multisignature",
+                          "STEP_1": Object {
+                            "TITLE": "Multisignature",
+                          },
+                          "STEP_2": Object {
+                            "DESCRIPTION": "Enter your passphrase in order to sign the Multisignature transaction.",
+                            "TITLE": "Multisignature Passphrase",
+                          },
+                          "STEP_3": Object {
+                            "DESCRIPTION": "Your signature was successfully confirmed and sent.",
+                            "TITLE": "Transaction Successful",
+                          },
                           "WAITING_FOR_SIGNATURES": "Waiting for Signatures",
                         },
                         "MODAL_TRANSFER_DETAIL": Object {
@@ -11094,6 +11952,9 @@ exports[`Application root should render without crashing 1`] = `
                           "DESCRIPTION": "You can enter the name of your wallet for a quick search in your wallet.",
                           "FIELD_NAME": "Enter a name",
                           "TITLE": "Name Wallet",
+                        },
+                        "MODAL_RECEIVE_FUNDS": Object {
+                          "TITLE": "Receive Funds",
                         },
                         "MODAL_WALLET_UPDATE": Object {
                           "DESCRIPTION_1": "We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.",
