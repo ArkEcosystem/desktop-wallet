@@ -85,7 +85,7 @@ export const SignMessage = ({ onSubmit, signatoryAddress, isOpen, isSigned, hand
 			</div>
 			<div className="pb-5 mb-3 border-b border-dashed border-theme-neutral-300">
 				<span className="font-semibold text-md text-theme-neutral-light">Message</span>
-				<p className="w-3/4 text-xl font-bold text-theme-neutral-800 mt-1">{"Oleg Happy in the Oleg Bank"}</p>
+				<p className="w-3/4 mt-1 text-xl font-bold text-theme-neutral-800">{"Oleg Happy in the Oleg Bank"}</p>
 			</div>
 			<div>
 				<span className="font-semibold text-md text-theme-neutral-light">Signature</span>
@@ -97,7 +97,7 @@ export const SignMessage = ({ onSubmit, signatoryAddress, isOpen, isSigned, hand
 					defaultValue={JSON.stringify(mockSignature)}
 				/>
 			</div>
-			<div className="flex items-center mt-5 pb-5">
+			<div className="flex items-center pb-5 mt-5">
 				<Button color="primary" variant="plain" size="large">
 					<div className="flex items-center justify-between px-1">
 						<Icon name="Copy" />
