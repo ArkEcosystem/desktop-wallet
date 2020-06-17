@@ -1,6 +1,7 @@
 import { Address } from "app/components/Address";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
+import { Clipboard } from "app/components/Clipboard";
 import { Form } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { Input, InputPassword, InputRange } from "app/components/Input";
@@ -84,7 +85,7 @@ export const SecondStep = () => (
 	<section data-testid="VoteForDelegate__step--second" className="space-y-8">
 		<div>
 			<h1 className="mb-0">Transaction Review</h1>
-			<p className="text-theme-neutral-dark">Check the informationa again before voting</p>
+			<p className="text-theme-neutral-dark">Check the information again before voting</p>
 		</div>
 		<div className="grid grid-flow-row gap-2">
 			<TransactionDetail
@@ -162,7 +163,7 @@ export const ThirdStep = () => {
 export const FourthStep = () => (
 	<section data-testid="VoteForDelegate__step--fourth" className="space-y-8">
 		<div>
-			<h1 className="mb-0">Transaction Successfull</h1>
+			<h1 className="mb-0">Transaction Successful</h1>
 			<div className="grid grid-flow-row gap-2">
 				<div className="w-full mt-10">
 					<Icon name="TransactionSuccessful" width="100%" height={200} />
@@ -172,16 +173,32 @@ export const FourthStep = () => (
 					confirmed and processed, The following is relevant information for your transaction.
 				</p>
 				<TransactionDetail label="ID">
-					<Address
-						address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWKAUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
-						maxChars={32}
-					/>
+					<div className="flex items-center">
+						<Clipboard>
+							<Address
+								addressClass="text-theme-primary"
+								address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWKAUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
+								maxChars={32}
+							/>
+						</Clipboard>
+						<div className="text-theme-primary-300 ml-5 mb-1">
+							<Icon name="Copy" />
+						</div>
+					</div>
 				</TransactionDetail>
 				<TransactionDetail label="Block ID">
-					<Address
-						address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWKAUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
-						maxChars={32}
-					/>
+					<div className="flex items-center">
+						<Clipboard>
+							<Address
+								addressClass="text-theme-primary"
+								address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWKAUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
+								maxChars={32}
+							/>
+						</Clipboard>
+						<div className="text-theme-primary-300 ml-5 mb-1">
+							<Icon name="Copy" />
+						</div>
+					</div>
 				</TransactionDetail>
 				<TransactionDetail
 					border={false}

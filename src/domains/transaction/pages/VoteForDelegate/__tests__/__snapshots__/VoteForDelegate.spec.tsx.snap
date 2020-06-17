@@ -519,7 +519,7 @@ exports[`Vote For Delegate should render 2nd step 1`] = `
       <p
         class="text-theme-neutral-dark"
       >
-        Check the informationa again before voting
+        Check the information again before voting
       </p>
     </div>
     <div
@@ -796,7 +796,7 @@ exports[`Vote For Delegate should render 4th step 1`] = `
       <h1
         class="mb-0"
       >
-        Transaction Successfull
+        Transaction Successful
       </h1>
       <div
         class="grid grid-flow-row gap-2"
@@ -834,14 +834,38 @@ exports[`Vote For Delegate should render 4th step 1`] = `
               class="mt-2 font-semibold"
             >
               <div
-                class="inline-block truncate"
+                class="flex items-center"
               >
-                <span
-                  class="text-theme-neutral-400 font-semibold text-base"
-                  data-testid="address__wallet-address"
+                <div
+                  class="inline-block cursor-pointer"
                 >
-                  AUexKjGtgsSpVz...MM6vJ6znEVTQWK
-                </span>
+                  <div
+                    class="inline-block truncate"
+                  >
+                    <span
+                      class="text-theme-primary font-semibold text-base"
+                      data-testid="address__wallet-address"
+                    >
+                      AUexKjGtgsSpVz...MM6vJ6znEVTQWK
+                    </span>
+                  </div>
+                </div>
+                <textarea
+                  class="Clipboard__TextArea-sc-1atoaua-0 hhPnzN"
+                />
+                <div
+                  class="text-theme-primary-300 ml-5 mb-1"
+                >
+                  <div
+                    class="sc-AxhCb fxrKLH"
+                    height="1em"
+                    width="1em"
+                  >
+                    <svg>
+                      copy.svg
+                    </svg>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -861,14 +885,38 @@ exports[`Vote For Delegate should render 4th step 1`] = `
               class="mt-2 font-semibold"
             >
               <div
-                class="inline-block truncate"
+                class="flex items-center"
               >
-                <span
-                  class="text-theme-neutral-400 font-semibold text-base"
-                  data-testid="address__wallet-address"
+                <div
+                  class="inline-block cursor-pointer"
                 >
-                  AUexKjGtgsSpVz...MM6vJ6znEVTQWK
-                </span>
+                  <div
+                    class="inline-block truncate"
+                  >
+                    <span
+                      class="text-theme-primary font-semibold text-base"
+                      data-testid="address__wallet-address"
+                    >
+                      AUexKjGtgsSpVz...MM6vJ6znEVTQWK
+                    </span>
+                  </div>
+                </div>
+                <textarea
+                  class="Clipboard__TextArea-sc-1atoaua-0 hhPnzN"
+                />
+                <div
+                  class="text-theme-primary-300 ml-5 mb-1"
+                >
+                  <div
+                    class="sc-AxhCb fxrKLH"
+                    height="1em"
+                    width="1em"
+                  >
+                    <svg>
+                      copy.svg
+                    </svg>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
