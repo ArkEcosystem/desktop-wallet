@@ -1,0 +1,1076 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Vote For Delegate should render 1`] = `
+<DocumentFragment>
+  <div
+    class="max-w-xl mx-auto"
+  >
+    <form
+      class="space-y-6"
+      data-testid="Form"
+    >
+      <div>
+        <ul
+          class="StepIndicator___StyledUl-sc-15t41is-1 dhAbBb"
+        >
+          <li
+            class="StepIndicator__StepStyled-sc-15t41is-0 crUtTP"
+          />
+          <li
+            class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
+          />
+          <li
+            class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
+          />
+          <li
+            class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
+          />
+        </ul>
+        <div
+          class="mt-10"
+        >
+          <div
+            data-testid="tab-pabel__active-panel"
+          >
+            <section
+              class="space-y-8"
+              data-testid="VoteForDelegate__step--first"
+            >
+              <div>
+                <h1
+                  class="mb-0"
+                >
+                  Vote for delegate
+                </h1>
+                <p
+                  class="text-theme-neutral-dark"
+                >
+                  Enter details to send your money
+                </p>
+              </div>
+              <div
+                class="grid grid-flow-row gap-2"
+              >
+                <div
+                  class="flex items-center py-4 true "
+                >
+                  <div
+                    class="flex-1"
+                  >
+                    <div
+                      class="text-sm font-semibold text-theme-neutral-500"
+                    >
+                      Account
+                    </div>
+                    <div
+                      class="mt-2 font-semibold"
+                    >
+                      <div
+                        class="inline-block truncate"
+                      >
+                        <span
+                          class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-xl"
+                          data-testid="address__wallet-name"
+                        >
+                          ROBank
+                        </span>
+                        <span
+                          class="text-theme-neutral-400 font-semibold text-xl"
+                          data-testid="address__wallet-address"
+                        >
+                          AUexKj...EVTQWK
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <div
+                      class="sc-AxirZ jaEUuk"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+                >
+                  <div
+                    class="flex-1"
+                  >
+                    <div
+                      class="text-sm font-semibold text-theme-neutral-500"
+                    >
+                      Delegate
+                    </div>
+                    <div
+                      class="mt-2 font-semibold"
+                    >
+                      <div
+                        class="inline-block truncate"
+                      >
+                        <span
+                          class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-xl"
+                          data-testid="address__wallet-name"
+                        >
+                          Delegate 3
+                        </span>
+                        <span
+                          class="text-theme-neutral-400 font-semibold text-xl"
+                          data-testid="address__wallet-address"
+                        >
+                          AUexKj...EVTQWK
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <div
+                      class="sc-AxirZ jaEUuk"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+                >
+                  <div
+                    class="flex-1"
+                  >
+                    <div
+                      class="text-sm font-semibold text-theme-neutral-500"
+                    >
+                      Amount ARK
+                    </div>
+                    <div
+                      class="mt-2 font-semibold"
+                    >
+                      <input
+                        class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+                        data-testid="Input"
+                        name="amount"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="flex items-center py-4 true "
+                >
+                  <div
+                    class="flex-1"
+                  >
+                    <div
+                      class="text-sm font-semibold text-theme-neutral-500"
+                    >
+                      Fee ARK
+                    </div>
+                    <div
+                      class="mt-2 font-semibold"
+                    >
+                      <div
+                        class="flex"
+                      >
+                        <div
+                          class="w-3/5 mr-2"
+                        >
+                          <div
+                            class="sc-AxmLO kuiknc"
+                          >
+                            <input
+                              class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+                              data-testid="Input"
+                              type="text"
+                              value="25"
+                            />
+                            <div
+                              class="absolute bottom-0 w-full px-1"
+                            >
+                              <div
+                                class="flex flex-wrap justify-center"
+                                data-testid="Range"
+                              >
+                                <div
+                                  class="sc-fzozJi cRbOfl"
+                                  data-testid="Range__track"
+                                  style="transform: scale(1); cursor: pointer;"
+                                >
+                                  <div
+                                    class="sc-fzoLsD ckpTMK"
+                                    data-testid="Range__track__filled"
+                                  >
+                                    <div
+                                      aria-valuemax="100"
+                                      aria-valuemin="1"
+                                      aria-valuenow="25"
+                                      class="sc-fzpans dtzHyc"
+                                      data-testid="Range__thumb"
+                                      draggable="false"
+                                      role="slider"
+                                      style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
+                                      tabindex="0"
+                                    />
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="ml-2"
+                        >
+                          <div
+                            class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300 shadow-sm"
+                            data-testid="RadioButtonGroup"
+                            role="radiogroup"
+                          >
+                            <button
+                              aria-checked="true"
+                              class="sc-fzplWN eqkHfx relative px-5 py-3 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+                              data-testid="RadioButton"
+                              role="radio"
+                            >
+                              Last
+                            </button>
+                            <button
+                              aria-checked="false"
+                              class="sc-fzplWN eqkHfx relative px-5 py-3 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+                              data-testid="RadioButton"
+                              role="radio"
+                            >
+                              Min
+                            </button>
+                            <button
+                              aria-checked="false"
+                              class="sc-fzplWN eqkHfx relative px-5 py-3 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+                              data-testid="RadioButton"
+                              role="radio"
+                            >
+                              Average
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+          <div
+            class="flex justify-start mt-6 space-x-2"
+          >
+            <button
+              class="sc-AxjAm MNFIo"
+              color="primary"
+              data-testid="VoteForDelegate__button--back"
+              disabled=""
+              type="button"
+            >
+              Back
+            </button>
+            <button
+              class="sc-AxjAm jgEKJo"
+              color="primary"
+              data-testid="VoteForDelegate__button--continue"
+              type="button"
+            >
+              Continue
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Vote For Delegate should render 1st step 1`] = `
+<DocumentFragment>
+  <section
+    class="space-y-8"
+    data-testid="VoteForDelegate__step--first"
+  >
+    <div>
+      <h1
+        class="mb-0"
+      >
+        Vote for delegate
+      </h1>
+      <p
+        class="text-theme-neutral-dark"
+      >
+        Enter details to send your money
+      </p>
+    </div>
+    <div
+      class="grid grid-flow-row gap-2"
+    >
+      <div
+        class="flex items-center py-4 true "
+      >
+        <div
+          class="flex-1"
+        >
+          <div
+            class="text-sm font-semibold text-theme-neutral-500"
+          >
+            Account
+          </div>
+          <div
+            class="mt-2 font-semibold"
+          >
+            <div
+              class="inline-block truncate"
+            >
+              <span
+                class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-xl"
+                data-testid="address__wallet-name"
+              >
+                ROBank
+              </span>
+              <span
+                class="text-theme-neutral-400 font-semibold text-xl"
+                data-testid="address__wallet-address"
+              >
+                AUexKj...EVTQWK
+              </span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div
+            class="sc-AxirZ jaEUuk"
+          />
+        </div>
+      </div>
+      <div
+        class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+      >
+        <div
+          class="flex-1"
+        >
+          <div
+            class="text-sm font-semibold text-theme-neutral-500"
+          >
+            Delegate
+          </div>
+          <div
+            class="mt-2 font-semibold"
+          >
+            <div
+              class="inline-block truncate"
+            >
+              <span
+                class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-xl"
+                data-testid="address__wallet-name"
+              >
+                Delegate 3
+              </span>
+              <span
+                class="text-theme-neutral-400 font-semibold text-xl"
+                data-testid="address__wallet-address"
+              >
+                AUexKj...EVTQWK
+              </span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div
+            class="sc-AxirZ jaEUuk"
+          />
+        </div>
+      </div>
+      <div
+        class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+      >
+        <div
+          class="flex-1"
+        >
+          <div
+            class="text-sm font-semibold text-theme-neutral-500"
+          >
+            Amount ARK
+          </div>
+          <div
+            class="mt-2 font-semibold"
+          >
+            <input
+              class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+              data-testid="Input"
+              name="amount"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="flex items-center py-4 true "
+      >
+        <div
+          class="flex-1"
+        >
+          <div
+            class="text-sm font-semibold text-theme-neutral-500"
+          >
+            Fee ARK
+          </div>
+          <div
+            class="mt-2 font-semibold"
+          >
+            <div
+              class="flex"
+            >
+              <div
+                class="w-3/5 mr-2"
+              >
+                <div
+                  class="sc-AxmLO kuiknc"
+                >
+                  <input
+                    class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+                    data-testid="Input"
+                    type="text"
+                    value="25"
+                  />
+                  <div
+                    class="absolute bottom-0 w-full px-1"
+                  >
+                    <div
+                      class="flex flex-wrap justify-center"
+                      data-testid="Range"
+                    >
+                      <div
+                        class="sc-fzozJi cRbOfl"
+                        data-testid="Range__track"
+                        style="transform: scale(1); cursor: pointer;"
+                      >
+                        <div
+                          class="sc-fzoLsD ckpTMK"
+                          data-testid="Range__track__filled"
+                        >
+                          <div
+                            aria-valuemax="100"
+                            aria-valuemin="1"
+                            aria-valuenow="25"
+                            class="sc-fzpans dtzHyc"
+                            data-testid="Range__thumb"
+                            draggable="false"
+                            role="slider"
+                            style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
+                            tabindex="0"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="ml-2"
+              >
+                <div
+                  class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300 shadow-sm"
+                  data-testid="RadioButtonGroup"
+                  role="radiogroup"
+                >
+                  <button
+                    aria-checked="true"
+                    class="sc-fzplWN eqkHfx relative px-5 py-3 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+                    data-testid="RadioButton"
+                    role="radio"
+                  >
+                    Last
+                  </button>
+                  <button
+                    aria-checked="false"
+                    class="sc-fzplWN eqkHfx relative px-5 py-3 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+                    data-testid="RadioButton"
+                    role="radio"
+                  >
+                    Min
+                  </button>
+                  <button
+                    aria-checked="false"
+                    class="sc-fzplWN eqkHfx relative px-5 py-3 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+                    data-testid="RadioButton"
+                    role="radio"
+                  >
+                    Average
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</DocumentFragment>
+`;
+
+exports[`Vote For Delegate should render 2nd step 1`] = `
+<DocumentFragment>
+  <section
+    class="space-y-8"
+    data-testid="VoteForDelegate__step--second"
+  >
+    <div>
+      <h1
+        class="mb-0"
+      >
+        Transaction Review
+      </h1>
+      <p
+        class="text-theme-neutral-dark"
+      >
+        Check the informationa again before voting
+      </p>
+    </div>
+    <div
+      class="grid grid-flow-row gap-2"
+    >
+      <div
+        class="flex items-center py-4 true "
+      >
+        <div
+          class="flex-1"
+        >
+          <div
+            class="text-sm font-semibold text-theme-neutral-500"
+          >
+            Network
+          </div>
+          <div
+            class="mt-2 font-semibold"
+          >
+            <div
+              class="inline-block truncate"
+            >
+              <span
+                class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-xl"
+                data-testid="address__wallet-name"
+              >
+                ROBank
+              </span>
+              <span
+                class="text-theme-neutral-400 font-semibold text-xl"
+                data-testid="address__wallet-address"
+              >
+                AUexKj...EVTQWK
+              </span>
+            </div>
+          </div>
+        </div>
+        <div
+          class="ml-1 text-theme-danger-500"
+        >
+          <div
+            class="sc-AxirZ cPeJHU bg-theme-background border-theme-danger-200"
+          >
+            <div
+              class="sc-AxhCb VoPpj"
+              height="20"
+              width="20"
+            >
+              <svg>
+                ark.svg
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+      >
+        <div
+          class="flex-1"
+        >
+          <div
+            class="text-sm font-semibold text-theme-neutral-500"
+          >
+            Account
+          </div>
+          <div
+            class="mt-2 font-semibold"
+          >
+            <div
+              class="inline-block truncate"
+            >
+              <span
+                class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-xl"
+                data-testid="address__wallet-name"
+              >
+                ROBank
+              </span>
+              <span
+                class="text-theme-neutral-400 font-semibold text-xl"
+                data-testid="address__wallet-address"
+              >
+                AUexKj...EVTQWK
+              </span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div
+            class="sc-AxirZ jaEUuk"
+          />
+        </div>
+      </div>
+      <div
+        class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+      >
+        <div
+          class="flex-1"
+        >
+          <div
+            class="text-sm font-semibold text-theme-neutral-500"
+          >
+            Delegate
+          </div>
+          <div
+            class="mt-2 font-semibold"
+          >
+            <div
+              class="inline-block truncate"
+            >
+              <span
+                class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-xl"
+                data-testid="address__wallet-name"
+              >
+                ROBank
+              </span>
+              <span
+                class="text-theme-neutral-400 font-semibold text-xl"
+                data-testid="address__wallet-address"
+              >
+                AUexKj...EVTQWK
+              </span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div
+            class="sc-AxirZ jaEUuk"
+          />
+        </div>
+      </div>
+      <div
+        class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+      >
+        <div
+          class="flex-1"
+        >
+          <div
+            class="text-sm font-semibold text-theme-neutral-500"
+          >
+            Amount
+          </div>
+          <div
+            class="mt-2 font-semibold"
+          >
+            1.00 ARK 
+            <span
+              class="text-theme-neutral-400"
+            >
+              25.00 USD
+            </span>
+          </div>
+        </div>
+        <div
+          class="ml-1 text-theme-danger"
+        >
+          <div
+            class="sc-AxirZ cPeJHU bg-theme-background border-theme-danger-200"
+          >
+            <div
+              class="sc-AxhCb liaKlj"
+              height="50"
+              width="50"
+            >
+              <svg>
+                sent.svg
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+      >
+        <div
+          class="flex-1"
+        >
+          <div
+            class="text-sm font-semibold text-theme-neutral-500"
+          >
+            Transaction fee
+          </div>
+          <div
+            class="mt-2 font-semibold"
+          >
+            0.09660435 ARK
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</DocumentFragment>
+`;
+
+exports[`Vote For Delegate should render 3rd step 1`] = `
+<DocumentFragment>
+  <section
+    class="space-y-8"
+    data-testid="VoteForDelegate__step--third"
+  >
+    <div>
+      <h1
+        class="mb-0"
+      >
+        Passphrase
+      </h1>
+      <p
+        class="text-theme-neutral-dark"
+      >
+        Confirm your password to continue
+      </p>
+      <div
+        class="grid grid-flow-row gap-2"
+      >
+        <div
+          class="flex items-center py-4 true "
+        >
+          <div
+            class="flex-1"
+          >
+            <div
+              class="text-sm font-semibold text-theme-neutral-500"
+            >
+              Your password
+            </div>
+            <div
+              class="mt-2 font-semibold"
+            >
+              <div
+                class="sc-AxmLO kuiknc max-w-20"
+              >
+                <input
+                  class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
+                  data-testid="Input"
+                  name="passphras"
+                  type="password"
+                />
+                <div
+                  class="sc-AxgMl sc-Axmtr cPxyjO mr-4"
+                >
+                  <button
+                    class="flex items-center justify-center w-full h-full text-2xl focus:outline-none bg-theme-background text-theme-primary-400"
+                    data-testid="InputPassword__toggle"
+                    type="button"
+                  >
+                    <div
+                      class="sc-AxhCb fxrKLH"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        eye.svg
+                      </svg>
+                    </div>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</DocumentFragment>
+`;
+
+exports[`Vote For Delegate should render 4th step 1`] = `
+<DocumentFragment>
+  <section
+    class="space-y-8"
+    data-testid="VoteForDelegate__step--fourth"
+  >
+    <div>
+      <h1
+        class="mb-0"
+      >
+        Transaction Successfull
+      </h1>
+      <div
+        class="grid grid-flow-row gap-2"
+      >
+        <div
+          class="w-full mt-10"
+        >
+          <div
+            class="sc-AxhCb iOlwQd"
+            height="200"
+            width="100%"
+          >
+            <svg>
+              transaction_successful.svg
+            </svg>
+          </div>
+        </div>
+        <p
+          class="text-theme-neutral-dark"
+        >
+          Your transaction was successfully sent. Please monitor the blockchain to ensure your transactions is confirmed and processed, The following is relevant information for your transaction.
+        </p>
+        <div
+          class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+        >
+          <div
+            class="flex-1"
+          >
+            <div
+              class="text-sm font-semibold text-theme-neutral-500"
+            >
+              ID
+            </div>
+            <div
+              class="mt-2 font-semibold"
+            >
+              <div
+                class="inline-block truncate"
+              >
+                <span
+                  class="text-theme-neutral-400 font-semibold text-base"
+                  data-testid="address__wallet-address"
+                >
+                  AUexKjGtgsSpVz...MM6vJ6znEVTQWK
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+        >
+          <div
+            class="flex-1"
+          >
+            <div
+              class="text-sm font-semibold text-theme-neutral-500"
+            >
+              Block ID
+            </div>
+            <div
+              class="mt-2 font-semibold"
+            >
+              <div
+                class="inline-block truncate"
+              >
+                <span
+                  class="text-theme-neutral-400 font-semibold text-base"
+                  data-testid="address__wallet-address"
+                >
+                  AUexKjGtgsSpVz...MM6vJ6znEVTQWK
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="flex items-center py-4 true "
+        >
+          <div
+            class="flex-1"
+          >
+            <div
+              class="text-sm font-semibold text-theme-neutral-500"
+            >
+              Network
+            </div>
+            <div
+              class="mt-2 font-semibold"
+            >
+              <div
+                class="inline-block truncate"
+              >
+                <span
+                  class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-xl"
+                  data-testid="address__wallet-name"
+                >
+                  ROBank
+                </span>
+                <span
+                  class="text-theme-neutral-400 font-semibold text-xl"
+                  data-testid="address__wallet-address"
+                >
+                  AUexKj...EVTQWK
+                </span>
+              </div>
+            </div>
+          </div>
+          <div
+            class="ml-1 text-theme-danger-500"
+          >
+            <div
+              class="sc-AxirZ cPeJHU bg-theme-background border-theme-danger-200"
+            >
+              <div
+                class="sc-AxhCb VoPpj"
+                height="20"
+                width="20"
+              >
+                <svg>
+                  ark.svg
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+        >
+          <div
+            class="flex-1"
+          >
+            <div
+              class="text-sm font-semibold text-theme-neutral-500"
+            >
+              Account
+            </div>
+            <div
+              class="mt-2 font-semibold"
+            >
+              <div
+                class="inline-block truncate"
+              >
+                <span
+                  class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-xl"
+                  data-testid="address__wallet-name"
+                >
+                  ROBank
+                </span>
+                <span
+                  class="text-theme-neutral-400 font-semibold text-xl"
+                  data-testid="address__wallet-address"
+                >
+                  AUexKj...EVTQWK
+                </span>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div
+              class="sc-AxirZ jaEUuk"
+            />
+          </div>
+        </div>
+        <div
+          class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+        >
+          <div
+            class="flex-1"
+          >
+            <div
+              class="text-sm font-semibold text-theme-neutral-500"
+            >
+              Delegate
+            </div>
+            <div
+              class="mt-2 font-semibold"
+            >
+              <div
+                class="inline-block truncate"
+              >
+                <span
+                  class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-xl"
+                  data-testid="address__wallet-name"
+                >
+                  Delegate 3
+                </span>
+                <span
+                  class="text-theme-neutral-400 font-semibold text-xl"
+                  data-testid="address__wallet-address"
+                >
+                  AUexKj...EVTQWK
+                </span>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div
+              class="sc-AxirZ jaEUuk"
+            />
+          </div>
+        </div>
+        <div
+          class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+        >
+          <div
+            class="flex-1"
+          >
+            <div
+              class="text-sm font-semibold text-theme-neutral-500"
+            >
+              Amount
+            </div>
+            <div
+              class="mt-2 font-semibold"
+            >
+              1.00 ARK
+            </div>
+          </div>
+          <div
+            class="ml-1 text-theme-danger"
+          >
+            <div
+              class="sc-AxirZ cPeJHU bg-theme-background border-theme-danger-200"
+            >
+              <div
+                class="sc-AxhCb liaKlj"
+                height="50"
+                width="50"
+              >
+                <svg>
+                  sent.svg
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+        >
+          <div
+            class="flex-1"
+          >
+            <div
+              class="text-sm font-semibold text-theme-neutral-500"
+            >
+              Transaction type
+            </div>
+            <div
+              class="mt-2 font-semibold"
+            >
+              Vote
+            </div>
+          </div>
+          <div
+            class="ml-1 text-theme-danger"
+          >
+            <div
+              class="sc-AxirZ cPeJHU bg-theme-background border-black"
+            >
+              <div
+                class="sc-AxhCb fxrKLH"
+                height="1em"
+                width="1em"
+              >
+                <svg>
+                  voted.svg
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</DocumentFragment>
+`;
