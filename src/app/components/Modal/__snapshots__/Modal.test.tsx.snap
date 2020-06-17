@@ -2,6 +2,138 @@
 
 exports[`Modal should not render if not open 1`] = `<DocumentFragment />`;
 
+exports[`Modal should render a 3x large one 1`] = `
+<div>
+  <div
+    class="fixed inset-0 z-10 bg-black opacity-50"
+    data-testid="modal__overlay"
+  />
+  <div
+    class="sc-AxiKw jRkhhQ fixed left-0 right-0 z-10 flex flex-col px-16 pt-6 pb-8 mx-auto mt-24 rounded-xl bg-theme-background"
+    data-testid="modal__inner"
+  >
+    <div
+      class="absolute top-0 right-0 mt-4 mr-4"
+    >
+      <button
+        class="sc-AxjAm eYrebl"
+        color="neutral"
+        data-testid="modal__close-btn"
+        type="button"
+      >
+        <div
+          class="sc-AxirZ fttODj"
+          height="10"
+          width="10"
+        >
+          <svg>
+            cross-slim.svg
+          </svg>
+        </div>
+      </button>
+    </div>
+    <div
+      class="py-4"
+    >
+      <h2>
+        ark
+      </h2>
+      <div
+        class="flex-1"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Modal should render a large one 1`] = `
+<div>
+  <div
+    class="fixed inset-0 z-10 bg-black opacity-50"
+    data-testid="modal__overlay"
+  />
+  <div
+    class="sc-AxiKw jnoDfx fixed left-0 right-0 z-10 flex flex-col px-16 pt-6 pb-8 mx-auto mt-24 rounded-xl bg-theme-background"
+    data-testid="modal__inner"
+  >
+    <div
+      class="absolute top-0 right-0 mt-4 mr-4"
+    >
+      <button
+        class="sc-AxjAm eYrebl"
+        color="neutral"
+        data-testid="modal__close-btn"
+        type="button"
+      >
+        <div
+          class="sc-AxirZ fttODj"
+          height="10"
+          width="10"
+        >
+          <svg>
+            cross-slim.svg
+          </svg>
+        </div>
+      </button>
+    </div>
+    <div
+      class="py-4"
+    >
+      <h2>
+        ark
+      </h2>
+      <div
+        class="flex-1"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Modal should render a medium one 1`] = `
+<div>
+  <div
+    class="fixed inset-0 z-10 bg-black opacity-50"
+    data-testid="modal__overlay"
+  />
+  <div
+    class="sc-AxiKw fWjEmW fixed left-0 right-0 z-10 flex flex-col px-16 pt-6 pb-8 mx-auto mt-24 rounded-xl bg-theme-background"
+    data-testid="modal__inner"
+  >
+    <div
+      class="absolute top-0 right-0 mt-4 mr-4"
+    >
+      <button
+        class="sc-AxjAm eYrebl"
+        color="neutral"
+        data-testid="modal__close-btn"
+        type="button"
+      >
+        <div
+          class="sc-AxirZ fttODj"
+          height="10"
+          width="10"
+        >
+          <svg>
+            cross-slim.svg
+          </svg>
+        </div>
+      </button>
+    </div>
+    <div
+      class="py-4"
+    >
+      <h2>
+        ark
+      </h2>
+      <div
+        class="flex-1"
+      />
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Modal should render a modal with content 1`] = `
 <DocumentFragment>
   <div
@@ -9,7 +141,7 @@ exports[`Modal should render a modal with content 1`] = `
     data-testid="modal__overlay"
   />
   <div
-    class="fixed left-0 right-0 z-10 flex flex-col max-w-2xl px-16 pt-6 pb-8 mx-auto mt-24 rounded-xl bg-theme-background"
+    class="sc-AxiKw cTRlJa fixed left-0 right-0 z-10 flex flex-col px-16 pt-6 pb-8 mx-auto mt-24 rounded-xl bg-theme-background"
     data-testid="modal__inner"
   >
     <div
@@ -55,7 +187,7 @@ exports[`Modal should render a modal with description 1`] = `
     data-testid="modal__overlay"
   />
   <div
-    class="fixed left-0 right-0 z-10 flex flex-col max-w-2xl px-16 pt-6 pb-8 mx-auto mt-24 rounded-xl bg-theme-background"
+    class="sc-AxiKw cTRlJa fixed left-0 right-0 z-10 flex flex-col px-16 pt-6 pb-8 mx-auto mt-24 rounded-xl bg-theme-background"
     data-testid="modal__inner"
   >
     <div
@@ -105,7 +237,7 @@ exports[`Modal should render a modal with overlay 1`] = `
     data-testid="modal__overlay"
   />
   <div
-    class="fixed left-0 right-0 z-10 flex flex-col max-w-2xl px-16 pt-6 pb-8 mx-auto mt-24 rounded-xl bg-theme-background"
+    class="sc-AxiKw cTRlJa fixed left-0 right-0 z-10 flex flex-col px-16 pt-6 pb-8 mx-auto mt-24 rounded-xl bg-theme-background"
     data-testid="modal__inner"
   >
     <div
@@ -142,4 +274,92 @@ exports[`Modal should render a modal with overlay 1`] = `
     </div>
   </div>
 </DocumentFragment>
+`;
+
+exports[`Modal should render a small one 1`] = `
+<div>
+  <div
+    class="fixed inset-0 z-10 bg-black opacity-50"
+    data-testid="modal__overlay"
+  />
+  <div
+    class="sc-AxiKw wLhVq fixed left-0 right-0 z-10 flex flex-col px-16 pt-6 pb-8 mx-auto mt-24 rounded-xl bg-theme-background"
+    data-testid="modal__inner"
+  >
+    <div
+      class="absolute top-0 right-0 mt-4 mr-4"
+    >
+      <button
+        class="sc-AxjAm eYrebl"
+        color="neutral"
+        data-testid="modal__close-btn"
+        type="button"
+      >
+        <div
+          class="sc-AxirZ fttODj"
+          height="10"
+          width="10"
+        >
+          <svg>
+            cross-slim.svg
+          </svg>
+        </div>
+      </button>
+    </div>
+    <div
+      class="py-4"
+    >
+      <h2>
+        ark
+      </h2>
+      <div
+        class="flex-1"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Modal should render a xlarge one 1`] = `
+<div>
+  <div
+    class="fixed inset-0 z-10 bg-black opacity-50"
+    data-testid="modal__overlay"
+  />
+  <div
+    class="sc-AxiKw Zauxd fixed left-0 right-0 z-10 flex flex-col px-16 pt-6 pb-8 mx-auto mt-24 rounded-xl bg-theme-background"
+    data-testid="modal__inner"
+  >
+    <div
+      class="absolute top-0 right-0 mt-4 mr-4"
+    >
+      <button
+        class="sc-AxjAm eYrebl"
+        color="neutral"
+        data-testid="modal__close-btn"
+        type="button"
+      >
+        <div
+          class="sc-AxirZ fttODj"
+          height="10"
+          width="10"
+        >
+          <svg>
+            cross-slim.svg
+          </svg>
+        </div>
+      </button>
+    </div>
+    <div
+      class="py-4"
+    >
+      <h2>
+        ark
+      </h2>
+      <div
+        class="flex-1"
+      />
+    </div>
+  </div>
+</div>
 `;

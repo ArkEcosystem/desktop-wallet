@@ -18,7 +18,7 @@ export const CircularProgressBar = ({
 	value,
 	fontSize,
 }: CircularProgressBarProps) => {
-	// Enclose cicle in a circumscribing square
+	// Enclose circle in a circumscribing square
 	const viewBox = `0 0 ${size} ${size}`;
 	// SVG centers the stroke width on the radius, subtract out so circle fits in square
 	const radius = (size - strokeWidth) / 2;

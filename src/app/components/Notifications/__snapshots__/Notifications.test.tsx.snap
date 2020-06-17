@@ -4,10 +4,10 @@ exports[`Notifications should render 1`] = `
 <div>
   <div>
     <div
-      class="text-sm font-bold text-theme-neutral-400"
+      class="text-sm font-bold text-theme-neutral-500"
     />
     <div
-      class="sc-AxirZ TRNdQ"
+      class="sc-AxirZ jAePJ"
       role="table"
     >
       <table
@@ -32,7 +32,7 @@ exports[`Notifications should render 1`] = `
                   -
                 </div>
                 <div
-                  class="mt-1"
+                  class="mt-1 text-theme-color-neutral-500"
                   data-testid="table__Sort"
                 />
               </div>
@@ -45,10 +45,10 @@ exports[`Notifications should render 1`] = `
       </table>
     </div>
     <div
-      class="-mb-2 text-sm font-bold mt-9 text-theme-neutral-400"
+      class="-mb-2 text-sm font-bold mt-9 text-theme-neutral-500"
     />
     <div
-      class="sc-AxirZ TRNdQ"
+      class="sc-AxirZ jAePJ"
       role="table"
     >
       <table
@@ -73,7 +73,7 @@ exports[`Notifications should render 1`] = `
                   -
                 </div>
                 <div
-                  class="mt-1"
+                  class="mt-1 text-theme-color-neutral-500"
                   data-testid="table__Sort"
                 />
               </div>
@@ -93,12 +93,12 @@ exports[`Notifications should render plugins 1`] = `
 <div>
   <div>
     <div
-      class="text-sm font-bold text-theme-neutral-400"
+      class="text-sm font-bold text-theme-neutral-500"
     >
       Plugins
     </div>
     <div
-      class="sc-AxirZ TRNdQ"
+      class="sc-AxirZ jAePJ"
       role="table"
     >
       <table
@@ -123,7 +123,7 @@ exports[`Notifications should render plugins 1`] = `
                   -
                 </div>
                 <div
-                  class="mt-1"
+                  class="mt-1 text-theme-color-neutral-500"
                   data-testid="table__Sort"
                 />
               </div>
@@ -135,26 +135,25 @@ exports[`Notifications should render plugins 1`] = `
         >
           <tr>
             <td
-              class="w-16"
+              class="w-8"
             >
               <div
                 class="flex p-2 mr-4 rounded-lg bg-logo"
               >
                 <img
                   alt="ARK Explorer"
-                  class="h-6 md:h-8 lg:h-10"
                   src="/static/media/ark-logo.bafd72bb.png"
                 />
               </div>
             </td>
             <td>
               <span
-                class="text-sm font-bold text-theme-neutral-700"
+                class="font-bold text-md text-theme-neutral-600"
               >
                 ARK Explorer
               </span>
               <span
-                class="text-sm text-theme-neutral-600"
+                class="text-md text-theme-neutral-600"
               >
                  
                 - update v2.5.6
@@ -162,7 +161,7 @@ exports[`Notifications should render plugins 1`] = `
             </td>
             <td>
               <div
-                class="text-sm font-bold text-right cursor-pointer text-theme-primary-600"
+                class="font-bold text-right cursor-pointer text-md text-theme-primary-500"
                 data-testid="notifications__plugin-action"
               >
                 Update now
@@ -173,10 +172,10 @@ exports[`Notifications should render plugins 1`] = `
       </table>
     </div>
     <div
-      class="-mb-2 text-sm font-bold mt-9 text-theme-neutral-400"
+      class="-mb-2 text-sm font-bold mt-9 text-theme-neutral-500"
     />
     <div
-      class="sc-AxirZ TRNdQ"
+      class="sc-AxirZ jAePJ"
       role="table"
     >
       <table
@@ -201,7 +200,7 @@ exports[`Notifications should render plugins 1`] = `
                   -
                 </div>
                 <div
-                  class="mt-1"
+                  class="mt-1 text-theme-color-neutral-500"
                   data-testid="table__Sort"
                 />
               </div>
@@ -221,12 +220,12 @@ exports[`Notifications should render transactions 1`] = `
 <div>
   <div>
     <div
-      class="text-sm font-bold text-theme-neutral-400"
+      class="text-sm font-bold text-theme-neutral-500"
     >
       Transactions
     </div>
     <div
-      class="sc-AxirZ TRNdQ"
+      class="sc-AxirZ jAePJ"
       role="table"
     >
       <table
@@ -251,7 +250,7 @@ exports[`Notifications should render transactions 1`] = `
                   -
                 </div>
                 <div
-                  class="mt-1"
+                  class="mt-1 text-theme-color-neutral-500"
                   data-testid="table__Sort"
                 />
               </div>
@@ -264,10 +263,10 @@ exports[`Notifications should render transactions 1`] = `
       </table>
     </div>
     <div
-      class="-mb-2 text-sm font-bold mt-9 text-theme-neutral-400"
+      class="-mb-2 text-sm font-bold mt-9 text-theme-neutral-500"
     />
     <div
-      class="sc-AxirZ TRNdQ"
+      class="sc-AxirZ jAePJ"
       role="table"
     >
       <table
@@ -292,7 +291,7 @@ exports[`Notifications should render transactions 1`] = `
                   -
                 </div>
                 <div
-                  class="mt-1"
+                  class="mt-1 text-theme-color-neutral-500"
                   data-testid="table__Sort"
                 />
               </div>
@@ -310,7 +309,7 @@ exports[`Notifications should render transactions 1`] = `
               class="w-20 py-4 mt-1"
             >
               <div
-                class="sc-AxiKw fbWiww border-theme-success-300 text-theme-success-400 -mr-1"
+                class="sc-AxiKw flJkQE border-theme-success-300 text-theme-success-400 -mr-1"
               >
                 <div
                   class="sc-AxjAm hoUaGk"
@@ -323,7 +322,7 @@ exports[`Notifications should render transactions 1`] = `
                 </div>
               </div>
               <div
-                class="sc-AxiKw bUcoSJ"
+                class="sc-AxiKw hqWIYZ"
               />
             </td>
             <td

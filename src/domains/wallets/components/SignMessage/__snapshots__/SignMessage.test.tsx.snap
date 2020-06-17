@@ -1,5 +1,344 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SignMessage should render as signed 1`] = `<DocumentFragment />`;
+exports[`SignMessage should render as signed 1`] = `
+<DocumentFragment>
+  <div
+    class="fixed inset-0 z-10 bg-black opacity-50"
+    data-testid="modal__overlay"
+  />
+  <div
+    class="sc-fzplWN jxRzUr fixed left-0 right-0 z-10 flex flex-col px-16 pt-6 pb-8 mx-auto mt-24 rounded-xl bg-theme-background"
+    data-testid="modal__inner"
+  >
+    <div
+      class="absolute top-0 right-0 mt-4 mr-4"
+    >
+      <button
+        class="sc-AxjAm eYrebl"
+        color="neutral"
+        data-testid="modal__close-btn"
+        type="button"
+      >
+        <div
+          class="sc-AxhCb idmnCf"
+          height="10"
+          width="10"
+        >
+          <svg>
+            cross-slim.svg
+          </svg>
+        </div>
+      </button>
+    </div>
+    <div
+      class="py-4"
+    >
+      <h2>
+        Message Successfully Signed
+      </h2>
+      <div
+        class="flex-1"
+      >
+        <div
+          class="mt-5"
+        >
+          <div>
+            <div
+              class="flex items-center py-4 true "
+            >
+              <div
+                class="flex-1"
+              >
+                <div
+                  class="text-sm font-semibold text-theme-neutral-500"
+                >
+                  Signatory
+                </div>
+                <div
+                  class="mt-2 font-semibold"
+                >
+                  <div
+                    class="inline-block truncate"
+                  >
+                    <span
+                      class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-xl"
+                      data-testid="address__wallet-name"
+                    >
+                      ROBank
+                    </span>
+                    <span
+                      class="text-theme-neutral-400 font-semibold text-xl"
+                      data-testid="address__wallet-address"
+                    >
+                      AUexKj...EVTQWK
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div
+                  class="sc-AxirZ dUEVPd -mr-2 border-black"
+                >
+                  <div
+                    class="sc-AxhCb gZVKaf"
+                    height="25"
+                    width="25"
+                  >
+                    <svg>
+                      delegate.svg
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  class="sc-AxirZ jaEUuk"
+                />
+              </div>
+            </div>
+            <div
+              class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+            >
+              <div
+                class="flex-1"
+              >
+                <div
+                  class="text-sm font-semibold text-theme-neutral-500"
+                >
+                  Message
+                </div>
+                <div
+                  class="mt-2 font-semibold"
+                >
+                  Oleg Happy in the Oleg Bank
+                </div>
+              </div>
+            </div>
+            <div
+              class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+            >
+              <div
+                class="flex-1"
+              >
+                <div
+                  class="text-sm font-semibold text-theme-neutral-500"
+                >
+                  Signature
+                </div>
+                <div
+                  class="mt-2 font-semibold"
+                >
+                  <textarea
+                    class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary mt-2"
+                    data-testid="TextArea"
+                    name="signature"
+                    style="height: 4px;"
+                    wrap="hard"
+                  >
+                    {"publicKey":"03basda32b03s2df1as0csd32f1asd0asd21sv0asd5sa3d1as03d2as","signature":"304444354032424a3sd210a3s2d4as3d54as0321das03d777cas32f1as3d21as03v5ds4sd3asc045as35d4a03x24z3c5z4sd3as054cas65xv4cxz3v24zs30x24c3xz2v4zs03d54czdv54z3x5c40zx6v54z3df2c4zd0","message":"Xp879878687z6xc876Z*6cz87c68zx76c8x7zc68zx7cvsa7dc5as8d765as87d5sa8d7as65dsadasdsad"}
+                  </textarea>
+                </div>
+              </div>
+            </div>
+            <div
+              class="flex items-center pb-5 mt-3"
+            >
+              <button
+                class="sc-AxjAm MNFIo"
+                color="primary"
+                type="button"
+              >
+                <div
+                  class="flex items-center justify-between px-1"
+                >
+                  <div
+                    class="sc-AxhCb fxrKLH"
+                    height="1em"
+                    width="1em"
+                  >
+                    <svg>
+                      copy.svg
+                    </svg>
+                  </div>
+                  <span
+                    class="ml-2"
+                  >
+                    Copy Signature
+                  </span>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
 
-exports[`SignMessage should render the SignMessage 1`] = `<DocumentFragment />`;
+exports[`SignMessage should render the SignMessage 1`] = `
+<DocumentFragment>
+  <div
+    class="fixed inset-0 z-10 bg-black opacity-50"
+    data-testid="modal__overlay"
+  />
+  <div
+    class="sc-fzplWN jxRzUr fixed left-0 right-0 z-10 flex flex-col px-16 pt-6 pb-8 mx-auto mt-24 rounded-xl bg-theme-background"
+    data-testid="modal__inner"
+  >
+    <div
+      class="absolute top-0 right-0 mt-4 mr-4"
+    >
+      <button
+        class="sc-AxjAm eYrebl"
+        color="neutral"
+        data-testid="modal__close-btn"
+        type="button"
+      >
+        <div
+          class="sc-AxhCb idmnCf"
+          height="10"
+          width="10"
+        >
+          <svg>
+            cross-slim.svg
+          </svg>
+        </div>
+      </button>
+    </div>
+    <div
+      class="py-4"
+    >
+      <h2>
+        Sign Message
+      </h2>
+      <div
+        class="flex-1"
+      >
+        <div
+          class="text-theme-neutral-700"
+        >
+          Insert a message below to sign using your private key
+        </div>
+        <div
+          class="mt-5"
+        >
+          <form
+            class="space-y-6"
+            data-testid="Form"
+            id="sign-message__form"
+          >
+            <fieldset
+              class="sc-AxiKw iQzisX relative"
+            >
+              <label
+                class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
+                data-testid="FormLabel"
+                for="signatory-address"
+                label="Signatory"
+              >
+                Signatory
+              </label>
+              <input
+                class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+                data-testid="Input"
+                disabled=""
+                name="signatory-address"
+                type="text"
+              />
+              <div
+                class="absolute top-0 flex items-center mt-8 ml-4"
+              >
+                <div
+                  class="sc-AxirZ kSZulD"
+                />
+                <span
+                  class="ml-3 font-semibold "
+                >
+                  AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK
+                </span>
+              </div>
+            </fieldset>
+            <fieldset
+              class="sc-AxiKw iQzisX flex flex-col space-y-2"
+            >
+              <label
+                class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
+                data-testid="FormLabel"
+                for="message"
+                label="Message"
+              >
+                Message
+              </label>
+              <input
+                class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+                data-testid="Input"
+                name="message"
+                type="text"
+              />
+            </fieldset>
+            <fieldset
+              class="sc-AxiKw iQzisX flex flex-col space-y-2"
+            >
+              <label
+                class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
+                data-testid="FormLabel"
+                for="passphrase"
+                label="Your Passphrase"
+              >
+                Your Passphrase
+              </label>
+              <div
+                class="sc-AxmLO kuiknc max-w-20"
+              >
+                <input
+                  class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
+                  data-testid="Input"
+                  name="passphrase"
+                  type="password"
+                />
+                <div
+                  class="sc-AxgMl sc-Axmtr cPxyjO mr-4"
+                >
+                  <button
+                    class="flex items-center justify-center w-full h-full text-2xl focus:outline-none bg-theme-background text-theme-primary-400"
+                    data-testid="InputPassword__toggle"
+                    type="button"
+                  >
+                    <div
+                      class="sc-AxhCb fxrKLH"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        eye.svg
+                      </svg>
+                    </div>
+                  </button>
+                </div>
+              </div>
+            </fieldset>
+            <div
+              class="flex items-center"
+            >
+              <button
+                class="sc-AxjAm MNFIo"
+                color="primary"
+                type="button"
+              >
+                Cancel
+              </button>
+              <button
+                class="sc-AxjAm jgEKJo ml-5"
+                color="primary"
+                data-testid="sign-message__sign-button"
+                type="button"
+              >
+                Sign
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

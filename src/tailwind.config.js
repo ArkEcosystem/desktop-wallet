@@ -172,6 +172,9 @@ module.exports = {
 					"0 10px 15px -3px var(--theme-color-neutral-200), 0 4px 6px -2px 0 2px 4px -1px var(--theme-color-neutral-100)",
 				outline: "0 0 0 3px rgba(var(--theme-color-primary-rgb), 0.4)",
 			},
+			listStyleType: {
+				circle: "circle",
+			},
 		},
 	},
 	variants: {

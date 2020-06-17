@@ -25,7 +25,17 @@ export const translations: { [key: string]: any } = {
 	},
 
 	MODAL_MULTISIGNATURE_DETAIL: {
-		TITLE: "Multisignature",
+		STEP_1: {
+			TITLE: "Multisignature",
+		},
+		STEP_2: {
+			TITLE: "Multisignature Passphrase",
+			DESCRIPTION: "Enter your passphrase in order to sign the Multisignature transaction.",
+		},
+		STEP_3: {
+			TITLE: "Transaction Successful",
+			DESCRIPTION: "Your signature was successfully confirmed and sent.",
+		},
 		WAITING_FOR_SIGNATURES: "Waiting for Signatures",
 	},
 

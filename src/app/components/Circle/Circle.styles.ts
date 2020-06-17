@@ -5,7 +5,7 @@ const defaultStyle = (noShadow: boolean) => [
 	!noShadow &&
 		css`
 			& {
-				box-shadow: 0px 0px 0px 6px white;
+				box-shadow: 0 0 0 6px white;
 			}
 		`,
 ];
@@ -15,7 +15,7 @@ const getSize = (size: string): any => {
 		case "small":
 			return tw`w-8 h-8 px-2 py-1 text-sm`;
 		case "large":
-			return tw`w-11 h-11 px-2 py-1 text-sm`;
+			return tw`px-2 py-1 text-sm w-11 h-11`;
 		default:
 			return tw`w-10 h-10 px-4 py-2 text-base`;
 	}

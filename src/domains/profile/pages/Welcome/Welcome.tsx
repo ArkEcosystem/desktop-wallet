@@ -1,26 +1,30 @@
+// Assets
 import { images } from "app/assets/images";
 // UI Elements
 import { Button } from "app/components/Button";
 import { Divider } from "app/components/Divider";
 import { Icon } from "app/components/Icon";
 import { NavBar } from "app/components/NavBar";
+// Contexts
+import { EnvironmentContext } from "app/contexts";
 import { ProfileCard } from "domains/profile/components/ProfileCard";
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-
-type WelcomeProps = {
-	profiles: Array<any>;
-};
 
 const WelcomeBanner = images.profile.pages.welcome.WelcomeBanner;
 
-const Welcome = ({ profiles }: WelcomeProps) => {
+const Welcome = () => {
 	const profileCardActions = [
 		{ label: "Setting", value: "setting" },
 		{ label: "Delete", value: "delete" },
 	];
-
+	const { env }: any = useContext(EnvironmentContext);
 	const { t } = useTranslation();
+	const [profiles, setProfiles] = useState([]);
+
+	useEffect(() => {
+		setProfiles(env.profiles().all());
+	}, [env]);
 
 	return (
 		<div className="w-full h-full">
@@ -41,8 +45,14 @@ const Welcome = ({ profiles }: WelcomeProps) => {
 							</p>
 
 							<div className="mt-6 mb-8">
-								{profiles.map((profile) => (
-									<ProfileCard {...profile} key={profile.id} actions={profileCardActions} />
+								{profiles.map((profile: any) => (
+									<ProfileCard
+										name={profile.name()}
+										avatar={profile.avatar()}
+										balance="0"
+										key={profile.id()}
+										actions={profileCardActions}
+									/>
 								))}
 							</div>
 
@@ -69,10 +79,6 @@ const Welcome = ({ profiles }: WelcomeProps) => {
 			</div>
 		</div>
 	);
-};
-
-Welcome.defaultProps = {
-	profiles: [],
 };
 
 export { Welcome };
