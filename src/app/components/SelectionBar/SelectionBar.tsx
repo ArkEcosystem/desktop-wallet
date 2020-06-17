@@ -5,10 +5,10 @@ type GroupProps = {
 	children?: React.ReactNode;
 };
 
-export const RadioButtonGroup = ({ children }: GroupProps) => {
+export const SelectionBarGroup = ({ children }: GroupProps) => {
 	return (
 		<div
-			data-testid="RadioButtonGroup"
+			data-testid="SelectionBarGroup"
 			role="radiogroup"
 			className="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300 shadow-sm"
 		>
@@ -17,7 +17,7 @@ export const RadioButtonGroup = ({ children }: GroupProps) => {
 	);
 };
 
-const RadioButtonStyled = styled.button`
+const SelectionBarStyled = styled.button`
 	&[aria-checked="true"] {
 		${tw`text-theme-success border-theme-success bg-theme-success-contrast font-semibold`}
 	}
@@ -35,18 +35,18 @@ type ButtonProps = {
 	setCheckedValue: (value: string | number) => void;
 };
 
-export const RadioButton = ({ value, isValueChecked, setCheckedValue, children }: ButtonProps) => {
+export const SelectionBar = ({ value, isValueChecked, setCheckedValue, children }: ButtonProps) => {
 	const isChecked = isValueChecked(value);
 
 	return (
-		<RadioButtonStyled
-			data-testid="RadioButton"
+		<SelectionBarStyled
+			data-testid="SelectionBar"
 			role="radio"
 			aria-checked={isChecked}
 			onClick={() => setCheckedValue(value)}
 			className="relative px-5 py-3 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
 		>
 			{children}
-		</RadioButtonStyled>
+		</SelectionBarStyled>
 	);
 };

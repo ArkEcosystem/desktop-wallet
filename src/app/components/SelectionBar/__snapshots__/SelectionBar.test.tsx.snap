@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`RadioButton should render 1`] = `
+exports[`SelectionBar should render 1`] = `
 <DocumentFragment>
   <button
     aria-checked="true"
     class="sc-AxjAm gXajyD relative px-5 py-3 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
-    data-testid="RadioButton"
+    data-testid="SelectionBar"
     role="radio"
   >
     Test 1
@@ -13,7 +13,7 @@ exports[`RadioButton should render 1`] = `
   <button
     aria-checked="false"
     class="sc-AxjAm gXajyD relative px-5 py-3 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
-    data-testid="RadioButton"
+    data-testid="SelectionBar"
     role="radio"
   >
     Test 2
@@ -22,11 +22,11 @@ exports[`RadioButton should render 1`] = `
 </DocumentFragment>
 `;
 
-exports[`RadioButtonGroup should render 1`] = `
+exports[`SelectionBarGroup should render 1`] = `
 <DocumentFragment>
   <div
     class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300 shadow-sm"
-    data-testid="RadioButtonGroup"
+    data-testid="SelectionBarGroup"
     role="radiogroup"
   />
 </DocumentFragment>

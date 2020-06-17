@@ -1,2 +1,2 @@
-export * from "./RadioButton";
+export * from "./SelectionBar";
 export * from "./useRadioState";

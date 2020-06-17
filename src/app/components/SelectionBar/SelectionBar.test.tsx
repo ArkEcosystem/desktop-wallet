@@ -2,33 +2,33 @@ import { fireEvent, render } from "@testing-library/react";
 import { act, renderHook } from "@testing-library/react-hooks";
 import React from "react";
 
-import { RadioButton, RadioButtonGroup, useRadioState } from "./index";
+import { SelectionBar, SelectionBarGroup, useRadioState } from "./index";
 
-describe("RadioButtonGroup", () => {
+describe("SelectionBarGroup", () => {
 	it("should render", () => {
-		const { getByTestId, asFragment } = render(<RadioButtonGroup />);
-		expect(getByTestId("RadioButtonGroup")).toBeTruthy();
+		const { getByTestId, asFragment } = render(<SelectionBarGroup />);
+		expect(getByTestId("SelectionBarGroup")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
 });
 
-describe("RadioButton", () => {
+describe("SelectionBar", () => {
 	it("should render", () => {
 		const isValueChecked = jest.fn((value: any) => (value === 1 ? true : false));
 		const setCheckedValue = jest.fn();
 		const { getAllByTestId, asFragment } = render(
 			<>
-				<RadioButton isValueChecked={isValueChecked} setCheckedValue={setCheckedValue} value={1}>
+				<SelectionBar isValueChecked={isValueChecked} setCheckedValue={setCheckedValue} value={1}>
 					Test 1
-				</RadioButton>
-				<RadioButton isValueChecked={isValueChecked} setCheckedValue={setCheckedValue} value={2}>
+				</SelectionBar>
+				<SelectionBar isValueChecked={isValueChecked} setCheckedValue={setCheckedValue} value={2}>
 					Test 2
-				</RadioButton>
+				</SelectionBar>
 				,
 			</>,
 		);
 
-		const buttons = getAllByTestId("RadioButton");
+		const buttons = getAllByTestId("SelectionBar");
 		expect(buttons[0]).toHaveAttribute("aria-checked", "true");
 		expect(buttons[1]).toHaveAttribute("aria-checked", "false");
 
@@ -42,17 +42,17 @@ describe("RadioButton", () => {
 		const { result: state } = renderHook(() => useRadioState(undefined));
 		const { getAllByTestId } = render(
 			<>
-				<RadioButton {...state.current} value={1}>
+				<SelectionBar {...state.current} value={1}>
 					Test 1
-				</RadioButton>
-				<RadioButton {...state.current} value={2}>
+				</SelectionBar>
+				<SelectionBar {...state.current} value={2}>
 					Test 2
-				</RadioButton>
+				</SelectionBar>
 				,
 			</>,
 		);
 
-		const buttons = getAllByTestId("RadioButton");
+		const buttons = getAllByTestId("SelectionBar");
 		expect(buttons[0]).toHaveAttribute("aria-checked", "false");
 		expect(buttons[1]).toHaveAttribute("aria-checked", "false");
 
