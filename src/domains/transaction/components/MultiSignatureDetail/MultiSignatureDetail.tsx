@@ -3,7 +3,7 @@ import { images } from "app/assets/images";
 import { Badge } from "app/components/Badge";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
-import { Form, FormField, FormHelperText,FormLabel } from "app/components/Form";
+import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { InputPassword } from "app/components/Input";
 import { Label } from "app/components/Label";

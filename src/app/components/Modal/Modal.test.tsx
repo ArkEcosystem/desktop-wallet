@@ -41,4 +41,34 @@ describe("Modal", () => {
 		expect(asFragment()).toMatchSnapshot();
 		expect(getByTestId("modal__inner")).toHaveTextContent("This is the Modal content");
 	});
+
+	it("should render a small one", () => {
+		const { container } = render(<Modal title="ark" size="sm" isOpen={true} />);
+
+		expect(container).toMatchSnapshot();
+	});
+
+	it("should render a medium one", () => {
+		const { container } = render(<Modal title="ark" size="md" isOpen={true} />);
+
+		expect(container).toMatchSnapshot();
+	});
+
+	it("should render a large one", () => {
+		const { container } = render(<Modal title="ark" size="lg" isOpen={true} />);
+
+		expect(container).toMatchSnapshot();
+	});
+
+	it("should render a xlarge one", () => {
+		const { container } = render(<Modal title="ark" size="xl" isOpen={true} />);
+
+		expect(container).toMatchSnapshot();
+	});
+
+	it("should render a 3x large one", () => {
+		const { container } = render(<Modal title="ark" size="3xl" isOpen={true} />);
+
+		expect(container).toMatchSnapshot();
+	});
 });
