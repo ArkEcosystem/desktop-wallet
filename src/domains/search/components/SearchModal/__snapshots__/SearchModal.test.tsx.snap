@@ -1,0 +1,105 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchModal should not render if not open 1`] = `<DocumentFragment />`;
+
+exports[`SearchModal should render a modal 1`] = `
+<DocumentFragment>
+  <div
+    class="fixed inset-0 z-10 bg-black opacity-50"
+    data-testid="modal__overlay"
+  />
+  <div
+    class="fixed left-0 right-0 z-10 flex flex-col max-w-2xl px-16 pt-6 pb-8 mx-auto mt-24 rounded-xl bg-theme-background"
+    data-testid="modal__inner"
+  >
+    <div
+      class="absolute top-0 right-0 mt-4 mr-4"
+    >
+      <button
+        class="sc-AxjAm eYrebl"
+        color="neutral"
+        data-testid="modal__close-btn"
+        type="button"
+      >
+        <div
+          class="sc-AxirZ fttODj"
+          height="10"
+          width="10"
+        >
+          <svg>
+            cross-slim.svg
+          </svg>
+        </div>
+      </button>
+    </div>
+    <div
+      class="py-4"
+    >
+      <h2>
+        Search
+      </h2>
+      <div
+        class="flex-1"
+      >
+        <div
+          class="text-theme-neutral-700"
+        >
+          Quickly find the right answers to any questions
+        </div>
+        <div
+          class="-mx-16"
+        >
+          <div
+            class="bg-theme-neutral-200 px-16 pt-8 pb-10 mt-8"
+            data-testid="SearchBar"
+          >
+            <div
+              class="flex px-6 py-4 bg-white rounded shadow-xl"
+            >
+              <div
+                class="flex items-center pl-2 pr-6 my-1 border-r border-theme-neutral-200"
+                data-testid="SearchBarOptions"
+              >
+                <div
+                  class="relative"
+                >
+                  <span
+                    class="font-semibold cursor-pointer select-none"
+                  >
+                    Type 
+                    <svg
+                      class="inline-block w-2 ml-1 text-black"
+                    >
+                      arrowdown.svg
+                    </svg>
+                  </span>
+                </div>
+              </div>
+              <div
+                class="flex-1 mr-4"
+              >
+                <input
+                  class="sc-AxiKw jrntKW overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary border-none shadow-none"
+                  data-testid="Input"
+                  placeholder="What would you like to search for?"
+                />
+              </div>
+              <button
+                class="sc-AxjAm jPIcLJ my-1"
+                color="primary"
+                type="button"
+              >
+                <span
+                  class="px-2 text-sm"
+                >
+                  Find it
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
