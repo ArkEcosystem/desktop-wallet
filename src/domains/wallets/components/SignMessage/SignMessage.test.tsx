@@ -5,14 +5,16 @@ import { SignMessage } from "./";
 
 describe("SignMessage", () => {
 	it("should render the SignMessage", () => {
-		const { asFragment } = render(<SignMessage signatoryAddress="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />);
+		const { asFragment } = render(
+			<SignMessage signatoryAddress="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" isOpen={true} />,
+		);
 
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should render as signed", () => {
 		const { asFragment } = render(
-			<SignMessage signatoryAddress="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" isSigned={true} />,
+			<SignMessage signatoryAddress="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" isSigned={true} isOpen={true} />,
 		);
 
 		expect(asFragment()).toMatchSnapshot();
