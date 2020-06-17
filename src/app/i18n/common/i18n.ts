@@ -59,6 +59,7 @@ export const translations: { [key: string]: any } = {
 	SKIP: "Skip",
 	START: "Start",
 	THEME: "Theme",
+	TITLE: "Title",
 	TIME_FORMAT: "Time format",
 	TYPE: "Type",
 	UPDATE_LATER: "Update Later",
