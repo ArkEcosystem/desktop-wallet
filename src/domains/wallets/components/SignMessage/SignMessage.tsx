@@ -5,7 +5,6 @@ import { Circle } from "app/components/Circle";
 import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { Input, InputPassword } from "app/components/Input";
-import { ListDivided } from "app/components/ListDivided";
 import { Modal } from "app/components/Modal";
 import { TextArea } from "app/components/TextArea";
 import React, { createRef } from "react";
@@ -29,43 +28,8 @@ const mockSignature = {
 
 export const SignMessage = ({ onSubmit, signatoryAddress, isOpen, isSigned, handleClose, handleSign }: Props) => {
 	const form = useForm();
-	const { register, getValues } = form;
+	const { register } = form;
 	const messageRef = createRef();
-
-	const signedItems = [
-		{
-			isFloatingLabel: true,
-			label: "Signatory",
-			labelClass: "font-bold text-theme-neutral-light",
-			content: (
-				<div className="flex items-center justify-between w-full">
-					<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} size="large" />
-					<div className="-mt-3">
-						<Circle className="-mr-2 bg-theme-background border-theme-neutral-800">
-							<Icon name="Delegate" width={20} height={20} />
-						</Circle>
-						<Circle avatarId="test" className="-mr-2 bg-theme-background"></Circle>
-					</div>
-				</div>
-			),
-		},
-		{
-			isFloatingLabel: true,
-			label: "Message",
-			labelClass: "font-bold text-theme-neutral-light -mt-5",
-			content: (
-				<span className="w-3/4 text-xl font-bold text-theme-neutral-800">{"Oleg Happy in the Oleg Bank"}</span>
-			),
-		},
-		{
-			isFloatingLabel: true,
-			label: "Signature",
-			labelClass: "font-bold text-theme-neutral-light -mt-5",
-			content: (
-				<TextArea name="signature" wrap="hard" ref={messageRef} defaultValue={JSON.stringify(mockSignature)} />
-			),
-		},
-	];
 
 	const SignForm = (
 		<Form id="sign-message__form" context={form} onSubmit={onSubmit}>
@@ -106,8 +70,33 @@ export const SignMessage = ({ onSubmit, signatoryAddress, isOpen, isSigned, hand
 	);
 
 	const MessageSigned = (
-		<div className="-mt-8">
-			<ListDivided items={signedItems} />
+		<div>
+			<div className="pb-5 mb-3 border-b border-dashed border-theme-neutral-300">
+				<span className="font-semibold text-md text-theme-neutral-light">Signatory</span>
+				<div className="flex items-center justify-between w-full mt-1">
+					<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} size="large" />
+					<div className="-mt-3">
+						<Circle className="bg-theme-background border-theme-neutral-800">
+							<Icon name="Delegate" width={20} height={20} />
+						</Circle>
+						<Circle avatarId="test" className="bg-theme-background"></Circle>
+					</div>
+				</div>
+			</div>
+			<div className="pb-5 mb-3 border-b border-dashed border-theme-neutral-300">
+				<span className="font-semibold text-md text-theme-neutral-light">Message</span>
+				<p className="w-3/4 text-xl font-bold text-theme-neutral-800 mt-1">{"Oleg Happy in the Oleg Bank"}</p>
+			</div>
+			<div className="pb-10">
+				<span className="font-semibold text-md text-theme-neutral-light">Signature</span>
+				<TextArea
+					className="mt-2"
+					name="signature"
+					wrap="hard"
+					ref={messageRef}
+					defaultValue={JSON.stringify(mockSignature)}
+				/>
+			</div>
 			<div className="flex items-center mt-3">
 				<Button color="primary" variant="plain" size="large">
 					<div className="flex items-center justify-between px-1">
