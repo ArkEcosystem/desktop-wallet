@@ -81,6 +81,7 @@ exports[`Welcome should render 1`] = `
           >
             <div
               class="relative"
+              data-testid="dropdown__toggle"
             >
               <div
                 class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
@@ -148,6 +149,7 @@ exports[`Welcome should render 1`] = `
             >
               <div
                 class="relative"
+                data-testid="dropdown__toggle"
               >
                 <div
                   class="cursor-pointer"
@@ -240,10 +242,10 @@ exports[`Welcome should render 1`] = `
               >
                 <div
                   class="relative"
+                  data-testid="dropdown__toggle"
                 >
                   <button
                     class="float-right outline-none focus:outline-none"
-                    data-testid="dropdown__toggle"
                   >
                     <div
                       class="sc-AxhCb VoPpj"
