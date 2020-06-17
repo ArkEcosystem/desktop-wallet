@@ -83,7 +83,7 @@ jobs:
               run: yarn cy:install
 
             - name: Start App
-              run: yarn start
+              run: yarn start &
 
             - name: Test
               run: yarn test:e2e
