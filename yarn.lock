@@ -57,27 +57,27 @@
   dependencies:
     "@ledgerhq/errors" "^5.13.1"
 
-"@arkecosystem/platform-sdk-ark@^0.9.104":
-  version "0.9.104"
-  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-ark/-/platform-sdk-ark-0.9.104.tgz#bc63115830b5a3e06991e6584f43008644368779"
-  integrity sha512-PWJPApcm6USBwc07Tp5zN+nh1HyhE8quGKTZ/SDzKB1ARwI4ZYXzSasBAl06QmrrO46o59srGeIhD4L8gKLmAw==
+"@arkecosystem/platform-sdk-ark@^0.9.105":
+  version "0.9.105"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-ark/-/platform-sdk-ark-0.9.105.tgz#4dd6dae5b6bfa932239483d6f5008d484ef40545"
+  integrity sha512-AFeKSIqBoLfiBrrku8Ifv5MBwxcOUvdEe/Toxw2TT+rU8ND9KP+2vtyNKS0IDZziHJk1qtw+ZndZqNar3aTefA==
   dependencies:
     "@arkecosystem/client" "^1.1"
     "@arkecosystem/core-magistrate-crypto" "^2.6.37"
     "@arkecosystem/crypto" "^2.6.37"
     "@arkecosystem/ledger-transport" "^1.1.2"
-    "@arkecosystem/platform-sdk" "0.9.104"
-    "@arkecosystem/platform-sdk-crypto" "0.9.104"
-    "@arkecosystem/platform-sdk-support" "0.9.104"
+    "@arkecosystem/platform-sdk" "0.9.105"
+    "@arkecosystem/platform-sdk-crypto" "0.9.105"
+    "@arkecosystem/platform-sdk-support" "0.9.105"
     is-url-superb "^3.0.0"
     lodash.orderby "^4.6.0"
     semver "^7.3.2"
     yup "^0.29.1"
 
-"@arkecosystem/platform-sdk-crypto@0.9.104", "@arkecosystem/platform-sdk-crypto@^0.9.104":
-  version "0.9.104"
-  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-crypto/-/platform-sdk-crypto-0.9.104.tgz#c95833f3e41207f19c099733da7218e81fc3c401"
-  integrity sha512-bfWDo2rMGjvZG9/cV/G0L6a21yiTxEzL9XASJ7Q0ZzCF0lXoUX6bvX0zIE5pm8vaPZGm3OtnroIGQFvxDtJ1Ng==
+"@arkecosystem/platform-sdk-crypto@0.9.105", "@arkecosystem/platform-sdk-crypto@^0.9.105":
+  version "0.9.105"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-crypto/-/platform-sdk-crypto-0.9.105.tgz#4b7c98a1bd062aeac7204faa5dcc590d3b1438d2"
+  integrity sha512-nVlhVwAtoF9HxdU+RkZtx6424hO7QZPLO4YZH7vrIEDxl/Jq8pAM7m9wKDi38+jwqPlF560PYXMvDXwU2NpbEQ==
   dependencies:
     bcrypto "^5.1.0"
     bip32 "^2.0.5"
@@ -87,44 +87,45 @@
     node-forge "^0.9.1"
     safe-buffer "^5.2.1"
 
-"@arkecosystem/platform-sdk-intl@^0.9.104":
-  version "0.9.104"
-  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-intl/-/platform-sdk-intl-0.9.104.tgz#fb9e0975e7885d99c2c42fbbdf07c83693822533"
-  integrity sha512-83sibJMBJFfo5nXYYY9UddHRMuMPR9JNsQx/3Jkwts3vixzmnkQi1L5DWqdkK2KA7o7exWmEOuv/bCvAK8ADvQ==
+"@arkecosystem/platform-sdk-intl@^0.9.105":
+  version "0.9.105"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-intl/-/platform-sdk-intl-0.9.105.tgz#af0be6b5d62dc8431bfce7a02f1533abf89837fd"
+  integrity sha512-A5ZSApFP2GduZKS43YmMWL1eyLnMB97Nyn4CKjrcOIcAwfj7SxunsOdp2DwdC/rGeG/I+euoQPTPyVf6SuWoAQ==
   dependencies:
     dayjs "^1.8.27"
     dinero.js "^1.8.1"
 
-"@arkecosystem/platform-sdk-profiles@^0.9.104":
-  version "0.9.104"
-  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-profiles/-/platform-sdk-profiles-0.9.104.tgz#0e548672db50a332dc6c61a9196d25c83e3d14fe"
-  integrity sha512-pnCCd2tBpche9EAP/UphMXoClBP7rl4NmZsciNA6+tEfYdjRGxbx3Tb9OS6yqSwu7qh6HMZFMOfk/MPIMoHbXg==
+"@arkecosystem/platform-sdk-profiles@^0.9.105":
+  version "0.9.105"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-profiles/-/platform-sdk-profiles-0.9.105.tgz#b182e991a0d9c082fba383b16c3d4ccb41dfb4bf"
+  integrity sha512-H3TxTZXP9fghzmzjBcUXyc2U4CupluORDev9fZUUM7oPHHtxyxTlBGhJS8iJc5jKd4+sjT02lI7fXtPE2YSpRw==
   dependencies:
-    "@arkecosystem/platform-sdk" "0.9.104"
-    "@arkecosystem/platform-sdk-crypto" "0.9.104"
-    "@arkecosystem/platform-sdk-support" "0.9.104"
+    "@arkecosystem/platform-sdk" "0.9.105"
+    "@arkecosystem/platform-sdk-crypto" "0.9.105"
+    "@arkecosystem/platform-sdk-support" "0.9.105"
     dot-prop "^5.2.0"
     localforage "^1.7.3"
     mersenne-twister "^1.1.0"
     semver "^7.3.2"
     uuid "^8.1.0"
 
-"@arkecosystem/platform-sdk-support@0.9.104", "@arkecosystem/platform-sdk-support@^0.9.104":
-  version "0.9.104"
-  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-support/-/platform-sdk-support-0.9.104.tgz#3c506a683acef2662f7b13b21965a57791bf48b2"
-  integrity sha512-l0RMG5AgGWmUfVK5NwDhnr4xuKtdiIJnlNMBND0HKG+z7f3QazTkUzqhew/i/XieKRNsr4+4LfGl1N90uIislQ==
+"@arkecosystem/platform-sdk-support@0.9.105", "@arkecosystem/platform-sdk-support@^0.9.105":
+  version "0.9.105"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-support/-/platform-sdk-support-0.9.105.tgz#a254506e21de4e34d6e84d9711427899c9a5d754"
+  integrity sha512-RHn6Ri7vHoyfIvXnxDBK+VVYFk6kuE9twDMHNnmRtW0+18mhKAnl55NsyghyI3PdoRKCqhhJ7vQ6C+IIvDev9w==
   dependencies:
     bad-words "^3.0.3"
     bignumber.js "^9.0.0"
     censorify-it "^2.1.4"
+    qrious "^4.0.2"
     yup "^0.29.1"
 
-"@arkecosystem/platform-sdk@0.9.104", "@arkecosystem/platform-sdk@^0.9.104":
-  version "0.9.104"
-  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk/-/platform-sdk-0.9.104.tgz#180cab1ebe16e19a5bb51ed247b8a3fd0a7f1a53"
-  integrity sha512-xzJ8xDpfpXQHg+ng9QpG8JMQg9Le/nMknKKJINpMPRfDiTrYDrybJAfVEvGDj1rZFwVVrcEK8gPI7wOEI2DSDw==
+"@arkecosystem/platform-sdk@0.9.105", "@arkecosystem/platform-sdk@^0.9.105":
+  version "0.9.105"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk/-/platform-sdk-0.9.105.tgz#bb5b6181b99b30239842f0432fed192343857e6d"
+  integrity sha512-511MGbOUKSTY7EQOo0SfulspIqwxopbdvTxoJUinJLFPukrdE4G+WmY0+RF5IxZe0cMNhMEj4cEsp1uXD6wxow==
   dependencies:
-    "@arkecosystem/platform-sdk-support" "0.9.104"
+    "@arkecosystem/platform-sdk-support" "0.9.105"
     bad-words "^3.0.3"
     bent "^7.3"
     bignumber.js "^9.0.0"
@@ -13201,6 +13202,11 @@ q@^1.1.2:
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/q/-/q-1.5.1.tgz#7e32f75b41381291d04611f1bf14109ac00651d7"
   integrity sha1-fjL3W0E4EpHQRhHxvxQQmsAGUdc=
+
+qrious@^4.0.2:
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/qrious/-/qrious-4.0.2.tgz#09c4d4079d2b961617f62c69cff3b9bb66a39693"
+  integrity sha512-xWPJIrK1zu5Ypn898fBp8RHkT/9ibquV2Kv24S/JY9VYEhMBMKur1gHVsOiNUh7PHP9uCgejjpZUHUIXXKoU/g==
 
 qs@6.7.0:
   version "6.7.0"
