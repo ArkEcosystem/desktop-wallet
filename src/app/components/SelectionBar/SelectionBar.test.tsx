@@ -2,33 +2,33 @@ import { fireEvent, render } from "@testing-library/react";
 import { act, renderHook } from "@testing-library/react-hooks";
 import React from "react";
 
-import { SelectionBar, SelectionBarGroup, useRadioState } from "./index";
+import { SelectionBar, SelectionBarOption, useRadioState } from "./index";
 
-describe("SelectionBarGroup", () => {
+describe("SelectionBar", () => {
 	it("should render", () => {
-		const { getByTestId, asFragment } = render(<SelectionBarGroup />);
-		expect(getByTestId("SelectionBarGroup")).toBeTruthy();
+		const { getByTestId, asFragment } = render(<SelectionBar />);
+		expect(getByTestId("SelectionBar")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
 });
 
-describe("SelectionBar", () => {
+describe("SelectionBarOption", () => {
 	it("should render", () => {
 		const isValueChecked = jest.fn((value: any) => (value === 1 ? true : false));
 		const setCheckedValue = jest.fn();
 		const { getAllByTestId, asFragment } = render(
 			<>
-				<SelectionBar isValueChecked={isValueChecked} setCheckedValue={setCheckedValue} value={1}>
+				<SelectionBarOption isValueChecked={isValueChecked} setCheckedValue={setCheckedValue} value={1}>
 					Test 1
-				</SelectionBar>
-				<SelectionBar isValueChecked={isValueChecked} setCheckedValue={setCheckedValue} value={2}>
+				</SelectionBarOption>
+				<SelectionBarOption isValueChecked={isValueChecked} setCheckedValue={setCheckedValue} value={2}>
 					Test 2
-				</SelectionBar>
+				</SelectionBarOption>
 				,
 			</>,
 		);
 
-		const buttons = getAllByTestId("SelectionBar");
+		const buttons = getAllByTestId("SelectionBarOption");
 		expect(buttons[0]).toHaveAttribute("aria-checked", "true");
 		expect(buttons[1]).toHaveAttribute("aria-checked", "false");
 
@@ -42,17 +42,17 @@ describe("SelectionBar", () => {
 		const { result: state } = renderHook(() => useRadioState(undefined));
 		const { getAllByTestId } = render(
 			<>
-				<SelectionBar {...state.current} value={1}>
+				<SelectionBarOption {...state.current} value={1}>
 					Test 1
-				</SelectionBar>
-				<SelectionBar {...state.current} value={2}>
+				</SelectionBarOption>
+				<SelectionBarOption {...state.current} value={2}>
 					Test 2
-				</SelectionBar>
+				</SelectionBarOption>
 				,
 			</>,
 		);
 
-		const buttons = getAllByTestId("SelectionBar");
+		const buttons = getAllByTestId("SelectionBarOption");
 		expect(buttons[0]).toHaveAttribute("aria-checked", "false");
 		expect(buttons[1]).toHaveAttribute("aria-checked", "false");
 
