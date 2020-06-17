@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchBarOptions should render 1`] = `
+<DocumentFragment>
+  <div
+    class="flex items-center pl-2 pr-6 my-1 border-r border-theme-neutral-200"
+    data-testid="SearchBarOptions"
+  >
+    <div
+      class="relative"
+    >
+      <span
+        class="font-semibold cursor-pointer select-none"
+      >
+        Type 
+        <svg
+          class="inline-block w-2 ml-1 text-black"
+        >
+          arrowdown.svg
+        </svg>
+      </span>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`SearchBarOptions should render with selected option 1`] = `
+<DocumentFragment>
+  <div
+    class="flex items-center pl-2 pr-6 my-1 border-r border-theme-neutral-200"
+    data-testid="SearchBarOptions"
+  >
+    <div
+      class="relative"
+    >
+      TESTING LABEL
+    </div>
+  </div>
+</DocumentFragment>
+`;
