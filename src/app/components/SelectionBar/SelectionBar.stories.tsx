@@ -1,6 +1,6 @@
 import React from "react";
 
-import { SelectionBar,SelectionBarOption } from "./SelectionBar";
+import { SelectionBar, SelectionBarOption } from "./SelectionBar";
 import { useRadioState } from "./useRadioState";
 
 export default { title: "Basic / Selection Bar" };
