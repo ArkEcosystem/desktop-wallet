@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { CircularProgressBar } from "app/components/CircularProgressBar";
@@ -13,25 +14,27 @@ type InstallPluginProps = {
 };
 
 export const InstallPlugin = ({ step, isOpen, onClose, onCancel }: InstallPluginProps) => {
+	const { t } = useTranslation();
+
 	return (
-		<Modal title="Attention" isOpen={isOpen} onClose={onClose}>
+		<Modal title={t(step === 1 ? "COMMON.ATTENTION" : "COMMON.DOWNLOADED")} isOpen={isOpen} onClose={onClose}>
 			<div className="container">
 				{step === 1 && (
 					<>
 						<p className="mt-4 text-base font-semibold text-theme-neutral-dark">
-							This plugin needs the following permissions:
+							{t("PLUGINS.MODAL_INSTALL_PLUGIN.DESCRIPTION")}
 						</p>
-						<ul className="max-w-xs mt-2 text-sm list-inside leading-8 list-circle text-theme-neutral-dark">
-							<li>Allows access to the Desktop Wallet alerts</li>
-							<li>Allows access to play audio from within the Desktop Wallet</li>
-							<li>Allows access to the Desktop Wallet events</li>
+						<ul className="max-w-xs mt-2 text-sm leading-8 list-inside list-circle text-theme-neutral-dark">
+							<li>{t("PLUGINS.MODAL_INSTALL_PLUGIN.ITEM_1")}</li>
+							<li>{t("PLUGINS.MODAL_INSTALL_PLUGIN.ITEM_2")}</li>
+							<li>{t("PLUGINS.MODAL_INSTALL_PLUGIN.ITEM_3")}</li>
 						</ul>
 						<div className="flex justify-end mt-8">
-							<Button color="primary" variant="plain" onClick={onCancel} className="mr-2">
-								Cancel
+							<Button color="primary" variant="plain" className="mr-2" onClick={onCancel}>
+								{t("COMMON.CANCEL")}
 							</Button>
-							<Button type="submit" color="primary" variant="solid">
-								Download
+							<Button type="button" color="primary" variant="solid">
+								{t("COMMON.DOWNLOAD")}
 							</Button>
 						</div>
 					</>
@@ -48,12 +51,16 @@ export const InstallPlugin = ({ step, isOpen, onClose, onCancel }: InstallPlugin
 						<div className="flex-1">
 							<div className="flex flex-col justify-around h-full">
 								<div>
-									<p className="text-sm font-semibold text-theme-neutral-light">Plugin</p>
+									<p className="text-sm font-semibold text-theme-neutral-light">
+										{t("COMMON.PLUGIN")}
+									</p>
 									<p className="font-semibold text-theme-black">ARK Explorer</p>
 								</div>
 								<div className="flex justify-between">
 									<span>
-										<p className="text-sm font-semibold text-theme-neutral-light">Downloaded</p>
+										<p className="text-sm font-semibold text-theme-neutral-light">
+											{t("COMMON.DOWNLOADED")}
+										</p>
 										<p className="text-sm font-bold text-theme-neutral-dark">154 KB / 154 KB</p>
 									</span>
 									<div className="mr-2">
@@ -77,13 +84,19 @@ export const InstallPlugin = ({ step, isOpen, onClose, onCancel }: InstallPlugin
 							<div className="flex-1">
 								<div className="flex flex-col justify-around h-full">
 									<div>
-										<p className="text-sm font-semibold text-theme-neutral-light">Plugin</p>
+										<p className="text-sm font-semibold text-theme-neutral-light">
+											{t("COMMON.PLUGIN")}
+										</p>
 										<p className="font-semibold text-theme-black">ARK Explorer</p>
 									</div>
 									<div className="flex justify-between">
 										<span>
-											<p className="text-sm font-semibold text-theme-neutral-light">Downloaded</p>
-											<p className="text-sm font-bold text-theme-neutral-dark">Completed</p>
+											<p className="text-sm font-semibold text-theme-neutral-light">
+												{t("COMMON.DOWNLOADED")}
+											</p>
+											<p className="text-sm font-bold text-theme-neutral-dark">
+												{t("COMMON.COMPLETED")}
+											</p>
 										</span>
 										<div className="">
 											<Circle
@@ -108,11 +121,11 @@ export const InstallPlugin = ({ step, isOpen, onClose, onCancel }: InstallPlugin
 							</div>
 						</div>
 						<div className="flex justify-end mt-8">
-							<Button color="primary" variant="plain" onClick={onCancel} className="mr-2">
-								Cancel
+							<Button color="primary" variant="plain" className="mr-2" onClick={onCancel}>
+								{t("COMMON.CANCEL")}
 							</Button>
-							<Button type="submit" color="primary" variant="solid">
-								Install
+							<Button type="button" color="primary" variant="solid">
+								{t("COMMON.INSTALL")}
 							</Button>
 						</div>
 					</>
@@ -123,6 +136,6 @@ export const InstallPlugin = ({ step, isOpen, onClose, onCancel }: InstallPlugin
 };
 
 InstallPlugin.defaultProps = {
-	step: 3,
+	step: 1,
 	isOpen: false,
 };
