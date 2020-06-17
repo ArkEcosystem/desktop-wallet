@@ -1,6 +1,8 @@
 import { Address } from "app/components/Address";
 import { Button } from "app/components/Button";
+import { Circle } from "app/components/Circle";
 import { Form, FormField, FormLabel } from "app/components/Form";
+import { Input, InputRange } from "app/components/Input";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { TransactionDetail } from "app/components/TransactionDetail";
@@ -22,8 +24,39 @@ export const FirstStep = () => {
 				<p className="text-theme-neutral-dark">Enter details to send your money</p>
 			</div>
 			<div className="grid grid-flow-row gap-2">
-				<TransactionDetail label="Account" border={false}>
+				<TransactionDetail
+					border={false}
+					label="Account"
+					extra={
+						<div>
+							<Circle avatarId="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"></Circle>
+						</div>
+					}
+				>
 					<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} size="large" />
+				</TransactionDetail>
+				<TransactionDetail
+					label="Delegate"
+					extra={
+						<div>
+							<Circle avatarId="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"></Circle>
+						</div>
+					}
+				>
+					<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} size="large" />
+				</TransactionDetail>
+				<TransactionDetail label="Amount ARK">
+					<Input />
+				</TransactionDetail>
+				<TransactionDetail border={false} label="Fee ARK">
+					<div className="flex">
+						<div className="w-2/4 mr-2">
+							<InputRange defaultValue={25} min={1} max={100} step={1} />
+						</div>
+						<div className="w-2/4 ml-2">
+							<InputRange defaultValue={25} min={1} max={100} step={1} />
+						</div>
+					</div>
 				</TransactionDetail>
 			</div>
 		</section>
@@ -117,11 +150,12 @@ export const VoteForDelegate = () => {
 							<FourthStep />
 						</TabPanel>
 
-						<div className="flex justify-end mt-6 space-x-2">
+						<div className="flex justify-start mt-6 space-x-2">
 							<Button
 								disabled={activeTab === 1}
 								data-testid="CreateWallet__back-button"
 								variant="plain"
+								size="large"
 								onClick={handleBack}
 							>
 								Back
@@ -131,6 +165,7 @@ export const VoteForDelegate = () => {
 								<Button
 									data-testid="CreateWallet__continue-button"
 									variant="solid"
+									size="large"
 									disabled={!isValid}
 									onClick={handleNext}
 								>
@@ -144,6 +179,7 @@ export const VoteForDelegate = () => {
 									type="submit"
 									variant="solid"
 									className={activeTab === 4 ? "block" : "hidden"}
+									size="large"
 								>
 									Save & Finish
 								</Button>
