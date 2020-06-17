@@ -47,7 +47,7 @@ const renderToggle = (children: any, toggleIcon: string, isOpen: boolean) => {
 	// Default with toggleIcon
 	if (!children) {
 		return (
-			<button data-testid="dropdown__toggle" className="float-right outline-none focus:outline-none">
+			<button className="float-right outline-none focus:outline-none">
 				<Icon name={toggleIcon} width={20} height={20} />
 			</button>
 		);
@@ -76,7 +76,7 @@ export const Dropdown = ({ children, options, onSelect, position, toggleIcon, to
 
 	if (!isOpen) {
 		return (
-			<div onClick={toggle} ref={ref} className="relative">
+			<div onClick={toggle} ref={ref} className="relative" data-testid="dropdown__toggle">
 				{renderToggle(toggleContent, toggleIcon, isOpen)}
 			</div>
 		);
