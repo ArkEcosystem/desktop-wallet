@@ -7,13 +7,15 @@ import { Icon } from "app/components/Icon";
 import { Modal } from "app/components/Modal";
 
 type InstallPluginProps = {
+	// TODO: This props `step` is used only as a mock to navigate between steps
 	step?: number;
 	isOpen: boolean;
 	onClose?: any;
 	onCancel?: any;
+	onDownload?: any;
 };
 
-export const InstallPlugin = ({ step, isOpen, onClose, onCancel }: InstallPluginProps) => {
+export const InstallPlugin = ({ step, isOpen, onClose, onCancel, onDownload }: InstallPluginProps) => {
 	const { t } = useTranslation();
 
 	return (
@@ -30,10 +32,22 @@ export const InstallPlugin = ({ step, isOpen, onClose, onCancel }: InstallPlugin
 							<li>{t("PLUGINS.MODAL_INSTALL_PLUGIN.ITEM_3")}</li>
 						</ul>
 						<div className="flex justify-end mt-8">
-							<Button color="primary" variant="plain" className="mr-2" onClick={onCancel}>
+							<Button
+								color="primary"
+								variant="plain"
+								className="mr-2"
+								onClick={onCancel}
+								data-testid="install-plugin__cancel-button"
+							>
 								{t("COMMON.CANCEL")}
 							</Button>
-							<Button type="button" color="primary" variant="solid">
+							<Button
+								type="button"
+								color="primary"
+								variant="solid"
+								onClick={onDownload}
+								data-testid="install-plugin__download-button"
+							>
 								{t("COMMON.DOWNLOAD")}
 							</Button>
 						</div>
@@ -121,10 +135,21 @@ export const InstallPlugin = ({ step, isOpen, onClose, onCancel }: InstallPlugin
 							</div>
 						</div>
 						<div className="flex justify-end mt-8">
-							<Button color="primary" variant="plain" className="mr-2" onClick={onCancel}>
+							<Button
+								color="primary"
+								variant="plain"
+								className="mr-2"
+								onClick={onCancel}
+								data-testid="install-plugin__cancel-button"
+							>
 								{t("COMMON.CANCEL")}
 							</Button>
-							<Button type="button" color="primary" variant="solid">
+							<Button
+								type="button"
+								color="primary"
+								variant="solid"
+								data-testid="install-plugin__install-button"
+							>
 								{t("COMMON.INSTALL")}
 							</Button>
 						</div>
