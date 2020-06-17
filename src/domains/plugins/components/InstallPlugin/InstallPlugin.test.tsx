@@ -4,8 +4,8 @@ import { translations as COMMON } from "app/i18n/common/i18n";
 import React from "react";
 import { I18nextProvider } from "react-i18next";
 
-import { InstallPlugin } from "../";
-import { translations as PLUGINS } from "../../../i18n";
+import { translations as PLUGINS } from "../../i18n";
+import { InstallPlugin } from "./";
 
 describe("InstallPlugin", () => {
 	it("should not render if not open", () => {

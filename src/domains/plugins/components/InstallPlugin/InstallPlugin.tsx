@@ -19,14 +19,19 @@ export const InstallPlugin = ({ step, isOpen, onClose, onCancel, onDownload }: I
 	const { t } = useTranslation();
 
 	return (
-		<Modal title={t(step === 1 ? "COMMON.ATTENTION" : "COMMON.DOWNLOADED")} isOpen={isOpen} onClose={onClose}>
+		<Modal
+			title={t(step === 1 ? "COMMON.ATTENTION" : "COMMON.DOWNLOADED")}
+			size="lg"
+			isOpen={isOpen}
+			onClose={onClose}
+		>
 			<div className="container">
 				{step === 1 && (
 					<>
 						<p className="mt-4 text-base font-semibold text-theme-neutral-dark">
 							{t("PLUGINS.MODAL_INSTALL_PLUGIN.DESCRIPTION")}
 						</p>
-						<ul className="max-w-xs mt-2 text-sm list-inside leading-8 list-circle text-theme-neutral-dark">
+						<ul className="max-w-xs mt-2 text-sm leading-8 list-inside list-circle text-theme-neutral-dark">
 							<li>{t("PLUGINS.MODAL_INSTALL_PLUGIN.ITEM_1")}</li>
 							<li>{t("PLUGINS.MODAL_INSTALL_PLUGIN.ITEM_2")}</li>
 							<li>{t("PLUGINS.MODAL_INSTALL_PLUGIN.ITEM_3")}</li>
