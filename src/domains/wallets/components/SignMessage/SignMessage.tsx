@@ -7,6 +7,7 @@ import { Icon } from "app/components/Icon";
 import { Input, InputPassword } from "app/components/Input";
 import { Modal } from "app/components/Modal";
 import { TextArea } from "app/components/TextArea";
+import { TransactionDetail } from "app/components/TransactionDetail";
 import React, { createRef } from "react";
 import { useForm } from "react-hook-form";
 
@@ -71,24 +72,24 @@ export const SignMessage = ({ onSubmit, signatoryAddress, isOpen, isSigned, hand
 
 	const MessageSigned = (
 		<div>
-			<div className="pb-5 mb-3 border-b border-dashed border-theme-neutral-300">
-				<span className="font-semibold text-md text-theme-neutral-light">Signatory</span>
-				<div className="flex items-center justify-between w-full mt-1">
-					<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} size="large" />
-					<div className="-mt-3">
-						<Circle className="bg-theme-background border-theme-neutral-800">
-							<Icon name="Delegate" width={20} height={20} />
+			<TransactionDetail
+				border={false}
+				label="Signatory"
+				extra={
+					<div>
+						<Circle className="-mr-2 border-black">
+							<Icon name="Delegate" width={25} height={25} />
 						</Circle>
-						<Circle avatarId="test" className="bg-theme-background"></Circle>
+						<Circle avatarId="test"></Circle>
 					</div>
-				</div>
-			</div>
-			<div className="pb-5 mb-3 border-b border-dashed border-theme-neutral-300">
-				<span className="font-semibold text-md text-theme-neutral-light">Message</span>
-				<p className="w-3/4 mt-1 text-xl font-bold text-theme-neutral-800">{"Oleg Happy in the Oleg Bank"}</p>
-			</div>
-			<div>
-				<span className="font-semibold text-md text-theme-neutral-light">Signature</span>
+				}
+			>
+				<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} size="large" />
+			</TransactionDetail>
+			<TransactionDetail border label="Message">
+				Oleg Happy in the Oleg Bank
+			</TransactionDetail>
+			<TransactionDetail border label="Signature">
 				<TextArea
 					className="mt-2"
 					name="signature"
@@ -96,8 +97,9 @@ export const SignMessage = ({ onSubmit, signatoryAddress, isOpen, isSigned, hand
 					ref={messageRef}
 					defaultValue={JSON.stringify(mockSignature)}
 				/>
-			</div>
-			<div className="flex items-center pb-5 mt-5">
+			</TransactionDetail>
+
+			<div className="flex items-center pb-5 mt-3">
 				<Button color="primary" variant="plain" size="large">
 					<div className="flex items-center justify-between px-1">
 						<Icon name="Copy" />
