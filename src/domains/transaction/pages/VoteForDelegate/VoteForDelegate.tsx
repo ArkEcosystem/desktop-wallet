@@ -2,6 +2,7 @@ import { Address } from "app/components/Address";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { Form, FormField, FormLabel } from "app/components/Form";
+import { Icon } from "app/components/Icon";
 import { Input, InputRange } from "app/components/Input";
 import { RadioButton, RadioButtonGroup, useRadioState } from "app/components/RadioButton";
 import { StepIndicator } from "app/components/StepIndicator";
@@ -52,10 +53,10 @@ export const FirstStep = () => {
 				</TransactionDetail>
 				<TransactionDetail border={false} label="Fee ARK">
 					<div className="flex">
-						<div className="w-2/4 mr-2">
+						<div className="w-3/5 mr-2">
 							<InputRange defaultValue={25} min={1} max={100} step={1} />
 						</div>
-						<div className="w-2/4 ml-2">
+						<div className="ml-2">
 							<RadioButtonGroup>
 								<RadioButton value={1} {...radioState}>
 									Last
@@ -86,7 +87,55 @@ export const SecondStep = () => {
 		<section data-testid="VoteForDelegate__second-step" className="space-y-8">
 			<div>
 				<h1 className="mb-0">Transaction Review</h1>
-				<p className="text-theme-neutral-dark">Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+				<p className="text-theme-neutral-dark">Check the informationa again before voting</p>
+			</div>
+			<div className="grid grid-flow-row gap-2">
+				<TransactionDetail
+					border={false}
+					label="Network"
+					extra={
+						<div className="ml-1 text-theme-danger-500">
+							<Circle className="bg-theme-background border-theme-danger-200" size="large">
+								<Icon name="Ark" width={20} height={20} />
+							</Circle>
+						</div>
+					}
+				>
+					<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} size="large" />
+				</TransactionDetail>
+				<TransactionDetail
+					label="Account"
+					extra={
+						<div>
+							<Circle avatarId="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"></Circle>
+						</div>
+					}
+				>
+					<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} size="large" />
+				</TransactionDetail>
+				<TransactionDetail
+					label="Delegate"
+					extra={
+						<div>
+							<Circle avatarId="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"></Circle>
+						</div>
+					}
+				>
+					<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} size="large" />
+				</TransactionDetail>
+				<TransactionDetail
+					label="Amount"
+					extra={
+						<div className="ml-1 text-theme-danger">
+							<Circle className="bg-theme-background border-theme-danger-200" size="large">
+								<Icon name="Sent" width={50} height={50} />
+							</Circle>
+						</div>
+					}
+				>
+					1.00 ARK <span className="text-theme-neutral-400">25.00 USD</span>
+				</TransactionDetail>
+				<TransactionDetail label="Transaction fee">0.09660435 ARK</TransactionDetail>
 			</div>
 		</section>
 	);
