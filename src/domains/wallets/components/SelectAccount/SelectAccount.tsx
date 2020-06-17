@@ -7,8 +7,8 @@ import { Table } from "app/components/Table";
 import { WalletListItem } from "app/components/WalletListItem";
 import { SearchBar } from "domains/search/components/SearchBar";
 import { SearchBarFilters } from "domains/search/components/SearchBarFilters";
-import { useTranslation } from "react-i18next";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 type SelectAccountProps = {
 	isOpen: boolean;
@@ -36,16 +36,16 @@ export const SelectAccount = ({
 			accessor: "avatarId",
 		},
 		{
-			Header: "Wallet Address",
+			Header: t("COMMON.ADDRESS"),
 			accessor: "address",
 		},
 		{
-			Header: "Balance",
+			Header: t("COMMON.BALANCE"),
 			accessor: "balance",
 			className: "float-right",
 		},
 		{
-			Header: "Fiat Value",
+			Header: t("Fiat Value"),
 			accessor: "fiat",
 			className: "float-right",
 		},
@@ -61,7 +61,11 @@ export const SelectAccount = ({
 		>
 			<div className="-mx-16">
 				<SearchBar className="mt-8">
-					<SearchBarFilters networks={networks} onNetworkChange={onNetworkChange} onViewAllNetworks={onViewAllNetworks} />
+					<SearchBarFilters
+						networks={networks}
+						onNetworkChange={onNetworkChange}
+						onViewAllNetworks={onViewAllNetworks}
+					/>
 				</SearchBar>
 			</div>
 

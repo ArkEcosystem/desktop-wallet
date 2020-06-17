@@ -38,31 +38,22 @@ export const WithOptions = () => {
 
 export const WithFilters = () => {
 	const networks = [
-    {
-      name: "Ark",
-      isSelected: true,
-    },
-    {
-      name: "Eth",
-      isSelected: true,
-    },
-    {
-      name: "Btc",
-      isSelected: false,
-    },
-  ];
+		{ name: "Ark", isSelected: true },
+		{ name: "Eth", isSelected: true },
+		{ name: "Btc", isSelected: false },
+	];
 
 	return (
 		<div className="w-full h-full">
 			<SearchBar>
 				<SearchBarFilters
-		      networks={networks}
-		      onNetworkChange={(changedNetwork: any, newNetworksList: any) => {
-		        console.log("changed network", changedNetwork);
-		        console.log("changed network new list", newNetworksList);
-		      }}
-		      onViewAllNetworks={() => alert("View all networks")}
-		    />
+					networks={networks}
+					onNetworkChange={(changedNetwork: any, newNetworksList: any) => {
+						console.log("changed network", changedNetwork);
+						console.log("changed network new list", newNetworksList);
+					}}
+					onViewAllNetworks={() => alert("View all networks")}
+				/>
 			</SearchBar>
 		</div>
 	);
