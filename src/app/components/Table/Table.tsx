@@ -16,8 +16,8 @@ const TableWrapper = styled.div`
 `;
 
 export const Table = ({ children, data, columns }: TableProps) => {
-	const tableData = useMemo(() => data, []);
-	const tableColumns = useMemo(() => columns, []);
+	const tableData = useMemo(() => data, [data]);
+	const tableColumns = useMemo(() => columns, [columns]);
 
 	const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } = useTable(
 		{
