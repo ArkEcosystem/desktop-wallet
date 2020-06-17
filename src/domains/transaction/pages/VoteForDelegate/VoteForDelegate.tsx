@@ -3,6 +3,7 @@ import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { Form, FormField, FormLabel } from "app/components/Form";
 import { Input, InputRange } from "app/components/Input";
+import { RadioButton, RadioButtonGroup, useRadioState } from "app/components/RadioButton";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { TransactionDetail } from "app/components/TransactionDetail";
@@ -11,6 +12,7 @@ import { useForm, useFormContext } from "react-hook-form";
 
 export const FirstStep = () => {
 	const { register, setValue } = useFormContext();
+	const radioState = useRadioState(1);
 	// const [activeNetwork, setActiveNetwork] = React.useState<Network | undefined>(undefined);
 
 	// React.useEffect(() => {
@@ -54,7 +56,17 @@ export const FirstStep = () => {
 							<InputRange defaultValue={25} min={1} max={100} step={1} />
 						</div>
 						<div className="w-2/4 ml-2">
-							<InputRange defaultValue={25} min={1} max={100} step={1} />
+							<RadioButtonGroup>
+								<RadioButton value={1} {...radioState}>
+									Last
+								</RadioButton>
+								<RadioButton value={2} {...radioState}>
+									Min
+								</RadioButton>
+								<RadioButton value={3} {...radioState}>
+									Average
+								</RadioButton>
+							</RadioButtonGroup>
 						</div>
 					</div>
 				</TransactionDetail>
