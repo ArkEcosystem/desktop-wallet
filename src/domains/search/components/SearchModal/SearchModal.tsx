@@ -78,7 +78,8 @@ export const SearchModal = (props: SearchModalProps) => {
 
 								<div className="mt-2 text-sm text-theme-neutral-700">{rowData.description}</div>
 							</td>
-							<td className="py-4 text-right">
+
+							<td className="py-4 text-right align-top text-sm">
 								<div>{rowData.category}</div>
 							</td>
 						</tr>

@@ -9,9 +9,6 @@ export const defaultTableStyle = `
 		th {
 			margin: 0;
 		}
-		td {
-			vertical-align: middle;
-		}
 
         tr:last-child {
             border-bottom: none;
