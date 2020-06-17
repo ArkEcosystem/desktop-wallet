@@ -17,7 +17,7 @@ describe("ProfileCard", () => {
 		expect(container).toBeTruthy();
 		expect(getByTestId("profile-card__user--name")).toHaveTextContent(profile.name);
 		expect(getByTestId("profile-card__user--balance")).toHaveTextContent(profile.balance);
-		expect(getByTestId("profile-card__user--avatar")).toHaveAttribute("style");
+		expect(getByTestId("profile-card__user--avatar")).toHaveStyle(`background: ${profile.avatar}`);
 		expect(asFragment()).toMatchSnapshot();
 	});
 

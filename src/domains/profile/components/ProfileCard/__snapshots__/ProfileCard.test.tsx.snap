@@ -97,14 +97,8 @@ exports[`ProfileCard should render 1`] = `
         >
           <div
             class="block w-12 h-12 mx-auto rounded-full sm:mx-0 sm:flex-shrink-0"
-          >
-            <img
-              alt="User Avatar"
-              class="rounded-full"
-              data-testid="profile-card__user--avatar"
-              src="https://www.w3schools.com/howto/img_avatar.png"
-            />
-          </div>
+            data-testid="profile-card__user--avatar"
+          />
           <div
             class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-left"
           >
