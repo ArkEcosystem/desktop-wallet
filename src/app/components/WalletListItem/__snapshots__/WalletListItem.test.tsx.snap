@@ -11,16 +11,16 @@ exports[`WalletListItem should render 1`] = `
           class="py-4 mt-1"
         >
           <div
-            class="sc-AxjAm BXGDK"
+            class="sc-AxirZ jGEfIx"
           >
             <div
-              class="sc-AxirZ iQaTP"
+              class="sc-AxiKw dzBdqj"
               height="1em"
               width="1em"
             />
           </div>
           <div
-            class="sc-AxjAm BXGDK"
+            class="sc-AxirZ jGEfIx"
           />
         </td>
         <td
@@ -33,7 +33,7 @@ exports[`WalletListItem should render 1`] = `
             class="inline-block mr-2 text text-theme-warning-400"
           >
             <div
-              class="sc-AxirZ iQaTP"
+              class="sc-AxiKw dzBdqj"
               height="1em"
               width="1em"
             >
@@ -46,7 +46,7 @@ exports[`WalletListItem should render 1`] = `
             class="inline-block mr-2 text text-theme-primary-300"
           >
             <div
-              class="sc-AxirZ iQaTP"
+              class="sc-AxiKw dzBdqj"
               height="1em"
               width="1em"
             />
@@ -62,7 +62,64 @@ exports[`WalletListItem should render 1`] = `
         >
           <div />
         </td>
-        <td />
+        <td>
+          0
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`WalletListItem should render a button if variant is 'singleAction' 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr
+        class="border-b border-theme-neutral-200"
+      >
+        <td
+          class="py-4 mt-1"
+        >
+          <div
+            class="sc-AxirZ jGEfIx"
+          >
+            <div
+              class="sc-AxiKw dzBdqj"
+              height="1em"
+              width="1em"
+            />
+          </div>
+          <div
+            class="sc-AxirZ jGEfIx"
+          />
+        </td>
+        <td
+          class="py-1"
+        />
+        <td
+          class="py-1 text-sm font-bold"
+        />
+        <td
+          class="py-1 text-sm font-bold text-right"
+        >
+          <div />
+        </td>
+        <td
+          class="py-1 text-sm font-bold text-right text-theme-neutral-400"
+        >
+          <div />
+        </td>
+        <td>
+          <button
+            class="sc-AxjAm jTpTok ml-6"
+            color="primary"
+            data-testid="button"
+            type="button"
+          >
+            Option 1
+          </button>
+        </td>
       </tr>
     </tbody>
   </table>
