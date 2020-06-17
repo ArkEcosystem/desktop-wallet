@@ -24,15 +24,13 @@ export const WithOptions = () => {
 
 	return (
 		<div className="w-full h-full">
-			<SearchBar
-				extra={
-					<SearchBarOptions
-						options={options}
-						selectedOption={selectedOption}
-						onSelect={(option: any) => void 0}
-					/>
-				}
-			/>
+			<SearchBar>
+				<SearchBarOptions
+					options={options}
+					selectedOption={selectedOption}
+					onSelect={(option: any) => void 0}
+				/>
+			</SearchBar>
 		</div>
 	);
 };

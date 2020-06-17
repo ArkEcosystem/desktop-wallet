@@ -24,7 +24,9 @@ describe("SearchBar", () => {
 
 		const { asFragment, getByTestId } = render(
 			<I18nextProvider i18n={i18n}>
-				<SearchBar extra={<SearchBarOptions options={options} onSelect={() => void 0} />} />
+				<SearchBar>
+					<SearchBarOptions options={options} onSelect={() => void 0} />
+				</SearchBar>
 			</I18nextProvider>,
 		);
 
@@ -37,9 +39,9 @@ describe("SearchBar", () => {
 
 		const { asFragment, getByTestId } = render(
 			<I18nextProvider i18n={i18n}>
-				<SearchBar
-					extra={<SearchBarOptions selectedOption={options[0]} options={options} onSelect={() => void 0} />}
-				/>
+				<SearchBar>
+					<SearchBarOptions selectedOption={options[0]} options={options} onSelect={() => void 0} />
+				</SearchBar>
 			</I18nextProvider>,
 		);
 
