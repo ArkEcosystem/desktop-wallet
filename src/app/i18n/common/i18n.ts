@@ -14,6 +14,7 @@ export const translations: { [key: string]: any } = {
 	CANCEL: "Cancel",
 	CATEGORY: "Category",
 	CONFIRM: "Confirm",
+	CONTINUE: "Continue",
 	CURRENCY: "Currency",
 	DATE: "Date",
 	DEFAULT_CHOSEN_FEE: "Default fee type",
@@ -49,6 +50,7 @@ export const translations: { [key: string]: any } = {
 	SAVE: "Save",
 	SELECT: "Select",
 	SEND: "Send",
+	SIGN: "Sign",
 	SIZE: "Size",
 	SKIP: "Skip",
 	START: "Start",
@@ -66,4 +68,5 @@ export const translations: { [key: string]: any } = {
 	WILL: "will",
 	X_OF_Y: "{{0}} of {{1}}",
 	YOU: "You",
+	YOUR_PASSPHRASE: "Your Passphrase",
 };

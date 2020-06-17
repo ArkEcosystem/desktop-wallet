@@ -94,6 +94,7 @@ exports[`Application root should render without crashing 1`] = `
                           "CANCEL": "Cancel",
                           "CATEGORY": "Category",
                           "CONFIRM": "Confirm",
+                          "CONTINUE": "Continue",
                           "CURRENCY": "Currency",
                           "DATE": "Date",
                           "DEFAULT_CHOSEN_FEE": "Default fee type",
@@ -129,6 +130,7 @@ exports[`Application root should render without crashing 1`] = `
                           "SAVE": "Save",
                           "SELECT": "Select",
                           "SEND": "Send",
+                          "SIGN": "Sign",
                           "SIZE": "Size",
                           "SKIP": "Skip",
                           "START": "Start",
@@ -146,6 +148,7 @@ exports[`Application root should render without crashing 1`] = `
                           "WILL": "will",
                           "X_OF_Y": "{{0}} of {{1}}",
                           "YOU": "You",
+                          "YOUR_PASSPHRASE": "Your Passphrase",
                         },
                         "HELP": Object {
                           "MODAL_CONTACT_US": Object {
@@ -187,7 +190,17 @@ exports[`Application root should render without crashing 1`] = `
                             "TITLE": "Delegate Registration",
                           },
                           "MODAL_MULTISIGNATURE_DETAIL": Object {
-                            "TITLE": "Multisignature",
+                            "STEP_1": Object {
+                              "TITLE": "Multisignature",
+                            },
+                            "STEP_2": Object {
+                              "DESCRIPTION": "Enter your passphrase in order to sign the Multisignature transaction.",
+                              "TITLE": "Multisignature Passphrase",
+                            },
+                            "STEP_3": Object {
+                              "DESCRIPTION": "Your signature was successfully confirmed and sent.",
+                              "TITLE": "Transaction Successful",
+                            },
                             "WAITING_FOR_SIGNATURES": "Waiting for Signatures",
                           },
                           "MODAL_TRANSFER_DETAIL": Object {
@@ -310,6 +323,7 @@ exports[`Application root should render without crashing 1`] = `
                         "CANCEL": "Cancel",
                         "CATEGORY": "Category",
                         "CONFIRM": "Confirm",
+                        "CONTINUE": "Continue",
                         "CURRENCY": "Currency",
                         "DATE": "Date",
                         "DEFAULT_CHOSEN_FEE": "Default fee type",
@@ -345,6 +359,7 @@ exports[`Application root should render without crashing 1`] = `
                         "SAVE": "Save",
                         "SELECT": "Select",
                         "SEND": "Send",
+                        "SIGN": "Sign",
                         "SIZE": "Size",
                         "SKIP": "Skip",
                         "START": "Start",
@@ -362,6 +377,7 @@ exports[`Application root should render without crashing 1`] = `
                         "WILL": "will",
                         "X_OF_Y": "{{0}} of {{1}}",
                         "YOU": "You",
+                        "YOUR_PASSPHRASE": "Your Passphrase",
                       },
                       "HELP": Object {
                         "MODAL_CONTACT_US": Object {
@@ -403,7 +419,17 @@ exports[`Application root should render without crashing 1`] = `
                           "TITLE": "Delegate Registration",
                         },
                         "MODAL_MULTISIGNATURE_DETAIL": Object {
-                          "TITLE": "Multisignature",
+                          "STEP_1": Object {
+                            "TITLE": "Multisignature",
+                          },
+                          "STEP_2": Object {
+                            "DESCRIPTION": "Enter your passphrase in order to sign the Multisignature transaction.",
+                            "TITLE": "Multisignature Passphrase",
+                          },
+                          "STEP_3": Object {
+                            "DESCRIPTION": "Your signature was successfully confirmed and sent.",
+                            "TITLE": "Transaction Successful",
+                          },
                           "WAITING_FOR_SIGNATURES": "Waiting for Signatures",
                         },
                         "MODAL_TRANSFER_DETAIL": Object {
@@ -530,6 +556,7 @@ exports[`Application root should render without crashing 1`] = `
                                 "CANCEL": "Cancel",
                                 "CATEGORY": "Category",
                                 "CONFIRM": "Confirm",
+                                "CONTINUE": "Continue",
                                 "CURRENCY": "Currency",
                                 "DATE": "Date",
                                 "DEFAULT_CHOSEN_FEE": "Default fee type",
@@ -565,6 +592,7 @@ exports[`Application root should render without crashing 1`] = `
                                 "SAVE": "Save",
                                 "SELECT": "Select",
                                 "SEND": "Send",
+                                "SIGN": "Sign",
                                 "SIZE": "Size",
                                 "SKIP": "Skip",
                                 "START": "Start",
@@ -582,6 +610,7 @@ exports[`Application root should render without crashing 1`] = `
                                 "WILL": "will",
                                 "X_OF_Y": "{{0}} of {{1}}",
                                 "YOU": "You",
+                                "YOUR_PASSPHRASE": "Your Passphrase",
                               },
                               "HELP": Object {
                                 "MODAL_CONTACT_US": Object {
@@ -623,7 +652,17 @@ exports[`Application root should render without crashing 1`] = `
                                   "TITLE": "Delegate Registration",
                                 },
                                 "MODAL_MULTISIGNATURE_DETAIL": Object {
-                                  "TITLE": "Multisignature",
+                                  "STEP_1": Object {
+                                    "TITLE": "Multisignature",
+                                  },
+                                  "STEP_2": Object {
+                                    "DESCRIPTION": "Enter your passphrase in order to sign the Multisignature transaction.",
+                                    "TITLE": "Multisignature Passphrase",
+                                  },
+                                  "STEP_3": Object {
+                                    "DESCRIPTION": "Your signature was successfully confirmed and sent.",
+                                    "TITLE": "Transaction Successful",
+                                  },
                                   "WAITING_FOR_SIGNATURES": "Waiting for Signatures",
                                 },
                                 "MODAL_TRANSFER_DETAIL": Object {
@@ -737,6 +776,7 @@ exports[`Application root should render without crashing 1`] = `
                               "CANCEL": "Cancel",
                               "CATEGORY": "Category",
                               "CONFIRM": "Confirm",
+                              "CONTINUE": "Continue",
                               "CURRENCY": "Currency",
                               "DATE": "Date",
                               "DEFAULT_CHOSEN_FEE": "Default fee type",
@@ -772,6 +812,7 @@ exports[`Application root should render without crashing 1`] = `
                               "SAVE": "Save",
                               "SELECT": "Select",
                               "SEND": "Send",
+                              "SIGN": "Sign",
                               "SIZE": "Size",
                               "SKIP": "Skip",
                               "START": "Start",
@@ -789,6 +830,7 @@ exports[`Application root should render without crashing 1`] = `
                               "WILL": "will",
                               "X_OF_Y": "{{0}} of {{1}}",
                               "YOU": "You",
+                              "YOUR_PASSPHRASE": "Your Passphrase",
                             },
                             "HELP": Object {
                               "MODAL_CONTACT_US": Object {
@@ -830,7 +872,17 @@ exports[`Application root should render without crashing 1`] = `
                                 "TITLE": "Delegate Registration",
                               },
                               "MODAL_MULTISIGNATURE_DETAIL": Object {
-                                "TITLE": "Multisignature",
+                                "STEP_1": Object {
+                                  "TITLE": "Multisignature",
+                                },
+                                "STEP_2": Object {
+                                  "DESCRIPTION": "Enter your passphrase in order to sign the Multisignature transaction.",
+                                  "TITLE": "Multisignature Passphrase",
+                                },
+                                "STEP_3": Object {
+                                  "DESCRIPTION": "Your signature was successfully confirmed and sent.",
+                                  "TITLE": "Transaction Successful",
+                                },
                                 "WAITING_FOR_SIGNATURES": "Waiting for Signatures",
                               },
                               "MODAL_TRANSFER_DETAIL": Object {
@@ -954,6 +1006,7 @@ exports[`Application root should render without crashing 1`] = `
                               "CANCEL": "Cancel",
                               "CATEGORY": "Category",
                               "CONFIRM": "Confirm",
+                              "CONTINUE": "Continue",
                               "CURRENCY": "Currency",
                               "DATE": "Date",
                               "DEFAULT_CHOSEN_FEE": "Default fee type",
@@ -989,6 +1042,7 @@ exports[`Application root should render without crashing 1`] = `
                               "SAVE": "Save",
                               "SELECT": "Select",
                               "SEND": "Send",
+                              "SIGN": "Sign",
                               "SIZE": "Size",
                               "SKIP": "Skip",
                               "START": "Start",
@@ -1006,6 +1060,7 @@ exports[`Application root should render without crashing 1`] = `
                               "WILL": "will",
                               "X_OF_Y": "{{0}} of {{1}}",
                               "YOU": "You",
+                              "YOUR_PASSPHRASE": "Your Passphrase",
                             },
                             "HELP": Object {
                               "MODAL_CONTACT_US": Object {
@@ -1047,7 +1102,17 @@ exports[`Application root should render without crashing 1`] = `
                                 "TITLE": "Delegate Registration",
                               },
                               "MODAL_MULTISIGNATURE_DETAIL": Object {
-                                "TITLE": "Multisignature",
+                                "STEP_1": Object {
+                                  "TITLE": "Multisignature",
+                                },
+                                "STEP_2": Object {
+                                  "DESCRIPTION": "Enter your passphrase in order to sign the Multisignature transaction.",
+                                  "TITLE": "Multisignature Passphrase",
+                                },
+                                "STEP_3": Object {
+                                  "DESCRIPTION": "Your signature was successfully confirmed and sent.",
+                                  "TITLE": "Transaction Successful",
+                                },
                                 "WAITING_FOR_SIGNATURES": "Waiting for Signatures",
                               },
                               "MODAL_TRANSFER_DETAIL": Object {
@@ -1166,6 +1231,7 @@ exports[`Application root should render without crashing 1`] = `
                             "CANCEL": "Cancel",
                             "CATEGORY": "Category",
                             "CONFIRM": "Confirm",
+                            "CONTINUE": "Continue",
                             "CURRENCY": "Currency",
                             "DATE": "Date",
                             "DEFAULT_CHOSEN_FEE": "Default fee type",
@@ -1201,6 +1267,7 @@ exports[`Application root should render without crashing 1`] = `
                             "SAVE": "Save",
                             "SELECT": "Select",
                             "SEND": "Send",
+                            "SIGN": "Sign",
                             "SIZE": "Size",
                             "SKIP": "Skip",
                             "START": "Start",
@@ -1218,6 +1285,7 @@ exports[`Application root should render without crashing 1`] = `
                             "WILL": "will",
                             "X_OF_Y": "{{0}} of {{1}}",
                             "YOU": "You",
+                            "YOUR_PASSPHRASE": "Your Passphrase",
                           },
                           "HELP": Object {
                             "MODAL_CONTACT_US": Object {
@@ -1259,7 +1327,17 @@ exports[`Application root should render without crashing 1`] = `
                               "TITLE": "Delegate Registration",
                             },
                             "MODAL_MULTISIGNATURE_DETAIL": Object {
-                              "TITLE": "Multisignature",
+                              "STEP_1": Object {
+                                "TITLE": "Multisignature",
+                              },
+                              "STEP_2": Object {
+                                "DESCRIPTION": "Enter your passphrase in order to sign the Multisignature transaction.",
+                                "TITLE": "Multisignature Passphrase",
+                              },
+                              "STEP_3": Object {
+                                "DESCRIPTION": "Your signature was successfully confirmed and sent.",
+                                "TITLE": "Transaction Successful",
+                              },
                               "WAITING_FOR_SIGNATURES": "Waiting for Signatures",
                             },
                             "MODAL_TRANSFER_DETAIL": Object {
@@ -1331,6 +1409,7 @@ exports[`Application root should render without crashing 1`] = `
                           "CANCEL": "Cancel",
                           "CATEGORY": "Category",
                           "CONFIRM": "Confirm",
+                          "CONTINUE": "Continue",
                           "CURRENCY": "Currency",
                           "DATE": "Date",
                           "DEFAULT_CHOSEN_FEE": "Default fee type",
@@ -1366,6 +1445,7 @@ exports[`Application root should render without crashing 1`] = `
                           "SAVE": "Save",
                           "SELECT": "Select",
                           "SEND": "Send",
+                          "SIGN": "Sign",
                           "SIZE": "Size",
                           "SKIP": "Skip",
                           "START": "Start",
@@ -1383,6 +1463,7 @@ exports[`Application root should render without crashing 1`] = `
                           "WILL": "will",
                           "X_OF_Y": "{{0}} of {{1}}",
                           "YOU": "You",
+                          "YOUR_PASSPHRASE": "Your Passphrase",
                         },
                         "HELP": Object {
                           "MODAL_CONTACT_US": Object {
@@ -1424,7 +1505,17 @@ exports[`Application root should render without crashing 1`] = `
                             "TITLE": "Delegate Registration",
                           },
                           "MODAL_MULTISIGNATURE_DETAIL": Object {
-                            "TITLE": "Multisignature",
+                            "STEP_1": Object {
+                              "TITLE": "Multisignature",
+                            },
+                            "STEP_2": Object {
+                              "DESCRIPTION": "Enter your passphrase in order to sign the Multisignature transaction.",
+                              "TITLE": "Multisignature Passphrase",
+                            },
+                            "STEP_3": Object {
+                              "DESCRIPTION": "Your signature was successfully confirmed and sent.",
+                              "TITLE": "Transaction Successful",
+                            },
                             "WAITING_FOR_SIGNATURES": "Waiting for Signatures",
                           },
                           "MODAL_TRANSFER_DETAIL": Object {
@@ -1542,6 +1633,7 @@ exports[`Application root should render without crashing 1`] = `
                               "CANCEL": "Cancel",
                               "CATEGORY": "Category",
                               "CONFIRM": "Confirm",
+                              "CONTINUE": "Continue",
                               "CURRENCY": "Currency",
                               "DATE": "Date",
                               "DEFAULT_CHOSEN_FEE": "Default fee type",
@@ -1577,6 +1669,7 @@ exports[`Application root should render without crashing 1`] = `
                               "SAVE": "Save",
                               "SELECT": "Select",
                               "SEND": "Send",
+                              "SIGN": "Sign",
                               "SIZE": "Size",
                               "SKIP": "Skip",
                               "START": "Start",
@@ -1594,6 +1687,7 @@ exports[`Application root should render without crashing 1`] = `
                               "WILL": "will",
                               "X_OF_Y": "{{0}} of {{1}}",
                               "YOU": "You",
+                              "YOUR_PASSPHRASE": "Your Passphrase",
                             },
                             "HELP": Object {
                               "MODAL_CONTACT_US": Object {
@@ -1635,7 +1729,17 @@ exports[`Application root should render without crashing 1`] = `
                                 "TITLE": "Delegate Registration",
                               },
                               "MODAL_MULTISIGNATURE_DETAIL": Object {
-                                "TITLE": "Multisignature",
+                                "STEP_1": Object {
+                                  "TITLE": "Multisignature",
+                                },
+                                "STEP_2": Object {
+                                  "DESCRIPTION": "Enter your passphrase in order to sign the Multisignature transaction.",
+                                  "TITLE": "Multisignature Passphrase",
+                                },
+                                "STEP_3": Object {
+                                  "DESCRIPTION": "Your signature was successfully confirmed and sent.",
+                                  "TITLE": "Transaction Successful",
+                                },
                                 "WAITING_FOR_SIGNATURES": "Waiting for Signatures",
                               },
                               "MODAL_TRANSFER_DETAIL": Object {
@@ -1754,6 +1858,7 @@ exports[`Application root should render without crashing 1`] = `
                             "CANCEL": "Cancel",
                             "CATEGORY": "Category",
                             "CONFIRM": "Confirm",
+                            "CONTINUE": "Continue",
                             "CURRENCY": "Currency",
                             "DATE": "Date",
                             "DEFAULT_CHOSEN_FEE": "Default fee type",
@@ -1789,6 +1894,7 @@ exports[`Application root should render without crashing 1`] = `
                             "SAVE": "Save",
                             "SELECT": "Select",
                             "SEND": "Send",
+                            "SIGN": "Sign",
                             "SIZE": "Size",
                             "SKIP": "Skip",
                             "START": "Start",
@@ -1806,6 +1912,7 @@ exports[`Application root should render without crashing 1`] = `
                             "WILL": "will",
                             "X_OF_Y": "{{0}} of {{1}}",
                             "YOU": "You",
+                            "YOUR_PASSPHRASE": "Your Passphrase",
                           },
                           "HELP": Object {
                             "MODAL_CONTACT_US": Object {
@@ -1847,7 +1954,17 @@ exports[`Application root should render without crashing 1`] = `
                               "TITLE": "Delegate Registration",
                             },
                             "MODAL_MULTISIGNATURE_DETAIL": Object {
-                              "TITLE": "Multisignature",
+                              "STEP_1": Object {
+                                "TITLE": "Multisignature",
+                              },
+                              "STEP_2": Object {
+                                "DESCRIPTION": "Enter your passphrase in order to sign the Multisignature transaction.",
+                                "TITLE": "Multisignature Passphrase",
+                              },
+                              "STEP_3": Object {
+                                "DESCRIPTION": "Your signature was successfully confirmed and sent.",
+                                "TITLE": "Transaction Successful",
+                              },
                               "WAITING_FOR_SIGNATURES": "Waiting for Signatures",
                             },
                             "MODAL_TRANSFER_DETAIL": Object {
@@ -1978,6 +2095,7 @@ exports[`Application root should render without crashing 1`] = `
                               "CANCEL": "Cancel",
                               "CATEGORY": "Category",
                               "CONFIRM": "Confirm",
+                              "CONTINUE": "Continue",
                               "CURRENCY": "Currency",
                               "DATE": "Date",
                               "DEFAULT_CHOSEN_FEE": "Default fee type",
@@ -2013,6 +2131,7 @@ exports[`Application root should render without crashing 1`] = `
                               "SAVE": "Save",
                               "SELECT": "Select",
                               "SEND": "Send",
+                              "SIGN": "Sign",
                               "SIZE": "Size",
                               "SKIP": "Skip",
                               "START": "Start",
@@ -2030,6 +2149,7 @@ exports[`Application root should render without crashing 1`] = `
                               "WILL": "will",
                               "X_OF_Y": "{{0}} of {{1}}",
                               "YOU": "You",
+                              "YOUR_PASSPHRASE": "Your Passphrase",
                             },
                             "HELP": Object {
                               "MODAL_CONTACT_US": Object {
@@ -2071,7 +2191,17 @@ exports[`Application root should render without crashing 1`] = `
                                 "TITLE": "Delegate Registration",
                               },
                               "MODAL_MULTISIGNATURE_DETAIL": Object {
-                                "TITLE": "Multisignature",
+                                "STEP_1": Object {
+                                  "TITLE": "Multisignature",
+                                },
+                                "STEP_2": Object {
+                                  "DESCRIPTION": "Enter your passphrase in order to sign the Multisignature transaction.",
+                                  "TITLE": "Multisignature Passphrase",
+                                },
+                                "STEP_3": Object {
+                                  "DESCRIPTION": "Your signature was successfully confirmed and sent.",
+                                  "TITLE": "Transaction Successful",
+                                },
                                 "WAITING_FOR_SIGNATURES": "Waiting for Signatures",
                               },
                               "MODAL_TRANSFER_DETAIL": Object {
@@ -2185,6 +2315,7 @@ exports[`Application root should render without crashing 1`] = `
                             "CANCEL": "Cancel",
                             "CATEGORY": "Category",
                             "CONFIRM": "Confirm",
+                            "CONTINUE": "Continue",
                             "CURRENCY": "Currency",
                             "DATE": "Date",
                             "DEFAULT_CHOSEN_FEE": "Default fee type",
@@ -2220,6 +2351,7 @@ exports[`Application root should render without crashing 1`] = `
                             "SAVE": "Save",
                             "SELECT": "Select",
                             "SEND": "Send",
+                            "SIGN": "Sign",
                             "SIZE": "Size",
                             "SKIP": "Skip",
                             "START": "Start",
@@ -2237,6 +2369,7 @@ exports[`Application root should render without crashing 1`] = `
                             "WILL": "will",
                             "X_OF_Y": "{{0}} of {{1}}",
                             "YOU": "You",
+                            "YOUR_PASSPHRASE": "Your Passphrase",
                           },
                           "HELP": Object {
                             "MODAL_CONTACT_US": Object {
@@ -2278,7 +2411,17 @@ exports[`Application root should render without crashing 1`] = `
                               "TITLE": "Delegate Registration",
                             },
                             "MODAL_MULTISIGNATURE_DETAIL": Object {
-                              "TITLE": "Multisignature",
+                              "STEP_1": Object {
+                                "TITLE": "Multisignature",
+                              },
+                              "STEP_2": Object {
+                                "DESCRIPTION": "Enter your passphrase in order to sign the Multisignature transaction.",
+                                "TITLE": "Multisignature Passphrase",
+                              },
+                              "STEP_3": Object {
+                                "DESCRIPTION": "Your signature was successfully confirmed and sent.",
+                                "TITLE": "Transaction Successful",
+                              },
                               "WAITING_FOR_SIGNATURES": "Waiting for Signatures",
                             },
                             "MODAL_TRANSFER_DETAIL": Object {
@@ -2401,6 +2544,7 @@ exports[`Application root should render without crashing 1`] = `
                             "CANCEL": "Cancel",
                             "CATEGORY": "Category",
                             "CONFIRM": "Confirm",
+                            "CONTINUE": "Continue",
                             "CURRENCY": "Currency",
                             "DATE": "Date",
                             "DEFAULT_CHOSEN_FEE": "Default fee type",
@@ -2436,6 +2580,7 @@ exports[`Application root should render without crashing 1`] = `
                             "SAVE": "Save",
                             "SELECT": "Select",
                             "SEND": "Send",
+                            "SIGN": "Sign",
                             "SIZE": "Size",
                             "SKIP": "Skip",
                             "START": "Start",
@@ -2453,6 +2598,7 @@ exports[`Application root should render without crashing 1`] = `
                             "WILL": "will",
                             "X_OF_Y": "{{0}} of {{1}}",
                             "YOU": "You",
+                            "YOUR_PASSPHRASE": "Your Passphrase",
                           },
                           "HELP": Object {
                             "MODAL_CONTACT_US": Object {
@@ -2494,7 +2640,17 @@ exports[`Application root should render without crashing 1`] = `
                               "TITLE": "Delegate Registration",
                             },
                             "MODAL_MULTISIGNATURE_DETAIL": Object {
-                              "TITLE": "Multisignature",
+                              "STEP_1": Object {
+                                "TITLE": "Multisignature",
+                              },
+                              "STEP_2": Object {
+                                "DESCRIPTION": "Enter your passphrase in order to sign the Multisignature transaction.",
+                                "TITLE": "Multisignature Passphrase",
+                              },
+                              "STEP_3": Object {
+                                "DESCRIPTION": "Your signature was successfully confirmed and sent.",
+                                "TITLE": "Transaction Successful",
+                              },
                               "WAITING_FOR_SIGNATURES": "Waiting for Signatures",
                             },
                             "MODAL_TRANSFER_DETAIL": Object {
@@ -2620,6 +2776,7 @@ exports[`Application root should render without crashing 1`] = `
                                 "CANCEL": "Cancel",
                                 "CATEGORY": "Category",
                                 "CONFIRM": "Confirm",
+                                "CONTINUE": "Continue",
                                 "CURRENCY": "Currency",
                                 "DATE": "Date",
                                 "DEFAULT_CHOSEN_FEE": "Default fee type",
@@ -2655,6 +2812,7 @@ exports[`Application root should render without crashing 1`] = `
                                 "SAVE": "Save",
                                 "SELECT": "Select",
                                 "SEND": "Send",
+                                "SIGN": "Sign",
                                 "SIZE": "Size",
                                 "SKIP": "Skip",
                                 "START": "Start",
@@ -2672,6 +2830,7 @@ exports[`Application root should render without crashing 1`] = `
                                 "WILL": "will",
                                 "X_OF_Y": "{{0}} of {{1}}",
                                 "YOU": "You",
+                                "YOUR_PASSPHRASE": "Your Passphrase",
                               },
                               "HELP": Object {
                                 "MODAL_CONTACT_US": Object {
@@ -2713,7 +2872,17 @@ exports[`Application root should render without crashing 1`] = `
                                   "TITLE": "Delegate Registration",
                                 },
                                 "MODAL_MULTISIGNATURE_DETAIL": Object {
-                                  "TITLE": "Multisignature",
+                                  "STEP_1": Object {
+                                    "TITLE": "Multisignature",
+                                  },
+                                  "STEP_2": Object {
+                                    "DESCRIPTION": "Enter your passphrase in order to sign the Multisignature transaction.",
+                                    "TITLE": "Multisignature Passphrase",
+                                  },
+                                  "STEP_3": Object {
+                                    "DESCRIPTION": "Your signature was successfully confirmed and sent.",
+                                    "TITLE": "Transaction Successful",
+                                  },
                                   "WAITING_FOR_SIGNATURES": "Waiting for Signatures",
                                 },
                                 "MODAL_TRANSFER_DETAIL": Object {
@@ -2827,6 +2996,7 @@ exports[`Application root should render without crashing 1`] = `
                               "CANCEL": "Cancel",
                               "CATEGORY": "Category",
                               "CONFIRM": "Confirm",
+                              "CONTINUE": "Continue",
                               "CURRENCY": "Currency",
                               "DATE": "Date",
                               "DEFAULT_CHOSEN_FEE": "Default fee type",
@@ -2862,6 +3032,7 @@ exports[`Application root should render without crashing 1`] = `
                               "SAVE": "Save",
                               "SELECT": "Select",
                               "SEND": "Send",
+                              "SIGN": "Sign",
                               "SIZE": "Size",
                               "SKIP": "Skip",
                               "START": "Start",
@@ -2879,6 +3050,7 @@ exports[`Application root should render without crashing 1`] = `
                               "WILL": "will",
                               "X_OF_Y": "{{0}} of {{1}}",
                               "YOU": "You",
+                              "YOUR_PASSPHRASE": "Your Passphrase",
                             },
                             "HELP": Object {
                               "MODAL_CONTACT_US": Object {
@@ -2920,7 +3092,17 @@ exports[`Application root should render without crashing 1`] = `
                                 "TITLE": "Delegate Registration",
                               },
                               "MODAL_MULTISIGNATURE_DETAIL": Object {
-                                "TITLE": "Multisignature",
+                                "STEP_1": Object {
+                                  "TITLE": "Multisignature",
+                                },
+                                "STEP_2": Object {
+                                  "DESCRIPTION": "Enter your passphrase in order to sign the Multisignature transaction.",
+                                  "TITLE": "Multisignature Passphrase",
+                                },
+                                "STEP_3": Object {
+                                  "DESCRIPTION": "Your signature was successfully confirmed and sent.",
+                                  "TITLE": "Transaction Successful",
+                                },
                                 "WAITING_FOR_SIGNATURES": "Waiting for Signatures",
                               },
                               "MODAL_TRANSFER_DETAIL": Object {
@@ -3044,6 +3226,7 @@ exports[`Application root should render without crashing 1`] = `
                               "CANCEL": "Cancel",
                               "CATEGORY": "Category",
                               "CONFIRM": "Confirm",
+                              "CONTINUE": "Continue",
                               "CURRENCY": "Currency",
                               "DATE": "Date",
                               "DEFAULT_CHOSEN_FEE": "Default fee type",
@@ -3079,6 +3262,7 @@ exports[`Application root should render without crashing 1`] = `
                               "SAVE": "Save",
                               "SELECT": "Select",
                               "SEND": "Send",
+                              "SIGN": "Sign",
                               "SIZE": "Size",
                               "SKIP": "Skip",
                               "START": "Start",
@@ -3096,6 +3280,7 @@ exports[`Application root should render without crashing 1`] = `
                               "WILL": "will",
                               "X_OF_Y": "{{0}} of {{1}}",
                               "YOU": "You",
+                              "YOUR_PASSPHRASE": "Your Passphrase",
                             },
                             "HELP": Object {
                               "MODAL_CONTACT_US": Object {
@@ -3137,7 +3322,17 @@ exports[`Application root should render without crashing 1`] = `
                                 "TITLE": "Delegate Registration",
                               },
                               "MODAL_MULTISIGNATURE_DETAIL": Object {
-                                "TITLE": "Multisignature",
+                                "STEP_1": Object {
+                                  "TITLE": "Multisignature",
+                                },
+                                "STEP_2": Object {
+                                  "DESCRIPTION": "Enter your passphrase in order to sign the Multisignature transaction.",
+                                  "TITLE": "Multisignature Passphrase",
+                                },
+                                "STEP_3": Object {
+                                  "DESCRIPTION": "Your signature was successfully confirmed and sent.",
+                                  "TITLE": "Transaction Successful",
+                                },
                                 "WAITING_FOR_SIGNATURES": "Waiting for Signatures",
                               },
                               "MODAL_TRANSFER_DETAIL": Object {
@@ -4153,6 +4348,7 @@ exports[`Application root should render without crashing 1`] = `
                         "CANCEL": "Cancel",
                         "CATEGORY": "Category",
                         "CONFIRM": "Confirm",
+                        "CONTINUE": "Continue",
                         "CURRENCY": "Currency",
                         "DATE": "Date",
                         "DEFAULT_CHOSEN_FEE": "Default fee type",
@@ -4188,6 +4384,7 @@ exports[`Application root should render without crashing 1`] = `
                         "SAVE": "Save",
                         "SELECT": "Select",
                         "SEND": "Send",
+                        "SIGN": "Sign",
                         "SIZE": "Size",
                         "SKIP": "Skip",
                         "START": "Start",
@@ -4205,6 +4402,7 @@ exports[`Application root should render without crashing 1`] = `
                         "WILL": "will",
                         "X_OF_Y": "{{0}} of {{1}}",
                         "YOU": "You",
+                        "YOUR_PASSPHRASE": "Your Passphrase",
                       },
                       "HELP": Object {
                         "MODAL_CONTACT_US": Object {
@@ -4246,7 +4444,17 @@ exports[`Application root should render without crashing 1`] = `
                           "TITLE": "Delegate Registration",
                         },
                         "MODAL_MULTISIGNATURE_DETAIL": Object {
-                          "TITLE": "Multisignature",
+                          "STEP_1": Object {
+                            "TITLE": "Multisignature",
+                          },
+                          "STEP_2": Object {
+                            "DESCRIPTION": "Enter your passphrase in order to sign the Multisignature transaction.",
+                            "TITLE": "Multisignature Passphrase",
+                          },
+                          "STEP_3": Object {
+                            "DESCRIPTION": "Your signature was successfully confirmed and sent.",
+                            "TITLE": "Transaction Successful",
+                          },
                           "WAITING_FOR_SIGNATURES": "Waiting for Signatures",
                         },
                         "MODAL_TRANSFER_DETAIL": Object {
@@ -4308,6 +4516,7 @@ exports[`Application root should render without crashing 1`] = `
                       "CANCEL": "Cancel",
                       "CATEGORY": "Category",
                       "CONFIRM": "Confirm",
+                      "CONTINUE": "Continue",
                       "CURRENCY": "Currency",
                       "DATE": "Date",
                       "DEFAULT_CHOSEN_FEE": "Default fee type",
@@ -4343,6 +4552,7 @@ exports[`Application root should render without crashing 1`] = `
                       "SAVE": "Save",
                       "SELECT": "Select",
                       "SEND": "Send",
+                      "SIGN": "Sign",
                       "SIZE": "Size",
                       "SKIP": "Skip",
                       "START": "Start",
@@ -4360,6 +4570,7 @@ exports[`Application root should render without crashing 1`] = `
                       "WILL": "will",
                       "X_OF_Y": "{{0}} of {{1}}",
                       "YOU": "You",
+                      "YOUR_PASSPHRASE": "Your Passphrase",
                     },
                     "HELP": Object {
                       "MODAL_CONTACT_US": Object {
@@ -4401,7 +4612,17 @@ exports[`Application root should render without crashing 1`] = `
                         "TITLE": "Delegate Registration",
                       },
                       "MODAL_MULTISIGNATURE_DETAIL": Object {
-                        "TITLE": "Multisignature",
+                        "STEP_1": Object {
+                          "TITLE": "Multisignature",
+                        },
+                        "STEP_2": Object {
+                          "DESCRIPTION": "Enter your passphrase in order to sign the Multisignature transaction.",
+                          "TITLE": "Multisignature Passphrase",
+                        },
+                        "STEP_3": Object {
+                          "DESCRIPTION": "Your signature was successfully confirmed and sent.",
+                          "TITLE": "Transaction Successful",
+                        },
                         "WAITING_FOR_SIGNATURES": "Waiting for Signatures",
                       },
                       "MODAL_TRANSFER_DETAIL": Object {
@@ -4516,6 +4737,7 @@ exports[`Application root should render without crashing 1`] = `
                                 "CANCEL": "Cancel",
                                 "CATEGORY": "Category",
                                 "CONFIRM": "Confirm",
+                                "CONTINUE": "Continue",
                                 "CURRENCY": "Currency",
                                 "DATE": "Date",
                                 "DEFAULT_CHOSEN_FEE": "Default fee type",
@@ -4551,6 +4773,7 @@ exports[`Application root should render without crashing 1`] = `
                                 "SAVE": "Save",
                                 "SELECT": "Select",
                                 "SEND": "Send",
+                                "SIGN": "Sign",
                                 "SIZE": "Size",
                                 "SKIP": "Skip",
                                 "START": "Start",
@@ -4568,6 +4791,7 @@ exports[`Application root should render without crashing 1`] = `
                                 "WILL": "will",
                                 "X_OF_Y": "{{0}} of {{1}}",
                                 "YOU": "You",
+                                "YOUR_PASSPHRASE": "Your Passphrase",
                               },
                               "HELP": Object {
                                 "MODAL_CONTACT_US": Object {
@@ -4609,7 +4833,17 @@ exports[`Application root should render without crashing 1`] = `
                                   "TITLE": "Delegate Registration",
                                 },
                                 "MODAL_MULTISIGNATURE_DETAIL": Object {
-                                  "TITLE": "Multisignature",
+                                  "STEP_1": Object {
+                                    "TITLE": "Multisignature",
+                                  },
+                                  "STEP_2": Object {
+                                    "DESCRIPTION": "Enter your passphrase in order to sign the Multisignature transaction.",
+                                    "TITLE": "Multisignature Passphrase",
+                                  },
+                                  "STEP_3": Object {
+                                    "DESCRIPTION": "Your signature was successfully confirmed and sent.",
+                                    "TITLE": "Transaction Successful",
+                                  },
                                   "WAITING_FOR_SIGNATURES": "Waiting for Signatures",
                                 },
                                 "MODAL_TRANSFER_DETAIL": Object {
@@ -4723,6 +4957,7 @@ exports[`Application root should render without crashing 1`] = `
                               "CANCEL": "Cancel",
                               "CATEGORY": "Category",
                               "CONFIRM": "Confirm",
+                              "CONTINUE": "Continue",
                               "CURRENCY": "Currency",
                               "DATE": "Date",
                               "DEFAULT_CHOSEN_FEE": "Default fee type",
@@ -4758,6 +4993,7 @@ exports[`Application root should render without crashing 1`] = `
                               "SAVE": "Save",
                               "SELECT": "Select",
                               "SEND": "Send",
+                              "SIGN": "Sign",
                               "SIZE": "Size",
                               "SKIP": "Skip",
                               "START": "Start",
@@ -4775,6 +5011,7 @@ exports[`Application root should render without crashing 1`] = `
                               "WILL": "will",
                               "X_OF_Y": "{{0}} of {{1}}",
                               "YOU": "You",
+                              "YOUR_PASSPHRASE": "Your Passphrase",
                             },
                             "HELP": Object {
                               "MODAL_CONTACT_US": Object {
@@ -4816,7 +5053,17 @@ exports[`Application root should render without crashing 1`] = `
                                 "TITLE": "Delegate Registration",
                               },
                               "MODAL_MULTISIGNATURE_DETAIL": Object {
-                                "TITLE": "Multisignature",
+                                "STEP_1": Object {
+                                  "TITLE": "Multisignature",
+                                },
+                                "STEP_2": Object {
+                                  "DESCRIPTION": "Enter your passphrase in order to sign the Multisignature transaction.",
+                                  "TITLE": "Multisignature Passphrase",
+                                },
+                                "STEP_3": Object {
+                                  "DESCRIPTION": "Your signature was successfully confirmed and sent.",
+                                  "TITLE": "Transaction Successful",
+                                },
                                 "WAITING_FOR_SIGNATURES": "Waiting for Signatures",
                               },
                               "MODAL_TRANSFER_DETAIL": Object {
@@ -4940,6 +5187,7 @@ exports[`Application root should render without crashing 1`] = `
                               "CANCEL": "Cancel",
                               "CATEGORY": "Category",
                               "CONFIRM": "Confirm",
+                              "CONTINUE": "Continue",
                               "CURRENCY": "Currency",
                               "DATE": "Date",
                               "DEFAULT_CHOSEN_FEE": "Default fee type",
@@ -4975,6 +5223,7 @@ exports[`Application root should render without crashing 1`] = `
                               "SAVE": "Save",
                               "SELECT": "Select",
                               "SEND": "Send",
+                              "SIGN": "Sign",
                               "SIZE": "Size",
                               "SKIP": "Skip",
                               "START": "Start",
@@ -4992,6 +5241,7 @@ exports[`Application root should render without crashing 1`] = `
                               "WILL": "will",
                               "X_OF_Y": "{{0}} of {{1}}",
                               "YOU": "You",
+                              "YOUR_PASSPHRASE": "Your Passphrase",
                             },
                             "HELP": Object {
                               "MODAL_CONTACT_US": Object {
@@ -5033,7 +5283,17 @@ exports[`Application root should render without crashing 1`] = `
                                 "TITLE": "Delegate Registration",
                               },
                               "MODAL_MULTISIGNATURE_DETAIL": Object {
-                                "TITLE": "Multisignature",
+                                "STEP_1": Object {
+                                  "TITLE": "Multisignature",
+                                },
+                                "STEP_2": Object {
+                                  "DESCRIPTION": "Enter your passphrase in order to sign the Multisignature transaction.",
+                                  "TITLE": "Multisignature Passphrase",
+                                },
+                                "STEP_3": Object {
+                                  "DESCRIPTION": "Your signature was successfully confirmed and sent.",
+                                  "TITLE": "Transaction Successful",
+                                },
                                 "WAITING_FOR_SIGNATURES": "Waiting for Signatures",
                               },
                               "MODAL_TRANSFER_DETAIL": Object {
@@ -5152,6 +5412,7 @@ exports[`Application root should render without crashing 1`] = `
                             "CANCEL": "Cancel",
                             "CATEGORY": "Category",
                             "CONFIRM": "Confirm",
+                            "CONTINUE": "Continue",
                             "CURRENCY": "Currency",
                             "DATE": "Date",
                             "DEFAULT_CHOSEN_FEE": "Default fee type",
@@ -5187,6 +5448,7 @@ exports[`Application root should render without crashing 1`] = `
                             "SAVE": "Save",
                             "SELECT": "Select",
                             "SEND": "Send",
+                            "SIGN": "Sign",
                             "SIZE": "Size",
                             "SKIP": "Skip",
                             "START": "Start",
@@ -5204,6 +5466,7 @@ exports[`Application root should render without crashing 1`] = `
                             "WILL": "will",
                             "X_OF_Y": "{{0}} of {{1}}",
                             "YOU": "You",
+                            "YOUR_PASSPHRASE": "Your Passphrase",
                           },
                           "HELP": Object {
                             "MODAL_CONTACT_US": Object {
@@ -5245,7 +5508,17 @@ exports[`Application root should render without crashing 1`] = `
                               "TITLE": "Delegate Registration",
                             },
                             "MODAL_MULTISIGNATURE_DETAIL": Object {
-                              "TITLE": "Multisignature",
+                              "STEP_1": Object {
+                                "TITLE": "Multisignature",
+                              },
+                              "STEP_2": Object {
+                                "DESCRIPTION": "Enter your passphrase in order to sign the Multisignature transaction.",
+                                "TITLE": "Multisignature Passphrase",
+                              },
+                              "STEP_3": Object {
+                                "DESCRIPTION": "Your signature was successfully confirmed and sent.",
+                                "TITLE": "Transaction Successful",
+                              },
                               "WAITING_FOR_SIGNATURES": "Waiting for Signatures",
                             },
                             "MODAL_TRANSFER_DETAIL": Object {
@@ -5376,6 +5649,7 @@ exports[`Application root should render without crashing 1`] = `
                                   "CANCEL": "Cancel",
                                   "CATEGORY": "Category",
                                   "CONFIRM": "Confirm",
+                                  "CONTINUE": "Continue",
                                   "CURRENCY": "Currency",
                                   "DATE": "Date",
                                   "DEFAULT_CHOSEN_FEE": "Default fee type",
@@ -5411,6 +5685,7 @@ exports[`Application root should render without crashing 1`] = `
                                   "SAVE": "Save",
                                   "SELECT": "Select",
                                   "SEND": "Send",
+                                  "SIGN": "Sign",
                                   "SIZE": "Size",
                                   "SKIP": "Skip",
                                   "START": "Start",
@@ -5428,6 +5703,7 @@ exports[`Application root should render without crashing 1`] = `
                                   "WILL": "will",
                                   "X_OF_Y": "{{0}} of {{1}}",
                                   "YOU": "You",
+                                  "YOUR_PASSPHRASE": "Your Passphrase",
                                 },
                                 "HELP": Object {
                                   "MODAL_CONTACT_US": Object {
@@ -5469,7 +5745,17 @@ exports[`Application root should render without crashing 1`] = `
                                     "TITLE": "Delegate Registration",
                                   },
                                   "MODAL_MULTISIGNATURE_DETAIL": Object {
-                                    "TITLE": "Multisignature",
+                                    "STEP_1": Object {
+                                      "TITLE": "Multisignature",
+                                    },
+                                    "STEP_2": Object {
+                                      "DESCRIPTION": "Enter your passphrase in order to sign the Multisignature transaction.",
+                                      "TITLE": "Multisignature Passphrase",
+                                    },
+                                    "STEP_3": Object {
+                                      "DESCRIPTION": "Your signature was successfully confirmed and sent.",
+                                      "TITLE": "Transaction Successful",
+                                    },
                                     "WAITING_FOR_SIGNATURES": "Waiting for Signatures",
                                   },
                                   "MODAL_TRANSFER_DETAIL": Object {
@@ -5588,6 +5874,7 @@ exports[`Application root should render without crashing 1`] = `
                                 "CANCEL": "Cancel",
                                 "CATEGORY": "Category",
                                 "CONFIRM": "Confirm",
+                                "CONTINUE": "Continue",
                                 "CURRENCY": "Currency",
                                 "DATE": "Date",
                                 "DEFAULT_CHOSEN_FEE": "Default fee type",
@@ -5623,6 +5910,7 @@ exports[`Application root should render without crashing 1`] = `
                                 "SAVE": "Save",
                                 "SELECT": "Select",
                                 "SEND": "Send",
+                                "SIGN": "Sign",
                                 "SIZE": "Size",
                                 "SKIP": "Skip",
                                 "START": "Start",
@@ -5640,6 +5928,7 @@ exports[`Application root should render without crashing 1`] = `
                                 "WILL": "will",
                                 "X_OF_Y": "{{0}} of {{1}}",
                                 "YOU": "You",
+                                "YOUR_PASSPHRASE": "Your Passphrase",
                               },
                               "HELP": Object {
                                 "MODAL_CONTACT_US": Object {
@@ -5681,7 +5970,17 @@ exports[`Application root should render without crashing 1`] = `
                                   "TITLE": "Delegate Registration",
                                 },
                                 "MODAL_MULTISIGNATURE_DETAIL": Object {
-                                  "TITLE": "Multisignature",
+                                  "STEP_1": Object {
+                                    "TITLE": "Multisignature",
+                                  },
+                                  "STEP_2": Object {
+                                    "DESCRIPTION": "Enter your passphrase in order to sign the Multisignature transaction.",
+                                    "TITLE": "Multisignature Passphrase",
+                                  },
+                                  "STEP_3": Object {
+                                    "DESCRIPTION": "Your signature was successfully confirmed and sent.",
+                                    "TITLE": "Transaction Successful",
+                                  },
                                   "WAITING_FOR_SIGNATURES": "Waiting for Signatures",
                                 },
                                 "MODAL_TRANSFER_DETAIL": Object {
@@ -5812,6 +6111,7 @@ exports[`Application root should render without crashing 1`] = `
                                   "CANCEL": "Cancel",
                                   "CATEGORY": "Category",
                                   "CONFIRM": "Confirm",
+                                  "CONTINUE": "Continue",
                                   "CURRENCY": "Currency",
                                   "DATE": "Date",
                                   "DEFAULT_CHOSEN_FEE": "Default fee type",
@@ -5847,6 +6147,7 @@ exports[`Application root should render without crashing 1`] = `
                                   "SAVE": "Save",
                                   "SELECT": "Select",
                                   "SEND": "Send",
+                                  "SIGN": "Sign",
                                   "SIZE": "Size",
                                   "SKIP": "Skip",
                                   "START": "Start",
@@ -5864,6 +6165,7 @@ exports[`Application root should render without crashing 1`] = `
                                   "WILL": "will",
                                   "X_OF_Y": "{{0}} of {{1}}",
                                   "YOU": "You",
+                                  "YOUR_PASSPHRASE": "Your Passphrase",
                                 },
                                 "HELP": Object {
                                   "MODAL_CONTACT_US": Object {
@@ -5905,7 +6207,17 @@ exports[`Application root should render without crashing 1`] = `
                                     "TITLE": "Delegate Registration",
                                   },
                                   "MODAL_MULTISIGNATURE_DETAIL": Object {
-                                    "TITLE": "Multisignature",
+                                    "STEP_1": Object {
+                                      "TITLE": "Multisignature",
+                                    },
+                                    "STEP_2": Object {
+                                      "DESCRIPTION": "Enter your passphrase in order to sign the Multisignature transaction.",
+                                      "TITLE": "Multisignature Passphrase",
+                                    },
+                                    "STEP_3": Object {
+                                      "DESCRIPTION": "Your signature was successfully confirmed and sent.",
+                                      "TITLE": "Transaction Successful",
+                                    },
                                     "WAITING_FOR_SIGNATURES": "Waiting for Signatures",
                                   },
                                   "MODAL_TRANSFER_DETAIL": Object {
@@ -6019,6 +6331,7 @@ exports[`Application root should render without crashing 1`] = `
                                 "CANCEL": "Cancel",
                                 "CATEGORY": "Category",
                                 "CONFIRM": "Confirm",
+                                "CONTINUE": "Continue",
                                 "CURRENCY": "Currency",
                                 "DATE": "Date",
                                 "DEFAULT_CHOSEN_FEE": "Default fee type",
@@ -6054,6 +6367,7 @@ exports[`Application root should render without crashing 1`] = `
                                 "SAVE": "Save",
                                 "SELECT": "Select",
                                 "SEND": "Send",
+                                "SIGN": "Sign",
                                 "SIZE": "Size",
                                 "SKIP": "Skip",
                                 "START": "Start",
@@ -6071,6 +6385,7 @@ exports[`Application root should render without crashing 1`] = `
                                 "WILL": "will",
                                 "X_OF_Y": "{{0}} of {{1}}",
                                 "YOU": "You",
+                                "YOUR_PASSPHRASE": "Your Passphrase",
                               },
                               "HELP": Object {
                                 "MODAL_CONTACT_US": Object {
@@ -6112,7 +6427,17 @@ exports[`Application root should render without crashing 1`] = `
                                   "TITLE": "Delegate Registration",
                                 },
                                 "MODAL_MULTISIGNATURE_DETAIL": Object {
-                                  "TITLE": "Multisignature",
+                                  "STEP_1": Object {
+                                    "TITLE": "Multisignature",
+                                  },
+                                  "STEP_2": Object {
+                                    "DESCRIPTION": "Enter your passphrase in order to sign the Multisignature transaction.",
+                                    "TITLE": "Multisignature Passphrase",
+                                  },
+                                  "STEP_3": Object {
+                                    "DESCRIPTION": "Your signature was successfully confirmed and sent.",
+                                    "TITLE": "Transaction Successful",
+                                  },
                                   "WAITING_FOR_SIGNATURES": "Waiting for Signatures",
                                 },
                                 "MODAL_TRANSFER_DETAIL": Object {
@@ -6235,6 +6560,7 @@ exports[`Application root should render without crashing 1`] = `
                                 "CANCEL": "Cancel",
                                 "CATEGORY": "Category",
                                 "CONFIRM": "Confirm",
+                                "CONTINUE": "Continue",
                                 "CURRENCY": "Currency",
                                 "DATE": "Date",
                                 "DEFAULT_CHOSEN_FEE": "Default fee type",
@@ -6270,6 +6596,7 @@ exports[`Application root should render without crashing 1`] = `
                                 "SAVE": "Save",
                                 "SELECT": "Select",
                                 "SEND": "Send",
+                                "SIGN": "Sign",
                                 "SIZE": "Size",
                                 "SKIP": "Skip",
                                 "START": "Start",
@@ -6287,6 +6614,7 @@ exports[`Application root should render without crashing 1`] = `
                                 "WILL": "will",
                                 "X_OF_Y": "{{0}} of {{1}}",
                                 "YOU": "You",
+                                "YOUR_PASSPHRASE": "Your Passphrase",
                               },
                               "HELP": Object {
                                 "MODAL_CONTACT_US": Object {
@@ -6328,7 +6656,17 @@ exports[`Application root should render without crashing 1`] = `
                                   "TITLE": "Delegate Registration",
                                 },
                                 "MODAL_MULTISIGNATURE_DETAIL": Object {
-                                  "TITLE": "Multisignature",
+                                  "STEP_1": Object {
+                                    "TITLE": "Multisignature",
+                                  },
+                                  "STEP_2": Object {
+                                    "DESCRIPTION": "Enter your passphrase in order to sign the Multisignature transaction.",
+                                    "TITLE": "Multisignature Passphrase",
+                                  },
+                                  "STEP_3": Object {
+                                    "DESCRIPTION": "Your signature was successfully confirmed and sent.",
+                                    "TITLE": "Transaction Successful",
+                                  },
                                   "WAITING_FOR_SIGNATURES": "Waiting for Signatures",
                                 },
                                 "MODAL_TRANSFER_DETAIL": Object {
@@ -6454,6 +6792,7 @@ exports[`Application root should render without crashing 1`] = `
                                     "CANCEL": "Cancel",
                                     "CATEGORY": "Category",
                                     "CONFIRM": "Confirm",
+                                    "CONTINUE": "Continue",
                                     "CURRENCY": "Currency",
                                     "DATE": "Date",
                                     "DEFAULT_CHOSEN_FEE": "Default fee type",
@@ -6489,6 +6828,7 @@ exports[`Application root should render without crashing 1`] = `
                                     "SAVE": "Save",
                                     "SELECT": "Select",
                                     "SEND": "Send",
+                                    "SIGN": "Sign",
                                     "SIZE": "Size",
                                     "SKIP": "Skip",
                                     "START": "Start",
@@ -6506,6 +6846,7 @@ exports[`Application root should render without crashing 1`] = `
                                     "WILL": "will",
                                     "X_OF_Y": "{{0}} of {{1}}",
                                     "YOU": "You",
+                                    "YOUR_PASSPHRASE": "Your Passphrase",
                                   },
                                   "HELP": Object {
                                     "MODAL_CONTACT_US": Object {
@@ -6547,7 +6888,17 @@ exports[`Application root should render without crashing 1`] = `
                                       "TITLE": "Delegate Registration",
                                     },
                                     "MODAL_MULTISIGNATURE_DETAIL": Object {
-                                      "TITLE": "Multisignature",
+                                      "STEP_1": Object {
+                                        "TITLE": "Multisignature",
+                                      },
+                                      "STEP_2": Object {
+                                        "DESCRIPTION": "Enter your passphrase in order to sign the Multisignature transaction.",
+                                        "TITLE": "Multisignature Passphrase",
+                                      },
+                                      "STEP_3": Object {
+                                        "DESCRIPTION": "Your signature was successfully confirmed and sent.",
+                                        "TITLE": "Transaction Successful",
+                                      },
                                       "WAITING_FOR_SIGNATURES": "Waiting for Signatures",
                                     },
                                     "MODAL_TRANSFER_DETAIL": Object {
@@ -6661,6 +7012,7 @@ exports[`Application root should render without crashing 1`] = `
                                   "CANCEL": "Cancel",
                                   "CATEGORY": "Category",
                                   "CONFIRM": "Confirm",
+                                  "CONTINUE": "Continue",
                                   "CURRENCY": "Currency",
                                   "DATE": "Date",
                                   "DEFAULT_CHOSEN_FEE": "Default fee type",
@@ -6696,6 +7048,7 @@ exports[`Application root should render without crashing 1`] = `
                                   "SAVE": "Save",
                                   "SELECT": "Select",
                                   "SEND": "Send",
+                                  "SIGN": "Sign",
                                   "SIZE": "Size",
                                   "SKIP": "Skip",
                                   "START": "Start",
@@ -6713,6 +7066,7 @@ exports[`Application root should render without crashing 1`] = `
                                   "WILL": "will",
                                   "X_OF_Y": "{{0}} of {{1}}",
                                   "YOU": "You",
+                                  "YOUR_PASSPHRASE": "Your Passphrase",
                                 },
                                 "HELP": Object {
                                   "MODAL_CONTACT_US": Object {
@@ -6754,7 +7108,17 @@ exports[`Application root should render without crashing 1`] = `
                                     "TITLE": "Delegate Registration",
                                   },
                                   "MODAL_MULTISIGNATURE_DETAIL": Object {
-                                    "TITLE": "Multisignature",
+                                    "STEP_1": Object {
+                                      "TITLE": "Multisignature",
+                                    },
+                                    "STEP_2": Object {
+                                      "DESCRIPTION": "Enter your passphrase in order to sign the Multisignature transaction.",
+                                      "TITLE": "Multisignature Passphrase",
+                                    },
+                                    "STEP_3": Object {
+                                      "DESCRIPTION": "Your signature was successfully confirmed and sent.",
+                                      "TITLE": "Transaction Successful",
+                                    },
                                     "WAITING_FOR_SIGNATURES": "Waiting for Signatures",
                                   },
                                   "MODAL_TRANSFER_DETAIL": Object {
@@ -6878,6 +7242,7 @@ exports[`Application root should render without crashing 1`] = `
                                   "CANCEL": "Cancel",
                                   "CATEGORY": "Category",
                                   "CONFIRM": "Confirm",
+                                  "CONTINUE": "Continue",
                                   "CURRENCY": "Currency",
                                   "DATE": "Date",
                                   "DEFAULT_CHOSEN_FEE": "Default fee type",
@@ -6913,6 +7278,7 @@ exports[`Application root should render without crashing 1`] = `
                                   "SAVE": "Save",
                                   "SELECT": "Select",
                                   "SEND": "Send",
+                                  "SIGN": "Sign",
                                   "SIZE": "Size",
                                   "SKIP": "Skip",
                                   "START": "Start",
@@ -6930,6 +7296,7 @@ exports[`Application root should render without crashing 1`] = `
                                   "WILL": "will",
                                   "X_OF_Y": "{{0}} of {{1}}",
                                   "YOU": "You",
+                                  "YOUR_PASSPHRASE": "Your Passphrase",
                                 },
                                 "HELP": Object {
                                   "MODAL_CONTACT_US": Object {
@@ -6971,7 +7338,17 @@ exports[`Application root should render without crashing 1`] = `
                                     "TITLE": "Delegate Registration",
                                   },
                                   "MODAL_MULTISIGNATURE_DETAIL": Object {
-                                    "TITLE": "Multisignature",
+                                    "STEP_1": Object {
+                                      "TITLE": "Multisignature",
+                                    },
+                                    "STEP_2": Object {
+                                      "DESCRIPTION": "Enter your passphrase in order to sign the Multisignature transaction.",
+                                      "TITLE": "Multisignature Passphrase",
+                                    },
+                                    "STEP_3": Object {
+                                      "DESCRIPTION": "Your signature was successfully confirmed and sent.",
+                                      "TITLE": "Transaction Successful",
+                                    },
                                     "WAITING_FOR_SIGNATURES": "Waiting for Signatures",
                                   },
                                   "MODAL_TRANSFER_DETAIL": Object {
@@ -7987,6 +8364,7 @@ exports[`Application root should render without crashing 1`] = `
                             "CANCEL": "Cancel",
                             "CATEGORY": "Category",
                             "CONFIRM": "Confirm",
+                            "CONTINUE": "Continue",
                             "CURRENCY": "Currency",
                             "DATE": "Date",
                             "DEFAULT_CHOSEN_FEE": "Default fee type",
@@ -8022,6 +8400,7 @@ exports[`Application root should render without crashing 1`] = `
                             "SAVE": "Save",
                             "SELECT": "Select",
                             "SEND": "Send",
+                            "SIGN": "Sign",
                             "SIZE": "Size",
                             "SKIP": "Skip",
                             "START": "Start",
@@ -8039,6 +8418,7 @@ exports[`Application root should render without crashing 1`] = `
                             "WILL": "will",
                             "X_OF_Y": "{{0}} of {{1}}",
                             "YOU": "You",
+                            "YOUR_PASSPHRASE": "Your Passphrase",
                           },
                           "HELP": Object {
                             "MODAL_CONTACT_US": Object {
@@ -8080,7 +8460,17 @@ exports[`Application root should render without crashing 1`] = `
                               "TITLE": "Delegate Registration",
                             },
                             "MODAL_MULTISIGNATURE_DETAIL": Object {
-                              "TITLE": "Multisignature",
+                              "STEP_1": Object {
+                                "TITLE": "Multisignature",
+                              },
+                              "STEP_2": Object {
+                                "DESCRIPTION": "Enter your passphrase in order to sign the Multisignature transaction.",
+                                "TITLE": "Multisignature Passphrase",
+                              },
+                              "STEP_3": Object {
+                                "DESCRIPTION": "Your signature was successfully confirmed and sent.",
+                                "TITLE": "Transaction Successful",
+                              },
                               "WAITING_FOR_SIGNATURES": "Waiting for Signatures",
                             },
                             "MODAL_TRANSFER_DETAIL": Object {
@@ -8143,6 +8533,7 @@ exports[`Application root should render without crashing 1`] = `
                           "CANCEL": "Cancel",
                           "CATEGORY": "Category",
                           "CONFIRM": "Confirm",
+                          "CONTINUE": "Continue",
                           "CURRENCY": "Currency",
                           "DATE": "Date",
                           "DEFAULT_CHOSEN_FEE": "Default fee type",
@@ -8178,6 +8569,7 @@ exports[`Application root should render without crashing 1`] = `
                           "SAVE": "Save",
                           "SELECT": "Select",
                           "SEND": "Send",
+                          "SIGN": "Sign",
                           "SIZE": "Size",
                           "SKIP": "Skip",
                           "START": "Start",
@@ -8195,6 +8587,7 @@ exports[`Application root should render without crashing 1`] = `
                           "WILL": "will",
                           "X_OF_Y": "{{0}} of {{1}}",
                           "YOU": "You",
+                          "YOUR_PASSPHRASE": "Your Passphrase",
                         },
                         "HELP": Object {
                           "MODAL_CONTACT_US": Object {
@@ -8236,7 +8629,17 @@ exports[`Application root should render without crashing 1`] = `
                             "TITLE": "Delegate Registration",
                           },
                           "MODAL_MULTISIGNATURE_DETAIL": Object {
-                            "TITLE": "Multisignature",
+                            "STEP_1": Object {
+                              "TITLE": "Multisignature",
+                            },
+                            "STEP_2": Object {
+                              "DESCRIPTION": "Enter your passphrase in order to sign the Multisignature transaction.",
+                              "TITLE": "Multisignature Passphrase",
+                            },
+                            "STEP_3": Object {
+                              "DESCRIPTION": "Your signature was successfully confirmed and sent.",
+                              "TITLE": "Transaction Successful",
+                            },
                             "WAITING_FOR_SIGNATURES": "Waiting for Signatures",
                           },
                           "MODAL_TRANSFER_DETAIL": Object {
@@ -8354,6 +8757,7 @@ exports[`Application root should render without crashing 1`] = `
                               "CANCEL": "Cancel",
                               "CATEGORY": "Category",
                               "CONFIRM": "Confirm",
+                              "CONTINUE": "Continue",
                               "CURRENCY": "Currency",
                               "DATE": "Date",
                               "DEFAULT_CHOSEN_FEE": "Default fee type",
@@ -8389,6 +8793,7 @@ exports[`Application root should render without crashing 1`] = `
                               "SAVE": "Save",
                               "SELECT": "Select",
                               "SEND": "Send",
+                              "SIGN": "Sign",
                               "SIZE": "Size",
                               "SKIP": "Skip",
                               "START": "Start",
@@ -8406,6 +8811,7 @@ exports[`Application root should render without crashing 1`] = `
                               "WILL": "will",
                               "X_OF_Y": "{{0}} of {{1}}",
                               "YOU": "You",
+                              "YOUR_PASSPHRASE": "Your Passphrase",
                             },
                             "HELP": Object {
                               "MODAL_CONTACT_US": Object {
@@ -8447,7 +8853,17 @@ exports[`Application root should render without crashing 1`] = `
                                 "TITLE": "Delegate Registration",
                               },
                               "MODAL_MULTISIGNATURE_DETAIL": Object {
-                                "TITLE": "Multisignature",
+                                "STEP_1": Object {
+                                  "TITLE": "Multisignature",
+                                },
+                                "STEP_2": Object {
+                                  "DESCRIPTION": "Enter your passphrase in order to sign the Multisignature transaction.",
+                                  "TITLE": "Multisignature Passphrase",
+                                },
+                                "STEP_3": Object {
+                                  "DESCRIPTION": "Your signature was successfully confirmed and sent.",
+                                  "TITLE": "Transaction Successful",
+                                },
                                 "WAITING_FOR_SIGNATURES": "Waiting for Signatures",
                               },
                               "MODAL_TRANSFER_DETAIL": Object {
@@ -8566,6 +8982,7 @@ exports[`Application root should render without crashing 1`] = `
                             "CANCEL": "Cancel",
                             "CATEGORY": "Category",
                             "CONFIRM": "Confirm",
+                            "CONTINUE": "Continue",
                             "CURRENCY": "Currency",
                             "DATE": "Date",
                             "DEFAULT_CHOSEN_FEE": "Default fee type",
@@ -8601,6 +9018,7 @@ exports[`Application root should render without crashing 1`] = `
                             "SAVE": "Save",
                             "SELECT": "Select",
                             "SEND": "Send",
+                            "SIGN": "Sign",
                             "SIZE": "Size",
                             "SKIP": "Skip",
                             "START": "Start",
@@ -8618,6 +9036,7 @@ exports[`Application root should render without crashing 1`] = `
                             "WILL": "will",
                             "X_OF_Y": "{{0}} of {{1}}",
                             "YOU": "You",
+                            "YOUR_PASSPHRASE": "Your Passphrase",
                           },
                           "HELP": Object {
                             "MODAL_CONTACT_US": Object {
@@ -8659,7 +9078,17 @@ exports[`Application root should render without crashing 1`] = `
                               "TITLE": "Delegate Registration",
                             },
                             "MODAL_MULTISIGNATURE_DETAIL": Object {
-                              "TITLE": "Multisignature",
+                              "STEP_1": Object {
+                                "TITLE": "Multisignature",
+                              },
+                              "STEP_2": Object {
+                                "DESCRIPTION": "Enter your passphrase in order to sign the Multisignature transaction.",
+                                "TITLE": "Multisignature Passphrase",
+                              },
+                              "STEP_3": Object {
+                                "DESCRIPTION": "Your signature was successfully confirmed and sent.",
+                                "TITLE": "Transaction Successful",
+                              },
                               "WAITING_FOR_SIGNATURES": "Waiting for Signatures",
                             },
                             "MODAL_TRANSFER_DETAIL": Object {
@@ -8791,6 +9220,7 @@ exports[`Application root should render without crashing 1`] = `
                               "CANCEL": "Cancel",
                               "CATEGORY": "Category",
                               "CONFIRM": "Confirm",
+                              "CONTINUE": "Continue",
                               "CURRENCY": "Currency",
                               "DATE": "Date",
                               "DEFAULT_CHOSEN_FEE": "Default fee type",
@@ -8826,6 +9256,7 @@ exports[`Application root should render without crashing 1`] = `
                               "SAVE": "Save",
                               "SELECT": "Select",
                               "SEND": "Send",
+                              "SIGN": "Sign",
                               "SIZE": "Size",
                               "SKIP": "Skip",
                               "START": "Start",
@@ -8843,6 +9274,7 @@ exports[`Application root should render without crashing 1`] = `
                               "WILL": "will",
                               "X_OF_Y": "{{0}} of {{1}}",
                               "YOU": "You",
+                              "YOUR_PASSPHRASE": "Your Passphrase",
                             },
                             "HELP": Object {
                               "MODAL_CONTACT_US": Object {
@@ -8884,7 +9316,17 @@ exports[`Application root should render without crashing 1`] = `
                                 "TITLE": "Delegate Registration",
                               },
                               "MODAL_MULTISIGNATURE_DETAIL": Object {
-                                "TITLE": "Multisignature",
+                                "STEP_1": Object {
+                                  "TITLE": "Multisignature",
+                                },
+                                "STEP_2": Object {
+                                  "DESCRIPTION": "Enter your passphrase in order to sign the Multisignature transaction.",
+                                  "TITLE": "Multisignature Passphrase",
+                                },
+                                "STEP_3": Object {
+                                  "DESCRIPTION": "Your signature was successfully confirmed and sent.",
+                                  "TITLE": "Transaction Successful",
+                                },
                                 "WAITING_FOR_SIGNATURES": "Waiting for Signatures",
                               },
                               "MODAL_TRANSFER_DETAIL": Object {
@@ -8998,6 +9440,7 @@ exports[`Application root should render without crashing 1`] = `
                             "CANCEL": "Cancel",
                             "CATEGORY": "Category",
                             "CONFIRM": "Confirm",
+                            "CONTINUE": "Continue",
                             "CURRENCY": "Currency",
                             "DATE": "Date",
                             "DEFAULT_CHOSEN_FEE": "Default fee type",
@@ -9033,6 +9476,7 @@ exports[`Application root should render without crashing 1`] = `
                             "SAVE": "Save",
                             "SELECT": "Select",
                             "SEND": "Send",
+                            "SIGN": "Sign",
                             "SIZE": "Size",
                             "SKIP": "Skip",
                             "START": "Start",
@@ -9050,6 +9494,7 @@ exports[`Application root should render without crashing 1`] = `
                             "WILL": "will",
                             "X_OF_Y": "{{0}} of {{1}}",
                             "YOU": "You",
+                            "YOUR_PASSPHRASE": "Your Passphrase",
                           },
                           "HELP": Object {
                             "MODAL_CONTACT_US": Object {
@@ -9091,7 +9536,17 @@ exports[`Application root should render without crashing 1`] = `
                               "TITLE": "Delegate Registration",
                             },
                             "MODAL_MULTISIGNATURE_DETAIL": Object {
-                              "TITLE": "Multisignature",
+                              "STEP_1": Object {
+                                "TITLE": "Multisignature",
+                              },
+                              "STEP_2": Object {
+                                "DESCRIPTION": "Enter your passphrase in order to sign the Multisignature transaction.",
+                                "TITLE": "Multisignature Passphrase",
+                              },
+                              "STEP_3": Object {
+                                "DESCRIPTION": "Your signature was successfully confirmed and sent.",
+                                "TITLE": "Transaction Successful",
+                              },
                               "WAITING_FOR_SIGNATURES": "Waiting for Signatures",
                             },
                             "MODAL_TRANSFER_DETAIL": Object {
@@ -9215,6 +9670,7 @@ exports[`Application root should render without crashing 1`] = `
                             "CANCEL": "Cancel",
                             "CATEGORY": "Category",
                             "CONFIRM": "Confirm",
+                            "CONTINUE": "Continue",
                             "CURRENCY": "Currency",
                             "DATE": "Date",
                             "DEFAULT_CHOSEN_FEE": "Default fee type",
@@ -9250,6 +9706,7 @@ exports[`Application root should render without crashing 1`] = `
                             "SAVE": "Save",
                             "SELECT": "Select",
                             "SEND": "Send",
+                            "SIGN": "Sign",
                             "SIZE": "Size",
                             "SKIP": "Skip",
                             "START": "Start",
@@ -9267,6 +9724,7 @@ exports[`Application root should render without crashing 1`] = `
                             "WILL": "will",
                             "X_OF_Y": "{{0}} of {{1}}",
                             "YOU": "You",
+                            "YOUR_PASSPHRASE": "Your Passphrase",
                           },
                           "HELP": Object {
                             "MODAL_CONTACT_US": Object {
@@ -9308,7 +9766,17 @@ exports[`Application root should render without crashing 1`] = `
                               "TITLE": "Delegate Registration",
                             },
                             "MODAL_MULTISIGNATURE_DETAIL": Object {
-                              "TITLE": "Multisignature",
+                              "STEP_1": Object {
+                                "TITLE": "Multisignature",
+                              },
+                              "STEP_2": Object {
+                                "DESCRIPTION": "Enter your passphrase in order to sign the Multisignature transaction.",
+                                "TITLE": "Multisignature Passphrase",
+                              },
+                              "STEP_3": Object {
+                                "DESCRIPTION": "Your signature was successfully confirmed and sent.",
+                                "TITLE": "Transaction Successful",
+                              },
                               "WAITING_FOR_SIGNATURES": "Waiting for Signatures",
                             },
                             "MODAL_TRANSFER_DETAIL": Object {
@@ -9427,6 +9895,7 @@ exports[`Application root should render without crashing 1`] = `
                           "CANCEL": "Cancel",
                           "CATEGORY": "Category",
                           "CONFIRM": "Confirm",
+                          "CONTINUE": "Continue",
                           "CURRENCY": "Currency",
                           "DATE": "Date",
                           "DEFAULT_CHOSEN_FEE": "Default fee type",
@@ -9462,6 +9931,7 @@ exports[`Application root should render without crashing 1`] = `
                           "SAVE": "Save",
                           "SELECT": "Select",
                           "SEND": "Send",
+                          "SIGN": "Sign",
                           "SIZE": "Size",
                           "SKIP": "Skip",
                           "START": "Start",
@@ -9479,6 +9949,7 @@ exports[`Application root should render without crashing 1`] = `
                           "WILL": "will",
                           "X_OF_Y": "{{0}} of {{1}}",
                           "YOU": "You",
+                          "YOUR_PASSPHRASE": "Your Passphrase",
                         },
                         "HELP": Object {
                           "MODAL_CONTACT_US": Object {
@@ -9520,7 +9991,17 @@ exports[`Application root should render without crashing 1`] = `
                             "TITLE": "Delegate Registration",
                           },
                           "MODAL_MULTISIGNATURE_DETAIL": Object {
-                            "TITLE": "Multisignature",
+                            "STEP_1": Object {
+                              "TITLE": "Multisignature",
+                            },
+                            "STEP_2": Object {
+                              "DESCRIPTION": "Enter your passphrase in order to sign the Multisignature transaction.",
+                              "TITLE": "Multisignature Passphrase",
+                            },
+                            "STEP_3": Object {
+                              "DESCRIPTION": "Your signature was successfully confirmed and sent.",
+                              "TITLE": "Transaction Successful",
+                            },
                             "WAITING_FOR_SIGNATURES": "Waiting for Signatures",
                           },
                           "MODAL_TRANSFER_DETAIL": Object {
@@ -9644,6 +10125,7 @@ exports[`Application root should render without crashing 1`] = `
                                 "CANCEL": "Cancel",
                                 "CATEGORY": "Category",
                                 "CONFIRM": "Confirm",
+                                "CONTINUE": "Continue",
                                 "CURRENCY": "Currency",
                                 "DATE": "Date",
                                 "DEFAULT_CHOSEN_FEE": "Default fee type",
@@ -9679,6 +10161,7 @@ exports[`Application root should render without crashing 1`] = `
                                 "SAVE": "Save",
                                 "SELECT": "Select",
                                 "SEND": "Send",
+                                "SIGN": "Sign",
                                 "SIZE": "Size",
                                 "SKIP": "Skip",
                                 "START": "Start",
@@ -9696,6 +10179,7 @@ exports[`Application root should render without crashing 1`] = `
                                 "WILL": "will",
                                 "X_OF_Y": "{{0}} of {{1}}",
                                 "YOU": "You",
+                                "YOUR_PASSPHRASE": "Your Passphrase",
                               },
                               "HELP": Object {
                                 "MODAL_CONTACT_US": Object {
@@ -9737,7 +10221,17 @@ exports[`Application root should render without crashing 1`] = `
                                   "TITLE": "Delegate Registration",
                                 },
                                 "MODAL_MULTISIGNATURE_DETAIL": Object {
-                                  "TITLE": "Multisignature",
+                                  "STEP_1": Object {
+                                    "TITLE": "Multisignature",
+                                  },
+                                  "STEP_2": Object {
+                                    "DESCRIPTION": "Enter your passphrase in order to sign the Multisignature transaction.",
+                                    "TITLE": "Multisignature Passphrase",
+                                  },
+                                  "STEP_3": Object {
+                                    "DESCRIPTION": "Your signature was successfully confirmed and sent.",
+                                    "TITLE": "Transaction Successful",
+                                  },
                                   "WAITING_FOR_SIGNATURES": "Waiting for Signatures",
                                 },
                                 "MODAL_TRANSFER_DETAIL": Object {
@@ -9851,6 +10345,7 @@ exports[`Application root should render without crashing 1`] = `
                               "CANCEL": "Cancel",
                               "CATEGORY": "Category",
                               "CONFIRM": "Confirm",
+                              "CONTINUE": "Continue",
                               "CURRENCY": "Currency",
                               "DATE": "Date",
                               "DEFAULT_CHOSEN_FEE": "Default fee type",
@@ -9886,6 +10381,7 @@ exports[`Application root should render without crashing 1`] = `
                               "SAVE": "Save",
                               "SELECT": "Select",
                               "SEND": "Send",
+                              "SIGN": "Sign",
                               "SIZE": "Size",
                               "SKIP": "Skip",
                               "START": "Start",
@@ -9903,6 +10399,7 @@ exports[`Application root should render without crashing 1`] = `
                               "WILL": "will",
                               "X_OF_Y": "{{0}} of {{1}}",
                               "YOU": "You",
+                              "YOUR_PASSPHRASE": "Your Passphrase",
                             },
                             "HELP": Object {
                               "MODAL_CONTACT_US": Object {
@@ -9944,7 +10441,17 @@ exports[`Application root should render without crashing 1`] = `
                                 "TITLE": "Delegate Registration",
                               },
                               "MODAL_MULTISIGNATURE_DETAIL": Object {
-                                "TITLE": "Multisignature",
+                                "STEP_1": Object {
+                                  "TITLE": "Multisignature",
+                                },
+                                "STEP_2": Object {
+                                  "DESCRIPTION": "Enter your passphrase in order to sign the Multisignature transaction.",
+                                  "TITLE": "Multisignature Passphrase",
+                                },
+                                "STEP_3": Object {
+                                  "DESCRIPTION": "Your signature was successfully confirmed and sent.",
+                                  "TITLE": "Transaction Successful",
+                                },
                                 "WAITING_FOR_SIGNATURES": "Waiting for Signatures",
                               },
                               "MODAL_TRANSFER_DETAIL": Object {
@@ -10068,6 +10575,7 @@ exports[`Application root should render without crashing 1`] = `
                               "CANCEL": "Cancel",
                               "CATEGORY": "Category",
                               "CONFIRM": "Confirm",
+                              "CONTINUE": "Continue",
                               "CURRENCY": "Currency",
                               "DATE": "Date",
                               "DEFAULT_CHOSEN_FEE": "Default fee type",
@@ -10103,6 +10611,7 @@ exports[`Application root should render without crashing 1`] = `
                               "SAVE": "Save",
                               "SELECT": "Select",
                               "SEND": "Send",
+                              "SIGN": "Sign",
                               "SIZE": "Size",
                               "SKIP": "Skip",
                               "START": "Start",
@@ -10120,6 +10629,7 @@ exports[`Application root should render without crashing 1`] = `
                               "WILL": "will",
                               "X_OF_Y": "{{0}} of {{1}}",
                               "YOU": "You",
+                              "YOUR_PASSPHRASE": "Your Passphrase",
                             },
                             "HELP": Object {
                               "MODAL_CONTACT_US": Object {
@@ -10161,7 +10671,17 @@ exports[`Application root should render without crashing 1`] = `
                                 "TITLE": "Delegate Registration",
                               },
                               "MODAL_MULTISIGNATURE_DETAIL": Object {
-                                "TITLE": "Multisignature",
+                                "STEP_1": Object {
+                                  "TITLE": "Multisignature",
+                                },
+                                "STEP_2": Object {
+                                  "DESCRIPTION": "Enter your passphrase in order to sign the Multisignature transaction.",
+                                  "TITLE": "Multisignature Passphrase",
+                                },
+                                "STEP_3": Object {
+                                  "DESCRIPTION": "Your signature was successfully confirmed and sent.",
+                                  "TITLE": "Transaction Successful",
+                                },
                                 "WAITING_FOR_SIGNATURES": "Waiting for Signatures",
                               },
                               "MODAL_TRANSFER_DETAIL": Object {
@@ -11177,6 +11697,7 @@ exports[`Application root should render without crashing 1`] = `
                         "CANCEL": "Cancel",
                         "CATEGORY": "Category",
                         "CONFIRM": "Confirm",
+                        "CONTINUE": "Continue",
                         "CURRENCY": "Currency",
                         "DATE": "Date",
                         "DEFAULT_CHOSEN_FEE": "Default fee type",
@@ -11212,6 +11733,7 @@ exports[`Application root should render without crashing 1`] = `
                         "SAVE": "Save",
                         "SELECT": "Select",
                         "SEND": "Send",
+                        "SIGN": "Sign",
                         "SIZE": "Size",
                         "SKIP": "Skip",
                         "START": "Start",
@@ -11229,6 +11751,7 @@ exports[`Application root should render without crashing 1`] = `
                         "WILL": "will",
                         "X_OF_Y": "{{0}} of {{1}}",
                         "YOU": "You",
+                        "YOUR_PASSPHRASE": "Your Passphrase",
                       },
                       "HELP": Object {
                         "MODAL_CONTACT_US": Object {
@@ -11270,7 +11793,17 @@ exports[`Application root should render without crashing 1`] = `
                           "TITLE": "Delegate Registration",
                         },
                         "MODAL_MULTISIGNATURE_DETAIL": Object {
-                          "TITLE": "Multisignature",
+                          "STEP_1": Object {
+                            "TITLE": "Multisignature",
+                          },
+                          "STEP_2": Object {
+                            "DESCRIPTION": "Enter your passphrase in order to sign the Multisignature transaction.",
+                            "TITLE": "Multisignature Passphrase",
+                          },
+                          "STEP_3": Object {
+                            "DESCRIPTION": "Your signature was successfully confirmed and sent.",
+                            "TITLE": "Transaction Successful",
+                          },
                           "WAITING_FOR_SIGNATURES": "Waiting for Signatures",
                         },
                         "MODAL_TRANSFER_DETAIL": Object {
