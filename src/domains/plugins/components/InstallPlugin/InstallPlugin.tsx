@@ -1,10 +1,10 @@
-import React from "react";
-import { useTranslation } from "react-i18next";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { CircularProgressBar } from "app/components/CircularProgressBar";
 import { Icon } from "app/components/Icon";
 import { Modal } from "app/components/Modal";
+import React from "react";
+import { useTranslation } from "react-i18next";
 
 type InstallPluginProps = {
 	// TODO: This props `step` is used only as a mock to navigate between steps

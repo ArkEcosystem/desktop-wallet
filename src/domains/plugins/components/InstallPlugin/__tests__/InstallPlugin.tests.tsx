@@ -1,12 +1,10 @@
-import React from "react";
 import { act, fireEvent, render } from "@testing-library/react";
-import { I18nextProvider } from "react-i18next";
-
 import { i18n } from "app/i18n";
 import { translations as COMMON } from "app/i18n/common/i18n";
+import React from "react";
+import { I18nextProvider } from "react-i18next";
 
 import { InstallPlugin } from "../";
-
 import { translations as PLUGINS } from "../../../i18n";
 
 describe("InstallPlugin", () => {
