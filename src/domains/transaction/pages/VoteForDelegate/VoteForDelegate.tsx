@@ -3,7 +3,7 @@ import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { Form, FormField, FormLabel } from "app/components/Form";
 import { Icon } from "app/components/Icon";
-import { Input, InputRange } from "app/components/Input";
+import { Input, InputPassword,InputRange } from "app/components/Input";
 import { RadioButton, RadioButtonGroup, useRadioState } from "app/components/RadioButton";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
@@ -154,6 +154,11 @@ export const ThirdStep = () => {
 			<div>
 				<h1 className="mb-0">Passphrase</h1>
 				<p className="text-theme-neutral-dark">Confirm your password to continue</p>
+				<div className="grid grid-flow-row gap-2">
+					<TransactionDetail border={false} label="Your password">
+						<InputPassword />
+					</TransactionDetail>
+				</div>
 			</div>
 		</section>
 	);
