@@ -42,12 +42,12 @@
 		"build:win": "yarn build && electron-builder --win --x64 --ia32 --publish never"
 	},
 	"dependencies": {
-		"@arkecosystem/platform-sdk": "^0.9.84",
-		"@arkecosystem/platform-sdk-ark": "^0.9.84",
-		"@arkecosystem/platform-sdk-crypto": "^0.9.84",
-		"@arkecosystem/platform-sdk-intl": "^0.9.84",
-		"@arkecosystem/platform-sdk-profiles": "^0.9.84",
-		"@arkecosystem/platform-sdk-support": "^0.9.84",
+		"@arkecosystem/platform-sdk": "^0.9.104",
+		"@arkecosystem/platform-sdk-ark": "^0.9.104",
+		"@arkecosystem/platform-sdk-crypto": "^0.9.104",
+		"@arkecosystem/platform-sdk-intl": "^0.9.104",
+		"@arkecosystem/platform-sdk-profiles": "^0.9.104",
+		"@arkecosystem/platform-sdk-support": "^0.9.104",
 		"@arkecosystem/utils": "^1.1.8",
 		"@testing-library/jest-dom": "^5.9.0",
 		"@testing-library/react": "^10.2.1",
