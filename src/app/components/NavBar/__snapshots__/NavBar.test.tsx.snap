@@ -78,6 +78,7 @@ exports[`NavBar should render 1`] = `
         >
           <div
             class="relative"
+            data-testid="dropdown__toggle"
           >
             <div
               class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
@@ -145,6 +146,7 @@ exports[`NavBar should render 1`] = `
           >
             <div
               class="relative"
+              data-testid="dropdown__toggle"
             >
               <div
                 class="cursor-pointer"
@@ -254,6 +256,7 @@ exports[`NavBar should render with custom menu 1`] = `
         >
           <div
             class="relative"
+            data-testid="dropdown__toggle"
           >
             <div
               class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
@@ -321,6 +324,7 @@ exports[`NavBar should render with custom menu 1`] = `
           >
             <div
               class="relative"
+              data-testid="dropdown__toggle"
             >
               <div
                 class="cursor-pointer"
