@@ -1,6 +1,7 @@
 import React from "react";
 import tw, { styled } from "twin.macro";
-import { TabContext, useTab, TabId } from "./useTab";
+
+import { TabContext, TabId, useTab } from "./useTab";
 
 type TabsProps = {
 	children: React.ReactNode;

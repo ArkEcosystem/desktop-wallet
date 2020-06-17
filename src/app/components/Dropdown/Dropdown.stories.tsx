@@ -1,4 +1,5 @@
 import React from "react";
+
 import { Dropdown } from "./Dropdown";
 
 export default {
@@ -46,6 +47,23 @@ export const CustomToggleIcon = () => {
 			Custom toggle svg icon:
 			<div className="w-20 mt-10 ml-40">
 				<Dropdown toggleIcon="Upload" onSelect={(option: any) => console.log(option)}>
+					<div className="p-5">Custom content (default slot)</div>
+				</Dropdown>
+			</div>
+		</div>
+	);
+};
+
+export const CustomToggleContent = () => {
+	return (
+		<div className="">
+			Custom toggle html:
+			<div className="w-20 mt-10 ml-40">
+				<Dropdown
+					toggleContent={(isOpen: boolean) => <div>{isOpen ? "open" : "closed"}</div>}
+					toggleIcon="Upload"
+					onSelect={(option: any) => console.log(option)}
+				>
 					<div className="p-5">Custom content (default slot)</div>
 				</Dropdown>
 			</div>

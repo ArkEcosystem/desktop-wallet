@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dropdown should render 1`] = `
+<div>
+  <div
+    class="relative"
+  >
+    <button
+      class="float-right outline-none focus:outline-none"
+      data-testid="dropdown__toggle"
+    >
+      <div
+        class="sc-AxjAm buCJuk"
+        height="20"
+        width="20"
+      >
+        <svg>
+          settings.svg
+        </svg>
+      </div>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Dropdown should render toggle icon 1`] = `
+<div>
+  <div
+    class="relative"
+  >
+    <button
+      class="float-right outline-none focus:outline-none"
+      data-testid="dropdown__toggle"
+    >
+      <div
+        class="sc-AxjAm buCJuk"
+        height="20"
+        width="20"
+      >
+        <svg>
+          settings.svg
+        </svg>
+      </div>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Dropdown should render with custom toggle content as function 1`] = `
+<div>
+  <div
+    class="relative"
+  >
+    <div>
+      Dropdown is open: 
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Dropdown should render with custom toggle content as react element 1`] = `
+<div>
+  <div
+    class="relative"
+  >
+    <div>
+      custom toggle
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Dropdown should render with options 1`] = `
+<div>
+  <div
+    class="relative"
+  >
+    <button
+      class="float-right outline-none focus:outline-none"
+      data-testid="dropdown__toggle"
+    >
+      <div
+        class="sc-AxjAm buCJuk"
+        height="20"
+        width="20"
+      >
+        <svg>
+          settings.svg
+        </svg>
+      </div>
+    </button>
+  </div>
+</div>
+`;

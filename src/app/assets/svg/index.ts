@@ -16,8 +16,8 @@ import { ReactComponent as Delegate } from "./delegate.svg";
 import { ReactComponent as Discord } from "./discord.svg";
 import { ReactComponent as Download } from "./download.svg";
 import { ReactComponent as Eth } from "./eth.svg";
-import { ReactComponent as Eye } from "./eye.svg";
 import { ReactComponent as EyeOff } from "./eye-off.svg";
+import { ReactComponent as Eye } from "./eye.svg";
 import { ReactComponent as FilePassword } from "./file-password.svg";
 import { ReactComponent as Filters } from "./filters.svg";
 import { ReactComponent as General } from "./general.svg";
@@ -28,11 +28,13 @@ import { ReactComponent as List } from "./list.svg";
 import { ReactComponent as Mistake } from "./mistake.svg";
 import { ReactComponent as Msq } from "./msq.svg";
 import { ReactComponent as Multisig } from "./multisig.svg";
+import { ReactComponent as Notification } from "./notification.svg";
 import { ReactComponent as Ok } from "./ok.svg";
 import { ReactComponent as Peer } from "./peer.svg";
 import { ReactComponent as Plugin } from "./plugin.svg";
 import { ReactComponent as Plus } from "./plus.svg";
 import { ReactComponent as Qrcode } from "./qrcode.svg";
+import { ReactComponent as Receive } from "./receive.svg";
 import { ReactComponent as Received } from "./received.svg";
 import { ReactComponent as Reset } from "./reset.svg";
 import { ReactComponent as Send } from "./send.svg";
@@ -96,4 +98,6 @@ export const SvgCollection: any = {
 	Twitter,
 	Upload,
 	Voted,
+	Notification,
+	Receive,
 };

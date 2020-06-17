@@ -1,4 +1,5 @@
 import { styled } from "twin.macro";
+
 import { getStyles } from "./Label.styles";
 
 type LabelProps = {

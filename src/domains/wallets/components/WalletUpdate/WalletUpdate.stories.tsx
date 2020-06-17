@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
 import { boolean } from "@storybook/addon-knobs";
+import React, { useEffect, useState } from "react";
+
 import { WalletUpdate } from "./";
 
 export default { title: "Wallets / Components / Wallet Update" };

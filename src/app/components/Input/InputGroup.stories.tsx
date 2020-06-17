@@ -1,5 +1,6 @@
 import React from "react";
-import { Input, InputGroup, InputAddonEnd, InputAddonStart } from "./index";
+
+import { Input, InputAddonEnd, InputAddonStart, InputGroup } from "./index";
 
 export default {
 	title: "Input / Input / InputGroup",

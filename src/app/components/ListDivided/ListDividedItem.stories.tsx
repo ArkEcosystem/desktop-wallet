@@ -1,4 +1,5 @@
 import React from "react";
+
 import { ListDividedItem } from "./ListDividedItem";
 
 export default {

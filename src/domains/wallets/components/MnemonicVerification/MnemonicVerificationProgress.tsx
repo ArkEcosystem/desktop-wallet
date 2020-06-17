@@ -1,6 +1,7 @@
+import { Icon } from "app/components/Icon";
 import React from "react";
 import tw, { styled } from "twin.macro";
-import { Icon } from "app/components/Icon";
+
 import { OptionButton } from "./MnemonicVerificationOptions";
 
 const TabStyled = styled(OptionButton)<{ isActive: boolean; isComplete: boolean; isPending: boolean }>`

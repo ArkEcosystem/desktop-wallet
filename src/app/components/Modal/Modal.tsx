@@ -1,7 +1,7 @@
-import React from "react";
 // UI Elements
 import { Button } from "app/components/Button";
 import { Icon } from "app/components/Icon";
+import React from "react";
 
 type ModalProps = {
 	children: React.ReactNode;

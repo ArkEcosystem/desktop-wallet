@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import { SelectNetwork } from "app/components/SelectNetwork";
 import { Divider } from "app/components//Divider";
 import { Badge } from "app/components/Badge";
+import { SelectNetwork } from "app/components/SelectNetwork";
 import { Toggle } from "app/components/Toggle";
+import React, { useState } from "react";
 
 export type FilterWalletsProps = {
 	networks?: any;

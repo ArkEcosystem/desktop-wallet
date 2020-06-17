@@ -1,0 +1,359 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Welcome should render 1`] = `
+<DocumentFragment>
+  <div
+    class="w-full h-full"
+  >
+    <nav
+      aria-labelledby="main menu"
+      class="sc-AxheI cyQaAZ"
+    >
+      <div
+        class="px-4 sm:px-6 lg:px-8"
+      >
+        <div
+          class="relative flex justify-between h-20 md:h-24"
+        >
+          <div
+            class="flex items-center flex-shrink-0"
+          >
+            <div
+              class="flex p-2 mr-4 rounded-lg bg-logo"
+            >
+              <img
+                alt="ARK Logo"
+                class="h-6 md:h-8 lg:h-10"
+                src="ark-logo.png"
+              />
+            </div>
+            <ul
+              class="flex h-20 md:h-24"
+            >
+              <li
+                class="flex"
+              >
+                <a
+                  class="flex items-center mx-4 font-bold text-md text-theme-neutral-500"
+                  href="/portfolio"
+                  title="Portfolio"
+                >
+                  Portfolio
+                </a>
+              </li>
+              <li
+                class="flex"
+              >
+                <a
+                  class="flex items-center mx-4 font-bold text-md text-theme-neutral-500"
+                  href="/plugins"
+                  title="Plugins"
+                >
+                  Plugins
+                </a>
+              </li>
+              <li
+                class="flex"
+              >
+                <a
+                  class="flex items-center mx-4 font-bold text-md text-theme-neutral-500"
+                  href="/exchange"
+                  title="Exchange"
+                >
+                  Exchange
+                </a>
+              </li>
+              <li
+                class="flex"
+              >
+                <a
+                  class="flex items-center mx-4 font-bold text-md text-theme-neutral-500"
+                  href="/news"
+                  title="News"
+                >
+                  News
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div
+            class="flex items-center flex-shrink-0"
+          >
+            <div
+              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+            >
+              <div
+                class="sc-AxiKw fFXzuz"
+                height="22"
+                width="22"
+              >
+                <svg>
+                  notification.svg
+                </svg>
+              </div>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-200"
+            />
+            <div
+              class="flex items-center h-full px-3 -mt-1 cursor-pointer text-theme-primary-300"
+            >
+              <div
+                class="sc-AxiKw ldtbjv"
+                height="42"
+                width="42"
+              >
+                <svg>
+                  sent.svg
+                </svg>
+              </div>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-200"
+            />
+            <div
+              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+            >
+              <div
+                class="sc-AxiKw fFXzuz"
+                height="22"
+                width="22"
+              >
+                <svg>
+                  receive.svg
+                </svg>
+              </div>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-200"
+            />
+            <div
+              class="p-2 ml-4 text-right"
+            >
+              <div
+                class="text-xs text-theme-neutral-500"
+              >
+                Your balance
+              </div>
+              <div
+                class="text-sm font-bold text-theme-neutral-700"
+              >
+                34,253.75
+              </div>
+            </div>
+            <div
+              class="flex p-1 cusror-pointer"
+            >
+              <div
+                class="relative"
+              >
+                <div
+                  class="cursor-pointer"
+                  data-testid="navbar__useractions"
+                >
+                  <div
+                    class="sc-AxhUy dOQZwV -mr-1 border-theme-neutral-300"
+                  >
+                    <span
+                      class="text-theme-neutral-600"
+                    >
+                      <div
+                        class="sc-AxiKw dzBdqj"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          btc.svg
+                        </svg>
+                      </div>
+                    </span>
+                  </div>
+                  <div
+                    class="sc-AxhUy dOQZwV relative rotate-90 bg-theme-primary-600 border-theme-primary-600"
+                  >
+                    <span
+                      class="text-sm text-theme-background"
+                    >
+                      IO
+                    </span>
+                    <span
+                      class="sc-AxhCb bWkvPI flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent transform  bg-theme-primary-100 border-theme-primary-100 bottom-2 -right-4 text-theme-primary-500"
+                    >
+                      <div
+                        class="sc-AxiKw bctdez"
+                        height="16"
+                        width="16"
+                      >
+                        <svg>
+                          chevron-down.svg
+                        </svg>
+                      </div>
+                      <span />
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div
+      class="container px-4 mx-auto text-center sm:px-6 lg:px-0"
+    >
+      <h1
+        class="mb-8 font-bold"
+      >
+        Welcome to ARK
+      </h1>
+      <div
+        class="w-full mx-auto lg:w-4/5 xl:w-2/3"
+      >
+        <svg>
+          welcome-banner.svg
+        </svg>
+      </div>
+      <div
+        class="max-w-lg mx-auto my-8 md:max-w-xl"
+      >
+        <h2
+          class="mx-4 text-xl font-bold md:text-2xl"
+        >
+          Select Profile
+        </h2>
+        <p
+          class="text-sm text-theme-neutral-dark md:text-base"
+        >
+          You already have a profile, you can choose any of them
+        </p>
+        <div
+          class="mt-6 mb-8"
+        >
+          <div
+            class="sc-Axmtr bjKhPD"
+          >
+            <div
+              class="relative px-6 py-4 sm:flex sm:items-center"
+            >
+              <div
+                class="absolute top-0 right-0 flex items-center justify-center w-6 h-6 p-1 mt-3 -mt-2 -mr-4"
+              >
+                <div
+                  class="relative"
+                >
+                  <button
+                    class="float-right outline-none focus:outline-none"
+                    data-testid="dropdown__toggle"
+                  >
+                    <div
+                      class="sc-AxiKw dklFyP"
+                      height="20"
+                      width="20"
+                    >
+                      <svg>
+                        settings.svg
+                      </svg>
+                    </div>
+                  </button>
+                </div>
+              </div>
+              <div
+                class="flex flex-row justify-between w-full"
+              >
+                <div
+                  class="flex items-center"
+                >
+                  <div
+                    class="block w-12 h-12 mx-auto rounded-full sm:mx-0 sm:flex-shrink-0"
+                  >
+                    <img
+                      alt="User Avatar"
+                      class="rounded-full"
+                      data-testid="profile-card__user--avatar"
+                      src="https://www.w3schools.com/howto/img_avatar.png"
+                    />
+                  </div>
+                  <div
+                    class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-left"
+                  >
+                    <p
+                      class="text-sm font-semibold text-theme-neutral"
+                    >
+                      Name
+                    </p>
+                    <p
+                      class="font-semibold text-theme-neutral-dark"
+                      data-testid="profile-card__user--name"
+                    >
+                      Oleg Gelo
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="flex items-center"
+                >
+                  <div
+                    class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-right"
+                  >
+                    <p
+                      class="text-sm font-semibold text-theme-neutral"
+                    >
+                      Total Balance
+                    </p>
+                    <p
+                      class="font-semibold text-theme-neutral-dark"
+                      data-testid="profile-card__user--balance"
+                    >
+                      234,500.46 USD
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="sc-AxirZ jzxvZY"
+          type="horizontal"
+        />
+        <p
+          class="mb-4 text-sm text-theme-neutral-dark md:text-base"
+        >
+          Create a new Profile or login with your MarketSquare account to get started
+        </p>
+        <div
+          class="flex flex-col md:flex-row"
+        >
+          <button
+            class="sc-AxjAm jTpTok flex items-center justify-center w-full mr-2"
+            color="primary"
+            type="button"
+          >
+            <div
+              class="sc-AxiKw dklFyP"
+              height="20"
+              width="20"
+            >
+              <svg>
+                msq.svg
+              </svg>
+            </div>
+            <span
+              class="ml-2"
+            >
+              Sign in to MarketSquare
+            </span>
+          </button>
+          <button
+            class="sc-AxjAm gSuvFI w-full mt-2 md:mt-0"
+            color="primary"
+            type="button"
+          >
+            Create Profile
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

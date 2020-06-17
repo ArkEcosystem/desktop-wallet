@@ -1,5 +1,6 @@
-import React from "react";
 import { Table } from "app/components/Table";
+import React from "react";
+
 import { WalletListItem } from "./WalletListItem";
 
 export default {

@@ -1,7 +1,6 @@
-import React, { useState } from "react";
-
 import { Transactions } from "domains/dashboard/components/Transactions";
 import { Wallets } from "domains/dashboard/components/Wallets";
+import React, { useState } from "react";
 
 type DashboardProps = {
 	transactions?: any;

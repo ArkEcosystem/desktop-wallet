@@ -1,0 +1,447 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FilterWallets should render 1`] = `
+<div>
+  <div
+    class="text-left"
+  >
+    <div
+      class="mb-4"
+    >
+      <div
+        class="mb-1 text-sm text-theme-neutral-800"
+      >
+        Filter Network
+      </div>
+      <div
+        class="text-xs text-theme-neutral-500"
+      >
+        Select the types of networks
+      </div>
+    </div>
+    <div>
+      <ul
+        class="inline-block"
+        data-testid="network__option"
+      />
+      <div
+        class="sc-AxhCb dqZRJJ relative ml-2 cursor-pointer border-theme-primary-100"
+        data-testid="network__viewall"
+      >
+        <div
+          class="text-xs text-theme-primary-500"
+        >
+          All
+        </div>
+        <span
+          class="sc-AxiKw hTNjkc flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent border-theme-primary-100 -bottom-1 -right-4 text-theme-primary-500"
+        >
+          <div
+            class="sc-AxirZ hDwaov"
+            height="12"
+            width="12"
+          >
+            <svg>
+              chevron-down.svg
+            </svg>
+          </div>
+          <span />
+        </span>
+      </div>
+    </div>
+    <div
+      class="sc-AxjAm dXBaPf"
+      type="horizontal"
+    />
+    <div
+      class="flex flex-row mb-4"
+    >
+      <div
+        class="w-4/5"
+      >
+        <div
+          class="mb-1 text-sm text-theme-neutral-800"
+        >
+          Your Wallets
+        </div>
+        <div
+          class="text-xs text-theme-neutral-500"
+        >
+          Select the display of your wallets
+        </div>
+      </div>
+      <div
+        class="w-1/5 text-right"
+      >
+        <div
+          class="relative h-6 mt-3 mr-5 text-sm cursor-pointer text-theme-neutral-800"
+          data-testid="filter-wallets__wallets"
+        >
+          All 
+          <span
+            class="sc-AxiKw hTNjkc flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent top-0 -right-6"
+          >
+            <div
+              class="sc-AxirZ hDwaov"
+              height="12"
+              width="12"
+            >
+              <svg>
+                chevron-down.svg
+              </svg>
+            </div>
+            <span />
+          </span>
+        </div>
+      </div>
+    </div>
+    <div
+      class="sc-AxjAm dXBaPf"
+      type="horizontal"
+    />
+    <div
+      class="flex flex-row mb-4"
+    >
+      <div
+        class="w-4/5"
+      >
+        <div
+          class="mb-1 text-sm text-theme-neutral-800"
+        >
+          Portfolio Chart
+        </div>
+        <div
+          class="text-xs text-theme-neutral-500"
+        >
+          You an hide this unit if you like
+        </div>
+      </div>
+      <div
+        class="w-1/5 pt-3 text-right"
+      >
+        <label>
+          <input
+            class="sc-AxhUy rBBWa"
+            data-testid="filter-wallets_toggle--portfolio"
+            type="checkbox"
+          />
+          <div
+            class="sc-AxgMl dRIbey"
+          >
+            <span
+              class="sc-AxheI bTHYlW"
+            />
+          </div>
+        </label>
+      </div>
+    </div>
+    <div
+      class="sc-AxjAm dXBaPf"
+      type="horizontal"
+    />
+    <div
+      class="flex flex-row mb-4"
+    >
+      <div
+        class="w-4/5"
+      >
+        <div
+          class="mb-1 text-sm text-theme-neutral-800"
+        >
+          Transaction History
+        </div>
+        <div
+          class="text-xs text-theme-neutral-500"
+        >
+          You can hide this unit if you like
+        </div>
+      </div>
+      <div
+        class="w-1/5 pt-3 text-right"
+      >
+        <label>
+          <input
+            class="sc-AxhUy rBBWa"
+            data-testid="filter-wallets_toggle--transactions"
+            type="checkbox"
+          />
+          <div
+            class="sc-AxgMl dRIbey"
+          >
+            <span
+              class="sc-AxheI bTHYlW"
+            />
+          </div>
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`FilterWallets should render with networks selection 1`] = `
+<div>
+  <div
+    class="text-left"
+  >
+    <div
+      class="mb-4"
+    >
+      <div
+        class="mb-1 text-sm text-theme-neutral-800"
+      >
+        Filter Network
+      </div>
+      <div
+        class="text-xs text-theme-neutral-500"
+      >
+        Select the types of networks
+      </div>
+    </div>
+    <div>
+      <ul
+        class="inline-block"
+        data-testid="network__option"
+      >
+        <li
+          class="inline-block mr-5 cursor-pointer"
+          data-testid="network__option--0"
+        >
+          <div
+            class="sc-AxhCb dqZRJJ relative border-theme-success-500 text-theme-success-500"
+          >
+            <div
+              class="sc-AxirZ iQaTP"
+              height="1em"
+              width="1em"
+            >
+              <svg>
+                ark.svg
+              </svg>
+            </div>
+            <span
+              class="sc-AxiKw hTNjkc flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent -bottom-1 -right-4 bg-theme-success-500 text-theme-success-contrast"
+            >
+              <div
+                class="sc-AxirZ hDwaov"
+                height="12"
+                width="12"
+              >
+                <svg>
+                  checkmark.svg
+                </svg>
+              </div>
+              <span />
+            </span>
+          </div>
+        </li>
+        <li
+          class="inline-block mr-5 cursor-pointer"
+          data-testid="network__option--1"
+        >
+          <div
+            class="sc-AxhCb dqZRJJ relative border-theme-success-500 text-theme-success-500"
+          >
+            <div
+              class="sc-AxirZ iQaTP"
+              height="1em"
+              width="1em"
+            >
+              <svg>
+                eth.svg
+              </svg>
+            </div>
+            <span
+              class="sc-AxiKw hTNjkc flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent -bottom-1 -right-4 bg-theme-success-500 text-theme-success-contrast"
+            >
+              <div
+                class="sc-AxirZ hDwaov"
+                height="12"
+                width="12"
+              >
+                <svg>
+                  checkmark.svg
+                </svg>
+              </div>
+              <span />
+            </span>
+          </div>
+        </li>
+        <li
+          class="inline-block mr-5 cursor-pointer"
+          data-testid="network__option--2"
+        >
+          <div
+            class="sc-AxhCb dqZRJJ relative border-theme-neutral-200 text-theme-neutral-300"
+          >
+            <div
+              class="sc-AxirZ iQaTP"
+              height="1em"
+              width="1em"
+            >
+              <svg>
+                btc.svg
+              </svg>
+            </div>
+            <span
+              class="sc-AxiKw hTNjkc flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent border-theme-neutral-200 -bottom-1 -right-4"
+            >
+              <span />
+            </span>
+          </div>
+        </li>
+      </ul>
+      <div
+        class="sc-AxhCb dqZRJJ relative ml-2 cursor-pointer border-theme-primary-100"
+        data-testid="network__viewall"
+      >
+        <div
+          class="text-xs text-theme-primary-500"
+        >
+          All
+        </div>
+        <span
+          class="sc-AxiKw hTNjkc flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent border-theme-primary-100 -bottom-1 -right-4 text-theme-primary-500"
+        >
+          <div
+            class="sc-AxirZ hDwaov"
+            height="12"
+            width="12"
+          >
+            <svg>
+              chevron-down.svg
+            </svg>
+          </div>
+          <span />
+        </span>
+      </div>
+    </div>
+    <div
+      class="sc-AxjAm dXBaPf"
+      type="horizontal"
+    />
+    <div
+      class="flex flex-row mb-4"
+    >
+      <div
+        class="w-4/5"
+      >
+        <div
+          class="mb-1 text-sm text-theme-neutral-800"
+        >
+          Your Wallets
+        </div>
+        <div
+          class="text-xs text-theme-neutral-500"
+        >
+          Select the display of your wallets
+        </div>
+      </div>
+      <div
+        class="w-1/5 text-right"
+      >
+        <div
+          class="relative h-6 mt-3 mr-5 text-sm cursor-pointer text-theme-neutral-800"
+          data-testid="filter-wallets__wallets"
+        >
+          All 
+          <span
+            class="sc-AxiKw hTNjkc flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent top-0 -right-6"
+          >
+            <div
+              class="sc-AxirZ hDwaov"
+              height="12"
+              width="12"
+            >
+              <svg>
+                chevron-down.svg
+              </svg>
+            </div>
+            <span />
+          </span>
+        </div>
+      </div>
+    </div>
+    <div
+      class="sc-AxjAm dXBaPf"
+      type="horizontal"
+    />
+    <div
+      class="flex flex-row mb-4"
+    >
+      <div
+        class="w-4/5"
+      >
+        <div
+          class="mb-1 text-sm text-theme-neutral-800"
+        >
+          Portfolio Chart
+        </div>
+        <div
+          class="text-xs text-theme-neutral-500"
+        >
+          You an hide this unit if you like
+        </div>
+      </div>
+      <div
+        class="w-1/5 pt-3 text-right"
+      >
+        <label>
+          <input
+            class="sc-AxhUy rBBWa"
+            data-testid="filter-wallets_toggle--portfolio"
+            type="checkbox"
+          />
+          <div
+            class="sc-AxgMl dRIbey"
+          >
+            <span
+              class="sc-AxheI bTHYlW"
+            />
+          </div>
+        </label>
+      </div>
+    </div>
+    <div
+      class="sc-AxjAm dXBaPf"
+      type="horizontal"
+    />
+    <div
+      class="flex flex-row mb-4"
+    >
+      <div
+        class="w-4/5"
+      >
+        <div
+          class="mb-1 text-sm text-theme-neutral-800"
+        >
+          Transaction History
+        </div>
+        <div
+          class="text-xs text-theme-neutral-500"
+        >
+          You can hide this unit if you like
+        </div>
+      </div>
+      <div
+        class="w-1/5 pt-3 text-right"
+      >
+        <label>
+          <input
+            class="sc-AxhUy rBBWa"
+            data-testid="filter-wallets_toggle--transactions"
+            type="checkbox"
+          />
+          <div
+            class="sc-AxgMl dRIbey"
+          >
+            <span
+              class="sc-AxheI bTHYlW"
+            />
+          </div>
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+`;

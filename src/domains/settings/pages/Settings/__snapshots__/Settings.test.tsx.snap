@@ -1,0 +1,997 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Settings should render 1`] = `
+<DocumentFragment>
+  <div
+    class="flex w-full h-full"
+  >
+    <div
+      class="w-1/4 h-full"
+    >
+      <div>
+        <ul>
+          <div
+            class="relative cursor-pointer"
+            data-testid="side-menu__item--General"
+          >
+            <div
+              class="sc-AxirZ dA-dDXy absolute top-0 left-0 rounded-lg bg-theme-primary"
+            />
+            <li
+              class="rounded-lg p-5 flex 
+        text-theme-primary
+        bg-theme-primary-contrast
+     flex items-center"
+            >
+              <div
+                class="text-theme-primary"
+              >
+                <div
+                  class="sc-AxjAm cpczEI"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    general.svg
+                  </svg>
+                </div>
+              </div>
+              <span
+                class="ml-2 font-semibold"
+              >
+                General
+              </span>
+            </li>
+          </div>
+          <div
+            class="relative cursor-pointer"
+            data-testid="side-menu__item--Peer"
+          >
+            <li
+              class="rounded-lg p-5 flex text-theme-medium flex items-center"
+            >
+              <div
+                class="text-theme-primary-contrast"
+              >
+                <div
+                  class="sc-AxjAm cpczEI"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    peer.svg
+                  </svg>
+                </div>
+              </div>
+              <span
+                class="ml-2 font-semibold"
+              >
+                Peer
+              </span>
+            </li>
+          </div>
+          <div
+            class="relative cursor-pointer"
+            data-testid="side-menu__item--Plugins"
+          >
+            <li
+              class="rounded-lg p-5 flex text-theme-medium flex items-center"
+            >
+              <div
+                class="text-theme-primary-contrast"
+              >
+                <div
+                  class="sc-AxjAm cpczEI"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    plugin.svg
+                  </svg>
+                </div>
+              </div>
+              <span
+                class="ml-2 font-semibold"
+              >
+                Plugins
+              </span>
+            </li>
+          </div>
+        </ul>
+      </div>
+    </div>
+    <div
+      class="w-3/5 pl-20 mx-12 border-l-1 border-theme-primary-contrast"
+    >
+      <div
+        class="flex flex-col items-start"
+      >
+        <h1
+          class="text-3xl font-bold md:text-4xl"
+          data-testid="header__title"
+        >
+          Wallet Settings
+        </h1>
+        <div
+          class="mt-2 text-theme-neutral-dark"
+          data-testid="header__subtitle"
+        >
+          Customize your wallet to suit your needs.
+        </div>
+      </div>
+      <form
+        class="space-y-6"
+        data-testid="Form"
+        id="general-settings__form"
+      >
+        <div
+          class="mt-5"
+        >
+          <ul
+            class="sc-fzplWN krwTau"
+            data-testid="list-divided__items"
+          >
+            <li
+              class="flex flex-col w-full py-4"
+              data-testid="list-divided-item__wrapper"
+            >
+              <div
+                class="flex justify-between flex-col items-start mt-5"
+                data-testid="list-divided-item__inner-wrapper"
+              >
+                <div
+                  class="flex flex-col"
+                >
+                  <span
+                    class="mr-5 text-3xl font-bold"
+                    data-testid="list-divided-item__label"
+                  >
+                    Personal Details
+                  </span>
+                  <span
+                    class="text-sm text-theme-neutral mt-3"
+                    data-testid="list-divided-item__label--description"
+                  >
+                    Select Profile Image
+                  </span>
+                </div>
+              </div>
+              <div
+                class="mt-4"
+                data-testid="list-divided-item__content"
+              >
+                <div
+                  class="flex flex-row mt-2"
+                >
+                  <div
+                    class="flex items-center justify-center w-24 h-24 mr-6 border-2 border-dashed rounded border-theme-neutral-light"
+                  >
+                    <button
+                      class="flex items-center justify-center w-20 h-20 rounded-full bg-theme-primary-contrast"
+                      type="button"
+                    >
+                      <div
+                        class="sc-AxjAm cpczEI"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          upload.svg
+                        </svg>
+                      </div>
+                    </button>
+                  </div>
+                  <div
+                    class="relative w-24 h-24 rounded bg-theme-neutral-light"
+                  >
+                    <img
+                      alt="random avatar"
+                      class="object-cover rounded"
+                      src="https://randomuser.me/api/portraits/men/3.jpg"
+                    />
+                    <button
+                      class="absolute flex items-center justify-center w-6 h-6 p-1 rounded bg-theme-danger-contrast text-theme-danger -top-3 -right-3"
+                    >
+                      <div
+                        class="sc-AxjAm HWmvM"
+                        height="12"
+                        width="12"
+                      >
+                        <svg>
+                          close.svg
+                        </svg>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <div
+            class="flex justify-between w-full"
+          >
+            <div
+              class="flex flex-col w-2/4"
+            >
+              <fieldset
+                class="sc-AxhCb ckQmOL flex flex-col space-y-2"
+              >
+                <label
+                  class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
+                  data-testid="FormLabel"
+                  for="profile-name"
+                  label="Profile Name"
+                >
+                  Profile Name
+                </label>
+                <input
+                  class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+                  data-testid="Input"
+                  name="profile-name"
+                  type="text"
+                />
+              </fieldset>
+              <fieldset
+                class="sc-AxhCb ckQmOL mt-3"
+              >
+                <label
+                  class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
+                  data-testid="FormLabel"
+                  for="passphrase-language"
+                  label="Passphrase Language"
+                >
+                  Passphrase Language
+                </label>
+                <div
+                  class="sc-AxmLO kuiknc"
+                >
+                  <select
+                    class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
+                    data-testid="Select"
+                    name="passphrase-language"
+                  >
+                    <option
+                      disabled=""
+                      selected=""
+                      value=""
+                    >
+                      Select Language
+                    </option>
+                    <option
+                      value="option1"
+                    >
+                      Option 1
+                    </option>
+                    <option
+                      value="option2"
+                    >
+                      Option 2
+                    </option>
+                    <option
+                      value="option3"
+                    >
+                      Option 3
+                    </option>
+                  </select>
+                  <div
+                    class="sc-AxgMl sc-Axmtr cPxyjO w-12 text-lg pointer-events-none text-theme-neutral-dark"
+                  >
+                    <div
+                      class="sc-AxjAm cpczEI"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        chevron-down.svg
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+              <fieldset
+                class="sc-AxhCb ckQmOL mt-3"
+              >
+                <label
+                  class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
+                  data-testid="FormLabel"
+                  for="currency"
+                  label="Currency"
+                >
+                  Currency
+                </label>
+                <div
+                  class="sc-AxmLO kuiknc"
+                >
+                  <select
+                    class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
+                    data-testid="Select"
+                    name="currency"
+                  >
+                    <option
+                      disabled=""
+                      selected=""
+                      value=""
+                    >
+                      Select Language
+                    </option>
+                    <option
+                      value="option1"
+                    >
+                      Option 1
+                    </option>
+                    <option
+                      value="option2"
+                    >
+                      Option 2
+                    </option>
+                    <option
+                      value="option3"
+                    >
+                      Option 3
+                    </option>
+                  </select>
+                  <div
+                    class="sc-AxgMl sc-Axmtr cPxyjO w-12 text-lg pointer-events-none text-theme-neutral-dark"
+                  >
+                    <div
+                      class="sc-AxjAm cpczEI"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        chevron-down.svg
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+            <div
+              class="flex flex-col w-2/4 ml-5"
+            >
+              <fieldset
+                class="sc-AxhCb ckQmOL flex flex-col space-y-2"
+              >
+                <label
+                  class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
+                  data-testid="FormLabel"
+                  for="language"
+                  label="Language"
+                >
+                  Language
+                </label>
+                <div
+                  class="sc-AxmLO kuiknc"
+                >
+                  <select
+                    class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
+                    data-testid="Select"
+                    name="language"
+                  >
+                    <option
+                      disabled=""
+                      selected=""
+                      value=""
+                    >
+                      Select Language
+                    </option>
+                    <option
+                      value="option1"
+                    >
+                      Option 1
+                    </option>
+                    <option
+                      value="option2"
+                    >
+                      Option 2
+                    </option>
+                    <option
+                      value="option3"
+                    >
+                      Option 3
+                    </option>
+                  </select>
+                  <div
+                    class="sc-AxgMl sc-Axmtr cPxyjO w-12 text-lg pointer-events-none text-theme-neutral-dark"
+                  >
+                    <div
+                      class="sc-AxjAm cpczEI"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        chevron-down.svg
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+              <fieldset
+                class="sc-AxhCb ckQmOL mt-3"
+              >
+                <label
+                  class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
+                  data-testid="FormLabel"
+                  for="price-source"
+                  label="Price Source"
+                >
+                  Price Source
+                </label>
+                <div
+                  class="sc-AxmLO kuiknc"
+                >
+                  <select
+                    class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
+                    data-testid="Select"
+                    name="price-source"
+                  >
+                    <option
+                      disabled=""
+                      selected=""
+                      value=""
+                    >
+                      Select Language
+                    </option>
+                    <option
+                      value="option1"
+                    >
+                      Option 1
+                    </option>
+                    <option
+                      value="option2"
+                    >
+                      Option 2
+                    </option>
+                    <option
+                      value="option3"
+                    >
+                      Option 3
+                    </option>
+                  </select>
+                  <div
+                    class="sc-AxgMl sc-Axmtr cPxyjO w-12 text-lg pointer-events-none text-theme-neutral-dark"
+                  >
+                    <div
+                      class="sc-AxjAm cpczEI"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        chevron-down.svg
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+              <fieldset
+                class="sc-AxhCb ckQmOL mt-3"
+              >
+                <label
+                  class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
+                  data-testid="FormLabel"
+                  for="time-format"
+                  label="Time Format"
+                >
+                  Time Format
+                </label>
+                <div
+                  class="sc-AxmLO kuiknc"
+                >
+                  <select
+                    class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
+                    data-testid="Select"
+                    name="time-format"
+                  >
+                    <option
+                      disabled=""
+                      selected=""
+                      value=""
+                    >
+                      Select Language
+                    </option>
+                    <option
+                      value="option1"
+                    >
+                      Option 1
+                    </option>
+                    <option
+                      value="option2"
+                    >
+                      Option 2
+                    </option>
+                    <option
+                      value="option3"
+                    >
+                      Option 3
+                    </option>
+                  </select>
+                  <div
+                    class="sc-AxgMl sc-Axmtr cPxyjO w-12 text-lg pointer-events-none text-theme-neutral-dark"
+                  >
+                    <div
+                      class="sc-AxjAm cpczEI"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        chevron-down.svg
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+          </div>
+        </div>
+        <div
+          class="relative mt-5"
+        >
+          <div
+            class="flex flex-col items-start"
+          >
+            <h1
+              class="text-3xl font-bold md:text-4xl"
+              data-testid="header__title"
+            >
+              Security
+            </h1>
+          </div>
+          <ul
+            class="sc-fzplWN krwTau"
+            data-testid="list-divided__items"
+          >
+            <li
+              class="flex flex-col w-full py-4"
+              data-testid="list-divided-item__wrapper"
+            >
+              <div
+                class="flex justify-between flex-col items-start mt-5"
+                data-testid="list-divided-item__inner-wrapper"
+              >
+                <div
+                  class="flex flex-col"
+                >
+                  <span
+                    class="mr-5 text-xl font-bold text-theme-neutral-dark"
+                    data-testid="list-divided-item__label"
+                  >
+                    Screenshot Protection
+                  </span>
+                </div>
+              </div>
+              <div
+                class="mt-4"
+                data-testid="list-divided-item__content"
+              >
+                <div
+                  class="flex flex-row justify-between"
+                >
+                  <span
+                    class="w-3/4 text-sm text-theme-neutral-dark"
+                  >
+                    This protection. will protect your money from unwanted Screenshot you PC.
+                  </span>
+                  <div
+                    class="-mt-2"
+                  >
+                    <label>
+                      <input
+                        class="sc-fznyAO htyfyy"
+                        type="checkbox"
+                      />
+                      <div
+                        class="sc-fznKkj iTYdAh"
+                      >
+                        <span
+                          class="sc-fznZeY izeqLb"
+                        />
+                      </div>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li
+              class="flex flex-col w-full py-4"
+              data-testid="list-divided-item__wrapper"
+            >
+              <div
+                class="flex justify-between flex-col items-start mt-5"
+                data-testid="list-divided-item__inner-wrapper"
+              >
+                <div
+                  class="flex flex-col"
+                >
+                  <span
+                    class="mr-5 text-xl font-bold text-theme-neutral-dark -mt-5"
+                    data-testid="list-divided-item__label"
+                  >
+                    Advanced Mode
+                  </span>
+                </div>
+              </div>
+              <div
+                class="mt-4"
+                data-testid="list-divided-item__content"
+              >
+                <div
+                  class="flex flex-row justify-between"
+                >
+                  <span
+                    class="w-3/4 text-sm text-theme-neutral-dark"
+                  >
+                    You hereby assume the risk associated with downloading files and installing said files from a direct URL link.
+                  </span>
+                  <div
+                    class="-mt-2"
+                  >
+                    <label>
+                      <input
+                        class="sc-fznyAO htyfyy -mt-3"
+                        type="checkbox"
+                      />
+                      <div
+                        class="sc-fznKkj iTYdAh"
+                      >
+                        <span
+                          class="sc-fznZeY izeqLb"
+                        />
+                      </div>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li
+              class="flex flex-col w-full py-4"
+              data-testid="list-divided-item__wrapper"
+            >
+              <div
+                class="flex justify-between flex-col items-start mt-5"
+                data-testid="list-divided-item__inner-wrapper"
+              >
+                <div
+                  class="flex flex-col"
+                >
+                  <span
+                    class="mr-5 FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
+                    data-testid="list-divided-item__label"
+                  >
+                    Auto-logoff
+                  </span>
+                </div>
+              </div>
+              <div
+                class="mt-4"
+                data-testid="list-divided-item__content"
+              >
+                <div
+                  class="sc-AxmLO kuiknc"
+                >
+                  <select
+                    class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
+                    data-testid="Select"
+                    name="auto-logoff"
+                  >
+                    <option
+                      disabled=""
+                      selected=""
+                      value=""
+                    >
+                      Select Language
+                    </option>
+                    <option
+                      value="option1"
+                    >
+                      Option 1
+                    </option>
+                    <option
+                      value="option2"
+                    >
+                      Option 2
+                    </option>
+                    <option
+                      value="option3"
+                    >
+                      Option 3
+                    </option>
+                  </select>
+                  <div
+                    class="sc-AxgMl sc-Axmtr cPxyjO w-12 text-lg pointer-events-none text-theme-neutral-dark"
+                  >
+                    <div
+                      class="sc-AxjAm cpczEI"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        chevron-down.svg
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div
+          class="relative mt-5"
+        >
+          <div
+            class="flex flex-col items-start"
+          >
+            <h1
+              class="text-3xl font-bold md:text-4xl"
+              data-testid="header__title"
+            >
+              Other
+            </h1>
+          </div>
+          <ul
+            class="sc-fzplWN krwTau"
+            data-testid="list-divided__items"
+          >
+            <li
+              class="flex flex-col w-full py-4"
+              data-testid="list-divided-item__wrapper"
+            >
+              <div
+                class="flex justify-between flex-col items-start mt-5"
+                data-testid="list-divided-item__inner-wrapper"
+              >
+                <div
+                  class="flex flex-col"
+                >
+                  <span
+                    class="mr-5 text-xl font-bold text-theme-neutral-dark"
+                    data-testid="list-divided-item__label"
+                  >
+                    Dark Theme
+                  </span>
+                </div>
+              </div>
+              <div
+                class="mt-4"
+                data-testid="list-divided-item__content"
+              >
+                <div
+                  class="flex flex-row justify-between"
+                >
+                  <span
+                    class="w-3/4 text-sm text-theme-neutral-dark"
+                  >
+                    Want to set the wallet to dark mode?
+                  </span>
+                  <div
+                    class="-mt-2"
+                  >
+                    <label>
+                      <input
+                        class="sc-fznyAO htyfyy"
+                        type="checkbox"
+                      />
+                      <div
+                        class="sc-fznKkj iTYdAh"
+                      >
+                        <span
+                          class="sc-fznZeY izeqLb"
+                        />
+                      </div>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li
+              class="flex flex-col w-full py-4"
+              data-testid="list-divided-item__wrapper"
+            >
+              <div
+                class="flex justify-between flex-col items-start mt-5"
+                data-testid="list-divided-item__inner-wrapper"
+              >
+                <div
+                  class="flex flex-col"
+                >
+                  <span
+                    class="mr-5 text-xl font-bold text-theme-neutral-dark -mt-5"
+                    data-testid="list-divided-item__label"
+                  >
+                    Update Ledger in Background
+                  </span>
+                </div>
+              </div>
+              <div
+                class="mt-4"
+                data-testid="list-divided-item__content"
+              >
+                <div
+                  class="flex flex-row justify-between"
+                >
+                  <span
+                    class="w-3/4 text-sm text-theme-neutral-dark"
+                  >
+                    You hereby assume the risk associated with downloading files and installing said files from a direct URL link.
+                  </span>
+                  <div
+                    class="-mt-2"
+                  >
+                    <label>
+                      <input
+                        class="sc-fznyAO htyfyy -mt-3"
+                        type="checkbox"
+                      />
+                      <div
+                        class="sc-fznKkj iTYdAh"
+                      >
+                        <span
+                          class="sc-fznZeY izeqLb"
+                        />
+                      </div>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div
+          class="flex justify-between w-full"
+        >
+          <button
+            class="sc-AxiKw ledujo"
+            color="danger"
+            type="button"
+          >
+            <div
+              class="flex items-center justify-between px-1"
+            >
+              <div
+                class="sc-AxjAm cpczEI"
+                height="1em"
+                width="1em"
+              >
+                <svg>
+                  reset.svg
+                </svg>
+              </div>
+              <span
+                class="ml-2"
+              >
+                Reset Data
+              </span>
+            </div>
+          </button>
+          <div>
+            <button
+              class="sc-AxiKw dnvybb mr-3"
+              color="primary"
+              type="button"
+            >
+              Cancel
+            </button>
+            <button
+              class="sc-AxiKw dchPTL"
+              color="primary"
+              type="button"
+            >
+              Save
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Settings should render a not found information 1`] = `
+<DocumentFragment>
+  <div
+    class="flex w-full h-full"
+  >
+    <div
+      class="w-1/4 h-full"
+    >
+      <div>
+        <ul>
+          <div
+            class="relative cursor-pointer"
+            data-testid="side-menu__item--General"
+          >
+            <li
+              class="rounded-lg p-5 flex text-theme-medium flex items-center"
+            >
+              <div
+                class="text-theme-primary-contrast"
+              >
+                <div
+                  class="sc-AxjAm cpczEI"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    general.svg
+                  </svg>
+                </div>
+              </div>
+              <span
+                class="ml-2 font-semibold"
+              >
+                General
+              </span>
+            </li>
+          </div>
+          <div
+            class="relative cursor-pointer"
+            data-testid="side-menu__item--Peer"
+          >
+            <div
+              class="sc-AxirZ dA-dDXy absolute top-0 left-0 rounded-lg bg-theme-primary"
+            />
+            <li
+              class="rounded-lg p-5 flex 
+        text-theme-primary
+        bg-theme-primary-contrast
+     flex items-center"
+            >
+              <div
+                class="text-theme-primary"
+              >
+                <div
+                  class="sc-AxjAm cpczEI"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    peer.svg
+                  </svg>
+                </div>
+              </div>
+              <span
+                class="ml-2 font-semibold"
+              >
+                Peer
+              </span>
+            </li>
+          </div>
+          <div
+            class="relative cursor-pointer"
+            data-testid="side-menu__item--Plugins"
+          >
+            <li
+              class="rounded-lg p-5 flex text-theme-medium flex items-center"
+            >
+              <div
+                class="text-theme-primary-contrast"
+              >
+                <div
+                  class="sc-AxjAm cpczEI"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    plugin.svg
+                  </svg>
+                </div>
+              </div>
+              <span
+                class="ml-2 font-semibold"
+              >
+                Plugins
+              </span>
+            </li>
+          </div>
+        </ul>
+      </div>
+    </div>
+    <div
+      class="w-3/5 pl-20 mx-12 border-l-1 border-theme-primary-contrast"
+    >
+      <span>
+        Peer settings not found
+      </span>
+    </div>
+  </div>
+</DocumentFragment>
+`;

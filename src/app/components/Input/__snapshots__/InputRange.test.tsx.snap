@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InputRange should render with default value 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-Axmtr jzhOwR"
+  >
+    <input
+      class="sc-AxhCb clCjoe overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+      data-testid="Input"
+      type="text"
+      value="5"
+    />
+    <div
+      class="absolute bottom-0 w-full px-1"
+    >
+      <div
+        class="flex flex-wrap justify-center"
+        data-testid="Range"
+      >
+        <div
+          class="sc-AxjAm gVIMxU"
+          data-testid="Range__track"
+          style="transform: scale(1); cursor: pointer;"
+        >
+          <div
+            class="sc-AxirZ iCiXDi"
+            data-testid="Range__track__filled"
+          >
+            <div
+              aria-valuemax="10"
+              aria-valuemin="1"
+              aria-valuenow="5"
+              class="sc-AxiKw jKNfZI"
+              data-testid="Range__thumb"
+              draggable="false"
+              role="slider"
+              style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
+              tabindex="0"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

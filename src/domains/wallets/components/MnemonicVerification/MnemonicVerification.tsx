@@ -1,8 +1,8 @@
+import { TabPanel, Tabs } from "app/components/Tabs";
 import React from "react";
-import { Tabs, TabPanel } from "app/components/Tabs";
 
-import { MnemonicVerificationProgress } from "./MnemonicVerificationProgress";
 import { MnemonicVerificationOptions } from "./MnemonicVerificationOptions";
+import { MnemonicVerificationProgress } from "./MnemonicVerificationProgress";
 
 type Props = {
 	mnemonic: string[];

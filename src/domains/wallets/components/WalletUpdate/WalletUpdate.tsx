@@ -1,14 +1,12 @@
 // Packages
-import React from "react";
-import { useTranslation } from "react-i18next";
-
+// Assets
+import { images } from "app/assets/images";
 // Components
 import { Button } from "app/components/Button";
 import { CircularProgressBar } from "app/components/CircularProgressBar";
 import { Modal } from "app/components/Modal";
-
-// Assets
-import { images } from "app/assets/images";
+import React from "react";
+import { useTranslation } from "react-i18next";
 
 type WalletUpdateProps = {
 	isOpen: boolean;

@@ -1,0 +1,535 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CreateProfile should render 1`] = `
+<DocumentFragment>
+  <div
+    class="w-full h-full"
+  >
+    <nav
+      aria-labelledby="main menu"
+      class="sc-fzokOt bHvHZz"
+    >
+      <div
+        class="px-4 sm:px-6 lg:px-8"
+      >
+        <div
+          class="relative flex justify-between h-20 md:h-24"
+        >
+          <div
+            class="flex items-center flex-shrink-0"
+          >
+            <div
+              class="flex p-2 mr-4 rounded-lg bg-logo"
+            >
+              <img
+                alt="ARK Logo"
+                class="h-6 md:h-8 lg:h-10"
+                src="ark-logo.png"
+              />
+            </div>
+            <ul
+              class="flex h-20 md:h-24"
+            >
+              <li
+                class="flex"
+              >
+                <a
+                  class="flex items-center mx-4 font-bold text-md text-theme-neutral-500"
+                  href="/portfolio"
+                  title="Portfolio"
+                >
+                  Portfolio
+                </a>
+              </li>
+              <li
+                class="flex"
+              >
+                <a
+                  class="flex items-center mx-4 font-bold text-md text-theme-neutral-500"
+                  href="/plugins"
+                  title="Plugins"
+                >
+                  Plugins
+                </a>
+              </li>
+              <li
+                class="flex"
+              >
+                <a
+                  class="flex items-center mx-4 font-bold text-md text-theme-neutral-500"
+                  href="/exchange"
+                  title="Exchange"
+                >
+                  Exchange
+                </a>
+              </li>
+              <li
+                class="flex"
+              >
+                <a
+                  class="flex items-center mx-4 font-bold text-md text-theme-neutral-500"
+                  href="/news"
+                  title="News"
+                >
+                  News
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div
+            class="flex items-center flex-shrink-0"
+          >
+            <div
+              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+            >
+              <div
+                class="sc-AxhCb draJkT"
+                height="22"
+                width="22"
+              >
+                <svg>
+                  notification.svg
+                </svg>
+              </div>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-200"
+            />
+            <div
+              class="flex items-center h-full px-3 -mt-1 cursor-pointer text-theme-primary-300"
+            >
+              <div
+                class="sc-AxhCb dIDuTb"
+                height="42"
+                width="42"
+              >
+                <svg>
+                  sent.svg
+                </svg>
+              </div>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-200"
+            />
+            <div
+              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+            >
+              <div
+                class="sc-AxhCb draJkT"
+                height="22"
+                width="22"
+              >
+                <svg>
+                  receive.svg
+                </svg>
+              </div>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-200"
+            />
+            <div
+              class="p-2 ml-4 text-right"
+            >
+              <div
+                class="text-xs text-theme-neutral-500"
+              >
+                Your balance
+              </div>
+              <div
+                class="text-sm font-bold text-theme-neutral-700"
+              >
+                34,253.75
+              </div>
+            </div>
+            <div
+              class="flex p-1 cusror-pointer"
+            >
+              <div
+                class="relative"
+              >
+                <div
+                  class="cursor-pointer"
+                  data-testid="navbar__useractions"
+                >
+                  <div
+                    class="sc-fznKkj gPZsmc -mr-1 border-theme-neutral-300"
+                  >
+                    <span
+                      class="text-theme-neutral-600"
+                    >
+                      <div
+                        class="sc-AxhCb fxrKLH"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          btc.svg
+                        </svg>
+                      </div>
+                    </span>
+                  </div>
+                  <div
+                    class="sc-fznKkj gPZsmc relative rotate-90 bg-theme-primary-600 border-theme-primary-600"
+                  >
+                    <span
+                      class="text-sm text-theme-background"
+                    >
+                      IO
+                    </span>
+                    <span
+                      class="sc-fznyAO bxiLWJ flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent transform  bg-theme-primary-100 border-theme-primary-100 bottom-2 -right-4 text-theme-primary-500"
+                    >
+                      <div
+                        class="sc-AxhCb kAKLDr"
+                        height="16"
+                        width="16"
+                      >
+                        <svg>
+                          chevron-down.svg
+                        </svg>
+                      </div>
+                      <span />
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div
+      class="container mx-auto"
+    >
+      <div
+        class="mx-auto my-8 md:w-3/4 lg:w-3/5 xl:w-1/2"
+      >
+        <h1
+          class="mx-4 md:mx-8 xl:mx-16"
+        >
+          Create Profile
+        </h1>
+        <div
+          class="mx-4 mt-2 text-theme-neutral-dark md:mx-8 xl:mx-16"
+        >
+          Create a new Profile or login with your MarketSquare account to get started.
+        </div>
+        <div
+          class="mx-4 mt-5 md:mx-8 xl:mx-16"
+        >
+          <button
+            class="sc-AxjAm jTpTok w-full mb-5"
+            color="primary"
+            type="button"
+          >
+            Login with MarketSquare
+          </button>
+          <div
+            class="sc-AxirZ jzxvZY"
+            type="horizontal"
+          />
+        </div>
+        <form
+          class="space-y-6"
+          data-testid="Form"
+          id="create-profile__form"
+        >
+          <div
+            class="mx-4 mt-5 md:mx-8 xl:mx-16"
+          >
+            <ul
+              class="sc-fzplWN krwTau"
+              data-testid="list-divided__items"
+            >
+              <li
+                class="flex flex-col w-full py-4"
+                data-testid="list-divided-item__wrapper"
+              >
+                <div
+                  class="flex justify-between flex-col items-start mt-5"
+                  data-testid="list-divided-item__inner-wrapper"
+                >
+                  <div
+                    class="flex flex-col"
+                  >
+                    <span
+                      class="mr-5 text-3xl font-bold"
+                      data-testid="list-divided-item__label"
+                    >
+                      New Profile
+                    </span>
+                    <span
+                      class="text-sm text-theme-neutral mt-3"
+                      data-testid="list-divided-item__label--description"
+                    >
+                      Select Profile Image
+                    </span>
+                  </div>
+                </div>
+                <div
+                  class="mt-4"
+                  data-testid="list-divided-item__content"
+                >
+                  <div
+                    class="flex flex-row mt-2"
+                  >
+                    <div
+                      class="flex items-center justify-center w-24 h-24 mr-6 border-2 border-dashed rounded border-theme-neutral-light"
+                    >
+                      <button
+                        class="flex items-center justify-center w-20 h-20 rounded-full bg-theme-primary-contrast"
+                        type="button"
+                      >
+                        <div
+                          class="sc-AxhCb fxrKLH"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            upload.svg
+                          </svg>
+                        </div>
+                      </button>
+                    </div>
+                    <div
+                      class="relative w-24 h-24 rounded bg-theme-neutral-light"
+                    >
+                      <img
+                        alt="random avatar"
+                        class="object-cover rounded"
+                        src="https://randomuser.me/api/portraits/men/3.jpg"
+                      />
+                      <button
+                        class="absolute flex items-center justify-center w-6 h-6 p-1 rounded bg-theme-danger-contrast text-theme-danger -top-3 -right-3"
+                      >
+                        <div
+                          class="sc-AxhCb koOqYD"
+                          height="12"
+                          width="12"
+                        >
+                          <svg>
+                            close.svg
+                          </svg>
+                        </div>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <fieldset
+              class="sc-AxiKw iQzisX flex flex-col space-y-2"
+            >
+              <label
+                class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
+                data-testid="FormLabel"
+                for="name"
+                label="Name"
+              >
+                Name
+              </label>
+              <input
+                class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+                data-testid="Input"
+                name="name"
+              />
+            </fieldset>
+            <fieldset
+              class="sc-AxiKw iQzisX mt-10"
+            >
+              <label
+                class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
+                data-testid="FormLabel"
+                for="market-provider"
+                label="Market Provider"
+              >
+                Market Provider
+              </label>
+              <div
+                class="sc-AxmLO kuiknc"
+              >
+                <select
+                  class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
+                  data-testid="Select"
+                  name="market-provider"
+                >
+                  <option
+                    disabled=""
+                    selected=""
+                    value=""
+                  >
+                    Select Market Provider
+                  </option>
+                  <option
+                    value="option1"
+                  >
+                    Option 1
+                  </option>
+                  <option
+                    value="option2"
+                  >
+                    Option 2
+                  </option>
+                  <option
+                    value="option3"
+                  >
+                    Option 3
+                  </option>
+                </select>
+                <div
+                  class="sc-AxgMl sc-Axmtr cPxyjO w-12 text-lg pointer-events-none text-theme-neutral-dark"
+                >
+                  <div
+                    class="sc-AxhCb fxrKLH"
+                    height="1em"
+                    width="1em"
+                  >
+                    <svg>
+                      chevron-down.svg
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+            <fieldset
+              class="sc-AxiKw iQzisX mt-10"
+            >
+              <label
+                class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
+                data-testid="FormLabel"
+                for="currency"
+                label="Currency"
+              >
+                Currency
+              </label>
+              <div
+                class="sc-AxmLO kuiknc"
+              >
+                <select
+                  class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
+                  data-testid="Select"
+                  name="currency"
+                >
+                  <option
+                    disabled=""
+                    selected=""
+                    value=""
+                  >
+                    Select Currency
+                  </option>
+                  <option
+                    value="option1"
+                  >
+                    Option 1
+                  </option>
+                  <option
+                    value="option2"
+                  >
+                    Option 2
+                  </option>
+                  <option
+                    value="option3"
+                  >
+                    Option 3
+                  </option>
+                </select>
+                <div
+                  class="sc-AxgMl sc-Axmtr cPxyjO w-12 text-lg pointer-events-none text-theme-neutral-dark"
+                >
+                  <div
+                    class="sc-AxhCb fxrKLH"
+                    height="1em"
+                    width="1em"
+                  >
+                    <svg>
+                      chevron-down.svg
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+            <div
+              class="mt-5"
+            >
+              <ul
+                class="sc-fzplWN krwTau"
+                data-testid="list-divided__items"
+              >
+                <li
+                  class="flex flex-col w-full py-4"
+                  data-testid="list-divided-item__wrapper"
+                >
+                  <div
+                    class="flex justify-between flex-col items-start mt-5"
+                    data-testid="list-divided-item__inner-wrapper"
+                  >
+                    <div
+                      class="flex flex-col"
+                    >
+                      <span
+                        class="mr-5 text-xl font-bold text-theme-neutral-dark"
+                        data-testid="list-divided-item__label"
+                      >
+                        Dark Theme
+                      </span>
+                    </div>
+                  </div>
+                  <div
+                    class="mt-4"
+                    data-testid="list-divided-item__content"
+                  >
+                    <div
+                      class="flex flex-row justify-between"
+                    >
+                      <span
+                        class="w-3/4 text-sm text-theme-neutral-dark"
+                      >
+                        Want to set the wallet to dark mode?
+                      </span>
+                      <div
+                        class="-mt-2"
+                      >
+                        <label>
+                          <input
+                            class="sc-fzqBZW koofcx"
+                            type="checkbox"
+                          />
+                          <div
+                            class="sc-fzqNJr fYWleC"
+                          >
+                            <span
+                              class="sc-fzoyAV cQFWNG"
+                            />
+                          </div>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div
+            class="mx-4 mt-5 mb-10 md:mx-8 xl:mx-16"
+          >
+            <button
+              class="sc-AxjAm gSuvFI"
+              color="primary"
+              type="button"
+            >
+              Back
+            </button>
+            <button
+              class="sc-AxjAm jTpTok ml-2"
+              color="primary"
+              type="button"
+            >
+              Complete
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

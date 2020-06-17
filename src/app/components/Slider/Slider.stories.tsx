@@ -1,6 +1,7 @@
-import React from "react";
-import { Slider } from "./Slider";
 import { WalletCard } from "app/components/WalletCard";
+import React from "react";
+
+import { Slider } from "./Slider";
 
 export default {
 	title: "Components / Slider",

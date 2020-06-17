@@ -1,11 +1,12 @@
 import { styled } from "twin.macro";
+
 import { getStyles } from "./Circle.styles";
 
 type CircleProps = {
 	as?: React.ElementType;
 	children?: React.ReactNode;
 	avatarId?: string | null;
-	size?: "small" | "default" | "large";
+	size?: "small" | "large" | "default";
 	className?: string | null;
 	noShadow?: boolean;
 };

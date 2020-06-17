@@ -1,9 +1,10 @@
+// UI Elements
+import { Icon } from "app/components/Icon";
 import React from "react";
 import { withRouter } from "react-router";
 import { RouteComponentProps } from "react-router";
 import styled from "styled-components";
-// UI Elements
-import { Icon } from "app/components/Icon";
+
 // Types
 import { ItemProps } from "../SideBar";
 

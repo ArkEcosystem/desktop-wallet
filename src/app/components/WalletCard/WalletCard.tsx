@@ -1,9 +1,10 @@
 import React from "react";
+
+import { Address } from "../Address";
 import { Card } from "../Card";
 import { Circle } from "../Circle";
-import { Address } from "../Address";
-import { Icon } from "../Icon";
 import { Dropdown } from "../Dropdown";
+import { Icon } from "../Icon";
 
 type WalletCardProps = {
 	className?: string;
