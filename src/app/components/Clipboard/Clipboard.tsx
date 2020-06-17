@@ -5,8 +5,8 @@ import tw, { css, styled } from "twin.macro";
 type ClipboardProps = {
 	data: string;
 	children: React.ReactNode;
-	onSuccess?: any;
-	onError?: any;
+	onSuccess?: () => void;
+	onError?: () => void;
 };
 
 const TextArea = styled.textarea(() => [
@@ -21,23 +21,35 @@ const TextArea = styled.textarea(() => [
 export const Clipboard = ({ data, children, onSuccess, onError }: ClipboardProps) => {
 	const textAreaRef = useRef(null);
 
+	if (!children) {
+		return null;
+	}
+
 	const onCopy = () => {
 		try {
 			textAreaRef.current.select();
 			document.execCommand("copy");
-			onSuccess();
-		} catch {
-			onError();
+			if (onSuccess) {
+				onSuccess();
+			}
+		} catch (error) {
+			if (onError) {
+				onError();
+			}
 		}
 	};
 
 	return (
 		<>
-			<div className="inline-block cursor-pointer" onClick={onCopy}>
+			<div data-testid="clipboard__inner" className="inline-block cursor-pointer" onClick={onCopy}>
 				{children}
 			</div>
 
-			<TextArea ref={textAreaRef} value={data} />
+			<TextArea data-testid="clipboard__textarea" ref={textAreaRef} value={data} readOnly={true} />
 		</>
 	);
+};
+
+Clipboard.defaultProps = {
+	data: "",
 };
