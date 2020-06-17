@@ -8,13 +8,14 @@ exports[`SearchBarOptions should render 1`] = `
   >
     <div
       class="relative"
+      data-testid="dropdown__toggle"
     >
       <span
         class="font-semibold cursor-pointer select-none"
       >
-        Type 
+        Type
         <svg
-          class="inline-block w-2 ml-1 text-black"
+          class="inline-block w-2 ml-2 text-black"
         >
           arrowdown.svg
         </svg>
@@ -32,8 +33,18 @@ exports[`SearchBarOptions should render with selected option 1`] = `
   >
     <div
       class="relative"
+      data-testid="dropdown__toggle"
     >
-      TESTING LABEL
+      <span
+        class="font-semibold cursor-pointer select-none"
+      >
+        TESTING LABEL
+        <svg
+          class="inline-block w-2 ml-2 text-black"
+        >
+          arrowdown.svg
+        </svg>
+      </span>
     </div>
   </div>
 </DocumentFragment>

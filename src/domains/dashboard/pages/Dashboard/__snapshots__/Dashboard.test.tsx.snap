@@ -60,10 +60,10 @@ exports[`Dashboard should render 1`] = `
               >
                 <div
                   class="relative"
+                  data-testid="dropdown__toggle"
                 >
                   <button
                     class="float-right outline-none focus:outline-none"
-                    data-testid="dropdown__toggle"
                   >
                     <div
                       class="sc-AxirZ eEbZjj"
@@ -315,7 +315,7 @@ exports[`Dashboard should render 1`] = `
             Transactions History
           </h2>
           <div
-            class="sc-AxiKw igfVcW"
+            class="sc-AxiKw jaovnp"
             role="table"
           >
             <table
