@@ -9,7 +9,7 @@ exports[`SelectDelegateModal should render a modal 1`] = `
     data-testid="modal__overlay"
   />
   <div
-    class="sc-AxhUy gFLAfu fixed left-0 right-0 z-10 flex flex-col px-12 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
+    class="sc-AxhUy cowKBD fixed left-0 right-0 z-10 flex flex-col px-12 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
     data-testid="modal__inner"
   >
     <div
@@ -50,7 +50,7 @@ exports[`SelectDelegateModal should render a modal 1`] = `
           class="-mx-12"
         >
           <div
-            class="bg-theme-neutral-200 px-12 pt-8 pb-10 mt-8"
+            class="bg-theme-neutral-100 px-12 pt-8 pb-10 mt-8"
             data-testid="SearchBar"
           >
             <div
@@ -65,13 +65,13 @@ exports[`SelectDelegateModal should render a modal 1`] = `
                 class="flex-1 mr-4"
               >
                 <input
-                  class="sc-AxheI gJZyBf overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary border-none shadow-none"
+                  class="sc-Axmtr INsXA overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary border-none shadow-none"
                   data-testid="Input"
                   placeholder="Search for a Delegate"
                 />
               </div>
               <button
-                class="sc-AxjAm jPIcLJ my-1"
+                class="sc-AxjAm jgOgud my-1"
                 color="primary"
                 type="button"
               >
@@ -88,7 +88,7 @@ exports[`SelectDelegateModal should render a modal 1`] = `
           class="mt-8 mb-14"
         >
           <div
-            class="sc-AxgMl iBXSpK"
+            class="sc-AxheI cvvcIQ"
             role="table"
           >
             <table
@@ -263,7 +263,7 @@ exports[`SelectDelegateModal should render a modal 1`] = `
                     title="Toggle SortBy"
                   >
                     <div
-                      class="flex flex-inline align-top  justify-end"
+                      class="flex flex-inline align-top  justify-end mr-8"
                     >
                       <div
                         class="mr-1"
@@ -312,15 +312,16 @@ exports[`SelectDelegateModal should render a modal 1`] = `
                 role="rowgroup"
               >
                 <tr
-                  class="border-b border-theme-neutral-200 undefined"
+                  class="border-b border-dashed border-theme-neutral-200 bg-theme-success-100"
                 >
                   <td
                     class="w-16 text-center"
                   >
                     <input
-                      class="sc-AxirZ hdHVRv"
+                      checked=""
+                      class="sc-AxgMl juCCtO"
                       color="success"
-                      type="checkbox"
+                      type="radio"
                     />
                   </td>
                   <td
@@ -334,26 +335,26 @@ exports[`SelectDelegateModal should render a modal 1`] = `
                     class="py-6 font-semibold"
                   >
                     <div>
-                      Delegate 1
+                      Delegate1
                     </div>
                   </td>
                   <td
-                    class="py-6"
+                    class="py-6 font-semibold text-theme-neutral-700"
                   >
-                    <div
-                      class="font-semibold text-theme-neutral-700"
-                    >
-                      #1
-                    </div>
+                    #1
                   </td>
                   <td
                     class="py-6 text-center text-theme-primary-500"
                   >
-                    <svg
-                      class="inline-block h-5 cursor-pointer"
+                    <a
+                      href="https://ms.com"
                     >
-                      link.svg
-                    </svg>
+                      <svg
+                        class="inline-block h-5 cursor-pointer"
+                      >
+                        link.svg
+                      </svg>
+                    </a>
                   </td>
                   <td
                     class="py-6 font-semibold whitespace-no-wrap text-theme-neutral-700"
@@ -363,7 +364,7 @@ exports[`SelectDelegateModal should render a modal 1`] = `
                     </div>
                   </td>
                   <td
-                    class="py-6 font-semibold text-right whitespace-no-wrap text-theme-neutral-700"
+                    class="py-6 font-semibold text-right whitespace-no-wrap text-theme-neutral-700 pr-8"
                   >
                     <span
                       class="mr-1 text-sm text-theme-neutral-500"
@@ -375,25 +376,24 @@ exports[`SelectDelegateModal should render a modal 1`] = `
                     </span>
                   </td>
                   <td
-                    class="w-24 text-right"
+                    class="w-16"
                   >
-                    <div>
-                      <div
-                        class="sc-AxiKw eXxQUT  border-theme-primary-100"
-                      />
-                    </div>
+                    <div
+                      class="sc-AxiKw eXxQUT  border-theme-primary-100"
+                    />
                   </td>
                 </tr>
                 <tr
-                  class="border-b border-theme-neutral-200 undefined"
+                  class="border-b border-dashed border-theme-neutral-200 bg-theme-success-100"
                 >
                   <td
                     class="w-16 text-center"
                   >
                     <input
-                      class="sc-AxirZ hdHVRv"
+                      checked=""
+                      class="sc-AxgMl juCCtO"
                       color="success"
-                      type="checkbox"
+                      type="radio"
                     />
                   </td>
                   <td
@@ -407,27 +407,17 @@ exports[`SelectDelegateModal should render a modal 1`] = `
                     class="py-6 font-semibold"
                   >
                     <div>
-                      Delegate 2
+                      Delegate2
                     </div>
                   </td>
                   <td
-                    class="py-6"
+                    class="py-6 font-semibold text-theme-neutral-700"
                   >
-                    <div
-                      class="font-semibold text-theme-neutral-700"
-                    >
-                      #2
-                    </div>
+                    #2
                   </td>
                   <td
                     class="py-6 text-center text-theme-primary-500"
-                  >
-                    <svg
-                      class="inline-block h-5 cursor-pointer"
-                    >
-                      link.svg
-                    </svg>
-                  </td>
+                  />
                   <td
                     class="py-6 font-semibold whitespace-no-wrap text-theme-neutral-700"
                   >
@@ -436,7 +426,7 @@ exports[`SelectDelegateModal should render a modal 1`] = `
                     </div>
                   </td>
                   <td
-                    class="py-6 font-semibold text-right whitespace-no-wrap text-theme-neutral-700"
+                    class="py-6 font-semibold text-right whitespace-no-wrap text-theme-neutral-700 pr-8"
                   >
                     <span
                       class="mr-1 text-sm text-theme-neutral-500"
@@ -448,25 +438,23 @@ exports[`SelectDelegateModal should render a modal 1`] = `
                     </span>
                   </td>
                   <td
-                    class="w-24 text-right"
+                    class="w-16"
                   >
-                    <div>
-                      <div
-                        class="sc-AxiKw eXxQUT  border-theme-primary-100"
-                      />
-                    </div>
+                    <div
+                      class="sc-AxiKw eXxQUT  border-theme-primary-100"
+                    />
                   </td>
                 </tr>
                 <tr
-                  class="border-b border-theme-neutral-200 undefined"
+                  class="border-b border-dashed border-theme-neutral-200 undefined"
                 >
                   <td
                     class="w-16 text-center"
                   >
                     <input
-                      class="sc-AxirZ hdHVRv"
+                      class="sc-AxgMl juCCtO"
                       color="success"
-                      type="checkbox"
+                      type="radio"
                     />
                   </td>
                   <td
@@ -480,26 +468,26 @@ exports[`SelectDelegateModal should render a modal 1`] = `
                     class="py-6 font-semibold"
                   >
                     <div>
-                      Delegate 3
+                      Delegate3
                     </div>
                   </td>
                   <td
-                    class="py-6"
+                    class="py-6 font-semibold text-theme-neutral-700"
                   >
-                    <div
-                      class="font-semibold text-theme-neutral-700"
-                    >
-                      #3
-                    </div>
+                    #3
                   </td>
                   <td
                     class="py-6 text-center text-theme-primary-500"
                   >
-                    <svg
-                      class="inline-block h-5 cursor-pointer"
+                    <a
+                      href="https://ms.com"
                     >
-                      link.svg
-                    </svg>
+                      <svg
+                        class="inline-block h-5 cursor-pointer"
+                      >
+                        link.svg
+                      </svg>
+                    </a>
                   </td>
                   <td
                     class="py-6 font-semibold whitespace-no-wrap text-theme-neutral-700"
@@ -509,7 +497,7 @@ exports[`SelectDelegateModal should render a modal 1`] = `
                     </div>
                   </td>
                   <td
-                    class="py-6 font-semibold text-right whitespace-no-wrap text-theme-neutral-700"
+                    class="py-6 font-semibold text-right whitespace-no-wrap text-theme-neutral-700 pr-8"
                   >
                     <span
                       class="mr-1 text-sm text-theme-neutral-500"
@@ -521,13 +509,72 @@ exports[`SelectDelegateModal should render a modal 1`] = `
                     </span>
                   </td>
                   <td
-                    class="w-24 text-right"
+                    class="w-16"
+                  >
+                    <div
+                      class="sc-AxiKw fHyikq"
+                    />
+                  </td>
+                </tr>
+                <tr
+                  class="border-b border-dashed border-theme-neutral-200 undefined"
+                >
+                  <td
+                    class="w-16 text-center"
+                  >
+                    <input
+                      class="sc-AxgMl juCCtO"
+                      color="success"
+                      type="radio"
+                    />
+                  </td>
+                  <td
+                    class="w-16 px-4"
+                  >
+                    <div
+                      class="sc-AxiKw fHyikq"
+                    />
+                  </td>
+                  <td
+                    class="py-6 font-semibold"
                   >
                     <div>
-                      <div
-                        class="sc-AxiKw fHyikq"
-                      />
+                      Delegate4
                     </div>
+                  </td>
+                  <td
+                    class="py-6 font-semibold text-theme-neutral-700"
+                  >
+                    #4
+                  </td>
+                  <td
+                    class="py-6 text-center text-theme-primary-500"
+                  />
+                  <td
+                    class="py-6 font-semibold whitespace-no-wrap text-theme-neutral-700"
+                  >
+                    <div>
+                      693,236 A
+                    </div>
+                  </td>
+                  <td
+                    class="py-6 font-semibold text-right whitespace-no-wrap text-theme-neutral-700 pr-8"
+                  >
+                    <span
+                      class="mr-1 text-sm text-theme-neutral-500"
+                    >
+                      1.528%
+                    </span>
+                    <span>
+                      1,976,303 A
+                    </span>
+                  </td>
+                  <td
+                    class="w-16"
+                  >
+                    <div
+                      class="sc-AxiKw eXxQUT  border-theme-primary-100"
+                    />
                   </td>
                 </tr>
               </tbody>
@@ -535,48 +582,52 @@ exports[`SelectDelegateModal should render a modal 1`] = `
           </div>
         </div>
         <div
-          class="absolute bottom-0 left-0 right-0 flex px-8 py-6 bg-white shadow-2xl"
+          class="absolute bottom-0 left-0 right-0 pl-4 pr-12 pt-8 pb-10 bg-white shadow-2xl"
         >
           <div
-            class="px-8 mr-8 border-r border-theme-neutral-200"
+            class="flex"
           >
             <div
-              class="text-sm text-theme-neutral-500"
+              class="px-8 mr-8 border-r border-theme-neutral-300"
             >
-              Rank
-            </div>
-            <div
-              class="font-semibold text-theme-neutral-700"
-            >
-              #3
-            </div>
-          </div>
-          <div
-            class="flex flex-1"
-          >
-            <div
-              class="sc-AxiKw bikKyU mr-2"
-            />
-            <div>
               <div
                 class="text-sm text-theme-neutral-500"
               >
-                Address Delegate
+                Rank
               </div>
               <div
                 class="font-semibold text-theme-neutral-700"
               >
-                Delegate 3 - AADDDDDDDRREEEEESSSSSSS
+                #3
               </div>
             </div>
+            <div
+              class="flex flex-1"
+            >
+              <div
+                class="sc-AxiKw bikKyU mr-2"
+              />
+              <div>
+                <div
+                  class="text-sm text-theme-neutral-500"
+                >
+                  Delegate Address
+                </div>
+                <div
+                  class="font-semibold text-theme-neutral-700"
+                >
+                  Delegate1 - AADDDDDDDRREEEEESSSSSSS
+                </div>
+              </div>
+            </div>
+            <button
+              class="sc-AxjAm eixJcU"
+              color="primary"
+              type="button"
+            >
+              Vote
+            </button>
           </div>
-          <button
-            class="sc-AxjAm jTpTok"
-            color="primary"
-            type="button"
-          >
-            Vote
-          </button>
         </div>
       </div>
     </div>
