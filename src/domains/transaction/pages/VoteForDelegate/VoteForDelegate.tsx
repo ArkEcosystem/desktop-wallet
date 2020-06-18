@@ -92,7 +92,7 @@ export const SecondStep = () => (
 				border={false}
 				label="Network"
 				extra={
-					<div className="text-theme-danger-500 ml-1">
+					<div className="ml-1 text-theme-danger-500">
 						<Circle className="bg-theme-background border-theme-danger-200" size="large">
 							<Icon name="Ark" width={20} height={20} />
 						</Circle>
@@ -124,7 +124,7 @@ export const SecondStep = () => (
 			<TransactionDetail
 				label="Amount"
 				extra={
-					<div className="text-theme-danger ml-1">
+					<div className="ml-1 text-theme-danger">
 						<Circle className="bg-theme-background border-theme-danger-200" size="large">
 							<Icon name="Sent" width={50} height={50} />
 						</Circle>
@@ -181,7 +181,7 @@ export const FourthStep = () => (
 								maxChars={32}
 							/>
 						</Clipboard>
-						<div className="text-theme-primary-300 mb-1 ml-5">
+						<div className="mb-1 ml-5 text-theme-primary-300">
 							<Icon name="Copy" />
 						</div>
 					</div>
@@ -195,7 +195,7 @@ export const FourthStep = () => (
 								maxChars={32}
 							/>
 						</Clipboard>
-						<div className="text-theme-primary-300 mb-1 ml-5">
+						<div className="mb-1 ml-5 text-theme-primary-300">
 							<Icon name="Copy" />
 						</div>
 					</div>
@@ -204,7 +204,7 @@ export const FourthStep = () => (
 					border={false}
 					label="Network"
 					extra={
-						<div className="text-theme-danger-500 ml-1">
+						<div className="ml-1 text-theme-danger-500">
 							<Circle className="bg-theme-background border-theme-danger-200" size="large">
 								<Icon name="Ark" width={20} height={20} />
 							</Circle>
@@ -236,7 +236,7 @@ export const FourthStep = () => (
 				<TransactionDetail
 					label="Amount"
 					extra={
-						<div className="text-theme-danger ml-1">
+						<div className="ml-1 text-theme-danger">
 							<Circle className="bg-theme-background border-theme-danger-200" size="large">
 								<Icon name="Sent" width={50} height={50} />
 							</Circle>
@@ -248,8 +248,8 @@ export const FourthStep = () => (
 				<TransactionDetail
 					label="Transaction type"
 					extra={
-						<div className="text-theme-danger ml-1">
-							<Circle className="bg-theme-background border-black" size="large">
+						<div className="ml-1 text-theme-danger">
+							<Circle className="border-black bg-theme-background" size="large">
 								<Icon name="Voted" />
 							</Circle>
 						</div>
