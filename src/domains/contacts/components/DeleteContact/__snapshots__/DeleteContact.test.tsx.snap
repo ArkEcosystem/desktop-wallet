@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`DeleteWallet should not render if not open 1`] = `<DocumentFragment />`;
+exports[`DeleteContact should not render if not open 1`] = `<DocumentFragment />`;
 
-exports[`DeleteWallet should render a modal 1`] = `
+exports[`DeleteContact should render a modal 1`] = `
 <DocumentFragment>
   <div
     class="fixed inset-0 z-10 bg-black opacity-50"
@@ -36,7 +36,7 @@ exports[`DeleteWallet should render a modal 1`] = `
       class="py-4"
     >
       <h2>
-        Delete Wallet
+        Delete Contact
       </h2>
       <div
         class="flex-1"
@@ -49,7 +49,7 @@ exports[`DeleteWallet should render a modal 1`] = `
         <div
           class="text-theme-neutral-700"
         >
-          Do you really want to remove your wallet? Before deleting, make sure that you have the passphrase for this wallet.
+          Do you really want to delete this contact? Once deleted, you will not be able to restore it.
         </div>
         <div
           class="flex justify-end mt-8 space-x-2"
