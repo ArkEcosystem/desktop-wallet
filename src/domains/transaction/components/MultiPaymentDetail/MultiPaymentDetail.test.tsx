@@ -5,7 +5,7 @@ import { I18nextProvider } from "react-i18next";
 
 // i18n
 import { translations } from "../../i18n";
-import { MultiPaymentDetail } from "./";
+import { MultiPaymentDetail } from "./MultiPaymentDetail";
 
 describe("MultiPaymentDetail", () => {
 	it("should not render if not open", () => {

@@ -1,7 +1,7 @@
 import { fireEvent, render } from "@testing-library/react";
 import React from "react";
 
-import { Select } from "./";
+import { Select } from "./Select";
 
 describe("Select", () => {
 	it("should render a select input with placeholder", () => {

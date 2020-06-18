@@ -7,7 +7,7 @@ import { I18nextProvider } from "react-i18next";
 
 // i18n
 import { translations } from "../../i18n";
-import { FirstStep, MultiSignatureDetail, SecondStep, ThirdStep } from "./";
+import { FirstStep, MultiSignatureDetail, SecondStep, ThirdStep } from "./MultiSignatureDetail";
 
 describe("MultiSignatureDetail", () => {
 	it("should not render if not open", () => {

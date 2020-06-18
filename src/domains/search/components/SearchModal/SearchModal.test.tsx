@@ -7,7 +7,7 @@ import { I18nextProvider } from "react-i18next";
 
 // i18n
 import { translations } from "../../i18n";
-import { SearchModal } from "./";
+import { SearchModal } from "./SearchModal";
 
 describe("SearchModal", () => {
 	it("should not render if not open", () => {

@@ -1,7 +1,7 @@
 import { boolean } from "@storybook/addon-knobs";
-import React, { useEffect,useState } from "react";
+import React, { useEffect, useState } from "react";
 
-import { InstallPlugin } from "./";
+import { InstallPlugin } from "./InstallPlugin";
 
 export default { title: "Plugins / Components / Install Plugin" };
 

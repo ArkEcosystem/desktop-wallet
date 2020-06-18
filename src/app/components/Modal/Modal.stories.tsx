@@ -2,7 +2,7 @@ import { boolean, select, text, withKnobs } from "@storybook/addon-knobs";
 import { Button } from "app/components/Button";
 import React from "react";
 
-import { Modal } from "./";
+import { Modal } from "./Modal";
 
 export default {
 	title: "Components / Modal",

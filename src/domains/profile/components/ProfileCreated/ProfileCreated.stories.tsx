@@ -1,7 +1,7 @@
 import { boolean } from "@storybook/addon-knobs";
 import React from "react";
 
-import { ProfileCreated } from "./";
+import { ProfileCreated } from "./ProfileCreated";
 
 export default { title: "Profile / Components / Profile Created" };
 

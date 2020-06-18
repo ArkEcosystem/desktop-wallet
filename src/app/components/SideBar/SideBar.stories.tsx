@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { SideBar } from "./";
+import { SideBar } from "./SideBar";
 
 export default { title: "Navigation / Side Bar" };
 

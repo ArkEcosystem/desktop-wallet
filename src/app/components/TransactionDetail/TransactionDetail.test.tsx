@@ -1,7 +1,7 @@
 import { render } from "@testing-library/react";
 import React from "react";
 
-import { TransactionDetail } from "./";
+import { TransactionDetail } from "./TransactionDetail";
 
 describe("TransactionDetail", () => {
 	it("should render", () => {
