@@ -1,9 +1,11 @@
 name: Draft Artifacts
 
-on:
-    push:
-        branches:
-            - "3.0-react"
+on: ["push"]
+
+# on:
+#     push:
+#         branches:
+#             - "3.0-react"
 
 jobs:
     linux:
