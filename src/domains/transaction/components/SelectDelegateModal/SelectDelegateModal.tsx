@@ -4,6 +4,7 @@ import { Button } from "app/components/Button";
 import { Checkbox } from "app/components/Checkbox";
 import { Circle } from "app/components/Circle";
 import { Modal } from "app/components/Modal";
+import { RadioButton } from "app/components/RadioButton";
 import { Table } from "app/components/Table";
 import { SearchBar } from "domains/search/components/SearchBar";
 import React, { useState } from "react";
@@ -12,6 +13,7 @@ import { useTranslation } from "react-i18next";
 type SelectDelegateModalProps = {
 	isOpen: boolean;
 	onClose?: any;
+	allowMultiple?: boolean;
 };
 
 export const SelectDelegateModal = (props: SelectDelegateModalProps) => {
@@ -31,6 +33,15 @@ export const SelectDelegateModal = (props: SelectDelegateModalProps) => {
 				}, {}) as any,
 			);
 			console.log("old", selected);
+
+			return;
+		}
+
+		if (props.allowMultiple) {
+			setSelected({
+				...selected,
+				[delegate.username]: delegate,
+			});
 
 			return;
 		}
@@ -136,7 +147,14 @@ export const SelectDelegateModal = (props: SelectDelegateModalProps) => {
 							}`}
 						>
 							<td className="w-16 text-center">
-								<Checkbox onClick={() => toggleSelected(rowData)} />
+								{props.allowMultiple ? (
+									<Checkbox checked={selected[rowData.id]} onChange={() => toggleSelected(rowData)} />
+								) : (
+									<RadioButton
+										checked={selected[rowData.id]}
+										onChange={() => toggleSelected(rowData)}
+									/>
+								)}
 							</td>
 
 							<td className="w-16 px-4">
@@ -202,4 +220,8 @@ export const SelectDelegateModal = (props: SelectDelegateModalProps) => {
 			</div>
 		</Modal>
 	);
+};
+
+SelectDelegateModal.defaultProps = {
+	allowMultiple: false,
 };
