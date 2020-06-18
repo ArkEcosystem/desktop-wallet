@@ -87,10 +87,12 @@ exports[`Application root should render without crashing 1`] = `
                           "APP_NAME": "ARK Desktop Wallet",
                           "APP_NAME_SHORT": "ARK Desktop",
                           "ARK": "ARK",
+                          "ASSET_TYPE": "Asset Type",
                           "ATTENTION": "Attention",
                           "AVATAR": "Avatar",
                           "BACK": "Back",
                           "BACKGROUND": "Background",
+                          "BALANCE": "Balance",
                           "BIP39_LANGUAGE": "Passphrase Language (BIP39)",
                           "CANCEL": "Cancel",
                           "CATEGORY": "Category",
@@ -110,6 +112,7 @@ exports[`Application root should render without crashing 1`] = `
                           "FAILED_FETCH": "Failed to fetch {{name}}. Reason {{msg}}",
                           "FAILED_UPDATE": "Failed to update {{name}}. Reaso: {{reason}}",
                           "FETCH": "Fetch",
+                          "FIAT_VALUE": "Fiat Value",
                           "FILTER_BLACKLISTED_PLUGINS": "Apply blacklist",
                           "FINISH": "Finish",
                           "HIDE_WALLET_BUTTON_TEXT": "Hide text from wallet buttons",
@@ -242,6 +245,11 @@ exports[`Application root should render without crashing 1`] = `
                             "DESCRIPTION": "Do you really want to remove your wallet? Before deleting, make sure that you have the passphrase for this wallet.",
                             "TITLE": "Delete Wallet",
                           },
+                          "MODAL_LEDGER_WALLET": Object {
+                            "DESCRIPTION": "Connect your Ledger to PC and confirm the input.",
+                            "TITLE": "Ledger Wallet",
+                            "WAITING_FOR_LEDGER": "Waiting for Ledger...",
+                          },
                           "MODAL_NAME_WALLET": Object {
                             "DESCRIPTION": "You can enter the name of your wallet for a quick search in your wallet.",
                             "FIELD_NAME": "Enter a name",
@@ -249,6 +257,10 @@ exports[`Application root should render without crashing 1`] = `
                           },
                           "MODAL_RECEIVE_FUNDS": Object {
                             "TITLE": "Receive Funds",
+                          },
+                          "MODAL_SELECT_ACCOUNT": Object {
+                            "DESCRIPTION": "Find and select the account you want to receive funds to",
+                            "TITLE": "Select Account",
                           },
                           "MODAL_WALLET_UPDATE": Object {
                             "DESCRIPTION_1": "We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.",
@@ -336,10 +348,12 @@ exports[`Application root should render without crashing 1`] = `
                         "APP_NAME": "ARK Desktop Wallet",
                         "APP_NAME_SHORT": "ARK Desktop",
                         "ARK": "ARK",
+                        "ASSET_TYPE": "Asset Type",
                         "ATTENTION": "Attention",
                         "AVATAR": "Avatar",
                         "BACK": "Back",
                         "BACKGROUND": "Background",
+                        "BALANCE": "Balance",
                         "BIP39_LANGUAGE": "Passphrase Language (BIP39)",
                         "CANCEL": "Cancel",
                         "CATEGORY": "Category",
@@ -359,6 +373,7 @@ exports[`Application root should render without crashing 1`] = `
                         "FAILED_FETCH": "Failed to fetch {{name}}. Reason {{msg}}",
                         "FAILED_UPDATE": "Failed to update {{name}}. Reaso: {{reason}}",
                         "FETCH": "Fetch",
+                        "FIAT_VALUE": "Fiat Value",
                         "FILTER_BLACKLISTED_PLUGINS": "Apply blacklist",
                         "FINISH": "Finish",
                         "HIDE_WALLET_BUTTON_TEXT": "Hide text from wallet buttons",
@@ -491,6 +506,11 @@ exports[`Application root should render without crashing 1`] = `
                           "DESCRIPTION": "Do you really want to remove your wallet? Before deleting, make sure that you have the passphrase for this wallet.",
                           "TITLE": "Delete Wallet",
                         },
+                        "MODAL_LEDGER_WALLET": Object {
+                          "DESCRIPTION": "Connect your Ledger to PC and confirm the input.",
+                          "TITLE": "Ledger Wallet",
+                          "WAITING_FOR_LEDGER": "Waiting for Ledger...",
+                        },
                         "MODAL_NAME_WALLET": Object {
                           "DESCRIPTION": "You can enter the name of your wallet for a quick search in your wallet.",
                           "FIELD_NAME": "Enter a name",
@@ -498,6 +518,10 @@ exports[`Application root should render without crashing 1`] = `
                         },
                         "MODAL_RECEIVE_FUNDS": Object {
                           "TITLE": "Receive Funds",
+                        },
+                        "MODAL_SELECT_ACCOUNT": Object {
+                          "DESCRIPTION": "Find and select the account you want to receive funds to",
+                          "TITLE": "Select Account",
                         },
                         "MODAL_WALLET_UPDATE": Object {
                           "DESCRIPTION_1": "We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.",
@@ -589,10 +613,12 @@ exports[`Application root should render without crashing 1`] = `
                                 "APP_NAME": "ARK Desktop Wallet",
                                 "APP_NAME_SHORT": "ARK Desktop",
                                 "ARK": "ARK",
+                                "ASSET_TYPE": "Asset Type",
                                 "ATTENTION": "Attention",
                                 "AVATAR": "Avatar",
                                 "BACK": "Back",
                                 "BACKGROUND": "Background",
+                                "BALANCE": "Balance",
                                 "BIP39_LANGUAGE": "Passphrase Language (BIP39)",
                                 "CANCEL": "Cancel",
                                 "CATEGORY": "Category",
@@ -612,6 +638,7 @@ exports[`Application root should render without crashing 1`] = `
                                 "FAILED_FETCH": "Failed to fetch {{name}}. Reason {{msg}}",
                                 "FAILED_UPDATE": "Failed to update {{name}}. Reaso: {{reason}}",
                                 "FETCH": "Fetch",
+                                "FIAT_VALUE": "Fiat Value",
                                 "FILTER_BLACKLISTED_PLUGINS": "Apply blacklist",
                                 "FINISH": "Finish",
                                 "HIDE_WALLET_BUTTON_TEXT": "Hide text from wallet buttons",
@@ -744,6 +771,11 @@ exports[`Application root should render without crashing 1`] = `
                                   "DESCRIPTION": "Do you really want to remove your wallet? Before deleting, make sure that you have the passphrase for this wallet.",
                                   "TITLE": "Delete Wallet",
                                 },
+                                "MODAL_LEDGER_WALLET": Object {
+                                  "DESCRIPTION": "Connect your Ledger to PC and confirm the input.",
+                                  "TITLE": "Ledger Wallet",
+                                  "WAITING_FOR_LEDGER": "Waiting for Ledger...",
+                                },
                                 "MODAL_NAME_WALLET": Object {
                                   "DESCRIPTION": "You can enter the name of your wallet for a quick search in your wallet.",
                                   "FIELD_NAME": "Enter a name",
@@ -751,6 +783,10 @@ exports[`Application root should render without crashing 1`] = `
                                 },
                                 "MODAL_RECEIVE_FUNDS": Object {
                                   "TITLE": "Receive Funds",
+                                },
+                                "MODAL_SELECT_ACCOUNT": Object {
+                                  "DESCRIPTION": "Find and select the account you want to receive funds to",
+                                  "TITLE": "Select Account",
                                 },
                                 "MODAL_WALLET_UPDATE": Object {
                                   "DESCRIPTION_1": "We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.",
@@ -829,10 +865,12 @@ exports[`Application root should render without crashing 1`] = `
                               "APP_NAME": "ARK Desktop Wallet",
                               "APP_NAME_SHORT": "ARK Desktop",
                               "ARK": "ARK",
+                              "ASSET_TYPE": "Asset Type",
                               "ATTENTION": "Attention",
                               "AVATAR": "Avatar",
                               "BACK": "Back",
                               "BACKGROUND": "Background",
+                              "BALANCE": "Balance",
                               "BIP39_LANGUAGE": "Passphrase Language (BIP39)",
                               "CANCEL": "Cancel",
                               "CATEGORY": "Category",
@@ -852,6 +890,7 @@ exports[`Application root should render without crashing 1`] = `
                               "FAILED_FETCH": "Failed to fetch {{name}}. Reason {{msg}}",
                               "FAILED_UPDATE": "Failed to update {{name}}. Reaso: {{reason}}",
                               "FETCH": "Fetch",
+                              "FIAT_VALUE": "Fiat Value",
                               "FILTER_BLACKLISTED_PLUGINS": "Apply blacklist",
                               "FINISH": "Finish",
                               "HIDE_WALLET_BUTTON_TEXT": "Hide text from wallet buttons",
@@ -984,6 +1023,11 @@ exports[`Application root should render without crashing 1`] = `
                                 "DESCRIPTION": "Do you really want to remove your wallet? Before deleting, make sure that you have the passphrase for this wallet.",
                                 "TITLE": "Delete Wallet",
                               },
+                              "MODAL_LEDGER_WALLET": Object {
+                                "DESCRIPTION": "Connect your Ledger to PC and confirm the input.",
+                                "TITLE": "Ledger Wallet",
+                                "WAITING_FOR_LEDGER": "Waiting for Ledger...",
+                              },
                               "MODAL_NAME_WALLET": Object {
                                 "DESCRIPTION": "You can enter the name of your wallet for a quick search in your wallet.",
                                 "FIELD_NAME": "Enter a name",
@@ -991,6 +1035,10 @@ exports[`Application root should render without crashing 1`] = `
                               },
                               "MODAL_RECEIVE_FUNDS": Object {
                                 "TITLE": "Receive Funds",
+                              },
+                              "MODAL_SELECT_ACCOUNT": Object {
+                                "DESCRIPTION": "Find and select the account you want to receive funds to",
+                                "TITLE": "Select Account",
                               },
                               "MODAL_WALLET_UPDATE": Object {
                                 "DESCRIPTION_1": "We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.",
@@ -1079,10 +1127,12 @@ exports[`Application root should render without crashing 1`] = `
                               "APP_NAME": "ARK Desktop Wallet",
                               "APP_NAME_SHORT": "ARK Desktop",
                               "ARK": "ARK",
+                              "ASSET_TYPE": "Asset Type",
                               "ATTENTION": "Attention",
                               "AVATAR": "Avatar",
                               "BACK": "Back",
                               "BACKGROUND": "Background",
+                              "BALANCE": "Balance",
                               "BIP39_LANGUAGE": "Passphrase Language (BIP39)",
                               "CANCEL": "Cancel",
                               "CATEGORY": "Category",
@@ -1102,6 +1152,7 @@ exports[`Application root should render without crashing 1`] = `
                               "FAILED_FETCH": "Failed to fetch {{name}}. Reason {{msg}}",
                               "FAILED_UPDATE": "Failed to update {{name}}. Reaso: {{reason}}",
                               "FETCH": "Fetch",
+                              "FIAT_VALUE": "Fiat Value",
                               "FILTER_BLACKLISTED_PLUGINS": "Apply blacklist",
                               "FINISH": "Finish",
                               "HIDE_WALLET_BUTTON_TEXT": "Hide text from wallet buttons",
@@ -1234,6 +1285,11 @@ exports[`Application root should render without crashing 1`] = `
                                 "DESCRIPTION": "Do you really want to remove your wallet? Before deleting, make sure that you have the passphrase for this wallet.",
                                 "TITLE": "Delete Wallet",
                               },
+                              "MODAL_LEDGER_WALLET": Object {
+                                "DESCRIPTION": "Connect your Ledger to PC and confirm the input.",
+                                "TITLE": "Ledger Wallet",
+                                "WAITING_FOR_LEDGER": "Waiting for Ledger...",
+                              },
                               "MODAL_NAME_WALLET": Object {
                                 "DESCRIPTION": "You can enter the name of your wallet for a quick search in your wallet.",
                                 "FIELD_NAME": "Enter a name",
@@ -1241,6 +1297,10 @@ exports[`Application root should render without crashing 1`] = `
                               },
                               "MODAL_RECEIVE_FUNDS": Object {
                                 "TITLE": "Receive Funds",
+                              },
+                              "MODAL_SELECT_ACCOUNT": Object {
+                                "DESCRIPTION": "Find and select the account you want to receive funds to",
+                                "TITLE": "Select Account",
                               },
                               "MODAL_WALLET_UPDATE": Object {
                                 "DESCRIPTION_1": "We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.",
@@ -1324,10 +1384,12 @@ exports[`Application root should render without crashing 1`] = `
                             "APP_NAME": "ARK Desktop Wallet",
                             "APP_NAME_SHORT": "ARK Desktop",
                             "ARK": "ARK",
+                            "ASSET_TYPE": "Asset Type",
                             "ATTENTION": "Attention",
                             "AVATAR": "Avatar",
                             "BACK": "Back",
                             "BACKGROUND": "Background",
+                            "BALANCE": "Balance",
                             "BIP39_LANGUAGE": "Passphrase Language (BIP39)",
                             "CANCEL": "Cancel",
                             "CATEGORY": "Category",
@@ -1347,6 +1409,7 @@ exports[`Application root should render without crashing 1`] = `
                             "FAILED_FETCH": "Failed to fetch {{name}}. Reason {{msg}}",
                             "FAILED_UPDATE": "Failed to update {{name}}. Reaso: {{reason}}",
                             "FETCH": "Fetch",
+                            "FIAT_VALUE": "Fiat Value",
                             "FILTER_BLACKLISTED_PLUGINS": "Apply blacklist",
                             "FINISH": "Finish",
                             "HIDE_WALLET_BUTTON_TEXT": "Hide text from wallet buttons",
@@ -1479,6 +1542,11 @@ exports[`Application root should render without crashing 1`] = `
                               "DESCRIPTION": "Do you really want to remove your wallet? Before deleting, make sure that you have the passphrase for this wallet.",
                               "TITLE": "Delete Wallet",
                             },
+                            "MODAL_LEDGER_WALLET": Object {
+                              "DESCRIPTION": "Connect your Ledger to PC and confirm the input.",
+                              "TITLE": "Ledger Wallet",
+                              "WAITING_FOR_LEDGER": "Waiting for Ledger...",
+                            },
                             "MODAL_NAME_WALLET": Object {
                               "DESCRIPTION": "You can enter the name of your wallet for a quick search in your wallet.",
                               "FIELD_NAME": "Enter a name",
@@ -1486,6 +1554,10 @@ exports[`Application root should render without crashing 1`] = `
                             },
                             "MODAL_RECEIVE_FUNDS": Object {
                               "TITLE": "Receive Funds",
+                            },
+                            "MODAL_SELECT_ACCOUNT": Object {
+                              "DESCRIPTION": "Find and select the account you want to receive funds to",
+                              "TITLE": "Select Account",
                             },
                             "MODAL_WALLET_UPDATE": Object {
                               "DESCRIPTION_1": "We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.",
@@ -1522,10 +1594,12 @@ exports[`Application root should render without crashing 1`] = `
                           "APP_NAME": "ARK Desktop Wallet",
                           "APP_NAME_SHORT": "ARK Desktop",
                           "ARK": "ARK",
+                          "ASSET_TYPE": "Asset Type",
                           "ATTENTION": "Attention",
                           "AVATAR": "Avatar",
                           "BACK": "Back",
                           "BACKGROUND": "Background",
+                          "BALANCE": "Balance",
                           "BIP39_LANGUAGE": "Passphrase Language (BIP39)",
                           "CANCEL": "Cancel",
                           "CATEGORY": "Category",
@@ -1545,6 +1619,7 @@ exports[`Application root should render without crashing 1`] = `
                           "FAILED_FETCH": "Failed to fetch {{name}}. Reason {{msg}}",
                           "FAILED_UPDATE": "Failed to update {{name}}. Reaso: {{reason}}",
                           "FETCH": "Fetch",
+                          "FIAT_VALUE": "Fiat Value",
                           "FILTER_BLACKLISTED_PLUGINS": "Apply blacklist",
                           "FINISH": "Finish",
                           "HIDE_WALLET_BUTTON_TEXT": "Hide text from wallet buttons",
@@ -1677,6 +1752,11 @@ exports[`Application root should render without crashing 1`] = `
                             "DESCRIPTION": "Do you really want to remove your wallet? Before deleting, make sure that you have the passphrase for this wallet.",
                             "TITLE": "Delete Wallet",
                           },
+                          "MODAL_LEDGER_WALLET": Object {
+                            "DESCRIPTION": "Connect your Ledger to PC and confirm the input.",
+                            "TITLE": "Ledger Wallet",
+                            "WAITING_FOR_LEDGER": "Waiting for Ledger...",
+                          },
                           "MODAL_NAME_WALLET": Object {
                             "DESCRIPTION": "You can enter the name of your wallet for a quick search in your wallet.",
                             "FIELD_NAME": "Enter a name",
@@ -1684,6 +1764,10 @@ exports[`Application root should render without crashing 1`] = `
                           },
                           "MODAL_RECEIVE_FUNDS": Object {
                             "TITLE": "Receive Funds",
+                          },
+                          "MODAL_SELECT_ACCOUNT": Object {
+                            "DESCRIPTION": "Find and select the account you want to receive funds to",
+                            "TITLE": "Select Account",
                           },
                           "MODAL_WALLET_UPDATE": Object {
                             "DESCRIPTION_1": "We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.",
@@ -1766,10 +1850,12 @@ exports[`Application root should render without crashing 1`] = `
                               "APP_NAME": "ARK Desktop Wallet",
                               "APP_NAME_SHORT": "ARK Desktop",
                               "ARK": "ARK",
+                              "ASSET_TYPE": "Asset Type",
                               "ATTENTION": "Attention",
                               "AVATAR": "Avatar",
                               "BACK": "Back",
                               "BACKGROUND": "Background",
+                              "BALANCE": "Balance",
                               "BIP39_LANGUAGE": "Passphrase Language (BIP39)",
                               "CANCEL": "Cancel",
                               "CATEGORY": "Category",
@@ -1789,6 +1875,7 @@ exports[`Application root should render without crashing 1`] = `
                               "FAILED_FETCH": "Failed to fetch {{name}}. Reason {{msg}}",
                               "FAILED_UPDATE": "Failed to update {{name}}. Reaso: {{reason}}",
                               "FETCH": "Fetch",
+                              "FIAT_VALUE": "Fiat Value",
                               "FILTER_BLACKLISTED_PLUGINS": "Apply blacklist",
                               "FINISH": "Finish",
                               "HIDE_WALLET_BUTTON_TEXT": "Hide text from wallet buttons",
@@ -1921,6 +2008,11 @@ exports[`Application root should render without crashing 1`] = `
                                 "DESCRIPTION": "Do you really want to remove your wallet? Before deleting, make sure that you have the passphrase for this wallet.",
                                 "TITLE": "Delete Wallet",
                               },
+                              "MODAL_LEDGER_WALLET": Object {
+                                "DESCRIPTION": "Connect your Ledger to PC and confirm the input.",
+                                "TITLE": "Ledger Wallet",
+                                "WAITING_FOR_LEDGER": "Waiting for Ledger...",
+                              },
                               "MODAL_NAME_WALLET": Object {
                                 "DESCRIPTION": "You can enter the name of your wallet for a quick search in your wallet.",
                                 "FIELD_NAME": "Enter a name",
@@ -1928,6 +2020,10 @@ exports[`Application root should render without crashing 1`] = `
                               },
                               "MODAL_RECEIVE_FUNDS": Object {
                                 "TITLE": "Receive Funds",
+                              },
+                              "MODAL_SELECT_ACCOUNT": Object {
+                                "DESCRIPTION": "Find and select the account you want to receive funds to",
+                                "TITLE": "Select Account",
                               },
                               "MODAL_WALLET_UPDATE": Object {
                                 "DESCRIPTION_1": "We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.",
@@ -2011,10 +2107,12 @@ exports[`Application root should render without crashing 1`] = `
                             "APP_NAME": "ARK Desktop Wallet",
                             "APP_NAME_SHORT": "ARK Desktop",
                             "ARK": "ARK",
+                            "ASSET_TYPE": "Asset Type",
                             "ATTENTION": "Attention",
                             "AVATAR": "Avatar",
                             "BACK": "Back",
                             "BACKGROUND": "Background",
+                            "BALANCE": "Balance",
                             "BIP39_LANGUAGE": "Passphrase Language (BIP39)",
                             "CANCEL": "Cancel",
                             "CATEGORY": "Category",
@@ -2034,6 +2132,7 @@ exports[`Application root should render without crashing 1`] = `
                             "FAILED_FETCH": "Failed to fetch {{name}}. Reason {{msg}}",
                             "FAILED_UPDATE": "Failed to update {{name}}. Reaso: {{reason}}",
                             "FETCH": "Fetch",
+                            "FIAT_VALUE": "Fiat Value",
                             "FILTER_BLACKLISTED_PLUGINS": "Apply blacklist",
                             "FINISH": "Finish",
                             "HIDE_WALLET_BUTTON_TEXT": "Hide text from wallet buttons",
@@ -2166,6 +2265,11 @@ exports[`Application root should render without crashing 1`] = `
                               "DESCRIPTION": "Do you really want to remove your wallet? Before deleting, make sure that you have the passphrase for this wallet.",
                               "TITLE": "Delete Wallet",
                             },
+                            "MODAL_LEDGER_WALLET": Object {
+                              "DESCRIPTION": "Connect your Ledger to PC and confirm the input.",
+                              "TITLE": "Ledger Wallet",
+                              "WAITING_FOR_LEDGER": "Waiting for Ledger...",
+                            },
                             "MODAL_NAME_WALLET": Object {
                               "DESCRIPTION": "You can enter the name of your wallet for a quick search in your wallet.",
                               "FIELD_NAME": "Enter a name",
@@ -2173,6 +2277,10 @@ exports[`Application root should render without crashing 1`] = `
                             },
                             "MODAL_RECEIVE_FUNDS": Object {
                               "TITLE": "Receive Funds",
+                            },
+                            "MODAL_SELECT_ACCOUNT": Object {
+                              "DESCRIPTION": "Find and select the account you want to receive funds to",
+                              "TITLE": "Select Account",
                             },
                             "MODAL_WALLET_UPDATE": Object {
                               "DESCRIPTION_1": "We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.",
@@ -2268,10 +2376,12 @@ exports[`Application root should render without crashing 1`] = `
                               "APP_NAME": "ARK Desktop Wallet",
                               "APP_NAME_SHORT": "ARK Desktop",
                               "ARK": "ARK",
+                              "ASSET_TYPE": "Asset Type",
                               "ATTENTION": "Attention",
                               "AVATAR": "Avatar",
                               "BACK": "Back",
                               "BACKGROUND": "Background",
+                              "BALANCE": "Balance",
                               "BIP39_LANGUAGE": "Passphrase Language (BIP39)",
                               "CANCEL": "Cancel",
                               "CATEGORY": "Category",
@@ -2291,6 +2401,7 @@ exports[`Application root should render without crashing 1`] = `
                               "FAILED_FETCH": "Failed to fetch {{name}}. Reason {{msg}}",
                               "FAILED_UPDATE": "Failed to update {{name}}. Reaso: {{reason}}",
                               "FETCH": "Fetch",
+                              "FIAT_VALUE": "Fiat Value",
                               "FILTER_BLACKLISTED_PLUGINS": "Apply blacklist",
                               "FINISH": "Finish",
                               "HIDE_WALLET_BUTTON_TEXT": "Hide text from wallet buttons",
@@ -2423,6 +2534,11 @@ exports[`Application root should render without crashing 1`] = `
                                 "DESCRIPTION": "Do you really want to remove your wallet? Before deleting, make sure that you have the passphrase for this wallet.",
                                 "TITLE": "Delete Wallet",
                               },
+                              "MODAL_LEDGER_WALLET": Object {
+                                "DESCRIPTION": "Connect your Ledger to PC and confirm the input.",
+                                "TITLE": "Ledger Wallet",
+                                "WAITING_FOR_LEDGER": "Waiting for Ledger...",
+                              },
                               "MODAL_NAME_WALLET": Object {
                                 "DESCRIPTION": "You can enter the name of your wallet for a quick search in your wallet.",
                                 "FIELD_NAME": "Enter a name",
@@ -2430,6 +2546,10 @@ exports[`Application root should render without crashing 1`] = `
                               },
                               "MODAL_RECEIVE_FUNDS": Object {
                                 "TITLE": "Receive Funds",
+                              },
+                              "MODAL_SELECT_ACCOUNT": Object {
+                                "DESCRIPTION": "Find and select the account you want to receive funds to",
+                                "TITLE": "Select Account",
                               },
                               "MODAL_WALLET_UPDATE": Object {
                                 "DESCRIPTION_1": "We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.",
@@ -2508,10 +2628,12 @@ exports[`Application root should render without crashing 1`] = `
                             "APP_NAME": "ARK Desktop Wallet",
                             "APP_NAME_SHORT": "ARK Desktop",
                             "ARK": "ARK",
+                            "ASSET_TYPE": "Asset Type",
                             "ATTENTION": "Attention",
                             "AVATAR": "Avatar",
                             "BACK": "Back",
                             "BACKGROUND": "Background",
+                            "BALANCE": "Balance",
                             "BIP39_LANGUAGE": "Passphrase Language (BIP39)",
                             "CANCEL": "Cancel",
                             "CATEGORY": "Category",
@@ -2531,6 +2653,7 @@ exports[`Application root should render without crashing 1`] = `
                             "FAILED_FETCH": "Failed to fetch {{name}}. Reason {{msg}}",
                             "FAILED_UPDATE": "Failed to update {{name}}. Reaso: {{reason}}",
                             "FETCH": "Fetch",
+                            "FIAT_VALUE": "Fiat Value",
                             "FILTER_BLACKLISTED_PLUGINS": "Apply blacklist",
                             "FINISH": "Finish",
                             "HIDE_WALLET_BUTTON_TEXT": "Hide text from wallet buttons",
@@ -2663,6 +2786,11 @@ exports[`Application root should render without crashing 1`] = `
                               "DESCRIPTION": "Do you really want to remove your wallet? Before deleting, make sure that you have the passphrase for this wallet.",
                               "TITLE": "Delete Wallet",
                             },
+                            "MODAL_LEDGER_WALLET": Object {
+                              "DESCRIPTION": "Connect your Ledger to PC and confirm the input.",
+                              "TITLE": "Ledger Wallet",
+                              "WAITING_FOR_LEDGER": "Waiting for Ledger...",
+                            },
                             "MODAL_NAME_WALLET": Object {
                               "DESCRIPTION": "You can enter the name of your wallet for a quick search in your wallet.",
                               "FIELD_NAME": "Enter a name",
@@ -2670,6 +2798,10 @@ exports[`Application root should render without crashing 1`] = `
                             },
                             "MODAL_RECEIVE_FUNDS": Object {
                               "TITLE": "Receive Funds",
+                            },
+                            "MODAL_SELECT_ACCOUNT": Object {
+                              "DESCRIPTION": "Find and select the account you want to receive funds to",
+                              "TITLE": "Select Account",
                             },
                             "MODAL_WALLET_UPDATE": Object {
                               "DESCRIPTION_1": "We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.",
@@ -2757,10 +2889,12 @@ exports[`Application root should render without crashing 1`] = `
                             "APP_NAME": "ARK Desktop Wallet",
                             "APP_NAME_SHORT": "ARK Desktop",
                             "ARK": "ARK",
+                            "ASSET_TYPE": "Asset Type",
                             "ATTENTION": "Attention",
                             "AVATAR": "Avatar",
                             "BACK": "Back",
                             "BACKGROUND": "Background",
+                            "BALANCE": "Balance",
                             "BIP39_LANGUAGE": "Passphrase Language (BIP39)",
                             "CANCEL": "Cancel",
                             "CATEGORY": "Category",
@@ -2780,6 +2914,7 @@ exports[`Application root should render without crashing 1`] = `
                             "FAILED_FETCH": "Failed to fetch {{name}}. Reason {{msg}}",
                             "FAILED_UPDATE": "Failed to update {{name}}. Reaso: {{reason}}",
                             "FETCH": "Fetch",
+                            "FIAT_VALUE": "Fiat Value",
                             "FILTER_BLACKLISTED_PLUGINS": "Apply blacklist",
                             "FINISH": "Finish",
                             "HIDE_WALLET_BUTTON_TEXT": "Hide text from wallet buttons",
@@ -2912,6 +3047,11 @@ exports[`Application root should render without crashing 1`] = `
                               "DESCRIPTION": "Do you really want to remove your wallet? Before deleting, make sure that you have the passphrase for this wallet.",
                               "TITLE": "Delete Wallet",
                             },
+                            "MODAL_LEDGER_WALLET": Object {
+                              "DESCRIPTION": "Connect your Ledger to PC and confirm the input.",
+                              "TITLE": "Ledger Wallet",
+                              "WAITING_FOR_LEDGER": "Waiting for Ledger...",
+                            },
                             "MODAL_NAME_WALLET": Object {
                               "DESCRIPTION": "You can enter the name of your wallet for a quick search in your wallet.",
                               "FIELD_NAME": "Enter a name",
@@ -2919,6 +3059,10 @@ exports[`Application root should render without crashing 1`] = `
                             },
                             "MODAL_RECEIVE_FUNDS": Object {
                               "TITLE": "Receive Funds",
+                            },
+                            "MODAL_SELECT_ACCOUNT": Object {
+                              "DESCRIPTION": "Find and select the account you want to receive funds to",
+                              "TITLE": "Select Account",
                             },
                             "MODAL_WALLET_UPDATE": Object {
                               "DESCRIPTION_1": "We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.",
@@ -3009,10 +3153,12 @@ exports[`Application root should render without crashing 1`] = `
                                 "APP_NAME": "ARK Desktop Wallet",
                                 "APP_NAME_SHORT": "ARK Desktop",
                                 "ARK": "ARK",
+                                "ASSET_TYPE": "Asset Type",
                                 "ATTENTION": "Attention",
                                 "AVATAR": "Avatar",
                                 "BACK": "Back",
                                 "BACKGROUND": "Background",
+                                "BALANCE": "Balance",
                                 "BIP39_LANGUAGE": "Passphrase Language (BIP39)",
                                 "CANCEL": "Cancel",
                                 "CATEGORY": "Category",
@@ -3032,6 +3178,7 @@ exports[`Application root should render without crashing 1`] = `
                                 "FAILED_FETCH": "Failed to fetch {{name}}. Reason {{msg}}",
                                 "FAILED_UPDATE": "Failed to update {{name}}. Reaso: {{reason}}",
                                 "FETCH": "Fetch",
+                                "FIAT_VALUE": "Fiat Value",
                                 "FILTER_BLACKLISTED_PLUGINS": "Apply blacklist",
                                 "FINISH": "Finish",
                                 "HIDE_WALLET_BUTTON_TEXT": "Hide text from wallet buttons",
@@ -3164,6 +3311,11 @@ exports[`Application root should render without crashing 1`] = `
                                   "DESCRIPTION": "Do you really want to remove your wallet? Before deleting, make sure that you have the passphrase for this wallet.",
                                   "TITLE": "Delete Wallet",
                                 },
+                                "MODAL_LEDGER_WALLET": Object {
+                                  "DESCRIPTION": "Connect your Ledger to PC and confirm the input.",
+                                  "TITLE": "Ledger Wallet",
+                                  "WAITING_FOR_LEDGER": "Waiting for Ledger...",
+                                },
                                 "MODAL_NAME_WALLET": Object {
                                   "DESCRIPTION": "You can enter the name of your wallet for a quick search in your wallet.",
                                   "FIELD_NAME": "Enter a name",
@@ -3171,6 +3323,10 @@ exports[`Application root should render without crashing 1`] = `
                                 },
                                 "MODAL_RECEIVE_FUNDS": Object {
                                   "TITLE": "Receive Funds",
+                                },
+                                "MODAL_SELECT_ACCOUNT": Object {
+                                  "DESCRIPTION": "Find and select the account you want to receive funds to",
+                                  "TITLE": "Select Account",
                                 },
                                 "MODAL_WALLET_UPDATE": Object {
                                   "DESCRIPTION_1": "We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.",
@@ -3249,10 +3405,12 @@ exports[`Application root should render without crashing 1`] = `
                               "APP_NAME": "ARK Desktop Wallet",
                               "APP_NAME_SHORT": "ARK Desktop",
                               "ARK": "ARK",
+                              "ASSET_TYPE": "Asset Type",
                               "ATTENTION": "Attention",
                               "AVATAR": "Avatar",
                               "BACK": "Back",
                               "BACKGROUND": "Background",
+                              "BALANCE": "Balance",
                               "BIP39_LANGUAGE": "Passphrase Language (BIP39)",
                               "CANCEL": "Cancel",
                               "CATEGORY": "Category",
@@ -3272,6 +3430,7 @@ exports[`Application root should render without crashing 1`] = `
                               "FAILED_FETCH": "Failed to fetch {{name}}. Reason {{msg}}",
                               "FAILED_UPDATE": "Failed to update {{name}}. Reaso: {{reason}}",
                               "FETCH": "Fetch",
+                              "FIAT_VALUE": "Fiat Value",
                               "FILTER_BLACKLISTED_PLUGINS": "Apply blacklist",
                               "FINISH": "Finish",
                               "HIDE_WALLET_BUTTON_TEXT": "Hide text from wallet buttons",
@@ -3404,6 +3563,11 @@ exports[`Application root should render without crashing 1`] = `
                                 "DESCRIPTION": "Do you really want to remove your wallet? Before deleting, make sure that you have the passphrase for this wallet.",
                                 "TITLE": "Delete Wallet",
                               },
+                              "MODAL_LEDGER_WALLET": Object {
+                                "DESCRIPTION": "Connect your Ledger to PC and confirm the input.",
+                                "TITLE": "Ledger Wallet",
+                                "WAITING_FOR_LEDGER": "Waiting for Ledger...",
+                              },
                               "MODAL_NAME_WALLET": Object {
                                 "DESCRIPTION": "You can enter the name of your wallet for a quick search in your wallet.",
                                 "FIELD_NAME": "Enter a name",
@@ -3411,6 +3575,10 @@ exports[`Application root should render without crashing 1`] = `
                               },
                               "MODAL_RECEIVE_FUNDS": Object {
                                 "TITLE": "Receive Funds",
+                              },
+                              "MODAL_SELECT_ACCOUNT": Object {
+                                "DESCRIPTION": "Find and select the account you want to receive funds to",
+                                "TITLE": "Select Account",
                               },
                               "MODAL_WALLET_UPDATE": Object {
                                 "DESCRIPTION_1": "We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.",
@@ -3499,10 +3667,12 @@ exports[`Application root should render without crashing 1`] = `
                               "APP_NAME": "ARK Desktop Wallet",
                               "APP_NAME_SHORT": "ARK Desktop",
                               "ARK": "ARK",
+                              "ASSET_TYPE": "Asset Type",
                               "ATTENTION": "Attention",
                               "AVATAR": "Avatar",
                               "BACK": "Back",
                               "BACKGROUND": "Background",
+                              "BALANCE": "Balance",
                               "BIP39_LANGUAGE": "Passphrase Language (BIP39)",
                               "CANCEL": "Cancel",
                               "CATEGORY": "Category",
@@ -3522,6 +3692,7 @@ exports[`Application root should render without crashing 1`] = `
                               "FAILED_FETCH": "Failed to fetch {{name}}. Reason {{msg}}",
                               "FAILED_UPDATE": "Failed to update {{name}}. Reaso: {{reason}}",
                               "FETCH": "Fetch",
+                              "FIAT_VALUE": "Fiat Value",
                               "FILTER_BLACKLISTED_PLUGINS": "Apply blacklist",
                               "FINISH": "Finish",
                               "HIDE_WALLET_BUTTON_TEXT": "Hide text from wallet buttons",
@@ -3654,6 +3825,11 @@ exports[`Application root should render without crashing 1`] = `
                                 "DESCRIPTION": "Do you really want to remove your wallet? Before deleting, make sure that you have the passphrase for this wallet.",
                                 "TITLE": "Delete Wallet",
                               },
+                              "MODAL_LEDGER_WALLET": Object {
+                                "DESCRIPTION": "Connect your Ledger to PC and confirm the input.",
+                                "TITLE": "Ledger Wallet",
+                                "WAITING_FOR_LEDGER": "Waiting for Ledger...",
+                              },
                               "MODAL_NAME_WALLET": Object {
                                 "DESCRIPTION": "You can enter the name of your wallet for a quick search in your wallet.",
                                 "FIELD_NAME": "Enter a name",
@@ -3661,6 +3837,10 @@ exports[`Application root should render without crashing 1`] = `
                               },
                               "MODAL_RECEIVE_FUNDS": Object {
                                 "TITLE": "Receive Funds",
+                              },
+                              "MODAL_SELECT_ACCOUNT": Object {
+                                "DESCRIPTION": "Find and select the account you want to receive funds to",
+                                "TITLE": "Select Account",
                               },
                               "MODAL_WALLET_UPDATE": Object {
                                 "DESCRIPTION_1": "We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.",
@@ -4641,10 +4821,12 @@ exports[`Application root should render without crashing 1`] = `
                         "APP_NAME": "ARK Desktop Wallet",
                         "APP_NAME_SHORT": "ARK Desktop",
                         "ARK": "ARK",
+                        "ASSET_TYPE": "Asset Type",
                         "ATTENTION": "Attention",
                         "AVATAR": "Avatar",
                         "BACK": "Back",
                         "BACKGROUND": "Background",
+                        "BALANCE": "Balance",
                         "BIP39_LANGUAGE": "Passphrase Language (BIP39)",
                         "CANCEL": "Cancel",
                         "CATEGORY": "Category",
@@ -4664,6 +4846,7 @@ exports[`Application root should render without crashing 1`] = `
                         "FAILED_FETCH": "Failed to fetch {{name}}. Reason {{msg}}",
                         "FAILED_UPDATE": "Failed to update {{name}}. Reaso: {{reason}}",
                         "FETCH": "Fetch",
+                        "FIAT_VALUE": "Fiat Value",
                         "FILTER_BLACKLISTED_PLUGINS": "Apply blacklist",
                         "FINISH": "Finish",
                         "HIDE_WALLET_BUTTON_TEXT": "Hide text from wallet buttons",
@@ -4796,6 +4979,11 @@ exports[`Application root should render without crashing 1`] = `
                           "DESCRIPTION": "Do you really want to remove your wallet? Before deleting, make sure that you have the passphrase for this wallet.",
                           "TITLE": "Delete Wallet",
                         },
+                        "MODAL_LEDGER_WALLET": Object {
+                          "DESCRIPTION": "Connect your Ledger to PC and confirm the input.",
+                          "TITLE": "Ledger Wallet",
+                          "WAITING_FOR_LEDGER": "Waiting for Ledger...",
+                        },
                         "MODAL_NAME_WALLET": Object {
                           "DESCRIPTION": "You can enter the name of your wallet for a quick search in your wallet.",
                           "FIELD_NAME": "Enter a name",
@@ -4803,6 +4991,10 @@ exports[`Application root should render without crashing 1`] = `
                         },
                         "MODAL_RECEIVE_FUNDS": Object {
                           "TITLE": "Receive Funds",
+                        },
+                        "MODAL_SELECT_ACCOUNT": Object {
+                          "DESCRIPTION": "Find and select the account you want to receive funds to",
+                          "TITLE": "Select Account",
                         },
                         "MODAL_WALLET_UPDATE": Object {
                           "DESCRIPTION_1": "We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.",
@@ -4829,10 +5021,12 @@ exports[`Application root should render without crashing 1`] = `
                       "APP_NAME": "ARK Desktop Wallet",
                       "APP_NAME_SHORT": "ARK Desktop",
                       "ARK": "ARK",
+                      "ASSET_TYPE": "Asset Type",
                       "ATTENTION": "Attention",
                       "AVATAR": "Avatar",
                       "BACK": "Back",
                       "BACKGROUND": "Background",
+                      "BALANCE": "Balance",
                       "BIP39_LANGUAGE": "Passphrase Language (BIP39)",
                       "CANCEL": "Cancel",
                       "CATEGORY": "Category",
@@ -4852,6 +5046,7 @@ exports[`Application root should render without crashing 1`] = `
                       "FAILED_FETCH": "Failed to fetch {{name}}. Reason {{msg}}",
                       "FAILED_UPDATE": "Failed to update {{name}}. Reaso: {{reason}}",
                       "FETCH": "Fetch",
+                      "FIAT_VALUE": "Fiat Value",
                       "FILTER_BLACKLISTED_PLUGINS": "Apply blacklist",
                       "FINISH": "Finish",
                       "HIDE_WALLET_BUTTON_TEXT": "Hide text from wallet buttons",
@@ -4984,6 +5179,11 @@ exports[`Application root should render without crashing 1`] = `
                         "DESCRIPTION": "Do you really want to remove your wallet? Before deleting, make sure that you have the passphrase for this wallet.",
                         "TITLE": "Delete Wallet",
                       },
+                      "MODAL_LEDGER_WALLET": Object {
+                        "DESCRIPTION": "Connect your Ledger to PC and confirm the input.",
+                        "TITLE": "Ledger Wallet",
+                        "WAITING_FOR_LEDGER": "Waiting for Ledger...",
+                      },
                       "MODAL_NAME_WALLET": Object {
                         "DESCRIPTION": "You can enter the name of your wallet for a quick search in your wallet.",
                         "FIELD_NAME": "Enter a name",
@@ -4991,6 +5191,10 @@ exports[`Application root should render without crashing 1`] = `
                       },
                       "MODAL_RECEIVE_FUNDS": Object {
                         "TITLE": "Receive Funds",
+                      },
+                      "MODAL_SELECT_ACCOUNT": Object {
+                        "DESCRIPTION": "Find and select the account you want to receive funds to",
+                        "TITLE": "Select Account",
                       },
                       "MODAL_WALLET_UPDATE": Object {
                         "DESCRIPTION_1": "We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.",
@@ -5070,10 +5274,12 @@ exports[`Application root should render without crashing 1`] = `
                                 "APP_NAME": "ARK Desktop Wallet",
                                 "APP_NAME_SHORT": "ARK Desktop",
                                 "ARK": "ARK",
+                                "ASSET_TYPE": "Asset Type",
                                 "ATTENTION": "Attention",
                                 "AVATAR": "Avatar",
                                 "BACK": "Back",
                                 "BACKGROUND": "Background",
+                                "BALANCE": "Balance",
                                 "BIP39_LANGUAGE": "Passphrase Language (BIP39)",
                                 "CANCEL": "Cancel",
                                 "CATEGORY": "Category",
@@ -5093,6 +5299,7 @@ exports[`Application root should render without crashing 1`] = `
                                 "FAILED_FETCH": "Failed to fetch {{name}}. Reason {{msg}}",
                                 "FAILED_UPDATE": "Failed to update {{name}}. Reaso: {{reason}}",
                                 "FETCH": "Fetch",
+                                "FIAT_VALUE": "Fiat Value",
                                 "FILTER_BLACKLISTED_PLUGINS": "Apply blacklist",
                                 "FINISH": "Finish",
                                 "HIDE_WALLET_BUTTON_TEXT": "Hide text from wallet buttons",
@@ -5225,6 +5432,11 @@ exports[`Application root should render without crashing 1`] = `
                                   "DESCRIPTION": "Do you really want to remove your wallet? Before deleting, make sure that you have the passphrase for this wallet.",
                                   "TITLE": "Delete Wallet",
                                 },
+                                "MODAL_LEDGER_WALLET": Object {
+                                  "DESCRIPTION": "Connect your Ledger to PC and confirm the input.",
+                                  "TITLE": "Ledger Wallet",
+                                  "WAITING_FOR_LEDGER": "Waiting for Ledger...",
+                                },
                                 "MODAL_NAME_WALLET": Object {
                                   "DESCRIPTION": "You can enter the name of your wallet for a quick search in your wallet.",
                                   "FIELD_NAME": "Enter a name",
@@ -5232,6 +5444,10 @@ exports[`Application root should render without crashing 1`] = `
                                 },
                                 "MODAL_RECEIVE_FUNDS": Object {
                                   "TITLE": "Receive Funds",
+                                },
+                                "MODAL_SELECT_ACCOUNT": Object {
+                                  "DESCRIPTION": "Find and select the account you want to receive funds to",
+                                  "TITLE": "Select Account",
                                 },
                                 "MODAL_WALLET_UPDATE": Object {
                                   "DESCRIPTION_1": "We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.",
@@ -5310,10 +5526,12 @@ exports[`Application root should render without crashing 1`] = `
                               "APP_NAME": "ARK Desktop Wallet",
                               "APP_NAME_SHORT": "ARK Desktop",
                               "ARK": "ARK",
+                              "ASSET_TYPE": "Asset Type",
                               "ATTENTION": "Attention",
                               "AVATAR": "Avatar",
                               "BACK": "Back",
                               "BACKGROUND": "Background",
+                              "BALANCE": "Balance",
                               "BIP39_LANGUAGE": "Passphrase Language (BIP39)",
                               "CANCEL": "Cancel",
                               "CATEGORY": "Category",
@@ -5333,6 +5551,7 @@ exports[`Application root should render without crashing 1`] = `
                               "FAILED_FETCH": "Failed to fetch {{name}}. Reason {{msg}}",
                               "FAILED_UPDATE": "Failed to update {{name}}. Reaso: {{reason}}",
                               "FETCH": "Fetch",
+                              "FIAT_VALUE": "Fiat Value",
                               "FILTER_BLACKLISTED_PLUGINS": "Apply blacklist",
                               "FINISH": "Finish",
                               "HIDE_WALLET_BUTTON_TEXT": "Hide text from wallet buttons",
@@ -5465,6 +5684,11 @@ exports[`Application root should render without crashing 1`] = `
                                 "DESCRIPTION": "Do you really want to remove your wallet? Before deleting, make sure that you have the passphrase for this wallet.",
                                 "TITLE": "Delete Wallet",
                               },
+                              "MODAL_LEDGER_WALLET": Object {
+                                "DESCRIPTION": "Connect your Ledger to PC and confirm the input.",
+                                "TITLE": "Ledger Wallet",
+                                "WAITING_FOR_LEDGER": "Waiting for Ledger...",
+                              },
                               "MODAL_NAME_WALLET": Object {
                                 "DESCRIPTION": "You can enter the name of your wallet for a quick search in your wallet.",
                                 "FIELD_NAME": "Enter a name",
@@ -5472,6 +5696,10 @@ exports[`Application root should render without crashing 1`] = `
                               },
                               "MODAL_RECEIVE_FUNDS": Object {
                                 "TITLE": "Receive Funds",
+                              },
+                              "MODAL_SELECT_ACCOUNT": Object {
+                                "DESCRIPTION": "Find and select the account you want to receive funds to",
+                                "TITLE": "Select Account",
                               },
                               "MODAL_WALLET_UPDATE": Object {
                                 "DESCRIPTION_1": "We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.",
@@ -5560,10 +5788,12 @@ exports[`Application root should render without crashing 1`] = `
                               "APP_NAME": "ARK Desktop Wallet",
                               "APP_NAME_SHORT": "ARK Desktop",
                               "ARK": "ARK",
+                              "ASSET_TYPE": "Asset Type",
                               "ATTENTION": "Attention",
                               "AVATAR": "Avatar",
                               "BACK": "Back",
                               "BACKGROUND": "Background",
+                              "BALANCE": "Balance",
                               "BIP39_LANGUAGE": "Passphrase Language (BIP39)",
                               "CANCEL": "Cancel",
                               "CATEGORY": "Category",
@@ -5583,6 +5813,7 @@ exports[`Application root should render without crashing 1`] = `
                               "FAILED_FETCH": "Failed to fetch {{name}}. Reason {{msg}}",
                               "FAILED_UPDATE": "Failed to update {{name}}. Reaso: {{reason}}",
                               "FETCH": "Fetch",
+                              "FIAT_VALUE": "Fiat Value",
                               "FILTER_BLACKLISTED_PLUGINS": "Apply blacklist",
                               "FINISH": "Finish",
                               "HIDE_WALLET_BUTTON_TEXT": "Hide text from wallet buttons",
@@ -5715,6 +5946,11 @@ exports[`Application root should render without crashing 1`] = `
                                 "DESCRIPTION": "Do you really want to remove your wallet? Before deleting, make sure that you have the passphrase for this wallet.",
                                 "TITLE": "Delete Wallet",
                               },
+                              "MODAL_LEDGER_WALLET": Object {
+                                "DESCRIPTION": "Connect your Ledger to PC and confirm the input.",
+                                "TITLE": "Ledger Wallet",
+                                "WAITING_FOR_LEDGER": "Waiting for Ledger...",
+                              },
                               "MODAL_NAME_WALLET": Object {
                                 "DESCRIPTION": "You can enter the name of your wallet for a quick search in your wallet.",
                                 "FIELD_NAME": "Enter a name",
@@ -5722,6 +5958,10 @@ exports[`Application root should render without crashing 1`] = `
                               },
                               "MODAL_RECEIVE_FUNDS": Object {
                                 "TITLE": "Receive Funds",
+                              },
+                              "MODAL_SELECT_ACCOUNT": Object {
+                                "DESCRIPTION": "Find and select the account you want to receive funds to",
+                                "TITLE": "Select Account",
                               },
                               "MODAL_WALLET_UPDATE": Object {
                                 "DESCRIPTION_1": "We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.",
@@ -5805,10 +6045,12 @@ exports[`Application root should render without crashing 1`] = `
                             "APP_NAME": "ARK Desktop Wallet",
                             "APP_NAME_SHORT": "ARK Desktop",
                             "ARK": "ARK",
+                            "ASSET_TYPE": "Asset Type",
                             "ATTENTION": "Attention",
                             "AVATAR": "Avatar",
                             "BACK": "Back",
                             "BACKGROUND": "Background",
+                            "BALANCE": "Balance",
                             "BIP39_LANGUAGE": "Passphrase Language (BIP39)",
                             "CANCEL": "Cancel",
                             "CATEGORY": "Category",
@@ -5828,6 +6070,7 @@ exports[`Application root should render without crashing 1`] = `
                             "FAILED_FETCH": "Failed to fetch {{name}}. Reason {{msg}}",
                             "FAILED_UPDATE": "Failed to update {{name}}. Reaso: {{reason}}",
                             "FETCH": "Fetch",
+                            "FIAT_VALUE": "Fiat Value",
                             "FILTER_BLACKLISTED_PLUGINS": "Apply blacklist",
                             "FINISH": "Finish",
                             "HIDE_WALLET_BUTTON_TEXT": "Hide text from wallet buttons",
@@ -5960,6 +6203,11 @@ exports[`Application root should render without crashing 1`] = `
                               "DESCRIPTION": "Do you really want to remove your wallet? Before deleting, make sure that you have the passphrase for this wallet.",
                               "TITLE": "Delete Wallet",
                             },
+                            "MODAL_LEDGER_WALLET": Object {
+                              "DESCRIPTION": "Connect your Ledger to PC and confirm the input.",
+                              "TITLE": "Ledger Wallet",
+                              "WAITING_FOR_LEDGER": "Waiting for Ledger...",
+                            },
                             "MODAL_NAME_WALLET": Object {
                               "DESCRIPTION": "You can enter the name of your wallet for a quick search in your wallet.",
                               "FIELD_NAME": "Enter a name",
@@ -5967,6 +6215,10 @@ exports[`Application root should render without crashing 1`] = `
                             },
                             "MODAL_RECEIVE_FUNDS": Object {
                               "TITLE": "Receive Funds",
+                            },
+                            "MODAL_SELECT_ACCOUNT": Object {
+                              "DESCRIPTION": "Find and select the account you want to receive funds to",
+                              "TITLE": "Select Account",
                             },
                             "MODAL_WALLET_UPDATE": Object {
                               "DESCRIPTION_1": "We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.",
@@ -6062,10 +6314,12 @@ exports[`Application root should render without crashing 1`] = `
                                   "APP_NAME": "ARK Desktop Wallet",
                                   "APP_NAME_SHORT": "ARK Desktop",
                                   "ARK": "ARK",
+                                  "ASSET_TYPE": "Asset Type",
                                   "ATTENTION": "Attention",
                                   "AVATAR": "Avatar",
                                   "BACK": "Back",
                                   "BACKGROUND": "Background",
+                                  "BALANCE": "Balance",
                                   "BIP39_LANGUAGE": "Passphrase Language (BIP39)",
                                   "CANCEL": "Cancel",
                                   "CATEGORY": "Category",
@@ -6085,6 +6339,7 @@ exports[`Application root should render without crashing 1`] = `
                                   "FAILED_FETCH": "Failed to fetch {{name}}. Reason {{msg}}",
                                   "FAILED_UPDATE": "Failed to update {{name}}. Reaso: {{reason}}",
                                   "FETCH": "Fetch",
+                                  "FIAT_VALUE": "Fiat Value",
                                   "FILTER_BLACKLISTED_PLUGINS": "Apply blacklist",
                                   "FINISH": "Finish",
                                   "HIDE_WALLET_BUTTON_TEXT": "Hide text from wallet buttons",
@@ -6217,6 +6472,11 @@ exports[`Application root should render without crashing 1`] = `
                                     "DESCRIPTION": "Do you really want to remove your wallet? Before deleting, make sure that you have the passphrase for this wallet.",
                                     "TITLE": "Delete Wallet",
                                   },
+                                  "MODAL_LEDGER_WALLET": Object {
+                                    "DESCRIPTION": "Connect your Ledger to PC and confirm the input.",
+                                    "TITLE": "Ledger Wallet",
+                                    "WAITING_FOR_LEDGER": "Waiting for Ledger...",
+                                  },
                                   "MODAL_NAME_WALLET": Object {
                                     "DESCRIPTION": "You can enter the name of your wallet for a quick search in your wallet.",
                                     "FIELD_NAME": "Enter a name",
@@ -6224,6 +6484,10 @@ exports[`Application root should render without crashing 1`] = `
                                   },
                                   "MODAL_RECEIVE_FUNDS": Object {
                                     "TITLE": "Receive Funds",
+                                  },
+                                  "MODAL_SELECT_ACCOUNT": Object {
+                                    "DESCRIPTION": "Find and select the account you want to receive funds to",
+                                    "TITLE": "Select Account",
                                   },
                                   "MODAL_WALLET_UPDATE": Object {
                                     "DESCRIPTION_1": "We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.",
@@ -6307,10 +6571,12 @@ exports[`Application root should render without crashing 1`] = `
                                 "APP_NAME": "ARK Desktop Wallet",
                                 "APP_NAME_SHORT": "ARK Desktop",
                                 "ARK": "ARK",
+                                "ASSET_TYPE": "Asset Type",
                                 "ATTENTION": "Attention",
                                 "AVATAR": "Avatar",
                                 "BACK": "Back",
                                 "BACKGROUND": "Background",
+                                "BALANCE": "Balance",
                                 "BIP39_LANGUAGE": "Passphrase Language (BIP39)",
                                 "CANCEL": "Cancel",
                                 "CATEGORY": "Category",
@@ -6330,6 +6596,7 @@ exports[`Application root should render without crashing 1`] = `
                                 "FAILED_FETCH": "Failed to fetch {{name}}. Reason {{msg}}",
                                 "FAILED_UPDATE": "Failed to update {{name}}. Reaso: {{reason}}",
                                 "FETCH": "Fetch",
+                                "FIAT_VALUE": "Fiat Value",
                                 "FILTER_BLACKLISTED_PLUGINS": "Apply blacklist",
                                 "FINISH": "Finish",
                                 "HIDE_WALLET_BUTTON_TEXT": "Hide text from wallet buttons",
@@ -6462,6 +6729,11 @@ exports[`Application root should render without crashing 1`] = `
                                   "DESCRIPTION": "Do you really want to remove your wallet? Before deleting, make sure that you have the passphrase for this wallet.",
                                   "TITLE": "Delete Wallet",
                                 },
+                                "MODAL_LEDGER_WALLET": Object {
+                                  "DESCRIPTION": "Connect your Ledger to PC and confirm the input.",
+                                  "TITLE": "Ledger Wallet",
+                                  "WAITING_FOR_LEDGER": "Waiting for Ledger...",
+                                },
                                 "MODAL_NAME_WALLET": Object {
                                   "DESCRIPTION": "You can enter the name of your wallet for a quick search in your wallet.",
                                   "FIELD_NAME": "Enter a name",
@@ -6469,6 +6741,10 @@ exports[`Application root should render without crashing 1`] = `
                                 },
                                 "MODAL_RECEIVE_FUNDS": Object {
                                   "TITLE": "Receive Funds",
+                                },
+                                "MODAL_SELECT_ACCOUNT": Object {
+                                  "DESCRIPTION": "Find and select the account you want to receive funds to",
+                                  "TITLE": "Select Account",
                                 },
                                 "MODAL_WALLET_UPDATE": Object {
                                   "DESCRIPTION_1": "We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.",
@@ -6564,10 +6840,12 @@ exports[`Application root should render without crashing 1`] = `
                                   "APP_NAME": "ARK Desktop Wallet",
                                   "APP_NAME_SHORT": "ARK Desktop",
                                   "ARK": "ARK",
+                                  "ASSET_TYPE": "Asset Type",
                                   "ATTENTION": "Attention",
                                   "AVATAR": "Avatar",
                                   "BACK": "Back",
                                   "BACKGROUND": "Background",
+                                  "BALANCE": "Balance",
                                   "BIP39_LANGUAGE": "Passphrase Language (BIP39)",
                                   "CANCEL": "Cancel",
                                   "CATEGORY": "Category",
@@ -6587,6 +6865,7 @@ exports[`Application root should render without crashing 1`] = `
                                   "FAILED_FETCH": "Failed to fetch {{name}}. Reason {{msg}}",
                                   "FAILED_UPDATE": "Failed to update {{name}}. Reaso: {{reason}}",
                                   "FETCH": "Fetch",
+                                  "FIAT_VALUE": "Fiat Value",
                                   "FILTER_BLACKLISTED_PLUGINS": "Apply blacklist",
                                   "FINISH": "Finish",
                                   "HIDE_WALLET_BUTTON_TEXT": "Hide text from wallet buttons",
@@ -6719,6 +6998,11 @@ exports[`Application root should render without crashing 1`] = `
                                     "DESCRIPTION": "Do you really want to remove your wallet? Before deleting, make sure that you have the passphrase for this wallet.",
                                     "TITLE": "Delete Wallet",
                                   },
+                                  "MODAL_LEDGER_WALLET": Object {
+                                    "DESCRIPTION": "Connect your Ledger to PC and confirm the input.",
+                                    "TITLE": "Ledger Wallet",
+                                    "WAITING_FOR_LEDGER": "Waiting for Ledger...",
+                                  },
                                   "MODAL_NAME_WALLET": Object {
                                     "DESCRIPTION": "You can enter the name of your wallet for a quick search in your wallet.",
                                     "FIELD_NAME": "Enter a name",
@@ -6726,6 +7010,10 @@ exports[`Application root should render without crashing 1`] = `
                                   },
                                   "MODAL_RECEIVE_FUNDS": Object {
                                     "TITLE": "Receive Funds",
+                                  },
+                                  "MODAL_SELECT_ACCOUNT": Object {
+                                    "DESCRIPTION": "Find and select the account you want to receive funds to",
+                                    "TITLE": "Select Account",
                                   },
                                   "MODAL_WALLET_UPDATE": Object {
                                     "DESCRIPTION_1": "We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.",
@@ -6804,10 +7092,12 @@ exports[`Application root should render without crashing 1`] = `
                                 "APP_NAME": "ARK Desktop Wallet",
                                 "APP_NAME_SHORT": "ARK Desktop",
                                 "ARK": "ARK",
+                                "ASSET_TYPE": "Asset Type",
                                 "ATTENTION": "Attention",
                                 "AVATAR": "Avatar",
                                 "BACK": "Back",
                                 "BACKGROUND": "Background",
+                                "BALANCE": "Balance",
                                 "BIP39_LANGUAGE": "Passphrase Language (BIP39)",
                                 "CANCEL": "Cancel",
                                 "CATEGORY": "Category",
@@ -6827,6 +7117,7 @@ exports[`Application root should render without crashing 1`] = `
                                 "FAILED_FETCH": "Failed to fetch {{name}}. Reason {{msg}}",
                                 "FAILED_UPDATE": "Failed to update {{name}}. Reaso: {{reason}}",
                                 "FETCH": "Fetch",
+                                "FIAT_VALUE": "Fiat Value",
                                 "FILTER_BLACKLISTED_PLUGINS": "Apply blacklist",
                                 "FINISH": "Finish",
                                 "HIDE_WALLET_BUTTON_TEXT": "Hide text from wallet buttons",
@@ -6959,6 +7250,11 @@ exports[`Application root should render without crashing 1`] = `
                                   "DESCRIPTION": "Do you really want to remove your wallet? Before deleting, make sure that you have the passphrase for this wallet.",
                                   "TITLE": "Delete Wallet",
                                 },
+                                "MODAL_LEDGER_WALLET": Object {
+                                  "DESCRIPTION": "Connect your Ledger to PC and confirm the input.",
+                                  "TITLE": "Ledger Wallet",
+                                  "WAITING_FOR_LEDGER": "Waiting for Ledger...",
+                                },
                                 "MODAL_NAME_WALLET": Object {
                                   "DESCRIPTION": "You can enter the name of your wallet for a quick search in your wallet.",
                                   "FIELD_NAME": "Enter a name",
@@ -6966,6 +7262,10 @@ exports[`Application root should render without crashing 1`] = `
                                 },
                                 "MODAL_RECEIVE_FUNDS": Object {
                                   "TITLE": "Receive Funds",
+                                },
+                                "MODAL_SELECT_ACCOUNT": Object {
+                                  "DESCRIPTION": "Find and select the account you want to receive funds to",
+                                  "TITLE": "Select Account",
                                 },
                                 "MODAL_WALLET_UPDATE": Object {
                                   "DESCRIPTION_1": "We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.",
@@ -7053,10 +7353,12 @@ exports[`Application root should render without crashing 1`] = `
                                 "APP_NAME": "ARK Desktop Wallet",
                                 "APP_NAME_SHORT": "ARK Desktop",
                                 "ARK": "ARK",
+                                "ASSET_TYPE": "Asset Type",
                                 "ATTENTION": "Attention",
                                 "AVATAR": "Avatar",
                                 "BACK": "Back",
                                 "BACKGROUND": "Background",
+                                "BALANCE": "Balance",
                                 "BIP39_LANGUAGE": "Passphrase Language (BIP39)",
                                 "CANCEL": "Cancel",
                                 "CATEGORY": "Category",
@@ -7076,6 +7378,7 @@ exports[`Application root should render without crashing 1`] = `
                                 "FAILED_FETCH": "Failed to fetch {{name}}. Reason {{msg}}",
                                 "FAILED_UPDATE": "Failed to update {{name}}. Reaso: {{reason}}",
                                 "FETCH": "Fetch",
+                                "FIAT_VALUE": "Fiat Value",
                                 "FILTER_BLACKLISTED_PLUGINS": "Apply blacklist",
                                 "FINISH": "Finish",
                                 "HIDE_WALLET_BUTTON_TEXT": "Hide text from wallet buttons",
@@ -7208,6 +7511,11 @@ exports[`Application root should render without crashing 1`] = `
                                   "DESCRIPTION": "Do you really want to remove your wallet? Before deleting, make sure that you have the passphrase for this wallet.",
                                   "TITLE": "Delete Wallet",
                                 },
+                                "MODAL_LEDGER_WALLET": Object {
+                                  "DESCRIPTION": "Connect your Ledger to PC and confirm the input.",
+                                  "TITLE": "Ledger Wallet",
+                                  "WAITING_FOR_LEDGER": "Waiting for Ledger...",
+                                },
                                 "MODAL_NAME_WALLET": Object {
                                   "DESCRIPTION": "You can enter the name of your wallet for a quick search in your wallet.",
                                   "FIELD_NAME": "Enter a name",
@@ -7215,6 +7523,10 @@ exports[`Application root should render without crashing 1`] = `
                                 },
                                 "MODAL_RECEIVE_FUNDS": Object {
                                   "TITLE": "Receive Funds",
+                                },
+                                "MODAL_SELECT_ACCOUNT": Object {
+                                  "DESCRIPTION": "Find and select the account you want to receive funds to",
+                                  "TITLE": "Select Account",
                                 },
                                 "MODAL_WALLET_UPDATE": Object {
                                   "DESCRIPTION_1": "We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.",
@@ -7305,10 +7617,12 @@ exports[`Application root should render without crashing 1`] = `
                                     "APP_NAME": "ARK Desktop Wallet",
                                     "APP_NAME_SHORT": "ARK Desktop",
                                     "ARK": "ARK",
+                                    "ASSET_TYPE": "Asset Type",
                                     "ATTENTION": "Attention",
                                     "AVATAR": "Avatar",
                                     "BACK": "Back",
                                     "BACKGROUND": "Background",
+                                    "BALANCE": "Balance",
                                     "BIP39_LANGUAGE": "Passphrase Language (BIP39)",
                                     "CANCEL": "Cancel",
                                     "CATEGORY": "Category",
@@ -7328,6 +7642,7 @@ exports[`Application root should render without crashing 1`] = `
                                     "FAILED_FETCH": "Failed to fetch {{name}}. Reason {{msg}}",
                                     "FAILED_UPDATE": "Failed to update {{name}}. Reaso: {{reason}}",
                                     "FETCH": "Fetch",
+                                    "FIAT_VALUE": "Fiat Value",
                                     "FILTER_BLACKLISTED_PLUGINS": "Apply blacklist",
                                     "FINISH": "Finish",
                                     "HIDE_WALLET_BUTTON_TEXT": "Hide text from wallet buttons",
@@ -7460,6 +7775,11 @@ exports[`Application root should render without crashing 1`] = `
                                       "DESCRIPTION": "Do you really want to remove your wallet? Before deleting, make sure that you have the passphrase for this wallet.",
                                       "TITLE": "Delete Wallet",
                                     },
+                                    "MODAL_LEDGER_WALLET": Object {
+                                      "DESCRIPTION": "Connect your Ledger to PC and confirm the input.",
+                                      "TITLE": "Ledger Wallet",
+                                      "WAITING_FOR_LEDGER": "Waiting for Ledger...",
+                                    },
                                     "MODAL_NAME_WALLET": Object {
                                       "DESCRIPTION": "You can enter the name of your wallet for a quick search in your wallet.",
                                       "FIELD_NAME": "Enter a name",
@@ -7467,6 +7787,10 @@ exports[`Application root should render without crashing 1`] = `
                                     },
                                     "MODAL_RECEIVE_FUNDS": Object {
                                       "TITLE": "Receive Funds",
+                                    },
+                                    "MODAL_SELECT_ACCOUNT": Object {
+                                      "DESCRIPTION": "Find and select the account you want to receive funds to",
+                                      "TITLE": "Select Account",
                                     },
                                     "MODAL_WALLET_UPDATE": Object {
                                       "DESCRIPTION_1": "We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.",
@@ -7545,10 +7869,12 @@ exports[`Application root should render without crashing 1`] = `
                                   "APP_NAME": "ARK Desktop Wallet",
                                   "APP_NAME_SHORT": "ARK Desktop",
                                   "ARK": "ARK",
+                                  "ASSET_TYPE": "Asset Type",
                                   "ATTENTION": "Attention",
                                   "AVATAR": "Avatar",
                                   "BACK": "Back",
                                   "BACKGROUND": "Background",
+                                  "BALANCE": "Balance",
                                   "BIP39_LANGUAGE": "Passphrase Language (BIP39)",
                                   "CANCEL": "Cancel",
                                   "CATEGORY": "Category",
@@ -7568,6 +7894,7 @@ exports[`Application root should render without crashing 1`] = `
                                   "FAILED_FETCH": "Failed to fetch {{name}}. Reason {{msg}}",
                                   "FAILED_UPDATE": "Failed to update {{name}}. Reaso: {{reason}}",
                                   "FETCH": "Fetch",
+                                  "FIAT_VALUE": "Fiat Value",
                                   "FILTER_BLACKLISTED_PLUGINS": "Apply blacklist",
                                   "FINISH": "Finish",
                                   "HIDE_WALLET_BUTTON_TEXT": "Hide text from wallet buttons",
@@ -7700,6 +8027,11 @@ exports[`Application root should render without crashing 1`] = `
                                     "DESCRIPTION": "Do you really want to remove your wallet? Before deleting, make sure that you have the passphrase for this wallet.",
                                     "TITLE": "Delete Wallet",
                                   },
+                                  "MODAL_LEDGER_WALLET": Object {
+                                    "DESCRIPTION": "Connect your Ledger to PC and confirm the input.",
+                                    "TITLE": "Ledger Wallet",
+                                    "WAITING_FOR_LEDGER": "Waiting for Ledger...",
+                                  },
                                   "MODAL_NAME_WALLET": Object {
                                     "DESCRIPTION": "You can enter the name of your wallet for a quick search in your wallet.",
                                     "FIELD_NAME": "Enter a name",
@@ -7707,6 +8039,10 @@ exports[`Application root should render without crashing 1`] = `
                                   },
                                   "MODAL_RECEIVE_FUNDS": Object {
                                     "TITLE": "Receive Funds",
+                                  },
+                                  "MODAL_SELECT_ACCOUNT": Object {
+                                    "DESCRIPTION": "Find and select the account you want to receive funds to",
+                                    "TITLE": "Select Account",
                                   },
                                   "MODAL_WALLET_UPDATE": Object {
                                     "DESCRIPTION_1": "We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.",
@@ -7795,10 +8131,12 @@ exports[`Application root should render without crashing 1`] = `
                                   "APP_NAME": "ARK Desktop Wallet",
                                   "APP_NAME_SHORT": "ARK Desktop",
                                   "ARK": "ARK",
+                                  "ASSET_TYPE": "Asset Type",
                                   "ATTENTION": "Attention",
                                   "AVATAR": "Avatar",
                                   "BACK": "Back",
                                   "BACKGROUND": "Background",
+                                  "BALANCE": "Balance",
                                   "BIP39_LANGUAGE": "Passphrase Language (BIP39)",
                                   "CANCEL": "Cancel",
                                   "CATEGORY": "Category",
@@ -7818,6 +8156,7 @@ exports[`Application root should render without crashing 1`] = `
                                   "FAILED_FETCH": "Failed to fetch {{name}}. Reason {{msg}}",
                                   "FAILED_UPDATE": "Failed to update {{name}}. Reaso: {{reason}}",
                                   "FETCH": "Fetch",
+                                  "FIAT_VALUE": "Fiat Value",
                                   "FILTER_BLACKLISTED_PLUGINS": "Apply blacklist",
                                   "FINISH": "Finish",
                                   "HIDE_WALLET_BUTTON_TEXT": "Hide text from wallet buttons",
@@ -7950,6 +8289,11 @@ exports[`Application root should render without crashing 1`] = `
                                     "DESCRIPTION": "Do you really want to remove your wallet? Before deleting, make sure that you have the passphrase for this wallet.",
                                     "TITLE": "Delete Wallet",
                                   },
+                                  "MODAL_LEDGER_WALLET": Object {
+                                    "DESCRIPTION": "Connect your Ledger to PC and confirm the input.",
+                                    "TITLE": "Ledger Wallet",
+                                    "WAITING_FOR_LEDGER": "Waiting for Ledger...",
+                                  },
                                   "MODAL_NAME_WALLET": Object {
                                     "DESCRIPTION": "You can enter the name of your wallet for a quick search in your wallet.",
                                     "FIELD_NAME": "Enter a name",
@@ -7957,6 +8301,10 @@ exports[`Application root should render without crashing 1`] = `
                                   },
                                   "MODAL_RECEIVE_FUNDS": Object {
                                     "TITLE": "Receive Funds",
+                                  },
+                                  "MODAL_SELECT_ACCOUNT": Object {
+                                    "DESCRIPTION": "Find and select the account you want to receive funds to",
+                                    "TITLE": "Select Account",
                                   },
                                   "MODAL_WALLET_UPDATE": Object {
                                     "DESCRIPTION_1": "We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.",
@@ -8937,10 +9285,12 @@ exports[`Application root should render without crashing 1`] = `
                             "APP_NAME": "ARK Desktop Wallet",
                             "APP_NAME_SHORT": "ARK Desktop",
                             "ARK": "ARK",
+                            "ASSET_TYPE": "Asset Type",
                             "ATTENTION": "Attention",
                             "AVATAR": "Avatar",
                             "BACK": "Back",
                             "BACKGROUND": "Background",
+                            "BALANCE": "Balance",
                             "BIP39_LANGUAGE": "Passphrase Language (BIP39)",
                             "CANCEL": "Cancel",
                             "CATEGORY": "Category",
@@ -8960,6 +9310,7 @@ exports[`Application root should render without crashing 1`] = `
                             "FAILED_FETCH": "Failed to fetch {{name}}. Reason {{msg}}",
                             "FAILED_UPDATE": "Failed to update {{name}}. Reaso: {{reason}}",
                             "FETCH": "Fetch",
+                            "FIAT_VALUE": "Fiat Value",
                             "FILTER_BLACKLISTED_PLUGINS": "Apply blacklist",
                             "FINISH": "Finish",
                             "HIDE_WALLET_BUTTON_TEXT": "Hide text from wallet buttons",
@@ -9092,6 +9443,11 @@ exports[`Application root should render without crashing 1`] = `
                               "DESCRIPTION": "Do you really want to remove your wallet? Before deleting, make sure that you have the passphrase for this wallet.",
                               "TITLE": "Delete Wallet",
                             },
+                            "MODAL_LEDGER_WALLET": Object {
+                              "DESCRIPTION": "Connect your Ledger to PC and confirm the input.",
+                              "TITLE": "Ledger Wallet",
+                              "WAITING_FOR_LEDGER": "Waiting for Ledger...",
+                            },
                             "MODAL_NAME_WALLET": Object {
                               "DESCRIPTION": "You can enter the name of your wallet for a quick search in your wallet.",
                               "FIELD_NAME": "Enter a name",
@@ -9099,6 +9455,10 @@ exports[`Application root should render without crashing 1`] = `
                             },
                             "MODAL_RECEIVE_FUNDS": Object {
                               "TITLE": "Receive Funds",
+                            },
+                            "MODAL_SELECT_ACCOUNT": Object {
+                              "DESCRIPTION": "Find and select the account you want to receive funds to",
+                              "TITLE": "Select Account",
                             },
                             "MODAL_WALLET_UPDATE": Object {
                               "DESCRIPTION_1": "We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.",
@@ -9126,10 +9486,12 @@ exports[`Application root should render without crashing 1`] = `
                           "APP_NAME": "ARK Desktop Wallet",
                           "APP_NAME_SHORT": "ARK Desktop",
                           "ARK": "ARK",
+                          "ASSET_TYPE": "Asset Type",
                           "ATTENTION": "Attention",
                           "AVATAR": "Avatar",
                           "BACK": "Back",
                           "BACKGROUND": "Background",
+                          "BALANCE": "Balance",
                           "BIP39_LANGUAGE": "Passphrase Language (BIP39)",
                           "CANCEL": "Cancel",
                           "CATEGORY": "Category",
@@ -9149,6 +9511,7 @@ exports[`Application root should render without crashing 1`] = `
                           "FAILED_FETCH": "Failed to fetch {{name}}. Reason {{msg}}",
                           "FAILED_UPDATE": "Failed to update {{name}}. Reaso: {{reason}}",
                           "FETCH": "Fetch",
+                          "FIAT_VALUE": "Fiat Value",
                           "FILTER_BLACKLISTED_PLUGINS": "Apply blacklist",
                           "FINISH": "Finish",
                           "HIDE_WALLET_BUTTON_TEXT": "Hide text from wallet buttons",
@@ -9281,6 +9644,11 @@ exports[`Application root should render without crashing 1`] = `
                             "DESCRIPTION": "Do you really want to remove your wallet? Before deleting, make sure that you have the passphrase for this wallet.",
                             "TITLE": "Delete Wallet",
                           },
+                          "MODAL_LEDGER_WALLET": Object {
+                            "DESCRIPTION": "Connect your Ledger to PC and confirm the input.",
+                            "TITLE": "Ledger Wallet",
+                            "WAITING_FOR_LEDGER": "Waiting for Ledger...",
+                          },
                           "MODAL_NAME_WALLET": Object {
                             "DESCRIPTION": "You can enter the name of your wallet for a quick search in your wallet.",
                             "FIELD_NAME": "Enter a name",
@@ -9288,6 +9656,10 @@ exports[`Application root should render without crashing 1`] = `
                           },
                           "MODAL_RECEIVE_FUNDS": Object {
                             "TITLE": "Receive Funds",
+                          },
+                          "MODAL_SELECT_ACCOUNT": Object {
+                            "DESCRIPTION": "Find and select the account you want to receive funds to",
+                            "TITLE": "Select Account",
                           },
                           "MODAL_WALLET_UPDATE": Object {
                             "DESCRIPTION_1": "We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.",
@@ -9370,10 +9742,12 @@ exports[`Application root should render without crashing 1`] = `
                               "APP_NAME": "ARK Desktop Wallet",
                               "APP_NAME_SHORT": "ARK Desktop",
                               "ARK": "ARK",
+                              "ASSET_TYPE": "Asset Type",
                               "ATTENTION": "Attention",
                               "AVATAR": "Avatar",
                               "BACK": "Back",
                               "BACKGROUND": "Background",
+                              "BALANCE": "Balance",
                               "BIP39_LANGUAGE": "Passphrase Language (BIP39)",
                               "CANCEL": "Cancel",
                               "CATEGORY": "Category",
@@ -9393,6 +9767,7 @@ exports[`Application root should render without crashing 1`] = `
                               "FAILED_FETCH": "Failed to fetch {{name}}. Reason {{msg}}",
                               "FAILED_UPDATE": "Failed to update {{name}}. Reaso: {{reason}}",
                               "FETCH": "Fetch",
+                              "FIAT_VALUE": "Fiat Value",
                               "FILTER_BLACKLISTED_PLUGINS": "Apply blacklist",
                               "FINISH": "Finish",
                               "HIDE_WALLET_BUTTON_TEXT": "Hide text from wallet buttons",
@@ -9525,6 +9900,11 @@ exports[`Application root should render without crashing 1`] = `
                                 "DESCRIPTION": "Do you really want to remove your wallet? Before deleting, make sure that you have the passphrase for this wallet.",
                                 "TITLE": "Delete Wallet",
                               },
+                              "MODAL_LEDGER_WALLET": Object {
+                                "DESCRIPTION": "Connect your Ledger to PC and confirm the input.",
+                                "TITLE": "Ledger Wallet",
+                                "WAITING_FOR_LEDGER": "Waiting for Ledger...",
+                              },
                               "MODAL_NAME_WALLET": Object {
                                 "DESCRIPTION": "You can enter the name of your wallet for a quick search in your wallet.",
                                 "FIELD_NAME": "Enter a name",
@@ -9532,6 +9912,10 @@ exports[`Application root should render without crashing 1`] = `
                               },
                               "MODAL_RECEIVE_FUNDS": Object {
                                 "TITLE": "Receive Funds",
+                              },
+                              "MODAL_SELECT_ACCOUNT": Object {
+                                "DESCRIPTION": "Find and select the account you want to receive funds to",
+                                "TITLE": "Select Account",
                               },
                               "MODAL_WALLET_UPDATE": Object {
                                 "DESCRIPTION_1": "We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.",
@@ -9615,10 +9999,12 @@ exports[`Application root should render without crashing 1`] = `
                             "APP_NAME": "ARK Desktop Wallet",
                             "APP_NAME_SHORT": "ARK Desktop",
                             "ARK": "ARK",
+                            "ASSET_TYPE": "Asset Type",
                             "ATTENTION": "Attention",
                             "AVATAR": "Avatar",
                             "BACK": "Back",
                             "BACKGROUND": "Background",
+                            "BALANCE": "Balance",
                             "BIP39_LANGUAGE": "Passphrase Language (BIP39)",
                             "CANCEL": "Cancel",
                             "CATEGORY": "Category",
@@ -9638,6 +10024,7 @@ exports[`Application root should render without crashing 1`] = `
                             "FAILED_FETCH": "Failed to fetch {{name}}. Reason {{msg}}",
                             "FAILED_UPDATE": "Failed to update {{name}}. Reaso: {{reason}}",
                             "FETCH": "Fetch",
+                            "FIAT_VALUE": "Fiat Value",
                             "FILTER_BLACKLISTED_PLUGINS": "Apply blacklist",
                             "FINISH": "Finish",
                             "HIDE_WALLET_BUTTON_TEXT": "Hide text from wallet buttons",
@@ -9770,6 +10157,11 @@ exports[`Application root should render without crashing 1`] = `
                               "DESCRIPTION": "Do you really want to remove your wallet? Before deleting, make sure that you have the passphrase for this wallet.",
                               "TITLE": "Delete Wallet",
                             },
+                            "MODAL_LEDGER_WALLET": Object {
+                              "DESCRIPTION": "Connect your Ledger to PC and confirm the input.",
+                              "TITLE": "Ledger Wallet",
+                              "WAITING_FOR_LEDGER": "Waiting for Ledger...",
+                            },
                             "MODAL_NAME_WALLET": Object {
                               "DESCRIPTION": "You can enter the name of your wallet for a quick search in your wallet.",
                               "FIELD_NAME": "Enter a name",
@@ -9777,6 +10169,10 @@ exports[`Application root should render without crashing 1`] = `
                             },
                             "MODAL_RECEIVE_FUNDS": Object {
                               "TITLE": "Receive Funds",
+                            },
+                            "MODAL_SELECT_ACCOUNT": Object {
+                              "DESCRIPTION": "Find and select the account you want to receive funds to",
+                              "TITLE": "Select Account",
                             },
                             "MODAL_WALLET_UPDATE": Object {
                               "DESCRIPTION_1": "We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.",
@@ -9873,10 +10269,12 @@ exports[`Application root should render without crashing 1`] = `
                               "APP_NAME": "ARK Desktop Wallet",
                               "APP_NAME_SHORT": "ARK Desktop",
                               "ARK": "ARK",
+                              "ASSET_TYPE": "Asset Type",
                               "ATTENTION": "Attention",
                               "AVATAR": "Avatar",
                               "BACK": "Back",
                               "BACKGROUND": "Background",
+                              "BALANCE": "Balance",
                               "BIP39_LANGUAGE": "Passphrase Language (BIP39)",
                               "CANCEL": "Cancel",
                               "CATEGORY": "Category",
@@ -9896,6 +10294,7 @@ exports[`Application root should render without crashing 1`] = `
                               "FAILED_FETCH": "Failed to fetch {{name}}. Reason {{msg}}",
                               "FAILED_UPDATE": "Failed to update {{name}}. Reaso: {{reason}}",
                               "FETCH": "Fetch",
+                              "FIAT_VALUE": "Fiat Value",
                               "FILTER_BLACKLISTED_PLUGINS": "Apply blacklist",
                               "FINISH": "Finish",
                               "HIDE_WALLET_BUTTON_TEXT": "Hide text from wallet buttons",
@@ -10028,6 +10427,11 @@ exports[`Application root should render without crashing 1`] = `
                                 "DESCRIPTION": "Do you really want to remove your wallet? Before deleting, make sure that you have the passphrase for this wallet.",
                                 "TITLE": "Delete Wallet",
                               },
+                              "MODAL_LEDGER_WALLET": Object {
+                                "DESCRIPTION": "Connect your Ledger to PC and confirm the input.",
+                                "TITLE": "Ledger Wallet",
+                                "WAITING_FOR_LEDGER": "Waiting for Ledger...",
+                              },
                               "MODAL_NAME_WALLET": Object {
                                 "DESCRIPTION": "You can enter the name of your wallet for a quick search in your wallet.",
                                 "FIELD_NAME": "Enter a name",
@@ -10035,6 +10439,10 @@ exports[`Application root should render without crashing 1`] = `
                               },
                               "MODAL_RECEIVE_FUNDS": Object {
                                 "TITLE": "Receive Funds",
+                              },
+                              "MODAL_SELECT_ACCOUNT": Object {
+                                "DESCRIPTION": "Find and select the account you want to receive funds to",
+                                "TITLE": "Select Account",
                               },
                               "MODAL_WALLET_UPDATE": Object {
                                 "DESCRIPTION_1": "We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.",
@@ -10113,10 +10521,12 @@ exports[`Application root should render without crashing 1`] = `
                             "APP_NAME": "ARK Desktop Wallet",
                             "APP_NAME_SHORT": "ARK Desktop",
                             "ARK": "ARK",
+                            "ASSET_TYPE": "Asset Type",
                             "ATTENTION": "Attention",
                             "AVATAR": "Avatar",
                             "BACK": "Back",
                             "BACKGROUND": "Background",
+                            "BALANCE": "Balance",
                             "BIP39_LANGUAGE": "Passphrase Language (BIP39)",
                             "CANCEL": "Cancel",
                             "CATEGORY": "Category",
@@ -10136,6 +10546,7 @@ exports[`Application root should render without crashing 1`] = `
                             "FAILED_FETCH": "Failed to fetch {{name}}. Reason {{msg}}",
                             "FAILED_UPDATE": "Failed to update {{name}}. Reaso: {{reason}}",
                             "FETCH": "Fetch",
+                            "FIAT_VALUE": "Fiat Value",
                             "FILTER_BLACKLISTED_PLUGINS": "Apply blacklist",
                             "FINISH": "Finish",
                             "HIDE_WALLET_BUTTON_TEXT": "Hide text from wallet buttons",
@@ -10268,6 +10679,11 @@ exports[`Application root should render without crashing 1`] = `
                               "DESCRIPTION": "Do you really want to remove your wallet? Before deleting, make sure that you have the passphrase for this wallet.",
                               "TITLE": "Delete Wallet",
                             },
+                            "MODAL_LEDGER_WALLET": Object {
+                              "DESCRIPTION": "Connect your Ledger to PC and confirm the input.",
+                              "TITLE": "Ledger Wallet",
+                              "WAITING_FOR_LEDGER": "Waiting for Ledger...",
+                            },
                             "MODAL_NAME_WALLET": Object {
                               "DESCRIPTION": "You can enter the name of your wallet for a quick search in your wallet.",
                               "FIELD_NAME": "Enter a name",
@@ -10275,6 +10691,10 @@ exports[`Application root should render without crashing 1`] = `
                             },
                             "MODAL_RECEIVE_FUNDS": Object {
                               "TITLE": "Receive Funds",
+                            },
+                            "MODAL_SELECT_ACCOUNT": Object {
+                              "DESCRIPTION": "Find and select the account you want to receive funds to",
+                              "TITLE": "Select Account",
                             },
                             "MODAL_WALLET_UPDATE": Object {
                               "DESCRIPTION_1": "We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.",
@@ -10363,10 +10783,12 @@ exports[`Application root should render without crashing 1`] = `
                             "APP_NAME": "ARK Desktop Wallet",
                             "APP_NAME_SHORT": "ARK Desktop",
                             "ARK": "ARK",
+                            "ASSET_TYPE": "Asset Type",
                             "ATTENTION": "Attention",
                             "AVATAR": "Avatar",
                             "BACK": "Back",
                             "BACKGROUND": "Background",
+                            "BALANCE": "Balance",
                             "BIP39_LANGUAGE": "Passphrase Language (BIP39)",
                             "CANCEL": "Cancel",
                             "CATEGORY": "Category",
@@ -10386,6 +10808,7 @@ exports[`Application root should render without crashing 1`] = `
                             "FAILED_FETCH": "Failed to fetch {{name}}. Reason {{msg}}",
                             "FAILED_UPDATE": "Failed to update {{name}}. Reaso: {{reason}}",
                             "FETCH": "Fetch",
+                            "FIAT_VALUE": "Fiat Value",
                             "FILTER_BLACKLISTED_PLUGINS": "Apply blacklist",
                             "FINISH": "Finish",
                             "HIDE_WALLET_BUTTON_TEXT": "Hide text from wallet buttons",
@@ -10518,6 +10941,11 @@ exports[`Application root should render without crashing 1`] = `
                               "DESCRIPTION": "Do you really want to remove your wallet? Before deleting, make sure that you have the passphrase for this wallet.",
                               "TITLE": "Delete Wallet",
                             },
+                            "MODAL_LEDGER_WALLET": Object {
+                              "DESCRIPTION": "Connect your Ledger to PC and confirm the input.",
+                              "TITLE": "Ledger Wallet",
+                              "WAITING_FOR_LEDGER": "Waiting for Ledger...",
+                            },
                             "MODAL_NAME_WALLET": Object {
                               "DESCRIPTION": "You can enter the name of your wallet for a quick search in your wallet.",
                               "FIELD_NAME": "Enter a name",
@@ -10525,6 +10953,10 @@ exports[`Application root should render without crashing 1`] = `
                             },
                             "MODAL_RECEIVE_FUNDS": Object {
                               "TITLE": "Receive Funds",
+                            },
+                            "MODAL_SELECT_ACCOUNT": Object {
+                              "DESCRIPTION": "Find and select the account you want to receive funds to",
+                              "TITLE": "Select Account",
                             },
                             "MODAL_WALLET_UPDATE": Object {
                               "DESCRIPTION_1": "We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.",
@@ -10608,10 +11040,12 @@ exports[`Application root should render without crashing 1`] = `
                           "APP_NAME": "ARK Desktop Wallet",
                           "APP_NAME_SHORT": "ARK Desktop",
                           "ARK": "ARK",
+                          "ASSET_TYPE": "Asset Type",
                           "ATTENTION": "Attention",
                           "AVATAR": "Avatar",
                           "BACK": "Back",
                           "BACKGROUND": "Background",
+                          "BALANCE": "Balance",
                           "BIP39_LANGUAGE": "Passphrase Language (BIP39)",
                           "CANCEL": "Cancel",
                           "CATEGORY": "Category",
@@ -10631,6 +11065,7 @@ exports[`Application root should render without crashing 1`] = `
                           "FAILED_FETCH": "Failed to fetch {{name}}. Reason {{msg}}",
                           "FAILED_UPDATE": "Failed to update {{name}}. Reaso: {{reason}}",
                           "FETCH": "Fetch",
+                          "FIAT_VALUE": "Fiat Value",
                           "FILTER_BLACKLISTED_PLUGINS": "Apply blacklist",
                           "FINISH": "Finish",
                           "HIDE_WALLET_BUTTON_TEXT": "Hide text from wallet buttons",
@@ -10763,6 +11198,11 @@ exports[`Application root should render without crashing 1`] = `
                             "DESCRIPTION": "Do you really want to remove your wallet? Before deleting, make sure that you have the passphrase for this wallet.",
                             "TITLE": "Delete Wallet",
                           },
+                          "MODAL_LEDGER_WALLET": Object {
+                            "DESCRIPTION": "Connect your Ledger to PC and confirm the input.",
+                            "TITLE": "Ledger Wallet",
+                            "WAITING_FOR_LEDGER": "Waiting for Ledger...",
+                          },
                           "MODAL_NAME_WALLET": Object {
                             "DESCRIPTION": "You can enter the name of your wallet for a quick search in your wallet.",
                             "FIELD_NAME": "Enter a name",
@@ -10770,6 +11210,10 @@ exports[`Application root should render without crashing 1`] = `
                           },
                           "MODAL_RECEIVE_FUNDS": Object {
                             "TITLE": "Receive Funds",
+                          },
+                          "MODAL_SELECT_ACCOUNT": Object {
+                            "DESCRIPTION": "Find and select the account you want to receive funds to",
+                            "TITLE": "Select Account",
                           },
                           "MODAL_WALLET_UPDATE": Object {
                             "DESCRIPTION_1": "We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.",
@@ -10858,10 +11302,12 @@ exports[`Application root should render without crashing 1`] = `
                                 "APP_NAME": "ARK Desktop Wallet",
                                 "APP_NAME_SHORT": "ARK Desktop",
                                 "ARK": "ARK",
+                                "ASSET_TYPE": "Asset Type",
                                 "ATTENTION": "Attention",
                                 "AVATAR": "Avatar",
                                 "BACK": "Back",
                                 "BACKGROUND": "Background",
+                                "BALANCE": "Balance",
                                 "BIP39_LANGUAGE": "Passphrase Language (BIP39)",
                                 "CANCEL": "Cancel",
                                 "CATEGORY": "Category",
@@ -10881,6 +11327,7 @@ exports[`Application root should render without crashing 1`] = `
                                 "FAILED_FETCH": "Failed to fetch {{name}}. Reason {{msg}}",
                                 "FAILED_UPDATE": "Failed to update {{name}}. Reaso: {{reason}}",
                                 "FETCH": "Fetch",
+                                "FIAT_VALUE": "Fiat Value",
                                 "FILTER_BLACKLISTED_PLUGINS": "Apply blacklist",
                                 "FINISH": "Finish",
                                 "HIDE_WALLET_BUTTON_TEXT": "Hide text from wallet buttons",
@@ -11013,6 +11460,11 @@ exports[`Application root should render without crashing 1`] = `
                                   "DESCRIPTION": "Do you really want to remove your wallet? Before deleting, make sure that you have the passphrase for this wallet.",
                                   "TITLE": "Delete Wallet",
                                 },
+                                "MODAL_LEDGER_WALLET": Object {
+                                  "DESCRIPTION": "Connect your Ledger to PC and confirm the input.",
+                                  "TITLE": "Ledger Wallet",
+                                  "WAITING_FOR_LEDGER": "Waiting for Ledger...",
+                                },
                                 "MODAL_NAME_WALLET": Object {
                                   "DESCRIPTION": "You can enter the name of your wallet for a quick search in your wallet.",
                                   "FIELD_NAME": "Enter a name",
@@ -11020,6 +11472,10 @@ exports[`Application root should render without crashing 1`] = `
                                 },
                                 "MODAL_RECEIVE_FUNDS": Object {
                                   "TITLE": "Receive Funds",
+                                },
+                                "MODAL_SELECT_ACCOUNT": Object {
+                                  "DESCRIPTION": "Find and select the account you want to receive funds to",
+                                  "TITLE": "Select Account",
                                 },
                                 "MODAL_WALLET_UPDATE": Object {
                                   "DESCRIPTION_1": "We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.",
@@ -11098,10 +11554,12 @@ exports[`Application root should render without crashing 1`] = `
                               "APP_NAME": "ARK Desktop Wallet",
                               "APP_NAME_SHORT": "ARK Desktop",
                               "ARK": "ARK",
+                              "ASSET_TYPE": "Asset Type",
                               "ATTENTION": "Attention",
                               "AVATAR": "Avatar",
                               "BACK": "Back",
                               "BACKGROUND": "Background",
+                              "BALANCE": "Balance",
                               "BIP39_LANGUAGE": "Passphrase Language (BIP39)",
                               "CANCEL": "Cancel",
                               "CATEGORY": "Category",
@@ -11121,6 +11579,7 @@ exports[`Application root should render without crashing 1`] = `
                               "FAILED_FETCH": "Failed to fetch {{name}}. Reason {{msg}}",
                               "FAILED_UPDATE": "Failed to update {{name}}. Reaso: {{reason}}",
                               "FETCH": "Fetch",
+                              "FIAT_VALUE": "Fiat Value",
                               "FILTER_BLACKLISTED_PLUGINS": "Apply blacklist",
                               "FINISH": "Finish",
                               "HIDE_WALLET_BUTTON_TEXT": "Hide text from wallet buttons",
@@ -11253,6 +11712,11 @@ exports[`Application root should render without crashing 1`] = `
                                 "DESCRIPTION": "Do you really want to remove your wallet? Before deleting, make sure that you have the passphrase for this wallet.",
                                 "TITLE": "Delete Wallet",
                               },
+                              "MODAL_LEDGER_WALLET": Object {
+                                "DESCRIPTION": "Connect your Ledger to PC and confirm the input.",
+                                "TITLE": "Ledger Wallet",
+                                "WAITING_FOR_LEDGER": "Waiting for Ledger...",
+                              },
                               "MODAL_NAME_WALLET": Object {
                                 "DESCRIPTION": "You can enter the name of your wallet for a quick search in your wallet.",
                                 "FIELD_NAME": "Enter a name",
@@ -11260,6 +11724,10 @@ exports[`Application root should render without crashing 1`] = `
                               },
                               "MODAL_RECEIVE_FUNDS": Object {
                                 "TITLE": "Receive Funds",
+                              },
+                              "MODAL_SELECT_ACCOUNT": Object {
+                                "DESCRIPTION": "Find and select the account you want to receive funds to",
+                                "TITLE": "Select Account",
                               },
                               "MODAL_WALLET_UPDATE": Object {
                                 "DESCRIPTION_1": "We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.",
@@ -11348,10 +11816,12 @@ exports[`Application root should render without crashing 1`] = `
                               "APP_NAME": "ARK Desktop Wallet",
                               "APP_NAME_SHORT": "ARK Desktop",
                               "ARK": "ARK",
+                              "ASSET_TYPE": "Asset Type",
                               "ATTENTION": "Attention",
                               "AVATAR": "Avatar",
                               "BACK": "Back",
                               "BACKGROUND": "Background",
+                              "BALANCE": "Balance",
                               "BIP39_LANGUAGE": "Passphrase Language (BIP39)",
                               "CANCEL": "Cancel",
                               "CATEGORY": "Category",
@@ -11371,6 +11841,7 @@ exports[`Application root should render without crashing 1`] = `
                               "FAILED_FETCH": "Failed to fetch {{name}}. Reason {{msg}}",
                               "FAILED_UPDATE": "Failed to update {{name}}. Reaso: {{reason}}",
                               "FETCH": "Fetch",
+                              "FIAT_VALUE": "Fiat Value",
                               "FILTER_BLACKLISTED_PLUGINS": "Apply blacklist",
                               "FINISH": "Finish",
                               "HIDE_WALLET_BUTTON_TEXT": "Hide text from wallet buttons",
@@ -11503,6 +11974,11 @@ exports[`Application root should render without crashing 1`] = `
                                 "DESCRIPTION": "Do you really want to remove your wallet? Before deleting, make sure that you have the passphrase for this wallet.",
                                 "TITLE": "Delete Wallet",
                               },
+                              "MODAL_LEDGER_WALLET": Object {
+                                "DESCRIPTION": "Connect your Ledger to PC and confirm the input.",
+                                "TITLE": "Ledger Wallet",
+                                "WAITING_FOR_LEDGER": "Waiting for Ledger...",
+                              },
                               "MODAL_NAME_WALLET": Object {
                                 "DESCRIPTION": "You can enter the name of your wallet for a quick search in your wallet.",
                                 "FIELD_NAME": "Enter a name",
@@ -11510,6 +11986,10 @@ exports[`Application root should render without crashing 1`] = `
                               },
                               "MODAL_RECEIVE_FUNDS": Object {
                                 "TITLE": "Receive Funds",
+                              },
+                              "MODAL_SELECT_ACCOUNT": Object {
+                                "DESCRIPTION": "Find and select the account you want to receive funds to",
+                                "TITLE": "Select Account",
                               },
                               "MODAL_WALLET_UPDATE": Object {
                                 "DESCRIPTION_1": "We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.",
@@ -12490,10 +12970,12 @@ exports[`Application root should render without crashing 1`] = `
                         "APP_NAME": "ARK Desktop Wallet",
                         "APP_NAME_SHORT": "ARK Desktop",
                         "ARK": "ARK",
+                        "ASSET_TYPE": "Asset Type",
                         "ATTENTION": "Attention",
                         "AVATAR": "Avatar",
                         "BACK": "Back",
                         "BACKGROUND": "Background",
+                        "BALANCE": "Balance",
                         "BIP39_LANGUAGE": "Passphrase Language (BIP39)",
                         "CANCEL": "Cancel",
                         "CATEGORY": "Category",
@@ -12513,6 +12995,7 @@ exports[`Application root should render without crashing 1`] = `
                         "FAILED_FETCH": "Failed to fetch {{name}}. Reason {{msg}}",
                         "FAILED_UPDATE": "Failed to update {{name}}. Reaso: {{reason}}",
                         "FETCH": "Fetch",
+                        "FIAT_VALUE": "Fiat Value",
                         "FILTER_BLACKLISTED_PLUGINS": "Apply blacklist",
                         "FINISH": "Finish",
                         "HIDE_WALLET_BUTTON_TEXT": "Hide text from wallet buttons",
@@ -12645,6 +13128,11 @@ exports[`Application root should render without crashing 1`] = `
                           "DESCRIPTION": "Do you really want to remove your wallet? Before deleting, make sure that you have the passphrase for this wallet.",
                           "TITLE": "Delete Wallet",
                         },
+                        "MODAL_LEDGER_WALLET": Object {
+                          "DESCRIPTION": "Connect your Ledger to PC and confirm the input.",
+                          "TITLE": "Ledger Wallet",
+                          "WAITING_FOR_LEDGER": "Waiting for Ledger...",
+                        },
                         "MODAL_NAME_WALLET": Object {
                           "DESCRIPTION": "You can enter the name of your wallet for a quick search in your wallet.",
                           "FIELD_NAME": "Enter a name",
@@ -12652,6 +13140,10 @@ exports[`Application root should render without crashing 1`] = `
                         },
                         "MODAL_RECEIVE_FUNDS": Object {
                           "TITLE": "Receive Funds",
+                        },
+                        "MODAL_SELECT_ACCOUNT": Object {
+                          "DESCRIPTION": "Find and select the account you want to receive funds to",
+                          "TITLE": "Select Account",
                         },
                         "MODAL_WALLET_UPDATE": Object {
                           "DESCRIPTION_1": "We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.",
