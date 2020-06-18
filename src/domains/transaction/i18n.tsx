@@ -42,4 +42,10 @@ export const translations: { [key: string]: any } = {
 	MODAL_VOTE_DETAIL: {
 		TITLE: "Delegate Vote",
 	},
+
+	MODAL_SELECT_DELEGATE: {
+		TITLE: "Select a Delegate",
+		DESCRIPTION:
+			"Please select the Delegate you wish to vote for. For additional information about the delegate and/or payouts, please visit MarketSquare.",
+	},
 };
