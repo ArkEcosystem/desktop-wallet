@@ -156,7 +156,7 @@ export const SelectDelegateModal = (props: SelectDelegateModalProps) => {
 		{
 			Header: t("COMMON.VOTES"),
 			accessor: "votes",
-			className: "justify-end",
+			className: "justify-end mr-8",
 		},
 		{
 			Header: t("COMMON.VOTING"),
@@ -169,7 +169,7 @@ export const SelectDelegateModal = (props: SelectDelegateModalProps) => {
 		<Modal
 			title={t("TRANSACTION.MODAL_SELECT_DELEGATE.TITLE")}
 			description={t("TRANSACTION.MODAL_SELECT_DELEGATE.DESCRIPTION")}
-			size="4xl"
+			size="5xl"
 			isOpen={props.isOpen}
 			onClose={props.onClose}
 		>
@@ -207,19 +207,21 @@ export const SelectDelegateModal = (props: SelectDelegateModalProps) => {
 								<div>{rowData.username}</div>
 							</td>
 
-							<td className="py-6">
-								<div className="font-semibold text-theme-neutral-700">#{rowData.rank}</div>
-							</td>
+							<td className="py-6 font-semibold text-theme-neutral-700">#{rowData.rank}</td>
 
 							<td className="py-6 text-center text-theme-primary-500">
-								<SvgCollection.Link className="inline-block h-5 cursor-pointer" />
+								{rowData.marketsquare && (
+									<a href={rowData.marketsquare}>
+										<SvgCollection.Link className="inline-block h-5 cursor-pointer" />
+									</a>
+								)}
 							</td>
 
 							<td className="py-6 font-semibold whitespace-no-wrap text-theme-neutral-700">
 								<div>{Numeral.make("en").format(rowData.forged_ark)} A</div>
 							</td>
 
-							<td className="py-6 font-semibold text-right whitespace-no-wrap text-theme-neutral-700">
+							<td className="py-6 font-semibold text-right whitespace-no-wrap text-theme-neutral-700 pr-8">
 								<span className="mr-1 text-sm text-theme-neutral-500">
 									{Numeral.make("en").format((rowData.votes / totalSupply) * 100)}%
 								</span>
