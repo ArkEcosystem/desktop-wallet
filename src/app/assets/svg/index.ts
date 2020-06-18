@@ -41,6 +41,7 @@ import { ReactComponent as Send } from "./send.svg";
 import { ReactComponent as Sent } from "./sent.svg";
 import { ReactComponent as Settings } from "./settings.svg";
 import { ReactComponent as Slack } from "./slack.svg";
+import { ReactComponent as Smartbridge } from "./smartbridge.svg";
 import { ReactComponent as Sort } from "./sort.svg";
 import { ReactComponent as Star } from "./star.svg";
 import { ReactComponent as StatusClock } from "./status-clock.svg";
@@ -92,6 +93,7 @@ export const SvgCollection: any = {
 	Sent,
 	Settings,
 	Slack,
+	Smartbridge,
 	Sort,
 	Star,
 	StatusClock,
