@@ -60,4 +60,24 @@ exports[`Button should render as plain 1`] = `
 </div>
 `;
 
+exports[`Button should render contrast text if not primary 1`] = `
+<div>
+  <button
+    class="sc-AxjAm bovREC"
+    color="plain"
+    type="button"
+  />
+</div>
+`;
+
 exports[`Button should render if disabled 1`] = `[Function]`;
+
+exports[`Button should render white text if primary 1`] = `
+<div>
+  <button
+    class="sc-AxjAm eixJcU"
+    color="primary"
+    type="button"
+  />
+</div>
+`;
