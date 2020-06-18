@@ -1,3 +1,4 @@
+import { Button } from "app/components/Button";
 import { Form } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { ListDivided } from "app/components/ListDivided";
@@ -49,6 +50,11 @@ export const Peer = ({ formConfig, onSubmit }: PeerProps) => {
 			<Header title="Peer Settings" subtitle="Customize your wallet to suit your needs." />
 			<Form id="peer-settings__form" context={formConfig.context} onSubmit={onSubmit}>
 				<ListDivided items={peerItems} />
+				<div className="float-right">
+					<Button color="primary" variant="solid" size="large">
+						Save
+					</Button>
+				</div>
 			</Form>
 		</>
 	);
