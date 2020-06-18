@@ -1,0 +1,200 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SelectDropdown should render 1`] = `
+<div>
+  <div
+    aria-expanded="false"
+    aria-haspopup="listbox"
+    aria-labelledby="downshift-0-label"
+    class="relative"
+    role="combobox"
+  >
+    <label
+      for="dropdown-select"
+      id="downshift-0-label"
+    >
+      <div
+        class="relative flex flex-inline items-center w-full"
+      >
+        <div
+          class="flex m-h-20 cursor-pointer overflow-hidden shadow-sm w-full bg-theme-background rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 hover:outline-none hover:border-theme-primary pr-12"
+        />
+        <div
+          class="-ml-12 w-12 px-4 py-5 text-lg pointer-events-none text-theme-neutral-dark"
+        >
+          <div
+            class=""
+          >
+            <div
+              class="sc-AxjAm cpczEI"
+              height="1em"
+              width="1em"
+            >
+              <svg>
+                chevron-down.svg
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </label>
+    <div
+      class="btn-group relative"
+    >
+      <input
+        aria-autocomplete="list"
+        aria-labelledby="downshift-0-label"
+        autocomplete="off"
+        id="downshift-0-input"
+        readonly=""
+        type="hidden"
+        value=""
+      />
+      <button
+        aria-expanded="false"
+        aria-haspopup="true"
+        class="dropdown-toggle"
+        data-toggle="dropdown"
+        id="dropdown-select"
+        type="button"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`SelectDropdown should render ignoring option.value property 1`] = `
+<div>
+  <div
+    aria-expanded="false"
+    aria-haspopup="listbox"
+    aria-labelledby="downshift-1-label"
+    class="relative"
+    role="combobox"
+  >
+    <label
+      for="dropdown-select"
+      id="downshift-1-label"
+    >
+      <div
+        class="relative flex flex-inline items-center w-full"
+      >
+        <div
+          class="flex m-h-20 cursor-pointer overflow-hidden shadow-sm w-full bg-theme-background rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 hover:outline-none hover:border-theme-primary pr-12"
+        />
+        <div
+          class="-ml-12 w-12 px-4 py-5 text-lg pointer-events-none text-theme-neutral-dark"
+        >
+          <div
+            class=""
+          >
+            <div
+              class="sc-AxjAm cpczEI"
+              height="1em"
+              width="1em"
+            >
+              <svg>
+                chevron-down.svg
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </label>
+    <div
+      class="btn-group relative"
+    >
+      <input
+        aria-autocomplete="list"
+        aria-labelledby="downshift-1-label"
+        autocomplete="off"
+        id="downshift-1-input"
+        readonly=""
+        type="hidden"
+        value=""
+      />
+      <button
+        aria-expanded="false"
+        aria-haspopup="true"
+        class="dropdown-toggle"
+        data-toggle="dropdown"
+        id="dropdown-select"
+        type="button"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`SelectDropdown should render with custom toggle and option templates 1`] = `
+<div>
+  <div
+    aria-expanded="false"
+    aria-haspopup="listbox"
+    aria-labelledby="downshift-2-label"
+    class="relative"
+    role="combobox"
+  >
+    <label
+      for="dropdown-select"
+      id="downshift-2-label"
+    >
+      <div
+        class="relative flex flex-inline items-center w-full"
+      >
+        <div
+          class="flex m-h-20 cursor-pointer overflow-hidden shadow-sm w-full bg-theme-background rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 hover:outline-none hover:border-theme-primary pr-12"
+        >
+          <div
+            class="flex flex-inline items-center"
+          >
+            <div
+              class="text-theme-neutral-800 font-semibold"
+            >
+              Select Option
+            </div>
+          </div>
+        </div>
+        <div
+          class="-ml-12 w-12 px-4 py-5 text-lg pointer-events-none text-theme-neutral-dark"
+        >
+          <div
+            class=""
+          >
+            <div
+              class="sc-AxjAm cpczEI"
+              height="1em"
+              width="1em"
+            >
+              <svg>
+                chevron-down.svg
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </label>
+    <div
+      class="btn-group relative"
+    >
+      <input
+        aria-autocomplete="list"
+        aria-labelledby="downshift-2-label"
+        autocomplete="off"
+        id="downshift-2-input"
+        readonly=""
+        type="hidden"
+        value=""
+      />
+      <button
+        aria-expanded="false"
+        aria-haspopup="true"
+        class="dropdown-toggle"
+        data-toggle="dropdown"
+        id="dropdown-select"
+        type="button"
+      />
+    </div>
+  </div>
+</div>
+`;
