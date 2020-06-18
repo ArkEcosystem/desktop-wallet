@@ -33,8 +33,14 @@ export const Table = ({ children, data, columns }: TableProps) => {
 	};
 
 	const getSortIconName = (isSorted: boolean, isSortedDesc: boolean) => {
-		if (isSorted && isSortedDesc) return "ArrowDown";
-		if (isSorted && !isSortedDesc) return "ArrowUp";
+		if (isSorted && isSortedDesc) {
+			return "ArrowDown";
+		}
+
+		if (isSorted && !isSortedDesc) {
+			return "ArrowUp";
+		}
+
 		return "Sort";
 	};
 
@@ -47,14 +53,14 @@ export const Table = ({ children, data, columns }: TableProps) => {
 							{headerGroup.headers.map((column: any, thIndex: number) => (
 								<th
 									key={thIndex}
-									className="text-theme-neutral-400 text-left text-xs select-none"
+									className="text-theme-neutral-400 text-xs text-left select-none"
 									data-testid={`table__th--${thIndex}`}
 									{...column.getHeaderProps(column.getSortByToggleProps())}
 								>
 									<div className={`flex flex-inline align-top  ${column.className}`}>
 										<div className="mr-1">{column.render("Header")}</div>
 										<div
-											className="mt-1 text-theme-color-neutral-500"
+											className="text-theme-color-neutral-500 mt-1"
 											data-testid={`table__${getSortIconName(
 												column.isSorted,
 												column.isSortedDesc,

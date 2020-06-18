@@ -106,7 +106,7 @@ export const SelectDelegateModal = (props: SelectDelegateModalProps) => {
 		{
 			Header: t("COMMON.VOTES"),
 			accessor: "votes",
-			headerClassName: "text-right",
+			className: "justify-end",
 		},
 		{
 			Header: t("COMMON.VOTING"),
@@ -127,7 +127,7 @@ export const SelectDelegateModal = (props: SelectDelegateModalProps) => {
 				<SearchBar className="mt-8" placeholder="Search for a Delegate" />
 			</div>
 
-			<div className="mt-8 mb-14">
+			<div className="mb-14 mt-8">
 				<Table columns={columns} data={data}>
 					{(rowData: any) => (
 						<tr
@@ -135,32 +135,32 @@ export const SelectDelegateModal = (props: SelectDelegateModalProps) => {
 								selected[rowData.id] && "bg-theme-success-100"
 							}`}
 						>
-							<td className="text-center w-16">
+							<td className="w-16 text-center">
 								<Checkbox onClick={() => toggleSelected(rowData)} />
 							</td>
 
-							<td className="px-4 w-16">
+							<td className="w-16 px-4">
 								<Circle avatarId="test" noShadow={true} />
 							</td>
 
-							<td className="font-semibold py-6">
+							<td className="py-6 font-semibold">
 								<div>{rowData.delegate_name}</div>
 							</td>
 
 							<td className="py-6">
-								<div className="font-semibold text-theme-neutral-700">#{rowData.rank}</div>
+								<div className="text-theme-neutral-700 font-semibold">#{rowData.rank}</div>
 							</td>
 
-							<td className="py-6 text-center text-theme-primary-500">
+							<td className="text-theme-primary-500 py-6 text-center">
 								<SvgCollection.Link className="inline-block h-5 cursor-pointer" />
 							</td>
 
-							<td className="py-6 font-semibold text-theme-neutral-700 whitespace-no-wrap">
+							<td className="text-theme-neutral-700 py-6 font-semibold whitespace-no-wrap">
 								<div>{Numeral.make("en").format(rowData.forged_ark)} A</div>
 							</td>
 
-							<td className="py-6 font-semibold text-theme-neutral-700 whitespace-no-wrap text-right">
-								<span className="text-sm text-theme-neutral-500 mr-1">
+							<td className="text-theme-neutral-700 py-6 font-semibold text-right whitespace-no-wrap">
+								<span className="text-theme-neutral-500 mr-1 text-sm">
 									{Numeral.make("en").format((rowData.votes / totalSupply) * 100)}%
 								</span>
 
@@ -182,19 +182,19 @@ export const SelectDelegateModal = (props: SelectDelegateModalProps) => {
 			</div>
 
 			<div className="absolute bottom-0 left-0 right-0 flex px-8 py-6 bg-white shadow-2xl">
-				<div className="px-8 mr-8 border-r border-theme-neutral-200">
-					<div className="text-sm text-theme-neutral-500">Rank</div>
+				<div className="border-theme-neutral-200 px-8 mr-8 border-r">
+					<div className="text-theme-neutral-500 text-sm">Rank</div>
 
-					<div className="font-semibold text-theme-neutral-700">#3</div>
+					<div className="text-theme-neutral-700 font-semibold">#3</div>
 				</div>
 
 				<div className="flex flex-1">
 					<Circle avatarId="test" className="mr-2" />
 
 					<div>
-						<div className="text-sm text-theme-neutral-500">Address Delegate</div>
+						<div className="text-theme-neutral-500 text-sm">Address Delegate</div>
 
-						<div className="font-semibold text-theme-neutral-700">Delegate 3 - AADDDDDDDRREEEEESSSSSSS</div>
+						<div className="text-theme-neutral-700 font-semibold">Delegate 3 - AADDDDDDDRREEEEESSSSSSS</div>
 					</div>
 				</div>
 
