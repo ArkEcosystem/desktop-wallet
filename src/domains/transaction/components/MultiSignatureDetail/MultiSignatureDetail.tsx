@@ -121,7 +121,7 @@ export const FirstStep = () => {
 				{t("TRANSACTION.MODAL_MULTISIGNATURE_DETAIL.WAITING_FOR_SIGNATURES")}
 			</TransactionDetail>
 
-			<div className="px-16 pt-8 mt-2 mt-8 -mx-16 text-black border-t border-gray-500">
+			<div className="px-12 pt-8 mt-2 mt-8 -mx-12 text-black border-t border-gray-500">
 				<Signatures />
 			</div>
 		</section>

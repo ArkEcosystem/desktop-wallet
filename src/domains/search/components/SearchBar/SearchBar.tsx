@@ -14,7 +14,7 @@ export const SearchBar = (props: SearchBarProps) => {
 	const { t } = useTranslation();
 
 	return (
-		<div data-testid="SearchBar" className={`bg-theme-neutral-200 px-16 pt-8 pb-10 ${props.className}`}>
+		<div data-testid="SearchBar" className={`bg-theme-neutral-200 px-12 pt-8 pb-10 ${props.className}`}>
 			<div className="flex px-6 py-4 bg-white rounded shadow-xl">
 				{props.children}
 

@@ -60,7 +60,7 @@ export const SearchModal = (props: SearchModalProps) => {
 			isOpen={props.isOpen}
 			onClose={props.onClose}
 		>
-			<div className="-mx-16">
+			<div className="-mx-12">
 				<SearchBar className="mt-8">
 					<SearchBarOptions
 						options={options}
