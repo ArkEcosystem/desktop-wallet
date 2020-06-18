@@ -24,6 +24,7 @@ import { ReactComponent as General } from "./general.svg";
 import { ReactComponent as Grid } from "./grid.svg";
 import { ReactComponent as Import } from "./import.svg";
 import { ReactComponent as Ledger } from "./ledger.svg";
+import { ReactComponent as Link } from "./link.svg";
 import { ReactComponent as List } from "./list.svg";
 import { ReactComponent as Mistake } from "./mistake.svg";
 import { ReactComponent as Msq } from "./msq.svg";
@@ -37,6 +38,7 @@ import { ReactComponent as Qrcode } from "./qrcode.svg";
 import { ReactComponent as Receive } from "./receive.svg";
 import { ReactComponent as Received } from "./received.svg";
 import { ReactComponent as Reset } from "./reset.svg";
+import { ReactComponent as Search } from "./search.svg";
 import { ReactComponent as Send } from "./send.svg";
 import { ReactComponent as Sent } from "./sent.svg";
 import { ReactComponent as Settings } from "./settings.svg";
@@ -76,6 +78,7 @@ export const SvgCollection: any = {
 	Grid,
 	Import,
 	Ledger,
+	Link,
 	List,
 	Mistake,
 	Msq,
@@ -87,6 +90,7 @@ export const SvgCollection: any = {
 	Qrcode,
 	Received,
 	Reset,
+	Search,
 	Send,
 	Sent,
 	Settings,
