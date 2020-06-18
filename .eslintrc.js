@@ -13,7 +13,7 @@ module.exports = {
 		node: true,
 		es6: true,
 	},
-	plugins: ["@typescript-eslint", "prettier", "testing-library", "cypress", "simple-import-sort"],
+	plugins: ["@typescript-eslint", "prettier", "testing-library", "cypress", "simple-import-sort", "unused-imports"],
 	extends: [
 		"eslint:recommended",
 		"plugin:@typescript-eslint/eslint-recommended",
@@ -26,25 +26,26 @@ module.exports = {
 		"plugin:cypress/recommended",
 	],
 	rules: {
-		"prefer-const": [
-			"error",
-			{
-				destructuring: "all",
-			},
-		],
 		"@typescript-eslint/ban-ts-comment": "off",
 		"@typescript-eslint/ban-types": "off",
 		"@typescript-eslint/explicit-module-boundary-types": "off",
 		"@typescript-eslint/no-explicit-any": "off",
 		"@typescript-eslint/no-floating-promises": "off",
 		"@typescript-eslint/no-misused-promises": "off",
+		"@typescript-eslint/no-non-null-assertion": "off",
 		"@typescript-eslint/no-unsafe-assignment": "off",
 		"@typescript-eslint/no-unsafe-call": "off",
 		"@typescript-eslint/no-unsafe-member-access": "off",
 		"@typescript-eslint/no-unsafe-return": "off",
 		"@typescript-eslint/prefer-regexp-exec": "off",
 		"@typescript-eslint/restrict-template-expressions": "off",
-		"@typescript-eslint/no-non-null-assertion": "off",
+		"unused-imports/no-unused-imports-ts": "error",
+		"prefer-const": [
+			"error",
+			{
+				destructuring: "all",
+			},
+		],
 		"prettier/prettier": [
 			"off",
 			{

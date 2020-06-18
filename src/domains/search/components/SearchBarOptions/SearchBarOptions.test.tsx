@@ -3,7 +3,6 @@ import { i18n } from "app/i18n";
 import React from "react";
 import { I18nextProvider } from "react-i18next";
 
-import { translations } from "../../i18n";
 import { SearchBarOptions } from "./SearchBarOptions";
 
 describe("SearchBarOptions", () => {

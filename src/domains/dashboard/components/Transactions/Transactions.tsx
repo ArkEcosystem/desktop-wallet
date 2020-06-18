@@ -1,7 +1,7 @@
 import { Button } from "app/components/Button";
 import { Table } from "app/components/Table";
 import { TransactionListItem } from "app/components/TransactionListItem";
-import React, { useState } from "react";
+import React from "react";
 
 type TransactionsProps = {
 	title: string;

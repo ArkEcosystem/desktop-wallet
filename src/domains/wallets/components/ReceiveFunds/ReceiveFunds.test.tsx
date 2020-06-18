@@ -4,7 +4,6 @@ import React from "react";
 import { I18nextProvider } from "react-i18next";
 
 // i18n
-import { translations } from "../../i18n";
 import { ReceiveFunds } from "./ReceiveFunds";
 
 describe("ReceiveFunds", () => {
