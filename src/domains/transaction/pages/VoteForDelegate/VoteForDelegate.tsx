@@ -37,12 +37,7 @@ export const FirstStep = () => {
 						</div>
 					}
 				>
-					<Address
-						name="account"
-						address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
-						walletName={"ROBank"}
-						size="large"
-					/>
+					<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} size="large" />
 				</TransactionDetail>
 				<TransactionDetail
 					label="Delegate"
@@ -60,7 +55,7 @@ export const FirstStep = () => {
 				<TransactionDetail border={false} label="Fee ARK">
 					<div className="flex">
 						<div className="w-3/5 mr-2">
-							<InputRange name="fee" defaultValue={25} min={1} max={100} step={1} />
+							<InputRange defaultValue={25} min={1} max={100} step={1} />
 						</div>
 						<div className="ml-2">
 							<SelectionBar>
@@ -264,9 +259,10 @@ export const FourthStep = () => (
 
 type Props = {
 	onCopy: () => void;
+	onSubmit: () => void;
 };
 
-export const VoteForDelegate = ({ onCopy }: Props) => {
+export const VoteForDelegate = ({ onCopy, onSubmit }: Props) => {
 	const [activeTab, setActiveTab] = React.useState(1);
 
 	const form = useForm({ mode: "onChange" });
@@ -283,7 +279,7 @@ export const VoteForDelegate = ({ onCopy }: Props) => {
 
 	return (
 		<div className="max-w-xl mx-auto">
-			<Form context={form}>
+			<Form context={form} onSubmit={onSubmit}>
 				<Tabs activeId={activeTab}>
 					<StepIndicator size={4} activeIndex={activeTab} />
 

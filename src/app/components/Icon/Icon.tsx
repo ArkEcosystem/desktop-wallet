@@ -5,13 +5,13 @@ import styled from "styled-components";
 
 type Props = {
 	name: string;
-	width: number;
-	height: number;
+	width: number | string;
+	height: number | string;
 };
 
 type WrapperProps = {
-	width: number;
-	height: number;
+	width: number | string;
+	height: number | string;
 };
 
 const Wrapper = styled.div(({ width, height }: WrapperProps) => ({
