@@ -47,7 +47,7 @@ export const Table = ({ children, data, columns }: TableProps) => {
 							{headerGroup.headers.map((column: any, thIndex: number) => (
 								<th
 									key={thIndex}
-									className="text-theme-neutral-400 text-left text-xs select-none pb-3}"
+									className="text-theme-neutral-400 text-left text-xs select-none"
 									data-testid={`table__th--${thIndex}`}
 									{...column.getHeaderProps(column.getSortByToggleProps())}
 								>
