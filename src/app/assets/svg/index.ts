@@ -23,6 +23,7 @@ import { ReactComponent as Filters } from "./filters.svg";
 import { ReactComponent as General } from "./general.svg";
 import { ReactComponent as Grid } from "./grid.svg";
 import { ReactComponent as Import } from "./import.svg";
+import { ReactComponent as Ipfs } from "./ipfs.svg";
 import { ReactComponent as Ledger } from "./ledger.svg";
 import { ReactComponent as List } from "./list.svg";
 import { ReactComponent as Mistake } from "./mistake.svg";
@@ -76,6 +77,7 @@ export const SvgCollection: any = {
 	General,
 	Grid,
 	Import,
+	Ipfs,
 	Ledger,
 	List,
 	Mistake,
