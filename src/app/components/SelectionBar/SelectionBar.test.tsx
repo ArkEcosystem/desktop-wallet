@@ -2,7 +2,7 @@ import { fireEvent, render } from "@testing-library/react";
 import { act, renderHook } from "@testing-library/react-hooks";
 import React from "react";
 
-import { SelectionBar, SelectionBarOption, useRadioState } from "./index";
+import { SelectionBar, SelectionBarOption, useSelectionState } from "./index";
 
 describe("SelectionBar", () => {
 	it("should render", () => {
@@ -38,8 +38,8 @@ describe("SelectionBarOption", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should work with useRadioState", () => {
-		const { result: state } = renderHook(() => useRadioState(undefined));
+	it("should work with useSelectionState", () => {
+		const { result: state } = renderHook(() => useSelectionState(undefined));
 		const { getAllByTestId } = render(
 			<>
 				<SelectionBarOption {...state.current} value={1}>

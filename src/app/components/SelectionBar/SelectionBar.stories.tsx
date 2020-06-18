@@ -1,12 +1,12 @@
 import React from "react";
 
 import { SelectionBar, SelectionBarOption } from "./SelectionBar";
-import { useRadioState } from "./useRadioState";
+import { useSelectionState } from "./useSelectionState";
 
 export default { title: "Basic / Selection Bar" };
 
 export const Default = () => {
-	const state = useRadioState(1);
+	const state = useSelectionState(1);
 
 	return (
 		<SelectionBar>
