@@ -13,6 +13,7 @@ import { useTranslation } from "react-i18next";
 type SelectDelegateModalProps = {
 	isOpen: boolean;
 	onClose?: any;
+	onVote?: any;
 	allowMultiple?: boolean;
 };
 
@@ -263,7 +264,7 @@ export const SelectDelegateModal = (props: SelectDelegateModalProps) => {
 								</div>
 							</div>
 
-							<Button>Vote</Button>
+							<Button onClick={props.onVote}>Vote</Button>
 						</div>
 					) : (
 						""
@@ -290,7 +291,7 @@ export const SelectDelegateModal = (props: SelectDelegateModalProps) => {
 										</div>
 									</div>
 
-									<Button>Vote</Button>
+									<Button onClick={props.onVote}>Vote</Button>
 								</div>
 
 								{showSelectedList && (
