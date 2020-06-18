@@ -1,0 +1,585 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SelectDelegateModal should not render if not open 1`] = `<DocumentFragment />`;
+
+exports[`SelectDelegateModal should render a modal 1`] = `
+<DocumentFragment>
+  <div
+    class="fixed inset-0 z-10 bg-black opacity-50"
+    data-testid="modal__overlay"
+  />
+  <div
+    class="sc-AxhUy gFLAfu fixed overflow-hidden left-0 right-0 z-10 flex flex-col px-12 pt-6 pb-8 mx-auto mt-24 rounded-xl bg-theme-background"
+    data-testid="modal__inner"
+  >
+    <div
+      class="absolute top-0 right-0 mt-4 mr-4"
+    >
+      <button
+        class="sc-AxjAm eYrebl"
+        color="neutral"
+        data-testid="modal__close-btn"
+        type="button"
+      >
+        <div
+          class="sc-AxhCb idmnCf"
+          height="10"
+          width="10"
+        >
+          <svg>
+            cross-slim.svg
+          </svg>
+        </div>
+      </button>
+    </div>
+    <div
+      class="py-4"
+    >
+      <h2>
+        Select a Delegate
+      </h2>
+      <div
+        class="flex-1"
+      >
+        <div
+          class="text-theme-neutral-700"
+        >
+          Please select the Delegate you wish to vote for. For additional information about the delegate and/or payouts, please visit MarketSquare.
+        </div>
+        <div
+          class="-mx-12"
+        >
+          <div
+            class="bg-theme-neutral-200 px-12 pt-8 pb-10 mt-8"
+            data-testid="SearchBar"
+          >
+            <div
+              class="flex px-6 py-4 bg-white rounded shadow-lg"
+            >
+              <svg
+                class="w-4 text-theme-neutral-300"
+              >
+                search.svg
+              </svg>
+              <div
+                class="flex-1 mr-4"
+              >
+                <input
+                  class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary border-none shadow-none"
+                  data-testid="Input"
+                  placeholder="Search for a Delegate"
+                />
+              </div>
+              <button
+                class="sc-AxjAm jPIcLJ my-1"
+                color="primary"
+                type="button"
+              >
+                <span
+                  class="px-2 text-sm"
+                >
+                  Find it
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          class="mt-8 mb-14"
+        >
+          <div
+            class="sc-fznyAO cJyUGQ"
+            role="table"
+          >
+            <table
+              class="table-auto"
+            >
+              <thead>
+                <tr
+                  role="row"
+                >
+                  <th
+                    class="text-theme-neutral-400 text-left text-xs select-none"
+                    colspan="1"
+                    data-testid="table__th--0"
+                    role="columnheader"
+                  >
+                    <div
+                      class="flex flex-inline align-top  undefined"
+                    >
+                      <div
+                        class="mr-1"
+                      >
+                        Choose
+                      </div>
+                      <div
+                        class="mt-1 text-theme-color-neutral-500"
+                        data-testid="table__Sort"
+                      />
+                    </div>
+                  </th>
+                  <th
+                    class="text-theme-neutral-400 text-left text-xs select-none"
+                    colspan="1"
+                    data-testid="table__th--1"
+                    role="columnheader"
+                  >
+                    <div
+                      class="flex flex-inline align-top  undefined"
+                    >
+                      <div
+                        class="mr-1"
+                      >
+                         
+                      </div>
+                      <div
+                        class="mt-1 text-theme-color-neutral-500"
+                        data-testid="table__Sort"
+                      />
+                    </div>
+                  </th>
+                  <th
+                    class="text-theme-neutral-400 text-left text-xs select-none"
+                    colspan="1"
+                    data-testid="table__th--2"
+                    role="columnheader"
+                    style="cursor: pointer;"
+                    title="Toggle SortBy"
+                  >
+                    <div
+                      class="flex flex-inline align-top  undefined"
+                    >
+                      <div
+                        class="mr-1"
+                      >
+                        Delegate Name
+                      </div>
+                      <div
+                        class="mt-1 text-theme-color-neutral-500"
+                        data-testid="table__Sort"
+                      >
+                        <div
+                          class="sc-AxhCb idmnCf"
+                          height="10"
+                          width="10"
+                        >
+                          <svg>
+                            sort.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </th>
+                  <th
+                    class="text-theme-neutral-400 text-left text-xs select-none"
+                    colspan="1"
+                    data-testid="table__th--3"
+                    role="columnheader"
+                    style="cursor: pointer;"
+                    title="Toggle SortBy"
+                  >
+                    <div
+                      class="flex flex-inline align-top  undefined"
+                    >
+                      <div
+                        class="mr-1"
+                      >
+                        Rank
+                      </div>
+                      <div
+                        class="mt-1 text-theme-color-neutral-500"
+                        data-testid="table__Sort"
+                      >
+                        <div
+                          class="sc-AxhCb idmnCf"
+                          height="10"
+                          width="10"
+                        >
+                          <svg>
+                            sort.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </th>
+                  <th
+                    class="text-theme-neutral-400 text-left text-xs select-none"
+                    colspan="1"
+                    data-testid="table__th--4"
+                    role="columnheader"
+                  >
+                    <div
+                      class="flex flex-inline align-top  undefined"
+                    >
+                      <div
+                        class="mr-1"
+                      >
+                        MarketSquare
+                      </div>
+                      <div
+                        class="mt-1 text-theme-color-neutral-500"
+                        data-testid="table__Sort"
+                      />
+                    </div>
+                  </th>
+                  <th
+                    class="text-theme-neutral-400 text-left text-xs select-none"
+                    colspan="1"
+                    data-testid="table__th--5"
+                    role="columnheader"
+                    style="cursor: pointer;"
+                    title="Toggle SortBy"
+                  >
+                    <div
+                      class="flex flex-inline align-top  undefined"
+                    >
+                      <div
+                        class="mr-1"
+                      >
+                        Forged ARK
+                      </div>
+                      <div
+                        class="mt-1 text-theme-color-neutral-500"
+                        data-testid="table__Sort"
+                      >
+                        <div
+                          class="sc-AxhCb idmnCf"
+                          height="10"
+                          width="10"
+                        >
+                          <svg>
+                            sort.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </th>
+                  <th
+                    class="text-theme-neutral-400 text-left text-xs select-none"
+                    colspan="1"
+                    data-testid="table__th--6"
+                    role="columnheader"
+                    style="cursor: pointer;"
+                    title="Toggle SortBy"
+                  >
+                    <div
+                      class="flex flex-inline align-top  undefined"
+                    >
+                      <div
+                        class="mr-1"
+                      >
+                        Votes
+                      </div>
+                      <div
+                        class="mt-1 text-theme-color-neutral-500"
+                        data-testid="table__Sort"
+                      >
+                        <div
+                          class="sc-AxhCb idmnCf"
+                          height="10"
+                          width="10"
+                        >
+                          <svg>
+                            sort.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </th>
+                  <th
+                    class="text-theme-neutral-400 text-left text-xs select-none"
+                    colspan="1"
+                    data-testid="table__th--7"
+                    role="columnheader"
+                  >
+                    <div
+                      class="flex flex-inline align-top  undefined"
+                    >
+                      <div
+                        class="mr-1"
+                      >
+                        Voting
+                      </div>
+                      <div
+                        class="mt-1 text-theme-color-neutral-500"
+                        data-testid="table__Sort"
+                      />
+                    </div>
+                  </th>
+                </tr>
+              </thead>
+              <tbody
+                role="rowgroup"
+              >
+                <tr
+                  class="border-b border-theme-neutral-200 undefined"
+                >
+                  <td
+                    class="text-center w-16"
+                  >
+                    <input
+                      class="sc-AxirZ hdHVRv"
+                      color="success"
+                      type="checkbox"
+                    />
+                  </td>
+                  <td
+                    class="px-4 w-16"
+                  >
+                    <div
+                      class="sc-AxiKw fHyikq"
+                    />
+                  </td>
+                  <td
+                    class="font-semibold py-6"
+                  >
+                    <div>
+                      Delegate 1
+                    </div>
+                  </td>
+                  <td
+                    class="py-6"
+                  >
+                    <div
+                      class="font-semibold text-theme-neutral-700"
+                    >
+                      #1
+                    </div>
+                  </td>
+                  <td
+                    class="py-6 text-center text-theme-primary-500"
+                  >
+                    <svg
+                      class="inline-block h-5 cursor-pointer"
+                    >
+                      link.svg
+                    </svg>
+                  </td>
+                  <td
+                    class="py-6 font-semibold text-theme-neutral-700 whitespace-no-wrap"
+                  >
+                    <div>
+                      225,946 A
+                    </div>
+                  </td>
+                  <td
+                    class="py-6 font-semibold text-theme-neutral-700 whitespace-no-wrap text-right"
+                  >
+                    <span
+                      class="text-sm text-theme-neutral-500 mr-1"
+                    >
+                      2.43%
+                    </span>
+                    <span>
+                      3,143,322 A
+                    </span>
+                  </td>
+                  <td
+                    class="w-24 text-right"
+                  >
+                    <div>
+                      <div
+                        class="sc-AxiKw eXxQUT  border-theme-primary-100"
+                      />
+                    </div>
+                  </td>
+                </tr>
+                <tr
+                  class="border-b border-theme-neutral-200 undefined"
+                >
+                  <td
+                    class="text-center w-16"
+                  >
+                    <input
+                      class="sc-AxirZ hdHVRv"
+                      color="success"
+                      type="checkbox"
+                    />
+                  </td>
+                  <td
+                    class="px-4 w-16"
+                  >
+                    <div
+                      class="sc-AxiKw fHyikq"
+                    />
+                  </td>
+                  <td
+                    class="font-semibold py-6"
+                  >
+                    <div>
+                      Delegate 2
+                    </div>
+                  </td>
+                  <td
+                    class="py-6"
+                  >
+                    <div
+                      class="font-semibold text-theme-neutral-700"
+                    >
+                      #2
+                    </div>
+                  </td>
+                  <td
+                    class="py-6 text-center text-theme-primary-500"
+                  >
+                    <svg
+                      class="inline-block h-5 cursor-pointer"
+                    >
+                      link.svg
+                    </svg>
+                  </td>
+                  <td
+                    class="py-6 font-semibold text-theme-neutral-700 whitespace-no-wrap"
+                  >
+                    <div>
+                      465,437 A
+                    </div>
+                  </td>
+                  <td
+                    class="py-6 font-semibold text-theme-neutral-700 whitespace-no-wrap text-right"
+                  >
+                    <span
+                      class="text-sm text-theme-neutral-500 mr-1"
+                    >
+                      1.828%
+                    </span>
+                    <span>
+                      2,364,566 A
+                    </span>
+                  </td>
+                  <td
+                    class="w-24 text-right"
+                  >
+                    <div>
+                      <div
+                        class="sc-AxiKw eXxQUT  border-theme-primary-100"
+                      />
+                    </div>
+                  </td>
+                </tr>
+                <tr
+                  class="border-b border-theme-neutral-200 undefined"
+                >
+                  <td
+                    class="text-center w-16"
+                  >
+                    <input
+                      class="sc-AxirZ hdHVRv"
+                      color="success"
+                      type="checkbox"
+                    />
+                  </td>
+                  <td
+                    class="px-4 w-16"
+                  >
+                    <div
+                      class="sc-AxiKw fHyikq"
+                    />
+                  </td>
+                  <td
+                    class="font-semibold py-6"
+                  >
+                    <div>
+                      Delegate 3
+                    </div>
+                  </td>
+                  <td
+                    class="py-6"
+                  >
+                    <div
+                      class="font-semibold text-theme-neutral-700"
+                    >
+                      #3
+                    </div>
+                  </td>
+                  <td
+                    class="py-6 text-center text-theme-primary-500"
+                  >
+                    <svg
+                      class="inline-block h-5 cursor-pointer"
+                    >
+                      link.svg
+                    </svg>
+                  </td>
+                  <td
+                    class="py-6 font-semibold text-theme-neutral-700 whitespace-no-wrap"
+                  >
+                    <div>
+                      693,236 A
+                    </div>
+                  </td>
+                  <td
+                    class="py-6 font-semibold text-theme-neutral-700 whitespace-no-wrap text-right"
+                  >
+                    <span
+                      class="text-sm text-theme-neutral-500 mr-1"
+                    >
+                      1.528%
+                    </span>
+                    <span>
+                      1,976,303 A
+                    </span>
+                  </td>
+                  <td
+                    class="w-24 text-right"
+                  >
+                    <div>
+                      <div
+                        class="sc-AxiKw fHyikq"
+                      />
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div
+          class="absolute bottom-0 left-0 right-0 flex px-8 py-6 bg-white shadow-2xl"
+        >
+          <div
+            class="px-8 mr-8 border-r border-theme-neutral-200"
+          >
+            <div
+              class="text-sm text-theme-neutral-500"
+            >
+              Rank
+            </div>
+            <div
+              class="font-semibold text-theme-neutral-700"
+            >
+              #3
+            </div>
+          </div>
+          <div
+            class="flex flex-1"
+          >
+            <div
+              class="sc-AxiKw bikKyU mr-2"
+            />
+            <div>
+              <div
+                class="text-sm text-theme-neutral-500"
+              >
+                Address Delegate
+              </div>
+              <div
+                class="font-semibold text-theme-neutral-700"
+              >
+                Delegate 3 - AADDDDDDDRREEEEESSSSSSS
+              </div>
+            </div>
+          </div>
+          <button
+            class="sc-AxjAm jTpTok"
+            color="primary"
+            type="button"
+          >
+            Vote
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

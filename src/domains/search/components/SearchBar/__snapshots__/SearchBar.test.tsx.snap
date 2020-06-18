@@ -3,12 +3,17 @@
 exports[`SearchBar should render 1`] = `
 <DocumentFragment>
   <div
-    class="bg-theme-neutral-200 px-16 pt-8 pb-10 undefined"
+    class="bg-theme-neutral-200 px-12 pt-8 pb-10 undefined"
     data-testid="SearchBar"
   >
     <div
-      class="flex px-6 py-4 bg-white rounded shadow-xl"
+      class="flex px-6 py-4 bg-white rounded shadow-lg"
     >
+      <svg
+        class="w-4 text-theme-neutral-300"
+      >
+        search.svg
+      </svg>
       <div
         class="flex-1 mr-4"
       >
@@ -37,11 +42,11 @@ exports[`SearchBar should render 1`] = `
 exports[`SearchBar should render with options 1`] = `
 <DocumentFragment>
   <div
-    class="bg-theme-neutral-200 px-16 pt-8 pb-10 undefined"
+    class="bg-theme-neutral-200 px-12 pt-8 pb-10 undefined"
     data-testid="SearchBar"
   >
     <div
-      class="flex px-6 py-4 bg-white rounded shadow-xl"
+      class="flex px-6 py-4 bg-white rounded shadow-lg"
     >
       <div
         class="flex items-center pl-2 pr-6 my-1 border-r border-theme-neutral-200"
@@ -91,11 +96,11 @@ exports[`SearchBar should render with options 1`] = `
 exports[`SearchBar should render with selected option 1`] = `
 <DocumentFragment>
   <div
-    class="bg-theme-neutral-200 px-16 pt-8 pb-10 undefined"
+    class="bg-theme-neutral-200 px-12 pt-8 pb-10 undefined"
     data-testid="SearchBar"
   >
     <div
-      class="flex px-6 py-4 bg-white rounded shadow-xl"
+      class="flex px-6 py-4 bg-white rounded shadow-lg"
     >
       <div
         class="flex items-center pl-2 pr-6 my-1 border-r border-theme-neutral-200"
