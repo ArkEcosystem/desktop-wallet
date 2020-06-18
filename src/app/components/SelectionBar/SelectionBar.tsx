@@ -10,7 +10,7 @@ export const SelectionBar = ({ children }: GroupProps) => {
 		<div
 			data-testid="SelectionBar"
 			role="radiogroup"
-			className="border-theme-neutral-300 inline-flex items-center flex-shrink-0 overflow-hidden border rounded shadow-sm"
+			className="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300 shadow-sm"
 		>
 			{children}
 		</div>
@@ -44,7 +44,7 @@ export const SelectionBarOption = ({ value, isValueChecked, setCheckedValue, chi
 			role="radio"
 			aria-checked={isChecked}
 			onClick={() => setCheckedValue(value)}
-			className="focus:outline-none border-b-3 relative px-5 py-3 transition-colors duration-300 border-transparent"
+			className="relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
 		>
 			{children}
 		</SelectionBarOptionStyled>

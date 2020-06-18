@@ -7,7 +7,7 @@ exports[`SelectAccount should render 1`] = `
     data-testid="modal__overlay"
   />
   <div
-    class="sc-AxiKw jCpCzv fixed overflow-hidden left-0 right-0 z-10 flex flex-col px-12 pt-6 pb-8 mx-auto mt-24 rounded-xl bg-theme-background"
+    class="sc-AxiKw jCpCzv fixed left-0 right-0 z-10 flex flex-col px-12 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
     data-testid="modal__inner"
   >
     <div
@@ -115,7 +115,7 @@ exports[`SelectAccount should render 1`] = `
                   role="row"
                 >
                   <th
-                    class="text-theme-neutral-400 text-xs text-left select-none"
+                    class="text-xs text-left select-none text-theme-neutral-400"
                     colspan="1"
                     data-testid="table__th--0"
                     role="columnheader"
@@ -131,7 +131,7 @@ exports[`SelectAccount should render 1`] = `
                         Asset Type
                       </div>
                       <div
-                        class="text-theme-color-neutral-500 mt-1"
+                        class="mt-1 text-theme-color-neutral-500"
                         data-testid="table__Sort"
                       >
                         <div
@@ -147,7 +147,7 @@ exports[`SelectAccount should render 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-theme-neutral-400 text-xs text-left select-none"
+                    class="text-xs text-left select-none text-theme-neutral-400"
                     colspan="1"
                     data-testid="table__th--1"
                     role="columnheader"
@@ -163,7 +163,7 @@ exports[`SelectAccount should render 1`] = `
                         Address
                       </div>
                       <div
-                        class="text-theme-color-neutral-500 mt-1"
+                        class="mt-1 text-theme-color-neutral-500"
                         data-testid="table__Sort"
                       >
                         <div
@@ -179,7 +179,7 @@ exports[`SelectAccount should render 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-theme-neutral-400 text-xs text-left select-none"
+                    class="text-xs text-left select-none text-theme-neutral-400"
                     colspan="1"
                     data-testid="table__th--2"
                     role="columnheader"
@@ -195,7 +195,7 @@ exports[`SelectAccount should render 1`] = `
                         Balance
                       </div>
                       <div
-                        class="text-theme-color-neutral-500 mt-1"
+                        class="mt-1 text-theme-color-neutral-500"
                         data-testid="table__Sort"
                       >
                         <div
@@ -211,7 +211,7 @@ exports[`SelectAccount should render 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-theme-neutral-400 text-xs text-left select-none"
+                    class="text-xs text-left select-none text-theme-neutral-400"
                     colspan="1"
                     data-testid="table__th--3"
                     role="columnheader"
@@ -227,7 +227,7 @@ exports[`SelectAccount should render 1`] = `
                         Fiat Value
                       </div>
                       <div
-                        class="text-theme-color-neutral-500 mt-1"
+                        class="mt-1 text-theme-color-neutral-500"
                         data-testid="table__Sort"
                       >
                         <div

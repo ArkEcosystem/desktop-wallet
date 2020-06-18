@@ -9,7 +9,7 @@ exports[`SelectDelegateModal should render a modal 1`] = `
     data-testid="modal__overlay"
   />
   <div
-    class="sc-AxhUy gFLAfu fixed overflow-hidden left-0 right-0 z-10 flex flex-col px-12 pt-6 pb-8 mx-auto mt-24 rounded-xl bg-theme-background"
+    class="sc-AxhUy gFLAfu fixed left-0 right-0 z-10 flex flex-col px-12 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
     data-testid="modal__inner"
   >
     <div
@@ -85,7 +85,7 @@ exports[`SelectDelegateModal should render a modal 1`] = `
           </div>
         </div>
         <div
-          class="mb-14 mt-8"
+          class="mt-8 mb-14"
         >
           <div
             class="sc-AxgMl iBXSpK"
@@ -99,7 +99,7 @@ exports[`SelectDelegateModal should render a modal 1`] = `
                   role="row"
                 >
                   <th
-                    class="text-theme-neutral-400 text-xs text-left select-none"
+                    class="text-xs text-left select-none text-theme-neutral-400"
                     colspan="1"
                     data-testid="table__th--0"
                     role="columnheader"
@@ -113,13 +113,13 @@ exports[`SelectDelegateModal should render a modal 1`] = `
                         Choose
                       </div>
                       <div
-                        class="text-theme-color-neutral-500 mt-1"
+                        class="mt-1 text-theme-color-neutral-500"
                         data-testid="table__Sort"
                       />
                     </div>
                   </th>
                   <th
-                    class="text-theme-neutral-400 text-xs text-left select-none"
+                    class="text-xs text-left select-none text-theme-neutral-400"
                     colspan="1"
                     data-testid="table__th--1"
                     role="columnheader"
@@ -133,13 +133,13 @@ exports[`SelectDelegateModal should render a modal 1`] = `
                          
                       </div>
                       <div
-                        class="text-theme-color-neutral-500 mt-1"
+                        class="mt-1 text-theme-color-neutral-500"
                         data-testid="table__Sort"
                       />
                     </div>
                   </th>
                   <th
-                    class="text-theme-neutral-400 text-xs text-left select-none"
+                    class="text-xs text-left select-none text-theme-neutral-400"
                     colspan="1"
                     data-testid="table__th--2"
                     role="columnheader"
@@ -155,7 +155,7 @@ exports[`SelectDelegateModal should render a modal 1`] = `
                         Delegate Name
                       </div>
                       <div
-                        class="text-theme-color-neutral-500 mt-1"
+                        class="mt-1 text-theme-color-neutral-500"
                         data-testid="table__Sort"
                       >
                         <div
@@ -171,7 +171,7 @@ exports[`SelectDelegateModal should render a modal 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-theme-neutral-400 text-xs text-left select-none"
+                    class="text-xs text-left select-none text-theme-neutral-400"
                     colspan="1"
                     data-testid="table__th--3"
                     role="columnheader"
@@ -187,7 +187,7 @@ exports[`SelectDelegateModal should render a modal 1`] = `
                         Rank
                       </div>
                       <div
-                        class="text-theme-color-neutral-500 mt-1"
+                        class="mt-1 text-theme-color-neutral-500"
                         data-testid="table__Sort"
                       >
                         <div
@@ -203,7 +203,7 @@ exports[`SelectDelegateModal should render a modal 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-theme-neutral-400 text-xs text-left select-none"
+                    class="text-xs text-left select-none text-theme-neutral-400"
                     colspan="1"
                     data-testid="table__th--4"
                     role="columnheader"
@@ -217,13 +217,13 @@ exports[`SelectDelegateModal should render a modal 1`] = `
                         MarketSquare
                       </div>
                       <div
-                        class="text-theme-color-neutral-500 mt-1"
+                        class="mt-1 text-theme-color-neutral-500"
                         data-testid="table__Sort"
                       />
                     </div>
                   </th>
                   <th
-                    class="text-theme-neutral-400 text-xs text-left select-none"
+                    class="text-xs text-left select-none text-theme-neutral-400"
                     colspan="1"
                     data-testid="table__th--5"
                     role="columnheader"
@@ -239,7 +239,7 @@ exports[`SelectDelegateModal should render a modal 1`] = `
                         Forged ARK
                       </div>
                       <div
-                        class="text-theme-color-neutral-500 mt-1"
+                        class="mt-1 text-theme-color-neutral-500"
                         data-testid="table__Sort"
                       >
                         <div
@@ -255,7 +255,7 @@ exports[`SelectDelegateModal should render a modal 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-theme-neutral-400 text-xs text-left select-none"
+                    class="text-xs text-left select-none text-theme-neutral-400"
                     colspan="1"
                     data-testid="table__th--6"
                     role="columnheader"
@@ -271,7 +271,7 @@ exports[`SelectDelegateModal should render a modal 1`] = `
                         Votes
                       </div>
                       <div
-                        class="text-theme-color-neutral-500 mt-1"
+                        class="mt-1 text-theme-color-neutral-500"
                         data-testid="table__Sort"
                       >
                         <div
@@ -287,7 +287,7 @@ exports[`SelectDelegateModal should render a modal 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-theme-neutral-400 text-xs text-left select-none"
+                    class="text-xs text-left select-none text-theme-neutral-400"
                     colspan="1"
                     data-testid="table__th--7"
                     role="columnheader"
@@ -301,7 +301,7 @@ exports[`SelectDelegateModal should render a modal 1`] = `
                         Voting
                       </div>
                       <div
-                        class="text-theme-color-neutral-500 mt-1"
+                        class="mt-1 text-theme-color-neutral-500"
                         data-testid="table__Sort"
                       />
                     </div>
@@ -341,13 +341,13 @@ exports[`SelectDelegateModal should render a modal 1`] = `
                     class="py-6"
                   >
                     <div
-                      class="text-theme-neutral-700 font-semibold"
+                      class="font-semibold text-theme-neutral-700"
                     >
                       #1
                     </div>
                   </td>
                   <td
-                    class="text-theme-primary-500 py-6 text-center"
+                    class="py-6 text-center text-theme-primary-500"
                   >
                     <svg
                       class="inline-block h-5 cursor-pointer"
@@ -356,17 +356,17 @@ exports[`SelectDelegateModal should render a modal 1`] = `
                     </svg>
                   </td>
                   <td
-                    class="text-theme-neutral-700 py-6 font-semibold whitespace-no-wrap"
+                    class="py-6 font-semibold whitespace-no-wrap text-theme-neutral-700"
                   >
                     <div>
                       225,946 A
                     </div>
                   </td>
                   <td
-                    class="text-theme-neutral-700 py-6 font-semibold text-right whitespace-no-wrap"
+                    class="py-6 font-semibold text-right whitespace-no-wrap text-theme-neutral-700"
                   >
                     <span
-                      class="text-theme-neutral-500 mr-1 text-sm"
+                      class="mr-1 text-sm text-theme-neutral-500"
                     >
                       2.43%
                     </span>
@@ -414,13 +414,13 @@ exports[`SelectDelegateModal should render a modal 1`] = `
                     class="py-6"
                   >
                     <div
-                      class="text-theme-neutral-700 font-semibold"
+                      class="font-semibold text-theme-neutral-700"
                     >
                       #2
                     </div>
                   </td>
                   <td
-                    class="text-theme-primary-500 py-6 text-center"
+                    class="py-6 text-center text-theme-primary-500"
                   >
                     <svg
                       class="inline-block h-5 cursor-pointer"
@@ -429,17 +429,17 @@ exports[`SelectDelegateModal should render a modal 1`] = `
                     </svg>
                   </td>
                   <td
-                    class="text-theme-neutral-700 py-6 font-semibold whitespace-no-wrap"
+                    class="py-6 font-semibold whitespace-no-wrap text-theme-neutral-700"
                   >
                     <div>
                       465,437 A
                     </div>
                   </td>
                   <td
-                    class="text-theme-neutral-700 py-6 font-semibold text-right whitespace-no-wrap"
+                    class="py-6 font-semibold text-right whitespace-no-wrap text-theme-neutral-700"
                   >
                     <span
-                      class="text-theme-neutral-500 mr-1 text-sm"
+                      class="mr-1 text-sm text-theme-neutral-500"
                     >
                       1.828%
                     </span>
@@ -487,13 +487,13 @@ exports[`SelectDelegateModal should render a modal 1`] = `
                     class="py-6"
                   >
                     <div
-                      class="text-theme-neutral-700 font-semibold"
+                      class="font-semibold text-theme-neutral-700"
                     >
                       #3
                     </div>
                   </td>
                   <td
-                    class="text-theme-primary-500 py-6 text-center"
+                    class="py-6 text-center text-theme-primary-500"
                   >
                     <svg
                       class="inline-block h-5 cursor-pointer"
@@ -502,17 +502,17 @@ exports[`SelectDelegateModal should render a modal 1`] = `
                     </svg>
                   </td>
                   <td
-                    class="text-theme-neutral-700 py-6 font-semibold whitespace-no-wrap"
+                    class="py-6 font-semibold whitespace-no-wrap text-theme-neutral-700"
                   >
                     <div>
                       693,236 A
                     </div>
                   </td>
                   <td
-                    class="text-theme-neutral-700 py-6 font-semibold text-right whitespace-no-wrap"
+                    class="py-6 font-semibold text-right whitespace-no-wrap text-theme-neutral-700"
                   >
                     <span
-                      class="text-theme-neutral-500 mr-1 text-sm"
+                      class="mr-1 text-sm text-theme-neutral-500"
                     >
                       1.528%
                     </span>
@@ -538,15 +538,15 @@ exports[`SelectDelegateModal should render a modal 1`] = `
           class="absolute bottom-0 left-0 right-0 flex px-8 py-6 bg-white shadow-2xl"
         >
           <div
-            class="border-theme-neutral-200 px-8 mr-8 border-r"
+            class="px-8 mr-8 border-r border-theme-neutral-200"
           >
             <div
-              class="text-theme-neutral-500 text-sm"
+              class="text-sm text-theme-neutral-500"
             >
               Rank
             </div>
             <div
-              class="text-theme-neutral-700 font-semibold"
+              class="font-semibold text-theme-neutral-700"
             >
               #3
             </div>
@@ -559,12 +559,12 @@ exports[`SelectDelegateModal should render a modal 1`] = `
             />
             <div>
               <div
-                class="text-theme-neutral-500 text-sm"
+                class="text-sm text-theme-neutral-500"
               >
                 Address Delegate
               </div>
               <div
-                class="text-theme-neutral-700 font-semibold"
+                class="font-semibold text-theme-neutral-700"
               >
                 Delegate 3 - AADDDDDDDRREEEEESSSSSSS
               </div>

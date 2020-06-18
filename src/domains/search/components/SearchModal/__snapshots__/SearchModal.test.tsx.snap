@@ -9,7 +9,7 @@ exports[`SearchModal should render a modal 1`] = `
     data-testid="modal__overlay"
   />
   <div
-    class="sc-AxiKw cTRlJa fixed overflow-hidden left-0 right-0 z-10 flex flex-col px-12 pt-6 pb-8 mx-auto mt-24 rounded-xl bg-theme-background"
+    class="sc-AxiKw cTRlJa fixed left-0 right-0 z-10 flex flex-col px-12 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
     data-testid="modal__inner"
   >
     <div
@@ -114,7 +114,7 @@ exports[`SearchModal should render a modal 1`] = `
                   role="row"
                 >
                   <th
-                    class="text-theme-neutral-400 text-xs text-left select-none"
+                    class="text-xs text-left select-none text-theme-neutral-400"
                     colspan="1"
                     data-testid="table__th--0"
                     role="columnheader"
@@ -130,7 +130,7 @@ exports[`SearchModal should render a modal 1`] = `
                         Title
                       </div>
                       <div
-                        class="text-theme-color-neutral-500 mt-1"
+                        class="mt-1 text-theme-color-neutral-500"
                         data-testid="table__Sort"
                       >
                         <div
@@ -146,7 +146,7 @@ exports[`SearchModal should render a modal 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-theme-neutral-400 text-xs text-left select-none"
+                    class="text-xs text-left select-none text-theme-neutral-400"
                     colspan="1"
                     data-testid="table__th--1"
                     role="columnheader"
@@ -162,7 +162,7 @@ exports[`SearchModal should render a modal 1`] = `
                         Category
                       </div>
                       <div
-                        class="text-theme-color-neutral-500 mt-1"
+                        class="mt-1 text-theme-color-neutral-500"
                         data-testid="table__Sort"
                       >
                         <div
@@ -274,7 +274,7 @@ exports[`SearchModal should render a modal 2`] = `
     data-testid="modal__overlay"
   />
   <div
-    class="sc-AxiKw cTRlJa fixed overflow-hidden left-0 right-0 z-10 flex flex-col px-12 pt-6 pb-8 mx-auto mt-24 rounded-xl bg-theme-background"
+    class="sc-AxiKw cTRlJa fixed left-0 right-0 z-10 flex flex-col px-12 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
     data-testid="modal__inner"
   >
     <div
@@ -379,7 +379,7 @@ exports[`SearchModal should render a modal 2`] = `
                   role="row"
                 >
                   <th
-                    class="text-theme-neutral-400 text-xs text-left select-none"
+                    class="text-xs text-left select-none text-theme-neutral-400"
                     colspan="1"
                     data-testid="table__th--0"
                     role="columnheader"
@@ -395,7 +395,7 @@ exports[`SearchModal should render a modal 2`] = `
                         Title
                       </div>
                       <div
-                        class="text-theme-color-neutral-500 mt-1"
+                        class="mt-1 text-theme-color-neutral-500"
                         data-testid="table__Sort"
                       >
                         <div
@@ -411,7 +411,7 @@ exports[`SearchModal should render a modal 2`] = `
                     </div>
                   </th>
                   <th
-                    class="text-theme-neutral-400 text-xs text-left select-none"
+                    class="text-xs text-left select-none text-theme-neutral-400"
                     colspan="1"
                     data-testid="table__th--1"
                     role="columnheader"
@@ -427,7 +427,7 @@ exports[`SearchModal should render a modal 2`] = `
                         Category
                       </div>
                       <div
-                        class="text-theme-color-neutral-500 mt-1"
+                        class="mt-1 text-theme-color-neutral-500"
                         data-testid="table__Sort"
                       >
                         <div

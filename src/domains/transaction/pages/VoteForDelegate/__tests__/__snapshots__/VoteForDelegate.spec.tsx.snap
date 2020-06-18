@@ -215,13 +215,13 @@ exports[`Vote For Delegate should render 1`] = `
                           class="ml-2"
                         >
                           <div
-                            class="border-theme-neutral-300 inline-flex items-center flex-shrink-0 overflow-hidden border rounded shadow-sm"
+                            class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300 shadow-sm"
                             data-testid="SelectionBar"
                             role="radiogroup"
                           >
                             <button
                               aria-checked="true"
-                              class="sc-fzplWN hMcnEd focus:outline-none border-b-3 relative px-5 py-3 transition-colors duration-300 border-transparent"
+                              class="sc-fzplWN hMcnEd relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                               data-testid="SelectionBarOption"
                               role="radio"
                             >
@@ -229,7 +229,7 @@ exports[`Vote For Delegate should render 1`] = `
                             </button>
                             <button
                               aria-checked="false"
-                              class="sc-fzplWN hMcnEd focus:outline-none border-b-3 relative px-5 py-3 transition-colors duration-300 border-transparent"
+                              class="sc-fzplWN hMcnEd relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                               data-testid="SelectionBarOption"
                               role="radio"
                             >
@@ -237,7 +237,7 @@ exports[`Vote For Delegate should render 1`] = `
                             </button>
                             <button
                               aria-checked="false"
-                              class="sc-fzplWN hMcnEd focus:outline-none border-b-3 relative px-5 py-3 transition-colors duration-300 border-transparent"
+                              class="sc-fzplWN hMcnEd relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                               data-testid="SelectionBarOption"
                               role="radio"
                             >
@@ -465,13 +465,13 @@ exports[`Vote For Delegate should render 1st step 1`] = `
                 class="ml-2"
               >
                 <div
-                  class="border-theme-neutral-300 inline-flex items-center flex-shrink-0 overflow-hidden border rounded shadow-sm"
+                  class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300 shadow-sm"
                   data-testid="SelectionBar"
                   role="radiogroup"
                 >
                   <button
                     aria-checked="true"
-                    class="sc-fzplWN hMcnEd focus:outline-none border-b-3 relative px-5 py-3 transition-colors duration-300 border-transparent"
+                    class="sc-fzplWN hMcnEd relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                     data-testid="SelectionBarOption"
                     role="radio"
                   >
@@ -479,7 +479,7 @@ exports[`Vote For Delegate should render 1st step 1`] = `
                   </button>
                   <button
                     aria-checked="false"
-                    class="sc-fzplWN hMcnEd focus:outline-none border-b-3 relative px-5 py-3 transition-colors duration-300 border-transparent"
+                    class="sc-fzplWN hMcnEd relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                     data-testid="SelectionBarOption"
                     role="radio"
                   >
@@ -487,7 +487,7 @@ exports[`Vote For Delegate should render 1st step 1`] = `
                   </button>
                   <button
                     aria-checked="false"
-                    class="sc-fzplWN hMcnEd focus:outline-none border-b-3 relative px-5 py-3 transition-colors duration-300 border-transparent"
+                    class="sc-fzplWN hMcnEd relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                     data-testid="SelectionBarOption"
                     role="radio"
                   >
