@@ -4,7 +4,7 @@
 
 -   Names should be always be **Descriptive** & **Succinct**.
 
--   Names should **not** be _Obscure_ or _Abbreviated_. An example would be `NavigationBar` or `NavigationBar` where `NavigationBar` is more clear and has no downsides.
+-   Names should **not** be _Obscure_ or _Abbreviated_. An example would be `NavBar` or `NavigationBar` where `NavigationBar` is more clear and has no downsides.
 
 -   Arguments should always be named in a way that immediately makes their intent clear.
 
