@@ -39,7 +39,7 @@ export const TransferDetail = (props: TransferDetailProps) => {
 			<TransactionDetail
 				label={t("TRANSACTION.AMOUNT")}
 				extra={
-					<Circle className="-mr-2 border-theme-success-200 text-theme-success-700">
+					<Circle className="border-theme-success-200 text-theme-success-700">
 						<Icon name="Received" width={40} height={40} />
 					</Circle>
 				}
