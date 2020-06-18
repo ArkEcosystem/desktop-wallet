@@ -1,0 +1,168 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CreateContact should not render if not open 1`] = `<DocumentFragment />`;
+
+exports[`CreateContact should render a modal 1`] = `
+<DocumentFragment>
+  <div
+    class="fixed inset-0 z-10 bg-black opacity-50"
+    data-testid="modal__overlay"
+  />
+  <div
+    class="sc-fzpans hGJZle fixed left-0 right-0 z-10 flex flex-col px-16 pt-6 pb-8 mx-auto mt-24 rounded-xl bg-theme-background"
+    data-testid="modal__inner"
+  >
+    <div
+      class="absolute top-0 right-0 mt-4 mr-4"
+    >
+      <button
+        class="sc-AxjAm eYrebl"
+        color="neutral"
+        data-testid="modal__close-btn"
+        type="button"
+      >
+        <div
+          class="sc-Axmtr fmuEnd"
+          height="10"
+          width="10"
+        >
+          <svg>
+            cross-slim.svg
+          </svg>
+        </div>
+      </button>
+    </div>
+    <div
+      class="py-4"
+    >
+      <h2>
+        Add Contact
+      </h2>
+      <div
+        class="flex-1"
+      >
+        <div
+          class="text-theme-neutral-700"
+        >
+          Enter your contacts name and addresses and add them to your list.
+        </div>
+        <div
+          class="mt-8"
+        >
+          <form
+            class="space-y-6"
+            data-testid="Form"
+          >
+            <fieldset
+              class="sc-AxirZ izhStr flex flex-col space-y-2"
+            >
+              <label
+                class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
+                data-testid="FormLabel"
+                for="name"
+              >
+                Name
+              </label>
+              <input
+                class="sc-AxiKw jrntKW overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+                data-testid="Input"
+                name="name"
+              />
+            </fieldset>
+            <fieldset
+              class="sc-AxirZ izhStr flex flex-col space-y-2"
+            >
+              <label
+                class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
+                data-testid="FormLabel"
+                for="network"
+              >
+                Network
+              </label>
+              <div
+                class="sc-AxheI IkGcK"
+              >
+                <select
+                  class="sc-AxiKw jrntKW overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
+                  data-testid="Select"
+                  name="network"
+                >
+                  <option
+                    disabled=""
+                    selected=""
+                    value=""
+                  >
+                    Select network...
+                  </option>
+                  <option
+                    value="ark"
+                  >
+                    Ark Ecosystem
+                  </option>
+                  <option
+                    value="btc"
+                  >
+                    Bitcoin
+                  </option>
+                  <option
+                    value="eth"
+                  >
+                    Ethereum
+                  </option>
+                </select>
+                <div
+                  class="sc-AxhCb sc-AxgMl brbBur w-12 text-lg pointer-events-none text-theme-neutral-dark"
+                >
+                  <div
+                    class="sc-Axmtr bgBpcp"
+                    height="1em"
+                    width="1em"
+                  >
+                    <svg>
+                      chevron-down.svg
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+            <fieldset
+              class="sc-AxirZ izhStr flex flex-col space-y-2"
+            >
+              <label
+                class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
+                data-testid="FormLabel"
+                for="address"
+              >
+                Address
+              </label>
+              <input
+                class="sc-AxiKw jrntKW overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+                data-testid="Input"
+                name="address"
+              />
+            </fieldset>
+            <div
+              class="flex mt-8 space-x-2 justify-end"
+            >
+              <button
+                class="sc-AxjAm gSuvFI"
+                color="primary"
+                type="button"
+              >
+                Cancel
+              </button>
+              <button
+                class="sc-AxjAm jTpTok"
+                color="primary"
+                type="submit"
+              >
+                Save
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
