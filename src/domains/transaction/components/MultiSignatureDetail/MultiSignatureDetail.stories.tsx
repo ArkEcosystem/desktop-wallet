@@ -1,7 +1,7 @@
 import { boolean } from "@storybook/addon-knobs";
 import React from "react";
 
-import { MultiSignatureDetail } from "./";
+import { MultiSignatureDetail } from "./MultiSignatureDetail";
 
 export default { title: "Transaction / Components / MultiSignature Detail" };
 

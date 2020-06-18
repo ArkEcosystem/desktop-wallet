@@ -1,7 +1,7 @@
 import { boolean, withKnobs } from "@storybook/addon-knobs";
 import React from "react";
 
-import { DeleteWallet } from "./";
+import { DeleteWallet } from "./DeleteWallet";
 
 export default {
 	title: "Wallets / Components / DeleteWallet",

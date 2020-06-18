@@ -4,7 +4,7 @@ import React from "react";
 import { I18nextProvider } from "react-i18next";
 
 import { translations } from "../../i18n";
-import { SearchBarFilters } from "./";
+import { SearchBarFilters } from "./SearchBarFilters";
 
 describe("SearchBarFilters", () => {
 	it("should render", () => {

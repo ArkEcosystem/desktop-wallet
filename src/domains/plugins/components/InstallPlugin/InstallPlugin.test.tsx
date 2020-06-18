@@ -5,7 +5,7 @@ import React from "react";
 import { I18nextProvider } from "react-i18next";
 
 import { translations as PLUGINS } from "../../i18n";
-import { InstallPlugin } from "./";
+import { InstallPlugin } from "./InstallPlugin";
 
 describe("InstallPlugin", () => {
 	it("should not render if not open", () => {

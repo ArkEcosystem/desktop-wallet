@@ -1,7 +1,7 @@
 import { boolean } from "@storybook/addon-knobs";
 import React from "react";
 
-import { LedgerWallet } from "./";
+import { LedgerWallet } from "./LedgerWallet";
 
 export default { title: "Wallets / Components / Ledger Wallet" };
 

@@ -2,7 +2,7 @@ import { render } from "@testing-library/react";
 import React from "react";
 import { MemoryRouter } from "react-router-dom";
 
-import { SideBar } from "./";
+import { SideBar } from "./SideBar";
 
 describe("SideBar", () => {
 	it("should render empty", () => {

@@ -1,7 +1,7 @@
 import { boolean } from "@storybook/addon-knobs";
 import React from "react";
 
-import { VoteDetail } from "./";
+import { VoteDetail } from "./VoteDetail";
 
 export default { title: "Transaction / Components / Vote Detail" };
 

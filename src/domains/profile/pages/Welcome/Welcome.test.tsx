@@ -10,7 +10,7 @@ import React from "react";
 import { I18nextProvider } from "react-i18next";
 import { HashRouter as Router } from "react-router-dom";
 
-import { Welcome } from "../";
+import { Welcome } from "../Welcome";
 
 describe("Welcome", () => {
 	it("should render", async () => {
