@@ -29,7 +29,7 @@
     <ListDividedItem
       class="TransactionConfirmMultiPayment__recipients"
       :label="`${$t('TRANSACTION.RECIPIENTS')} - ${payments.length}`"
-      item-value-class="items-center"
+      item-value-class="items-center w-full"
     >
       <TransactionRecipientList
         :title="null"
