@@ -1,7 +1,7 @@
 import { act, fireEvent, render } from "@testing-library/react";
 import React from "react";
 
-import { VerifyMessage } from "./";
+import { VerifyMessage } from "./VerifyMessage";
 
 describe("VerifyMessage", () => {
 	it("should render", () => {

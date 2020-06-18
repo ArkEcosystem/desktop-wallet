@@ -4,7 +4,7 @@ import React from "react";
 import { I18nextProvider } from "react-i18next";
 
 import { translations } from "../../i18n";
-import { ContactUs } from "./";
+import { ContactUs } from "./ContactUs";
 
 describe("ContactUs", () => {
 	it("should not render if not open", () => {

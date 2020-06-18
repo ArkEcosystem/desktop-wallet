@@ -1,7 +1,7 @@
 import { fireEvent, render } from "@testing-library/react";
 import React from "react";
 
-import { SignMessage } from "./";
+import { SignMessage } from "./SignMessage";
 
 describe("SignMessage", () => {
 	it("should render the SignMessage", () => {

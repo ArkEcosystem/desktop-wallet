@@ -1,7 +1,7 @@
 import { boolean } from "@storybook/addon-knobs";
 import React, { useEffect, useState } from "react";
 
-import { WalletUpdate } from "./";
+import { WalletUpdate } from "./WalletUpdate";
 
 export default { title: "Wallets / Components / Wallet Update" };
 
