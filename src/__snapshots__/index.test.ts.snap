@@ -5,6 +5,7 @@ exports[`Application root should render without crashing 1`] = `
   "calls": Array [
     Array [
       <HashRouter>
+        <LedgerListener />
         <I18nextProvider
           i18n={
             I18n {
