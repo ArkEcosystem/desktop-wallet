@@ -1,19 +1,16 @@
-// Assets
 import { images } from "app/assets/images";
-// UI Elements
 import { Button } from "app/components/Button";
 import { Divider } from "app/components/Divider";
 import { Icon } from "app/components/Icon";
-import { NavigationBar } from "app/components/NavigationBar";
-// Contexts
 import { EnvironmentContext } from "app/contexts";
 import { ProfileCard } from "domains/profile/components/ProfileCard";
 import React, { useContext, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
-const WelcomeBanner = images.profile.pages.welcome.WelcomeBanner;
+const commonAssets = images.common;
+const { WelcomeBanner } = images.profile.pages.welcome;
 
-const Welcome = () => {
+export const Welcome = () => {
 	const profileCardActions = [
 		{ label: "Setting", value: "setting" },
 		{ label: "Delete", value: "delete" },
@@ -30,7 +27,13 @@ const Welcome = () => {
 
 	return (
 		<div className="w-full h-full">
-			<NavigationBar />
+			<div className="px-4 sm:px-6 lg:px-8">
+				<div className="flex items-center flex-shrink-0 h-20 md:h-24">
+					<div className="flex p-2 rounded-lg bg-logo">
+						<img src={commonAssets.ARKLogo} className="h-6 md:h-8 lg:h-10" alt="ARK Logo" />
+					</div>
+				</div>
+			</div>
 
 			<div className="container px-4 mx-auto text-center sm:px-6 lg:px-0">
 				<h1 className="mb-8 font-bold">{t("COMMON.WELCOME")}</h1>
@@ -82,5 +85,3 @@ const Welcome = () => {
 		</div>
 	);
 };
-
-export { Welcome };
