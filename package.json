@@ -270,7 +270,13 @@
 			"index.ts",
 			"index.tsx"
 		],
-		"coverageReporters": ["json", "lcov", "text", "clover", "html"],
+		"coverageReporters": [
+			"json",
+			"lcov",
+			"text",
+			"clover",
+			"html"
+		],
 		"coverageThreshold": {
 			"global": {
 				"branches": 100,
