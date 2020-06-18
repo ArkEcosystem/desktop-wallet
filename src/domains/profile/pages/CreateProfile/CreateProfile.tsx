@@ -5,7 +5,7 @@ import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form"
 import { Icon } from "app/components/Icon";
 import { Input } from "app/components/Input";
 import { ListDivided } from "app/components/ListDivided";
-import { NavBar } from "app/components/NavBar";
+import { NavigationBar } from "app/components/NavigationBar";
 import { Select } from "app/components/Select";
 import { Toggle } from "app/components/Toggle";
 import React from "react";
@@ -69,7 +69,7 @@ export const CreateProfile = ({ onSubmit }: CreateProfileProps) => {
 
 	return (
 		<div className="w-full h-full">
-			<NavBar />
+			<NavigationBar />
 
 			<div className="container mx-auto">
 				<div className="mx-auto my-8 md:w-3/4 lg:w-3/5 xl:w-1/2">
