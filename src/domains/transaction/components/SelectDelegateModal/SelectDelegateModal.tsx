@@ -191,11 +191,13 @@ export const SelectDelegateModal = (props: SelectDelegateModalProps) => {
 									<Checkbox
 										checked={selected[rowData.username]}
 										onChange={() => toggleSelected(rowData)}
+										data-testid={`SelectedDelegateModal__select-delegate-${rowData.username}`}
 									/>
 								) : (
 									<RadioButton
 										checked={selected[rowData.username]}
 										onChange={() => toggleSelected(rowData)}
+										data-testid={`SelectedDelegateModal__select-delegate-${rowData.username}`}
 									/>
 								)}
 							</td>
@@ -243,7 +245,10 @@ export const SelectDelegateModal = (props: SelectDelegateModalProps) => {
 			</div>
 
 			{Object.keys(selected).length ? (
-				<div className="absolute bottom-0 left-0 right-0 pl-4 pr-12 pt-8 pb-10 bg-white shadow-2xl">
+				<div
+					className="absolute bottom-0 left-0 right-0 pl-4 pr-12 pt-8 pb-10 bg-white shadow-2xl"
+					data-testid="SelectedDelegateModal__footer"
+				>
 					{!props.allowMultiple && Object.keys(selected).length ? (
 						<div className="flex">
 							<div className="px-8 mr-8 border-r border-theme-neutral-300">
@@ -284,6 +289,7 @@ export const SelectDelegateModal = (props: SelectDelegateModalProps) => {
 										<div className="text-sm text-theme-neutral-500">{t("COMMON.DELEGATES")}</div>
 
 										<div
+											data-testid="SelectedDelegateModal__toggle-show-selected"
 											className="text-theme-primary-700 hover:text-theme-primary-500 cursor-pointer"
 											onClick={() => setShowSelectedList(!showSelectedList)}
 										>
