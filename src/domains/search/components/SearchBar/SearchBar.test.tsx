@@ -5,7 +5,7 @@ import React from "react";
 import { I18nextProvider } from "react-i18next";
 
 import { translations } from "../../i18n";
-import { SearchBar } from "./";
+import { SearchBar } from "./SearchBar";
 
 describe("SearchBar", () => {
 	it("should render", () => {

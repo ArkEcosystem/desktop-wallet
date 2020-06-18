@@ -6,7 +6,7 @@ import { I18nextProvider } from "react-i18next";
 import { wallets } from "../../data";
 // i18n
 import { translations } from "../../i18n";
-import { SelectAccount } from "./";
+import { SelectAccount } from "./SelectAccount";
 
 describe("SelectAccount", () => {
 	it("should render", () => {

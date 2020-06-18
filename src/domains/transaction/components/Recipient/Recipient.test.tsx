@@ -1,7 +1,7 @@
 import { render } from "@testing-library/react";
 import React from "react";
 
-import { Recipient } from "./";
+import { Recipient } from "./Recipient";
 
 describe("Recipient", () => {
 	it("should render", () => {

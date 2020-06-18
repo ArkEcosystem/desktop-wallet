@@ -4,7 +4,7 @@ import React from "react";
 import { I18nextProvider } from "react-i18next";
 
 import { translations as WALLETS } from "../../i18n";
-import { LedgerWallet } from "./";
+import { LedgerWallet } from "./LedgerWallet";
 
 describe("LedgerWallet", () => {
 	it("should not render if not open", () => {

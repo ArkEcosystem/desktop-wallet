@@ -1,7 +1,7 @@
 import { render } from "@testing-library/react";
 import React from "react";
 
-import { Label } from "./";
+import { Label } from "./Label";
 
 describe("Label", () => {
 	it("should render", () => {

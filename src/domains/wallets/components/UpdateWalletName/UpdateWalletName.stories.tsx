@@ -1,7 +1,7 @@
 import { boolean, withKnobs } from "@storybook/addon-knobs";
 import React from "react";
 
-import { UpdateWalletName } from "./";
+import { UpdateWalletName } from "./UpdateWalletName";
 
 export default {
 	title: "Wallets / Components / Update Wallet Name",

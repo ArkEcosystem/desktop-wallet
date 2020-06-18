@@ -1,7 +1,7 @@
 import { fireEvent, render } from "@testing-library/react";
 import React from "react";
 
-import { Toggle } from "./";
+import { Toggle } from "./Toggle";
 
 describe("Toggle", () => {
 	it("should render", () => {
