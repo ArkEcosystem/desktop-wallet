@@ -82,11 +82,10 @@ jobs:
             - name: Install (Cypress)
               run: yarn cy:install
 
-            - name: Start App
-              run: yarn start &
-
             - name: Test
-              run: yarn test:e2e
+              run: |
+                  echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+                  yarn test:e2e:ci
 
             - name: Upload Screenshots
               uses: actions/upload-artifact@v1
