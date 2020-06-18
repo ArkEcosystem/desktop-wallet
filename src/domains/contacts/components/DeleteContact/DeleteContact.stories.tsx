@@ -1,16 +1,16 @@
 import { boolean, withKnobs } from "@storybook/addon-knobs";
 import React from "react";
 
-import { DeleteWallet } from "./DeleteWallet";
+import { DeleteContact } from "./DeleteContact";
 
 export default {
-	title: "Wallets / Components / Delete Wallet",
+	title: "Contacts / Components / Delete Contact",
 	decorators: [withKnobs],
 };
 
 export const Default = () => (
-	<DeleteWallet
-		isOpen={boolean("Is Open", true)}
+	<DeleteContact
+		isOpen={boolean("isOpen", true)}
 		onClose={() => alert("closed")}
 		onCancel={() => alert("cancelled")}
 		onDelete={() => alert("deleted")}

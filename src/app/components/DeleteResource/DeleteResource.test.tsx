@@ -3,9 +3,7 @@ import { i18n } from "app/i18n";
 import React from "react";
 import { I18nextProvider } from "react-i18next";
 
-// i18n
-import { translations } from "../../i18n";
-import { DeleteWallet } from "./DeleteWallet";
+import { DeleteResource } from "./DeleteResource";
 
 describe("DeleteWallet", () => {
 	const onDelete = jest.fn();
@@ -13,7 +11,7 @@ describe("DeleteWallet", () => {
 	it("should not render if not open", () => {
 		const { asFragment, getByTestId } = render(
 			<I18nextProvider i18n={i18n}>
-				<DeleteWallet isOpen={false} onDelete={onDelete} />
+				<DeleteResource isOpen={false} onDelete={onDelete} />
 			</I18nextProvider>,
 		);
 
@@ -21,15 +19,16 @@ describe("DeleteWallet", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render a modal", () => {
+	it("should render with children", () => {
 		const { asFragment, getByTestId } = render(
 			<I18nextProvider i18n={i18n}>
-				<DeleteWallet isOpen={true} onDelete={onDelete} />
+				<DeleteResource isOpen={true} onDelete={onDelete}>
+					<span>Hello!</span>
+				</DeleteResource>
 			</I18nextProvider>,
 		);
 
-		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_DELETE_WALLET.TITLE);
-		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_DELETE_WALLET.DESCRIPTION);
+		expect(getByTestId("modal__inner")).toHaveTextContent("Hello!");
 		expect(asFragment()).toMatchSnapshot();
 	});
 });
