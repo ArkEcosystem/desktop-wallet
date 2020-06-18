@@ -7,11 +7,21 @@ export default {
 	title: "Profile / Pages / Welcome",
 };
 
-export const Default = () => (
-	<div className="w-full h-full">
-		<Welcome />
-	</div>
-);
+export const Default = () => {
+	const env = {
+		profiles: () => ({
+			all: async () => new Promise((resolve) => resolve([])),
+		}),
+	};
+
+	return (
+		<div className="w-full h-full">
+			<EnvironmentContext.Provider value={{ env }}>
+				<Welcome />
+			</EnvironmentContext.Provider>
+		</div>
+	);
+};
 
 export const WithProfiles = () => {
 	const env = {

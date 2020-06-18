@@ -23,7 +23,9 @@ const Welcome = () => {
 	const [profiles, setProfiles] = useState([]);
 
 	useEffect(() => {
-		setProfiles(env.profiles().all());
+		env.profiles()
+			.all()
+			.then((profiles: any) => setProfiles(profiles));
 	}, [env]);
 
 	return (
@@ -47,10 +49,10 @@ const Welcome = () => {
 							<div className="mt-6 mb-8">
 								{profiles.map((profile: any) => (
 									<ProfileCard
-										name={profile.name()}
-										avatar={profile.avatar()}
-										balance="0"
-										key={profile.id()}
+										name={profile.name}
+										avatar={profile.avatar}
+										balance={profile.balance}
+										key={profile.id}
 										actions={profileCardActions}
 									/>
 								))}
