@@ -54,7 +54,7 @@ exports[`SearchModal should render a modal 1`] = `
             data-testid="SearchBar"
           >
             <div
-              class="flex px-6 py-4 bg-white rounded shadow-lg"
+              class="flex px-6 py-4 bg-white rounded shadow-xl"
             >
               <div
                 class="flex items-center pl-2 pr-6 my-1 border-r border-theme-neutral-200"
@@ -114,7 +114,7 @@ exports[`SearchModal should render a modal 1`] = `
                   role="row"
                 >
                   <th
-                    class="text-theme-neutral-400 text-left text-xs select-none"
+                    class="text-theme-neutral-400 text-xs text-left select-none"
                     colspan="1"
                     data-testid="table__th--0"
                     role="columnheader"
@@ -130,7 +130,7 @@ exports[`SearchModal should render a modal 1`] = `
                         Title
                       </div>
                       <div
-                        class="mt-1 text-theme-color-neutral-500"
+                        class="text-theme-color-neutral-500 mt-1"
                         data-testid="table__Sort"
                       >
                         <div
@@ -146,7 +146,7 @@ exports[`SearchModal should render a modal 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-theme-neutral-400 text-left text-xs select-none"
+                    class="text-theme-neutral-400 text-xs text-left select-none"
                     colspan="1"
                     data-testid="table__th--1"
                     role="columnheader"
@@ -162,7 +162,7 @@ exports[`SearchModal should render a modal 1`] = `
                         Category
                       </div>
                       <div
-                        class="mt-1 text-theme-color-neutral-500"
+                        class="text-theme-color-neutral-500 mt-1"
                         data-testid="table__Sort"
                       >
                         <div
@@ -319,7 +319,7 @@ exports[`SearchModal should render a modal 2`] = `
             data-testid="SearchBar"
           >
             <div
-              class="flex px-6 py-4 bg-white rounded shadow-lg"
+              class="flex px-6 py-4 bg-white rounded shadow-xl"
             >
               <div
                 class="flex items-center pl-2 pr-6 my-1 border-r border-theme-neutral-200"
@@ -379,7 +379,7 @@ exports[`SearchModal should render a modal 2`] = `
                   role="row"
                 >
                   <th
-                    class="text-theme-neutral-400 text-left text-xs select-none"
+                    class="text-theme-neutral-400 text-xs text-left select-none"
                     colspan="1"
                     data-testid="table__th--0"
                     role="columnheader"
@@ -395,7 +395,7 @@ exports[`SearchModal should render a modal 2`] = `
                         Title
                       </div>
                       <div
-                        class="mt-1 text-theme-color-neutral-500"
+                        class="text-theme-color-neutral-500 mt-1"
                         data-testid="table__Sort"
                       >
                         <div
@@ -411,7 +411,7 @@ exports[`SearchModal should render a modal 2`] = `
                     </div>
                   </th>
                   <th
-                    class="text-theme-neutral-400 text-left text-xs select-none"
+                    class="text-theme-neutral-400 text-xs text-left select-none"
                     colspan="1"
                     data-testid="table__th--1"
                     role="columnheader"
@@ -427,7 +427,7 @@ exports[`SearchModal should render a modal 2`] = `
                         Category
                       </div>
                       <div
-                        class="mt-1 text-theme-color-neutral-500"
+                        class="text-theme-color-neutral-500 mt-1"
                         data-testid="table__Sort"
                       >
                         <div

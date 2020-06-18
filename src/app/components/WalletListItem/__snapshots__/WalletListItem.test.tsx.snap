@@ -111,14 +111,18 @@ exports[`WalletListItem should render a button if variant is 'singleAction' 1`] 
           <div />
         </td>
         <td>
-          <button
-            class="sc-AxjAm jTpTok ml-6"
-            color="primary"
-            data-testid="button"
-            type="button"
+          <div
+            class="text-right"
           >
-            Option 1
-          </button>
+            <button
+              class="sc-AxjAm gSuvFI"
+              color="primary"
+              data-testid="button"
+              type="button"
+            >
+              Option 1
+            </button>
+          </div>
         </td>
       </tr>
     </tbody>

@@ -14,7 +14,7 @@ exports[`Table should render 1`] = `
           role="row"
         >
           <th
-            class="text-theme-neutral-400 text-left text-xs select-none"
+            class="text-theme-neutral-400 text-xs text-left select-none"
             colspan="1"
             data-testid="table__th--0"
             role="columnheader"
@@ -30,7 +30,7 @@ exports[`Table should render 1`] = `
                 Header 1
               </div>
               <div
-                class="mt-1 text-theme-color-neutral-500"
+                class="text-theme-color-neutral-500 mt-1"
                 data-testid="table__Sort"
               >
                 <div
@@ -46,7 +46,7 @@ exports[`Table should render 1`] = `
             </div>
           </th>
           <th
-            class="text-theme-neutral-400 text-left text-xs select-none"
+            class="text-theme-neutral-400 text-xs text-left select-none"
             colspan="1"
             data-testid="table__th--1"
             role="columnheader"
@@ -62,7 +62,7 @@ exports[`Table should render 1`] = `
                 Header 2
               </div>
               <div
-                class="mt-1 text-theme-color-neutral-500"
+                class="text-theme-color-neutral-500 mt-1"
                 data-testid="table__Sort"
               >
                 <div
@@ -110,7 +110,7 @@ exports[`Table should render empty rows if template not provided 1`] = `
           role="row"
         >
           <th
-            class="text-theme-neutral-400 text-left text-xs select-none"
+            class="text-theme-neutral-400 text-xs text-left select-none"
             colspan="1"
             data-testid="table__th--0"
             role="columnheader"
@@ -126,7 +126,7 @@ exports[`Table should render empty rows if template not provided 1`] = `
                 Header 1
               </div>
               <div
-                class="mt-1 text-theme-color-neutral-500"
+                class="text-theme-color-neutral-500 mt-1"
                 data-testid="table__Sort"
               >
                 <div
@@ -142,7 +142,7 @@ exports[`Table should render empty rows if template not provided 1`] = `
             </div>
           </th>
           <th
-            class="text-theme-neutral-400 text-left text-xs select-none"
+            class="text-theme-neutral-400 text-xs text-left select-none"
             colspan="1"
             data-testid="table__th--1"
             role="columnheader"
@@ -158,7 +158,7 @@ exports[`Table should render empty rows if template not provided 1`] = `
                 Header 2
               </div>
               <div
-                class="mt-1 text-theme-color-neutral-500"
+                class="text-theme-color-neutral-500 mt-1"
                 data-testid="table__Sort"
               >
                 <div

@@ -1,7 +1,7 @@
 import { fireEvent, render } from "@testing-library/react";
 import React from "react";
 
-import { Tab, TabList, TabPanel, Tabs } from "./";
+import { Tab, TabList, TabPanel, Tabs } from "./Tabs";
 
 describe("Tabs", () => {
 	it("should render", () => {

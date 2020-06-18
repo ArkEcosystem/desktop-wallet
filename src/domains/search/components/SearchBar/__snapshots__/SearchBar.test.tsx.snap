@@ -7,7 +7,7 @@ exports[`SearchBar should render 1`] = `
     data-testid="SearchBar"
   >
     <div
-      class="flex px-6 py-4 bg-white rounded shadow-lg"
+      class="flex px-6 py-4 bg-white rounded shadow-xl"
     >
       <svg
         class="w-4 text-theme-neutral-300"
@@ -46,7 +46,7 @@ exports[`SearchBar should render with options 1`] = `
     data-testid="SearchBar"
   >
     <div
-      class="flex px-6 py-4 bg-white rounded shadow-lg"
+      class="flex px-6 py-4 bg-white rounded shadow-xl"
     >
       <div
         class="flex items-center pl-2 pr-6 my-1 border-r border-theme-neutral-200"
@@ -100,7 +100,7 @@ exports[`SearchBar should render with selected option 1`] = `
     data-testid="SearchBar"
   >
     <div
-      class="flex px-6 py-4 bg-white rounded shadow-lg"
+      class="flex px-6 py-4 bg-white rounded shadow-xl"
     >
       <div
         class="flex items-center pl-2 pr-6 my-1 border-r border-theme-neutral-200"

@@ -1,7 +1,7 @@
 import { render } from "@testing-library/react";
 import React from "react";
 
-import { CardControl, CardControlState } from "./";
+import { CardControl, CardControlState } from "./CardControl";
 
 describe("Card Control", () => {
 	it("should render", () => {

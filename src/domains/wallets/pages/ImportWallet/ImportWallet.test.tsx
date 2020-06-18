@@ -3,7 +3,7 @@ import { i18n } from "app/i18n";
 import React from "react";
 import { I18nextProvider } from "react-i18next";
 
-import { ImportWallet } from "./";
+import { ImportWallet } from "./ImportWallet";
 
 describe("Wallet / Import", () => {
 	let rendered: RenderResult;

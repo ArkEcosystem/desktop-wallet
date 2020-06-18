@@ -1,8 +1,8 @@
 import React from "react";
 
-import { NavBar } from "./NavBar";
+import { NavigationBar } from "./NavigationBar";
 
-export default { title: "Navigation / NavBar" };
+export default { title: "Navigation / NavigationBar" };
 
 export const Default = () => {
 	const notifications = {
@@ -43,14 +43,14 @@ export const Default = () => {
 
 	return (
 		<div className="-m-5">
-			<NavBar
+			<NavigationBar
 				currencyIcon="Ark"
 				balance="34,253.75"
 				userInitials="IO"
 				onUserAction={(action: any) => alert(action.label)}
 				notifications={notifications}
 				onNotificationAction={(actionName: string, actionData: any) => alert(actionName)}
-			></NavBar>
+			></NavigationBar>
 			<div className="h-64 border-b"></div>
 			<div className="h-64 border-b"></div>
 			<div className="h-64 border-b"></div>

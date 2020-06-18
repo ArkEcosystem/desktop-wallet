@@ -9,7 +9,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import tw, { styled } from "twin.macro";
 
-import { defaultStyle } from "./style";
+import { defaultStyle } from "./NavigationBar.styles";
 
 const commonAssets = images.common;
 
@@ -18,7 +18,7 @@ type MenuItem = {
 	path: string;
 };
 
-type NavbarProps = {
+type NavigationBarProps = {
 	menu?: MenuItem[];
 	userActions?: Action[];
 	userInitials?: string;
@@ -31,7 +31,7 @@ type NavbarProps = {
 
 const NavWrapper = styled.nav`
 	${defaultStyle}
-	${tw`bg-white shadow-md sticky inset-x-0 top-0`}
+	${tw`sticky inset-x-0 top-0 bg-white shadow-md`}
 `;
 
 const NotificationsDropdown = ({
@@ -62,7 +62,7 @@ const NotificationsDropdown = ({
 	);
 };
 
-const UserInfo = ({ onUserAction, currencyIcon, userActions, userInitials }: NavbarProps) => {
+const UserInfo = ({ onUserAction, currencyIcon, userActions, userInitials }: NavigationBarProps) => {
 	return (
 		<Dropdown
 			onSelect={onUserAction}
@@ -91,7 +91,7 @@ const UserInfo = ({ onUserAction, currencyIcon, userActions, userInitials }: Nav
 	);
 };
 
-export const NavBar = ({
+export const NavigationBar = ({
 	menu,
 	userActions,
 	userInitials,
@@ -100,7 +100,7 @@ export const NavBar = ({
 	currencyIcon,
 	notifications,
 	onNotificationAction,
-}: NavbarProps) => (
+}: NavigationBarProps) => (
 	<NavWrapper aria-labelledby="main menu">
 		<div className="px-4 sm:px-6 lg:px-8">
 			<div className="relative flex justify-between h-20 md:h-24">
@@ -158,7 +158,7 @@ export const NavBar = ({
 	</NavWrapper>
 );
 
-NavBar.defaultProps = {
+NavigationBar.defaultProps = {
 	currencyIcon: "Btc",
 	notifications: {
 		transactionsHeader: "Transactions",

@@ -1,11 +1,10 @@
-// UI Elements
+import { images } from "app/assets/images";
 import { Button } from "app/components/Button";
 import { Divider } from "app/components/Divider";
 import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { Input } from "app/components/Input";
 import { ListDivided } from "app/components/ListDivided";
-import { NavBar } from "app/components/NavBar";
 import { Select } from "app/components/Select";
 import { Toggle } from "app/components/Toggle";
 import React from "react";
@@ -14,6 +13,8 @@ import { useForm } from "react-hook-form";
 type CreateProfileProps = {
 	onSubmit?: any;
 };
+
+const commonAssets = images.common;
 
 export const CreateProfile = ({ onSubmit }: CreateProfileProps) => {
 	const form = useForm();
@@ -69,7 +70,13 @@ export const CreateProfile = ({ onSubmit }: CreateProfileProps) => {
 
 	return (
 		<div className="w-full h-full">
-			<NavBar />
+			<div className="px-4 sm:px-6 lg:px-8">
+				<div className="flex items-center flex-shrink-0 h-20 md:h-24">
+					<div className="flex p-2 rounded-lg bg-logo">
+						<img src={commonAssets.ARKLogo} className="h-6 md:h-8 lg:h-10" alt="ARK Logo" />
+					</div>
+				</div>
+			</div>
 
 			<div className="container mx-auto">
 				<div className="mx-auto my-8 md:w-3/4 lg:w-3/5 xl:w-1/2">

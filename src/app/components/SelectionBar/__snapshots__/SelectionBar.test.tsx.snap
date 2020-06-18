@@ -2,32 +2,32 @@
 
 exports[`SelectionBar should render 1`] = `
 <DocumentFragment>
+  <div
+    class="border-theme-neutral-300 inline-flex items-center flex-shrink-0 overflow-hidden border rounded shadow-sm"
+    data-testid="SelectionBar"
+    role="radiogroup"
+  />
+</DocumentFragment>
+`;
+
+exports[`SelectionBarOption should render 1`] = `
+<DocumentFragment>
   <button
     aria-checked="true"
-    class="sc-AxjAm gXajyD relative px-5 py-3 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
-    data-testid="SelectionBar"
+    class="sc-AxjAm dlugZr focus:outline-none border-b-3 relative px-5 py-3 transition-colors duration-300 border-transparent"
+    data-testid="SelectionBarOption"
     role="radio"
   >
     Test 1
   </button>
   <button
     aria-checked="false"
-    class="sc-AxjAm gXajyD relative px-5 py-3 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
-    data-testid="SelectionBar"
+    class="sc-AxjAm dlugZr focus:outline-none border-b-3 relative px-5 py-3 transition-colors duration-300 border-transparent"
+    data-testid="SelectionBarOption"
     role="radio"
   >
     Test 2
   </button>
   ,
-</DocumentFragment>
-`;
-
-exports[`SelectionBarGroup should render 1`] = `
-<DocumentFragment>
-  <div
-    class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300 shadow-sm"
-    data-testid="SelectionBarGroup"
-    role="radiogroup"
-  />
 </DocumentFragment>
 `;

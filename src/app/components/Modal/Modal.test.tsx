@@ -1,7 +1,7 @@
 import { render } from "@testing-library/react";
 import React from "react";
 
-import { Modal } from "./";
+import { Modal } from "./Modal";
 
 describe("Modal", () => {
 	it("should not render if not open", () => {
@@ -68,6 +68,12 @@ describe("Modal", () => {
 
 	it("should render a 3x large one", () => {
 		const { container } = render(<Modal title="ark" size="3xl" isOpen={true} />);
+
+		expect(container).toMatchSnapshot();
+	});
+
+	it("should render a 4x large one", () => {
+		const { container } = render(<Modal title="ark" size="4xl" isOpen={true} />);
 
 		expect(container).toMatchSnapshot();
 	});

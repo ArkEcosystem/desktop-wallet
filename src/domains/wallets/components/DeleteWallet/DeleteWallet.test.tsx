@@ -5,7 +5,7 @@ import { I18nextProvider } from "react-i18next";
 
 // i18n
 import { translations } from "../../i18n";
-import { DeleteWallet } from "./";
+import { DeleteWallet } from "./DeleteWallet";
 
 describe("DeleteWallet", () => {
 	beforeEach(() => {

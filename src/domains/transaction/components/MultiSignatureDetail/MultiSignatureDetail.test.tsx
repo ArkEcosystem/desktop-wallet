@@ -1,5 +1,4 @@
-import { render } from "@testing-library/react";
-import { fireEvent } from "@testing-library/react";
+import { act, fireEvent, render } from "@testing-library/react";
 import { renderHook } from "@testing-library/react-hooks";
 import { i18n } from "app/i18n";
 import React from "react";
@@ -8,7 +7,7 @@ import { I18nextProvider } from "react-i18next";
 
 // i18n
 import { translations } from "../../i18n";
-import { FirstStep, MultiSignatureDetail, SecondStep, ThirdStep } from "./";
+import { FirstStep, MultiSignatureDetail, SecondStep, ThirdStep } from "./MultiSignatureDetail";
 
 describe("MultiSignatureDetail", () => {
 	it("should not render if not open", () => {
@@ -22,8 +21,8 @@ describe("MultiSignatureDetail", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render a modal and get to step 3", () => {
-		const { asFragment, getByTestId } = render(
+	it("should render a modal and get to step 3", async () => {
+		const { asFragment, findByTestId, getByTestId } = render(
 			<I18nextProvider i18n={i18n}>
 				<MultiSignatureDetail isOpen={true} onCancel={() => void 0} />
 			</I18nextProvider>,
@@ -32,20 +31,26 @@ describe("MultiSignatureDetail", () => {
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_MULTISIGNATURE_DETAIL.STEP_1.TITLE);
 		expect(asFragment()).toMatchSnapshot();
 
-		const signButton = getByTestId(`MultiSignatureDetail__sign-button`);
-		const backButton = getByTestId(`MultiSignatureDetail__back-button`);
+		const signButton = getByTestId("MultiSignatureDetail__sign-button");
 
-		fireEvent.click(signButton);
-		expect(getByTestId(`MultiSignatureDetail__second-step`)).toBeTruthy();
+		act(() => {
+			fireEvent.click(signButton);
+		});
+		const secondStepNode = await findByTestId("MultiSignatureDetail__second-step");
+		expect(secondStepNode).toBeTruthy();
 
-		fireEvent.keyUp(getByTestId("import-wallet__passphrase-input"), { key: "A", code: "KeyA" });
-		fireEvent.click(signButton);
-		expect(getByTestId(`MultiSignatureDetail__third-step`)).toBeTruthy();
-		expect(getByTestId(`MultiSignatureDetail__success-banner`)).toBeTruthy();
+		act(() => {
+			fireEvent.keyUp(getByTestId("import-wallet__passphrase-input"), { key: "A", code: "KeyA" });
+			fireEvent.click(signButton);
+		});
+		const thirdStepNode = await findByTestId("MultiSignatureDetail__third-step");
+		const successBannerElem = await findByTestId("MultiSignatureDetail__success-banner");
+		expect(thirdStepNode).toBeTruthy();
+		expect(successBannerElem).toBeTruthy();
 	});
 
-	it("should render a modal and go back", () => {
-		const { asFragment, getByTestId } = render(
+	it("should render a modal and go back", async () => {
+		const { asFragment, findByTestId, getByTestId } = render(
 			<I18nextProvider i18n={i18n}>
 				<MultiSignatureDetail isOpen={true} onCancel={() => void 0} />
 			</I18nextProvider>,
@@ -54,14 +59,20 @@ describe("MultiSignatureDetail", () => {
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_MULTISIGNATURE_DETAIL.STEP_1.TITLE);
 		expect(asFragment()).toMatchSnapshot();
 
-		const signButton = getByTestId(`MultiSignatureDetail__sign-button`);
-		const backButton = getByTestId(`MultiSignatureDetail__back-button`);
+		const signButton = getByTestId("MultiSignatureDetail__sign-button");
+		const backButton = getByTestId("MultiSignatureDetail__back-button");
 
-		fireEvent.click(signButton);
-		expect(getByTestId(`MultiSignatureDetail__second-step`)).toBeTruthy();
+		act(() => {
+			fireEvent.click(signButton);
+		});
+		const secondStepNode = await findByTestId("MultiSignatureDetail__second-step");
+		expect(secondStepNode).toBeTruthy();
 
-		fireEvent.click(backButton);
-		expect(getByTestId(`MultiSignatureDetail__first-step`)).toBeTruthy();
+		act(() => {
+			fireEvent.click(backButton);
+		});
+		const firstStepNode = await findByTestId("MultiSignatureDetail__first-step");
+		expect(firstStepNode).toBeTruthy();
 	});
 
 	it("should render 1st step", () => {
@@ -71,7 +82,7 @@ describe("MultiSignatureDetail", () => {
 			</I18nextProvider>,
 		);
 
-		expect(getByTestId(`MultiSignatureDetail__first-step`)).toBeTruthy();
+		expect(getByTestId("MultiSignatureDetail__first-step")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -87,7 +98,7 @@ describe("MultiSignatureDetail", () => {
 			</I18nextProvider>,
 		);
 
-		expect(getByTestId(`MultiSignatureDetail__second-step`)).toBeTruthy();
+		expect(getByTestId("MultiSignatureDetail__second-step")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -98,7 +109,7 @@ describe("MultiSignatureDetail", () => {
 			</I18nextProvider>,
 		);
 
-		expect(getByTestId(`MultiSignatureDetail__third-step`)).toBeTruthy();
+		expect(getByTestId("MultiSignatureDetail__third-step")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
 });

@@ -1,6 +1,5 @@
 // UI Elements
 import { Circle } from "app/components/Circle";
-import { Icon } from "app/components/Icon";
 import { Label } from "app/components/Label";
 import React from "react";
 

@@ -1,7 +1,6 @@
 import { SvgCollection } from "app/assets/svg";
 import { Button } from "app/components/Button";
 import { Input } from "app/components/Input";
-import { SearchBarOptions } from "domains/search/components/SearchBarOptions";
 import React from "react";
 import { useTranslation } from "react-i18next";
 

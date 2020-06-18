@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Clipboard should render not render without children 1`] = `<DocumentFragment />`;
+
+exports[`Clipboard should render with children 1`] = `
+<DocumentFragment>
+  <div
+    class="inline-block cursor-pointer"
+    data-testid="clipboard__inner"
+  >
+    <span>
+      Hello!
+    </span>
+  </div>
+  <textarea
+    class="Clipboard__TextArea-sc-1atoaua-0 hhPnzN"
+    data-testid="clipboard__textarea"
+    readonly=""
+  />
+</DocumentFragment>
+`;

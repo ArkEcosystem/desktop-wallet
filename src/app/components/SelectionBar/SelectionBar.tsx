@@ -5,26 +5,26 @@ type GroupProps = {
 	children?: React.ReactNode;
 };
 
-export const SelectionBarGroup = ({ children }: GroupProps) => {
+export const SelectionBar = ({ children }: GroupProps) => {
 	return (
 		<div
-			data-testid="SelectionBarGroup"
+			data-testid="SelectionBar"
 			role="radiogroup"
-			className="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300 shadow-sm"
+			className="border-theme-neutral-300 inline-flex items-center flex-shrink-0 overflow-hidden border rounded shadow-sm"
 		>
 			{children}
 		</div>
 	);
 };
 
-const SelectionBarStyled = styled.button`
+const SelectionBarOptionStyled = styled.button`
 	&[aria-checked="true"] {
 		${tw`text-theme-success border-theme-success bg-theme-success-contrast font-semibold`}
 	}
 	& + &:after {
 		content: "";
 		width: 1px;
-		${tw`h-6 bg-theme-neutral-300 absolute left-0 top-1/2 transform -translate-y-1/2 block`};
+		${tw`bg-theme-neutral-300 top-1/2 absolute left-0 block h-6 transform -translate-y-1/2`};
 	}
 `;
 
@@ -35,18 +35,18 @@ type ButtonProps = {
 	setCheckedValue: (value: string | number) => void;
 };
 
-export const SelectionBar = ({ value, isValueChecked, setCheckedValue, children }: ButtonProps) => {
+export const SelectionBarOption = ({ value, isValueChecked, setCheckedValue, children }: ButtonProps) => {
 	const isChecked = isValueChecked(value);
 
 	return (
-		<SelectionBarStyled
-			data-testid="SelectionBar"
+		<SelectionBarOptionStyled
+			data-testid="SelectionBarOption"
 			role="radio"
 			aria-checked={isChecked}
 			onClick={() => setCheckedValue(value)}
-			className="relative px-5 py-3 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+			className="focus:outline-none border-b-3 relative px-5 py-3 transition-colors duration-300 border-transparent"
 		>
 			{children}
-		</SelectionBarStyled>
+		</SelectionBarOptionStyled>
 	);
 };

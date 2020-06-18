@@ -1,4 +1,5 @@
-import { text, withKnobs } from "@storybook/addon-knobs";
+import { withKnobs } from "@storybook/addon-knobs";
+import { SearchBarFilters } from "domains/search/components/SearchBarFilters";
 import { SearchBarOptions } from "domains/search/components/SearchBarOptions";
 import React from "react";
 
@@ -29,6 +30,29 @@ export const WithOptions = () => {
 					options={options}
 					selectedOption={selectedOption}
 					onSelect={(option: any) => void 0}
+				/>
+			</SearchBar>
+		</div>
+	);
+};
+
+export const WithFilters = () => {
+	const networks = [
+		{ name: "Ark", isSelected: true },
+		{ name: "Eth", isSelected: true },
+		{ name: "Btc", isSelected: false },
+	];
+
+	return (
+		<div className="w-full h-full">
+			<SearchBar>
+				<SearchBarFilters
+					networks={networks}
+					onNetworkChange={(changedNetwork: any, newNetworksList: any) => {
+						console.log("changed network", changedNetwork);
+						console.log("changed network new list", newNetworksList);
+					}}
+					onViewAllNetworks={() => alert("View all networks")}
 				/>
 			</SearchBar>
 		</div>

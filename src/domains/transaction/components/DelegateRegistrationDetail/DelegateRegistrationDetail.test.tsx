@@ -5,7 +5,7 @@ import { I18nextProvider } from "react-i18next";
 
 // i18n
 import { translations } from "../../i18n";
-import { DelegateRegistrationDetail } from "./";
+import { DelegateRegistrationDetail } from "./DelegateRegistrationDetail";
 
 describe("DelegateRegistrationDetail", () => {
 	it("should not render if not open", () => {
