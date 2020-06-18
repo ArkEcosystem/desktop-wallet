@@ -6,7 +6,7 @@ import { Modal } from "app/components/Modal";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-type Props = {
+type ReceiveFundsProps = {
 	isOpen: boolean;
 	wallet: any;
 	qrCode: string;
@@ -42,7 +42,7 @@ const Wrapper = ({ label, value, className, children, copyButton }: WrapperProps
 	);
 };
 
-export const ReceiveFunds = ({ isOpen, wallet, qrCode, onCopy, handleClose }: Props) => {
+export const ReceiveFunds = ({ isOpen, wallet, qrCode, onCopy, handleClose }: ReceiveFundsProps) => {
 	const { t } = useTranslation();
 
 	return (

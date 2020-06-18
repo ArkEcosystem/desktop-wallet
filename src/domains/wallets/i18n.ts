@@ -11,6 +11,16 @@ export const translations: { [key: string]: any } = {
 			"Do you really want to remove your wallet? Before deleting, make sure that you have the passphrase for this wallet.",
 	},
 
+	MODAL_RECEIVE_FUNDS: {
+		TITLE: "Receive Funds",
+	},
+
+	MODAL_LEDGER_WALLET: {
+		TITLE: "Ledger Wallet",
+		DESCRIPTION: "Connect your Ledger to PC and confirm the input.",
+		WAITING_FOR_LEDGER: "Waiting for Ledger...",
+	},
+
 	MODAL_WALLET_UPDATE: {
 		TITLE: "Wallet Update {{version}}",
 		DESCRIPTION_1:
@@ -18,7 +28,8 @@ export const translations: { [key: string]: any } = {
 		DESCRIPTION_2: "Update downloaded and ready to install",
 	},
 
-	MODAL_RECEIVE_FUNDS: {
-		TITLE: "Receive Funds",
+	MODAL_SELECT_ACCOUNT: {
+		TITLE: "Select Account",
+		DESCRIPTION: "Find and select the account you want to receive funds to",
 	},
 };
