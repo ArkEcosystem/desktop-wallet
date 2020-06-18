@@ -1,55 +1,76 @@
-/* eslint-disable @typescript-eslint/unbound-method */
+import nock from "nock";
 
 import { HttpClient } from "./HttpClient";
 
-jest.mock("axios", () => ({
-	create: () => ({
-		get: () => jest.fn(),
-		post: () => jest.fn(),
-	}),
-}));
+const responseGet = {
+	args: {},
+	origin: "87.95.132.111,10.100.91.201",
+	url: "http://httpbin.org/get",
+};
+
+const responsePost = {
+	args: {},
+	data: '{"key":"value"}',
+	files: {},
+	form: {},
+	json: {
+		key: "value",
+	},
+	origin: "87.95.132.111,10.100.91.201",
+	url: "http://httpbin.org/post",
+};
+
+const responsePostWithHeaders = {
+	args: {},
+	data: '{"key":"value"}',
+	files: {},
+	form: {},
+	headers: { Authorization: "Bearer TOKEN" },
+	json: {
+		key: "value",
+	},
+	origin: "87.95.132.111,10.100.91.201",
+	url: "http://httpbin.org/post",
+};
 
 let subject: HttpClient;
 
-beforeEach(() => (subject = new HttpClient()));
+beforeAll(() => {
+	nock.disableNetConnect();
+
+	subject = new HttpClient();
+});
 
 describe("HttpClient", () => {
-	beforeEach(() => {
-		jest.spyOn(subject, "get");
-		jest.spyOn(subject, "post");
+	it("should get with params", async () => {
+		nock("http://httpbin.org/").get("/get").reply(200, responseGet);
+
+		await expect(subject.get("http://httpbin.org/get")).resolves.toEqual(responseGet);
 	});
 
 	it("should get without params", async () => {
-		await subject.get("/hello-world");
+		nock("http://httpbin.org/").get("/get").reply(200, responseGet);
 
-		expect(subject.get).toHaveBeenCalledWith("/hello-world");
+		await expect(subject.get("http://httpbin.org/get")).resolves.toEqual(responseGet);
 	});
 
-	it("should get with params", async () => {
-		await subject.get("/hello-world", { q: "my-param" });
+	it("should post with body", async () => {
+		nock("http://httpbin.org/").post("/post").reply(200, responsePost);
 
-		expect(subject.get).toHaveBeenCalledWith("/hello-world", { q: "my-param" });
+		await expect(subject.post("http://httpbin.org/post", { key: "value" })).resolves.toEqual(responsePost);
 	});
 
-	it("should post without params", async () => {
-		await subject.post("/hello-world", { key: "value" });
+	it("should post without body", async () => {
+		nock("http://httpbin.org/").post("/post").reply(200, responsePost);
 
-		expect(subject.post).toHaveBeenCalledWith("/hello-world", { key: "value" });
+		await expect(subject.post("http://httpbin.org/post", { key: "value" })).resolves.toEqual(responsePost);
 	});
 
-	it("should post without headers", async () => {
-		await subject.post("/hello-world", { name: "my-param" });
+	it("should post with headers", async () => {
+		nock("http://httpbin.org/").post("/post").reply(200, responsePostWithHeaders);
 
-		expect(subject.post).toHaveBeenCalledWith("/hello-world", { name: "my-param" });
-	});
-
-	it("should post without headers", async () => {
-		await subject.post("/hello-world", { name: "my-param" }, { authorization: "Bearer bear" });
-
-		expect(subject.post).toHaveBeenCalledWith(
-			"/hello-world",
-			{ name: "my-param" },
-			{ authorization: "Bearer bear" },
-		);
+		await expect(
+			subject.post("http://httpbin.org/post", { key: "value" }, { Authorization: "Bearer TOKEN" }),
+		).resolves.toEqual(responsePostWithHeaders);
 	});
 });
