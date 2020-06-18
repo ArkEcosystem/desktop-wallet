@@ -4,7 +4,7 @@ import { images } from "app/assets/images";
 import { Button } from "app/components/Button";
 import { Divider } from "app/components/Divider";
 import { Icon } from "app/components/Icon";
-import { NavBar } from "app/components/NavBar";
+import { NavigationBar } from "app/components/NavigationBar";
 // Contexts
 import { EnvironmentContext } from "app/contexts";
 import { ProfileCard } from "domains/profile/components/ProfileCard";
@@ -28,7 +28,7 @@ const Welcome = () => {
 
 	return (
 		<div className="w-full h-full">
-			<NavBar />
+			<NavigationBar />
 
 			<div className="container px-4 mx-auto text-center sm:px-6 lg:px-0">
 				<h1 className="mb-8 font-bold">{t("COMMON.WELCOME")}</h1>
