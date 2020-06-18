@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchBarFilters should render 1`] = `
+<DocumentFragment>
+  <div
+    class="relative flex items-center pl-2 pr-6 my-1 border-r border-theme-neutral-200 text-theme-primary-400"
+    data-testid="SearchBarFilters"
+  >
+    <div
+      class="relative"
+      data-testid="dropdown__toggle"
+    >
+      <button
+        class="float-right outline-none focus:outline-none"
+      >
+        <div
+          class="sc-AxjAm buCJuk"
+          height="20"
+          width="20"
+        >
+          <svg>
+            filters.svg
+          </svg>
+        </div>
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;
