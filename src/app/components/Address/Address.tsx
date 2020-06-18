@@ -4,13 +4,14 @@ import { truncateStringMiddle } from "./utils";
 
 type Props = {
 	walletName?: string;
+	addressClass?: string;
 	address?: string | undefined;
 	maxChars?: number;
 	className?: string;
 	size?: "small" | "default" | "large";
 };
 
-export const Address = ({ address, walletName, maxChars, size }: Props) => {
+export const Address = ({ address, addressClass, walletName, maxChars, size }: Props) => {
 	if (!address) return null;
 
 	const fontSizes: any = {
@@ -33,7 +34,7 @@ export const Address = ({ address, walletName, maxChars, size }: Props) => {
 			)}
 			<span
 				data-testid="address__wallet-address"
-				className={`text-theme-neutral-400 font-semibold ${size && fontSizes[size]}`}
+				className={`${addressClass || "text-theme-neutral-400"} font-semibold ${size && fontSizes[size]}`}
 			>
 				{truncateStringMiddle(address, maxChars)}
 			</span>

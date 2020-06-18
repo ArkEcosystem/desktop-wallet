@@ -44,6 +44,7 @@ import { ReactComponent as Slack } from "./slack.svg";
 import { ReactComponent as Sort } from "./sort.svg";
 import { ReactComponent as Star } from "./star.svg";
 import { ReactComponent as StatusClock } from "./status-clock.svg";
+import { ReactComponent as TransactionSuccessful } from "./transaction_successful.svg";
 import { ReactComponent as Trash } from "./trash.svg";
 import { ReactComponent as Twitter } from "./twitter.svg";
 import { ReactComponent as Upload } from "./upload.svg";
@@ -95,6 +96,7 @@ export const SvgCollection: any = {
 	Star,
 	StatusClock,
 	Trash,
+	TransactionSuccessful,
 	Twitter,
 	Upload,
 	Voted,

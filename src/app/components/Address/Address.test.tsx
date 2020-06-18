@@ -36,6 +36,18 @@ describe("Formatted Address", () => {
 		const { getByTestId } = render(<Address address={sampleAddress} walletName="Sample Wallet" size="large" />);
 		expect(getByTestId("address__wallet-name")).toHaveClass("text-xl");
 	});
+
+	it("should render with custom class for address", () => {
+		const { getByTestId } = render(
+			<Address
+				addressClass="text-theme-primary"
+				address={sampleAddress}
+				walletName="Sample Wallet"
+				size="large"
+			/>,
+		);
+		expect(getByTestId("address__wallet-address")).toHaveClass("text-theme-primary");
+	});
 });
 
 describe("Truncate string utility", () => {
