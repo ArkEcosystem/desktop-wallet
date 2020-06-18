@@ -2,37 +2,6 @@ import nock from "nock";
 
 import { HttpClient } from "./HttpClient";
 
-const responseGet = {
-	args: {},
-	origin: "87.95.132.111,10.100.91.201",
-	url: "http://httpbin.org/get",
-};
-
-const responsePost = {
-	args: {},
-	data: '{"key":"value"}',
-	files: {},
-	form: {},
-	json: {
-		key: "value",
-	},
-	origin: "87.95.132.111,10.100.91.201",
-	url: "http://httpbin.org/post",
-};
-
-const responsePostWithHeaders = {
-	args: {},
-	data: '{"key":"value"}',
-	files: {},
-	form: {},
-	headers: { Authorization: "Bearer TOKEN" },
-	json: {
-		key: "value",
-	},
-	origin: "87.95.132.111,10.100.91.201",
-	url: "http://httpbin.org/post",
-};
-
 let subject: HttpClient;
 
 beforeAll(() => {
@@ -43,34 +12,65 @@ beforeAll(() => {
 
 describe("HttpClient", () => {
 	it("should get with params", async () => {
-		nock("http://httpbin.org/").get("/get").reply(200, responseGet);
+		const responseBody = {
+			args: { key: "value" },
+			origin: "87.95.132.111,10.100.91.201",
+			url: "http://httpbin.org/get",
+		};
 
-		await expect(subject.get("http://httpbin.org/get")).resolves.toEqual(responseGet);
+		nock("http://httpbin.org/").get("/get").query(true).reply(200, responseBody);
+
+		await expect(subject.get("http://httpbin.org/get", { key: "value" })).resolves.toEqual(responseBody);
 	});
 
 	it("should get without params", async () => {
-		nock("http://httpbin.org/").get("/get").reply(200, responseGet);
+		const responseBody = {
+			args: {},
+			origin: "87.95.132.111,10.100.91.201",
+			url: "http://httpbin.org/get",
+		};
 
-		await expect(subject.get("http://httpbin.org/get")).resolves.toEqual(responseGet);
+		nock("http://httpbin.org/").get("/get").reply(200, responseBody);
+
+		await expect(subject.get("http://httpbin.org/get")).resolves.toEqual(responseBody);
 	});
 
 	it("should post with body", async () => {
-		nock("http://httpbin.org/").post("/post").reply(200, responsePost);
+		const responseBody = {
+			args: {},
+			data: '{"key":"value"}',
+			files: {},
+			form: {},
+			json: {
+				key: "value",
+			},
+			origin: "87.95.132.111,10.100.91.201",
+			url: "http://httpbin.org/post",
+		};
 
-		await expect(subject.post("http://httpbin.org/post", { key: "value" })).resolves.toEqual(responsePost);
-	});
+		nock("http://httpbin.org/").post("/post").reply(200, responseBody);
 
-	it("should post without body", async () => {
-		nock("http://httpbin.org/").post("/post").reply(200, responsePost);
-
-		await expect(subject.post("http://httpbin.org/post", { key: "value" })).resolves.toEqual(responsePost);
+		await expect(subject.post("http://httpbin.org/post", { key: "value" })).resolves.toEqual(responseBody);
 	});
 
 	it("should post with headers", async () => {
-		nock("http://httpbin.org/").post("/post").reply(200, responsePostWithHeaders);
+		const responseBody = {
+			args: {},
+			data: '{"key":"value"}',
+			files: {},
+			form: {},
+			headers: { Authorization: "Bearer TOKEN" },
+			json: {
+				key: "value",
+			},
+			origin: "87.95.132.111,10.100.91.201",
+			url: "http://httpbin.org/post",
+		};
+
+		nock("http://httpbin.org/").post("/post").reply(200, responseBody);
 
 		await expect(
 			subject.post("http://httpbin.org/post", { key: "value" }, { Authorization: "Bearer TOKEN" }),
-		).resolves.toEqual(responsePostWithHeaders);
+		).resolves.toEqual(responseBody);
 	});
 });
