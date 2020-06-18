@@ -27,4 +27,9 @@ export const translations: { [key: string]: any } = {
 			"We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.",
 		DESCRIPTION_2: "Update downloaded and ready to install",
 	},
+
+	MODAL_SELECT_ACCOUNT: {
+		TITLE: "Select Account",
+		DESCRIPTION: "Find and select the account you want to receive funds to",
+	},
 };

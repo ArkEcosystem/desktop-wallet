@@ -71,4 +71,10 @@ describe("Modal", () => {
 
 		expect(container).toMatchSnapshot();
 	});
+
+	it("should render a 4x large one", () => {
+		const { container } = render(<Modal title="ark" size="4xl" isOpen={true} />);
+
+		expect(container).toMatchSnapshot();
+	});
 });
