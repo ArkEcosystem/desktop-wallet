@@ -3,13 +3,13 @@ import React from "react";
 import { act } from "react-dom/test-utils";
 import { BrowserRouter as Router } from "react-router-dom";
 
-import { NavBar } from "./";
+import { NavigationBar } from "./NavigationBar";
 
-describe("NavBar", () => {
+describe("NavigationBar", () => {
 	it("should render", () => {
 		const { container, asFragment } = render(
 			<Router>
-				<NavBar />
+				<NavigationBar />
 			</Router>,
 		);
 
@@ -30,7 +30,7 @@ describe("NavBar", () => {
 		];
 		const { container, asFragment } = render(
 			<Router>
-				<NavBar menu={menu} />
+				<NavigationBar menu={menu} />
 			</Router>,
 		);
 
@@ -45,7 +45,7 @@ describe("NavBar", () => {
 		];
 		const { getByTestId, getByText } = render(
 			<Router>
-				<NavBar userActions={options} />
+				<NavigationBar userActions={options} />
 			</Router>,
 		);
 		const toggle = getByTestId("navbar__useractions");
