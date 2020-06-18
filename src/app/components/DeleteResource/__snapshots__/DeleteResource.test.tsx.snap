@@ -2,7 +2,7 @@
 
 exports[`DeleteWallet should not render if not open 1`] = `<DocumentFragment />`;
 
-exports[`DeleteWallet should render a modal 1`] = `
+exports[`DeleteWallet should render with children 1`] = `
 <DocumentFragment>
   <div
     class="fixed inset-0 z-10 bg-black opacity-50"
@@ -35,9 +35,7 @@ exports[`DeleteWallet should render a modal 1`] = `
     <div
       class="py-4"
     >
-      <h2>
-        Delete Wallet
-      </h2>
+      <h2 />
       <div
         class="flex-1"
       >
@@ -47,9 +45,11 @@ exports[`DeleteWallet should render a modal 1`] = `
           delete-banner.svg
         </svg>
         <div
-          class="text-theme-neutral-700"
+          class="mt-4"
         >
-          Do you really want to remove your wallet? Before deleting, make sure that you have the passphrase for this wallet.
+          <span>
+            Hello!
+          </span>
         </div>
         <div
           class="flex justify-end mt-8 space-x-2"

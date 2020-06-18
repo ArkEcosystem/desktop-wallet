@@ -6,7 +6,7 @@ module.exports = {
 		project: "./tsconfig.json",
 		parser: "@typescript-eslint/parser",
 		sourceType: "module",
-		projectFolderIgnoreList: ["node_modules", "public"],
+		projectFolderIgnoreList: ["build", "coverage", "node_modules", "public"],
 	},
 	env: {
 		browser: true,
