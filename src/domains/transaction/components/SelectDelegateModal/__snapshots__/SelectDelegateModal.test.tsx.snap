@@ -362,7 +362,7 @@ exports[`SelectDelegateModal should allow multiple selection 1`] = `
                     </div>
                   </td>
                   <td
-                    class="py-6 font-semibold text-right whitespace-no-wrap text-theme-neutral-700 pr-8"
+                    class="py-6 pr-8 font-semibold text-right whitespace-no-wrap text-theme-neutral-700"
                   >
                     <span
                       class="mr-1 text-sm text-theme-neutral-500"
@@ -424,7 +424,7 @@ exports[`SelectDelegateModal should allow multiple selection 1`] = `
                     </div>
                   </td>
                   <td
-                    class="py-6 font-semibold text-right whitespace-no-wrap text-theme-neutral-700 pr-8"
+                    class="py-6 pr-8 font-semibold text-right whitespace-no-wrap text-theme-neutral-700"
                   >
                     <span
                       class="mr-1 text-sm text-theme-neutral-500"
@@ -496,7 +496,7 @@ exports[`SelectDelegateModal should allow multiple selection 1`] = `
                     </div>
                   </td>
                   <td
-                    class="py-6 font-semibold text-right whitespace-no-wrap text-theme-neutral-700 pr-8"
+                    class="py-6 pr-8 font-semibold text-right whitespace-no-wrap text-theme-neutral-700"
                   >
                     <span
                       class="mr-1 text-sm text-theme-neutral-500"
@@ -558,7 +558,7 @@ exports[`SelectDelegateModal should allow multiple selection 1`] = `
                     </div>
                   </td>
                   <td
-                    class="py-6 font-semibold text-right whitespace-no-wrap text-theme-neutral-700 pr-8"
+                    class="py-6 pr-8 font-semibold text-right whitespace-no-wrap text-theme-neutral-700"
                   >
                     <span
                       class="mr-1 text-sm text-theme-neutral-500"
@@ -582,7 +582,7 @@ exports[`SelectDelegateModal should allow multiple selection 1`] = `
           </div>
         </div>
         <div
-          class="absolute bottom-0 left-0 right-0 pl-4 pr-12 pt-8 pb-10 bg-white shadow-2xl"
+          class="absolute bottom-0 left-0 right-0 pt-8 pb-10 pl-4 pr-12 bg-white shadow-2xl"
           data-testid="SelectedDelegateModal__footer"
         >
           <div
@@ -617,7 +617,7 @@ exports[`SelectDelegateModal should allow multiple selection 1`] = `
                     Delegates
                   </div>
                   <div
-                    class="text-theme-primary-700 hover:text-theme-primary-500 cursor-pointer"
+                    class="cursor-pointer text-theme-primary-700 hover:text-theme-primary-500"
                     data-testid="SelectedDelegateModal__toggle-show-selected"
                   >
                     Hide List
@@ -635,7 +635,7 @@ exports[`SelectDelegateModal should allow multiple selection 1`] = `
                 class="mt-2"
               >
                 <div
-                  class="flex items-center font-semibold border-b border-dashed border-theme-neutral-200 last:border-0 py-4"
+                  class="flex items-center py-4 font-semibold border-b border-dashed border-theme-neutral-200 last:border-0"
                 >
                   <div
                     class="flex flex-1"
@@ -657,7 +657,7 @@ exports[`SelectDelegateModal should allow multiple selection 1`] = `
                   #2
                 </div>
                 <div
-                  class="flex items-center font-semibold border-b border-dashed border-theme-neutral-200 last:border-0 py-4"
+                  class="flex items-center py-4 font-semibold border-b border-dashed border-theme-neutral-200 last:border-0"
                 >
                   <div
                     class="flex flex-1"
@@ -1052,7 +1052,7 @@ exports[`SelectDelegateModal should only allow one selection 1`] = `
                     </div>
                   </td>
                   <td
-                    class="py-6 font-semibold text-right whitespace-no-wrap text-theme-neutral-700 pr-8"
+                    class="py-6 pr-8 font-semibold text-right whitespace-no-wrap text-theme-neutral-700"
                   >
                     <span
                       class="mr-1 text-sm text-theme-neutral-500"
@@ -1114,7 +1114,7 @@ exports[`SelectDelegateModal should only allow one selection 1`] = `
                     </div>
                   </td>
                   <td
-                    class="py-6 font-semibold text-right whitespace-no-wrap text-theme-neutral-700 pr-8"
+                    class="py-6 pr-8 font-semibold text-right whitespace-no-wrap text-theme-neutral-700"
                   >
                     <span
                       class="mr-1 text-sm text-theme-neutral-500"
@@ -1186,7 +1186,7 @@ exports[`SelectDelegateModal should only allow one selection 1`] = `
                     </div>
                   </td>
                   <td
-                    class="py-6 font-semibold text-right whitespace-no-wrap text-theme-neutral-700 pr-8"
+                    class="py-6 pr-8 font-semibold text-right whitespace-no-wrap text-theme-neutral-700"
                   >
                     <span
                       class="mr-1 text-sm text-theme-neutral-500"
@@ -1248,7 +1248,7 @@ exports[`SelectDelegateModal should only allow one selection 1`] = `
                     </div>
                   </td>
                   <td
-                    class="py-6 font-semibold text-right whitespace-no-wrap text-theme-neutral-700 pr-8"
+                    class="py-6 pr-8 font-semibold text-right whitespace-no-wrap text-theme-neutral-700"
                   >
                     <span
                       class="mr-1 text-sm text-theme-neutral-500"
@@ -1272,7 +1272,7 @@ exports[`SelectDelegateModal should only allow one selection 1`] = `
           </div>
         </div>
         <div
-          class="absolute bottom-0 left-0 right-0 pl-4 pr-12 pt-8 pb-10 bg-white shadow-2xl"
+          class="absolute bottom-0 left-0 right-0 pt-8 pb-10 pl-4 pr-12 bg-white shadow-2xl"
           data-testid="SelectedDelegateModal__footer"
         >
           <div
@@ -1688,7 +1688,7 @@ exports[`SelectDelegateModal should render a modal 1`] = `
                     </div>
                   </td>
                   <td
-                    class="py-6 font-semibold text-right whitespace-no-wrap text-theme-neutral-700 pr-8"
+                    class="py-6 pr-8 font-semibold text-right whitespace-no-wrap text-theme-neutral-700"
                   >
                     <span
                       class="mr-1 text-sm text-theme-neutral-500"
@@ -1750,7 +1750,7 @@ exports[`SelectDelegateModal should render a modal 1`] = `
                     </div>
                   </td>
                   <td
-                    class="py-6 font-semibold text-right whitespace-no-wrap text-theme-neutral-700 pr-8"
+                    class="py-6 pr-8 font-semibold text-right whitespace-no-wrap text-theme-neutral-700"
                   >
                     <span
                       class="mr-1 text-sm text-theme-neutral-500"
@@ -1822,7 +1822,7 @@ exports[`SelectDelegateModal should render a modal 1`] = `
                     </div>
                   </td>
                   <td
-                    class="py-6 font-semibold text-right whitespace-no-wrap text-theme-neutral-700 pr-8"
+                    class="py-6 pr-8 font-semibold text-right whitespace-no-wrap text-theme-neutral-700"
                   >
                     <span
                       class="mr-1 text-sm text-theme-neutral-500"
@@ -1884,7 +1884,7 @@ exports[`SelectDelegateModal should render a modal 1`] = `
                     </div>
                   </td>
                   <td
-                    class="py-6 font-semibold text-right whitespace-no-wrap text-theme-neutral-700 pr-8"
+                    class="py-6 pr-8 font-semibold text-right whitespace-no-wrap text-theme-neutral-700"
                   >
                     <span
                       class="mr-1 text-sm text-theme-neutral-500"
