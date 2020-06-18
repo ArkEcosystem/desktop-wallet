@@ -1,4 +1,4 @@
-import { text, withKnobs } from "@storybook/addon-knobs";
+import { withKnobs } from "@storybook/addon-knobs";
 import { SearchBarFilters } from "domains/search/components/SearchBarFilters";
 import { SearchBarOptions } from "domains/search/components/SearchBarOptions";
 import React from "react";

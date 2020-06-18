@@ -1,6 +1,4 @@
 import { text, withKnobs } from "@storybook/addon-knobs";
-import { Circle } from "app/components/Circle";
-import { Icon } from "app/components/Icon";
 import React from "react";
 
 import { Recipient } from "./Recipient";
