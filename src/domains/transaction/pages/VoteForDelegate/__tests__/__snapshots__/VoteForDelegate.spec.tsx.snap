@@ -216,13 +216,13 @@ exports[`Vote For Delegate should render 1`] = `
                         >
                           <div
                             class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300 shadow-sm"
-                            data-testid="RadioButtonGroup"
+                            data-testid="SelectionBar"
                             role="radiogroup"
                           >
                             <button
                               aria-checked="true"
                               class="sc-fzplWN eqkHfx relative px-5 py-3 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
-                              data-testid="RadioButton"
+                              data-testid="SelectionBarOption"
                               role="radio"
                             >
                               Last
@@ -230,7 +230,7 @@ exports[`Vote For Delegate should render 1`] = `
                             <button
                               aria-checked="false"
                               class="sc-fzplWN eqkHfx relative px-5 py-3 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
-                              data-testid="RadioButton"
+                              data-testid="SelectionBarOption"
                               role="radio"
                             >
                               Min
@@ -238,7 +238,7 @@ exports[`Vote For Delegate should render 1`] = `
                             <button
                               aria-checked="false"
                               class="sc-fzplWN eqkHfx relative px-5 py-3 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
-                              data-testid="RadioButton"
+                              data-testid="SelectionBarOption"
                               role="radio"
                             >
                               Average
@@ -466,13 +466,13 @@ exports[`Vote For Delegate should render 1st step 1`] = `
               >
                 <div
                   class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300 shadow-sm"
-                  data-testid="RadioButtonGroup"
+                  data-testid="SelectionBar"
                   role="radiogroup"
                 >
                   <button
                     aria-checked="true"
                     class="sc-fzplWN eqkHfx relative px-5 py-3 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
-                    data-testid="RadioButton"
+                    data-testid="SelectionBarOption"
                     role="radio"
                   >
                     Last
@@ -480,7 +480,7 @@ exports[`Vote For Delegate should render 1st step 1`] = `
                   <button
                     aria-checked="false"
                     class="sc-fzplWN eqkHfx relative px-5 py-3 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
-                    data-testid="RadioButton"
+                    data-testid="SelectionBarOption"
                     role="radio"
                   >
                     Min
@@ -488,7 +488,7 @@ exports[`Vote For Delegate should render 1st step 1`] = `
                   <button
                     aria-checked="false"
                     class="sc-fzplWN eqkHfx relative px-5 py-3 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
-                    data-testid="RadioButton"
+                    data-testid="SelectionBarOption"
                     role="radio"
                   >
                     Average
@@ -558,7 +558,7 @@ exports[`Vote For Delegate should render 2nd step 1`] = `
           </div>
         </div>
         <div
-          class="ml-1 text-theme-danger-500"
+          class="text-theme-danger-500 ml-1"
         >
           <div
             class="sc-AxirZ cPeJHU bg-theme-background border-theme-danger-200"
@@ -674,7 +674,7 @@ exports[`Vote For Delegate should render 2nd step 1`] = `
           </div>
         </div>
         <div
-          class="ml-1 text-theme-danger"
+          class="text-theme-danger ml-1"
         >
           <div
             class="sc-AxirZ cPeJHU bg-theme-background border-theme-danger-200"
@@ -857,7 +857,7 @@ exports[`Vote For Delegate should render 4th step 1`] = `
                   readonly=""
                 />
                 <div
-                  class="mb-1 ml-5 text-theme-primary-300"
+                  class="text-theme-primary-300 mb-1 ml-5"
                 >
                   <div
                     class="sc-AxhCb fxrKLH"
@@ -911,7 +911,7 @@ exports[`Vote For Delegate should render 4th step 1`] = `
                   readonly=""
                 />
                 <div
-                  class="mb-1 ml-5 text-theme-primary-300"
+                  class="text-theme-primary-300 mb-1 ml-5"
                 >
                   <div
                     class="sc-AxhCb fxrKLH"
@@ -960,7 +960,7 @@ exports[`Vote For Delegate should render 4th step 1`] = `
             </div>
           </div>
           <div
-            class="ml-1 text-theme-danger-500"
+            class="text-theme-danger-500 ml-1"
           >
             <div
               class="sc-AxirZ cPeJHU bg-theme-background border-theme-danger-200"
@@ -1071,7 +1071,7 @@ exports[`Vote For Delegate should render 4th step 1`] = `
             </div>
           </div>
           <div
-            class="ml-1 text-theme-danger"
+            class="text-theme-danger ml-1"
           >
             <div
               class="sc-AxirZ cPeJHU bg-theme-background border-theme-danger-200"
@@ -1106,10 +1106,10 @@ exports[`Vote For Delegate should render 4th step 1`] = `
             </div>
           </div>
           <div
-            class="ml-1 text-theme-danger"
+            class="text-theme-danger ml-1"
           >
             <div
-              class="sc-AxirZ cPeJHU border-black bg-theme-background"
+              class="sc-AxirZ cPeJHU bg-theme-background border-black"
             >
               <div
                 class="sc-AxhCb fxrKLH"
