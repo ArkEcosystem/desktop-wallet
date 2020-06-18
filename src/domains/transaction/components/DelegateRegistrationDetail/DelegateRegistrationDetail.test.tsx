@@ -11,7 +11,7 @@ describe("DelegateRegistrationDetail", () => {
 	it("should not render if not open", () => {
 		const { asFragment, getByTestId } = render(
 			<I18nextProvider i18n={i18n}>
-				<DelegateRegistrationDetail isOpen={false} onDelete={() => void 0} />
+				<DelegateRegistrationDetail isOpen={false} />
 			</I18nextProvider>,
 		);
 
@@ -22,7 +22,7 @@ describe("DelegateRegistrationDetail", () => {
 	it("should render a modal", () => {
 		const { asFragment, getByTestId } = render(
 			<I18nextProvider i18n={i18n}>
-				<DelegateRegistrationDetail isOpen={true} onDelete={() => void 0} />
+				<DelegateRegistrationDetail isOpen={true} />
 			</I18nextProvider>,
 		);
 
