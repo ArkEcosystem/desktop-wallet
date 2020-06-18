@@ -16,23 +16,51 @@ type SelectDelegateModalProps = {
 	allowMultiple?: boolean;
 };
 
+type SelectedDelegateListProps = {
+	delegates: any[];
+	className?: string;
+};
+
+const SelectedDelegateList = (props: SelectedDelegateListProps) => {
+	const output = [];
+
+	for (const delegate of props.delegates) {
+		output.push(
+			<div
+				key={delegate.username}
+				className="flex items-center font-semibold border-b border-dashed border-theme-neutral-200 last:border-0 py-4"
+			>
+				<div className="flex flex-1">
+					<Circle avatarId="test" className="mr-8" />
+
+					<div className="mr-2">{delegate.username}</div>
+					<div className="text-theme-neutral-500">{delegate.address}</div>
+				</div>
+				#{delegate.rank}
+			</div>,
+		);
+	}
+
+	return <div className={props.className}>{output}</div>;
+};
+
 export const SelectDelegateModal = (props: SelectDelegateModalProps) => {
 	const { t } = useTranslation();
+	const [showSelectedList, setShowSelectedList] = useState(false);
 	const [selected, setSelected] = useState({} as any);
 	const toggleSelected = (delegate: any) => {
-		if (selected[delegate.id]) {
+		if (selected[delegate.username]) {
 			setSelected(
 				Object.values(selected).reduce((mapping: any, selectedDelegate: any) => {
-					if (selectedDelegate.id === delegate.id) {
+					if (selectedDelegate.username === delegate.username) {
 						return mapping;
 					}
 
-					mapping[selectedDelegate.id] = selectedDelegate;
+					mapping[selectedDelegate.username] = selectedDelegate;
 
 					return mapping;
 				}, {}) as any,
 			);
-			console.log("old", selected);
 
 			return;
 		}
@@ -47,43 +75,54 @@ export const SelectDelegateModal = (props: SelectDelegateModalProps) => {
 		}
 
 		setSelected({
-			...selected,
-			[delegate.id]: delegate,
+			[delegate.username]: delegate,
 		});
-		console.log("new", selected);
 	};
 
 	const totalSupply = 129354814;
 	const data = [
 		{
-			id: 1,
 			selected: false,
-			delegate_name: "Delegate 1",
-			rank: "1",
+			username: "Delegate1",
+			address: "AADDDDDDDRREEEEESSSSSSS",
+			rank: 1,
+			previousRank: 3,
 			marketsquare: "https://ms.com",
 			forged_ark: "225946",
 			votes: "3143322",
 			voting: false,
 		},
 		{
-			id: 2,
 			selected: false,
-			delegate_name: "Delegate 2",
-			rank: "2",
-			marketsquare: "https://ms.com",
+			username: "Delegate2",
+			address: "AADDDDDDDRREEEEESSSSSSS",
+			rank: 2,
+			previousRank: 5,
+			marketsquare: null,
 			forged_ark: "465437",
 			votes: "2364566",
 			voting: false,
 		},
 		{
-			id: 3,
 			selected: false,
-			delegate_name: "Delegate 3",
-			rank: "3",
+			username: "Delegate3",
+			address: "AADDDDDDDRREEEEESSSSSSS",
+			rank: 3,
+			previousRank: 1,
 			marketsquare: "https://ms.com",
 			forged_ark: "693236",
 			votes: "1976303",
 			voting: true,
+		},
+		{
+			selected: false,
+			username: "Delegate4",
+			address: "AADDDDDDDRREEEEESSSSSSS",
+			rank: 4,
+			previousRank: 4,
+			forged_ark: "693236",
+			votes: "1976303",
+			voting: false,
 		},
 	];
 
@@ -99,7 +138,7 @@ export const SelectDelegateModal = (props: SelectDelegateModalProps) => {
 		},
 		{
 			Header: t("COMMON.DELEGATE_NAME"),
-			accessor: "delegate_name",
+			accessor: "username",
 		},
 		{
 			Header: t("COMMON.RANK"),
@@ -142,16 +181,19 @@ export const SelectDelegateModal = (props: SelectDelegateModalProps) => {
 				<Table columns={columns} data={data}>
 					{(rowData: any) => (
 						<tr
-							className={`border-b border-theme-neutral-200 ${
-								selected[rowData.id] && "bg-theme-success-100"
+							className={`border-b border-dashed border-theme-neutral-200 ${
+								selected[rowData.username] && "bg-theme-success-100"
 							}`}
 						>
 							<td className="w-16 text-center">
 								{props.allowMultiple ? (
-									<Checkbox checked={selected[rowData.id]} onChange={() => toggleSelected(rowData)} />
+									<Checkbox
+										checked={selected[rowData.username]}
+										onChange={() => toggleSelected(rowData)}
+									/>
 								) : (
 									<RadioButton
-										checked={selected[rowData.id]}
+										checked={selected[rowData.username]}
 										onChange={() => toggleSelected(rowData)}
 									/>
 								)}
@@ -162,7 +204,7 @@ export const SelectDelegateModal = (props: SelectDelegateModalProps) => {
 							</td>
 
 							<td className="py-6 font-semibold">
-								<div>{rowData.delegate_name}</div>
+								<div>{rowData.username}</div>
 							</td>
 
 							<td className="py-6">
@@ -185,39 +227,82 @@ export const SelectDelegateModal = (props: SelectDelegateModalProps) => {
 								<span>{Numeral.make("en").format(rowData.votes)} A</span>
 							</td>
 
-							<td className="w-24 text-right">
-								<div>
-									{rowData.voting ? (
-										<Circle avatarId="test" noShadow={true} />
-									) : (
-										<Circle className=" border-theme-primary-100" noShadow={true} />
-									)}
-								</div>
+							<td className="w-16">
+								{rowData.voting ? (
+									<Circle avatarId="test" noShadow={true} />
+								) : (
+									<Circle className=" border-theme-primary-100" noShadow={true} />
+								)}
 							</td>
 						</tr>
 					)}
 				</Table>
 			</div>
 
-			<div className="absolute bottom-0 left-0 right-0 flex px-8 py-6 bg-white shadow-2xl">
-				<div className="px-8 mr-8 border-r border-theme-neutral-200">
-					<div className="text-sm text-theme-neutral-500">Rank</div>
+			{Object.keys(selected).length ? (
+				<div className="absolute bottom-0 left-0 right-0 pl-4 pr-12 pt-8 pb-10 bg-white shadow-2xl">
+					{!props.allowMultiple && Object.keys(selected).length ? (
+						<div className="flex">
+							<div className="px-8 mr-8 border-r border-theme-neutral-300">
+								<div className="text-sm text-theme-neutral-500">{t("COMMON.RANK")}</div>
 
-					<div className="font-semibold text-theme-neutral-700">#3</div>
+								<div className="font-semibold text-theme-neutral-700">#3</div>
+							</div>
+
+							<div className="flex flex-1">
+								<Circle avatarId="test" className="mr-2" />
+
+								<div>
+									<div className="text-sm text-theme-neutral-500">{t("COMMON.DELEGATE_ADDRESS")}</div>
+
+									<div className="font-semibold text-theme-neutral-700">
+										{Object.values(selected)[0].username} - {Object.values(selected)[0].address}
+									</div>
+								</div>
+							</div>
+
+							<Button>Vote</Button>
+						</div>
+					) : (
+						""
+					)}
+
+					{props.allowMultiple && Object.keys(selected).length ? (
+						<div className="flex">
+							<div className="px-8 mr-8 font-semibold border-r border-theme-neutral-300">
+								<div className="text-sm text-theme-neutral-500">{t("COMMON.QUANTITY")}</div>
+
+								<div className="text-theme-neutral-700">{Object.keys(selected).length}/50</div>
+							</div>
+
+							<div className="flex-1">
+								<div className="flex justify-between">
+									<div className="font-semibold">
+										<div className="text-sm text-theme-neutral-500">{t("COMMON.DELEGATES")}</div>
+
+										<div
+											className="text-theme-primary-700 hover:text-theme-primary-500 cursor-pointer"
+											onClick={() => setShowSelectedList(!showSelectedList)}
+										>
+											{showSelectedList ? "Hide" : "Show"} List
+										</div>
+									</div>
+
+									<Button>Vote</Button>
+								</div>
+
+								{showSelectedList && (
+									<SelectedDelegateList delegates={Object.values(selected)} className="mt-2" />
+								)}
+							</div>
+						</div>
+					) : (
+						""
+					)}
 				</div>
-
-				<div className="flex flex-1">
-					<Circle avatarId="test" className="mr-2" />
-
-					<div>
-						<div className="text-sm text-theme-neutral-500">Address Delegate</div>
-
-						<div className="font-semibold text-theme-neutral-700">Delegate 3 - AADDDDDDDRREEEEESSSSSSS</div>
-					</div>
-				</div>
-
-				<Button>Vote</Button>
-			</div>
+			) : (
+				""
+			)}
 		</Modal>
 	);
 };
