@@ -38,7 +38,8 @@
 		"eject": "react-app-rewired eject",
 		"build:mac": "yarn build && electron-builder --mac --publish never",
 		"build:linux": "yarn build && electron-builder --linux --publish never",
-		"build:win": "yarn build && electron-builder --win --x64 --ia32 --publish never"
+		"build:win": "yarn build && electron-builder --win --x64 --ia32 --publish never",
+		"preversion": "cross-env ./scripts/version-artifacts.sh"
 	},
 	"dependencies": {
 		"@arkecosystem/platform-sdk": "^0.9.106",
@@ -185,6 +186,7 @@
 		"productName": "ARK Desktop Wallet",
 		"appId": "io.ark.desktop-wallet",
 		"artifactName": "${name}-${os}-${arch}-${version}.${ext}",
+		"afterSign": "scripts/notarize.js",
 		"npmRebuild": false,
 		"publish": {
 			"provider": "github",
@@ -210,7 +212,9 @@
 			"gatekeeperAssess": false,
 			"asarUnpack": [
 				"**/*.node"
-			]
+			],
+			"entitlements": "entitlements.mac.plist",
+			"entitlementsInherit": "entitlements.mac.plist"
 		},
 		"win": {
 			"target": "nsis",
