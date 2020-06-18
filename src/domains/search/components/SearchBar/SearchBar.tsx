@@ -1,3 +1,4 @@
+import { SvgCollection } from "app/assets/svg";
 import { Button } from "app/components/Button";
 import { Input } from "app/components/Input";
 import { SearchBarOptions } from "domains/search/components/SearchBarOptions";
@@ -16,7 +17,7 @@ export const SearchBar = (props: SearchBarProps) => {
 	return (
 		<div data-testid="SearchBar" className={`bg-theme-neutral-200 px-12 pt-8 pb-10 ${props.className}`}>
 			<div className="flex px-6 py-4 bg-white rounded shadow-xl">
-				{props.children}
+				{props.children ? props.children : <SvgCollection.Search className="w-4 text-theme-neutral-300" />}
 
 				<div className="flex-1 mr-4">
 					<Input
