@@ -29,7 +29,7 @@ const SelectedDelegateList = (props: SelectedDelegateListProps) => {
 		output.push(
 			<div
 				key={delegate.username}
-				className="flex items-center font-semibold border-b border-dashed border-theme-neutral-200 last:border-0 py-4"
+				className="flex items-center py-4 font-semibold border-b border-dashed border-theme-neutral-200 last:border-0"
 			>
 				<div className="flex flex-1">
 					<Circle avatarId="test" className="mr-8" />
@@ -224,7 +224,7 @@ export const SelectDelegateModal = (props: SelectDelegateModalProps) => {
 								<div>{Numeral.make("en").format(rowData.forged_ark)} A</div>
 							</td>
 
-							<td className="py-6 font-semibold text-right whitespace-no-wrap text-theme-neutral-700 pr-8">
+							<td className="py-6 pr-8 font-semibold text-right whitespace-no-wrap text-theme-neutral-700">
 								<span className="mr-1 text-sm text-theme-neutral-500">
 									{Numeral.make("en").format((rowData.votes / totalSupply) * 100)}%
 								</span>
@@ -246,7 +246,7 @@ export const SelectDelegateModal = (props: SelectDelegateModalProps) => {
 
 			{Object.keys(selected).length ? (
 				<div
-					className="absolute bottom-0 left-0 right-0 pl-4 pr-12 pt-8 pb-10 bg-white shadow-2xl"
+					className="absolute bottom-0 left-0 right-0 pt-8 pb-10 pl-4 pr-12 bg-white shadow-2xl"
 					data-testid="SelectedDelegateModal__footer"
 				>
 					{!props.allowMultiple && Object.keys(selected).length ? (
@@ -290,7 +290,7 @@ export const SelectDelegateModal = (props: SelectDelegateModalProps) => {
 
 										<div
 											data-testid="SelectedDelegateModal__toggle-show-selected"
-											className="text-theme-primary-700 hover:text-theme-primary-500 cursor-pointer"
+											className="cursor-pointer text-theme-primary-700 hover:text-theme-primary-500"
 											onClick={() => setShowSelectedList(!showSelectedList)}
 										>
 											{showSelectedList ? "Hide" : "Show"} List
