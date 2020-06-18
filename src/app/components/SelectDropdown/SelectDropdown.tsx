@@ -3,36 +3,23 @@ import Downshift from "downshift";
 import React from "react";
 
 type Props = {
-	onSelect?: any;
 	options?: any;
 	option?: any;
 	toggle?: any;
 };
 
-export const SelectDropdown = ({ toggle, children, onSelect, options, option }: Props) => {
-	const renderOption = (rowData) => {
+export const SelectDropdown = ({ toggle, options, option }: Props) => {
+	const renderOption = (rowData: any) => {
 		if (typeof option === "function") return option(rowData);
-		return option;
 	};
 
 	const renderToggle = (selected: any, isOpen: boolean) => {
 		if (typeof toggle === "function") return toggle(selected, isOpen);
-		return toggle;
 	};
 
 	return (
-		<Downshift itemToString={(i) => (i ? i.value : "")}>
-			{({
-				getLabelProps,
-				getInputProps,
-				getButtonProps,
-				getItemProps,
-				isOpen,
-				toggleMenu,
-				selectedItem,
-				inputValue,
-				highlightedIndex,
-			}) => (
+		<Downshift itemToString={(i) => i.value}>
+			{({ getLabelProps, getInputProps, getItemProps, isOpen, toggleMenu, selectedItem }) => (
 				<div className="relative">
 					<label {...getLabelProps({ htmlFor: "dropdown-select" })}>
 						<div className="relative flex flex-inline items-center w-full">
@@ -51,19 +38,24 @@ export const SelectDropdown = ({ toggle, children, onSelect, options, option }: 
 						<input {...getInputProps({ readOnly: true })} type="hidden" />
 						<button
 							id="dropdown-select"
+							data-testid="select-dropdown__toggle"
 							type="button"
 							className="dropdown-toggle"
-							onClick={toggleMenu}
+							onClick={(params: any) => toggleMenu(params)}
 							data-toggle="dropdown"
 							aria-haspopup="true"
 							aria-expanded={isOpen}
 						></button>
 						{isOpen ? (
-							<div className="absolute w-full z-10 -mt-3 bg-theme-background rounded-lg shadow-xl border-theme-neutral-100 border-1">
+							<div
+								data-testid="select-dropdown__content"
+								className="absolute w-full z-10 -mt-3 bg-theme-background rounded-lg shadow-xl border-theme-neutral-100 border-1"
+							>
 								{options.map((item: any, index: number) => (
 									<div
 										{...getItemProps({ item })}
 										key={index}
+										data-testid={`select-dropdown__option-${index}`}
 										className="dropdown-item cursor-pointer"
 										style={{ cursor: "pointer" }}
 									>
