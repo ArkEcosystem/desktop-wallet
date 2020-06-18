@@ -135,11 +135,11 @@ export const CreateProfile = ({ onSubmit }: CreateProfileProps) => {
 							</div>
 						</div>
 
-						<div className="mx-4 mt-5 mb-10 md:mx-8 xl:mx-16">
+						<div className="space-x-3 mx-4 mt-5 mb-10 md:mx-8 xl:mx-16">
 							<Button color="primary" variant="plain">
 								Back
 							</Button>
-							<Button color="primary" variant="solid" className="ml-2">
+							<Button color="primary" variant="solid">
 								Complete
 							</Button>
 						</div>

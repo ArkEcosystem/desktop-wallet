@@ -197,7 +197,7 @@ export const MultiSignatureDetail = (props: MultiSignatureDetailProps) => {
 								</Button>
 							</div>
 
-							<div className="space-x-2">
+							<div className="space-x-3">
 								<Button
 									disabled={activeStep === 1}
 									data-testid="MultiSignatureDetail__back-button"

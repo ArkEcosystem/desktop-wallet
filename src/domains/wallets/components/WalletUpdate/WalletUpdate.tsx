@@ -46,11 +46,10 @@ export const WalletUpdate = ({
 								{t("WALLETS.MODAL_WALLET_UPDATE.DESCRIPTION_1")}
 							</p>
 						</div>
-						<div className="flex flex-col justify-center sm:flex-row">
+						<div className="flex flex-col justify-center space-x-0 sm:flex-row sm:space-x-3">
 							<Button
 								color="primary"
 								variant="solid"
-								className="mr-2"
 								onClick={onUpdate}
 								data-testid="wallet-update__update-button"
 							>
