@@ -48,7 +48,7 @@ const ModalContent = (props: ModalContentProps) => {
 	return (
 		<ModalContainer
 			size={props.size!}
-			className="fixed left-0 right-0 z-10 flex flex-col px-12 pt-6 pb-8 mx-auto mt-24 rounded-xl bg-theme-background"
+			className="fixed overflow-hidden left-0 right-0 z-10 flex flex-col px-12 pt-6 pb-8 mx-auto mt-24 rounded-xl bg-theme-background"
 			data-testid="modal__inner"
 		>
 			<div className="absolute top-0 right-0 mt-4 mr-4">
