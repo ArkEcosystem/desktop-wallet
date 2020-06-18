@@ -1,15 +1,15 @@
 import { render } from "@testing-library/react";
 import React from "react";
-import { HashRouter } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 
-import { NavigationHeader } from "./";
+import { NavHeader } from "./";
 
-describe("NavigationHeader", () => {
+describe("NavHeader", () => {
 	it("should render", () => {
 		const { container, asFragment, getByTestId } = render(
-			<HashRouter>
-				<NavigationHeader title="Go back to Portfolio" route="/portfolio" />
-			</HashRouter>,
+			<Router>
+				<NavHeader title="Go back to Portfolio" route="/portfolio" />
+			</Router>,
 		);
 
 		expect(container).toBeTruthy();

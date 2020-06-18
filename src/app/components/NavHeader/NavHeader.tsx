@@ -1,4 +1,3 @@
-// UI Elements
 import { Icon } from "app/components/Icon";
 import React from "react";
 import { NavLink } from "react-router-dom";
@@ -8,7 +7,7 @@ type NavigationHeaderProps = {
 	route: string;
 };
 
-export const NavigationHeader = ({ title, route }: NavigationHeaderProps) => (
+export const NavHeader = ({ title, route }: NavigationHeaderProps) => (
 	<div className="flex justify-center w-full h-16 bg-theme-neutral-100 md:px-4">
 		<div className="container flex items-center justify-start w-full h-full mx-auto text-sm font-semibold leading-none text-theme-neutral-600">
 			<span>
@@ -23,7 +22,7 @@ export const NavigationHeader = ({ title, route }: NavigationHeaderProps) => (
 	</div>
 );
 
-NavigationHeader.defaultProps = {
+NavHeader.defaultProps = {
 	title: "Empty Title",
 	route: "/",
 };

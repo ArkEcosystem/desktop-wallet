@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`NavigationHeader should render 1`] = `
+exports[`NavHeader should render 1`] = `
 <DocumentFragment>
   <div
     class="flex justify-center w-full h-16 bg-theme-neutral-100 md:px-4"
@@ -11,7 +11,7 @@ exports[`NavigationHeader should render 1`] = `
       <span>
         <a
           class="flex font-semibold hover:underline transition-default"
-          href="#/portfolio"
+          href="/portfolio"
         >
           <div
             class="sc-AxjAm pXfjM"
