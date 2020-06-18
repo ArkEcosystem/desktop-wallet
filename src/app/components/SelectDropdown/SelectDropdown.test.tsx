@@ -60,8 +60,8 @@ describe("SelectDropdown", () => {
 				option={(option: any) => <div>{option.label}</div>}
 				toggle={() => {
 					return (
-						<div className="flex flex-inline items-center">
-							<div className="text-theme-neutral-800 font-semibold">Select Option</div>
+						<div className="flex items-center flex-inline">
+							<div className="font-semibold text-theme-neutral-800">Select Option</div>
 						</div>
 					);
 				}}
@@ -78,8 +78,8 @@ describe("SelectDropdown", () => {
 				option={(option: any) => <div>{option.label}</div>}
 				toggle={() => {
 					return (
-						<div className="flex flex-inline items-center">
-							<div className="text-theme-neutral-800 font-semibold">Select Option</div>
+						<div className="flex items-center flex-inline">
+							<div className="font-semibold text-theme-neutral-800">Select Option</div>
 						</div>
 					);
 				}}
@@ -122,8 +122,8 @@ describe("SelectDropdown", () => {
 				option={(option: any) => <div>{option.label}</div>}
 				toggle={() => {
 					return (
-						<div className="flex flex-inline items-center">
-							<div className="text-theme-neutral-800 font-semibold">Select Option</div>
+						<div className="flex items-center flex-inline">
+							<div className="font-semibold text-theme-neutral-800">Select Option</div>
 						</div>
 					);
 				}}
@@ -139,8 +139,8 @@ describe("SelectDropdown", () => {
 			<SelectDropdown
 				toggle={() => {
 					return (
-						<div className="flex flex-inline items-center">
-							<div className="text-theme-neutral-800 font-semibold">Select Option</div>
+						<div className="flex items-center flex-inline">
+							<div className="font-semibold text-theme-neutral-800">Select Option</div>
 						</div>
 					);
 				}}

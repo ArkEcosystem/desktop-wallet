@@ -22,11 +22,11 @@ export const SelectDropdown = ({ toggle, options, option }: Props) => {
 			{({ getLabelProps, getInputProps, getItemProps, isOpen, toggleMenu, selectedItem }) => (
 				<div className="relative">
 					<label {...getLabelProps({ htmlFor: "dropdown-select" })}>
-						<div className="relative flex flex-inline items-center w-full">
-							<div className="flex m-h-20 cursor-pointer overflow-hidden shadow-sm w-full bg-theme-background rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 hover:outline-none hover:border-theme-primary pr-12">
+						<div className="relative flex items-center w-full flex-inline">
+							<div className="flex w-full px-4 py-3 pr-12 overflow-hidden border rounded cursor-pointer m-h-20 shadow-sm bg-theme-background border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 hover:outline-none hover:border-theme-primary">
 								{renderToggle(selectedItem, isOpen)}
 							</div>
-							<div className="-ml-12 w-12 px-4 py-5 text-lg pointer-events-none text-theme-neutral-dark">
+							<div className="w-12 px-4 py-5 -ml-12 text-lg pointer-events-none text-theme-neutral-dark">
 								<div className={isOpen ? "transform rotate-180" : ""}>
 									<Icon name="ChevronDown" />
 								</div>
@@ -34,7 +34,7 @@ export const SelectDropdown = ({ toggle, options, option }: Props) => {
 						</div>
 					</label>
 
-					<div className="btn-group relative">
+					<div className="relative btn-group">
 						<input {...getInputProps({ readOnly: true })} type="hidden" />
 						<button
 							id="dropdown-select"
@@ -49,14 +49,14 @@ export const SelectDropdown = ({ toggle, options, option }: Props) => {
 						{isOpen ? (
 							<div
 								data-testid="select-dropdown__content"
-								className="absolute w-full z-10 -mt-3 bg-theme-background rounded-lg shadow-xl border-theme-neutral-100 border-1"
+								className="absolute z-10 w-full -mt-3 rounded-lg shadow-xl bg-theme-background border-theme-neutral-100 border-1"
 							>
 								{options.map((item: any, index: number) => (
 									<div
 										{...getItemProps({ item })}
 										key={index}
 										data-testid={`select-dropdown__option-${index}`}
-										className="dropdown-item cursor-pointer"
+										className="cursor-pointer dropdown-item"
 										style={{ cursor: "pointer" }}
 									>
 										{renderOption(item)}

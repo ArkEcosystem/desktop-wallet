@@ -38,14 +38,14 @@ export const Simple = () => {
 					toggle={(selected: any) => {
 						if (selected) {
 							return (
-								<div className="flex flex-inline items-center">
+								<div className="flex items-center flex-inline">
 									<div>{selected.label}</div>
 								</div>
 							);
 						}
 						return (
-							<div className="flex flex-inline items-center">
-								<div className="text-theme-neutral-800 font-semibold">Select Option</div>
+							<div className="flex items-center flex-inline">
+								<div className="font-semibold text-theme-neutral-800">Select Option</div>
 							</div>
 						);
 					}}
@@ -82,11 +82,11 @@ export const SelectNetwork = () => {
 					option={(option: any) => {
 						return (
 							<div className="p-6 border-b border-theme-neutral-200 hover:bg-theme-neutral-100">
-								<div className="flex flex-inline items-center">
+								<div className="flex items-center flex-inline">
 									<Circle size="small" noShadow>
 										<Icon name={option.icon} width={18} height={18} />
 									</Circle>
-									<div className="text-theme-neutral-800 font-semibold ml-4">{option.label}</div>
+									<div className="ml-4 font-semibold text-theme-neutral-800">{option.label}</div>
 								</div>
 							</div>
 						);
@@ -94,18 +94,18 @@ export const SelectNetwork = () => {
 					toggle={(selected: any) => {
 						if (selected) {
 							return (
-								<div className="flex flex-inline items-center">
+								<div className="flex items-center flex-inline">
 									<Circle size="small" noShadow>
 										<Icon name={selected.icon} width={18} height={18} />
 									</Circle>
-									<div className="text-theme-neutral-800 font-semibold ml-4">{selected.label}</div>
+									<div className="ml-4 font-semibold text-theme-neutral-800">{selected.label}</div>
 								</div>
 							);
 						}
 						return (
-							<div className="flex flex-inline items-center">
+							<div className="flex items-center flex-inline">
 								<Circle size="small" noShadow></Circle>
-								<div className="text-theme-neutral-800 font-semibold ml-4"></div>
+								<div className="ml-4 font-semibold text-theme-neutral-800"></div>
 							</div>
 						);
 					}}

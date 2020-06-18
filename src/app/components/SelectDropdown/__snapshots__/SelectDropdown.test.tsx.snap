@@ -14,13 +14,13 @@ exports[`SelectDropdown should render 1`] = `
       id="downshift-0-label"
     >
       <div
-        class="relative flex flex-inline items-center w-full"
+        class="relative flex items-center w-full flex-inline"
       >
         <div
-          class="flex m-h-20 cursor-pointer overflow-hidden shadow-sm w-full bg-theme-background rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 hover:outline-none hover:border-theme-primary pr-12"
+          class="flex w-full px-4 py-3 pr-12 overflow-hidden border rounded cursor-pointer m-h-20 shadow-sm bg-theme-background border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 hover:outline-none hover:border-theme-primary"
         />
         <div
-          class="-ml-12 w-12 px-4 py-5 text-lg pointer-events-none text-theme-neutral-dark"
+          class="w-12 px-4 py-5 -ml-12 text-lg pointer-events-none text-theme-neutral-dark"
         >
           <div
             class=""
@@ -39,7 +39,7 @@ exports[`SelectDropdown should render 1`] = `
       </div>
     </label>
     <div
-      class="btn-group relative"
+      class="relative btn-group"
     >
       <input
         aria-autocomplete="list"
@@ -78,13 +78,13 @@ exports[`SelectDropdown should render ignoring option.value property 1`] = `
       id="downshift-1-label"
     >
       <div
-        class="relative flex flex-inline items-center w-full"
+        class="relative flex items-center w-full flex-inline"
       >
         <div
-          class="flex m-h-20 cursor-pointer overflow-hidden shadow-sm w-full bg-theme-background rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 hover:outline-none hover:border-theme-primary pr-12"
+          class="flex w-full px-4 py-3 pr-12 overflow-hidden border rounded cursor-pointer m-h-20 shadow-sm bg-theme-background border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 hover:outline-none hover:border-theme-primary"
         />
         <div
-          class="-ml-12 w-12 px-4 py-5 text-lg pointer-events-none text-theme-neutral-dark"
+          class="w-12 px-4 py-5 -ml-12 text-lg pointer-events-none text-theme-neutral-dark"
         >
           <div
             class=""
@@ -103,7 +103,7 @@ exports[`SelectDropdown should render ignoring option.value property 1`] = `
       </div>
     </label>
     <div
-      class="btn-group relative"
+      class="relative btn-group"
     >
       <input
         aria-autocomplete="list"
@@ -142,23 +142,23 @@ exports[`SelectDropdown should render with custom toggle and option templates 1`
       id="downshift-2-label"
     >
       <div
-        class="relative flex flex-inline items-center w-full"
+        class="relative flex items-center w-full flex-inline"
       >
         <div
-          class="flex m-h-20 cursor-pointer overflow-hidden shadow-sm w-full bg-theme-background rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 hover:outline-none hover:border-theme-primary pr-12"
+          class="flex w-full px-4 py-3 pr-12 overflow-hidden border rounded cursor-pointer m-h-20 shadow-sm bg-theme-background border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 hover:outline-none hover:border-theme-primary"
         >
           <div
-            class="flex flex-inline items-center"
+            class="flex items-center flex-inline"
           >
             <div
-              class="text-theme-neutral-800 font-semibold"
+              class="font-semibold text-theme-neutral-800"
             >
               Select Option
             </div>
           </div>
         </div>
         <div
-          class="-ml-12 w-12 px-4 py-5 text-lg pointer-events-none text-theme-neutral-dark"
+          class="w-12 px-4 py-5 -ml-12 text-lg pointer-events-none text-theme-neutral-dark"
         >
           <div
             class=""
@@ -177,7 +177,7 @@ exports[`SelectDropdown should render with custom toggle and option templates 1`
       </div>
     </label>
     <div
-      class="btn-group relative"
+      class="relative btn-group"
     >
       <input
         aria-autocomplete="list"
@@ -216,23 +216,23 @@ exports[`SelectDropdown should render without option content 1`] = `
       id="downshift-4-label"
     >
       <div
-        class="relative flex flex-inline items-center w-full"
+        class="relative flex items-center w-full flex-inline"
       >
         <div
-          class="flex m-h-20 cursor-pointer overflow-hidden shadow-sm w-full bg-theme-background rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 hover:outline-none hover:border-theme-primary pr-12"
+          class="flex w-full px-4 py-3 pr-12 overflow-hidden border rounded cursor-pointer m-h-20 shadow-sm bg-theme-background border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 hover:outline-none hover:border-theme-primary"
         >
           <div
-            class="flex flex-inline items-center"
+            class="flex items-center flex-inline"
           >
             <div
-              class="text-theme-neutral-800 font-semibold"
+              class="font-semibold text-theme-neutral-800"
             >
               Select Option
             </div>
           </div>
         </div>
         <div
-          class="-ml-12 w-12 px-4 py-5 text-lg pointer-events-none text-theme-neutral-dark"
+          class="w-12 px-4 py-5 -ml-12 text-lg pointer-events-none text-theme-neutral-dark"
         >
           <div
             class=""
@@ -251,7 +251,7 @@ exports[`SelectDropdown should render without option content 1`] = `
       </div>
     </label>
     <div
-      class="btn-group relative"
+      class="relative btn-group"
     >
       <input
         aria-autocomplete="list"
