@@ -31,6 +31,7 @@
 		"test": "react-app-rewired test",
 		"test:coverage": "react-app-rewired test --coverage --watchAll=false",
 		"test:e2e": "cypress run --headless",
+		"test:e2e:ci": "yarn start & wait-on http-get://localhost:3000/ && yarn test:e2e",
 		"cy:run": "cypress run",
 		"cy:open": "cypress open",
 		"cy:install": "cypress install --force",
