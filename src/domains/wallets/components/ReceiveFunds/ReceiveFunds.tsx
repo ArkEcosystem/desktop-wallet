@@ -1,4 +1,3 @@
-import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { Divider } from "app/components/Divider";
 import { Icon } from "app/components/Icon";

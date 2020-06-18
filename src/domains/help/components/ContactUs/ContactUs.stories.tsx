@@ -1,7 +1,7 @@
 import { boolean } from "@storybook/addon-knobs";
 import React from "react";
 
-import { ContactUs } from "./";
+import { ContactUs } from "./ContactUs";
 
 export default { title: "Help / Components / Contact Us" };
 

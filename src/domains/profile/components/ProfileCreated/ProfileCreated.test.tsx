@@ -4,7 +4,7 @@ import React from "react";
 import { I18nextProvider } from "react-i18next";
 
 import { translations } from "../../i18n";
-import { ProfileCreated } from "./";
+import { ProfileCreated } from "./ProfileCreated";
 
 describe("ProfileCreated", () => {
 	it("should not render if not open", () => {

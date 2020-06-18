@@ -1,4 +1,3 @@
-import { Icon } from "app/components/Icon";
 import React from "react";
 import tw, { css, styled } from "twin.macro";
 

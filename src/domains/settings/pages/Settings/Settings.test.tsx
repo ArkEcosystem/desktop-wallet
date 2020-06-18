@@ -2,7 +2,7 @@ import { render } from "@testing-library/react";
 import React from "react";
 import { MemoryRouter } from "react-router-dom";
 
-import { Settings } from "./";
+import { Settings } from "./Settings";
 
 describe("Settings", () => {
 	it("should render", () => {

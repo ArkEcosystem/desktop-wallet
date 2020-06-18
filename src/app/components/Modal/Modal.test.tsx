@@ -1,7 +1,7 @@
 import { render } from "@testing-library/react";
 import React from "react";
 
-import { Modal } from "./";
+import { Modal } from "./Modal";
 
 describe("Modal", () => {
 	it("should not render if not open", () => {

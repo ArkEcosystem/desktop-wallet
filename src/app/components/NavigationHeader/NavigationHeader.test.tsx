@@ -2,7 +2,7 @@ import { render } from "@testing-library/react";
 import React from "react";
 import { HashRouter } from "react-router-dom";
 
-import { NavigationHeader } from "./";
+import { NavigationHeader } from "./NavigationHeader";
 
 describe("NavigationHeader", () => {
 	it("should render", () => {
