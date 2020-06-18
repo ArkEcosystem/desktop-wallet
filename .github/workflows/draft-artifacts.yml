@@ -1,0 +1,163 @@
+name: Draft Artifacts
+
+on:
+    push:
+        branches:
+            - "3.0-react"
+
+jobs:
+    linux:
+        runs-on: ubuntu-latest
+
+        strategy:
+            matrix:
+                node-version: [12.x]
+
+        steps:
+            - uses: actions/checkout@v2
+              with:
+                  ref: ${{ github.head_ref }}
+
+            - name: Get yarn cache directory path
+              id: yarn-cache-dir-path
+              run: echo "::set-output name=dir::$(yarn cache dir)"
+
+            - uses: actions/cache@v2
+              id: yarn-cache
+              with:
+                  path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+                  key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: ${{ runner.os }}-yarn-
+
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node-version }}
+
+            - name: Update System
+              run: sudo apt-get update
+
+            - name: Install (Ledger Requirements)
+              run: sudo apt-get install libudev-dev libusb-1.0-0-dev
+
+            - name: Install (Yarn)
+              run: yarn install --frozen-lockfile
+
+            - name: Build
+              run: yarn build:linux
+
+            # - name: Upload .AppImage
+            #   uses: actions/upload-artifact@master
+            #   with:
+            #     name: ark-desktop-wallet-linux-3.0.0.AppImage
+            #     path: build/target/ark-desktop-wallet-linux-x86_64-3.0.0.AppImage
+
+            # - name: Upload .tar.gz
+            #   uses: actions/upload-artifact@master
+            #   with:
+            #     name: ark-desktop-wallet-linux-3.0.0.tar.gz
+            #     path: build/target/ark-desktop-wallet-linux-x64-3.0.0.tar.gz
+
+            - name: Upload .deb
+              uses: actions/upload-artifact@master
+              with:
+                  name: ark-desktop-wallet-linux-3.0.0-${{ github.sha }}.deb
+                  path: build/target/ark-desktop-wallet-linux-amd64-3.0.0.deb
+
+    macOS:
+        runs-on: macos-latest
+
+        strategy:
+            matrix:
+                node-version: [12.x]
+
+        steps:
+            - uses: actions/checkout@v2
+              with:
+                  ref: ${{ github.head_ref }}
+
+            - name: Get yarn cache directory path
+              id: yarn-cache-dir-path
+              run: echo "::set-output name=dir::$(yarn cache dir)"
+
+            - uses: actions/cache@v2
+              id: yarn-cache
+              with:
+                  path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+                  key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: ${{ runner.os }}-yarn-
+
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node-version }}
+
+            - name: Install (Yarn)
+              run: yarn install --frozen-lockfile
+
+            - name: Prepare for app notarization
+              run: |
+                  mkdir -p ~/private_keys/
+                  echo '${{ secrets.APPLE_API_KEY }}' > ~/private_keys/AuthKey_${{ secrets.APPLE_API_KEY_ID }}.p8
+
+            - name: Build
+              run: yarn build:mac
+              env:
+                  APPLE_API_KEY_ID: ${{ secrets.APPLE_API_KEY_ID }}
+                  APPLE_API_KEY_ISSUER_ID: ${{ secrets.APPLE_API_KEY_ISSUER_ID }}
+                  CSC_LINK: ${{ secrets.CSC_LINK }}
+                  CSC_KEY_PASSWORD: ${{ secrets.CSC_KEY_PASSWORD }}
+
+            # - name: Upload .zip
+            #   uses: actions/upload-artifact@master
+            #   with:
+            #     name: ark-desktop-wallet-mac-3.0.0.zip
+            #     path: build/target/ark-desktop-wallet-mac-3.0.0.zip
+
+            - name: Upload .dmg
+              uses: actions/upload-artifact@v2
+              with:
+                  name: ark-desktop-wallet-mac-3.0.0-${{ github.sha }}.dmg
+                  path: build/target/ark-desktop-wallet-mac-3.0.0.dmg
+
+    windows:
+        runs-on: windows-latest
+
+        strategy:
+            matrix:
+                node-version: [12.x]
+
+        steps:
+            - uses: actions/checkout@v2
+              with:
+                  ref: ${{ github.head_ref }}
+
+            - name: Get yarn cache directory path
+              id: yarn-cache-dir-path
+              run: echo "::set-output name=dir::$(yarn cache dir)"
+
+            - uses: actions/cache@v2
+              id: yarn-cache
+              with:
+                  path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+                  key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: ${{ runner.os }}-yarn-
+
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node-version }}
+
+            - name: Install (Yarn)
+              run: yarn install --frozen-lockfile
+              shell: cmd
+
+            - name: Build
+              run: yarn build:win
+              shell: cmd
+
+            - name: Upload .exe
+              uses: actions/upload-artifact@v2
+              with:
+                  name: ark-desktop-wallet-win-3.0.0-${{ github.sha }}.exe
+                  path: build/target/ark-desktop-wallet-win-3.0.0.exe
