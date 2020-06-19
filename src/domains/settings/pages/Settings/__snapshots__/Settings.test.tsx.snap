@@ -955,17 +955,11 @@ exports[`Settings should render a not found information 1`] = `
             class="relative cursor-pointer"
             data-testid="side-menu__item--Plugins"
           >
-            <div
-              class="sc-AxirZ dA-dDXy absolute top-0 left-0 rounded-lg bg-theme-primary"
-            />
             <li
-              class="rounded-lg p-5 flex 
-        text-theme-primary
-        bg-theme-primary-contrast
-     flex items-center"
+              class="rounded-lg p-5 flex text-theme-medium flex items-center"
             >
               <div
-                class="text-theme-primary"
+                class="text-theme-primary-contrast"
               >
                 <div
                   class="sc-AxjAm cpczEI"
@@ -984,6 +978,35 @@ exports[`Settings should render a not found information 1`] = `
               </span>
             </li>
           </div>
+          <div
+            class="relative cursor-pointer"
+            data-testid="side-menu__item--Foo"
+          >
+            <div
+              class="sc-AxirZ dA-dDXy absolute top-0 left-0 rounded-lg bg-theme-primary"
+            />
+            <li
+              class="rounded-lg p-5 flex 
+        text-theme-primary
+        bg-theme-primary-contrast
+     flex items-center"
+            >
+              <div
+                class="text-theme-primary"
+              >
+                <div
+                  class="sc-AxjAm cpczEI"
+                  height="1em"
+                  width="1em"
+                />
+              </div>
+              <span
+                class="ml-2 font-semibold"
+              >
+                Foo
+              </span>
+            </li>
+          </div>
         </ul>
       </div>
     </div>
@@ -991,7 +1014,7 @@ exports[`Settings should render a not found information 1`] = `
       class="w-3/5 pl-20 mx-12 border-l-1 border-theme-primary-contrast"
     >
       <span>
-        Plugins settings not found
+        Foo settings not found
       </span>
     </div>
   </div>
@@ -1579,6 +1602,117 @@ exports[`Settings should render peer settings 1`] = `
           </button>
         </div>
       </form>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Settings should render plugin settings 1`] = `
+<DocumentFragment>
+  <div
+    class="flex w-full h-full"
+  >
+    <div
+      class="w-1/4 h-full"
+    >
+      <div>
+        <ul>
+          <div
+            class="relative cursor-pointer"
+            data-testid="side-menu__item--General"
+          >
+            <li
+              class="rounded-lg p-5 flex text-theme-medium flex items-center"
+            >
+              <div
+                class="text-theme-primary-contrast"
+              >
+                <div
+                  class="sc-AxjAm cpczEI"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    general.svg
+                  </svg>
+                </div>
+              </div>
+              <span
+                class="ml-2 font-semibold"
+              >
+                General
+              </span>
+            </li>
+          </div>
+          <div
+            class="relative cursor-pointer"
+            data-testid="side-menu__item--Peer"
+          >
+            <li
+              class="rounded-lg p-5 flex text-theme-medium flex items-center"
+            >
+              <div
+                class="text-theme-primary-contrast"
+              >
+                <div
+                  class="sc-AxjAm cpczEI"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    peer.svg
+                  </svg>
+                </div>
+              </div>
+              <span
+                class="ml-2 font-semibold"
+              >
+                Peer
+              </span>
+            </li>
+          </div>
+          <div
+            class="relative cursor-pointer"
+            data-testid="side-menu__item--Plugins"
+          >
+            <div
+              class="sc-AxirZ dA-dDXy absolute top-0 left-0 rounded-lg bg-theme-primary"
+            />
+            <li
+              class="rounded-lg p-5 flex 
+        text-theme-primary
+        bg-theme-primary-contrast
+     flex items-center"
+            >
+              <div
+                class="text-theme-primary"
+              >
+                <div
+                  class="sc-AxjAm cpczEI"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    plugin.svg
+                  </svg>
+                </div>
+              </div>
+              <span
+                class="ml-2 font-semibold"
+              >
+                Plugins
+              </span>
+            </li>
+          </div>
+        </ul>
+      </div>
+    </div>
+    <div
+      class="w-3/5 pl-20 mx-12 border-l-1 border-theme-primary-contrast"
+    >
+      <span>
+        Plugins settings not found
+      </span>
     </div>
   </div>
 </DocumentFragment>
