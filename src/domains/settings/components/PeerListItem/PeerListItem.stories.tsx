@@ -9,7 +9,7 @@ export default {
 
 const data = [
 	{
-		coinIcon: "Btc",
+		coin: "Btc",
 		coinClass: "text-theme-warning-400 border-theme-warning-200",
 		name: "OLEBank",
 		peerIp: "194.168.4.67:800",

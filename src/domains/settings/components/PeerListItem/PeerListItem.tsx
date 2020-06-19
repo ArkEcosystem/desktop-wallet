@@ -4,7 +4,7 @@ import { Icon } from "app/components/Icon";
 import React from "react";
 
 type PeerListItemProps = {
-	coinIcon?: string;
+	coin?: string;
 	coinClass?: string;
 	name?: string;
 	peerIp?: string;
@@ -13,11 +13,11 @@ type PeerListItemProps = {
 	onAction?: any;
 };
 
-export const PeerListItem = ({ coinIcon, coinClass, name, peerIp, type, actions, onAction }: PeerListItemProps) => (
+export const PeerListItem = ({ coin, coinClass, name, peerIp, type, actions, onAction }: PeerListItemProps) => (
 	<tr className="border-b border-theme-neutral-200">
 		<td className="py-4 mt-1">
 			<Circle className={coinClass}>
-				<Icon name={coinIcon!} />
+				<Icon name={coin!} />
 			</Circle>
 		</td>
 		<td className="py-1">
