@@ -2,7 +2,8 @@ import { fireEvent, render } from "@testing-library/react";
 import { act, renderHook } from "@testing-library/react-hooks";
 import React from "react";
 
-import { SelectionBar, SelectionBarOption, useSelectionState } from "./index";
+import { SelectionBar, SelectionBarOption } from "./SelectionBar";
+import { useSelectionState } from "./useSelectionState";
 
 describe("SelectionBar", () => {
 	it("should render", () => {

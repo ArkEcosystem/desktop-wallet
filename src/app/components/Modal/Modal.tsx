@@ -8,7 +8,7 @@ type ModalProps = {
 	title: string;
 	description?: string;
 	image?: React.ReactNode;
-	size?: "sm" | "md" | "lg" | "xl" | "2xl" | "3xl" | "4xl";
+	size?: "sm" | "md" | "lg" | "xl" | "2xl" | "3xl" | "4xl" | "5xl";
 	isOpen: boolean;
 	onClose?: any;
 	onClick?: any;
@@ -19,7 +19,7 @@ type ModalContentProps = {
 	title: string;
 	description?: string;
 	image?: React.ReactNode;
-	size?: "sm" | "md" | "lg" | "xl" | "2xl" | "3xl" | "4xl";
+	size?: "sm" | "md" | "lg" | "xl" | "2xl" | "3xl" | "4xl" | "5xl";
 	onClose?: any;
 };
 
@@ -38,6 +38,8 @@ const ModalContainer = styled.div<{ size: string }>`
 				return tw`max-w-3xl`;
 			case "4xl":
 				return tw`max-w-4xl`;
+			case "5xl":
+				return tw`max-w-5xl`;
 			default:
 				return tw`max-w-2xl`;
 		}
@@ -48,7 +50,7 @@ const ModalContent = (props: ModalContentProps) => {
 	return (
 		<ModalContainer
 			size={props.size!}
-			className="fixed left-0 right-0 z-10 flex flex-col px-16 pt-6 pb-8 mx-auto mt-24 rounded-xl bg-theme-background"
+			className="fixed left-0 right-0 z-10 flex flex-col px-12 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
 			data-testid="modal__inner"
 		>
 			<div className="absolute top-0 right-0 mt-4 mr-4">
