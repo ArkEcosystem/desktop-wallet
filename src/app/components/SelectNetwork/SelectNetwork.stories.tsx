@@ -23,7 +23,7 @@ export const Default = () => {
 	];
 	return (
 		<div>
-			<SelectNetwork networks={networks} onViewAll={() => alert("View all networks")}></SelectNetwork>
+			<SelectNetwork networks={networks} onViewAll={() => alert("View all networks")} />
 		</div>
 	);
 };

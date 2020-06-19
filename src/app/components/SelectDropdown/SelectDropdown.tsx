@@ -45,7 +45,7 @@ export const SelectDropdown = ({ toggle, options, option }: Props) => {
 							data-toggle="dropdown"
 							aria-haspopup="true"
 							aria-expanded={isOpen}
-						></button>
+						/>
 						{isOpen ? (
 							<div
 								data-testid="select-dropdown__content"

@@ -45,12 +45,12 @@ export const TransactionListItem = ({
 			>
 				<td className="w-20 py-4 mt-1">
 					<Circle size="small" className={`${iconClasses[type]} -mr-1`}>
-						<Icon name={iconName[type]} width={40} height={40}></Icon>
+						<Icon name={iconName[type]} width={40} height={40} />
 					</Circle>
-					<Circle size="small" avatarId={avatarId}></Circle>
+					<Circle size="small" avatarId={avatarId} />
 				</td>
 				<td className="w-56 py-1">
-					<Address walletName={walletName} address={address} maxChars={16} size="small"></Address>
+					<Address walletName={walletName} address={address} maxChars={16} size="small" />
 				</td>
 				<td className="py-1 text-sm text-right">
 					<Label color={amountLabelColor[type]} size="small">
@@ -70,12 +70,12 @@ export const TransactionListItem = ({
 			<td className="w-48 py-1 text-sm text-theme-neutral-600"> {date} </td>
 			<td className="w-32 py-4 mt-1">
 				<Circle className={`${iconClasses[type]} -mr-1`}>
-					<Icon name={iconName[type]} width={40} height={40}></Icon>
+					<Icon name={iconName[type]} width={40} height={40} />
 				</Circle>
-				<Circle avatarId={avatarId}></Circle>
+				<Circle avatarId={avatarId} />
 			</td>
 			<td className="w-56 py-1">
-				<Address walletName={walletName} address={address} maxChars={24} size="small"></Address>
+				<Address walletName={walletName} address={address} maxChars={24} size="small" />
 			</td>
 			<td className="py-1 text-sm text-right">
 				<Label color={amountLabelColor[type]} size="small">
