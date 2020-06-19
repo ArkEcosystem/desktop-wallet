@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SelectDelegateModal should allow multiple selection 1`] = `
+exports[`SelectDelegate should allow multiple selection 1`] = `
 <DocumentFragment>
   <div
     class="fixed inset-0 z-10 bg-black opacity-50"
@@ -310,7 +310,7 @@ exports[`SelectDelegateModal should allow multiple selection 1`] = `
                 role="rowgroup"
               >
                 <tr
-                  class="border-b border-dashed border-theme-neutral-200 undefined"
+                  class="border-b border-dashed border-theme-neutral-200 false"
                 >
                   <td
                     class="w-16 text-center"
@@ -444,7 +444,7 @@ exports[`SelectDelegateModal should allow multiple selection 1`] = `
                   </td>
                 </tr>
                 <tr
-                  class="border-b border-dashed border-theme-neutral-200 undefined"
+                  class="border-b border-dashed border-theme-neutral-200 false"
                 >
                   <td
                     class="w-16 text-center"
@@ -688,9 +688,9 @@ exports[`SelectDelegateModal should allow multiple selection 1`] = `
 </DocumentFragment>
 `;
 
-exports[`SelectDelegateModal should not render if not open 1`] = `<DocumentFragment />`;
+exports[`SelectDelegate should not render if not open 1`] = `<DocumentFragment />`;
 
-exports[`SelectDelegateModal should only allow one selection 1`] = `
+exports[`SelectDelegate should only allow one selection 1`] = `
 <DocumentFragment>
   <div
     class="fixed inset-0 z-10 bg-black opacity-50"
@@ -1000,7 +1000,7 @@ exports[`SelectDelegateModal should only allow one selection 1`] = `
                 role="rowgroup"
               >
                 <tr
-                  class="border-b border-dashed border-theme-neutral-200 undefined"
+                  class="border-b border-dashed border-theme-neutral-200 false"
                 >
                   <td
                     class="w-16 text-center"
@@ -1072,7 +1072,7 @@ exports[`SelectDelegateModal should only allow one selection 1`] = `
                   </td>
                 </tr>
                 <tr
-                  class="border-b border-dashed border-theme-neutral-200 undefined"
+                  class="border-b border-dashed border-theme-neutral-200 false"
                 >
                   <td
                     class="w-16 text-center"
@@ -1206,7 +1206,7 @@ exports[`SelectDelegateModal should only allow one selection 1`] = `
                   </td>
                 </tr>
                 <tr
-                  class="border-b border-dashed border-theme-neutral-200 undefined"
+                  class="border-b border-dashed border-theme-neutral-200 false"
                 >
                   <td
                     class="w-16 text-center"
@@ -1326,7 +1326,7 @@ exports[`SelectDelegateModal should only allow one selection 1`] = `
 </DocumentFragment>
 `;
 
-exports[`SelectDelegateModal should render a modal 1`] = `
+exports[`SelectDelegate should render a modal 1`] = `
 <DocumentFragment>
   <div
     class="fixed inset-0 z-10 bg-black opacity-50"
@@ -1636,7 +1636,7 @@ exports[`SelectDelegateModal should render a modal 1`] = `
                 role="rowgroup"
               >
                 <tr
-                  class="border-b border-dashed border-theme-neutral-200 undefined"
+                  class="border-b border-dashed border-theme-neutral-200 false"
                 >
                   <td
                     class="w-16 text-center"
@@ -1708,7 +1708,7 @@ exports[`SelectDelegateModal should render a modal 1`] = `
                   </td>
                 </tr>
                 <tr
-                  class="border-b border-dashed border-theme-neutral-200 undefined"
+                  class="border-b border-dashed border-theme-neutral-200 false"
                 >
                   <td
                     class="w-16 text-center"
@@ -1770,7 +1770,7 @@ exports[`SelectDelegateModal should render a modal 1`] = `
                   </td>
                 </tr>
                 <tr
-                  class="border-b border-dashed border-theme-neutral-200 undefined"
+                  class="border-b border-dashed border-theme-neutral-200 false"
                 >
                   <td
                     class="w-16 text-center"
@@ -1842,7 +1842,7 @@ exports[`SelectDelegateModal should render a modal 1`] = `
                   </td>
                 </tr>
                 <tr
-                  class="border-b border-dashed border-theme-neutral-200 undefined"
+                  class="border-b border-dashed border-theme-neutral-200 false"
                 >
                   <td
                     class="w-16 text-center"

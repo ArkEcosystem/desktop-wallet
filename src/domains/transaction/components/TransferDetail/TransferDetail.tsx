@@ -33,7 +33,7 @@ export const TransferDetail = (props: TransferDetailProps) => {
 				}
 			>
 				ROBank
-				<span className="ml-2 text-theme-neutral-500">ADDR...ESSS</span>
+				<span className="text-theme-neutral-500 ml-2">ADDR...ESSS</span>
 			</TransactionDetail>
 
 			<TransactionDetail
@@ -46,7 +46,7 @@ export const TransferDetail = (props: TransferDetailProps) => {
 			>
 				<Label color="success">2,088.84557 ARK</Label>
 
-				<span className="ml-2 text-theme-neutral-500">23,000.00 USD</span>
+				<span className="text-theme-neutral-500 ml-2">23,000.00 USD</span>
 			</TransactionDetail>
 
 			<TransactionDetail label={t("TRANSACTION.TRANSACTION_FEE")}>0.09812015 ARK</TransactionDetail>
@@ -63,7 +63,7 @@ export const TransferDetail = (props: TransferDetailProps) => {
 			<TransactionDetail label={t("TRANSACTION.CONFIRMATIONS")}>
 				<div className="flex">
 					Well Confirmed
-					<div className="flex w-6 h-6 ml-2 rounded-full bg-theme-success-200 text-theme-success-500">
+					<div className="bg-theme-success-200 text-theme-success-500 flex w-6 h-6 ml-2 rounded-full">
 						<div className="m-auto">
 							<Icon name="Checkmark" width={15} height={15} />
 						</div>
@@ -74,7 +74,7 @@ export const TransferDetail = (props: TransferDetailProps) => {
 			<TransactionDetail label={t("TRANSACTION.ID")}>
 				<span className="text-theme-primary-700">1234678...12312313</span>
 
-				<span className="inline-block ml-4 text-theme-primary-300">
+				<span className="text-theme-primary-300 inline-block ml-4">
 					<Icon name="Copy" />
 				</span>
 			</TransactionDetail>
@@ -82,7 +82,7 @@ export const TransferDetail = (props: TransferDetailProps) => {
 			<TransactionDetail label={t("TRANSACTION.BLOCK_ID")}>
 				<span className="text-theme-primary-700">1234678...12312313</span>
 
-				<span className="inline-block ml-4 text-theme-primary-300">
+				<span className="text-theme-primary-300 inline-block ml-4">
 					<Icon name="Copy" />
 				</span>
 			</TransactionDetail>

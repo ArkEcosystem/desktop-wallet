@@ -11,7 +11,7 @@ describe("TransferDetail", () => {
 	it("should not render if not open", () => {
 		const { asFragment, getByTestId } = render(
 			<I18nextProvider i18n={i18n}>
-				<TransferDetail isOpen={false} onDelete={() => void 0} />
+				<TransferDetail isOpen={false} onClose={() => console.log("onClose")} />
 			</I18nextProvider>,
 		);
 
@@ -22,7 +22,7 @@ describe("TransferDetail", () => {
 	it("should render a modal", () => {
 		const { asFragment, getByTestId } = render(
 			<I18nextProvider i18n={i18n}>
-				<TransferDetail isOpen={true} onDelete={() => void 0} />
+				<TransferDetail isOpen={true} onClose={() => console.log("onClose")} />
 			</I18nextProvider>,
 		);
 
