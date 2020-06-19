@@ -8,7 +8,7 @@ type ReviewRatingProps = {
 };
 
 export const ReviewRating = (props: ReviewRatingProps) => (
-	<div className="flex">
+	<div className="flex" data-testid="ReviewRating">
 		<div className="relative my-auto">
 			{props.rating > 0 && (
 				<div className="absolute overflow-hidden" style={{ width: `${((props.rating - 1) / 4) * 100}%` }}>

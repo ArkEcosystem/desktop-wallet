@@ -4,6 +4,7 @@ exports[`ReviewRating should render 1`] = `
 <DocumentFragment>
   <div
     class="flex"
+    data-testid="ReviewRating"
   >
     <div
       class="relative my-auto"
@@ -18,6 +19,35 @@ exports[`ReviewRating should render 1`] = `
       class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
     >
       -
+    </span>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`ReviewRating should render with total 1`] = `
+<DocumentFragment>
+  <div
+    class="flex"
+    data-testid="ReviewRating"
+  >
+    <div
+      class="relative my-auto"
+    >
+      <svg
+        class="text-theme-neutral-500 w-5"
+      >
+        star.svg
+      </svg>
+    </div>
+    <span
+      class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+    >
+      -
+    </span>
+    <span
+      class="text-theme-neutral-500"
+    >
+      /5
     </span>
   </div>
 </DocumentFragment>
