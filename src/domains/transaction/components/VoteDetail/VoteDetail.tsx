@@ -26,6 +26,7 @@ export const VoteDetail = (props: VoteDetailProps) => {
 						<Circle avatarId="test"></Circle>
 					</div>
 				}
+				border={false}
 			>
 				ROBank
 				<span className="ml-2 text-theme-neutral-500">ADDR...ESSS</span>

@@ -248,7 +248,7 @@ export const CreateWallet = ({ networks, mnemonic, onSubmit, onCopy, onDownload,
 							<FourthStep />
 						</TabPanel>
 
-						<div className="flex justify-end mt-6 space-x-2">
+						<div className="flex justify-end mt-6 space-x-3">
 							<Button
 								disabled={activeTab === 1}
 								data-testid="CreateWallet__back-button"
