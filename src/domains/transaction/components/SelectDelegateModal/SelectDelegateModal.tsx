@@ -48,36 +48,21 @@ const SelectedDelegateList = (props: SelectedDelegateListProps) => {
 export const SelectDelegateModal = (props: SelectDelegateModalProps) => {
 	const { t } = useTranslation();
 	const [showSelectedList, setShowSelectedList] = useState(false);
-	const [selected, setSelected] = useState({} as any);
+	const [selected, setSelected] = useState([] as any);
 	const toggleSelected = (delegate: any) => {
-		if (selected[delegate.username]) {
-			setSelected(
-				Object.values(selected).reduce((mapping: any, selectedDelegate: any) => {
-					if (selectedDelegate.username === delegate.username) {
-						return mapping;
-					}
-
-					mapping[selectedDelegate.username] = selectedDelegate;
-
-					return mapping;
-				}, {}) as any,
-			);
+		if (selected.find((selectedDelegate: any) => selectedDelegate.username === delegate.username)) {
+			setSelected(selected.filter((selectedDelegate: any) => selectedDelegate.username !== delegate.username));
 
 			return;
 		}
 
 		if (props.allowMultiple) {
-			setSelected({
-				...selected,
-				[delegate.username]: delegate,
-			});
+			setSelected([...selected, delegate]);
 
 			return;
 		}
 
-		setSelected({
-			[delegate.username]: delegate,
-		});
+		setSelected([delegate]);
 	};
 
 	const totalSupply = 129354814;
@@ -180,67 +165,73 @@ export const SelectDelegateModal = (props: SelectDelegateModalProps) => {
 
 			<div className="mt-8 mb-14">
 				<Table columns={columns} data={data}>
-					{(rowData: any) => (
-						<tr
-							className={`border-b border-dashed border-theme-neutral-200 ${
-								selected[rowData.username] && "bg-theme-success-100"
-							}`}
-						>
-							<td className="w-16 text-center">
-								{props.allowMultiple ? (
-									<Checkbox
-										checked={selected[rowData.username]}
-										onChange={() => toggleSelected(rowData)}
-										data-testid={`SelectedDelegateModal__select-delegate-${rowData.username}`}
-									/>
-								) : (
-									<RadioButton
-										checked={selected[rowData.username]}
-										onChange={() => toggleSelected(rowData)}
-										data-testid={`SelectedDelegateModal__select-delegate-${rowData.username}`}
-									/>
-								)}
-							</td>
+					{(rowData: any) => {
+						const isSelected =
+							selected.find((selectedDelegate: any) => selectedDelegate.username === rowData.username) ||
+							false;
 
-							<td className="w-16 px-4">
-								<Circle avatarId="test" noShadow={true} />
-							</td>
+						return (
+							<tr
+								className={`border-b border-dashed border-theme-neutral-200 ${
+									isSelected && "bg-theme-success-100"
+								}`}
+							>
+								<td className="w-16 text-center">
+									{props.allowMultiple ? (
+										<Checkbox
+											checked={isSelected}
+											onChange={() => toggleSelected(rowData)}
+											data-testid={`SelectedDelegateModal__select-delegate-${rowData.username}`}
+										/>
+									) : (
+										<RadioButton
+											checked={isSelected}
+											onChange={() => toggleSelected(rowData)}
+											data-testid={`SelectedDelegateModal__select-delegate-${rowData.username}`}
+										/>
+									)}
+								</td>
 
-							<td className="py-6 font-semibold">
-								<div>{rowData.username}</div>
-							</td>
-
-							<td className="py-6 font-semibold text-theme-neutral-700">#{rowData.rank}</td>
-
-							<td className="py-6 text-center text-theme-primary-500">
-								{rowData.marketsquare && (
-									<a href={rowData.marketsquare}>
-										<SvgCollection.Link className="inline-block h-5 cursor-pointer" />
-									</a>
-								)}
-							</td>
-
-							<td className="py-6 font-semibold whitespace-no-wrap text-theme-neutral-700">
-								<div>{Numeral.make("en").format(rowData.forged_ark)} A</div>
-							</td>
-
-							<td className="py-6 pr-8 font-semibold text-right whitespace-no-wrap text-theme-neutral-700">
-								<span className="mr-1 text-sm text-theme-neutral-500">
-									{Numeral.make("en").format((rowData.votes / totalSupply) * 100)}%
-								</span>
-
-								<span>{Numeral.make("en").format(rowData.votes)} A</span>
-							</td>
-
-							<td className="w-16">
-								{rowData.voting ? (
+								<td className="w-16 px-4">
 									<Circle avatarId="test" noShadow={true} />
-								) : (
-									<Circle className=" border-theme-primary-100" noShadow={true} />
-								)}
-							</td>
-						</tr>
-					)}
+								</td>
+
+								<td className="py-6 font-semibold">
+									<div>{rowData.username}</div>
+								</td>
+
+								<td className="py-6 font-semibold text-theme-neutral-700">#{rowData.rank}</td>
+
+								<td className="py-6 text-center text-theme-primary-500">
+									{rowData.marketsquare && (
+										<a href={rowData.marketsquare}>
+											<SvgCollection.Link className="inline-block h-5 cursor-pointer" />
+										</a>
+									)}
+								</td>
+
+								<td className="py-6 font-semibold whitespace-no-wrap text-theme-neutral-700">
+									<div>{Numeral.make("en").format(rowData.forged_ark)} A</div>
+								</td>
+
+								<td className="py-6 pr-8 font-semibold text-right whitespace-no-wrap text-theme-neutral-700">
+									<span className="mr-1 text-sm text-theme-neutral-500">
+										{Numeral.make("en").format((rowData.votes / totalSupply) * 100)}%
+									</span>
+
+									<span>{Numeral.make("en").format(rowData.votes)} A</span>
+								</td>
+
+								<td className="w-16">
+									{rowData.voting ? (
+										<Circle avatarId="test" noShadow={true} />
+									) : (
+										<Circle className=" border-theme-primary-100" noShadow={true} />
+									)}
+								</td>
+							</tr>
+						);
+					}}
 				</Table>
 			</div>
 
@@ -264,7 +255,7 @@ export const SelectDelegateModal = (props: SelectDelegateModalProps) => {
 									<div className="text-sm text-theme-neutral-500">{t("COMMON.DELEGATE_ADDRESS")}</div>
 
 									<div className="font-semibold text-theme-neutral-700">
-										{Object.values(selected)[0].username} - {Object.values(selected)[0].address}
+										{(selected[0]).username} - {(selected[0]).address}
 									</div>
 								</div>
 							</div>
@@ -275,12 +266,12 @@ export const SelectDelegateModal = (props: SelectDelegateModalProps) => {
 						""
 					)}
 
-					{props.allowMultiple && Object.keys(selected).length ? (
+					{props.allowMultiple && selected.length ? (
 						<div className="flex">
 							<div className="px-8 mr-8 font-semibold border-r border-theme-neutral-300">
 								<div className="text-sm text-theme-neutral-500">{t("COMMON.QUANTITY")}</div>
 
-								<div className="text-theme-neutral-700">{Object.keys(selected).length}/50</div>
+								<div className="text-theme-neutral-700">{selected.length}/50</div>
 							</div>
 
 							<div className="flex-1">
@@ -300,9 +291,7 @@ export const SelectDelegateModal = (props: SelectDelegateModalProps) => {
 									<Button onClick={props.onVote}>Vote</Button>
 								</div>
 
-								{showSelectedList && (
-									<SelectedDelegateList delegates={Object.values(selected)} className="mt-2" />
-								)}
+								{showSelectedList && <SelectedDelegateList delegates={selected} className="mt-2" />}
 							</div>
 						</div>
 					) : (
