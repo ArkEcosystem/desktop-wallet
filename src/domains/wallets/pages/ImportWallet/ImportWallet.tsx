@@ -129,7 +129,7 @@ const ImportWallet = ({ networks, onSubmit }: Props) => {
 									{renderImportInput()}
 								</div>
 							</div>
-							<div className="mt-10">
+							<div className="mt-10 space-x-3">
 								<Button
 									data-testid="import-wallet__prev-step--button"
 									color="primary"
@@ -138,13 +138,7 @@ const ImportWallet = ({ networks, onSubmit }: Props) => {
 								>
 									Back
 								</Button>
-								<Button
-									form="import-wallet__form"
-									color="primary"
-									variant="solid"
-									className="ml-2"
-									type="submit"
-								>
+								<Button form="import-wallet__form" color="primary" variant="solid" type="submit">
 									Go to Wallet
 								</Button>
 							</div>

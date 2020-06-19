@@ -92,8 +92,8 @@ export const ContactUs = (props: ContactUsProps) => {
 					/>
 				</FormField>
 
-				<div className="mt-4">
-					<Button color="primary" variant="plain" onClick={props.onCancel} className="mr-2">
+				<div className="mt-4 space-x-3">
+					<Button color="primary" variant="plain" onClick={props.onCancel}>
 						{t("COMMON.CANCEL")}
 					</Button>
 

@@ -5,6 +5,7 @@ export const translations: { [key: string]: any } = {
 	BLOCK_ID: "Block ID",
 	CONFIRMATIONS: "Confirmations",
 	ID: "ID",
+	IPFS_HASH: "IPFS Hash",
 	RECIPIENT: "Recipient",
 	RECIPIENTS: "Recipients",
 	SENDER: "Sender",
@@ -47,5 +48,9 @@ export const translations: { [key: string]: any } = {
 		TITLE: "Select a Delegate",
 		DESCRIPTION:
 			"Please select the Delegate you wish to vote for. For additional information about the delegate and/or payouts, please visit MarketSquare.",
+	},
+
+	MODAL_IPFS_DETAIL: {
+		TITLE: "Transaction IPFS Hash",
 	},
 };

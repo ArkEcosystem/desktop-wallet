@@ -36,8 +36,8 @@ export const UpdateWalletName = ({ ...props }: UpdateWalletNameProps) => {
 					<FormHelperText />
 				</FormField>
 
-				<div className="mt-4">
-					<Button color="primary" variant="plain" onClick={props.onCancel} className="mr-2">
+				<div className="mt-4 space-x-3">
+					<Button color="primary" variant="plain" onClick={props.onCancel}>
 						Cancel
 					</Button>
 

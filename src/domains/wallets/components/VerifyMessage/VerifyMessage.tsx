@@ -87,11 +87,11 @@ export const VerifyMessage = ({ onSubmit, publicKey, isOpen, handleClose }: Prop
 
 				<Form id="verify-message__form" context={form} onSubmit={onSubmit}>
 					{renderFormContent()}
-					<div className="flex items-center">
+					<div className="flex items-center space-x-3">
 						<Button color="primary" variant="plain" size="large">
 							Cancel
 						</Button>
-						<Button color="primary" variant="solid" size="large" className="ml-5">
+						<Button color="primary" variant="solid" size="large">
 							Verify
 						</Button>
 					</div>

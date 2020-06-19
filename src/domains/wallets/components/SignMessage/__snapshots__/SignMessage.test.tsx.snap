@@ -317,7 +317,7 @@ exports[`SignMessage should render the SignMessage 1`] = `
               </div>
             </fieldset>
             <div
-              class="flex items-center"
+              class="flex items-center space-x-3"
             >
               <button
                 class="sc-AxjAm MNFIo"
@@ -327,7 +327,7 @@ exports[`SignMessage should render the SignMessage 1`] = `
                 Cancel
               </button>
               <button
-                class="sc-AxjAm jJyNnk ml-5"
+                class="sc-AxjAm jJyNnk"
                 color="primary"
                 data-testid="sign-message__sign-button"
                 type="button"
