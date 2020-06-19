@@ -7,12 +7,12 @@ import { clickOutsideHandler } from "./hooks";
 
 describe("Dropdown", () => {
 	it("should render", () => {
-		const { container } = render(<Dropdown></Dropdown>);
+		const { container } = render(<Dropdown />);
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should render toggle icon", () => {
-		const { container, getByTestId } = render(<Dropdown></Dropdown>);
+		const { container, getByTestId } = render(<Dropdown />);
 		expect(container).toMatchSnapshot();
 		expect(getByTestId("dropdown__toggle")).toBeTruthy();
 	});
@@ -22,7 +22,7 @@ describe("Dropdown", () => {
 			{ label: "Option 1", value: "1" },
 			{ label: "Option 2", value: "2" },
 		];
-		const { container } = render(<Dropdown options={options}></Dropdown>);
+		const { container } = render(<Dropdown options={options} />);
 		expect(container).toMatchSnapshot();
 	});
 
@@ -31,7 +31,7 @@ describe("Dropdown", () => {
 			{ label: "Option 1", value: "1" },
 			{ label: "Option 2", value: -"2" },
 		];
-		const { getByTestId } = render(<Dropdown options={options}></Dropdown>);
+		const { getByTestId } = render(<Dropdown options={options} />);
 		const toggle = getByTestId("dropdown__toggle");
 
 		act(() => {
@@ -46,7 +46,7 @@ describe("Dropdown", () => {
 			{ label: "Option 2", value: "2" },
 		];
 		const onSelect = jest.fn();
-		const { getByTestId } = render(<Dropdown options={options} onSelect={onSelect}></Dropdown>);
+		const { getByTestId } = render(<Dropdown options={options} onSelect={onSelect} />);
 		const toggle = getByTestId("dropdown__toggle");
 
 		act(() => {
@@ -70,7 +70,7 @@ describe("Dropdown", () => {
 			{ label: "Option 1", value: "1" },
 			{ label: "Option 2", value: "2" },
 		];
-		const { getByTestId, container } = render(<Dropdown options={options}></Dropdown>);
+		const { getByTestId, container } = render(<Dropdown options={options} />);
 		const toggle = getByTestId("dropdown__toggle");
 
 		act(() => {
@@ -101,7 +101,7 @@ describe("Dropdown", () => {
 					outside elememt to be clicked
 				</div>
 				<div className="m-16">
-					<Dropdown options={options} onSelect={onSelect}></Dropdown>
+					<Dropdown options={options} onSelect={onSelect} />
 				</div>
 			</div>,
 		);
@@ -127,13 +127,13 @@ describe("Dropdown", () => {
 	});
 
 	it("should render with custom toggle content as react element", () => {
-		const { container } = render(<Dropdown toggleContent={<div>custom toggle</div>}></Dropdown>);
+		const { container } = render(<Dropdown toggleContent={<div>custom toggle</div>} />);
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should render with custom toggle content as function", () => {
 		const { container } = render(
-			<Dropdown toggleContent={(isOpen: boolean) => <div>Dropdown is open: {isOpen}</div>}></Dropdown>,
+			<Dropdown toggleContent={(isOpen: boolean) => <div>Dropdown is open: {isOpen}</div>} />,
 		);
 		expect(container).toMatchSnapshot();
 	});

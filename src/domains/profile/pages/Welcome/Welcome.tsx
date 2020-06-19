@@ -65,12 +65,8 @@ export const Welcome = () => {
 					<p className="mb-4 text-sm text-theme-neutral-dark md:text-base">
 						Create a new Profile or login with your MarketSquare account to get started
 					</p>
-					<div className="flex flex-col md:flex-row">
-						<Button
-							color="primary"
-							variant="solid"
-							className="flex items-center justify-center w-full mr-2"
-						>
+					<div className="flex flex-col space-x-3 md:flex-row">
+						<Button color="primary" variant="solid" className="flex items-center justify-center w-full">
 							<Icon name="Msq" width={20} height={20} />
 							<span className="ml-2">Sign in to MarketSquare</span>
 						</Button>

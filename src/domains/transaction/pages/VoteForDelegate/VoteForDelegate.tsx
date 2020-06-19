@@ -33,7 +33,7 @@ export const FirstStep = () => {
 					label="Account"
 					extra={
 						<div>
-							<Circle avatarId="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"></Circle>
+							<Circle avatarId="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
 						</div>
 					}
 				>
@@ -43,7 +43,7 @@ export const FirstStep = () => {
 					label="Delegate"
 					extra={
 						<div>
-							<Circle avatarId="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"></Circle>
+							<Circle avatarId="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
 						</div>
 					}
 				>
@@ -100,7 +100,7 @@ export const SecondStep = () => (
 				label="Account"
 				extra={
 					<div>
-						<Circle avatarId="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"></Circle>
+						<Circle avatarId="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
 					</div>
 				}
 			>
@@ -110,7 +110,7 @@ export const SecondStep = () => (
 				label="Delegate"
 				extra={
 					<div>
-						<Circle avatarId="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"></Circle>
+						<Circle avatarId="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
 					</div>
 				}
 			>
@@ -212,7 +212,7 @@ export const FourthStep = () => (
 					label="Account"
 					extra={
 						<div>
-							<Circle avatarId="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"></Circle>
+							<Circle avatarId="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
 						</div>
 					}
 				>
@@ -222,7 +222,7 @@ export const FourthStep = () => (
 					label="Delegate"
 					extra={
 						<div>
-							<Circle avatarId="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"></Circle>
+							<Circle avatarId="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
 						</div>
 					}
 				>
@@ -297,7 +297,7 @@ export const VoteForDelegate = ({ onCopy, onSubmit }: Props) => {
 							<FourthStep />
 						</TabPanel>
 
-						<div className="flex justify-start mt-6 space-x-2">
+						<div className="flex justify-start mt-6 space-x-3">
 							{activeTab < 4 && (
 								<>
 									<Button

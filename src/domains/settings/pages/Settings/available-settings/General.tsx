@@ -1,6 +1,5 @@
 import { Button } from "app/components/Button";
 import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
-// UI Elements
 import { Header } from "app/components/Header";
 import { Icon } from "app/components/Icon";
 import { Input } from "app/components/Input";
@@ -9,13 +8,13 @@ import { Select } from "app/components/Select";
 import { Toggle } from "app/components/Toggle";
 import React from "react";
 
-type Props = {
+type GeneralProps = {
 	formConfig: any;
 	pageConfig: any;
 	onSubmit?: any;
 };
 
-export const General = ({ formConfig, pageConfig, onSubmit }: Props) => {
+export const General = ({ formConfig, pageConfig, onSubmit }: GeneralProps) => {
 	const personalDetails = [
 		{
 			isFloatingLabel: true,
@@ -225,8 +224,8 @@ export const General = ({ formConfig, pageConfig, onSubmit }: Props) => {
 							<span className="ml-2">Reset Data</span>
 						</div>
 					</Button>
-					<div>
-						<Button color="primary" variant="plain" size="large" className="mr-3">
+					<div className="space-x-3">
+						<Button color="primary" variant="plain" size="large">
 							Cancel
 						</Button>
 						<Button color="primary" variant="solid" size="large">

@@ -38,7 +38,7 @@ export const DeleteResource = ({
 		>
 			{children && <div className="mt-4">{children}</div>}
 
-			<div className="flex justify-end mt-8 space-x-2">
+			<div className="flex justify-end mt-8 space-x-3">
 				<Button color="primary" variant="plain" onClick={onCancel}>
 					{t("COMMON.CANCEL")}
 				</Button>

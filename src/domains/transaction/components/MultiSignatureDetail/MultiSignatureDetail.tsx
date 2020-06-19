@@ -84,11 +84,11 @@ export const FirstStep = () => {
 
 	return (
 		<section data-testid="MultiSignatureDetail__first-step">
-			<TransactionDetail label={t("TRANSACTION.SENDER")} extra={<Circle avatarId="test"></Circle>} border={false}>
+			<TransactionDetail label={t("TRANSACTION.SENDER")} extra={<Circle avatarId="test" />} border={false}>
 				<div className="mt-2 font-semibold">ADDRESS</div>
 			</TransactionDetail>
 
-			<TransactionDetail label={t("TRANSACTION.RECIPIENT")} extra={<Circle avatarId="test"></Circle>}>
+			<TransactionDetail label={t("TRANSACTION.RECIPIENT")} extra={<Circle avatarId="test" />}>
 				Bank
 				<span className="ml-2 text-theme-neutral-500">ADDR...ESSS</span>
 			</TransactionDetail>
@@ -96,7 +96,7 @@ export const FirstStep = () => {
 			<TransactionDetail
 				label={t("TRANSACTION.AMOUNT")}
 				extra={
-					<Circle className="-mr-2 border-theme-danger-100 text-theme-danger-400">
+					<Circle className="border-theme-danger-100 text-theme-danger-400">
 						<Icon name="Sent" width={40} height={40} />
 					</Circle>
 				}
@@ -197,7 +197,7 @@ export const MultiSignatureDetail = (props: MultiSignatureDetailProps) => {
 								</Button>
 							</div>
 
-							<div className="space-x-2">
+							<div className="space-x-3">
 								<Button
 									disabled={activeStep === 1}
 									data-testid="MultiSignatureDetail__back-button"

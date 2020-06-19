@@ -862,9 +862,11 @@ exports[`Settings should render 1`] = `
               </span>
             </div>
           </button>
-          <div>
+          <div
+            class="space-x-3"
+          >
             <button
-              class="sc-AxiKw dnvybb mr-3"
+              class="sc-AxiKw dnvybb"
               color="primary"
               type="button"
             >
@@ -886,6 +888,117 @@ exports[`Settings should render 1`] = `
 `;
 
 exports[`Settings should render a not found information 1`] = `
+<DocumentFragment>
+  <div
+    class="flex w-full h-full"
+  >
+    <div
+      class="w-1/4 h-full"
+    >
+      <div>
+        <ul>
+          <div
+            class="relative cursor-pointer"
+            data-testid="side-menu__item--General"
+          >
+            <li
+              class="rounded-lg p-5 flex text-theme-medium flex items-center"
+            >
+              <div
+                class="text-theme-primary-contrast"
+              >
+                <div
+                  class="sc-AxjAm cpczEI"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    general.svg
+                  </svg>
+                </div>
+              </div>
+              <span
+                class="ml-2 font-semibold"
+              >
+                General
+              </span>
+            </li>
+          </div>
+          <div
+            class="relative cursor-pointer"
+            data-testid="side-menu__item--Peer"
+          >
+            <li
+              class="rounded-lg p-5 flex text-theme-medium flex items-center"
+            >
+              <div
+                class="text-theme-primary-contrast"
+              >
+                <div
+                  class="sc-AxjAm cpczEI"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    peer.svg
+                  </svg>
+                </div>
+              </div>
+              <span
+                class="ml-2 font-semibold"
+              >
+                Peer
+              </span>
+            </li>
+          </div>
+          <div
+            class="relative cursor-pointer"
+            data-testid="side-menu__item--Plugins"
+          >
+            <div
+              class="sc-AxirZ dA-dDXy absolute top-0 left-0 rounded-lg bg-theme-primary"
+            />
+            <li
+              class="rounded-lg p-5 flex 
+        text-theme-primary
+        bg-theme-primary-contrast
+     flex items-center"
+            >
+              <div
+                class="text-theme-primary"
+              >
+                <div
+                  class="sc-AxjAm cpczEI"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    plugin.svg
+                  </svg>
+                </div>
+              </div>
+              <span
+                class="ml-2 font-semibold"
+              >
+                Plugins
+              </span>
+            </li>
+          </div>
+        </ul>
+      </div>
+    </div>
+    <div
+      class="w-3/5 pl-20 mx-12 border-l-1 border-theme-primary-contrast"
+    >
+      <span>
+        Plugins settings not found
+      </span>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Settings should render peer settings 1`] = `
 <DocumentFragment>
   <div
     class="flex w-full h-full"
@@ -988,9 +1101,470 @@ exports[`Settings should render a not found information 1`] = `
     <div
       class="w-3/5 pl-20 mx-12 border-l-1 border-theme-primary-contrast"
     >
-      <span>
-        Peer settings not found
-      </span>
+      <div
+        class="flex flex-col items-start"
+      >
+        <h1
+          class="text-3xl font-bold md:text-4xl"
+          data-testid="header__title"
+        >
+          Peer Settings
+        </h1>
+        <div
+          class="mt-2 text-theme-neutral-dark"
+          data-testid="header__subtitle"
+        >
+          Customize your wallet to suit your needs.
+        </div>
+      </div>
+      <form
+        class="space-y-6"
+        data-testid="Form"
+        id="peer-settings__form"
+      >
+        <ul
+          class="sc-fzplWN krwTau"
+          data-testid="list-divided__items"
+        >
+          <li
+            class="flex flex-col w-full py-4"
+            data-testid="list-divided-item__wrapper"
+          >
+            <div
+              class="flex justify-between flex-col items-start mt-5"
+              data-testid="list-divided-item__inner-wrapper"
+            >
+              <div
+                class="flex flex-col"
+              >
+                <span
+                  class="mr-5 text-xl font-bold text-theme-neutral-dark"
+                  data-testid="list-divided-item__label"
+                >
+                  Broadcast to Multiple Peers
+                </span>
+              </div>
+            </div>
+            <div
+              class="mt-4"
+              data-testid="list-divided-item__content"
+            >
+              <div
+                class="flex flex-row justify-between"
+              >
+                <span
+                  class="w-3/4 text-sm text-theme-neutral-dark"
+                >
+                  This protection will protect your money from unwanted Screenshot your PC.
+                </span>
+                <div
+                  class="-mt-2"
+                >
+                  <label>
+                    <input
+                      class="sc-fznyAO htyfyy"
+                      type="checkbox"
+                    />
+                    <div
+                      class="sc-fznKkj iTYdAh"
+                    >
+                      <span
+                        class="sc-fznZeY izeqLb"
+                      />
+                    </div>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li
+            class="flex flex-col w-full py-4"
+            data-testid="list-divided-item__wrapper"
+          >
+            <div
+              class="flex justify-between flex-col items-start mt-5"
+              data-testid="list-divided-item__inner-wrapper"
+            >
+              <div
+                class="flex flex-col"
+              >
+                <span
+                  class="mr-5 text-xl font-bold text-theme-neutral-dark"
+                  data-testid="list-divided-item__label"
+                >
+                  Use Custom Peers
+                </span>
+              </div>
+            </div>
+            <div
+              class="mt-4"
+              data-testid="list-divided-item__content"
+            >
+              <div
+                class="flex flex-row justify-between"
+              >
+                <span
+                  class="w-3/4 text-sm text-theme-neutral-dark"
+                >
+                  You hereby assume the risk associated with downloading files and installing said files from a direct URL link.
+                </span>
+                <div
+                  class="-mt-2"
+                >
+                  <label>
+                    <input
+                      class="sc-fznyAO htyfyy"
+                      type="checkbox"
+                    />
+                    <div
+                      class="sc-fznKkj iTYdAh"
+                    >
+                      <span
+                        class="sc-fznZeY izeqLb"
+                      />
+                    </div>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <div>
+          <div
+            class="sc-fzokOt fBgcjy"
+            role="table"
+          >
+            <table
+              class="table-auto"
+            >
+              <thead>
+                <tr
+                  role="row"
+                >
+                  <th
+                    class="text-theme-neutral-400 text-left text-xs select-none pb-3}"
+                    colspan="1"
+                    data-testid="table__th--0"
+                    role="columnheader"
+                  >
+                    <div
+                      class="flex flex-inline align-top  undefined"
+                    >
+                      <div
+                        class="mr-1"
+                      >
+                        Network
+                      </div>
+                      <div
+                        class="mt-1 text-theme-color-neutral-500"
+                        data-testid="table__Sort"
+                      />
+                    </div>
+                  </th>
+                  <th
+                    class="text-theme-neutral-400 text-left text-xs select-none pb-3}"
+                    colspan="1"
+                    data-testid="table__th--1"
+                    role="columnheader"
+                  >
+                    <div
+                      class="flex flex-inline align-top  undefined"
+                    >
+                      <div
+                        class="mr-1"
+                      >
+                        Name
+                      </div>
+                      <div
+                        class="mt-1 text-theme-color-neutral-500"
+                        data-testid="table__Sort"
+                      />
+                    </div>
+                  </th>
+                  <th
+                    class="text-theme-neutral-400 text-left text-xs select-none pb-3}"
+                    colspan="1"
+                    data-testid="table__th--2"
+                    role="columnheader"
+                  >
+                    <div
+                      class="flex flex-inline align-top  undefined"
+                    >
+                      <div
+                        class="mr-1"
+                      >
+                        Peer IP
+                      </div>
+                      <div
+                        class="mt-1 text-theme-color-neutral-500"
+                        data-testid="table__Sort"
+                      />
+                    </div>
+                  </th>
+                  <th
+                    class="text-theme-neutral-400 text-left text-xs select-none pb-3}"
+                    colspan="1"
+                    data-testid="table__th--3"
+                    role="columnheader"
+                  >
+                    <div
+                      class="flex flex-inline align-top  flex justify-center"
+                    >
+                      <div
+                        class="mr-1"
+                      >
+                        Type
+                      </div>
+                      <div
+                        class="mt-1 text-theme-color-neutral-500"
+                        data-testid="table__Sort"
+                      />
+                    </div>
+                  </th>
+                </tr>
+              </thead>
+              <tbody
+                role="rowgroup"
+              >
+                <tr
+                  class="border-b border-theme-neutral-200"
+                >
+                  <td
+                    class="py-4 mt-1"
+                  >
+                    <div
+                      class="sc-fzqBZW iYntX text-logo border-theme-danger-200"
+                    >
+                      <div
+                        class="sc-AxjAm cpczEI"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          ark.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </td>
+                  <td
+                    class="py-1"
+                  >
+                    <span>
+                      ROBank
+                    </span>
+                  </td>
+                  <td
+                    class="py-1"
+                  >
+                    <span>
+                      194.168.4.67:800
+                    </span>
+                  </td>
+                  <td
+                    class="py-1 text-theme-primary-300"
+                  >
+                    <div
+                      class="flex justify-center h-full"
+                    >
+                      <div
+                        class="sc-AxjAm cpczEI"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          multisig.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div
+                      class="relative"
+                      data-testid="dropdown__toggle"
+                    >
+                      <button
+                        class="float-right outline-none focus:outline-none"
+                      >
+                        <div
+                          class="sc-AxjAm buCJuk"
+                          height="20"
+                          width="20"
+                        >
+                          <svg>
+                            settings.svg
+                          </svg>
+                        </div>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr
+                  class="border-b border-theme-neutral-200"
+                >
+                  <td
+                    class="py-4 mt-1"
+                  >
+                    <div
+                      class="sc-fzqBZW iYntX border-theme-neutral-300"
+                    >
+                      <div
+                        class="sc-AxjAm cpczEI"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          eth.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </td>
+                  <td
+                    class="py-1"
+                  >
+                    <span>
+                      MATBank
+                    </span>
+                  </td>
+                  <td
+                    class="py-1"
+                  >
+                    <span>
+                      194.168.4.67:800
+                    </span>
+                  </td>
+                  <td
+                    class="py-1 text-theme-primary-300"
+                  >
+                    <div
+                      class="flex justify-center h-full"
+                    >
+                      <div
+                        class="sc-AxjAm cpczEI"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          multisig.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div
+                      class="relative"
+                      data-testid="dropdown__toggle"
+                    >
+                      <button
+                        class="float-right outline-none focus:outline-none"
+                      >
+                        <div
+                          class="sc-AxjAm buCJuk"
+                          height="20"
+                          width="20"
+                        >
+                          <svg>
+                            settings.svg
+                          </svg>
+                        </div>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr
+                  class="border-b border-theme-neutral-200"
+                >
+                  <td
+                    class="py-4 mt-1"
+                  >
+                    <div
+                      class="sc-fzqBZW iYntX text-theme-warning-400 border-theme-warning-200"
+                    >
+                      <div
+                        class="sc-AxjAm cpczEI"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          btc.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </td>
+                  <td
+                    class="py-1"
+                  >
+                    <span>
+                      OLEBank
+                    </span>
+                  </td>
+                  <td
+                    class="py-1"
+                  >
+                    <span>
+                      194.168.4.67:800
+                    </span>
+                  </td>
+                  <td
+                    class="py-1 text-theme-primary-300"
+                  >
+                    <div
+                      class="flex justify-center h-full"
+                    >
+                      <div
+                        class="sc-AxjAm cpczEI"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          multisig.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div
+                      class="relative"
+                      data-testid="dropdown__toggle"
+                    >
+                      <button
+                        class="float-right outline-none focus:outline-none"
+                      >
+                        <div
+                          class="sc-AxjAm buCJuk"
+                          height="20"
+                          width="20"
+                        >
+                          <svg>
+                            settings.svg
+                          </svg>
+                        </div>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <button
+            class="sc-AxiKw eWMVSn w-full mt-10 mb-5"
+            color="primary"
+            type="button"
+          >
+            Add Peer
+          </button>
+        </div>
+        <div
+          class="float-right"
+        >
+          <button
+            class="sc-AxiKw dchPTL"
+            color="primary"
+            type="button"
+          >
+            Save
+          </button>
+        </div>
+      </form>
     </div>
   </div>
 </DocumentFragment>

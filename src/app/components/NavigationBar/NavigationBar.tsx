@@ -56,7 +56,7 @@ const NotificationsDropdown = ({
 					transactionsHeader={transactionsHeader}
 					transactions={transactions}
 					onAction={onAction}
-				></Notifications>
+				/>
 			</div>
 		</Dropdown>
 	);
@@ -71,7 +71,7 @@ const UserInfo = ({ onUserAction, currencyIcon, userActions, userInitials }: Nav
 				<div className="cursor-pointer" data-testid="navbar__useractions">
 					<Circle className="-mr-1 border-theme-neutral-300" size="large">
 						<span className="text-theme-neutral-600">
-							<Icon name={currencyIcon}></Icon>
+							<Icon name={currencyIcon} />
 						</span>
 					</Circle>
 					<Circle className="relative rotate-90 bg-theme-primary-600 border-theme-primary-600" size="large">
@@ -87,7 +87,7 @@ const UserInfo = ({ onUserAction, currencyIcon, userActions, userInitials }: Nav
 					</Circle>
 				</div>
 			)}
-		></Dropdown>
+		/>
 	);
 };
 
@@ -125,19 +125,19 @@ export const NavigationBar = ({
 				</div>
 
 				<div className="flex items-center">
-					<NotificationsDropdown {...notifications} onAction={onNotificationAction}></NotificationsDropdown>
-					<div className="h-8 border-r border-theme-neutral-200"></div>
+					<NotificationsDropdown {...notifications} onAction={onNotificationAction} />
+					<div className="h-8 border-r border-theme-neutral-200" />
 
 					<div className="flex items-center h-full px-3 -mt-1 cursor-pointer text-theme-primary-300">
 						<Icon name="Sent" width={42} height={42} />
 					</div>
 
-					<div className="h-8 border-r border-theme-neutral-200"></div>
+					<div className="h-8 border-r border-theme-neutral-200" />
 					<div className="flex items-center h-full px-6 cursor-pointer text-theme-primary-300">
 						<Icon name="Receive" width={22} height={22} />
 					</div>
 
-					<div className="h-8 border-r border-theme-neutral-200"></div>
+					<div className="h-8 border-r border-theme-neutral-200" />
 
 					<div className="p-2 ml-4 text-right">
 						<div className="text-xs text-theme-neutral-500">Your balance</div>
@@ -150,7 +150,7 @@ export const NavigationBar = ({
 							currencyIcon={currencyIcon}
 							userActions={userActions}
 							onUserAction={onUserAction}
-						></UserInfo>
+						/>
 					</div>
 				</div>
 			</div>
