@@ -5,13 +5,13 @@ import { I18nextProvider } from "react-i18next";
 
 // i18n
 import { translations } from "../../i18n";
-import { IpfsDetailModal } from "./IpfsDetailModal";
+import { TransferDetail } from "./TransferDetail";
 
-describe("IpfsDetailModal", () => {
+describe("TransferDetail", () => {
 	it("should not render if not open", () => {
 		const { asFragment, getByTestId } = render(
 			<I18nextProvider i18n={i18n}>
-				<IpfsDetailModal isOpen={false} />
+				<TransferDetail isOpen={false} onDelete={() => void 0} />
 			</I18nextProvider>,
 		);
 
@@ -22,11 +22,11 @@ describe("IpfsDetailModal", () => {
 	it("should render a modal", () => {
 		const { asFragment, getByTestId } = render(
 			<I18nextProvider i18n={i18n}>
-				<IpfsDetailModal isOpen={true} />
+				<TransferDetail isOpen={true} onDelete={() => void 0} />
 			</I18nextProvider>,
 		);
 
-		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_IPFS_DETAIL.TITLE);
+		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_TRANSFER_DETAIL.TITLE);
 		expect(asFragment()).toMatchSnapshot();
 	});
 });

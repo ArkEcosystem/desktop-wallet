@@ -1,24 +1,28 @@
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
+import { Label } from "app/components/Label";
 // UI Elements
 import { Modal } from "app/components/Modal";
 import { TransactionDetail } from "app/components/TransactionDetail";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-type IpfsDetailModalProps = {
+type TransferDetailProps = {
 	isOpen: boolean;
 	onClose?: any;
 };
 
-export const IpfsDetailModal = (props: IpfsDetailModalProps) => {
+export const TransferDetail = (props: TransferDetailProps) => {
 	const { t } = useTranslation();
 
 	return (
-		<Modal title={t("TRANSACTION.MODAL_IPFS_DETAIL.TITLE")} isOpen={props.isOpen} onClose={props.onClose}>
+		<Modal title={t("TRANSACTION.MODAL_TRANSFER_DETAIL.TITLE")} isOpen={props.isOpen} onClose={props.onClose}>
+			<TransactionDetail label={t("TRANSACTION.SENDER")} extra={<Circle avatarId="test" />} border={false}>
+				<div className="mt-2 font-semibold">ADDRESS</div>
+			</TransactionDetail>
+
 			<TransactionDetail
-				label={t("TRANSACTION.SENDER")}
-				border={false}
+				label={t("TRANSACTION.RECIPIENT")}
 				extra={
 					<div>
 						<Circle className="-mr-2 border-black">
@@ -35,25 +39,23 @@ export const IpfsDetailModal = (props: IpfsDetailModalProps) => {
 			<TransactionDetail
 				label={t("TRANSACTION.AMOUNT")}
 				extra={
-					<Circle className="border-theme-danger-100 text-theme-danger-400">
-						<Icon name="Sent" width={40} height={40} />
+					<Circle className="border-theme-success-200 text-theme-success-700">
+						<Icon name="Received" width={40} height={40} />
 					</Circle>
 				}
 			>
-				0.00 ARK
+				<Label color="success">2,088.84557 ARK</Label>
+
+				<span className="ml-2 text-theme-neutral-500">23,000.00 USD</span>
 			</TransactionDetail>
 
 			<TransactionDetail label={t("TRANSACTION.TRANSACTION_FEE")}>0.09812015 ARK</TransactionDetail>
 
-			<TransactionDetail
-				label={t("TRANSACTION.IPFS_HASH")}
-				extra={
-					<Circle className="border-black">
-						<Icon name="Ipfs" width={20} height={20} />
-					</Circle>
-				}
-			>
-				<div className="flex justify-between">QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco</div>
+			<TransactionDetail label={t("TRANSACTION.SMARTBRIDGE")}>
+				<div className="flex justify-between">
+					Hello!
+					<Icon name="Smartbridge" width={20} height={20} />
+				</div>
 			</TransactionDetail>
 
 			<TransactionDetail label={t("TRANSACTION.TIMESTAMP")}>14.04.2020 21:42:40</TransactionDetail>
@@ -88,8 +90,8 @@ export const IpfsDetailModal = (props: IpfsDetailModalProps) => {
 	);
 };
 
-IpfsDetailModal.defaultProps = {
+TransferDetail.defaultProps = {
 	isOpen: false,
 };
 
-IpfsDetailModal.displayName = "IpfsDetailModal";
+TransferDetail.displayName = "TransferDetail";
