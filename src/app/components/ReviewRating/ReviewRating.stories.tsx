@@ -6,4 +6,4 @@ export default {
 	title: "Basic / Review / Rating",
 };
 
-export const Default = () => <ReviewRating />;
+export const Default = () => <ReviewRating rating={1.5} />;

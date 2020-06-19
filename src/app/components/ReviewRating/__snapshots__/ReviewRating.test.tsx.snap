@@ -9,6 +9,16 @@ exports[`ReviewRating should render 1`] = `
     <div
       class="relative my-auto"
     >
+      <div
+        class="absolute overflow-hidden"
+        style="width: 12.5%;"
+      >
+        <svg
+          class="text-theme-warning-300 w-5"
+        >
+          star.svg
+        </svg>
+      </div>
       <svg
         class="text-theme-neutral-500 w-5"
       >
@@ -18,7 +28,7 @@ exports[`ReviewRating should render 1`] = `
     <span
       class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
     >
-      -
+      1.5
     </span>
   </div>
 </DocumentFragment>
@@ -33,6 +43,16 @@ exports[`ReviewRating should render with total 1`] = `
     <div
       class="relative my-auto"
     >
+      <div
+        class="absolute overflow-hidden"
+        style="width: 12.5%;"
+      >
+        <svg
+          class="text-theme-warning-300 w-5"
+        >
+          star.svg
+        </svg>
+      </div>
       <svg
         class="text-theme-neutral-500 w-5"
       >
@@ -42,7 +62,7 @@ exports[`ReviewRating should render with total 1`] = `
     <span
       class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
     >
-      -
+      1.5
     </span>
     <span
       class="text-theme-neutral-500"
