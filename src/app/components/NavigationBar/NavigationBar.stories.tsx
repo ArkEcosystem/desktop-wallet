@@ -50,16 +50,16 @@ export const Default = () => {
 				onUserAction={(action: any) => alert(action.label)}
 				notifications={notifications}
 				onNotificationAction={(actionName: string, actionData: any) => alert(actionName)}
-			></NavigationBar>
-			<div className="h-64 border-b"></div>
-			<div className="h-64 border-b"></div>
-			<div className="h-64 border-b"></div>
-			<div className="h-64 border-b"></div>
-			<div className="h-64 border-b"></div>
-			<div className="h-64 border-b"></div>
-			<div className="h-64 border-b"></div>
-			<div className="h-64 border-b"></div>
-			<div className="h-64 border-b"></div>
+			/>
+			<div className="h-64 border-b" />
+			<div className="h-64 border-b" />
+			<div className="h-64 border-b" />
+			<div className="h-64 border-b" />
+			<div className="h-64 border-b" />
+			<div className="h-64 border-b" />
+			<div className="h-64 border-b" />
+			<div className="h-64 border-b" />
+			<div className="h-64 border-b" />
 		</div>
 	);
 };

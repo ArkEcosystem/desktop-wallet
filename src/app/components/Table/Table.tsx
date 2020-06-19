@@ -29,7 +29,7 @@ export const Table = ({ children, data, columns }: TableProps) => {
 
 	const renderChildNode = (data: any, index: number) => {
 		if (typeof children === "function") return children(data, index);
-		return <tr></tr>;
+		return <tr />;
 	};
 
 	const getSortIconName = (isSorted: boolean, isSortedDesc: boolean) => {
@@ -71,7 +71,7 @@ export const Table = ({ children, data, columns }: TableProps) => {
 													name={getSortIconName(column.isSorted, column.isSortedDesc)}
 													width={10}
 													height={10}
-												></Icon>
+												/>
 											)}
 										</div>
 									</div>

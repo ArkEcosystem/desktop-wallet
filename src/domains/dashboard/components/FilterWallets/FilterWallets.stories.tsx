@@ -39,7 +39,7 @@ export const Default = () => {
 				toggleTransactionsView={(isChecked: boolean) => (visibleTransactionsView = isChecked)}
 				onWalletsDisplay={() => alert("Display wallets  event")}
 				onViewAllNetworks={() => alert("View all networks")}
-			></FilterWallets>
+			/>
 		</div>
 	);
 };

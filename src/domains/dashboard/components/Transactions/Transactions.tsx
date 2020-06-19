@@ -14,7 +14,7 @@ export const Transactions = ({ transactions, columns, title }: TransactionsProps
 		<div className="p-10 mt-10 bg-theme-background">
 			<h2 className="pb-4">{title}</h2>
 			<Table columns={columns} data={transactions}>
-				{(rowData: any) => <TransactionListItem {...rowData}></TransactionListItem>}
+				{(rowData: any) => <TransactionListItem {...rowData} />}
 			</Table>
 
 			<Button color="primary" variant="plain" className="w-full mt-10 mb-5">
