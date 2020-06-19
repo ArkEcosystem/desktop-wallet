@@ -12,7 +12,7 @@ type BreadcrumbsProps = {
 };
 
 export const Breadcrumbs = ({ crumbs, className }: BreadcrumbsProps) => {
-	const isLast = (index) => {
+	const isLast = (index: number) => {
 		return index === crumbs.length - 1;
 	};
 
