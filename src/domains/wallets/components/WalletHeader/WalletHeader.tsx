@@ -41,15 +41,15 @@ export const WalletHeader = ({
 
 	return (
 		<header data-testid="WalletHeader">
-			<div className="theme-dark px-12 py-6 bg-theme-background text-theme-text flex items-center justify-between">
+			<div className="flex items-center justify-between px-12 py-6 theme-dark bg-theme-background text-theme-text">
 				<div className="flex items-center space-x-4">
 					<div className="flex">
-						<Circle className="border-theme-neutral-light -mr-1">
+						<Circle className="-mr-1 border-theme-neutral-light">
 							<Icon name={coin} className="text-theme-neutral-light" />
 						</Circle>
 						<Avatar address={address} />
 					</div>
-					<h2 data-testid="WalletHeader__name" className="text-theme-neutral-900 mb-0">
+					<h2 data-testid="WalletHeader__name" className="mb-0 text-theme-neutral-900">
 						{name}
 					</h2>
 					{isLedger && (
@@ -63,7 +63,7 @@ export const WalletHeader = ({
 						</span>
 					)}
 				</div>
-				<div className="space-x-2 flex items-stretch">
+				<div className="flex items-stretch space-x-2">
 					<button
 						data-testid="WalletHeader__star-button"
 						className="px-3 text-theme-neutral"
@@ -80,7 +80,7 @@ export const WalletHeader = ({
 				</div>
 			</div>
 
-			<ul className="px-12 py-10 flex items-stretch divide-x-1 divide-theme-neutral-300 space-x-8">
+			<ul className="flex items-stretch px-12 py-10 divide-x-1 divide-theme-neutral-300 space-x-8">
 				<li className="space-y-2">
 					<div className="inline-flex items-center space-x-2">
 						<p
@@ -104,7 +104,7 @@ export const WalletHeader = ({
 						</p>
 					</div>
 					<div>
-						<p data-testid="WalletHeader__address-publickey" className="inline-block font-medium text-lg">
+						<p data-testid="WalletHeader__address-publickey" className="inline-block text-lg font-medium">
 							{showPublicKey ? publicKey : address}
 						</p>
 						<button
@@ -119,8 +119,8 @@ export const WalletHeader = ({
 
 				{!showPublicKey && (
 					<li className="pl-8 space-y-2">
-						<p className="font-semibold text-theme-neutral-dark text-sm">Balance</p>
-						<p data-testid="WalletHeader__balance" className="font-medium text-lg">
+						<p className="text-sm font-semibold text-theme-neutral-dark">Balance</p>
+						<p data-testid="WalletHeader__balance" className="text-lg font-medium">
 							{balance}
 						</p>
 					</li>
@@ -128,8 +128,8 @@ export const WalletHeader = ({
 
 				{!showPublicKey && currencyBalance && (
 					<li className="pl-8 space-y-2">
-						<p className="font-semibold text-theme-neutral-dark text-sm">Fiat</p>
-						<p data-testid="WalletHeader__currency-balance" className="font-medium text-lg">
+						<p className="text-sm font-semibold text-theme-neutral-dark">Fiat</p>
+						<p data-testid="WalletHeader__currency-balance" className="text-lg font-medium">
 							{currencyBalance}
 						</p>
 					</li>

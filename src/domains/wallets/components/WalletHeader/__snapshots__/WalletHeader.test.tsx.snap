@@ -6,7 +6,7 @@ exports[`WalletHeader should render 1`] = `
     data-testid="WalletHeader"
   >
     <div
-      class="theme-dark px-12 py-6 bg-theme-background text-theme-text flex items-center justify-between"
+      class="flex items-center justify-between px-12 py-6 theme-dark bg-theme-background text-theme-text"
     >
       <div
         class="flex items-center space-x-4"
@@ -15,7 +15,7 @@ exports[`WalletHeader should render 1`] = `
           class="flex"
         >
           <div
-            class="sc-AxirZ hQTESw border-theme-neutral-light -mr-1"
+            class="sc-AxirZ hQTESw -mr-1 border-theme-neutral-light"
           >
             <div
               class="sc-AxiKw dzBdqj text-theme-neutral-light"
@@ -28,17 +28,17 @@ exports[`WalletHeader should render 1`] = `
             </div>
           </div>
           <div
-            class="Avatar__AvatarStyled-sc-1mhg460-0 bpUygI"
+            class="Avatar__AvatarStyled-sc-1mhg460-0 duLDxE"
             data-testid="Avatar"
           />
         </div>
         <h2
-          class="text-theme-neutral-900 mb-0"
+          class="mb-0 text-theme-neutral-900"
           data-testid="WalletHeader__name"
         />
       </div>
       <div
-        class="space-x-2 flex items-stretch"
+        class="flex items-stretch space-x-2"
       >
         <button
           class="px-3 text-theme-neutral"
@@ -55,7 +55,7 @@ exports[`WalletHeader should render 1`] = `
           </div>
         </button>
         <button
-          class="sc-AxjAm jTpTok"
+          class="sc-AxjAm eixJcU"
           color="primary"
           data-testid="WalletHeader__send-button"
           type="button"
@@ -81,7 +81,7 @@ exports[`WalletHeader should render 1`] = `
       </div>
     </div>
     <ul
-      class="px-12 py-10 flex items-stretch divide-x-1 divide-theme-neutral-300 space-x-8"
+      class="flex items-stretch px-12 py-10 divide-x-1 divide-theme-neutral-300 space-x-8"
     >
       <li
         class="space-y-2"
@@ -117,7 +117,7 @@ exports[`WalletHeader should render 1`] = `
         </div>
         <div>
           <p
-            class="inline-block font-medium text-lg"
+            class="inline-block text-lg font-medium"
             data-testid="WalletHeader__address-publickey"
           >
             abc
@@ -142,12 +142,12 @@ exports[`WalletHeader should render 1`] = `
         class="pl-8 space-y-2"
       >
         <p
-          class="font-semibold text-theme-neutral-dark text-sm"
+          class="text-sm font-semibold text-theme-neutral-dark"
         >
           Balance
         </p>
         <p
-          class="font-medium text-lg"
+          class="text-lg font-medium"
           data-testid="WalletHeader__balance"
         >
           0
@@ -164,7 +164,7 @@ exports[`WalletHeader should show modifiers 1`] = `
     data-testid="WalletHeader"
   >
     <div
-      class="theme-dark px-12 py-6 bg-theme-background text-theme-text flex items-center justify-between"
+      class="flex items-center justify-between px-12 py-6 theme-dark bg-theme-background text-theme-text"
     >
       <div
         class="flex items-center space-x-4"
@@ -173,7 +173,7 @@ exports[`WalletHeader should show modifiers 1`] = `
           class="flex"
         >
           <div
-            class="sc-AxirZ hQTESw border-theme-neutral-light -mr-1"
+            class="sc-AxirZ hQTESw -mr-1 border-theme-neutral-light"
           >
             <div
               class="sc-AxiKw dzBdqj text-theme-neutral-light"
@@ -186,12 +186,12 @@ exports[`WalletHeader should show modifiers 1`] = `
             </div>
           </div>
           <div
-            class="Avatar__AvatarStyled-sc-1mhg460-0 bpUygI"
+            class="Avatar__AvatarStyled-sc-1mhg460-0 duLDxE"
             data-testid="Avatar"
           />
         </div>
         <h2
-          class="text-theme-neutral-900 mb-0"
+          class="mb-0 text-theme-neutral-900"
           data-testid="WalletHeader__name"
         />
         <span
@@ -222,7 +222,7 @@ exports[`WalletHeader should show modifiers 1`] = `
         </span>
       </div>
       <div
-        class="space-x-2 flex items-stretch"
+        class="flex items-stretch space-x-2"
       >
         <button
           class="px-3 text-theme-neutral"
@@ -239,7 +239,7 @@ exports[`WalletHeader should show modifiers 1`] = `
           </div>
         </button>
         <button
-          class="sc-AxjAm jTpTok"
+          class="sc-AxjAm eixJcU"
           color="primary"
           data-testid="WalletHeader__send-button"
           type="button"
@@ -265,7 +265,7 @@ exports[`WalletHeader should show modifiers 1`] = `
       </div>
     </div>
     <ul
-      class="px-12 py-10 flex items-stretch divide-x-1 divide-theme-neutral-300 space-x-8"
+      class="flex items-stretch px-12 py-10 divide-x-1 divide-theme-neutral-300 space-x-8"
     >
       <li
         class="space-y-2"
@@ -301,7 +301,7 @@ exports[`WalletHeader should show modifiers 1`] = `
         </div>
         <div>
           <p
-            class="inline-block font-medium text-lg"
+            class="inline-block text-lg font-medium"
             data-testid="WalletHeader__address-publickey"
           >
             abc
@@ -326,12 +326,12 @@ exports[`WalletHeader should show modifiers 1`] = `
         class="pl-8 space-y-2"
       >
         <p
-          class="font-semibold text-theme-neutral-dark text-sm"
+          class="text-sm font-semibold text-theme-neutral-dark"
         >
           Balance
         </p>
         <p
-          class="font-medium text-lg"
+          class="text-lg font-medium"
           data-testid="WalletHeader__balance"
         >
           0
@@ -348,7 +348,7 @@ exports[`WalletHeader should show publicKey 1`] = `
     data-testid="WalletHeader"
   >
     <div
-      class="theme-dark px-12 py-6 bg-theme-background text-theme-text flex items-center justify-between"
+      class="flex items-center justify-between px-12 py-6 theme-dark bg-theme-background text-theme-text"
     >
       <div
         class="flex items-center space-x-4"
@@ -357,7 +357,7 @@ exports[`WalletHeader should show publicKey 1`] = `
           class="flex"
         >
           <div
-            class="sc-AxirZ hQTESw border-theme-neutral-light -mr-1"
+            class="sc-AxirZ hQTESw -mr-1 border-theme-neutral-light"
           >
             <div
               class="sc-AxiKw dzBdqj text-theme-neutral-light"
@@ -370,17 +370,17 @@ exports[`WalletHeader should show publicKey 1`] = `
             </div>
           </div>
           <div
-            class="Avatar__AvatarStyled-sc-1mhg460-0 bpUygI"
+            class="Avatar__AvatarStyled-sc-1mhg460-0 duLDxE"
             data-testid="Avatar"
           />
         </div>
         <h2
-          class="text-theme-neutral-900 mb-0"
+          class="mb-0 text-theme-neutral-900"
           data-testid="WalletHeader__name"
         />
       </div>
       <div
-        class="space-x-2 flex items-stretch"
+        class="flex items-stretch space-x-2"
       >
         <button
           class="px-3 text-theme-neutral"
@@ -397,7 +397,7 @@ exports[`WalletHeader should show publicKey 1`] = `
           </div>
         </button>
         <button
-          class="sc-AxjAm jTpTok"
+          class="sc-AxjAm eixJcU"
           color="primary"
           data-testid="WalletHeader__send-button"
           type="button"
@@ -423,7 +423,7 @@ exports[`WalletHeader should show publicKey 1`] = `
       </div>
     </div>
     <ul
-      class="px-12 py-10 flex items-stretch divide-x-1 divide-theme-neutral-300 space-x-8"
+      class="flex items-stretch px-12 py-10 divide-x-1 divide-theme-neutral-300 space-x-8"
     >
       <li
         class="space-y-2"
@@ -458,7 +458,7 @@ exports[`WalletHeader should show publicKey 1`] = `
         </div>
         <div>
           <p
-            class="inline-block font-medium text-lg"
+            class="inline-block text-lg font-medium"
             data-testid="WalletHeader__address-publickey"
           >
             123
