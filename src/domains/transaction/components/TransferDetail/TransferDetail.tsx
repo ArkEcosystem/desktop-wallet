@@ -7,17 +7,17 @@ import { TransactionDetail } from "app/components/TransactionDetail";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-type TransferDetailModalProps = {
+type TransferDetailProps = {
 	isOpen: boolean;
 	onClose?: any;
 };
 
-export const TransferDetailModal = (props: TransferDetailModalProps) => {
+export const TransferDetail = (props: TransferDetailProps) => {
 	const { t } = useTranslation();
 
 	return (
 		<Modal title={t("TRANSACTION.MODAL_TRANSFER_DETAIL.TITLE")} isOpen={props.isOpen} onClose={props.onClose}>
-			<TransactionDetail label={t("TRANSACTION.SENDER")} extra={<Circle avatarId="test"></Circle>} border={false}>
+			<TransactionDetail label={t("TRANSACTION.SENDER")} extra={<Circle avatarId="test" />} border={false}>
 				<div className="mt-2 font-semibold">ADDRESS</div>
 			</TransactionDetail>
 
@@ -28,7 +28,7 @@ export const TransferDetailModal = (props: TransferDetailModalProps) => {
 						<Circle className="-mr-2 border-black">
 							<Icon name="Delegate" width={25} height={25} />
 						</Circle>
-						<Circle avatarId="test"></Circle>
+						<Circle avatarId="test" />
 					</div>
 				}
 			>
@@ -90,8 +90,8 @@ export const TransferDetailModal = (props: TransferDetailModalProps) => {
 	);
 };
 
-TransferDetailModal.defaultProps = {
+TransferDetail.defaultProps = {
 	isOpen: false,
 };
 
-TransferDetailModal.displayName = "TransferDetailModal";
+TransferDetail.displayName = "TransferDetail";

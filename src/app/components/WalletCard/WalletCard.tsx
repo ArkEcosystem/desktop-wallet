@@ -53,8 +53,8 @@ export const WalletCard = ({
 				<Card>
 					<div className="px-1 py-2">
 						<div className="mt-1">
-							<Circle className="-mr-2 border-theme-primary-contrast"></Circle>
-							<Circle className="border-theme-primary-contrast"></Circle>
+							<Circle className="-mr-2 border-theme-primary-contrast" />
+							<Circle className="border-theme-primary-contrast" />
 						</div>
 
 						<div className="mt-4 text-md text-theme-primary-contrast">{blankTitle}</div>
@@ -70,7 +70,7 @@ export const WalletCard = ({
 			<Card>
 				<div className="relative px-1 py-2">
 					<div className="-mr-2">
-						<Dropdown options={actions} onSelect={onSelect}></Dropdown>
+						<Dropdown options={actions} onSelect={onSelect} />
 					</div>
 					<div className="absolute right-3">
 						{walletTypeIcons &&
@@ -86,11 +86,11 @@ export const WalletCard = ({
 						<Circle className={`border-theme-primary-contrast -mr-2 ${coinIconClass}`}>
 							{renderCoin(coinIcon)}
 						</Circle>
-						<Circle avatarId={avatarId} className="border-theme-primary-contrast"></Circle>
+						<Circle avatarId={avatarId} className="border-theme-primary-contrast" />
 					</div>
 
 					<div className="mt-4 truncate max-w-12">
-						<Address walletName={walletName} address={address} maxChars={13}></Address>
+						<Address walletName={walletName} address={address} maxChars={13} />
 					</div>
 					<div className="font-bold text-theme-neutral-800">{balance}</div>
 				</div>
