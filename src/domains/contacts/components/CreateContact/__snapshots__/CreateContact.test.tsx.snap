@@ -9,7 +9,7 @@ exports[`CreateContact should render a modal 1`] = `
     data-testid="modal__overlay"
   />
   <div
-    class="sc-fzpans hGJZle fixed left-0 right-0 z-10 flex flex-col px-16 pt-6 pb-8 mx-auto mt-24 rounded-xl bg-theme-background"
+    class="sc-fzplWN jxRzUr fixed left-0 right-0 z-10 flex flex-col px-16 pt-6 pb-8 mx-auto mt-24 rounded-xl bg-theme-background"
     data-testid="modal__inner"
   >
     <div
@@ -22,7 +22,7 @@ exports[`CreateContact should render a modal 1`] = `
         type="button"
       >
         <div
-          class="sc-Axmtr fmuEnd"
+          class="sc-AxhCb idmnCf"
           height="10"
           width="10"
         >
@@ -54,7 +54,7 @@ exports[`CreateContact should render a modal 1`] = `
             data-testid="Form"
           >
             <fieldset
-              class="sc-AxirZ izhStr flex flex-col space-y-2"
+              class="sc-AxiKw iQzisX flex flex-col space-y-2"
             >
               <label
                 class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
@@ -64,13 +64,13 @@ exports[`CreateContact should render a modal 1`] = `
                 Name
               </label>
               <input
-                class="sc-AxiKw jrntKW overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+                class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
                 data-testid="Input"
                 name="name"
               />
             </fieldset>
             <fieldset
-              class="sc-AxirZ izhStr flex flex-col space-y-2"
+              class="sc-AxiKw iQzisX flex flex-col space-y-2"
             >
               <label
                 class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
@@ -80,10 +80,10 @@ exports[`CreateContact should render a modal 1`] = `
                 Network
               </label>
               <div
-                class="sc-AxheI IkGcK"
+                class="sc-AxmLO kuiknc"
               >
                 <select
-                  class="sc-AxiKw jrntKW overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
+                  class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
                   data-testid="Select"
                   name="network"
                 >
@@ -95,26 +95,26 @@ exports[`CreateContact should render a modal 1`] = `
                     Select network...
                   </option>
                   <option
-                    value="ark"
+                    value="Ark"
                   >
                     Ark Ecosystem
                   </option>
                   <option
-                    value="btc"
+                    value="Btc"
                   >
                     Bitcoin
                   </option>
                   <option
-                    value="eth"
+                    value="Eth"
                   >
                     Ethereum
                   </option>
                 </select>
                 <div
-                  class="sc-AxhCb sc-AxgMl brbBur w-12 text-lg pointer-events-none text-theme-neutral-dark"
+                  class="sc-AxgMl sc-Axmtr cPxyjO w-12 text-lg pointer-events-none text-theme-neutral-dark"
                 >
                   <div
-                    class="sc-Axmtr bgBpcp"
+                    class="sc-AxhCb fxrKLH"
                     height="1em"
                     width="1em"
                   >
@@ -126,7 +126,7 @@ exports[`CreateContact should render a modal 1`] = `
               </div>
             </fieldset>
             <fieldset
-              class="sc-AxirZ izhStr flex flex-col space-y-2"
+              class="sc-AxiKw iQzisX flex flex-col space-y-2"
             >
               <label
                 class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
@@ -136,13 +136,24 @@ exports[`CreateContact should render a modal 1`] = `
                 Address
               </label>
               <input
-                class="sc-AxiKw jrntKW overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+                class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
                 data-testid="Input"
                 name="address"
               />
             </fieldset>
             <div
-              class="flex mt-8 space-x-2 justify-end"
+              class="mt-4"
+            >
+              <button
+                class="sc-AxjAm gSuvFI w-full"
+                color="primary"
+                type="button"
+              >
+                Add Address
+              </button>
+            </div>
+            <div
+              class="flex justify-end mt-8 space-x-3"
             >
               <button
                 class="sc-AxjAm gSuvFI"
