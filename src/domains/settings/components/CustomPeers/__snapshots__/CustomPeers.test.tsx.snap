@@ -1,0 +1,167 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CustomPeers should not render if not open 1`] = `<DocumentFragment />`;
+
+exports[`CustomPeers should render a modal 1`] = `
+<DocumentFragment>
+  <div
+    class="fixed inset-0 z-10 bg-black opacity-50"
+    data-testid="modal__overlay"
+  />
+  <div
+    class="sc-fzplWN hXndMY fixed left-0 right-0 z-10 flex flex-col px-16 pt-6 pb-8 mx-auto mt-24 rounded-xl bg-theme-background"
+    data-testid="modal__inner"
+  >
+    <div
+      class="absolute top-0 right-0 mt-4 mr-4"
+    >
+      <button
+        class="sc-AxjAm eYrebl"
+        color="neutral"
+        data-testid="modal__close-btn"
+        type="button"
+      >
+        <div
+          class="sc-AxmLO cgCtOs"
+          height="10"
+          width="10"
+        >
+          <svg>
+            cross-slim.svg
+          </svg>
+        </div>
+      </button>
+    </div>
+    <div
+      class="py-4"
+    >
+      <h2>
+        Custom Peers
+      </h2>
+      <div
+        class="flex-1"
+      >
+        <form
+          class="space-y-6"
+          data-testid="Form"
+        >
+          <fieldset
+            class="sc-AxiKw iQzisX flex flex-col space-y-2"
+          >
+            <label
+              class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
+              data-testid="FormLabel"
+              for="network"
+            >
+              Network
+            </label>
+            <div
+              class="sc-Axmtr jzhOwR"
+            >
+              <select
+                class="sc-AxhCb clCjoe overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
+                data-testid="Select"
+                name="network"
+              >
+                <option
+                  selected=""
+                  value=""
+                >
+                  Select
+                </option>
+                <option
+                  value="ark-ecosystem"
+                >
+                  ARK Ecosystem
+                </option>
+              </select>
+              <div
+                class="sc-AxhUy sc-AxheI bSLhdh w-12 text-lg pointer-events-none text-theme-neutral-dark"
+              >
+                <div
+                  class="sc-AxmLO hLGjfU"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    chevron-down.svg
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+          <fieldset
+            class="sc-AxiKw iQzisX flex flex-col space-y-2"
+          >
+            <label
+              class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
+              data-testid="FormLabel"
+              for="name"
+            >
+              Name
+            </label>
+            <input
+              class="sc-AxhCb clCjoe overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+              data-testid="Input"
+              name="name"
+            />
+          </fieldset>
+          <fieldset
+            class="sc-AxiKw iQzisX flex flex-col space-y-2"
+          >
+            <label
+              class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
+              data-testid="FormLabel"
+              for="peer-ip"
+            >
+              Peer IP http://
+            </label>
+            <input
+              class="sc-AxhCb clCjoe overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+              data-testid="Input"
+              name="peer-ip"
+            />
+          </fieldset>
+          <fieldset
+            class="sc-AxiKw iQzisX flex flex-col space-y-2"
+          >
+            <label
+              class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
+              data-testid="FormLabel"
+              for="peer-type"
+            >
+              Peer Type
+            </label>
+            <label
+              class="inline-flex items-center"
+              for="multisig"
+            >
+              <input
+                class="sc-AxirZ hdHVRv"
+                color="success"
+                type="checkbox"
+              />
+              <span
+                class="ml-2 text-sm font-semibold text-theme-neutral-dark"
+              >
+                Multisig
+              </span>
+            </label>
+          </fieldset>
+          <div
+            class="float-right mt-4"
+          >
+            <button
+              class="sc-AxjAm jTpTok"
+              color="primary"
+              type="submit"
+            >
+              Add Peer
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
