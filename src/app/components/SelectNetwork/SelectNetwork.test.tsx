@@ -32,7 +32,7 @@ describe("SelectNetwork", () => {
 
 	it("should call onChange callback upon change", () => {
 		const onChange = jest.fn();
-		const { getByTestId } = render(<SelectNetwork networks={networks} onChange={onChange}></SelectNetwork>);
+		const { getByTestId } = render(<SelectNetwork networks={networks} onChange={onChange} />);
 		const firstNetwork = getByTestId("network__option--0");
 
 		act(() => {
@@ -44,7 +44,7 @@ describe("SelectNetwork", () => {
 
 	it("should ignore onChange callback upon selection if not provided", () => {
 		const onChange = jest.fn();
-		const { getByTestId } = render(<SelectNetwork networks={networks}></SelectNetwork>);
+		const { getByTestId } = render(<SelectNetwork networks={networks} />);
 		const firstNetwork = getByTestId("network__option--0");
 
 		act(() => {

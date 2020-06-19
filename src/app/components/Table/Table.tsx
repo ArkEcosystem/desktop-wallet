@@ -29,12 +29,18 @@ export const Table = ({ children, data, columns }: TableProps) => {
 
 	const renderChildNode = (data: any, index: number) => {
 		if (typeof children === "function") return children(data, index);
-		return <tr></tr>;
+		return <tr />;
 	};
 
 	const getSortIconName = (isSorted: boolean, isSortedDesc: boolean) => {
-		if (isSorted && isSortedDesc) return "ArrowDown";
-		if (isSorted && !isSortedDesc) return "ArrowUp";
+		if (isSorted && isSortedDesc) {
+			return "ArrowDown";
+		}
+
+		if (isSorted && !isSortedDesc) {
+			return "ArrowUp";
+		}
+
 		return "Sort";
 	};
 
@@ -47,7 +53,7 @@ export const Table = ({ children, data, columns }: TableProps) => {
 							{headerGroup.headers.map((column: any, thIndex: number) => (
 								<th
 									key={thIndex}
-									className="text-theme-neutral-400 text-left text-xs select-none pb-3}"
+									className="text-xs text-left select-none text-theme-neutral-400"
 									data-testid={`table__th--${thIndex}`}
 									{...column.getHeaderProps(column.getSortByToggleProps())}
 								>
@@ -65,7 +71,7 @@ export const Table = ({ children, data, columns }: TableProps) => {
 													name={getSortIconName(column.isSorted, column.isSortedDesc)}
 													width={10}
 													height={10}
-												></Icon>
+												/>
 											)}
 										</div>
 									</div>

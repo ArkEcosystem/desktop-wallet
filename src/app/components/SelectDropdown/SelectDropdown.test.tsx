@@ -20,7 +20,7 @@ describe("SelectDropdown", () => {
 				value: "3",
 			},
 		];
-		const { container } = render(<SelectDropdown options={options}></SelectDropdown>);
+		const { container } = render(<SelectDropdown options={options} />);
 		expect(container).toMatchSnapshot();
 	});
 
@@ -36,7 +36,7 @@ describe("SelectDropdown", () => {
 				label: "Option 3",
 			},
 		];
-		const { container } = render(<SelectDropdown options={options}></SelectDropdown>);
+		const { container } = render(<SelectDropdown options={options} />);
 		expect(container).toMatchSnapshot();
 	});
 
@@ -66,7 +66,7 @@ describe("SelectDropdown", () => {
 					);
 				}}
 				options={options}
-			></SelectDropdown>,
+			/>,
 		);
 		expect(container).toMatchSnapshot();
 	});
@@ -84,7 +84,7 @@ describe("SelectDropdown", () => {
 					);
 				}}
 				options={options}
-			></SelectDropdown>,
+			/>,
 		);
 		const toggle = getByTestId("select-dropdown__toggle");
 
@@ -128,7 +128,7 @@ describe("SelectDropdown", () => {
 					);
 				}}
 				options={options}
-			></SelectDropdown>,
+			/>,
 		);
 		expect(container).toMatchSnapshot();
 	});
@@ -145,7 +145,7 @@ describe("SelectDropdown", () => {
 					);
 				}}
 				options={options}
-			></SelectDropdown>,
+			/>,
 		);
 		const toggle = getByTestId("select-dropdown__toggle");
 

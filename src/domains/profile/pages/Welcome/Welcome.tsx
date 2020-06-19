@@ -47,7 +47,7 @@ export const Welcome = () => {
 								You already have a profile, you can choose any of them
 							</p>
 
-							<div className="mt-6 mb-8">
+							<div className="mt-6 mb-8 space-y-3">
 								{profiles.map((profile: any) => (
 									<ProfileCard
 										name={profile.name()}

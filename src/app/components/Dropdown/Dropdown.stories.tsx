@@ -18,11 +18,7 @@ export const Default = () => {
 		<div className="">
 			Default with options array
 			<div className="w-20 mt-10 ml-40">
-				<Dropdown
-					toggleIcon="Settings"
-					options={options}
-					onSelect={(option: any) => console.log(option)}
-				></Dropdown>
+				<Dropdown toggleIcon="Settings" options={options} onSelect={(option: any) => console.log(option)} />
 			</div>
 		</div>
 	);
