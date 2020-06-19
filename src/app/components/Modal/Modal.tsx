@@ -72,7 +72,7 @@ const ModalContent = (props: ModalContentProps) => {
 					<div className="absolute top-0 left-0 right-0">
 						{props.banner}
 
-						<h1 className="absolute bottom-0 left-0 ml-12 mb-8">{props.title}</h1>
+						<h1 className="absolute bottom-0 left-0 mb-8 ml-12">{props.title}</h1>
 					</div>
 				) : (
 					<h2>{props.title}</h2>

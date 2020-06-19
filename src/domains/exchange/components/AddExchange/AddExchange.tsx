@@ -88,12 +88,12 @@ export const AddExchange = (props: AddExchangeProps) => {
 				<Table columns={columns} data={data}>
 					{(rowData: any) => (
 						<tr className="border-b border-dashed border-theme-neutral-200">
-							<td className="w-18 text-center">
+							<td className="text-center w-18">
 								<ChangeNowLogo />
 							</td>
 
 							<td>
-								<div className="text-theme-primary-500 hover:text-theme-primary-400 font-semibold">
+								<div className="font-semibold text-theme-primary-500 hover:text-theme-primary-400">
 									{rowData.name}
 								</div>
 								<div>{rowData.description}</div>
