@@ -19,11 +19,17 @@ export const PeerList = ({ listColumns, peers }: PeerListProps) => {
 				{(rowData: any) => <PeerListItem {...rowData} />}
 			</Table>
 
-			<Button color="primary" variant="plain" className="w-full mt-10 mb-5" onClick={() => setIsOpen(true)}>
+			<Button
+				color="primary"
+				variant="plain"
+				className="w-full mt-10 mb-5"
+				onClick={() => setIsOpen(true)}
+				data-testid="peer-list__add-button"
+			>
 				Add Peer
 			</Button>
 
-			<CustomPeers isOpen={isOpen} onClose={() => setIsOpen(false)} onAddPeer={() => alert("added peer")} />
+			<CustomPeers isOpen={isOpen} onClose={() => setIsOpen(false)} />
 		</>
 	);
 };

@@ -10,7 +10,7 @@ import { useForm } from "react-hook-form";
 type CustomPeersProps = {
 	isOpen: boolean;
 	onClose?: any;
-	onAddPeer: any;
+	onAddPeer?: any;
 };
 
 export const CustomPeers = ({ isOpen, onClose, onAddPeer }: CustomPeersProps) => {
@@ -48,7 +48,7 @@ export const CustomPeers = ({ isOpen, onClose, onAddPeer }: CustomPeersProps) =>
 				</FormField>
 
 				<div className="float-right mt-4">
-					<Button type="submit" color="primary" variant="solid">
+					<Button type="submit" color="primary" variant="solid" data-testid="peer-list__add-button">
 						Add Peer
 					</Button>
 				</div>
