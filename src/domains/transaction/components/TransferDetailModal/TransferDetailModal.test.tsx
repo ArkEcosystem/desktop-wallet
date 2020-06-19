@@ -5,13 +5,13 @@ import { I18nextProvider } from "react-i18next";
 
 // i18n
 import { translations } from "../../i18n";
-import { TransferDetail } from "./TransferDetail";
+import { TransferDetailModal } from "./TransferDetailModal";
 
-describe("TransferDetail", () => {
+describe("TransferDetailModal", () => {
 	it("should not render if not open", () => {
 		const { asFragment, getByTestId } = render(
 			<I18nextProvider i18n={i18n}>
-				<TransferDetail isOpen={false} onDelete={() => void 0} />
+				<TransferDetailModal isOpen={false} onDelete={() => void 0} />
 			</I18nextProvider>,
 		);
 
@@ -22,7 +22,7 @@ describe("TransferDetail", () => {
 	it("should render a modal", () => {
 		const { asFragment, getByTestId } = render(
 			<I18nextProvider i18n={i18n}>
-				<TransferDetail isOpen={true} onDelete={() => void 0} />
+				<TransferDetailModal isOpen={true} onDelete={() => void 0} />
 			</I18nextProvider>,
 		);
 
