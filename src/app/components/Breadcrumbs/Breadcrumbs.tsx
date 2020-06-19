@@ -7,7 +7,7 @@ type Crumb = {
 };
 
 type BreadcrumbsProps = {
-	crumbs: Crumbs[];
+	crumbs: Crumb[];
 	className?: string;
 };
 
