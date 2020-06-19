@@ -52,7 +52,7 @@ export const SignMessage = ({ onSubmit, signatoryAddress, isOpen, isSigned, hand
 				<InputPassword ref={register({ required: true })} />
 				<FormHelperText />
 			</FormField>
-			<div className="flex items-center">
+			<div className="flex items-center space-x-3">
 				<Button color="primary" variant="plain" size="large">
 					Cancel
 				</Button>
@@ -61,7 +61,6 @@ export const SignMessage = ({ onSubmit, signatoryAddress, isOpen, isSigned, hand
 					color="primary"
 					variant="solid"
 					size="large"
-					className="ml-5"
 					onClick={() => handleSign()}
 				>
 					Sign

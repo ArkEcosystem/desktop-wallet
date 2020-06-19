@@ -297,7 +297,7 @@ export const VoteForDelegate = ({ onCopy, onSubmit }: Props) => {
 							<FourthStep />
 						</TabPanel>
 
-						<div className="flex justify-start mt-6 space-x-2">
+						<div className="flex justify-start mt-6 space-x-3">
 							{activeTab < 4 && (
 								<>
 									<Button
