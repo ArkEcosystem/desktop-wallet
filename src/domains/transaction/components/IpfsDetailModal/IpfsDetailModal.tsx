@@ -1,28 +1,24 @@
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
-import { Label } from "app/components/Label";
 // UI Elements
 import { Modal } from "app/components/Modal";
 import { TransactionDetail } from "app/components/TransactionDetail";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-type DelegateRegistrationDetailProps = {
+type IpfsDetailModalProps = {
 	isOpen: boolean;
 	onClose?: any;
 };
 
-export const DelegateRegistrationDetail = (props: DelegateRegistrationDetailProps) => {
+export const IpfsDetailModal = (props: IpfsDetailModalProps) => {
 	const { t } = useTranslation();
 
 	return (
-		<Modal
-			title={t("TRANSACTION.MODAL_DELEGATE_REGISTRATION_DETAIL.TITLE")}
-			isOpen={props.isOpen}
-			onClose={props.onClose}
-		>
+		<Modal title={t("TRANSACTION.MODAL_IPFS_DETAIL.TITLE")} isOpen={props.isOpen} onClose={props.onClose}>
 			<TransactionDetail
-				label={t("TRANSACTION.ACCOUNT_NICKNAME")}
+				label={t("TRANSACTION.SENDER")}
+				border={false}
 				extra={
 					<div>
 						<Circle className="-mr-2 border-black">
@@ -31,7 +27,6 @@ export const DelegateRegistrationDetail = (props: DelegateRegistrationDetailProp
 						<Circle avatarId="test"></Circle>
 					</div>
 				}
-				border={false}
 			>
 				ROBank
 				<span className="ml-2 text-theme-neutral-500">ADDR...ESSS</span>
@@ -45,12 +40,21 @@ export const DelegateRegistrationDetail = (props: DelegateRegistrationDetailProp
 					</Circle>
 				}
 			>
-				<Label color="danger">-5 ARK</Label>
-
-				<span className="ml-2 text-theme-neutral-500">50.00 USD</span>
+				0.00 ARK
 			</TransactionDetail>
 
 			<TransactionDetail label={t("TRANSACTION.TRANSACTION_FEE")}>0.09812015 ARK</TransactionDetail>
+
+			<TransactionDetail
+				label={t("TRANSACTION.IPFS_HASH")}
+				extra={
+					<Circle className="border-black">
+						<Icon name="Ipfs" width={20} height={20} />
+					</Circle>
+				}
+			>
+				<div className="flex justify-between">QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco</div>
+			</TransactionDetail>
 
 			<TransactionDetail label={t("TRANSACTION.TIMESTAMP")}>14.04.2020 21:42:40</TransactionDetail>
 
@@ -84,8 +88,8 @@ export const DelegateRegistrationDetail = (props: DelegateRegistrationDetailProp
 	);
 };
 
-DelegateRegistrationDetail.defaultProps = {
+IpfsDetailModal.defaultProps = {
 	isOpen: false,
 };
 
-DelegateRegistrationDetail.displayName = "DelegateRegistrationDetail";
+IpfsDetailModal.displayName = "IpfsDetailModal";

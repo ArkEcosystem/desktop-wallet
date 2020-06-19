@@ -225,8 +225,8 @@ export const General = ({ formConfig, pageConfig, onSubmit }: Props) => {
 							<span className="ml-2">Reset Data</span>
 						</div>
 					</Button>
-					<div>
-						<Button color="primary" variant="plain" size="large" className="mr-3">
+					<div className="space-x-3">
+						<Button color="primary" variant="plain" size="large">
 							Cancel
 						</Button>
 						<Button color="primary" variant="solid" size="large">
