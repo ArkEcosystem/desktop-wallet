@@ -3,9 +3,7 @@ import React from "react";
 
 import { PeerListItem } from "./PeerListItem";
 
-export default {
-	title: "Settings / Components / PeerListItem",
-};
+export default { title: "Settings / Components / PeerListItem" };
 
 const data = [
 	{
@@ -43,14 +41,8 @@ const columns = [
 	},
 ];
 
-export const Default = () => {
-	return (
-		<div>
-			<div>
-				<Table columns={columns} data={data}>
-					{(rowData: any) => <PeerListItem {...rowData} />}
-				</Table>
-			</div>
-		</div>
-	);
-};
+export const Default = () => (
+	<Table columns={columns} data={data}>
+		{(rowData: any) => <PeerListItem {...rowData} />}
+	</Table>
+);
