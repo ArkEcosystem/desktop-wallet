@@ -27,7 +27,7 @@ const Signatures = () => {
 
 	return (
 		<div>
-			<h2 className="mb-0">{t("TRANSACTION.SIGNATURES")}</h2>
+			<h3 className="mb-0">{t("TRANSACTION.SIGNATURES")}</h3>
 
 			<div className="flex">
 				<div>
@@ -84,11 +84,11 @@ export const FirstStep = () => {
 
 	return (
 		<section data-testid="MultiSignatureDetail__first-step">
-			<TransactionDetail label={t("TRANSACTION.SENDER")} extra={<Circle avatarId="test"></Circle>} border={false}>
+			<TransactionDetail label={t("TRANSACTION.SENDER")} extra={<Circle avatarId="test" />} border={false}>
 				<div className="mt-2 font-semibold">ADDRESS</div>
 			</TransactionDetail>
 
-			<TransactionDetail label={t("TRANSACTION.RECIPIENT")} extra={<Circle avatarId="test"></Circle>}>
+			<TransactionDetail label={t("TRANSACTION.RECIPIENT")} extra={<Circle avatarId="test" />}>
 				Bank
 				<span className="ml-2 text-theme-neutral-500">ADDR...ESSS</span>
 			</TransactionDetail>

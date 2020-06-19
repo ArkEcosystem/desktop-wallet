@@ -39,7 +39,7 @@ export const Default = () => {
 				transactionsHeader="Transactions 17 Feb, 2020"
 				transactions={transactions}
 				onAction={console.log}
-			></Notifications>
+			/>
 		</div>
 	);
 };
