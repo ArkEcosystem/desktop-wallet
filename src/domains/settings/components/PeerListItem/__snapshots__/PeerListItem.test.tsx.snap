@@ -8,7 +8,7 @@ exports[`PeerListItem should render 1`] = `
         class="border-b border-theme-neutral-200"
       >
         <td
-          class="py-4 mt-1"
+          class="inline-flex items-center py-4 mt-1"
         >
           <div
             class="sc-AxjAm Stfdu"
@@ -23,6 +23,11 @@ exports[`PeerListItem should render 1`] = `
               </svg>
             </div>
           </div>
+          <span
+            class="ml-2"
+          >
+            BTC
+          </span>
         </td>
         <td
           class="py-1"
