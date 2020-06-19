@@ -7,12 +7,12 @@ import { TransactionDetail } from "app/components/TransactionDetail";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-type TransferDetailModalProps = {
+type TransferDetailProps = {
 	isOpen: boolean;
 	onClose?: any;
 };
 
-export const TransferDetailModal = (props: TransferDetailModalProps) => {
+export const TransferDetail = (props: TransferDetailProps) => {
 	const { t } = useTranslation();
 
 	return (
@@ -90,8 +90,8 @@ export const TransferDetailModal = (props: TransferDetailModalProps) => {
 	);
 };
 
-TransferDetailModal.defaultProps = {
+TransferDetail.defaultProps = {
 	isOpen: false,
 };
 
-TransferDetailModal.displayName = "TransferDetailModal";
+TransferDetail.displayName = "TransferDetail";
