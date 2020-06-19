@@ -5,13 +5,13 @@ import { I18nextProvider } from "react-i18next";
 
 // i18n
 import { translations } from "../../i18n";
-import { SelectDelegateModal } from "./";
+import { SelectDelegate } from "./SelectDelegate";
 
-describe("SelectDelegateModal", () => {
+describe("SelectDelegate", () => {
 	it("should not render if not open", () => {
 		const { asFragment, getByTestId } = render(
 			<I18nextProvider i18n={i18n}>
-				<SelectDelegateModal isOpen={false} />
+				<SelectDelegate isOpen={false} />
 			</I18nextProvider>,
 		);
 
@@ -22,7 +22,7 @@ describe("SelectDelegateModal", () => {
 	it("should render a modal", () => {
 		const { asFragment, getByTestId } = render(
 			<I18nextProvider i18n={i18n}>
-				<SelectDelegateModal isOpen={true} />
+				<SelectDelegate isOpen={true} />
 			</I18nextProvider>,
 		);
 
@@ -34,7 +34,7 @@ describe("SelectDelegateModal", () => {
 	it("should only allow one selection", () => {
 		const { asFragment, getByTestId } = render(
 			<I18nextProvider i18n={i18n}>
-				<SelectDelegateModal isOpen={true} />
+				<SelectDelegate isOpen={true} />
 			</I18nextProvider>,
 		);
 
@@ -51,7 +51,7 @@ describe("SelectDelegateModal", () => {
 	it("should allow multiple selection", () => {
 		const { asFragment, getByTestId } = render(
 			<I18nextProvider i18n={i18n}>
-				<SelectDelegateModal isOpen={true} allowMultiple={true} />
+				<SelectDelegate isOpen={true} allowMultiple={true} />
 			</I18nextProvider>,
 		);
 

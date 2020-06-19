@@ -10,7 +10,7 @@ import { SearchBar } from "domains/search/components/SearchBar";
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 
-type SelectDelegateModalProps = {
+type SelectDelegateProps = {
 	isOpen: boolean;
 	onClose?: any;
 	onVote?: any;
@@ -45,7 +45,7 @@ const SelectedDelegateList = (props: SelectedDelegateListProps) => {
 	return <div className={props.className}>{output}</div>;
 };
 
-export const SelectDelegateModal = (props: SelectDelegateModalProps) => {
+export const SelectDelegate = (props: SelectDelegateProps) => {
 	const { t } = useTranslation();
 	const [showSelectedList, setShowSelectedList] = useState(false);
 	const [selected, setSelected] = useState([] as any);
@@ -255,7 +255,7 @@ export const SelectDelegateModal = (props: SelectDelegateModalProps) => {
 									<div className="text-sm text-theme-neutral-500">{t("COMMON.DELEGATE_ADDRESS")}</div>
 
 									<div className="font-semibold text-theme-neutral-700">
-										{(selected[0]).username} - {(selected[0]).address}
+										{selected[0].username} - {selected[0].address}
 									</div>
 								</div>
 							</div>
@@ -305,6 +305,6 @@ export const SelectDelegateModal = (props: SelectDelegateModalProps) => {
 	);
 };
 
-SelectDelegateModal.defaultProps = {
+SelectDelegate.defaultProps = {
 	allowMultiple: false,
 };
