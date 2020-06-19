@@ -7,7 +7,7 @@ type Props = {
 	transactionFee: string;
 };
 
-export const TotalAmount = ({ transactionAmount, transactionFee }: Props) => {
+export const TotalAmountBox = ({ transactionAmount, transactionFee }: Props) => {
 	const calculateValue = (value) => {
 		const fraction = Math.pow(10, magnitude! * -1);
 		const amount = BigNumber.make(value).times(fraction);
