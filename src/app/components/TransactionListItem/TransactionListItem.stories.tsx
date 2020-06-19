@@ -54,7 +54,7 @@ export const Default = () => {
 		<div>
 			<div>
 				<Table columns={columns} data={data}>
-					{(rowData: any) => <TransactionListItem {...rowData}></TransactionListItem>}
+					{(rowData: any) => <TransactionListItem {...rowData} />}
 				</Table>
 			</div>
 		</div>
@@ -79,7 +79,7 @@ export const Compact = () => {
 		<div>
 			<div>
 				<Table columns={compactColumns} data={data}>
-					{(rowData: any) => <TransactionListItem variant="compact" {...rowData}></TransactionListItem>}
+					{(rowData: any) => <TransactionListItem variant="compact" {...rowData} />}
 				</Table>
 			</div>
 		</div>

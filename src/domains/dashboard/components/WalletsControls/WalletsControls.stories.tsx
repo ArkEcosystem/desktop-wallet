@@ -55,7 +55,7 @@ export const Default = () => {
 					onSelectListView={() => console.log("Show list view")}
 					filterProperties={filterProperties}
 					viewType="grid"
-				></WalletsControls>
+				/>
 			</div>
 		</div>
 	);

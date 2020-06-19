@@ -6,7 +6,7 @@ import { Circle } from "./Circle";
 
 describe("Circle", () => {
 	it("should render", () => {
-		const { container } = render(<Circle></Circle>);
+		const { container } = render(<Circle />);
 		expect(container).toMatchSnapshot();
 	});
 
@@ -18,7 +18,7 @@ describe("Circle", () => {
 	it("should render with content", () => {
 		const { container } = render(
 			<Circle size="small">
-				<div data-testid="circle__content"></div>
+				<div data-testid="circle__content" />
 			</Circle>,
 		);
 		expect(container).toMatchSnapshot();

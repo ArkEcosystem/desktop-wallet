@@ -57,12 +57,12 @@ export const Default = () => {
 						<tr className="border-b border-theme-neutral-200">
 							<td className="py-4 mt-1">
 								<Circle>
-									<Icon name={rowData.coin}></Icon>
+									<Icon name={rowData.coin} />
 								</Circle>
-								<Circle avatarId={rowData.avatarId}></Circle>
+								<Circle avatarId={rowData.avatarId} />
 							</td>
 							<td className="py-1">
-								<Address walletName={rowData.walletName} address={rowData.address}></Address>
+								<Address walletName={rowData.walletName} address={rowData.address} />
 							</td>
 							<td className="py-1 text-right text-bold">
 								<div>{rowData.balance}</div>

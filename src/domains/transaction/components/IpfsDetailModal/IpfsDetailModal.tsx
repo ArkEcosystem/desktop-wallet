@@ -24,7 +24,7 @@ export const IpfsDetailModal = (props: IpfsDetailModalProps) => {
 						<Circle className="-mr-2 border-black">
 							<Icon name="Delegate" width={25} height={25} />
 						</Circle>
-						<Circle avatarId="test"></Circle>
+						<Circle avatarId="test" />
 					</div>
 				}
 			>

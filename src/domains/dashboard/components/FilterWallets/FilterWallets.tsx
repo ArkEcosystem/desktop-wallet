@@ -48,8 +48,8 @@ export const FilterWallets = ({
 				<div className="mb-1 text-sm text-theme-neutral-800">Filter Network</div>
 				<div className="text-xs text-theme-neutral-500">Select the types of networks</div>
 			</div>
-			<SelectNetwork networks={networks} onChange={onNetworkChange} onViewAll={onViewAllNetworks}></SelectNetwork>
-			<Divider></Divider>
+			<SelectNetwork networks={networks} onChange={onNetworkChange} onViewAll={onViewAllNetworks} />
+			<Divider />
 
 			<div className="flex flex-row mb-4">
 				<div className="w-4/5">
@@ -62,11 +62,11 @@ export const FilterWallets = ({
 						className="relative h-6 mt-3 mr-5 text-sm cursor-pointer text-theme-neutral-800"
 						onClick={onWalletClick}
 					>
-						All <Badge icon="ChevronDown" className="top-0 -right-6"></Badge>
+						All <Badge icon="ChevronDown" className="top-0 -right-6" />
 					</div>
 				</div>
 			</div>
-			<Divider></Divider>
+			<Divider />
 			<div className="flex flex-row mb-4">
 				<div className="w-4/5">
 					<div className="mb-1 text-sm text-theme-neutral-800">Portfolio Chart</div>
@@ -80,7 +80,7 @@ export const FilterWallets = ({
 					/>
 				</div>
 			</div>
-			<Divider></Divider>
+			<Divider />
 			<div className="flex flex-row mb-4">
 				<div className="w-4/5">
 					<div className="mb-1 text-sm text-theme-neutral-800">Transaction History</div>
