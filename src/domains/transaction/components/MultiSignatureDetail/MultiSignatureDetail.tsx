@@ -96,7 +96,7 @@ export const FirstStep = () => {
 			<TransactionDetail
 				label={t("TRANSACTION.AMOUNT")}
 				extra={
-					<Circle className="-mr-2 border-theme-danger-100 text-theme-danger-400">
+					<Circle className="border-theme-danger-100 text-theme-danger-400">
 						<Icon name="Sent" width={40} height={40} />
 					</Circle>
 				}
@@ -197,7 +197,7 @@ export const MultiSignatureDetail = (props: MultiSignatureDetailProps) => {
 								</Button>
 							</div>
 
-							<div className="space-x-2">
+							<div className="space-x-3">
 								<Button
 									disabled={activeStep === 1}
 									data-testid="MultiSignatureDetail__back-button"

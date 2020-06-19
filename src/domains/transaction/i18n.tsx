@@ -5,6 +5,7 @@ export const translations: { [key: string]: any } = {
 	BLOCK_ID: "Block ID",
 	CONFIRMATIONS: "Confirmations",
 	ID: "ID",
+	IPFS_HASH: "IPFS Hash",
 	RECIPIENT: "Recipient",
 	RECIPIENTS: "Recipients",
 	SENDER: "Sender",
@@ -41,5 +42,9 @@ export const translations: { [key: string]: any } = {
 
 	MODAL_VOTE_DETAIL: {
 		TITLE: "Delegate Vote",
+	},
+
+	MODAL_IPFS_DETAIL: {
+		TITLE: "Transaction IPFS Hash",
 	},
 };

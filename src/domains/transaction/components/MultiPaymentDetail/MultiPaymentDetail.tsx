@@ -51,7 +51,7 @@ export const MultiPaymentDetail = (props: MultiPaymentDetailProps) => {
 			<TransactionDetail
 				label={t("TRANSACTION.TOTAL_AMOUNT")}
 				extra={
-					<Circle className="-mr-2 border-theme-danger-100 text-theme-danger-400">
+					<Circle className="border-theme-danger-100 text-theme-danger-400">
 						<Icon name="Sent" width={40} height={40} />
 					</Circle>
 				}
