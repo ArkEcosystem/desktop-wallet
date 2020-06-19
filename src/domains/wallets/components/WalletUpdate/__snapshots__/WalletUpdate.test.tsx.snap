@@ -59,10 +59,10 @@ exports[`WalletUpdate should render a modal 1`] = `
             </p>
           </div>
           <div
-            class="flex flex-col justify-center sm:flex-row"
+            class="flex flex-col justify-center space-x-0 sm:flex-row sm:space-x-3"
           >
             <button
-              class="sc-AxjAm jTpTok mr-2"
+              class="sc-AxjAm jTpTok"
               color="primary"
               data-testid="wallet-update__update-button"
               type="button"

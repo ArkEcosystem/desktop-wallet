@@ -36,11 +36,10 @@ export const InstallPlugin = ({ step, isOpen, onClose, onCancel, onDownload }: I
 							<li>{t("PLUGINS.MODAL_INSTALL_PLUGIN.ITEM_2")}</li>
 							<li>{t("PLUGINS.MODAL_INSTALL_PLUGIN.ITEM_3")}</li>
 						</ul>
-						<div className="flex justify-end mt-8">
+						<div className="flex justify-end mt-8 space-x-3">
 							<Button
 								color="primary"
 								variant="plain"
-								className="mr-2"
 								onClick={onCancel}
 								data-testid="install-plugin__cancel-button"
 							>
@@ -139,11 +138,10 @@ export const InstallPlugin = ({ step, isOpen, onClose, onCancel, onDownload }: I
 								</div>
 							</div>
 						</div>
-						<div className="flex justify-end mt-8">
+						<div className="flex justify-end mt-8 space-x-3">
 							<Button
 								color="primary"
 								variant="plain"
-								className="mr-2"
 								onClick={onCancel}
 								data-testid="install-plugin__cancel-button"
 							>
