@@ -1,7 +1,7 @@
+import { Table } from "app/components/Table";
+import React from "react";
 
-
-
-
+import { PeerListItem } from "./PeerListItem";
 
 export default {
 	title: "Settings / Components / PeerListItem",
@@ -9,9 +9,9 @@ export default {
 
 const data = [
 	{
-		coin: "Btc",
-		coinClassName: "text-theme-warning-400 border-theme-warning-200",
-		name: "ROBank",
+		coinIcon: "Btc",
+		coinClass: "text-theme-warning-400 border-theme-warning-200",
+		name: "OLEBank",
 		peerIp: "194.168.4.67:800",
 		type: "Multisig",
 		actions: [
@@ -39,5 +39,18 @@ const columns = [
 	},
 	{
 		Header: "Type",
+		className: "flex justify-center",
 	},
 ];
+
+export const Default = () => {
+	return (
+		<div>
+			<div>
+				<Table columns={columns} data={data}>
+					{(rowData: any) => <PeerListItem {...rowData} />}
+				</Table>
+			</div>
+		</div>
+	);
+};
