@@ -13,7 +13,15 @@ module.exports = {
 		node: true,
 		es6: true,
 	},
-	plugins: ["@typescript-eslint", "prettier", "testing-library", "cypress", "simple-import-sort", "unused-imports"],
+	plugins: [
+		"@typescript-eslint",
+		"prettier",
+		"testing-library",
+		"cypress",
+		"simple-import-sort",
+		"unused-imports",
+		"react-hooks",
+	],
 	extends: [
 		"eslint:recommended",
 		"plugin:@typescript-eslint/eslint-recommended",
@@ -53,6 +61,8 @@ module.exports = {
 			},
 		],
 		"simple-import-sort/sort": "error",
+		"react-hooks/rules-of-hooks": "error",
+		"react-hooks/exhaustive-deps": "warn",
 	},
 	settings: {
 		react: {
