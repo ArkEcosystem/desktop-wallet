@@ -5,7 +5,7 @@ const defaultStyle = (noShadow: boolean) => [
 	!noShadow &&
 		css`
 			& {
-				box-shadow: 0 0 0 6px white;
+				box-shadow: 0 0 0 6px var(--theme-background-color);
 			}
 		`,
 ];

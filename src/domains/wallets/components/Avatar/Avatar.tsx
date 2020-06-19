@@ -1,13 +1,16 @@
 import { Avatar as AvatarSDK } from "@arkecosystem/platform-sdk-profiles/dist/avatar";
 import React from "react";
-import tw, { styled } from "twin.macro";
+import tw, { css, styled } from "twin.macro";
 
 type Props = {
 	address: string;
 	size?: "small" | "large" | "default";
+	noShadow?: boolean;
+	className?: string;
 };
 
-const AvatarStyled = styled.div<{ size: string }>`
+const AvatarStyled = styled.div<{ size: string; noShadow: boolean }>`
+	${tw`block rounded-full`}
 	${({ size }) => {
 		switch (size) {
 			case "large":
@@ -18,16 +21,24 @@ const AvatarStyled = styled.div<{ size: string }>`
 				return tw`w-10 h-10`;
 		}
 	}}
+	${({ noShadow }) =>
+		!noShadow &&
+		css`
+			& {
+				box-shadow: 0 0 0 6px var(--theme-background-color);
+			}
+		`};
 `;
 
-export const Avatar = ({ address, size }: Props) => {
+export const Avatar = ({ address, size, noShadow, className }: Props) => {
 	const gradients = React.useMemo(() => AvatarSDK.make(address), [address]);
 
 	return (
 		<AvatarStyled
 			data-testid="Avatar"
 			size={size!}
-			className="block rounded-full"
+			noShadow={!!noShadow}
+			className={className}
 			style={{ background: gradients }}
 		/>
 	);
