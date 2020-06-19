@@ -1,4 +1,4 @@
-import { Avatar as AvatarSDK } from "@arkecosystem/platform-sdk-profiles/dist/avatar";
+import { Avatar as AvatarSDK } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
 import tw, { css, styled } from "twin.macro";
 
