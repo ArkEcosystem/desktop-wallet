@@ -15,10 +15,11 @@ type PeerListItemProps = {
 
 export const PeerListItem = ({ coin, coinClass, name, peerIp, type, actions, onAction }: PeerListItemProps) => (
 	<tr className="border-b border-theme-neutral-200">
-		<td className="py-4 mt-1">
+		<td className="inline-flex items-center py-4 mt-1">
 			<Circle className={coinClass}>
 				<Icon name={coin!} />
 			</Circle>
+			<span className="ml-2">{coin?.toLocaleUpperCase()}</span>
 		</td>
 		<td className="py-1">
 			<span>{name}</span>
