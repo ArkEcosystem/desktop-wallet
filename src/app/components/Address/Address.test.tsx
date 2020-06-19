@@ -8,12 +8,12 @@ describe("Formatted Address", () => {
 	const sampleAddress = "ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT";
 
 	it("should render address only", () => {
-		const { container } = render(<Address address={sampleAddress}></Address>);
+		const { container } = render(<Address address={sampleAddress} />);
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should render with wallet name", () => {
-		const { container } = render(<Address address={sampleAddress} walletName="Sample Wallet"></Address>);
+		const { container } = render(<Address address={sampleAddress} walletName="Sample Wallet" />);
 		expect(container).toMatchSnapshot();
 	});
 

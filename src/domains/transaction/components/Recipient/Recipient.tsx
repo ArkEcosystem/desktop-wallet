@@ -17,7 +17,7 @@ export const Recipient = (props: RecipientProps) => (
 		} ${props.className}`}
 	>
 		<div>
-			<Circle avatarId="test" size="small"></Circle>
+			<Circle avatarId="test" size="small" />
 
 			<span className="ml-4">{props.address}</span>
 		</div>

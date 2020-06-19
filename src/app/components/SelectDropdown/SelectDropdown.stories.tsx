@@ -50,7 +50,7 @@ export const Simple = () => {
 						);
 					}}
 					options={options}
-				></SelectDropdown>
+				/>
 			</div>
 		</div>
 	);
@@ -104,12 +104,12 @@ export const SelectNetwork = () => {
 						}
 						return (
 							<div className="flex items-center flex-inline">
-								<Circle size="small" noShadow></Circle>
-								<div className="ml-4 font-semibold text-theme-neutral-800"></div>
+								<Circle size="small" noShadow />
+								<div className="ml-4 font-semibold text-theme-neutral-800" />
 							</div>
 						);
 					}}
-				></SelectDropdown>
+				/>
 			</div>
 		</div>
 	);

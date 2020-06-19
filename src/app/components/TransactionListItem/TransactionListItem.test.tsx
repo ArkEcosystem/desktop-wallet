@@ -27,7 +27,7 @@ describe("TransactionListItem", () => {
 						walletName={tx.walletName}
 						amount={tx.amount}
 						fiat={tx.fiat}
-					></TransactionListItem>
+					/>
 				</tbody>
 			</table>,
 		);
@@ -56,7 +56,7 @@ describe("TransactionListItem", () => {
 						walletName={tx.walletName}
 						amount={tx.amount}
 						fiat={tx.fiat}
-					></TransactionListItem>
+					/>
 				</tbody>
 			</table>,
 		);
@@ -86,7 +86,7 @@ describe("TransactionListItem", () => {
 						walletName={tx.walletName}
 						amount={tx.amount}
 						fiat={tx.fiat}
-					></TransactionListItem>
+					/>
 				</tbody>
 			</table>,
 		);
@@ -118,7 +118,7 @@ describe("TransactionListItem", () => {
 						amount={tx.amount}
 						fiat={tx.fiat}
 						onClick={fn}
-					></TransactionListItem>
+					/>
 				</tbody>
 			</table>,
 		);
@@ -155,7 +155,7 @@ describe("TransactionListItem", () => {
 						walletName={tx.walletName}
 						amount={tx.amount}
 						fiat={tx.fiat}
-					></TransactionListItem>
+					/>
 				</tbody>
 			</table>,
 		);

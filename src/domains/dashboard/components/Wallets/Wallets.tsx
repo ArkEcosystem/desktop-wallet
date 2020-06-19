@@ -82,7 +82,7 @@ export const Wallets = ({
 						onSelectListView={() => setWalletsViewType("list")}
 						filterProperties={filterProperties}
 						viewType={walletsViewType}
-					></WalletsControls>
+					/>
 				</div>
 			</div>
 			<div className="mt-1">
@@ -97,7 +97,7 @@ export const Wallets = ({
 				{walletsViewType === "list" && (
 					<div>
 						<Table columns={listColumns} data={wallets}>
-							{(rowData: any) => <WalletListItem {...rowData}></WalletListItem>}
+							{(rowData: any) => <WalletListItem {...rowData} />}
 						</Table>
 
 						<Button color="primary" variant="plain" className="w-full mt-10 mb-5">
