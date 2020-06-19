@@ -377,7 +377,7 @@ exports[`SendTransactionForm should emit goBack button click 1`] = `
               >
                 <input
                   class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
-                  data-testid="Input"
+                  data-testid="InputCurrency"
                   name="fee"
                   type="text"
                   value="0"
@@ -854,7 +854,7 @@ exports[`SendTransactionForm should not call onBack callback if not provided 1`]
               >
                 <input
                   class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
-                  data-testid="Input"
+                  data-testid="InputCurrency"
                   name="fee"
                   type="text"
                   value="0"
@@ -1331,7 +1331,7 @@ exports[`SendTransactionForm should not call onSubmit callback if not provided 1
               >
                 <input
                   class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
-                  data-testid="Input"
+                  data-testid="InputCurrency"
                   name="fee"
                   type="text"
                   value="0"
@@ -1791,7 +1791,7 @@ exports[`SendTransactionForm should render 1`] = `
               >
                 <input
                   class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
-                  data-testid="Input"
+                  data-testid="InputCurrency"
                   name="fee"
                   type="text"
                   value="0"
@@ -2270,7 +2270,7 @@ exports[`SendTransactionForm should select network 1`] = `
               >
                 <input
                   class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
-                  data-testid="Input"
+                  data-testid="InputCurrency"
                   name="fee"
                   type="text"
                   value="0"
@@ -2768,7 +2768,7 @@ exports[`SendTransactionForm should select recipient 1`] = `
               >
                 <input
                   class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
-                  data-testid="Input"
+                  data-testid="InputCurrency"
                   name="fee"
                   type="text"
                   value="0"
@@ -3262,7 +3262,7 @@ exports[`SendTransactionForm should select sender 1`] = `
               >
                 <input
                   class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
-                  data-testid="Input"
+                  data-testid="InputCurrency"
                   name="fee"
                   type="text"
                   value="0"
@@ -3724,7 +3724,7 @@ exports[`SendTransactionForm should set available amount 1`] = `
               >
                 <input
                   class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
-                  data-testid="Input"
+                  data-testid="InputCurrency"
                   name="fee"
                   type="text"
                   value="0"
@@ -4203,7 +4203,7 @@ exports[`SendTransactionForm should submit form 1`] = `
               >
                 <input
                   class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
-                  data-testid="Input"
+                  data-testid="InputCurrency"
                   name="fee"
                   type="text"
                   value="0"
