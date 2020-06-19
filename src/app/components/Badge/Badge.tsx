@@ -19,7 +19,7 @@ export const Wrapper = styled.span`
 export const Badge = ({ className, children, icon, iconWidth, iconHeight }: BadgeProps) => {
 	return (
 		<Wrapper className={`${defaultClasses} ${className}`}>
-			{!!icon && <Icon name={icon} width={iconWidth} height={iconHeight}></Icon>}
+			{!!icon && <Icon name={icon} width={iconWidth} height={iconHeight} />}
 			<span>{children}</span>
 		</Wrapper>
 	);
