@@ -41,10 +41,10 @@ type RecipientListItem = {
 const RecipientListItem = ({ amount, address, walletName, assetSymbol, onRemove }: RecipientListItem) => (
 	<tr className="border-b border-theme-neutral-200" data-testid="send-transaction__recipient-list-item">
 		<td className="w-12 py-4">
-			<Circle avatarId="test" size="small"></Circle>
+			<Circle avatarId="test" size="small" />
 		</td>
 		<td>
-			<Address address={address} walletName={walletName}></Address>
+			<Address address={address} walletName={walletName} />
 		</td>
 
 		<td className="font-bold text-right text-theme-neutral-800">
@@ -53,7 +53,7 @@ const RecipientListItem = ({ amount, address, walletName, assetSymbol, onRemove 
 		<td className="w-16 text-right">
 			<Button color="primary" variant="plain" onClick={onRemove} data-testid="send-transaction__remove-recipient">
 				<div className="py-1">
-					<Icon name="Trash"></Icon>
+					<Icon name="Trash" />
 				</div>
 			</Button>
 		</td>
@@ -146,11 +146,11 @@ const ProfileFormField = ({ register, profiles, selectedProfile, formName, formL
 				</Select>
 				<InputAddonEnd>
 					<button className="px-3 pr-2 text-theme-primary-300 focus:outline-none">
-						<Icon name="User" width={20} height={20}></Icon>
+						<Icon name="User" width={20} height={20} />
 					</button>
 					<Divider type="vertical" />
 					<button className="pl-2 pr-4 text-theme-primary-300 focus:outline-none">
-						<Icon name="Receive" width={20} height={20}></Icon>
+						<Icon name="Receive" width={20} height={20} />
 					</button>
 				</InputAddonEnd>
 			</InputGroup>
@@ -173,7 +173,7 @@ const ProfileFormField = ({ register, profiles, selectedProfile, formName, formL
 							maxChars={30}
 							address={selectedProfile?.address}
 							walletName={selectedProfile?.walletName}
-						></Address>
+						 />
 					</div>
 				</div>
 			)}
