@@ -27,7 +27,7 @@ const Signatures = () => {
 
 	return (
 		<div>
-			<h2 className="mb-0">{t("TRANSACTION.SIGNATURES")}</h2>
+			<h3 className="mb-0">{t("TRANSACTION.SIGNATURES")}</h3>
 
 			<div className="flex">
 				<div>
