@@ -7,6 +7,7 @@ type Props = {
 	name: string;
 	width: number | string;
 	height: number | string;
+	className?: string;
 };
 
 type WrapperProps = {
@@ -21,11 +22,11 @@ const Wrapper = styled.div(({ width, height }: WrapperProps) => ({
 	},
 }));
 
-export const Icon = ({ name, width, height }: Props) => {
+export const Icon = ({ name, width, height, className }: Props) => {
 	const Svg = SvgCollection[name];
 
 	return (
-		<Wrapper width={width} height={height}>
+		<Wrapper width={width} height={height} className={className}>
 			{Svg && <Svg />}
 		</Wrapper>
 	);
