@@ -47,10 +47,10 @@ const RecipientListItem = ({ amount, address, walletName, assetSymbol, onRemove 
 			<Address address={address} walletName={walletName}></Address>
 		</td>
 
-		<td className="font-bold text-theme-neutral-800 text-right">
+		<td className="font-bold text-right text-theme-neutral-800">
 			{amount} {assetSymbol}
 		</td>
-		<td className="text-right w-16">
+		<td className="w-16 text-right">
 			<Button color="primary" variant="plain" onClick={onRemove} data-testid="send-transaction__remove-recipient">
 				<div className="py-1">
 					<Icon name="Trash"></Icon>
@@ -63,7 +63,7 @@ const RecipientListItem = ({ amount, address, walletName, assetSymbol, onRemove 
 const RecipientList = ({ recipients, onRemove, assetSymbol }: any) => {
 	return (
 		<div className="pt-6">
-			<div className="text-sm font-semibold text-theme-neutral-700 mb-4">Recipients</div>
+			<div className="mb-4 text-sm font-semibold text-theme-neutral-700">Recipients</div>
 			<Table
 				columns={[
 					{ Header: "Avatar", className: "invisible w-2" },
@@ -89,7 +89,7 @@ const RecipientList = ({ recipients, onRemove, assetSymbol }: any) => {
 
 const NetworkFormField = ({ networks, register, selectedNetwork }: any) => {
 	return (
-		<FormField name="network" className="relative mt-1 h-20">
+		<FormField name="network" className="relative h-20 mt-1">
 			<div className="mb-2">
 				<FormLabel label="Network" />
 			</div>
@@ -105,17 +105,17 @@ const NetworkFormField = ({ networks, register, selectedNetwork }: any) => {
 			</div>
 
 			{!selectedNetwork && (
-				<div className="absolute -mt-10 ml-4">
+				<div className="absolute ml-4 -mt-10">
 					<Circle className="border-theme-neutral-200" size="small" noShadow />
 				</div>
 			)}
 
 			{selectedNetwork && (
-				<div className="-mt-10 flex items-center mt-10 ml-4">
+				<div className="flex items-center mt-10 ml-4 -mt-10">
 					<Circle className={selectedNetwork.iconClassName} size="small" noShadow>
 						<Icon name={selectedNetwork.icon} width={18} height={18} />
 					</Circle>
-					<div className="text-theme-neutral-800 font-semibold ml-4">{selectedNetwork.label}</div>
+					<div className="ml-4 font-semibold text-theme-neutral-800">{selectedNetwork.label}</div>
 				</div>
 			)}
 		</FormField>
@@ -124,7 +124,7 @@ const NetworkFormField = ({ networks, register, selectedNetwork }: any) => {
 
 const ProfileFormField = ({ register, profiles, selectedProfile, formName, formLabel, disabled }: any) => {
 	return (
-		<FormField name={formName} className="relative mt-1 h-20">
+		<FormField name={formName} className="relative h-20 mt-1">
 			<div className="mb-2">
 				<FormLabel label={formLabel} />
 			</div>
@@ -149,26 +149,26 @@ const ProfileFormField = ({ register, profiles, selectedProfile, formName, formL
 						<Icon name="User" width={20} height={20}></Icon>
 					</button>
 					<Divider type="vertical" />
-					<button className="pr-4 pl-2 text-theme-primary-300 focus:outline-none">
+					<button className="pl-2 pr-4 text-theme-primary-300 focus:outline-none">
 						<Icon name="Receive" width={20} height={20}></Icon>
 					</button>
 				</InputAddonEnd>
 			</InputGroup>
 
 			{!selectedProfile && (
-				<div className="absolute -mt-10 ml-4">
-					<Circle className="bg-theme-neutral-200 border-theme-neutral-200 mt-px" size="small" noShadow />
+				<div className="absolute ml-4 -mt-10">
+					<Circle className="mt-px bg-theme-neutral-200 border-theme-neutral-200" size="small" noShadow />
 				</div>
 			)}
 			{selectedProfile && (
-				<div className="-mt-10 flex ml-4">
+				<div className="flex ml-4 -mt-10">
 					<Circle
 						avatarId={selectedProfile?.address}
 						className="bg-theme-neutral-300 border-theme-neutral-300"
 						size="small"
 						noShadow
 					/>
-					<div className="text-theme-neutral-800 font-semibold ml-4 mt-1">
+					<div className="mt-1 ml-4 font-semibold text-theme-neutral-800">
 						<Address
 							maxChars={30}
 							address={selectedProfile?.address}
@@ -340,7 +340,7 @@ export const SendTransactionForm = ({
 							</div>
 						</FormField>
 					</div>
-					<div className="w-2/4 mt-7 text-right">
+					<div className="w-2/4 text-right mt-7">
 						<SelectionBar>
 							<SelectionBarOption value={feeRange.last} {...feeRangeValue}>
 								Last
