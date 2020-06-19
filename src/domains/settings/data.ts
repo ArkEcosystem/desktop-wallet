@@ -1,3 +1,14 @@
+const actions = [
+	{
+		label: "Edit",
+		value: "edit",
+	},
+	{
+		label: "Delete",
+		value: "delete",
+	},
+];
+
 export const peers = [
 	{
 		coin: "Ark",
@@ -5,16 +16,7 @@ export const peers = [
 		name: "ROBank",
 		peerIp: "194.168.4.67:800",
 		type: "Multisig",
-		actions: [
-			{
-				label: "Edit",
-				value: "edit",
-			},
-			{
-				label: "Delete",
-				value: "delete",
-			},
-		],
+		actions,
 	},
 	{
 		coin: "Eth",
@@ -22,16 +24,7 @@ export const peers = [
 		name: "MATBank",
 		peerIp: "194.168.4.67:800",
 		type: "Multisig",
-		actions: [
-			{
-				label: "Edit",
-				value: "edit",
-			},
-			{
-				label: "Delete",
-				value: "delete",
-			},
-		],
+		actions,
 	},
 	{
 		coin: "Btc",
@@ -39,15 +32,6 @@ export const peers = [
 		name: "OLEBank",
 		peerIp: "194.168.4.67:800",
 		type: "Multisig",
-		actions: [
-			{
-				label: "Edit",
-				value: "edit",
-			},
-			{
-				label: "Delete",
-				value: "delete",
-			},
-		],
+		actions,
 	},
 ];

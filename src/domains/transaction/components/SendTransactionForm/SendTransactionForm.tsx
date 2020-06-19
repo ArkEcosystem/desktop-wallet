@@ -173,7 +173,7 @@ const ProfileFormField = ({ register, profiles, selectedProfile, formName, formL
 							maxChars={30}
 							address={selectedProfile?.address}
 							walletName={selectedProfile?.walletName}
-						 />
+						/>
 					</div>
 				</div>
 			)}
