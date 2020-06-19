@@ -1,4 +1,3 @@
-// UI Elements
 import { SideBar } from "app/components/SideBar";
 import React from "react";
 import { useForm } from "react-hook-form";
@@ -10,7 +9,7 @@ type PageConfig = {
 	subheader: string;
 };
 
-type Props = {
+type SettingsProps = {
 	settings: any;
 	setActiveSettings: any;
 	submitSettings?: any;
@@ -22,7 +21,13 @@ type AvailableSettings = {
 	[index: string]: any;
 };
 
-export const Settings = ({ settings, pageConfig, activeSettings, setActiveSettings, submitSettings }: Props) => {
+export const Settings = ({
+	settings,
+	pageConfig,
+	activeSettings,
+	setActiveSettings,
+	submitSettings,
+}: SettingsProps) => {
 	const form = useForm();
 	const { register, errors } = form;
 
@@ -31,7 +36,10 @@ export const Settings = ({ settings, pageConfig, activeSettings, setActiveSettin
 
 	const renderSettings = () => {
 		const ActiveSettings = providedSettings[activeSettings];
-		if (!ActiveSettings) return <span>{activeSettings} settings not found</span>;
+
+		if (!ActiveSettings) {
+			return <span>{activeSettings} settings not found</span>;
+		}
 
 		return (
 			<ActiveSettings
