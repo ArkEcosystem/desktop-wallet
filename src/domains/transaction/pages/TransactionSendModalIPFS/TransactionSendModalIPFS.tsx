@@ -13,7 +13,7 @@ import { TransactionDetail } from "app/components/TransactionDetail";
 import React, { useEffect } from "react";
 import { useForm, useFormContext } from "react-hook-form";
 
-
+import { TotalAmount } from "../../components/TotalAmount";
 
 export const FirstStep = () => {
 	const { register } = useFormContext();
@@ -126,6 +126,7 @@ export const SecondStep = () => (
 				<span className="font-normal">QmceNpwJqQm7vXUivbQeeQYeGr1ivT1VDRPaWK9Pf</span>
 			</TransactionDetail>
 			<TransactionDetail label="Transaction fee">0.09660435 ARK</TransactionDetail>
+			<TotalAmount />
 		</div>
 	</section>
 );
