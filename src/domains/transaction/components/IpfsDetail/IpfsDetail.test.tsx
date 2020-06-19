@@ -5,13 +5,13 @@ import { I18nextProvider } from "react-i18next";
 
 // i18n
 import { translations } from "../../i18n";
-import { IpfsDetailModal } from "./IpfsDetailModal";
+import { IpfsDetail } from "./IpfsDetail";
 
-describe("IpfsDetailModal", () => {
+describe("IpfsDetail", () => {
 	it("should not render if not open", () => {
 		const { asFragment, getByTestId } = render(
 			<I18nextProvider i18n={i18n}>
-				<IpfsDetailModal isOpen={false} />
+				<IpfsDetail isOpen={false} />
 			</I18nextProvider>,
 		);
 
@@ -22,7 +22,7 @@ describe("IpfsDetailModal", () => {
 	it("should render a modal", () => {
 		const { asFragment, getByTestId } = render(
 			<I18nextProvider i18n={i18n}>
-				<IpfsDetailModal isOpen={true} />
+				<IpfsDetail isOpen={true} />
 			</I18nextProvider>,
 		);
 

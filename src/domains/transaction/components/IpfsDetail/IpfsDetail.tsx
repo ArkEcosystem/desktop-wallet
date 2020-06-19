@@ -6,12 +6,12 @@ import { TransactionDetail } from "app/components/TransactionDetail";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-type IpfsDetailModalProps = {
+type IpfsDetailProps = {
 	isOpen: boolean;
 	onClose?: any;
 };
 
-export const IpfsDetailModal = (props: IpfsDetailModalProps) => {
+export const IpfsDetail = (props: IpfsDetailProps) => {
 	const { t } = useTranslation();
 
 	return (
@@ -88,8 +88,8 @@ export const IpfsDetailModal = (props: IpfsDetailModalProps) => {
 	);
 };
 
-IpfsDetailModal.defaultProps = {
+IpfsDetail.defaultProps = {
 	isOpen: false,
 };
 
-IpfsDetailModal.displayName = "IpfsDetailModal";
+IpfsDetail.displayName = "IpfsDetail";
