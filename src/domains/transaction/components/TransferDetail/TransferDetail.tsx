@@ -17,7 +17,7 @@ export const TransferDetail = (props: TransferDetailProps) => {
 
 	return (
 		<Modal title={t("TRANSACTION.MODAL_TRANSFER_DETAIL.TITLE")} isOpen={props.isOpen} onClose={props.onClose}>
-			<TransactionDetail label={t("TRANSACTION.SENDER")} extra={<Circle avatarId="test"></Circle>} border={false}>
+			<TransactionDetail label={t("TRANSACTION.SENDER")} extra={<Circle avatarId="test" />} border={false}>
 				<div className="mt-2 font-semibold">ADDRESS</div>
 			</TransactionDetail>
 
@@ -28,7 +28,7 @@ export const TransferDetail = (props: TransferDetailProps) => {
 						<Circle className="-mr-2 border-black">
 							<Icon name="Delegate" width={25} height={25} />
 						</Circle>
-						<Circle avatarId="test"></Circle>
+						<Circle avatarId="test" />
 					</div>
 				}
 			>

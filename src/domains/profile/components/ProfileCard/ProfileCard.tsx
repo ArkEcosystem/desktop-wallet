@@ -32,7 +32,7 @@ export const ProfileCard = ({ avatar, name, balance, actions, onSelect, showSett
 						className="block w-12 h-12 mx-auto rounded-full sm:mx-0 sm:flex-shrink-0"
 						style={{ backgroundImage: avatar }}
 						data-testid="profile-card__user--avatar"
-					></div>
+					/>
 					<div className="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-left">
 						<p className="text-sm font-semibold text-theme-neutral">Name</p>
 						<p className="font-semibold text-theme-neutral-dark" data-testid="profile-card__user--name">
