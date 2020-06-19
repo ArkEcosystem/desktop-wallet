@@ -42,7 +42,7 @@ export const SecondStep = () => (
 					</div>
 				}
 			>
-				<div className="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate text-xl">
+				<div className="flex-auto text-xl font-semibold truncate text-theme-neutral-800 max-w-24">
 					ARK Ecosystem
 				</div>
 			</TransactionDetail>
@@ -64,7 +64,7 @@ export const SecondStep = () => (
 					</div>
 				}
 			>
-				<div className="text-sm font-semibold text-theme-neutral-500 mb-2">
+				<div className="mb-2 text-sm font-semibold text-theme-neutral-500">
 					<span className="mr-1">Sender</span>
 					<Label color="warning">Your address</Label>
 				</div>
@@ -179,14 +179,14 @@ export const FourthStep = () => (
 						</div>
 					}
 				>
-					<div className="text-sm font-semibold text-theme-neutral-500 mb-2">
+					<div className="mb-2 text-sm font-semibold text-theme-neutral-500">
 						<span className="mr-1">Sender</span>
 						<Label color="warning">Your address</Label>
 					</div>
 					<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} size="large" />
 				</TransactionDetail>
 				<TransactionDetail label="IPFS Hash">
-					<div className="text-theme-neutral-800 font-semibold truncate mt-4 mr-1 text-md">
+					<div className="mt-4 mr-1 font-semibold truncate text-theme-neutral-800 text-md">
 						JFKDJFKSDJFKDSJFKJKJFKDSJFKLJAKFJAKLJFKALSJFKLASJF
 					</div>
 				</TransactionDetail>
