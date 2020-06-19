@@ -16,7 +16,7 @@ export const InputCurrency = React.forwardRef<HTMLInputElement, Props>(
 
 		React.useLayoutEffect(() => {
 			setAmount(convertValue(defaultValue));
-		}, [defaultValue]);
+		}, [defaultValue, convertValue]);
 
 		const handleInput = (event: React.ChangeEvent<HTMLInputElement>) => {
 			const currency = convertValue(event.target.value);
