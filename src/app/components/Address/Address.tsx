@@ -34,7 +34,9 @@ export const Address = ({ address, addressClass, walletName, maxChars, size }: P
 			)}
 			<span
 				data-testid="address__wallet-address"
-				className={`${addressClass || "text-theme-neutral-400"} font-semibold ${size && fontSizes[size]}`}
+				className={`${
+					addressClass || (walletName ? "text-theme-neutral-400" : "text-theme-neutral-800")
+				} font-semibold ${size && fontSizes[size]}`}
 			>
 				{truncateStringMiddle(address, maxChars)}
 			</span>
