@@ -7,7 +7,7 @@ exports[`SelectAccount should render 1`] = `
     data-testid="modal__overlay"
   />
   <div
-    class="sc-AxiKw jCpCzv fixed left-0 right-0 z-10 flex flex-col px-16 pt-6 pb-8 mx-auto mt-24 rounded-xl bg-theme-background"
+    class="sc-AxiKw jCpCzv fixed left-0 right-0 z-10 flex flex-col px-12 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
     data-testid="modal__inner"
   >
     <div
@@ -48,7 +48,7 @@ exports[`SelectAccount should render 1`] = `
           class="-mx-16"
         >
           <div
-            class="bg-theme-neutral-200 px-16 pt-8 pb-10 mt-8"
+            class="bg-theme-neutral-100 px-12 pt-8 pb-10 mt-8"
             data-testid="SearchBar"
           >
             <div
@@ -87,7 +87,7 @@ exports[`SelectAccount should render 1`] = `
                 />
               </div>
               <button
-                class="sc-AxjAm jPIcLJ my-1"
+                class="sc-AxjAm jgOgud my-1"
                 color="primary"
                 type="button"
               >
@@ -115,7 +115,7 @@ exports[`SelectAccount should render 1`] = `
                   role="row"
                 >
                   <th
-                    class="text-theme-neutral-400 text-left text-xs select-none pb-3}"
+                    class="text-xs text-left select-none text-theme-neutral-400"
                     colspan="1"
                     data-testid="table__th--0"
                     role="columnheader"
@@ -147,7 +147,7 @@ exports[`SelectAccount should render 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-theme-neutral-400 text-left text-xs select-none pb-3}"
+                    class="text-xs text-left select-none text-theme-neutral-400"
                     colspan="1"
                     data-testid="table__th--1"
                     role="columnheader"
@@ -179,7 +179,7 @@ exports[`SelectAccount should render 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-theme-neutral-400 text-left text-xs select-none pb-3}"
+                    class="text-xs text-left select-none text-theme-neutral-400"
                     colspan="1"
                     data-testid="table__th--2"
                     role="columnheader"
@@ -211,7 +211,7 @@ exports[`SelectAccount should render 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-theme-neutral-400 text-left text-xs select-none pb-3}"
+                    class="text-xs text-left select-none text-theme-neutral-400"
                     colspan="1"
                     data-testid="table__th--3"
                     role="columnheader"

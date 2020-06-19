@@ -10,6 +10,20 @@ describe("Button", () => {
 		expect(container).toMatchSnapshot();
 	});
 
+	it("should render contrast text if not primary", () => {
+		const { container } = render(<Button variant="solid" color="plain" />);
+
+		expect(container).toHaveStyle("color: var(--theme-color-plain-contrast);");
+		expect(container).toMatchSnapshot();
+	});
+
+	it("should render white text if primary", () => {
+		const { container } = render(<Button variant="solid" color="primary" />);
+
+		expect(container).toHaveStyle("color: var(--theme-white);");
+		expect(container).toMatchSnapshot();
+	});
+
 	it("should render as plain", () => {
 		const { container } = render(<Button variant="plain" />);
 

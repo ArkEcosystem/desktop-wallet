@@ -44,6 +44,12 @@ export const translations: { [key: string]: any } = {
 		TITLE: "Delegate Vote",
 	},
 
+	MODAL_SELECT_DELEGATE: {
+		TITLE: "Select a Delegate",
+		DESCRIPTION:
+			"Please select the Delegate you wish to vote for. For additional information about the delegate and/or payouts, please visit MarketSquare.",
+	},
+
 	MODAL_IPFS_DETAIL: {
 		TITLE: "Transaction IPFS Hash",
 	},
