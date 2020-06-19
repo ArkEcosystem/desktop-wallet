@@ -153,6 +153,121 @@ exports[`CreateContact should render a modal 1`] = `
               </button>
             </div>
             <div
+              class="group"
+            >
+              <span
+                class="inline-block text-sm font-semibold transition-colors duration-100 group-hover:text-theme-primary text-theme-neutral-dark"
+              >
+                Addresses
+              </span>
+              <div
+                class="flex items-center py-4 border-b border-dashed border-theme-neutral-300"
+              >
+                <div
+                  class="mr-4"
+                >
+                  <div
+                    class="sc-AxirZ dUEVPd -mr-2"
+                  >
+                    <div
+                      class="sc-AxhCb fxrKLH"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        btc.svg
+                      </svg>
+                    </div>
+                  </div>
+                  <div
+                    class="sc-AxirZ jaEUuk"
+                  />
+                </div>
+                <span
+                  class="font-semibold"
+                >
+                  <div
+                    class="inline-block truncate"
+                  >
+                    <span
+                      class="text-theme-neutral-400 font-semibold text-base"
+                      data-testid="address__wallet-address"
+                    >
+                      fooooooobaaaaar
+                    </span>
+                  </div>
+                </span>
+                <button
+                  class="sc-AxjAm jRhSqM flex items-center ml-auto"
+                  color="primary"
+                  type="button"
+                >
+                  <div
+                    class="sc-AxhCb fxrKLH"
+                    height="1em"
+                    width="1em"
+                  >
+                    <svg>
+                      trash.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
+              <div
+                class="flex items-center py-4 border-b border-dashed border-theme-neutral-300"
+              >
+                <div
+                  class="mr-4"
+                >
+                  <div
+                    class="sc-AxirZ dUEVPd -mr-2"
+                  >
+                    <div
+                      class="sc-AxhCb fxrKLH"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        eth.svg
+                      </svg>
+                    </div>
+                  </div>
+                  <div
+                    class="sc-AxirZ jaEUuk"
+                  />
+                </div>
+                <span
+                  class="font-semibold"
+                >
+                  <div
+                    class="inline-block truncate"
+                  >
+                    <span
+                      class="text-theme-neutral-400 font-semibold text-base"
+                      data-testid="address__wallet-address"
+                    >
+                      fooooooobaaaaar
+                    </span>
+                  </div>
+                </span>
+                <button
+                  class="sc-AxjAm jRhSqM flex items-center ml-auto"
+                  color="primary"
+                  type="button"
+                >
+                  <div
+                    class="sc-AxhCb fxrKLH"
+                    height="1em"
+                    width="1em"
+                  >
+                    <svg>
+                      trash.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
+            </div>
+            <div
               class="flex justify-end mt-8 space-x-3"
             >
               <button

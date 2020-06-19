@@ -39,9 +39,14 @@ describe("CreateContact", () => {
 			},
 		];
 
+		const addresses = [
+			{ coin: "Btc", network: "Bitcoin", address: "fooooooobaaaaar", avatar: "test1" },
+			{ coin: "Eth", network: "Ethereum", address: "fooooooobaaaaar", avatar: "test2" },
+		];
+
 		const { asFragment, getByTestId } = render(
 			<I18nextProvider i18n={i18n}>
-				<CreateContact isOpen={true} networks={networks} onSave={onSave} />
+				<CreateContact isOpen={true} networks={networks} addresses={addresses} onSave={onSave} />
 			</I18nextProvider>,
 		);
 
