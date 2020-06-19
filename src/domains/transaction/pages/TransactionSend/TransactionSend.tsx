@@ -20,7 +20,7 @@ export const FirstStep = ({ onSubmit, formValues }: any) => {
 				<h1 className="mb-0">Send</h1>
 				<p className="text-theme-neutral-dark">Enter details to send your money</p>
 			</div>
-			<SendTransactionForm {...formValues} onSubmit={onSubmit}></SendTransactionForm>
+			<SendTransactionForm {...formValues} onSubmit={onSubmit} />
 		</section>
 	);
 };
@@ -50,7 +50,7 @@ export const SecondStep = () => (
 				label="Account"
 				extra={
 					<div>
-						<Circle avatarId="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"></Circle>
+						<Circle avatarId="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
 					</div>
 				}
 			>
@@ -60,7 +60,7 @@ export const SecondStep = () => (
 				label=" "
 				extra={
 					<div>
-						<Circle avatarId="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"></Circle>
+						<Circle avatarId="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
 					</div>
 				}
 			>
@@ -175,7 +175,7 @@ export const FourthStep = () => (
 					label=" "
 					extra={
 						<div>
-							<Circle avatarId="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"></Circle>
+							<Circle avatarId="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
 						</div>
 					}
 				>
