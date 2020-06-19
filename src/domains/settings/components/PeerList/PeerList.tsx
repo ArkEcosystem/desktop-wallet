@@ -1,7 +1,8 @@
 import { Button } from "app/components/Button";
 import { Table } from "app/components/Table";
-import React from "react";
+import React, { useState } from "react";
 
+import { CustomPeers } from "../CustomPeers";
 import { PeerListItem } from "../PeerListItem";
 
 type PeerListProps = {
@@ -9,17 +10,29 @@ type PeerListProps = {
 	peers?: any;
 };
 
-export const PeerList = ({ listColumns, peers }: PeerListProps) => (
-	<div>
-		<Table columns={listColumns} data={peers}>
-			{(rowData: any) => <PeerListItem {...rowData} />}
-		</Table>
+export const PeerList = ({ listColumns, peers }: PeerListProps) => {
+	const [isOpen, setIsOpen] = useState(false);
 
-		<Button color="primary" variant="plain" className="w-full mt-10 mb-5">
-			Add Peer
-		</Button>
-	</div>
-);
+	return (
+		<>
+			<Table columns={listColumns} data={peers}>
+				{(rowData: any) => <PeerListItem {...rowData} />}
+			</Table>
+
+			<Button
+				color="primary"
+				variant="plain"
+				className="w-full mt-10 mb-5"
+				onClick={() => setIsOpen(true)}
+				data-testid="peer-list__add-button"
+			>
+				Add Peer
+			</Button>
+
+			<CustomPeers isOpen={isOpen} onClose={() => setIsOpen(false)} />
+		</>
+	);
+};
 
 PeerList.defaultProps = {
 	peers: [],
