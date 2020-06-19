@@ -24,7 +24,7 @@ const SelectionBarOptionStyled = styled.button`
 	& + &:after {
 		content: "";
 		width: 1px;
-		${tw`h-6 bg-theme-neutral-300 absolute left-0 top-1/2 transform -translate-y-1/2 block`};
+		${tw`bg-theme-neutral-300 top-1/2 absolute left-0 block h-6 transform -translate-y-1/2`};
 	}
 `;
 
@@ -44,7 +44,7 @@ export const SelectionBarOption = ({ value, isValueChecked, setCheckedValue, chi
 			role="radio"
 			aria-checked={isChecked}
 			onClick={() => setCheckedValue(value)}
-			className="relative px-5 py-3 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+			className="relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
 		>
 			{children}
 		</SelectionBarOptionStyled>

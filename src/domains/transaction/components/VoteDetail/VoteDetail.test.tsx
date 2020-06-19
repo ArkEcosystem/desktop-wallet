@@ -11,7 +11,7 @@ describe("VoteDetail", () => {
 	it("should not render if not open", () => {
 		const { asFragment, getByTestId } = render(
 			<I18nextProvider i18n={i18n}>
-				<VoteDetail isOpen={false} onDelete={() => void 0} />
+				<VoteDetail isOpen={false} />
 			</I18nextProvider>,
 		);
 
@@ -22,7 +22,7 @@ describe("VoteDetail", () => {
 	it("should render a modal", () => {
 		const { asFragment, getByTestId } = render(
 			<I18nextProvider i18n={i18n}>
-				<VoteDetail isOpen={true} onDelete={() => void 0} />
+				<VoteDetail isOpen={true} />
 			</I18nextProvider>,
 		);
 

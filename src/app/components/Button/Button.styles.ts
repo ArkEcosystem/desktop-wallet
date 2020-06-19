@@ -19,11 +19,11 @@ const getColorsVariable = (name: string): any => {
 	};
 };
 
-const getVariant = (name: string, color: ReturnType<typeof getColorsVariable>): any => {
+const getVariant = (name: string, colorName: string, color: ReturnType<typeof getColorsVariable>): any => {
 	switch (name) {
 		case "solid":
 			return css`
-				color: ${color.contrast};
+				color: ${colorName === "primary" ? "var(--theme-white)" : color.contrast};
 				background-color: ${color.base};
 				&:not(:focus):hover:enabled {
 					box-shadow: 2px 3px 10px 2px rgba(${color.rgb}, 0.2);
@@ -62,5 +62,5 @@ const getSize = (size: string): any => {
 };
 
 export const getStyles = ({ variant, color, size }: { variant?: string; color?: string; size?: string }) => {
-	return [getSize(size!), ...baseStyle, ...getVariant(variant!, getColorsVariable(color!))];
+	return [getSize(size!), ...baseStyle, ...getVariant(variant!, color!, getColorsVariable(color!))];
 };
