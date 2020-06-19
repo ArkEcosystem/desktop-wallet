@@ -78,3 +78,23 @@
 	--theme-color-neutral-200: #eef3f5;
 	--theme-color-neutral-100: #f7fafb;
 }
+
+.theme-dark {
+	--theme-background-color: #212225;
+	--theme-text-color: "#ffffff";
+
+	--theme-color-neutral: var(--theme-color-neutral-500);
+	--theme-color-neutral-rgb: 165, 173, 185;
+	--theme-color-neutral-contrast: var(--theme-color-neutral-100);
+	--theme-color-neutral-dark: var(--theme-color-neutral-700);
+	--theme-color-neutral-light: var(--theme-color-neutral-400);
+	--theme-color-neutral-100: #212225;
+	--theme-color-neutral-200: #3c4249;
+	--theme-color-neutral-300: #637282;
+	--theme-color-neutral-400: #7e8a9c;
+	--theme-color-neutral-500: #a5adb9;
+	--theme-color-neutral-600: #c4c8cf;
+	--theme-color-neutral-700: #dbdee5;
+	--theme-color-neutral-800: #eef3f5;
+	--theme-color-neutral-900: #f7fafb;
+}

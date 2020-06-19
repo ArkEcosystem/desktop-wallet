@@ -1,442 +1,958 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`PeerList should render 1`] = `
-<div>
-  <div>
-    <div
-      class="sc-AxiKw jaovnp"
-      role="table"
+exports[`PeerList should add peer 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-AxiKw jaovnp"
+    role="table"
+  >
+    <table
+      class="table-auto"
     >
-      <table
-        class="table-auto"
-      >
-        <thead>
-          <tr
-            role="row"
-          >
-            <th
-              class="text-xs text-left select-none text-theme-neutral-400"
-              colspan="1"
-              data-testid="table__th--0"
-              role="columnheader"
-            >
-              <div
-                class="flex flex-inline align-top  undefined"
-              >
-                <div
-                  class="mr-1"
-                >
-                  Network
-                </div>
-                <div
-                  class="mt-1 text-theme-color-neutral-500"
-                  data-testid="table__Sort"
-                />
-              </div>
-            </th>
-            <th
-              class="text-xs text-left select-none text-theme-neutral-400"
-              colspan="1"
-              data-testid="table__th--1"
-              role="columnheader"
-            >
-              <div
-                class="flex flex-inline align-top  undefined"
-              >
-                <div
-                  class="mr-1"
-                >
-                  Name
-                </div>
-                <div
-                  class="mt-1 text-theme-color-neutral-500"
-                  data-testid="table__Sort"
-                />
-              </div>
-            </th>
-            <th
-              class="text-xs text-left select-none text-theme-neutral-400"
-              colspan="1"
-              data-testid="table__th--2"
-              role="columnheader"
-            >
-              <div
-                class="flex flex-inline align-top  undefined"
-              >
-                <div
-                  class="mr-1"
-                >
-                  Peer IP
-                </div>
-                <div
-                  class="mt-1 text-theme-color-neutral-500"
-                  data-testid="table__Sort"
-                />
-              </div>
-            </th>
-            <th
-              class="text-xs text-left select-none text-theme-neutral-400"
-              colspan="1"
-              data-testid="table__th--3"
-              role="columnheader"
-            >
-              <div
-                class="flex flex-inline align-top  flex justify-center"
-              >
-                <div
-                  class="mr-1"
-                >
-                  Type
-                </div>
-                <div
-                  class="mt-1 text-theme-color-neutral-500"
-                  data-testid="table__Sort"
-                />
-              </div>
-            </th>
-          </tr>
-        </thead>
-        <tbody
-          role="rowgroup"
+      <thead>
+        <tr
+          role="row"
         >
-          <tr
-            class="border-b border-theme-neutral-200"
+          <th
+            class="text-xs text-left select-none text-theme-neutral-400"
+            colspan="1"
+            data-testid="table__th--0"
+            role="columnheader"
           >
-            <td
-              class="py-4 mt-1"
+            <div
+              class="flex flex-inline align-top  undefined"
             >
               <div
-                class="sc-AxhCb dqZRJJ text-logo border-theme-danger-200"
+                class="mr-1"
               >
-                <div
-                  class="sc-AxirZ iQaTP"
-                  height="1em"
-                  width="1em"
-                >
-                  <svg>
-                    ark.svg
-                  </svg>
-                </div>
+                Network
               </div>
-            </td>
-            <td
-              class="py-1"
-            >
-              <span>
-                ROBank
-              </span>
-            </td>
-            <td
-              class="py-1"
-            >
-              <span>
-                194.168.4.67:800
-              </span>
-            </td>
-            <td
-              class="py-1 text-theme-primary-300"
-            >
               <div
-                class="flex justify-center h-full"
-              >
-                <div
-                  class="sc-AxirZ iQaTP"
-                  height="1em"
-                  width="1em"
-                >
-                  <svg>
-                    multisig.svg
-                  </svg>
-                </div>
-              </div>
-            </td>
-            <td>
-              <div
-                class="relative"
-                data-testid="dropdown__toggle"
-              >
-                <button
-                  class="float-right outline-none focus:outline-none"
-                >
-                  <div
-                    class="sc-AxirZ eEbZjj"
-                    height="20"
-                    width="20"
-                  >
-                    <svg>
-                      settings.svg
-                    </svg>
-                  </div>
-                </button>
-              </div>
-            </td>
-          </tr>
-          <tr
-            class="border-b border-theme-neutral-200"
+                class="mt-1 text-theme-color-neutral-500"
+                data-testid="table__Sort"
+              />
+            </div>
+          </th>
+          <th
+            class="text-xs text-left select-none text-theme-neutral-400"
+            colspan="1"
+            data-testid="table__th--1"
+            role="columnheader"
           >
-            <td
-              class="py-4 mt-1"
+            <div
+              class="flex flex-inline align-top  undefined"
             >
               <div
-                class="sc-AxhCb dqZRJJ border-theme-neutral-300"
+                class="mr-1"
               >
-                <div
-                  class="sc-AxirZ iQaTP"
-                  height="1em"
-                  width="1em"
-                >
-                  <svg>
-                    eth.svg
-                  </svg>
-                </div>
+                Name
               </div>
-            </td>
-            <td
-              class="py-1"
-            >
-              <span>
-                MATBank
-              </span>
-            </td>
-            <td
-              class="py-1"
-            >
-              <span>
-                194.168.4.67:800
-              </span>
-            </td>
-            <td
-              class="py-1 text-theme-primary-300"
-            >
               <div
-                class="flex justify-center h-full"
-              >
-                <div
-                  class="sc-AxirZ iQaTP"
-                  height="1em"
-                  width="1em"
-                >
-                  <svg>
-                    multisig.svg
-                  </svg>
-                </div>
-              </div>
-            </td>
-            <td>
-              <div
-                class="relative"
-                data-testid="dropdown__toggle"
-              >
-                <button
-                  class="float-right outline-none focus:outline-none"
-                >
-                  <div
-                    class="sc-AxirZ eEbZjj"
-                    height="20"
-                    width="20"
-                  >
-                    <svg>
-                      settings.svg
-                    </svg>
-                  </div>
-                </button>
-              </div>
-            </td>
-          </tr>
-          <tr
-            class="border-b border-theme-neutral-200"
+                class="mt-1 text-theme-color-neutral-500"
+                data-testid="table__Sort"
+              />
+            </div>
+          </th>
+          <th
+            class="text-xs text-left select-none text-theme-neutral-400"
+            colspan="1"
+            data-testid="table__th--2"
+            role="columnheader"
           >
-            <td
-              class="py-4 mt-1"
+            <div
+              class="flex flex-inline align-top  undefined"
             >
               <div
-                class="sc-AxhCb dqZRJJ text-theme-warning-400 border-theme-warning-200"
+                class="mr-1"
+              >
+                Peer IP
+              </div>
+              <div
+                class="mt-1 text-theme-color-neutral-500"
+                data-testid="table__Sort"
+              />
+            </div>
+          </th>
+          <th
+            class="text-xs text-left select-none text-theme-neutral-400"
+            colspan="1"
+            data-testid="table__th--3"
+            role="columnheader"
+          >
+            <div
+              class="flex flex-inline align-top  flex justify-center"
+            >
+              <div
+                class="mr-1"
+              >
+                Type
+              </div>
+              <div
+                class="mt-1 text-theme-color-neutral-500"
+                data-testid="table__Sort"
+              />
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody
+        role="rowgroup"
+      >
+        <tr
+          class="border-b border-theme-neutral-200"
+        >
+          <td
+            class="inline-flex items-center py-4 mt-1"
+          >
+            <div
+              class="sc-fznKkj eisocE text-logo border-theme-danger-200"
+            >
+              <div
+                class="sc-AxirZ iQaTP"
+                height="1em"
+                width="1em"
+              >
+                <svg>
+                  ark.svg
+                </svg>
+              </div>
+            </div>
+            <span
+              class="ml-2"
+            >
+              ARK
+            </span>
+          </td>
+          <td
+            class="py-1"
+          >
+            <span>
+              ROBank
+            </span>
+          </td>
+          <td
+            class="py-1"
+          >
+            <span>
+              194.168.4.67:800
+            </span>
+          </td>
+          <td
+            class="py-1 text-theme-primary-300"
+          >
+            <div
+              class="flex justify-center h-full"
+            >
+              <div
+                class="sc-AxirZ iQaTP"
+                height="1em"
+                width="1em"
+              >
+                <svg>
+                  multisig.svg
+                </svg>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div
+              class="relative"
+              data-testid="dropdown__toggle"
+            >
+              <button
+                class="float-right outline-none focus:outline-none"
               >
                 <div
-                  class="sc-AxirZ iQaTP"
-                  height="1em"
-                  width="1em"
+                  class="sc-AxirZ eEbZjj"
+                  height="20"
+                  width="20"
                 >
                   <svg>
-                    btc.svg
+                    settings.svg
                   </svg>
                 </div>
-              </div>
-            </td>
-            <td
-              class="py-1"
-            >
-              <span>
-                OLEBank
-              </span>
-            </td>
-            <td
-              class="py-1"
-            >
-              <span>
-                194.168.4.67:800
-              </span>
-            </td>
-            <td
-              class="py-1 text-theme-primary-300"
+              </button>
+            </div>
+          </td>
+        </tr>
+        <tr
+          class="border-b border-theme-neutral-200"
+        >
+          <td
+            class="inline-flex items-center py-4 mt-1"
+          >
+            <div
+              class="sc-fznKkj eisocE border-theme-neutral-300"
             >
               <div
-                class="flex justify-center h-full"
+                class="sc-AxirZ iQaTP"
+                height="1em"
+                width="1em"
+              >
+                <svg>
+                  eth.svg
+                </svg>
+              </div>
+            </div>
+            <span
+              class="ml-2"
+            >
+              ETH
+            </span>
+          </td>
+          <td
+            class="py-1"
+          >
+            <span>
+              MATBank
+            </span>
+          </td>
+          <td
+            class="py-1"
+          >
+            <span>
+              194.168.4.67:800
+            </span>
+          </td>
+          <td
+            class="py-1 text-theme-primary-300"
+          >
+            <div
+              class="flex justify-center h-full"
+            >
+              <div
+                class="sc-AxirZ iQaTP"
+                height="1em"
+                width="1em"
+              >
+                <svg>
+                  multisig.svg
+                </svg>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div
+              class="relative"
+              data-testid="dropdown__toggle"
+            >
+              <button
+                class="float-right outline-none focus:outline-none"
               >
                 <div
-                  class="sc-AxirZ iQaTP"
-                  height="1em"
-                  width="1em"
+                  class="sc-AxirZ eEbZjj"
+                  height="20"
+                  width="20"
                 >
                   <svg>
-                    multisig.svg
+                    settings.svg
                   </svg>
                 </div>
-              </div>
-            </td>
-            <td>
+              </button>
+            </div>
+          </td>
+        </tr>
+        <tr
+          class="border-b border-theme-neutral-200"
+        >
+          <td
+            class="inline-flex items-center py-4 mt-1"
+          >
+            <div
+              class="sc-fznKkj eisocE text-theme-warning-400 border-theme-warning-200"
+            >
               <div
-                class="relative"
-                data-testid="dropdown__toggle"
+                class="sc-AxirZ iQaTP"
+                height="1em"
+                width="1em"
               >
-                <button
-                  class="float-right outline-none focus:outline-none"
-                >
-                  <div
-                    class="sc-AxirZ eEbZjj"
-                    height="20"
-                    width="20"
-                  >
-                    <svg>
-                      settings.svg
-                    </svg>
-                  </div>
-                </button>
+                <svg>
+                  btc.svg
+                </svg>
               </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <button
-      class="sc-AxjAm gSuvFI w-full mt-10 mb-5"
-      color="primary"
-      type="button"
-    >
-      Add Peer
-    </button>
+            </div>
+            <span
+              class="ml-2"
+            >
+              BTC
+            </span>
+          </td>
+          <td
+            class="py-1"
+          >
+            <span>
+              OLEBank
+            </span>
+          </td>
+          <td
+            class="py-1"
+          >
+            <span>
+              194.168.4.67:800
+            </span>
+          </td>
+          <td
+            class="py-1 text-theme-primary-300"
+          >
+            <div
+              class="flex justify-center h-full"
+            >
+              <div
+                class="sc-AxirZ iQaTP"
+                height="1em"
+                width="1em"
+              >
+                <svg>
+                  multisig.svg
+                </svg>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div
+              class="relative"
+              data-testid="dropdown__toggle"
+            >
+              <button
+                class="float-right outline-none focus:outline-none"
+              >
+                <div
+                  class="sc-AxirZ eEbZjj"
+                  height="20"
+                  width="20"
+                >
+                  <svg>
+                    settings.svg
+                  </svg>
+                </div>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
-</div>
+  <button
+    class="sc-AxjAm gSuvFI w-full mt-10 mb-5"
+    color="primary"
+    data-testid="peer-list__add-button"
+    type="button"
+  >
+    Add Peer
+  </button>
+  <div
+    class="fixed inset-0 z-10 bg-black opacity-50"
+    data-testid="modal__overlay"
+  />
+  <div
+    class="sc-fznyAO dWLwOg fixed left-0 right-0 z-10 flex flex-col px-12 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
+    data-testid="modal__inner"
+  >
+    <div
+      class="absolute top-0 right-0 mt-4 mr-4"
+    >
+      <button
+        class="sc-AxjAm eYrebl"
+        color="neutral"
+        data-testid="modal__close-btn"
+        type="button"
+      >
+        <div
+          class="sc-AxirZ fttODj"
+          height="10"
+          width="10"
+        >
+          <svg>
+            cross-slim.svg
+          </svg>
+        </div>
+      </button>
+    </div>
+    <div
+      class="py-4"
+    >
+      <h2>
+        Custom Peers
+      </h2>
+      <div
+        class="flex-1 "
+      >
+        <form
+          class="space-y-6"
+          data-testid="Form"
+        >
+          <fieldset
+            class="sc-AxhUy dJlYTe flex flex-col space-y-2"
+          >
+            <label
+              class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
+              data-testid="FormLabel"
+              for="network"
+            >
+              Network
+            </label>
+            <div
+              class="sc-fzozJi OgXfh"
+            >
+              <select
+                class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
+                data-testid="Select"
+                name="network"
+              >
+                <option
+                  selected=""
+                  value=""
+                >
+                  Select
+                </option>
+                <option
+                  value="ark-ecosystem"
+                >
+                  ARK Ecosystem
+                </option>
+              </select>
+              <div
+                class="sc-AxheI sc-AxmLO ecniej w-12 text-lg pointer-events-none text-theme-neutral-dark"
+              >
+                <div
+                  class="sc-AxirZ iQaTP"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    chevron-down.svg
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+          <fieldset
+            class="sc-AxhUy dJlYTe flex flex-col space-y-2"
+          >
+            <label
+              class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
+              data-testid="FormLabel"
+              for="name"
+            >
+              Name
+            </label>
+            <input
+              class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+              data-testid="Input"
+              name="name"
+            />
+          </fieldset>
+          <fieldset
+            class="sc-AxhUy dJlYTe flex flex-col space-y-2"
+          >
+            <label
+              class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
+              data-testid="FormLabel"
+              for="peer-ip"
+            >
+              Peer IP http://
+            </label>
+            <input
+              class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+              data-testid="Input"
+              name="peer-ip"
+            />
+          </fieldset>
+          <fieldset
+            class="sc-AxhUy dJlYTe flex flex-col space-y-2"
+          >
+            <label
+              class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
+              data-testid="FormLabel"
+              for="peer-type"
+            >
+              Peer Type
+            </label>
+            <label
+              class="inline-flex items-center"
+              for="multisig"
+            >
+              <input
+                class="sc-AxhCb ioKoGj"
+                color="success"
+                type="checkbox"
+              />
+              <span
+                class="ml-2 text-sm font-semibold text-theme-neutral-dark"
+              >
+                Multisig
+              </span>
+            </label>
+          </fieldset>
+          <div
+            class="float-right mt-4"
+          >
+            <button
+              class="sc-AxjAm eixJcU"
+              color="primary"
+              data-testid="peer-list__add-button"
+              type="submit"
+            >
+              Add Peer
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`PeerList should render 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-AxiKw jaovnp"
+    role="table"
+  >
+    <table
+      class="table-auto"
+    >
+      <thead>
+        <tr
+          role="row"
+        >
+          <th
+            class="text-xs text-left select-none text-theme-neutral-400"
+            colspan="1"
+            data-testid="table__th--0"
+            role="columnheader"
+          >
+            <div
+              class="flex flex-inline align-top  undefined"
+            >
+              <div
+                class="mr-1"
+              >
+                Network
+              </div>
+              <div
+                class="mt-1 text-theme-color-neutral-500"
+                data-testid="table__Sort"
+              />
+            </div>
+          </th>
+          <th
+            class="text-xs text-left select-none text-theme-neutral-400"
+            colspan="1"
+            data-testid="table__th--1"
+            role="columnheader"
+          >
+            <div
+              class="flex flex-inline align-top  undefined"
+            >
+              <div
+                class="mr-1"
+              >
+                Name
+              </div>
+              <div
+                class="mt-1 text-theme-color-neutral-500"
+                data-testid="table__Sort"
+              />
+            </div>
+          </th>
+          <th
+            class="text-xs text-left select-none text-theme-neutral-400"
+            colspan="1"
+            data-testid="table__th--2"
+            role="columnheader"
+          >
+            <div
+              class="flex flex-inline align-top  undefined"
+            >
+              <div
+                class="mr-1"
+              >
+                Peer IP
+              </div>
+              <div
+                class="mt-1 text-theme-color-neutral-500"
+                data-testid="table__Sort"
+              />
+            </div>
+          </th>
+          <th
+            class="text-xs text-left select-none text-theme-neutral-400"
+            colspan="1"
+            data-testid="table__th--3"
+            role="columnheader"
+          >
+            <div
+              class="flex flex-inline align-top  flex justify-center"
+            >
+              <div
+                class="mr-1"
+              >
+                Type
+              </div>
+              <div
+                class="mt-1 text-theme-color-neutral-500"
+                data-testid="table__Sort"
+              />
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody
+        role="rowgroup"
+      >
+        <tr
+          class="border-b border-theme-neutral-200"
+        >
+          <td
+            class="inline-flex items-center py-4 mt-1"
+          >
+            <div
+              class="sc-fznKkj eisocE text-logo border-theme-danger-200"
+            >
+              <div
+                class="sc-AxirZ iQaTP"
+                height="1em"
+                width="1em"
+              >
+                <svg>
+                  ark.svg
+                </svg>
+              </div>
+            </div>
+            <span
+              class="ml-2"
+            >
+              ARK
+            </span>
+          </td>
+          <td
+            class="py-1"
+          >
+            <span>
+              ROBank
+            </span>
+          </td>
+          <td
+            class="py-1"
+          >
+            <span>
+              194.168.4.67:800
+            </span>
+          </td>
+          <td
+            class="py-1 text-theme-primary-300"
+          >
+            <div
+              class="flex justify-center h-full"
+            >
+              <div
+                class="sc-AxirZ iQaTP"
+                height="1em"
+                width="1em"
+              >
+                <svg>
+                  multisig.svg
+                </svg>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div
+              class="relative"
+              data-testid="dropdown__toggle"
+            >
+              <button
+                class="float-right outline-none focus:outline-none"
+              >
+                <div
+                  class="sc-AxirZ eEbZjj"
+                  height="20"
+                  width="20"
+                >
+                  <svg>
+                    settings.svg
+                  </svg>
+                </div>
+              </button>
+            </div>
+          </td>
+        </tr>
+        <tr
+          class="border-b border-theme-neutral-200"
+        >
+          <td
+            class="inline-flex items-center py-4 mt-1"
+          >
+            <div
+              class="sc-fznKkj eisocE border-theme-neutral-300"
+            >
+              <div
+                class="sc-AxirZ iQaTP"
+                height="1em"
+                width="1em"
+              >
+                <svg>
+                  eth.svg
+                </svg>
+              </div>
+            </div>
+            <span
+              class="ml-2"
+            >
+              ETH
+            </span>
+          </td>
+          <td
+            class="py-1"
+          >
+            <span>
+              MATBank
+            </span>
+          </td>
+          <td
+            class="py-1"
+          >
+            <span>
+              194.168.4.67:800
+            </span>
+          </td>
+          <td
+            class="py-1 text-theme-primary-300"
+          >
+            <div
+              class="flex justify-center h-full"
+            >
+              <div
+                class="sc-AxirZ iQaTP"
+                height="1em"
+                width="1em"
+              >
+                <svg>
+                  multisig.svg
+                </svg>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div
+              class="relative"
+              data-testid="dropdown__toggle"
+            >
+              <button
+                class="float-right outline-none focus:outline-none"
+              >
+                <div
+                  class="sc-AxirZ eEbZjj"
+                  height="20"
+                  width="20"
+                >
+                  <svg>
+                    settings.svg
+                  </svg>
+                </div>
+              </button>
+            </div>
+          </td>
+        </tr>
+        <tr
+          class="border-b border-theme-neutral-200"
+        >
+          <td
+            class="inline-flex items-center py-4 mt-1"
+          >
+            <div
+              class="sc-fznKkj eisocE text-theme-warning-400 border-theme-warning-200"
+            >
+              <div
+                class="sc-AxirZ iQaTP"
+                height="1em"
+                width="1em"
+              >
+                <svg>
+                  btc.svg
+                </svg>
+              </div>
+            </div>
+            <span
+              class="ml-2"
+            >
+              BTC
+            </span>
+          </td>
+          <td
+            class="py-1"
+          >
+            <span>
+              OLEBank
+            </span>
+          </td>
+          <td
+            class="py-1"
+          >
+            <span>
+              194.168.4.67:800
+            </span>
+          </td>
+          <td
+            class="py-1 text-theme-primary-300"
+          >
+            <div
+              class="flex justify-center h-full"
+            >
+              <div
+                class="sc-AxirZ iQaTP"
+                height="1em"
+                width="1em"
+              >
+                <svg>
+                  multisig.svg
+                </svg>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div
+              class="relative"
+              data-testid="dropdown__toggle"
+            >
+              <button
+                class="float-right outline-none focus:outline-none"
+              >
+                <div
+                  class="sc-AxirZ eEbZjj"
+                  height="20"
+                  width="20"
+                >
+                  <svg>
+                    settings.svg
+                  </svg>
+                </div>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <button
+    class="sc-AxjAm gSuvFI w-full mt-10 mb-5"
+    color="primary"
+    data-testid="peer-list__add-button"
+    type="button"
+  >
+    Add Peer
+  </button>
+</DocumentFragment>
 `;
 
 exports[`PeerList should render with empty peer list 1`] = `
-<div>
-  <div>
-    <div
-      class="sc-AxiKw jaovnp"
-      role="table"
+<DocumentFragment>
+  <div
+    class="sc-AxiKw jaovnp"
+    role="table"
+  >
+    <table
+      class="table-auto"
     >
-      <table
-        class="table-auto"
-      >
-        <thead>
-          <tr
-            role="row"
+      <thead>
+        <tr
+          role="row"
+        >
+          <th
+            class="text-xs text-left select-none text-theme-neutral-400"
+            colspan="1"
+            data-testid="table__th--0"
+            role="columnheader"
           >
-            <th
-              class="text-xs text-left select-none text-theme-neutral-400"
-              colspan="1"
-              data-testid="table__th--0"
-              role="columnheader"
+            <div
+              class="flex flex-inline align-top  undefined"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="mr-1"
               >
-                <div
-                  class="mr-1"
-                >
-                  Network
-                </div>
-                <div
-                  class="mt-1 text-theme-color-neutral-500"
-                  data-testid="table__Sort"
-                />
+                Network
               </div>
-            </th>
-            <th
-              class="text-xs text-left select-none text-theme-neutral-400"
-              colspan="1"
-              data-testid="table__th--1"
-              role="columnheader"
+              <div
+                class="mt-1 text-theme-color-neutral-500"
+                data-testid="table__Sort"
+              />
+            </div>
+          </th>
+          <th
+            class="text-xs text-left select-none text-theme-neutral-400"
+            colspan="1"
+            data-testid="table__th--1"
+            role="columnheader"
+          >
+            <div
+              class="flex flex-inline align-top  undefined"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="mr-1"
               >
-                <div
-                  class="mr-1"
-                >
-                  Name
-                </div>
-                <div
-                  class="mt-1 text-theme-color-neutral-500"
-                  data-testid="table__Sort"
-                />
+                Name
               </div>
-            </th>
-            <th
-              class="text-xs text-left select-none text-theme-neutral-400"
-              colspan="1"
-              data-testid="table__th--2"
-              role="columnheader"
+              <div
+                class="mt-1 text-theme-color-neutral-500"
+                data-testid="table__Sort"
+              />
+            </div>
+          </th>
+          <th
+            class="text-xs text-left select-none text-theme-neutral-400"
+            colspan="1"
+            data-testid="table__th--2"
+            role="columnheader"
+          >
+            <div
+              class="flex flex-inline align-top  undefined"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="mr-1"
               >
-                <div
-                  class="mr-1"
-                >
-                  Peer IP
-                </div>
-                <div
-                  class="mt-1 text-theme-color-neutral-500"
-                  data-testid="table__Sort"
-                />
+                Peer IP
               </div>
-            </th>
-            <th
-              class="text-xs text-left select-none text-theme-neutral-400"
-              colspan="1"
-              data-testid="table__th--3"
-              role="columnheader"
+              <div
+                class="mt-1 text-theme-color-neutral-500"
+                data-testid="table__Sort"
+              />
+            </div>
+          </th>
+          <th
+            class="text-xs text-left select-none text-theme-neutral-400"
+            colspan="1"
+            data-testid="table__th--3"
+            role="columnheader"
+          >
+            <div
+              class="flex flex-inline align-top  flex justify-center"
             >
               <div
-                class="flex flex-inline align-top  flex justify-center"
+                class="mr-1"
               >
-                <div
-                  class="mr-1"
-                >
-                  Type
-                </div>
-                <div
-                  class="mt-1 text-theme-color-neutral-500"
-                  data-testid="table__Sort"
-                />
+                Type
               </div>
-            </th>
-          </tr>
-        </thead>
-        <tbody
-          role="rowgroup"
-        />
-      </table>
-    </div>
-    <button
-      class="sc-AxjAm gSuvFI w-full mt-10 mb-5"
-      color="primary"
-      type="button"
-    >
-      Add Peer
-    </button>
+              <div
+                class="mt-1 text-theme-color-neutral-500"
+                data-testid="table__Sort"
+              />
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody
+        role="rowgroup"
+      />
+    </table>
   </div>
-</div>
+  <button
+    class="sc-AxjAm gSuvFI w-full mt-10 mb-5"
+    color="primary"
+    data-testid="peer-list__add-button"
+    type="button"
+  >
+    Add Peer
+  </button>
+</DocumentFragment>
 `;
