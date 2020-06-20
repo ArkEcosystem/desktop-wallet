@@ -7,6 +7,7 @@ type ModalProps = {
 	children: React.ReactNode;
 	title: string;
 	description?: string;
+	banner?: React.ReactNode;
 	image?: React.ReactNode;
 	size?: "sm" | "md" | "lg" | "xl" | "2xl" | "3xl" | "4xl" | "5xl";
 	isOpen: boolean;
@@ -18,6 +19,7 @@ type ModalContentProps = {
 	children: React.ReactNode;
 	title: string;
 	description?: string;
+	banner?: React.ReactNode;
 	image?: React.ReactNode;
 	size?: "sm" | "md" | "lg" | "xl" | "2xl" | "3xl" | "4xl" | "5xl";
 	onClose?: any;
@@ -66,9 +68,17 @@ const ModalContent = (props: ModalContentProps) => {
 			</div>
 
 			<div className="py-4">
-				<h2>{props.title}</h2>
+				{props.banner ? (
+					<div className="absolute top-0 left-0 right-0">
+						{props.banner}
 
-				<div className="flex-1">
+						<h1 className="absolute bottom-0 left-0 mb-8 ml-12">{props.title}</h1>
+					</div>
+				) : (
+					<h2>{props.title}</h2>
+				)}
+
+				<div className={`flex-1 ${props.banner ? "mt-40" : ""}`}>
 					{props.image}
 
 					{props.description && <div className="text-theme-neutral-700">{props.description}</div>}
@@ -93,6 +103,7 @@ export const Modal = (props: ModalProps) => {
 				aria-selected={props.isOpen}
 				title={props.title}
 				description={props.description}
+				banner={props.banner}
 				image={props.image}
 				size={props.size}
 				onClose={props.onClose}
