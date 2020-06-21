@@ -1,0 +1,357 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ContactForm should select network 1`] = `[Function]`;
+
+exports[`ContactForm when creating a new contact should render the form 1`] = `
+<DocumentFragment>
+  <form
+    class="space-y-6"
+    data-testid="contact-form"
+  >
+    <fieldset
+      class="sc-AxiKw iQzisX flex flex-col space-y-2"
+    >
+      <label
+        class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
+        data-testid="FormLabel"
+        for="name"
+      >
+        Name
+      </label>
+      <input
+        class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+        data-testid="contact-form__name-input"
+        name="name"
+      />
+    </fieldset>
+    <fieldset
+      class="sc-AxiKw iQzisX flex flex-col space-y-2"
+    >
+      <label
+        class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
+        data-testid="FormLabel"
+        for="network"
+      >
+        Network
+      </label>
+      <div
+        class="sc-AxmLO kuiknc"
+      >
+        <select
+          class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
+          data-testid="contact-form__network-select"
+          name="network"
+        >
+          <option
+            disabled=""
+            selected=""
+            value=""
+          >
+            Select network...
+          </option>
+        </select>
+        <div
+          class="sc-AxgMl sc-Axmtr cPxyjO w-12 text-lg pointer-events-none text-theme-neutral-dark"
+        >
+          <div
+            class="sc-AxhCb fxrKLH"
+            height="1em"
+            width="1em"
+          >
+            <svg>
+              chevron-down.svg
+            </svg>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+    <fieldset
+      class="sc-AxiKw iQzisX flex flex-col space-y-2"
+    >
+      <label
+        class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
+        data-testid="FormLabel"
+        for="address"
+      >
+        Address
+      </label>
+      <input
+        class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+        data-testid="contact-form__address-input"
+        name="address"
+      />
+    </fieldset>
+    <div
+      class="mt-4"
+    >
+      <button
+        class="sc-AxjAm gSuvFI w-full"
+        color="primary"
+        data-testid="contact-form__add-address-button"
+        disabled=""
+        type="button"
+      >
+        Add Address
+      </button>
+    </div>
+    <div
+      class="flex justify-end mt-8 space-x-3"
+    >
+      <button
+        class="sc-AxjAm gSuvFI"
+        color="primary"
+        type="button"
+      >
+        Cancel
+      </button>
+      <button
+        class="sc-AxjAm eixJcU"
+        color="primary"
+        data-testid="contact-form__save-button"
+        disabled=""
+        type="submit"
+      >
+        Save
+      </button>
+    </div>
+  </form>
+</DocumentFragment>
+`;
+
+exports[`ContactForm when editing an existing contact should render the form 1`] = `
+<DocumentFragment>
+  <form
+    class="space-y-6"
+    data-testid="contact-form"
+  >
+    <fieldset
+      class="sc-AxiKw iQzisX flex flex-col space-y-2"
+    >
+      <label
+        class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
+        data-testid="FormLabel"
+        for="name"
+      >
+        Name
+      </label>
+      <input
+        class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+        data-testid="contact-form__name-input"
+        name="name"
+      />
+    </fieldset>
+    <fieldset
+      class="sc-AxiKw iQzisX flex flex-col space-y-2"
+    >
+      <label
+        class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
+        data-testid="FormLabel"
+        for="network"
+      >
+        Network
+      </label>
+      <div
+        class="sc-AxmLO kuiknc"
+      >
+        <select
+          class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
+          data-testid="contact-form__network-select"
+          name="network"
+        >
+          <option
+            disabled=""
+            selected=""
+            value=""
+          >
+            Select network...
+          </option>
+        </select>
+        <div
+          class="sc-AxgMl sc-Axmtr cPxyjO w-12 text-lg pointer-events-none text-theme-neutral-dark"
+        >
+          <div
+            class="sc-AxhCb fxrKLH"
+            height="1em"
+            width="1em"
+          >
+            <svg>
+              chevron-down.svg
+            </svg>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+    <fieldset
+      class="sc-AxiKw iQzisX flex flex-col space-y-2"
+    >
+      <label
+        class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
+        data-testid="FormLabel"
+        for="address"
+      >
+        Address
+      </label>
+      <input
+        class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+        data-testid="contact-form__address-input"
+        name="address"
+      />
+    </fieldset>
+    <div
+      class="mt-4"
+    >
+      <button
+        class="sc-AxjAm gSuvFI w-full"
+        color="primary"
+        data-testid="contact-form__add-address-button"
+        disabled=""
+        type="button"
+      >
+        Add Address
+      </button>
+    </div>
+    <div
+      class="group"
+    >
+      <span
+        class="inline-block text-sm font-semibold transition-colors duration-100 group-hover:text-theme-primary text-theme-neutral-dark"
+      >
+        Addresses
+      </span>
+      <div
+        data-testid="contact-form__address-list"
+      >
+        <div
+          class="flex items-center py-4 border-b border-dashed border-theme-neutral-300"
+          data-testid="contact-form__address-list-item"
+        >
+          <div
+            class="mr-4"
+          >
+            <div
+              class="sc-AxirZ hQTESw -mr-2"
+            >
+              <div
+                class="sc-AxhCb fxrKLH"
+                height="1em"
+                width="1em"
+              >
+                <svg>
+                  btc.svg
+                </svg>
+              </div>
+            </div>
+            <div
+              class="sc-AxirZ hTKBId"
+            />
+          </div>
+          <span
+            class="font-semibold"
+          >
+            <div
+              class="inline-block truncate"
+            >
+              <span
+                class="text-theme-neutral-800 font-semibold text-base"
+                data-testid="address__wallet-address"
+              >
+                15pyr1HRAx...myCtXXu9G8
+              </span>
+            </div>
+          </span>
+          <button
+            class="sc-AxjAm jRhSqM flex items-center ml-auto"
+            color="primary"
+            data-testid="contact-form__remove-address-button"
+            type="button"
+          >
+            <div
+              class="sc-AxhCb fxrKLH"
+              height="1em"
+              width="1em"
+            >
+              <svg>
+                trash.svg
+              </svg>
+            </div>
+          </button>
+        </div>
+        <div
+          class="flex items-center py-4 border-b border-dashed border-theme-neutral-300"
+          data-testid="contact-form__address-list-item"
+        >
+          <div
+            class="mr-4"
+          >
+            <div
+              class="sc-AxirZ hQTESw -mr-2"
+            >
+              <div
+                class="sc-AxhCb fxrKLH"
+                height="1em"
+                width="1em"
+              >
+                <svg>
+                  eth.svg
+                </svg>
+              </div>
+            </div>
+            <div
+              class="sc-AxirZ hTKBId"
+            />
+          </div>
+          <span
+            class="font-semibold"
+          >
+            <div
+              class="inline-block truncate"
+            >
+              <span
+                class="text-theme-neutral-800 font-semibold text-base"
+                data-testid="address__wallet-address"
+              >
+                0x5e8f7a63...8b380d7c33
+              </span>
+            </div>
+          </span>
+          <button
+            class="sc-AxjAm jRhSqM flex items-center ml-auto"
+            color="primary"
+            data-testid="contact-form__remove-address-button"
+            type="button"
+          >
+            <div
+              class="sc-AxhCb fxrKLH"
+              height="1em"
+              width="1em"
+            >
+              <svg>
+                trash.svg
+              </svg>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      class="flex justify-end mt-8 space-x-3"
+    >
+      <button
+        class="sc-AxjAm gSuvFI"
+        color="primary"
+        type="button"
+      >
+        Cancel
+      </button>
+      <button
+        class="sc-AxjAm eixJcU"
+        color="primary"
+        data-testid="contact-form__save-button"
+        type="submit"
+      >
+        Save
+      </button>
+    </div>
+  </form>
+</DocumentFragment>
+`;

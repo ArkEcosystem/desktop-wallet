@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CreateContact should not render if not open 1`] = `<DocumentFragment />`;
+exports[`UpdateContact should not render if not open 1`] = `<DocumentFragment />`;
 
-exports[`CreateContact should render a modal 1`] = `
+exports[`UpdateContact should render a modal 1`] = `
 <DocumentFragment>
   <div
     class="fixed inset-0 z-10 bg-black opacity-50"
@@ -36,16 +36,11 @@ exports[`CreateContact should render a modal 1`] = `
       class="py-4"
     >
       <h2>
-        Add Contact
+        Edit Contact
       </h2>
       <div
         class="flex-1 "
       >
-        <div
-          class="text-theme-neutral-700"
-        >
-          Enter your contacts name and addresses and add them to your list.
-        </div>
         <div
           class="mt-8"
         >
