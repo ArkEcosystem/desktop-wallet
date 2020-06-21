@@ -1,9 +1,9 @@
 import React from "react";
 
-import { CreateContact } from "./CreateContact";
+import { UpdateContact } from "./UpdateContact";
 
 export default {
-	title: "Contacts / Components / Create Contact",
+	title: "Contacts / Components / Update Contact",
 };
 
 export const Default = () => {
@@ -25,10 +25,19 @@ export const Default = () => {
 		},
 	];
 
+	const contact = {
+		name: () => "Oleg Gelo",
+		addresses: () => [
+			{ coin: "Btc", network: "Bitcoin", address: "15pyr1HRAxpq3x64duXav1csmyCtXXu9G8", avatar: "test1" },
+			{ coin: "Bch", network: "Bitcoin Cash", address: "15pyr1HRAxpq3x64duXav1csmyCtXXu9G8", avatar: "test1" },
+		],
+	};
+
 	return (
-		<CreateContact
+		<UpdateContact
 			isOpen={true}
 			networks={networks}
+			contact={contact}
 			onClose={() => alert("closed")}
 			onCancel={() => alert("cancelled")}
 			onSave={() => alert("saved")}

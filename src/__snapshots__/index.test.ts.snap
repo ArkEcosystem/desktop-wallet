@@ -172,20 +172,23 @@ exports[`Application root should render without crashing 1`] = `
                           "YOUR_PASSPHRASE": "Your Passphrase",
                         },
                         "CONTACTS": Object {
-                          "MODAL_CREATE_CONTACT": Object {
+                          "CONTACT_FORM": Object {
+                            "ADDRESS": "Address",
+                            "ADDRESSES": "Addresses",
                             "ADD_ADDRESS": "Add Address",
+                            "NAME": "Name",
+                            "NETWORK": "Network",
+                          },
+                          "MODAL_CREATE_CONTACT": Object {
                             "DESCRIPTION": "Enter your contacts name and addresses and add them to your list.",
-                            "FORM": Object {
-                              "ADDRESS": "Address",
-                              "ADDRESSES": "Addresses",
-                              "NAME": "Name",
-                              "NETWORK": "Network",
-                            },
                             "TITLE": "Add Contact",
                           },
                           "MODAL_DELETE_CONTACT": Object {
                             "DESCRIPTION": "Do you really want to delete this contact? Once deleted, you will not be able to restore it.",
                             "TITLE": "Delete Contact",
+                          },
+                          "MODAL_UPDATE_CONTACT": Object {
+                            "TITLE": "Edit Contact",
                           },
                         },
                         "HELP": Object {
@@ -471,20 +474,23 @@ exports[`Application root should render without crashing 1`] = `
                         "YOUR_PASSPHRASE": "Your Passphrase",
                       },
                       "CONTACTS": Object {
-                        "MODAL_CREATE_CONTACT": Object {
+                        "CONTACT_FORM": Object {
+                          "ADDRESS": "Address",
+                          "ADDRESSES": "Addresses",
                           "ADD_ADDRESS": "Add Address",
+                          "NAME": "Name",
+                          "NETWORK": "Network",
+                        },
+                        "MODAL_CREATE_CONTACT": Object {
                           "DESCRIPTION": "Enter your contacts name and addresses and add them to your list.",
-                          "FORM": Object {
-                            "ADDRESS": "Address",
-                            "ADDRESSES": "Addresses",
-                            "NAME": "Name",
-                            "NETWORK": "Network",
-                          },
                           "TITLE": "Add Contact",
                         },
                         "MODAL_DELETE_CONTACT": Object {
                           "DESCRIPTION": "Do you really want to delete this contact? Once deleted, you will not be able to restore it.",
                           "TITLE": "Delete Contact",
+                        },
+                        "MODAL_UPDATE_CONTACT": Object {
+                          "TITLE": "Edit Contact",
                         },
                       },
                       "HELP": Object {
@@ -774,20 +780,23 @@ exports[`Application root should render without crashing 1`] = `
                                 "YOUR_PASSPHRASE": "Your Passphrase",
                               },
                               "CONTACTS": Object {
-                                "MODAL_CREATE_CONTACT": Object {
+                                "CONTACT_FORM": Object {
+                                  "ADDRESS": "Address",
+                                  "ADDRESSES": "Addresses",
                                   "ADD_ADDRESS": "Add Address",
+                                  "NAME": "Name",
+                                  "NETWORK": "Network",
+                                },
+                                "MODAL_CREATE_CONTACT": Object {
                                   "DESCRIPTION": "Enter your contacts name and addresses and add them to your list.",
-                                  "FORM": Object {
-                                    "ADDRESS": "Address",
-                                    "ADDRESSES": "Addresses",
-                                    "NAME": "Name",
-                                    "NETWORK": "Network",
-                                  },
                                   "TITLE": "Add Contact",
                                 },
                                 "MODAL_DELETE_CONTACT": Object {
                                   "DESCRIPTION": "Do you really want to delete this contact? Once deleted, you will not be able to restore it.",
                                   "TITLE": "Delete Contact",
+                                },
+                                "MODAL_UPDATE_CONTACT": Object {
+                                  "TITLE": "Edit Contact",
                                 },
                               },
                               "HELP": Object {
@@ -1064,20 +1073,23 @@ exports[`Application root should render without crashing 1`] = `
                               "YOUR_PASSPHRASE": "Your Passphrase",
                             },
                             "CONTACTS": Object {
-                              "MODAL_CREATE_CONTACT": Object {
+                              "CONTACT_FORM": Object {
+                                "ADDRESS": "Address",
+                                "ADDRESSES": "Addresses",
                                 "ADD_ADDRESS": "Add Address",
+                                "NAME": "Name",
+                                "NETWORK": "Network",
+                              },
+                              "MODAL_CREATE_CONTACT": Object {
                                 "DESCRIPTION": "Enter your contacts name and addresses and add them to your list.",
-                                "FORM": Object {
-                                  "ADDRESS": "Address",
-                                  "ADDRESSES": "Addresses",
-                                  "NAME": "Name",
-                                  "NETWORK": "Network",
-                                },
                                 "TITLE": "Add Contact",
                               },
                               "MODAL_DELETE_CONTACT": Object {
                                 "DESCRIPTION": "Do you really want to delete this contact? Once deleted, you will not be able to restore it.",
                                 "TITLE": "Delete Contact",
+                              },
+                              "MODAL_UPDATE_CONTACT": Object {
+                                "TITLE": "Edit Contact",
                               },
                             },
                             "HELP": Object {
@@ -1364,20 +1376,23 @@ exports[`Application root should render without crashing 1`] = `
                               "YOUR_PASSPHRASE": "Your Passphrase",
                             },
                             "CONTACTS": Object {
-                              "MODAL_CREATE_CONTACT": Object {
+                              "CONTACT_FORM": Object {
+                                "ADDRESS": "Address",
+                                "ADDRESSES": "Addresses",
                                 "ADD_ADDRESS": "Add Address",
+                                "NAME": "Name",
+                                "NETWORK": "Network",
+                              },
+                              "MODAL_CREATE_CONTACT": Object {
                                 "DESCRIPTION": "Enter your contacts name and addresses and add them to your list.",
-                                "FORM": Object {
-                                  "ADDRESS": "Address",
-                                  "ADDRESSES": "Addresses",
-                                  "NAME": "Name",
-                                  "NETWORK": "Network",
-                                },
                                 "TITLE": "Add Contact",
                               },
                               "MODAL_DELETE_CONTACT": Object {
                                 "DESCRIPTION": "Do you really want to delete this contact? Once deleted, you will not be able to restore it.",
                                 "TITLE": "Delete Contact",
+                              },
+                              "MODAL_UPDATE_CONTACT": Object {
+                                "TITLE": "Edit Contact",
                               },
                             },
                             "HELP": Object {
@@ -1659,20 +1674,23 @@ exports[`Application root should render without crashing 1`] = `
                             "YOUR_PASSPHRASE": "Your Passphrase",
                           },
                           "CONTACTS": Object {
-                            "MODAL_CREATE_CONTACT": Object {
+                            "CONTACT_FORM": Object {
+                              "ADDRESS": "Address",
+                              "ADDRESSES": "Addresses",
                               "ADD_ADDRESS": "Add Address",
+                              "NAME": "Name",
+                              "NETWORK": "Network",
+                            },
+                            "MODAL_CREATE_CONTACT": Object {
                               "DESCRIPTION": "Enter your contacts name and addresses and add them to your list.",
-                              "FORM": Object {
-                                "ADDRESS": "Address",
-                                "ADDRESSES": "Addresses",
-                                "NAME": "Name",
-                                "NETWORK": "Network",
-                              },
                               "TITLE": "Add Contact",
                             },
                             "MODAL_DELETE_CONTACT": Object {
                               "DESCRIPTION": "Do you really want to delete this contact? Once deleted, you will not be able to restore it.",
                               "TITLE": "Delete Contact",
+                            },
+                            "MODAL_UPDATE_CONTACT": Object {
+                              "TITLE": "Edit Contact",
                             },
                           },
                           "HELP": Object {
@@ -1907,20 +1925,23 @@ exports[`Application root should render without crashing 1`] = `
                           "YOUR_PASSPHRASE": "Your Passphrase",
                         },
                         "CONTACTS": Object {
-                          "MODAL_CREATE_CONTACT": Object {
+                          "CONTACT_FORM": Object {
+                            "ADDRESS": "Address",
+                            "ADDRESSES": "Addresses",
                             "ADD_ADDRESS": "Add Address",
+                            "NAME": "Name",
+                            "NETWORK": "Network",
+                          },
+                          "MODAL_CREATE_CONTACT": Object {
                             "DESCRIPTION": "Enter your contacts name and addresses and add them to your list.",
-                            "FORM": Object {
-                              "ADDRESS": "Address",
-                              "ADDRESSES": "Addresses",
-                              "NAME": "Name",
-                              "NETWORK": "Network",
-                            },
                             "TITLE": "Add Contact",
                           },
                           "MODAL_DELETE_CONTACT": Object {
                             "DESCRIPTION": "Do you really want to delete this contact? Once deleted, you will not be able to restore it.",
                             "TITLE": "Delete Contact",
+                          },
+                          "MODAL_UPDATE_CONTACT": Object {
+                            "TITLE": "Edit Contact",
                           },
                         },
                         "HELP": Object {
@@ -2201,20 +2222,23 @@ exports[`Application root should render without crashing 1`] = `
                               "YOUR_PASSPHRASE": "Your Passphrase",
                             },
                             "CONTACTS": Object {
-                              "MODAL_CREATE_CONTACT": Object {
+                              "CONTACT_FORM": Object {
+                                "ADDRESS": "Address",
+                                "ADDRESSES": "Addresses",
                                 "ADD_ADDRESS": "Add Address",
+                                "NAME": "Name",
+                                "NETWORK": "Network",
+                              },
+                              "MODAL_CREATE_CONTACT": Object {
                                 "DESCRIPTION": "Enter your contacts name and addresses and add them to your list.",
-                                "FORM": Object {
-                                  "ADDRESS": "Address",
-                                  "ADDRESSES": "Addresses",
-                                  "NAME": "Name",
-                                  "NETWORK": "Network",
-                                },
                                 "TITLE": "Add Contact",
                               },
                               "MODAL_DELETE_CONTACT": Object {
                                 "DESCRIPTION": "Do you really want to delete this contact? Once deleted, you will not be able to restore it.",
                                 "TITLE": "Delete Contact",
+                              },
+                              "MODAL_UPDATE_CONTACT": Object {
+                                "TITLE": "Edit Contact",
                               },
                             },
                             "HELP": Object {
@@ -2496,20 +2520,23 @@ exports[`Application root should render without crashing 1`] = `
                             "YOUR_PASSPHRASE": "Your Passphrase",
                           },
                           "CONTACTS": Object {
-                            "MODAL_CREATE_CONTACT": Object {
+                            "CONTACT_FORM": Object {
+                              "ADDRESS": "Address",
+                              "ADDRESSES": "Addresses",
                               "ADD_ADDRESS": "Add Address",
+                              "NAME": "Name",
+                              "NETWORK": "Network",
+                            },
+                            "MODAL_CREATE_CONTACT": Object {
                               "DESCRIPTION": "Enter your contacts name and addresses and add them to your list.",
-                              "FORM": Object {
-                                "ADDRESS": "Address",
-                                "ADDRESSES": "Addresses",
-                                "NAME": "Name",
-                                "NETWORK": "Network",
-                              },
                               "TITLE": "Add Contact",
                             },
                             "MODAL_DELETE_CONTACT": Object {
                               "DESCRIPTION": "Do you really want to delete this contact? Once deleted, you will not be able to restore it.",
                               "TITLE": "Delete Contact",
+                            },
+                            "MODAL_UPDATE_CONTACT": Object {
+                              "TITLE": "Edit Contact",
                             },
                           },
                           "HELP": Object {
@@ -2803,20 +2830,23 @@ exports[`Application root should render without crashing 1`] = `
                               "YOUR_PASSPHRASE": "Your Passphrase",
                             },
                             "CONTACTS": Object {
-                              "MODAL_CREATE_CONTACT": Object {
+                              "CONTACT_FORM": Object {
+                                "ADDRESS": "Address",
+                                "ADDRESSES": "Addresses",
                                 "ADD_ADDRESS": "Add Address",
+                                "NAME": "Name",
+                                "NETWORK": "Network",
+                              },
+                              "MODAL_CREATE_CONTACT": Object {
                                 "DESCRIPTION": "Enter your contacts name and addresses and add them to your list.",
-                                "FORM": Object {
-                                  "ADDRESS": "Address",
-                                  "ADDRESSES": "Addresses",
-                                  "NAME": "Name",
-                                  "NETWORK": "Network",
-                                },
                                 "TITLE": "Add Contact",
                               },
                               "MODAL_DELETE_CONTACT": Object {
                                 "DESCRIPTION": "Do you really want to delete this contact? Once deleted, you will not be able to restore it.",
                                 "TITLE": "Delete Contact",
+                              },
+                              "MODAL_UPDATE_CONTACT": Object {
+                                "TITLE": "Edit Contact",
                               },
                             },
                             "HELP": Object {
@@ -3093,20 +3123,23 @@ exports[`Application root should render without crashing 1`] = `
                             "YOUR_PASSPHRASE": "Your Passphrase",
                           },
                           "CONTACTS": Object {
-                            "MODAL_CREATE_CONTACT": Object {
+                            "CONTACT_FORM": Object {
+                              "ADDRESS": "Address",
+                              "ADDRESSES": "Addresses",
                               "ADD_ADDRESS": "Add Address",
+                              "NAME": "Name",
+                              "NETWORK": "Network",
+                            },
+                            "MODAL_CREATE_CONTACT": Object {
                               "DESCRIPTION": "Enter your contacts name and addresses and add them to your list.",
-                              "FORM": Object {
-                                "ADDRESS": "Address",
-                                "ADDRESSES": "Addresses",
-                                "NAME": "Name",
-                                "NETWORK": "Network",
-                              },
                               "TITLE": "Add Contact",
                             },
                             "MODAL_DELETE_CONTACT": Object {
                               "DESCRIPTION": "Do you really want to delete this contact? Once deleted, you will not be able to restore it.",
                               "TITLE": "Delete Contact",
+                            },
+                            "MODAL_UPDATE_CONTACT": Object {
+                              "TITLE": "Edit Contact",
                             },
                           },
                           "HELP": Object {
@@ -3392,20 +3425,23 @@ exports[`Application root should render without crashing 1`] = `
                             "YOUR_PASSPHRASE": "Your Passphrase",
                           },
                           "CONTACTS": Object {
-                            "MODAL_CREATE_CONTACT": Object {
+                            "CONTACT_FORM": Object {
+                              "ADDRESS": "Address",
+                              "ADDRESSES": "Addresses",
                               "ADD_ADDRESS": "Add Address",
+                              "NAME": "Name",
+                              "NETWORK": "Network",
+                            },
+                            "MODAL_CREATE_CONTACT": Object {
                               "DESCRIPTION": "Enter your contacts name and addresses and add them to your list.",
-                              "FORM": Object {
-                                "ADDRESS": "Address",
-                                "ADDRESSES": "Addresses",
-                                "NAME": "Name",
-                                "NETWORK": "Network",
-                              },
                               "TITLE": "Add Contact",
                             },
                             "MODAL_DELETE_CONTACT": Object {
                               "DESCRIPTION": "Do you really want to delete this contact? Once deleted, you will not be able to restore it.",
                               "TITLE": "Delete Contact",
+                            },
+                            "MODAL_UPDATE_CONTACT": Object {
+                              "TITLE": "Edit Contact",
                             },
                           },
                           "HELP": Object {
@@ -3694,20 +3730,23 @@ exports[`Application root should render without crashing 1`] = `
                                 "YOUR_PASSPHRASE": "Your Passphrase",
                               },
                               "CONTACTS": Object {
-                                "MODAL_CREATE_CONTACT": Object {
+                                "CONTACT_FORM": Object {
+                                  "ADDRESS": "Address",
+                                  "ADDRESSES": "Addresses",
                                   "ADD_ADDRESS": "Add Address",
+                                  "NAME": "Name",
+                                  "NETWORK": "Network",
+                                },
+                                "MODAL_CREATE_CONTACT": Object {
                                   "DESCRIPTION": "Enter your contacts name and addresses and add them to your list.",
-                                  "FORM": Object {
-                                    "ADDRESS": "Address",
-                                    "ADDRESSES": "Addresses",
-                                    "NAME": "Name",
-                                    "NETWORK": "Network",
-                                  },
                                   "TITLE": "Add Contact",
                                 },
                                 "MODAL_DELETE_CONTACT": Object {
                                   "DESCRIPTION": "Do you really want to delete this contact? Once deleted, you will not be able to restore it.",
                                   "TITLE": "Delete Contact",
+                                },
+                                "MODAL_UPDATE_CONTACT": Object {
+                                  "TITLE": "Edit Contact",
                                 },
                               },
                               "HELP": Object {
@@ -3984,20 +4023,23 @@ exports[`Application root should render without crashing 1`] = `
                               "YOUR_PASSPHRASE": "Your Passphrase",
                             },
                             "CONTACTS": Object {
-                              "MODAL_CREATE_CONTACT": Object {
+                              "CONTACT_FORM": Object {
+                                "ADDRESS": "Address",
+                                "ADDRESSES": "Addresses",
                                 "ADD_ADDRESS": "Add Address",
+                                "NAME": "Name",
+                                "NETWORK": "Network",
+                              },
+                              "MODAL_CREATE_CONTACT": Object {
                                 "DESCRIPTION": "Enter your contacts name and addresses and add them to your list.",
-                                "FORM": Object {
-                                  "ADDRESS": "Address",
-                                  "ADDRESSES": "Addresses",
-                                  "NAME": "Name",
-                                  "NETWORK": "Network",
-                                },
                                 "TITLE": "Add Contact",
                               },
                               "MODAL_DELETE_CONTACT": Object {
                                 "DESCRIPTION": "Do you really want to delete this contact? Once deleted, you will not be able to restore it.",
                                 "TITLE": "Delete Contact",
+                              },
+                              "MODAL_UPDATE_CONTACT": Object {
+                                "TITLE": "Edit Contact",
                               },
                             },
                             "HELP": Object {
@@ -4284,20 +4326,23 @@ exports[`Application root should render without crashing 1`] = `
                               "YOUR_PASSPHRASE": "Your Passphrase",
                             },
                             "CONTACTS": Object {
-                              "MODAL_CREATE_CONTACT": Object {
+                              "CONTACT_FORM": Object {
+                                "ADDRESS": "Address",
+                                "ADDRESSES": "Addresses",
                                 "ADD_ADDRESS": "Add Address",
+                                "NAME": "Name",
+                                "NETWORK": "Network",
+                              },
+                              "MODAL_CREATE_CONTACT": Object {
                                 "DESCRIPTION": "Enter your contacts name and addresses and add them to your list.",
-                                "FORM": Object {
-                                  "ADDRESS": "Address",
-                                  "ADDRESSES": "Addresses",
-                                  "NAME": "Name",
-                                  "NETWORK": "Network",
-                                },
                                 "TITLE": "Add Contact",
                               },
                               "MODAL_DELETE_CONTACT": Object {
                                 "DESCRIPTION": "Do you really want to delete this contact? Once deleted, you will not be able to restore it.",
                                 "TITLE": "Delete Contact",
+                              },
+                              "MODAL_UPDATE_CONTACT": Object {
+                                "TITLE": "Edit Contact",
                               },
                             },
                             "HELP": Object {
@@ -5476,20 +5521,23 @@ exports[`Application root should render without crashing 1`] = `
                         "YOUR_PASSPHRASE": "Your Passphrase",
                       },
                       "CONTACTS": Object {
-                        "MODAL_CREATE_CONTACT": Object {
+                        "CONTACT_FORM": Object {
+                          "ADDRESS": "Address",
+                          "ADDRESSES": "Addresses",
                           "ADD_ADDRESS": "Add Address",
+                          "NAME": "Name",
+                          "NETWORK": "Network",
+                        },
+                        "MODAL_CREATE_CONTACT": Object {
                           "DESCRIPTION": "Enter your contacts name and addresses and add them to your list.",
-                          "FORM": Object {
-                            "ADDRESS": "Address",
-                            "ADDRESSES": "Addresses",
-                            "NAME": "Name",
-                            "NETWORK": "Network",
-                          },
                           "TITLE": "Add Contact",
                         },
                         "MODAL_DELETE_CONTACT": Object {
                           "DESCRIPTION": "Do you really want to delete this contact? Once deleted, you will not be able to restore it.",
                           "TITLE": "Delete Contact",
+                        },
+                        "MODAL_UPDATE_CONTACT": Object {
+                          "TITLE": "Edit Contact",
                         },
                       },
                       "HELP": Object {
@@ -5714,20 +5762,23 @@ exports[`Application root should render without crashing 1`] = `
                       "YOUR_PASSPHRASE": "Your Passphrase",
                     },
                     "CONTACTS": Object {
-                      "MODAL_CREATE_CONTACT": Object {
+                      "CONTACT_FORM": Object {
+                        "ADDRESS": "Address",
+                        "ADDRESSES": "Addresses",
                         "ADD_ADDRESS": "Add Address",
+                        "NAME": "Name",
+                        "NETWORK": "Network",
+                      },
+                      "MODAL_CREATE_CONTACT": Object {
                         "DESCRIPTION": "Enter your contacts name and addresses and add them to your list.",
-                        "FORM": Object {
-                          "ADDRESS": "Address",
-                          "ADDRESSES": "Addresses",
-                          "NAME": "Name",
-                          "NETWORK": "Network",
-                        },
                         "TITLE": "Add Contact",
                       },
                       "MODAL_DELETE_CONTACT": Object {
                         "DESCRIPTION": "Do you really want to delete this contact? Once deleted, you will not be able to restore it.",
                         "TITLE": "Delete Contact",
+                      },
+                      "MODAL_UPDATE_CONTACT": Object {
+                        "TITLE": "Edit Contact",
                       },
                     },
                     "HELP": Object {
@@ -6005,20 +6056,23 @@ exports[`Application root should render without crashing 1`] = `
                                 "YOUR_PASSPHRASE": "Your Passphrase",
                               },
                               "CONTACTS": Object {
-                                "MODAL_CREATE_CONTACT": Object {
+                                "CONTACT_FORM": Object {
+                                  "ADDRESS": "Address",
+                                  "ADDRESSES": "Addresses",
                                   "ADD_ADDRESS": "Add Address",
+                                  "NAME": "Name",
+                                  "NETWORK": "Network",
+                                },
+                                "MODAL_CREATE_CONTACT": Object {
                                   "DESCRIPTION": "Enter your contacts name and addresses and add them to your list.",
-                                  "FORM": Object {
-                                    "ADDRESS": "Address",
-                                    "ADDRESSES": "Addresses",
-                                    "NAME": "Name",
-                                    "NETWORK": "Network",
-                                  },
                                   "TITLE": "Add Contact",
                                 },
                                 "MODAL_DELETE_CONTACT": Object {
                                   "DESCRIPTION": "Do you really want to delete this contact? Once deleted, you will not be able to restore it.",
                                   "TITLE": "Delete Contact",
+                                },
+                                "MODAL_UPDATE_CONTACT": Object {
+                                  "TITLE": "Edit Contact",
                                 },
                               },
                               "HELP": Object {
@@ -6295,20 +6349,23 @@ exports[`Application root should render without crashing 1`] = `
                               "YOUR_PASSPHRASE": "Your Passphrase",
                             },
                             "CONTACTS": Object {
-                              "MODAL_CREATE_CONTACT": Object {
+                              "CONTACT_FORM": Object {
+                                "ADDRESS": "Address",
+                                "ADDRESSES": "Addresses",
                                 "ADD_ADDRESS": "Add Address",
+                                "NAME": "Name",
+                                "NETWORK": "Network",
+                              },
+                              "MODAL_CREATE_CONTACT": Object {
                                 "DESCRIPTION": "Enter your contacts name and addresses and add them to your list.",
-                                "FORM": Object {
-                                  "ADDRESS": "Address",
-                                  "ADDRESSES": "Addresses",
-                                  "NAME": "Name",
-                                  "NETWORK": "Network",
-                                },
                                 "TITLE": "Add Contact",
                               },
                               "MODAL_DELETE_CONTACT": Object {
                                 "DESCRIPTION": "Do you really want to delete this contact? Once deleted, you will not be able to restore it.",
                                 "TITLE": "Delete Contact",
+                              },
+                              "MODAL_UPDATE_CONTACT": Object {
+                                "TITLE": "Edit Contact",
                               },
                             },
                             "HELP": Object {
@@ -6595,20 +6652,23 @@ exports[`Application root should render without crashing 1`] = `
                               "YOUR_PASSPHRASE": "Your Passphrase",
                             },
                             "CONTACTS": Object {
-                              "MODAL_CREATE_CONTACT": Object {
+                              "CONTACT_FORM": Object {
+                                "ADDRESS": "Address",
+                                "ADDRESSES": "Addresses",
                                 "ADD_ADDRESS": "Add Address",
+                                "NAME": "Name",
+                                "NETWORK": "Network",
+                              },
+                              "MODAL_CREATE_CONTACT": Object {
                                 "DESCRIPTION": "Enter your contacts name and addresses and add them to your list.",
-                                "FORM": Object {
-                                  "ADDRESS": "Address",
-                                  "ADDRESSES": "Addresses",
-                                  "NAME": "Name",
-                                  "NETWORK": "Network",
-                                },
                                 "TITLE": "Add Contact",
                               },
                               "MODAL_DELETE_CONTACT": Object {
                                 "DESCRIPTION": "Do you really want to delete this contact? Once deleted, you will not be able to restore it.",
                                 "TITLE": "Delete Contact",
+                              },
+                              "MODAL_UPDATE_CONTACT": Object {
+                                "TITLE": "Edit Contact",
                               },
                             },
                             "HELP": Object {
@@ -6890,20 +6950,23 @@ exports[`Application root should render without crashing 1`] = `
                             "YOUR_PASSPHRASE": "Your Passphrase",
                           },
                           "CONTACTS": Object {
-                            "MODAL_CREATE_CONTACT": Object {
+                            "CONTACT_FORM": Object {
+                              "ADDRESS": "Address",
+                              "ADDRESSES": "Addresses",
                               "ADD_ADDRESS": "Add Address",
+                              "NAME": "Name",
+                              "NETWORK": "Network",
+                            },
+                            "MODAL_CREATE_CONTACT": Object {
                               "DESCRIPTION": "Enter your contacts name and addresses and add them to your list.",
-                              "FORM": Object {
-                                "ADDRESS": "Address",
-                                "ADDRESSES": "Addresses",
-                                "NAME": "Name",
-                                "NETWORK": "Network",
-                              },
                               "TITLE": "Add Contact",
                             },
                             "MODAL_DELETE_CONTACT": Object {
                               "DESCRIPTION": "Do you really want to delete this contact? Once deleted, you will not be able to restore it.",
                               "TITLE": "Delete Contact",
+                            },
+                            "MODAL_UPDATE_CONTACT": Object {
+                              "TITLE": "Edit Contact",
                             },
                           },
                           "HELP": Object {
@@ -7197,20 +7260,23 @@ exports[`Application root should render without crashing 1`] = `
                                   "YOUR_PASSPHRASE": "Your Passphrase",
                                 },
                                 "CONTACTS": Object {
-                                  "MODAL_CREATE_CONTACT": Object {
+                                  "CONTACT_FORM": Object {
+                                    "ADDRESS": "Address",
+                                    "ADDRESSES": "Addresses",
                                     "ADD_ADDRESS": "Add Address",
+                                    "NAME": "Name",
+                                    "NETWORK": "Network",
+                                  },
+                                  "MODAL_CREATE_CONTACT": Object {
                                     "DESCRIPTION": "Enter your contacts name and addresses and add them to your list.",
-                                    "FORM": Object {
-                                      "ADDRESS": "Address",
-                                      "ADDRESSES": "Addresses",
-                                      "NAME": "Name",
-                                      "NETWORK": "Network",
-                                    },
                                     "TITLE": "Add Contact",
                                   },
                                   "MODAL_DELETE_CONTACT": Object {
                                     "DESCRIPTION": "Do you really want to delete this contact? Once deleted, you will not be able to restore it.",
                                     "TITLE": "Delete Contact",
+                                  },
+                                  "MODAL_UPDATE_CONTACT": Object {
+                                    "TITLE": "Edit Contact",
                                   },
                                 },
                                 "HELP": Object {
@@ -7492,20 +7558,23 @@ exports[`Application root should render without crashing 1`] = `
                                 "YOUR_PASSPHRASE": "Your Passphrase",
                               },
                               "CONTACTS": Object {
-                                "MODAL_CREATE_CONTACT": Object {
+                                "CONTACT_FORM": Object {
+                                  "ADDRESS": "Address",
+                                  "ADDRESSES": "Addresses",
                                   "ADD_ADDRESS": "Add Address",
+                                  "NAME": "Name",
+                                  "NETWORK": "Network",
+                                },
+                                "MODAL_CREATE_CONTACT": Object {
                                   "DESCRIPTION": "Enter your contacts name and addresses and add them to your list.",
-                                  "FORM": Object {
-                                    "ADDRESS": "Address",
-                                    "ADDRESSES": "Addresses",
-                                    "NAME": "Name",
-                                    "NETWORK": "Network",
-                                  },
                                   "TITLE": "Add Contact",
                                 },
                                 "MODAL_DELETE_CONTACT": Object {
                                   "DESCRIPTION": "Do you really want to delete this contact? Once deleted, you will not be able to restore it.",
                                   "TITLE": "Delete Contact",
+                                },
+                                "MODAL_UPDATE_CONTACT": Object {
+                                  "TITLE": "Edit Contact",
                                 },
                               },
                               "HELP": Object {
@@ -7799,20 +7868,23 @@ exports[`Application root should render without crashing 1`] = `
                                   "YOUR_PASSPHRASE": "Your Passphrase",
                                 },
                                 "CONTACTS": Object {
-                                  "MODAL_CREATE_CONTACT": Object {
+                                  "CONTACT_FORM": Object {
+                                    "ADDRESS": "Address",
+                                    "ADDRESSES": "Addresses",
                                     "ADD_ADDRESS": "Add Address",
+                                    "NAME": "Name",
+                                    "NETWORK": "Network",
+                                  },
+                                  "MODAL_CREATE_CONTACT": Object {
                                     "DESCRIPTION": "Enter your contacts name and addresses and add them to your list.",
-                                    "FORM": Object {
-                                      "ADDRESS": "Address",
-                                      "ADDRESSES": "Addresses",
-                                      "NAME": "Name",
-                                      "NETWORK": "Network",
-                                    },
                                     "TITLE": "Add Contact",
                                   },
                                   "MODAL_DELETE_CONTACT": Object {
                                     "DESCRIPTION": "Do you really want to delete this contact? Once deleted, you will not be able to restore it.",
                                     "TITLE": "Delete Contact",
+                                  },
+                                  "MODAL_UPDATE_CONTACT": Object {
+                                    "TITLE": "Edit Contact",
                                   },
                                 },
                                 "HELP": Object {
@@ -8089,20 +8161,23 @@ exports[`Application root should render without crashing 1`] = `
                                 "YOUR_PASSPHRASE": "Your Passphrase",
                               },
                               "CONTACTS": Object {
-                                "MODAL_CREATE_CONTACT": Object {
+                                "CONTACT_FORM": Object {
+                                  "ADDRESS": "Address",
+                                  "ADDRESSES": "Addresses",
                                   "ADD_ADDRESS": "Add Address",
+                                  "NAME": "Name",
+                                  "NETWORK": "Network",
+                                },
+                                "MODAL_CREATE_CONTACT": Object {
                                   "DESCRIPTION": "Enter your contacts name and addresses and add them to your list.",
-                                  "FORM": Object {
-                                    "ADDRESS": "Address",
-                                    "ADDRESSES": "Addresses",
-                                    "NAME": "Name",
-                                    "NETWORK": "Network",
-                                  },
                                   "TITLE": "Add Contact",
                                 },
                                 "MODAL_DELETE_CONTACT": Object {
                                   "DESCRIPTION": "Do you really want to delete this contact? Once deleted, you will not be able to restore it.",
                                   "TITLE": "Delete Contact",
+                                },
+                                "MODAL_UPDATE_CONTACT": Object {
+                                  "TITLE": "Edit Contact",
                                 },
                               },
                               "HELP": Object {
@@ -8388,20 +8463,23 @@ exports[`Application root should render without crashing 1`] = `
                                 "YOUR_PASSPHRASE": "Your Passphrase",
                               },
                               "CONTACTS": Object {
-                                "MODAL_CREATE_CONTACT": Object {
+                                "CONTACT_FORM": Object {
+                                  "ADDRESS": "Address",
+                                  "ADDRESSES": "Addresses",
                                   "ADD_ADDRESS": "Add Address",
+                                  "NAME": "Name",
+                                  "NETWORK": "Network",
+                                },
+                                "MODAL_CREATE_CONTACT": Object {
                                   "DESCRIPTION": "Enter your contacts name and addresses and add them to your list.",
-                                  "FORM": Object {
-                                    "ADDRESS": "Address",
-                                    "ADDRESSES": "Addresses",
-                                    "NAME": "Name",
-                                    "NETWORK": "Network",
-                                  },
                                   "TITLE": "Add Contact",
                                 },
                                 "MODAL_DELETE_CONTACT": Object {
                                   "DESCRIPTION": "Do you really want to delete this contact? Once deleted, you will not be able to restore it.",
                                   "TITLE": "Delete Contact",
+                                },
+                                "MODAL_UPDATE_CONTACT": Object {
+                                  "TITLE": "Edit Contact",
                                 },
                               },
                               "HELP": Object {
@@ -8690,20 +8768,23 @@ exports[`Application root should render without crashing 1`] = `
                                     "YOUR_PASSPHRASE": "Your Passphrase",
                                   },
                                   "CONTACTS": Object {
-                                    "MODAL_CREATE_CONTACT": Object {
+                                    "CONTACT_FORM": Object {
+                                      "ADDRESS": "Address",
+                                      "ADDRESSES": "Addresses",
                                       "ADD_ADDRESS": "Add Address",
+                                      "NAME": "Name",
+                                      "NETWORK": "Network",
+                                    },
+                                    "MODAL_CREATE_CONTACT": Object {
                                       "DESCRIPTION": "Enter your contacts name and addresses and add them to your list.",
-                                      "FORM": Object {
-                                        "ADDRESS": "Address",
-                                        "ADDRESSES": "Addresses",
-                                        "NAME": "Name",
-                                        "NETWORK": "Network",
-                                      },
                                       "TITLE": "Add Contact",
                                     },
                                     "MODAL_DELETE_CONTACT": Object {
                                       "DESCRIPTION": "Do you really want to delete this contact? Once deleted, you will not be able to restore it.",
                                       "TITLE": "Delete Contact",
+                                    },
+                                    "MODAL_UPDATE_CONTACT": Object {
+                                      "TITLE": "Edit Contact",
                                     },
                                   },
                                   "HELP": Object {
@@ -8980,20 +9061,23 @@ exports[`Application root should render without crashing 1`] = `
                                   "YOUR_PASSPHRASE": "Your Passphrase",
                                 },
                                 "CONTACTS": Object {
-                                  "MODAL_CREATE_CONTACT": Object {
+                                  "CONTACT_FORM": Object {
+                                    "ADDRESS": "Address",
+                                    "ADDRESSES": "Addresses",
                                     "ADD_ADDRESS": "Add Address",
+                                    "NAME": "Name",
+                                    "NETWORK": "Network",
+                                  },
+                                  "MODAL_CREATE_CONTACT": Object {
                                     "DESCRIPTION": "Enter your contacts name and addresses and add them to your list.",
-                                    "FORM": Object {
-                                      "ADDRESS": "Address",
-                                      "ADDRESSES": "Addresses",
-                                      "NAME": "Name",
-                                      "NETWORK": "Network",
-                                    },
                                     "TITLE": "Add Contact",
                                   },
                                   "MODAL_DELETE_CONTACT": Object {
                                     "DESCRIPTION": "Do you really want to delete this contact? Once deleted, you will not be able to restore it.",
                                     "TITLE": "Delete Contact",
+                                  },
+                                  "MODAL_UPDATE_CONTACT": Object {
+                                    "TITLE": "Edit Contact",
                                   },
                                 },
                                 "HELP": Object {
@@ -9280,20 +9364,23 @@ exports[`Application root should render without crashing 1`] = `
                                   "YOUR_PASSPHRASE": "Your Passphrase",
                                 },
                                 "CONTACTS": Object {
-                                  "MODAL_CREATE_CONTACT": Object {
+                                  "CONTACT_FORM": Object {
+                                    "ADDRESS": "Address",
+                                    "ADDRESSES": "Addresses",
                                     "ADD_ADDRESS": "Add Address",
+                                    "NAME": "Name",
+                                    "NETWORK": "Network",
+                                  },
+                                  "MODAL_CREATE_CONTACT": Object {
                                     "DESCRIPTION": "Enter your contacts name and addresses and add them to your list.",
-                                    "FORM": Object {
-                                      "ADDRESS": "Address",
-                                      "ADDRESSES": "Addresses",
-                                      "NAME": "Name",
-                                      "NETWORK": "Network",
-                                    },
                                     "TITLE": "Add Contact",
                                   },
                                   "MODAL_DELETE_CONTACT": Object {
                                     "DESCRIPTION": "Do you really want to delete this contact? Once deleted, you will not be able to restore it.",
                                     "TITLE": "Delete Contact",
+                                  },
+                                  "MODAL_UPDATE_CONTACT": Object {
+                                    "TITLE": "Edit Contact",
                                   },
                                 },
                                 "HELP": Object {
@@ -10472,20 +10559,23 @@ exports[`Application root should render without crashing 1`] = `
                             "YOUR_PASSPHRASE": "Your Passphrase",
                           },
                           "CONTACTS": Object {
-                            "MODAL_CREATE_CONTACT": Object {
+                            "CONTACT_FORM": Object {
+                              "ADDRESS": "Address",
+                              "ADDRESSES": "Addresses",
                               "ADD_ADDRESS": "Add Address",
+                              "NAME": "Name",
+                              "NETWORK": "Network",
+                            },
+                            "MODAL_CREATE_CONTACT": Object {
                               "DESCRIPTION": "Enter your contacts name and addresses and add them to your list.",
-                              "FORM": Object {
-                                "ADDRESS": "Address",
-                                "ADDRESSES": "Addresses",
-                                "NAME": "Name",
-                                "NETWORK": "Network",
-                              },
                               "TITLE": "Add Contact",
                             },
                             "MODAL_DELETE_CONTACT": Object {
                               "DESCRIPTION": "Do you really want to delete this contact? Once deleted, you will not be able to restore it.",
                               "TITLE": "Delete Contact",
+                            },
+                            "MODAL_UPDATE_CONTACT": Object {
+                              "TITLE": "Edit Contact",
                             },
                           },
                           "HELP": Object {
@@ -10711,20 +10801,23 @@ exports[`Application root should render without crashing 1`] = `
                           "YOUR_PASSPHRASE": "Your Passphrase",
                         },
                         "CONTACTS": Object {
-                          "MODAL_CREATE_CONTACT": Object {
+                          "CONTACT_FORM": Object {
+                            "ADDRESS": "Address",
+                            "ADDRESSES": "Addresses",
                             "ADD_ADDRESS": "Add Address",
+                            "NAME": "Name",
+                            "NETWORK": "Network",
+                          },
+                          "MODAL_CREATE_CONTACT": Object {
                             "DESCRIPTION": "Enter your contacts name and addresses and add them to your list.",
-                            "FORM": Object {
-                              "ADDRESS": "Address",
-                              "ADDRESSES": "Addresses",
-                              "NAME": "Name",
-                              "NETWORK": "Network",
-                            },
                             "TITLE": "Add Contact",
                           },
                           "MODAL_DELETE_CONTACT": Object {
                             "DESCRIPTION": "Do you really want to delete this contact? Once deleted, you will not be able to restore it.",
                             "TITLE": "Delete Contact",
+                          },
+                          "MODAL_UPDATE_CONTACT": Object {
+                            "TITLE": "Edit Contact",
                           },
                         },
                         "HELP": Object {
@@ -11005,20 +11098,23 @@ exports[`Application root should render without crashing 1`] = `
                               "YOUR_PASSPHRASE": "Your Passphrase",
                             },
                             "CONTACTS": Object {
-                              "MODAL_CREATE_CONTACT": Object {
+                              "CONTACT_FORM": Object {
+                                "ADDRESS": "Address",
+                                "ADDRESSES": "Addresses",
                                 "ADD_ADDRESS": "Add Address",
+                                "NAME": "Name",
+                                "NETWORK": "Network",
+                              },
+                              "MODAL_CREATE_CONTACT": Object {
                                 "DESCRIPTION": "Enter your contacts name and addresses and add them to your list.",
-                                "FORM": Object {
-                                  "ADDRESS": "Address",
-                                  "ADDRESSES": "Addresses",
-                                  "NAME": "Name",
-                                  "NETWORK": "Network",
-                                },
                                 "TITLE": "Add Contact",
                               },
                               "MODAL_DELETE_CONTACT": Object {
                                 "DESCRIPTION": "Do you really want to delete this contact? Once deleted, you will not be able to restore it.",
                                 "TITLE": "Delete Contact",
+                              },
+                              "MODAL_UPDATE_CONTACT": Object {
+                                "TITLE": "Edit Contact",
                               },
                             },
                             "HELP": Object {
@@ -11300,20 +11396,23 @@ exports[`Application root should render without crashing 1`] = `
                             "YOUR_PASSPHRASE": "Your Passphrase",
                           },
                           "CONTACTS": Object {
-                            "MODAL_CREATE_CONTACT": Object {
+                            "CONTACT_FORM": Object {
+                              "ADDRESS": "Address",
+                              "ADDRESSES": "Addresses",
                               "ADD_ADDRESS": "Add Address",
+                              "NAME": "Name",
+                              "NETWORK": "Network",
+                            },
+                            "MODAL_CREATE_CONTACT": Object {
                               "DESCRIPTION": "Enter your contacts name and addresses and add them to your list.",
-                              "FORM": Object {
-                                "ADDRESS": "Address",
-                                "ADDRESSES": "Addresses",
-                                "NAME": "Name",
-                                "NETWORK": "Network",
-                              },
                               "TITLE": "Add Contact",
                             },
                             "MODAL_DELETE_CONTACT": Object {
                               "DESCRIPTION": "Do you really want to delete this contact? Once deleted, you will not be able to restore it.",
                               "TITLE": "Delete Contact",
+                            },
+                            "MODAL_UPDATE_CONTACT": Object {
+                              "TITLE": "Edit Contact",
                             },
                           },
                           "HELP": Object {
@@ -11608,20 +11707,23 @@ exports[`Application root should render without crashing 1`] = `
                               "YOUR_PASSPHRASE": "Your Passphrase",
                             },
                             "CONTACTS": Object {
-                              "MODAL_CREATE_CONTACT": Object {
+                              "CONTACT_FORM": Object {
+                                "ADDRESS": "Address",
+                                "ADDRESSES": "Addresses",
                                 "ADD_ADDRESS": "Add Address",
+                                "NAME": "Name",
+                                "NETWORK": "Network",
+                              },
+                              "MODAL_CREATE_CONTACT": Object {
                                 "DESCRIPTION": "Enter your contacts name and addresses and add them to your list.",
-                                "FORM": Object {
-                                  "ADDRESS": "Address",
-                                  "ADDRESSES": "Addresses",
-                                  "NAME": "Name",
-                                  "NETWORK": "Network",
-                                },
                                 "TITLE": "Add Contact",
                               },
                               "MODAL_DELETE_CONTACT": Object {
                                 "DESCRIPTION": "Do you really want to delete this contact? Once deleted, you will not be able to restore it.",
                                 "TITLE": "Delete Contact",
+                              },
+                              "MODAL_UPDATE_CONTACT": Object {
+                                "TITLE": "Edit Contact",
                               },
                             },
                             "HELP": Object {
@@ -11898,20 +12000,23 @@ exports[`Application root should render without crashing 1`] = `
                             "YOUR_PASSPHRASE": "Your Passphrase",
                           },
                           "CONTACTS": Object {
-                            "MODAL_CREATE_CONTACT": Object {
+                            "CONTACT_FORM": Object {
+                              "ADDRESS": "Address",
+                              "ADDRESSES": "Addresses",
                               "ADD_ADDRESS": "Add Address",
+                              "NAME": "Name",
+                              "NETWORK": "Network",
+                            },
+                            "MODAL_CREATE_CONTACT": Object {
                               "DESCRIPTION": "Enter your contacts name and addresses and add them to your list.",
-                              "FORM": Object {
-                                "ADDRESS": "Address",
-                                "ADDRESSES": "Addresses",
-                                "NAME": "Name",
-                                "NETWORK": "Network",
-                              },
                               "TITLE": "Add Contact",
                             },
                             "MODAL_DELETE_CONTACT": Object {
                               "DESCRIPTION": "Do you really want to delete this contact? Once deleted, you will not be able to restore it.",
                               "TITLE": "Delete Contact",
+                            },
+                            "MODAL_UPDATE_CONTACT": Object {
+                              "TITLE": "Edit Contact",
                             },
                           },
                           "HELP": Object {
@@ -12198,20 +12303,23 @@ exports[`Application root should render without crashing 1`] = `
                             "YOUR_PASSPHRASE": "Your Passphrase",
                           },
                           "CONTACTS": Object {
-                            "MODAL_CREATE_CONTACT": Object {
+                            "CONTACT_FORM": Object {
+                              "ADDRESS": "Address",
+                              "ADDRESSES": "Addresses",
                               "ADD_ADDRESS": "Add Address",
+                              "NAME": "Name",
+                              "NETWORK": "Network",
+                            },
+                            "MODAL_CREATE_CONTACT": Object {
                               "DESCRIPTION": "Enter your contacts name and addresses and add them to your list.",
-                              "FORM": Object {
-                                "ADDRESS": "Address",
-                                "ADDRESSES": "Addresses",
-                                "NAME": "Name",
-                                "NETWORK": "Network",
-                              },
                               "TITLE": "Add Contact",
                             },
                             "MODAL_DELETE_CONTACT": Object {
                               "DESCRIPTION": "Do you really want to delete this contact? Once deleted, you will not be able to restore it.",
                               "TITLE": "Delete Contact",
+                            },
+                            "MODAL_UPDATE_CONTACT": Object {
+                              "TITLE": "Edit Contact",
                             },
                           },
                           "HELP": Object {
@@ -12493,20 +12601,23 @@ exports[`Application root should render without crashing 1`] = `
                           "YOUR_PASSPHRASE": "Your Passphrase",
                         },
                         "CONTACTS": Object {
-                          "MODAL_CREATE_CONTACT": Object {
+                          "CONTACT_FORM": Object {
+                            "ADDRESS": "Address",
+                            "ADDRESSES": "Addresses",
                             "ADD_ADDRESS": "Add Address",
+                            "NAME": "Name",
+                            "NETWORK": "Network",
+                          },
+                          "MODAL_CREATE_CONTACT": Object {
                             "DESCRIPTION": "Enter your contacts name and addresses and add them to your list.",
-                            "FORM": Object {
-                              "ADDRESS": "Address",
-                              "ADDRESSES": "Addresses",
-                              "NAME": "Name",
-                              "NETWORK": "Network",
-                            },
                             "TITLE": "Add Contact",
                           },
                           "MODAL_DELETE_CONTACT": Object {
                             "DESCRIPTION": "Do you really want to delete this contact? Once deleted, you will not be able to restore it.",
                             "TITLE": "Delete Contact",
+                          },
+                          "MODAL_UPDATE_CONTACT": Object {
+                            "TITLE": "Edit Contact",
                           },
                         },
                         "HELP": Object {
@@ -12793,20 +12904,23 @@ exports[`Application root should render without crashing 1`] = `
                                 "YOUR_PASSPHRASE": "Your Passphrase",
                               },
                               "CONTACTS": Object {
-                                "MODAL_CREATE_CONTACT": Object {
+                                "CONTACT_FORM": Object {
+                                  "ADDRESS": "Address",
+                                  "ADDRESSES": "Addresses",
                                   "ADD_ADDRESS": "Add Address",
+                                  "NAME": "Name",
+                                  "NETWORK": "Network",
+                                },
+                                "MODAL_CREATE_CONTACT": Object {
                                   "DESCRIPTION": "Enter your contacts name and addresses and add them to your list.",
-                                  "FORM": Object {
-                                    "ADDRESS": "Address",
-                                    "ADDRESSES": "Addresses",
-                                    "NAME": "Name",
-                                    "NETWORK": "Network",
-                                  },
                                   "TITLE": "Add Contact",
                                 },
                                 "MODAL_DELETE_CONTACT": Object {
                                   "DESCRIPTION": "Do you really want to delete this contact? Once deleted, you will not be able to restore it.",
                                   "TITLE": "Delete Contact",
+                                },
+                                "MODAL_UPDATE_CONTACT": Object {
+                                  "TITLE": "Edit Contact",
                                 },
                               },
                               "HELP": Object {
@@ -13083,20 +13197,23 @@ exports[`Application root should render without crashing 1`] = `
                               "YOUR_PASSPHRASE": "Your Passphrase",
                             },
                             "CONTACTS": Object {
-                              "MODAL_CREATE_CONTACT": Object {
+                              "CONTACT_FORM": Object {
+                                "ADDRESS": "Address",
+                                "ADDRESSES": "Addresses",
                                 "ADD_ADDRESS": "Add Address",
+                                "NAME": "Name",
+                                "NETWORK": "Network",
+                              },
+                              "MODAL_CREATE_CONTACT": Object {
                                 "DESCRIPTION": "Enter your contacts name and addresses and add them to your list.",
-                                "FORM": Object {
-                                  "ADDRESS": "Address",
-                                  "ADDRESSES": "Addresses",
-                                  "NAME": "Name",
-                                  "NETWORK": "Network",
-                                },
                                 "TITLE": "Add Contact",
                               },
                               "MODAL_DELETE_CONTACT": Object {
                                 "DESCRIPTION": "Do you really want to delete this contact? Once deleted, you will not be able to restore it.",
                                 "TITLE": "Delete Contact",
+                              },
+                              "MODAL_UPDATE_CONTACT": Object {
+                                "TITLE": "Edit Contact",
                               },
                             },
                             "HELP": Object {
@@ -13383,20 +13500,23 @@ exports[`Application root should render without crashing 1`] = `
                               "YOUR_PASSPHRASE": "Your Passphrase",
                             },
                             "CONTACTS": Object {
-                              "MODAL_CREATE_CONTACT": Object {
+                              "CONTACT_FORM": Object {
+                                "ADDRESS": "Address",
+                                "ADDRESSES": "Addresses",
                                 "ADD_ADDRESS": "Add Address",
+                                "NAME": "Name",
+                                "NETWORK": "Network",
+                              },
+                              "MODAL_CREATE_CONTACT": Object {
                                 "DESCRIPTION": "Enter your contacts name and addresses and add them to your list.",
-                                "FORM": Object {
-                                  "ADDRESS": "Address",
-                                  "ADDRESSES": "Addresses",
-                                  "NAME": "Name",
-                                  "NETWORK": "Network",
-                                },
                                 "TITLE": "Add Contact",
                               },
                               "MODAL_DELETE_CONTACT": Object {
                                 "DESCRIPTION": "Do you really want to delete this contact? Once deleted, you will not be able to restore it.",
                                 "TITLE": "Delete Contact",
+                              },
+                              "MODAL_UPDATE_CONTACT": Object {
+                                "TITLE": "Edit Contact",
                               },
                             },
                             "HELP": Object {
@@ -14575,20 +14695,23 @@ exports[`Application root should render without crashing 1`] = `
                         "YOUR_PASSPHRASE": "Your Passphrase",
                       },
                       "CONTACTS": Object {
-                        "MODAL_CREATE_CONTACT": Object {
+                        "CONTACT_FORM": Object {
+                          "ADDRESS": "Address",
+                          "ADDRESSES": "Addresses",
                           "ADD_ADDRESS": "Add Address",
+                          "NAME": "Name",
+                          "NETWORK": "Network",
+                        },
+                        "MODAL_CREATE_CONTACT": Object {
                           "DESCRIPTION": "Enter your contacts name and addresses and add them to your list.",
-                          "FORM": Object {
-                            "ADDRESS": "Address",
-                            "ADDRESSES": "Addresses",
-                            "NAME": "Name",
-                            "NETWORK": "Network",
-                          },
                           "TITLE": "Add Contact",
                         },
                         "MODAL_DELETE_CONTACT": Object {
                           "DESCRIPTION": "Do you really want to delete this contact? Once deleted, you will not be able to restore it.",
                           "TITLE": "Delete Contact",
+                        },
+                        "MODAL_UPDATE_CONTACT": Object {
+                          "TITLE": "Edit Contact",
                         },
                       },
                       "HELP": Object {
