@@ -1,3 +1,4 @@
+import { ContactAddress } from "@arkecosystem/platform-sdk-profiles";
 import { Address } from "app/components/Address";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
@@ -103,7 +104,7 @@ export const ContactForm = ({ contact, networks, onCancel, onSave }: ContactForm
 
 	const handleRemoveAddress = (address: ContactAddress) => {
 		setContactAddresses(
-			contactAddresses.filter((curr) => {
+			contactAddresses.filter((curr: ContactAddress) => {
 				return !(curr.address === address.address && curr.network === address.network);
 			}),
 		);
