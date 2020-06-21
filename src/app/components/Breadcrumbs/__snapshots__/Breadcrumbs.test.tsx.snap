@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Breadcrumbs should not render without crumbs 1`] = `<DocumentFragment />`;
+
+exports[`Breadcrumbs should render 1`] = `
+<DocumentFragment>
+  <div
+    class="flex items-center space-x-3 w-full font-semibold text-theme-neutral-700"
+    data-testid="breadcrumbs__wrapper"
+  >
+    <span>
+       &lt;- 
+    </span>
+    <div
+      class="space-x-3"
+    >
+      <a
+        class="text-theme-neutral-700"
+        href="/dashboard"
+      >
+        <span>
+          Dashboard
+        </span>
+      </a>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Breadcrumbs should render with custom classes 1`] = `
+<DocumentFragment>
+  <div
+    class="flex items-center space-x-3 class-name text-theme-neutral-500"
+    data-testid="breadcrumbs__wrapper"
+  >
+    <span>
+       &lt;- 
+    </span>
+    <div
+      class="space-x-3"
+    >
+      <a
+        class=""
+        href="/wallets"
+      >
+        <span>
+          Wallets
+        </span>
+      </a>
+      <span>
+         | 
+      </span>
+    </div>
+    <div
+      class="space-x-3"
+    >
+      <a
+        class="text-theme-neutral-700"
+        href="/wallets/my_wallet"
+      >
+        <span>
+          My Wallet
+        </span>
+      </a>
+    </div>
+  </div>
+</DocumentFragment>
+`;

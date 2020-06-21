@@ -25,6 +25,7 @@ export const CustomPeers = ({ isOpen, onClose, onAddPeer }: CustomPeersProps) =>
 						<option value="">Select</option>
 						<option value="ark-ecosystem">ARK Ecosystem</option>
 					</Select>
+					<FormHelperText />
 				</FormField>
 
 				<FormField name="name">

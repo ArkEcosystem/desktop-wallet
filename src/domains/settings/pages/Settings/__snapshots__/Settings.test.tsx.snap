@@ -955,17 +955,11 @@ exports[`Settings should render a not found information 1`] = `
             class="relative cursor-pointer"
             data-testid="side-menu__item--Plugins"
           >
-            <div
-              class="sc-AxirZ dA-dDXy absolute top-0 left-0 rounded-lg bg-theme-primary"
-            />
             <li
-              class="rounded-lg p-5 flex 
-        text-theme-primary
-        bg-theme-primary-contrast
-     flex items-center"
+              class="rounded-lg p-5 flex text-theme-medium flex items-center"
             >
               <div
-                class="text-theme-primary"
+                class="text-theme-primary-contrast"
               >
                 <div
                   class="sc-AxjAm cpczEI"
@@ -984,6 +978,35 @@ exports[`Settings should render a not found information 1`] = `
               </span>
             </li>
           </div>
+          <div
+            class="relative cursor-pointer"
+            data-testid="side-menu__item--Foo"
+          >
+            <div
+              class="sc-AxirZ dA-dDXy absolute top-0 left-0 rounded-lg bg-theme-primary"
+            />
+            <li
+              class="rounded-lg p-5 flex 
+        text-theme-primary
+        bg-theme-primary-contrast
+     flex items-center"
+            >
+              <div
+                class="text-theme-primary"
+              >
+                <div
+                  class="sc-AxjAm cpczEI"
+                  height="1em"
+                  width="1em"
+                />
+              </div>
+              <span
+                class="ml-2 font-semibold"
+              >
+                Foo
+              </span>
+            </li>
+          </div>
         </ul>
       </div>
     </div>
@@ -991,7 +1014,7 @@ exports[`Settings should render a not found information 1`] = `
       class="w-3/5 pl-20 mx-12 border-l-1 border-theme-primary-contrast"
     >
       <span>
-        Plugins settings not found
+        Foo settings not found
       </span>
     </div>
   </div>
@@ -1567,6 +1590,317 @@ exports[`Settings should render peer settings 1`] = `
         >
           Add Peer
         </button>
+        <div
+          class="float-right"
+        >
+          <button
+            class="sc-AxiKw dTvTSn"
+            color="primary"
+            type="button"
+          >
+            Save
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Settings should render plugin settings 1`] = `
+<DocumentFragment>
+  <div
+    class="flex w-full h-full"
+  >
+    <div
+      class="w-1/4 h-full"
+    >
+      <div>
+        <ul>
+          <div
+            class="relative cursor-pointer"
+            data-testid="side-menu__item--General"
+          >
+            <li
+              class="rounded-lg p-5 flex text-theme-medium flex items-center"
+            >
+              <div
+                class="text-theme-primary-contrast"
+              >
+                <div
+                  class="sc-AxjAm cpczEI"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    general.svg
+                  </svg>
+                </div>
+              </div>
+              <span
+                class="ml-2 font-semibold"
+              >
+                General
+              </span>
+            </li>
+          </div>
+          <div
+            class="relative cursor-pointer"
+            data-testid="side-menu__item--Peer"
+          >
+            <li
+              class="rounded-lg p-5 flex text-theme-medium flex items-center"
+            >
+              <div
+                class="text-theme-primary-contrast"
+              >
+                <div
+                  class="sc-AxjAm cpczEI"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    peer.svg
+                  </svg>
+                </div>
+              </div>
+              <span
+                class="ml-2 font-semibold"
+              >
+                Peer
+              </span>
+            </li>
+          </div>
+          <div
+            class="relative cursor-pointer"
+            data-testid="side-menu__item--Plugins"
+          >
+            <div
+              class="sc-AxirZ dA-dDXy absolute top-0 left-0 rounded-lg bg-theme-primary"
+            />
+            <li
+              class="rounded-lg p-5 flex 
+        text-theme-primary
+        bg-theme-primary-contrast
+     flex items-center"
+            >
+              <div
+                class="text-theme-primary"
+              >
+                <div
+                  class="sc-AxjAm cpczEI"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    plugin.svg
+                  </svg>
+                </div>
+              </div>
+              <span
+                class="ml-2 font-semibold"
+              >
+                Plugins
+              </span>
+            </li>
+          </div>
+        </ul>
+      </div>
+    </div>
+    <div
+      class="w-3/5 pl-20 mx-12 border-l-1 border-theme-primary-contrast"
+    >
+      <div
+        class="flex flex-col items-start"
+      >
+        <h1
+          class="text-3xl font-bold md:text-4xl"
+          data-testid="header__title"
+        >
+          Plugin Settings
+        </h1>
+        <div
+          class="mt-2 text-theme-neutral-dark"
+          data-testid="header__subtitle"
+        >
+          Customize your wallet to suit your needs.
+        </div>
+      </div>
+      <form
+        class="space-y-6"
+        data-testid="Form"
+        id="plugin-settings__form"
+      >
+        <ul
+          class="sc-fzplWN krwTau"
+          data-testid="list-divided__items"
+        >
+          <li
+            class="flex flex-col w-full py-4"
+            data-testid="list-divided-item__wrapper"
+          >
+            <div
+              class="flex justify-between flex-col items-start mt-5"
+              data-testid="list-divided-item__inner-wrapper"
+            >
+              <div
+                class="flex flex-col"
+              >
+                <span
+                  class="mr-5 text-xl font-bold text-theme-neutral-dark"
+                  data-testid="list-divided-item__label"
+                >
+                  Apply Blacklist
+                </span>
+              </div>
+            </div>
+            <div
+              class="mt-4"
+              data-testid="list-divided-item__content"
+            >
+              <div
+                class="flex flex-row justify-between"
+              >
+                <span
+                  class="w-3/4 text-sm text-theme-neutral-dark"
+                >
+                  This list is selected safely by ARK Ecosystem. You can view it and add to the list of plugins that you find suspicious.
+                </span>
+                <div
+                  class="-mt-2"
+                >
+                  <label>
+                    <input
+                      class="sc-fznyAO htyfyy"
+                      type="checkbox"
+                    />
+                    <div
+                      class="sc-fznKkj iTYdAh"
+                    >
+                      <span
+                        class="sc-fznZeY izeqLb"
+                      />
+                    </div>
+                  </label>
+                </div>
+              </div>
+              <div
+                class="flex flex-col py-6 space-x-3 md:flex-row"
+              >
+                <button
+                  class="sc-AxiKw eWMVSn w-full"
+                  color="primary"
+                  type="button"
+                >
+                  Open List
+                </button>
+                <button
+                  class="sc-AxiKw eWMVSn w-full mt-2 md:mt-0"
+                  color="primary"
+                  type="button"
+                >
+                  Add Plugin
+                </button>
+              </div>
+            </div>
+          </li>
+          <li
+            class="flex flex-col w-full py-4"
+            data-testid="list-divided-item__wrapper"
+          >
+            <div
+              class="flex justify-between flex-col items-start mt-5"
+              data-testid="list-divided-item__inner-wrapper"
+            >
+              <div
+                class="flex flex-col"
+              >
+                <span
+                  class="mr-5 text-xl font-bold text-theme-neutral-dark"
+                  data-testid="list-divided-item__label"
+                >
+                  Plugin Source
+                </span>
+              </div>
+            </div>
+            <div
+              class="mt-4"
+              data-testid="list-divided-item__content"
+            >
+              <div
+                class="flex flex-row justify-between"
+              >
+                <span
+                  class="w-3/4 text-sm text-theme-neutral-dark"
+                >
+                  Turn this feature on, you can upload plugins to your wallet from third-party sources.
+                </span>
+                <div
+                  class="-mt-2"
+                >
+                  <label>
+                    <input
+                      class="sc-fznyAO htyfyy"
+                      type="checkbox"
+                    />
+                    <div
+                      class="sc-fznKkj iTYdAh"
+                    >
+                      <span
+                        class="sc-fznZeY izeqLb"
+                      />
+                    </div>
+                  </label>
+                </div>
+              </div>
+              <fieldset
+                class="sc-AxhCb ckQmOL mt-5"
+              >
+                <label
+                  class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
+                  data-testid="FormLabel"
+                  for="load-plugins"
+                >
+                  Load plugins from
+                </label>
+                <div
+                  class="sc-AxmLO kuiknc"
+                >
+                  <select
+                    class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
+                    data-testid="Select"
+                    name="load-plugins"
+                  >
+                    <option
+                      selected=""
+                      value=""
+                    >
+                      Select
+                    </option>
+                    <option
+                      value="github"
+                    >
+                      GitHub
+                    </option>
+                  </select>
+                  <div
+                    class="sc-AxgMl sc-Axmtr cPxyjO w-12 text-lg pointer-events-none text-theme-neutral-dark"
+                  >
+                    <div
+                      class="sc-AxjAm cpczEI"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        chevron-down.svg
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+          </li>
+        </ul>
         <div
           class="float-right"
         >
