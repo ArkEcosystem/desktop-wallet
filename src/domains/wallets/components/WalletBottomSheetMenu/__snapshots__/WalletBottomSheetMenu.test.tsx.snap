@@ -3,24 +3,24 @@
 exports[`WalletBottomSheetMenu should render 1`] = `
 <DocumentFragment>
   <aside
-    class="w-full z-50 bottom-0 absolute"
+    class="absolute bottom-0 z-50 w-full"
     data-testid="WalletBottomSheetMenu"
   >
     <div
-      class="theme-dark bg-theme-background py-4 px-6"
+      class="px-6 py-4 theme-dark bg-theme-background"
       data-testid="WalletBottomSheetMenu__header"
     >
       <div
-        class="max-w-4xl mx-auto flex items-center justify-between"
+        class="flex items-center justify-between max-w-4xl mx-auto"
       >
         <div>
           <span
-            class="text-theme-neutral-dark text-lg font-bold"
+            class="text-lg font-bold text-theme-neutral-dark"
           >
             Your wallets
           </span>
           <span
-            class="text-theme-neutral-light font-bold ml-1"
+            class="ml-1 font-bold text-theme-neutral-light"
             data-testid="WalletBottomSheetMenu__counter"
           >
             1
@@ -30,7 +30,7 @@ exports[`WalletBottomSheetMenu should render 1`] = `
           class="inline-flex items-center space-x-1"
         >
           <button
-            class="text-theme-neutral font-medium py-2 px-4 rounded focus:outline-none focus:shadow-outline flex items-center space-x-2"
+            class="flex items-center px-4 py-2 font-medium rounded text-theme-neutral focus:outline-none focus:shadow-outline space-x-2"
             data-testid="WalletBottomSheetMenu__toggle"
           >
             <span>
@@ -59,7 +59,7 @@ exports[`WalletBottomSheetMenu should render 1`] = `
       style="height: 0px; opacity: 0; overflow: hidden;"
     >
       <div
-        class="bg-theme-background px-6 py-8"
+        class="px-6 py-8 bg-theme-background"
       >
         <div
           class="max-w-4xl mx-auto"

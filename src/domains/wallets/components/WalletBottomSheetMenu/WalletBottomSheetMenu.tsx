@@ -74,14 +74,14 @@ export const WalletBottomSheetMenu = ({ walletsData, defaultIsOpen }: Props) => 
 		<>
 			<Backdrop isVisible={isOpen} />
 
-			<aside data-testid="WalletBottomSheetMenu" className="w-full z-50 bottom-0 absolute">
-				<div data-testid="WalletBottomSheetMenu__header" className="theme-dark bg-theme-background py-4 px-6">
-					<div className="max-w-4xl mx-auto flex items-center justify-between">
+			<aside data-testid="WalletBottomSheetMenu" className="absolute bottom-0 z-50 w-full">
+				<div data-testid="WalletBottomSheetMenu__header" className="px-6 py-4 theme-dark bg-theme-background">
+					<div className="flex items-center justify-between max-w-4xl mx-auto">
 						<div>
-							<span className="text-theme-neutral-dark text-lg font-bold">Your wallets</span>
+							<span className="text-lg font-bold text-theme-neutral-dark">Your wallets</span>
 							<span
 								data-testid="WalletBottomSheetMenu__counter"
-								className="text-theme-neutral-light font-bold ml-1"
+								className="ml-1 font-bold text-theme-neutral-light"
 							>
 								{walletsData.length}
 							</span>
@@ -90,7 +90,7 @@ export const WalletBottomSheetMenu = ({ walletsData, defaultIsOpen }: Props) => 
 							{isOpen && (
 								<button
 									data-testid="WalletBottomSheetMenu__filters"
-									className="text-theme-neutral font-medium py-1 px-5 border-r border-theme-neutral-light focus:outline-none flex items-center"
+									className="flex items-center px-5 py-1 font-medium border-r text-theme-neutral border-theme-neutral-light focus:outline-none"
 								>
 									<Icon name="Filters" />
 								</button>
@@ -98,7 +98,7 @@ export const WalletBottomSheetMenu = ({ walletsData, defaultIsOpen }: Props) => 
 							<button
 								data-testid="WalletBottomSheetMenu__toggle"
 								onClick={() => setIsOpen(!isOpen)}
-								className="text-theme-neutral font-medium py-2 px-4 rounded focus:outline-none focus:shadow-outline flex items-center space-x-2"
+								className="flex items-center px-4 py-2 font-medium rounded text-theme-neutral focus:outline-none focus:shadow-outline space-x-2"
 							>
 								<span>{isOpen ? "Hide" : "Show All"}</span>
 								<ToggleIcon isOpen={isOpen}>
@@ -110,7 +110,7 @@ export const WalletBottomSheetMenu = ({ walletsData, defaultIsOpen }: Props) => 
 				</div>
 
 				<Collapse isOpen={isOpen} maxHeight="20rem">
-					<div className="bg-theme-background px-6 py-8">
+					<div className="px-6 py-8 bg-theme-background">
 						<div className="max-w-4xl mx-auto">
 							<WalletTable data={walletsData} />
 						</div>
