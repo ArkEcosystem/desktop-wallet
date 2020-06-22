@@ -7,6 +7,7 @@ type SliderProps = {
 	children?: any;
 	data?: any;
 	options?: any;
+	paginationPosition: "bottom-center" | "top-right";
 };
 
 const defaultOptions = {
@@ -24,17 +25,17 @@ const defaultOptions = {
 	},
 };
 
-export const Slider = ({ children, data, options }: SliderProps) => {
+export const Slider = ({ children, data, options, paginationPosition }: SliderProps) => {
 	const swiperOptions = { ...defaultOptions, ...options };
 
 	// Swiper needs container height to be defined.
 	// `slideHeight` is required.
 	const getContainerHeight = () => {
-		const bottomOffset = 1.3; // bottom offset for pagination.
+		const paginationOffset = paginationPosition === "bottom-center" ? 1.3 : 1; // offset for pagination.
 
 		// If items are less than slidesPerView, use 1 row
 		const slidesPerColumn = data.length <= swiperOptions.slidesPerView ? 1 : swiperOptions.slidesPerColumn;
-		const containerHeight = slidesPerColumn * swiperOptions.slideHeight * bottomOffset;
+		const containerHeight = slidesPerColumn * swiperOptions.slideHeight * paginationOffset;
 		return containerHeight;
 	};
 
@@ -49,21 +50,33 @@ export const Slider = ({ children, data, options }: SliderProps) => {
 	};
 
 	return (
-		<div className="swiper-container" style={{ height: `${getContainerHeight()}px` }}>
-			<div className="h-full swiper-wrapper">
-				{data.map((item: any, index: number) => {
-					return (
-						<div className="swiper-slide" key={index} style={{ height: `${swiperOptions.slideHeight}px` }}>
-							{{ ...renderChildNode(item, index) }}
-						</div>
-					);
-				})}
+		<div className="relative">
+			{paginationPosition === "top-right" && (
+				<div className="absolute w-auto -top-12 right-0 space-x-2 swiper-pagination" />
+			)}
+
+			<div className="swiper-container" style={{ height: `${getContainerHeight()}px` }}>
+				<div className="h-full swiper-wrapper">
+					{data.map((item: any, index: number) => {
+						return (
+							<div
+								className="swiper-slide"
+								key={index}
+								style={{ height: `${swiperOptions.slideHeight}px` }}
+							>
+								{{ ...renderChildNode(item, index) }}
+							</div>
+						);
+					})}
+				</div>
+
+				{paginationPosition === "bottom-center" && <div className="swiper-pagination" />}
 			</div>
-			<div className="swiper-pagination" />
 		</div>
 	);
 };
 
 Slider.defaultProps = {
 	data: [],
+	paginationPosition: "bottom-center",
 };
