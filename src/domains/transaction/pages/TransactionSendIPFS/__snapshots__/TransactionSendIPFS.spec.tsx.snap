@@ -239,7 +239,7 @@ exports[`Vote For Delegate should render 1`] = `
                           >
                             <button
                               aria-checked="true"
-                              class="sc-fzplWN eqkHfx relative px-5 py-3 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+                              class="sc-fzplWN hMcnEd relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                               data-testid="SelectionBarOption"
                               role="radio"
                             >
@@ -247,7 +247,7 @@ exports[`Vote For Delegate should render 1`] = `
                             </button>
                             <button
                               aria-checked="false"
-                              class="sc-fzplWN eqkHfx relative px-5 py-3 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+                              class="sc-fzplWN hMcnEd relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                               data-testid="SelectionBarOption"
                               role="radio"
                             >
@@ -255,7 +255,7 @@ exports[`Vote For Delegate should render 1`] = `
                             </button>
                             <button
                               aria-checked="false"
-                              class="sc-fzplWN eqkHfx relative px-5 py-3 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+                              class="sc-fzplWN hMcnEd relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                               data-testid="SelectionBarOption"
                               role="radio"
                             >
@@ -274,7 +274,7 @@ exports[`Vote For Delegate should render 1`] = `
             class="flex justify-start mt-6 space-x-2"
           >
             <button
-              class="sc-AxjAm MNFIo"
+              class="sc-AxjAm hQuXai"
               color="primary"
               data-testid="TransactionSendIPFS__button--back"
               disabled=""
@@ -283,7 +283,7 @@ exports[`Vote For Delegate should render 1`] = `
               Back
             </button>
             <button
-              class="sc-AxjAm jgEKJo"
+              class="sc-AxjAm iueUfM"
               color="primary"
               data-testid="TransactionSendIPFS__button--continue"
               type="button"
@@ -507,7 +507,7 @@ exports[`Vote For Delegate should render 1st step 1`] = `
                 >
                   <button
                     aria-checked="true"
-                    class="sc-fzplWN eqkHfx relative px-5 py-3 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+                    class="sc-fzplWN hMcnEd relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                     data-testid="SelectionBarOption"
                     role="radio"
                   >
@@ -515,7 +515,7 @@ exports[`Vote For Delegate should render 1st step 1`] = `
                   </button>
                   <button
                     aria-checked="false"
-                    class="sc-fzplWN eqkHfx relative px-5 py-3 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+                    class="sc-fzplWN hMcnEd relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                     data-testid="SelectionBarOption"
                     role="radio"
                   >
@@ -523,7 +523,7 @@ exports[`Vote For Delegate should render 1st step 1`] = `
                   </button>
                   <button
                     aria-checked="false"
-                    class="sc-fzplWN eqkHfx relative px-5 py-3 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+                    class="sc-fzplWN hMcnEd relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                     data-testid="SelectionBarOption"
                     role="radio"
                   >
@@ -584,7 +584,7 @@ exports[`Vote For Delegate should render 2nd step 1`] = `
           class="ml-1 text-theme-danger-500"
         >
           <div
-            class="sc-AxirZ cPeJHU bg-theme-background border-theme-danger-200"
+            class="sc-AxirZ cZokSJ bg-theme-background border-theme-danger-200"
           >
             <div
               class="sc-AxhCb VoPpj"
@@ -632,7 +632,7 @@ exports[`Vote For Delegate should render 2nd step 1`] = `
         </div>
         <div>
           <div
-            class="sc-AxirZ jaEUuk"
+            class="sc-AxirZ hTKBId"
           />
         </div>
       </div>
@@ -659,7 +659,7 @@ exports[`Vote For Delegate should render 2nd step 1`] = `
         </div>
         <div>
           <div
-            class="sc-AxirZ jaEUuk"
+            class="sc-AxirZ hTKBId"
           />
         </div>
       </div>
@@ -688,7 +688,7 @@ exports[`Vote For Delegate should render 2nd step 1`] = `
           class="ml-1"
         >
           <div
-            class="sc-AxirZ cPeJHU bg-theme-background border-black"
+            class="sc-AxirZ cZokSJ bg-theme-background border-black"
           >
             <div
               class="sc-AxhCb hSzyfb"
@@ -940,7 +940,9 @@ exports[`Vote For Delegate should render 4th step 1`] = `
                   class="Clipboard__TextArea-sc-1atoaua-0 hhPnzN"
                   data-testid="clipboard__textarea"
                   readonly=""
-                />
+                >
+                  AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWKAUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK
+                </textarea>
                 <div
                   class="text-theme-primary-300 ml-5 mb-1"
                 >
@@ -994,7 +996,9 @@ exports[`Vote For Delegate should render 4th step 1`] = `
                   class="Clipboard__TextArea-sc-1atoaua-0 hhPnzN"
                   data-testid="clipboard__textarea"
                   readonly=""
-                />
+                >
+                  AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWKAUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK
+                </textarea>
                 <div
                   class="text-theme-primary-300 ml-5 mb-1"
                 >
@@ -1035,7 +1039,7 @@ exports[`Vote For Delegate should render 4th step 1`] = `
             class="ml-1 text-theme-danger-500"
           >
             <div
-              class="sc-AxirZ cPeJHU bg-theme-background border-theme-danger-200"
+              class="sc-AxirZ cZokSJ bg-theme-background border-theme-danger-200"
             >
               <div
                 class="sc-AxhCb VoPpj"
@@ -1083,7 +1087,7 @@ exports[`Vote For Delegate should render 4th step 1`] = `
           </div>
           <div>
             <div
-              class="sc-AxirZ cUpwpd"
+              class="sc-AxirZ efFWdY"
             />
           </div>
         </div>
@@ -1130,7 +1134,7 @@ exports[`Vote For Delegate should render 4th step 1`] = `
             class="ml-1 text-theme-danger"
           >
             <div
-              class="sc-AxirZ cPeJHU bg-theme-background border-theme-danger-200"
+              class="sc-AxirZ cZokSJ bg-theme-background border-theme-danger-200"
             >
               <div
                 class="sc-AxhCb liaKlj"

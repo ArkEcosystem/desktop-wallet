@@ -4,7 +4,7 @@ import { act, renderHook } from "@testing-library/react-hooks";
 import React from "react";
 import { FormContext, useForm } from "react-hook-form";
 
-import { FirstStep, FourthStep, SecondStep, ThirdStep, TransactionSendModalIPFS } from "./TransactionSendModalIPFS";
+import { FirstStep, FourthStep, SecondStep, ThirdStep, TransactionSendIPFS } from "./TransactionSendIPFS";
 
 describe("Vote For Delegate", () => {
 	const onCopy = jest.fn();
@@ -57,7 +57,7 @@ describe("Vote For Delegate", () => {
 		let rendered: RenderResult;
 
 		await act(async () => {
-			rendered = render(<TransactionSendModalIPFS onCopy={onCopy} />);
+			rendered = render(<TransactionSendIPFS onCopy={onCopy} />);
 			await waitFor(() => expect(rendered.getByTestId(`TransactionSendIPFS__step--first`)).toBeTruthy());
 		});
 

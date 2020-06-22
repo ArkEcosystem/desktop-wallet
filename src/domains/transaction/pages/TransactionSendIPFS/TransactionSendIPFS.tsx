@@ -97,7 +97,7 @@ export const SecondStep = () => (
 				label="Sender"
 				extra={
 					<div>
-						<Circle avatarId="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"></Circle>
+						<Circle avatarId="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
 					</div>
 				}
 			>
@@ -107,7 +107,7 @@ export const SecondStep = () => (
 				label="Recipient"
 				extra={
 					<div>
-						<Circle avatarId="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"></Circle>
+						<Circle avatarId="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
 					</div>
 				}
 			>
@@ -167,7 +167,7 @@ export const FourthStep = () => (
 				</p>
 				<TransactionDetail label="ID">
 					<div className="flex items-center">
-						<Clipboard>
+						<Clipboard data="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWKAUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK">
 							<Address
 								addressClass="text-theme-primary"
 								address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWKAUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
@@ -181,7 +181,7 @@ export const FourthStep = () => (
 				</TransactionDetail>
 				<TransactionDetail label="Block ID">
 					<div className="flex items-center">
-						<Clipboard>
+						<Clipboard data="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWKAUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK">
 							<Address
 								addressClass="text-theme-primary"
 								address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWKAUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
@@ -239,7 +239,7 @@ type Props = {
 	onCopy: () => void;
 };
 
-export const TransactionSendModalIPFS = ({ onCopy }: Props) => {
+export const TransactionSendIPFS = ({ onCopy }: Props) => {
 	const [activeTab, setActiveTab] = React.useState(1);
 
 	const form = useForm({ mode: "onChange" });
