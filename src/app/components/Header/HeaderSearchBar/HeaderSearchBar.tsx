@@ -29,7 +29,7 @@ export const HeaderSearchBar = ({ onSearch }: HeaderSearchBarProps) => {
         <button
           data-testid="header-search-bar__button"
           type="button"
-          className="flex items-center font-semibold my-auto cursor-pointer text-theme-primary-200 space-x-3"
+          className="flex items-center my-auto font-semibold cursor-pointer text-theme-primary-200 space-x-3"
           onClick={() => setSearchbarVisible(true)}
         >
           <span>Search</span>
@@ -38,7 +38,7 @@ export const HeaderSearchBar = ({ onSearch }: HeaderSearchBarProps) => {
       }
 
       {searchbarVisible &&
-        <div ref={ref} className="flex items-center w-full px-6 py-4 bg-white rounded-md shadow-xl">
+        <div ref={ref} className="flex items-center w-full px-6 py-4 bg-white shadow-xl rounded-md">
           <button type="button" onClick={() => setQuery('')}>
             <Icon className="text-theme-neutral-500" name="CrossSlim" width={12} height={12} />
           </button>
