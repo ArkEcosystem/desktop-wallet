@@ -1,10 +1,9 @@
-import { Collapse } from "app/components/Collapse";
+import { Collapse, CollapseToggleButton } from "app/components/Collapse";
 import { Icon } from "app/components/Icon";
 import { Table } from "app/components/Table";
 import { WalletListItem, WalletListItemProps } from "app/components/WalletListItem";
 import { AnimatePresence, motion } from "framer-motion";
 import React from "react";
-import tw, { styled } from "twin.macro";
 
 const Backdrop = ({ isVisible }: { isVisible: boolean }) => {
 	return (
@@ -21,14 +20,6 @@ const Backdrop = ({ isVisible }: { isVisible: boolean }) => {
 		</AnimatePresence>
 	);
 };
-
-const ToggleIcon = styled.span<{ isOpen: boolean }>`
-	${tw`w-5 h-5 inline-flex items-center justify-center rounded-full transition-colors duration-200 transform`}
-	${({ isOpen }) =>
-		isOpen
-			? tw`bg-theme-primary text-theme-primary-contrast rotate-180`
-			: tw`text-theme-primary bg-theme-primary-contrast`}
-`;
 
 const WalletTable = ({ data }: { data: WalletListItemProps[] }) => {
 	const columns = [
@@ -95,16 +86,10 @@ export const WalletBottomSheetMenu = ({ walletsData, defaultIsOpen }: Props) => 
 									<Icon name="Filters" />
 								</button>
 							)}
-							<button
+							<CollapseToggleButton
 								data-testid="WalletBottomSheetMenu__toggle"
 								onClick={() => setIsOpen(!isOpen)}
-								className="flex items-center px-4 py-2 font-medium rounded text-theme-neutral focus:outline-none focus:shadow-outline space-x-2"
-							>
-								<span>{isOpen ? "Hide" : "Show All"}</span>
-								<ToggleIcon isOpen={isOpen}>
-									<Icon name="ChevronDown" />
-								</ToggleIcon>
-							</button>
+							/>
 						</div>
 					</div>
 				</div>
