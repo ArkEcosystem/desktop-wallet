@@ -42,7 +42,7 @@ exports[`WalletVote should render 1`] = `
       style="max-height: auto; height: auto; opacity: 1; overflow: auto;"
     >
       <div
-        class="py-4 px-1 grid grid-flow-row row-gap-6"
+        class="px-1 py-4 grid grid-flow-row row-gap-6"
       >
         <div
           class="flex items-center justify-between"
@@ -74,7 +74,7 @@ exports[`WalletVote should render 1`] = `
             </div>
             <div>
               <p
-                class="font-semibold text-theme-neutral text-sm space-y-1"
+                class="text-sm font-semibold text-theme-neutral space-y-1"
               >
                 Address Delegate
               </p>
@@ -103,25 +103,25 @@ exports[`WalletVote should render 1`] = `
               class="flex items-stretch divide-x-1 divide-theme-neutral-300"
             >
               <li
-                class="px-10 flex flex-col items-center space-y-1"
+                class="flex flex-col items-center px-10 space-y-1"
               >
                 <p
-                  class="font-semibold text-theme-neutral text-sm"
+                  class="text-sm font-semibold text-theme-neutral"
                 >
                   Rank
                 </p>
                 <span
-                  class="text-theme-neutral-dark font-bold"
+                  class="font-bold text-theme-neutral-dark"
                   data-testid="WalletVote__delegate__rank"
                 >
                   #1
                 </span>
               </li>
               <li
-                class="px-10 flex flex-col items-center space-y-1"
+                class="flex flex-col items-center px-10 space-y-1"
               >
                 <p
-                  class="font-semibold text-theme-neutral text-sm"
+                  class="text-sm font-semibold text-theme-neutral"
                 >
                   Explorer
                 </p>
@@ -132,7 +132,7 @@ exports[`WalletVote should render 1`] = `
                   target="_blank"
                 >
                   <div
-                    class="sc-AxiKw dzBdqj text-theme-primary text-2xl"
+                    class="sc-AxiKw dzBdqj text-2xl text-theme-primary"
                     height="1em"
                     width="1em"
                   >
@@ -143,10 +143,10 @@ exports[`WalletVote should render 1`] = `
                 </a>
               </li>
               <li
-                class="px-10 flex flex-col items-center space-y-1"
+                class="flex flex-col items-center px-10 space-y-1"
               >
                 <p
-                  class="font-semibold text-theme-neutral text-sm"
+                  class="text-sm font-semibold text-theme-neutral"
                 >
                   Marketpl.
                 </p>
@@ -157,7 +157,7 @@ exports[`WalletVote should render 1`] = `
                   target="_blank"
                 >
                   <div
-                    class="sc-AxiKw dzBdqj text-theme-primary text-xl"
+                    class="sc-AxiKw dzBdqj text-xl text-theme-primary"
                     height="1em"
                     width="1em"
                   >
@@ -168,10 +168,10 @@ exports[`WalletVote should render 1`] = `
                 </a>
               </li>
               <li
-                class="px-10 flex flex-col items-center space-y-1"
+                class="flex flex-col items-center px-10 space-y-1"
               >
                 <p
-                  class="font-semibold text-theme-neutral text-sm"
+                  class="text-sm font-semibold text-theme-neutral"
                 >
                   Status
                 </p>
@@ -226,7 +226,7 @@ exports[`WalletVote should render 1`] = `
             </div>
             <div>
               <p
-                class="font-semibold text-theme-neutral text-sm space-y-1"
+                class="text-sm font-semibold text-theme-neutral space-y-1"
               >
                 Address Delegate
               </p>
@@ -255,25 +255,25 @@ exports[`WalletVote should render 1`] = `
               class="flex items-stretch divide-x-1 divide-theme-neutral-300"
             >
               <li
-                class="px-10 flex flex-col items-center space-y-1"
+                class="flex flex-col items-center px-10 space-y-1"
               >
                 <p
-                  class="font-semibold text-theme-neutral text-sm"
+                  class="text-sm font-semibold text-theme-neutral"
                 >
                   Rank
                 </p>
                 <span
-                  class="text-theme-neutral-dark font-bold"
+                  class="font-bold text-theme-neutral-dark"
                   data-testid="WalletVote__delegate__rank"
                 >
                   #2
                 </span>
               </li>
               <li
-                class="px-10 flex flex-col items-center space-y-1"
+                class="flex flex-col items-center px-10 space-y-1"
               >
                 <p
-                  class="font-semibold text-theme-neutral text-sm"
+                  class="text-sm font-semibold text-theme-neutral"
                 >
                   Status
                 </p>

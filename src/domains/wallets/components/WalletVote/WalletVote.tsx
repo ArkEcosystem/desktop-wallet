@@ -35,7 +35,7 @@ export const WalletVote = ({ delegates, onUnvote, defaultIsOpen }: Props) => {
 			</div>
 
 			<Collapse isOpen={isOpen}>
-				<div className="py-4 px-1 grid grid-flow-row row-gap-6">
+				<div className="px-1 py-4 grid grid-flow-row row-gap-6">
 					{delegates.map(({ address, username, rank, isActive, explorerUrl, msqUrl }) => (
 						<div
 							data-testid="WalletVote__delegate"
@@ -50,7 +50,7 @@ export const WalletVote = ({ delegates, onUnvote, defaultIsOpen }: Props) => {
 									<Avatar size="large" address={address} />
 								</div>
 								<div>
-									<p className="font-semibold text-theme-neutral text-sm space-y-1">
+									<p className="text-sm font-semibold text-theme-neutral space-y-1">
 										Address Delegate
 									</p>
 									<Address walletName={username} address={address} />
@@ -59,46 +59,46 @@ export const WalletVote = ({ delegates, onUnvote, defaultIsOpen }: Props) => {
 
 							<div className="flex items-center">
 								<ul className="flex items-stretch divide-x-1 divide-theme-neutral-300">
-									<li className="px-10 flex flex-col items-center space-y-1">
-										<p className="font-semibold text-theme-neutral text-sm">Rank</p>
+									<li className="flex flex-col items-center px-10 space-y-1">
+										<p className="text-sm font-semibold text-theme-neutral">Rank</p>
 										<span
 											data-testid="WalletVote__delegate__rank"
-											className="text-theme-neutral-dark font-bold"
+											className="font-bold text-theme-neutral-dark"
 										>
 											#{rank}
 										</span>
 									</li>
 
 									{explorerUrl && (
-										<li className="px-10 flex flex-col items-center space-y-1">
-											<p className="font-semibold text-theme-neutral text-sm">Explorer</p>
+										<li className="flex flex-col items-center px-10 space-y-1">
+											<p className="text-sm font-semibold text-theme-neutral">Explorer</p>
 											<a
 												data-testid="WalletVote__delegate__explorer"
 												href={explorerUrl}
 												target="_blank"
 												rel="noreferrer"
 											>
-												<Icon name="Explorer" className="text-theme-primary text-2xl" />
+												<Icon name="Explorer" className="text-2xl text-theme-primary" />
 											</a>
 										</li>
 									)}
 
 									{msqUrl && (
-										<li className="px-10 flex flex-col items-center space-y-1">
-											<p className="font-semibold text-theme-neutral text-sm">Marketpl.</p>
+										<li className="flex flex-col items-center px-10 space-y-1">
+											<p className="text-sm font-semibold text-theme-neutral">Marketpl.</p>
 											<a
 												data-testid="WalletVote__delegate__msq"
 												href={msqUrl}
 												target="_blank"
 												rel="noreferrer"
 											>
-												<Icon name="Link" className="text-theme-primary text-xl" />
+												<Icon name="Link" className="text-xl text-theme-primary" />
 											</a>
 										</li>
 									)}
 
-									<li className="px-10 flex flex-col items-center space-y-1">
-										<p className="font-semibold text-theme-neutral text-sm">Status</p>
+									<li className="flex flex-col items-center px-10 space-y-1">
+										<p className="text-sm font-semibold text-theme-neutral">Status</p>
 										<Icon
 											name={isActive ? "Ok" : "StatusClock"}
 											className={isActive ? "text-theme-success" : "text-theme-neutral"}
