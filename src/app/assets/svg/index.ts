@@ -21,7 +21,7 @@ import { ReactComponent as Eye } from "./eye.svg";
 import { ReactComponent as FilePassword } from "./file-password.svg";
 import { ReactComponent as Filters } from "./filters.svg";
 import { ReactComponent as General } from "./general.svg";
-import { ReactComponent as Grand } from "./Grand.svg";
+import { ReactComponent as Grant } from "./grant.svg";
 import { ReactComponent as Grid } from "./grid.svg";
 import { ReactComponent as Import } from "./import.svg";
 import { ReactComponent as Ipfs } from "./ipfs.svg";
@@ -82,7 +82,7 @@ export const SvgCollection: any = {
 	FilePassword,
 	Filters,
 	General,
-	Grand,
+	Grant,
 	Grid,
 	Import,
 	Ipfs,

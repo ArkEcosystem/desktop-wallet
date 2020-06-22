@@ -1,5 +1,6 @@
 import { images } from "app/assets/images";
 import { Button } from "app/components/Button";
+import { Icon } from "app/components/Icon";
 import { Modal } from "app/components/Modal";
 import { ReviewRating } from "app/components/ReviewRating";
 import { Table } from "app/components/Table";
@@ -95,7 +96,11 @@ export const FeaturedPlugins = (props: FeaturedPluginsProps) => {
 								<div className="font-semibold text-theme-primary-500 hover:text-theme-primary-400">
 									{rowData.name}
 								</div>
-								<div>{rowData.description}</div>
+								<div className="inline-flex items-center space-x-2">
+									<span>{rowData.description}</span>
+									{rowData.isOfficial && <Icon name="OfficialArkPlugin" width={15} height={15} />}
+									{rowData.isGrant && <Icon name="Grant" width={16} height={16} />}
+								</div>
 							</td>
 
 							<td className="py-10">{rowData.category}</td>
