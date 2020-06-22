@@ -71,13 +71,13 @@ export const WalletsControls = ({
 
 			<Divider type="vertical" />
 
-			<Button onClick={onCreateWallet} color="primary" variant="solid" className="ml-8 mr-3">
+			<Button onClick={onCreateWallet} className="ml-8 mr-3">
 				<div className="flex items-center justify-center mr-2 text-sm align-middle">
 					<Icon name="Plus" width={10} />
 					<span className="ml-2">Create</span>
 				</div>
 			</Button>
-			<Button onClick={onImportWallet} color="primary" variant="plain">
+			<Button onClick={onImportWallet} variant="plain">
 				<div className="flex items-center justify-center mr-2 text-sm align-middle">
 					<Icon name="Import" />
 					<span className="ml-2">Import</span>

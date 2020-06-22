@@ -36,14 +36,12 @@ export const UpdateWalletName = ({ ...props }: UpdateWalletNameProps) => {
 					<FormHelperText />
 				</FormField>
 
-				<div className="mt-4 space-x-3">
-					<Button color="primary" variant="plain" onClick={props.onCancel}>
+				<div className="flex justify-end mt-4 space-x-3">
+					<Button variant="plain" onClick={props.onCancel}>
 						Cancel
 					</Button>
 
-					<Button type="submit" color="primary" variant="solid">
-						Save
-					</Button>
+					<Button type="submit">Save</Button>
 				</div>
 			</Form>
 		</Modal>

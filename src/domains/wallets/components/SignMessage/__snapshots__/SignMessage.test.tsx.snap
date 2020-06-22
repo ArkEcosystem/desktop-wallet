@@ -14,7 +14,7 @@ exports[`SignMessage should render as signed 1`] = `
       class="absolute top-0 right-0 mt-4 mr-4"
     >
       <button
-        class="sc-AxjAm eYrebl"
+        class="sc-AxjAm bThAoP"
         color="neutral"
         data-testid="modal__close-btn"
         type="button"
@@ -139,31 +139,25 @@ exports[`SignMessage should render as signed 1`] = `
               </div>
             </div>
             <div
-              class="flex items-center pb-5 mt-3"
+              class="flex justify-end pb-5 mt-3"
             >
               <button
-                class="sc-AxjAm MNFIo"
+                class="sc-AxjAm ddJBbC"
                 color="primary"
                 type="button"
               >
                 <div
-                  class="flex items-center justify-between px-1"
+                  class="sc-AxhCb fxrKLH"
+                  height="1em"
+                  width="1em"
                 >
-                  <div
-                    class="sc-AxhCb fxrKLH"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      copy.svg
-                    </svg>
-                  </div>
-                  <span
-                    class="ml-2"
-                  >
-                    Copy Signature
-                  </span>
+                  <svg>
+                    copy.svg
+                  </svg>
                 </div>
+                <span>
+                  Copy Signature
+                </span>
               </button>
             </div>
           </div>
@@ -188,7 +182,7 @@ exports[`SignMessage should render the SignMessage 1`] = `
       class="absolute top-0 right-0 mt-4 mr-4"
     >
       <button
-        class="sc-AxjAm eYrebl"
+        class="sc-AxjAm bThAoP"
         color="neutral"
         data-testid="modal__close-btn"
         type="button"
@@ -227,7 +221,7 @@ exports[`SignMessage should render the SignMessage 1`] = `
             id="sign-message__form"
           >
             <fieldset
-              class="sc-AxiKw iQzisX relative"
+              class="sc-AxiKw iQzisX flex flex-col space-y-2"
             >
               <label
                 class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
@@ -237,24 +231,28 @@ exports[`SignMessage should render the SignMessage 1`] = `
               >
                 Signatory
               </label>
-              <input
-                class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
-                data-testid="Input"
-                disabled=""
-                name="signatory-address"
-                type="text"
-              />
               <div
-                class="absolute top-0 flex items-center mt-8 ml-4"
+                class="relative"
               >
-                <div
-                  class="sc-AxirZ kSZulD"
+                <input
+                  class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+                  data-testid="Input"
+                  disabled=""
+                  name="signatory-address"
+                  type="text"
                 />
-                <span
-                  class="ml-3 font-semibold "
+                <div
+                  class="absolute top-0 flex items-center mt-2 ml-4"
                 >
-                  AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK
-                </span>
+                  <div
+                    class="sc-AxirZ kSZulD"
+                  />
+                  <span
+                    class="ml-3 font-semibold "
+                  >
+                    AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK
+                  </span>
+                </div>
               </div>
             </fieldset>
             <fieldset
@@ -317,17 +315,17 @@ exports[`SignMessage should render the SignMessage 1`] = `
               </div>
             </fieldset>
             <div
-              class="flex items-center space-x-3"
+              class="flex justify-end space-x-3"
             >
               <button
-                class="sc-AxjAm MNFIo"
+                class="sc-AxjAm ddJBbC"
                 color="primary"
                 type="button"
               >
                 Cancel
               </button>
               <button
-                class="sc-AxjAm jJyNnk"
+                class="sc-AxjAm ddQVWI"
                 color="primary"
                 data-testid="sign-message__sign-button"
                 type="button"

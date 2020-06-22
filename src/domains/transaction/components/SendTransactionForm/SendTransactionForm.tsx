@@ -51,7 +51,7 @@ const RecipientListItem = ({ amount, address, walletName, assetSymbol, onRemove 
 			{amount} {assetSymbol}
 		</td>
 		<td className="w-16 text-right">
-			<Button color="primary" variant="plain" onClick={onRemove} data-testid="send-transaction__remove-recipient">
+			<Button variant="plain" onClick={onRemove} data-testid="send-transaction__remove-recipient">
 				<div className="py-1">
 					<Icon name="Trash" />
 				</div>
@@ -302,7 +302,6 @@ export const SendTransactionForm = ({
 				{amount > 0 && !!recipient && (
 					<Button
 						data-testid="send-transaction__add-recipient"
-						color="primary"
 						variant="plain"
 						className="w-full"
 						onClick={() => onAddRecipient(recipient, amount)}
@@ -354,12 +353,10 @@ export const SendTransactionForm = ({
 						</SelectionBar>
 					</div>
 				</div>
-				<div className="flex items-center">
+				<div className="flex justify-end space-x-3">
 					<Button
 						data-testid="send-transaction-click-back"
-						color="primary"
 						variant="plain"
-						size="large"
 						onClick={onClickBack}
 						disabled={!network}
 					>
@@ -368,10 +365,6 @@ export const SendTransactionForm = ({
 					<Button
 						data-testid="send-transaction-click-submit"
 						type="submit"
-						color="primary"
-						variant="solid"
-						size="large"
-						className="ml-5"
 						onClick={onFormSubmit}
 						disabled={!network}
 					>

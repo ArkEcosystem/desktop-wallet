@@ -47,16 +47,10 @@ export const WalletUpdate = ({
 							</p>
 						</div>
 						<div className="flex flex-col justify-center space-x-0 sm:flex-row sm:space-x-3">
-							<Button
-								color="primary"
-								variant="solid"
-								onClick={onUpdate}
-								data-testid="wallet-update__update-button"
-							>
+							<Button onClick={onUpdate} data-testid="wallet-update__update-button">
 								{t("COMMON.UPDATE_NOW")}
 							</Button>
 							<Button
-								color="primary"
 								variant="plain"
 								className="mt-2 sm:mt-0"
 								onClick={onCancel}
@@ -92,12 +86,7 @@ export const WalletUpdate = ({
 							</p>
 						</div>
 						<div className="flex justify-center">
-							<Button
-								color="primary"
-								variant="solid"
-								onClick={onInstall}
-								data-testid="wallet-update__install-button"
-							>
+							<Button onClick={onInstall} data-testid="wallet-update__install-button">
 								{t("COMMON.INSTALL")}
 							</Button>
 						</div>

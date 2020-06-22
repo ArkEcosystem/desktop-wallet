@@ -53,10 +53,8 @@ export const Peer = ({ formConfig, onSubmit }: PeerProps) => {
 			<Form id="peer-settings__form" context={formConfig.context} onSubmit={onSubmit}>
 				<ListDivided items={peerItems} />
 				<PeerList peers={peers} />
-				<div className="float-right">
-					<Button color="primary" variant="solid" size="large">
-						Save
-					</Button>
+				<div className="flex justify-end">
+					<Button>Save</Button>
 				</div>
 			</Form>
 		</>

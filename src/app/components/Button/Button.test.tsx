@@ -11,9 +11,9 @@ describe("Button", () => {
 	});
 
 	it("should render contrast text if not primary", () => {
-		const { container } = render(<Button variant="solid" color="plain" />);
+		const { container } = render(<Button color="danger" />);
 
-		expect(container).toHaveStyle("color: var(--theme-color-plain-contrast);");
+		expect(container).toHaveStyle("color: var(--theme-color-danger-contrast);");
 		expect(container).toMatchSnapshot();
 	});
 

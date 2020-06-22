@@ -37,21 +37,10 @@ export const InstallPlugin = ({ step, isOpen, onClose, onCancel, onDownload }: I
 							<li>{t("PLUGINS.MODAL_INSTALL_PLUGIN.ITEM_3")}</li>
 						</ul>
 						<div className="flex justify-end mt-8 space-x-3">
-							<Button
-								color="primary"
-								variant="plain"
-								onClick={onCancel}
-								data-testid="install-plugin__cancel-button"
-							>
+							<Button variant="plain" onClick={onCancel} data-testid="install-plugin__cancel-button">
 								{t("COMMON.CANCEL")}
 							</Button>
-							<Button
-								type="button"
-								color="primary"
-								variant="solid"
-								onClick={onDownload}
-								data-testid="install-plugin__download-button"
-							>
+							<Button onClick={onDownload} data-testid="install-plugin__download-button">
 								{t("COMMON.DOWNLOAD")}
 							</Button>
 						</div>
@@ -139,22 +128,10 @@ export const InstallPlugin = ({ step, isOpen, onClose, onCancel, onDownload }: I
 							</div>
 						</div>
 						<div className="flex justify-end mt-8 space-x-3">
-							<Button
-								color="primary"
-								variant="plain"
-								onClick={onCancel}
-								data-testid="install-plugin__cancel-button"
-							>
+							<Button variant="plain" onClick={onCancel} data-testid="install-plugin__cancel-button">
 								{t("COMMON.CANCEL")}
 							</Button>
-							<Button
-								type="button"
-								color="primary"
-								variant="solid"
-								data-testid="install-plugin__install-button"
-							>
-								{t("COMMON.INSTALL")}
-							</Button>
+							<Button data-testid="install-plugin__install-button">{t("COMMON.INSTALL")}</Button>
 						</div>
 					</>
 				)}

@@ -88,12 +88,7 @@ export const SecondStep = ({
 					facere nostrum.
 				</Alert>
 				<MnemonicList mnemonic={mnemonic} />
-				<Button
-					data-testid="CreateWallet__copy"
-					onClick={onCopy}
-					variant="plain"
-					className="flex items-center space-x-2"
-				>
+				<Button data-testid="CreateWallet__copy" onClick={onCopy} variant="plain">
 					<Icon name="Copy" />
 					<span>Copy</span>
 				</Button>
@@ -261,7 +256,6 @@ export const CreateWallet = ({ networks, mnemonic, onSubmit, onCopy, onDownload,
 							{activeTab < 4 && (
 								<Button
 									data-testid="CreateWallet__continue-button"
-									variant="solid"
 									disabled={!isValid}
 									onClick={handleNext}
 								>
@@ -269,14 +263,11 @@ export const CreateWallet = ({ networks, mnemonic, onSubmit, onCopy, onDownload,
 								</Button>
 							)}
 
-							<Button
-								data-testid="CreateWallet__save-button"
-								type="submit"
-								variant="solid"
-								className={activeTab === 4 ? "block" : "hidden"}
-							>
-								Save & Finish
-							</Button>
+							{activeTab === 4 && (
+								<Button type="submit" data-testid="CreateWallet__save-button">
+									Save & Finish
+								</Button>
+							)}
 						</div>
 					</div>
 				</Tabs>

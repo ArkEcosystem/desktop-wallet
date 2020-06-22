@@ -77,7 +77,7 @@ export const WalletListItem = ({
 						if (variant === "singleAction") {
 							return (
 								<div className="text-right">
-									<Button data-testid="button" variant={"plain"} onClick={onDropdownAction}>
+									<Button data-testid="button" variant="plain" onClick={onDropdownAction}>
 										{actions[0].label}
 									</Button>
 								</div>

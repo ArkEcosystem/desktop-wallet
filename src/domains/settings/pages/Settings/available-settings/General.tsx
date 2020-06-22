@@ -218,19 +218,13 @@ export const General = ({ formConfig, pageConfig, onSubmit }: GeneralProps) => {
 					<ListDivided items={otherItems} />
 				</div>
 				<div className="flex justify-between w-full">
-					<Button color="danger" variant="plain" size="large">
-						<div className="flex items-center justify-between px-1">
-							<Icon name="Reset" />
-							<span className="ml-2">Reset Data</span>
-						</div>
+					<Button color="danger" variant="plain">
+						<Icon name="Reset" />
+						<span>Reset Data</span>
 					</Button>
 					<div className="space-x-3">
-						<Button color="primary" variant="plain" size="large">
-							Cancel
-						</Button>
-						<Button color="primary" variant="solid" size="large">
-							Save
-						</Button>
+						<Button variant="plain">Cancel</Button>
+						<Button>Save</Button>
 					</div>
 				</div>
 			</Form>

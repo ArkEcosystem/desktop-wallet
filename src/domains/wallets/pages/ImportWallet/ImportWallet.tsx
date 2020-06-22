@@ -87,13 +87,8 @@ const ImportWallet = ({ networks, onSubmit }: Props) => {
 								</div>
 							)}
 						</div>
-						<div className="mt-10">
-							<Button
-								color="primary"
-								variant="solid"
-								onClick={() => setActiveIndex(2)}
-								data-testid="import-wallet__next-step--button"
-							>
+						<div className="flex justify-end mt-10">
+							<Button onClick={() => setActiveIndex(2)} data-testid="import-wallet__next-step--button">
 								Continue
 							</Button>
 						</div>
@@ -129,16 +124,15 @@ const ImportWallet = ({ networks, onSubmit }: Props) => {
 									{renderImportInput()}
 								</div>
 							</div>
-							<div className="mt-10 space-x-3">
+							<div className="flex justify-end mt-10 space-x-3">
 								<Button
 									data-testid="import-wallet__prev-step--button"
-									color="primary"
 									variant="plain"
 									onClick={onPreviousBtnClick}
 								>
 									Back
 								</Button>
-								<Button form="import-wallet__form" color="primary" variant="solid" type="submit">
+								<Button form="import-wallet__form" type="submit">
 									Go to Wallet
 								</Button>
 							</div>

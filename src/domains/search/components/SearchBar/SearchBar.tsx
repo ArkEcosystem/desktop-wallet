@@ -25,7 +25,7 @@ export const SearchBar = (props: SearchBarProps) => {
 					/>
 				</div>
 
-				<Button color="primary" variant="solid" size="small" className="my-1">
+				<Button size="small" className="my-1">
 					<span className="px-2 text-sm">{t("SEARCH.FIND_IT")}</span>
 				</Button>
 			</div>
