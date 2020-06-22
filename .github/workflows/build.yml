@@ -108,6 +108,9 @@ jobs:
               with:
                   node-version: ${{ matrix.node-version }}
 
+            - name: Install node-gyp
+              run: yarn global add node-gyp
+
             - name: Install
               run: yarn install --frozen-lockfile
 
