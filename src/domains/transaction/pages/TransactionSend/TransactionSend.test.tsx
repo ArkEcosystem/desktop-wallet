@@ -4,7 +4,7 @@ import { act, renderHook } from "@testing-library/react-hooks";
 import React from "react";
 import { FormContext, useForm } from "react-hook-form";
 
-import { FirstStep, FourthStep, SecondStep, ThirdStep, TransactionSend } from "../TransactionSend";
+import { FifthStep, FirstStep, FourthStep, SecondStep, ThirdStep, TransactionSend } from "../TransactionSend";
 
 const defaultFormValues = {
 	maxAvailableAmount: 80,
@@ -105,6 +105,19 @@ describe("Transaction Send", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it("should render 5th step", async () => {
+		const { result: form } = renderHook(() => useForm());
+
+		const { getByTestId, asFragment } = render(
+			<FormContext {...form.current}>
+				<FifthStep />
+			</FormContext>,
+		);
+
+		expect(getByTestId("TransactionSend__step--fifth")).toBeTruthy();
+		expect(asFragment()).toMatchSnapshot();
+	});
+
 	it("should render", async () => {
 		let rendered: RenderResult;
 
@@ -129,9 +142,12 @@ describe("Transaction Send", () => {
 			fireEvent.click(continueButton);
 			expect(getByTestId(`TransactionSend__step--third`)).toBeTruthy();
 
+			fireEvent.click(continueButton);
+			expect(getByTestId(`TransactionSend__step--fourth`)).toBeTruthy();
+
 			// Back
 			fireEvent.click(getByTestId(`TransactionSend__button--back`));
-			expect(getByTestId(`TransactionSend__step--second`)).toBeTruthy();
+			expect(getByTestId(`TransactionSend__step--third`)).toBeTruthy();
 
 			fireEvent.click(continueButton);
 			fireEvent.click(continueButton);

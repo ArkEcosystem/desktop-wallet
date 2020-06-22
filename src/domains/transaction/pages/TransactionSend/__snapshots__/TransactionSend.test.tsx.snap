@@ -21,6 +21,9 @@ exports[`Transaction Send should render 1`] = `
         <li
           class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
         />
+        <li
+          class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
+        />
       </ul>
       <div
         class="mt-10"
@@ -1378,6 +1381,50 @@ exports[`Transaction Send should render 4th step 1`] = `
   <section
     class="space-y-8"
     data-testid="TransactionSend__step--fourth"
+  >
+    <div>
+      <h1
+        class="mb-0"
+      >
+        Confirm Your Transaction
+      </h1>
+      <div
+        class="grid grid-flow-row gap-2"
+      >
+        <svg
+          class="my-8"
+        >
+          confirm-transaction-ledger-banner.svg
+        </svg>
+        <p
+          class="text-theme-neutral-dark"
+        >
+          Please review and verify the information on your Ledger device. Choose Accept to complete your transaction.
+        </p>
+        <div
+          class="inline-flex items-center mt-5 space-x-4"
+        >
+          <div
+            class="sc-fzoyAV hVgQEA"
+            color="primary"
+          />
+          <span
+            class="font-semibold text-black"
+          >
+            Waiting for confirmation...
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+</DocumentFragment>
+`;
+
+exports[`Transaction Send should render 5th step 1`] = `
+<DocumentFragment>
+  <section
+    class="space-y-8"
+    data-testid="TransactionSend__step--fifth"
   >
     <div>
       <h1
