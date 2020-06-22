@@ -1,5 +1,6 @@
 export const translations: { [key: string]: any } = {
 	ADAPTER: "Adapter",
+	ADD: "Add",
 	ADDRESS: "Address",
 	ADVANCED_MODE: "Advanced Mode",
 	ALL: "All",
