@@ -1,3 +1,4 @@
+import { images } from "app/assets/images";
 import { Address } from "app/components/Address";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
@@ -6,12 +7,15 @@ import { Form } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { InputPassword } from "app/components/Input";
 import { Label } from "app/components/Label";
+import { Spinner } from "app/components/Spinner";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { TransactionDetail } from "app/components/TransactionDetail";
 import { SendTransactionForm } from "domains/transaction/components/SendTransactionForm";
 import React from "react";
 import { useForm } from "react-hook-form";
+
+const { ConfirmTransactionLedgerBanner } = images.transaction.pages.transactionSend;
 
 export const FirstStep = ({ onSubmit, formValues }: any) => {
 	return (
@@ -24,6 +28,7 @@ export const FirstStep = ({ onSubmit, formValues }: any) => {
 		</section>
 	);
 };
+
 export const SecondStep = () => (
 	<section data-testid="TransactionSend__step--second" className="space-y-8">
 		<div>
@@ -120,6 +125,25 @@ export const ThirdStep = ({ onSubmit }: any) => {
 
 export const FourthStep = () => (
 	<section data-testid="TransactionSend__step--fourth" className="space-y-8">
+		<div>
+			<h1 className="mb-0">Confirm Your Transaction</h1>
+			<div className="grid grid-flow-row gap-2">
+				<ConfirmTransactionLedgerBanner className="my-8" />
+				<p className="text-theme-neutral-dark">
+					Please review and verify the information on your Ledger device. Choose Accept to complete your
+					transaction.
+				</p>
+				<div className="inline-flex items-center mt-5 space-x-4">
+					<Spinner color="primary" size="default" />
+					<span className="font-semibold text-black">Waiting for confirmation...</span>
+				</div>
+			</div>
+		</div>
+	</section>
+);
+
+export const FifthStep = () => (
+	<section data-testid="TransactionSend__step--fifth" className="space-y-8">
 		<div>
 			<h1 className="mb-0">Transaction Successful</h1>
 			<div className="grid grid-flow-row gap-2">
@@ -226,7 +250,7 @@ export const TransactionSend = ({ onCopy, formValues }: Props) => {
 	return (
 		<div className="max-w-xl mx-auto">
 			<Tabs activeId={activeTab}>
-				<StepIndicator size={4} activeIndex={activeTab} />
+				<StepIndicator size={5} activeIndex={activeTab} />
 
 				<div className="mt-10">
 					<TabPanel tabId={1}>
@@ -241,9 +265,12 @@ export const TransactionSend = ({ onCopy, formValues }: Props) => {
 					<TabPanel tabId={4}>
 						<FourthStep />
 					</TabPanel>
+					<TabPanel tabId={5}>
+						<FifthStep />
+					</TabPanel>
 
 					<div className="flex justify-end mt-6 space-x-3">
-						{activeTab < 4 && activeTab > 1 && (
+						{activeTab > 1 && activeTab < 5 && (
 							<>
 								<Button
 									disabled={activeTab === 1}
@@ -263,7 +290,7 @@ export const TransactionSend = ({ onCopy, formValues }: Props) => {
 							</>
 						)}
 
-						{activeTab === 4 && (
+						{activeTab === 5 && (
 							<>
 								<Button
 									data-testid="TransactionSend__button--back-to-wallet"
