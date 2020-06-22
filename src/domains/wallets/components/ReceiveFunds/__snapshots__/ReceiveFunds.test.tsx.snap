@@ -5,15 +5,15 @@ exports[`ReceiveFunds should not render if not open 1`] = `<DocumentFragment />`
 exports[`ReceiveFunds should render with a wallet name 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-10 bg-black opacity-50"
+    class="fixed inset-0 z-30 bg-black opacity-50"
     data-testid="modal__overlay"
   />
   <div
-    class="sc-AxhUy fXfatb fixed left-0 right-0 z-10 flex flex-col px-12 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
+    class="sc-AxhUy fXfatb absolute left-0 right-0 top-0 z-30 flex flex-col px-12 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
     data-testid="modal__inner"
   >
     <div
-      class="absolute top-0 right-0 mt-4 mr-4"
+      class="absolute top-0 right-0 mt-4 mr-4 z-10"
     >
       <button
         class="sc-AxhCb idLVlI"
@@ -138,15 +138,15 @@ exports[`ReceiveFunds should render with a wallet name 1`] = `
 exports[`ReceiveFunds should render without a wallet name 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-10 bg-black opacity-50"
+    class="fixed inset-0 z-30 bg-black opacity-50"
     data-testid="modal__overlay"
   />
   <div
-    class="sc-AxhUy fXfatb fixed left-0 right-0 z-10 flex flex-col px-12 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
+    class="sc-AxhUy fXfatb absolute left-0 right-0 top-0 z-30 flex flex-col px-12 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
     data-testid="modal__inner"
   >
     <div
-      class="absolute top-0 right-0 mt-4 mr-4"
+      class="absolute top-0 right-0 mt-4 mr-4 z-10"
     >
       <button
         class="sc-AxhCb idLVlI"

@@ -494,15 +494,15 @@ exports[`MultiSignatureDetail should render 3rd step 1`] = `
 exports[`MultiSignatureDetail should render a modal and get to step 3 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-10 bg-black opacity-50"
+    class="fixed inset-0 z-30 bg-black opacity-50"
     data-testid="modal__overlay"
   />
   <div
-    class="sc-fznKkj gWUAje fixed left-0 right-0 z-10 flex flex-col px-12 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
+    class="sc-fznKkj gWUAje absolute left-0 right-0 top-0 z-30 flex flex-col px-12 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
     data-testid="modal__inner"
   >
     <div
-      class="absolute top-0 right-0 mt-4 mr-4"
+      class="absolute top-0 right-0 mt-4 mr-4 z-10"
     >
       <button
         class="sc-AxiKw ha-DbdM"
@@ -898,15 +898,15 @@ exports[`MultiSignatureDetail should render a modal and get to step 3 1`] = `
 exports[`MultiSignatureDetail should render a modal and go back 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-10 bg-black opacity-50"
+    class="fixed inset-0 z-30 bg-black opacity-50"
     data-testid="modal__overlay"
   />
   <div
-    class="sc-fznKkj gWUAje fixed left-0 right-0 z-10 flex flex-col px-12 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
+    class="sc-fznKkj gWUAje absolute left-0 right-0 top-0 z-30 flex flex-col px-12 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
     data-testid="modal__inner"
   >
     <div
-      class="absolute top-0 right-0 mt-4 mr-4"
+      class="absolute top-0 right-0 mt-4 mr-4 z-10"
     >
       <button
         class="sc-AxiKw ha-DbdM"

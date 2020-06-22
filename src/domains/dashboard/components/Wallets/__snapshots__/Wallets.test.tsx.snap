@@ -130,1419 +130,1423 @@ exports[`Wallets should render 1`] = `
       class="mt-1"
     >
       <div
-        class="swiper-container swiper-container-initialized swiper-container-horizontal swiper-container-multirow swiper-container-multirow-column"
-        style="height: 546px;"
+        class="relative"
       >
         <div
-          class="h-full swiper-wrapper"
-          style="webkit-transition-duration: 0ms; transition-duration: 0ms; webkit-transform: translate3d(NaNpx, 0px, 0px); transform: translate3d(NaNpx, 0px, 0px);"
+          class="swiper-container swiper-container-initialized swiper-container-horizontal swiper-container-multirow swiper-container-multirow-column"
+          style="height: 546px;"
         >
           <div
-            class="swiper-slide"
-            style="height: 210px;"
+            class="h-full swiper-wrapper "
+            style="webkit-transition-duration: 0ms; transition-duration: 0ms; webkit-transform: translate3d(NaNpx, 0px, 0px); transform: translate3d(NaNpx, 0px, 0px);"
           >
             <div
-              class="w-64 inline-block undefined"
+              class="swiper-slide"
+              style="height: 210px;"
             >
               <div
-                class="sc-AxhCb jxpqWJ"
+                class="w-64 inline-block undefined"
               >
                 <div
-                  class="relative px-1 py-2"
+                  class="sc-AxhCb jxpqWJ"
                 >
                   <div
-                    class="-mr-2"
+                    class="relative px-1 py-2"
                   >
                     <div
-                      class="relative"
-                      data-testid="dropdown__toggle"
+                      class="-mr-2"
                     >
-                      <button
-                        class="float-right outline-none focus:outline-none"
+                      <div
+                        class="relative"
+                        data-testid="dropdown__toggle"
+                      >
+                        <button
+                          class="float-right outline-none focus:outline-none"
+                        >
+                          <div
+                            class="sc-AxirZ eEbZjj"
+                            height="20"
+                            width="20"
+                          >
+                            <svg>
+                              settings.svg
+                            </svg>
+                          </div>
+                        </button>
+                      </div>
+                    </div>
+                    <div
+                      class="absolute right-3"
+                    >
+                      <div
+                        class="inline-block mr-2 text text-theme-warning-400"
                       >
                         <div
-                          class="sc-AxirZ eEbZjj"
-                          height="20"
-                          width="20"
+                          class="sc-AxirZ iQaTP"
+                          height="1em"
+                          width="1em"
                         >
                           <svg>
-                            settings.svg
+                            star.svg
                           </svg>
                         </div>
-                      </button>
-                    </div>
-                  </div>
-                  <div
-                    class="absolute right-3"
-                  >
-                    <div
-                      class="inline-block mr-2 text text-theme-warning-400"
-                    >
+                      </div>
                       <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
+                        class="inline-block mr-2 text text-theme-primary-300"
                       >
-                        <svg>
-                          star.svg
-                        </svg>
+                        <div
+                          class="sc-AxirZ iQaTP"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            multisig.svg
+                          </svg>
+                        </div>
+                      </div>
+                      <div
+                        class="inline-block mr-2 text text-theme-primary-300"
+                      >
+                        <div
+                          class="sc-AxirZ iQaTP"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            ledger.svg
+                          </svg>
+                        </div>
                       </div>
                     </div>
                     <div
-                      class="inline-block mr-2 text text-theme-primary-300"
+                      class="mt-1"
                     >
                       <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
+                        class="sc-AxhUy fHeTTV border-theme-primary-contrast -mr-2 undefined"
                       >
-                        <svg>
-                          multisig.svg
-                        </svg>
+                        <div
+                          class="sc-AxirZ hPsuTj"
+                          height="16"
+                          width="16"
+                        >
+                          <svg>
+                            btc.svg
+                          </svg>
+                        </div>
+                      </div>
+                      <div
+                        class="sc-AxhUy chcxWU border-theme-primary-contrast"
+                      />
+                    </div>
+                    <div
+                      class="mt-4 truncate max-w-12"
+                    >
+                      <div
+                        class="inline-block truncate"
+                      >
+                        <span
+                          class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-base"
+                          data-testid="address__wallet-name"
+                        >
+                          My Wallet
+                        </span>
+                        <span
+                          class="text-theme-neutral-400 font-semibold text-base"
+                          data-testid="address__wallet-address"
+                        >
+                          ASuu...3kqT
+                        </span>
                       </div>
                     </div>
                     <div
-                      class="inline-block mr-2 text text-theme-primary-300"
+                      class="font-bold text-theme-neutral-800"
+                    >
+                      100 BTC
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="swiper-slide"
+              style="height: 210px;"
+            >
+              <div
+                class="w-64 inline-block undefined"
+              >
+                <div
+                  class="sc-AxhCb jxpqWJ"
+                >
+                  <div
+                    class="relative px-1 py-2"
+                  >
+                    <div
+                      class="-mr-2"
                     >
                       <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
+                        class="relative"
+                        data-testid="dropdown__toggle"
                       >
-                        <svg>
-                          ledger.svg
-                        </svg>
+                        <button
+                          class="float-right outline-none focus:outline-none"
+                        >
+                          <div
+                            class="sc-AxirZ eEbZjj"
+                            height="20"
+                            width="20"
+                          >
+                            <svg>
+                              settings.svg
+                            </svg>
+                          </div>
+                        </button>
                       </div>
                     </div>
-                  </div>
-                  <div
-                    class="mt-1"
-                  >
                     <div
-                      class="sc-AxhUy fHeTTV border-theme-primary-contrast -mr-2 undefined"
+                      class="absolute right-3"
                     >
                       <div
-                        class="sc-AxirZ hPsuTj"
-                        height="16"
-                        width="16"
+                        class="inline-block mr-2 text text-theme-warning-400"
                       >
-                        <svg>
-                          btc.svg
-                        </svg>
+                        <div
+                          class="sc-AxirZ iQaTP"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            star.svg
+                          </svg>
+                        </div>
+                      </div>
+                      <div
+                        class="inline-block mr-2 text text-theme-primary-300"
+                      >
+                        <div
+                          class="sc-AxirZ iQaTP"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            multisig.svg
+                          </svg>
+                        </div>
+                      </div>
+                      <div
+                        class="inline-block mr-2 text text-theme-primary-300"
+                      >
+                        <div
+                          class="sc-AxirZ iQaTP"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            ledger.svg
+                          </svg>
+                        </div>
                       </div>
                     </div>
                     <div
-                      class="sc-AxhUy chcxWU border-theme-primary-contrast"
-                    />
-                  </div>
-                  <div
-                    class="mt-4 truncate max-w-12"
-                  >
-                    <div
-                      class="inline-block truncate"
+                      class="mt-1"
                     >
-                      <span
-                        class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-base"
-                        data-testid="address__wallet-name"
+                      <div
+                        class="sc-AxhUy fHeTTV border-theme-primary-contrast -mr-2 undefined"
                       >
-                        My Wallet
-                      </span>
-                      <span
-                        class="text-theme-neutral-400 font-semibold text-base"
-                        data-testid="address__wallet-address"
+                        <div
+                          class="sc-AxirZ hPsuTj"
+                          height="16"
+                          width="16"
+                        >
+                          <svg>
+                            btc.svg
+                          </svg>
+                        </div>
+                      </div>
+                      <div
+                        class="sc-AxhUy chcxWU border-theme-primary-contrast"
+                      />
+                    </div>
+                    <div
+                      class="mt-4 truncate max-w-12"
+                    >
+                      <div
+                        class="inline-block truncate"
                       >
-                        ASuu...3kqT
-                      </span>
+                        <span
+                          class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-base"
+                          data-testid="address__wallet-name"
+                        >
+                          My Wallet
+                        </span>
+                        <span
+                          class="text-theme-neutral-400 font-semibold text-base"
+                          data-testid="address__wallet-address"
+                        >
+                          ASuu...3kqT
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="font-bold text-theme-neutral-800"
+                    >
+                      100 BTC
                     </div>
                   </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="swiper-slide"
+              style="height: 210px;"
+            >
+              <div
+                class="w-64 inline-block undefined"
+              >
+                <div
+                  class="sc-AxhCb jxpqWJ"
+                >
                   <div
-                    class="font-bold text-theme-neutral-800"
+                    class="relative px-1 py-2"
                   >
-                    100 BTC
+                    <div
+                      class="-mr-2"
+                    >
+                      <div
+                        class="relative"
+                        data-testid="dropdown__toggle"
+                      >
+                        <button
+                          class="float-right outline-none focus:outline-none"
+                        >
+                          <div
+                            class="sc-AxirZ eEbZjj"
+                            height="20"
+                            width="20"
+                          >
+                            <svg>
+                              settings.svg
+                            </svg>
+                          </div>
+                        </button>
+                      </div>
+                    </div>
+                    <div
+                      class="absolute right-3"
+                    >
+                      <div
+                        class="inline-block mr-2 text text-theme-warning-400"
+                      >
+                        <div
+                          class="sc-AxirZ iQaTP"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            star.svg
+                          </svg>
+                        </div>
+                      </div>
+                      <div
+                        class="inline-block mr-2 text text-theme-primary-300"
+                      >
+                        <div
+                          class="sc-AxirZ iQaTP"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            multisig.svg
+                          </svg>
+                        </div>
+                      </div>
+                      <div
+                        class="inline-block mr-2 text text-theme-primary-300"
+                      >
+                        <div
+                          class="sc-AxirZ iQaTP"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            ledger.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="mt-1"
+                    >
+                      <div
+                        class="sc-AxhUy fHeTTV border-theme-primary-contrast -mr-2 undefined"
+                      >
+                        <div
+                          class="sc-AxirZ hPsuTj"
+                          height="16"
+                          width="16"
+                        >
+                          <svg>
+                            btc.svg
+                          </svg>
+                        </div>
+                      </div>
+                      <div
+                        class="sc-AxhUy chcxWU border-theme-primary-contrast"
+                      />
+                    </div>
+                    <div
+                      class="mt-4 truncate max-w-12"
+                    >
+                      <div
+                        class="inline-block truncate"
+                      >
+                        <span
+                          class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-base"
+                          data-testid="address__wallet-name"
+                        >
+                          My Wallet
+                        </span>
+                        <span
+                          class="text-theme-neutral-400 font-semibold text-base"
+                          data-testid="address__wallet-address"
+                        >
+                          ASuu...3kqT
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="font-bold text-theme-neutral-800"
+                    >
+                      100 BTC
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="swiper-slide"
+              style="height: 210px;"
+            >
+              <div
+                class="w-64 inline-block undefined"
+              >
+                <div
+                  class="sc-AxhCb jxpqWJ"
+                >
+                  <div
+                    class="relative px-1 py-2"
+                  >
+                    <div
+                      class="-mr-2"
+                    >
+                      <div
+                        class="relative"
+                        data-testid="dropdown__toggle"
+                      >
+                        <button
+                          class="float-right outline-none focus:outline-none"
+                        >
+                          <div
+                            class="sc-AxirZ eEbZjj"
+                            height="20"
+                            width="20"
+                          >
+                            <svg>
+                              settings.svg
+                            </svg>
+                          </div>
+                        </button>
+                      </div>
+                    </div>
+                    <div
+                      class="absolute right-3"
+                    >
+                      <div
+                        class="inline-block mr-2 text text-theme-warning-400"
+                      >
+                        <div
+                          class="sc-AxirZ iQaTP"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            star.svg
+                          </svg>
+                        </div>
+                      </div>
+                      <div
+                        class="inline-block mr-2 text text-theme-primary-300"
+                      >
+                        <div
+                          class="sc-AxirZ iQaTP"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            multisig.svg
+                          </svg>
+                        </div>
+                      </div>
+                      <div
+                        class="inline-block mr-2 text text-theme-primary-300"
+                      >
+                        <div
+                          class="sc-AxirZ iQaTP"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            ledger.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="mt-1"
+                    >
+                      <div
+                        class="sc-AxhUy fHeTTV border-theme-primary-contrast -mr-2 undefined"
+                      >
+                        <div
+                          class="sc-AxirZ hPsuTj"
+                          height="16"
+                          width="16"
+                        >
+                          <svg>
+                            btc.svg
+                          </svg>
+                        </div>
+                      </div>
+                      <div
+                        class="sc-AxhUy chcxWU border-theme-primary-contrast"
+                      />
+                    </div>
+                    <div
+                      class="mt-4 truncate max-w-12"
+                    >
+                      <div
+                        class="inline-block truncate"
+                      >
+                        <span
+                          class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-base"
+                          data-testid="address__wallet-name"
+                        >
+                          My Wallet
+                        </span>
+                        <span
+                          class="text-theme-neutral-400 font-semibold text-base"
+                          data-testid="address__wallet-address"
+                        >
+                          ASuu...3kqT
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="font-bold text-theme-neutral-800"
+                    >
+                      100 BTC
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="swiper-slide"
+              style="height: 210px;"
+            >
+              <div
+                class="w-64 inline-block undefined"
+              >
+                <div
+                  class="sc-AxhCb jxpqWJ"
+                >
+                  <div
+                    class="relative px-1 py-2"
+                  >
+                    <div
+                      class="-mr-2"
+                    >
+                      <div
+                        class="relative"
+                        data-testid="dropdown__toggle"
+                      >
+                        <button
+                          class="float-right outline-none focus:outline-none"
+                        >
+                          <div
+                            class="sc-AxirZ eEbZjj"
+                            height="20"
+                            width="20"
+                          >
+                            <svg>
+                              settings.svg
+                            </svg>
+                          </div>
+                        </button>
+                      </div>
+                    </div>
+                    <div
+                      class="absolute right-3"
+                    >
+                      <div
+                        class="inline-block mr-2 text text-theme-warning-400"
+                      >
+                        <div
+                          class="sc-AxirZ iQaTP"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            star.svg
+                          </svg>
+                        </div>
+                      </div>
+                      <div
+                        class="inline-block mr-2 text text-theme-primary-300"
+                      >
+                        <div
+                          class="sc-AxirZ iQaTP"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            multisig.svg
+                          </svg>
+                        </div>
+                      </div>
+                      <div
+                        class="inline-block mr-2 text text-theme-primary-300"
+                      >
+                        <div
+                          class="sc-AxirZ iQaTP"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            ledger.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="mt-1"
+                    >
+                      <div
+                        class="sc-AxhUy fHeTTV border-theme-primary-contrast -mr-2 undefined"
+                      >
+                        <div
+                          class="sc-AxirZ hPsuTj"
+                          height="16"
+                          width="16"
+                        >
+                          <svg>
+                            btc.svg
+                          </svg>
+                        </div>
+                      </div>
+                      <div
+                        class="sc-AxhUy chcxWU border-theme-primary-contrast"
+                      />
+                    </div>
+                    <div
+                      class="mt-4 truncate max-w-12"
+                    >
+                      <div
+                        class="inline-block truncate"
+                      >
+                        <span
+                          class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-base"
+                          data-testid="address__wallet-name"
+                        >
+                          My Wallet
+                        </span>
+                        <span
+                          class="text-theme-neutral-400 font-semibold text-base"
+                          data-testid="address__wallet-address"
+                        >
+                          ASuu...3kqT
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="font-bold text-theme-neutral-800"
+                    >
+                      100 BTC
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="swiper-slide"
+              style="height: 210px;"
+            >
+              <div
+                class="w-64 inline-block undefined"
+              >
+                <div
+                  class="sc-AxhCb jxpqWJ"
+                >
+                  <div
+                    class="relative px-1 py-2"
+                  >
+                    <div
+                      class="-mr-2"
+                    >
+                      <div
+                        class="relative"
+                        data-testid="dropdown__toggle"
+                      >
+                        <button
+                          class="float-right outline-none focus:outline-none"
+                        >
+                          <div
+                            class="sc-AxirZ eEbZjj"
+                            height="20"
+                            width="20"
+                          >
+                            <svg>
+                              settings.svg
+                            </svg>
+                          </div>
+                        </button>
+                      </div>
+                    </div>
+                    <div
+                      class="absolute right-3"
+                    >
+                      <div
+                        class="inline-block mr-2 text text-theme-warning-400"
+                      >
+                        <div
+                          class="sc-AxirZ iQaTP"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            star.svg
+                          </svg>
+                        </div>
+                      </div>
+                      <div
+                        class="inline-block mr-2 text text-theme-primary-300"
+                      >
+                        <div
+                          class="sc-AxirZ iQaTP"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            multisig.svg
+                          </svg>
+                        </div>
+                      </div>
+                      <div
+                        class="inline-block mr-2 text text-theme-primary-300"
+                      >
+                        <div
+                          class="sc-AxirZ iQaTP"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            ledger.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="mt-1"
+                    >
+                      <div
+                        class="sc-AxhUy fHeTTV border-theme-primary-contrast -mr-2 undefined"
+                      >
+                        <div
+                          class="sc-AxirZ hPsuTj"
+                          height="16"
+                          width="16"
+                        >
+                          <svg>
+                            btc.svg
+                          </svg>
+                        </div>
+                      </div>
+                      <div
+                        class="sc-AxhUy chcxWU border-theme-primary-contrast"
+                      />
+                    </div>
+                    <div
+                      class="mt-4 truncate max-w-12"
+                    >
+                      <div
+                        class="inline-block truncate"
+                      >
+                        <span
+                          class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-base"
+                          data-testid="address__wallet-name"
+                        >
+                          My Wallet
+                        </span>
+                        <span
+                          class="text-theme-neutral-400 font-semibold text-base"
+                          data-testid="address__wallet-address"
+                        >
+                          ASuu...3kqT
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="font-bold text-theme-neutral-800"
+                    >
+                      100 BTC
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="swiper-slide"
+              style="height: 210px;"
+            >
+              <div
+                class="w-64 inline-block undefined"
+              >
+                <div
+                  class="sc-AxhCb jxpqWJ"
+                >
+                  <div
+                    class="relative px-1 py-2"
+                  >
+                    <div
+                      class="-mr-2"
+                    >
+                      <div
+                        class="relative"
+                        data-testid="dropdown__toggle"
+                      >
+                        <button
+                          class="float-right outline-none focus:outline-none"
+                        >
+                          <div
+                            class="sc-AxirZ eEbZjj"
+                            height="20"
+                            width="20"
+                          >
+                            <svg>
+                              settings.svg
+                            </svg>
+                          </div>
+                        </button>
+                      </div>
+                    </div>
+                    <div
+                      class="absolute right-3"
+                    >
+                      <div
+                        class="inline-block mr-2 text text-theme-warning-400"
+                      >
+                        <div
+                          class="sc-AxirZ iQaTP"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            star.svg
+                          </svg>
+                        </div>
+                      </div>
+                      <div
+                        class="inline-block mr-2 text text-theme-primary-300"
+                      >
+                        <div
+                          class="sc-AxirZ iQaTP"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            multisig.svg
+                          </svg>
+                        </div>
+                      </div>
+                      <div
+                        class="inline-block mr-2 text text-theme-primary-300"
+                      >
+                        <div
+                          class="sc-AxirZ iQaTP"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            ledger.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="mt-1"
+                    >
+                      <div
+                        class="sc-AxhUy fHeTTV border-theme-primary-contrast -mr-2 undefined"
+                      >
+                        <div
+                          class="sc-AxirZ hPsuTj"
+                          height="16"
+                          width="16"
+                        >
+                          <svg>
+                            btc.svg
+                          </svg>
+                        </div>
+                      </div>
+                      <div
+                        class="sc-AxhUy chcxWU border-theme-primary-contrast"
+                      />
+                    </div>
+                    <div
+                      class="mt-4 truncate max-w-12"
+                    >
+                      <div
+                        class="inline-block truncate"
+                      >
+                        <span
+                          class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-base"
+                          data-testid="address__wallet-name"
+                        >
+                          My Wallet
+                        </span>
+                        <span
+                          class="text-theme-neutral-400 font-semibold text-base"
+                          data-testid="address__wallet-address"
+                        >
+                          ASuu...3kqT
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="font-bold text-theme-neutral-800"
+                    >
+                      100 BTC
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="swiper-slide"
+              style="height: 210px;"
+            >
+              <div
+                class="w-64 inline-block undefined"
+              >
+                <div
+                  class="sc-AxhCb jxpqWJ"
+                >
+                  <div
+                    class="relative px-1 py-2"
+                  >
+                    <div
+                      class="-mr-2"
+                    >
+                      <div
+                        class="relative"
+                        data-testid="dropdown__toggle"
+                      >
+                        <button
+                          class="float-right outline-none focus:outline-none"
+                        >
+                          <div
+                            class="sc-AxirZ eEbZjj"
+                            height="20"
+                            width="20"
+                          >
+                            <svg>
+                              settings.svg
+                            </svg>
+                          </div>
+                        </button>
+                      </div>
+                    </div>
+                    <div
+                      class="absolute right-3"
+                    >
+                      <div
+                        class="inline-block mr-2 text text-theme-warning-400"
+                      >
+                        <div
+                          class="sc-AxirZ iQaTP"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            star.svg
+                          </svg>
+                        </div>
+                      </div>
+                      <div
+                        class="inline-block mr-2 text text-theme-primary-300"
+                      >
+                        <div
+                          class="sc-AxirZ iQaTP"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            multisig.svg
+                          </svg>
+                        </div>
+                      </div>
+                      <div
+                        class="inline-block mr-2 text text-theme-primary-300"
+                      >
+                        <div
+                          class="sc-AxirZ iQaTP"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            ledger.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="mt-1"
+                    >
+                      <div
+                        class="sc-AxhUy fHeTTV border-theme-primary-contrast -mr-2 undefined"
+                      >
+                        <div
+                          class="sc-AxirZ hPsuTj"
+                          height="16"
+                          width="16"
+                        >
+                          <svg>
+                            btc.svg
+                          </svg>
+                        </div>
+                      </div>
+                      <div
+                        class="sc-AxhUy chcxWU border-theme-primary-contrast"
+                      />
+                    </div>
+                    <div
+                      class="mt-4 truncate max-w-12"
+                    >
+                      <div
+                        class="inline-block truncate"
+                      >
+                        <span
+                          class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-base"
+                          data-testid="address__wallet-name"
+                        >
+                          My Wallet
+                        </span>
+                        <span
+                          class="text-theme-neutral-400 font-semibold text-base"
+                          data-testid="address__wallet-address"
+                        >
+                          ASuu...3kqT
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="font-bold text-theme-neutral-800"
+                    >
+                      100 BTC
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="swiper-slide"
+              style="height: 210px;"
+            >
+              <div
+                class="w-64 inline-block undefined"
+              >
+                <div
+                  class="sc-AxhCb jxpqWJ"
+                >
+                  <div
+                    class="relative px-1 py-2"
+                  >
+                    <div
+                      class="-mr-2"
+                    >
+                      <div
+                        class="relative"
+                        data-testid="dropdown__toggle"
+                      >
+                        <button
+                          class="float-right outline-none focus:outline-none"
+                        >
+                          <div
+                            class="sc-AxirZ eEbZjj"
+                            height="20"
+                            width="20"
+                          >
+                            <svg>
+                              settings.svg
+                            </svg>
+                          </div>
+                        </button>
+                      </div>
+                    </div>
+                    <div
+                      class="absolute right-3"
+                    >
+                      <div
+                        class="inline-block mr-2 text text-theme-warning-400"
+                      >
+                        <div
+                          class="sc-AxirZ iQaTP"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            star.svg
+                          </svg>
+                        </div>
+                      </div>
+                      <div
+                        class="inline-block mr-2 text text-theme-primary-300"
+                      >
+                        <div
+                          class="sc-AxirZ iQaTP"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            multisig.svg
+                          </svg>
+                        </div>
+                      </div>
+                      <div
+                        class="inline-block mr-2 text text-theme-primary-300"
+                      >
+                        <div
+                          class="sc-AxirZ iQaTP"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            ledger.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="mt-1"
+                    >
+                      <div
+                        class="sc-AxhUy fHeTTV border-theme-primary-contrast -mr-2 undefined"
+                      >
+                        <div
+                          class="sc-AxirZ hPsuTj"
+                          height="16"
+                          width="16"
+                        >
+                          <svg>
+                            btc.svg
+                          </svg>
+                        </div>
+                      </div>
+                      <div
+                        class="sc-AxhUy chcxWU border-theme-primary-contrast"
+                      />
+                    </div>
+                    <div
+                      class="mt-4 truncate max-w-12"
+                    >
+                      <div
+                        class="inline-block truncate"
+                      >
+                        <span
+                          class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-base"
+                          data-testid="address__wallet-name"
+                        >
+                          My Wallet
+                        </span>
+                        <span
+                          class="text-theme-neutral-400 font-semibold text-base"
+                          data-testid="address__wallet-address"
+                        >
+                          ASuu...3kqT
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="font-bold text-theme-neutral-800"
+                    >
+                      100 BTC
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="swiper-slide"
+              style="height: 210px;"
+            >
+              <div
+                class="w-64 inline-block undefined"
+              >
+                <div
+                  class="sc-AxhCb jxpqWJ"
+                >
+                  <div
+                    class="relative px-1 py-2"
+                  >
+                    <div
+                      class="-mr-2"
+                    >
+                      <div
+                        class="relative"
+                        data-testid="dropdown__toggle"
+                      >
+                        <button
+                          class="float-right outline-none focus:outline-none"
+                        >
+                          <div
+                            class="sc-AxirZ eEbZjj"
+                            height="20"
+                            width="20"
+                          >
+                            <svg>
+                              settings.svg
+                            </svg>
+                          </div>
+                        </button>
+                      </div>
+                    </div>
+                    <div
+                      class="absolute right-3"
+                    >
+                      <div
+                        class="inline-block mr-2 text text-theme-warning-400"
+                      >
+                        <div
+                          class="sc-AxirZ iQaTP"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            star.svg
+                          </svg>
+                        </div>
+                      </div>
+                      <div
+                        class="inline-block mr-2 text text-theme-primary-300"
+                      >
+                        <div
+                          class="sc-AxirZ iQaTP"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            multisig.svg
+                          </svg>
+                        </div>
+                      </div>
+                      <div
+                        class="inline-block mr-2 text text-theme-primary-300"
+                      >
+                        <div
+                          class="sc-AxirZ iQaTP"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            ledger.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="mt-1"
+                    >
+                      <div
+                        class="sc-AxhUy fHeTTV border-theme-primary-contrast -mr-2 undefined"
+                      >
+                        <div
+                          class="sc-AxirZ hPsuTj"
+                          height="16"
+                          width="16"
+                        >
+                          <svg>
+                            btc.svg
+                          </svg>
+                        </div>
+                      </div>
+                      <div
+                        class="sc-AxhUy chcxWU border-theme-primary-contrast"
+                      />
+                    </div>
+                    <div
+                      class="mt-4 truncate max-w-12"
+                    >
+                      <div
+                        class="inline-block truncate"
+                      >
+                        <span
+                          class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-base"
+                          data-testid="address__wallet-name"
+                        >
+                          My Wallet
+                        </span>
+                        <span
+                          class="text-theme-neutral-400 font-semibold text-base"
+                          data-testid="address__wallet-address"
+                        >
+                          ASuu...3kqT
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="font-bold text-theme-neutral-800"
+                    >
+                      100 BTC
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="swiper-slide"
+              style="height: 210px;"
+            >
+              <div
+                class="w-64 inline-block undefined"
+              >
+                <div
+                  class="sc-AxhCb jxpqWJ"
+                >
+                  <div
+                    class="relative px-1 py-2"
+                  >
+                    <div
+                      class="-mr-2"
+                    >
+                      <div
+                        class="relative"
+                        data-testid="dropdown__toggle"
+                      >
+                        <button
+                          class="float-right outline-none focus:outline-none"
+                        >
+                          <div
+                            class="sc-AxirZ eEbZjj"
+                            height="20"
+                            width="20"
+                          >
+                            <svg>
+                              settings.svg
+                            </svg>
+                          </div>
+                        </button>
+                      </div>
+                    </div>
+                    <div
+                      class="absolute right-3"
+                    >
+                      <div
+                        class="inline-block mr-2 text text-theme-warning-400"
+                      >
+                        <div
+                          class="sc-AxirZ iQaTP"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            star.svg
+                          </svg>
+                        </div>
+                      </div>
+                      <div
+                        class="inline-block mr-2 text text-theme-primary-300"
+                      >
+                        <div
+                          class="sc-AxirZ iQaTP"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            multisig.svg
+                          </svg>
+                        </div>
+                      </div>
+                      <div
+                        class="inline-block mr-2 text text-theme-primary-300"
+                      >
+                        <div
+                          class="sc-AxirZ iQaTP"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            ledger.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="mt-1"
+                    >
+                      <div
+                        class="sc-AxhUy fHeTTV border-theme-primary-contrast -mr-2 undefined"
+                      >
+                        <div
+                          class="sc-AxirZ hPsuTj"
+                          height="16"
+                          width="16"
+                        >
+                          <svg>
+                            btc.svg
+                          </svg>
+                        </div>
+                      </div>
+                      <div
+                        class="sc-AxhUy chcxWU border-theme-primary-contrast"
+                      />
+                    </div>
+                    <div
+                      class="mt-4 truncate max-w-12"
+                    >
+                      <div
+                        class="inline-block truncate"
+                      >
+                        <span
+                          class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-base"
+                          data-testid="address__wallet-name"
+                        >
+                          My Wallet
+                        </span>
+                        <span
+                          class="text-theme-neutral-400 font-semibold text-base"
+                          data-testid="address__wallet-address"
+                        >
+                          ASuu...3kqT
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="font-bold text-theme-neutral-800"
+                    >
+                      100 BTC
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
           <div
-            class="swiper-slide"
-            style="height: 210px;"
-          >
-            <div
-              class="w-64 inline-block undefined"
-            >
-              <div
-                class="sc-AxhCb jxpqWJ"
-              >
-                <div
-                  class="relative px-1 py-2"
-                >
-                  <div
-                    class="-mr-2"
-                  >
-                    <div
-                      class="relative"
-                      data-testid="dropdown__toggle"
-                    >
-                      <button
-                        class="float-right outline-none focus:outline-none"
-                      >
-                        <div
-                          class="sc-AxirZ eEbZjj"
-                          height="20"
-                          width="20"
-                        >
-                          <svg>
-                            settings.svg
-                          </svg>
-                        </div>
-                      </button>
-                    </div>
-                  </div>
-                  <div
-                    class="absolute right-3"
-                  >
-                    <div
-                      class="inline-block mr-2 text text-theme-warning-400"
-                    >
-                      <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          star.svg
-                        </svg>
-                      </div>
-                    </div>
-                    <div
-                      class="inline-block mr-2 text text-theme-primary-300"
-                    >
-                      <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          multisig.svg
-                        </svg>
-                      </div>
-                    </div>
-                    <div
-                      class="inline-block mr-2 text text-theme-primary-300"
-                    >
-                      <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          ledger.svg
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="mt-1"
-                  >
-                    <div
-                      class="sc-AxhUy fHeTTV border-theme-primary-contrast -mr-2 undefined"
-                    >
-                      <div
-                        class="sc-AxirZ hPsuTj"
-                        height="16"
-                        width="16"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </div>
-                    <div
-                      class="sc-AxhUy chcxWU border-theme-primary-contrast"
-                    />
-                  </div>
-                  <div
-                    class="mt-4 truncate max-w-12"
-                  >
-                    <div
-                      class="inline-block truncate"
-                    >
-                      <span
-                        class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-base"
-                        data-testid="address__wallet-name"
-                      >
-                        My Wallet
-                      </span>
-                      <span
-                        class="text-theme-neutral-400 font-semibold text-base"
-                        data-testid="address__wallet-address"
-                      >
-                        ASuu...3kqT
-                      </span>
-                    </div>
-                  </div>
-                  <div
-                    class="font-bold text-theme-neutral-800"
-                  >
-                    100 BTC
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="swiper-slide"
-            style="height: 210px;"
-          >
-            <div
-              class="w-64 inline-block undefined"
-            >
-              <div
-                class="sc-AxhCb jxpqWJ"
-              >
-                <div
-                  class="relative px-1 py-2"
-                >
-                  <div
-                    class="-mr-2"
-                  >
-                    <div
-                      class="relative"
-                      data-testid="dropdown__toggle"
-                    >
-                      <button
-                        class="float-right outline-none focus:outline-none"
-                      >
-                        <div
-                          class="sc-AxirZ eEbZjj"
-                          height="20"
-                          width="20"
-                        >
-                          <svg>
-                            settings.svg
-                          </svg>
-                        </div>
-                      </button>
-                    </div>
-                  </div>
-                  <div
-                    class="absolute right-3"
-                  >
-                    <div
-                      class="inline-block mr-2 text text-theme-warning-400"
-                    >
-                      <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          star.svg
-                        </svg>
-                      </div>
-                    </div>
-                    <div
-                      class="inline-block mr-2 text text-theme-primary-300"
-                    >
-                      <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          multisig.svg
-                        </svg>
-                      </div>
-                    </div>
-                    <div
-                      class="inline-block mr-2 text text-theme-primary-300"
-                    >
-                      <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          ledger.svg
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="mt-1"
-                  >
-                    <div
-                      class="sc-AxhUy fHeTTV border-theme-primary-contrast -mr-2 undefined"
-                    >
-                      <div
-                        class="sc-AxirZ hPsuTj"
-                        height="16"
-                        width="16"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </div>
-                    <div
-                      class="sc-AxhUy chcxWU border-theme-primary-contrast"
-                    />
-                  </div>
-                  <div
-                    class="mt-4 truncate max-w-12"
-                  >
-                    <div
-                      class="inline-block truncate"
-                    >
-                      <span
-                        class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-base"
-                        data-testid="address__wallet-name"
-                      >
-                        My Wallet
-                      </span>
-                      <span
-                        class="text-theme-neutral-400 font-semibold text-base"
-                        data-testid="address__wallet-address"
-                      >
-                        ASuu...3kqT
-                      </span>
-                    </div>
-                  </div>
-                  <div
-                    class="font-bold text-theme-neutral-800"
-                  >
-                    100 BTC
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="swiper-slide"
-            style="height: 210px;"
-          >
-            <div
-              class="w-64 inline-block undefined"
-            >
-              <div
-                class="sc-AxhCb jxpqWJ"
-              >
-                <div
-                  class="relative px-1 py-2"
-                >
-                  <div
-                    class="-mr-2"
-                  >
-                    <div
-                      class="relative"
-                      data-testid="dropdown__toggle"
-                    >
-                      <button
-                        class="float-right outline-none focus:outline-none"
-                      >
-                        <div
-                          class="sc-AxirZ eEbZjj"
-                          height="20"
-                          width="20"
-                        >
-                          <svg>
-                            settings.svg
-                          </svg>
-                        </div>
-                      </button>
-                    </div>
-                  </div>
-                  <div
-                    class="absolute right-3"
-                  >
-                    <div
-                      class="inline-block mr-2 text text-theme-warning-400"
-                    >
-                      <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          star.svg
-                        </svg>
-                      </div>
-                    </div>
-                    <div
-                      class="inline-block mr-2 text text-theme-primary-300"
-                    >
-                      <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          multisig.svg
-                        </svg>
-                      </div>
-                    </div>
-                    <div
-                      class="inline-block mr-2 text text-theme-primary-300"
-                    >
-                      <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          ledger.svg
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="mt-1"
-                  >
-                    <div
-                      class="sc-AxhUy fHeTTV border-theme-primary-contrast -mr-2 undefined"
-                    >
-                      <div
-                        class="sc-AxirZ hPsuTj"
-                        height="16"
-                        width="16"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </div>
-                    <div
-                      class="sc-AxhUy chcxWU border-theme-primary-contrast"
-                    />
-                  </div>
-                  <div
-                    class="mt-4 truncate max-w-12"
-                  >
-                    <div
-                      class="inline-block truncate"
-                    >
-                      <span
-                        class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-base"
-                        data-testid="address__wallet-name"
-                      >
-                        My Wallet
-                      </span>
-                      <span
-                        class="text-theme-neutral-400 font-semibold text-base"
-                        data-testid="address__wallet-address"
-                      >
-                        ASuu...3kqT
-                      </span>
-                    </div>
-                  </div>
-                  <div
-                    class="font-bold text-theme-neutral-800"
-                  >
-                    100 BTC
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="swiper-slide"
-            style="height: 210px;"
-          >
-            <div
-              class="w-64 inline-block undefined"
-            >
-              <div
-                class="sc-AxhCb jxpqWJ"
-              >
-                <div
-                  class="relative px-1 py-2"
-                >
-                  <div
-                    class="-mr-2"
-                  >
-                    <div
-                      class="relative"
-                      data-testid="dropdown__toggle"
-                    >
-                      <button
-                        class="float-right outline-none focus:outline-none"
-                      >
-                        <div
-                          class="sc-AxirZ eEbZjj"
-                          height="20"
-                          width="20"
-                        >
-                          <svg>
-                            settings.svg
-                          </svg>
-                        </div>
-                      </button>
-                    </div>
-                  </div>
-                  <div
-                    class="absolute right-3"
-                  >
-                    <div
-                      class="inline-block mr-2 text text-theme-warning-400"
-                    >
-                      <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          star.svg
-                        </svg>
-                      </div>
-                    </div>
-                    <div
-                      class="inline-block mr-2 text text-theme-primary-300"
-                    >
-                      <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          multisig.svg
-                        </svg>
-                      </div>
-                    </div>
-                    <div
-                      class="inline-block mr-2 text text-theme-primary-300"
-                    >
-                      <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          ledger.svg
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="mt-1"
-                  >
-                    <div
-                      class="sc-AxhUy fHeTTV border-theme-primary-contrast -mr-2 undefined"
-                    >
-                      <div
-                        class="sc-AxirZ hPsuTj"
-                        height="16"
-                        width="16"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </div>
-                    <div
-                      class="sc-AxhUy chcxWU border-theme-primary-contrast"
-                    />
-                  </div>
-                  <div
-                    class="mt-4 truncate max-w-12"
-                  >
-                    <div
-                      class="inline-block truncate"
-                    >
-                      <span
-                        class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-base"
-                        data-testid="address__wallet-name"
-                      >
-                        My Wallet
-                      </span>
-                      <span
-                        class="text-theme-neutral-400 font-semibold text-base"
-                        data-testid="address__wallet-address"
-                      >
-                        ASuu...3kqT
-                      </span>
-                    </div>
-                  </div>
-                  <div
-                    class="font-bold text-theme-neutral-800"
-                  >
-                    100 BTC
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="swiper-slide"
-            style="height: 210px;"
-          >
-            <div
-              class="w-64 inline-block undefined"
-            >
-              <div
-                class="sc-AxhCb jxpqWJ"
-              >
-                <div
-                  class="relative px-1 py-2"
-                >
-                  <div
-                    class="-mr-2"
-                  >
-                    <div
-                      class="relative"
-                      data-testid="dropdown__toggle"
-                    >
-                      <button
-                        class="float-right outline-none focus:outline-none"
-                      >
-                        <div
-                          class="sc-AxirZ eEbZjj"
-                          height="20"
-                          width="20"
-                        >
-                          <svg>
-                            settings.svg
-                          </svg>
-                        </div>
-                      </button>
-                    </div>
-                  </div>
-                  <div
-                    class="absolute right-3"
-                  >
-                    <div
-                      class="inline-block mr-2 text text-theme-warning-400"
-                    >
-                      <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          star.svg
-                        </svg>
-                      </div>
-                    </div>
-                    <div
-                      class="inline-block mr-2 text text-theme-primary-300"
-                    >
-                      <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          multisig.svg
-                        </svg>
-                      </div>
-                    </div>
-                    <div
-                      class="inline-block mr-2 text text-theme-primary-300"
-                    >
-                      <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          ledger.svg
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="mt-1"
-                  >
-                    <div
-                      class="sc-AxhUy fHeTTV border-theme-primary-contrast -mr-2 undefined"
-                    >
-                      <div
-                        class="sc-AxirZ hPsuTj"
-                        height="16"
-                        width="16"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </div>
-                    <div
-                      class="sc-AxhUy chcxWU border-theme-primary-contrast"
-                    />
-                  </div>
-                  <div
-                    class="mt-4 truncate max-w-12"
-                  >
-                    <div
-                      class="inline-block truncate"
-                    >
-                      <span
-                        class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-base"
-                        data-testid="address__wallet-name"
-                      >
-                        My Wallet
-                      </span>
-                      <span
-                        class="text-theme-neutral-400 font-semibold text-base"
-                        data-testid="address__wallet-address"
-                      >
-                        ASuu...3kqT
-                      </span>
-                    </div>
-                  </div>
-                  <div
-                    class="font-bold text-theme-neutral-800"
-                  >
-                    100 BTC
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="swiper-slide"
-            style="height: 210px;"
-          >
-            <div
-              class="w-64 inline-block undefined"
-            >
-              <div
-                class="sc-AxhCb jxpqWJ"
-              >
-                <div
-                  class="relative px-1 py-2"
-                >
-                  <div
-                    class="-mr-2"
-                  >
-                    <div
-                      class="relative"
-                      data-testid="dropdown__toggle"
-                    >
-                      <button
-                        class="float-right outline-none focus:outline-none"
-                      >
-                        <div
-                          class="sc-AxirZ eEbZjj"
-                          height="20"
-                          width="20"
-                        >
-                          <svg>
-                            settings.svg
-                          </svg>
-                        </div>
-                      </button>
-                    </div>
-                  </div>
-                  <div
-                    class="absolute right-3"
-                  >
-                    <div
-                      class="inline-block mr-2 text text-theme-warning-400"
-                    >
-                      <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          star.svg
-                        </svg>
-                      </div>
-                    </div>
-                    <div
-                      class="inline-block mr-2 text text-theme-primary-300"
-                    >
-                      <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          multisig.svg
-                        </svg>
-                      </div>
-                    </div>
-                    <div
-                      class="inline-block mr-2 text text-theme-primary-300"
-                    >
-                      <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          ledger.svg
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="mt-1"
-                  >
-                    <div
-                      class="sc-AxhUy fHeTTV border-theme-primary-contrast -mr-2 undefined"
-                    >
-                      <div
-                        class="sc-AxirZ hPsuTj"
-                        height="16"
-                        width="16"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </div>
-                    <div
-                      class="sc-AxhUy chcxWU border-theme-primary-contrast"
-                    />
-                  </div>
-                  <div
-                    class="mt-4 truncate max-w-12"
-                  >
-                    <div
-                      class="inline-block truncate"
-                    >
-                      <span
-                        class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-base"
-                        data-testid="address__wallet-name"
-                      >
-                        My Wallet
-                      </span>
-                      <span
-                        class="text-theme-neutral-400 font-semibold text-base"
-                        data-testid="address__wallet-address"
-                      >
-                        ASuu...3kqT
-                      </span>
-                    </div>
-                  </div>
-                  <div
-                    class="font-bold text-theme-neutral-800"
-                  >
-                    100 BTC
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="swiper-slide"
-            style="height: 210px;"
-          >
-            <div
-              class="w-64 inline-block undefined"
-            >
-              <div
-                class="sc-AxhCb jxpqWJ"
-              >
-                <div
-                  class="relative px-1 py-2"
-                >
-                  <div
-                    class="-mr-2"
-                  >
-                    <div
-                      class="relative"
-                      data-testid="dropdown__toggle"
-                    >
-                      <button
-                        class="float-right outline-none focus:outline-none"
-                      >
-                        <div
-                          class="sc-AxirZ eEbZjj"
-                          height="20"
-                          width="20"
-                        >
-                          <svg>
-                            settings.svg
-                          </svg>
-                        </div>
-                      </button>
-                    </div>
-                  </div>
-                  <div
-                    class="absolute right-3"
-                  >
-                    <div
-                      class="inline-block mr-2 text text-theme-warning-400"
-                    >
-                      <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          star.svg
-                        </svg>
-                      </div>
-                    </div>
-                    <div
-                      class="inline-block mr-2 text text-theme-primary-300"
-                    >
-                      <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          multisig.svg
-                        </svg>
-                      </div>
-                    </div>
-                    <div
-                      class="inline-block mr-2 text text-theme-primary-300"
-                    >
-                      <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          ledger.svg
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="mt-1"
-                  >
-                    <div
-                      class="sc-AxhUy fHeTTV border-theme-primary-contrast -mr-2 undefined"
-                    >
-                      <div
-                        class="sc-AxirZ hPsuTj"
-                        height="16"
-                        width="16"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </div>
-                    <div
-                      class="sc-AxhUy chcxWU border-theme-primary-contrast"
-                    />
-                  </div>
-                  <div
-                    class="mt-4 truncate max-w-12"
-                  >
-                    <div
-                      class="inline-block truncate"
-                    >
-                      <span
-                        class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-base"
-                        data-testid="address__wallet-name"
-                      >
-                        My Wallet
-                      </span>
-                      <span
-                        class="text-theme-neutral-400 font-semibold text-base"
-                        data-testid="address__wallet-address"
-                      >
-                        ASuu...3kqT
-                      </span>
-                    </div>
-                  </div>
-                  <div
-                    class="font-bold text-theme-neutral-800"
-                  >
-                    100 BTC
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="swiper-slide"
-            style="height: 210px;"
-          >
-            <div
-              class="w-64 inline-block undefined"
-            >
-              <div
-                class="sc-AxhCb jxpqWJ"
-              >
-                <div
-                  class="relative px-1 py-2"
-                >
-                  <div
-                    class="-mr-2"
-                  >
-                    <div
-                      class="relative"
-                      data-testid="dropdown__toggle"
-                    >
-                      <button
-                        class="float-right outline-none focus:outline-none"
-                      >
-                        <div
-                          class="sc-AxirZ eEbZjj"
-                          height="20"
-                          width="20"
-                        >
-                          <svg>
-                            settings.svg
-                          </svg>
-                        </div>
-                      </button>
-                    </div>
-                  </div>
-                  <div
-                    class="absolute right-3"
-                  >
-                    <div
-                      class="inline-block mr-2 text text-theme-warning-400"
-                    >
-                      <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          star.svg
-                        </svg>
-                      </div>
-                    </div>
-                    <div
-                      class="inline-block mr-2 text text-theme-primary-300"
-                    >
-                      <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          multisig.svg
-                        </svg>
-                      </div>
-                    </div>
-                    <div
-                      class="inline-block mr-2 text text-theme-primary-300"
-                    >
-                      <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          ledger.svg
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="mt-1"
-                  >
-                    <div
-                      class="sc-AxhUy fHeTTV border-theme-primary-contrast -mr-2 undefined"
-                    >
-                      <div
-                        class="sc-AxirZ hPsuTj"
-                        height="16"
-                        width="16"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </div>
-                    <div
-                      class="sc-AxhUy chcxWU border-theme-primary-contrast"
-                    />
-                  </div>
-                  <div
-                    class="mt-4 truncate max-w-12"
-                  >
-                    <div
-                      class="inline-block truncate"
-                    >
-                      <span
-                        class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-base"
-                        data-testid="address__wallet-name"
-                      >
-                        My Wallet
-                      </span>
-                      <span
-                        class="text-theme-neutral-400 font-semibold text-base"
-                        data-testid="address__wallet-address"
-                      >
-                        ASuu...3kqT
-                      </span>
-                    </div>
-                  </div>
-                  <div
-                    class="font-bold text-theme-neutral-800"
-                  >
-                    100 BTC
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="swiper-slide"
-            style="height: 210px;"
-          >
-            <div
-              class="w-64 inline-block undefined"
-            >
-              <div
-                class="sc-AxhCb jxpqWJ"
-              >
-                <div
-                  class="relative px-1 py-2"
-                >
-                  <div
-                    class="-mr-2"
-                  >
-                    <div
-                      class="relative"
-                      data-testid="dropdown__toggle"
-                    >
-                      <button
-                        class="float-right outline-none focus:outline-none"
-                      >
-                        <div
-                          class="sc-AxirZ eEbZjj"
-                          height="20"
-                          width="20"
-                        >
-                          <svg>
-                            settings.svg
-                          </svg>
-                        </div>
-                      </button>
-                    </div>
-                  </div>
-                  <div
-                    class="absolute right-3"
-                  >
-                    <div
-                      class="inline-block mr-2 text text-theme-warning-400"
-                    >
-                      <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          star.svg
-                        </svg>
-                      </div>
-                    </div>
-                    <div
-                      class="inline-block mr-2 text text-theme-primary-300"
-                    >
-                      <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          multisig.svg
-                        </svg>
-                      </div>
-                    </div>
-                    <div
-                      class="inline-block mr-2 text text-theme-primary-300"
-                    >
-                      <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          ledger.svg
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="mt-1"
-                  >
-                    <div
-                      class="sc-AxhUy fHeTTV border-theme-primary-contrast -mr-2 undefined"
-                    >
-                      <div
-                        class="sc-AxirZ hPsuTj"
-                        height="16"
-                        width="16"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </div>
-                    <div
-                      class="sc-AxhUy chcxWU border-theme-primary-contrast"
-                    />
-                  </div>
-                  <div
-                    class="mt-4 truncate max-w-12"
-                  >
-                    <div
-                      class="inline-block truncate"
-                    >
-                      <span
-                        class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-base"
-                        data-testid="address__wallet-name"
-                      >
-                        My Wallet
-                      </span>
-                      <span
-                        class="text-theme-neutral-400 font-semibold text-base"
-                        data-testid="address__wallet-address"
-                      >
-                        ASuu...3kqT
-                      </span>
-                    </div>
-                  </div>
-                  <div
-                    class="font-bold text-theme-neutral-800"
-                  >
-                    100 BTC
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="swiper-slide"
-            style="height: 210px;"
-          >
-            <div
-              class="w-64 inline-block undefined"
-            >
-              <div
-                class="sc-AxhCb jxpqWJ"
-              >
-                <div
-                  class="relative px-1 py-2"
-                >
-                  <div
-                    class="-mr-2"
-                  >
-                    <div
-                      class="relative"
-                      data-testid="dropdown__toggle"
-                    >
-                      <button
-                        class="float-right outline-none focus:outline-none"
-                      >
-                        <div
-                          class="sc-AxirZ eEbZjj"
-                          height="20"
-                          width="20"
-                        >
-                          <svg>
-                            settings.svg
-                          </svg>
-                        </div>
-                      </button>
-                    </div>
-                  </div>
-                  <div
-                    class="absolute right-3"
-                  >
-                    <div
-                      class="inline-block mr-2 text text-theme-warning-400"
-                    >
-                      <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          star.svg
-                        </svg>
-                      </div>
-                    </div>
-                    <div
-                      class="inline-block mr-2 text text-theme-primary-300"
-                    >
-                      <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          multisig.svg
-                        </svg>
-                      </div>
-                    </div>
-                    <div
-                      class="inline-block mr-2 text text-theme-primary-300"
-                    >
-                      <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          ledger.svg
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="mt-1"
-                  >
-                    <div
-                      class="sc-AxhUy fHeTTV border-theme-primary-contrast -mr-2 undefined"
-                    >
-                      <div
-                        class="sc-AxirZ hPsuTj"
-                        height="16"
-                        width="16"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </div>
-                    <div
-                      class="sc-AxhUy chcxWU border-theme-primary-contrast"
-                    />
-                  </div>
-                  <div
-                    class="mt-4 truncate max-w-12"
-                  >
-                    <div
-                      class="inline-block truncate"
-                    >
-                      <span
-                        class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-base"
-                        data-testid="address__wallet-name"
-                      >
-                        My Wallet
-                      </span>
-                      <span
-                        class="text-theme-neutral-400 font-semibold text-base"
-                        data-testid="address__wallet-address"
-                      >
-                        ASuu...3kqT
-                      </span>
-                    </div>
-                  </div>
-                  <div
-                    class="font-bold text-theme-neutral-800"
-                  >
-                    100 BTC
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+            class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"
+          />
+          <span
+            aria-atomic="true"
+            aria-live="assertive"
+            class="swiper-notification"
+          />
         </div>
-        <div
-          class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"
-        />
-        <span
-          aria-atomic="true"
-          aria-live="assertive"
-          class="swiper-notification"
-        />
       </div>
     </div>
   </div>
@@ -1679,170 +1683,174 @@ exports[`Wallets should render with empty wallets list 1`] = `
       class="mt-1"
     >
       <div
-        class="swiper-container swiper-container-initialized swiper-container-horizontal swiper-container-multirow swiper-container-multirow-column"
-        style="height: 273px;"
+        class="relative"
       >
         <div
-          class="h-full swiper-wrapper"
-          style="webkit-transition-duration: 0ms; transition-duration: 0ms; webkit-transform: translate3d(NaNpx, 0px, 0px); transform: translate3d(NaNpx, 0px, 0px);"
+          class="swiper-container swiper-container-initialized swiper-container-horizontal swiper-container-multirow swiper-container-multirow-column"
+          style="height: 273px;"
         >
           <div
-            class="swiper-slide"
-            style="height: 210px;"
+            class="h-full swiper-wrapper "
+            style="webkit-transition-duration: 0ms; transition-duration: 0ms; webkit-transform: translate3d(NaNpx, 0px, 0px); transform: translate3d(NaNpx, 0px, 0px);"
           >
             <div
-              class="w-64 inline-block undefined"
+              class="swiper-slide"
+              style="height: 210px;"
             >
               <div
-                class="sc-AxhCb jxpqWJ"
+                class="w-64 inline-block undefined"
               >
                 <div
-                  class="px-1 py-2"
+                  class="sc-AxhCb jxpqWJ"
                 >
                   <div
-                    class="mt-1"
+                    class="px-1 py-2"
                   >
                     <div
-                      class="sc-AxhUy fHeTTV -mr-2 border-theme-primary-contrast"
-                    />
+                      class="mt-1"
+                    >
+                      <div
+                        class="sc-AxhUy fHeTTV -mr-2 border-theme-primary-contrast"
+                      />
+                      <div
+                        class="sc-AxhUy fHeTTV border-theme-primary-contrast"
+                      />
+                    </div>
                     <div
-                      class="sc-AxhUy fHeTTV border-theme-primary-contrast"
-                    />
+                      class="mt-4 text-md text-theme-primary-contrast"
+                    >
+                      New wallet
+                    </div>
+                    <div
+                      class="mt-1 text-md text-theme-primary-contrast"
+                    >
+                      Balance
+                    </div>
                   </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="swiper-slide"
+              style="height: 210px;"
+            >
+              <div
+                class="w-64 inline-block undefined"
+              >
+                <div
+                  class="sc-AxhCb jxpqWJ"
+                >
                   <div
-                    class="mt-4 text-md text-theme-primary-contrast"
+                    class="px-1 py-2"
                   >
-                    New wallet
+                    <div
+                      class="mt-1"
+                    >
+                      <div
+                        class="sc-AxhUy fHeTTV -mr-2 border-theme-primary-contrast"
+                      />
+                      <div
+                        class="sc-AxhUy fHeTTV border-theme-primary-contrast"
+                      />
+                    </div>
+                    <div
+                      class="mt-4 text-md text-theme-primary-contrast"
+                    >
+                      New wallet
+                    </div>
+                    <div
+                      class="mt-1 text-md text-theme-primary-contrast"
+                    >
+                      Balance
+                    </div>
                   </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="swiper-slide"
+              style="height: 210px;"
+            >
+              <div
+                class="w-64 inline-block undefined"
+              >
+                <div
+                  class="sc-AxhCb jxpqWJ"
+                >
                   <div
-                    class="mt-1 text-md text-theme-primary-contrast"
+                    class="px-1 py-2"
                   >
-                    Balance
+                    <div
+                      class="mt-1"
+                    >
+                      <div
+                        class="sc-AxhUy fHeTTV -mr-2 border-theme-primary-contrast"
+                      />
+                      <div
+                        class="sc-AxhUy fHeTTV border-theme-primary-contrast"
+                      />
+                    </div>
+                    <div
+                      class="mt-4 text-md text-theme-primary-contrast"
+                    >
+                      New wallet
+                    </div>
+                    <div
+                      class="mt-1 text-md text-theme-primary-contrast"
+                    >
+                      Balance
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="swiper-slide"
+              style="height: 210px;"
+            >
+              <div
+                class="w-64 inline-block undefined"
+              >
+                <div
+                  class="sc-AxhCb jxpqWJ"
+                >
+                  <div
+                    class="px-1 py-2"
+                  >
+                    <div
+                      class="mt-1"
+                    >
+                      <div
+                        class="sc-AxhUy fHeTTV -mr-2 border-theme-primary-contrast"
+                      />
+                      <div
+                        class="sc-AxhUy fHeTTV border-theme-primary-contrast"
+                      />
+                    </div>
+                    <div
+                      class="mt-4 text-md text-theme-primary-contrast"
+                    >
+                      New wallet
+                    </div>
+                    <div
+                      class="mt-1 text-md text-theme-primary-contrast"
+                    >
+                      Balance
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
           <div
-            class="swiper-slide"
-            style="height: 210px;"
-          >
-            <div
-              class="w-64 inline-block undefined"
-            >
-              <div
-                class="sc-AxhCb jxpqWJ"
-              >
-                <div
-                  class="px-1 py-2"
-                >
-                  <div
-                    class="mt-1"
-                  >
-                    <div
-                      class="sc-AxhUy fHeTTV -mr-2 border-theme-primary-contrast"
-                    />
-                    <div
-                      class="sc-AxhUy fHeTTV border-theme-primary-contrast"
-                    />
-                  </div>
-                  <div
-                    class="mt-4 text-md text-theme-primary-contrast"
-                  >
-                    New wallet
-                  </div>
-                  <div
-                    class="mt-1 text-md text-theme-primary-contrast"
-                  >
-                    Balance
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="swiper-slide"
-            style="height: 210px;"
-          >
-            <div
-              class="w-64 inline-block undefined"
-            >
-              <div
-                class="sc-AxhCb jxpqWJ"
-              >
-                <div
-                  class="px-1 py-2"
-                >
-                  <div
-                    class="mt-1"
-                  >
-                    <div
-                      class="sc-AxhUy fHeTTV -mr-2 border-theme-primary-contrast"
-                    />
-                    <div
-                      class="sc-AxhUy fHeTTV border-theme-primary-contrast"
-                    />
-                  </div>
-                  <div
-                    class="mt-4 text-md text-theme-primary-contrast"
-                  >
-                    New wallet
-                  </div>
-                  <div
-                    class="mt-1 text-md text-theme-primary-contrast"
-                  >
-                    Balance
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="swiper-slide"
-            style="height: 210px;"
-          >
-            <div
-              class="w-64 inline-block undefined"
-            >
-              <div
-                class="sc-AxhCb jxpqWJ"
-              >
-                <div
-                  class="px-1 py-2"
-                >
-                  <div
-                    class="mt-1"
-                  >
-                    <div
-                      class="sc-AxhUy fHeTTV -mr-2 border-theme-primary-contrast"
-                    />
-                    <div
-                      class="sc-AxhUy fHeTTV border-theme-primary-contrast"
-                    />
-                  </div>
-                  <div
-                    class="mt-4 text-md text-theme-primary-contrast"
-                  >
-                    New wallet
-                  </div>
-                  <div
-                    class="mt-1 text-md text-theme-primary-contrast"
-                  >
-                    Balance
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+            class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"
+          />
+          <span
+            aria-atomic="true"
+            aria-live="assertive"
+            class="swiper-notification"
+          />
         </div>
-        <div
-          class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"
-        />
-        <span
-          aria-atomic="true"
-          aria-live="assertive"
-          class="swiper-notification"
-        />
       </div>
     </div>
   </div>
