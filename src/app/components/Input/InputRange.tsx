@@ -11,6 +11,7 @@ type Props = {
 	min: number;
 	max: number;
 	step: number;
+	name?: string;
 	magnitude?: number;
 };
 
