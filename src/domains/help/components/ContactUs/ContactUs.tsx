@@ -93,13 +93,11 @@ export const ContactUs = (props: ContactUsProps) => {
 				</FormField>
 
 				<div className="mt-4 space-x-3">
-					<Button color="primary" variant="plain" onClick={props.onCancel}>
+					<Button variant="plain" onClick={props.onCancel}>
 						{t("COMMON.CANCEL")}
 					</Button>
 
-					<Button type="submit" color="primary" variant="solid">
-						{t("COMMON.SEND")}
-					</Button>
+					<Button type="submit">{t("COMMON.SEND")}</Button>
 				</div>
 			</Form>
 		</Modal>

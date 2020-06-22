@@ -1,6 +1,6 @@
 export const translations: { [key: string]: any } = {
 	CONTACT_FORM: {
-		ADD_ADDRESS: "Add Address",
+		ADD_ADDRESS: "Add address",
 		ADDRESS: "Address",
 		ADDRESSES: "Addresses",
 		NAME: "Name",

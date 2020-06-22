@@ -839,41 +839,35 @@ exports[`Settings should render 1`] = `
           class="flex justify-between w-full"
         >
           <button
-            class="sc-AxiKw ledujo"
+            class="sc-AxiKw imWDnq"
             color="danger"
             type="button"
           >
             <div
-              class="flex items-center justify-between px-1"
+              class="sc-AxjAm cpczEI"
+              height="1em"
+              width="1em"
             >
-              <div
-                class="sc-AxjAm cpczEI"
-                height="1em"
-                width="1em"
-              >
-                <svg>
-                  reset.svg
-                </svg>
-              </div>
-              <span
-                class="ml-2"
-              >
-                Reset Data
-              </span>
+              <svg>
+                reset.svg
+              </svg>
             </div>
+            <span>
+              Reset Data
+            </span>
           </button>
           <div
             class="space-x-3"
           >
             <button
-              class="sc-AxiKw dnvybb"
+              class="sc-AxiKw gFzSt"
               color="primary"
               type="button"
             >
               Cancel
             </button>
             <button
-              class="sc-AxiKw dTvTSn"
+              class="sc-AxiKw wFYj"
               color="primary"
               type="button"
             >
@@ -1583,7 +1577,7 @@ exports[`Settings should render peer settings 1`] = `
           </table>
         </div>
         <button
-          class="sc-AxiKw eWMVSn w-full mt-10 mb-5"
+          class="sc-AxiKw gFzSt w-full mt-10 mb-5"
           color="primary"
           data-testid="peer-list__add-button"
           type="button"
@@ -1591,10 +1585,10 @@ exports[`Settings should render peer settings 1`] = `
           Add Peer
         </button>
         <div
-          class="float-right"
+          class="flex justify-end"
         >
           <button
-            class="sc-AxiKw dTvTSn"
+            class="sc-AxiKw wFYj"
             color="primary"
             type="button"
           >
@@ -1788,14 +1782,14 @@ exports[`Settings should render plugin settings 1`] = `
                 class="flex flex-col py-6 space-x-3 md:flex-row"
               >
                 <button
-                  class="sc-AxiKw eWMVSn w-full"
+                  class="sc-AxiKw gFzSt w-full"
                   color="primary"
                   type="button"
                 >
                   Open List
                 </button>
                 <button
-                  class="sc-AxiKw eWMVSn w-full mt-2 md:mt-0"
+                  class="sc-AxiKw gFzSt w-full mt-2 md:mt-0"
                   color="primary"
                   type="button"
                 >
@@ -1902,10 +1896,10 @@ exports[`Settings should render plugin settings 1`] = `
           </li>
         </ul>
         <div
-          class="float-right"
+          class="flex justify-end"
         >
           <button
-            class="sc-AxiKw dTvTSn"
+            class="sc-AxiKw wFYj"
             color="primary"
             type="button"
           >

@@ -192,7 +192,7 @@ export const MultiSignatureDetail = (props: MultiSignatureDetailProps) => {
 					{activeStep < 3 && (
 						<div className="flex justify-end mt-6">
 							<div className="flex-1">
-								<Button color="primary" variant="plain" onClick={props.onCancel} className="mr-2">
+								<Button variant="plain" onClick={props.onCancel} className="mr-2">
 									{t("COMMON.CANCEL")}
 								</Button>
 							</div>
@@ -209,7 +209,6 @@ export const MultiSignatureDetail = (props: MultiSignatureDetailProps) => {
 
 								<Button
 									data-testid="MultiSignatureDetail__sign-button"
-									variant="solid"
 									onClick={handleNext}
 									className={activeStep === 1 ? "inline-block" : "hidden"}
 								>
@@ -220,7 +219,6 @@ export const MultiSignatureDetail = (props: MultiSignatureDetailProps) => {
 									disabled={!isValid}
 									data-testid="MultiSignatureDetail__submit-button"
 									type="submit"
-									variant="solid"
 									className={activeStep === 2 ? "inline-block" : "hidden"}
 								>
 									{t("COMMON.CONTINUE")}

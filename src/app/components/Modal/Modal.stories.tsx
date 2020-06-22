@@ -19,14 +19,12 @@ export const Default = () => (
 	>
 		<div>{text("Content", "Modal Content")}</div>
 
-		<div className="mt-4">
-			<Button color="primary" variant="plain" className="mr-2" onClick={() => alert("cancel")}>
+		<div className="flex justify-end mt-4 space-x-3">
+			<Button variant="plain" onClick={() => alert("cancel")}>
 				Cancel
 			</Button>
 
-			<Button color="primary" variant="solid" onClick={() => alert("continue")}>
-				Continue
-			</Button>
+			<Button onClick={() => alert("continue")}>Continue</Button>
 		</div>
 	</Modal>
 );
