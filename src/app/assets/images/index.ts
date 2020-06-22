@@ -1,3 +1,4 @@
+import { exchange } from "domains/exchange/images";
 import { profile } from "domains/profile/images";
 import { wallet } from "domains/wallets/images";
 
@@ -11,6 +12,7 @@ export const images = {
 		DeleteBanner,
 		SuccessBanner,
 	},
+	exchange,
 	profile,
 	wallet,
 };

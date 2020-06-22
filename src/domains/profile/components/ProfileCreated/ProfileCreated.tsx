@@ -37,10 +37,8 @@ export const ProfileCreated = (props: ProfileCreatedProps) => {
 				</div>
 
 				<div className="flex flex-col justify-center space-x-0 sm:flex-row sm:space-x-3">
-					<Button color="primary" variant="solid" onClick={props.onStart}>
-						{t("PROFILE.MODAL_PROFILE_CREATED.START_TUTORIAL")}
-					</Button>
-					<Button color="primary" variant="plain" className="mt-2 sm:mt-0" onClick={props.onSkip}>
+					<Button onClick={props.onStart}>{t("PROFILE.MODAL_PROFILE_CREATED.START_TUTORIAL")}</Button>
+					<Button variant="plain" className="mt-2 sm:mt-0" onClick={props.onSkip}>
 						{t("PROFILE.MODAL_PROFILE_CREATED.SKIP_TUTORIAL")}
 					</Button>
 				</div>

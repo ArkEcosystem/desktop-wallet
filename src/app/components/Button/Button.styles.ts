@@ -1,10 +1,11 @@
 import tw, { css } from "twin.macro";
 
 const baseStyle = [
-	tw`focus:outline-none focus:shadow-outline font-semibold text-center transition-all duration-100 ease-linear rounded`,
+	tw`focus:outline-none focus:shadow-outline inline-flex items-center font-semibold text-center transition-all duration-100 ease-linear rounded justify-center`,
 	css`
+		line-height: 1.25;
 		&:disabled {
-			${tw`bg-theme-neutral-light text-theme-neutral cursor-not-allowed`}
+			${tw`bg-theme-neutral-200 text-theme-neutral-light cursor-not-allowed`}
 		}
 	`,
 ];
@@ -26,6 +27,7 @@ const getVariant = (name: string, colorName: string, color: ReturnType<typeof ge
 				color: ${colorName === "primary" ? "var(--theme-white)" : color.contrast};
 				background-color: ${color.base};
 				&:not(:focus):hover:enabled {
+					background-color: ${color.dark};
 					box-shadow: 2px 3px 10px 2px rgba(${color.rgb}, 0.2);
 				}
 			`;
@@ -51,13 +53,13 @@ const getVariant = (name: string, colorName: string, color: ReturnType<typeof ge
 const getSize = (size: string): any => {
 	switch (size) {
 		case "small":
-			return tw`px-2 py-1 text-sm`;
+			return tw`px-3 py-2 space-x-2 text-sm`;
 		case "large":
-			return tw`px-5 py-3 text-lg`;
+			return tw`px-6 py-4 space-x-4 text-lg`;
 		case "icon":
 			return tw`p-3`;
 		default:
-			return tw`px-4 py-2 text-base`;
+			return tw`px-5 py-3 space-x-3 text-base`;
 	}
 };
 

@@ -27,16 +27,18 @@ export const VerifyMessage = ({ onSubmit, publicKey, isOpen, handleClose }: Prop
 					<Alert variant="warning" size="small">
 						<span className="p-5 text-sm font-semibold">{`Format(JSON): { "publicKey": "...", "signature": "...", "message": "..."}`}</span>
 					</Alert>
-					<FormField name="signet-message-content" className="mt-10">
-						<FormLabel label="Signet message content" />
-						<Input
-							type="text"
-							name="signet-message-content"
-							defaultValue={""}
-							ref={register({ required: true })}
-						/>
-						<FormHelperText />
-					</FormField>
+					<div className="mt-10">
+						<FormField name="signet-message-content">
+							<FormLabel label="Signet message content" />
+							<Input
+								type="text"
+								name="signet-message-content"
+								defaultValue={""}
+								ref={register({ required: true })}
+							/>
+							<FormHelperText />
+						</FormField>
+					</div>
 				</div>
 			);
 
@@ -65,7 +67,7 @@ export const VerifyMessage = ({ onSubmit, publicKey, isOpen, handleClose }: Prop
 			isOpen={isOpen}
 			title="Verify"
 			description="To make sure that you are the owner of this wallet, you can pass the check. and this more text."
-			onClick={handleClose}
+			onClose={handleClose}
 		>
 			<div className="mt-10">
 				<div className="flex flex-col pb-5 border-b border-dashed border-theme-neutral-light">
@@ -87,13 +89,9 @@ export const VerifyMessage = ({ onSubmit, publicKey, isOpen, handleClose }: Prop
 
 				<Form id="verify-message__form" context={form} onSubmit={onSubmit}>
 					{renderFormContent()}
-					<div className="flex items-center space-x-3">
-						<Button color="primary" variant="plain" size="large">
-							Cancel
-						</Button>
-						<Button color="primary" variant="solid" size="large">
-							Verify
-						</Button>
+					<div className="flex justify-end space-x-3">
+						<Button variant="plain">Cancel</Button>
+						<Button>Verify</Button>
 					</div>
 				</Form>
 			</div>

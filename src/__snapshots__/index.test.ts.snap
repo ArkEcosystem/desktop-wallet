@@ -130,6 +130,7 @@ exports[`Application root should render without crashing 1`] = `
                           "LEDGER_WALLET": "This is a Ledger wallet",
                           "LOAD": "Load",
                           "MARKETSQUARE": "MarketSquare",
+                          "NAME": "Name",
                           "NETWORK": "Network",
                           "NETWORK_NAME": "This name is provided by the network",
                           "NEXT": "Next",
@@ -142,6 +143,7 @@ exports[`Application root should render without crashing 1`] = `
                           "PROFILE_NAME": "Profile name",
                           "QUANTITY": "Quantity",
                           "RANK": "Rank",
+                          "RATING": "Rating",
                           "REMOVE": "Remove",
                           "SAVE": "Save",
                           "SELECT": "Select",
@@ -173,20 +175,29 @@ exports[`Application root should render without crashing 1`] = `
                           "YOUR_PASSPHRASE": "Your Passphrase",
                         },
                         "CONTACTS": Object {
+                          "CONTACT_FORM": Object {
+                            "ADDRESS": "Address",
+                            "ADDRESSES": "Addresses",
+                            "ADD_ADDRESS": "Add address",
+                            "NAME": "Name",
+                            "NETWORK": "Network",
+                          },
                           "MODAL_CREATE_CONTACT": Object {
-                            "ADD_ADDRESS": "Add Address",
                             "DESCRIPTION": "Enter your contacts name and addresses and add them to your list.",
-                            "FORM": Object {
-                              "ADDRESS": "Address",
-                              "ADDRESSES": "Addresses",
-                              "NAME": "Name",
-                              "NETWORK": "Network",
-                            },
                             "TITLE": "Add Contact",
                           },
                           "MODAL_DELETE_CONTACT": Object {
                             "DESCRIPTION": "Do you really want to delete this contact? Once deleted, you will not be able to restore it.",
                             "TITLE": "Delete Contact",
+                          },
+                          "MODAL_UPDATE_CONTACT": Object {
+                            "TITLE": "Edit Contact",
+                          },
+                        },
+                        "EXCHANGE": Object {
+                          "MODAL_ADD_EXCHANGE": Object {
+                            "DESCRIPTION": "Buy ARK directly from the ARK Desktop Wallet or through one of 20+ exchanges supplying ARK tokens using BTC, ETH or other trading pairs.",
+                            "TITLE": "Exchange",
                           },
                         },
                         "HELP": Object {
@@ -429,6 +440,7 @@ exports[`Application root should render without crashing 1`] = `
                         "LEDGER_WALLET": "This is a Ledger wallet",
                         "LOAD": "Load",
                         "MARKETSQUARE": "MarketSquare",
+                        "NAME": "Name",
                         "NETWORK": "Network",
                         "NETWORK_NAME": "This name is provided by the network",
                         "NEXT": "Next",
@@ -441,6 +453,7 @@ exports[`Application root should render without crashing 1`] = `
                         "PROFILE_NAME": "Profile name",
                         "QUANTITY": "Quantity",
                         "RANK": "Rank",
+                        "RATING": "Rating",
                         "REMOVE": "Remove",
                         "SAVE": "Save",
                         "SELECT": "Select",
@@ -472,20 +485,29 @@ exports[`Application root should render without crashing 1`] = `
                         "YOUR_PASSPHRASE": "Your Passphrase",
                       },
                       "CONTACTS": Object {
+                        "CONTACT_FORM": Object {
+                          "ADDRESS": "Address",
+                          "ADDRESSES": "Addresses",
+                          "ADD_ADDRESS": "Add address",
+                          "NAME": "Name",
+                          "NETWORK": "Network",
+                        },
                         "MODAL_CREATE_CONTACT": Object {
-                          "ADD_ADDRESS": "Add Address",
                           "DESCRIPTION": "Enter your contacts name and addresses and add them to your list.",
-                          "FORM": Object {
-                            "ADDRESS": "Address",
-                            "ADDRESSES": "Addresses",
-                            "NAME": "Name",
-                            "NETWORK": "Network",
-                          },
                           "TITLE": "Add Contact",
                         },
                         "MODAL_DELETE_CONTACT": Object {
                           "DESCRIPTION": "Do you really want to delete this contact? Once deleted, you will not be able to restore it.",
                           "TITLE": "Delete Contact",
+                        },
+                        "MODAL_UPDATE_CONTACT": Object {
+                          "TITLE": "Edit Contact",
+                        },
+                      },
+                      "EXCHANGE": Object {
+                        "MODAL_ADD_EXCHANGE": Object {
+                          "DESCRIPTION": "Buy ARK directly from the ARK Desktop Wallet or through one of 20+ exchanges supplying ARK tokens using BTC, ETH or other trading pairs.",
+                          "TITLE": "Exchange",
                         },
                       },
                       "HELP": Object {
@@ -732,6 +754,7 @@ exports[`Application root should render without crashing 1`] = `
                                 "LEDGER_WALLET": "This is a Ledger wallet",
                                 "LOAD": "Load",
                                 "MARKETSQUARE": "MarketSquare",
+                                "NAME": "Name",
                                 "NETWORK": "Network",
                                 "NETWORK_NAME": "This name is provided by the network",
                                 "NEXT": "Next",
@@ -744,6 +767,7 @@ exports[`Application root should render without crashing 1`] = `
                                 "PROFILE_NAME": "Profile name",
                                 "QUANTITY": "Quantity",
                                 "RANK": "Rank",
+                                "RATING": "Rating",
                                 "REMOVE": "Remove",
                                 "SAVE": "Save",
                                 "SELECT": "Select",
@@ -775,20 +799,29 @@ exports[`Application root should render without crashing 1`] = `
                                 "YOUR_PASSPHRASE": "Your Passphrase",
                               },
                               "CONTACTS": Object {
+                                "CONTACT_FORM": Object {
+                                  "ADDRESS": "Address",
+                                  "ADDRESSES": "Addresses",
+                                  "ADD_ADDRESS": "Add address",
+                                  "NAME": "Name",
+                                  "NETWORK": "Network",
+                                },
                                 "MODAL_CREATE_CONTACT": Object {
-                                  "ADD_ADDRESS": "Add Address",
                                   "DESCRIPTION": "Enter your contacts name and addresses and add them to your list.",
-                                  "FORM": Object {
-                                    "ADDRESS": "Address",
-                                    "ADDRESSES": "Addresses",
-                                    "NAME": "Name",
-                                    "NETWORK": "Network",
-                                  },
                                   "TITLE": "Add Contact",
                                 },
                                 "MODAL_DELETE_CONTACT": Object {
                                   "DESCRIPTION": "Do you really want to delete this contact? Once deleted, you will not be able to restore it.",
                                   "TITLE": "Delete Contact",
+                                },
+                                "MODAL_UPDATE_CONTACT": Object {
+                                  "TITLE": "Edit Contact",
+                                },
+                              },
+                              "EXCHANGE": Object {
+                                "MODAL_ADD_EXCHANGE": Object {
+                                  "DESCRIPTION": "Buy ARK directly from the ARK Desktop Wallet or through one of 20+ exchanges supplying ARK tokens using BTC, ETH or other trading pairs.",
+                                  "TITLE": "Exchange",
                                 },
                               },
                               "HELP": Object {
@@ -1022,6 +1055,7 @@ exports[`Application root should render without crashing 1`] = `
                               "LEDGER_WALLET": "This is a Ledger wallet",
                               "LOAD": "Load",
                               "MARKETSQUARE": "MarketSquare",
+                              "NAME": "Name",
                               "NETWORK": "Network",
                               "NETWORK_NAME": "This name is provided by the network",
                               "NEXT": "Next",
@@ -1034,6 +1068,7 @@ exports[`Application root should render without crashing 1`] = `
                               "PROFILE_NAME": "Profile name",
                               "QUANTITY": "Quantity",
                               "RANK": "Rank",
+                              "RATING": "Rating",
                               "REMOVE": "Remove",
                               "SAVE": "Save",
                               "SELECT": "Select",
@@ -1065,20 +1100,29 @@ exports[`Application root should render without crashing 1`] = `
                               "YOUR_PASSPHRASE": "Your Passphrase",
                             },
                             "CONTACTS": Object {
+                              "CONTACT_FORM": Object {
+                                "ADDRESS": "Address",
+                                "ADDRESSES": "Addresses",
+                                "ADD_ADDRESS": "Add address",
+                                "NAME": "Name",
+                                "NETWORK": "Network",
+                              },
                               "MODAL_CREATE_CONTACT": Object {
-                                "ADD_ADDRESS": "Add Address",
                                 "DESCRIPTION": "Enter your contacts name and addresses and add them to your list.",
-                                "FORM": Object {
-                                  "ADDRESS": "Address",
-                                  "ADDRESSES": "Addresses",
-                                  "NAME": "Name",
-                                  "NETWORK": "Network",
-                                },
                                 "TITLE": "Add Contact",
                               },
                               "MODAL_DELETE_CONTACT": Object {
                                 "DESCRIPTION": "Do you really want to delete this contact? Once deleted, you will not be able to restore it.",
                                 "TITLE": "Delete Contact",
+                              },
+                              "MODAL_UPDATE_CONTACT": Object {
+                                "TITLE": "Edit Contact",
+                              },
+                            },
+                            "EXCHANGE": Object {
+                              "MODAL_ADD_EXCHANGE": Object {
+                                "DESCRIPTION": "Buy ARK directly from the ARK Desktop Wallet or through one of 20+ exchanges supplying ARK tokens using BTC, ETH or other trading pairs.",
+                                "TITLE": "Exchange",
                               },
                             },
                             "HELP": Object {
@@ -1322,6 +1366,7 @@ exports[`Application root should render without crashing 1`] = `
                               "LEDGER_WALLET": "This is a Ledger wallet",
                               "LOAD": "Load",
                               "MARKETSQUARE": "MarketSquare",
+                              "NAME": "Name",
                               "NETWORK": "Network",
                               "NETWORK_NAME": "This name is provided by the network",
                               "NEXT": "Next",
@@ -1334,6 +1379,7 @@ exports[`Application root should render without crashing 1`] = `
                               "PROFILE_NAME": "Profile name",
                               "QUANTITY": "Quantity",
                               "RANK": "Rank",
+                              "RATING": "Rating",
                               "REMOVE": "Remove",
                               "SAVE": "Save",
                               "SELECT": "Select",
@@ -1365,20 +1411,29 @@ exports[`Application root should render without crashing 1`] = `
                               "YOUR_PASSPHRASE": "Your Passphrase",
                             },
                             "CONTACTS": Object {
+                              "CONTACT_FORM": Object {
+                                "ADDRESS": "Address",
+                                "ADDRESSES": "Addresses",
+                                "ADD_ADDRESS": "Add address",
+                                "NAME": "Name",
+                                "NETWORK": "Network",
+                              },
                               "MODAL_CREATE_CONTACT": Object {
-                                "ADD_ADDRESS": "Add Address",
                                 "DESCRIPTION": "Enter your contacts name and addresses and add them to your list.",
-                                "FORM": Object {
-                                  "ADDRESS": "Address",
-                                  "ADDRESSES": "Addresses",
-                                  "NAME": "Name",
-                                  "NETWORK": "Network",
-                                },
                                 "TITLE": "Add Contact",
                               },
                               "MODAL_DELETE_CONTACT": Object {
                                 "DESCRIPTION": "Do you really want to delete this contact? Once deleted, you will not be able to restore it.",
                                 "TITLE": "Delete Contact",
+                              },
+                              "MODAL_UPDATE_CONTACT": Object {
+                                "TITLE": "Edit Contact",
+                              },
+                            },
+                            "EXCHANGE": Object {
+                              "MODAL_ADD_EXCHANGE": Object {
+                                "DESCRIPTION": "Buy ARK directly from the ARK Desktop Wallet or through one of 20+ exchanges supplying ARK tokens using BTC, ETH or other trading pairs.",
+                                "TITLE": "Exchange",
                               },
                             },
                             "HELP": Object {
@@ -1617,6 +1672,7 @@ exports[`Application root should render without crashing 1`] = `
                             "LEDGER_WALLET": "This is a Ledger wallet",
                             "LOAD": "Load",
                             "MARKETSQUARE": "MarketSquare",
+                            "NAME": "Name",
                             "NETWORK": "Network",
                             "NETWORK_NAME": "This name is provided by the network",
                             "NEXT": "Next",
@@ -1629,6 +1685,7 @@ exports[`Application root should render without crashing 1`] = `
                             "PROFILE_NAME": "Profile name",
                             "QUANTITY": "Quantity",
                             "RANK": "Rank",
+                            "RATING": "Rating",
                             "REMOVE": "Remove",
                             "SAVE": "Save",
                             "SELECT": "Select",
@@ -1660,20 +1717,29 @@ exports[`Application root should render without crashing 1`] = `
                             "YOUR_PASSPHRASE": "Your Passphrase",
                           },
                           "CONTACTS": Object {
+                            "CONTACT_FORM": Object {
+                              "ADDRESS": "Address",
+                              "ADDRESSES": "Addresses",
+                              "ADD_ADDRESS": "Add address",
+                              "NAME": "Name",
+                              "NETWORK": "Network",
+                            },
                             "MODAL_CREATE_CONTACT": Object {
-                              "ADD_ADDRESS": "Add Address",
                               "DESCRIPTION": "Enter your contacts name and addresses and add them to your list.",
-                              "FORM": Object {
-                                "ADDRESS": "Address",
-                                "ADDRESSES": "Addresses",
-                                "NAME": "Name",
-                                "NETWORK": "Network",
-                              },
                               "TITLE": "Add Contact",
                             },
                             "MODAL_DELETE_CONTACT": Object {
                               "DESCRIPTION": "Do you really want to delete this contact? Once deleted, you will not be able to restore it.",
                               "TITLE": "Delete Contact",
+                            },
+                            "MODAL_UPDATE_CONTACT": Object {
+                              "TITLE": "Edit Contact",
+                            },
+                          },
+                          "EXCHANGE": Object {
+                            "MODAL_ADD_EXCHANGE": Object {
+                              "DESCRIPTION": "Buy ARK directly from the ARK Desktop Wallet or through one of 20+ exchanges supplying ARK tokens using BTC, ETH or other trading pairs.",
+                              "TITLE": "Exchange",
                             },
                           },
                           "HELP": Object {
@@ -1865,6 +1931,7 @@ exports[`Application root should render without crashing 1`] = `
                           "LEDGER_WALLET": "This is a Ledger wallet",
                           "LOAD": "Load",
                           "MARKETSQUARE": "MarketSquare",
+                          "NAME": "Name",
                           "NETWORK": "Network",
                           "NETWORK_NAME": "This name is provided by the network",
                           "NEXT": "Next",
@@ -1877,6 +1944,7 @@ exports[`Application root should render without crashing 1`] = `
                           "PROFILE_NAME": "Profile name",
                           "QUANTITY": "Quantity",
                           "RANK": "Rank",
+                          "RATING": "Rating",
                           "REMOVE": "Remove",
                           "SAVE": "Save",
                           "SELECT": "Select",
@@ -1908,20 +1976,29 @@ exports[`Application root should render without crashing 1`] = `
                           "YOUR_PASSPHRASE": "Your Passphrase",
                         },
                         "CONTACTS": Object {
+                          "CONTACT_FORM": Object {
+                            "ADDRESS": "Address",
+                            "ADDRESSES": "Addresses",
+                            "ADD_ADDRESS": "Add address",
+                            "NAME": "Name",
+                            "NETWORK": "Network",
+                          },
                           "MODAL_CREATE_CONTACT": Object {
-                            "ADD_ADDRESS": "Add Address",
                             "DESCRIPTION": "Enter your contacts name and addresses and add them to your list.",
-                            "FORM": Object {
-                              "ADDRESS": "Address",
-                              "ADDRESSES": "Addresses",
-                              "NAME": "Name",
-                              "NETWORK": "Network",
-                            },
                             "TITLE": "Add Contact",
                           },
                           "MODAL_DELETE_CONTACT": Object {
                             "DESCRIPTION": "Do you really want to delete this contact? Once deleted, you will not be able to restore it.",
                             "TITLE": "Delete Contact",
+                          },
+                          "MODAL_UPDATE_CONTACT": Object {
+                            "TITLE": "Edit Contact",
+                          },
+                        },
+                        "EXCHANGE": Object {
+                          "MODAL_ADD_EXCHANGE": Object {
+                            "DESCRIPTION": "Buy ARK directly from the ARK Desktop Wallet or through one of 20+ exchanges supplying ARK tokens using BTC, ETH or other trading pairs.",
+                            "TITLE": "Exchange",
                           },
                         },
                         "HELP": Object {
@@ -2159,6 +2236,7 @@ exports[`Application root should render without crashing 1`] = `
                               "LEDGER_WALLET": "This is a Ledger wallet",
                               "LOAD": "Load",
                               "MARKETSQUARE": "MarketSquare",
+                              "NAME": "Name",
                               "NETWORK": "Network",
                               "NETWORK_NAME": "This name is provided by the network",
                               "NEXT": "Next",
@@ -2171,6 +2249,7 @@ exports[`Application root should render without crashing 1`] = `
                               "PROFILE_NAME": "Profile name",
                               "QUANTITY": "Quantity",
                               "RANK": "Rank",
+                              "RATING": "Rating",
                               "REMOVE": "Remove",
                               "SAVE": "Save",
                               "SELECT": "Select",
@@ -2202,20 +2281,29 @@ exports[`Application root should render without crashing 1`] = `
                               "YOUR_PASSPHRASE": "Your Passphrase",
                             },
                             "CONTACTS": Object {
+                              "CONTACT_FORM": Object {
+                                "ADDRESS": "Address",
+                                "ADDRESSES": "Addresses",
+                                "ADD_ADDRESS": "Add address",
+                                "NAME": "Name",
+                                "NETWORK": "Network",
+                              },
                               "MODAL_CREATE_CONTACT": Object {
-                                "ADD_ADDRESS": "Add Address",
                                 "DESCRIPTION": "Enter your contacts name and addresses and add them to your list.",
-                                "FORM": Object {
-                                  "ADDRESS": "Address",
-                                  "ADDRESSES": "Addresses",
-                                  "NAME": "Name",
-                                  "NETWORK": "Network",
-                                },
                                 "TITLE": "Add Contact",
                               },
                               "MODAL_DELETE_CONTACT": Object {
                                 "DESCRIPTION": "Do you really want to delete this contact? Once deleted, you will not be able to restore it.",
                                 "TITLE": "Delete Contact",
+                              },
+                              "MODAL_UPDATE_CONTACT": Object {
+                                "TITLE": "Edit Contact",
+                              },
+                            },
+                            "EXCHANGE": Object {
+                              "MODAL_ADD_EXCHANGE": Object {
+                                "DESCRIPTION": "Buy ARK directly from the ARK Desktop Wallet or through one of 20+ exchanges supplying ARK tokens using BTC, ETH or other trading pairs.",
+                                "TITLE": "Exchange",
                               },
                             },
                             "HELP": Object {
@@ -2454,6 +2542,7 @@ exports[`Application root should render without crashing 1`] = `
                             "LEDGER_WALLET": "This is a Ledger wallet",
                             "LOAD": "Load",
                             "MARKETSQUARE": "MarketSquare",
+                            "NAME": "Name",
                             "NETWORK": "Network",
                             "NETWORK_NAME": "This name is provided by the network",
                             "NEXT": "Next",
@@ -2466,6 +2555,7 @@ exports[`Application root should render without crashing 1`] = `
                             "PROFILE_NAME": "Profile name",
                             "QUANTITY": "Quantity",
                             "RANK": "Rank",
+                            "RATING": "Rating",
                             "REMOVE": "Remove",
                             "SAVE": "Save",
                             "SELECT": "Select",
@@ -2497,20 +2587,29 @@ exports[`Application root should render without crashing 1`] = `
                             "YOUR_PASSPHRASE": "Your Passphrase",
                           },
                           "CONTACTS": Object {
+                            "CONTACT_FORM": Object {
+                              "ADDRESS": "Address",
+                              "ADDRESSES": "Addresses",
+                              "ADD_ADDRESS": "Add address",
+                              "NAME": "Name",
+                              "NETWORK": "Network",
+                            },
                             "MODAL_CREATE_CONTACT": Object {
-                              "ADD_ADDRESS": "Add Address",
                               "DESCRIPTION": "Enter your contacts name and addresses and add them to your list.",
-                              "FORM": Object {
-                                "ADDRESS": "Address",
-                                "ADDRESSES": "Addresses",
-                                "NAME": "Name",
-                                "NETWORK": "Network",
-                              },
                               "TITLE": "Add Contact",
                             },
                             "MODAL_DELETE_CONTACT": Object {
                               "DESCRIPTION": "Do you really want to delete this contact? Once deleted, you will not be able to restore it.",
                               "TITLE": "Delete Contact",
+                            },
+                            "MODAL_UPDATE_CONTACT": Object {
+                              "TITLE": "Edit Contact",
+                            },
+                          },
+                          "EXCHANGE": Object {
+                            "MODAL_ADD_EXCHANGE": Object {
+                              "DESCRIPTION": "Buy ARK directly from the ARK Desktop Wallet or through one of 20+ exchanges supplying ARK tokens using BTC, ETH or other trading pairs.",
+                              "TITLE": "Exchange",
                             },
                           },
                           "HELP": Object {
@@ -2761,6 +2860,7 @@ exports[`Application root should render without crashing 1`] = `
                               "LEDGER_WALLET": "This is a Ledger wallet",
                               "LOAD": "Load",
                               "MARKETSQUARE": "MarketSquare",
+                              "NAME": "Name",
                               "NETWORK": "Network",
                               "NETWORK_NAME": "This name is provided by the network",
                               "NEXT": "Next",
@@ -2773,6 +2873,7 @@ exports[`Application root should render without crashing 1`] = `
                               "PROFILE_NAME": "Profile name",
                               "QUANTITY": "Quantity",
                               "RANK": "Rank",
+                              "RATING": "Rating",
                               "REMOVE": "Remove",
                               "SAVE": "Save",
                               "SELECT": "Select",
@@ -2804,20 +2905,29 @@ exports[`Application root should render without crashing 1`] = `
                               "YOUR_PASSPHRASE": "Your Passphrase",
                             },
                             "CONTACTS": Object {
+                              "CONTACT_FORM": Object {
+                                "ADDRESS": "Address",
+                                "ADDRESSES": "Addresses",
+                                "ADD_ADDRESS": "Add address",
+                                "NAME": "Name",
+                                "NETWORK": "Network",
+                              },
                               "MODAL_CREATE_CONTACT": Object {
-                                "ADD_ADDRESS": "Add Address",
                                 "DESCRIPTION": "Enter your contacts name and addresses and add them to your list.",
-                                "FORM": Object {
-                                  "ADDRESS": "Address",
-                                  "ADDRESSES": "Addresses",
-                                  "NAME": "Name",
-                                  "NETWORK": "Network",
-                                },
                                 "TITLE": "Add Contact",
                               },
                               "MODAL_DELETE_CONTACT": Object {
                                 "DESCRIPTION": "Do you really want to delete this contact? Once deleted, you will not be able to restore it.",
                                 "TITLE": "Delete Contact",
+                              },
+                              "MODAL_UPDATE_CONTACT": Object {
+                                "TITLE": "Edit Contact",
+                              },
+                            },
+                            "EXCHANGE": Object {
+                              "MODAL_ADD_EXCHANGE": Object {
+                                "DESCRIPTION": "Buy ARK directly from the ARK Desktop Wallet or through one of 20+ exchanges supplying ARK tokens using BTC, ETH or other trading pairs.",
+                                "TITLE": "Exchange",
                               },
                             },
                             "HELP": Object {
@@ -3051,6 +3161,7 @@ exports[`Application root should render without crashing 1`] = `
                             "LEDGER_WALLET": "This is a Ledger wallet",
                             "LOAD": "Load",
                             "MARKETSQUARE": "MarketSquare",
+                            "NAME": "Name",
                             "NETWORK": "Network",
                             "NETWORK_NAME": "This name is provided by the network",
                             "NEXT": "Next",
@@ -3063,6 +3174,7 @@ exports[`Application root should render without crashing 1`] = `
                             "PROFILE_NAME": "Profile name",
                             "QUANTITY": "Quantity",
                             "RANK": "Rank",
+                            "RATING": "Rating",
                             "REMOVE": "Remove",
                             "SAVE": "Save",
                             "SELECT": "Select",
@@ -3094,20 +3206,29 @@ exports[`Application root should render without crashing 1`] = `
                             "YOUR_PASSPHRASE": "Your Passphrase",
                           },
                           "CONTACTS": Object {
+                            "CONTACT_FORM": Object {
+                              "ADDRESS": "Address",
+                              "ADDRESSES": "Addresses",
+                              "ADD_ADDRESS": "Add address",
+                              "NAME": "Name",
+                              "NETWORK": "Network",
+                            },
                             "MODAL_CREATE_CONTACT": Object {
-                              "ADD_ADDRESS": "Add Address",
                               "DESCRIPTION": "Enter your contacts name and addresses and add them to your list.",
-                              "FORM": Object {
-                                "ADDRESS": "Address",
-                                "ADDRESSES": "Addresses",
-                                "NAME": "Name",
-                                "NETWORK": "Network",
-                              },
                               "TITLE": "Add Contact",
                             },
                             "MODAL_DELETE_CONTACT": Object {
                               "DESCRIPTION": "Do you really want to delete this contact? Once deleted, you will not be able to restore it.",
                               "TITLE": "Delete Contact",
+                            },
+                            "MODAL_UPDATE_CONTACT": Object {
+                              "TITLE": "Edit Contact",
+                            },
+                          },
+                          "EXCHANGE": Object {
+                            "MODAL_ADD_EXCHANGE": Object {
+                              "DESCRIPTION": "Buy ARK directly from the ARK Desktop Wallet or through one of 20+ exchanges supplying ARK tokens using BTC, ETH or other trading pairs.",
+                              "TITLE": "Exchange",
                             },
                           },
                           "HELP": Object {
@@ -3350,6 +3471,7 @@ exports[`Application root should render without crashing 1`] = `
                             "LEDGER_WALLET": "This is a Ledger wallet",
                             "LOAD": "Load",
                             "MARKETSQUARE": "MarketSquare",
+                            "NAME": "Name",
                             "NETWORK": "Network",
                             "NETWORK_NAME": "This name is provided by the network",
                             "NEXT": "Next",
@@ -3362,6 +3484,7 @@ exports[`Application root should render without crashing 1`] = `
                             "PROFILE_NAME": "Profile name",
                             "QUANTITY": "Quantity",
                             "RANK": "Rank",
+                            "RATING": "Rating",
                             "REMOVE": "Remove",
                             "SAVE": "Save",
                             "SELECT": "Select",
@@ -3393,20 +3516,29 @@ exports[`Application root should render without crashing 1`] = `
                             "YOUR_PASSPHRASE": "Your Passphrase",
                           },
                           "CONTACTS": Object {
+                            "CONTACT_FORM": Object {
+                              "ADDRESS": "Address",
+                              "ADDRESSES": "Addresses",
+                              "ADD_ADDRESS": "Add address",
+                              "NAME": "Name",
+                              "NETWORK": "Network",
+                            },
                             "MODAL_CREATE_CONTACT": Object {
-                              "ADD_ADDRESS": "Add Address",
                               "DESCRIPTION": "Enter your contacts name and addresses and add them to your list.",
-                              "FORM": Object {
-                                "ADDRESS": "Address",
-                                "ADDRESSES": "Addresses",
-                                "NAME": "Name",
-                                "NETWORK": "Network",
-                              },
                               "TITLE": "Add Contact",
                             },
                             "MODAL_DELETE_CONTACT": Object {
                               "DESCRIPTION": "Do you really want to delete this contact? Once deleted, you will not be able to restore it.",
                               "TITLE": "Delete Contact",
+                            },
+                            "MODAL_UPDATE_CONTACT": Object {
+                              "TITLE": "Edit Contact",
+                            },
+                          },
+                          "EXCHANGE": Object {
+                            "MODAL_ADD_EXCHANGE": Object {
+                              "DESCRIPTION": "Buy ARK directly from the ARK Desktop Wallet or through one of 20+ exchanges supplying ARK tokens using BTC, ETH or other trading pairs.",
+                              "TITLE": "Exchange",
                             },
                           },
                           "HELP": Object {
@@ -3652,6 +3784,7 @@ exports[`Application root should render without crashing 1`] = `
                                 "LEDGER_WALLET": "This is a Ledger wallet",
                                 "LOAD": "Load",
                                 "MARKETSQUARE": "MarketSquare",
+                                "NAME": "Name",
                                 "NETWORK": "Network",
                                 "NETWORK_NAME": "This name is provided by the network",
                                 "NEXT": "Next",
@@ -3664,6 +3797,7 @@ exports[`Application root should render without crashing 1`] = `
                                 "PROFILE_NAME": "Profile name",
                                 "QUANTITY": "Quantity",
                                 "RANK": "Rank",
+                                "RATING": "Rating",
                                 "REMOVE": "Remove",
                                 "SAVE": "Save",
                                 "SELECT": "Select",
@@ -3695,20 +3829,29 @@ exports[`Application root should render without crashing 1`] = `
                                 "YOUR_PASSPHRASE": "Your Passphrase",
                               },
                               "CONTACTS": Object {
+                                "CONTACT_FORM": Object {
+                                  "ADDRESS": "Address",
+                                  "ADDRESSES": "Addresses",
+                                  "ADD_ADDRESS": "Add address",
+                                  "NAME": "Name",
+                                  "NETWORK": "Network",
+                                },
                                 "MODAL_CREATE_CONTACT": Object {
-                                  "ADD_ADDRESS": "Add Address",
                                   "DESCRIPTION": "Enter your contacts name and addresses and add them to your list.",
-                                  "FORM": Object {
-                                    "ADDRESS": "Address",
-                                    "ADDRESSES": "Addresses",
-                                    "NAME": "Name",
-                                    "NETWORK": "Network",
-                                  },
                                   "TITLE": "Add Contact",
                                 },
                                 "MODAL_DELETE_CONTACT": Object {
                                   "DESCRIPTION": "Do you really want to delete this contact? Once deleted, you will not be able to restore it.",
                                   "TITLE": "Delete Contact",
+                                },
+                                "MODAL_UPDATE_CONTACT": Object {
+                                  "TITLE": "Edit Contact",
+                                },
+                              },
+                              "EXCHANGE": Object {
+                                "MODAL_ADD_EXCHANGE": Object {
+                                  "DESCRIPTION": "Buy ARK directly from the ARK Desktop Wallet or through one of 20+ exchanges supplying ARK tokens using BTC, ETH or other trading pairs.",
+                                  "TITLE": "Exchange",
                                 },
                               },
                               "HELP": Object {
@@ -3942,6 +4085,7 @@ exports[`Application root should render without crashing 1`] = `
                               "LEDGER_WALLET": "This is a Ledger wallet",
                               "LOAD": "Load",
                               "MARKETSQUARE": "MarketSquare",
+                              "NAME": "Name",
                               "NETWORK": "Network",
                               "NETWORK_NAME": "This name is provided by the network",
                               "NEXT": "Next",
@@ -3954,6 +4098,7 @@ exports[`Application root should render without crashing 1`] = `
                               "PROFILE_NAME": "Profile name",
                               "QUANTITY": "Quantity",
                               "RANK": "Rank",
+                              "RATING": "Rating",
                               "REMOVE": "Remove",
                               "SAVE": "Save",
                               "SELECT": "Select",
@@ -3985,20 +4130,29 @@ exports[`Application root should render without crashing 1`] = `
                               "YOUR_PASSPHRASE": "Your Passphrase",
                             },
                             "CONTACTS": Object {
+                              "CONTACT_FORM": Object {
+                                "ADDRESS": "Address",
+                                "ADDRESSES": "Addresses",
+                                "ADD_ADDRESS": "Add address",
+                                "NAME": "Name",
+                                "NETWORK": "Network",
+                              },
                               "MODAL_CREATE_CONTACT": Object {
-                                "ADD_ADDRESS": "Add Address",
                                 "DESCRIPTION": "Enter your contacts name and addresses and add them to your list.",
-                                "FORM": Object {
-                                  "ADDRESS": "Address",
-                                  "ADDRESSES": "Addresses",
-                                  "NAME": "Name",
-                                  "NETWORK": "Network",
-                                },
                                 "TITLE": "Add Contact",
                               },
                               "MODAL_DELETE_CONTACT": Object {
                                 "DESCRIPTION": "Do you really want to delete this contact? Once deleted, you will not be able to restore it.",
                                 "TITLE": "Delete Contact",
+                              },
+                              "MODAL_UPDATE_CONTACT": Object {
+                                "TITLE": "Edit Contact",
+                              },
+                            },
+                            "EXCHANGE": Object {
+                              "MODAL_ADD_EXCHANGE": Object {
+                                "DESCRIPTION": "Buy ARK directly from the ARK Desktop Wallet or through one of 20+ exchanges supplying ARK tokens using BTC, ETH or other trading pairs.",
+                                "TITLE": "Exchange",
                               },
                             },
                             "HELP": Object {
@@ -4242,6 +4396,7 @@ exports[`Application root should render without crashing 1`] = `
                               "LEDGER_WALLET": "This is a Ledger wallet",
                               "LOAD": "Load",
                               "MARKETSQUARE": "MarketSquare",
+                              "NAME": "Name",
                               "NETWORK": "Network",
                               "NETWORK_NAME": "This name is provided by the network",
                               "NEXT": "Next",
@@ -4254,6 +4409,7 @@ exports[`Application root should render without crashing 1`] = `
                               "PROFILE_NAME": "Profile name",
                               "QUANTITY": "Quantity",
                               "RANK": "Rank",
+                              "RATING": "Rating",
                               "REMOVE": "Remove",
                               "SAVE": "Save",
                               "SELECT": "Select",
@@ -4285,20 +4441,29 @@ exports[`Application root should render without crashing 1`] = `
                               "YOUR_PASSPHRASE": "Your Passphrase",
                             },
                             "CONTACTS": Object {
+                              "CONTACT_FORM": Object {
+                                "ADDRESS": "Address",
+                                "ADDRESSES": "Addresses",
+                                "ADD_ADDRESS": "Add address",
+                                "NAME": "Name",
+                                "NETWORK": "Network",
+                              },
                               "MODAL_CREATE_CONTACT": Object {
-                                "ADD_ADDRESS": "Add Address",
                                 "DESCRIPTION": "Enter your contacts name and addresses and add them to your list.",
-                                "FORM": Object {
-                                  "ADDRESS": "Address",
-                                  "ADDRESSES": "Addresses",
-                                  "NAME": "Name",
-                                  "NETWORK": "Network",
-                                },
                                 "TITLE": "Add Contact",
                               },
                               "MODAL_DELETE_CONTACT": Object {
                                 "DESCRIPTION": "Do you really want to delete this contact? Once deleted, you will not be able to restore it.",
                                 "TITLE": "Delete Contact",
+                              },
+                              "MODAL_UPDATE_CONTACT": Object {
+                                "TITLE": "Edit Contact",
+                              },
+                            },
+                            "EXCHANGE": Object {
+                              "MODAL_ADD_EXCHANGE": Object {
+                                "DESCRIPTION": "Buy ARK directly from the ARK Desktop Wallet or through one of 20+ exchanges supplying ARK tokens using BTC, ETH or other trading pairs.",
+                                "TITLE": "Exchange",
                               },
                             },
                             "HELP": Object {
@@ -5434,6 +5599,7 @@ exports[`Application root should render without crashing 1`] = `
                         "LEDGER_WALLET": "This is a Ledger wallet",
                         "LOAD": "Load",
                         "MARKETSQUARE": "MarketSquare",
+                        "NAME": "Name",
                         "NETWORK": "Network",
                         "NETWORK_NAME": "This name is provided by the network",
                         "NEXT": "Next",
@@ -5446,6 +5612,7 @@ exports[`Application root should render without crashing 1`] = `
                         "PROFILE_NAME": "Profile name",
                         "QUANTITY": "Quantity",
                         "RANK": "Rank",
+                        "RATING": "Rating",
                         "REMOVE": "Remove",
                         "SAVE": "Save",
                         "SELECT": "Select",
@@ -5477,20 +5644,29 @@ exports[`Application root should render without crashing 1`] = `
                         "YOUR_PASSPHRASE": "Your Passphrase",
                       },
                       "CONTACTS": Object {
+                        "CONTACT_FORM": Object {
+                          "ADDRESS": "Address",
+                          "ADDRESSES": "Addresses",
+                          "ADD_ADDRESS": "Add address",
+                          "NAME": "Name",
+                          "NETWORK": "Network",
+                        },
                         "MODAL_CREATE_CONTACT": Object {
-                          "ADD_ADDRESS": "Add Address",
                           "DESCRIPTION": "Enter your contacts name and addresses and add them to your list.",
-                          "FORM": Object {
-                            "ADDRESS": "Address",
-                            "ADDRESSES": "Addresses",
-                            "NAME": "Name",
-                            "NETWORK": "Network",
-                          },
                           "TITLE": "Add Contact",
                         },
                         "MODAL_DELETE_CONTACT": Object {
                           "DESCRIPTION": "Do you really want to delete this contact? Once deleted, you will not be able to restore it.",
                           "TITLE": "Delete Contact",
+                        },
+                        "MODAL_UPDATE_CONTACT": Object {
+                          "TITLE": "Edit Contact",
+                        },
+                      },
+                      "EXCHANGE": Object {
+                        "MODAL_ADD_EXCHANGE": Object {
+                          "DESCRIPTION": "Buy ARK directly from the ARK Desktop Wallet or through one of 20+ exchanges supplying ARK tokens using BTC, ETH or other trading pairs.",
+                          "TITLE": "Exchange",
                         },
                       },
                       "HELP": Object {
@@ -5672,6 +5848,7 @@ exports[`Application root should render without crashing 1`] = `
                       "LEDGER_WALLET": "This is a Ledger wallet",
                       "LOAD": "Load",
                       "MARKETSQUARE": "MarketSquare",
+                      "NAME": "Name",
                       "NETWORK": "Network",
                       "NETWORK_NAME": "This name is provided by the network",
                       "NEXT": "Next",
@@ -5684,6 +5861,7 @@ exports[`Application root should render without crashing 1`] = `
                       "PROFILE_NAME": "Profile name",
                       "QUANTITY": "Quantity",
                       "RANK": "Rank",
+                      "RATING": "Rating",
                       "REMOVE": "Remove",
                       "SAVE": "Save",
                       "SELECT": "Select",
@@ -5715,20 +5893,29 @@ exports[`Application root should render without crashing 1`] = `
                       "YOUR_PASSPHRASE": "Your Passphrase",
                     },
                     "CONTACTS": Object {
+                      "CONTACT_FORM": Object {
+                        "ADDRESS": "Address",
+                        "ADDRESSES": "Addresses",
+                        "ADD_ADDRESS": "Add address",
+                        "NAME": "Name",
+                        "NETWORK": "Network",
+                      },
                       "MODAL_CREATE_CONTACT": Object {
-                        "ADD_ADDRESS": "Add Address",
                         "DESCRIPTION": "Enter your contacts name and addresses and add them to your list.",
-                        "FORM": Object {
-                          "ADDRESS": "Address",
-                          "ADDRESSES": "Addresses",
-                          "NAME": "Name",
-                          "NETWORK": "Network",
-                        },
                         "TITLE": "Add Contact",
                       },
                       "MODAL_DELETE_CONTACT": Object {
                         "DESCRIPTION": "Do you really want to delete this contact? Once deleted, you will not be able to restore it.",
                         "TITLE": "Delete Contact",
+                      },
+                      "MODAL_UPDATE_CONTACT": Object {
+                        "TITLE": "Edit Contact",
+                      },
+                    },
+                    "EXCHANGE": Object {
+                      "MODAL_ADD_EXCHANGE": Object {
+                        "DESCRIPTION": "Buy ARK directly from the ARK Desktop Wallet or through one of 20+ exchanges supplying ARK tokens using BTC, ETH or other trading pairs.",
+                        "TITLE": "Exchange",
                       },
                     },
                     "HELP": Object {
@@ -5963,6 +6150,7 @@ exports[`Application root should render without crashing 1`] = `
                                 "LEDGER_WALLET": "This is a Ledger wallet",
                                 "LOAD": "Load",
                                 "MARKETSQUARE": "MarketSquare",
+                                "NAME": "Name",
                                 "NETWORK": "Network",
                                 "NETWORK_NAME": "This name is provided by the network",
                                 "NEXT": "Next",
@@ -5975,6 +6163,7 @@ exports[`Application root should render without crashing 1`] = `
                                 "PROFILE_NAME": "Profile name",
                                 "QUANTITY": "Quantity",
                                 "RANK": "Rank",
+                                "RATING": "Rating",
                                 "REMOVE": "Remove",
                                 "SAVE": "Save",
                                 "SELECT": "Select",
@@ -6006,20 +6195,29 @@ exports[`Application root should render without crashing 1`] = `
                                 "YOUR_PASSPHRASE": "Your Passphrase",
                               },
                               "CONTACTS": Object {
+                                "CONTACT_FORM": Object {
+                                  "ADDRESS": "Address",
+                                  "ADDRESSES": "Addresses",
+                                  "ADD_ADDRESS": "Add address",
+                                  "NAME": "Name",
+                                  "NETWORK": "Network",
+                                },
                                 "MODAL_CREATE_CONTACT": Object {
-                                  "ADD_ADDRESS": "Add Address",
                                   "DESCRIPTION": "Enter your contacts name and addresses and add them to your list.",
-                                  "FORM": Object {
-                                    "ADDRESS": "Address",
-                                    "ADDRESSES": "Addresses",
-                                    "NAME": "Name",
-                                    "NETWORK": "Network",
-                                  },
                                   "TITLE": "Add Contact",
                                 },
                                 "MODAL_DELETE_CONTACT": Object {
                                   "DESCRIPTION": "Do you really want to delete this contact? Once deleted, you will not be able to restore it.",
                                   "TITLE": "Delete Contact",
+                                },
+                                "MODAL_UPDATE_CONTACT": Object {
+                                  "TITLE": "Edit Contact",
+                                },
+                              },
+                              "EXCHANGE": Object {
+                                "MODAL_ADD_EXCHANGE": Object {
+                                  "DESCRIPTION": "Buy ARK directly from the ARK Desktop Wallet or through one of 20+ exchanges supplying ARK tokens using BTC, ETH or other trading pairs.",
+                                  "TITLE": "Exchange",
                                 },
                               },
                               "HELP": Object {
@@ -6253,6 +6451,7 @@ exports[`Application root should render without crashing 1`] = `
                               "LEDGER_WALLET": "This is a Ledger wallet",
                               "LOAD": "Load",
                               "MARKETSQUARE": "MarketSquare",
+                              "NAME": "Name",
                               "NETWORK": "Network",
                               "NETWORK_NAME": "This name is provided by the network",
                               "NEXT": "Next",
@@ -6265,6 +6464,7 @@ exports[`Application root should render without crashing 1`] = `
                               "PROFILE_NAME": "Profile name",
                               "QUANTITY": "Quantity",
                               "RANK": "Rank",
+                              "RATING": "Rating",
                               "REMOVE": "Remove",
                               "SAVE": "Save",
                               "SELECT": "Select",
@@ -6296,20 +6496,29 @@ exports[`Application root should render without crashing 1`] = `
                               "YOUR_PASSPHRASE": "Your Passphrase",
                             },
                             "CONTACTS": Object {
+                              "CONTACT_FORM": Object {
+                                "ADDRESS": "Address",
+                                "ADDRESSES": "Addresses",
+                                "ADD_ADDRESS": "Add address",
+                                "NAME": "Name",
+                                "NETWORK": "Network",
+                              },
                               "MODAL_CREATE_CONTACT": Object {
-                                "ADD_ADDRESS": "Add Address",
                                 "DESCRIPTION": "Enter your contacts name and addresses and add them to your list.",
-                                "FORM": Object {
-                                  "ADDRESS": "Address",
-                                  "ADDRESSES": "Addresses",
-                                  "NAME": "Name",
-                                  "NETWORK": "Network",
-                                },
                                 "TITLE": "Add Contact",
                               },
                               "MODAL_DELETE_CONTACT": Object {
                                 "DESCRIPTION": "Do you really want to delete this contact? Once deleted, you will not be able to restore it.",
                                 "TITLE": "Delete Contact",
+                              },
+                              "MODAL_UPDATE_CONTACT": Object {
+                                "TITLE": "Edit Contact",
+                              },
+                            },
+                            "EXCHANGE": Object {
+                              "MODAL_ADD_EXCHANGE": Object {
+                                "DESCRIPTION": "Buy ARK directly from the ARK Desktop Wallet or through one of 20+ exchanges supplying ARK tokens using BTC, ETH or other trading pairs.",
+                                "TITLE": "Exchange",
                               },
                             },
                             "HELP": Object {
@@ -6553,6 +6762,7 @@ exports[`Application root should render without crashing 1`] = `
                               "LEDGER_WALLET": "This is a Ledger wallet",
                               "LOAD": "Load",
                               "MARKETSQUARE": "MarketSquare",
+                              "NAME": "Name",
                               "NETWORK": "Network",
                               "NETWORK_NAME": "This name is provided by the network",
                               "NEXT": "Next",
@@ -6565,6 +6775,7 @@ exports[`Application root should render without crashing 1`] = `
                               "PROFILE_NAME": "Profile name",
                               "QUANTITY": "Quantity",
                               "RANK": "Rank",
+                              "RATING": "Rating",
                               "REMOVE": "Remove",
                               "SAVE": "Save",
                               "SELECT": "Select",
@@ -6596,20 +6807,29 @@ exports[`Application root should render without crashing 1`] = `
                               "YOUR_PASSPHRASE": "Your Passphrase",
                             },
                             "CONTACTS": Object {
+                              "CONTACT_FORM": Object {
+                                "ADDRESS": "Address",
+                                "ADDRESSES": "Addresses",
+                                "ADD_ADDRESS": "Add address",
+                                "NAME": "Name",
+                                "NETWORK": "Network",
+                              },
                               "MODAL_CREATE_CONTACT": Object {
-                                "ADD_ADDRESS": "Add Address",
                                 "DESCRIPTION": "Enter your contacts name and addresses and add them to your list.",
-                                "FORM": Object {
-                                  "ADDRESS": "Address",
-                                  "ADDRESSES": "Addresses",
-                                  "NAME": "Name",
-                                  "NETWORK": "Network",
-                                },
                                 "TITLE": "Add Contact",
                               },
                               "MODAL_DELETE_CONTACT": Object {
                                 "DESCRIPTION": "Do you really want to delete this contact? Once deleted, you will not be able to restore it.",
                                 "TITLE": "Delete Contact",
+                              },
+                              "MODAL_UPDATE_CONTACT": Object {
+                                "TITLE": "Edit Contact",
+                              },
+                            },
+                            "EXCHANGE": Object {
+                              "MODAL_ADD_EXCHANGE": Object {
+                                "DESCRIPTION": "Buy ARK directly from the ARK Desktop Wallet or through one of 20+ exchanges supplying ARK tokens using BTC, ETH or other trading pairs.",
+                                "TITLE": "Exchange",
                               },
                             },
                             "HELP": Object {
@@ -6848,6 +7068,7 @@ exports[`Application root should render without crashing 1`] = `
                             "LEDGER_WALLET": "This is a Ledger wallet",
                             "LOAD": "Load",
                             "MARKETSQUARE": "MarketSquare",
+                            "NAME": "Name",
                             "NETWORK": "Network",
                             "NETWORK_NAME": "This name is provided by the network",
                             "NEXT": "Next",
@@ -6860,6 +7081,7 @@ exports[`Application root should render without crashing 1`] = `
                             "PROFILE_NAME": "Profile name",
                             "QUANTITY": "Quantity",
                             "RANK": "Rank",
+                            "RATING": "Rating",
                             "REMOVE": "Remove",
                             "SAVE": "Save",
                             "SELECT": "Select",
@@ -6891,20 +7113,29 @@ exports[`Application root should render without crashing 1`] = `
                             "YOUR_PASSPHRASE": "Your Passphrase",
                           },
                           "CONTACTS": Object {
+                            "CONTACT_FORM": Object {
+                              "ADDRESS": "Address",
+                              "ADDRESSES": "Addresses",
+                              "ADD_ADDRESS": "Add address",
+                              "NAME": "Name",
+                              "NETWORK": "Network",
+                            },
                             "MODAL_CREATE_CONTACT": Object {
-                              "ADD_ADDRESS": "Add Address",
                               "DESCRIPTION": "Enter your contacts name and addresses and add them to your list.",
-                              "FORM": Object {
-                                "ADDRESS": "Address",
-                                "ADDRESSES": "Addresses",
-                                "NAME": "Name",
-                                "NETWORK": "Network",
-                              },
                               "TITLE": "Add Contact",
                             },
                             "MODAL_DELETE_CONTACT": Object {
                               "DESCRIPTION": "Do you really want to delete this contact? Once deleted, you will not be able to restore it.",
                               "TITLE": "Delete Contact",
+                            },
+                            "MODAL_UPDATE_CONTACT": Object {
+                              "TITLE": "Edit Contact",
+                            },
+                          },
+                          "EXCHANGE": Object {
+                            "MODAL_ADD_EXCHANGE": Object {
+                              "DESCRIPTION": "Buy ARK directly from the ARK Desktop Wallet or through one of 20+ exchanges supplying ARK tokens using BTC, ETH or other trading pairs.",
+                              "TITLE": "Exchange",
                             },
                           },
                           "HELP": Object {
@@ -7155,6 +7386,7 @@ exports[`Application root should render without crashing 1`] = `
                                   "LEDGER_WALLET": "This is a Ledger wallet",
                                   "LOAD": "Load",
                                   "MARKETSQUARE": "MarketSquare",
+                                  "NAME": "Name",
                                   "NETWORK": "Network",
                                   "NETWORK_NAME": "This name is provided by the network",
                                   "NEXT": "Next",
@@ -7167,6 +7399,7 @@ exports[`Application root should render without crashing 1`] = `
                                   "PROFILE_NAME": "Profile name",
                                   "QUANTITY": "Quantity",
                                   "RANK": "Rank",
+                                  "RATING": "Rating",
                                   "REMOVE": "Remove",
                                   "SAVE": "Save",
                                   "SELECT": "Select",
@@ -7198,20 +7431,29 @@ exports[`Application root should render without crashing 1`] = `
                                   "YOUR_PASSPHRASE": "Your Passphrase",
                                 },
                                 "CONTACTS": Object {
+                                  "CONTACT_FORM": Object {
+                                    "ADDRESS": "Address",
+                                    "ADDRESSES": "Addresses",
+                                    "ADD_ADDRESS": "Add address",
+                                    "NAME": "Name",
+                                    "NETWORK": "Network",
+                                  },
                                   "MODAL_CREATE_CONTACT": Object {
-                                    "ADD_ADDRESS": "Add Address",
                                     "DESCRIPTION": "Enter your contacts name and addresses and add them to your list.",
-                                    "FORM": Object {
-                                      "ADDRESS": "Address",
-                                      "ADDRESSES": "Addresses",
-                                      "NAME": "Name",
-                                      "NETWORK": "Network",
-                                    },
                                     "TITLE": "Add Contact",
                                   },
                                   "MODAL_DELETE_CONTACT": Object {
                                     "DESCRIPTION": "Do you really want to delete this contact? Once deleted, you will not be able to restore it.",
                                     "TITLE": "Delete Contact",
+                                  },
+                                  "MODAL_UPDATE_CONTACT": Object {
+                                    "TITLE": "Edit Contact",
+                                  },
+                                },
+                                "EXCHANGE": Object {
+                                  "MODAL_ADD_EXCHANGE": Object {
+                                    "DESCRIPTION": "Buy ARK directly from the ARK Desktop Wallet or through one of 20+ exchanges supplying ARK tokens using BTC, ETH or other trading pairs.",
+                                    "TITLE": "Exchange",
                                   },
                                 },
                                 "HELP": Object {
@@ -7450,6 +7692,7 @@ exports[`Application root should render without crashing 1`] = `
                                 "LEDGER_WALLET": "This is a Ledger wallet",
                                 "LOAD": "Load",
                                 "MARKETSQUARE": "MarketSquare",
+                                "NAME": "Name",
                                 "NETWORK": "Network",
                                 "NETWORK_NAME": "This name is provided by the network",
                                 "NEXT": "Next",
@@ -7462,6 +7705,7 @@ exports[`Application root should render without crashing 1`] = `
                                 "PROFILE_NAME": "Profile name",
                                 "QUANTITY": "Quantity",
                                 "RANK": "Rank",
+                                "RATING": "Rating",
                                 "REMOVE": "Remove",
                                 "SAVE": "Save",
                                 "SELECT": "Select",
@@ -7493,20 +7737,29 @@ exports[`Application root should render without crashing 1`] = `
                                 "YOUR_PASSPHRASE": "Your Passphrase",
                               },
                               "CONTACTS": Object {
+                                "CONTACT_FORM": Object {
+                                  "ADDRESS": "Address",
+                                  "ADDRESSES": "Addresses",
+                                  "ADD_ADDRESS": "Add address",
+                                  "NAME": "Name",
+                                  "NETWORK": "Network",
+                                },
                                 "MODAL_CREATE_CONTACT": Object {
-                                  "ADD_ADDRESS": "Add Address",
                                   "DESCRIPTION": "Enter your contacts name and addresses and add them to your list.",
-                                  "FORM": Object {
-                                    "ADDRESS": "Address",
-                                    "ADDRESSES": "Addresses",
-                                    "NAME": "Name",
-                                    "NETWORK": "Network",
-                                  },
                                   "TITLE": "Add Contact",
                                 },
                                 "MODAL_DELETE_CONTACT": Object {
                                   "DESCRIPTION": "Do you really want to delete this contact? Once deleted, you will not be able to restore it.",
                                   "TITLE": "Delete Contact",
+                                },
+                                "MODAL_UPDATE_CONTACT": Object {
+                                  "TITLE": "Edit Contact",
+                                },
+                              },
+                              "EXCHANGE": Object {
+                                "MODAL_ADD_EXCHANGE": Object {
+                                  "DESCRIPTION": "Buy ARK directly from the ARK Desktop Wallet or through one of 20+ exchanges supplying ARK tokens using BTC, ETH or other trading pairs.",
+                                  "TITLE": "Exchange",
                                 },
                               },
                               "HELP": Object {
@@ -7757,6 +8010,7 @@ exports[`Application root should render without crashing 1`] = `
                                   "LEDGER_WALLET": "This is a Ledger wallet",
                                   "LOAD": "Load",
                                   "MARKETSQUARE": "MarketSquare",
+                                  "NAME": "Name",
                                   "NETWORK": "Network",
                                   "NETWORK_NAME": "This name is provided by the network",
                                   "NEXT": "Next",
@@ -7769,6 +8023,7 @@ exports[`Application root should render without crashing 1`] = `
                                   "PROFILE_NAME": "Profile name",
                                   "QUANTITY": "Quantity",
                                   "RANK": "Rank",
+                                  "RATING": "Rating",
                                   "REMOVE": "Remove",
                                   "SAVE": "Save",
                                   "SELECT": "Select",
@@ -7800,20 +8055,29 @@ exports[`Application root should render without crashing 1`] = `
                                   "YOUR_PASSPHRASE": "Your Passphrase",
                                 },
                                 "CONTACTS": Object {
+                                  "CONTACT_FORM": Object {
+                                    "ADDRESS": "Address",
+                                    "ADDRESSES": "Addresses",
+                                    "ADD_ADDRESS": "Add address",
+                                    "NAME": "Name",
+                                    "NETWORK": "Network",
+                                  },
                                   "MODAL_CREATE_CONTACT": Object {
-                                    "ADD_ADDRESS": "Add Address",
                                     "DESCRIPTION": "Enter your contacts name and addresses and add them to your list.",
-                                    "FORM": Object {
-                                      "ADDRESS": "Address",
-                                      "ADDRESSES": "Addresses",
-                                      "NAME": "Name",
-                                      "NETWORK": "Network",
-                                    },
                                     "TITLE": "Add Contact",
                                   },
                                   "MODAL_DELETE_CONTACT": Object {
                                     "DESCRIPTION": "Do you really want to delete this contact? Once deleted, you will not be able to restore it.",
                                     "TITLE": "Delete Contact",
+                                  },
+                                  "MODAL_UPDATE_CONTACT": Object {
+                                    "TITLE": "Edit Contact",
+                                  },
+                                },
+                                "EXCHANGE": Object {
+                                  "MODAL_ADD_EXCHANGE": Object {
+                                    "DESCRIPTION": "Buy ARK directly from the ARK Desktop Wallet or through one of 20+ exchanges supplying ARK tokens using BTC, ETH or other trading pairs.",
+                                    "TITLE": "Exchange",
                                   },
                                 },
                                 "HELP": Object {
@@ -8047,6 +8311,7 @@ exports[`Application root should render without crashing 1`] = `
                                 "LEDGER_WALLET": "This is a Ledger wallet",
                                 "LOAD": "Load",
                                 "MARKETSQUARE": "MarketSquare",
+                                "NAME": "Name",
                                 "NETWORK": "Network",
                                 "NETWORK_NAME": "This name is provided by the network",
                                 "NEXT": "Next",
@@ -8059,6 +8324,7 @@ exports[`Application root should render without crashing 1`] = `
                                 "PROFILE_NAME": "Profile name",
                                 "QUANTITY": "Quantity",
                                 "RANK": "Rank",
+                                "RATING": "Rating",
                                 "REMOVE": "Remove",
                                 "SAVE": "Save",
                                 "SELECT": "Select",
@@ -8090,20 +8356,29 @@ exports[`Application root should render without crashing 1`] = `
                                 "YOUR_PASSPHRASE": "Your Passphrase",
                               },
                               "CONTACTS": Object {
+                                "CONTACT_FORM": Object {
+                                  "ADDRESS": "Address",
+                                  "ADDRESSES": "Addresses",
+                                  "ADD_ADDRESS": "Add address",
+                                  "NAME": "Name",
+                                  "NETWORK": "Network",
+                                },
                                 "MODAL_CREATE_CONTACT": Object {
-                                  "ADD_ADDRESS": "Add Address",
                                   "DESCRIPTION": "Enter your contacts name and addresses and add them to your list.",
-                                  "FORM": Object {
-                                    "ADDRESS": "Address",
-                                    "ADDRESSES": "Addresses",
-                                    "NAME": "Name",
-                                    "NETWORK": "Network",
-                                  },
                                   "TITLE": "Add Contact",
                                 },
                                 "MODAL_DELETE_CONTACT": Object {
                                   "DESCRIPTION": "Do you really want to delete this contact? Once deleted, you will not be able to restore it.",
                                   "TITLE": "Delete Contact",
+                                },
+                                "MODAL_UPDATE_CONTACT": Object {
+                                  "TITLE": "Edit Contact",
+                                },
+                              },
+                              "EXCHANGE": Object {
+                                "MODAL_ADD_EXCHANGE": Object {
+                                  "DESCRIPTION": "Buy ARK directly from the ARK Desktop Wallet or through one of 20+ exchanges supplying ARK tokens using BTC, ETH or other trading pairs.",
+                                  "TITLE": "Exchange",
                                 },
                               },
                               "HELP": Object {
@@ -8346,6 +8621,7 @@ exports[`Application root should render without crashing 1`] = `
                                 "LEDGER_WALLET": "This is a Ledger wallet",
                                 "LOAD": "Load",
                                 "MARKETSQUARE": "MarketSquare",
+                                "NAME": "Name",
                                 "NETWORK": "Network",
                                 "NETWORK_NAME": "This name is provided by the network",
                                 "NEXT": "Next",
@@ -8358,6 +8634,7 @@ exports[`Application root should render without crashing 1`] = `
                                 "PROFILE_NAME": "Profile name",
                                 "QUANTITY": "Quantity",
                                 "RANK": "Rank",
+                                "RATING": "Rating",
                                 "REMOVE": "Remove",
                                 "SAVE": "Save",
                                 "SELECT": "Select",
@@ -8389,20 +8666,29 @@ exports[`Application root should render without crashing 1`] = `
                                 "YOUR_PASSPHRASE": "Your Passphrase",
                               },
                               "CONTACTS": Object {
+                                "CONTACT_FORM": Object {
+                                  "ADDRESS": "Address",
+                                  "ADDRESSES": "Addresses",
+                                  "ADD_ADDRESS": "Add address",
+                                  "NAME": "Name",
+                                  "NETWORK": "Network",
+                                },
                                 "MODAL_CREATE_CONTACT": Object {
-                                  "ADD_ADDRESS": "Add Address",
                                   "DESCRIPTION": "Enter your contacts name and addresses and add them to your list.",
-                                  "FORM": Object {
-                                    "ADDRESS": "Address",
-                                    "ADDRESSES": "Addresses",
-                                    "NAME": "Name",
-                                    "NETWORK": "Network",
-                                  },
                                   "TITLE": "Add Contact",
                                 },
                                 "MODAL_DELETE_CONTACT": Object {
                                   "DESCRIPTION": "Do you really want to delete this contact? Once deleted, you will not be able to restore it.",
                                   "TITLE": "Delete Contact",
+                                },
+                                "MODAL_UPDATE_CONTACT": Object {
+                                  "TITLE": "Edit Contact",
+                                },
+                              },
+                              "EXCHANGE": Object {
+                                "MODAL_ADD_EXCHANGE": Object {
+                                  "DESCRIPTION": "Buy ARK directly from the ARK Desktop Wallet or through one of 20+ exchanges supplying ARK tokens using BTC, ETH or other trading pairs.",
+                                  "TITLE": "Exchange",
                                 },
                               },
                               "HELP": Object {
@@ -8648,6 +8934,7 @@ exports[`Application root should render without crashing 1`] = `
                                     "LEDGER_WALLET": "This is a Ledger wallet",
                                     "LOAD": "Load",
                                     "MARKETSQUARE": "MarketSquare",
+                                    "NAME": "Name",
                                     "NETWORK": "Network",
                                     "NETWORK_NAME": "This name is provided by the network",
                                     "NEXT": "Next",
@@ -8660,6 +8947,7 @@ exports[`Application root should render without crashing 1`] = `
                                     "PROFILE_NAME": "Profile name",
                                     "QUANTITY": "Quantity",
                                     "RANK": "Rank",
+                                    "RATING": "Rating",
                                     "REMOVE": "Remove",
                                     "SAVE": "Save",
                                     "SELECT": "Select",
@@ -8691,20 +8979,29 @@ exports[`Application root should render without crashing 1`] = `
                                     "YOUR_PASSPHRASE": "Your Passphrase",
                                   },
                                   "CONTACTS": Object {
+                                    "CONTACT_FORM": Object {
+                                      "ADDRESS": "Address",
+                                      "ADDRESSES": "Addresses",
+                                      "ADD_ADDRESS": "Add address",
+                                      "NAME": "Name",
+                                      "NETWORK": "Network",
+                                    },
                                     "MODAL_CREATE_CONTACT": Object {
-                                      "ADD_ADDRESS": "Add Address",
                                       "DESCRIPTION": "Enter your contacts name and addresses and add them to your list.",
-                                      "FORM": Object {
-                                        "ADDRESS": "Address",
-                                        "ADDRESSES": "Addresses",
-                                        "NAME": "Name",
-                                        "NETWORK": "Network",
-                                      },
                                       "TITLE": "Add Contact",
                                     },
                                     "MODAL_DELETE_CONTACT": Object {
                                       "DESCRIPTION": "Do you really want to delete this contact? Once deleted, you will not be able to restore it.",
                                       "TITLE": "Delete Contact",
+                                    },
+                                    "MODAL_UPDATE_CONTACT": Object {
+                                      "TITLE": "Edit Contact",
+                                    },
+                                  },
+                                  "EXCHANGE": Object {
+                                    "MODAL_ADD_EXCHANGE": Object {
+                                      "DESCRIPTION": "Buy ARK directly from the ARK Desktop Wallet or through one of 20+ exchanges supplying ARK tokens using BTC, ETH or other trading pairs.",
+                                      "TITLE": "Exchange",
                                     },
                                   },
                                   "HELP": Object {
@@ -8938,6 +9235,7 @@ exports[`Application root should render without crashing 1`] = `
                                   "LEDGER_WALLET": "This is a Ledger wallet",
                                   "LOAD": "Load",
                                   "MARKETSQUARE": "MarketSquare",
+                                  "NAME": "Name",
                                   "NETWORK": "Network",
                                   "NETWORK_NAME": "This name is provided by the network",
                                   "NEXT": "Next",
@@ -8950,6 +9248,7 @@ exports[`Application root should render without crashing 1`] = `
                                   "PROFILE_NAME": "Profile name",
                                   "QUANTITY": "Quantity",
                                   "RANK": "Rank",
+                                  "RATING": "Rating",
                                   "REMOVE": "Remove",
                                   "SAVE": "Save",
                                   "SELECT": "Select",
@@ -8981,20 +9280,29 @@ exports[`Application root should render without crashing 1`] = `
                                   "YOUR_PASSPHRASE": "Your Passphrase",
                                 },
                                 "CONTACTS": Object {
+                                  "CONTACT_FORM": Object {
+                                    "ADDRESS": "Address",
+                                    "ADDRESSES": "Addresses",
+                                    "ADD_ADDRESS": "Add address",
+                                    "NAME": "Name",
+                                    "NETWORK": "Network",
+                                  },
                                   "MODAL_CREATE_CONTACT": Object {
-                                    "ADD_ADDRESS": "Add Address",
                                     "DESCRIPTION": "Enter your contacts name and addresses and add them to your list.",
-                                    "FORM": Object {
-                                      "ADDRESS": "Address",
-                                      "ADDRESSES": "Addresses",
-                                      "NAME": "Name",
-                                      "NETWORK": "Network",
-                                    },
                                     "TITLE": "Add Contact",
                                   },
                                   "MODAL_DELETE_CONTACT": Object {
                                     "DESCRIPTION": "Do you really want to delete this contact? Once deleted, you will not be able to restore it.",
                                     "TITLE": "Delete Contact",
+                                  },
+                                  "MODAL_UPDATE_CONTACT": Object {
+                                    "TITLE": "Edit Contact",
+                                  },
+                                },
+                                "EXCHANGE": Object {
+                                  "MODAL_ADD_EXCHANGE": Object {
+                                    "DESCRIPTION": "Buy ARK directly from the ARK Desktop Wallet or through one of 20+ exchanges supplying ARK tokens using BTC, ETH or other trading pairs.",
+                                    "TITLE": "Exchange",
                                   },
                                 },
                                 "HELP": Object {
@@ -9238,6 +9546,7 @@ exports[`Application root should render without crashing 1`] = `
                                   "LEDGER_WALLET": "This is a Ledger wallet",
                                   "LOAD": "Load",
                                   "MARKETSQUARE": "MarketSquare",
+                                  "NAME": "Name",
                                   "NETWORK": "Network",
                                   "NETWORK_NAME": "This name is provided by the network",
                                   "NEXT": "Next",
@@ -9250,6 +9559,7 @@ exports[`Application root should render without crashing 1`] = `
                                   "PROFILE_NAME": "Profile name",
                                   "QUANTITY": "Quantity",
                                   "RANK": "Rank",
+                                  "RATING": "Rating",
                                   "REMOVE": "Remove",
                                   "SAVE": "Save",
                                   "SELECT": "Select",
@@ -9281,20 +9591,29 @@ exports[`Application root should render without crashing 1`] = `
                                   "YOUR_PASSPHRASE": "Your Passphrase",
                                 },
                                 "CONTACTS": Object {
+                                  "CONTACT_FORM": Object {
+                                    "ADDRESS": "Address",
+                                    "ADDRESSES": "Addresses",
+                                    "ADD_ADDRESS": "Add address",
+                                    "NAME": "Name",
+                                    "NETWORK": "Network",
+                                  },
                                   "MODAL_CREATE_CONTACT": Object {
-                                    "ADD_ADDRESS": "Add Address",
                                     "DESCRIPTION": "Enter your contacts name and addresses and add them to your list.",
-                                    "FORM": Object {
-                                      "ADDRESS": "Address",
-                                      "ADDRESSES": "Addresses",
-                                      "NAME": "Name",
-                                      "NETWORK": "Network",
-                                    },
                                     "TITLE": "Add Contact",
                                   },
                                   "MODAL_DELETE_CONTACT": Object {
                                     "DESCRIPTION": "Do you really want to delete this contact? Once deleted, you will not be able to restore it.",
                                     "TITLE": "Delete Contact",
+                                  },
+                                  "MODAL_UPDATE_CONTACT": Object {
+                                    "TITLE": "Edit Contact",
+                                  },
+                                },
+                                "EXCHANGE": Object {
+                                  "MODAL_ADD_EXCHANGE": Object {
+                                    "DESCRIPTION": "Buy ARK directly from the ARK Desktop Wallet or through one of 20+ exchanges supplying ARK tokens using BTC, ETH or other trading pairs.",
+                                    "TITLE": "Exchange",
                                   },
                                 },
                                 "HELP": Object {
@@ -10430,6 +10749,7 @@ exports[`Application root should render without crashing 1`] = `
                             "LEDGER_WALLET": "This is a Ledger wallet",
                             "LOAD": "Load",
                             "MARKETSQUARE": "MarketSquare",
+                            "NAME": "Name",
                             "NETWORK": "Network",
                             "NETWORK_NAME": "This name is provided by the network",
                             "NEXT": "Next",
@@ -10442,6 +10762,7 @@ exports[`Application root should render without crashing 1`] = `
                             "PROFILE_NAME": "Profile name",
                             "QUANTITY": "Quantity",
                             "RANK": "Rank",
+                            "RATING": "Rating",
                             "REMOVE": "Remove",
                             "SAVE": "Save",
                             "SELECT": "Select",
@@ -10473,20 +10794,29 @@ exports[`Application root should render without crashing 1`] = `
                             "YOUR_PASSPHRASE": "Your Passphrase",
                           },
                           "CONTACTS": Object {
+                            "CONTACT_FORM": Object {
+                              "ADDRESS": "Address",
+                              "ADDRESSES": "Addresses",
+                              "ADD_ADDRESS": "Add address",
+                              "NAME": "Name",
+                              "NETWORK": "Network",
+                            },
                             "MODAL_CREATE_CONTACT": Object {
-                              "ADD_ADDRESS": "Add Address",
                               "DESCRIPTION": "Enter your contacts name and addresses and add them to your list.",
-                              "FORM": Object {
-                                "ADDRESS": "Address",
-                                "ADDRESSES": "Addresses",
-                                "NAME": "Name",
-                                "NETWORK": "Network",
-                              },
                               "TITLE": "Add Contact",
                             },
                             "MODAL_DELETE_CONTACT": Object {
                               "DESCRIPTION": "Do you really want to delete this contact? Once deleted, you will not be able to restore it.",
                               "TITLE": "Delete Contact",
+                            },
+                            "MODAL_UPDATE_CONTACT": Object {
+                              "TITLE": "Edit Contact",
+                            },
+                          },
+                          "EXCHANGE": Object {
+                            "MODAL_ADD_EXCHANGE": Object {
+                              "DESCRIPTION": "Buy ARK directly from the ARK Desktop Wallet or through one of 20+ exchanges supplying ARK tokens using BTC, ETH or other trading pairs.",
+                              "TITLE": "Exchange",
                             },
                           },
                           "HELP": Object {
@@ -10669,6 +10999,7 @@ exports[`Application root should render without crashing 1`] = `
                           "LEDGER_WALLET": "This is a Ledger wallet",
                           "LOAD": "Load",
                           "MARKETSQUARE": "MarketSquare",
+                          "NAME": "Name",
                           "NETWORK": "Network",
                           "NETWORK_NAME": "This name is provided by the network",
                           "NEXT": "Next",
@@ -10681,6 +11012,7 @@ exports[`Application root should render without crashing 1`] = `
                           "PROFILE_NAME": "Profile name",
                           "QUANTITY": "Quantity",
                           "RANK": "Rank",
+                          "RATING": "Rating",
                           "REMOVE": "Remove",
                           "SAVE": "Save",
                           "SELECT": "Select",
@@ -10712,20 +11044,29 @@ exports[`Application root should render without crashing 1`] = `
                           "YOUR_PASSPHRASE": "Your Passphrase",
                         },
                         "CONTACTS": Object {
+                          "CONTACT_FORM": Object {
+                            "ADDRESS": "Address",
+                            "ADDRESSES": "Addresses",
+                            "ADD_ADDRESS": "Add address",
+                            "NAME": "Name",
+                            "NETWORK": "Network",
+                          },
                           "MODAL_CREATE_CONTACT": Object {
-                            "ADD_ADDRESS": "Add Address",
                             "DESCRIPTION": "Enter your contacts name and addresses and add them to your list.",
-                            "FORM": Object {
-                              "ADDRESS": "Address",
-                              "ADDRESSES": "Addresses",
-                              "NAME": "Name",
-                              "NETWORK": "Network",
-                            },
                             "TITLE": "Add Contact",
                           },
                           "MODAL_DELETE_CONTACT": Object {
                             "DESCRIPTION": "Do you really want to delete this contact? Once deleted, you will not be able to restore it.",
                             "TITLE": "Delete Contact",
+                          },
+                          "MODAL_UPDATE_CONTACT": Object {
+                            "TITLE": "Edit Contact",
+                          },
+                        },
+                        "EXCHANGE": Object {
+                          "MODAL_ADD_EXCHANGE": Object {
+                            "DESCRIPTION": "Buy ARK directly from the ARK Desktop Wallet or through one of 20+ exchanges supplying ARK tokens using BTC, ETH or other trading pairs.",
+                            "TITLE": "Exchange",
                           },
                         },
                         "HELP": Object {
@@ -10963,6 +11304,7 @@ exports[`Application root should render without crashing 1`] = `
                               "LEDGER_WALLET": "This is a Ledger wallet",
                               "LOAD": "Load",
                               "MARKETSQUARE": "MarketSquare",
+                              "NAME": "Name",
                               "NETWORK": "Network",
                               "NETWORK_NAME": "This name is provided by the network",
                               "NEXT": "Next",
@@ -10975,6 +11317,7 @@ exports[`Application root should render without crashing 1`] = `
                               "PROFILE_NAME": "Profile name",
                               "QUANTITY": "Quantity",
                               "RANK": "Rank",
+                              "RATING": "Rating",
                               "REMOVE": "Remove",
                               "SAVE": "Save",
                               "SELECT": "Select",
@@ -11006,20 +11349,29 @@ exports[`Application root should render without crashing 1`] = `
                               "YOUR_PASSPHRASE": "Your Passphrase",
                             },
                             "CONTACTS": Object {
+                              "CONTACT_FORM": Object {
+                                "ADDRESS": "Address",
+                                "ADDRESSES": "Addresses",
+                                "ADD_ADDRESS": "Add address",
+                                "NAME": "Name",
+                                "NETWORK": "Network",
+                              },
                               "MODAL_CREATE_CONTACT": Object {
-                                "ADD_ADDRESS": "Add Address",
                                 "DESCRIPTION": "Enter your contacts name and addresses and add them to your list.",
-                                "FORM": Object {
-                                  "ADDRESS": "Address",
-                                  "ADDRESSES": "Addresses",
-                                  "NAME": "Name",
-                                  "NETWORK": "Network",
-                                },
                                 "TITLE": "Add Contact",
                               },
                               "MODAL_DELETE_CONTACT": Object {
                                 "DESCRIPTION": "Do you really want to delete this contact? Once deleted, you will not be able to restore it.",
                                 "TITLE": "Delete Contact",
+                              },
+                              "MODAL_UPDATE_CONTACT": Object {
+                                "TITLE": "Edit Contact",
+                              },
+                            },
+                            "EXCHANGE": Object {
+                              "MODAL_ADD_EXCHANGE": Object {
+                                "DESCRIPTION": "Buy ARK directly from the ARK Desktop Wallet or through one of 20+ exchanges supplying ARK tokens using BTC, ETH or other trading pairs.",
+                                "TITLE": "Exchange",
                               },
                             },
                             "HELP": Object {
@@ -11258,6 +11610,7 @@ exports[`Application root should render without crashing 1`] = `
                             "LEDGER_WALLET": "This is a Ledger wallet",
                             "LOAD": "Load",
                             "MARKETSQUARE": "MarketSquare",
+                            "NAME": "Name",
                             "NETWORK": "Network",
                             "NETWORK_NAME": "This name is provided by the network",
                             "NEXT": "Next",
@@ -11270,6 +11623,7 @@ exports[`Application root should render without crashing 1`] = `
                             "PROFILE_NAME": "Profile name",
                             "QUANTITY": "Quantity",
                             "RANK": "Rank",
+                            "RATING": "Rating",
                             "REMOVE": "Remove",
                             "SAVE": "Save",
                             "SELECT": "Select",
@@ -11301,20 +11655,29 @@ exports[`Application root should render without crashing 1`] = `
                             "YOUR_PASSPHRASE": "Your Passphrase",
                           },
                           "CONTACTS": Object {
+                            "CONTACT_FORM": Object {
+                              "ADDRESS": "Address",
+                              "ADDRESSES": "Addresses",
+                              "ADD_ADDRESS": "Add address",
+                              "NAME": "Name",
+                              "NETWORK": "Network",
+                            },
                             "MODAL_CREATE_CONTACT": Object {
-                              "ADD_ADDRESS": "Add Address",
                               "DESCRIPTION": "Enter your contacts name and addresses and add them to your list.",
-                              "FORM": Object {
-                                "ADDRESS": "Address",
-                                "ADDRESSES": "Addresses",
-                                "NAME": "Name",
-                                "NETWORK": "Network",
-                              },
                               "TITLE": "Add Contact",
                             },
                             "MODAL_DELETE_CONTACT": Object {
                               "DESCRIPTION": "Do you really want to delete this contact? Once deleted, you will not be able to restore it.",
                               "TITLE": "Delete Contact",
+                            },
+                            "MODAL_UPDATE_CONTACT": Object {
+                              "TITLE": "Edit Contact",
+                            },
+                          },
+                          "EXCHANGE": Object {
+                            "MODAL_ADD_EXCHANGE": Object {
+                              "DESCRIPTION": "Buy ARK directly from the ARK Desktop Wallet or through one of 20+ exchanges supplying ARK tokens using BTC, ETH or other trading pairs.",
+                              "TITLE": "Exchange",
                             },
                           },
                           "HELP": Object {
@@ -11566,6 +11929,7 @@ exports[`Application root should render without crashing 1`] = `
                               "LEDGER_WALLET": "This is a Ledger wallet",
                               "LOAD": "Load",
                               "MARKETSQUARE": "MarketSquare",
+                              "NAME": "Name",
                               "NETWORK": "Network",
                               "NETWORK_NAME": "This name is provided by the network",
                               "NEXT": "Next",
@@ -11578,6 +11942,7 @@ exports[`Application root should render without crashing 1`] = `
                               "PROFILE_NAME": "Profile name",
                               "QUANTITY": "Quantity",
                               "RANK": "Rank",
+                              "RATING": "Rating",
                               "REMOVE": "Remove",
                               "SAVE": "Save",
                               "SELECT": "Select",
@@ -11609,20 +11974,29 @@ exports[`Application root should render without crashing 1`] = `
                               "YOUR_PASSPHRASE": "Your Passphrase",
                             },
                             "CONTACTS": Object {
+                              "CONTACT_FORM": Object {
+                                "ADDRESS": "Address",
+                                "ADDRESSES": "Addresses",
+                                "ADD_ADDRESS": "Add address",
+                                "NAME": "Name",
+                                "NETWORK": "Network",
+                              },
                               "MODAL_CREATE_CONTACT": Object {
-                                "ADD_ADDRESS": "Add Address",
                                 "DESCRIPTION": "Enter your contacts name and addresses and add them to your list.",
-                                "FORM": Object {
-                                  "ADDRESS": "Address",
-                                  "ADDRESSES": "Addresses",
-                                  "NAME": "Name",
-                                  "NETWORK": "Network",
-                                },
                                 "TITLE": "Add Contact",
                               },
                               "MODAL_DELETE_CONTACT": Object {
                                 "DESCRIPTION": "Do you really want to delete this contact? Once deleted, you will not be able to restore it.",
                                 "TITLE": "Delete Contact",
+                              },
+                              "MODAL_UPDATE_CONTACT": Object {
+                                "TITLE": "Edit Contact",
+                              },
+                            },
+                            "EXCHANGE": Object {
+                              "MODAL_ADD_EXCHANGE": Object {
+                                "DESCRIPTION": "Buy ARK directly from the ARK Desktop Wallet or through one of 20+ exchanges supplying ARK tokens using BTC, ETH or other trading pairs.",
+                                "TITLE": "Exchange",
                               },
                             },
                             "HELP": Object {
@@ -11856,6 +12230,7 @@ exports[`Application root should render without crashing 1`] = `
                             "LEDGER_WALLET": "This is a Ledger wallet",
                             "LOAD": "Load",
                             "MARKETSQUARE": "MarketSquare",
+                            "NAME": "Name",
                             "NETWORK": "Network",
                             "NETWORK_NAME": "This name is provided by the network",
                             "NEXT": "Next",
@@ -11868,6 +12243,7 @@ exports[`Application root should render without crashing 1`] = `
                             "PROFILE_NAME": "Profile name",
                             "QUANTITY": "Quantity",
                             "RANK": "Rank",
+                            "RATING": "Rating",
                             "REMOVE": "Remove",
                             "SAVE": "Save",
                             "SELECT": "Select",
@@ -11899,20 +12275,29 @@ exports[`Application root should render without crashing 1`] = `
                             "YOUR_PASSPHRASE": "Your Passphrase",
                           },
                           "CONTACTS": Object {
+                            "CONTACT_FORM": Object {
+                              "ADDRESS": "Address",
+                              "ADDRESSES": "Addresses",
+                              "ADD_ADDRESS": "Add address",
+                              "NAME": "Name",
+                              "NETWORK": "Network",
+                            },
                             "MODAL_CREATE_CONTACT": Object {
-                              "ADD_ADDRESS": "Add Address",
                               "DESCRIPTION": "Enter your contacts name and addresses and add them to your list.",
-                              "FORM": Object {
-                                "ADDRESS": "Address",
-                                "ADDRESSES": "Addresses",
-                                "NAME": "Name",
-                                "NETWORK": "Network",
-                              },
                               "TITLE": "Add Contact",
                             },
                             "MODAL_DELETE_CONTACT": Object {
                               "DESCRIPTION": "Do you really want to delete this contact? Once deleted, you will not be able to restore it.",
                               "TITLE": "Delete Contact",
+                            },
+                            "MODAL_UPDATE_CONTACT": Object {
+                              "TITLE": "Edit Contact",
+                            },
+                          },
+                          "EXCHANGE": Object {
+                            "MODAL_ADD_EXCHANGE": Object {
+                              "DESCRIPTION": "Buy ARK directly from the ARK Desktop Wallet or through one of 20+ exchanges supplying ARK tokens using BTC, ETH or other trading pairs.",
+                              "TITLE": "Exchange",
                             },
                           },
                           "HELP": Object {
@@ -12156,6 +12541,7 @@ exports[`Application root should render without crashing 1`] = `
                             "LEDGER_WALLET": "This is a Ledger wallet",
                             "LOAD": "Load",
                             "MARKETSQUARE": "MarketSquare",
+                            "NAME": "Name",
                             "NETWORK": "Network",
                             "NETWORK_NAME": "This name is provided by the network",
                             "NEXT": "Next",
@@ -12168,6 +12554,7 @@ exports[`Application root should render without crashing 1`] = `
                             "PROFILE_NAME": "Profile name",
                             "QUANTITY": "Quantity",
                             "RANK": "Rank",
+                            "RATING": "Rating",
                             "REMOVE": "Remove",
                             "SAVE": "Save",
                             "SELECT": "Select",
@@ -12199,20 +12586,29 @@ exports[`Application root should render without crashing 1`] = `
                             "YOUR_PASSPHRASE": "Your Passphrase",
                           },
                           "CONTACTS": Object {
+                            "CONTACT_FORM": Object {
+                              "ADDRESS": "Address",
+                              "ADDRESSES": "Addresses",
+                              "ADD_ADDRESS": "Add address",
+                              "NAME": "Name",
+                              "NETWORK": "Network",
+                            },
                             "MODAL_CREATE_CONTACT": Object {
-                              "ADD_ADDRESS": "Add Address",
                               "DESCRIPTION": "Enter your contacts name and addresses and add them to your list.",
-                              "FORM": Object {
-                                "ADDRESS": "Address",
-                                "ADDRESSES": "Addresses",
-                                "NAME": "Name",
-                                "NETWORK": "Network",
-                              },
                               "TITLE": "Add Contact",
                             },
                             "MODAL_DELETE_CONTACT": Object {
                               "DESCRIPTION": "Do you really want to delete this contact? Once deleted, you will not be able to restore it.",
                               "TITLE": "Delete Contact",
+                            },
+                            "MODAL_UPDATE_CONTACT": Object {
+                              "TITLE": "Edit Contact",
+                            },
+                          },
+                          "EXCHANGE": Object {
+                            "MODAL_ADD_EXCHANGE": Object {
+                              "DESCRIPTION": "Buy ARK directly from the ARK Desktop Wallet or through one of 20+ exchanges supplying ARK tokens using BTC, ETH or other trading pairs.",
+                              "TITLE": "Exchange",
                             },
                           },
                           "HELP": Object {
@@ -12451,6 +12847,7 @@ exports[`Application root should render without crashing 1`] = `
                           "LEDGER_WALLET": "This is a Ledger wallet",
                           "LOAD": "Load",
                           "MARKETSQUARE": "MarketSquare",
+                          "NAME": "Name",
                           "NETWORK": "Network",
                           "NETWORK_NAME": "This name is provided by the network",
                           "NEXT": "Next",
@@ -12463,6 +12860,7 @@ exports[`Application root should render without crashing 1`] = `
                           "PROFILE_NAME": "Profile name",
                           "QUANTITY": "Quantity",
                           "RANK": "Rank",
+                          "RATING": "Rating",
                           "REMOVE": "Remove",
                           "SAVE": "Save",
                           "SELECT": "Select",
@@ -12494,20 +12892,29 @@ exports[`Application root should render without crashing 1`] = `
                           "YOUR_PASSPHRASE": "Your Passphrase",
                         },
                         "CONTACTS": Object {
+                          "CONTACT_FORM": Object {
+                            "ADDRESS": "Address",
+                            "ADDRESSES": "Addresses",
+                            "ADD_ADDRESS": "Add address",
+                            "NAME": "Name",
+                            "NETWORK": "Network",
+                          },
                           "MODAL_CREATE_CONTACT": Object {
-                            "ADD_ADDRESS": "Add Address",
                             "DESCRIPTION": "Enter your contacts name and addresses and add them to your list.",
-                            "FORM": Object {
-                              "ADDRESS": "Address",
-                              "ADDRESSES": "Addresses",
-                              "NAME": "Name",
-                              "NETWORK": "Network",
-                            },
                             "TITLE": "Add Contact",
                           },
                           "MODAL_DELETE_CONTACT": Object {
                             "DESCRIPTION": "Do you really want to delete this contact? Once deleted, you will not be able to restore it.",
                             "TITLE": "Delete Contact",
+                          },
+                          "MODAL_UPDATE_CONTACT": Object {
+                            "TITLE": "Edit Contact",
+                          },
+                        },
+                        "EXCHANGE": Object {
+                          "MODAL_ADD_EXCHANGE": Object {
+                            "DESCRIPTION": "Buy ARK directly from the ARK Desktop Wallet or through one of 20+ exchanges supplying ARK tokens using BTC, ETH or other trading pairs.",
+                            "TITLE": "Exchange",
                           },
                         },
                         "HELP": Object {
@@ -12751,6 +13158,7 @@ exports[`Application root should render without crashing 1`] = `
                                 "LEDGER_WALLET": "This is a Ledger wallet",
                                 "LOAD": "Load",
                                 "MARKETSQUARE": "MarketSquare",
+                                "NAME": "Name",
                                 "NETWORK": "Network",
                                 "NETWORK_NAME": "This name is provided by the network",
                                 "NEXT": "Next",
@@ -12763,6 +13171,7 @@ exports[`Application root should render without crashing 1`] = `
                                 "PROFILE_NAME": "Profile name",
                                 "QUANTITY": "Quantity",
                                 "RANK": "Rank",
+                                "RATING": "Rating",
                                 "REMOVE": "Remove",
                                 "SAVE": "Save",
                                 "SELECT": "Select",
@@ -12794,20 +13203,29 @@ exports[`Application root should render without crashing 1`] = `
                                 "YOUR_PASSPHRASE": "Your Passphrase",
                               },
                               "CONTACTS": Object {
+                                "CONTACT_FORM": Object {
+                                  "ADDRESS": "Address",
+                                  "ADDRESSES": "Addresses",
+                                  "ADD_ADDRESS": "Add address",
+                                  "NAME": "Name",
+                                  "NETWORK": "Network",
+                                },
                                 "MODAL_CREATE_CONTACT": Object {
-                                  "ADD_ADDRESS": "Add Address",
                                   "DESCRIPTION": "Enter your contacts name and addresses and add them to your list.",
-                                  "FORM": Object {
-                                    "ADDRESS": "Address",
-                                    "ADDRESSES": "Addresses",
-                                    "NAME": "Name",
-                                    "NETWORK": "Network",
-                                  },
                                   "TITLE": "Add Contact",
                                 },
                                 "MODAL_DELETE_CONTACT": Object {
                                   "DESCRIPTION": "Do you really want to delete this contact? Once deleted, you will not be able to restore it.",
                                   "TITLE": "Delete Contact",
+                                },
+                                "MODAL_UPDATE_CONTACT": Object {
+                                  "TITLE": "Edit Contact",
+                                },
+                              },
+                              "EXCHANGE": Object {
+                                "MODAL_ADD_EXCHANGE": Object {
+                                  "DESCRIPTION": "Buy ARK directly from the ARK Desktop Wallet or through one of 20+ exchanges supplying ARK tokens using BTC, ETH or other trading pairs.",
+                                  "TITLE": "Exchange",
                                 },
                               },
                               "HELP": Object {
@@ -13041,6 +13459,7 @@ exports[`Application root should render without crashing 1`] = `
                               "LEDGER_WALLET": "This is a Ledger wallet",
                               "LOAD": "Load",
                               "MARKETSQUARE": "MarketSquare",
+                              "NAME": "Name",
                               "NETWORK": "Network",
                               "NETWORK_NAME": "This name is provided by the network",
                               "NEXT": "Next",
@@ -13053,6 +13472,7 @@ exports[`Application root should render without crashing 1`] = `
                               "PROFILE_NAME": "Profile name",
                               "QUANTITY": "Quantity",
                               "RANK": "Rank",
+                              "RATING": "Rating",
                               "REMOVE": "Remove",
                               "SAVE": "Save",
                               "SELECT": "Select",
@@ -13084,20 +13504,29 @@ exports[`Application root should render without crashing 1`] = `
                               "YOUR_PASSPHRASE": "Your Passphrase",
                             },
                             "CONTACTS": Object {
+                              "CONTACT_FORM": Object {
+                                "ADDRESS": "Address",
+                                "ADDRESSES": "Addresses",
+                                "ADD_ADDRESS": "Add address",
+                                "NAME": "Name",
+                                "NETWORK": "Network",
+                              },
                               "MODAL_CREATE_CONTACT": Object {
-                                "ADD_ADDRESS": "Add Address",
                                 "DESCRIPTION": "Enter your contacts name and addresses and add them to your list.",
-                                "FORM": Object {
-                                  "ADDRESS": "Address",
-                                  "ADDRESSES": "Addresses",
-                                  "NAME": "Name",
-                                  "NETWORK": "Network",
-                                },
                                 "TITLE": "Add Contact",
                               },
                               "MODAL_DELETE_CONTACT": Object {
                                 "DESCRIPTION": "Do you really want to delete this contact? Once deleted, you will not be able to restore it.",
                                 "TITLE": "Delete Contact",
+                              },
+                              "MODAL_UPDATE_CONTACT": Object {
+                                "TITLE": "Edit Contact",
+                              },
+                            },
+                            "EXCHANGE": Object {
+                              "MODAL_ADD_EXCHANGE": Object {
+                                "DESCRIPTION": "Buy ARK directly from the ARK Desktop Wallet or through one of 20+ exchanges supplying ARK tokens using BTC, ETH or other trading pairs.",
+                                "TITLE": "Exchange",
                               },
                             },
                             "HELP": Object {
@@ -13341,6 +13770,7 @@ exports[`Application root should render without crashing 1`] = `
                               "LEDGER_WALLET": "This is a Ledger wallet",
                               "LOAD": "Load",
                               "MARKETSQUARE": "MarketSquare",
+                              "NAME": "Name",
                               "NETWORK": "Network",
                               "NETWORK_NAME": "This name is provided by the network",
                               "NEXT": "Next",
@@ -13353,6 +13783,7 @@ exports[`Application root should render without crashing 1`] = `
                               "PROFILE_NAME": "Profile name",
                               "QUANTITY": "Quantity",
                               "RANK": "Rank",
+                              "RATING": "Rating",
                               "REMOVE": "Remove",
                               "SAVE": "Save",
                               "SELECT": "Select",
@@ -13384,20 +13815,29 @@ exports[`Application root should render without crashing 1`] = `
                               "YOUR_PASSPHRASE": "Your Passphrase",
                             },
                             "CONTACTS": Object {
+                              "CONTACT_FORM": Object {
+                                "ADDRESS": "Address",
+                                "ADDRESSES": "Addresses",
+                                "ADD_ADDRESS": "Add address",
+                                "NAME": "Name",
+                                "NETWORK": "Network",
+                              },
                               "MODAL_CREATE_CONTACT": Object {
-                                "ADD_ADDRESS": "Add Address",
                                 "DESCRIPTION": "Enter your contacts name and addresses and add them to your list.",
-                                "FORM": Object {
-                                  "ADDRESS": "Address",
-                                  "ADDRESSES": "Addresses",
-                                  "NAME": "Name",
-                                  "NETWORK": "Network",
-                                },
                                 "TITLE": "Add Contact",
                               },
                               "MODAL_DELETE_CONTACT": Object {
                                 "DESCRIPTION": "Do you really want to delete this contact? Once deleted, you will not be able to restore it.",
                                 "TITLE": "Delete Contact",
+                              },
+                              "MODAL_UPDATE_CONTACT": Object {
+                                "TITLE": "Edit Contact",
+                              },
+                            },
+                            "EXCHANGE": Object {
+                              "MODAL_ADD_EXCHANGE": Object {
+                                "DESCRIPTION": "Buy ARK directly from the ARK Desktop Wallet or through one of 20+ exchanges supplying ARK tokens using BTC, ETH or other trading pairs.",
+                                "TITLE": "Exchange",
                               },
                             },
                             "HELP": Object {
@@ -14533,6 +14973,7 @@ exports[`Application root should render without crashing 1`] = `
                         "LEDGER_WALLET": "This is a Ledger wallet",
                         "LOAD": "Load",
                         "MARKETSQUARE": "MarketSquare",
+                        "NAME": "Name",
                         "NETWORK": "Network",
                         "NETWORK_NAME": "This name is provided by the network",
                         "NEXT": "Next",
@@ -14545,6 +14986,7 @@ exports[`Application root should render without crashing 1`] = `
                         "PROFILE_NAME": "Profile name",
                         "QUANTITY": "Quantity",
                         "RANK": "Rank",
+                        "RATING": "Rating",
                         "REMOVE": "Remove",
                         "SAVE": "Save",
                         "SELECT": "Select",
@@ -14576,20 +15018,29 @@ exports[`Application root should render without crashing 1`] = `
                         "YOUR_PASSPHRASE": "Your Passphrase",
                       },
                       "CONTACTS": Object {
+                        "CONTACT_FORM": Object {
+                          "ADDRESS": "Address",
+                          "ADDRESSES": "Addresses",
+                          "ADD_ADDRESS": "Add address",
+                          "NAME": "Name",
+                          "NETWORK": "Network",
+                        },
                         "MODAL_CREATE_CONTACT": Object {
-                          "ADD_ADDRESS": "Add Address",
                           "DESCRIPTION": "Enter your contacts name and addresses and add them to your list.",
-                          "FORM": Object {
-                            "ADDRESS": "Address",
-                            "ADDRESSES": "Addresses",
-                            "NAME": "Name",
-                            "NETWORK": "Network",
-                          },
                           "TITLE": "Add Contact",
                         },
                         "MODAL_DELETE_CONTACT": Object {
                           "DESCRIPTION": "Do you really want to delete this contact? Once deleted, you will not be able to restore it.",
                           "TITLE": "Delete Contact",
+                        },
+                        "MODAL_UPDATE_CONTACT": Object {
+                          "TITLE": "Edit Contact",
+                        },
+                      },
+                      "EXCHANGE": Object {
+                        "MODAL_ADD_EXCHANGE": Object {
+                          "DESCRIPTION": "Buy ARK directly from the ARK Desktop Wallet or through one of 20+ exchanges supplying ARK tokens using BTC, ETH or other trading pairs.",
+                          "TITLE": "Exchange",
                         },
                       },
                       "HELP": Object {

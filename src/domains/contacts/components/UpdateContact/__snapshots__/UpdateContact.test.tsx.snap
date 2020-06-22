@@ -1,0 +1,163 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UpdateContact should not render if not open 1`] = `<DocumentFragment />`;
+
+exports[`UpdateContact should render a modal 1`] = `
+<DocumentFragment>
+  <div
+    class="fixed inset-0 z-10 bg-black opacity-50"
+    data-testid="modal__overlay"
+  />
+  <div
+    class="sc-AxiKw cTRlJa fixed left-0 right-0 z-10 flex flex-col px-12 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
+    data-testid="modal__inner"
+  >
+    <div
+      class="absolute top-0 right-0 mt-4 mr-4"
+    >
+      <button
+        class="sc-AxjAm bThAoP"
+        color="neutral"
+        data-testid="modal__close-btn"
+        type="button"
+      >
+        <div
+          class="sc-AxirZ fttODj"
+          height="10"
+          width="10"
+        >
+          <svg>
+            cross-slim.svg
+          </svg>
+        </div>
+      </button>
+    </div>
+    <div
+      class="py-4"
+    >
+      <h2>
+        Edit Contact
+      </h2>
+      <div
+        class="flex-1 "
+      >
+        <div
+          class="mt-8"
+        >
+          <form
+            class="space-y-6"
+            data-testid="contact-form"
+          >
+            <fieldset
+              class="sc-AxhUy dJlYTe flex flex-col space-y-2"
+            >
+              <label
+                class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
+                data-testid="FormLabel"
+                for="name"
+              >
+                Name
+              </label>
+              <input
+                class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+                data-testid="contact-form__name-input"
+                name="name"
+              />
+            </fieldset>
+            <fieldset
+              class="sc-AxhUy dJlYTe flex flex-col space-y-2"
+            >
+              <label
+                class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
+                data-testid="FormLabel"
+                for="network"
+              >
+                Network
+              </label>
+              <div
+                class="sc-fzozJi OgXfh"
+              >
+                <select
+                  class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
+                  data-testid="contact-form__network-select"
+                  name="network"
+                >
+                  <option
+                    disabled=""
+                    selected=""
+                    value=""
+                  >
+                    Select network...
+                  </option>
+                </select>
+                <div
+                  class="sc-AxheI sc-AxmLO ecniej w-12 text-lg pointer-events-none text-theme-neutral-dark"
+                >
+                  <div
+                    class="sc-AxirZ iQaTP"
+                    height="1em"
+                    width="1em"
+                  >
+                    <svg>
+                      chevron-down.svg
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+            <fieldset
+              class="sc-AxhUy dJlYTe flex flex-col space-y-2"
+            >
+              <label
+                class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
+                data-testid="FormLabel"
+                for="address"
+              >
+                Address
+              </label>
+              <input
+                class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+                data-testid="contact-form__address-input"
+                name="address"
+              />
+            </fieldset>
+            <div
+              class="mt-4"
+            >
+              <button
+                class="sc-AxjAm ddJBbC w-full"
+                color="primary"
+                data-testid="contact-form__add-address-button"
+                disabled=""
+                type="button"
+              >
+                Add address
+              </button>
+            </div>
+            <div
+              class="flex justify-end mt-8 space-x-3"
+            >
+              <button
+                class="sc-AxjAm ddJBbC"
+                color="primary"
+                type="button"
+              >
+                Cancel
+              </button>
+              <button
+                class="sc-AxjAm ddQVWI"
+                color="primary"
+                data-testid="contact-form__save-button"
+                disabled=""
+                type="submit"
+              >
+                Save
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

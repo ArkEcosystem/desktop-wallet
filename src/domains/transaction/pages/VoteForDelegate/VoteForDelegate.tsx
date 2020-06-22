@@ -297,22 +297,19 @@ export const VoteForDelegate = ({ onCopy, onSubmit }: Props) => {
 							<FourthStep />
 						</TabPanel>
 
-						<div className="flex justify-start mt-6 space-x-3">
+						<div className="flex justify-end mt-6 space-x-3">
 							{activeTab < 4 && (
 								<>
 									<Button
 										disabled={activeTab === 1}
 										data-testid="VoteForDelegate__button--back"
 										variant="plain"
-										size="large"
 										onClick={handleBack}
 									>
 										Back
 									</Button>
 									<Button
 										data-testid="VoteForDelegate__button--continue"
-										variant="solid"
-										size="large"
 										// disabled={!isValid}
 										onClick={handleNext}
 									>
@@ -323,24 +320,16 @@ export const VoteForDelegate = ({ onCopy, onSubmit }: Props) => {
 
 							{activeTab === 4 && (
 								<>
-									<Button
-										data-testid="VoteForDelegate__button--back-to-wallet"
-										variant="plain"
-										className={"block"}
-										size="large"
-									>
+									<Button data-testid="VoteForDelegate__button--back-to-wallet" variant="plain">
 										Back to wallet
 									</Button>
 									<Button
 										onClick={onCopy}
 										data-testid="VoteForDelegate__button--copy"
 										variant="plain"
-										size="large"
 									>
-										<div className="flex items-center justify-between px-1">
-											<Icon name="Copy" />
-											<span className="ml-2">Copy</span>
-										</div>
+										<Icon name="Copy" />
+										<span>Copy</span>
 									</Button>
 								</>
 							)}

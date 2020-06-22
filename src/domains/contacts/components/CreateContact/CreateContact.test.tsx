@@ -21,40 +21,14 @@ describe("CreateContact", () => {
 	});
 
 	it("should render a modal", () => {
-		const networks = [
-			{
-				label: "Ark Ecosystem",
-				value: "ark",
-				icon: "Ark",
-			},
-			{
-				label: "Bitcoin",
-				value: "btc",
-				icon: "Btc",
-			},
-			{
-				label: "Ethereum",
-				value: "eth",
-				icon: "Eth",
-			},
-		];
-
-		const addresses = [
-			{ coin: "Btc", network: "Bitcoin", address: "fooooooobaaaaar", avatar: "test1" },
-			{ coin: "Eth", network: "Ethereum", address: "fooooooobaaaaar", avatar: "test2" },
-		];
-
 		const { asFragment, getByTestId } = render(
 			<I18nextProvider i18n={i18n}>
-				<CreateContact isOpen={true} networks={networks} addresses={addresses} onSave={onSave} />
+				<CreateContact isOpen={true} onSave={onSave} />
 			</I18nextProvider>,
 		);
 
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_CREATE_CONTACT.TITLE);
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_CREATE_CONTACT.DESCRIPTION);
-		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_CREATE_CONTACT.FORM.NAME);
-		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_CREATE_CONTACT.FORM.NETWORK);
-		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_CREATE_CONTACT.FORM.ADDRESS);
 		expect(asFragment()).toMatchSnapshot();
 	});
 });
