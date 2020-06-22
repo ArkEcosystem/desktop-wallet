@@ -2,7 +2,7 @@ export const categories = [
 	{
 		title: "Profile",
 		subtitle: "38 topics",
-		icon: "User",
+		icon: "Profile",
 		path: "/",
 	},
 	{
@@ -14,7 +14,7 @@ export const categories = [
 	{
 		title: "Plugins",
 		subtitle: "106 topics",
-		icon: "Plugin",
+		icon: "Plugins",
 		path: "/",
 	},
 	{
@@ -127,7 +127,7 @@ export const article = {
 	title: "Setup Your Own Blockchain Explorer",
 	body: "jfdskfjdskajfkasjfasdf",
 	category: "Portfolio",
-	categoryIcon: "Eye",
+	categoryIcon: "PortfolioTag",
 	views: "32 908",
 	sections: [
 		{

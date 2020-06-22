@@ -32,7 +32,7 @@ const ArticleListItem = ({ title, path }: ArticleListItemProps) => (
 		>
 			<div>
 				<div className="pt-1 text-theme-neutral-800">
-					<Icon name="FilePassword" width={22} height={22} />
+					<Icon name="Article" width={16} height={16} />
 				</div>
 			</div>
 			<div className="ml-3 text-theme-neutral-800">{title}</div>
@@ -49,7 +49,7 @@ const CategoryItem = ({ icon, title, subtitle, path }: CategoryItemProps) => (
 		<div className="w-1/3 my-auto">
 			<Circle className="border-theme-neutral-800" size="large">
 				<div className="text-theme-neutral-800">
-					<Icon name={icon} width={22} height={22} />
+					<Icon name={icon} width={20} height={20} />
 				</div>
 			</Circle>
 		</div>

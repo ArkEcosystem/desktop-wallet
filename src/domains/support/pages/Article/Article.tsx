@@ -60,15 +60,15 @@ export const Article = ({ title, category, categoryIcon, views, sections }: Arti
 				<div className="max-w-xl mx-auto text-sm">
 					<div className="flex mb-4">
 						<div className="flex">
-							<div className="my-auto mr-1">
+							<div className="my-auto mr-2">
 								<Icon name={categoryIcon} />
 							</div>
 							<div className="font-bold font-sm text-theme-neutral-700">{category}</div>
 						</div>
 						{views && (
-							<div className="flex ml-4">
-								<div className="my-auto mr-1">
-									<Icon name="Eye" />
+							<div className="flex ml-5">
+								<div className="my-auto mr-2">
+									<Icon name="EyeTag" width={18} height={18} />
 								</div>
 								<div className="font-bold font-sm text-theme-neutral-700">{views}</div>
 							</div>

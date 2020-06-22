@@ -22,7 +22,7 @@ const ArticleListItem = ({ title, path, description }: ArticleListItemProps) => 
 		>
 			<div>
 				<div className="pt-1 text-theme-neutral-800">
-					<Icon name="FilePassword" width={22} height={22} />
+					<Icon name="Article" width={16} height={16} />
 				</div>
 			</div>
 			<div>
