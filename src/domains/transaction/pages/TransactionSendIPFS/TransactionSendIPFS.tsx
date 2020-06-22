@@ -10,10 +10,9 @@ import { SelectionBar, SelectionBarOption, useSelectionState } from "app/compone
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { TransactionDetail } from "app/components/TransactionDetail";
+import { TotalAmountBox } from "domains/transaction/components/TotalAmountBox";
 import React, { useEffect } from "react";
 import { useForm, useFormContext } from "react-hook-form";
-
-import { TotalAmountBox } from "../../components/TotalAmountBox";
 
 export const FirstStep = () => {
 	const { register } = useFormContext();
