@@ -71,11 +71,7 @@ export const ExchangeCard = ({ exchange, isSelected, onClick }: ExchangeCardProp
 			<div className="my-auto px-12 font-semibold">
 				<div className="flex items-center">
 					<div className="absolute top-4 right-2 text-theme-primary-200">
-						<Dropdown
-							toggleIcon="Settings"
-							options={options}
-							onSelect={(option: any) => console.log(option)}
-						/>
+						<Dropdown toggleIcon="Settings" options={options} />
 					</div>
 
 					<div className="mr-4">
