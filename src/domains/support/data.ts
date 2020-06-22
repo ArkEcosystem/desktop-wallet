@@ -75,7 +75,7 @@ export const popularArticles = [
 
 export const newestArticles = [
 	{
-		title: "How to Withdraw from wallet",
+		title: "How to withdraw from wallet",
 		path: "/",
 	},
 	{
@@ -122,3 +122,25 @@ export const faqArticles = [
 		path: "/",
 	},
 ];
+
+export const article = {
+	title: "Setup Your Own Blockchain Explorer",
+	body: "jfdskfjdskajfkasjfasdf",
+	category: "Portfolio",
+	categoryIcon: "Eye",
+	views: "32 908",
+	sections: [
+		{
+			title: "1. Introduction",
+			id: "introduction",
+			body:
+				"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tempus imperdiet nulla malesuada pellentesque elit eget. Bibendum arcu vitae elementum curabitur. Eget lorem dolor sed viverra ipsum. Ut venenatis tellus in metus vulputate eu scelerisque. Mi bibendum neque egestas congue quisque egestas diam in. Massa tincidunt nunc pulvinar sapien et ligula ullamcorper malesuada proin. Nullam vehicula ipsum a arcu cursus. Sed libero enim sed faucibus. Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Quis imperdiet massa tincidunt nunc pulvinar sapien et ligula. Dui id ornare arcu odio ut sem nulla pharetra diam. Diam quam nulla porttitor massa.\n\n Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tempus imperdiet nulla malesuada pellentesque elit eget. Bibendum arcu vitae elementum curabitur. Eget lorem dolor sed viverra ipsum. Ut venenatis tellus in metus vulputate eu scelerisque. Mi bibendum neque egestas congue quisque egestas diam in. Massa tincidunt nunc pulvinar sapien et ligula ullamcorper malesuada proin. Nullam vehicula ipsum a arcu cursus. Sed libero enim sed faucibus. Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Quis imperdiet massa tincidunt nunc pulvinar sapien et ligula. Dui id ornare arcu odio ut sem nulla pharetra diam. Diam quam nulla porttitor massa.",
+		},
+		{
+			title: "2. Create Account",
+			id: "account",
+			body:
+				"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tempus imperdiet nulla malesuada pellentesque elit eget. Bibendum arcu vitae elementum curabitur. Eget lorem dolor sed viverra ipsum. Ut venenatis tellus in metus vulputate eu scelerisque. Mi bibendum neque egestas congue quisque egestas diam in. Massa tincidunt nunc pulvinar sapien et ligula ullamcorper malesuada proin. Nullam vehicula ipsum a arcu cursus. Sed libero enim sed faucibus. Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Quis imperdiet massa tincidunt nunc pulvinar sapien et ligula. Dui id ornare arcu odio ut sem nulla pharetra diam. Diam quam nulla porttitor massa.\n\n Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tempus imperdiet nulla malesuada pellentesque elit eget. Bibendum arcu vitae elementum curabitur. Eget lorem dolor sed viverra ipsum. Ut venenatis tellus in metus vulputate eu scelerisque. Mi bibendum neque egestas congue quisque egestas diam in. Massa tincidunt nunc pulvinar sapien et ligula ullamcorper malesuada proin. Nullam vehicula ipsum a arcu cursus. Sed libero enim sed faucibus. Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Quis imperdiet massa tincidunt nunc pulvinar sapien et ligula. Dui id ornare arcu odio ut sem nulla pharetra diam. Diam quam nulla porttitor massa.",
+		},
+	],
+};

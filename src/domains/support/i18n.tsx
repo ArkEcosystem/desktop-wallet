@@ -7,4 +7,6 @@ export const translations: { [key: string]: any } = {
 	NEWEST_CATEGORY_TITLE: "Newest",
 	FAQ_PORTFOLIO_TITLE: "Portfolio",
 	FAQ_PORTFOLIO_SUBTITLE: "Frequently asked questions about portfolio and addresses",
+	FOOTER_HELP_TITLE: "Do you still need help with you question?",
+	FOOTER_HELP_SUBTITLE: "Write us a letter and we will reply as soon as possible.",
 };
