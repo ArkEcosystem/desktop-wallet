@@ -59,7 +59,7 @@ export const HeaderSearchBar = ({ onSearch }: HeaderSearchBarProps) => {
 						/>
 					</div>
 
-					<Icon className="text-theme-neutral-500" name="Search" width={24} height={24} />
+					<Icon className="text-theme-neutral-500" name="Search" width={20} height={20} />
 				</div>
 			)}
 		</>
