@@ -3,7 +3,7 @@ import React from "react";
 import { SendTransactionForm } from "./SendTransactionForm";
 
 export default {
-	title: "Transaction / Components / Send Transaction / Step 1",
+	title: "Transactions / Components / Send Transaction / Step 1",
 };
 
 const defaultFormValues = {
