@@ -89,7 +89,7 @@ export const AddExchange = (props: AddExchangeProps) => {
 					{(rowData: any) => (
 						<tr className="border-b border-dashed border-theme-neutral-200">
 							<td className="text-center w-18">
-								<ChangeNowLogo />
+								<ChangeNowLogo className="w-12 h-12" />
 							</td>
 
 							<td>
