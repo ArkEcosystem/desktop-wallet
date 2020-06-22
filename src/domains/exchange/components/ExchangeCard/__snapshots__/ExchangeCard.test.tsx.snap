@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ExchangeCard should render Add Exchange card 1`] = `
+<div>
+  <div
+    class="sc-AxiKw kGNLth col-span-2 border-theme-primary-100"
+    data-testid="Exchange__add-exchange-card"
+  >
+    <div
+      class="flex items-center my-auto px-12 font-semibold text-theme-primary-600"
+    >
+      <div
+        class="sc-AxjAm cpczEI p-4 bg-theme-primary-100 rounded-lg mr-4"
+        height="1em"
+        width="1em"
+      >
+        <svg>
+          plus.svg
+        </svg>
+      </div>
+      Add Exchange
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ExchangeCard should render Blank Exchange card 1`] = `
+<div>
+  <div
+    class="sc-AxiKw kGNLth border-theme-primary-100"
+    data-testid="Exchange__blank-card"
+  >
+    <div
+      class="flex items-center my-auto px-12 font-semibold text-theme-primary-100"
+    >
+      <div
+        class="w-12 h-12 border-2 border-theme-primary-100 rounded-lg mr-4"
+      />
+      Exchange Name
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ExchangeCard should render Exchange card 1`] = `
+<div>
+  <div
+    class="sc-AxiKw kGNLth border-theme-primary-100 hover:border-theme-background"
+    data-testid="Exchange__exchange-card-test-exchange"
+  >
+    <div
+      class="my-auto px-12 font-semibold"
+    >
+      <div
+        class="flex items-center"
+      >
+        <div
+          class="absolute top-4 right-2 text-theme-primary-200"
+        >
+          <div
+            class="relative"
+            data-testid="dropdown__toggle"
+          >
+            <button
+              class="float-right outline-none focus:outline-none"
+            >
+              <div
+                class="sc-AxjAm buCJuk"
+                height="20"
+                width="20"
+              >
+                <svg>
+                  settings.svg
+                </svg>
+              </div>
+            </button>
+          </div>
+        </div>
+        <div
+          class="mr-4"
+        >
+          <svg
+            class="w-12 h-12"
+          >
+            changenow-logo.svg
+          </svg>
+        </div>
+        <div
+          class="truncate"
+        >
+          Test Exchange
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
