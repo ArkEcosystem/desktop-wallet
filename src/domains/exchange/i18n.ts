@@ -1,6 +1,4 @@
 export const translations: { [key: string]: any } = {
-	// TITLE: "Exchange",
-	// DESCRIPTION: "Trade your money safely from the comfort of your wallet.",
 	MODAL_ADD_EXCHANGE: {
 		TITLE: "Exchange",
 		DESCRIPTION:

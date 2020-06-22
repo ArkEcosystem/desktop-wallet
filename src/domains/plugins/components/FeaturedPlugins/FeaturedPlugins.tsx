@@ -1,49 +1,51 @@
 import { images } from "app/assets/images";
 import { Button } from "app/components/Button";
+import { Icon } from "app/components/Icon";
 import { Modal } from "app/components/Modal";
 import { ReviewRating } from "app/components/ReviewRating";
 import { Table } from "app/components/Table";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-type AddExchangeProps = {
+type FeaturedPluginsProps = {
 	isOpen: boolean;
 	onClose?: any;
 };
 
-const AddExchangeBanner = images.exchange.components.AddExchange.AddExchangeBanner;
-const ChangeNowLogo = images.exchange.components.AddExchange.ChangeNowLogo;
+const { ChangeNowLogo } = images.exchange.components.AddExchange;
 
-export const AddExchange = (props: AddExchangeProps) => {
+export const FeaturedPlugins = (props: FeaturedPluginsProps) => {
 	const { t } = useTranslation();
 	const data = [
 		{
+			name: "ARK Explorer",
+			description: "ARK Ecosystem",
+			category: "Utility",
+			rating: 4.6,
+			version: "1.3.8",
+			isOfficial: true,
+		},
+		{
+			name: "Animal Avatars",
+			description: "Breno Polanski",
+			category: "Utility",
+			rating: 4.6,
+			version: "1.3.8",
+		},
+		{
 			name: "ChangeNOW Plugin",
 			description: "ChangeNOW",
-			category: "Other",
-			rating: 4.6,
-			version: "1.3.8",
-		},
-		{
-			name: "Binance",
-			description: "Binance",
-			category: "Other",
-			rating: 4.6,
-			version: "1.3.8",
-		},
-		{
-			name: "Atomars",
-			description: "Atomars",
 			category: "Other",
 			rating: 4.8,
 			version: "1.3.8",
 		},
 		{
-			name: "OKEx",
-			description: "ARK Ecosystem",
-			category: "Other",
-			rating: 2.6,
-			version: "1.3.8",
+			name: "Bold Ninja",
+			description: "Delegate Fun",
+			category: "Game",
+			rating: 4.9,
+			version: "2.0.0",
+			isGrant: true,
 		},
 	];
 
@@ -76,9 +78,8 @@ export const AddExchange = (props: AddExchangeProps) => {
 
 	return (
 		<Modal
-			title={t("EXCHANGE.MODAL_ADD_EXCHANGE.TITLE")}
-			description={t("EXCHANGE.MODAL_ADD_EXCHANGE.DESCRIPTION")}
-			banner={<AddExchangeBanner className="w-full" />}
+			title={t("PLUGINS.MODAL_FEATURED_PLUGINS.TITLE")}
+			description={t("PLUGINS.MODAL_FEATURED_PLUGINS.DESCRIPTION")}
 			size="3xl"
 			isOpen={props.isOpen}
 			onClose={props.onClose}
@@ -95,7 +96,11 @@ export const AddExchange = (props: AddExchangeProps) => {
 								<div className="font-semibold text-theme-primary-500 hover:text-theme-primary-400">
 									{rowData.name}
 								</div>
-								<div>{rowData.description}</div>
+								<div className="inline-flex items-center space-x-2">
+									<span>{rowData.description}</span>
+									{rowData.isOfficial && <Icon name="OfficialArkPlugin" width={15} height={15} />}
+									{rowData.isGrant && <Icon name="Grant" width={16} height={16} />}
+								</div>
 							</td>
 
 							<td className="py-10">{rowData.category}</td>
@@ -117,8 +122,6 @@ export const AddExchange = (props: AddExchangeProps) => {
 	);
 };
 
-AddExchange.defaultProps = {
+FeaturedPlugins.defaultProps = {
 	isOpen: false,
 };
-
-AddExchange.displayName = "AddExchange";
