@@ -95,3 +95,30 @@ export const newestArticles = [
 		path: "/",
 	},
 ];
+
+export const faqArticles = [
+	{
+		title: "Development Environment Setup",
+		description:
+			"ARK Core is written in TypeScript, and it has been using Lerna to manage the development and publication of its packages and uses Node.js as execution environment. This guid will take you through the basic steps of setting up a development environment",
+		path: "/",
+	},
+	{
+		title: "Core-Tester provides set of instructions on how to run commands for creating and sending transactions?",
+		description:
+			"With our testnet up and running, the first thing we need to do is to connect to it. All interactions between ARK Nodes and the outside world happen through the Public API, which is a REST API facilitating different actions on the blockchain.",
+		path: "/",
+	},
+	{
+		title: "Setup Your Own Blockchain Explorer",
+		description:
+			"ARK Core is written in TypeScript, and it has been using Lerna to manage the development and publication of its packages and uses Node.js as execution environment. This guid will take you through the basic steps of setting up a development environment",
+		path: "/",
+	},
+	{
+		title: "Is it essential for you to understand and master the art of ARK Core Module development?",
+		description:
+			"ARK Core is written in TypeScript, and it has been using Lerna to manage the development and publication of its packages and uses Node.js as execution environment. This guid will take you through the basic steps of setting up a development environment",
+		path: "/",
+	},
+];

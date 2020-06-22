@@ -5,4 +5,6 @@ export const translations: { [key: string]: any } = {
 	HELPFUL_CATEGORY_TITLE: "Most Helpful",
 	POPULAR_CATEGORY_TITLE: "Most Popular",
 	NEWEST_CATEGORY_TITLE: "Newest",
+	FAQ_PORTFOLIO_TITLE: "Portfolio",
+	FAQ_PORTFOLIO_SUBTITLE: "Frequently asked questions about portfolio and addresses",
 };
