@@ -116,7 +116,7 @@ export const SecondStep = () => (
 				label="Hash"
 				extra={
 					<div className="ml-1">
-						<Circle className="bg-theme-background border-black" size="large">
+						<Circle className="border-black bg-theme-background" size="large">
 							<Icon name="Ipfs" width={23} height={23} />
 						</Circle>
 					</div>
@@ -173,7 +173,7 @@ export const FourthStep = () => (
 								maxChars={32}
 							/>
 						</Clipboard>
-						<div className="text-theme-primary-300 ml-5 mb-1">
+						<div className="mb-1 ml-5 text-theme-primary-300">
 							<Icon name="Copy" />
 						</div>
 					</div>
@@ -187,7 +187,7 @@ export const FourthStep = () => (
 								maxChars={32}
 							/>
 						</Clipboard>
-						<div className="text-theme-primary-300 ml-5 mb-1">
+						<div className="mb-1 ml-5 text-theme-primary-300">
 							<Icon name="Copy" />
 						</div>
 					</div>
