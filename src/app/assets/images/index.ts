@@ -1,3 +1,4 @@
+import { contacts } from "domains/contacts/images";
 import { exchange } from "domains/exchange/images";
 import { profile } from "domains/profile/images";
 import { transaction } from "domains/transaction/images";
@@ -13,6 +14,7 @@ export const images = {
 		DeleteBanner,
 		SuccessBanner,
 	},
+	contacts,
 	exchange,
 	profile,
 	transaction,

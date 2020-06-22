@@ -41,5 +41,5 @@ export const Breadcrumbs = ({ crumbs, className }: BreadcrumbsProps) => {
 };
 
 Breadcrumbs.defaultProps = {
-	className: "w-full font-semibold",
+	className: "font-semibold",
 };
