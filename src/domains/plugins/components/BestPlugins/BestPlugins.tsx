@@ -7,14 +7,14 @@ import { Table } from "app/components/Table";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-type FeaturedPluginsProps = {
+type BestPluginsProps = {
 	isOpen: boolean;
 	onClose?: any;
 };
 
 const { ChangeNowLogo } = images.exchange.components.AddExchange;
 
-export const FeaturedPlugins = (props: FeaturedPluginsProps) => {
+export const BestPlugins = (props: BestPluginsProps) => {
 	const { t } = useTranslation();
 	const data = [
 		{
@@ -78,8 +78,8 @@ export const FeaturedPlugins = (props: FeaturedPluginsProps) => {
 
 	return (
 		<Modal
-			title={t("PLUGINS.MODAL_FEATURED_PLUGINS.TITLE")}
-			description={t("PLUGINS.MODAL_FEATURED_PLUGINS.DESCRIPTION")}
+			title={t("PLUGINS.MODAL_BEST_PLUGINS.TITLE")}
+			description={t("PLUGINS.MODAL_BEST_PLUGINS.DESCRIPTION")}
 			size="3xl"
 			isOpen={props.isOpen}
 			onClose={props.onClose}
@@ -122,6 +122,6 @@ export const FeaturedPlugins = (props: FeaturedPluginsProps) => {
 	);
 };
 
-FeaturedPlugins.defaultProps = {
+BestPlugins.defaultProps = {
 	isOpen: false,
 };
