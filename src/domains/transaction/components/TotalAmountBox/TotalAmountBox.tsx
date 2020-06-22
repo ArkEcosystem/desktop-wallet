@@ -9,7 +9,7 @@ type Props = {
 };
 
 export const TotalAmountBox = ({ transactionAmount, transactionFee, magnitude }: Props) => {
-	const totalAmount = new BigNumber(transactionAmount).plus(transactionFee).decimalPlaces(magnitude).toFixed();
+	const totalAmount = BigNumber.make(transactionAmount).plus(transactionFee).decimalPlaces(magnitude).toFixed();
 
 	return (
 		<div className="border border-theme-neutral-300 rounded-lg">
