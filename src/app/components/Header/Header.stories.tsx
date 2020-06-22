@@ -1,8 +1,10 @@
+import {action } from "@storybook/addon-actions";
 import { text, withKnobs } from "@storybook/addon-knobs";
 import { Button } from "app/components/Button";
 import React from "react";
 
 import { Header } from "./Header";
+import { HeaderSearchBar } from "./HeaderSearchBar";
 
 export default {
 	title: "Basic / Header",
@@ -22,4 +24,16 @@ export const WithExtra = () => (
 			</div>
 		}
 	/>
+);
+
+export const WithSearchBar = () => (
+  <Header
+    title={text("Title", "Title")}
+    subtitle={text("Subtitle", "Subtitle")}
+    extra={
+      <div className="flex justify-end">
+        <HeaderSearchBar onSearch={action("onSearch")} />
+      </div>
+    }
+  />
 );
