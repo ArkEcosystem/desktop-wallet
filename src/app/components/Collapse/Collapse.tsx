@@ -12,8 +12,23 @@ type Props = {
 
 export const Collapse = ({ isOpen, children, minHeight, maxHeight, duration, ...props }: Props) => {
 	const variants = {
-		visible: { height: maxHeight, opacity: 1, overflow: "auto" },
-		hidden: { height: minHeight, opacity: 0, overflow: "hidden" },
+		visible: {
+			maxHeight: maxHeight,
+			height: "auto",
+			opacity: 1,
+			overflow: "auto",
+			transition: {
+				duration,
+			},
+		},
+		hidden: {
+			height: minHeight,
+			opacity: 0,
+			overflow: "hidden",
+			transition: {
+				duration: duration! * 0.75,
+			},
+		},
 	};
 
 	return (
@@ -21,7 +36,6 @@ export const Collapse = ({ isOpen, children, minHeight, maxHeight, duration, ...
 			data-testid="Collapse"
 			aria-hidden={!isOpen}
 			variants={variants}
-			transition={{ ease: "easeOut", duration }}
 			animate={isOpen ? "visible" : "hidden"}
 			initial={isOpen ? "visible" : "hidden"}
 			{...props}

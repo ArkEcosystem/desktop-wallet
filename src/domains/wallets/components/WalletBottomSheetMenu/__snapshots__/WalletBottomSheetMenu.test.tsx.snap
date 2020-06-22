@@ -1,0 +1,301 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WalletBottomSheetMenu should render 1`] = `
+<DocumentFragment>
+  <aside
+    class="w-full z-50 bottom-0 absolute"
+    data-testid="WalletBottomSheetMenu"
+  >
+    <div
+      class="theme-dark bg-theme-background py-4 px-6"
+      data-testid="WalletBottomSheetMenu__header"
+    >
+      <div
+        class="max-w-4xl mx-auto flex items-center justify-between"
+      >
+        <div>
+          <span
+            class="text-theme-neutral-dark text-lg font-bold"
+          >
+            Your wallets
+          </span>
+          <span
+            class="text-theme-neutral-light font-bold ml-1"
+            data-testid="WalletBottomSheetMenu__counter"
+          >
+            1
+          </span>
+        </div>
+        <div
+          class="inline-flex items-center space-x-1"
+        >
+          <button
+            class="text-theme-neutral font-medium py-2 px-4 rounded focus:outline-none focus:shadow-outline flex items-center space-x-2"
+            data-testid="WalletBottomSheetMenu__toggle"
+          >
+            <span>
+              Show All
+            </span>
+            <span
+              class="sc-AxgMl bDidZW"
+            >
+              <div
+                class="sc-AxjAm cpczEI"
+                height="1em"
+                width="1em"
+              >
+                <svg>
+                  chevron-down.svg
+                </svg>
+              </div>
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      aria-hidden="true"
+      data-testid="Collapse"
+      style="height: 0px; opacity: 0; overflow: hidden;"
+    >
+      <div
+        class="bg-theme-background px-6 py-8"
+      >
+        <div
+          class="max-w-4xl mx-auto"
+        >
+          <div
+            class="sc-AxirZ jAePJ"
+            role="table"
+          >
+            <table
+              class="table-auto"
+            >
+              <thead>
+                <tr
+                  role="row"
+                >
+                  <th
+                    class="text-xs text-left select-none text-theme-neutral-400"
+                    colspan="1"
+                    data-testid="table__th--0"
+                    role="columnheader"
+                    style="cursor: pointer;"
+                    title="Toggle SortBy"
+                  >
+                    <div
+                      class="flex flex-inline align-top  undefined"
+                    >
+                      <div
+                        class="mr-1"
+                      >
+                        Asset Type
+                      </div>
+                      <div
+                        class="mt-1 text-theme-color-neutral-500"
+                        data-testid="table__Sort"
+                      >
+                        <div
+                          class="sc-AxjAm iepfoc"
+                          height="10"
+                          width="10"
+                        >
+                          <svg>
+                            sort.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </th>
+                  <th
+                    class="text-xs text-left select-none text-theme-neutral-400"
+                    colspan="1"
+                    data-testid="table__th--1"
+                    role="columnheader"
+                    style="cursor: pointer;"
+                    title="Toggle SortBy"
+                  >
+                    <div
+                      class="flex flex-inline align-top  undefined"
+                    >
+                      <div
+                        class="mr-1"
+                      >
+                        Wallet Address
+                      </div>
+                      <div
+                        class="mt-1 text-theme-color-neutral-500"
+                        data-testid="table__Sort"
+                      >
+                        <div
+                          class="sc-AxjAm iepfoc"
+                          height="10"
+                          width="10"
+                        >
+                          <svg>
+                            sort.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </th>
+                  <th
+                    class="text-xs text-left select-none text-theme-neutral-400"
+                    colspan="1"
+                    data-testid="table__th--2"
+                    role="columnheader"
+                  >
+                    <div
+                      class="flex flex-inline align-top  undefined"
+                    >
+                      <div
+                        class="mr-1"
+                      >
+                        Wallet Type
+                      </div>
+                      <div
+                        class="mt-1 text-theme-color-neutral-500"
+                        data-testid="table__Sort"
+                      />
+                    </div>
+                  </th>
+                  <th
+                    class="text-xs text-left select-none text-theme-neutral-400"
+                    colspan="1"
+                    data-testid="table__th--3"
+                    role="columnheader"
+                    style="cursor: pointer;"
+                    title="Toggle SortBy"
+                  >
+                    <div
+                      class="flex flex-inline align-top  float-right"
+                    >
+                      <div
+                        class="mr-1"
+                      >
+                        Balance
+                      </div>
+                      <div
+                        class="mt-1 text-theme-color-neutral-500"
+                        data-testid="table__Sort"
+                      >
+                        <div
+                          class="sc-AxjAm iepfoc"
+                          height="10"
+                          width="10"
+                        >
+                          <svg>
+                            sort.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </th>
+                  <th
+                    class="text-xs text-left select-none text-theme-neutral-400"
+                    colspan="1"
+                    data-testid="table__th--4"
+                    role="columnheader"
+                    style="cursor: pointer;"
+                    title="Toggle SortBy"
+                  >
+                    <div
+                      class="flex flex-inline align-top  float-right"
+                    >
+                      <div
+                        class="mr-1"
+                      >
+                        Fiat Value
+                      </div>
+                      <div
+                        class="mt-1 text-theme-color-neutral-500"
+                        data-testid="table__Sort"
+                      >
+                        <div
+                          class="sc-AxjAm iepfoc"
+                          height="10"
+                          width="10"
+                        >
+                          <svg>
+                            sort.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </th>
+                </tr>
+              </thead>
+              <tbody
+                role="rowgroup"
+              >
+                <tr
+                  class="border-b border-theme-neutral-200"
+                >
+                  <td
+                    class="py-4 mt-1"
+                  >
+                    <div
+                      class="sc-AxhCb fwVCao"
+                    >
+                      <div
+                        class="sc-AxjAm cpczEI"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          ark.svg
+                        </svg>
+                      </div>
+                    </div>
+                    <div
+                      class="sc-AxhCb hXKmOt"
+                    />
+                  </td>
+                  <td
+                    class="py-1"
+                  >
+                    <div
+                      class="inline-block truncate"
+                    >
+                      <span
+                        class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-sm"
+                        data-testid="address__wallet-name"
+                      >
+                        ARK Wallet 1
+                      </span>
+                      <span
+                        class="text-theme-neutral-400 font-semibold text-sm"
+                        data-testid="address__wallet-address"
+                      >
+                        ASuusXSW9...6T9GQ3kqT
+                      </span>
+                    </div>
+                  </td>
+                  <td
+                    class="py-1 text-sm font-bold"
+                  />
+                  <td
+                    class="py-1 text-sm font-bold text-right"
+                  >
+                    <div>
+                      120 ARK
+                    </div>
+                  </td>
+                  <td
+                    class="py-1 text-sm font-bold text-right text-theme-neutral-400"
+                  >
+                    <div />
+                  </td>
+                  <td>
+                    0
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </aside>
+</DocumentFragment>
+`;
