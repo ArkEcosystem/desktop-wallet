@@ -153,6 +153,7 @@ module.exports = {
 				2: "2px",
 				3: "3px",
 				10: "10px",
+				20: "20px",
 			},
 			borderRadius: {
 				xl: "1rem",
