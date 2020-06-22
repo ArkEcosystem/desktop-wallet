@@ -1,63 +1,69 @@
+import { boolean, select, withKnobs } from "@storybook/addon-knobs";
+import { Icon } from "app/components/Icon";
 import React from "react";
 
 import { Button } from "./Button";
 
 export default {
 	title: "Basic / Button",
+	decorators: [withKnobs],
 };
 
-export const Primary = () => (
-	<div className="inline-flex space-x-4">
-		<Button color="primary" variant="solid">
-			Solid
-		</Button>
-		<Button color="primary" variant="plain">
-			Plain
-		</Button>
-		<Button color="primary" variant="outline">
-			Outline
-		</Button>
-	</div>
-);
+export const Default = () => {
+	const color = select("Color", ["primary", "success", "danger", "warning"], "primary");
+	const size = select("Size", ["small", "default", "large", "icon"], "default");
+	const disabled = boolean("Disabled", false);
+	const variants: {
+		[variant: string]: string;
+	} = {
+		solid: "Solid",
+		plain: "Plain",
+		outline: "Outline",
+	};
 
-export const Success = () => (
-	<div className="inline-flex space-x-4">
-		<Button color="success" variant="solid">
-			Solid
-		</Button>
-		<Button color="success" variant="plain">
-			Plain
-		</Button>
-		<Button color="success" variant="outline">
-			Outline
-		</Button>
-	</div>
-);
+	return (
+		<div className="space-x-4">
+			{Object.keys(variants).map((key: string) => (
+				<Button
+					key={key}
+					variant={key as "solid" | "plain" | "outline" | undefined}
+					color={color}
+					size={size}
+					disabled={disabled}
+				>
+					{variants[key]}
+				</Button>
+			))}
+		</div>
+	);
+};
 
-export const Danger = () => (
-	<div className="inline-flex space-x-4">
-		<Button color="danger" variant="solid">
-			Solid
-		</Button>
-		<Button color="danger" variant="plain">
-			Plain
-		</Button>
-		<Button color="danger" variant="outline">
-			Outline
-		</Button>
-	</div>
-);
+export const WithIcon = () => {
+	const color = select("Color", ["primary", "success", "danger", "warning"], "primary");
+	const size = select("Size", ["small", "default", "large", "icon"], "default");
+	const disabled = boolean("Disabled", false);
+	const variants: {
+		[variant: string]: string;
+	} = {
+		solid: "Solid",
+		plain: "Plain",
+		outline: "Outline",
+	};
 
-export const Neutral = () => (
-	<div className="inline-flex space-x-4">
-		<Button color="neutral" variant="solid">
-			Solid
-		</Button>
-		<Button color="neutral" variant="plain">
-			Plain
-		</Button>
-		<Button color="neutral" variant="outline">
-			Outline
-		</Button>
-	</div>
-);
+	return (
+		<div className="space-x-4">
+			{Object.keys(variants).map((key) => (
+				<Button
+					key={key}
+					variant={key as "solid" | "plain" | "outline" | undefined}
+					color={color}
+					size={size}
+					disabled={disabled}
+				>
+					<Icon name="Download" />
+					<span>{variants[key]}</span>
+				</Button>
+			))}
+		</div>
+	);
+};

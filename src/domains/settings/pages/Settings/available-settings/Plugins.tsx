@@ -29,10 +29,10 @@ export const Plugins = ({ formConfig, onSubmit }: PluginsProps) => {
 						</div>
 					</div>
 					<div className="flex flex-col py-6 space-x-3 md:flex-row">
-						<Button color="primary" variant="plain" className="w-full">
+						<Button variant="plain" className="w-full">
 							Open List
 						</Button>
-						<Button color="primary" variant="plain" className="w-full mt-2 md:mt-0">
+						<Button variant="plain" className="w-full mt-2 md:mt-0">
 							Add Plugin
 						</Button>
 					</div>
@@ -70,10 +70,8 @@ export const Plugins = ({ formConfig, onSubmit }: PluginsProps) => {
 			<Header title="Plugin Settings" subtitle="Customize your wallet to suit your needs." />
 			<Form id="plugin-settings__form" context={formConfig.context} onSubmit={onSubmit}>
 				<ListDivided items={pluginItems} />
-				<div className="float-right">
-					<Button color="primary" variant="solid" size="large">
-						Save
-					</Button>
+				<div className="flex justify-end">
+					<Button>Save</Button>
 				</div>
 			</Form>
 		</>

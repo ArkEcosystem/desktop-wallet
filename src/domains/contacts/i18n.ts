@@ -5,7 +5,7 @@ export const translations: { [key: string]: any } = {
 		SUBTITLE: "Manage your frequent contacts",
 	},
 	CONTACT_FORM: {
-		ADD_ADDRESS: "Add Address",
+		ADD_ADDRESS: "Add address",
 		ADDRESS: "Address",
 		ADDRESSES: "Addresses",
 		NAME: "Name",

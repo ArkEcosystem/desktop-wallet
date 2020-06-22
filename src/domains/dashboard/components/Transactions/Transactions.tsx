@@ -17,7 +17,7 @@ export const Transactions = ({ transactions, columns, title }: TransactionsProps
 				{(rowData: any) => <TransactionListItem {...rowData} />}
 			</Table>
 
-			<Button color="primary" variant="plain" className="w-full mt-10 mb-5">
+			<Button variant="plain" className="w-full mt-10 mb-5">
 				See more
 			</Button>
 		</div>

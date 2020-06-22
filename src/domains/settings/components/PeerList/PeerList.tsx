@@ -20,7 +20,6 @@ export const PeerList = ({ listColumns, peers }: PeerListProps) => {
 			</Table>
 
 			<Button
-				color="primary"
 				variant="plain"
 				className="w-full mt-10 mb-5"
 				onClick={() => setIsOpen(true)}

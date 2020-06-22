@@ -34,12 +34,14 @@ export const SignMessage = ({ onSubmit, signatoryAddress, isOpen, isSigned, hand
 
 	const SignForm = (
 		<Form id="sign-message__form" context={form} onSubmit={onSubmit}>
-			<FormField name="signatory-address" className="relative">
+			<FormField name="signatory-address">
 				<FormLabel label="Signatory" />
-				<Input type="text" disabled />
-				<div className="absolute top-0 flex items-center mt-8 ml-4">
-					<Circle avatarId="test" size="small" noShadow />
-					<span className="ml-3 font-semibold ">{signatoryAddress}</span>
+				<div className="relative">
+					<Input type="text" disabled />
+					<div className="absolute top-0 flex items-center mt-2 ml-4">
+						<Circle avatarId="test" size="small" noShadow />
+						<span className="ml-3 font-semibold ">{signatoryAddress}</span>
+					</div>
 				</div>
 			</FormField>
 			<FormField name="message">
@@ -52,17 +54,9 @@ export const SignMessage = ({ onSubmit, signatoryAddress, isOpen, isSigned, hand
 				<InputPassword ref={register({ required: true })} />
 				<FormHelperText />
 			</FormField>
-			<div className="flex items-center space-x-3">
-				<Button color="primary" variant="plain" size="large">
-					Cancel
-				</Button>
-				<Button
-					data-testid="sign-message__sign-button"
-					color="primary"
-					variant="solid"
-					size="large"
-					onClick={() => handleSign()}
-				>
+			<div className="flex justify-end space-x-3">
+				<Button variant="plain">Cancel</Button>
+				<Button data-testid="sign-message__sign-button" onClick={() => handleSign()}>
 					Sign
 				</Button>
 			</div>
@@ -98,12 +92,10 @@ export const SignMessage = ({ onSubmit, signatoryAddress, isOpen, isSigned, hand
 				/>
 			</TransactionDetail>
 
-			<div className="flex items-center pb-5 mt-3">
-				<Button color="primary" variant="plain" size="large">
-					<div className="flex items-center justify-between px-1">
-						<Icon name="Copy" />
-						<span className="ml-2">Copy Signature</span>
-					</div>
+			<div className="flex justify-end pb-5 mt-3">
+				<Button variant="plain">
+					<Icon name="Copy" />
+					<span>Copy Signature</span>
 				</Button>
 			</div>
 		</div>
