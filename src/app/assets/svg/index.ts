@@ -16,6 +16,7 @@ import { ReactComponent as Delegate } from "./delegate.svg";
 import { ReactComponent as Discord } from "./discord.svg";
 import { ReactComponent as Download } from "./download.svg";
 import { ReactComponent as Eth } from "./eth.svg";
+import { ReactComponent as Explorer } from "./explorer.svg";
 import { ReactComponent as EyeOff } from "./eye-off.svg";
 import { ReactComponent as Eye } from "./eye.svg";
 import { ReactComponent as FilePassword } from "./file-password.svg";
@@ -75,6 +76,7 @@ export const SvgCollection: any = {
 	Discord,
 	Download,
 	Eth,
+	Explorer,
 	Eye,
 	EyeOff,
 	FilePassword,
