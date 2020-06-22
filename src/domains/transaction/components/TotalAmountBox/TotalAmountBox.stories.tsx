@@ -6,6 +6,6 @@ export default { title: "Transactions / Components / Total Amount" };
 
 export const Default = () => (
 	<div className="mt-15">
-		<TotalAmountBox />
+		<TotalAmountBox transactionAmount="1.00" transactionFee="0.09660435" />
 	</div>
 );

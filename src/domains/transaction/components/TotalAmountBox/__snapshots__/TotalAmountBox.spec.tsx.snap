@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`IpfsDetailModal should not render if not open 1`] = `
+<DocumentFragment>
+  <div
+    class="border border-theme-neutral-300 rounded-lg"
+  >
+    <div
+      class="relative p-3"
+    >
+      <div
+        class="grid grid-cols-2 divide-x divide-gray-400"
+      >
+        <div
+          class="flex flex-col justify-center px-6 py-5"
+        >
+          <span
+            class="text-sm text-theme-neutral-500"
+          >
+            Transaction(s) Amount
+          </span>
+          <span
+            class="mt-3"
+            data-testid="total-amount-box__transaction-amount"
+          >
+            1.00 ARK
+          </span>
+        </div>
+        <div
+          class="flex flex-col justify-center text-right px-6 py-5"
+        >
+          <span
+            class="text-sm text-theme-neutral-500"
+          >
+            Transaction fee
+          </span>
+          <span
+            class="mt-3 mr-2"
+            data-testid="total-amount-box__transaction-fee"
+          >
+            0.09660435 ARK
+          </span>
+        </div>
+      </div>
+      <div
+        class="absolute flex items-center justify-center h-full top-0 bottom-0 left-0 right-0 text-center"
+      >
+        <div
+          class="bg-white px-1 py-2"
+        >
+          <div
+            class="sc-AxjAm pXfjM"
+            height="15"
+            width="15"
+          >
+            <svg>
+              plus.svg
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="border-t border-theme-neutral-300 rounded-b-lg flex flex-col justfiy-center items-center py-7 bg-theme-neutral-100"
+    >
+      <span
+        class="text-sm text-theme-neutral-500"
+      >
+        Total Amount
+      </span>
+      <span
+        class="font-bold text-2xl"
+        data-testid="total-amount-box__total"
+      >
+        1.09660435 ARK
+      </span>
+    </div>
+  </div>
+</DocumentFragment>
+`;
