@@ -6,7 +6,7 @@ import React from "react";
 
 import { Dropdown } from "../Dropdown";
 
-type WalletListItemProps = {
+export type WalletListItemProps = {
 	coinIcon: string;
 	coinClass?: string;
 	avatarId?: string;
