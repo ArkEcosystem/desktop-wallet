@@ -4,6 +4,7 @@ import { Icon } from "app/components/Icon";
 import { Modal } from "app/components/Modal";
 import { ReviewRating } from "app/components/ReviewRating";
 import { Table } from "app/components/Table";
+import { SearchBar } from "domains/search/components/SearchBar";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
@@ -22,6 +23,20 @@ export const AddBlacklistPlugin = (props: AddBlacklistPluginProps) => {
 			description: "Breno Polanski",
 			category: "Utility",
 			rating: 4.6,
+		},
+		{
+			name: "ARK Explorer",
+			description: "ARK Ecosystem",
+			category: "Utility",
+			rating: 4.6,
+			isOfficial: true,
+		},
+		{
+			name: "Bold Ninja",
+			description: "Delegate Fun",
+			category: "Game",
+			rating: 4.9,
+			isGrant: true,
 		},
 	];
 
@@ -56,6 +71,9 @@ export const AddBlacklistPlugin = (props: AddBlacklistPluginProps) => {
 			isOpen={props.isOpen}
 			onClose={props.onClose}
 		>
+			<div className="-mx-12">
+				<SearchBar className="mt-8" placeholder={t("PLUGINS.MODAL_ADD_BLACKLIST_PLUGIN.SEARCH_PLACEHOLDER")} />
+			</div>
 			<div className="mt-8 -mb-6">
 				<Table columns={columns} data={data}>
 					{(rowData: any) => (

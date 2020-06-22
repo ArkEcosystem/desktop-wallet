@@ -13,5 +13,6 @@ export const translations: { [key: string]: any } = {
 	MODAL_ADD_BLACKLIST_PLUGIN: {
 		TITLE: "Add Blacklist",
 		DESCRIPTION: "Find and select a plugin to add or remove it from the blacklist.",
+		SEARCH_PLACEHOLDER: "Search for a plugin",
 	},
 };
