@@ -25,7 +25,7 @@ export const FirstStep = () => {
 	}, [register]);
 
 	return (
-		<section data-testid="VoteForDelegate__step--first" className="space-y-8">
+		<section data-testid="TransactionSendIPFS__step--first" className="space-y-8">
 			<div>
 				<h1 className="mb-0">IPFS</h1>
 				<p className="text-theme-neutral-dark">Store an IPFS hasn on the network</p>
@@ -74,7 +74,7 @@ export const FirstStep = () => {
 };
 
 export const SecondStep = () => (
-	<section data-testid="VoteForDelegate__step--second" className="space-y-8">
+	<section data-testid="TransactionSendIPFS__step--second" className="space-y-8">
 		<div>
 			<h1 className="mb-0">Transaction Review</h1>
 			<p className="text-theme-neutral-dark">Check the information again before voting</p>
@@ -139,7 +139,7 @@ export const ThirdStep = () => {
 	}, [register]);
 
 	return (
-		<section data-testid="VoteForDelegate__step--third" className="space-y-8">
+		<section data-testid="TransactionSendIPFS__step--third" className="space-y-8">
 			<div>
 				<h1 className="mb-0">Passphrase</h1>
 				<p className="text-theme-neutral-dark">Confirm your password to continue</p>
@@ -154,7 +154,7 @@ export const ThirdStep = () => {
 };
 
 export const FourthStep = () => (
-	<section data-testid="VoteForDelegate__step--fourth" className="space-y-8">
+	<section data-testid="TransactionSendIPFS__step--fourth" className="space-y-8">
 		<div>
 			<h1 className="mb-0">Transaction Successful</h1>
 			<div className="grid grid-flow-row gap-2">
@@ -279,7 +279,7 @@ export const TransactionSendModalIPFS = ({ onCopy }: Props) => {
 								<>
 									<Button
 										disabled={activeTab === 1}
-										data-testid="VoteForDelegate__button--back"
+										data-testid="TransactionSendIPFS__button--back"
 										variant="plain"
 										size="large"
 										onClick={handleBack}
@@ -287,7 +287,7 @@ export const TransactionSendModalIPFS = ({ onCopy }: Props) => {
 										Back
 									</Button>
 									<Button
-										data-testid="VoteForDelegate__button--continue"
+										data-testid="TransactionSendIPFS__button--continue"
 										variant="solid"
 										size="large"
 										// disabled={!isValid}
@@ -301,7 +301,7 @@ export const TransactionSendModalIPFS = ({ onCopy }: Props) => {
 							{activeTab === 4 && (
 								<>
 									<Button
-										data-testid="VoteForDelegate__button--back-to-wallet"
+										data-testid="TransactionSendIPFS__button--back-to-wallet"
 										variant="plain"
 										className={"block"}
 										size="large"
@@ -310,7 +310,7 @@ export const TransactionSendModalIPFS = ({ onCopy }: Props) => {
 									</Button>
 									<Button
 										onClick={onCopy}
-										data-testid="VoteForDelegate__button--copy"
+										data-testid="TransactionSendIPFS__button--copy"
 										variant="plain"
 										size="large"
 									>
