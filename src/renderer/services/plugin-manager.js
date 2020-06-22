@@ -4,7 +4,6 @@ import { I18N, PLUGINS } from '@config'
 import { dayjs } from '@/services/datetime'
 import * as fs from 'fs'
 import * as fsExtra from 'fs-extra'
-import got from 'got'
 import { partition } from 'lodash'
 import { upperFirst } from '@/utils'
 import * as path from 'path'
@@ -17,6 +16,7 @@ import { PluginSandbox } from './plugin-manager/plugin-sandbox'
 import { PluginSetup } from './plugin-manager/plugin-setup'
 import { validatePluginPath } from './plugin-manager/utils/validate-plugin-path'
 import validatePackageName from 'validate-npm-package-name'
+import { reqwest } from '@/utils/http'
 
 let rootPath = path.resolve(__dirname, '../../../')
 if (process.env.NODE_ENV === 'production') {
@@ -207,7 +207,13 @@ export class PluginManager {
   }
 
   async fetchLogo (url) {
-    const { body } = await got(url, { encoding: null })
+    const {
+      body
+    } = await reqwest(url, {
+      encoding: null,
+      timeout: 100,
+      retry: 0
+    })
     return body.toString('base64')
   }
 
@@ -219,7 +225,7 @@ export class PluginManager {
     const requests = []
     for (const imageUrl of images) {
       requests.push(
-        got(imageUrl, { encoding: null }).then(response => response.body.toString('base64'))
+        reqwest(imageUrl, { encoding: null }).then(response => response.body.toString('base64'))
       )
     }
 
@@ -241,13 +247,13 @@ export class PluginManager {
 
       try {
         plugin.logo = await this.fetchLogo(plugin.logo)
-      } catch (error) {
+      } catch {
         plugin.logo = null
       }
 
       try {
         plugin.images = await this.fetchImages(plugin.images)
-      } catch (error) {
+      } catch {
         plugin.images = []
       }
 
@@ -290,7 +296,7 @@ export class PluginManager {
     const { owner, repository, branch } = this.parsePluginUrl(url)
 
     const baseUrl = `https://raw.githubusercontent.com/${owner}/${repository}/${branch}`
-    const { body } = await got(`${baseUrl}/package.json`, { json: true })
+    const { body } = await reqwest(`${baseUrl}/package.json`, { json: true })
 
     let plugin
 
@@ -367,7 +373,11 @@ export class PluginManager {
 
   async fetchPluginsList () {
     try {
-      const { body } = await got(`${PLUGINS.pluginsUrl}?ts=${(new Date()).getTime()}`, { json: true })
+      const {
+        body
+      } = await reqwest(`${PLUGINS.pluginsUrl}?ts=${(new Date()).getTime()}`, {
+        json: true
+      })
       this.app.$store.dispatch('plugin/setWhitelisted', { scope: 'global', plugins: body.plugins })
       this.app.$store.dispatch('plugin/setBlacklisted', { scope: 'global', plugins: body.blacklist })
     } catch (error) {

@@ -170,9 +170,14 @@ export default {
 
       try {
         const path = await this.electron_writeFile(raw, defaultPath)
-        this.$success(this.$t('TRANSACTION.SUCCESS.SAVE_OFFLINE', { path }))
-      } catch (e) {
-        this.$error(this.$t('TRANSACTION.ERROR.SAVE_OFFLINE', { error: e.message }))
+
+        if (path) {
+          this.$success(this.$t('TRANSACTION.SUCCESS.SAVE_OFFLINE', { path }))
+        } else {
+          return
+        }
+      } catch (error) {
+        this.$error(this.$t('TRANSACTION.ERROR.SAVE_OFFLINE', { error: error.message }))
       }
     }
   }
@@ -181,7 +186,7 @@ export default {
 
 <style lang="postcss" scoped>
 .TransactionConfirm__send-button:hover > span {
-  @apply .bg-blue
+  @apply .bg-blue;
 }
 .TransactionConfirm__send-button,
 .TransactionConfirm__send-button > span {

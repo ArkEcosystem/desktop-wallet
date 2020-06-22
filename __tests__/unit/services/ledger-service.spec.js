@@ -56,10 +56,19 @@ describe('LedgerService', () => {
 
   describe('signTransaction', () => {
     it('should run', async () => {
-      const response = await ledgerService.signTransaction('44\'/1\'/0\'/0/0', '1234')
+      const response = await ledgerService.signTransaction('44\'/1\'/0\'/0/0', Buffer.from([1, 2, 3, 4]))
 
       expect(response).toBeTruthy()
       expect(ledgerService.ledger.signTransaction).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('signTransactionWithSchnorr', () => {
+    it('should run', async () => {
+      const response = await ledgerService.signTransactionWithSchnorr('44\'/1\'/0\'/0/0', '1234')
+
+      expect(response).toBeTruthy()
+      expect(ledgerService.ledger.signTransactionWithSchnorr).toHaveBeenCalledTimes(1)
     })
   })
 
@@ -67,10 +76,21 @@ describe('LedgerService', () => {
     it('should run', async () => {
       ledgerService.ledger.signMessage.mockClear()
 
-      const response = await ledgerService.signMessage('44\'/1\'/0\'/0/0', Buffer.from('1234'))
+      const response = await ledgerService.signMessage('44\'/1\'/0\'/0/0', Buffer.from('1234', 'utf-8'))
 
       expect(response).toBeTruthy()
       expect(ledgerService.ledger.signMessage).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('signMessageWithSchnorr', () => {
+    it('should run', async () => {
+      ledgerService.ledger.signMessageWithSchnorr.mockClear()
+
+      const response = await ledgerService.signMessageWithSchnorr('44\'/1\'/0\'/0/0', Buffer.from('1234'))
+
+      expect(response).toBeTruthy()
+      expect(ledgerService.ledger.signMessageWithSchnorr).toHaveBeenCalledTimes(1)
     })
   })
 

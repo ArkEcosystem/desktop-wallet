@@ -136,7 +136,7 @@ describe('NetworkModal', () => {
 
       it('should fetch data and populate', async () => {
         nock('http://1.2.3.4')
-          .get('/api/v2/node/configuration')
+          .get('/api/node/configuration')
           .reply(200, {
             data: {
               nethash: 1234,

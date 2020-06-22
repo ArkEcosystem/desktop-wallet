@@ -202,7 +202,7 @@ describe('Services > Client', () => {
     it('should create a new connection', () => {
       const connection = ClientService.newConnection('http://localhost')
 
-      expect(connection.host).toBe('http://localhost/api/v2')
+      expect(connection.host).toBe('http://localhost/api')
     })
 
     it('should set timeout if provided', () => {
@@ -225,7 +225,7 @@ describe('Services > Client', () => {
   describe('fetchNetworkConfig', () => {
     const mockEndpoint = (config) => {
       nock('http://127.0.0.1')
-        .get('/api/v2/node/configuration')
+        .get('/api/node/configuration')
         .reply(200, {
           data: config
         })
@@ -294,7 +294,7 @@ describe('Services > Client', () => {
       }
 
       nock('http://127.0.0.1')
-        .get('/api/v2/node/configuration/crypto')
+        .get('/api/node/configuration/crypto')
         .reply(200, {
           data: cryptoConfig
         })
@@ -306,7 +306,7 @@ describe('Services > Client', () => {
   describe('fetchFeeStatistics', () => {
     const mockEndpoint = (config) => {
       nock('http://127.0.0.1')
-        .get('/api/v2/node/fees')
+        .get('/api/node/fees')
         .query({ days: 7 })
         .reply(200, {
           data: config
@@ -364,7 +364,7 @@ describe('Services > Client', () => {
 
     it('should return empty array on error', async () => {
       nock('http://127.0.0.1')
-        .get('/api/v2/node/fees')
+        .get('/api/node/fees')
         .query({ days: 7 })
         .reply(500)
 
@@ -376,13 +376,13 @@ describe('Services > Client', () => {
     it('should return formatted host', () => {
       client.host = 'http://6.6.6.6'
 
-      expect(client.host).toEqual('http://6.6.6.6/api/v2')
+      expect(client.host).toEqual('http://6.6.6.6/api')
     })
 
     it('should update current client', () => {
       client.host = 'http://7.7.7.7'
 
-      expect(client.client.host).toEqual('http://7.7.7.7/api/v2')
+      expect(client.client.host).toEqual('http://7.7.7.7/api')
     })
   })
 
@@ -396,7 +396,7 @@ describe('Services > Client', () => {
       }
 
       nock('http://127.0.0.1:4003')
-        .get('/api/v2/node/syncing')
+        .get('/api/node/syncing')
         .reply(200, {
           data: response
         })
@@ -444,7 +444,7 @@ describe('Services > Client', () => {
       }
 
       nock('http://127.0.0.1:4003')
-        .get('/api/v2/delegates/USERNAME/voters')
+        .get('/api/delegates/USERNAME/voters')
         .reply(200, {
           meta,
           data: {}
@@ -562,7 +562,7 @@ describe('Services > Client', () => {
       }
 
       nock('http://127.0.0.1:4003')
-        .get('/api/v2/businesses/BUSINESS_ID/bridgechains?page=1&limit=50&orderBy=name%3Aasc')
+        .get('/api/businesses/BUSINESS_ID/bridgechains?page=1&limit=50&orderBy=name%3Aasc')
         .reply(200, response)
 
       expect(await client.fetchBusinessBridgechains('BUSINESS_ID')).toEqual(response)
@@ -2046,7 +2046,7 @@ describe('Services > Client', () => {
   describe('broadcastTransaction', () => {
     beforeEach(() => {
       nock('http://127.0.0.1:4003')
-        .post('/api/v2/transactions')
+        .post('/api/transactions')
         .reply(200, {
           data: 'transaction'
         })
@@ -2118,7 +2118,7 @@ describe('Services > Client', () => {
 
         for (const ip of ['1.1.1.1', '2.2.2.2']) {
           nock(`http://${ip}:8080`)
-            .post('/api/v2/transactions')
+            .post('/api/transactions')
             .reply(200, {
               data: `broadcast transaction for ${ip}`
             })
