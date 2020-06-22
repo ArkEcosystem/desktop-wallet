@@ -14,20 +14,20 @@ type FaqProps = {
 };
 
 const ArticleListItem = ({ title, path, description }: ArticleListItemProps) => (
-	<li className="border-b-1 border-dotted border-theme-neutral-300 last:border-b-0 cursor-pointer">
+	<li className="border-dotted cursor-pointer border-b-1 border-theme-neutral-300 last:border-b-0">
 		<a
 			title={title}
 			href={path}
-			className="flex py-6 -mx-2 px-2 w-full border-2 border-theme-background hover:bg-theme-primary-100"
+			className="flex w-full px-2 py-6 -mx-2 border-2 border-theme-background hover:bg-theme-primary-100"
 		>
 			<div>
-				<div className="text-theme-neutral-800 pt-1">
+				<div className="pt-1 text-theme-neutral-800">
 					<Icon name="FilePassword" width={22} height={22} />
 				</div>
 			</div>
 			<div>
-				<div className="text-theme-neutral-800 ml-3 mb-2 font-bold">{title}</div>
-				<div className="text-theme-neutral-600 ml-3 text-sm">{description}</div>
+				<div className="mb-2 ml-3 font-bold text-theme-neutral-800">{title}</div>
+				<div className="ml-3 text-sm text-theme-neutral-600">{description}</div>
 			</div>
 		</a>
 	</li>
@@ -37,24 +37,24 @@ export const Faq = ({ articles }: FaqProps) => {
 	const { t } = useTranslation();
 	return (
 		<div className="-m-5 bg-theme-neutral-200">
-			<div className="py-10 px-12 bg-white mb-10">
+			<div className="px-12 py-10 mb-10 bg-white">
 				<div className="flex">
 					<div className="w-2/3">
 						<h1>{t("SUPPORT.FAQ_PORTFOLIO_TITLE")}</h1>
 						<p className="text-theme-neutral-600">{t("SUPPORT.FAQ_PORTFOLIO_SUBTITLE")}</p>
 					</div>
-					<div className="w-1/3 flex justify-end">
-						<div className="text-theme-primary-200 my-auto cursor-pointer">
+					<div className="flex justify-end w-1/3">
+						<div className="my-auto cursor-pointer text-theme-primary-200">
 							<Icon name="Search" />
 						</div>
-						<div className="border-1 border-l h-8 border-theme-primary-100 mx-10 my-auto" />
+						<div className="h-8 mx-10 my-auto border-l border-1 border-theme-primary-100" />
 						<div className="my-auto">
 							<Button color="primary">{t("SUPPORT.CONTACT_US")}</Button>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div className="py-10 px-12 bg-white mb-10">
+			<div className="px-12 py-10 mb-10 bg-white">
 				<div className="flex flex-row">
 					<div className="mr-10">
 						<ul>

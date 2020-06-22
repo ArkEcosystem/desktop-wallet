@@ -23,8 +23,8 @@ type FastNavProps = {
 
 const FastNavigation = ({ sections }: FastNavProps) => {
 	return (
-		<div className="sticky float-right top-2 w-32">
-			<div className="font-bold text-xs text-theme-neutral-400 pl-3 border-l-1 border-theme-neutral-300">
+		<div className="sticky float-right w-32 top-2">
+			<div className="pl-3 text-xs font-bold text-theme-neutral-400 border-l-1 border-theme-neutral-300">
 				Fast navigation
 			</div>
 			<ul>
@@ -54,7 +54,7 @@ export const Article = ({ title, category, categoryIcon, views, sections }: Arti
 	const { t } = useTranslation();
 	return (
 		<div className="-m-5">
-			<div className="py-10 px-12 bg-white mb-10">
+			<div className="px-12 py-10 mb-10 bg-white">
 				<FastNavigation sections={sections} />
 
 				<div className="max-w-xl mx-auto text-sm">
@@ -81,7 +81,7 @@ export const Article = ({ title, category, categoryIcon, views, sections }: Arti
 								return (
 									<div className="mt-8" id={section.id} key={index}>
 										<h3>{section.title}</h3>
-										<p className="text-theme-neutral-700 text-md whitespace-pre-line">
+										<p className="whitespace-pre-line text-theme-neutral-700 text-md">
 											{section.body}
 										</p>
 									</div>
@@ -90,14 +90,14 @@ export const Article = ({ title, category, categoryIcon, views, sections }: Arti
 					</div>
 				</div>
 			</div>
-			<div className="py-10 px-12 bg-white border-t-1 border-theme-neutral-300">
+			<div className="px-12 py-10 bg-white border-t-1 border-theme-neutral-300">
 				<div className="max-w-xl mx-auto">
 					<div className="flex">
 						<div className="w-3/4">
 							<h3>{t("SUPPORT.FOOTER_HELP_TITLE")}</h3>
 							<p className="text-theme-neutral-600">{t("SUPPORT.FOOTER_HELP_SUBTITLE")}</p>
 						</div>
-						<div className="w-1/4 flex justify-end">
+						<div className="flex justify-end w-1/4">
 							<div className="my-auto">
 								<Button color="primary">{t("SUPPORT.CONTACT_US")}</Button>
 							</div>
