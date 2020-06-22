@@ -86,9 +86,7 @@ export const CreateProfile = ({ onSubmit }: CreateProfileProps) => {
 					</div>
 
 					<div className="mx-4 mt-5 md:mx-8 xl:mx-16">
-						<Button color="primary" variant="solid" className="w-full mb-5">
-							Login with MarketSquare
-						</Button>
+						<Button className="w-full mb-5">Login with MarketSquare</Button>
 						<Divider />
 					</div>
 
@@ -135,13 +133,9 @@ export const CreateProfile = ({ onSubmit }: CreateProfileProps) => {
 							</div>
 						</div>
 
-						<div className="mx-4 mt-5 mb-10 space-x-3 md:mx-8 xl:mx-16">
-							<Button color="primary" variant="plain">
-								Back
-							</Button>
-							<Button color="primary" variant="solid">
-								Complete
-							</Button>
+						<div className="flex justify-end mx-4 mt-5 mb-10 space-x-3 md:mx-8 xl:mx-16">
+							<Button variant="plain">Back</Button>
+							<Button>Complete</Button>
 						</div>
 					</Form>
 				</div>
