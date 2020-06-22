@@ -97,8 +97,8 @@ class LedgerService {
 
   /**
    * Get public key from ledger wallet.
-   * @param  {Number} path Path for wallet location.
-   * @return {(String|Boolean)}
+   * @param  {string} path Path for wallet location.
+   * @return {Promise<string>}
    */
   async getPublicKey (path) {
     return this.__performAction(async () => {
@@ -107,33 +107,61 @@ class LedgerService {
   }
 
   /**
-   * Sign transaction for ledger wallet.
-   * @param  {Number} path Path for wallet location.
-   * @param  {String} transactionHex Hex of transaction.
-   * @return {(String|Boolean)}
+   * Sign transaction for ledger wallet using ecdsa signatures.
+   * @param  {string} path Path for wallet location.
+   * @param  {Buffer} transactionBytes bytes of transaction.
+   * @return {Promise<string>}
    */
-  async signTransaction (path, transactionHex) {
+  async signTransaction (path, transactionBytes) {
     return this.__performAction(async () => {
-      return this.ledger.signTransaction(path, transactionHex)
+      return this.ledger.signTransaction(path, transactionBytes)
     })
   }
 
   /**
-   * Sign message for ledger wallet.
-   * @param  {Number} path Path for wallet location.
-   * @param  {String} messageHex Hex to sign.
-   * @return {(String|Boolean)}
+   * Sign transaction for ledger wallet using schnorr signatures.
+   * @param  {string} path Path for wallet location.
+   * @param  {Buffer} transactionBytes bytes of transaction.
+   * @return {Promise<string>}
    */
-  async signMessage (path, messageHex) {
+  async signTransactionWithSchnorr (path, transactionBytes) {
     return this.__performAction(async () => {
-      return this.ledger.signMessage(path, Buffer.from(messageHex, 'hex'))
+      try {
+        return await this.ledger.signTransactionWithSchnorr(path, transactionBytes)
+      } catch {
+        console.warn('Schnorr Signatures Unsupported; Trying Ecdsa..')
+        return this.ledger.signTransaction(path, transactionBytes)
+      }
+    })
+  }
+
+  /**
+   * Sign message for ledger wallet using ecdsa signatures.
+   * @param  {string} path Path for wallet location.
+   * @param  {Buffer} messageBytes bytes to sign.
+   * @return {Promise<string>}
+   */
+  async signMessage (path, messageBytes) {
+    return this.__performAction(async () => {
+      return this.ledger.signMessage(path, messageBytes)
+    })
+  }
+
+  /**
+   * Sign message for ledger wallet using schnorr signatures.
+   * @param  {string} path Path for wallet location.
+   * @param  {Buffer} messageBytes bytes to sign.
+   * @return {Promise<string>}
+   */
+  async signMessageWithSchnorr (path, messageBytes) {
+    return this.__performAction(async () => {
+      return this.ledger.signMessageWithSchnorr(path, messageBytes)
     })
   }
 
   /**
    * Get version of ledger wallet.
-   * @param  {Number} path Path for wallet location.
-   * @return {(String|Boolean)}
+   * @return {Promise<string>}
    */
   async getVersion () {
     return this.__performAction(async () => {

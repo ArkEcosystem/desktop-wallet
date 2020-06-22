@@ -19,6 +19,14 @@ jobs:
           RELEASE_VERSION=$(cat package.json | jq -r '.version')
           echo "::set-output name=version::${RELEASE_VERSION}"
 
+      - name: Determine the release changelog
+        id: derive_release_changelog
+        run: |
+          CURRENT_VERSION=$(jq -r '.tag_name' <(curl https://api.github.com/repos/ArkEcosystem/desktop-wallet/releases/latest -s))
+          CHANGELOG_URL=$(echo "${{ secrets.CHANGELOG_SOURCE }}" | sed "s/__VERSION__/${CURRENT_VERSION}/g")
+          CHANGELOG=$(curl -s $CHANGELOG_URL)
+          echo "::set-output name=body::${CHANGELOG}"
+
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
@@ -29,6 +37,7 @@ jobs:
           release_name: Version ${{ steps.derive_release_version.outputs.version }}
           draft: true
           prerelease: false
+          body: ${{ steps.derive_release_changelog.outputs.body }}
 
   publish-linux:
     needs: ["create-release"]
@@ -73,28 +82,28 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Calculate Checksums for AppImage
-        run: shasum -a 256 build/target/ark-desktop-wallet-linux-x86_64-2.9.1.AppImage
+        run: shasum -a 256 build/target/ark-desktop-wallet-linux-x86_64-2.9.2.AppImage
 
       - name: Calculate Checksums for TAR
-        run: shasum -a 256 build/target/ark-desktop-wallet-linux-x64-2.9.1.tar.gz
+        run: shasum -a 256 build/target/ark-desktop-wallet-linux-x64-2.9.2.tar.gz
 
       - name: Calculate Checksums for DEB
-        run: shasum -a 256 build/target/ark-desktop-wallet-linux-amd64-2.9.1.deb
+        run: shasum -a 256 build/target/ark-desktop-wallet-linux-amd64-2.9.2.deb
 
       - name: VirusTotal Scan for AppImage
         run: |
           UPLOAD_URL=$(curl -s --location --url 'https://www.virustotal.com/vtapi/v2/file/scan/upload_url?apikey=${{ secrets.VIRUSTOTAL_TOKEN }}' | jq -r .upload_url)
-          curl -s --url "$UPLOAD_URL" --form 'apikey=${{ secrets.VIRUSTOTAL_TOKEN }}' --form 'file=@build/target/ark-desktop-wallet-linux-x86_64-2.9.1.AppImage' | jq -r .permalink
+          curl -s --url "$UPLOAD_URL" --form 'apikey=${{ secrets.VIRUSTOTAL_TOKEN }}' --form 'file=@build/target/ark-desktop-wallet-linux-x86_64-2.9.2.AppImage' | jq -r .permalink
 
       - name: VirusTotal Scan for TAR
         run: |
           UPLOAD_URL=$(curl -s --location --url 'https://www.virustotal.com/vtapi/v2/file/scan/upload_url?apikey=${{ secrets.VIRUSTOTAL_TOKEN }}' | jq -r .upload_url)
-          curl -s --url "$UPLOAD_URL" --form 'apikey=${{ secrets.VIRUSTOTAL_TOKEN }}' --form 'file=@build/target/ark-desktop-wallet-linux-x64-2.9.1.tar.gz' | jq -r .permalink
+          curl -s --url "$UPLOAD_URL" --form 'apikey=${{ secrets.VIRUSTOTAL_TOKEN }}' --form 'file=@build/target/ark-desktop-wallet-linux-x64-2.9.2.tar.gz' | jq -r .permalink
 
       - name: VirusTotal Scan for DEB
         run: |
           UPLOAD_URL=$(curl -s --location --url 'https://www.virustotal.com/vtapi/v2/file/scan/upload_url?apikey=${{ secrets.VIRUSTOTAL_TOKEN }}' | jq -r .upload_url)
-          curl -s --url "$UPLOAD_URL" --form 'apikey=${{ secrets.VIRUSTOTAL_TOKEN }}' --form 'file=@build/target/ark-desktop-wallet-linux-amd64-2.9.1.deb' | jq -r .permalink
+          curl -s --url "$UPLOAD_URL" --form 'apikey=${{ secrets.VIRUSTOTAL_TOKEN }}' --form 'file=@build/target/ark-desktop-wallet-linux-amd64-2.9.2.deb' | jq -r .permalink
 
   publish-macos:
     needs: ["create-release"]
@@ -139,20 +148,20 @@ jobs:
           CSC_KEY_PASSWORD: ${{ secrets.CSC_KEY_PASSWORD }}
 
       - name: Calculate Checksums for DMG
-        run: shasum -a 256 build/target/ark-desktop-wallet-mac-2.9.1.dmg
+        run: shasum -a 256 build/target/ark-desktop-wallet-mac-2.9.2.dmg
 
       - name: Calculate Checksums for ZIP
-        run: shasum -a 256 build/target/ark-desktop-wallet-mac-2.9.1.zip
+        run: shasum -a 256 build/target/ark-desktop-wallet-mac-2.9.2.zip
 
       - name: VirusTotal Scan for DMG
         run: |
           UPLOAD_URL=$(curl -s --location --url 'https://www.virustotal.com/vtapi/v2/file/scan/upload_url?apikey=${{ secrets.VIRUSTOTAL_TOKEN }}' | jq -r .upload_url)
-          curl -s --url "$UPLOAD_URL" --form 'apikey=${{ secrets.VIRUSTOTAL_TOKEN }}' --form 'file=@build/target/ark-desktop-wallet-mac-2.9.1.dmg' | jq -r .permalink
+          curl -s --url "$UPLOAD_URL" --form 'apikey=${{ secrets.VIRUSTOTAL_TOKEN }}' --form 'file=@build/target/ark-desktop-wallet-mac-2.9.2.dmg' | jq -r .permalink
 
       - name: VirusTotal Scan for ZIP
         run: |
           UPLOAD_URL=$(curl -s --location --url 'https://www.virustotal.com/vtapi/v2/file/scan/upload_url?apikey=${{ secrets.VIRUSTOTAL_TOKEN }}' | jq -r .upload_url)
-          curl -s --url "$UPLOAD_URL" --form 'apikey=${{ secrets.VIRUSTOTAL_TOKEN }}' --form 'file=@build/target/ark-desktop-wallet-mac-2.9.1.zip' | jq -r .permalink
+          curl -s --url "$UPLOAD_URL" --form 'apikey=${{ secrets.VIRUSTOTAL_TOKEN }}' --form 'file=@build/target/ark-desktop-wallet-mac-2.9.2.zip' | jq -r .permalink
 
   publish-windows:
     needs: ["create-release"]
@@ -190,5 +199,5 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Calculate Checksums for EXE
-        run: Get-FileHash build/target/ark-desktop-wallet-win-2.9.1.exe -Algorithm SHA256 | Format-List
+        run: Get-FileHash build/target/ark-desktop-wallet-win-2.9.2.exe -Algorithm SHA256 | Format-List
         shell: powershell

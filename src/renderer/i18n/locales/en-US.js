@@ -27,6 +27,11 @@ export default {
     HIDE_WALLET_BUTTON_TEXT: 'Hide text from wallet buttons',
     IS_MARKET_CHART_ENABLED: 'Price chart on the dashboard',
     INITIALIZING: 'Initializing...',
+    NO_INTERNET_CONNECTION: 'Initialization is taking longer than expected. Please check your internet connectivity.',
+    INTERNET_STATUS: {
+      NO_INTERNET_CONNECTION: 'No internet connection. Please check your internet connectivity!',
+      WITH_INTERNET_CONNECTION: 'Internet connectivity established!'
+    },
     LANGUAGE: 'Application Language',
     LEDGER: 'Ledger',
     LEDGER_WALLET: 'This is a Ledger wallet',
@@ -182,6 +187,8 @@ export default {
     },
     PASSWORD: {
       TOO_SHORT: 'Your password must be at least {0} characters long',
+      LOWER_CASE: 'Your password must contain at least 1 lowercase character',
+      UPPER_CASE: 'Your password must contain at least 1 uppercase character',
       NUMBERS: 'Your password must contain at least 1 number',
       SPECIAL_CHARACTERS: 'Your password must contain at least 1 special character',
       NO_MATCH: 'Your passwords do not match'
@@ -683,7 +690,9 @@ export default {
       },
       FILTERS: {
         ALL: 'all',
-        INSTALLED: 'installed'
+        INSTALLED: 'installed',
+        OFFICIAL: 'official',
+        FUNDED: 'funded'
       },
       NO_SEARCH_RESULTS: 'Unfortunately, searching for "{query}" returned no results',
       NO_RESULTS: 'There are no {filter} plugins with the category {category}',
@@ -793,6 +802,7 @@ export default {
       DELEGATES: 'Delegates',
       IPFS: 'IPFS',
       MULTI_SIGNATURE: 'Multisignature',
+      MULTI_SIGNATURE_WALLET: 'Multisignature wallet',
       STATISTICS: 'Statistics',
       SIGN_VERIFY: 'Sign',
       PURCHASE: 'Purchase {ticker}'
@@ -1024,8 +1034,10 @@ export default {
       BRIDGECHAIN_UPDATE: 'Bridgechain update was unsuccessful',
       SAVE_OFFLINE: 'Failed to save transaction file: {error}',
       LOAD_FROM_FILE: 'Failed to load transaction file',
+      LOAD_FROM_URI: 'Failed to load transaction URI',
       EXPIRED: 'Transaction expired before it was processed: {transactionId}',
       FEE_TOO_LOW: 'Transaction could not be sent because the fee ({fee}) is too low',
+      NOT_ENOUGH_BALANCE: 'The total amount of the recipients + fee is greater than the balance ({balance}) of the wallet',
       NOTHING_SENT: 'The transaction could not be sent. Please check your network connection or change peer',
       WRONG_NONCE: 'The transaction could not be sent. Wrong nonce provided',
       NETWORK_NOT_CONFIGURED: 'Network not configured',
@@ -1069,9 +1081,6 @@ export default {
       UNVOTE_DELEGATE: 'Unvote delegate {delegate}'
     },
     MULTI_PAYMENT: {
-      BUTTON_ADD: 'Add',
-      NO_RECIPIENTS: 'There are no recipients',
-      RECIPIENTS: 'Recipients',
       TOTAL_AMOUNT: 'Total amount',
       WARNING_DUPLICATE: 'The address is already a recipient'
     },
@@ -1113,10 +1122,11 @@ export default {
     },
     AMOUNT: 'Amount',
     BLOCK_ID: 'Block ID',
-    BUSINESS_NAME: 'Business Name',
     BRIDGECHAIN_NAME: 'Bridgechain Name',
+    BUSINESS_NAME: 'Business Name',
+    BUTTON_ADD: 'Add',
     CONFIRMATION_COUNT: '{confirmations} Confirmations',
-    CONFIRM_SEND_ALL: 'This will enable sending all of your tokens from the current wallet in this transaction.',
+    CONFIRM_SEND_ALL: 'This will enable sending all of your tokens from the current wallet in this transaction. The selected transfer fee will be deducted from the send amount.',
     CONFIRM_SEND_ALL_TITLE: 'Send all your tokens?',
     CONFIRM_SEND_ALL_NOTE: 'Note: once sent, this cannot be undone.',
     CONFIRMATIONS: 'Confirmations',
@@ -1131,8 +1141,10 @@ export default {
     LEDGER_SIGN_FAILED: 'Could not sign transaction with Ledger',
     LEDGER_USER_DECLINED: 'User declined',
     LOAD_FROM_FILE: 'Load transaction from file',
+    LOAD_FROM_URI: 'Load transaction from URI',
     MULTIPLE: 'Multiple',
     NONCE: 'Nonce',
+    NO_RECIPIENTS: 'There are no recipient(s)',
     OPEN_IN_EXPLORER: 'Open in Explorer',
     PASSPHRASE: 'Passphrase',
     PASSWORD: 'Encryption Password',

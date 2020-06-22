@@ -205,7 +205,7 @@ describe('TransactionModule', () => {
   describe('dispatch updateStaticFees', () => {
     it('should return update all fees on v2', async () => {
       nock('http://127.0.0.1:4003')
-        .get('/api/v2/transactions/fees')
+        .get('/api/transactions/fees')
         .reply(200, {
           data: {
             transfer: 1,

@@ -2,8 +2,8 @@ import * as bip39 from 'bip39'
 import { Crypto, Identities } from '@arkecosystem/crypto'
 import { version as mainnetVersion } from '@config/networks/mainnet'
 import store from '@/store'
-import got from 'got'
 import { CryptoUtils } from './crypto/utils'
+import { reqwest } from '@/utils/http'
 
 export default class WalletService {
   /*
@@ -106,7 +106,7 @@ export default class WalletService {
     }
 
     const neoUrl = 'https://neoscan.io/api/main_net/v1/get_last_transactions_by_address/'
-    const response = await got(neoUrl + address, {
+    const response = await reqwest(neoUrl + address, {
       json: true
     })
 

@@ -28,7 +28,9 @@ describe('Services > Transaction', () => {
 
   describe('getBytes', () => {
     it('should return the transaction bytes', () => {
-      expect(TransactionService.getBytes(transactionFixture)).toEqual('00f0eb920302275d8577a0ec2b75fc8683282d53c5db76ebc54514a80c2854e419b793ea259a17ee9f689978490631699e01ca0fc2edbecb5ee0390000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000008096980000000000')
+      const transactionBytes = TransactionService.getBytes(transactionFixture)
+      expect(transactionBytes).toBeInstanceOf(Buffer)
+      expect(transactionBytes).toEqual(Buffer.from('00f0eb920302275d8577a0ec2b75fc8683282d53c5db76ebc54514a80c2854e419b793ea259a17ee9f689978490631699e01ca0fc2edbecb5ee0390000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000008096980000000000', 'hex'))
     })
   })
 
@@ -840,7 +842,7 @@ describe('Services > Transaction', () => {
     })
   })
 
-  describe('ledgerSign', () => {
+  describe('ledgerSignWithSchnorr', () => {
     const vmMock = {
       $store: {
         // eslint-disable-next-line @typescript-eslint/no-empty-function
@@ -873,7 +875,7 @@ describe('Services > Transaction', () => {
       spyTranslate.mockRestore()
     })
 
-    it('should sign the transaction', async () => {
+    it('should schnorr sign the transaction', async () => {
       transactionObject.sign(senderPassphrase)
       const transactionJson = transactionObject.getStruct()
 
@@ -882,7 +884,7 @@ describe('Services > Transaction', () => {
       const signature = transactionObject.data.signature
 
       spyDispatch.mockImplementation((key) => {
-        if (key === 'ledger/signTransaction') {
+        if (key === 'ledger/signTransactionWithSchnorr') {
           return signature
         }
       })
@@ -908,7 +910,7 @@ describe('Services > Transaction', () => {
       const signature = transactionObject.data.signature
 
       spyDispatch.mockImplementation((key) => {
-        if (key === 'ledger/signTransaction') {
+        if (key === 'ledger/signTransactionWithSchnorr') {
           return signature
         }
       })
@@ -941,7 +943,7 @@ describe('Services > Transaction', () => {
       const signature = transactionObject.data.signature
 
       spyDispatch.mockImplementation((key) => {
-        if (key === 'ledger/signTransaction') {
+        if (key === 'ledger/signTransactionWithSchnorr') {
           return signature
         }
       })

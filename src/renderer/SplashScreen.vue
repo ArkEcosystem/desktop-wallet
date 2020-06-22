@@ -16,7 +16,7 @@
       </div>
 
       <div class="text-sm mb-2">
-        {{ $t('COMMON.INITIALIZING') }}
+        {{ loadingMessage }}
       </div>
     </div>
 
@@ -74,6 +74,13 @@ export default {
   computed: {
     version () {
       return packageJson.version
+    },
+    loadingMessage () {
+      if (window.navigator.onLine) {
+        return this.$t('COMMON.INITIALIZING')
+      }
+
+      return this.$t('COMMON.NO_INTERNET_CONNECTION')
     }
   }
 }

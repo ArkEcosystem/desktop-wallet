@@ -6,8 +6,11 @@
     <ListDividedItem
       class="TransactionConfirmMultiPayment__sender"
       :label="$t('TRANSACTION.SENDER')"
+      item-value-class="w-full"
     >
-      {{ senderLabel }}
+      <span class="break-words">
+        {{ senderLabel }}
+      </span>
       <span
         v-if="senderLabel !== currentWallet.address"
         class="text-sm text-theme-page-text-light"
@@ -26,9 +29,9 @@
     <ListDividedItem
       class="TransactionConfirmMultiPayment__recipients"
       :label="`${$t('TRANSACTION.RECIPIENTS')} - ${payments.length}`"
-      item-value-class="items-center"
+      item-value-class="items-center w-full"
     >
-      <TransactionMultiPaymentList
+      <TransactionRecipientList
         :title="null"
         :items="payments"
         readonly
@@ -56,7 +59,7 @@
 <script>
 import { TRANSACTION_TYPES } from '@config'
 import { ListDivided, ListDividedItem } from '@/components/ListDivided'
-import TransactionMultiPaymentList from '@/components/Transaction/TransactionMultiPaymentList'
+import TransactionRecipientList from '@/components/Transaction/TransactionRecipientList'
 
 export default {
   name: 'TransactionConfirmMultiPayment',
@@ -68,7 +71,7 @@ export default {
   components: {
     ListDivided,
     ListDividedItem,
-    TransactionMultiPaymentList
+    TransactionRecipientList
   },
 
   computed: {
