@@ -7,6 +7,7 @@ type SliderProps = {
 	children?: any;
 	data?: any;
 	options?: any;
+	className?: string;
 	paginationPosition: "bottom-center" | "top-right";
 };
 
@@ -25,7 +26,7 @@ const defaultOptions = {
 	},
 };
 
-export const Slider = ({ children, data, options, paginationPosition }: SliderProps) => {
+export const Slider = ({ children, data, options, className, paginationPosition }: SliderProps) => {
 	const swiperOptions = { ...defaultOptions, ...options };
 
 	// Swiper needs container height to be defined.
@@ -56,7 +57,7 @@ export const Slider = ({ children, data, options, paginationPosition }: SliderPr
 			)}
 
 			<div className="swiper-container" style={{ height: `${getContainerHeight()}px` }}>
-				<div className="h-full swiper-wrapper">
+				<div className={`h-full swiper-wrapper ${className || ""}`}>
 					{data.map((item: any, index: number) => {
 						return (
 							<div
