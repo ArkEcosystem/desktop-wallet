@@ -125,7 +125,7 @@ export const SecondStep = () => (
 				<span className="font-normal">QmceNpwJqQm7vXUivbQeeQYeGr1ivT1VDRPaWK9Pf</span>
 			</TransactionDetail>
 			<TransactionDetail label="Transaction fee">0.09660435 ARK</TransactionDetail>
-			<TotalAmountBox />
+			<TotalAmountBox transactionAmount="1.00" transactionFee="0.09660435" />
 		</div>
 	</section>
 );
@@ -235,10 +235,11 @@ export const FourthStep = () => (
 );
 
 type Props = {
-	onCopy: () => void;
+	onCopy?: () => void;
+	onSubmit?: any;
 };
 
-export const TransactionSendIPFS = ({ onCopy }: Props) => {
+export const TransactionSendIPFS = ({ onCopy, onSubmit }: Props) => {
 	const [activeTab, setActiveTab] = React.useState(1);
 
 	const form = useForm({ mode: "onChange" });
@@ -255,7 +256,7 @@ export const TransactionSendIPFS = ({ onCopy }: Props) => {
 
 	return (
 		<div className="max-w-xl mx-auto">
-			<Form context={form}>
+			<Form context={form} onSubmit={onSubmit}>
 				<Tabs activeId={activeTab}>
 					<StepIndicator size={4} activeIndex={activeTab} />
 
