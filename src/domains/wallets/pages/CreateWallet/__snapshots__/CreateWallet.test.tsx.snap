@@ -351,14 +351,18 @@ exports[`CreateWallet should render 2nd step 1`] = `
     data-testid="CreateWallet__second-step"
   >
     <div
-      class="flex flex-col items-start"
+      class="flex items-center justify-between"
     >
-      <h1
-        class="text-3xl font-bold md:text-4xl"
-        data-testid="header__title"
+      <div
+        class="flex flex-col items-start"
       >
-        Your Passphrase
-      </h1>
+        <h1
+          class="text-3xl font-bold md:text-4xl"
+          data-testid="header__title"
+        >
+          Your Passphrase
+        </h1>
+      </div>
     </div>
     <div
       class="space-y-8"

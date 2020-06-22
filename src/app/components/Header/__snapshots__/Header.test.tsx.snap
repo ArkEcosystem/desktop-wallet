@@ -3,14 +3,18 @@
 exports[`Header should render an header 1`] = `
 <DocumentFragment>
   <div
-    class="flex flex-col items-start"
+    class="flex items-center justify-between"
   >
-    <h1
-      class="text-3xl font-bold md:text-4xl"
-      data-testid="header__title"
+    <div
+      class="flex flex-col items-start"
     >
-      Header test
-    </h1>
+      <h1
+        class="text-3xl font-bold md:text-4xl"
+        data-testid="header__title"
+      >
+        Header test
+      </h1>
+    </div>
   </div>
 </DocumentFragment>
 `;
@@ -18,19 +22,68 @@ exports[`Header should render an header 1`] = `
 exports[`Header should render an header with a subtitle 1`] = `
 <DocumentFragment>
   <div
-    class="flex flex-col items-start"
+    class="flex items-center justify-between"
   >
-    <h1
-      class="text-3xl font-bold md:text-4xl"
-      data-testid="header__title"
-    >
-      Header test
-    </h1>
     <div
-      class="mt-2 text-theme-neutral-dark"
-      data-testid="header__subtitle"
+      class="flex flex-col items-start"
     >
-      Subtitle test
+      <h1
+        class="text-3xl font-bold md:text-4xl"
+        data-testid="header__title"
+      >
+        Header test
+      </h1>
+      <div
+        class="mt-2 text-theme-neutral-dark"
+        data-testid="header__subtitle"
+      >
+        Subtitle test
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Header should render an header with extra 1`] = `
+<DocumentFragment>
+  <div
+    class="flex items-center justify-between"
+  >
+    <div
+      class="flex flex-col items-start"
+    >
+      <h1
+        class="text-3xl font-bold md:text-4xl"
+        data-testid="header__title"
+      >
+        Header test
+      </h1>
+      <div
+        class="mt-2 text-theme-neutral-dark"
+        data-testid="header__subtitle"
+      >
+        Subtitle test
+      </div>
+    </div>
+    <div
+      class="flex justify-end space-x-3"
+    >
+      <button
+        class="sc-AxjAm eixJcU"
+        color="primary"
+        data-testid="header__extra"
+        type="button"
+      >
+        Extra 1
+      </button>
+      <button
+        class="sc-AxjAm eixJcU"
+        color="primary"
+        data-testid="header__extra"
+        type="button"
+      >
+        Extra 2
+      </button>
     </div>
   </div>
 </DocumentFragment>

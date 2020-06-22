@@ -104,19 +104,23 @@ exports[`Settings should render 1`] = `
       class="w-3/5 pl-20 mx-12 border-l-1 border-theme-primary-contrast"
     >
       <div
-        class="flex flex-col items-start"
+        class="flex items-center justify-between"
       >
-        <h1
-          class="text-3xl font-bold md:text-4xl"
-          data-testid="header__title"
-        >
-          Wallet Settings
-        </h1>
         <div
-          class="mt-2 text-theme-neutral-dark"
-          data-testid="header__subtitle"
+          class="flex flex-col items-start"
         >
-          Customize your wallet to suit your needs.
+          <h1
+            class="text-3xl font-bold md:text-4xl"
+            data-testid="header__title"
+          >
+            Wallet Settings
+          </h1>
+          <div
+            class="mt-2 text-theme-neutral-dark"
+            data-testid="header__subtitle"
+          >
+            Customize your wallet to suit your needs.
+          </div>
         </div>
       </div>
       <form
@@ -527,14 +531,18 @@ exports[`Settings should render 1`] = `
           class="relative mt-5"
         >
           <div
-            class="flex flex-col items-start"
+            class="flex items-center justify-between"
           >
-            <h1
-              class="text-3xl font-bold md:text-4xl"
-              data-testid="header__title"
+            <div
+              class="flex flex-col items-start"
             >
-              Security
-            </h1>
+              <h1
+                class="text-3xl font-bold md:text-4xl"
+                data-testid="header__title"
+              >
+                Security
+              </h1>
+            </div>
           </div>
           <ul
             class="sc-fzplWN krwTau"
@@ -718,14 +726,18 @@ exports[`Settings should render 1`] = `
           class="relative mt-5"
         >
           <div
-            class="flex flex-col items-start"
+            class="flex items-center justify-between"
           >
-            <h1
-              class="text-3xl font-bold md:text-4xl"
-              data-testid="header__title"
+            <div
+              class="flex flex-col items-start"
             >
-              Other
-            </h1>
+              <h1
+                class="text-3xl font-bold md:text-4xl"
+                data-testid="header__title"
+              >
+                Other
+              </h1>
+            </div>
           </div>
           <ul
             class="sc-fzplWN krwTau"
@@ -1125,19 +1137,23 @@ exports[`Settings should render peer settings 1`] = `
       class="w-3/5 pl-20 mx-12 border-l-1 border-theme-primary-contrast"
     >
       <div
-        class="flex flex-col items-start"
+        class="flex items-center justify-between"
       >
-        <h1
-          class="text-3xl font-bold md:text-4xl"
-          data-testid="header__title"
-        >
-          Peer Settings
-        </h1>
         <div
-          class="mt-2 text-theme-neutral-dark"
-          data-testid="header__subtitle"
+          class="flex flex-col items-start"
         >
-          Customize your wallet to suit your needs.
+          <h1
+            class="text-3xl font-bold md:text-4xl"
+            data-testid="header__title"
+          >
+            Peer Settings
+          </h1>
+          <div
+            class="mt-2 text-theme-neutral-dark"
+            data-testid="header__subtitle"
+          >
+            Customize your wallet to suit your needs.
+          </div>
         </div>
       </div>
       <form
@@ -1711,19 +1727,23 @@ exports[`Settings should render plugin settings 1`] = `
       class="w-3/5 pl-20 mx-12 border-l-1 border-theme-primary-contrast"
     >
       <div
-        class="flex flex-col items-start"
+        class="flex items-center justify-between"
       >
-        <h1
-          class="text-3xl font-bold md:text-4xl"
-          data-testid="header__title"
-        >
-          Plugin Settings
-        </h1>
         <div
-          class="mt-2 text-theme-neutral-dark"
-          data-testid="header__subtitle"
+          class="flex flex-col items-start"
         >
-          Customize your wallet to suit your needs.
+          <h1
+            class="text-3xl font-bold md:text-4xl"
+            data-testid="header__title"
+          >
+            Plugin Settings
+          </h1>
+          <div
+            class="mt-2 text-theme-neutral-dark"
+            data-testid="header__subtitle"
+          >
+            Customize your wallet to suit your needs.
+          </div>
         </div>
       </div>
       <form
