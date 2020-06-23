@@ -30,7 +30,7 @@ const plugins = [
 ];
 
 export const Default = () => (
-	<table className="table-auto w-full">
+	<table className="w-full table-auto">
 		<tbody>
 			<PluginListItem plugin={plugins[0]} />
 			<PluginListItem plugin={plugins[1]} />
