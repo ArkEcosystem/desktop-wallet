@@ -23,7 +23,7 @@ exports[`Offline should render 1`] = `
       </div>
     </div>
     <div
-      class="container mx-auto mt-4 text-center"
+      class="flex flex-col items-center justify-center my-4 text-center"
       data-testid="Offline"
     >
       <div
@@ -37,7 +37,7 @@ exports[`Offline should render 1`] = `
         class="mt-8"
       >
         <h3
-          class="text-xl font-bold"
+          class="text-xl font-bold xl:text-2xl"
         >
           Cannot Connect
         </h3>
