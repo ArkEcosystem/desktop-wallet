@@ -61,14 +61,17 @@ export const BestPlugins = (props: BestPluginsProps) => {
 		{
 			Header: t("COMMON.CATEGORY"),
 			accessor: "category",
+			className: "justify-center",
 		},
 		{
 			Header: t("COMMON.RATING"),
 			accessor: "rating",
+			className: "justify-center",
 		},
 		{
 			Header: t("COMMON.VERSION"),
 			accessor: "version",
+			className: "justify-center",
 		},
 		{
 			Header: "  ",
@@ -103,13 +106,13 @@ export const BestPlugins = (props: BestPluginsProps) => {
 								</div>
 							</td>
 
-							<td className="py-10 text-theme-neutral-700">{rowData.category}</td>
+							<td className="py-10 text-center text-theme-neutral-700">{rowData.category}</td>
 
-							<td className="py-10 text-theme-neutral-700">
+							<td className="flex justify-center py-10 text-theme-neutral-700">
 								<ReviewRating rating={rowData.rating} width={3} />
 							</td>
 
-							<td className="py-10 text-theme-neutral-700">v {rowData.version}</td>
+							<td className="py-10 text-center text-theme-neutral-700">v {rowData.version}</td>
 
 							<td className="w-16">
 								<Button variant="plain">{t("COMMON.INSTALL")}</Button>
