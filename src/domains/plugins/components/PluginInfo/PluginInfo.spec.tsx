@@ -20,4 +20,3 @@ describe("PluginInfo", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 });
-w;
