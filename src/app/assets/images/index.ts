@@ -1,5 +1,6 @@
 import { exchange } from "domains/exchange/images";
 import { profile } from "domains/profile/images";
+import { transaction } from "domains/transaction/images";
 import { wallet } from "domains/wallets/images";
 
 import ARKLogo from "./ark-logo.png";
@@ -14,5 +15,6 @@ export const images = {
 	},
 	exchange,
 	profile,
+	transaction,
 	wallet,
 };

@@ -11,7 +11,6 @@ type AddExchangeProps = {
 	onClose?: any;
 };
 
-console.log(images);
 const AddExchangeBanner = images.exchange.components.AddExchange.AddExchangeBanner;
 const ChangeNowLogo = images.exchange.components.AddExchange.ChangeNowLogo;
 

@@ -1,7 +1,7 @@
 import React from "react";
 
-import { Button } from "../Button";
 import { Collapse } from "./Collapse";
+import { CollapseToggleButton } from "./CollapseToggleButton";
 
 export default { title: "Basic / Collapse" };
 
@@ -10,7 +10,7 @@ export const Default = () => {
 
 	return (
 		<div>
-			<Button onClick={() => setShow(!show)}>Toggle</Button>
+			<CollapseToggleButton isOpen={show} onClick={() => setShow(!show)} />
 			<Collapse isOpen={show} className="mt-2 overflow-y-auto">
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio non aliquid, tempore, voluptatum
 				inventore, tempora odit commodi temporibus exercitationem hic omnis porro atque suscipit officiis

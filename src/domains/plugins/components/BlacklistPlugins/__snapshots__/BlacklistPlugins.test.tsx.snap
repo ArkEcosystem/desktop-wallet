@@ -1,0 +1,318 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BlacklistPlugins should not render if not open 1`] = `<DocumentFragment />`;
+
+exports[`BlacklistPlugins should render a modal 1`] = `
+<DocumentFragment>
+  <div
+    class="fixed inset-0 z-10 bg-black opacity-50"
+    data-testid="modal__overlay"
+  />
+  <div
+    class="sc-AxiKw jRkhhQ fixed left-0 right-0 z-10 flex flex-col px-12 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
+    data-testid="modal__inner"
+  >
+    <div
+      class="absolute top-0 right-0 mt-4 mr-4"
+    >
+      <button
+        class="sc-AxirZ iJKGpA"
+        color="neutral"
+        data-testid="modal__close-btn"
+        type="button"
+      >
+        <div
+          class="sc-AxjAm iepfoc"
+          height="10"
+          width="10"
+        >
+          <svg>
+            cross-slim.svg
+          </svg>
+        </div>
+      </button>
+    </div>
+    <div
+      class="py-4"
+    >
+      <h2>
+        Blacklist
+      </h2>
+      <div
+        class="flex-1 "
+      >
+        <div
+          class="text-theme-neutral-700"
+        >
+          ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products.
+        </div>
+        <div
+          class="mt-8 -mb-6"
+        >
+          <div
+            class="sc-AxhCb bybrRt"
+            role="table"
+          >
+            <table
+              class="table-auto"
+            >
+              <thead>
+                <tr
+                  role="row"
+                >
+                  <th
+                    class="text-xs text-left select-none text-theme-neutral-400"
+                    colspan="1"
+                    data-testid="table__th--0"
+                    role="columnheader"
+                  >
+                    <div
+                      class="flex flex-inline align-top  undefined"
+                    >
+                      <div
+                        class="mr-1"
+                      >
+                         
+                      </div>
+                      <div
+                        class="mt-1 text-theme-color-neutral-500"
+                        data-testid="table__Sort"
+                      />
+                    </div>
+                  </th>
+                  <th
+                    class="text-xs text-left select-none text-theme-neutral-400"
+                    colspan="1"
+                    data-testid="table__th--1"
+                    role="columnheader"
+                    style="cursor: pointer;"
+                    title="Toggle SortBy"
+                  >
+                    <div
+                      class="flex flex-inline align-top  undefined"
+                    >
+                      <div
+                        class="mr-1"
+                      >
+                        Name
+                      </div>
+                      <div
+                        class="mt-1 text-theme-color-neutral-500"
+                        data-testid="table__Sort"
+                      >
+                        <div
+                          class="sc-AxjAm iepfoc"
+                          height="10"
+                          width="10"
+                        >
+                          <svg>
+                            sort.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </th>
+                  <th
+                    class="text-xs text-left select-none text-theme-neutral-400"
+                    colspan="1"
+                    data-testid="table__th--2"
+                    role="columnheader"
+                    style="cursor: pointer;"
+                    title="Toggle SortBy"
+                  >
+                    <div
+                      class="flex flex-inline align-top  float-right"
+                    >
+                      <div
+                        class="mr-1"
+                      >
+                        Category
+                      </div>
+                      <div
+                        class="mt-1 text-theme-color-neutral-500"
+                        data-testid="table__Sort"
+                      >
+                        <div
+                          class="sc-AxjAm iepfoc"
+                          height="10"
+                          width="10"
+                        >
+                          <svg>
+                            sort.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </th>
+                  <th
+                    class="text-xs text-left select-none text-theme-neutral-400"
+                    colspan="1"
+                    data-testid="table__th--3"
+                    role="columnheader"
+                  >
+                    <div
+                      class="flex flex-inline align-top  undefined"
+                    >
+                      <div
+                        class="mr-1"
+                      >
+                          
+                      </div>
+                      <div
+                        class="mt-1 text-theme-color-neutral-500"
+                        data-testid="table__Sort"
+                      />
+                    </div>
+                  </th>
+                </tr>
+              </thead>
+              <tbody
+                role="rowgroup"
+              >
+                <tr
+                  class="border-b border-dashed border-theme-neutral-200"
+                >
+                  <td
+                    class="w-20"
+                  >
+                    <svg>
+                      changenow-logo.svg
+                    </svg>
+                  </td>
+                  <td>
+                    <div
+                      class="font-semibold text-theme-primary-500 hover:text-theme-primary-400"
+                    >
+                      ARK Explorer
+                    </div>
+                    <div
+                      class="inline-flex items-center space-x-2"
+                    >
+                      <span>
+                        ARK Ecosystem
+                      </span>
+                      <div
+                        class="sc-AxjAm pXfjM"
+                        height="15"
+                        width="15"
+                      >
+                        <svg>
+                          official-ark-plugin.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </td>
+                  <td
+                    class="py-10 text-right"
+                  >
+                    Utility
+                  </td>
+                </tr>
+                <tr
+                  class="border-b border-dashed border-theme-neutral-200"
+                >
+                  <td
+                    class="w-20"
+                  >
+                    <svg>
+                      changenow-logo.svg
+                    </svg>
+                  </td>
+                  <td>
+                    <div
+                      class="font-semibold text-theme-primary-500 hover:text-theme-primary-400"
+                    >
+                      Animal Avatars
+                    </div>
+                    <div
+                      class="inline-flex items-center space-x-2"
+                    >
+                      <span>
+                        Breno Polanski
+                      </span>
+                    </div>
+                  </td>
+                  <td
+                    class="py-10 text-right"
+                  >
+                    Utility
+                  </td>
+                </tr>
+                <tr
+                  class="border-b border-dashed border-theme-neutral-200"
+                >
+                  <td
+                    class="w-20"
+                  >
+                    <svg>
+                      changenow-logo.svg
+                    </svg>
+                  </td>
+                  <td>
+                    <div
+                      class="font-semibold text-theme-primary-500 hover:text-theme-primary-400"
+                    >
+                      ChangeNOW Plugin
+                    </div>
+                    <div
+                      class="inline-flex items-center space-x-2"
+                    >
+                      <span>
+                        ChangeNOW
+                      </span>
+                    </div>
+                  </td>
+                  <td
+                    class="py-10 text-right"
+                  >
+                    Other
+                  </td>
+                </tr>
+                <tr
+                  class="border-b border-dashed border-theme-neutral-200"
+                >
+                  <td
+                    class="w-20"
+                  >
+                    <svg>
+                      changenow-logo.svg
+                    </svg>
+                  </td>
+                  <td>
+                    <div
+                      class="font-semibold text-theme-primary-500 hover:text-theme-primary-400"
+                    >
+                      Bold Ninja
+                    </div>
+                    <div
+                      class="inline-flex items-center space-x-2"
+                    >
+                      <span>
+                        Delegate Fun
+                      </span>
+                      <div
+                        class="sc-AxjAm vZRQY"
+                        height="16"
+                        width="16"
+                      >
+                        <svg>
+                          grant.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </td>
+                  <td
+                    class="py-10 text-right"
+                  >
+                    Game
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
