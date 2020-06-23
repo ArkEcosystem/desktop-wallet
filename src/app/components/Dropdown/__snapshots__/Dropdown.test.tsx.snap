@@ -6,7 +6,7 @@ exports[`Dropdown should render 1`] = `
     class="relative"
     data-testid="dropdown__toggle"
   >
-    <button
+    <div
       class="float-right outline-none focus:outline-none"
     >
       <div
@@ -18,7 +18,7 @@ exports[`Dropdown should render 1`] = `
           settings.svg
         </svg>
       </div>
-    </button>
+    </div>
   </div>
 </div>
 `;
@@ -29,7 +29,7 @@ exports[`Dropdown should render toggle icon 1`] = `
     class="relative"
     data-testid="dropdown__toggle"
   >
-    <button
+    <div
       class="float-right outline-none focus:outline-none"
     >
       <div
@@ -41,7 +41,7 @@ exports[`Dropdown should render toggle icon 1`] = `
           settings.svg
         </svg>
       </div>
-    </button>
+    </div>
   </div>
 </div>
 `;
@@ -78,7 +78,7 @@ exports[`Dropdown should render with options 1`] = `
     class="relative"
     data-testid="dropdown__toggle"
   >
-    <button
+    <div
       class="float-right outline-none focus:outline-none"
     >
       <div
@@ -90,7 +90,7 @@ exports[`Dropdown should render with options 1`] = `
           settings.svg
         </svg>
       </div>
-    </button>
+    </div>
   </div>
 </div>
 `;

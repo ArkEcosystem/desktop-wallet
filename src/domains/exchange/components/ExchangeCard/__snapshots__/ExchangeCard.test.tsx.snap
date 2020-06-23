@@ -61,7 +61,7 @@ exports[`ExchangeCard should render Exchange card 1`] = `
             class="relative"
             data-testid="dropdown__toggle"
           >
-            <button
+            <div
               class="float-right outline-none focus:outline-none"
             >
               <div
@@ -73,7 +73,7 @@ exports[`ExchangeCard should render Exchange card 1`] = `
                   settings.svg
                 </svg>
               </div>
-            </button>
+            </div>
           </div>
         </div>
         <div
