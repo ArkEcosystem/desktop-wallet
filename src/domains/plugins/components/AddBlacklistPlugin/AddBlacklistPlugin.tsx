@@ -87,15 +87,15 @@ export const AddBlacklistPlugin = (props: AddBlacklistPluginProps) => {
 									{rowData.name}
 								</div>
 								<div className="inline-flex items-center space-x-2">
-									<span>{rowData.description}</span>
+									<span className="text-theme-neutral-700">{rowData.description}</span>
 									{rowData.isOfficial && <Icon name="OfficialArkPlugin" width={15} height={15} />}
 									{rowData.isGrant && <Icon name="Grant" width={16} height={16} />}
 								</div>
 							</td>
 
-							<td className="py-10">{rowData.category}</td>
+							<td className="py-10 text-theme-neutral-700">{rowData.category}</td>
 
-							<td className="py-10">
+							<td className="py-10 text-theme-neutral-700">
 								<ReviewRating rating={rowData.rating} />
 							</td>
 
