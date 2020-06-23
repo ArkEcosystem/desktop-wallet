@@ -9,7 +9,7 @@ type Props = {
 };
 
 export const PluginInfo = ({ about, permissions, screenshots }: Props) => (
-	<div className="mt-5 p-10 bg-theme-background">
+	<div className="p-10 mt-5 bg-theme-background">
 		<div>
 			<p className="font-bold">About the plugin</p>
 			<p className="mt-3 text-theme-neutral-600" data-testid="plugin-info__about">
@@ -22,10 +22,10 @@ export const PluginInfo = ({ about, permissions, screenshots }: Props) => (
 				{permissions.join(", ")}
 			</p>
 		</div>
-		<div className="mt-10 relative">
+		<div className="relative mt-10">
 			<p className="font-bold">Screenshots</p>
 			<div
-				className="absolute top-0 right-0 pr-4 flex space-x-3 screenshots-pagination"
+				className="absolute top-0 right-0 flex pr-4 space-x-3 screenshots-pagination"
 				data-testid="plugin-info__screenshots--pagination"
 			/>
 			<div className="pb-10">
@@ -39,12 +39,12 @@ export const PluginInfo = ({ about, permissions, screenshots }: Props) => (
 					}}
 				>
 					{(screenshotGroup: any) => (
-						<div className="mt-3 flex space-x-4 pb-10 mr-3">
+						<div className="flex pb-10 mt-3 mr-3 space-x-4">
 							{screenshotGroup.map((screenshot: any, idx: number) => (
 								<div
 									data-testid="plugin-info__screenshot"
 									key={idx}
-									className="rounded-lg w-1/3 h-56 bg-theme-neutral-500"
+									className="w-1/3 h-56 rounded-lg bg-theme-neutral-500"
 								/>
 							))}
 						</div>
