@@ -28,7 +28,7 @@ const ArticleListItem = ({ title, path }: ArticleListItemProps) => (
 		<a
 			title={title}
 			href={path}
-			className="flex -mx-3 px-2 py-4 rounded-md border-3 border-theme-background hover:bg-theme-neutral-100 text-theme-neutral-800 hover:text-theme-primary-600"
+			className="flex px-2 py-4 -mx-3 rounded-md border-3 border-theme-background hover:bg-theme-neutral-100 text-theme-neutral-800 hover:text-theme-primary-600"
 		>
 			<div>
 				<div className="pt-1 text-theme-neutral-800">
@@ -46,7 +46,7 @@ const CategoryItem = ({ icon, title, subtitle, path }: CategoryItemProps) => (
 		title={title}
 		className="flex flex-row w-64 cursor-pointer border-r-1 last:border-r-0 border-theme-neutral-200"
 	>
-		<div className="flex flex-row w-full p-5 px-7 rounded-md bg-white hover:shadow-xl mx-2">
+		<div className="flex flex-row w-full p-5 mx-2 bg-white px-7 rounded-md hover:shadow-xl">
 			<div className="w-2/5 my-auto">
 				<Circle className="border-theme-neutral-800" size="large">
 					<div className="text-theme-neutral-800">
@@ -66,7 +66,7 @@ export const Main = ({ categories, helpfulArticles, popularArticles, newestArtic
 	const { t } = useTranslation();
 	return (
 		<div className="-m-5 bg-theme-neutral-100">
-			<div className="p-13 mb-5 bg-white">
+			<div className="mb-5 bg-white p-13">
 				<div className="flex">
 					<div className="w-2/3">
 						<h1>{t("SUPPORT.HELP_SUPPORT_TITLE")}</h1>
@@ -83,7 +83,7 @@ export const Main = ({ categories, helpfulArticles, popularArticles, newestArtic
 					</div>
 				</div>
 			</div>
-			<div className="p-13 mb-5 bg-white">
+			<div className="mb-5 bg-white p-13">
 				<div className="flex flex-row">
 					{categories &&
 						categories.map((category: CategoryItemProps, index: number) => {
@@ -98,7 +98,7 @@ export const Main = ({ categories, helpfulArticles, popularArticles, newestArtic
 						})}
 				</div>
 			</div>
-			<div className="px-14 py-10 mb-10 bg-white">
+			<div className="py-10 mb-10 bg-white px-14">
 				<div className="flex flex-row">
 					<div className="w-1/3 mr-10">
 						<h3>{t("SUPPORT.HELPFUL_CATEGORY_TITLE")}</h3>
