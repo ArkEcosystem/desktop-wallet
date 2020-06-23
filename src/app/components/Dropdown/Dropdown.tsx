@@ -47,9 +47,9 @@ const renderToggle = (children: any, toggleIcon: string, isOpen: boolean) => {
 	// Default with toggleIcon
 	if (!children) {
 		return (
-			<button className="float-right outline-none focus:outline-none">
+			<div className="float-right outline-none focus:outline-none">
 				<Icon name={toggleIcon} width={20} height={20} />
-			</button>
+			</div>
 		);
 	}
 
