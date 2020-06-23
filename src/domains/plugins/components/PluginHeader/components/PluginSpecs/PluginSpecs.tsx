@@ -11,7 +11,7 @@ type Props = {
 
 type GridColProps = {
 	children: React.ReactNode;
-	colSpan?: string;
+	colSpan?: number;
 	justify?: string;
 	padding?: string;
 };
