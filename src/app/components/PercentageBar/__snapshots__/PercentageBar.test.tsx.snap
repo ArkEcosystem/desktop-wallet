@@ -7,10 +7,10 @@ exports[`PercentageBar should render 1`] = `
       class="flex"
     >
       <div
-        class="font-bold py-4 text-theme-neutral-800"
+        class="py-4 font-bold text-theme-neutral-800"
       />
       <div
-        class="flex flex-1 justify-end"
+        class="flex justify-end flex-1"
       />
     </div>
     <div
@@ -27,10 +27,10 @@ exports[`PercentageBar should render with data 1`] = `
       class="flex"
     >
       <div
-        class="font-bold py-4 text-theme-neutral-800"
+        class="py-4 font-bold text-theme-neutral-800"
       />
       <div
-        class="flex flex-1 justify-end"
+        class="flex justify-end flex-1"
       >
         <div
           class="p-4 ml-3"
@@ -39,7 +39,7 @@ exports[`PercentageBar should render with data 1`] = `
             class="mr-2 mb-1 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-danger-500"
           />
           <div
-            class="inline-block text-theme-neutral-700 font-semibold text-sm"
+            class="inline-block text-sm font-semibold text-theme-neutral-700"
           >
             ARK
              - 
@@ -54,7 +54,7 @@ exports[`PercentageBar should render with data 1`] = `
             class="mr-2 mb-1 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-warning-500"
           />
           <div
-            class="inline-block text-theme-neutral-700 font-semibold text-sm"
+            class="inline-block text-sm font-semibold text-theme-neutral-700"
           >
             BTC
              - 
@@ -69,7 +69,7 @@ exports[`PercentageBar should render with data 1`] = `
             class="mr-2 mb-1 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-primary-500"
           />
           <div
-            class="inline-block text-theme-neutral-700 font-semibold text-sm"
+            class="inline-block text-sm font-semibold text-theme-neutral-700"
           >
             ETH
              - 
@@ -84,7 +84,7 @@ exports[`PercentageBar should render with data 1`] = `
             class="mr-2 mb-1 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-neutral-400"
           />
           <div
-            class="inline-block text-theme-neutral-700 font-semibold text-sm"
+            class="inline-block text-sm font-semibold text-theme-neutral-700"
           >
             Other
              - 
@@ -125,12 +125,12 @@ exports[`PercentageBar should render with title 1`] = `
       class="flex"
     >
       <div
-        class="font-bold py-4 text-theme-neutral-800"
+        class="py-4 font-bold text-theme-neutral-800"
       >
         Total portfolio
       </div>
       <div
-        class="flex flex-1 justify-end"
+        class="flex justify-end flex-1"
       />
     </div>
     <div

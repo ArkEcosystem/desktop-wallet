@@ -14,8 +14,8 @@ export const PercentageBar = ({ data, title }: PercentageBarProps) => {
 	return (
 		<div>
 			<div className="flex">
-				<div className="font-bold py-4 text-theme-neutral-800">{title}</div>
-				<div className="flex flex-1 justify-end">
+				<div className="py-4 font-bold text-theme-neutral-800">{title}</div>
+				<div className="flex justify-end flex-1">
 					{data &&
 						data.map((item: BarItem, index: number) => {
 							return (
@@ -23,7 +23,7 @@ export const PercentageBar = ({ data, title }: PercentageBarProps) => {
 									<div
 										className={`mr-2 mb-1 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-${item.color}`}
 									 />
-									<div className="inline-block text-theme-neutral-700 font-semibold text-sm">
+									<div className="inline-block text-sm font-semibold text-theme-neutral-700">
 										{item.label} - {item.value}%
 									</div>
 								</div>
