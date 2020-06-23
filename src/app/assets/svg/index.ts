@@ -13,7 +13,6 @@ import { ReactComponent as Copy } from "./copy.svg";
 import { ReactComponent as CrossSlim } from "./cross-slim.svg";
 import { ReactComponent as Ark } from "./currencies/ark.svg";
 import { ReactComponent as Bitcoin } from "./currencies/btc.svg";
-// Currencies
 import { ReactComponent as Ethereum } from "./currencies/eth.svg";
 import { ReactComponent as Delegate } from "./delegate.svg";
 import { ReactComponent as Discord } from "./discord.svg";
