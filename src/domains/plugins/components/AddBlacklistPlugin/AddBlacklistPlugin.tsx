@@ -52,6 +52,7 @@ export const AddBlacklistPlugin = (props: AddBlacklistPluginProps) => {
 		{
 			Header: t("COMMON.CATEGORY"),
 			accessor: "category",
+			className: "justify-center",
 		},
 		{
 			Header: t("COMMON.RATING"),
@@ -93,10 +94,10 @@ export const AddBlacklistPlugin = (props: AddBlacklistPluginProps) => {
 								</div>
 							</td>
 
-							<td className="py-10 text-theme-neutral-700">{rowData.category}</td>
+							<td className="py-10 text-center text-theme-neutral-700">{rowData.category}</td>
 
 							<td className="py-10 text-theme-neutral-700">
-								<ReviewRating rating={rowData.rating} />
+								<ReviewRating rating={rowData.rating} width={3} />
 							</td>
 
 							<td className="w-16">
