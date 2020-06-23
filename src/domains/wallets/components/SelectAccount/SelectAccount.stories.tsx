@@ -17,11 +17,11 @@ export const Default = () => {
 			isSelected: true,
 		},
 		{
-			name: "Eth",
+			name: "Ethereum",
 			isSelected: false,
 		},
 		{
-			name: "Btc",
+			name: "Bitcoin",
 			isSelected: true,
 		},
 	];

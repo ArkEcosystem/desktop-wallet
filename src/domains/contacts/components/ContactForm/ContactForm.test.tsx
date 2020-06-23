@@ -128,10 +128,15 @@ describe("ContactForm", () => {
 			contact = {
 				name: () => "Oleg Gelo",
 				addresses: () => [
-					{ coin: "Btc", network: "Bitcoin", address: "15pyr1HRAxpq3x64duXav1csmyCtXXu9G8", avatar: "test1" },
 					{
-						coin: "Eth",
-						network: "Ethereum",
+						coin: "Bitcoin",
+						network: "livenet",
+						address: "15pyr1HRAxpq3x64duXav1csmyCtXXu9G8",
+						avatar: "test1",
+					},
+					{
+						coin: "Ethereum",
+						network: "livenet",
 						address: "0x5e8f7a63e31c759ef0ad5e71594e838b380d7c33",
 						avatar: "test2",
 					},

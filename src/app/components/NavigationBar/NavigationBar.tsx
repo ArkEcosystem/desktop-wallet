@@ -159,7 +159,7 @@ export const NavigationBar = ({
 );
 
 NavigationBar.defaultProps = {
-	currencyIcon: "Btc",
+	currencyIcon: "Bitcoin",
 	notifications: {
 		transactionsHeader: "Transactions",
 		transactions: [],
