@@ -35,7 +35,10 @@ const renderOptions = (options: any[], onSelect: any) => (
 				className="block px-8 py-4 text-sm font-semibold cursor-pointer text-theme-neutral-800 hover:bg-theme-neutral-200 hover:text-theme-primary-600"
 				key={key}
 				data-testid={`dropdown__option--${key}`}
-				onClick={() => onSelect(option)}
+				onClick={(e: any) => {
+					onSelect(option);
+					e.stopPropagation();
+				}}
 			>
 				{option.label}
 			</li>
@@ -63,7 +66,10 @@ const renderToggle = (children: any, toggleIcon: string, isOpen: boolean) => {
 export const Dropdown = ({ children, options, onSelect, position, toggleIcon, toggleContent }: Props) => {
 	const [isOpen, setIsOpen] = useState(false);
 
-	const toggle = () => setIsOpen(!isOpen);
+	const toggle = (e: any) => {
+		setIsOpen(!isOpen);
+		e.stopPropagation();
+	};
 	const hide = () => setIsOpen(false);
 
 	const select = (option: Option) => {
