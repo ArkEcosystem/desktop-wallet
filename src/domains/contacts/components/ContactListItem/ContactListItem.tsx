@@ -28,8 +28,8 @@ export const ContactListItem = ({
           <td className={`text-center ${index === contact.addresses().length - 1 ? "border-b border-dashed border-theme-neutral-200" : ""}`}>
             {index === 0 && (
               <div className="flex items-center space-x-3">
-                <Circle>
-                  <span className="text-sm font-semibold">
+                <Circle className="bg-theme-primary-600 border-theme-primary-600">
+                  <span className="text-sm text-theme-background">
                     {contact.name().slice(0, 2)}
                   </span>
                 </Circle>
@@ -38,8 +38,8 @@ export const ContactListItem = ({
             )}
           </td>
           <td className={`text-center ${index === contact.addresses().length - 1 ? "border-b border-dashed border-theme-neutral-200" : ""}`}>
-            <Circle className={`border-${coin}-${network}`}>
-              <Icon name={coin} className={`text-${coin}-${network}`} />
+            <Circle className={`border-${coin.toLowerCase()}-${network.toLowerCase()}`}>
+              <Icon name={coin} className={`text-${coin.toLowerCase()}-${network.toLowerCase()}`} />
             </Circle>
           </td>
           <td className="py-6 border-b border-dashed border-theme-neutral-200">
