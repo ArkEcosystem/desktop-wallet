@@ -3,27 +3,27 @@
 exports[`PluginHeader should render properly 1`] = `
 <DocumentFragment>
   <div
-    class="py-5 px-10 w-full bg-theme-background"
+    class="w-full px-10 py-5 bg-theme-background"
   >
     <div
       class="flex w-full"
     >
       <img
         alt="plugin-image"
-        class="rounded-lg w-40 h-40"
+        class="w-40 h-40 rounded-lg"
         src="placeholder.png"
       />
       <div
         class="flex flex-col justify-center w-full px-5"
       >
         <div
-          class="flex justify-between items-center"
+          class="flex items-center justify-between"
         >
           <div
             class="flex flex-col"
           >
             <span
-              class="font-bold text-2xl"
+              class="text-2xl font-bold"
             >
               ARK Explorer
             </span>
@@ -63,7 +63,7 @@ exports[`PluginHeader should render properly 1`] = `
           </div>
         </div>
         <div
-          class="grid grid-cols-5 divide-x divide-gray-400 text-sm mt-5 grid-flow-col border-t border-dashed border-theme-neutral pt-5"
+          class="pt-5 mt-5 text-sm border-t border-dashed grid grid-cols-5 divide-x divide-gray-400 grid-flow-col border-theme-neutral"
         >
           <div
             class="flex"

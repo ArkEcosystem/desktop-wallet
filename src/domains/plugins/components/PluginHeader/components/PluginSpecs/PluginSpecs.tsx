@@ -44,7 +44,7 @@ const GridCol = ({ children, colSpan, justify, padding }: GridColProps) => {
 };
 
 export const PluginSpecs = ({ author, category, url, rating, version, size }: Props) => (
-	<div className="grid grid-cols-5 divide-x divide-gray-400 text-sm mt-5 grid-flow-col border-t border-dashed border-theme-neutral pt-5">
+	<div className="pt-5 mt-5 text-sm border-t border-dashed grid grid-cols-5 divide-x divide-gray-400 grid-flow-col border-theme-neutral">
 		<GridCol>
 			<GridItem label="Author" value={author} />
 		</GridCol>

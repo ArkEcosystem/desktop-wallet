@@ -15,13 +15,13 @@ type Props = {
 };
 
 export const PluginHeader = ({ author, category, url, rating, version, size }: Props) => (
-	<div className="py-5 px-10 w-full bg-theme-background">
+	<div className="w-full px-10 py-5 bg-theme-background">
 		<div className="flex w-full">
-			<img className="rounded-lg w-40 h-40" alt="plugin-image" src={Placeholder} />
+			<img className="w-40 h-40 rounded-lg" alt="plugin-image" src={Placeholder} />
 			<div className="flex flex-col justify-center w-full px-5">
-				<div className="flex justify-between items-center">
+				<div className="flex items-center justify-between">
 					<div className="flex flex-col">
-						<span className="font-bold text-2xl">ARK Explorer</span>
+						<span className="text-2xl font-bold">ARK Explorer</span>
 						<span className="text-medium text-theme-neutral-500">
 							Use the ARK Mainnet explorer directly within the wallet
 						</span>
