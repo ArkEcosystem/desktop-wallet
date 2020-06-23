@@ -53,7 +53,7 @@ export const PluginListItem = ({ onDelete, onInstall, plugin }: PluginListItemPr
 
 			<td className="w-16 text-right">
 				{!plugin.isInstalled && (
-					<Button variant="plain" onClick={onInstall} data-testid="PluginListItem__install">
+					<Button variant="plain" onClick={() => onInstall(plugin)} data-testid="PluginListItem__install">
 						{t("COMMON.INSTALL")}
 					</Button>
 				)}
@@ -69,7 +69,7 @@ export const PluginListItem = ({ onDelete, onInstall, plugin }: PluginListItemPr
 								]}
 								onSelect={(option: any) => {
 									if (option.value === "delete") {
-										onDelete();
+										onDelete(plugin);
 									}
 								}}
 							/>

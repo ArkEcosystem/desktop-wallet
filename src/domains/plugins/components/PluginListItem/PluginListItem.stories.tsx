@@ -29,11 +29,16 @@ const plugins = [
 	},
 ];
 
-export const Default = () => (
-	<table className="w-full table-auto">
-		<tbody>
-			<PluginListItem plugin={plugins[0]} />
-			<PluginListItem plugin={plugins[1]} />
-		</tbody>
-	</table>
-);
+export const Default = () => {
+	const onInstall = (plugin: any) => alert(`selected ${plugin.name} plugin`);
+	const onDelete = (plugin: any) => alert(`delete ${plugin.name} plugin`);
+
+	return (
+		<table className="w-full table-auto">
+			<tbody>
+				<PluginListItem plugin={plugins[0]} onInstall={onInstall} onDelete={onDelete} />
+				<PluginListItem plugin={plugins[1]} onInstall={onInstall} onDelete={onDelete} />
+			</tbody>
+		</table>
+	);
+};

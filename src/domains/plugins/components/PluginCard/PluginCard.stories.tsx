@@ -18,6 +18,6 @@ const plugin = {
 
 export const Default = () => (
 	<div className="flex">
-		<PluginCard plugin={plugin} onClick={() => alert("clicked plugin")} />
+		<PluginCard plugin={plugin} onClick={() => alert("clicked plugin")} onDelete={() => alert("delete plugin")} />
 	</div>
 );

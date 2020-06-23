@@ -30,5 +30,9 @@ const plugins = [
 ];
 
 export const Default = () => (
-	<PluginList plugins={plugins} onSelect={(plugin: any) => alert(`selected ${plugin.name} plugin`)} />
+	<PluginList
+		plugins={plugins}
+		onInstall={(plugin: any) => alert(`selected ${plugin.name} plugin`)}
+		onDelete={(plugin: any) => alert(`delete ${plugin.name} plugin`)}
+	/>
 );
