@@ -10,4 +10,9 @@ export const translations: { [key: string]: any } = {
 		DESCRIPTION:
 			"ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.",
 	},
+	MODAL_ADD_BLACKLIST_PLUGIN: {
+		TITLE: "Add Blacklist",
+		DESCRIPTION: "Find and select a plugin to add or remove it from the blacklist.",
+		SEARCH_PLACEHOLDER: "Search for a plugin",
+	},
 };
