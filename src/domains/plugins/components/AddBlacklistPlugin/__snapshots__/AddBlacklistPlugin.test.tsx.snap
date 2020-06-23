@@ -1,0 +1,490 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddBlacklistPlugin should not render if not open 1`] = `<DocumentFragment />`;
+
+exports[`AddBlacklistPlugin should render a modal 1`] = `
+<DocumentFragment>
+  <div
+    class="fixed inset-0 z-10 bg-black opacity-50"
+    data-testid="modal__overlay"
+  />
+  <div
+    class="sc-AxiKw jRkhhQ fixed left-0 right-0 z-10 flex flex-col px-12 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
+    data-testid="modal__inner"
+  >
+    <div
+      class="absolute top-0 right-0 mt-4 mr-4"
+    >
+      <button
+        class="sc-AxjAm bThAoP"
+        color="neutral"
+        data-testid="modal__close-btn"
+        type="button"
+      >
+        <div
+          class="sc-AxirZ fttODj"
+          height="10"
+          width="10"
+        >
+          <svg>
+            cross-slim.svg
+          </svg>
+        </div>
+      </button>
+    </div>
+    <div
+      class="py-4"
+    >
+      <h2>
+        Add Blacklist
+      </h2>
+      <div
+        class="flex-1 "
+      >
+        <div
+          class="text-theme-neutral-700"
+        >
+          Find and select a plugin to add or remove it from the blacklist.
+        </div>
+        <div
+          class="-mx-12"
+        >
+          <div
+            class="bg-theme-neutral-100 px-12 pt-8 pb-10 mt-8"
+            data-testid="SearchBar"
+          >
+            <div
+              class="flex px-6 py-4 bg-white rounded shadow-xl"
+            >
+              <svg
+                class="w-4 text-theme-neutral-300"
+              >
+                search.svg
+              </svg>
+              <div
+                class="flex-1 mr-4"
+              >
+                <input
+                  class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary border-none shadow-none"
+                  data-testid="Input"
+                  placeholder="Search for a plugin"
+                />
+              </div>
+              <button
+                class="sc-AxjAm cCtLft my-1"
+                color="primary"
+                type="button"
+              >
+                <span
+                  class="px-2 text-sm"
+                >
+                  Find it
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          class="mt-8 -mb-6"
+        >
+          <div
+            class="sc-AxhCb bybrRt"
+            role="table"
+          >
+            <table
+              class="table-auto"
+            >
+              <thead>
+                <tr
+                  role="row"
+                >
+                  <th
+                    class="text-xs text-left select-none text-theme-neutral-400"
+                    colspan="1"
+                    data-testid="table__th--0"
+                    role="columnheader"
+                  >
+                    <div
+                      class="flex flex-inline align-top  undefined"
+                    >
+                      <div
+                        class="mr-1"
+                      >
+                         
+                      </div>
+                      <div
+                        class="mt-1 text-theme-color-neutral-500"
+                        data-testid="table__Sort"
+                      />
+                    </div>
+                  </th>
+                  <th
+                    class="text-xs text-left select-none text-theme-neutral-400"
+                    colspan="1"
+                    data-testid="table__th--1"
+                    role="columnheader"
+                    style="cursor: pointer;"
+                    title="Toggle SortBy"
+                  >
+                    <div
+                      class="flex flex-inline align-top  undefined"
+                    >
+                      <div
+                        class="mr-1"
+                      >
+                        Name
+                      </div>
+                      <div
+                        class="mt-1 text-theme-color-neutral-500"
+                        data-testid="table__Sort"
+                      >
+                        <div
+                          class="sc-AxirZ fttODj"
+                          height="10"
+                          width="10"
+                        >
+                          <svg>
+                            sort.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </th>
+                  <th
+                    class="text-xs text-left select-none text-theme-neutral-400"
+                    colspan="1"
+                    data-testid="table__th--2"
+                    role="columnheader"
+                    style="cursor: pointer;"
+                    title="Toggle SortBy"
+                  >
+                    <div
+                      class="flex flex-inline align-top  undefined"
+                    >
+                      <div
+                        class="mr-1"
+                      >
+                        Category
+                      </div>
+                      <div
+                        class="mt-1 text-theme-color-neutral-500"
+                        data-testid="table__Sort"
+                      >
+                        <div
+                          class="sc-AxirZ fttODj"
+                          height="10"
+                          width="10"
+                        >
+                          <svg>
+                            sort.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </th>
+                  <th
+                    class="text-xs text-left select-none text-theme-neutral-400"
+                    colspan="1"
+                    data-testid="table__th--3"
+                    role="columnheader"
+                    style="cursor: pointer;"
+                    title="Toggle SortBy"
+                  >
+                    <div
+                      class="flex flex-inline align-top  undefined"
+                    >
+                      <div
+                        class="mr-1"
+                      >
+                        Rating
+                      </div>
+                      <div
+                        class="mt-1 text-theme-color-neutral-500"
+                        data-testid="table__Sort"
+                      >
+                        <div
+                          class="sc-AxirZ fttODj"
+                          height="10"
+                          width="10"
+                        >
+                          <svg>
+                            sort.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </th>
+                  <th
+                    class="text-xs text-left select-none text-theme-neutral-400"
+                    colspan="1"
+                    data-testid="table__th--4"
+                    role="columnheader"
+                  >
+                    <div
+                      class="flex flex-inline align-top  undefined"
+                    >
+                      <div
+                        class="mr-1"
+                      >
+                          
+                      </div>
+                      <div
+                        class="mt-1 text-theme-color-neutral-500"
+                        data-testid="table__Sort"
+                      />
+                    </div>
+                  </th>
+                </tr>
+              </thead>
+              <tbody
+                role="rowgroup"
+              >
+                <tr
+                  class="border-b border-dashed border-theme-neutral-200"
+                >
+                  <td
+                    class="w-20"
+                  >
+                    <svg>
+                      changenow-logo.svg
+                    </svg>
+                  </td>
+                  <td>
+                    <div
+                      class="font-semibold text-theme-primary-500 hover:text-theme-primary-400"
+                    >
+                      Animal Avatars
+                    </div>
+                    <div
+                      class="inline-flex items-center space-x-2"
+                    >
+                      <span>
+                        Breno Polanski
+                      </span>
+                    </div>
+                  </td>
+                  <td
+                    class="py-10"
+                  >
+                    Utility
+                  </td>
+                  <td
+                    class="py-10"
+                  >
+                    <div
+                      class="flex"
+                      data-testid="ReviewRating"
+                    >
+                      <div
+                        class="relative my-auto"
+                      >
+                        <div
+                          class="absolute overflow-hidden"
+                          style="width: 89.99999999999999%;"
+                        >
+                          <svg
+                            class="text-theme-warning-300 w-5"
+                          >
+                            star.svg
+                          </svg>
+                        </div>
+                        <svg
+                          class="text-theme-neutral-500 w-5"
+                        >
+                          star.svg
+                        </svg>
+                      </div>
+                      <span
+                        class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                      >
+                        4.6
+                      </span>
+                    </div>
+                  </td>
+                  <td
+                    class="w-16"
+                  >
+                    <button
+                      class="sc-AxjAm ddJBbC"
+                      color="primary"
+                      type="button"
+                    >
+                      Add
+                    </button>
+                  </td>
+                </tr>
+                <tr
+                  class="border-b border-dashed border-theme-neutral-200"
+                >
+                  <td
+                    class="w-20"
+                  >
+                    <svg>
+                      changenow-logo.svg
+                    </svg>
+                  </td>
+                  <td>
+                    <div
+                      class="font-semibold text-theme-primary-500 hover:text-theme-primary-400"
+                    >
+                      ARK Explorer
+                    </div>
+                    <div
+                      class="inline-flex items-center space-x-2"
+                    >
+                      <span>
+                        ARK Ecosystem
+                      </span>
+                      <div
+                        class="sc-AxirZ fkjLBb"
+                        height="15"
+                        width="15"
+                      >
+                        <svg>
+                          official-ark-plugin.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </td>
+                  <td
+                    class="py-10"
+                  >
+                    Utility
+                  </td>
+                  <td
+                    class="py-10"
+                  >
+                    <div
+                      class="flex"
+                      data-testid="ReviewRating"
+                    >
+                      <div
+                        class="relative my-auto"
+                      >
+                        <div
+                          class="absolute overflow-hidden"
+                          style="width: 89.99999999999999%;"
+                        >
+                          <svg
+                            class="text-theme-warning-300 w-5"
+                          >
+                            star.svg
+                          </svg>
+                        </div>
+                        <svg
+                          class="text-theme-neutral-500 w-5"
+                        >
+                          star.svg
+                        </svg>
+                      </div>
+                      <span
+                        class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                      >
+                        4.6
+                      </span>
+                    </div>
+                  </td>
+                  <td
+                    class="w-16"
+                  >
+                    <button
+                      class="sc-AxjAm ddJBbC"
+                      color="primary"
+                      type="button"
+                    >
+                      Add
+                    </button>
+                  </td>
+                </tr>
+                <tr
+                  class="border-b border-dashed border-theme-neutral-200"
+                >
+                  <td
+                    class="w-20"
+                  >
+                    <svg>
+                      changenow-logo.svg
+                    </svg>
+                  </td>
+                  <td>
+                    <div
+                      class="font-semibold text-theme-primary-500 hover:text-theme-primary-400"
+                    >
+                      Bold Ninja
+                    </div>
+                    <div
+                      class="inline-flex items-center space-x-2"
+                    >
+                      <span>
+                        Delegate Fun
+                      </span>
+                      <div
+                        class="sc-AxirZ hPsuTj"
+                        height="16"
+                        width="16"
+                      >
+                        <svg>
+                          grant.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </td>
+                  <td
+                    class="py-10"
+                  >
+                    Game
+                  </td>
+                  <td
+                    class="py-10"
+                  >
+                    <div
+                      class="flex"
+                      data-testid="ReviewRating"
+                    >
+                      <div
+                        class="relative my-auto"
+                      >
+                        <div
+                          class="absolute overflow-hidden"
+                          style="width: 97.50000000000001%;"
+                        >
+                          <svg
+                            class="text-theme-warning-300 w-5"
+                          >
+                            star.svg
+                          </svg>
+                        </div>
+                        <svg
+                          class="text-theme-neutral-500 w-5"
+                        >
+                          star.svg
+                        </svg>
+                      </div>
+                      <span
+                        class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                      >
+                        4.9
+                      </span>
+                    </div>
+                  </td>
+                  <td
+                    class="w-16"
+                  >
+                    <button
+                      class="sc-AxjAm ddJBbC"
+                      color="primary"
+                      type="button"
+                    >
+                      Add
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

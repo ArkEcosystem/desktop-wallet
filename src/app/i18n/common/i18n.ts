@@ -1,5 +1,6 @@
 export const translations: { [key: string]: any } = {
 	ADAPTER: "Adapter",
+	ADD: "Add",
 	ADDRESS: "Address",
 	ADVANCED_MODE: "Advanced Mode",
 	ALL: "All",
@@ -44,6 +45,8 @@ export const translations: { [key: string]: any } = {
 	INITIALIZING: "Initializing...",
 	INSTALL: "Install",
 	IS_MARKET_CHART_ENABLED: "Price chart on the dashboard",
+	I_ACCEPT: "I Accept",
+	I_DECLINE: "I Decline",
 	LANGUAGE: "Application Language",
 	LEDGER_WALLET: "This is a Ledger wallet",
 	LEDGER: "Ledger",

@@ -1,9 +1,9 @@
 import { fireEvent, render } from "@testing-library/react";
 import { act } from "@testing-library/react-hooks";
+import { clickOutsideHandler } from "app/hooks/click-outside";
 import React from "react";
 
 import { Dropdown } from "./Dropdown";
-import { clickOutsideHandler } from "./hooks";
 
 describe("Dropdown", () => {
 	it("should render", () => {
