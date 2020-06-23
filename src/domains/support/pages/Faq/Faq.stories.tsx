@@ -8,5 +8,9 @@ export default {
 };
 
 export const Default = () => {
-	return <Faq articles={faqArticles} />;
+	return (
+		<div className="-m-5">
+			<Faq articles={faqArticles} />
+		</div>
+	);
 };
