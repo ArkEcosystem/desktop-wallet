@@ -139,7 +139,7 @@ describe("SendTransactionForm", () => {
 		await act(async () => {
 			fireEvent.click(addedRecipientBtn);
 		});
-		const addedRecipient = getByTestId("send-transaction__recipient-list-item");
+		const addedRecipient = getByTestId("recipient-list__recipient-list-item");
 		expect(addedRecipient).toBeTruthy();
 	});
 
@@ -187,7 +187,7 @@ describe("SendTransactionForm", () => {
 			fireEvent.click(addedRecipientBtn2);
 		});
 
-		const addedRecipients = getAllByTestId("send-transaction__recipient-list-item");
+		const addedRecipients = getAllByTestId("recipient-list__recipient-list-item");
 		expect(addedRecipients).toHaveLength(2);
 	});
 
@@ -218,7 +218,7 @@ describe("SendTransactionForm", () => {
 			fireEvent.click(addedRecipientBtn);
 		});
 
-		const removeBtn = getByTestId("send-transaction__remove-recipient");
+		const removeBtn = getByTestId("recipient-list__remove-recipient");
 		expect(removeBtn).toBeTruthy();
 		await act(async () => {
 			fireEvent.click(removeBtn);
