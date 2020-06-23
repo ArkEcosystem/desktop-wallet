@@ -28,7 +28,7 @@ describe("PluginListItem", () => {
 			</I18nextProvider>,
 		);
 
-		expect(getByTestId("PluginListItem__row-ark-explorer")).toHaveTextContent("ARK Explorer");
+		expect(getByTestId("PluginListItem--ark-explorer")).toHaveTextContent("ARK Explorer");
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -121,7 +121,7 @@ describe("PluginListItem", () => {
 			</I18nextProvider>,
 		);
 
-		expect(getByTestId("PluginListItem__row-ark-explorer")).toHaveTextContent("official-ark-plugin.svg");
+		expect(getByTestId("PluginListItem--ark-explorer")).toHaveTextContent("official-ark-plugin.svg");
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -148,7 +148,7 @@ describe("PluginListItem", () => {
 			</I18nextProvider>,
 		);
 
-		expect(getByTestId("PluginListItem__row-ark-explorer")).toHaveTextContent("grant.svg");
+		expect(getByTestId("PluginListItem--ark-explorer")).toHaveTextContent("grant.svg");
 		expect(asFragment()).toMatchSnapshot();
 	});
 });

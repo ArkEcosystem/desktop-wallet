@@ -18,10 +18,7 @@ export const PluginListItem = ({ onDelete, onInstall, plugin }: PluginListItemPr
 	const { t } = useTranslation();
 
 	return (
-		<tr
-			data-testid={`PluginListItem__row-${plugin.id}`}
-			className="border-b border-dashed border-theme-neutral-200"
-		>
+		<tr data-testid={`PluginListItem--${plugin.id}`} className="border-b border-dashed border-theme-neutral-200">
 			<td className="text-center">
 				<ChangeNowLogo className="w-12 h-12" />
 			</td>
