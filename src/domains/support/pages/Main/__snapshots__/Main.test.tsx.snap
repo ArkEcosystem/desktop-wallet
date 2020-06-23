@@ -1,0 +1,1126 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SupportPage should render empty main support page 1`] = `
+<div>
+  <div
+    class="-m-5 bg-theme-neutral-100"
+  >
+    <div
+      class="mb-5 bg-white p-13"
+    >
+      <div
+        class="flex"
+      >
+        <div
+          class="w-2/3"
+        >
+          <h1>
+            Help & Support
+          </h1>
+          <p
+            class="text-theme-neutral-600"
+          >
+            Do you need any help? Find it in our archive or write to us
+          </p>
+        </div>
+        <div
+          class="flex justify-end w-1/3"
+        >
+          <div
+            class="my-auto cursor-pointer text-theme-primary-200"
+          >
+            <div
+              class="sc-AxiKw dzBdqj"
+              height="1em"
+              width="1em"
+            >
+              <svg>
+                search.svg
+              </svg>
+            </div>
+          </div>
+          <div
+            class="h-8 mx-10 my-auto border-l border-1 border-theme-primary-100"
+          />
+          <div
+            class="my-auto"
+          >
+            <button
+              class="sc-AxjAm ddQVWI"
+              color="primary"
+              type="button"
+            >
+              Contact us
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="mb-5 bg-white p-13"
+    >
+      <div
+        class="flex flex-row"
+      />
+    </div>
+    <div
+      class="py-10 mb-10 bg-white px-14"
+    >
+      <div
+        class="flex flex-row"
+      >
+        <div
+          class="w-1/3 mr-10"
+        >
+          <h3>
+            Most Helpful
+          </h3>
+          <ul />
+        </div>
+        <div
+          class="w-1/3 mr-10"
+        >
+          <h3>
+            Most Popular
+          </h3>
+          <ul />
+        </div>
+        <div
+          class="w-1/3 mr-10"
+        >
+          <h3>
+            Newest
+          </h3>
+          <ul />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`SupportPage should render main support page with categories 1`] = `
+<div>
+  <div
+    class="-m-5 bg-theme-neutral-100"
+  >
+    <div
+      class="mb-5 bg-white p-13"
+    >
+      <div
+        class="flex"
+      >
+        <div
+          class="w-2/3"
+        >
+          <h1>
+            Help & Support
+          </h1>
+          <p
+            class="text-theme-neutral-600"
+          >
+            Do you need any help? Find it in our archive or write to us
+          </p>
+        </div>
+        <div
+          class="flex justify-end w-1/3"
+        >
+          <div
+            class="my-auto cursor-pointer text-theme-primary-200"
+          >
+            <div
+              class="sc-AxiKw dzBdqj"
+              height="1em"
+              width="1em"
+            >
+              <svg>
+                search.svg
+              </svg>
+            </div>
+          </div>
+          <div
+            class="h-8 mx-10 my-auto border-l border-1 border-theme-primary-100"
+          />
+          <div
+            class="my-auto"
+          >
+            <button
+              class="sc-AxjAm ddQVWI"
+              color="primary"
+              type="button"
+            >
+              Contact us
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="mb-5 bg-white p-13"
+    >
+      <div
+        class="flex flex-row"
+      >
+        <a
+          class="flex flex-row w-64 cursor-pointer border-r-1 last:border-r-0 border-theme-neutral-200"
+          title="Profile"
+        >
+          <div
+            class="flex flex-row w-full p-5 mx-2 bg-white px-7 rounded-md hover:shadow-xl"
+          >
+            <div
+              class="w-2/5 my-auto"
+            >
+              <div
+                class="sc-AxirZ cZokSJ border-theme-neutral-800"
+              >
+                <div
+                  class="text-theme-neutral-800"
+                >
+                  <div
+                    class="sc-AxiKw dklFyP"
+                    height="20"
+                    width="20"
+                  >
+                    <svg>
+                      profile.svg
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="flex-auto my-auto"
+            >
+              <div
+                class="font-bold text-theme-neutral-800"
+              >
+                Profile
+              </div>
+              <div
+                class="text-sm text-theme-neutral-500"
+              >
+                38 topics
+              </div>
+            </div>
+          </div>
+        </a>
+        <a
+          class="flex flex-row w-64 cursor-pointer border-r-1 last:border-r-0 border-theme-neutral-200"
+          title="Portfolio"
+        >
+          <div
+            class="flex flex-row w-full p-5 mx-2 bg-white px-7 rounded-md hover:shadow-xl"
+          >
+            <div
+              class="w-2/5 my-auto"
+            >
+              <div
+                class="sc-AxirZ cZokSJ border-theme-neutral-800"
+              >
+                <div
+                  class="text-theme-neutral-800"
+                >
+                  <div
+                    class="sc-AxiKw dklFyP"
+                    height="20"
+                    width="20"
+                  >
+                    <svg>
+                      portfolio.svg
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="flex-auto my-auto"
+            >
+              <div
+                class="font-bold text-theme-neutral-800"
+              >
+                Portfolio
+              </div>
+              <div
+                class="text-sm text-theme-neutral-500"
+              >
+                9 topics
+              </div>
+            </div>
+          </div>
+        </a>
+        <a
+          class="flex flex-row w-64 cursor-pointer border-r-1 last:border-r-0 border-theme-neutral-200"
+          title="Plugins"
+        >
+          <div
+            class="flex flex-row w-full p-5 mx-2 bg-white px-7 rounded-md hover:shadow-xl"
+          >
+            <div
+              class="w-2/5 my-auto"
+            >
+              <div
+                class="sc-AxirZ cZokSJ border-theme-neutral-800"
+              >
+                <div
+                  class="text-theme-neutral-800"
+                >
+                  <div
+                    class="sc-AxiKw dklFyP"
+                    height="20"
+                    width="20"
+                  >
+                    <svg>
+                      plugins.svg
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="flex-auto my-auto"
+            >
+              <div
+                class="font-bold text-theme-neutral-800"
+              >
+                Plugins
+              </div>
+              <div
+                class="text-sm text-theme-neutral-500"
+              >
+                106 topics
+              </div>
+            </div>
+          </div>
+        </a>
+        <a
+          class="flex flex-row w-64 cursor-pointer border-r-1 last:border-r-0 border-theme-neutral-200"
+          title="Exchanges"
+        >
+          <div
+            class="flex flex-row w-full p-5 mx-2 bg-white px-7 rounded-md hover:shadow-xl"
+          >
+            <div
+              class="w-2/5 my-auto"
+            >
+              <div
+                class="sc-AxirZ cZokSJ border-theme-neutral-800"
+              >
+                <div
+                  class="text-theme-neutral-800"
+                >
+                  <div
+                    class="sc-AxiKw dklFyP"
+                    height="20"
+                    width="20"
+                  >
+                    <svg>
+                      exchange.svg
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="flex-auto my-auto"
+            >
+              <div
+                class="font-bold text-theme-neutral-800"
+              >
+                Exchanges
+              </div>
+              <div
+                class="text-sm text-theme-neutral-500"
+              >
+                28 topics
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div
+      class="py-10 mb-10 bg-white px-14"
+    >
+      <div
+        class="flex flex-row"
+      >
+        <div
+          class="w-1/3 mr-10"
+        >
+          <h3>
+            Most Helpful
+          </h3>
+          <ul />
+        </div>
+        <div
+          class="w-1/3 mr-10"
+        >
+          <h3>
+            Most Popular
+          </h3>
+          <ul />
+        </div>
+        <div
+          class="w-1/3 mr-10"
+        >
+          <h3>
+            Newest
+          </h3>
+          <ul />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`SupportPage should render main support page with helpful articles 1`] = `
+<div>
+  <div
+    class="-m-5 bg-theme-neutral-100"
+  >
+    <div
+      class="mb-5 bg-white p-13"
+    >
+      <div
+        class="flex"
+      >
+        <div
+          class="w-2/3"
+        >
+          <h1>
+            Help & Support
+          </h1>
+          <p
+            class="text-theme-neutral-600"
+          >
+            Do you need any help? Find it in our archive or write to us
+          </p>
+        </div>
+        <div
+          class="flex justify-end w-1/3"
+        >
+          <div
+            class="my-auto cursor-pointer text-theme-primary-200"
+          >
+            <div
+              class="sc-AxiKw dzBdqj"
+              height="1em"
+              width="1em"
+            >
+              <svg>
+                search.svg
+              </svg>
+            </div>
+          </div>
+          <div
+            class="h-8 mx-10 my-auto border-l border-1 border-theme-primary-100"
+          />
+          <div
+            class="my-auto"
+          >
+            <button
+              class="sc-AxjAm ddQVWI"
+              color="primary"
+              type="button"
+            >
+              Contact us
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="mb-5 bg-white p-13"
+    >
+      <div
+        class="flex flex-row"
+      />
+    </div>
+    <div
+      class="py-10 mb-10 bg-white px-14"
+    >
+      <div
+        class="flex flex-row"
+      >
+        <div
+          class="w-1/3 mr-10"
+        >
+          <h3>
+            Most Helpful
+          </h3>
+          <ul>
+            <li
+              class="border-dotted cursor-pointer border-b-1 border-theme-neutral-300 last:border-b-0"
+            >
+              <a
+                class="flex px-2 py-4 -mx-3 rounded-md border-3 border-theme-background hover:bg-theme-neutral-100 text-theme-neutral-800 hover:text-theme-primary-600"
+                href="/"
+                title="How to register an account?"
+              >
+                <div>
+                  <div
+                    class="pt-1 text-theme-neutral-800"
+                  >
+                    <div
+                      class="sc-AxiKw bctdez"
+                      height="16"
+                      width="16"
+                    >
+                      <svg>
+                        article.svg
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ml-3"
+                >
+                  How to register an account?
+                </div>
+              </a>
+            </li>
+            <li
+              class="border-dotted cursor-pointer border-b-1 border-theme-neutral-300 last:border-b-0"
+            >
+              <a
+                class="flex px-2 py-4 -mx-3 rounded-md border-3 border-theme-background hover:bg-theme-neutral-100 text-theme-neutral-800 hover:text-theme-primary-600"
+                href="/"
+                title="How to enter your account"
+              >
+                <div>
+                  <div
+                    class="pt-1 text-theme-neutral-800"
+                  >
+                    <div
+                      class="sc-AxiKw bctdez"
+                      height="16"
+                      width="16"
+                    >
+                      <svg>
+                        article.svg
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ml-3"
+                >
+                  How to enter your account
+                </div>
+              </a>
+            </li>
+            <li
+              class="border-dotted cursor-pointer border-b-1 border-theme-neutral-300 last:border-b-0"
+            >
+              <a
+                class="flex px-2 py-4 -mx-3 rounded-md border-3 border-theme-background hover:bg-theme-neutral-100 text-theme-neutral-800 hover:text-theme-primary-600"
+                href="/"
+                title="How can I change my personal data if I do not have access to my account (forgot my password) and to my mail?"
+              >
+                <div>
+                  <div
+                    class="pt-1 text-theme-neutral-800"
+                  >
+                    <div
+                      class="sc-AxiKw bctdez"
+                      height="16"
+                      width="16"
+                    >
+                      <svg>
+                        article.svg
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ml-3"
+                >
+                  How can I change my personal data if I do not have access to my account (forgot my password) and to my mail?
+                </div>
+              </a>
+            </li>
+            <li
+              class="border-dotted cursor-pointer border-b-1 border-theme-neutral-300 last:border-b-0"
+            >
+              <a
+                class="flex px-2 py-4 -mx-3 rounded-md border-3 border-theme-background hover:bg-theme-neutral-100 text-theme-neutral-800 hover:text-theme-primary-600"
+                href="/"
+                title="If you need to make changes to the data entered during the passage of verification, where to apply, how to issue a request?"
+              >
+                <div>
+                  <div
+                    class="pt-1 text-theme-neutral-800"
+                  >
+                    <div
+                      class="sc-AxiKw bctdez"
+                      height="16"
+                      width="16"
+                    >
+                      <svg>
+                        article.svg
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ml-3"
+                >
+                  If you need to make changes to the data entered during the passage of verification, where to apply, how to issue a request?
+                </div>
+              </a>
+            </li>
+            <li
+              class="border-dotted cursor-pointer border-b-1 border-theme-neutral-300 last:border-b-0"
+            >
+              <a
+                class="flex px-2 py-4 -mx-3 rounded-md border-3 border-theme-background hover:bg-theme-neutral-100 text-theme-neutral-800 hover:text-theme-primary-600"
+                href="/"
+                title="Can I delete my account"
+              >
+                <div>
+                  <div
+                    class="pt-1 text-theme-neutral-800"
+                  >
+                    <div
+                      class="sc-AxiKw bctdez"
+                      height="16"
+                      width="16"
+                    >
+                      <svg>
+                        article.svg
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ml-3"
+                >
+                  Can I delete my account
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div
+          class="w-1/3 mr-10"
+        >
+          <h3>
+            Most Popular
+          </h3>
+          <ul />
+        </div>
+        <div
+          class="w-1/3 mr-10"
+        >
+          <h3>
+            Newest
+          </h3>
+          <ul />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`SupportPage should render main support page with newest articles 1`] = `
+<div>
+  <div
+    class="-m-5 bg-theme-neutral-100"
+  >
+    <div
+      class="mb-5 bg-white p-13"
+    >
+      <div
+        class="flex"
+      >
+        <div
+          class="w-2/3"
+        >
+          <h1>
+            Help & Support
+          </h1>
+          <p
+            class="text-theme-neutral-600"
+          >
+            Do you need any help? Find it in our archive or write to us
+          </p>
+        </div>
+        <div
+          class="flex justify-end w-1/3"
+        >
+          <div
+            class="my-auto cursor-pointer text-theme-primary-200"
+          >
+            <div
+              class="sc-AxiKw dzBdqj"
+              height="1em"
+              width="1em"
+            >
+              <svg>
+                search.svg
+              </svg>
+            </div>
+          </div>
+          <div
+            class="h-8 mx-10 my-auto border-l border-1 border-theme-primary-100"
+          />
+          <div
+            class="my-auto"
+          >
+            <button
+              class="sc-AxjAm ddQVWI"
+              color="primary"
+              type="button"
+            >
+              Contact us
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="mb-5 bg-white p-13"
+    >
+      <div
+        class="flex flex-row"
+      />
+    </div>
+    <div
+      class="py-10 mb-10 bg-white px-14"
+    >
+      <div
+        class="flex flex-row"
+      >
+        <div
+          class="w-1/3 mr-10"
+        >
+          <h3>
+            Most Helpful
+          </h3>
+          <ul />
+        </div>
+        <div
+          class="w-1/3 mr-10"
+        >
+          <h3>
+            Most Popular
+          </h3>
+          <ul />
+        </div>
+        <div
+          class="w-1/3 mr-10"
+        >
+          <h3>
+            Newest
+          </h3>
+          <ul>
+            <li
+              class="border-dotted cursor-pointer border-b-1 border-theme-neutral-300 last:border-b-0"
+            >
+              <a
+                class="flex px-2 py-4 -mx-3 rounded-md border-3 border-theme-background hover:bg-theme-neutral-100 text-theme-neutral-800 hover:text-theme-primary-600"
+                href="/"
+                title="How to withdraw from wallet"
+              >
+                <div>
+                  <div
+                    class="pt-1 text-theme-neutral-800"
+                  >
+                    <div
+                      class="sc-AxiKw bctdez"
+                      height="16"
+                      width="16"
+                    >
+                      <svg>
+                        article.svg
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ml-3"
+                >
+                  How to withdraw from wallet
+                </div>
+              </a>
+            </li>
+            <li
+              class="border-dotted cursor-pointer border-b-1 border-theme-neutral-300 last:border-b-0"
+            >
+              <a
+                class="flex px-2 py-4 -mx-3 rounded-md border-3 border-theme-background hover:bg-theme-neutral-100 text-theme-neutral-800 hover:text-theme-primary-600"
+                href="/"
+                title="How to Make Internal Transfer within wallet"
+              >
+                <div>
+                  <div
+                    class="pt-1 text-theme-neutral-800"
+                  >
+                    <div
+                      class="sc-AxiKw bctdez"
+                      height="16"
+                      width="16"
+                    >
+                      <svg>
+                        article.svg
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ml-3"
+                >
+                  How to Make Internal Transfer within wallet
+                </div>
+              </a>
+            </li>
+            <li
+              class="border-dotted cursor-pointer border-b-1 border-theme-neutral-300 last:border-b-0"
+            >
+              <a
+                class="flex px-2 py-4 -mx-3 rounded-md border-3 border-theme-background hover:bg-theme-neutral-100 text-theme-neutral-800 hover:text-theme-primary-600"
+                href="/"
+                title="Missing Withdrawals"
+              >
+                <div>
+                  <div
+                    class="pt-1 text-theme-neutral-800"
+                  >
+                    <div
+                      class="sc-AxiKw bctdez"
+                      height="16"
+                      width="16"
+                    >
+                      <svg>
+                        article.svg
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ml-3"
+                >
+                  Missing Withdrawals
+                </div>
+              </a>
+            </li>
+            <li
+              class="border-dotted cursor-pointer border-b-1 border-theme-neutral-300 last:border-b-0"
+            >
+              <a
+                class="flex px-2 py-4 -mx-3 rounded-md border-3 border-theme-background hover:bg-theme-neutral-100 text-theme-neutral-800 hover:text-theme-primary-600"
+                href="/"
+                title="Withdrawal to a Wrong Address"
+              >
+                <div>
+                  <div
+                    class="pt-1 text-theme-neutral-800"
+                  >
+                    <div
+                      class="sc-AxiKw bctdez"
+                      height="16"
+                      width="16"
+                    >
+                      <svg>
+                        article.svg
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ml-3"
+                >
+                  Withdrawal to a Wrong Address
+                </div>
+              </a>
+            </li>
+            <li
+              class="border-dotted cursor-pointer border-b-1 border-theme-neutral-300 last:border-b-0"
+            >
+              <a
+                class="flex px-2 py-4 -mx-3 rounded-md border-3 border-theme-background hover:bg-theme-neutral-100 text-theme-neutral-800 hover:text-theme-primary-600"
+                href="/"
+                title="How to Resume the Withdrawal Function"
+              >
+                <div>
+                  <div
+                    class="pt-1 text-theme-neutral-800"
+                  >
+                    <div
+                      class="sc-AxiKw bctdez"
+                      height="16"
+                      width="16"
+                    >
+                      <svg>
+                        article.svg
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ml-3"
+                >
+                  How to Resume the Withdrawal Function
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`SupportPage should render main support page with popular articles 1`] = `
+<div>
+  <div
+    class="-m-5 bg-theme-neutral-100"
+  >
+    <div
+      class="mb-5 bg-white p-13"
+    >
+      <div
+        class="flex"
+      >
+        <div
+          class="w-2/3"
+        >
+          <h1>
+            Help & Support
+          </h1>
+          <p
+            class="text-theme-neutral-600"
+          >
+            Do you need any help? Find it in our archive or write to us
+          </p>
+        </div>
+        <div
+          class="flex justify-end w-1/3"
+        >
+          <div
+            class="my-auto cursor-pointer text-theme-primary-200"
+          >
+            <div
+              class="sc-AxiKw dzBdqj"
+              height="1em"
+              width="1em"
+            >
+              <svg>
+                search.svg
+              </svg>
+            </div>
+          </div>
+          <div
+            class="h-8 mx-10 my-auto border-l border-1 border-theme-primary-100"
+          />
+          <div
+            class="my-auto"
+          >
+            <button
+              class="sc-AxjAm ddQVWI"
+              color="primary"
+              type="button"
+            >
+              Contact us
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="mb-5 bg-white p-13"
+    >
+      <div
+        class="flex flex-row"
+      />
+    </div>
+    <div
+      class="py-10 mb-10 bg-white px-14"
+    >
+      <div
+        class="flex flex-row"
+      >
+        <div
+          class="w-1/3 mr-10"
+        >
+          <h3>
+            Most Helpful
+          </h3>
+          <ul />
+        </div>
+        <div
+          class="w-1/3 mr-10"
+        >
+          <h3>
+            Most Popular
+          </h3>
+          <ul>
+            <li
+              class="border-dotted cursor-pointer border-b-1 border-theme-neutral-300 last:border-b-0"
+            >
+              <a
+                class="flex px-2 py-4 -mx-3 rounded-md border-3 border-theme-background hover:bg-theme-neutral-100 text-theme-neutral-800 hover:text-theme-primary-600"
+                href="/"
+                title="How to delete YubiKey for Two-factor Authentication (2FA)"
+              >
+                <div>
+                  <div
+                    class="pt-1 text-theme-neutral-800"
+                  >
+                    <div
+                      class="sc-AxiKw bctdez"
+                      height="16"
+                      width="16"
+                    >
+                      <svg>
+                        article.svg
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ml-3"
+                >
+                  How to delete YubiKey for Two-factor Authentication (2FA)
+                </div>
+              </a>
+            </li>
+            <li
+              class="border-dotted cursor-pointer border-b-1 border-theme-neutral-300 last:border-b-0"
+            >
+              <a
+                class="flex px-2 py-4 -mx-3 rounded-md border-3 border-theme-background hover:bg-theme-neutral-100 text-theme-neutral-800 hover:text-theme-primary-600"
+                href="/"
+                title="Using a YubiKey for Two-Factor Authentication (2FA)"
+              >
+                <div>
+                  <div
+                    class="pt-1 text-theme-neutral-800"
+                  >
+                    <div
+                      class="sc-AxiKw bctdez"
+                      height="16"
+                      width="16"
+                    >
+                      <svg>
+                        article.svg
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ml-3"
+                >
+                  Using a YubiKey for Two-Factor Authentication (2FA)
+                </div>
+              </a>
+            </li>
+            <li
+              class="border-dotted cursor-pointer border-b-1 border-theme-neutral-300 last:border-b-0"
+            >
+              <a
+                class="flex px-2 py-4 -mx-3 rounded-md border-3 border-theme-background hover:bg-theme-neutral-100 text-theme-neutral-800 hover:text-theme-primary-600"
+                href="/"
+                title="2FA Code Error"
+              >
+                <div>
+                  <div
+                    class="pt-1 text-theme-neutral-800"
+                  >
+                    <div
+                      class="sc-AxiKw bctdez"
+                      height="16"
+                      width="16"
+                    >
+                      <svg>
+                        article.svg
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ml-3"
+                >
+                  2FA Code Error
+                </div>
+              </a>
+            </li>
+            <li
+              class="border-dotted cursor-pointer border-b-1 border-theme-neutral-300 last:border-b-0"
+            >
+              <a
+                class="flex px-2 py-4 -mx-3 rounded-md border-3 border-theme-background hover:bg-theme-neutral-100 text-theme-neutral-800 hover:text-theme-primary-600"
+                href="/"
+                title="How to Reset SMS Authentication"
+              >
+                <div>
+                  <div
+                    class="pt-1 text-theme-neutral-800"
+                  >
+                    <div
+                      class="sc-AxiKw bctdez"
+                      height="16"
+                      width="16"
+                    >
+                      <svg>
+                        article.svg
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ml-3"
+                >
+                  How to Reset SMS Authentication
+                </div>
+              </a>
+            </li>
+            <li
+              class="border-dotted cursor-pointer border-b-1 border-theme-neutral-300 last:border-b-0"
+            >
+              <a
+                class="flex px-2 py-4 -mx-3 rounded-md border-3 border-theme-background hover:bg-theme-neutral-100 text-theme-neutral-800 hover:text-theme-primary-600"
+                href="/"
+                title="Supported SMS countries Not Receiving SMS Auth Codes"
+              >
+                <div>
+                  <div
+                    class="pt-1 text-theme-neutral-800"
+                  >
+                    <div
+                      class="sc-AxiKw bctdez"
+                      height="16"
+                      width="16"
+                    >
+                      <svg>
+                        article.svg
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ml-3"
+                >
+                  Supported SMS countries Not Receiving SMS Auth Codes
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div
+          class="w-1/3 mr-10"
+        >
+          <h3>
+            Newest
+          </h3>
+          <ul />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
