@@ -78,8 +78,8 @@ export const AddBlacklistPlugin = (props: AddBlacklistPluginProps) => {
 				<Table columns={columns} data={data}>
 					{(rowData: any) => (
 						<tr className="border-b border-dashed border-theme-neutral-200">
-							<td className="w-20">
-								<ChangeNowLogo />
+							<td className="w-16">
+								<ChangeNowLogo className="w-12 h-12" />
 							</td>
 
 							<td>
