@@ -25,12 +25,14 @@ export const InputRange = React.forwardRef<HTMLInputElement, Props>(
 			setValues([amount.toNumber()]);
 		};
 
+		const trackBackgroundMinValue = Math.max(values[0], 3);
+
 		return (
 			<InputGroup>
 				<InputCurrency
 					style={{
 						background: getTrackBackground({
-							values,
+							values: [trackBackgroundMinValue],
 							colors: ["rgba(var(--theme-color-primary-rgb), 0.1)", "transparent"],
 							min,
 							max,
