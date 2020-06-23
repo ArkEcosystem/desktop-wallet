@@ -9,8 +9,8 @@ describe("SearchBarFilters", () => {
 	it("should render", () => {
 		const networks = [
 			{ name: "Ark", isSelected: true },
-			{ name: "Eth", isSelected: true },
-			{ name: "Btc", isSelected: false },
+			{ name: "Ethereum", isSelected: true },
+			{ name: "Bitcoin", isSelected: false },
 		];
 
 		const mockFunction = () => void 0;

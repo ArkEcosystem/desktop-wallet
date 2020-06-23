@@ -15,7 +15,7 @@ export const networks = [
 
 export const wallets = [
 	{
-		coinIcon: "Btc",
+		coinIcon: "Bitcoin",
 		coinClass: "text-theme-warning-400 border-theme-warning-200",
 		avatarId: "test",
 		address: "ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
@@ -39,7 +39,7 @@ export const wallets = [
 		],
 	},
 	{
-		coinIcon: "Btc",
+		coinIcon: "Bitcoin",
 		coinClass: "text-theme-warning-400 border-theme-warning-200",
 		avatarId: "test",
 		address: "ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
@@ -63,7 +63,7 @@ export const wallets = [
 		],
 	},
 	{
-		coinIcon: "Btc",
+		coinIcon: "Bitcoin",
 		coinClass: "text-theme-warning-400 border-theme-warning-200",
 		avatarId: "test",
 		address: "ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
@@ -87,7 +87,7 @@ export const wallets = [
 		],
 	},
 	{
-		coinIcon: "Btc",
+		coinIcon: "Bitcoin",
 		coinClass: "text-theme-warning-400 border-theme-warning-200",
 		avatarId: "test",
 		address: "ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
@@ -111,7 +111,7 @@ export const wallets = [
 		],
 	},
 	{
-		coinIcon: "Btc",
+		coinIcon: "Bitcoin",
 		coinClass: "text-theme-warning-400 border-theme-warning-200",
 		avatarId: "test",
 		address: "ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
@@ -135,7 +135,7 @@ export const wallets = [
 		],
 	},
 	{
-		coinIcon: "Btc",
+		coinIcon: "Bitcoin",
 		coinClass: "text-theme-warning-400 border-theme-warning-200",
 		avatarId: "test",
 		address: "ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
@@ -159,7 +159,7 @@ export const wallets = [
 		],
 	},
 	{
-		coinIcon: "Btc",
+		coinIcon: "Bitcoin",
 		coinClass: "text-theme-warning-400 border-theme-warning-200",
 		avatarId: "test",
 		address: "ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
@@ -183,7 +183,7 @@ export const wallets = [
 		],
 	},
 	{
-		coinIcon: "Btc",
+		coinIcon: "Bitcoin",
 		coinClass: "text-theme-warning-400 border-theme-warning-200",
 		avatarId: "test",
 		address: "ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
@@ -207,7 +207,7 @@ export const wallets = [
 		],
 	},
 	{
-		coinIcon: "Btc",
+		coinIcon: "Bitcoin",
 		coinClass: "text-theme-warning-400 border-theme-warning-200",
 		avatarId: "test",
 		address: "ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
@@ -231,7 +231,7 @@ export const wallets = [
 		],
 	},
 	{
-		coinIcon: "Btc",
+		coinIcon: "Bitcoin",
 		coinClass: "text-theme-warning-400 border-theme-warning-200",
 		avatarId: "test",
 		address: "ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
@@ -255,7 +255,7 @@ export const wallets = [
 		],
 	},
 	{
-		coinIcon: "Btc",
+		coinIcon: "Bitcoin",
 		coinClass: "text-theme-warning-400 border-theme-warning-200",
 		avatarId: "test",
 		address: "ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",

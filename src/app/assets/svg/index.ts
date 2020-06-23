@@ -1,22 +1,23 @@
 import { ReactComponent as AlertDanger } from "./alert-danger.svg";
 import { ReactComponent as AlertDefault } from "./alert-default.svg";
 import { ReactComponent as AlertSuccess } from "./alert-success.svg";
-import { ReactComponent as Ark } from "./ark.svg";
 import { ReactComponent as ArrowBack } from "./arrow-back.svg";
 import { ReactComponent as ArrowDown } from "./arrowdown.svg";
 import { ReactComponent as ArrowUp } from "./arrowup.svg";
 import { ReactComponent as Article } from "./article.svg";
-import { ReactComponent as Btc } from "./btc.svg";
 import { ReactComponent as Checkmark } from "./checkmark.svg";
 import { ReactComponent as ChevronDown } from "./chevron-down.svg";
 import { ReactComponent as Close } from "./close.svg";
 import { ReactComponent as Confirmed } from "./confirmed.svg";
 import { ReactComponent as Copy } from "./copy.svg";
 import { ReactComponent as CrossSlim } from "./cross-slim.svg";
+import { ReactComponent as Ark } from "./currencies/ark.svg";
+import { ReactComponent as Bitcoin } from "./currencies/btc.svg";
+// Currencies
+import { ReactComponent as Ethereum } from "./currencies/eth.svg";
 import { ReactComponent as Delegate } from "./delegate.svg";
 import { ReactComponent as Discord } from "./discord.svg";
 import { ReactComponent as Download } from "./download.svg";
-import { ReactComponent as Eth } from "./eth.svg";
 import { ReactComponent as Exchange } from "./exchange.svg";
 import { ReactComponent as Explorer } from "./explorer.svg";
 import { ReactComponent as EyeOff } from "./eye-off.svg";
@@ -74,7 +75,7 @@ export const SvgCollection: any = {
 	ArrowBack,
 	ArrowDown,
 	ArrowUp,
-	Btc,
+	Bitcoin,
 	Checkmark,
 	ChevronDown,
 	Close,
@@ -84,7 +85,7 @@ export const SvgCollection: any = {
 	Delegate,
 	Discord,
 	Download,
-	Eth,
+	Ethereum,
 	Explorer,
 	Eye,
 	EyeOff,
