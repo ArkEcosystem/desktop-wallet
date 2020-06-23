@@ -80,6 +80,7 @@ exports[`Application root should render without crashing 1`] = `
                       "translation": Object {
                         "COMMON": Object {
                           "ADAPTER": "Adapter",
+                          "ADD": "Add",
                           "ADDRESS": "Address",
                           "ADVANCED_MODE": "Advanced Mode",
                           "ALL": "All",
@@ -124,6 +125,8 @@ exports[`Application root should render without crashing 1`] = `
                           "INITIALIZING": "Initializing...",
                           "INSTALL": "Install",
                           "IS_MARKET_CHART_ENABLED": "Price chart on the dashboard",
+                          "I_ACCEPT": "I Accept",
+                          "I_DECLINE": "I Decline",
                           "LANGUAGE": "Application Language",
                           "LEDGER": "Ledger",
                           "LEDGER_WALLET": "This is a Ledger wallet",
@@ -216,6 +219,19 @@ exports[`Application root should render without crashing 1`] = `
                           },
                         },
                         "PLUGINS": Object {
+                          "MODAL_ADD_BLACKLIST_PLUGIN": Object {
+                            "DESCRIPTION": "Find and select a plugin to add or remove it from the blacklist.",
+                            "SEARCH_PLACEHOLDER": "Search for a plugin",
+                            "TITLE": "Add Blacklist",
+                          },
+                          "MODAL_BEST_PLUGINS": Object {
+                            "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.",
+                            "TITLE": "Best applications of the month",
+                          },
+                          "MODAL_BLACKLIST_PLUGINS": Object {
+                            "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products.",
+                            "TITLE": "Blacklist",
+                          },
                           "MODAL_FEATURED_PLUGINS": Object {
                             "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.",
                             "TITLE": "Featured Plugins",
@@ -243,6 +259,12 @@ exports[`Application root should render without crashing 1`] = `
                             "TITLE": "Search",
                           },
                           "PLACEHOLDER": "What would you like to search for?",
+                        },
+                        "SETTINGS": Object {
+                          "MODAL_ADVANCED_MODE": Object {
+                            "DISCLAIMER": "By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.",
+                            "TITLE": "Advanced Mode Disclaimer",
+                          },
                         },
                         "TRANSACTION": Object {
                           "ACCOUNT": "Account",
@@ -394,6 +416,7 @@ exports[`Application root should render without crashing 1`] = `
                     "translation": Object {
                       "COMMON": Object {
                         "ADAPTER": "Adapter",
+                        "ADD": "Add",
                         "ADDRESS": "Address",
                         "ADVANCED_MODE": "Advanced Mode",
                         "ALL": "All",
@@ -438,6 +461,8 @@ exports[`Application root should render without crashing 1`] = `
                         "INITIALIZING": "Initializing...",
                         "INSTALL": "Install",
                         "IS_MARKET_CHART_ENABLED": "Price chart on the dashboard",
+                        "I_ACCEPT": "I Accept",
+                        "I_DECLINE": "I Decline",
                         "LANGUAGE": "Application Language",
                         "LEDGER": "Ledger",
                         "LEDGER_WALLET": "This is a Ledger wallet",
@@ -530,6 +555,19 @@ exports[`Application root should render without crashing 1`] = `
                         },
                       },
                       "PLUGINS": Object {
+                        "MODAL_ADD_BLACKLIST_PLUGIN": Object {
+                          "DESCRIPTION": "Find and select a plugin to add or remove it from the blacklist.",
+                          "SEARCH_PLACEHOLDER": "Search for a plugin",
+                          "TITLE": "Add Blacklist",
+                        },
+                        "MODAL_BEST_PLUGINS": Object {
+                          "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.",
+                          "TITLE": "Best applications of the month",
+                        },
+                        "MODAL_BLACKLIST_PLUGINS": Object {
+                          "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products.",
+                          "TITLE": "Blacklist",
+                        },
                         "MODAL_FEATURED_PLUGINS": Object {
                           "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.",
                           "TITLE": "Featured Plugins",
@@ -557,6 +595,12 @@ exports[`Application root should render without crashing 1`] = `
                           "TITLE": "Search",
                         },
                         "PLACEHOLDER": "What would you like to search for?",
+                      },
+                      "SETTINGS": Object {
+                        "MODAL_ADVANCED_MODE": Object {
+                          "DISCLAIMER": "By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.",
+                          "TITLE": "Advanced Mode Disclaimer",
+                        },
                       },
                       "TRANSACTION": Object {
                         "ACCOUNT": "Account",
@@ -712,6 +756,7 @@ exports[`Application root should render without crashing 1`] = `
                             "translation": Object {
                               "COMMON": Object {
                                 "ADAPTER": "Adapter",
+                                "ADD": "Add",
                                 "ADDRESS": "Address",
                                 "ADVANCED_MODE": "Advanced Mode",
                                 "ALL": "All",
@@ -756,6 +801,8 @@ exports[`Application root should render without crashing 1`] = `
                                 "INITIALIZING": "Initializing...",
                                 "INSTALL": "Install",
                                 "IS_MARKET_CHART_ENABLED": "Price chart on the dashboard",
+                                "I_ACCEPT": "I Accept",
+                                "I_DECLINE": "I Decline",
                                 "LANGUAGE": "Application Language",
                                 "LEDGER": "Ledger",
                                 "LEDGER_WALLET": "This is a Ledger wallet",
@@ -848,6 +895,19 @@ exports[`Application root should render without crashing 1`] = `
                                 },
                               },
                               "PLUGINS": Object {
+                                "MODAL_ADD_BLACKLIST_PLUGIN": Object {
+                                  "DESCRIPTION": "Find and select a plugin to add or remove it from the blacklist.",
+                                  "SEARCH_PLACEHOLDER": "Search for a plugin",
+                                  "TITLE": "Add Blacklist",
+                                },
+                                "MODAL_BEST_PLUGINS": Object {
+                                  "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.",
+                                  "TITLE": "Best applications of the month",
+                                },
+                                "MODAL_BLACKLIST_PLUGINS": Object {
+                                  "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products.",
+                                  "TITLE": "Blacklist",
+                                },
                                 "MODAL_FEATURED_PLUGINS": Object {
                                   "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.",
                                   "TITLE": "Featured Plugins",
@@ -875,6 +935,12 @@ exports[`Application root should render without crashing 1`] = `
                                   "TITLE": "Search",
                                 },
                                 "PLACEHOLDER": "What would you like to search for?",
+                              },
+                              "SETTINGS": Object {
+                                "MODAL_ADVANCED_MODE": Object {
+                                  "DISCLAIMER": "By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.",
+                                  "TITLE": "Advanced Mode Disclaimer",
+                                },
                               },
                               "TRANSACTION": Object {
                                 "ACCOUNT": "Account",
@@ -1017,6 +1083,7 @@ exports[`Application root should render without crashing 1`] = `
                           "translation": Object {
                             "COMMON": Object {
                               "ADAPTER": "Adapter",
+                              "ADD": "Add",
                               "ADDRESS": "Address",
                               "ADVANCED_MODE": "Advanced Mode",
                               "ALL": "All",
@@ -1061,6 +1128,8 @@ exports[`Application root should render without crashing 1`] = `
                               "INITIALIZING": "Initializing...",
                               "INSTALL": "Install",
                               "IS_MARKET_CHART_ENABLED": "Price chart on the dashboard",
+                              "I_ACCEPT": "I Accept",
+                              "I_DECLINE": "I Decline",
                               "LANGUAGE": "Application Language",
                               "LEDGER": "Ledger",
                               "LEDGER_WALLET": "This is a Ledger wallet",
@@ -1153,6 +1222,19 @@ exports[`Application root should render without crashing 1`] = `
                               },
                             },
                             "PLUGINS": Object {
+                              "MODAL_ADD_BLACKLIST_PLUGIN": Object {
+                                "DESCRIPTION": "Find and select a plugin to add or remove it from the blacklist.",
+                                "SEARCH_PLACEHOLDER": "Search for a plugin",
+                                "TITLE": "Add Blacklist",
+                              },
+                              "MODAL_BEST_PLUGINS": Object {
+                                "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.",
+                                "TITLE": "Best applications of the month",
+                              },
+                              "MODAL_BLACKLIST_PLUGINS": Object {
+                                "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products.",
+                                "TITLE": "Blacklist",
+                              },
                               "MODAL_FEATURED_PLUGINS": Object {
                                 "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.",
                                 "TITLE": "Featured Plugins",
@@ -1180,6 +1262,12 @@ exports[`Application root should render without crashing 1`] = `
                                 "TITLE": "Search",
                               },
                               "PLACEHOLDER": "What would you like to search for?",
+                            },
+                            "SETTINGS": Object {
+                              "MODAL_ADVANCED_MODE": Object {
+                                "DISCLAIMER": "By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.",
+                                "TITLE": "Advanced Mode Disclaimer",
+                              },
                             },
                             "TRANSACTION": Object {
                               "ACCOUNT": "Account",
@@ -1332,6 +1420,7 @@ exports[`Application root should render without crashing 1`] = `
                           "translation": Object {
                             "COMMON": Object {
                               "ADAPTER": "Adapter",
+                              "ADD": "Add",
                               "ADDRESS": "Address",
                               "ADVANCED_MODE": "Advanced Mode",
                               "ALL": "All",
@@ -1376,6 +1465,8 @@ exports[`Application root should render without crashing 1`] = `
                               "INITIALIZING": "Initializing...",
                               "INSTALL": "Install",
                               "IS_MARKET_CHART_ENABLED": "Price chart on the dashboard",
+                              "I_ACCEPT": "I Accept",
+                              "I_DECLINE": "I Decline",
                               "LANGUAGE": "Application Language",
                               "LEDGER": "Ledger",
                               "LEDGER_WALLET": "This is a Ledger wallet",
@@ -1468,6 +1559,19 @@ exports[`Application root should render without crashing 1`] = `
                               },
                             },
                             "PLUGINS": Object {
+                              "MODAL_ADD_BLACKLIST_PLUGIN": Object {
+                                "DESCRIPTION": "Find and select a plugin to add or remove it from the blacklist.",
+                                "SEARCH_PLACEHOLDER": "Search for a plugin",
+                                "TITLE": "Add Blacklist",
+                              },
+                              "MODAL_BEST_PLUGINS": Object {
+                                "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.",
+                                "TITLE": "Best applications of the month",
+                              },
+                              "MODAL_BLACKLIST_PLUGINS": Object {
+                                "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products.",
+                                "TITLE": "Blacklist",
+                              },
                               "MODAL_FEATURED_PLUGINS": Object {
                                 "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.",
                                 "TITLE": "Featured Plugins",
@@ -1495,6 +1599,12 @@ exports[`Application root should render without crashing 1`] = `
                                 "TITLE": "Search",
                               },
                               "PLACEHOLDER": "What would you like to search for?",
+                            },
+                            "SETTINGS": Object {
+                              "MODAL_ADVANCED_MODE": Object {
+                                "DISCLAIMER": "By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.",
+                                "TITLE": "Advanced Mode Disclaimer",
+                              },
                             },
                             "TRANSACTION": Object {
                               "ACCOUNT": "Account",
@@ -1642,6 +1752,7 @@ exports[`Application root should render without crashing 1`] = `
                         "translation": Object {
                           "COMMON": Object {
                             "ADAPTER": "Adapter",
+                            "ADD": "Add",
                             "ADDRESS": "Address",
                             "ADVANCED_MODE": "Advanced Mode",
                             "ALL": "All",
@@ -1686,6 +1797,8 @@ exports[`Application root should render without crashing 1`] = `
                             "INITIALIZING": "Initializing...",
                             "INSTALL": "Install",
                             "IS_MARKET_CHART_ENABLED": "Price chart on the dashboard",
+                            "I_ACCEPT": "I Accept",
+                            "I_DECLINE": "I Decline",
                             "LANGUAGE": "Application Language",
                             "LEDGER": "Ledger",
                             "LEDGER_WALLET": "This is a Ledger wallet",
@@ -1778,6 +1891,19 @@ exports[`Application root should render without crashing 1`] = `
                             },
                           },
                           "PLUGINS": Object {
+                            "MODAL_ADD_BLACKLIST_PLUGIN": Object {
+                              "DESCRIPTION": "Find and select a plugin to add or remove it from the blacklist.",
+                              "SEARCH_PLACEHOLDER": "Search for a plugin",
+                              "TITLE": "Add Blacklist",
+                            },
+                            "MODAL_BEST_PLUGINS": Object {
+                              "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.",
+                              "TITLE": "Best applications of the month",
+                            },
+                            "MODAL_BLACKLIST_PLUGINS": Object {
+                              "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products.",
+                              "TITLE": "Blacklist",
+                            },
                             "MODAL_FEATURED_PLUGINS": Object {
                               "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.",
                               "TITLE": "Featured Plugins",
@@ -1805,6 +1931,12 @@ exports[`Application root should render without crashing 1`] = `
                               "TITLE": "Search",
                             },
                             "PLACEHOLDER": "What would you like to search for?",
+                          },
+                          "SETTINGS": Object {
+                            "MODAL_ADVANCED_MODE": Object {
+                              "DISCLAIMER": "By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.",
+                              "TITLE": "Advanced Mode Disclaimer",
+                            },
                           },
                           "TRANSACTION": Object {
                             "ACCOUNT": "Account",
@@ -1905,6 +2037,7 @@ exports[`Application root should render without crashing 1`] = `
                       "translation": Object {
                         "COMMON": Object {
                           "ADAPTER": "Adapter",
+                          "ADD": "Add",
                           "ADDRESS": "Address",
                           "ADVANCED_MODE": "Advanced Mode",
                           "ALL": "All",
@@ -1949,6 +2082,8 @@ exports[`Application root should render without crashing 1`] = `
                           "INITIALIZING": "Initializing...",
                           "INSTALL": "Install",
                           "IS_MARKET_CHART_ENABLED": "Price chart on the dashboard",
+                          "I_ACCEPT": "I Accept",
+                          "I_DECLINE": "I Decline",
                           "LANGUAGE": "Application Language",
                           "LEDGER": "Ledger",
                           "LEDGER_WALLET": "This is a Ledger wallet",
@@ -2041,6 +2176,19 @@ exports[`Application root should render without crashing 1`] = `
                           },
                         },
                         "PLUGINS": Object {
+                          "MODAL_ADD_BLACKLIST_PLUGIN": Object {
+                            "DESCRIPTION": "Find and select a plugin to add or remove it from the blacklist.",
+                            "SEARCH_PLACEHOLDER": "Search for a plugin",
+                            "TITLE": "Add Blacklist",
+                          },
+                          "MODAL_BEST_PLUGINS": Object {
+                            "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.",
+                            "TITLE": "Best applications of the month",
+                          },
+                          "MODAL_BLACKLIST_PLUGINS": Object {
+                            "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products.",
+                            "TITLE": "Blacklist",
+                          },
                           "MODAL_FEATURED_PLUGINS": Object {
                             "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.",
                             "TITLE": "Featured Plugins",
@@ -2068,6 +2216,12 @@ exports[`Application root should render without crashing 1`] = `
                             "TITLE": "Search",
                           },
                           "PLACEHOLDER": "What would you like to search for?",
+                        },
+                        "SETTINGS": Object {
+                          "MODAL_ADVANCED_MODE": Object {
+                            "DISCLAIMER": "By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.",
+                            "TITLE": "Advanced Mode Disclaimer",
+                          },
                         },
                         "TRANSACTION": Object {
                           "ACCOUNT": "Account",
@@ -2214,6 +2368,7 @@ exports[`Application root should render without crashing 1`] = `
                           "translation": Object {
                             "COMMON": Object {
                               "ADAPTER": "Adapter",
+                              "ADD": "Add",
                               "ADDRESS": "Address",
                               "ADVANCED_MODE": "Advanced Mode",
                               "ALL": "All",
@@ -2258,6 +2413,8 @@ exports[`Application root should render without crashing 1`] = `
                               "INITIALIZING": "Initializing...",
                               "INSTALL": "Install",
                               "IS_MARKET_CHART_ENABLED": "Price chart on the dashboard",
+                              "I_ACCEPT": "I Accept",
+                              "I_DECLINE": "I Decline",
                               "LANGUAGE": "Application Language",
                               "LEDGER": "Ledger",
                               "LEDGER_WALLET": "This is a Ledger wallet",
@@ -2350,6 +2507,19 @@ exports[`Application root should render without crashing 1`] = `
                               },
                             },
                             "PLUGINS": Object {
+                              "MODAL_ADD_BLACKLIST_PLUGIN": Object {
+                                "DESCRIPTION": "Find and select a plugin to add or remove it from the blacklist.",
+                                "SEARCH_PLACEHOLDER": "Search for a plugin",
+                                "TITLE": "Add Blacklist",
+                              },
+                              "MODAL_BEST_PLUGINS": Object {
+                                "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.",
+                                "TITLE": "Best applications of the month",
+                              },
+                              "MODAL_BLACKLIST_PLUGINS": Object {
+                                "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products.",
+                                "TITLE": "Blacklist",
+                              },
                               "MODAL_FEATURED_PLUGINS": Object {
                                 "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.",
                                 "TITLE": "Featured Plugins",
@@ -2377,6 +2547,12 @@ exports[`Application root should render without crashing 1`] = `
                                 "TITLE": "Search",
                               },
                               "PLACEHOLDER": "What would you like to search for?",
+                            },
+                            "SETTINGS": Object {
+                              "MODAL_ADVANCED_MODE": Object {
+                                "DISCLAIMER": "By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.",
+                                "TITLE": "Advanced Mode Disclaimer",
+                              },
                             },
                             "TRANSACTION": Object {
                               "ACCOUNT": "Account",
@@ -2524,6 +2700,7 @@ exports[`Application root should render without crashing 1`] = `
                         "translation": Object {
                           "COMMON": Object {
                             "ADAPTER": "Adapter",
+                            "ADD": "Add",
                             "ADDRESS": "Address",
                             "ADVANCED_MODE": "Advanced Mode",
                             "ALL": "All",
@@ -2568,6 +2745,8 @@ exports[`Application root should render without crashing 1`] = `
                             "INITIALIZING": "Initializing...",
                             "INSTALL": "Install",
                             "IS_MARKET_CHART_ENABLED": "Price chart on the dashboard",
+                            "I_ACCEPT": "I Accept",
+                            "I_DECLINE": "I Decline",
                             "LANGUAGE": "Application Language",
                             "LEDGER": "Ledger",
                             "LEDGER_WALLET": "This is a Ledger wallet",
@@ -2660,6 +2839,19 @@ exports[`Application root should render without crashing 1`] = `
                             },
                           },
                           "PLUGINS": Object {
+                            "MODAL_ADD_BLACKLIST_PLUGIN": Object {
+                              "DESCRIPTION": "Find and select a plugin to add or remove it from the blacklist.",
+                              "SEARCH_PLACEHOLDER": "Search for a plugin",
+                              "TITLE": "Add Blacklist",
+                            },
+                            "MODAL_BEST_PLUGINS": Object {
+                              "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.",
+                              "TITLE": "Best applications of the month",
+                            },
+                            "MODAL_BLACKLIST_PLUGINS": Object {
+                              "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products.",
+                              "TITLE": "Blacklist",
+                            },
                             "MODAL_FEATURED_PLUGINS": Object {
                               "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.",
                               "TITLE": "Featured Plugins",
@@ -2687,6 +2879,12 @@ exports[`Application root should render without crashing 1`] = `
                               "TITLE": "Search",
                             },
                             "PLACEHOLDER": "What would you like to search for?",
+                          },
+                          "SETTINGS": Object {
+                            "MODAL_ADVANCED_MODE": Object {
+                              "DISCLAIMER": "By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.",
+                              "TITLE": "Advanced Mode Disclaimer",
+                            },
                           },
                           "TRANSACTION": Object {
                             "ACCOUNT": "Account",
@@ -2846,6 +3044,7 @@ exports[`Application root should render without crashing 1`] = `
                           "translation": Object {
                             "COMMON": Object {
                               "ADAPTER": "Adapter",
+                              "ADD": "Add",
                               "ADDRESS": "Address",
                               "ADVANCED_MODE": "Advanced Mode",
                               "ALL": "All",
@@ -2890,6 +3089,8 @@ exports[`Application root should render without crashing 1`] = `
                               "INITIALIZING": "Initializing...",
                               "INSTALL": "Install",
                               "IS_MARKET_CHART_ENABLED": "Price chart on the dashboard",
+                              "I_ACCEPT": "I Accept",
+                              "I_DECLINE": "I Decline",
                               "LANGUAGE": "Application Language",
                               "LEDGER": "Ledger",
                               "LEDGER_WALLET": "This is a Ledger wallet",
@@ -2982,6 +3183,19 @@ exports[`Application root should render without crashing 1`] = `
                               },
                             },
                             "PLUGINS": Object {
+                              "MODAL_ADD_BLACKLIST_PLUGIN": Object {
+                                "DESCRIPTION": "Find and select a plugin to add or remove it from the blacklist.",
+                                "SEARCH_PLACEHOLDER": "Search for a plugin",
+                                "TITLE": "Add Blacklist",
+                              },
+                              "MODAL_BEST_PLUGINS": Object {
+                                "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.",
+                                "TITLE": "Best applications of the month",
+                              },
+                              "MODAL_BLACKLIST_PLUGINS": Object {
+                                "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products.",
+                                "TITLE": "Blacklist",
+                              },
                               "MODAL_FEATURED_PLUGINS": Object {
                                 "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.",
                                 "TITLE": "Featured Plugins",
@@ -3009,6 +3223,12 @@ exports[`Application root should render without crashing 1`] = `
                                 "TITLE": "Search",
                               },
                               "PLACEHOLDER": "What would you like to search for?",
+                            },
+                            "SETTINGS": Object {
+                              "MODAL_ADVANCED_MODE": Object {
+                                "DISCLAIMER": "By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.",
+                                "TITLE": "Advanced Mode Disclaimer",
+                              },
                             },
                             "TRANSACTION": Object {
                               "ACCOUNT": "Account",
@@ -3151,6 +3371,7 @@ exports[`Application root should render without crashing 1`] = `
                         "translation": Object {
                           "COMMON": Object {
                             "ADAPTER": "Adapter",
+                            "ADD": "Add",
                             "ADDRESS": "Address",
                             "ADVANCED_MODE": "Advanced Mode",
                             "ALL": "All",
@@ -3195,6 +3416,8 @@ exports[`Application root should render without crashing 1`] = `
                             "INITIALIZING": "Initializing...",
                             "INSTALL": "Install",
                             "IS_MARKET_CHART_ENABLED": "Price chart on the dashboard",
+                            "I_ACCEPT": "I Accept",
+                            "I_DECLINE": "I Decline",
                             "LANGUAGE": "Application Language",
                             "LEDGER": "Ledger",
                             "LEDGER_WALLET": "This is a Ledger wallet",
@@ -3287,6 +3510,19 @@ exports[`Application root should render without crashing 1`] = `
                             },
                           },
                           "PLUGINS": Object {
+                            "MODAL_ADD_BLACKLIST_PLUGIN": Object {
+                              "DESCRIPTION": "Find and select a plugin to add or remove it from the blacklist.",
+                              "SEARCH_PLACEHOLDER": "Search for a plugin",
+                              "TITLE": "Add Blacklist",
+                            },
+                            "MODAL_BEST_PLUGINS": Object {
+                              "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.",
+                              "TITLE": "Best applications of the month",
+                            },
+                            "MODAL_BLACKLIST_PLUGINS": Object {
+                              "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products.",
+                              "TITLE": "Blacklist",
+                            },
                             "MODAL_FEATURED_PLUGINS": Object {
                               "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.",
                               "TITLE": "Featured Plugins",
@@ -3314,6 +3550,12 @@ exports[`Application root should render without crashing 1`] = `
                               "TITLE": "Search",
                             },
                             "PLACEHOLDER": "What would you like to search for?",
+                          },
+                          "SETTINGS": Object {
+                            "MODAL_ADVANCED_MODE": Object {
+                              "DISCLAIMER": "By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.",
+                              "TITLE": "Advanced Mode Disclaimer",
+                            },
                           },
                           "TRANSACTION": Object {
                             "ACCOUNT": "Account",
@@ -3465,6 +3707,7 @@ exports[`Application root should render without crashing 1`] = `
                         "translation": Object {
                           "COMMON": Object {
                             "ADAPTER": "Adapter",
+                            "ADD": "Add",
                             "ADDRESS": "Address",
                             "ADVANCED_MODE": "Advanced Mode",
                             "ALL": "All",
@@ -3509,6 +3752,8 @@ exports[`Application root should render without crashing 1`] = `
                             "INITIALIZING": "Initializing...",
                             "INSTALL": "Install",
                             "IS_MARKET_CHART_ENABLED": "Price chart on the dashboard",
+                            "I_ACCEPT": "I Accept",
+                            "I_DECLINE": "I Decline",
                             "LANGUAGE": "Application Language",
                             "LEDGER": "Ledger",
                             "LEDGER_WALLET": "This is a Ledger wallet",
@@ -3601,6 +3846,19 @@ exports[`Application root should render without crashing 1`] = `
                             },
                           },
                           "PLUGINS": Object {
+                            "MODAL_ADD_BLACKLIST_PLUGIN": Object {
+                              "DESCRIPTION": "Find and select a plugin to add or remove it from the blacklist.",
+                              "SEARCH_PLACEHOLDER": "Search for a plugin",
+                              "TITLE": "Add Blacklist",
+                            },
+                            "MODAL_BEST_PLUGINS": Object {
+                              "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.",
+                              "TITLE": "Best applications of the month",
+                            },
+                            "MODAL_BLACKLIST_PLUGINS": Object {
+                              "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products.",
+                              "TITLE": "Blacklist",
+                            },
                             "MODAL_FEATURED_PLUGINS": Object {
                               "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.",
                               "TITLE": "Featured Plugins",
@@ -3628,6 +3886,12 @@ exports[`Application root should render without crashing 1`] = `
                               "TITLE": "Search",
                             },
                             "PLACEHOLDER": "What would you like to search for?",
+                          },
+                          "SETTINGS": Object {
+                            "MODAL_ADVANCED_MODE": Object {
+                              "DISCLAIMER": "By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.",
+                              "TITLE": "Advanced Mode Disclaimer",
+                            },
                           },
                           "TRANSACTION": Object {
                             "ACCOUNT": "Account",
@@ -3782,6 +4046,7 @@ exports[`Application root should render without crashing 1`] = `
                             "translation": Object {
                               "COMMON": Object {
                                 "ADAPTER": "Adapter",
+                                "ADD": "Add",
                                 "ADDRESS": "Address",
                                 "ADVANCED_MODE": "Advanced Mode",
                                 "ALL": "All",
@@ -3826,6 +4091,8 @@ exports[`Application root should render without crashing 1`] = `
                                 "INITIALIZING": "Initializing...",
                                 "INSTALL": "Install",
                                 "IS_MARKET_CHART_ENABLED": "Price chart on the dashboard",
+                                "I_ACCEPT": "I Accept",
+                                "I_DECLINE": "I Decline",
                                 "LANGUAGE": "Application Language",
                                 "LEDGER": "Ledger",
                                 "LEDGER_WALLET": "This is a Ledger wallet",
@@ -3918,6 +4185,19 @@ exports[`Application root should render without crashing 1`] = `
                                 },
                               },
                               "PLUGINS": Object {
+                                "MODAL_ADD_BLACKLIST_PLUGIN": Object {
+                                  "DESCRIPTION": "Find and select a plugin to add or remove it from the blacklist.",
+                                  "SEARCH_PLACEHOLDER": "Search for a plugin",
+                                  "TITLE": "Add Blacklist",
+                                },
+                                "MODAL_BEST_PLUGINS": Object {
+                                  "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.",
+                                  "TITLE": "Best applications of the month",
+                                },
+                                "MODAL_BLACKLIST_PLUGINS": Object {
+                                  "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products.",
+                                  "TITLE": "Blacklist",
+                                },
                                 "MODAL_FEATURED_PLUGINS": Object {
                                   "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.",
                                   "TITLE": "Featured Plugins",
@@ -3945,6 +4225,12 @@ exports[`Application root should render without crashing 1`] = `
                                   "TITLE": "Search",
                                 },
                                 "PLACEHOLDER": "What would you like to search for?",
+                              },
+                              "SETTINGS": Object {
+                                "MODAL_ADVANCED_MODE": Object {
+                                  "DISCLAIMER": "By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.",
+                                  "TITLE": "Advanced Mode Disclaimer",
+                                },
                               },
                               "TRANSACTION": Object {
                                 "ACCOUNT": "Account",
@@ -4087,6 +4373,7 @@ exports[`Application root should render without crashing 1`] = `
                           "translation": Object {
                             "COMMON": Object {
                               "ADAPTER": "Adapter",
+                              "ADD": "Add",
                               "ADDRESS": "Address",
                               "ADVANCED_MODE": "Advanced Mode",
                               "ALL": "All",
@@ -4131,6 +4418,8 @@ exports[`Application root should render without crashing 1`] = `
                               "INITIALIZING": "Initializing...",
                               "INSTALL": "Install",
                               "IS_MARKET_CHART_ENABLED": "Price chart on the dashboard",
+                              "I_ACCEPT": "I Accept",
+                              "I_DECLINE": "I Decline",
                               "LANGUAGE": "Application Language",
                               "LEDGER": "Ledger",
                               "LEDGER_WALLET": "This is a Ledger wallet",
@@ -4223,6 +4512,19 @@ exports[`Application root should render without crashing 1`] = `
                               },
                             },
                             "PLUGINS": Object {
+                              "MODAL_ADD_BLACKLIST_PLUGIN": Object {
+                                "DESCRIPTION": "Find and select a plugin to add or remove it from the blacklist.",
+                                "SEARCH_PLACEHOLDER": "Search for a plugin",
+                                "TITLE": "Add Blacklist",
+                              },
+                              "MODAL_BEST_PLUGINS": Object {
+                                "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.",
+                                "TITLE": "Best applications of the month",
+                              },
+                              "MODAL_BLACKLIST_PLUGINS": Object {
+                                "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products.",
+                                "TITLE": "Blacklist",
+                              },
                               "MODAL_FEATURED_PLUGINS": Object {
                                 "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.",
                                 "TITLE": "Featured Plugins",
@@ -4250,6 +4552,12 @@ exports[`Application root should render without crashing 1`] = `
                                 "TITLE": "Search",
                               },
                               "PLACEHOLDER": "What would you like to search for?",
+                            },
+                            "SETTINGS": Object {
+                              "MODAL_ADVANCED_MODE": Object {
+                                "DISCLAIMER": "By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.",
+                                "TITLE": "Advanced Mode Disclaimer",
+                              },
                             },
                             "TRANSACTION": Object {
                               "ACCOUNT": "Account",
@@ -4402,6 +4710,7 @@ exports[`Application root should render without crashing 1`] = `
                           "translation": Object {
                             "COMMON": Object {
                               "ADAPTER": "Adapter",
+                              "ADD": "Add",
                               "ADDRESS": "Address",
                               "ADVANCED_MODE": "Advanced Mode",
                               "ALL": "All",
@@ -4446,6 +4755,8 @@ exports[`Application root should render without crashing 1`] = `
                               "INITIALIZING": "Initializing...",
                               "INSTALL": "Install",
                               "IS_MARKET_CHART_ENABLED": "Price chart on the dashboard",
+                              "I_ACCEPT": "I Accept",
+                              "I_DECLINE": "I Decline",
                               "LANGUAGE": "Application Language",
                               "LEDGER": "Ledger",
                               "LEDGER_WALLET": "This is a Ledger wallet",
@@ -4538,6 +4849,19 @@ exports[`Application root should render without crashing 1`] = `
                               },
                             },
                             "PLUGINS": Object {
+                              "MODAL_ADD_BLACKLIST_PLUGIN": Object {
+                                "DESCRIPTION": "Find and select a plugin to add or remove it from the blacklist.",
+                                "SEARCH_PLACEHOLDER": "Search for a plugin",
+                                "TITLE": "Add Blacklist",
+                              },
+                              "MODAL_BEST_PLUGINS": Object {
+                                "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.",
+                                "TITLE": "Best applications of the month",
+                              },
+                              "MODAL_BLACKLIST_PLUGINS": Object {
+                                "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products.",
+                                "TITLE": "Blacklist",
+                              },
                               "MODAL_FEATURED_PLUGINS": Object {
                                 "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.",
                                 "TITLE": "Featured Plugins",
@@ -4565,6 +4889,12 @@ exports[`Application root should render without crashing 1`] = `
                                 "TITLE": "Search",
                               },
                               "PLACEHOLDER": "What would you like to search for?",
+                            },
+                            "SETTINGS": Object {
+                              "MODAL_ADVANCED_MODE": Object {
+                                "DISCLAIMER": "By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.",
+                                "TITLE": "Advanced Mode Disclaimer",
+                              },
                             },
                             "TRANSACTION": Object {
                               "ACCOUNT": "Account",
@@ -5609,6 +5939,7 @@ exports[`Application root should render without crashing 1`] = `
                     "translation": Object {
                       "COMMON": Object {
                         "ADAPTER": "Adapter",
+                        "ADD": "Add",
                         "ADDRESS": "Address",
                         "ADVANCED_MODE": "Advanced Mode",
                         "ALL": "All",
@@ -5653,6 +5984,8 @@ exports[`Application root should render without crashing 1`] = `
                         "INITIALIZING": "Initializing...",
                         "INSTALL": "Install",
                         "IS_MARKET_CHART_ENABLED": "Price chart on the dashboard",
+                        "I_ACCEPT": "I Accept",
+                        "I_DECLINE": "I Decline",
                         "LANGUAGE": "Application Language",
                         "LEDGER": "Ledger",
                         "LEDGER_WALLET": "This is a Ledger wallet",
@@ -5745,6 +6078,19 @@ exports[`Application root should render without crashing 1`] = `
                         },
                       },
                       "PLUGINS": Object {
+                        "MODAL_ADD_BLACKLIST_PLUGIN": Object {
+                          "DESCRIPTION": "Find and select a plugin to add or remove it from the blacklist.",
+                          "SEARCH_PLACEHOLDER": "Search for a plugin",
+                          "TITLE": "Add Blacklist",
+                        },
+                        "MODAL_BEST_PLUGINS": Object {
+                          "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.",
+                          "TITLE": "Best applications of the month",
+                        },
+                        "MODAL_BLACKLIST_PLUGINS": Object {
+                          "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products.",
+                          "TITLE": "Blacklist",
+                        },
                         "MODAL_FEATURED_PLUGINS": Object {
                           "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.",
                           "TITLE": "Featured Plugins",
@@ -5772,6 +6118,12 @@ exports[`Application root should render without crashing 1`] = `
                           "TITLE": "Search",
                         },
                         "PLACEHOLDER": "What would you like to search for?",
+                      },
+                      "SETTINGS": Object {
+                        "MODAL_ADVANCED_MODE": Object {
+                          "DISCLAIMER": "By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.",
+                          "TITLE": "Advanced Mode Disclaimer",
+                        },
                       },
                       "TRANSACTION": Object {
                         "ACCOUNT": "Account",
@@ -5862,6 +6214,7 @@ exports[`Application root should render without crashing 1`] = `
                   "translation": Object {
                     "COMMON": Object {
                       "ADAPTER": "Adapter",
+                      "ADD": "Add",
                       "ADDRESS": "Address",
                       "ADVANCED_MODE": "Advanced Mode",
                       "ALL": "All",
@@ -5906,6 +6259,8 @@ exports[`Application root should render without crashing 1`] = `
                       "INITIALIZING": "Initializing...",
                       "INSTALL": "Install",
                       "IS_MARKET_CHART_ENABLED": "Price chart on the dashboard",
+                      "I_ACCEPT": "I Accept",
+                      "I_DECLINE": "I Decline",
                       "LANGUAGE": "Application Language",
                       "LEDGER": "Ledger",
                       "LEDGER_WALLET": "This is a Ledger wallet",
@@ -5998,6 +6353,19 @@ exports[`Application root should render without crashing 1`] = `
                       },
                     },
                     "PLUGINS": Object {
+                      "MODAL_ADD_BLACKLIST_PLUGIN": Object {
+                        "DESCRIPTION": "Find and select a plugin to add or remove it from the blacklist.",
+                        "SEARCH_PLACEHOLDER": "Search for a plugin",
+                        "TITLE": "Add Blacklist",
+                      },
+                      "MODAL_BEST_PLUGINS": Object {
+                        "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.",
+                        "TITLE": "Best applications of the month",
+                      },
+                      "MODAL_BLACKLIST_PLUGINS": Object {
+                        "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products.",
+                        "TITLE": "Blacklist",
+                      },
                       "MODAL_FEATURED_PLUGINS": Object {
                         "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.",
                         "TITLE": "Featured Plugins",
@@ -6025,6 +6393,12 @@ exports[`Application root should render without crashing 1`] = `
                         "TITLE": "Search",
                       },
                       "PLACEHOLDER": "What would you like to search for?",
+                    },
+                    "SETTINGS": Object {
+                      "MODAL_ADVANCED_MODE": Object {
+                        "DISCLAIMER": "By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.",
+                        "TITLE": "Advanced Mode Disclaimer",
+                      },
                     },
                     "TRANSACTION": Object {
                       "ACCOUNT": "Account",
@@ -6168,6 +6542,7 @@ exports[`Application root should render without crashing 1`] = `
                             "translation": Object {
                               "COMMON": Object {
                                 "ADAPTER": "Adapter",
+                                "ADD": "Add",
                                 "ADDRESS": "Address",
                                 "ADVANCED_MODE": "Advanced Mode",
                                 "ALL": "All",
@@ -6212,6 +6587,8 @@ exports[`Application root should render without crashing 1`] = `
                                 "INITIALIZING": "Initializing...",
                                 "INSTALL": "Install",
                                 "IS_MARKET_CHART_ENABLED": "Price chart on the dashboard",
+                                "I_ACCEPT": "I Accept",
+                                "I_DECLINE": "I Decline",
                                 "LANGUAGE": "Application Language",
                                 "LEDGER": "Ledger",
                                 "LEDGER_WALLET": "This is a Ledger wallet",
@@ -6304,6 +6681,19 @@ exports[`Application root should render without crashing 1`] = `
                                 },
                               },
                               "PLUGINS": Object {
+                                "MODAL_ADD_BLACKLIST_PLUGIN": Object {
+                                  "DESCRIPTION": "Find and select a plugin to add or remove it from the blacklist.",
+                                  "SEARCH_PLACEHOLDER": "Search for a plugin",
+                                  "TITLE": "Add Blacklist",
+                                },
+                                "MODAL_BEST_PLUGINS": Object {
+                                  "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.",
+                                  "TITLE": "Best applications of the month",
+                                },
+                                "MODAL_BLACKLIST_PLUGINS": Object {
+                                  "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products.",
+                                  "TITLE": "Blacklist",
+                                },
                                 "MODAL_FEATURED_PLUGINS": Object {
                                   "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.",
                                   "TITLE": "Featured Plugins",
@@ -6331,6 +6721,12 @@ exports[`Application root should render without crashing 1`] = `
                                   "TITLE": "Search",
                                 },
                                 "PLACEHOLDER": "What would you like to search for?",
+                              },
+                              "SETTINGS": Object {
+                                "MODAL_ADVANCED_MODE": Object {
+                                  "DISCLAIMER": "By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.",
+                                  "TITLE": "Advanced Mode Disclaimer",
+                                },
                               },
                               "TRANSACTION": Object {
                                 "ACCOUNT": "Account",
@@ -6473,6 +6869,7 @@ exports[`Application root should render without crashing 1`] = `
                           "translation": Object {
                             "COMMON": Object {
                               "ADAPTER": "Adapter",
+                              "ADD": "Add",
                               "ADDRESS": "Address",
                               "ADVANCED_MODE": "Advanced Mode",
                               "ALL": "All",
@@ -6517,6 +6914,8 @@ exports[`Application root should render without crashing 1`] = `
                               "INITIALIZING": "Initializing...",
                               "INSTALL": "Install",
                               "IS_MARKET_CHART_ENABLED": "Price chart on the dashboard",
+                              "I_ACCEPT": "I Accept",
+                              "I_DECLINE": "I Decline",
                               "LANGUAGE": "Application Language",
                               "LEDGER": "Ledger",
                               "LEDGER_WALLET": "This is a Ledger wallet",
@@ -6609,6 +7008,19 @@ exports[`Application root should render without crashing 1`] = `
                               },
                             },
                             "PLUGINS": Object {
+                              "MODAL_ADD_BLACKLIST_PLUGIN": Object {
+                                "DESCRIPTION": "Find and select a plugin to add or remove it from the blacklist.",
+                                "SEARCH_PLACEHOLDER": "Search for a plugin",
+                                "TITLE": "Add Blacklist",
+                              },
+                              "MODAL_BEST_PLUGINS": Object {
+                                "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.",
+                                "TITLE": "Best applications of the month",
+                              },
+                              "MODAL_BLACKLIST_PLUGINS": Object {
+                                "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products.",
+                                "TITLE": "Blacklist",
+                              },
                               "MODAL_FEATURED_PLUGINS": Object {
                                 "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.",
                                 "TITLE": "Featured Plugins",
@@ -6636,6 +7048,12 @@ exports[`Application root should render without crashing 1`] = `
                                 "TITLE": "Search",
                               },
                               "PLACEHOLDER": "What would you like to search for?",
+                            },
+                            "SETTINGS": Object {
+                              "MODAL_ADVANCED_MODE": Object {
+                                "DISCLAIMER": "By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.",
+                                "TITLE": "Advanced Mode Disclaimer",
+                              },
                             },
                             "TRANSACTION": Object {
                               "ACCOUNT": "Account",
@@ -6788,6 +7206,7 @@ exports[`Application root should render without crashing 1`] = `
                           "translation": Object {
                             "COMMON": Object {
                               "ADAPTER": "Adapter",
+                              "ADD": "Add",
                               "ADDRESS": "Address",
                               "ADVANCED_MODE": "Advanced Mode",
                               "ALL": "All",
@@ -6832,6 +7251,8 @@ exports[`Application root should render without crashing 1`] = `
                               "INITIALIZING": "Initializing...",
                               "INSTALL": "Install",
                               "IS_MARKET_CHART_ENABLED": "Price chart on the dashboard",
+                              "I_ACCEPT": "I Accept",
+                              "I_DECLINE": "I Decline",
                               "LANGUAGE": "Application Language",
                               "LEDGER": "Ledger",
                               "LEDGER_WALLET": "This is a Ledger wallet",
@@ -6924,6 +7345,19 @@ exports[`Application root should render without crashing 1`] = `
                               },
                             },
                             "PLUGINS": Object {
+                              "MODAL_ADD_BLACKLIST_PLUGIN": Object {
+                                "DESCRIPTION": "Find and select a plugin to add or remove it from the blacklist.",
+                                "SEARCH_PLACEHOLDER": "Search for a plugin",
+                                "TITLE": "Add Blacklist",
+                              },
+                              "MODAL_BEST_PLUGINS": Object {
+                                "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.",
+                                "TITLE": "Best applications of the month",
+                              },
+                              "MODAL_BLACKLIST_PLUGINS": Object {
+                                "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products.",
+                                "TITLE": "Blacklist",
+                              },
                               "MODAL_FEATURED_PLUGINS": Object {
                                 "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.",
                                 "TITLE": "Featured Plugins",
@@ -6951,6 +7385,12 @@ exports[`Application root should render without crashing 1`] = `
                                 "TITLE": "Search",
                               },
                               "PLACEHOLDER": "What would you like to search for?",
+                            },
+                            "SETTINGS": Object {
+                              "MODAL_ADVANCED_MODE": Object {
+                                "DISCLAIMER": "By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.",
+                                "TITLE": "Advanced Mode Disclaimer",
+                              },
                             },
                             "TRANSACTION": Object {
                               "ACCOUNT": "Account",
@@ -7098,6 +7538,7 @@ exports[`Application root should render without crashing 1`] = `
                         "translation": Object {
                           "COMMON": Object {
                             "ADAPTER": "Adapter",
+                            "ADD": "Add",
                             "ADDRESS": "Address",
                             "ADVANCED_MODE": "Advanced Mode",
                             "ALL": "All",
@@ -7142,6 +7583,8 @@ exports[`Application root should render without crashing 1`] = `
                             "INITIALIZING": "Initializing...",
                             "INSTALL": "Install",
                             "IS_MARKET_CHART_ENABLED": "Price chart on the dashboard",
+                            "I_ACCEPT": "I Accept",
+                            "I_DECLINE": "I Decline",
                             "LANGUAGE": "Application Language",
                             "LEDGER": "Ledger",
                             "LEDGER_WALLET": "This is a Ledger wallet",
@@ -7234,6 +7677,19 @@ exports[`Application root should render without crashing 1`] = `
                             },
                           },
                           "PLUGINS": Object {
+                            "MODAL_ADD_BLACKLIST_PLUGIN": Object {
+                              "DESCRIPTION": "Find and select a plugin to add or remove it from the blacklist.",
+                              "SEARCH_PLACEHOLDER": "Search for a plugin",
+                              "TITLE": "Add Blacklist",
+                            },
+                            "MODAL_BEST_PLUGINS": Object {
+                              "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.",
+                              "TITLE": "Best applications of the month",
+                            },
+                            "MODAL_BLACKLIST_PLUGINS": Object {
+                              "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products.",
+                              "TITLE": "Blacklist",
+                            },
                             "MODAL_FEATURED_PLUGINS": Object {
                               "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.",
                               "TITLE": "Featured Plugins",
@@ -7261,6 +7717,12 @@ exports[`Application root should render without crashing 1`] = `
                               "TITLE": "Search",
                             },
                             "PLACEHOLDER": "What would you like to search for?",
+                          },
+                          "SETTINGS": Object {
+                            "MODAL_ADVANCED_MODE": Object {
+                              "DISCLAIMER": "By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.",
+                              "TITLE": "Advanced Mode Disclaimer",
+                            },
                           },
                           "TRANSACTION": Object {
                             "ACCOUNT": "Account",
@@ -7420,6 +7882,7 @@ exports[`Application root should render without crashing 1`] = `
                               "translation": Object {
                                 "COMMON": Object {
                                   "ADAPTER": "Adapter",
+                                  "ADD": "Add",
                                   "ADDRESS": "Address",
                                   "ADVANCED_MODE": "Advanced Mode",
                                   "ALL": "All",
@@ -7464,6 +7927,8 @@ exports[`Application root should render without crashing 1`] = `
                                   "INITIALIZING": "Initializing...",
                                   "INSTALL": "Install",
                                   "IS_MARKET_CHART_ENABLED": "Price chart on the dashboard",
+                                  "I_ACCEPT": "I Accept",
+                                  "I_DECLINE": "I Decline",
                                   "LANGUAGE": "Application Language",
                                   "LEDGER": "Ledger",
                                   "LEDGER_WALLET": "This is a Ledger wallet",
@@ -7556,6 +8021,19 @@ exports[`Application root should render without crashing 1`] = `
                                   },
                                 },
                                 "PLUGINS": Object {
+                                  "MODAL_ADD_BLACKLIST_PLUGIN": Object {
+                                    "DESCRIPTION": "Find and select a plugin to add or remove it from the blacklist.",
+                                    "SEARCH_PLACEHOLDER": "Search for a plugin",
+                                    "TITLE": "Add Blacklist",
+                                  },
+                                  "MODAL_BEST_PLUGINS": Object {
+                                    "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.",
+                                    "TITLE": "Best applications of the month",
+                                  },
+                                  "MODAL_BLACKLIST_PLUGINS": Object {
+                                    "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products.",
+                                    "TITLE": "Blacklist",
+                                  },
                                   "MODAL_FEATURED_PLUGINS": Object {
                                     "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.",
                                     "TITLE": "Featured Plugins",
@@ -7583,6 +8061,12 @@ exports[`Application root should render without crashing 1`] = `
                                     "TITLE": "Search",
                                   },
                                   "PLACEHOLDER": "What would you like to search for?",
+                                },
+                                "SETTINGS": Object {
+                                  "MODAL_ADVANCED_MODE": Object {
+                                    "DISCLAIMER": "By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.",
+                                    "TITLE": "Advanced Mode Disclaimer",
+                                  },
                                 },
                                 "TRANSACTION": Object {
                                   "ACCOUNT": "Account",
@@ -7730,6 +8214,7 @@ exports[`Application root should render without crashing 1`] = `
                             "translation": Object {
                               "COMMON": Object {
                                 "ADAPTER": "Adapter",
+                                "ADD": "Add",
                                 "ADDRESS": "Address",
                                 "ADVANCED_MODE": "Advanced Mode",
                                 "ALL": "All",
@@ -7774,6 +8259,8 @@ exports[`Application root should render without crashing 1`] = `
                                 "INITIALIZING": "Initializing...",
                                 "INSTALL": "Install",
                                 "IS_MARKET_CHART_ENABLED": "Price chart on the dashboard",
+                                "I_ACCEPT": "I Accept",
+                                "I_DECLINE": "I Decline",
                                 "LANGUAGE": "Application Language",
                                 "LEDGER": "Ledger",
                                 "LEDGER_WALLET": "This is a Ledger wallet",
@@ -7866,6 +8353,19 @@ exports[`Application root should render without crashing 1`] = `
                                 },
                               },
                               "PLUGINS": Object {
+                                "MODAL_ADD_BLACKLIST_PLUGIN": Object {
+                                  "DESCRIPTION": "Find and select a plugin to add or remove it from the blacklist.",
+                                  "SEARCH_PLACEHOLDER": "Search for a plugin",
+                                  "TITLE": "Add Blacklist",
+                                },
+                                "MODAL_BEST_PLUGINS": Object {
+                                  "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.",
+                                  "TITLE": "Best applications of the month",
+                                },
+                                "MODAL_BLACKLIST_PLUGINS": Object {
+                                  "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products.",
+                                  "TITLE": "Blacklist",
+                                },
                                 "MODAL_FEATURED_PLUGINS": Object {
                                   "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.",
                                   "TITLE": "Featured Plugins",
@@ -7893,6 +8393,12 @@ exports[`Application root should render without crashing 1`] = `
                                   "TITLE": "Search",
                                 },
                                 "PLACEHOLDER": "What would you like to search for?",
+                              },
+                              "SETTINGS": Object {
+                                "MODAL_ADVANCED_MODE": Object {
+                                  "DISCLAIMER": "By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.",
+                                  "TITLE": "Advanced Mode Disclaimer",
+                                },
                               },
                               "TRANSACTION": Object {
                                 "ACCOUNT": "Account",
@@ -8052,6 +8558,7 @@ exports[`Application root should render without crashing 1`] = `
                               "translation": Object {
                                 "COMMON": Object {
                                   "ADAPTER": "Adapter",
+                                  "ADD": "Add",
                                   "ADDRESS": "Address",
                                   "ADVANCED_MODE": "Advanced Mode",
                                   "ALL": "All",
@@ -8096,6 +8603,8 @@ exports[`Application root should render without crashing 1`] = `
                                   "INITIALIZING": "Initializing...",
                                   "INSTALL": "Install",
                                   "IS_MARKET_CHART_ENABLED": "Price chart on the dashboard",
+                                  "I_ACCEPT": "I Accept",
+                                  "I_DECLINE": "I Decline",
                                   "LANGUAGE": "Application Language",
                                   "LEDGER": "Ledger",
                                   "LEDGER_WALLET": "This is a Ledger wallet",
@@ -8188,6 +8697,19 @@ exports[`Application root should render without crashing 1`] = `
                                   },
                                 },
                                 "PLUGINS": Object {
+                                  "MODAL_ADD_BLACKLIST_PLUGIN": Object {
+                                    "DESCRIPTION": "Find and select a plugin to add or remove it from the blacklist.",
+                                    "SEARCH_PLACEHOLDER": "Search for a plugin",
+                                    "TITLE": "Add Blacklist",
+                                  },
+                                  "MODAL_BEST_PLUGINS": Object {
+                                    "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.",
+                                    "TITLE": "Best applications of the month",
+                                  },
+                                  "MODAL_BLACKLIST_PLUGINS": Object {
+                                    "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products.",
+                                    "TITLE": "Blacklist",
+                                  },
                                   "MODAL_FEATURED_PLUGINS": Object {
                                     "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.",
                                     "TITLE": "Featured Plugins",
@@ -8215,6 +8737,12 @@ exports[`Application root should render without crashing 1`] = `
                                     "TITLE": "Search",
                                   },
                                   "PLACEHOLDER": "What would you like to search for?",
+                                },
+                                "SETTINGS": Object {
+                                  "MODAL_ADVANCED_MODE": Object {
+                                    "DISCLAIMER": "By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.",
+                                    "TITLE": "Advanced Mode Disclaimer",
+                                  },
                                 },
                                 "TRANSACTION": Object {
                                   "ACCOUNT": "Account",
@@ -8357,6 +8885,7 @@ exports[`Application root should render without crashing 1`] = `
                             "translation": Object {
                               "COMMON": Object {
                                 "ADAPTER": "Adapter",
+                                "ADD": "Add",
                                 "ADDRESS": "Address",
                                 "ADVANCED_MODE": "Advanced Mode",
                                 "ALL": "All",
@@ -8401,6 +8930,8 @@ exports[`Application root should render without crashing 1`] = `
                                 "INITIALIZING": "Initializing...",
                                 "INSTALL": "Install",
                                 "IS_MARKET_CHART_ENABLED": "Price chart on the dashboard",
+                                "I_ACCEPT": "I Accept",
+                                "I_DECLINE": "I Decline",
                                 "LANGUAGE": "Application Language",
                                 "LEDGER": "Ledger",
                                 "LEDGER_WALLET": "This is a Ledger wallet",
@@ -8493,6 +9024,19 @@ exports[`Application root should render without crashing 1`] = `
                                 },
                               },
                               "PLUGINS": Object {
+                                "MODAL_ADD_BLACKLIST_PLUGIN": Object {
+                                  "DESCRIPTION": "Find and select a plugin to add or remove it from the blacklist.",
+                                  "SEARCH_PLACEHOLDER": "Search for a plugin",
+                                  "TITLE": "Add Blacklist",
+                                },
+                                "MODAL_BEST_PLUGINS": Object {
+                                  "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.",
+                                  "TITLE": "Best applications of the month",
+                                },
+                                "MODAL_BLACKLIST_PLUGINS": Object {
+                                  "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products.",
+                                  "TITLE": "Blacklist",
+                                },
                                 "MODAL_FEATURED_PLUGINS": Object {
                                   "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.",
                                   "TITLE": "Featured Plugins",
@@ -8520,6 +9064,12 @@ exports[`Application root should render without crashing 1`] = `
                                   "TITLE": "Search",
                                 },
                                 "PLACEHOLDER": "What would you like to search for?",
+                              },
+                              "SETTINGS": Object {
+                                "MODAL_ADVANCED_MODE": Object {
+                                  "DISCLAIMER": "By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.",
+                                  "TITLE": "Advanced Mode Disclaimer",
+                                },
                               },
                               "TRANSACTION": Object {
                                 "ACCOUNT": "Account",
@@ -8671,6 +9221,7 @@ exports[`Application root should render without crashing 1`] = `
                             "translation": Object {
                               "COMMON": Object {
                                 "ADAPTER": "Adapter",
+                                "ADD": "Add",
                                 "ADDRESS": "Address",
                                 "ADVANCED_MODE": "Advanced Mode",
                                 "ALL": "All",
@@ -8715,6 +9266,8 @@ exports[`Application root should render without crashing 1`] = `
                                 "INITIALIZING": "Initializing...",
                                 "INSTALL": "Install",
                                 "IS_MARKET_CHART_ENABLED": "Price chart on the dashboard",
+                                "I_ACCEPT": "I Accept",
+                                "I_DECLINE": "I Decline",
                                 "LANGUAGE": "Application Language",
                                 "LEDGER": "Ledger",
                                 "LEDGER_WALLET": "This is a Ledger wallet",
@@ -8807,6 +9360,19 @@ exports[`Application root should render without crashing 1`] = `
                                 },
                               },
                               "PLUGINS": Object {
+                                "MODAL_ADD_BLACKLIST_PLUGIN": Object {
+                                  "DESCRIPTION": "Find and select a plugin to add or remove it from the blacklist.",
+                                  "SEARCH_PLACEHOLDER": "Search for a plugin",
+                                  "TITLE": "Add Blacklist",
+                                },
+                                "MODAL_BEST_PLUGINS": Object {
+                                  "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.",
+                                  "TITLE": "Best applications of the month",
+                                },
+                                "MODAL_BLACKLIST_PLUGINS": Object {
+                                  "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products.",
+                                  "TITLE": "Blacklist",
+                                },
                                 "MODAL_FEATURED_PLUGINS": Object {
                                   "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.",
                                   "TITLE": "Featured Plugins",
@@ -8834,6 +9400,12 @@ exports[`Application root should render without crashing 1`] = `
                                   "TITLE": "Search",
                                 },
                                 "PLACEHOLDER": "What would you like to search for?",
+                              },
+                              "SETTINGS": Object {
+                                "MODAL_ADVANCED_MODE": Object {
+                                  "DISCLAIMER": "By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.",
+                                  "TITLE": "Advanced Mode Disclaimer",
+                                },
                               },
                               "TRANSACTION": Object {
                                 "ACCOUNT": "Account",
@@ -8988,6 +9560,7 @@ exports[`Application root should render without crashing 1`] = `
                                 "translation": Object {
                                   "COMMON": Object {
                                     "ADAPTER": "Adapter",
+                                    "ADD": "Add",
                                     "ADDRESS": "Address",
                                     "ADVANCED_MODE": "Advanced Mode",
                                     "ALL": "All",
@@ -9032,6 +9605,8 @@ exports[`Application root should render without crashing 1`] = `
                                     "INITIALIZING": "Initializing...",
                                     "INSTALL": "Install",
                                     "IS_MARKET_CHART_ENABLED": "Price chart on the dashboard",
+                                    "I_ACCEPT": "I Accept",
+                                    "I_DECLINE": "I Decline",
                                     "LANGUAGE": "Application Language",
                                     "LEDGER": "Ledger",
                                     "LEDGER_WALLET": "This is a Ledger wallet",
@@ -9124,6 +9699,19 @@ exports[`Application root should render without crashing 1`] = `
                                     },
                                   },
                                   "PLUGINS": Object {
+                                    "MODAL_ADD_BLACKLIST_PLUGIN": Object {
+                                      "DESCRIPTION": "Find and select a plugin to add or remove it from the blacklist.",
+                                      "SEARCH_PLACEHOLDER": "Search for a plugin",
+                                      "TITLE": "Add Blacklist",
+                                    },
+                                    "MODAL_BEST_PLUGINS": Object {
+                                      "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.",
+                                      "TITLE": "Best applications of the month",
+                                    },
+                                    "MODAL_BLACKLIST_PLUGINS": Object {
+                                      "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products.",
+                                      "TITLE": "Blacklist",
+                                    },
                                     "MODAL_FEATURED_PLUGINS": Object {
                                       "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.",
                                       "TITLE": "Featured Plugins",
@@ -9151,6 +9739,12 @@ exports[`Application root should render without crashing 1`] = `
                                       "TITLE": "Search",
                                     },
                                     "PLACEHOLDER": "What would you like to search for?",
+                                  },
+                                  "SETTINGS": Object {
+                                    "MODAL_ADVANCED_MODE": Object {
+                                      "DISCLAIMER": "By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.",
+                                      "TITLE": "Advanced Mode Disclaimer",
+                                    },
                                   },
                                   "TRANSACTION": Object {
                                     "ACCOUNT": "Account",
@@ -9293,6 +9887,7 @@ exports[`Application root should render without crashing 1`] = `
                               "translation": Object {
                                 "COMMON": Object {
                                   "ADAPTER": "Adapter",
+                                  "ADD": "Add",
                                   "ADDRESS": "Address",
                                   "ADVANCED_MODE": "Advanced Mode",
                                   "ALL": "All",
@@ -9337,6 +9932,8 @@ exports[`Application root should render without crashing 1`] = `
                                   "INITIALIZING": "Initializing...",
                                   "INSTALL": "Install",
                                   "IS_MARKET_CHART_ENABLED": "Price chart on the dashboard",
+                                  "I_ACCEPT": "I Accept",
+                                  "I_DECLINE": "I Decline",
                                   "LANGUAGE": "Application Language",
                                   "LEDGER": "Ledger",
                                   "LEDGER_WALLET": "This is a Ledger wallet",
@@ -9429,6 +10026,19 @@ exports[`Application root should render without crashing 1`] = `
                                   },
                                 },
                                 "PLUGINS": Object {
+                                  "MODAL_ADD_BLACKLIST_PLUGIN": Object {
+                                    "DESCRIPTION": "Find and select a plugin to add or remove it from the blacklist.",
+                                    "SEARCH_PLACEHOLDER": "Search for a plugin",
+                                    "TITLE": "Add Blacklist",
+                                  },
+                                  "MODAL_BEST_PLUGINS": Object {
+                                    "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.",
+                                    "TITLE": "Best applications of the month",
+                                  },
+                                  "MODAL_BLACKLIST_PLUGINS": Object {
+                                    "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products.",
+                                    "TITLE": "Blacklist",
+                                  },
                                   "MODAL_FEATURED_PLUGINS": Object {
                                     "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.",
                                     "TITLE": "Featured Plugins",
@@ -9456,6 +10066,12 @@ exports[`Application root should render without crashing 1`] = `
                                     "TITLE": "Search",
                                   },
                                   "PLACEHOLDER": "What would you like to search for?",
+                                },
+                                "SETTINGS": Object {
+                                  "MODAL_ADVANCED_MODE": Object {
+                                    "DISCLAIMER": "By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.",
+                                    "TITLE": "Advanced Mode Disclaimer",
+                                  },
                                 },
                                 "TRANSACTION": Object {
                                   "ACCOUNT": "Account",
@@ -9608,6 +10224,7 @@ exports[`Application root should render without crashing 1`] = `
                               "translation": Object {
                                 "COMMON": Object {
                                   "ADAPTER": "Adapter",
+                                  "ADD": "Add",
                                   "ADDRESS": "Address",
                                   "ADVANCED_MODE": "Advanced Mode",
                                   "ALL": "All",
@@ -9652,6 +10269,8 @@ exports[`Application root should render without crashing 1`] = `
                                   "INITIALIZING": "Initializing...",
                                   "INSTALL": "Install",
                                   "IS_MARKET_CHART_ENABLED": "Price chart on the dashboard",
+                                  "I_ACCEPT": "I Accept",
+                                  "I_DECLINE": "I Decline",
                                   "LANGUAGE": "Application Language",
                                   "LEDGER": "Ledger",
                                   "LEDGER_WALLET": "This is a Ledger wallet",
@@ -9744,6 +10363,19 @@ exports[`Application root should render without crashing 1`] = `
                                   },
                                 },
                                 "PLUGINS": Object {
+                                  "MODAL_ADD_BLACKLIST_PLUGIN": Object {
+                                    "DESCRIPTION": "Find and select a plugin to add or remove it from the blacklist.",
+                                    "SEARCH_PLACEHOLDER": "Search for a plugin",
+                                    "TITLE": "Add Blacklist",
+                                  },
+                                  "MODAL_BEST_PLUGINS": Object {
+                                    "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.",
+                                    "TITLE": "Best applications of the month",
+                                  },
+                                  "MODAL_BLACKLIST_PLUGINS": Object {
+                                    "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products.",
+                                    "TITLE": "Blacklist",
+                                  },
                                   "MODAL_FEATURED_PLUGINS": Object {
                                     "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.",
                                     "TITLE": "Featured Plugins",
@@ -9771,6 +10403,12 @@ exports[`Application root should render without crashing 1`] = `
                                     "TITLE": "Search",
                                   },
                                   "PLACEHOLDER": "What would you like to search for?",
+                                },
+                                "SETTINGS": Object {
+                                  "MODAL_ADVANCED_MODE": Object {
+                                    "DISCLAIMER": "By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.",
+                                    "TITLE": "Advanced Mode Disclaimer",
+                                  },
                                 },
                                 "TRANSACTION": Object {
                                   "ACCOUNT": "Account",
@@ -10815,6 +11453,7 @@ exports[`Application root should render without crashing 1`] = `
                         "translation": Object {
                           "COMMON": Object {
                             "ADAPTER": "Adapter",
+                            "ADD": "Add",
                             "ADDRESS": "Address",
                             "ADVANCED_MODE": "Advanced Mode",
                             "ALL": "All",
@@ -10859,6 +11498,8 @@ exports[`Application root should render without crashing 1`] = `
                             "INITIALIZING": "Initializing...",
                             "INSTALL": "Install",
                             "IS_MARKET_CHART_ENABLED": "Price chart on the dashboard",
+                            "I_ACCEPT": "I Accept",
+                            "I_DECLINE": "I Decline",
                             "LANGUAGE": "Application Language",
                             "LEDGER": "Ledger",
                             "LEDGER_WALLET": "This is a Ledger wallet",
@@ -10951,6 +11592,19 @@ exports[`Application root should render without crashing 1`] = `
                             },
                           },
                           "PLUGINS": Object {
+                            "MODAL_ADD_BLACKLIST_PLUGIN": Object {
+                              "DESCRIPTION": "Find and select a plugin to add or remove it from the blacklist.",
+                              "SEARCH_PLACEHOLDER": "Search for a plugin",
+                              "TITLE": "Add Blacklist",
+                            },
+                            "MODAL_BEST_PLUGINS": Object {
+                              "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.",
+                              "TITLE": "Best applications of the month",
+                            },
+                            "MODAL_BLACKLIST_PLUGINS": Object {
+                              "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products.",
+                              "TITLE": "Blacklist",
+                            },
                             "MODAL_FEATURED_PLUGINS": Object {
                               "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.",
                               "TITLE": "Featured Plugins",
@@ -10978,6 +11632,12 @@ exports[`Application root should render without crashing 1`] = `
                               "TITLE": "Search",
                             },
                             "PLACEHOLDER": "What would you like to search for?",
+                          },
+                          "SETTINGS": Object {
+                            "MODAL_ADVANCED_MODE": Object {
+                              "DISCLAIMER": "By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.",
+                              "TITLE": "Advanced Mode Disclaimer",
+                            },
                           },
                           "TRANSACTION": Object {
                             "ACCOUNT": "Account",
@@ -11069,6 +11729,7 @@ exports[`Application root should render without crashing 1`] = `
                       "translation": Object {
                         "COMMON": Object {
                           "ADAPTER": "Adapter",
+                          "ADD": "Add",
                           "ADDRESS": "Address",
                           "ADVANCED_MODE": "Advanced Mode",
                           "ALL": "All",
@@ -11113,6 +11774,8 @@ exports[`Application root should render without crashing 1`] = `
                           "INITIALIZING": "Initializing...",
                           "INSTALL": "Install",
                           "IS_MARKET_CHART_ENABLED": "Price chart on the dashboard",
+                          "I_ACCEPT": "I Accept",
+                          "I_DECLINE": "I Decline",
                           "LANGUAGE": "Application Language",
                           "LEDGER": "Ledger",
                           "LEDGER_WALLET": "This is a Ledger wallet",
@@ -11205,6 +11868,19 @@ exports[`Application root should render without crashing 1`] = `
                           },
                         },
                         "PLUGINS": Object {
+                          "MODAL_ADD_BLACKLIST_PLUGIN": Object {
+                            "DESCRIPTION": "Find and select a plugin to add or remove it from the blacklist.",
+                            "SEARCH_PLACEHOLDER": "Search for a plugin",
+                            "TITLE": "Add Blacklist",
+                          },
+                          "MODAL_BEST_PLUGINS": Object {
+                            "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.",
+                            "TITLE": "Best applications of the month",
+                          },
+                          "MODAL_BLACKLIST_PLUGINS": Object {
+                            "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products.",
+                            "TITLE": "Blacklist",
+                          },
                           "MODAL_FEATURED_PLUGINS": Object {
                             "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.",
                             "TITLE": "Featured Plugins",
@@ -11232,6 +11908,12 @@ exports[`Application root should render without crashing 1`] = `
                             "TITLE": "Search",
                           },
                           "PLACEHOLDER": "What would you like to search for?",
+                        },
+                        "SETTINGS": Object {
+                          "MODAL_ADVANCED_MODE": Object {
+                            "DISCLAIMER": "By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.",
+                            "TITLE": "Advanced Mode Disclaimer",
+                          },
                         },
                         "TRANSACTION": Object {
                           "ACCOUNT": "Account",
@@ -11378,6 +12060,7 @@ exports[`Application root should render without crashing 1`] = `
                           "translation": Object {
                             "COMMON": Object {
                               "ADAPTER": "Adapter",
+                              "ADD": "Add",
                               "ADDRESS": "Address",
                               "ADVANCED_MODE": "Advanced Mode",
                               "ALL": "All",
@@ -11422,6 +12105,8 @@ exports[`Application root should render without crashing 1`] = `
                               "INITIALIZING": "Initializing...",
                               "INSTALL": "Install",
                               "IS_MARKET_CHART_ENABLED": "Price chart on the dashboard",
+                              "I_ACCEPT": "I Accept",
+                              "I_DECLINE": "I Decline",
                               "LANGUAGE": "Application Language",
                               "LEDGER": "Ledger",
                               "LEDGER_WALLET": "This is a Ledger wallet",
@@ -11514,6 +12199,19 @@ exports[`Application root should render without crashing 1`] = `
                               },
                             },
                             "PLUGINS": Object {
+                              "MODAL_ADD_BLACKLIST_PLUGIN": Object {
+                                "DESCRIPTION": "Find and select a plugin to add or remove it from the blacklist.",
+                                "SEARCH_PLACEHOLDER": "Search for a plugin",
+                                "TITLE": "Add Blacklist",
+                              },
+                              "MODAL_BEST_PLUGINS": Object {
+                                "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.",
+                                "TITLE": "Best applications of the month",
+                              },
+                              "MODAL_BLACKLIST_PLUGINS": Object {
+                                "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products.",
+                                "TITLE": "Blacklist",
+                              },
                               "MODAL_FEATURED_PLUGINS": Object {
                                 "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.",
                                 "TITLE": "Featured Plugins",
@@ -11541,6 +12239,12 @@ exports[`Application root should render without crashing 1`] = `
                                 "TITLE": "Search",
                               },
                               "PLACEHOLDER": "What would you like to search for?",
+                            },
+                            "SETTINGS": Object {
+                              "MODAL_ADVANCED_MODE": Object {
+                                "DISCLAIMER": "By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.",
+                                "TITLE": "Advanced Mode Disclaimer",
+                              },
                             },
                             "TRANSACTION": Object {
                               "ACCOUNT": "Account",
@@ -11688,6 +12392,7 @@ exports[`Application root should render without crashing 1`] = `
                         "translation": Object {
                           "COMMON": Object {
                             "ADAPTER": "Adapter",
+                            "ADD": "Add",
                             "ADDRESS": "Address",
                             "ADVANCED_MODE": "Advanced Mode",
                             "ALL": "All",
@@ -11732,6 +12437,8 @@ exports[`Application root should render without crashing 1`] = `
                             "INITIALIZING": "Initializing...",
                             "INSTALL": "Install",
                             "IS_MARKET_CHART_ENABLED": "Price chart on the dashboard",
+                            "I_ACCEPT": "I Accept",
+                            "I_DECLINE": "I Decline",
                             "LANGUAGE": "Application Language",
                             "LEDGER": "Ledger",
                             "LEDGER_WALLET": "This is a Ledger wallet",
@@ -11824,6 +12531,19 @@ exports[`Application root should render without crashing 1`] = `
                             },
                           },
                           "PLUGINS": Object {
+                            "MODAL_ADD_BLACKLIST_PLUGIN": Object {
+                              "DESCRIPTION": "Find and select a plugin to add or remove it from the blacklist.",
+                              "SEARCH_PLACEHOLDER": "Search for a plugin",
+                              "TITLE": "Add Blacklist",
+                            },
+                            "MODAL_BEST_PLUGINS": Object {
+                              "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.",
+                              "TITLE": "Best applications of the month",
+                            },
+                            "MODAL_BLACKLIST_PLUGINS": Object {
+                              "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products.",
+                              "TITLE": "Blacklist",
+                            },
                             "MODAL_FEATURED_PLUGINS": Object {
                               "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.",
                               "TITLE": "Featured Plugins",
@@ -11851,6 +12571,12 @@ exports[`Application root should render without crashing 1`] = `
                               "TITLE": "Search",
                             },
                             "PLACEHOLDER": "What would you like to search for?",
+                          },
+                          "SETTINGS": Object {
+                            "MODAL_ADVANCED_MODE": Object {
+                              "DISCLAIMER": "By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.",
+                              "TITLE": "Advanced Mode Disclaimer",
+                            },
                           },
                           "TRANSACTION": Object {
                             "ACCOUNT": "Account",
@@ -12011,6 +12737,7 @@ exports[`Application root should render without crashing 1`] = `
                           "translation": Object {
                             "COMMON": Object {
                               "ADAPTER": "Adapter",
+                              "ADD": "Add",
                               "ADDRESS": "Address",
                               "ADVANCED_MODE": "Advanced Mode",
                               "ALL": "All",
@@ -12055,6 +12782,8 @@ exports[`Application root should render without crashing 1`] = `
                               "INITIALIZING": "Initializing...",
                               "INSTALL": "Install",
                               "IS_MARKET_CHART_ENABLED": "Price chart on the dashboard",
+                              "I_ACCEPT": "I Accept",
+                              "I_DECLINE": "I Decline",
                               "LANGUAGE": "Application Language",
                               "LEDGER": "Ledger",
                               "LEDGER_WALLET": "This is a Ledger wallet",
@@ -12147,6 +12876,19 @@ exports[`Application root should render without crashing 1`] = `
                               },
                             },
                             "PLUGINS": Object {
+                              "MODAL_ADD_BLACKLIST_PLUGIN": Object {
+                                "DESCRIPTION": "Find and select a plugin to add or remove it from the blacklist.",
+                                "SEARCH_PLACEHOLDER": "Search for a plugin",
+                                "TITLE": "Add Blacklist",
+                              },
+                              "MODAL_BEST_PLUGINS": Object {
+                                "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.",
+                                "TITLE": "Best applications of the month",
+                              },
+                              "MODAL_BLACKLIST_PLUGINS": Object {
+                                "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products.",
+                                "TITLE": "Blacklist",
+                              },
                               "MODAL_FEATURED_PLUGINS": Object {
                                 "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.",
                                 "TITLE": "Featured Plugins",
@@ -12174,6 +12916,12 @@ exports[`Application root should render without crashing 1`] = `
                                 "TITLE": "Search",
                               },
                               "PLACEHOLDER": "What would you like to search for?",
+                            },
+                            "SETTINGS": Object {
+                              "MODAL_ADVANCED_MODE": Object {
+                                "DISCLAIMER": "By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.",
+                                "TITLE": "Advanced Mode Disclaimer",
+                              },
                             },
                             "TRANSACTION": Object {
                               "ACCOUNT": "Account",
@@ -12316,6 +13064,7 @@ exports[`Application root should render without crashing 1`] = `
                         "translation": Object {
                           "COMMON": Object {
                             "ADAPTER": "Adapter",
+                            "ADD": "Add",
                             "ADDRESS": "Address",
                             "ADVANCED_MODE": "Advanced Mode",
                             "ALL": "All",
@@ -12360,6 +13109,8 @@ exports[`Application root should render without crashing 1`] = `
                             "INITIALIZING": "Initializing...",
                             "INSTALL": "Install",
                             "IS_MARKET_CHART_ENABLED": "Price chart on the dashboard",
+                            "I_ACCEPT": "I Accept",
+                            "I_DECLINE": "I Decline",
                             "LANGUAGE": "Application Language",
                             "LEDGER": "Ledger",
                             "LEDGER_WALLET": "This is a Ledger wallet",
@@ -12452,6 +13203,19 @@ exports[`Application root should render without crashing 1`] = `
                             },
                           },
                           "PLUGINS": Object {
+                            "MODAL_ADD_BLACKLIST_PLUGIN": Object {
+                              "DESCRIPTION": "Find and select a plugin to add or remove it from the blacklist.",
+                              "SEARCH_PLACEHOLDER": "Search for a plugin",
+                              "TITLE": "Add Blacklist",
+                            },
+                            "MODAL_BEST_PLUGINS": Object {
+                              "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.",
+                              "TITLE": "Best applications of the month",
+                            },
+                            "MODAL_BLACKLIST_PLUGINS": Object {
+                              "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products.",
+                              "TITLE": "Blacklist",
+                            },
                             "MODAL_FEATURED_PLUGINS": Object {
                               "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.",
                               "TITLE": "Featured Plugins",
@@ -12479,6 +13243,12 @@ exports[`Application root should render without crashing 1`] = `
                               "TITLE": "Search",
                             },
                             "PLACEHOLDER": "What would you like to search for?",
+                          },
+                          "SETTINGS": Object {
+                            "MODAL_ADVANCED_MODE": Object {
+                              "DISCLAIMER": "By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.",
+                              "TITLE": "Advanced Mode Disclaimer",
+                            },
                           },
                           "TRANSACTION": Object {
                             "ACCOUNT": "Account",
@@ -12631,6 +13401,7 @@ exports[`Application root should render without crashing 1`] = `
                         "translation": Object {
                           "COMMON": Object {
                             "ADAPTER": "Adapter",
+                            "ADD": "Add",
                             "ADDRESS": "Address",
                             "ADVANCED_MODE": "Advanced Mode",
                             "ALL": "All",
@@ -12675,6 +13446,8 @@ exports[`Application root should render without crashing 1`] = `
                             "INITIALIZING": "Initializing...",
                             "INSTALL": "Install",
                             "IS_MARKET_CHART_ENABLED": "Price chart on the dashboard",
+                            "I_ACCEPT": "I Accept",
+                            "I_DECLINE": "I Decline",
                             "LANGUAGE": "Application Language",
                             "LEDGER": "Ledger",
                             "LEDGER_WALLET": "This is a Ledger wallet",
@@ -12767,6 +13540,19 @@ exports[`Application root should render without crashing 1`] = `
                             },
                           },
                           "PLUGINS": Object {
+                            "MODAL_ADD_BLACKLIST_PLUGIN": Object {
+                              "DESCRIPTION": "Find and select a plugin to add or remove it from the blacklist.",
+                              "SEARCH_PLACEHOLDER": "Search for a plugin",
+                              "TITLE": "Add Blacklist",
+                            },
+                            "MODAL_BEST_PLUGINS": Object {
+                              "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.",
+                              "TITLE": "Best applications of the month",
+                            },
+                            "MODAL_BLACKLIST_PLUGINS": Object {
+                              "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products.",
+                              "TITLE": "Blacklist",
+                            },
                             "MODAL_FEATURED_PLUGINS": Object {
                               "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.",
                               "TITLE": "Featured Plugins",
@@ -12794,6 +13580,12 @@ exports[`Application root should render without crashing 1`] = `
                               "TITLE": "Search",
                             },
                             "PLACEHOLDER": "What would you like to search for?",
+                          },
+                          "SETTINGS": Object {
+                            "MODAL_ADVANCED_MODE": Object {
+                              "DISCLAIMER": "By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.",
+                              "TITLE": "Advanced Mode Disclaimer",
+                            },
                           },
                           "TRANSACTION": Object {
                             "ACCOUNT": "Account",
@@ -12941,6 +13733,7 @@ exports[`Application root should render without crashing 1`] = `
                       "translation": Object {
                         "COMMON": Object {
                           "ADAPTER": "Adapter",
+                          "ADD": "Add",
                           "ADDRESS": "Address",
                           "ADVANCED_MODE": "Advanced Mode",
                           "ALL": "All",
@@ -12985,6 +13778,8 @@ exports[`Application root should render without crashing 1`] = `
                           "INITIALIZING": "Initializing...",
                           "INSTALL": "Install",
                           "IS_MARKET_CHART_ENABLED": "Price chart on the dashboard",
+                          "I_ACCEPT": "I Accept",
+                          "I_DECLINE": "I Decline",
                           "LANGUAGE": "Application Language",
                           "LEDGER": "Ledger",
                           "LEDGER_WALLET": "This is a Ledger wallet",
@@ -13077,6 +13872,19 @@ exports[`Application root should render without crashing 1`] = `
                           },
                         },
                         "PLUGINS": Object {
+                          "MODAL_ADD_BLACKLIST_PLUGIN": Object {
+                            "DESCRIPTION": "Find and select a plugin to add or remove it from the blacklist.",
+                            "SEARCH_PLACEHOLDER": "Search for a plugin",
+                            "TITLE": "Add Blacklist",
+                          },
+                          "MODAL_BEST_PLUGINS": Object {
+                            "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.",
+                            "TITLE": "Best applications of the month",
+                          },
+                          "MODAL_BLACKLIST_PLUGINS": Object {
+                            "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products.",
+                            "TITLE": "Blacklist",
+                          },
                           "MODAL_FEATURED_PLUGINS": Object {
                             "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.",
                             "TITLE": "Featured Plugins",
@@ -13104,6 +13912,12 @@ exports[`Application root should render without crashing 1`] = `
                             "TITLE": "Search",
                           },
                           "PLACEHOLDER": "What would you like to search for?",
+                        },
+                        "SETTINGS": Object {
+                          "MODAL_ADVANCED_MODE": Object {
+                            "DISCLAIMER": "By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.",
+                            "TITLE": "Advanced Mode Disclaimer",
+                          },
                         },
                         "TRANSACTION": Object {
                           "ACCOUNT": "Account",
@@ -13256,6 +14070,7 @@ exports[`Application root should render without crashing 1`] = `
                             "translation": Object {
                               "COMMON": Object {
                                 "ADAPTER": "Adapter",
+                                "ADD": "Add",
                                 "ADDRESS": "Address",
                                 "ADVANCED_MODE": "Advanced Mode",
                                 "ALL": "All",
@@ -13300,6 +14115,8 @@ exports[`Application root should render without crashing 1`] = `
                                 "INITIALIZING": "Initializing...",
                                 "INSTALL": "Install",
                                 "IS_MARKET_CHART_ENABLED": "Price chart on the dashboard",
+                                "I_ACCEPT": "I Accept",
+                                "I_DECLINE": "I Decline",
                                 "LANGUAGE": "Application Language",
                                 "LEDGER": "Ledger",
                                 "LEDGER_WALLET": "This is a Ledger wallet",
@@ -13392,6 +14209,19 @@ exports[`Application root should render without crashing 1`] = `
                                 },
                               },
                               "PLUGINS": Object {
+                                "MODAL_ADD_BLACKLIST_PLUGIN": Object {
+                                  "DESCRIPTION": "Find and select a plugin to add or remove it from the blacklist.",
+                                  "SEARCH_PLACEHOLDER": "Search for a plugin",
+                                  "TITLE": "Add Blacklist",
+                                },
+                                "MODAL_BEST_PLUGINS": Object {
+                                  "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.",
+                                  "TITLE": "Best applications of the month",
+                                },
+                                "MODAL_BLACKLIST_PLUGINS": Object {
+                                  "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products.",
+                                  "TITLE": "Blacklist",
+                                },
                                 "MODAL_FEATURED_PLUGINS": Object {
                                   "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.",
                                   "TITLE": "Featured Plugins",
@@ -13419,6 +14249,12 @@ exports[`Application root should render without crashing 1`] = `
                                   "TITLE": "Search",
                                 },
                                 "PLACEHOLDER": "What would you like to search for?",
+                              },
+                              "SETTINGS": Object {
+                                "MODAL_ADVANCED_MODE": Object {
+                                  "DISCLAIMER": "By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.",
+                                  "TITLE": "Advanced Mode Disclaimer",
+                                },
                               },
                               "TRANSACTION": Object {
                                 "ACCOUNT": "Account",
@@ -13561,6 +14397,7 @@ exports[`Application root should render without crashing 1`] = `
                           "translation": Object {
                             "COMMON": Object {
                               "ADAPTER": "Adapter",
+                              "ADD": "Add",
                               "ADDRESS": "Address",
                               "ADVANCED_MODE": "Advanced Mode",
                               "ALL": "All",
@@ -13605,6 +14442,8 @@ exports[`Application root should render without crashing 1`] = `
                               "INITIALIZING": "Initializing...",
                               "INSTALL": "Install",
                               "IS_MARKET_CHART_ENABLED": "Price chart on the dashboard",
+                              "I_ACCEPT": "I Accept",
+                              "I_DECLINE": "I Decline",
                               "LANGUAGE": "Application Language",
                               "LEDGER": "Ledger",
                               "LEDGER_WALLET": "This is a Ledger wallet",
@@ -13697,6 +14536,19 @@ exports[`Application root should render without crashing 1`] = `
                               },
                             },
                             "PLUGINS": Object {
+                              "MODAL_ADD_BLACKLIST_PLUGIN": Object {
+                                "DESCRIPTION": "Find and select a plugin to add or remove it from the blacklist.",
+                                "SEARCH_PLACEHOLDER": "Search for a plugin",
+                                "TITLE": "Add Blacklist",
+                              },
+                              "MODAL_BEST_PLUGINS": Object {
+                                "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.",
+                                "TITLE": "Best applications of the month",
+                              },
+                              "MODAL_BLACKLIST_PLUGINS": Object {
+                                "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products.",
+                                "TITLE": "Blacklist",
+                              },
                               "MODAL_FEATURED_PLUGINS": Object {
                                 "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.",
                                 "TITLE": "Featured Plugins",
@@ -13724,6 +14576,12 @@ exports[`Application root should render without crashing 1`] = `
                                 "TITLE": "Search",
                               },
                               "PLACEHOLDER": "What would you like to search for?",
+                            },
+                            "SETTINGS": Object {
+                              "MODAL_ADVANCED_MODE": Object {
+                                "DISCLAIMER": "By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.",
+                                "TITLE": "Advanced Mode Disclaimer",
+                              },
                             },
                             "TRANSACTION": Object {
                               "ACCOUNT": "Account",
@@ -13876,6 +14734,7 @@ exports[`Application root should render without crashing 1`] = `
                           "translation": Object {
                             "COMMON": Object {
                               "ADAPTER": "Adapter",
+                              "ADD": "Add",
                               "ADDRESS": "Address",
                               "ADVANCED_MODE": "Advanced Mode",
                               "ALL": "All",
@@ -13920,6 +14779,8 @@ exports[`Application root should render without crashing 1`] = `
                               "INITIALIZING": "Initializing...",
                               "INSTALL": "Install",
                               "IS_MARKET_CHART_ENABLED": "Price chart on the dashboard",
+                              "I_ACCEPT": "I Accept",
+                              "I_DECLINE": "I Decline",
                               "LANGUAGE": "Application Language",
                               "LEDGER": "Ledger",
                               "LEDGER_WALLET": "This is a Ledger wallet",
@@ -14012,6 +14873,19 @@ exports[`Application root should render without crashing 1`] = `
                               },
                             },
                             "PLUGINS": Object {
+                              "MODAL_ADD_BLACKLIST_PLUGIN": Object {
+                                "DESCRIPTION": "Find and select a plugin to add or remove it from the blacklist.",
+                                "SEARCH_PLACEHOLDER": "Search for a plugin",
+                                "TITLE": "Add Blacklist",
+                              },
+                              "MODAL_BEST_PLUGINS": Object {
+                                "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.",
+                                "TITLE": "Best applications of the month",
+                              },
+                              "MODAL_BLACKLIST_PLUGINS": Object {
+                                "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products.",
+                                "TITLE": "Blacklist",
+                              },
                               "MODAL_FEATURED_PLUGINS": Object {
                                 "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.",
                                 "TITLE": "Featured Plugins",
@@ -14039,6 +14913,12 @@ exports[`Application root should render without crashing 1`] = `
                                 "TITLE": "Search",
                               },
                               "PLACEHOLDER": "What would you like to search for?",
+                            },
+                            "SETTINGS": Object {
+                              "MODAL_ADVANCED_MODE": Object {
+                                "DISCLAIMER": "By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.",
+                                "TITLE": "Advanced Mode Disclaimer",
+                              },
                             },
                             "TRANSACTION": Object {
                               "ACCOUNT": "Account",
@@ -15083,6 +15963,7 @@ exports[`Application root should render without crashing 1`] = `
                     "translation": Object {
                       "COMMON": Object {
                         "ADAPTER": "Adapter",
+                        "ADD": "Add",
                         "ADDRESS": "Address",
                         "ADVANCED_MODE": "Advanced Mode",
                         "ALL": "All",
@@ -15127,6 +16008,8 @@ exports[`Application root should render without crashing 1`] = `
                         "INITIALIZING": "Initializing...",
                         "INSTALL": "Install",
                         "IS_MARKET_CHART_ENABLED": "Price chart on the dashboard",
+                        "I_ACCEPT": "I Accept",
+                        "I_DECLINE": "I Decline",
                         "LANGUAGE": "Application Language",
                         "LEDGER": "Ledger",
                         "LEDGER_WALLET": "This is a Ledger wallet",
@@ -15219,6 +16102,19 @@ exports[`Application root should render without crashing 1`] = `
                         },
                       },
                       "PLUGINS": Object {
+                        "MODAL_ADD_BLACKLIST_PLUGIN": Object {
+                          "DESCRIPTION": "Find and select a plugin to add or remove it from the blacklist.",
+                          "SEARCH_PLACEHOLDER": "Search for a plugin",
+                          "TITLE": "Add Blacklist",
+                        },
+                        "MODAL_BEST_PLUGINS": Object {
+                          "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.",
+                          "TITLE": "Best applications of the month",
+                        },
+                        "MODAL_BLACKLIST_PLUGINS": Object {
+                          "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products.",
+                          "TITLE": "Blacklist",
+                        },
                         "MODAL_FEATURED_PLUGINS": Object {
                           "DESCRIPTION": "ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.",
                           "TITLE": "Featured Plugins",
@@ -15246,6 +16142,12 @@ exports[`Application root should render without crashing 1`] = `
                           "TITLE": "Search",
                         },
                         "PLACEHOLDER": "What would you like to search for?",
+                      },
+                      "SETTINGS": Object {
+                        "MODAL_ADVANCED_MODE": Object {
+                          "DISCLAIMER": "By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.",
+                          "TITLE": "Advanced Mode Disclaimer",
+                        },
                       },
                       "TRANSACTION": Object {
                         "ACCOUNT": "Account",
