@@ -19,10 +19,6 @@ export const Header = ({ title, subtitle, extra }: Props) => (
 			)}
 		</div>
 
-		{extra &&
-			<div className="w-3/5">
-				{extra}
-			</div>
-		}
+		{extra && <div className="w-3/5">{extra}</div>}
 	</div>
 );
