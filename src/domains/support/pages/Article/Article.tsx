@@ -2,6 +2,9 @@ import { Button } from "app/components/Button";
 import { Icon } from "app/components/Icon";
 import React from "react";
 import { useTranslation } from "react-i18next";
+import { styled } from "twin.macro";
+
+import { navStyles } from "./Article.styles";
 
 type SectionItem = {
 	title: string;
@@ -15,15 +18,24 @@ type ArticleProps = {
 	categoryIcon: string;
 	views?: string;
 	sections?: SectionItem[];
+	image?: string;
 };
 
 type FastNavProps = {
 	sections?: SectionItem[];
 };
 
+const NavWrapper = styled.div`
+	${navStyles}
+`;
+
 const FastNavigation = ({ sections }: FastNavProps) => {
+	const activeClass = (index: number) => {
+		return index === 0 ? "active" : "";
+	};
+
 	return (
-		<div className="sticky float-right w-32 top-2">
+		<NavWrapper className="sticky float-right w-32 top-2">
 			<div className="pl-3 text-xs font-bold text-theme-neutral-400 border-l-1 border-theme-neutral-300">
 				Fast navigation
 			</div>
@@ -32,7 +44,9 @@ const FastNavigation = ({ sections }: FastNavProps) => {
 					sections.map((section: SectionItem, index) => {
 						return (
 							<li
-								className="text-sm border-l-1 border-theme-neutral-300 text-theme-neutral-700"
+								className={`text-sm border-l-1 border-theme-neutral-300 text-theme-neutral-800 ${activeClass(
+									index,
+								)}`}
 								key={index}
 							>
 								<a
@@ -46,11 +60,11 @@ const FastNavigation = ({ sections }: FastNavProps) => {
 						);
 					})}
 			</ul>
-		</div>
+		</NavWrapper>
 	);
 };
 
-export const Article = ({ title, category, categoryIcon, views, sections }: ArticleProps) => {
+export const Article = ({ title, category, categoryIcon, views, sections, image }: ArticleProps) => {
 	const { t } = useTranslation();
 	return (
 		<div className="-m-5">
@@ -75,6 +89,7 @@ export const Article = ({ title, category, categoryIcon, views, sections }: Arti
 						)}
 					</div>
 					<h1 className="leading-tight">{title}</h1>
+					{image && <img src={image} />}
 					<div>
 						{sections &&
 							sections.map((section: SectionItem, index) => {

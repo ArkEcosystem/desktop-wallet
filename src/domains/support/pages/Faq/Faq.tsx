@@ -18,7 +18,7 @@ const ArticleListItem = ({ title, path, description }: ArticleListItemProps) => 
 		<a
 			title={title}
 			href={path}
-			className="flex w-full px-2 py-6 -mx-2 border-2 border-theme-background hover:bg-theme-primary-100"
+			className="flex -mx-3 px-2 py-6 rounded-md border-3 border-theme-background hover:bg-theme-neutral-100 text-theme-neutral-800 hover:text-theme-primary-600"
 		>
 			<div>
 				<div className="pt-1 text-theme-neutral-800">
@@ -37,7 +37,7 @@ export const Faq = ({ articles }: FaqProps) => {
 	const { t } = useTranslation();
 	return (
 		<div className="-m-5 bg-theme-neutral-200">
-			<div className="px-12 py-10 mb-10 bg-white">
+			<div className="p-13 mb-5 bg-white">
 				<div className="flex">
 					<div className="w-2/3">
 						<h1>{t("SUPPORT.FAQ_PORTFOLIO_TITLE")}</h1>

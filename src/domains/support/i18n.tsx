@@ -1,6 +1,6 @@
 export const translations: { [key: string]: any } = {
 	HELP_SUPPORT_TITLE: "Help & Support",
-	HELP_SUPPORT_SUBTITLE: "Help & Support",
+	HELP_SUPPORT_SUBTITLE: "Do you need any help? Find it in our archive or write to us",
 	CONTACT_US: "Contact us",
 	HELPFUL_CATEGORY_TITLE: "Most Helpful",
 	POPULAR_CATEGORY_TITLE: "Most Popular",

@@ -129,6 +129,7 @@ export const article = {
 	category: "Portfolio",
 	categoryIcon: "PortfolioTag",
 	views: "32 908",
+	image: "https://picsum.photos/seed/picsum/800/400",
 	sections: [
 		{
 			title: "1. Introduction",

@@ -18,3 +18,16 @@ export const Default = () => {
 		/>
 	);
 };
+
+export const WithImage = () => {
+	return (
+		<Article
+			title={article.title}
+			category={article.category}
+			categoryIcon={article.categoryIcon}
+			views={article.views}
+			sections={article.sections}
+			image={article.image}
+		/>
+	);
+};
