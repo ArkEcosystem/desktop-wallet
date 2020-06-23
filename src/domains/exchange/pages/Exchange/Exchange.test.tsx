@@ -11,7 +11,7 @@ describe("Exchange", () => {
 	it("should render", () => {
 		const { asFragment, getByTestId } = render(
 			<I18nextProvider i18n={i18n}>
-				<Exchange />
+				<Exchange exchanges={[]} />
 			</I18nextProvider>,
 		);
 
@@ -152,7 +152,7 @@ describe("Exchange", () => {
 	it("should open & close add exchange modal when no existing exchanges", () => {
 		const { asFragment, getByTestId } = render(
 			<I18nextProvider i18n={i18n}>
-				<Exchange />
+				<Exchange exchanges={[]} />
 			</I18nextProvider>,
 		);
 

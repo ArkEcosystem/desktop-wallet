@@ -9,7 +9,7 @@ export const Default = () => (
 	<div>
 		<NavigationBar currencyIcon="Ark" balance="34,253.75" userInitials="IO" />
 
-		<Exchange />
+		<Exchange exchanges={[]} />
 	</div>
 );
 

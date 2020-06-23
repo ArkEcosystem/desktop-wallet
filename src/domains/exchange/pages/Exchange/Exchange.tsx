@@ -1,4 +1,3 @@
-
 import { images } from "app/assets/images";
 import { Slider } from "app/components/Slider";
 import { AddExchange } from "domains/exchange/components/AddExchange";
@@ -7,13 +6,13 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 
 type ExchangeProps = {
-	exchanges?: any[];
+	exchanges: any[];
 };
 
 const ExchangeCardsBanner = images.exchange.pages.Exchange.ExchangeCardsBanner;
 const NoExchangesBanner = images.exchange.pages.Exchange.NoExchangesBanner;
 
-const NoExchangesList = ({ onAddExchange }: { onAddExchange }) => {
+const NoExchangesList = ({ onAddExchange }: { onAddExchange: any }) => {
 	const { t } = useTranslation();
 
 	return (
@@ -47,7 +46,6 @@ const ExchangesList = ({
 		slidesPerView: 4,
 		slidesPerColumn: 1,
 		slidesPerGroup: 4,
-		slidesPerView: 4,
 		spaceBetween: 20,
 	};
 
@@ -110,7 +108,7 @@ export const Exchange = (props: ExchangeProps) => {
 							exchanges={props.exchanges}
 							selectedExchange={selectedExchange}
 							onAddExchange={() => setModalIsOpen(true)}
-							onSelect={(exchange) => setSelectedExchange(exchange)}
+							onSelect={(exchange: any) => setSelectedExchange(exchange)}
 						/>
 					) : (
 						<NoExchangesList onAddExchange={() => setModalIsOpen(true)} />
