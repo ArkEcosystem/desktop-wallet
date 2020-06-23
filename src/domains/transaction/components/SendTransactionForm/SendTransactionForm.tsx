@@ -253,7 +253,7 @@ export const SendTransactionForm = ({
 
 				{addedRecipients.length > 0 && (
 					<div>
-						<div className="mb-4 text-sm font-semibold text-theme-neutral-700 pb-4">Recipients</div>
+						<div className="pb-4 mb-4 text-sm font-semibold text-theme-neutral-700">Recipients</div>
 						<RecipientList
 							recipients={addedRecipients}
 							isEditable={true}
