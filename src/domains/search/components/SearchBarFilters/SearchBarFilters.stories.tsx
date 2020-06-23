@@ -15,11 +15,11 @@ export const Default = () => {
 			isSelected: true,
 		},
 		{
-			name: "Eth",
+			name: "Ethereum",
 			isSelected: true,
 		},
 		{
-			name: "Btc",
+			name: "Bitcoin",
 			isSelected: false,
 		},
 	];

@@ -11,11 +11,42 @@ import { Spinner } from "app/components/Spinner";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { TransactionDetail } from "app/components/TransactionDetail";
+import { RecipientList } from "domains/transaction/components/RecipientList";
 import { SendTransactionForm } from "domains/transaction/components/SendTransactionForm";
 import React from "react";
 import { useForm } from "react-hook-form";
 
 const { ConfirmTransactionLedgerBanner } = images.transaction.pages.transactionSend;
+
+const recipients = [
+	{
+		address: "FJKDSALJFKASLJFKSDAJD333FKFKDSAJFKSAJFKLASJKDFJ",
+		walletName: "Recipient 1",
+		amount: "100",
+		assetSymbol: "ARK",
+	},
+	{
+		address: "AhFJKDSALJFKASLJFKSDEAJ333FKFKDSAJFKSAJFKLASJKDFJ",
+		walletName: "Recipient 2",
+		isMultisig: true,
+		amount: "100",
+		assetSymbol: "ARK",
+	},
+	{
+		address: "FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ",
+		walletName: "Recipient 3",
+		isInArkNetwork: true,
+		amount: "100",
+		assetSymbol: "ARK",
+	},
+	{
+		address: "FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ",
+		walletName: "Recipient 4",
+		isInArkNetwork: true,
+		amount: "100",
+		assetSymbol: "ARK",
+	},
+];
 
 export const FirstStep = ({ onSubmit, formValues }: any) => {
 	return (
@@ -74,6 +105,9 @@ export const SecondStep = () => (
 					<Label color="warning">Your address</Label>
 				</div>
 				<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} size="large" />
+			</TransactionDetail>
+			<TransactionDetail label="Recipients">
+				<RecipientList recipients={recipients} assetSymbol="ARK" isEditable={false} />
 			</TransactionDetail>
 			<TransactionDetail
 				label="Amount"

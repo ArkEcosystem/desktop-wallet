@@ -1,0 +1,589 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SendTransactionForm should render editable 1`] = `
+<div>
+  <div
+    class="pt-2"
+  >
+    <div
+      class="sc-AxhCb bybrRt"
+      role="table"
+    >
+      <table
+        class="table-auto"
+      >
+        <thead>
+          <tr
+            role="row"
+          >
+            <th
+              class="text-xs text-left select-none text-theme-neutral-400"
+              colspan="1"
+              data-testid="table__th--0"
+              role="columnheader"
+            >
+              <div
+                class="flex flex-inline align-top  invisible w-2"
+              >
+                <div
+                  class="mr-1"
+                >
+                  Avatar
+                </div>
+                <div
+                  class="mt-1 text-theme-color-neutral-500"
+                  data-testid="table__Sort"
+                />
+              </div>
+            </th>
+            <th
+              class="text-xs text-left select-none text-theme-neutral-400"
+              colspan="1"
+              data-testid="table__th--1"
+              role="columnheader"
+            >
+              <div
+                class="flex flex-inline align-top  undefined"
+              >
+                <div
+                  class="mr-1"
+                >
+                  Address
+                </div>
+                <div
+                  class="mt-1 text-theme-color-neutral-500"
+                  data-testid="table__Sort"
+                />
+              </div>
+            </th>
+            <th
+              class="text-xs text-left select-none text-theme-neutral-400"
+              colspan="1"
+              data-testid="table__th--2"
+              role="columnheader"
+            >
+              <div
+                class="flex flex-inline align-top  float-right"
+              >
+                <div
+                  class="mr-1"
+                >
+                  Amount
+                </div>
+                <div
+                  class="mt-1 text-theme-color-neutral-500"
+                  data-testid="table__Sort"
+                />
+              </div>
+            </th>
+            <th
+              class="text-xs text-left select-none text-theme-neutral-400"
+              colspan="1"
+              data-testid="table__th--3"
+              role="columnheader"
+            >
+              <div
+                class="flex flex-inline align-top  invisible"
+              >
+                <div
+                  class="mr-1"
+                >
+                  Action
+                </div>
+                <div
+                  class="mt-1 text-theme-color-neutral-500"
+                  data-testid="table__Sort"
+                />
+              </div>
+            </th>
+          </tr>
+        </thead>
+        <tbody
+          role="rowgroup"
+        >
+          <tr
+            class="border-b border-theme-neutral-200"
+            data-testid="recipient-list__recipient-list-item"
+          >
+            <td
+              class="w-12 py-4"
+            >
+              <div
+                class="sc-AxirZ sHsrA"
+              />
+            </td>
+            <td>
+              <div
+                class="inline-block truncate"
+              >
+                <span
+                  class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-base"
+                  data-testid="address__wallet-name"
+                >
+                  Recipient 1
+                </span>
+                <span
+                  class="text-theme-neutral-400 font-semibold text-base"
+                  data-testid="address__wallet-address"
+                >
+                  FJKDSA...SJKDFJ
+                </span>
+              </div>
+            </td>
+            <td
+              class="font-bold text-right text-theme-neutral-800"
+            >
+              100
+               
+              ARK
+            </td>
+            <td
+              class="w-16 text-right"
+            >
+              <button
+                class="sc-AxjAm ddJBbC"
+                color="primary"
+                data-testid="recipient-list__remove-recipient"
+                type="button"
+              >
+                <div
+                  class="py-1"
+                >
+                  <div
+                    class="sc-AxiKw dzBdqj"
+                    height="1em"
+                    width="1em"
+                  >
+                    <svg>
+                      trash.svg
+                    </svg>
+                  </div>
+                </div>
+              </button>
+            </td>
+          </tr>
+          <tr
+            class="border-b border-theme-neutral-200"
+            data-testid="recipient-list__recipient-list-item"
+          >
+            <td
+              class="w-12 py-4"
+            >
+              <div
+                class="sc-AxirZ sHsrA"
+              />
+            </td>
+            <td>
+              <div
+                class="inline-block truncate"
+              >
+                <span
+                  class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-base"
+                  data-testid="address__wallet-name"
+                >
+                  Recipient 2
+                </span>
+                <span
+                  class="text-theme-neutral-400 font-semibold text-base"
+                  data-testid="address__wallet-address"
+                >
+                  AhFJKD...SJKDFJ
+                </span>
+              </div>
+            </td>
+            <td
+              class="font-bold text-right text-theme-neutral-800"
+            >
+              100
+               
+              ARK
+            </td>
+            <td
+              class="w-16 text-right"
+            >
+              <button
+                class="sc-AxjAm ddJBbC"
+                color="primary"
+                data-testid="recipient-list__remove-recipient"
+                type="button"
+              >
+                <div
+                  class="py-1"
+                >
+                  <div
+                    class="sc-AxiKw dzBdqj"
+                    height="1em"
+                    width="1em"
+                  >
+                    <svg>
+                      trash.svg
+                    </svg>
+                  </div>
+                </div>
+              </button>
+            </td>
+          </tr>
+          <tr
+            class="border-b border-theme-neutral-200"
+            data-testid="recipient-list__recipient-list-item"
+          >
+            <td
+              class="w-12 py-4"
+            >
+              <div
+                class="sc-AxirZ sHsrA"
+              />
+            </td>
+            <td>
+              <div
+                class="inline-block truncate"
+              >
+                <span
+                  class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-base"
+                  data-testid="address__wallet-name"
+                >
+                  Recipient 3
+                </span>
+                <span
+                  class="text-theme-neutral-400 font-semibold text-base"
+                  data-testid="address__wallet-address"
+                >
+                  FAhFJK...SJKDFJ
+                </span>
+              </div>
+            </td>
+            <td
+              class="font-bold text-right text-theme-neutral-800"
+            >
+              100
+               
+              ARK
+            </td>
+            <td
+              class="w-16 text-right"
+            >
+              <button
+                class="sc-AxjAm ddJBbC"
+                color="primary"
+                data-testid="recipient-list__remove-recipient"
+                type="button"
+              >
+                <div
+                  class="py-1"
+                >
+                  <div
+                    class="sc-AxiKw dzBdqj"
+                    height="1em"
+                    width="1em"
+                  >
+                    <svg>
+                      trash.svg
+                    </svg>
+                  </div>
+                </div>
+              </button>
+            </td>
+          </tr>
+          <tr
+            class="border-b border-theme-neutral-200"
+            data-testid="recipient-list__recipient-list-item"
+          >
+            <td
+              class="w-12 py-4"
+            >
+              <div
+                class="sc-AxirZ sHsrA"
+              />
+            </td>
+            <td>
+              <div
+                class="inline-block truncate"
+              >
+                <span
+                  class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-base"
+                  data-testid="address__wallet-name"
+                >
+                  Recipient 4
+                </span>
+                <span
+                  class="text-theme-neutral-400 font-semibold text-base"
+                  data-testid="address__wallet-address"
+                >
+                  FAhFJK...SJKDFJ
+                </span>
+              </div>
+            </td>
+            <td
+              class="font-bold text-right text-theme-neutral-800"
+            >
+              100
+               
+              ARK
+            </td>
+            <td
+              class="w-16 text-right"
+            >
+              <button
+                class="sc-AxjAm ddJBbC"
+                color="primary"
+                data-testid="recipient-list__remove-recipient"
+                type="button"
+              >
+                <div
+                  class="py-1"
+                >
+                  <div
+                    class="sc-AxiKw dzBdqj"
+                    height="1em"
+                    width="1em"
+                  >
+                    <svg>
+                      trash.svg
+                    </svg>
+                  </div>
+                </div>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`SendTransactionForm should render non-editable 1`] = `
+<div>
+  <div
+    class="pt-2"
+  >
+    <div
+      class="sc-AxhCb bybrRt"
+      role="table"
+    >
+      <table
+        class="table-auto"
+      >
+        <thead>
+          <tr
+            role="row"
+          >
+            <th
+              class="text-xs text-left select-none text-theme-neutral-400"
+              colspan="1"
+              data-testid="table__th--0"
+              role="columnheader"
+            >
+              <div
+                class="flex flex-inline align-top  invisible w-2"
+              >
+                <div
+                  class="mr-1"
+                >
+                  Avatar
+                </div>
+                <div
+                  class="mt-1 text-theme-color-neutral-500"
+                  data-testid="table__Sort"
+                />
+              </div>
+            </th>
+            <th
+              class="text-xs text-left select-none text-theme-neutral-400"
+              colspan="1"
+              data-testid="table__th--1"
+              role="columnheader"
+            >
+              <div
+                class="flex flex-inline align-top  undefined"
+              >
+                <div
+                  class="mr-1"
+                >
+                  Address
+                </div>
+                <div
+                  class="mt-1 text-theme-color-neutral-500"
+                  data-testid="table__Sort"
+                />
+              </div>
+            </th>
+            <th
+              class="text-xs text-left select-none text-theme-neutral-400"
+              colspan="1"
+              data-testid="table__th--2"
+              role="columnheader"
+            >
+              <div
+                class="flex flex-inline align-top  float-right"
+              >
+                <div
+                  class="mr-1"
+                >
+                  Amount
+                </div>
+                <div
+                  class="mt-1 text-theme-color-neutral-500"
+                  data-testid="table__Sort"
+                />
+              </div>
+            </th>
+          </tr>
+        </thead>
+        <tbody
+          role="rowgroup"
+        >
+          <tr
+            class="border-b border-theme-neutral-200"
+            data-testid="recipient-list__recipient-list-item"
+          >
+            <td
+              class="w-12 py-4"
+            >
+              <div
+                class="sc-AxirZ sHsrA"
+              />
+            </td>
+            <td>
+              <div
+                class="inline-block truncate"
+              >
+                <span
+                  class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-base"
+                  data-testid="address__wallet-name"
+                >
+                  Recipient 1
+                </span>
+                <span
+                  class="text-theme-neutral-400 font-semibold text-base"
+                  data-testid="address__wallet-address"
+                >
+                  FJKDSA...SJKDFJ
+                </span>
+              </div>
+            </td>
+            <td
+              class="font-bold text-right text-theme-neutral-800"
+            >
+              100
+               
+              ARK
+            </td>
+          </tr>
+          <tr
+            class="border-b border-theme-neutral-200"
+            data-testid="recipient-list__recipient-list-item"
+          >
+            <td
+              class="w-12 py-4"
+            >
+              <div
+                class="sc-AxirZ sHsrA"
+              />
+            </td>
+            <td>
+              <div
+                class="inline-block truncate"
+              >
+                <span
+                  class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-base"
+                  data-testid="address__wallet-name"
+                >
+                  Recipient 2
+                </span>
+                <span
+                  class="text-theme-neutral-400 font-semibold text-base"
+                  data-testid="address__wallet-address"
+                >
+                  AhFJKD...SJKDFJ
+                </span>
+              </div>
+            </td>
+            <td
+              class="font-bold text-right text-theme-neutral-800"
+            >
+              100
+               
+              ARK
+            </td>
+          </tr>
+          <tr
+            class="border-b border-theme-neutral-200"
+            data-testid="recipient-list__recipient-list-item"
+          >
+            <td
+              class="w-12 py-4"
+            >
+              <div
+                class="sc-AxirZ sHsrA"
+              />
+            </td>
+            <td>
+              <div
+                class="inline-block truncate"
+              >
+                <span
+                  class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-base"
+                  data-testid="address__wallet-name"
+                >
+                  Recipient 3
+                </span>
+                <span
+                  class="text-theme-neutral-400 font-semibold text-base"
+                  data-testid="address__wallet-address"
+                >
+                  FAhFJK...SJKDFJ
+                </span>
+              </div>
+            </td>
+            <td
+              class="font-bold text-right text-theme-neutral-800"
+            >
+              100
+               
+              ARK
+            </td>
+          </tr>
+          <tr
+            class="border-b border-theme-neutral-200"
+            data-testid="recipient-list__recipient-list-item"
+          >
+            <td
+              class="w-12 py-4"
+            >
+              <div
+                class="sc-AxirZ sHsrA"
+              />
+            </td>
+            <td>
+              <div
+                class="inline-block truncate"
+              >
+                <span
+                  class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-base"
+                  data-testid="address__wallet-name"
+                >
+                  Recipient 4
+                </span>
+                <span
+                  class="text-theme-neutral-400 font-semibold text-base"
+                  data-testid="address__wallet-address"
+                >
+                  FAhFJK...SJKDFJ
+                </span>
+              </div>
+            </td>
+            <td
+              class="font-bold text-right text-theme-neutral-800"
+            >
+              100
+               
+              ARK
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+`;
