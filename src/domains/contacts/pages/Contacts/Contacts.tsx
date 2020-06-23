@@ -6,7 +6,8 @@ import { Header } from "app/components/Header";
 import { HeaderSearchBar } from "app/components/Header/HeaderSearchBar";
 import { Table } from "app/components/Table";
 import { ContactListItem } from "domains/contacts/components/ContactListItem";
-import React from "react";
+import { CreateContact } from "domains/contacts/components/CreateContact";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 const { ContactsBanner } = images.contacts.pages.contacts;
@@ -30,18 +31,19 @@ const ContactsHeaderExtra = ({ showSearchBar, onSearch, onAddContact }: Contacts
         </>
       }
 
-			<Button className="whitespace-no-wrap">{t("CONTACTS.CONTACTS_PAGE.ADD_CONTACT")}</Button>
+			<Button data-testid="contacts__add-contact-btn" className="whitespace-no-wrap" onClick={onAddContact}>{t("CONTACTS.CONTACTS_PAGE.ADD_CONTACT")}</Button>
 		</div>
 	);
 };
 
 type ContactsProps = {
-	contacts?: Contact[];
+	contacts: Contact[];
 	onSearch?: any;
-	onAddContact?: any;
 };
 
-export const Contacts = ({ contacts, onSearch, onAddContact }: ContactsProps) => {
+export const Contacts = ({ contacts, onSearch }: ContactsProps) => {
+  const [createIsOpen, setCreateIsOpen] = useState(false);
+
 	const { t } = useTranslation();
 
 	const crumbs = [
@@ -71,19 +73,12 @@ export const Contacts = ({ contacts, onSearch, onAddContact }: ContactsProps) =>
 		},
 	];
 
-  const tableData = contacts.map((contact) => {
-    return {
-      contact,
-      actions: [
-        { label: "Send", value: "send" },
-        { label: "Edit", value: "edit" },
-        { label: "Delete", value: "delete" },
-      ],
-    };
-  });
+  const handleOnSave = () => {
+    console.log("onSave");
+  };
 
 	return (
-		<div className="flex flex-col -m-5 bg-theme-neutral-200 min-h-screen">
+		<div data-testid="contacts" className="flex flex-col -m-5 bg-theme-neutral-200 min-h-screen">
 			<Breadcrumbs crumbs={crumbs} className="font-semibold p-10" />
 
 			<div className="flex flex-col flex-1 space-y-5">
@@ -95,7 +90,7 @@ export const Contacts = ({ contacts, onSearch, onAddContact }: ContactsProps) =>
               <ContactsHeaderExtra
                 showSearchBar={contacts.length > 0}
                 onSearch={onSearch}
-                onAddContact={onAddContact}
+                onAddContact={() => setCreateIsOpen(true)}
               />
             }
 					/>
@@ -103,21 +98,29 @@ export const Contacts = ({ contacts, onSearch, onAddContact }: ContactsProps) =>
 
 				<div className="flex flex-1 bg-theme-background p-10">
 					{contacts.length === 0 && (
-						<div className="flex flex-col items-center justify-center">
+						<div data-testid="contacts__banner" className="flex flex-col items-center justify-center">
 							<ContactsBanner className="w-3/5 mb-8" />
-							<span>Add your most frequent contacts for fast, easy payments</span>
+							<span>{t("CONTACTS.CONTACTS_PAGE.ADD_CONTACT_MESSAGE")}</span>
 						</div>
 					)}
 
 					{contacts.length > 0 && (
 						<div className="w-full">
-							<Table columns={listColumns} data={tableData}>
-                {(rowData: any) => <ContactListItem {...rowData} />}
+							<Table columns={listColumns} data={contacts}>
+                {(contact: any) => <ContactListItem contact={contact} />}
 							</Table>
 						</div>
 					)}
 				</div>
 			</div>
+
+      <CreateContact
+        isOpen={createIsOpen}
+        networks={[]}
+        onCancel={() => setCreateIsOpen(false)}
+        onClose={() => setCreateIsOpen(false)}
+        onSave={handleOnSave}
+      />
 		</div>
 	);
 };

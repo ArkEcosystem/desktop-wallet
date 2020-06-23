@@ -64,7 +64,7 @@ describe("ContactForm", () => {
 		});
 
 		await act(async () => {
-			fireEvent.click(getByTestId("contact-form__add-address-button"));
+			fireEvent.click(getByTestId("contact-form__add-address-btn"));
 		});
 
 		expect(getAllByTestId("contact-form__address-list-item")).toHaveLength(1);
@@ -84,7 +84,7 @@ describe("ContactForm", () => {
 		expect(getAllByTestId("contact-form__address-list-item")).toHaveLength(2);
 
 		await act(async () => {
-			fireEvent.click(getAllByTestId("contact-form__remove-address-button")[0]);
+			fireEvent.click(getAllByTestId("contact-form__remove-address-btn")[0]);
 		});
 
 		expect(getAllByTestId("contact-form__address-list-item")).toHaveLength(1);
@@ -100,7 +100,7 @@ describe("ContactForm", () => {
 		});
 
 		await act(async () => {
-			fireEvent.click(renderContext.getByTestId("contact-form__save-button"));
+			fireEvent.click(renderContext.getByTestId("contact-form__save-btn"));
 		});
 
 		expect(onSave).toHaveBeenCalled();

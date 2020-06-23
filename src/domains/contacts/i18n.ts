@@ -1,6 +1,7 @@
 export const translations: { [key: string]: any } = {
 	CONTACTS_PAGE: {
 		ADD_CONTACT: "Add Contact",
+		ADD_CONTACT_MESSAGE: "Add your most frequent contacts for fast, easy payments",
 		TITLE: "My Contacts",
 		SUBTITLE: "Manage your frequent contacts",
 	},

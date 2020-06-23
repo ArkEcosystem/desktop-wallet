@@ -8,18 +8,22 @@ import React from "react";
 
 type ContactListItemProps = {
   contact: Contact;
-  actions?: any;
   onAction?: any;
 };
 
 export const ContactListItem = ({
   contact,
-  actions,
   onAction,
 }: ContactListItemProps) => {
   const onDropdownAction = (action: any) => {
     if (typeof onAction === "function") onAction(action);
   };
+
+  const options = [
+    { label: "Send", value: "send" },
+    { label: "Edit", value: "edit" },
+    { label: "Delete", value: "send" },
+  ];
 
   return (
     <>
@@ -65,7 +69,7 @@ export const ContactListItem = ({
           )}
           */}
           <td className="border-b border-dashed border-theme-neutral-200">
-            {actions && actions.length && (
+            {options && options.length && (
               <Dropdown
                 toggleContent={
                   <div className="float-right">
@@ -74,7 +78,7 @@ export const ContactListItem = ({
                     </Button>
                   </div>
                 }
-                options={actions}
+                options={options}
                 onSelect={onDropdownAction}
               />
             )}

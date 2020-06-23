@@ -38,7 +38,7 @@ export const Address = ({ address, addressClass, walletName, maxChars, size }: P
 					addressClass || (walletName ? "text-theme-neutral-400" : "text-theme-neutral-800")
 				} font-semibold ${size && fontSizes[size]}`}
 			>
-				{maxChars > 0 ? truncateStringMiddle(address, maxChars) : address}
+				{maxChars && maxChars > 0 ? truncateStringMiddle(address, maxChars) : address}
 			</span>
 		</div>
 	);

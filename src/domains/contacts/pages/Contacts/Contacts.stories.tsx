@@ -9,7 +9,7 @@ export default { title: "Contacts / Pages / Contacts" };
 export const Default = () => {
 	return (
 		<div>
-			<Contacts onSearch={action("onSearch")} onAddContact={action("onAddContact")} />
+			<Contacts onSearch={action("onSearch")} />
 		</div>
 	);
 };
@@ -30,8 +30,6 @@ export const WithContacts = () => {
       {
   			id: "olebank",
   			name: "OLEBank",
-        avatarColor: "bg-theme-neutral border-theme-neutral",
-        avatarTextColor: "text-theme-neutral-contrast",
   	    starred: false,
   			addresses: [
   				{ coin: "Ark", network: "mainnet", address: "ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT" },
@@ -44,7 +42,7 @@ export const WithContacts = () => {
 
 	return (
 		<div>
-			<Contacts contacts={contacts} onSearch={action("onSearch")} onAddContact={action("onAddContact")} />
+			<Contacts contacts={contacts} onSearch={action("onSearch")} />
 		</div>
 	);
 };
