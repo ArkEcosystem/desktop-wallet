@@ -1,7 +1,6 @@
 import { render } from "@testing-library/react";
 import React from "react";
 
-// import { act } from "@testing-library/react-hooks";
 import { PercentageBar } from "./PercentageBar";
 
 describe("PercentageBar", () => {
