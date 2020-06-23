@@ -19,7 +19,7 @@ export const peers = [
 		actions,
 	},
 	{
-		coin: "Eth",
+		coin: "Ethereum",
 		coinClass: "border-theme-neutral-300",
 		name: "MATBank",
 		peerIp: "194.168.4.67:800",
@@ -27,7 +27,7 @@ export const peers = [
 		actions,
 	},
 	{
-		coin: "Btc",
+		coin: "Bitcoin",
 		coinClass: "text-theme-warning-400 border-theme-warning-200",
 		name: "OLEBank",
 		peerIp: "194.168.4.67:800",

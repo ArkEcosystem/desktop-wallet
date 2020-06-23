@@ -11,11 +11,11 @@ describe("SelectNetwork", () => {
 			isSelected: false,
 		},
 		{
-			name: "Eth",
+			name: "Ethereum",
 			isSelected: true,
 		},
 		{
-			name: "Btc",
+			name: "Bitcoin",
 			isSelected: false,
 		},
 	];

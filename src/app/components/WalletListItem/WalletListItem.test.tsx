@@ -9,7 +9,7 @@ describe("WalletListItem", () => {
 		const { container } = render(
 			<table>
 				<tbody>
-					<WalletListItem coin="Btc" walletTypeIcons={["Star", 'Multisig", "Ledger']} />
+					<WalletListItem coin="Bitcoin" walletTypeIcons={["Star", 'Multisig", "Ledger']} />
 				</tbody>
 			</table>,
 		);
@@ -42,7 +42,7 @@ describe("WalletListItem", () => {
 		const { getByTestId, container } = render(
 			<table>
 				<tbody>
-					<WalletListItem coin="Btc" actions={options} onAction={fn} />
+					<WalletListItem coin="Bitcoin" actions={options} onAction={fn} />
 				</tbody>
 			</table>,
 		);
@@ -73,7 +73,7 @@ describe("WalletListItem", () => {
 		const { getByTestId, container } = render(
 			<table>
 				<tbody>
-					<WalletListItem coin="Btc" actions={options} />
+					<WalletListItem coin="Bitcoin" actions={options} />
 				</tbody>
 			</table>,
 		);
