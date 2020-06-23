@@ -88,8 +88,8 @@ export const BestPlugins = (props: BestPluginsProps) => {
 				<Table columns={columns} data={data}>
 					{(rowData: any) => (
 						<tr className="border-b border-dashed border-theme-neutral-200">
-							<td className="text-center w-18">
-								<ChangeNowLogo />
+							<td className="w-18">
+								<ChangeNowLogo className="w-12 h-12" />
 							</td>
 
 							<td>
@@ -97,19 +97,19 @@ export const BestPlugins = (props: BestPluginsProps) => {
 									{rowData.name}
 								</div>
 								<div className="inline-flex items-center space-x-2">
-									<span>{rowData.description}</span>
+									<span className="text-theme-neutral-700">{rowData.description}</span>
 									{rowData.isOfficial && <Icon name="OfficialArkPlugin" width={15} height={15} />}
 									{rowData.isGrant && <Icon name="Grant" width={16} height={16} />}
 								</div>
 							</td>
 
-							<td className="py-10">{rowData.category}</td>
+							<td className="py-10 text-theme-neutral-700">{rowData.category}</td>
 
-							<td className="py-10">
-								<ReviewRating rating={rowData.rating} />
+							<td className="py-10 text-theme-neutral-700">
+								<ReviewRating rating={rowData.rating} width={3} />
 							</td>
 
-							<td className="py-10">v {rowData.version}</td>
+							<td className="py-10 text-theme-neutral-700">v {rowData.version}</td>
 
 							<td className="w-16">
 								<Button variant="plain">{t("COMMON.INSTALL")}</Button>
