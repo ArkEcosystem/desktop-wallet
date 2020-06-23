@@ -16,7 +16,7 @@ export const wallets = [
 		],
 	},
 	{
-		coinIcon: "Btc",
+		coinIcon: "Bitcoin",
 		coinClass: "text-theme-warning-400 border-theme-warning-200",
 		avatarId: "test",
 		address: "15pyr1HRAxpq3x64duXav1csmyCtXXu9G8",

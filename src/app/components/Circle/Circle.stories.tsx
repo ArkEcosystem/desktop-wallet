@@ -80,7 +80,7 @@ export const WithIcon = () => {
 
 			<div className="mb-5" />
 			<Circle className="-mr-2 bg-theme-background border-theme-neutral-800" size={size}>
-				<Icon name="Eth" width={16} height={16} />
+				<Icon name="Ethereum" width={16} height={16} />
 			</Circle>
 			<Circle avatarId="test" className="-mr-2 bg-theme-background" size={size} />
 
@@ -93,7 +93,7 @@ export const WithIcon = () => {
 			<div className="mb-5" />
 			<Circle avatarId="test" className="-mr-2 bg-theme-background" size={size} />
 			<Circle className="-mr-2 bg-theme-background border-theme-neutral-800" size={size}>
-				<Icon name="Eth" width={16} height={16} />
+				<Icon name="Ethereum" width={16} height={16} />
 			</Circle>
 			<Circle className="-mr-2 bg-theme-background border-theme-danger-200" size={size}>
 				<Icon name="Ark" />
