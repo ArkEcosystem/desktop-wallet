@@ -60,8 +60,8 @@ const ContactListItem = ({
           <td className={`text-center ${index === contact.addresses().length - 1 ? "border-b border-dashed border-theme-neutral-200" : ""}`}>
 						{index === 0 && (
 							<div className="flex items-center space-x-3">
-								<Circle className={`bg-color-${coin}-${network}`}>
-									<span className={`text-sm font-semibold text-color-${coin}-${network}`}>
+								<Circle>
+									<span className="text-sm font-semibold">
                     {contact.name().slice(0, 2)}
                   </span>
 								</Circle>
@@ -70,8 +70,8 @@ const ContactListItem = ({
 						)}
 					</td>
 					<td className={`text-center ${index === contact.addresses().length - 1 ? "border-b border-dashed border-theme-neutral-200" : ""}`}>
-						<Circle>
-							<Icon name={coin} />
+						<Circle className={`border-${coin}-${network}`}>
+							<Icon name={coin} className={`text-${coin}-${network}`} />
 						</Circle>
 					</td>
 					<td className="py-6 border-b border-dashed border-theme-neutral-200">
