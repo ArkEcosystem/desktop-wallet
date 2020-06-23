@@ -9,7 +9,8 @@ import { InputRange } from "app/components/Input/InputRange";
 import { Select } from "app/components/Select";
 import { SelectionBar, SelectionBarOption } from "app/components/SelectionBar";
 import { useSelectionState } from "app/components/SelectionBar/useSelectionState";
-import { Table } from "app/components/Table";
+import { RecipientList } from "domains/transaction/components/RecipientList";
+import { RecipientListItem } from "domains/transaction/components/RecipientList/RecipientList.models";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { styled } from "twin.macro";
@@ -28,63 +29,6 @@ type SendTransactionFormProps = {
 	assetSymbol: string;
 	onSubmit?: any;
 	onBack?: any;
-};
-
-type RecipientListItem = {
-	amount: number;
-	address: string;
-	walletName?: string;
-	assetSymbol?: string;
-	onRemove?: any;
-};
-
-const RecipientListItem = ({ amount, address, walletName, assetSymbol, onRemove }: RecipientListItem) => (
-	<tr className="border-b border-theme-neutral-200" data-testid="send-transaction__recipient-list-item">
-		<td className="w-12 py-4">
-			<Circle avatarId="test" size="small" />
-		</td>
-		<td>
-			<Address address={address} walletName={walletName} />
-		</td>
-
-		<td className="font-bold text-right text-theme-neutral-800">
-			{amount} {assetSymbol}
-		</td>
-		<td className="w-16 text-right">
-			<Button variant="plain" onClick={onRemove} data-testid="send-transaction__remove-recipient">
-				<div className="py-1">
-					<Icon name="Trash" />
-				</div>
-			</Button>
-		</td>
-	</tr>
-);
-
-const RecipientList = ({ recipients, onRemove, assetSymbol }: any) => {
-	return (
-		<div className="pt-6">
-			<div className="mb-4 text-sm font-semibold text-theme-neutral-700">Recipients</div>
-			<Table
-				columns={[
-					{ Header: "Avatar", className: "invisible w-2" },
-					{ Header: "Address" },
-					{ Header: "Amount", className: "float-right" },
-					{ Header: "Action", className: "invisible" },
-				]}
-				data={recipients}
-			>
-				{(recipient: any) => (
-					<RecipientListItem
-						assetSymbol={assetSymbol}
-						amount={recipient.amount}
-						address={recipient.address}
-						walletName={recipient.walletName}
-						onRemove={() => onRemove(recipient.address)}
-					/>
-				)}
-			</Table>
-		</div>
-	);
 };
 
 const NetworkFormField = ({ networks, register, selectedNetwork }: any) => {
@@ -247,9 +191,6 @@ export const SendTransactionForm = ({
 
 	return (
 		<FormWrapper>
-			<h2>Send</h2>
-			<p className="mb-4 text-theme-neutral-600">Enter details to send your money</p>
-
 			<Form id="send-transaction__form" context={form} onSubmit={() => void 0}>
 				<NetworkFormField register={register} selectedNetwork={getNetworkByName(network)} networks={networks} />
 
@@ -311,11 +252,15 @@ export const SendTransactionForm = ({
 				)}
 
 				{addedRecipients.length > 0 && (
-					<RecipientList
-						recipients={addedRecipients}
-						onRemove={onRemoveRecipient}
-						assetSymbol={assetSymbol}
-					/>
+					<div>
+						<div className="mb-4 text-sm font-semibold text-theme-neutral-700 pb-4">Recipients</div>
+						<RecipientList
+							recipients={addedRecipients}
+							isEditable={true}
+							onRemove={onRemoveRecipient}
+							assetSymbol={assetSymbol}
+						/>
+					</div>
 				)}
 
 				<FormField name="smartbridge" className="relative mt-1">
