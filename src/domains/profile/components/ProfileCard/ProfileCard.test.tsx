@@ -46,12 +46,9 @@ describe("ProfileCard", () => {
 	});
 
 	it("should select an option in the settings", () => {
-		const options = [
-			{ label: "Option 1", value: "1" },
-			{ label: "Option 2", value: "2" },
-		];
+		const options = [{ label: "Option 1", value: "1" }];
 		const onSelect = jest.fn();
-		const { container, getByTestId } = render(<ProfileCard {...profile} actions={options} onSelect={onSelect} />);
+		const { getByTestId } = render(<ProfileCard {...profile} actions={options} onSelect={onSelect} />);
 		const toggle = getByTestId("dropdown__toggle");
 
 		act(() => {

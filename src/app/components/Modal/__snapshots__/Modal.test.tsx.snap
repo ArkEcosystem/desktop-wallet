@@ -5,15 +5,15 @@ exports[`Modal should not render if not open 1`] = `<DocumentFragment />`;
 exports[`Modal should render a 3x large one 1`] = `
 <div>
   <div
-    class="fixed inset-0 z-10 bg-black opacity-50"
+    class="fixed inset-0 z-30 bg-black opacity-50"
     data-testid="modal__overlay"
   />
   <div
-    class="sc-AxiKw jRkhhQ fixed left-0 right-0 z-10 flex flex-col px-12 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
+    class="sc-AxiKw jRkhhQ absolute top-0 left-0 right-0 z-30 flex flex-col px-12 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
     data-testid="modal__inner"
   >
     <div
-      class="absolute top-0 right-0 mt-4 mr-4"
+      class="absolute top-0 right-0 z-10 mt-4 mr-4"
     >
       <button
         class="sc-AxjAm bThAoP"
@@ -49,15 +49,15 @@ exports[`Modal should render a 3x large one 1`] = `
 exports[`Modal should render a 4x large one 1`] = `
 <div>
   <div
-    class="fixed inset-0 z-10 bg-black opacity-50"
+    class="fixed inset-0 z-30 bg-black opacity-50"
     data-testid="modal__overlay"
   />
   <div
-    class="sc-AxiKw jCpCzv fixed left-0 right-0 z-10 flex flex-col px-12 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
+    class="sc-AxiKw jCpCzv absolute top-0 left-0 right-0 z-30 flex flex-col px-12 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
     data-testid="modal__inner"
   >
     <div
-      class="absolute top-0 right-0 mt-4 mr-4"
+      class="absolute top-0 right-0 z-10 mt-4 mr-4"
     >
       <button
         class="sc-AxjAm bThAoP"
@@ -93,15 +93,15 @@ exports[`Modal should render a 4x large one 1`] = `
 exports[`Modal should render a large one 1`] = `
 <div>
   <div
-    class="fixed inset-0 z-10 bg-black opacity-50"
+    class="fixed inset-0 z-30 bg-black opacity-50"
     data-testid="modal__overlay"
   />
   <div
-    class="sc-AxiKw jnoDfx fixed left-0 right-0 z-10 flex flex-col px-12 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
+    class="sc-AxiKw jnoDfx absolute top-0 left-0 right-0 z-30 flex flex-col px-12 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
     data-testid="modal__inner"
   >
     <div
-      class="absolute top-0 right-0 mt-4 mr-4"
+      class="absolute top-0 right-0 z-10 mt-4 mr-4"
     >
       <button
         class="sc-AxjAm bThAoP"
@@ -137,15 +137,15 @@ exports[`Modal should render a large one 1`] = `
 exports[`Modal should render a medium one 1`] = `
 <div>
   <div
-    class="fixed inset-0 z-10 bg-black opacity-50"
+    class="fixed inset-0 z-30 bg-black opacity-50"
     data-testid="modal__overlay"
   />
   <div
-    class="sc-AxiKw fWjEmW fixed left-0 right-0 z-10 flex flex-col px-12 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
+    class="sc-AxiKw fWjEmW absolute top-0 left-0 right-0 z-30 flex flex-col px-12 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
     data-testid="modal__inner"
   >
     <div
-      class="absolute top-0 right-0 mt-4 mr-4"
+      class="absolute top-0 right-0 z-10 mt-4 mr-4"
     >
       <button
         class="sc-AxjAm bThAoP"
@@ -181,15 +181,15 @@ exports[`Modal should render a medium one 1`] = `
 exports[`Modal should render a modal with content 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-10 bg-black opacity-50"
+    class="fixed inset-0 z-30 bg-black opacity-50"
     data-testid="modal__overlay"
   />
   <div
-    class="sc-AxiKw cTRlJa fixed left-0 right-0 z-10 flex flex-col px-12 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
+    class="sc-AxiKw cTRlJa absolute top-0 left-0 right-0 z-30 flex flex-col px-12 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
     data-testid="modal__inner"
   >
     <div
-      class="absolute top-0 right-0 mt-4 mr-4"
+      class="absolute top-0 right-0 z-10 mt-4 mr-4"
     >
       <button
         class="sc-AxjAm bThAoP"
@@ -227,15 +227,15 @@ exports[`Modal should render a modal with content 1`] = `
 exports[`Modal should render a modal with description 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-10 bg-black opacity-50"
+    class="fixed inset-0 z-30 bg-black opacity-50"
     data-testid="modal__overlay"
   />
   <div
-    class="sc-AxiKw cTRlJa fixed left-0 right-0 z-10 flex flex-col px-12 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
+    class="sc-AxiKw cTRlJa absolute top-0 left-0 right-0 z-30 flex flex-col px-12 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
     data-testid="modal__inner"
   >
     <div
-      class="absolute top-0 right-0 mt-4 mr-4"
+      class="absolute top-0 right-0 z-10 mt-4 mr-4"
     >
       <button
         class="sc-AxjAm bThAoP"
@@ -277,15 +277,15 @@ exports[`Modal should render a modal with description 1`] = `
 exports[`Modal should render a modal with overlay 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-10 bg-black opacity-50"
+    class="fixed inset-0 z-30 bg-black opacity-50"
     data-testid="modal__overlay"
   />
   <div
-    class="sc-AxiKw cTRlJa fixed left-0 right-0 z-10 flex flex-col px-12 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
+    class="sc-AxiKw cTRlJa absolute top-0 left-0 right-0 z-30 flex flex-col px-12 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
     data-testid="modal__inner"
   >
     <div
-      class="absolute top-0 right-0 mt-4 mr-4"
+      class="absolute top-0 right-0 z-10 mt-4 mr-4"
     >
       <button
         class="sc-AxjAm bThAoP"
@@ -323,15 +323,15 @@ exports[`Modal should render a modal with overlay 1`] = `
 exports[`Modal should render a small one 1`] = `
 <div>
   <div
-    class="fixed inset-0 z-10 bg-black opacity-50"
+    class="fixed inset-0 z-30 bg-black opacity-50"
     data-testid="modal__overlay"
   />
   <div
-    class="sc-AxiKw wLhVq fixed left-0 right-0 z-10 flex flex-col px-12 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
+    class="sc-AxiKw wLhVq absolute top-0 left-0 right-0 z-30 flex flex-col px-12 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
     data-testid="modal__inner"
   >
     <div
-      class="absolute top-0 right-0 mt-4 mr-4"
+      class="absolute top-0 right-0 z-10 mt-4 mr-4"
     >
       <button
         class="sc-AxjAm bThAoP"
@@ -367,15 +367,15 @@ exports[`Modal should render a small one 1`] = `
 exports[`Modal should render a xlarge one 1`] = `
 <div>
   <div
-    class="fixed inset-0 z-10 bg-black opacity-50"
+    class="fixed inset-0 z-30 bg-black opacity-50"
     data-testid="modal__overlay"
   />
   <div
-    class="sc-AxiKw Zauxd fixed left-0 right-0 z-10 flex flex-col px-12 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
+    class="sc-AxiKw Zauxd absolute top-0 left-0 right-0 z-30 flex flex-col px-12 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
     data-testid="modal__inner"
   >
     <div
-      class="absolute top-0 right-0 mt-4 mr-4"
+      class="absolute top-0 right-0 z-10 mt-4 mr-4"
     >
       <button
         class="sc-AxjAm bThAoP"

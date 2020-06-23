@@ -65,12 +65,12 @@ export const SelectNetwork = () => {
 		{
 			label: "Bitcoin",
 			value: "btc",
-			icon: "Btc",
+			icon: "Bitcoin",
 		},
 		{
 			label: "Ethereum",
 			value: "eth",
-			icon: "Eth",
+			icon: "Ethereum",
 		},
 	];
 

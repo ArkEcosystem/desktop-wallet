@@ -52,10 +52,10 @@ const ModalContent = (props: ModalContentProps) => {
 	return (
 		<ModalContainer
 			size={props.size!}
-			className="fixed left-0 right-0 z-10 flex flex-col px-12 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
+			className="absolute top-0 left-0 right-0 z-30 flex flex-col px-12 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
 			data-testid="modal__inner"
 		>
-			<div className="absolute top-0 right-0 mt-4 mr-4">
+			<div className="absolute top-0 right-0 z-10 mt-4 mr-4">
 				<Button
 					data-testid="modal__close-btn"
 					color="neutral"
@@ -97,7 +97,11 @@ export const Modal = (props: ModalProps) => {
 
 	return (
 		<>
-			<div className="fixed inset-0 z-10 bg-black opacity-50" data-testid="modal__overlay" />
+			<div
+				className="fixed inset-0 z-30 bg-black opacity-50"
+				data-testid="modal__overlay"
+				onClick={props.onClose}
+			/>
 
 			<ModalContent
 				aria-selected={props.isOpen}

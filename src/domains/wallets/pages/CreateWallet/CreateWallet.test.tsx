@@ -10,8 +10,8 @@ describe("CreateWallet", () => {
 	const mnemonic = ["lorem", "ipsum", "dolor", "sit", "amet", "consectetur"];
 	const networks = [
 		{ name: "ARK", icon: "Ark" },
-		{ name: "Ethereum", icon: "Eth" },
-		{ name: "Bitcoin", icon: "Btc" },
+		{ name: "Ethereum", icon: "Ethereum" },
+		{ name: "Bitcoin", icon: "Bitcoin" },
 	];
 
 	const onSubmit = jest.fn();

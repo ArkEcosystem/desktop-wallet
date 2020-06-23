@@ -3,30 +3,34 @@
 exports[`Slider should render 1`] = `
 <div>
   <div
-    class="swiper-container swiper-container-initialized swiper-container-horizontal"
-    style="height: 234px;"
+    class="relative"
   >
     <div
-      class="h-full swiper-wrapper"
-      style="webkit-transition-duration: 0ms; transition-duration: 0ms; webkit-transform: translate3d(NaNpx, 0px, 0px); transform: translate3d(NaNpx, 0px, 0px);"
+      class="swiper-container swiper-container-initialized swiper-container-horizontal"
+      style="height: 234px;"
     >
       <div
-        class="swiper-slide"
-        style="height: 180px;"
+        class="h-full swiper-wrapper "
+        style="webkit-transition-duration: 0ms; transition-duration: 0ms; webkit-transform: translate3d(NaNpx, 0px, 0px); transform: translate3d(NaNpx, 0px, 0px);"
       >
-        <div>
-          Slider item
+        <div
+          class="swiper-slide"
+          style="height: 180px;"
+        >
+          <div>
+            Slider item
+          </div>
         </div>
       </div>
+      <div
+        class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"
+      />
+      <span
+        aria-atomic="true"
+        aria-live="assertive"
+        class="swiper-notification"
+      />
     </div>
-    <div
-      class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"
-    />
-    <span
-      aria-atomic="true"
-      aria-live="assertive"
-      class="swiper-notification"
-    />
   </div>
 </div>
 `;
@@ -34,28 +38,32 @@ exports[`Slider should render 1`] = `
 exports[`Slider should render empty rows if template not provided 1`] = `
 <div>
   <div
-    class="swiper-container swiper-container-initialized swiper-container-horizontal"
-    style="height: 234px;"
+    class="relative"
   >
     <div
-      class="h-full swiper-wrapper"
-      style="webkit-transition-duration: 0ms; transition-duration: 0ms; webkit-transform: translate3d(NaNpx, 0px, 0px); transform: translate3d(NaNpx, 0px, 0px);"
+      class="swiper-container swiper-container-initialized swiper-container-horizontal"
+      style="height: 234px;"
     >
       <div
-        class="swiper-slide"
-        style="height: 180px;"
+        class="h-full swiper-wrapper "
+        style="webkit-transition-duration: 0ms; transition-duration: 0ms; webkit-transform: translate3d(NaNpx, 0px, 0px); transform: translate3d(NaNpx, 0px, 0px);"
       >
-        <div />
+        <div
+          class="swiper-slide"
+          style="height: 180px;"
+        >
+          <div />
+        </div>
       </div>
+      <div
+        class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"
+      />
+      <span
+        aria-atomic="true"
+        aria-live="assertive"
+        class="swiper-notification"
+      />
     </div>
-    <div
-      class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"
-    />
-    <span
-      aria-atomic="true"
-      aria-live="assertive"
-      class="swiper-notification"
-    />
   </div>
 </div>
 `;
@@ -63,88 +71,92 @@ exports[`Slider should render empty rows if template not provided 1`] = `
 exports[`Slider should render pagination 1`] = `
 <div>
   <div
-    class="swiper-container swiper-container-initialized swiper-container-horizontal"
-    style="height: 234px;"
+    class="relative"
   >
     <div
-      class="h-full swiper-wrapper"
-      style="webkit-transition-duration: 0ms; transition-duration: 0ms; webkit-transform: translate3d(NaNpx, 0px, 0px); transform: translate3d(NaNpx, 0px, 0px);"
+      class="swiper-container swiper-container-initialized swiper-container-horizontal"
+      style="height: 234px;"
     >
       <div
-        class="swiper-slide"
-        style="height: 180px;"
+        class="h-full swiper-wrapper "
+        style="webkit-transition-duration: 0ms; transition-duration: 0ms; webkit-transform: translate3d(NaNpx, 0px, 0px); transform: translate3d(NaNpx, 0px, 0px);"
       >
-        <div />
+        <div
+          class="swiper-slide"
+          style="height: 180px;"
+        >
+          <div />
+        </div>
+        <div
+          class="swiper-slide"
+          style="height: 180px;"
+        >
+          <div />
+        </div>
+        <div
+          class="swiper-slide"
+          style="height: 180px;"
+        >
+          <div />
+        </div>
+        <div
+          class="swiper-slide"
+          style="height: 180px;"
+        >
+          <div />
+        </div>
+        <div
+          class="swiper-slide"
+          style="height: 180px;"
+        >
+          <div />
+        </div>
+        <div
+          class="swiper-slide"
+          style="height: 180px;"
+        >
+          <div />
+        </div>
+        <div
+          class="swiper-slide"
+          style="height: 180px;"
+        >
+          <div />
+        </div>
+        <div
+          class="swiper-slide"
+          style="height: 180px;"
+        >
+          <div />
+        </div>
+        <div
+          class="swiper-slide"
+          style="height: 180px;"
+        >
+          <div />
+        </div>
+        <div
+          class="swiper-slide"
+          style="height: 180px;"
+        >
+          <div />
+        </div>
+        <div
+          class="swiper-slide"
+          style="height: 180px;"
+        >
+          <div />
+        </div>
       </div>
       <div
-        class="swiper-slide"
-        style="height: 180px;"
-      >
-        <div />
-      </div>
-      <div
-        class="swiper-slide"
-        style="height: 180px;"
-      >
-        <div />
-      </div>
-      <div
-        class="swiper-slide"
-        style="height: 180px;"
-      >
-        <div />
-      </div>
-      <div
-        class="swiper-slide"
-        style="height: 180px;"
-      >
-        <div />
-      </div>
-      <div
-        class="swiper-slide"
-        style="height: 180px;"
-      >
-        <div />
-      </div>
-      <div
-        class="swiper-slide"
-        style="height: 180px;"
-      >
-        <div />
-      </div>
-      <div
-        class="swiper-slide"
-        style="height: 180px;"
-      >
-        <div />
-      </div>
-      <div
-        class="swiper-slide"
-        style="height: 180px;"
-      >
-        <div />
-      </div>
-      <div
-        class="swiper-slide"
-        style="height: 180px;"
-      >
-        <div />
-      </div>
-      <div
-        class="swiper-slide"
-        style="height: 180px;"
-      >
-        <div />
-      </div>
+        class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"
+      />
+      <span
+        aria-atomic="true"
+        aria-live="assertive"
+        class="swiper-notification"
+      />
     </div>
-    <div
-      class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"
-    />
-    <span
-      aria-atomic="true"
-      aria-live="assertive"
-      class="swiper-notification"
-    />
   </div>
 </div>
 `;

@@ -8,7 +8,7 @@ describe("PeerListItem", () => {
 		const { container } = render(
 			<table>
 				<tbody>
-					<PeerListItem coin="Btc" />
+					<PeerListItem coin="Bitcoin" />
 				</tbody>
 			</table>,
 		);
@@ -26,7 +26,7 @@ describe("PeerListItem", () => {
 		const { container, getByTestId } = render(
 			<table>
 				<tbody>
-					<PeerListItem coin="Btc" actions={options} onAction={onAction} />
+					<PeerListItem coin="Bitcoin" actions={options} onAction={onAction} />
 				</tbody>
 			</table>,
 		);
@@ -58,7 +58,7 @@ describe("PeerListItem", () => {
 		const { container, getByTestId } = render(
 			<table>
 				<tbody>
-					<PeerListItem coin="Btc" actions={options} />
+					<PeerListItem coin="Bitcoin" actions={options} />
 				</tbody>
 			</table>,
 		);
