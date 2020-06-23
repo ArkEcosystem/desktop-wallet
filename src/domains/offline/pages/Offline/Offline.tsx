@@ -18,7 +18,7 @@ export const Offline = () => {
 				</div>
 			</div>
 
-			<div className="container mx-auto mt-4 text-center">
+			<div className="container mx-auto mt-4 text-center" data-testid="Offline">
 				<div className="w-2/6 mx-auto">
 					<CannotConnectBanner />
 				</div>
