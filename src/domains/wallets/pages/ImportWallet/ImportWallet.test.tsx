@@ -16,12 +16,12 @@ describe("Wallet / Import", () => {
 		{
 			id: 2,
 			name: "Ethereum",
-			icon: "Eth",
+			icon: "Ethereum",
 		},
 		{
 			id: 3,
 			name: "Bitcoin",
-			icon: "Btc",
+			icon: "Bitcoin",
 		},
 	];
 
