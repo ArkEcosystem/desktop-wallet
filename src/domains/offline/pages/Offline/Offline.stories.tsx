@@ -3,7 +3,7 @@ import React from "react";
 import { Offline } from "./Offline";
 
 export default {
-	title: "Splashscreen / Pages / Offline",
+	title: "Offline / Pages / Offline",
 };
 
 export const Default = () => <Offline />;
