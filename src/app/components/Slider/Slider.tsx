@@ -53,7 +53,7 @@ export const Slider = ({ children, data, options, className, paginationPosition 
 	return (
 		<div className="relative">
 			{paginationPosition === "top-right" && (
-				<div className="absolute w-auto -top-12 right-0 space-x-2 swiper-pagination" />
+				<div className="absolute right-0 w-auto -top-12 space-x-2 swiper-pagination" />
 			)}
 
 			<div className="swiper-container" style={{ height: `${getContainerHeight()}px` }}>

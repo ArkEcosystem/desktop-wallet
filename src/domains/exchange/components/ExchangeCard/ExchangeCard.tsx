@@ -26,8 +26,8 @@ export const AddExchangeCard = ({ onAddExchange }: { onAddExchange: any }) => {
 			className="col-span-2 border-theme-primary-100"
 			onClick={onAddExchange}
 		>
-			<div className="flex items-center my-auto px-12 font-semibold text-theme-primary-600">
-				<Icon name="Plus" className="p-4 bg-theme-primary-100 rounded-lg mr-4" />
+			<div className="flex items-center px-12 my-auto font-semibold text-theme-primary-600">
+				<Icon name="Plus" className="p-4 mr-4 rounded-lg bg-theme-primary-100" />
 
 				{t("EXCHANGE.ADD_EXCHANGE")}
 			</div>
@@ -40,8 +40,8 @@ export const BlankCard = () => {
 
 	return (
 		<ExchangeCardStyled data-testid="Exchange__blank-card" className="border-theme-primary-100">
-			<div className="flex items-center my-auto px-12 font-semibold text-theme-primary-100">
-				<div className="w-12 h-12 border-2 border-theme-primary-100 rounded-lg mr-4" />
+			<div className="flex items-center px-12 my-auto font-semibold text-theme-primary-100">
+				<div className="w-12 h-12 mr-4 border-2 rounded-lg border-theme-primary-100" />
 
 				{t("EXCHANGE.EXCHANGE_NAME")}
 			</div>
@@ -68,7 +68,7 @@ export const ExchangeCard = ({ exchange, isSelected, onClick }: ExchangeCardProp
 			}
 			onClick={onClick}
 		>
-			<div className="my-auto px-12 font-semibold">
+			<div className="px-12 my-auto font-semibold">
 				<div className="flex items-center">
 					<div className="absolute top-4 right-2 text-theme-primary-200">
 						<Dropdown toggleIcon="Settings" options={options} />

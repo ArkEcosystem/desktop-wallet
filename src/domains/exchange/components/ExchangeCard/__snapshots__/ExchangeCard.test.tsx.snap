@@ -7,10 +7,10 @@ exports[`ExchangeCard should render Add Exchange card 1`] = `
     data-testid="Exchange__add-exchange-card"
   >
     <div
-      class="flex items-center my-auto px-12 font-semibold text-theme-primary-600"
+      class="flex items-center px-12 my-auto font-semibold text-theme-primary-600"
     >
       <div
-        class="sc-AxjAm cpczEI p-4 bg-theme-primary-100 rounded-lg mr-4"
+        class="sc-AxjAm cpczEI p-4 mr-4 rounded-lg bg-theme-primary-100"
         height="1em"
         width="1em"
       >
@@ -31,10 +31,10 @@ exports[`ExchangeCard should render Blank Exchange card 1`] = `
     data-testid="Exchange__blank-card"
   >
     <div
-      class="flex items-center my-auto px-12 font-semibold text-theme-primary-100"
+      class="flex items-center px-12 my-auto font-semibold text-theme-primary-100"
     >
       <div
-        class="w-12 h-12 border-2 border-theme-primary-100 rounded-lg mr-4"
+        class="w-12 h-12 mr-4 border-2 rounded-lg border-theme-primary-100"
       />
       Exchange Name
     </div>
@@ -49,7 +49,7 @@ exports[`ExchangeCard should render Exchange card 1`] = `
     data-testid="Exchange__exchange-card-test-exchange"
   >
     <div
-      class="my-auto px-12 font-semibold"
+      class="px-12 my-auto font-semibold"
     >
       <div
         class="flex items-center"

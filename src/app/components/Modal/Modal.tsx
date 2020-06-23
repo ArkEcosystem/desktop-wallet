@@ -52,10 +52,10 @@ const ModalContent = (props: ModalContentProps) => {
 	return (
 		<ModalContainer
 			size={props.size!}
-			className="absolute left-0 right-0 top-0 z-30 flex flex-col px-12 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
+			className="absolute top-0 left-0 right-0 z-30 flex flex-col px-12 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
 			data-testid="modal__inner"
 		>
-			<div className="absolute top-0 right-0 mt-4 mr-4 z-10">
+			<div className="absolute top-0 right-0 z-10 mt-4 mr-4">
 				<Button
 					data-testid="modal__close-btn"
 					color="neutral"
