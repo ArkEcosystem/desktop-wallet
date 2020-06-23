@@ -68,7 +68,7 @@ export const AddBlacklistPlugin = (props: AddBlacklistPluginProps) => {
 		<Modal
 			title={t("PLUGINS.MODAL_ADD_BLACKLIST_PLUGIN.TITLE")}
 			description={t("PLUGINS.MODAL_ADD_BLACKLIST_PLUGIN.DESCRIPTION")}
-			size="3xl"
+			size="4xl"
 			isOpen={props.isOpen}
 			onClose={props.onClose}
 		>

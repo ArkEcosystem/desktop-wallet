@@ -80,7 +80,7 @@ export const BestPlugins = (props: BestPluginsProps) => {
 		<Modal
 			title={t("PLUGINS.MODAL_BEST_PLUGINS.TITLE")}
 			description={t("PLUGINS.MODAL_BEST_PLUGINS.DESCRIPTION")}
-			size="3xl"
+			size="4xl"
 			isOpen={props.isOpen}
 			onClose={props.onClose}
 		>
