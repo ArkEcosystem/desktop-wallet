@@ -65,7 +65,7 @@ const CategoryItem = ({ icon, title, subtitle, path }: CategoryItemProps) => (
 export const Main = ({ categories, helpfulArticles, popularArticles, newestArticles }: SupportProps) => {
 	const { t } = useTranslation();
 	return (
-		<div className="-m-5 bg-theme-neutral-100">
+		<div className="bg-theme-neutral-100">
 			<div className="mb-5 bg-white p-13">
 				<div className="flex">
 					<div className="w-2/3">
