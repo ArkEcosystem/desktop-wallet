@@ -1,0 +1,550 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PluginGrid should render 1`] = `
+<DocumentFragment>
+  <div
+    class="grid grid-cols-4 gap-5"
+  >
+    <div
+      class="sc-AxiKw gweSCl border-theme-primary-100 hover:border-theme-background"
+      data-testid="PluginCard--ark-explorer"
+    >
+      <div
+        class="my-auto font-semibold"
+      >
+        <div
+          class="mr-4 mb-4"
+        >
+          <svg
+            class="w-12 h-12"
+          >
+            changenow-logo.svg
+          </svg>
+        </div>
+        <div
+          class="flex text-lg items-center mb-2 space-x-2 text-theme-primary-600"
+        >
+          <div>
+            ARK Explorer
+          </div>
+          <div>
+            <div
+              class="sc-AxjAm vZRQY"
+              height="16"
+              width="16"
+            >
+              <svg>
+                official-ark-plugin.svg
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div
+          class="flex text-theme-neutral-400 text-sm space-x-4"
+        >
+          <div
+            class="pr-4 border-r border-theme-neutral-300"
+          >
+            ARK.io
+          </div>
+          <div>
+            <div
+              class="flex"
+              data-testid="ReviewRating"
+            >
+              <div
+                class="relative my-auto"
+              >
+                <div
+                  class="absolute overflow-hidden"
+                  style="width: 80%;"
+                >
+                  <svg
+                    class="text-theme-warning-300 w-5"
+                  >
+                    star.svg
+                  </svg>
+                </div>
+                <svg
+                  class="text-theme-neutral-500 w-5"
+                >
+                  star.svg
+                </svg>
+              </div>
+              <span
+                class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+              >
+                4.2
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="sc-AxiKw gweSCl border-theme-primary-100 hover:border-theme-background"
+      data-testid="PluginCard--ark-avatars"
+    >
+      <div
+        class="my-auto font-semibold"
+      >
+        <div
+          class="absolute top-4 right-2 text-theme-primary-200"
+        >
+          <div
+            class="relative"
+            data-testid="dropdown__toggle"
+          >
+            <div
+              class="float-right outline-none focus:outline-none"
+            >
+              <div
+                class="sc-AxjAm buCJuk"
+                height="20"
+                width="20"
+              >
+                <svg>
+                  settings.svg
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="mr-4 mb-4"
+        >
+          <svg
+            class="w-12 h-12"
+          >
+            changenow-logo.svg
+          </svg>
+        </div>
+        <div
+          class="flex text-lg items-center mb-2 space-x-2 text-theme-primary-600"
+        >
+          <div>
+            ARK Avatars
+          </div>
+          <div>
+            <div
+              class="sc-AxjAm buCJuk"
+              height="20"
+              width="20"
+            >
+              <svg>
+                grant.svg
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div
+          class="flex text-theme-neutral-400 text-sm space-x-4"
+        >
+          <div
+            class="pr-4 border-r border-theme-neutral-300"
+          >
+            ARK.io
+          </div>
+          <div>
+            <div
+              class="flex"
+              data-testid="ReviewRating"
+            >
+              <div
+                class="relative my-auto"
+              >
+                <div
+                  class="absolute overflow-hidden"
+                  style="width: 70%;"
+                >
+                  <svg
+                    class="text-theme-warning-300 w-5"
+                  >
+                    star.svg
+                  </svg>
+                </div>
+                <svg
+                  class="text-theme-neutral-500 w-5"
+                >
+                  star.svg
+                </svg>
+              </div>
+              <span
+                class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+              >
+                3.8
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`PluginGrid should trigger delete 1`] = `
+<DocumentFragment>
+  <div
+    class="grid grid-cols-4 gap-5"
+  >
+    <div
+      class="sc-AxiKw gweSCl border-theme-primary-100 hover:border-theme-background"
+      data-testid="PluginCard--ark-explorer"
+    >
+      <div
+        class="my-auto font-semibold"
+      >
+        <div
+          class="mr-4 mb-4"
+        >
+          <svg
+            class="w-12 h-12"
+          >
+            changenow-logo.svg
+          </svg>
+        </div>
+        <div
+          class="flex text-lg items-center mb-2 space-x-2 text-theme-primary-600"
+        >
+          <div>
+            ARK Explorer
+          </div>
+          <div>
+            <div
+              class="sc-AxjAm vZRQY"
+              height="16"
+              width="16"
+            >
+              <svg>
+                official-ark-plugin.svg
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div
+          class="flex text-theme-neutral-400 text-sm space-x-4"
+        >
+          <div
+            class="pr-4 border-r border-theme-neutral-300"
+          >
+            ARK.io
+          </div>
+          <div>
+            <div
+              class="flex"
+              data-testid="ReviewRating"
+            >
+              <div
+                class="relative my-auto"
+              >
+                <div
+                  class="absolute overflow-hidden"
+                  style="width: 80%;"
+                >
+                  <svg
+                    class="text-theme-warning-300 w-5"
+                  >
+                    star.svg
+                  </svg>
+                </div>
+                <svg
+                  class="text-theme-neutral-500 w-5"
+                >
+                  star.svg
+                </svg>
+              </div>
+              <span
+                class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+              >
+                4.2
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="sc-AxiKw gweSCl border-theme-primary-100 hover:border-theme-background"
+      data-testid="PluginCard--ark-avatars"
+    >
+      <div
+        class="my-auto font-semibold"
+      >
+        <div
+          class="absolute top-4 right-2 text-theme-primary-200"
+        >
+          <div
+            class="relative"
+            data-testid="dropdown__toggle"
+          >
+            <div
+              class="float-right outline-none focus:outline-none"
+            >
+              <div
+                class="sc-AxjAm buCJuk"
+                height="20"
+                width="20"
+              >
+                <svg>
+                  settings.svg
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="mr-4 mb-4"
+        >
+          <svg
+            class="w-12 h-12"
+          >
+            changenow-logo.svg
+          </svg>
+        </div>
+        <div
+          class="flex text-lg items-center mb-2 space-x-2 text-theme-primary-600"
+        >
+          <div>
+            ARK Avatars
+          </div>
+          <div>
+            <div
+              class="sc-AxjAm buCJuk"
+              height="20"
+              width="20"
+            >
+              <svg>
+                grant.svg
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div
+          class="flex text-theme-neutral-400 text-sm space-x-4"
+        >
+          <div
+            class="pr-4 border-r border-theme-neutral-300"
+          >
+            ARK.io
+          </div>
+          <div>
+            <div
+              class="flex"
+              data-testid="ReviewRating"
+            >
+              <div
+                class="relative my-auto"
+              >
+                <div
+                  class="absolute overflow-hidden"
+                  style="width: 70%;"
+                >
+                  <svg
+                    class="text-theme-warning-300 w-5"
+                  >
+                    star.svg
+                  </svg>
+                </div>
+                <svg
+                  class="text-theme-neutral-500 w-5"
+                >
+                  star.svg
+                </svg>
+              </div>
+              <span
+                class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+              >
+                3.8
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`PluginGrid should trigger select 1`] = `
+<DocumentFragment>
+  <div
+    class="grid grid-cols-4 gap-5"
+  >
+    <div
+      class="sc-AxiKw gweSCl border-theme-primary-100 hover:border-theme-background"
+      data-testid="PluginCard--ark-explorer"
+    >
+      <div
+        class="my-auto font-semibold"
+      >
+        <div
+          class="mr-4 mb-4"
+        >
+          <svg
+            class="w-12 h-12"
+          >
+            changenow-logo.svg
+          </svg>
+        </div>
+        <div
+          class="flex text-lg items-center mb-2 space-x-2 text-theme-primary-600"
+        >
+          <div>
+            ARK Explorer
+          </div>
+          <div>
+            <div
+              class="sc-AxjAm vZRQY"
+              height="16"
+              width="16"
+            >
+              <svg>
+                official-ark-plugin.svg
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div
+          class="flex text-theme-neutral-400 text-sm space-x-4"
+        >
+          <div
+            class="pr-4 border-r border-theme-neutral-300"
+          >
+            ARK.io
+          </div>
+          <div>
+            <div
+              class="flex"
+              data-testid="ReviewRating"
+            >
+              <div
+                class="relative my-auto"
+              >
+                <div
+                  class="absolute overflow-hidden"
+                  style="width: 80%;"
+                >
+                  <svg
+                    class="text-theme-warning-300 w-5"
+                  >
+                    star.svg
+                  </svg>
+                </div>
+                <svg
+                  class="text-theme-neutral-500 w-5"
+                >
+                  star.svg
+                </svg>
+              </div>
+              <span
+                class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+              >
+                4.2
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="sc-AxiKw gweSCl border-theme-primary-100 hover:border-theme-background"
+      data-testid="PluginCard--ark-avatars"
+    >
+      <div
+        class="my-auto font-semibold"
+      >
+        <div
+          class="absolute top-4 right-2 text-theme-primary-200"
+        >
+          <div
+            class="relative"
+            data-testid="dropdown__toggle"
+          >
+            <div
+              class="float-right outline-none focus:outline-none"
+            >
+              <div
+                class="sc-AxjAm buCJuk"
+                height="20"
+                width="20"
+              >
+                <svg>
+                  settings.svg
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="mr-4 mb-4"
+        >
+          <svg
+            class="w-12 h-12"
+          >
+            changenow-logo.svg
+          </svg>
+        </div>
+        <div
+          class="flex text-lg items-center mb-2 space-x-2 text-theme-primary-600"
+        >
+          <div>
+            ARK Avatars
+          </div>
+          <div>
+            <div
+              class="sc-AxjAm buCJuk"
+              height="20"
+              width="20"
+            >
+              <svg>
+                grant.svg
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div
+          class="flex text-theme-neutral-400 text-sm space-x-4"
+        >
+          <div
+            class="pr-4 border-r border-theme-neutral-300"
+          >
+            ARK.io
+          </div>
+          <div>
+            <div
+              class="flex"
+              data-testid="ReviewRating"
+            >
+              <div
+                class="relative my-auto"
+              >
+                <div
+                  class="absolute overflow-hidden"
+                  style="width: 70%;"
+                >
+                  <svg
+                    class="text-theme-warning-300 w-5"
+                  >
+                    star.svg
+                  </svg>
+                </div>
+                <svg
+                  class="text-theme-neutral-500 w-5"
+                >
+                  star.svg
+                </svg>
+              </div>
+              <span
+                class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+              >
+                3.8
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
