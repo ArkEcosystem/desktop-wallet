@@ -28,6 +28,7 @@ export const Table = ({ children, data, columns }: TableProps) => {
 	);
 
 	const renderChildNode = (data: any, index: number) => {
+		console.log(data);
 		if (typeof children === "function") return children(data, index);
 		return <tr />;
 	};
