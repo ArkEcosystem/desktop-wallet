@@ -1,7 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 
-const RatingCount = styled.div(({ width }) => ({
+export type RatingCountProps = {
+	width: number;
+};
+
+const RatingCount = styled.div(({ width }: RatingCountProps) => ({
 	width: `${width}%`,
 }));
 
