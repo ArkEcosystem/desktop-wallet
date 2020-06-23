@@ -5,6 +5,7 @@ import { ReactComponent as Ark } from "./ark.svg";
 import { ReactComponent as ArrowBack } from "./arrow-back.svg";
 import { ReactComponent as ArrowDown } from "./arrowdown.svg";
 import { ReactComponent as ArrowUp } from "./arrowup.svg";
+import { ReactComponent as Article } from "./article.svg";
 import { ReactComponent as Btc } from "./btc.svg";
 import { ReactComponent as Checkmark } from "./checkmark.svg";
 import { ReactComponent as ChevronDown } from "./chevron-down.svg";
@@ -16,11 +17,15 @@ import { ReactComponent as Delegate } from "./delegate.svg";
 import { ReactComponent as Discord } from "./discord.svg";
 import { ReactComponent as Download } from "./download.svg";
 import { ReactComponent as Eth } from "./eth.svg";
+import { ReactComponent as Exchange } from "./exchange.svg";
+import { ReactComponent as Explorer } from "./explorer.svg";
 import { ReactComponent as EyeOff } from "./eye-off.svg";
+import { ReactComponent as EyeTag } from "./eye-tag.svg";
 import { ReactComponent as Eye } from "./eye.svg";
 import { ReactComponent as FilePassword } from "./file-password.svg";
 import { ReactComponent as Filters } from "./filters.svg";
 import { ReactComponent as General } from "./general.svg";
+import { ReactComponent as Grant } from "./grant.svg";
 import { ReactComponent as Grid } from "./grid.svg";
 import { ReactComponent as Import } from "./import.svg";
 import { ReactComponent as Ipfs } from "./ipfs.svg";
@@ -31,10 +36,15 @@ import { ReactComponent as Mistake } from "./mistake.svg";
 import { ReactComponent as Msq } from "./msq.svg";
 import { ReactComponent as Multisig } from "./multisig.svg";
 import { ReactComponent as Notification } from "./notification.svg";
+import { ReactComponent as OfficialArkPlugin } from "./official-ark-plugin.svg";
 import { ReactComponent as Ok } from "./ok.svg";
 import { ReactComponent as Peer } from "./peer.svg";
 import { ReactComponent as Plugin } from "./plugin.svg";
+import { ReactComponent as Plugins } from "./plugins.svg";
 import { ReactComponent as Plus } from "./plus.svg";
+import { ReactComponent as PortfolioTag } from "./portfolio-tag.svg";
+import { ReactComponent as Portfolio } from "./portfolio.svg";
+import { ReactComponent as Profile } from "./profile.svg";
 import { ReactComponent as Qrcode } from "./qrcode.svg";
 import { ReactComponent as Receive } from "./receive.svg";
 import { ReactComponent as Received } from "./received.svg";
@@ -75,11 +85,13 @@ export const SvgCollection: any = {
 	Discord,
 	Download,
 	Eth,
+	Explorer,
 	Eye,
 	EyeOff,
 	FilePassword,
 	Filters,
 	General,
+	Grant,
 	Grid,
 	Import,
 	Ipfs,
@@ -89,6 +101,7 @@ export const SvgCollection: any = {
 	Mistake,
 	Msq,
 	Multisig,
+	OfficialArkPlugin,
 	Ok,
 	Peer,
 	Plugin,
@@ -114,4 +127,11 @@ export const SvgCollection: any = {
 	Notification,
 	Receive,
 	User,
+	Exchange,
+	Plugins,
+	Profile,
+	Portfolio,
+	PortfolioTag,
+	Article,
+	EyeTag,
 };

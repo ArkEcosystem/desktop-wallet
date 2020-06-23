@@ -1,9 +1,9 @@
 import { Icon } from "app/components/Icon";
+import { clickOutsideHandler } from "app/hooks/click-outside";
 import React, { useEffect, useRef, useState } from "react";
 import { styled } from "twin.macro";
 
 import { defaultClasses, defaultStyles } from "./Dropdown.styles";
-import { clickOutsideHandler } from "./hooks";
 
 export type Option = {
 	label: string;

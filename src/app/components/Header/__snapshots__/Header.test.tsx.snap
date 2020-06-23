@@ -3,10 +3,10 @@
 exports[`Header should render an header 1`] = `
 <DocumentFragment>
   <div
-    class="flex items-center justify-between"
+    class="flex items-center justify-between bg-theme-background"
   >
     <div
-      class="flex flex-col items-start"
+      class="flex flex-col items-start w-2/5"
     >
       <h1
         class="text-3xl font-bold md:text-4xl"
@@ -22,10 +22,10 @@ exports[`Header should render an header 1`] = `
 exports[`Header should render an header with a subtitle 1`] = `
 <DocumentFragment>
   <div
-    class="flex items-center justify-between"
+    class="flex items-center justify-between bg-theme-background"
   >
     <div
-      class="flex flex-col items-start"
+      class="flex flex-col items-start w-2/5"
     >
       <h1
         class="text-3xl font-bold md:text-4xl"
@@ -47,10 +47,10 @@ exports[`Header should render an header with a subtitle 1`] = `
 exports[`Header should render an header with extra 1`] = `
 <DocumentFragment>
   <div
-    class="flex items-center justify-between"
+    class="flex items-center justify-between bg-theme-background"
   >
     <div
-      class="flex flex-col items-start"
+      class="flex flex-col items-start w-2/5"
     >
       <h1
         class="text-3xl font-bold md:text-4xl"
@@ -66,24 +66,28 @@ exports[`Header should render an header with extra 1`] = `
       </div>
     </div>
     <div
-      class="flex justify-end space-x-3"
+      class="w-3/5"
     >
-      <button
-        class="sc-AxjAm ddQVWI"
-        color="primary"
-        data-testid="header__extra"
-        type="button"
+      <div
+        class="flex justify-end space-x-3"
       >
-        Extra 1
-      </button>
-      <button
-        class="sc-AxjAm ddQVWI"
-        color="primary"
-        data-testid="header__extra"
-        type="button"
-      >
-        Extra 2
-      </button>
+        <button
+          class="sc-AxjAm ddQVWI"
+          color="primary"
+          data-testid="header__extra"
+          type="button"
+        >
+          Extra 1
+        </button>
+        <button
+          class="sc-AxjAm ddQVWI"
+          color="primary"
+          data-testid="header__extra"
+          type="button"
+        >
+          Extra 2
+        </button>
+      </div>
     </div>
   </div>
 </DocumentFragment>
