@@ -1,0 +1,141 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PercentageBar should render 1`] = `
+<div>
+  <div>
+    <div
+      class="flex"
+    >
+      <div
+        class="font-bold py-4 text-theme-neutral-800"
+      />
+      <div
+        class="flex flex-1 justify-end"
+      />
+    </div>
+    <div
+      class="flex"
+    />
+  </div>
+</div>
+`;
+
+exports[`PercentageBar should render with data 1`] = `
+<div>
+  <div>
+    <div
+      class="flex"
+    >
+      <div
+        class="font-bold py-4 text-theme-neutral-800"
+      />
+      <div
+        class="flex flex-1 justify-end"
+      >
+        <div
+          class="p-4 ml-3"
+        >
+          <div
+            class="mr-2 mb-1 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-danger-500"
+          />
+          <div
+            class="inline-block text-theme-neutral-700 font-semibold text-sm"
+          >
+            ARK
+             - 
+            40
+            %
+          </div>
+        </div>
+        <div
+          class="p-4 ml-3"
+        >
+          <div
+            class="mr-2 mb-1 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-warning-500"
+          />
+          <div
+            class="inline-block text-theme-neutral-700 font-semibold text-sm"
+          >
+            BTC
+             - 
+            25
+            %
+          </div>
+        </div>
+        <div
+          class="p-4 ml-3"
+        >
+          <div
+            class="mr-2 mb-1 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-primary-500"
+          />
+          <div
+            class="inline-block text-theme-neutral-700 font-semibold text-sm"
+          >
+            ETH
+             - 
+            20
+            %
+          </div>
+        </div>
+        <div
+          class="p-4 ml-3"
+        >
+          <div
+            class="mr-2 mb-1 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-neutral-400"
+          />
+          <div
+            class="inline-block text-theme-neutral-700 font-semibold text-sm"
+          >
+            Other
+             - 
+            15
+            %
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="flex"
+    >
+      <div
+        class="h-1 -ml-1 rounded-sm bg-theme-danger-500"
+        style="width: 40%;"
+      />
+      <div
+        class="h-1 -ml-1 rounded-sm bg-theme-warning-500"
+        style="width: 25%;"
+      />
+      <div
+        class="h-1 -ml-1 rounded-sm bg-theme-primary-500"
+        style="width: 20%;"
+      />
+      <div
+        class="h-1 -ml-1 rounded-sm bg-theme-neutral-400"
+        style="width: 15%;"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`PercentageBar should render with title 1`] = `
+<div>
+  <div>
+    <div
+      class="flex"
+    >
+      <div
+        class="font-bold py-4 text-theme-neutral-800"
+      >
+        Total portfolio
+      </div>
+      <div
+        class="flex flex-1 justify-end"
+      />
+    </div>
+    <div
+      class="flex"
+    />
+  </div>
+</div>
+`;
