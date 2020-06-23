@@ -33,9 +33,9 @@ export const StarsCounters = ({ ratings, totalAvaliations }: Props) => (
 							<span className="text-theme-neutral-400">/{totalAvaliations}</span>
 						</div>
 					</div>
-					<div className="bg-theme-neutral-200 w-full h-2 rounded-lg mt-1">
+					<div className="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200">
 						<RatingCount
-							className="bg-theme-warning-300 h-2 rounded-lg"
+							className="h-2 rounded-lg bg-theme-warning-300"
 							width={calculatedRating}
 							data-testid={`${rating}-stars__rating-count`}
 						/>
