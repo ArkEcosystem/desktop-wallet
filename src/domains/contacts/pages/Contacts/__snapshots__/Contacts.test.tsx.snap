@@ -3,11 +3,11 @@
 exports[`Contacts should open & close add contact modal 1`] = `
 <DocumentFragment>
   <div
-    class="flex flex-col -m-5 bg-theme-neutral-200 min-h-screen"
+    class="flex flex-col min-h-screen -m-5 bg-theme-neutral-200"
     data-testid="contacts"
   >
     <div
-      class="flex items-center space-x-3 font-semibold p-10 text-theme-neutral-700"
+      class="flex items-center space-x-3 p-10 font-semibold text-theme-neutral-700"
       data-testid="breadcrumbs__wrapper"
     >
       <span>
@@ -30,7 +30,7 @@ exports[`Contacts should open & close add contact modal 1`] = `
       class="flex flex-col flex-1 space-y-5"
     >
       <div
-        class="bg-theme-background p-10"
+        class="p-10 bg-theme-background"
       >
         <div
           class="flex items-center justify-between bg-theme-background"
@@ -55,7 +55,7 @@ exports[`Contacts should open & close add contact modal 1`] = `
             class="w-3/5"
           >
             <div
-              class="flex justify-end items-center space-x-5"
+              class="flex items-center justify-end space-x-5"
             >
               <button
                 class="sc-AxjAm ddQVWI whitespace-no-wrap"
@@ -70,7 +70,7 @@ exports[`Contacts should open & close add contact modal 1`] = `
         </div>
       </div>
       <div
-        class="flex flex-1 bg-theme-background p-10"
+        class="flex flex-1 p-10 bg-theme-background"
       >
         <div
           class="flex flex-col items-center justify-center"
@@ -94,11 +94,11 @@ exports[`Contacts should open & close add contact modal 1`] = `
 exports[`Contacts should open & close add contact modal 2`] = `
 <DocumentFragment>
   <div
-    class="flex flex-col -m-5 bg-theme-neutral-200 min-h-screen"
+    class="flex flex-col min-h-screen -m-5 bg-theme-neutral-200"
     data-testid="contacts"
   >
     <div
-      class="flex items-center space-x-3 font-semibold p-10 text-theme-neutral-700"
+      class="flex items-center space-x-3 p-10 font-semibold text-theme-neutral-700"
       data-testid="breadcrumbs__wrapper"
     >
       <span>
@@ -121,7 +121,7 @@ exports[`Contacts should open & close add contact modal 2`] = `
       class="flex flex-col flex-1 space-y-5"
     >
       <div
-        class="bg-theme-background p-10"
+        class="p-10 bg-theme-background"
       >
         <div
           class="flex items-center justify-between bg-theme-background"
@@ -146,7 +146,7 @@ exports[`Contacts should open & close add contact modal 2`] = `
             class="w-3/5"
           >
             <div
-              class="flex justify-end items-center space-x-5"
+              class="flex items-center justify-end space-x-5"
             >
               <button
                 class="sc-AxjAm ddQVWI whitespace-no-wrap"
@@ -161,7 +161,98 @@ exports[`Contacts should open & close add contact modal 2`] = `
         </div>
       </div>
       <div
-        class="flex flex-1 bg-theme-background p-10"
+        class="flex flex-1 p-10 bg-theme-background"
+      >
+        <div
+          class="flex flex-col items-center justify-center"
+          data-testid="contacts__banner"
+        >
+          <svg
+            class="w-3/5 mb-8"
+          >
+            contacts-banner.svg
+          </svg>
+          <span>
+            Add your most frequent contacts for fast, easy payments
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Contacts should open & close add contact modal 3`] = `
+<DocumentFragment>
+  <div
+    class="flex flex-col min-h-screen -m-5 bg-theme-neutral-200"
+    data-testid="contacts"
+  >
+    <div
+      class="flex items-center p-10 font-semibold space-x-3 text-theme-neutral-700"
+      data-testid="breadcrumbs__wrapper"
+    >
+      <span>
+         &lt;- 
+      </span>
+      <div
+        class="space-x-3"
+      >
+        <a
+          class="text-theme-neutral-700"
+          href="/portfolio"
+        >
+          <span>
+            Go back to Portfolio
+          </span>
+        </a>
+      </div>
+    </div>
+    <div
+      class="flex flex-col flex-1 space-y-5"
+    >
+      <div
+        class="p-10 bg-theme-background"
+      >
+        <div
+          class="flex items-center justify-between bg-theme-background"
+        >
+          <div
+            class="flex flex-col items-start w-2/5"
+          >
+            <h1
+              class="text-3xl font-bold md:text-4xl"
+              data-testid="header__title"
+            >
+              My Contacts
+            </h1>
+            <div
+              class="mt-2 text-theme-neutral-dark"
+              data-testid="header__subtitle"
+            >
+              Manage your frequent contacts
+            </div>
+          </div>
+          <div
+            class="w-3/5"
+          >
+            <div
+              class="flex items-center justify-end space-x-5"
+            >
+              <button
+                class="whitespace-no-wrap sc-AxjAm ddQVWI"
+                color="primary"
+                data-testid="contacts__add-contact-btn"
+                type="button"
+              >
+                Add Contact
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="flex flex-1 p-10 bg-theme-background"
       >
         <div
           class="flex flex-col items-center justify-center"
@@ -185,11 +276,11 @@ exports[`Contacts should open & close add contact modal 2`] = `
 exports[`Contacts should render 1`] = `
 <DocumentFragment>
   <div
-    class="flex flex-col -m-5 bg-theme-neutral-200 min-h-screen"
+    class="flex flex-col min-h-screen -m-5 bg-theme-neutral-200"
     data-testid="contacts"
   >
     <div
-      class="flex items-center space-x-3 font-semibold p-10 text-theme-neutral-700"
+      class="flex items-center space-x-3 p-10 font-semibold text-theme-neutral-700"
       data-testid="breadcrumbs__wrapper"
     >
       <span>
@@ -212,7 +303,7 @@ exports[`Contacts should render 1`] = `
       class="flex flex-col flex-1 space-y-5"
     >
       <div
-        class="bg-theme-background p-10"
+        class="p-10 bg-theme-background"
       >
         <div
           class="flex items-center justify-between bg-theme-background"
@@ -237,7 +328,7 @@ exports[`Contacts should render 1`] = `
             class="w-3/5"
           >
             <div
-              class="flex justify-end items-center space-x-5"
+              class="flex items-center justify-end space-x-5"
             >
               <button
                 class="sc-AxjAm ddQVWI whitespace-no-wrap"
@@ -252,7 +343,7 @@ exports[`Contacts should render 1`] = `
         </div>
       </div>
       <div
-        class="flex flex-1 bg-theme-background p-10"
+        class="flex flex-1 p-10 bg-theme-background"
       >
         <div
           class="flex flex-col items-center justify-center"
@@ -276,11 +367,11 @@ exports[`Contacts should render 1`] = `
 exports[`Contacts should render with contacts 1`] = `
 <DocumentFragment>
   <div
-    class="flex flex-col -m-5 bg-theme-neutral-200 min-h-screen"
+    class="flex flex-col min-h-screen -m-5 bg-theme-neutral-200"
     data-testid="contacts"
   >
     <div
-      class="flex items-center space-x-3 font-semibold p-10 text-theme-neutral-700"
+      class="flex items-center space-x-3 p-10 font-semibold text-theme-neutral-700"
       data-testid="breadcrumbs__wrapper"
     >
       <span>
@@ -303,7 +394,7 @@ exports[`Contacts should render with contacts 1`] = `
       class="flex flex-col flex-1 space-y-5"
     >
       <div
-        class="bg-theme-background p-10"
+        class="p-10 bg-theme-background"
       >
         <div
           class="flex items-center justify-between bg-theme-background"
@@ -328,7 +419,7 @@ exports[`Contacts should render with contacts 1`] = `
             class="w-3/5"
           >
             <div
-              class="flex justify-end items-center space-x-5"
+              class="flex items-center justify-end space-x-5"
             >
               <button
                 class="flex items-center my-auto font-semibold cursor-pointer text-theme-primary-200 space-x-3"
@@ -363,7 +454,7 @@ exports[`Contacts should render with contacts 1`] = `
         </div>
       </div>
       <div
-        class="flex flex-1 bg-theme-background p-10"
+        class="flex flex-1 p-10 bg-theme-background"
       >
         <div
           class="w-full"

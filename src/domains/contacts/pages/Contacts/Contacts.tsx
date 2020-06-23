@@ -23,7 +23,7 @@ const ContactsHeaderExtra = ({ showSearchBar, onSearch, onAddContact }: Contacts
 
 
 	return (
-		<div className="flex justify-end items-center space-x-5">
+		<div className="flex items-center justify-end space-x-5">
       {showSearchBar &&
         <>
         	<HeaderSearchBar onSearch={onSearch} />
@@ -73,16 +73,25 @@ export const Contacts = ({ contacts, onSearch }: ContactsProps) => {
 		},
 	];
 
+  // TODO: replace after design phase
+  const networks = [
+    {
+      label: "Ark Ecosystem",
+      value: "ark",
+      icon: "Ark",
+    },
+  ];
+
   const handleOnSave = () => {
-    console.log("onSave");
+    setCreateIsOpen(false)
   };
 
 	return (
-		<div data-testid="contacts" className="flex flex-col -m-5 bg-theme-neutral-200 min-h-screen">
-			<Breadcrumbs crumbs={crumbs} className="font-semibold p-10" />
+		<div data-testid="contacts" className="flex flex-col min-h-screen -m-5 bg-theme-neutral-200">
+			<Breadcrumbs crumbs={crumbs} className="p-10 font-semibold" />
 
 			<div className="flex flex-col flex-1 space-y-5">
-				<div className="bg-theme-background p-10">
+				<div className="p-10 bg-theme-background">
 					<Header
 						title={t("CONTACTS.CONTACTS_PAGE.TITLE")}
 						subtitle={t("CONTACTS.CONTACTS_PAGE.SUBTITLE")}
@@ -96,7 +105,7 @@ export const Contacts = ({ contacts, onSearch }: ContactsProps) => {
 					/>
 				</div>
 
-				<div className="flex flex-1 bg-theme-background p-10">
+				<div className="flex flex-1 p-10 bg-theme-background">
 					{contacts.length === 0 && (
 						<div data-testid="contacts__banner" className="flex flex-col items-center justify-center">
 							<ContactsBanner className="w-3/5 mb-8" />
@@ -116,7 +125,7 @@ export const Contacts = ({ contacts, onSearch }: ContactsProps) => {
 
       <CreateContact
         isOpen={createIsOpen}
-        networks={[]}
+        networks={networks}
         onCancel={() => setCreateIsOpen(false)}
         onClose={() => setCreateIsOpen(false)}
         onSave={handleOnSave}

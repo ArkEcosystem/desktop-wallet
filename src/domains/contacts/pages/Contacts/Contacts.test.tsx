@@ -1,5 +1,5 @@
 import { Contact } from "@arkecosystem/platform-sdk-profiles";
-import { fireEvent, render } from "@testing-library/react";
+import { act, fireEvent, render, waitFor } from "@testing-library/react";
 import { i18n } from "app/i18n";
 import React from "react";
 import { I18nextProvider } from "react-i18next";
@@ -52,7 +52,11 @@ describe("Contacts", () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it.each(["modal__close-btn", "contact-form__cancel-btn"])("should open & close add contact modal", (button) => {
+  it.each([
+    "modal__close-btn",
+    "contact-form__cancel-btn",
+    "contact-form__save-btn",
+  ])("should open & close add contact modal", async (button) => {
     const { asFragment, getByTestId } = render(
       <I18nextProvider i18n={i18n}>
         <Contacts contacts={[]} />
@@ -64,9 +68,33 @@ describe("Contacts", () => {
     expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_CREATE_CONTACT.TITLE);
     expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_CREATE_CONTACT.DESCRIPTION);
 
+    if (button === "contact-form__save-btn") {
+      await act(async () => {
+        await fireEvent.change(getByTestId("contact-form__name-input"), {
+          target: { value: "name" },
+        });
+      });
+
+      await act(async () => {
+        await fireEvent.change(getByTestId("contact-form__network-select"), {
+          target: { value: "ark" },
+        });
+      });
+
+      await act(async () => {
+        await fireEvent.change(getByTestId("contact-form__address-input"), {
+          target: { value: "address" },
+        });
+      });
+
+      await act(async () => {
+        await fireEvent.click(getByTestId("contact-form__add-address-btn"));
+      });
+    }
+
     fireEvent.click(getByTestId(button));
 
-    expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
+    await waitFor(() => expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/));
 
     expect(asFragment()).toMatchSnapshot();
   });
