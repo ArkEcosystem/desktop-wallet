@@ -1,0 +1,941 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PluginDetails should render properly 1`] = `
+<DocumentFragment>
+  <section
+    class="h-full bg-theme-neutral-100"
+    data-testid="plugin-details__header"
+  >
+    <div
+      class="w-full px-10 py-5 bg-theme-background"
+    >
+      <div
+        class="flex w-full"
+      >
+        <img
+          alt="plugin-image"
+          class="w-40 h-40 rounded-lg"
+          src="placeholder.png"
+        />
+        <div
+          class="flex flex-col justify-center w-full px-5"
+        >
+          <div
+            class="flex items-center justify-between"
+          >
+            <div
+              class="flex flex-col"
+            >
+              <span
+                class="text-2xl font-bold"
+              >
+                ARK Explorer
+              </span>
+              <span
+                class="text-medium text-theme-neutral-500"
+              >
+                Use the ARK Mainnet explorer directly within the wallet
+              </span>
+            </div>
+            <div
+              class="flex"
+            >
+              <button
+                class="sc-AxiKw wFYj"
+                color="primary"
+                data-testid="PluginHeader__button--install"
+                type="button"
+              >
+                Install
+              </button>
+              <button
+                class="sc-AxiKw gFzSt ml-3"
+                color="primary"
+                data-testid="PluginHeader__button--warning"
+                type="button"
+              >
+                <div
+                  class="sc-AxjAm jDLXpo"
+                  height="25"
+                  width="25"
+                >
+                  <svg>
+                    alert-danger.svg
+                  </svg>
+                </div>
+              </button>
+            </div>
+          </div>
+          <div
+            class="pt-5 mt-5 text-sm border-t border-dashed grid grid-cols-5 divide-x divide-gray-400 grid-flow-col border-theme-neutral"
+          >
+            <div
+              class="flex"
+            >
+              <div
+                class="flex flex-col undefined"
+              >
+                <span
+                  class="font-bold text-theme-neutral-400"
+                >
+                  Author
+                </span>
+                <span
+                  class="font-bold text-theme-neutral-600"
+                >
+                  ARK Ecosystem
+                </span>
+              </div>
+            </div>
+            <div
+              class="flex px-8"
+            >
+              <div
+                class="flex flex-col undefined"
+              >
+                <span
+                  class="font-bold text-theme-neutral-400"
+                >
+                  Category
+                </span>
+                <span
+                  class="font-bold text-theme-neutral-600"
+                >
+                  Utility
+                </span>
+              </div>
+            </div>
+            <div
+              class="flex px-8"
+            >
+              <div
+                class="flex flex-col undefined"
+              >
+                <span
+                  class="font-bold text-theme-neutral-400"
+                >
+                  URL
+                </span>
+                <span
+                  class="font-bold text-theme-neutral-600"
+                >
+                  github.com
+                </span>
+              </div>
+            </div>
+            <div
+              class="flex col-span-2 justify-between px-8"
+            >
+              <div
+                class="flex flex-col undefined"
+              >
+                <span
+                  class="font-bold text-theme-neutral-400"
+                >
+                  Rating
+                </span>
+                <span
+                  class="font-bold text-theme-neutral-600"
+                >
+                  4.6
+                </span>
+              </div>
+              <div
+                class="flex flex-col text-right"
+              >
+                <span
+                  class="font-bold text-theme-neutral-400"
+                >
+                  Version
+                </span>
+                <span
+                  class="font-bold text-theme-neutral-600"
+                >
+                  v.1.3.8
+                </span>
+              </div>
+            </div>
+            <div
+              class="flex pl-8"
+            >
+              <div
+                class="flex flex-col text-right"
+              >
+                <span
+                  class="font-bold text-theme-neutral-400"
+                >
+                  Size
+                </span>
+                <span
+                  class="font-bold text-theme-neutral-600"
+                >
+                  4.2 Mb
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="p-10 mt-5 bg-theme-background"
+    >
+      <div>
+        <p
+          class="font-bold"
+        >
+          About the plugin
+        </p>
+        <p
+          class="mt-3 text-theme-neutral-600"
+          data-testid="plugin-info__about"
+        >
+          Use the ARK Explorer to get full visibility of critical data from the ARK network. Data such as the latest blocks, wallet addresses and transactions. Plus monitor delegate status, their position and more.
+        </p>
+      </div>
+      <div
+        class="mt-10"
+      >
+        <p
+          class="font-bold"
+        >
+          Permissions
+        </p>
+        <p
+          class="mt-3 text-theme-neutral-600"
+          data-testid="plugin-info__permissions"
+        >
+          Embedded Webpages, API Requests, Access to Profiles
+        </p>
+      </div>
+      <div
+        class="relative mt-10"
+      >
+        <p
+          class="font-bold"
+        >
+          Screenshots
+        </p>
+        <div
+          class="absolute top-0 right-0 flex pr-4 space-x-3 screenshots-pagination swiper-pagination-clickable swiper-pagination-bullets"
+          data-testid="plugin-info__screenshots--pagination"
+        />
+        <div
+          class="pb-10"
+        >
+          <div
+            class="relative"
+          >
+            <div
+              class="swiper-container swiper-container-initialized swiper-container-horizontal"
+              style="height: 234px;"
+            >
+              <div
+                class="h-full swiper-wrapper "
+                style="webkit-transition-duration: 0ms; transition-duration: 0ms; webkit-transform: translate3d(NaNpx, 0px, 0px); transform: translate3d(NaNpx, 0px, 0px);"
+              >
+                <div
+                  class="swiper-slide"
+                  style="height: 180px;"
+                >
+                  <div
+                    class="flex pb-10 mt-3 mr-3 space-x-4"
+                  >
+                    <div
+                      class="w-1/3 h-56 rounded-lg bg-theme-neutral-500"
+                      data-testid="plugin-info__screenshot"
+                    />
+                    <div
+                      class="w-1/3 h-56 rounded-lg bg-theme-neutral-500"
+                      data-testid="plugin-info__screenshot"
+                    />
+                    <div
+                      class="w-1/3 h-56 rounded-lg bg-theme-neutral-500"
+                      data-testid="plugin-info__screenshot"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="swiper-slide"
+                  style="height: 180px;"
+                >
+                  <div
+                    class="flex pb-10 mt-3 mr-3 space-x-4"
+                  >
+                    <div
+                      class="w-1/3 h-56 rounded-lg bg-theme-neutral-500"
+                      data-testid="plugin-info__screenshot"
+                    />
+                    <div
+                      class="w-1/3 h-56 rounded-lg bg-theme-neutral-500"
+                      data-testid="plugin-info__screenshot"
+                    />
+                    <div
+                      class="w-1/3 h-56 rounded-lg bg-theme-neutral-500"
+                      data-testid="plugin-info__screenshot"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="swiper-slide"
+                  style="height: 180px;"
+                >
+                  <div
+                    class="flex pb-10 mt-3 mr-3 space-x-4"
+                  >
+                    <div
+                      class="w-1/3 h-56 rounded-lg bg-theme-neutral-500"
+                      data-testid="plugin-info__screenshot"
+                    />
+                    <div
+                      class="w-1/3 h-56 rounded-lg bg-theme-neutral-500"
+                      data-testid="plugin-info__screenshot"
+                    />
+                    <div
+                      class="w-1/3 h-56 rounded-lg bg-theme-neutral-500"
+                      data-testid="plugin-info__screenshot"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="swiper-pagination"
+              />
+              <span
+                aria-atomic="true"
+                aria-live="assertive"
+                class="swiper-notification"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class="pb-10"
+        >
+          <div
+            class="flex rounded-lg overflow-hidden bg-theme-warning"
+          >
+            <div
+              class="sc-AxheI jqFciG flex items-center justify-center text-theme-warning bg-theme-warning-200"
+            >
+              <div
+                class="sc-AxjAm bIZXgI"
+                height="30"
+                width="30"
+              >
+                <svg>
+                  alert-default.svg
+                </svg>
+              </div>
+            </div>
+            <div
+              class="sc-AxgMl jQYRWs flex-1 bg-theme-warning-100"
+            >
+              <p
+                class="text-xl font-bold text-theme-warning"
+                data-testid="alert__title"
+              >
+                Disclaimer
+              </p>
+              The availability of this plugin in the ARK Desktop Wallet does not mean that either ARK.io or ARK SCIC is directly involved in the development or affiliated with the developer providing this plugin. By installing it on your wallet, you assume every responsibility
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="mt-5 bg-theme-background"
+    >
+      <div
+        class="mx-10 py-24 grid grid-cols-2 grid-flow-col divide-x divide-theme-neutral-300"
+      >
+        <div
+          class="col-span-2"
+          data-testid="plugin-details__comments"
+        >
+          <div
+            class="w-full"
+          >
+            <p
+              class="font-bold text-xl"
+            >
+              Reviews ARK Explorer
+            </p>
+            <div
+              class="flex mt-5 items-center text-sm text-theme-neutral-900 font-semibold"
+            >
+              <span>
+                Sort by:
+              </span>
+              <div
+                class="flex items-center"
+              >
+                <span
+                  class="ml-2"
+                >
+                  Best
+                </span>
+                <div
+                  class="ml-1"
+                >
+                  <div
+                    class="relative"
+                    data-testid="dropdown__toggle"
+                  >
+                    <button
+                      class="float-right outline-none focus:outline-none"
+                    >
+                      <div
+                        class="sc-AxjAm iepfoc"
+                        height="10"
+                        width="10"
+                      >
+                        <svg>
+                          arrowdown.svg
+                        </svg>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div
+                class="w-3/4 mt-5 flex flex-col text-sm"
+              >
+                <div
+                  class="w-3/5"
+                >
+                  <div
+                    class="grid grid-cols-3 divide-x divide-theme-neutral-400"
+                  >
+                    <div>
+                      <span
+                        class="text-base"
+                      >
+                        Rok Cernec
+                      </span>
+                    </div>
+                    <div
+                      class="flex items-center justify-center text-theme-warning-300"
+                    >
+                      <div
+                        class="sc-AxjAm iepfoc"
+                        height="10"
+                        width="10"
+                      >
+                        <svg>
+                          star.svg
+                        </svg>
+                      </div>
+                      <span
+                        class="px-3 flex text-theme-neutral-600"
+                      >
+                        4.6
+                      </span>
+                    </div>
+                    <div
+                      class="px-3"
+                    >
+                      <span
+                        class="text-theme-neutral-400"
+                      >
+                        4 days ago
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="mt-2"
+                >
+                  <p
+                    class="text-theme-neutral-600"
+                  >
+                    As ARK Core is written exclusively in Node.js, the server-side framework for JavaScript and Typescript, installing Node.js is a necessity for core development. The code below installs Node.js from the source.
+                  </p>
+                </div>
+              </div>
+              <div
+                class="w-3/4 mt-5 flex flex-col text-sm"
+              >
+                <div
+                  class="w-3/5"
+                >
+                  <div
+                    class="grid grid-cols-3 divide-x divide-theme-neutral-400"
+                  >
+                    <div>
+                      <span
+                        class="text-base"
+                      >
+                        Gerard Blezer
+                      </span>
+                    </div>
+                    <div
+                      class="flex items-center justify-center text-theme-warning-300"
+                    >
+                      <div
+                        class="sc-AxjAm iepfoc"
+                        height="10"
+                        width="10"
+                      >
+                        <svg>
+                          star.svg
+                        </svg>
+                      </div>
+                      <span
+                        class="px-3 flex text-theme-neutral-600"
+                      >
+                        4.6
+                      </span>
+                    </div>
+                    <div
+                      class="px-3"
+                    >
+                      <span
+                        class="text-theme-neutral-400"
+                      >
+                        4 days ago
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="mt-2"
+                >
+                  <p
+                    class="text-theme-neutral-600"
+                  >
+                    As an open-source platform, the entire ARK codebase is readily available on GitHub providing blockchain developers with a convenient location for all ARK technologies and repositories.
+                  </p>
+                  <div
+                    class="mt-3 ml-3 flex flex-col"
+                  >
+                    <div
+                      class="flex items-center text-theme-neutral-500"
+                    >
+                      <div
+                        class="sc-AxjAm cpczEI"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          reply-arrow.svg
+                        </svg>
+                      </div>
+                      <div
+                        class="grid grid-cols-2 divide-x"
+                      >
+                        <span
+                          class="text-theme-neutral-900 px-3"
+                        >
+                          Developer response
+                        </span>
+                        <span
+                          class="px-3"
+                        >
+                          4 days ago
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="sc-AxhUy kBFgoN ml-7 mt-2 text-theme-neutral-600"
+                    >
+                      <a
+                        href="#"
+                      >
+                        @Gerard Blezer
+                      </a>
+                       Our GitHub bount reward program utlilizes a tiered structure.
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="w-3/4 mt-5 flex flex-col text-sm"
+              >
+                <div
+                  class="w-3/5"
+                >
+                  <div
+                    class="grid grid-cols-3 divide-x divide-theme-neutral-400"
+                  >
+                    <div>
+                      <span
+                        class="text-base"
+                      >
+                        Rok Cernec
+                      </span>
+                    </div>
+                    <div
+                      class="flex items-center justify-center text-theme-warning-300"
+                    >
+                      <div
+                        class="sc-AxjAm iepfoc"
+                        height="10"
+                        width="10"
+                      >
+                        <svg>
+                          star.svg
+                        </svg>
+                      </div>
+                      <span
+                        class="px-3 flex text-theme-neutral-600"
+                      >
+                        4.6
+                      </span>
+                    </div>
+                    <div
+                      class="px-3"
+                    >
+                      <span
+                        class="text-theme-neutral-400"
+                      >
+                        4 days ago
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="mt-2"
+                >
+                  <p
+                    class="text-theme-neutral-600"
+                  >
+                    As ARK Core is written exclusively in Node.js, the server-side framework for JavaScript and Typescript, installing Node.js is a necessity for core development. The code below installs Node.js from the source.
+                  </p>
+                </div>
+              </div>
+              <div
+                class="w-3/4 mt-5 flex flex-col text-sm"
+              >
+                <div
+                  class="w-3/5"
+                >
+                  <div
+                    class="grid grid-cols-3 divide-x divide-theme-neutral-400"
+                  >
+                    <div>
+                      <span
+                        class="text-base"
+                      >
+                        Rok Cernec
+                      </span>
+                    </div>
+                    <div
+                      class="flex items-center justify-center text-theme-warning-300"
+                    >
+                      <div
+                        class="sc-AxjAm iepfoc"
+                        height="10"
+                        width="10"
+                      >
+                        <svg>
+                          star.svg
+                        </svg>
+                      </div>
+                      <span
+                        class="px-3 flex text-theme-neutral-600"
+                      >
+                        4.6
+                      </span>
+                    </div>
+                    <div
+                      class="px-3"
+                    >
+                      <span
+                        class="text-theme-neutral-400"
+                      >
+                        4 days ago
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="mt-2"
+                >
+                  <p
+                    class="text-theme-neutral-600"
+                  >
+                    As ARK Core is written exclusively in Node.js, the server-side framework for JavaScript and Typescript, installing Node.js is a necessity for core development. The code below installs Node.js from the source.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="mt-7"
+            >
+              <div
+                class="sc-AxhCb ervtWH"
+              >
+                <button
+                  class="sc-AxiKw gFzSt"
+                  color="primary"
+                  type="button"
+                >
+                  1
+                </button>
+                <button
+                  class="sc-AxiKw gFzSt"
+                  color="primary"
+                  type="button"
+                >
+                  2
+                </button>
+                <button
+                  class="sc-AxiKw gFzSt"
+                  color="primary"
+                  type="button"
+                >
+                  3
+                </button>
+                <button
+                  class="sc-AxiKw gFzSt"
+                  color="primary"
+                  type="button"
+                >
+                  Next
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="pl-10"
+          data-testid="plugin-details__review-box"
+        >
+          <div
+            class="w-full"
+          >
+            <button
+              class="sc-AxiKw wFYj"
+              color="primary"
+              data-testid="ReviewBox__button--comment"
+              type="button"
+            >
+              Leave a comment
+            </button>
+            <div
+              class="flex flex-col mt-5"
+            >
+              <div
+                class="flex items-center"
+              >
+                <div
+                  class="pr-3 text-theme-warning-300"
+                >
+                  <div
+                    class="sc-AxjAm jDLXpo"
+                    height="25"
+                    width="25"
+                  >
+                    <svg>
+                      star.svg
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  class="text-2xl"
+                >
+                  <span
+                    class="font-bold"
+                  >
+                    4.3
+                  </span>
+                  <span
+                    class="font-bold text-theme-neutral-400"
+                  >
+                    /5
+                  </span>
+                </div>
+              </div>
+              <span
+                class="pb-5 mt-2 text-sm font-bold border-b border-dashed text-theme-neutral-400 border-theme-neutral"
+              >
+                Averaging rating for 347 reviews
+              </span>
+              <div>
+                <div
+                  class="flex flex-col mt-7"
+                >
+                  <div
+                    class="flex justify-between"
+                    data-testid="5-stars__rating-row"
+                  >
+                    <span
+                      class="font-bold"
+                    >
+                      5 stars
+                    </span>
+                    <div
+                      class="font-bold"
+                    >
+                      <span>
+                        156
+                      </span>
+                      <span
+                        class="text-theme-neutral-400"
+                      >
+                        /347
+                      </span>
+                    </div>
+                  </div>
+                  <div
+                    class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
+                  >
+                    <div
+                      class="sc-Axmtr jfOBRY h-2 rounded-lg bg-theme-warning-300"
+                      data-testid="5-stars__rating-count"
+                      width="44.95677233429395"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="flex flex-col mt-7"
+                >
+                  <div
+                    class="flex justify-between"
+                    data-testid="4-stars__rating-row"
+                  >
+                    <span
+                      class="font-bold"
+                    >
+                      4 stars
+                    </span>
+                    <div
+                      class="font-bold"
+                    >
+                      <span>
+                        194
+                      </span>
+                      <span
+                        class="text-theme-neutral-400"
+                      >
+                        /347
+                      </span>
+                    </div>
+                  </div>
+                  <div
+                    class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
+                  >
+                    <div
+                      class="sc-Axmtr jNooBf h-2 rounded-lg bg-theme-warning-300"
+                      data-testid="4-stars__rating-count"
+                      width="55.907780979827095"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="flex flex-col mt-7"
+                >
+                  <div
+                    class="flex justify-between"
+                    data-testid="3-stars__rating-row"
+                  >
+                    <span
+                      class="font-bold"
+                    >
+                      3 stars
+                    </span>
+                    <div
+                      class="font-bold"
+                    >
+                      <span>
+                        25
+                      </span>
+                      <span
+                        class="text-theme-neutral-400"
+                      >
+                        /347
+                      </span>
+                    </div>
+                  </div>
+                  <div
+                    class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
+                  >
+                    <div
+                      class="sc-Axmtr gawIFf h-2 rounded-lg bg-theme-warning-300"
+                      data-testid="3-stars__rating-count"
+                      width="7.204610951008646"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="flex flex-col mt-7"
+                >
+                  <div
+                    class="flex justify-between"
+                    data-testid="2-stars__rating-row"
+                  >
+                    <span
+                      class="font-bold"
+                    >
+                      2 stars
+                    </span>
+                    <div
+                      class="font-bold"
+                    >
+                      <span>
+                        42
+                      </span>
+                      <span
+                        class="text-theme-neutral-400"
+                      >
+                        /347
+                      </span>
+                    </div>
+                  </div>
+                  <div
+                    class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
+                  >
+                    <div
+                      class="sc-Axmtr cocqih h-2 rounded-lg bg-theme-warning-300"
+                      data-testid="2-stars__rating-count"
+                      width="12.103746397694524"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="flex flex-col mt-7"
+                >
+                  <div
+                    class="flex justify-between"
+                    data-testid="1-stars__rating-row"
+                  >
+                    <span
+                      class="font-bold"
+                    >
+                      1 stars
+                    </span>
+                    <div
+                      class="font-bold"
+                    >
+                      <span>
+                        7
+                      </span>
+                      <span
+                        class="text-theme-neutral-400"
+                      >
+                        /347
+                      </span>
+                    </div>
+                  </div>
+                  <div
+                    class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
+                  >
+                    <div
+                      class="sc-Axmtr eWAtXC h-2 rounded-lg bg-theme-warning-300"
+                      data-testid="1-stars__rating-count"
+                      width="2.0172910662824206"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</DocumentFragment>
+`;
