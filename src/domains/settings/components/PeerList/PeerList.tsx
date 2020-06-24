@@ -11,25 +11,25 @@ type PeerListProps = {
 };
 
 export const PeerList = ({ listColumns, peers }: PeerListProps) => {
-	const [isOpen, setIsOpen] = useState(false);
+	const [modalIsOpen, setModalIsOpen] = useState(false);
 
 	return (
-		<>
+		<div className="m-0">
 			<Table columns={listColumns} data={peers}>
 				{(rowData: any) => <PeerListItem {...rowData} />}
 			</Table>
 
 			<Button
 				variant="plain"
-				className="w-full mt-10 mb-5"
-				onClick={() => setIsOpen(true)}
+				className="w-full mt-5 mb-5"
+				onClick={() => setModalIsOpen(true)}
 				data-testid="peer-list__add-button"
 			>
 				Add Peer
 			</Button>
 
-			<CustomPeers isOpen={isOpen} onClose={() => setIsOpen(false)} />
-		</>
+			<CustomPeers isOpen={modalIsOpen} onClose={() => setModalIsOpen(false)} />
+		</div>
 	);
 };
 

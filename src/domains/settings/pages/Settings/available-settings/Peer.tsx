@@ -20,10 +20,10 @@ export const Peer = ({ formConfig, onSubmit }: PeerProps) => {
 			labelClass: "text-xl font-bold text-theme-neutral-dark",
 			content: (
 				<div className="flex flex-row justify-between">
-					<span className="w-3/4 text-sm text-theme-neutral-dark">
+					<span className="w-3/4 -mt-4 text-sm text-theme-neutral-dark">
 						This protection will protect your money from unwanted Screenshot your PC.
 					</span>
-					<div className="-mt-2">
+					<div className="-mt-11">
 						<Toggle />
 					</div>
 				</div>
@@ -35,11 +35,11 @@ export const Peer = ({ formConfig, onSubmit }: PeerProps) => {
 			labelClass: "text-xl font-bold text-theme-neutral-dark",
 			content: (
 				<div className="flex flex-row justify-between">
-					<span className="w-3/4 text-sm text-theme-neutral-dark">
+					<span className="w-3/4 -mt-4 text-sm text-theme-neutral-dark">
 						You hereby assume the risk associated with downloading files and installing said files from a
 						direct URL link.
 					</span>
-					<div className="-mt-2">
+					<div className="-mt-11">
 						<Toggle />
 					</div>
 				</div>

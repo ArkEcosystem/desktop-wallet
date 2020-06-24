@@ -1186,12 +1186,12 @@ exports[`Settings should render peer settings 1`] = `
                 class="flex flex-row justify-between"
               >
                 <span
-                  class="w-3/4 text-sm text-theme-neutral-dark"
+                  class="w-3/4 -mt-4 text-sm text-theme-neutral-dark"
                 >
                   This protection will protect your money from unwanted Screenshot your PC.
                 </span>
                 <div
-                  class="-mt-2"
+                  class="-mt-11"
                 >
                   <label>
                     <input
@@ -1237,12 +1237,12 @@ exports[`Settings should render peer settings 1`] = `
                 class="flex flex-row justify-between"
               >
                 <span
-                  class="w-3/4 text-sm text-theme-neutral-dark"
+                  class="w-3/4 -mt-4 text-sm text-theme-neutral-dark"
                 >
                   You hereby assume the risk associated with downloading files and installing said files from a direct URL link.
                 </span>
                 <div
-                  class="-mt-2"
+                  class="-mt-11"
                 >
                   <label>
                     <input
@@ -1263,343 +1263,347 @@ exports[`Settings should render peer settings 1`] = `
           </li>
         </ul>
         <div
-          class="sc-fzokOt fBgcjy"
-          role="table"
+          class="m-0"
         >
-          <table
-            class="table-auto"
+          <div
+            class="sc-fzokOt fBgcjy"
+            role="table"
           >
-            <thead>
-              <tr
-                role="row"
-              >
-                <th
-                  class="text-xs text-left select-none text-theme-neutral-400"
-                  colspan="1"
-                  data-testid="table__th--0"
-                  role="columnheader"
-                >
-                  <div
-                    class="flex flex-inline align-top  undefined"
-                  >
-                    <div
-                      class="mr-1"
-                    >
-                      Network
-                    </div>
-                    <div
-                      class="mt-1 text-theme-color-neutral-500"
-                      data-testid="table__Sort"
-                    />
-                  </div>
-                </th>
-                <th
-                  class="text-xs text-left select-none text-theme-neutral-400"
-                  colspan="1"
-                  data-testid="table__th--1"
-                  role="columnheader"
-                >
-                  <div
-                    class="flex flex-inline align-top  undefined"
-                  >
-                    <div
-                      class="mr-1"
-                    >
-                      Name
-                    </div>
-                    <div
-                      class="mt-1 text-theme-color-neutral-500"
-                      data-testid="table__Sort"
-                    />
-                  </div>
-                </th>
-                <th
-                  class="text-xs text-left select-none text-theme-neutral-400"
-                  colspan="1"
-                  data-testid="table__th--2"
-                  role="columnheader"
-                >
-                  <div
-                    class="flex flex-inline align-top  undefined"
-                  >
-                    <div
-                      class="mr-1"
-                    >
-                      Peer IP
-                    </div>
-                    <div
-                      class="mt-1 text-theme-color-neutral-500"
-                      data-testid="table__Sort"
-                    />
-                  </div>
-                </th>
-                <th
-                  class="text-xs text-left select-none text-theme-neutral-400"
-                  colspan="1"
-                  data-testid="table__th--3"
-                  role="columnheader"
-                >
-                  <div
-                    class="flex flex-inline align-top  flex justify-center"
-                  >
-                    <div
-                      class="mr-1"
-                    >
-                      Type
-                    </div>
-                    <div
-                      class="mt-1 text-theme-color-neutral-500"
-                      data-testid="table__Sort"
-                    />
-                  </div>
-                </th>
-              </tr>
-            </thead>
-            <tbody
-              role="rowgroup"
+            <table
+              class="table-auto"
             >
-              <tr
-                class="border-b border-theme-neutral-200"
-              >
-                <td
-                  class="inline-flex items-center py-4 mt-1"
+              <thead>
+                <tr
+                  role="row"
                 >
-                  <div
-                    class="sc-fzoyAV cxgciJ text-logo border-theme-danger-200"
+                  <th
+                    class="text-xs text-left select-none text-theme-neutral-400"
+                    colspan="1"
+                    data-testid="table__th--0"
+                    role="columnheader"
                   >
                     <div
-                      class="sc-AxjAm cpczEI"
-                      height="1em"
-                      width="1em"
-                    >
-                      <svg>
-                        ark.svg
-                      </svg>
-                    </div>
-                  </div>
-                  <span
-                    class="ml-2"
-                  >
-                    ARK
-                  </span>
-                </td>
-                <td
-                  class="py-1"
-                >
-                  <span>
-                    ROBank
-                  </span>
-                </td>
-                <td
-                  class="py-1"
-                >
-                  <span>
-                    194.168.4.67:800
-                  </span>
-                </td>
-                <td
-                  class="py-1 text-theme-primary-300"
-                >
-                  <div
-                    class="flex justify-center h-full"
-                  >
-                    <div
-                      class="sc-AxjAm cpczEI"
-                      height="1em"
-                      width="1em"
-                    >
-                      <svg>
-                        multisig.svg
-                      </svg>
-                    </div>
-                  </div>
-                </td>
-                <td>
-                  <div
-                    class="relative"
-                    data-testid="dropdown__toggle"
-                  >
-                    <div
-                      class="float-right outline-none focus:outline-none"
+                      class="flex flex-inline align-top  undefined"
                     >
                       <div
-                        class="sc-AxjAm buCJuk"
-                        height="20"
-                        width="20"
+                        class="mr-1"
+                      >
+                        Network
+                      </div>
+                      <div
+                        class="mt-1 text-theme-color-neutral-500"
+                        data-testid="table__Sort"
+                      />
+                    </div>
+                  </th>
+                  <th
+                    class="text-xs text-left select-none text-theme-neutral-400"
+                    colspan="1"
+                    data-testid="table__th--1"
+                    role="columnheader"
+                  >
+                    <div
+                      class="flex flex-inline align-top  undefined"
+                    >
+                      <div
+                        class="mr-1"
+                      >
+                        Name
+                      </div>
+                      <div
+                        class="mt-1 text-theme-color-neutral-500"
+                        data-testid="table__Sort"
+                      />
+                    </div>
+                  </th>
+                  <th
+                    class="text-xs text-left select-none text-theme-neutral-400"
+                    colspan="1"
+                    data-testid="table__th--2"
+                    role="columnheader"
+                  >
+                    <div
+                      class="flex flex-inline align-top  undefined"
+                    >
+                      <div
+                        class="mr-1"
+                      >
+                        Peer IP
+                      </div>
+                      <div
+                        class="mt-1 text-theme-color-neutral-500"
+                        data-testid="table__Sort"
+                      />
+                    </div>
+                  </th>
+                  <th
+                    class="text-xs text-left select-none text-theme-neutral-400"
+                    colspan="1"
+                    data-testid="table__th--3"
+                    role="columnheader"
+                  >
+                    <div
+                      class="flex flex-inline align-top  flex justify-center"
+                    >
+                      <div
+                        class="mr-1"
+                      >
+                        Type
+                      </div>
+                      <div
+                        class="mt-1 text-theme-color-neutral-500"
+                        data-testid="table__Sort"
+                      />
+                    </div>
+                  </th>
+                </tr>
+              </thead>
+              <tbody
+                role="rowgroup"
+              >
+                <tr
+                  class="border-b border-theme-neutral-200"
+                >
+                  <td
+                    class="inline-flex items-center py-4 mt-1"
+                  >
+                    <div
+                      class="sc-fzoyAV cxgciJ text-logo border-theme-danger-200"
+                    >
+                      <div
+                        class="sc-AxjAm cpczEI"
+                        height="1em"
+                        width="1em"
                       >
                         <svg>
-                          settings.svg
+                          ark.svg
                         </svg>
                       </div>
                     </div>
-                  </div>
-                </td>
-              </tr>
-              <tr
-                class="border-b border-theme-neutral-200"
-              >
-                <td
-                  class="inline-flex items-center py-4 mt-1"
-                >
-                  <div
-                    class="sc-fzoyAV cxgciJ border-theme-neutral-300"
-                  >
-                    <div
-                      class="sc-AxjAm cpczEI"
-                      height="1em"
-                      width="1em"
+                    <span
+                      class="ml-2"
                     >
-                      <svg>
-                        eth.svg
-                      </svg>
-                    </div>
-                  </div>
-                  <span
-                    class="ml-2"
+                      ARK
+                    </span>
+                  </td>
+                  <td
+                    class="py-1"
                   >
-                    ETHEREUM
-                  </span>
-                </td>
-                <td
-                  class="py-1"
-                >
-                  <span>
-                    MATBank
-                  </span>
-                </td>
-                <td
-                  class="py-1"
-                >
-                  <span>
-                    194.168.4.67:800
-                  </span>
-                </td>
-                <td
-                  class="py-1 text-theme-primary-300"
-                >
-                  <div
-                    class="flex justify-center h-full"
+                    <span>
+                      ROBank
+                    </span>
+                  </td>
+                  <td
+                    class="py-1"
+                  >
+                    <span>
+                      194.168.4.67:800
+                    </span>
+                  </td>
+                  <td
+                    class="py-1 text-theme-primary-300"
                   >
                     <div
-                      class="sc-AxjAm cpczEI"
-                      height="1em"
-                      width="1em"
-                    >
-                      <svg>
-                        multisig.svg
-                      </svg>
-                    </div>
-                  </div>
-                </td>
-                <td>
-                  <div
-                    class="relative"
-                    data-testid="dropdown__toggle"
-                  >
-                    <div
-                      class="float-right outline-none focus:outline-none"
+                      class="flex justify-center h-full"
                     >
                       <div
-                        class="sc-AxjAm buCJuk"
-                        height="20"
-                        width="20"
+                        class="sc-AxjAm cpczEI"
+                        height="1em"
+                        width="1em"
                       >
                         <svg>
-                          settings.svg
+                          multisig.svg
                         </svg>
                       </div>
                     </div>
-                  </div>
-                </td>
-              </tr>
-              <tr
-                class="border-b border-theme-neutral-200"
-              >
-                <td
-                  class="inline-flex items-center py-4 mt-1"
-                >
-                  <div
-                    class="sc-fzoyAV cxgciJ text-theme-warning-400 border-theme-warning-200"
-                  >
+                  </td>
+                  <td>
                     <div
-                      class="sc-AxjAm cpczEI"
-                      height="1em"
-                      width="1em"
-                    >
-                      <svg>
-                        btc.svg
-                      </svg>
-                    </div>
-                  </div>
-                  <span
-                    class="ml-2"
-                  >
-                    BITCOIN
-                  </span>
-                </td>
-                <td
-                  class="py-1"
-                >
-                  <span>
-                    OLEBank
-                  </span>
-                </td>
-                <td
-                  class="py-1"
-                >
-                  <span>
-                    194.168.4.67:800
-                  </span>
-                </td>
-                <td
-                  class="py-1 text-theme-primary-300"
-                >
-                  <div
-                    class="flex justify-center h-full"
-                  >
-                    <div
-                      class="sc-AxjAm cpczEI"
-                      height="1em"
-                      width="1em"
-                    >
-                      <svg>
-                        multisig.svg
-                      </svg>
-                    </div>
-                  </div>
-                </td>
-                <td>
-                  <div
-                    class="relative"
-                    data-testid="dropdown__toggle"
-                  >
-                    <div
-                      class="float-right outline-none focus:outline-none"
+                      class="relative"
+                      data-testid="dropdown__toggle"
                     >
                       <div
-                        class="sc-AxjAm buCJuk"
-                        height="20"
-                        width="20"
+                        class="float-right outline-none focus:outline-none"
+                      >
+                        <div
+                          class="sc-AxjAm buCJuk"
+                          height="20"
+                          width="20"
+                        >
+                          <svg>
+                            settings.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr
+                  class="border-b border-theme-neutral-200"
+                >
+                  <td
+                    class="inline-flex items-center py-4 mt-1"
+                  >
+                    <div
+                      class="sc-fzoyAV cxgciJ border-theme-neutral-300"
+                    >
+                      <div
+                        class="sc-AxjAm cpczEI"
+                        height="1em"
+                        width="1em"
                       >
                         <svg>
-                          settings.svg
+                          eth.svg
                         </svg>
                       </div>
                     </div>
-                  </div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+                    <span
+                      class="ml-2"
+                    >
+                      ETHEREUM
+                    </span>
+                  </td>
+                  <td
+                    class="py-1"
+                  >
+                    <span>
+                      MATBank
+                    </span>
+                  </td>
+                  <td
+                    class="py-1"
+                  >
+                    <span>
+                      194.168.4.67:800
+                    </span>
+                  </td>
+                  <td
+                    class="py-1 text-theme-primary-300"
+                  >
+                    <div
+                      class="flex justify-center h-full"
+                    >
+                      <div
+                        class="sc-AxjAm cpczEI"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          multisig.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div
+                      class="relative"
+                      data-testid="dropdown__toggle"
+                    >
+                      <div
+                        class="float-right outline-none focus:outline-none"
+                      >
+                        <div
+                          class="sc-AxjAm buCJuk"
+                          height="20"
+                          width="20"
+                        >
+                          <svg>
+                            settings.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr
+                  class="border-b border-theme-neutral-200"
+                >
+                  <td
+                    class="inline-flex items-center py-4 mt-1"
+                  >
+                    <div
+                      class="sc-fzoyAV cxgciJ text-theme-warning-400 border-theme-warning-200"
+                    >
+                      <div
+                        class="sc-AxjAm cpczEI"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          btc.svg
+                        </svg>
+                      </div>
+                    </div>
+                    <span
+                      class="ml-2"
+                    >
+                      BITCOIN
+                    </span>
+                  </td>
+                  <td
+                    class="py-1"
+                  >
+                    <span>
+                      OLEBank
+                    </span>
+                  </td>
+                  <td
+                    class="py-1"
+                  >
+                    <span>
+                      194.168.4.67:800
+                    </span>
+                  </td>
+                  <td
+                    class="py-1 text-theme-primary-300"
+                  >
+                    <div
+                      class="flex justify-center h-full"
+                    >
+                      <div
+                        class="sc-AxjAm cpczEI"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          multisig.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div
+                      class="relative"
+                      data-testid="dropdown__toggle"
+                    >
+                      <div
+                        class="float-right outline-none focus:outline-none"
+                      >
+                        <div
+                          class="sc-AxjAm buCJuk"
+                          height="20"
+                          width="20"
+                        >
+                          <svg>
+                            settings.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <button
+            class="sc-AxiKw gFzSt w-full mt-5 mb-5"
+            color="primary"
+            data-testid="peer-list__add-button"
+            type="button"
+          >
+            Add Peer
+          </button>
         </div>
-        <button
-          class="sc-AxiKw gFzSt w-full mt-10 mb-5"
-          color="primary"
-          data-testid="peer-list__add-button"
-          type="button"
-        >
-          Add Peer
-        </button>
         <div
           class="flex justify-end"
         >
