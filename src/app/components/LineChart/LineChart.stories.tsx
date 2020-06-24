@@ -16,19 +16,23 @@ export const Default = () => {
 		{ name: "Sat", label: "27 Jun, 2020", usd: 3000, btc: 4800 },
 		{ name: "Sun", label: "28 Jun, 2020", usd: 8000, btc: 1800 },
 	];
+
 	const lines = [
 		{
 			dataKey: "btc",
-			className: "text-theme-warning-600",
+			label: "BTC",
+			color: "warning-600",
 		},
 		{
 			dataKey: "usd",
-			className: "text-theme-success-600",
+			label: "USD",
+			color: "success-600",
 		},
 	];
+	const period = "22 Jun - 28 Jun";
 	return (
 		<div>
-			<LineChart data={data} lines={lines} />
+			<LineChart period={period} data={data} lines={lines} onPeriodClick={() => alert("Clicked period change")} />
 		</div>
 	);
 };
