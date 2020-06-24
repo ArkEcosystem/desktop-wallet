@@ -3,6 +3,7 @@ import { Icon } from "app/components/Icon";
 import React, { useState } from "react";
 
 import { Pagination } from "./components/Pagination";
+import { Reply } from "./components/Reply";
 import { getDateDifferenceFromNow } from "./utils";
 
 type Comment = {
@@ -14,6 +15,7 @@ type Comment = {
 
 type CommentsProps = {
 	comments: Comment[];
+	sortOptions: any;
 };
 
 type SorterPropsProps = {
@@ -35,12 +37,7 @@ const Sorter = ({ handleSortBy, options }: SorterProps) => {
 	);
 };
 
-export const Comments = ({ comments }: CommentsProps) => {
-	const sortOptions = [
-		{ label: "Best", value: "best" },
-		{ label: "Date", value: "date" },
-	];
-
+export const Comments = ({ comments, sortOptions }: CommentsProps) => {
 	const [sortBy, setSortBy] = useState(sortOptions[0]);
 
 	return (
@@ -53,25 +50,29 @@ export const Comments = ({ comments }: CommentsProps) => {
 					<Sorter options={sortOptions} handleSortBy={setSortBy} />
 				</div>
 			</div>
-			<div className="mt-5">
-				{comments.map(({ author, score, date, comment }, idx) => (
-					<div className="flex flex-col text-sm" key={idx}>
+			<div>
+				{comments.map(({ author, score, date, comment, replies }, idx) => (
+					<div className="w-2/3 mt-5 flex flex-col text-sm" key={idx}>
 						<div className="w-1/2">
-							<div className="grid grid-cols-3 divide-x divide-theme-neutral-300">
+							<div className="grid grid-cols-3 divide-x divide-theme-neutral-400">
 								<div>
-									<span className="font-bold text-base">{author}</span>
+									<span className="text-base">{author}</span>
 								</div>
 								<div className="flex items-center justify-center text-theme-warning-300">
 									<Icon name="Star" width={10} height={10} />
-									<span className="ml-3 flex text-theme-neutral-500">{score}</span>
+									<span className="px-3 flex text-theme-neutral-600">{score}</span>
 								</div>
 								<div className="px-3">
-									<span className="text-theme-neutral-300">{getDateDifferenceFromNow(date)}</span>
+									<span className="text-theme-neutral-400">{getDateDifferenceFromNow(date)}</span>
 								</div>
 							</div>
 						</div>
-						<div className="mt-5">
-							<p className="text-theme-neutral-700">{comment}</p>
+						<div className="mt-2">
+							<p className="text-theme-neutral-600">{comment}</p>
+							{replies &&
+								replies.map((reply, index) => (
+									<Reply key={`reply-${index}`} date={reply.date} content={reply.content} />
+								))}
 						</div>
 					</div>
 				))}
