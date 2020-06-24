@@ -20,7 +20,7 @@ export const Reply = ({ date, content }: ReplyProps) => (
 		<div className="flex items-center text-theme-neutral-500">
 			<Icon name="ReplyArrow" />
 			<div className="grid grid-cols-2 divide-x">
-				<span className="font-bold text-theme-neutral-900 px-3">Developer response</span>
+				<span className="text-theme-neutral-900 px-3">Developer response</span>
 				<span className="px-3">{getDateDifferenceFromNow(date)}</span>
 			</div>
 		</div>
