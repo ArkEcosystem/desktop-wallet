@@ -63,7 +63,7 @@ export const BlacklistPlugins = (props: BlacklistPluginsProps) => {
 		<Modal
 			title={t("PLUGINS.MODAL_BLACKLIST_PLUGINS.TITLE")}
 			description={t("PLUGINS.MODAL_BLACKLIST_PLUGINS.DESCRIPTION")}
-			size="3xl"
+			size="4xl"
 			isOpen={props.isOpen}
 			onClose={props.onClose}
 		>
@@ -71,8 +71,8 @@ export const BlacklistPlugins = (props: BlacklistPluginsProps) => {
 				<Table columns={columns} data={data}>
 					{(rowData: any) => (
 						<tr className="border-b border-dashed border-theme-neutral-200">
-							<td className="w-20">
-								<ChangeNowLogo />
+							<td className="w-16">
+								<ChangeNowLogo className="w-12 h-12" />
 							</td>
 
 							<td>
@@ -80,13 +80,13 @@ export const BlacklistPlugins = (props: BlacklistPluginsProps) => {
 									{rowData.name}
 								</div>
 								<div className="inline-flex items-center space-x-2">
-									<span>{rowData.description}</span>
+									<span className="text-theme-neutral-700">{rowData.description}</span>
 									{rowData.isOfficial && <Icon name="OfficialArkPlugin" width={15} height={15} />}
 									{rowData.isGrant && <Icon name="Grant" width={16} height={16} />}
 								</div>
 							</td>
 
-							<td className="py-10 text-right">{rowData.category}</td>
+							<td className="py-10 text-right text-theme-neutral-700">{rowData.category}</td>
 						</tr>
 					)}
 				</Table>

@@ -1,7 +1,7 @@
 import { act, fireEvent, render } from "@testing-library/react";
 import React from "react";
 
-import { transactions, wallets } from "../../data";
+import { portfolioPercentages,transactions, wallets } from "../../data";
 import { Dashboard } from "./Dashboard";
 
 describe("Dashboard", () => {
@@ -23,5 +23,10 @@ describe("Dashboard", () => {
 		act(() => {
 			fireEvent.click(toggle);
 		});
+	});
+
+	it("should render portfolio percentage bar", () => {
+		const { container } = render(<Dashboard portfolioPercentages={portfolioPercentages} />);
+		expect(container).toMatchSnapshot();
 	});
 });
