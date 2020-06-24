@@ -7,14 +7,17 @@ import { Icon } from "../Icon";
 type LineChartProps = {
 	data: any[];
 	lines: any[];
-	period: string;
+	period?: string;
 	onPeriodClick?: () => void;
+	width?: number | string;
+	height?: number | string;
 };
 
 const ActiveDotSvg = SvgCollection["ChartActiveDot"];
 const ActiveDot = ({ cx, cy, color }: any) => {
 	return (
 		<ActiveDotSvg
+			data-testid="active-dot"
 			className={`text-theme-${color}`}
 			width={50}
 			height={50}
@@ -22,6 +25,22 @@ const ActiveDot = ({ cx, cy, color }: any) => {
 			y={cy - 25}
 			fill="currentColor"
 			stroke="currentColor"
+		/>
+	);
+};
+
+const Dot = ({ cx, cy, index }: any) => {
+	return (
+		<circle
+			cy={cy}
+			cx={cx}
+			r="5"
+			data-testid={`line-chart-dot-${index}`}
+			type="monotone"
+			stroke="currentColor"
+			fill="#FFFFFF"
+			className="recharts-dot recharts-l2ne-dot"
+			strokeWidth="3"
 		/>
 	);
 };
@@ -44,7 +63,7 @@ const ChartLegend = ({ legend, lines, period, onPeriodClick }: any) => {
 					</div>
 				)}
 				<div className="flex justify-end flex-1">
-					<div className="my-auto ml-3 text-sm text-theme-neutral-600">{legend.label}</div>
+					{legend && <div className="my-auto ml-3 text-sm text-theme-neutral-600">{legend?.label}</div>}
 					{lines &&
 						lines.map((item: any, index: number) => {
 							return (
@@ -64,26 +83,30 @@ const ChartLegend = ({ legend, lines, period, onPeriodClick }: any) => {
 	);
 };
 
-export const LineChart = ({ data, lines, period, onPeriodClick }: LineChartProps) => {
+export const LineChart = ({ data, lines, period, onPeriodClick, width, height }: LineChartProps) => {
 	const [updatingLegend, setUpdatingLegend] = useState(false);
 	const [legend, setLegend] = useState(data[0]);
 
 	const updateLegendData = ({ payload }: any) => {
 		setUpdatingLegend(true);
 		setLegend(payload);
-		setTimeout(() => setUpdatingLegend(false), 100);
+		setUpdatingLegend(false);
+		// setTimeout(() => setUpdatingLegend(false), 2);
 	};
 
 	return (
 		<div>
 			<ChartLegend legend={legend} lines={lines} period={period} onPeriodClick={onPeriodClick} />
-			<div className="text-theme-neutral-200">
-				<ResponsiveContainer width="100%" height={300}>
-					<RechartsLine data={data} margin={{ top: 10, bottom: 10, left: 10, right: 10 }}>
+			<div className="text-theme-neutral-200" data-testid="line-chart-wrapper">
+				<ResponsiveContainer width={width} height={height}>
+					<RechartsLine
+						data={data}
+						margin={{ top: 10, bottom: 10, left: 10, right: 10 }}
+						data-testid="chart-line"
+					>
 						<XAxis dataKey="name" />
 						<CartesianGrid stroke="currentColor" />
 						<Tooltip
-							position={{ y: 200 }}
 							content={(cdata: any) => {
 								if (typeof cdata.payload[0] !== "undefined") {
 									if (updatingLegend === true) return <div />;
@@ -101,11 +124,11 @@ export const LineChart = ({ data, lines, period, onPeriodClick }: LineChartProps
 										dataKey={line.dataKey}
 										stroke="currentColor"
 										fill="currentColor"
-										className={`text-theme-${line.color}`}
+										className={`chart-line text-theme-${line.color}`}
 										strokeWidth={3}
 										yAxisId={0}
 										activeDot={<ActiveDot {...line} />}
-										dot={{ stroke: "currentColor", fill: "#FFFFFF", strokeWidth: 3, r: 5 }}
+										dot={<Dot {...line} {...index} />}
 									/>
 								);
 							})}
@@ -119,4 +142,6 @@ export const LineChart = ({ data, lines, period, onPeriodClick }: LineChartProps
 LineChart.defaultProps = {
 	data: [],
 	lines: [],
+	width: "100%",
+	height: 300,
 };
