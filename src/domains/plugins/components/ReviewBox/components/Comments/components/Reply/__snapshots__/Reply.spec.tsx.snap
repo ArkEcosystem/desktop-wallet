@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Reply should render properly 1`] = `
+<DocumentFragment>
+  <div
+    class="mt-3 ml-3 flex flex-col"
+  >
+    <div
+      class="flex items-center text-theme-neutral-500"
+    >
+      <div
+        class="sc-AxjAm cpczEI"
+        height="1em"
+        width="1em"
+      >
+        <svg>
+          reply-arrow.svg
+        </svg>
+      </div>
+      <div
+        class="grid grid-cols-2 divide-x"
+      >
+        <span
+          class="font-bold text-theme-neutral-900 px-3"
+        >
+          Developer response
+        </span>
+        <span
+          class="px-3"
+        >
+          4 days ago
+        </span>
+      </div>
+    </div>
+    <div
+      class="sc-AxirZ iYaTII ml-7 mt-2 text-theme-neutral-600"
+    >
+      <a
+        href="#"
+      >
+        @Gerard Blezer
+      </a>
+       Our GitHub bount reward program utlilizes a tiered structure.
+    </div>
+  </div>
+</DocumentFragment>
+`;
