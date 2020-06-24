@@ -56,7 +56,7 @@ describe("Contacts", () => {
     "modal__close-btn",
     "contact-form__cancel-btn",
     "contact-form__save-btn",
-  ])("should open & close add contact modal", async (button) => {
+  ])("should open & close add contact modal", (button) => {
     const { asFragment, getByTestId, queryByTestId } = render(
       <I18nextProvider i18n={i18n}>
         <Contacts contacts={[]} />
@@ -68,23 +68,23 @@ describe("Contacts", () => {
     if (button === "contacts__add-contact-btn") {
       expect(queryByTestId("contact-form__add-address-btn")).toHaveAttribute("disabled");
 
-      await act(async () => {
-        await fireEvent.type(getByTestId("contact-form__name-input"), {
+      act(() => {
+        fireEvent.change(getByTestId("contact-form__name-input"), {
           target: { value: "name" },
         });
 
-        await fireEvent.change(getByTestId("contact-form__network-select"), {
+        fireEvent.change(getByTestId("contact-form__network-select"), {
           target: { value: "ark" },
         });
 
-        await fireEvent.type(getByTestId("contact-form__address-input"), {
+        fireEvent.change(getByTestId("contact-form__address-input"), {
           target: { value: "address" },
         });
       });
 
       expect(() => queryByTestId("contact-form__add-address-btn").not.toHaveAttribute("disabled"));
 
-      await act(async () => {
+      act(() => {
         fireEvent.click(getByTestId("contact-form__add-address-btn"));
       });
 
@@ -96,7 +96,7 @@ describe("Contacts", () => {
     expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_CREATE_CONTACT.TITLE);
     expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_CREATE_CONTACT.DESCRIPTION);
 
-    await act(async () => {
+    act(() => {
       fireEvent.click(getByTestId(button));
     });
 
