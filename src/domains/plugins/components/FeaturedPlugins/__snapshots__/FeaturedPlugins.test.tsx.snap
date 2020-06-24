@@ -9,7 +9,7 @@ exports[`FeaturedPlugins should render a modal 1`] = `
     data-testid="modal__overlay"
   />
   <div
-    class="sc-AxiKw jRkhhQ absolute top-0 left-0 right-0 z-30 flex flex-col px-12 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
+    class="sc-AxiKw jCpCzv absolute top-0 left-0 right-0 z-30 flex flex-col px-12 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
     data-testid="modal__inner"
   >
     <div
@@ -121,7 +121,7 @@ exports[`FeaturedPlugins should render a modal 1`] = `
                     title="Toggle SortBy"
                   >
                     <div
-                      class="flex flex-inline align-top  undefined"
+                      class="flex flex-inline align-top  justify-center"
                     >
                       <div
                         class="mr-1"
@@ -153,7 +153,7 @@ exports[`FeaturedPlugins should render a modal 1`] = `
                     title="Toggle SortBy"
                   >
                     <div
-                      class="flex flex-inline align-top  undefined"
+                      class="flex flex-inline align-top  justify-center"
                     >
                       <div
                         class="mr-1"
@@ -185,7 +185,7 @@ exports[`FeaturedPlugins should render a modal 1`] = `
                     title="Toggle SortBy"
                   >
                     <div
-                      class="flex flex-inline align-top  undefined"
+                      class="flex flex-inline align-top  justify-center"
                     >
                       <div
                         class="mr-1"
@@ -237,9 +237,11 @@ exports[`FeaturedPlugins should render a modal 1`] = `
                   class="border-b border-dashed border-theme-neutral-200"
                 >
                   <td
-                    class="text-center w-18"
+                    class="w-16"
                   >
-                    <svg>
+                    <svg
+                      class="w-12 h-12"
+                    >
                       changenow-logo.svg
                     </svg>
                   </td>
@@ -252,7 +254,9 @@ exports[`FeaturedPlugins should render a modal 1`] = `
                     <div
                       class="inline-flex items-center space-x-2"
                     >
-                      <span>
+                      <span
+                        class="text-theme-neutral-700"
+                      >
                         ARK Ecosystem
                       </span>
                       <div
@@ -267,12 +271,12 @@ exports[`FeaturedPlugins should render a modal 1`] = `
                     </div>
                   </td>
                   <td
-                    class="py-10"
+                    class="py-10 text-center text-theme-neutral-700"
                   >
                     Utility
                   </td>
                   <td
-                    class="py-10"
+                    class="flex justify-center py-10 text-theme-neutral-700"
                   >
                     <div
                       class="flex"
@@ -286,13 +290,13 @@ exports[`FeaturedPlugins should render a modal 1`] = `
                           style="width: 89.99999999999999%;"
                         >
                           <svg
-                            class="text-theme-warning-300 w-5"
+                            class="text-theme-warning-300 w-3"
                           >
                             star.svg
                           </svg>
                         </div>
                         <svg
-                          class="text-theme-neutral-500 w-5"
+                          class="text-theme-neutral-500 w-3"
                         >
                           star.svg
                         </svg>
@@ -305,7 +309,7 @@ exports[`FeaturedPlugins should render a modal 1`] = `
                     </div>
                   </td>
                   <td
-                    class="py-10"
+                    class="py-10 text-center text-theme-neutral-700"
                   >
                     v 1.3.8
                   </td>
@@ -325,9 +329,11 @@ exports[`FeaturedPlugins should render a modal 1`] = `
                   class="border-b border-dashed border-theme-neutral-200"
                 >
                   <td
-                    class="text-center w-18"
+                    class="w-16"
                   >
-                    <svg>
+                    <svg
+                      class="w-12 h-12"
+                    >
                       changenow-logo.svg
                     </svg>
                   </td>
@@ -340,18 +346,20 @@ exports[`FeaturedPlugins should render a modal 1`] = `
                     <div
                       class="inline-flex items-center space-x-2"
                     >
-                      <span>
+                      <span
+                        class="text-theme-neutral-700"
+                      >
                         Breno Polanski
                       </span>
                     </div>
                   </td>
                   <td
-                    class="py-10"
+                    class="py-10 text-center text-theme-neutral-700"
                   >
                     Utility
                   </td>
                   <td
-                    class="py-10"
+                    class="flex justify-center py-10 text-theme-neutral-700"
                   >
                     <div
                       class="flex"
@@ -365,13 +373,13 @@ exports[`FeaturedPlugins should render a modal 1`] = `
                           style="width: 89.99999999999999%;"
                         >
                           <svg
-                            class="text-theme-warning-300 w-5"
+                            class="text-theme-warning-300 w-3"
                           >
                             star.svg
                           </svg>
                         </div>
                         <svg
-                          class="text-theme-neutral-500 w-5"
+                          class="text-theme-neutral-500 w-3"
                         >
                           star.svg
                         </svg>
@@ -384,7 +392,7 @@ exports[`FeaturedPlugins should render a modal 1`] = `
                     </div>
                   </td>
                   <td
-                    class="py-10"
+                    class="py-10 text-center text-theme-neutral-700"
                   >
                     v 1.3.8
                   </td>
@@ -404,9 +412,11 @@ exports[`FeaturedPlugins should render a modal 1`] = `
                   class="border-b border-dashed border-theme-neutral-200"
                 >
                   <td
-                    class="text-center w-18"
+                    class="w-16"
                   >
-                    <svg>
+                    <svg
+                      class="w-12 h-12"
+                    >
                       changenow-logo.svg
                     </svg>
                   </td>
@@ -419,18 +429,20 @@ exports[`FeaturedPlugins should render a modal 1`] = `
                     <div
                       class="inline-flex items-center space-x-2"
                     >
-                      <span>
+                      <span
+                        class="text-theme-neutral-700"
+                      >
                         ChangeNOW
                       </span>
                     </div>
                   </td>
                   <td
-                    class="py-10"
+                    class="py-10 text-center text-theme-neutral-700"
                   >
                     Other
                   </td>
                   <td
-                    class="py-10"
+                    class="flex justify-center py-10 text-theme-neutral-700"
                   >
                     <div
                       class="flex"
@@ -444,13 +456,13 @@ exports[`FeaturedPlugins should render a modal 1`] = `
                           style="width: 95%;"
                         >
                           <svg
-                            class="text-theme-warning-300 w-5"
+                            class="text-theme-warning-300 w-3"
                           >
                             star.svg
                           </svg>
                         </div>
                         <svg
-                          class="text-theme-neutral-500 w-5"
+                          class="text-theme-neutral-500 w-3"
                         >
                           star.svg
                         </svg>
@@ -463,7 +475,7 @@ exports[`FeaturedPlugins should render a modal 1`] = `
                     </div>
                   </td>
                   <td
-                    class="py-10"
+                    class="py-10 text-center text-theme-neutral-700"
                   >
                     v 1.3.8
                   </td>
@@ -483,9 +495,11 @@ exports[`FeaturedPlugins should render a modal 1`] = `
                   class="border-b border-dashed border-theme-neutral-200"
                 >
                   <td
-                    class="text-center w-18"
+                    class="w-16"
                   >
-                    <svg>
+                    <svg
+                      class="w-12 h-12"
+                    >
                       changenow-logo.svg
                     </svg>
                   </td>
@@ -498,7 +512,9 @@ exports[`FeaturedPlugins should render a modal 1`] = `
                     <div
                       class="inline-flex items-center space-x-2"
                     >
-                      <span>
+                      <span
+                        class="text-theme-neutral-700"
+                      >
                         Delegate Fun
                       </span>
                       <div
@@ -513,12 +529,12 @@ exports[`FeaturedPlugins should render a modal 1`] = `
                     </div>
                   </td>
                   <td
-                    class="py-10"
+                    class="py-10 text-center text-theme-neutral-700"
                   >
                     Game
                   </td>
                   <td
-                    class="py-10"
+                    class="flex justify-center py-10 text-theme-neutral-700"
                   >
                     <div
                       class="flex"
@@ -532,13 +548,13 @@ exports[`FeaturedPlugins should render a modal 1`] = `
                           style="width: 97.50000000000001%;"
                         >
                           <svg
-                            class="text-theme-warning-300 w-5"
+                            class="text-theme-warning-300 w-3"
                           >
                             star.svg
                           </svg>
                         </div>
                         <svg
-                          class="text-theme-neutral-500 w-5"
+                          class="text-theme-neutral-500 w-3"
                         >
                           star.svg
                         </svg>
@@ -551,7 +567,7 @@ exports[`FeaturedPlugins should render a modal 1`] = `
                     </div>
                   </td>
                   <td
-                    class="py-10"
+                    class="py-10 text-center text-theme-neutral-700"
                   >
                     v 2.0.0
                   </td>

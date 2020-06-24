@@ -1,5 +1,6 @@
 import { contacts } from "domains/contacts/images";
 import { exchange } from "domains/exchange/images";
+import { offline } from "domains/offline/images";
 import { profile } from "domains/profile/images";
 import { transaction } from "domains/transaction/images";
 import { wallet } from "domains/wallets/images";
@@ -16,6 +17,7 @@ export const images = {
 	},
 	contacts,
 	exchange,
+	offline,
 	profile,
 	transaction,
 	wallet,
