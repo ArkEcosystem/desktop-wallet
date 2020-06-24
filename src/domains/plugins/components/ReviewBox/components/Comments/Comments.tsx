@@ -11,6 +11,7 @@ type Comment = {
 	score: string;
 	comment: string;
 	date: string;
+	replies?: any;
 };
 
 type CommentsProps = {
@@ -18,7 +19,7 @@ type CommentsProps = {
 	sortOptions: any;
 };
 
-type SorterPropsProps = {
+type SorterProps = {
 	handleSortBy: any;
 	options: any;
 };
@@ -70,7 +71,7 @@ export const Comments = ({ comments, sortOptions }: CommentsProps) => {
 						<div className="mt-2">
 							<p className="text-theme-neutral-600">{comment}</p>
 							{replies &&
-								replies.map((reply, index) => (
+								replies.map((reply: any, index: number) => (
 									<Reply key={`reply-${index}`} date={reply.date} content={reply.content} />
 								))}
 						</div>

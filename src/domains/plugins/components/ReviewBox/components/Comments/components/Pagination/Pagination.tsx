@@ -14,9 +14,9 @@ const Wrapper = styled.div`
 
 type PaginationProps = {
 	totalCount: number;
-	itermsPerPage?: number;
+	itemsPerPage: number;
 	onSelectPage: any;
-	currentPage?: number;
+	currentPage: number;
 };
 
 export const Pagination = ({ totalCount, itemsPerPage, onSelectPage, currentPage }: PaginationProps) => {
