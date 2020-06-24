@@ -83,7 +83,7 @@ export const Contacts = ({ contacts, onSearch }: ContactsProps) => {
   ];
 
   const handleOnSave = () => {
-    setCreateIsOpen(false)
+    setCreateIsOpen(false);
   };
 
 	return (
