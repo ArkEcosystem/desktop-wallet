@@ -74,7 +74,7 @@ exports[`ProfileCard should render 1`] = `
           class="relative"
           data-testid="dropdown__toggle"
         >
-          <div
+          <button
             class="float-right outline-none focus:outline-none"
           >
             <div
@@ -86,7 +86,7 @@ exports[`ProfileCard should render 1`] = `
                 settings.svg
               </svg>
             </div>
-          </div>
+          </button>
         </div>
       </div>
       <div
@@ -155,7 +155,7 @@ exports[`ProfileCard should render the settings icon 1`] = `
           class="relative"
           data-testid="dropdown__toggle"
         >
-          <div
+          <button
             class="float-right outline-none focus:outline-none"
           >
             <div
@@ -167,7 +167,7 @@ exports[`ProfileCard should render the settings icon 1`] = `
                 settings.svg
               </svg>
             </div>
-          </div>
+          </button>
         </div>
       </div>
       <div

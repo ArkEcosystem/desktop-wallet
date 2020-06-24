@@ -42,8 +42,8 @@ export const Comments = ({ comments, sortOptions }: CommentsProps) => {
 
 	return (
 		<div className="w-full">
-			<p className="font-bold text-xl">Reviews ARK Explorer</p>
-			<div className="flex mt-5 items-center text-sm text-theme-neutral-900 font-semibold">
+			<p className="text-xl font-bold">Reviews ARK Explorer</p>
+			<div className="flex items-center mt-5 text-sm font-semibold text-theme-neutral-900">
 				<span>Sort by:</span>
 				<div className="flex items-center">
 					<span className="ml-2">{sortBy.label}</span>
@@ -52,7 +52,7 @@ export const Comments = ({ comments, sortOptions }: CommentsProps) => {
 			</div>
 			<div>
 				{comments.map(({ author, score, date, comment, replies }, idx) => (
-					<div className="w-2/3 mt-5 flex flex-col text-sm" key={idx}>
+					<div className="flex flex-col w-2/3 mt-5 text-sm" key={idx}>
 						<div className="w-1/2">
 							<div className="grid grid-cols-3 divide-x divide-theme-neutral-400">
 								<div>
@@ -60,7 +60,7 @@ export const Comments = ({ comments, sortOptions }: CommentsProps) => {
 								</div>
 								<div className="flex items-center justify-center text-theme-warning-300">
 									<Icon name="Star" width={10} height={10} />
-									<span className="px-3 flex text-theme-neutral-600">{score}</span>
+									<span className="flex px-3 text-theme-neutral-600">{score}</span>
 								</div>
 								<div className="px-3">
 									<span className="text-theme-neutral-400">{getDateDifferenceFromNow(date)}</span>
