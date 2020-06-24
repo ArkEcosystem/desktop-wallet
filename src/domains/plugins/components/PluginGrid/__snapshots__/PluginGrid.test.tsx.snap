@@ -95,7 +95,7 @@ exports[`PluginGrid should render 1`] = `
             class="relative"
             data-testid="dropdown__toggle"
           >
-            <button
+            <div
               class="float-right outline-none focus:outline-none"
             >
               <div
@@ -107,7 +107,7 @@ exports[`PluginGrid should render 1`] = `
                   settings.svg
                 </svg>
               </div>
-            </button>
+            </div>
           </div>
         </div>
         <div
@@ -278,7 +278,7 @@ exports[`PluginGrid should trigger delete 1`] = `
             class="relative"
             data-testid="dropdown__toggle"
           >
-            <button
+            <div
               class="float-right outline-none focus:outline-none"
             >
               <div
@@ -290,7 +290,7 @@ exports[`PluginGrid should trigger delete 1`] = `
                   settings.svg
                 </svg>
               </div>
-            </button>
+            </div>
           </div>
         </div>
         <div
@@ -461,7 +461,7 @@ exports[`PluginGrid should trigger select 1`] = `
             class="relative"
             data-testid="dropdown__toggle"
           >
-            <button
+            <div
               class="float-right outline-none focus:outline-none"
             >
               <div
@@ -473,7 +473,7 @@ exports[`PluginGrid should trigger select 1`] = `
                   settings.svg
                 </svg>
               </div>
-            </button>
+            </div>
           </div>
         </div>
         <div
