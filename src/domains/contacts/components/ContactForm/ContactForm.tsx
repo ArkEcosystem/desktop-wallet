@@ -178,7 +178,7 @@ export const ContactForm = ({ contact, networks, onCancel, onSave }: ContactForm
 					data-testid="contact-form__save-btn"
 					type="submit"
 					variant="solid"
-					disabled={!form.formState.isValid || !contactAddresses.length}
+					disabled={!(form.formState.isValid && contactAddresses.length)}
 				>
 					{t("COMMON.SAVE")}
 				</Button>
