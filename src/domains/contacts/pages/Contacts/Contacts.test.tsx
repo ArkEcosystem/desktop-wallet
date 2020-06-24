@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/require-await */
 import { Contact } from "@arkecosystem/platform-sdk-profiles";
 import { act, fireEvent, render, waitFor } from "@testing-library/react";
 import { i18n } from "app/i18n";
@@ -53,11 +54,11 @@ describe("Contacts", () => {
   });
 
   it.each([
-    "modal__close-btn",
-    "contact-form__cancel-btn",
-    "contact-form__save-btn",
-  ])("should open & close add contact modal", async (button) => {
-    const { asFragment, getAllByTestId, getByTestId } = render(
+    ["close", "modal__close-btn"],
+    ["cancel", "contact-form__cancel-btn"],
+    ["save", "contact-form__save-btn"],
+  ])("should open & close add contact modal (%s)", async (buttonName, buttonId) => {
+    const { asFragment, getAllByTestId, getByTestId, queryByTestId } = render(
       <I18nextProvider i18n={i18n}>
         <Contacts contacts={[]} />
       </I18nextProvider>,
@@ -65,12 +66,17 @@ describe("Contacts", () => {
 
     fireEvent.click(getByTestId("contacts__add-contact-btn"));
 
-    if (button === "contact-form__save-btn") {
-      expect(getByTestId("contact-form__add-address-btn")).toHaveAttribute("disabled");
+    if (buttonId === "contact-form__save-btn") {
+      expect(getByTestId("contact-form__save-btn")).toBeDisabled();
+      expect(getByTestId("contact-form__add-address-btn")).toBeDisabled();
 
       expect(() => getAllByTestId("contact-form__address-list-item")).toThrow(/Unable to find an element by/);
 
-      await act(async () => {
+      act(() => {
+        fireEvent.change(getByTestId("contact-form__name-input"), {
+          target: { value: "name" },
+        });
+
         fireEvent.change(getByTestId("contact-form__network-select"), {
           target: { value: "ark" },
         });
@@ -80,30 +86,26 @@ describe("Contacts", () => {
         });
       });
 
-      expect(() => getByTestId("contact-form__add-address-btn").not.toHaveAttribute("disabled"));
-
-      await act(async () => {
-        fireEvent.click(getByTestId("contact-form__add-address-btn"));
+      await waitFor(() => {
+        expect(queryByTestId("contact-form__add-address-btn")).not.toBeDisabled();
       });
+
+      fireEvent.click(getByTestId("contact-form__add-address-btn"));
 
       expect(getAllByTestId("contact-form__address-list-item")).toHaveLength(1);
-
-      act(() => {
-        fireEvent.change(getByTestId("contact-form__name-input"), {
-          target: { value: "name" },
-        });
-      });
     }
 
-    expect(() => getByTestId(button).not.toHaveAttribute("disabled"));
+    await waitFor(() => {
+      expect(queryByTestId(buttonId)).not.toBeDisabled();
+    });
 
     expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_CREATE_CONTACT.TITLE);
     expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_CREATE_CONTACT.DESCRIPTION);
 
     await act(async () => {
-      fireEvent.click(getByTestId(button));
+      fireEvent.click(getByTestId(buttonId));
     });
 
-    expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
+    expect(queryByTestId("modal__inner")).not.toBeInTheDocument();
   });
 });
