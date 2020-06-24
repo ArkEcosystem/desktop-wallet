@@ -9,7 +9,7 @@ exports[`BlacklistPlugins should render a modal 1`] = `
     data-testid="modal__overlay"
   />
   <div
-    class="sc-AxiKw jRkhhQ absolute top-0 left-0 right-0 z-30 flex flex-col px-12 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
+    class="sc-AxiKw jCpCzv absolute top-0 left-0 right-0 z-30 flex flex-col px-12 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
     data-testid="modal__inner"
   >
     <div
@@ -173,9 +173,11 @@ exports[`BlacklistPlugins should render a modal 1`] = `
                   class="border-b border-dashed border-theme-neutral-200"
                 >
                   <td
-                    class="w-20"
+                    class="w-16"
                   >
-                    <svg>
+                    <svg
+                      class="w-12 h-12"
+                    >
                       changenow-logo.svg
                     </svg>
                   </td>
@@ -188,7 +190,9 @@ exports[`BlacklistPlugins should render a modal 1`] = `
                     <div
                       class="inline-flex items-center space-x-2"
                     >
-                      <span>
+                      <span
+                        class="text-theme-neutral-700"
+                      >
                         ARK Ecosystem
                       </span>
                       <div
@@ -203,7 +207,7 @@ exports[`BlacklistPlugins should render a modal 1`] = `
                     </div>
                   </td>
                   <td
-                    class="py-10 text-right"
+                    class="py-10 text-right text-theme-neutral-700"
                   >
                     Utility
                   </td>
@@ -212,9 +216,11 @@ exports[`BlacklistPlugins should render a modal 1`] = `
                   class="border-b border-dashed border-theme-neutral-200"
                 >
                   <td
-                    class="w-20"
+                    class="w-16"
                   >
-                    <svg>
+                    <svg
+                      class="w-12 h-12"
+                    >
                       changenow-logo.svg
                     </svg>
                   </td>
@@ -227,13 +233,15 @@ exports[`BlacklistPlugins should render a modal 1`] = `
                     <div
                       class="inline-flex items-center space-x-2"
                     >
-                      <span>
+                      <span
+                        class="text-theme-neutral-700"
+                      >
                         Breno Polanski
                       </span>
                     </div>
                   </td>
                   <td
-                    class="py-10 text-right"
+                    class="py-10 text-right text-theme-neutral-700"
                   >
                     Utility
                   </td>
@@ -242,9 +250,11 @@ exports[`BlacklistPlugins should render a modal 1`] = `
                   class="border-b border-dashed border-theme-neutral-200"
                 >
                   <td
-                    class="w-20"
+                    class="w-16"
                   >
-                    <svg>
+                    <svg
+                      class="w-12 h-12"
+                    >
                       changenow-logo.svg
                     </svg>
                   </td>
@@ -257,13 +267,15 @@ exports[`BlacklistPlugins should render a modal 1`] = `
                     <div
                       class="inline-flex items-center space-x-2"
                     >
-                      <span>
+                      <span
+                        class="text-theme-neutral-700"
+                      >
                         ChangeNOW
                       </span>
                     </div>
                   </td>
                   <td
-                    class="py-10 text-right"
+                    class="py-10 text-right text-theme-neutral-700"
                   >
                     Other
                   </td>
@@ -272,9 +284,11 @@ exports[`BlacklistPlugins should render a modal 1`] = `
                   class="border-b border-dashed border-theme-neutral-200"
                 >
                   <td
-                    class="w-20"
+                    class="w-16"
                   >
-                    <svg>
+                    <svg
+                      class="w-12 h-12"
+                    >
                       changenow-logo.svg
                     </svg>
                   </td>
@@ -287,7 +301,9 @@ exports[`BlacklistPlugins should render a modal 1`] = `
                     <div
                       class="inline-flex items-center space-x-2"
                     >
-                      <span>
+                      <span
+                        class="text-theme-neutral-700"
+                      >
                         Delegate Fun
                       </span>
                       <div
@@ -302,7 +318,7 @@ exports[`BlacklistPlugins should render a modal 1`] = `
                     </div>
                   </td>
                   <td
-                    class="py-10 text-right"
+                    class="py-10 text-right text-theme-neutral-700"
                   >
                     Game
                   </td>

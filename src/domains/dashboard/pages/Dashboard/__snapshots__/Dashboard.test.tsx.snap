@@ -632,7 +632,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                   class="relative"
                   data-testid="dropdown__toggle"
                 >
-                  <button
+                  <div
                     class="float-right outline-none focus:outline-none"
                   >
                     <div
@@ -644,7 +644,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                         filters.svg
                       </svg>
                     </div>
-                  </button>
+                  </div>
                 </div>
               </div>
               <div
