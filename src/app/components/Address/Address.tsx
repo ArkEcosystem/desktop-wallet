@@ -6,7 +6,7 @@ type Props = {
 	walletName?: string;
 	addressClass?: string;
 	address?: string | undefined;
-	maxChars?: number;
+	maxChars?: number | null;
 	className?: string;
 	size?: "small" | "default" | "large";
 };
@@ -38,7 +38,7 @@ export const Address = ({ address, addressClass, walletName, maxChars, size }: P
 					addressClass || (walletName ? "text-theme-neutral-400" : "text-theme-neutral-800")
 				} font-semibold ${size && fontSizes[size]}`}
 			>
-				{maxChars && maxChars > 0 ? truncateStringMiddle(address, maxChars) : address}
+				{truncateStringMiddle(address, maxChars)}
 			</span>
 		</div>
 	);

@@ -49,7 +49,7 @@ export const ContactListItem = ({
           <td className="py-6 border-b border-dashed border-theme-neutral-200">
             <div className="flex items-center space-x-3">
               <Circle avatarId={avatar} />
-              <Address address={address} maxChars={0} />
+              <Address address={address} maxChars={null} />
             </div>
           </td>
           <td className="text-sm font-bold text-center border-b border-dashed border-theme-neutral-200 space-x-2">
