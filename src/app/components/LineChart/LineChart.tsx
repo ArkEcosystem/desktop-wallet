@@ -99,13 +99,9 @@ export const LineChart = ({ data, lines, period, onPeriodClick, width, height }:
 			<ChartLegend legend={legend} lines={lines} period={period} onPeriodClick={onPeriodClick} />
 			<div className="text-theme-neutral-200" data-testid="line-chart-wrapper">
 				<ResponsiveContainer width={width} height={height}>
-					<RechartsLine
-						data={data}
-						margin={{ top: 10, bottom: 10, left: 10, right: 10 }}
-						data-testid="chart-line"
-					>
+					<RechartsLine data={data} margin={{ top: 10, bottom: 10, left: 10, right: 10 }}>
 						<XAxis dataKey="name" />
-						<CartesianGrid stroke="currentColor" />
+						<CartesianGrid stroke="currentColor" className="test" />
 						<Tooltip
 							content={(cdata: any) => {
 								if (typeof cdata.payload[0] !== "undefined") {

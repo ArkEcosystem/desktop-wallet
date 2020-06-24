@@ -1,5 +1,6 @@
-import {  render, waitFor } from "@testing-library/react";
+import { fireEvent, render, waitFor } from "@testing-library/react";
 import React from "react";
+import { act } from "react-dom/test-utils";
 
 import { LineChart } from "./LineChart";
 
@@ -28,12 +29,18 @@ describe("LineChart", () => {
 
 	it("should render chart dots", async () => {
 		const { getByTestId } = render(
-			<div className="w-64">
-				<LineChart width={300} period={period} data={data} lines={lines} />
+			<div>
+				<LineChart width={500} period={period} data={data} lines={lines} />
 			</div>,
 		);
 		const chartWrapper = getByTestId("line-chart-wrapper");
 		expect(chartWrapper).toBeTruthy();
 		await waitFor(() => expect(getByTestId("line-chart-dot-0")).toBeTruthy(), { timeout: 1000 });
+
+		const dot = getByTestId("line-chart-dot-0");
+		act(() => {
+			fireEvent.mouseEnter(dot);
+			fireEvent.click(dot);
+		});
 	});
 });
