@@ -52,8 +52,8 @@ export const Comments = ({ comments, sortOptions }: CommentsProps) => {
 			</div>
 			<div>
 				{comments.map(({ author, score, date, comment, replies }, idx) => (
-					<div className="w-2/3 mt-5 flex flex-col text-sm" key={idx}>
-						<div className="w-1/2">
+					<div className="w-3/4 mt-5 flex flex-col text-sm" key={idx}>
+						<div className="w-3/5">
 							<div className="grid grid-cols-3 divide-x divide-theme-neutral-400">
 								<div>
 									<span className="text-base">{author}</span>
