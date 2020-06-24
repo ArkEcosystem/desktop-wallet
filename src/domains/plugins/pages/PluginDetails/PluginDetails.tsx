@@ -85,7 +85,7 @@ export const PluginDetails = () => (
 			screenshots={[1, 2, 3]}
 		/>
 		<div className="mt-5 bg-theme-background">
-			<div className="mx-10 py-24 grid grid-cols-2 grid-flow-col divide-x divide-theme-neutral-300">
+			<div className="py-24 mx-10 grid grid-cols-2 grid-flow-col divide-x divide-theme-neutral-300">
 				<div className="col-span-2" data-testid="plugin-details__comments">
 					<Comments comments={reviewComments} sortOptions={commentsSortingOptions} />
 				</div>
