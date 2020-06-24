@@ -26,7 +26,7 @@ exports[`CreateProfile should render 1`] = `
       class="container mx-auto"
     >
       <div
-        class="mx-auto my-8 md:w-3/4 lg:w-3/5 xl:w-1/2"
+        class="max-w-lg mx-auto xl:max-w-xl"
       >
         <h1
           class="mx-4 md:mx-8 xl:mx-16"
@@ -34,19 +34,32 @@ exports[`CreateProfile should render 1`] = `
           Create Profile
         </h1>
         <div
-          class="mx-4 mt-2 text-theme-neutral-dark md:mx-8 xl:mx-16"
+          class="mx-4 text-theme-neutral-dark md:mx-8 xl:mx-16"
         >
           Create a new Profile or login with your MarketSquare account to get started.
         </div>
         <div
-          class="mx-4 mt-5 md:mx-8 xl:mx-16"
+          class="mx-4 mt-8 md:mx-8 xl:mx-16"
         >
           <button
-            class="sc-AxjAm ddQVWI w-full mb-5"
+            class="sc-AxjAm ddQVWI w-full mb-4"
             color="primary"
             type="button"
           >
-            Login with MarketSquare
+            <div
+              class="sc-AxhCb VoPpj"
+              height="20"
+              width="20"
+            >
+              <svg>
+                msq.svg
+              </svg>
+            </div>
+            <span
+              class="ml-2"
+            >
+              Login with MarketSquare
+            </span>
           </button>
           <div
             class="sc-AxirZ jzxvZY"
@@ -54,12 +67,12 @@ exports[`CreateProfile should render 1`] = `
           />
         </div>
         <form
-          class="space-y-6"
+          class="-mt-8"
           data-testid="Form"
           id="create-profile__form"
         >
           <div
-            class="mx-4 mt-5 md:mx-8 xl:mx-16"
+            class="mx-4 md:mx-8 xl:mx-16"
           >
             <ul
               class="sc-fzplWN krwTau"
@@ -77,13 +90,13 @@ exports[`CreateProfile should render 1`] = `
                     class="flex flex-col"
                   >
                     <span
-                      class="mr-5 text-3xl font-bold"
+                      class="mr-5 text-xl font-bold"
                       data-testid="list-divided-item__label"
                     >
                       New Profile
                     </span>
                     <span
-                      class="text-sm text-theme-neutral mt-3"
+                      class="text-sm text-theme-neutral font-semibold mt-3 text-theme-neutral-dark"
                       data-testid="list-divided-item__label--description"
                     >
                       Select Profile Image
@@ -95,10 +108,10 @@ exports[`CreateProfile should render 1`] = `
                   data-testid="list-divided-item__content"
                 >
                   <div
-                    class="flex flex-row mt-2"
+                    class="flex flex-row mb-4 -mt-2"
                   >
                     <div
-                      class="flex items-center justify-center w-24 h-24 mr-6 border-2 border-dashed rounded border-theme-neutral-light"
+                      class="flex items-center justify-center w-24 h-24 mr-6 border-2 border-dashed rounded border-theme-neutral-300"
                     >
                       <button
                         class="flex items-center justify-center w-20 h-20 rounded-full bg-theme-primary-contrast"
@@ -141,139 +154,143 @@ exports[`CreateProfile should render 1`] = `
                 </div>
               </li>
             </ul>
-            <fieldset
-              class="sc-AxiKw iQzisX flex flex-col space-y-2"
-            >
-              <label
-                class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
-                data-testid="FormLabel"
-                for="name"
-                label="Name"
-              >
-                Name
-              </label>
-              <input
-                class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
-                data-testid="Input"
-                name="name"
-              />
-            </fieldset>
-            <fieldset
-              class="sc-AxiKw iQzisX mt-10"
-            >
-              <label
-                class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
-                data-testid="FormLabel"
-                for="market-provider"
-                label="Market Provider"
-              >
-                Market Provider
-              </label>
-              <div
-                class="sc-AxmLO kuiknc"
-              >
-                <select
-                  class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
-                  data-testid="Select"
-                  name="market-provider"
-                >
-                  <option
-                    disabled=""
-                    selected=""
-                    value=""
-                  >
-                    Select Market Provider
-                  </option>
-                  <option
-                    value="option1"
-                  >
-                    Option 1
-                  </option>
-                  <option
-                    value="option2"
-                  >
-                    Option 2
-                  </option>
-                  <option
-                    value="option3"
-                  >
-                    Option 3
-                  </option>
-                </select>
-                <div
-                  class="sc-AxgMl sc-Axmtr cPxyjO w-12 text-lg pointer-events-none text-theme-neutral-dark"
-                >
-                  <div
-                    class="sc-AxhCb fxrKLH"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      chevron-down.svg
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </fieldset>
-            <fieldset
-              class="sc-AxiKw iQzisX mt-10"
-            >
-              <label
-                class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
-                data-testid="FormLabel"
-                for="currency"
-                label="Currency"
-              >
-                Currency
-              </label>
-              <div
-                class="sc-AxmLO kuiknc"
-              >
-                <select
-                  class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
-                  data-testid="Select"
-                  name="currency"
-                >
-                  <option
-                    disabled=""
-                    selected=""
-                    value=""
-                  >
-                    Select Currency
-                  </option>
-                  <option
-                    value="option1"
-                  >
-                    Option 1
-                  </option>
-                  <option
-                    value="option2"
-                  >
-                    Option 2
-                  </option>
-                  <option
-                    value="option3"
-                  >
-                    Option 3
-                  </option>
-                </select>
-                <div
-                  class="sc-AxgMl sc-Axmtr cPxyjO w-12 text-lg pointer-events-none text-theme-neutral-dark"
-                >
-                  <div
-                    class="sc-AxhCb fxrKLH"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      chevron-down.svg
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </fieldset>
             <div
-              class="mt-5"
+              class="flex flex-col space-y-8"
+            >
+              <fieldset
+                class="sc-AxiKw iQzisX flex flex-col space-y-2"
+              >
+                <label
+                  class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
+                  data-testid="FormLabel"
+                  for="name"
+                  label="Name"
+                >
+                  Name
+                </label>
+                <input
+                  class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+                  data-testid="Input"
+                  name="name"
+                />
+              </fieldset>
+              <fieldset
+                class="sc-AxiKw iQzisX flex flex-col space-y-2"
+              >
+                <label
+                  class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
+                  data-testid="FormLabel"
+                  for="market-provider"
+                  label="Market Provider"
+                >
+                  Market Provider
+                </label>
+                <div
+                  class="sc-AxmLO kuiknc"
+                >
+                  <select
+                    class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
+                    data-testid="Select"
+                    name="market-provider"
+                  >
+                    <option
+                      disabled=""
+                      selected=""
+                      value=""
+                    >
+                      Select Market Provider
+                    </option>
+                    <option
+                      value="option1"
+                    >
+                      Option 1
+                    </option>
+                    <option
+                      value="option2"
+                    >
+                      Option 2
+                    </option>
+                    <option
+                      value="option3"
+                    >
+                      Option 3
+                    </option>
+                  </select>
+                  <div
+                    class="sc-AxgMl sc-Axmtr cPxyjO w-12 text-lg pointer-events-none text-theme-neutral-dark"
+                  >
+                    <div
+                      class="sc-AxhCb fxrKLH"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        chevron-down.svg
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+              <fieldset
+                class="sc-AxiKw iQzisX flex flex-col space-y-2"
+              >
+                <label
+                  class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
+                  data-testid="FormLabel"
+                  for="currency"
+                  label="Currency"
+                >
+                  Currency
+                </label>
+                <div
+                  class="sc-AxmLO kuiknc"
+                >
+                  <select
+                    class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
+                    data-testid="Select"
+                    name="currency"
+                  >
+                    <option
+                      disabled=""
+                      selected=""
+                      value=""
+                    >
+                      Select Currency
+                    </option>
+                    <option
+                      value="option1"
+                    >
+                      Option 1
+                    </option>
+                    <option
+                      value="option2"
+                    >
+                      Option 2
+                    </option>
+                    <option
+                      value="option3"
+                    >
+                      Option 3
+                    </option>
+                  </select>
+                  <div
+                    class="sc-AxgMl sc-Axmtr cPxyjO w-12 text-lg pointer-events-none text-theme-neutral-dark"
+                  >
+                    <div
+                      class="sc-AxhCb fxrKLH"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        chevron-down.svg
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+            <div
+              class="mb-4"
             >
               <ul
                 class="sc-fzplWN krwTau"
@@ -306,12 +323,12 @@ exports[`CreateProfile should render 1`] = `
                       class="flex flex-row justify-between"
                     >
                       <span
-                        class="w-3/4 text-sm text-theme-neutral-dark"
+                        class="w-3/4 -mt-4 text-sm text-theme-neutral-dark"
                       >
                         Want to set the wallet to dark mode?
                       </span>
                       <div
-                        class="-mt-2"
+                        class="-mt-11"
                       >
                         <label>
                           <input
@@ -332,9 +349,13 @@ exports[`CreateProfile should render 1`] = `
                 </li>
               </ul>
             </div>
+            <div
+              class="sc-AxirZ iZJyTO"
+              type="horizontal"
+            />
           </div>
           <div
-            class="flex justify-end mx-4 mt-5 mb-10 space-x-3 md:mx-8 xl:mx-16"
+            class="flex justify-end mx-4 mt-12 mb-16 space-x-3 md:mx-8 xl:mx-16"
           >
             <button
               class="sc-AxjAm ddJBbC"
