@@ -20,7 +20,6 @@ type PaginationProps = {
 };
 
 export const Pagination = ({ totalCount, itemsPerPage, onSelectPage, currentPage }: PaginationProps) => {
-	console.log({ totalCount, itemsPerPage, onSelectPage, currentPage });
 	const totalPages = Math.ceil(totalCount / itemsPerPage);
 	const pageButtons = Array.from(Array(totalPages), (_, i) => i + 1);
 
