@@ -1,0 +1,483 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Comments should handle sortBy properly 1`] = `
+<DocumentFragment>
+  <div
+    class="w-full"
+  >
+    <p
+      class="font-bold text-xl"
+    >
+      Reviews ARK Explorer
+    </p>
+    <div
+      class="flex mt-5 items-center text-sm text-theme-neutral-900 font-semibold"
+    >
+      <span>
+        Sort by:
+      </span>
+      <div
+        class="flex items-center"
+      >
+        <span
+          class="ml-2"
+        >
+          Date
+        </span>
+        <div
+          class="ml-1"
+        >
+          <div
+            class="relative"
+            data-testid="dropdown__toggle"
+          >
+            <button
+              class="float-right outline-none focus:outline-none"
+            >
+              <div
+                class="sc-AxjAm iepfoc"
+                height="10"
+                width="10"
+              >
+                <svg>
+                  arrowdown.svg
+                </svg>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div
+        class="w-2/3 mt-5 flex flex-col text-sm"
+      >
+        <div
+          class="w-1/2"
+        >
+          <div
+            class="grid grid-cols-3 divide-x divide-theme-neutral-400"
+          >
+            <div>
+              <span
+                class="text-base"
+              >
+                Rok Cernec
+              </span>
+            </div>
+            <div
+              class="flex items-center justify-center text-theme-warning-300"
+            >
+              <div
+                class="sc-AxjAm iepfoc"
+                height="10"
+                width="10"
+              >
+                <svg>
+                  star.svg
+                </svg>
+              </div>
+              <span
+                class="px-3 flex text-theme-neutral-600"
+              >
+                4.6
+              </span>
+            </div>
+            <div
+              class="px-3"
+            >
+              <span
+                class="text-theme-neutral-400"
+              >
+                4 days ago
+              </span>
+            </div>
+          </div>
+        </div>
+        <div
+          class="mt-2"
+        >
+          <p
+            class="text-theme-neutral-600"
+          >
+            As ARK Core is written exclusively in Node.js, the server-side framework for JavaScript and Typescript, installing Node.js is a necessity for core development. The code below installs Node.js from the source.
+          </p>
+        </div>
+      </div>
+      <div
+        class="w-2/3 mt-5 flex flex-col text-sm"
+      >
+        <div
+          class="w-1/2"
+        >
+          <div
+            class="grid grid-cols-3 divide-x divide-theme-neutral-400"
+          >
+            <div>
+              <span
+                class="text-base"
+              >
+                Gerard Blezer
+              </span>
+            </div>
+            <div
+              class="flex items-center justify-center text-theme-warning-300"
+            >
+              <div
+                class="sc-AxjAm iepfoc"
+                height="10"
+                width="10"
+              >
+                <svg>
+                  star.svg
+                </svg>
+              </div>
+              <span
+                class="px-3 flex text-theme-neutral-600"
+              >
+                4.6
+              </span>
+            </div>
+            <div
+              class="px-3"
+            >
+              <span
+                class="text-theme-neutral-400"
+              >
+                4 days ago
+              </span>
+            </div>
+          </div>
+        </div>
+        <div
+          class="mt-2"
+        >
+          <p
+            class="text-theme-neutral-600"
+          >
+            As an open-source platform, the entire ARK codebase is readily available on GitHub providing blockchain developers with a convenient location for all ARK technologies and repositories.
+          </p>
+          <div
+            class="mt-3 ml-3 flex flex-col"
+          >
+            <div
+              class="flex items-center text-theme-neutral-500"
+            >
+              <div
+                class="sc-AxjAm cpczEI"
+                height="1em"
+                width="1em"
+              >
+                <svg>
+                  reply-arrow.svg
+                </svg>
+              </div>
+              <div
+                class="grid grid-cols-2 divide-x"
+              >
+                <span
+                  class="font-bold text-theme-neutral-900 px-3"
+                >
+                  Developer response
+                </span>
+                <span
+                  class="px-3"
+                >
+                  4 days ago
+                </span>
+              </div>
+            </div>
+            <div
+              class="sc-AxhUy kBFgoN ml-7 mt-2 text-theme-neutral-600"
+            >
+              <a
+                href="#"
+              >
+                @Gerard Blezer
+              </a>
+               Our GitHub bount reward program utlilizes a tiered structure.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="mt-7"
+    >
+      <div
+        class="sc-AxhCb ervtWH"
+      >
+        <button
+          class="sc-AxiKw gFzSt"
+          color="primary"
+          type="button"
+        >
+          1
+        </button>
+        <button
+          class="sc-AxiKw gFzSt"
+          color="primary"
+          type="button"
+        >
+          2
+        </button>
+        <button
+          class="sc-AxiKw gFzSt"
+          color="primary"
+          type="button"
+        >
+          3
+        </button>
+        <button
+          class="sc-AxiKw gFzSt"
+          color="primary"
+          type="button"
+        >
+          Next
+        </button>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Comments should render properly 1`] = `
+<DocumentFragment>
+  <div
+    class="w-full"
+  >
+    <p
+      class="font-bold text-xl"
+    >
+      Reviews ARK Explorer
+    </p>
+    <div
+      class="flex mt-5 items-center text-sm text-theme-neutral-900 font-semibold"
+    >
+      <span>
+        Sort by:
+      </span>
+      <div
+        class="flex items-center"
+      >
+        <span
+          class="ml-2"
+        >
+          Best
+        </span>
+        <div
+          class="ml-1"
+        >
+          <div
+            class="relative"
+            data-testid="dropdown__toggle"
+          >
+            <button
+              class="float-right outline-none focus:outline-none"
+            >
+              <div
+                class="sc-AxjAm iepfoc"
+                height="10"
+                width="10"
+              >
+                <svg>
+                  arrowdown.svg
+                </svg>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div
+        class="w-2/3 mt-5 flex flex-col text-sm"
+      >
+        <div
+          class="w-1/2"
+        >
+          <div
+            class="grid grid-cols-3 divide-x divide-theme-neutral-400"
+          >
+            <div>
+              <span
+                class="text-base"
+              >
+                Rok Cernec
+              </span>
+            </div>
+            <div
+              class="flex items-center justify-center text-theme-warning-300"
+            >
+              <div
+                class="sc-AxjAm iepfoc"
+                height="10"
+                width="10"
+              >
+                <svg>
+                  star.svg
+                </svg>
+              </div>
+              <span
+                class="px-3 flex text-theme-neutral-600"
+              >
+                4.6
+              </span>
+            </div>
+            <div
+              class="px-3"
+            >
+              <span
+                class="text-theme-neutral-400"
+              >
+                4 days ago
+              </span>
+            </div>
+          </div>
+        </div>
+        <div
+          class="mt-2"
+        >
+          <p
+            class="text-theme-neutral-600"
+          >
+            As ARK Core is written exclusively in Node.js, the server-side framework for JavaScript and Typescript, installing Node.js is a necessity for core development. The code below installs Node.js from the source.
+          </p>
+        </div>
+      </div>
+      <div
+        class="w-2/3 mt-5 flex flex-col text-sm"
+      >
+        <div
+          class="w-1/2"
+        >
+          <div
+            class="grid grid-cols-3 divide-x divide-theme-neutral-400"
+          >
+            <div>
+              <span
+                class="text-base"
+              >
+                Gerard Blezer
+              </span>
+            </div>
+            <div
+              class="flex items-center justify-center text-theme-warning-300"
+            >
+              <div
+                class="sc-AxjAm iepfoc"
+                height="10"
+                width="10"
+              >
+                <svg>
+                  star.svg
+                </svg>
+              </div>
+              <span
+                class="px-3 flex text-theme-neutral-600"
+              >
+                4.6
+              </span>
+            </div>
+            <div
+              class="px-3"
+            >
+              <span
+                class="text-theme-neutral-400"
+              >
+                4 days ago
+              </span>
+            </div>
+          </div>
+        </div>
+        <div
+          class="mt-2"
+        >
+          <p
+            class="text-theme-neutral-600"
+          >
+            As an open-source platform, the entire ARK codebase is readily available on GitHub providing blockchain developers with a convenient location for all ARK technologies and repositories.
+          </p>
+          <div
+            class="mt-3 ml-3 flex flex-col"
+          >
+            <div
+              class="flex items-center text-theme-neutral-500"
+            >
+              <div
+                class="sc-AxjAm cpczEI"
+                height="1em"
+                width="1em"
+              >
+                <svg>
+                  reply-arrow.svg
+                </svg>
+              </div>
+              <div
+                class="grid grid-cols-2 divide-x"
+              >
+                <span
+                  class="font-bold text-theme-neutral-900 px-3"
+                >
+                  Developer response
+                </span>
+                <span
+                  class="px-3"
+                >
+                  4 days ago
+                </span>
+              </div>
+            </div>
+            <div
+              class="sc-AxhUy kBFgoN ml-7 mt-2 text-theme-neutral-600"
+            >
+              <a
+                href="#"
+              >
+                @Gerard Blezer
+              </a>
+               Our GitHub bount reward program utlilizes a tiered structure.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="mt-7"
+    >
+      <div
+        class="sc-AxhCb ervtWH"
+      >
+        <button
+          class="sc-AxiKw gFzSt"
+          color="primary"
+          type="button"
+        >
+          1
+        </button>
+        <button
+          class="sc-AxiKw gFzSt"
+          color="primary"
+          type="button"
+        >
+          2
+        </button>
+        <button
+          class="sc-AxiKw gFzSt"
+          color="primary"
+          type="button"
+        >
+          3
+        </button>
+        <button
+          class="sc-AxiKw gFzSt"
+          color="primary"
+          type="button"
+        >
+          Next
+        </button>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
