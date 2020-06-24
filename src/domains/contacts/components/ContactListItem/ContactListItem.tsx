@@ -52,12 +52,12 @@ export const ContactListItem = ({
               <Address address={address} maxChars={0} />
             </div>
           </td>
-          <td className="text-center text-sm font-bold border-b border-dashed border-theme-neutral-200 space-x-2">
+          <td className="text-sm font-bold text-center border-b border-dashed border-theme-neutral-200 space-x-2">
             <span>TODO</span>
           </td>
           {/*
           {typeIcons && (
-            <td className="text-center text-sm font-bold border-b border-dashed border-theme-neutral-200 space-x-2">
+            <td className="text-sm font-bold text-center border-b border-dashed border-theme-neutral-200 space-x-2">
               {typeIcons.map((type: string, index: number) => {
                 return (
                   <div key={index} className="inline-block">
