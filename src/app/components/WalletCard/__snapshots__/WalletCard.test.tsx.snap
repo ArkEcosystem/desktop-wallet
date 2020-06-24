@@ -18,7 +18,7 @@ exports[`Formatted Address should render 1`] = `
             class="relative"
             data-testid="dropdown__toggle"
           >
-            <div
+            <button
               class="float-right outline-none focus:outline-none"
             >
               <div
@@ -30,7 +30,7 @@ exports[`Formatted Address should render 1`] = `
                   settings.svg
                 </svg>
               </div>
-            </div>
+            </button>
           </div>
         </div>
         <div
@@ -113,7 +113,7 @@ exports[`Formatted Address should render with wallet data 1`] = `
             class="relative"
             data-testid="dropdown__toggle"
           >
-            <div
+            <button
               class="float-right outline-none focus:outline-none"
             >
               <div
@@ -125,7 +125,7 @@ exports[`Formatted Address should render with wallet data 1`] = `
                   settings.svg
                 </svg>
               </div>
-            </div>
+            </button>
           </div>
         </div>
         <div
@@ -200,7 +200,7 @@ exports[`Formatted Address should render with wallet data and optional icon 1`] 
             class="relative"
             data-testid="dropdown__toggle"
           >
-            <div
+            <button
               class="float-right outline-none focus:outline-none"
             >
               <div
@@ -212,7 +212,7 @@ exports[`Formatted Address should render with wallet data and optional icon 1`] 
                   settings.svg
                 </svg>
               </div>
-            </div>
+            </button>
           </div>
         </div>
         <div

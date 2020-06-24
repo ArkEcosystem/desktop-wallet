@@ -440,21 +440,20 @@ exports[`PluginListItem should trigger delete 1`] = `
               <div
                 class="relative"
                 data-testid="dropdown__toggle"
-              >
-                <div
-                  class="float-right outline-none focus:outline-none"
-                >
-                  <div
-                    class="sc-AxirZ eEbZjj"
-                    height="20"
-                    width="20"
-                  >
-                    <svg>
-                      settings.svg
-                    </svg>
-                  </div>
-                </div>
-              </div>
+              />
+            </div>
+          </button>
+          <button
+            class="float-right outline-none focus:outline-none"
+          >
+            <div
+              class="sc-AxirZ eEbZjj"
+              height="20"
+              width="20"
+            >
+              <svg>
+                settings.svg
+              </svg>
             </div>
           </button>
         </td>
