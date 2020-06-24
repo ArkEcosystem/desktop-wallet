@@ -1,0 +1,217 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PluginManagerNavigationBar should render 1`] = `
+<DocumentFragment>
+  <div
+    class="sticky top-20 h-20 bg-theme-neutral-900 shadow-md z-20 md:top-24"
+    data-testid="PluginManagerNavigationBar"
+  >
+    Current: home
+    <div
+      class="flex justify-between h-full container mx-auto text-theme-neutral-400"
+    >
+      <div
+        class="flex h-full space-x-6"
+      >
+        <div
+          class="flex items-center cursor-pointer border-b-3 border-theme-primary-500"
+          data-testid="PluginManagerNavigationBar__home"
+        >
+          Home
+        </div>
+        <div
+          class="flex items-center"
+        >
+          <div
+            class="bg-theme-neutral-700 w-px h-4"
+          />
+        </div>
+        <div
+          class="flex items-center cursor-pointer border-b-3 border-theme-neutral-900"
+          data-testid="PluginManagerNavigationBar__game"
+        >
+          Game 
+          <span
+            class="text-theme-neutral-700 ml-1"
+          >
+            48
+          </span>
+        </div>
+        <div
+          class="flex items-center"
+        >
+          <div
+            class="bg-theme-neutral-700 w-px h-4"
+          />
+        </div>
+        <div
+          class="flex items-center cursor-pointer border-b-3 border-theme-neutral-900"
+          data-testid="PluginManagerNavigationBar__utility"
+        >
+          Utility 
+          <span
+            class="text-theme-neutral-700 ml-1"
+          >
+            264
+          </span>
+        </div>
+        <div
+          class="flex items-center"
+        >
+          <div
+            class="bg-theme-neutral-700 w-px h-4"
+          />
+        </div>
+        <div
+          class="flex items-center cursor-pointer border-b-3 border-theme-neutral-900"
+          data-testid="PluginManagerNavigationBar__themes"
+        >
+          Themes 
+          <span
+            class="text-theme-neutral-700 ml-1"
+          >
+            96
+          </span>
+        </div>
+        <div
+          class="flex items-center"
+        >
+          <div
+            class="bg-theme-neutral-700 w-px h-4"
+          />
+        </div>
+        <div
+          class="flex items-center cursor-pointer border-b-3 border-theme-neutral-900"
+          data-testid="PluginManagerNavigationBar__other"
+        >
+          Other 
+          <span
+            class="text-theme-neutral-700 ml-1"
+          >
+            27
+          </span>
+        </div>
+      </div>
+      <div
+        class="flex items-center cursor-pointer border-b-3 border-theme-neutral-900"
+        data-testid="PluginManagerNavigationBar__my-plugins"
+      >
+        My Plugins 
+        <span
+          class="text-theme-neutral-700 ml-1"
+        >
+          8
+        </span>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`PluginManagerNavigationBar should update selected 1`] = `
+<DocumentFragment>
+  <div
+    class="sticky top-20 h-20 bg-theme-neutral-900 shadow-md z-20 md:top-24"
+    data-testid="PluginManagerNavigationBar"
+  >
+    Current: home
+    <div
+      class="flex justify-between h-full container mx-auto text-theme-neutral-400"
+    >
+      <div
+        class="flex h-full space-x-6"
+      >
+        <div
+          class="flex items-center cursor-pointer border-b-3 border-theme-primary-500"
+          data-testid="PluginManagerNavigationBar__home"
+        >
+          Home
+        </div>
+        <div
+          class="flex items-center"
+        >
+          <div
+            class="bg-theme-neutral-700 w-px h-4"
+          />
+        </div>
+        <div
+          class="flex items-center cursor-pointer border-b-3 border-theme-neutral-900"
+          data-testid="PluginManagerNavigationBar__game"
+        >
+          Game 
+          <span
+            class="text-theme-neutral-700 ml-1"
+          >
+            48
+          </span>
+        </div>
+        <div
+          class="flex items-center"
+        >
+          <div
+            class="bg-theme-neutral-700 w-px h-4"
+          />
+        </div>
+        <div
+          class="flex items-center cursor-pointer border-b-3 border-theme-neutral-900"
+          data-testid="PluginManagerNavigationBar__utility"
+        >
+          Utility 
+          <span
+            class="text-theme-neutral-700 ml-1"
+          >
+            264
+          </span>
+        </div>
+        <div
+          class="flex items-center"
+        >
+          <div
+            class="bg-theme-neutral-700 w-px h-4"
+          />
+        </div>
+        <div
+          class="flex items-center cursor-pointer border-b-3 border-theme-neutral-900"
+          data-testid="PluginManagerNavigationBar__themes"
+        >
+          Themes 
+          <span
+            class="text-theme-neutral-700 ml-1"
+          >
+            96
+          </span>
+        </div>
+        <div
+          class="flex items-center"
+        >
+          <div
+            class="bg-theme-neutral-700 w-px h-4"
+          />
+        </div>
+        <div
+          class="flex items-center cursor-pointer border-b-3 border-theme-neutral-900"
+          data-testid="PluginManagerNavigationBar__other"
+        >
+          Other 
+          <span
+            class="text-theme-neutral-700 ml-1"
+          >
+            27
+          </span>
+        </div>
+      </div>
+      <div
+        class="flex items-center cursor-pointer border-b-3 border-theme-neutral-900"
+        data-testid="PluginManagerNavigationBar__my-plugins"
+      >
+        My Plugins 
+        <span
+          class="text-theme-neutral-700 ml-1"
+        >
+          8
+        </span>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
