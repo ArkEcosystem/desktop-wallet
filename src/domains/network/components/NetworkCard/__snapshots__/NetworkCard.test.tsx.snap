@@ -1,0 +1,107 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NetworkCard should render 1`] = `
+<DocumentFragment>
+  <label
+    class="CardControl___StyledLabel-sc-28luv0-3 PNVuh"
+  >
+    <input
+      class="CardControl__Input-sc-28luv0-0 lbnjeC"
+      data-testid="card-control__network"
+      name="network"
+      type="radio"
+      value="ARK Ecosystem"
+    />
+    <div
+      class="sc-AxjAm CardControl__CustomCard-sc-28luv0-1 hbehcc"
+    >
+      <div
+        class="flex items-center py-2"
+      >
+        <div
+          class="sc-AxiKw gDUlrm transition-colors duration-100 border-theme-neutral-300"
+        >
+          <div
+            class="sc-AxirZ iQaTP"
+            height="1em"
+            width="1em"
+          >
+            <svg>
+              ark.svg
+            </svg>
+          </div>
+        </div>
+        <div
+          class="flex flex-col ml-4"
+        >
+          <span
+            class="text-sm font-semibold text-theme-neutral-500"
+            data-testid="network-card--network"
+          >
+            mainnet
+          </span>
+          <span
+            class="font-semibold text-theme-text"
+            data-testid="network-card--name"
+          >
+            ARK Ecosystem
+          </span>
+        </div>
+      </div>
+    </div>
+  </label>
+</DocumentFragment>
+`;
+
+exports[`NetworkCard should select a network card 1`] = `
+<DocumentFragment>
+  <label
+    class="CardControl___StyledLabel-sc-28luv0-3 PNVuh"
+  >
+    <input
+      class="CardControl__Input-sc-28luv0-0 lbnjeC"
+      data-testid="card-control__network"
+      name="network"
+      type="radio"
+      value="ARK Ecosystem"
+    />
+    <div
+      class="sc-AxjAm CardControl__CustomCard-sc-28luv0-1 hbehcc"
+    >
+      <div
+        class="flex items-center py-2"
+      >
+        <div
+          class="sc-AxiKw gDUlrm transition-colors duration-100 border-theme-neutral-300"
+        >
+          <div
+            class="sc-AxirZ iQaTP"
+            height="1em"
+            width="1em"
+          >
+            <svg>
+              ark.svg
+            </svg>
+          </div>
+        </div>
+        <div
+          class="flex flex-col ml-4"
+        >
+          <span
+            class="text-sm font-semibold text-theme-neutral-500"
+            data-testid="network-card--network"
+          >
+            mainnet
+          </span>
+          <span
+            class="font-semibold text-theme-text"
+            data-testid="network-card--name"
+          >
+            ARK Ecosystem
+          </span>
+        </div>
+      </div>
+    </div>
+  </label>
+</DocumentFragment>
+`;
