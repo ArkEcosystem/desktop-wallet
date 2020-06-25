@@ -127,7 +127,7 @@ exports[`UpdateContact should render a modal 1`] = `
               <button
                 class="sc-AxjAm ddJBbC w-full"
                 color="primary"
-                data-testid="contact-form__add-address-button"
+                data-testid="contact-form__add-address-btn"
                 disabled=""
                 type="button"
               >
@@ -140,6 +140,7 @@ exports[`UpdateContact should render a modal 1`] = `
               <button
                 class="sc-AxjAm ddJBbC"
                 color="primary"
+                data-testid="contact-form__cancel-btn"
                 type="button"
               >
                 Cancel
@@ -147,7 +148,7 @@ exports[`UpdateContact should render a modal 1`] = `
               <button
                 class="sc-AxjAm ddQVWI"
                 color="primary"
-                data-testid="contact-form__save-button"
+                data-testid="contact-form__save-btn"
                 disabled=""
                 type="submit"
               >
