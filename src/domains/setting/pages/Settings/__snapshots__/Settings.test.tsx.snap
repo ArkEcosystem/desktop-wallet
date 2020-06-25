@@ -182,10 +182,10 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                 </div>
               </div>
               <div
-                class="flex flex-col py-6 space-x-3 md:flex-row"
+                class="flex justify-end w-full py-6 space-x-3"
               >
                 <button
-                  class="sc-AxiKw gFzSt w-full"
+                  class="sc-AxiKw gFzSt"
                   color="primary"
                   data-testid="plugins__open-list"
                   type="button"
@@ -193,7 +193,7 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                   Open List
                 </button>
                 <button
-                  class="sc-AxiKw gFzSt w-full mt-2 md:mt-0"
+                  class="sc-AxiKw gFzSt"
                   color="primary"
                   data-testid="plugins__add-plugin"
                   type="button"
@@ -2120,10 +2120,10 @@ exports[`Settings should render plugin settings 1`] = `
                 </div>
               </div>
               <div
-                class="flex flex-col py-6 space-x-3 md:flex-row"
+                class="flex justify-end w-full py-6 space-x-3"
               >
                 <button
-                  class="sc-AxiKw gFzSt w-full"
+                  class="sc-AxiKw gFzSt"
                   color="primary"
                   data-testid="plugins__open-list"
                   type="button"
@@ -2131,7 +2131,7 @@ exports[`Settings should render plugin settings 1`] = `
                   Open List
                 </button>
                 <button
-                  class="sc-AxiKw gFzSt w-full mt-2 md:mt-0"
+                  class="sc-AxiKw gFzSt"
                   color="primary"
                   data-testid="plugins__add-plugin"
                   type="button"

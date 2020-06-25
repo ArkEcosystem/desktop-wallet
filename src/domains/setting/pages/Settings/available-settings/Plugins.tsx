@@ -34,10 +34,9 @@ export const Plugins = ({ formConfig, onSubmit }: PluginsProps) => {
 							<Toggle />
 						</div>
 					</div>
-					<div className="flex flex-col py-6 space-x-3 md:flex-row">
+					<div className="flex justify-end w-full py-6 space-x-3">
 						<Button
 							variant="plain"
-							className="w-full"
 							onClick={() => setModalOpenListIsOpen(true)}
 							data-testid="plugins__open-list"
 						>
@@ -45,7 +44,6 @@ export const Plugins = ({ formConfig, onSubmit }: PluginsProps) => {
 						</Button>
 						<Button
 							variant="plain"
-							className="w-full mt-2 md:mt-0"
 							onClick={() => setModalAddPluginIsOpen(true)}
 							data-testid="plugins__add-plugin"
 						>
