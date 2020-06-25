@@ -18,3 +18,17 @@ export const Default = () => {
 		</div>
 	);
 };
+
+export const FewerWallets = () => {
+	return (
+		<div>
+			<Dashboard
+				balances={balances}
+				networks={networks}
+				wallets={wallets.concat().splice(0, 2)}
+				transactions={transactions}
+				portfolioPercentages={portfolioPercentages}
+			/>
+		</div>
+	);
+};
