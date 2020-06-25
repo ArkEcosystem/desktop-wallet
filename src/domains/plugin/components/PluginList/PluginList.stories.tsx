@@ -31,8 +31,20 @@ const plugins = [
 
 export const Default = () => (
 	<PluginList
-		plugins={plugins}
+		plugins={[
+			...plugins,
+			...plugins,
+			...plugins,
+			...plugins,
+			...plugins,
+			...plugins,
+			...plugins,
+			...plugins,
+			...plugins,
+			...plugins,
+		]}
 		onInstall={(plugin: any) => alert(`selected ${plugin.name} plugin`)}
 		onDelete={(plugin: any) => alert(`delete ${plugin.name} plugin`)}
+		itemsPerPage={8}
 	/>
 );

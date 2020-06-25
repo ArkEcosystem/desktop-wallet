@@ -73,9 +73,16 @@ const PluginManagerHome = ({ onDelete, onInstall, viewType }: PluginManagerHomeP
 					</span>
 				</div>
 				{viewType === "grid" && (
-					<PluginGrid plugins={plugins} onSelect={() => console.log("selected")} onDelete={onDelete} />
+					<PluginGrid
+						plugins={plugins}
+						onSelect={() => console.log("selected")}
+						onDelete={onDelete}
+						withPagination={false}
+					/>
 				)}
-				{viewType === "list" && <PluginList plugins={plugins} onInstall={onInstall} onDelete={onDelete} />}
+				{viewType === "list" && (
+					<PluginList plugins={plugins} onInstall={onInstall} onDelete={onDelete} withPagination={false} />
+				)}
 			</div>
 
 			<div data-testid="PluginManager__home__top-rated">
@@ -91,17 +98,31 @@ const PluginManagerHome = ({ onDelete, onInstall, viewType }: PluginManagerHomeP
 					</span>
 				</div>
 				{viewType === "grid" && (
-					<PluginGrid plugins={plugins} onSelect={() => console.log("selected")} onDelete={onDelete} />
+					<PluginGrid
+						plugins={plugins}
+						onSelect={() => console.log("selected")}
+						onDelete={onDelete}
+						withPagination={false}
+					/>
 				)}
-				{viewType === "list" && <PluginList plugins={plugins} onInstall={onInstall} onDelete={onDelete} />}
+				{viewType === "list" && (
+					<PluginList plugins={plugins} onInstall={onInstall} onDelete={onDelete} withPagination={false} />
+				)}
 			</div>
 
 			<div data-testid="PluginManager__home__top-utilities">
 				<h2 className="mt-8 mb-6">{t("PLUGINS.PAGE_PLUGIN_MANAGER.TOP_UTILITIES")}</h2>
 				{viewType === "grid" && (
-					<PluginGrid plugins={plugins} onSelect={() => console.log("selected")} onDelete={onDelete} />
+					<PluginGrid
+						plugins={plugins}
+						onSelect={() => console.log("selected")}
+						onDelete={onDelete}
+						withPagination={false}
+					/>
 				)}
-				{viewType === "list" && <PluginList plugins={plugins} onInstall={onInstall} onDelete={onDelete} />}
+				{viewType === "list" && (
+					<PluginList plugins={plugins} onInstall={onInstall} onDelete={onDelete} withPagination={false} />
+				)}
 			</div>
 		</div>
 	);
