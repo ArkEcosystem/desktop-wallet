@@ -1,14 +1,17 @@
 import { Button } from "app/components/Button";
+import { Icon } from "app/components/Icon";
 import React from "react";
-import styled from "styled-components";
+import tw, { styled } from "twin.macro";
 
 const Wrapper = styled.div`
-	button:not(:first-child) {
-		margin-left: -0.5rem;
+	${tw`flex space-x-3 h-10`}
+
+	button:first-child,button:last-child {
+		${tw``}
 	}
 
-	button:last-child {
-		margin-left: 1rem;
+	button {
+		${tw`py-2 px-4 text-theme-primary-500`}
 	}
 `;
 
@@ -17,25 +20,59 @@ type PaginationProps = {
 	itemsPerPage: number;
 	onSelectPage: any;
 	currentPage: number;
+	className?: string;
 };
 
-export const Pagination = ({ totalCount, itemsPerPage, onSelectPage, currentPage }: PaginationProps) => {
+const PaginationButton = styled.div`
+	${tw`text-theme-primary-500 hover:bg-theme-primary-light cursor-pointer px-2 text-base inline-flex items-center font-semibold text-center transition-all duration-100 ease-linear justify-center`}
+
+	&.current-page {
+		${tw`bg-theme-primary-light`}
+	}
+`;
+
+export const Pagination = ({ totalCount, itemsPerPage, onSelectPage, currentPage, className }: PaginationProps) => {
 	const totalPages = Math.ceil(totalCount / itemsPerPage);
 	const pageButtons = Array.from(Array(totalPages), (_, i) => i + 1);
 
 	return (
-		<Wrapper>
-			{pageButtons.map((page) => (
-				<Button key={page} variant="plain" onClick={() => onSelectPage(page)}>
-					{page}
-				</Button>
-			))}
+		<Wrapper className={className}>
+			<Button variant="plain" onClick={() => onSelectPage((currentPage = 1))} disabled={currentPage === 1}>
+				<Icon name="PaginationFirst" height={12} width={12} />
+			</Button>
+
+			<Button variant="plain" onClick={() => onSelectPage((currentPage -= 1))} disabled={currentPage === 1}>
+				<Icon name="Back" className="mr-2" height={10} width={10} />
+				Previous
+			</Button>
+
+			<div className="flex px-2 bg-theme-primary-contrast rounded">
+				{pageButtons.map((page) => (
+					<PaginationButton
+						key={page}
+						onClick={() => onSelectPage(page)}
+						className={currentPage === page ? "current-page" : ""}
+					>
+						{page}
+					</PaginationButton>
+				))}
+			</div>
+
 			<Button
 				variant="plain"
 				onClick={() => onSelectPage((currentPage += 1))}
 				disabled={currentPage === pageButtons.length}
 			>
 				Next
+				<Icon name="Forward" className="ml-2" height={12} width={12} />
+			</Button>
+
+			<Button
+				variant="plain"
+				onClick={() => onSelectPage((currentPage = pageButtons.length))}
+				disabled={currentPage === pageButtons.length}
+			>
+				<Icon name="PaginationLast" height={12} width={12} />
 			</Button>
 		</Wrapper>
 	);
