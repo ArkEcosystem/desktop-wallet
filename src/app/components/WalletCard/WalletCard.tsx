@@ -10,6 +10,8 @@ type WalletCardProps = {
 	className?: string;
 	isBlank?: boolean;
 	blankTitle: string;
+	blankTitleClass?: string;
+	blankSubtitleClass?: string;
 	blankSubtitle: string;
 	avatarId?: string;
 	coinIcon?: string;
@@ -31,6 +33,8 @@ export const WalletCard = ({
 	isBlank,
 	blankTitle,
 	blankSubtitle,
+	blankTitleClass,
+	blankSubtitleClass,
 	className,
 	address,
 	walletName,
@@ -44,21 +48,25 @@ export const WalletCard = ({
 }: WalletCardProps) => {
 	const getIconTypeClass = (icon: string) => {
 		if (icon === "Star") return "text-theme-warning-400";
-		return "text-theme-primary-300";
+		return "text-theme-neutral-600";
 	};
 
 	if (isBlank) {
 		return (
 			<div className={`w-64 inline-block ${className}`}>
 				<Card>
-					<div className="px-1 py-2">
-						<div className="mt-1">
-							<Circle className="-mr-2 border-theme-primary-contrast" />
-							<Circle className="border-theme-primary-contrast" />
+					<div className="p-2">
+						<div>
+							<Circle size="large" className="-mr-2 border-theme-primary-contrast bg-white" />
+							<Circle size="large" className="border-theme-primary-contrast bg-white" />
 						</div>
 
-						<div className="mt-4 text-md text-theme-primary-contrast">{blankTitle}</div>
-						<div className="mt-1 text-md text-theme-primary-contrast">{blankSubtitle}</div>
+						<div className={` mt-6 text-md text-theme-primary-contrast ${blankTitleClass}`}>
+							{blankTitle}
+						</div>
+						<div className={` mt-1 text-md text-theme-primary-contrast ${blankSubtitleClass}`}>
+							{blankSubtitle}
+						</div>
 					</div>
 				</Card>
 			</div>
@@ -68,31 +76,31 @@ export const WalletCard = ({
 	return (
 		<div className={`w-64 inline-block ${className}`}>
 			<Card>
-				<div className="relative px-1 py-2">
-					<div className="-mr-2">
+				<div className="relative p-2">
+					<div className="absolute -right-2 -top-1 text-theme-neutral-400 hover:text-theme-neutral-500">
 						<Dropdown options={actions} onSelect={onSelect} />
 					</div>
-					<div className="absolute right-3">
+					<div className="absolute right-3 -top-1">
 						{walletTypeIcons &&
 							walletTypeIcons.map((type: string, index: number) => {
 								return (
 									<div key={index} className={`inline-block mr-2 text ${getIconTypeClass(type)}`}>
-										<Icon name={type} />
+										<Icon name={type} width={18} />
 									</div>
 								);
 							})}
 					</div>
-					<div className="mt-1">
-						<Circle className={`border-theme-primary-contrast -mr-2 ${coinIconClass}`}>
+					<div>
+						<Circle size="large" className={`border-theme-primary-contrast -mr-2 ${coinIconClass}`}>
 							{renderCoin(coinIcon)}
 						</Circle>
-						<Circle avatarId={avatarId} className="border-theme-primary-contrast" />
+						<Circle size="large" avatarId={avatarId} className="border-theme-primary-contrast" />
 					</div>
 
-					<div className="mt-4 truncate max-w-12">
+					<div className="mt-6 truncate max-w-12">
 						<Address walletName={walletName} address={address} maxChars={13} />
 					</div>
-					<div className="font-bold text-theme-neutral-800">{balance}</div>
+					<div className="font-bold text-theme-neutral-900">{balance}</div>
 				</div>
 			</Card>
 		</div>
