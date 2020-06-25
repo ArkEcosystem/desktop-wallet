@@ -1,0 +1,150 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pagination should handle next page click properly 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-AxirZ bsQYXL"
+  >
+    <button
+      class="sc-AxjAm ddJBbC"
+      color="primary"
+      type="button"
+    >
+      1
+    </button>
+    <button
+      class="sc-AxjAm ddJBbC"
+      color="primary"
+      type="button"
+    >
+      2
+    </button>
+    <button
+      class="sc-AxjAm ddJBbC"
+      color="primary"
+      type="button"
+    >
+      3
+    </button>
+    <button
+      class="sc-AxjAm ddJBbC"
+      color="primary"
+      type="button"
+    >
+      Next
+    </button>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Pagination should handle page selection properly 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-AxirZ bsQYXL"
+  >
+    <button
+      class="sc-AxjAm ddJBbC"
+      color="primary"
+      type="button"
+    >
+      1
+    </button>
+    <button
+      class="sc-AxjAm ddJBbC"
+      color="primary"
+      type="button"
+    >
+      2
+    </button>
+    <button
+      class="sc-AxjAm ddJBbC"
+      color="primary"
+      type="button"
+    >
+      3
+    </button>
+    <button
+      class="sc-AxjAm ddJBbC"
+      color="primary"
+      type="button"
+    >
+      Next
+    </button>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Pagination should render next as disable on last page 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-AxirZ bsQYXL"
+  >
+    <button
+      class="sc-AxjAm ddJBbC"
+      color="primary"
+      type="button"
+    >
+      1
+    </button>
+    <button
+      class="sc-AxjAm ddJBbC"
+      color="primary"
+      type="button"
+    >
+      2
+    </button>
+    <button
+      class="sc-AxjAm ddJBbC"
+      color="primary"
+      type="button"
+    >
+      3
+    </button>
+    <button
+      class="sc-AxjAm ddJBbC"
+      color="primary"
+      disabled=""
+      type="button"
+    >
+      Next
+    </button>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Pagination should render properly 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-AxirZ bsQYXL"
+  >
+    <button
+      class="sc-AxjAm ddJBbC"
+      color="primary"
+      type="button"
+    >
+      1
+    </button>
+    <button
+      class="sc-AxjAm ddJBbC"
+      color="primary"
+      type="button"
+    >
+      2
+    </button>
+    <button
+      class="sc-AxjAm ddJBbC"
+      color="primary"
+      type="button"
+    >
+      3
+    </button>
+    <button
+      class="sc-AxjAm ddJBbC"
+      color="primary"
+      type="button"
+    >
+      Next
+    </button>
+  </div>
+</DocumentFragment>
+`;

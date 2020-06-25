@@ -6,7 +6,7 @@ type Props = {
 	walletName?: string;
 	addressClass?: string;
 	address?: string | undefined;
-	maxChars?: number;
+	maxChars?: number | null;
 	className?: string;
 	size?: "small" | "default" | "large";
 };

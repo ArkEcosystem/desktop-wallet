@@ -25,11 +25,11 @@ export const CreateProfile = ({ onSubmit }: CreateProfileProps) => {
 			isFloatingLabel: true,
 			label: "New Profile",
 			labelDescription: "Select Profile Image",
-			labelClass: "text-3xl font-bold",
-			labelDescriptionClass: "mt-3",
+			labelClass: "text-xl font-bold",
+			labelDescriptionClass: "font-semibold mt-3 text-theme-neutral-dark",
 			content: (
-				<div className="flex flex-row mt-2">
-					<div className="flex items-center justify-center w-24 h-24 mr-6 border-2 border-dashed rounded border-theme-neutral-light">
+				<div className="flex flex-row mb-4 -mt-2">
+					<div className="flex items-center justify-center w-24 h-24 mr-6 border-2 border-dashed rounded border-theme-neutral-300">
 						<button
 							type="button"
 							className="flex items-center justify-center w-20 h-20 rounded-full bg-theme-primary-contrast"
@@ -59,8 +59,10 @@ export const CreateProfile = ({ onSubmit }: CreateProfileProps) => {
 			labelClass: "text-xl font-bold text-theme-neutral-dark",
 			content: (
 				<div className="flex flex-row justify-between">
-					<span className="w-3/4 text-sm text-theme-neutral-dark">Want to set the wallet to dark mode?</span>
-					<div className="-mt-2">
+					<span className="w-3/4 -mt-4 text-sm text-theme-neutral-dark">
+						Want to set the wallet to dark mode?
+					</span>
+					<div className="-mt-11">
 						<Toggle />
 					</div>
 				</div>
@@ -79,61 +81,68 @@ export const CreateProfile = ({ onSubmit }: CreateProfileProps) => {
 			</div>
 
 			<div className="container mx-auto">
-				<div className="mx-auto my-8 md:w-3/4 lg:w-3/5 xl:w-1/2">
+				<div className="max-w-lg mx-auto xl:max-w-xl">
 					<h1 className="mx-4 md:mx-8 xl:mx-16">Create Profile</h1>
-					<div className="mx-4 mt-2 text-theme-neutral-dark md:mx-8 xl:mx-16">
+					<div className="mx-4 text-theme-neutral-dark md:mx-8 xl:mx-16">
 						Create a new Profile or login with your MarketSquare account to get started.
 					</div>
 
-					<div className="mx-4 mt-5 md:mx-8 xl:mx-16">
-						<Button className="w-full mb-5">Login with MarketSquare</Button>
+					<div className="mx-4 mt-8 md:mx-8 xl:mx-16">
+						<Button className="w-full mb-6">
+							<Icon name="Msq" width={20} height={20} />
+							<span className="ml-2">Login with MarketSquare</span>
+						</Button>
 						<Divider />
 					</div>
 
-					<Form id="create-profile__form" context={form} onSubmit={onSubmit}>
-						<div className="mx-4 mt-5 md:mx-8 xl:mx-16">
+					<Form id="create-profile__form" className="-mt-6" context={form} onSubmit={onSubmit}>
+						<div className="mx-4 md:mx-8 xl:mx-16">
 							<ListDivided items={personalDetails} />
 
-							<FormField name="name">
-								<FormLabel label="Name" />
-								<Input ref={register({ required: true })} />
-								<FormHelperText />
-							</FormField>
+							<div className="flex flex-col space-y-8">
+								<FormField name="name">
+									<FormLabel label="Name" />
+									<Input ref={register({ required: true })} />
+									<FormHelperText />
+								</FormField>
 
-							<FormField className="mt-10" name="market-provider">
-								<FormLabel label="Market Provider" />
-								<Select
-									name="market-provider"
-									placeholder="Select Market Provider"
-									ref={register({ required: true })}
-								>
-									<option value="option1">Option 1</option>
-									<option value="option2">Option 2</option>
-									<option value="option3">Option 3</option>
-								</Select>
-								<FormHelperText />
-							</FormField>
+								<FormField name="market-provider">
+									<FormLabel label="Market Provider" />
+									<Select
+										name="market-provider"
+										placeholder="Select Market Provider"
+										ref={register({ required: true })}
+									>
+										<option value="option1">Option 1</option>
+										<option value="option2">Option 2</option>
+										<option value="option3">Option 3</option>
+									</Select>
+									<FormHelperText />
+								</FormField>
 
-							<FormField className="mt-10" name="currency">
-								<FormLabel label="Currency" />
-								<Select
-									name="currency"
-									placeholder="Select Currency"
-									ref={register({ required: true })}
-								>
-									<option value="option1">Option 1</option>
-									<option value="option2">Option 2</option>
-									<option value="option3">Option 3</option>
-								</Select>
-								<FormHelperText />
-							</FormField>
+								<FormField name="currency">
+									<FormLabel label="Currency" />
+									<Select
+										name="currency"
+										placeholder="Select Currency"
+										ref={register({ required: true })}
+									>
+										<option value="option1">Option 1</option>
+										<option value="option2">Option 2</option>
+										<option value="option3">Option 3</option>
+									</Select>
+									<FormHelperText />
+								</FormField>
+							</div>
 
-							<div className="mt-5">
+							<div className="mb-4">
 								<ListDivided items={otherItems} />
 							</div>
+
+							<Divider dashed />
 						</div>
 
-						<div className="flex justify-end mx-4 mt-5 mb-10 space-x-3 md:mx-8 xl:mx-16">
+						<div className="flex justify-end mx-4 mt-12 mb-16 space-x-3 md:mx-8 xl:mx-16">
 							<Button variant="plain">Back</Button>
 							<Button>Complete</Button>
 						</div>
