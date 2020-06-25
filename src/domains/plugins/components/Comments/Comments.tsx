@@ -55,13 +55,13 @@ export const Comments = ({ comments, sortOptions }: CommentsProps) => {
 				{comments.map(({ author, score, date, comment, replies }, idx) => (
 					<div className="flex flex-col mt-5 text-sm" key={idx}>
 						<div className="w-2/4">
-							<div className="grid grid-cols-3 divide-x divide-theme-neutral-400">
+							<div className="flex items-center divide-x space-x-3 divide-theme-neutral-400">
 								<div>
 									<span className="text-base font-semibold">{author}</span>
 								</div>
-								<div className="flex items-center justify-center text-theme-warning-300">
+								<div className="flex items-center pl-3 text-theme-warning-300">
 									<Icon name="Star" width={10} height={10} />
-									<span className="flex px-2 text-theme-neutral-600">{score}</span>
+									<span className="flex ml-1 text-theme-neutral-600">{score}</span>
 								</div>
 								<div className="px-3">
 									<span className="text-theme-neutral-400">{getDateDifferenceFromNow(date)}</span>
