@@ -1,6 +1,5 @@
 import { render } from "@testing-library/react";
 import React from "react";
-import { BrowserRouter as Router } from "react-router-dom";
 
 import { Breadcrumbs } from "./Breadcrumbs";
 
@@ -14,9 +13,7 @@ describe("Breadcrumbs", () => {
 
 	it("should render", () => {
 		const { asFragment, getByTestId } = render(
-			<Router>
-				<Breadcrumbs crumbs={[{ route: "dashboard", label: "Dashboard" }]} />
-			</Router>,
+			<Breadcrumbs crumbs={[{ route: "dashboard", label: "Dashboard" }]} />,
 		);
 
 		expect(getByTestId("breadcrumbs__wrapper")).toHaveTextContent("<-");
@@ -26,15 +23,13 @@ describe("Breadcrumbs", () => {
 
 	it("should render with custom classes", () => {
 		const { asFragment, getByTestId } = render(
-			<Router>
-				<Breadcrumbs
-					crumbs={[
-						{ route: "wallets", label: "Wallets" },
-						{ route: "wallets/my_wallet", label: "My Wallet" },
-					]}
-					className="class-name"
-				/>
-			</Router>,
+			<Breadcrumbs
+				crumbs={[
+					{ route: "wallets", label: "Wallets" },
+					{ route: "wallets/my_wallet", label: "My Wallet" },
+				]}
+				className="class-name"
+			/>,
 		);
 
 		expect(getByTestId("breadcrumbs__wrapper")).toHaveClass("class-name");
