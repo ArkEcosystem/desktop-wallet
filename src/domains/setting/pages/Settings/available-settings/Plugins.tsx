@@ -1,11 +1,12 @@
 import { Button } from "app/components/Button";
+import { Divider } from "app/components/Divider";
 import { Form, FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { ListDivided } from "app/components/ListDivided";
 import { Select } from "app/components/Select";
 import { Toggle } from "app/components/Toggle";
-import { AddBlacklistPlugin } from "domains/plugins/components/AddBlacklistPlugin";
-import { BlacklistPlugins } from "domains/plugins/components/BlacklistPlugins";
+import { AddBlacklistPlugin } from "domains/plugin/components/AddBlacklistPlugin";
+import { BlacklistPlugins } from "domains/plugin/components/BlacklistPlugins";
 import React, { useState } from "react";
 
 type PluginsProps = {
@@ -25,7 +26,7 @@ export const Plugins = ({ formConfig, onSubmit }: PluginsProps) => {
 			content: (
 				<>
 					<div className="flex flex-row justify-between">
-						<span className="w-3/4 -mt-4 text-sm text-theme-neutral-dark">
+						<span className="w-3/4 -mt-4 text-sm text-theme-neutral">
 							This list is selected safely by ARK Ecosystem. You can view it and add to the list of
 							plugins that you find suspicious.
 						</span>
@@ -58,7 +59,7 @@ export const Plugins = ({ formConfig, onSubmit }: PluginsProps) => {
 			content: (
 				<>
 					<div className="flex flex-row justify-between mb-5">
-						<span className="w-3/4 -mt-4 text-sm text-theme-neutral-dark">
+						<span className="w-3/4 -mt-4 text-sm text-theme-neutral">
 							Turn this feature on, you can upload plugins to your wallet from third-party sources.
 						</span>
 						<div className="-mt-11">
@@ -82,7 +83,8 @@ export const Plugins = ({ formConfig, onSubmit }: PluginsProps) => {
 			<Header title="Plugin Settings" subtitle="Customize your wallet to suit your needs." />
 			<Form id="plugin-settings__form" context={formConfig.context} onSubmit={onSubmit}>
 				<ListDivided items={pluginItems} />
-				<div className="flex justify-end">
+				<Divider dashed />
+				<div className="flex justify-end w-full pt-2">
 					<Button>Save</Button>
 				</div>
 			</Form>

@@ -1776,7 +1776,7 @@ exports[`Settings should render plugin settings 1`] = `
                 class="flex flex-row justify-between"
               >
                 <span
-                  class="w-3/4 -mt-4 text-sm text-theme-neutral-dark"
+                  class="w-3/4 -mt-4 text-sm text-theme-neutral"
                 >
                   This list is selected safely by ARK Ecosystem. You can view it and add to the list of plugins that you find suspicious.
                 </span>
@@ -1845,7 +1845,7 @@ exports[`Settings should render plugin settings 1`] = `
                 class="flex flex-row justify-between mb-5"
               >
                 <span
-                  class="w-3/4 -mt-4 text-sm text-theme-neutral-dark"
+                  class="w-3/4 -mt-4 text-sm text-theme-neutral"
                 >
                   Turn this feature on, you can upload plugins to your wallet from third-party sources.
                 </span>
@@ -1916,7 +1916,11 @@ exports[`Settings should render plugin settings 1`] = `
           </li>
         </ul>
         <div
-          class="flex justify-end"
+          class="sc-fzoXzr cpHHsF"
+          type="horizontal"
+        />
+        <div
+          class="flex justify-end w-full pt-2"
         >
           <button
             class="sc-AxiKw wFYj"
