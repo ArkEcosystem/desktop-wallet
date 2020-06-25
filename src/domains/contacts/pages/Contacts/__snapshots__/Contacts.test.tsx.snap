@@ -149,20 +149,24 @@ exports[`Contacts should render with contacts 1`] = `
               class="flex items-center justify-end space-x-5"
             >
               <button
-                class="flex items-center my-auto font-semibold cursor-pointer text-theme-primary-200 space-x-3"
+                class="my-auto font-semibold cursor-pointer text-theme-primary-200"
                 data-testid="header-search-bar__button"
               >
-                <span>
-                  Search
-                </span>
                 <div
-                  class="sc-AxirZ eEbZjj"
-                  height="20"
-                  width="20"
+                  class="flex items-center space-x-3"
                 >
-                  <svg>
-                    search.svg
-                  </svg>
+                  <span>
+                    Search
+                  </span>
+                  <div
+                    class="sc-AxirZ eEbZjj"
+                    height="20"
+                    width="20"
+                  >
+                    <svg>
+                      search.svg
+                    </svg>
+                  </div>
                 </div>
               </button>
               <div
