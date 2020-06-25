@@ -9,7 +9,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
       class="border-t-20 border-theme-neutral-100"
     >
       <div
-        class="relative container mx-auto justify-between items-end mt-10 mb-15"
+        class="container relative items-end justify-between mx-auto mt-10 mb-15"
       >
         <div
           class="inline-block"
@@ -24,7 +24,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
           </div>
         </div>
         <div
-          class="absolute right-0 top-0 bottom-0 mt-12 flex items-center justify-end space-x-3"
+          class="absolute top-0 bottom-0 right-0 flex items-center justify-end mt-12 space-x-3"
         >
           <div
             class="flex items-end py-2"
@@ -61,11 +61,11 @@ exports[`PluginManager should cancel install plugin 1`] = `
       </div>
     </div>
     <div
-      class="sticky top-20 h-20 bg-theme-neutral-900 shadow-md z-20 md:top-24"
+      class="sticky z-20 h-20 shadow-md top-20 bg-theme-neutral-900 md:top-24"
       data-testid="PluginManagerNavigationBar"
     >
       <div
-        class="flex justify-between h-full container mx-auto text-theme-neutral-400"
+        class="container flex justify-between h-full mx-auto text-theme-neutral-400"
       >
         <div
           class="flex h-full space-x-6"
@@ -80,7 +80,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
             class="flex items-center"
           >
             <div
-              class="bg-theme-neutral-700 w-px h-4"
+              class="w-px h-4 bg-theme-neutral-700"
             />
           </div>
           <div
@@ -89,7 +89,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
           >
             Game 
             <span
-              class="text-theme-neutral-700 ml-1"
+              class="ml-1 text-theme-neutral-700"
             >
               48
             </span>
@@ -98,7 +98,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
             class="flex items-center"
           >
             <div
-              class="bg-theme-neutral-700 w-px h-4"
+              class="w-px h-4 bg-theme-neutral-700"
             />
           </div>
           <div
@@ -107,7 +107,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
           >
             Utility 
             <span
-              class="text-theme-neutral-700 ml-1"
+              class="ml-1 text-theme-neutral-700"
             >
               264
             </span>
@@ -116,7 +116,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
             class="flex items-center"
           >
             <div
-              class="bg-theme-neutral-700 w-px h-4"
+              class="w-px h-4 bg-theme-neutral-700"
             />
           </div>
           <div
@@ -125,7 +125,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
           >
             Themes 
             <span
-              class="text-theme-neutral-700 ml-1"
+              class="ml-1 text-theme-neutral-700"
             >
               96
             </span>
@@ -134,7 +134,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
             class="flex items-center"
           >
             <div
-              class="bg-theme-neutral-700 w-px h-4"
+              class="w-px h-4 bg-theme-neutral-700"
             />
           </div>
           <div
@@ -143,7 +143,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
           >
             Other 
             <span
-              class="text-theme-neutral-700 ml-1"
+              class="ml-1 text-theme-neutral-700"
             >
               27
             </span>
@@ -155,7 +155,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
         >
           My Plugins 
           <span
-            class="text-theme-neutral-700 ml-1"
+            class="ml-1 text-theme-neutral-700"
           >
             8
           </span>
@@ -167,7 +167,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
       data-testid="PluginManager__container--home"
     >
       <div
-        class="flex justify-between items-center"
+        class="flex items-center justify-between"
       >
         <h2>
           Home
@@ -254,7 +254,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
               Featured Plugins
             </h2>
             <span
-              class="text-theme-primary-600 hover:text-theme-primary-500 cursor-pointer"
+              class="cursor-pointer text-theme-primary-600 hover:text-theme-primary-500"
               data-testid="PluginManager__home__featured__view-more"
             >
               View More
@@ -621,10 +621,10 @@ exports[`PluginManager should cancel install plugin 1`] = `
                       4.2 MB
                     </td>
                     <td
-                      class="py-10 flex"
+                      class="flex py-10"
                     >
                       <div
-                        class="flex mx-auto w-6 h-6"
+                        class="flex w-6 h-6 mx-auto"
                       >
                         <div
                           class="m-auto text-theme-neutral-500"
@@ -744,10 +744,10 @@ exports[`PluginManager should cancel install plugin 1`] = `
                       163 KB
                     </td>
                     <td
-                      class="py-10 flex"
+                      class="flex py-10"
                     >
                       <div
-                        class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
+                        class="flex w-6 h-6 mx-auto border-2 rounded-full border-theme-success-200 text-theme-success-500"
                       >
                         <div
                           class="m-auto"
@@ -887,10 +887,10 @@ exports[`PluginManager should cancel install plugin 1`] = `
                       4.2 MB
                     </td>
                     <td
-                      class="py-10 flex"
+                      class="flex py-10"
                     >
                       <div
-                        class="flex mx-auto w-6 h-6"
+                        class="flex w-6 h-6 mx-auto"
                       >
                         <div
                           class="m-auto text-theme-neutral-500"
@@ -1010,10 +1010,10 @@ exports[`PluginManager should cancel install plugin 1`] = `
                       163 KB
                     </td>
                     <td
-                      class="py-10 flex"
+                      class="flex py-10"
                     >
                       <div
-                        class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
+                        class="flex w-6 h-6 mx-auto border-2 rounded-full border-theme-success-200 text-theme-success-500"
                       >
                         <div
                           class="m-auto"
@@ -1153,10 +1153,10 @@ exports[`PluginManager should cancel install plugin 1`] = `
                       4.2 MB
                     </td>
                     <td
-                      class="py-10 flex"
+                      class="flex py-10"
                     >
                       <div
-                        class="flex mx-auto w-6 h-6"
+                        class="flex w-6 h-6 mx-auto"
                       >
                         <div
                           class="m-auto text-theme-neutral-500"
@@ -1276,10 +1276,10 @@ exports[`PluginManager should cancel install plugin 1`] = `
                       163 KB
                     </td>
                     <td
-                      class="py-10 flex"
+                      class="flex py-10"
                     >
                       <div
-                        class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
+                        class="flex w-6 h-6 mx-auto border-2 rounded-full border-theme-success-200 text-theme-success-500"
                       >
                         <div
                           class="m-auto"
@@ -1419,10 +1419,10 @@ exports[`PluginManager should cancel install plugin 1`] = `
                       4.2 MB
                     </td>
                     <td
-                      class="py-10 flex"
+                      class="flex py-10"
                     >
                       <div
-                        class="flex mx-auto w-6 h-6"
+                        class="flex w-6 h-6 mx-auto"
                       >
                         <div
                           class="m-auto text-theme-neutral-500"
@@ -1542,10 +1542,10 @@ exports[`PluginManager should cancel install plugin 1`] = `
                       163 KB
                     </td>
                     <td
-                      class="py-10 flex"
+                      class="flex py-10"
                     >
                       <div
-                        class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
+                        class="flex w-6 h-6 mx-auto border-2 rounded-full border-theme-success-200 text-theme-success-500"
                       >
                         <div
                           class="m-auto"
@@ -1610,7 +1610,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
               Top Rated
             </h2>
             <span
-              class="text-theme-primary-600 hover:text-theme-primary-500 cursor-pointer"
+              class="cursor-pointer text-theme-primary-600 hover:text-theme-primary-500"
               data-testid="PluginManager__home__top-rated__view-more"
             >
               View More
@@ -1977,10 +1977,10 @@ exports[`PluginManager should cancel install plugin 1`] = `
                       4.2 MB
                     </td>
                     <td
-                      class="py-10 flex"
+                      class="flex py-10"
                     >
                       <div
-                        class="flex mx-auto w-6 h-6"
+                        class="flex w-6 h-6 mx-auto"
                       >
                         <div
                           class="m-auto text-theme-neutral-500"
@@ -2100,10 +2100,10 @@ exports[`PluginManager should cancel install plugin 1`] = `
                       163 KB
                     </td>
                     <td
-                      class="py-10 flex"
+                      class="flex py-10"
                     >
                       <div
-                        class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
+                        class="flex w-6 h-6 mx-auto border-2 rounded-full border-theme-success-200 text-theme-success-500"
                       >
                         <div
                           class="m-auto"
@@ -2243,10 +2243,10 @@ exports[`PluginManager should cancel install plugin 1`] = `
                       4.2 MB
                     </td>
                     <td
-                      class="py-10 flex"
+                      class="flex py-10"
                     >
                       <div
-                        class="flex mx-auto w-6 h-6"
+                        class="flex w-6 h-6 mx-auto"
                       >
                         <div
                           class="m-auto text-theme-neutral-500"
@@ -2366,10 +2366,10 @@ exports[`PluginManager should cancel install plugin 1`] = `
                       163 KB
                     </td>
                     <td
-                      class="py-10 flex"
+                      class="flex py-10"
                     >
                       <div
-                        class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
+                        class="flex w-6 h-6 mx-auto border-2 rounded-full border-theme-success-200 text-theme-success-500"
                       >
                         <div
                           class="m-auto"
@@ -2509,10 +2509,10 @@ exports[`PluginManager should cancel install plugin 1`] = `
                       4.2 MB
                     </td>
                     <td
-                      class="py-10 flex"
+                      class="flex py-10"
                     >
                       <div
-                        class="flex mx-auto w-6 h-6"
+                        class="flex w-6 h-6 mx-auto"
                       >
                         <div
                           class="m-auto text-theme-neutral-500"
@@ -2632,10 +2632,10 @@ exports[`PluginManager should cancel install plugin 1`] = `
                       163 KB
                     </td>
                     <td
-                      class="py-10 flex"
+                      class="flex py-10"
                     >
                       <div
-                        class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
+                        class="flex w-6 h-6 mx-auto border-2 rounded-full border-theme-success-200 text-theme-success-500"
                       >
                         <div
                           class="m-auto"
@@ -2775,10 +2775,10 @@ exports[`PluginManager should cancel install plugin 1`] = `
                       4.2 MB
                     </td>
                     <td
-                      class="py-10 flex"
+                      class="flex py-10"
                     >
                       <div
-                        class="flex mx-auto w-6 h-6"
+                        class="flex w-6 h-6 mx-auto"
                       >
                         <div
                           class="m-auto text-theme-neutral-500"
@@ -2898,10 +2898,10 @@ exports[`PluginManager should cancel install plugin 1`] = `
                       163 KB
                     </td>
                     <td
-                      class="py-10 flex"
+                      class="flex py-10"
                     >
                       <div
-                        class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
+                        class="flex w-6 h-6 mx-auto border-2 rounded-full border-theme-success-200 text-theme-success-500"
                       >
                         <div
                           class="m-auto"
@@ -3325,10 +3325,10 @@ exports[`PluginManager should cancel install plugin 1`] = `
                       4.2 MB
                     </td>
                     <td
-                      class="py-10 flex"
+                      class="flex py-10"
                     >
                       <div
-                        class="flex mx-auto w-6 h-6"
+                        class="flex w-6 h-6 mx-auto"
                       >
                         <div
                           class="m-auto text-theme-neutral-500"
@@ -3448,10 +3448,10 @@ exports[`PluginManager should cancel install plugin 1`] = `
                       163 KB
                     </td>
                     <td
-                      class="py-10 flex"
+                      class="flex py-10"
                     >
                       <div
-                        class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
+                        class="flex w-6 h-6 mx-auto border-2 rounded-full border-theme-success-200 text-theme-success-500"
                       >
                         <div
                           class="m-auto"
@@ -3591,10 +3591,10 @@ exports[`PluginManager should cancel install plugin 1`] = `
                       4.2 MB
                     </td>
                     <td
-                      class="py-10 flex"
+                      class="flex py-10"
                     >
                       <div
-                        class="flex mx-auto w-6 h-6"
+                        class="flex w-6 h-6 mx-auto"
                       >
                         <div
                           class="m-auto text-theme-neutral-500"
@@ -3714,10 +3714,10 @@ exports[`PluginManager should cancel install plugin 1`] = `
                       163 KB
                     </td>
                     <td
-                      class="py-10 flex"
+                      class="flex py-10"
                     >
                       <div
-                        class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
+                        class="flex w-6 h-6 mx-auto border-2 rounded-full border-theme-success-200 text-theme-success-500"
                       >
                         <div
                           class="m-auto"
@@ -3857,10 +3857,10 @@ exports[`PluginManager should cancel install plugin 1`] = `
                       4.2 MB
                     </td>
                     <td
-                      class="py-10 flex"
+                      class="flex py-10"
                     >
                       <div
-                        class="flex mx-auto w-6 h-6"
+                        class="flex w-6 h-6 mx-auto"
                       >
                         <div
                           class="m-auto text-theme-neutral-500"
@@ -3980,10 +3980,10 @@ exports[`PluginManager should cancel install plugin 1`] = `
                       163 KB
                     </td>
                     <td
-                      class="py-10 flex"
+                      class="flex py-10"
                     >
                       <div
-                        class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
+                        class="flex w-6 h-6 mx-auto border-2 rounded-full border-theme-success-200 text-theme-success-500"
                       >
                         <div
                           class="m-auto"
@@ -4123,10 +4123,10 @@ exports[`PluginManager should cancel install plugin 1`] = `
                       4.2 MB
                     </td>
                     <td
-                      class="py-10 flex"
+                      class="flex py-10"
                     >
                       <div
-                        class="flex mx-auto w-6 h-6"
+                        class="flex w-6 h-6 mx-auto"
                       >
                         <div
                           class="m-auto text-theme-neutral-500"
@@ -4246,10 +4246,10 @@ exports[`PluginManager should cancel install plugin 1`] = `
                       163 KB
                     </td>
                     <td
-                      class="py-10 flex"
+                      class="flex py-10"
                     >
                       <div
-                        class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
+                        class="flex w-6 h-6 mx-auto border-2 rounded-full border-theme-success-200 text-theme-success-500"
                       >
                         <div
                           class="m-auto"
@@ -4319,7 +4319,7 @@ exports[`PluginManager should close install plugin modal 1`] = `
       class="border-t-20 border-theme-neutral-100"
     >
       <div
-        class="relative container mx-auto justify-between items-end mt-10 mb-15"
+        class="container relative items-end justify-between mx-auto mt-10 mb-15"
       >
         <div
           class="inline-block"
@@ -4334,7 +4334,7 @@ exports[`PluginManager should close install plugin modal 1`] = `
           </div>
         </div>
         <div
-          class="absolute right-0 top-0 bottom-0 mt-12 flex items-center justify-end space-x-3"
+          class="absolute top-0 bottom-0 right-0 flex items-center justify-end mt-12 space-x-3"
         >
           <div
             class="flex items-end py-2"
@@ -4371,11 +4371,11 @@ exports[`PluginManager should close install plugin modal 1`] = `
       </div>
     </div>
     <div
-      class="sticky top-20 h-20 bg-theme-neutral-900 shadow-md z-20 md:top-24"
+      class="sticky z-20 h-20 shadow-md top-20 bg-theme-neutral-900 md:top-24"
       data-testid="PluginManagerNavigationBar"
     >
       <div
-        class="flex justify-between h-full container mx-auto text-theme-neutral-400"
+        class="container flex justify-between h-full mx-auto text-theme-neutral-400"
       >
         <div
           class="flex h-full space-x-6"
@@ -4390,7 +4390,7 @@ exports[`PluginManager should close install plugin modal 1`] = `
             class="flex items-center"
           >
             <div
-              class="bg-theme-neutral-700 w-px h-4"
+              class="w-px h-4 bg-theme-neutral-700"
             />
           </div>
           <div
@@ -4399,7 +4399,7 @@ exports[`PluginManager should close install plugin modal 1`] = `
           >
             Game 
             <span
-              class="text-theme-neutral-700 ml-1"
+              class="ml-1 text-theme-neutral-700"
             >
               48
             </span>
@@ -4408,7 +4408,7 @@ exports[`PluginManager should close install plugin modal 1`] = `
             class="flex items-center"
           >
             <div
-              class="bg-theme-neutral-700 w-px h-4"
+              class="w-px h-4 bg-theme-neutral-700"
             />
           </div>
           <div
@@ -4417,7 +4417,7 @@ exports[`PluginManager should close install plugin modal 1`] = `
           >
             Utility 
             <span
-              class="text-theme-neutral-700 ml-1"
+              class="ml-1 text-theme-neutral-700"
             >
               264
             </span>
@@ -4426,7 +4426,7 @@ exports[`PluginManager should close install plugin modal 1`] = `
             class="flex items-center"
           >
             <div
-              class="bg-theme-neutral-700 w-px h-4"
+              class="w-px h-4 bg-theme-neutral-700"
             />
           </div>
           <div
@@ -4435,7 +4435,7 @@ exports[`PluginManager should close install plugin modal 1`] = `
           >
             Themes 
             <span
-              class="text-theme-neutral-700 ml-1"
+              class="ml-1 text-theme-neutral-700"
             >
               96
             </span>
@@ -4444,7 +4444,7 @@ exports[`PluginManager should close install plugin modal 1`] = `
             class="flex items-center"
           >
             <div
-              class="bg-theme-neutral-700 w-px h-4"
+              class="w-px h-4 bg-theme-neutral-700"
             />
           </div>
           <div
@@ -4453,7 +4453,7 @@ exports[`PluginManager should close install plugin modal 1`] = `
           >
             Other 
             <span
-              class="text-theme-neutral-700 ml-1"
+              class="ml-1 text-theme-neutral-700"
             >
               27
             </span>
@@ -4465,7 +4465,7 @@ exports[`PluginManager should close install plugin modal 1`] = `
         >
           My Plugins 
           <span
-            class="text-theme-neutral-700 ml-1"
+            class="ml-1 text-theme-neutral-700"
           >
             8
           </span>
@@ -4477,7 +4477,7 @@ exports[`PluginManager should close install plugin modal 1`] = `
       data-testid="PluginManager__container--home"
     >
       <div
-        class="flex justify-between items-center"
+        class="flex items-center justify-between"
       >
         <h2>
           Home
@@ -4564,7 +4564,7 @@ exports[`PluginManager should close install plugin modal 1`] = `
               Featured Plugins
             </h2>
             <span
-              class="text-theme-primary-600 hover:text-theme-primary-500 cursor-pointer"
+              class="cursor-pointer text-theme-primary-600 hover:text-theme-primary-500"
               data-testid="PluginManager__home__featured__view-more"
             >
               View More
@@ -4931,10 +4931,10 @@ exports[`PluginManager should close install plugin modal 1`] = `
                       4.2 MB
                     </td>
                     <td
-                      class="py-10 flex"
+                      class="flex py-10"
                     >
                       <div
-                        class="flex mx-auto w-6 h-6"
+                        class="flex w-6 h-6 mx-auto"
                       >
                         <div
                           class="m-auto text-theme-neutral-500"
@@ -5054,10 +5054,10 @@ exports[`PluginManager should close install plugin modal 1`] = `
                       163 KB
                     </td>
                     <td
-                      class="py-10 flex"
+                      class="flex py-10"
                     >
                       <div
-                        class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
+                        class="flex w-6 h-6 mx-auto border-2 rounded-full border-theme-success-200 text-theme-success-500"
                       >
                         <div
                           class="m-auto"
@@ -5197,10 +5197,10 @@ exports[`PluginManager should close install plugin modal 1`] = `
                       4.2 MB
                     </td>
                     <td
-                      class="py-10 flex"
+                      class="flex py-10"
                     >
                       <div
-                        class="flex mx-auto w-6 h-6"
+                        class="flex w-6 h-6 mx-auto"
                       >
                         <div
                           class="m-auto text-theme-neutral-500"
@@ -5320,10 +5320,10 @@ exports[`PluginManager should close install plugin modal 1`] = `
                       163 KB
                     </td>
                     <td
-                      class="py-10 flex"
+                      class="flex py-10"
                     >
                       <div
-                        class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
+                        class="flex w-6 h-6 mx-auto border-2 rounded-full border-theme-success-200 text-theme-success-500"
                       >
                         <div
                           class="m-auto"
@@ -5463,10 +5463,10 @@ exports[`PluginManager should close install plugin modal 1`] = `
                       4.2 MB
                     </td>
                     <td
-                      class="py-10 flex"
+                      class="flex py-10"
                     >
                       <div
-                        class="flex mx-auto w-6 h-6"
+                        class="flex w-6 h-6 mx-auto"
                       >
                         <div
                           class="m-auto text-theme-neutral-500"
@@ -5586,10 +5586,10 @@ exports[`PluginManager should close install plugin modal 1`] = `
                       163 KB
                     </td>
                     <td
-                      class="py-10 flex"
+                      class="flex py-10"
                     >
                       <div
-                        class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
+                        class="flex w-6 h-6 mx-auto border-2 rounded-full border-theme-success-200 text-theme-success-500"
                       >
                         <div
                           class="m-auto"
@@ -5729,10 +5729,10 @@ exports[`PluginManager should close install plugin modal 1`] = `
                       4.2 MB
                     </td>
                     <td
-                      class="py-10 flex"
+                      class="flex py-10"
                     >
                       <div
-                        class="flex mx-auto w-6 h-6"
+                        class="flex w-6 h-6 mx-auto"
                       >
                         <div
                           class="m-auto text-theme-neutral-500"
@@ -5852,10 +5852,10 @@ exports[`PluginManager should close install plugin modal 1`] = `
                       163 KB
                     </td>
                     <td
-                      class="py-10 flex"
+                      class="flex py-10"
                     >
                       <div
-                        class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
+                        class="flex w-6 h-6 mx-auto border-2 rounded-full border-theme-success-200 text-theme-success-500"
                       >
                         <div
                           class="m-auto"
@@ -5920,7 +5920,7 @@ exports[`PluginManager should close install plugin modal 1`] = `
               Top Rated
             </h2>
             <span
-              class="text-theme-primary-600 hover:text-theme-primary-500 cursor-pointer"
+              class="cursor-pointer text-theme-primary-600 hover:text-theme-primary-500"
               data-testid="PluginManager__home__top-rated__view-more"
             >
               View More
@@ -6287,10 +6287,10 @@ exports[`PluginManager should close install plugin modal 1`] = `
                       4.2 MB
                     </td>
                     <td
-                      class="py-10 flex"
+                      class="flex py-10"
                     >
                       <div
-                        class="flex mx-auto w-6 h-6"
+                        class="flex w-6 h-6 mx-auto"
                       >
                         <div
                           class="m-auto text-theme-neutral-500"
@@ -6410,10 +6410,10 @@ exports[`PluginManager should close install plugin modal 1`] = `
                       163 KB
                     </td>
                     <td
-                      class="py-10 flex"
+                      class="flex py-10"
                     >
                       <div
-                        class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
+                        class="flex w-6 h-6 mx-auto border-2 rounded-full border-theme-success-200 text-theme-success-500"
                       >
                         <div
                           class="m-auto"
@@ -6553,10 +6553,10 @@ exports[`PluginManager should close install plugin modal 1`] = `
                       4.2 MB
                     </td>
                     <td
-                      class="py-10 flex"
+                      class="flex py-10"
                     >
                       <div
-                        class="flex mx-auto w-6 h-6"
+                        class="flex w-6 h-6 mx-auto"
                       >
                         <div
                           class="m-auto text-theme-neutral-500"
@@ -6676,10 +6676,10 @@ exports[`PluginManager should close install plugin modal 1`] = `
                       163 KB
                     </td>
                     <td
-                      class="py-10 flex"
+                      class="flex py-10"
                     >
                       <div
-                        class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
+                        class="flex w-6 h-6 mx-auto border-2 rounded-full border-theme-success-200 text-theme-success-500"
                       >
                         <div
                           class="m-auto"
@@ -6819,10 +6819,10 @@ exports[`PluginManager should close install plugin modal 1`] = `
                       4.2 MB
                     </td>
                     <td
-                      class="py-10 flex"
+                      class="flex py-10"
                     >
                       <div
-                        class="flex mx-auto w-6 h-6"
+                        class="flex w-6 h-6 mx-auto"
                       >
                         <div
                           class="m-auto text-theme-neutral-500"
@@ -6942,10 +6942,10 @@ exports[`PluginManager should close install plugin modal 1`] = `
                       163 KB
                     </td>
                     <td
-                      class="py-10 flex"
+                      class="flex py-10"
                     >
                       <div
-                        class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
+                        class="flex w-6 h-6 mx-auto border-2 rounded-full border-theme-success-200 text-theme-success-500"
                       >
                         <div
                           class="m-auto"
@@ -7085,10 +7085,10 @@ exports[`PluginManager should close install plugin modal 1`] = `
                       4.2 MB
                     </td>
                     <td
-                      class="py-10 flex"
+                      class="flex py-10"
                     >
                       <div
-                        class="flex mx-auto w-6 h-6"
+                        class="flex w-6 h-6 mx-auto"
                       >
                         <div
                           class="m-auto text-theme-neutral-500"
@@ -7208,10 +7208,10 @@ exports[`PluginManager should close install plugin modal 1`] = `
                       163 KB
                     </td>
                     <td
-                      class="py-10 flex"
+                      class="flex py-10"
                     >
                       <div
-                        class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
+                        class="flex w-6 h-6 mx-auto border-2 rounded-full border-theme-success-200 text-theme-success-500"
                       >
                         <div
                           class="m-auto"
@@ -7635,10 +7635,10 @@ exports[`PluginManager should close install plugin modal 1`] = `
                       4.2 MB
                     </td>
                     <td
-                      class="py-10 flex"
+                      class="flex py-10"
                     >
                       <div
-                        class="flex mx-auto w-6 h-6"
+                        class="flex w-6 h-6 mx-auto"
                       >
                         <div
                           class="m-auto text-theme-neutral-500"
@@ -7758,10 +7758,10 @@ exports[`PluginManager should close install plugin modal 1`] = `
                       163 KB
                     </td>
                     <td
-                      class="py-10 flex"
+                      class="flex py-10"
                     >
                       <div
-                        class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
+                        class="flex w-6 h-6 mx-auto border-2 rounded-full border-theme-success-200 text-theme-success-500"
                       >
                         <div
                           class="m-auto"
@@ -7901,10 +7901,10 @@ exports[`PluginManager should close install plugin modal 1`] = `
                       4.2 MB
                     </td>
                     <td
-                      class="py-10 flex"
+                      class="flex py-10"
                     >
                       <div
-                        class="flex mx-auto w-6 h-6"
+                        class="flex w-6 h-6 mx-auto"
                       >
                         <div
                           class="m-auto text-theme-neutral-500"
@@ -8024,10 +8024,10 @@ exports[`PluginManager should close install plugin modal 1`] = `
                       163 KB
                     </td>
                     <td
-                      class="py-10 flex"
+                      class="flex py-10"
                     >
                       <div
-                        class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
+                        class="flex w-6 h-6 mx-auto border-2 rounded-full border-theme-success-200 text-theme-success-500"
                       >
                         <div
                           class="m-auto"
@@ -8167,10 +8167,10 @@ exports[`PluginManager should close install plugin modal 1`] = `
                       4.2 MB
                     </td>
                     <td
-                      class="py-10 flex"
+                      class="flex py-10"
                     >
                       <div
-                        class="flex mx-auto w-6 h-6"
+                        class="flex w-6 h-6 mx-auto"
                       >
                         <div
                           class="m-auto text-theme-neutral-500"
@@ -8290,10 +8290,10 @@ exports[`PluginManager should close install plugin modal 1`] = `
                       163 KB
                     </td>
                     <td
-                      class="py-10 flex"
+                      class="flex py-10"
                     >
                       <div
-                        class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
+                        class="flex w-6 h-6 mx-auto border-2 rounded-full border-theme-success-200 text-theme-success-500"
                       >
                         <div
                           class="m-auto"
@@ -8433,10 +8433,10 @@ exports[`PluginManager should close install plugin modal 1`] = `
                       4.2 MB
                     </td>
                     <td
-                      class="py-10 flex"
+                      class="flex py-10"
                     >
                       <div
-                        class="flex mx-auto w-6 h-6"
+                        class="flex w-6 h-6 mx-auto"
                       >
                         <div
                           class="m-auto text-theme-neutral-500"
@@ -8556,10 +8556,10 @@ exports[`PluginManager should close install plugin modal 1`] = `
                       163 KB
                     </td>
                     <td
-                      class="py-10 flex"
+                      class="flex py-10"
                     >
                       <div
-                        class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
+                        class="flex w-6 h-6 mx-auto border-2 rounded-full border-theme-success-200 text-theme-success-500"
                       >
                         <div
                           class="m-auto"
@@ -8629,7 +8629,7 @@ exports[`PluginManager should delete plugin on game 1`] = `
       class="border-t-20 border-theme-neutral-100"
     >
       <div
-        class="relative container mx-auto justify-between items-end mt-10 mb-15"
+        class="container relative items-end justify-between mx-auto mt-10 mb-15"
       >
         <div
           class="inline-block"
@@ -8644,7 +8644,7 @@ exports[`PluginManager should delete plugin on game 1`] = `
           </div>
         </div>
         <div
-          class="absolute right-0 top-0 bottom-0 mt-12 flex items-center justify-end space-x-3"
+          class="absolute top-0 bottom-0 right-0 flex items-center justify-end mt-12 space-x-3"
         >
           <div
             class="flex items-end py-2"
@@ -8681,11 +8681,11 @@ exports[`PluginManager should delete plugin on game 1`] = `
       </div>
     </div>
     <div
-      class="sticky top-20 h-20 bg-theme-neutral-900 shadow-md z-20 md:top-24"
+      class="sticky z-20 h-20 shadow-md top-20 bg-theme-neutral-900 md:top-24"
       data-testid="PluginManagerNavigationBar"
     >
       <div
-        class="flex justify-between h-full container mx-auto text-theme-neutral-400"
+        class="container flex justify-between h-full mx-auto text-theme-neutral-400"
       >
         <div
           class="flex h-full space-x-6"
@@ -8700,7 +8700,7 @@ exports[`PluginManager should delete plugin on game 1`] = `
             class="flex items-center"
           >
             <div
-              class="bg-theme-neutral-700 w-px h-4"
+              class="w-px h-4 bg-theme-neutral-700"
             />
           </div>
           <div
@@ -8709,7 +8709,7 @@ exports[`PluginManager should delete plugin on game 1`] = `
           >
             Game 
             <span
-              class="text-theme-neutral-700 ml-1"
+              class="ml-1 text-theme-neutral-700"
             >
               48
             </span>
@@ -8718,7 +8718,7 @@ exports[`PluginManager should delete plugin on game 1`] = `
             class="flex items-center"
           >
             <div
-              class="bg-theme-neutral-700 w-px h-4"
+              class="w-px h-4 bg-theme-neutral-700"
             />
           </div>
           <div
@@ -8727,7 +8727,7 @@ exports[`PluginManager should delete plugin on game 1`] = `
           >
             Utility 
             <span
-              class="text-theme-neutral-700 ml-1"
+              class="ml-1 text-theme-neutral-700"
             >
               264
             </span>
@@ -8736,7 +8736,7 @@ exports[`PluginManager should delete plugin on game 1`] = `
             class="flex items-center"
           >
             <div
-              class="bg-theme-neutral-700 w-px h-4"
+              class="w-px h-4 bg-theme-neutral-700"
             />
           </div>
           <div
@@ -8745,7 +8745,7 @@ exports[`PluginManager should delete plugin on game 1`] = `
           >
             Themes 
             <span
-              class="text-theme-neutral-700 ml-1"
+              class="ml-1 text-theme-neutral-700"
             >
               96
             </span>
@@ -8754,7 +8754,7 @@ exports[`PluginManager should delete plugin on game 1`] = `
             class="flex items-center"
           >
             <div
-              class="bg-theme-neutral-700 w-px h-4"
+              class="w-px h-4 bg-theme-neutral-700"
             />
           </div>
           <div
@@ -8763,7 +8763,7 @@ exports[`PluginManager should delete plugin on game 1`] = `
           >
             Other 
             <span
-              class="text-theme-neutral-700 ml-1"
+              class="ml-1 text-theme-neutral-700"
             >
               27
             </span>
@@ -8775,7 +8775,7 @@ exports[`PluginManager should delete plugin on game 1`] = `
         >
           My Plugins 
           <span
-            class="text-theme-neutral-700 ml-1"
+            class="ml-1 text-theme-neutral-700"
           >
             8
           </span>
@@ -8787,7 +8787,7 @@ exports[`PluginManager should delete plugin on game 1`] = `
       data-testid="PluginManager__container--game"
     >
       <div
-        class="flex justify-between items-center"
+        class="flex items-center justify-between"
       >
         <h2>
           Game
@@ -9220,10 +9220,10 @@ exports[`PluginManager should delete plugin on game 1`] = `
                   4.2 MB
                 </td>
                 <td
-                  class="py-10 flex"
+                  class="flex py-10"
                 >
                   <div
-                    class="flex mx-auto w-6 h-6"
+                    class="flex w-6 h-6 mx-auto"
                   >
                     <div
                       class="m-auto text-theme-neutral-500"
@@ -9343,10 +9343,10 @@ exports[`PluginManager should delete plugin on game 1`] = `
                   163 KB
                 </td>
                 <td
-                  class="py-10 flex"
+                  class="flex py-10"
                 >
                   <div
-                    class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
+                    class="flex w-6 h-6 mx-auto border-2 rounded-full border-theme-success-200 text-theme-success-500"
                   >
                     <div
                       class="m-auto"
@@ -9486,10 +9486,10 @@ exports[`PluginManager should delete plugin on game 1`] = `
                   4.2 MB
                 </td>
                 <td
-                  class="py-10 flex"
+                  class="flex py-10"
                 >
                   <div
-                    class="flex mx-auto w-6 h-6"
+                    class="flex w-6 h-6 mx-auto"
                   >
                     <div
                       class="m-auto text-theme-neutral-500"
@@ -9609,10 +9609,10 @@ exports[`PluginManager should delete plugin on game 1`] = `
                   163 KB
                 </td>
                 <td
-                  class="py-10 flex"
+                  class="flex py-10"
                 >
                   <div
-                    class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
+                    class="flex w-6 h-6 mx-auto border-2 rounded-full border-theme-success-200 text-theme-success-500"
                   >
                     <div
                       class="m-auto"
@@ -9752,10 +9752,10 @@ exports[`PluginManager should delete plugin on game 1`] = `
                   4.2 MB
                 </td>
                 <td
-                  class="py-10 flex"
+                  class="flex py-10"
                 >
                   <div
-                    class="flex mx-auto w-6 h-6"
+                    class="flex w-6 h-6 mx-auto"
                   >
                     <div
                       class="m-auto text-theme-neutral-500"
@@ -9875,10 +9875,10 @@ exports[`PluginManager should delete plugin on game 1`] = `
                   163 KB
                 </td>
                 <td
-                  class="py-10 flex"
+                  class="flex py-10"
                 >
                   <div
-                    class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
+                    class="flex w-6 h-6 mx-auto border-2 rounded-full border-theme-success-200 text-theme-success-500"
                   >
                     <div
                       class="m-auto"
@@ -10018,10 +10018,10 @@ exports[`PluginManager should delete plugin on game 1`] = `
                   4.2 MB
                 </td>
                 <td
-                  class="py-10 flex"
+                  class="flex py-10"
                 >
                   <div
-                    class="flex mx-auto w-6 h-6"
+                    class="flex w-6 h-6 mx-auto"
                   >
                     <div
                       class="m-auto text-theme-neutral-500"
@@ -10141,10 +10141,10 @@ exports[`PluginManager should delete plugin on game 1`] = `
                   163 KB
                 </td>
                 <td
-                  class="py-10 flex"
+                  class="flex py-10"
                 >
                   <div
-                    class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
+                    class="flex w-6 h-6 mx-auto border-2 rounded-full border-theme-success-200 text-theme-success-500"
                   >
                     <div
                       class="m-auto"
@@ -10284,10 +10284,10 @@ exports[`PluginManager should delete plugin on game 1`] = `
                   4.2 MB
                 </td>
                 <td
-                  class="py-10 flex"
+                  class="flex py-10"
                 >
                   <div
-                    class="flex mx-auto w-6 h-6"
+                    class="flex w-6 h-6 mx-auto"
                   >
                     <div
                       class="m-auto text-theme-neutral-500"
@@ -10407,10 +10407,10 @@ exports[`PluginManager should delete plugin on game 1`] = `
                   163 KB
                 </td>
                 <td
-                  class="py-10 flex"
+                  class="flex py-10"
                 >
                   <div
-                    class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
+                    class="flex w-6 h-6 mx-auto border-2 rounded-full border-theme-success-200 text-theme-success-500"
                   >
                     <div
                       class="m-auto"
@@ -10550,10 +10550,10 @@ exports[`PluginManager should delete plugin on game 1`] = `
                   4.2 MB
                 </td>
                 <td
-                  class="py-10 flex"
+                  class="flex py-10"
                 >
                   <div
-                    class="flex mx-auto w-6 h-6"
+                    class="flex w-6 h-6 mx-auto"
                   >
                     <div
                       class="m-auto text-theme-neutral-500"
@@ -10673,10 +10673,10 @@ exports[`PluginManager should delete plugin on game 1`] = `
                   163 KB
                 </td>
                 <td
-                  class="py-10 flex"
+                  class="flex py-10"
                 >
                   <div
-                    class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
+                    class="flex w-6 h-6 mx-auto border-2 rounded-full border-theme-success-200 text-theme-success-500"
                   >
                     <div
                       class="m-auto"
@@ -10816,10 +10816,10 @@ exports[`PluginManager should delete plugin on game 1`] = `
                   4.2 MB
                 </td>
                 <td
-                  class="py-10 flex"
+                  class="flex py-10"
                 >
                   <div
-                    class="flex mx-auto w-6 h-6"
+                    class="flex w-6 h-6 mx-auto"
                   >
                     <div
                       class="m-auto text-theme-neutral-500"
@@ -10939,10 +10939,10 @@ exports[`PluginManager should delete plugin on game 1`] = `
                   163 KB
                 </td>
                 <td
-                  class="py-10 flex"
+                  class="flex py-10"
                 >
                   <div
-                    class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
+                    class="flex w-6 h-6 mx-auto border-2 rounded-full border-theme-success-200 text-theme-success-500"
                   >
                     <div
                       class="m-auto"
@@ -11082,10 +11082,10 @@ exports[`PluginManager should delete plugin on game 1`] = `
                   4.2 MB
                 </td>
                 <td
-                  class="py-10 flex"
+                  class="flex py-10"
                 >
                   <div
-                    class="flex mx-auto w-6 h-6"
+                    class="flex w-6 h-6 mx-auto"
                   >
                     <div
                       class="m-auto text-theme-neutral-500"
@@ -11205,10 +11205,10 @@ exports[`PluginManager should delete plugin on game 1`] = `
                   163 KB
                 </td>
                 <td
-                  class="py-10 flex"
+                  class="flex py-10"
                 >
                   <div
-                    class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
+                    class="flex w-6 h-6 mx-auto border-2 rounded-full border-theme-success-200 text-theme-success-500"
                   >
                     <div
                       class="m-auto"
@@ -11348,10 +11348,10 @@ exports[`PluginManager should delete plugin on game 1`] = `
                   4.2 MB
                 </td>
                 <td
-                  class="py-10 flex"
+                  class="flex py-10"
                 >
                   <div
-                    class="flex mx-auto w-6 h-6"
+                    class="flex w-6 h-6 mx-auto"
                   >
                     <div
                       class="m-auto text-theme-neutral-500"
@@ -11471,10 +11471,10 @@ exports[`PluginManager should delete plugin on game 1`] = `
                   163 KB
                 </td>
                 <td
-                  class="py-10 flex"
+                  class="flex py-10"
                 >
                   <div
-                    class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
+                    class="flex w-6 h-6 mx-auto border-2 rounded-full border-theme-success-200 text-theme-success-500"
                   >
                     <div
                       class="m-auto"
@@ -11614,10 +11614,10 @@ exports[`PluginManager should delete plugin on game 1`] = `
                   4.2 MB
                 </td>
                 <td
-                  class="py-10 flex"
+                  class="flex py-10"
                 >
                   <div
-                    class="flex mx-auto w-6 h-6"
+                    class="flex w-6 h-6 mx-auto"
                   >
                     <div
                       class="m-auto text-theme-neutral-500"
@@ -11737,10 +11737,10 @@ exports[`PluginManager should delete plugin on game 1`] = `
                   163 KB
                 </td>
                 <td
-                  class="py-10 flex"
+                  class="flex py-10"
                 >
                   <div
-                    class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
+                    class="flex w-6 h-6 mx-auto border-2 rounded-full border-theme-success-200 text-theme-success-500"
                   >
                     <div
                       class="m-auto"
@@ -11808,7 +11808,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
       class="border-t-20 border-theme-neutral-100"
     >
       <div
-        class="relative container mx-auto justify-between items-end mt-10 mb-15"
+        class="container relative items-end justify-between mx-auto mt-10 mb-15"
       >
         <div
           class="inline-block"
@@ -11823,7 +11823,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
           </div>
         </div>
         <div
-          class="absolute right-0 top-0 bottom-0 mt-12 flex items-center justify-end space-x-3"
+          class="absolute top-0 bottom-0 right-0 flex items-center justify-end mt-12 space-x-3"
         >
           <div
             class="flex items-end py-2"
@@ -11860,11 +11860,11 @@ exports[`PluginManager should delete plugin on home 1`] = `
       </div>
     </div>
     <div
-      class="sticky top-20 h-20 bg-theme-neutral-900 shadow-md z-20 md:top-24"
+      class="sticky z-20 h-20 shadow-md top-20 bg-theme-neutral-900 md:top-24"
       data-testid="PluginManagerNavigationBar"
     >
       <div
-        class="flex justify-between h-full container mx-auto text-theme-neutral-400"
+        class="container flex justify-between h-full mx-auto text-theme-neutral-400"
       >
         <div
           class="flex h-full space-x-6"
@@ -11879,7 +11879,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
             class="flex items-center"
           >
             <div
-              class="bg-theme-neutral-700 w-px h-4"
+              class="w-px h-4 bg-theme-neutral-700"
             />
           </div>
           <div
@@ -11888,7 +11888,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
           >
             Game 
             <span
-              class="text-theme-neutral-700 ml-1"
+              class="ml-1 text-theme-neutral-700"
             >
               48
             </span>
@@ -11897,7 +11897,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
             class="flex items-center"
           >
             <div
-              class="bg-theme-neutral-700 w-px h-4"
+              class="w-px h-4 bg-theme-neutral-700"
             />
           </div>
           <div
@@ -11906,7 +11906,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
           >
             Utility 
             <span
-              class="text-theme-neutral-700 ml-1"
+              class="ml-1 text-theme-neutral-700"
             >
               264
             </span>
@@ -11915,7 +11915,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
             class="flex items-center"
           >
             <div
-              class="bg-theme-neutral-700 w-px h-4"
+              class="w-px h-4 bg-theme-neutral-700"
             />
           </div>
           <div
@@ -11924,7 +11924,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
           >
             Themes 
             <span
-              class="text-theme-neutral-700 ml-1"
+              class="ml-1 text-theme-neutral-700"
             >
               96
             </span>
@@ -11933,7 +11933,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
             class="flex items-center"
           >
             <div
-              class="bg-theme-neutral-700 w-px h-4"
+              class="w-px h-4 bg-theme-neutral-700"
             />
           </div>
           <div
@@ -11942,7 +11942,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
           >
             Other 
             <span
-              class="text-theme-neutral-700 ml-1"
+              class="ml-1 text-theme-neutral-700"
             >
               27
             </span>
@@ -11954,7 +11954,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
         >
           My Plugins 
           <span
-            class="text-theme-neutral-700 ml-1"
+            class="ml-1 text-theme-neutral-700"
           >
             8
           </span>
@@ -11966,7 +11966,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
       data-testid="PluginManager__container--home"
     >
       <div
-        class="flex justify-between items-center"
+        class="flex items-center justify-between"
       >
         <h2>
           Home
@@ -12053,7 +12053,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
               Featured Plugins
             </h2>
             <span
-              class="text-theme-primary-600 hover:text-theme-primary-500 cursor-pointer"
+              class="cursor-pointer text-theme-primary-600 hover:text-theme-primary-500"
               data-testid="PluginManager__home__featured__view-more"
             >
               View More
@@ -12771,7 +12771,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
               Top Rated
             </h2>
             <span
-              class="text-theme-primary-600 hover:text-theme-primary-500 cursor-pointer"
+              class="cursor-pointer text-theme-primary-600 hover:text-theme-primary-500"
               data-testid="PluginManager__home__top-rated__view-more"
             >
               View More
@@ -14204,7 +14204,7 @@ exports[`PluginManager should download & install plugin on game 1`] = `
       class="border-t-20 border-theme-neutral-100"
     >
       <div
-        class="relative container mx-auto justify-between items-end mt-10 mb-15"
+        class="container relative items-end justify-between mx-auto mt-10 mb-15"
       >
         <div
           class="inline-block"
@@ -14219,7 +14219,7 @@ exports[`PluginManager should download & install plugin on game 1`] = `
           </div>
         </div>
         <div
-          class="absolute right-0 top-0 bottom-0 mt-12 flex items-center justify-end space-x-3"
+          class="absolute top-0 bottom-0 right-0 flex items-center justify-end mt-12 space-x-3"
         >
           <div
             class="flex items-end py-2"
@@ -14256,11 +14256,11 @@ exports[`PluginManager should download & install plugin on game 1`] = `
       </div>
     </div>
     <div
-      class="sticky top-20 h-20 bg-theme-neutral-900 shadow-md z-20 md:top-24"
+      class="sticky z-20 h-20 shadow-md top-20 bg-theme-neutral-900 md:top-24"
       data-testid="PluginManagerNavigationBar"
     >
       <div
-        class="flex justify-between h-full container mx-auto text-theme-neutral-400"
+        class="container flex justify-between h-full mx-auto text-theme-neutral-400"
       >
         <div
           class="flex h-full space-x-6"
@@ -14275,7 +14275,7 @@ exports[`PluginManager should download & install plugin on game 1`] = `
             class="flex items-center"
           >
             <div
-              class="bg-theme-neutral-700 w-px h-4"
+              class="w-px h-4 bg-theme-neutral-700"
             />
           </div>
           <div
@@ -14284,7 +14284,7 @@ exports[`PluginManager should download & install plugin on game 1`] = `
           >
             Game 
             <span
-              class="text-theme-neutral-700 ml-1"
+              class="ml-1 text-theme-neutral-700"
             >
               48
             </span>
@@ -14293,7 +14293,7 @@ exports[`PluginManager should download & install plugin on game 1`] = `
             class="flex items-center"
           >
             <div
-              class="bg-theme-neutral-700 w-px h-4"
+              class="w-px h-4 bg-theme-neutral-700"
             />
           </div>
           <div
@@ -14302,7 +14302,7 @@ exports[`PluginManager should download & install plugin on game 1`] = `
           >
             Utility 
             <span
-              class="text-theme-neutral-700 ml-1"
+              class="ml-1 text-theme-neutral-700"
             >
               264
             </span>
@@ -14311,7 +14311,7 @@ exports[`PluginManager should download & install plugin on game 1`] = `
             class="flex items-center"
           >
             <div
-              class="bg-theme-neutral-700 w-px h-4"
+              class="w-px h-4 bg-theme-neutral-700"
             />
           </div>
           <div
@@ -14320,7 +14320,7 @@ exports[`PluginManager should download & install plugin on game 1`] = `
           >
             Themes 
             <span
-              class="text-theme-neutral-700 ml-1"
+              class="ml-1 text-theme-neutral-700"
             >
               96
             </span>
@@ -14329,7 +14329,7 @@ exports[`PluginManager should download & install plugin on game 1`] = `
             class="flex items-center"
           >
             <div
-              class="bg-theme-neutral-700 w-px h-4"
+              class="w-px h-4 bg-theme-neutral-700"
             />
           </div>
           <div
@@ -14338,7 +14338,7 @@ exports[`PluginManager should download & install plugin on game 1`] = `
           >
             Other 
             <span
-              class="text-theme-neutral-700 ml-1"
+              class="ml-1 text-theme-neutral-700"
             >
               27
             </span>
@@ -14350,7 +14350,7 @@ exports[`PluginManager should download & install plugin on game 1`] = `
         >
           My Plugins 
           <span
-            class="text-theme-neutral-700 ml-1"
+            class="ml-1 text-theme-neutral-700"
           >
             8
           </span>
@@ -14362,7 +14362,7 @@ exports[`PluginManager should download & install plugin on game 1`] = `
       data-testid="PluginManager__container--game"
     >
       <div
-        class="flex justify-between items-center"
+        class="flex items-center justify-between"
       >
         <h2>
           Game
@@ -14795,10 +14795,10 @@ exports[`PluginManager should download & install plugin on game 1`] = `
                   4.2 MB
                 </td>
                 <td
-                  class="py-10 flex"
+                  class="flex py-10"
                 >
                   <div
-                    class="flex mx-auto w-6 h-6"
+                    class="flex w-6 h-6 mx-auto"
                   >
                     <div
                       class="m-auto text-theme-neutral-500"
@@ -14918,10 +14918,10 @@ exports[`PluginManager should download & install plugin on game 1`] = `
                   163 KB
                 </td>
                 <td
-                  class="py-10 flex"
+                  class="flex py-10"
                 >
                   <div
-                    class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
+                    class="flex w-6 h-6 mx-auto border-2 rounded-full border-theme-success-200 text-theme-success-500"
                   >
                     <div
                       class="m-auto"
@@ -15061,10 +15061,10 @@ exports[`PluginManager should download & install plugin on game 1`] = `
                   4.2 MB
                 </td>
                 <td
-                  class="py-10 flex"
+                  class="flex py-10"
                 >
                   <div
-                    class="flex mx-auto w-6 h-6"
+                    class="flex w-6 h-6 mx-auto"
                   >
                     <div
                       class="m-auto text-theme-neutral-500"
@@ -15184,10 +15184,10 @@ exports[`PluginManager should download & install plugin on game 1`] = `
                   163 KB
                 </td>
                 <td
-                  class="py-10 flex"
+                  class="flex py-10"
                 >
                   <div
-                    class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
+                    class="flex w-6 h-6 mx-auto border-2 rounded-full border-theme-success-200 text-theme-success-500"
                   >
                     <div
                       class="m-auto"
@@ -15327,10 +15327,10 @@ exports[`PluginManager should download & install plugin on game 1`] = `
                   4.2 MB
                 </td>
                 <td
-                  class="py-10 flex"
+                  class="flex py-10"
                 >
                   <div
-                    class="flex mx-auto w-6 h-6"
+                    class="flex w-6 h-6 mx-auto"
                   >
                     <div
                       class="m-auto text-theme-neutral-500"
@@ -15450,10 +15450,10 @@ exports[`PluginManager should download & install plugin on game 1`] = `
                   163 KB
                 </td>
                 <td
-                  class="py-10 flex"
+                  class="flex py-10"
                 >
                   <div
-                    class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
+                    class="flex w-6 h-6 mx-auto border-2 rounded-full border-theme-success-200 text-theme-success-500"
                   >
                     <div
                       class="m-auto"
@@ -15593,10 +15593,10 @@ exports[`PluginManager should download & install plugin on game 1`] = `
                   4.2 MB
                 </td>
                 <td
-                  class="py-10 flex"
+                  class="flex py-10"
                 >
                   <div
-                    class="flex mx-auto w-6 h-6"
+                    class="flex w-6 h-6 mx-auto"
                   >
                     <div
                       class="m-auto text-theme-neutral-500"
@@ -15716,10 +15716,10 @@ exports[`PluginManager should download & install plugin on game 1`] = `
                   163 KB
                 </td>
                 <td
-                  class="py-10 flex"
+                  class="flex py-10"
                 >
                   <div
-                    class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
+                    class="flex w-6 h-6 mx-auto border-2 rounded-full border-theme-success-200 text-theme-success-500"
                   >
                     <div
                       class="m-auto"
@@ -15859,10 +15859,10 @@ exports[`PluginManager should download & install plugin on game 1`] = `
                   4.2 MB
                 </td>
                 <td
-                  class="py-10 flex"
+                  class="flex py-10"
                 >
                   <div
-                    class="flex mx-auto w-6 h-6"
+                    class="flex w-6 h-6 mx-auto"
                   >
                     <div
                       class="m-auto text-theme-neutral-500"
@@ -15982,10 +15982,10 @@ exports[`PluginManager should download & install plugin on game 1`] = `
                   163 KB
                 </td>
                 <td
-                  class="py-10 flex"
+                  class="flex py-10"
                 >
                   <div
-                    class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
+                    class="flex w-6 h-6 mx-auto border-2 rounded-full border-theme-success-200 text-theme-success-500"
                   >
                     <div
                       class="m-auto"
@@ -16125,10 +16125,10 @@ exports[`PluginManager should download & install plugin on game 1`] = `
                   4.2 MB
                 </td>
                 <td
-                  class="py-10 flex"
+                  class="flex py-10"
                 >
                   <div
-                    class="flex mx-auto w-6 h-6"
+                    class="flex w-6 h-6 mx-auto"
                   >
                     <div
                       class="m-auto text-theme-neutral-500"
@@ -16248,10 +16248,10 @@ exports[`PluginManager should download & install plugin on game 1`] = `
                   163 KB
                 </td>
                 <td
-                  class="py-10 flex"
+                  class="flex py-10"
                 >
                   <div
-                    class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
+                    class="flex w-6 h-6 mx-auto border-2 rounded-full border-theme-success-200 text-theme-success-500"
                   >
                     <div
                       class="m-auto"
@@ -16391,10 +16391,10 @@ exports[`PluginManager should download & install plugin on game 1`] = `
                   4.2 MB
                 </td>
                 <td
-                  class="py-10 flex"
+                  class="flex py-10"
                 >
                   <div
-                    class="flex mx-auto w-6 h-6"
+                    class="flex w-6 h-6 mx-auto"
                   >
                     <div
                       class="m-auto text-theme-neutral-500"
@@ -16514,10 +16514,10 @@ exports[`PluginManager should download & install plugin on game 1`] = `
                   163 KB
                 </td>
                 <td
-                  class="py-10 flex"
+                  class="flex py-10"
                 >
                   <div
-                    class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
+                    class="flex w-6 h-6 mx-auto border-2 rounded-full border-theme-success-200 text-theme-success-500"
                   >
                     <div
                       class="m-auto"
@@ -16657,10 +16657,10 @@ exports[`PluginManager should download & install plugin on game 1`] = `
                   4.2 MB
                 </td>
                 <td
-                  class="py-10 flex"
+                  class="flex py-10"
                 >
                   <div
-                    class="flex mx-auto w-6 h-6"
+                    class="flex w-6 h-6 mx-auto"
                   >
                     <div
                       class="m-auto text-theme-neutral-500"
@@ -16780,10 +16780,10 @@ exports[`PluginManager should download & install plugin on game 1`] = `
                   163 KB
                 </td>
                 <td
-                  class="py-10 flex"
+                  class="flex py-10"
                 >
                   <div
-                    class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
+                    class="flex w-6 h-6 mx-auto border-2 rounded-full border-theme-success-200 text-theme-success-500"
                   >
                     <div
                       class="m-auto"
@@ -16923,10 +16923,10 @@ exports[`PluginManager should download & install plugin on game 1`] = `
                   4.2 MB
                 </td>
                 <td
-                  class="py-10 flex"
+                  class="flex py-10"
                 >
                   <div
-                    class="flex mx-auto w-6 h-6"
+                    class="flex w-6 h-6 mx-auto"
                   >
                     <div
                       class="m-auto text-theme-neutral-500"
@@ -17046,10 +17046,10 @@ exports[`PluginManager should download & install plugin on game 1`] = `
                   163 KB
                 </td>
                 <td
-                  class="py-10 flex"
+                  class="flex py-10"
                 >
                   <div
-                    class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
+                    class="flex w-6 h-6 mx-auto border-2 rounded-full border-theme-success-200 text-theme-success-500"
                   >
                     <div
                       class="m-auto"
@@ -17189,10 +17189,10 @@ exports[`PluginManager should download & install plugin on game 1`] = `
                   4.2 MB
                 </td>
                 <td
-                  class="py-10 flex"
+                  class="flex py-10"
                 >
                   <div
-                    class="flex mx-auto w-6 h-6"
+                    class="flex w-6 h-6 mx-auto"
                   >
                     <div
                       class="m-auto text-theme-neutral-500"
@@ -17312,10 +17312,10 @@ exports[`PluginManager should download & install plugin on game 1`] = `
                   163 KB
                 </td>
                 <td
-                  class="py-10 flex"
+                  class="flex py-10"
                 >
                   <div
-                    class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
+                    class="flex w-6 h-6 mx-auto border-2 rounded-full border-theme-success-200 text-theme-success-500"
                   >
                     <div
                       class="m-auto"
@@ -17383,7 +17383,7 @@ exports[`PluginManager should download & install plugin on home 1`] = `
       class="border-t-20 border-theme-neutral-100"
     >
       <div
-        class="relative container mx-auto justify-between items-end mt-10 mb-15"
+        class="container relative items-end justify-between mx-auto mt-10 mb-15"
       >
         <div
           class="inline-block"
@@ -17398,7 +17398,7 @@ exports[`PluginManager should download & install plugin on home 1`] = `
           </div>
         </div>
         <div
-          class="absolute right-0 top-0 bottom-0 mt-12 flex items-center justify-end space-x-3"
+          class="absolute top-0 bottom-0 right-0 flex items-center justify-end mt-12 space-x-3"
         >
           <div
             class="flex items-end py-2"
@@ -17435,11 +17435,11 @@ exports[`PluginManager should download & install plugin on home 1`] = `
       </div>
     </div>
     <div
-      class="sticky top-20 h-20 bg-theme-neutral-900 shadow-md z-20 md:top-24"
+      class="sticky z-20 h-20 shadow-md top-20 bg-theme-neutral-900 md:top-24"
       data-testid="PluginManagerNavigationBar"
     >
       <div
-        class="flex justify-between h-full container mx-auto text-theme-neutral-400"
+        class="container flex justify-between h-full mx-auto text-theme-neutral-400"
       >
         <div
           class="flex h-full space-x-6"
@@ -17454,7 +17454,7 @@ exports[`PluginManager should download & install plugin on home 1`] = `
             class="flex items-center"
           >
             <div
-              class="bg-theme-neutral-700 w-px h-4"
+              class="w-px h-4 bg-theme-neutral-700"
             />
           </div>
           <div
@@ -17463,7 +17463,7 @@ exports[`PluginManager should download & install plugin on home 1`] = `
           >
             Game 
             <span
-              class="text-theme-neutral-700 ml-1"
+              class="ml-1 text-theme-neutral-700"
             >
               48
             </span>
@@ -17472,7 +17472,7 @@ exports[`PluginManager should download & install plugin on home 1`] = `
             class="flex items-center"
           >
             <div
-              class="bg-theme-neutral-700 w-px h-4"
+              class="w-px h-4 bg-theme-neutral-700"
             />
           </div>
           <div
@@ -17481,7 +17481,7 @@ exports[`PluginManager should download & install plugin on home 1`] = `
           >
             Utility 
             <span
-              class="text-theme-neutral-700 ml-1"
+              class="ml-1 text-theme-neutral-700"
             >
               264
             </span>
@@ -17490,7 +17490,7 @@ exports[`PluginManager should download & install plugin on home 1`] = `
             class="flex items-center"
           >
             <div
-              class="bg-theme-neutral-700 w-px h-4"
+              class="w-px h-4 bg-theme-neutral-700"
             />
           </div>
           <div
@@ -17499,7 +17499,7 @@ exports[`PluginManager should download & install plugin on home 1`] = `
           >
             Themes 
             <span
-              class="text-theme-neutral-700 ml-1"
+              class="ml-1 text-theme-neutral-700"
             >
               96
             </span>
@@ -17508,7 +17508,7 @@ exports[`PluginManager should download & install plugin on home 1`] = `
             class="flex items-center"
           >
             <div
-              class="bg-theme-neutral-700 w-px h-4"
+              class="w-px h-4 bg-theme-neutral-700"
             />
           </div>
           <div
@@ -17517,7 +17517,7 @@ exports[`PluginManager should download & install plugin on home 1`] = `
           >
             Other 
             <span
-              class="text-theme-neutral-700 ml-1"
+              class="ml-1 text-theme-neutral-700"
             >
               27
             </span>
@@ -17529,7 +17529,7 @@ exports[`PluginManager should download & install plugin on home 1`] = `
         >
           My Plugins 
           <span
-            class="text-theme-neutral-700 ml-1"
+            class="ml-1 text-theme-neutral-700"
           >
             8
           </span>
@@ -17541,7 +17541,7 @@ exports[`PluginManager should download & install plugin on home 1`] = `
       data-testid="PluginManager__container--home"
     >
       <div
-        class="flex justify-between items-center"
+        class="flex items-center justify-between"
       >
         <h2>
           Home
@@ -17628,7 +17628,7 @@ exports[`PluginManager should download & install plugin on home 1`] = `
               Featured Plugins
             </h2>
             <span
-              class="text-theme-primary-600 hover:text-theme-primary-500 cursor-pointer"
+              class="cursor-pointer text-theme-primary-600 hover:text-theme-primary-500"
               data-testid="PluginManager__home__featured__view-more"
             >
               View More
@@ -17995,10 +17995,10 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                       4.2 MB
                     </td>
                     <td
-                      class="py-10 flex"
+                      class="flex py-10"
                     >
                       <div
-                        class="flex mx-auto w-6 h-6"
+                        class="flex w-6 h-6 mx-auto"
                       >
                         <div
                           class="m-auto text-theme-neutral-500"
@@ -18118,10 +18118,10 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                       163 KB
                     </td>
                     <td
-                      class="py-10 flex"
+                      class="flex py-10"
                     >
                       <div
-                        class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
+                        class="flex w-6 h-6 mx-auto border-2 rounded-full border-theme-success-200 text-theme-success-500"
                       >
                         <div
                           class="m-auto"
@@ -18261,10 +18261,10 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                       4.2 MB
                     </td>
                     <td
-                      class="py-10 flex"
+                      class="flex py-10"
                     >
                       <div
-                        class="flex mx-auto w-6 h-6"
+                        class="flex w-6 h-6 mx-auto"
                       >
                         <div
                           class="m-auto text-theme-neutral-500"
@@ -18384,10 +18384,10 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                       163 KB
                     </td>
                     <td
-                      class="py-10 flex"
+                      class="flex py-10"
                     >
                       <div
-                        class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
+                        class="flex w-6 h-6 mx-auto border-2 rounded-full border-theme-success-200 text-theme-success-500"
                       >
                         <div
                           class="m-auto"
@@ -18527,10 +18527,10 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                       4.2 MB
                     </td>
                     <td
-                      class="py-10 flex"
+                      class="flex py-10"
                     >
                       <div
-                        class="flex mx-auto w-6 h-6"
+                        class="flex w-6 h-6 mx-auto"
                       >
                         <div
                           class="m-auto text-theme-neutral-500"
@@ -18650,10 +18650,10 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                       163 KB
                     </td>
                     <td
-                      class="py-10 flex"
+                      class="flex py-10"
                     >
                       <div
-                        class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
+                        class="flex w-6 h-6 mx-auto border-2 rounded-full border-theme-success-200 text-theme-success-500"
                       >
                         <div
                           class="m-auto"
@@ -18793,10 +18793,10 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                       4.2 MB
                     </td>
                     <td
-                      class="py-10 flex"
+                      class="flex py-10"
                     >
                       <div
-                        class="flex mx-auto w-6 h-6"
+                        class="flex w-6 h-6 mx-auto"
                       >
                         <div
                           class="m-auto text-theme-neutral-500"
@@ -18916,10 +18916,10 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                       163 KB
                     </td>
                     <td
-                      class="py-10 flex"
+                      class="flex py-10"
                     >
                       <div
-                        class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
+                        class="flex w-6 h-6 mx-auto border-2 rounded-full border-theme-success-200 text-theme-success-500"
                       >
                         <div
                           class="m-auto"
@@ -18984,7 +18984,7 @@ exports[`PluginManager should download & install plugin on home 1`] = `
               Top Rated
             </h2>
             <span
-              class="text-theme-primary-600 hover:text-theme-primary-500 cursor-pointer"
+              class="cursor-pointer text-theme-primary-600 hover:text-theme-primary-500"
               data-testid="PluginManager__home__top-rated__view-more"
             >
               View More
@@ -19351,10 +19351,10 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                       4.2 MB
                     </td>
                     <td
-                      class="py-10 flex"
+                      class="flex py-10"
                     >
                       <div
-                        class="flex mx-auto w-6 h-6"
+                        class="flex w-6 h-6 mx-auto"
                       >
                         <div
                           class="m-auto text-theme-neutral-500"
@@ -19474,10 +19474,10 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                       163 KB
                     </td>
                     <td
-                      class="py-10 flex"
+                      class="flex py-10"
                     >
                       <div
-                        class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
+                        class="flex w-6 h-6 mx-auto border-2 rounded-full border-theme-success-200 text-theme-success-500"
                       >
                         <div
                           class="m-auto"
@@ -19617,10 +19617,10 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                       4.2 MB
                     </td>
                     <td
-                      class="py-10 flex"
+                      class="flex py-10"
                     >
                       <div
-                        class="flex mx-auto w-6 h-6"
+                        class="flex w-6 h-6 mx-auto"
                       >
                         <div
                           class="m-auto text-theme-neutral-500"
@@ -19740,10 +19740,10 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                       163 KB
                     </td>
                     <td
-                      class="py-10 flex"
+                      class="flex py-10"
                     >
                       <div
-                        class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
+                        class="flex w-6 h-6 mx-auto border-2 rounded-full border-theme-success-200 text-theme-success-500"
                       >
                         <div
                           class="m-auto"
@@ -19883,10 +19883,10 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                       4.2 MB
                     </td>
                     <td
-                      class="py-10 flex"
+                      class="flex py-10"
                     >
                       <div
-                        class="flex mx-auto w-6 h-6"
+                        class="flex w-6 h-6 mx-auto"
                       >
                         <div
                           class="m-auto text-theme-neutral-500"
@@ -20006,10 +20006,10 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                       163 KB
                     </td>
                     <td
-                      class="py-10 flex"
+                      class="flex py-10"
                     >
                       <div
-                        class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
+                        class="flex w-6 h-6 mx-auto border-2 rounded-full border-theme-success-200 text-theme-success-500"
                       >
                         <div
                           class="m-auto"
@@ -20149,10 +20149,10 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                       4.2 MB
                     </td>
                     <td
-                      class="py-10 flex"
+                      class="flex py-10"
                     >
                       <div
-                        class="flex mx-auto w-6 h-6"
+                        class="flex w-6 h-6 mx-auto"
                       >
                         <div
                           class="m-auto text-theme-neutral-500"
@@ -20272,10 +20272,10 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                       163 KB
                     </td>
                     <td
-                      class="py-10 flex"
+                      class="flex py-10"
                     >
                       <div
-                        class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
+                        class="flex w-6 h-6 mx-auto border-2 rounded-full border-theme-success-200 text-theme-success-500"
                       >
                         <div
                           class="m-auto"
@@ -20699,10 +20699,10 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                       4.2 MB
                     </td>
                     <td
-                      class="py-10 flex"
+                      class="flex py-10"
                     >
                       <div
-                        class="flex mx-auto w-6 h-6"
+                        class="flex w-6 h-6 mx-auto"
                       >
                         <div
                           class="m-auto text-theme-neutral-500"
@@ -20822,10 +20822,10 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                       163 KB
                     </td>
                     <td
-                      class="py-10 flex"
+                      class="flex py-10"
                     >
                       <div
-                        class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
+                        class="flex w-6 h-6 mx-auto border-2 rounded-full border-theme-success-200 text-theme-success-500"
                       >
                         <div
                           class="m-auto"
@@ -20965,10 +20965,10 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                       4.2 MB
                     </td>
                     <td
-                      class="py-10 flex"
+                      class="flex py-10"
                     >
                       <div
-                        class="flex mx-auto w-6 h-6"
+                        class="flex w-6 h-6 mx-auto"
                       >
                         <div
                           class="m-auto text-theme-neutral-500"
@@ -21088,10 +21088,10 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                       163 KB
                     </td>
                     <td
-                      class="py-10 flex"
+                      class="flex py-10"
                     >
                       <div
-                        class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
+                        class="flex w-6 h-6 mx-auto border-2 rounded-full border-theme-success-200 text-theme-success-500"
                       >
                         <div
                           class="m-auto"
@@ -21231,10 +21231,10 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                       4.2 MB
                     </td>
                     <td
-                      class="py-10 flex"
+                      class="flex py-10"
                     >
                       <div
-                        class="flex mx-auto w-6 h-6"
+                        class="flex w-6 h-6 mx-auto"
                       >
                         <div
                           class="m-auto text-theme-neutral-500"
@@ -21354,10 +21354,10 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                       163 KB
                     </td>
                     <td
-                      class="py-10 flex"
+                      class="flex py-10"
                     >
                       <div
-                        class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
+                        class="flex w-6 h-6 mx-auto border-2 rounded-full border-theme-success-200 text-theme-success-500"
                       >
                         <div
                           class="m-auto"
@@ -21497,10 +21497,10 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                       4.2 MB
                     </td>
                     <td
-                      class="py-10 flex"
+                      class="flex py-10"
                     >
                       <div
-                        class="flex mx-auto w-6 h-6"
+                        class="flex w-6 h-6 mx-auto"
                       >
                         <div
                           class="m-auto text-theme-neutral-500"
@@ -21620,10 +21620,10 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                       163 KB
                     </td>
                     <td
-                      class="py-10 flex"
+                      class="flex py-10"
                     >
                       <div
-                        class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
+                        class="flex w-6 h-6 mx-auto border-2 rounded-full border-theme-success-200 text-theme-success-500"
                       >
                         <div
                           class="m-auto"
@@ -21693,7 +21693,7 @@ exports[`PluginManager should open & close featured modal 1`] = `
       class="border-t-20 border-theme-neutral-100"
     >
       <div
-        class="relative container mx-auto justify-between items-end mt-10 mb-15"
+        class="container relative items-end justify-between mx-auto mt-10 mb-15"
       >
         <div
           class="inline-block"
@@ -21708,7 +21708,7 @@ exports[`PluginManager should open & close featured modal 1`] = `
           </div>
         </div>
         <div
-          class="absolute right-0 top-0 bottom-0 mt-12 flex items-center justify-end space-x-3"
+          class="absolute top-0 bottom-0 right-0 flex items-center justify-end mt-12 space-x-3"
         >
           <div
             class="flex items-end py-2"
@@ -21745,11 +21745,11 @@ exports[`PluginManager should open & close featured modal 1`] = `
       </div>
     </div>
     <div
-      class="sticky top-20 h-20 bg-theme-neutral-900 shadow-md z-20 md:top-24"
+      class="sticky z-20 h-20 shadow-md top-20 bg-theme-neutral-900 md:top-24"
       data-testid="PluginManagerNavigationBar"
     >
       <div
-        class="flex justify-between h-full container mx-auto text-theme-neutral-400"
+        class="container flex justify-between h-full mx-auto text-theme-neutral-400"
       >
         <div
           class="flex h-full space-x-6"
@@ -21764,7 +21764,7 @@ exports[`PluginManager should open & close featured modal 1`] = `
             class="flex items-center"
           >
             <div
-              class="bg-theme-neutral-700 w-px h-4"
+              class="w-px h-4 bg-theme-neutral-700"
             />
           </div>
           <div
@@ -21773,7 +21773,7 @@ exports[`PluginManager should open & close featured modal 1`] = `
           >
             Game 
             <span
-              class="text-theme-neutral-700 ml-1"
+              class="ml-1 text-theme-neutral-700"
             >
               48
             </span>
@@ -21782,7 +21782,7 @@ exports[`PluginManager should open & close featured modal 1`] = `
             class="flex items-center"
           >
             <div
-              class="bg-theme-neutral-700 w-px h-4"
+              class="w-px h-4 bg-theme-neutral-700"
             />
           </div>
           <div
@@ -21791,7 +21791,7 @@ exports[`PluginManager should open & close featured modal 1`] = `
           >
             Utility 
             <span
-              class="text-theme-neutral-700 ml-1"
+              class="ml-1 text-theme-neutral-700"
             >
               264
             </span>
@@ -21800,7 +21800,7 @@ exports[`PluginManager should open & close featured modal 1`] = `
             class="flex items-center"
           >
             <div
-              class="bg-theme-neutral-700 w-px h-4"
+              class="w-px h-4 bg-theme-neutral-700"
             />
           </div>
           <div
@@ -21809,7 +21809,7 @@ exports[`PluginManager should open & close featured modal 1`] = `
           >
             Themes 
             <span
-              class="text-theme-neutral-700 ml-1"
+              class="ml-1 text-theme-neutral-700"
             >
               96
             </span>
@@ -21818,7 +21818,7 @@ exports[`PluginManager should open & close featured modal 1`] = `
             class="flex items-center"
           >
             <div
-              class="bg-theme-neutral-700 w-px h-4"
+              class="w-px h-4 bg-theme-neutral-700"
             />
           </div>
           <div
@@ -21827,7 +21827,7 @@ exports[`PluginManager should open & close featured modal 1`] = `
           >
             Other 
             <span
-              class="text-theme-neutral-700 ml-1"
+              class="ml-1 text-theme-neutral-700"
             >
               27
             </span>
@@ -21839,7 +21839,7 @@ exports[`PluginManager should open & close featured modal 1`] = `
         >
           My Plugins 
           <span
-            class="text-theme-neutral-700 ml-1"
+            class="ml-1 text-theme-neutral-700"
           >
             8
           </span>
@@ -21851,7 +21851,7 @@ exports[`PluginManager should open & close featured modal 1`] = `
       data-testid="PluginManager__container--home"
     >
       <div
-        class="flex justify-between items-center"
+        class="flex items-center justify-between"
       >
         <h2>
           Home
@@ -21938,7 +21938,7 @@ exports[`PluginManager should open & close featured modal 1`] = `
               Featured Plugins
             </h2>
             <span
-              class="text-theme-primary-600 hover:text-theme-primary-500 cursor-pointer"
+              class="cursor-pointer text-theme-primary-600 hover:text-theme-primary-500"
               data-testid="PluginManager__home__featured__view-more"
             >
               View More
@@ -22656,7 +22656,7 @@ exports[`PluginManager should open & close featured modal 1`] = `
               Top Rated
             </h2>
             <span
-              class="text-theme-primary-600 hover:text-theme-primary-500 cursor-pointer"
+              class="cursor-pointer text-theme-primary-600 hover:text-theme-primary-500"
               data-testid="PluginManager__home__top-rated__view-more"
             >
               View More
@@ -24089,7 +24089,7 @@ exports[`PluginManager should open & close top rated modal 1`] = `
       class="border-t-20 border-theme-neutral-100"
     >
       <div
-        class="relative container mx-auto justify-between items-end mt-10 mb-15"
+        class="container relative items-end justify-between mx-auto mt-10 mb-15"
       >
         <div
           class="inline-block"
@@ -24104,7 +24104,7 @@ exports[`PluginManager should open & close top rated modal 1`] = `
           </div>
         </div>
         <div
-          class="absolute right-0 top-0 bottom-0 mt-12 flex items-center justify-end space-x-3"
+          class="absolute top-0 bottom-0 right-0 flex items-center justify-end mt-12 space-x-3"
         >
           <div
             class="flex items-end py-2"
@@ -24141,11 +24141,11 @@ exports[`PluginManager should open & close top rated modal 1`] = `
       </div>
     </div>
     <div
-      class="sticky top-20 h-20 bg-theme-neutral-900 shadow-md z-20 md:top-24"
+      class="sticky z-20 h-20 shadow-md top-20 bg-theme-neutral-900 md:top-24"
       data-testid="PluginManagerNavigationBar"
     >
       <div
-        class="flex justify-between h-full container mx-auto text-theme-neutral-400"
+        class="container flex justify-between h-full mx-auto text-theme-neutral-400"
       >
         <div
           class="flex h-full space-x-6"
@@ -24160,7 +24160,7 @@ exports[`PluginManager should open & close top rated modal 1`] = `
             class="flex items-center"
           >
             <div
-              class="bg-theme-neutral-700 w-px h-4"
+              class="w-px h-4 bg-theme-neutral-700"
             />
           </div>
           <div
@@ -24169,7 +24169,7 @@ exports[`PluginManager should open & close top rated modal 1`] = `
           >
             Game 
             <span
-              class="text-theme-neutral-700 ml-1"
+              class="ml-1 text-theme-neutral-700"
             >
               48
             </span>
@@ -24178,7 +24178,7 @@ exports[`PluginManager should open & close top rated modal 1`] = `
             class="flex items-center"
           >
             <div
-              class="bg-theme-neutral-700 w-px h-4"
+              class="w-px h-4 bg-theme-neutral-700"
             />
           </div>
           <div
@@ -24187,7 +24187,7 @@ exports[`PluginManager should open & close top rated modal 1`] = `
           >
             Utility 
             <span
-              class="text-theme-neutral-700 ml-1"
+              class="ml-1 text-theme-neutral-700"
             >
               264
             </span>
@@ -24196,7 +24196,7 @@ exports[`PluginManager should open & close top rated modal 1`] = `
             class="flex items-center"
           >
             <div
-              class="bg-theme-neutral-700 w-px h-4"
+              class="w-px h-4 bg-theme-neutral-700"
             />
           </div>
           <div
@@ -24205,7 +24205,7 @@ exports[`PluginManager should open & close top rated modal 1`] = `
           >
             Themes 
             <span
-              class="text-theme-neutral-700 ml-1"
+              class="ml-1 text-theme-neutral-700"
             >
               96
             </span>
@@ -24214,7 +24214,7 @@ exports[`PluginManager should open & close top rated modal 1`] = `
             class="flex items-center"
           >
             <div
-              class="bg-theme-neutral-700 w-px h-4"
+              class="w-px h-4 bg-theme-neutral-700"
             />
           </div>
           <div
@@ -24223,7 +24223,7 @@ exports[`PluginManager should open & close top rated modal 1`] = `
           >
             Other 
             <span
-              class="text-theme-neutral-700 ml-1"
+              class="ml-1 text-theme-neutral-700"
             >
               27
             </span>
@@ -24235,7 +24235,7 @@ exports[`PluginManager should open & close top rated modal 1`] = `
         >
           My Plugins 
           <span
-            class="text-theme-neutral-700 ml-1"
+            class="ml-1 text-theme-neutral-700"
           >
             8
           </span>
@@ -24247,7 +24247,7 @@ exports[`PluginManager should open & close top rated modal 1`] = `
       data-testid="PluginManager__container--home"
     >
       <div
-        class="flex justify-between items-center"
+        class="flex items-center justify-between"
       >
         <h2>
           Home
@@ -24334,7 +24334,7 @@ exports[`PluginManager should open & close top rated modal 1`] = `
               Featured Plugins
             </h2>
             <span
-              class="text-theme-primary-600 hover:text-theme-primary-500 cursor-pointer"
+              class="cursor-pointer text-theme-primary-600 hover:text-theme-primary-500"
               data-testid="PluginManager__home__featured__view-more"
             >
               View More
@@ -25052,7 +25052,7 @@ exports[`PluginManager should open & close top rated modal 1`] = `
               Top Rated
             </h2>
             <span
-              class="text-theme-primary-600 hover:text-theme-primary-500 cursor-pointer"
+              class="cursor-pointer text-theme-primary-600 hover:text-theme-primary-500"
               data-testid="PluginManager__home__top-rated__view-more"
             >
               View More
@@ -28881,7 +28881,7 @@ exports[`PluginManager should search for plugin 1`] = `
       class="border-t-20 border-theme-neutral-100"
     >
       <div
-        class="relative container mx-auto justify-between items-end mt-10 mb-15"
+        class="container relative items-end justify-between mx-auto mt-10 mb-15"
       >
         <div
           class="inline-block"
@@ -28896,7 +28896,7 @@ exports[`PluginManager should search for plugin 1`] = `
           </div>
         </div>
         <div
-          class="absolute right-0 top-0 bottom-0 mt-12 flex items-center justify-end space-x-3"
+          class="absolute top-0 bottom-0 right-0 flex items-center justify-end mt-12 space-x-3"
         >
           <div
             class="flex items-end py-2"
@@ -28956,11 +28956,11 @@ exports[`PluginManager should search for plugin 1`] = `
       </div>
     </div>
     <div
-      class="sticky top-20 h-20 bg-theme-neutral-900 shadow-md z-20 md:top-24"
+      class="sticky z-20 h-20 shadow-md top-20 bg-theme-neutral-900 md:top-24"
       data-testid="PluginManagerNavigationBar"
     >
       <div
-        class="flex justify-between h-full container mx-auto text-theme-neutral-400"
+        class="container flex justify-between h-full mx-auto text-theme-neutral-400"
       >
         <div
           class="flex h-full space-x-6"
@@ -28975,7 +28975,7 @@ exports[`PluginManager should search for plugin 1`] = `
             class="flex items-center"
           >
             <div
-              class="bg-theme-neutral-700 w-px h-4"
+              class="w-px h-4 bg-theme-neutral-700"
             />
           </div>
           <div
@@ -28984,7 +28984,7 @@ exports[`PluginManager should search for plugin 1`] = `
           >
             Game 
             <span
-              class="text-theme-neutral-700 ml-1"
+              class="ml-1 text-theme-neutral-700"
             >
               48
             </span>
@@ -28993,7 +28993,7 @@ exports[`PluginManager should search for plugin 1`] = `
             class="flex items-center"
           >
             <div
-              class="bg-theme-neutral-700 w-px h-4"
+              class="w-px h-4 bg-theme-neutral-700"
             />
           </div>
           <div
@@ -29002,7 +29002,7 @@ exports[`PluginManager should search for plugin 1`] = `
           >
             Utility 
             <span
-              class="text-theme-neutral-700 ml-1"
+              class="ml-1 text-theme-neutral-700"
             >
               264
             </span>
@@ -29011,7 +29011,7 @@ exports[`PluginManager should search for plugin 1`] = `
             class="flex items-center"
           >
             <div
-              class="bg-theme-neutral-700 w-px h-4"
+              class="w-px h-4 bg-theme-neutral-700"
             />
           </div>
           <div
@@ -29020,7 +29020,7 @@ exports[`PluginManager should search for plugin 1`] = `
           >
             Themes 
             <span
-              class="text-theme-neutral-700 ml-1"
+              class="ml-1 text-theme-neutral-700"
             >
               96
             </span>
@@ -29029,7 +29029,7 @@ exports[`PluginManager should search for plugin 1`] = `
             class="flex items-center"
           >
             <div
-              class="bg-theme-neutral-700 w-px h-4"
+              class="w-px h-4 bg-theme-neutral-700"
             />
           </div>
           <div
@@ -29038,7 +29038,7 @@ exports[`PluginManager should search for plugin 1`] = `
           >
             Other 
             <span
-              class="text-theme-neutral-700 ml-1"
+              class="ml-1 text-theme-neutral-700"
             >
               27
             </span>
@@ -29050,7 +29050,7 @@ exports[`PluginManager should search for plugin 1`] = `
         >
           My Plugins 
           <span
-            class="text-theme-neutral-700 ml-1"
+            class="ml-1 text-theme-neutral-700"
           >
             8
           </span>
@@ -29062,7 +29062,7 @@ exports[`PluginManager should search for plugin 1`] = `
       data-testid="PluginManager__container--home"
     >
       <div
-        class="flex justify-between items-center"
+        class="flex items-center justify-between"
       >
         <h2>
           Home
@@ -29149,7 +29149,7 @@ exports[`PluginManager should search for plugin 1`] = `
               Featured Plugins
             </h2>
             <span
-              class="text-theme-primary-600 hover:text-theme-primary-500 cursor-pointer"
+              class="cursor-pointer text-theme-primary-600 hover:text-theme-primary-500"
               data-testid="PluginManager__home__featured__view-more"
             >
               View More
@@ -29867,7 +29867,7 @@ exports[`PluginManager should search for plugin 1`] = `
               Top Rated
             </h2>
             <span
-              class="text-theme-primary-600 hover:text-theme-primary-500 cursor-pointer"
+              class="cursor-pointer text-theme-primary-600 hover:text-theme-primary-500"
               data-testid="PluginManager__home__top-rated__view-more"
             >
               View More
@@ -31300,7 +31300,7 @@ exports[`PluginManager should select plugin on game grid 1`] = `
       class="border-t-20 border-theme-neutral-100"
     >
       <div
-        class="relative container mx-auto justify-between items-end mt-10 mb-15"
+        class="container relative items-end justify-between mx-auto mt-10 mb-15"
       >
         <div
           class="inline-block"
@@ -31315,7 +31315,7 @@ exports[`PluginManager should select plugin on game grid 1`] = `
           </div>
         </div>
         <div
-          class="absolute right-0 top-0 bottom-0 mt-12 flex items-center justify-end space-x-3"
+          class="absolute top-0 bottom-0 right-0 flex items-center justify-end mt-12 space-x-3"
         >
           <div
             class="flex items-end py-2"
@@ -31352,11 +31352,11 @@ exports[`PluginManager should select plugin on game grid 1`] = `
       </div>
     </div>
     <div
-      class="sticky top-20 h-20 bg-theme-neutral-900 shadow-md z-20 md:top-24"
+      class="sticky z-20 h-20 shadow-md top-20 bg-theme-neutral-900 md:top-24"
       data-testid="PluginManagerNavigationBar"
     >
       <div
-        class="flex justify-between h-full container mx-auto text-theme-neutral-400"
+        class="container flex justify-between h-full mx-auto text-theme-neutral-400"
       >
         <div
           class="flex h-full space-x-6"
@@ -31371,7 +31371,7 @@ exports[`PluginManager should select plugin on game grid 1`] = `
             class="flex items-center"
           >
             <div
-              class="bg-theme-neutral-700 w-px h-4"
+              class="w-px h-4 bg-theme-neutral-700"
             />
           </div>
           <div
@@ -31380,7 +31380,7 @@ exports[`PluginManager should select plugin on game grid 1`] = `
           >
             Game 
             <span
-              class="text-theme-neutral-700 ml-1"
+              class="ml-1 text-theme-neutral-700"
             >
               48
             </span>
@@ -31389,7 +31389,7 @@ exports[`PluginManager should select plugin on game grid 1`] = `
             class="flex items-center"
           >
             <div
-              class="bg-theme-neutral-700 w-px h-4"
+              class="w-px h-4 bg-theme-neutral-700"
             />
           </div>
           <div
@@ -31398,7 +31398,7 @@ exports[`PluginManager should select plugin on game grid 1`] = `
           >
             Utility 
             <span
-              class="text-theme-neutral-700 ml-1"
+              class="ml-1 text-theme-neutral-700"
             >
               264
             </span>
@@ -31407,7 +31407,7 @@ exports[`PluginManager should select plugin on game grid 1`] = `
             class="flex items-center"
           >
             <div
-              class="bg-theme-neutral-700 w-px h-4"
+              class="w-px h-4 bg-theme-neutral-700"
             />
           </div>
           <div
@@ -31416,7 +31416,7 @@ exports[`PluginManager should select plugin on game grid 1`] = `
           >
             Themes 
             <span
-              class="text-theme-neutral-700 ml-1"
+              class="ml-1 text-theme-neutral-700"
             >
               96
             </span>
@@ -31425,7 +31425,7 @@ exports[`PluginManager should select plugin on game grid 1`] = `
             class="flex items-center"
           >
             <div
-              class="bg-theme-neutral-700 w-px h-4"
+              class="w-px h-4 bg-theme-neutral-700"
             />
           </div>
           <div
@@ -31434,7 +31434,7 @@ exports[`PluginManager should select plugin on game grid 1`] = `
           >
             Other 
             <span
-              class="text-theme-neutral-700 ml-1"
+              class="ml-1 text-theme-neutral-700"
             >
               27
             </span>
@@ -31446,7 +31446,7 @@ exports[`PluginManager should select plugin on game grid 1`] = `
         >
           My Plugins 
           <span
-            class="text-theme-neutral-700 ml-1"
+            class="ml-1 text-theme-neutral-700"
           >
             8
           </span>
@@ -31458,7 +31458,7 @@ exports[`PluginManager should select plugin on game grid 1`] = `
       data-testid="PluginManager__container--game"
     >
       <div
-        class="flex justify-between items-center"
+        class="flex items-center justify-between"
       >
         <h2>
           Game
@@ -33288,7 +33288,7 @@ exports[`PluginManager should select plugin on home grids 1`] = `
       class="border-t-20 border-theme-neutral-100"
     >
       <div
-        class="relative container mx-auto justify-between items-end mt-10 mb-15"
+        class="container relative items-end justify-between mx-auto mt-10 mb-15"
       >
         <div
           class="inline-block"
@@ -33303,7 +33303,7 @@ exports[`PluginManager should select plugin on home grids 1`] = `
           </div>
         </div>
         <div
-          class="absolute right-0 top-0 bottom-0 mt-12 flex items-center justify-end space-x-3"
+          class="absolute top-0 bottom-0 right-0 flex items-center justify-end mt-12 space-x-3"
         >
           <div
             class="flex items-end py-2"
@@ -33340,11 +33340,11 @@ exports[`PluginManager should select plugin on home grids 1`] = `
       </div>
     </div>
     <div
-      class="sticky top-20 h-20 bg-theme-neutral-900 shadow-md z-20 md:top-24"
+      class="sticky z-20 h-20 shadow-md top-20 bg-theme-neutral-900 md:top-24"
       data-testid="PluginManagerNavigationBar"
     >
       <div
-        class="flex justify-between h-full container mx-auto text-theme-neutral-400"
+        class="container flex justify-between h-full mx-auto text-theme-neutral-400"
       >
         <div
           class="flex h-full space-x-6"
@@ -33359,7 +33359,7 @@ exports[`PluginManager should select plugin on home grids 1`] = `
             class="flex items-center"
           >
             <div
-              class="bg-theme-neutral-700 w-px h-4"
+              class="w-px h-4 bg-theme-neutral-700"
             />
           </div>
           <div
@@ -33368,7 +33368,7 @@ exports[`PluginManager should select plugin on home grids 1`] = `
           >
             Game 
             <span
-              class="text-theme-neutral-700 ml-1"
+              class="ml-1 text-theme-neutral-700"
             >
               48
             </span>
@@ -33377,7 +33377,7 @@ exports[`PluginManager should select plugin on home grids 1`] = `
             class="flex items-center"
           >
             <div
-              class="bg-theme-neutral-700 w-px h-4"
+              class="w-px h-4 bg-theme-neutral-700"
             />
           </div>
           <div
@@ -33386,7 +33386,7 @@ exports[`PluginManager should select plugin on home grids 1`] = `
           >
             Utility 
             <span
-              class="text-theme-neutral-700 ml-1"
+              class="ml-1 text-theme-neutral-700"
             >
               264
             </span>
@@ -33395,7 +33395,7 @@ exports[`PluginManager should select plugin on home grids 1`] = `
             class="flex items-center"
           >
             <div
-              class="bg-theme-neutral-700 w-px h-4"
+              class="w-px h-4 bg-theme-neutral-700"
             />
           </div>
           <div
@@ -33404,7 +33404,7 @@ exports[`PluginManager should select plugin on home grids 1`] = `
           >
             Themes 
             <span
-              class="text-theme-neutral-700 ml-1"
+              class="ml-1 text-theme-neutral-700"
             >
               96
             </span>
@@ -33413,7 +33413,7 @@ exports[`PluginManager should select plugin on home grids 1`] = `
             class="flex items-center"
           >
             <div
-              class="bg-theme-neutral-700 w-px h-4"
+              class="w-px h-4 bg-theme-neutral-700"
             />
           </div>
           <div
@@ -33422,7 +33422,7 @@ exports[`PluginManager should select plugin on home grids 1`] = `
           >
             Other 
             <span
-              class="text-theme-neutral-700 ml-1"
+              class="ml-1 text-theme-neutral-700"
             >
               27
             </span>
@@ -33434,7 +33434,7 @@ exports[`PluginManager should select plugin on home grids 1`] = `
         >
           My Plugins 
           <span
-            class="text-theme-neutral-700 ml-1"
+            class="ml-1 text-theme-neutral-700"
           >
             8
           </span>
@@ -33446,7 +33446,7 @@ exports[`PluginManager should select plugin on home grids 1`] = `
       data-testid="PluginManager__container--home"
     >
       <div
-        class="flex justify-between items-center"
+        class="flex items-center justify-between"
       >
         <h2>
           Home
@@ -33533,7 +33533,7 @@ exports[`PluginManager should select plugin on home grids 1`] = `
               Featured Plugins
             </h2>
             <span
-              class="text-theme-primary-600 hover:text-theme-primary-500 cursor-pointer"
+              class="cursor-pointer text-theme-primary-600 hover:text-theme-primary-500"
               data-testid="PluginManager__home__featured__view-more"
             >
               View More
@@ -34251,7 +34251,7 @@ exports[`PluginManager should select plugin on home grids 1`] = `
               Top Rated
             </h2>
             <span
-              class="text-theme-primary-600 hover:text-theme-primary-500 cursor-pointer"
+              class="cursor-pointer text-theme-primary-600 hover:text-theme-primary-500"
               data-testid="PluginManager__home__top-rated__view-more"
             >
               View More
