@@ -3,8 +3,8 @@ import { Form } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { ListDivided } from "app/components/ListDivided";
 import { Toggle } from "app/components/Toggle";
-import { PeerList } from "domains/settings/components/PeerList";
-import { peers } from "domains/settings/data";
+import { PeerList } from "domains/setting/components/PeerList";
+import { peers } from "domains/setting/data";
 import React from "react";
 
 type PeerProps = {
