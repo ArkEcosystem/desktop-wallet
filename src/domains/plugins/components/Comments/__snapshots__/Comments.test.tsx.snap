@@ -50,23 +50,23 @@ exports[`Comments should handle sortBy properly 1`] = `
     </div>
     <div>
       <div
-        class="flex flex-col w-2/3 mt-5 text-sm"
+        class="flex flex-col mt-5 text-sm"
       >
         <div
-          class="w-1/2"
+          class="w-2/4"
         >
           <div
-            class="grid grid-cols-3 divide-x divide-theme-neutral-400"
+            class="flex items-center divide-x space-x-3 divide-theme-neutral-400"
           >
             <div>
               <span
-                class="text-base"
+                class="text-base font-semibold"
               >
                 Rok Cernec
               </span>
             </div>
             <div
-              class="flex items-center justify-center text-theme-warning-300"
+              class="flex items-center pl-3 text-theme-warning-300"
             >
               <div
                 class="sc-AxjAm iepfoc"
@@ -78,7 +78,7 @@ exports[`Comments should handle sortBy properly 1`] = `
                 </svg>
               </div>
               <span
-                class="flex px-3 text-theme-neutral-600"
+                class="flex ml-1 text-theme-neutral-600"
               >
                 4.6
               </span>
@@ -95,7 +95,7 @@ exports[`Comments should handle sortBy properly 1`] = `
           </div>
         </div>
         <div
-          class="mt-2"
+          class="w-11/12 mt-2"
         >
           <p
             class="text-theme-neutral-600"
@@ -105,23 +105,23 @@ exports[`Comments should handle sortBy properly 1`] = `
         </div>
       </div>
       <div
-        class="flex flex-col w-2/3 mt-5 text-sm"
+        class="flex flex-col mt-5 text-sm"
       >
         <div
-          class="w-1/2"
+          class="w-2/4"
         >
           <div
-            class="grid grid-cols-3 divide-x divide-theme-neutral-400"
+            class="flex items-center divide-x space-x-3 divide-theme-neutral-400"
           >
             <div>
               <span
-                class="text-base"
+                class="text-base font-semibold"
               >
                 Gerard Blezer
               </span>
             </div>
             <div
-              class="flex items-center justify-center text-theme-warning-300"
+              class="flex items-center pl-3 text-theme-warning-300"
             >
               <div
                 class="sc-AxjAm iepfoc"
@@ -133,7 +133,7 @@ exports[`Comments should handle sortBy properly 1`] = `
                 </svg>
               </div>
               <span
-                class="flex px-3 text-theme-neutral-600"
+                class="flex ml-1 text-theme-neutral-600"
               >
                 4.6
               </span>
@@ -150,7 +150,7 @@ exports[`Comments should handle sortBy properly 1`] = `
           </div>
         </div>
         <div
-          class="mt-2"
+          class="w-11/12 mt-2"
         >
           <p
             class="text-theme-neutral-600"
@@ -176,7 +176,7 @@ exports[`Comments should handle sortBy properly 1`] = `
                 class="grid grid-cols-2 divide-x"
               >
                 <span
-                  class="px-3 text-theme-neutral-900"
+                  class="px-3 font-semibold text-theme-neutral-900"
                 >
                   Developer response
                 </span>
@@ -291,23 +291,23 @@ exports[`Comments should render properly 1`] = `
     </div>
     <div>
       <div
-        class="flex flex-col w-2/3 mt-5 text-sm"
+        class="flex flex-col mt-5 text-sm"
       >
         <div
-          class="w-1/2"
+          class="w-2/4"
         >
           <div
-            class="grid grid-cols-3 divide-x divide-theme-neutral-400"
+            class="flex items-center divide-x space-x-3 divide-theme-neutral-400"
           >
             <div>
               <span
-                class="text-base"
+                class="text-base font-semibold"
               >
                 Rok Cernec
               </span>
             </div>
             <div
-              class="flex items-center justify-center text-theme-warning-300"
+              class="flex items-center pl-3 text-theme-warning-300"
             >
               <div
                 class="sc-AxjAm iepfoc"
@@ -319,7 +319,7 @@ exports[`Comments should render properly 1`] = `
                 </svg>
               </div>
               <span
-                class="flex px-3 text-theme-neutral-600"
+                class="flex ml-1 text-theme-neutral-600"
               >
                 4.6
               </span>
@@ -336,7 +336,7 @@ exports[`Comments should render properly 1`] = `
           </div>
         </div>
         <div
-          class="mt-2"
+          class="w-11/12 mt-2"
         >
           <p
             class="text-theme-neutral-600"
@@ -346,23 +346,23 @@ exports[`Comments should render properly 1`] = `
         </div>
       </div>
       <div
-        class="flex flex-col w-2/3 mt-5 text-sm"
+        class="flex flex-col mt-5 text-sm"
       >
         <div
-          class="w-1/2"
+          class="w-2/4"
         >
           <div
-            class="grid grid-cols-3 divide-x divide-theme-neutral-400"
+            class="flex items-center divide-x space-x-3 divide-theme-neutral-400"
           >
             <div>
               <span
-                class="text-base"
+                class="text-base font-semibold"
               >
                 Gerard Blezer
               </span>
             </div>
             <div
-              class="flex items-center justify-center text-theme-warning-300"
+              class="flex items-center pl-3 text-theme-warning-300"
             >
               <div
                 class="sc-AxjAm iepfoc"
@@ -374,7 +374,7 @@ exports[`Comments should render properly 1`] = `
                 </svg>
               </div>
               <span
-                class="flex px-3 text-theme-neutral-600"
+                class="flex ml-1 text-theme-neutral-600"
               >
                 4.6
               </span>
@@ -391,7 +391,7 @@ exports[`Comments should render properly 1`] = `
           </div>
         </div>
         <div
-          class="mt-2"
+          class="w-11/12 mt-2"
         >
           <p
             class="text-theme-neutral-600"
@@ -417,7 +417,7 @@ exports[`Comments should render properly 1`] = `
                 class="grid grid-cols-2 divide-x"
               >
                 <span
-                  class="px-3 text-theme-neutral-900"
+                  class="px-3 font-semibold text-theme-neutral-900"
                 >
                   Developer response
                 </span>
