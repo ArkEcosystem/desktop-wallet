@@ -1,4 +1,4 @@
-import { Divider } from "app/components//Divider";
+
 import { Badge } from "app/components/Badge";
 import { SelectNetwork } from "app/components/SelectNetwork";
 import { Toggle } from "app/components/Toggle";
@@ -44,33 +44,36 @@ export const FilterWallets = ({
 
 	return (
 		<div className="text-left">
-			<div className="mb-4">
-				<div className="mb-1 text-sm text-theme-neutral-800">Filter Network</div>
-				<div className="text-xs text-theme-neutral-500">Select the types of networks</div>
+			<div className="mb-8">
+				<div className="mb-3 font-semibold text-theme-neutral-700">Filter Network</div>
+				<div className="text-sm text-theme-neutral-500">Select the types of networks</div>
 			</div>
 			<SelectNetwork networks={networks} onChange={onNetworkChange} onViewAll={onViewAllNetworks} />
-			<Divider />
+			<div className="border-t border-1 border-theme-neutral-200 border-dotted my-8" />
 
-			<div className="flex flex-row mb-4">
+			<div className="flex flex-row mb-8">
 				<div className="w-4/5">
-					<div className="mb-1 text-sm text-theme-neutral-800">Your Wallets</div>
-					<div className="text-xs text-theme-neutral-500">Select the display of your wallets</div>
+					<div className="mb-3 font-semibold text-theme-neutral-700">Your Wallets</div>
+					<div className="text-sm text-theme-neutral-500">Select the display of your wallets</div>
 				</div>
 				<div className="w-1/5 text-right">
 					<div
 						data-testid="filter-wallets__wallets"
-						className="relative h-6 mt-3 mr-5 text-sm cursor-pointer text-theme-neutral-800"
+						className="relative h-6 mt-3 mr-5 cursor-pointer text-theme-neutral-700"
 						onClick={onWalletClick}
 					>
-						All <Badge icon="ChevronDown" className="top-0 -right-6" />
+						<span className="font-semibold inline-block pr-1">All</span>
+						<Badge icon="ChevronDown" className="top-1 -right-6" iconWidth={19} iconHeight={19} />
 					</div>
 				</div>
 			</div>
-			<Divider />
-			<div className="flex flex-row mb-4">
+
+			<div className="border-t border-1 border-theme-neutral-200 border-dotted my-8" />
+
+			<div className="flex flex-row mb-6">
 				<div className="w-4/5">
-					<div className="mb-1 text-sm text-theme-neutral-800">Portfolio Chart</div>
-					<div className="text-xs text-theme-neutral-500">You an hide this unit if you like</div>
+					<div className="mb-3 font-semibold text-theme-neutral-700">Portfolio Chart</div>
+					<div className="text-sm text-theme-neutral-500">You an hide this unit if you like</div>
 				</div>
 				<div className="w-1/5 pt-3 text-right">
 					<Toggle
@@ -80,11 +83,11 @@ export const FilterWallets = ({
 					/>
 				</div>
 			</div>
-			<Divider />
+
 			<div className="flex flex-row mb-4">
 				<div className="w-4/5">
-					<div className="mb-1 text-sm text-theme-neutral-800">Transaction History</div>
-					<div className="text-xs text-theme-neutral-500">You can hide this unit if you like</div>
+					<div className="mb-3 font-semibold text-theme-neutral-700">Transaction History</div>
+					<div className="text-sm text-theme-neutral-500">You can hide this unit if you like</div>
 				</div>
 				<div className="w-1/5 pt-3 text-right">
 					<Toggle
