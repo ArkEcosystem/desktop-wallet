@@ -25,4 +25,25 @@ describe("PluginHeader", () => {
 		expect(getByText("4.2 Mb")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
+
+	it("should render as installed", () => {
+		const { asFragment, getByRole, getByTestId } = render(
+			<PluginHeader
+				author="ARK Ecosystem"
+				category="Utility"
+				url="github.com"
+				rating="4.6"
+				version="1.3.8"
+				size="4.2"
+				isInstalled
+			/>,
+		);
+
+		expect(getByRole("img")).toBeTruthy();
+		expect(getByTestId("PluginHeader__button--open")).toHaveTextContent("Open");
+		expect(getByTestId("PluginHeader__button--update")).toBeTruthy();
+		expect(getByTestId("PluginHeader__button--uninstall")).toBeTruthy();
+
+		expect(asFragment()).toMatchSnapshot();
+	});
 });
