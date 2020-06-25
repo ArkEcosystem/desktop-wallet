@@ -1,5 +1,6 @@
 import { exchange } from "domains/exchange/images";
 import { offline } from "domains/offline/images";
+import { plugin } from "domains/plugins/images";
 import { profile } from "domains/profile/images";
 import { transaction } from "domains/transaction/images";
 import { wallet } from "domains/wallets/images";
@@ -16,6 +17,7 @@ export const images = {
 	},
 	exchange,
 	offline,
+	plugin,
 	profile,
 	transaction,
 	wallet,
