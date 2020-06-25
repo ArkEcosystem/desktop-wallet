@@ -5,9 +5,10 @@ type PluginGridProps = {
 	onDelete: any;
 	onSelect: any;
 	plugins: any[];
+	className?: string;
 };
 
-export const PluginGrid = ({ onDelete, onSelect, plugins }: PluginGridProps) => {
+export const PluginGrid = ({ className, onDelete, onSelect, plugins }: PluginGridProps) => {
 	const entries = [];
 
 	for (const plugin of plugins) {
@@ -21,5 +22,5 @@ export const PluginGrid = ({ onDelete, onSelect, plugins }: PluginGridProps) => 
 		);
 	}
 
-	return <div className="grid grid-cols-4 gap-5">{entries}</div>;
+	return <div className={`grid grid-cols-4 gap-5 ${className}`}>{entries}</div>;
 };

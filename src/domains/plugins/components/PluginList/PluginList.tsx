@@ -7,9 +7,10 @@ type PluginListProps = {
 	onDelete: any;
 	onInstall: any;
 	plugins: any[];
+	className?: string;
 };
 
-export const PluginList = ({ onDelete, onInstall, plugins }: PluginListProps) => {
+export const PluginList = ({ className, onDelete, onInstall, plugins }: PluginListProps) => {
 	const { t } = useTranslation();
 
 	const columns = [
@@ -53,8 +54,10 @@ export const PluginList = ({ onDelete, onInstall, plugins }: PluginListProps) =>
 	];
 
 	return (
-		<Table columns={columns} data={plugins}>
-			{(plugin: any) => <PluginListItem plugin={plugin} onInstall={onInstall} onDelete={onDelete} />}
-		</Table>
+		<div className={className}>
+			<Table columns={columns} data={plugins}>
+				{(plugin: any) => <PluginListItem plugin={plugin} onInstall={onInstall} onDelete={onDelete} />}
+			</Table>
+		</div>
 	);
 };
