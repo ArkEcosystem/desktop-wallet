@@ -67,7 +67,7 @@ export const PluginList = ({
 		},
 	];
 
-	const pagePlugins = chunk(plugins, itemsPerPage || 10)[currentPage - 1];
+	const pagePlugins = chunk(plugins, itemsPerPage!)[currentPage - 1];
 
 	return (
 		<div data-testid="PluginList" className={className}>

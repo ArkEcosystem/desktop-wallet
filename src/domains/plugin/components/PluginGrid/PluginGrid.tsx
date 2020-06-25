@@ -34,7 +34,7 @@ export const PluginGrid = ({
 		);
 	}
 
-	const pageEntries = chunk(entries, itemsPerPage || 20)[currentPage - 1];
+	const pageEntries = chunk(entries, itemsPerPage!)[currentPage - 1];
 
 	return (
 		<div data-testid="PluginGrid">
