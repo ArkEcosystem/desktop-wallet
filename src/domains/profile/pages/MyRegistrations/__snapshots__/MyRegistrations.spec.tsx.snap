@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Welcome should render empty state 1`] = `
+<DocumentFragment>
+  <section
+    class="bg-theme-neutral-200"
+  >
+    <div
+      class="px-10 py-14 bg-theme-background"
+    >
+      <div
+        class="flex justify-between"
+      >
+        <div
+          class="flex flex-col"
+        >
+          <span
+            class="font-semibold text-3xl"
+          >
+            My Registrations
+          </span>
+          <span
+            class="text-theme-neutral-600"
+          >
+            You can register a Delagate, Business and Bridgechain.
+          </span>
+        </div>
+        <button
+          class="sc-AxjAm ddQVWI self-end"
+          color="primary"
+          type="button"
+        >
+          Register
+        </button>
+      </div>
+    </div>
+    <div
+      class="flex flex-col justify-center items-center mt-4 px-10 py-20 bg-theme-background"
+      data-testid="my-registrations__empty-state"
+    >
+      <svg>
+        register.svg
+      </svg>
+      <span
+        class="mt-7 text-sm text-theme-neutral-600"
+      >
+        Register Business, Bridgechain and Delegate in the most convenient way.
+      </span>
+    </div>
+  </section>
+</DocumentFragment>
+`;
