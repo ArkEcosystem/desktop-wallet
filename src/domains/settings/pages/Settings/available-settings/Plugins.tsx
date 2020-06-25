@@ -20,11 +20,11 @@ export const Plugins = ({ formConfig, onSubmit }: PluginsProps) => {
 			content: (
 				<>
 					<div className="flex flex-row justify-between">
-						<span className="w-3/4 text-sm text-theme-neutral-dark">
+						<span className="w-3/4 -mt-4 text-sm text-theme-neutral-dark">
 							This list is selected safely by ARK Ecosystem. You can view it and add to the list of
 							plugins that you find suspicious.
 						</span>
-						<div className="-mt-2">
+						<div className="-mt-11">
 							<Toggle />
 						</div>
 					</div>
@@ -45,15 +45,15 @@ export const Plugins = ({ formConfig, onSubmit }: PluginsProps) => {
 			labelClass: "text-xl font-bold text-theme-neutral-dark",
 			content: (
 				<>
-					<div className="flex flex-row justify-between">
-						<span className="w-3/4 text-sm text-theme-neutral-dark">
+					<div className="flex flex-row justify-between mb-5">
+						<span className="w-3/4 -mt-4 text-sm text-theme-neutral-dark">
 							Turn this feature on, you can upload plugins to your wallet from third-party sources.
 						</span>
-						<div className="-mt-2">
+						<div className="-mt-11">
 							<Toggle />
 						</div>
 					</div>
-					<FormField name="load-plugins" className="mt-5">
+					<FormField name="load-plugins">
 						<FormLabel>Load plugins from</FormLabel>
 						<Select>
 							<option value="">Select</option>

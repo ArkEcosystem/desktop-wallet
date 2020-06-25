@@ -1776,12 +1776,12 @@ exports[`Settings should render plugin settings 1`] = `
                 class="flex flex-row justify-between"
               >
                 <span
-                  class="w-3/4 text-sm text-theme-neutral-dark"
+                  class="w-3/4 -mt-4 text-sm text-theme-neutral-dark"
                 >
                   This list is selected safely by ARK Ecosystem. You can view it and add to the list of plugins that you find suspicious.
                 </span>
                 <div
-                  class="-mt-2"
+                  class="-mt-11"
                 >
                   <label>
                     <input
@@ -1842,15 +1842,15 @@ exports[`Settings should render plugin settings 1`] = `
               data-testid="list-divided-item__content"
             >
               <div
-                class="flex flex-row justify-between"
+                class="flex flex-row justify-between mb-5"
               >
                 <span
-                  class="w-3/4 text-sm text-theme-neutral-dark"
+                  class="w-3/4 -mt-4 text-sm text-theme-neutral-dark"
                 >
                   Turn this feature on, you can upload plugins to your wallet from third-party sources.
                 </span>
                 <div
-                  class="-mt-2"
+                  class="-mt-11"
                 >
                   <label>
                     <input
@@ -1868,7 +1868,7 @@ exports[`Settings should render plugin settings 1`] = `
                 </div>
               </div>
               <fieldset
-                class="sc-AxhCb ckQmOL mt-5"
+                class="sc-AxhCb ckQmOL flex flex-col space-y-2"
               >
                 <label
                   class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
