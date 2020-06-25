@@ -55,7 +55,7 @@ export const Peer = ({ formConfig, onSubmit }: PeerProps) => {
 				<ListDivided items={peerItems} />
 				<PeerList peers={peers} />
 				<Divider dashed />
-				<div className="flex justify-end">
+				<div className="flex justify-end w-full pt-2">
 					<Button>Save</Button>
 				</div>
 			</Form>
