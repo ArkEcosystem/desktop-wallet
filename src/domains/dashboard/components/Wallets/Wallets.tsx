@@ -30,7 +30,7 @@ export const Wallets = ({
 	const [walletsViewType, setWalletsViewType] = useState(viewType);
 
 	const walletSliderOptions = {
-		slideHeight: 210, // Wallet card height, including margin-bottom
+		slideHeight: 220, // Wallet card height, including margin-bottom
 		slidesPerView: 4,
 		slidesPerColumn: 2,
 
@@ -71,9 +71,9 @@ export const Wallets = ({
 	};
 
 	return (
-		<div className="p-10 bg-theme-background">
-			<div className="flex w-full pb-4">
-				<h2 className="w-2/4 mt-1">{title}</h2>
+		<div>
+			<div className="flex w-full pb-8">
+				<div className="w-2/4 -mt-1 text-3xl font-bold">{title}</div>
 				<div className="w-2/4 text-right">
 					<WalletsControls
 						onCreateWallet={onCreateWallet}

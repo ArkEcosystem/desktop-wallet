@@ -3,6 +3,7 @@ import { PercentageBar } from "app/components/PercentageBar";
 import { Transactions } from "domains/dashboard/components/Transactions";
 import { Wallets } from "domains/dashboard/components/Wallets";
 import React, { useState } from "react";
+import tw, { styled } from "twin.macro";
 
 type DashboardProps = {
 	balances?: any;
@@ -11,6 +12,10 @@ type DashboardProps = {
 	networks?: any;
 	portfolioPercentages?: any[];
 };
+
+const Section = styled.div`
+	${tw`bg-white py-16 px-13 mt-5`}
+`;
 
 export const Dashboard = ({ transactions, wallets, networks, portfolioPercentages, balances }: DashboardProps) => {
 	const [showTransactions, setShowTransactions] = useState(true);
@@ -43,27 +48,23 @@ export const Dashboard = ({ transactions, wallets, networks, portfolioPercentage
 	];
 
 	return (
-		<div className="-m-5 bg-theme-neutral-100">
+		<div className="-m-5 -mt-6 pt-1 bg-theme-neutral-100">
 			{showPortfolio && balances && (
-				<div className="mb-6 bg-white p-11">
-					<h1>Portfolio Chart</h1>
-					<div className="pb-20">
-						<LineChart height={260} period="22 Jun - 28 Jun" data={balances} lines={chartLines} />
-					</div>
-					<div className="mt-6 mb-4 border-b border-theme-neutral-100" />
-					<div>
-						<PercentageBar title="Total portfolio" data={portfolioPercentages} />
-					</div>
-				</div>
+				<Section>
+					<div className="-mb-2 text-3xl font-bold">Portfolio Chart</div>
+					<LineChart height={260} period="22 Jun - 28 Jun" data={balances} lines={chartLines} />
+					<div className="pt-6 mb-2 border-b border-dotted border-theme-neutral-200" />
+					<PercentageBar title="Total portfolio" data={portfolioPercentages} />
+				</Section>
 			)}
 
-			<div className="bg-white">
+			<Section>
 				<Wallets viewType="grid" title="Wallets" wallets={wallets} filterProperties={filterProperties} />
-			</div>
+			</Section>
 			{showTransactions && (
-				<div className="pt-1 mt-5 bg-white" data-testid="dashboard__transactions-view">
+				<Section data-testid="dashboard__transactions-view">
 					<Transactions transactions={transactions} />
-				</div>
+				</Section>
 			)}
 		</div>
 	);

@@ -11,8 +11,8 @@ type TransactionsProps = {
 
 export const Transactions = ({ transactions, columns, title }: TransactionsProps) => {
 	return (
-		<div className="p-10 mt-10 bg-theme-background">
-			<h2 className="pb-4">{title}</h2>
+		<div className="bg-white">
+			<div className="pb-8 font-bold text-3xl">{title}</div>
 			<Table columns={columns} data={transactions}>
 				{(rowData: any) => <TransactionListItem {...rowData} />}
 			</Table>
