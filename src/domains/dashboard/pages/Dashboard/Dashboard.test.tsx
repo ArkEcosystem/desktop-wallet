@@ -1,7 +1,7 @@
 import { act, fireEvent, render } from "@testing-library/react";
 import React from "react";
 
-import { portfolioPercentages,transactions, wallets } from "../../data";
+import { balances, portfolioPercentages, transactions, wallets } from "../../data";
 import { Dashboard } from "./Dashboard";
 
 describe("Dashboard", () => {
@@ -28,5 +28,26 @@ describe("Dashboard", () => {
 	it("should render portfolio percentage bar", () => {
 		const { container } = render(<Dashboard portfolioPercentages={portfolioPercentages} />);
 		expect(container).toMatchSnapshot();
+	});
+
+	it("should render portfolio chart", () => {
+		const { container } = render(<Dashboard balances={balances} portfolioPercentages={portfolioPercentages} />);
+		expect(container).toMatchSnapshot();
+	});
+
+	it("should hide portfolio view", () => {
+		const { getByTestId, getAllByTestId } = render(
+			<Dashboard balances={balances} wallets={wallets} transactions={transactions} />,
+		);
+		const filterNetwork = getAllByTestId("dropdown__toggle");
+
+		act(() => {
+			fireEvent.click(filterNetwork[0]);
+		});
+
+		const toggle = getByTestId("filter-wallets_toggle--portfolio");
+		act(() => {
+			fireEvent.click(toggle);
+		});
 	});
 });

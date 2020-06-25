@@ -3,31 +3,10 @@
 exports[`Dashboard should render 1`] = `
 <div>
   <div
-    class="-m-5"
+    class="-m-5 bg-theme-neutral-100"
   >
     <div
-      class="m-11"
-    >
-      <div>
-        <div
-          class="flex"
-        >
-          <div
-            class="py-4 font-bold text-theme-neutral-800"
-          >
-            Total portfolio
-          </div>
-          <div
-            class="flex justify-end flex-1"
-          />
-        </div>
-        <div
-          class="flex"
-        />
-      </div>
-    </div>
-    <div
-      class="bg-theme-neutral-100"
+      class="bg-white"
     >
       <div
         class="p-10 bg-theme-background"
@@ -49,7 +28,7 @@ exports[`Dashboard should render 1`] = `
                 data-testid="controls__grid"
               >
                 <div
-                  class="sc-AxirZ eEbZjj"
+                  class="sc-AxjAm buCJuk"
                   height="20"
                   width="20"
                 >
@@ -63,7 +42,7 @@ exports[`Dashboard should render 1`] = `
                 data-testid="controls__list"
               >
                 <div
-                  class="sc-AxirZ eEbZjj"
+                  class="sc-AxjAm buCJuk"
                   height="20"
                   width="20"
                 >
@@ -73,7 +52,7 @@ exports[`Dashboard should render 1`] = `
                 </div>
               </div>
               <div
-                class="sc-Axmtr fYnSXV"
+                class="sc-AxmLO exVlvs"
                 type="vertical"
               />
               <div
@@ -87,7 +66,7 @@ exports[`Dashboard should render 1`] = `
                     class="float-right outline-none focus:outline-none"
                   >
                     <div
-                      class="sc-AxirZ eEbZjj"
+                      class="sc-AxjAm buCJuk"
                       height="20"
                       width="20"
                     >
@@ -99,11 +78,11 @@ exports[`Dashboard should render 1`] = `
                 </div>
               </div>
               <div
-                class="sc-Axmtr fYnSXV"
+                class="sc-AxmLO exVlvs"
                 type="vertical"
               />
               <button
-                class="sc-AxjAm ddQVWI ml-8 mr-3"
+                class="sc-AxiKw wFYj ml-8 mr-3"
                 color="primary"
                 type="button"
               >
@@ -111,7 +90,7 @@ exports[`Dashboard should render 1`] = `
                   class="flex items-center justify-center mr-2 text-sm align-middle"
                 >
                   <div
-                    class="sc-AxirZ igJAf"
+                    class="sc-AxjAm bCAvJU"
                     height="1em"
                     width="10"
                   >
@@ -127,7 +106,7 @@ exports[`Dashboard should render 1`] = `
                 </div>
               </button>
               <button
-                class="sc-AxjAm ddJBbC"
+                class="sc-AxiKw gFzSt"
                 color="primary"
                 type="button"
               >
@@ -135,7 +114,7 @@ exports[`Dashboard should render 1`] = `
                   class="flex items-center justify-center mr-2 text-sm align-middle"
                 >
                   <div
-                    class="sc-AxirZ iQaTP"
+                    class="sc-AxjAm cpczEI"
                     height="1em"
                     width="1em"
                   >
@@ -175,7 +154,7 @@ exports[`Dashboard should render 1`] = `
                     class="w-64 inline-block undefined"
                   >
                     <div
-                      class="sc-AxgMl ctFYhG"
+                      class="sc-AxheI euRuZs"
                     >
                       <div
                         class="px-1 py-2"
@@ -184,10 +163,10 @@ exports[`Dashboard should render 1`] = `
                           class="mt-1"
                         >
                           <div
-                            class="sc-AxhCb fwVCao -mr-2 border-theme-primary-contrast"
+                            class="sc-AxhUy fHeTTV -mr-2 border-theme-primary-contrast"
                           />
                           <div
-                            class="sc-AxhCb fwVCao border-theme-primary-contrast"
+                            class="sc-AxhUy fHeTTV border-theme-primary-contrast"
                           />
                         </div>
                         <div
@@ -212,7 +191,7 @@ exports[`Dashboard should render 1`] = `
                     class="w-64 inline-block undefined"
                   >
                     <div
-                      class="sc-AxgMl ctFYhG"
+                      class="sc-AxheI euRuZs"
                     >
                       <div
                         class="px-1 py-2"
@@ -221,10 +200,10 @@ exports[`Dashboard should render 1`] = `
                           class="mt-1"
                         >
                           <div
-                            class="sc-AxhCb fwVCao -mr-2 border-theme-primary-contrast"
+                            class="sc-AxhUy fHeTTV -mr-2 border-theme-primary-contrast"
                           />
                           <div
-                            class="sc-AxhCb fwVCao border-theme-primary-contrast"
+                            class="sc-AxhUy fHeTTV border-theme-primary-contrast"
                           />
                         </div>
                         <div
@@ -249,7 +228,7 @@ exports[`Dashboard should render 1`] = `
                     class="w-64 inline-block undefined"
                   >
                     <div
-                      class="sc-AxgMl ctFYhG"
+                      class="sc-AxheI euRuZs"
                     >
                       <div
                         class="px-1 py-2"
@@ -258,10 +237,10 @@ exports[`Dashboard should render 1`] = `
                           class="mt-1"
                         >
                           <div
-                            class="sc-AxhCb fwVCao -mr-2 border-theme-primary-contrast"
+                            class="sc-AxhUy fHeTTV -mr-2 border-theme-primary-contrast"
                           />
                           <div
-                            class="sc-AxhCb fwVCao border-theme-primary-contrast"
+                            class="sc-AxhUy fHeTTV border-theme-primary-contrast"
                           />
                         </div>
                         <div
@@ -286,7 +265,7 @@ exports[`Dashboard should render 1`] = `
                     class="w-64 inline-block undefined"
                   >
                     <div
-                      class="sc-AxgMl ctFYhG"
+                      class="sc-AxheI euRuZs"
                     >
                       <div
                         class="px-1 py-2"
@@ -295,10 +274,10 @@ exports[`Dashboard should render 1`] = `
                           class="mt-1"
                         >
                           <div
-                            class="sc-AxhCb fwVCao -mr-2 border-theme-primary-contrast"
+                            class="sc-AxhUy fHeTTV -mr-2 border-theme-primary-contrast"
                           />
                           <div
-                            class="sc-AxhCb fwVCao border-theme-primary-contrast"
+                            class="sc-AxhUy fHeTTV border-theme-primary-contrast"
                           />
                         </div>
                         <div
@@ -328,143 +307,807 @@ exports[`Dashboard should render 1`] = `
           </div>
         </div>
       </div>
+    </div>
+    <div
+      class="pt-1 mt-5 bg-white"
+      data-testid="dashboard__transactions-view"
+    >
       <div
-        data-testid="dashboard__transactions-view"
+        class="p-10 mt-10 bg-theme-background"
+      >
+        <h2
+          class="pb-4"
+        >
+          Transactions History
+        </h2>
+        <div
+          class="sc-AxhCb gfJeeC"
+          role="table"
+        >
+          <table
+            class="table-auto"
+          >
+            <thead>
+              <tr
+                role="row"
+              >
+                <th
+                  class="text-xs text-left select-none text-theme-neutral-400"
+                  colspan="1"
+                  data-testid="table__th--0"
+                  role="columnheader"
+                >
+                  <div
+                    class="flex flex-inline align-top  undefined"
+                  >
+                    <div
+                      class="mr-1"
+                    >
+                      Date
+                    </div>
+                    <div
+                      class="mt-1 text-theme-color-neutral-500"
+                      data-testid="table__Sort"
+                    />
+                  </div>
+                </th>
+                <th
+                  class="text-xs text-left select-none text-theme-neutral-400"
+                  colspan="1"
+                  data-testid="table__th--1"
+                  role="columnheader"
+                >
+                  <div
+                    class="flex flex-inline align-top  invisible"
+                  >
+                    <div
+                      class="mr-1"
+                    >
+                      Type
+                    </div>
+                    <div
+                      class="mt-1 text-theme-color-neutral-500"
+                      data-testid="table__Sort"
+                    />
+                  </div>
+                </th>
+                <th
+                  class="text-xs text-left select-none text-theme-neutral-400"
+                  colspan="1"
+                  data-testid="table__th--2"
+                  role="columnheader"
+                >
+                  <div
+                    class="flex flex-inline align-top  undefined"
+                  >
+                    <div
+                      class="mr-1"
+                    >
+                      Wallet Address
+                    </div>
+                    <div
+                      class="mt-1 text-theme-color-neutral-500"
+                      data-testid="table__Sort"
+                    />
+                  </div>
+                </th>
+                <th
+                  class="text-xs text-left select-none text-theme-neutral-400"
+                  colspan="1"
+                  data-testid="table__th--3"
+                  role="columnheader"
+                >
+                  <div
+                    class="flex flex-inline align-top  float-right"
+                  >
+                    <div
+                      class="mr-1"
+                    >
+                      Amount
+                    </div>
+                    <div
+                      class="mt-1 text-theme-color-neutral-500"
+                      data-testid="table__Sort"
+                    />
+                  </div>
+                </th>
+                <th
+                  class="text-xs text-left select-none text-theme-neutral-400"
+                  colspan="1"
+                  data-testid="table__th--4"
+                  role="columnheader"
+                >
+                  <div
+                    class="flex flex-inline align-top  float-right"
+                  >
+                    <div
+                      class="mr-1"
+                    >
+                      Fiat Value
+                    </div>
+                    <div
+                      class="mt-1 text-theme-color-neutral-500"
+                      data-testid="table__Sort"
+                    />
+                  </div>
+                </th>
+              </tr>
+            </thead>
+            <tbody
+              role="rowgroup"
+            />
+          </table>
+        </div>
+        <button
+          class="sc-AxiKw gFzSt w-full mt-10 mb-5"
+          color="primary"
+          type="button"
+        >
+          See more
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Dashboard should render portfolio chart 1`] = `
+<div>
+  <div
+    class="-m-5 bg-theme-neutral-100"
+  >
+    <div
+      class="mb-6 bg-white p-11"
+    >
+      <h1>
+        Portfolio Chart
+      </h1>
+      <div
+        class="pb-20"
       >
         <div
-          class="p-10 mt-10 bg-theme-background"
+          class="recharts-responsive-container"
+          id="undefined"
+          style="width: 100%; height: 260px;"
+        >
+          <div
+            class="sc-AxirZ fwlMBT text-theme-neutral-300"
+            data-testid="line-chart-wrapper"
+          >
+            <div>
+              <div
+                class="flex"
+              >
+                <div
+                  class="py-4 text-sm font-semibold cursor-pointer text-theme-neutral-700"
+                >
+                  <div
+                    class="flex"
+                  >
+                    <div
+                      class="my-auto"
+                    >
+                      Period: 
+                      22 Jun - 28 Jun
+                    </div>
+                    <div
+                      class="my-auto"
+                    >
+                      <div
+                        class="sc-AxjAm cpczEI"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          chevron-down.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="flex justify-end flex-1"
+                >
+                  <div
+                    class="my-auto ml-3 text-sm text-theme-neutral-600"
+                  >
+                    28 Jun, 2020
+                  </div>
+                  <div
+                    class="p-4 pr-0 ml-3 text-right w-36"
+                  >
+                    <div
+                      class="mr-2 mb-1 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-warning-600"
+                    />
+                    <div
+                      class="inline-block text-sm font-semibold text-theme-neutral-700"
+                    >
+                      <span>
+                        2.16
+                         - 
+                      </span>
+                      BTC
+                    </div>
+                  </div>
+                  <div
+                    class="p-4 pr-0 ml-3 text-right w-36"
+                  >
+                    <div
+                      class="mr-2 mb-1 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-success-600"
+                    />
+                    <div
+                      class="inline-block text-sm font-semibold text-theme-neutral-700"
+                    >
+                      <span>
+                        8,000
+                         - 
+                      </span>
+                      USD
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="active-dot"
+            >
+              <svg
+                class="text-theme-undefined"
+                fill="currentColor"
+                height="50"
+                stroke="currentColor"
+                width="50"
+                x="-25"
+                y="-25"
+              >
+                chart-active-dot.svg
+              </svg>
+            </div>
+          </div>
+          <div />
+        </div>
+      </div>
+      <div
+        class="mt-6 mb-4 border-b border-theme-neutral-100"
+      />
+      <div>
+        <div>
+          <div
+            class="flex"
+          >
+            <div
+              class="py-4 font-bold text-theme-neutral-800"
+            >
+              Total portfolio
+            </div>
+            <div
+              class="flex justify-end flex-1"
+            >
+              <div
+                class="p-4 ml-3"
+              >
+                <div
+                  class="mr-2 mb-1 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-danger-500"
+                />
+                <div
+                  class="inline-block text-sm font-semibold text-theme-neutral-700"
+                >
+                  ARK
+                   - 
+                  40
+                  %
+                </div>
+              </div>
+              <div
+                class="p-4 ml-3"
+              >
+                <div
+                  class="mr-2 mb-1 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-warning-500"
+                />
+                <div
+                  class="inline-block text-sm font-semibold text-theme-neutral-700"
+                >
+                  BTC
+                   - 
+                  25
+                  %
+                </div>
+              </div>
+              <div
+                class="p-4 ml-3"
+              >
+                <div
+                  class="mr-2 mb-1 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-primary-500"
+                />
+                <div
+                  class="inline-block text-sm font-semibold text-theme-neutral-700"
+                >
+                  ETH
+                   - 
+                  20
+                  %
+                </div>
+              </div>
+              <div
+                class="p-4 ml-3"
+              >
+                <div
+                  class="mr-2 mb-1 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-neutral-400"
+                />
+                <div
+                  class="inline-block text-sm font-semibold text-theme-neutral-700"
+                >
+                  Other
+                   - 
+                  15
+                  %
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="flex"
+          >
+            <div
+              class="h-1 -ml-1 rounded-sm bg-theme-danger-500"
+              style="width: 40%;"
+            />
+            <div
+              class="h-1 -ml-1 rounded-sm bg-theme-warning-500"
+              style="width: 25%;"
+            />
+            <div
+              class="h-1 -ml-1 rounded-sm bg-theme-primary-500"
+              style="width: 20%;"
+            />
+            <div
+              class="h-1 -ml-1 rounded-sm bg-theme-neutral-400"
+              style="width: 15%;"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="bg-white"
+    >
+      <div
+        class="p-10 bg-theme-background"
+      >
+        <div
+          class="flex w-full pb-4"
         >
           <h2
-            class="pb-4"
+            class="w-2/4 mt-1"
           >
-            Transactions History
+            Wallets
           </h2>
           <div
-            class="sc-AxiKw fOxXaG"
-            role="table"
+            class="w-2/4 text-right"
           >
-            <table
-              class="table-auto"
-            >
-              <thead>
-                <tr
-                  role="row"
+            <div>
+              <div
+                class="mr-4 px-1 inline-block cursor-pointer text-theme-danger-400"
+                data-testid="controls__grid"
+              >
+                <div
+                  class="sc-AxjAm buCJuk"
+                  height="20"
+                  width="20"
                 >
-                  <th
-                    class="text-xs text-left select-none text-theme-neutral-400"
-                    colspan="1"
-                    data-testid="table__th--0"
-                    role="columnheader"
-                  >
-                    <div
-                      class="flex flex-inline align-top  undefined"
-                    >
-                      <div
-                        class="mr-1"
-                      >
-                        Date
-                      </div>
-                      <div
-                        class="mt-1 text-theme-color-neutral-500"
-                        data-testid="table__Sort"
-                      />
-                    </div>
-                  </th>
-                  <th
-                    class="text-xs text-left select-none text-theme-neutral-400"
-                    colspan="1"
-                    data-testid="table__th--1"
-                    role="columnheader"
-                  >
-                    <div
-                      class="flex flex-inline align-top  invisible"
-                    >
-                      <div
-                        class="mr-1"
-                      >
-                        Type
-                      </div>
-                      <div
-                        class="mt-1 text-theme-color-neutral-500"
-                        data-testid="table__Sort"
-                      />
-                    </div>
-                  </th>
-                  <th
-                    class="text-xs text-left select-none text-theme-neutral-400"
-                    colspan="1"
-                    data-testid="table__th--2"
-                    role="columnheader"
-                  >
-                    <div
-                      class="flex flex-inline align-top  undefined"
-                    >
-                      <div
-                        class="mr-1"
-                      >
-                        Wallet Address
-                      </div>
-                      <div
-                        class="mt-1 text-theme-color-neutral-500"
-                        data-testid="table__Sort"
-                      />
-                    </div>
-                  </th>
-                  <th
-                    class="text-xs text-left select-none text-theme-neutral-400"
-                    colspan="1"
-                    data-testid="table__th--3"
-                    role="columnheader"
-                  >
-                    <div
-                      class="flex flex-inline align-top  float-right"
-                    >
-                      <div
-                        class="mr-1"
-                      >
-                        Amount
-                      </div>
-                      <div
-                        class="mt-1 text-theme-color-neutral-500"
-                        data-testid="table__Sort"
-                      />
-                    </div>
-                  </th>
-                  <th
-                    class="text-xs text-left select-none text-theme-neutral-400"
-                    colspan="1"
-                    data-testid="table__th--4"
-                    role="columnheader"
-                  >
-                    <div
-                      class="flex flex-inline align-top  float-right"
-                    >
-                      <div
-                        class="mr-1"
-                      >
-                        Fiat Value
-                      </div>
-                      <div
-                        class="mt-1 text-theme-color-neutral-500"
-                        data-testid="table__Sort"
-                      />
-                    </div>
-                  </th>
-                </tr>
-              </thead>
-              <tbody
-                role="rowgroup"
+                  <svg>
+                    grid.svg
+                  </svg>
+                </div>
+              </div>
+              <div
+                class="mr-6 px-1 inline-block cursor-pointer text-theme-primary-400"
+                data-testid="controls__list"
+              >
+                <div
+                  class="sc-AxjAm buCJuk"
+                  height="20"
+                  width="20"
+                >
+                  <svg>
+                    list.svg
+                  </svg>
+                </div>
+              </div>
+              <div
+                class="sc-AxmLO exVlvs"
+                type="vertical"
               />
-            </table>
+              <div
+                class="relative inline-block px-3 text-theme-primary-400"
+              >
+                <div
+                  class="relative"
+                  data-testid="dropdown__toggle"
+                >
+                  <div
+                    class="float-right outline-none focus:outline-none"
+                  >
+                    <div
+                      class="sc-AxjAm buCJuk"
+                      height="20"
+                      width="20"
+                    >
+                      <svg>
+                        filters.svg
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="sc-AxmLO exVlvs"
+                type="vertical"
+              />
+              <button
+                class="sc-AxiKw wFYj ml-8 mr-3"
+                color="primary"
+                type="button"
+              >
+                <div
+                  class="flex items-center justify-center mr-2 text-sm align-middle"
+                >
+                  <div
+                    class="sc-AxjAm bCAvJU"
+                    height="1em"
+                    width="10"
+                  >
+                    <svg>
+                      plus.svg
+                    </svg>
+                  </div>
+                  <span
+                    class="ml-2"
+                  >
+                    Create
+                  </span>
+                </div>
+              </button>
+              <button
+                class="sc-AxiKw gFzSt"
+                color="primary"
+                type="button"
+              >
+                <div
+                  class="flex items-center justify-center mr-2 text-sm align-middle"
+                >
+                  <div
+                    class="sc-AxjAm cpczEI"
+                    height="1em"
+                    width="1em"
+                  >
+                    <svg>
+                      import.svg
+                    </svg>
+                  </div>
+                  <span
+                    class="ml-2"
+                  >
+                    Import
+                  </span>
+                </div>
+              </button>
+            </div>
           </div>
-          <button
-            class="sc-AxjAm ddJBbC w-full mt-10 mb-5"
-            color="primary"
-            type="button"
-          >
-            See more
-          </button>
         </div>
+        <div
+          class="mt-1"
+        >
+          <div
+            class="relative"
+          >
+            <div
+              class="swiper-container swiper-container-initialized swiper-container-horizontal swiper-container-multirow swiper-container-multirow-column"
+              style="height: 273px;"
+            >
+              <div
+                class="h-full swiper-wrapper "
+                style="webkit-transition-duration: 0ms; transition-duration: 0ms; webkit-transform: translate3d(NaNpx, 0px, 0px); transform: translate3d(NaNpx, 0px, 0px);"
+              >
+                <div
+                  class="swiper-slide"
+                  style="height: 210px;"
+                >
+                  <div
+                    class="w-64 inline-block undefined"
+                  >
+                    <div
+                      class="sc-AxheI euRuZs"
+                    >
+                      <div
+                        class="px-1 py-2"
+                      >
+                        <div
+                          class="mt-1"
+                        >
+                          <div
+                            class="sc-AxhUy fHeTTV -mr-2 border-theme-primary-contrast"
+                          />
+                          <div
+                            class="sc-AxhUy fHeTTV border-theme-primary-contrast"
+                          />
+                        </div>
+                        <div
+                          class="mt-4 text-md text-theme-primary-contrast"
+                        >
+                          New wallet
+                        </div>
+                        <div
+                          class="mt-1 text-md text-theme-primary-contrast"
+                        >
+                          Balance
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="swiper-slide"
+                  style="height: 210px;"
+                >
+                  <div
+                    class="w-64 inline-block undefined"
+                  >
+                    <div
+                      class="sc-AxheI euRuZs"
+                    >
+                      <div
+                        class="px-1 py-2"
+                      >
+                        <div
+                          class="mt-1"
+                        >
+                          <div
+                            class="sc-AxhUy fHeTTV -mr-2 border-theme-primary-contrast"
+                          />
+                          <div
+                            class="sc-AxhUy fHeTTV border-theme-primary-contrast"
+                          />
+                        </div>
+                        <div
+                          class="mt-4 text-md text-theme-primary-contrast"
+                        >
+                          New wallet
+                        </div>
+                        <div
+                          class="mt-1 text-md text-theme-primary-contrast"
+                        >
+                          Balance
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="swiper-slide"
+                  style="height: 210px;"
+                >
+                  <div
+                    class="w-64 inline-block undefined"
+                  >
+                    <div
+                      class="sc-AxheI euRuZs"
+                    >
+                      <div
+                        class="px-1 py-2"
+                      >
+                        <div
+                          class="mt-1"
+                        >
+                          <div
+                            class="sc-AxhUy fHeTTV -mr-2 border-theme-primary-contrast"
+                          />
+                          <div
+                            class="sc-AxhUy fHeTTV border-theme-primary-contrast"
+                          />
+                        </div>
+                        <div
+                          class="mt-4 text-md text-theme-primary-contrast"
+                        >
+                          New wallet
+                        </div>
+                        <div
+                          class="mt-1 text-md text-theme-primary-contrast"
+                        >
+                          Balance
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="swiper-slide"
+                  style="height: 210px;"
+                >
+                  <div
+                    class="w-64 inline-block undefined"
+                  >
+                    <div
+                      class="sc-AxheI euRuZs"
+                    >
+                      <div
+                        class="px-1 py-2"
+                      >
+                        <div
+                          class="mt-1"
+                        >
+                          <div
+                            class="sc-AxhUy fHeTTV -mr-2 border-theme-primary-contrast"
+                          />
+                          <div
+                            class="sc-AxhUy fHeTTV border-theme-primary-contrast"
+                          />
+                        </div>
+                        <div
+                          class="mt-4 text-md text-theme-primary-contrast"
+                        >
+                          New wallet
+                        </div>
+                        <div
+                          class="mt-1 text-md text-theme-primary-contrast"
+                        >
+                          Balance
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"
+              />
+              <span
+                aria-atomic="true"
+                aria-live="assertive"
+                class="swiper-notification"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="pt-1 mt-5 bg-white"
+      data-testid="dashboard__transactions-view"
+    >
+      <div
+        class="p-10 mt-10 bg-theme-background"
+      >
+        <h2
+          class="pb-4"
+        >
+          Transactions History
+        </h2>
+        <div
+          class="sc-AxhCb gfJeeC"
+          role="table"
+        >
+          <table
+            class="table-auto"
+          >
+            <thead>
+              <tr
+                role="row"
+              >
+                <th
+                  class="text-xs text-left select-none text-theme-neutral-400"
+                  colspan="1"
+                  data-testid="table__th--0"
+                  role="columnheader"
+                >
+                  <div
+                    class="flex flex-inline align-top  undefined"
+                  >
+                    <div
+                      class="mr-1"
+                    >
+                      Date
+                    </div>
+                    <div
+                      class="mt-1 text-theme-color-neutral-500"
+                      data-testid="table__Sort"
+                    />
+                  </div>
+                </th>
+                <th
+                  class="text-xs text-left select-none text-theme-neutral-400"
+                  colspan="1"
+                  data-testid="table__th--1"
+                  role="columnheader"
+                >
+                  <div
+                    class="flex flex-inline align-top  invisible"
+                  >
+                    <div
+                      class="mr-1"
+                    >
+                      Type
+                    </div>
+                    <div
+                      class="mt-1 text-theme-color-neutral-500"
+                      data-testid="table__Sort"
+                    />
+                  </div>
+                </th>
+                <th
+                  class="text-xs text-left select-none text-theme-neutral-400"
+                  colspan="1"
+                  data-testid="table__th--2"
+                  role="columnheader"
+                >
+                  <div
+                    class="flex flex-inline align-top  undefined"
+                  >
+                    <div
+                      class="mr-1"
+                    >
+                      Wallet Address
+                    </div>
+                    <div
+                      class="mt-1 text-theme-color-neutral-500"
+                      data-testid="table__Sort"
+                    />
+                  </div>
+                </th>
+                <th
+                  class="text-xs text-left select-none text-theme-neutral-400"
+                  colspan="1"
+                  data-testid="table__th--3"
+                  role="columnheader"
+                >
+                  <div
+                    class="flex flex-inline align-top  float-right"
+                  >
+                    <div
+                      class="mr-1"
+                    >
+                      Amount
+                    </div>
+                    <div
+                      class="mt-1 text-theme-color-neutral-500"
+                      data-testid="table__Sort"
+                    />
+                  </div>
+                </th>
+                <th
+                  class="text-xs text-left select-none text-theme-neutral-400"
+                  colspan="1"
+                  data-testid="table__th--4"
+                  role="columnheader"
+                >
+                  <div
+                    class="flex flex-inline align-top  float-right"
+                  >
+                    <div
+                      class="mr-1"
+                    >
+                      Fiat Value
+                    </div>
+                    <div
+                      class="mt-1 text-theme-color-neutral-500"
+                      data-testid="table__Sort"
+                    />
+                  </div>
+                </th>
+              </tr>
+            </thead>
+            <tbody
+              role="rowgroup"
+            />
+          </table>
+        </div>
+        <button
+          class="sc-AxiKw gFzSt w-full mt-10 mb-5"
+          color="primary"
+          type="button"
+        >
+          See more
+        </button>
       </div>
     </div>
   </div>
@@ -474,109 +1117,10 @@ exports[`Dashboard should render 1`] = `
 exports[`Dashboard should render portfolio percentage bar 1`] = `
 <div>
   <div
-    class="-m-5"
+    class="-m-5 bg-theme-neutral-100"
   >
     <div
-      class="m-11"
-    >
-      <div>
-        <div
-          class="flex"
-        >
-          <div
-            class="py-4 font-bold text-theme-neutral-800"
-          >
-            Total portfolio
-          </div>
-          <div
-            class="flex justify-end flex-1"
-          >
-            <div
-              class="p-4 ml-3"
-            >
-              <div
-                class="mr-2 mb-1 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-danger-500"
-              />
-              <div
-                class="inline-block text-sm font-semibold text-theme-neutral-700"
-              >
-                ARK
-                 - 
-                40
-                %
-              </div>
-            </div>
-            <div
-              class="p-4 ml-3"
-            >
-              <div
-                class="mr-2 mb-1 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-warning-500"
-              />
-              <div
-                class="inline-block text-sm font-semibold text-theme-neutral-700"
-              >
-                BTC
-                 - 
-                25
-                %
-              </div>
-            </div>
-            <div
-              class="p-4 ml-3"
-            >
-              <div
-                class="mr-2 mb-1 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-primary-500"
-              />
-              <div
-                class="inline-block text-sm font-semibold text-theme-neutral-700"
-              >
-                ETH
-                 - 
-                20
-                %
-              </div>
-            </div>
-            <div
-              class="p-4 ml-3"
-            >
-              <div
-                class="mr-2 mb-1 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-neutral-400"
-              />
-              <div
-                class="inline-block text-sm font-semibold text-theme-neutral-700"
-              >
-                Other
-                 - 
-                15
-                %
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          class="flex"
-        >
-          <div
-            class="h-1 -ml-1 rounded-sm bg-theme-danger-500"
-            style="width: 40%;"
-          />
-          <div
-            class="h-1 -ml-1 rounded-sm bg-theme-warning-500"
-            style="width: 25%;"
-          />
-          <div
-            class="h-1 -ml-1 rounded-sm bg-theme-primary-500"
-            style="width: 20%;"
-          />
-          <div
-            class="h-1 -ml-1 rounded-sm bg-theme-neutral-400"
-            style="width: 15%;"
-          />
-        </div>
-      </div>
-    </div>
-    <div
-      class="bg-theme-neutral-100"
+      class="bg-white"
     >
       <div
         class="p-10 bg-theme-background"
@@ -598,7 +1142,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                 data-testid="controls__grid"
               >
                 <div
-                  class="sc-AxirZ eEbZjj"
+                  class="sc-AxjAm buCJuk"
                   height="20"
                   width="20"
                 >
@@ -612,7 +1156,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                 data-testid="controls__list"
               >
                 <div
-                  class="sc-AxirZ eEbZjj"
+                  class="sc-AxjAm buCJuk"
                   height="20"
                   width="20"
                 >
@@ -622,7 +1166,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                 </div>
               </div>
               <div
-                class="sc-Axmtr fYnSXV"
+                class="sc-AxmLO exVlvs"
                 type="vertical"
               />
               <div
@@ -636,7 +1180,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                     class="float-right outline-none focus:outline-none"
                   >
                     <div
-                      class="sc-AxirZ eEbZjj"
+                      class="sc-AxjAm buCJuk"
                       height="20"
                       width="20"
                     >
@@ -648,11 +1192,11 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                 </div>
               </div>
               <div
-                class="sc-Axmtr fYnSXV"
+                class="sc-AxmLO exVlvs"
                 type="vertical"
               />
               <button
-                class="sc-AxjAm ddQVWI ml-8 mr-3"
+                class="sc-AxiKw wFYj ml-8 mr-3"
                 color="primary"
                 type="button"
               >
@@ -660,7 +1204,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                   class="flex items-center justify-center mr-2 text-sm align-middle"
                 >
                   <div
-                    class="sc-AxirZ igJAf"
+                    class="sc-AxjAm bCAvJU"
                     height="1em"
                     width="10"
                   >
@@ -676,7 +1220,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                 </div>
               </button>
               <button
-                class="sc-AxjAm ddJBbC"
+                class="sc-AxiKw gFzSt"
                 color="primary"
                 type="button"
               >
@@ -684,7 +1228,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                   class="flex items-center justify-center mr-2 text-sm align-middle"
                 >
                   <div
-                    class="sc-AxirZ iQaTP"
+                    class="sc-AxjAm cpczEI"
                     height="1em"
                     width="1em"
                   >
@@ -724,7 +1268,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                     class="w-64 inline-block undefined"
                   >
                     <div
-                      class="sc-AxgMl ctFYhG"
+                      class="sc-AxheI euRuZs"
                     >
                       <div
                         class="px-1 py-2"
@@ -733,10 +1277,10 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                           class="mt-1"
                         >
                           <div
-                            class="sc-AxhCb fwVCao -mr-2 border-theme-primary-contrast"
+                            class="sc-AxhUy fHeTTV -mr-2 border-theme-primary-contrast"
                           />
                           <div
-                            class="sc-AxhCb fwVCao border-theme-primary-contrast"
+                            class="sc-AxhUy fHeTTV border-theme-primary-contrast"
                           />
                         </div>
                         <div
@@ -761,7 +1305,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                     class="w-64 inline-block undefined"
                   >
                     <div
-                      class="sc-AxgMl ctFYhG"
+                      class="sc-AxheI euRuZs"
                     >
                       <div
                         class="px-1 py-2"
@@ -770,10 +1314,10 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                           class="mt-1"
                         >
                           <div
-                            class="sc-AxhCb fwVCao -mr-2 border-theme-primary-contrast"
+                            class="sc-AxhUy fHeTTV -mr-2 border-theme-primary-contrast"
                           />
                           <div
-                            class="sc-AxhCb fwVCao border-theme-primary-contrast"
+                            class="sc-AxhUy fHeTTV border-theme-primary-contrast"
                           />
                         </div>
                         <div
@@ -798,7 +1342,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                     class="w-64 inline-block undefined"
                   >
                     <div
-                      class="sc-AxgMl ctFYhG"
+                      class="sc-AxheI euRuZs"
                     >
                       <div
                         class="px-1 py-2"
@@ -807,10 +1351,10 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                           class="mt-1"
                         >
                           <div
-                            class="sc-AxhCb fwVCao -mr-2 border-theme-primary-contrast"
+                            class="sc-AxhUy fHeTTV -mr-2 border-theme-primary-contrast"
                           />
                           <div
-                            class="sc-AxhCb fwVCao border-theme-primary-contrast"
+                            class="sc-AxhUy fHeTTV border-theme-primary-contrast"
                           />
                         </div>
                         <div
@@ -835,7 +1379,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                     class="w-64 inline-block undefined"
                   >
                     <div
-                      class="sc-AxgMl ctFYhG"
+                      class="sc-AxheI euRuZs"
                     >
                       <div
                         class="px-1 py-2"
@@ -844,10 +1388,10 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                           class="mt-1"
                         >
                           <div
-                            class="sc-AxhCb fwVCao -mr-2 border-theme-primary-contrast"
+                            class="sc-AxhUy fHeTTV -mr-2 border-theme-primary-contrast"
                           />
                           <div
-                            class="sc-AxhCb fwVCao border-theme-primary-contrast"
+                            class="sc-AxhUy fHeTTV border-theme-primary-contrast"
                           />
                         </div>
                         <div
@@ -877,143 +1421,144 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
           </div>
         </div>
       </div>
+    </div>
+    <div
+      class="pt-1 mt-5 bg-white"
+      data-testid="dashboard__transactions-view"
+    >
       <div
-        data-testid="dashboard__transactions-view"
+        class="p-10 mt-10 bg-theme-background"
       >
-        <div
-          class="p-10 mt-10 bg-theme-background"
+        <h2
+          class="pb-4"
         >
-          <h2
-            class="pb-4"
+          Transactions History
+        </h2>
+        <div
+          class="sc-AxhCb gfJeeC"
+          role="table"
+        >
+          <table
+            class="table-auto"
           >
-            Transactions History
-          </h2>
-          <div
-            class="sc-AxiKw fOxXaG"
-            role="table"
-          >
-            <table
-              class="table-auto"
-            >
-              <thead>
-                <tr
-                  role="row"
+            <thead>
+              <tr
+                role="row"
+              >
+                <th
+                  class="text-xs text-left select-none text-theme-neutral-400"
+                  colspan="1"
+                  data-testid="table__th--0"
+                  role="columnheader"
                 >
-                  <th
-                    class="text-xs text-left select-none text-theme-neutral-400"
-                    colspan="1"
-                    data-testid="table__th--0"
-                    role="columnheader"
+                  <div
+                    class="flex flex-inline align-top  undefined"
                   >
                     <div
-                      class="flex flex-inline align-top  undefined"
+                      class="mr-1"
                     >
-                      <div
-                        class="mr-1"
-                      >
-                        Date
-                      </div>
-                      <div
-                        class="mt-1 text-theme-color-neutral-500"
-                        data-testid="table__Sort"
-                      />
+                      Date
                     </div>
-                  </th>
-                  <th
-                    class="text-xs text-left select-none text-theme-neutral-400"
-                    colspan="1"
-                    data-testid="table__th--1"
-                    role="columnheader"
+                    <div
+                      class="mt-1 text-theme-color-neutral-500"
+                      data-testid="table__Sort"
+                    />
+                  </div>
+                </th>
+                <th
+                  class="text-xs text-left select-none text-theme-neutral-400"
+                  colspan="1"
+                  data-testid="table__th--1"
+                  role="columnheader"
+                >
+                  <div
+                    class="flex flex-inline align-top  invisible"
                   >
                     <div
-                      class="flex flex-inline align-top  invisible"
+                      class="mr-1"
                     >
-                      <div
-                        class="mr-1"
-                      >
-                        Type
-                      </div>
-                      <div
-                        class="mt-1 text-theme-color-neutral-500"
-                        data-testid="table__Sort"
-                      />
+                      Type
                     </div>
-                  </th>
-                  <th
-                    class="text-xs text-left select-none text-theme-neutral-400"
-                    colspan="1"
-                    data-testid="table__th--2"
-                    role="columnheader"
+                    <div
+                      class="mt-1 text-theme-color-neutral-500"
+                      data-testid="table__Sort"
+                    />
+                  </div>
+                </th>
+                <th
+                  class="text-xs text-left select-none text-theme-neutral-400"
+                  colspan="1"
+                  data-testid="table__th--2"
+                  role="columnheader"
+                >
+                  <div
+                    class="flex flex-inline align-top  undefined"
                   >
                     <div
-                      class="flex flex-inline align-top  undefined"
+                      class="mr-1"
                     >
-                      <div
-                        class="mr-1"
-                      >
-                        Wallet Address
-                      </div>
-                      <div
-                        class="mt-1 text-theme-color-neutral-500"
-                        data-testid="table__Sort"
-                      />
+                      Wallet Address
                     </div>
-                  </th>
-                  <th
-                    class="text-xs text-left select-none text-theme-neutral-400"
-                    colspan="1"
-                    data-testid="table__th--3"
-                    role="columnheader"
+                    <div
+                      class="mt-1 text-theme-color-neutral-500"
+                      data-testid="table__Sort"
+                    />
+                  </div>
+                </th>
+                <th
+                  class="text-xs text-left select-none text-theme-neutral-400"
+                  colspan="1"
+                  data-testid="table__th--3"
+                  role="columnheader"
+                >
+                  <div
+                    class="flex flex-inline align-top  float-right"
                   >
                     <div
-                      class="flex flex-inline align-top  float-right"
+                      class="mr-1"
                     >
-                      <div
-                        class="mr-1"
-                      >
-                        Amount
-                      </div>
-                      <div
-                        class="mt-1 text-theme-color-neutral-500"
-                        data-testid="table__Sort"
-                      />
+                      Amount
                     </div>
-                  </th>
-                  <th
-                    class="text-xs text-left select-none text-theme-neutral-400"
-                    colspan="1"
-                    data-testid="table__th--4"
-                    role="columnheader"
+                    <div
+                      class="mt-1 text-theme-color-neutral-500"
+                      data-testid="table__Sort"
+                    />
+                  </div>
+                </th>
+                <th
+                  class="text-xs text-left select-none text-theme-neutral-400"
+                  colspan="1"
+                  data-testid="table__th--4"
+                  role="columnheader"
+                >
+                  <div
+                    class="flex flex-inline align-top  float-right"
                   >
                     <div
-                      class="flex flex-inline align-top  float-right"
+                      class="mr-1"
                     >
-                      <div
-                        class="mr-1"
-                      >
-                        Fiat Value
-                      </div>
-                      <div
-                        class="mt-1 text-theme-color-neutral-500"
-                        data-testid="table__Sort"
-                      />
+                      Fiat Value
                     </div>
-                  </th>
-                </tr>
-              </thead>
-              <tbody
-                role="rowgroup"
-              />
-            </table>
-          </div>
-          <button
-            class="sc-AxjAm ddJBbC w-full mt-10 mb-5"
-            color="primary"
-            type="button"
-          >
-            See more
-          </button>
+                    <div
+                      class="mt-1 text-theme-color-neutral-500"
+                      data-testid="table__Sort"
+                    />
+                  </div>
+                </th>
+              </tr>
+            </thead>
+            <tbody
+              role="rowgroup"
+            />
+          </table>
         </div>
+        <button
+          class="sc-AxiKw gFzSt w-full mt-10 mb-5"
+          color="primary"
+          type="button"
+        >
+          See more
+        </button>
       </div>
     </div>
   </div>
