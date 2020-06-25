@@ -14,7 +14,7 @@ export const PeerList = ({ listColumns, peers }: PeerListProps) => {
 	const [modalIsOpen, setModalIsOpen] = useState(false);
 
 	return (
-		<div className="m-0">
+		<div>
 			<Table columns={listColumns} data={peers}>
 				{(rowData: any) => <PeerListItem {...rowData} />}
 			</Table>
