@@ -10,7 +10,7 @@ export const defaultTableStyle = `
 			margin: 0;
 		}
 
-        tr:last-child {
+        tr:last-child, tr:last-child > td {
             border-bottom: none;
         }
 	}
