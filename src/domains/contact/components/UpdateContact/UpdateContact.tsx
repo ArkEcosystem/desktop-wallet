@@ -1,5 +1,5 @@
 import { Modal } from "app/components/Modal";
-import { ContactForm } from "domains/contacts/components/ContactForm";
+import { ContactForm } from "domains/contact/components/ContactForm";
 import React from "react";
 import { useTranslation } from "react-i18next";
 

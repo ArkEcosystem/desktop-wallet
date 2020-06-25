@@ -1,4 +1,4 @@
-import { contacts } from "domains/contacts/images";
+import { contacts } from "domains/contact/images";
 import { exchange } from "domains/exchange/images";
 import { offline } from "domains/offline/images";
 import { profile } from "domains/profile/images";

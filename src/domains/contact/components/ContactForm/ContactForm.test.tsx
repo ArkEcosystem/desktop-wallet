@@ -63,7 +63,7 @@ describe("ContactForm", () => {
 			});
 		});
 
-    expect(() => queryByTestId("contact-form__add-address-btn").not.toHaveAttribute("disabled"));
+		expect(() => queryByTestId("contact-form__add-address-btn").not.toHaveAttribute("disabled"));
 
 		await act(async () => {
 			fireEvent.click(getByTestId("contact-form__add-address-btn"));
