@@ -5,7 +5,9 @@ import { act } from "react-dom/test-utils";
 import { LineChart } from "./LineChart";
 
 describe("LineChart", () => {
-	const data = [{ name: "Mon", label: "22 Jun, 2020", usd: 1000, btc: 2400 }];
+	const data = [
+		{ name: "Mmn", label: "22 Jun, 2020", usd: 1000, btc: 2400, formatted: { usd: "1,000", btc: "0.26" } },
+	];
 
 	const lines = [
 		{

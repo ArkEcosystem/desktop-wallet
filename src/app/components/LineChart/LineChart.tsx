@@ -1,6 +1,6 @@
 import { SvgCollection } from "app/assets/svg";
 import React, { useState } from "react";
-import { CartesianGrid, Line, LineChart as RechartsLine, ResponsiveContainer, Tooltip, XAxis,YAxis } from "recharts";
+import { CartesianGrid, Line, LineChart as RechartsLine, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 import { styled } from "twin.macro";
 
 import { Icon } from "../Icon";
@@ -73,7 +73,9 @@ const ChartLegend = ({ legend = {}, lines, period, onPeriodClick }: any) => {
 										className={`mr-2 mb-1 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-${item.color}`}
 									/>
 									<div className="inline-block text-sm font-semibold text-theme-neutral-700">
-										{legend[item.dataKey] && <span>{legend[item.dataKey]} - </span>}
+										{legend.formatted[item.dataKey] && (
+											<span>{legend.formatted[item.dataKey]} - </span>
+										)}
 										{item.label}
 									</div>
 								</div>
@@ -108,7 +110,7 @@ export const ChartContent = ({ period, onPeriodClick, data, lines, width, height
 			>
 				<XAxis dataKey="name" axisLine={false} tick={{ fill: "currentcolor" }} tickSize={20} minTickGap={40} />
 				<YAxis axisLine={false} tick={{ fill: "currentColor" }} tickSize={40} />
-				<CartesianGrid stroke="currentColor" className="test" />
+				<CartesianGrid stroke="currentColor" />
 				<Tooltip content={() => <div />} />
 				{lines &&
 					lines.map((line: any, index: number) => {
