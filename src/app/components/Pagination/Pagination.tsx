@@ -38,12 +38,22 @@ export const Pagination = ({ totalCount, itemsPerPage, onSelectPage, currentPage
 	const pageButtons = Array.from(Array(totalPages), (_, i) => i + 1);
 
 	return (
-		<Wrapper className={className}>
-			<Button variant="plain" onClick={() => onSelectPage((currentPage = 1))} disabled={currentPage === 1}>
+		<Wrapper data-testid="Pagination" className={className}>
+			<Button
+				data-testid="Pagination__first"
+				variant="plain"
+				onClick={() => onSelectPage((currentPage = 1))}
+				disabled={currentPage === 1}
+			>
 				<Icon name="PaginationFirst" height={12} width={12} />
 			</Button>
 
-			<Button variant="plain" onClick={() => onSelectPage((currentPage -= 1))} disabled={currentPage === 1}>
+			<Button
+				data-testid="Pagination__previous"
+				variant="plain"
+				onClick={() => onSelectPage((currentPage -= 1))}
+				disabled={currentPage === 1}
+			>
 				<Icon name="Back" className="mr-2" height={10} width={10} />
 				{t("COMMON.PREVIOUS")}
 			</Button>
@@ -61,6 +71,7 @@ export const Pagination = ({ totalCount, itemsPerPage, onSelectPage, currentPage
 			</div>
 
 			<Button
+				data-testid="Pagination__next"
 				variant="plain"
 				onClick={() => onSelectPage((currentPage += 1))}
 				disabled={currentPage === pageButtons.length}
@@ -70,6 +81,7 @@ export const Pagination = ({ totalCount, itemsPerPage, onSelectPage, currentPage
 			</Button>
 
 			<Button
+				data-testid="Pagination__last"
 				variant="plain"
 				onClick={() => onSelectPage((currentPage = pageButtons.length))}
 				disabled={currentPage === pageButtons.length}
