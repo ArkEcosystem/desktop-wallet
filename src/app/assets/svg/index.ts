@@ -14,6 +14,7 @@ import { ReactComponent as CrossSlim } from "./cross-slim.svg";
 import { ReactComponent as Ark } from "./currencies/ark.svg";
 import { ReactComponent as Bitcoin } from "./currencies/btc.svg";
 import { ReactComponent as Ethereum } from "./currencies/eth.svg";
+import { ReactComponent as Dash } from "./dash.svg";
 import { ReactComponent as Delegate } from "./delegate.svg";
 import { ReactComponent as Discord } from "./discord.svg";
 import { ReactComponent as Download } from "./download.svg";
@@ -81,6 +82,7 @@ export const SvgCollection: any = {
 	Confirmed,
 	Copy,
 	CrossSlim,
+	Dash,
 	Delegate,
 	Discord,
 	Download,
