@@ -3,7 +3,8 @@
 exports[`PluginGrid should render 1`] = `
 <DocumentFragment>
   <div
-    class="grid grid-cols-4 gap-5"
+    class="grid grid-cols-4 gap-5 undefined"
+    data-testid="PluginGrid"
   >
     <div
       class="sc-AxiKw gweSCl border-theme-primary-100 hover:border-theme-background"
@@ -186,7 +187,8 @@ exports[`PluginGrid should render 1`] = `
 exports[`PluginGrid should trigger delete 1`] = `
 <DocumentFragment>
   <div
-    class="grid grid-cols-4 gap-5"
+    class="grid grid-cols-4 gap-5 undefined"
+    data-testid="PluginGrid"
   >
     <div
       class="sc-AxiKw gweSCl border-theme-primary-100 hover:border-theme-background"
@@ -369,7 +371,8 @@ exports[`PluginGrid should trigger delete 1`] = `
 exports[`PluginGrid should trigger select 1`] = `
 <DocumentFragment>
   <div
-    class="grid grid-cols-4 gap-5"
+    class="grid grid-cols-4 gap-5 undefined"
+    data-testid="PluginGrid"
   >
     <div
       class="sc-AxiKw gweSCl border-theme-primary-100 hover:border-theme-background"
