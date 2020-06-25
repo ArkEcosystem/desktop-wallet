@@ -4,7 +4,9 @@ import { Header } from "app/components/Header";
 import { ListDivided } from "app/components/ListDivided";
 import { Select } from "app/components/Select";
 import { Toggle } from "app/components/Toggle";
-import React from "react";
+import { AddBlacklistPlugin } from "domains/plugins/components/AddBlacklistPlugin";
+import { BlacklistPlugins } from "domains/plugins/components/BlacklistPlugins";
+import React, { useState } from "react";
 
 type PluginsProps = {
 	formConfig: any;
@@ -12,6 +14,9 @@ type PluginsProps = {
 };
 
 export const Plugins = ({ formConfig, onSubmit }: PluginsProps) => {
+	const [modalOpenListIsOpen, setModalOpenListIsOpen] = useState(false);
+	const [modalAddPluginIsOpen, setModalAddPluginIsOpen] = useState(false);
+
 	const pluginItems = [
 		{
 			isFloatingLabel: true,
@@ -29,13 +34,20 @@ export const Plugins = ({ formConfig, onSubmit }: PluginsProps) => {
 						</div>
 					</div>
 					<div className="flex flex-col py-6 space-x-3 md:flex-row">
-						<Button variant="plain" className="w-full">
+						<Button variant="plain" className="w-full" onClick={() => setModalOpenListIsOpen(true)}>
 							Open List
 						</Button>
-						<Button variant="plain" className="w-full mt-2 md:mt-0">
+						<Button
+							variant="plain"
+							className="w-full mt-2 md:mt-0"
+							onClick={() => setModalAddPluginIsOpen(true)}
+						>
 							Add Plugin
 						</Button>
 					</div>
+
+					<BlacklistPlugins isOpen={modalOpenListIsOpen} onClose={() => setModalOpenListIsOpen(false)} />
+					<AddBlacklistPlugin isOpen={modalAddPluginIsOpen} onClose={() => setModalAddPluginIsOpen(false)} />
 				</>
 			),
 		},
