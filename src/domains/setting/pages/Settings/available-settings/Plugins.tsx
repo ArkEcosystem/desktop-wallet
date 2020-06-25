@@ -35,13 +35,19 @@ export const Plugins = ({ formConfig, onSubmit }: PluginsProps) => {
 						</div>
 					</div>
 					<div className="flex flex-col py-6 space-x-3 md:flex-row">
-						<Button variant="plain" className="w-full" onClick={() => setModalOpenListIsOpen(true)}>
+						<Button
+							variant="plain"
+							className="w-full"
+							onClick={() => setModalOpenListIsOpen(true)}
+							data-testid="plugins__open-list"
+						>
 							Open List
 						</Button>
 						<Button
 							variant="plain"
 							className="w-full mt-2 md:mt-0"
 							onClick={() => setModalAddPluginIsOpen(true)}
+							data-testid="plugins__add-plugin"
 						>
 							Add Plugin
 						</Button>
