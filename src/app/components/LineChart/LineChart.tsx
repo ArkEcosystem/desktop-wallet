@@ -1,23 +1,24 @@
 import { SvgCollection } from "app/assets/svg";
 import React, { useState } from "react";
-import { CartesianGrid, Line, LineChart as RechartsLine, ResponsiveContainer, Tooltip, XAxis } from "recharts";
+import { CartesianGrid, Line, LineChart as RechartsLine, ResponsiveContainer, Tooltip, XAxis,YAxis } from "recharts";
+import { styled } from "twin.macro";
 
 import { Icon } from "../Icon";
+import { chartStyles } from "./LineChart.styles";
 
 type LineChartProps = {
 	data: any[];
 	lines: any[];
 	period?: string;
 	onPeriodClick?: () => void;
-	width?: number | string;
-	height?: number | string;
+	width?: number;
+	height?: number;
 };
 
 const ActiveDotSvg = SvgCollection["ChartActiveDot"];
 const ActiveDot = ({ cx, cy, color }: any) => {
 	return (
 		<ActiveDotSvg
-			data-testid="active-dot"
 			className={`text-theme-${color}`}
 			width={50}
 			height={50}
@@ -45,13 +46,13 @@ const Dot = ({ cx, cy, index }: any) => {
 	);
 };
 
-const ChartLegend = ({ legend, lines, period, onPeriodClick }: any) => {
+const ChartLegend = ({ legend = {}, lines, period, onPeriodClick }: any) => {
 	return (
 		<div>
 			<div className="flex">
 				{period && (
 					<div
-						className="py-4 text-theme-neutral-700 font-semibold text-sm ml-3 cursor-pointer"
+						className="py-4 text-theme-neutral-700 font-semibold text-sm cursor-pointer"
 						onClick={onPeriodClick}
 					>
 						<div className="flex">
@@ -67,12 +68,13 @@ const ChartLegend = ({ legend, lines, period, onPeriodClick }: any) => {
 					{lines &&
 						lines.map((item: any, index: number) => {
 							return (
-								<div key={index} className="p-4 ml-3 w-36 text-right">
+								<div key={index} className="p-4 pr-0 ml-3 w-36 text-right">
 									<div
 										className={`mr-2 mb-1 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-${item.color}`}
 									/>
 									<div className="inline-block text-sm font-semibold text-theme-neutral-700">
-										{legend[item.dataKey]} - {item.label}
+										{legend[item.dataKey] && <span>{legend[item.dataKey]} - </span>}
+										{item.label}
 									</div>
 								</div>
 							);
@@ -83,61 +85,68 @@ const ChartLegend = ({ legend, lines, period, onPeriodClick }: any) => {
 	);
 };
 
-export const LineChart = ({ data, lines, period, onPeriodClick, width, height }: LineChartProps) => {
-	const [updatingLegend, setUpdatingLegend] = useState(false);
-	const [legend, setLegend] = useState(data[0]);
+const Wrapper = styled.div`
+	${chartStyles}
+`;
 
-	const updateLegendData = ({ payload }: any) => {
-		setUpdatingLegend(true);
-		setLegend(payload);
-		setUpdatingLegend(false);
-		// setTimeout(() => setUpdatingLegend(false), 2);
-	};
+export const ChartContent = ({ period, onPeriodClick, data, lines, width, height }: LineChartProps) => {
+	const defaultValue = data.concat().pop();
+	const [legend, setLegend] = useState(defaultValue);
 
 	return (
-		<div>
+		<Wrapper data-testid="line-chart-wrapper" className="text-theme-neutral-300">
 			<ChartLegend legend={legend} lines={lines} period={period} onPeriodClick={onPeriodClick} />
-			<div className="text-theme-neutral-200" data-testid="line-chart-wrapper">
-				<ResponsiveContainer width={width} height={height}>
-					<RechartsLine data={data} margin={{ top: 10, bottom: 10, left: 10, right: 10 }}>
-						<XAxis dataKey="name" />
-						<CartesianGrid stroke="currentColor" className="test" />
-						<Tooltip
-							content={(cdata: any) => {
-								if (typeof cdata.payload[0] !== "undefined") {
-									if (updatingLegend === true) return <div />;
-									updateLegendData(cdata.payload[0]);
-								}
-								return <div />;
-							}}
-						/>
-						{lines &&
-							lines.map((line: any, index: number) => {
-								return (
-									<Line
-										type="monotone"
-										key={index}
-										dataKey={line.dataKey}
-										stroke="currentColor"
-										fill="currentColor"
-										className={`chart-line text-theme-${line.color}`}
-										strokeWidth={3}
-										yAxisId={0}
-										activeDot={<ActiveDot {...line} />}
-										dot={<Dot {...line} {...index} />}
-									/>
-								);
-							})}
-					</RechartsLine>
-				</ResponsiveContainer>
+			<RechartsLine
+				width={width}
+				height={height}
+				onMouseMove={({ activePayload = [] }) => {
+					const { payload } = activePayload[0] || {};
+					setLegend(Object.assign({}, defaultValue, payload));
+				}}
+				data={data}
+				margin={{ top: 0, bottom: 0, left: 26, right: 0 }}
+			>
+				<XAxis dataKey="name" axisLine={false} tick={{ fill: "currentcolor" }} tickSize={20} minTickGap={40} />
+				<YAxis axisLine={false} tick={{ fill: "currentColor" }} tickSize={40} />
+				<CartesianGrid stroke="currentColor" className="test" />
+				<Tooltip content={() => <div />} />
+				{lines &&
+					lines.map((line: any, index: number) => {
+						return (
+							<Line
+								type="monotone"
+								key={index}
+								dataKey={line.dataKey}
+								stroke="currentColor"
+								fill="currentColor"
+								className={`text-theme-${line.color}`}
+								strokeWidth={3}
+								yAxisId={0}
+								activeDot={<ActiveDot {...line} />}
+								dot={<Dot {...line} {...index} />}
+							/>
+						);
+					})}
+			</RechartsLine>
+
+			<div className="active-dot">
+				<ActiveDot cy={0} cx={0} />
 			</div>
-		</div>
+		</Wrapper>
+	);
+};
+
+export const LineChart = (props: LineChartProps) => {
+	if (props.width) return <ChartContent {...props} />;
+	return (
+		<ResponsiveContainer height={props.height}>
+			<ChartContent {...props} />
+		</ResponsiveContainer>
 	);
 };
 
 LineChart.defaultProps = {
 	data: [],
 	lines: [],
-	width: "100%",
 	height: 300,
 };

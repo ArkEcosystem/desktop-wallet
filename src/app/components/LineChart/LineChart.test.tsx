@@ -30,17 +30,14 @@ describe("LineChart", () => {
 	it("should render chart dots", async () => {
 		const { getByTestId } = render(
 			<div>
-				<LineChart width={500} period={period} data={data} lines={lines} />
+				<LineChart width={200} period={period} data={data} lines={lines} />
 			</div>,
 		);
 		const chartWrapper = getByTestId("line-chart-wrapper");
 		expect(chartWrapper).toBeTruthy();
 		await waitFor(() => expect(getByTestId("line-chart-dot-0")).toBeTruthy(), { timeout: 1000 });
-
-		const dot = getByTestId("line-chart-dot-0");
 		act(() => {
-			fireEvent.mouseEnter(dot);
-			fireEvent.click(dot);
+			fireEvent.mouseMove(chartWrapper.children[1].children[0]);
 		});
 	});
 });

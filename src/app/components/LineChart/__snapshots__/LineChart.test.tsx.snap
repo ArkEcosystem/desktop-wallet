@@ -2,103 +2,135 @@
 
 exports[`LineChart should render 1`] = `
 <div>
-  <div>
-    <div>
-      <div
-        class="flex"
-      >
-        <div
-          class="flex justify-end flex-1"
-        />
-      </div>
-    </div>
+  <div
+    class="recharts-responsive-container"
+    id="undefined"
+    style="width: 100%; height: 300px;"
+  >
     <div
-      class="text-theme-neutral-200"
+      class="sc-AxirZ fwlMBT text-theme-neutral-300"
       data-testid="line-chart-wrapper"
     >
+      <div>
+        <div
+          class="flex"
+        >
+          <div
+            class="flex justify-end flex-1"
+          >
+            <div
+              class="my-auto ml-3 text-sm text-theme-neutral-600"
+            />
+          </div>
+        </div>
+      </div>
       <div
-        class="recharts-responsive-container"
-        id="undefined"
-        style="width: 100%; height: 300px;"
+        class="active-dot"
       >
-        <div />
+        <svg
+          class="text-theme-undefined"
+          fill="currentColor"
+          height="50"
+          stroke="currentColor"
+          width="50"
+          x="-25"
+          y="-25"
+        >
+          chart-active-dot.svg
+        </svg>
       </div>
     </div>
+    <div />
   </div>
 </div>
 `;
 
 exports[`LineChart should render with data 1`] = `
 <div>
-  <div>
-    <div>
-      <div
-        class="flex"
-      >
+  <div
+    class="recharts-responsive-container"
+    id="undefined"
+    style="width: 100%; height: 300px;"
+  >
+    <div
+      class="sc-AxirZ fwlMBT text-theme-neutral-300"
+      data-testid="line-chart-wrapper"
+    >
+      <div>
         <div
-          class="py-4 text-theme-neutral-700 font-semibold text-sm ml-3 cursor-pointer"
+          class="flex"
         >
           <div
-            class="flex"
+            class="py-4 text-theme-neutral-700 font-semibold text-sm cursor-pointer"
           >
             <div
-              class="my-auto"
-            >
-              Period: 
-              22 Jun - 28 Jun
-            </div>
-            <div
-              class="my-auto"
+              class="flex"
             >
               <div
-                class="sc-AxjAm cpczEI"
-                height="1em"
-                width="1em"
+                class="my-auto"
               >
-                <svg>
-                  chevron-down.svg
-                </svg>
+                Period: 
+                22 Jun - 28 Jun
+              </div>
+              <div
+                class="my-auto"
+              >
+                <div
+                  class="sc-AxjAm cpczEI"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    chevron-down.svg
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="flex justify-end flex-1"
+          >
+            <div
+              class="my-auto ml-3 text-sm text-theme-neutral-600"
+            >
+              22 Jun, 2020
+            </div>
+            <div
+              class="p-4 pr-0 ml-3 w-36 text-right"
+            >
+              <div
+                class="mr-2 mb-1 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-warning-600"
+              />
+              <div
+                class="inline-block text-sm font-semibold text-theme-neutral-700"
+              >
+                <span>
+                  2400
+                   - 
+                </span>
+                BTC
               </div>
             </div>
           </div>
         </div>
-        <div
-          class="flex justify-end flex-1"
-        >
-          <div
-            class="my-auto ml-3 text-sm text-theme-neutral-600"
-          >
-            22 Jun, 2020
-          </div>
-          <div
-            class="p-4 ml-3 w-36 text-right"
-          >
-            <div
-              class="mr-2 mb-1 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-warning-600"
-            />
-            <div
-              class="inline-block text-sm font-semibold text-theme-neutral-700"
-            >
-              2400
-               - 
-              BTC
-            </div>
-          </div>
-        </div>
       </div>
-    </div>
-    <div
-      class="text-theme-neutral-200"
-      data-testid="line-chart-wrapper"
-    >
       <div
-        class="recharts-responsive-container"
-        id="undefined"
-        style="width: 100%; height: 300px;"
+        class="active-dot"
       >
-        <div />
+        <svg
+          class="text-theme-undefined"
+          fill="currentColor"
+          height="50"
+          stroke="currentColor"
+          width="50"
+          x="-25"
+          y="-25"
+        >
+          chart-active-dot.svg
+        </svg>
       </div>
     </div>
+    <div />
   </div>
 </div>
 `;
