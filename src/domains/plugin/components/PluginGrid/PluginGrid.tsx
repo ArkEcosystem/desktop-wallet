@@ -1,4 +1,4 @@
-import { PluginCard } from "domains/plugins/components/PluginCard";
+import { PluginCard } from "domains/plugin/components/PluginCard";
 import React from "react";
 
 type PluginGridProps = {

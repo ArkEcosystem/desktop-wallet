@@ -1,7 +1,7 @@
-import { Comments } from "domains/plugins/components/Comments";
-import { PluginHeader } from "domains/plugins/components/PluginHeader";
-import { PluginInfo } from "domains/plugins/components/PluginInfo";
-import { ReviewBox } from "domains/plugins/components/ReviewBox";
+import { Comments } from "domains/plugin/components/Comments";
+import { PluginHeader } from "domains/plugin/components/PluginHeader";
+import { PluginInfo } from "domains/plugin/components/PluginInfo";
+import { ReviewBox } from "domains/plugin/components/ReviewBox";
 import React from "react";
 
 const commentsSortingOptions = [

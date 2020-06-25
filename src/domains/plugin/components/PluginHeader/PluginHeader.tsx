@@ -1,6 +1,6 @@
 import { Button } from "app/components/Button";
 import { Icon } from "app/components/Icon";
-import Placeholder from "domains/plugins/images/placeholder.png";
+import Placeholder from "domains/plugin/images/placeholder.png";
 import React from "react";
 
 import { PluginSpecs } from "./components/PluginSpecs";

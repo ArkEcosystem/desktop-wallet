@@ -1,5 +1,5 @@
 import { Table } from "app/components/Table";
-import { PluginListItem } from "domains/plugins/components/PluginListItem";
+import { PluginListItem } from "domains/plugin/components/PluginListItem";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
