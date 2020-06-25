@@ -9,7 +9,7 @@ import { translations as SEARCH } from "../../../domains/search/i18n";
 import { translations as SETTINGS } from "../../../domains/setting/i18n";
 import { translations as SUPPORT } from "../../../domains/support/i18n";
 import { translations as TRANSACTION } from "../../../domains/transaction/i18n";
-import { translations as WALLETS } from "../../../domains/wallets/i18n";
+import { translations as WALLETS } from "../../../domains/wallet/i18n";
 import { translations as COMMON } from "../common/i18n";
 
 export const buildTranslations = (): any => ({
