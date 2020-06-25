@@ -45,12 +45,12 @@ export const Dashboard = ({ transactions, wallets, networks, portfolioPercentage
 	return (
 		<div className="-m-5 bg-theme-neutral-100">
 			{showPortfolio && balances && (
-				<div className="bg-white p-11 mb-6">
+				<div className="mb-6 bg-white p-11">
 					<h1>Portfolio Chart</h1>
 					<div className="pb-20">
 						<LineChart height={260} period="22 Jun - 28 Jun" data={balances} lines={chartLines} />
 					</div>
-					<div className="border-b border-theme-neutral-100 mt-6 mb-4" />
+					<div className="mt-6 mb-4 border-b border-theme-neutral-100" />
 					<div>
 						<PercentageBar title="Total portfolio" data={portfolioPercentages} />
 					</div>
@@ -61,7 +61,7 @@ export const Dashboard = ({ transactions, wallets, networks, portfolioPercentage
 				<Wallets viewType="grid" title="Wallets" wallets={wallets} filterProperties={filterProperties} />
 			</div>
 			{showTransactions && (
-				<div className="mt-5 pt-1 bg-white" data-testid="dashboard__transactions-view">
+				<div className="pt-1 mt-5 bg-white" data-testid="dashboard__transactions-view">
 					<Transactions transactions={transactions} />
 				</div>
 			)}
