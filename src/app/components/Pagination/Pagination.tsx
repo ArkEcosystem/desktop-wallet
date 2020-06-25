@@ -58,7 +58,7 @@ export const Pagination = ({ totalCount, itemsPerPage, onSelectPage, currentPage
 				{t("COMMON.PREVIOUS")}
 			</Button>
 
-			<div className="flex px-2 bg-theme-primary-contrast rounded">
+			<div className="flex px-2 rounded bg-theme-primary-contrast">
 				{pageButtons.map((page) => (
 					<PaginationButton
 						key={page}
