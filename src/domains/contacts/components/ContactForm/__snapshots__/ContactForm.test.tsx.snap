@@ -87,7 +87,7 @@ exports[`ContactForm when creating a new contact should render the form 1`] = `
       <button
         class="sc-AxjAm ddJBbC w-full"
         color="primary"
-        data-testid="contact-form__add-address-button"
+        data-testid="contact-form__add-address-btn"
         disabled=""
         type="button"
       >
@@ -100,6 +100,7 @@ exports[`ContactForm when creating a new contact should render the form 1`] = `
       <button
         class="sc-AxjAm ddJBbC"
         color="primary"
+        data-testid="contact-form__cancel-btn"
         type="button"
       >
         Cancel
@@ -107,7 +108,7 @@ exports[`ContactForm when creating a new contact should render the form 1`] = `
       <button
         class="sc-AxjAm ddQVWI"
         color="primary"
-        data-testid="contact-form__save-button"
+        data-testid="contact-form__save-btn"
         disabled=""
         type="submit"
       >
@@ -203,7 +204,7 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
       <button
         class="sc-AxjAm ddJBbC w-full"
         color="primary"
-        data-testid="contact-form__add-address-button"
+        data-testid="contact-form__add-address-btn"
         disabled=""
         type="button"
       >
@@ -262,7 +263,7 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
           <button
             class="sc-AxjAm kwTlRm flex items-center ml-auto"
             color="primary"
-            data-testid="contact-form__remove-address-button"
+            data-testid="contact-form__remove-address-btn"
             type="button"
           >
             <div
@@ -317,7 +318,7 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
           <button
             class="sc-AxjAm kwTlRm flex items-center ml-auto"
             color="primary"
-            data-testid="contact-form__remove-address-button"
+            data-testid="contact-form__remove-address-btn"
             type="button"
           >
             <div
@@ -339,6 +340,7 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
       <button
         class="sc-AxjAm ddJBbC"
         color="primary"
+        data-testid="contact-form__cancel-btn"
         type="button"
       >
         Cancel
@@ -346,7 +348,7 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
       <button
         class="sc-AxjAm ddQVWI"
         color="primary"
-        data-testid="contact-form__save-button"
+        data-testid="contact-form__save-btn"
         type="submit"
       >
         Save
