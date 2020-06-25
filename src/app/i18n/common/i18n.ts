@@ -62,6 +62,7 @@ export const translations: { [key: string]: any } = {
 	OTHER: "Other",
 	PLUGIN: "Plugin",
 	PREV: "Prev",
+	PREVIOUS: "Previous",
 	PRICE_PROVIDER: "Price Provider",
 	PROFILE_NAME: "Profile name",
 	QUANTITY: "Quantity",

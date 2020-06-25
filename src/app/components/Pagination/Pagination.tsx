@@ -1,6 +1,7 @@
 import { Button } from "app/components/Button";
 import { Icon } from "app/components/Icon";
 import React from "react";
+import { useTranslation } from "react-i18next";
 import tw, { styled } from "twin.macro";
 
 const Wrapper = styled.div`
@@ -32,6 +33,7 @@ const PaginationButton = styled.div`
 `;
 
 export const Pagination = ({ totalCount, itemsPerPage, onSelectPage, currentPage, className }: PaginationProps) => {
+	const { t } = useTranslation();
 	const totalPages = Math.ceil(totalCount / itemsPerPage);
 	const pageButtons = Array.from(Array(totalPages), (_, i) => i + 1);
 
@@ -43,7 +45,7 @@ export const Pagination = ({ totalCount, itemsPerPage, onSelectPage, currentPage
 
 			<Button variant="plain" onClick={() => onSelectPage((currentPage -= 1))} disabled={currentPage === 1}>
 				<Icon name="Back" className="mr-2" height={10} width={10} />
-				Previous
+				{t("COMMON.PREVIOUS")}
 			</Button>
 
 			<div className="flex px-2 bg-theme-primary-contrast rounded">
@@ -63,7 +65,7 @@ export const Pagination = ({ totalCount, itemsPerPage, onSelectPage, currentPage
 				onClick={() => onSelectPage((currentPage += 1))}
 				disabled={currentPage === pageButtons.length}
 			>
-				Next
+				{t("COMMON.NEXT")}
 				<Icon name="Forward" className="ml-2" height={12} width={12} />
 			</Button>
 
