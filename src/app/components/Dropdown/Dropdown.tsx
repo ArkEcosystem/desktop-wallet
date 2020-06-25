@@ -62,7 +62,7 @@ const renderToggle = (
 
 	if (!children) {
 		return (
-			<div className="float-right outline-none focus:outline-none cursor-pointer">
+			<div className="float-right outline-none focus:outline-none">
 				<Icon name={toggleIcon} width={size[toggleSize]} height={size[toggleSize]} />
 			</div>
 		);
