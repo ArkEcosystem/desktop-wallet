@@ -85,6 +85,7 @@ export const translations: { [key: string]: any } = {
 	URL: "URL",
 	VERIFIED_ADDRESS: "This is a verified address",
 	VERSION: "Version",
+	VIEW_MORE: "View More",
 	VOTES: "Votes",
 	VOTING: "Voting",
 	WALLET: "Wallet",
