@@ -23,7 +23,7 @@ export const PluginManagerNavigationBar = ({ onChange, selected }: PluginManager
 						}`}
 						onClick={() => onChange("home")}
 					>
-						{t("PLUGINS.PAGE_PLUGIN_MANAGER.TYPE.HOME")}
+						{t("PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.HOME")}
 					</div>
 
 					<div className="flex items-center">
@@ -37,7 +37,7 @@ export const PluginManagerNavigationBar = ({ onChange, selected }: PluginManager
 						}`}
 						onClick={() => onChange("game")}
 					>
-						{t("PLUGINS.PAGE_PLUGIN_MANAGER.TYPE.GAME")}{" "}
+						{t("PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.GAME")}{" "}
 						<span className="text-theme-neutral-700 ml-1">48</span>
 					</div>
 
@@ -52,7 +52,7 @@ export const PluginManagerNavigationBar = ({ onChange, selected }: PluginManager
 						}`}
 						onClick={() => onChange("utility")}
 					>
-						{t("PLUGINS.PAGE_PLUGIN_MANAGER.TYPE.UTILITY")}{" "}
+						{t("PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.UTILITY")}{" "}
 						<span className="text-theme-neutral-700 ml-1">264</span>
 					</div>
 
@@ -67,7 +67,7 @@ export const PluginManagerNavigationBar = ({ onChange, selected }: PluginManager
 						}`}
 						onClick={() => onChange("themes")}
 					>
-						{t("PLUGINS.PAGE_PLUGIN_MANAGER.TYPE.THEMES")}{" "}
+						{t("PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.THEMES")}{" "}
 						<span className="text-theme-neutral-700 ml-1">96</span>
 					</div>
 
@@ -82,7 +82,7 @@ export const PluginManagerNavigationBar = ({ onChange, selected }: PluginManager
 						}`}
 						onClick={() => onChange("other")}
 					>
-						{t("PLUGINS.PAGE_PLUGIN_MANAGER.TYPE.OTHER")}{" "}
+						{t("PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.OTHER")}{" "}
 						<span className="text-theme-neutral-700 ml-1">27</span>
 					</div>
 				</div>
@@ -94,7 +94,7 @@ export const PluginManagerNavigationBar = ({ onChange, selected }: PluginManager
 					}`}
 					onClick={() => onChange("my-plugins")}
 				>
-					{t("PLUGINS.PAGE_PLUGIN_MANAGER.TYPE.MY_PLUGINS")}{" "}
+					{t("PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.MY_PLUGINS")}{" "}
 					<span className="text-theme-neutral-700 ml-1">8</span>
 				</div>
 			</div>
