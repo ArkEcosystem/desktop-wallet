@@ -12,9 +12,9 @@ export const PluginManagerNavigationBar = ({ onChange, selected }: PluginManager
 	return (
 		<div
 			data-testid="PluginManagerNavigationBar"
-			className="sticky top-20 h-20 bg-theme-neutral-900 shadow-md z-20 md:top-24"
+			className="sticky z-20 h-20 shadow-md top-20 bg-theme-neutral-900 md:top-24"
 		>
-			<div className="flex justify-between h-full container mx-auto text-theme-neutral-400">
+			<div className="container flex justify-between h-full mx-auto text-theme-neutral-400">
 				<div className="flex h-full space-x-6">
 					<div
 						data-testid="PluginManagerNavigationBar__home"
@@ -27,7 +27,7 @@ export const PluginManagerNavigationBar = ({ onChange, selected }: PluginManager
 					</div>
 
 					<div className="flex items-center">
-						<div className="bg-theme-neutral-700 w-px h-4" />
+						<div className="w-px h-4 bg-theme-neutral-700" />
 					</div>
 
 					<div
@@ -38,11 +38,11 @@ export const PluginManagerNavigationBar = ({ onChange, selected }: PluginManager
 						onClick={() => onChange("game")}
 					>
 						{t("PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.GAME")}{" "}
-						<span className="text-theme-neutral-700 ml-1">48</span>
+						<span className="ml-1 text-theme-neutral-700">48</span>
 					</div>
 
 					<div className="flex items-center">
-						<div className="bg-theme-neutral-700 w-px h-4" />
+						<div className="w-px h-4 bg-theme-neutral-700" />
 					</div>
 
 					<div
@@ -53,11 +53,11 @@ export const PluginManagerNavigationBar = ({ onChange, selected }: PluginManager
 						onClick={() => onChange("utility")}
 					>
 						{t("PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.UTILITY")}{" "}
-						<span className="text-theme-neutral-700 ml-1">264</span>
+						<span className="ml-1 text-theme-neutral-700">264</span>
 					</div>
 
 					<div className="flex items-center">
-						<div className="bg-theme-neutral-700 w-px h-4" />
+						<div className="w-px h-4 bg-theme-neutral-700" />
 					</div>
 
 					<div
@@ -68,11 +68,11 @@ export const PluginManagerNavigationBar = ({ onChange, selected }: PluginManager
 						onClick={() => onChange("themes")}
 					>
 						{t("PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.THEMES")}{" "}
-						<span className="text-theme-neutral-700 ml-1">96</span>
+						<span className="ml-1 text-theme-neutral-700">96</span>
 					</div>
 
 					<div className="flex items-center">
-						<div className="bg-theme-neutral-700 w-px h-4" />
+						<div className="w-px h-4 bg-theme-neutral-700" />
 					</div>
 
 					<div
@@ -83,7 +83,7 @@ export const PluginManagerNavigationBar = ({ onChange, selected }: PluginManager
 						onClick={() => onChange("other")}
 					>
 						{t("PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.OTHER")}{" "}
-						<span className="text-theme-neutral-700 ml-1">27</span>
+						<span className="ml-1 text-theme-neutral-700">27</span>
 					</div>
 				</div>
 
@@ -95,7 +95,7 @@ export const PluginManagerNavigationBar = ({ onChange, selected }: PluginManager
 					onClick={() => onChange("my-plugins")}
 				>
 					{t("PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.MY_PLUGINS")}{" "}
-					<span className="text-theme-neutral-700 ml-1">8</span>
+					<span className="ml-1 text-theme-neutral-700">8</span>
 				</div>
 			</div>
 		</div>

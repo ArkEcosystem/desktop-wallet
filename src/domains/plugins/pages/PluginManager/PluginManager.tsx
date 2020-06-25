@@ -67,7 +67,7 @@ const PluginManagerHome = ({ onDelete, onInstall, viewType }: PluginManagerHomeP
 					<span
 						data-testid="PluginManager__home__featured__view-more"
 						onClick={() => setFeaturedModalOpen(true)}
-						className="text-theme-primary-600 hover:text-theme-primary-500 cursor-pointer"
+						className="cursor-pointer text-theme-primary-600 hover:text-theme-primary-500"
 					>
 						{t("COMMON.VIEW_MORE")}
 					</span>
@@ -85,7 +85,7 @@ const PluginManagerHome = ({ onDelete, onInstall, viewType }: PluginManagerHomeP
 					<span
 						data-testid="PluginManager__home__top-rated__view-more"
 						onClick={() => setBestModalOpen(true)}
-						className="text-theme-primary-600 hover:text-theme-primary-500 cursor-pointer"
+						className="cursor-pointer text-theme-primary-600 hover:text-theme-primary-500"
 					>
 						{t("COMMON.VIEW_MORE")}
 					</span>
@@ -160,13 +160,13 @@ export const PluginManager = () => {
 			/>
 
 			<div className="border-t-20 border-theme-neutral-100">
-				<div className="relative container mx-auto justify-between items-end mt-10 mb-15">
+				<div className="container relative items-end justify-between mx-auto mt-10 mb-15">
 					<div className="inline-block">
 						<h1>{t("PLUGINS.PAGE_PLUGIN_MANAGER.TITLE")}</h1>
 						<div className="text-theme-neutral-700">{t("PLUGINS.PAGE_PLUGIN_MANAGER.DESCRIPTION")}</div>
 					</div>
 
-					<div className="absolute right-0 top-0 bottom-0 mt-12 flex items-center justify-end space-x-3">
+					<div className="absolute top-0 bottom-0 right-0 flex items-center justify-end mt-12 space-x-3">
 						<div className="flex items-end py-2">
 							<HeaderSearchBar onSearch={() => console.log("search")}>
 								<Icon name="Search" width={20} height={20} className="mr-6" />
@@ -185,7 +185,7 @@ export const PluginManager = () => {
 			<PluginManagerNavigationBar selected={currentView} onChange={setCurrentView} />
 
 			<div data-testid={`PluginManager__container--${currentView}`} className="container mx-auto mt-16">
-				<div className="flex justify-between items-center">
+				<div className="flex items-center justify-between">
 					<h2>{t(`PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.${snakeCase(currentView)?.toUpperCase()}`)}</h2>
 
 					<PluginManagerControls

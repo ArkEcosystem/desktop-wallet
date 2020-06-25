@@ -9,7 +9,7 @@ exports[`PluginManager should render 1`] = `
       class="border-t-20 border-theme-neutral-100"
     >
       <div
-        class="relative container mx-auto justify-between items-end mt-10 mb-15"
+        class="container relative items-end justify-between mx-auto mt-10 mb-15"
       >
         <div
           class="inline-block"
@@ -24,7 +24,7 @@ exports[`PluginManager should render 1`] = `
           </div>
         </div>
         <div
-          class="absolute right-0 top-0 bottom-0 mt-12 flex items-center justify-end space-x-3"
+          class="absolute top-0 bottom-0 right-0 flex items-center justify-end mt-12 space-x-3"
         >
           <div
             class="flex items-end py-2"
@@ -61,11 +61,11 @@ exports[`PluginManager should render 1`] = `
       </div>
     </div>
     <div
-      class="sticky top-20 h-20 bg-theme-neutral-900 shadow-md z-20 md:top-24"
+      class="sticky z-20 h-20 shadow-md top-20 bg-theme-neutral-900 md:top-24"
       data-testid="PluginManagerNavigationBar"
     >
       <div
-        class="flex justify-between h-full container mx-auto text-theme-neutral-400"
+        class="container flex justify-between h-full mx-auto text-theme-neutral-400"
       >
         <div
           class="flex h-full space-x-6"
@@ -80,7 +80,7 @@ exports[`PluginManager should render 1`] = `
             class="flex items-center"
           >
             <div
-              class="bg-theme-neutral-700 w-px h-4"
+              class="w-px h-4 bg-theme-neutral-700"
             />
           </div>
           <div
@@ -89,7 +89,7 @@ exports[`PluginManager should render 1`] = `
           >
             Game 
             <span
-              class="text-theme-neutral-700 ml-1"
+              class="ml-1 text-theme-neutral-700"
             >
               48
             </span>
@@ -98,7 +98,7 @@ exports[`PluginManager should render 1`] = `
             class="flex items-center"
           >
             <div
-              class="bg-theme-neutral-700 w-px h-4"
+              class="w-px h-4 bg-theme-neutral-700"
             />
           </div>
           <div
@@ -107,7 +107,7 @@ exports[`PluginManager should render 1`] = `
           >
             Utility 
             <span
-              class="text-theme-neutral-700 ml-1"
+              class="ml-1 text-theme-neutral-700"
             >
               264
             </span>
@@ -116,7 +116,7 @@ exports[`PluginManager should render 1`] = `
             class="flex items-center"
           >
             <div
-              class="bg-theme-neutral-700 w-px h-4"
+              class="w-px h-4 bg-theme-neutral-700"
             />
           </div>
           <div
@@ -125,7 +125,7 @@ exports[`PluginManager should render 1`] = `
           >
             Themes 
             <span
-              class="text-theme-neutral-700 ml-1"
+              class="ml-1 text-theme-neutral-700"
             >
               96
             </span>
@@ -134,7 +134,7 @@ exports[`PluginManager should render 1`] = `
             class="flex items-center"
           >
             <div
-              class="bg-theme-neutral-700 w-px h-4"
+              class="w-px h-4 bg-theme-neutral-700"
             />
           </div>
           <div
@@ -143,7 +143,7 @@ exports[`PluginManager should render 1`] = `
           >
             Other 
             <span
-              class="text-theme-neutral-700 ml-1"
+              class="ml-1 text-theme-neutral-700"
             >
               27
             </span>
@@ -155,7 +155,7 @@ exports[`PluginManager should render 1`] = `
         >
           My Plugins 
           <span
-            class="text-theme-neutral-700 ml-1"
+            class="ml-1 text-theme-neutral-700"
           >
             8
           </span>
@@ -167,7 +167,7 @@ exports[`PluginManager should render 1`] = `
       data-testid="PluginManager__container--home"
     >
       <div
-        class="flex justify-between items-center"
+        class="flex items-center justify-between"
       >
         <h2>
           Home
@@ -254,7 +254,7 @@ exports[`PluginManager should render 1`] = `
               Featured Plugins
             </h2>
             <span
-              class="text-theme-primary-600 hover:text-theme-primary-500 cursor-pointer"
+              class="cursor-pointer text-theme-primary-600 hover:text-theme-primary-500"
               data-testid="PluginManager__home__featured__view-more"
             >
               View More
@@ -972,7 +972,7 @@ exports[`PluginManager should render 1`] = `
               Top Rated
             </h2>
             <span
-              class="text-theme-primary-600 hover:text-theme-primary-500 cursor-pointer"
+              class="cursor-pointer text-theme-primary-600 hover:text-theme-primary-500"
               data-testid="PluginManager__home__top-rated__view-more"
             >
               View More
@@ -2405,7 +2405,7 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
       class="border-t-20 border-theme-neutral-100"
     >
       <div
-        class="relative container mx-auto justify-between items-end mt-10 mb-15"
+        class="container relative items-end justify-between mx-auto mt-10 mb-15"
       >
         <div
           class="inline-block"
@@ -2420,7 +2420,7 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
           </div>
         </div>
         <div
-          class="absolute right-0 top-0 bottom-0 mt-12 flex items-center justify-end space-x-3"
+          class="absolute top-0 bottom-0 right-0 flex items-center justify-end mt-12 space-x-3"
         >
           <div
             class="flex items-end py-2"
@@ -2457,11 +2457,11 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
       </div>
     </div>
     <div
-      class="sticky top-20 h-20 bg-theme-neutral-900 shadow-md z-20 md:top-24"
+      class="sticky z-20 h-20 shadow-md top-20 bg-theme-neutral-900 md:top-24"
       data-testid="PluginManagerNavigationBar"
     >
       <div
-        class="flex justify-between h-full container mx-auto text-theme-neutral-400"
+        class="container flex justify-between h-full mx-auto text-theme-neutral-400"
       >
         <div
           class="flex h-full space-x-6"
@@ -2476,7 +2476,7 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
             class="flex items-center"
           >
             <div
-              class="bg-theme-neutral-700 w-px h-4"
+              class="w-px h-4 bg-theme-neutral-700"
             />
           </div>
           <div
@@ -2485,7 +2485,7 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
           >
             Game 
             <span
-              class="text-theme-neutral-700 ml-1"
+              class="ml-1 text-theme-neutral-700"
             >
               48
             </span>
@@ -2494,7 +2494,7 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
             class="flex items-center"
           >
             <div
-              class="bg-theme-neutral-700 w-px h-4"
+              class="w-px h-4 bg-theme-neutral-700"
             />
           </div>
           <div
@@ -2503,7 +2503,7 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
           >
             Utility 
             <span
-              class="text-theme-neutral-700 ml-1"
+              class="ml-1 text-theme-neutral-700"
             >
               264
             </span>
@@ -2512,7 +2512,7 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
             class="flex items-center"
           >
             <div
-              class="bg-theme-neutral-700 w-px h-4"
+              class="w-px h-4 bg-theme-neutral-700"
             />
           </div>
           <div
@@ -2521,7 +2521,7 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
           >
             Themes 
             <span
-              class="text-theme-neutral-700 ml-1"
+              class="ml-1 text-theme-neutral-700"
             >
               96
             </span>
@@ -2530,7 +2530,7 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
             class="flex items-center"
           >
             <div
-              class="bg-theme-neutral-700 w-px h-4"
+              class="w-px h-4 bg-theme-neutral-700"
             />
           </div>
           <div
@@ -2539,7 +2539,7 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
           >
             Other 
             <span
-              class="text-theme-neutral-700 ml-1"
+              class="ml-1 text-theme-neutral-700"
             >
               27
             </span>
@@ -2551,7 +2551,7 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
         >
           My Plugins 
           <span
-            class="text-theme-neutral-700 ml-1"
+            class="ml-1 text-theme-neutral-700"
           >
             8
           </span>
@@ -2563,7 +2563,7 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
       data-testid="PluginManager__container--game"
     >
       <div
-        class="flex justify-between items-center"
+        class="flex items-center justify-between"
       >
         <h2>
           Game
@@ -4393,7 +4393,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
       class="border-t-20 border-theme-neutral-100"
     >
       <div
-        class="relative container mx-auto justify-between items-end mt-10 mb-15"
+        class="container relative items-end justify-between mx-auto mt-10 mb-15"
       >
         <div
           class="inline-block"
@@ -4408,7 +4408,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
           </div>
         </div>
         <div
-          class="absolute right-0 top-0 bottom-0 mt-12 flex items-center justify-end space-x-3"
+          class="absolute top-0 bottom-0 right-0 flex items-center justify-end mt-12 space-x-3"
         >
           <div
             class="flex items-end py-2"
@@ -4445,11 +4445,11 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
       </div>
     </div>
     <div
-      class="sticky top-20 h-20 bg-theme-neutral-900 shadow-md z-20 md:top-24"
+      class="sticky z-20 h-20 shadow-md top-20 bg-theme-neutral-900 md:top-24"
       data-testid="PluginManagerNavigationBar"
     >
       <div
-        class="flex justify-between h-full container mx-auto text-theme-neutral-400"
+        class="container flex justify-between h-full mx-auto text-theme-neutral-400"
       >
         <div
           class="flex h-full space-x-6"
@@ -4464,7 +4464,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
             class="flex items-center"
           >
             <div
-              class="bg-theme-neutral-700 w-px h-4"
+              class="w-px h-4 bg-theme-neutral-700"
             />
           </div>
           <div
@@ -4473,7 +4473,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
           >
             Game 
             <span
-              class="text-theme-neutral-700 ml-1"
+              class="ml-1 text-theme-neutral-700"
             >
               48
             </span>
@@ -4482,7 +4482,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
             class="flex items-center"
           >
             <div
-              class="bg-theme-neutral-700 w-px h-4"
+              class="w-px h-4 bg-theme-neutral-700"
             />
           </div>
           <div
@@ -4491,7 +4491,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
           >
             Utility 
             <span
-              class="text-theme-neutral-700 ml-1"
+              class="ml-1 text-theme-neutral-700"
             >
               264
             </span>
@@ -4500,7 +4500,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
             class="flex items-center"
           >
             <div
-              class="bg-theme-neutral-700 w-px h-4"
+              class="w-px h-4 bg-theme-neutral-700"
             />
           </div>
           <div
@@ -4509,7 +4509,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
           >
             Themes 
             <span
-              class="text-theme-neutral-700 ml-1"
+              class="ml-1 text-theme-neutral-700"
             >
               96
             </span>
@@ -4518,7 +4518,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
             class="flex items-center"
           >
             <div
-              class="bg-theme-neutral-700 w-px h-4"
+              class="w-px h-4 bg-theme-neutral-700"
             />
           </div>
           <div
@@ -4527,7 +4527,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
           >
             Other 
             <span
-              class="text-theme-neutral-700 ml-1"
+              class="ml-1 text-theme-neutral-700"
             >
               27
             </span>
@@ -4539,7 +4539,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
         >
           My Plugins 
           <span
-            class="text-theme-neutral-700 ml-1"
+            class="ml-1 text-theme-neutral-700"
           >
             8
           </span>
@@ -4551,7 +4551,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
       data-testid="PluginManager__container--home"
     >
       <div
-        class="flex justify-between items-center"
+        class="flex items-center justify-between"
       >
         <h2>
           Home
@@ -4638,7 +4638,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
               Featured Plugins
             </h2>
             <span
-              class="text-theme-primary-600 hover:text-theme-primary-500 cursor-pointer"
+              class="cursor-pointer text-theme-primary-600 hover:text-theme-primary-500"
               data-testid="PluginManager__home__featured__view-more"
             >
               View More
@@ -5356,7 +5356,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
               Top Rated
             </h2>
             <span
-              class="text-theme-primary-600 hover:text-theme-primary-500 cursor-pointer"
+              class="cursor-pointer text-theme-primary-600 hover:text-theme-primary-500"
               data-testid="PluginManager__home__top-rated__view-more"
             >
               View More
