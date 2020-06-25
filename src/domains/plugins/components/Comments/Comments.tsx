@@ -53,22 +53,22 @@ export const Comments = ({ comments, sortOptions }: CommentsProps) => {
 			</div>
 			<div>
 				{comments.map(({ author, score, date, comment, replies }, idx) => (
-					<div className="flex flex-col w-2/3 mt-5 text-sm" key={idx}>
-						<div className="w-1/2">
+					<div className="flex flex-col mt-5 text-sm" key={idx}>
+						<div className="w-2/4">
 							<div className="grid grid-cols-3 divide-x divide-theme-neutral-400">
 								<div>
-									<span className="text-base">{author}</span>
+									<span className="text-base font-semibold">{author}</span>
 								</div>
 								<div className="flex items-center justify-center text-theme-warning-300">
 									<Icon name="Star" width={10} height={10} />
-									<span className="flex px-3 text-theme-neutral-600">{score}</span>
+									<span className="flex px-2 text-theme-neutral-600">{score}</span>
 								</div>
 								<div className="px-3">
 									<span className="text-theme-neutral-400">{getDateDifferenceFromNow(date)}</span>
 								</div>
 							</div>
 						</div>
-						<div className="mt-2">
+						<div className="mt-2 w-11/12">
 							<p className="text-theme-neutral-600">{comment}</p>
 							{replies &&
 								replies.map((reply: any, index: number) => (
