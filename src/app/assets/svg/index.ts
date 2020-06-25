@@ -5,6 +5,7 @@ import { ReactComponent as ArrowBack } from "./arrow-back.svg";
 import { ReactComponent as ArrowDown } from "./arrowdown.svg";
 import { ReactComponent as ArrowUp } from "./arrowup.svg";
 import { ReactComponent as Article } from "./article.svg";
+import { ReactComponent as ChartActiveDot } from "./chart-active-dot.svg";
 import { ReactComponent as Checkmark } from "./checkmark.svg";
 import { ReactComponent as ChevronDown } from "./chevron-down.svg";
 import { ReactComponent as Close } from "./close.svg";
@@ -48,6 +49,7 @@ import { ReactComponent as Profile } from "./profile.svg";
 import { ReactComponent as Qrcode } from "./qrcode.svg";
 import { ReactComponent as Receive } from "./receive.svg";
 import { ReactComponent as Received } from "./received.svg";
+import { ReactComponent as ReplyArrow } from "./reply-arrow.svg";
 import { ReactComponent as Reset } from "./reset.svg";
 import { ReactComponent as Search } from "./search.svg";
 import { ReactComponent as Send } from "./send.svg";
@@ -107,7 +109,9 @@ export const SvgCollection: any = {
 	Plugin,
 	Plus,
 	Qrcode,
+	Receive,
 	Received,
+	ReplyArrow,
 	Reset,
 	Search,
 	Send,
@@ -125,7 +129,6 @@ export const SvgCollection: any = {
 	Upload,
 	Voted,
 	Notification,
-	Receive,
 	User,
 	Exchange,
 	Plugins,
@@ -134,4 +137,5 @@ export const SvgCollection: any = {
 	PortfolioTag,
 	Article,
 	EyeTag,
+	ChartActiveDot,
 };
