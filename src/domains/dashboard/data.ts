@@ -15,12 +15,36 @@ export const networks = [
 
 export const wallets = [
 	{
-		coinIcon: "Bitcoin",
-		coinClass: "text-theme-warning-400 border-theme-warning-200",
+		coinIcon: "Ark",
+		coinClass: "text-theme-danger-400 border-theme-danger-200",
 		avatarId: "test",
 		address: "ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
 		walletName: "My Wallet",
-		balance: "100 BTC",
+		balance: "2,000,000 ARK",
+		fiat: "1,000,000 USD",
+		walletTypeIcons: ["Star", "Multisig", "Ledger"],
+		actions: [
+			{
+				label: "Action 1",
+				value: "1",
+			},
+			{
+				label: "Action 2",
+				value: "2",
+			},
+			{
+				label: "Action 3",
+				value: "3",
+			},
+		],
+	},
+	{
+		coinIcon: "Ethereum",
+		coinClass: "text-theme-neutral-800 border-theme-neutral-600",
+		avatarId: "test",
+		address: "ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
+		walletName: "My Eth",
+		balance: "100,150 ETH",
 		fiat: "1,000,000 USD",
 		walletTypeIcons: ["Star", "Multisig", "Ledger"],
 		actions: [
@@ -111,12 +135,12 @@ export const wallets = [
 		],
 	},
 	{
-		coinIcon: "Bitcoin",
-		coinClass: "text-theme-warning-400 border-theme-warning-200",
+		coinIcon: "Ark",
+		coinClass: "text-theme-danger-400 border-theme-danger-200",
 		avatarId: "test",
 		address: "ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
 		walletName: "My Wallet",
-		balance: "100 BTC",
+		balance: "2,000,000 ARK",
 		fiat: "1,000,000 USD",
 		walletTypeIcons: ["Star", "Multisig", "Ledger"],
 		actions: [
@@ -135,12 +159,12 @@ export const wallets = [
 		],
 	},
 	{
-		coinIcon: "Bitcoin",
-		coinClass: "text-theme-warning-400 border-theme-warning-200",
+		coinIcon: "Ethereum",
+		coinClass: "text-theme-neutral-800 border-theme-neutral-600",
 		avatarId: "test",
 		address: "ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
-		walletName: "My Wallet",
-		balance: "100 BTC",
+		walletName: "My Eth",
+		balance: "100,150 ETH",
 		fiat: "1,000,000 USD",
 		walletTypeIcons: ["Star", "Multisig", "Ledger"],
 		actions: [

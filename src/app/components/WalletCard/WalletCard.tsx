@@ -15,7 +15,7 @@ type WalletCardProps = {
 	blankSubtitle: string;
 	avatarId?: string;
 	coinIcon?: string;
-	coinIconClass?: string;
+	coinClass?: string;
 	walletName?: string;
 	address?: string;
 	balance?: string;
@@ -26,7 +26,7 @@ type WalletCardProps = {
 
 const renderCoin = (coinIcon?: string) => {
 	if (!coinIcon) return null;
-	return <Icon name={coinIcon} width={16} height={16} />;
+	return <Icon name={coinIcon} width={18} height={16} />;
 };
 
 export const WalletCard = ({
@@ -41,7 +41,7 @@ export const WalletCard = ({
 	balance,
 	avatarId,
 	coinIcon,
-	coinIconClass,
+	coinClass,
 	actions,
 	onSelect,
 	walletTypeIcons,
@@ -91,7 +91,7 @@ export const WalletCard = ({
 							})}
 					</div>
 					<div>
-						<Circle size="large" className={`border-theme-primary-contrast -mr-2 ${coinIconClass}`}>
+						<Circle size="large" className={`border-theme-primary-contrast -mr-2 ${coinClass}`}>
 							{renderCoin(coinIcon)}
 						</Circle>
 						<Circle size="large" avatarId={avatarId} className="border-theme-primary-contrast" />

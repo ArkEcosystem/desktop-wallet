@@ -35,29 +35,29 @@ export const Wallets = ({
 		slidesPerColumn: 2,
 
 		// Responsive breakpoints
-		breakpoints: {
-			// 	// when window width is >= 320px
-			320: {
-				slidesPerView: 1,
-				slidesPerColumn: 2,
-			},
-			600: {
-				slidesPerView: 2,
-				slidesPerColumn: 2,
-			},
-			860: {
-				slidesPerView: 3,
-				slidesPerColumn: 2,
-			},
-			1140: {
-				slidesPerView: 4,
-				slidesPerColumn: 2,
-			},
-			1320: {
-				slidesPerView: 5,
-				slidesPerColumn: 2,
-			},
-		},
+		// breakpoints: {
+		// 	// 	// when window width is >= 320px
+		// 	320: {
+		// 		slidesPerView: 1,
+		// 		slidesPerColumn: 2,
+		// 	},
+		// 	600: {
+		// 		slidesPerView: 2,
+		// 		slidesPerColumn: 2,
+		// 	},
+		// 	860: {
+		// 		slidesPerView: 3,
+		// 		slidesPerColumn: 2,
+		// 	},
+		// 	1140: {
+		// 		slidesPerView: 4,
+		// 		slidesPerColumn: 2,
+		// 	},
+		// 	1320: {
+		// 		slidesPerView: 5,
+		// 		slidesPerColumn: 2,
+		// 	},
+		// },
 	};
 
 	// Pad with empty cards to fill the row
@@ -87,12 +87,14 @@ export const Wallets = ({
 			</div>
 			<div className="mt-1">
 				{walletsViewType === "grid" && (
-					<Slider
-						data={walletsGridData(wallets, walletSliderOptions.slidesPerView)}
-						options={walletSliderOptions}
-					>
-						{(walletData: any) => <WalletCard {...walletData} onSelect={onWalletAction} />}
-					</Slider>
+					<div style={{ width: 1100 }}>
+						<Slider
+							data={walletsGridData(wallets, walletSliderOptions.slidesPerView)}
+							options={walletSliderOptions}
+						>
+							{(walletData: any) => <WalletCard {...walletData} onSelect={onWalletAction} />}
+						</Slider>
+					</div>
 				)}
 				{walletsViewType === "list" && (
 					<div>
