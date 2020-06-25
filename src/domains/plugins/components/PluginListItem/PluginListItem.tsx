@@ -49,7 +49,24 @@ export const PluginListItem = ({ onDelete, onInstall, plugin }: PluginListItemPr
 			<td className="py-10">v {plugin.version}</td>
 
 			<td className="py-10">{plugin.size}</td>
-			<td className="py-10">{plugin.size}</td>
+
+			<td className="py-10 flex">
+				{plugin.isInstalled && (
+					<div className="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500">
+						<div className="m-auto">
+							<Icon name="Checkmark" width={15} height={15} />
+						</div>
+					</div>
+				)}
+
+				{!plugin.isInstalled && (
+					<div className="flex mx-auto w-6 h-6">
+						<div className="m-auto text-theme-neutral-500">
+							<Icon name="Dash" width={15} height={15} />
+						</div>
+					</div>
+				)}
+			</td>
 
 			<td className="w-16 text-right">
 				{!plugin.isInstalled && (

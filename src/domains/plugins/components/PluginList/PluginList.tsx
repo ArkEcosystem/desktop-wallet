@@ -46,6 +46,8 @@ export const PluginList = ({ className, onDelete, onInstall, plugins }: PluginLi
 		{
 			Header: t("COMMON.STATUS"),
 			accessor: "isInstalled",
+			disableSortBy: true,
+			className: "justify-center",
 		},
 		{
 			Header: "  ",
