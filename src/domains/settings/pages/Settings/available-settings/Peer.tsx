@@ -1,4 +1,5 @@
 import { Button } from "app/components/Button";
+import { Divider } from "app/components/Divider";
 import { Form } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { ListDivided } from "app/components/ListDivided";
@@ -19,7 +20,7 @@ export const Peer = ({ formConfig, onSubmit }: PeerProps) => {
 			label: "Broadcast to Multiple Peers",
 			labelClass: "text-xl font-bold text-theme-neutral-dark",
 			content: (
-				<div className="flex flex-row justify-between">
+				<div className="flex flex-row justify-between mb-3">
 					<span className="w-3/4 -mt-4 text-sm text-theme-neutral">
 						This protection will protect your money from unwanted Screenshot your PC.
 					</span>
@@ -32,7 +33,7 @@ export const Peer = ({ formConfig, onSubmit }: PeerProps) => {
 		{
 			isFloatingLabel: true,
 			label: "Use Custom Peers",
-			labelClass: "text-xl font-bold text-theme-neutral-dark",
+			labelClass: "text-xl font-bold text-theme-neutral-dark -mt-4",
 			content: (
 				<div className="flex flex-row justify-between">
 					<span className="w-3/4 -mt-4 text-sm text-theme-neutral">
@@ -53,6 +54,7 @@ export const Peer = ({ formConfig, onSubmit }: PeerProps) => {
 			<Form id="peer-settings__form" context={formConfig.context} onSubmit={onSubmit}>
 				<ListDivided items={peerItems} />
 				<PeerList peers={peers} />
+				<Divider dashed />
 				<div className="flex justify-end">
 					<Button>Save</Button>
 				</div>

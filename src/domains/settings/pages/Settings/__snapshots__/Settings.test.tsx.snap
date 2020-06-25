@@ -1183,7 +1183,7 @@ exports[`Settings should render peer settings 1`] = `
               data-testid="list-divided-item__content"
             >
               <div
-                class="flex flex-row justify-between"
+                class="flex flex-row justify-between mb-3"
               >
                 <span
                   class="w-3/4 -mt-4 text-sm text-theme-neutral"
@@ -1222,7 +1222,7 @@ exports[`Settings should render peer settings 1`] = `
                 class="flex flex-col"
               >
                 <span
-                  class="mr-5 text-xl font-bold text-theme-neutral-dark"
+                  class="mr-5 text-xl font-bold text-theme-neutral-dark -mt-4"
                   data-testid="list-divided-item__label"
                 >
                   Use Custom Peers
@@ -1264,7 +1264,7 @@ exports[`Settings should render peer settings 1`] = `
         </ul>
         <div>
           <div
-            class="sc-fzokOt epSntt"
+            class="sc-fzqBZW hLmHfk"
             role="table"
           >
             <table
@@ -1366,7 +1366,7 @@ exports[`Settings should render peer settings 1`] = `
                     class="inline-flex items-center py-4 mt-1"
                   >
                     <div
-                      class="sc-fzoyAV cxgciJ text-logo border-theme-danger-200"
+                      class="sc-fzoLag eQAZVl text-logo border-theme-danger-200"
                     >
                       <div
                         class="sc-AxjAm cpczEI"
@@ -1443,7 +1443,7 @@ exports[`Settings should render peer settings 1`] = `
                     class="inline-flex items-center py-4 mt-1"
                   >
                     <div
-                      class="sc-fzoyAV cxgciJ border-theme-neutral-300"
+                      class="sc-fzoLag eQAZVl border-theme-neutral-300"
                     >
                       <div
                         class="sc-AxjAm cpczEI"
@@ -1520,7 +1520,7 @@ exports[`Settings should render peer settings 1`] = `
                     class="inline-flex items-center py-4 mt-1"
                   >
                     <div
-                      class="sc-fzoyAV cxgciJ text-theme-warning-400 border-theme-warning-200"
+                      class="sc-fzoLag eQAZVl text-theme-warning-400 border-theme-warning-200"
                     >
                       <div
                         class="sc-AxjAm cpczEI"
@@ -1594,7 +1594,7 @@ exports[`Settings should render peer settings 1`] = `
             </table>
           </div>
           <button
-            class="sc-AxiKw gFzSt w-full mt-5 mb-5"
+            class="sc-AxiKw gFzSt w-full mt-5"
             color="primary"
             data-testid="peer-list__add-button"
             type="button"
@@ -1602,6 +1602,10 @@ exports[`Settings should render peer settings 1`] = `
             Add Peer
           </button>
         </div>
+        <div
+          class="sc-fzokOt gzRbih"
+          type="horizontal"
+        />
         <div
           class="flex justify-end"
         >
