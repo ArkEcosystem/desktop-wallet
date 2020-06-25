@@ -1,8 +1,8 @@
 import { Dropdown } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
+import { Pagination } from "app/components/Pagination";
 import React, { useState } from "react";
 
-import { Pagination } from "./components/Pagination";
 import { Reply } from "./components/Reply";
 import { getDateDifferenceFromNow } from "./utils";
 
