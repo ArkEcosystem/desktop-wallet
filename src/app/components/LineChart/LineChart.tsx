@@ -52,7 +52,7 @@ const ChartLegend = ({ legend = {}, lines, period, onPeriodClick }: any) => {
 			<div className="flex">
 				{period && (
 					<div
-						className="py-4 text-theme-neutral-700 font-semibold text-sm cursor-pointer"
+						className="py-4 text-sm font-semibold cursor-pointer text-theme-neutral-700"
 						onClick={onPeriodClick}
 					>
 						<div className="flex">
@@ -68,7 +68,7 @@ const ChartLegend = ({ legend = {}, lines, period, onPeriodClick }: any) => {
 					{lines &&
 						lines.map((item: any, index: number) => {
 							return (
-								<div key={index} className="p-4 pr-0 ml-3 w-36 text-right">
+								<div key={index} className="p-4 pr-0 ml-3 text-right w-36">
 									<div
 										className={`mr-2 mb-1 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-${item.color}`}
 									/>
