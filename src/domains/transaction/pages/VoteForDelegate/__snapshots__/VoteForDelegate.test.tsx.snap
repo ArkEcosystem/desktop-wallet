@@ -128,28 +128,6 @@ exports[`Vote For Delegate should render 1`] = `
                   </div>
                 </div>
                 <div
-                  class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
-                >
-                  <div
-                    class="flex-1"
-                  >
-                    <div
-                      class="text-sm font-semibold text-theme-neutral-500"
-                    >
-                      Amount ARK
-                    </div>
-                    <div
-                      class="mt-2 font-semibold"
-                    >
-                      <input
-                        class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
-                        data-testid="Input"
-                        name="amount"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div
                   class="flex items-center py-4 true "
                 >
                   <div
@@ -375,28 +353,6 @@ exports[`Vote For Delegate should render 1st step 1`] = `
           <div
             class="sc-AxirZ hTKBId"
           />
-        </div>
-      </div>
-      <div
-        class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
-      >
-        <div
-          class="flex-1"
-        >
-          <div
-            class="text-sm font-semibold text-theme-neutral-500"
-          >
-            Amount ARK
-          </div>
-          <div
-            class="mt-2 font-semibold"
-          >
-            <input
-              class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
-              data-testid="Input"
-              name="amount"
-            />
-          </div>
         </div>
       </div>
       <div
@@ -649,46 +605,6 @@ exports[`Vote For Delegate should render 2nd step 1`] = `
           <div
             class="sc-AxirZ hTKBId"
           />
-        </div>
-      </div>
-      <div
-        class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
-      >
-        <div
-          class="flex-1"
-        >
-          <div
-            class="text-sm font-semibold text-theme-neutral-500"
-          >
-            Amount
-          </div>
-          <div
-            class="mt-2 font-semibold"
-          >
-            1.00 ARK 
-            <span
-              class="text-theme-neutral-400"
-            >
-              25.00 USD
-            </span>
-          </div>
-        </div>
-        <div
-          class="ml-1 text-theme-danger"
-        >
-          <div
-            class="sc-AxirZ cZokSJ bg-theme-background border-theme-danger-200"
-          >
-            <div
-              class="sc-AxhCb liaKlj"
-              height="50"
-              width="50"
-            >
-              <svg>
-                sent.svg
-              </svg>
-            </div>
-          </div>
         </div>
       </div>
       <div
@@ -1062,29 +978,12 @@ exports[`Vote For Delegate should render 4th step 1`] = `
             <div
               class="text-sm font-semibold text-theme-neutral-500"
             >
-              Amount
+              Transaction fee
             </div>
             <div
               class="mt-2 font-semibold"
             >
-              1.00 ARK
-            </div>
-          </div>
-          <div
-            class="ml-1 text-theme-danger"
-          >
-            <div
-              class="sc-AxirZ cZokSJ bg-theme-background border-theme-danger-200"
-            >
-              <div
-                class="sc-AxhCb liaKlj"
-                height="50"
-                width="50"
-              >
-                <svg>
-                  sent.svg
-                </svg>
-              </div>
+              0.09660435 ARK
             </div>
           </div>
         </div>
@@ -1106,10 +1005,10 @@ exports[`Vote For Delegate should render 4th step 1`] = `
             </div>
           </div>
           <div
-            class="ml-1 text-theme-danger"
+            class="ml-1 text-theme-neutral-900"
           >
             <div
-              class="sc-AxirZ cZokSJ border-black bg-theme-background"
+              class="sc-AxirZ cZokSJ border-theme-neutral-900 bg-theme-background"
             >
               <div
                 class="sc-AxhCb fxrKLH"
