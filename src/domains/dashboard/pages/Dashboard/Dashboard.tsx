@@ -48,7 +48,7 @@ export const Dashboard = ({ transactions, wallets, networks, portfolioPercentage
 	];
 
 	return (
-		<div className="-m-5 -mt-6 pt-1 bg-theme-neutral-100">
+		<div className="pt-1 -m-5 -mt-6 bg-theme-neutral-100">
 			{showPortfolio && balances && (
 				<Section>
 					<div className="-mb-2 text-3xl font-bold">Portfolio Chart</div>

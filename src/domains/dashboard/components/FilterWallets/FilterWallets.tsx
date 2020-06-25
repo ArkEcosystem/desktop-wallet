@@ -49,7 +49,7 @@ export const FilterWallets = ({
 				<div className="text-sm text-theme-neutral-500">Select the types of networks</div>
 			</div>
 			<SelectNetwork networks={networks} onChange={onNetworkChange} onViewAll={onViewAllNetworks} />
-			<div className="border-t border-1 border-theme-neutral-200 border-dotted my-8" />
+			<div className="my-8 border-t border-dotted border-1 border-theme-neutral-200" />
 
 			<div className="flex flex-row mb-8">
 				<div className="w-4/5">
@@ -62,13 +62,13 @@ export const FilterWallets = ({
 						className="relative h-6 mt-3 mr-5 cursor-pointer text-theme-neutral-700"
 						onClick={onWalletClick}
 					>
-						<span className="font-semibold inline-block pr-1">All</span>
+						<span className="inline-block pr-1 font-semibold">All</span>
 						<Badge icon="ChevronDown" className="top-1 -right-6" iconWidth={19} iconHeight={19} />
 					</div>
 				</div>
 			</div>
 
-			<div className="border-t border-1 border-theme-neutral-200 border-dotted my-8" />
+			<div className="my-8 border-t border-dotted border-1 border-theme-neutral-200" />
 
 			<div className="flex flex-row mb-6">
 				<div className="w-4/5">

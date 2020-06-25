@@ -12,7 +12,7 @@ type TransactionsProps = {
 export const Transactions = ({ transactions, columns, title }: TransactionsProps) => {
 	return (
 		<div className="bg-white">
-			<div className="pb-8 font-bold text-3xl">{title}</div>
+			<div className="pb-8 text-3xl font-bold">{title}</div>
 			<Table columns={columns} data={transactions}>
 				{(rowData: any) => <TransactionListItem {...rowData} />}
 			</Table>

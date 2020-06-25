@@ -68,7 +68,7 @@ const ChartLegend = ({ legend = {}, lines, period, onPeriodClick }: any) => {
 					{lines &&
 						lines.map((item: any, index: number) => {
 							return (
-								<div key={index} className="pt-4 p-4 pr-0 ml-3 text-right w-32">
+								<div key={index} className="w-32 p-4 pt-4 pr-0 ml-3 text-right">
 									<div
 										className={`mr-2 mb-1 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-${item.color}`}
 									/>
