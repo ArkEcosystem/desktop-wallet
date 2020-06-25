@@ -35,7 +35,7 @@ export const WalletListItem = ({
 }: WalletListItemProps) => {
 	const getIconTypeClass = (icon: string) => {
 		if (icon === "Star") return "text-theme-warning-400";
-		return "text-theme-primary-300";
+		return "text-theme-neutral-600";
 	};
 
 	const onDropdownAction = (action: any) => {
@@ -45,13 +45,13 @@ export const WalletListItem = ({
 	return (
 		<tr className="border-b border-theme-neutral-200">
 			<td className="py-4 mt-1">
-				<Circle className={coinClass}>
-					<Icon name={coinIcon} />
+				<Circle className={coinClass} size="large">
+					<Icon name={coinIcon} width={20} height={20} />
 				</Circle>
-				<Circle avatarId={avatarId} />
+				<Circle avatarId={avatarId} size="large" />
 			</td>
 			<td className="py-1">
-				<Address walletName={walletName} address={address} size="small" maxChars={22} />
+				<Address walletName={walletName} address={address} maxChars={22} />
 			</td>
 			{walletTypeIcons && (
 				<td className="py-1 text-sm font-bold">
@@ -64,10 +64,10 @@ export const WalletListItem = ({
 					})}
 				</td>
 			)}
-			<td className="py-1 text-sm font-bold text-right">
+			<td className="py-1 font-bold text-right">
 				<div>{balance}</div>
 			</td>
-			<td className="py-1 text-sm font-bold text-right text-theme-neutral-400">
+			<td className="py-1 font-semibold text-right text-theme-neutral-400">
 				<div>{fiat}</div>
 			</td>
 			<td>
@@ -84,7 +84,11 @@ export const WalletListItem = ({
 							);
 						}
 
-						return <Dropdown options={actions} onSelect={onDropdownAction} />;
+						return (
+							<div className="text-theme-neutral-400 hover:text-theme-neutral-500">
+								<Dropdown options={actions} onSelect={onDropdownAction} />
+							</div>
+						);
 					})()}
 			</td>
 		</tr>
