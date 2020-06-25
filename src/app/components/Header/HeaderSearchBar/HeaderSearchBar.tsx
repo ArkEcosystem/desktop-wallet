@@ -4,10 +4,11 @@ import { clickOutsideHandler, useDebounce } from "app/hooks";
 import React, { useEffect, useRef, useState } from "react";
 
 type HeaderSearchBarProps = {
+	children?: React.ReactNode;
 	onSearch?: any;
 };
 
-export const HeaderSearchBar = ({ onSearch }: HeaderSearchBarProps) => {
+export const HeaderSearchBar = ({ children, onSearch }: HeaderSearchBarProps) => {
 	const [searchbarVisible, setSearchbarVisible] = useState(false);
 	const [query, setQuery] = useState("");
 
@@ -32,11 +33,17 @@ export const HeaderSearchBar = ({ onSearch }: HeaderSearchBarProps) => {
 			{!searchbarVisible && (
 				<button
 					data-testid="header-search-bar__button"
-					className="flex items-center my-auto font-semibold cursor-pointer text-theme-primary-200 space-x-3"
+					className="my-auto font-semibold cursor-pointer text-theme-primary-200"
 					onClick={() => setSearchbarVisible(true)}
 				>
-					<span>Search</span>
-					<Icon name="Search" width={20} height={20} />
+					{children ? (
+						children
+					) : (
+						<div className="flex items-center space-x-3">
+							<span>Search</span>
+							<Icon name="Search" width={20} height={20} />
+						</div>
+					)}
 				</button>
 			)}
 
