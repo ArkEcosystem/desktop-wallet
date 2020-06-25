@@ -22,5 +22,9 @@ export const PluginGrid = ({ className, onDelete, onSelect, plugins }: PluginGri
 		);
 	}
 
-	return <div className={`grid grid-cols-4 gap-5 ${className}`}>{entries}</div>;
+	return (
+		<div data-testid="PluginGrid" className={`grid grid-cols-4 gap-5 ${className}`}>
+			{entries}
+		</div>
+	);
 };

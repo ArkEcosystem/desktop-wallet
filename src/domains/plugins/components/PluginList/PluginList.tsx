@@ -56,7 +56,7 @@ export const PluginList = ({ className, onDelete, onInstall, plugins }: PluginLi
 	];
 
 	return (
-		<div className={className}>
+		<div data-testid="PluginList" className={className}>
 			<Table columns={columns} data={plugins}>
 				{(plugin: any) => <PluginListItem plugin={plugin} onInstall={onInstall} onDelete={onDelete} />}
 			</Table>
