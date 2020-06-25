@@ -17,6 +17,7 @@ type Props = {
 	options?: any;
 	position?: string;
 	toggleIcon: string;
+	toggleSize: "small" | "large" | "default";
 	toggleContent?: any;
 };
 
@@ -46,12 +47,23 @@ const renderOptions = (options: any[], onSelect: any) => (
 	</ul>
 );
 
-const renderToggle = (children: any, toggleIcon: string, isOpen: boolean) => {
+const renderToggle = (
+	children: any,
+	toggleIcon: string,
+	toggleSize: "small" | "large" | "default",
+	isOpen: boolean,
+) => {
 	// Default with toggleIcon
+	const size = {
+		small: 10,
+		default: 20,
+		large: 30,
+	};
+
 	if (!children) {
 		return (
 			<div className="float-right outline-none focus:outline-none">
-				<Icon name={toggleIcon} width={20} height={20} />
+				<Icon name={toggleIcon} width={size[toggleSize]} height={size[toggleSize]} />
 			</div>
 		);
 	}
@@ -63,7 +75,7 @@ const renderToggle = (children: any, toggleIcon: string, isOpen: boolean) => {
 	return children;
 };
 
-export const Dropdown = ({ children, options, onSelect, position, toggleIcon, toggleContent }: Props) => {
+export const Dropdown = ({ children, options, onSelect, position, toggleIcon, toggleSize, toggleContent }: Props) => {
 	const [isOpen, setIsOpen] = useState(false);
 
 	const toggle = (e: any) => {
@@ -83,14 +95,14 @@ export const Dropdown = ({ children, options, onSelect, position, toggleIcon, to
 	if (!isOpen) {
 		return (
 			<div onClick={toggle} ref={ref} className="relative" data-testid="dropdown__toggle">
-				{renderToggle(toggleContent, toggleIcon, isOpen)}
+				{renderToggle(toggleContent, toggleIcon, toggleSize, isOpen)}
 			</div>
 		);
 	}
 
 	return (
 		<div ref={ref} className="relative">
-			<span onClick={toggle}>{renderToggle(toggleContent, toggleIcon, isOpen)}</span>
+			<span onClick={toggle}>{renderToggle(toggleContent, toggleIcon, toggleSize, isOpen)}</span>
 
 			<Wrapper className={`${position}-0`}>
 				<div data-testid="dropdown__content">{renderOptions(options, select)}</div>
@@ -104,4 +116,5 @@ Dropdown.defaultProps = {
 	options: [],
 	toggleIcon: "Settings",
 	position: "right",
+	toggleSize: "default",
 };
