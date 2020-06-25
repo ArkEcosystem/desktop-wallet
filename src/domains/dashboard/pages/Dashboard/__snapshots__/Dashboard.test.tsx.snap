@@ -3,22 +3,20 @@
 exports[`Dashboard should render 1`] = `
 <div>
   <div
-    class="-m-5 bg-theme-neutral-100"
+    class="-m-5 -mt-6 pt-1 bg-theme-neutral-100"
   >
     <div
-      class="bg-white"
+      class="sc-fznyAO cozLw"
     >
-      <div
-        class="p-10 bg-theme-background"
-      >
+      <div>
         <div
-          class="flex w-full pb-4"
+          class="flex w-full pb-8"
         >
-          <h2
-            class="w-2/4 mt-1"
+          <div
+            class="w-2/4 -mt-1 text-3xl font-bold"
           >
             Wallets
-          </h2>
+          </div>
           <div
             class="w-2/4 text-right"
           >
@@ -136,190 +134,186 @@ exports[`Dashboard should render 1`] = `
           class="mt-1"
         >
           <div
-            class="relative"
+            style="width: 1100px;"
           >
             <div
-              class="swiper-container swiper-container-initialized swiper-container-horizontal swiper-container-multirow swiper-container-multirow-column"
-              style="height: 273px;"
+              class="relative"
             >
               <div
-                class="h-full swiper-wrapper "
-                style="webkit-transition-duration: 0ms; transition-duration: 0ms; webkit-transform: translate3d(NaNpx, 0px, 0px); transform: translate3d(NaNpx, 0px, 0px);"
+                class="swiper-container swiper-container-initialized swiper-container-horizontal swiper-container-multirow swiper-container-multirow-column"
+                style="height: 242.00000000000003px;"
               >
                 <div
-                  class="swiper-slide"
-                  style="height: 210px;"
+                  class="h-full swiper-wrapper "
+                  style="webkit-transition-duration: 0ms; transition-duration: 0ms; webkit-transform: translate3d(NaNpx, 0px, 0px); transform: translate3d(NaNpx, 0px, 0px);"
                 >
                   <div
-                    class="w-64 inline-block undefined"
+                    class="swiper-slide"
+                    style="height: 220px;"
                   >
                     <div
-                      class="sc-AxheI euRuZs"
+                      class="w-64 inline-block undefined"
                     >
                       <div
-                        class="px-1 py-2"
+                        class="sc-AxheI euRuZs"
                       >
                         <div
-                          class="mt-1"
+                          class="p-2"
                         >
+                          <div>
+                            <div
+                              class="sc-AxhUy dSLmHc -mr-2 border-theme-primary-contrast bg-white"
+                            />
+                            <div
+                              class="sc-AxhUy dSLmHc border-theme-primary-contrast bg-white"
+                            />
+                          </div>
                           <div
-                            class="sc-AxhUy fHeTTV -mr-2 border-theme-primary-contrast"
-                          />
+                            class=" mt-6 text-md text-theme-primary-contrast undefined"
+                          >
+                            New wallet
+                          </div>
                           <div
-                            class="sc-AxhUy fHeTTV border-theme-primary-contrast"
-                          />
+                            class=" mt-1 text-md text-theme-primary-contrast undefined"
+                          >
+                            Balance
+                          </div>
                         </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="swiper-slide"
+                    style="height: 220px;"
+                  >
+                    <div
+                      class="w-64 inline-block undefined"
+                    >
+                      <div
+                        class="sc-AxheI euRuZs"
+                      >
                         <div
-                          class="mt-4 text-md text-theme-primary-contrast"
+                          class="p-2"
                         >
-                          New wallet
+                          <div>
+                            <div
+                              class="sc-AxhUy dSLmHc -mr-2 border-theme-primary-contrast bg-white"
+                            />
+                            <div
+                              class="sc-AxhUy dSLmHc border-theme-primary-contrast bg-white"
+                            />
+                          </div>
+                          <div
+                            class=" mt-6 text-md text-theme-primary-contrast undefined"
+                          >
+                            New wallet
+                          </div>
+                          <div
+                            class=" mt-1 text-md text-theme-primary-contrast undefined"
+                          >
+                            Balance
+                          </div>
                         </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="swiper-slide"
+                    style="height: 220px;"
+                  >
+                    <div
+                      class="w-64 inline-block undefined"
+                    >
+                      <div
+                        class="sc-AxheI euRuZs"
+                      >
                         <div
-                          class="mt-1 text-md text-theme-primary-contrast"
+                          class="p-2"
                         >
-                          Balance
+                          <div>
+                            <div
+                              class="sc-AxhUy dSLmHc -mr-2 border-theme-primary-contrast bg-white"
+                            />
+                            <div
+                              class="sc-AxhUy dSLmHc border-theme-primary-contrast bg-white"
+                            />
+                          </div>
+                          <div
+                            class=" mt-6 text-md text-theme-primary-contrast undefined"
+                          >
+                            New wallet
+                          </div>
+                          <div
+                            class=" mt-1 text-md text-theme-primary-contrast undefined"
+                          >
+                            Balance
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="swiper-slide"
+                    style="height: 220px;"
+                  >
+                    <div
+                      class="w-64 inline-block undefined"
+                    >
+                      <div
+                        class="sc-AxheI euRuZs"
+                      >
+                        <div
+                          class="p-2"
+                        >
+                          <div>
+                            <div
+                              class="sc-AxhUy dSLmHc -mr-2 border-theme-primary-contrast bg-white"
+                            />
+                            <div
+                              class="sc-AxhUy dSLmHc border-theme-primary-contrast bg-white"
+                            />
+                          </div>
+                          <div
+                            class=" mt-6 text-md text-theme-primary-contrast undefined"
+                          >
+                            New wallet
+                          </div>
+                          <div
+                            class=" mt-1 text-md text-theme-primary-contrast undefined"
+                          >
+                            Balance
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div
-                  class="swiper-slide"
-                  style="height: 210px;"
-                >
-                  <div
-                    class="w-64 inline-block undefined"
-                  >
-                    <div
-                      class="sc-AxheI euRuZs"
-                    >
-                      <div
-                        class="px-1 py-2"
-                      >
-                        <div
-                          class="mt-1"
-                        >
-                          <div
-                            class="sc-AxhUy fHeTTV -mr-2 border-theme-primary-contrast"
-                          />
-                          <div
-                            class="sc-AxhUy fHeTTV border-theme-primary-contrast"
-                          />
-                        </div>
-                        <div
-                          class="mt-4 text-md text-theme-primary-contrast"
-                        >
-                          New wallet
-                        </div>
-                        <div
-                          class="mt-1 text-md text-theme-primary-contrast"
-                        >
-                          Balance
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="swiper-slide"
-                  style="height: 210px;"
-                >
-                  <div
-                    class="w-64 inline-block undefined"
-                  >
-                    <div
-                      class="sc-AxheI euRuZs"
-                    >
-                      <div
-                        class="px-1 py-2"
-                      >
-                        <div
-                          class="mt-1"
-                        >
-                          <div
-                            class="sc-AxhUy fHeTTV -mr-2 border-theme-primary-contrast"
-                          />
-                          <div
-                            class="sc-AxhUy fHeTTV border-theme-primary-contrast"
-                          />
-                        </div>
-                        <div
-                          class="mt-4 text-md text-theme-primary-contrast"
-                        >
-                          New wallet
-                        </div>
-                        <div
-                          class="mt-1 text-md text-theme-primary-contrast"
-                        >
-                          Balance
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="swiper-slide"
-                  style="height: 210px;"
-                >
-                  <div
-                    class="w-64 inline-block undefined"
-                  >
-                    <div
-                      class="sc-AxheI euRuZs"
-                    >
-                      <div
-                        class="px-1 py-2"
-                      >
-                        <div
-                          class="mt-1"
-                        >
-                          <div
-                            class="sc-AxhUy fHeTTV -mr-2 border-theme-primary-contrast"
-                          />
-                          <div
-                            class="sc-AxhUy fHeTTV border-theme-primary-contrast"
-                          />
-                        </div>
-                        <div
-                          class="mt-4 text-md text-theme-primary-contrast"
-                        >
-                          New wallet
-                        </div>
-                        <div
-                          class="mt-1 text-md text-theme-primary-contrast"
-                        >
-                          Balance
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                  class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"
+                />
+                <span
+                  aria-atomic="true"
+                  aria-live="assertive"
+                  class="swiper-notification"
+                />
               </div>
-              <div
-                class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"
-              />
-              <span
-                aria-atomic="true"
-                aria-live="assertive"
-                class="swiper-notification"
-              />
             </div>
           </div>
         </div>
       </div>
     </div>
     <div
-      class="pt-1 mt-5 bg-white"
+      class="sc-fznyAO cozLw"
       data-testid="dashboard__transactions-view"
     >
       <div
-        class="p-10 mt-10 bg-theme-background"
+        class="bg-white"
       >
-        <h2
-          class="pb-4"
+        <div
+          class="pb-8 font-bold text-3xl"
         >
           Transactions History
-        </h2>
+        </div>
         <div
           class="sc-AxhCb gfJeeC"
           role="table"
@@ -454,234 +448,224 @@ exports[`Dashboard should render 1`] = `
 exports[`Dashboard should render portfolio chart 1`] = `
 <div>
   <div
-    class="-m-5 bg-theme-neutral-100"
+    class="-m-5 -mt-6 pt-1 bg-theme-neutral-100"
   >
     <div
-      class="mb-6 bg-white p-11"
+      class="sc-fznyAO cozLw"
     >
-      <h1>
-        Portfolio Chart
-      </h1>
       <div
-        class="pb-20"
+        class="-mb-2 text-3xl font-bold"
       >
-        <div
-          class="recharts-responsive-container"
-          id="undefined"
-          style="width: 100%; height: 260px;"
-        >
-          <div
-            class="sc-AxirZ fwlMBT text-theme-neutral-300"
-            data-testid="line-chart-wrapper"
-          >
-            <div>
-              <div
-                class="flex"
-              >
-                <div
-                  class="py-4 text-sm font-semibold cursor-pointer text-theme-neutral-700"
-                >
-                  <div
-                    class="flex"
-                  >
-                    <div
-                      class="my-auto"
-                    >
-                      Period: 
-                      22 Jun - 28 Jun
-                    </div>
-                    <div
-                      class="my-auto"
-                    >
-                      <div
-                        class="sc-AxjAm cpczEI"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="flex justify-end flex-1"
-                >
-                  <div
-                    class="my-auto ml-3 text-sm text-theme-neutral-600"
-                  >
-                    28 Jun, 2020
-                  </div>
-                  <div
-                    class="p-4 pr-0 ml-3 text-right w-36"
-                  >
-                    <div
-                      class="mr-2 mb-1 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-warning-600"
-                    />
-                    <div
-                      class="inline-block text-sm font-semibold text-theme-neutral-700"
-                    >
-                      <span>
-                        2.16
-                         - 
-                      </span>
-                      BTC
-                    </div>
-                  </div>
-                  <div
-                    class="p-4 pr-0 ml-3 text-right w-36"
-                  >
-                    <div
-                      class="mr-2 mb-1 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-success-600"
-                    />
-                    <div
-                      class="inline-block text-sm font-semibold text-theme-neutral-700"
-                    >
-                      <span>
-                        8,000
-                         - 
-                      </span>
-                      USD
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="active-dot"
-            >
-              <svg
-                class="text-theme-undefined"
-                fill="currentColor"
-                height="50"
-                stroke="currentColor"
-                width="50"
-                x="-25"
-                y="-25"
-              >
-                chart-active-dot.svg
-              </svg>
-            </div>
-          </div>
-          <div />
-        </div>
+        Portfolio Chart
       </div>
       <div
-        class="mt-6 mb-4 border-b border-theme-neutral-100"
+        class="recharts-responsive-container mb-16"
+        id="undefined"
+        style="width: 100%; height: 260px;"
+      >
+        <div
+          class="sc-AxirZ fwlMBT text-theme-neutral-300 pb"
+          data-testid="line-chart-wrapper"
+        >
+          <div>
+            <div
+              class="flex"
+            >
+              <div
+                class="pt-4 text-sm font-semibold cursor-pointer text-theme-neutral-700"
+              >
+                <div
+                  class="flex"
+                >
+                  <div
+                    class="my-auto"
+                  >
+                    Period: 
+                    22 Jun - 28 Jun
+                  </div>
+                  <div
+                    class="my-auto"
+                  >
+                    <div
+                      class="sc-AxjAm cpczEI"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        chevron-down.svg
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="flex justify-end flex-1"
+              >
+                <div
+                  class="my-auto ml-3 text-sm text-theme-neutral-600"
+                >
+                  28 Jun, 2020
+                </div>
+                <div
+                  class="pt-4 p-4 pr-0 ml-3 text-right w-32"
+                >
+                  <div
+                    class="mr-2 mb-1 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-warning-600"
+                  />
+                  <div
+                    class="inline-block text-sm font-semibold text-theme-neutral-700"
+                  >
+                    <span>
+                      2.16
+                       - 
+                    </span>
+                    BTC
+                  </div>
+                </div>
+                <div
+                  class="pt-4 p-4 pr-0 ml-3 text-right w-32"
+                >
+                  <div
+                    class="mr-2 mb-1 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-success-600"
+                  />
+                  <div
+                    class="inline-block text-sm font-semibold text-theme-neutral-700"
+                  >
+                    <span>
+                      8,000
+                       - 
+                    </span>
+                    USD
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="active-dot"
+          >
+            <svg
+              class="text-theme-undefined"
+              fill="currentColor"
+              height="50"
+              stroke="currentColor"
+              width="50"
+              x="-25"
+              y="-25"
+            >
+              chart-active-dot.svg
+            </svg>
+          </div>
+        </div>
+        <div />
+      </div>
+      <div
+        class="pt-6 mb-2 border-b border-dotted border-theme-neutral-200"
       />
       <div>
-        <div>
+        <div
+          class="flex"
+        >
           <div
-            class="flex"
+            class="py-4 font-bold text-theme-neutral-800"
+          >
+            Total portfolio
+          </div>
+          <div
+            class="flex justify-end flex-1"
           >
             <div
-              class="py-4 font-bold text-theme-neutral-800"
+              class="py-4 pl-6 pr-0 ml-3"
             >
-              Total portfolio
+              <div
+                class="mr-2 mb-1 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-danger-500"
+              />
+              <div
+                class="inline-block text-sm font-semibold text-theme-neutral-700"
+              >
+                ARK
+                 - 
+                40
+                %
+              </div>
             </div>
             <div
-              class="flex justify-end flex-1"
+              class="py-4 pl-6 pr-0 ml-3"
             >
               <div
-                class="p-4 ml-3"
-              >
-                <div
-                  class="mr-2 mb-1 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-danger-500"
-                />
-                <div
-                  class="inline-block text-sm font-semibold text-theme-neutral-700"
-                >
-                  ARK
-                   - 
-                  40
-                  %
-                </div>
-              </div>
+                class="mr-2 mb-1 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-warning-500"
+              />
               <div
-                class="p-4 ml-3"
+                class="inline-block text-sm font-semibold text-theme-neutral-700"
               >
-                <div
-                  class="mr-2 mb-1 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-warning-500"
-                />
-                <div
-                  class="inline-block text-sm font-semibold text-theme-neutral-700"
-                >
-                  BTC
-                   - 
-                  25
-                  %
-                </div>
+                BTC
+                 - 
+                25
+                %
               </div>
+            </div>
+            <div
+              class="py-4 pl-6 pr-0 ml-3"
+            >
               <div
-                class="p-4 ml-3"
+                class="mr-2 mb-1 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-primary-500"
+              />
+              <div
+                class="inline-block text-sm font-semibold text-theme-neutral-700"
               >
-                <div
-                  class="mr-2 mb-1 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-primary-500"
-                />
-                <div
-                  class="inline-block text-sm font-semibold text-theme-neutral-700"
-                >
-                  ETH
-                   - 
-                  20
-                  %
-                </div>
+                ETH
+                 - 
+                20
+                %
               </div>
+            </div>
+            <div
+              class="py-4 pl-6 pr-0 ml-3"
+            >
               <div
-                class="p-4 ml-3"
+                class="mr-2 mb-1 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-neutral-400"
+              />
+              <div
+                class="inline-block text-sm font-semibold text-theme-neutral-700"
               >
-                <div
-                  class="mr-2 mb-1 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-neutral-400"
-                />
-                <div
-                  class="inline-block text-sm font-semibold text-theme-neutral-700"
-                >
-                  Other
-                   - 
-                  15
-                  %
-                </div>
+                Other
+                 - 
+                15
+                %
               </div>
             </div>
           </div>
+        </div>
+        <div
+          class="flex"
+        >
           <div
-            class="flex"
-          >
-            <div
-              class="h-1 -ml-1 rounded-sm bg-theme-danger-500"
-              style="width: 40%;"
-            />
-            <div
-              class="h-1 -ml-1 rounded-sm bg-theme-warning-500"
-              style="width: 25%;"
-            />
-            <div
-              class="h-1 -ml-1 rounded-sm bg-theme-primary-500"
-              style="width: 20%;"
-            />
-            <div
-              class="h-1 -ml-1 rounded-sm bg-theme-neutral-400"
-              style="width: 15%;"
-            />
-          </div>
+            class="h-1 -ml-1 rounded-sm bg-theme-danger-500"
+          />
+          <div
+            class="h-1 -ml-1 rounded-sm bg-theme-warning-500"
+          />
+          <div
+            class="h-1 -ml-1 rounded-sm bg-theme-primary-500"
+          />
+          <div
+            class="h-1 -ml-1 rounded-sm bg-theme-neutral-400"
+          />
         </div>
       </div>
     </div>
     <div
-      class="bg-white"
+      class="sc-fznyAO cozLw"
     >
-      <div
-        class="p-10 bg-theme-background"
-      >
+      <div>
         <div
-          class="flex w-full pb-4"
+          class="flex w-full pb-8"
         >
-          <h2
-            class="w-2/4 mt-1"
+          <div
+            class="w-2/4 -mt-1 text-3xl font-bold"
           >
             Wallets
-          </h2>
+          </div>
           <div
             class="w-2/4 text-right"
           >
@@ -799,190 +783,186 @@ exports[`Dashboard should render portfolio chart 1`] = `
           class="mt-1"
         >
           <div
-            class="relative"
+            style="width: 1100px;"
           >
             <div
-              class="swiper-container swiper-container-initialized swiper-container-horizontal swiper-container-multirow swiper-container-multirow-column"
-              style="height: 273px;"
+              class="relative"
             >
               <div
-                class="h-full swiper-wrapper "
-                style="webkit-transition-duration: 0ms; transition-duration: 0ms; webkit-transform: translate3d(NaNpx, 0px, 0px); transform: translate3d(NaNpx, 0px, 0px);"
+                class="swiper-container swiper-container-initialized swiper-container-horizontal swiper-container-multirow swiper-container-multirow-column"
+                style="height: 242.00000000000003px;"
               >
                 <div
-                  class="swiper-slide"
-                  style="height: 210px;"
+                  class="h-full swiper-wrapper "
+                  style="webkit-transition-duration: 0ms; transition-duration: 0ms; webkit-transform: translate3d(NaNpx, 0px, 0px); transform: translate3d(NaNpx, 0px, 0px);"
                 >
                   <div
-                    class="w-64 inline-block undefined"
+                    class="swiper-slide"
+                    style="height: 220px;"
                   >
                     <div
-                      class="sc-AxheI euRuZs"
+                      class="w-64 inline-block undefined"
                     >
                       <div
-                        class="px-1 py-2"
+                        class="sc-AxheI euRuZs"
                       >
                         <div
-                          class="mt-1"
+                          class="p-2"
                         >
+                          <div>
+                            <div
+                              class="sc-AxhUy dSLmHc -mr-2 border-theme-primary-contrast bg-white"
+                            />
+                            <div
+                              class="sc-AxhUy dSLmHc border-theme-primary-contrast bg-white"
+                            />
+                          </div>
                           <div
-                            class="sc-AxhUy fHeTTV -mr-2 border-theme-primary-contrast"
-                          />
+                            class=" mt-6 text-md text-theme-primary-contrast undefined"
+                          >
+                            New wallet
+                          </div>
                           <div
-                            class="sc-AxhUy fHeTTV border-theme-primary-contrast"
-                          />
+                            class=" mt-1 text-md text-theme-primary-contrast undefined"
+                          >
+                            Balance
+                          </div>
                         </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="swiper-slide"
+                    style="height: 220px;"
+                  >
+                    <div
+                      class="w-64 inline-block undefined"
+                    >
+                      <div
+                        class="sc-AxheI euRuZs"
+                      >
                         <div
-                          class="mt-4 text-md text-theme-primary-contrast"
+                          class="p-2"
                         >
-                          New wallet
+                          <div>
+                            <div
+                              class="sc-AxhUy dSLmHc -mr-2 border-theme-primary-contrast bg-white"
+                            />
+                            <div
+                              class="sc-AxhUy dSLmHc border-theme-primary-contrast bg-white"
+                            />
+                          </div>
+                          <div
+                            class=" mt-6 text-md text-theme-primary-contrast undefined"
+                          >
+                            New wallet
+                          </div>
+                          <div
+                            class=" mt-1 text-md text-theme-primary-contrast undefined"
+                          >
+                            Balance
+                          </div>
                         </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="swiper-slide"
+                    style="height: 220px;"
+                  >
+                    <div
+                      class="w-64 inline-block undefined"
+                    >
+                      <div
+                        class="sc-AxheI euRuZs"
+                      >
                         <div
-                          class="mt-1 text-md text-theme-primary-contrast"
+                          class="p-2"
                         >
-                          Balance
+                          <div>
+                            <div
+                              class="sc-AxhUy dSLmHc -mr-2 border-theme-primary-contrast bg-white"
+                            />
+                            <div
+                              class="sc-AxhUy dSLmHc border-theme-primary-contrast bg-white"
+                            />
+                          </div>
+                          <div
+                            class=" mt-6 text-md text-theme-primary-contrast undefined"
+                          >
+                            New wallet
+                          </div>
+                          <div
+                            class=" mt-1 text-md text-theme-primary-contrast undefined"
+                          >
+                            Balance
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="swiper-slide"
+                    style="height: 220px;"
+                  >
+                    <div
+                      class="w-64 inline-block undefined"
+                    >
+                      <div
+                        class="sc-AxheI euRuZs"
+                      >
+                        <div
+                          class="p-2"
+                        >
+                          <div>
+                            <div
+                              class="sc-AxhUy dSLmHc -mr-2 border-theme-primary-contrast bg-white"
+                            />
+                            <div
+                              class="sc-AxhUy dSLmHc border-theme-primary-contrast bg-white"
+                            />
+                          </div>
+                          <div
+                            class=" mt-6 text-md text-theme-primary-contrast undefined"
+                          >
+                            New wallet
+                          </div>
+                          <div
+                            class=" mt-1 text-md text-theme-primary-contrast undefined"
+                          >
+                            Balance
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div
-                  class="swiper-slide"
-                  style="height: 210px;"
-                >
-                  <div
-                    class="w-64 inline-block undefined"
-                  >
-                    <div
-                      class="sc-AxheI euRuZs"
-                    >
-                      <div
-                        class="px-1 py-2"
-                      >
-                        <div
-                          class="mt-1"
-                        >
-                          <div
-                            class="sc-AxhUy fHeTTV -mr-2 border-theme-primary-contrast"
-                          />
-                          <div
-                            class="sc-AxhUy fHeTTV border-theme-primary-contrast"
-                          />
-                        </div>
-                        <div
-                          class="mt-4 text-md text-theme-primary-contrast"
-                        >
-                          New wallet
-                        </div>
-                        <div
-                          class="mt-1 text-md text-theme-primary-contrast"
-                        >
-                          Balance
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="swiper-slide"
-                  style="height: 210px;"
-                >
-                  <div
-                    class="w-64 inline-block undefined"
-                  >
-                    <div
-                      class="sc-AxheI euRuZs"
-                    >
-                      <div
-                        class="px-1 py-2"
-                      >
-                        <div
-                          class="mt-1"
-                        >
-                          <div
-                            class="sc-AxhUy fHeTTV -mr-2 border-theme-primary-contrast"
-                          />
-                          <div
-                            class="sc-AxhUy fHeTTV border-theme-primary-contrast"
-                          />
-                        </div>
-                        <div
-                          class="mt-4 text-md text-theme-primary-contrast"
-                        >
-                          New wallet
-                        </div>
-                        <div
-                          class="mt-1 text-md text-theme-primary-contrast"
-                        >
-                          Balance
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="swiper-slide"
-                  style="height: 210px;"
-                >
-                  <div
-                    class="w-64 inline-block undefined"
-                  >
-                    <div
-                      class="sc-AxheI euRuZs"
-                    >
-                      <div
-                        class="px-1 py-2"
-                      >
-                        <div
-                          class="mt-1"
-                        >
-                          <div
-                            class="sc-AxhUy fHeTTV -mr-2 border-theme-primary-contrast"
-                          />
-                          <div
-                            class="sc-AxhUy fHeTTV border-theme-primary-contrast"
-                          />
-                        </div>
-                        <div
-                          class="mt-4 text-md text-theme-primary-contrast"
-                        >
-                          New wallet
-                        </div>
-                        <div
-                          class="mt-1 text-md text-theme-primary-contrast"
-                        >
-                          Balance
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                  class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"
+                />
+                <span
+                  aria-atomic="true"
+                  aria-live="assertive"
+                  class="swiper-notification"
+                />
               </div>
-              <div
-                class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"
-              />
-              <span
-                aria-atomic="true"
-                aria-live="assertive"
-                class="swiper-notification"
-              />
             </div>
           </div>
         </div>
       </div>
     </div>
     <div
-      class="pt-1 mt-5 bg-white"
+      class="sc-fznyAO cozLw"
       data-testid="dashboard__transactions-view"
     >
       <div
-        class="p-10 mt-10 bg-theme-background"
+        class="bg-white"
       >
-        <h2
-          class="pb-4"
+        <div
+          class="pb-8 font-bold text-3xl"
         >
           Transactions History
-        </h2>
+        </div>
         <div
           class="sc-AxhCb gfJeeC"
           role="table"
@@ -1117,22 +1097,20 @@ exports[`Dashboard should render portfolio chart 1`] = `
 exports[`Dashboard should render portfolio percentage bar 1`] = `
 <div>
   <div
-    class="-m-5 bg-theme-neutral-100"
+    class="-m-5 -mt-6 pt-1 bg-theme-neutral-100"
   >
     <div
-      class="bg-white"
+      class="sc-fznyAO cozLw"
     >
-      <div
-        class="p-10 bg-theme-background"
-      >
+      <div>
         <div
-          class="flex w-full pb-4"
+          class="flex w-full pb-8"
         >
-          <h2
-            class="w-2/4 mt-1"
+          <div
+            class="w-2/4 -mt-1 text-3xl font-bold"
           >
             Wallets
-          </h2>
+          </div>
           <div
             class="w-2/4 text-right"
           >
@@ -1250,190 +1228,186 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
           class="mt-1"
         >
           <div
-            class="relative"
+            style="width: 1100px;"
           >
             <div
-              class="swiper-container swiper-container-initialized swiper-container-horizontal swiper-container-multirow swiper-container-multirow-column"
-              style="height: 273px;"
+              class="relative"
             >
               <div
-                class="h-full swiper-wrapper "
-                style="webkit-transition-duration: 0ms; transition-duration: 0ms; webkit-transform: translate3d(NaNpx, 0px, 0px); transform: translate3d(NaNpx, 0px, 0px);"
+                class="swiper-container swiper-container-initialized swiper-container-horizontal swiper-container-multirow swiper-container-multirow-column"
+                style="height: 242.00000000000003px;"
               >
                 <div
-                  class="swiper-slide"
-                  style="height: 210px;"
+                  class="h-full swiper-wrapper "
+                  style="webkit-transition-duration: 0ms; transition-duration: 0ms; webkit-transform: translate3d(NaNpx, 0px, 0px); transform: translate3d(NaNpx, 0px, 0px);"
                 >
                   <div
-                    class="w-64 inline-block undefined"
+                    class="swiper-slide"
+                    style="height: 220px;"
                   >
                     <div
-                      class="sc-AxheI euRuZs"
+                      class="w-64 inline-block undefined"
                     >
                       <div
-                        class="px-1 py-2"
+                        class="sc-AxheI euRuZs"
                       >
                         <div
-                          class="mt-1"
+                          class="p-2"
                         >
+                          <div>
+                            <div
+                              class="sc-AxhUy dSLmHc -mr-2 border-theme-primary-contrast bg-white"
+                            />
+                            <div
+                              class="sc-AxhUy dSLmHc border-theme-primary-contrast bg-white"
+                            />
+                          </div>
                           <div
-                            class="sc-AxhUy fHeTTV -mr-2 border-theme-primary-contrast"
-                          />
+                            class=" mt-6 text-md text-theme-primary-contrast undefined"
+                          >
+                            New wallet
+                          </div>
                           <div
-                            class="sc-AxhUy fHeTTV border-theme-primary-contrast"
-                          />
+                            class=" mt-1 text-md text-theme-primary-contrast undefined"
+                          >
+                            Balance
+                          </div>
                         </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="swiper-slide"
+                    style="height: 220px;"
+                  >
+                    <div
+                      class="w-64 inline-block undefined"
+                    >
+                      <div
+                        class="sc-AxheI euRuZs"
+                      >
                         <div
-                          class="mt-4 text-md text-theme-primary-contrast"
+                          class="p-2"
                         >
-                          New wallet
+                          <div>
+                            <div
+                              class="sc-AxhUy dSLmHc -mr-2 border-theme-primary-contrast bg-white"
+                            />
+                            <div
+                              class="sc-AxhUy dSLmHc border-theme-primary-contrast bg-white"
+                            />
+                          </div>
+                          <div
+                            class=" mt-6 text-md text-theme-primary-contrast undefined"
+                          >
+                            New wallet
+                          </div>
+                          <div
+                            class=" mt-1 text-md text-theme-primary-contrast undefined"
+                          >
+                            Balance
+                          </div>
                         </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="swiper-slide"
+                    style="height: 220px;"
+                  >
+                    <div
+                      class="w-64 inline-block undefined"
+                    >
+                      <div
+                        class="sc-AxheI euRuZs"
+                      >
                         <div
-                          class="mt-1 text-md text-theme-primary-contrast"
+                          class="p-2"
                         >
-                          Balance
+                          <div>
+                            <div
+                              class="sc-AxhUy dSLmHc -mr-2 border-theme-primary-contrast bg-white"
+                            />
+                            <div
+                              class="sc-AxhUy dSLmHc border-theme-primary-contrast bg-white"
+                            />
+                          </div>
+                          <div
+                            class=" mt-6 text-md text-theme-primary-contrast undefined"
+                          >
+                            New wallet
+                          </div>
+                          <div
+                            class=" mt-1 text-md text-theme-primary-contrast undefined"
+                          >
+                            Balance
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="swiper-slide"
+                    style="height: 220px;"
+                  >
+                    <div
+                      class="w-64 inline-block undefined"
+                    >
+                      <div
+                        class="sc-AxheI euRuZs"
+                      >
+                        <div
+                          class="p-2"
+                        >
+                          <div>
+                            <div
+                              class="sc-AxhUy dSLmHc -mr-2 border-theme-primary-contrast bg-white"
+                            />
+                            <div
+                              class="sc-AxhUy dSLmHc border-theme-primary-contrast bg-white"
+                            />
+                          </div>
+                          <div
+                            class=" mt-6 text-md text-theme-primary-contrast undefined"
+                          >
+                            New wallet
+                          </div>
+                          <div
+                            class=" mt-1 text-md text-theme-primary-contrast undefined"
+                          >
+                            Balance
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div
-                  class="swiper-slide"
-                  style="height: 210px;"
-                >
-                  <div
-                    class="w-64 inline-block undefined"
-                  >
-                    <div
-                      class="sc-AxheI euRuZs"
-                    >
-                      <div
-                        class="px-1 py-2"
-                      >
-                        <div
-                          class="mt-1"
-                        >
-                          <div
-                            class="sc-AxhUy fHeTTV -mr-2 border-theme-primary-contrast"
-                          />
-                          <div
-                            class="sc-AxhUy fHeTTV border-theme-primary-contrast"
-                          />
-                        </div>
-                        <div
-                          class="mt-4 text-md text-theme-primary-contrast"
-                        >
-                          New wallet
-                        </div>
-                        <div
-                          class="mt-1 text-md text-theme-primary-contrast"
-                        >
-                          Balance
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="swiper-slide"
-                  style="height: 210px;"
-                >
-                  <div
-                    class="w-64 inline-block undefined"
-                  >
-                    <div
-                      class="sc-AxheI euRuZs"
-                    >
-                      <div
-                        class="px-1 py-2"
-                      >
-                        <div
-                          class="mt-1"
-                        >
-                          <div
-                            class="sc-AxhUy fHeTTV -mr-2 border-theme-primary-contrast"
-                          />
-                          <div
-                            class="sc-AxhUy fHeTTV border-theme-primary-contrast"
-                          />
-                        </div>
-                        <div
-                          class="mt-4 text-md text-theme-primary-contrast"
-                        >
-                          New wallet
-                        </div>
-                        <div
-                          class="mt-1 text-md text-theme-primary-contrast"
-                        >
-                          Balance
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="swiper-slide"
-                  style="height: 210px;"
-                >
-                  <div
-                    class="w-64 inline-block undefined"
-                  >
-                    <div
-                      class="sc-AxheI euRuZs"
-                    >
-                      <div
-                        class="px-1 py-2"
-                      >
-                        <div
-                          class="mt-1"
-                        >
-                          <div
-                            class="sc-AxhUy fHeTTV -mr-2 border-theme-primary-contrast"
-                          />
-                          <div
-                            class="sc-AxhUy fHeTTV border-theme-primary-contrast"
-                          />
-                        </div>
-                        <div
-                          class="mt-4 text-md text-theme-primary-contrast"
-                        >
-                          New wallet
-                        </div>
-                        <div
-                          class="mt-1 text-md text-theme-primary-contrast"
-                        >
-                          Balance
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                  class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"
+                />
+                <span
+                  aria-atomic="true"
+                  aria-live="assertive"
+                  class="swiper-notification"
+                />
               </div>
-              <div
-                class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"
-              />
-              <span
-                aria-atomic="true"
-                aria-live="assertive"
-                class="swiper-notification"
-              />
             </div>
           </div>
         </div>
       </div>
     </div>
     <div
-      class="pt-1 mt-5 bg-white"
+      class="sc-fznyAO cozLw"
       data-testid="dashboard__transactions-view"
     >
       <div
-        class="p-10 mt-10 bg-theme-background"
+        class="bg-white"
       >
-        <h2
-          class="pb-4"
+        <div
+          class="pb-8 font-bold text-3xl"
         >
           Transactions History
-        </h2>
+        </div>
         <div
           class="sc-AxhCb gfJeeC"
           role="table"

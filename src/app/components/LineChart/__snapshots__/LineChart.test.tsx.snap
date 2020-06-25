@@ -3,12 +3,12 @@
 exports[`LineChart should render 1`] = `
 <div>
   <div
-    class="recharts-responsive-container"
+    class="recharts-responsive-container mb-16"
     id="undefined"
     style="width: 100%; height: 300px;"
   >
     <div
-      class="sc-AxirZ fwlMBT text-theme-neutral-300"
+      class="sc-AxirZ fwlMBT text-theme-neutral-300 pb"
       data-testid="line-chart-wrapper"
     >
       <div>
@@ -48,12 +48,12 @@ exports[`LineChart should render 1`] = `
 exports[`LineChart should render with data 1`] = `
 <div>
   <div
-    class="recharts-responsive-container"
+    class="recharts-responsive-container mb-16"
     id="undefined"
     style="width: 100%; height: 300px;"
   >
     <div
-      class="sc-AxirZ fwlMBT text-theme-neutral-300"
+      class="sc-AxirZ fwlMBT text-theme-neutral-300 pb"
       data-testid="line-chart-wrapper"
     >
       <div>
@@ -61,7 +61,7 @@ exports[`LineChart should render with data 1`] = `
           class="flex"
         >
           <div
-            class="py-4 text-sm font-semibold cursor-pointer text-theme-neutral-700"
+            class="pt-4 text-sm font-semibold cursor-pointer text-theme-neutral-700"
           >
             <div
               class="flex"
@@ -96,7 +96,7 @@ exports[`LineChart should render with data 1`] = `
               22 Jun, 2020
             </div>
             <div
-              class="p-4 pr-0 ml-3 text-right w-36"
+              class="pt-4 p-4 pr-0 ml-3 text-right w-32"
             >
               <div
                 class="mr-2 mb-1 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-warning-600"

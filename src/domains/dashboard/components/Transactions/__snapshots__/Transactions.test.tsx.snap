@@ -3,13 +3,13 @@
 exports[`Transactions should render with 1`] = `
 <div>
   <div
-    class="p-10 mt-10 bg-theme-background"
+    class="bg-white"
   >
-    <h2
-      class="pb-4"
+    <div
+      class="pb-8 font-bold text-3xl"
     >
       Transactions History
-    </h2>
+    </div>
     <div
       class="sc-AxiKw fOxXaG"
       role="table"
@@ -142,13 +142,13 @@ exports[`Transactions should render with 1`] = `
 exports[`Transactions should render with with transactions 1`] = `
 <div>
   <div
-    class="p-10 mt-10 bg-theme-background"
+    class="bg-white"
   >
-    <h2
-      class="pb-4"
+    <div
+      class="pb-8 font-bold text-3xl"
     >
       Transactions History
-    </h2>
+    </div>
     <div
       class="sc-AxiKw fOxXaG"
       role="table"
@@ -266,7 +266,7 @@ exports[`Transactions should render with with transactions 1`] = `
           role="rowgroup"
         >
           <tr
-            class="border-b cursor-pointer border-theme-neutral-200"
+            class="border-b border-dotted cursor-pointer border-theme-neutral-300"
             data-testid="transaction__row"
           >
             <td
@@ -277,10 +277,10 @@ exports[`Transactions should render with with transactions 1`] = `
                
             </td>
             <td
-              class="w-32 py-4 mt-1"
+              class="w-32 py-5 mt-1"
             >
               <div
-                class="sc-AxhCb fwVCao border-theme-success-300 text-theme-success-400 -mr-1"
+                class="sc-AxhCb bzWLYJ border-theme-success-300 text-theme-success-400 -mr-1"
               >
                 <div
                   class="sc-AxirZ RbXVX"
@@ -293,23 +293,23 @@ exports[`Transactions should render with with transactions 1`] = `
                 </div>
               </div>
               <div
-                class="sc-AxhCb hXKmOt"
+                class="sc-AxhCb hDUsvc"
               />
             </td>
             <td
-              class="w-56 py-1"
+              class="w-56"
             >
               <div
                 class="inline-block truncate"
               >
                 <span
-                  class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-sm"
+                  class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-base"
                   data-testid="address__wallet-name"
                 >
                   My Wallet
                 </span>
                 <span
-                  class="text-theme-neutral-400 font-semibold text-sm"
+                  class="text-theme-neutral-400 font-semibold text-base"
                   data-testid="address__wallet-address"
                 >
                   ASuusXSW9k...P6T9GQ3kqT
@@ -317,7 +317,7 @@ exports[`Transactions should render with with transactions 1`] = `
               </div>
             </td>
             <td
-              class="py-1 text-sm text-right"
+              class="text-sm text-right"
             >
               <div
                 class="sc-AxhUy eCrePA"
@@ -327,7 +327,7 @@ exports[`Transactions should render with with transactions 1`] = `
               </div>
             </td>
             <td
-              class="w-32 py-1 text-sm text-right text-theme-neutral-500"
+              class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral-500"
             >
               <div>
                 1,000,000 USD
@@ -335,7 +335,7 @@ exports[`Transactions should render with with transactions 1`] = `
             </td>
           </tr>
           <tr
-            class="border-b cursor-pointer border-theme-neutral-200"
+            class="border-b border-dotted cursor-pointer border-theme-neutral-300"
             data-testid="transaction__row"
           >
             <td
@@ -346,10 +346,10 @@ exports[`Transactions should render with with transactions 1`] = `
                
             </td>
             <td
-              class="w-32 py-4 mt-1"
+              class="w-32 py-5 mt-1"
             >
               <div
-                class="sc-AxhCb fwVCao border-theme-danger-200 text-theme-danger-400 -mr-1"
+                class="sc-AxhCb bzWLYJ border-theme-danger-200 text-theme-danger-400 -mr-1"
               >
                 <div
                   class="sc-AxirZ RbXVX"
@@ -362,23 +362,23 @@ exports[`Transactions should render with with transactions 1`] = `
                 </div>
               </div>
               <div
-                class="sc-AxhCb hXKmOt"
+                class="sc-AxhCb hDUsvc"
               />
             </td>
             <td
-              class="w-56 py-1"
+              class="w-56"
             >
               <div
                 class="inline-block truncate"
               >
                 <span
-                  class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-sm"
+                  class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-base"
                   data-testid="address__wallet-name"
                 >
                   My Wallet
                 </span>
                 <span
-                  class="text-theme-neutral-400 font-semibold text-sm"
+                  class="text-theme-neutral-400 font-semibold text-base"
                   data-testid="address__wallet-address"
                 >
                   ASuusXSW9k...P6T9GQ3kqT
@@ -386,7 +386,7 @@ exports[`Transactions should render with with transactions 1`] = `
               </div>
             </td>
             <td
-              class="py-1 text-sm text-right"
+              class="text-sm text-right"
             >
               <div
                 class="sc-AxhUy gRLEpJ"
@@ -396,7 +396,7 @@ exports[`Transactions should render with with transactions 1`] = `
               </div>
             </td>
             <td
-              class="w-32 py-1 text-sm text-right text-theme-neutral-500"
+              class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral-500"
             >
               <div>
                 1,000,000 USD
@@ -404,7 +404,7 @@ exports[`Transactions should render with with transactions 1`] = `
             </td>
           </tr>
           <tr
-            class="border-b cursor-pointer border-theme-neutral-200"
+            class="border-b border-dotted cursor-pointer border-theme-neutral-300"
             data-testid="transaction__row"
           >
             <td
@@ -415,10 +415,10 @@ exports[`Transactions should render with with transactions 1`] = `
                
             </td>
             <td
-              class="w-32 py-4 mt-1"
+              class="w-32 py-5 mt-1"
             >
               <div
-                class="sc-AxhCb fwVCao border-theme-success-300 text-theme-success-400 -mr-1"
+                class="sc-AxhCb bzWLYJ border-theme-success-300 text-theme-success-400 -mr-1"
               >
                 <div
                   class="sc-AxirZ RbXVX"
@@ -431,23 +431,23 @@ exports[`Transactions should render with with transactions 1`] = `
                 </div>
               </div>
               <div
-                class="sc-AxhCb hXKmOt"
+                class="sc-AxhCb hDUsvc"
               />
             </td>
             <td
-              class="w-56 py-1"
+              class="w-56"
             >
               <div
                 class="inline-block truncate"
               >
                 <span
-                  class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-sm"
+                  class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-base"
                   data-testid="address__wallet-name"
                 >
                   My Wallet
                 </span>
                 <span
-                  class="text-theme-neutral-400 font-semibold text-sm"
+                  class="text-theme-neutral-400 font-semibold text-base"
                   data-testid="address__wallet-address"
                 >
                   ASuusXSW9k...P6T9GQ3kqT
@@ -455,7 +455,7 @@ exports[`Transactions should render with with transactions 1`] = `
               </div>
             </td>
             <td
-              class="py-1 text-sm text-right"
+              class="text-sm text-right"
             >
               <div
                 class="sc-AxhUy eCrePA"
@@ -465,7 +465,7 @@ exports[`Transactions should render with with transactions 1`] = `
               </div>
             </td>
             <td
-              class="w-32 py-1 text-sm text-right text-theme-neutral-500"
+              class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral-500"
             >
               <div>
                 1,000,000 USD
@@ -473,7 +473,7 @@ exports[`Transactions should render with with transactions 1`] = `
             </td>
           </tr>
           <tr
-            class="border-b cursor-pointer border-theme-neutral-200"
+            class="border-b border-dotted cursor-pointer border-theme-neutral-300"
             data-testid="transaction__row"
           >
             <td
@@ -484,10 +484,10 @@ exports[`Transactions should render with with transactions 1`] = `
                
             </td>
             <td
-              class="w-32 py-4 mt-1"
+              class="w-32 py-5 mt-1"
             >
               <div
-                class="sc-AxhCb fwVCao border-theme-danger-200 text-theme-danger-400 -mr-1"
+                class="sc-AxhCb bzWLYJ border-theme-danger-200 text-theme-danger-400 -mr-1"
               >
                 <div
                   class="sc-AxirZ RbXVX"
@@ -500,23 +500,23 @@ exports[`Transactions should render with with transactions 1`] = `
                 </div>
               </div>
               <div
-                class="sc-AxhCb hXKmOt"
+                class="sc-AxhCb hDUsvc"
               />
             </td>
             <td
-              class="w-56 py-1"
+              class="w-56"
             >
               <div
                 class="inline-block truncate"
               >
                 <span
-                  class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-sm"
+                  class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-base"
                   data-testid="address__wallet-name"
                 >
                   My Wallet
                 </span>
                 <span
-                  class="text-theme-neutral-400 font-semibold text-sm"
+                  class="text-theme-neutral-400 font-semibold text-base"
                   data-testid="address__wallet-address"
                 >
                   ASuusXSW9k...P6T9GQ3kqT
@@ -524,7 +524,7 @@ exports[`Transactions should render with with transactions 1`] = `
               </div>
             </td>
             <td
-              class="py-1 text-sm text-right"
+              class="text-sm text-right"
             >
               <div
                 class="sc-AxhUy gRLEpJ"
@@ -534,7 +534,7 @@ exports[`Transactions should render with with transactions 1`] = `
               </div>
             </td>
             <td
-              class="w-32 py-1 text-sm text-right text-theme-neutral-500"
+              class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral-500"
             >
               <div>
                 1,000,000 USD
@@ -542,7 +542,7 @@ exports[`Transactions should render with with transactions 1`] = `
             </td>
           </tr>
           <tr
-            class="border-b cursor-pointer border-theme-neutral-200"
+            class="border-b border-dotted cursor-pointer border-theme-neutral-300"
             data-testid="transaction__row"
           >
             <td
@@ -553,10 +553,10 @@ exports[`Transactions should render with with transactions 1`] = `
                
             </td>
             <td
-              class="w-32 py-4 mt-1"
+              class="w-32 py-5 mt-1"
             >
               <div
-                class="sc-AxhCb fwVCao border-theme-success-300 text-theme-success-400 -mr-1"
+                class="sc-AxhCb bzWLYJ border-theme-success-300 text-theme-success-400 -mr-1"
               >
                 <div
                   class="sc-AxirZ RbXVX"
@@ -569,23 +569,23 @@ exports[`Transactions should render with with transactions 1`] = `
                 </div>
               </div>
               <div
-                class="sc-AxhCb hXKmOt"
+                class="sc-AxhCb hDUsvc"
               />
             </td>
             <td
-              class="w-56 py-1"
+              class="w-56"
             >
               <div
                 class="inline-block truncate"
               >
                 <span
-                  class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-sm"
+                  class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-base"
                   data-testid="address__wallet-name"
                 >
                   My Wallet
                 </span>
                 <span
-                  class="text-theme-neutral-400 font-semibold text-sm"
+                  class="text-theme-neutral-400 font-semibold text-base"
                   data-testid="address__wallet-address"
                 >
                   ASuusXSW9k...P6T9GQ3kqT
@@ -593,7 +593,7 @@ exports[`Transactions should render with with transactions 1`] = `
               </div>
             </td>
             <td
-              class="py-1 text-sm text-right"
+              class="text-sm text-right"
             >
               <div
                 class="sc-AxhUy eCrePA"
@@ -603,7 +603,7 @@ exports[`Transactions should render with with transactions 1`] = `
               </div>
             </td>
             <td
-              class="w-32 py-1 text-sm text-right text-theme-neutral-500"
+              class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral-500"
             >
               <div>
                 1,000,000 USD
@@ -611,7 +611,7 @@ exports[`Transactions should render with with transactions 1`] = `
             </td>
           </tr>
           <tr
-            class="border-b cursor-pointer border-theme-neutral-200"
+            class="border-b border-dotted cursor-pointer border-theme-neutral-300"
             data-testid="transaction__row"
           >
             <td
@@ -622,10 +622,10 @@ exports[`Transactions should render with with transactions 1`] = `
                
             </td>
             <td
-              class="w-32 py-4 mt-1"
+              class="w-32 py-5 mt-1"
             >
               <div
-                class="sc-AxhCb fwVCao border-theme-danger-200 text-theme-danger-400 -mr-1"
+                class="sc-AxhCb bzWLYJ border-theme-danger-200 text-theme-danger-400 -mr-1"
               >
                 <div
                   class="sc-AxirZ RbXVX"
@@ -638,23 +638,23 @@ exports[`Transactions should render with with transactions 1`] = `
                 </div>
               </div>
               <div
-                class="sc-AxhCb hXKmOt"
+                class="sc-AxhCb hDUsvc"
               />
             </td>
             <td
-              class="w-56 py-1"
+              class="w-56"
             >
               <div
                 class="inline-block truncate"
               >
                 <span
-                  class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-sm"
+                  class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-base"
                   data-testid="address__wallet-name"
                 >
                   My Wallet
                 </span>
                 <span
-                  class="text-theme-neutral-400 font-semibold text-sm"
+                  class="text-theme-neutral-400 font-semibold text-base"
                   data-testid="address__wallet-address"
                 >
                   ASuusXSW9k...P6T9GQ3kqT
@@ -662,7 +662,7 @@ exports[`Transactions should render with with transactions 1`] = `
               </div>
             </td>
             <td
-              class="py-1 text-sm text-right"
+              class="text-sm text-right"
             >
               <div
                 class="sc-AxhUy gRLEpJ"
@@ -672,7 +672,7 @@ exports[`Transactions should render with with transactions 1`] = `
               </div>
             </td>
             <td
-              class="w-32 py-1 text-sm text-right text-theme-neutral-500"
+              class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral-500"
             >
               <div>
                 1,000,000 USD
@@ -680,7 +680,7 @@ exports[`Transactions should render with with transactions 1`] = `
             </td>
           </tr>
           <tr
-            class="border-b cursor-pointer border-theme-neutral-200"
+            class="border-b border-dotted cursor-pointer border-theme-neutral-300"
             data-testid="transaction__row"
           >
             <td
@@ -691,10 +691,10 @@ exports[`Transactions should render with with transactions 1`] = `
                
             </td>
             <td
-              class="w-32 py-4 mt-1"
+              class="w-32 py-5 mt-1"
             >
               <div
-                class="sc-AxhCb fwVCao border-theme-success-300 text-theme-success-400 -mr-1"
+                class="sc-AxhCb bzWLYJ border-theme-success-300 text-theme-success-400 -mr-1"
               >
                 <div
                   class="sc-AxirZ RbXVX"
@@ -707,23 +707,23 @@ exports[`Transactions should render with with transactions 1`] = `
                 </div>
               </div>
               <div
-                class="sc-AxhCb hXKmOt"
+                class="sc-AxhCb hDUsvc"
               />
             </td>
             <td
-              class="w-56 py-1"
+              class="w-56"
             >
               <div
                 class="inline-block truncate"
               >
                 <span
-                  class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-sm"
+                  class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-base"
                   data-testid="address__wallet-name"
                 >
                   My Wallet
                 </span>
                 <span
-                  class="text-theme-neutral-400 font-semibold text-sm"
+                  class="text-theme-neutral-400 font-semibold text-base"
                   data-testid="address__wallet-address"
                 >
                   ASuusXSW9k...P6T9GQ3kqT
@@ -731,7 +731,7 @@ exports[`Transactions should render with with transactions 1`] = `
               </div>
             </td>
             <td
-              class="py-1 text-sm text-right"
+              class="text-sm text-right"
             >
               <div
                 class="sc-AxhUy eCrePA"
@@ -741,7 +741,7 @@ exports[`Transactions should render with with transactions 1`] = `
               </div>
             </td>
             <td
-              class="w-32 py-1 text-sm text-right text-theme-neutral-500"
+              class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral-500"
             >
               <div>
                 1,000,000 USD
@@ -749,7 +749,7 @@ exports[`Transactions should render with with transactions 1`] = `
             </td>
           </tr>
           <tr
-            class="border-b cursor-pointer border-theme-neutral-200"
+            class="border-b border-dotted cursor-pointer border-theme-neutral-300"
             data-testid="transaction__row"
           >
             <td
@@ -760,10 +760,10 @@ exports[`Transactions should render with with transactions 1`] = `
                
             </td>
             <td
-              class="w-32 py-4 mt-1"
+              class="w-32 py-5 mt-1"
             >
               <div
-                class="sc-AxhCb fwVCao border-theme-danger-200 text-theme-danger-400 -mr-1"
+                class="sc-AxhCb bzWLYJ border-theme-danger-200 text-theme-danger-400 -mr-1"
               >
                 <div
                   class="sc-AxirZ RbXVX"
@@ -776,23 +776,23 @@ exports[`Transactions should render with with transactions 1`] = `
                 </div>
               </div>
               <div
-                class="sc-AxhCb hXKmOt"
+                class="sc-AxhCb hDUsvc"
               />
             </td>
             <td
-              class="w-56 py-1"
+              class="w-56"
             >
               <div
                 class="inline-block truncate"
               >
                 <span
-                  class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-sm"
+                  class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-base"
                   data-testid="address__wallet-name"
                 >
                   My Wallet
                 </span>
                 <span
-                  class="text-theme-neutral-400 font-semibold text-sm"
+                  class="text-theme-neutral-400 font-semibold text-base"
                   data-testid="address__wallet-address"
                 >
                   ASuusXSW9k...P6T9GQ3kqT
@@ -800,7 +800,7 @@ exports[`Transactions should render with with transactions 1`] = `
               </div>
             </td>
             <td
-              class="py-1 text-sm text-right"
+              class="text-sm text-right"
             >
               <div
                 class="sc-AxhUy gRLEpJ"
@@ -810,7 +810,7 @@ exports[`Transactions should render with with transactions 1`] = `
               </div>
             </td>
             <td
-              class="w-32 py-1 text-sm text-right text-theme-neutral-500"
+              class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral-500"
             >
               <div>
                 1,000,000 USD
