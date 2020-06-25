@@ -32,7 +32,7 @@ export const translations: { [key: string]: any } = {
 	PAGE_PLUGIN_MANAGER: {
 		TITLE: "Plugin Manager",
 		DESCRIPTION: "Easy way to find, manage and install plugins",
-		FEATURED_PLUGIN: "Featured Plugin",
+		FEATURED_PLUGINS: "Featured Plugins",
 		TOP_RATED: "Top Rated",
 		TOP_UTILITIES: "Top Utilities",
 
