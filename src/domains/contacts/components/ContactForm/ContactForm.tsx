@@ -33,7 +33,7 @@ const AddressListItem = ({ address, onRemove }: AddressListItemProps) => {
 			</span>
 
 			<Button
-				data-testid="contact-form__remove-address-button"
+				data-testid="contact-form__remove-address-btn"
 				size="icon"
 				className="flex items-center ml-auto"
 				variant="plain"
@@ -155,7 +155,7 @@ export const ContactForm = ({ contact, networks, onCancel, onSave }: ContactForm
 
 			<div className="mt-4">
 				<Button
-					data-testid="contact-form__add-address-button"
+					data-testid="contact-form__add-address-btn"
 					variant="plain"
 					className="w-full"
 					disabled={!network || !address}
@@ -170,15 +170,15 @@ export const ContactForm = ({ contact, networks, onCancel, onSave }: ContactForm
 			)}
 
 			<div className="flex justify-end mt-8 space-x-3">
-				<Button variant="plain" onClick={onCancel}>
+				<Button data-testid="contact-form__cancel-btn" variant="plain" onClick={onCancel}>
 					{t("COMMON.CANCEL")}
 				</Button>
 
 				<Button
-					data-testid="contact-form__save-button"
+					data-testid="contact-form__save-btn"
 					type="submit"
 					variant="solid"
-					disabled={!form.formState.isValid || !contactAddresses.length}
+					disabled={!contactAddresses.length}
 				>
 					{t("COMMON.SAVE")}
 				</Button>

@@ -1,3 +1,4 @@
+import { contacts } from "domains/contacts/images";
 import { exchange } from "domains/exchange/images";
 import { offline } from "domains/offline/images";
 import { profile } from "domains/profile/images";
@@ -14,6 +15,7 @@ export const images = {
 		DeleteBanner,
 		SuccessBanner,
 	},
+	contacts,
 	exchange,
 	offline,
 	profile,
