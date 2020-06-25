@@ -52,7 +52,7 @@ const ChartLegend = ({ legend = {}, lines, period, onPeriodClick }: any) => {
 			<div className="flex">
 				{period && (
 					<div
-						className="py-4 text-sm font-semibold cursor-pointer text-theme-neutral-700"
+						className="pt-4 text-sm font-semibold cursor-pointer text-theme-neutral-700"
 						onClick={onPeriodClick}
 					>
 						<div className="flex">
@@ -68,7 +68,7 @@ const ChartLegend = ({ legend = {}, lines, period, onPeriodClick }: any) => {
 					{lines &&
 						lines.map((item: any, index: number) => {
 							return (
-								<div key={index} className="p-4 pr-0 ml-3 text-right w-36">
+								<div key={index} className="pt-4 p-4 pr-0 ml-3 text-right w-32">
 									<div
 										className={`mr-2 mb-1 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-${item.color}`}
 									/>
@@ -96,7 +96,7 @@ export const ChartContent = ({ period, onPeriodClick, data, lines, width, height
 	const [legend, setLegend] = useState(defaultValue);
 
 	return (
-		<Wrapper data-testid="line-chart-wrapper" className="text-theme-neutral-300">
+		<Wrapper data-testid="line-chart-wrapper" className="text-theme-neutral-300 pb">
 			<ChartLegend legend={legend} lines={lines} period={period} onPeriodClick={onPeriodClick} />
 			<RechartsLine
 				width={width}
@@ -141,7 +141,7 @@ export const ChartContent = ({ period, onPeriodClick, data, lines, width, height
 export const LineChart = (props: LineChartProps) => {
 	if (props.width) return <ChartContent {...props} />;
 	return (
-		<ResponsiveContainer height={props.height}>
+		<ResponsiveContainer height={props.height} className="mb-16">
 			<ChartContent {...props} />
 		</ResponsiveContainer>
 	);
