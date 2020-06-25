@@ -13,6 +13,7 @@ import { TabPanel, Tabs } from "app/components/Tabs";
 import { TransactionDetail } from "app/components/TransactionDetail";
 import { RecipientList } from "domains/transaction/components/RecipientList";
 import { SendTransactionForm } from "domains/transaction/components/SendTransactionForm";
+import { TotalAmountBox } from "domains/transaction/components/TotalAmountBox";
 import React from "react";
 import { useForm } from "react-hook-form";
 
@@ -83,16 +84,6 @@ export const SecondStep = () => (
 				</div>
 			</TransactionDetail>
 			<TransactionDetail
-				label="Account"
-				extra={
-					<div>
-						<Circle avatarId="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
-					</div>
-				}
-			>
-				<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} size="large" />
-			</TransactionDetail>
-			<TransactionDetail
 				label=" "
 				extra={
 					<div>
@@ -110,18 +101,6 @@ export const SecondStep = () => (
 				<RecipientList recipients={recipients} assetSymbol="ARK" isEditable={false} />
 			</TransactionDetail>
 			<TransactionDetail
-				label="Amount"
-				extra={
-					<div className="ml-1 text-theme-danger">
-						<Circle className="bg-theme-background border-theme-danger-200" size="large">
-							<Icon name="Sent" width={50} height={50} />
-						</Circle>
-					</div>
-				}
-			>
-				1.00 ARK <span className="text-theme-neutral-400">25.00 USD</span>
-			</TransactionDetail>
-			<TransactionDetail
 				label="Smartbridge"
 				extra={
 					<div className="mx-2">
@@ -131,7 +110,9 @@ export const SecondStep = () => (
 			>
 				Hello!
 			</TransactionDetail>
-			<TransactionDetail label="Transaction fee">0.09660435 ARK</TransactionDetail>
+			<div className="my-4">
+				<TotalAmountBox transactionAmount="400" transactionFee="0.09660435" />
+			</div>
 		</div>
 	</section>
 );

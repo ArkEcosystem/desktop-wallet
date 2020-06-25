@@ -1107,44 +1107,6 @@ exports[`Transaction Send should render 2nd step 1`] = `
           <div
             class="text-sm font-semibold text-theme-neutral-500"
           >
-            Account
-          </div>
-          <div
-            class="mt-2 font-semibold"
-          >
-            <div
-              class="inline-block truncate"
-            >
-              <span
-                class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-xl"
-                data-testid="address__wallet-name"
-              >
-                ROBank
-              </span>
-              <span
-                class="text-theme-neutral-400 font-semibold text-xl"
-                data-testid="address__wallet-address"
-              >
-                AUexKj...EVTQWK
-              </span>
-            </div>
-          </div>
-        </div>
-        <div>
-          <div
-            class="sc-AxirZ hTKBId"
-          />
-        </div>
-      </div>
-      <div
-        class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
-      >
-        <div
-          class="flex-1"
-        >
-          <div
-            class="text-sm font-semibold text-theme-neutral-500"
-          >
              
           </div>
           <div
@@ -1438,46 +1400,6 @@ exports[`Transaction Send should render 2nd step 1`] = `
           <div
             class="text-sm font-semibold text-theme-neutral-500"
           >
-            Amount
-          </div>
-          <div
-            class="mt-2 font-semibold"
-          >
-            1.00 ARK 
-            <span
-              class="text-theme-neutral-400"
-            >
-              25.00 USD
-            </span>
-          </div>
-        </div>
-        <div
-          class="ml-1 text-theme-danger"
-        >
-          <div
-            class="sc-AxirZ cZokSJ bg-theme-background border-theme-danger-200"
-          >
-            <div
-              class="sc-AxhCb liaKlj"
-              height="50"
-              width="50"
-            >
-              <svg>
-                sent.svg
-              </svg>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
-      >
-        <div
-          class="flex-1"
-        >
-          <div
-            class="text-sm font-semibold text-theme-neutral-500"
-          >
             Smartbridge
           </div>
           <div
@@ -1501,20 +1423,80 @@ exports[`Transaction Send should render 2nd step 1`] = `
         </div>
       </div>
       <div
-        class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+        class="my-4"
       >
         <div
-          class="flex-1"
+          class="border rounded-lg border-theme-neutral-300"
         >
           <div
-            class="text-sm font-semibold text-theme-neutral-500"
+            class="relative p-3"
           >
-            Transaction fee
+            <div
+              class="grid grid-cols-2 divide-x divide-gray-400"
+            >
+              <div
+                class="flex flex-col justify-center px-6 py-5"
+              >
+                <span
+                  class="text-sm text-theme-neutral-500"
+                >
+                  Transaction(s) Amount
+                </span>
+                <span
+                  class="mt-3"
+                  data-testid="total-amount-box__transaction-amount"
+                >
+                  400 ARK
+                </span>
+              </div>
+              <div
+                class="flex flex-col justify-center px-6 py-5 text-right"
+              >
+                <span
+                  class="text-sm text-theme-neutral-500"
+                >
+                  Transaction fee
+                </span>
+                <span
+                  class="mt-3 mr-2"
+                  data-testid="total-amount-box__transaction-fee"
+                >
+                  0.09660435 ARK
+                </span>
+              </div>
+            </div>
+            <div
+              class="absolute top-0 bottom-0 left-0 right-0 flex items-center justify-center h-full text-center"
+            >
+              <div
+                class="px-1 py-2 bg-white"
+              >
+                <div
+                  class="sc-AxhCb cMyoID"
+                  height="15"
+                  width="15"
+                >
+                  <svg>
+                    plus.svg
+                  </svg>
+                </div>
+              </div>
+            </div>
           </div>
           <div
-            class="mt-2 font-semibold"
+            class="flex flex-col items-center border-t rounded-b-lg border-theme-neutral-300 justfiy-center py-7 bg-theme-neutral-100"
           >
-            0.09660435 ARK
+            <span
+              class="text-sm text-theme-neutral-500"
+            >
+              Total Amount
+            </span>
+            <span
+              class="text-2xl font-bold"
+              data-testid="total-amount-box__total"
+            >
+              400.09660435 ARK
+            </span>
           </div>
         </div>
       </div>
