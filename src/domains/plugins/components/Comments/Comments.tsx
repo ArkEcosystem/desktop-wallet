@@ -68,7 +68,7 @@ export const Comments = ({ comments, sortOptions }: CommentsProps) => {
 								</div>
 							</div>
 						</div>
-						<div className="mt-2 w-11/12">
+						<div className="w-11/12 mt-2">
 							<p className="text-theme-neutral-600">{comment}</p>
 							{replies &&
 								replies.map((reply: any, index: number) => (
