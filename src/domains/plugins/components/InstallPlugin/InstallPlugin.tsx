@@ -13,9 +13,10 @@ type InstallPluginProps = {
 	onClose?: any;
 	onCancel?: any;
 	onDownload?: any;
+	onInstall?: any;
 };
 
-export const InstallPlugin = ({ step, isOpen, onClose, onCancel, onDownload }: InstallPluginProps) => {
+export const InstallPlugin = ({ step, isOpen, onClose, onCancel, onDownload, onInstall }: InstallPluginProps) => {
 	const { t } = useTranslation();
 
 	return (
@@ -131,7 +132,9 @@ export const InstallPlugin = ({ step, isOpen, onClose, onCancel, onDownload }: I
 							<Button variant="plain" onClick={onCancel} data-testid="install-plugin__cancel-button">
 								{t("COMMON.CANCEL")}
 							</Button>
-							<Button data-testid="install-plugin__install-button">{t("COMMON.INSTALL")}</Button>
+							<Button data-testid="install-plugin__install-button" onClick={onInstall}>
+								{t("COMMON.INSTALL")}
+							</Button>
 						</div>
 					</>
 				)}
