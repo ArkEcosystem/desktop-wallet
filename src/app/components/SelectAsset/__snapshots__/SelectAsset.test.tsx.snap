@@ -10,40 +10,166 @@ exports[`SelectAsset should render 1`] = `
     role="combobox"
   >
     <label
-      for="dropdown-select"
+      for="downshift-0-input"
       id="downshift-0-label"
+    />
+    <div
+      class="relative flex items-center w-full flex-inline"
     >
       <div
-        class="relative flex items-center w-full flex-inline"
+        class="flex w-full border rounded shadow-sm bg-theme-background border-theme-neutral-300 transition-colors duration-200 hover:outline-none hover:border-theme-primary"
       >
         <div
-          class="flex w-full border rounded shadow-sm bg-theme-background border-theme-neutral-300 transition-colors duration-200 hover:outline-none hover:border-theme-primary"
+          class="flex-0 w-14 py-2 px-4"
         >
           <div
-            class="flex-0 w-12 p-2"
+            class="sc-AxjAm jDAceZ border-theme-neutral-200"
+          />
+        </div>
+        <div
+          class="font-semibold text-theme-neutral-800 flex-1 p-1 relative"
+        >
+          <div
+            class="w-full relative z-10"
+            data-testid="select-network__typeahead-"
           >
             <div
-              class="sc-AxjAm jDAceZ border-theme-neutral-200"
+              class="absolute top-2 left-0 font-semibold text-theme-neutral-400"
             />
           </div>
+          <input
+            aria-autocomplete="list"
+            aria-labelledby="downshift-0-label"
+            autocomplete="off"
+            class="h-full w-full outline-none font-semibold z-20 relative bg-transparent"
+            data-testid="select-asset__input"
+            id="downshift-0-input"
+            value=""
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`SelectAsset should render with assets 1`] = `
+<div>
+  <div
+    aria-expanded="false"
+    aria-haspopup="listbox"
+    aria-labelledby="downshift-1-label"
+    class="relative"
+    role="combobox"
+  >
+    <label
+      for="downshift-1-input"
+      id="downshift-1-label"
+    />
+    <div
+      class="relative flex items-center w-full flex-inline"
+    >
+      <div
+        class="flex w-full border rounded shadow-sm bg-theme-background border-theme-neutral-300 transition-colors duration-200 hover:outline-none hover:border-theme-primary"
+      >
+        <div
+          class="flex-0 w-14 py-2 px-4"
+        >
           <div
-            class="font-semibold text-theme-neutral-800 flex-1 p-1"
+            class="sc-AxjAm jDAceZ border-theme-neutral-200"
+          />
+        </div>
+        <div
+          class="font-semibold text-theme-neutral-800 flex-1 p-1 relative"
+        >
+          <div
+            class="w-full relative z-10"
+            data-testid="select-network__typeahead-"
           >
-            <input
-              aria-autocomplete="list"
-              aria-labelledby="downshift-0-label"
-              autocomplete="off"
-              class="h-full w-full outline-none"
-              id="downshift-0-input"
-              value=""
+            <div
+              class="absolute top-2 left-0 font-semibold text-theme-neutral-400"
             />
+          </div>
+          <input
+            aria-autocomplete="list"
+            aria-labelledby="downshift-1-label"
+            autocomplete="off"
+            class="h-full w-full outline-none font-semibold z-20 relative bg-transparent"
+            data-testid="select-asset__input"
+            id="downshift-1-input"
+            value=""
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="py-6"
+      data-testid="select-asset__items"
+    >
+      <div
+        aria-selected="false"
+        class="inline-block mr-4 cursor-pointer"
+        id="downshift-1-item-0"
+        role="option"
+        title="Ark Ecosystem"
+      >
+        <div
+          class="sc-AxjAm bDDbwS text-theme-danger-400 border-theme-danger-200"
+        >
+          <div
+            class="sc-AxirZ iOZZCn"
+            height="18"
+            width="18"
+          >
+            <svg>
+              ark.svg
+            </svg>
           </div>
         </div>
       </div>
-    </label>
-    <div
-      class="relative btn-group"
-    />
+      <div
+        aria-selected="false"
+        class="inline-block mr-4 cursor-pointer"
+        id="downshift-1-item-1"
+        role="option"
+        title="Bitcoin"
+      >
+        <div
+          class="sc-AxjAm bDDbwS text-theme-warning-400 border-theme-warning-200"
+        >
+          <div
+            class="sc-AxirZ iOZZCn"
+            height="18"
+            width="18"
+          >
+            <svg>
+              btc.svg
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div
+        aria-selected="false"
+        class="inline-block mr-4 cursor-pointer"
+        id="downshift-1-item-2"
+        role="option"
+        title="Ethereum"
+      >
+        <div
+          class="sc-AxjAm bDDbwS text-theme-neutral-800 border-theme-neutral-600"
+        >
+          <div
+            class="sc-AxirZ iOZZCn"
+            height="18"
+            width="18"
+          >
+            <svg>
+              eth.svg
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 `;
