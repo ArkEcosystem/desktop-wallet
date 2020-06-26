@@ -11,28 +11,35 @@ type Asset = {
 
 type SelectAssetProps = {
 	assets: Asset[];
+	placeholder?: string;
 };
 
 type InputValue = any;
 
-const AssetIconPlaceholder = ({ icon, className }: Asset) => {
+const AssetIconPlaceholder = ({ icon, className, name }: Asset) => {
 	if (!icon) return <Circle size="small" noShadow className="border-theme-neutral-200" />;
 	return (
-		<Circle className={className} size="small">
+		<Circle className={className} size="small" data-testid={`select-asset__selected-${name}`}>
 			<Icon name={icon} width={16} height={16} />
 		</Circle>
 	);
 };
 
-const TypeAhead = ({ value }: any) => {
+const TypeAhead = ({ input, matches }: any) => {
+	const formatTypeHeadToMatchInputCase = (asset: Asset, input: InputValue) => {
+		return [input, asset?.name.slice(input.length)].join("");
+	};
+
+	const typeaheadFormatted = matches.length === 1 ? formatTypeHeadToMatchInputCase(matches[0], input) : "";
+
 	return (
-		<div className="w-full relative z-10">
-			<div className="absolute top-2 left-0 font-semibold text-theme-neutral-400">{value}</div>
+		<div className="w-full relative z-10" data-testid={`select-network__typeahead-${typeaheadFormatted}`}>
+			<div className="absolute top-2 left-0 font-semibold text-theme-neutral-400">{typeaheadFormatted}</div>
 		</div>
 	);
 };
 
-export const SelectAsset = ({ assets }: SelectAssetProps) => {
+export const SelectAsset = ({ assets, placeholder }: SelectAssetProps) => {
 	const isMatch = (asset: Asset, input: InputValue) => {
 		if (!input) return false;
 		return asset.name.toLowerCase().startsWith(input.toLowerCase());
@@ -40,17 +47,6 @@ export const SelectAsset = ({ assets }: SelectAssetProps) => {
 
 	const getMatches = (assets: Asset[], input: InputValue) => {
 		return assets.filter((asset: Asset) => isMatch(asset, input));
-	};
-
-	const formatTypeHeadToMatchInputCase = (asset: Asset, input: InputValue) => {
-		return [input, asset?.name.slice(input.length)].join("");
-	};
-
-	const getTypeHeadValue = (assets: Asset[], input: InputValue) => {
-		const matches = getMatches(assets, input);
-
-		if (matches.length === 1) return formatTypeHeadToMatchInputCase(matches[0], input);
-		return "";
 	};
 
 	const assetClassName = (asset: Asset, selectedAsset: Asset, input: any) => {
@@ -64,7 +60,7 @@ export const SelectAsset = ({ assets }: SelectAssetProps) => {
 		// Initial state. Nothing entered, nothing selected
 		if (!input) return asset.className;
 
-		// Input entered, nothing selected. Show normal colors
+		// Input entered, matching with input. Show normal colors
 		if (isMatch(asset, input)) return asset.className;
 
 		// Disabled otherwise
@@ -82,17 +78,17 @@ export const SelectAsset = ({ assets }: SelectAssetProps) => {
 								<AssetIconPlaceholder {...selectedItem} />
 							</div>
 							<div className="font-semibold text-theme-neutral-800 flex-1 p-1 relative">
-								<TypeAhead value={getTypeHeadValue(assets, inputValue)} />
-								{console.log(getInputProps())}
+								<TypeAhead input={inputValue} matches={getMatches(assets, inputValue)} />
 								<input
 									{...getInputProps({
 										value: inputValue || "",
-										placeholder: "Enter a network name",
+										placeholder,
 										onKeyDown: (event: any) => {
 											if (event.key === "Tab" || event.key === "Enter") {
 												// Selected if exact match
-												if (getMatches(assets, inputValue).length === 1) {
-													selectItem(getMatches(assets, inputValue)[0]);
+												const matches = getMatches(assets, inputValue);
+												if (matches.length === 1) {
+													selectItem(matches[0]);
 												}
 												event.preventDefault();
 												return;
@@ -105,6 +101,7 @@ export const SelectAsset = ({ assets }: SelectAssetProps) => {
 											}
 										},
 									})}
+									data-testid="select-asset__input"
 									className="h-full w-full outline-none font-semibold z-20 relative bg-transparent"
 								/>
 							</div>
@@ -139,4 +136,5 @@ export const SelectAsset = ({ assets }: SelectAssetProps) => {
 
 SelectAsset.defaultProps = {
 	assets: [],
+	placeholcer: "Enter a network name",
 };
