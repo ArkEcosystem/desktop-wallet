@@ -80,7 +80,11 @@ export const AddressListItem = ({
 
 			<td className="py-4">
 				<div className="text-right">
-					<Button variant="plain" onClick={() => onSelect?.(walletAddress!)}>
+					<Button
+						variant="plain"
+						onClick={() => onSelect?.(walletAddress!)}
+						data-testid="AddressListItem__button--unvote"
+					>
 						{t("COMMON.SELECT")}
 					</Button>
 				</div>
