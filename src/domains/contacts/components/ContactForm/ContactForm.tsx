@@ -70,11 +70,12 @@ const AddressList = ({ addresses, onRemove }: AddressListProps) => {
 type ContactFormProps = {
 	contact?: any;
 	networks: any;
-	onCancel: any;
+	onCancel?: any;
+	onDelete?: any;
 	onSave: any;
 };
 
-export const ContactForm = ({ contact, networks, onCancel, onSave }: ContactFormProps) => {
+export const ContactForm = ({ contact, networks, onCancel, onDelete, onSave }: ContactFormProps) => {
 	const [contactAddresses, setContactAddresses] = useState(() => {
 		return contact ? contact.addresses() : [];
 	});
@@ -168,19 +169,33 @@ export const ContactForm = ({ contact, networks, onCancel, onSave }: ContactForm
 				<AddressList addresses={contactAddresses} onRemove={handleRemoveAddress} />
 			)}
 
-			<div className="flex justify-end mt-8 space-x-3">
-				<Button data-testid="contact-form__cancel-btn" variant="plain" onClick={onCancel}>
-					{t("COMMON.CANCEL")}
-				</Button>
+			<div className={`flex w-full ${contact ? "justify-between" : "justify-end"}`}>
+				{contact &&
+					<Button
+						data-testid="contact-form__delete-btn"
+						onClick={onDelete}
+						color="danger"
+						variant="plain"
+					>
+						<Icon name="Trash" />
+						<span>{t("CONTACTS.CONTACT_FORM.DELETE_CONTACT")}</span>
+					</Button>
+				}
 
-				<Button
-					data-testid="contact-form__save-btn"
-					type="submit"
-					variant="solid"
-					disabled={!contactAddresses.length}
-				>
-					{t("COMMON.SAVE")}
-				</Button>
+				<div className="space-x-3">
+					<Button data-testid="contact-form__cancel-btn" variant="plain" onClick={onCancel}>
+						{t("COMMON.CANCEL")}
+					</Button>
+
+					<Button
+						data-testid="contact-form__save-btn"
+						type="submit"
+						variant="solid"
+						disabled={!contactAddresses.length}
+					>
+						{t("COMMON.SAVE")}
+					</Button>
+				</div>
 			</div>
 		</Form>
 	);

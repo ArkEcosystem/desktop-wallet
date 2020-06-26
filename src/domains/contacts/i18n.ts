@@ -9,6 +9,7 @@ export const translations: { [key: string]: any } = {
 		ADD_ADDRESS: "Add address",
 		ADDRESS: "Address",
 		ADDRESSES: "Addresses",
+		DELETE_CONTACT: "Delete Contact",
 		NAME: "Name",
 		NETWORK: "Network",
 	},

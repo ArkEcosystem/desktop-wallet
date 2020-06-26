@@ -69,7 +69,7 @@ export const ContactListItem = ({
             </td>
           )}
           <td className="border-b border-dashed border-theme-neutral-200">
-            {options && options.length && (
+            {index === 0 && options && options.length && (
               <Dropdown
                 toggleContent={
                   <div className="float-right">

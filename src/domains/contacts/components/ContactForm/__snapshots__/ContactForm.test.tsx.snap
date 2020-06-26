@@ -95,25 +95,29 @@ exports[`ContactForm when creating a new contact should render the form 1`] = `
       </button>
     </div>
     <div
-      class="flex justify-end mt-8 space-x-3"
+      class="flex w-full justify-end"
     >
-      <button
-        class="sc-AxjAm ddJBbC"
-        color="primary"
-        data-testid="contact-form__cancel-btn"
-        type="button"
+      <div
+        class="space-x-3"
       >
-        Cancel
-      </button>
-      <button
-        class="sc-AxjAm ddQVWI"
-        color="primary"
-        data-testid="contact-form__save-btn"
-        disabled=""
-        type="submit"
-      >
-        Save
-      </button>
+        <button
+          class="sc-AxjAm ddJBbC"
+          color="primary"
+          data-testid="contact-form__cancel-btn"
+          type="button"
+        >
+          Cancel
+        </button>
+        <button
+          class="sc-AxjAm ddQVWI"
+          color="primary"
+          data-testid="contact-form__save-btn"
+          disabled=""
+          type="submit"
+        >
+          Save
+        </button>
+      </div>
     </div>
   </form>
 </DocumentFragment>
@@ -238,6 +242,61 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
                 width="1em"
               >
                 <svg>
+                  ark.svg
+                </svg>
+              </div>
+            </div>
+            <div
+              class="sc-AxirZ hTKBId"
+            />
+          </div>
+          <span
+            class="font-semibold"
+          >
+            <div
+              class="inline-block truncate"
+            >
+              <span
+                class="text-theme-neutral-800 font-semibold text-base"
+                data-testid="address__wallet-address"
+              >
+                ASuusXSW9k...P6T9GQ3kqT
+              </span>
+            </div>
+          </span>
+          <button
+            class="sc-AxjAm kwTlRm flex items-center ml-auto"
+            color="primary"
+            data-testid="contact-form__remove-address-btn"
+            type="button"
+          >
+            <div
+              class="sc-AxhCb fxrKLH"
+              height="1em"
+              width="1em"
+            >
+              <svg>
+                trash.svg
+              </svg>
+            </div>
+          </button>
+        </div>
+        <div
+          class="flex items-center py-4 border-b border-dashed border-theme-neutral-300"
+          data-testid="contact-form__address-list-item"
+        >
+          <div
+            class="mr-4"
+          >
+            <div
+              class="sc-AxirZ hQTESw -mr-2"
+            >
+              <div
+                class="sc-AxhCb fxrKLH"
+                height="1em"
+                width="1em"
+              >
+                <svg>
                   btc.svg
                 </svg>
               </div>
@@ -335,24 +394,47 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
       </div>
     </div>
     <div
-      class="flex justify-end mt-8 space-x-3"
+      class="flex w-full justify-between"
     >
       <button
-        class="sc-AxjAm ddJBbC"
-        color="primary"
-        data-testid="contact-form__cancel-btn"
+        class="sc-AxjAm bxcsTZ"
+        color="danger"
+        data-testid="contact-form__delete-btn"
         type="button"
       >
-        Cancel
+        <div
+          class="sc-AxhCb fxrKLH"
+          height="1em"
+          width="1em"
+        >
+          <svg>
+            trash.svg
+          </svg>
+        </div>
+        <span>
+          Delete Contact
+        </span>
       </button>
-      <button
-        class="sc-AxjAm ddQVWI"
-        color="primary"
-        data-testid="contact-form__save-btn"
-        type="submit"
+      <div
+        class="space-x-3"
       >
-        Save
-      </button>
+        <button
+          class="sc-AxjAm ddJBbC"
+          color="primary"
+          data-testid="contact-form__cancel-btn"
+          type="button"
+        >
+          Cancel
+        </button>
+        <button
+          class="sc-AxjAm ddQVWI"
+          color="primary"
+          data-testid="contact-form__save-btn"
+          type="submit"
+        >
+          Save
+        </button>
+      </div>
     </div>
   </form>
 </DocumentFragment>

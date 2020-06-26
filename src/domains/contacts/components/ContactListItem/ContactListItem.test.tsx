@@ -1,12 +1,10 @@
 import { fireEvent, render } from "@testing-library/react";
 import React from "react";
 import { act } from "react-dom/test-utils";
-import { contact1 } from "../../data";
+import { contact1 as contact } from "../../data";
 import { ContactListItem } from "./ContactListItem";
 
 describe("ContactListItem", () => {
-  const contact = contact1;
-
   it("should render", () => {
     const { asFragment } = render(
       <table>
