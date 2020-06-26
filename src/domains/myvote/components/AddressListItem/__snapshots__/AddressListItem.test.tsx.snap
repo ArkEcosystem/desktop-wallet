@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AddressListItem should emit action on select 1`] = `
+exports[`AddressListItem should emit action on select button 1`] = `
 <DocumentFragment>
   <table>
     <tbody>
@@ -8,7 +8,7 @@ exports[`AddressListItem should emit action on select 1`] = `
         class="border-b border-theme-neutral-200"
       >
         <td
-          class="py-4"
+          class="py-5"
         >
           <div
             class="Avatar__AvatarStyled-yiil9n-0 fympLW"
@@ -16,7 +16,7 @@ exports[`AddressListItem should emit action on select 1`] = `
           />
         </td>
         <td
-          class="py-4"
+          class="py-5"
         >
           <div
             class="inline-block truncate"
@@ -36,13 +36,13 @@ exports[`AddressListItem should emit action on select 1`] = `
           </div>
         </td>
         <td
-          class="w-20 py-4"
+          class="w-20 py-5"
         >
           <div
             class="flex justify-center h-full"
           >
             <div
-              class="sc-AxirZ iQaTP text-theme-neutral-600"
+              class="sc-AxiKw dzBdqj text-theme-neutral-600"
               height="1em"
               width="1em"
             >
@@ -53,12 +53,12 @@ exports[`AddressListItem should emit action on select 1`] = `
           </div>
         </td>
         <td
-          class="py-4 font-bold text-theme-neutral-dark"
+          class="py-5 font-bold text-theme-neutral-dark"
         >
           1,000,000 ARK
         </td>
         <td
-          class="py-4"
+          class="py-5"
         >
           <div
             class="Avatar__AvatarStyled-yiil9n-0 fympLW"
@@ -66,17 +66,21 @@ exports[`AddressListItem should emit action on select 1`] = `
           />
         </td>
         <td
-          class="py-4 font-bold"
+          class="py-5 font-bold"
         >
-          Delegate 1
+          <span>
+            Delegate 1
+          </span>
         </td>
         <td
-          class="py-4 font-bold text-theme-neutral-dark"
+          class="py-5 font-bold text-theme-neutral-dark"
         >
-          #2
+          <span>
+            #2
+          </span>
         </td>
         <td
-          class="py-4"
+          class="py-5"
         >
           <div
             class="flex justify-center h-full"
@@ -87,7 +91,7 @@ exports[`AddressListItem should emit action on select 1`] = `
               target="_blank"
             >
               <div
-                class="sc-AxirZ iQaTP text-xl text-theme-primary"
+                class="sc-AxiKw dzBdqj text-xl text-theme-primary"
                 height="1em"
                 width="1em"
               >
@@ -99,13 +103,13 @@ exports[`AddressListItem should emit action on select 1`] = `
           </div>
         </td>
         <td
-          class="py-4"
+          class="py-5"
         >
           <div
             class="flex justify-center h-full"
           >
             <div
-              class="sc-AxirZ iQaTP text-theme-success"
+              class="sc-AxiKw dzBdqj text-theme-success"
               height="1em"
               width="1em"
             >
@@ -116,7 +120,7 @@ exports[`AddressListItem should emit action on select 1`] = `
           </div>
         </td>
         <td
-          class="py-4"
+          class="py-5"
         >
           <div
             class="text-right"
@@ -145,7 +149,7 @@ exports[`AddressListItem should render 1`] = `
         class="border-b border-theme-neutral-200"
       >
         <td
-          class="py-4"
+          class="py-5"
         >
           <div
             class="Avatar__AvatarStyled-yiil9n-0 fympLW"
@@ -153,7 +157,7 @@ exports[`AddressListItem should render 1`] = `
           />
         </td>
         <td
-          class="py-4"
+          class="py-5"
         >
           <div
             class="inline-block truncate"
@@ -173,13 +177,13 @@ exports[`AddressListItem should render 1`] = `
           </div>
         </td>
         <td
-          class="w-20 py-4"
+          class="w-20 py-5"
         >
           <div
             class="flex justify-center h-full"
           >
             <div
-              class="sc-AxirZ iQaTP text-theme-neutral-600"
+              class="sc-AxiKw dzBdqj text-theme-neutral-600"
               height="1em"
               width="1em"
             >
@@ -190,12 +194,12 @@ exports[`AddressListItem should render 1`] = `
           </div>
         </td>
         <td
-          class="py-4 font-bold text-theme-neutral-dark"
+          class="py-5 font-bold text-theme-neutral-dark"
         >
           1,000,000 ARK
         </td>
         <td
-          class="py-4"
+          class="py-5"
         >
           <div
             class="Avatar__AvatarStyled-yiil9n-0 fympLW"
@@ -203,17 +207,21 @@ exports[`AddressListItem should render 1`] = `
           />
         </td>
         <td
-          class="py-4 font-bold"
+          class="py-5 font-bold"
         >
-          Delegate 1
+          <span>
+            Delegate 1
+          </span>
         </td>
         <td
-          class="py-4 font-bold text-theme-neutral-dark"
+          class="py-5 font-bold text-theme-neutral-dark"
         >
-          #2
+          <span>
+            #2
+          </span>
         </td>
         <td
-          class="py-4"
+          class="py-5"
         >
           <div
             class="flex justify-center h-full"
@@ -224,7 +232,7 @@ exports[`AddressListItem should render 1`] = `
               target="_blank"
             >
               <div
-                class="sc-AxirZ iQaTP text-xl text-theme-primary"
+                class="sc-AxiKw dzBdqj text-xl text-theme-primary"
                 height="1em"
                 width="1em"
               >
@@ -236,13 +244,13 @@ exports[`AddressListItem should render 1`] = `
           </div>
         </td>
         <td
-          class="py-4"
+          class="py-5"
         >
           <div
             class="flex justify-center h-full"
           >
             <div
-              class="sc-AxirZ iQaTP text-theme-success"
+              class="sc-AxiKw dzBdqj text-theme-success"
               height="1em"
               width="1em"
             >
@@ -253,7 +261,7 @@ exports[`AddressListItem should render 1`] = `
           </div>
         </td>
         <td
-          class="py-4"
+          class="py-5"
         >
           <div
             class="text-right"

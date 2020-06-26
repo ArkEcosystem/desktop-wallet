@@ -19,7 +19,7 @@ const data = {
 
 describe("AddressListItem", () => {
 	it("should render", () => {
-		const { asFragment } = render(
+		const { container, asFragment } = render(
 			<table>
 				<tbody>
 					<I18nextProvider i18n={i18n}>
@@ -29,10 +29,11 @@ describe("AddressListItem", () => {
 			</table>,
 		);
 
+		expect(container).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should emit action on select", () => {
+	it("should emit action on select button", () => {
 		const onSelect = jest.fn();
 		const { container, asFragment, getByTestId } = render(
 			<table>

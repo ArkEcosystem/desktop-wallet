@@ -1,5 +1,6 @@
 import { Address } from "app/components/Address";
 import { Button } from "app/components/Button";
+import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
 import { Avatar } from "domains/wallet/components/Avatar";
 import React from "react";
@@ -8,12 +9,12 @@ import { useTranslation } from "react-i18next";
 type AddressListItemProps = {
 	walletAddress?: string;
 	walletName?: string;
-	type?: string | null;
+	type?: string;
 	balance?: string;
 	delegateAddress?: string;
 	delegateName?: string;
 	rank?: number;
-	msqUrl?: string | null;
+	msqUrl?: string;
 	isActive?: boolean;
 	onSelect?: (walletAddress: string) => void;
 };
@@ -34,15 +35,15 @@ export const AddressListItem = ({
 
 	return (
 		<tr className="border-b border-theme-neutral-200">
-			<td className="py-4">
+			<td className="py-5">
 				<Avatar address={walletAddress!} />
 			</td>
 
-			<td className="py-4">
+			<td className="py-5">
 				<Address walletName={walletName} address={walletAddress} maxChars={22} />
 			</td>
 
-			<td className="w-20 py-4">
+			<td className="w-20 py-5">
 				{type && (
 					<div className="flex justify-center h-full">
 						<Icon name={type} className="text-theme-neutral-600" />
@@ -50,17 +51,23 @@ export const AddressListItem = ({
 				)}
 			</td>
 
-			<td className="py-4 font-bold text-theme-neutral-dark">{balance}</td>
+			<td className="py-5 font-bold text-theme-neutral-dark">{balance}</td>
 
-			<td className="py-4">
-				<Avatar address={delegateAddress!} />
+			<td className="py-5">
+				{delegateAddress ? (
+					<Avatar address={delegateAddress} />
+				) : (
+					<Circle className="border-theme-neutral-200" />
+				)}
 			</td>
 
-			<td className="py-4 font-bold">{delegateName}</td>
+			<td className="py-5 font-bold">
+				{delegateName ? <span>{delegateName}</span> : <span className="text-theme-neutral-400">N/A</span>}
+			</td>
 
-			<td className="py-4 font-bold text-theme-neutral-dark">#{rank}</td>
+			<td className="py-5 font-bold text-theme-neutral-dark">{rank && <span>#{rank}</span>}</td>
 
-			<td className="py-4">
+			<td className="py-5">
 				{msqUrl && (
 					<div className="flex justify-center h-full">
 						<a href={msqUrl} target="_blank" rel="noreferrer">
@@ -70,7 +77,7 @@ export const AddressListItem = ({
 				)}
 			</td>
 
-			<td className="py-4">
+			<td className="py-5">
 				{isActive && (
 					<div className="flex justify-center h-full">
 						<Icon name="Ok" className="text-theme-success" />
@@ -78,7 +85,7 @@ export const AddressListItem = ({
 				)}
 			</td>
 
-			<td className="py-4">
+			<td className="py-5">
 				<div className="text-right">
 					<Button
 						variant="plain"
