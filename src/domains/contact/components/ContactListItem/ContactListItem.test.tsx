@@ -1,18 +1,11 @@
-import { Contact } from "@arkecosystem/platform-sdk-profiles";
 import { fireEvent, render } from "@testing-library/react";
 import React from "react";
 import { act } from "react-dom/test-utils";
 
+import { contact1 as contact } from "../../data";
 import { ContactListItem } from "./ContactListItem";
 
 describe("ContactListItem", () => {
-	const contact = new Contact({
-		id: "olebank",
-		name: "OLEBank",
-		starred: false,
-		addresses: [{ coin: "Ark", network: "mainnet", address: "ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT" }],
-	});
-
 	it("should render", () => {
 		const { asFragment } = render(
 			<table>
@@ -30,7 +23,7 @@ describe("ContactListItem", () => {
 
 		const options = [{ label: "Option 1", value: "1" }];
 
-		const { getByTestId } = render(
+		const { getAllByTestId, getByTestId } = render(
 			<table>
 				<tbody>
 					<ContactListItem contact={contact} onAction={onAction} />
@@ -39,7 +32,7 @@ describe("ContactListItem", () => {
 		);
 
 		act(() => {
-			fireEvent.click(getByTestId("dropdown__toggle"));
+			fireEvent.click(getAllByTestId("dropdown__toggle")[0]);
 		});
 
 		act(() => {
@@ -54,7 +47,7 @@ describe("ContactListItem", () => {
 
 		const options = [{ label: "Option 1", value: "1" }];
 
-		const { getByTestId } = render(
+		const { getAllByTestId, getByTestId } = render(
 			<table>
 				<tbody>
 					<ContactListItem contact={contact} />
@@ -63,7 +56,7 @@ describe("ContactListItem", () => {
 		);
 
 		act(() => {
-			fireEvent.click(getByTestId("dropdown__toggle"));
+			fireEvent.click(getAllByTestId("dropdown__toggle")[0]);
 		});
 
 		act(() => {

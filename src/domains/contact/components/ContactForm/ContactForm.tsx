@@ -1,4 +1,3 @@
-import { ContactAddress } from "@arkecosystem/platform-sdk-profiles";
 import { Address } from "app/components/Address";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
@@ -11,7 +10,7 @@ import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
 type AddressListItemProps = {
-	address: ContactAddress;
+	address: any;
 	onRemove: any;
 };
 
@@ -46,7 +45,7 @@ const AddressListItem = ({ address, onRemove }: AddressListItemProps) => {
 };
 
 type AddressListProps = {
-	addresses: ContactAddress[];
+	addresses: any[];
 	onRemove: any;
 };
 
@@ -60,7 +59,7 @@ const AddressList = ({ addresses, onRemove }: AddressListProps) => {
 			</span>
 
 			<div data-testid="contact-form__address-list">
-				{addresses.map((address: ContactAddress, index: number) => (
+				{addresses.map((address: any, index: number) => (
 					<AddressListItem key={index} address={address} onRemove={onRemove} />
 				))}
 			</div>
@@ -71,11 +70,12 @@ const AddressList = ({ addresses, onRemove }: AddressListProps) => {
 type ContactFormProps = {
 	contact?: any;
 	networks: any;
-	onCancel: any;
+	onCancel?: any;
+	onDelete?: any;
 	onSave: any;
 };
 
-export const ContactForm = ({ contact, networks, onCancel, onSave }: ContactFormProps) => {
+export const ContactForm = ({ contact, networks, onCancel, onDelete, onSave }: ContactFormProps) => {
 	const [contactAddresses, setContactAddresses] = useState(() => {
 		return contact ? contact.addresses() : [];
 	});
@@ -102,9 +102,9 @@ export const ContactForm = ({ contact, networks, onCancel, onSave }: ContactForm
 		form.setValue("address", null);
 	};
 
-	const handleRemoveAddress = (address: ContactAddress) => {
+	const handleRemoveAddress = (address: any) => {
 		setContactAddresses(
-			contactAddresses.filter((curr: ContactAddress) => {
+			contactAddresses.filter((curr: any) => {
 				return !(curr.address === address.address && curr.network === address.network);
 			}),
 		);
@@ -169,19 +169,28 @@ export const ContactForm = ({ contact, networks, onCancel, onSave }: ContactForm
 				<AddressList addresses={contactAddresses} onRemove={handleRemoveAddress} />
 			)}
 
-			<div className="flex justify-end mt-8 space-x-3">
-				<Button data-testid="contact-form__cancel-btn" variant="plain" onClick={onCancel}>
-					{t("COMMON.CANCEL")}
-				</Button>
+			<div className={`flex w-full ${contact ? "justify-between" : "justify-end"}`}>
+				{contact && (
+					<Button data-testid="contact-form__delete-btn" onClick={onDelete} color="danger" variant="plain">
+						<Icon name="Trash" />
+						<span>{t("CONTACTS.CONTACT_FORM.DELETE_CONTACT")}</span>
+					</Button>
+				)}
 
-				<Button
-					data-testid="contact-form__save-btn"
-					type="submit"
-					variant="solid"
-					disabled={!contactAddresses.length}
-				>
-					{t("COMMON.SAVE")}
-				</Button>
+				<div className="space-x-3">
+					<Button data-testid="contact-form__cancel-btn" variant="plain" onClick={onCancel}>
+						{t("COMMON.CANCEL")}
+					</Button>
+
+					<Button
+						data-testid="contact-form__save-btn"
+						type="submit"
+						variant="solid"
+						disabled={!contactAddresses.length}
+					>
+						{t("COMMON.SAVE")}
+					</Button>
+				</div>
 			</div>
 		</Form>
 	);

@@ -9,16 +9,31 @@ type UpdateContactProps = {
 	networks: any;
 	onClose?: any;
 	onCancel?: any;
+	onDelete: any;
 	onSave: any;
 };
 
-export const UpdateContact = ({ isOpen, contact, networks, onClose, onCancel, onSave }: UpdateContactProps) => {
+export const UpdateContact = ({
+	isOpen,
+	contact,
+	networks,
+	onClose,
+	onCancel,
+	onDelete,
+	onSave,
+}: UpdateContactProps) => {
 	const { t } = useTranslation();
 
 	return (
 		<Modal title={t("CONTACTS.MODAL_UPDATE_CONTACT.TITLE")} isOpen={isOpen} onClose={onClose}>
 			<div className="mt-8">
-				<ContactForm contact={contact} networks={networks} onCancel={onCancel} onSave={onSave} />
+				<ContactForm
+					contact={contact}
+					networks={networks}
+					onCancel={onCancel}
+					onDelete={onDelete}
+					onSave={onSave}
+				/>
 			</div>
 		</Modal>
 	);
