@@ -1,0 +1,442 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Welcome should render empty state 1`] = `
+<DocumentFragment>
+  <div
+    class="flex flex-col bg-theme-background mt-4"
+  >
+    <span
+      class="p-10 font-bold text-2xl"
+    >
+      Delegate
+    </span>
+    <div
+      class="sc-AxhUy fkVaYz"
+      role="table"
+    >
+      <table
+        class="table-auto"
+      >
+        <thead>
+          <tr
+            role="row"
+          >
+            <th
+              class="text-xs text-left select-none text-theme-neutral-400"
+              colspan="1"
+              data-testid="table__th--0"
+              role="columnheader"
+            >
+              <div
+                class="flex flex-inline align-top  invisible"
+              >
+                <div
+                  class="mr-1"
+                >
+                  Avatar
+                </div>
+                <div
+                  class="mt-1 text-theme-color-neutral-500"
+                  data-testid="table__Sort"
+                />
+              </div>
+            </th>
+            <th
+              class="text-xs text-left select-none text-theme-neutral-400"
+              colspan="1"
+              data-testid="table__th--1"
+              role="columnheader"
+            >
+              <div
+                class="flex flex-inline align-top  font-semibold text-md ml-5"
+              >
+                <div
+                  class="mr-1"
+                >
+                  Delegate Name
+                </div>
+                <div
+                  class="mt-1 text-theme-color-neutral-500"
+                  data-testid="table__Sort"
+                />
+              </div>
+            </th>
+            <th
+              class="text-xs text-left select-none text-theme-neutral-400"
+              colspan="1"
+              data-testid="table__th--2"
+              role="columnheader"
+            >
+              <div
+                class="flex flex-inline align-top  font-semibold text-md -ml-20"
+              >
+                <div
+                  class="mr-1"
+                >
+                  Rank
+                </div>
+                <div
+                  class="mt-1 text-theme-color-neutral-500"
+                  data-testid="table__Sort"
+                />
+              </div>
+            </th>
+            <th
+              class="text-xs text-left select-none text-theme-neutral-400"
+              colspan="1"
+              data-testid="table__th--3"
+              role="columnheader"
+            >
+              <div
+                class="flex flex-inline align-top  font-semibold text-md"
+              >
+                <div
+                  class="mr-1"
+                >
+                  MSQ
+                </div>
+                <div
+                  class="mt-1 text-theme-color-neutral-500"
+                  data-testid="table__Sort"
+                />
+              </div>
+            </th>
+            <th
+              class="text-xs text-left select-none text-theme-neutral-400"
+              colspan="1"
+              data-testid="table__th--4"
+              role="columnheader"
+            >
+              <div
+                class="flex flex-inline align-top  font-semibold text-md"
+              >
+                <div
+                  class="mr-1"
+                >
+                  Status
+                </div>
+                <div
+                  class="mt-1 text-theme-color-neutral-500"
+                  data-testid="table__Sort"
+                />
+              </div>
+            </th>
+            <th
+              class="text-xs text-left select-none text-theme-neutral-400"
+              colspan="1"
+              data-testid="table__th--5"
+              role="columnheader"
+            >
+              <div
+                class="flex flex-inline align-top  invisible w-3 float-right"
+              >
+                <div
+                  class="mr-1"
+                >
+                  Amount
+                </div>
+                <div
+                  class="mt-1 text-theme-color-neutral-500"
+                  data-testid="table__Sort"
+                />
+              </div>
+            </th>
+            <th
+              class="text-xs text-left select-none text-theme-neutral-400"
+              colspan="1"
+              data-testid="table__th--6"
+              role="columnheader"
+            >
+              <div
+                class="flex flex-inline align-top  font-semibold text-md float-right"
+              >
+                <div
+                  class="mr-1"
+                >
+                  Votes
+                </div>
+                <div
+                  class="mt-1 text-theme-color-neutral-500"
+                  data-testid="table__Sort"
+                />
+              </div>
+            </th>
+            <th
+              class="text-xs text-left select-none text-theme-neutral-400"
+              colspan="1"
+              data-testid="table__th--7"
+              role="columnheader"
+            >
+              <div
+                class="flex flex-inline align-top  invisible float-right"
+              >
+                <div
+                  class="mr-1"
+                >
+                  Options
+                </div>
+                <div
+                  class="mt-1 text-theme-color-neutral-500"
+                  data-testid="table__Sort"
+                />
+              </div>
+            </th>
+          </tr>
+        </thead>
+        <tbody
+          role="rowgroup"
+        >
+          <tr
+            class="border-b border-dashed border-theme-neutral-light"
+            data-testid="business-table__row"
+          >
+            <td
+              class="py-4"
+            >
+              <div
+                class="ml-10 -mr-16"
+              >
+                <div
+                  class="sc-AxirZ cZokSJ border-theme-neutral-800"
+                >
+                  <div
+                    class="sc-AxiKw fFXzuz"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      business.svg
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  class="sc-AxirZ efFWdY -ml-1"
+                />
+              </div>
+            </td>
+            <td
+              class="py-4 mt-1 font-semibold pl-5"
+            >
+              <span />
+            </td>
+            <td
+              class="py-1 text-theme-neutral-700"
+            >
+              <span
+                class="-ml-20"
+              />
+            </td>
+            <td
+              class="py-1 text-bold text-theme-primary"
+            >
+              <div
+                class="sc-AxiKw iQZLaj"
+                height="25"
+                width="25"
+              >
+                <svg>
+                  msq.svg
+                </svg>
+              </div>
+            </td>
+            <td
+              class="py-1 text-theme-neutral-400"
+            >
+              <div
+                class="sc-AxiKw dzBdqj ml-3"
+                height="1em"
+                width="1em"
+              >
+                <svg>
+                  redirect.svg
+                </svg>
+              </div>
+            </td>
+            <td
+              class="px-20 text-bold text-theme-neutral-700"
+            >
+              <div
+                class="flex items-center float-right -mr-20"
+              >
+                <span>
+                  2,450.643
+                </span>
+                <div
+                  class="sc-AxiKw dzBdqj ml-2"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    ark.svg
+                  </svg>
+                </div>
+              </div>
+            </td>
+            <td
+              class="py-1 text-bold text-theme-primary"
+            >
+              <span
+                class="float-right"
+              >
+                View
+              </span>
+            </td>
+            <td
+              class="py-1 float-right"
+            >
+              <button
+                class="sc-AxjAm kTAyCf mt-4"
+                color="primary"
+                type="button"
+              >
+                <div
+                  class="relative"
+                  data-testid="dropdown__toggle"
+                >
+                  <div
+                    class="float-right outline-none focus:outline-none"
+                  >
+                    <div
+                      class="sc-AxiKw dklFyP"
+                      height="20"
+                      width="20"
+                    >
+                      <svg>
+                        settings.svg
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </button>
+            </td>
+          </tr>
+          <tr
+            class="border-b border-dashed border-theme-neutral-light"
+            data-testid="business-table__row"
+          >
+            <td
+              class="py-4"
+            >
+              <div
+                class="ml-10 -mr-16"
+              >
+                <div
+                  class="sc-AxirZ cZokSJ border-theme-neutral-800"
+                >
+                  <div
+                    class="sc-AxiKw fFXzuz"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      business.svg
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  class="sc-AxirZ efFWdY -ml-1"
+                />
+              </div>
+            </td>
+            <td
+              class="py-4 mt-1 font-semibold pl-5"
+            >
+              <span />
+            </td>
+            <td
+              class="py-1 text-theme-neutral-700"
+            >
+              <span
+                class="-ml-20"
+              />
+            </td>
+            <td
+              class="py-1 text-bold text-theme-primary"
+            >
+              <div
+                class="sc-AxiKw iQZLaj"
+                height="25"
+                width="25"
+              >
+                <svg>
+                  msq.svg
+                </svg>
+              </div>
+            </td>
+            <td
+              class="py-1 text-theme-neutral-400"
+            >
+              <div
+                class="sc-AxiKw dzBdqj ml-3"
+                height="1em"
+                width="1em"
+              >
+                <svg>
+                  redirect.svg
+                </svg>
+              </div>
+            </td>
+            <td
+              class="px-20 text-bold text-theme-neutral-700"
+            >
+              <div
+                class="flex items-center float-right -mr-20"
+              >
+                <span>
+                  2,450.643
+                </span>
+                <div
+                  class="sc-AxiKw dzBdqj ml-2"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    ark.svg
+                  </svg>
+                </div>
+              </div>
+            </td>
+            <td
+              class="py-1 text-bold text-theme-primary"
+            >
+              <span
+                class="float-right"
+              >
+                View
+              </span>
+            </td>
+            <td
+              class="py-1 float-right"
+            >
+              <button
+                class="sc-AxjAm kTAyCf mt-4"
+                color="primary"
+                type="button"
+              >
+                <div
+                  class="relative"
+                  data-testid="dropdown__toggle"
+                >
+                  <div
+                    class="float-right outline-none focus:outline-none"
+                  >
+                    <div
+                      class="sc-AxiKw dklFyP"
+                      height="20"
+                      width="20"
+                    >
+                      <svg>
+                        settings.svg
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</DocumentFragment>
+`;
