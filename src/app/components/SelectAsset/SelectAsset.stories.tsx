@@ -7,25 +7,28 @@ export default {
 };
 
 export const Default = () => {
-	// const options = [
-	// 	{
-	// 		label: "Option 1",
-	// 		value: "1",
-	// 	},
-	// 	{
-	// 		label: "Option 2",
-	// 		value: "2",
-	// 	},
-	// 	{
-	// 		label: "Option 3",
-	// 		value: "3",
-	// 	},
-	// ];
+	const assets = [
+		{
+			icon: "Ark",
+			name: "Ark Ecosystem",
+			className: "text-theme-danger-400 border-theme-danger-200",
+		},
+		{
+			icon: "Bitcoin",
+			name: "Bitcoin",
+			className: "text-theme-warning-400 border-theme-warning-200",
+		},
+		{
+			icon: "Ethereum",
+			name: "Ethereum",
+			className: "text-theme-neutral-800 border-theme-neutral-600",
+		},
+	];
 
 	return (
 		<div className="">
 			<div className="mt-10 w-128">
-				<SelectAsset />
+				<SelectAsset assets={assets} />
 			</div>
 		</div>
 	);
