@@ -13,6 +13,8 @@ import { ReactComponent as Copy } from "./copy.svg";
 import { ReactComponent as CrossSlim } from "./cross-slim.svg";
 import { ReactComponent as Ark } from "./currencies/ark.svg";
 import { ReactComponent as Bitcoin } from "./currencies/btc.svg";
+import { ReactComponent as Business } from "./business.svg";
+import { ReactComponent as Bridgechain } from "./bridgechain.svg";
 import { ReactComponent as Ethereum } from "./currencies/eth.svg";
 import { ReactComponent as Delegate } from "./delegate.svg";
 import { ReactComponent as Discord } from "./discord.svg";
@@ -76,6 +78,8 @@ export const SvgCollection: any = {
 	ArrowDown,
 	ArrowUp,
 	Bitcoin,
+	Business,
+	Bridgechain,
 	Checkmark,
 	ChevronDown,
 	Close,

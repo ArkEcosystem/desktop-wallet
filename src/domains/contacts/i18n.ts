@@ -23,4 +23,8 @@ export const translations: { [key: string]: any } = {
 	MODAL_UPDATE_CONTACT: {
 		TITLE: "Edit Contact",
 	},
+	MODAL_SEARCH_CONTACT: {
+		TITLE: "Search Contact",
+		DESCRIPTION: "Find the contact you need quickly and conveniently",
+	},
 };

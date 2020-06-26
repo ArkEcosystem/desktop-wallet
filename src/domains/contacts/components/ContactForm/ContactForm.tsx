@@ -1,4 +1,3 @@
-import { ContactAddress } from "@arkecosystem/platform-sdk-profiles";
 import { Address } from "app/components/Address";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
@@ -11,7 +10,7 @@ import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
 type AddressListItemProps = {
-	address: ContactAddress;
+	address: any;
 	onRemove: any;
 };
 
@@ -46,7 +45,7 @@ const AddressListItem = ({ address, onRemove }: AddressListItemProps) => {
 };
 
 type AddressListProps = {
-	addresses: ContactAddress[];
+	addresses: any[];
 	onRemove: any;
 };
 
@@ -60,7 +59,7 @@ const AddressList = ({ addresses, onRemove }: AddressListProps) => {
 			</span>
 
 			<div data-testid="contact-form__address-list">
-				{addresses.map((address: ContactAddress, index: number) => (
+				{addresses.map((address: any, index: number) => (
 					<AddressListItem key={index} address={address} onRemove={onRemove} />
 				))}
 			</div>
@@ -102,9 +101,9 @@ export const ContactForm = ({ contact, networks, onCancel, onSave }: ContactForm
 		form.setValue("address", null);
 	};
 
-	const handleRemoveAddress = (address: ContactAddress) => {
+	const handleRemoveAddress = (address: any) => {
 		setContactAddresses(
-			contactAddresses.filter((curr: ContactAddress) => {
+			contactAddresses.filter((curr: any) => {
 				return !(curr.address === address.address && curr.network === address.network);
 			}),
 		);

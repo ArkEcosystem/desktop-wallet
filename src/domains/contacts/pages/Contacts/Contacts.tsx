@@ -1,4 +1,3 @@
-import { Contact } from "@arkecosystem/platform-sdk-profiles";
 import { images } from "app/assets/images";
 import { Breadcrumbs } from "app/components/Breadcrumbs";
 import { Button } from "app/components/Button";
@@ -37,7 +36,7 @@ const ContactsHeaderExtra = ({ showSearchBar, onSearch, onAddContact }: Contacts
 };
 
 type ContactsProps = {
-	contacts: Contact[];
+	contacts: any[];
 	onSearch?: any;
 };
 
