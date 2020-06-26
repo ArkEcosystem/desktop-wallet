@@ -14,6 +14,7 @@ export const Default = () => {
 			history: [],
 			website: "",
 			msq: true,
+			confirmed: true,
 			repository: [],
 		},
 		{
@@ -21,7 +22,7 @@ export const Default = () => {
 			rank: "#352",
 			history: [],
 			website: "",
-			msq: true,
+			confirmed: false,
 			repository: [],
 		},
 	];

@@ -44,6 +44,14 @@ const options = [
 	{ label: "Resign", value: "resign" },
 ];
 
+const getStatusIcon = (confirmed) => {
+	if (!confirmed) {
+		return <Icon name="StatusClock" className="ml-2 text-theme-neutral-500" />;
+	}
+
+	return <Icon name="Checkmark" className="ml-1 text-theme-success" width={30} height={30} />;
+};
+
 export const DelegateTable = ({ data }: Props) => (
 	<div className="flex flex-col bg-theme-background mt-4">
 		<span className="p-10 font-bold text-2xl">Delegate</span>
@@ -67,9 +75,7 @@ export const DelegateTable = ({ data }: Props) => (
 					<td className="py-1 text-bold text-theme-primary">
 						<Icon name="Msq" width={25} height={25} />
 					</td>
-					<td className="py-1 text-theme-neutral-400">
-						<Icon name="Redirect" className="ml-3" />
-					</td>
+					<td className="py-1 text-theme-neutral-400">{getStatusIcon(rowData.confirmed)}</td>
 					<td className="px-20 text-bold text-theme-neutral-700">
 						<div className="flex items-center float-right -mr-20">
 							<span>2,450.643</span>
