@@ -1,3 +1,3 @@
 export * from "./click-outside";
-export * from "./clipboard";
 export * from "./debounce";
+export * from "./use-clipboard";

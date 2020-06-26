@@ -5,6 +5,16 @@ import React from "react";
 import { Clipboard } from "./Clipboard";
 
 describe("Clipboard", () => {
+	beforeAll(() => {
+		navigator.clipboard = {
+			writeText: jest.fn().mockResolvedValue(),
+		};
+	});
+
+	afterAll(() => {
+		navigator.clipboard.writeText.mockRestore();
+	});
+
 	it("should render not render without children", () => {
 		const { asFragment, getByTestId } = render(<Clipboard />);
 
@@ -23,6 +33,31 @@ describe("Clipboard", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it.each([
+		["string", "test string"],
+		["object", { hello: "world" }],
+	])("should work with data with type '%s'", async (dataType, data) => {
+		jest.useFakeTimers();
+
+		const onError = jest.fn();
+
+		const { getByTestId } = render(
+			<Clipboard data={data} options={{ resetAfter: 1000, onError }}>
+				<span>Hello!</span>
+			</Clipboard>,
+		);
+
+		await act(async () => {
+			fireEvent.click(getByTestId("clipboard__wrapper"));
+		});
+
+		await act(async () => {
+			jest.runAllTimers();
+		});
+
+		expect(onError).not.toHaveBeenCalled();
+	});
+
 	describe("on success", () => {
 		beforeAll(() => {
 			navigator.clipboard = {
@@ -38,7 +73,7 @@ describe("Clipboard", () => {
 			const onSuccess = jest.fn();
 
 			const { getByTestId } = render(
-				<Clipboard data={123} options={{ resetAfter: 1000, onSuccess }}>
+				<Clipboard options={{ onSuccess }}>
 					<span>Hello!</span>
 				</Clipboard>,
 			);

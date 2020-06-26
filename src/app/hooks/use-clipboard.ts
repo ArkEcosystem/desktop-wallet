@@ -33,7 +33,7 @@ export const useClipboard = (options?: ClipboardOptions): [boolean, (data: strin
 					data = JSON.stringify(data);
 				}
 
-				await navigator.clipboard.writeText(data as string);
+				await navigator.clipboard.writeText(data);
 
 				setHasCopied(true);
 
