@@ -47,6 +47,9 @@ export const Dashboard = ({ transactions, wallets, networks, portfolioPercentage
 		},
 	];
 
+	const emptyTransactionsText =
+		"This will display the history of your transactions. But you don't have more than one transaction at the moment.";
+
 	return (
 		<div className="pt-1 -m-5 -mt-6 bg-theme-neutral-100">
 			{showPortfolio && balances && (
@@ -63,7 +66,7 @@ export const Dashboard = ({ transactions, wallets, networks, portfolioPercentage
 			</Section>
 			{showTransactions && (
 				<Section data-testid="dashboard__transactions-view">
-					<Transactions transactions={transactions} />
+					<Transactions transactions={transactions} emptyText={emptyTransactionsText} />
 				</Section>
 			)}
 		</div>

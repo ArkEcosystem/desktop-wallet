@@ -9,6 +9,7 @@ import React, { useState } from "react";
 type WalletsProps = {
 	wallets?: any;
 	title?: string;
+	walletsEmptyText?: string;
 	filterProperties: any;
 	viewType?: "grid" | "list";
 	listColumns?: any;
@@ -26,6 +27,7 @@ export const Wallets = ({
 	onCreateWallet,
 	onImportWallet,
 	onWalletAction,
+	walletsEmptyText,
 }: WalletsProps) => {
 	const [walletsViewType, setWalletsViewType] = useState(viewType);
 
@@ -98,13 +100,18 @@ export const Wallets = ({
 				)}
 				{walletsViewType === "list" && (
 					<div>
-						<Table columns={listColumns} data={wallets}>
-							{(rowData: any) => <WalletListItem {...rowData} />}
-						</Table>
+						{wallets.length > 0 && (
+							<div>
+								<Table columns={listColumns} data={wallets}>
+									{(rowData: any) => <WalletListItem {...rowData} />}
+								</Table>
 
-						<Button variant="plain" className="w-full mt-10 mb-5">
-							See more
-						</Button>
+								<Button variant="plain" className="w-full mt-10 mb-5">
+									See more
+								</Button>
+							</div>
+						)}
+						{wallets.length === 0 && <div className="text-theme-neutral-700">{walletsEmptyText}</div>}
 					</div>
 				)}
 			</div>
@@ -116,6 +123,7 @@ Wallets.defaultProps = {
 	title: "Wallets",
 	networks: [],
 	wallets: [],
+	walletsEmptyText: "You don't have any wallets created yet. Click Create to add new wallets.",
 	viewType: "grid",
 	listColumns: [
 		{

@@ -32,3 +32,11 @@ export const FewerWallets = () => {
 		</div>
 	);
 };
+
+export const Empty = () => {
+	return (
+		<div>
+			<Dashboard networks={networks} portfolioPercentages={portfolioPercentages} />
+		</div>
+	);
+};

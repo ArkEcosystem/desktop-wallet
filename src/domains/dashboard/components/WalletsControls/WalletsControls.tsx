@@ -71,7 +71,7 @@ export const WalletsControls = ({
 
 			<Divider type="vertical" />
 
-			<Button onClick={onCreateWallet} className="ml-8 mr-3">
+			<Button onClick={onCreateWallet} variant="plain" className="ml-8 mr-3">
 				<div className="flex items-center justify-center mr-2 text-sm align-middle">
 					<Icon name="Plus" width={10} />
 					<span className="ml-2">Create</span>

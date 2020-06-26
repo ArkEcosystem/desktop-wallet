@@ -80,7 +80,7 @@ exports[`Dashboard should render 1`] = `
                 type="vertical"
               />
               <button
-                class="sc-AxiKw wFYj ml-8 mr-3"
+                class="sc-AxiKw gFzSt ml-8 mr-3"
                 color="primary"
                 type="button"
               >
@@ -310,135 +310,15 @@ exports[`Dashboard should render 1`] = `
         class="bg-white"
       >
         <div
-          class="pb-8 text-3xl font-bold"
+          class="text-3xl font-bold"
         >
           Transactions History
         </div>
         <div
-          class="sc-AxhCb gfJeeC"
-          role="table"
+          class="text-theme-neutral-700"
         >
-          <table
-            class="table-auto"
-          >
-            <thead>
-              <tr
-                role="row"
-              >
-                <th
-                  class="text-xs text-left select-none text-theme-neutral-400"
-                  colspan="1"
-                  data-testid="table__th--0"
-                  role="columnheader"
-                >
-                  <div
-                    class="flex flex-inline align-top  undefined"
-                  >
-                    <div
-                      class="mr-1"
-                    >
-                      Date
-                    </div>
-                    <div
-                      class="mt-1 text-theme-color-neutral-500"
-                      data-testid="table__Sort"
-                    />
-                  </div>
-                </th>
-                <th
-                  class="text-xs text-left select-none text-theme-neutral-400"
-                  colspan="1"
-                  data-testid="table__th--1"
-                  role="columnheader"
-                >
-                  <div
-                    class="flex flex-inline align-top  invisible"
-                  >
-                    <div
-                      class="mr-1"
-                    >
-                      Type
-                    </div>
-                    <div
-                      class="mt-1 text-theme-color-neutral-500"
-                      data-testid="table__Sort"
-                    />
-                  </div>
-                </th>
-                <th
-                  class="text-xs text-left select-none text-theme-neutral-400"
-                  colspan="1"
-                  data-testid="table__th--2"
-                  role="columnheader"
-                >
-                  <div
-                    class="flex flex-inline align-top  undefined"
-                  >
-                    <div
-                      class="mr-1"
-                    >
-                      Wallet Address
-                    </div>
-                    <div
-                      class="mt-1 text-theme-color-neutral-500"
-                      data-testid="table__Sort"
-                    />
-                  </div>
-                </th>
-                <th
-                  class="text-xs text-left select-none text-theme-neutral-400"
-                  colspan="1"
-                  data-testid="table__th--3"
-                  role="columnheader"
-                >
-                  <div
-                    class="flex flex-inline align-top  float-right"
-                  >
-                    <div
-                      class="mr-1"
-                    >
-                      Amount
-                    </div>
-                    <div
-                      class="mt-1 text-theme-color-neutral-500"
-                      data-testid="table__Sort"
-                    />
-                  </div>
-                </th>
-                <th
-                  class="text-xs text-left select-none text-theme-neutral-400"
-                  colspan="1"
-                  data-testid="table__th--4"
-                  role="columnheader"
-                >
-                  <div
-                    class="flex flex-inline align-top  float-right"
-                  >
-                    <div
-                      class="mr-1"
-                    >
-                      Fiat Value
-                    </div>
-                    <div
-                      class="mt-1 text-theme-color-neutral-500"
-                      data-testid="table__Sort"
-                    />
-                  </div>
-                </th>
-              </tr>
-            </thead>
-            <tbody
-              role="rowgroup"
-            />
-          </table>
+          This will display the history of your transactions. But you don't have more than one transaction at the moment.
         </div>
-        <button
-          class="sc-AxiKw gFzSt w-full mt-10 mb-5"
-          color="primary"
-          type="button"
-        >
-          See more
-        </button>
       </div>
     </div>
   </div>
@@ -729,7 +609,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                 type="vertical"
               />
               <button
-                class="sc-AxiKw wFYj ml-8 mr-3"
+                class="sc-AxiKw gFzSt ml-8 mr-3"
                 color="primary"
                 type="button"
               >
@@ -959,135 +839,15 @@ exports[`Dashboard should render portfolio chart 1`] = `
         class="bg-white"
       >
         <div
-          class="pb-8 text-3xl font-bold"
+          class="text-3xl font-bold"
         >
           Transactions History
         </div>
         <div
-          class="sc-AxhCb gfJeeC"
-          role="table"
+          class="text-theme-neutral-700"
         >
-          <table
-            class="table-auto"
-          >
-            <thead>
-              <tr
-                role="row"
-              >
-                <th
-                  class="text-xs text-left select-none text-theme-neutral-400"
-                  colspan="1"
-                  data-testid="table__th--0"
-                  role="columnheader"
-                >
-                  <div
-                    class="flex flex-inline align-top  undefined"
-                  >
-                    <div
-                      class="mr-1"
-                    >
-                      Date
-                    </div>
-                    <div
-                      class="mt-1 text-theme-color-neutral-500"
-                      data-testid="table__Sort"
-                    />
-                  </div>
-                </th>
-                <th
-                  class="text-xs text-left select-none text-theme-neutral-400"
-                  colspan="1"
-                  data-testid="table__th--1"
-                  role="columnheader"
-                >
-                  <div
-                    class="flex flex-inline align-top  invisible"
-                  >
-                    <div
-                      class="mr-1"
-                    >
-                      Type
-                    </div>
-                    <div
-                      class="mt-1 text-theme-color-neutral-500"
-                      data-testid="table__Sort"
-                    />
-                  </div>
-                </th>
-                <th
-                  class="text-xs text-left select-none text-theme-neutral-400"
-                  colspan="1"
-                  data-testid="table__th--2"
-                  role="columnheader"
-                >
-                  <div
-                    class="flex flex-inline align-top  undefined"
-                  >
-                    <div
-                      class="mr-1"
-                    >
-                      Wallet Address
-                    </div>
-                    <div
-                      class="mt-1 text-theme-color-neutral-500"
-                      data-testid="table__Sort"
-                    />
-                  </div>
-                </th>
-                <th
-                  class="text-xs text-left select-none text-theme-neutral-400"
-                  colspan="1"
-                  data-testid="table__th--3"
-                  role="columnheader"
-                >
-                  <div
-                    class="flex flex-inline align-top  float-right"
-                  >
-                    <div
-                      class="mr-1"
-                    >
-                      Amount
-                    </div>
-                    <div
-                      class="mt-1 text-theme-color-neutral-500"
-                      data-testid="table__Sort"
-                    />
-                  </div>
-                </th>
-                <th
-                  class="text-xs text-left select-none text-theme-neutral-400"
-                  colspan="1"
-                  data-testid="table__th--4"
-                  role="columnheader"
-                >
-                  <div
-                    class="flex flex-inline align-top  float-right"
-                  >
-                    <div
-                      class="mr-1"
-                    >
-                      Fiat Value
-                    </div>
-                    <div
-                      class="mt-1 text-theme-color-neutral-500"
-                      data-testid="table__Sort"
-                    />
-                  </div>
-                </th>
-              </tr>
-            </thead>
-            <tbody
-              role="rowgroup"
-            />
-          </table>
+          This will display the history of your transactions. But you don't have more than one transaction at the moment.
         </div>
-        <button
-          class="sc-AxiKw gFzSt w-full mt-10 mb-5"
-          color="primary"
-          type="button"
-        >
-          See more
-        </button>
       </div>
     </div>
   </div>
@@ -1174,7 +934,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                 type="vertical"
               />
               <button
-                class="sc-AxiKw wFYj ml-8 mr-3"
+                class="sc-AxiKw gFzSt ml-8 mr-3"
                 color="primary"
                 type="button"
               >
@@ -1404,135 +1164,15 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
         class="bg-white"
       >
         <div
-          class="pb-8 text-3xl font-bold"
+          class="text-3xl font-bold"
         >
           Transactions History
         </div>
         <div
-          class="sc-AxhCb gfJeeC"
-          role="table"
+          class="text-theme-neutral-700"
         >
-          <table
-            class="table-auto"
-          >
-            <thead>
-              <tr
-                role="row"
-              >
-                <th
-                  class="text-xs text-left select-none text-theme-neutral-400"
-                  colspan="1"
-                  data-testid="table__th--0"
-                  role="columnheader"
-                >
-                  <div
-                    class="flex flex-inline align-top  undefined"
-                  >
-                    <div
-                      class="mr-1"
-                    >
-                      Date
-                    </div>
-                    <div
-                      class="mt-1 text-theme-color-neutral-500"
-                      data-testid="table__Sort"
-                    />
-                  </div>
-                </th>
-                <th
-                  class="text-xs text-left select-none text-theme-neutral-400"
-                  colspan="1"
-                  data-testid="table__th--1"
-                  role="columnheader"
-                >
-                  <div
-                    class="flex flex-inline align-top  invisible"
-                  >
-                    <div
-                      class="mr-1"
-                    >
-                      Type
-                    </div>
-                    <div
-                      class="mt-1 text-theme-color-neutral-500"
-                      data-testid="table__Sort"
-                    />
-                  </div>
-                </th>
-                <th
-                  class="text-xs text-left select-none text-theme-neutral-400"
-                  colspan="1"
-                  data-testid="table__th--2"
-                  role="columnheader"
-                >
-                  <div
-                    class="flex flex-inline align-top  undefined"
-                  >
-                    <div
-                      class="mr-1"
-                    >
-                      Wallet Address
-                    </div>
-                    <div
-                      class="mt-1 text-theme-color-neutral-500"
-                      data-testid="table__Sort"
-                    />
-                  </div>
-                </th>
-                <th
-                  class="text-xs text-left select-none text-theme-neutral-400"
-                  colspan="1"
-                  data-testid="table__th--3"
-                  role="columnheader"
-                >
-                  <div
-                    class="flex flex-inline align-top  float-right"
-                  >
-                    <div
-                      class="mr-1"
-                    >
-                      Amount
-                    </div>
-                    <div
-                      class="mt-1 text-theme-color-neutral-500"
-                      data-testid="table__Sort"
-                    />
-                  </div>
-                </th>
-                <th
-                  class="text-xs text-left select-none text-theme-neutral-400"
-                  colspan="1"
-                  data-testid="table__th--4"
-                  role="columnheader"
-                >
-                  <div
-                    class="flex flex-inline align-top  float-right"
-                  >
-                    <div
-                      class="mr-1"
-                    >
-                      Fiat Value
-                    </div>
-                    <div
-                      class="mt-1 text-theme-color-neutral-500"
-                      data-testid="table__Sort"
-                    />
-                  </div>
-                </th>
-              </tr>
-            </thead>
-            <tbody
-              role="rowgroup"
-            />
-          </table>
+          This will display the history of your transactions. But you don't have more than one transaction at the moment.
         </div>
-        <button
-          class="sc-AxiKw gFzSt w-full mt-10 mb-5"
-          color="primary"
-          type="button"
-        >
-          See more
-        </button>
       </div>
     </div>
   </div>
