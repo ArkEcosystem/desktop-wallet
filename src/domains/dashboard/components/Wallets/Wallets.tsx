@@ -72,6 +72,8 @@ export const Wallets = ({
 		return wallets;
 	};
 
+	const walletListItems = wallets.filter((wallet: any) => !wallet.isBlank);
+
 	return (
 		<div>
 			<div className="flex w-full pb-8">
@@ -102,7 +104,7 @@ export const Wallets = ({
 					<div>
 						{wallets.length > 0 && (
 							<div>
-								<Table columns={listColumns} data={wallets}>
+								<Table columns={listColumns} data={walletListItems}>
 									{(rowData: any) => <WalletListItem {...rowData} />}
 								</Table>
 
