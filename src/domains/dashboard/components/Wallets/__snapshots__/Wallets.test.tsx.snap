@@ -1027,115 +1027,25 @@ exports[`Wallets should render 1`] = `
                     class="sc-AxhCb jxpqWJ"
                   >
                     <div
-                      class="relative p-2"
+                      class="p-2"
                     >
-                      <div
-                        class="absolute -right-2 -top-1 text-theme-neutral-400 hover:text-theme-neutral-500"
-                      >
-                        <div
-                          class="relative"
-                          data-testid="dropdown__toggle"
-                        >
-                          <div
-                            class="float-right outline-none focus:outline-none"
-                          >
-                            <div
-                              class="sc-AxirZ eEbZjj"
-                              height="20"
-                              width="20"
-                            >
-                              <svg>
-                                settings.svg
-                              </svg>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        class="absolute right-3 -top-1"
-                      >
-                        <div
-                          class="inline-block mr-2 text text-theme-warning-400"
-                        >
-                          <div
-                            class="sc-AxirZ EmuJz"
-                            height="1em"
-                            width="18"
-                          >
-                            <svg>
-                              star.svg
-                            </svg>
-                          </div>
-                        </div>
-                        <div
-                          class="inline-block mr-2 text text-theme-neutral-600"
-                        >
-                          <div
-                            class="sc-AxirZ EmuJz"
-                            height="1em"
-                            width="18"
-                          >
-                            <svg>
-                              multisig.svg
-                            </svg>
-                          </div>
-                        </div>
-                        <div
-                          class="inline-block mr-2 text text-theme-neutral-600"
-                        >
-                          <div
-                            class="sc-AxirZ EmuJz"
-                            height="1em"
-                            width="18"
-                          >
-                            <svg>
-                              ledger.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
                       <div>
                         <div
-                          class="sc-AxhUy dSLmHc border-theme-primary-contrast -mr-2 text-theme-warning-400 border-theme-warning-200"
-                        >
-                          <div
-                            class="sc-AxirZ eViLYR"
-                            height="16"
-                            width="18"
-                          >
-                            <svg>
-                              btc.svg
-                            </svg>
-                          </div>
-                        </div>
+                          class="sc-AxhUy dSLmHc -mr-2 bg-white border-theme-primary-contrast"
+                        />
                         <div
-                          class="sc-AxhUy bZEzx border-theme-primary-contrast"
+                          class="sc-AxhUy dSLmHc bg-white border-theme-primary-contrast"
                         />
                       </div>
                       <div
-                        class="mt-6 truncate max-w-12"
+                        class="mt-6 text-md text-theme-primary-contrast text-theme-neutral-700 cursor-pointer"
                       >
-                        <div
-                          class="inline-block truncate"
-                        >
-                          <span
-                            class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-base"
-                            data-testid="address__wallet-name"
-                          >
-                            My Wallet
-                          </span>
-                          <span
-                            class="text-theme-neutral-400 font-semibold text-base"
-                            data-testid="address__wallet-address"
-                          >
-                            ASuu...3kqT
-                          </span>
-                        </div>
+                        You have 8 more wallets
                       </div>
                       <div
-                        class="font-bold text-theme-neutral-900"
+                        class="mt-1 text-md text-theme-primary-contrast my-px text-theme-primary-600 font-semibold cursor-pointer"
                       >
-                        100 BTC
+                        Look all wallet
                       </div>
                     </div>
                   </div>
@@ -1821,12 +1731,12 @@ exports[`Wallets should render with empty wallets list 1`] = `
                         />
                       </div>
                       <div
-                        class=" mt-6 text-md text-theme-primary-contrast undefined"
+                        class="mt-6 text-md text-theme-primary-contrast undefined"
                       >
                         New wallet
                       </div>
                       <div
-                        class=" mt-1 text-md text-theme-primary-contrast undefined"
+                        class="mt-1 text-md text-theme-primary-contrast my-px undefined"
                       >
                         Balance
                       </div>
@@ -1856,12 +1766,12 @@ exports[`Wallets should render with empty wallets list 1`] = `
                         />
                       </div>
                       <div
-                        class=" mt-6 text-md text-theme-primary-contrast undefined"
+                        class="mt-6 text-md text-theme-primary-contrast undefined"
                       >
                         New wallet
                       </div>
                       <div
-                        class=" mt-1 text-md text-theme-primary-contrast undefined"
+                        class="mt-1 text-md text-theme-primary-contrast my-px undefined"
                       >
                         Balance
                       </div>
@@ -1891,12 +1801,12 @@ exports[`Wallets should render with empty wallets list 1`] = `
                         />
                       </div>
                       <div
-                        class=" mt-6 text-md text-theme-primary-contrast undefined"
+                        class="mt-6 text-md text-theme-primary-contrast undefined"
                       >
                         New wallet
                       </div>
                       <div
-                        class=" mt-1 text-md text-theme-primary-contrast undefined"
+                        class="mt-1 text-md text-theme-primary-contrast my-px undefined"
                       >
                         Balance
                       </div>
@@ -1926,12 +1836,12 @@ exports[`Wallets should render with empty wallets list 1`] = `
                         />
                       </div>
                       <div
-                        class=" mt-6 text-md text-theme-primary-contrast undefined"
+                        class="mt-6 text-md text-theme-primary-contrast undefined"
                       >
                         New wallet
                       </div>
                       <div
-                        class=" mt-1 text-md text-theme-primary-contrast undefined"
+                        class="mt-1 text-md text-theme-primary-contrast my-px undefined"
                       >
                         Balance
                       </div>
@@ -2299,9 +2209,9 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                       class="inline-block mr-2 text text-theme-warning-400"
                     >
                       <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
+                        class="sc-AxirZ hPsuTj"
+                        height="16"
+                        width="16"
                       >
                         <svg>
                           star.svg
@@ -2312,9 +2222,9 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                       class="inline-block mr-2 text text-theme-neutral-600"
                     >
                       <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
+                        class="sc-AxirZ hPsuTj"
+                        height="16"
+                        width="16"
                       >
                         <svg>
                           multisig.svg
@@ -2325,9 +2235,9 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                       class="inline-block mr-2 text text-theme-neutral-600"
                     >
                       <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
+                        class="sc-AxirZ hPsuTj"
+                        height="16"
+                        width="16"
                       >
                         <svg>
                           ledger.svg
@@ -2424,9 +2334,9 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                       class="inline-block mr-2 text text-theme-warning-400"
                     >
                       <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
+                        class="sc-AxirZ hPsuTj"
+                        height="16"
+                        width="16"
                       >
                         <svg>
                           star.svg
@@ -2437,9 +2347,9 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                       class="inline-block mr-2 text text-theme-neutral-600"
                     >
                       <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
+                        class="sc-AxirZ hPsuTj"
+                        height="16"
+                        width="16"
                       >
                         <svg>
                           multisig.svg
@@ -2450,9 +2360,9 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                       class="inline-block mr-2 text text-theme-neutral-600"
                     >
                       <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
+                        class="sc-AxirZ hPsuTj"
+                        height="16"
+                        width="16"
                       >
                         <svg>
                           ledger.svg
@@ -2549,9 +2459,9 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                       class="inline-block mr-2 text text-theme-warning-400"
                     >
                       <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
+                        class="sc-AxirZ hPsuTj"
+                        height="16"
+                        width="16"
                       >
                         <svg>
                           star.svg
@@ -2562,9 +2472,9 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                       class="inline-block mr-2 text text-theme-neutral-600"
                     >
                       <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
+                        class="sc-AxirZ hPsuTj"
+                        height="16"
+                        width="16"
                       >
                         <svg>
                           multisig.svg
@@ -2575,9 +2485,9 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                       class="inline-block mr-2 text text-theme-neutral-600"
                     >
                       <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
+                        class="sc-AxirZ hPsuTj"
+                        height="16"
+                        width="16"
                       >
                         <svg>
                           ledger.svg
@@ -2674,9 +2584,9 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                       class="inline-block mr-2 text text-theme-warning-400"
                     >
                       <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
+                        class="sc-AxirZ hPsuTj"
+                        height="16"
+                        width="16"
                       >
                         <svg>
                           star.svg
@@ -2687,9 +2597,9 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                       class="inline-block mr-2 text text-theme-neutral-600"
                     >
                       <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
+                        class="sc-AxirZ hPsuTj"
+                        height="16"
+                        width="16"
                       >
                         <svg>
                           multisig.svg
@@ -2700,9 +2610,9 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                       class="inline-block mr-2 text text-theme-neutral-600"
                     >
                       <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
+                        class="sc-AxirZ hPsuTj"
+                        height="16"
+                        width="16"
                       >
                         <svg>
                           ledger.svg
@@ -2799,9 +2709,9 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                       class="inline-block mr-2 text text-theme-warning-400"
                     >
                       <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
+                        class="sc-AxirZ hPsuTj"
+                        height="16"
+                        width="16"
                       >
                         <svg>
                           star.svg
@@ -2812,9 +2722,9 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                       class="inline-block mr-2 text text-theme-neutral-600"
                     >
                       <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
+                        class="sc-AxirZ hPsuTj"
+                        height="16"
+                        width="16"
                       >
                         <svg>
                           multisig.svg
@@ -2825,9 +2735,9 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                       class="inline-block mr-2 text text-theme-neutral-600"
                     >
                       <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
+                        class="sc-AxirZ hPsuTj"
+                        height="16"
+                        width="16"
                       >
                         <svg>
                           ledger.svg
@@ -2924,9 +2834,9 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                       class="inline-block mr-2 text text-theme-warning-400"
                     >
                       <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
+                        class="sc-AxirZ hPsuTj"
+                        height="16"
+                        width="16"
                       >
                         <svg>
                           star.svg
@@ -2937,9 +2847,9 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                       class="inline-block mr-2 text text-theme-neutral-600"
                     >
                       <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
+                        class="sc-AxirZ hPsuTj"
+                        height="16"
+                        width="16"
                       >
                         <svg>
                           multisig.svg
@@ -2950,9 +2860,9 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                       class="inline-block mr-2 text text-theme-neutral-600"
                     >
                       <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
+                        class="sc-AxirZ hPsuTj"
+                        height="16"
+                        width="16"
                       >
                         <svg>
                           ledger.svg
@@ -3049,9 +2959,9 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                       class="inline-block mr-2 text text-theme-warning-400"
                     >
                       <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
+                        class="sc-AxirZ hPsuTj"
+                        height="16"
+                        width="16"
                       >
                         <svg>
                           star.svg
@@ -3062,9 +2972,9 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                       class="inline-block mr-2 text text-theme-neutral-600"
                     >
                       <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
+                        class="sc-AxirZ hPsuTj"
+                        height="16"
+                        width="16"
                       >
                         <svg>
                           multisig.svg
@@ -3075,9 +2985,9 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                       class="inline-block mr-2 text text-theme-neutral-600"
                     >
                       <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
+                        class="sc-AxirZ hPsuTj"
+                        height="16"
+                        width="16"
                       >
                         <svg>
                           ledger.svg
@@ -3174,9 +3084,9 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                       class="inline-block mr-2 text text-theme-warning-400"
                     >
                       <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
+                        class="sc-AxirZ hPsuTj"
+                        height="16"
+                        width="16"
                       >
                         <svg>
                           star.svg
@@ -3187,9 +3097,9 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                       class="inline-block mr-2 text text-theme-neutral-600"
                     >
                       <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
+                        class="sc-AxirZ hPsuTj"
+                        height="16"
+                        width="16"
                       >
                         <svg>
                           multisig.svg
@@ -3200,9 +3110,9 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                       class="inline-block mr-2 text text-theme-neutral-600"
                     >
                       <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
+                        class="sc-AxirZ hPsuTj"
+                        height="16"
+                        width="16"
                       >
                         <svg>
                           ledger.svg
@@ -3299,9 +3209,9 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                       class="inline-block mr-2 text text-theme-warning-400"
                     >
                       <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
+                        class="sc-AxirZ hPsuTj"
+                        height="16"
+                        width="16"
                       >
                         <svg>
                           star.svg
@@ -3312,9 +3222,9 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                       class="inline-block mr-2 text text-theme-neutral-600"
                     >
                       <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
+                        class="sc-AxirZ hPsuTj"
+                        height="16"
+                        width="16"
                       >
                         <svg>
                           multisig.svg
@@ -3325,9 +3235,9 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                       class="inline-block mr-2 text text-theme-neutral-600"
                     >
                       <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
+                        class="sc-AxirZ hPsuTj"
+                        height="16"
+                        width="16"
                       >
                         <svg>
                           ledger.svg
@@ -3424,9 +3334,9 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                       class="inline-block mr-2 text text-theme-warning-400"
                     >
                       <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
+                        class="sc-AxirZ hPsuTj"
+                        height="16"
+                        width="16"
                       >
                         <svg>
                           star.svg
@@ -3437,9 +3347,9 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                       class="inline-block mr-2 text text-theme-neutral-600"
                     >
                       <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
+                        class="sc-AxirZ hPsuTj"
+                        height="16"
+                        width="16"
                       >
                         <svg>
                           multisig.svg
@@ -3450,9 +3360,9 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                       class="inline-block mr-2 text text-theme-neutral-600"
                     >
                       <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
+                        class="sc-AxirZ hPsuTj"
+                        height="16"
+                        width="16"
                       >
                         <svg>
                           ledger.svg
@@ -3549,9 +3459,9 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                       class="inline-block mr-2 text text-theme-warning-400"
                     >
                       <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
+                        class="sc-AxirZ hPsuTj"
+                        height="16"
+                        width="16"
                       >
                         <svg>
                           star.svg
@@ -3562,9 +3472,9 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                       class="inline-block mr-2 text text-theme-neutral-600"
                     >
                       <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
+                        class="sc-AxirZ hPsuTj"
+                        height="16"
+                        width="16"
                       >
                         <svg>
                           multisig.svg
@@ -3575,134 +3485,9 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                       class="inline-block mr-2 text text-theme-neutral-600"
                     >
                       <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          ledger.svg
-                        </svg>
-                      </div>
-                    </div>
-                  </td>
-                  <td
-                    class="py-1 font-bold text-right"
-                  >
-                    <div>
-                      100 BTC
-                    </div>
-                  </td>
-                  <td
-                    class="py-1 font-semibold text-right text-theme-neutral-400"
-                  >
-                    <div>
-                      1,000,000 USD
-                    </div>
-                  </td>
-                  <td>
-                    <div
-                      class="text-theme-neutral-400 hover:text-theme-neutral-500"
-                    >
-                      <div
-                        class="relative"
-                        data-testid="dropdown__toggle"
-                      >
-                        <div
-                          class="float-right outline-none focus:outline-none"
-                        >
-                          <div
-                            class="sc-AxirZ eEbZjj"
-                            height="20"
-                            width="20"
-                          >
-                            <svg>
-                              settings.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-                <tr
-                  class="border-b border-theme-neutral-200"
-                >
-                  <td
-                    class="py-4 mt-1"
-                  >
-                    <div
-                      class="sc-AxhUy dSLmHc text-theme-warning-400 border-theme-warning-200"
-                    >
-                      <div
-                        class="sc-AxirZ eEbZjj"
-                        height="20"
-                        width="20"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </div>
-                    <div
-                      class="sc-AxhUy bZEzx"
-                    />
-                  </td>
-                  <td
-                    class="py-1"
-                  >
-                    <div
-                      class="inline-block truncate"
-                    >
-                      <span
-                        class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-base"
-                        data-testid="address__wallet-name"
-                      >
-                        My Wallet
-                      </span>
-                      <span
-                        class="text-theme-neutral-400 font-semibold text-base"
-                        data-testid="address__wallet-address"
-                      >
-                        ASuusXSW9...6T9GQ3kqT
-                      </span>
-                    </div>
-                  </td>
-                  <td
-                    class="py-1 text-sm font-bold"
-                  >
-                    <div
-                      class="inline-block mr-2 text text-theme-warning-400"
-                    >
-                      <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          star.svg
-                        </svg>
-                      </div>
-                    </div>
-                    <div
-                      class="inline-block mr-2 text text-theme-neutral-600"
-                    >
-                      <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          multisig.svg
-                        </svg>
-                      </div>
-                    </div>
-                    <div
-                      class="inline-block mr-2 text text-theme-neutral-600"
-                    >
-                      <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
+                        class="sc-AxirZ hPsuTj"
+                        height="16"
+                        width="16"
                       >
                         <svg>
                           ledger.svg
@@ -3896,9 +3681,7 @@ exports[`Wallets should render with list view enabled as default and empty walle
       <div>
         <div
           class="text-theme-neutral-700"
-        >
-          You don't have any wallets created yet. Click Create to add new wallets.
-        </div>
+        />
       </div>
     </div>
   </div>
@@ -4035,9 +3818,7 @@ exports[`Wallets should render with list view enabled as default and empty walle
       <div>
         <div
           class="text-theme-neutral-700"
-        >
-          You don't have any wallets created yet. Click Create to add new wallets.
-        </div>
+        />
       </div>
     </div>
   </div>

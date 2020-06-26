@@ -110,6 +110,26 @@ exports[`Transactions should render with with transactions 1`] = `
                 role="columnheader"
               >
                 <div
+                  class="flex flex-inline align-top  justify-center"
+                >
+                  <div
+                    class="mr-1"
+                  >
+                    Info
+                  </div>
+                  <div
+                    class="mt-1 text-theme-color-neutral-500"
+                    data-testid="table__Sort"
+                  />
+                </div>
+              </th>
+              <th
+                class="text-xs text-left select-none text-theme-neutral-400"
+                colspan="1"
+                data-testid="table__th--4"
+                role="columnheader"
+              >
+                <div
                   class="flex flex-inline align-top  float-right"
                 >
                   <div
@@ -126,7 +146,7 @@ exports[`Transactions should render with with transactions 1`] = `
               <th
                 class="text-xs text-left select-none text-theme-neutral-400"
                 colspan="1"
-                data-testid="table__th--4"
+                data-testid="table__th--5"
                 role="columnheader"
               >
                 <div
@@ -200,7 +220,37 @@ exports[`Transactions should render with with transactions 1`] = `
                 </div>
               </td>
               <td
-                class="text-sm text-right"
+                class="py-1 text-sm font-bold text-center"
+              >
+                <div
+                  class="inline-block mr-2 text text-theme-neutral-400"
+                >
+                  <div
+                    class="sc-AxirZ hPsuTj"
+                    height="16"
+                    width="16"
+                  >
+                    <svg>
+                      multisig.svg
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  class="inline-block mr-2 text text-theme-neutral-400"
+                >
+                  <div
+                    class="sc-AxirZ hPsuTj"
+                    height="16"
+                    width="16"
+                  >
+                    <svg>
+                      ledger.svg
+                    </svg>
+                  </div>
+                </div>
+              </td>
+              <td
+                class="text-sm text-right w-36"
               >
                 <div
                   class="sc-AxhUy eCrePA"
@@ -269,7 +319,37 @@ exports[`Transactions should render with with transactions 1`] = `
                 </div>
               </td>
               <td
-                class="text-sm text-right"
+                class="py-1 text-sm font-bold text-center"
+              >
+                <div
+                  class="inline-block mr-2 text text-theme-neutral-400"
+                >
+                  <div
+                    class="sc-AxirZ hPsuTj"
+                    height="16"
+                    width="16"
+                  >
+                    <svg>
+                      multisig.svg
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  class="inline-block mr-2 text text-theme-neutral-400"
+                >
+                  <div
+                    class="sc-AxirZ hPsuTj"
+                    height="16"
+                    width="16"
+                  >
+                    <svg>
+                      ledger.svg
+                    </svg>
+                  </div>
+                </div>
+              </td>
+              <td
+                class="text-sm text-right w-36"
               >
                 <div
                   class="sc-AxhUy gRLEpJ"
@@ -338,7 +418,37 @@ exports[`Transactions should render with with transactions 1`] = `
                 </div>
               </td>
               <td
-                class="text-sm text-right"
+                class="py-1 text-sm font-bold text-center"
+              >
+                <div
+                  class="inline-block mr-2 text text-theme-neutral-400"
+                >
+                  <div
+                    class="sc-AxirZ hPsuTj"
+                    height="16"
+                    width="16"
+                  >
+                    <svg>
+                      multisig.svg
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  class="inline-block mr-2 text text-theme-neutral-400"
+                >
+                  <div
+                    class="sc-AxirZ hPsuTj"
+                    height="16"
+                    width="16"
+                  >
+                    <svg>
+                      ledger.svg
+                    </svg>
+                  </div>
+                </div>
+              </td>
+              <td
+                class="text-sm text-right w-36"
               >
                 <div
                   class="sc-AxhUy eCrePA"
@@ -407,7 +517,10 @@ exports[`Transactions should render with with transactions 1`] = `
                 </div>
               </td>
               <td
-                class="text-sm text-right"
+                class="py-1 text-sm font-bold text-center"
+              />
+              <td
+                class="text-sm text-right w-36"
               >
                 <div
                   class="sc-AxhUy gRLEpJ"
@@ -476,7 +589,24 @@ exports[`Transactions should render with with transactions 1`] = `
                 </div>
               </td>
               <td
-                class="text-sm text-right"
+                class="py-1 text-sm font-bold text-center"
+              >
+                <div
+                  class="inline-block mr-2 text text-theme-neutral-400"
+                >
+                  <div
+                    class="sc-AxirZ hPsuTj"
+                    height="16"
+                    width="16"
+                  >
+                    <svg>
+                      ledger.svg
+                    </svg>
+                  </div>
+                </div>
+              </td>
+              <td
+                class="text-sm text-right w-36"
               >
                 <div
                   class="sc-AxhUy eCrePA"
@@ -545,7 +675,10 @@ exports[`Transactions should render with with transactions 1`] = `
                 </div>
               </td>
               <td
-                class="text-sm text-right"
+                class="py-1 text-sm font-bold text-center"
+              />
+              <td
+                class="text-sm text-right w-36"
               >
                 <div
                   class="sc-AxhUy gRLEpJ"
@@ -614,7 +747,10 @@ exports[`Transactions should render with with transactions 1`] = `
                 </div>
               </td>
               <td
-                class="text-sm text-right"
+                class="py-1 text-sm font-bold text-center"
+              />
+              <td
+                class="text-sm text-right w-36"
               >
                 <div
                   class="sc-AxhUy eCrePA"
@@ -683,7 +819,10 @@ exports[`Transactions should render with with transactions 1`] = `
                 </div>
               </td>
               <td
-                class="text-sm text-right"
+                class="py-1 text-sm font-bold text-center"
+              />
+              <td
+                class="text-sm text-right w-36"
               >
                 <div
                   class="sc-AxhUy gRLEpJ"
