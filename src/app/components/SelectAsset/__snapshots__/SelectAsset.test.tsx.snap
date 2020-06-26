@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SelectAsset should render 1`] = `
+<div>
+  <div
+    aria-expanded="false"
+    aria-haspopup="listbox"
+    aria-labelledby="downshift-0-label"
+    class="relative"
+    role="combobox"
+  >
+    <label
+      for="dropdown-select"
+      id="downshift-0-label"
+    >
+      <div
+        class="relative flex items-center w-full flex-inline"
+      >
+        <div
+          class="flex w-full border rounded shadow-sm bg-theme-background border-theme-neutral-300 transition-colors duration-200 hover:outline-none hover:border-theme-primary"
+        >
+          <div
+            class="flex-0 w-12 p-2"
+          >
+            <div
+              class="sc-AxjAm jDAceZ border-theme-neutral-200"
+            />
+          </div>
+          <div
+            class="font-semibold text-theme-neutral-800 flex-1 p-1"
+          >
+            <input
+              aria-autocomplete="list"
+              aria-labelledby="downshift-0-label"
+              autocomplete="off"
+              class="h-full w-full outline-none"
+              id="downshift-0-input"
+              value=""
+            />
+          </div>
+        </div>
+      </div>
+    </label>
+    <div
+      class="relative btn-group"
+    />
+  </div>
+</div>
+`;
