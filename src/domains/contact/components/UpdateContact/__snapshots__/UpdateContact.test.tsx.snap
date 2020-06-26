@@ -135,25 +135,29 @@ exports[`UpdateContact should render a modal 1`] = `
               </button>
             </div>
             <div
-              class="flex justify-end mt-8 space-x-3"
+              class="flex w-full justify-end"
             >
-              <button
-                class="sc-AxjAm ddJBbC"
-                color="primary"
-                data-testid="contact-form__cancel-btn"
-                type="button"
+              <div
+                class="space-x-3"
               >
-                Cancel
-              </button>
-              <button
-                class="sc-AxjAm ddQVWI"
-                color="primary"
-                data-testid="contact-form__save-btn"
-                disabled=""
-                type="submit"
-              >
-                Save
-              </button>
+                <button
+                  class="sc-AxjAm ddJBbC"
+                  color="primary"
+                  data-testid="contact-form__cancel-btn"
+                  type="button"
+                >
+                  Cancel
+                </button>
+                <button
+                  class="sc-AxjAm ddQVWI"
+                  color="primary"
+                  data-testid="contact-form__save-btn"
+                  disabled=""
+                  type="submit"
+                >
+                  Save
+                </button>
+              </div>
             </div>
           </form>
         </div>
