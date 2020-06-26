@@ -4,7 +4,7 @@ import { Circle } from "app/components/Circle";
 import { Clipboard } from "app/components/Clipboard";
 import { Form } from "app/components/Form";
 import { Icon } from "app/components/Icon";
-import { Input, InputPassword, InputRange } from "app/components/Input";
+import { InputPassword, InputRange } from "app/components/Input";
 import { SelectionBar, SelectionBarOption, useSelectionState } from "app/components/SelectionBar";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
@@ -17,7 +17,6 @@ export const FirstStep = () => {
 	const radioState = useSelectionState(1);
 
 	useEffect(() => {
-		register("amount", { required: true });
 		register("fee", { required: true });
 	}, [register]);
 
@@ -48,9 +47,6 @@ export const FirstStep = () => {
 					}
 				>
 					<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"Delegate 3"} size="large" />
-				</TransactionDetail>
-				<TransactionDetail label="Amount ARK">
-					<Input name="amount" />
 				</TransactionDetail>
 				<TransactionDetail border={false} label="Fee ARK">
 					<div className="flex">
@@ -115,18 +111,6 @@ export const SecondStep = () => (
 				}
 			>
 				<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} size="large" />
-			</TransactionDetail>
-			<TransactionDetail
-				label="Amount"
-				extra={
-					<div className="ml-1 text-theme-danger">
-						<Circle className="bg-theme-background border-theme-danger-200" size="large">
-							<Icon name="Sent" width={50} height={50} />
-						</Circle>
-					</div>
-				}
-			>
-				1.00 ARK <span className="text-theme-neutral-400">25.00 USD</span>
 			</TransactionDetail>
 			<TransactionDetail label="Transaction fee">0.09660435 ARK</TransactionDetail>
 		</div>
@@ -228,23 +212,12 @@ export const FourthStep = () => (
 				>
 					<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"Delegate 3"} size="large" />
 				</TransactionDetail>
-				<TransactionDetail
-					label="Amount"
-					extra={
-						<div className="ml-1 text-theme-danger">
-							<Circle className="bg-theme-background border-theme-danger-200" size="large">
-								<Icon name="Sent" width={50} height={50} />
-							</Circle>
-						</div>
-					}
-				>
-					1.00 ARK
-				</TransactionDetail>
+				<TransactionDetail label="Transaction fee">0.09660435 ARK</TransactionDetail>
 				<TransactionDetail
 					label="Transaction type"
 					extra={
-						<div className="ml-1 text-theme-danger">
-							<Circle className="border-black bg-theme-background" size="large">
+						<div className="ml-1 text-theme-neutral-900">
+							<Circle className="border-theme-neutral-900 bg-theme-background" size="large">
 								<Icon name="Voted" />
 							</Circle>
 						</div>
