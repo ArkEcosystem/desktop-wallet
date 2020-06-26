@@ -46,11 +46,11 @@ const options = [
 
 export const BusinessTable = ({ data }: Props) => (
 	<div className="flex flex-col bg-theme-background mt-4">
-		<span className="p-10 font-bold text-xl">Business</span>
+		<span className="p-10 font-bold text-2xl">Business</span>
 		<Table columns={columns} data={data}>
 			{(rowData: any) => (
 				<tr data-testid="business-table__row" className="border-b border-dashed border-theme-neutral-light">
-					<td className="py-3">
+					<td className="py-4">
 						<div className="ml-10 -mr-16">
 							<Circle className="border-theme-neutral-800" size="large">
 								<Icon name="Business" width={22} height={22} />
@@ -77,7 +77,7 @@ export const BusinessTable = ({ data }: Props) => (
 						<span className="ml-3">View</span>
 					</td>
 					<td className="py-1 float-right">
-						<Button variant="plain" className="mt-3" size="small">
+						<Button variant="plain" className="mt-4" size="small">
 							<Dropdown
 								toggleIcon="Settings"
 								options={options}

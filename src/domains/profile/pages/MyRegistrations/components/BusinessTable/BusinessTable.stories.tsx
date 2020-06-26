@@ -3,7 +3,7 @@ import React from "react";
 import { BusinessTable } from "./BusinessTable";
 
 export default {
-	title: "Profile / Pages / My Registrations / Components / Business Registrations Table",
+	title: "Profile / Pages / My Registrations / Components / Business Table",
 };
 
 export const Default = () => {
