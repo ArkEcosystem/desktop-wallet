@@ -51,7 +51,7 @@ export const Dashboard = ({ transactions, wallets, networks, portfolioPercentage
 		"This will display the history of your transactions. But you don't have more than one transaction at the moment.";
 
 	return (
-		<div className="pt-1 -m-5 -mt-6 bg-theme-neutral-100">
+		<div>
 			{showPortfolio && balances && (
 				<Section>
 					<div className="-mb-2 text-3xl font-bold">Portfolio Chart</div>
