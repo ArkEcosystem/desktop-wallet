@@ -183,28 +183,11 @@ export const wallets = [
 		],
 	},
 	{
-		coinIcon: "Bitcoin",
-		coinClass: "text-theme-warning-400 border-theme-warning-200",
-		avatarId: "test",
-		address: "ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
-		walletName: "My Wallet",
-		balance: "100 BTC",
-		fiat: "1,000,000 USD",
-		walletTypeIcons: ["Star", "Multisig", "Ledger"],
-		actions: [
-			{
-				label: "Action 1",
-				value: "1",
-			},
-			{
-				label: "Action 2",
-				value: "2",
-			},
-			{
-				label: "Action 3",
-				value: "3",
-			},
-		],
+		isBlank: true,
+		blankTitle: "You have 8 more wallets",
+		blankTitleClass: "text-theme-neutral-700",
+		blankSubtitle: "Look all wallet",
+		blankSubtitleClass: "text-theme-primary-600 font-semibold",
 	},
 	{
 		coinIcon: "Bitcoin",
