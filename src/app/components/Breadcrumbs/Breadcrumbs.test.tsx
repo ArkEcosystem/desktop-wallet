@@ -13,7 +13,7 @@ describe("Breadcrumbs", () => {
 
 	it("should render", () => {
 		const { asFragment, getByTestId } = render(
-			<Breadcrumbs crumbs={[{ route: "dashboard", label: "Dashboard" }]} />
+			<Breadcrumbs crumbs={[{ route: "dashboard", label: "Dashboard" }]} />,
 		);
 
 		expect(getByTestId("breadcrumbs__wrapper")).toHaveTextContent("<-");
@@ -29,7 +29,7 @@ describe("Breadcrumbs", () => {
 					{ route: "wallets/my_wallet", label: "My Wallet" },
 				]}
 				className="class-name"
-			/>
+			/>,
 		);
 
 		expect(getByTestId("breadcrumbs__wrapper")).toHaveClass("class-name");
