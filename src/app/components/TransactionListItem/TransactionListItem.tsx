@@ -18,11 +18,6 @@ export const TransactionListItem = ({
 	onClick,
 	transactionInfoIcons,
 }: TransactionListItemProps) => {
-	const getInfoIconClass = (icon: string) => {
-		if (icon === "Star") return "text-theme-warning-400";
-		return "text-theme-neutral-400";
-	};
-
 	const iconName: any = {
 		send: "Sent",
 		receive: "Received",
@@ -88,13 +83,13 @@ export const TransactionListItem = ({
 				{transactionInfoIcons &&
 					transactionInfoIcons.map((type: string, index: number) => {
 						return (
-							<div key={index} className={`inline-block mr-2 text ${getInfoIconClass(type)}`}>
-								<Icon name={type} width={18} height={18} />
+							<div key={index} className={`inline-block mr-2 text text-theme-neutral-400`}>
+								<Icon name={type} width={16} height={16} />
 							</div>
 						);
 					})}
 			</td>
-			<td className="text-sm text-right">
+			<td className="text-sm text-right w-36">
 				<Label color={amountLabelColor[type]} size="small">
 					{amount}
 				</Label>

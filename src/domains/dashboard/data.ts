@@ -185,9 +185,9 @@ export const wallets = [
 	{
 		isBlank: true,
 		blankTitle: "You have 8 more wallets",
-		blankTitleClass: "text-theme-neutral-700",
+		blankTitleClass: "text-theme-neutral-700 cursor-pointer",
 		blankSubtitle: "Look all wallet",
-		blankSubtitleClass: "text-theme-primary-600 font-semibold",
+		blankSubtitleClass: "text-theme-primary-600 font-semibold cursor-pointer",
 	},
 	{
 		coinIcon: "Bitcoin",
