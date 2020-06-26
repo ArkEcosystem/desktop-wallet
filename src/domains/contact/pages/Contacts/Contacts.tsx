@@ -88,7 +88,7 @@ export const Contacts = ({ contacts, onSearch }: ContactsProps) => {
 
 	return (
 		<div data-testid="contacts" className="flex flex-col min-h-screen -m-5 bg-theme-neutral-200">
-			<Breadcrumbs crumbs={crumbs} className="p-10 font-semibold" />
+			<Breadcrumbs crumbs={crumbs} className="p-5 font-semibold" />
 
 			<div className="flex flex-col flex-1 space-y-5">
 				<div className="p-10 bg-theme-background">
@@ -107,9 +107,13 @@ export const Contacts = ({ contacts, onSearch }: ContactsProps) => {
 
 				<div className="flex flex-1 p-10 bg-theme-background">
 					{contacts.length === 0 && (
-						<div data-testid="contacts__banner" className="flex flex-col items-center justify-center">
-							<ContactsBanner className="w-3/5 mb-8" />
-							<span>{t("CONTACTS.CONTACTS_PAGE.ADD_CONTACT_MESSAGE")}</span>
+						<div data-testid="contacts__banner" className="flex flex-col items-center justify-center mx-auto">
+							<div className="mx-auto max-w-4xl">
+								<ContactsBanner />
+							</div>
+							<div className="mt-6">
+								<span className="text-theme-neutral-dark">{t("CONTACTS.CONTACTS_PAGE.ADD_CONTACT_MESSAGE")}</span>
+							</div>
 						</div>
 					)}
 

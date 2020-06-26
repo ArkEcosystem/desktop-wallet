@@ -7,7 +7,7 @@ exports[`Contacts should render 1`] = `
     data-testid="contacts"
   >
     <div
-      class="flex items-center space-x-3 p-10 font-semibold text-theme-neutral-700"
+      class="flex items-center space-x-3 p-5 font-semibold text-theme-neutral-700"
       data-testid="breadcrumbs__wrapper"
     >
       <span>
@@ -73,17 +73,25 @@ exports[`Contacts should render 1`] = `
         class="flex flex-1 p-10 bg-theme-background"
       >
         <div
-          class="flex flex-col items-center justify-center"
+          class="flex flex-col items-center justify-center mx-auto"
           data-testid="contacts__banner"
         >
-          <svg
-            class="w-3/5 mb-8"
+          <div
+            class="mx-auto max-w-4xl"
           >
-            contacts-banner.svg
-          </svg>
-          <span>
-            Add your most frequent contacts for fast, easy payments
-          </span>
+            <svg>
+              contacts-banner.svg
+            </svg>
+          </div>
+          <div
+            class="mt-6"
+          >
+            <span
+              class="text-theme-neutral-dark"
+            >
+              Add your most frequent contacts for fast, easy payments
+            </span>
+          </div>
         </div>
       </div>
     </div>
@@ -98,7 +106,7 @@ exports[`Contacts should render with contacts 1`] = `
     data-testid="contacts"
   >
     <div
-      class="flex items-center space-x-3 p-10 font-semibold text-theme-neutral-700"
+      class="flex items-center space-x-3 p-5 font-semibold text-theme-neutral-700"
       data-testid="breadcrumbs__wrapper"
     >
       <span>
