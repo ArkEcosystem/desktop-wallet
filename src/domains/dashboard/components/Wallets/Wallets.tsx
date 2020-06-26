@@ -123,7 +123,7 @@ Wallets.defaultProps = {
 	title: "Wallets",
 	networks: [],
 	wallets: [],
-	walletsEmptyText: "You don't have any wallets created yet. Click Create to add new wallets.",
+	walletsEmptyText: "",
 	viewType: "grid",
 	listColumns: [
 		{
