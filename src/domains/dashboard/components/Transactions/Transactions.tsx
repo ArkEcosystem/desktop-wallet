@@ -46,6 +46,10 @@ Transactions.defaultProps = {
 			Header: "Wallet Address",
 		},
 		{
+			Header: "Info",
+			className: "justify-center",
+		},
+		{
 			Header: "Amount",
 			className: "float-right",
 		},
