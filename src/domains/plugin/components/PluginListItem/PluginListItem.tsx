@@ -18,7 +18,10 @@ export const PluginListItem = ({ onDelete, onInstall, plugin }: PluginListItemPr
 	const { t } = useTranslation();
 
 	return (
-		<tr data-testid={`PluginListItem--${plugin.id}`} className="border-b border-dashed border-theme-neutral-200">
+		<tr
+			data-testid={`PluginListItem--${plugin.id}`}
+			className="border-b border-dashed border-theme-neutral-200 text-theme-neutral-700"
+		>
 			<td className="text-center">
 				<ChangeNowLogo className="w-12 h-12" />
 			</td>
@@ -34,8 +37,8 @@ export const PluginListItem = ({ onDelete, onInstall, plugin }: PluginListItemPr
 					<span>{plugin.author}</span>
 
 					<div>
-						{plugin.isOfficial && <Icon name="OfficialArkPlugin" width={15} height={15} />}
-						{plugin.isGrant && <Icon name="Grant" width={16} height={16} />}
+						{plugin.isOfficial && <Icon name="OfficialArkPlugin" width={18} height={18} />}
+						{plugin.isGrant && <Icon name="Grant" width={20} height={20} />}
 					</div>
 				</div>
 			</td>
@@ -43,13 +46,30 @@ export const PluginListItem = ({ onDelete, onInstall, plugin }: PluginListItemPr
 			<td className="py-10">{t(`PLUGINS.CATEGORY.${plugin.category.toUpperCase()}`)}</td>
 
 			<td className="py-10">
-				<ReviewRating rating={plugin.rating} />
+				<ReviewRating width={3} rating={plugin.rating} />
 			</td>
 
 			<td className="py-10">v {plugin.version}</td>
 
 			<td className="py-10">{plugin.size}</td>
-			<td className="py-10">{plugin.size}</td>
+
+			<td className="flex py-10">
+				{plugin.isInstalled && (
+					<div className="flex w-6 h-6 mx-auto border-2 rounded-full border-theme-success-200 text-theme-success-500">
+						<div className="m-auto">
+							<Icon name="Checkmark" width={15} height={15} />
+						</div>
+					</div>
+				)}
+
+				{!plugin.isInstalled && (
+					<div className="flex w-6 h-6 mx-auto">
+						<div className="m-auto text-theme-neutral-500">
+							<Icon name="Dash" width={15} height={15} />
+						</div>
+					</div>
+				)}
+			</td>
 
 			<td className="w-16 text-right">
 				{!plugin.isInstalled && (

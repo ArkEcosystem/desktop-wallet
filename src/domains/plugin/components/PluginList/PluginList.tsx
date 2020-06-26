@@ -1,16 +1,29 @@
+import { chunk } from "@arkecosystem/utils";
+import { Pagination } from "app/components/Pagination";
 import { Table } from "app/components/Table";
 import { PluginListItem } from "domains/plugin/components/PluginListItem";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
 type PluginListProps = {
+	className?: string;
+	itemsPerPage?: number;
 	onDelete: any;
 	onInstall: any;
 	plugins: any[];
+	withPagination?: boolean;
 };
 
-export const PluginList = ({ onDelete, onInstall, plugins }: PluginListProps) => {
+export const PluginList = ({
+	className,
+	itemsPerPage,
+	onDelete,
+	onInstall,
+	plugins,
+	withPagination,
+}: PluginListProps) => {
 	const { t } = useTranslation();
+	const [currentPage, setCurrentPage] = React.useState(1);
 
 	const columns = [
 		{
@@ -45,6 +58,8 @@ export const PluginList = ({ onDelete, onInstall, plugins }: PluginListProps) =>
 		{
 			Header: t("COMMON.STATUS"),
 			accessor: "isInstalled",
+			disableSortBy: true,
+			className: "justify-center",
 		},
 		{
 			Header: "  ",
@@ -52,9 +67,28 @@ export const PluginList = ({ onDelete, onInstall, plugins }: PluginListProps) =>
 		},
 	];
 
+	const pagePlugins = chunk(plugins, itemsPerPage!)[currentPage - 1];
+
 	return (
-		<Table columns={columns} data={plugins}>
-			{(plugin: any) => <PluginListItem plugin={plugin} onInstall={onInstall} onDelete={onDelete} />}
-		</Table>
+		<div data-testid="PluginList" className={className}>
+			<Table columns={columns} data={pagePlugins}>
+				{(plugin: any) => <PluginListItem plugin={plugin} onInstall={onInstall} onDelete={onDelete} />}
+			</Table>
+
+			{withPagination && (
+				<Pagination
+					currentPage={currentPage}
+					itemsPerPage={itemsPerPage}
+					totalCount={plugins.length}
+					onSelectPage={setCurrentPage}
+					className="mt-5"
+				/>
+			)}
+		</div>
 	);
+};
+
+PluginList.defaultProps = {
+	itemsPerPage: 10,
+	withPagination: true,
 };

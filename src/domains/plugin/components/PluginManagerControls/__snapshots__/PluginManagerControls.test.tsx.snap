@@ -1,0 +1,141 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PluginManagerControls should render 1`] = `
+<DocumentFragment>
+  <div
+    class="flex items-center mx-4"
+    data-testid="PluginManagerControls"
+  >
+    <div
+      class="inline-block"
+      data-testid="PluginManagerControls__grid"
+    >
+      <div
+        class="px-2 py-2 h-full border-b-2 cursor-pointer text-theme-danger-300 border-theme-danger-100"
+        data-testid="PluginManagerControls__grid--icon"
+      >
+        <div
+          class="sc-AxjAm buCJuk"
+          height="20"
+          width="20"
+        >
+          <svg>
+            grid.svg
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      class="pr-5 mr-7 border-r border-theme-neutral-200 inline-block"
+      data-testid="PluginManagerControls__list"
+    >
+      <div
+        class="px-2 py-2 h-full border-b-2 cursor-pointer text-theme-primary-400 border-theme-background"
+        data-testid="PluginManagerControls__list--icon"
+      >
+        <div
+          class="sc-AxjAm buCJuk"
+          height="20"
+          width="20"
+        >
+          <svg>
+            list.svg
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      class="relative inline-block text-theme-primary-400"
+    >
+      <div
+        class="relative"
+        data-testid="dropdown__toggle"
+      >
+        <div
+          class="float-right outline-none focus:outline-none"
+        >
+          <div
+            class="sc-AxjAm buCJuk"
+            height="20"
+            width="20"
+          >
+            <svg>
+              filters.svg
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`PluginManagerControls should toggle between list and grid 1`] = `
+<DocumentFragment>
+  <div
+    class="flex items-center mx-4"
+    data-testid="PluginManagerControls"
+  >
+    <div
+      class="inline-block"
+      data-testid="PluginManagerControls__grid"
+    >
+      <div
+        class="px-2 py-2 h-full border-b-2 cursor-pointer text-theme-danger-300 border-theme-danger-100"
+        data-testid="PluginManagerControls__grid--icon"
+      >
+        <div
+          class="sc-AxjAm buCJuk"
+          height="20"
+          width="20"
+        >
+          <svg>
+            grid.svg
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      class="pr-5 mr-7 border-r border-theme-neutral-200 inline-block"
+      data-testid="PluginManagerControls__list"
+    >
+      <div
+        class="px-2 py-2 h-full border-b-2 cursor-pointer text-theme-primary-400 border-theme-background"
+        data-testid="PluginManagerControls__list--icon"
+      >
+        <div
+          class="sc-AxjAm buCJuk"
+          height="20"
+          width="20"
+        >
+          <svg>
+            list.svg
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      class="relative inline-block text-theme-primary-400"
+    >
+      <div
+        class="relative"
+        data-testid="dropdown__toggle"
+      >
+        <div
+          class="float-right outline-none focus:outline-none"
+        >
+          <div
+            class="sc-AxjAm buCJuk"
+            height="20"
+            width="20"
+          >
+            <svg>
+              filters.svg
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

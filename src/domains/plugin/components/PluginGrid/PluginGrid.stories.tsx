@@ -31,8 +31,20 @@ const plugins = [
 
 export const Default = () => (
 	<PluginGrid
-		plugins={[...plugins, ...plugins, ...plugins, ...plugins, ...plugins]}
+		plugins={[
+			...plugins,
+			...plugins,
+			...plugins,
+			...plugins,
+			...plugins,
+			...plugins,
+			...plugins,
+			...plugins,
+			...plugins,
+			...plugins,
+		]}
 		onSelect={(plugin: any) => alert(`selected ${plugin.name} plugin`)}
 		onDelete={(plugin: any) => alert(`delete ${plugin.name} plugin`)}
+		itemsPerPage={8}
 	/>
 );
