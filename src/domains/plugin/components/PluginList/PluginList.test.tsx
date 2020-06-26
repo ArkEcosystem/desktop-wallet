@@ -40,6 +40,37 @@ describe("PluginList", () => {
 
 		expect(getByTestId("PluginListItem--ark-explorer")).toHaveTextContent("ARK Explorer");
 		expect(getByTestId("PluginListItem--ark-avatars")).toHaveTextContent("ARK Avatars");
+		expect(getByTestId("Pagination")).toBeTruthy();
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should render without pagination", () => {
+		const { asFragment, getByTestId } = render(
+			<I18nextProvider i18n={i18n}>
+				<PluginList plugins={plugins} withPagination={false} />
+			</I18nextProvider>,
+		);
+
+		expect(getByTestId("PluginListItem--ark-explorer")).toHaveTextContent("ARK Explorer");
+		expect(getByTestId("PluginListItem--ark-avatars")).toHaveTextContent("ARK Avatars");
+		expect(() => getByTestId("Pagination")).toThrow(/Unable to find an element by/);
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should split by page", () => {
+		const { asFragment, getByTestId } = render(
+			<I18nextProvider i18n={i18n}>
+				<PluginList plugins={plugins} itemsPerPage={1} />
+			</I18nextProvider>,
+		);
+
+		expect(getByTestId("PluginListItem--ark-explorer")).toHaveTextContent("ARK Explorer");
+		expect(() => getByTestId("PluginListItem--ark-avatars")).toThrow(/Unable to find an element by/);
+
+		fireEvent.click(getByTestId("Pagination__next"));
+
+		expect(() => getByTestId("PluginListItem--ark-explorer")).toThrow(/Unable to find an element by/);
+		expect(getByTestId("PluginListItem--ark-avatars")).toHaveTextContent("ARK Avatars");
 		expect(asFragment()).toMatchSnapshot();
 	});
 
