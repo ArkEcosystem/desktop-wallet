@@ -4,23 +4,47 @@ export const networks = [
 		isSelected: true,
 	},
 	{
-		name: "Eth",
+		name: "Ethereum",
 		isSelected: true,
 	},
 	{
-		name: "Btc",
+		name: "Bitcoin",
 		isSelected: false,
 	},
 ];
 
 export const wallets = [
 	{
-		coinIcon: "Bitcoin",
-		coinClass: "text-theme-warning-400 border-theme-warning-200",
+		coinIcon: "Ark",
+		coinClass: "text-theme-danger-400 border-theme-danger-200",
 		avatarId: "test",
 		address: "ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
 		walletName: "My Wallet",
-		balance: "100 BTC",
+		balance: "2,000,000 ARK",
+		fiat: "1,000,000 USD",
+		walletTypeIcons: ["Star", "Multisig", "Ledger"],
+		actions: [
+			{
+				label: "Action 1",
+				value: "1",
+			},
+			{
+				label: "Action 2",
+				value: "2",
+			},
+			{
+				label: "Action 3",
+				value: "3",
+			},
+		],
+	},
+	{
+		coinIcon: "Ethereum",
+		coinClass: "text-theme-neutral-800 border-theme-neutral-600",
+		avatarId: "test",
+		address: "ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
+		walletName: "My Eth",
+		balance: "100,150 ETH",
 		fiat: "1,000,000 USD",
 		walletTypeIcons: ["Star", "Multisig", "Ledger"],
 		actions: [
@@ -111,12 +135,12 @@ export const wallets = [
 		],
 	},
 	{
-		coinIcon: "Bitcoin",
-		coinClass: "text-theme-warning-400 border-theme-warning-200",
+		coinIcon: "Ark",
+		coinClass: "text-theme-danger-400 border-theme-danger-200",
 		avatarId: "test",
 		address: "ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
 		walletName: "My Wallet",
-		balance: "100 BTC",
+		balance: "2,000,000 ARK",
 		fiat: "1,000,000 USD",
 		walletTypeIcons: ["Star", "Multisig", "Ledger"],
 		actions: [
@@ -135,12 +159,12 @@ export const wallets = [
 		],
 	},
 	{
-		coinIcon: "Bitcoin",
-		coinClass: "text-theme-warning-400 border-theme-warning-200",
+		coinIcon: "Ethereum",
+		coinClass: "text-theme-neutral-800 border-theme-neutral-600",
 		avatarId: "test",
 		address: "ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
-		walletName: "My Wallet",
-		balance: "100 BTC",
+		walletName: "My Eth",
+		balance: "100,150 ETH",
 		fiat: "1,000,000 USD",
 		walletTypeIcons: ["Star", "Multisig", "Ledger"],
 		actions: [
@@ -377,4 +401,14 @@ export const portfolioPercentages = [
 		value: 15,
 		color: "neutral-400",
 	},
+];
+
+export const balances = [
+	{ name: "Mon", label: "22 Jun, 2020", usd: 1000, btc: 2400, formatted: { usd: "1,000", btc: "0.26" } },
+	{ name: "Tue", label: "23 Jun, 2020", usd: 3000, btc: 5400, formatted: { usd: "3,000", btc: "0.58" } },
+	{ name: "Wed", label: "24 Jun, 2020", usd: 15100, btc: 1398, formatted: { usd: "15,100", btc: "0.15" } },
+	{ name: "Thu", label: "25 Jun, 2020", usd: 4000, btc: 9800, formatted: { usd: "4,000", btc: "1.06" } },
+	{ name: "Fri", label: "26 Jun, 2020", usd: 11200, btc: 2000, formatted: { usd: "11,200", btc: "0.22" } },
+	{ name: "Sat", label: "27 Jun, 2020", usd: 3000, btc: 4800, formatted: { usd: "3,000", btc: "0.52" } },
+	{ name: "Sun", label: "28 Jun, 2020", usd: 8000, btc: 18000, formatted: { usd: "8,000", btc: "2.16" } },
 ];

@@ -64,25 +64,25 @@ export const TransactionListItem = ({
 	return (
 		<tr
 			onClick={onTxClick}
-			className="border-b cursor-pointer border-theme-neutral-200"
+			className="border-b border-dotted cursor-pointer border-theme-neutral-300"
 			data-testid="transaction__row"
 		>
 			<td className="w-48 py-1 text-sm text-theme-neutral-600"> {date} </td>
-			<td className="w-32 py-4 mt-1">
-				<Circle className={`${iconClasses[type]} -mr-1`}>
+			<td className="w-32 py-5 mt-1">
+				<Circle className={`${iconClasses[type]} -mr-1`} size="large">
 					<Icon name={iconName[type]} width={40} height={40} />
 				</Circle>
-				<Circle avatarId={avatarId} />
+				<Circle avatarId={avatarId} size="large" />
 			</td>
-			<td className="w-56 py-1">
-				<Address walletName={walletName} address={address} maxChars={24} size="small" />
+			<td className="w-56">
+				<Address walletName={walletName} address={address} maxChars={24} />
 			</td>
-			<td className="py-1 text-sm text-right">
+			<td className="text-sm text-right">
 				<Label color={amountLabelColor[type]} size="small">
 					{amount}
 				</Label>
 			</td>
-			<td className="w-32 py-1 text-sm text-right text-theme-neutral-500">
+			<td className="w-32 py-1 text-sm font-semibold text-right text-theme-neutral-500">
 				<div>{fiat}</div>
 			</td>
 		</tr>

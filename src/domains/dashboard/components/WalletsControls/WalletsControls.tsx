@@ -63,7 +63,7 @@ export const WalletsControls = ({
 
 			<div className="relative inline-block px-3 text-theme-primary-400">
 				<Dropdown toggleIcon="Filters">
-					<div className="py-8 w-128 px-11">
+					<div className="px-10 py-7 w-128">
 						<FilterWallets {...filterProperties} />
 					</div>
 				</Dropdown>

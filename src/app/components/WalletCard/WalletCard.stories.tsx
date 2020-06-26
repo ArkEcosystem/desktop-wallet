@@ -12,7 +12,7 @@ export const Default = () => {
 			<div className="mb-10">
 				<WalletCard
 					coinIcon="Ethereum"
-					coinIconClass="border-theme-neutral-800"
+					coinClass="border-theme-neutral-800"
 					avatarId="test"
 					walletName="Primary"
 					address="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
@@ -28,7 +28,7 @@ export const Default = () => {
 				<WalletCard
 					className="mr-5"
 					coinIcon="Ethereum"
-					coinIconClass="border-theme-neutral-800"
+					coinClass="border-theme-neutral-800"
 					avatarId="test"
 					walletName="Secondary"
 					address="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
@@ -40,7 +40,7 @@ export const Default = () => {
 				/>
 				<WalletCard
 					coinIcon="Ethereum"
-					coinIconClass="border-theme-neutral-800"
+					coinClass="border-theme-neutral-800"
 					avatarId="test"
 					walletName="My wallet"
 					address="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"

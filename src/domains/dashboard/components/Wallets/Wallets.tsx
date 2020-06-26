@@ -30,34 +30,34 @@ export const Wallets = ({
 	const [walletsViewType, setWalletsViewType] = useState(viewType);
 
 	const walletSliderOptions = {
-		slideHeight: 210, // Wallet card height, including margin-bottom
+		slideHeight: 220, // Wallet card height, including margin-bottom
 		slidesPerView: 4,
 		slidesPerColumn: 2,
 
 		// Responsive breakpoints
-		breakpoints: {
-			// 	// when window width is >= 320px
-			320: {
-				slidesPerView: 1,
-				slidesPerColumn: 2,
-			},
-			600: {
-				slidesPerView: 2,
-				slidesPerColumn: 2,
-			},
-			860: {
-				slidesPerView: 3,
-				slidesPerColumn: 2,
-			},
-			1140: {
-				slidesPerView: 4,
-				slidesPerColumn: 2,
-			},
-			1320: {
-				slidesPerView: 5,
-				slidesPerColumn: 2,
-			},
-		},
+		// breakpoints: {
+		// 	// 	// when window width is >= 320px
+		// 	320: {
+		// 		slidesPerView: 1,
+		// 		slidesPerColumn: 2,
+		// 	},
+		// 	600: {
+		// 		slidesPerView: 2,
+		// 		slidesPerColumn: 2,
+		// 	},
+		// 	860: {
+		// 		slidesPerView: 3,
+		// 		slidesPerColumn: 2,
+		// 	},
+		// 	1140: {
+		// 		slidesPerView: 4,
+		// 		slidesPerColumn: 2,
+		// 	},
+		// 	1320: {
+		// 		slidesPerView: 5,
+		// 		slidesPerColumn: 2,
+		// 	},
+		// },
 	};
 
 	// Pad with empty cards to fill the row
@@ -71,9 +71,9 @@ export const Wallets = ({
 	};
 
 	return (
-		<div className="p-10 bg-theme-background">
-			<div className="flex w-full pb-4">
-				<h2 className="w-2/4 mt-1">{title}</h2>
+		<div>
+			<div className="flex w-full pb-8">
+				<div className="w-2/4 -mt-1 text-3xl font-bold">{title}</div>
 				<div className="w-2/4 text-right">
 					<WalletsControls
 						onCreateWallet={onCreateWallet}
@@ -87,12 +87,14 @@ export const Wallets = ({
 			</div>
 			<div className="mt-1">
 				{walletsViewType === "grid" && (
-					<Slider
-						data={walletsGridData(wallets, walletSliderOptions.slidesPerView)}
-						options={walletSliderOptions}
-					>
-						{(walletData: any) => <WalletCard {...walletData} onSelect={onWalletAction} />}
-					</Slider>
+					<div style={{ width: 1100 }}>
+						<Slider
+							data={walletsGridData(wallets, walletSliderOptions.slidesPerView)}
+							options={walletSliderOptions}
+						>
+							{(walletData: any) => <WalletCard {...walletData} onSelect={onWalletAction} />}
+						</Slider>
+					</div>
 				)}
 				{walletsViewType === "list" && (
 					<div>

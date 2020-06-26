@@ -1,9 +1,15 @@
 import { images } from "app/assets/images";
 import React from "react";
 import { useTranslation } from "react-i18next";
+import tw, { styled } from "twin.macro";
 
 const commonAssets = images.common;
 const { CannotConnectBanner } = images.offline.pages.Offline;
+
+const Container = styled.div`
+	${tw`flex flex-col items-center justify-center text-center`}
+	height: calc(100vh - 140px);
+`;
 
 export const Offline = () => {
 	const { t } = useTranslation();
@@ -18,15 +24,15 @@ export const Offline = () => {
 				</div>
 			</div>
 
-			<div className="flex flex-col items-center justify-center my-4 text-center" data-testid="Offline">
-				<div className="w-2/6 mx-auto">
+			<Container data-testid="Offline">
+				<div className="sm:mx-auto sm:w-full sm:max-w-md">
 					<CannotConnectBanner />
 				</div>
 				<div className="mt-8">
-					<h3 className="text-xl font-bold xl:text-2xl">{t("OFFLINE.TITLE")}</h3>
+					<h2 className="text-2xl font-bold">{t("OFFLINE.TITLE")}</h2>
 					<p className="text-theme-neutral-dark">{t("OFFLINE.DESCRIPTION")}</p>
 				</div>
-			</div>
+			</Container>
 		</div>
 	);
 };
