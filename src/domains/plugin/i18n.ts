@@ -23,9 +23,35 @@ export const translations: { [key: string]: any } = {
 		DESCRIPTION: "Find and select a plugin to add or remove it from the blacklist.",
 		SEARCH_PLACEHOLDER: "Search for a plugin",
 	},
+
 	MODAL_BLACKLIST_PLUGINS: {
 		TITLE: "Blacklist",
 		DESCRIPTION:
 			"ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products.",
+	},
+
+	PAGE_PLUGIN_MANAGER: {
+		TITLE: "Plugin Manager",
+		DESCRIPTION: "Easy way to find, manage and install plugins",
+		FEATURED_PLUGINS: "Featured Plugins",
+		TOP_RATED: "Top Rated",
+		TOP_UTILITIES: "Top Utilities",
+
+		VIEW: {
+			HOME: "Home",
+			GAME: "Game",
+			MY_PLUGINS: "My Plugins",
+			OTHER: "Other",
+			THEMES: "Themes",
+			UTILITY: "Utility",
+		},
+	},
+
+	CATEGORY: {
+		GAME: "Game",
+		MY_PLUGINS: "My Plugins",
+		OTHER: "Other",
+		THEMES: "Themes",
+		UTILITY: "Utility",
 	},
 };

@@ -18,7 +18,7 @@ describe("Formatted Address", () => {
 		const { container } = render(
 			<WalletCard
 				coinIcon="Bitcoin"
-				coinIconClass="border-theme-warning-200"
+				coinClass="border-theme-warning-200"
 				avatarId="test"
 				walletName="My wallet"
 				address="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
@@ -32,7 +32,7 @@ describe("Formatted Address", () => {
 		const { container } = render(
 			<WalletCard
 				coinIcon="Bitcoin"
-				coinIconClass="border-theme-warning-200"
+				coinClass="border-theme-warning-200"
 				avatarId="test"
 				walletName="My wallet"
 				address="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"

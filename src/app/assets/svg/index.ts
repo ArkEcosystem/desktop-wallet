@@ -5,6 +5,7 @@ import { ReactComponent as ArrowBack } from "./arrow-back.svg";
 import { ReactComponent as ArrowDown } from "./arrowdown.svg";
 import { ReactComponent as ArrowUp } from "./arrowup.svg";
 import { ReactComponent as Article } from "./article.svg";
+import { ReactComponent as Back } from "./back.svg";
 import { ReactComponent as ChartActiveDot } from "./chart-active-dot.svg";
 import { ReactComponent as Checkmark } from "./checkmark.svg";
 import { ReactComponent as ChevronDown } from "./chevron-down.svg";
@@ -15,6 +16,7 @@ import { ReactComponent as CrossSlim } from "./cross-slim.svg";
 import { ReactComponent as Ark } from "./currencies/ark.svg";
 import { ReactComponent as Bitcoin } from "./currencies/btc.svg";
 import { ReactComponent as Ethereum } from "./currencies/eth.svg";
+import { ReactComponent as Dash } from "./dash.svg";
 import { ReactComponent as Delegate } from "./delegate.svg";
 import { ReactComponent as Discord } from "./discord.svg";
 import { ReactComponent as Download } from "./download.svg";
@@ -25,6 +27,7 @@ import { ReactComponent as EyeTag } from "./eye-tag.svg";
 import { ReactComponent as Eye } from "./eye.svg";
 import { ReactComponent as FilePassword } from "./file-password.svg";
 import { ReactComponent as Filters } from "./filters.svg";
+import { ReactComponent as Forward } from "./forward.svg";
 import { ReactComponent as General } from "./general.svg";
 import { ReactComponent as Grant } from "./grant.svg";
 import { ReactComponent as Grid } from "./grid.svg";
@@ -39,6 +42,8 @@ import { ReactComponent as Multisig } from "./multisig.svg";
 import { ReactComponent as Notification } from "./notification.svg";
 import { ReactComponent as OfficialArkPlugin } from "./official-ark-plugin.svg";
 import { ReactComponent as Ok } from "./ok.svg";
+import { ReactComponent as PaginationFirst } from "./pagination-first.svg";
+import { ReactComponent as PaginationLast } from "./pagination-last.svg";
 import { ReactComponent as Peer } from "./peer.svg";
 import { ReactComponent as Plugin } from "./plugin.svg";
 import { ReactComponent as Plugins } from "./plugins.svg";
@@ -77,6 +82,7 @@ export const SvgCollection: any = {
 	ArrowBack,
 	ArrowDown,
 	ArrowUp,
+	Back,
 	Bitcoin,
 	Checkmark,
 	ChevronDown,
@@ -84,6 +90,7 @@ export const SvgCollection: any = {
 	Confirmed,
 	Copy,
 	CrossSlim,
+	Dash,
 	Delegate,
 	Discord,
 	Download,
@@ -93,6 +100,7 @@ export const SvgCollection: any = {
 	EyeOff,
 	FilePassword,
 	Filters,
+	Forward,
 	General,
 	Grant,
 	Grid,
@@ -106,6 +114,8 @@ export const SvgCollection: any = {
 	Multisig,
 	OfficialArkPlugin,
 	Ok,
+	PaginationFirst,
+	PaginationLast,
 	Peer,
 	Plugin,
 	Plus,

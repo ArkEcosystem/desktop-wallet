@@ -188,7 +188,7 @@ exports[`Comments should handle sortBy properly 1`] = `
               </div>
             </div>
             <div
-              class="sc-AxhUy kBFgoN mt-2 ml-7 text-theme-neutral-600"
+              class="sc-AxgMl fBXLvj mt-2 ml-7 text-theme-neutral-600"
             >
               <a
                 href="#"
@@ -205,35 +205,95 @@ exports[`Comments should handle sortBy properly 1`] = `
       class="mt-7"
     >
       <div
-        class="sc-AxhCb ervtWH"
+        class="sc-AxhCb gSLQTX"
+        data-testid="Pagination"
       >
         <button
           class="sc-AxiKw gFzSt"
           color="primary"
+          data-testid="Pagination__first"
+          disabled=""
           type="button"
         >
-          1
+          <div
+            class="sc-AxjAm HWmvM"
+            height="12"
+            width="12"
+          >
+            <svg>
+              pagination-first.svg
+            </svg>
+          </div>
         </button>
         <button
           class="sc-AxiKw gFzSt"
           color="primary"
+          data-testid="Pagination__previous"
+          disabled=""
           type="button"
         >
-          2
+          <div
+            class="sc-AxjAm iepfoc mr-2"
+            height="10"
+            width="10"
+          >
+            <svg>
+              back.svg
+            </svg>
+          </div>
+          COMMON.PREVIOUS
+        </button>
+        <div
+          class="flex px-2 rounded bg-theme-primary-contrast"
+        >
+          <div
+            class="sc-AxhUy bxYQX current-page"
+          >
+            1
+          </div>
+          <div
+            class="sc-AxhUy bxYQX"
+          >
+            2
+          </div>
+          <div
+            class="sc-AxhUy bxYQX"
+          >
+            3
+          </div>
+        </div>
+        <button
+          class="sc-AxiKw gFzSt"
+          color="primary"
+          data-testid="Pagination__next"
+          type="button"
+        >
+          COMMON.NEXT
+          <div
+            class="sc-AxjAm HWmvM ml-2"
+            height="12"
+            width="12"
+          >
+            <svg>
+              forward.svg
+            </svg>
+          </div>
         </button>
         <button
           class="sc-AxiKw gFzSt"
           color="primary"
+          data-testid="Pagination__last"
           type="button"
         >
-          3
-        </button>
-        <button
-          class="sc-AxiKw gFzSt"
-          color="primary"
-          type="button"
-        >
-          Next
+          <div
+            class="sc-AxjAm HWmvM"
+            height="12"
+            width="12"
+          >
+            <svg>
+              pagination-last.svg
+            </svg>
+          </div>
         </button>
       </div>
     </div>
@@ -429,7 +489,7 @@ exports[`Comments should render properly 1`] = `
               </div>
             </div>
             <div
-              class="sc-AxhUy kBFgoN mt-2 ml-7 text-theme-neutral-600"
+              class="sc-AxgMl fBXLvj mt-2 ml-7 text-theme-neutral-600"
             >
               <a
                 href="#"
@@ -446,35 +506,95 @@ exports[`Comments should render properly 1`] = `
       class="mt-7"
     >
       <div
-        class="sc-AxhCb ervtWH"
+        class="sc-AxhCb gSLQTX"
+        data-testid="Pagination"
       >
         <button
           class="sc-AxiKw gFzSt"
           color="primary"
+          data-testid="Pagination__first"
+          disabled=""
           type="button"
         >
-          1
+          <div
+            class="sc-AxjAm HWmvM"
+            height="12"
+            width="12"
+          >
+            <svg>
+              pagination-first.svg
+            </svg>
+          </div>
         </button>
         <button
           class="sc-AxiKw gFzSt"
           color="primary"
+          data-testid="Pagination__previous"
+          disabled=""
           type="button"
         >
-          2
+          <div
+            class="sc-AxjAm iepfoc mr-2"
+            height="10"
+            width="10"
+          >
+            <svg>
+              back.svg
+            </svg>
+          </div>
+          COMMON.PREVIOUS
+        </button>
+        <div
+          class="flex px-2 rounded bg-theme-primary-contrast"
+        >
+          <div
+            class="sc-AxhUy bxYQX current-page"
+          >
+            1
+          </div>
+          <div
+            class="sc-AxhUy bxYQX"
+          >
+            2
+          </div>
+          <div
+            class="sc-AxhUy bxYQX"
+          >
+            3
+          </div>
+        </div>
+        <button
+          class="sc-AxiKw gFzSt"
+          color="primary"
+          data-testid="Pagination__next"
+          type="button"
+        >
+          COMMON.NEXT
+          <div
+            class="sc-AxjAm HWmvM ml-2"
+            height="12"
+            width="12"
+          >
+            <svg>
+              forward.svg
+            </svg>
+          </div>
         </button>
         <button
           class="sc-AxiKw gFzSt"
           color="primary"
+          data-testid="Pagination__last"
           type="button"
         >
-          3
-        </button>
-        <button
-          class="sc-AxiKw gFzSt"
-          color="primary"
-          type="button"
-        >
-          Next
+          <div
+            class="sc-AxjAm HWmvM"
+            height="12"
+            width="12"
+          >
+            <svg>
+              pagination-last.svg
+            </svg>
+          </div>
         </button>
       </div>
     </div>
