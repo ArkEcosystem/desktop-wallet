@@ -18,7 +18,7 @@ export const Clipboard = ({ data, children, onSuccess, onError }: ClipboardProps
 
 	const onCopy = async () => {
 		try {
-			await navigator.clipboard.writeText(data);
+			await navigator.clipboard.writeText(data as string);
 
 			if (onSuccess) {
 				onSuccess();
