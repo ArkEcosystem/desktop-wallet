@@ -42,7 +42,7 @@ exports[`WalletRegistrations should render blank 1`] = `
       style="max-height: auto; height: auto; opacity: 1; overflow: auto;"
     >
       <div
-        class="px-1 py-4 flex items-center justify-between"
+        class="flex items-center justify-between px-1 py-4"
       >
         <div
           class="flex items-center divide-x-1 divide-theme-neutral-light"
@@ -53,7 +53,7 @@ exports[`WalletRegistrations should render blank 1`] = `
           class="space-x-2"
         >
           <button
-            class="text-theme-primary px-5 py-3 font-semibold leading-tight rounded focus:outline-none focus:shadow-outline"
+            class="px-5 py-3 font-semibold leading-tight rounded text-theme-primary focus:outline-none focus:shadow-outline"
             data-testid="WalletRegistrations__show-all"
           >
             Show all
@@ -115,13 +115,13 @@ exports[`WalletRegistrations should show delegate 1`] = `
       style="max-height: auto; height: auto; opacity: 1; overflow: auto;"
     >
       <div
-        class="px-1 py-4 flex items-center justify-between"
+        class="flex items-center justify-between px-1 py-4"
       >
         <div
           class="flex items-center divide-x-1 divide-theme-neutral-light"
         >
           <div
-            class="flex items-center space-x-4 pr-8"
+            class="flex items-center pr-8 space-x-4"
           >
             <div
               class="flex items-center -space-x-2"
@@ -164,7 +164,7 @@ exports[`WalletRegistrations should show delegate 1`] = `
           class="space-x-2"
         >
           <button
-            class="text-theme-primary px-5 py-3 font-semibold leading-tight rounded focus:outline-none focus:shadow-outline"
+            class="px-5 py-3 font-semibold leading-tight rounded text-theme-primary focus:outline-none focus:shadow-outline"
             data-testid="WalletRegistrations__show-all"
           >
             Show all
@@ -226,7 +226,7 @@ exports[`WalletRegistrations should show icons list 1`] = `
       style="max-height: auto; height: auto; opacity: 1; overflow: auto;"
     >
       <div
-        class="px-1 py-4 flex items-center justify-between"
+        class="flex items-center justify-between px-1 py-4"
       >
         <div
           class="flex items-center divide-x-1 divide-theme-neutral-light"
@@ -273,7 +273,7 @@ exports[`WalletRegistrations should show icons list 1`] = `
           class="space-x-2"
         >
           <button
-            class="text-theme-primary px-5 py-3 font-semibold leading-tight rounded focus:outline-none focus:shadow-outline"
+            class="px-5 py-3 font-semibold leading-tight rounded text-theme-primary focus:outline-none focus:shadow-outline"
             data-testid="WalletRegistrations__show-all"
           >
             Show all

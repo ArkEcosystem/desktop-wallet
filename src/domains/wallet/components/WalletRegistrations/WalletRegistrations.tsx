@@ -26,7 +26,7 @@ const IconList = ({ icons, limit }: { icons: string[]; limit: number }) => {
 				<Circle
 					data-testid="WalletRegistrations__icon-list__rest"
 					size="large"
-					className="bg-theme-background font-bold text-lg border-theme-neutral-900 text-theme-neutral-900"
+					className="text-lg font-bold bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
 				>
 					+{rest}
 				</Circle>
@@ -85,10 +85,10 @@ export const WalletRegistrations = ({
 			</div>
 
 			<Collapse isOpen={isOpen}>
-				<div className="px-1 py-4 flex items-center justify-between">
+				<div className="flex items-center justify-between px-1 py-4">
 					<div className="flex items-center divide-x-1 divide-theme-neutral-light">
 						{delegate && (
-							<div className="flex items-center space-x-4 pr-8">
+							<div className="flex items-center pr-8 space-x-4">
 								<div className="flex items-center -space-x-2">
 									<Circle size="large" className="border-theme-neutral-900 text-theme-neutral-900">
 										<Icon name="Delegate" className="text-xl" />
@@ -105,7 +105,7 @@ export const WalletRegistrations = ({
 						)}
 
 						{business && (
-							<div className="flex items-center space-x-4 px-8">
+							<div className="flex items-center px-8 space-x-4">
 								<div className="flex items-center">
 									<Circle size="large" className="border-theme-neutral-900 text-theme-neutral-900">
 										<Icon name="Business" className="text-xl" />
@@ -131,7 +131,7 @@ export const WalletRegistrations = ({
 						<button
 							data-testid="WalletRegistrations__show-all"
 							onClick={onShowAll}
-							className="text-theme-primary px-5 py-3 font-semibold leading-tight rounded focus:outline-none focus:shadow-outline"
+							className="px-5 py-3 font-semibold leading-tight rounded text-theme-primary focus:outline-none focus:shadow-outline"
 						>
 							Show all
 						</button>
