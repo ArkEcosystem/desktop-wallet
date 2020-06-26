@@ -33,8 +33,8 @@ const TypeAhead = ({ input, matches }: any) => {
 	const typeaheadFormatted = matches.length === 1 ? formatTypeHeadToMatchInputCase(matches[0], input) : "";
 
 	return (
-		<div className="w-full relative z-10" data-testid={`select-network__typeahead-${typeaheadFormatted}`}>
-			<div className="absolute top-2 left-0 font-semibold text-theme-neutral-400">{typeaheadFormatted}</div>
+		<div className="relative z-10 w-full" data-testid={`select-network__typeahead-${typeaheadFormatted}`}>
+			<div className="absolute left-0 font-semibold top-2 text-theme-neutral-400">{typeaheadFormatted}</div>
 		</div>
 	);
 };
@@ -74,10 +74,10 @@ export const SelectAsset = ({ assets, placeholder }: SelectAssetProps) => {
 					<label {...getLabelProps()} />
 					<div className="relative flex items-center w-full flex-inline">
 						<div className="flex w-full border rounded shadow-sm bg-theme-background border-theme-neutral-300 transition-colors duration-200 hover:outline-none hover:border-theme-primary">
-							<div className="flex-0 w-14 py-2 px-4">
+							<div className="px-4 py-2 flex-0 w-14">
 								<AssetIconPlaceholder {...selectedItem} />
 							</div>
-							<div className="font-semibold text-theme-neutral-800 flex-1 p-1 relative">
+							<div className="relative flex-1 p-1 font-semibold text-theme-neutral-800">
 								<TypeAhead input={inputValue} matches={getMatches(assets, inputValue)} />
 								<input
 									{...getInputProps({
@@ -102,7 +102,7 @@ export const SelectAsset = ({ assets, placeholder }: SelectAssetProps) => {
 										},
 									})}
 									data-testid="select-asset__input"
-									className="h-full w-full outline-none font-semibold z-20 relative bg-transparent"
+									className="relative z-20 w-full h-full font-semibold bg-transparent outline-none"
 								/>
 							</div>
 						</div>
