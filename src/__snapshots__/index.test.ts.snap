@@ -225,6 +225,7 @@ exports[`Application root should render without crashing 1`] = `
                           "YOUR_EXCHANGE_LIST": "Your Exchange List",
                         },
                         "HELP": Object {
+                          "CONTACT_US": "Contact us",
                           "MODAL_CONTACT_US": Object {
                             "DESCRIPTION": "We'd be happy to answer your questions",
                             "FIELD_EMAIL": "Email",
@@ -238,6 +239,27 @@ exports[`Application root should render without crashing 1`] = `
                             },
                             "SUBJECT_REQUIRED": "Subject is Required",
                             "TITLE": "Contact Us",
+                          },
+                          "PAGE_ARTICLE": Object {
+                            "FOOTER": Object {
+                              "SUBTITLE": "Write us a letter and we will reply as soon as possible.",
+                              "TITLE": "Do you still need help with your question?",
+                            },
+                          },
+                          "PAGE_FAQ": Object {
+                            "PORTFOLIO": Object {
+                              "SUBTITLE": "Frequently asked questions about portfolio and addresses",
+                              "TITLE": "Portfolio",
+                            },
+                          },
+                          "PAGE_SUPPORT": Object {
+                            "CATEGORIES": Object {
+                              "HELPFUL": "Most Helpful",
+                              "NEWEST": "Newest",
+                              "POPULAR": "Most Popular",
+                            },
+                            "SUBTITLE": "Do you need any help? Find it in our archive or write to us",
+                            "TITLE": "Help & Support",
                           },
                         },
                         "OFFLINE": Object {
@@ -313,18 +335,6 @@ exports[`Application root should render without crashing 1`] = `
                             "DISCLAIMER": "By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.",
                             "TITLE": "Advanced Mode Disclaimer",
                           },
-                        },
-                        "SUPPORT": Object {
-                          "CONTACT_US": "Contact us",
-                          "FAQ_PORTFOLIO_SUBTITLE": "Frequently asked questions about portfolio and addresses",
-                          "FAQ_PORTFOLIO_TITLE": "Portfolio",
-                          "FOOTER_HELP_SUBTITLE": "Write us a letter and we will reply as soon as possible.",
-                          "FOOTER_HELP_TITLE": "Do you still need help with you question?",
-                          "HELPFUL_CATEGORY_TITLE": "Most Helpful",
-                          "HELP_SUPPORT_SUBTITLE": "Do you need any help? Find it in our archive or write to us",
-                          "HELP_SUPPORT_TITLE": "Help & Support",
-                          "NEWEST_CATEGORY_TITLE": "Newest",
-                          "POPULAR_CATEGORY_TITLE": "Most Popular",
                         },
                         "TRANSACTION": Object {
                           "ACCOUNT": "Account",
@@ -621,6 +631,7 @@ exports[`Application root should render without crashing 1`] = `
                         "YOUR_EXCHANGE_LIST": "Your Exchange List",
                       },
                       "HELP": Object {
+                        "CONTACT_US": "Contact us",
                         "MODAL_CONTACT_US": Object {
                           "DESCRIPTION": "We'd be happy to answer your questions",
                           "FIELD_EMAIL": "Email",
@@ -634,6 +645,27 @@ exports[`Application root should render without crashing 1`] = `
                           },
                           "SUBJECT_REQUIRED": "Subject is Required",
                           "TITLE": "Contact Us",
+                        },
+                        "PAGE_ARTICLE": Object {
+                          "FOOTER": Object {
+                            "SUBTITLE": "Write us a letter and we will reply as soon as possible.",
+                            "TITLE": "Do you still need help with your question?",
+                          },
+                        },
+                        "PAGE_FAQ": Object {
+                          "PORTFOLIO": Object {
+                            "SUBTITLE": "Frequently asked questions about portfolio and addresses",
+                            "TITLE": "Portfolio",
+                          },
+                        },
+                        "PAGE_SUPPORT": Object {
+                          "CATEGORIES": Object {
+                            "HELPFUL": "Most Helpful",
+                            "NEWEST": "Newest",
+                            "POPULAR": "Most Popular",
+                          },
+                          "SUBTITLE": "Do you need any help? Find it in our archive or write to us",
+                          "TITLE": "Help & Support",
                         },
                       },
                       "OFFLINE": Object {
@@ -709,18 +741,6 @@ exports[`Application root should render without crashing 1`] = `
                           "DISCLAIMER": "By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.",
                           "TITLE": "Advanced Mode Disclaimer",
                         },
-                      },
-                      "SUPPORT": Object {
-                        "CONTACT_US": "Contact us",
-                        "FAQ_PORTFOLIO_SUBTITLE": "Frequently asked questions about portfolio and addresses",
-                        "FAQ_PORTFOLIO_TITLE": "Portfolio",
-                        "FOOTER_HELP_SUBTITLE": "Write us a letter and we will reply as soon as possible.",
-                        "FOOTER_HELP_TITLE": "Do you still need help with you question?",
-                        "HELPFUL_CATEGORY_TITLE": "Most Helpful",
-                        "HELP_SUPPORT_SUBTITLE": "Do you need any help? Find it in our archive or write to us",
-                        "HELP_SUPPORT_TITLE": "Help & Support",
-                        "NEWEST_CATEGORY_TITLE": "Newest",
-                        "POPULAR_CATEGORY_TITLE": "Most Popular",
                       },
                       "TRANSACTION": Object {
                         "ACCOUNT": "Account",
@@ -1021,6 +1041,7 @@ exports[`Application root should render without crashing 1`] = `
                                 "YOUR_EXCHANGE_LIST": "Your Exchange List",
                               },
                               "HELP": Object {
+                                "CONTACT_US": "Contact us",
                                 "MODAL_CONTACT_US": Object {
                                   "DESCRIPTION": "We'd be happy to answer your questions",
                                   "FIELD_EMAIL": "Email",
@@ -1034,6 +1055,27 @@ exports[`Application root should render without crashing 1`] = `
                                   },
                                   "SUBJECT_REQUIRED": "Subject is Required",
                                   "TITLE": "Contact Us",
+                                },
+                                "PAGE_ARTICLE": Object {
+                                  "FOOTER": Object {
+                                    "SUBTITLE": "Write us a letter and we will reply as soon as possible.",
+                                    "TITLE": "Do you still need help with your question?",
+                                  },
+                                },
+                                "PAGE_FAQ": Object {
+                                  "PORTFOLIO": Object {
+                                    "SUBTITLE": "Frequently asked questions about portfolio and addresses",
+                                    "TITLE": "Portfolio",
+                                  },
+                                },
+                                "PAGE_SUPPORT": Object {
+                                  "CATEGORIES": Object {
+                                    "HELPFUL": "Most Helpful",
+                                    "NEWEST": "Newest",
+                                    "POPULAR": "Most Popular",
+                                  },
+                                  "SUBTITLE": "Do you need any help? Find it in our archive or write to us",
+                                  "TITLE": "Help & Support",
                                 },
                               },
                               "OFFLINE": Object {
@@ -1109,18 +1151,6 @@ exports[`Application root should render without crashing 1`] = `
                                   "DISCLAIMER": "By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.",
                                   "TITLE": "Advanced Mode Disclaimer",
                                 },
-                              },
-                              "SUPPORT": Object {
-                                "CONTACT_US": "Contact us",
-                                "FAQ_PORTFOLIO_SUBTITLE": "Frequently asked questions about portfolio and addresses",
-                                "FAQ_PORTFOLIO_TITLE": "Portfolio",
-                                "FOOTER_HELP_SUBTITLE": "Write us a letter and we will reply as soon as possible.",
-                                "FOOTER_HELP_TITLE": "Do you still need help with you question?",
-                                "HELPFUL_CATEGORY_TITLE": "Most Helpful",
-                                "HELP_SUPPORT_SUBTITLE": "Do you need any help? Find it in our archive or write to us",
-                                "HELP_SUPPORT_TITLE": "Help & Support",
-                                "NEWEST_CATEGORY_TITLE": "Newest",
-                                "POPULAR_CATEGORY_TITLE": "Most Popular",
                               },
                               "TRANSACTION": Object {
                                 "ACCOUNT": "Account",
@@ -1408,6 +1438,7 @@ exports[`Application root should render without crashing 1`] = `
                               "YOUR_EXCHANGE_LIST": "Your Exchange List",
                             },
                             "HELP": Object {
+                              "CONTACT_US": "Contact us",
                               "MODAL_CONTACT_US": Object {
                                 "DESCRIPTION": "We'd be happy to answer your questions",
                                 "FIELD_EMAIL": "Email",
@@ -1421,6 +1452,27 @@ exports[`Application root should render without crashing 1`] = `
                                 },
                                 "SUBJECT_REQUIRED": "Subject is Required",
                                 "TITLE": "Contact Us",
+                              },
+                              "PAGE_ARTICLE": Object {
+                                "FOOTER": Object {
+                                  "SUBTITLE": "Write us a letter and we will reply as soon as possible.",
+                                  "TITLE": "Do you still need help with your question?",
+                                },
+                              },
+                              "PAGE_FAQ": Object {
+                                "PORTFOLIO": Object {
+                                  "SUBTITLE": "Frequently asked questions about portfolio and addresses",
+                                  "TITLE": "Portfolio",
+                                },
+                              },
+                              "PAGE_SUPPORT": Object {
+                                "CATEGORIES": Object {
+                                  "HELPFUL": "Most Helpful",
+                                  "NEWEST": "Newest",
+                                  "POPULAR": "Most Popular",
+                                },
+                                "SUBTITLE": "Do you need any help? Find it in our archive or write to us",
+                                "TITLE": "Help & Support",
                               },
                             },
                             "OFFLINE": Object {
@@ -1496,18 +1548,6 @@ exports[`Application root should render without crashing 1`] = `
                                 "DISCLAIMER": "By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.",
                                 "TITLE": "Advanced Mode Disclaimer",
                               },
-                            },
-                            "SUPPORT": Object {
-                              "CONTACT_US": "Contact us",
-                              "FAQ_PORTFOLIO_SUBTITLE": "Frequently asked questions about portfolio and addresses",
-                              "FAQ_PORTFOLIO_TITLE": "Portfolio",
-                              "FOOTER_HELP_SUBTITLE": "Write us a letter and we will reply as soon as possible.",
-                              "FOOTER_HELP_TITLE": "Do you still need help with you question?",
-                              "HELPFUL_CATEGORY_TITLE": "Most Helpful",
-                              "HELP_SUPPORT_SUBTITLE": "Do you need any help? Find it in our archive or write to us",
-                              "HELP_SUPPORT_TITLE": "Help & Support",
-                              "NEWEST_CATEGORY_TITLE": "Newest",
-                              "POPULAR_CATEGORY_TITLE": "Most Popular",
                             },
                             "TRANSACTION": Object {
                               "ACCOUNT": "Account",
@@ -1805,6 +1845,7 @@ exports[`Application root should render without crashing 1`] = `
                               "YOUR_EXCHANGE_LIST": "Your Exchange List",
                             },
                             "HELP": Object {
+                              "CONTACT_US": "Contact us",
                               "MODAL_CONTACT_US": Object {
                                 "DESCRIPTION": "We'd be happy to answer your questions",
                                 "FIELD_EMAIL": "Email",
@@ -1818,6 +1859,27 @@ exports[`Application root should render without crashing 1`] = `
                                 },
                                 "SUBJECT_REQUIRED": "Subject is Required",
                                 "TITLE": "Contact Us",
+                              },
+                              "PAGE_ARTICLE": Object {
+                                "FOOTER": Object {
+                                  "SUBTITLE": "Write us a letter and we will reply as soon as possible.",
+                                  "TITLE": "Do you still need help with your question?",
+                                },
+                              },
+                              "PAGE_FAQ": Object {
+                                "PORTFOLIO": Object {
+                                  "SUBTITLE": "Frequently asked questions about portfolio and addresses",
+                                  "TITLE": "Portfolio",
+                                },
+                              },
+                              "PAGE_SUPPORT": Object {
+                                "CATEGORIES": Object {
+                                  "HELPFUL": "Most Helpful",
+                                  "NEWEST": "Newest",
+                                  "POPULAR": "Most Popular",
+                                },
+                                "SUBTITLE": "Do you need any help? Find it in our archive or write to us",
+                                "TITLE": "Help & Support",
                               },
                             },
                             "OFFLINE": Object {
@@ -1893,18 +1955,6 @@ exports[`Application root should render without crashing 1`] = `
                                 "DISCLAIMER": "By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.",
                                 "TITLE": "Advanced Mode Disclaimer",
                               },
-                            },
-                            "SUPPORT": Object {
-                              "CONTACT_US": "Contact us",
-                              "FAQ_PORTFOLIO_SUBTITLE": "Frequently asked questions about portfolio and addresses",
-                              "FAQ_PORTFOLIO_TITLE": "Portfolio",
-                              "FOOTER_HELP_SUBTITLE": "Write us a letter and we will reply as soon as possible.",
-                              "FOOTER_HELP_TITLE": "Do you still need help with you question?",
-                              "HELPFUL_CATEGORY_TITLE": "Most Helpful",
-                              "HELP_SUPPORT_SUBTITLE": "Do you need any help? Find it in our archive or write to us",
-                              "HELP_SUPPORT_TITLE": "Help & Support",
-                              "NEWEST_CATEGORY_TITLE": "Newest",
-                              "POPULAR_CATEGORY_TITLE": "Most Popular",
                             },
                             "TRANSACTION": Object {
                               "ACCOUNT": "Account",
@@ -2197,6 +2247,7 @@ exports[`Application root should render without crashing 1`] = `
                             "YOUR_EXCHANGE_LIST": "Your Exchange List",
                           },
                           "HELP": Object {
+                            "CONTACT_US": "Contact us",
                             "MODAL_CONTACT_US": Object {
                               "DESCRIPTION": "We'd be happy to answer your questions",
                               "FIELD_EMAIL": "Email",
@@ -2210,6 +2261,27 @@ exports[`Application root should render without crashing 1`] = `
                               },
                               "SUBJECT_REQUIRED": "Subject is Required",
                               "TITLE": "Contact Us",
+                            },
+                            "PAGE_ARTICLE": Object {
+                              "FOOTER": Object {
+                                "SUBTITLE": "Write us a letter and we will reply as soon as possible.",
+                                "TITLE": "Do you still need help with your question?",
+                              },
+                            },
+                            "PAGE_FAQ": Object {
+                              "PORTFOLIO": Object {
+                                "SUBTITLE": "Frequently asked questions about portfolio and addresses",
+                                "TITLE": "Portfolio",
+                              },
+                            },
+                            "PAGE_SUPPORT": Object {
+                              "CATEGORIES": Object {
+                                "HELPFUL": "Most Helpful",
+                                "NEWEST": "Newest",
+                                "POPULAR": "Most Popular",
+                              },
+                              "SUBTITLE": "Do you need any help? Find it in our archive or write to us",
+                              "TITLE": "Help & Support",
                             },
                           },
                           "OFFLINE": Object {
@@ -2285,18 +2357,6 @@ exports[`Application root should render without crashing 1`] = `
                               "DISCLAIMER": "By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.",
                               "TITLE": "Advanced Mode Disclaimer",
                             },
-                          },
-                          "SUPPORT": Object {
-                            "CONTACT_US": "Contact us",
-                            "FAQ_PORTFOLIO_SUBTITLE": "Frequently asked questions about portfolio and addresses",
-                            "FAQ_PORTFOLIO_TITLE": "Portfolio",
-                            "FOOTER_HELP_SUBTITLE": "Write us a letter and we will reply as soon as possible.",
-                            "FOOTER_HELP_TITLE": "Do you still need help with you question?",
-                            "HELPFUL_CATEGORY_TITLE": "Most Helpful",
-                            "HELP_SUPPORT_SUBTITLE": "Do you need any help? Find it in our archive or write to us",
-                            "HELP_SUPPORT_TITLE": "Help & Support",
-                            "NEWEST_CATEGORY_TITLE": "Newest",
-                            "POPULAR_CATEGORY_TITLE": "Most Popular",
                           },
                           "TRANSACTION": Object {
                             "ACCOUNT": "Account",
@@ -2542,6 +2602,7 @@ exports[`Application root should render without crashing 1`] = `
                           "YOUR_EXCHANGE_LIST": "Your Exchange List",
                         },
                         "HELP": Object {
+                          "CONTACT_US": "Contact us",
                           "MODAL_CONTACT_US": Object {
                             "DESCRIPTION": "We'd be happy to answer your questions",
                             "FIELD_EMAIL": "Email",
@@ -2555,6 +2616,27 @@ exports[`Application root should render without crashing 1`] = `
                             },
                             "SUBJECT_REQUIRED": "Subject is Required",
                             "TITLE": "Contact Us",
+                          },
+                          "PAGE_ARTICLE": Object {
+                            "FOOTER": Object {
+                              "SUBTITLE": "Write us a letter and we will reply as soon as possible.",
+                              "TITLE": "Do you still need help with your question?",
+                            },
+                          },
+                          "PAGE_FAQ": Object {
+                            "PORTFOLIO": Object {
+                              "SUBTITLE": "Frequently asked questions about portfolio and addresses",
+                              "TITLE": "Portfolio",
+                            },
+                          },
+                          "PAGE_SUPPORT": Object {
+                            "CATEGORIES": Object {
+                              "HELPFUL": "Most Helpful",
+                              "NEWEST": "Newest",
+                              "POPULAR": "Most Popular",
+                            },
+                            "SUBTITLE": "Do you need any help? Find it in our archive or write to us",
+                            "TITLE": "Help & Support",
                           },
                         },
                         "OFFLINE": Object {
@@ -2630,18 +2712,6 @@ exports[`Application root should render without crashing 1`] = `
                             "DISCLAIMER": "By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.",
                             "TITLE": "Advanced Mode Disclaimer",
                           },
-                        },
-                        "SUPPORT": Object {
-                          "CONTACT_US": "Contact us",
-                          "FAQ_PORTFOLIO_SUBTITLE": "Frequently asked questions about portfolio and addresses",
-                          "FAQ_PORTFOLIO_TITLE": "Portfolio",
-                          "FOOTER_HELP_SUBTITLE": "Write us a letter and we will reply as soon as possible.",
-                          "FOOTER_HELP_TITLE": "Do you still need help with you question?",
-                          "HELPFUL_CATEGORY_TITLE": "Most Helpful",
-                          "HELP_SUPPORT_SUBTITLE": "Do you need any help? Find it in our archive or write to us",
-                          "HELP_SUPPORT_TITLE": "Help & Support",
-                          "NEWEST_CATEGORY_TITLE": "Newest",
-                          "POPULAR_CATEGORY_TITLE": "Most Popular",
                         },
                         "TRANSACTION": Object {
                           "ACCOUNT": "Account",
@@ -2933,6 +3003,7 @@ exports[`Application root should render without crashing 1`] = `
                               "YOUR_EXCHANGE_LIST": "Your Exchange List",
                             },
                             "HELP": Object {
+                              "CONTACT_US": "Contact us",
                               "MODAL_CONTACT_US": Object {
                                 "DESCRIPTION": "We'd be happy to answer your questions",
                                 "FIELD_EMAIL": "Email",
@@ -2946,6 +3017,27 @@ exports[`Application root should render without crashing 1`] = `
                                 },
                                 "SUBJECT_REQUIRED": "Subject is Required",
                                 "TITLE": "Contact Us",
+                              },
+                              "PAGE_ARTICLE": Object {
+                                "FOOTER": Object {
+                                  "SUBTITLE": "Write us a letter and we will reply as soon as possible.",
+                                  "TITLE": "Do you still need help with your question?",
+                                },
+                              },
+                              "PAGE_FAQ": Object {
+                                "PORTFOLIO": Object {
+                                  "SUBTITLE": "Frequently asked questions about portfolio and addresses",
+                                  "TITLE": "Portfolio",
+                                },
+                              },
+                              "PAGE_SUPPORT": Object {
+                                "CATEGORIES": Object {
+                                  "HELPFUL": "Most Helpful",
+                                  "NEWEST": "Newest",
+                                  "POPULAR": "Most Popular",
+                                },
+                                "SUBTITLE": "Do you need any help? Find it in our archive or write to us",
+                                "TITLE": "Help & Support",
                               },
                             },
                             "OFFLINE": Object {
@@ -3021,18 +3113,6 @@ exports[`Application root should render without crashing 1`] = `
                                 "DISCLAIMER": "By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.",
                                 "TITLE": "Advanced Mode Disclaimer",
                               },
-                            },
-                            "SUPPORT": Object {
-                              "CONTACT_US": "Contact us",
-                              "FAQ_PORTFOLIO_SUBTITLE": "Frequently asked questions about portfolio and addresses",
-                              "FAQ_PORTFOLIO_TITLE": "Portfolio",
-                              "FOOTER_HELP_SUBTITLE": "Write us a letter and we will reply as soon as possible.",
-                              "FOOTER_HELP_TITLE": "Do you still need help with you question?",
-                              "HELPFUL_CATEGORY_TITLE": "Most Helpful",
-                              "HELP_SUPPORT_SUBTITLE": "Do you need any help? Find it in our archive or write to us",
-                              "HELP_SUPPORT_TITLE": "Help & Support",
-                              "NEWEST_CATEGORY_TITLE": "Newest",
-                              "POPULAR_CATEGORY_TITLE": "Most Popular",
                             },
                             "TRANSACTION": Object {
                               "ACCOUNT": "Account",
@@ -3325,6 +3405,7 @@ exports[`Application root should render without crashing 1`] = `
                             "YOUR_EXCHANGE_LIST": "Your Exchange List",
                           },
                           "HELP": Object {
+                            "CONTACT_US": "Contact us",
                             "MODAL_CONTACT_US": Object {
                               "DESCRIPTION": "We'd be happy to answer your questions",
                               "FIELD_EMAIL": "Email",
@@ -3338,6 +3419,27 @@ exports[`Application root should render without crashing 1`] = `
                               },
                               "SUBJECT_REQUIRED": "Subject is Required",
                               "TITLE": "Contact Us",
+                            },
+                            "PAGE_ARTICLE": Object {
+                              "FOOTER": Object {
+                                "SUBTITLE": "Write us a letter and we will reply as soon as possible.",
+                                "TITLE": "Do you still need help with your question?",
+                              },
+                            },
+                            "PAGE_FAQ": Object {
+                              "PORTFOLIO": Object {
+                                "SUBTITLE": "Frequently asked questions about portfolio and addresses",
+                                "TITLE": "Portfolio",
+                              },
+                            },
+                            "PAGE_SUPPORT": Object {
+                              "CATEGORIES": Object {
+                                "HELPFUL": "Most Helpful",
+                                "NEWEST": "Newest",
+                                "POPULAR": "Most Popular",
+                              },
+                              "SUBTITLE": "Do you need any help? Find it in our archive or write to us",
+                              "TITLE": "Help & Support",
                             },
                           },
                           "OFFLINE": Object {
@@ -3413,18 +3515,6 @@ exports[`Application root should render without crashing 1`] = `
                               "DISCLAIMER": "By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.",
                               "TITLE": "Advanced Mode Disclaimer",
                             },
-                          },
-                          "SUPPORT": Object {
-                            "CONTACT_US": "Contact us",
-                            "FAQ_PORTFOLIO_SUBTITLE": "Frequently asked questions about portfolio and addresses",
-                            "FAQ_PORTFOLIO_TITLE": "Portfolio",
-                            "FOOTER_HELP_SUBTITLE": "Write us a letter and we will reply as soon as possible.",
-                            "FOOTER_HELP_TITLE": "Do you still need help with you question?",
-                            "HELPFUL_CATEGORY_TITLE": "Most Helpful",
-                            "HELP_SUPPORT_SUBTITLE": "Do you need any help? Find it in our archive or write to us",
-                            "HELP_SUPPORT_TITLE": "Help & Support",
-                            "NEWEST_CATEGORY_TITLE": "Newest",
-                            "POPULAR_CATEGORY_TITLE": "Most Popular",
                           },
                           "TRANSACTION": Object {
                             "ACCOUNT": "Account",
@@ -3729,6 +3819,7 @@ exports[`Application root should render without crashing 1`] = `
                               "YOUR_EXCHANGE_LIST": "Your Exchange List",
                             },
                             "HELP": Object {
+                              "CONTACT_US": "Contact us",
                               "MODAL_CONTACT_US": Object {
                                 "DESCRIPTION": "We'd be happy to answer your questions",
                                 "FIELD_EMAIL": "Email",
@@ -3742,6 +3833,27 @@ exports[`Application root should render without crashing 1`] = `
                                 },
                                 "SUBJECT_REQUIRED": "Subject is Required",
                                 "TITLE": "Contact Us",
+                              },
+                              "PAGE_ARTICLE": Object {
+                                "FOOTER": Object {
+                                  "SUBTITLE": "Write us a letter and we will reply as soon as possible.",
+                                  "TITLE": "Do you still need help with your question?",
+                                },
+                              },
+                              "PAGE_FAQ": Object {
+                                "PORTFOLIO": Object {
+                                  "SUBTITLE": "Frequently asked questions about portfolio and addresses",
+                                  "TITLE": "Portfolio",
+                                },
+                              },
+                              "PAGE_SUPPORT": Object {
+                                "CATEGORIES": Object {
+                                  "HELPFUL": "Most Helpful",
+                                  "NEWEST": "Newest",
+                                  "POPULAR": "Most Popular",
+                                },
+                                "SUBTITLE": "Do you need any help? Find it in our archive or write to us",
+                                "TITLE": "Help & Support",
                               },
                             },
                             "OFFLINE": Object {
@@ -3817,18 +3929,6 @@ exports[`Application root should render without crashing 1`] = `
                                 "DISCLAIMER": "By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.",
                                 "TITLE": "Advanced Mode Disclaimer",
                               },
-                            },
-                            "SUPPORT": Object {
-                              "CONTACT_US": "Contact us",
-                              "FAQ_PORTFOLIO_SUBTITLE": "Frequently asked questions about portfolio and addresses",
-                              "FAQ_PORTFOLIO_TITLE": "Portfolio",
-                              "FOOTER_HELP_SUBTITLE": "Write us a letter and we will reply as soon as possible.",
-                              "FOOTER_HELP_TITLE": "Do you still need help with you question?",
-                              "HELPFUL_CATEGORY_TITLE": "Most Helpful",
-                              "HELP_SUPPORT_SUBTITLE": "Do you need any help? Find it in our archive or write to us",
-                              "HELP_SUPPORT_TITLE": "Help & Support",
-                              "NEWEST_CATEGORY_TITLE": "Newest",
-                              "POPULAR_CATEGORY_TITLE": "Most Popular",
                             },
                             "TRANSACTION": Object {
                               "ACCOUNT": "Account",
@@ -4116,6 +4216,7 @@ exports[`Application root should render without crashing 1`] = `
                             "YOUR_EXCHANGE_LIST": "Your Exchange List",
                           },
                           "HELP": Object {
+                            "CONTACT_US": "Contact us",
                             "MODAL_CONTACT_US": Object {
                               "DESCRIPTION": "We'd be happy to answer your questions",
                               "FIELD_EMAIL": "Email",
@@ -4129,6 +4230,27 @@ exports[`Application root should render without crashing 1`] = `
                               },
                               "SUBJECT_REQUIRED": "Subject is Required",
                               "TITLE": "Contact Us",
+                            },
+                            "PAGE_ARTICLE": Object {
+                              "FOOTER": Object {
+                                "SUBTITLE": "Write us a letter and we will reply as soon as possible.",
+                                "TITLE": "Do you still need help with your question?",
+                              },
+                            },
+                            "PAGE_FAQ": Object {
+                              "PORTFOLIO": Object {
+                                "SUBTITLE": "Frequently asked questions about portfolio and addresses",
+                                "TITLE": "Portfolio",
+                              },
+                            },
+                            "PAGE_SUPPORT": Object {
+                              "CATEGORIES": Object {
+                                "HELPFUL": "Most Helpful",
+                                "NEWEST": "Newest",
+                                "POPULAR": "Most Popular",
+                              },
+                              "SUBTITLE": "Do you need any help? Find it in our archive or write to us",
+                              "TITLE": "Help & Support",
                             },
                           },
                           "OFFLINE": Object {
@@ -4204,18 +4326,6 @@ exports[`Application root should render without crashing 1`] = `
                               "DISCLAIMER": "By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.",
                               "TITLE": "Advanced Mode Disclaimer",
                             },
-                          },
-                          "SUPPORT": Object {
-                            "CONTACT_US": "Contact us",
-                            "FAQ_PORTFOLIO_SUBTITLE": "Frequently asked questions about portfolio and addresses",
-                            "FAQ_PORTFOLIO_TITLE": "Portfolio",
-                            "FOOTER_HELP_SUBTITLE": "Write us a letter and we will reply as soon as possible.",
-                            "FOOTER_HELP_TITLE": "Do you still need help with you question?",
-                            "HELPFUL_CATEGORY_TITLE": "Most Helpful",
-                            "HELP_SUPPORT_SUBTITLE": "Do you need any help? Find it in our archive or write to us",
-                            "HELP_SUPPORT_TITLE": "Help & Support",
-                            "NEWEST_CATEGORY_TITLE": "Newest",
-                            "POPULAR_CATEGORY_TITLE": "Most Popular",
                           },
                           "TRANSACTION": Object {
                             "ACCOUNT": "Account",
@@ -4512,6 +4622,7 @@ exports[`Application root should render without crashing 1`] = `
                             "YOUR_EXCHANGE_LIST": "Your Exchange List",
                           },
                           "HELP": Object {
+                            "CONTACT_US": "Contact us",
                             "MODAL_CONTACT_US": Object {
                               "DESCRIPTION": "We'd be happy to answer your questions",
                               "FIELD_EMAIL": "Email",
@@ -4525,6 +4636,27 @@ exports[`Application root should render without crashing 1`] = `
                               },
                               "SUBJECT_REQUIRED": "Subject is Required",
                               "TITLE": "Contact Us",
+                            },
+                            "PAGE_ARTICLE": Object {
+                              "FOOTER": Object {
+                                "SUBTITLE": "Write us a letter and we will reply as soon as possible.",
+                                "TITLE": "Do you still need help with your question?",
+                              },
+                            },
+                            "PAGE_FAQ": Object {
+                              "PORTFOLIO": Object {
+                                "SUBTITLE": "Frequently asked questions about portfolio and addresses",
+                                "TITLE": "Portfolio",
+                              },
+                            },
+                            "PAGE_SUPPORT": Object {
+                              "CATEGORIES": Object {
+                                "HELPFUL": "Most Helpful",
+                                "NEWEST": "Newest",
+                                "POPULAR": "Most Popular",
+                              },
+                              "SUBTITLE": "Do you need any help? Find it in our archive or write to us",
+                              "TITLE": "Help & Support",
                             },
                           },
                           "OFFLINE": Object {
@@ -4600,18 +4732,6 @@ exports[`Application root should render without crashing 1`] = `
                               "DISCLAIMER": "By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.",
                               "TITLE": "Advanced Mode Disclaimer",
                             },
-                          },
-                          "SUPPORT": Object {
-                            "CONTACT_US": "Contact us",
-                            "FAQ_PORTFOLIO_SUBTITLE": "Frequently asked questions about portfolio and addresses",
-                            "FAQ_PORTFOLIO_TITLE": "Portfolio",
-                            "FOOTER_HELP_SUBTITLE": "Write us a letter and we will reply as soon as possible.",
-                            "FOOTER_HELP_TITLE": "Do you still need help with you question?",
-                            "HELPFUL_CATEGORY_TITLE": "Most Helpful",
-                            "HELP_SUPPORT_SUBTITLE": "Do you need any help? Find it in our archive or write to us",
-                            "HELP_SUPPORT_TITLE": "Help & Support",
-                            "NEWEST_CATEGORY_TITLE": "Newest",
-                            "POPULAR_CATEGORY_TITLE": "Most Popular",
                           },
                           "TRANSACTION": Object {
                             "ACCOUNT": "Account",
@@ -4911,6 +5031,7 @@ exports[`Application root should render without crashing 1`] = `
                                 "YOUR_EXCHANGE_LIST": "Your Exchange List",
                               },
                               "HELP": Object {
+                                "CONTACT_US": "Contact us",
                                 "MODAL_CONTACT_US": Object {
                                   "DESCRIPTION": "We'd be happy to answer your questions",
                                   "FIELD_EMAIL": "Email",
@@ -4924,6 +5045,27 @@ exports[`Application root should render without crashing 1`] = `
                                   },
                                   "SUBJECT_REQUIRED": "Subject is Required",
                                   "TITLE": "Contact Us",
+                                },
+                                "PAGE_ARTICLE": Object {
+                                  "FOOTER": Object {
+                                    "SUBTITLE": "Write us a letter and we will reply as soon as possible.",
+                                    "TITLE": "Do you still need help with your question?",
+                                  },
+                                },
+                                "PAGE_FAQ": Object {
+                                  "PORTFOLIO": Object {
+                                    "SUBTITLE": "Frequently asked questions about portfolio and addresses",
+                                    "TITLE": "Portfolio",
+                                  },
+                                },
+                                "PAGE_SUPPORT": Object {
+                                  "CATEGORIES": Object {
+                                    "HELPFUL": "Most Helpful",
+                                    "NEWEST": "Newest",
+                                    "POPULAR": "Most Popular",
+                                  },
+                                  "SUBTITLE": "Do you need any help? Find it in our archive or write to us",
+                                  "TITLE": "Help & Support",
                                 },
                               },
                               "OFFLINE": Object {
@@ -4999,18 +5141,6 @@ exports[`Application root should render without crashing 1`] = `
                                   "DISCLAIMER": "By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.",
                                   "TITLE": "Advanced Mode Disclaimer",
                                 },
-                              },
-                              "SUPPORT": Object {
-                                "CONTACT_US": "Contact us",
-                                "FAQ_PORTFOLIO_SUBTITLE": "Frequently asked questions about portfolio and addresses",
-                                "FAQ_PORTFOLIO_TITLE": "Portfolio",
-                                "FOOTER_HELP_SUBTITLE": "Write us a letter and we will reply as soon as possible.",
-                                "FOOTER_HELP_TITLE": "Do you still need help with you question?",
-                                "HELPFUL_CATEGORY_TITLE": "Most Helpful",
-                                "HELP_SUPPORT_SUBTITLE": "Do you need any help? Find it in our archive or write to us",
-                                "HELP_SUPPORT_TITLE": "Help & Support",
-                                "NEWEST_CATEGORY_TITLE": "Newest",
-                                "POPULAR_CATEGORY_TITLE": "Most Popular",
                               },
                               "TRANSACTION": Object {
                                 "ACCOUNT": "Account",
@@ -5298,6 +5428,7 @@ exports[`Application root should render without crashing 1`] = `
                               "YOUR_EXCHANGE_LIST": "Your Exchange List",
                             },
                             "HELP": Object {
+                              "CONTACT_US": "Contact us",
                               "MODAL_CONTACT_US": Object {
                                 "DESCRIPTION": "We'd be happy to answer your questions",
                                 "FIELD_EMAIL": "Email",
@@ -5311,6 +5442,27 @@ exports[`Application root should render without crashing 1`] = `
                                 },
                                 "SUBJECT_REQUIRED": "Subject is Required",
                                 "TITLE": "Contact Us",
+                              },
+                              "PAGE_ARTICLE": Object {
+                                "FOOTER": Object {
+                                  "SUBTITLE": "Write us a letter and we will reply as soon as possible.",
+                                  "TITLE": "Do you still need help with your question?",
+                                },
+                              },
+                              "PAGE_FAQ": Object {
+                                "PORTFOLIO": Object {
+                                  "SUBTITLE": "Frequently asked questions about portfolio and addresses",
+                                  "TITLE": "Portfolio",
+                                },
+                              },
+                              "PAGE_SUPPORT": Object {
+                                "CATEGORIES": Object {
+                                  "HELPFUL": "Most Helpful",
+                                  "NEWEST": "Newest",
+                                  "POPULAR": "Most Popular",
+                                },
+                                "SUBTITLE": "Do you need any help? Find it in our archive or write to us",
+                                "TITLE": "Help & Support",
                               },
                             },
                             "OFFLINE": Object {
@@ -5386,18 +5538,6 @@ exports[`Application root should render without crashing 1`] = `
                                 "DISCLAIMER": "By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.",
                                 "TITLE": "Advanced Mode Disclaimer",
                               },
-                            },
-                            "SUPPORT": Object {
-                              "CONTACT_US": "Contact us",
-                              "FAQ_PORTFOLIO_SUBTITLE": "Frequently asked questions about portfolio and addresses",
-                              "FAQ_PORTFOLIO_TITLE": "Portfolio",
-                              "FOOTER_HELP_SUBTITLE": "Write us a letter and we will reply as soon as possible.",
-                              "FOOTER_HELP_TITLE": "Do you still need help with you question?",
-                              "HELPFUL_CATEGORY_TITLE": "Most Helpful",
-                              "HELP_SUPPORT_SUBTITLE": "Do you need any help? Find it in our archive or write to us",
-                              "HELP_SUPPORT_TITLE": "Help & Support",
-                              "NEWEST_CATEGORY_TITLE": "Newest",
-                              "POPULAR_CATEGORY_TITLE": "Most Popular",
                             },
                             "TRANSACTION": Object {
                               "ACCOUNT": "Account",
@@ -5695,6 +5835,7 @@ exports[`Application root should render without crashing 1`] = `
                               "YOUR_EXCHANGE_LIST": "Your Exchange List",
                             },
                             "HELP": Object {
+                              "CONTACT_US": "Contact us",
                               "MODAL_CONTACT_US": Object {
                                 "DESCRIPTION": "We'd be happy to answer your questions",
                                 "FIELD_EMAIL": "Email",
@@ -5708,6 +5849,27 @@ exports[`Application root should render without crashing 1`] = `
                                 },
                                 "SUBJECT_REQUIRED": "Subject is Required",
                                 "TITLE": "Contact Us",
+                              },
+                              "PAGE_ARTICLE": Object {
+                                "FOOTER": Object {
+                                  "SUBTITLE": "Write us a letter and we will reply as soon as possible.",
+                                  "TITLE": "Do you still need help with your question?",
+                                },
+                              },
+                              "PAGE_FAQ": Object {
+                                "PORTFOLIO": Object {
+                                  "SUBTITLE": "Frequently asked questions about portfolio and addresses",
+                                  "TITLE": "Portfolio",
+                                },
+                              },
+                              "PAGE_SUPPORT": Object {
+                                "CATEGORIES": Object {
+                                  "HELPFUL": "Most Helpful",
+                                  "NEWEST": "Newest",
+                                  "POPULAR": "Most Popular",
+                                },
+                                "SUBTITLE": "Do you need any help? Find it in our archive or write to us",
+                                "TITLE": "Help & Support",
                               },
                             },
                             "OFFLINE": Object {
@@ -5783,18 +5945,6 @@ exports[`Application root should render without crashing 1`] = `
                                 "DISCLAIMER": "By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.",
                                 "TITLE": "Advanced Mode Disclaimer",
                               },
-                            },
-                            "SUPPORT": Object {
-                              "CONTACT_US": "Contact us",
-                              "FAQ_PORTFOLIO_SUBTITLE": "Frequently asked questions about portfolio and addresses",
-                              "FAQ_PORTFOLIO_TITLE": "Portfolio",
-                              "FOOTER_HELP_SUBTITLE": "Write us a letter and we will reply as soon as possible.",
-                              "FOOTER_HELP_TITLE": "Do you still need help with you question?",
-                              "HELPFUL_CATEGORY_TITLE": "Most Helpful",
-                              "HELP_SUPPORT_SUBTITLE": "Do you need any help? Find it in our archive or write to us",
-                              "HELP_SUPPORT_TITLE": "Help & Support",
-                              "NEWEST_CATEGORY_TITLE": "Newest",
-                              "POPULAR_CATEGORY_TITLE": "Most Popular",
                             },
                             "TRANSACTION": Object {
                               "ACCOUNT": "Account",
@@ -6984,6 +7134,7 @@ exports[`Application root should render without crashing 1`] = `
                         "YOUR_EXCHANGE_LIST": "Your Exchange List",
                       },
                       "HELP": Object {
+                        "CONTACT_US": "Contact us",
                         "MODAL_CONTACT_US": Object {
                           "DESCRIPTION": "We'd be happy to answer your questions",
                           "FIELD_EMAIL": "Email",
@@ -6997,6 +7148,27 @@ exports[`Application root should render without crashing 1`] = `
                           },
                           "SUBJECT_REQUIRED": "Subject is Required",
                           "TITLE": "Contact Us",
+                        },
+                        "PAGE_ARTICLE": Object {
+                          "FOOTER": Object {
+                            "SUBTITLE": "Write us a letter and we will reply as soon as possible.",
+                            "TITLE": "Do you still need help with your question?",
+                          },
+                        },
+                        "PAGE_FAQ": Object {
+                          "PORTFOLIO": Object {
+                            "SUBTITLE": "Frequently asked questions about portfolio and addresses",
+                            "TITLE": "Portfolio",
+                          },
+                        },
+                        "PAGE_SUPPORT": Object {
+                          "CATEGORIES": Object {
+                            "HELPFUL": "Most Helpful",
+                            "NEWEST": "Newest",
+                            "POPULAR": "Most Popular",
+                          },
+                          "SUBTITLE": "Do you need any help? Find it in our archive or write to us",
+                          "TITLE": "Help & Support",
                         },
                       },
                       "OFFLINE": Object {
@@ -7072,18 +7244,6 @@ exports[`Application root should render without crashing 1`] = `
                           "DISCLAIMER": "By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.",
                           "TITLE": "Advanced Mode Disclaimer",
                         },
-                      },
-                      "SUPPORT": Object {
-                        "CONTACT_US": "Contact us",
-                        "FAQ_PORTFOLIO_SUBTITLE": "Frequently asked questions about portfolio and addresses",
-                        "FAQ_PORTFOLIO_TITLE": "Portfolio",
-                        "FOOTER_HELP_SUBTITLE": "Write us a letter and we will reply as soon as possible.",
-                        "FOOTER_HELP_TITLE": "Do you still need help with you question?",
-                        "HELPFUL_CATEGORY_TITLE": "Most Helpful",
-                        "HELP_SUPPORT_SUBTITLE": "Do you need any help? Find it in our archive or write to us",
-                        "HELP_SUPPORT_TITLE": "Help & Support",
-                        "NEWEST_CATEGORY_TITLE": "Newest",
-                        "POPULAR_CATEGORY_TITLE": "Most Popular",
                       },
                       "TRANSACTION": Object {
                         "ACCOUNT": "Account",
@@ -7319,6 +7479,7 @@ exports[`Application root should render without crashing 1`] = `
                       "YOUR_EXCHANGE_LIST": "Your Exchange List",
                     },
                     "HELP": Object {
+                      "CONTACT_US": "Contact us",
                       "MODAL_CONTACT_US": Object {
                         "DESCRIPTION": "We'd be happy to answer your questions",
                         "FIELD_EMAIL": "Email",
@@ -7332,6 +7493,27 @@ exports[`Application root should render without crashing 1`] = `
                         },
                         "SUBJECT_REQUIRED": "Subject is Required",
                         "TITLE": "Contact Us",
+                      },
+                      "PAGE_ARTICLE": Object {
+                        "FOOTER": Object {
+                          "SUBTITLE": "Write us a letter and we will reply as soon as possible.",
+                          "TITLE": "Do you still need help with your question?",
+                        },
+                      },
+                      "PAGE_FAQ": Object {
+                        "PORTFOLIO": Object {
+                          "SUBTITLE": "Frequently asked questions about portfolio and addresses",
+                          "TITLE": "Portfolio",
+                        },
+                      },
+                      "PAGE_SUPPORT": Object {
+                        "CATEGORIES": Object {
+                          "HELPFUL": "Most Helpful",
+                          "NEWEST": "Newest",
+                          "POPULAR": "Most Popular",
+                        },
+                        "SUBTITLE": "Do you need any help? Find it in our archive or write to us",
+                        "TITLE": "Help & Support",
                       },
                     },
                     "OFFLINE": Object {
@@ -7407,18 +7589,6 @@ exports[`Application root should render without crashing 1`] = `
                         "DISCLAIMER": "By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.",
                         "TITLE": "Advanced Mode Disclaimer",
                       },
-                    },
-                    "SUPPORT": Object {
-                      "CONTACT_US": "Contact us",
-                      "FAQ_PORTFOLIO_SUBTITLE": "Frequently asked questions about portfolio and addresses",
-                      "FAQ_PORTFOLIO_TITLE": "Portfolio",
-                      "FOOTER_HELP_SUBTITLE": "Write us a letter and we will reply as soon as possible.",
-                      "FOOTER_HELP_TITLE": "Do you still need help with you question?",
-                      "HELPFUL_CATEGORY_TITLE": "Most Helpful",
-                      "HELP_SUPPORT_SUBTITLE": "Do you need any help? Find it in our archive or write to us",
-                      "HELP_SUPPORT_TITLE": "Help & Support",
-                      "NEWEST_CATEGORY_TITLE": "Newest",
-                      "POPULAR_CATEGORY_TITLE": "Most Popular",
                     },
                     "TRANSACTION": Object {
                       "ACCOUNT": "Account",
@@ -7707,6 +7877,7 @@ exports[`Application root should render without crashing 1`] = `
                                 "YOUR_EXCHANGE_LIST": "Your Exchange List",
                               },
                               "HELP": Object {
+                                "CONTACT_US": "Contact us",
                                 "MODAL_CONTACT_US": Object {
                                   "DESCRIPTION": "We'd be happy to answer your questions",
                                   "FIELD_EMAIL": "Email",
@@ -7720,6 +7891,27 @@ exports[`Application root should render without crashing 1`] = `
                                   },
                                   "SUBJECT_REQUIRED": "Subject is Required",
                                   "TITLE": "Contact Us",
+                                },
+                                "PAGE_ARTICLE": Object {
+                                  "FOOTER": Object {
+                                    "SUBTITLE": "Write us a letter and we will reply as soon as possible.",
+                                    "TITLE": "Do you still need help with your question?",
+                                  },
+                                },
+                                "PAGE_FAQ": Object {
+                                  "PORTFOLIO": Object {
+                                    "SUBTITLE": "Frequently asked questions about portfolio and addresses",
+                                    "TITLE": "Portfolio",
+                                  },
+                                },
+                                "PAGE_SUPPORT": Object {
+                                  "CATEGORIES": Object {
+                                    "HELPFUL": "Most Helpful",
+                                    "NEWEST": "Newest",
+                                    "POPULAR": "Most Popular",
+                                  },
+                                  "SUBTITLE": "Do you need any help? Find it in our archive or write to us",
+                                  "TITLE": "Help & Support",
                                 },
                               },
                               "OFFLINE": Object {
@@ -7795,18 +7987,6 @@ exports[`Application root should render without crashing 1`] = `
                                   "DISCLAIMER": "By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.",
                                   "TITLE": "Advanced Mode Disclaimer",
                                 },
-                              },
-                              "SUPPORT": Object {
-                                "CONTACT_US": "Contact us",
-                                "FAQ_PORTFOLIO_SUBTITLE": "Frequently asked questions about portfolio and addresses",
-                                "FAQ_PORTFOLIO_TITLE": "Portfolio",
-                                "FOOTER_HELP_SUBTITLE": "Write us a letter and we will reply as soon as possible.",
-                                "FOOTER_HELP_TITLE": "Do you still need help with you question?",
-                                "HELPFUL_CATEGORY_TITLE": "Most Helpful",
-                                "HELP_SUPPORT_SUBTITLE": "Do you need any help? Find it in our archive or write to us",
-                                "HELP_SUPPORT_TITLE": "Help & Support",
-                                "NEWEST_CATEGORY_TITLE": "Newest",
-                                "POPULAR_CATEGORY_TITLE": "Most Popular",
                               },
                               "TRANSACTION": Object {
                                 "ACCOUNT": "Account",
@@ -8094,6 +8274,7 @@ exports[`Application root should render without crashing 1`] = `
                               "YOUR_EXCHANGE_LIST": "Your Exchange List",
                             },
                             "HELP": Object {
+                              "CONTACT_US": "Contact us",
                               "MODAL_CONTACT_US": Object {
                                 "DESCRIPTION": "We'd be happy to answer your questions",
                                 "FIELD_EMAIL": "Email",
@@ -8107,6 +8288,27 @@ exports[`Application root should render without crashing 1`] = `
                                 },
                                 "SUBJECT_REQUIRED": "Subject is Required",
                                 "TITLE": "Contact Us",
+                              },
+                              "PAGE_ARTICLE": Object {
+                                "FOOTER": Object {
+                                  "SUBTITLE": "Write us a letter and we will reply as soon as possible.",
+                                  "TITLE": "Do you still need help with your question?",
+                                },
+                              },
+                              "PAGE_FAQ": Object {
+                                "PORTFOLIO": Object {
+                                  "SUBTITLE": "Frequently asked questions about portfolio and addresses",
+                                  "TITLE": "Portfolio",
+                                },
+                              },
+                              "PAGE_SUPPORT": Object {
+                                "CATEGORIES": Object {
+                                  "HELPFUL": "Most Helpful",
+                                  "NEWEST": "Newest",
+                                  "POPULAR": "Most Popular",
+                                },
+                                "SUBTITLE": "Do you need any help? Find it in our archive or write to us",
+                                "TITLE": "Help & Support",
                               },
                             },
                             "OFFLINE": Object {
@@ -8182,18 +8384,6 @@ exports[`Application root should render without crashing 1`] = `
                                 "DISCLAIMER": "By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.",
                                 "TITLE": "Advanced Mode Disclaimer",
                               },
-                            },
-                            "SUPPORT": Object {
-                              "CONTACT_US": "Contact us",
-                              "FAQ_PORTFOLIO_SUBTITLE": "Frequently asked questions about portfolio and addresses",
-                              "FAQ_PORTFOLIO_TITLE": "Portfolio",
-                              "FOOTER_HELP_SUBTITLE": "Write us a letter and we will reply as soon as possible.",
-                              "FOOTER_HELP_TITLE": "Do you still need help with you question?",
-                              "HELPFUL_CATEGORY_TITLE": "Most Helpful",
-                              "HELP_SUPPORT_SUBTITLE": "Do you need any help? Find it in our archive or write to us",
-                              "HELP_SUPPORT_TITLE": "Help & Support",
-                              "NEWEST_CATEGORY_TITLE": "Newest",
-                              "POPULAR_CATEGORY_TITLE": "Most Popular",
                             },
                             "TRANSACTION": Object {
                               "ACCOUNT": "Account",
@@ -8491,6 +8681,7 @@ exports[`Application root should render without crashing 1`] = `
                               "YOUR_EXCHANGE_LIST": "Your Exchange List",
                             },
                             "HELP": Object {
+                              "CONTACT_US": "Contact us",
                               "MODAL_CONTACT_US": Object {
                                 "DESCRIPTION": "We'd be happy to answer your questions",
                                 "FIELD_EMAIL": "Email",
@@ -8504,6 +8695,27 @@ exports[`Application root should render without crashing 1`] = `
                                 },
                                 "SUBJECT_REQUIRED": "Subject is Required",
                                 "TITLE": "Contact Us",
+                              },
+                              "PAGE_ARTICLE": Object {
+                                "FOOTER": Object {
+                                  "SUBTITLE": "Write us a letter and we will reply as soon as possible.",
+                                  "TITLE": "Do you still need help with your question?",
+                                },
+                              },
+                              "PAGE_FAQ": Object {
+                                "PORTFOLIO": Object {
+                                  "SUBTITLE": "Frequently asked questions about portfolio and addresses",
+                                  "TITLE": "Portfolio",
+                                },
+                              },
+                              "PAGE_SUPPORT": Object {
+                                "CATEGORIES": Object {
+                                  "HELPFUL": "Most Helpful",
+                                  "NEWEST": "Newest",
+                                  "POPULAR": "Most Popular",
+                                },
+                                "SUBTITLE": "Do you need any help? Find it in our archive or write to us",
+                                "TITLE": "Help & Support",
                               },
                             },
                             "OFFLINE": Object {
@@ -8579,18 +8791,6 @@ exports[`Application root should render without crashing 1`] = `
                                 "DISCLAIMER": "By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.",
                                 "TITLE": "Advanced Mode Disclaimer",
                               },
-                            },
-                            "SUPPORT": Object {
-                              "CONTACT_US": "Contact us",
-                              "FAQ_PORTFOLIO_SUBTITLE": "Frequently asked questions about portfolio and addresses",
-                              "FAQ_PORTFOLIO_TITLE": "Portfolio",
-                              "FOOTER_HELP_SUBTITLE": "Write us a letter and we will reply as soon as possible.",
-                              "FOOTER_HELP_TITLE": "Do you still need help with you question?",
-                              "HELPFUL_CATEGORY_TITLE": "Most Helpful",
-                              "HELP_SUPPORT_SUBTITLE": "Do you need any help? Find it in our archive or write to us",
-                              "HELP_SUPPORT_TITLE": "Help & Support",
-                              "NEWEST_CATEGORY_TITLE": "Newest",
-                              "POPULAR_CATEGORY_TITLE": "Most Popular",
                             },
                             "TRANSACTION": Object {
                               "ACCOUNT": "Account",
@@ -8883,6 +9083,7 @@ exports[`Application root should render without crashing 1`] = `
                             "YOUR_EXCHANGE_LIST": "Your Exchange List",
                           },
                           "HELP": Object {
+                            "CONTACT_US": "Contact us",
                             "MODAL_CONTACT_US": Object {
                               "DESCRIPTION": "We'd be happy to answer your questions",
                               "FIELD_EMAIL": "Email",
@@ -8896,6 +9097,27 @@ exports[`Application root should render without crashing 1`] = `
                               },
                               "SUBJECT_REQUIRED": "Subject is Required",
                               "TITLE": "Contact Us",
+                            },
+                            "PAGE_ARTICLE": Object {
+                              "FOOTER": Object {
+                                "SUBTITLE": "Write us a letter and we will reply as soon as possible.",
+                                "TITLE": "Do you still need help with your question?",
+                              },
+                            },
+                            "PAGE_FAQ": Object {
+                              "PORTFOLIO": Object {
+                                "SUBTITLE": "Frequently asked questions about portfolio and addresses",
+                                "TITLE": "Portfolio",
+                              },
+                            },
+                            "PAGE_SUPPORT": Object {
+                              "CATEGORIES": Object {
+                                "HELPFUL": "Most Helpful",
+                                "NEWEST": "Newest",
+                                "POPULAR": "Most Popular",
+                              },
+                              "SUBTITLE": "Do you need any help? Find it in our archive or write to us",
+                              "TITLE": "Help & Support",
                             },
                           },
                           "OFFLINE": Object {
@@ -8971,18 +9193,6 @@ exports[`Application root should render without crashing 1`] = `
                               "DISCLAIMER": "By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.",
                               "TITLE": "Advanced Mode Disclaimer",
                             },
-                          },
-                          "SUPPORT": Object {
-                            "CONTACT_US": "Contact us",
-                            "FAQ_PORTFOLIO_SUBTITLE": "Frequently asked questions about portfolio and addresses",
-                            "FAQ_PORTFOLIO_TITLE": "Portfolio",
-                            "FOOTER_HELP_SUBTITLE": "Write us a letter and we will reply as soon as possible.",
-                            "FOOTER_HELP_TITLE": "Do you still need help with you question?",
-                            "HELPFUL_CATEGORY_TITLE": "Most Helpful",
-                            "HELP_SUPPORT_SUBTITLE": "Do you need any help? Find it in our archive or write to us",
-                            "HELP_SUPPORT_TITLE": "Help & Support",
-                            "NEWEST_CATEGORY_TITLE": "Newest",
-                            "POPULAR_CATEGORY_TITLE": "Most Popular",
                           },
                           "TRANSACTION": Object {
                             "ACCOUNT": "Account",
@@ -9287,6 +9497,7 @@ exports[`Application root should render without crashing 1`] = `
                                   "YOUR_EXCHANGE_LIST": "Your Exchange List",
                                 },
                                 "HELP": Object {
+                                  "CONTACT_US": "Contact us",
                                   "MODAL_CONTACT_US": Object {
                                     "DESCRIPTION": "We'd be happy to answer your questions",
                                     "FIELD_EMAIL": "Email",
@@ -9300,6 +9511,27 @@ exports[`Application root should render without crashing 1`] = `
                                     },
                                     "SUBJECT_REQUIRED": "Subject is Required",
                                     "TITLE": "Contact Us",
+                                  },
+                                  "PAGE_ARTICLE": Object {
+                                    "FOOTER": Object {
+                                      "SUBTITLE": "Write us a letter and we will reply as soon as possible.",
+                                      "TITLE": "Do you still need help with your question?",
+                                    },
+                                  },
+                                  "PAGE_FAQ": Object {
+                                    "PORTFOLIO": Object {
+                                      "SUBTITLE": "Frequently asked questions about portfolio and addresses",
+                                      "TITLE": "Portfolio",
+                                    },
+                                  },
+                                  "PAGE_SUPPORT": Object {
+                                    "CATEGORIES": Object {
+                                      "HELPFUL": "Most Helpful",
+                                      "NEWEST": "Newest",
+                                      "POPULAR": "Most Popular",
+                                    },
+                                    "SUBTITLE": "Do you need any help? Find it in our archive or write to us",
+                                    "TITLE": "Help & Support",
                                   },
                                 },
                                 "OFFLINE": Object {
@@ -9375,18 +9607,6 @@ exports[`Application root should render without crashing 1`] = `
                                     "DISCLAIMER": "By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.",
                                     "TITLE": "Advanced Mode Disclaimer",
                                   },
-                                },
-                                "SUPPORT": Object {
-                                  "CONTACT_US": "Contact us",
-                                  "FAQ_PORTFOLIO_SUBTITLE": "Frequently asked questions about portfolio and addresses",
-                                  "FAQ_PORTFOLIO_TITLE": "Portfolio",
-                                  "FOOTER_HELP_SUBTITLE": "Write us a letter and we will reply as soon as possible.",
-                                  "FOOTER_HELP_TITLE": "Do you still need help with you question?",
-                                  "HELPFUL_CATEGORY_TITLE": "Most Helpful",
-                                  "HELP_SUPPORT_SUBTITLE": "Do you need any help? Find it in our archive or write to us",
-                                  "HELP_SUPPORT_TITLE": "Help & Support",
-                                  "NEWEST_CATEGORY_TITLE": "Newest",
-                                  "POPULAR_CATEGORY_TITLE": "Most Popular",
                                 },
                                 "TRANSACTION": Object {
                                   "ACCOUNT": "Account",
@@ -9679,6 +9899,7 @@ exports[`Application root should render without crashing 1`] = `
                                 "YOUR_EXCHANGE_LIST": "Your Exchange List",
                               },
                               "HELP": Object {
+                                "CONTACT_US": "Contact us",
                                 "MODAL_CONTACT_US": Object {
                                   "DESCRIPTION": "We'd be happy to answer your questions",
                                   "FIELD_EMAIL": "Email",
@@ -9692,6 +9913,27 @@ exports[`Application root should render without crashing 1`] = `
                                   },
                                   "SUBJECT_REQUIRED": "Subject is Required",
                                   "TITLE": "Contact Us",
+                                },
+                                "PAGE_ARTICLE": Object {
+                                  "FOOTER": Object {
+                                    "SUBTITLE": "Write us a letter and we will reply as soon as possible.",
+                                    "TITLE": "Do you still need help with your question?",
+                                  },
+                                },
+                                "PAGE_FAQ": Object {
+                                  "PORTFOLIO": Object {
+                                    "SUBTITLE": "Frequently asked questions about portfolio and addresses",
+                                    "TITLE": "Portfolio",
+                                  },
+                                },
+                                "PAGE_SUPPORT": Object {
+                                  "CATEGORIES": Object {
+                                    "HELPFUL": "Most Helpful",
+                                    "NEWEST": "Newest",
+                                    "POPULAR": "Most Popular",
+                                  },
+                                  "SUBTITLE": "Do you need any help? Find it in our archive or write to us",
+                                  "TITLE": "Help & Support",
                                 },
                               },
                               "OFFLINE": Object {
@@ -9767,18 +10009,6 @@ exports[`Application root should render without crashing 1`] = `
                                   "DISCLAIMER": "By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.",
                                   "TITLE": "Advanced Mode Disclaimer",
                                 },
-                              },
-                              "SUPPORT": Object {
-                                "CONTACT_US": "Contact us",
-                                "FAQ_PORTFOLIO_SUBTITLE": "Frequently asked questions about portfolio and addresses",
-                                "FAQ_PORTFOLIO_TITLE": "Portfolio",
-                                "FOOTER_HELP_SUBTITLE": "Write us a letter and we will reply as soon as possible.",
-                                "FOOTER_HELP_TITLE": "Do you still need help with you question?",
-                                "HELPFUL_CATEGORY_TITLE": "Most Helpful",
-                                "HELP_SUPPORT_SUBTITLE": "Do you need any help? Find it in our archive or write to us",
-                                "HELP_SUPPORT_TITLE": "Help & Support",
-                                "NEWEST_CATEGORY_TITLE": "Newest",
-                                "POPULAR_CATEGORY_TITLE": "Most Popular",
                               },
                               "TRANSACTION": Object {
                                 "ACCOUNT": "Account",
@@ -10083,6 +10313,7 @@ exports[`Application root should render without crashing 1`] = `
                                   "YOUR_EXCHANGE_LIST": "Your Exchange List",
                                 },
                                 "HELP": Object {
+                                  "CONTACT_US": "Contact us",
                                   "MODAL_CONTACT_US": Object {
                                     "DESCRIPTION": "We'd be happy to answer your questions",
                                     "FIELD_EMAIL": "Email",
@@ -10096,6 +10327,27 @@ exports[`Application root should render without crashing 1`] = `
                                     },
                                     "SUBJECT_REQUIRED": "Subject is Required",
                                     "TITLE": "Contact Us",
+                                  },
+                                  "PAGE_ARTICLE": Object {
+                                    "FOOTER": Object {
+                                      "SUBTITLE": "Write us a letter and we will reply as soon as possible.",
+                                      "TITLE": "Do you still need help with your question?",
+                                    },
+                                  },
+                                  "PAGE_FAQ": Object {
+                                    "PORTFOLIO": Object {
+                                      "SUBTITLE": "Frequently asked questions about portfolio and addresses",
+                                      "TITLE": "Portfolio",
+                                    },
+                                  },
+                                  "PAGE_SUPPORT": Object {
+                                    "CATEGORIES": Object {
+                                      "HELPFUL": "Most Helpful",
+                                      "NEWEST": "Newest",
+                                      "POPULAR": "Most Popular",
+                                    },
+                                    "SUBTITLE": "Do you need any help? Find it in our archive or write to us",
+                                    "TITLE": "Help & Support",
                                   },
                                 },
                                 "OFFLINE": Object {
@@ -10171,18 +10423,6 @@ exports[`Application root should render without crashing 1`] = `
                                     "DISCLAIMER": "By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.",
                                     "TITLE": "Advanced Mode Disclaimer",
                                   },
-                                },
-                                "SUPPORT": Object {
-                                  "CONTACT_US": "Contact us",
-                                  "FAQ_PORTFOLIO_SUBTITLE": "Frequently asked questions about portfolio and addresses",
-                                  "FAQ_PORTFOLIO_TITLE": "Portfolio",
-                                  "FOOTER_HELP_SUBTITLE": "Write us a letter and we will reply as soon as possible.",
-                                  "FOOTER_HELP_TITLE": "Do you still need help with you question?",
-                                  "HELPFUL_CATEGORY_TITLE": "Most Helpful",
-                                  "HELP_SUPPORT_SUBTITLE": "Do you need any help? Find it in our archive or write to us",
-                                  "HELP_SUPPORT_TITLE": "Help & Support",
-                                  "NEWEST_CATEGORY_TITLE": "Newest",
-                                  "POPULAR_CATEGORY_TITLE": "Most Popular",
                                 },
                                 "TRANSACTION": Object {
                                   "ACCOUNT": "Account",
@@ -10470,6 +10710,7 @@ exports[`Application root should render without crashing 1`] = `
                                 "YOUR_EXCHANGE_LIST": "Your Exchange List",
                               },
                               "HELP": Object {
+                                "CONTACT_US": "Contact us",
                                 "MODAL_CONTACT_US": Object {
                                   "DESCRIPTION": "We'd be happy to answer your questions",
                                   "FIELD_EMAIL": "Email",
@@ -10483,6 +10724,27 @@ exports[`Application root should render without crashing 1`] = `
                                   },
                                   "SUBJECT_REQUIRED": "Subject is Required",
                                   "TITLE": "Contact Us",
+                                },
+                                "PAGE_ARTICLE": Object {
+                                  "FOOTER": Object {
+                                    "SUBTITLE": "Write us a letter and we will reply as soon as possible.",
+                                    "TITLE": "Do you still need help with your question?",
+                                  },
+                                },
+                                "PAGE_FAQ": Object {
+                                  "PORTFOLIO": Object {
+                                    "SUBTITLE": "Frequently asked questions about portfolio and addresses",
+                                    "TITLE": "Portfolio",
+                                  },
+                                },
+                                "PAGE_SUPPORT": Object {
+                                  "CATEGORIES": Object {
+                                    "HELPFUL": "Most Helpful",
+                                    "NEWEST": "Newest",
+                                    "POPULAR": "Most Popular",
+                                  },
+                                  "SUBTITLE": "Do you need any help? Find it in our archive or write to us",
+                                  "TITLE": "Help & Support",
                                 },
                               },
                               "OFFLINE": Object {
@@ -10558,18 +10820,6 @@ exports[`Application root should render without crashing 1`] = `
                                   "DISCLAIMER": "By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.",
                                   "TITLE": "Advanced Mode Disclaimer",
                                 },
-                              },
-                              "SUPPORT": Object {
-                                "CONTACT_US": "Contact us",
-                                "FAQ_PORTFOLIO_SUBTITLE": "Frequently asked questions about portfolio and addresses",
-                                "FAQ_PORTFOLIO_TITLE": "Portfolio",
-                                "FOOTER_HELP_SUBTITLE": "Write us a letter and we will reply as soon as possible.",
-                                "FOOTER_HELP_TITLE": "Do you still need help with you question?",
-                                "HELPFUL_CATEGORY_TITLE": "Most Helpful",
-                                "HELP_SUPPORT_SUBTITLE": "Do you need any help? Find it in our archive or write to us",
-                                "HELP_SUPPORT_TITLE": "Help & Support",
-                                "NEWEST_CATEGORY_TITLE": "Newest",
-                                "POPULAR_CATEGORY_TITLE": "Most Popular",
                               },
                               "TRANSACTION": Object {
                                 "ACCOUNT": "Account",
@@ -10866,6 +11116,7 @@ exports[`Application root should render without crashing 1`] = `
                                 "YOUR_EXCHANGE_LIST": "Your Exchange List",
                               },
                               "HELP": Object {
+                                "CONTACT_US": "Contact us",
                                 "MODAL_CONTACT_US": Object {
                                   "DESCRIPTION": "We'd be happy to answer your questions",
                                   "FIELD_EMAIL": "Email",
@@ -10879,6 +11130,27 @@ exports[`Application root should render without crashing 1`] = `
                                   },
                                   "SUBJECT_REQUIRED": "Subject is Required",
                                   "TITLE": "Contact Us",
+                                },
+                                "PAGE_ARTICLE": Object {
+                                  "FOOTER": Object {
+                                    "SUBTITLE": "Write us a letter and we will reply as soon as possible.",
+                                    "TITLE": "Do you still need help with your question?",
+                                  },
+                                },
+                                "PAGE_FAQ": Object {
+                                  "PORTFOLIO": Object {
+                                    "SUBTITLE": "Frequently asked questions about portfolio and addresses",
+                                    "TITLE": "Portfolio",
+                                  },
+                                },
+                                "PAGE_SUPPORT": Object {
+                                  "CATEGORIES": Object {
+                                    "HELPFUL": "Most Helpful",
+                                    "NEWEST": "Newest",
+                                    "POPULAR": "Most Popular",
+                                  },
+                                  "SUBTITLE": "Do you need any help? Find it in our archive or write to us",
+                                  "TITLE": "Help & Support",
                                 },
                               },
                               "OFFLINE": Object {
@@ -10954,18 +11226,6 @@ exports[`Application root should render without crashing 1`] = `
                                   "DISCLAIMER": "By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.",
                                   "TITLE": "Advanced Mode Disclaimer",
                                 },
-                              },
-                              "SUPPORT": Object {
-                                "CONTACT_US": "Contact us",
-                                "FAQ_PORTFOLIO_SUBTITLE": "Frequently asked questions about portfolio and addresses",
-                                "FAQ_PORTFOLIO_TITLE": "Portfolio",
-                                "FOOTER_HELP_SUBTITLE": "Write us a letter and we will reply as soon as possible.",
-                                "FOOTER_HELP_TITLE": "Do you still need help with you question?",
-                                "HELPFUL_CATEGORY_TITLE": "Most Helpful",
-                                "HELP_SUPPORT_SUBTITLE": "Do you need any help? Find it in our archive or write to us",
-                                "HELP_SUPPORT_TITLE": "Help & Support",
-                                "NEWEST_CATEGORY_TITLE": "Newest",
-                                "POPULAR_CATEGORY_TITLE": "Most Popular",
                               },
                               "TRANSACTION": Object {
                                 "ACCOUNT": "Account",
@@ -11265,6 +11525,7 @@ exports[`Application root should render without crashing 1`] = `
                                     "YOUR_EXCHANGE_LIST": "Your Exchange List",
                                   },
                                   "HELP": Object {
+                                    "CONTACT_US": "Contact us",
                                     "MODAL_CONTACT_US": Object {
                                       "DESCRIPTION": "We'd be happy to answer your questions",
                                       "FIELD_EMAIL": "Email",
@@ -11278,6 +11539,27 @@ exports[`Application root should render without crashing 1`] = `
                                       },
                                       "SUBJECT_REQUIRED": "Subject is Required",
                                       "TITLE": "Contact Us",
+                                    },
+                                    "PAGE_ARTICLE": Object {
+                                      "FOOTER": Object {
+                                        "SUBTITLE": "Write us a letter and we will reply as soon as possible.",
+                                        "TITLE": "Do you still need help with your question?",
+                                      },
+                                    },
+                                    "PAGE_FAQ": Object {
+                                      "PORTFOLIO": Object {
+                                        "SUBTITLE": "Frequently asked questions about portfolio and addresses",
+                                        "TITLE": "Portfolio",
+                                      },
+                                    },
+                                    "PAGE_SUPPORT": Object {
+                                      "CATEGORIES": Object {
+                                        "HELPFUL": "Most Helpful",
+                                        "NEWEST": "Newest",
+                                        "POPULAR": "Most Popular",
+                                      },
+                                      "SUBTITLE": "Do you need any help? Find it in our archive or write to us",
+                                      "TITLE": "Help & Support",
                                     },
                                   },
                                   "OFFLINE": Object {
@@ -11353,18 +11635,6 @@ exports[`Application root should render without crashing 1`] = `
                                       "DISCLAIMER": "By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.",
                                       "TITLE": "Advanced Mode Disclaimer",
                                     },
-                                  },
-                                  "SUPPORT": Object {
-                                    "CONTACT_US": "Contact us",
-                                    "FAQ_PORTFOLIO_SUBTITLE": "Frequently asked questions about portfolio and addresses",
-                                    "FAQ_PORTFOLIO_TITLE": "Portfolio",
-                                    "FOOTER_HELP_SUBTITLE": "Write us a letter and we will reply as soon as possible.",
-                                    "FOOTER_HELP_TITLE": "Do you still need help with you question?",
-                                    "HELPFUL_CATEGORY_TITLE": "Most Helpful",
-                                    "HELP_SUPPORT_SUBTITLE": "Do you need any help? Find it in our archive or write to us",
-                                    "HELP_SUPPORT_TITLE": "Help & Support",
-                                    "NEWEST_CATEGORY_TITLE": "Newest",
-                                    "POPULAR_CATEGORY_TITLE": "Most Popular",
                                   },
                                   "TRANSACTION": Object {
                                     "ACCOUNT": "Account",
@@ -11652,6 +11922,7 @@ exports[`Application root should render without crashing 1`] = `
                                   "YOUR_EXCHANGE_LIST": "Your Exchange List",
                                 },
                                 "HELP": Object {
+                                  "CONTACT_US": "Contact us",
                                   "MODAL_CONTACT_US": Object {
                                     "DESCRIPTION": "We'd be happy to answer your questions",
                                     "FIELD_EMAIL": "Email",
@@ -11665,6 +11936,27 @@ exports[`Application root should render without crashing 1`] = `
                                     },
                                     "SUBJECT_REQUIRED": "Subject is Required",
                                     "TITLE": "Contact Us",
+                                  },
+                                  "PAGE_ARTICLE": Object {
+                                    "FOOTER": Object {
+                                      "SUBTITLE": "Write us a letter and we will reply as soon as possible.",
+                                      "TITLE": "Do you still need help with your question?",
+                                    },
+                                  },
+                                  "PAGE_FAQ": Object {
+                                    "PORTFOLIO": Object {
+                                      "SUBTITLE": "Frequently asked questions about portfolio and addresses",
+                                      "TITLE": "Portfolio",
+                                    },
+                                  },
+                                  "PAGE_SUPPORT": Object {
+                                    "CATEGORIES": Object {
+                                      "HELPFUL": "Most Helpful",
+                                      "NEWEST": "Newest",
+                                      "POPULAR": "Most Popular",
+                                    },
+                                    "SUBTITLE": "Do you need any help? Find it in our archive or write to us",
+                                    "TITLE": "Help & Support",
                                   },
                                 },
                                 "OFFLINE": Object {
@@ -11740,18 +12032,6 @@ exports[`Application root should render without crashing 1`] = `
                                     "DISCLAIMER": "By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.",
                                     "TITLE": "Advanced Mode Disclaimer",
                                   },
-                                },
-                                "SUPPORT": Object {
-                                  "CONTACT_US": "Contact us",
-                                  "FAQ_PORTFOLIO_SUBTITLE": "Frequently asked questions about portfolio and addresses",
-                                  "FAQ_PORTFOLIO_TITLE": "Portfolio",
-                                  "FOOTER_HELP_SUBTITLE": "Write us a letter and we will reply as soon as possible.",
-                                  "FOOTER_HELP_TITLE": "Do you still need help with you question?",
-                                  "HELPFUL_CATEGORY_TITLE": "Most Helpful",
-                                  "HELP_SUPPORT_SUBTITLE": "Do you need any help? Find it in our archive or write to us",
-                                  "HELP_SUPPORT_TITLE": "Help & Support",
-                                  "NEWEST_CATEGORY_TITLE": "Newest",
-                                  "POPULAR_CATEGORY_TITLE": "Most Popular",
                                 },
                                 "TRANSACTION": Object {
                                   "ACCOUNT": "Account",
@@ -12049,6 +12329,7 @@ exports[`Application root should render without crashing 1`] = `
                                   "YOUR_EXCHANGE_LIST": "Your Exchange List",
                                 },
                                 "HELP": Object {
+                                  "CONTACT_US": "Contact us",
                                   "MODAL_CONTACT_US": Object {
                                     "DESCRIPTION": "We'd be happy to answer your questions",
                                     "FIELD_EMAIL": "Email",
@@ -12062,6 +12343,27 @@ exports[`Application root should render without crashing 1`] = `
                                     },
                                     "SUBJECT_REQUIRED": "Subject is Required",
                                     "TITLE": "Contact Us",
+                                  },
+                                  "PAGE_ARTICLE": Object {
+                                    "FOOTER": Object {
+                                      "SUBTITLE": "Write us a letter and we will reply as soon as possible.",
+                                      "TITLE": "Do you still need help with your question?",
+                                    },
+                                  },
+                                  "PAGE_FAQ": Object {
+                                    "PORTFOLIO": Object {
+                                      "SUBTITLE": "Frequently asked questions about portfolio and addresses",
+                                      "TITLE": "Portfolio",
+                                    },
+                                  },
+                                  "PAGE_SUPPORT": Object {
+                                    "CATEGORIES": Object {
+                                      "HELPFUL": "Most Helpful",
+                                      "NEWEST": "Newest",
+                                      "POPULAR": "Most Popular",
+                                    },
+                                    "SUBTITLE": "Do you need any help? Find it in our archive or write to us",
+                                    "TITLE": "Help & Support",
                                   },
                                 },
                                 "OFFLINE": Object {
@@ -12137,18 +12439,6 @@ exports[`Application root should render without crashing 1`] = `
                                     "DISCLAIMER": "By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.",
                                     "TITLE": "Advanced Mode Disclaimer",
                                   },
-                                },
-                                "SUPPORT": Object {
-                                  "CONTACT_US": "Contact us",
-                                  "FAQ_PORTFOLIO_SUBTITLE": "Frequently asked questions about portfolio and addresses",
-                                  "FAQ_PORTFOLIO_TITLE": "Portfolio",
-                                  "FOOTER_HELP_SUBTITLE": "Write us a letter and we will reply as soon as possible.",
-                                  "FOOTER_HELP_TITLE": "Do you still need help with you question?",
-                                  "HELPFUL_CATEGORY_TITLE": "Most Helpful",
-                                  "HELP_SUPPORT_SUBTITLE": "Do you need any help? Find it in our archive or write to us",
-                                  "HELP_SUPPORT_TITLE": "Help & Support",
-                                  "NEWEST_CATEGORY_TITLE": "Newest",
-                                  "POPULAR_CATEGORY_TITLE": "Most Popular",
                                 },
                                 "TRANSACTION": Object {
                                   "ACCOUNT": "Account",
@@ -13338,6 +13628,7 @@ exports[`Application root should render without crashing 1`] = `
                             "YOUR_EXCHANGE_LIST": "Your Exchange List",
                           },
                           "HELP": Object {
+                            "CONTACT_US": "Contact us",
                             "MODAL_CONTACT_US": Object {
                               "DESCRIPTION": "We'd be happy to answer your questions",
                               "FIELD_EMAIL": "Email",
@@ -13351,6 +13642,27 @@ exports[`Application root should render without crashing 1`] = `
                               },
                               "SUBJECT_REQUIRED": "Subject is Required",
                               "TITLE": "Contact Us",
+                            },
+                            "PAGE_ARTICLE": Object {
+                              "FOOTER": Object {
+                                "SUBTITLE": "Write us a letter and we will reply as soon as possible.",
+                                "TITLE": "Do you still need help with your question?",
+                              },
+                            },
+                            "PAGE_FAQ": Object {
+                              "PORTFOLIO": Object {
+                                "SUBTITLE": "Frequently asked questions about portfolio and addresses",
+                                "TITLE": "Portfolio",
+                              },
+                            },
+                            "PAGE_SUPPORT": Object {
+                              "CATEGORIES": Object {
+                                "HELPFUL": "Most Helpful",
+                                "NEWEST": "Newest",
+                                "POPULAR": "Most Popular",
+                              },
+                              "SUBTITLE": "Do you need any help? Find it in our archive or write to us",
+                              "TITLE": "Help & Support",
                             },
                           },
                           "OFFLINE": Object {
@@ -13426,18 +13738,6 @@ exports[`Application root should render without crashing 1`] = `
                               "DISCLAIMER": "By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.",
                               "TITLE": "Advanced Mode Disclaimer",
                             },
-                          },
-                          "SUPPORT": Object {
-                            "CONTACT_US": "Contact us",
-                            "FAQ_PORTFOLIO_SUBTITLE": "Frequently asked questions about portfolio and addresses",
-                            "FAQ_PORTFOLIO_TITLE": "Portfolio",
-                            "FOOTER_HELP_SUBTITLE": "Write us a letter and we will reply as soon as possible.",
-                            "FOOTER_HELP_TITLE": "Do you still need help with you question?",
-                            "HELPFUL_CATEGORY_TITLE": "Most Helpful",
-                            "HELP_SUPPORT_SUBTITLE": "Do you need any help? Find it in our archive or write to us",
-                            "HELP_SUPPORT_TITLE": "Help & Support",
-                            "NEWEST_CATEGORY_TITLE": "Newest",
-                            "POPULAR_CATEGORY_TITLE": "Most Popular",
                           },
                           "TRANSACTION": Object {
                             "ACCOUNT": "Account",
@@ -13674,6 +13974,7 @@ exports[`Application root should render without crashing 1`] = `
                           "YOUR_EXCHANGE_LIST": "Your Exchange List",
                         },
                         "HELP": Object {
+                          "CONTACT_US": "Contact us",
                           "MODAL_CONTACT_US": Object {
                             "DESCRIPTION": "We'd be happy to answer your questions",
                             "FIELD_EMAIL": "Email",
@@ -13687,6 +13988,27 @@ exports[`Application root should render without crashing 1`] = `
                             },
                             "SUBJECT_REQUIRED": "Subject is Required",
                             "TITLE": "Contact Us",
+                          },
+                          "PAGE_ARTICLE": Object {
+                            "FOOTER": Object {
+                              "SUBTITLE": "Write us a letter and we will reply as soon as possible.",
+                              "TITLE": "Do you still need help with your question?",
+                            },
+                          },
+                          "PAGE_FAQ": Object {
+                            "PORTFOLIO": Object {
+                              "SUBTITLE": "Frequently asked questions about portfolio and addresses",
+                              "TITLE": "Portfolio",
+                            },
+                          },
+                          "PAGE_SUPPORT": Object {
+                            "CATEGORIES": Object {
+                              "HELPFUL": "Most Helpful",
+                              "NEWEST": "Newest",
+                              "POPULAR": "Most Popular",
+                            },
+                            "SUBTITLE": "Do you need any help? Find it in our archive or write to us",
+                            "TITLE": "Help & Support",
                           },
                         },
                         "OFFLINE": Object {
@@ -13762,18 +14084,6 @@ exports[`Application root should render without crashing 1`] = `
                             "DISCLAIMER": "By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.",
                             "TITLE": "Advanced Mode Disclaimer",
                           },
-                        },
-                        "SUPPORT": Object {
-                          "CONTACT_US": "Contact us",
-                          "FAQ_PORTFOLIO_SUBTITLE": "Frequently asked questions about portfolio and addresses",
-                          "FAQ_PORTFOLIO_TITLE": "Portfolio",
-                          "FOOTER_HELP_SUBTITLE": "Write us a letter and we will reply as soon as possible.",
-                          "FOOTER_HELP_TITLE": "Do you still need help with you question?",
-                          "HELPFUL_CATEGORY_TITLE": "Most Helpful",
-                          "HELP_SUPPORT_SUBTITLE": "Do you need any help? Find it in our archive or write to us",
-                          "HELP_SUPPORT_TITLE": "Help & Support",
-                          "NEWEST_CATEGORY_TITLE": "Newest",
-                          "POPULAR_CATEGORY_TITLE": "Most Popular",
                         },
                         "TRANSACTION": Object {
                           "ACCOUNT": "Account",
@@ -14065,6 +14375,7 @@ exports[`Application root should render without crashing 1`] = `
                               "YOUR_EXCHANGE_LIST": "Your Exchange List",
                             },
                             "HELP": Object {
+                              "CONTACT_US": "Contact us",
                               "MODAL_CONTACT_US": Object {
                                 "DESCRIPTION": "We'd be happy to answer your questions",
                                 "FIELD_EMAIL": "Email",
@@ -14078,6 +14389,27 @@ exports[`Application root should render without crashing 1`] = `
                                 },
                                 "SUBJECT_REQUIRED": "Subject is Required",
                                 "TITLE": "Contact Us",
+                              },
+                              "PAGE_ARTICLE": Object {
+                                "FOOTER": Object {
+                                  "SUBTITLE": "Write us a letter and we will reply as soon as possible.",
+                                  "TITLE": "Do you still need help with your question?",
+                                },
+                              },
+                              "PAGE_FAQ": Object {
+                                "PORTFOLIO": Object {
+                                  "SUBTITLE": "Frequently asked questions about portfolio and addresses",
+                                  "TITLE": "Portfolio",
+                                },
+                              },
+                              "PAGE_SUPPORT": Object {
+                                "CATEGORIES": Object {
+                                  "HELPFUL": "Most Helpful",
+                                  "NEWEST": "Newest",
+                                  "POPULAR": "Most Popular",
+                                },
+                                "SUBTITLE": "Do you need any help? Find it in our archive or write to us",
+                                "TITLE": "Help & Support",
                               },
                             },
                             "OFFLINE": Object {
@@ -14153,18 +14485,6 @@ exports[`Application root should render without crashing 1`] = `
                                 "DISCLAIMER": "By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.",
                                 "TITLE": "Advanced Mode Disclaimer",
                               },
-                            },
-                            "SUPPORT": Object {
-                              "CONTACT_US": "Contact us",
-                              "FAQ_PORTFOLIO_SUBTITLE": "Frequently asked questions about portfolio and addresses",
-                              "FAQ_PORTFOLIO_TITLE": "Portfolio",
-                              "FOOTER_HELP_SUBTITLE": "Write us a letter and we will reply as soon as possible.",
-                              "FOOTER_HELP_TITLE": "Do you still need help with you question?",
-                              "HELPFUL_CATEGORY_TITLE": "Most Helpful",
-                              "HELP_SUPPORT_SUBTITLE": "Do you need any help? Find it in our archive or write to us",
-                              "HELP_SUPPORT_TITLE": "Help & Support",
-                              "NEWEST_CATEGORY_TITLE": "Newest",
-                              "POPULAR_CATEGORY_TITLE": "Most Popular",
                             },
                             "TRANSACTION": Object {
                               "ACCOUNT": "Account",
@@ -14457,6 +14777,7 @@ exports[`Application root should render without crashing 1`] = `
                             "YOUR_EXCHANGE_LIST": "Your Exchange List",
                           },
                           "HELP": Object {
+                            "CONTACT_US": "Contact us",
                             "MODAL_CONTACT_US": Object {
                               "DESCRIPTION": "We'd be happy to answer your questions",
                               "FIELD_EMAIL": "Email",
@@ -14470,6 +14791,27 @@ exports[`Application root should render without crashing 1`] = `
                               },
                               "SUBJECT_REQUIRED": "Subject is Required",
                               "TITLE": "Contact Us",
+                            },
+                            "PAGE_ARTICLE": Object {
+                              "FOOTER": Object {
+                                "SUBTITLE": "Write us a letter and we will reply as soon as possible.",
+                                "TITLE": "Do you still need help with your question?",
+                              },
+                            },
+                            "PAGE_FAQ": Object {
+                              "PORTFOLIO": Object {
+                                "SUBTITLE": "Frequently asked questions about portfolio and addresses",
+                                "TITLE": "Portfolio",
+                              },
+                            },
+                            "PAGE_SUPPORT": Object {
+                              "CATEGORIES": Object {
+                                "HELPFUL": "Most Helpful",
+                                "NEWEST": "Newest",
+                                "POPULAR": "Most Popular",
+                              },
+                              "SUBTITLE": "Do you need any help? Find it in our archive or write to us",
+                              "TITLE": "Help & Support",
                             },
                           },
                           "OFFLINE": Object {
@@ -14545,18 +14887,6 @@ exports[`Application root should render without crashing 1`] = `
                               "DISCLAIMER": "By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.",
                               "TITLE": "Advanced Mode Disclaimer",
                             },
-                          },
-                          "SUPPORT": Object {
-                            "CONTACT_US": "Contact us",
-                            "FAQ_PORTFOLIO_SUBTITLE": "Frequently asked questions about portfolio and addresses",
-                            "FAQ_PORTFOLIO_TITLE": "Portfolio",
-                            "FOOTER_HELP_SUBTITLE": "Write us a letter and we will reply as soon as possible.",
-                            "FOOTER_HELP_TITLE": "Do you still need help with you question?",
-                            "HELPFUL_CATEGORY_TITLE": "Most Helpful",
-                            "HELP_SUPPORT_SUBTITLE": "Do you need any help? Find it in our archive or write to us",
-                            "HELP_SUPPORT_TITLE": "Help & Support",
-                            "NEWEST_CATEGORY_TITLE": "Newest",
-                            "POPULAR_CATEGORY_TITLE": "Most Popular",
                           },
                           "TRANSACTION": Object {
                             "ACCOUNT": "Account",
@@ -14862,6 +15192,7 @@ exports[`Application root should render without crashing 1`] = `
                               "YOUR_EXCHANGE_LIST": "Your Exchange List",
                             },
                             "HELP": Object {
+                              "CONTACT_US": "Contact us",
                               "MODAL_CONTACT_US": Object {
                                 "DESCRIPTION": "We'd be happy to answer your questions",
                                 "FIELD_EMAIL": "Email",
@@ -14875,6 +15206,27 @@ exports[`Application root should render without crashing 1`] = `
                                 },
                                 "SUBJECT_REQUIRED": "Subject is Required",
                                 "TITLE": "Contact Us",
+                              },
+                              "PAGE_ARTICLE": Object {
+                                "FOOTER": Object {
+                                  "SUBTITLE": "Write us a letter and we will reply as soon as possible.",
+                                  "TITLE": "Do you still need help with your question?",
+                                },
+                              },
+                              "PAGE_FAQ": Object {
+                                "PORTFOLIO": Object {
+                                  "SUBTITLE": "Frequently asked questions about portfolio and addresses",
+                                  "TITLE": "Portfolio",
+                                },
+                              },
+                              "PAGE_SUPPORT": Object {
+                                "CATEGORIES": Object {
+                                  "HELPFUL": "Most Helpful",
+                                  "NEWEST": "Newest",
+                                  "POPULAR": "Most Popular",
+                                },
+                                "SUBTITLE": "Do you need any help? Find it in our archive or write to us",
+                                "TITLE": "Help & Support",
                               },
                             },
                             "OFFLINE": Object {
@@ -14950,18 +15302,6 @@ exports[`Application root should render without crashing 1`] = `
                                 "DISCLAIMER": "By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.",
                                 "TITLE": "Advanced Mode Disclaimer",
                               },
-                            },
-                            "SUPPORT": Object {
-                              "CONTACT_US": "Contact us",
-                              "FAQ_PORTFOLIO_SUBTITLE": "Frequently asked questions about portfolio and addresses",
-                              "FAQ_PORTFOLIO_TITLE": "Portfolio",
-                              "FOOTER_HELP_SUBTITLE": "Write us a letter and we will reply as soon as possible.",
-                              "FOOTER_HELP_TITLE": "Do you still need help with you question?",
-                              "HELPFUL_CATEGORY_TITLE": "Most Helpful",
-                              "HELP_SUPPORT_SUBTITLE": "Do you need any help? Find it in our archive or write to us",
-                              "HELP_SUPPORT_TITLE": "Help & Support",
-                              "NEWEST_CATEGORY_TITLE": "Newest",
-                              "POPULAR_CATEGORY_TITLE": "Most Popular",
                             },
                             "TRANSACTION": Object {
                               "ACCOUNT": "Account",
@@ -15249,6 +15589,7 @@ exports[`Application root should render without crashing 1`] = `
                             "YOUR_EXCHANGE_LIST": "Your Exchange List",
                           },
                           "HELP": Object {
+                            "CONTACT_US": "Contact us",
                             "MODAL_CONTACT_US": Object {
                               "DESCRIPTION": "We'd be happy to answer your questions",
                               "FIELD_EMAIL": "Email",
@@ -15262,6 +15603,27 @@ exports[`Application root should render without crashing 1`] = `
                               },
                               "SUBJECT_REQUIRED": "Subject is Required",
                               "TITLE": "Contact Us",
+                            },
+                            "PAGE_ARTICLE": Object {
+                              "FOOTER": Object {
+                                "SUBTITLE": "Write us a letter and we will reply as soon as possible.",
+                                "TITLE": "Do you still need help with your question?",
+                              },
+                            },
+                            "PAGE_FAQ": Object {
+                              "PORTFOLIO": Object {
+                                "SUBTITLE": "Frequently asked questions about portfolio and addresses",
+                                "TITLE": "Portfolio",
+                              },
+                            },
+                            "PAGE_SUPPORT": Object {
+                              "CATEGORIES": Object {
+                                "HELPFUL": "Most Helpful",
+                                "NEWEST": "Newest",
+                                "POPULAR": "Most Popular",
+                              },
+                              "SUBTITLE": "Do you need any help? Find it in our archive or write to us",
+                              "TITLE": "Help & Support",
                             },
                           },
                           "OFFLINE": Object {
@@ -15337,18 +15699,6 @@ exports[`Application root should render without crashing 1`] = `
                               "DISCLAIMER": "By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.",
                               "TITLE": "Advanced Mode Disclaimer",
                             },
-                          },
-                          "SUPPORT": Object {
-                            "CONTACT_US": "Contact us",
-                            "FAQ_PORTFOLIO_SUBTITLE": "Frequently asked questions about portfolio and addresses",
-                            "FAQ_PORTFOLIO_TITLE": "Portfolio",
-                            "FOOTER_HELP_SUBTITLE": "Write us a letter and we will reply as soon as possible.",
-                            "FOOTER_HELP_TITLE": "Do you still need help with you question?",
-                            "HELPFUL_CATEGORY_TITLE": "Most Helpful",
-                            "HELP_SUPPORT_SUBTITLE": "Do you need any help? Find it in our archive or write to us",
-                            "HELP_SUPPORT_TITLE": "Help & Support",
-                            "NEWEST_CATEGORY_TITLE": "Newest",
-                            "POPULAR_CATEGORY_TITLE": "Most Popular",
                           },
                           "TRANSACTION": Object {
                             "ACCOUNT": "Account",
@@ -15646,6 +15996,7 @@ exports[`Application root should render without crashing 1`] = `
                             "YOUR_EXCHANGE_LIST": "Your Exchange List",
                           },
                           "HELP": Object {
+                            "CONTACT_US": "Contact us",
                             "MODAL_CONTACT_US": Object {
                               "DESCRIPTION": "We'd be happy to answer your questions",
                               "FIELD_EMAIL": "Email",
@@ -15659,6 +16010,27 @@ exports[`Application root should render without crashing 1`] = `
                               },
                               "SUBJECT_REQUIRED": "Subject is Required",
                               "TITLE": "Contact Us",
+                            },
+                            "PAGE_ARTICLE": Object {
+                              "FOOTER": Object {
+                                "SUBTITLE": "Write us a letter and we will reply as soon as possible.",
+                                "TITLE": "Do you still need help with your question?",
+                              },
+                            },
+                            "PAGE_FAQ": Object {
+                              "PORTFOLIO": Object {
+                                "SUBTITLE": "Frequently asked questions about portfolio and addresses",
+                                "TITLE": "Portfolio",
+                              },
+                            },
+                            "PAGE_SUPPORT": Object {
+                              "CATEGORIES": Object {
+                                "HELPFUL": "Most Helpful",
+                                "NEWEST": "Newest",
+                                "POPULAR": "Most Popular",
+                              },
+                              "SUBTITLE": "Do you need any help? Find it in our archive or write to us",
+                              "TITLE": "Help & Support",
                             },
                           },
                           "OFFLINE": Object {
@@ -15734,18 +16106,6 @@ exports[`Application root should render without crashing 1`] = `
                               "DISCLAIMER": "By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.",
                               "TITLE": "Advanced Mode Disclaimer",
                             },
-                          },
-                          "SUPPORT": Object {
-                            "CONTACT_US": "Contact us",
-                            "FAQ_PORTFOLIO_SUBTITLE": "Frequently asked questions about portfolio and addresses",
-                            "FAQ_PORTFOLIO_TITLE": "Portfolio",
-                            "FOOTER_HELP_SUBTITLE": "Write us a letter and we will reply as soon as possible.",
-                            "FOOTER_HELP_TITLE": "Do you still need help with you question?",
-                            "HELPFUL_CATEGORY_TITLE": "Most Helpful",
-                            "HELP_SUPPORT_SUBTITLE": "Do you need any help? Find it in our archive or write to us",
-                            "HELP_SUPPORT_TITLE": "Help & Support",
-                            "NEWEST_CATEGORY_TITLE": "Newest",
-                            "POPULAR_CATEGORY_TITLE": "Most Popular",
                           },
                           "TRANSACTION": Object {
                             "ACCOUNT": "Account",
@@ -16038,6 +16398,7 @@ exports[`Application root should render without crashing 1`] = `
                           "YOUR_EXCHANGE_LIST": "Your Exchange List",
                         },
                         "HELP": Object {
+                          "CONTACT_US": "Contact us",
                           "MODAL_CONTACT_US": Object {
                             "DESCRIPTION": "We'd be happy to answer your questions",
                             "FIELD_EMAIL": "Email",
@@ -16051,6 +16412,27 @@ exports[`Application root should render without crashing 1`] = `
                             },
                             "SUBJECT_REQUIRED": "Subject is Required",
                             "TITLE": "Contact Us",
+                          },
+                          "PAGE_ARTICLE": Object {
+                            "FOOTER": Object {
+                              "SUBTITLE": "Write us a letter and we will reply as soon as possible.",
+                              "TITLE": "Do you still need help with your question?",
+                            },
+                          },
+                          "PAGE_FAQ": Object {
+                            "PORTFOLIO": Object {
+                              "SUBTITLE": "Frequently asked questions about portfolio and addresses",
+                              "TITLE": "Portfolio",
+                            },
+                          },
+                          "PAGE_SUPPORT": Object {
+                            "CATEGORIES": Object {
+                              "HELPFUL": "Most Helpful",
+                              "NEWEST": "Newest",
+                              "POPULAR": "Most Popular",
+                            },
+                            "SUBTITLE": "Do you need any help? Find it in our archive or write to us",
+                            "TITLE": "Help & Support",
                           },
                         },
                         "OFFLINE": Object {
@@ -16126,18 +16508,6 @@ exports[`Application root should render without crashing 1`] = `
                             "DISCLAIMER": "By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.",
                             "TITLE": "Advanced Mode Disclaimer",
                           },
-                        },
-                        "SUPPORT": Object {
-                          "CONTACT_US": "Contact us",
-                          "FAQ_PORTFOLIO_SUBTITLE": "Frequently asked questions about portfolio and addresses",
-                          "FAQ_PORTFOLIO_TITLE": "Portfolio",
-                          "FOOTER_HELP_SUBTITLE": "Write us a letter and we will reply as soon as possible.",
-                          "FOOTER_HELP_TITLE": "Do you still need help with you question?",
-                          "HELPFUL_CATEGORY_TITLE": "Most Helpful",
-                          "HELP_SUPPORT_SUBTITLE": "Do you need any help? Find it in our archive or write to us",
-                          "HELP_SUPPORT_TITLE": "Help & Support",
-                          "NEWEST_CATEGORY_TITLE": "Newest",
-                          "POPULAR_CATEGORY_TITLE": "Most Popular",
                         },
                         "TRANSACTION": Object {
                           "ACCOUNT": "Account",
@@ -16435,6 +16805,7 @@ exports[`Application root should render without crashing 1`] = `
                                 "YOUR_EXCHANGE_LIST": "Your Exchange List",
                               },
                               "HELP": Object {
+                                "CONTACT_US": "Contact us",
                                 "MODAL_CONTACT_US": Object {
                                   "DESCRIPTION": "We'd be happy to answer your questions",
                                   "FIELD_EMAIL": "Email",
@@ -16448,6 +16819,27 @@ exports[`Application root should render without crashing 1`] = `
                                   },
                                   "SUBJECT_REQUIRED": "Subject is Required",
                                   "TITLE": "Contact Us",
+                                },
+                                "PAGE_ARTICLE": Object {
+                                  "FOOTER": Object {
+                                    "SUBTITLE": "Write us a letter and we will reply as soon as possible.",
+                                    "TITLE": "Do you still need help with your question?",
+                                  },
+                                },
+                                "PAGE_FAQ": Object {
+                                  "PORTFOLIO": Object {
+                                    "SUBTITLE": "Frequently asked questions about portfolio and addresses",
+                                    "TITLE": "Portfolio",
+                                  },
+                                },
+                                "PAGE_SUPPORT": Object {
+                                  "CATEGORIES": Object {
+                                    "HELPFUL": "Most Helpful",
+                                    "NEWEST": "Newest",
+                                    "POPULAR": "Most Popular",
+                                  },
+                                  "SUBTITLE": "Do you need any help? Find it in our archive or write to us",
+                                  "TITLE": "Help & Support",
                                 },
                               },
                               "OFFLINE": Object {
@@ -16523,18 +16915,6 @@ exports[`Application root should render without crashing 1`] = `
                                   "DISCLAIMER": "By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.",
                                   "TITLE": "Advanced Mode Disclaimer",
                                 },
-                              },
-                              "SUPPORT": Object {
-                                "CONTACT_US": "Contact us",
-                                "FAQ_PORTFOLIO_SUBTITLE": "Frequently asked questions about portfolio and addresses",
-                                "FAQ_PORTFOLIO_TITLE": "Portfolio",
-                                "FOOTER_HELP_SUBTITLE": "Write us a letter and we will reply as soon as possible.",
-                                "FOOTER_HELP_TITLE": "Do you still need help with you question?",
-                                "HELPFUL_CATEGORY_TITLE": "Most Helpful",
-                                "HELP_SUPPORT_SUBTITLE": "Do you need any help? Find it in our archive or write to us",
-                                "HELP_SUPPORT_TITLE": "Help & Support",
-                                "NEWEST_CATEGORY_TITLE": "Newest",
-                                "POPULAR_CATEGORY_TITLE": "Most Popular",
                               },
                               "TRANSACTION": Object {
                                 "ACCOUNT": "Account",
@@ -16822,6 +17202,7 @@ exports[`Application root should render without crashing 1`] = `
                               "YOUR_EXCHANGE_LIST": "Your Exchange List",
                             },
                             "HELP": Object {
+                              "CONTACT_US": "Contact us",
                               "MODAL_CONTACT_US": Object {
                                 "DESCRIPTION": "We'd be happy to answer your questions",
                                 "FIELD_EMAIL": "Email",
@@ -16835,6 +17216,27 @@ exports[`Application root should render without crashing 1`] = `
                                 },
                                 "SUBJECT_REQUIRED": "Subject is Required",
                                 "TITLE": "Contact Us",
+                              },
+                              "PAGE_ARTICLE": Object {
+                                "FOOTER": Object {
+                                  "SUBTITLE": "Write us a letter and we will reply as soon as possible.",
+                                  "TITLE": "Do you still need help with your question?",
+                                },
+                              },
+                              "PAGE_FAQ": Object {
+                                "PORTFOLIO": Object {
+                                  "SUBTITLE": "Frequently asked questions about portfolio and addresses",
+                                  "TITLE": "Portfolio",
+                                },
+                              },
+                              "PAGE_SUPPORT": Object {
+                                "CATEGORIES": Object {
+                                  "HELPFUL": "Most Helpful",
+                                  "NEWEST": "Newest",
+                                  "POPULAR": "Most Popular",
+                                },
+                                "SUBTITLE": "Do you need any help? Find it in our archive or write to us",
+                                "TITLE": "Help & Support",
                               },
                             },
                             "OFFLINE": Object {
@@ -16910,18 +17312,6 @@ exports[`Application root should render without crashing 1`] = `
                                 "DISCLAIMER": "By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.",
                                 "TITLE": "Advanced Mode Disclaimer",
                               },
-                            },
-                            "SUPPORT": Object {
-                              "CONTACT_US": "Contact us",
-                              "FAQ_PORTFOLIO_SUBTITLE": "Frequently asked questions about portfolio and addresses",
-                              "FAQ_PORTFOLIO_TITLE": "Portfolio",
-                              "FOOTER_HELP_SUBTITLE": "Write us a letter and we will reply as soon as possible.",
-                              "FOOTER_HELP_TITLE": "Do you still need help with you question?",
-                              "HELPFUL_CATEGORY_TITLE": "Most Helpful",
-                              "HELP_SUPPORT_SUBTITLE": "Do you need any help? Find it in our archive or write to us",
-                              "HELP_SUPPORT_TITLE": "Help & Support",
-                              "NEWEST_CATEGORY_TITLE": "Newest",
-                              "POPULAR_CATEGORY_TITLE": "Most Popular",
                             },
                             "TRANSACTION": Object {
                               "ACCOUNT": "Account",
@@ -17219,6 +17609,7 @@ exports[`Application root should render without crashing 1`] = `
                               "YOUR_EXCHANGE_LIST": "Your Exchange List",
                             },
                             "HELP": Object {
+                              "CONTACT_US": "Contact us",
                               "MODAL_CONTACT_US": Object {
                                 "DESCRIPTION": "We'd be happy to answer your questions",
                                 "FIELD_EMAIL": "Email",
@@ -17232,6 +17623,27 @@ exports[`Application root should render without crashing 1`] = `
                                 },
                                 "SUBJECT_REQUIRED": "Subject is Required",
                                 "TITLE": "Contact Us",
+                              },
+                              "PAGE_ARTICLE": Object {
+                                "FOOTER": Object {
+                                  "SUBTITLE": "Write us a letter and we will reply as soon as possible.",
+                                  "TITLE": "Do you still need help with your question?",
+                                },
+                              },
+                              "PAGE_FAQ": Object {
+                                "PORTFOLIO": Object {
+                                  "SUBTITLE": "Frequently asked questions about portfolio and addresses",
+                                  "TITLE": "Portfolio",
+                                },
+                              },
+                              "PAGE_SUPPORT": Object {
+                                "CATEGORIES": Object {
+                                  "HELPFUL": "Most Helpful",
+                                  "NEWEST": "Newest",
+                                  "POPULAR": "Most Popular",
+                                },
+                                "SUBTITLE": "Do you need any help? Find it in our archive or write to us",
+                                "TITLE": "Help & Support",
                               },
                             },
                             "OFFLINE": Object {
@@ -17307,18 +17719,6 @@ exports[`Application root should render without crashing 1`] = `
                                 "DISCLAIMER": "By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.",
                                 "TITLE": "Advanced Mode Disclaimer",
                               },
-                            },
-                            "SUPPORT": Object {
-                              "CONTACT_US": "Contact us",
-                              "FAQ_PORTFOLIO_SUBTITLE": "Frequently asked questions about portfolio and addresses",
-                              "FAQ_PORTFOLIO_TITLE": "Portfolio",
-                              "FOOTER_HELP_SUBTITLE": "Write us a letter and we will reply as soon as possible.",
-                              "FOOTER_HELP_TITLE": "Do you still need help with you question?",
-                              "HELPFUL_CATEGORY_TITLE": "Most Helpful",
-                              "HELP_SUPPORT_SUBTITLE": "Do you need any help? Find it in our archive or write to us",
-                              "HELP_SUPPORT_TITLE": "Help & Support",
-                              "NEWEST_CATEGORY_TITLE": "Newest",
-                              "POPULAR_CATEGORY_TITLE": "Most Popular",
                             },
                             "TRANSACTION": Object {
                               "ACCOUNT": "Account",
@@ -18508,6 +18908,7 @@ exports[`Application root should render without crashing 1`] = `
                         "YOUR_EXCHANGE_LIST": "Your Exchange List",
                       },
                       "HELP": Object {
+                        "CONTACT_US": "Contact us",
                         "MODAL_CONTACT_US": Object {
                           "DESCRIPTION": "We'd be happy to answer your questions",
                           "FIELD_EMAIL": "Email",
@@ -18521,6 +18922,27 @@ exports[`Application root should render without crashing 1`] = `
                           },
                           "SUBJECT_REQUIRED": "Subject is Required",
                           "TITLE": "Contact Us",
+                        },
+                        "PAGE_ARTICLE": Object {
+                          "FOOTER": Object {
+                            "SUBTITLE": "Write us a letter and we will reply as soon as possible.",
+                            "TITLE": "Do you still need help with your question?",
+                          },
+                        },
+                        "PAGE_FAQ": Object {
+                          "PORTFOLIO": Object {
+                            "SUBTITLE": "Frequently asked questions about portfolio and addresses",
+                            "TITLE": "Portfolio",
+                          },
+                        },
+                        "PAGE_SUPPORT": Object {
+                          "CATEGORIES": Object {
+                            "HELPFUL": "Most Helpful",
+                            "NEWEST": "Newest",
+                            "POPULAR": "Most Popular",
+                          },
+                          "SUBTITLE": "Do you need any help? Find it in our archive or write to us",
+                          "TITLE": "Help & Support",
                         },
                       },
                       "OFFLINE": Object {
@@ -18596,18 +19018,6 @@ exports[`Application root should render without crashing 1`] = `
                           "DISCLAIMER": "By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.",
                           "TITLE": "Advanced Mode Disclaimer",
                         },
-                      },
-                      "SUPPORT": Object {
-                        "CONTACT_US": "Contact us",
-                        "FAQ_PORTFOLIO_SUBTITLE": "Frequently asked questions about portfolio and addresses",
-                        "FAQ_PORTFOLIO_TITLE": "Portfolio",
-                        "FOOTER_HELP_SUBTITLE": "Write us a letter and we will reply as soon as possible.",
-                        "FOOTER_HELP_TITLE": "Do you still need help with you question?",
-                        "HELPFUL_CATEGORY_TITLE": "Most Helpful",
-                        "HELP_SUPPORT_SUBTITLE": "Do you need any help? Find it in our archive or write to us",
-                        "HELP_SUPPORT_TITLE": "Help & Support",
-                        "NEWEST_CATEGORY_TITLE": "Newest",
-                        "POPULAR_CATEGORY_TITLE": "Most Popular",
                       },
                       "TRANSACTION": Object {
                         "ACCOUNT": "Account",
