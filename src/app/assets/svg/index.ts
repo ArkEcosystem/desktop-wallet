@@ -35,6 +35,7 @@ import { ReactComponent as Grant } from "./grant.svg";
 import { ReactComponent as Grid } from "./grid.svg";
 import { ReactComponent as Import } from "./import.svg";
 import { ReactComponent as Ipfs } from "./ipfs.svg";
+import { ReactComponent as Key } from "./key.svg";
 import { ReactComponent as Ledger } from "./ledger.svg";
 import { ReactComponent as Link } from "./link.svg";
 import { ReactComponent as List } from "./list.svg";
@@ -86,8 +87,8 @@ export const SvgCollection: any = {
 	ArrowUp,
 	Back,
 	Bitcoin,
-	Business,
 	Bridgechain,
+	Business,
 	Checkmark,
 	ChevronDown,
 	Close,
@@ -110,6 +111,7 @@ export const SvgCollection: any = {
 	Grid,
 	Import,
 	Ipfs,
+	Key,
 	Ledger,
 	Link,
 	List,
