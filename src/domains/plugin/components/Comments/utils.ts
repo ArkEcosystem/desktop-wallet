@@ -1,9 +1,9 @@
-import moment from "moment";
+import { DateTime } from "@arkecosystem/platform-sdk-intl";
 
 export const getDateDifferenceFromNow = (targetDate: string): string => {
-	const currentDateObj = moment();
-	const dateToCompare = moment(targetDate);
-	const dateDifference = currentDateObj.diff(dateToCompare, "days");
+	const currentDateObj = DateTime.make();
+	const dateToCompare = DateTime.make(targetDate);
+	const dateDifference = currentDateObj.diffInDays(dateToCompare);
 
 	const dateComplement = dateDifference > 1 ? "days" : "day";
 
