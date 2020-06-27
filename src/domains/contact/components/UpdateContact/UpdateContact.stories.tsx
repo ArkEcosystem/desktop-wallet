@@ -1,5 +1,6 @@
 import React from "react";
 
+import { contact2 as contact } from "../../data";
 import { UpdateContact } from "./UpdateContact";
 
 export default {
@@ -25,14 +26,6 @@ export const Default = () => {
 		},
 	];
 
-	const contact = {
-		name: () => "Oleg Gelo",
-		addresses: () => [
-			{ coin: "Btc", network: "Bitcoin", address: "15pyr1HRAxpq3x64duXav1csmyCtXXu9G8", avatar: "test1" },
-			{ coin: "Bch", network: "Bitcoin Cash", address: "15pyr1HRAxpq3x64duXav1csmyCtXXu9G8", avatar: "test1" },
-		],
-	};
-
 	return (
 		<UpdateContact
 			isOpen={true}
@@ -40,6 +33,7 @@ export const Default = () => {
 			contact={contact}
 			onClose={() => alert("closed")}
 			onCancel={() => alert("cancelled")}
+			onDelete={() => alert("deleted")}
 			onSave={() => alert("saved")}
 		/>
 	);

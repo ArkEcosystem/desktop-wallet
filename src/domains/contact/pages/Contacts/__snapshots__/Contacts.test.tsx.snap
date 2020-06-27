@@ -300,6 +300,139 @@ exports[`Contacts should render with contacts 1`] = `
               >
                 <tr>
                   <td
+                    class="text-center border-b border-dashed border-theme-neutral-200"
+                  >
+                    <div
+                      class="flex items-center space-x-3"
+                    >
+                      <div
+                        class="sc-fzpans bVDTSU bg-theme-primary-600 border-theme-primary-600"
+                      >
+                        <span
+                          class="text-sm text-theme-background"
+                        >
+                          RO
+                        </span>
+                      </div>
+                      <span
+                        class="font-semibold"
+                      >
+                        ROBank
+                      </span>
+                    </div>
+                  </td>
+                  <td
+                    class="text-center border-b border-dashed border-theme-neutral-200"
+                  >
+                    <div
+                      class="sc-fzpans bVDTSU border-ark-mainnet"
+                    >
+                      <div
+                        class="sc-AxirZ iQaTP text-ark-mainnet"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          ark.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </td>
+                  <td
+                    class="py-6 border-b border-dashed border-theme-neutral-200"
+                  >
+                    <div
+                      class="flex items-center space-x-3"
+                    >
+                      <div
+                        class="sc-fzpans cyrTyJ"
+                      />
+                      <div
+                        class="inline-block truncate"
+                      >
+                        <span
+                          class="text-theme-neutral-800 font-semibold text-base"
+                          data-testid="address__wallet-address"
+                        >
+                          ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT
+                        </span>
+                      </div>
+                    </div>
+                  </td>
+                  <td
+                    class="text-sm font-bold text-center border-b border-dashed border-theme-neutral-200 space-x-2"
+                  >
+                    <div
+                      class="sc-fzpans bVDTSU border-black"
+                    >
+                      <div
+                        class="sc-AxirZ dCVESD"
+                        height="25"
+                        width="25"
+                      >
+                        <svg>
+                          delegate.svg
+                        </svg>
+                      </div>
+                    </div>
+                    <div
+                      class="sc-fzpans bVDTSU border-black"
+                    >
+                      <div
+                        class="sc-AxirZ dCVESD"
+                        height="25"
+                        width="25"
+                      >
+                        <svg>
+                          business.svg
+                        </svg>
+                      </div>
+                    </div>
+                    <div
+                      class="sc-fzpans bVDTSU border-black"
+                    >
+                      <div
+                        class="sc-AxirZ dCVESD"
+                        height="25"
+                        width="25"
+                      >
+                        <svg>
+                          bridgechain.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </td>
+                  <td
+                    class="border-b border-dashed border-theme-neutral-200"
+                  >
+                    <div
+                      class="relative"
+                      data-testid="dropdown__toggle"
+                    >
+                      <div
+                        class="float-right"
+                      >
+                        <button
+                          class="sc-AxjAm kwTlRm"
+                          color="primary"
+                          type="button"
+                        >
+                          <div
+                            class="sc-AxirZ eEbZjj"
+                            height="20"
+                            width="20"
+                          >
+                            <svg>
+                              settings.svg
+                            </svg>
+                          </div>
+                        </button>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td
                     class="text-center "
                   >
                     <div
@@ -362,9 +495,19 @@ exports[`Contacts should render with contacts 1`] = `
                   <td
                     class="text-sm font-bold text-center border-b border-dashed border-theme-neutral-200 space-x-2"
                   >
-                    <span>
-                      TODO
-                    </span>
+                    <div
+                      class="sc-fzpans bVDTSU border-black"
+                    >
+                      <div
+                        class="sc-AxirZ dCVESD"
+                        height="25"
+                        width="25"
+                      >
+                        <svg>
+                          delegate.svg
+                        </svg>
+                      </div>
+                    </div>
                   </td>
                   <td
                     class="border-b border-dashed border-theme-neutral-200"
@@ -397,10 +540,10 @@ exports[`Contacts should render with contacts 1`] = `
                 </tr>
                 <tr>
                   <td
-                    class="text-center border-b border-dashed border-theme-neutral-200"
+                    class="text-center "
                   />
                   <td
-                    class="text-center border-b border-dashed border-theme-neutral-200"
+                    class="text-center "
                   >
                     <div
                       class="sc-fzpans bVDTSU border-bitcoin-mainnet"
@@ -439,39 +582,73 @@ exports[`Contacts should render with contacts 1`] = `
                   </td>
                   <td
                     class="text-sm font-bold text-center border-b border-dashed border-theme-neutral-200 space-x-2"
-                  >
-                    <span>
-                      TODO
-                    </span>
-                  </td>
+                  />
                   <td
                     class="border-b border-dashed border-theme-neutral-200"
+                  />
+                </tr>
+                <tr>
+                  <td
+                    class="text-center border-b border-dashed border-theme-neutral-200"
+                  />
+                  <td
+                    class="text-center border-b border-dashed border-theme-neutral-200"
                   >
                     <div
-                      class="relative"
-                      data-testid="dropdown__toggle"
+                      class="sc-fzpans bVDTSU border-ethereum-mainnet"
                     >
                       <div
-                        class="float-right"
+                        class="sc-AxirZ iQaTP text-ethereum-mainnet"
+                        height="1em"
+                        width="1em"
                       >
-                        <button
-                          class="sc-AxjAm kwTlRm"
-                          color="primary"
-                          type="button"
-                        >
-                          <div
-                            class="sc-AxirZ eEbZjj"
-                            height="20"
-                            width="20"
-                          >
-                            <svg>
-                              settings.svg
-                            </svg>
-                          </div>
-                        </button>
+                        <svg>
+                          eth.svg
+                        </svg>
                       </div>
                     </div>
                   </td>
+                  <td
+                    class="py-6 border-b border-dashed border-theme-neutral-200"
+                  >
+                    <div
+                      class="flex items-center space-x-3"
+                    >
+                      <div
+                        class="sc-fzpans cyrTyJ"
+                      />
+                      <div
+                        class="inline-block truncate"
+                      >
+                        <span
+                          class="text-theme-neutral-800 font-semibold text-base"
+                          data-testid="address__wallet-address"
+                        >
+                          0x5e8f7a63e31c759ef0ad5e71594e838b380d7c33
+                        </span>
+                      </div>
+                    </div>
+                  </td>
+                  <td
+                    class="text-sm font-bold text-center border-b border-dashed border-theme-neutral-200 space-x-2"
+                  >
+                    <div
+                      class="sc-fzpans bVDTSU border-black"
+                    >
+                      <div
+                        class="sc-AxirZ dCVESD"
+                        height="25"
+                        width="25"
+                      >
+                        <svg>
+                          business.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </td>
+                  <td
+                    class="border-b border-dashed border-theme-neutral-200"
+                  />
                 </tr>
               </tbody>
             </table>
