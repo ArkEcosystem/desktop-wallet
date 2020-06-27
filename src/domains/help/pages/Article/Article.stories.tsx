@@ -4,7 +4,7 @@ import { article } from "../../data";
 import { Article } from "./Article";
 
 export default {
-	title: "Support / Pages / Article",
+	title: "Help / Pages / Article",
 };
 
 export const Default = () => {

@@ -109,12 +109,12 @@ export const Article = ({ title, category, categoryIcon, views, sections, image 
 				<div className="max-w-xl mx-auto">
 					<div className="flex">
 						<div className="w-3/4">
-							<h3>{t("SUPPORT.FOOTER_HELP_TITLE")}</h3>
-							<p className="text-theme-neutral-600">{t("SUPPORT.FOOTER_HELP_SUBTITLE")}</p>
+							<h3>{t("HELP.PAGE_ARTICLE.FOOTER.TITLE")}</h3>
+							<p className="text-theme-neutral-600">{t("HELP.PAGE_ARTICLE.FOOTER.SUBTITLE")}</p>
 						</div>
 						<div className="flex justify-end w-1/4">
 							<div className="my-auto">
-								<Button color="primary">{t("SUPPORT.CONTACT_US")}</Button>
+								<Button color="primary">{t("HELP.CONTACT_US")}</Button>
 							</div>
 						</div>
 					</div>
