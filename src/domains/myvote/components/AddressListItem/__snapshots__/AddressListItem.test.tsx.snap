@@ -1,0 +1,283 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddressListItem should emit action on select button 1`] = `
+<DocumentFragment>
+  <table>
+    <tbody>
+      <tr
+        class="border-b border-theme-neutral-200"
+      >
+        <td
+          class="py-5"
+        >
+          <div
+            class="Avatar__AvatarStyled-yiil9n-0 fympLW"
+            data-testid="Avatar"
+          />
+        </td>
+        <td
+          class="py-5"
+        >
+          <div
+            class="inline-block truncate"
+          >
+            <span
+              class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-base"
+              data-testid="address__wallet-name"
+            >
+              OLEBank
+            </span>
+            <span
+              class="text-theme-neutral-400 font-semibold text-base"
+              data-testid="address__wallet-address"
+            >
+              ASuusXSW9...6T9GQ3kqT
+            </span>
+          </div>
+        </td>
+        <td
+          class="w-20 py-5"
+        >
+          <div
+            class="flex justify-center h-full"
+          >
+            <div
+              class="sc-AxiKw dzBdqj text-theme-neutral-600"
+              height="1em"
+              width="1em"
+            >
+              <svg>
+                multisig.svg
+              </svg>
+            </div>
+          </div>
+        </td>
+        <td
+          class="py-5 font-bold text-theme-neutral-dark"
+        >
+          1,000,000 ARK
+        </td>
+        <td
+          class="py-5"
+        >
+          <div
+            class="Avatar__AvatarStyled-yiil9n-0 fympLW"
+            data-testid="Avatar"
+          />
+        </td>
+        <td
+          class="py-5 font-bold"
+        >
+          <span>
+            Delegate 1
+          </span>
+        </td>
+        <td
+          class="py-5 font-bold text-theme-neutral-dark"
+        >
+          <span>
+            #2
+          </span>
+        </td>
+        <td
+          class="py-5"
+        >
+          <div
+            class="flex justify-center h-full"
+          >
+            <a
+              href="https://marketsquare.ark.io"
+              rel="noreferrer"
+              target="_blank"
+            >
+              <div
+                class="sc-AxiKw dzBdqj text-xl text-theme-primary"
+                height="1em"
+                width="1em"
+              >
+                <svg>
+                  msq.svg
+                </svg>
+              </div>
+            </a>
+          </div>
+        </td>
+        <td
+          class="py-5"
+        >
+          <div
+            class="flex justify-center h-full"
+          >
+            <div
+              class="sc-AxiKw dzBdqj text-theme-success"
+              height="1em"
+              width="1em"
+            >
+              <svg>
+                ok.svg
+              </svg>
+            </div>
+          </div>
+        </td>
+        <td
+          class="py-5"
+        >
+          <div
+            class="text-right"
+          >
+            <button
+              class="sc-AxjAm ddJBbC"
+              color="primary"
+              data-testid="AddressListItem__button--unvote"
+              type="button"
+            >
+              Select
+            </button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</DocumentFragment>
+`;
+
+exports[`AddressListItem should render 1`] = `
+<DocumentFragment>
+  <table>
+    <tbody>
+      <tr
+        class="border-b border-theme-neutral-200"
+      >
+        <td
+          class="py-5"
+        >
+          <div
+            class="Avatar__AvatarStyled-yiil9n-0 fympLW"
+            data-testid="Avatar"
+          />
+        </td>
+        <td
+          class="py-5"
+        >
+          <div
+            class="inline-block truncate"
+          >
+            <span
+              class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-base"
+              data-testid="address__wallet-name"
+            >
+              OLEBank
+            </span>
+            <span
+              class="text-theme-neutral-400 font-semibold text-base"
+              data-testid="address__wallet-address"
+            >
+              ASuusXSW9...6T9GQ3kqT
+            </span>
+          </div>
+        </td>
+        <td
+          class="w-20 py-5"
+        >
+          <div
+            class="flex justify-center h-full"
+          >
+            <div
+              class="sc-AxiKw dzBdqj text-theme-neutral-600"
+              height="1em"
+              width="1em"
+            >
+              <svg>
+                multisig.svg
+              </svg>
+            </div>
+          </div>
+        </td>
+        <td
+          class="py-5 font-bold text-theme-neutral-dark"
+        >
+          1,000,000 ARK
+        </td>
+        <td
+          class="py-5"
+        >
+          <div
+            class="Avatar__AvatarStyled-yiil9n-0 fympLW"
+            data-testid="Avatar"
+          />
+        </td>
+        <td
+          class="py-5 font-bold"
+        >
+          <span>
+            Delegate 1
+          </span>
+        </td>
+        <td
+          class="py-5 font-bold text-theme-neutral-dark"
+        >
+          <span>
+            #2
+          </span>
+        </td>
+        <td
+          class="py-5"
+        >
+          <div
+            class="flex justify-center h-full"
+          >
+            <a
+              href="https://marketsquare.ark.io"
+              rel="noreferrer"
+              target="_blank"
+            >
+              <div
+                class="sc-AxiKw dzBdqj text-xl text-theme-primary"
+                height="1em"
+                width="1em"
+              >
+                <svg>
+                  msq.svg
+                </svg>
+              </div>
+            </a>
+          </div>
+        </td>
+        <td
+          class="py-5"
+        >
+          <div
+            class="flex justify-center h-full"
+          >
+            <div
+              class="sc-AxiKw dzBdqj text-theme-success"
+              height="1em"
+              width="1em"
+            >
+              <svg>
+                ok.svg
+              </svg>
+            </div>
+          </div>
+        </td>
+        <td
+          class="py-5"
+        >
+          <div
+            class="text-right"
+          >
+            <button
+              class="sc-AxjAm ddJBbC"
+              color="primary"
+              data-testid="AddressListItem__button--unvote"
+              type="button"
+            >
+              Select
+            </button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</DocumentFragment>
+`;

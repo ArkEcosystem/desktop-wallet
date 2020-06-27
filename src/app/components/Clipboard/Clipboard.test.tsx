@@ -1,13 +1,24 @@
-import { fireEvent, render } from "@testing-library/react";
+/* eslint-disable @typescript-eslint/require-await */
+import { act, fireEvent, render } from "@testing-library/react";
 import React from "react";
 
 import { Clipboard } from "./Clipboard";
 
 describe("Clipboard", () => {
+	beforeAll(() => {
+		navigator.clipboard = {
+			writeText: jest.fn().mockResolvedValue(),
+		};
+	});
+
+	afterAll(() => {
+		navigator.clipboard.writeText.mockRestore();
+	});
+
 	it("should render not render without children", () => {
 		const { asFragment, getByTestId } = render(<Clipboard />);
 
-		expect(() => getByTestId("clipboard__inner")).toThrow(/Unable to find an element by/);
+		expect(() => getByTestId("clipboard__wrapper")).toThrow(/Unable to find an element by/);
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -18,39 +29,63 @@ describe("Clipboard", () => {
 			</Clipboard>,
 		);
 
-		expect(getByTestId("clipboard__inner")).toHaveTextContent("Hello!");
-		expect(getByTestId("clipboard__textarea")).toBeTruthy();
+		expect(getByTestId("clipboard__wrapper")).toHaveTextContent("Hello!");
 		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it.each([
+		["string", "test string"],
+		["object", { hello: "world" }],
+	])("should work with data with type '%s'", async (dataType, data) => {
+		jest.useFakeTimers();
+
+		const onError = jest.fn();
+
+		const { getByTestId } = render(
+			<Clipboard data={data} options={{ resetAfter: 1000, onError }}>
+				<span>Hello!</span>
+			</Clipboard>,
+		);
+
+		await act(async () => {
+			fireEvent.click(getByTestId("clipboard__wrapper"));
+		});
+
+		await act(async () => {
+			jest.runAllTimers();
+		});
+
+		expect(onError).not.toHaveBeenCalled();
 	});
 
 	describe("on success", () => {
 		beforeAll(() => {
-			document.execCommand = jest.fn();
+			navigator.clipboard = {
+				writeText: jest.fn().mockResolvedValue(),
+			};
 		});
 
 		afterAll(() => {
-			document.execCommand.mockRestore();
+			navigator.clipboard.writeText.mockRestore();
 		});
 
-		it("should execute the onSuccess callback if given", () => {
-			document.execCommand = jest.fn();
-
+		it("should execute the onSuccess callback if given", async () => {
 			const onSuccess = jest.fn();
 
 			const { getByTestId } = render(
-				<Clipboard onSuccess={onSuccess}>
+				<Clipboard options={{ onSuccess }}>
 					<span>Hello!</span>
 				</Clipboard>,
 			);
 
-			fireEvent.click(getByTestId("clipboard__inner"));
+			await act(async () => {
+				fireEvent.click(getByTestId("clipboard__wrapper"));
+			});
 
 			expect(onSuccess).toHaveBeenCalled();
 		});
 
-		it("should execute no callback if missing", () => {
-			document.execCommand = jest.fn();
-
+		it("should execute no callback if missing", async () => {
 			const onSuccess = jest.fn();
 
 			const { getByTestId } = render(
@@ -59,7 +94,9 @@ describe("Clipboard", () => {
 				</Clipboard>,
 			);
 
-			fireEvent.click(getByTestId("clipboard__inner"));
+			await act(async () => {
+				fireEvent.click(getByTestId("clipboard__wrapper"));
+			});
 
 			expect(onSuccess).not.toHaveBeenCalled();
 		});
@@ -67,30 +104,32 @@ describe("Clipboard", () => {
 
 	describe("on error", () => {
 		beforeAll(() => {
-			document.execCommand = jest.fn().mockImplementation(() => {
-				throw new Error();
-			});
+			navigator.clipboard = {
+				writeText: jest.fn().mockRejectedValue(new Error()),
+			};
 		});
 
 		afterAll(() => {
-			document.execCommand.mockRestore();
+			navigator.clipboard.writeText.mockRestore();
 		});
 
-		it("should execute the onError callback if given", () => {
+		it("should execute the onError callback if given", async () => {
 			const onError = jest.fn();
 
 			const { getByTestId } = render(
-				<Clipboard onError={onError}>
+				<Clipboard options={{ onError }}>
 					<span>Hello!</span>
 				</Clipboard>,
 			);
 
-			fireEvent.click(getByTestId("clipboard__inner"));
+			await act(async () => {
+				fireEvent.click(getByTestId("clipboard__wrapper"));
+			});
 
 			expect(onError).toHaveBeenCalled();
 		});
 
-		it("should execute no callback if missing", () => {
+		it("should execute no callback if missing", async () => {
 			const onError = jest.fn();
 
 			const { getByTestId } = render(
@@ -99,7 +138,9 @@ describe("Clipboard", () => {
 				</Clipboard>,
 			);
 
-			fireEvent.click(getByTestId("clipboard__inner"));
+			await act(async () => {
+				fireEvent.click(getByTestId("clipboard__wrapper"));
+			});
 
 			expect(onError).not.toHaveBeenCalled();
 		});

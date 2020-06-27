@@ -1,0 +1,294 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WalletRegistrations should render blank 1`] = `
+<DocumentFragment>
+  <section
+    class="px-12 py-8"
+    data-testid="WalletRegistrations"
+  >
+    <div
+      class="flex items-center justify-between"
+    >
+      <h2
+        class="font-bold"
+      >
+        Registrations
+      </h2>
+      <button
+        class="flex items-center px-4 py-2 font-medium rounded text-theme-neutral focus:outline-none focus:shadow-outline space-x-2"
+        data-testid="WalletRegistrations__toggle"
+      >
+        <span>
+          Hide
+        </span>
+        <span
+          class="sc-AxhCb kwTXtP"
+        >
+          <div
+            class="sc-AxiKw dzBdqj"
+            height="1em"
+            width="1em"
+          >
+            <svg>
+              chevron-down.svg
+            </svg>
+          </div>
+        </span>
+      </button>
+    </div>
+    <div
+      aria-hidden="false"
+      data-testid="Collapse"
+      style="max-height: auto; height: auto; opacity: 1; overflow: auto;"
+    >
+      <div
+        class="flex items-center justify-between px-1 py-4"
+      >
+        <div
+          class="flex items-center divide-x-1 divide-theme-neutral-light"
+        >
+          0
+        </div>
+        <div
+          class="space-x-2"
+        >
+          <button
+            class="px-5 py-3 font-semibold leading-tight rounded text-theme-primary focus:outline-none focus:shadow-outline"
+            data-testid="WalletRegistrations__show-all"
+          >
+            Show all
+          </button>
+          <button
+            class="sc-AxjAm ddJBbC"
+            color="primary"
+            data-testid="WalletRegistrations__register"
+            type="button"
+          >
+            Register
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+</DocumentFragment>
+`;
+
+exports[`WalletRegistrations should show delegate 1`] = `
+<DocumentFragment>
+  <section
+    class="px-12 py-8"
+    data-testid="WalletRegistrations"
+  >
+    <div
+      class="flex items-center justify-between"
+    >
+      <h2
+        class="font-bold"
+      >
+        Registrations
+      </h2>
+      <button
+        class="flex items-center px-4 py-2 font-medium rounded text-theme-neutral focus:outline-none focus:shadow-outline space-x-2"
+        data-testid="WalletRegistrations__toggle"
+      >
+        <span>
+          Hide
+        </span>
+        <span
+          class="sc-AxhCb kwTXtP"
+        >
+          <div
+            class="sc-AxiKw dzBdqj"
+            height="1em"
+            width="1em"
+          >
+            <svg>
+              chevron-down.svg
+            </svg>
+          </div>
+        </span>
+      </button>
+    </div>
+    <div
+      aria-hidden="false"
+      data-testid="Collapse"
+      style="max-height: auto; height: auto; opacity: 1; overflow: auto;"
+    >
+      <div
+        class="flex items-center justify-between px-1 py-4"
+      >
+        <div
+          class="flex items-center divide-x-1 divide-theme-neutral-light"
+        >
+          <div
+            class="flex items-center pr-8 space-x-4"
+          >
+            <div
+              class="flex items-center -space-x-2"
+            >
+              <div
+                class="sc-AxirZ cZokSJ border-theme-neutral-900 text-theme-neutral-900"
+              >
+                <div
+                  class="sc-AxiKw dzBdqj text-xl"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    delegate.svg
+                  </svg>
+                </div>
+              </div>
+              <div
+                class="Avatar__AvatarStyled-yiil9n-0 csmtJy"
+                data-testid="Avatar"
+              />
+            </div>
+            <div>
+              <p
+                class="text-sm font-semibold text-theme-neutral"
+              >
+                Delegate
+              </p>
+              <p
+                class="font-semibold"
+                data-testid="WalletRegistrations__delegate"
+              >
+                Test
+              </p>
+            </div>
+          </div>
+          0
+        </div>
+        <div
+          class="space-x-2"
+        >
+          <button
+            class="px-5 py-3 font-semibold leading-tight rounded text-theme-primary focus:outline-none focus:shadow-outline"
+            data-testid="WalletRegistrations__show-all"
+          >
+            Show all
+          </button>
+          <button
+            class="sc-AxjAm ddJBbC"
+            color="primary"
+            data-testid="WalletRegistrations__register"
+            type="button"
+          >
+            Register
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+</DocumentFragment>
+`;
+
+exports[`WalletRegistrations should show icons list 1`] = `
+<DocumentFragment>
+  <section
+    class="px-12 py-8"
+    data-testid="WalletRegistrations"
+  >
+    <div
+      class="flex items-center justify-between"
+    >
+      <h2
+        class="font-bold"
+      >
+        Registrations
+      </h2>
+      <button
+        class="flex items-center px-4 py-2 font-medium rounded text-theme-neutral focus:outline-none focus:shadow-outline space-x-2"
+        data-testid="WalletRegistrations__toggle"
+      >
+        <span>
+          Hide
+        </span>
+        <span
+          class="sc-AxhCb kwTXtP"
+        >
+          <div
+            class="sc-AxiKw dzBdqj"
+            height="1em"
+            width="1em"
+          >
+            <svg>
+              chevron-down.svg
+            </svg>
+          </div>
+        </span>
+      </button>
+    </div>
+    <div
+      aria-hidden="false"
+      data-testid="Collapse"
+      style="max-height: auto; height: auto; opacity: 1; overflow: auto;"
+    >
+      <div
+        class="flex items-center justify-between px-1 py-4"
+      >
+        <div
+          class="flex items-center divide-x-1 divide-theme-neutral-light"
+        >
+          <div
+            class="px-8"
+          >
+            <div
+              class="flex items-center -space-x-2"
+              data-testid="WalletRegistrations__icon-list"
+            >
+              <div
+                class="sc-AxirZ cZokSJ bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
+                data-testid="WalletRegistrations__icon-list__icon"
+              >
+                <div
+                  class="sc-AxiKw dzBdqj text-xl"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    key.svg
+                  </svg>
+                </div>
+              </div>
+              <div
+                class="sc-AxirZ cZokSJ bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
+                data-testid="WalletRegistrations__icon-list__icon"
+              >
+                <div
+                  class="sc-AxiKw dzBdqj text-xl"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    multisig.svg
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="space-x-2"
+        >
+          <button
+            class="px-5 py-3 font-semibold leading-tight rounded text-theme-primary focus:outline-none focus:shadow-outline"
+            data-testid="WalletRegistrations__show-all"
+          >
+            Show all
+          </button>
+          <button
+            class="sc-AxjAm ddJBbC"
+            color="primary"
+            data-testid="WalletRegistrations__register"
+            type="button"
+          >
+            Register
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+</DocumentFragment>
+`;
