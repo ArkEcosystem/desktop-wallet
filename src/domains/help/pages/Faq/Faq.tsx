@@ -40,8 +40,8 @@ export const Faq = ({ articles }: FaqProps) => {
 			<div className="mb-5 bg-white p-13">
 				<div className="flex">
 					<div className="w-2/3">
-						<h1>{t("SUPPORT.FAQ_PORTFOLIO_TITLE")}</h1>
-						<p className="text-theme-neutral-600">{t("SUPPORT.FAQ_PORTFOLIO_SUBTITLE")}</p>
+						<h1>{t("HELP.PAGE_FAQ.PORTFOLIO.TITLE")}</h1>
+						<p className="text-theme-neutral-600">{t("HELP.PAGE_FAQ.PORTFOLIO.SUBTITLE")}</p>
 					</div>
 					<div className="flex justify-end w-1/3">
 						<div className="my-auto cursor-pointer text-theme-primary-200">
@@ -49,7 +49,7 @@ export const Faq = ({ articles }: FaqProps) => {
 						</div>
 						<div className="h-8 mx-10 my-auto border-l border-1 border-theme-primary-100" />
 						<div className="my-auto">
-							<Button color="primary">{t("SUPPORT.CONTACT_US")}</Button>
+							<Button color="primary">{t("HELP.CONTACT_US")}</Button>
 						</div>
 					</div>
 				</div>
