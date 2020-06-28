@@ -22,11 +22,11 @@ describe("SelectAccount", () => {
 	});
 
 	it("should handle close", () => {
-		const handleClose = jest.fn();
+		const onClose = jest.fn();
 
-		const { getByTestId } = render(<SelectAccount isOpen={true} handleClose={handleClose} />);
+		const { getByTestId } = render(<SelectAccount isOpen={true} onClose={onClose} />);
 
 		fireEvent.click(getByTestId("modal__close-btn"));
-		expect(handleClose).toHaveBeenCalled();
+		expect(onClose).toHaveBeenCalled();
 	});
 });

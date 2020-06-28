@@ -25,6 +25,27 @@ export const categories = [
 	},
 ];
 
+export const searchData = [
+	{
+		title: "How do I install the plugin?",
+		category: "Plugin",
+		description:
+			"ARK Core is written in TypeScript, and it has been using Lerna to manage the development and publication of its packages and uses Node.js as the bla bla bla",
+	},
+	{
+		title: "Installing the side plugin",
+		category: "Plugin",
+		description:
+			"ARK Core is written in TypeScript, and it has been using Lerna to manage the development and publication of its packages and uses Node.js as the bla bla bla",
+	},
+	{
+		title: "If the plugin is not installed, what do we do?",
+		category: "Plugin",
+		description:
+			"ARK Core is written in TypeScript, and it has been using Lerna to manage the development and publication of its packages and uses Node.js as the bla bla bla",
+	},
+];
+
 export const helpfulArticles = [
 	{
 		title: "How to register an account?",

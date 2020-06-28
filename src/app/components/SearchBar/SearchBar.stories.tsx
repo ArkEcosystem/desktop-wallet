@@ -1,6 +1,6 @@
 import { withKnobs } from "@storybook/addon-knobs";
-import { SearchBarFilters } from "domains/search/components/SearchBarFilters";
-import { SearchBarOptions } from "domains/search/components/SearchBarOptions";
+import { SearchBarFilters } from "app/components/SearchBar/SearchBarFilters";
+import { SearchBarOptions } from "app/components/SearchBar/SearchBarOptions";
 import React from "react";
 
 import { SearchBar } from "./SearchBar";
@@ -26,11 +26,7 @@ export const WithOptions = () => {
 	return (
 		<div className="w-full h-full">
 			<SearchBar>
-				<SearchBarOptions
-					options={options}
-					selectedOption={selectedOption}
-					onSelect={(option: any) => void 0}
-				/>
+				<SearchBarOptions options={options} selectedOption={selectedOption} onSelect={() => void 0} />
 			</SearchBar>
 		</div>
 	);
