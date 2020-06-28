@@ -9,13 +9,13 @@ const data = [
 	{
 		delegateAddress: "ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
 		delegateName: "Delegate 1",
-		rank: "1",
-		votes: "3.43",
+		rank: 1,
+		votes: 3.43,
 		msqUrl: "https://marketsquare.ark.io",
-		commissionPercentage: "80",
-		commissionDaily: "2.387082496",
+		commissionPercentage: 80,
+		commissionDaily: 2.387082496,
 		payout: "Daily",
-		min: "500",
+		min: 500,
 	},
 ];
 
