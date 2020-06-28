@@ -44,10 +44,10 @@ describe("AddressListItem", () => {
 				</tbody>
 			</table>,
 		);
-		const selectAddressButton = getByTestId("AddressListItem__button--select");
+		const selectButton = getByTestId("AddressListItem__button--select");
 
 		act(() => {
-			fireEvent.click(selectAddressButton);
+			fireEvent.click(selectButton);
 		});
 
 		expect(container).toBeTruthy();
