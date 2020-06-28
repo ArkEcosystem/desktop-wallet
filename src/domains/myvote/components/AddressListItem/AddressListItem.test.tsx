@@ -44,7 +44,7 @@ describe("AddressListItem", () => {
 				</tbody>
 			</table>,
 		);
-		const selectAddressButton = getByTestId("AddressListItem__button--unvote");
+		const selectAddressButton = getByTestId("AddressListItem__button--select");
 
 		act(() => {
 			fireEvent.click(selectAddressButton);
