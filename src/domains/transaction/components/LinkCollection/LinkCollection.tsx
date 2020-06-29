@@ -73,14 +73,14 @@ export const LinkCollection = ({
 	);
 
 	return (
-		<div data-testid="LinkCollection">
+		<div data-testid="LinkCollection" className="font-normal">
 			<div
 				data-testid="LinkCollection__header"
 				className="flex justify-between cursor-pointer"
 				onClick={() => setIsExpanded(!isExpanded)}
 			>
 				<div>
-					{title}
+					<span className="font-semibold">{title}</span>
 					<div className="mt-2 text-theme-neutral-700">{description}</div>
 				</div>
 
@@ -98,7 +98,7 @@ export const LinkCollection = ({
 							name="ChevronDown"
 							width={18}
 							height={18}
-							className="flex items-center justify-center bg-theme-primary-600 text-white rounded-full w-5 h-5"
+							className="flex items-center justify-center bg-theme-primary-100 text-theme-primary-600 rounded-full w-5 h-5"
 						/>
 					)}
 				</div>
