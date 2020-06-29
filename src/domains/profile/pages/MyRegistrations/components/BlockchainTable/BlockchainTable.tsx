@@ -42,6 +42,7 @@ const columns = [
 
 type Props = {
 	data: any;
+	handleDropdown: any;
 };
 
 const options = [
@@ -50,7 +51,7 @@ const options = [
 	{ label: "Resign", value: "resign" },
 ];
 
-export const BlockchainTable = ({ data }: Props) => (
+export const BlockchainTable = ({ data, handleDropdown }: Props) => (
 	<div className="flex flex-col bg-theme-background mt-4 px-10">
 		<span className="py-10 font-bold text-2xl">Blockchain</span>
 		<Table columns={columns} data={data}>
@@ -91,7 +92,7 @@ export const BlockchainTable = ({ data }: Props) => (
 							<Dropdown
 								toggleIcon="Settings"
 								options={options}
-								onSelect={(option: any) => console.log(option)}
+								onSelect={(option: any) => handleDropdown(option)}
 							/>
 						</Button>
 					</td>

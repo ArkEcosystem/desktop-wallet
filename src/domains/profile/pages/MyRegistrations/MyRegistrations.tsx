@@ -8,6 +8,7 @@ import { DelegateTable } from "./components/DelegateTable";
 
 type Props = {
 	registrations?: any;
+	handleDropdown?: any;
 };
 
 type RegistrationProps = {
@@ -27,24 +28,42 @@ const EmptyRegistrations = (
 	</div>
 );
 
-const renderRegistration = ({ type, registrations }: RegistrationProps) => {
+const renderRegistration = ({ type, registrations }: RegistrationProps, handleDropdown: any) => {
 	switch (type) {
 		case "business":
-			return <BusinessTable key={type} data={registrations} />;
+			return (
+				<BusinessTable
+					key={type}
+					data={registrations}
+					handleDropdown={(option: any) => handleDropdown(type, option)}
+				/>
+			);
 		case "blockchain":
-			return <BlockchainTable key={type} data={registrations} />;
+			return (
+				<BlockchainTable
+					key={type}
+					data={registrations}
+					handleDropdown={(option: any) => handleDropdown(type, option)}
+				/>
+			);
 		case "delegate":
-			return <DelegateTable key={type} data={registrations} />;
+			return (
+				<DelegateTable
+					key={type}
+					data={registrations}
+					handleDropdown={(option: any) => handleDropdown(type, option)}
+				/>
+			);
 
 		default:
 			return null;
 	}
 };
 
-export const MyRegistrations = ({ registrations }: Props) => {
+export const MyRegistrations = ({ registrations, handleDropdown }: Props) => {
 	const mountRegistrations = () =>
 		registrations.map((registrationsBlock: any) => {
-			return renderRegistration(registrationsBlock);
+			return renderRegistration(registrationsBlock, handleDropdown);
 		});
 
 	return (

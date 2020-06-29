@@ -36,6 +36,7 @@ const columns = [
 
 type Props = {
 	data: any;
+	handleDropdown: any;
 };
 
 const options = [
@@ -52,7 +53,7 @@ const getStatusIcon = (confirmed: boolean) => {
 	return <Icon name="Checkmark" className="ml-1 text-theme-success" width={30} height={30} />;
 };
 
-export const DelegateTable = ({ data }: Props) => (
+export const DelegateTable = ({ data, handleDropdown }: Props) => (
 	<div className="flex flex-col bg-theme-background mt-4 px-10">
 		<span className="py-10 font-bold text-2xl">Delegate</span>
 		<Table columns={columns} data={data}>
@@ -96,7 +97,7 @@ export const DelegateTable = ({ data }: Props) => (
 							<Dropdown
 								toggleIcon="Settings"
 								options={options}
-								onSelect={(option: any) => console.log(option)}
+								onSelect={(option: any) => handleDropdown(option)}
 							/>
 						</Button>
 					</td>
