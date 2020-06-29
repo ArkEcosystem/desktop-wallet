@@ -1,1 +1,1 @@
-export * from "DelegateList";
+export * from "./DelegateList";
