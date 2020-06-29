@@ -88,6 +88,7 @@ export const WalletBottomSheetMenu = ({ walletsData, defaultIsOpen }: Props) => 
 							)}
 							<CollapseToggleButton
 								data-testid="WalletBottomSheetMenu__toggle"
+								isOpen={isOpen}
 								onClick={() => setIsOpen(!isOpen)}
 							/>
 						</div>
