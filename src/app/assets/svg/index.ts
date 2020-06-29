@@ -87,7 +87,6 @@ export const SvgCollection: any = {
 	ArrowDown,
 	ArrowUp,
 	Back,
-	Business,
 	Bitcoin,
 	Bridgechain,
 	Business,
