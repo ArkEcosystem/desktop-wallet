@@ -1,5 +1,9 @@
 import { TransactionListItemProps } from "app/components/TransactionListItem/models";
 
+export type EmptyPlaceholderProps = {
+	title?: string;
+};
+
 export type Action = {
 	label: string;
 	value: string;
@@ -20,4 +24,5 @@ export type NotificationsProps = {
 	transactions?: TransactionListItemProps[];
 	transactionsHeader?: string;
 	onAction?: any;
+	emptyText?: string;
 };
