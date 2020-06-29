@@ -50,15 +50,22 @@ const transactions = [
 	},
 ];
 
+const Divider = () => <div className="h-4 bg-theme-neutral-100" />;
+
 export const WalletDetails = () => {
 	return (
 		<div className="relative">
 			<NavigationBar />
 			<NavigationHeader title="Go back to portofolio" />
 			<WalletHeader coin="Ark" address="abc" balance="0.1" />
+			<Divider />
+
 			<WalletVote delegates={[{ username: "ROBank", rank: 1, address: "bca" }]} />
+			<Divider />
+
 			<WalletRegistrations address="abc" isMultisig hasSecondSignature hasPlugins />
-			<WalletBottomSheetMenu walletsData={[]} />
+			<Divider />
+
 			<div className="px-12 py-8">
 				<h2 className="font-bold">Pending Transactions</h2>
 				<Table columns={columns} data={transactions}>
@@ -71,6 +78,8 @@ export const WalletDetails = () => {
 					{(rowData: any) => <TransactionListItem {...rowData} />}
 				</Table>
 			</div>
+
+			<WalletBottomSheetMenu walletsData={[]} />
 		</div>
 	);
 };
