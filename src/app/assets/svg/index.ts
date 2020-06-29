@@ -9,6 +9,7 @@ import { ReactComponent as Back } from "./back.svg";
 import { ReactComponent as ChartActiveDot } from "./chart-active-dot.svg";
 import { ReactComponent as Checkmark } from "./checkmark.svg";
 import { ReactComponent as ChevronDown } from "./chevron-down.svg";
+import { ReactComponent as ChevronUp } from "./chevron-up.svg";
 import { ReactComponent as Close } from "./close.svg";
 import { ReactComponent as Confirmed } from "./confirmed.svg";
 import { ReactComponent as Copy } from "./copy.svg";
@@ -86,6 +87,7 @@ export const SvgCollection: any = {
 	Bitcoin,
 	Checkmark,
 	ChevronDown,
+	ChevronUp,
 	Close,
 	Confirmed,
 	Copy,
