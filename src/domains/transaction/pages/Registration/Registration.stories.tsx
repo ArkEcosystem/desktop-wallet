@@ -42,4 +42,4 @@ const defaultFormValues = {
 	],
 };
 
-export const Default = () => <Registration {...defaultFormValues} />;
+export const Default = () => <Registration {...defaultFormValues} onDownload={() => alert("download")} />;

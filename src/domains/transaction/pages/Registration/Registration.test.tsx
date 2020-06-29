@@ -45,7 +45,7 @@ beforeEach(() => {
 				formatted: "My Wallet FJKDSALJFKASL...SAJFKLASJKDFJ",
 			},
 		],
-		onSubmit: jest.fn(),
+		onDownload: jest.fn(),
 	};
 });
 
@@ -58,7 +58,7 @@ describe("Registration", () => {
 		);
 
 		expect(getByTestId("Registration__first-step")).toBeTruthy();
-		expect(defaultFormValues.onSubmit).toHaveBeenCalledTimes(0);
+		expect(defaultFormValues.onDownload).toHaveBeenCalledTimes(0);
 		expect(asFragment).toMatchSnapshot();
 	});
 
@@ -77,7 +77,7 @@ describe("Registration", () => {
 		});
 
 		expect(getByTestId("Registration__first-step")).toBeTruthy();
-		expect(defaultFormValues.onSubmit).toHaveBeenCalledTimes(0);
+		expect(defaultFormValues.onDownload).toHaveBeenCalledTimes(0);
 		expect(asFragment).toMatchSnapshot();
 	});
 
@@ -93,7 +93,7 @@ describe("Registration", () => {
 		});
 
 		expect(getByTestId("Registration__second-step")).toBeTruthy();
-		expect(defaultFormValues.onSubmit).toHaveBeenCalledTimes(0);
+		expect(defaultFormValues.onDownload).toHaveBeenCalledTimes(0);
 		expect(asFragment).toMatchSnapshot();
 	});
 
@@ -112,7 +112,7 @@ describe("Registration", () => {
 		});
 
 		expect(getByTestId("Registration__third-step")).toBeTruthy();
-		expect(defaultFormValues.onSubmit).toHaveBeenCalledTimes(0);
+		expect(defaultFormValues.onDownload).toHaveBeenCalledTimes(0);
 		expect(asFragment).toMatchSnapshot();
 	});
 
@@ -134,7 +134,7 @@ describe("Registration", () => {
 		});
 
 		expect(getByTestId("Registration__fourth-step")).toBeTruthy();
-		expect(defaultFormValues.onSubmit).toHaveBeenCalledTimes(0);
+		expect(defaultFormValues.onDownload).toHaveBeenCalledTimes(0);
 		expect(asFragment).toMatchSnapshot();
 	});
 
@@ -165,7 +165,7 @@ describe("Registration", () => {
 		});
 
 		expect(getByTestId("TransactionSuccessful")).toBeTruthy();
-		expect(defaultFormValues.onSubmit).toHaveBeenCalledTimes(0);
+		expect(defaultFormValues.onDownload).toHaveBeenCalledTimes(0);
 		expect(asFragment).toMatchSnapshot();
 	});
 
@@ -198,7 +198,7 @@ describe("Registration", () => {
 			fireEvent.click(getByTestId("Registration__download-button"));
 		});
 
-		expect(defaultFormValues.onSubmit).toHaveBeenCalledTimes(1);
+		expect(defaultFormValues.onDownload).toHaveBeenCalledTimes(1);
 		expect(asFragment).toMatchSnapshot();
 	});
 

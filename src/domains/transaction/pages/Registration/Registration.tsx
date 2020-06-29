@@ -27,7 +27,7 @@ import { styled } from "twin.macro";
 type RegistrationProps = {
 	addresses: any;
 	formDefaultData: any;
-	onSubmit: any;
+	onDownload: any;
 	networks: any;
 	registrationTypes: any;
 };
@@ -384,7 +384,7 @@ export const FifthStep = () => (
 export const Registration = ({
 	addresses,
 	formDefaultData,
-	onSubmit,
+	onDownload,
 	networks,
 	registrationTypes,
 }: RegistrationProps) => {
@@ -403,7 +403,7 @@ export const Registration = ({
 
 	return (
 		<div data-testid="Registration" className="max-w-xl mx-auto">
-			<Form context={form} onSubmit={(data: any) => onSubmit(data)}>
+			<Form context={form} onSubmit={(data: any) => onDownload(data)}>
 				<Tabs activeId={activeTab}>
 					<StepIndicator size={7} activeIndex={activeTab} />
 
