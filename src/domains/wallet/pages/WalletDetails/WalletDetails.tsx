@@ -37,6 +37,7 @@ type Wallet = WalletListItemProps & {
 	address: string;
 	balance: string;
 	publicKey?: string;
+	hasStarred?: boolean;
 	transactions?: TransactionListItemProps[];
 	pendingTransactions?: TransactionListItemProps[];
 	delegates: {
@@ -71,6 +72,7 @@ export const WalletDetails = ({ wallet, wallets }: Props) => {
 				name={wallet.walletName}
 				isLedger={wallet.walletTypeIcons?.includes("Ledger")}
 				isMultisig={wallet.walletTypeIcons?.includes("Multisig")}
+				hasStarred={wallet.hasStarred}
 			/>
 			<Divider />
 
@@ -78,7 +80,7 @@ export const WalletDetails = ({ wallet, wallets }: Props) => {
 			<Divider />
 
 			<WalletRegistrations
-				address="AbuzhuDTyhnfAqepZzVcVsgd1Ym6FgETuW"
+				address={wallet.address}
 				delegate={wallet.delegates?.[0]}
 				business={wallet.business}
 				isMultisig={wallet.walletTypeIcons?.includes("Multisig")}

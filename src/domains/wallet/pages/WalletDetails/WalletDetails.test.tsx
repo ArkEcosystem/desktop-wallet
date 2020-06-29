@@ -1,8 +1,8 @@
+import { render } from "@testing-library/react";
 import React from "react";
+import { BrowserRouter as Router } from "react-router-dom";
 
 import { WalletDetails } from "./WalletDetails";
-
-export default { title: "Wallets / Pages / WalletDetails" };
 
 const wallets = [
 	{
@@ -77,6 +77,13 @@ const wallets = [
 	},
 ];
 
-const wallet = wallets[0];
-
-export const Default = () => <WalletDetails wallets={wallets} wallet={wallet} />;
+describe("WalletDetails", () => {
+	it("should render", () => {
+		const { asFragment } = render(
+			<Router>
+				<WalletDetails wallets={wallets} wallet={wallets[0]} />
+			</Router>,
+		);
+		expect(asFragment()).toMatchSnapshot();
+	});
+});
