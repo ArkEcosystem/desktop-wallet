@@ -67,7 +67,7 @@ export const BlockchainTable = ({ data }: Props) => (
 						<span>{rowData.agent}</span>
 					</td>
 					<td className="py-1 font-semibold">
-						<span>{rowData.bllockchainName}</span>
+						<span>{rowData.blockchainName}</span>
 					</td>
 					<td className="py-1 text-semibold text-theme-primary">
 						<span>View</span>
