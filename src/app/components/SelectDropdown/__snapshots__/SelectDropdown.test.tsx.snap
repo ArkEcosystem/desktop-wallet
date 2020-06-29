@@ -63,7 +63,7 @@ exports[`SelectDropdown should close if clicked outside 1`] = `
       <button
         aria-expanded="false"
         aria-haspopup="true"
-        class="dropdown-toggle hidden"
+        class="hidden dropdown-toggle"
         data-testid="select-dropdown__toggle"
         data-toggle="dropdown"
         id="dropdown-select"
@@ -127,7 +127,7 @@ exports[`SelectDropdown should render 1`] = `
       <button
         aria-expanded="false"
         aria-haspopup="true"
-        class="dropdown-toggle hidden"
+        class="hidden dropdown-toggle"
         data-testid="select-dropdown__toggle"
         data-toggle="dropdown"
         id="dropdown-select"
@@ -201,7 +201,7 @@ exports[`SelectDropdown should render with custom toggle and option templates 1`
       <button
         aria-expanded="false"
         aria-haspopup="true"
-        class="dropdown-toggle hidden"
+        class="hidden dropdown-toggle"
         data-testid="select-dropdown__toggle"
         data-toggle="dropdown"
         id="dropdown-select"
@@ -275,7 +275,7 @@ exports[`SelectDropdown should render without option content 1`] = `
       <button
         aria-expanded="false"
         aria-haspopup="true"
-        class="dropdown-toggle hidden"
+        class="hidden dropdown-toggle"
         data-testid="select-dropdown__toggle"
         data-toggle="dropdown"
         id="dropdown-select"

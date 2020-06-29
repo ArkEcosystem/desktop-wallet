@@ -62,7 +62,7 @@ exports[`Transaction Send should render 1`] = `
                     class="mb-2"
                   >
                     <label
-                      class="FormLabel flex transition-colors duration-100 inline-block text-sm text-theme-neutral-dark"
+                      class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
                       data-testid="FormLabel"
                       for="network"
                       label="Network"
@@ -199,7 +199,7 @@ exports[`Transaction Send should render 1`] = `
                     class="mb-2"
                   >
                     <label
-                      class="FormLabel flex transition-colors duration-100 inline-block text-sm text-theme-neutral-dark"
+                      class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
                       data-testid="FormLabel"
                       for="sender"
                       label="Sender"
@@ -296,7 +296,7 @@ exports[`Transaction Send should render 1`] = `
                     class="mb-2"
                   >
                     <label
-                      class="FormLabel flex transition-colors duration-100 inline-block text-sm text-theme-neutral-dark"
+                      class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
                       data-testid="FormLabel"
                       for="recipient"
                       label="Recipient"
@@ -405,7 +405,7 @@ exports[`Transaction Send should render 1`] = `
                     class="mb-2"
                   >
                     <label
-                      class="FormLabel flex transition-colors duration-100 inline-block text-sm text-theme-neutral-dark"
+                      class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
                       data-testid="FormLabel"
                       for="amount"
                       label="Amount ARK"
@@ -442,7 +442,7 @@ exports[`Transaction Send should render 1`] = `
                     class="mb-2"
                   >
                     <label
-                      class="FormLabel flex transition-colors duration-100 inline-block text-sm text-theme-neutral-dark"
+                      class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
                       data-testid="FormLabel"
                       for="smartbridge"
                       label="Smartbridge"
@@ -485,7 +485,7 @@ exports[`Transaction Send should render 1`] = `
                         class="mb-2"
                       >
                         <label
-                          class="FormLabel flex transition-colors duration-100 inline-block text-sm text-theme-neutral-dark"
+                          class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
                           data-testid="FormLabel"
                           for="fee"
                           label="Fee ARK"
@@ -638,7 +638,7 @@ exports[`Transaction Send should render 1st step 1`] = `
             class="mb-2"
           >
             <label
-              class="FormLabel flex transition-colors duration-100 inline-block text-sm text-theme-neutral-dark"
+              class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
               data-testid="FormLabel"
               for="network"
               label="Network"
@@ -775,7 +775,7 @@ exports[`Transaction Send should render 1st step 1`] = `
             class="mb-2"
           >
             <label
-              class="FormLabel flex transition-colors duration-100 inline-block text-sm text-theme-neutral-dark"
+              class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
               data-testid="FormLabel"
               for="sender"
               label="Sender"
@@ -872,7 +872,7 @@ exports[`Transaction Send should render 1st step 1`] = `
             class="mb-2"
           >
             <label
-              class="FormLabel flex transition-colors duration-100 inline-block text-sm text-theme-neutral-dark"
+              class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
               data-testid="FormLabel"
               for="recipient"
               label="Recipient"
@@ -981,7 +981,7 @@ exports[`Transaction Send should render 1st step 1`] = `
             class="mb-2"
           >
             <label
-              class="FormLabel flex transition-colors duration-100 inline-block text-sm text-theme-neutral-dark"
+              class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
               data-testid="FormLabel"
               for="amount"
               label="Amount ARK"
@@ -1018,7 +1018,7 @@ exports[`Transaction Send should render 1st step 1`] = `
             class="mb-2"
           >
             <label
-              class="FormLabel flex transition-colors duration-100 inline-block text-sm text-theme-neutral-dark"
+              class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
               data-testid="FormLabel"
               for="smartbridge"
               label="Smartbridge"
@@ -1061,7 +1061,7 @@ exports[`Transaction Send should render 1st step 1`] = `
                 class="mb-2"
               >
                 <label
-                  class="FormLabel flex transition-colors duration-100 inline-block text-sm text-theme-neutral-dark"
+                  class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
                   data-testid="FormLabel"
                   for="fee"
                   label="Fee ARK"
@@ -1787,7 +1787,7 @@ exports[`Transaction Send should render 5th step 1`] = `
           </svg>
         </div>
         <p
-          class="text-theme-neutral-dark mb-4"
+          class="mb-4 text-theme-neutral-dark"
         >
           Your transaction was successfully sent. Please monitor the blockchain to ensure your transaction is confirmed and processed. The following is relevant information for your transaction:
         </p>

@@ -121,7 +121,7 @@ const RegistrationTypeDropdown = ({ className, register, registrationTypes, sele
 					))}
 			</Select>
 
-			{selectedType && <div className="flex items-center ml-4 -mt-9 leading-tight">{selectedType.label}</div>}
+			{selectedType && <div className="flex items-center ml-4 leading-tight -mt-9">{selectedType.label}</div>}
 		</div>
 	</FormField>
 );
@@ -309,7 +309,7 @@ const ThirdStep = () => (
 				label="Type"
 				extra={
 					<div>
-						<Circle className="bg-theme-background border-black" size="large">
+						<Circle className="border-black bg-theme-background" size="large">
 							<Icon name="Business" width={32} height={32} />
 						</Circle>
 					</div>
@@ -399,7 +399,7 @@ const FourthStep = ({ form, passwordType }: { form: any; passwordType: "mnemonic
 			{passwordType !== "ledger" && (
 				<div>
 					<h1>Authenticate</h1>
-					<div className="text-theme-neutral-700 text-sm">
+					<div className="text-sm text-theme-neutral-700">
 						Enter your twelve word mnemonic to authenticate the transaction.
 					</div>
 
@@ -422,7 +422,7 @@ const FourthStep = ({ form, passwordType }: { form: any; passwordType: "mnemonic
 					<h1>Confirm Your Transaction</h1>
 					<ConfirmTransactionLedgerBanner />
 
-					<div className="text-theme-neutral-700 mt-8">
+					<div className="mt-8 text-theme-neutral-700">
 						Please review and verify the information on your Ledger device. Choose Accept to complete your
 						transaction.
 					</div>
