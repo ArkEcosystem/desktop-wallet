@@ -215,7 +215,7 @@ exports[`Transaction Send should render 1`] = `
                     >
                       <select
                         class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
-                        data-testid="send-transaction__select-sender"
+                        data-testid="ProfileFormField__select-sender"
                         name="sender"
                       >
                         <option
@@ -312,7 +312,7 @@ exports[`Transaction Send should render 1`] = `
                     >
                       <select
                         class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
-                        data-testid="send-transaction__select-recipient"
+                        data-testid="ProfileFormField__select-recipient"
                         name="recipient"
                       >
                         <option
@@ -791,7 +791,7 @@ exports[`Transaction Send should render 1st step 1`] = `
             >
               <select
                 class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
-                data-testid="send-transaction__select-sender"
+                data-testid="ProfileFormField__select-sender"
                 name="sender"
               >
                 <option
@@ -888,7 +888,7 @@ exports[`Transaction Send should render 1st step 1`] = `
             >
               <select
                 class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
-                data-testid="send-transaction__select-recipient"
+                data-testid="ProfileFormField__select-recipient"
                 name="recipient"
               >
                 <option
