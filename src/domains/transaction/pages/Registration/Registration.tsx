@@ -32,7 +32,7 @@ type RegistrationProps = {
 	registrationTypes: any;
 };
 
-type Network = { nane: string; label: string; value: string; icon: string; iconClass: string };
+type Network = { name: string; label: string; value: string; icon: string; iconClass: string };
 type RegistrationType = { label: string; value: string };
 
 const { ConfirmTransactionLedgerBanner } = images.transaction.common;
