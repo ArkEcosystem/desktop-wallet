@@ -36,4 +36,8 @@ export const translations: { [key: string]: any } = {
 			OTHER: "Other",
 		},
 	},
+	MODAL_SEARCH_HELP: {
+		TITLE: "Search",
+		DESCRIPTION: "Quickly find the right answers to any questions",
+	},
 };

@@ -3,10 +3,10 @@ import { boolean, withKnobs } from "@storybook/addon-knobs";
 import React from "react";
 
 import { wallets } from "../../data";
-import { SelectAccount } from "./SelectAccount";
+import { SearchWallet } from "./SearchWallet";
 
 export default {
-	title: "Wallets / Components / Select Account",
+	title: "Wallets / Components / Search Wallet",
 	decorators: [withKnobs],
 };
 
@@ -27,12 +27,12 @@ export const Default = () => {
 	];
 
 	return (
-		<SelectAccount
+		<SearchWallet
 			isOpen={boolean("isOpen", true)}
 			wallets={wallets}
 			networks={networks}
-			handleClose={action("handleClose")}
-			handleSelect={action("handleSelect")}
+			onClose={action("onClose")}
+			onSearch={action("onSearch")}
 		/>
 	);
 };
