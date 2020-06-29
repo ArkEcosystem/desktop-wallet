@@ -12,6 +12,9 @@ type Asset = {
 type SelectAssetProps = {
 	assets: Asset[];
 	placeholder?: string;
+	name?: string;
+	value?: string;
+	onSelect?: () => void;
 };
 
 type InputValue = any;
@@ -39,7 +42,7 @@ const TypeAhead = ({ input, matches }: any) => {
 	);
 };
 
-export const SelectAsset = ({ assets, placeholder }: SelectAssetProps) => {
+export const SelectAsset = ({ assets, placeholder, onSelect, name }: SelectAssetProps) => {
 	const isMatch = (asset: Asset, input: InputValue) => {
 		if (!input) return false;
 		return asset.name.toLowerCase().startsWith(input.toLowerCase());
@@ -68,8 +71,17 @@ export const SelectAsset = ({ assets, placeholder }: SelectAssetProps) => {
 	};
 
 	return (
-		<Downshift itemToString={(i) => i?.name}>
-			{({ getLabelProps, getInputProps, getItemProps, selectItem, inputValue, selectedItem, clearSelection }) => (
+		<Downshift itemToString={(i) => i?.name} onSelect={onSelect}>
+			{({
+				getLabelProps,
+				getInputProps,
+				getItemProps,
+				getMenuProps,
+				selectItem,
+				inputValue,
+				selectedItem,
+				clearSelection,
+			}) => (
 				<div className="relative">
 					<label {...getLabelProps()} />
 					<div className="relative flex items-center w-full flex-inline">
@@ -80,6 +92,7 @@ export const SelectAsset = ({ assets, placeholder }: SelectAssetProps) => {
 							<div className="relative flex-1 p-1 font-semibold text-theme-neutral-800">
 								<TypeAhead input={inputValue} matches={getMatches(assets, inputValue)} />
 								<input
+									name={name}
 									{...getInputProps({
 										value: inputValue || "",
 										placeholder,
@@ -108,13 +121,13 @@ export const SelectAsset = ({ assets, placeholder }: SelectAssetProps) => {
 						</div>
 					</div>
 					{assets && assets.length > 0 && (
-						<div data-testid="select-asset__items" className="py-6">
-							{assets.map((asset: Asset) => {
+						<div data-testid="select-asset__items" className="pt-6" {...getMenuProps()}>
+							{assets.map((asset: Asset, index: number) => {
 								return (
 									<div
 										title={asset.name}
 										className="inline-block mr-4 cursor-pointer"
-										key={asset.name}
+										key={index}
 										{...getItemProps({ item: asset })}
 									>
 										<Circle
@@ -136,5 +149,5 @@ export const SelectAsset = ({ assets, placeholder }: SelectAssetProps) => {
 
 SelectAsset.defaultProps = {
 	assets: [],
-	placeholcer: "Enter a network name",
+	placeholder: "Enter a network name",
 };
