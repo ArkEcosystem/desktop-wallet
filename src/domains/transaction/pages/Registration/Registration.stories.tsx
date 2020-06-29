@@ -7,10 +7,19 @@ export default { title: "Transactions / Pages / Registration" };
 const defaultFormValues = {
 	networks: [
 		{
-			value: "ark",
-			label: "Ark Ecosystem",
 			icon: "Ark",
-			iconClassName: "border-theme-danger-200 text-theme-danger-400",
+			name: "Ark Ecosystem",
+			className: "text-theme-danger-400 border-theme-danger-200",
+		},
+		{
+			icon: "Bitcoin",
+			name: "Bitcoin",
+			className: "text-theme-warning-400 border-theme-warning-200",
+		},
+		{
+			icon: "Ethereum",
+			name: "Ethereum",
+			className: "text-theme-neutral-800 border-theme-neutral-600",
 		},
 	],
 	registrationTypes: [

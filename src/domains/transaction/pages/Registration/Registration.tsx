@@ -7,6 +7,7 @@ import { Icon } from "app/components/Icon";
 import { Input, InputPassword } from "app/components/Input";
 import { Label } from "app/components/Label";
 import { Select } from "app/components/Select";
+import { SelectAsset } from "app/components/SelectAsset";
 import { useSelectionState } from "app/components/SelectionBar";
 import { Spinner } from "app/components/Spinner";
 import { StepIndicator } from "app/components/StepIndicator";
@@ -31,7 +32,7 @@ type RegistrationProps = {
 	registrationTypes: any;
 };
 
-type Network = { label: string; value: string; icon: string; iconClass: string };
+type Network = { nane: string; label: string; value: string; icon: string; iconClass: string };
 type RegistrationType = { label: string; value: string };
 
 const { ConfirmTransactionLedgerBanner } = images.transaction.common;
@@ -61,42 +62,6 @@ const FormWrapper = styled.div`
 	}
 `;
 
-// TODO: To be removed with new component in design update
-const NetworkFormField = ({ className, networks, register, selectedNetwork }: any) => {
-	return (
-		<FormField name="network" className={`relative h-20 ${className}`}>
-			<div className="mb-2">
-				<FormLabel label="Network" />
-			</div>
-			<div className=" select-transparent">
-				<Select placeholder=" " name="network" ref={register} data-testid="send-transaction__network-select">
-					{networks &&
-						networks.map((network: any, index: number) => (
-							<option key={index} value={network.value} data-testid="send-transaction__network-option">
-								{network.label}
-							</option>
-						))}
-				</Select>
-			</div>
-
-			{!selectedNetwork && (
-				<div className="absolute ml-4 -mt-10">
-					<Circle className="border-theme-neutral-200" size="small" noShadow />
-				</div>
-			)}
-
-			{selectedNetwork && (
-				<div className="flex items-center ml-4 -mt-10">
-					<Circle className={selectedNetwork.iconClassName} size="small" noShadow>
-						<Icon name={selectedNetwork.icon} width={18} height={18} />
-					</Circle>
-					<div className="ml-4 text-theme-neutral-800">{selectedNetwork.label}</div>
-				</div>
-			)}
-		</FormField>
-	);
-};
-
 const RegistrationTypeDropdown = ({ className, register, registrationTypes, selectedType }: any) => (
 	<FormField name="registrationType" className={`relative h-20 ${className}`}>
 		<div className="mb-2">
@@ -125,10 +90,6 @@ const RegistrationTypeDropdown = ({ className, register, registrationTypes, sele
 		</div>
 	</FormField>
 );
-
-const getNetworkByName = (networks: any[], networkValue: string) => {
-	return networks.find((network: any) => network.value === networkValue);
-};
 
 const getAddressInfo = (addresses: any[], address: string) => {
 	return addresses.find((profile: any) => profile.address === address);
@@ -160,11 +121,7 @@ const FirstStep = ({
 			</div>
 
 			<FormWrapper className="mt-5">
-				<NetworkFormField
-					register={register({ required: true })}
-					selectedNetwork={getNetworkByName(networks, network)}
-					networks={networks}
-				/>
+				<SelectAsset assets={networks} />
 
 				<ProfileFormField
 					disabled={!network}
