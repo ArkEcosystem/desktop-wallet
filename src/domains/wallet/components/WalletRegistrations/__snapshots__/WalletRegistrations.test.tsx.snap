@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`WalletRegistrations should render blank 1`] = `
+exports[`WalletRegistrations should render empty mode 1`] = `
 <DocumentFragment>
   <section
     class="px-12 py-8"
@@ -45,19 +45,53 @@ exports[`WalletRegistrations should render blank 1`] = `
         class="flex items-center justify-between px-1 py-4"
       >
         <div
-          class="flex items-center divide-x-1 divide-theme-neutral-light"
+          class="flex items-center pr-8 space-x-4"
+          data-testid="WalletRegistrations__empty"
         >
-          0
+          <div
+            class="flex items-center -space-x-2"
+          >
+            <div
+              class="sc-AxirZ cZokSJ text-theme-neutral-light"
+            >
+              <div
+                class="sc-AxiKw dzBdqj text-xl"
+                height="1em"
+                width="1em"
+              >
+                <svg>
+                  delegate.svg
+                </svg>
+              </div>
+            </div>
+            <div
+              class="sc-AxirZ cZokSJ bg-theme-background"
+            />
+          </div>
+          <div
+            class="space-y-1"
+          >
+            <p
+              class="text-sm font-semibold text-theme-neutral"
+            >
+              Type Registrations
+            </p>
+            <p
+              class="font-semibold text-theme-neutral-900"
+            >
+              You haven't registered more than one type of registration.
+              <a
+                class="text-theme-primary px-2"
+                href="#"
+              >
+                Learn More
+              </a>
+            </p>
+          </div>
         </div>
         <div
           class="space-x-2"
         >
-          <button
-            class="px-5 py-3 font-semibold leading-tight rounded text-theme-primary focus:outline-none focus:shadow-outline"
-            data-testid="WalletRegistrations__show-all"
-          >
-            Show all
-          </button>
           <button
             class="sc-AxjAm ddJBbC"
             color="primary"

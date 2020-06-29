@@ -4,17 +4,12 @@ import React from "react";
 import { WalletRegistrations } from "./WalletRegistrations";
 
 describe.only("WalletRegistrations", () => {
-	it("should render blank", () => {
-		const { asFragment } = render(<WalletRegistrations address="abc" />);
-		expect(asFragment()).toMatchSnapshot();
-	});
-
 	it("should emit actions", () => {
 		const onShowAll = jest.fn();
 		const onRegister = jest.fn();
 
 		const { getByTestId } = render(
-			<WalletRegistrations address="abc" onShowAll={onShowAll} onRegister={onRegister} />,
+			<WalletRegistrations address="abc" isMultisig onShowAll={onShowAll} onRegister={onRegister} />,
 		);
 		fireEvent.click(getByTestId("WalletRegistrations__show-all"));
 		fireEvent.click(getByTestId("WalletRegistrations__register"));
@@ -61,5 +56,11 @@ describe.only("WalletRegistrations", () => {
 	it("should show business", () => {
 		const { getByTestId } = render(<WalletRegistrations address="abc" business={{ name: "Test" }} />);
 		expect(getByTestId("WalletRegistrations__business")).toHaveTextContent("Test");
+	});
+
+	it("should render empty mode", () => {
+		const { getByTestId, asFragment } = render(<WalletRegistrations address="abc" />);
+		expect(getByTestId("WalletRegistrations__empty")).toBeTruthy();
+		expect(asFragment()).toMatchSnapshot();
 	});
 });
