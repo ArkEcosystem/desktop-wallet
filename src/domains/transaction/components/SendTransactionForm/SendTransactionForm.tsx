@@ -1,7 +1,6 @@
-import { Address } from "app/components/Address";
+
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
-import { Divider } from "app/components/Divider";
 import { Form, FormField, FormLabel } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { Input, InputAddonEnd, InputGroup } from "app/components/Input";
@@ -9,6 +8,7 @@ import { InputRange } from "app/components/Input/InputRange";
 import { Select } from "app/components/Select";
 import { SelectionBar, SelectionBarOption } from "app/components/SelectionBar";
 import { useSelectionState } from "app/components/SelectionBar/useSelectionState";
+import { ProfileFormField } from "domains/profile/components/ProfileFormField";
 import { RecipientList } from "domains/transaction/components/RecipientList";
 import { RecipientListItem } from "domains/transaction/components/RecipientList/RecipientList.models";
 import React, { useState } from "react";
@@ -60,65 +60,6 @@ const NetworkFormField = ({ networks, register, selectedNetwork }: any) => {
 						<Icon name={selectedNetwork.icon} width={18} height={18} />
 					</Circle>
 					<div className="ml-4 font-semibold text-theme-neutral-800">{selectedNetwork.label}</div>
-				</div>
-			)}
-		</FormField>
-	);
-};
-
-const ProfileFormField = ({ register, profiles, selectedProfile, formName, formLabel, disabled }: any) => {
-	return (
-		<FormField name={formName} className="relative h-20 mt-1">
-			<div className="mb-2">
-				<FormLabel label={formLabel} />
-			</div>
-
-			<InputGroup className="send-transaction__select-contact select-transparent">
-				<Select
-					data-testid={`send-transaction__select-${formName}`}
-					disabled={disabled}
-					placeholder=" "
-					name={formName}
-					ref={register}
-				>
-					{profiles &&
-						profiles.map((profile: any, index: number) => (
-							<option key={index} value={profile.address} data-testid="send-transaction__profile-select">
-								{profile.formatted}
-							</option>
-						))}
-				</Select>
-				<InputAddonEnd>
-					<button className="px-3 pr-2 text-theme-primary-300 focus:outline-none">
-						<Icon name="User" width={20} height={20} />
-					</button>
-					<Divider type="vertical" />
-					<button className="pl-2 pr-4 text-theme-primary-300 focus:outline-none">
-						<Icon name="Receive" width={20} height={20} />
-					</button>
-				</InputAddonEnd>
-			</InputGroup>
-
-			{!selectedProfile && (
-				<div className="absolute ml-4 -mt-10">
-					<Circle className="mt-px bg-theme-neutral-200 border-theme-neutral-200" size="small" noShadow />
-				</div>
-			)}
-			{selectedProfile && (
-				<div className="flex ml-4 -mt-10">
-					<Circle
-						avatarId={selectedProfile?.address}
-						className="bg-theme-neutral-300 border-theme-neutral-300"
-						size="small"
-						noShadow
-					/>
-					<div className="mt-1 ml-4 font-semibold text-theme-neutral-800">
-						<Address
-							maxChars={30}
-							address={selectedProfile?.address}
-							walletName={selectedProfile?.walletName}
-						/>
-					</div>
 				</div>
 			)}
 		</FormField>
