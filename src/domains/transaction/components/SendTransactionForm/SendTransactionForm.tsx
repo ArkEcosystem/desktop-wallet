@@ -7,6 +7,7 @@ import { Icon } from "app/components/Icon";
 import { Input, InputAddonEnd, InputGroup } from "app/components/Input";
 import { InputRange } from "app/components/Input/InputRange";
 import { Select } from "app/components/Select";
+import { SelectAsset } from "app/components/SelectAsset";
 import { SelectionBar, SelectionBarOption } from "app/components/SelectionBar";
 import { useSelectionState } from "app/components/SelectionBar/useSelectionState";
 import { RecipientList } from "domains/transaction/components/RecipientList";
@@ -22,48 +23,13 @@ type SendTransactionFormProps = {
 	contactList: any;
 	senderList: any;
 	formDefaultData: any;
-	networks: any;
 	feeRange: any;
 	defaultFee: number;
 	maxFee: number;
 	assetSymbol: string;
 	onSubmit?: any;
 	onBack?: any;
-};
-
-const NetworkFormField = ({ networks, register, selectedNetwork }: any) => {
-	return (
-		<FormField name="network" className="relative h-20 mt-1">
-			<div className="mb-2">
-				<FormLabel label="Network" />
-			</div>
-			<div className=" select-transparent">
-				<Select placeholder=" " name="network" ref={register} data-testid="send-transaction__network-select">
-					{networks &&
-						networks.map((network: any, index: number) => (
-							<option key={index} value={network.value} data-testid="send-transaction__network-option">
-								{network.label}
-							</option>
-						))}
-				</Select>
-			</div>
-
-			{!selectedNetwork && (
-				<div className="absolute ml-4 -mt-10">
-					<Circle className="border-theme-neutral-200" size="small" noShadow />
-				</div>
-			)}
-
-			{selectedNetwork && (
-				<div className="flex items-center mt-10 ml-4 -mt-10">
-					<Circle className={selectedNetwork.iconClassName} size="small" noShadow>
-						<Icon name={selectedNetwork.icon} width={18} height={18} />
-					</Circle>
-					<div className="ml-4 font-semibold text-theme-neutral-800">{selectedNetwork.label}</div>
-				</div>
-			)}
-		</FormField>
-	);
+	assets: any;
 };
 
 const ProfileFormField = ({ register, profiles, selectedProfile, formName, formLabel, disabled }: any) => {
@@ -131,7 +97,6 @@ const FormWrapper = styled.div`
 
 export const SendTransactionForm = ({
 	feeRange,
-	networks,
 	maxAvailableAmount,
 	formDefaultData,
 	contactList,
@@ -140,6 +105,7 @@ export const SendTransactionForm = ({
 	onSubmit,
 	onBack,
 	assetSymbol,
+	assets,
 }: SendTransactionFormProps) => {
 	const [addedRecipients, setAddressRecipients] = useState([] as RecipientListItem[]);
 
@@ -160,10 +126,6 @@ export const SendTransactionForm = ({
 	const getProfileInfo = (address: string) => {
 		const profiles = [...contactList, ...senderList];
 		return profiles.find((profile: any) => profile.address === address);
-	};
-
-	const getNetworkByName = (networkValue: string) => {
-		return networks.find((network: any) => network.value === networkValue);
 	};
 
 	const onAddRecipient = (recipient: string, amount: number) => {
@@ -192,10 +154,14 @@ export const SendTransactionForm = ({
 	return (
 		<FormWrapper>
 			<Form id="send-transaction__form" context={form} onSubmit={() => void 0}>
-				<NetworkFormField register={register} selectedNetwork={getNetworkByName(network)} networks={networks} />
+				<FormField name="network" className="relative mt-1">
+					<div className="mb-2">
+						<FormLabel label="Network" />
+					</div>
+					<SelectAsset assets={assets} name="network" value={network} />
+				</FormField>
 
 				<ProfileFormField
-					disabled={!network}
 					formName="sender"
 					formLabel="Sender"
 					profiles={senderList}
@@ -204,7 +170,6 @@ export const SendTransactionForm = ({
 				/>
 
 				<ProfileFormField
-					disabled={!network}
 					formName="recipient"
 					formLabel="Recipient"
 					profiles={availableContacts}
@@ -224,15 +189,12 @@ export const SendTransactionForm = ({
 							placeholder="Amount"
 							className="pr-20"
 							ref={register}
-							disabled={!network}
 						/>
 						<InputAddonEnd>
 							<button
 								data-testid="send-transaction__send-all"
 								onClick={() => setValue("amount", maxAvailableAmount)}
-								className={`pr-4 pl-6 text-theme-primary bg-theme-background focus:outline-none ${
-									network ? "bg-theme-background" : "bg-theme-neutral-100"
-								}`}
+								className="pr-4 pl-6 text-theme-primary bg-theme-background focus:outline-none bg-white"
 							>
 								Send All
 							</button>
@@ -268,7 +230,7 @@ export const SendTransactionForm = ({
 						<FormLabel label="Smartbridge" />
 					</div>
 					<InputGroup>
-						<Input type="text" placeholder=" " className="pr-20" maxLength={255} disabled={!network} />
+						<Input type="text" placeholder=" " className="pr-20" maxLength={255} />
 						<InputAddonEnd>
 							<button className="px-4 text-theme-neutral-400 focus:outline-none">255 Max</button>
 						</InputAddonEnd>
@@ -299,20 +261,10 @@ export const SendTransactionForm = ({
 					</div>
 				</div>
 				<div className="flex justify-end space-x-3">
-					<Button
-						data-testid="send-transaction-click-back"
-						variant="plain"
-						onClick={onClickBack}
-						disabled={!network}
-					>
+					<Button data-testid="send-transaction-click-back" variant="plain" onClick={onClickBack}>
 						Back
 					</Button>
-					<Button
-						data-testid="send-transaction-click-submit"
-						type="submit"
-						onClick={onFormSubmit}
-						disabled={!network}
-					>
+					<Button data-testid="send-transaction-click-submit" type="submit" onClick={onFormSubmit}>
 						Continue
 					</Button>
 				</div>
@@ -330,7 +282,7 @@ SendTransactionForm.defaultProps = {
 		min: 1,
 		average: 14,
 	},
-	networks: [],
+	assets: [],
 	defaultFee: 0,
 	formDefaultData: {
 		network: null,
