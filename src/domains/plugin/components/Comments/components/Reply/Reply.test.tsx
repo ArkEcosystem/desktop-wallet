@@ -1,7 +1,12 @@
 import { render } from "@testing-library/react";
+import MockDate from "mockdate";
 import React from "react";
 
 import { Reply } from "./Reply";
+
+beforeEach(() => MockDate.set(new Date("2020-06-22T14:48:00.000Z")));
+
+afterEach(() => MockDate.reset());
 
 describe("Reply", () => {
 	it("should render properly", () => {
