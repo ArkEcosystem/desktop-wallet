@@ -3,7 +3,8 @@ import { TransactionListItem } from "app/components/TransactionListItem";
 import { TransactionListItemProps } from "app/components/TransactionListItem/models";
 import React from "react";
 
-import { NotificationsProps, PluginNotification } from "./models";
+import { Icon } from "../Icon";
+import { EmptyPlaceholderProps,NotificationsProps, PluginNotification } from "./models";
 
 const Plugin = ({ logoUrl, logoClassName, title, description, action, onAction }: PluginNotification) => (
 	<tr>
@@ -28,18 +29,38 @@ const Plugin = ({ logoUrl, logoClassName, title, description, action, onAction }
 	</tr>
 );
 
+const EmptyPlaceholder = ({ title }: EmptyPlaceholderProps) => (
+	<div>
+		<div className="border-2 border-theme-neutral-200 p-6 text-md rounded-xl text-theme-neutral-700 mb-5">
+			{title}
+		</div>
+		<div>
+			<Icon name="Placeholder" width={200} height={80} />
+		</div>
+		<div className="border-b border-2 border-theme-neutral-100 my-3" />
+		<div>
+			<Icon name="Placeholder" width={200} height={80} />
+		</div>
+	</div>
+);
+
 export const Notifications = ({
-	plugins,
-	transactions,
+	plugins = [],
+	transactions = [],
 	pluginsHeader,
 	transactionsHeader,
 	onAction,
+	emptyText,
 }: NotificationsProps) => {
 	const hiddenTableHeaders = [{ Header: "-", className: "hidden" }];
 
 	const onNotificationAction = (name: string, item: any) => {
 		if (typeof onAction === "function") onAction(name, item);
 	};
+
+	if (transactions.length === 0 && plugins.length == 0) {
+		return <EmptyPlaceholder title={emptyText} />;
+	}
 
 	return (
 		<div>
@@ -61,5 +82,5 @@ export const Notifications = ({
 
 Notifications.defaultProps = {
 	pluginsHeader: "",
-	plugins: [],
+	emptyText: "You have no notifications at this time.",
 };

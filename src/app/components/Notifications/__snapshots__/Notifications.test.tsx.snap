@@ -4,86 +4,34 @@ exports[`Notifications should render 1`] = `
 <div>
   <div>
     <div
-      class="text-sm font-bold text-theme-neutral-500"
-    />
-    <div
-      class="sc-AxirZ gQslMC"
-      role="table"
+      class="border-2 border-theme-neutral-200 p-6 text-md rounded-xl text-theme-neutral-700 mb-5"
     >
-      <table
-        class="table-auto"
+      You have no notifications at this time.
+    </div>
+    <div>
+      <div
+        class="sc-AxjAm deEstu"
+        height="80"
+        width="200"
       >
-        <thead>
-          <tr
-            role="row"
-          >
-            <th
-              class="text-xs text-left select-none text-theme-neutral-400"
-              colspan="1"
-              data-testid="table__th--0"
-              role="columnheader"
-            >
-              <div
-                class="flex flex-inline align-top  hidden"
-              >
-                <div
-                  class="mr-1"
-                >
-                  -
-                </div>
-                <div
-                  class="mt-1 text-theme-color-neutral-500"
-                  data-testid="table__Sort"
-                />
-              </div>
-            </th>
-          </tr>
-        </thead>
-        <tbody
-          role="rowgroup"
-        />
-      </table>
+        <svg>
+          placeholder.svg
+        </svg>
+      </div>
     </div>
     <div
-      class="-mb-2 text-sm font-bold mt-9 text-theme-neutral-500"
+      class="border-b border-2 border-theme-neutral-100 my-3"
     />
-    <div
-      class="sc-AxirZ gQslMC"
-      role="table"
-    >
-      <table
-        class="table-auto"
+    <div>
+      <div
+        class="sc-AxjAm deEstu"
+        height="80"
+        width="200"
       >
-        <thead>
-          <tr
-            role="row"
-          >
-            <th
-              class="text-xs text-left select-none text-theme-neutral-400"
-              colspan="1"
-              data-testid="table__th--0"
-              role="columnheader"
-            >
-              <div
-                class="flex flex-inline align-top  hidden"
-              >
-                <div
-                  class="mr-1"
-                >
-                  -
-                </div>
-                <div
-                  class="mt-1 text-theme-color-neutral-500"
-                  data-testid="table__Sort"
-                />
-              </div>
-            </th>
-          </tr>
-        </thead>
-        <tbody
-          role="rowgroup"
-        />
-      </table>
+        <svg>
+          placeholder.svg
+        </svg>
+      </div>
     </div>
   </div>
 </div>

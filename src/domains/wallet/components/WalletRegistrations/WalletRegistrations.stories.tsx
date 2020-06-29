@@ -15,3 +15,5 @@ export const Default = () => (
 		isMultisig
 	/>
 );
+
+export const Empty = () => <WalletRegistrations address="abc" />;

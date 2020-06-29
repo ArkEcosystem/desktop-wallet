@@ -58,7 +58,7 @@ export const WalletListItem = ({
 					{walletTypeIcons.map((type: string, index: number) => {
 						return (
 							<div key={index} className={`inline-block mr-2 text ${getIconTypeClass(type)}`}>
-								<Icon name={type} />
+								<Icon name={type} width={16} height={16} />
 							</div>
 						);
 					})}

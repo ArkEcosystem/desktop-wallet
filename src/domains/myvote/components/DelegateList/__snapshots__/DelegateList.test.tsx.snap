@@ -1,0 +1,854 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DelegateList should render 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-AxirZ gQslMC"
+    role="table"
+  >
+    <table
+      class="table-auto"
+    >
+      <thead>
+        <tr
+          role="row"
+        >
+          <th
+            class="text-xs text-left select-none text-theme-neutral-400"
+            colspan="1"
+            data-testid="table__th--0"
+            role="columnheader"
+          >
+            <div
+              class="flex flex-inline align-top  undefined"
+            >
+              <div
+                class="mr-1"
+              />
+              <div
+                class="mt-1 text-theme-color-neutral-500"
+                data-testid="table__Sort"
+              />
+            </div>
+          </th>
+          <th
+            class="text-xs text-left select-none text-theme-neutral-400"
+            colspan="1"
+            data-testid="table__th--1"
+            role="columnheader"
+            style="cursor: pointer;"
+            title="Toggle SortBy"
+          >
+            <div
+              class="flex flex-inline align-top  undefined"
+            >
+              <div
+                class="mr-1"
+              >
+                Delegate Name
+              </div>
+              <div
+                class="mt-1 text-theme-color-neutral-500"
+                data-testid="table__Sort"
+              >
+                <div
+                  class="sc-AxjAm iepfoc"
+                  height="10"
+                  width="10"
+                >
+                  <svg>
+                    sort.svg
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </th>
+          <th
+            class="text-xs text-left select-none text-theme-neutral-400"
+            colspan="1"
+            data-testid="table__th--2"
+            role="columnheader"
+            style="cursor: pointer;"
+            title="Toggle SortBy"
+          >
+            <div
+              class="flex flex-inline align-top  undefined"
+            >
+              <div
+                class="mr-1"
+              >
+                Rank
+              </div>
+              <div
+                class="mt-1 text-theme-color-neutral-500"
+                data-testid="table__Sort"
+              >
+                <div
+                  class="sc-AxjAm iepfoc"
+                  height="10"
+                  width="10"
+                >
+                  <svg>
+                    sort.svg
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </th>
+          <th
+            class="text-xs text-left select-none text-theme-neutral-400"
+            colspan="1"
+            data-testid="table__th--3"
+            role="columnheader"
+            style="cursor: pointer;"
+            title="Toggle SortBy"
+          >
+            <div
+              class="flex flex-inline align-top  undefined"
+            >
+              <div
+                class="mr-1"
+              >
+                Votes
+              </div>
+              <div
+                class="mt-1 text-theme-color-neutral-500"
+                data-testid="table__Sort"
+              >
+                <div
+                  class="sc-AxjAm iepfoc"
+                  height="10"
+                  width="10"
+                >
+                  <svg>
+                    sort.svg
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </th>
+          <th
+            class="text-xs text-left select-none text-theme-neutral-400"
+            colspan="1"
+            data-testid="table__th--4"
+            role="columnheader"
+          >
+            <div
+              class="flex flex-inline align-top  flex justify-center"
+            >
+              <div
+                class="mr-1"
+              >
+                Profile
+              </div>
+              <div
+                class="mt-1 text-theme-color-neutral-500"
+                data-testid="table__Sort"
+              />
+            </div>
+          </th>
+          <th
+            class="text-xs text-left select-none text-theme-neutral-400"
+            colspan="1"
+            data-testid="table__th--5"
+            role="columnheader"
+            style="cursor: pointer;"
+            title="Toggle SortBy"
+          >
+            <div
+              class="flex flex-inline align-top  undefined"
+            >
+              <div
+                class="mr-1"
+              >
+                Comm.
+              </div>
+              <div
+                class="mt-1 text-theme-color-neutral-500"
+                data-testid="table__Sort"
+              >
+                <div
+                  class="sc-AxjAm iepfoc"
+                  height="10"
+                  width="10"
+                >
+                  <svg>
+                    sort.svg
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </th>
+          <th
+            class="text-xs text-left select-none text-theme-neutral-400"
+            colspan="1"
+            data-testid="table__th--6"
+            role="columnheader"
+            style="cursor: pointer;"
+            title="Toggle SortBy"
+          >
+            <div
+              class="flex flex-inline align-top  undefined"
+            >
+              <div
+                class="mr-1"
+              >
+                Payout
+              </div>
+              <div
+                class="mt-1 text-theme-color-neutral-500"
+                data-testid="table__Sort"
+              >
+                <div
+                  class="sc-AxjAm iepfoc"
+                  height="10"
+                  width="10"
+                >
+                  <svg>
+                    sort.svg
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </th>
+          <th
+            class="text-xs text-left select-none text-theme-neutral-400"
+            colspan="1"
+            data-testid="table__th--7"
+            role="columnheader"
+            style="cursor: pointer;"
+            title="Toggle SortBy"
+          >
+            <div
+              class="flex flex-inline align-top  undefined"
+            >
+              <div
+                class="mr-1"
+              >
+                Min
+              </div>
+              <div
+                class="mt-1 text-theme-color-neutral-500"
+                data-testid="table__Sort"
+              >
+                <div
+                  class="sc-AxjAm iepfoc"
+                  height="10"
+                  width="10"
+                >
+                  <svg>
+                    sort.svg
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </th>
+          <th
+            class="text-xs text-left select-none text-theme-neutral-400"
+            colspan="1"
+            data-testid="table__th--8"
+            role="columnheader"
+            style="cursor: pointer;"
+            title="Toggle SortBy"
+          >
+            <div
+              class="flex flex-inline align-top  undefined"
+            >
+              <div
+                class="mr-1"
+              >
+                Commission (Daily)
+              </div>
+              <div
+                class="mt-1 text-theme-color-neutral-500"
+                data-testid="table__Sort"
+              >
+                <div
+                  class="sc-AxjAm iepfoc"
+                  height="10"
+                  width="10"
+                >
+                  <svg>
+                    sort.svg
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </th>
+          <th
+            class="text-xs text-left select-none text-theme-neutral-400"
+            colspan="1"
+            data-testid="table__th--9"
+            role="columnheader"
+          >
+            <div
+              class="flex flex-inline align-top  undefined"
+            >
+              <div
+                class="mr-1"
+              />
+              <div
+                class="mt-1 text-theme-color-neutral-500"
+                data-testid="table__Sort"
+              />
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody
+        role="rowgroup"
+      >
+        <tr
+          class="border-b border-theme-neutral-200"
+        >
+          <td
+            class="py-5"
+          >
+            <div
+              class="Avatar__AvatarStyled-yiil9n-0 fympLW"
+              data-testid="Avatar"
+            />
+          </td>
+          <td
+            class="py-5 font-bold"
+          >
+            Delegate 1
+          </td>
+          <td
+            class="py-5 font-bold text-theme-neutral-dark"
+          >
+            #1
+          </td>
+          <td
+            class="py-5 font-bold text-theme-neutral-dark"
+          >
+            3.43%
+          </td>
+          <td
+            class="py-5"
+          >
+            <div
+              class="flex justify-center h-full"
+            >
+              <a
+                href="https://marketsquare.ark.io"
+                rel="noreferrer"
+                target="_blank"
+              >
+                <div
+                  class="sc-AxjAm cpczEI text-xl text-theme-primary"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    msq.svg
+                  </svg>
+                </div>
+              </a>
+            </div>
+          </td>
+          <td
+            class="py-5 font-bold text-theme-neutral-dark"
+          >
+            <span>
+              80%
+            </span>
+          </td>
+          <td
+            class="py-5 font-bold text-theme-neutral-dark"
+          >
+            <span>
+              Daily
+            </span>
+          </td>
+          <td
+            class="py-5 font-bold text-theme-neutral-dark"
+          >
+            <span>
+              500 Ѧ
+            </span>
+          </td>
+          <td
+            class="py-5 font-bold text-theme-neutral-dark"
+          >
+            <span>
+              2.387082496 Ѧ
+            </span>
+          </td>
+          <td
+            class="py-5"
+          >
+            <div
+              class="text-right"
+            >
+              <button
+                class="sc-AxiKw gFzSt"
+                color="primary"
+                data-testid="DelegateListItem__button--select"
+                type="button"
+              >
+                Select
+              </button>
+            </div>
+          </td>
+        </tr>
+        <tr
+          class="border-b border-theme-neutral-200"
+        >
+          <td
+            class="py-5"
+          >
+            <div
+              class="Avatar__AvatarStyled-yiil9n-0 fympLW"
+              data-testid="Avatar"
+            />
+          </td>
+          <td
+            class="py-5 font-bold"
+          >
+            Delegate 2
+          </td>
+          <td
+            class="py-5 font-bold text-theme-neutral-dark"
+          >
+            #2
+          </td>
+          <td
+            class="py-5 font-bold text-theme-neutral-dark"
+          >
+            3.43%
+          </td>
+          <td
+            class="py-5"
+          >
+            <div
+              class="flex justify-center h-full"
+            >
+              <a
+                href="https://marketsquare.ark.io"
+                rel="noreferrer"
+                target="_blank"
+              >
+                <div
+                  class="sc-AxjAm cpczEI text-xl text-theme-primary"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    msq.svg
+                  </svg>
+                </div>
+              </a>
+            </div>
+          </td>
+          <td
+            class="py-5 font-bold text-theme-neutral-dark"
+          >
+            <span>
+              80%
+            </span>
+          </td>
+          <td
+            class="py-5 font-bold text-theme-neutral-dark"
+          >
+            <span>
+              Daily
+            </span>
+          </td>
+          <td
+            class="py-5 font-bold text-theme-neutral-dark"
+          >
+            <span>
+              500 Ѧ
+            </span>
+          </td>
+          <td
+            class="py-5 font-bold text-theme-neutral-dark"
+          >
+            <span>
+              2.387082496 Ѧ
+            </span>
+          </td>
+          <td
+            class="py-5"
+          >
+            <div
+              class="text-right"
+            >
+              <button
+                class="sc-AxiKw gFzSt"
+                color="primary"
+                data-testid="DelegateListItem__button--select"
+                type="button"
+              >
+                Select
+              </button>
+            </div>
+          </td>
+        </tr>
+        <tr
+          class="border-b border-theme-neutral-200"
+        >
+          <td
+            class="py-5"
+          >
+            <div
+              class="Avatar__AvatarStyled-yiil9n-0 fympLW"
+              data-testid="Avatar"
+            />
+          </td>
+          <td
+            class="py-5 font-bold"
+          >
+            Delegate 3
+          </td>
+          <td
+            class="py-5 font-bold text-theme-neutral-dark"
+          >
+            #3
+          </td>
+          <td
+            class="py-5 font-bold text-theme-neutral-dark"
+          >
+            3.43%
+          </td>
+          <td
+            class="py-5"
+          />
+          <td
+            class="py-5 font-bold text-theme-neutral-dark"
+          />
+          <td
+            class="py-5 font-bold text-theme-neutral-dark"
+          />
+          <td
+            class="py-5 font-bold text-theme-neutral-dark"
+          />
+          <td
+            class="py-5 font-bold text-theme-neutral-dark"
+          />
+          <td
+            class="py-5"
+          >
+            <div
+              class="text-right"
+            >
+              <button
+                class="sc-AxiKw gFzSt"
+                color="primary"
+                data-testid="DelegateListItem__button--select"
+                type="button"
+              >
+                Select
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`DelegateList should render with empty list 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-AxirZ gQslMC"
+    role="table"
+  >
+    <table
+      class="table-auto"
+    >
+      <thead>
+        <tr
+          role="row"
+        >
+          <th
+            class="text-xs text-left select-none text-theme-neutral-400"
+            colspan="1"
+            data-testid="table__th--0"
+            role="columnheader"
+          >
+            <div
+              class="flex flex-inline align-top  undefined"
+            >
+              <div
+                class="mr-1"
+              />
+              <div
+                class="mt-1 text-theme-color-neutral-500"
+                data-testid="table__Sort"
+              />
+            </div>
+          </th>
+          <th
+            class="text-xs text-left select-none text-theme-neutral-400"
+            colspan="1"
+            data-testid="table__th--1"
+            role="columnheader"
+            style="cursor: pointer;"
+            title="Toggle SortBy"
+          >
+            <div
+              class="flex flex-inline align-top  undefined"
+            >
+              <div
+                class="mr-1"
+              >
+                Delegate Name
+              </div>
+              <div
+                class="mt-1 text-theme-color-neutral-500"
+                data-testid="table__Sort"
+              >
+                <div
+                  class="sc-AxjAm iepfoc"
+                  height="10"
+                  width="10"
+                >
+                  <svg>
+                    sort.svg
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </th>
+          <th
+            class="text-xs text-left select-none text-theme-neutral-400"
+            colspan="1"
+            data-testid="table__th--2"
+            role="columnheader"
+            style="cursor: pointer;"
+            title="Toggle SortBy"
+          >
+            <div
+              class="flex flex-inline align-top  undefined"
+            >
+              <div
+                class="mr-1"
+              >
+                Rank
+              </div>
+              <div
+                class="mt-1 text-theme-color-neutral-500"
+                data-testid="table__Sort"
+              >
+                <div
+                  class="sc-AxjAm iepfoc"
+                  height="10"
+                  width="10"
+                >
+                  <svg>
+                    sort.svg
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </th>
+          <th
+            class="text-xs text-left select-none text-theme-neutral-400"
+            colspan="1"
+            data-testid="table__th--3"
+            role="columnheader"
+            style="cursor: pointer;"
+            title="Toggle SortBy"
+          >
+            <div
+              class="flex flex-inline align-top  undefined"
+            >
+              <div
+                class="mr-1"
+              >
+                Votes
+              </div>
+              <div
+                class="mt-1 text-theme-color-neutral-500"
+                data-testid="table__Sort"
+              >
+                <div
+                  class="sc-AxjAm iepfoc"
+                  height="10"
+                  width="10"
+                >
+                  <svg>
+                    sort.svg
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </th>
+          <th
+            class="text-xs text-left select-none text-theme-neutral-400"
+            colspan="1"
+            data-testid="table__th--4"
+            role="columnheader"
+          >
+            <div
+              class="flex flex-inline align-top  flex justify-center"
+            >
+              <div
+                class="mr-1"
+              >
+                Profile
+              </div>
+              <div
+                class="mt-1 text-theme-color-neutral-500"
+                data-testid="table__Sort"
+              />
+            </div>
+          </th>
+          <th
+            class="text-xs text-left select-none text-theme-neutral-400"
+            colspan="1"
+            data-testid="table__th--5"
+            role="columnheader"
+            style="cursor: pointer;"
+            title="Toggle SortBy"
+          >
+            <div
+              class="flex flex-inline align-top  undefined"
+            >
+              <div
+                class="mr-1"
+              >
+                Comm.
+              </div>
+              <div
+                class="mt-1 text-theme-color-neutral-500"
+                data-testid="table__Sort"
+              >
+                <div
+                  class="sc-AxjAm iepfoc"
+                  height="10"
+                  width="10"
+                >
+                  <svg>
+                    sort.svg
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </th>
+          <th
+            class="text-xs text-left select-none text-theme-neutral-400"
+            colspan="1"
+            data-testid="table__th--6"
+            role="columnheader"
+            style="cursor: pointer;"
+            title="Toggle SortBy"
+          >
+            <div
+              class="flex flex-inline align-top  undefined"
+            >
+              <div
+                class="mr-1"
+              >
+                Payout
+              </div>
+              <div
+                class="mt-1 text-theme-color-neutral-500"
+                data-testid="table__Sort"
+              >
+                <div
+                  class="sc-AxjAm iepfoc"
+                  height="10"
+                  width="10"
+                >
+                  <svg>
+                    sort.svg
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </th>
+          <th
+            class="text-xs text-left select-none text-theme-neutral-400"
+            colspan="1"
+            data-testid="table__th--7"
+            role="columnheader"
+            style="cursor: pointer;"
+            title="Toggle SortBy"
+          >
+            <div
+              class="flex flex-inline align-top  undefined"
+            >
+              <div
+                class="mr-1"
+              >
+                Min
+              </div>
+              <div
+                class="mt-1 text-theme-color-neutral-500"
+                data-testid="table__Sort"
+              >
+                <div
+                  class="sc-AxjAm iepfoc"
+                  height="10"
+                  width="10"
+                >
+                  <svg>
+                    sort.svg
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </th>
+          <th
+            class="text-xs text-left select-none text-theme-neutral-400"
+            colspan="1"
+            data-testid="table__th--8"
+            role="columnheader"
+            style="cursor: pointer;"
+            title="Toggle SortBy"
+          >
+            <div
+              class="flex flex-inline align-top  undefined"
+            >
+              <div
+                class="mr-1"
+              >
+                Commission (Daily)
+              </div>
+              <div
+                class="mt-1 text-theme-color-neutral-500"
+                data-testid="table__Sort"
+              >
+                <div
+                  class="sc-AxjAm iepfoc"
+                  height="10"
+                  width="10"
+                >
+                  <svg>
+                    sort.svg
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </th>
+          <th
+            class="text-xs text-left select-none text-theme-neutral-400"
+            colspan="1"
+            data-testid="table__th--9"
+            role="columnheader"
+          >
+            <div
+              class="flex flex-inline align-top  undefined"
+            >
+              <div
+                class="mr-1"
+              />
+              <div
+                class="mt-1 text-theme-color-neutral-500"
+                data-testid="table__Sort"
+              />
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody
+        role="rowgroup"
+      />
+    </table>
+  </div>
+</DocumentFragment>
+`;

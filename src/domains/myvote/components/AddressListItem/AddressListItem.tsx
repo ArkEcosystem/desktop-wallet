@@ -90,7 +90,7 @@ export const AddressListItem = ({
 					<Button
 						variant="plain"
 						onClick={() => onSelect?.(walletAddress!)}
-						data-testid="AddressListItem__button--unvote"
+						data-testid="AddressListItem__button--select"
 					>
 						{t("COMMON.SELECT")}
 					</Button>

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/require-await */
 import { act, fireEvent, render } from "@testing-library/react";
 import React from "react";
 
@@ -70,26 +71,27 @@ describe("HeaderSearchBar", () => {
 		expect(input.value).not.toBe("test");
 	});
 
-	it("should call onSearch", (done) => {
+	it("should call onSearch", async () => {
+		jest.useFakeTimers();
+
 		const onSearch = jest.fn();
 
 		const { getByTestId } = render(<HeaderSearchBar onSearch={onSearch} />);
 
 		fireEvent.click(getByTestId("header-search-bar__button"));
 
-		const input = getByTestId("Input");
-
 		act(() => {
-			fireEvent.change(input, {
+			fireEvent.change(getByTestId("Input"), {
 				target: {
 					value: "test",
 				},
 			});
 		});
 
-		setTimeout(() => {
-			expect(onSearch).toHaveBeenCalled();
-			done();
-		}, 550);
+		await act(async () => {
+			jest.runAllTimers();
+		});
+
+		expect(onSearch).toHaveBeenCalled();
 	});
 });
