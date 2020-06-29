@@ -14,7 +14,8 @@ type DelegateListItemProps = {
 	commissionDaily?: number;
 	payout?: string;
 	min?: number;
-	onSelect?: (delegateAddress: string) => void;
+	selected?: any[];
+	onSelect?: ({ address, username, rank }: { address: string; username: string; rank: number }) => void;
 };
 
 export const DelegateListItem = ({
@@ -27,9 +28,11 @@ export const DelegateListItem = ({
 	commissionDaily,
 	payout,
 	min,
+	selected,
 	onSelect,
 }: DelegateListItemProps) => {
 	const { t } = useTranslation();
+	const isSelected = selected?.find((selectedDelegate: any) => selectedDelegate.username === delegateName) || false;
 
 	return (
 		<tr className="border-b border-theme-neutral-200">
@@ -69,13 +72,18 @@ export const DelegateListItem = ({
 				<div className="text-right">
 					<Button
 						variant="plain"
-						onClick={() => onSelect?.(delegateAddress!)}
+						color={isSelected ? "danger" : "primary"}
+						onClick={() => onSelect?.({ address: delegateAddress!, username: delegateName!, rank: rank! })}
 						data-testid="DelegateListItem__button--select"
 					>
-						{t("COMMON.SELECT")}
+						{isSelected ? t("COMMON.UNSELECT") : t("COMMON.SELECT")}
 					</Button>
 				</div>
 			</td>
 		</tr>
 	);
+};
+
+DelegateListItem.defaultProps = {
+	selected: [],
 };
