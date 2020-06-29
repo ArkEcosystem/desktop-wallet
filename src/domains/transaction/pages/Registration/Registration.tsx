@@ -40,6 +40,10 @@ const { ConfirmTransactionLedgerBanner } = images.transaction.common;
 
 const FormWrapper = styled.div`
 	.select-transparent {
+		> div:first-child {
+			width: 100%;
+		}
+
 		select {
 			&:not([disabled]) {
 				background-color: transparent;
@@ -47,17 +51,6 @@ const FormWrapper = styled.div`
 			}
 			option {
 				color: var(--theme-color-neutral-900);
-			}
-		}
-	}
-
-	.send-transaction {
-		&__select-contact {
-			> div:first-child {
-				width: 100%;
-				svg {
-					display: none;
-				}
 			}
 		}
 	}
