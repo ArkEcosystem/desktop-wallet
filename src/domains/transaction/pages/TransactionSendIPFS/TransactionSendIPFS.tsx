@@ -4,12 +4,13 @@ import { Circle } from "app/components/Circle";
 import { Clipboard } from "app/components/Clipboard";
 import { Form } from "app/components/Form";
 import { Icon } from "app/components/Icon";
-import { Input, InputPassword, InputRange } from "app/components/Input";
+import { Input, InputPassword } from "app/components/Input";
 import { Select } from "app/components/Select";
-import { SelectionBar, SelectionBarOption, useSelectionState } from "app/components/SelectionBar";
+import { useSelectionState } from "app/components/SelectionBar";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { TransactionDetail } from "app/components/TransactionDetail";
+import { InputFee } from "domains/transaction/components/InputFee";
 import { TotalAmountBox } from "domains/transaction/components/TotalAmountBox";
 import React, { useEffect } from "react";
 import { useForm, useFormContext } from "react-hook-form";
@@ -48,24 +49,7 @@ export const FirstStep = () => {
 					<Input name="hash" />
 				</TransactionDetail>
 				<TransactionDetail border={false} label="Fee ARK">
-					<div className="flex">
-						<div className="w-3/5 mr-2">
-							<InputRange name="fee" defaultValue={25} min={1} max={100} step={1} />
-						</div>
-						<div className="ml-2">
-							<SelectionBar>
-								<SelectionBarOption value={1} {...selectionBarState}>
-									Last
-								</SelectionBarOption>
-								<SelectionBarOption value={2} {...selectionBarState}>
-									Min
-								</SelectionBarOption>
-								<SelectionBarOption value={3} {...selectionBarState}>
-									Average
-								</SelectionBarOption>
-							</SelectionBar>
-						</div>
-					</div>
+					<InputFee selectionBarState={selectionBarState} defaultValue={25} min={1} max={100} step={1} />
 				</TransactionDetail>
 			</div>
 		</section>
