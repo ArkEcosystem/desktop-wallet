@@ -9,18 +9,9 @@ type VoteListProps = {
 
 export const VoteList = ({ votes }: VoteListProps) => {
 	return (
-		<div>
+		<div className="-my-5">
 			{votes?.map((vote: any, index: number) => (
-				<TransactionDetail
-					key={index}
-					border={index !== 0}
-					label=" "
-					extra={
-						<div>
-							<Avatar address={vote.address} />
-						</div>
-					}
-				>
+				<TransactionDetail key={index} border={index !== 0} label=" " extra={<Avatar address={vote.address} />}>
 					<Address address={vote.address} walletName={vote.delegateName} size="large" />
 				</TransactionDetail>
 			))}

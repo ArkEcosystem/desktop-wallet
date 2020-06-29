@@ -12,6 +12,8 @@ import { Avatar } from "domains/wallet/components/Avatar";
 import React, { useEffect, useState } from "react";
 import { useForm, useFormContext } from "react-hook-form";
 
+import { VoteList } from "../VoteList";
+
 const votes = [
 	{
 		address: "FJKDSALJFKASLJFKSDAJD333FKFKDSAJFKSAJFKLASJKDFJ",
@@ -70,6 +72,9 @@ export const FirstStep = () => {
 						<Label color="warning">Your address</Label>
 					</div>
 					<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} size="large" />
+				</TransactionDetail>
+				<TransactionDetail label="Votes">
+					<VoteList votes={votes} />
 				</TransactionDetail>
 				<TransactionDetail label="Transaction Fee">
 					<div className="flex">
