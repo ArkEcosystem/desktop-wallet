@@ -3,7 +3,7 @@ import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { Form } from "app/components/Form";
 import { Icon } from "app/components/Icon";
-import { InputRange } from "app/components/Input";
+import { InputPassword, InputRange } from "app/components/Input";
 import { Label } from "app/components/Label";
 import { SelectionBar, SelectionBarOption, useSelectionState } from "app/components/SelectionBar";
 import { StepIndicator } from "app/components/StepIndicator";
@@ -97,10 +97,10 @@ export const FirstStep = () => {
 };
 
 export const SecondStep = () => (
-	<section className="space-y-8" data-testid="VoteTransactionSend__step--first">
+	<section className="space-y-8" data-testid="VoteTransactionSend__step--second">
 		<div>
 			<h1 className="mb-0">Transaction Review</h1>
-			<p className="text-theme-neutral-dark">Select a fee to continue</p>
+			<p className="text-theme-neutral-dark">Review the transaction details</p>
 		</div>
 		<div className="grid grid-flow-row gap-2">
 			<TransactionDetail
@@ -135,6 +135,29 @@ export const SecondStep = () => (
 	</section>
 );
 
+export const ThirdStep = ({ onSubmit }: any) => {
+	const form = useForm();
+	const { register } = form;
+
+	return (
+		<section data-testid="TransactionSend__step--third" className="space-y-8">
+			<Form context={form} onSubmit={onSubmit}>
+				<div>
+					<h1 className="mb-0">Authenticate</h1>
+					<p className="text-theme-neutral-dark">
+						Enter your twelve word mnemonic to authenticate the transaction
+					</p>
+					<div className="grid grid-flow-row gap-2">
+						<TransactionDetail border={false} label="Mnemonic">
+							<InputPassword name="passphrase" ref={register({ required: true })} />
+						</TransactionDetail>
+					</div>
+				</div>
+			</Form>
+		</section>
+	);
+};
+
 type VoteTransactionSendProps = {
 	onSubmit: () => void;
 };
@@ -164,6 +187,9 @@ export const VoteTransactionSend = ({ onSubmit }: VoteTransactionSendProps) => {
 						<TabPanel tabId={2}>
 							<SecondStep />
 						</TabPanel>
+						<TabPanel tabId={3}>
+							<ThirdStep />
+						</TabPanel>
 
 						<div className="flex justify-end mt-6 space-x-3">
 							{activeTab >= 1 && activeTab < 4 && (
@@ -176,12 +202,17 @@ export const VoteTransactionSend = ({ onSubmit }: VoteTransactionSendProps) => {
 									>
 										Back
 									</Button>
-									<Button
-										data-testid={`VoteTransactionSend--${activeTab === 3 ? "send" : "continue"}`}
-										onClick={handleNext}
-									>
-										{activeTab === 3 ? "Send" : "Continue"}
-									</Button>
+
+									{activeTab === 3 ? (
+										<Button data-testid="VoteTransactionSend--send" onClick={handleNext}>
+											<Icon name="Send" width={20} height={20} className="text-white" />
+											<span>Send</span>
+										</Button>
+									) : (
+										<Button data-testid="VoteTransactionSend--continue" onClick={handleNext}>
+											Continue
+										</Button>
+									)}
 								</>
 							)}
 
