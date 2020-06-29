@@ -1,9 +1,7 @@
-import { Modal } from "app/components/Modal";
-// import { SearchBarFilters } from "domains/search/components/SearchBarFilters";
+import { SearchBarFilters } from "app/components/SearchBar/SearchBarFilters";
+import { SearchResource } from "app/components/SearchResource";
 import { Table } from "app/components/Table";
 import { WalletListItem } from "app/components/WalletListItem";
-import { SearchBar } from "domains/search/components/SearchBar";
-import { SearchBarFilters } from "domains/search/components/SearchBarFilters";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
@@ -13,8 +11,8 @@ type SelectAccountProps = {
 	networks?: any;
 	onNetworkChange?: any;
 	onViewAllNetworks?: any;
-	handleClose?: any;
-	handleSelect?: any;
+	onClose?: any;
+	onSearch?: any;
 };
 
 export const SelectAccount = ({
@@ -23,7 +21,8 @@ export const SelectAccount = ({
 	networks,
 	onNetworkChange,
 	onViewAllNetworks,
-	handleClose,
+	onClose,
+	onSearch,
 }: SelectAccountProps) => {
 	const { t } = useTranslation();
 
@@ -49,29 +48,24 @@ export const SelectAccount = ({
 	];
 
 	return (
-		<Modal
-			size={"4xl"}
+		<SearchResource
 			isOpen={isOpen}
 			title={t("WALLETS.MODAL_SELECT_ACCOUNT.TITLE")}
 			description={t("WALLETS.MODAL_SELECT_ACCOUNT.DESCRIPTION")}
-			onClose={() => handleClose()}
+			searchBarExtra={
+				<SearchBarFilters
+					networks={networks}
+					onNetworkChange={onNetworkChange}
+					onViewAllNetworks={onViewAllNetworks}
+				/>
+			}
+			onClose={onClose}
+			onSearch={onSearch}
 		>
-			<div className="-mx-16">
-				<SearchBar className="mt-8">
-					<SearchBarFilters
-						networks={networks}
-						onNetworkChange={onNetworkChange}
-						onViewAllNetworks={onViewAllNetworks}
-					/>
-				</SearchBar>
-			</div>
-
-			<div className="mt-8">
-				<Table columns={listColumns} data={wallets}>
-					{(rowData: any) => <WalletListItem variant="singleAction" {...rowData} />}
-				</Table>
-			</div>
-		</Modal>
+			<Table columns={listColumns} data={wallets}>
+				{(rowData: any) => <WalletListItem variant="singleAction" {...rowData} />}
+			</Table>
+		</SearchResource>
 	);
 };
 

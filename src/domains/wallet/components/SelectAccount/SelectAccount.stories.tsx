@@ -31,8 +31,8 @@ export const Default = () => {
 			isOpen={boolean("isOpen", true)}
 			wallets={wallets}
 			networks={networks}
-			handleClose={action("handleClose")}
-			handleSelect={action("handleSelect")}
+			onClose={action("onClose")}
+			onSearch={action("onSearch")}
 		/>
 	);
 };
