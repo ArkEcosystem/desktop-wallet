@@ -19,10 +19,10 @@ type RegistrationProps = {
 const EmptyRegistrations = (
 	<div
 		data-testid="my-registrations__empty-state"
-		className="flex flex-col justify-center items-center mt-4 px-10 py-20 bg-theme-background"
+		className="flex flex-col items-center justify-center px-10 py-20 mt-4 bg-theme-background"
 	>
 		<SvgCollection.RegistrationsIllustration />
-		<span className="mt-7 text-sm text-theme-neutral-600">
+		<span className="text-sm mt-7 text-theme-neutral-600">
 			Register Business, Bridgechain and Delegate in the most convenient way.
 		</span>
 	</div>
@@ -71,7 +71,7 @@ export const MyRegistrations = ({ registrations, handleDropdown }: Props) => {
 			<div className="px-10 py-14 bg-theme-background">
 				<div className="flex justify-between">
 					<div className="flex flex-col">
-						<span className="font-semibold text-3xl">My Registrations</span>
+						<span className="text-3xl font-semibold">My Registrations</span>
 						<span className="text-theme-neutral-600">
 							You can register a Delagate, Business and Bridgechain.
 						</span>

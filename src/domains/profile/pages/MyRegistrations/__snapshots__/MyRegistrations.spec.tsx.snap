@@ -15,7 +15,7 @@ exports[`Welcome should render empty state 1`] = `
           class="flex flex-col"
         >
           <span
-            class="font-semibold text-3xl"
+            class="text-3xl font-semibold"
           >
             My Registrations
           </span>
@@ -35,14 +35,14 @@ exports[`Welcome should render empty state 1`] = `
       </div>
     </div>
     <div
-      class="flex flex-col justify-center items-center mt-4 px-10 py-20 bg-theme-background"
+      class="flex flex-col items-center justify-center px-10 py-20 mt-4 bg-theme-background"
       data-testid="my-registrations__empty-state"
     >
       <svg>
         register.svg
       </svg>
       <span
-        class="mt-7 text-sm text-theme-neutral-600"
+        class="text-sm mt-7 text-theme-neutral-600"
       >
         Register Business, Bridgechain and Delegate in the most convenient way.
       </span>
@@ -66,7 +66,7 @@ exports[`Welcome should render null for a not knwown type of table 1`] = `
           class="flex flex-col"
         >
           <span
-            class="font-semibold text-3xl"
+            class="text-3xl font-semibold"
           >
             My Registrations
           </span>
@@ -104,7 +104,7 @@ exports[`Welcome should render properly 1`] = `
           class="flex flex-col"
         >
           <span
-            class="font-semibold text-3xl"
+            class="text-3xl font-semibold"
           >
             My Registrations
           </span>
@@ -124,10 +124,10 @@ exports[`Welcome should render properly 1`] = `
       </div>
     </div>
     <div
-      class="flex flex-col bg-theme-background mt-4 px-10"
+      class="flex flex-col px-10 mt-4 bg-theme-background"
     >
       <span
-        class="py-10 font-bold text-2xl"
+        class="py-10 text-2xl font-bold"
       >
         Business
       </span>
@@ -332,7 +332,7 @@ exports[`Welcome should render properly 1`] = `
               data-testid="business-table__row"
             >
               <td
-                class="py-4 w-24"
+                class="w-24 py-4"
               >
                 <div
                   class="flex items-center"
@@ -418,7 +418,7 @@ exports[`Welcome should render properly 1`] = `
                 class="px-1 px-12"
               />
               <td
-                class="py-1 float-right"
+                class="float-right py-1"
               >
                 <button
                   class="sc-AxjAm kTAyCf mt-4"
@@ -451,7 +451,7 @@ exports[`Welcome should render properly 1`] = `
               data-testid="business-table__row"
             >
               <td
-                class="py-4 w-24"
+                class="w-24 py-4"
               >
                 <div
                   class="flex items-center"
@@ -537,7 +537,7 @@ exports[`Welcome should render properly 1`] = `
                 class="px-1 px-12"
               />
               <td
-                class="py-1 float-right"
+                class="float-right py-1"
               >
                 <button
                   class="sc-AxjAm kTAyCf mt-4"
@@ -570,10 +570,10 @@ exports[`Welcome should render properly 1`] = `
       </div>
     </div>
     <div
-      class="flex flex-col bg-theme-background mt-4 px-10"
+      class="flex flex-col px-10 mt-4 bg-theme-background"
     >
       <span
-        class="py-10 font-bold text-2xl"
+        class="py-10 text-2xl font-bold"
       >
         Blockchain
       </span>
@@ -798,7 +798,7 @@ exports[`Welcome should render properly 1`] = `
               data-testid="blockchain-table__row"
             >
               <td
-                class="py-4 w-24"
+                class="w-24 py-4"
               >
                 <div
                   class="flex items-center"
@@ -891,7 +891,7 @@ exports[`Welcome should render properly 1`] = `
                 class="px-1 px-11"
               />
               <td
-                class="py-1 float-right"
+                class="float-right py-1"
               >
                 <button
                   class="sc-AxjAm kTAyCf mt-4"
@@ -924,7 +924,7 @@ exports[`Welcome should render properly 1`] = `
               data-testid="blockchain-table__row"
             >
               <td
-                class="py-4 w-24"
+                class="w-24 py-4"
               >
                 <div
                   class="flex items-center"
@@ -1017,7 +1017,7 @@ exports[`Welcome should render properly 1`] = `
                 class="px-1 px-11"
               />
               <td
-                class="py-1 float-right"
+                class="float-right py-1"
               >
                 <button
                   class="sc-AxjAm kTAyCf mt-4"
@@ -1050,10 +1050,10 @@ exports[`Welcome should render properly 1`] = `
       </div>
     </div>
     <div
-      class="flex flex-col bg-theme-background mt-4 px-10"
+      class="flex flex-col px-10 mt-4 bg-theme-background"
     >
       <span
-        class="py-10 font-bold text-2xl"
+        class="py-10 text-2xl font-bold"
       >
         Delegate
       </span>
@@ -1218,7 +1218,7 @@ exports[`Welcome should render properly 1`] = `
               data-testid="delegate-table__row"
             >
               <td
-                class="py-4 w-24"
+                class="w-24 py-4"
               >
                 <div
                   class="flex items-center"
@@ -1309,7 +1309,7 @@ exports[`Welcome should render properly 1`] = `
                 </div>
               </td>
               <td
-                class="text-semibold text-theme-neutral-800 w-1/12"
+                class="w-1/12 text-semibold text-theme-neutral-800"
               >
                 <div
                   class="flex items-center ml-5 -mr-10"
@@ -1336,7 +1336,7 @@ exports[`Welcome should render properly 1`] = `
                 </div>
               </td>
               <td
-                class="py-1 float-right"
+                class="float-right py-1"
               >
                 <button
                   class="sc-AxjAm kTAyCf mt-4"
@@ -1369,7 +1369,7 @@ exports[`Welcome should render properly 1`] = `
               data-testid="delegate-table__row"
             >
               <td
-                class="py-4 w-24"
+                class="w-24 py-4"
               >
                 <div
                   class="flex items-center"
@@ -1460,7 +1460,7 @@ exports[`Welcome should render properly 1`] = `
                 </div>
               </td>
               <td
-                class="text-semibold text-theme-neutral-800 w-1/12"
+                class="w-1/12 text-semibold text-theme-neutral-800"
               >
                 <div
                   class="flex items-center ml-5 -mr-10"
@@ -1487,7 +1487,7 @@ exports[`Welcome should render properly 1`] = `
                 </div>
               </td>
               <td
-                class="py-1 float-right"
+                class="float-right py-1"
               >
                 <button
                   class="sc-AxjAm kTAyCf mt-4"

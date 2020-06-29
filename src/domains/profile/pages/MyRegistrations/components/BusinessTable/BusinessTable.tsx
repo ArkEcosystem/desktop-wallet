@@ -48,12 +48,12 @@ const options = [
 ];
 
 export const BusinessTable = ({ data, handleDropdown }: Props) => (
-	<div className="flex flex-col bg-theme-background mt-4 px-10">
-		<span className="py-10 font-bold text-2xl">Business</span>
+	<div className="flex flex-col px-10 mt-4 bg-theme-background">
+		<span className="py-10 text-2xl font-bold">Business</span>
 		<Table columns={columns} data={data}>
 			{(rowData: any) => (
 				<tr data-testid="business-table__row" className="border-b border-dashed border-theme-neutral-light">
-					<td className="py-4 w-24">
+					<td className="w-24 py-4">
 						<div className="flex items-center">
 							<Circle className="border-theme-neutral-800" size="large">
 								<Icon name="Business" width={22} height={22} />
@@ -80,7 +80,7 @@ export const BusinessTable = ({ data, handleDropdown }: Props) => (
 						<span className="ml-3">View</span>
 					</td>
 					<td className="px-1 px-12" />
-					<td className="py-1 float-right">
+					<td className="float-right py-1">
 						<Button variant="plain" className="mt-4" size="small">
 							<Dropdown
 								toggleIcon="Settings"

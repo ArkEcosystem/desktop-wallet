@@ -54,12 +54,12 @@ const getStatusIcon = (confirmed: boolean) => {
 };
 
 export const DelegateTable = ({ data, handleDropdown }: Props) => (
-	<div className="flex flex-col bg-theme-background mt-4 px-10">
-		<span className="py-10 font-bold text-2xl">Delegate</span>
+	<div className="flex flex-col px-10 mt-4 bg-theme-background">
+		<span className="py-10 text-2xl font-bold">Delegate</span>
 		<Table columns={columns} data={data}>
 			{(rowData: any) => (
 				<tr data-testid="delegate-table__row" className="border-b border-dashed border-theme-neutral-light">
-					<td className="py-4 w-24">
+					<td className="w-24 py-4">
 						<div className="flex items-center">
 							<Circle className="border-theme-neutral-800" size="large">
 								<Icon name="Business" width={22} height={22} />
@@ -85,14 +85,14 @@ export const DelegateTable = ({ data, handleDropdown }: Props) => (
 							</div>
 						</div>
 					</td>
-					<td className="text-semibold text-theme-neutral-800 w-1/12">
+					<td className="w-1/12 text-semibold text-theme-neutral-800">
 						<div className="flex items-center ml-5 -mr-10">
 							<small className="text-theme-neutral-500">2,43%</small>
 							<span className="ml-1">2,450.643</span>
 							<Icon name="Ark" className="ml-2" />
 						</div>
 					</td>
-					<td className="py-1 float-right">
+					<td className="float-right py-1">
 						<Button variant="plain" className="mt-4" size="small">
 							<Dropdown
 								toggleIcon="Settings"

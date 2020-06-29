@@ -3,10 +3,10 @@
 exports[`Welcome should render empty state 1`] = `
 <DocumentFragment>
   <div
-    class="flex flex-col bg-theme-background mt-4 px-10"
+    class="flex flex-col px-10 mt-4 bg-theme-background"
   >
     <span
-      class="py-10 font-bold text-2xl"
+      class="py-10 text-2xl font-bold"
     >
       Business
     </span>
@@ -211,7 +211,7 @@ exports[`Welcome should render empty state 1`] = `
             data-testid="business-table__row"
           >
             <td
-              class="py-4 w-24"
+              class="w-24 py-4"
             >
               <div
                 class="flex items-center"
@@ -297,7 +297,7 @@ exports[`Welcome should render empty state 1`] = `
               class="px-1 px-12"
             />
             <td
-              class="py-1 float-right"
+              class="float-right py-1"
             >
               <button
                 class="sc-AxjAm kTAyCf mt-4"
@@ -330,7 +330,7 @@ exports[`Welcome should render empty state 1`] = `
             data-testid="business-table__row"
           >
             <td
-              class="py-4 w-24"
+              class="w-24 py-4"
             >
               <div
                 class="flex items-center"
@@ -416,7 +416,7 @@ exports[`Welcome should render empty state 1`] = `
               class="px-1 px-12"
             />
             <td
-              class="py-1 float-right"
+              class="float-right py-1"
             >
               <button
                 class="sc-AxjAm kTAyCf mt-4"
