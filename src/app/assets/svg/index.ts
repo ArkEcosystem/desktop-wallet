@@ -6,6 +6,7 @@ import { ReactComponent as ArrowDown } from "./arrowdown.svg";
 import { ReactComponent as ArrowUp } from "./arrowup.svg";
 import { ReactComponent as Article } from "./article.svg";
 import { ReactComponent as Back } from "./back.svg";
+import { ReactComponent as BitBucket } from "./bitbucket.svg";
 import { ReactComponent as Bridgechain } from "./bridgechain.svg";
 import { ReactComponent as Business } from "./business.svg";
 import { ReactComponent as ChartActiveDot } from "./chart-active-dot.svg";
@@ -28,22 +29,29 @@ import { ReactComponent as Explorer } from "./explorer.svg";
 import { ReactComponent as EyeOff } from "./eye-off.svg";
 import { ReactComponent as EyeTag } from "./eye-tag.svg";
 import { ReactComponent as Eye } from "./eye.svg";
+import { ReactComponent as Facebook } from "./facebook.svg";
 import { ReactComponent as FilePassword } from "./file-password.svg";
 import { ReactComponent as Filters } from "./filters.svg";
 import { ReactComponent as Forward } from "./forward.svg";
 import { ReactComponent as General } from "./general.svg";
+import { ReactComponent as GitHub } from "./github.svg";
+import { ReactComponent as GitLab } from "./gitlab.svg";
 import { ReactComponent as Grant } from "./grant.svg";
 import { ReactComponent as Grid } from "./grid.svg";
 import { ReactComponent as Import } from "./import.svg";
+import { ReactComponent as Instagram } from "./instagram.svg";
 import { ReactComponent as Ipfs } from "./ipfs.svg";
 import { ReactComponent as Key } from "./key.svg";
 import { ReactComponent as Ledger } from "./ledger.svg";
 import { ReactComponent as Link } from "./link.svg";
+import { ReactComponent as LinkedIn } from "./linkedin.svg";
 import { ReactComponent as List } from "./list.svg";
+import { ReactComponent as Medium } from "./medium.svg";
 import { ReactComponent as Mistake } from "./mistake.svg";
 import { ReactComponent as Msq } from "./msq.svg";
 import { ReactComponent as Multisig } from "./multisig.svg";
 import { ReactComponent as Notification } from "./notification.svg";
+import { ReactComponent as Npm } from "./npm.svg";
 import { ReactComponent as OfficialArkPlugin } from "./official-ark-plugin.svg";
 import { ReactComponent as Ok } from "./ok.svg";
 import { ReactComponent as PaginationFirst } from "./pagination-first.svg";
@@ -59,6 +67,7 @@ import { ReactComponent as Profile } from "./profile.svg";
 import { ReactComponent as Qrcode } from "./qrcode.svg";
 import { ReactComponent as Receive } from "./receive.svg";
 import { ReactComponent as Received } from "./received.svg";
+import { ReactComponent as Reddit } from "./reddit.svg";
 import { ReactComponent as ReplyArrow } from "./reply-arrow.svg";
 import { ReactComponent as Reset } from "./reset.svg";
 import { ReactComponent as Search } from "./search.svg";
@@ -87,6 +96,7 @@ export const SvgCollection: any = {
 	ArrowDown,
 	ArrowUp,
 	Back,
+	BitBucket,
 	Bitcoin,
 	Bridgechain,
 	Business,
@@ -105,21 +115,28 @@ export const SvgCollection: any = {
 	Explorer,
 	Eye,
 	EyeOff,
+	Facebook,
 	FilePassword,
 	Filters,
 	Forward,
 	General,
+	GitHub,
+	GitLab,
 	Grant,
 	Grid,
 	Import,
+	Instagram,
 	Ipfs,
 	Key,
 	Ledger,
 	Link,
+	LinkedIn,
 	List,
+	Medium,
 	Mistake,
 	Msq,
 	Multisig,
+	Npm,
 	OfficialArkPlugin,
 	Ok,
 	PaginationFirst,
@@ -130,6 +147,7 @@ export const SvgCollection: any = {
 	Qrcode,
 	Receive,
 	Received,
+	Reddit,
 	ReplyArrow,
 	Reset,
 	Search,
