@@ -25,12 +25,17 @@ const columns = [
 	},
 	{
 		Header: "MSQ",
-		className: "font-semibold text-md",
+		className: "font-semibold text-md -ml-3",
+	},
+	{
+		Header: "Repository",
+		className: "font-semibold text-md ml-4",
 	},
 	{
 		Header: "Seed",
-		className: "font-semibold text-md",
+		className: "font-semibold text-md -ml-12",
 	},
+	{ Header: "Spacer", className: "invisible float-right" },
 	{ Header: "Options", className: "invisible float-right" },
 ];
 
@@ -51,7 +56,7 @@ export const BlockchainTable = ({ data }: Props) => (
 			{(rowData: any) => (
 				<tr data-testid="business-table__row" className="border-b border-dashed border-theme-neutral-light">
 					<td className="py-4">
-						<div className="ml-10 -mr-16">
+						<div className="ml-10 -mr-14">
 							<Circle className="border-theme-neutral-800" size="large">
 								<Icon name="Business" width={22} height={22} />
 							</Circle>
@@ -64,18 +69,22 @@ export const BlockchainTable = ({ data }: Props) => (
 					<td className="py-1 font-semibold">
 						<span>{rowData.businessName}</span>
 					</td>
-					<td className="py-1 text-bold text-theme-primary">
+					<td className="py-1 text-semibold text-theme-primary">
 						<span>View</span>
 					</td>
 					<td className="py-1 text-theme-neutral-400">
 						<Icon name="Redirect" className="ml-4" />
 					</td>
-					<td className="py-1 text-bold text-theme-primary">
-						<Icon name="Msq" width={25} height={25} />
+					<td className="py-1 text-semibold text-theme-primary">
+						<Icon name="Msq" width={22} height={22} className="-ml-2" />
 					</td>
-					<td className="py-1 text-bold text-theme-primary">
-						<span>View</span>
+					<td className="py-1 text-semibold text-theme-primary">
+						<span className="ml-7">View</span>
 					</td>
+					<td className="py-1 text-semibold text-theme-primary">
+						<span className="-ml-12">View</span>
+					</td>
+					<td className="px-1 px-10" />
 					<td className="py-1 float-right">
 						<Button variant="plain" className="mt-4" size="small">
 							<Dropdown

@@ -1,1 +1,1 @@
-export * from "./BusinessTable";
+export * from "./BlockchainTable";
