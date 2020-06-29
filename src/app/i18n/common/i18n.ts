@@ -96,6 +96,10 @@ export const translations: { [key: string]: any } = {
 	X_OF_Y: "{{0}} of {{1}}",
 	YOU: "You",
 	YOUR_PASSPHRASE: "Your Passphrase",
+	SEARCH: {
+		FIND_IT: "Find it",
+		PLACEHOLDER: "What would you like to search for?",
+	},
 
 	VALIDATION: {
 		REQUIRED: "Field required",

@@ -4,7 +4,7 @@ import React from "react";
 import { SearchBarFilters } from "./SearchBarFilters";
 
 export default {
-	title: "Search / Search Bar Filters",
+	title: "Search / Search Bar / Search Bar Filters",
 	decorators: [withKnobs],
 };
 
