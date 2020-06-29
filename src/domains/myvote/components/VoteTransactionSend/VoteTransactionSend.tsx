@@ -2,14 +2,14 @@ import { Address } from "app/components/Address";
 import { Circle } from "app/components/Circle";
 import { Form } from "app/components/Form";
 import { Icon } from "app/components/Icon";
-import {  InputRange } from "app/components/Input";
+import { InputRange } from "app/components/Input";
 import { Label } from "app/components/Label";
 import { SelectionBar, SelectionBarOption, useSelectionState } from "app/components/SelectionBar";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { TransactionDetail } from "app/components/TransactionDetail";
 import { Avatar } from "domains/wallet/components/Avatar";
-import React, { useEffect,useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useForm, useFormContext } from "react-hook-form";
 
 export const FirstStep = () => {
