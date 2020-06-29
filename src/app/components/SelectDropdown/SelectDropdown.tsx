@@ -2,8 +2,13 @@ import { Icon } from "app/components/Icon";
 import Downshift from "downshift";
 import React from "react";
 
+type Label = {
+	label: string;
+	value: string | number;
+};
+
 type Props = {
-	options?: any;
+	options: Label[];
 	option?: any;
 	toggle?: any;
 	className?: string;
@@ -19,7 +24,7 @@ export const SelectDropdown = ({ className, toggle, options, option }: Props) =>
 	};
 
 	return (
-		<Downshift itemToString={(i) => (i ? i.value : null)}>
+		<Downshift itemToString={(i) => i?.value}>
 			{({ getLabelProps, getInputProps, getItemProps, isOpen, toggleMenu, selectedItem }) => (
 				<div className={`relative ${className}`}>
 					<label {...getLabelProps({ htmlFor: "dropdown-select" })}>
