@@ -136,31 +136,32 @@ export const SecondStep = () => (
 	</section>
 );
 
-export const ThirdStep = ({ onSubmit }: any) => {
-	const form = useForm();
-	const { register } = form;
+export const ThirdStep = () => {
+	const { register } = useFormContext();
+
+	useEffect(() => {
+		register("passphrase", { required: true });
+	}, [register]);
 
 	return (
-		<section data-testid="TransactionSend__step--third" className="space-y-8">
-			<Form context={form} onSubmit={onSubmit}>
-				<div>
-					<h1 className="mb-0">Authenticate</h1>
-					<p className="text-theme-neutral-dark">
-						Enter your twelve word mnemonic to authenticate the transaction
-					</p>
-					<div className="grid grid-flow-row gap-2">
-						<TransactionDetail border={false} label="Mnemonic">
-							<InputPassword name="passphrase" ref={register({ required: true })} />
-						</TransactionDetail>
-					</div>
+		<section data-testid="VoteTransactionSend__step--third" className="space-y-8">
+			<div>
+				<h1 className="mb-0">Authenticate</h1>
+				<p className="text-theme-neutral-dark">
+					Enter your twelve word mnemonic to authenticate the transaction
+				</p>
+				<div className="grid grid-flow-row gap-2">
+					<TransactionDetail border={false} label="Mnemonic">
+						<InputPassword name="passphrase" ref={register({ required: true })} />
+					</TransactionDetail>
 				</div>
-			</Form>
+			</div>
 		</section>
 	);
 };
 
 export const FourthStep = () => (
-	<section data-testid="TransactionSend__step--fourth" className="space-y-8">
+	<section data-testid="VoteTransactionSend__step--fourth" className="space-y-8">
 		<div>
 			<h1 className="mb-0">Transaction Successful</h1>
 			<div className="grid grid-flow-row gap-2">
@@ -253,7 +254,7 @@ export const FourthStep = () => (
 );
 
 type VoteTransactionSendProps = {
-	onSubmit: () => void;
+	onSubmit?: () => void;
 };
 
 export const VoteTransactionSend = ({ onSubmit }: VoteTransactionSendProps) => {
@@ -270,7 +271,7 @@ export const VoteTransactionSend = ({ onSubmit }: VoteTransactionSendProps) => {
 
 	return (
 		<div className="max-w-xl mx-auto">
-			<Form context={form} onSubmit={onSubmit}>
+			<Form context={form} onSubmit={onSubmit!}>
 				<Tabs activeId={activeTab}>
 					<StepIndicator size={4} activeIndex={activeTab} />
 
@@ -293,7 +294,7 @@ export const VoteTransactionSend = ({ onSubmit }: VoteTransactionSendProps) => {
 								<>
 									<Button
 										disabled={activeTab === 1}
-										data-testid="VoteTransactionSend--back"
+										data-testid="VoteTransactionSend__button--back"
 										variant="plain"
 										onClick={handleBack}
 									>
@@ -301,12 +302,15 @@ export const VoteTransactionSend = ({ onSubmit }: VoteTransactionSendProps) => {
 									</Button>
 
 									{activeTab === 3 ? (
-										<Button data-testid="VoteTransactionSend--send" onClick={handleNext}>
+										<Button data-testid="VoteTransactionSend__button--send" onClick={handleNext}>
 											<Icon name="Send" width={20} height={20} className="text-white" />
 											<span>Send</span>
 										</Button>
 									) : (
-										<Button data-testid="VoteTransactionSend--continue" onClick={handleNext}>
+										<Button
+											data-testid="VoteTransactionSend__button--continue"
+											onClick={handleNext}
+										>
 											Continue
 										</Button>
 									)}
@@ -316,13 +320,13 @@ export const VoteTransactionSend = ({ onSubmit }: VoteTransactionSendProps) => {
 							{activeTab === 4 && (
 								<>
 									<Button
-										data-testid="VoteTransactionSend--back-to-wallet"
+										data-testid="VoteTransactionSend__button--back-to-wallet"
 										variant="plain"
 										className={"block"}
 									>
 										Back to wallet
 									</Button>
-									<Button data-testid="VoteTransactionSend--copy" variant="plain">
+									<Button data-testid="VoteTransactionSend__button--download" variant="plain">
 										<Icon name="Download" />
 										<span>Download</span>
 									</Button>
