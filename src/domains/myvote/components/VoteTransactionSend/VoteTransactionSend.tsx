@@ -9,6 +9,7 @@ import { SelectionBar, SelectionBarOption, useSelectionState } from "app/compone
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { TransactionDetail } from "app/components/TransactionDetail";
+import { TotalAmountBox } from "domains/transaction/components/TotalAmountBox";
 import { Avatar } from "domains/wallet/components/Avatar";
 import React, { useEffect, useState } from "react";
 import { useForm, useFormContext } from "react-hook-form";
@@ -60,14 +61,7 @@ export const FirstStep = () => {
 						ARK Ecosystem
 					</div>
 				</TransactionDetail>
-				<TransactionDetail
-					label=" "
-					extra={
-						<div>
-							<Avatar address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
-						</div>
-					}
-				>
+				<TransactionDetail label=" " extra={<Avatar address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}>
 					<div className="mb-2 text-sm font-semibold text-theme-neutral-500">
 						<span className="mr-1">Sender</span>
 						<Label color="warning">Your address</Label>
@@ -102,6 +96,45 @@ export const FirstStep = () => {
 	);
 };
 
+export const SecondStep = () => (
+	<section className="space-y-8" data-testid="VoteTransactionSend__step--first">
+		<div>
+			<h1 className="mb-0">Transaction Review</h1>
+			<p className="text-theme-neutral-dark">Select a fee to continue</p>
+		</div>
+		<div className="grid grid-flow-row gap-2">
+			<TransactionDetail
+				border={false}
+				label="Cryptoasset"
+				extra={
+					<div className="ml-1">
+						<Circle className="bg-theme-background border-theme-danger-200" size="large">
+							<Icon name="Ark" width={20} height={20} className="text-theme-danger-500" />
+						</Circle>
+					</div>
+				}
+			>
+				<div className="flex-auto text-xl font-semibold truncate text-theme-neutral-800 max-w-24">
+					ARK Ecosystem
+				</div>
+			</TransactionDetail>
+			<TransactionDetail label=" " extra={<Avatar address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}>
+				<div className="mb-2 text-sm font-semibold text-theme-neutral-500">
+					<span className="mr-1">Sender</span>
+					<Label color="warning">Your address</Label>
+				</div>
+				<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} size="large" />
+			</TransactionDetail>
+			<TransactionDetail label="Votes">
+				<VoteList votes={votes} />
+			</TransactionDetail>
+			<div className="my-4">
+				<TotalAmountBox transactionAmount="400" transactionFee="0.09660435" />
+			</div>
+		</div>
+	</section>
+);
+
 type VoteTransactionSendProps = {
 	onSubmit: () => void;
 };
@@ -127,6 +160,9 @@ export const VoteTransactionSend = ({ onSubmit }: VoteTransactionSendProps) => {
 					<div className="mt-10">
 						<TabPanel tabId={1}>
 							<FirstStep />
+						</TabPanel>
+						<TabPanel tabId={2}>
+							<SecondStep />
 						</TabPanel>
 
 						<div className="flex justify-end mt-6 space-x-3">
