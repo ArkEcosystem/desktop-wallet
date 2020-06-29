@@ -194,7 +194,7 @@ export const SendTransactionForm = ({
 							<button
 								data-testid="send-transaction__send-all"
 								onClick={() => setValue("amount", maxAvailableAmount)}
-								className="pr-4 pl-6 text-theme-primary bg-theme-background focus:outline-none bg-white"
+								className="pl-6 pr-4 bg-white text-theme-primary bg-theme-background focus:outline-none"
 							>
 								Send All
 							</button>
