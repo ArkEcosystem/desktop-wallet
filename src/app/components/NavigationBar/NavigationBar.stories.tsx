@@ -63,3 +63,32 @@ export const Default = () => {
 		</div>
 	);
 };
+
+export const EmptyNotifications = () => {
+	const notifications = {
+		pluginsHeader: "Plugin Jun 16, 2020",
+		transactionsHeader: "Transaction Jun 16, 2020",
+	};
+
+	return (
+		<div className="-m-5">
+			<NavigationBar
+				currencyIcon="Ark"
+				balance="34,253.75"
+				userInitials="IO"
+				onUserAction={(action: any) => alert(action.label)}
+				notifications={notifications}
+				onNotificationAction={(actionName: string, actionData: any) => alert(actionName)}
+			/>
+			<div className="h-64 border-b" />
+			<div className="h-64 border-b" />
+			<div className="h-64 border-b" />
+			<div className="h-64 border-b" />
+			<div className="h-64 border-b" />
+			<div className="h-64 border-b" />
+			<div className="h-64 border-b" />
+			<div className="h-64 border-b" />
+			<div className="h-64 border-b" />
+		</div>
+	);
+};
