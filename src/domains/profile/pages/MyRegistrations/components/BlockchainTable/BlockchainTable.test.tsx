@@ -27,6 +27,6 @@ describe("Welcome", () => {
 		const { getAllByTestId, asFragment } = render(<BlockchainTable data={registrations} />);
 
 		expect(asFragment()).toMatchSnapshot();
-		expect(getAllByTestId("business-table__row").length).toEqual(2);
+		expect(getAllByTestId("blockchain-table__row").length).toEqual(2);
 	});
 });
