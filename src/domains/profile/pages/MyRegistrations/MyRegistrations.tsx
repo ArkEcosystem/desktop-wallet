@@ -42,9 +42,8 @@ const renderRegistration = ({ type, registrations }: RegistrationProps) => {
 };
 
 export const MyRegistrations = ({ registrations }: Props) => {
-	console.log({ registrations });
 	const mountRegistrations = () =>
-		registrations.map((registrationsBlock) => {
+		registrations.map((registrationsBlock: any) => {
 			return renderRegistration(registrationsBlock);
 		});
 

@@ -44,7 +44,7 @@ const options = [
 	{ label: "Resign", value: "resign" },
 ];
 
-const getStatusIcon = (confirmed) => {
+const getStatusIcon = (confirmed: boolean) => {
 	if (!confirmed) {
 		return <Icon name="StatusClock" className="ml-2 text-theme-neutral-500" />;
 	}
