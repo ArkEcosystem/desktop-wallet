@@ -58,16 +58,3 @@ export const WithSelection = () => (
 		selectionTypeTitle="Primary"
 	/>
 );
-
-export const Readonly = () => (
-	<LinkCollection
-		title="Social Media"
-		description="Tell people more about yourself through social media"
-		types={types}
-		data={links}
-		typeName="media"
-		selectionTypes={["twitter"]}
-		selectionTypeTitle="Primary"
-		readonly
-	/>
-);

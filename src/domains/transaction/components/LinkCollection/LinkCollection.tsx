@@ -1,7 +1,7 @@
 import { Button } from "app/components/Button";
 import { FormLabel } from "app/components/Form";
 import { Icon } from "app/components/Icon";
-import { Input,InputGroup } from "app/components/Input";
+import { Input, InputGroup } from "app/components/Input";
 import { RadioButton } from "app/components/RadioButton";
 import { SelectDropdown } from "app/components/SelectDropdown";
 import { Table } from "app/components/Table";
@@ -12,15 +12,19 @@ type Link = {
 	type: string;
 };
 
+type Type = {
+	label: string;
+	value: string;
+};
+
 type LinkCollectionProps = {
 	data?: Link[];
 	description: string;
-	readonly?: boolean;
 	selectionTypes?: string[];
 	selectionTypeTitle?: string;
 	title: string;
 	typeName: string;
-	types: { label: string; value: string }[];
+	types: Type[];
 };
 
 export const LinkCollection = ({
@@ -29,14 +33,14 @@ export const LinkCollection = ({
 	description,
 	types,
 	typeName,
-	readonly,
 	selectionTypes,
 	selectionTypeTitle,
 }: LinkCollectionProps) => {
 	const [isExpanded, setIsExpanded] = React.useState(false);
-	const [links, setLinks] = React.useState((data || []));
-	const [selected, setSelected] = React.useState(null);
-	const [selectedType, setSelectedType] = React.useState(null);
+	const [links, setLinks] = React.useState(data || []);
+	const [selected, setSelected] = React.useState((null as unknown) as Link);
+	const [link, setLink] = React.useState("");
+	const [selectedType, setSelectedType] = React.useState((null as unknown) as Type);
 
 	const addLink = ({ link, type }: Link) => {
 		setLinks([...links, { link, type }]);
@@ -69,8 +73,12 @@ export const LinkCollection = ({
 	);
 
 	return (
-		<div>
-			<div className="flex justify-between cursor-pointer" onClick={() => setIsExpanded(!isExpanded)}>
+		<div data-testid="LinkCollection">
+			<div
+				data-testid="LinkCollection__header"
+				className="flex justify-between cursor-pointer"
+				onClick={() => setIsExpanded(!isExpanded)}
+			>
 				<div>
 					{title}
 					<div className="mt-2 text-theme-neutral-700">{description}</div>
@@ -98,66 +106,71 @@ export const LinkCollection = ({
 
 			{isExpanded && (
 				<div className="mt-4">
-					{!readonly && (
-						<div>
-							<div className="flex space-x-2">
-								<div className="flex flex-col w-1/4">
-									<div className="mb-2 w-full">
-										<FormLabel label={`Add ${typeName}`} />
-									</div>
-									<InputGroup className="flex flex-1">
-										<SelectDropdown
-											option={(type: any) => {
-												return (
-													<div className="p-2 border-b border-theme-neutral-200 hover:bg-theme-neutral-100">
-														{type.label}
-													</div>
-												);
-											}}
-											toggle={(selected: any) => {
-												setSelectedType(selected);
+					<div>
+						<div className="flex space-x-2">
+							<div className="flex flex-col w-1/4">
+								<div className="mb-2 w-full">
+									<FormLabel label={`Add ${typeName}`} />
+								</div>
+								<InputGroup className="flex flex-1">
+									<SelectDropdown
+										option={(type: Type) => {
+											return (
+												<div className="p-2 border-b border-theme-neutral-200 hover:bg-theme-neutral-100">
+													{type.label}
+												</div>
+											);
+										}}
+										toggle={(selected: Type) => {
+											setSelectedType(selected);
 
-												if (selected) {
-													return (
-														<div className="flex items-center flex-inline">
-															<div>{selected.label}</div>
-														</div>
-													);
-												}
-
+											if (selected) {
 												return (
 													<div className="flex items-center flex-inline">
-														<div className="font-semibold text-theme-neutral-800">
-															&nbsp;
-														</div>
+														<div>{selected.label}</div>
 													</div>
 												);
-											}}
-											options={types}
-											className="w-full"
-										/>
-									</InputGroup>
-								</div>
+											}
 
-								<div className="flex-1">
-									<div className="mb-2">
-										<FormLabel label="Link" />
-									</div>
-									<InputGroup>
-										<Input type="text" placeholder=" " className="pr-20" maxLength={255} />
-									</InputGroup>
-								</div>
+											return (
+												<div className="flex items-center flex-inline">
+													<div className="font-semibold text-theme-neutral-800">&nbsp;</div>
+												</div>
+											);
+										}}
+										options={types}
+										className="w-full"
+									/>
+								</InputGroup>
 							</div>
 
-							<Button
-								variant="plain"
-								className="w-full mt-2"
-								onClick={() => addLink({ link: "test", type: selectedType.value })}
-							>
-								Add Link
-							</Button>
+							<div className="flex-1">
+								<div className="mb-2">
+									<FormLabel label="Link" />
+								</div>
+								<InputGroup>
+									<Input
+										data-testid="LinkCollection__input-link"
+										type="text"
+										placeholder=" "
+										className="pr-20"
+										maxLength={255}
+										onChange={(e) => setLink(e.target.value)}
+									/>
+								</InputGroup>
+							</div>
 						</div>
-					)}
+
+						<Button
+							disabled={!selectedType && !link}
+							data-testid="LinkCollection__add-link"
+							variant="plain"
+							className="w-full mt-2"
+							onClick={() => addLink({ link, type: selectedType?.value })}
+						>
+							Add Link
+						</Button>
+					</div>
 
 					<div className="text-theme-neutral-700 mt-8 mb-2 text-sm">Your {typeName}</div>
 
@@ -166,13 +179,13 @@ export const LinkCollection = ({
 							<tr className="border-b border-theme-neutral-200">
 								{selectionTypeTitle && (
 									<td className="w-16 text-center">
-										{!readonly && selectionTypes.includes(rowData.type) && (
+										{selectionTypes && selectionTypes.includes(rowData.type) && (
 											<RadioButton
+												data-testid="LinkCollection__selected"
 												checked={
 													selected?.type === rowData.type && selected?.link === rowData.link
 												}
 												onChange={() => setSelected(rowData)}
-												data-testid={`LinkCollection__selected--${rowData.username}`}
 											/>
 										)}
 									</td>
@@ -183,14 +196,13 @@ export const LinkCollection = ({
 								<td className="py-6">{rowData.link}</td>
 
 								<td className="w-16 text-right">
-									{!readonly && (
-										<Button
-											size="icon"
-											onClick={() => removeLink({ link: "test", type: rowData.type })}
-										>
-											<Icon name="Trash" />
-										</Button>
-									)}
+									<Button
+										data-testid="LinkCollection__remove-link"
+										size="icon"
+										onClick={() => removeLink({ link: rowData.link, type: rowData.type })}
+									>
+										<Icon name="Trash" />
+									</Button>
 								</td>
 							</tr>
 						)}
@@ -199,8 +211,4 @@ export const LinkCollection = ({
 			)}
 		</div>
 	);
-};
-
-LinkCollection.defaultProps = {
-	readonly: false,
 };
