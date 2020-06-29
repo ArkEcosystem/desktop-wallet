@@ -27,5 +27,5 @@ export const Default = () => {
 		},
 	];
 
-	return <DelegateTable data={registrations} />;
+	return <DelegateTable data={registrations} handleDropdown={console.log} />;
 };

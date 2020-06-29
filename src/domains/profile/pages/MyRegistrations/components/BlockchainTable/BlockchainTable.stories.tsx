@@ -26,5 +26,5 @@ export const Default = () => {
 		},
 	];
 
-	return <BlockchainTable data={registrations} />;
+	return <BlockchainTable data={registrations} handleDropdown={console.log} />;
 };
