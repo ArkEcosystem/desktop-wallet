@@ -4,8 +4,8 @@ import { Circle } from "app/components/Circle";
 import { Form } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { Input, InputPassword } from "app/components/Input";
-import { Select } from "app/components/Select";
-import { useSelectionState } from "app/components/SelectionBar";
+import { SelectAsset } from "app/components/SelectAsset";
+import {   useSelectionState } from "app/components/SelectionBar";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { TransactionDetail } from "app/components/TransactionDetail";
@@ -15,7 +15,7 @@ import { TransactionSuccessful } from "domains/transaction/components/Transactio
 import React, { useEffect } from "react";
 import { useForm, useFormContext } from "react-hook-form";
 
-export const FirstStep = () => {
+export const FirstStep = ({ assets = [] }: any) => {
 	const { register } = useFormContext();
 	const selectionBarState = useSelectionState(1);
 
@@ -32,9 +32,7 @@ export const FirstStep = () => {
 			</div>
 			<div className="grid grid-flow-row gap-2">
 				<TransactionDetail border={false} label="Network">
-					<Select>
-						<option value="ARK Ecosystem">ARK Ecosystem</option>
-					</Select>
+					<SelectAsset assets={assets} />
 				</TransactionDetail>
 				<TransactionDetail border={false} label="Sender">
 					<div className="relative flex items-center">
@@ -159,9 +157,10 @@ export const FourthStep = () => (
 type Props = {
 	onCopy?: () => void;
 	onSubmit?: any;
+	assets?: any[];
 };
 
-export const TransactionSendIPFS = ({ onCopy, onSubmit }: Props) => {
+export const TransactionSendIPFS = ({ onCopy, onSubmit, assets }: Props) => {
 	const [activeTab, setActiveTab] = React.useState(1);
 
 	const form = useForm({ mode: "onChange" });
@@ -184,7 +183,7 @@ export const TransactionSendIPFS = ({ onCopy, onSubmit }: Props) => {
 
 					<div className="mt-10">
 						<TabPanel tabId={1}>
-							<FirstStep />
+							<FirstStep assets={assets} />
 						</TabPanel>
 						<TabPanel tabId={2}>
 							<SecondStep />

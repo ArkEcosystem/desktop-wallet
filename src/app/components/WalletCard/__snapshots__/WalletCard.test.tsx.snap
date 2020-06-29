@@ -19,7 +19,7 @@ exports[`Formatted Address should render 1`] = `
             data-testid="dropdown__toggle"
           >
             <div
-              class="float-right outline-none focus:outline-none"
+              class="float-right outline-none cursor-pointer focus:outline-none"
             >
               <div
                 class="sc-AxirZ eEbZjj"
@@ -76,12 +76,12 @@ exports[`Formatted Address should render blank 1`] = `
           />
         </div>
         <div
-          class=" mt-6 text-md text-theme-primary-contrast undefined"
+          class="mt-6 text-md text-theme-primary-contrast undefined"
         >
           New wallet
         </div>
         <div
-          class=" mt-1 text-md text-theme-primary-contrast undefined"
+          class="mt-1 text-md text-theme-primary-contrast my-px undefined"
         >
           Balance
         </div>
@@ -110,7 +110,7 @@ exports[`Formatted Address should render with wallet data 1`] = `
             data-testid="dropdown__toggle"
           >
             <div
-              class="float-right outline-none focus:outline-none"
+              class="float-right outline-none cursor-pointer focus:outline-none"
             >
               <div
                 class="sc-AxirZ eEbZjj"
@@ -195,7 +195,7 @@ exports[`Formatted Address should render with wallet data and optional icon 1`] 
             data-testid="dropdown__toggle"
           >
             <div
-              class="float-right outline-none focus:outline-none"
+              class="float-right outline-none cursor-pointer focus:outline-none"
             >
               <div
                 class="sc-AxirZ eEbZjj"

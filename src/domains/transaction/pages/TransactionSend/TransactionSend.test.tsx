@@ -14,12 +14,21 @@ const defaultFormValues = {
 		min: 1,
 		average: 14,
 	},
-	networks: [
+	assets: [
 		{
-			value: "ark",
-			label: "Ark Ecosystem",
 			icon: "Ark",
-			iconClassName: "border-theme-danger-200 text-theme-danger-400",
+			name: "Ark Ecosystem",
+			className: "text-theme-danger-400 border-theme-danger-200",
+		},
+		{
+			icon: "Bitcoin",
+			name: "Bitcoin",
+			className: "text-theme-warning-400 border-theme-warning-200",
+		},
+		{
+			icon: "Ethereum",
+			name: "Ethereum",
+			className: "text-theme-neutral-800 border-theme-neutral-600",
 		},
 	],
 	defaultFee: 0,
@@ -132,7 +141,6 @@ describe("Transaction Send", () => {
 
 		await act(async () => {
 			// 1st step form
-			fireEvent.change(getByTestId("send-transaction__network-select"), { target: { value: "ark" } });
 			const submit1st = getByTestId("send-transaction-click-submit");
 			fireEvent.click(submit1st);
 

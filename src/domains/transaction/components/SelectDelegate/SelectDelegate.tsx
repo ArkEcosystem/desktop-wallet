@@ -5,8 +5,8 @@ import { Checkbox } from "app/components/Checkbox";
 import { Circle } from "app/components/Circle";
 import { Modal } from "app/components/Modal";
 import { RadioButton } from "app/components/RadioButton";
+import { SearchBar } from "app/components/SearchBar";
 import { Table } from "app/components/Table";
-import { SearchBar } from "domains/search/components/SearchBar";
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 

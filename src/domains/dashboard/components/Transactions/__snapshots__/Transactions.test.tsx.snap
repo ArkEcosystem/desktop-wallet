@@ -6,135 +6,15 @@ exports[`Transactions should render with 1`] = `
     class="bg-white"
   >
     <div
-      class="pb-8 text-3xl font-bold"
+      class="text-4xl font-bold"
     >
       Transactions History
     </div>
     <div
-      class="sc-AxiKw fOxXaG"
-      role="table"
+      class="text-theme-neutral-700"
     >
-      <table
-        class="table-auto"
-      >
-        <thead>
-          <tr
-            role="row"
-          >
-            <th
-              class="text-xs text-left select-none text-theme-neutral-400"
-              colspan="1"
-              data-testid="table__th--0"
-              role="columnheader"
-            >
-              <div
-                class="flex flex-inline align-top  undefined"
-              >
-                <div
-                  class="mr-1"
-                >
-                  Date
-                </div>
-                <div
-                  class="mt-1 text-theme-color-neutral-500"
-                  data-testid="table__Sort"
-                />
-              </div>
-            </th>
-            <th
-              class="text-xs text-left select-none text-theme-neutral-400"
-              colspan="1"
-              data-testid="table__th--1"
-              role="columnheader"
-            >
-              <div
-                class="flex flex-inline align-top  invisible"
-              >
-                <div
-                  class="mr-1"
-                >
-                  Type
-                </div>
-                <div
-                  class="mt-1 text-theme-color-neutral-500"
-                  data-testid="table__Sort"
-                />
-              </div>
-            </th>
-            <th
-              class="text-xs text-left select-none text-theme-neutral-400"
-              colspan="1"
-              data-testid="table__th--2"
-              role="columnheader"
-            >
-              <div
-                class="flex flex-inline align-top  undefined"
-              >
-                <div
-                  class="mr-1"
-                >
-                  Wallet Address
-                </div>
-                <div
-                  class="mt-1 text-theme-color-neutral-500"
-                  data-testid="table__Sort"
-                />
-              </div>
-            </th>
-            <th
-              class="text-xs text-left select-none text-theme-neutral-400"
-              colspan="1"
-              data-testid="table__th--3"
-              role="columnheader"
-            >
-              <div
-                class="flex flex-inline align-top  float-right"
-              >
-                <div
-                  class="mr-1"
-                >
-                  Amount
-                </div>
-                <div
-                  class="mt-1 text-theme-color-neutral-500"
-                  data-testid="table__Sort"
-                />
-              </div>
-            </th>
-            <th
-              class="text-xs text-left select-none text-theme-neutral-400"
-              colspan="1"
-              data-testid="table__th--4"
-              role="columnheader"
-            >
-              <div
-                class="flex flex-inline align-top  float-right"
-              >
-                <div
-                  class="mr-1"
-                >
-                  Fiat Value
-                </div>
-                <div
-                  class="mt-1 text-theme-color-neutral-500"
-                  data-testid="table__Sort"
-                />
-              </div>
-            </th>
-          </tr>
-        </thead>
-        <tbody
-          role="rowgroup"
-        />
-      </table>
+      This will display the history of your transactions. But you don't have more than one transaction at the moment.
     </div>
-    <button
-      class="sc-AxjAm ddJBbC w-full mt-10 mb-5"
-      color="primary"
-      type="button"
-    >
-      See more
-    </button>
   </div>
 </div>
 `;
@@ -145,688 +25,831 @@ exports[`Transactions should render with with transactions 1`] = `
     class="bg-white"
   >
     <div
-      class="pb-8 text-3xl font-bold"
+      class="text-4xl font-bold"
     >
       Transactions History
     </div>
     <div
-      class="sc-AxiKw fOxXaG"
-      role="table"
+      class="pt-8"
     >
-      <table
-        class="table-auto"
+      <div
+        class="sc-AxiKw fOxXaG"
+        role="table"
       >
-        <thead>
-          <tr
-            role="row"
-          >
-            <th
-              class="text-xs text-left select-none text-theme-neutral-400"
-              colspan="1"
-              data-testid="table__th--0"
-              role="columnheader"
-            >
-              <div
-                class="flex flex-inline align-top  undefined"
-              >
-                <div
-                  class="mr-1"
-                >
-                  Date
-                </div>
-                <div
-                  class="mt-1 text-theme-color-neutral-500"
-                  data-testid="table__Sort"
-                />
-              </div>
-            </th>
-            <th
-              class="text-xs text-left select-none text-theme-neutral-400"
-              colspan="1"
-              data-testid="table__th--1"
-              role="columnheader"
-            >
-              <div
-                class="flex flex-inline align-top  invisible"
-              >
-                <div
-                  class="mr-1"
-                >
-                  Type
-                </div>
-                <div
-                  class="mt-1 text-theme-color-neutral-500"
-                  data-testid="table__Sort"
-                />
-              </div>
-            </th>
-            <th
-              class="text-xs text-left select-none text-theme-neutral-400"
-              colspan="1"
-              data-testid="table__th--2"
-              role="columnheader"
-            >
-              <div
-                class="flex flex-inline align-top  undefined"
-              >
-                <div
-                  class="mr-1"
-                >
-                  Wallet Address
-                </div>
-                <div
-                  class="mt-1 text-theme-color-neutral-500"
-                  data-testid="table__Sort"
-                />
-              </div>
-            </th>
-            <th
-              class="text-xs text-left select-none text-theme-neutral-400"
-              colspan="1"
-              data-testid="table__th--3"
-              role="columnheader"
-            >
-              <div
-                class="flex flex-inline align-top  float-right"
-              >
-                <div
-                  class="mr-1"
-                >
-                  Amount
-                </div>
-                <div
-                  class="mt-1 text-theme-color-neutral-500"
-                  data-testid="table__Sort"
-                />
-              </div>
-            </th>
-            <th
-              class="text-xs text-left select-none text-theme-neutral-400"
-              colspan="1"
-              data-testid="table__th--4"
-              role="columnheader"
-            >
-              <div
-                class="flex flex-inline align-top  float-right"
-              >
-                <div
-                  class="mr-1"
-                >
-                  Fiat Value
-                </div>
-                <div
-                  class="mt-1 text-theme-color-neutral-500"
-                  data-testid="table__Sort"
-                />
-              </div>
-            </th>
-          </tr>
-        </thead>
-        <tbody
-          role="rowgroup"
+        <table
+          class="table-auto"
         >
-          <tr
-            class="border-b border-dotted cursor-pointer border-theme-neutral-300"
-            data-testid="transaction__row"
-          >
-            <td
-              class="w-48 py-1 text-sm text-theme-neutral-600"
+          <thead>
+            <tr
+              role="row"
             >
-               
-              17 Mar 2020 22:02:10
-               
-            </td>
-            <td
-              class="w-32 py-5 mt-1"
-            >
-              <div
-                class="sc-AxhCb bzWLYJ border-theme-success-300 text-theme-success-400 -mr-1"
+              <th
+                class="text-xs text-left select-none text-theme-neutral-400"
+                colspan="1"
+                data-testid="table__th--0"
+                role="columnheader"
               >
                 <div
-                  class="sc-AxirZ RbXVX"
-                  height="40"
-                  width="40"
+                  class="flex flex-inline align-top  undefined"
                 >
-                  <svg>
-                    received.svg
-                  </svg>
+                  <div
+                    class="mr-1"
+                  >
+                    Date
+                  </div>
+                  <div
+                    class="mt-1 text-theme-color-neutral-500"
+                    data-testid="table__Sort"
+                  />
                 </div>
-              </div>
-              <div
-                class="sc-AxhCb hDUsvc"
-              />
-            </td>
-            <td
-              class="w-56"
-            >
-              <div
-                class="inline-block truncate"
-              >
-                <span
-                  class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 text-base text-base"
-                  data-testid="address__wallet-name"
-                >
-                  My Wallet
-                </span>
-                <span
-                  class="text-theme-neutral-400 text-base text-base"
-                  data-testid="address__wallet-address"
-                >
-                  ASuusXSW9k...P6T9GQ3kqT
-                </span>
-              </div>
-            </td>
-            <td
-              class="text-sm text-right"
-            >
-              <div
-                class="sc-AxhUy eCrePA"
-                color="success"
-              >
-                100 BTC
-              </div>
-            </td>
-            <td
-              class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral-500"
-            >
-              <div>
-                1,000,000 USD
-              </div>
-            </td>
-          </tr>
-          <tr
-            class="border-b border-dotted cursor-pointer border-theme-neutral-300"
-            data-testid="transaction__row"
-          >
-            <td
-              class="w-48 py-1 text-sm text-theme-neutral-600"
-            >
-               
-              17 Mar 2020 22:02:10
-               
-            </td>
-            <td
-              class="w-32 py-5 mt-1"
-            >
-              <div
-                class="sc-AxhCb bzWLYJ border-theme-danger-200 text-theme-danger-400 -mr-1"
+              </th>
+              <th
+                class="text-xs text-left select-none text-theme-neutral-400"
+                colspan="1"
+                data-testid="table__th--1"
+                role="columnheader"
               >
                 <div
-                  class="sc-AxirZ RbXVX"
-                  height="40"
-                  width="40"
+                  class="flex flex-inline align-top  invisible"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
+                  <div
+                    class="mr-1"
+                  >
+                    Type
+                  </div>
+                  <div
+                    class="mt-1 text-theme-color-neutral-500"
+                    data-testid="table__Sort"
+                  />
                 </div>
-              </div>
-              <div
-                class="sc-AxhCb hDUsvc"
-              />
-            </td>
-            <td
-              class="w-56"
-            >
-              <div
-                class="inline-block truncate"
-              >
-                <span
-                  class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 text-base text-base"
-                  data-testid="address__wallet-name"
-                >
-                  My Wallet
-                </span>
-                <span
-                  class="text-theme-neutral-400 text-base text-base"
-                  data-testid="address__wallet-address"
-                >
-                  ASuusXSW9k...P6T9GQ3kqT
-                </span>
-              </div>
-            </td>
-            <td
-              class="text-sm text-right"
-            >
-              <div
-                class="sc-AxhUy gRLEpJ"
-                color="danger"
-              >
-                - 100 BTC
-              </div>
-            </td>
-            <td
-              class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral-500"
-            >
-              <div>
-                1,000,000 USD
-              </div>
-            </td>
-          </tr>
-          <tr
-            class="border-b border-dotted cursor-pointer border-theme-neutral-300"
-            data-testid="transaction__row"
-          >
-            <td
-              class="w-48 py-1 text-sm text-theme-neutral-600"
-            >
-               
-              17 Mar 2020 22:02:10
-               
-            </td>
-            <td
-              class="w-32 py-5 mt-1"
-            >
-              <div
-                class="sc-AxhCb bzWLYJ border-theme-success-300 text-theme-success-400 -mr-1"
+              </th>
+              <th
+                class="text-xs text-left select-none text-theme-neutral-400"
+                colspan="1"
+                data-testid="table__th--2"
+                role="columnheader"
               >
                 <div
-                  class="sc-AxirZ RbXVX"
-                  height="40"
-                  width="40"
+                  class="flex flex-inline align-top  undefined"
                 >
-                  <svg>
-                    received.svg
-                  </svg>
+                  <div
+                    class="mr-1"
+                  >
+                    Wallet Address
+                  </div>
+                  <div
+                    class="mt-1 text-theme-color-neutral-500"
+                    data-testid="table__Sort"
+                  />
                 </div>
-              </div>
-              <div
-                class="sc-AxhCb hDUsvc"
-              />
-            </td>
-            <td
-              class="w-56"
-            >
-              <div
-                class="inline-block truncate"
-              >
-                <span
-                  class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 text-base text-base"
-                  data-testid="address__wallet-name"
-                >
-                  My Wallet
-                </span>
-                <span
-                  class="text-theme-neutral-400 text-base text-base"
-                  data-testid="address__wallet-address"
-                >
-                  ASuusXSW9k...P6T9GQ3kqT
-                </span>
-              </div>
-            </td>
-            <td
-              class="text-sm text-right"
-            >
-              <div
-                class="sc-AxhUy eCrePA"
-                color="success"
-              >
-                100 BTC
-              </div>
-            </td>
-            <td
-              class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral-500"
-            >
-              <div>
-                1,000,000 USD
-              </div>
-            </td>
-          </tr>
-          <tr
-            class="border-b border-dotted cursor-pointer border-theme-neutral-300"
-            data-testid="transaction__row"
-          >
-            <td
-              class="w-48 py-1 text-sm text-theme-neutral-600"
-            >
-               
-              17 Mar 2020 22:02:10
-               
-            </td>
-            <td
-              class="w-32 py-5 mt-1"
-            >
-              <div
-                class="sc-AxhCb bzWLYJ border-theme-danger-200 text-theme-danger-400 -mr-1"
+              </th>
+              <th
+                class="text-xs text-left select-none text-theme-neutral-400"
+                colspan="1"
+                data-testid="table__th--3"
+                role="columnheader"
               >
                 <div
-                  class="sc-AxirZ RbXVX"
-                  height="40"
-                  width="40"
+                  class="flex flex-inline align-top  justify-center"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
+                  <div
+                    class="mr-1"
+                  >
+                    Info
+                  </div>
+                  <div
+                    class="mt-1 text-theme-color-neutral-500"
+                    data-testid="table__Sort"
+                  />
                 </div>
-              </div>
-              <div
-                class="sc-AxhCb hDUsvc"
-              />
-            </td>
-            <td
-              class="w-56"
-            >
-              <div
-                class="inline-block truncate"
-              >
-                <span
-                  class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 text-base text-base"
-                  data-testid="address__wallet-name"
-                >
-                  My Wallet
-                </span>
-                <span
-                  class="text-theme-neutral-400 text-base text-base"
-                  data-testid="address__wallet-address"
-                >
-                  ASuusXSW9k...P6T9GQ3kqT
-                </span>
-              </div>
-            </td>
-            <td
-              class="text-sm text-right"
-            >
-              <div
-                class="sc-AxhUy gRLEpJ"
-                color="danger"
-              >
-                - 100 BTC
-              </div>
-            </td>
-            <td
-              class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral-500"
-            >
-              <div>
-                1,000,000 USD
-              </div>
-            </td>
-          </tr>
-          <tr
-            class="border-b border-dotted cursor-pointer border-theme-neutral-300"
-            data-testid="transaction__row"
-          >
-            <td
-              class="w-48 py-1 text-sm text-theme-neutral-600"
-            >
-               
-              17 Mar 2020 22:02:10
-               
-            </td>
-            <td
-              class="w-32 py-5 mt-1"
-            >
-              <div
-                class="sc-AxhCb bzWLYJ border-theme-success-300 text-theme-success-400 -mr-1"
+              </th>
+              <th
+                class="text-xs text-left select-none text-theme-neutral-400"
+                colspan="1"
+                data-testid="table__th--4"
+                role="columnheader"
               >
                 <div
-                  class="sc-AxirZ RbXVX"
-                  height="40"
-                  width="40"
+                  class="flex flex-inline align-top  float-right"
                 >
-                  <svg>
-                    received.svg
-                  </svg>
+                  <div
+                    class="mr-1"
+                  >
+                    Amount
+                  </div>
+                  <div
+                    class="mt-1 text-theme-color-neutral-500"
+                    data-testid="table__Sort"
+                  />
                 </div>
-              </div>
-              <div
-                class="sc-AxhCb hDUsvc"
-              />
-            </td>
-            <td
-              class="w-56"
-            >
-              <div
-                class="inline-block truncate"
-              >
-                <span
-                  class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 text-base text-base"
-                  data-testid="address__wallet-name"
-                >
-                  My Wallet
-                </span>
-                <span
-                  class="text-theme-neutral-400 text-base text-base"
-                  data-testid="address__wallet-address"
-                >
-                  ASuusXSW9k...P6T9GQ3kqT
-                </span>
-              </div>
-            </td>
-            <td
-              class="text-sm text-right"
-            >
-              <div
-                class="sc-AxhUy eCrePA"
-                color="success"
-              >
-                100 BTC
-              </div>
-            </td>
-            <td
-              class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral-500"
-            >
-              <div>
-                1,000,000 USD
-              </div>
-            </td>
-          </tr>
-          <tr
-            class="border-b border-dotted cursor-pointer border-theme-neutral-300"
-            data-testid="transaction__row"
-          >
-            <td
-              class="w-48 py-1 text-sm text-theme-neutral-600"
-            >
-               
-              17 Mar 2020 22:02:10
-               
-            </td>
-            <td
-              class="w-32 py-5 mt-1"
-            >
-              <div
-                class="sc-AxhCb bzWLYJ border-theme-danger-200 text-theme-danger-400 -mr-1"
+              </th>
+              <th
+                class="text-xs text-left select-none text-theme-neutral-400"
+                colspan="1"
+                data-testid="table__th--5"
+                role="columnheader"
               >
                 <div
-                  class="sc-AxirZ RbXVX"
-                  height="40"
-                  width="40"
+                  class="flex flex-inline align-top  float-right"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
+                  <div
+                    class="mr-1"
+                  >
+                    Fiat Value
+                  </div>
+                  <div
+                    class="mt-1 text-theme-color-neutral-500"
+                    data-testid="table__Sort"
+                  />
                 </div>
-              </div>
-              <div
-                class="sc-AxhCb hDUsvc"
-              />
-            </td>
-            <td
-              class="w-56"
-            >
-              <div
-                class="inline-block truncate"
-              >
-                <span
-                  class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 text-base text-base"
-                  data-testid="address__wallet-name"
-                >
-                  My Wallet
-                </span>
-                <span
-                  class="text-theme-neutral-400 text-base text-base"
-                  data-testid="address__wallet-address"
-                >
-                  ASuusXSW9k...P6T9GQ3kqT
-                </span>
-              </div>
-            </td>
-            <td
-              class="text-sm text-right"
-            >
-              <div
-                class="sc-AxhUy gRLEpJ"
-                color="danger"
-              >
-                - 100 BTC
-              </div>
-            </td>
-            <td
-              class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral-500"
-            >
-              <div>
-                1,000,000 USD
-              </div>
-            </td>
-          </tr>
-          <tr
-            class="border-b border-dotted cursor-pointer border-theme-neutral-300"
-            data-testid="transaction__row"
+              </th>
+            </tr>
+          </thead>
+          <tbody
+            role="rowgroup"
           >
-            <td
-              class="w-48 py-1 text-sm text-theme-neutral-600"
+            <tr
+              class="border-b border-dotted cursor-pointer border-theme-neutral-300"
+              data-testid="transaction__row"
             >
-               
-              17 Mar 2020 22:02:10
-               
-            </td>
-            <td
-              class="w-32 py-5 mt-1"
-            >
-              <div
-                class="sc-AxhCb bzWLYJ border-theme-success-300 text-theme-success-400 -mr-1"
+              <td
+                class="w-48 py-1 text-sm text-theme-neutral-600"
+              >
+                 
+                17 Mar 2020 22:02:10
+                 
+              </td>
+              <td
+                class="w-32 py-5 mt-1"
               >
                 <div
-                  class="sc-AxirZ RbXVX"
-                  height="40"
-                  width="40"
+                  class="sc-AxhCb bzWLYJ border-theme-success-300 text-theme-success-400 -mr-1"
                 >
-                  <svg>
-                    received.svg
-                  </svg>
+                  <div
+                    class="sc-AxirZ RbXVX"
+                    height="40"
+                    width="40"
+                  >
+                    <svg>
+                      received.svg
+                    </svg>
+                  </div>
                 </div>
-              </div>
-              <div
-                class="sc-AxhCb hDUsvc"
-              />
-            </td>
-            <td
-              class="w-56"
-            >
-              <div
-                class="inline-block truncate"
-              >
-                <span
-                  class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 text-base text-base"
-                  data-testid="address__wallet-name"
-                >
-                  My Wallet
-                </span>
-                <span
-                  class="text-theme-neutral-400 text-base text-base"
-                  data-testid="address__wallet-address"
-                >
-                  ASuusXSW9k...P6T9GQ3kqT
-                </span>
-              </div>
-            </td>
-            <td
-              class="text-sm text-right"
-            >
-              <div
-                class="sc-AxhUy eCrePA"
-                color="success"
-              >
-                100 BTC
-              </div>
-            </td>
-            <td
-              class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral-500"
-            >
-              <div>
-                1,000,000 USD
-              </div>
-            </td>
-          </tr>
-          <tr
-            class="border-b border-dotted cursor-pointer border-theme-neutral-300"
-            data-testid="transaction__row"
-          >
-            <td
-              class="w-48 py-1 text-sm text-theme-neutral-600"
-            >
-               
-              17 Mar 2020 22:02:10
-               
-            </td>
-            <td
-              class="w-32 py-5 mt-1"
-            >
-              <div
-                class="sc-AxhCb bzWLYJ border-theme-danger-200 text-theme-danger-400 -mr-1"
+                <div
+                  class="sc-AxhCb hDUsvc"
+                />
+              </td>
+              <td
+                class="w-56"
               >
                 <div
-                  class="sc-AxirZ RbXVX"
-                  height="40"
-                  width="40"
+                  class="inline-block truncate"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
+                  <span
+                    class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-base"
+                    data-testid="address__wallet-name"
+                  >
+                    My Wallet
+                  </span>
+                  <span
+                    class="text-theme-neutral-400 font-semibold text-base"
+                    data-testid="address__wallet-address"
+                  >
+                    ASuusXSW9k...P6T9GQ3kqT
+                  </span>
                 </div>
-              </div>
-              <div
-                class="sc-AxhCb hDUsvc"
+              </td>
+              <td
+                class="py-1 text-sm font-bold text-center"
+              >
+                <div
+                  class="inline-block mr-2 text text-theme-neutral-400"
+                >
+                  <div
+                    class="sc-AxirZ hPsuTj"
+                    height="16"
+                    width="16"
+                  >
+                    <svg>
+                      multisig.svg
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  class="inline-block mr-2 text text-theme-neutral-400"
+                >
+                  <div
+                    class="sc-AxirZ hPsuTj"
+                    height="16"
+                    width="16"
+                  >
+                    <svg>
+                      ledger.svg
+                    </svg>
+                  </div>
+                </div>
+              </td>
+              <td
+                class="text-sm text-right w-36"
+              >
+                <div
+                  class="sc-AxhUy eCrePA"
+                  color="success"
+                >
+                  100 BTC
+                </div>
+              </td>
+              <td
+                class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral-500"
+              >
+                <div>
+                  1,000,000 USD
+                </div>
+              </td>
+            </tr>
+            <tr
+              class="border-b border-dotted cursor-pointer border-theme-neutral-300"
+              data-testid="transaction__row"
+            >
+              <td
+                class="w-48 py-1 text-sm text-theme-neutral-600"
+              >
+                 
+                17 Mar 2020 22:02:10
+                 
+              </td>
+              <td
+                class="w-32 py-5 mt-1"
+              >
+                <div
+                  class="sc-AxhCb bzWLYJ border-theme-danger-200 text-theme-danger-400 -mr-1"
+                >
+                  <div
+                    class="sc-AxirZ RbXVX"
+                    height="40"
+                    width="40"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  class="sc-AxhCb hDUsvc"
+                />
+              </td>
+              <td
+                class="w-56"
+              >
+                <div
+                  class="inline-block truncate"
+                >
+                  <span
+                    class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-base"
+                    data-testid="address__wallet-name"
+                  >
+                    My Wallet
+                  </span>
+                  <span
+                    class="text-theme-neutral-400 font-semibold text-base"
+                    data-testid="address__wallet-address"
+                  >
+                    ASuusXSW9k...P6T9GQ3kqT
+                  </span>
+                </div>
+              </td>
+              <td
+                class="py-1 text-sm font-bold text-center"
+              >
+                <div
+                  class="inline-block mr-2 text text-theme-neutral-400"
+                >
+                  <div
+                    class="sc-AxirZ hPsuTj"
+                    height="16"
+                    width="16"
+                  >
+                    <svg>
+                      multisig.svg
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  class="inline-block mr-2 text text-theme-neutral-400"
+                >
+                  <div
+                    class="sc-AxirZ hPsuTj"
+                    height="16"
+                    width="16"
+                  >
+                    <svg>
+                      ledger.svg
+                    </svg>
+                  </div>
+                </div>
+              </td>
+              <td
+                class="text-sm text-right w-36"
+              >
+                <div
+                  class="sc-AxhUy gRLEpJ"
+                  color="danger"
+                >
+                  - 100 BTC
+                </div>
+              </td>
+              <td
+                class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral-500"
+              >
+                <div>
+                  1,000,000 USD
+                </div>
+              </td>
+            </tr>
+            <tr
+              class="border-b border-dotted cursor-pointer border-theme-neutral-300"
+              data-testid="transaction__row"
+            >
+              <td
+                class="w-48 py-1 text-sm text-theme-neutral-600"
+              >
+                 
+                17 Mar 2020 22:02:10
+                 
+              </td>
+              <td
+                class="w-32 py-5 mt-1"
+              >
+                <div
+                  class="sc-AxhCb bzWLYJ border-theme-success-300 text-theme-success-400 -mr-1"
+                >
+                  <div
+                    class="sc-AxirZ RbXVX"
+                    height="40"
+                    width="40"
+                  >
+                    <svg>
+                      received.svg
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  class="sc-AxhCb hDUsvc"
+                />
+              </td>
+              <td
+                class="w-56"
+              >
+                <div
+                  class="inline-block truncate"
+                >
+                  <span
+                    class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-base"
+                    data-testid="address__wallet-name"
+                  >
+                    My Wallet
+                  </span>
+                  <span
+                    class="text-theme-neutral-400 font-semibold text-base"
+                    data-testid="address__wallet-address"
+                  >
+                    ASuusXSW9k...P6T9GQ3kqT
+                  </span>
+                </div>
+              </td>
+              <td
+                class="py-1 text-sm font-bold text-center"
+              >
+                <div
+                  class="inline-block mr-2 text text-theme-neutral-400"
+                >
+                  <div
+                    class="sc-AxirZ hPsuTj"
+                    height="16"
+                    width="16"
+                  >
+                    <svg>
+                      multisig.svg
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  class="inline-block mr-2 text text-theme-neutral-400"
+                >
+                  <div
+                    class="sc-AxirZ hPsuTj"
+                    height="16"
+                    width="16"
+                  >
+                    <svg>
+                      ledger.svg
+                    </svg>
+                  </div>
+                </div>
+              </td>
+              <td
+                class="text-sm text-right w-36"
+              >
+                <div
+                  class="sc-AxhUy eCrePA"
+                  color="success"
+                >
+                  100 BTC
+                </div>
+              </td>
+              <td
+                class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral-500"
+              >
+                <div>
+                  1,000,000 USD
+                </div>
+              </td>
+            </tr>
+            <tr
+              class="border-b border-dotted cursor-pointer border-theme-neutral-300"
+              data-testid="transaction__row"
+            >
+              <td
+                class="w-48 py-1 text-sm text-theme-neutral-600"
+              >
+                 
+                17 Mar 2020 22:02:10
+                 
+              </td>
+              <td
+                class="w-32 py-5 mt-1"
+              >
+                <div
+                  class="sc-AxhCb bzWLYJ border-theme-danger-200 text-theme-danger-400 -mr-1"
+                >
+                  <div
+                    class="sc-AxirZ RbXVX"
+                    height="40"
+                    width="40"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  class="sc-AxhCb hDUsvc"
+                />
+              </td>
+              <td
+                class="w-56"
+              >
+                <div
+                  class="inline-block truncate"
+                >
+                  <span
+                    class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-base"
+                    data-testid="address__wallet-name"
+                  >
+                    My Wallet
+                  </span>
+                  <span
+                    class="text-theme-neutral-400 font-semibold text-base"
+                    data-testid="address__wallet-address"
+                  >
+                    ASuusXSW9k...P6T9GQ3kqT
+                  </span>
+                </div>
+              </td>
+              <td
+                class="py-1 text-sm font-bold text-center"
               />
-            </td>
-            <td
-              class="w-56"
-            >
-              <div
-                class="inline-block truncate"
+              <td
+                class="text-sm text-right w-36"
               >
-                <span
-                  class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 text-base text-base"
-                  data-testid="address__wallet-name"
+                <div
+                  class="sc-AxhUy gRLEpJ"
+                  color="danger"
                 >
-                  My Wallet
-                </span>
-                <span
-                  class="text-theme-neutral-400 text-base text-base"
-                  data-testid="address__wallet-address"
-                >
-                  ASuusXSW9k...P6T9GQ3kqT
-                </span>
-              </div>
-            </td>
-            <td
-              class="text-sm text-right"
-            >
-              <div
-                class="sc-AxhUy gRLEpJ"
-                color="danger"
+                  - 100 BTC
+                </div>
+              </td>
+              <td
+                class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral-500"
               >
-                - 100 BTC
-              </div>
-            </td>
-            <td
-              class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral-500"
+                <div>
+                  1,000,000 USD
+                </div>
+              </td>
+            </tr>
+            <tr
+              class="border-b border-dotted cursor-pointer border-theme-neutral-300"
+              data-testid="transaction__row"
             >
-              <div>
-                1,000,000 USD
-              </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+              <td
+                class="w-48 py-1 text-sm text-theme-neutral-600"
+              >
+                 
+                17 Mar 2020 22:02:10
+                 
+              </td>
+              <td
+                class="w-32 py-5 mt-1"
+              >
+                <div
+                  class="sc-AxhCb bzWLYJ border-theme-success-300 text-theme-success-400 -mr-1"
+                >
+                  <div
+                    class="sc-AxirZ RbXVX"
+                    height="40"
+                    width="40"
+                  >
+                    <svg>
+                      received.svg
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  class="sc-AxhCb hDUsvc"
+                />
+              </td>
+              <td
+                class="w-56"
+              >
+                <div
+                  class="inline-block truncate"
+                >
+                  <span
+                    class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-base"
+                    data-testid="address__wallet-name"
+                  >
+                    My Wallet
+                  </span>
+                  <span
+                    class="text-theme-neutral-400 font-semibold text-base"
+                    data-testid="address__wallet-address"
+                  >
+                    ASuusXSW9k...P6T9GQ3kqT
+                  </span>
+                </div>
+              </td>
+              <td
+                class="py-1 text-sm font-bold text-center"
+              >
+                <div
+                  class="inline-block mr-2 text text-theme-neutral-400"
+                >
+                  <div
+                    class="sc-AxirZ hPsuTj"
+                    height="16"
+                    width="16"
+                  >
+                    <svg>
+                      ledger.svg
+                    </svg>
+                  </div>
+                </div>
+              </td>
+              <td
+                class="text-sm text-right w-36"
+              >
+                <div
+                  class="sc-AxhUy eCrePA"
+                  color="success"
+                >
+                  100 BTC
+                </div>
+              </td>
+              <td
+                class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral-500"
+              >
+                <div>
+                  1,000,000 USD
+                </div>
+              </td>
+            </tr>
+            <tr
+              class="border-b border-dotted cursor-pointer border-theme-neutral-300"
+              data-testid="transaction__row"
+            >
+              <td
+                class="w-48 py-1 text-sm text-theme-neutral-600"
+              >
+                 
+                17 Mar 2020 22:02:10
+                 
+              </td>
+              <td
+                class="w-32 py-5 mt-1"
+              >
+                <div
+                  class="sc-AxhCb bzWLYJ border-theme-danger-200 text-theme-danger-400 -mr-1"
+                >
+                  <div
+                    class="sc-AxirZ RbXVX"
+                    height="40"
+                    width="40"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  class="sc-AxhCb hDUsvc"
+                />
+              </td>
+              <td
+                class="w-56"
+              >
+                <div
+                  class="inline-block truncate"
+                >
+                  <span
+                    class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-base"
+                    data-testid="address__wallet-name"
+                  >
+                    My Wallet
+                  </span>
+                  <span
+                    class="text-theme-neutral-400 font-semibold text-base"
+                    data-testid="address__wallet-address"
+                  >
+                    ASuusXSW9k...P6T9GQ3kqT
+                  </span>
+                </div>
+              </td>
+              <td
+                class="py-1 text-sm font-bold text-center"
+              />
+              <td
+                class="text-sm text-right w-36"
+              >
+                <div
+                  class="sc-AxhUy gRLEpJ"
+                  color="danger"
+                >
+                  - 100 BTC
+                </div>
+              </td>
+              <td
+                class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral-500"
+              >
+                <div>
+                  1,000,000 USD
+                </div>
+              </td>
+            </tr>
+            <tr
+              class="border-b border-dotted cursor-pointer border-theme-neutral-300"
+              data-testid="transaction__row"
+            >
+              <td
+                class="w-48 py-1 text-sm text-theme-neutral-600"
+              >
+                 
+                17 Mar 2020 22:02:10
+                 
+              </td>
+              <td
+                class="w-32 py-5 mt-1"
+              >
+                <div
+                  class="sc-AxhCb bzWLYJ border-theme-success-300 text-theme-success-400 -mr-1"
+                >
+                  <div
+                    class="sc-AxirZ RbXVX"
+                    height="40"
+                    width="40"
+                  >
+                    <svg>
+                      received.svg
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  class="sc-AxhCb hDUsvc"
+                />
+              </td>
+              <td
+                class="w-56"
+              >
+                <div
+                  class="inline-block truncate"
+                >
+                  <span
+                    class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-base"
+                    data-testid="address__wallet-name"
+                  >
+                    My Wallet
+                  </span>
+                  <span
+                    class="text-theme-neutral-400 font-semibold text-base"
+                    data-testid="address__wallet-address"
+                  >
+                    ASuusXSW9k...P6T9GQ3kqT
+                  </span>
+                </div>
+              </td>
+              <td
+                class="py-1 text-sm font-bold text-center"
+              />
+              <td
+                class="text-sm text-right w-36"
+              >
+                <div
+                  class="sc-AxhUy eCrePA"
+                  color="success"
+                >
+                  100 BTC
+                </div>
+              </td>
+              <td
+                class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral-500"
+              >
+                <div>
+                  1,000,000 USD
+                </div>
+              </td>
+            </tr>
+            <tr
+              class="border-b border-dotted cursor-pointer border-theme-neutral-300"
+              data-testid="transaction__row"
+            >
+              <td
+                class="w-48 py-1 text-sm text-theme-neutral-600"
+              >
+                 
+                17 Mar 2020 22:02:10
+                 
+              </td>
+              <td
+                class="w-32 py-5 mt-1"
+              >
+                <div
+                  class="sc-AxhCb bzWLYJ border-theme-danger-200 text-theme-danger-400 -mr-1"
+                >
+                  <div
+                    class="sc-AxirZ RbXVX"
+                    height="40"
+                    width="40"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  class="sc-AxhCb hDUsvc"
+                />
+              </td>
+              <td
+                class="w-56"
+              >
+                <div
+                  class="inline-block truncate"
+                >
+                  <span
+                    class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-base"
+                    data-testid="address__wallet-name"
+                  >
+                    My Wallet
+                  </span>
+                  <span
+                    class="text-theme-neutral-400 font-semibold text-base"
+                    data-testid="address__wallet-address"
+                  >
+                    ASuusXSW9k...P6T9GQ3kqT
+                  </span>
+                </div>
+              </td>
+              <td
+                class="py-1 text-sm font-bold text-center"
+              />
+              <td
+                class="text-sm text-right w-36"
+              >
+                <div
+                  class="sc-AxhUy gRLEpJ"
+                  color="danger"
+                >
+                  - 100 BTC
+                </div>
+              </td>
+              <td
+                class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral-500"
+              >
+                <div>
+                  1,000,000 USD
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <button
+        class="sc-AxjAm ddJBbC w-full mt-10 mb-5"
+        color="primary"
+        type="button"
+      >
+        See more
+      </button>
     </div>
-    <button
-      class="sc-AxjAm ddJBbC w-full mt-10 mb-5"
-      color="primary"
-      type="button"
-    >
-      See more
-    </button>
   </div>
 </div>
 `;

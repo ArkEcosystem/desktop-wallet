@@ -6,6 +6,7 @@ import { ReactComponent as ArrowDown } from "./arrowdown.svg";
 import { ReactComponent as ArrowUp } from "./arrowup.svg";
 import { ReactComponent as Article } from "./article.svg";
 import { ReactComponent as Back } from "./back.svg";
+import { ReactComponent as Bridgechain } from "./bridgechain.svg";
 import { ReactComponent as Business } from "./business.svg";
 import { ReactComponent as ChartActiveDot } from "./chart-active-dot.svg";
 import { ReactComponent as Checkmark } from "./checkmark.svg";
@@ -35,6 +36,7 @@ import { ReactComponent as Grant } from "./grant.svg";
 import { ReactComponent as Grid } from "./grid.svg";
 import { ReactComponent as Import } from "./import.svg";
 import { ReactComponent as Ipfs } from "./ipfs.svg";
+import { ReactComponent as Key } from "./key.svg";
 import { ReactComponent as Ledger } from "./ledger.svg";
 import { ReactComponent as Link } from "./link.svg";
 import { ReactComponent as List } from "./list.svg";
@@ -47,6 +49,7 @@ import { ReactComponent as Ok } from "./ok.svg";
 import { ReactComponent as PaginationFirst } from "./pagination-first.svg";
 import { ReactComponent as PaginationLast } from "./pagination-last.svg";
 import { ReactComponent as Peer } from "./peer.svg";
+import { ReactComponent as Placeholder } from "./placeholder.svg";
 import { ReactComponent as Plugin } from "./plugin.svg";
 import { ReactComponent as Plugins } from "./plugins.svg";
 import { ReactComponent as Plus } from "./plus.svg";
@@ -86,6 +89,8 @@ export const SvgCollection: any = {
 	Back,
 	Business,
 	Bitcoin,
+	Bridgechain,
+	Business,
 	Checkmark,
 	ChevronDown,
 	ChevronUp,
@@ -109,6 +114,7 @@ export const SvgCollection: any = {
 	Grid,
 	Import,
 	Ipfs,
+	Key,
 	Ledger,
 	Link,
 	List,
@@ -152,4 +158,5 @@ export const SvgCollection: any = {
 	Article,
 	EyeTag,
 	ChartActiveDot,
+	Placeholder,
 };

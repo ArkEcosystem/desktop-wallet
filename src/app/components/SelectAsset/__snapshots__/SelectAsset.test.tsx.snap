@@ -1,0 +1,180 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SelectAsset should render 1`] = `
+<div>
+  <div
+    aria-expanded="false"
+    aria-haspopup="listbox"
+    aria-labelledby="downshift-0-label"
+    class="relative"
+    role="combobox"
+  >
+    <label
+      for="downshift-0-input"
+      id="downshift-0-label"
+    />
+    <div
+      class="relative flex items-center w-full flex-inline"
+    >
+      <div
+        class="flex w-full border rounded shadow-sm bg-theme-background border-theme-neutral-300 transition-colors duration-200 hover:outline-none hover:border-theme-primary"
+      >
+        <div
+          class="px-4 py-2 flex-0 w-14"
+        >
+          <div
+            class="sc-AxjAm jDAceZ border-theme-neutral-200"
+          />
+        </div>
+        <div
+          class="relative flex-1 p-1 font-semibold text-theme-neutral-800"
+        >
+          <div
+            class="relative z-10 w-full"
+            data-testid="select-network__typeahead-"
+          >
+            <div
+              class="absolute left-0 font-semibold top-2 text-theme-neutral-400"
+            />
+          </div>
+          <input
+            aria-autocomplete="list"
+            aria-labelledby="downshift-0-label"
+            autocomplete="off"
+            class="relative z-20 w-full h-full font-semibold bg-transparent outline-none"
+            data-testid="select-asset__input"
+            id="downshift-0-input"
+            placeholder="Enter a network name"
+            value=""
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`SelectAsset should render with assets 1`] = `
+<div>
+  <div
+    aria-expanded="false"
+    aria-haspopup="listbox"
+    aria-labelledby="downshift-1-label"
+    class="relative"
+    role="combobox"
+  >
+    <label
+      for="downshift-1-input"
+      id="downshift-1-label"
+    />
+    <div
+      class="relative flex items-center w-full flex-inline"
+    >
+      <div
+        class="flex w-full border rounded shadow-sm bg-theme-background border-theme-neutral-300 transition-colors duration-200 hover:outline-none hover:border-theme-primary"
+      >
+        <div
+          class="px-4 py-2 flex-0 w-14"
+        >
+          <div
+            class="sc-AxjAm jDAceZ border-theme-neutral-200"
+          />
+        </div>
+        <div
+          class="relative flex-1 p-1 font-semibold text-theme-neutral-800"
+        >
+          <div
+            class="relative z-10 w-full"
+            data-testid="select-network__typeahead-"
+          >
+            <div
+              class="absolute left-0 font-semibold top-2 text-theme-neutral-400"
+            />
+          </div>
+          <input
+            aria-autocomplete="list"
+            aria-labelledby="downshift-1-label"
+            autocomplete="off"
+            class="relative z-20 w-full h-full font-semibold bg-transparent outline-none"
+            data-testid="select-asset__input"
+            id="downshift-1-input"
+            placeholder="Enter a network name"
+            value=""
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      aria-labelledby="downshift-1-label"
+      class="pt-6"
+      data-testid="select-asset__items"
+      id="downshift-1-menu"
+      role="listbox"
+    >
+      <div
+        aria-selected="false"
+        class="inline-block mr-4 cursor-pointer"
+        id="downshift-1-item-0"
+        role="option"
+        title="Ark Ecosystem"
+      >
+        <div
+          class="sc-AxjAm bDDbwS text-theme-danger-400 border-theme-danger-200"
+        >
+          <div
+            class="sc-AxirZ iOZZCn"
+            height="18"
+            width="18"
+          >
+            <svg>
+              ark.svg
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div
+        aria-selected="false"
+        class="inline-block mr-4 cursor-pointer"
+        id="downshift-1-item-1"
+        role="option"
+        title="Bitcoin"
+      >
+        <div
+          class="sc-AxjAm bDDbwS text-theme-warning-400 border-theme-warning-200"
+        >
+          <div
+            class="sc-AxirZ iOZZCn"
+            height="18"
+            width="18"
+          >
+            <svg>
+              btc.svg
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div
+        aria-selected="false"
+        class="inline-block mr-4 cursor-pointer"
+        id="downshift-1-item-2"
+        role="option"
+        title="Ethereum"
+      >
+        <div
+          class="sc-AxjAm bDDbwS text-theme-neutral-800 border-theme-neutral-600"
+        >
+          <div
+            class="sc-AxirZ iOZZCn"
+            height="18"
+            width="18"
+          >
+            <svg>
+              eth.svg
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

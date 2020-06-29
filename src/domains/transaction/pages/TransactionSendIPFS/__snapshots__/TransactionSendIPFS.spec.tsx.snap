@@ -66,29 +66,51 @@ exports[`TransactionSendIPFS should render 1`] = `
                       class="mt-2 font-semibold"
                     >
                       <div
-                        class="sc-AxmLO kuiknc"
+                        aria-expanded="false"
+                        aria-haspopup="listbox"
+                        aria-labelledby="downshift-1-label"
+                        class="relative"
+                        role="combobox"
                       >
-                        <select
-                          class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
-                          data-testid="Select"
-                        >
-                          <option
-                            value="ARK Ecosystem"
-                          >
-                            ARK Ecosystem
-                          </option>
-                        </select>
+                        <label
+                          for="downshift-1-input"
+                          id="downshift-1-label"
+                        />
                         <div
-                          class="sc-AxgMl sc-Axmtr cPxyjO w-12 text-lg pointer-events-none text-theme-neutral-dark"
+                          class="relative flex items-center w-full flex-inline"
                         >
                           <div
-                            class="sc-AxhCb fxrKLH"
-                            height="1em"
-                            width="1em"
+                            class="flex w-full border rounded shadow-sm bg-theme-background border-theme-neutral-300 transition-colors duration-200 hover:outline-none hover:border-theme-primary"
                           >
-                            <svg>
-                              chevron-down.svg
-                            </svg>
+                            <div
+                              class="px-4 py-2 flex-0 w-14"
+                            >
+                              <div
+                                class="sc-AxirZ HSPq border-theme-neutral-200"
+                              />
+                            </div>
+                            <div
+                              class="relative flex-1 p-1 font-semibold text-theme-neutral-800"
+                            >
+                              <div
+                                class="relative z-10 w-full"
+                                data-testid="select-network__typeahead-"
+                              >
+                                <div
+                                  class="absolute left-0 font-semibold top-2 text-theme-neutral-400"
+                                />
+                              </div>
+                              <input
+                                aria-autocomplete="list"
+                                aria-labelledby="downshift-1-label"
+                                autocomplete="off"
+                                class="relative z-20 w-full h-full font-semibold bg-transparent outline-none"
+                                data-testid="select-asset__input"
+                                id="downshift-1-input"
+                                placeholder="Enter a network name"
+                                value=""
+                              />
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -332,29 +354,51 @@ exports[`TransactionSendIPFS should render 1st step 1`] = `
             class="mt-2 font-semibold"
           >
             <div
-              class="sc-AxmLO kuiknc"
+              aria-expanded="false"
+              aria-haspopup="listbox"
+              aria-labelledby="downshift-0-label"
+              class="relative"
+              role="combobox"
             >
-              <select
-                class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
-                data-testid="Select"
-              >
-                <option
-                  value="ARK Ecosystem"
-                >
-                  ARK Ecosystem
-                </option>
-              </select>
+              <label
+                for="downshift-0-input"
+                id="downshift-0-label"
+              />
               <div
-                class="sc-AxgMl sc-Axmtr cPxyjO w-12 text-lg pointer-events-none text-theme-neutral-dark"
+                class="relative flex items-center w-full flex-inline"
               >
                 <div
-                  class="sc-AxhCb fxrKLH"
-                  height="1em"
-                  width="1em"
+                  class="flex w-full border rounded shadow-sm bg-theme-background border-theme-neutral-300 transition-colors duration-200 hover:outline-none hover:border-theme-primary"
                 >
-                  <svg>
-                    chevron-down.svg
-                  </svg>
+                  <div
+                    class="px-4 py-2 flex-0 w-14"
+                  >
+                    <div
+                      class="sc-AxirZ HSPq border-theme-neutral-200"
+                    />
+                  </div>
+                  <div
+                    class="relative flex-1 p-1 font-semibold text-theme-neutral-800"
+                  >
+                    <div
+                      class="relative z-10 w-full"
+                      data-testid="select-network__typeahead-"
+                    >
+                      <div
+                        class="absolute left-0 font-semibold top-2 text-theme-neutral-400"
+                      />
+                    </div>
+                    <input
+                      aria-autocomplete="list"
+                      aria-labelledby="downshift-0-label"
+                      autocomplete="off"
+                      class="relative z-20 w-full h-full font-semibold bg-transparent outline-none"
+                      data-testid="select-asset__input"
+                      id="downshift-0-input"
+                      placeholder="Enter a network name"
+                      value=""
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -915,7 +959,7 @@ exports[`TransactionSendIPFS should render 4th step 1`] = `
               >
                 <div
                   class="inline-block cursor-pointer"
-                  data-testid="clipboard__inner"
+                  data-testid="clipboard__wrapper"
                 >
                   <div
                     class="inline-block truncate"
@@ -928,11 +972,6 @@ exports[`TransactionSendIPFS should render 4th step 1`] = `
                     </span>
                   </div>
                 </div>
-                <textarea
-                  class="Clipboard__TextArea-sc-1atoaua-0 hhPnzN"
-                  data-testid="clipboard__textarea"
-                  readonly=""
-                />
                 <div
                   class="mb-1 ml-5 text-theme-primary-300"
                 >
@@ -969,7 +1008,7 @@ exports[`TransactionSendIPFS should render 4th step 1`] = `
               >
                 <div
                   class="inline-block cursor-pointer"
-                  data-testid="clipboard__inner"
+                  data-testid="clipboard__wrapper"
                 >
                   <div
                     class="inline-block truncate"
@@ -982,11 +1021,6 @@ exports[`TransactionSendIPFS should render 4th step 1`] = `
                     </span>
                   </div>
                 </div>
-                <textarea
-                  class="Clipboard__TextArea-sc-1atoaua-0 hhPnzN"
-                  data-testid="clipboard__textarea"
-                  readonly=""
-                />
                 <div
                   class="mb-1 ml-5 text-theme-primary-300"
                 >
