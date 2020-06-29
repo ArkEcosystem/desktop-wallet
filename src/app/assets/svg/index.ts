@@ -48,6 +48,7 @@ import { ReactComponent as Ok } from "./ok.svg";
 import { ReactComponent as PaginationFirst } from "./pagination-first.svg";
 import { ReactComponent as PaginationLast } from "./pagination-last.svg";
 import { ReactComponent as Peer } from "./peer.svg";
+import { ReactComponent as Placeholder } from "./placeholder.svg";
 import { ReactComponent as Plugin } from "./plugin.svg";
 import { ReactComponent as Plugins } from "./plugins.svg";
 import { ReactComponent as Plus } from "./plus.svg";
@@ -156,4 +157,5 @@ export const SvgCollection: any = {
 	Article,
 	EyeTag,
 	ChartActiveDot,
+	Placeholder,
 };
