@@ -16,6 +16,7 @@ export const TransactionListItem = ({
 	fiat,
 	variant,
 	onClick,
+	transactionInfoIcons,
 }: TransactionListItemProps) => {
 	const iconName: any = {
 		send: "Sent",
@@ -77,7 +78,18 @@ export const TransactionListItem = ({
 			<td className="w-56">
 				<Address walletName={walletName} address={address} maxChars={24} />
 			</td>
-			<td className="text-sm text-right">
+
+			<td className="py-1 text-sm font-bold text-center">
+				{transactionInfoIcons &&
+					transactionInfoIcons.map((type: string, index: number) => {
+						return (
+							<div key={index} className={`inline-block mr-2 text text-theme-neutral-400`}>
+								<Icon name={type} width={16} height={16} />
+							</div>
+						);
+					})}
+			</td>
+			<td className="text-sm text-right w-36">
 				<Label color={amountLabelColor[type]} size="small">
 					{amount}
 				</Label>

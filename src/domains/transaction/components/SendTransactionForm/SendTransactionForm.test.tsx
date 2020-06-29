@@ -6,24 +6,26 @@ import { act } from "react-dom/test-utils";
 import { SendTransactionForm } from "./";
 
 describe("SendTransactionForm", () => {
-	const networks = [
+	const assets = [
 		{
-			value: "ark",
-			label: "Ark Ecosystem",
 			icon: "Ark",
+			name: "Ark Ecosystem",
+			className: "text-theme-danger-400 border-theme-danger-200",
+		},
+		{
+			icon: "Bitcoin",
+			name: "Bitcoin",
+			className: "text-theme-warning-400 border-theme-warning-200",
+		},
+		{
+			icon: "Ethereum",
+			name: "Ethereum",
+			className: "text-theme-neutral-800 border-theme-neutral-600",
 		},
 	];
 
 	it("should render", () => {
 		const { container } = render(<SendTransactionForm />);
-		expect(container).toMatchSnapshot();
-	});
-
-	it("should select network", () => {
-		const { getByTestId, getAllByTestId, container } = render(<SendTransactionForm networks={networks} />);
-		fireEvent.change(getByTestId("send-transaction__network-select"), { target: { value: "ark" } });
-		const options = getAllByTestId("send-transaction__network-option");
-		expect((options[0] as HTMLOptionElement).selected).toBeTruthy();
 		expect(container).toMatchSnapshot();
 	});
 
@@ -38,7 +40,7 @@ describe("SendTransactionForm", () => {
 		];
 
 		const { getByTestId, getAllByTestId, container } = render(
-			<SendTransactionForm senderList={senderList} networks={networks} />,
+			<SendTransactionForm senderList={senderList} assets={assets} />,
 		);
 		fireEvent.change(getByTestId("send-transaction__select-sender"), {
 			target: { value: senderList[0].address },
@@ -68,7 +70,7 @@ describe("SendTransactionForm", () => {
 		];
 
 		const { getByTestId, getAllByTestId, container } = render(
-			<SendTransactionForm networks={networks} senderList={senderList} contactList={contactList} />,
+			<SendTransactionForm assets={assets} senderList={senderList} contactList={contactList} />,
 		);
 		fireEvent.change(getByTestId("send-transaction__select-recipient"), {
 			target: { value: contactList[0].address },
@@ -229,17 +231,9 @@ describe("SendTransactionForm", () => {
 	});
 
 	it("should emit goBack button click", async () => {
-		const networks = [
-			{
-				value: "ark",
-				label: "Ark Ecosystem",
-				icon: "Ark",
-			},
-		];
 		// Select network to enable buttons
 		const fn = jest.fn();
-		const { getByTestId, container } = render(<SendTransactionForm onBack={fn} networks={networks} />);
-		fireEvent.change(getByTestId("send-transaction__network-select"), { target: { value: "ark" } });
+		const { getByTestId, container } = render(<SendTransactionForm onBack={fn} assets={assets} />);
 		const backBtn = getByTestId("send-transaction-click-back");
 		act(() => {
 			fireEvent.click(backBtn);
@@ -250,17 +244,9 @@ describe("SendTransactionForm", () => {
 	});
 
 	it("should submit form", async () => {
-		const networks = [
-			{
-				value: "ark",
-				label: "Ark Ecosystem",
-				icon: "Ark",
-			},
-		];
 		// Select network to enable buttons
 		const fn = jest.fn();
-		const { getByTestId, container } = render(<SendTransactionForm onSubmit={fn} networks={networks} />);
-		fireEvent.change(getByTestId("send-transaction__network-select"), { target: { value: "ark" } });
+		const { getByTestId, container } = render(<SendTransactionForm onSubmit={fn} assets={assets} />);
 		const submit = getByTestId("send-transaction-click-submit");
 		await act(async () => {
 			fireEvent.click(submit);
@@ -271,17 +257,9 @@ describe("SendTransactionForm", () => {
 	});
 
 	it("should not call onSubmit callback if not provided", async () => {
-		const networks = [
-			{
-				value: "ark",
-				label: "Ark Ecosystem",
-				icon: "Ark",
-			},
-		];
 		// Select network to enable buttons
 		const fn = jest.fn();
-		const { getByTestId, container } = render(<SendTransactionForm networks={networks} />);
-		fireEvent.change(getByTestId("send-transaction__network-select"), { target: { value: "ark" } });
+		const { getByTestId, container } = render(<SendTransactionForm assets={assets} />);
 		const submit = getByTestId("send-transaction-click-submit");
 		await act(async () => {
 			fireEvent.click(submit);
@@ -292,17 +270,9 @@ describe("SendTransactionForm", () => {
 	});
 
 	it("should not call onBack callback if not provided", async () => {
-		const networks = [
-			{
-				value: "ark",
-				label: "Ark Ecosystem",
-				icon: "Ark",
-			},
-		];
 		// Select network to enable buttons
 		const fn = jest.fn();
-		const { getByTestId, container } = render(<SendTransactionForm networks={networks} />);
-		fireEvent.change(getByTestId("send-transaction__network-select"), { target: { value: "ark" } });
+		const { getByTestId, container } = render(<SendTransactionForm assets={assets} />);
 		const back = getByTestId("send-transaction-click-back");
 		await act(async () => {
 			fireEvent.click(back);

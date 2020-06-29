@@ -47,11 +47,14 @@ export const Dashboard = ({ transactions, wallets, networks, portfolioPercentage
 		},
 	];
 
+	const emptyTransactionsText =
+		"This will display the history of your transactions. But you don't have more than one transaction at the moment.";
+
 	return (
-		<div className="pt-1 -m-5 -mt-6 bg-theme-neutral-100">
+		<div>
 			{showPortfolio && balances && (
 				<Section>
-					<div className="-mb-2 text-3xl font-bold">Portfolio Chart</div>
+					<div className="-mb-2 text-4xl font-bold">Portfolio Chart</div>
 					<LineChart height={260} period="22 Jun - 28 Jun" data={balances} lines={chartLines} />
 					<div className="pt-6 mb-2 border-b border-dotted border-theme-neutral-200" />
 					<PercentageBar title="Total portfolio" data={portfolioPercentages} />
@@ -63,7 +66,7 @@ export const Dashboard = ({ transactions, wallets, networks, portfolioPercentage
 			</Section>
 			{showTransactions && (
 				<Section data-testid="dashboard__transactions-view">
-					<Transactions transactions={transactions} />
+					<Transactions transactions={transactions} emptyText={emptyTransactionsText} />
 				</Section>
 			)}
 		</div>

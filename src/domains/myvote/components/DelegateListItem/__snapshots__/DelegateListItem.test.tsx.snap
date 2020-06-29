@@ -1,0 +1,207 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DelegateListItem should emit action on select button 1`] = `
+<DocumentFragment>
+  <table>
+    <tbody>
+      <tr
+        class="border-b border-theme-neutral-200"
+      >
+        <td
+          class="py-5"
+        >
+          <div
+            class="Avatar__AvatarStyled-yiil9n-0 fympLW"
+            data-testid="Avatar"
+          />
+        </td>
+        <td
+          class="py-5 font-bold"
+        >
+          Delegate 1
+        </td>
+        <td
+          class="py-5 font-bold text-theme-neutral-dark"
+        >
+          #1
+        </td>
+        <td
+          class="py-5 font-bold text-theme-neutral-dark"
+        >
+          3.43%
+        </td>
+        <td
+          class="py-5"
+        >
+          <div
+            class="flex justify-center h-full"
+          >
+            <a
+              href="https://marketsquare.ark.io"
+              rel="noreferrer"
+              target="_blank"
+            >
+              <div
+                class="sc-AxirZ iQaTP text-xl text-theme-primary"
+                height="1em"
+                width="1em"
+              >
+                <svg>
+                  msq.svg
+                </svg>
+              </div>
+            </a>
+          </div>
+        </td>
+        <td
+          class="py-5 font-bold text-theme-neutral-dark"
+        >
+          <span>
+            80%
+          </span>
+        </td>
+        <td
+          class="py-5 font-bold text-theme-neutral-dark"
+        >
+          <span>
+            Daily
+          </span>
+        </td>
+        <td
+          class="py-5 font-bold text-theme-neutral-dark"
+        >
+          <span>
+            500 Ѧ
+          </span>
+        </td>
+        <td
+          class="py-5 font-bold text-theme-neutral-dark"
+        >
+          <span>
+            2.387082496 Ѧ
+          </span>
+        </td>
+        <td
+          class="py-5"
+        >
+          <div
+            class="text-right"
+          >
+            <button
+              class="sc-AxjAm ddJBbC"
+              color="primary"
+              data-testid="DelegateListItem__button--select"
+              type="button"
+            >
+              Select
+            </button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</DocumentFragment>
+`;
+
+exports[`DelegateListItem should render 1`] = `
+<DocumentFragment>
+  <table>
+    <tbody>
+      <tr
+        class="border-b border-theme-neutral-200"
+      >
+        <td
+          class="py-5"
+        >
+          <div
+            class="Avatar__AvatarStyled-yiil9n-0 fympLW"
+            data-testid="Avatar"
+          />
+        </td>
+        <td
+          class="py-5 font-bold"
+        >
+          Delegate 1
+        </td>
+        <td
+          class="py-5 font-bold text-theme-neutral-dark"
+        >
+          #1
+        </td>
+        <td
+          class="py-5 font-bold text-theme-neutral-dark"
+        >
+          3.43%
+        </td>
+        <td
+          class="py-5"
+        >
+          <div
+            class="flex justify-center h-full"
+          >
+            <a
+              href="https://marketsquare.ark.io"
+              rel="noreferrer"
+              target="_blank"
+            >
+              <div
+                class="sc-AxirZ iQaTP text-xl text-theme-primary"
+                height="1em"
+                width="1em"
+              >
+                <svg>
+                  msq.svg
+                </svg>
+              </div>
+            </a>
+          </div>
+        </td>
+        <td
+          class="py-5 font-bold text-theme-neutral-dark"
+        >
+          <span>
+            80%
+          </span>
+        </td>
+        <td
+          class="py-5 font-bold text-theme-neutral-dark"
+        >
+          <span>
+            Daily
+          </span>
+        </td>
+        <td
+          class="py-5 font-bold text-theme-neutral-dark"
+        >
+          <span>
+            500 Ѧ
+          </span>
+        </td>
+        <td
+          class="py-5 font-bold text-theme-neutral-dark"
+        >
+          <span>
+            2.387082496 Ѧ
+          </span>
+        </td>
+        <td
+          class="py-5"
+        >
+          <div
+            class="text-right"
+          >
+            <button
+              class="sc-AxjAm ddJBbC"
+              color="primary"
+              data-testid="DelegateListItem__button--select"
+              type="button"
+            >
+              Select
+            </button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</DocumentFragment>
+`;
