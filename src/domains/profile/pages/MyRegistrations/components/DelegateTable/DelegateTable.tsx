@@ -9,11 +9,11 @@ const columns = [
 	{ Header: "Avatar", className: "invisible" },
 	{
 		Header: "Delegate Name",
-		className: "font-semibold text-md ml-5",
+		className: "font-semibold text-md",
 	},
 	{
 		Header: "Rank",
-		className: "font-semibold text-md -ml-20",
+		className: "font-semibold text-md -ml-14",
 	},
 	{
 		Header: "MSQ",
@@ -29,9 +29,8 @@ const columns = [
 	},
 	{
 		Header: "Votes",
-		className: "font-semibold text-md float-right",
+		className: "font-semibold text-md float-right ml-32",
 	},
-	{ Header: "Options", className: "invisible float-right" },
 ];
 
 type Props = {
@@ -53,37 +52,41 @@ const getStatusIcon = (confirmed) => {
 };
 
 export const DelegateTable = ({ data }: Props) => (
-	<div className="flex flex-col bg-theme-background mt-4">
-		<span className="p-10 font-bold text-2xl">Delegate</span>
+	<div className="flex flex-col bg-theme-background mt-4 px-10">
+		<span className="py-10 font-bold text-2xl">Delegate</span>
 		<Table columns={columns} data={data}>
 			{(rowData: any) => (
-				<tr data-testid="business-table__row" className="border-b border-dashed border-theme-neutral-light">
-					<td className="py-4">
-						<div className="ml-10 -mr-16">
-							<Circle className="border-theme-neutral-800" size="large">
-								<Icon name="Business" width={22} height={22} />
-							</Circle>
-							<Circle avatarId="test" size="large" className="-ml-1" />
-						</div>
+				<tr data-testid="delegate-table__row" className="border-b border-dashed border-theme-neutral-light">
+					<td className="py-4 w-24">
+						<Circle className="border-theme-neutral-800" size="large">
+							<Icon name="Business" width={22} height={22} />
+						</Circle>
+						<Circle avatarId="test" size="large" className="-ml-1" />
 					</td>
-					<td className="py-4 mt-1 font-semibold pl-5">
+					<td className="py-4 mt-1 font-semibold">
 						<span>{rowData.delegate}</span>
 					</td>
 					<td className="py-1 text-theme-neutral-700">
-						<span className="-ml-20">{rowData.rank}</span>
+						<span className="-ml-14">{rowData.rank}</span>
 					</td>
 					<td className="py-1 text-bold text-theme-primary">
-						<Icon name="Msq" width={25} height={25} />
+						<Icon name="Msq" width={22} height={22} />
 					</td>
 					<td className="py-1 text-theme-neutral-400">{getStatusIcon(rowData.confirmed)}</td>
-					<td className="px-20 text-bold text-theme-neutral-700">
-						<div className="flex items-center float-right -mr-20">
+					<td>
+						<div className="flex float-right text-semibold text-theme-neutral-800">
+							<div className="flex items-center">
+								<span className="ml-16">2,450.643</span>
+								<Icon name="Ark" className="ml-2" />
+							</div>
+						</div>
+					</td>
+					<td className="text-semibold text-theme-neutral-800 w-1/12">
+						<div className="flex items-center ml-5 -mr-10">
+							<small className="text-theme-neutral-500">2,43%</small>
 							<span>2,450.643</span>
 							<Icon name="Ark" className="ml-2" />
 						</div>
-					</td>
-					<td className="py-1 text-bold text-theme-primary">
-						<span className="float-right">View</span>
 					</td>
 					<td className="py-1 float-right">
 						<Button variant="plain" className="mt-4" size="small">

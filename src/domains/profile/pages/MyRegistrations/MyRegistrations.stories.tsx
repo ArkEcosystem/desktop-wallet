@@ -54,6 +54,28 @@ export const Default = () => {
 				},
 			],
 		},
+		{
+			type: "delegate",
+			registrations: [
+				{
+					delegate: "OLEBank",
+					rank: "#2",
+					history: [],
+					website: "",
+					msq: true,
+					confirmed: true,
+					repository: [],
+				},
+				{
+					delegate: "OLEBank",
+					rank: "#352",
+					history: [],
+					website: "",
+					confirmed: false,
+					repository: [],
+				},
+			],
+		},
 	];
 
 	return <MyRegistrations registrations={isEmpty ? [] : registrations} />;

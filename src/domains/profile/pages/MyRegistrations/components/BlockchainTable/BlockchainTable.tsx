@@ -25,7 +25,7 @@ const columns = [
 	},
 	{
 		Header: "MSQ",
-		className: "font-semibold text-md -ml-3",
+		className: "font-semibold text-md",
 	},
 	{
 		Header: "Repository",
@@ -33,7 +33,7 @@ const columns = [
 	},
 	{
 		Header: "Seed",
-		className: "font-semibold text-md -ml-12",
+		className: "font-semibold text-md -ml-4",
 	},
 	{ Header: "Spacer", className: "invisible float-right" },
 	{ Header: "Options", className: "invisible float-right" },
@@ -50,18 +50,16 @@ const options = [
 ];
 
 export const BlockchainTable = ({ data }: Props) => (
-	<div className="flex flex-col bg-theme-background mt-4">
-		<span className="p-10 font-bold text-2xl">Blockchain</span>
+	<div className="flex flex-col bg-theme-background mt-4 px-10">
+		<span className="py-10 font-bold text-2xl">Blockchain</span>
 		<Table columns={columns} data={data}>
 			{(rowData: any) => (
 				<tr data-testid="blockchain-table__row" className="border-b border-dashed border-theme-neutral-light">
-					<td className="py-4">
-						<div className="ml-10 -mr-12">
-							<Circle className="border-theme-neutral-800" size="large">
-								<Icon name="Bridgechain" width={22} height={22} />
-							</Circle>
-							<Circle avatarId="test" size="large" className="-ml-1" />
-						</div>
+					<td className="py-4 w-24">
+						<Circle className="border-theme-neutral-800" size="large">
+							<Icon name="Bridgechain" width={22} height={22} />
+						</Circle>
+						<Circle avatarId="test" size="large" className="-ml-1" />
 					</td>
 					<td className="py-4 mt-1 font-semibold">
 						<span>{rowData.agent}</span>
@@ -76,13 +74,13 @@ export const BlockchainTable = ({ data }: Props) => (
 						<Icon name="Redirect" className="ml-4" />
 					</td>
 					<td className="py-1 text-semibold text-theme-primary">
-						<Icon name="Msq" width={22} height={22} className="-ml-2" />
+						<Icon name="Msq" width={22} height={22} className="ml-1" />
 					</td>
 					<td className="py-1 text-semibold text-theme-primary">
 						<span className="ml-7">View</span>
 					</td>
 					<td className="py-1 text-semibold text-theme-primary">
-						<span className="-ml-12">View</span>
+						<span className="-ml-5">View</span>
 					</td>
 					<td className="px-1 px-11" />
 					<td className="py-1 float-right">

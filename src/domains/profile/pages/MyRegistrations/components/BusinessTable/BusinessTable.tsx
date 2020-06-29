@@ -17,11 +17,11 @@ const columns = [
 	},
 	{
 		Header: "History",
-		className: "font-semibold text-md",
+		className: "font-semibold text-md -ml-8",
 	},
 	{
 		Header: "Website",
-		className: "font-semibold text-md -mr-2 ml-2",
+		className: "font-semibold text-md ml-8 -mr-6",
 	},
 	{
 		Header: "MSQ",
@@ -29,7 +29,7 @@ const columns = [
 	},
 	{
 		Header: "Repository",
-		className: "font-semibold text-md",
+		className: "font-semibold text-md ml-2",
 	},
 	{ Header: "Spacer", className: "invisible float-right" },
 	{ Header: "Options", className: "invisible float-right" },
@@ -46,18 +46,16 @@ const options = [
 ];
 
 export const BusinessTable = ({ data }: Props) => (
-	<div className="flex flex-col bg-theme-background mt-4">
-		<span className="p-10 font-bold text-2xl">Business</span>
+	<div className="flex flex-col bg-theme-background mt-4 px-10">
+		<span className="py-10 font-bold text-2xl">Business</span>
 		<Table columns={columns} data={data}>
 			{(rowData: any) => (
 				<tr data-testid="business-table__row" className="border-b border-dashed border-theme-neutral-light">
-					<td className="py-4">
-						<div className="ml-10 -mr-12">
-							<Circle className="border-theme-neutral-800" size="large">
-								<Icon name="Business" width={22} height={22} />
-							</Circle>
-							<Circle avatarId="test" size="large" className="-ml-1" />
-						</div>
+					<td className="py-4 w-24">
+						<Circle className="border-theme-neutral-800" size="large">
+							<Icon name="Business" width={22} height={22} />
+						</Circle>
+						<Circle avatarId="test" size="large" className="-ml-1" />
 					</td>
 					<td className="py-4 mt-1 font-semibold">
 						<span>{rowData.agent}</span>
@@ -66,10 +64,10 @@ export const BusinessTable = ({ data }: Props) => (
 						<span>{rowData.businessName}</span>
 					</td>
 					<td className="py-1 text-bold text-theme-primary">
-						<span>View</span>
+						<span className="-ml-8">View</span>
 					</td>
 					<td className="py-1 text-theme-neutral-400">
-						<Icon name="Redirect" className="ml-6" />
+						<Icon name="Redirect" className="ml-12" />
 					</td>
 					<td className="py-1 text-bold text-theme-primary">
 						<Icon name="Msq" width={22} height={22} className="ml-1" />
