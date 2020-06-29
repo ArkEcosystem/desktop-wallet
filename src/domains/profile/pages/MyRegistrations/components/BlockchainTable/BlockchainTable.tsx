@@ -56,7 +56,7 @@ export const BlockchainTable = ({ data }: Props) => (
 			{(rowData: any) => (
 				<tr data-testid="blockchain-table__row" className="border-b border-dashed border-theme-neutral-light">
 					<td className="py-4">
-						<div className="ml-10 -mr-14">
+						<div className="ml-10 -mr-12">
 							<Circle className="border-theme-neutral-800" size="large">
 								<Icon name="Bridgechain" width={22} height={22} />
 							</Circle>
@@ -84,7 +84,7 @@ export const BlockchainTable = ({ data }: Props) => (
 					<td className="py-1 text-semibold text-theme-primary">
 						<span className="-ml-12">View</span>
 					</td>
-					<td className="px-1 px-10" />
+					<td className="px-1 px-11" />
 					<td className="py-1 float-right">
 						<Button variant="plain" className="mt-4" size="small">
 							<Dropdown

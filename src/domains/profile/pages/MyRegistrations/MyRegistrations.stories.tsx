@@ -16,8 +16,37 @@ export const Default = () => {
 			type: "business",
 			registrations: [
 				{
-					agent: "OlEBank",
+					agent: "OLEBank",
 					businessName: "ARK Ecosystem",
+					history: [],
+					website: "",
+					msq: true,
+					repository: [],
+				},
+				{
+					agent: "OLEBank",
+					businessName: "ARK Ecosystem",
+					history: [],
+					website: "",
+					msq: true,
+					repository: [],
+				},
+			],
+		},
+		{
+			type: "blockchain",
+			registrations: [
+				{
+					agent: "OLEBank",
+					blockchainName: "ARK Ecosystem",
+					history: [],
+					website: "",
+					msq: true,
+					repository: [],
+				},
+				{
+					agent: "OLEBank",
+					blockchainName: "ARK Ecosystem",
 					history: [],
 					website: "",
 					msq: true,

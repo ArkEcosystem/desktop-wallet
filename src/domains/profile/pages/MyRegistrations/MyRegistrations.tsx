@@ -2,7 +2,9 @@ import { SvgCollection } from "app/assets/svg";
 import { Button } from "app/components/Button";
 import React from "react";
 
+import { BlockchainTable } from "./components/BlockchainTable";
 import { BusinessTable } from "./components/BusinessTable";
+import { DelegateTable } from "./components/DelegateTable";
 
 type Props = {
 	registrations?: any;
@@ -29,6 +31,10 @@ const renderRegistration = ({ type, registrations }: RegistrationProps) => {
 	switch (type) {
 		case "business":
 			return <BusinessTable key={type} data={registrations} />;
+		case "blockchain":
+			return <BlockchainTable key={type} data={registrations} />;
+		case "delegate":
+			return <DelegateTable key={type} data={registrations} />;
 
 		default:
 			return null;
@@ -43,7 +49,7 @@ export const MyRegistrations = ({ registrations }: Props) => {
 		});
 
 	return (
-		<section className="bg-theme-neutral-200">
+		<section className="bg-theme-neutral-100">
 			<div className="px-10 py-14 bg-theme-background">
 				<div className="flex justify-between">
 					<div className="flex flex-col">

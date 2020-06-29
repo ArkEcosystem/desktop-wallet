@@ -21,7 +21,7 @@ const columns = [
 	},
 	{
 		Header: "Website",
-		className: "font-semibold text-md",
+		className: "font-semibold text-md -mr-2 ml-2",
 	},
 	{
 		Header: "MSQ",
@@ -31,6 +31,7 @@ const columns = [
 		Header: "Repository",
 		className: "font-semibold text-md",
 	},
+	{ Header: "Spacer", className: "invisible float-right" },
 	{ Header: "Options", className: "invisible float-right" },
 ];
 
@@ -51,7 +52,7 @@ export const BusinessTable = ({ data }: Props) => (
 			{(rowData: any) => (
 				<tr data-testid="business-table__row" className="border-b border-dashed border-theme-neutral-light">
 					<td className="py-4">
-						<div className="ml-10 -mr-16">
+						<div className="ml-10 -mr-12">
 							<Circle className="border-theme-neutral-800" size="large">
 								<Icon name="Business" width={22} height={22} />
 							</Circle>
@@ -68,14 +69,15 @@ export const BusinessTable = ({ data }: Props) => (
 						<span>View</span>
 					</td>
 					<td className="py-1 text-theme-neutral-400">
-						<Icon name="Redirect" className="ml-4" />
+						<Icon name="Redirect" className="ml-6" />
 					</td>
 					<td className="py-1 text-bold text-theme-primary">
-						<Icon name="Msq" width={25} height={25} />
+						<Icon name="Msq" width={22} height={22} className="ml-1" />
 					</td>
 					<td className="py-1 text-bold text-theme-primary">
 						<span className="ml-3">View</span>
 					</td>
+					<td className="px-1 px-12" />
 					<td className="py-1 float-right">
 						<Button variant="plain" className="mt-4" size="small">
 							<Dropdown
