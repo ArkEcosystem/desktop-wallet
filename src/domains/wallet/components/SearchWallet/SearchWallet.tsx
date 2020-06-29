@@ -5,7 +5,7 @@ import { WalletListItem } from "app/components/WalletListItem";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-type SelectAccountProps = {
+type SearchWalletProps = {
 	isOpen: boolean;
 	wallets?: any;
 	networks?: any;
@@ -15,7 +15,7 @@ type SelectAccountProps = {
 	onSearch?: any;
 };
 
-export const SelectAccount = ({
+export const SearchWallet = ({
 	isOpen,
 	wallets,
 	networks,
@@ -23,7 +23,7 @@ export const SelectAccount = ({
 	onViewAllNetworks,
 	onClose,
 	onSearch,
-}: SelectAccountProps) => {
+}: SearchWalletProps) => {
 	const { t } = useTranslation();
 
 	const listColumns = [
@@ -69,7 +69,7 @@ export const SelectAccount = ({
 	);
 };
 
-SelectAccount.defaultProps = {
+SearchWallet.defaultProps = {
 	isOpen: false,
 	wallets: [],
 	networks: [],
