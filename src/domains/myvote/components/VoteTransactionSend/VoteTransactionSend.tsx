@@ -1,4 +1,5 @@
 import { Address } from "app/components/Address";
+import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { Form } from "app/components/Form";
 import { Icon } from "app/components/Icon";
@@ -127,6 +128,43 @@ export const VoteTransactionSend = ({ onSubmit }: VoteTransactionSendProps) => {
 						<TabPanel tabId={1}>
 							<FirstStep />
 						</TabPanel>
+
+						<div className="flex justify-end mt-6 space-x-3">
+							{activeTab >= 1 && activeTab < 4 && (
+								<>
+									<Button
+										disabled={activeTab === 1}
+										data-testid="VoteTransactionSend--back"
+										variant="plain"
+										onClick={handleBack}
+									>
+										Back
+									</Button>
+									<Button
+										data-testid={`VoteTransactionSend--${activeTab === 3 ? "send" : "continue"}`}
+										onClick={handleNext}
+									>
+										{activeTab === 3 ? "Send" : "Continue"}
+									</Button>
+								</>
+							)}
+
+							{activeTab === 4 && (
+								<>
+									<Button
+										data-testid="VoteTransactionSend--back-to-wallet"
+										variant="plain"
+										className={"block"}
+									>
+										Back to wallet
+									</Button>
+									<Button data-testid="VoteTransactionSend--copy" variant="plain">
+										<Icon name="Download" />
+										<span>Download</span>
+									</Button>
+								</>
+							)}
+						</div>
 					</div>
 				</Tabs>
 			</Form>
