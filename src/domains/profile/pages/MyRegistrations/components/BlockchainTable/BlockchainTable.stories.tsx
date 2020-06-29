@@ -10,7 +10,7 @@ export const Default = () => {
 	const registrations = [
 		{
 			agent: "OLEBank",
-			businessName: "ARK Ecosystem",
+			bllockchainName: "ARK Ecosystem",
 			history: [],
 			website: "",
 			msq: true,
@@ -18,7 +18,7 @@ export const Default = () => {
 		},
 		{
 			agent: "OLEBank",
-			businessName: "ARK Ecosystem",
+			bllockchainName: "ARK Ecosystem",
 			history: [],
 			website: "",
 			msq: true,

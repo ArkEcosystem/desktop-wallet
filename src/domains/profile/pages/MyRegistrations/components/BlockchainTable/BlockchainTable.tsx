@@ -54,11 +54,11 @@ export const BlockchainTable = ({ data }: Props) => (
 		<span className="p-10 font-bold text-2xl">Blockchain</span>
 		<Table columns={columns} data={data}>
 			{(rowData: any) => (
-				<tr data-testid="business-table__row" className="border-b border-dashed border-theme-neutral-light">
+				<tr data-testid="blockchain-table__row" className="border-b border-dashed border-theme-neutral-light">
 					<td className="py-4">
 						<div className="ml-10 -mr-14">
 							<Circle className="border-theme-neutral-800" size="large">
-								<Icon name="Business" width={22} height={22} />
+								<Icon name="Bridgechain" width={22} height={22} />
 							</Circle>
 							<Circle avatarId="test" size="large" className="-ml-1" />
 						</div>
@@ -67,7 +67,7 @@ export const BlockchainTable = ({ data }: Props) => (
 						<span>{rowData.agent}</span>
 					</td>
 					<td className="py-1 font-semibold">
-						<span>{rowData.businessName}</span>
+						<span>{rowData.bllockchainName}</span>
 					</td>
 					<td className="py-1 text-semibold text-theme-primary">
 						<span>View</span>
