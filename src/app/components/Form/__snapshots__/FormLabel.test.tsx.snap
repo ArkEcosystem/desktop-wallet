@@ -3,14 +3,14 @@
 exports[`FormLabel should render & hover if required 1`] = `
 <DocumentFragment>
   <label
-    class="FormLabel flex transition-colors duration-100 inline-block text-sm text-theme-neutral-dark"
+    class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
     data-testid="FormLabel"
     label="Test"
     required=""
   >
     Test
     <div
-      class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
+      class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
       data-testid="FormLabel__required"
     />
   </label>
@@ -20,7 +20,7 @@ exports[`FormLabel should render & hover if required 1`] = `
 exports[`FormLabel should render with name from context 1`] = `
 <DocumentFragment>
   <label
-    class="FormLabel flex transition-colors duration-100 inline-block text-sm text-theme-neutral-dark"
+    class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
     data-testid="FormLabel"
     for="test"
     label="Test Label"

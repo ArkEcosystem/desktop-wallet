@@ -16,7 +16,7 @@ export function FormLabel(props: FormLabelProps) {
 	return (
 		<label
 			data-testid="FormLabel"
-			className="FormLabel flex transition-colors duration-100 inline-block text-sm text-theme-neutral-dark"
+			className="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
 			htmlFor={fieldContext?.name}
 			{...props}
 		>
@@ -26,7 +26,7 @@ export function FormLabel(props: FormLabelProps) {
 				<Tippy content="These fields are required to be filled in">
 					<div
 						data-testid="FormLabel__required"
-						className="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
+						className="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
 					/>
 				</Tippy>
 			)}

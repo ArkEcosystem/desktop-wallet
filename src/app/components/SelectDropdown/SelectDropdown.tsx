@@ -46,7 +46,7 @@ export const SelectDropdown = ({ className, toggle, options, option }: Props) =>
 							id="dropdown-select"
 							data-testid="select-dropdown__toggle"
 							type="button"
-							className="dropdown-toggle hidden"
+							className="hidden dropdown-toggle"
 							onClick={(params: any) => toggleMenu(params)}
 							data-toggle="dropdown"
 							aria-haspopup="true"

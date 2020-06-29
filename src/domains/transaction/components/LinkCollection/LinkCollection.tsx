@@ -90,7 +90,7 @@ export const LinkCollection = ({
 							name="ChevronUp"
 							width={9}
 							height={9}
-							className="flex items-center justify-center bg-theme-primary-600 text-white rounded-full w-5 h-5"
+							className="flex items-center justify-center w-5 h-5 text-white rounded-full bg-theme-primary-600"
 						/>
 					)}
 					{!isExpanded && (
@@ -98,7 +98,7 @@ export const LinkCollection = ({
 							name="ChevronDown"
 							width={18}
 							height={18}
-							className="flex items-center justify-center bg-theme-primary-100 text-theme-primary-600 rounded-full w-5 h-5"
+							className="flex items-center justify-center w-5 h-5 text-theme-primary-600 rounded-full bg-theme-primary-100"
 						/>
 					)}
 				</div>
@@ -109,7 +109,7 @@ export const LinkCollection = ({
 					<div>
 						<div className="flex space-x-2">
 							<div className="flex flex-col w-1/4">
-								<div className="mb-2 w-full">
+								<div className="w-full mb-2">
 									<FormLabel label={`Add ${typeName}`} />
 								</div>
 								<InputGroup className="flex flex-1">
@@ -172,7 +172,7 @@ export const LinkCollection = ({
 						</Button>
 					</div>
 
-					<div className="text-theme-neutral-700 mt-8 mb-2 text-sm">Your {typeName}</div>
+					<div className="mt-8 mb-2 text-sm text-theme-neutral-700">Your {typeName}</div>
 
 					<Table columns={columns} data={links}>
 						{(rowData: any) => (
@@ -191,7 +191,7 @@ export const LinkCollection = ({
 									</td>
 								)}
 
-								<td className="py-6 w-40">{rowData.type}</td>
+								<td className="w-40 py-6">{rowData.type}</td>
 
 								<td className="py-6">{rowData.link}</td>
 

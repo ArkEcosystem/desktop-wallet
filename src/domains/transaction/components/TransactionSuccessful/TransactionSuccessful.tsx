@@ -17,7 +17,7 @@ export const TransactionSuccessful = ({ children }: { children: React.ReactNode 
 				<div className="w-full my-10">
 					<TransactionSuccessfulBanner className="w-full" />
 				</div>
-				<p className="text-theme-neutral-dark mb-4">
+				<p className="mb-4 text-theme-neutral-dark">
 					Your transaction was successfully sent. Please monitor the blockchain to ensure your transaction is
 					confirmed and processed. The following is relevant information for your transaction:
 				</p>

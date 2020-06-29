@@ -31,13 +31,13 @@ const Plugin = ({ logoUrl, logoClassName, title, description, action, onAction }
 
 const EmptyPlaceholder = ({ title }: EmptyPlaceholderProps) => (
 	<div>
-		<div className="border-2 border-theme-neutral-200 p-6 text-md rounded-xl text-theme-neutral-700 mb-5">
+		<div className="p-6 mb-5 border-2 border-theme-neutral-200 text-md rounded-xl text-theme-neutral-700">
 			{title}
 		</div>
 		<div>
 			<Icon name="Placeholder" width={200} height={80} />
 		</div>
-		<div className="border-b border-2 border-theme-neutral-100 my-3" />
+		<div className="my-3 border-2 border-b border-theme-neutral-100" />
 		<div>
 			<Icon name="Placeholder" width={200} height={80} />
 		</div>
