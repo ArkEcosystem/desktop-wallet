@@ -28,16 +28,16 @@ const linkIcons: Record<string, string> = {
 
 const LinkItem = ({ link }: { link: Link }) => (
 	<div className="flex items-center py-4 border-t border-dashed border-theme-neutral-300 first:border-0">
-		<div className="flex flex-1 justify-between">
+		<div className="flex justify-between flex-1">
 			<div>
 				<div className="text-sm font-semibold text-theme-neutral-500">{link.type}</div>
 
-				<a href={link.link} className="text-theme-primary-600 mt-2 font-semibold hover:text-theme-primary-500">
+				<a href={link.link} className="mt-2 font-semibold text-theme-primary-600 hover:text-theme-primary-500">
 					{link.link}
 				</a>
 			</div>
 
-			<Circle className="bg-theme-background border-black" size="large">
+			<Circle className="border-black bg-theme-background" size="large">
 				<Icon name={linkIcons[link.type]} width={20} height={20} />
 			</Circle>
 		</div>
@@ -70,7 +70,7 @@ export const LinkList = ({ description, links, title }: LinkListProps) => {
 							name="ChevronUp"
 							width={9}
 							height={9}
-							className="flex items-center justify-center bg-theme-primary-600 text-white rounded-full w-5 h-5"
+							className="flex items-center justify-center w-5 h-5 text-white rounded-full bg-theme-primary-600"
 						/>
 					)}
 					{!isExpanded && (
@@ -78,7 +78,7 @@ export const LinkList = ({ description, links, title }: LinkListProps) => {
 							name="ChevronDown"
 							width={18}
 							height={18}
-							className="flex items-center justify-center bg-theme-primary-100 text-theme-primary-600 rounded-full w-5 h-5"
+							className="flex items-center justify-center w-5 h-5 rounded-full bg-theme-primary-100 text-theme-primary-600"
 						/>
 					)}
 				</div>

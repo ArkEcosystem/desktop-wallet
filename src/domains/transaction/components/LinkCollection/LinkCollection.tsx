@@ -98,7 +98,7 @@ export const LinkCollection = ({
 							name="ChevronDown"
 							width={18}
 							height={18}
-							className="flex items-center justify-center w-5 h-5 text-theme-primary-600 rounded-full bg-theme-primary-100"
+							className="flex items-center justify-center w-5 h-5 rounded-full text-theme-primary-600 bg-theme-primary-100"
 						/>
 					)}
 				</div>
