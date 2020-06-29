@@ -61,10 +61,10 @@ export const WalletCard = ({
 							<Circle size="large" className="bg-white border-theme-primary-contrast" />
 						</div>
 
-						<div className={` mt-6 text-md text-theme-primary-contrast ${blankTitleClass}`}>
+						<div className={`mt-6 text-md text-theme-primary-contrast ${blankTitleClass}`}>
 							{blankTitle}
 						</div>
-						<div className={` mt-1 text-md text-theme-primary-contrast ${blankSubtitleClass}`}>
+						<div className={`mt-1 text-md text-theme-primary-contrast my-px ${blankSubtitleClass}`}>
 							{blankSubtitle}
 						</div>
 					</div>
