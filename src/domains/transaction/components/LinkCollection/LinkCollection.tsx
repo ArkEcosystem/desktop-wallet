@@ -155,7 +155,7 @@ export const LinkCollection = ({
 										placeholder=" "
 										className="pr-20"
 										maxLength={255}
-										onChange={(e) => setLink(e.target.value)}
+										onChange={(e) => setLink((e.target as HTMLInputElement).value)}
 									/>
 								</InputGroup>
 							</div>
