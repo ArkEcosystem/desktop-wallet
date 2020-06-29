@@ -1,9 +1,11 @@
 import { act, fireEvent, render } from "@testing-library/react";
+import { i18n } from "app/i18n";
 import React from "react";
+import { I18nextProvider } from "react-i18next";
 
 import { Comments } from "./Comments";
 
-describe("Comments", () => {
+describe.only("Comments", () => {
 	const comments = [
 		{
 			author: "Rok Cernec",
@@ -41,7 +43,9 @@ describe("Comments", () => {
 
 	it("should handle sortBy properly", () => {
 		const { asFragment, getByText, getByTestId } = render(
-			<Comments comments={comments} sortOptions={sortOptions} />,
+			<I18nextProvider i18n={i18n}>
+				<Comments comments={comments} sortOptions={sortOptions} />,
+			</I18nextProvider>,
 		);
 		const toggle = getByTestId("dropdown__toggle");
 

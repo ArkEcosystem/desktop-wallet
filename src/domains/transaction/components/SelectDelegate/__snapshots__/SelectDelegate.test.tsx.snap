@@ -52,18 +52,22 @@ exports[`SelectDelegate should allow multiple selection 1`] = `
             data-testid="SearchBar"
           >
             <div
-              class="flex px-6 py-4 bg-white rounded shadow-xl"
+              class="flex items-center px-6 py-4 bg-white rounded shadow-xl"
             >
-              <svg
-                class="w-4 text-theme-neutral-300"
-              >
-                search.svg
-              </svg>
               <div
-                class="flex-1 mr-4"
+                class="sc-AxhCb fxrKLH w-4 mr-6 text-theme-neutral-300"
+                height="1em"
+                width="1em"
+              >
+                <svg>
+                  search.svg
+                </svg>
+              </div>
+              <div
+                class="flex-1 pl-2 mr-4 border-l border-theme-neutral-200"
               >
                 <input
-                  class="sc-Axmtr INsXA overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary border-none shadow-none"
+                  class="sc-AxheI gJZyBf overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary border-none shadow-none"
                   data-testid="Input"
                   placeholder="Search for a Delegate"
                 />
@@ -71,6 +75,7 @@ exports[`SelectDelegate should allow multiple selection 1`] = `
               <button
                 class="sc-AxjAm cCtLft my-1"
                 color="primary"
+                data-testid="SearchBar__button"
                 type="button"
               >
                 <span
@@ -86,7 +91,7 @@ exports[`SelectDelegate should allow multiple selection 1`] = `
           class="mt-8 mb-14"
         >
           <div
-            class="sc-AxheI AUTYj"
+            class="sc-fznKkj jwbSbq"
             role="table"
           >
             <table
@@ -742,18 +747,22 @@ exports[`SelectDelegate should only allow one selection 1`] = `
             data-testid="SearchBar"
           >
             <div
-              class="flex px-6 py-4 bg-white rounded shadow-xl"
+              class="flex items-center px-6 py-4 bg-white rounded shadow-xl"
             >
-              <svg
-                class="w-4 text-theme-neutral-300"
-              >
-                search.svg
-              </svg>
               <div
-                class="flex-1 mr-4"
+                class="sc-AxhCb fxrKLH w-4 mr-6 text-theme-neutral-300"
+                height="1em"
+                width="1em"
+              >
+                <svg>
+                  search.svg
+                </svg>
+              </div>
+              <div
+                class="flex-1 pl-2 mr-4 border-l border-theme-neutral-200"
               >
                 <input
-                  class="sc-Axmtr INsXA overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary border-none shadow-none"
+                  class="sc-AxheI gJZyBf overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary border-none shadow-none"
                   data-testid="Input"
                   placeholder="Search for a Delegate"
                 />
@@ -761,6 +770,7 @@ exports[`SelectDelegate should only allow one selection 1`] = `
               <button
                 class="sc-AxjAm cCtLft my-1"
                 color="primary"
+                data-testid="SearchBar__button"
                 type="button"
               >
                 <span
@@ -776,7 +786,7 @@ exports[`SelectDelegate should only allow one selection 1`] = `
           class="mt-8 mb-14"
         >
           <div
-            class="sc-AxheI AUTYj"
+            class="sc-fznKkj jwbSbq"
             role="table"
           >
             <table
@@ -1378,18 +1388,22 @@ exports[`SelectDelegate should render a modal 1`] = `
             data-testid="SearchBar"
           >
             <div
-              class="flex px-6 py-4 bg-white rounded shadow-xl"
+              class="flex items-center px-6 py-4 bg-white rounded shadow-xl"
             >
-              <svg
-                class="w-4 text-theme-neutral-300"
-              >
-                search.svg
-              </svg>
               <div
-                class="flex-1 mr-4"
+                class="sc-AxhCb fxrKLH w-4 mr-6 text-theme-neutral-300"
+                height="1em"
+                width="1em"
+              >
+                <svg>
+                  search.svg
+                </svg>
+              </div>
+              <div
+                class="flex-1 pl-2 mr-4 border-l border-theme-neutral-200"
               >
                 <input
-                  class="sc-Axmtr INsXA overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary border-none shadow-none"
+                  class="sc-AxheI gJZyBf overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary border-none shadow-none"
                   data-testid="Input"
                   placeholder="Search for a Delegate"
                 />
@@ -1397,6 +1411,7 @@ exports[`SelectDelegate should render a modal 1`] = `
               <button
                 class="sc-AxjAm cCtLft my-1"
                 color="primary"
+                data-testid="SearchBar__button"
                 type="button"
               >
                 <span
@@ -1412,7 +1427,7 @@ exports[`SelectDelegate should render a modal 1`] = `
           class="mt-8 mb-14"
         >
           <div
-            class="sc-AxheI AUTYj"
+            class="sc-fznKkj jwbSbq"
             role="table"
           >
             <table

@@ -3,7 +3,7 @@ import React from "react";
 
 import { SearchBarOptions } from "./SearchBarOptions";
 
-export default { title: "Search / Search Bar Options", decorators: [withKnobs] };
+export default { title: "Search / Search Bar / Search Bar Options", decorators: [withKnobs] };
 
 export const Default = () => {
 	const options = [

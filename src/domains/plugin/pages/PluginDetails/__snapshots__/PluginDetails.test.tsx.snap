@@ -383,7 +383,7 @@ exports[`PluginDetails should render properly 1`] = `
                     data-testid="dropdown__toggle"
                   >
                     <div
-                      class="float-right outline-none focus:outline-none"
+                      class="float-right outline-none cursor-pointer focus:outline-none"
                     >
                       <div
                         class="sc-AxjAm iepfoc"
@@ -702,7 +702,7 @@ exports[`PluginDetails should render properly 1`] = `
                       back.svg
                     </svg>
                   </div>
-                  COMMON.PREVIOUS
+                  Previous
                 </button>
                 <div
                   class="flex px-2 rounded bg-theme-primary-contrast"
@@ -729,7 +729,7 @@ exports[`PluginDetails should render properly 1`] = `
                   data-testid="Pagination__next"
                   type="button"
                 >
-                  COMMON.NEXT
+                  Next
                   <div
                     class="sc-AxjAm HWmvM ml-2"
                     height="12"
@@ -1415,7 +1415,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                     data-testid="dropdown__toggle"
                   >
                     <div
-                      class="float-right outline-none focus:outline-none"
+                      class="float-right outline-none cursor-pointer focus:outline-none"
                     >
                       <div
                         class="sc-AxjAm iepfoc"
@@ -1734,7 +1734,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                       back.svg
                     </svg>
                   </div>
-                  COMMON.PREVIOUS
+                  Previous
                 </button>
                 <div
                   class="flex px-2 rounded bg-theme-primary-contrast"
@@ -1761,7 +1761,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                   data-testid="Pagination__next"
                   type="button"
                 >
-                  COMMON.NEXT
+                  Next
                   <div
                     class="sc-AxjAm HWmvM ml-2"
                     height="12"
@@ -2029,5 +2029,6 @@ exports[`PluginDetails should render properly as installed 1`] = `
       </div>
     </div>
   </section>
+  ,
 </DocumentFragment>
 `;

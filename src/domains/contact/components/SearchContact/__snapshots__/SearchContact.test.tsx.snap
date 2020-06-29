@@ -16,13 +16,13 @@ exports[`SearchContact should render a modal 1`] = `
       class="absolute top-0 right-0 z-10 mt-4 mr-4"
     >
       <button
-        class="sc-AxirZ iJKGpA"
+        class="sc-AxjAm bThAoP"
         color="neutral"
         data-testid="modal__close-btn"
         type="button"
       >
         <div
-          class="sc-AxjAm iepfoc"
+          class="sc-AxirZ fttODj"
           height="10"
           width="10"
         >
@@ -54,33 +54,30 @@ exports[`SearchContact should render a modal 1`] = `
             data-testid="SearchBar"
           >
             <div
-              class="flex px-6 py-4 bg-white rounded shadow-xl"
+              class="flex items-center px-6 py-4 bg-white rounded shadow-xl"
             >
-              <span
-                class="flex items-center"
-              >
-                <div
-                  class="sc-AxjAm buCJuk text-theme-neutral-500"
-                  height="20"
-                  width="20"
-                >
-                  <svg>
-                    search.svg
-                  </svg>
-                </div>
-              </span>
               <div
-                class="flex-1 mr-4"
+                class="sc-AxirZ iQaTP w-4 mr-6 text-theme-neutral-300"
+                height="1em"
+                width="1em"
+              >
+                <svg>
+                  search.svg
+                </svg>
+              </div>
+              <div
+                class="flex-1 pl-2 mr-4 border-l border-theme-neutral-200"
               >
                 <input
-                  class="sc-AxheI gJZyBf overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary border-none shadow-none"
+                  class="sc-AxhCb clCjoe overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary border-none shadow-none"
                   data-testid="Input"
                   placeholder="Search..."
                 />
               </div>
               <button
-                class="sc-AxirZ dFnPLm my-1"
+                class="sc-AxjAm cCtLft my-1"
                 color="primary"
+                data-testid="SearchBar__button"
                 type="button"
               >
                 <span
@@ -96,7 +93,7 @@ exports[`SearchContact should render a modal 1`] = `
           class="mt-8"
         >
           <div
-            class="sc-AxhCb gfJeeC"
+            class="sc-fzpans ljooBW"
             role="table"
           >
             <table
@@ -127,7 +124,7 @@ exports[`SearchContact should render a modal 1`] = `
                         data-testid="table__Sort"
                       >
                         <div
-                          class="sc-AxjAm iepfoc"
+                          class="sc-AxirZ fttODj"
                           height="10"
                           width="10"
                         >
@@ -191,7 +188,7 @@ exports[`SearchContact should render a modal 1`] = `
                       class="flex items-center space-x-3"
                     >
                       <div
-                        class="sc-AxhUy fHeTTV bg-theme-primary-600 border-theme-primary-600"
+                        class="sc-fzplWN iVxRgF bg-theme-primary-600 border-theme-primary-600"
                       >
                         <span
                           class="text-sm text-theme-background"
@@ -210,10 +207,10 @@ exports[`SearchContact should render a modal 1`] = `
                     class="text-center border-b border-dashed border-theme-neutral-200"
                   >
                     <div
-                      class="sc-AxhUy fHeTTV border-ark-mainnet"
+                      class="sc-fzplWN iVxRgF border-ark-mainnet"
                     >
                       <div
-                        class="sc-AxjAm cpczEI text-ark-mainnet"
+                        class="sc-AxirZ iQaTP text-ark-mainnet"
                         height="1em"
                         width="1em"
                       >
@@ -230,7 +227,7 @@ exports[`SearchContact should render a modal 1`] = `
                       class="flex items-center space-x-3"
                     >
                       <div
-                        class="sc-AxhUy chcxWU"
+                        class="sc-fzplWN cwoIPg"
                       />
                       <div
                         class="inline-block truncate"
@@ -255,12 +252,12 @@ exports[`SearchContact should render a modal 1`] = `
                         class="float-right"
                       >
                         <button
-                          class="sc-AxirZ ggAYoh"
+                          class="sc-AxjAm kwTlRm"
                           color="primary"
                           type="button"
                         >
                           <div
-                            class="sc-AxjAm buCJuk"
+                            class="sc-AxirZ eEbZjj"
                             height="20"
                             width="20"
                           >
@@ -281,7 +278,7 @@ exports[`SearchContact should render a modal 1`] = `
                       class="flex items-center space-x-3"
                     >
                       <div
-                        class="sc-AxhUy fHeTTV bg-theme-primary-600 border-theme-primary-600"
+                        class="sc-fzplWN iVxRgF bg-theme-primary-600 border-theme-primary-600"
                       >
                         <span
                           class="text-sm text-theme-background"
@@ -300,10 +297,10 @@ exports[`SearchContact should render a modal 1`] = `
                     class="text-center "
                   >
                     <div
-                      class="sc-AxhUy fHeTTV border-ark-mainnet"
+                      class="sc-fzplWN iVxRgF border-ark-mainnet"
                     >
                       <div
-                        class="sc-AxjAm cpczEI text-ark-mainnet"
+                        class="sc-AxirZ iQaTP text-ark-mainnet"
                         height="1em"
                         width="1em"
                       >
@@ -320,7 +317,7 @@ exports[`SearchContact should render a modal 1`] = `
                       class="flex items-center space-x-3"
                     >
                       <div
-                        class="sc-AxhUy chcxWU"
+                        class="sc-fzplWN cwoIPg"
                       />
                       <div
                         class="inline-block truncate"
@@ -345,12 +342,12 @@ exports[`SearchContact should render a modal 1`] = `
                         class="float-right"
                       >
                         <button
-                          class="sc-AxirZ ggAYoh"
+                          class="sc-AxjAm kwTlRm"
                           color="primary"
                           type="button"
                         >
                           <div
-                            class="sc-AxjAm buCJuk"
+                            class="sc-AxirZ eEbZjj"
                             height="20"
                             width="20"
                           >
@@ -371,10 +368,10 @@ exports[`SearchContact should render a modal 1`] = `
                     class="text-center "
                   >
                     <div
-                      class="sc-AxhUy fHeTTV border-bitcoin-mainnet"
+                      class="sc-fzplWN iVxRgF border-bitcoin-mainnet"
                     >
                       <div
-                        class="sc-AxjAm cpczEI text-bitcoin-mainnet"
+                        class="sc-AxirZ iQaTP text-bitcoin-mainnet"
                         height="1em"
                         width="1em"
                       >
@@ -391,7 +388,7 @@ exports[`SearchContact should render a modal 1`] = `
                       class="flex items-center space-x-3"
                     >
                       <div
-                        class="sc-AxhUy chcxWU"
+                        class="sc-fzplWN cwoIPg"
                       />
                       <div
                         class="inline-block truncate"
@@ -417,10 +414,10 @@ exports[`SearchContact should render a modal 1`] = `
                     class="text-center border-b border-dashed border-theme-neutral-200"
                   >
                     <div
-                      class="sc-AxhUy fHeTTV border-ethereum-mainnet"
+                      class="sc-fzplWN iVxRgF border-ethereum-mainnet"
                     >
                       <div
-                        class="sc-AxjAm cpczEI text-ethereum-mainnet"
+                        class="sc-AxirZ iQaTP text-ethereum-mainnet"
                         height="1em"
                         width="1em"
                       >
@@ -437,7 +434,7 @@ exports[`SearchContact should render a modal 1`] = `
                       class="flex items-center space-x-3"
                     >
                       <div
-                        class="sc-AxhUy chcxWU"
+                        class="sc-fzplWN cwoIPg"
                       />
                       <div
                         class="inline-block truncate"
