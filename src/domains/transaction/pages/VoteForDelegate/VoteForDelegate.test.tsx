@@ -49,7 +49,7 @@ describe("Vote For Delegate", () => {
 			</FormContext>,
 		);
 
-		expect(getByTestId("VoteForDelegate__step--fourth")).toBeTruthy();
+		expect(getByTestId("TransactionSuccessful")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
 

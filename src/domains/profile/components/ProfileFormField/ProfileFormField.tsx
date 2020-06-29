@@ -23,9 +23,9 @@ export const ProfileFormField = ({
 				<FormLabel label={formLabel} />
 			</div>
 
-			<InputGroup className="send-transaction__select-contact select-transparent">
+			<InputGroup className="ProfileFormField__select-contact select-transparent">
 				<Select
-					data-testid={`send-transaction__select-${formName}`}
+					data-testid={`ProfileFormField__select-${formName}`}
 					disabled={disabled}
 					placeholder=" "
 					name={formName}
@@ -33,7 +33,7 @@ export const ProfileFormField = ({
 				>
 					{profiles &&
 						profiles.map((profile: any, index: number) => (
-							<option key={index} value={profile.address} data-testid="send-transaction__profile-select">
+							<option key={index} value={profile.address} data-testid="ProfileFormField__profile-select">
 								{profile.formatted}
 							</option>
 						))}

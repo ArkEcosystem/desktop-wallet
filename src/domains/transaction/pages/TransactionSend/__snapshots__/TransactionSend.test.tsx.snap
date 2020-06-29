@@ -134,14 +134,14 @@ exports[`Transaction Send should render 1`] = `
                     </label>
                   </div>
                   <div
-                    class="sc-AxmLO kuiknc send-transaction__select-contact select-transparent"
+                    class="sc-AxmLO kuiknc ProfileFormField__select-contact select-transparent"
                   >
                     <div
                       class="sc-AxmLO kuiknc"
                     >
                       <select
                         class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
-                        data-testid="send-transaction__select-sender"
+                        data-testid="ProfileFormField__select-sender"
                         disabled=""
                         name="sender"
                       >
@@ -153,7 +153,7 @@ exports[`Transaction Send should render 1`] = `
                            
                         </option>
                         <option
-                          data-testid="send-transaction__profile-select"
+                          data-testid="ProfileFormField__profile-select"
                           value="FJKDSALJFKASLJFKSDAJFKFKDSAJFKSAJFKLASJKDFJ"
                         >
                           My Wallet FJKDSALJFKASL...SAJFKLASJKDFJ
@@ -232,14 +232,14 @@ exports[`Transaction Send should render 1`] = `
                     </label>
                   </div>
                   <div
-                    class="sc-AxmLO kuiknc send-transaction__select-contact select-transparent"
+                    class="sc-AxmLO kuiknc ProfileFormField__select-contact select-transparent"
                   >
                     <div
                       class="sc-AxmLO kuiknc"
                     >
                       <select
                         class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
-                        data-testid="send-transaction__select-recipient"
+                        data-testid="ProfileFormField__select-recipient"
                         disabled=""
                         name="recipient"
                       >
@@ -251,19 +251,19 @@ exports[`Transaction Send should render 1`] = `
                            
                         </option>
                         <option
-                          data-testid="send-transaction__profile-select"
+                          data-testid="ProfileFormField__profile-select"
                           value="FJKDSALJFKASLJFKSDAJD333FKFKDSAJFKSAJFKLASJKDFJ"
                         >
                           Recipient Wallet FJKDSALJFKASL...SAJFKLASJKDFJ
                         </option>
                         <option
-                          data-testid="send-transaction__profile-select"
+                          data-testid="ProfileFormField__profile-select"
                           value="AhFJKDSALJFKASLJFKSDEAJ333FKFKDSAJFKSAJFKLASJKDFJ"
                         >
                            Recipient Multisig AhFJKDSALJFKA...SAJFKLASJKDFJ
                         </option>
                         <option
-                          data-testid="send-transaction__profile-select"
+                          data-testid="ProfileFormField__profile-select"
                           value="FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ"
                         >
                           Recipient in Ark FAhFJKDSALJFK...SAJFKLASJKDFJ
@@ -642,14 +642,14 @@ exports[`Transaction Send should render 1st step 1`] = `
             </label>
           </div>
           <div
-            class="sc-AxmLO kuiknc send-transaction__select-contact select-transparent"
+            class="sc-AxmLO kuiknc ProfileFormField__select-contact select-transparent"
           >
             <div
               class="sc-AxmLO kuiknc"
             >
               <select
                 class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
-                data-testid="send-transaction__select-sender"
+                data-testid="ProfileFormField__select-sender"
                 disabled=""
                 name="sender"
               >
@@ -661,7 +661,7 @@ exports[`Transaction Send should render 1st step 1`] = `
                    
                 </option>
                 <option
-                  data-testid="send-transaction__profile-select"
+                  data-testid="ProfileFormField__profile-select"
                   value="FJKDSALJFKASLJFKSDAJFKFKDSAJFKSAJFKLASJKDFJ"
                 >
                   My Wallet FJKDSALJFKASL...SAJFKLASJKDFJ
@@ -740,14 +740,14 @@ exports[`Transaction Send should render 1st step 1`] = `
             </label>
           </div>
           <div
-            class="sc-AxmLO kuiknc send-transaction__select-contact select-transparent"
+            class="sc-AxmLO kuiknc ProfileFormField__select-contact select-transparent"
           >
             <div
               class="sc-AxmLO kuiknc"
             >
               <select
                 class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
-                data-testid="send-transaction__select-recipient"
+                data-testid="ProfileFormField__select-recipient"
                 disabled=""
                 name="recipient"
               >
@@ -759,19 +759,19 @@ exports[`Transaction Send should render 1st step 1`] = `
                    
                 </option>
                 <option
-                  data-testid="send-transaction__profile-select"
+                  data-testid="ProfileFormField__profile-select"
                   value="FJKDSALJFKASLJFKSDAJD333FKFKDSAJFKSAJFKLASJKDFJ"
                 >
                   Recipient Wallet FJKDSALJFKASL...SAJFKLASJKDFJ
                 </option>
                 <option
-                  data-testid="send-transaction__profile-select"
+                  data-testid="ProfileFormField__profile-select"
                   value="AhFJKDSALJFKASLJFKSDEAJ333FKFKDSAJFKSAJFKLASJKDFJ"
                 >
                    Recipient Multisig AhFJKDSALJFKA...SAJFKLASJKDFJ
                 </option>
                 <option
-                  data-testid="send-transaction__profile-select"
+                  data-testid="ProfileFormField__profile-select"
                   value="FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ"
                 >
                   Recipient in Ark FAhFJKDSALJFK...SAJFKLASJKDFJ
@@ -1630,7 +1630,7 @@ exports[`Transaction Send should render 5th step 1`] = `
 <DocumentFragment>
   <section
     class="space-y-8"
-    data-testid="TransactionSend__step--fifth"
+    data-testid="TransactionSuccessful"
   >
     <div>
       <h1
@@ -1642,25 +1642,21 @@ exports[`Transaction Send should render 5th step 1`] = `
         class="grid grid-flow-row gap-2"
       >
         <div
-          class="w-full mt-10"
+          class="w-full my-10"
         >
-          <div
-            class="sc-AxhCb iOlwQd"
-            height="200"
-            width="100%"
+          <svg
+            class="w-full"
           >
-            <svg>
-              transaction_successful.svg
-            </svg>
-          </div>
+            transaction_successful.svg
+          </svg>
         </div>
         <p
-          class="text-theme-neutral-dark"
+          class="text-theme-neutral-dark mb-4"
         >
-          Your transaction was successfully sent. Please monitor the blockchain to ensure your transactions is confirmed and processed, The following is relevant information for your transaction.
+          Your transaction was successfully sent. Please monitor the blockchain to ensure your transaction is confirmed and processed. The following is relevant information for your transaction:
         </p>
         <div
-          class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+          class="flex items-center py-4 true "
         >
           <div
             class="flex-1"
@@ -1684,7 +1680,7 @@ exports[`Transaction Send should render 5th step 1`] = `
                     class="inline-block truncate"
                   >
                     <span
-                      class="text-theme-primary font-semibold text-base"
+                      class="text-theme-primary text-base text-base"
                       data-testid="address__wallet-address"
                     >
                       AUexKjGtgsSpVz...MM6vJ6znEVTQWK
@@ -1738,7 +1734,7 @@ exports[`Transaction Send should render 5th step 1`] = `
                     class="inline-block truncate"
                   >
                     <span
-                      class="text-theme-primary font-semibold text-base"
+                      class="text-theme-primary text-base text-base"
                       data-testid="address__wallet-address"
                     >
                       AUexKjGtgsSpVz...MM6vJ6znEVTQWK
@@ -1768,7 +1764,7 @@ exports[`Transaction Send should render 5th step 1`] = `
           </div>
         </div>
         <div
-          class="flex items-center py-4 true "
+          class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
         >
           <div
             class="flex-1"
@@ -1785,13 +1781,13 @@ exports[`Transaction Send should render 5th step 1`] = `
                 class="inline-block truncate"
               >
                 <span
-                  class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-xl"
+                  class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 text-base text-xl"
                   data-testid="address__wallet-name"
                 >
                   ROBank
                 </span>
                 <span
-                  class="text-theme-neutral-400 font-semibold text-xl"
+                  class="text-theme-neutral-400 text-base text-xl"
                   data-testid="address__wallet-address"
                 >
                   AUexKj...EVTQWK
@@ -1824,11 +1820,6 @@ exports[`Transaction Send should render 5th step 1`] = `
             class="flex-1"
           >
             <div
-              class="text-sm font-semibold text-theme-neutral-500"
-            >
-               
-            </div>
-            <div
               class="mt-2 font-semibold"
             >
               <div
@@ -1850,13 +1841,13 @@ exports[`Transaction Send should render 5th step 1`] = `
                 class="inline-block truncate"
               >
                 <span
-                  class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-xl"
+                  class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 text-base text-xl"
                   data-testid="address__wallet-name"
                 >
                   ROBank
                 </span>
                 <span
-                  class="text-theme-neutral-400 font-semibold text-xl"
+                  class="text-theme-neutral-400 text-base text-xl"
                   data-testid="address__wallet-address"
                 >
                   AUexKj...EVTQWK

@@ -6,7 +6,7 @@ import { FormContext, useForm } from "react-hook-form";
 
 import { FirstStep, FourthStep, SecondStep, ThirdStep, TransactionSendIPFS } from "./TransactionSendIPFS";
 
-describe("Vote For Delegate", () => {
+describe("TransactionSendIPFS", () => {
 	const onCopy = jest.fn();
 
 	it("should render 1st step", async () => {
@@ -49,7 +49,7 @@ describe("Vote For Delegate", () => {
 			</FormContext>,
 		);
 
-		expect(getByTestId("TransactionSendIPFS__step--fourth")).toBeTruthy();
+		expect(getByTestId("TransactionSuccessful")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
 

@@ -40,10 +40,10 @@ describe("SendTransactionForm", () => {
 		const { getByTestId, getAllByTestId, container } = render(
 			<SendTransactionForm senderList={senderList} networks={networks} />,
 		);
-		fireEvent.change(getByTestId("send-transaction__select-sender"), {
+		fireEvent.change(getByTestId("ProfileFormField__select-sender"), {
 			target: { value: senderList[0].address },
 		});
-		const options = getAllByTestId("send-transaction__profile-select");
+		const options = getAllByTestId("ProfileFormField__profile-select");
 
 		expect((options[0] as HTMLOptionElement).selected).toBeTruthy();
 		expect(container).toMatchSnapshot();
@@ -70,10 +70,10 @@ describe("SendTransactionForm", () => {
 		const { getByTestId, getAllByTestId, container } = render(
 			<SendTransactionForm networks={networks} senderList={senderList} contactList={contactList} />,
 		);
-		fireEvent.change(getByTestId("send-transaction__select-recipient"), {
+		fireEvent.change(getByTestId("ProfileFormField__select-recipient"), {
 			target: { value: contactList[0].address },
 		});
-		const options = getAllByTestId("send-transaction__profile-select");
+		const options = getAllByTestId("ProfileFormField__profile-select");
 
 		expect((options[1] as HTMLOptionElement).selected).toBeTruthy();
 		expect(container).toMatchSnapshot();
@@ -104,7 +104,7 @@ describe("SendTransactionForm", () => {
 		const { getByTestId } = render(<SendTransactionForm contactList={contactList} maxAvailableAmount={100} />);
 
 		const sendAll = getByTestId("send-transaction__send-all");
-		const recipientSelect = getByTestId("send-transaction__select-recipient");
+		const recipientSelect = getByTestId("ProfileFormField__select-recipient");
 
 		fireEvent.change(recipientSelect, { target: { value: contactList[0].address } });
 		await act(async () => {
@@ -128,7 +128,7 @@ describe("SendTransactionForm", () => {
 		const { getByTestId } = render(<SendTransactionForm contactList={contactList} maxAvailableAmount={100} />);
 
 		const sendAll = getByTestId("send-transaction__send-all");
-		const recipientSelect = getByTestId("send-transaction__select-recipient");
+		const recipientSelect = getByTestId("ProfileFormField__select-recipient");
 
 		fireEvent.change(recipientSelect, { target: { value: contactList[0].address } });
 		await act(async () => {
@@ -164,7 +164,7 @@ describe("SendTransactionForm", () => {
 		);
 
 		const sendAll = getByTestId("send-transaction__send-all");
-		const recipientSelect = getByTestId("send-transaction__select-recipient");
+		const recipientSelect = getByTestId("ProfileFormField__select-recipient");
 		// 1st recipient
 		fireEvent.change(recipientSelect, { target: { value: contactList[0].address } });
 		await act(async () => {
@@ -206,7 +206,7 @@ describe("SendTransactionForm", () => {
 		);
 
 		const sendAll = getByTestId("send-transaction__send-all");
-		const recipientSelect = getByTestId("send-transaction__select-recipient");
+		const recipientSelect = getByTestId("ProfileFormField__select-recipient");
 		// 1st recipient
 		fireEvent.change(recipientSelect, { target: { value: contactList[0].address } });
 		await act(async () => {

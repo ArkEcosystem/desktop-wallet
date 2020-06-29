@@ -114,7 +114,7 @@ describe("Transaction Send", () => {
 			</FormContext>,
 		);
 
-		expect(getByTestId("TransactionSend__step--fifth")).toBeTruthy();
+		expect(getByTestId("TransactionSuccessful")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
 

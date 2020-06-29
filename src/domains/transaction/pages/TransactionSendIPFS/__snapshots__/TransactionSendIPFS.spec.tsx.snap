@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Vote For Delegate should render 1`] = `
+exports[`TransactionSendIPFS should render 1`] = `
 <DocumentFragment>
   <div
     class="max-w-xl mx-auto"
@@ -296,7 +296,7 @@ exports[`Vote For Delegate should render 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Vote For Delegate should render 1st step 1`] = `
+exports[`TransactionSendIPFS should render 1st step 1`] = `
 <DocumentFragment>
   <section
     class="space-y-8"
@@ -536,7 +536,7 @@ exports[`Vote For Delegate should render 1st step 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Vote For Delegate should render 2nd step 1`] = `
+exports[`TransactionSendIPFS should render 2nd step 1`] = `
 <DocumentFragment>
   <section
     class="space-y-8"
@@ -795,7 +795,7 @@ exports[`Vote For Delegate should render 2nd step 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Vote For Delegate should render 3rd step 1`] = `
+exports[`TransactionSendIPFS should render 3rd step 1`] = `
 <DocumentFragment>
   <section
     class="space-y-8"
@@ -867,11 +867,11 @@ exports[`Vote For Delegate should render 3rd step 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Vote For Delegate should render 4th step 1`] = `
+exports[`TransactionSendIPFS should render 4th step 1`] = `
 <DocumentFragment>
   <section
     class="space-y-8"
-    data-testid="TransactionSendIPFS__step--fourth"
+    data-testid="TransactionSuccessful"
   >
     <div>
       <h1
@@ -883,25 +883,21 @@ exports[`Vote For Delegate should render 4th step 1`] = `
         class="grid grid-flow-row gap-2"
       >
         <div
-          class="w-full mt-10"
+          class="w-full my-10"
         >
-          <div
-            class="sc-AxhCb iOlwQd"
-            height="200"
-            width="100%"
+          <svg
+            class="w-full"
           >
-            <svg>
-              transaction_successful.svg
-            </svg>
-          </div>
+            transaction_successful.svg
+          </svg>
         </div>
         <p
-          class="text-theme-neutral-dark"
+          class="text-theme-neutral-dark mb-4"
         >
-          Your transaction was successfully sent. Please monitor the blockchain to ensure your transactions is confirmed and processed, The following is relevant information for your transaction.
+          Your transaction was successfully sent. Please monitor the blockchain to ensure your transaction is confirmed and processed. The following is relevant information for your transaction:
         </p>
         <div
-          class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+          class="flex items-center py-4 true "
         >
           <div
             class="flex-1"
@@ -925,7 +921,7 @@ exports[`Vote For Delegate should render 4th step 1`] = `
                     class="inline-block truncate"
                   >
                     <span
-                      class="text-theme-primary font-semibold text-base"
+                      class="text-theme-primary text-base text-base"
                       data-testid="address__wallet-address"
                     >
                       AUexKjGtgsSpVz...MM6vJ6znEVTQWK
@@ -936,9 +932,7 @@ exports[`Vote For Delegate should render 4th step 1`] = `
                   class="Clipboard__TextArea-sc-1atoaua-0 hhPnzN"
                   data-testid="clipboard__textarea"
                   readonly=""
-                >
-                  AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWKAUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK
-                </textarea>
+                />
                 <div
                   class="mb-1 ml-5 text-theme-primary-300"
                 >
@@ -981,7 +975,7 @@ exports[`Vote For Delegate should render 4th step 1`] = `
                     class="inline-block truncate"
                   >
                     <span
-                      class="text-theme-primary font-semibold text-base"
+                      class="text-theme-primary text-base text-base"
                       data-testid="address__wallet-address"
                     >
                       AUexKjGtgsSpVz...MM6vJ6znEVTQWK
@@ -992,9 +986,7 @@ exports[`Vote For Delegate should render 4th step 1`] = `
                   class="Clipboard__TextArea-sc-1atoaua-0 hhPnzN"
                   data-testid="clipboard__textarea"
                   readonly=""
-                >
-                  AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWKAUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK
-                </textarea>
+                />
                 <div
                   class="mb-1 ml-5 text-theme-primary-300"
                 >
@@ -1026,9 +1018,22 @@ exports[`Vote For Delegate should render 4th step 1`] = `
             <div
               class="mt-2 font-semibold"
             >
-              <span>
-                ARK Ecosystem
-              </span>
+              <div
+                class="inline-block truncate"
+              >
+                <span
+                  class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 text-base text-xl"
+                  data-testid="address__wallet-name"
+                >
+                  ROBank
+                </span>
+                <span
+                  class="text-theme-neutral-400 text-base text-xl"
+                  data-testid="address__wallet-address"
+                >
+                  AUexKj...EVTQWK
+                </span>
+              </div>
             </div>
           </div>
           <div
@@ -1056,24 +1061,34 @@ exports[`Vote For Delegate should render 4th step 1`] = `
             class="flex-1"
           >
             <div
-              class="text-sm font-semibold text-theme-neutral-500"
-            >
-              Sender
-            </div>
-            <div
               class="mt-2 font-semibold"
             >
+              <div
+                class="mb-2 text-sm font-semibold text-theme-neutral-500"
+              >
+                <span
+                  class="mr-1"
+                >
+                  Sender
+                </span>
+                <div
+                  class="sc-fznZeY kKCHjH"
+                  color="warning"
+                >
+                  Your address
+                </div>
+              </div>
               <div
                 class="inline-block truncate"
               >
                 <span
-                  class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-base"
+                  class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 text-base text-xl"
                   data-testid="address__wallet-name"
                 >
                   ROBank
                 </span>
                 <span
-                  class="text-theme-neutral-400 font-semibold text-base"
+                  class="text-theme-neutral-400 text-base text-xl"
                   data-testid="address__wallet-address"
                 >
                   AUexKj...EVTQWK
@@ -1083,7 +1098,7 @@ exports[`Vote For Delegate should render 4th step 1`] = `
           </div>
           <div>
             <div
-              class="sc-AxirZ efFWdY"
+              class="sc-AxirZ hTKBId"
             />
           </div>
         </div>
