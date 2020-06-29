@@ -1,5 +1,7 @@
 import { render } from "@testing-library/react";
+import { i18n } from "app/i18n";
 import React from "react";
+import { I18nextProvider } from "react-i18next";
 
 import { PluginDetails } from "./PluginDetails";
 
@@ -96,7 +98,9 @@ describe("PluginDetails", () => {
 
 	it("should render properly as installed", () => {
 		const { asFragment, getByTestId } = render(
-			<PluginDetails pluginData={pluginData} reviewData={reviewData} isInstalled />,
+			<I18nextProvider i18n={i18n}>
+				<PluginDetails pluginData={pluginData} reviewData={reviewData} isInstalled />,
+			</I18nextProvider>,
 		);
 
 		expect(getByTestId("plugin-details__header")).toBeTruthy();
