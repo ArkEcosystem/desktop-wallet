@@ -13,7 +13,7 @@ type TransactionsProps = {
 export const Transactions = ({ transactions, columns, title, emptyText }: TransactionsProps) => {
 	return (
 		<div className="bg-white">
-			<div className="text-3xl font-bold">{title}</div>
+			<div className="text-4xl font-bold">{title}</div>
 			{transactions.length > 0 && (
 				<div className="pt-8">
 					<Table columns={columns} data={transactions}>

@@ -77,7 +77,7 @@ export const Wallets = ({
 	return (
 		<div>
 			<div className="flex w-full pb-8">
-				<div className="w-2/4 -mt-1 text-3xl font-bold">{title}</div>
+				<div className="w-2/4 -mt-1 text-4xl font-bold">{title}</div>
 				<div className="w-2/4 text-right">
 					<WalletsControls
 						onCreateWallet={onCreateWallet}
