@@ -3,10 +3,10 @@
 exports[`Welcome should render empty state 1`] = `
 <DocumentFragment>
   <div
-    class="flex flex-col bg-theme-background mt-4"
+    class="flex flex-col bg-theme-background mt-4 px-10"
   >
     <span
-      class="p-10 font-bold text-2xl"
+      class="py-10 font-bold text-2xl"
     >
       Delegate
     </span>
@@ -48,7 +48,7 @@ exports[`Welcome should render empty state 1`] = `
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top  font-semibold text-md ml-5"
+                class="flex flex-inline align-top  font-semibold text-md"
               >
                 <div
                   class="mr-1"
@@ -68,7 +68,7 @@ exports[`Welcome should render empty state 1`] = `
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top  font-semibold text-md -ml-20"
+                class="flex flex-inline align-top  font-semibold text-md -ml-14"
               >
                 <div
                   class="mr-1"
@@ -148,32 +148,12 @@ exports[`Welcome should render empty state 1`] = `
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top  font-semibold text-md float-right"
+                class="flex flex-inline align-top  font-semibold text-md float-right ml-32"
               >
                 <div
                   class="mr-1"
                 >
                   Votes
-                </div>
-                <div
-                  class="mt-1 text-theme-color-neutral-500"
-                  data-testid="table__Sort"
-                />
-              </div>
-            </th>
-            <th
-              class="text-xs text-left select-none text-theme-neutral-400"
-              colspan="1"
-              data-testid="table__th--7"
-              role="columnheader"
-            >
-              <div
-                class="flex flex-inline align-top  invisible float-right"
-              >
-                <div
-                  class="mr-1"
-                >
-                  Options
                 </div>
                 <div
                   class="mt-1 text-theme-color-neutral-500"
@@ -188,51 +168,49 @@ exports[`Welcome should render empty state 1`] = `
         >
           <tr
             class="border-b border-dashed border-theme-neutral-light"
-            data-testid="business-table__row"
+            data-testid="delegate-table__row"
           >
             <td
-              class="py-4"
+              class="py-4 w-24"
             >
               <div
-                class="ml-10 -mr-16"
+                class="sc-AxirZ cZokSJ border-theme-neutral-800"
               >
                 <div
-                  class="sc-AxirZ cZokSJ border-theme-neutral-800"
+                  class="sc-AxiKw fFXzuz"
+                  height="22"
+                  width="22"
                 >
-                  <div
-                    class="sc-AxiKw fFXzuz"
-                    height="22"
-                    width="22"
-                  >
-                    <svg>
-                      business.svg
-                    </svg>
-                  </div>
+                  <svg>
+                    business.svg
+                  </svg>
                 </div>
-                <div
-                  class="sc-AxirZ efFWdY -ml-1"
-                />
               </div>
+              <div
+                class="sc-AxirZ efFWdY -ml-1"
+              />
             </td>
             <td
-              class="py-4 mt-1 font-semibold pl-5"
+              class="py-4 mt-1 font-semibold"
             >
-              <span />
+              <span>
+                ARK Ecosystem
+              </span>
             </td>
             <td
               class="py-1 text-theme-neutral-700"
             >
               <span
-                class="-ml-20"
+                class="-ml-14"
               />
             </td>
             <td
               class="py-1 text-bold text-theme-primary"
             >
               <div
-                class="sc-AxiKw iQZLaj"
-                height="25"
-                width="25"
+                class="sc-AxiKw fFXzuz"
+                height="22"
+                width="22"
               >
                 <svg>
                   msq.svg
@@ -252,12 +230,41 @@ exports[`Welcome should render empty state 1`] = `
                 </svg>
               </div>
             </td>
+            <td>
+              <div
+                class="flex float-right text-semibold text-theme-neutral-800"
+              >
+                <div
+                  class="flex items-center"
+                >
+                  <span
+                    class="ml-16"
+                  >
+                    2,450.643
+                  </span>
+                  <div
+                    class="sc-AxiKw dzBdqj ml-2"
+                    height="1em"
+                    width="1em"
+                  >
+                    <svg>
+                      ark.svg
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </td>
             <td
-              class="px-20 text-bold text-theme-neutral-700"
+              class="text-semibold text-theme-neutral-800 w-1/12"
             >
               <div
-                class="flex items-center float-right -mr-20"
+                class="flex items-center ml-5 -mr-10"
               >
+                <small
+                  class="text-theme-neutral-500"
+                >
+                  2,43%
+                </small>
                 <span>
                   2,450.643
                 </span>
@@ -273,15 +280,6 @@ exports[`Welcome should render empty state 1`] = `
               </div>
             </td>
             <td
-              class="py-1 text-bold text-theme-primary"
-            >
-              <span
-                class="float-right"
-              >
-                View
-              </span>
-            </td>
-            <td
               class="py-1 float-right"
             >
               <button
@@ -294,7 +292,7 @@ exports[`Welcome should render empty state 1`] = `
                   data-testid="dropdown__toggle"
                 >
                   <div
-                    class="float-right outline-none focus:outline-none"
+                    class="float-right outline-none cursor-pointer focus:outline-none"
                   >
                     <div
                       class="sc-AxiKw dklFyP"
@@ -312,51 +310,49 @@ exports[`Welcome should render empty state 1`] = `
           </tr>
           <tr
             class="border-b border-dashed border-theme-neutral-light"
-            data-testid="business-table__row"
+            data-testid="delegate-table__row"
           >
             <td
-              class="py-4"
+              class="py-4 w-24"
             >
               <div
-                class="ml-10 -mr-16"
+                class="sc-AxirZ cZokSJ border-theme-neutral-800"
               >
                 <div
-                  class="sc-AxirZ cZokSJ border-theme-neutral-800"
+                  class="sc-AxiKw fFXzuz"
+                  height="22"
+                  width="22"
                 >
-                  <div
-                    class="sc-AxiKw fFXzuz"
-                    height="22"
-                    width="22"
-                  >
-                    <svg>
-                      business.svg
-                    </svg>
-                  </div>
+                  <svg>
+                    business.svg
+                  </svg>
                 </div>
-                <div
-                  class="sc-AxirZ efFWdY -ml-1"
-                />
               </div>
+              <div
+                class="sc-AxirZ efFWdY -ml-1"
+              />
             </td>
             <td
-              class="py-4 mt-1 font-semibold pl-5"
+              class="py-4 mt-1 font-semibold"
             >
-              <span />
+              <span>
+                ARK Ecosystem
+              </span>
             </td>
             <td
               class="py-1 text-theme-neutral-700"
             >
               <span
-                class="-ml-20"
+                class="-ml-14"
               />
             </td>
             <td
               class="py-1 text-bold text-theme-primary"
             >
               <div
-                class="sc-AxiKw iQZLaj"
-                height="25"
-                width="25"
+                class="sc-AxiKw fFXzuz"
+                height="22"
+                width="22"
               >
                 <svg>
                   msq.svg
@@ -376,12 +372,41 @@ exports[`Welcome should render empty state 1`] = `
                 </svg>
               </div>
             </td>
+            <td>
+              <div
+                class="flex float-right text-semibold text-theme-neutral-800"
+              >
+                <div
+                  class="flex items-center"
+                >
+                  <span
+                    class="ml-16"
+                  >
+                    2,450.643
+                  </span>
+                  <div
+                    class="sc-AxiKw dzBdqj ml-2"
+                    height="1em"
+                    width="1em"
+                  >
+                    <svg>
+                      ark.svg
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </td>
             <td
-              class="px-20 text-bold text-theme-neutral-700"
+              class="text-semibold text-theme-neutral-800 w-1/12"
             >
               <div
-                class="flex items-center float-right -mr-20"
+                class="flex items-center ml-5 -mr-10"
               >
+                <small
+                  class="text-theme-neutral-500"
+                >
+                  2,43%
+                </small>
                 <span>
                   2,450.643
                 </span>
@@ -397,15 +422,6 @@ exports[`Welcome should render empty state 1`] = `
               </div>
             </td>
             <td
-              class="py-1 text-bold text-theme-primary"
-            >
-              <span
-                class="float-right"
-              >
-                View
-              </span>
-            </td>
-            <td
               class="py-1 float-right"
             >
               <button
@@ -418,7 +434,7 @@ exports[`Welcome should render empty state 1`] = `
                   data-testid="dropdown__toggle"
                 >
                   <div
-                    class="float-right outline-none focus:outline-none"
+                    class="float-right outline-none cursor-pointer focus:outline-none"
                   >
                     <div
                       class="sc-AxiKw dklFyP"

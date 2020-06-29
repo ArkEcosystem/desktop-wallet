@@ -3,10 +3,10 @@
 exports[`Welcome should render empty state 1`] = `
 <DocumentFragment>
   <div
-    class="flex flex-col bg-theme-background mt-4"
+    class="flex flex-col bg-theme-background mt-4 px-10"
   >
     <span
-      class="p-10 font-bold text-2xl"
+      class="py-10 font-bold text-2xl"
     >
       Blockchain
     </span>
@@ -128,7 +128,7 @@ exports[`Welcome should render empty state 1`] = `
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top  font-semibold text-md -ml-3"
+                class="flex flex-inline align-top  font-semibold text-md"
               >
                 <div
                   class="mr-1"
@@ -168,7 +168,7 @@ exports[`Welcome should render empty state 1`] = `
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top  font-semibold text-md -ml-12"
+                class="flex flex-inline align-top  font-semibold text-md -ml-4"
               >
                 <div
                   class="mr-1"
@@ -231,28 +231,24 @@ exports[`Welcome should render empty state 1`] = `
             data-testid="blockchain-table__row"
           >
             <td
-              class="py-4"
+              class="py-4 w-24"
             >
               <div
-                class="ml-10 -mr-14"
+                class="sc-AxirZ cZokSJ border-theme-neutral-800"
               >
                 <div
-                  class="sc-AxirZ cZokSJ border-theme-neutral-800"
+                  class="sc-AxiKw fFXzuz"
+                  height="22"
+                  width="22"
                 >
-                  <div
-                    class="sc-AxiKw fFXzuz"
-                    height="22"
-                    width="22"
-                  >
-                    <svg>
-                      bridgechain.svg
-                    </svg>
-                  </div>
+                  <svg>
+                    bridgechain.svg
+                  </svg>
                 </div>
-                <div
-                  class="sc-AxirZ efFWdY -ml-1"
-                />
               </div>
+              <div
+                class="sc-AxirZ efFWdY -ml-1"
+              />
             </td>
             <td
               class="py-4 mt-1 font-semibold"
@@ -290,7 +286,7 @@ exports[`Welcome should render empty state 1`] = `
               class="py-1 text-semibold text-theme-primary"
             >
               <div
-                class="sc-AxiKw fFXzuz -ml-2"
+                class="sc-AxiKw fFXzuz ml-1"
                 height="22"
                 width="22"
               >
@@ -312,13 +308,13 @@ exports[`Welcome should render empty state 1`] = `
               class="py-1 text-semibold text-theme-primary"
             >
               <span
-                class="-ml-12"
+                class="-ml-5"
               >
                 View
               </span>
             </td>
             <td
-              class="px-1 px-10"
+              class="px-1 px-11"
             />
             <td
               class="py-1 float-right"
@@ -354,28 +350,24 @@ exports[`Welcome should render empty state 1`] = `
             data-testid="blockchain-table__row"
           >
             <td
-              class="py-4"
+              class="py-4 w-24"
             >
               <div
-                class="ml-10 -mr-14"
+                class="sc-AxirZ cZokSJ border-theme-neutral-800"
               >
                 <div
-                  class="sc-AxirZ cZokSJ border-theme-neutral-800"
+                  class="sc-AxiKw fFXzuz"
+                  height="22"
+                  width="22"
                 >
-                  <div
-                    class="sc-AxiKw fFXzuz"
-                    height="22"
-                    width="22"
-                  >
-                    <svg>
-                      bridgechain.svg
-                    </svg>
-                  </div>
+                  <svg>
+                    bridgechain.svg
+                  </svg>
                 </div>
-                <div
-                  class="sc-AxirZ efFWdY -ml-1"
-                />
               </div>
+              <div
+                class="sc-AxirZ efFWdY -ml-1"
+              />
             </td>
             <td
               class="py-4 mt-1 font-semibold"
@@ -413,7 +405,7 @@ exports[`Welcome should render empty state 1`] = `
               class="py-1 text-semibold text-theme-primary"
             >
               <div
-                class="sc-AxiKw fFXzuz -ml-2"
+                class="sc-AxiKw fFXzuz ml-1"
                 height="22"
                 width="22"
               >
@@ -435,13 +427,13 @@ exports[`Welcome should render empty state 1`] = `
               class="py-1 text-semibold text-theme-primary"
             >
               <span
-                class="-ml-12"
+                class="-ml-5"
               >
                 View
               </span>
             </td>
             <td
-              class="px-1 px-10"
+              class="px-1 px-11"
             />
             <td
               class="py-1 float-right"

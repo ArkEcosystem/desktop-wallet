@@ -7,7 +7,7 @@ describe("Welcome", () => {
 	const registrations = [
 		{
 			agent: "OLEBank",
-			businessName: "ARK Ecosystem",
+			delegate: "ARK Ecosystem",
 			history: [],
 			website: "",
 			msq: true,
@@ -15,7 +15,7 @@ describe("Welcome", () => {
 		},
 		{
 			agent: "OLEBank",
-			businessName: "ARK Ecosystem",
+			delegate: "ARK Ecosystem",
 			history: [],
 			website: "",
 			msq: true,
@@ -27,6 +27,6 @@ describe("Welcome", () => {
 		const { getAllByTestId, asFragment } = render(<DelegateTable data={registrations} />);
 
 		expect(asFragment()).toMatchSnapshot();
-		expect(getAllByTestId("business-table__row").length).toEqual(2);
+		expect(getAllByTestId("delegate-table__row").length).toEqual(2);
 	});
 });

@@ -3,10 +3,10 @@
 exports[`Welcome should render empty state 1`] = `
 <DocumentFragment>
   <div
-    class="flex flex-col bg-theme-background mt-4"
+    class="flex flex-col bg-theme-background mt-4 px-10"
   >
     <span
-      class="p-10 font-bold text-2xl"
+      class="py-10 font-bold text-2xl"
     >
       Business
     </span>
@@ -88,7 +88,7 @@ exports[`Welcome should render empty state 1`] = `
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top  font-semibold text-md"
+                class="flex flex-inline align-top  font-semibold text-md -ml-8"
               >
                 <div
                   class="mr-1"
@@ -108,7 +108,7 @@ exports[`Welcome should render empty state 1`] = `
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top  font-semibold text-md"
+                class="flex flex-inline align-top  font-semibold text-md ml-8 -mr-6"
               >
                 <div
                   class="mr-1"
@@ -148,7 +148,7 @@ exports[`Welcome should render empty state 1`] = `
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top  font-semibold text-md"
+                class="flex flex-inline align-top  font-semibold text-md ml-2"
               >
                 <div
                   class="mr-1"
@@ -165,6 +165,26 @@ exports[`Welcome should render empty state 1`] = `
               class="text-xs text-left select-none text-theme-neutral-400"
               colspan="1"
               data-testid="table__th--7"
+              role="columnheader"
+            >
+              <div
+                class="flex flex-inline align-top  invisible float-right"
+              >
+                <div
+                  class="mr-1"
+                >
+                  Spacer
+                </div>
+                <div
+                  class="mt-1 text-theme-color-neutral-500"
+                  data-testid="table__Sort"
+                />
+              </div>
+            </th>
+            <th
+              class="text-xs text-left select-none text-theme-neutral-400"
+              colspan="1"
+              data-testid="table__th--8"
               role="columnheader"
             >
               <div
@@ -191,28 +211,24 @@ exports[`Welcome should render empty state 1`] = `
             data-testid="business-table__row"
           >
             <td
-              class="py-4"
+              class="py-4 w-24"
             >
               <div
-                class="ml-10 -mr-16"
+                class="sc-AxirZ cZokSJ border-theme-neutral-800"
               >
                 <div
-                  class="sc-AxirZ cZokSJ border-theme-neutral-800"
+                  class="sc-AxiKw fFXzuz"
+                  height="22"
+                  width="22"
                 >
-                  <div
-                    class="sc-AxiKw fFXzuz"
-                    height="22"
-                    width="22"
-                  >
-                    <svg>
-                      business.svg
-                    </svg>
-                  </div>
+                  <svg>
+                    business.svg
+                  </svg>
                 </div>
-                <div
-                  class="sc-AxirZ efFWdY -ml-1"
-                />
               </div>
+              <div
+                class="sc-AxirZ efFWdY -ml-1"
+              />
             </td>
             <td
               class="py-4 mt-1 font-semibold"
@@ -231,7 +247,9 @@ exports[`Welcome should render empty state 1`] = `
             <td
               class="py-1 text-bold text-theme-primary"
             >
-              <span>
+              <span
+                class="-ml-8"
+              >
                 View
               </span>
             </td>
@@ -239,7 +257,7 @@ exports[`Welcome should render empty state 1`] = `
               class="py-1 text-theme-neutral-400"
             >
               <div
-                class="sc-AxiKw dzBdqj ml-4"
+                class="sc-AxiKw dzBdqj ml-12"
                 height="1em"
                 width="1em"
               >
@@ -252,9 +270,9 @@ exports[`Welcome should render empty state 1`] = `
               class="py-1 text-bold text-theme-primary"
             >
               <div
-                class="sc-AxiKw iQZLaj"
-                height="25"
-                width="25"
+                class="sc-AxiKw fFXzuz ml-1"
+                height="22"
+                width="22"
               >
                 <svg>
                   msq.svg
@@ -271,6 +289,9 @@ exports[`Welcome should render empty state 1`] = `
               </span>
             </td>
             <td
+              class="px-1 px-12"
+            />
+            <td
               class="py-1 float-right"
             >
               <button
@@ -283,7 +304,7 @@ exports[`Welcome should render empty state 1`] = `
                   data-testid="dropdown__toggle"
                 >
                   <div
-                    class="float-right outline-none focus:outline-none"
+                    class="float-right outline-none cursor-pointer focus:outline-none"
                   >
                     <div
                       class="sc-AxiKw dklFyP"
@@ -304,28 +325,24 @@ exports[`Welcome should render empty state 1`] = `
             data-testid="business-table__row"
           >
             <td
-              class="py-4"
+              class="py-4 w-24"
             >
               <div
-                class="ml-10 -mr-16"
+                class="sc-AxirZ cZokSJ border-theme-neutral-800"
               >
                 <div
-                  class="sc-AxirZ cZokSJ border-theme-neutral-800"
+                  class="sc-AxiKw fFXzuz"
+                  height="22"
+                  width="22"
                 >
-                  <div
-                    class="sc-AxiKw fFXzuz"
-                    height="22"
-                    width="22"
-                  >
-                    <svg>
-                      business.svg
-                    </svg>
-                  </div>
+                  <svg>
+                    business.svg
+                  </svg>
                 </div>
-                <div
-                  class="sc-AxirZ efFWdY -ml-1"
-                />
               </div>
+              <div
+                class="sc-AxirZ efFWdY -ml-1"
+              />
             </td>
             <td
               class="py-4 mt-1 font-semibold"
@@ -344,7 +361,9 @@ exports[`Welcome should render empty state 1`] = `
             <td
               class="py-1 text-bold text-theme-primary"
             >
-              <span>
+              <span
+                class="-ml-8"
+              >
                 View
               </span>
             </td>
@@ -352,7 +371,7 @@ exports[`Welcome should render empty state 1`] = `
               class="py-1 text-theme-neutral-400"
             >
               <div
-                class="sc-AxiKw dzBdqj ml-4"
+                class="sc-AxiKw dzBdqj ml-12"
                 height="1em"
                 width="1em"
               >
@@ -365,9 +384,9 @@ exports[`Welcome should render empty state 1`] = `
               class="py-1 text-bold text-theme-primary"
             >
               <div
-                class="sc-AxiKw iQZLaj"
-                height="25"
-                width="25"
+                class="sc-AxiKw fFXzuz ml-1"
+                height="22"
+                width="22"
               >
                 <svg>
                   msq.svg
@@ -384,6 +403,9 @@ exports[`Welcome should render empty state 1`] = `
               </span>
             </td>
             <td
+              class="px-1 px-12"
+            />
+            <td
               class="py-1 float-right"
             >
               <button
@@ -396,7 +418,7 @@ exports[`Welcome should render empty state 1`] = `
                   data-testid="dropdown__toggle"
                 >
                   <div
-                    class="float-right outline-none focus:outline-none"
+                    class="float-right outline-none cursor-pointer focus:outline-none"
                   >
                     <div
                       class="sc-AxiKw dklFyP"
