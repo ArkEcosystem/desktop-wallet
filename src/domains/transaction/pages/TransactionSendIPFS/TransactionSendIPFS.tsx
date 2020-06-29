@@ -1,7 +1,6 @@
 import { Address } from "app/components/Address";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
-import { Clipboard } from "app/components/Clipboard";
 import { Form } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { Input, InputPassword } from "app/components/Input";
@@ -12,6 +11,7 @@ import { TabPanel, Tabs } from "app/components/Tabs";
 import { TransactionDetail } from "app/components/TransactionDetail";
 import { InputFee } from "domains/transaction/components/InputFee";
 import { TotalAmountBox } from "domains/transaction/components/TotalAmountBox";
+import { TransactionSuccessful } from "domains/transaction/components/TransactionSuccessful";
 import React, { useEffect } from "react";
 import { useForm, useFormContext } from "react-hook-form";
 
@@ -137,85 +137,23 @@ export const ThirdStep = () => {
 };
 
 export const FourthStep = () => (
-	<section data-testid="TransactionSendIPFS__step--fourth" className="space-y-8">
-		<div>
-			<h1 className="mb-0">Transaction Successful</h1>
-			<div className="grid grid-flow-row gap-2">
-				<div className="w-full mt-10">
-					<Icon name="TransactionSuccessful" width="100%" height={200} />
+	<TransactionSuccessful>
+		<TransactionDetail label="IPFS Hash">
+			<span className="font-normal">QmceNpwJqQm7vXUivbQeeQYeGr1ivT1VDRPaWK9Pf</span>
+		</TransactionDetail>
+		<TransactionDetail
+			label="Amount"
+			extra={
+				<div className="ml-1 text-theme-danger">
+					<Circle className="bg-theme-background border-theme-danger-200" size="large">
+						<Icon name="Sent" width={50} height={50} />
+					</Circle>
 				</div>
-				<p className="text-theme-neutral-dark">
-					Your transaction was successfully sent. Please monitor the blockchain to ensure your transactions is
-					confirmed and processed, The following is relevant information for your transaction.
-				</p>
-				<TransactionDetail label="ID">
-					<div className="flex items-center">
-						<Clipboard data="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWKAUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK">
-							<Address
-								addressClass="text-theme-primary"
-								address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWKAUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
-								maxChars={32}
-							/>
-						</Clipboard>
-						<div className="mb-1 ml-5 text-theme-primary-300">
-							<Icon name="Copy" />
-						</div>
-					</div>
-				</TransactionDetail>
-				<TransactionDetail label="Block ID">
-					<div className="flex items-center">
-						<Clipboard data="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWKAUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK">
-							<Address
-								addressClass="text-theme-primary"
-								address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWKAUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
-								maxChars={32}
-							/>
-						</Clipboard>
-						<div className="mb-1 ml-5 text-theme-primary-300">
-							<Icon name="Copy" />
-						</div>
-					</div>
-				</TransactionDetail>
-				<TransactionDetail
-					label="Network"
-					extra={
-						<div className="ml-1 text-theme-danger-500">
-							<Circle className="bg-theme-background border-theme-danger-200" size="large">
-								<Icon name="Ark" width={20} height={20} />
-							</Circle>
-						</div>
-					}
-				>
-					<span>ARK Ecosystem</span>
-				</TransactionDetail>
-				<TransactionDetail
-					label="Sender"
-					extra={
-						<div>
-							<Circle avatarId="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" size="large" />
-						</div>
-					}
-				>
-					<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} />
-				</TransactionDetail>
-				<TransactionDetail label="IPFS Hash">
-					<span className="font-normal">QmceNpwJqQm7vXUivbQeeQYeGr1ivT1VDRPaWK9Pf</span>
-				</TransactionDetail>
-				<TransactionDetail
-					label="Amount"
-					extra={
-						<div className="ml-1 text-theme-danger">
-							<Circle className="bg-theme-background border-theme-danger-200" size="large">
-								<Icon name="Sent" width={50} height={50} />
-							</Circle>
-						</div>
-					}
-				>
-					1.00 ARK
-				</TransactionDetail>
-			</div>
-		</div>
-	</section>
+			}
+		>
+			1.00 ARK
+		</TransactionDetail>
+	</TransactionSuccessful>
 );
 
 type Props = {
