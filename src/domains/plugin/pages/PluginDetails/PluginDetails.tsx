@@ -31,7 +31,7 @@ export const PluginDetails = ({ pluginData, reviewData, isInstalled }: PluginDet
 			/>
 			<PluginInfo about={about} permissions={permissions} screenshots={screenshots} />
 			<div className="mt-5 bg-theme-background">
-				<div className="py-24 mx-10 grid grid-cols-2 grid-flow-col divide-x divide-theme-neutral-300">
+				<div className="py-16 mx-10 grid grid-cols-2 grid-flow-col divide-x divide-theme-neutral-300">
 					<div className="col-span-2" data-testid="plugin-details__comments">
 						<Comments comments={comments} sortOptions={commentsSortingOptions} />
 					</div>

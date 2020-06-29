@@ -95,7 +95,7 @@ exports[`PluginHeader should render as installed 1`] = `
           </div>
         </div>
         <div
-          class="pt-5 mt-5 text-sm border-t border-dashed grid grid-cols-5 divide-x divide-gray-400 grid-flow-col border-theme-neutral"
+          class="pt-5 mt-5 text-sm border-t border-dashed grid grid-cols-5 divide-x divide-theme-neutral-300 grid-flow-col border-theme-neutral-300"
         >
           <div
             class="flex"
@@ -116,7 +116,7 @@ exports[`PluginHeader should render as installed 1`] = `
             </div>
           </div>
           <div
-            class="flex px-8"
+            class="flex px-6"
           >
             <div
               class="flex flex-col undefined"
@@ -134,10 +134,10 @@ exports[`PluginHeader should render as installed 1`] = `
             </div>
           </div>
           <div
-            class="flex px-8"
+            class="flex px-6 -ml-5"
           >
             <div
-              class="flex flex-col undefined"
+              class="flex flex-col"
             >
               <span
                 class="font-bold text-theme-neutral-400"
@@ -145,28 +145,45 @@ exports[`PluginHeader should render as installed 1`] = `
                 URL
               </span>
               <span
-                class="font-bold text-theme-neutral-600"
+                class="font-bold text-theme-primary"
               >
                 github.com
               </span>
             </div>
           </div>
           <div
-            class="flex col-span-2 justify-between px-8"
+            class="flex col-span-2 justify-between px-6 -ml-8"
           >
             <div
-              class="flex flex-col undefined"
+              class="flex flex-col"
             >
               <span
                 class="font-bold text-theme-neutral-400"
               >
                 Rating
               </span>
-              <span
-                class="font-bold text-theme-neutral-600"
+              <div
+                class="flex items-center"
               >
-                4.6
-              </span>
+                <div
+                  class="pr-1 text-theme-warning-300"
+                >
+                  <div
+                    class="sc-AxirZ iQaTP"
+                    height="1em"
+                    width="1em"
+                  >
+                    <svg>
+                      star.svg
+                    </svg>
+                  </div>
+                </div>
+                <span
+                  class="font-bold text-theme-neutral-600"
+                >
+                  4.6
+                </span>
+              </div>
             </div>
             <div
               class="flex flex-col text-right"
@@ -184,7 +201,7 @@ exports[`PluginHeader should render as installed 1`] = `
             </div>
           </div>
           <div
-            class="flex pl-8"
+            class="flex pl-6"
           >
             <div
               class="flex flex-col text-right"
@@ -271,7 +288,7 @@ exports[`PluginHeader should render properly 1`] = `
           </div>
         </div>
         <div
-          class="pt-5 mt-5 text-sm border-t border-dashed grid grid-cols-5 divide-x divide-gray-400 grid-flow-col border-theme-neutral"
+          class="pt-5 mt-5 text-sm border-t border-dashed grid grid-cols-5 divide-x divide-theme-neutral-300 grid-flow-col border-theme-neutral-300"
         >
           <div
             class="flex"
@@ -292,7 +309,7 @@ exports[`PluginHeader should render properly 1`] = `
             </div>
           </div>
           <div
-            class="flex px-8"
+            class="flex px-6"
           >
             <div
               class="flex flex-col undefined"
@@ -310,10 +327,10 @@ exports[`PluginHeader should render properly 1`] = `
             </div>
           </div>
           <div
-            class="flex px-8"
+            class="flex px-6 -ml-5"
           >
             <div
-              class="flex flex-col undefined"
+              class="flex flex-col"
             >
               <span
                 class="font-bold text-theme-neutral-400"
@@ -321,28 +338,45 @@ exports[`PluginHeader should render properly 1`] = `
                 URL
               </span>
               <span
-                class="font-bold text-theme-neutral-600"
+                class="font-bold text-theme-primary"
               >
                 github.com
               </span>
             </div>
           </div>
           <div
-            class="flex col-span-2 justify-between px-8"
+            class="flex col-span-2 justify-between px-6 -ml-8"
           >
             <div
-              class="flex flex-col undefined"
+              class="flex flex-col"
             >
               <span
                 class="font-bold text-theme-neutral-400"
               >
                 Rating
               </span>
-              <span
-                class="font-bold text-theme-neutral-600"
+              <div
+                class="flex items-center"
               >
-                4.6
-              </span>
+                <div
+                  class="pr-1 text-theme-warning-300"
+                >
+                  <div
+                    class="sc-AxirZ iQaTP"
+                    height="1em"
+                    width="1em"
+                  >
+                    <svg>
+                      star.svg
+                    </svg>
+                  </div>
+                </div>
+                <span
+                  class="font-bold text-theme-neutral-600"
+                >
+                  4.6
+                </span>
+              </div>
             </div>
             <div
               class="flex flex-col text-right"
@@ -360,7 +394,7 @@ exports[`PluginHeader should render properly 1`] = `
             </div>
           </div>
           <div
-            class="flex pl-8"
+            class="flex pl-6"
           >
             <div
               class="flex flex-col text-right"
