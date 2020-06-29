@@ -12,6 +12,21 @@ import { Avatar } from "domains/wallet/components/Avatar";
 import React, { useEffect, useState } from "react";
 import { useForm, useFormContext } from "react-hook-form";
 
+const votes = [
+	{
+		address: "FJKDSALJFKASLJFKSDAJD333FKFKDSAJFKSAJFKLASJKDFJ",
+		delegateName: "Delegate 1",
+	},
+	{
+		address: "AhFJKDSALJFKASLJFKSDEAJ333FKFKDSAJFKSAJFKLASJKDFJ",
+		delegateName: "Delegate 2",
+	},
+	{
+		address: "FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ",
+		delegateName: "Delegate 3",
+	},
+];
+
 export const FirstStep = () => {
 	const { register } = useFormContext();
 	const radioState = useSelectionState(1);
