@@ -18,7 +18,7 @@ export const SelectDropdown = ({ toggle, options, option }: Props) => {
 	};
 
 	return (
-		<Downshift itemToString={(i) => i.value}>
+		<Downshift itemToString={(i) => (i ? i.value : null)}>
 			{({ getLabelProps, getInputProps, getItemProps, isOpen, toggleMenu, selectedItem }) => (
 				<div className="relative">
 					<label {...getLabelProps({ htmlFor: "dropdown-select" })}>
