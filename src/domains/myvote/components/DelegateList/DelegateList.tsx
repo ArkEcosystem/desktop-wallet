@@ -1,4 +1,5 @@
 import { Button } from "app/components/Button";
+import { Circle } from "app/components/Circle";
 import { Table } from "app/components/Table";
 import { Avatar } from "domains/wallet/components/Avatar";
 import React, { useState } from "react";
@@ -10,15 +11,10 @@ type DelegateListProps = {
 	data?: any;
 };
 
-type SelectedDelegateListProps = {
-	delegates: any[];
-	className?: string;
-};
-
-const SelectedDelegateList = (props: SelectedDelegateListProps) => {
+const SelectedDelegateList = ({ delegates, className }: { delegates: any[]; className: string }) => {
 	const output = [];
 
-	for (const delegate of props.delegates) {
+	for (const delegate of delegates) {
 		output.push(
 			<div
 				key={delegate.username}
@@ -34,7 +30,29 @@ const SelectedDelegateList = (props: SelectedDelegateListProps) => {
 		);
 	}
 
-	return <div className={props.className}>{output}</div>;
+	return <div className={className}>{output}</div>;
+};
+
+const DelegateAvatarList = ({ delegates, limit }: { delegates: any[]; limit: number }) => {
+	const items = delegates.slice(0, limit);
+	const rest = Math.max(0, delegates.length - limit);
+
+	return (
+		<div data-testid="WalletRegistrations__icon-list" className="flex items-center -space-x-2">
+			{items.map((item) => (
+				<Avatar data-testid="WalletRegistrations__icon-list__icon" key={item} address={item.address} />
+			))}
+			{rest > 0 && (
+				<Circle
+					data-testid="WalletRegistrations__icon-list__rest"
+					size="large"
+					className="text-lg font-bold bg-theme-background border-theme-neutral-200 text-theme-primary-700"
+				>
+					+{rest}
+				</Circle>
+			)}
+		</div>
+	);
 };
 
 export const DelegateList = (props: DelegateListProps) => {
@@ -118,15 +136,32 @@ export const DelegateList = (props: DelegateListProps) => {
 						<div className="flex-1">
 							<div className="flex justify-between">
 								<div className="font-semibold">
-									<div className="text-sm text-theme-neutral-500">{t("COMMON.DELEGATES")}</div>
-
-									<div
-										data-testid="SelectedDelegateModal__toggle-show-selected"
-										className="cursor-pointer text-theme-primary-700 hover:text-theme-primary-500"
-										onClick={() => setShowSelectedList(!showSelectedList)}
-									>
-										{showSelectedList ? "Hide" : "Show"} List
-									</div>
+									{selected.length === 1 ? (
+										<>
+											<div className="inline-flex">
+												<Avatar address={selected[0].address} className="mr-4" />
+												<div className="flex flex-col">
+													<div className="text-sm text-theme-neutral-700">
+														Address Delegate
+													</div>
+													<div className="text-theme-neutral-500">
+														{selected[0].username} - {selected[0].address}
+													</div>
+												</div>
+											</div>
+										</>
+									) : (
+										<div className="inline-flex items-center">
+											<DelegateAvatarList delegates={selected} limit={2} />
+											<div
+												data-testid="SelectedDelegateModal__toggle-show-selected"
+												className="ml-4 cursor-pointer text-theme-primary-700 hover:text-theme-primary-500"
+												onClick={() => setShowSelectedList(!showSelectedList)}
+											>
+												{showSelectedList ? "Hide" : "Show"} List
+											</div>
+										</div>
+									)}
 								</div>
 
 								<Button>Continue</Button>
