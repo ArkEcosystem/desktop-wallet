@@ -8,4 +8,5 @@ export type TransactionListItemProps = {
 	fiat: string;
 	variant?: "compact";
 	onClick?: any;
+	transactionInfoIcons?: any[] | null;
 };

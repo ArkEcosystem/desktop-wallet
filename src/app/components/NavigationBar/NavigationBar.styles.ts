@@ -1,5 +1,5 @@
 export const defaultStyle = `
-    z-index: 20;
+    z-index: 40;
 
     li a {
         border-bottom: 2px solid transparent;
