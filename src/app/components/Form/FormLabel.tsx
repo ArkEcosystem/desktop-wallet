@@ -24,7 +24,10 @@ export function FormLabel(props: FormLabelProps) {
 
 			{props.required && (
 				<Tippy content="These fields are required to be filled in">
-					<div className="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400" />
+					<div
+						data-testid="FormLabel__required"
+						className="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
+					/>
 				</Tippy>
 			)}
 		</label>

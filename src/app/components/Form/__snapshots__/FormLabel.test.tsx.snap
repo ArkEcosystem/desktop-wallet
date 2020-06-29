@@ -1,5 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`FormLabel should render & hover if required 1`] = `
+<DocumentFragment>
+  <label
+    class="FormLabel flex transition-colors duration-100 inline-block text-sm text-theme-neutral-dark"
+    data-testid="FormLabel"
+    label="Test"
+    required=""
+  >
+    Test
+    <div
+      class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
+      data-testid="FormLabel__required"
+    />
+  </label>
+</DocumentFragment>
+`;
+
 exports[`FormLabel should render with name from context 1`] = `
 <DocumentFragment>
   <label

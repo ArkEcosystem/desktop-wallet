@@ -1,6 +1,6 @@
 import "@testing-library/jest-dom/extend-expect";
 
-import { render } from "@testing-library/react";
+import { act, fireEvent, render } from "@testing-library/react";
 import React from "react";
 
 import { FormLabel } from "./FormLabel";
@@ -33,6 +33,19 @@ describe("FormLabel", () => {
 		);
 		const { queryByTestId, asFragment } = render(tree);
 		expect(queryByTestId("FormLabel")).toHaveAttribute("for", context.name);
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should render & hover if required", () => {
+		const { asFragment, baseElement, getByTestId } = render(<FormLabel label="Test" required />);
+
+		expect(getByTestId("FormLabel__required")).toBeTruthy();
+
+		act(() => {
+			fireEvent.mouseEnter(getByTestId("FormLabel__required"));
+		});
+
+		expect(baseElement).toHaveTextContent("These fields are required to be filled in");
 		expect(asFragment()).toMatchSnapshot();
 	});
 });
