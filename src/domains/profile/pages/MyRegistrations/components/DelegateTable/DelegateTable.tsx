@@ -1,3 +1,4 @@
+import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { Dropdown } from "app/components/Dropdown";
@@ -58,10 +59,12 @@ export const DelegateTable = ({ data }: Props) => (
 			{(rowData: any) => (
 				<tr data-testid="delegate-table__row" className="border-b border-dashed border-theme-neutral-light">
 					<td className="py-4 w-24">
-						<Circle className="border-theme-neutral-800" size="large">
-							<Icon name="Business" width={22} height={22} />
-						</Circle>
-						<Circle avatarId="test" size="large" className="-ml-1" />
+						<div className="flex items-center">
+							<Circle className="border-theme-neutral-800" size="large">
+								<Icon name="Business" width={22} height={22} />
+							</Circle>
+							<Avatar address="APTz" />
+						</div>
 					</td>
 					<td className="py-4 mt-1 font-semibold">
 						<span>{rowData.delegate}</span>
@@ -84,7 +87,7 @@ export const DelegateTable = ({ data }: Props) => (
 					<td className="text-semibold text-theme-neutral-800 w-1/12">
 						<div className="flex items-center ml-5 -mr-10">
 							<small className="text-theme-neutral-500">2,43%</small>
-							<span>2,450.643</span>
+							<span className="ml-1">2,450.643</span>
 							<Icon name="Ark" className="ml-2" />
 						</div>
 					</td>

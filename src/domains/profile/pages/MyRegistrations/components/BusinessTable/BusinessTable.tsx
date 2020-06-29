@@ -1,3 +1,4 @@
+import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { Dropdown } from "app/components/Dropdown";
@@ -52,10 +53,12 @@ export const BusinessTable = ({ data }: Props) => (
 			{(rowData: any) => (
 				<tr data-testid="business-table__row" className="border-b border-dashed border-theme-neutral-light">
 					<td className="py-4 w-24">
-						<Circle className="border-theme-neutral-800" size="large">
-							<Icon name="Business" width={22} height={22} />
-						</Circle>
-						<Circle avatarId="test" size="large" className="-ml-1" />
+						<div className="flex items-center">
+							<Circle className="border-theme-neutral-800" size="large">
+								<Icon name="Business" width={22} height={22} />
+							</Circle>
+							<Avatar address="AaAy" />
+						</div>
 					</td>
 					<td className="py-4 mt-1 font-semibold">
 						<span>{rowData.agent}</span>
