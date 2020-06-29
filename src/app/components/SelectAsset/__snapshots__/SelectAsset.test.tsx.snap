@@ -44,6 +44,7 @@ exports[`SelectAsset should render 1`] = `
             class="relative z-20 w-full h-full font-semibold bg-transparent outline-none"
             data-testid="select-asset__input"
             id="downshift-0-input"
+            placeholder="Enter a network name"
             value=""
           />
         </div>
@@ -97,14 +98,18 @@ exports[`SelectAsset should render with assets 1`] = `
             class="relative z-20 w-full h-full font-semibold bg-transparent outline-none"
             data-testid="select-asset__input"
             id="downshift-1-input"
+            placeholder="Enter a network name"
             value=""
           />
         </div>
       </div>
     </div>
     <div
-      class="py-6"
+      aria-labelledby="downshift-1-label"
+      class="pt-6"
       data-testid="select-asset__items"
+      id="downshift-1-menu"
+      role="listbox"
     >
       <div
         aria-selected="false"

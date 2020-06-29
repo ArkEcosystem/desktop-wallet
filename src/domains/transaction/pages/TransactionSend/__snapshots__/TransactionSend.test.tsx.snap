@@ -56,7 +56,7 @@ exports[`Transaction Send should render 1`] = `
                 id="send-transaction__form"
               >
                 <fieldset
-                  class="sc-AxiKw iQzisX relative h-20 mt-1"
+                  class="sc-AxiKw iQzisX relative mt-1"
                 >
                   <div
                     class="mb-2"
@@ -71,51 +71,125 @@ exports[`Transaction Send should render 1`] = `
                     </label>
                   </div>
                   <div
-                    class=" select-transparent"
+                    aria-expanded="false"
+                    aria-haspopup="listbox"
+                    aria-labelledby="downshift-1-label"
+                    class="relative"
+                    role="combobox"
                   >
+                    <label
+                      for="downshift-1-input"
+                      id="downshift-1-label"
+                    />
                     <div
-                      class="sc-AxmLO kuiknc"
+                      class="relative flex items-center w-full flex-inline"
                     >
-                      <select
-                        class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
-                        data-testid="send-transaction__network-select"
-                        name="network"
-                      >
-                        <option
-                          disabled=""
-                          selected=""
-                          value=""
-                        >
-                           
-                        </option>
-                        <option
-                          data-testid="send-transaction__network-option"
-                          value="ark"
-                        >
-                          Ark Ecosystem
-                        </option>
-                      </select>
                       <div
-                        class="sc-AxgMl sc-Axmtr cPxyjO w-12 text-lg pointer-events-none text-theme-neutral-dark"
+                        class="flex w-full border rounded shadow-sm bg-theme-background border-theme-neutral-300 transition-colors duration-200 hover:outline-none hover:border-theme-primary"
                       >
                         <div
-                          class="sc-AxhCb fxrKLH"
-                          height="1em"
-                          width="1em"
+                          class="px-4 py-2 flex-0 w-14"
                         >
-                          <svg>
-                            chevron-down.svg
-                          </svg>
+                          <div
+                            class="sc-AxirZ HSPq border-theme-neutral-200"
+                          />
+                        </div>
+                        <div
+                          class="relative flex-1 p-1 font-semibold text-theme-neutral-800"
+                        >
+                          <div
+                            class="relative z-10 w-full"
+                            data-testid="select-network__typeahead-"
+                          >
+                            <div
+                              class="absolute left-0 font-semibold top-2 text-theme-neutral-400"
+                            />
+                          </div>
+                          <input
+                            aria-autocomplete="list"
+                            aria-labelledby="downshift-1-label"
+                            autocomplete="off"
+                            class="relative z-20 w-full h-full font-semibold bg-transparent outline-none"
+                            data-testid="select-asset__input"
+                            id="downshift-1-input"
+                            name="network"
+                            placeholder="Enter a network name"
+                            value=""
+                          />
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <div
-                    class="absolute ml-4 -mt-10"
-                  >
                     <div
-                      class="sc-AxirZ HSPq border-theme-neutral-200"
-                    />
+                      aria-labelledby="downshift-1-label"
+                      class="pt-6"
+                      data-testid="select-asset__items"
+                      id="downshift-1-menu"
+                      role="listbox"
+                    >
+                      <div
+                        aria-selected="false"
+                        class="inline-block mr-4 cursor-pointer"
+                        id="downshift-1-item-0"
+                        role="option"
+                        title="Ark Ecosystem"
+                      >
+                        <div
+                          class="sc-AxirZ cZokSJ text-theme-danger-400 border-theme-danger-200"
+                        >
+                          <div
+                            class="sc-AxhCb eHGcDb"
+                            height="18"
+                            width="18"
+                          >
+                            <svg>
+                              ark.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        aria-selected="false"
+                        class="inline-block mr-4 cursor-pointer"
+                        id="downshift-1-item-1"
+                        role="option"
+                        title="Bitcoin"
+                      >
+                        <div
+                          class="sc-AxirZ cZokSJ text-theme-warning-400 border-theme-warning-200"
+                        >
+                          <div
+                            class="sc-AxhCb eHGcDb"
+                            height="18"
+                            width="18"
+                          >
+                            <svg>
+                              btc.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        aria-selected="false"
+                        class="inline-block mr-4 cursor-pointer"
+                        id="downshift-1-item-2"
+                        role="option"
+                        title="Ethereum"
+                      >
+                        <div
+                          class="sc-AxirZ cZokSJ text-theme-neutral-800 border-theme-neutral-600"
+                        >
+                          <div
+                            class="sc-AxhCb eHGcDb"
+                            height="18"
+                            width="18"
+                          >
+                            <svg>
+                              eth.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </fieldset>
                 <fieldset
@@ -142,7 +216,6 @@ exports[`Transaction Send should render 1`] = `
                       <select
                         class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
                         data-testid="send-transaction__select-sender"
-                        disabled=""
                         name="sender"
                       >
                         <option
@@ -240,7 +313,6 @@ exports[`Transaction Send should render 1`] = `
                       <select
                         class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
                         data-testid="send-transaction__select-recipient"
-                        disabled=""
                         name="recipient"
                       >
                         <option
@@ -347,7 +419,6 @@ exports[`Transaction Send should render 1`] = `
                     <input
                       class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-20"
                       data-testid="send-transaction__amount-input"
-                      disabled=""
                       name="amount"
                       placeholder="Amount"
                       type="number"
@@ -356,7 +427,7 @@ exports[`Transaction Send should render 1`] = `
                       class="sc-AxgMl sc-Axmtr cPxyjO"
                     >
                       <button
-                        class="pr-4 pl-6 text-theme-primary bg-theme-background focus:outline-none bg-theme-neutral-100"
+                        class="pl-6 pr-4 bg-white text-theme-primary bg-theme-background focus:outline-none"
                         data-testid="send-transaction__send-all"
                       >
                         Send All
@@ -385,7 +456,6 @@ exports[`Transaction Send should render 1`] = `
                     <input
                       class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-20"
                       data-testid="Input"
-                      disabled=""
                       maxlength="255"
                       name="smartbridge"
                       placeholder=" "
@@ -509,7 +579,6 @@ exports[`Transaction Send should render 1`] = `
                     class="sc-AxjAm ddJBbC"
                     color="primary"
                     data-testid="send-transaction-click-back"
-                    disabled=""
                     type="button"
                   >
                     Back
@@ -518,7 +587,6 @@ exports[`Transaction Send should render 1`] = `
                     class="sc-AxjAm ddQVWI"
                     color="primary"
                     data-testid="send-transaction-click-submit"
-                    disabled=""
                     type="submit"
                   >
                     Continue
@@ -564,7 +632,7 @@ exports[`Transaction Send should render 1st step 1`] = `
         id="send-transaction__form"
       >
         <fieldset
-          class="sc-AxiKw iQzisX relative h-20 mt-1"
+          class="sc-AxiKw iQzisX relative mt-1"
         >
           <div
             class="mb-2"
@@ -579,51 +647,125 @@ exports[`Transaction Send should render 1st step 1`] = `
             </label>
           </div>
           <div
-            class=" select-transparent"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-labelledby="downshift-0-label"
+            class="relative"
+            role="combobox"
           >
+            <label
+              for="downshift-0-input"
+              id="downshift-0-label"
+            />
             <div
-              class="sc-AxmLO kuiknc"
+              class="relative flex items-center w-full flex-inline"
             >
-              <select
-                class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
-                data-testid="send-transaction__network-select"
-                name="network"
-              >
-                <option
-                  disabled=""
-                  selected=""
-                  value=""
-                >
-                   
-                </option>
-                <option
-                  data-testid="send-transaction__network-option"
-                  value="ark"
-                >
-                  Ark Ecosystem
-                </option>
-              </select>
               <div
-                class="sc-AxgMl sc-Axmtr cPxyjO w-12 text-lg pointer-events-none text-theme-neutral-dark"
+                class="flex w-full border rounded shadow-sm bg-theme-background border-theme-neutral-300 transition-colors duration-200 hover:outline-none hover:border-theme-primary"
               >
                 <div
-                  class="sc-AxhCb fxrKLH"
-                  height="1em"
-                  width="1em"
+                  class="px-4 py-2 flex-0 w-14"
                 >
-                  <svg>
-                    chevron-down.svg
-                  </svg>
+                  <div
+                    class="sc-AxirZ HSPq border-theme-neutral-200"
+                  />
+                </div>
+                <div
+                  class="relative flex-1 p-1 font-semibold text-theme-neutral-800"
+                >
+                  <div
+                    class="relative z-10 w-full"
+                    data-testid="select-network__typeahead-"
+                  >
+                    <div
+                      class="absolute left-0 font-semibold top-2 text-theme-neutral-400"
+                    />
+                  </div>
+                  <input
+                    aria-autocomplete="list"
+                    aria-labelledby="downshift-0-label"
+                    autocomplete="off"
+                    class="relative z-20 w-full h-full font-semibold bg-transparent outline-none"
+                    data-testid="select-asset__input"
+                    id="downshift-0-input"
+                    name="network"
+                    placeholder="Enter a network name"
+                    value=""
+                  />
                 </div>
               </div>
             </div>
-          </div>
-          <div
-            class="absolute ml-4 -mt-10"
-          >
             <div
-              class="sc-AxirZ HSPq border-theme-neutral-200"
-            />
+              aria-labelledby="downshift-0-label"
+              class="pt-6"
+              data-testid="select-asset__items"
+              id="downshift-0-menu"
+              role="listbox"
+            >
+              <div
+                aria-selected="false"
+                class="inline-block mr-4 cursor-pointer"
+                id="downshift-0-item-0"
+                role="option"
+                title="Ark Ecosystem"
+              >
+                <div
+                  class="sc-AxirZ cZokSJ text-theme-danger-400 border-theme-danger-200"
+                >
+                  <div
+                    class="sc-AxhCb eHGcDb"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      ark.svg
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-selected="false"
+                class="inline-block mr-4 cursor-pointer"
+                id="downshift-0-item-1"
+                role="option"
+                title="Bitcoin"
+              >
+                <div
+                  class="sc-AxirZ cZokSJ text-theme-warning-400 border-theme-warning-200"
+                >
+                  <div
+                    class="sc-AxhCb eHGcDb"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      btc.svg
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-selected="false"
+                class="inline-block mr-4 cursor-pointer"
+                id="downshift-0-item-2"
+                role="option"
+                title="Ethereum"
+              >
+                <div
+                  class="sc-AxirZ cZokSJ text-theme-neutral-800 border-theme-neutral-600"
+                >
+                  <div
+                    class="sc-AxhCb eHGcDb"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      eth.svg
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </fieldset>
         <fieldset
@@ -650,7 +792,6 @@ exports[`Transaction Send should render 1st step 1`] = `
               <select
                 class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
                 data-testid="send-transaction__select-sender"
-                disabled=""
                 name="sender"
               >
                 <option
@@ -748,7 +889,6 @@ exports[`Transaction Send should render 1st step 1`] = `
               <select
                 class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
                 data-testid="send-transaction__select-recipient"
-                disabled=""
                 name="recipient"
               >
                 <option
@@ -855,7 +995,6 @@ exports[`Transaction Send should render 1st step 1`] = `
             <input
               class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-20"
               data-testid="send-transaction__amount-input"
-              disabled=""
               name="amount"
               placeholder="Amount"
               type="number"
@@ -864,7 +1003,7 @@ exports[`Transaction Send should render 1st step 1`] = `
               class="sc-AxgMl sc-Axmtr cPxyjO"
             >
               <button
-                class="pr-4 pl-6 text-theme-primary bg-theme-background focus:outline-none bg-theme-neutral-100"
+                class="pl-6 pr-4 bg-white text-theme-primary bg-theme-background focus:outline-none"
                 data-testid="send-transaction__send-all"
               >
                 Send All
@@ -893,7 +1032,6 @@ exports[`Transaction Send should render 1st step 1`] = `
             <input
               class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-20"
               data-testid="Input"
-              disabled=""
               maxlength="255"
               name="smartbridge"
               placeholder=" "
@@ -1017,7 +1155,6 @@ exports[`Transaction Send should render 1st step 1`] = `
             class="sc-AxjAm ddJBbC"
             color="primary"
             data-testid="send-transaction-click-back"
-            disabled=""
             type="button"
           >
             Back
@@ -1026,7 +1163,6 @@ exports[`Transaction Send should render 1st step 1`] = `
             class="sc-AxjAm ddQVWI"
             color="primary"
             data-testid="send-transaction-click-submit"
-            disabled=""
             type="submit"
           >
             Continue
