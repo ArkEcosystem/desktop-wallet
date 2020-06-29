@@ -32,7 +32,7 @@ export const Address = ({ address, addressClass, fontWeight, walletName, maxChar
 				<span
 					data-testid="address__wallet-name"
 					className={`text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 ${
-						fontWeight && fontSizes[fontWeight]
+						fontWeight && fontWeights[fontWeight]
 					} ${size && fontSizes[size]}`}
 				>
 					{walletName}
@@ -41,7 +41,7 @@ export const Address = ({ address, addressClass, fontWeight, walletName, maxChar
 			<span
 				data-testid="address__wallet-address"
 				className={`${addressClass || (walletName ? "text-theme-neutral-400" : "text-theme-neutral-800")} ${
-					fontWeight && fontSizes[fontWeight]
+					fontWeight && fontWeights[fontWeight]
 				} ${size && fontSizes[size]}`}
 			>
 				{truncateStringMiddle(address, maxChars)}
