@@ -351,7 +351,12 @@ export default {
       let peers = []
 
       try {
-        peers = await discoverPeers(await dispatch('getPeerDiscovery', network))
+        const peerDiscovery = await dispatch('getPeerDiscovery', network)
+        if (!peerDiscovery) {
+          throw new Error('could not initiate peer discovery')
+        }
+
+        peers = await discoverPeers(peerDiscovery)
       } catch (error) {
         if (!network) {
           network = rootGetters['session/network']
