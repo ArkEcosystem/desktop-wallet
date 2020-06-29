@@ -1,6 +1,7 @@
 import { Address } from "app/components/Address";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
+import { Clipboard } from "app/components/Clipboard";
 import { Form } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { InputPassword, InputRange } from "app/components/Input";
@@ -158,6 +159,99 @@ export const ThirdStep = ({ onSubmit }: any) => {
 	);
 };
 
+export const FourthStep = () => (
+	<section data-testid="TransactionSend__step--fourth" className="space-y-8">
+		<div>
+			<h1 className="mb-0">Transaction Successful</h1>
+			<div className="grid grid-flow-row gap-2">
+				<div className="w-full mt-10">
+					<Icon name="TransactionSuccessful" width="100%" height={200} />
+				</div>
+				<p className="text-theme-neutral-dark">
+					Your transaction was successfully sent. Please monitor the blockchain to ensure your transactions is
+					confirmed and processed, The following is relevant information for your transaction.
+				</p>
+				<TransactionDetail border={false} label="ID">
+					<div className="flex items-center">
+						<Clipboard>
+							<Address
+								addressClass="text-theme-primary"
+								address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWKAUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
+								maxChars={32}
+							/>
+						</Clipboard>
+						<div className="mb-1 ml-5 text-theme-primary-300">
+							<Icon name="Copy" />
+						</div>
+					</div>
+				</TransactionDetail>
+				<TransactionDetail label="Block ID">
+					<div className="flex items-center">
+						<Clipboard>
+							<Address
+								addressClass="text-theme-primary"
+								address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWKAUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
+								maxChars={32}
+							/>
+						</Clipboard>
+						<div className="mb-1 ml-5 text-theme-primary-300">
+							<Icon name="Copy" />
+						</div>
+					</div>
+				</TransactionDetail>
+				<TransactionDetail
+					label="Cryptoasset"
+					extra={
+						<div className="ml-1">
+							<Circle className="bg-theme-background border-theme-danger-200" size="large">
+								<Icon name="Ark" width={20} height={20} className="text-theme-danger-500" />
+							</Circle>
+						</div>
+					}
+				>
+					<div className="flex-auto text-xl font-semibold truncate text-theme-neutral-800 max-w-24">
+						ARK Ecosystem
+					</div>
+				</TransactionDetail>
+				<TransactionDetail label=" " extra={<Avatar address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}>
+					<div className="mb-2 text-sm font-semibold text-theme-neutral-500">
+						<span className="mr-1">Account</span>
+						<Label color="warning">Your address</Label>
+					</div>
+					<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} size="large" />
+				</TransactionDetail>
+				<TransactionDetail label="Votes">
+					<VoteList votes={votes} />
+				</TransactionDetail>
+				<TransactionDetail
+					label="Amount"
+					extra={
+						<div className="ml-1 text-theme-danger">
+							<Circle className="bg-theme-background border-theme-danger-200" size="large">
+								<Icon name="Sent" width={50} height={50} />
+							</Circle>
+						</div>
+					}
+				>
+					0.09660435 ARK
+				</TransactionDetail>
+				<TransactionDetail
+					label="Transaction Type"
+					extra={
+						<div className="ml-1 text-theme-danger">
+							<Circle className="border-black bg-theme-background" size="large">
+								<Icon name="Voted" className="text-black" />
+							</Circle>
+						</div>
+					}
+				>
+					Vote
+				</TransactionDetail>
+			</div>
+		</div>
+	</section>
+);
+
 type VoteTransactionSendProps = {
 	onSubmit: () => void;
 };
@@ -189,6 +283,9 @@ export const VoteTransactionSend = ({ onSubmit }: VoteTransactionSendProps) => {
 						</TabPanel>
 						<TabPanel tabId={3}>
 							<ThirdStep />
+						</TabPanel>
+						<TabPanel tabId={4}>
+							<FourthStep />
 						</TabPanel>
 
 						<div className="flex justify-end mt-6 space-x-3">
