@@ -22,7 +22,6 @@ import { TotalAmountBox } from "domains/transaction/components/TotalAmountBox";
 import { TransactionSuccessful } from "domains/transaction/components/TransactionSuccessful";
 import React from "react";
 import { useForm } from "react-hook-form";
-import { useTranslation } from "react-i18next";
 import { styled } from "twin.macro";
 
 type RegistrationProps = {
@@ -57,30 +56,25 @@ const FormWrapper = styled.div`
 `;
 
 const RegistrationTypeDropdown = ({ className, register, registrationTypes, selectedType }: any) => (
-	<FormField name="registrationType" className={`relative h-20 ${className}`}>
+	<FormField data-testid="Registration__type" name="registrationType" className={`relative h-20 ${className}`}>
 		<div className="mb-2">
 			<FormLabel label="Registration Type" />
 		</div>
-		<div className="select-transparent">
-			<Select
-				placeholder=" "
-				name="registrationType"
-				ref={register}
-				data-testid="send-transaction__network-select"
-			>
+		<div>
+			<Select placeholder=" " ref={register} data-testid="Registration__type-select">
 				{registrationTypes &&
 					registrationTypes.map((registrationType: any, index: number) => (
-						<option
-							key={index}
-							value={registrationType.value}
-							data-testid="send-transaction__network-option"
-						>
+						<option key={index} value={registrationType.value} data-testid="Registration__type-option">
 							{registrationType.label}
 						</option>
 					))}
 			</Select>
 
-			{selectedType && <div className="flex items-center ml-4 leading-tight -mt-9">{selectedType.label}</div>}
+			{selectedType && (
+				<div data-testid="Registration__type-selected" className="flex items-center ml-4 leading-tight -mt-9">
+					{selectedType.label}
+				</div>
+			)}
 		</div>
 	</FormField>
 );
@@ -105,10 +99,10 @@ const FirstStep = ({
 	registrationTypes: RegistrationType[];
 }) => {
 	const { register } = form;
-	const { address, network, registrationType } = form.watch();
+	const { address, registrationType } = form.watch();
 
 	return (
-		<div>
+		<div data-testid="Registration__first-step">
 			<h1>Registration</h1>
 			<div className="text-theme-neutral-700">
 				Select the type of registration and the address you want to register with.
@@ -118,21 +112,20 @@ const FirstStep = ({
 				<SelectAsset assets={networks} />
 
 				<ProfileFormField
-					disabled={!network}
 					formName="address"
 					formLabel="Address"
 					profiles={addresses}
 					selectedProfile={getAddressInfo(addresses, address)}
-					register={register({ required: true })}
+					register={register}
 					withoutAdditional={true}
 					className="mt-8"
 				/>
 
 				<RegistrationTypeDropdown
-					register={register({ required: true })}
 					selectedType={getRegistrationByName(registrationTypes, registrationType)}
 					registrationTypes={registrationTypes}
 					className="mt-8"
+					register={register}
 				/>
 			</FormWrapper>
 		</div>
@@ -142,11 +135,10 @@ const FirstStep = ({
 const SecondStep = ({ form }: { form: any }) => {
 	const { register } = form;
 	const selectionBarState = useSelectionState(1);
-	const { network, address, registrationType } = form.watch();
 
 	return (
-		<div>
-			<h1>Register {registrationType}</h1>
+		<div data-testid="Registration__second-step">
+			<h1>Register Business</h1>
 			<div className="text-theme-neutral-700">
 				Select the type of registration and the address you want to register with.
 			</div>
@@ -154,13 +146,13 @@ const SecondStep = ({ form }: { form: any }) => {
 			<FormWrapper>
 				<TransactionDetail border={false} className="mb-8">
 					<FormField name="name">
-						<FormLabel>Name</FormLabel>
-						<Input type="text" ref={register({ required: true })} />
+						<FormLabel required>Name</FormLabel>
+						<Input type="text" ref={register} />
 					</FormField>
 
-					<FormField name="name" className="mt-8">
-						<FormLabel>Description *</FormLabel>
-						<TextArea ref={register({ required: true })} />
+					<FormField name="description" className="mt-8">
+						<FormLabel required>Description</FormLabel>
+						<TextArea ref={register} />
 					</FormField>
 
 					<FormField name="website" className="mt-8">
@@ -315,11 +307,9 @@ const ThirdStep = () => {
 
 const FourthStep = ({ form, passwordType }: { form: any; passwordType: "mnemonic" | "password" | "ledger" }) => {
 	const { register } = form;
-	const selectionBarState = useSelectionState(1);
-	const { mnemonic, password } = form.watch();
 
 	return (
-		<div>
+		<div data-testid="Registration__fourth-step">
 			{passwordType !== "ledger" && (
 				<div>
 					<h1>Authenticate</h1>
@@ -330,12 +320,12 @@ const FourthStep = ({ form, passwordType }: { form: any; passwordType: "mnemonic
 					<FormWrapper className="mt-5">
 						<FormField name="name">
 							<FormLabel>{passwordType === "mnemonic" ? "Mnemonic" : "Encryption Password"}</FormLabel>
-							<InputPassword name={passwordType} ref={register({ required: true })} />
+							<InputPassword name={passwordType} ref={register} />
 						</FormField>
 
 						<FormField name="name" className="mt-8">
 							<FormLabel>2nd Mnemonic</FormLabel>
-							<InputPassword name="secondMnemonic" ref={register({ required: true })} />
+							<InputPassword name="secondMnemonic" ref={register} />
 						</FormField>
 					</FormWrapper>
 				</div>
@@ -398,13 +388,10 @@ export const Registration = ({
 	networks,
 	registrationTypes,
 }: RegistrationProps) => {
-	const { t } = useTranslation();
-
 	const form = useForm({ mode: "onChange", defaultValues: formDefaultData });
-	const [activeTab, setActiveTab] = React.useState(7);
+	const [activeTab, setActiveTab] = React.useState(1);
 	const { formState } = form;
 	const { isValid } = formState;
-	const { network, address, registrationType } = form.watch();
 
 	const handleBack = () => {
 		setActiveTab(activeTab - 1);
@@ -452,7 +439,7 @@ export const Registration = ({
 							{activeTab < 7 && (
 								<Button
 									disabled={activeTab === 1}
-									data-testid="CreateWallet__back-button"
+									data-testid="Registration__back-button"
 									variant="plain"
 									onClick={handleBack}
 								>
@@ -462,7 +449,7 @@ export const Registration = ({
 
 							{activeTab < 4 && (
 								<Button
-									data-testid="CreateWallet__continue-button"
+									data-testid="Registration__continue-button"
 									disabled={!isValid}
 									onClick={handleNext}
 								>
@@ -472,7 +459,7 @@ export const Registration = ({
 
 							{activeTab >= 4 && activeTab < 7 && (
 								<Button
-									data-testid="CreateWallet__save-button"
+									data-testid="Registration__send-button"
 									disabled={!isValid}
 									onClick={handleNext}
 								>
@@ -483,11 +470,11 @@ export const Registration = ({
 
 							{activeTab === 7 && (
 								<div className="flex justify-end space-x-3">
-									<Button data-testid="CreateWallet__save-button" variant="plain">
+									<Button data-testid="Registration__wallet-button" variant="plain">
 										Back to wallet
 									</Button>
 
-									<Button type="submit" data-testid="CreateWallet__save-button" variant="plain">
+									<Button type="submit" data-testid="Registration__download-button" variant="plain">
 										<Icon name="Download" className="mr-2" />
 										Download
 									</Button>
