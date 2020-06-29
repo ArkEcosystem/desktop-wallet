@@ -62,7 +62,7 @@ exports[`Transaction Send should render 1`] = `
                     class="mb-2"
                   >
                     <label
-                      class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
+                      class="FormLabel flex transition-colors duration-100 inline-block text-sm text-theme-neutral-dark"
                       data-testid="FormLabel"
                       for="network"
                       label="Network"
@@ -119,13 +119,13 @@ exports[`Transaction Send should render 1`] = `
                   </div>
                 </fieldset>
                 <fieldset
-                  class="sc-AxiKw iQzisX relative h-20 mt-1"
+                  class="sc-AxiKw iQzisX relative h-20 "
                 >
                   <div
                     class="mb-2"
                   >
                     <label
-                      class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
+                      class="FormLabel flex transition-colors duration-100 inline-block text-sm text-theme-neutral-dark"
                       data-testid="FormLabel"
                       for="sender"
                       label="Sender"
@@ -190,7 +190,7 @@ exports[`Transaction Send should render 1`] = `
                         </div>
                       </button>
                       <div
-                        class="sc-fzqBZW fTLtbV"
+                        class="sc-fzqNJr ixZrWA"
                         type="vertical"
                       />
                       <button
@@ -217,13 +217,13 @@ exports[`Transaction Send should render 1`] = `
                   </div>
                 </fieldset>
                 <fieldset
-                  class="sc-AxiKw iQzisX relative h-20 mt-1"
+                  class="sc-AxiKw iQzisX relative h-20 "
                 >
                   <div
                     class="mb-2"
                   >
                     <label
-                      class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
+                      class="FormLabel flex transition-colors duration-100 inline-block text-sm text-theme-neutral-dark"
                       data-testid="FormLabel"
                       for="recipient"
                       label="Recipient"
@@ -300,7 +300,7 @@ exports[`Transaction Send should render 1`] = `
                         </div>
                       </button>
                       <div
-                        class="sc-fzqBZW fTLtbV"
+                        class="sc-fzqNJr ixZrWA"
                         type="vertical"
                       />
                       <button
@@ -333,7 +333,7 @@ exports[`Transaction Send should render 1`] = `
                     class="mb-2"
                   >
                     <label
-                      class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
+                      class="FormLabel flex transition-colors duration-100 inline-block text-sm text-theme-neutral-dark"
                       data-testid="FormLabel"
                       for="amount"
                       label="Amount ARK"
@@ -371,7 +371,7 @@ exports[`Transaction Send should render 1`] = `
                     class="mb-2"
                   >
                     <label
-                      class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
+                      class="FormLabel flex transition-colors duration-100 inline-block text-sm text-theme-neutral-dark"
                       data-testid="FormLabel"
                       for="smartbridge"
                       label="Smartbridge"
@@ -415,7 +415,7 @@ exports[`Transaction Send should render 1`] = `
                         class="mb-2"
                       >
                         <label
-                          class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
+                          class="FormLabel flex transition-colors duration-100 inline-block text-sm text-theme-neutral-dark"
                           data-testid="FormLabel"
                           for="fee"
                           label="Fee ARK"
@@ -477,7 +477,7 @@ exports[`Transaction Send should render 1`] = `
                     >
                       <button
                         aria-checked="false"
-                        class="sc-fzqNJr kLZRsr relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                        class="sc-fzqBZW iqYNNu relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                         data-testid="SelectionBarOption"
                         role="radio"
                       >
@@ -485,7 +485,7 @@ exports[`Transaction Send should render 1`] = `
                       </button>
                       <button
                         aria-checked="false"
-                        class="sc-fzqNJr kLZRsr relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                        class="sc-fzqBZW iqYNNu relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                         data-testid="SelectionBarOption"
                         role="radio"
                       >
@@ -493,7 +493,7 @@ exports[`Transaction Send should render 1`] = `
                       </button>
                       <button
                         aria-checked="false"
-                        class="sc-fzqNJr kLZRsr relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                        class="sc-fzqBZW iqYNNu relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                         data-testid="SelectionBarOption"
                         role="radio"
                       >
@@ -570,7 +570,7 @@ exports[`Transaction Send should render 1st step 1`] = `
             class="mb-2"
           >
             <label
-              class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
+              class="FormLabel flex transition-colors duration-100 inline-block text-sm text-theme-neutral-dark"
               data-testid="FormLabel"
               for="network"
               label="Network"
@@ -627,13 +627,13 @@ exports[`Transaction Send should render 1st step 1`] = `
           </div>
         </fieldset>
         <fieldset
-          class="sc-AxiKw iQzisX relative h-20 mt-1"
+          class="sc-AxiKw iQzisX relative h-20 "
         >
           <div
             class="mb-2"
           >
             <label
-              class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
+              class="FormLabel flex transition-colors duration-100 inline-block text-sm text-theme-neutral-dark"
               data-testid="FormLabel"
               for="sender"
               label="Sender"
@@ -698,7 +698,7 @@ exports[`Transaction Send should render 1st step 1`] = `
                 </div>
               </button>
               <div
-                class="sc-fzqBZW fTLtbV"
+                class="sc-fzqNJr ixZrWA"
                 type="vertical"
               />
               <button
@@ -725,13 +725,13 @@ exports[`Transaction Send should render 1st step 1`] = `
           </div>
         </fieldset>
         <fieldset
-          class="sc-AxiKw iQzisX relative h-20 mt-1"
+          class="sc-AxiKw iQzisX relative h-20 "
         >
           <div
             class="mb-2"
           >
             <label
-              class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
+              class="FormLabel flex transition-colors duration-100 inline-block text-sm text-theme-neutral-dark"
               data-testid="FormLabel"
               for="recipient"
               label="Recipient"
@@ -808,7 +808,7 @@ exports[`Transaction Send should render 1st step 1`] = `
                 </div>
               </button>
               <div
-                class="sc-fzqBZW fTLtbV"
+                class="sc-fzqNJr ixZrWA"
                 type="vertical"
               />
               <button
@@ -841,7 +841,7 @@ exports[`Transaction Send should render 1st step 1`] = `
             class="mb-2"
           >
             <label
-              class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
+              class="FormLabel flex transition-colors duration-100 inline-block text-sm text-theme-neutral-dark"
               data-testid="FormLabel"
               for="amount"
               label="Amount ARK"
@@ -879,7 +879,7 @@ exports[`Transaction Send should render 1st step 1`] = `
             class="mb-2"
           >
             <label
-              class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
+              class="FormLabel flex transition-colors duration-100 inline-block text-sm text-theme-neutral-dark"
               data-testid="FormLabel"
               for="smartbridge"
               label="Smartbridge"
@@ -923,7 +923,7 @@ exports[`Transaction Send should render 1st step 1`] = `
                 class="mb-2"
               >
                 <label
-                  class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
+                  class="FormLabel flex transition-colors duration-100 inline-block text-sm text-theme-neutral-dark"
                   data-testid="FormLabel"
                   for="fee"
                   label="Fee ARK"
@@ -985,7 +985,7 @@ exports[`Transaction Send should render 1st step 1`] = `
             >
               <button
                 aria-checked="false"
-                class="sc-fzqNJr kLZRsr relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                class="sc-fzqBZW iqYNNu relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                 data-testid="SelectionBarOption"
                 role="radio"
               >
@@ -993,7 +993,7 @@ exports[`Transaction Send should render 1st step 1`] = `
               </button>
               <button
                 aria-checked="false"
-                class="sc-fzqNJr kLZRsr relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                class="sc-fzqBZW iqYNNu relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                 data-testid="SelectionBarOption"
                 role="radio"
               >
@@ -1001,7 +1001,7 @@ exports[`Transaction Send should render 1st step 1`] = `
               </button>
               <button
                 aria-checked="false"
-                class="sc-fzqNJr kLZRsr relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                class="sc-fzqBZW iqYNNu relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                 data-testid="SelectionBarOption"
                 role="radio"
               >
@@ -1131,13 +1131,13 @@ exports[`Transaction Send should render 2nd step 1`] = `
               class="inline-block truncate"
             >
               <span
-                class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-xl"
+                class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 text-base text-xl"
                 data-testid="address__wallet-name"
               >
                 ROBank
               </span>
               <span
-                class="text-theme-neutral-400 font-semibold text-xl"
+                class="text-theme-neutral-400 text-base text-xl"
                 data-testid="address__wallet-address"
               >
                 AUexKj...EVTQWK
@@ -1260,13 +1260,13 @@ exports[`Transaction Send should render 2nd step 1`] = `
                           class="inline-block truncate"
                         >
                           <span
-                            class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-base"
+                            class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 text-base text-base"
                             data-testid="address__wallet-name"
                           >
                             Recipient 1
                           </span>
                           <span
-                            class="text-theme-neutral-400 font-semibold text-base"
+                            class="text-theme-neutral-400 text-base text-base"
                             data-testid="address__wallet-address"
                           >
                             FJKDSA...SJKDFJ
@@ -1295,13 +1295,13 @@ exports[`Transaction Send should render 2nd step 1`] = `
                           class="inline-block truncate"
                         >
                           <span
-                            class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-base"
+                            class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 text-base text-base"
                             data-testid="address__wallet-name"
                           >
                             Recipient 2
                           </span>
                           <span
-                            class="text-theme-neutral-400 font-semibold text-base"
+                            class="text-theme-neutral-400 text-base text-base"
                             data-testid="address__wallet-address"
                           >
                             AhFJKD...SJKDFJ
@@ -1330,13 +1330,13 @@ exports[`Transaction Send should render 2nd step 1`] = `
                           class="inline-block truncate"
                         >
                           <span
-                            class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-base"
+                            class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 text-base text-base"
                             data-testid="address__wallet-name"
                           >
                             Recipient 3
                           </span>
                           <span
-                            class="text-theme-neutral-400 font-semibold text-base"
+                            class="text-theme-neutral-400 text-base text-base"
                             data-testid="address__wallet-address"
                           >
                             FAhFJK...SJKDFJ
@@ -1365,13 +1365,13 @@ exports[`Transaction Send should render 2nd step 1`] = `
                           class="inline-block truncate"
                         >
                           <span
-                            class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-base"
+                            class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 text-base text-base"
                             data-testid="address__wallet-name"
                           >
                             Recipient 4
                           </span>
                           <span
-                            class="text-theme-neutral-400 font-semibold text-base"
+                            class="text-theme-neutral-400 text-base text-base"
                             data-testid="address__wallet-address"
                           >
                             FAhFJK...SJKDFJ

@@ -128,13 +128,13 @@ exports[`Vote For Delegate should render 1`] = `
                             class="inline-block truncate"
                           >
                             <span
-                              class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-base"
+                              class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 text-base text-base"
                               data-testid="address__wallet-name"
                             >
                               ROBank
                             </span>
                             <span
-                              class="text-theme-neutral-400 font-semibold text-base"
+                              class="text-theme-neutral-400 text-base text-base"
                               data-testid="address__wallet-address"
                             >
                               AUexKj...EVTQWK
@@ -182,10 +182,10 @@ exports[`Vote For Delegate should render 1`] = `
                       class="mt-2 font-semibold"
                     >
                       <div
-                        class="flex"
+                        class="flex space-x-2"
                       >
                         <div
-                          class="w-3/5 mr-2"
+                          class="flex-1"
                         >
                           <div
                             class="sc-AxmLO kuiknc"
@@ -229,9 +229,7 @@ exports[`Vote For Delegate should render 1`] = `
                             </div>
                           </div>
                         </div>
-                        <div
-                          class="ml-2"
-                        >
+                        <div>
                           <div
                             class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300 shadow-sm"
                             data-testid="SelectionBar"
@@ -396,13 +394,13 @@ exports[`Vote For Delegate should render 1st step 1`] = `
                   class="inline-block truncate"
                 >
                   <span
-                    class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-base"
+                    class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 text-base text-base"
                     data-testid="address__wallet-name"
                   >
                     ROBank
                   </span>
                   <span
-                    class="text-theme-neutral-400 font-semibold text-base"
+                    class="text-theme-neutral-400 text-base text-base"
                     data-testid="address__wallet-address"
                   >
                     AUexKj...EVTQWK
@@ -450,10 +448,10 @@ exports[`Vote For Delegate should render 1st step 1`] = `
             class="mt-2 font-semibold"
           >
             <div
-              class="flex"
+              class="flex space-x-2"
             >
               <div
-                class="w-3/5 mr-2"
+                class="flex-1"
               >
                 <div
                   class="sc-AxmLO kuiknc"
@@ -497,9 +495,7 @@ exports[`Vote For Delegate should render 1st step 1`] = `
                   </div>
                 </div>
               </div>
-              <div
-                class="ml-2"
-              >
+              <div>
                 <div
                   class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300 shadow-sm"
                   data-testid="SelectionBar"
@@ -616,13 +612,13 @@ exports[`Vote For Delegate should render 2nd step 1`] = `
               class="inline-block truncate"
             >
               <span
-                class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-base"
+                class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 text-base text-base"
                 data-testid="address__wallet-name"
               >
                 ROBank
               </span>
               <span
-                class="text-theme-neutral-400 font-semibold text-base"
+                class="text-theme-neutral-400 text-base text-base"
                 data-testid="address__wallet-address"
               >
                 AUexKj...EVTQWK

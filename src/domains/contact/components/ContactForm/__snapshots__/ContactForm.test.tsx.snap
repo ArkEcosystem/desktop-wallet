@@ -12,7 +12,7 @@ exports[`ContactForm when creating a new contact should render the form 1`] = `
       class="sc-AxiKw iQzisX flex flex-col space-y-2"
     >
       <label
-        class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
+        class="FormLabel flex transition-colors duration-100 inline-block text-sm text-theme-neutral-dark"
         data-testid="FormLabel"
         for="name"
       >
@@ -28,7 +28,7 @@ exports[`ContactForm when creating a new contact should render the form 1`] = `
       class="sc-AxiKw iQzisX flex flex-col space-y-2"
     >
       <label
-        class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
+        class="FormLabel flex transition-colors duration-100 inline-block text-sm text-theme-neutral-dark"
         data-testid="FormLabel"
         for="network"
       >
@@ -69,7 +69,7 @@ exports[`ContactForm when creating a new contact should render the form 1`] = `
       class="sc-AxiKw iQzisX flex flex-col space-y-2"
     >
       <label
-        class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
+        class="FormLabel flex transition-colors duration-100 inline-block text-sm text-theme-neutral-dark"
         data-testid="FormLabel"
         for="address"
       >
@@ -129,7 +129,7 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
       class="sc-AxiKw iQzisX flex flex-col space-y-2"
     >
       <label
-        class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
+        class="FormLabel flex transition-colors duration-100 inline-block text-sm text-theme-neutral-dark"
         data-testid="FormLabel"
         for="name"
       >
@@ -145,7 +145,7 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
       class="sc-AxiKw iQzisX flex flex-col space-y-2"
     >
       <label
-        class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
+        class="FormLabel flex transition-colors duration-100 inline-block text-sm text-theme-neutral-dark"
         data-testid="FormLabel"
         for="network"
       >
@@ -186,7 +186,7 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
       class="sc-AxiKw iQzisX flex flex-col space-y-2"
     >
       <label
-        class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
+        class="FormLabel flex transition-colors duration-100 inline-block text-sm text-theme-neutral-dark"
         data-testid="FormLabel"
         for="address"
       >
@@ -253,7 +253,7 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
               class="inline-block truncate"
             >
               <span
-                class="text-theme-neutral-800 font-semibold text-base"
+                class="text-theme-neutral-800 text-base text-base"
                 data-testid="address__wallet-address"
               >
                 15pyr1HRAx...myCtXXu9G8
@@ -308,7 +308,7 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
               class="inline-block truncate"
             >
               <span
-                class="text-theme-neutral-800 font-semibold text-base"
+                class="text-theme-neutral-800 text-base text-base"
                 data-testid="address__wallet-address"
               >
                 0x5e8f7a63...8b380d7c33

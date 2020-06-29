@@ -61,13 +61,13 @@ exports[`SignMessage should render as signed 1`] = `
                     class="inline-block truncate"
                   >
                     <span
-                      class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-xl"
+                      class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 text-base text-xl"
                       data-testid="address__wallet-name"
                     >
                       ROBank
                     </span>
                     <span
-                      class="text-theme-neutral-400 font-semibold text-xl"
+                      class="text-theme-neutral-400 text-base text-xl"
                       data-testid="address__wallet-address"
                     >
                       AUexKj...EVTQWK
@@ -224,7 +224,7 @@ exports[`SignMessage should render the SignMessage 1`] = `
               class="sc-AxiKw iQzisX flex flex-col space-y-2"
             >
               <label
-                class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
+                class="FormLabel flex transition-colors duration-100 inline-block text-sm text-theme-neutral-dark"
                 data-testid="FormLabel"
                 for="signatory-address"
                 label="Signatory"
@@ -259,7 +259,7 @@ exports[`SignMessage should render the SignMessage 1`] = `
               class="sc-AxiKw iQzisX flex flex-col space-y-2"
             >
               <label
-                class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
+                class="FormLabel flex transition-colors duration-100 inline-block text-sm text-theme-neutral-dark"
                 data-testid="FormLabel"
                 for="message"
                 label="Message"
@@ -277,7 +277,7 @@ exports[`SignMessage should render the SignMessage 1`] = `
               class="sc-AxiKw iQzisX flex flex-col space-y-2"
             >
               <label
-                class="FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
+                class="FormLabel flex transition-colors duration-100 inline-block text-sm text-theme-neutral-dark"
                 data-testid="FormLabel"
                 for="passphrase"
                 label="Your Passphrase"
