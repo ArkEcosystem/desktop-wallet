@@ -17,7 +17,7 @@ import { TotalAmountBox } from "domains/transaction/components/TotalAmountBox";
 import React from "react";
 import { useForm } from "react-hook-form";
 
-const { ConfirmTransactionLedgerBanner } = images.transaction.pages.transactionSend;
+const { ConfirmTransactionLedgerBanner } = images.transaction.common;
 
 const recipients = [
 	{
