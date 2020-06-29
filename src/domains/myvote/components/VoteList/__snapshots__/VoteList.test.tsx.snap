@@ -2,7 +2,9 @@
 
 exports[`VoteList should render 1`] = `
 <DocumentFragment>
-  <div>
+  <div
+    class="-my-5"
+  >
     <div
       class="flex items-center py-4 true "
     >
@@ -35,12 +37,10 @@ exports[`VoteList should render 1`] = `
           </div>
         </div>
       </div>
-      <div>
-        <div
-          class="Avatar__AvatarStyled-yiil9n-0 fympLW"
-          data-testid="Avatar"
-        />
-      </div>
+      <div
+        class="Avatar__AvatarStyled-yiil9n-0 fympLW"
+        data-testid="Avatar"
+      />
     </div>
     <div
       class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
@@ -74,12 +74,10 @@ exports[`VoteList should render 1`] = `
           </div>
         </div>
       </div>
-      <div>
-        <div
-          class="Avatar__AvatarStyled-yiil9n-0 fympLW"
-          data-testid="Avatar"
-        />
-      </div>
+      <div
+        class="Avatar__AvatarStyled-yiil9n-0 fympLW"
+        data-testid="Avatar"
+      />
     </div>
     <div
       class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
@@ -113,12 +111,10 @@ exports[`VoteList should render 1`] = `
           </div>
         </div>
       </div>
-      <div>
-        <div
-          class="Avatar__AvatarStyled-yiil9n-0 fympLW"
-          data-testid="Avatar"
-        />
-      </div>
+      <div
+        class="Avatar__AvatarStyled-yiil9n-0 fympLW"
+        data-testid="Avatar"
+      />
     </div>
   </div>
 </DocumentFragment>
@@ -126,6 +122,8 @@ exports[`VoteList should render 1`] = `
 
 exports[`VoteList should render with empty list 1`] = `
 <DocumentFragment>
-  <div />
+  <div
+    class="-my-5"
+  />
 </DocumentFragment>
 `;
