@@ -367,7 +367,7 @@ export default {
           'ark.devnet': 'devnet'
         }
 
-        if (networkLookup[network.id]) {
+        if (network && networkLookup[network.id]) {
           console.log('Could not refresh peer list. Using fallback seeds: ', error)
 
           let peerDiscoveryFailed = true
