@@ -1,0 +1,220 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`VoteTransactionSend should render 1st step 1`] = `
+<DocumentFragment>
+  <section
+    class="space-y-8"
+    data-testid="VoteTransactionSend__step--first"
+  >
+    <div>
+      <h1
+        class="mb-0"
+      >
+        Vote Transaction
+      </h1>
+      <p
+        class="text-theme-neutral-dark"
+      >
+        Select a fee to continue
+      </p>
+    </div>
+    <div
+      class="grid grid-flow-row gap-2"
+    >
+      <div
+        class="flex items-center py-4 true "
+      >
+        <div
+          class="flex-1"
+        >
+          <div
+            class="text-sm font-semibold text-theme-neutral-500"
+          >
+            Cryptoasset
+          </div>
+          <div
+            class="mt-2 font-semibold"
+          >
+            <div
+              class="flex-auto text-xl font-semibold truncate text-theme-neutral-800 max-w-24"
+            >
+              ARK Ecosystem
+            </div>
+          </div>
+        </div>
+        <div
+          class="ml-1"
+        >
+          <div
+            class="sc-AxjAm bDDbwS bg-theme-background border-theme-danger-200"
+          >
+            <div
+              class="sc-AxiKw dklFyP text-theme-danger-500"
+              height="20"
+              width="20"
+            >
+              <svg>
+                ark.svg
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+      >
+        <div
+          class="flex-1"
+        >
+          <div
+            class="text-sm font-semibold text-theme-neutral-500"
+          >
+             
+          </div>
+          <div
+            class="mt-2 font-semibold"
+          >
+            <div
+              class="mb-2 text-sm font-semibold text-theme-neutral-500"
+            >
+              <span
+                class="mr-1"
+              >
+                Sender
+              </span>
+              <div
+                class="sc-fzpans gVvXXD"
+                color="warning"
+              >
+                Your address
+              </div>
+            </div>
+            <div
+              class="inline-block truncate"
+            >
+              <span
+                class="text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 text-xl"
+                data-testid="address__wallet-name"
+              >
+                ROBank
+              </span>
+              <span
+                class="text-theme-neutral-400 font-semibold text-xl"
+                data-testid="address__wallet-address"
+              >
+                AUexKj...EVTQWK
+              </span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div
+            class="Avatar__AvatarStyled-yiil9n-0 fympLW"
+            data-testid="Avatar"
+          />
+        </div>
+      </div>
+      <div
+        class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+      >
+        <div
+          class="flex-1"
+        >
+          <div
+            class="text-sm font-semibold text-theme-neutral-500"
+          >
+            Transaction Fee
+          </div>
+          <div
+            class="mt-2 font-semibold"
+          >
+            <div
+              class="flex"
+            >
+              <div
+                class="w-3/5 mr-2"
+              >
+                <div
+                  class="sc-Axmtr jzhOwR"
+                >
+                  <input
+                    class="sc-AxhCb clCjoe overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+                    data-testid="InputCurrency"
+                    type="text"
+                    value="25"
+                  />
+                  <div
+                    class="absolute bottom-0 w-full px-1"
+                  >
+                    <div
+                      class="flex flex-wrap justify-center"
+                      data-testid="Range"
+                    >
+                      <div
+                        class="sc-AxmLO fErXAA"
+                        data-testid="Range__track"
+                        style="transform: scale(1); cursor: pointer;"
+                      >
+                        <div
+                          class="sc-fzozJi fxOiEw"
+                          data-testid="Range__track__filled"
+                        >
+                          <div
+                            aria-valuemax="100"
+                            aria-valuemin="1"
+                            aria-valuenow="25"
+                            class="sc-fzoLsD iBGNss"
+                            data-testid="Range__thumb"
+                            draggable="false"
+                            role="slider"
+                            style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
+                            tabindex="0"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="ml-2"
+              >
+                <div
+                  class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300 shadow-sm"
+                  data-testid="SelectionBar"
+                  role="radiogroup"
+                >
+                  <button
+                    aria-checked="true"
+                    class="sc-fzplWN hMcnEd relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                    data-testid="SelectionBarOption"
+                    role="radio"
+                  >
+                    Last
+                  </button>
+                  <button
+                    aria-checked="false"
+                    class="sc-fzplWN hMcnEd relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                    data-testid="SelectionBarOption"
+                    role="radio"
+                  >
+                    Min
+                  </button>
+                  <button
+                    aria-checked="false"
+                    class="sc-fzplWN hMcnEd relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                    data-testid="SelectionBarOption"
+                    role="radio"
+                  >
+                    Average
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</DocumentFragment>
+`;
