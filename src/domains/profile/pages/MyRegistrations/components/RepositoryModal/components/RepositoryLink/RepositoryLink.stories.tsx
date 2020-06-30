@@ -1,4 +1,4 @@
-import {  withKnobs } from "@storybook/addon-knobs";
+import { withKnobs } from "@storybook/addon-knobs";
 import React from "react";
 
 import { RepositoryLink } from "./RepositoryLink";
@@ -8,4 +8,4 @@ export default {
 	decorators: [withKnobs],
 };
 
-export const Default = () => <RepositoryLink repository="Npm" url="http://github.com/robank" />;
+export const Default = () => <RepositoryLink provider="GitLab" url="http://github.com/robank" />;
