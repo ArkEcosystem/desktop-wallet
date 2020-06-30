@@ -1,8 +1,8 @@
 import { Address } from "app/components/Address";
+import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
-import { Avatar } from "domains/wallet/components/Avatar";
 import React from "react";
 import { useTranslation } from "react-i18next";
 

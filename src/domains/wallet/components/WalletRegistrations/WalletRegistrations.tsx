@@ -1,10 +1,9 @@
+import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { Collapse, CollapseToggleButton } from "app/components/Collapse";
 import { Icon } from "app/components/Icon";
 import React from "react";
-
-import { Avatar } from "../Avatar";
 
 const IconList = ({ icons, limit }: { icons: string[]; limit: number }) => {
 	const items = icons.slice(0, limit);
