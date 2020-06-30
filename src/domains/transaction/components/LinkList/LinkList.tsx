@@ -32,7 +32,7 @@ const LinkItem = ({ link }: { link: Link }) => (
 			<div>
 				<div className="text-sm font-semibold text-theme-neutral-500">{link.type}</div>
 
-				<a href={link.link} className="mt-2 font-semibold text-theme-primary-600 hover:text-theme-primary-500">
+				<a href={link.link} className="mt-2 font-semibold link">
 					{link.link}
 				</a>
 			</div>
