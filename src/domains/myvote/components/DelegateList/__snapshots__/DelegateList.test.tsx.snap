@@ -1717,10 +1717,10 @@ exports[`DelegateList should select a delegate 1`] = `
         class="flex"
       >
         <div
-          class="border-theme-neutral-300 px-8 mr-8 font-semibold border-r"
+          class="px-8 mr-8 font-semibold border-r border-theme-neutral-300"
         >
           <div
-            class="text-theme-neutral-500 text-sm"
+            class="text-sm text-theme-neutral-500"
           >
             Quantity
           </div>
@@ -1750,7 +1750,7 @@ exports[`DelegateList should select a delegate 1`] = `
                   class="flex flex-col"
                 >
                   <div
-                    class="text-theme-neutral-700 text-sm"
+                    class="text-sm text-theme-neutral-700"
                   >
                     Address Delegate
                   </div>
@@ -2485,10 +2485,10 @@ exports[`DelegateList should select multiple delegates 1`] = `
         class="flex"
       >
         <div
-          class="border-theme-neutral-300 px-8 mr-8 font-semibold border-r"
+          class="px-8 mr-8 font-semibold border-r border-theme-neutral-300"
         >
           <div
-            class="text-theme-neutral-500 text-sm"
+            class="text-sm text-theme-neutral-500"
           >
             Quantity
           </div>
@@ -2523,14 +2523,14 @@ exports[`DelegateList should select multiple delegates 1`] = `
                     data-testid="Avatar"
                   />
                   <div
-                    class="sc-AxirZ cZokSJ bg-theme-background border-theme-neutral-200 text-theme-primary-700 text-lg font-bold"
+                    class="sc-AxirZ cZokSJ text-lg font-bold bg-theme-background border-theme-neutral-200 text-theme-primary-700"
                     data-testid="DelegateAvatarList__avatar-list__rest"
                   >
                     +1
                   </div>
                 </div>
                 <div
-                  class="text-theme-primary-700 hover:text-theme-primary-500 ml-4 cursor-pointer"
+                  class="ml-4 cursor-pointer text-theme-primary-700 hover:text-theme-primary-500"
                   data-testid="DelegateList__toggle-show-selected"
                 >
                   Hide List
@@ -2549,7 +2549,7 @@ exports[`DelegateList should select multiple delegates 1`] = `
             class="mt-2"
           >
             <div
-              class="border-theme-neutral-200 last:border-0 flex items-center py-4 font-semibold border-b border-dashed"
+              class="flex items-center py-4 font-semibold border-b border-dashed border-theme-neutral-200 last:border-0"
             >
               <div
                 class="flex flex-1"
@@ -2572,7 +2572,7 @@ exports[`DelegateList should select multiple delegates 1`] = `
               #1
             </div>
             <div
-              class="border-theme-neutral-200 last:border-0 flex items-center py-4 font-semibold border-b border-dashed"
+              class="flex items-center py-4 font-semibold border-b border-dashed border-theme-neutral-200 last:border-0"
             >
               <div
                 class="flex flex-1"
@@ -2595,7 +2595,7 @@ exports[`DelegateList should select multiple delegates 1`] = `
               #2
             </div>
             <div
-              class="border-theme-neutral-200 last:border-0 flex items-center py-4 font-semibold border-b border-dashed"
+              class="flex items-center py-4 font-semibold border-b border-dashed border-theme-neutral-200 last:border-0"
             >
               <div
                 class="flex flex-1"

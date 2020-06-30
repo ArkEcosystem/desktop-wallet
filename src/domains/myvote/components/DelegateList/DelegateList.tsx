@@ -18,7 +18,7 @@ const SelectedDelegateList = ({ delegates, className }: { delegates: any[]; clas
 		output.push(
 			<div
 				key={delegate.username}
-				className="border-theme-neutral-200 last:border-0 flex items-center py-4 font-semibold border-b border-dashed"
+				className="flex items-center py-4 font-semibold border-b border-dashed border-theme-neutral-200 last:border-0"
 			>
 				<div className="flex flex-1">
 					<Avatar address={delegate.address} className="mr-8" />
@@ -46,7 +46,7 @@ const DelegateAvatarList = ({ delegates, limit }: { delegates: any[]; limit: num
 				<Circle
 					data-testid="DelegateAvatarList__avatar-list__rest"
 					size="large"
-					className="bg-theme-background border-theme-neutral-200 text-theme-primary-700 text-lg font-bold"
+					className="text-lg font-bold bg-theme-background border-theme-neutral-200 text-theme-primary-700"
 				>
 					+{rest}
 				</Circle>
@@ -128,8 +128,8 @@ export const DelegateList = (props: DelegateListProps) => {
 					data-testid="DelegateList__footer"
 				>
 					<div className="flex">
-						<div className="border-theme-neutral-300 px-8 mr-8 font-semibold border-r">
-							<div className="text-theme-neutral-500 text-sm">{t("COMMON.QUANTITY")}</div>
+						<div className="px-8 mr-8 font-semibold border-r border-theme-neutral-300">
+							<div className="text-sm text-theme-neutral-500">{t("COMMON.QUANTITY")}</div>
 							<div className="text-theme-neutral-700">{selected.length}/50</div>
 						</div>
 
@@ -141,7 +141,7 @@ export const DelegateList = (props: DelegateListProps) => {
 											<div className="inline-flex">
 												<Avatar address={selected[0].address} className="mr-4" />
 												<div className="flex flex-col">
-													<div className="text-theme-neutral-700 text-sm">
+													<div className="text-sm text-theme-neutral-700">
 														Address Delegate
 													</div>
 													<div className="text-theme-neutral-500">
@@ -155,7 +155,7 @@ export const DelegateList = (props: DelegateListProps) => {
 											<DelegateAvatarList delegates={selected} limit={2} />
 											<div
 												data-testid="DelegateList__toggle-show-selected"
-												className="text-theme-primary-700 hover:text-theme-primary-500 ml-4 cursor-pointer"
+												className="ml-4 cursor-pointer text-theme-primary-700 hover:text-theme-primary-500"
 												onClick={() => setShowSelectedList(!showSelectedList)}
 											>
 												{showSelectedList ? "Hide" : "Show"} List
