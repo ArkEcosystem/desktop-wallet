@@ -1,10 +1,15 @@
 import { Breadcrumbs } from "app/components/Breadcrumbs";
 import { Header } from "app/components/Header";
 import { HeaderSearchBar } from "app/components/Header/HeaderSearchBar";
+import { SelectAsset } from "app/components/SelectAsset";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-export const Votes = () => {
+type VotesProps = {
+	assets?: any[];
+};
+
+export const Votes = ({ assets }: VotesProps) => {
 	const { t } = useTranslation();
 	const crumbs = [
 		{
@@ -29,7 +34,15 @@ export const Votes = () => {
 						}
 					/>
 				</div>
+
+				<div className="p-10">
+					<SelectAsset assets={assets} name="cryptoasset" placeholder="Select cryptoasset" />
+				</div>
 			</div>
 		</div>
 	);
+};
+
+Votes.defaultProps = {
+	assets: [],
 };
