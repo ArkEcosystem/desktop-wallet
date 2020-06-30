@@ -38,13 +38,13 @@ const DelegateAvatarList = ({ delegates, limit }: { delegates: any[]; limit: num
 	const rest = Math.max(0, delegates.length - limit);
 
 	return (
-		<div data-testid="WalletRegistrations__icon-list" className="flex items-center -space-x-2">
-			{items.map((item) => (
-				<Avatar data-testid="WalletRegistrations__icon-list__icon" key={item} address={item.address} />
+		<div data-testid="DelegateAvatarList__avatar-list" className="flex items-center -space-x-2">
+			{items.map((item, index) => (
+				<Avatar data-testid="DelegateAvatarList__avatar-list__avatar" key={index} address={item.address} />
 			))}
 			{rest > 0 && (
 				<Circle
-					data-testid="WalletRegistrations__icon-list__rest"
+					data-testid="DelegateAvatarList__avatar-list__rest"
 					size="large"
 					className="text-lg font-bold bg-theme-background border-theme-neutral-200 text-theme-primary-700"
 				>
@@ -125,7 +125,7 @@ export const DelegateList = (props: DelegateListProps) => {
 			{selected.length ? (
 				<div
 					className="absolute bottom-0 left-0 right-0 pt-8 pb-10 pl-4 pr-12 bg-white shadow-2xl"
-					data-testid="SelectedDelegateModal__footer"
+					data-testid="DelegateList__footer"
 				>
 					<div className="flex">
 						<div className="px-8 mr-8 font-semibold border-r border-theme-neutral-300">
@@ -154,7 +154,7 @@ export const DelegateList = (props: DelegateListProps) => {
 										<div className="inline-flex items-center">
 											<DelegateAvatarList delegates={selected} limit={2} />
 											<div
-												data-testid="SelectedDelegateModal__toggle-show-selected"
+												data-testid="DelegateList__toggle-show-selected"
 												className="ml-4 cursor-pointer text-theme-primary-700 hover:text-theme-primary-500"
 												onClick={() => setShowSelectedList(!showSelectedList)}
 											>

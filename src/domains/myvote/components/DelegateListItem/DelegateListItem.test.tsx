@@ -44,14 +44,35 @@ describe("DelegateListItem", () => {
 				</tbody>
 			</table>,
 		);
-		const selectButton = getByTestId("DelegateListItem__button--select");
+		const selectButton = getByTestId("DelegateListItem__button--toggle");
 
 		act(() => {
 			fireEvent.click(selectButton);
 		});
 
 		expect(container).toBeTruthy();
-		expect(onSelect).toHaveBeenCalledWith(data.delegateAddress);
+		expect(onSelect).toHaveBeenCalledWith({
+			address: data.delegateAddress,
+			username: data.delegateName,
+			rank: data.rank,
+		});
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should render the selected delegate", () => {
+		const selected = [{ address: "ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT", username: "Delegate 1", rank: 1 }];
+		const { container, asFragment, getByTestId } = render(
+			<table>
+				<tbody>
+					<I18nextProvider i18n={i18n}>
+						<DelegateListItem {...data} selected={selected} />
+					</I18nextProvider>
+				</tbody>
+			</table>,
+		);
+
+		expect(container).toBeTruthy();
+		expect(getByTestId("DelegateListItem__button--toggle")).toHaveTextContent("Unselect");
 		expect(asFragment()).toMatchSnapshot();
 	});
 });

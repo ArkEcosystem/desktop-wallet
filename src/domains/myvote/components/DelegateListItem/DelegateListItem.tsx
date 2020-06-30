@@ -74,7 +74,7 @@ export const DelegateListItem = ({
 						variant="plain"
 						color={isSelected ? "danger" : "primary"}
 						onClick={() => onSelect?.({ address: delegateAddress!, username: delegateName!, rank: rank! })}
-						data-testid="DelegateListItem__button--select"
+						data-testid="DelegateListItem__button--toggle"
 					>
 						{isSelected ? t("COMMON.UNSELECT") : t("COMMON.SELECT")}
 					</Button>
