@@ -8,4 +8,29 @@ export default {
 	decorators: [withKnobs],
 };
 
-export const Default = () => <RepositoryModal isOpen={boolean("Is Open", true)} handleClose={() => alert("closed")} />;
+const repositories = [
+	{
+		provider: "GitHub",
+		url: "http://gitlab.com/robank",
+	},
+	{
+		provider: "GitLab",
+		url: "http://gitlab.com/robank",
+	},
+	{
+		provider: "BitBucket",
+		url: "http://bitbucket.com/robank",
+	},
+	{
+		provider: "Npm",
+		url: "http://npmjs.com/robank",
+	},
+];
+
+export const Default = () => (
+	<RepositoryModal
+		isOpen={boolean("Is Open", true)}
+		handleClose={() => alert("closed")}
+		repositories={repositories}
+	/>
+);
