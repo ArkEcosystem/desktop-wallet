@@ -225,22 +225,22 @@
 		},
 		"mac": {
 			"category": "public.app-category.finance",
-			"icon": "src/resources/assets/icons/icon.icns",
+			"icon": "src/app/assets/icons/icon.icns",
 			"hardenedRuntime": true,
 			"gatekeeperAssess": false,
 			"asarUnpack": [
 				"**/*.node"
 			],
-			"entitlements": "entitlements.mac.plist",
-			"entitlementsInherit": "entitlements.mac.plist"
+			"entitlements": "./entitlements.mac.plist",
+			"entitlementsInherit": "./entitlements.mac.plist"
 		},
 		"win": {
 			"target": "nsis",
-			"icon": "src/resources/assets/icons/icon.ico"
+			"icon": "src/app/assets/icons/icon.ico"
 		},
 		"linux": {
 			"category": "Utility",
-			"icon": "src/resources/assets/icons",
+			"icon": "src/app/assets/icons",
 			"target": [
 				"AppImage",
 				"deb",
@@ -263,7 +263,7 @@
 			]
 		},
 		"dmg": {
-			"icon": "src/resources/assets/icons/icon.icns"
+			"icon": "src/app/assets/icons/icon.icns"
 		},
 		"nsis": {
 			"perMachine": true,
@@ -276,7 +276,6 @@
 		"collectCoverageFrom": [
 			"src/**/*.{js,jsx,ts,tsx}",
 			"!src/**/*.stories.{js,jsx,ts,tsx}",
-			"!src/resources/**/*",
 			"!src/electron/**/*",
 			"!src/i18n/**/*",
 			"!src/tailwind.config.js",
