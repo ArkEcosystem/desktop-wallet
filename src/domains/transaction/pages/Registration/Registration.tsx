@@ -273,7 +273,7 @@ const ThirdStep = () => {
 					extra={
 						<div>
 							<Circle className="border-black bg-theme-background" size="large">
-								<Icon name="Business" width={32} height={32} />
+								<Icon name="Business" width={20} height={20} />
 							</Circle>
 						</div>
 					}
