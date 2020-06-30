@@ -29,7 +29,7 @@ describe("LinkList", () => {
 		);
 
 		expect(getByTestId("LinkList")).toBeTruthy();
-		expect(asFragment).toMatchSnapshot();
+		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should toggle open/close of link collection", () => {
@@ -47,6 +47,6 @@ describe("LinkList", () => {
 
 		expect(getByTestId("LinkList")).not.toHaveTextContent("http://github.com/robank");
 
-		expect(asFragment).toMatchSnapshot();
+		expect(asFragment()).toMatchSnapshot();
 	});
 });

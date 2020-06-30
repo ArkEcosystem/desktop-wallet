@@ -35,7 +35,7 @@ describe("ContactForm", () => {
 		const options = getAllByTestId("contact-form__network-option");
 
 		expect((options[0] as HTMLOptionElement).selected).toBeTruthy();
-		expect(asFragment).toMatchSnapshot();
+		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should add an address", async () => {

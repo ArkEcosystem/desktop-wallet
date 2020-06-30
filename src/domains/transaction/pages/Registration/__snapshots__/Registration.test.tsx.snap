@@ -1,17 +1,2819 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Registration should render 1st step 1`] = `[Function]`;
+exports[`Registration should render 1st step 1`] = `
+<DocumentFragment>
+  <div
+    class="max-w-xl mx-auto"
+    data-testid="Registration"
+  >
+    <form
+      class="space-y-6"
+      data-testid="Form"
+    >
+      <div>
+        <ul
+          class="StepIndicator___StyledUl-sc-15t41is-1 dhAbBb"
+        >
+          <li
+            class="StepIndicator__StepStyled-sc-15t41is-0 crUtTP"
+          />
+          <li
+            class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
+          />
+          <li
+            class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
+          />
+          <li
+            class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
+          />
+          <li
+            class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
+          />
+          <li
+            class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
+          />
+          <li
+            class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
+          />
+        </ul>
+        <div
+          class="mt-4"
+        >
+          <div
+            data-testid="tab-pabel__active-panel"
+          >
+            <div
+              data-testid="Registration__first-step"
+            >
+              <h1>
+                Registration
+              </h1>
+              <div
+                class="text-theme-neutral-700"
+              >
+                Select the type of registration and the address you want to register with.
+              </div>
+              <div
+                class="sc-fzoLag TJgFv mt-5"
+              >
+                <div
+                  aria-expanded="false"
+                  aria-haspopup="listbox"
+                  aria-labelledby="downshift-0-label"
+                  class="relative"
+                  role="combobox"
+                >
+                  <label
+                    for="downshift-0-input"
+                    id="downshift-0-label"
+                  />
+                  <div
+                    class="relative flex items-center w-full flex-inline"
+                  >
+                    <div
+                      class="flex w-full border rounded shadow-sm bg-theme-background border-theme-neutral-300 transition-colors duration-200 hover:outline-none hover:border-theme-primary"
+                    >
+                      <div
+                        class="px-4 py-2 flex-0 w-14"
+                      >
+                        <div
+                          class="sc-AxirZ HSPq border-theme-neutral-200"
+                        />
+                      </div>
+                      <div
+                        class="relative flex-1 p-1 font-semibold text-theme-neutral-800"
+                      >
+                        <div
+                          class="relative z-10 w-full"
+                          data-testid="select-network__typeahead-"
+                        >
+                          <div
+                            class="absolute left-0 font-semibold top-2 text-theme-neutral-400"
+                          />
+                        </div>
+                        <input
+                          aria-autocomplete="list"
+                          aria-labelledby="downshift-0-label"
+                          autocomplete="off"
+                          class="relative z-20 w-full h-full font-semibold bg-transparent outline-none"
+                          data-testid="select-asset__input"
+                          id="downshift-0-input"
+                          placeholder="Enter a network name"
+                          value=""
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    aria-labelledby="downshift-0-label"
+                    class="pt-6"
+                    data-testid="select-asset__items"
+                    id="downshift-0-menu"
+                    role="listbox"
+                  >
+                    <div
+                      aria-selected="false"
+                      class="inline-block mr-4 cursor-pointer"
+                      id="downshift-0-item-0"
+                      role="option"
+                      title="Ark Ecosystem"
+                    >
+                      <div
+                        class="sc-AxirZ cZokSJ text-theme-danger-400 border-theme-danger-200"
+                      >
+                        <div
+                          class="sc-AxhCb eHGcDb"
+                          height="18"
+                          width="18"
+                        >
+                          <svg>
+                            ark.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      aria-selected="false"
+                      class="inline-block mr-4 cursor-pointer"
+                      id="downshift-0-item-1"
+                      role="option"
+                      title="Bitcoin"
+                    >
+                      <div
+                        class="sc-AxirZ cZokSJ text-theme-warning-400 border-theme-warning-200"
+                      >
+                        <div
+                          class="sc-AxhCb eHGcDb"
+                          height="18"
+                          width="18"
+                        >
+                          <svg>
+                            btc.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      aria-selected="false"
+                      class="inline-block mr-4 cursor-pointer"
+                      id="downshift-0-item-2"
+                      role="option"
+                      title="Ethereum"
+                    >
+                      <div
+                        class="sc-AxirZ cZokSJ text-theme-neutral-800 border-theme-neutral-600"
+                      >
+                        <div
+                          class="sc-AxhCb eHGcDb"
+                          height="18"
+                          width="18"
+                        >
+                          <svg>
+                            eth.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <fieldset
+                  class="sc-AxiKw iQzisX relative h-20 mt-8"
+                >
+                  <div
+                    class="mb-2"
+                  >
+                    <label
+                      class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                      data-testid="FormLabel"
+                      for="address"
+                      label="Address"
+                    >
+                      Address
+                    </label>
+                  </div>
+                  <div
+                    class="sc-AxmLO kuiknc ProfileFormField__select-contact select-transparent"
+                  >
+                    <div
+                      class="sc-AxmLO kuiknc"
+                    >
+                      <select
+                        class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
+                        data-testid="ProfileFormField__select-address"
+                        name="address"
+                      >
+                        <option
+                          disabled=""
+                          selected=""
+                          value=""
+                        >
+                           
+                        </option>
+                        <option
+                          data-testid="ProfileFormField__profile-select"
+                          value="FJKDSALJFKASLJFKSDAJFKFKDSAJFKSAJFKLASJKDFJ"
+                        >
+                          My Wallet FJKDSALJFKASL...SAJFKLASJKDFJ
+                        </option>
+                      </select>
+                      <div
+                        class="sc-AxgMl sc-Axmtr cPxyjO w-12 text-lg pointer-events-none text-theme-neutral-dark"
+                      >
+                        <div
+                          class="sc-AxhCb fxrKLH"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            chevron-down.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="absolute ml-4 -mt-10"
+                  >
+                    <div
+                      class="sc-AxirZ HSPq mt-px bg-theme-neutral-200 border-theme-neutral-200"
+                    />
+                  </div>
+                </fieldset>
+                <fieldset
+                  class="sc-AxiKw iQzisX relative h-20 mt-8"
+                  data-testid="Registration__type"
+                >
+                  <div
+                    class="mb-2"
+                  >
+                    <label
+                      class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                      data-testid="FormLabel"
+                      for="registrationType"
+                      label="Registration Type"
+                    >
+                      Registration Type
+                    </label>
+                  </div>
+                  <div>
+                    <div
+                      class="sc-AxmLO kuiknc"
+                    >
+                      <select
+                        class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
+                        data-testid="Registration__type-select"
+                        name="registrationType"
+                      >
+                        <option
+                          disabled=""
+                          selected=""
+                          value=""
+                        >
+                           
+                        </option>
+                        <option
+                          data-testid="Registration__type-option"
+                          value="business"
+                        >
+                          Business
+                        </option>
+                      </select>
+                      <div
+                        class="sc-AxgMl sc-Axmtr cPxyjO w-12 text-lg pointer-events-none text-theme-neutral-dark"
+                      >
+                        <div
+                          class="sc-AxhCb fxrKLH"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            chevron-down.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+            </div>
+          </div>
+          <div
+            class="flex justify-end mt-8 space-x-3"
+          >
+            <button
+              class="sc-AxjAm ddJBbC"
+              color="primary"
+              data-testid="Registration__back-button"
+              disabled=""
+              type="button"
+            >
+              Back
+            </button>
+            <button
+              class="sc-AxjAm ddQVWI"
+              color="primary"
+              data-testid="Registration__continue-button"
+              type="button"
+            >
+              Continue
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</DocumentFragment>
+`;
 
-exports[`Registration should render 2nd step 1`] = `[Function]`;
+exports[`Registration should render 2nd step 1`] = `
+<DocumentFragment>
+  <div
+    class="max-w-xl mx-auto"
+    data-testid="Registration"
+  >
+    <form
+      class="space-y-6"
+      data-testid="Form"
+    >
+      <div>
+        <ul
+          class="StepIndicator___StyledUl-sc-15t41is-1 dhAbBb"
+        >
+          <li
+            class="StepIndicator__StepStyled-sc-15t41is-0 crUtTP"
+          />
+          <li
+            class="StepIndicator__StepStyled-sc-15t41is-0 crUtTP"
+          />
+          <li
+            class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
+          />
+          <li
+            class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
+          />
+          <li
+            class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
+          />
+          <li
+            class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
+          />
+          <li
+            class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
+          />
+        </ul>
+        <div
+          class="mt-4"
+        >
+          <div
+            data-testid="tab-pabel__active-panel"
+          >
+            <div
+              data-testid="Registration__second-step"
+            >
+              <h1>
+                Register Business
+              </h1>
+              <div
+                class="text-theme-neutral-700"
+              >
+                Select the type of registration and the address you want to register with.
+              </div>
+              <div>
+                <div
+                  class="flex items-center py-4 true mb-8"
+                >
+                  <div
+                    class="flex-1"
+                  >
+                    <div
+                      class="mt-2 font-semibold"
+                    >
+                      <fieldset
+                        class="sc-AxiKw iQzisX flex flex-col space-y-2"
+                      >
+                        <label
+                          class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                          data-testid="FormLabel"
+                          for="name"
+                          required=""
+                        >
+                          Name
+                          <div
+                            class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                            data-testid="FormLabel__required"
+                          />
+                        </label>
+                        <input
+                          class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+                          data-testid="Input"
+                          name="name"
+                          type="text"
+                        />
+                      </fieldset>
+                      <fieldset
+                        class="sc-AxiKw iQzisX mt-8"
+                      >
+                        <label
+                          class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                          data-testid="FormLabel"
+                          for="description"
+                          required=""
+                        >
+                          Description
+                          <div
+                            class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                            data-testid="FormLabel__required"
+                          />
+                        </label>
+                        <textarea
+                          class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+                          data-testid="TextArea"
+                          name="description"
+                        />
+                      </fieldset>
+                      <fieldset
+                        class="sc-AxiKw iQzisX mt-8"
+                      >
+                        <label
+                          class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                          data-testid="FormLabel"
+                          for="website"
+                        >
+                          Website
+                        </label>
+                        <input
+                          class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+                          data-testid="Input"
+                          name="website"
+                          type="website"
+                        />
+                      </fieldset>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 mb-2"
+                >
+                  <div
+                    class="flex-1"
+                  >
+                    <div
+                      class="mt-2 font-semibold"
+                    >
+                      <div
+                        class="font-normal"
+                        data-testid="LinkCollection"
+                      >
+                        <div
+                          class="flex justify-between cursor-pointer"
+                          data-testid="LinkCollection__header"
+                        >
+                          <div>
+                            <span
+                              class="font-semibold"
+                            >
+                              Repository
+                            </span>
+                            <div
+                              class="mt-2 text-theme-neutral-700"
+                            >
+                              Show your projects through your repository
+                            </div>
+                          </div>
+                          <div>
+                            <div
+                              class="sc-AxhCb eHGcDb flex items-center justify-center w-5 h-5 rounded-full text-theme-primary-600 bg-theme-primary-100"
+                              height="18"
+                              width="18"
+                            >
+                              <svg>
+                                chevron-down.svg
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 mb-2"
+                >
+                  <div
+                    class="flex-1"
+                  >
+                    <div
+                      class="mt-2 font-semibold"
+                    >
+                      <div
+                        class="font-normal"
+                        data-testid="LinkCollection"
+                      >
+                        <div
+                          class="flex justify-between cursor-pointer"
+                          data-testid="LinkCollection__header"
+                        >
+                          <div>
+                            <span
+                              class="font-semibold"
+                            >
+                              Social Media
+                            </span>
+                            <div
+                              class="mt-2 text-theme-neutral-700"
+                            >
+                              Tell people more about yourself through social media
+                            </div>
+                          </div>
+                          <div>
+                            <div
+                              class="sc-AxhCb eHGcDb flex items-center justify-center w-5 h-5 rounded-full text-theme-primary-600 bg-theme-primary-100"
+                              height="18"
+                              width="18"
+                            >
+                              <svg>
+                                chevron-down.svg
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 mb-2"
+                >
+                  <div
+                    class="flex-1"
+                  >
+                    <div
+                      class="mt-2 font-semibold"
+                    >
+                      <div
+                        class="font-normal"
+                        data-testid="LinkCollection"
+                      >
+                        <div
+                          class="flex justify-between cursor-pointer"
+                          data-testid="LinkCollection__header"
+                        >
+                          <div>
+                            <span
+                              class="font-semibold"
+                            >
+                              Photo and Video
+                            </span>
+                            <div
+                              class="mt-2 text-theme-neutral-700"
+                            >
+                              Get more users and add more information about yourself
+                            </div>
+                          </div>
+                          <div>
+                            <div
+                              class="sc-AxhCb eHGcDb flex items-center justify-center w-5 h-5 rounded-full text-theme-primary-600 bg-theme-primary-100"
+                              height="18"
+                              width="18"
+                            >
+                              <svg>
+                                chevron-down.svg
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 mt-4"
+                >
+                  <div
+                    class="flex-1"
+                  >
+                    <div
+                      class="text-sm font-semibold text-theme-neutral-500"
+                    >
+                      Fee ARK
+                    </div>
+                    <div
+                      class="mt-2 font-semibold"
+                    >
+                      <div
+                        class="flex space-x-2"
+                      >
+                        <div
+                          class="flex-1"
+                        >
+                          <div
+                            class="sc-AxmLO kuiknc"
+                          >
+                            <input
+                              class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+                              data-testid="InputCurrency"
+                              type="text"
+                              value="25"
+                            />
+                            <div
+                              class="absolute bottom-0 w-full px-1"
+                            >
+                              <div
+                                class="flex flex-wrap justify-center"
+                                data-testid="Range"
+                              >
+                                <div
+                                  class="sc-fzozJi cRbOfl"
+                                  data-testid="Range__track"
+                                  style="transform: scale(1); cursor: pointer;"
+                                >
+                                  <div
+                                    class="sc-fzoLsD ckpTMK"
+                                    data-testid="Range__track__filled"
+                                  >
+                                    <div
+                                      aria-valuemax="100"
+                                      aria-valuemin="1"
+                                      aria-valuenow="25"
+                                      class="sc-fzpans dtzHyc"
+                                      data-testid="Range__thumb"
+                                      draggable="false"
+                                      role="slider"
+                                      style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
+                                      tabindex="0"
+                                    />
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div>
+                          <div
+                            class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300 shadow-sm"
+                            data-testid="SelectionBar"
+                            role="radiogroup"
+                          >
+                            <button
+                              aria-checked="true"
+                              class="sc-fznyAO hWIpjZ relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                              data-testid="SelectionBarOption"
+                              role="radio"
+                            >
+                              Last
+                            </button>
+                            <button
+                              aria-checked="false"
+                              class="sc-fznyAO hWIpjZ relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                              data-testid="SelectionBarOption"
+                              role="radio"
+                            >
+                              Min
+                            </button>
+                            <button
+                              aria-checked="false"
+                              class="sc-fznyAO hWIpjZ relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                              data-testid="SelectionBarOption"
+                              role="radio"
+                            >
+                              Average
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="flex justify-end mt-8 space-x-3"
+          >
+            <button
+              class="sc-AxjAm ddJBbC"
+              color="primary"
+              data-testid="Registration__back-button"
+              type="button"
+            >
+              Back
+            </button>
+            <button
+              class="sc-AxjAm ddQVWI"
+              color="primary"
+              data-testid="Registration__continue-button"
+              type="button"
+            >
+              Continue
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</DocumentFragment>
+`;
 
-exports[`Registration should render 3rd step 1`] = `[Function]`;
+exports[`Registration should render 3rd step 1`] = `
+<DocumentFragment>
+  <div
+    class="max-w-xl mx-auto"
+    data-testid="Registration"
+  >
+    <form
+      class="space-y-6"
+      data-testid="Form"
+    >
+      <div>
+        <ul
+          class="StepIndicator___StyledUl-sc-15t41is-1 dhAbBb"
+        >
+          <li
+            class="StepIndicator__StepStyled-sc-15t41is-0 crUtTP"
+          />
+          <li
+            class="StepIndicator__StepStyled-sc-15t41is-0 crUtTP"
+          />
+          <li
+            class="StepIndicator__StepStyled-sc-15t41is-0 crUtTP"
+          />
+          <li
+            class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
+          />
+          <li
+            class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
+          />
+          <li
+            class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
+          />
+          <li
+            class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
+          />
+        </ul>
+        <div
+          class="mt-4"
+        >
+          <div
+            data-testid="tab-pabel__active-panel"
+          >
+            <div
+              class="space-y-8"
+              data-testid="Registration__third-step"
+            >
+              <div>
+                <h1
+                  class="mb-0"
+                >
+                  Transaction Review
+                </h1>
+                <p
+                  class="text-theme-neutral-dark"
+                >
+                  Check the information again before voting
+                </p>
+              </div>
+              <div
+                class="grid grid-flow-row gap-2"
+              >
+                <div
+                  class="flex items-center py-4 true "
+                >
+                  <div
+                    class="flex-1"
+                  >
+                    <div
+                      class="text-sm font-semibold text-theme-neutral-500"
+                    >
+                      Network
+                    </div>
+                    <div
+                      class="mt-2 font-semibold"
+                    >
+                      <div
+                        class="flex-auto text-xl font-semibold truncate text-theme-neutral-800 max-w-24"
+                      >
+                        ARK Ecosystem
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="ml-1 text-theme-danger-500"
+                  >
+                    <div
+                      class="sc-AxirZ cZokSJ bg-theme-background border-theme-danger-200"
+                    >
+                      <div
+                        class="sc-AxhCb VoPpj"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          ark.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+                >
+                  <div
+                    class="flex-1"
+                  >
+                    <div
+                      class="text-sm font-semibold text-theme-neutral-500"
+                    >
+                       
+                    </div>
+                    <div
+                      class="mt-2 font-semibold"
+                    >
+                      <div
+                        class="mb-2 text-sm font-semibold text-theme-neutral-500"
+                      >
+                        <span
+                          class="mr-1"
+                        >
+                          Sender
+                        </span>
+                        <div
+                          class="sc-fzplWN gpwIyi"
+                          color="warning"
+                        >
+                          Your address
+                        </div>
+                      </div>
+                      <div
+                        class="inline-block truncate"
+                      >
+                        <span
+                          class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-xl"
+                          data-testid="address__wallet-name"
+                        >
+                          ROBank
+                        </span>
+                        <span
+                          class="text-theme-neutral-400 font-semibold text-xl"
+                          data-testid="address__wallet-address"
+                        >
+                          AUexKj...EVTQWK
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <div
+                      class="sc-AxirZ hTKBId"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+                >
+                  <div
+                    class="flex-1"
+                  >
+                    <div
+                      class="text-sm font-semibold text-theme-neutral-500"
+                    >
+                      Type
+                    </div>
+                    <div
+                      class="mt-2 font-semibold"
+                    >
+                      Business Registration
+                    </div>
+                  </div>
+                  <div>
+                    <div
+                      class="sc-AxirZ cZokSJ border-black bg-theme-background"
+                    >
+                      <div
+                        class="sc-AxhCb VoPpj"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          business.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+                >
+                  <div
+                    class="flex-1"
+                  >
+                    <div
+                      class="text-sm font-semibold text-theme-neutral-500"
+                    >
+                      Name
+                    </div>
+                    <div
+                      class="mt-2 font-semibold"
+                    >
+                      ROBank Eco
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+                >
+                  <div
+                    class="flex-1"
+                  >
+                    <div
+                      class="text-sm font-semibold text-theme-neutral-500"
+                    >
+                      Description
+                    </div>
+                    <div
+                      class="mt-2 font-semibold"
+                    >
+                      Not a trustworthy bank
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+                >
+                  <div
+                    class="flex-1"
+                  >
+                    <div
+                      class="text-sm font-semibold text-theme-neutral-500"
+                    >
+                      Website
+                    </div>
+                    <div
+                      class="mt-2 font-semibold"
+                    >
+                      <a
+                        class="link"
+                        href="http://robank.com"
+                        rel="noreferrer"
+                        target="_blank"
+                      >
+                        http://robank.com
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 mb-2"
+                >
+                  <div
+                    class="flex-1"
+                  >
+                    <div
+                      class="mt-2 font-semibold"
+                    >
+                      <div
+                        data-testid="LinkList"
+                      >
+                        <div
+                          class="flex justify-between cursor-pointer"
+                          data-testid="LinkList__header"
+                        >
+                          <div>
+                            <span
+                              class="font-semibold"
+                            >
+                              Repository
+                            </span>
+                            <div
+                              class="mt-2 text-theme-neutral-700"
+                            >
+                              Show your projects through the repository
+                            </div>
+                          </div>
+                          <div>
+                            <div
+                              class="sc-AxhCb eHGcDb flex items-center justify-center w-5 h-5 rounded-full bg-theme-primary-100 text-theme-primary-600"
+                              height="18"
+                              width="18"
+                            >
+                              <svg>
+                                chevron-down.svg
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="my-4"
+                >
+                  <div
+                    class="border rounded-lg border-theme-neutral-300"
+                  >
+                    <div
+                      class="relative p-3"
+                    >
+                      <div
+                        class="grid grid-cols-2 divide-x divide-gray-400"
+                      >
+                        <div
+                          class="flex flex-col justify-center px-6 py-5"
+                        >
+                          <span
+                            class="text-sm text-theme-neutral-500"
+                          >
+                            Transaction(s) Amount
+                          </span>
+                          <span
+                            class="mt-3"
+                            data-testid="total-amount-box__transaction-amount"
+                          >
+                            0.00 ARK
+                          </span>
+                        </div>
+                        <div
+                          class="flex flex-col justify-center px-6 py-5 text-right"
+                        >
+                          <span
+                            class="text-sm text-theme-neutral-500"
+                          >
+                            Transaction fee
+                          </span>
+                          <span
+                            class="mt-3 mr-2"
+                            data-testid="total-amount-box__transaction-fee"
+                          >
+                            0.09660435 ARK
+                          </span>
+                        </div>
+                      </div>
+                      <div
+                        class="absolute top-0 bottom-0 left-0 right-0 flex items-center justify-center h-full text-center"
+                      >
+                        <div
+                          class="px-1 py-2 bg-white"
+                        >
+                          <div
+                            class="sc-AxhCb cMyoID"
+                            height="15"
+                            width="15"
+                          >
+                            <svg>
+                              plus.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="flex flex-col items-center border-t rounded-b-lg border-theme-neutral-300 justfiy-center py-7 bg-theme-neutral-100"
+                    >
+                      <span
+                        class="text-sm text-theme-neutral-500"
+                      >
+                        Total Amount
+                      </span>
+                      <span
+                        class="text-2xl font-bold"
+                        data-testid="total-amount-box__total"
+                      >
+                        0.09660435 ARK
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="flex justify-end mt-8 space-x-3"
+          >
+            <button
+              class="sc-AxjAm ddJBbC"
+              color="primary"
+              data-testid="Registration__back-button"
+              type="button"
+            >
+              Back
+            </button>
+            <button
+              class="sc-AxjAm ddQVWI"
+              color="primary"
+              data-testid="Registration__continue-button"
+              type="button"
+            >
+              Continue
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</DocumentFragment>
+`;
 
-exports[`Registration should render 4th step 1`] = `[Function]`;
+exports[`Registration should render 4th step 1`] = `
+<DocumentFragment>
+  <div
+    class="max-w-xl mx-auto"
+    data-testid="Registration"
+  >
+    <form
+      class="space-y-6"
+      data-testid="Form"
+    >
+      <div>
+        <ul
+          class="StepIndicator___StyledUl-sc-15t41is-1 dhAbBb"
+        >
+          <li
+            class="StepIndicator__StepStyled-sc-15t41is-0 crUtTP"
+          />
+          <li
+            class="StepIndicator__StepStyled-sc-15t41is-0 crUtTP"
+          />
+          <li
+            class="StepIndicator__StepStyled-sc-15t41is-0 crUtTP"
+          />
+          <li
+            class="StepIndicator__StepStyled-sc-15t41is-0 crUtTP"
+          />
+          <li
+            class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
+          />
+          <li
+            class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
+          />
+          <li
+            class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
+          />
+        </ul>
+        <div
+          class="mt-4"
+        >
+          <div
+            data-testid="tab-pabel__active-panel"
+          >
+            <div
+              data-testid="Registration__fourth-step"
+            >
+              <div>
+                <h1>
+                  Authenticate
+                </h1>
+                <div
+                  class="text-sm text-theme-neutral-700"
+                >
+                  Enter your twelve word mnemonic to authenticate the transaction.
+                </div>
+                <div
+                  class="mt-5"
+                >
+                  <fieldset
+                    class="sc-AxiKw iQzisX flex flex-col space-y-2"
+                  >
+                    <label
+                      class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                      data-testid="FormLabel"
+                      for="name"
+                    >
+                      Mnemonic
+                    </label>
+                    <div
+                      class="sc-AxmLO kuiknc max-w-20"
+                    >
+                      <input
+                        class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
+                        data-testid="Input"
+                        name="mnemonic"
+                        type="password"
+                      />
+                      <div
+                        class="sc-AxgMl sc-Axmtr cPxyjO mr-4"
+                      >
+                        <button
+                          class="flex items-center justify-center w-full h-full text-2xl focus:outline-none bg-theme-background text-theme-primary-400"
+                          data-testid="InputPassword__toggle"
+                          type="button"
+                        >
+                          <div
+                            class="sc-AxhCb fxrKLH"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              eye.svg
+                            </svg>
+                          </div>
+                        </button>
+                      </div>
+                    </div>
+                  </fieldset>
+                  <fieldset
+                    class="sc-AxiKw iQzisX mt-8"
+                  >
+                    <label
+                      class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                      data-testid="FormLabel"
+                      for="name"
+                    >
+                      2nd Mnemonic
+                    </label>
+                    <div
+                      class="sc-AxmLO kuiknc max-w-20"
+                    >
+                      <input
+                        class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
+                        data-testid="Input"
+                        name="secondMnemonic"
+                        type="password"
+                      />
+                      <div
+                        class="sc-AxgMl sc-Axmtr cPxyjO mr-4"
+                      >
+                        <button
+                          class="flex items-center justify-center w-full h-full text-2xl focus:outline-none bg-theme-background text-theme-primary-400"
+                          data-testid="InputPassword__toggle"
+                          type="button"
+                        >
+                          <div
+                            class="sc-AxhCb fxrKLH"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              eye.svg
+                            </svg>
+                          </div>
+                        </button>
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="flex justify-end mt-8 space-x-3"
+          >
+            <button
+              class="sc-AxjAm ddJBbC"
+              color="primary"
+              data-testid="Registration__back-button"
+              type="button"
+            >
+              Back
+            </button>
+            <button
+              class="sc-AxjAm ddQVWI"
+              color="primary"
+              data-testid="Registration__send-button"
+              type="button"
+            >
+              <div
+                class="sc-AxhCb VoPpj mr-2"
+                height="20"
+                width="20"
+              >
+                <svg>
+                  send.svg
+                </svg>
+              </div>
+              Send
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</DocumentFragment>
+`;
 
-exports[`Registration should render 5th step 1`] = `[Function]`;
+exports[`Registration should render 5th step 1`] = `
+<DocumentFragment>
+  <div
+    class="max-w-xl mx-auto"
+    data-testid="Registration"
+  >
+    <form
+      class="space-y-6"
+      data-testid="Form"
+    >
+      <div>
+        <ul
+          class="StepIndicator___StyledUl-sc-15t41is-1 dhAbBb"
+        >
+          <li
+            class="StepIndicator__StepStyled-sc-15t41is-0 crUtTP"
+          />
+          <li
+            class="StepIndicator__StepStyled-sc-15t41is-0 crUtTP"
+          />
+          <li
+            class="StepIndicator__StepStyled-sc-15t41is-0 crUtTP"
+          />
+          <li
+            class="StepIndicator__StepStyled-sc-15t41is-0 crUtTP"
+          />
+          <li
+            class="StepIndicator__StepStyled-sc-15t41is-0 crUtTP"
+          />
+          <li
+            class="StepIndicator__StepStyled-sc-15t41is-0 crUtTP"
+          />
+          <li
+            class="StepIndicator__StepStyled-sc-15t41is-0 crUtTP"
+          />
+        </ul>
+        <div
+          class="mt-4"
+        >
+          <div
+            data-testid="tab-pabel__active-panel"
+          >
+            <section
+              class="space-y-8"
+              data-testid="TransactionSuccessful"
+            >
+              <div>
+                <h1
+                  class="mb-0"
+                >
+                  Transaction Successful
+                </h1>
+                <div
+                  class="grid grid-flow-row gap-2"
+                >
+                  <div
+                    class="w-full my-10"
+                  >
+                    <svg
+                      class="w-full"
+                    >
+                      transaction_successful.svg
+                    </svg>
+                  </div>
+                  <p
+                    class="mb-4 text-theme-neutral-dark"
+                  >
+                    Your transaction was successfully sent. Please monitor the blockchain to ensure your transaction is confirmed and processed. The following is relevant information for your transaction:
+                  </p>
+                  <div
+                    class="flex items-center py-4 true "
+                  >
+                    <div
+                      class="flex-1"
+                    >
+                      <div
+                        class="text-sm font-semibold text-theme-neutral-500"
+                      >
+                        ID
+                      </div>
+                      <div
+                        class="mt-2 font-semibold"
+                      >
+                        <div
+                          class="flex items-center"
+                        >
+                          <div
+                            class="inline-block cursor-pointer"
+                            data-testid="clipboard__wrapper"
+                          >
+                            <div
+                              class="inline-block truncate"
+                            >
+                              <span
+                                class="text-theme-primary font-semibold text-base"
+                                data-testid="address__wallet-address"
+                              >
+                                AUexKjGtgsSpVz...MM6vJ6znEVTQWK
+                              </span>
+                            </div>
+                          </div>
+                          <div
+                            class="mb-1 ml-5 text-theme-primary-300"
+                          >
+                            <div
+                              class="sc-AxhCb fxrKLH"
+                              height="1em"
+                              width="1em"
+                            >
+                              <svg>
+                                copy.svg
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+                  >
+                    <div
+                      class="flex-1"
+                    >
+                      <div
+                        class="text-sm font-semibold text-theme-neutral-500"
+                      >
+                        Block ID
+                      </div>
+                      <div
+                        class="mt-2 font-semibold"
+                      >
+                        <div
+                          class="flex items-center"
+                        >
+                          <div
+                            class="inline-block cursor-pointer"
+                            data-testid="clipboard__wrapper"
+                          >
+                            <div
+                              class="inline-block truncate"
+                            >
+                              <span
+                                class="text-theme-primary font-semibold text-base"
+                                data-testid="address__wallet-address"
+                              >
+                                AUexKjGtgsSpVz...MM6vJ6znEVTQWK
+                              </span>
+                            </div>
+                          </div>
+                          <div
+                            class="mb-1 ml-5 text-theme-primary-300"
+                          >
+                            <div
+                              class="sc-AxhCb fxrKLH"
+                              height="1em"
+                              width="1em"
+                            >
+                              <svg>
+                                copy.svg
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+                  >
+                    <div
+                      class="flex-1"
+                    >
+                      <div
+                        class="text-sm font-semibold text-theme-neutral-500"
+                      >
+                        Network
+                      </div>
+                      <div
+                        class="mt-2 font-semibold"
+                      >
+                        <div
+                          class="inline-block truncate"
+                        >
+                          <span
+                            class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-xl"
+                            data-testid="address__wallet-name"
+                          >
+                            ROBank
+                          </span>
+                          <span
+                            class="text-theme-neutral-400 font-semibold text-xl"
+                            data-testid="address__wallet-address"
+                          >
+                            AUexKj...EVTQWK
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="ml-1 text-theme-danger-500"
+                    >
+                      <div
+                        class="sc-AxirZ cZokSJ bg-theme-background border-theme-danger-200"
+                      >
+                        <div
+                          class="sc-AxhCb VoPpj"
+                          height="20"
+                          width="20"
+                        >
+                          <svg>
+                            ark.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+                  >
+                    <div
+                      class="flex-1"
+                    >
+                      <div
+                        class="mt-2 font-semibold"
+                      >
+                        <div
+                          class="mb-2 text-sm font-semibold text-theme-neutral-500"
+                        >
+                          <span
+                            class="mr-1"
+                          >
+                            Sender
+                          </span>
+                          <div
+                            class="sc-fzplWN gpwIyi"
+                            color="warning"
+                          >
+                            Your address
+                          </div>
+                        </div>
+                        <div
+                          class="inline-block truncate"
+                        >
+                          <span
+                            class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-xl"
+                            data-testid="address__wallet-name"
+                          >
+                            ROBank
+                          </span>
+                          <span
+                            class="text-theme-neutral-400 font-semibold text-xl"
+                            data-testid="address__wallet-address"
+                          >
+                            AUexKj...EVTQWK
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <div
+                        class="sc-AxirZ hTKBId"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+                  >
+                    <div
+                      class="flex-1"
+                    >
+                      <div
+                        class="text-sm font-semibold text-theme-neutral-500"
+                      >
+                        Transaction Type
+                      </div>
+                      <div
+                        class="mt-2 font-semibold"
+                      >
+                        Business Registration
+                      </div>
+                    </div>
+                    <div
+                      class="sc-AxirZ cZokSJ border-black"
+                    >
+                      <div
+                        class="sc-AxhCb VoPpj"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          business.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+                  >
+                    <div
+                      class="flex-1"
+                    >
+                      <div
+                        class="text-sm font-semibold text-theme-neutral-500"
+                      >
+                        Name
+                      </div>
+                      <div
+                        class="mt-2 font-semibold"
+                      >
+                        ROBank Eco
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+                  >
+                    <div
+                      class="flex-1"
+                    >
+                      <div
+                        class="text-sm font-semibold text-theme-neutral-500"
+                      >
+                        Description
+                      </div>
+                      <div
+                        class="mt-2 font-semibold"
+                      >
+                        Not a trustworthy bank
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+                  >
+                    <div
+                      class="flex-1"
+                    >
+                      <div
+                        class="text-sm font-semibold text-theme-neutral-500"
+                      >
+                        Website
+                      </div>
+                      <div
+                        class="mt-2 font-semibold"
+                      >
+                        <a
+                          class="link"
+                          href="http://robank.com"
+                          rel="noreferrer"
+                          target="_blank"
+                        >
+                          http://robank.com
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+                  >
+                    <div
+                      class="flex-1"
+                    >
+                      <div
+                        class="text-sm font-semibold text-theme-neutral-500"
+                      >
+                        Amount
+                      </div>
+                      <div
+                        class="mt-2 font-semibold"
+                      >
+                        1.09660435 ARK
+                      </div>
+                    </div>
+                    <div
+                      class="ml-1 text-theme-danger"
+                    >
+                      <div
+                        class="sc-AxirZ cZokSJ bg-theme-background border-theme-danger-200"
+                      >
+                        <div
+                          class="sc-AxhCb liaKlj"
+                          height="50"
+                          width="50"
+                        >
+                          <svg>
+                            sent.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+          <div
+            class="flex justify-end mt-8 space-x-3"
+          >
+            <div
+              class="flex justify-end space-x-3"
+            >
+              <button
+                class="sc-AxjAm ddJBbC"
+                color="primary"
+                data-testid="Registration__wallet-button"
+                type="button"
+              >
+                Back to wallet
+              </button>
+              <button
+                class="sc-AxjAm ddJBbC"
+                color="primary"
+                data-testid="Registration__download-button"
+                type="submit"
+              >
+                <div
+                  class="sc-AxhCb fxrKLH mr-2"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    download.svg
+                  </svg>
+                </div>
+                Download
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</DocumentFragment>
+`;
 
-exports[`Registration should select registration type 1`] = `[Function]`;
+exports[`Registration should select registration type 1`] = `
+<DocumentFragment>
+  <div
+    class="max-w-xl mx-auto"
+    data-testid="Registration"
+  >
+    <form
+      class="space-y-6"
+      data-testid="Form"
+    >
+      <div>
+        <ul
+          class="StepIndicator___StyledUl-sc-15t41is-1 dhAbBb"
+        >
+          <li
+            class="StepIndicator__StepStyled-sc-15t41is-0 crUtTP"
+          />
+          <li
+            class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
+          />
+          <li
+            class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
+          />
+          <li
+            class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
+          />
+          <li
+            class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
+          />
+          <li
+            class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
+          />
+          <li
+            class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
+          />
+        </ul>
+        <div
+          class="mt-4"
+        >
+          <div
+            data-testid="tab-pabel__active-panel"
+          >
+            <div
+              data-testid="Registration__first-step"
+            >
+              <h1>
+                Registration
+              </h1>
+              <div
+                class="text-theme-neutral-700"
+              >
+                Select the type of registration and the address you want to register with.
+              </div>
+              <div
+                class="sc-fzoLag TJgFv mt-5"
+              >
+                <div
+                  aria-expanded="false"
+                  aria-haspopup="listbox"
+                  aria-labelledby="downshift-8-label"
+                  class="relative"
+                  role="combobox"
+                >
+                  <label
+                    for="downshift-8-input"
+                    id="downshift-8-label"
+                  />
+                  <div
+                    class="relative flex items-center w-full flex-inline"
+                  >
+                    <div
+                      class="flex w-full border rounded shadow-sm bg-theme-background border-theme-neutral-300 transition-colors duration-200 hover:outline-none hover:border-theme-primary"
+                    >
+                      <div
+                        class="px-4 py-2 flex-0 w-14"
+                      >
+                        <div
+                          class="sc-AxirZ HSPq border-theme-neutral-200"
+                        />
+                      </div>
+                      <div
+                        class="relative flex-1 p-1 font-semibold text-theme-neutral-800"
+                      >
+                        <div
+                          class="relative z-10 w-full"
+                          data-testid="select-network__typeahead-"
+                        >
+                          <div
+                            class="absolute left-0 font-semibold top-2 text-theme-neutral-400"
+                          />
+                        </div>
+                        <input
+                          aria-autocomplete="list"
+                          aria-labelledby="downshift-8-label"
+                          autocomplete="off"
+                          class="relative z-20 w-full h-full font-semibold bg-transparent outline-none"
+                          data-testid="select-asset__input"
+                          id="downshift-8-input"
+                          placeholder="Enter a network name"
+                          value=""
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    aria-labelledby="downshift-8-label"
+                    class="pt-6"
+                    data-testid="select-asset__items"
+                    id="downshift-8-menu"
+                    role="listbox"
+                  >
+                    <div
+                      aria-selected="false"
+                      class="inline-block mr-4 cursor-pointer"
+                      id="downshift-8-item-0"
+                      role="option"
+                      title="Ark Ecosystem"
+                    >
+                      <div
+                        class="sc-AxirZ cZokSJ text-theme-danger-400 border-theme-danger-200"
+                      >
+                        <div
+                          class="sc-AxhCb eHGcDb"
+                          height="18"
+                          width="18"
+                        >
+                          <svg>
+                            ark.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      aria-selected="false"
+                      class="inline-block mr-4 cursor-pointer"
+                      id="downshift-8-item-1"
+                      role="option"
+                      title="Bitcoin"
+                    >
+                      <div
+                        class="sc-AxirZ cZokSJ text-theme-warning-400 border-theme-warning-200"
+                      >
+                        <div
+                          class="sc-AxhCb eHGcDb"
+                          height="18"
+                          width="18"
+                        >
+                          <svg>
+                            btc.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      aria-selected="false"
+                      class="inline-block mr-4 cursor-pointer"
+                      id="downshift-8-item-2"
+                      role="option"
+                      title="Ethereum"
+                    >
+                      <div
+                        class="sc-AxirZ cZokSJ text-theme-neutral-800 border-theme-neutral-600"
+                      >
+                        <div
+                          class="sc-AxhCb eHGcDb"
+                          height="18"
+                          width="18"
+                        >
+                          <svg>
+                            eth.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <fieldset
+                  class="sc-AxiKw iQzisX relative h-20 mt-8"
+                >
+                  <div
+                    class="mb-2"
+                  >
+                    <label
+                      class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                      data-testid="FormLabel"
+                      for="address"
+                      label="Address"
+                    >
+                      Address
+                    </label>
+                  </div>
+                  <div
+                    class="sc-AxmLO kuiknc ProfileFormField__select-contact select-transparent"
+                  >
+                    <div
+                      class="sc-AxmLO kuiknc"
+                    >
+                      <select
+                        class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
+                        data-testid="ProfileFormField__select-address"
+                        name="address"
+                      >
+                        <option
+                          disabled=""
+                          selected=""
+                          value=""
+                        >
+                           
+                        </option>
+                        <option
+                          data-testid="ProfileFormField__profile-select"
+                          value="FJKDSALJFKASLJFKSDAJFKFKDSAJFKSAJFKLASJKDFJ"
+                        >
+                          My Wallet FJKDSALJFKASL...SAJFKLASJKDFJ
+                        </option>
+                      </select>
+                      <div
+                        class="sc-AxgMl sc-Axmtr cPxyjO w-12 text-lg pointer-events-none text-theme-neutral-dark"
+                      >
+                        <div
+                          class="sc-AxhCb fxrKLH"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            chevron-down.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="absolute ml-4 -mt-10"
+                  >
+                    <div
+                      class="sc-AxirZ HSPq mt-px bg-theme-neutral-200 border-theme-neutral-200"
+                    />
+                  </div>
+                </fieldset>
+                <fieldset
+                  class="sc-AxiKw iQzisX relative h-20 mt-8"
+                  data-testid="Registration__type"
+                >
+                  <div
+                    class="mb-2"
+                  >
+                    <label
+                      class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                      data-testid="FormLabel"
+                      for="registrationType"
+                      label="Registration Type"
+                    >
+                      Registration Type
+                    </label>
+                  </div>
+                  <div>
+                    <div
+                      class="sc-AxmLO kuiknc"
+                    >
+                      <select
+                        class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
+                        data-testid="Registration__type-select"
+                        name="registrationType"
+                      >
+                        <option
+                          disabled=""
+                          selected=""
+                          value=""
+                        >
+                           
+                        </option>
+                        <option
+                          data-testid="Registration__type-option"
+                          value="business"
+                        >
+                          Business
+                        </option>
+                      </select>
+                      <div
+                        class="sc-AxgMl sc-Axmtr cPxyjO w-12 text-lg pointer-events-none text-theme-neutral-dark"
+                      >
+                        <div
+                          class="sc-AxhCb fxrKLH"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            chevron-down.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="flex items-center ml-4 leading-tight -mt-9"
+                      data-testid="Registration__type-selected"
+                    >
+                      Business
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+            </div>
+          </div>
+          <div
+            class="flex justify-end mt-8 space-x-3"
+          >
+            <button
+              class="sc-AxjAm ddJBbC"
+              color="primary"
+              data-testid="Registration__back-button"
+              disabled=""
+              type="button"
+            >
+              Back
+            </button>
+            <button
+              class="sc-AxjAm ddQVWI"
+              color="primary"
+              data-testid="Registration__continue-button"
+              type="button"
+            >
+              Continue
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</DocumentFragment>
+`;
 
-exports[`Registration should should go back 1`] = `[Function]`;
+exports[`Registration should should go back 1`] = `
+<DocumentFragment>
+  <div
+    class="max-w-xl mx-auto"
+    data-testid="Registration"
+  >
+    <form
+      class="space-y-6"
+      data-testid="Form"
+    >
+      <div>
+        <ul
+          class="StepIndicator___StyledUl-sc-15t41is-1 dhAbBb"
+        >
+          <li
+            class="StepIndicator__StepStyled-sc-15t41is-0 crUtTP"
+          />
+          <li
+            class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
+          />
+          <li
+            class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
+          />
+          <li
+            class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
+          />
+          <li
+            class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
+          />
+          <li
+            class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
+          />
+          <li
+            class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
+          />
+        </ul>
+        <div
+          class="mt-4"
+        >
+          <div
+            data-testid="tab-pabel__active-panel"
+          >
+            <div
+              data-testid="Registration__first-step"
+            >
+              <h1>
+                Registration
+              </h1>
+              <div
+                class="text-theme-neutral-700"
+              >
+                Select the type of registration and the address you want to register with.
+              </div>
+              <div
+                class="sc-fzoLag TJgFv mt-5"
+              >
+                <div
+                  aria-expanded="false"
+                  aria-haspopup="listbox"
+                  aria-labelledby="downshift-2-label"
+                  class="relative"
+                  role="combobox"
+                >
+                  <label
+                    for="downshift-2-input"
+                    id="downshift-2-label"
+                  />
+                  <div
+                    class="relative flex items-center w-full flex-inline"
+                  >
+                    <div
+                      class="flex w-full border rounded shadow-sm bg-theme-background border-theme-neutral-300 transition-colors duration-200 hover:outline-none hover:border-theme-primary"
+                    >
+                      <div
+                        class="px-4 py-2 flex-0 w-14"
+                      >
+                        <div
+                          class="sc-AxirZ HSPq border-theme-neutral-200"
+                        />
+                      </div>
+                      <div
+                        class="relative flex-1 p-1 font-semibold text-theme-neutral-800"
+                      >
+                        <div
+                          class="relative z-10 w-full"
+                          data-testid="select-network__typeahead-"
+                        >
+                          <div
+                            class="absolute left-0 font-semibold top-2 text-theme-neutral-400"
+                          />
+                        </div>
+                        <input
+                          aria-autocomplete="list"
+                          aria-labelledby="downshift-2-label"
+                          autocomplete="off"
+                          class="relative z-20 w-full h-full font-semibold bg-transparent outline-none"
+                          data-testid="select-asset__input"
+                          id="downshift-2-input"
+                          placeholder="Enter a network name"
+                          value=""
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    aria-labelledby="downshift-2-label"
+                    class="pt-6"
+                    data-testid="select-asset__items"
+                    id="downshift-2-menu"
+                    role="listbox"
+                  >
+                    <div
+                      aria-selected="false"
+                      class="inline-block mr-4 cursor-pointer"
+                      id="downshift-2-item-0"
+                      role="option"
+                      title="Ark Ecosystem"
+                    >
+                      <div
+                        class="sc-AxirZ cZokSJ text-theme-danger-400 border-theme-danger-200"
+                      >
+                        <div
+                          class="sc-AxhCb eHGcDb"
+                          height="18"
+                          width="18"
+                        >
+                          <svg>
+                            ark.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      aria-selected="false"
+                      class="inline-block mr-4 cursor-pointer"
+                      id="downshift-2-item-1"
+                      role="option"
+                      title="Bitcoin"
+                    >
+                      <div
+                        class="sc-AxirZ cZokSJ text-theme-warning-400 border-theme-warning-200"
+                      >
+                        <div
+                          class="sc-AxhCb eHGcDb"
+                          height="18"
+                          width="18"
+                        >
+                          <svg>
+                            btc.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      aria-selected="false"
+                      class="inline-block mr-4 cursor-pointer"
+                      id="downshift-2-item-2"
+                      role="option"
+                      title="Ethereum"
+                    >
+                      <div
+                        class="sc-AxirZ cZokSJ text-theme-neutral-800 border-theme-neutral-600"
+                      >
+                        <div
+                          class="sc-AxhCb eHGcDb"
+                          height="18"
+                          width="18"
+                        >
+                          <svg>
+                            eth.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <fieldset
+                  class="sc-AxiKw iQzisX relative h-20 mt-8"
+                >
+                  <div
+                    class="mb-2"
+                  >
+                    <label
+                      class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                      data-testid="FormLabel"
+                      for="address"
+                      label="Address"
+                    >
+                      Address
+                    </label>
+                  </div>
+                  <div
+                    class="sc-AxmLO kuiknc ProfileFormField__select-contact select-transparent"
+                  >
+                    <div
+                      class="sc-AxmLO kuiknc"
+                    >
+                      <select
+                        class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
+                        data-testid="ProfileFormField__select-address"
+                        name="address"
+                      >
+                        <option
+                          disabled=""
+                          selected=""
+                          value=""
+                        >
+                           
+                        </option>
+                        <option
+                          data-testid="ProfileFormField__profile-select"
+                          value="FJKDSALJFKASLJFKSDAJFKFKDSAJFKSAJFKLASJKDFJ"
+                        >
+                          My Wallet FJKDSALJFKASL...SAJFKLASJKDFJ
+                        </option>
+                      </select>
+                      <div
+                        class="sc-AxgMl sc-Axmtr cPxyjO w-12 text-lg pointer-events-none text-theme-neutral-dark"
+                      >
+                        <div
+                          class="sc-AxhCb fxrKLH"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            chevron-down.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="absolute ml-4 -mt-10"
+                  >
+                    <div
+                      class="sc-AxirZ HSPq mt-px bg-theme-neutral-200 border-theme-neutral-200"
+                    />
+                  </div>
+                </fieldset>
+                <fieldset
+                  class="sc-AxiKw iQzisX relative h-20 mt-8"
+                  data-testid="Registration__type"
+                >
+                  <div
+                    class="mb-2"
+                  >
+                    <label
+                      class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                      data-testid="FormLabel"
+                      for="registrationType"
+                      label="Registration Type"
+                    >
+                      Registration Type
+                    </label>
+                  </div>
+                  <div>
+                    <div
+                      class="sc-AxmLO kuiknc"
+                    >
+                      <select
+                        class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
+                        data-testid="Registration__type-select"
+                        name="registrationType"
+                      >
+                        <option
+                          disabled=""
+                          selected=""
+                          value=""
+                        >
+                           
+                        </option>
+                        <option
+                          data-testid="Registration__type-option"
+                          value="business"
+                        >
+                          Business
+                        </option>
+                      </select>
+                      <div
+                        class="sc-AxgMl sc-Axmtr cPxyjO w-12 text-lg pointer-events-none text-theme-neutral-dark"
+                      >
+                        <div
+                          class="sc-AxhCb fxrKLH"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            chevron-down.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+            </div>
+          </div>
+          <div
+            class="flex justify-end mt-8 space-x-3"
+          >
+            <button
+              class="sc-AxjAm ddJBbC"
+              color="primary"
+              data-testid="Registration__back-button"
+              disabled=""
+              type="button"
+            >
+              Back
+            </button>
+            <button
+              class="sc-AxjAm ddQVWI"
+              color="primary"
+              data-testid="Registration__continue-button"
+              type="button"
+            >
+              Continue
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</DocumentFragment>
+`;
 
-exports[`Registration should submit 1`] = `[Function]`;
+exports[`Registration should submit 1`] = `
+<DocumentFragment>
+  <div
+    class="max-w-xl mx-auto"
+    data-testid="Registration"
+  >
+    <form
+      class="space-y-6"
+      data-testid="Form"
+    >
+      <div>
+        <ul
+          class="StepIndicator___StyledUl-sc-15t41is-1 dhAbBb"
+        >
+          <li
+            class="StepIndicator__StepStyled-sc-15t41is-0 crUtTP"
+          />
+          <li
+            class="StepIndicator__StepStyled-sc-15t41is-0 crUtTP"
+          />
+          <li
+            class="StepIndicator__StepStyled-sc-15t41is-0 crUtTP"
+          />
+          <li
+            class="StepIndicator__StepStyled-sc-15t41is-0 crUtTP"
+          />
+          <li
+            class="StepIndicator__StepStyled-sc-15t41is-0 crUtTP"
+          />
+          <li
+            class="StepIndicator__StepStyled-sc-15t41is-0 crUtTP"
+          />
+          <li
+            class="StepIndicator__StepStyled-sc-15t41is-0 crUtTP"
+          />
+        </ul>
+        <div
+          class="mt-4"
+        >
+          <div
+            data-testid="tab-pabel__active-panel"
+          >
+            <section
+              class="space-y-8"
+              data-testid="TransactionSuccessful"
+            >
+              <div>
+                <h1
+                  class="mb-0"
+                >
+                  Transaction Successful
+                </h1>
+                <div
+                  class="grid grid-flow-row gap-2"
+                >
+                  <div
+                    class="w-full my-10"
+                  >
+                    <svg
+                      class="w-full"
+                    >
+                      transaction_successful.svg
+                    </svg>
+                  </div>
+                  <p
+                    class="mb-4 text-theme-neutral-dark"
+                  >
+                    Your transaction was successfully sent. Please monitor the blockchain to ensure your transaction is confirmed and processed. The following is relevant information for your transaction:
+                  </p>
+                  <div
+                    class="flex items-center py-4 true "
+                  >
+                    <div
+                      class="flex-1"
+                    >
+                      <div
+                        class="text-sm font-semibold text-theme-neutral-500"
+                      >
+                        ID
+                      </div>
+                      <div
+                        class="mt-2 font-semibold"
+                      >
+                        <div
+                          class="flex items-center"
+                        >
+                          <div
+                            class="inline-block cursor-pointer"
+                            data-testid="clipboard__wrapper"
+                          >
+                            <div
+                              class="inline-block truncate"
+                            >
+                              <span
+                                class="text-theme-primary font-semibold text-base"
+                                data-testid="address__wallet-address"
+                              >
+                                AUexKjGtgsSpVz...MM6vJ6znEVTQWK
+                              </span>
+                            </div>
+                          </div>
+                          <div
+                            class="mb-1 ml-5 text-theme-primary-300"
+                          >
+                            <div
+                              class="sc-AxhCb fxrKLH"
+                              height="1em"
+                              width="1em"
+                            >
+                              <svg>
+                                copy.svg
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+                  >
+                    <div
+                      class="flex-1"
+                    >
+                      <div
+                        class="text-sm font-semibold text-theme-neutral-500"
+                      >
+                        Block ID
+                      </div>
+                      <div
+                        class="mt-2 font-semibold"
+                      >
+                        <div
+                          class="flex items-center"
+                        >
+                          <div
+                            class="inline-block cursor-pointer"
+                            data-testid="clipboard__wrapper"
+                          >
+                            <div
+                              class="inline-block truncate"
+                            >
+                              <span
+                                class="text-theme-primary font-semibold text-base"
+                                data-testid="address__wallet-address"
+                              >
+                                AUexKjGtgsSpVz...MM6vJ6znEVTQWK
+                              </span>
+                            </div>
+                          </div>
+                          <div
+                            class="mb-1 ml-5 text-theme-primary-300"
+                          >
+                            <div
+                              class="sc-AxhCb fxrKLH"
+                              height="1em"
+                              width="1em"
+                            >
+                              <svg>
+                                copy.svg
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+                  >
+                    <div
+                      class="flex-1"
+                    >
+                      <div
+                        class="text-sm font-semibold text-theme-neutral-500"
+                      >
+                        Network
+                      </div>
+                      <div
+                        class="mt-2 font-semibold"
+                      >
+                        <div
+                          class="inline-block truncate"
+                        >
+                          <span
+                            class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-xl"
+                            data-testid="address__wallet-name"
+                          >
+                            ROBank
+                          </span>
+                          <span
+                            class="text-theme-neutral-400 font-semibold text-xl"
+                            data-testid="address__wallet-address"
+                          >
+                            AUexKj...EVTQWK
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="ml-1 text-theme-danger-500"
+                    >
+                      <div
+                        class="sc-AxirZ cZokSJ bg-theme-background border-theme-danger-200"
+                      >
+                        <div
+                          class="sc-AxhCb VoPpj"
+                          height="20"
+                          width="20"
+                        >
+                          <svg>
+                            ark.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+                  >
+                    <div
+                      class="flex-1"
+                    >
+                      <div
+                        class="mt-2 font-semibold"
+                      >
+                        <div
+                          class="mb-2 text-sm font-semibold text-theme-neutral-500"
+                        >
+                          <span
+                            class="mr-1"
+                          >
+                            Sender
+                          </span>
+                          <div
+                            class="sc-fzplWN gpwIyi"
+                            color="warning"
+                          >
+                            Your address
+                          </div>
+                        </div>
+                        <div
+                          class="inline-block truncate"
+                        >
+                          <span
+                            class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-xl"
+                            data-testid="address__wallet-name"
+                          >
+                            ROBank
+                          </span>
+                          <span
+                            class="text-theme-neutral-400 font-semibold text-xl"
+                            data-testid="address__wallet-address"
+                          >
+                            AUexKj...EVTQWK
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <div
+                        class="sc-AxirZ hTKBId"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+                  >
+                    <div
+                      class="flex-1"
+                    >
+                      <div
+                        class="text-sm font-semibold text-theme-neutral-500"
+                      >
+                        Transaction Type
+                      </div>
+                      <div
+                        class="mt-2 font-semibold"
+                      >
+                        Business Registration
+                      </div>
+                    </div>
+                    <div
+                      class="sc-AxirZ cZokSJ border-black"
+                    >
+                      <div
+                        class="sc-AxhCb VoPpj"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          business.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+                  >
+                    <div
+                      class="flex-1"
+                    >
+                      <div
+                        class="text-sm font-semibold text-theme-neutral-500"
+                      >
+                        Name
+                      </div>
+                      <div
+                        class="mt-2 font-semibold"
+                      >
+                        ROBank Eco
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+                  >
+                    <div
+                      class="flex-1"
+                    >
+                      <div
+                        class="text-sm font-semibold text-theme-neutral-500"
+                      >
+                        Description
+                      </div>
+                      <div
+                        class="mt-2 font-semibold"
+                      >
+                        Not a trustworthy bank
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+                  >
+                    <div
+                      class="flex-1"
+                    >
+                      <div
+                        class="text-sm font-semibold text-theme-neutral-500"
+                      >
+                        Website
+                      </div>
+                      <div
+                        class="mt-2 font-semibold"
+                      >
+                        <a
+                          class="link"
+                          href="http://robank.com"
+                          rel="noreferrer"
+                          target="_blank"
+                        >
+                          http://robank.com
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+                  >
+                    <div
+                      class="flex-1"
+                    >
+                      <div
+                        class="text-sm font-semibold text-theme-neutral-500"
+                      >
+                        Amount
+                      </div>
+                      <div
+                        class="mt-2 font-semibold"
+                      >
+                        1.09660435 ARK
+                      </div>
+                    </div>
+                    <div
+                      class="ml-1 text-theme-danger"
+                    >
+                      <div
+                        class="sc-AxirZ cZokSJ bg-theme-background border-theme-danger-200"
+                      >
+                        <div
+                          class="sc-AxhCb liaKlj"
+                          height="50"
+                          width="50"
+                        >
+                          <svg>
+                            sent.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+          <div
+            class="flex justify-end mt-8 space-x-3"
+          >
+            <div
+              class="flex justify-end space-x-3"
+            >
+              <button
+                class="sc-AxjAm ddJBbC"
+                color="primary"
+                data-testid="Registration__wallet-button"
+                type="button"
+              >
+                Back to wallet
+              </button>
+              <button
+                class="sc-AxjAm ddJBbC"
+                color="primary"
+                data-testid="Registration__download-button"
+                type="submit"
+              >
+                <div
+                  class="sc-AxhCb fxrKLH mr-2"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    download.svg
+                  </svg>
+                </div>
+                Download
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</DocumentFragment>
+`;

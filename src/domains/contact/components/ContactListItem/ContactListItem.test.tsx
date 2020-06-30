@@ -15,7 +15,7 @@ describe("ContactListItem", () => {
 			</table>,
 		);
 
-		expect(asFragment).toMatchSnapshot();
+		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should call onAction callback if provided", () => {
