@@ -4,7 +4,7 @@ import React from "react";
 import { VerifyMessage } from "./VerifyMessage";
 
 export default {
-	title: "Wallets / Components / Verify Message",
+	title: "Wallet / Components / Verify Message",
 	decorators: [withKnobs],
 };
 

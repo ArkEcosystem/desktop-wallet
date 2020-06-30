@@ -5,7 +5,7 @@ import React from "react";
 import { ReceiveFunds } from "./ReceiveFunds";
 
 export default {
-	title: "Wallets / Components / Receive Funds",
+	title: "Wallet / Components / Receive Funds",
 	decorators: [withKnobs],
 };
 

@@ -2,7 +2,7 @@ import React from "react";
 
 import { Avatar } from "./Avatar";
 
-export default { title: "Wallets / Components / Avatar" };
+export default { title: "Components / Avatar" };
 
 export const Default = () => {
 	return (

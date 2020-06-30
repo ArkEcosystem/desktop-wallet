@@ -3,7 +3,7 @@ import React from "react";
 
 import { SignMessage } from "./SignMessage";
 
-export default { title: "Wallets / Components / Sign Message", decorators: [withKnobs] };
+export default { title: "Wallet / Components / Sign Message", decorators: [withKnobs] };
 
 export const Default = () => {
 	const signatoryAddress = text("Address", "ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT");

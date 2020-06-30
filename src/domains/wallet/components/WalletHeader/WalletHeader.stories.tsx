@@ -2,7 +2,7 @@ import React from "react";
 
 import { WalletHeader } from "./WalletHeader";
 
-export default { title: "Wallets / Components / WalletHeader" };
+export default { title: "Wallet / Components / WalletHeader" };
 
 export const Default = () => (
 	<WalletHeader
