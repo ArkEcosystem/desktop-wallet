@@ -28,6 +28,7 @@ export const Simple = () => {
 		<div className="">
 			<div className="mt-10 w-128">
 				<SelectDropdown
+					selected={{ label: "Option 1", value: "3" }}
 					option={(option: any) => {
 						return (
 							<div className="p-2 border-b border-theme-neutral-200 hover:bg-theme-neutral-100">
@@ -50,6 +51,7 @@ export const Simple = () => {
 						);
 					}}
 					options={options}
+					onChange={console.log}
 				/>
 			</div>
 		</div>
