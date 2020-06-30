@@ -24,7 +24,7 @@ type WrapperProps = {
 const Wrapper = ({ label, value, className, children, copyButton }: WrapperProps) => {
 	return (
 		<div className={className}>
-			<div className="flex items-center mt-8 mb-6">
+			<div className="flex items-center mt-6 mb-6">
 				<div className="flex-1">
 					<div className="text-sm font-semibold text-theme-neutral-500">{label}</div>
 					<div className="flex items-center font-semibold">
@@ -46,13 +46,15 @@ export const ReceiveFunds = ({ isOpen, wallet, qrCode, onCopy, handleClose }: Re
 
 	return (
 		<Modal isOpen={isOpen} title={t("WALLETS.MODAL_RECEIVE_FUNDS.TITLE")} onClose={() => handleClose()}>
-			{wallet.walletName && (
-				<Wrapper label={t("COMMON.WALLET")} value={wallet.walletName}>
-					<Circle className="ml-4">
-						<Icon name={wallet.coinIcon} />
-					</Circle>
-				</Wrapper>
-			)}
+			<div className="mt-2">
+				{wallet.walletName && (
+					<Wrapper label={t("COMMON.WALLET")} value={wallet.walletName}>
+						<Circle className="ml-4">
+							<Icon name={wallet.coinIcon} />
+						</Circle>
+					</Wrapper>
+				)}
+			</div>
 
 			<Wrapper
 				label={t("COMMON.ADDRESS")}
@@ -63,7 +65,7 @@ export const ReceiveFunds = ({ isOpen, wallet, qrCode, onCopy, handleClose }: Re
 					</button>
 				}
 			>
-				<div className="ml-4">
+				<div className="ml-4 mb-2">
 					{!wallet.walletName && (
 						<Circle className="-mr-2">
 							<Icon name={wallet.coinIcon} />
