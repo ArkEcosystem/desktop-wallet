@@ -43,6 +43,7 @@ export const PluginHeader = ({ author, category, url, rating, version, size, isI
 			</>
 		);
 	};
+
 	return (
 		<div className="w-full px-10 py-5 bg-theme-background">
 			<div className="flex w-full">

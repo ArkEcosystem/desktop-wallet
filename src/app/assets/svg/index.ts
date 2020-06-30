@@ -68,6 +68,8 @@ import { ReactComponent as Qrcode } from "./qrcode.svg";
 import { ReactComponent as Receive } from "./receive.svg";
 import { ReactComponent as Received } from "./received.svg";
 import { ReactComponent as Reddit } from "./reddit.svg";
+import { ReactComponent as Redirect } from "./redirect.svg";
+import { ReactComponent as RegistrationsIllustration } from "./register.svg";
 import { ReactComponent as ReplyArrow } from "./reply-arrow.svg";
 import { ReactComponent as Reset } from "./reset.svg";
 import { ReactComponent as Search } from "./search.svg";
@@ -148,6 +150,8 @@ export const SvgCollection: any = {
 	Receive,
 	Received,
 	Reddit,
+	Redirect,
+	RegistrationsIllustration,
 	ReplyArrow,
 	Reset,
 	Search,
