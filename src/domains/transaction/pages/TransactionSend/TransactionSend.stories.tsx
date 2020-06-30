@@ -2,7 +2,7 @@ import React from "react";
 
 import { TransactionSend } from "./TransactionSend";
 
-export default { title: "Transactions / Pages / Transaction Send" };
+export default { title: "Domains / Transaction / Pages / Transaction Send" };
 const defaultFormValues = {
 	maxAvailableAmount: 80,
 	assetSymbol: "ARK",

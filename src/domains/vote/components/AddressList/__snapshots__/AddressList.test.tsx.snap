@@ -1,0 +1,916 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddressList should render 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-AxirZ gQslMC"
+    role="table"
+  >
+    <table
+      class="table-auto"
+    >
+      <thead>
+        <tr
+          role="row"
+        >
+          <th
+            class="text-xs text-left select-none text-theme-neutral-400"
+            colspan="1"
+            data-testid="table__th--0"
+            role="columnheader"
+          >
+            <div
+              class="flex flex-inline align-top  undefined"
+            >
+              <div
+                class="mr-1"
+              />
+              <div
+                class="mt-1 text-theme-color-neutral-500"
+                data-testid="table__Sort"
+              />
+            </div>
+          </th>
+          <th
+            class="text-xs text-left select-none text-theme-neutral-400"
+            colspan="1"
+            data-testid="table__th--1"
+            role="columnheader"
+            style="cursor: pointer;"
+            title="Toggle SortBy"
+          >
+            <div
+              class="flex flex-inline align-top  undefined"
+            >
+              <div
+                class="mr-1"
+              >
+                My Address
+              </div>
+              <div
+                class="mt-1 text-theme-color-neutral-500"
+                data-testid="table__Sort"
+              >
+                <div
+                  class="sc-AxjAm iepfoc"
+                  height="10"
+                  width="10"
+                >
+                  <svg>
+                    sort.svg
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </th>
+          <th
+            class="text-xs text-left select-none text-theme-neutral-400"
+            colspan="1"
+            data-testid="table__th--2"
+            role="columnheader"
+          >
+            <div
+              class="flex flex-inline align-top  flex justify-center"
+            >
+              <div
+                class="mr-1"
+              />
+              <div
+                class="mt-1 text-theme-color-neutral-500"
+                data-testid="table__Sort"
+              />
+            </div>
+          </th>
+          <th
+            class="text-xs text-left select-none text-theme-neutral-400"
+            colspan="1"
+            data-testid="table__th--3"
+            role="columnheader"
+            style="cursor: pointer;"
+            title="Toggle SortBy"
+          >
+            <div
+              class="flex flex-inline align-top  undefined"
+            >
+              <div
+                class="mr-1"
+              >
+                Balance
+              </div>
+              <div
+                class="mt-1 text-theme-color-neutral-500"
+                data-testid="table__Sort"
+              >
+                <div
+                  class="sc-AxjAm iepfoc"
+                  height="10"
+                  width="10"
+                >
+                  <svg>
+                    sort.svg
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </th>
+          <th
+            class="text-xs text-left select-none text-theme-neutral-400"
+            colspan="1"
+            data-testid="table__th--4"
+            role="columnheader"
+          >
+            <div
+              class="flex flex-inline align-top  undefined"
+            >
+              <div
+                class="mr-1"
+              />
+              <div
+                class="mt-1 text-theme-color-neutral-500"
+                data-testid="table__Sort"
+              />
+            </div>
+          </th>
+          <th
+            class="text-xs text-left select-none text-theme-neutral-400"
+            colspan="1"
+            data-testid="table__th--5"
+            role="columnheader"
+            style="cursor: pointer;"
+            title="Toggle SortBy"
+          >
+            <div
+              class="flex flex-inline align-top  undefined"
+            >
+              <div
+                class="mr-1"
+              >
+                Delegate
+              </div>
+              <div
+                class="mt-1 text-theme-color-neutral-500"
+                data-testid="table__Sort"
+              >
+                <div
+                  class="sc-AxjAm iepfoc"
+                  height="10"
+                  width="10"
+                >
+                  <svg>
+                    sort.svg
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </th>
+          <th
+            class="text-xs text-left select-none text-theme-neutral-400"
+            colspan="1"
+            data-testid="table__th--6"
+            role="columnheader"
+            style="cursor: pointer;"
+            title="Toggle SortBy"
+          >
+            <div
+              class="flex flex-inline align-top  undefined"
+            >
+              <div
+                class="mr-1"
+              >
+                Rank
+              </div>
+              <div
+                class="mt-1 text-theme-color-neutral-500"
+                data-testid="table__Sort"
+              >
+                <div
+                  class="sc-AxjAm iepfoc"
+                  height="10"
+                  width="10"
+                >
+                  <svg>
+                    sort.svg
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </th>
+          <th
+            class="text-xs text-left select-none text-theme-neutral-400"
+            colspan="1"
+            data-testid="table__th--7"
+            role="columnheader"
+          >
+            <div
+              class="flex flex-inline align-top  flex justify-center"
+            >
+              <div
+                class="mr-1"
+              >
+                Profile
+              </div>
+              <div
+                class="mt-1 text-theme-color-neutral-500"
+                data-testid="table__Sort"
+              />
+            </div>
+          </th>
+          <th
+            class="text-xs text-left select-none text-theme-neutral-400"
+            colspan="1"
+            data-testid="table__th--8"
+            role="columnheader"
+          >
+            <div
+              class="flex flex-inline align-top  flex justify-center"
+            >
+              <div
+                class="mr-1"
+              >
+                Status
+              </div>
+              <div
+                class="mt-1 text-theme-color-neutral-500"
+                data-testid="table__Sort"
+              />
+            </div>
+          </th>
+          <th
+            class="text-xs text-left select-none text-theme-neutral-400"
+            colspan="1"
+            data-testid="table__th--9"
+            role="columnheader"
+          >
+            <div
+              class="flex flex-inline align-top  undefined"
+            >
+              <div
+                class="mr-1"
+              />
+              <div
+                class="mt-1 text-theme-color-neutral-500"
+                data-testid="table__Sort"
+              />
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody
+        role="rowgroup"
+      >
+        <tr
+          class="border-b border-theme-neutral-200"
+        >
+          <td
+            class="py-5"
+          >
+            <div
+              class="Avatar__AvatarStyled-sc-1vsy2s2-0 jZYOhz"
+              data-testid="Avatar"
+            />
+          </td>
+          <td
+            class="py-5"
+          >
+            <div
+              class="inline-block truncate"
+            >
+              <span
+                class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                data-testid="address__wallet-name"
+              >
+                OLEBank
+              </span>
+              <span
+                class="text-theme-neutral-400 font-semibold text-base"
+                data-testid="address__wallet-address"
+              >
+                ASuusXSW9...6T9GQ3kqT
+              </span>
+            </div>
+          </td>
+          <td
+            class="w-20 py-5"
+          >
+            <div
+              class="flex justify-center h-full"
+            >
+              <div
+                class="sc-AxjAm cpczEI text-theme-neutral-600"
+                height="1em"
+                width="1em"
+              >
+                <svg>
+                  multisig.svg
+                </svg>
+              </div>
+            </div>
+          </td>
+          <td
+            class="py-5 font-bold text-theme-neutral-dark"
+          >
+            432,509.08946384 ARK
+          </td>
+          <td
+            class="py-5"
+          >
+            <div
+              class="Avatar__AvatarStyled-sc-1vsy2s2-0 jZYOhz"
+              data-testid="Avatar"
+            />
+          </td>
+          <td
+            class="py-5 font-bold"
+          >
+            <span>
+              Delegate 1
+            </span>
+          </td>
+          <td
+            class="py-5 font-bold text-theme-neutral-dark"
+          >
+            <span>
+              #2
+            </span>
+          </td>
+          <td
+            class="py-5"
+          >
+            <div
+              class="flex justify-center h-full"
+            >
+              <a
+                href="https://marketsquare.ark.io"
+                rel="noreferrer"
+                target="_blank"
+              >
+                <div
+                  class="sc-AxjAm cpczEI text-xl text-theme-primary"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    msq.svg
+                  </svg>
+                </div>
+              </a>
+            </div>
+          </td>
+          <td
+            class="py-5"
+          >
+            <div
+              class="flex justify-center h-full"
+            >
+              <div
+                class="sc-AxjAm cpczEI text-theme-success"
+                height="1em"
+                width="1em"
+              >
+                <svg>
+                  ok.svg
+                </svg>
+              </div>
+            </div>
+          </td>
+          <td
+            class="py-5"
+          >
+            <div
+              class="text-right"
+            >
+              <button
+                class="sc-AxiKw gFzSt"
+                color="primary"
+                data-testid="AddressListItem__button--select"
+                type="button"
+              >
+                Select
+              </button>
+            </div>
+          </td>
+        </tr>
+        <tr
+          class="border-b border-theme-neutral-200"
+        >
+          <td
+            class="py-5"
+          >
+            <div
+              class="Avatar__AvatarStyled-sc-1vsy2s2-0 jZYOhz"
+              data-testid="Avatar"
+            />
+          </td>
+          <td
+            class="py-5"
+          >
+            <div
+              class="inline-block truncate"
+            >
+              <span
+                class="text-theme-neutral-800 font-semibold text-base"
+                data-testid="address__wallet-address"
+              >
+                ASuusXSW9...6T9GQ3kqT
+              </span>
+            </div>
+          </td>
+          <td
+            class="w-20 py-5"
+          >
+            <div
+              class="flex justify-center h-full"
+            >
+              <div
+                class="sc-AxjAm cpczEI text-theme-neutral-600"
+                height="1em"
+                width="1em"
+              >
+                <svg>
+                  ledger.svg
+                </svg>
+              </div>
+            </div>
+          </td>
+          <td
+            class="py-5 font-bold text-theme-neutral-dark"
+          >
+            8,523.3884504 ARK
+          </td>
+          <td
+            class="py-5"
+          >
+            <div
+              class="Avatar__AvatarStyled-sc-1vsy2s2-0 jZYOhz"
+              data-testid="Avatar"
+            />
+          </td>
+          <td
+            class="py-5 font-bold"
+          >
+            <span>
+              Delegate 45
+            </span>
+          </td>
+          <td
+            class="py-5 font-bold text-theme-neutral-dark"
+          >
+            <span>
+              #45
+            </span>
+          </td>
+          <td
+            class="py-5"
+          />
+          <td
+            class="py-5"
+          >
+            <div
+              class="flex justify-center h-full"
+            >
+              <div
+                class="sc-AxjAm cpczEI text-theme-success"
+                height="1em"
+                width="1em"
+              >
+                <svg>
+                  ok.svg
+                </svg>
+              </div>
+            </div>
+          </td>
+          <td
+            class="py-5"
+          >
+            <div
+              class="text-right"
+            >
+              <button
+                class="sc-AxiKw gFzSt"
+                color="primary"
+                data-testid="AddressListItem__button--select"
+                type="button"
+              >
+                Select
+              </button>
+            </div>
+          </td>
+        </tr>
+        <tr
+          class="border-b border-theme-neutral-200"
+        >
+          <td
+            class="py-5"
+          >
+            <div
+              class="Avatar__AvatarStyled-sc-1vsy2s2-0 jZYOhz"
+              data-testid="Avatar"
+            />
+          </td>
+          <td
+            class="py-5"
+          >
+            <div
+              class="inline-block truncate"
+            >
+              <span
+                class="text-theme-neutral-800 font-semibold text-base"
+                data-testid="address__wallet-address"
+              >
+                ASuusXSW9...6T9GQ3kqT
+              </span>
+            </div>
+          </td>
+          <td
+            class="w-20 py-5"
+          />
+          <td
+            class="py-5 font-bold text-theme-neutral-dark"
+          >
+            0.000462 ARK
+          </td>
+          <td
+            class="py-5"
+          >
+            <div
+              class="sc-AxhCb fwVCao border-theme-neutral-200"
+            />
+          </td>
+          <td
+            class="py-5 font-bold"
+          >
+            <span
+              class="text-theme-neutral-400"
+            >
+              N/A
+            </span>
+          </td>
+          <td
+            class="py-5 font-bold text-theme-neutral-dark"
+          />
+          <td
+            class="py-5"
+          />
+          <td
+            class="py-5"
+          />
+          <td
+            class="py-5"
+          >
+            <div
+              class="text-right"
+            >
+              <button
+                class="sc-AxiKw gFzSt"
+                color="primary"
+                data-testid="AddressListItem__button--select"
+                type="button"
+              >
+                Select
+              </button>
+            </div>
+          </td>
+        </tr>
+        <tr
+          class="border-b border-theme-neutral-200"
+        >
+          <td
+            class="py-5"
+          >
+            <div
+              class="Avatar__AvatarStyled-sc-1vsy2s2-0 jZYOhz"
+              data-testid="Avatar"
+            />
+          </td>
+          <td
+            class="py-5"
+          >
+            <div
+              class="inline-block truncate"
+            >
+              <span
+                class="text-theme-neutral-800 font-semibold text-base"
+                data-testid="address__wallet-address"
+              >
+                ASuusXSW9...6T9GQ3kqT
+              </span>
+            </div>
+          </td>
+          <td
+            class="w-20 py-5"
+          />
+          <td
+            class="py-5 font-bold text-theme-neutral-dark"
+          >
+            0.00 ARK
+          </td>
+          <td
+            class="py-5"
+          >
+            <div
+              class="sc-AxhCb fwVCao border-theme-neutral-200"
+            />
+          </td>
+          <td
+            class="py-5 font-bold"
+          >
+            <span
+              class="text-theme-neutral-400"
+            >
+              N/A
+            </span>
+          </td>
+          <td
+            class="py-5 font-bold text-theme-neutral-dark"
+          />
+          <td
+            class="py-5"
+          />
+          <td
+            class="py-5"
+          />
+          <td
+            class="py-5"
+          >
+            <div
+              class="text-right"
+            >
+              <button
+                class="sc-AxiKw gFzSt"
+                color="primary"
+                data-testid="AddressListItem__button--select"
+                type="button"
+              >
+                Select
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`AddressList should render with empty list 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-AxirZ gQslMC"
+    role="table"
+  >
+    <table
+      class="table-auto"
+    >
+      <thead>
+        <tr
+          role="row"
+        >
+          <th
+            class="text-xs text-left select-none text-theme-neutral-400"
+            colspan="1"
+            data-testid="table__th--0"
+            role="columnheader"
+          >
+            <div
+              class="flex flex-inline align-top  undefined"
+            >
+              <div
+                class="mr-1"
+              />
+              <div
+                class="mt-1 text-theme-color-neutral-500"
+                data-testid="table__Sort"
+              />
+            </div>
+          </th>
+          <th
+            class="text-xs text-left select-none text-theme-neutral-400"
+            colspan="1"
+            data-testid="table__th--1"
+            role="columnheader"
+            style="cursor: pointer;"
+            title="Toggle SortBy"
+          >
+            <div
+              class="flex flex-inline align-top  undefined"
+            >
+              <div
+                class="mr-1"
+              >
+                My Address
+              </div>
+              <div
+                class="mt-1 text-theme-color-neutral-500"
+                data-testid="table__Sort"
+              >
+                <div
+                  class="sc-AxjAm iepfoc"
+                  height="10"
+                  width="10"
+                >
+                  <svg>
+                    sort.svg
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </th>
+          <th
+            class="text-xs text-left select-none text-theme-neutral-400"
+            colspan="1"
+            data-testid="table__th--2"
+            role="columnheader"
+          >
+            <div
+              class="flex flex-inline align-top  flex justify-center"
+            >
+              <div
+                class="mr-1"
+              />
+              <div
+                class="mt-1 text-theme-color-neutral-500"
+                data-testid="table__Sort"
+              />
+            </div>
+          </th>
+          <th
+            class="text-xs text-left select-none text-theme-neutral-400"
+            colspan="1"
+            data-testid="table__th--3"
+            role="columnheader"
+            style="cursor: pointer;"
+            title="Toggle SortBy"
+          >
+            <div
+              class="flex flex-inline align-top  undefined"
+            >
+              <div
+                class="mr-1"
+              >
+                Balance
+              </div>
+              <div
+                class="mt-1 text-theme-color-neutral-500"
+                data-testid="table__Sort"
+              >
+                <div
+                  class="sc-AxjAm iepfoc"
+                  height="10"
+                  width="10"
+                >
+                  <svg>
+                    sort.svg
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </th>
+          <th
+            class="text-xs text-left select-none text-theme-neutral-400"
+            colspan="1"
+            data-testid="table__th--4"
+            role="columnheader"
+          >
+            <div
+              class="flex flex-inline align-top  undefined"
+            >
+              <div
+                class="mr-1"
+              />
+              <div
+                class="mt-1 text-theme-color-neutral-500"
+                data-testid="table__Sort"
+              />
+            </div>
+          </th>
+          <th
+            class="text-xs text-left select-none text-theme-neutral-400"
+            colspan="1"
+            data-testid="table__th--5"
+            role="columnheader"
+            style="cursor: pointer;"
+            title="Toggle SortBy"
+          >
+            <div
+              class="flex flex-inline align-top  undefined"
+            >
+              <div
+                class="mr-1"
+              >
+                Delegate
+              </div>
+              <div
+                class="mt-1 text-theme-color-neutral-500"
+                data-testid="table__Sort"
+              >
+                <div
+                  class="sc-AxjAm iepfoc"
+                  height="10"
+                  width="10"
+                >
+                  <svg>
+                    sort.svg
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </th>
+          <th
+            class="text-xs text-left select-none text-theme-neutral-400"
+            colspan="1"
+            data-testid="table__th--6"
+            role="columnheader"
+            style="cursor: pointer;"
+            title="Toggle SortBy"
+          >
+            <div
+              class="flex flex-inline align-top  undefined"
+            >
+              <div
+                class="mr-1"
+              >
+                Rank
+              </div>
+              <div
+                class="mt-1 text-theme-color-neutral-500"
+                data-testid="table__Sort"
+              >
+                <div
+                  class="sc-AxjAm iepfoc"
+                  height="10"
+                  width="10"
+                >
+                  <svg>
+                    sort.svg
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </th>
+          <th
+            class="text-xs text-left select-none text-theme-neutral-400"
+            colspan="1"
+            data-testid="table__th--7"
+            role="columnheader"
+          >
+            <div
+              class="flex flex-inline align-top  flex justify-center"
+            >
+              <div
+                class="mr-1"
+              >
+                Profile
+              </div>
+              <div
+                class="mt-1 text-theme-color-neutral-500"
+                data-testid="table__Sort"
+              />
+            </div>
+          </th>
+          <th
+            class="text-xs text-left select-none text-theme-neutral-400"
+            colspan="1"
+            data-testid="table__th--8"
+            role="columnheader"
+          >
+            <div
+              class="flex flex-inline align-top  flex justify-center"
+            >
+              <div
+                class="mr-1"
+              >
+                Status
+              </div>
+              <div
+                class="mt-1 text-theme-color-neutral-500"
+                data-testid="table__Sort"
+              />
+            </div>
+          </th>
+          <th
+            class="text-xs text-left select-none text-theme-neutral-400"
+            colspan="1"
+            data-testid="table__th--9"
+            role="columnheader"
+          >
+            <div
+              class="flex flex-inline align-top  undefined"
+            >
+              <div
+                class="mr-1"
+              />
+              <div
+                class="mt-1 text-theme-color-neutral-500"
+                data-testid="table__Sort"
+              />
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody
+        role="rowgroup"
+      />
+    </table>
+  </div>
+</DocumentFragment>
+`;

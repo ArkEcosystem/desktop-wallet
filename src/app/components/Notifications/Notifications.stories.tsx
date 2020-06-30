@@ -3,7 +3,7 @@ import React from "react";
 import { Notifications } from "./Notifications";
 
 export default {
-	title: "Navigation / Notifications",
+	title: "App / Components / Notifications",
 };
 
 export const Default = () => {

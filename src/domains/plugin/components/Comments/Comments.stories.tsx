@@ -2,7 +2,7 @@ import React from "react";
 
 import { Comments } from "./Comments";
 
-export default { title: "Plugins / Components / Review Box / Components / Comments" };
+export default { title: "Domains / Plugin / Components / Comments" };
 
 const comments = [
 	{

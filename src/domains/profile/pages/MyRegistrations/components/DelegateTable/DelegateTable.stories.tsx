@@ -3,7 +3,7 @@ import React from "react";
 import { DelegateTable } from "./DelegateTable";
 
 export default {
-	title: "Profile / Pages / My Registrations / Components / Delegate Table",
+	title: "Domains / Profile / Pages / MyRegistrations / Components / DelegateTable",
 };
 
 export const Default = () => {

@@ -4,7 +4,7 @@ import React from "react";
 import { Breadcrumbs } from "./Breadcrumbs";
 
 export default {
-	title: "Components / Breadcrumbs",
+	title: "App / Components / Breadcrumbs",
 	decorators: [withKnobs],
 };
 

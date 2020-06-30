@@ -3,7 +3,7 @@ import React from "react";
 
 import { PluginManager } from "./PluginManager";
 
-export default { title: "Plugins / Pages / Plugin Manager" };
+export default { title: "Domains / Plugin / Pages / PluginManager" };
 
 export const Default = () => (
 	<div>

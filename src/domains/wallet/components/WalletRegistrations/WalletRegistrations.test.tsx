@@ -3,7 +3,7 @@ import React from "react";
 
 import { WalletRegistrations } from "./WalletRegistrations";
 
-describe.only("WalletRegistrations", () => {
+describe("WalletRegistrations", () => {
 	it("should emit actions", () => {
 		const onShowAll = jest.fn();
 		const onRegister = jest.fn();

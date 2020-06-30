@@ -3,7 +3,7 @@ import React from "react";
 import { ListDividedItem } from "./ListDividedItem";
 
 export default {
-	title: "Basic / List Divided / List Divided Item",
+	title: "App / Components / ListDivided / ListDividedItem",
 };
 
 const item = {

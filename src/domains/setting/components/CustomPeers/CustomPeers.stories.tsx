@@ -3,7 +3,7 @@ import React from "react";
 
 import { CustomPeers } from "./CustomPeers";
 
-export default { title: "Settings / Components / CustomPeers" };
+export default { title: "Domains / Setting / Components / CustomPeers" };
 
 export const Default = () => (
 	<CustomPeers

@@ -3,7 +3,7 @@ import React from "react";
 import { FilterWallets } from "./FilterWallets";
 
 export default {
-	title: "Dashboard / Components / FilterWallets",
+	title: "Domains / Dashboard / Components / FilterWallets",
 };
 
 export const Default = () => {

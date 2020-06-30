@@ -3,7 +3,7 @@ import React from "react";
 import { MnemonicList } from "./MnemonicList";
 
 export default {
-	title: "Wallets / Components / MnemonicList",
+	title: "Domains / Wallet / Components / MnemonicList",
 };
 
 const mnemonic = [

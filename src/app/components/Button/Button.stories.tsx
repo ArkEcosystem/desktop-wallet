@@ -5,7 +5,7 @@ import React from "react";
 import { Button } from "./Button";
 
 export default {
-	title: "Basic / Button",
+	title: "App / Components / Button",
 	decorators: [withKnobs],
 };
 

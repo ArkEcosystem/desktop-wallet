@@ -2,26 +2,26 @@ import React from "react";
 
 type TransactionDetailProps = {
 	children: React.ReactNode;
-	label: string;
+	label?: string;
 	extra?: React.ReactNode;
 	border?: boolean;
 	padding?: boolean;
 	className?: string;
 };
 
-export const TransactionDetail = (props: TransactionDetailProps) => (
+export const TransactionDetail = ({ border, children, className, extra, label, padding }: TransactionDetailProps) => (
 	<div
-		className={`flex items-center ${!props.padding || "py-4"} ${
-			!props.border || "border-t border-dashed border-theme-neutral-300"
-		} ${props.className}`}
+		className={`flex items-center ${!padding || "py-4"} ${
+			!border || "border-t border-dashed border-theme-neutral-300"
+		} ${className}`}
 	>
 		<div className="flex-1">
-			<div className="text-sm font-semibold text-theme-neutral-500">{props.label}</div>
+			{label && <div className="text-sm font-semibold text-theme-neutral-500">{label}</div>}
 
-			<div className="mt-2 font-semibold">{props.children}</div>
+			<div className="mt-2 font-semibold">{children}</div>
 		</div>
 
-		{props.extra ? props.extra : null}
+		{extra ? extra : null}
 	</div>
 );
 

@@ -33,7 +33,7 @@ const recipients = [
 ];
 
 export default {
-	title: "Transactions / Components / RecipientList",
+	title: "Domains / Transaction / Components / RecipientList",
 };
 
 export const Step1 = () => (

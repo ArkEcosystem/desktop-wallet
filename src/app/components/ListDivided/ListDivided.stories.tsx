@@ -1,9 +1,9 @@
 import React from "react";
 
-import { ListDivided } from ".";
+import { ListDivided } from "./ListDivided";
 
 export default {
-	title: "Basic / List Divided / List Divided",
+	title: "App / Components / ListDivided",
 };
 
 export const Default = () => (

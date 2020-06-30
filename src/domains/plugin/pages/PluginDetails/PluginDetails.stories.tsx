@@ -3,7 +3,7 @@ import React from "react";
 
 import { PluginDetails } from "./PluginDetails";
 
-export default { title: "Plugins / Pages / Plugin Details", decorators: [withKnobs] };
+export default { title: "Domains / Plugin / Pages / PluginDetails", decorators: [withKnobs] };
 
 const ratings = [
 	{

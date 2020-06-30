@@ -5,7 +5,7 @@ import React from "react";
 import { SelectDropdown } from "./SelectDropdown";
 
 export default {
-	title: "Components / SelectDropdown",
+	title: "App / Components / SelectDropdown",
 };
 
 export const Simple = () => {

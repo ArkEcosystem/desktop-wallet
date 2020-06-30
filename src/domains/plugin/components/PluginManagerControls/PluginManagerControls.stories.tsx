@@ -2,7 +2,7 @@ import React from "react";
 
 import { PluginManagerControls } from "./PluginManagerControls";
 
-export default { title: "Plugins / components / Plugin Manager Controls" };
+export default { title: "Domains / Plugin / Components / PluginManagerControls" };
 
 export const Default = () => {
 	const [viewType, setViewType] = React.useState("grid");

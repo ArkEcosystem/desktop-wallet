@@ -4,7 +4,7 @@ import { contact2 as contact } from "../../data";
 import { UpdateContact } from "./UpdateContact";
 
 export default {
-	title: "Contacts / Components / Update Contact",
+	title: "Domains / Contact / Components / UpdateContact",
 };
 
 export const Default = () => {

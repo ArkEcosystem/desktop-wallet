@@ -2,7 +2,7 @@ import React from "react";
 
 import { MnemonicVerification } from "./MnemonicVerification";
 
-export default { title: "Wallets / Components / MnemonicVerification" };
+export default { title: "Domains / Wallet / Components / MnemonicVerification" };
 
 export const Default = () => (
 	<div className="max-w-lg">

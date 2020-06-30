@@ -3,7 +3,7 @@ import React from "react";
 import { Spinner } from "./Spinner";
 
 export default {
-	title: "Basic / Spinner",
+	title: "App / Components / Spinner",
 };
 
 export const Primary = () => (

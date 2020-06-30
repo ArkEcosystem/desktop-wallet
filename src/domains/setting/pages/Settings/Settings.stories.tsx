@@ -3,7 +3,7 @@ import React, { useState } from "react";
 
 import { Settings } from "./Settings";
 
-export default { title: "Settings / Pages", decorators: [withKnobs] };
+export default { title: "Domains / Setting / Pages / Settings", decorators: [withKnobs] };
 
 const items = [
 	{
