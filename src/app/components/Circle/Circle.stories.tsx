@@ -5,7 +5,7 @@ import React from "react";
 import { Circle } from "./Circle";
 
 export default {
-	title: "Components / Circle",
+	title: "App / Components / Circle",
 	decorators: [withKnobs],
 };
 

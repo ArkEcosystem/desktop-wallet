@@ -6,7 +6,7 @@ import React from "react";
 import { TransactionDetail } from "./TransactionDetail";
 
 export default {
-	title: "Basic / Transaction Detail",
+	title: "App / Components / Transaction Detail",
 	decorators: [withKnobs],
 };
 

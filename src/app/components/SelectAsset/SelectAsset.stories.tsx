@@ -3,7 +3,7 @@ import React from "react";
 import { SelectAsset } from "./SelectAsset";
 
 export default {
-	title: "Components / SelectAsset",
+	title: "App / Components / SelectAsset",
 };
 
 export const Default = () => {

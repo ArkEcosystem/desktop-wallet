@@ -4,7 +4,7 @@ import React from "react";
 import { Divider } from "./Divider";
 
 export default {
-	title: "Basic / Divider",
+	title: "App / Components / Divider",
 	decorators: [withKnobs],
 };
 

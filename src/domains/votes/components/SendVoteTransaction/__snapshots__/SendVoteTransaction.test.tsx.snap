@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`VoteTransactionSend should render 1`] = `
+exports[`SendVoteTransaction should render 1`] = `
 <DocumentFragment>
   <div
     class="max-w-xl mx-auto"
@@ -34,7 +34,7 @@ exports[`VoteTransactionSend should render 1`] = `
           >
             <section
               class="space-y-8"
-              data-testid="VoteTransactionSend__step--first"
+              data-testid="SendVoteTransaction__step--first"
             >
               <div>
                 <h1
@@ -383,7 +383,7 @@ exports[`VoteTransactionSend should render 1`] = `
             <button
               class="sc-AxjAm ddJBbC"
               color="primary"
-              data-testid="VoteTransactionSend__button--back"
+              data-testid="SendVoteTransaction__button--back"
               disabled=""
               type="button"
             >
@@ -392,7 +392,7 @@ exports[`VoteTransactionSend should render 1`] = `
             <button
               class="sc-AxjAm ddQVWI"
               color="primary"
-              data-testid="VoteTransactionSend__button--continue"
+              data-testid="SendVoteTransaction__button--continue"
               type="button"
             >
               Continue
@@ -405,11 +405,11 @@ exports[`VoteTransactionSend should render 1`] = `
 </DocumentFragment>
 `;
 
-exports[`VoteTransactionSend should render 1st step 1`] = `
+exports[`SendVoteTransaction should render 1st step 1`] = `
 <DocumentFragment>
   <section
     class="space-y-8"
-    data-testid="VoteTransactionSend__step--first"
+    data-testid="SendVoteTransaction__step--first"
   >
     <div>
       <h1
@@ -754,11 +754,11 @@ exports[`VoteTransactionSend should render 1st step 1`] = `
 </DocumentFragment>
 `;
 
-exports[`VoteTransactionSend should render 2st step 1`] = `
+exports[`SendVoteTransaction should render 2st step 1`] = `
 <DocumentFragment>
   <section
     class="space-y-8"
-    data-testid="VoteTransactionSend__step--second"
+    data-testid="SendVoteTransaction__step--second"
   >
     <div>
       <h1
@@ -1081,11 +1081,11 @@ exports[`VoteTransactionSend should render 2st step 1`] = `
 </DocumentFragment>
 `;
 
-exports[`VoteTransactionSend should render 3st step 1`] = `
+exports[`SendVoteTransaction should render 3st step 1`] = `
 <DocumentFragment>
   <section
     class="space-y-8"
-    data-testid="VoteTransactionSend__step--third"
+    data-testid="SendVoteTransaction__step--third"
   >
     <div>
       <h1
@@ -1153,11 +1153,11 @@ exports[`VoteTransactionSend should render 3st step 1`] = `
 </DocumentFragment>
 `;
 
-exports[`VoteTransactionSend should render 4st step 1`] = `
+exports[`SendVoteTransaction should render 4st step 1`] = `
 <DocumentFragment>
   <section
     class="space-y-8"
-    data-testid="VoteTransactionSend__step--fourth"
+    data-testid="SendVoteTransaction__step--fourth"
   >
     <div>
       <h1

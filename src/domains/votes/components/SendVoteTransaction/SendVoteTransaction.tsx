@@ -41,7 +41,7 @@ export const FirstStep = () => {
 	}, [register]);
 
 	return (
-		<section className="space-y-8" data-testid="VoteTransactionSend__step--first">
+		<section className="space-y-8" data-testid="SendVoteTransaction__step--first">
 			<div>
 				<h1 className="mb-0">Vote Transaction</h1>
 				<p className="text-theme-neutral-dark">Select a fee to continue</p>
@@ -98,7 +98,7 @@ export const FirstStep = () => {
 };
 
 export const SecondStep = () => (
-	<section className="space-y-8" data-testid="VoteTransactionSend__step--second">
+	<section className="space-y-8" data-testid="SendVoteTransaction__step--second">
 		<div>
 			<h1 className="mb-0">Transaction Review</h1>
 			<p className="text-theme-neutral-dark">Review the transaction details</p>
@@ -144,7 +144,7 @@ export const ThirdStep = () => {
 	}, [register]);
 
 	return (
-		<section data-testid="VoteTransactionSend__step--third" className="space-y-8">
+		<section data-testid="SendVoteTransaction__step--third" className="space-y-8">
 			<div>
 				<h1 className="mb-0">Authenticate</h1>
 				<p className="text-theme-neutral-dark">
@@ -161,7 +161,7 @@ export const ThirdStep = () => {
 };
 
 export const FourthStep = () => (
-	<section data-testid="VoteTransactionSend__step--fourth" className="space-y-8">
+	<section data-testid="SendVoteTransaction__step--fourth" className="space-y-8">
 		<div>
 			<h1 className="mb-0">Transaction Successful</h1>
 			<div className="grid grid-flow-row gap-2">
@@ -253,11 +253,11 @@ export const FourthStep = () => (
 	</section>
 );
 
-type VoteTransactionSendProps = {
+type SendVoteTransactionProps = {
 	onSubmit?: () => void;
 };
 
-export const VoteTransactionSend = ({ onSubmit }: VoteTransactionSendProps) => {
+export const SendVoteTransaction = ({ onSubmit }: SendVoteTransactionProps) => {
 	const [activeTab, setActiveTab] = useState(1);
 	const form = useForm({ mode: "onChange" });
 
@@ -294,7 +294,7 @@ export const VoteTransactionSend = ({ onSubmit }: VoteTransactionSendProps) => {
 								<>
 									<Button
 										disabled={activeTab === 1}
-										data-testid="VoteTransactionSend__button--back"
+										data-testid="SendVoteTransaction__button--back"
 										variant="plain"
 										onClick={handleBack}
 									>
@@ -302,13 +302,13 @@ export const VoteTransactionSend = ({ onSubmit }: VoteTransactionSendProps) => {
 									</Button>
 
 									{activeTab === 3 ? (
-										<Button data-testid="VoteTransactionSend__button--send" onClick={handleNext}>
+										<Button data-testid="SendVoteTransaction__button--send" onClick={handleNext}>
 											<Icon name="Send" width={20} height={20} className="text-white" />
 											<span>Send</span>
 										</Button>
 									) : (
 										<Button
-											data-testid="VoteTransactionSend__button--continue"
+											data-testid="SendVoteTransaction__button--continue"
 											onClick={handleNext}
 										>
 											Continue
@@ -320,13 +320,13 @@ export const VoteTransactionSend = ({ onSubmit }: VoteTransactionSendProps) => {
 							{activeTab === 4 && (
 								<>
 									<Button
-										data-testid="VoteTransactionSend__button--back-to-wallet"
+										data-testid="SendVoteTransaction__button--back-to-wallet"
 										variant="plain"
 										className={"block"}
 									>
 										Back to wallet
 									</Button>
-									<Button data-testid="VoteTransactionSend__button--download" variant="plain">
+									<Button data-testid="SendVoteTransaction__button--download" variant="plain">
 										<Icon name="Download" />
 										<span>Download</span>
 									</Button>

@@ -3,7 +3,7 @@ import React from "react";
 import { Collapse } from "./Collapse";
 import { CollapseToggleButton } from "./CollapseToggleButton";
 
-export default { title: "Basic / Collapse" };
+export default { title: "App / Components / Collapse" };
 
 export const Default = () => {
 	const [show, setShow] = React.useState(false);

@@ -4,9 +4,9 @@ import { act, renderHook } from "@testing-library/react-hooks";
 import React from "react";
 import { FormContext, useForm } from "react-hook-form";
 
-import { FirstStep, FourthStep, SecondStep, ThirdStep, VoteTransactionSend } from "../VoteTransactionSend";
+import { FirstStep, FourthStep, SecondStep, SendVoteTransaction,ThirdStep } from "./SendVoteTransaction";
 
-describe("VoteTransactionSend", () => {
+describe("SendVoteTransaction", () => {
 	it("should render 1st step", async () => {
 		const { result: form } = renderHook(() => useForm());
 		const { getByTestId, asFragment } = render(
@@ -15,14 +15,14 @@ describe("VoteTransactionSend", () => {
 			</FormContext>,
 		);
 
-		expect(getByTestId("VoteTransactionSend__step--first")).toBeTruthy();
+		expect(getByTestId("SendVoteTransaction__step--first")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should render 2st step", async () => {
 		const { getByTestId, asFragment } = render(<SecondStep />);
 
-		expect(getByTestId("VoteTransactionSend__step--second")).toBeTruthy();
+		expect(getByTestId("SendVoteTransaction__step--second")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -34,14 +34,14 @@ describe("VoteTransactionSend", () => {
 			</FormContext>,
 		);
 
-		expect(getByTestId("VoteTransactionSend__step--third")).toBeTruthy();
+		expect(getByTestId("SendVoteTransaction__step--third")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should render 4st step", async () => {
 		const { getByTestId, asFragment } = render(<FourthStep />);
 
-		expect(getByTestId("VoteTransactionSend__step--fourth")).toBeTruthy();
+		expect(getByTestId("SendVoteTransaction__step--fourth")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -49,8 +49,8 @@ describe("VoteTransactionSend", () => {
 		let rendered: RenderResult;
 
 		await act(async () => {
-			rendered = render(<VoteTransactionSend />);
-			await waitFor(() => expect(rendered.getByTestId(`VoteTransactionSend__step--first`)).toBeTruthy());
+			rendered = render(<SendVoteTransaction />);
+			await waitFor(() => expect(rendered.getByTestId(`SendVoteTransaction__step--first`)).toBeTruthy());
 		});
 
 		const { getByTestId, asFragment } = rendered!;
@@ -58,24 +58,24 @@ describe("VoteTransactionSend", () => {
 		expect(asFragment()).toMatchSnapshot();
 
 		await act(async () => {
-			const continueButton = getByTestId(`VoteTransactionSend__button--continue`);
+			const continueButton = getByTestId(`SendVoteTransaction__button--continue`);
 
 			// Navigation between steps
 			await waitFor(() => expect(continueButton).not.toHaveAttribute("disabled"));
 
 			fireEvent.click(continueButton);
-			expect(getByTestId(`VoteTransactionSend__step--second`)).toBeTruthy();
+			expect(getByTestId(`SendVoteTransaction__step--second`)).toBeTruthy();
 
 			fireEvent.click(continueButton);
-			expect(getByTestId(`VoteTransactionSend__step--third`)).toBeTruthy();
+			expect(getByTestId(`SendVoteTransaction__step--third`)).toBeTruthy();
 
 			// Back
-			fireEvent.click(getByTestId(`VoteTransactionSend__button--back`));
-			expect(getByTestId(`VoteTransactionSend__step--second`)).toBeTruthy();
+			fireEvent.click(getByTestId(`SendVoteTransaction__button--back`));
+			expect(getByTestId(`SendVoteTransaction__step--second`)).toBeTruthy();
 
 			fireEvent.click(continueButton);
 			fireEvent.click(continueButton);
-			await waitFor(() => expect(getByTestId(`VoteTransactionSend__button--back-to-wallet`)).toBeTruthy());
+			await waitFor(() => expect(getByTestId(`SendVoteTransaction__button--back-to-wallet`)).toBeTruthy());
 		});
 	});
 });

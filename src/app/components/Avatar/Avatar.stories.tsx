@@ -2,7 +2,7 @@ import React from "react";
 
 import { Avatar } from "./Avatar";
 
-export default { title: "Components / Avatar" };
+export default { title: "App / Components / Avatar" };
 
 export const Default = () => {
 	return (

@@ -3,7 +3,7 @@ import React from "react";
 import { WalletCard } from "./WalletCard";
 
 export default {
-	title: "Components / Wallet Card",
+	title: "App / Components / Wallet Card",
 };
 
 export const Default = () => {

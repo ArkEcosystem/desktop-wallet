@@ -4,7 +4,7 @@ import React from "react";
 import { Address } from "./Address";
 
 export default {
-	title: "Components / Formatted Address",
+	title: "App / Components / Formatted Address",
 	decorators: [withKnobs],
 };
 
@@ -16,7 +16,7 @@ export const Default = () => {
 
 	return (
 		<div className="">
-			<div className="mb-10 text-md">Formatted (truncated) address with optional wallet name</div>
+			<div className="text-md mb-10">Formatted (truncated) address with optional wallet name</div>
 			<div className="mb-10">
 				<Address address={address} maxChars={maxChars} walletName={walletName} size={size} />
 			</div>

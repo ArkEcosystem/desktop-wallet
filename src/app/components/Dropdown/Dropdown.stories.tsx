@@ -3,7 +3,7 @@ import React from "react";
 import { Dropdown } from "./Dropdown";
 
 export default {
-	title: "Components / Dropdown",
+	title: "App / Components / Dropdown",
 };
 
 export const Default = () => {

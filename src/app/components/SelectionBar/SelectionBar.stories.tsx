@@ -3,7 +3,7 @@ import React from "react";
 import { SelectionBar, SelectionBarOption } from "./SelectionBar";
 import { useSelectionState } from "./useSelectionState";
 
-export default { title: "Basic / Selection Bar" };
+export default { title: "App / Components / Selection Bar" };
 
 export const Default = () => {
 	const state = useSelectionState(1);
