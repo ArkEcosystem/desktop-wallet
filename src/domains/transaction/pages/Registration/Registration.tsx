@@ -286,7 +286,9 @@ const ThirdStep = () => {
 				<TransactionDetail label="Description">Not a trustworthy bank</TransactionDetail>
 
 				<TransactionDetail label="Website">
-					<a href="https://ark.io">https://ark.io</a>
+					<a href="http://robank.com" target="_blank" rel="noreferrer" className="link">
+						http://robank.com
+					</a>
 				</TransactionDetail>
 
 				<TransactionDetail className="mb-2">
@@ -365,7 +367,11 @@ export const FifthStep = () => (
 		</TransactionDetail>
 		<TransactionDetail label="Name">ROBank Eco</TransactionDetail>
 		<TransactionDetail label="Description">Not a trustworthy bank</TransactionDetail>
-		<TransactionDetail label="Website">ROBank Eco</TransactionDetail>
+		<TransactionDetail label="Website">
+			<a href="http://robank.com" target="_blank" rel="noreferrer" className="link">
+				http://robank.com
+			</a>
+		</TransactionDetail>
 		<TransactionDetail
 			label="Amount"
 			extra={
