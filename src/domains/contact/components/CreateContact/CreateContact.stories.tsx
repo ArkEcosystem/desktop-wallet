@@ -3,7 +3,7 @@ import React from "react";
 import { CreateContact } from "./CreateContact";
 
 export default {
-	title: "Contacts / Components / Create Contact",
+	title: "Domains / Contact / Components / CreateContact",
 };
 
 export const Default = () => {

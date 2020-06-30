@@ -4,7 +4,7 @@ import React from "react";
 import { Welcome } from "./Welcome";
 
 export default {
-	title: "Profile / Pages / Welcome",
+	title: "Domains / Profile / Pages / Welcome",
 };
 
 export const Default = () => {

@@ -4,7 +4,7 @@ import React from "react";
 import { DeleteContact } from "./DeleteContact";
 
 export default {
-	title: "Contacts / Components / Delete Contact",
+	title: "Domains / Contact / Components / DeleteContact",
 	decorators: [withKnobs],
 };
 

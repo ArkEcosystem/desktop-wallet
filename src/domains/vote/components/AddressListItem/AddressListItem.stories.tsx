@@ -3,7 +3,7 @@ import React from "react";
 
 import { AddressListItem } from "./AddressListItem";
 
-export default { title: "Votes / Components / AddressListItem" };
+export default { title: "Domains / Vote / Components / AddressListItem" };
 
 const data = [
 	{

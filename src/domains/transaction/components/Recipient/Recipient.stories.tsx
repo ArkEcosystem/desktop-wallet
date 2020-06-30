@@ -4,7 +4,7 @@ import React from "react";
 import { Recipient } from "./Recipient";
 
 export default {
-	title: "App / Components / Recipient",
+	title: "Domains / Transaction / Components / Recipient",
 	decorators: [withKnobs],
 };
 

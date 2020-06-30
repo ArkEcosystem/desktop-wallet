@@ -3,7 +3,7 @@ import React from "react";
 
 import { DelegateListItem } from "./DelegateListItem";
 
-export default { title: "Votes / Components / DelegateListItem" };
+export default { title: "Domains / Vote / Components / DelegateListItem" };
 
 const data = [
 	{

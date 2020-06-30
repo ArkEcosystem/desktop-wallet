@@ -2,7 +2,7 @@ import React from "react";
 
 import { VoteForDelegate } from "./VoteForDelegate";
 
-export default { title: "Transactions / Pages / Vote for Delegate" };
+export default { title: "Domains / Transaction / Pages / Vote for Delegate" };
 
 export const Default = () => (
 	<div className="mt-15">

@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 
 import { InstallPlugin } from "./InstallPlugin";
 
-export default { title: "Plugins / Components / Install Plugin" };
+export default { title: "Domains / Plugin / Components / InstallPlugin" };
 
 export const Default = () => {
 	const [step, setStep] = useState(1);

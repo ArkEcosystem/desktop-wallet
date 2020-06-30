@@ -2,7 +2,7 @@ import React from "react";
 
 import { VoteList } from "./VoteList";
 
-export default { title: "Votes / Components / VoteList" };
+export default { title: "Domains / Vote / Components / VoteList" };
 
 const votes = [
 	{

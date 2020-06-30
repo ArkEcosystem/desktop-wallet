@@ -40,11 +40,11 @@ const notifications = {
 	],
 };
 
-export default { title: "Dashboard / Pages" };
+export default { title: "Domains / Dashboard / Pages / Dashboard" };
 
 export const Default = () => {
 	return (
-		<div className="pt-1 -m-5 -mt-6 bg-theme-neutral-100">
+		<div className="bg-theme-neutral-100 pt-1 -m-5 -mt-6">
 			<NavigationBar
 				currencyIcon="Ark"
 				balance="34,253.75"
@@ -66,7 +66,7 @@ export const Default = () => {
 
 export const FewerWallets = () => {
 	return (
-		<div className="pt-1 -m-5 -mt-6 bg-theme-neutral-100">
+		<div className="bg-theme-neutral-100 pt-1 -m-5 -mt-6">
 			<NavigationBar
 				currencyIcon="Ark"
 				balance="34,253.75"
@@ -88,7 +88,7 @@ export const FewerWallets = () => {
 
 export const Empty = () => {
 	return (
-		<div className="pt-1 -m-5 -mt-6 bg-theme-neutral-100">
+		<div className="bg-theme-neutral-100 pt-1 -m-5 -mt-6">
 			<NavigationBar
 				currencyIcon="Ark"
 				balance="34,253.75"

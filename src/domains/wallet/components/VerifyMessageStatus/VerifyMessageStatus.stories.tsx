@@ -4,7 +4,7 @@ import React, { useState } from "react";
 
 import { VerifyMessageStatus } from "./VerifyMessageStatus";
 
-export default { title: "Wallet / Components / Verify Message Status Modal", decorators: [withKnobs] };
+export default { title: "Domains / Wallet / Components / Verify Message Status Modal", decorators: [withKnobs] };
 
 export const Default = () => {
 	const [isOpen, setIsOpen] = useState(false);

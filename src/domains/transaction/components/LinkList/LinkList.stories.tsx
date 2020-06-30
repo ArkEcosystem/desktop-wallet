@@ -2,7 +2,7 @@ import React from "react";
 
 import { LinkList } from "./LinkList";
 
-export default { title: "App / Components / Link List" };
+export default { title: "Domains / Transaction / Components / LinkList" };
 
 const links = [
 	{

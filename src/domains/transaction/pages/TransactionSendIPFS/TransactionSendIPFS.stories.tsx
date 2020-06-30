@@ -2,7 +2,7 @@ import React from "react";
 
 import { TransactionSendIPFS } from "./TransactionSendIPFS";
 
-export default { title: "Transactions / Pages / Send IPFS Modal" };
+export default { title: "Domains / Transaction / Pages / Send IPFS Modal" };
 
 export const Default = () => {
 	const assets = [

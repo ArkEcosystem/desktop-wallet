@@ -6,7 +6,7 @@ import { wallets } from "../../data";
 import { SearchWallet } from "./SearchWallet";
 
 export default {
-	title: "Wallet / Components / Search Wallet",
+	title: "Domains / Wallet / Components / SearchWallet",
 	decorators: [withKnobs],
 };
 

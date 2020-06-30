@@ -3,7 +3,7 @@ import React from "react";
 import { networks } from "../../data";
 import { NetworkCard } from "./NetworkCard";
 
-export default { title: "Network / Components / Network Card" };
+export default { title: "Domains / Network / Components / NetworkCard" };
 
 export const Default = () => <NetworkCard icon="Ark" name="ARK Ecosystem" network="Mainnet" />;
 

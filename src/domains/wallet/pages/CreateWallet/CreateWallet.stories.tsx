@@ -3,7 +3,7 @@ import React from "react";
 
 import { CreateWallet } from "./CreateWallet";
 
-export default { title: "Wallet / Pages / Create Wallet" };
+export default { title: "Domains / Wallet / Pages / CreateWallet" };
 
 const mnemonic = [
 	"lorem",

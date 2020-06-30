@@ -2,7 +2,7 @@ import React from "react";
 
 import { PluginGrid } from "./PluginGrid";
 
-export default { title: "Plugins / Components / Plugin Grid" };
+export default { title: "Domains / Plugin / Components / PluginGrid" };
 
 const plugins = [
 	{

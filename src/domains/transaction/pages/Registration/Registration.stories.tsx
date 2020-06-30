@@ -2,7 +2,7 @@ import React from "react";
 
 import { Registration } from "./Registration";
 
-export default { title: "Transactions / Pages / Registration" };
+export default { title: "Domains / Transaction / Pages / Registration" };
 
 const defaultFormValues = {
 	networks: [

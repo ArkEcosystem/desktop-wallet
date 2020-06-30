@@ -4,7 +4,7 @@ import React from "react";
 import { searchData as data } from "../../data";
 import { SearchHelp } from "./SearchHelp";
 
-export default { title: "Search / Search Help", decorators: [withKnobs] };
+export default { title: "Domains / Help / Components / SearchHelp", decorators: [withKnobs] };
 
 export const Default = () => {
 	return <SearchHelp isOpen={true} data={data} />;
