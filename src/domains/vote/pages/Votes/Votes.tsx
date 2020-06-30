@@ -1,3 +1,4 @@
+import { images } from "app/assets/images";
 import { Address } from "app/components/Address";
 import { Breadcrumbs } from "app/components/Breadcrumbs";
 import { Circle } from "app/components/Circle";
@@ -14,6 +15,8 @@ import { styled } from "twin.macro";
 type VotesProps = {
 	assets?: any[];
 };
+
+const { PlaceholderVotes } = images.vote.pages.votes;
 
 const SelectAssetWrapper = styled.div`
 	.select-asset__items {
@@ -69,6 +72,10 @@ export const Votes = ({ assets }: VotesProps) => {
 							</div>
 						</TransactionDetail>
 					</div>
+				</div>
+
+				<div className="p-10 bg-theme-background">
+					<PlaceholderVotes />
 				</div>
 			</div>
 		</div>
