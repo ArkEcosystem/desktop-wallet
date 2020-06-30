@@ -70,7 +70,18 @@ exports[`Button should render contrast text if not primary 1`] = `
 </div>
 `;
 
-exports[`Button should render if disabled 1`] = `[Function]`;
+exports[`Button should render if disabled 1`] = `
+<DocumentFragment>
+  <button
+    class="sc-AxjAm ddQVWI"
+    color="primary"
+    disabled=""
+    type="button"
+  >
+    Click
+  </button>
+</DocumentFragment>
+`;
 
 exports[`Button should render white text if primary 1`] = `
 <div>
