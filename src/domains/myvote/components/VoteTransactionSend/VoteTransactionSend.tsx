@@ -1,4 +1,5 @@
 import { Address } from "app/components/Address";
+import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { Clipboard } from "app/components/Clipboard";
@@ -11,7 +12,6 @@ import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { TransactionDetail } from "app/components/TransactionDetail";
 import { TotalAmountBox } from "domains/transaction/components/TotalAmountBox";
-import { Avatar } from "domains/wallet/components/Avatar";
 import React, { useEffect, useState } from "react";
 import { useForm, useFormContext } from "react-hook-form";
 

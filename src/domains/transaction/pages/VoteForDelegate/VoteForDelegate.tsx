@@ -1,7 +1,6 @@
 import { Address } from "app/components/Address";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
-import { Clipboard } from "app/components/Clipboard";
 import { Form } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { InputPassword, InputRange } from "app/components/Input";
@@ -9,6 +8,7 @@ import { SelectionBar, SelectionBarOption, useSelectionState } from "app/compone
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { TransactionDetail } from "app/components/TransactionDetail";
+import { TransactionSuccessful } from "domains/transaction/components/TransactionSuccessful";
 import React, { useEffect } from "react";
 import { useForm, useFormContext } from "react-hook-form";
 
@@ -140,94 +140,31 @@ export const ThirdStep = () => {
 };
 
 export const FourthStep = () => (
-	<section data-testid="VoteForDelegate__step--fourth" className="space-y-8">
-		<div>
-			<h1 className="mb-0">Transaction Successful</h1>
-			<div className="grid grid-flow-row gap-2">
-				<div className="w-full mt-10">
-					<Icon name="TransactionSuccessful" width="100%" height={200} />
+	<TransactionSuccessful>
+		<TransactionDetail
+			label="Delegate"
+			extra={
+				<div>
+					<Circle avatarId="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
 				</div>
-				<p className="text-theme-neutral-dark">
-					Your transaction was successfully sent. Please monitor the blockchain to ensure your transactions is
-					confirmed and processed, The following is relevant information for your transaction.
-				</p>
-				<TransactionDetail label="ID">
-					<div className="flex items-center">
-						<Clipboard>
-							<Address
-								addressClass="text-theme-primary"
-								address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWKAUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
-								maxChars={32}
-							/>
-						</Clipboard>
-						<div className="mb-1 ml-5 text-theme-primary-300">
-							<Icon name="Copy" />
-						</div>
-					</div>
-				</TransactionDetail>
-				<TransactionDetail label="Block ID">
-					<div className="flex items-center">
-						<Clipboard>
-							<Address
-								addressClass="text-theme-primary"
-								address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWKAUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
-								maxChars={32}
-							/>
-						</Clipboard>
-						<div className="mb-1 ml-5 text-theme-primary-300">
-							<Icon name="Copy" />
-						</div>
-					</div>
-				</TransactionDetail>
-				<TransactionDetail
-					border={false}
-					label="Network"
-					extra={
-						<div className="ml-1 text-theme-danger-500">
-							<Circle className="bg-theme-background border-theme-danger-200" size="large">
-								<Icon name="Ark" width={20} height={20} />
-							</Circle>
-						</div>
-					}
-				>
-					<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} size="large" />
-				</TransactionDetail>
-				<TransactionDetail
-					label="Account"
-					extra={
-						<div>
-							<Circle avatarId="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
-						</div>
-					}
-				>
-					<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} size="large" />
-				</TransactionDetail>
-				<TransactionDetail
-					label="Delegate"
-					extra={
-						<div>
-							<Circle avatarId="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
-						</div>
-					}
-				>
-					<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"Delegate 3"} size="large" />
-				</TransactionDetail>
-				<TransactionDetail label="Transaction fee">0.09660435 ARK</TransactionDetail>
-				<TransactionDetail
-					label="Transaction type"
-					extra={
-						<div className="ml-1 text-theme-neutral-900">
-							<Circle className="border-theme-neutral-900 bg-theme-background" size="large">
-								<Icon name="Voted" />
-							</Circle>
-						</div>
-					}
-				>
-					Vote
-				</TransactionDetail>
-			</div>
-		</div>
-	</section>
+			}
+		>
+			<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"Delegate 3"} size="large" />
+		</TransactionDetail>
+		<TransactionDetail label="Transaction fee">0.09660435 ARK</TransactionDetail>
+		<TransactionDetail
+			label="Transaction type"
+			extra={
+				<div className="ml-1 text-theme-neutral-900">
+					<Circle className="border-theme-neutral-900 bg-theme-background" size="large">
+						<Icon name="Voted" />
+					</Circle>
+				</div>
+			}
+		>
+			Vote
+		</TransactionDetail>
+	</TransactionSuccessful>
 );
 
 type Props = {

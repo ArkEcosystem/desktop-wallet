@@ -4,7 +4,7 @@ import { TransactionListItemProps } from "app/components/TransactionListItem/mod
 import React from "react";
 
 import { Icon } from "../Icon";
-import { EmptyPlaceholderProps,NotificationsProps, PluginNotification } from "./models";
+import { EmptyPlaceholderProps, NotificationsProps, PluginNotification } from "./models";
 
 const Plugin = ({ logoUrl, logoClassName, title, description, action, onAction }: PluginNotification) => (
 	<tr>

@@ -24,22 +24,6 @@ describe("SelectDropdown", () => {
 		expect(container).toMatchSnapshot();
 	});
 
-	it("should render ignoring option.value property", () => {
-		const options = [
-			{
-				label: "Option 1",
-			},
-			{
-				label: "Option 2",
-			},
-			{
-				label: "Option 3",
-			},
-		];
-		const { container } = render(<SelectDropdown options={options} />);
-		expect(container).toMatchSnapshot();
-	});
-
 	it("should render with custom toggle and option templates", () => {
 		const options = [
 			{
@@ -68,6 +52,51 @@ describe("SelectDropdown", () => {
 				options={options}
 			/>,
 		);
+		expect(container).toMatchSnapshot();
+	});
+
+	it("should close if clicked outside", () => {
+		const options = [
+			{
+				label: "Test Option 1",
+				value: "1",
+			},
+			{
+				label: "Test Option 2",
+				value: "2",
+			},
+			{
+				label: "Test Option 3",
+				value: "3",
+			},
+		];
+		const { container, getByTestId } = render(
+			<SelectDropdown
+				option={(option: any) => <div>{option.label}</div>}
+				toggle={() => {
+					return (
+						<div className="flex items-center flex-inline">
+							<div className="font-semibold text-theme-neutral-800">Select Option</div>
+						</div>
+					);
+				}}
+				options={options}
+			/>,
+		);
+
+		const toggle = getByTestId("select-dropdown__toggle");
+		act(() => {
+			fireEvent.click(toggle);
+		});
+
+		expect(getByTestId("select-dropdown__content")).toBeTruthy();
+
+		act(() => {
+			fireEvent.click(toggle);
+		});
+
+		expect(() => getByTestId("select-dropdown__content")).toThrow(/Unable to find an element by/);
+		expect(container).not.toHaveTextContent("Test Option");
 		expect(container).toMatchSnapshot();
 	});
 

@@ -2,7 +2,6 @@ import { images } from "app/assets/images";
 import { Address } from "app/components/Address";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
-import { Clipboard } from "app/components/Clipboard";
 import { Form } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { InputPassword } from "app/components/Input";
@@ -14,10 +13,11 @@ import { TransactionDetail } from "app/components/TransactionDetail";
 import { RecipientList } from "domains/transaction/components/RecipientList";
 import { SendTransactionForm } from "domains/transaction/components/SendTransactionForm";
 import { TotalAmountBox } from "domains/transaction/components/TotalAmountBox";
+import { TransactionSuccessful } from "domains/transaction/components/TransactionSuccessful";
 import React from "react";
 import { useForm } from "react-hook-form";
 
-const { ConfirmTransactionLedgerBanner } = images.transaction.pages.transactionSend;
+const { ConfirmTransactionLedgerBanner } = images.transaction.common;
 
 const recipients = [
 	{
@@ -158,92 +158,25 @@ export const FourthStep = () => (
 );
 
 export const FifthStep = () => (
-	<section data-testid="TransactionSend__step--fifth" className="space-y-8">
-		<div>
-			<h1 className="mb-0">Transaction Successful</h1>
-			<div className="grid grid-flow-row gap-2">
-				<div className="w-full mt-10">
-					<Icon name="TransactionSuccessful" width="100%" height={200} />
-				</div>
-				<p className="text-theme-neutral-dark">
-					Your transaction was successfully sent. Please monitor the blockchain to ensure your transactions is
-					confirmed and processed, The following is relevant information for your transaction.
-				</p>
-				<TransactionDetail label="ID">
-					<div className="flex items-center">
-						<Clipboard>
-							<Address
-								addressClass="text-theme-primary"
-								address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWKAUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
-								maxChars={32}
-							/>
-						</Clipboard>
-						<div className="mb-1 ml-5 text-theme-primary-300">
-							<Icon name="Copy" />
-						</div>
-					</div>
-				</TransactionDetail>
-				<TransactionDetail label="Block ID">
-					<div className="flex items-center">
-						<Clipboard>
-							<Address
-								addressClass="text-theme-primary"
-								address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWKAUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
-								maxChars={32}
-							/>
-						</Clipboard>
-						<div className="mb-1 ml-5 text-theme-primary-300">
-							<Icon name="Copy" />
-						</div>
-					</div>
-				</TransactionDetail>
-				<TransactionDetail
-					border={false}
-					label="Network"
-					extra={
-						<div className="ml-1 text-theme-danger-500">
-							<Circle className="bg-theme-background border-theme-danger-200" size="large">
-								<Icon name="Ark" width={20} height={20} />
-							</Circle>
-						</div>
-					}
-				>
-					<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} size="large" />
-				</TransactionDetail>
-				<TransactionDetail
-					label=" "
-					extra={
-						<div>
-							<Circle avatarId="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
-						</div>
-					}
-				>
-					<div className="mb-2 text-sm font-semibold text-theme-neutral-500">
-						<span className="mr-1">Sender</span>
-						<Label color="warning">Your address</Label>
-					</div>
-					<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} size="large" />
-				</TransactionDetail>
-				<TransactionDetail label="IPFS Hash">
-					<div className="mt-4 mr-1 font-semibold truncate text-theme-neutral-800 text-md">
-						JFKDJFKSDJFKDSJFKJKJFKDSJFKLJAKFJAKLJFKALSJFKLASJF
-					</div>
-				</TransactionDetail>
-				<TransactionDetail
-					label="Amount"
-					extra={
-						<div className="ml-1 text-theme-danger">
-							<Circle className="bg-theme-background border-theme-danger-200" size="large">
-								<Icon name="Sent" width={50} height={50} />
-							</Circle>
-						</div>
-					}
-				>
-					1.00 ARK
-				</TransactionDetail>
+	<TransactionSuccessful>
+		<TransactionDetail label="IPFS Hash">
+			<div className="mt-4 mr-1 font-semibold truncate text-theme-neutral-800 text-md">
+				JFKDJFKSDJFKDSJFKJKJFKDSJFKLJAKFJAKLJFKALSJFKLASJF
 			</div>
-		</div>
-	</section>
+		</TransactionDetail>
+		<TransactionDetail
+			label="Amount"
+			extra={
+				<div className="ml-1 text-theme-danger">
+					<Circle className="bg-theme-background border-theme-danger-200" size="large">
+						<Icon name="Sent" width={50} height={50} />
+					</Circle>
+				</div>
+			}
+		>
+			1.00 ARK
+		</TransactionDetail>
+	</TransactionSuccessful>
 );
 
 type Props = {

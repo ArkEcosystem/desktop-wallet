@@ -180,7 +180,7 @@ module.exports = {
 	},
 	variants: {
 		borderRadius: [...defaultConfig.variants.borderRadius, "first", "last"],
-		borderWidth: [...defaultConfig.variants.borderWidth, "last"],
+		borderWidth: [...defaultConfig.variants.borderWidth, "first", "last"],
 	},
 	plugins: [tailwindUI, tailwindcssDebugScreens],
 };
