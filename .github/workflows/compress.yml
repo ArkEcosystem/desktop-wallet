@@ -18,5 +18,4 @@ jobs:
             - uses: ericcornelissen/svgo-action@v1.0.1
               with:
                   conventional-commits: true
-                  svgo-options: svgo-options.yml
                   repo-token: ${{ secrets.GH_TOKEN }}
