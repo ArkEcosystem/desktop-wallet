@@ -4,7 +4,7 @@ import { act, renderHook } from "@testing-library/react-hooks";
 import React from "react";
 import { FormContext, useForm } from "react-hook-form";
 
-import { FirstStep, FourthStep, SecondStep, SendIPFSTransaction,ThirdStep } from "./SendIPFSTransaction";
+import { FirstStep, FourthStep, SecondStep, SendIPFSTransaction, ThirdStep } from "./SendIPFSTransaction";
 
 describe("SendIPFSTransaction", () => {
 	const onCopy = jest.fn();

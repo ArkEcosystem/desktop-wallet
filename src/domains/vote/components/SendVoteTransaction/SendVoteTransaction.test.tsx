@@ -4,7 +4,7 @@ import { act, renderHook } from "@testing-library/react-hooks";
 import React from "react";
 import { FormContext, useForm } from "react-hook-form";
 
-import { FirstStep, FourthStep, SecondStep, SendVoteTransaction,ThirdStep } from "./SendVoteTransaction";
+import { FirstStep, FourthStep, SecondStep, SendVoteTransaction, ThirdStep } from "./SendVoteTransaction";
 
 describe("SendVoteTransaction", () => {
 	it("should render 1st step", async () => {
