@@ -122,7 +122,7 @@ export const Wallets = ({
 };
 
 Wallets.defaultProps = {
-	title: "Wallet",
+	title: "Wallets",
 	networks: [],
 	wallets: [],
 	walletsEmptyText: "",
