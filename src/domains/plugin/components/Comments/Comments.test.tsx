@@ -1,6 +1,3 @@
-jest.mock("moment", () => {
-	return () => jest.requireActual("moment")("2020-06-19T14:48:00.000Z");
-});
 import { act, fireEvent, render } from "@testing-library/react";
 import { i18n } from "app/i18n";
 import MockDate from "mockdate";
