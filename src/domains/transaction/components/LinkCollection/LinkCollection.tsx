@@ -115,15 +115,9 @@ export const LinkCollection = ({
 								<InputGroup className="flex flex-1">
 									<SelectDropdown
 										option={(type: Type) => {
-											return (
-												<div className="p-2 border-b border-theme-neutral-200 hover:bg-theme-neutral-100">
-													{type.label}
-												</div>
-											);
+											return <div className="p-2 border-b link">{type.label}</div>;
 										}}
 										toggle={(selected: Type) => {
-											setSelectedType(selected);
-
 											if (selected) {
 												return (
 													<div className="flex items-center flex-inline">
@@ -140,6 +134,7 @@ export const LinkCollection = ({
 										}}
 										options={types}
 										className="w-full"
+										onChange={(selected: Type) => setSelectedType(selected)}
 									/>
 								</InputGroup>
 							</div>

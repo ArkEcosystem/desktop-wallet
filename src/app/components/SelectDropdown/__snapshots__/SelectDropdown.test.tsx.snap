@@ -5,13 +5,13 @@ exports[`SelectDropdown should close if clicked outside 1`] = `
   <div
     aria-expanded="false"
     aria-haspopup="listbox"
-    aria-labelledby="downshift-2-label"
+    aria-labelledby="downshift-3-label"
     class="relative undefined"
     role="combobox"
   >
     <label
       for="dropdown-select"
-      id="downshift-2-label"
+      id="downshift-3-label"
     >
       <div
         class="relative flex items-center w-full flex-inline"
@@ -53,9 +53,9 @@ exports[`SelectDropdown should close if clicked outside 1`] = `
     >
       <input
         aria-autocomplete="list"
-        aria-labelledby="downshift-2-label"
+        aria-labelledby="downshift-3-label"
         autocomplete="off"
-        id="downshift-2-input"
+        id="downshift-3-input"
         readonly=""
         type="hidden"
         value=""
@@ -143,6 +143,80 @@ exports[`SelectDropdown should render with custom toggle and option templates 1`
   <div
     aria-expanded="false"
     aria-haspopup="listbox"
+    aria-labelledby="downshift-2-label"
+    class="relative undefined"
+    role="combobox"
+  >
+    <label
+      for="dropdown-select"
+      id="downshift-2-label"
+    >
+      <div
+        class="relative flex items-center w-full flex-inline"
+      >
+        <div
+          class="flex w-full px-4 py-3 pr-12 overflow-hidden border rounded cursor-pointer m-h-20 shadow-sm bg-theme-background border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 hover:outline-none hover:border-theme-primary"
+        >
+          <div
+            class="flex items-center flex-inline"
+          >
+            <div
+              class="font-semibold text-theme-neutral-800"
+            >
+              Select Option
+            </div>
+          </div>
+        </div>
+        <div
+          class="w-12 px-4 py-4 -ml-12 text-lg pointer-events-none text-theme-neutral-dark"
+        >
+          <div
+            class=""
+          >
+            <div
+              class="sc-AxjAm cpczEI"
+              height="1em"
+              width="1em"
+            >
+              <svg>
+                chevron-down.svg
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </label>
+    <div
+      class="relative btn-group"
+    >
+      <input
+        aria-autocomplete="list"
+        aria-labelledby="downshift-2-label"
+        autocomplete="off"
+        id="downshift-2-input"
+        readonly=""
+        type="hidden"
+        value=""
+      />
+      <button
+        aria-expanded="false"
+        aria-haspopup="true"
+        class="hidden dropdown-toggle"
+        data-testid="select-dropdown__toggle"
+        data-toggle="dropdown"
+        id="dropdown-select"
+        type="button"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`SelectDropdown should render with initial value 1`] = `
+<div>
+  <div
+    aria-expanded="false"
+    aria-haspopup="listbox"
     aria-labelledby="downshift-1-label"
     class="relative undefined"
     role="combobox"
@@ -196,7 +270,7 @@ exports[`SelectDropdown should render with custom toggle and option templates 1`
         id="downshift-1-input"
         readonly=""
         type="hidden"
-        value=""
+        value="1"
       />
       <button
         aria-expanded="false"
@@ -217,13 +291,13 @@ exports[`SelectDropdown should render without option content 1`] = `
   <div
     aria-expanded="false"
     aria-haspopup="listbox"
-    aria-labelledby="downshift-4-label"
+    aria-labelledby="downshift-7-label"
     class="relative undefined"
     role="combobox"
   >
     <label
       for="dropdown-select"
-      id="downshift-4-label"
+      id="downshift-7-label"
     >
       <div
         class="relative flex items-center w-full flex-inline"
@@ -265,9 +339,9 @@ exports[`SelectDropdown should render without option content 1`] = `
     >
       <input
         aria-autocomplete="list"
-        aria-labelledby="downshift-4-label"
+        aria-labelledby="downshift-7-label"
         autocomplete="off"
-        id="downshift-4-input"
+        id="downshift-7-input"
         readonly=""
         type="hidden"
         value=""

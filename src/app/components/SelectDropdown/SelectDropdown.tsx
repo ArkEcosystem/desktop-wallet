@@ -12,9 +12,11 @@ type Props = {
 	option?: any;
 	toggle?: any;
 	className?: string;
+	selected?: any;
+	onChange?: (selected: any) => void;
 };
 
-export const SelectDropdown = ({ className, toggle, options, option }: Props) => {
+export const SelectDropdown = ({ className, toggle, options, option, selected, onChange }: Props) => {
 	const renderOption = (rowData: any) => {
 		if (typeof option === "function") return option(rowData);
 	};
@@ -23,8 +25,12 @@ export const SelectDropdown = ({ className, toggle, options, option }: Props) =>
 		if (typeof toggle === "function") return toggle(selected, isOpen);
 	};
 
+	const onSelect = (selectedItem: any) => {
+		if (typeof onChange === "function") return onChange(selectedItem);
+	};
+
 	return (
-		<Downshift itemToString={(i) => i?.value}>
+		<Downshift itemToString={(i) => i?.value} onChange={onSelect} initialSelectedItem={selected}>
 			{({ getLabelProps, getInputProps, getItemProps, isOpen, toggleMenu, selectedItem }) => (
 				<div className={`relative ${className}`}>
 					<label {...getLabelProps({ htmlFor: "dropdown-select" })}>
