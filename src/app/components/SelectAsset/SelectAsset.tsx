@@ -85,7 +85,7 @@ export const SelectAsset = ({ assets, placeholder, onSelect, name }: SelectAsset
 				<div className="relative">
 					<label {...getLabelProps()} />
 					<div className="relative flex items-center w-full flex-inline">
-						<div className="flex w-full border rounded shadow-sm bg-theme-background border-theme-neutral-300 transition-colors duration-200 hover:outline-none hover:border-theme-primary">
+						<div className="flex w-full transition-colors duration-200 border rounded shadow-sm bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary">
 							<div className="px-4 py-2 flex-0 w-14">
 								<AssetIconPlaceholder {...selectedItem} />
 							</div>
@@ -121,7 +121,7 @@ export const SelectAsset = ({ assets, placeholder, onSelect, name }: SelectAsset
 						</div>
 					</div>
 					{assets && assets.length > 0 && (
-						<div data-testid="select-asset__items" className="pt-6" {...getMenuProps()}>
+						<div data-testid="select-asset__items" className="pt-6 select-asset__items" {...getMenuProps()}>
 							{assets.map((asset: Asset, index: number) => {
 								return (
 									<div
