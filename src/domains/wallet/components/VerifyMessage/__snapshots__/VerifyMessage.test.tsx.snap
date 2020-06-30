@@ -36,7 +36,7 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
       class="py-4"
     >
       <h2
-        class="text-3xl font-bold mb-0"
+        class="mb-0 text-3xl font-bold"
       >
         Verify
       </h2>
@@ -44,7 +44,7 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
         class="flex-1 "
       >
         <div
-          class="text-theme-neutral-700 mt-1"
+          class="mt-1 text-theme-neutral-700"
         >
           To make sure that you are the owner of this wallet, you can pass the check. and this more text.
         </div>
@@ -100,7 +100,7 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
                 class="sc-AxhUy dJlYTe mt-8"
               >
                 <label
-                  class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark mb-2"
+                  class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
                   data-testid="FormLabel"
                   for="message-content"
                   label="Message"
@@ -118,7 +118,7 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
                 class="sc-AxhUy dJlYTe mt-8"
               >
                 <label
-                  class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark mb-2"
+                  class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
                   data-testid="FormLabel"
                   for="public-key"
                   label="Public key"
@@ -138,7 +138,7 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
                 class="sc-AxhUy dJlYTe mt-8"
               >
                 <label
-                  class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark mb-2"
+                  class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
                   data-testid="FormLabel"
                   for="signature"
                   label="Signature"

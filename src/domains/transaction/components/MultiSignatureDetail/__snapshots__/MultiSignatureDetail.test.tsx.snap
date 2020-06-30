@@ -320,7 +320,7 @@ exports[`MultiSignatureDetail should render 2nd step 1`] = `
       class="sc-AxhUy dJlYTe flex flex-col space-y-2"
     >
       <label
-        class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark mb-2"
+        class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
         data-testid="FormLabel"
         for="passphrase"
         label="Your Passphrase"
@@ -525,7 +525,7 @@ exports[`MultiSignatureDetail should render a modal and get to step 3 1`] = `
       class="py-4"
     >
       <h2
-        class="text-3xl font-bold mb-0"
+        class="mb-0 text-3xl font-bold"
       >
         Multisignature
       </h2>
@@ -931,7 +931,7 @@ exports[`MultiSignatureDetail should render a modal and go back 1`] = `
       class="py-4"
     >
       <h2
-        class="text-3xl font-bold mb-0"
+        class="mb-0 text-3xl font-bold"
       >
         Multisignature
       </h2>

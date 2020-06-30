@@ -36,7 +36,7 @@ exports[`ContactUs should render a modal 1`] = `
       class="py-4"
     >
       <h2
-        class="text-3xl font-bold mb-0"
+        class="mb-0 text-3xl font-bold"
       >
         Contact Us
       </h2>
@@ -44,7 +44,7 @@ exports[`ContactUs should render a modal 1`] = `
         class="flex-1 "
       >
         <div
-          class="text-theme-neutral-700 mt-1"
+          class="mt-1 text-theme-neutral-700"
         >
           We'd be happy to answer your questions
         </div>
@@ -137,7 +137,7 @@ exports[`ContactUs should render a modal 1`] = `
               Feedback
             </h2>
             <label
-              class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark mb-2"
+              class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
               data-testid="FormLabel"
               for="name"
             >
@@ -153,7 +153,7 @@ exports[`ContactUs should render a modal 1`] = `
             class="sc-AxiKw iQzisX flex flex-col space-y-2"
           >
             <label
-              class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark mb-2"
+              class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
               data-testid="FormLabel"
               for="email"
             >
@@ -169,7 +169,7 @@ exports[`ContactUs should render a modal 1`] = `
             class="sc-AxiKw iQzisX flex flex-col space-y-2"
           >
             <label
-              class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark mb-2"
+              class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
               data-testid="FormLabel"
               for="subject"
             >
@@ -219,7 +219,7 @@ exports[`ContactUs should render a modal 1`] = `
             class="sc-AxiKw iQzisX flex flex-col space-y-2"
           >
             <label
-              class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark mb-2"
+              class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
               data-testid="FormLabel"
               for="message"
             >

@@ -36,7 +36,7 @@ exports[`AddBlacklistPlugin should render a modal 1`] = `
       class="py-4"
     >
       <h2
-        class="text-3xl font-bold mb-0"
+        class="mb-0 text-3xl font-bold"
       >
         Add Blacklist
       </h2>
@@ -44,7 +44,7 @@ exports[`AddBlacklistPlugin should render a modal 1`] = `
         class="flex-1 "
       >
         <div
-          class="text-theme-neutral-700 mt-1"
+          class="mt-1 text-theme-neutral-700"
         >
           Find and select a plugin to add or remove it from the blacklist.
         </div>

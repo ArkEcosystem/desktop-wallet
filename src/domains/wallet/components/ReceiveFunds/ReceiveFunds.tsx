@@ -65,7 +65,7 @@ export const ReceiveFunds = ({ isOpen, wallet, qrCode, onCopy, handleClose }: Re
 					</button>
 				}
 			>
-				<div className="ml-4 mb-2">
+				<div className="mb-2 ml-4">
 					{!wallet.walletName && (
 						<Circle className="-mr-2">
 							<Icon name={wallet.coinIcon} />

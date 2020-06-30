@@ -75,13 +75,13 @@ const ModalContent = (props: ModalContentProps) => {
 						<h1 className="absolute bottom-0 left-0 mb-8 ml-12">{props.title}</h1>
 					</div>
 				) : (
-					<h2 className="text-3xl font-bold mb-0">{props.title}</h2>
+					<h2 className="mb-0 text-3xl font-bold">{props.title}</h2>
 				)}
 
 				<div className={`flex-1 ${props.banner ? "mt-38" : ""}`}>
 					{props.image}
 
-					{props.description && <div className="text-theme-neutral-700 mt-1">{props.description}</div>}
+					{props.description && <div className="mt-1 text-theme-neutral-700">{props.description}</div>}
 
 					{props.children}
 				</div>

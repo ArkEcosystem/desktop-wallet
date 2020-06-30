@@ -36,7 +36,7 @@ exports[`LedgerWallet should render a modal 1`] = `
       class="py-4"
     >
       <h2
-        class="text-3xl font-bold mb-0"
+        class="mb-0 text-3xl font-bold"
       >
         Ledger Wallet
       </h2>
@@ -47,7 +47,7 @@ exports[`LedgerWallet should render a modal 1`] = `
           class="container"
         >
           <p
-            class="text-sm mt-1 text-theme-neutral-dark md:text-base"
+            class="mt-1 text-sm text-theme-neutral-dark md:text-base"
           >
             Connect your Ledger to PC and confirm the input.
           </p>
