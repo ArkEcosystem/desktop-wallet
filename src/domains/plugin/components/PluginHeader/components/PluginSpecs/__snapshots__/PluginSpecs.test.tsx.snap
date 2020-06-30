@@ -9,18 +9,35 @@ exports[`PluginSpecs should render properly 1`] = `
       class="flex"
     >
       <div
-        class="flex flex-col undefined"
+        class="flex flex-col"
       >
         <span
           class="font-bold text-theme-neutral-400"
         >
           Author
         </span>
-        <span
-          class="font-bold text-theme-neutral-600"
+        <div
+          class="flex items-center"
         >
-          ARK Ecosystem
-        </span>
+          <span
+            class="font-bold text-theme-neutral-600"
+          >
+            ARK Ecosystem
+          </span>
+          <div
+            class="ml-3"
+          >
+            <div
+              class="sc-AxjAm cpczEI"
+              height="1em"
+              width="1em"
+            >
+              <svg>
+                verified.svg
+              </svg>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <div

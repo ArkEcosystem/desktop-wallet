@@ -101,18 +101,35 @@ exports[`PluginHeader should render as installed 1`] = `
             class="flex"
           >
             <div
-              class="flex flex-col undefined"
+              class="flex flex-col"
             >
               <span
                 class="font-bold text-theme-neutral-400"
               >
                 Author
               </span>
-              <span
-                class="font-bold text-theme-neutral-600"
+              <div
+                class="flex items-center"
               >
-                ARK Ecosystem
-              </span>
+                <span
+                  class="font-bold text-theme-neutral-600"
+                >
+                  ARK Ecosystem
+                </span>
+                <div
+                  class="ml-3"
+                >
+                  <div
+                    class="sc-AxirZ iQaTP"
+                    height="1em"
+                    width="1em"
+                  >
+                    <svg>
+                      verified.svg
+                    </svg>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <div
@@ -281,7 +298,7 @@ exports[`PluginHeader should render properly 1`] = `
                 width="1em"
               >
                 <svg>
-                  alert-danger.svg
+                  report.svg
                 </svg>
               </div>
             </button>
@@ -294,18 +311,35 @@ exports[`PluginHeader should render properly 1`] = `
             class="flex"
           >
             <div
-              class="flex flex-col undefined"
+              class="flex flex-col"
             >
               <span
                 class="font-bold text-theme-neutral-400"
               >
                 Author
               </span>
-              <span
-                class="font-bold text-theme-neutral-600"
+              <div
+                class="flex items-center"
               >
-                ARK Ecosystem
-              </span>
+                <span
+                  class="font-bold text-theme-neutral-600"
+                >
+                  ARK Ecosystem
+                </span>
+                <div
+                  class="ml-3"
+                >
+                  <div
+                    class="sc-AxirZ iQaTP"
+                    height="1em"
+                    width="1em"
+                  >
+                    <svg>
+                      verified.svg
+                    </svg>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <div

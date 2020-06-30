@@ -60,7 +60,7 @@ exports[`PluginDetails should render properly 1`] = `
                   width="1em"
                 >
                   <svg>
-                    alert-danger.svg
+                    report.svg
                   </svg>
                 </div>
               </button>
@@ -73,18 +73,35 @@ exports[`PluginDetails should render properly 1`] = `
               class="flex"
             >
               <div
-                class="flex flex-col undefined"
+                class="flex flex-col"
               >
                 <span
                   class="font-bold text-theme-neutral-400"
                 >
                   Author
                 </span>
-                <span
-                  class="font-bold text-theme-neutral-600"
+                <div
+                  class="flex items-center"
                 >
-                  ARK Ecosystem
-                </span>
+                  <span
+                    class="font-bold text-theme-neutral-600"
+                  >
+                    ARK Ecosystem
+                  </span>
+                  <div
+                    class="ml-3"
+                  >
+                    <div
+                      class="sc-AxjAm cpczEI"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        verified.svg
+                      </svg>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
             <div
@@ -363,8 +380,13 @@ exports[`PluginDetails should render properly 1`] = `
     <div
       class="mt-5 bg-theme-background"
     >
+      <p
+        class="pt-10 pb-3 mx-10 text-2xl font-bold"
+      >
+        Reviews ARK Explorer
+      </p>
       <div
-        class="py-16 mx-10 grid grid-cols-2 grid-flow-col divide-x divide-theme-neutral-300"
+        class="mx-10 grid grid-cols-2 grid-flow-col divide-x divide-theme-neutral-300"
       >
         <div
           class="col-span-2"
@@ -373,11 +395,6 @@ exports[`PluginDetails should render properly 1`] = `
           <div
             class="w-full"
           >
-            <p
-              class="text-2xl font-bold"
-            >
-              Reviews ARK Explorer
-            </p>
             <div
               class="flex items-center mt-5 text-sm font-semibold text-theme-neutral-900"
             >
@@ -457,7 +474,7 @@ exports[`PluginDetails should render properly 1`] = `
                       <span
                         class="text-theme-neutral-400"
                       >
-                        10 days ago
+                        3 days ago
                       </span>
                     </div>
                   </div>
@@ -512,7 +529,7 @@ exports[`PluginDetails should render properly 1`] = `
                       <span
                         class="text-theme-neutral-400"
                       >
-                        10 days ago
+                        3 days ago
                       </span>
                     </div>
                   </div>
@@ -551,7 +568,7 @@ exports[`PluginDetails should render properly 1`] = `
                         <span
                           class="px-3"
                         >
-                          10 days ago
+                          3 days ago
                         </span>
                       </div>
                     </div>
@@ -608,7 +625,7 @@ exports[`PluginDetails should render properly 1`] = `
                       <span
                         class="text-theme-neutral-400"
                       >
-                        10 days ago
+                        3 days ago
                       </span>
                     </div>
                   </div>
@@ -663,7 +680,7 @@ exports[`PluginDetails should render properly 1`] = `
                       <span
                         class="text-theme-neutral-400"
                       >
-                        10 days ago
+                        3 days ago
                       </span>
                     </div>
                   </div>
@@ -1122,18 +1139,35 @@ exports[`PluginDetails should render properly as installed 1`] = `
               class="flex"
             >
               <div
-                class="flex flex-col undefined"
+                class="flex flex-col"
               >
                 <span
                   class="font-bold text-theme-neutral-400"
                 >
                   Author
                 </span>
-                <span
-                  class="font-bold text-theme-neutral-600"
+                <div
+                  class="flex items-center"
                 >
-                  ARK Ecosystem
-                </span>
+                  <span
+                    class="font-bold text-theme-neutral-600"
+                  >
+                    ARK Ecosystem
+                  </span>
+                  <div
+                    class="ml-3"
+                  >
+                    <div
+                      class="sc-AxjAm cpczEI"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        verified.svg
+                      </svg>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
             <div
@@ -1412,8 +1446,13 @@ exports[`PluginDetails should render properly as installed 1`] = `
     <div
       class="mt-5 bg-theme-background"
     >
+      <p
+        class="pt-10 pb-3 mx-10 text-2xl font-bold"
+      >
+        Reviews ARK Explorer
+      </p>
       <div
-        class="py-16 mx-10 grid grid-cols-2 grid-flow-col divide-x divide-theme-neutral-300"
+        class="mx-10 grid grid-cols-2 grid-flow-col divide-x divide-theme-neutral-300"
       >
         <div
           class="col-span-2"
@@ -1422,11 +1461,6 @@ exports[`PluginDetails should render properly as installed 1`] = `
           <div
             class="w-full"
           >
-            <p
-              class="text-2xl font-bold"
-            >
-              Reviews ARK Explorer
-            </p>
             <div
               class="flex items-center mt-5 text-sm font-semibold text-theme-neutral-900"
             >
@@ -1506,7 +1540,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                       <span
                         class="text-theme-neutral-400"
                       >
-                        10 days ago
+                        3 days ago
                       </span>
                     </div>
                   </div>
@@ -1561,7 +1595,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                       <span
                         class="text-theme-neutral-400"
                       >
-                        10 days ago
+                        3 days ago
                       </span>
                     </div>
                   </div>
@@ -1600,7 +1634,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                         <span
                           class="px-3"
                         >
-                          10 days ago
+                          3 days ago
                         </span>
                       </div>
                     </div>
@@ -1657,7 +1691,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                       <span
                         class="text-theme-neutral-400"
                       >
-                        10 days ago
+                        3 days ago
                       </span>
                     </div>
                   </div>
@@ -1712,7 +1746,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                       <span
                         class="text-theme-neutral-400"
                       >
-                        10 days ago
+                        3 days ago
                       </span>
                     </div>
                   </div>
