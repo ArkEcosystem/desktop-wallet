@@ -1,6 +1,6 @@
-import { fireEvent, render } from "@testing-library/react";
 import { act, renderHook } from "@testing-library/react-hooks";
 import React from "react";
+import { fireEvent, render } from "test-utils";
 
 import { PluginManagerControls } from "./PluginManagerControls";
 

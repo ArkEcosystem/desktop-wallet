@@ -1,8 +1,6 @@
-import { render } from "@testing-library/react";
-import { i18n } from "app/i18n";
 import MockDate from "mockdate";
 import React from "react";
-import { I18nextProvider } from "react-i18next";
+import { render } from "test-utils";
 
 jest.mock("moment", () => {
 	return () => jest.requireActual("moment")("2020-06-19T14:48:00.000Z");
@@ -107,9 +105,7 @@ describe("PluginDetails", () => {
 
 	it("should render properly as installed", () => {
 		const { asFragment, getByTestId } = render(
-			<I18nextProvider i18n={i18n}>
-				<PluginDetails pluginData={pluginData} reviewData={reviewData} isInstalled />,
-			</I18nextProvider>,
+			<PluginDetails pluginData={pluginData} reviewData={reviewData} isInstalled />,
 		);
 
 		expect(getByTestId("plugin-details__header")).toBeTruthy();
