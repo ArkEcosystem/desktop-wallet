@@ -2,6 +2,7 @@ import { fireEvent, render, within } from "@testing-library/react";
 import { act } from "@testing-library/react-hooks";
 import { i18n } from "app/i18n";
 import React from "react";
+import TestUtils from "react-dom/test-utils";
 import { I18nextProvider } from "react-i18next";
 
 // i18n
@@ -24,7 +25,7 @@ describe("PluginManager", () => {
 	});
 
 	it("should toggle between list and grid on home", () => {
-		const { asFragment, getByTestId, rerender } = render(
+		const { asFragment, getByTestId } = render(
 			<I18nextProvider i18n={i18n}>
 				<PluginManager />
 			</I18nextProvider>,
@@ -48,7 +49,7 @@ describe("PluginManager", () => {
 	});
 
 	it("should toggle between list and grid on game", () => {
-		const { asFragment, getByTestId, rerender } = render(
+		const { asFragment, getByTestId } = render(
 			<I18nextProvider i18n={i18n}>
 				<PluginManager />
 			</I18nextProvider>,
@@ -75,7 +76,7 @@ describe("PluginManager", () => {
 	});
 
 	it("should open & close featured modal", () => {
-		const { asFragment, getByTestId, rerender } = render(
+		const { asFragment, getByTestId } = render(
 			<I18nextProvider i18n={i18n}>
 				<PluginManager />
 			</I18nextProvider>,
@@ -96,7 +97,7 @@ describe("PluginManager", () => {
 	});
 
 	it("should open & close top rated modal", () => {
-		const { asFragment, getByTestId, rerender } = render(
+		const { asFragment, getByTestId } = render(
 			<I18nextProvider i18n={i18n}>
 				<PluginManager />
 			</I18nextProvider>,
@@ -117,7 +118,7 @@ describe("PluginManager", () => {
 	});
 
 	it("should download & install plugin on home", () => {
-		const { asFragment, getAllByTestId, getByTestId, rerender } = render(
+		const { asFragment, getAllByTestId, getByTestId } = render(
 			<I18nextProvider i18n={i18n}>
 				<PluginManager />
 			</I18nextProvider>,
@@ -134,9 +135,11 @@ describe("PluginManager", () => {
 			fireEvent.click(getByTestId("install-plugin__download-button"));
 		});
 
-		jest.runAllTimers();
+		TestUtils.act(() => {
+			jest.runAllTimers();
+		});
 
-		expect(setTimeout).toHaveBeenCalled();
+		expect(setTimeout).toBeCalled();
 		expect(setTimeout).toHaveBeenCalledWith(expect.any(Function), 1000);
 
 		act(() => {
@@ -148,7 +151,7 @@ describe("PluginManager", () => {
 	});
 
 	it("should download & install plugin on game", () => {
-		const { asFragment, getAllByTestId, getByTestId, rerender } = render(
+		const { asFragment, getAllByTestId, getByTestId } = render(
 			<I18nextProvider i18n={i18n}>
 				<PluginManager />
 			</I18nextProvider>,
@@ -166,7 +169,9 @@ describe("PluginManager", () => {
 			fireEvent.click(getByTestId("install-plugin__download-button"));
 		});
 
-		jest.runAllTimers();
+		TestUtils.act(() => {
+			jest.runAllTimers();
+		});
 
 		expect(setTimeout).toHaveBeenCalled();
 		expect(setTimeout).toHaveBeenCalledWith(expect.any(Function), 1000);
@@ -180,7 +185,7 @@ describe("PluginManager", () => {
 	});
 
 	it("should close install plugin modal", () => {
-		const { asFragment, getAllByTestId, getByTestId, rerender } = render(
+		const { asFragment, getAllByTestId, getByTestId } = render(
 			<I18nextProvider i18n={i18n}>
 				<PluginManager />
 			</I18nextProvider>,
@@ -202,7 +207,7 @@ describe("PluginManager", () => {
 	});
 
 	it("should cancel install plugin", () => {
-		const { asFragment, getAllByTestId, getByTestId, rerender } = render(
+		const { asFragment, getAllByTestId, getByTestId } = render(
 			<I18nextProvider i18n={i18n}>
 				<PluginManager />
 			</I18nextProvider>,
@@ -248,7 +253,9 @@ describe("PluginManager", () => {
 			done();
 		}, 550);
 
-		jest.runAllTimers();
+		TestUtils.act(() => {
+			jest.runAllTimers();
+		});
 	});
 
 	it("should select plugin on home grids", () => {

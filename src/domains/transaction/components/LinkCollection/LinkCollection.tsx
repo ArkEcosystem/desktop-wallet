@@ -122,8 +122,6 @@ export const LinkCollection = ({
 											);
 										}}
 										toggle={(selected: Type) => {
-											setSelectedType(selected);
-
 											if (selected) {
 												return (
 													<div className="flex items-center flex-inline">
@@ -140,6 +138,7 @@ export const LinkCollection = ({
 										}}
 										options={types}
 										className="w-full"
+										onChange={(selected: Type) => setSelectedType(selected)}
 									/>
 								</InputGroup>
 							</div>
