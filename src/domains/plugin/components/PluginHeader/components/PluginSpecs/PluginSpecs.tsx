@@ -53,7 +53,7 @@ export const PluginSpecs = ({ author, category, url, rating, version, size }: Pr
 				<div className="flex items-center">
 					<span className="font-bold text-theme-neutral-600">{author}</span>
 					<div className="ml-3">
-						<Icon name="Verified" />
+						<Icon name="OfficialArkPlugin" />
 					</div>
 				</div>
 			</div>

@@ -88,7 +88,6 @@ import { ReactComponent as Twitter } from "./twitter.svg";
 import { ReactComponent as Update } from "./update.svg";
 import { ReactComponent as Upload } from "./upload.svg";
 import { ReactComponent as User } from "./user.svg";
-import { ReactComponent as Verified } from "./verified.svg";
 import { ReactComponent as Voted } from "./voted.svg";
 
 export const SvgCollection: any = {
@@ -172,7 +171,6 @@ export const SvgCollection: any = {
 	Update,
 	Upload,
 	Voted,
-	Verified,
 	Notification,
 	User,
 	Exchange,
