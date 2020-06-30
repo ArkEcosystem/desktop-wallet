@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 
 import { WalletUpdate } from "./WalletUpdate";
 
-export default { title: "Domains / Wallet / Components / Wallet Update" };
+export default { title: "Domains / Wallet / Components / WalletUpdate" };
 
 export const Default = () => {
 	const [isUpdate, setIsUpdate] = useState(false);

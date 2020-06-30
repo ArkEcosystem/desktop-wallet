@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`TransactionSendIPFS should render 1`] = `
+exports[`SendIPFSTransaction should render 1`] = `
 <DocumentFragment>
   <div
     class="max-w-xl mx-auto"
@@ -34,7 +34,7 @@ exports[`TransactionSendIPFS should render 1`] = `
           >
             <section
               class="space-y-8"
-              data-testid="TransactionSendIPFS__step--first"
+              data-testid="SendIPFSTransaction__step--first"
             >
               <div>
                 <h1
@@ -296,7 +296,7 @@ exports[`TransactionSendIPFS should render 1`] = `
             <button
               class="sc-AxjAm hQuXai"
               color="primary"
-              data-testid="TransactionSendIPFS__button--back"
+              data-testid="SendIPFSTransaction__button--back"
               disabled=""
               type="button"
             >
@@ -305,7 +305,7 @@ exports[`TransactionSendIPFS should render 1`] = `
             <button
               class="sc-AxjAm iueUfM"
               color="primary"
-              data-testid="TransactionSendIPFS__button--continue"
+              data-testid="SendIPFSTransaction__button--continue"
               type="button"
             >
               Continue
@@ -318,11 +318,11 @@ exports[`TransactionSendIPFS should render 1`] = `
 </DocumentFragment>
 `;
 
-exports[`TransactionSendIPFS should render 1st step 1`] = `
+exports[`SendIPFSTransaction should render 1st step 1`] = `
 <DocumentFragment>
   <section
     class="space-y-8"
-    data-testid="TransactionSendIPFS__step--first"
+    data-testid="SendIPFSTransaction__step--first"
   >
     <div>
       <h1
@@ -580,11 +580,11 @@ exports[`TransactionSendIPFS should render 1st step 1`] = `
 </DocumentFragment>
 `;
 
-exports[`TransactionSendIPFS should render 2nd step 1`] = `
+exports[`SendIPFSTransaction should render 2nd step 1`] = `
 <DocumentFragment>
   <section
     class="space-y-8"
-    data-testid="TransactionSendIPFS__step--second"
+    data-testid="SendIPFSTransaction__step--second"
   >
     <div>
       <h1
@@ -839,11 +839,11 @@ exports[`TransactionSendIPFS should render 2nd step 1`] = `
 </DocumentFragment>
 `;
 
-exports[`TransactionSendIPFS should render 3rd step 1`] = `
+exports[`SendIPFSTransaction should render 3rd step 1`] = `
 <DocumentFragment>
   <section
     class="space-y-8"
-    data-testid="TransactionSendIPFS__step--third"
+    data-testid="SendIPFSTransaction__step--third"
   >
     <div>
       <h1
@@ -911,7 +911,7 @@ exports[`TransactionSendIPFS should render 3rd step 1`] = `
 </DocumentFragment>
 `;
 
-exports[`TransactionSendIPFS should render 4th step 1`] = `
+exports[`SendIPFSTransaction should render 4th step 1`] = `
 <DocumentFragment>
   <section
     class="space-y-8"

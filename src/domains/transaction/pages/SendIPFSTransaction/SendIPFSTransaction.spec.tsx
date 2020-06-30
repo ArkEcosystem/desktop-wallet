@@ -4,9 +4,9 @@ import { act, renderHook } from "@testing-library/react-hooks";
 import React from "react";
 import { FormContext, useForm } from "react-hook-form";
 
-import { FirstStep, FourthStep, SecondStep, ThirdStep, TransactionSendIPFS } from "./TransactionSendIPFS";
+import { FirstStep, FourthStep, SecondStep, ThirdStep, SendIPFSTransaction } from "./SendIPFSTransaction";
 
-describe("TransactionSendIPFS", () => {
+describe("SendIPFSTransaction", () => {
 	const onCopy = jest.fn();
 
 	it("should render 1st step", async () => {
@@ -17,14 +17,14 @@ describe("TransactionSendIPFS", () => {
 			</FormContext>,
 		);
 
-		expect(getByTestId("TransactionSendIPFS__step--first")).toBeTruthy();
+		expect(getByTestId("SendIPFSTransaction__step--first")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should render 2nd step", async () => {
 		const { getByTestId, asFragment } = render(<SecondStep />);
 
-		expect(getByTestId("TransactionSendIPFS__step--second")).toBeTruthy();
+		expect(getByTestId("SendIPFSTransaction__step--second")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -36,7 +36,7 @@ describe("TransactionSendIPFS", () => {
 			</FormContext>,
 		);
 
-		expect(getByTestId("TransactionSendIPFS__step--third")).toBeTruthy();
+		expect(getByTestId("SendIPFSTransaction__step--third")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -57,8 +57,8 @@ describe("TransactionSendIPFS", () => {
 		let rendered: RenderResult;
 
 		await act(async () => {
-			rendered = render(<TransactionSendIPFS onCopy={onCopy} />);
-			await waitFor(() => expect(rendered.getByTestId(`TransactionSendIPFS__step--first`)).toBeTruthy());
+			rendered = render(<SendIPFSTransaction onCopy={onCopy} />);
+			await waitFor(() => expect(rendered.getByTestId(`SendIPFSTransaction__step--first`)).toBeTruthy());
 		});
 
 		const { getByTestId, asFragment } = rendered!;
@@ -66,24 +66,24 @@ describe("TransactionSendIPFS", () => {
 		expect(asFragment()).toMatchSnapshot();
 
 		await act(async () => {
-			const continueButton = getByTestId(`TransactionSendIPFS__button--continue`);
+			const continueButton = getByTestId(`SendIPFSTransaction__button--continue`);
 
 			// Navigation between steps
 			await waitFor(() => expect(continueButton).not.toHaveAttribute("disabled"));
 
 			fireEvent.click(continueButton);
-			expect(getByTestId(`TransactionSendIPFS__step--second`)).toBeTruthy();
+			expect(getByTestId(`SendIPFSTransaction__step--second`)).toBeTruthy();
 
 			fireEvent.click(continueButton);
-			expect(getByTestId(`TransactionSendIPFS__step--third`)).toBeTruthy();
+			expect(getByTestId(`SendIPFSTransaction__step--third`)).toBeTruthy();
 
 			// Back
-			fireEvent.click(getByTestId(`TransactionSendIPFS__button--back`));
-			expect(getByTestId(`TransactionSendIPFS__step--second`)).toBeTruthy();
+			fireEvent.click(getByTestId(`SendIPFSTransaction__button--back`));
+			expect(getByTestId(`SendIPFSTransaction__step--second`)).toBeTruthy();
 
 			fireEvent.click(continueButton);
 			fireEvent.click(continueButton);
-			await waitFor(() => expect(getByTestId(`TransactionSendIPFS__button--back-to-wallet`)).toBeTruthy());
+			await waitFor(() => expect(getByTestId(`SendIPFSTransaction__button--back-to-wallet`)).toBeTruthy());
 		});
 	});
 });

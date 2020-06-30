@@ -4,7 +4,7 @@ import React from "react";
 import { UpdateWalletName } from "./UpdateWalletName";
 
 export default {
-	title: "Domains / Wallet / Components / Update Wallet Name",
+	title: "Domains / Wallet / Components / UpdateWalletName",
 	decorators: [withKnobs],
 };
 

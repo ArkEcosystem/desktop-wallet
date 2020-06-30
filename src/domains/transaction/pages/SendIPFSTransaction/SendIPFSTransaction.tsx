@@ -3,77 +3,59 @@ import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { Form } from "app/components/Form";
 import { Icon } from "app/components/Icon";
-import { InputPassword, InputRange } from "app/components/Input";
-import { SelectionBar, SelectionBarOption, useSelectionState } from "app/components/SelectionBar";
+import { Input, InputPassword } from "app/components/Input";
+import { SelectAsset } from "app/components/SelectAsset";
+import { useSelectionState } from "app/components/SelectionBar";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { TransactionDetail } from "app/components/TransactionDetail";
+import { InputFee } from "domains/transaction/components/InputFee";
+import { TotalAmountBox } from "domains/transaction/components/TotalAmountBox";
 import { TransactionSuccessful } from "domains/transaction/components/TransactionSuccessful";
 import React, { useEffect } from "react";
 import { useForm, useFormContext } from "react-hook-form";
 
-export const FirstStep = () => {
+export const FirstStep = ({ assets = [] }: any) => {
 	const { register } = useFormContext();
-	const radioState = useSelectionState(1);
+	const selectionBarState = useSelectionState(1);
 
 	useEffect(() => {
+		register("hash", { required: true });
 		register("fee", { required: true });
 	}, [register]);
 
 	return (
-		<section data-testid="VoteForDelegate__step--first" className="space-y-8">
+		<section data-testid="SendIPFSTransaction__step--first" className="space-y-8">
 			<div>
-				<h1 className="mb-0">Vote for delegate</h1>
-				<p className="text-theme-neutral-dark">Enter details to send your money</p>
+				<h1 className="mb-0">IPFS</h1>
+				<p className="text-theme-neutral-dark">Store an IPFS hasn on the network</p>
 			</div>
 			<div className="grid grid-flow-row gap-2">
-				<TransactionDetail
-					border={false}
-					label="Account"
-					extra={
-						<div>
-							<Circle avatarId="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
-						</div>
-					}
-				>
-					<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} size="large" />
+				<TransactionDetail border={false} label="Network">
+					<SelectAsset assets={assets} />
 				</TransactionDetail>
-				<TransactionDetail
-					label="Delegate"
-					extra={
-						<div>
-							<Circle avatarId="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
-						</div>
-					}
-				>
-					<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"Delegate 3"} size="large" />
-				</TransactionDetail>
-				<TransactionDetail border={false} label="Fee ARK">
-					<div className="flex">
-						<div className="w-3/5 mr-2">
-							<InputRange defaultValue={25} min={1} max={100} step={1} />
-						</div>
-						<div className="ml-2">
-							<SelectionBar>
-								<SelectionBarOption value={1} {...radioState}>
-									Last
-								</SelectionBarOption>
-								<SelectionBarOption value={2} {...radioState}>
-									Min
-								</SelectionBarOption>
-								<SelectionBarOption value={3} {...radioState}>
-									Average
-								</SelectionBarOption>
-							</SelectionBar>
+				<TransactionDetail border={false} label="Sender">
+					<div className="relative flex items-center">
+						<Input type="text" disabled />
+						<div className="absolute flex items-center ml-3">
+							<Circle avatarId="test" size="small" noShadow className="mr-3" />
+							<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName="ROBank" />
 						</div>
 					</div>
+				</TransactionDetail>
+				<TransactionDetail border={false} label="Hash">
+					<Input name="hash" />
+				</TransactionDetail>
+				<TransactionDetail border={false} label="Fee ARK">
+					<InputFee selectionBarState={selectionBarState} defaultValue={25} min={1} max={100} step={1} />
 				</TransactionDetail>
 			</div>
 		</section>
 	);
 };
+
 export const SecondStep = () => (
-	<section data-testid="VoteForDelegate__step--second" className="space-y-8">
+	<section data-testid="SendIPFSTransaction__step--second" className="space-y-8">
 		<div>
 			<h1 className="mb-0">Transaction Review</h1>
 			<p className="text-theme-neutral-dark">Check the information again before voting</p>
@@ -90,29 +72,42 @@ export const SecondStep = () => (
 					</div>
 				}
 			>
-				<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} size="large" />
+				<span>ARK Ecosystem</span>
 			</TransactionDetail>
 			<TransactionDetail
-				label="Account"
+				label="Sender"
 				extra={
 					<div>
 						<Circle avatarId="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
 					</div>
 				}
 			>
-				<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} size="large" />
+				<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} />
 			</TransactionDetail>
 			<TransactionDetail
-				label="Delegate"
+				label="Recipient"
 				extra={
 					<div>
 						<Circle avatarId="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
 					</div>
 				}
 			>
-				<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} size="large" />
+				<span className="font-normal">AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK</span>
+			</TransactionDetail>
+			<TransactionDetail
+				label="Hash"
+				extra={
+					<div className="ml-1">
+						<Circle className="border-black bg-theme-background" size="large">
+							<Icon name="Ipfs" width={23} height={23} />
+						</Circle>
+					</div>
+				}
+			>
+				<span className="font-normal">QmceNpwJqQm7vXUivbQeeQYeGr1ivT1VDRPaWK9Pf</span>
 			</TransactionDetail>
 			<TransactionDetail label="Transaction fee">0.09660435 ARK</TransactionDetail>
+			<TotalAmountBox transactionAmount="1.00" transactionFee="0.09660435" />
 		</div>
 	</section>
 );
@@ -125,7 +120,7 @@ export const ThirdStep = () => {
 	}, [register]);
 
 	return (
-		<section data-testid="VoteForDelegate__step--third" className="space-y-8">
+		<section data-testid="SendIPFSTransaction__step--third" className="space-y-8">
 			<div>
 				<h1 className="mb-0">Passphrase</h1>
 				<p className="text-theme-neutral-dark">Confirm your password to continue</p>
@@ -141,38 +136,31 @@ export const ThirdStep = () => {
 
 export const FourthStep = () => (
 	<TransactionSuccessful>
-		<TransactionDetail
-			label="Delegate"
-			extra={
-				<div>
-					<Circle avatarId="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
-				</div>
-			}
-		>
-			<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"Delegate 3"} size="large" />
+		<TransactionDetail label="IPFS Hash">
+			<span className="font-normal">QmceNpwJqQm7vXUivbQeeQYeGr1ivT1VDRPaWK9Pf</span>
 		</TransactionDetail>
-		<TransactionDetail label="Transaction fee">0.09660435 ARK</TransactionDetail>
 		<TransactionDetail
-			label="Transaction type"
+			label="Amount"
 			extra={
-				<div className="ml-1 text-theme-neutral-900">
-					<Circle className="border-theme-neutral-900 bg-theme-background" size="large">
-						<Icon name="Voted" />
+				<div className="ml-1 text-theme-danger">
+					<Circle className="bg-theme-background border-theme-danger-200" size="large">
+						<Icon name="Sent" width={50} height={50} />
 					</Circle>
 				</div>
 			}
 		>
-			Vote
+			1.00 ARK
 		</TransactionDetail>
 	</TransactionSuccessful>
 );
 
 type Props = {
-	onCopy: () => void;
-	onSubmit: () => void;
+	onCopy?: () => void;
+	onSubmit?: any;
+	assets?: any[];
 };
 
-export const VoteForDelegate = ({ onCopy, onSubmit }: Props) => {
+export const SendIPFSTransaction = ({ onCopy, onSubmit, assets }: Props) => {
 	const [activeTab, setActiveTab] = React.useState(1);
 
 	const form = useForm({ mode: "onChange" });
@@ -195,7 +183,7 @@ export const VoteForDelegate = ({ onCopy, onSubmit }: Props) => {
 
 					<div className="mt-10">
 						<TabPanel tabId={1}>
-							<FirstStep />
+							<FirstStep assets={assets} />
 						</TabPanel>
 						<TabPanel tabId={2}>
 							<SecondStep />
@@ -207,19 +195,22 @@ export const VoteForDelegate = ({ onCopy, onSubmit }: Props) => {
 							<FourthStep />
 						</TabPanel>
 
-						<div className="flex justify-end mt-6 space-x-3">
+						<div className="flex justify-start mt-6 space-x-2">
 							{activeTab < 4 && (
 								<>
 									<Button
 										disabled={activeTab === 1}
-										data-testid="VoteForDelegate__button--back"
+										data-testid="SendIPFSTransaction__button--back"
 										variant="plain"
+										size="large"
 										onClick={handleBack}
 									>
 										Back
 									</Button>
 									<Button
-										data-testid="VoteForDelegate__button--continue"
+										data-testid="SendIPFSTransaction__button--continue"
+										variant="solid"
+										size="large"
 										// disabled={!isValid}
 										onClick={handleNext}
 									>
@@ -230,16 +221,24 @@ export const VoteForDelegate = ({ onCopy, onSubmit }: Props) => {
 
 							{activeTab === 4 && (
 								<>
-									<Button data-testid="VoteForDelegate__button--back-to-wallet" variant="plain">
+									<Button
+										data-testid="SendIPFSTransaction__button--back-to-wallet"
+										variant="plain"
+										className={"block"}
+										size="large"
+									>
 										Back to wallet
 									</Button>
 									<Button
 										onClick={onCopy}
-										data-testid="VoteForDelegate__button--copy"
+										data-testid="SendIPFSTransaction__button--copy"
 										variant="plain"
+										size="large"
 									>
-										<Icon name="Copy" />
-										<span>Copy</span>
+										<div className="flex items-center justify-between px-1">
+											<Icon name="Copy" />
+											<span className="ml-2">Copy</span>
+										</div>
 									</Button>
 								</>
 							)}

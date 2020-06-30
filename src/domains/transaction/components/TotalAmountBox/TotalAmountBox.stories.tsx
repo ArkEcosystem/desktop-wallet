@@ -2,7 +2,7 @@ import React from "react";
 
 import { TotalAmountBox } from "./TotalAmountBox";
 
-export default { title: "Domains / Transaction / Components / Total Amount" };
+export default { title: "Domains / Transaction / Components / TotalAmount" };
 
 export const Default = () => (
 	<div className="mt-15">

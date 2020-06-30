@@ -1,8 +1,8 @@
 import React from "react";
 
-import { TransactionSendIPFS } from "./TransactionSendIPFS";
+import { SendIPFSTransaction } from "./SendIPFSTransaction";
 
-export default { title: "Domains / Transaction / Pages / Send IPFS Modal" };
+export default { title: "Domains / Transaction / Pages / SendIPFSTransaction" };
 
 export const Default = () => {
 	const assets = [
@@ -24,7 +24,7 @@ export const Default = () => {
 	];
 	return (
 		<div className="mt-15">
-			<TransactionSendIPFS assets={assets} />
+			<SendIPFSTransaction assets={assets} />
 		</div>
 	);
 };
