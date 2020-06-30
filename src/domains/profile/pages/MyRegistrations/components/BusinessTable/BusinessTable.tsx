@@ -53,7 +53,7 @@ export const BusinessTable = ({ data, handleDropdown }: Props) => (
 		<Table columns={columns} data={data}>
 			{(rowData: any) => (
 				<tr data-testid="business-table__row" className="border-b border-dashed border-theme-neutral-light">
-					<td className="w-24 py-4">
+					<td className="w-24 py-6">
 						<div className="flex items-center">
 							<Circle className="border-theme-neutral-800" size="large">
 								<Icon name="Business" width={22} height={22} />
@@ -61,27 +61,27 @@ export const BusinessTable = ({ data, handleDropdown }: Props) => (
 							<Avatar address="AaAy" />
 						</div>
 					</td>
-					<td className="py-4 mt-1 font-semibold">
+					<td className="py-6 mt-1 font-semibold">
 						<span>{rowData.agent}</span>
 					</td>
-					<td className="py-1 font-semibold">
+					<td className="py-6 font-semibold">
 						<span>{rowData.businessName}</span>
 					</td>
-					<td className="py-1 text-bold text-theme-primary">
+					<td className="py-6 text-bold text-theme-primary">
 						<span className="-ml-8">View</span>
 					</td>
-					<td className="py-1 text-theme-neutral-400">
+					<td className="py-6 text-theme-neutral-400">
 						<Icon name="Redirect" className="ml-12" />
 					</td>
-					<td className="py-1 text-bold text-theme-primary">
+					<td className="py-6 text-bold text-theme-primary">
 						<Icon name="Msq" width={22} height={22} className="ml-1" />
 					</td>
-					<td className="py-1 text-bold text-theme-primary">
+					<td className="py-6 text-bold text-theme-primary">
 						<span className="ml-3">View</span>
 					</td>
 					<td className="px-1 px-12" />
-					<td className="float-right py-1">
-						<Button variant="plain" className="mt-4" size="small">
+					<td className="float-right py-6 mt-1 flex justify-center items-center">
+						<Button variant="plain" size="small">
 							<Dropdown
 								toggleIcon="Settings"
 								options={options}
