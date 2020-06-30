@@ -4,7 +4,7 @@ import React from "react";
 import { Address } from "./Address";
 
 export default {
-	title: "App / Components / Formatted Address",
+	title: "App / Components / Address",
 	decorators: [withKnobs],
 };
 

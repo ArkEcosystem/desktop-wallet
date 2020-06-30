@@ -4,7 +4,7 @@ import React from "react";
 import { WalletListItem } from "./WalletListItem";
 
 export default {
-	title: "Wallet / Components / WalletListItem",
+	title: "App / Components / WalletListItem",
 };
 
 const data = [

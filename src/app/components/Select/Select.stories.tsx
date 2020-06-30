@@ -3,7 +3,7 @@ import React from "react";
 import { Select } from "./Select";
 
 export default {
-	title: "Input / Select",
+	title: "App / Components / Select",
 };
 
 export const Default = () => (

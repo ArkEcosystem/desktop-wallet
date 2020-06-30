@@ -4,7 +4,7 @@ import React from "react";
 import { TransactionListItem } from "./TransactionListItem";
 
 export default {
-	title: "Transactions / Components / TransactionListItem",
+	title: "App / Components / TransactionListItem",
 };
 
 const data = [

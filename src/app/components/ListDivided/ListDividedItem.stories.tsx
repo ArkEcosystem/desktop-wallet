@@ -3,7 +3,7 @@ import React from "react";
 import { ListDividedItem } from "./ListDividedItem";
 
 export default {
-	title: "App / Components / List Divided / List Divided Item",
+	title: "App / Components / ListDivided / ListDividedItem",
 };
 
 const item = {
@@ -17,8 +17,8 @@ const item = {
 	itemValueClass: "",
 	content: (
 		<div className="flex flex-row mt-2">
-			<div className="flex items-center justify-center w-24 h-24 mr-6 border-2 border-dashed rounded border-theme-neutral" />
-			<div className="relative w-24 h-24 rounded bg-theme-neutral">
+			<div className="border-theme-neutral flex items-center justify-center w-24 h-24 mr-6 border-2 border-dashed rounded" />
+			<div className="bg-theme-neutral relative w-24 h-24 rounded">
 				<img
 					src="https://randomuser.me/api/portraits/men/3.jpg"
 					className="object-cover rounded"

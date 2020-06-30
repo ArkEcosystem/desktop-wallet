@@ -3,7 +3,7 @@ import React from "react";
 import { ListDivided } from "./ListDivided";
 
 export default {
-	title: "App / Components / List Divided / List Divided",
+	title: "App / Components / ListDivided",
 };
 
 export const Default = () => (

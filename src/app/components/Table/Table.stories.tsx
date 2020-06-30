@@ -54,7 +54,7 @@ export const Default = () => {
 			<div>
 				<Table columns={columns} data={data}>
 					{(rowData: any) => (
-						<tr className="border-b border-theme-neutral-200">
+						<tr className="border-theme-neutral-200 border-b">
 							<td className="py-4 mt-1">
 								<Circle>
 									<Icon name={rowData.coin} />
@@ -64,10 +64,10 @@ export const Default = () => {
 							<td className="py-1">
 								<Address walletName={rowData.walletName} address={rowData.address} />
 							</td>
-							<td className="py-1 text-right text-bold">
+							<td className="text-bold py-1 text-right">
 								<div>{rowData.balance}</div>
 							</td>
-							<td className="py-1 text-right text-bold text-theme-neutral-400">
+							<td className="text-bold text-theme-neutral-400 py-1 text-right">
 								<div>{rowData.fiat}</div>
 							</td>
 						</tr>

@@ -3,7 +3,7 @@ import React from "react";
 import { Input, InputCounter, InputPassword } from "./index";
 
 export default {
-	title: "Input / Input",
+	title: "App / Components / Input",
 };
 
 export const Default = () => {

@@ -3,7 +3,7 @@ import React from "react";
 import { SelectNetwork } from "./SelectNetwork";
 
 export default {
-	title: "Input / Select Network",
+	title: "App / Components / SelectNetwork",
 };
 
 export const Default = () => {

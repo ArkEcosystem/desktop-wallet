@@ -2,7 +2,7 @@ import React from "react";
 
 import { NavigationBar } from "./NavigationBar";
 
-export default { title: "Navigation / NavigationBar" };
+export default { title: "App / Components / NavigationBar" };
 
 export const Default = () => {
 	const notifications = {
