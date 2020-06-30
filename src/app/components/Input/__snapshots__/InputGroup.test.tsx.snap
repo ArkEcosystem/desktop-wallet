@@ -1,7 +1,82 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`InputGroup should render with both elements 1`] = `[Function]`;
+exports[`InputGroup should render with both elements 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-AxhUy fNzmXy max-w-xs"
+  >
+    <div
+      class="sc-AxirZ sc-AxiKw kjKlZT"
+    >
+      <span
+        data-testid="start"
+      >
+        $
+      </span>
+    </div>
+    <div
+      class="sc-AxirZ sc-AxhCb egOFvk"
+    >
+      <span
+        data-testid="end"
+      >
+        $
+      </span>
+    </div>
+    <input
+      class="sc-AxjAm bcybyt overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pl-13"
+      data-testid="Input"
+      placeholder="Amount"
+      type="text"
+    />
+  </div>
+</DocumentFragment>
+`;
 
-exports[`InputGroup should render with element on the left 1`] = `[Function]`;
+exports[`InputGroup should render with element on the left 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-AxhUy fNzmXy max-w-xs"
+  >
+    <div
+      class="sc-AxirZ sc-AxiKw kjKlZT"
+    >
+      <span
+        data-testid="start"
+      >
+        $
+      </span>
+    </div>
+    <input
+      class="sc-AxjAm bcybyt overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pl-13"
+      data-testid="Input"
+      placeholder="Amount"
+      type="text"
+    />
+  </div>
+</DocumentFragment>
+`;
 
-exports[`InputGroup should render with element on the right 1`] = `[Function]`;
+exports[`InputGroup should render with element on the right 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-AxhUy fNzmXy max-w-xs"
+  >
+    <div
+      class="sc-AxirZ sc-AxhCb egOFvk"
+    >
+      <span
+        data-testid="end"
+      >
+        $
+      </span>
+    </div>
+    <input
+      class="sc-AxjAm bcybyt overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pl-13"
+      data-testid="Input"
+      placeholder="Amount"
+      type="text"
+    />
+  </div>
+</DocumentFragment>
+`;

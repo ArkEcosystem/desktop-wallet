@@ -59,7 +59,7 @@ describe("Registration", () => {
 
 		expect(getByTestId("Registration__first-step")).toBeTruthy();
 		expect(defaultFormValues.onDownload).toHaveBeenCalledTimes(0);
-		expect(asFragment).toMatchSnapshot();
+		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should should go back", async () => {
@@ -78,7 +78,7 @@ describe("Registration", () => {
 
 		expect(getByTestId("Registration__first-step")).toBeTruthy();
 		expect(defaultFormValues.onDownload).toHaveBeenCalledTimes(0);
-		expect(asFragment).toMatchSnapshot();
+		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should render 2nd step", async () => {
@@ -94,7 +94,7 @@ describe("Registration", () => {
 
 		expect(getByTestId("Registration__second-step")).toBeTruthy();
 		expect(defaultFormValues.onDownload).toHaveBeenCalledTimes(0);
-		expect(asFragment).toMatchSnapshot();
+		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should render 3rd step", async () => {
@@ -113,7 +113,7 @@ describe("Registration", () => {
 
 		expect(getByTestId("Registration__third-step")).toBeTruthy();
 		expect(defaultFormValues.onDownload).toHaveBeenCalledTimes(0);
-		expect(asFragment).toMatchSnapshot();
+		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should render 4th step", async () => {
@@ -135,7 +135,7 @@ describe("Registration", () => {
 
 		expect(getByTestId("Registration__fourth-step")).toBeTruthy();
 		expect(defaultFormValues.onDownload).toHaveBeenCalledTimes(0);
-		expect(asFragment).toMatchSnapshot();
+		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should render 5th step", async () => {
@@ -166,7 +166,7 @@ describe("Registration", () => {
 
 		expect(getByTestId("TransactionSuccessful")).toBeTruthy();
 		expect(defaultFormValues.onDownload).toHaveBeenCalledTimes(0);
-		expect(asFragment).toMatchSnapshot();
+		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should submit", async () => {
@@ -199,7 +199,7 @@ describe("Registration", () => {
 		});
 
 		expect(defaultFormValues.onDownload).toHaveBeenCalledTimes(1);
-		expect(asFragment).toMatchSnapshot();
+		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should select registration type", async () => {
@@ -223,6 +223,6 @@ describe("Registration", () => {
 
 		expect(initialOption.selected).toBe(false);
 		expect(businessOption.selected).toBe(true);
-		expect(asFragment).toMatchSnapshot();
+		expect(asFragment()).toMatchSnapshot();
 	});
 });
