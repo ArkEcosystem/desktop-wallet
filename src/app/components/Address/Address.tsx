@@ -9,9 +9,10 @@ type Props = {
 	maxChars?: number | null;
 	className?: string;
 	size?: "small" | "default" | "large";
+	fontWeight?: "default" | "normal";
 };
 
-export const Address = ({ address, addressClass, walletName, maxChars, size }: Props) => {
+export const Address = ({ address, addressClass, fontWeight, walletName, maxChars, size }: Props) => {
 	if (!address) return null;
 
 	const fontSizes: any = {
@@ -20,23 +21,28 @@ export const Address = ({ address, addressClass, walletName, maxChars, size }: P
 		large: "text-xl",
 	};
 
+	const fontWeights: any = {
+		default: "font-semibold",
+		normal: "font-normal",
+	};
+
 	return (
 		<div className="inline-block truncate">
 			{walletName && (
 				<span
 					data-testid="address__wallet-name"
-					className={`text-theme-neutral-800 font-semibold max-w-24 flex-auto truncate mt-4 mr-1 ${
-						size && fontSizes[size]
-					}`}
+					className={`text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 ${
+						fontWeight && fontWeights[fontWeight]
+					} ${size && fontSizes[size]}`}
 				>
 					{walletName}
 				</span>
 			)}
 			<span
 				data-testid="address__wallet-address"
-				className={`${
-					addressClass || (walletName ? "text-theme-neutral-400" : "text-theme-neutral-800")
-				} font-semibold ${size && fontSizes[size]}`}
+				className={`${addressClass || (walletName ? "text-theme-neutral-400" : "text-theme-neutral-800")} ${
+					fontWeight && fontWeights[fontWeight]
+				} ${size && fontSizes[size]}`}
 			>
 				{truncateStringMiddle(address, maxChars)}
 			</span>
@@ -47,4 +53,5 @@ export const Address = ({ address, addressClass, walletName, maxChars, size }: P
 Address.defaultProps = {
 	maxChars: 16,
 	size: "default",
+	fontWeight: "default",
 };

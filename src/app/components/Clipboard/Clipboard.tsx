@@ -15,11 +15,7 @@ export const Clipboard = ({ data, options, children }: ClipboardProps) => {
 	}
 
 	return (
-		<div
-			data-testid="clipboard__wrapper"
-			className="inline-block cursor-pointer"
-			onClick={() => copy(data)}
-		>
+		<div data-testid="clipboard__wrapper" className="inline-block cursor-pointer" onClick={() => copy(data)}>
 			{children}
 		</div>
 	);

@@ -1,12 +1,14 @@
-jest.mock("moment", () => {
-	return () => jest.requireActual("moment")("2020-06-19T14:48:00.000Z");
-});
 import { act, fireEvent, render } from "@testing-library/react";
 import { i18n } from "app/i18n";
+import MockDate from "mockdate";
 import React from "react";
 import { I18nextProvider } from "react-i18next";
 
 import { Comments } from "./Comments";
+
+beforeEach(() => MockDate.set(new Date("2020-06-22T14:48:00.000Z")));
+
+afterEach(() => MockDate.reset());
 
 describe("Comments", () => {
 	const comments = [

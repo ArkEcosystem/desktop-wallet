@@ -13,10 +13,11 @@ export const Default = () => {
 	const methods = useForm({ mode: "onChange" });
 
 	return (
-		<div className="max-w-md">
+		<div className="max-w-md mx-auto">
+			<h1>Form</h1>
 			<Form context={methods} onSubmit={() => void 0}>
 				<FormField name="name">
-					<FormLabel>Name</FormLabel>
+					<FormLabel required>Name</FormLabel>
 					<Input ref={methods.register({ required: "Field required" })} />
 					<FormHelperText />
 				</FormField>

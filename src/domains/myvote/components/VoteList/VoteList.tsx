@@ -1,6 +1,6 @@
 import { Address } from "app/components/Address";
+import { Avatar } from "app/components/Avatar";
 import { TransactionDetail } from "app/components/TransactionDetail";
-import { Avatar } from "domains/wallet/components/Avatar";
 import React from "react";
 
 type VoteListProps = {
