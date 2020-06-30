@@ -440,7 +440,11 @@ exports[`PluginDetails should render properly 1`] = `
                       <span
                         class="text-theme-neutral-400"
                       >
-                        3 days ago
+                        <span
+                          data-testid="timeago"
+                        >
+                          3 days ago
+                        </span>
                       </span>
                     </div>
                   </div>
@@ -495,7 +499,11 @@ exports[`PluginDetails should render properly 1`] = `
                       <span
                         class="text-theme-neutral-400"
                       >
-                        3 days ago
+                        <span
+                          data-testid="timeago"
+                        >
+                          3 days ago
+                        </span>
                       </span>
                     </div>
                   </div>
@@ -532,9 +540,13 @@ exports[`PluginDetails should render properly 1`] = `
                           Developer response
                         </span>
                         <span
-                          class="px-3"
+                          class="px-3 text-theme-neutral-400"
                         >
-                          3 days ago
+                          <span
+                            data-testid="timeago"
+                          >
+                            3 days ago
+                          </span>
                         </span>
                       </div>
                     </div>
@@ -591,7 +603,11 @@ exports[`PluginDetails should render properly 1`] = `
                       <span
                         class="text-theme-neutral-400"
                       >
-                        3 days ago
+                        <span
+                          data-testid="timeago"
+                        >
+                          3 days ago
+                        </span>
                       </span>
                     </div>
                   </div>
@@ -646,7 +662,11 @@ exports[`PluginDetails should render properly 1`] = `
                       <span
                         class="text-theme-neutral-400"
                       >
-                        3 days ago
+                        <span
+                          data-testid="timeago"
+                        >
+                          3 days ago
+                        </span>
                       </span>
                     </div>
                   </div>
@@ -1472,7 +1492,11 @@ exports[`PluginDetails should render properly as installed 1`] = `
                       <span
                         class="text-theme-neutral-400"
                       >
-                        3 days ago
+                        <span
+                          data-testid="timeago"
+                        >
+                          3 days ago
+                        </span>
                       </span>
                     </div>
                   </div>
@@ -1527,7 +1551,11 @@ exports[`PluginDetails should render properly as installed 1`] = `
                       <span
                         class="text-theme-neutral-400"
                       >
-                        3 days ago
+                        <span
+                          data-testid="timeago"
+                        >
+                          3 days ago
+                        </span>
                       </span>
                     </div>
                   </div>
@@ -1564,9 +1592,13 @@ exports[`PluginDetails should render properly as installed 1`] = `
                           Developer response
                         </span>
                         <span
-                          class="px-3"
+                          class="px-3 text-theme-neutral-400"
                         >
-                          3 days ago
+                          <span
+                            data-testid="timeago"
+                          >
+                            3 days ago
+                          </span>
                         </span>
                       </div>
                     </div>
@@ -1623,7 +1655,11 @@ exports[`PluginDetails should render properly as installed 1`] = `
                       <span
                         class="text-theme-neutral-400"
                       >
-                        3 days ago
+                        <span
+                          data-testid="timeago"
+                        >
+                          3 days ago
+                        </span>
                       </span>
                     </div>
                   </div>
@@ -1678,7 +1714,11 @@ exports[`PluginDetails should render properly as installed 1`] = `
                       <span
                         class="text-theme-neutral-400"
                       >
-                        3 days ago
+                        <span
+                          data-testid="timeago"
+                        >
+                          3 days ago
+                        </span>
                       </span>
                     </div>
                   </div>

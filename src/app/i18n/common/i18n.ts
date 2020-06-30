@@ -111,4 +111,20 @@ export const translations: { [key: string]: any } = {
 	VALIDATION: {
 		REQUIRED: "Field required",
 	},
+
+	DATETIME: {
+		FEW_SECONDS_AGO: "A few seconds ago",
+		MINUTES_AGO: "{{count}} minute ago",
+		MINUTS_AGO_plural: "{{count}} minutes ago",
+		HOURS_AGO: "{{count}} hour ago",
+		HOURS_AGO_plural: "{{count}} hours ago",
+		DAYS_AGO: "{{count}} day ago",
+		DAYS_AGO_plural: "{{count}} days ago",
+		WEEKS_AGO: "{{count}} week ago",
+		WEEKS_AGO_plural: "{{count}} weeks ago",
+		MONTHS_AGO: "{{count}} month ago",
+		MONTHS_AGO_plural: "{{count}} months ago",
+		YEARS_AGO: "{{count}} year ago",
+		YEARS_AGO_plural: "{{count}} years ago",
+	},
 };
