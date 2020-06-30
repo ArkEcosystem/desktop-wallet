@@ -81,6 +81,7 @@ export const translations: { [key: string]: any } = {
 	TITLE: "Title",
 	TIME_FORMAT: "Time format",
 	TYPE: "Type",
+	UNSELECT: "Unselect",
 	UPDATE_LATER: "Update Later",
 	UPDATE_NOW: "Update Now",
 	URL: "URL",

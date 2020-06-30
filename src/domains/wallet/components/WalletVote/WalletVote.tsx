@@ -1,11 +1,10 @@
 import { Address } from "app/components/Address";
+import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { Collapse, CollapseToggleButton } from "app/components/Collapse";
 import { Icon } from "app/components/Icon";
 import React from "react";
-
-import { Avatar } from "../Avatar";
 
 type Props = {
 	delegates: {
