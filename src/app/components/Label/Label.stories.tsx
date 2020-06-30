@@ -3,7 +3,7 @@ import React from "react";
 import { Label } from "./Label";
 
 export default {
-	title: "Basic / Label",
+	title: "App / Components / Label",
 };
 
 export const All = () => (

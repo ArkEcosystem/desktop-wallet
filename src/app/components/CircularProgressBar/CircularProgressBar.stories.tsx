@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { CircularProgressBar } from "./CircularProgressBar";
 
 export default {
-	title: "Components / CircularProgressBar",
+	title: "App / Components / CircularProgressBar",
 };
 
 export const Default = () => {

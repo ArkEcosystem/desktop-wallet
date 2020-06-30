@@ -3,7 +3,7 @@ import React from "react";
 import { Input, InputAddonEnd, InputAddonStart, InputGroup } from "./index";
 
 export default {
-	title: "Input / Input / InputGroup",
+	title: "App / Components / InputGroup",
 };
 
 export const Start = () => {

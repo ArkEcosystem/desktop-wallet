@@ -2,7 +2,7 @@ import React from "react";
 
 import { PluginManagerNavigationBar } from "./PluginManagerNavigationBar";
 
-export default { title: "Plugins / components / Plugin Manager Navigation" };
+export default { title: "Domains / Plugin / Components / PluginManagerNavigation" };
 
 export const Default = () => {
 	const [currentView, setCurrentView] = React.useState("home");

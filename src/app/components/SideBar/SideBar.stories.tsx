@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import { SideBar } from "./SideBar";
 
-export default { title: "Navigation / Side Bar" };
+export default { title: "App / Components / SideBar" };
 
 const items = [
 	{

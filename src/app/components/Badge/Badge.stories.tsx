@@ -5,7 +5,7 @@ import React from "react";
 import { Badge } from "./Badge";
 
 export default {
-	title: "Components / Badge",
+	title: "App / Components / Badge",
 };
 
 export const Default = () => {

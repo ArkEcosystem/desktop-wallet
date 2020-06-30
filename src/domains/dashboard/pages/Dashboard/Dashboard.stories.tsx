@@ -40,7 +40,7 @@ const notifications = {
 	],
 };
 
-export default { title: "Dashboard / Pages" };
+export default { title: "Domains / Dashboard / Pages / Dashboard" };
 
 export const Default = () => {
 	return (

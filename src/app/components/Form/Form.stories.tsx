@@ -7,7 +7,7 @@ import { useForm } from "react-hook-form";
 import { FormHelperText } from "./FormHelperText";
 import { Form, FormField, FormLabel } from "./index";
 
-export default { title: "Form / Form" };
+export default { title: "App / Components / Form" };
 
 export const Default = () => {
 	const methods = useForm({ mode: "onChange" });

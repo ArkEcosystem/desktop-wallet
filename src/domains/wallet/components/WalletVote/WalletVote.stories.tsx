@@ -3,7 +3,7 @@ import React from "react";
 
 import { WalletVote } from "./WalletVote";
 
-export default { title: "Wallets / Components / WalletVote" };
+export default { title: "Domains / Wallet / Components / WalletVote" };
 
 const data = [
 	{

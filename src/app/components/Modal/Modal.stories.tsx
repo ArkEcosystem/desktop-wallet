@@ -5,7 +5,7 @@ import React from "react";
 import { Modal } from "./Modal";
 
 export default {
-	title: "Components / Modal",
+	title: "App / Components / Modal",
 	decorators: [withKnobs],
 };
 

@@ -4,7 +4,7 @@ import React from "react";
 import { Slider } from "./Slider";
 
 export default {
-	title: "Components / Slider",
+	title: "App / Components / Slider",
 };
 
 export const Default = () => {

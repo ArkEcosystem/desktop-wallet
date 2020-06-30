@@ -3,7 +3,7 @@ import React from "react";
 
 import { SideBarItem } from "./SideBarItem";
 
-export default { title: "Navigation / Side Bar / Side Bar Item", decorators: [withKnobs] };
+export default { title: "App / Components / SideBar / SideBarItem", decorators: [withKnobs] };
 
 const item = {
 	label: text("Label", "General"),

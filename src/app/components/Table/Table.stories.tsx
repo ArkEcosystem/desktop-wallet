@@ -6,7 +6,7 @@ import { Icon } from "../Icon";
 import { Table } from "./Table";
 
 export default {
-	title: "Components / Table",
+	title: "App / Components / Table",
 };
 
 export const Default = () => {

@@ -2,7 +2,7 @@ import React from "react";
 
 import { ReviewBox } from "./ReviewBox";
 
-export default { title: "Plugins / Components / Review Box" };
+export default { title: "Domains / Plugin / Components / ReviewBox" };
 
 const ratings = [
 	{

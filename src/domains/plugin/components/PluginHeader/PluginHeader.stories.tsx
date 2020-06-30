@@ -3,7 +3,7 @@ import React from "react";
 
 import { PluginHeader } from "./PluginHeader";
 
-export default { title: "Plugins / Components / Plugin Header", decorators: [withKnobs] };
+export default { title: "Domains / Plugin / Components / PluginHeader", decorators: [withKnobs] };
 
 export const Default = () => {
 	const author = text("Author", "ARK Ecosystem");

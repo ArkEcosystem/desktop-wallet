@@ -3,6 +3,6 @@ import React from "react";
 
 import { AddBlacklistPlugin } from "./AddBlacklistPlugin";
 
-export default { title: "Plugins / Components / Add Blacklist Plugin" };
+export default { title: "Domains / Plugin / Components / AddBlacklistPlugin" };
 
 export const Default = () => <AddBlacklistPlugin isOpen={boolean("Is Open", true)} onClose={() => alert("closed")} />;

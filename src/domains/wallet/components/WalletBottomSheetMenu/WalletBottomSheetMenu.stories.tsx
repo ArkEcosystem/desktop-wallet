@@ -2,7 +2,7 @@ import React from "react";
 
 import { WalletBottomSheetMenu } from "./WalletBottomSheetMenu";
 
-export default { title: "Wallets / Components / WalletBottomSheetMenu" };
+export default { title: "Domains / Wallet / Components / WalletBottomSheetMenu" };
 
 const data = [
 	{

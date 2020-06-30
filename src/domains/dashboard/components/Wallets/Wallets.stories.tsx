@@ -3,7 +3,7 @@ import React from "react";
 import { networks, wallets } from "../../data";
 import { Wallets } from "./Wallets";
 
-export default { title: "Dashboard / Components / Wallets" };
+export default { title: "Domains / Dashboard / Components / Wallets" };
 
 export const Default = () => {
 	// Wallet filter properties

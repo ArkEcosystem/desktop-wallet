@@ -5,7 +5,7 @@ import React from "react";
 
 import { SearchBar } from "./SearchBar";
 
-export default { title: "Search / Search Bar", decorators: [withKnobs] };
+export default { title: "App / Components / SearchBar", decorators: [withKnobs] };
 
 export const Default = () => {
 	return (

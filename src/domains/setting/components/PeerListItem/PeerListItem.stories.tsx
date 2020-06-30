@@ -3,7 +3,7 @@ import React from "react";
 
 import { PeerListItem } from "./PeerListItem";
 
-export default { title: "Settings / Components / PeerListItem" };
+export default { title: "Domains / Setting / Components / PeerListItem" };
 
 const data = [
 	{

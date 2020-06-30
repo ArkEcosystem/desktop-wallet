@@ -4,7 +4,7 @@ import React from "react";
 import { RadioButton } from "./RadioButton";
 
 export default {
-	title: "Basic / Radio Button",
+	title: "App / Components / RadioButton",
 	decorators: [withKnobs],
 };
 
