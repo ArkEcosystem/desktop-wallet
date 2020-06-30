@@ -11,7 +11,7 @@ export const addressListData = [
 		isActive: true,
 	},
 	{
-		walletAddress: "ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
+		walletAddress: "FSuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
 		type: "Ledger",
 		balance: "8,523.3884504 ARK",
 		delegateAddress: "DBozeHpqr7fie1QrfmNcGzdtEb7NB73AGq",
@@ -20,11 +20,11 @@ export const addressListData = [
 		isActive: true,
 	},
 	{
-		walletAddress: "ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
+		walletAddress: "DSuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
 		balance: "0.000462 ARK",
 	},
 	{
-		walletAddress: "ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
+		walletAddress: "HSuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
 		balance: "0.00 ARK",
 	},
 ];

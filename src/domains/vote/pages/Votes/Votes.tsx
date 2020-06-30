@@ -32,15 +32,6 @@ const SelectAssetWrapper = styled.div`
 	}
 `;
 
-const PlaceholderImage = () => {
-	return (
-		<div className="flex flex-col">
-			<PlaceholderVotes />
-			<PlaceholderVotes />
-		</div>
-	);
-};
-
 export const Votes = ({ assets, addressList, delegateList }: VotesProps) => {
 	const { t } = useTranslation();
 	const [selectedCrypto, setSelectCrypto] = useState("");
@@ -125,7 +116,11 @@ export const Votes = ({ assets, addressList, delegateList }: VotesProps) => {
 
 				<div className="relative p-10 bg-theme-background">
 					{!selectedCrypto ? (
-						<PlaceholderImage />
+						<div className="flex flex-col space-y-5">
+							{addressList?.map((item) => (
+								<PlaceholderVotes key={item.walletAddress} />
+							))}
+						</div>
 					) : selectedAddress ? (
 						<DelegateList data={delegateList} />
 					) : (
