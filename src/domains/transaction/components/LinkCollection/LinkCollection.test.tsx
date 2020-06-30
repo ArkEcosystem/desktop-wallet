@@ -30,7 +30,7 @@ describe("LinkCollection", () => {
 		);
 
 		expect(getByTestId("LinkCollection")).toBeTruthy();
-		expect(asFragment).toMatchSnapshot();
+		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should toggle open/close of link collection", () => {
@@ -53,7 +53,7 @@ describe("LinkCollection", () => {
 
 		expect(getByTestId("LinkCollection")).not.toHaveTextContent("Add social media");
 
-		expect(asFragment).toMatchSnapshot();
+		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should add and remove links", () => {
@@ -83,7 +83,7 @@ describe("LinkCollection", () => {
 
 		expect(getByTestId("LinkCollection")).not.toHaveTextContent("twitter");
 		expect(getByTestId("LinkCollection")).not.toHaveTextContent("testing link");
-		expect(asFragment).toMatchSnapshot();
+		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should select a specific link type", () => {
@@ -103,6 +103,6 @@ describe("LinkCollection", () => {
 		fireEvent.click(getAllByTestId("LinkCollection__selected")[0]);
 
 		expect(getByTestId("LinkCollection")).toBeTruthy();
-		expect(asFragment).toMatchSnapshot();
+		expect(asFragment()).toMatchSnapshot();
 	});
 });

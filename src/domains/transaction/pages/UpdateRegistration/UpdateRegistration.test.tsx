@@ -24,7 +24,7 @@ describe("UpdateRegistration", () => {
 
 		expect(getByTestId("UpdateRegistration__first-step")).toBeTruthy();
 		expect(defaultFormValues.onDownload).toHaveBeenCalledTimes(0);
-		expect(asFragment).toMatchSnapshot();
+		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should should go back", async () => {
@@ -43,7 +43,7 @@ describe("UpdateRegistration", () => {
 
 		expect(getByTestId("UpdateRegistration__first-step")).toBeTruthy();
 		expect(defaultFormValues.onDownload).toHaveBeenCalledTimes(0);
-		expect(asFragment).toMatchSnapshot();
+		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should render 2nd step", async () => {
@@ -59,7 +59,7 @@ describe("UpdateRegistration", () => {
 
 		expect(getByTestId("UpdateRegistration__second-step")).toBeTruthy();
 		expect(defaultFormValues.onDownload).toHaveBeenCalledTimes(0);
-		expect(asFragment).toMatchSnapshot();
+		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should render 3rd step", async () => {
@@ -78,7 +78,7 @@ describe("UpdateRegistration", () => {
 
 		expect(getByTestId("UpdateRegistration__third-step")).toBeTruthy();
 		expect(defaultFormValues.onDownload).toHaveBeenCalledTimes(0);
-		expect(asFragment).toMatchSnapshot();
+		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should render 4th step", async () => {
@@ -106,7 +106,7 @@ describe("UpdateRegistration", () => {
 
 		expect(getByTestId("TransactionSuccessful")).toBeTruthy();
 		expect(defaultFormValues.onDownload).toHaveBeenCalledTimes(0);
-		expect(asFragment).toMatchSnapshot();
+		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should submit", async () => {
@@ -136,6 +136,6 @@ describe("UpdateRegistration", () => {
 		});
 
 		expect(defaultFormValues.onDownload).toHaveBeenCalledTimes(1);
-		expect(asFragment).toMatchSnapshot();
+		expect(asFragment()).toMatchSnapshot();
 	});
 });
