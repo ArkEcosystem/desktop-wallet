@@ -14,6 +14,7 @@ import { TextArea } from "app/components/TextArea";
 import { TransactionDetail } from "app/components/TransactionDetail";
 import { InputFee } from "domains/transaction/components/InputFee";
 import { LinkCollection } from "domains/transaction/components/LinkCollection";
+import { LinkList } from "domains/transaction/components/LinkList";
 import { TotalAmountBox } from "domains/transaction/components/TotalAmountBox";
 import { TransactionSuccessful } from "domains/transaction/components/TransactionSuccessful";
 import React from "react";
@@ -104,71 +105,102 @@ const FirstStep = ({ form }: { form: any }) => {
 	);
 };
 
-const SecondStep = () => (
-	<div data-testid="UpdateRegistration__second-step" className="space-y-8">
-		<div>
-			<h1 className="mb-0">Transaction Review</h1>
-			<p className="text-theme-neutral-dark">Check the information again before voting</p>
-		</div>
-		<div className="grid grid-flow-row gap-2">
-			<TransactionDetail
-				border={false}
-				label="Network"
-				extra={
-					<div className="ml-1 text-theme-danger-500">
-						<Circle className="bg-theme-background border-theme-danger-200" size="large">
-							<Icon name="Ark" width={20} height={20} />
-						</Circle>
-					</div>
-				}
-			>
-				<div className="flex-auto font-semibold truncate text-theme-neutral-800 max-w-24">ARK Ecosystem</div>
-			</TransactionDetail>
+const SecondStep = () => {
+	const links = [
+		{
+			link: "http://github.com/robank",
+			type: "github",
+		},
+		{
+			link: "http://gitlab.com/robank",
+			type: "gitlab",
+		},
+		{
+			link: "http://bitbucket.com/robank",
+			type: "bitbucket",
+		},
+		{
+			link: "http://npmjs.com/robank",
+			type: "npm",
+		},
+	];
 
-			<TransactionDetail
-				label=" "
-				extra={
-					<div>
-						<Circle avatarId="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
+	return (
+		<div data-testid="UpdateRegistration__second-step" className="space-y-8">
+			<div>
+				<h1 className="mb-0">Transaction Review</h1>
+				<p className="text-theme-neutral-dark">Check the information again before voting</p>
+			</div>
+			<div className="grid grid-flow-row gap-2">
+				<TransactionDetail
+					border={false}
+					label="Network"
+					extra={
+						<div className="ml-1 text-theme-danger-500">
+							<Circle className="bg-theme-background border-theme-danger-200" size="large">
+								<Icon name="Ark" width={20} height={20} />
+							</Circle>
+						</div>
+					}
+				>
+					<div className="flex-auto font-semibold truncate text-theme-neutral-800 max-w-24">
+						ARK Ecosystem
 					</div>
-				}
-			>
-				<div className="mb-2 text-sm font-semibold text-theme-neutral-500">
-					<span className="mr-1">Sender</span>
-					<Label color="warning">Your address</Label>
+				</TransactionDetail>
+
+				<TransactionDetail
+					label=" "
+					extra={
+						<div>
+							<Circle avatarId="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
+						</div>
+					}
+				>
+					<div className="mb-2 text-sm font-semibold text-theme-neutral-500">
+						<span className="mr-1">Sender</span>
+						<Label color="warning">Your address</Label>
+					</div>
+					<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} />
+				</TransactionDetail>
+
+				<TransactionDetail
+					label="Type"
+					extra={
+						<div>
+							<Circle className="border-black bg-theme-background" size="large">
+								<Icon name="Business" width={20} height={20} />
+							</Circle>
+						</div>
+					}
+				>
+					Update Business
+				</TransactionDetail>
+
+				<TransactionDetail label="Name">ROBank Eco</TransactionDetail>
+
+				<TransactionDetail label="Description">Not a trustworthy bank</TransactionDetail>
+
+				<TransactionDetail label="Website">
+					<a href="https://ark.io" target="_blank" rel="noreferrer" className="link">
+						https://ark.io
+					</a>
+				</TransactionDetail>
+
+				<TransactionDetail className="mb-2">
+					<LinkList
+						title="Repository"
+						description="Show your projects through the repository"
+						links={links}
+					/>
+				</TransactionDetail>
+
+				<div className="my-4">
+					<TotalAmountBox transactionAmount="0.00" transactionFee="0.09660435" />
 				</div>
-				<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} />
-			</TransactionDetail>
-
-			<TransactionDetail
-				label="Type"
-				extra={
-					<div>
-						<Circle className="border-black bg-theme-background" size="large">
-							<Icon name="Business" width={20} height={20} />
-						</Circle>
-					</div>
-				}
-			>
-				Update Business
-			</TransactionDetail>
-
-			<TransactionDetail label="Name">ROBank Eco</TransactionDetail>
-
-			<TransactionDetail label="Description">Not a trustworthy bank</TransactionDetail>
-
-			<TransactionDetail label="Website">
-				<a href="https://ark.io" target="_blank" rel="noreferrer" className="link">
-					https://ark.io
-				</a>
-			</TransactionDetail>
-
-			<div className="my-4">
-				<TotalAmountBox transactionAmount="0.00" transactionFee="0.09660435" />
 			</div>
 		</div>
-	</div>
-);
+	);
+};
 
 const ThirdStep = ({ form, passwordType }: { form: any; passwordType: "mnemonic" | "password" | "ledger" }) => {
 	const { register } = form;
