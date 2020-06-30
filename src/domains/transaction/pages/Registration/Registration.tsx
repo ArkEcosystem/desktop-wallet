@@ -143,7 +143,7 @@ const SecondStep = ({ form }: { form: any }) => {
 				Select the type of registration and the address you want to register with.
 			</div>
 
-			<FormWrapper>
+			<div>
 				<TransactionDetail border={false} className="mb-8">
 					<FormField name="name">
 						<FormLabel required>Name</FormLabel>
@@ -205,7 +205,7 @@ const SecondStep = ({ form }: { form: any }) => {
 				<TransactionDetail label="Fee ARK" className="mt-4">
 					<InputFee selectionBarState={selectionBarState} defaultValue={25} min={1} max={100} step={1} />
 				</TransactionDetail>
-			</FormWrapper>
+			</div>
 		</div>
 	);
 };
@@ -317,7 +317,7 @@ const FourthStep = ({ form, passwordType }: { form: any; passwordType: "mnemonic
 						Enter your twelve word mnemonic to authenticate the transaction.
 					</div>
 
-					<FormWrapper className="mt-5">
+					<div className="mt-5">
 						<FormField name="name">
 							<FormLabel>{passwordType === "mnemonic" ? "Mnemonic" : "Encryption Password"}</FormLabel>
 							<InputPassword name={passwordType} ref={register} />
@@ -327,7 +327,7 @@ const FourthStep = ({ form, passwordType }: { form: any; passwordType: "mnemonic
 							<FormLabel>2nd Mnemonic</FormLabel>
 							<InputPassword name="secondMnemonic" ref={register} />
 						</FormField>
-					</FormWrapper>
+					</div>
 				</div>
 			)}
 
