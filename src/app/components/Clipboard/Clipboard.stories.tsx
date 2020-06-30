@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import { Clipboard } from "./Clipboard";
 
 export default {
-	title: "Components / Clipboard",
+	title: "App / Components / Clipboard",
 	decorators: [withKnobs],
 };
 

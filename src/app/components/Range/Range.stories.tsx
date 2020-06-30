@@ -2,7 +2,7 @@ import React from "react";
 
 import { Range } from "./Range";
 
-export default { title: "Basic / Range" };
+export default { title: "App / Components / Range" };
 
 export const Default = () => {
 	const [values, setValues] = React.useState([10]);

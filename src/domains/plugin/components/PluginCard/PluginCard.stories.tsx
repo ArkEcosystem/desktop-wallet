@@ -2,7 +2,7 @@ import React from "react";
 
 import { PluginCard } from "./PluginCard";
 
-export default { title: "Plugins / Components / Plugin Card" };
+export default { title: "Domains / Plugin / Components / PluginCard" };
 
 const plugin = {
 	id: "ark-explorer",

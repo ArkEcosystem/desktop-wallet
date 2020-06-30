@@ -3,7 +3,7 @@ import React from "react";
 import { ImportWallet } from "./ImportWallet";
 
 export default {
-	title: "Wallets / Pages / Import Wallet",
+	title: "Domains / Wallet / Pages / ImportWallet",
 };
 
 const networks = [

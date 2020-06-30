@@ -3,7 +3,7 @@ import React from "react";
 
 import { AdvancedMode } from "./AdvancedMode";
 
-export default { title: "Settings / Components / Advanced Mode" };
+export default { title: "Domains / Setting / Components / AdvancedMode" };
 
 export const Default = () => (
 	<AdvancedMode

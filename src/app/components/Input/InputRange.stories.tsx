@@ -2,7 +2,7 @@ import React from "react";
 
 import { InputRange } from "./InputRange";
 
-export default { title: "Input / Input / InputRange" };
+export default { title: "App / Components / InputRange" };
 
 export const Default = () => (
 	<div className="max-w-lg">

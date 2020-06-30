@@ -2,7 +2,7 @@ import React from "react";
 
 import { LinkCollection } from "./LinkCollection";
 
-export default { title: "Transactions / Components / Link Collection" };
+export default { title: "Domains / Transaction / Components / LinkCollection" };
 
 const types = [
 	{

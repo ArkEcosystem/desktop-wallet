@@ -6,7 +6,7 @@ import React from "react";
 import { Icon } from "./Icon";
 
 export default {
-	title: "Basic / Icon",
+	title: "App / Components / Icon",
 	decorators: [withKnobs],
 };
 

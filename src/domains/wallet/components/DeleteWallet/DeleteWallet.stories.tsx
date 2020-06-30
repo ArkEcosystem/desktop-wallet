@@ -4,7 +4,7 @@ import React from "react";
 import { DeleteWallet } from "./DeleteWallet";
 
 export default {
-	title: "Wallets / Components / Delete Wallet",
+	title: "Domains / Wallet / Components / DeleteWallet",
 	decorators: [withKnobs],
 };
 

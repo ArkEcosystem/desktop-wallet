@@ -3,7 +3,7 @@ import React from "react";
 import { PercentageBar } from "./PercentageBar";
 
 export default {
-	title: "Components / Percentage Bar",
+	title: "App / Components / PercentageBar",
 };
 
 export const Blank = () => {

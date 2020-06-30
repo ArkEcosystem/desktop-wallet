@@ -3,7 +3,7 @@ import React from "react";
 import { BlockchainTable } from "./BlockchainTable";
 
 export default {
-	title: "Profile / Pages / My Registrations / Components / Blockchain Table",
+	title: "Domains / Profile / Pages / MyRegistrations / Components / BlockchainTable",
 };
 
 export const Default = () => {

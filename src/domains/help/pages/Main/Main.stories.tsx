@@ -4,7 +4,7 @@ import { categories, helpfulArticles, newestArticles, popularArticles } from "..
 import { Main } from "./Main";
 
 export default {
-	title: "Help / Pages / Main",
+	title: "Domains / Help / Pages / Main",
 };
 
 export const Default = () => {

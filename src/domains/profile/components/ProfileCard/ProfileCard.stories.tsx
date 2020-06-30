@@ -3,7 +3,7 @@ import React from "react";
 
 import { ProfileCard } from "./ProfileCard";
 
-export default { title: "Profile / Components / Profile Card", decorators: [withKnobs] };
+export default { title: "Domains / Profile / Components / ProfileCard", decorators: [withKnobs] };
 
 export const Default = () => {
 	const name = text("Profile name", "Oleg Gelo");

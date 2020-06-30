@@ -2,7 +2,7 @@ import React from "react";
 
 import { StarsCounters } from "./StarsCounters";
 
-export default { title: "Plugins / Components / Review Box / Components / Stars Counters" };
+export default { title: "Domains / Plugin / Components / ReviewBox / Components / StarsCounters" };
 
 const ratings = [
 	{

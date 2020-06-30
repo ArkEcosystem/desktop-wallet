@@ -3,7 +3,7 @@ import React from "react";
 
 import { Exchange } from "./Exchange";
 
-export default { title: "Exchange / Pages / Exchange" };
+export default { title: "Domains / Exchange / Pages / Exchange" };
 
 export const Default = () => (
 	<div>

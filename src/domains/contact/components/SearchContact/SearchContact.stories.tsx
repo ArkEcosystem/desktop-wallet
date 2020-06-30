@@ -6,7 +6,7 @@ import { contacts } from "../../data";
 import { SearchContact } from "./SearchContact";
 
 export default {
-	title: "Contacts / Components / Search Contact",
+	title: "Domains / Contact / Pages / SearchContact",
 	decorators: [withKnobs],
 };
 

@@ -4,7 +4,7 @@ import React from "react";
 import { Alert } from "./Alert";
 
 export default {
-	title: "Basic / Alert",
+	title: "App / Components / Alert",
 	decorators: [withKnobs],
 };
 

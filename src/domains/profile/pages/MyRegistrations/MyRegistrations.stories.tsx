@@ -4,7 +4,7 @@ import React from "react";
 import { MyRegistrations } from "./MyRegistrations";
 
 export default {
-	title: "Profile / Pages / My Registrations",
+	title: "Domains / Profile / Pages / MyRegistrations",
 	decorators: [withKnobs],
 };
 

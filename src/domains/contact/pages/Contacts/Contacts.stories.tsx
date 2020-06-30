@@ -4,7 +4,7 @@ import React from "react";
 import { contacts as data } from "../../data";
 import { Contacts } from "./Contacts";
 
-export default { title: "Contacts / Pages / Contacts" };
+export default { title: "Domains / Contact / Pages / Contacts" };
 
 export const Default = () => {
 	return (

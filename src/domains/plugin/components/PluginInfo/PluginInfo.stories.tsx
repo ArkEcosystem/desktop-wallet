@@ -2,7 +2,7 @@ import React from "react";
 
 import { PluginInfo } from "./PluginInfo";
 
-export default { title: "Plugins / Components / Plugin Info" };
+export default { title: "Domains / Plugin / Components / PluginInfo" };
 
 export const Default = () => (
 	<PluginInfo

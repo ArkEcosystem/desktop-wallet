@@ -3,7 +3,7 @@ import React from "react";
 
 import { ProfileCreated } from "./ProfileCreated";
 
-export default { title: "Profile / Components / Profile Created" };
+export default { title: "Domains / Profile / Components / ProfileCreated" };
 
 export const Default = () => (
 	<ProfileCreated

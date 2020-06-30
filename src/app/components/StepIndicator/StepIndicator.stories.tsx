@@ -2,7 +2,7 @@ import React from "react";
 
 import { StepIndicator } from "./StepIndicator";
 
-export default { title: "Navigation / Step Indicator" };
+export default { title: "App / Components / StepIndicator" };
 
 export const Default = () => (
 	<div className="space-y-5">

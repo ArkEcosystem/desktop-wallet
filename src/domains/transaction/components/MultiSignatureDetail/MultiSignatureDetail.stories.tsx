@@ -3,7 +3,7 @@ import React from "react";
 
 import { MultiSignatureDetail } from "./MultiSignatureDetail";
 
-export default { title: "Transactions / Components / MultiSignature Detail" };
+export default { title: "Domains / Transaction / Components / MultiSignatureDetail" };
 
 export const Default = () => (
 	<MultiSignatureDetail

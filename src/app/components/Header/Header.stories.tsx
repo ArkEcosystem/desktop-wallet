@@ -7,7 +7,7 @@ import { Header } from "./Header";
 import { HeaderSearchBar } from "./HeaderSearchBar";
 
 export default {
-	title: "Basic / Header",
+	title: "App / Components / Header",
 	decorators: [withKnobs],
 };
 
