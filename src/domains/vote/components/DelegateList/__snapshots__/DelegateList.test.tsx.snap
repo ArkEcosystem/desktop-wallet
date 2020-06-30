@@ -2,7 +2,9 @@
 
 exports[`DelegateList should render 1`] = `
 <DocumentFragment>
-  <div>
+  <div
+    data-testid="DelegateList"
+  >
     <h2
       class="py-5 text-2xl font-bold"
     >
@@ -711,7 +713,9 @@ exports[`DelegateList should render 1`] = `
 
 exports[`DelegateList should render with empty list 1`] = `
 <DocumentFragment>
-  <div>
+  <div
+    data-testid="DelegateList"
+  >
     <h2
       class="py-5 text-2xl font-bold"
     >
@@ -1021,7 +1025,9 @@ exports[`DelegateList should render with empty list 1`] = `
 
 exports[`DelegateList should select a delegate 1`] = `
 <DocumentFragment>
-  <div>
+  <div
+    data-testid="DelegateList"
+  >
     <h2
       class="py-5 text-2xl font-bold"
     >
@@ -1794,7 +1800,9 @@ exports[`DelegateList should select a delegate 1`] = `
 
 exports[`DelegateList should select multiple delegates 1`] = `
 <DocumentFragment>
-  <div>
+  <div
+    data-testid="DelegateList"
+  >
     <h2
       class="py-5 text-2xl font-bold"
     >
@@ -2647,7 +2655,9 @@ exports[`DelegateList should select multiple delegates 1`] = `
 
 exports[`DelegateList should unselect a delegate 1`] = `
 <DocumentFragment>
-  <div>
+  <div
+    data-testid="DelegateList"
+  >
     <h2
       class="py-5 text-2xl font-bold"
     >

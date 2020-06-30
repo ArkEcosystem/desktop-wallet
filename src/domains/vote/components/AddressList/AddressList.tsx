@@ -62,12 +62,12 @@ export const AddressList = (props: AddressListProps) => {
 	];
 
 	return (
-		<>
+		<div data-testid="AddressList">
 			<h2 className="py-5 text-2xl font-bold">Select Address</h2>
 			<Table columns={columns} data={props.data}>
 				{(rowData: any) => <AddressListItem {...rowData} onSelect={props.onSelect} />}
 			</Table>
-		</>
+		</div>
 	);
 };
 
