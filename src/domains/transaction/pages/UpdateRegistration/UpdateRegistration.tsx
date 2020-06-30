@@ -19,9 +19,8 @@ import { TransactionSuccessful } from "domains/transaction/components/Transactio
 import React from "react";
 import { useForm } from "react-hook-form";
 
-
 type UpdateRegistrationProps = {
-	formDefaultData: any;
+	formDefaultData?: any;
 	onDownload: any;
 };
 
@@ -348,4 +347,8 @@ export const UpdateRegistration = ({ formDefaultData, onDownload }: UpdateRegist
 			</Form>
 		</div>
 	);
+};
+
+UpdateRegistration.defaultProps = {
+	formDefaultData: {},
 };
