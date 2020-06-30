@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Registration should render 1st step 1`] = `
+exports[`UpdateRegistration should render 1st step 1`] = `
 <DocumentFragment>
   <div
     class="max-w-xl mx-auto"
-    data-testid="Registration"
+    data-testid="UpdateRegistration"
   >
     <form
       class="space-y-6"
@@ -32,9 +32,6 @@ exports[`Registration should render 1st step 1`] = `
           <li
             class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
           />
-          <li
-            class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
-          />
         </ul>
         <div
           class="mt-4"
@@ -43,335 +40,10 @@ exports[`Registration should render 1st step 1`] = `
             data-testid="tab-pabel__active-panel"
           >
             <div
-              data-testid="Registration__first-step"
+              data-testid="UpdateRegistration__first-step"
             >
               <h1>
-                Registration
-              </h1>
-              <div
-                class="text-theme-neutral-700"
-              >
-                Select the type of registration and the address you want to register with.
-              </div>
-              <div
-                class="sc-fzoLag TJgFv mt-5"
-              >
-                <div
-                  aria-expanded="false"
-                  aria-haspopup="listbox"
-                  aria-labelledby="downshift-0-label"
-                  class="relative"
-                  role="combobox"
-                >
-                  <label
-                    for="downshift-0-input"
-                    id="downshift-0-label"
-                  />
-                  <div
-                    class="relative flex items-center w-full flex-inline"
-                  >
-                    <div
-                      class="flex w-full border rounded shadow-sm bg-theme-background border-theme-neutral-300 transition-colors duration-200 hover:outline-none hover:border-theme-primary"
-                    >
-                      <div
-                        class="px-4 py-2 flex-0 w-14"
-                      >
-                        <div
-                          class="sc-AxirZ HSPq border-theme-neutral-200"
-                        />
-                      </div>
-                      <div
-                        class="relative flex-1 p-1 font-semibold text-theme-neutral-800"
-                      >
-                        <div
-                          class="relative z-10 w-full"
-                          data-testid="select-network__typeahead-"
-                        >
-                          <div
-                            class="absolute left-0 font-semibold top-2 text-theme-neutral-400"
-                          />
-                        </div>
-                        <input
-                          aria-autocomplete="list"
-                          aria-labelledby="downshift-0-label"
-                          autocomplete="off"
-                          class="relative z-20 w-full h-full font-semibold bg-transparent outline-none"
-                          data-testid="select-asset__input"
-                          id="downshift-0-input"
-                          placeholder="Enter a network name"
-                          value=""
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    aria-labelledby="downshift-0-label"
-                    class="pt-6"
-                    data-testid="select-asset__items"
-                    id="downshift-0-menu"
-                    role="listbox"
-                  >
-                    <div
-                      aria-selected="false"
-                      class="inline-block mr-4 cursor-pointer"
-                      id="downshift-0-item-0"
-                      role="option"
-                      title="Ark Ecosystem"
-                    >
-                      <div
-                        class="sc-AxirZ cZokSJ text-theme-danger-400 border-theme-danger-200"
-                      >
-                        <div
-                          class="sc-AxhCb eHGcDb"
-                          height="18"
-                          width="18"
-                        >
-                          <svg>
-                            ark.svg
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      aria-selected="false"
-                      class="inline-block mr-4 cursor-pointer"
-                      id="downshift-0-item-1"
-                      role="option"
-                      title="Bitcoin"
-                    >
-                      <div
-                        class="sc-AxirZ cZokSJ text-theme-warning-400 border-theme-warning-200"
-                      >
-                        <div
-                          class="sc-AxhCb eHGcDb"
-                          height="18"
-                          width="18"
-                        >
-                          <svg>
-                            btc.svg
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      aria-selected="false"
-                      class="inline-block mr-4 cursor-pointer"
-                      id="downshift-0-item-2"
-                      role="option"
-                      title="Ethereum"
-                    >
-                      <div
-                        class="sc-AxirZ cZokSJ text-theme-neutral-800 border-theme-neutral-600"
-                      >
-                        <div
-                          class="sc-AxhCb eHGcDb"
-                          height="18"
-                          width="18"
-                        >
-                          <svg>
-                            eth.svg
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <fieldset
-                  class="sc-AxiKw iQzisX relative h-20 mt-8"
-                >
-                  <div
-                    class="mb-2"
-                  >
-                    <label
-                      class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
-                      data-testid="FormLabel"
-                      for="address"
-                      label="Address"
-                    >
-                      Address
-                    </label>
-                  </div>
-                  <div
-                    class="sc-AxmLO kuiknc ProfileFormField__select-contact select-transparent"
-                  >
-                    <div
-                      class="sc-AxmLO kuiknc"
-                    >
-                      <select
-                        class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
-                        data-testid="ProfileFormField__select-address"
-                        name="address"
-                      >
-                        <option
-                          disabled=""
-                          selected=""
-                          value=""
-                        >
-                           
-                        </option>
-                        <option
-                          data-testid="ProfileFormField__profile-select"
-                          value="FJKDSALJFKASLJFKSDAJFKFKDSAJFKSAJFKLASJKDFJ"
-                        >
-                          My Wallet FJKDSALJFKASL...SAJFKLASJKDFJ
-                        </option>
-                      </select>
-                      <div
-                        class="sc-AxgMl sc-Axmtr cPxyjO w-12 text-lg pointer-events-none text-theme-neutral-dark"
-                      >
-                        <div
-                          class="sc-AxhCb fxrKLH"
-                          height="1em"
-                          width="1em"
-                        >
-                          <svg>
-                            chevron-down.svg
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="absolute ml-4 -mt-10"
-                  >
-                    <div
-                      class="sc-AxirZ HSPq mt-px bg-theme-neutral-200 border-theme-neutral-200"
-                    />
-                  </div>
-                </fieldset>
-                <fieldset
-                  class="sc-AxiKw iQzisX relative h-20 mt-8"
-                  data-testid="Registration__type"
-                >
-                  <div
-                    class="mb-2"
-                  >
-                    <label
-                      class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
-                      data-testid="FormLabel"
-                      for="registrationType"
-                      label="Registration Type"
-                    >
-                      Registration Type
-                    </label>
-                  </div>
-                  <div>
-                    <div
-                      class="sc-AxmLO kuiknc"
-                    >
-                      <select
-                        class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
-                        data-testid="Registration__type-select"
-                        name="registrationType"
-                      >
-                        <option
-                          disabled=""
-                          selected=""
-                          value=""
-                        >
-                           
-                        </option>
-                        <option
-                          data-testid="Registration__type-option"
-                          value="business"
-                        >
-                          Business
-                        </option>
-                      </select>
-                      <div
-                        class="sc-AxgMl sc-Axmtr cPxyjO w-12 text-lg pointer-events-none text-theme-neutral-dark"
-                      >
-                        <div
-                          class="sc-AxhCb fxrKLH"
-                          height="1em"
-                          width="1em"
-                        >
-                          <svg>
-                            chevron-down.svg
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </fieldset>
-              </div>
-            </div>
-          </div>
-          <div
-            class="flex justify-end mt-8 space-x-3"
-          >
-            <button
-              class="sc-AxjAm ddJBbC"
-              color="primary"
-              data-testid="Registration__back-button"
-              disabled=""
-              type="button"
-            >
-              Back
-            </button>
-            <button
-              class="sc-AxjAm ddQVWI"
-              color="primary"
-              data-testid="Registration__continue-button"
-              type="button"
-            >
-              Continue
-            </button>
-          </div>
-        </div>
-      </div>
-    </form>
-  </div>
-</DocumentFragment>
-`;
-
-exports[`Registration should render 2nd step 1`] = `
-<DocumentFragment>
-  <div
-    class="max-w-xl mx-auto"
-    data-testid="Registration"
-  >
-    <form
-      class="space-y-6"
-      data-testid="Form"
-    >
-      <div>
-        <ul
-          class="StepIndicator___StyledUl-sc-15t41is-1 dhAbBb"
-        >
-          <li
-            class="StepIndicator__StepStyled-sc-15t41is-0 crUtTP"
-          />
-          <li
-            class="StepIndicator__StepStyled-sc-15t41is-0 crUtTP"
-          />
-          <li
-            class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
-          />
-          <li
-            class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
-          />
-          <li
-            class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
-          />
-          <li
-            class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
-          />
-          <li
-            class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
-          />
-        </ul>
-        <div
-          class="mt-4"
-        >
-          <div
-            data-testid="tab-pabel__active-panel"
-          >
-            <div
-              data-testid="Registration__second-step"
-            >
-              <h1>
-                Register Business
+                Update Business
               </h1>
               <div
                 class="text-theme-neutral-700"
@@ -408,6 +80,7 @@ exports[`Registration should render 2nd step 1`] = `
                           data-testid="Input"
                           name="name"
                           type="text"
+                          value="ROBank Ecosystem"
                         />
                       </fieldset>
                       <fieldset
@@ -429,7 +102,9 @@ exports[`Registration should render 2nd step 1`] = `
                           class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
                           data-testid="TextArea"
                           name="description"
-                        />
+                        >
+                          Not a trustworthy bank
+                        </textarea>
                       </fieldset>
                       <fieldset
                         class="sc-AxiKw iQzisX mt-8"
@@ -446,6 +121,7 @@ exports[`Registration should render 2nd step 1`] = `
                           data-testid="Input"
                           name="website"
                           type="website"
+                          value="http://robank.com"
                         />
                       </fieldset>
                     </div>
@@ -693,7 +369,8 @@ exports[`Registration should render 2nd step 1`] = `
             <button
               class="sc-AxjAm ddJBbC"
               color="primary"
-              data-testid="Registration__back-button"
+              data-testid="UpdateRegistration__back-button"
+              disabled=""
               type="button"
             >
               Back
@@ -701,7 +378,7 @@ exports[`Registration should render 2nd step 1`] = `
             <button
               class="sc-AxjAm ddQVWI"
               color="primary"
-              data-testid="Registration__continue-button"
+              data-testid="UpdateRegistration__continue-button"
               type="button"
             >
               Continue
@@ -714,11 +391,11 @@ exports[`Registration should render 2nd step 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Registration should render 3rd step 1`] = `
+exports[`UpdateRegistration should render 2nd step 1`] = `
 <DocumentFragment>
   <div
     class="max-w-xl mx-auto"
-    data-testid="Registration"
+    data-testid="UpdateRegistration"
   >
     <form
       class="space-y-6"
@@ -728,9 +405,6 @@ exports[`Registration should render 3rd step 1`] = `
         <ul
           class="StepIndicator___StyledUl-sc-15t41is-1 dhAbBb"
         >
-          <li
-            class="StepIndicator__StepStyled-sc-15t41is-0 crUtTP"
-          />
           <li
             class="StepIndicator__StepStyled-sc-15t41is-0 crUtTP"
           />
@@ -758,7 +432,7 @@ exports[`Registration should render 3rd step 1`] = `
           >
             <div
               class="space-y-8"
-              data-testid="Registration__third-step"
+              data-testid="UpdateRegistration__second-step"
             >
               <div>
                 <h1
@@ -881,7 +555,7 @@ exports[`Registration should render 3rd step 1`] = `
                     <div
                       class="mt-2 font-semibold"
                     >
-                      Business Registration
+                      Update Business
                     </div>
                   </div>
                   <div>
@@ -952,56 +626,12 @@ exports[`Registration should render 3rd step 1`] = `
                     >
                       <a
                         class="link"
-                        href="http://robank.com"
+                        href="https://ark.io"
                         rel="noreferrer"
                         target="_blank"
                       >
-                        http://robank.com
+                        https://ark.io
                       </a>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 mb-2"
-                >
-                  <div
-                    class="flex-1"
-                  >
-                    <div
-                      class="mt-2 font-semibold"
-                    >
-                      <div
-                        data-testid="LinkList"
-                      >
-                        <div
-                          class="flex justify-between cursor-pointer"
-                          data-testid="LinkList__header"
-                        >
-                          <div>
-                            <span
-                              class="font-semibold"
-                            >
-                              Repository
-                            </span>
-                            <div
-                              class="mt-2 text-theme-neutral-700"
-                            >
-                              Show your projects through the repository
-                            </div>
-                          </div>
-                          <div>
-                            <div
-                              class="sc-AxhCb eHGcDb flex items-center justify-center w-5 h-5 rounded-full bg-theme-primary-100 text-theme-primary-600"
-                              height="18"
-                              width="18"
-                            >
-                              <svg>
-                                chevron-down.svg
-                              </svg>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
                     </div>
                   </div>
                 </div>
@@ -1092,7 +722,7 @@ exports[`Registration should render 3rd step 1`] = `
             <button
               class="sc-AxjAm ddJBbC"
               color="primary"
-              data-testid="Registration__back-button"
+              data-testid="UpdateRegistration__back-button"
               type="button"
             >
               Back
@@ -1100,7 +730,7 @@ exports[`Registration should render 3rd step 1`] = `
             <button
               class="sc-AxjAm ddQVWI"
               color="primary"
-              data-testid="Registration__continue-button"
+              data-testid="UpdateRegistration__continue-button"
               type="button"
             >
               Continue
@@ -1113,11 +743,11 @@ exports[`Registration should render 3rd step 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Registration should render 4th step 1`] = `
+exports[`UpdateRegistration should render 3rd step 1`] = `
 <DocumentFragment>
   <div
     class="max-w-xl mx-auto"
-    data-testid="Registration"
+    data-testid="UpdateRegistration"
   >
     <form
       class="space-y-6"
@@ -1127,9 +757,6 @@ exports[`Registration should render 4th step 1`] = `
         <ul
           class="StepIndicator___StyledUl-sc-15t41is-1 dhAbBb"
         >
-          <li
-            class="StepIndicator__StepStyled-sc-15t41is-0 crUtTP"
-          />
           <li
             class="StepIndicator__StepStyled-sc-15t41is-0 crUtTP"
           />
@@ -1156,7 +783,7 @@ exports[`Registration should render 4th step 1`] = `
             data-testid="tab-pabel__active-panel"
           >
             <div
-              data-testid="Registration__fourth-step"
+              data-testid="UpdateRegistration__third-step"
             >
               <div>
                 <h1>
@@ -1260,7 +887,7 @@ exports[`Registration should render 4th step 1`] = `
             <button
               class="sc-AxjAm ddJBbC"
               color="primary"
-              data-testid="Registration__back-button"
+              data-testid="UpdateRegistration__back-button"
               type="button"
             >
               Back
@@ -1268,7 +895,7 @@ exports[`Registration should render 4th step 1`] = `
             <button
               class="sc-AxjAm ddQVWI"
               color="primary"
-              data-testid="Registration__send-button"
+              data-testid="UpdateRegistration__send-button"
               type="button"
             >
               <div
@@ -1290,11 +917,11 @@ exports[`Registration should render 4th step 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Registration should render 5th step 1`] = `
+exports[`UpdateRegistration should render 4th step 1`] = `
 <DocumentFragment>
   <div
     class="max-w-xl mx-auto"
-    data-testid="Registration"
+    data-testid="UpdateRegistration"
   >
     <form
       class="space-y-6"
@@ -1304,9 +931,6 @@ exports[`Registration should render 5th step 1`] = `
         <ul
           class="StepIndicator___StyledUl-sc-15t41is-1 dhAbBb"
         >
-          <li
-            class="StepIndicator__StepStyled-sc-15t41is-0 crUtTP"
-          />
           <li
             class="StepIndicator__StepStyled-sc-15t41is-0 crUtTP"
           />
@@ -1569,7 +1193,7 @@ exports[`Registration should render 5th step 1`] = `
                       <div
                         class="mt-2 font-semibold"
                       >
-                        Business Registration
+                        Update Business
                       </div>
                     </div>
                     <div
@@ -1695,7 +1319,7 @@ exports[`Registration should render 5th step 1`] = `
               <button
                 class="sc-AxjAm ddJBbC"
                 color="primary"
-                data-testid="Registration__wallet-button"
+                data-testid="UpdateRegistration__wallet-button"
                 type="button"
               >
                 Back to wallet
@@ -1703,7 +1327,7 @@ exports[`Registration should render 5th step 1`] = `
               <button
                 class="sc-AxjAm ddJBbC"
                 color="primary"
-                data-testid="Registration__download-button"
+                data-testid="UpdateRegistration__download-button"
                 type="submit"
               >
                 <div
@@ -1726,11 +1350,11 @@ exports[`Registration should render 5th step 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Registration should select registration type 1`] = `
+exports[`UpdateRegistration should should go back 1`] = `
 <DocumentFragment>
   <div
     class="max-w-xl mx-auto"
-    data-testid="Registration"
+    data-testid="UpdateRegistration"
   >
     <form
       class="space-y-6"
@@ -1742,9 +1366,6 @@ exports[`Registration should select registration type 1`] = `
         >
           <li
             class="StepIndicator__StepStyled-sc-15t41is-0 crUtTP"
-          />
-          <li
-            class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
           />
           <li
             class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
@@ -1769,263 +1390,326 @@ exports[`Registration should select registration type 1`] = `
             data-testid="tab-pabel__active-panel"
           >
             <div
-              data-testid="Registration__first-step"
+              data-testid="UpdateRegistration__first-step"
             >
               <h1>
-                Registration
+                Update Business
               </h1>
               <div
                 class="text-theme-neutral-700"
               >
                 Select the type of registration and the address you want to register with.
               </div>
-              <div
-                class="sc-fzoLag TJgFv mt-5"
-              >
+              <div>
                 <div
-                  aria-expanded="false"
-                  aria-haspopup="listbox"
-                  aria-labelledby="downshift-8-label"
-                  class="relative"
-                  role="combobox"
+                  class="flex items-center py-4 true mb-8"
                 >
-                  <label
-                    for="downshift-8-input"
-                    id="downshift-8-label"
-                  />
                   <div
-                    class="relative flex items-center w-full flex-inline"
+                    class="flex-1"
                   >
                     <div
-                      class="flex w-full border rounded shadow-sm bg-theme-background border-theme-neutral-300 transition-colors duration-200 hover:outline-none hover:border-theme-primary"
+                      class="mt-2 font-semibold"
                     >
-                      <div
-                        class="px-4 py-2 flex-0 w-14"
+                      <fieldset
+                        class="sc-AxiKw iQzisX flex flex-col space-y-2"
                       >
-                        <div
-                          class="sc-AxirZ HSPq border-theme-neutral-200"
-                        />
-                      </div>
-                      <div
-                        class="relative flex-1 p-1 font-semibold text-theme-neutral-800"
-                      >
-                        <div
-                          class="relative z-10 w-full"
-                          data-testid="select-network__typeahead-"
+                        <label
+                          class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                          data-testid="FormLabel"
+                          for="name"
+                          required=""
                         >
+                          Name
                           <div
-                            class="absolute left-0 font-semibold top-2 text-theme-neutral-400"
+                            class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                            data-testid="FormLabel__required"
                           />
-                        </div>
+                        </label>
                         <input
-                          aria-autocomplete="list"
-                          aria-labelledby="downshift-8-label"
-                          autocomplete="off"
-                          class="relative z-20 w-full h-full font-semibold bg-transparent outline-none"
-                          data-testid="select-asset__input"
-                          id="downshift-8-input"
-                          placeholder="Enter a network name"
-                          value=""
+                          class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+                          data-testid="Input"
+                          name="name"
+                          type="text"
+                          value="ROBank Ecosystem"
                         />
-                      </div>
+                      </fieldset>
+                      <fieldset
+                        class="sc-AxiKw iQzisX mt-8"
+                      >
+                        <label
+                          class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                          data-testid="FormLabel"
+                          for="description"
+                          required=""
+                        >
+                          Description
+                          <div
+                            class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                            data-testid="FormLabel__required"
+                          />
+                        </label>
+                        <textarea
+                          class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+                          data-testid="TextArea"
+                          name="description"
+                        >
+                          Not a trustworthy bank
+                        </textarea>
+                      </fieldset>
+                      <fieldset
+                        class="sc-AxiKw iQzisX mt-8"
+                      >
+                        <label
+                          class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                          data-testid="FormLabel"
+                          for="website"
+                        >
+                          Website
+                        </label>
+                        <input
+                          class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+                          data-testid="Input"
+                          name="website"
+                          type="website"
+                          value="http://robank.com"
+                        />
+                      </fieldset>
                     </div>
                   </div>
+                </div>
+                <div
+                  class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 mb-2"
+                >
                   <div
-                    aria-labelledby="downshift-8-label"
-                    class="pt-6"
-                    data-testid="select-asset__items"
-                    id="downshift-8-menu"
-                    role="listbox"
+                    class="flex-1"
                   >
                     <div
-                      aria-selected="false"
-                      class="inline-block mr-4 cursor-pointer"
-                      id="downshift-8-item-0"
-                      role="option"
-                      title="Ark Ecosystem"
+                      class="mt-2 font-semibold"
                     >
                       <div
-                        class="sc-AxirZ cZokSJ text-theme-danger-400 border-theme-danger-200"
+                        class="font-normal"
+                        data-testid="LinkCollection"
                       >
                         <div
-                          class="sc-AxhCb eHGcDb"
-                          height="18"
-                          width="18"
+                          class="flex justify-between cursor-pointer"
+                          data-testid="LinkCollection__header"
                         >
-                          <svg>
-                            ark.svg
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      aria-selected="false"
-                      class="inline-block mr-4 cursor-pointer"
-                      id="downshift-8-item-1"
-                      role="option"
-                      title="Bitcoin"
-                    >
-                      <div
-                        class="sc-AxirZ cZokSJ text-theme-warning-400 border-theme-warning-200"
-                      >
-                        <div
-                          class="sc-AxhCb eHGcDb"
-                          height="18"
-                          width="18"
-                        >
-                          <svg>
-                            btc.svg
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      aria-selected="false"
-                      class="inline-block mr-4 cursor-pointer"
-                      id="downshift-8-item-2"
-                      role="option"
-                      title="Ethereum"
-                    >
-                      <div
-                        class="sc-AxirZ cZokSJ text-theme-neutral-800 border-theme-neutral-600"
-                      >
-                        <div
-                          class="sc-AxhCb eHGcDb"
-                          height="18"
-                          width="18"
-                        >
-                          <svg>
-                            eth.svg
-                          </svg>
+                          <div>
+                            <span
+                              class="font-semibold"
+                            >
+                              Repository
+                            </span>
+                            <div
+                              class="mt-2 text-theme-neutral-700"
+                            >
+                              Show your projects through your repository
+                            </div>
+                          </div>
+                          <div>
+                            <div
+                              class="sc-AxhCb eHGcDb flex items-center justify-center w-5 h-5 rounded-full text-theme-primary-600 bg-theme-primary-100"
+                              height="18"
+                              width="18"
+                            >
+                              <svg>
+                                chevron-down.svg
+                              </svg>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                <fieldset
-                  class="sc-AxiKw iQzisX relative h-20 mt-8"
+                <div
+                  class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 mb-2"
                 >
                   <div
-                    class="mb-2"
-                  >
-                    <label
-                      class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
-                      data-testid="FormLabel"
-                      for="address"
-                      label="Address"
-                    >
-                      Address
-                    </label>
-                  </div>
-                  <div
-                    class="sc-AxmLO kuiknc ProfileFormField__select-contact select-transparent"
+                    class="flex-1"
                   >
                     <div
-                      class="sc-AxmLO kuiknc"
+                      class="mt-2 font-semibold"
                     >
-                      <select
-                        class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
-                        data-testid="ProfileFormField__select-address"
-                        name="address"
-                      >
-                        <option
-                          disabled=""
-                          selected=""
-                          value=""
-                        >
-                           
-                        </option>
-                        <option
-                          data-testid="ProfileFormField__profile-select"
-                          value="FJKDSALJFKASLJFKSDAJFKFKDSAJFKSAJFKLASJKDFJ"
-                        >
-                          My Wallet FJKDSALJFKASL...SAJFKLASJKDFJ
-                        </option>
-                      </select>
                       <div
-                        class="sc-AxgMl sc-Axmtr cPxyjO w-12 text-lg pointer-events-none text-theme-neutral-dark"
+                        class="font-normal"
+                        data-testid="LinkCollection"
                       >
                         <div
-                          class="sc-AxhCb fxrKLH"
-                          height="1em"
-                          width="1em"
+                          class="flex justify-between cursor-pointer"
+                          data-testid="LinkCollection__header"
                         >
-                          <svg>
-                            chevron-down.svg
-                          </svg>
+                          <div>
+                            <span
+                              class="font-semibold"
+                            >
+                              Social Media
+                            </span>
+                            <div
+                              class="mt-2 text-theme-neutral-700"
+                            >
+                              Tell people more about yourself through social media
+                            </div>
+                          </div>
+                          <div>
+                            <div
+                              class="sc-AxhCb eHGcDb flex items-center justify-center w-5 h-5 rounded-full text-theme-primary-600 bg-theme-primary-100"
+                              height="18"
+                              width="18"
+                            >
+                              <svg>
+                                chevron-down.svg
+                              </svg>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <div
-                    class="absolute ml-4 -mt-10"
-                  >
-                    <div
-                      class="sc-AxirZ HSPq mt-px bg-theme-neutral-200 border-theme-neutral-200"
-                    />
-                  </div>
-                </fieldset>
-                <fieldset
-                  class="sc-AxiKw iQzisX relative h-20 mt-8"
-                  data-testid="Registration__type"
+                </div>
+                <div
+                  class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 mb-2"
                 >
                   <div
-                    class="mb-2"
+                    class="flex-1"
                   >
-                    <label
-                      class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
-                      data-testid="FormLabel"
-                      for="registrationType"
-                      label="Registration Type"
-                    >
-                      Registration Type
-                    </label>
-                  </div>
-                  <div>
                     <div
-                      class="sc-AxmLO kuiknc"
+                      class="mt-2 font-semibold"
                     >
-                      <select
-                        class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
-                        data-testid="Registration__type-select"
-                        name="registrationType"
-                      >
-                        <option
-                          disabled=""
-                          selected=""
-                          value=""
-                        >
-                           
-                        </option>
-                        <option
-                          data-testid="Registration__type-option"
-                          value="business"
-                        >
-                          Business
-                        </option>
-                      </select>
                       <div
-                        class="sc-AxgMl sc-Axmtr cPxyjO w-12 text-lg pointer-events-none text-theme-neutral-dark"
+                        class="font-normal"
+                        data-testid="LinkCollection"
                       >
                         <div
-                          class="sc-AxhCb fxrKLH"
-                          height="1em"
-                          width="1em"
+                          class="flex justify-between cursor-pointer"
+                          data-testid="LinkCollection__header"
                         >
-                          <svg>
-                            chevron-down.svg
-                          </svg>
+                          <div>
+                            <span
+                              class="font-semibold"
+                            >
+                              Photo and Video
+                            </span>
+                            <div
+                              class="mt-2 text-theme-neutral-700"
+                            >
+                              Get more users and add more information about yourself
+                            </div>
+                          </div>
+                          <div>
+                            <div
+                              class="sc-AxhCb eHGcDb flex items-center justify-center w-5 h-5 rounded-full text-theme-primary-600 bg-theme-primary-100"
+                              height="18"
+                              width="18"
+                            >
+                              <svg>
+                                chevron-down.svg
+                              </svg>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
+                  </div>
+                </div>
+                <div
+                  class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 mt-4"
+                >
+                  <div
+                    class="flex-1"
+                  >
                     <div
-                      class="flex items-center ml-4 leading-tight -mt-9"
-                      data-testid="Registration__type-selected"
+                      class="text-sm font-semibold text-theme-neutral-500"
                     >
-                      Business
+                      Fee ARK
+                    </div>
+                    <div
+                      class="mt-2 font-semibold"
+                    >
+                      <div
+                        class="flex space-x-2"
+                      >
+                        <div
+                          class="flex-1"
+                        >
+                          <div
+                            class="sc-AxmLO kuiknc"
+                          >
+                            <input
+                              class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+                              data-testid="InputCurrency"
+                              type="text"
+                              value="25"
+                            />
+                            <div
+                              class="absolute bottom-0 w-full px-1"
+                            >
+                              <div
+                                class="flex flex-wrap justify-center"
+                                data-testid="Range"
+                              >
+                                <div
+                                  class="sc-fzozJi cRbOfl"
+                                  data-testid="Range__track"
+                                  style="transform: scale(1); cursor: pointer;"
+                                >
+                                  <div
+                                    class="sc-fzoLsD ckpTMK"
+                                    data-testid="Range__track__filled"
+                                  >
+                                    <div
+                                      aria-valuemax="100"
+                                      aria-valuemin="1"
+                                      aria-valuenow="25"
+                                      class="sc-fzpans dtzHyc"
+                                      data-testid="Range__thumb"
+                                      draggable="false"
+                                      role="slider"
+                                      style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
+                                      tabindex="0"
+                                    />
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div>
+                          <div
+                            class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300 shadow-sm"
+                            data-testid="SelectionBar"
+                            role="radiogroup"
+                          >
+                            <button
+                              aria-checked="true"
+                              class="sc-fznyAO hWIpjZ relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                              data-testid="SelectionBarOption"
+                              role="radio"
+                            >
+                              Last
+                            </button>
+                            <button
+                              aria-checked="false"
+                              class="sc-fznyAO hWIpjZ relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                              data-testid="SelectionBarOption"
+                              role="radio"
+                            >
+                              Min
+                            </button>
+                            <button
+                              aria-checked="false"
+                              class="sc-fznyAO hWIpjZ relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                              data-testid="SelectionBarOption"
+                              role="radio"
+                            >
+                              Average
+                            </button>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </fieldset>
+                </div>
               </div>
             </div>
           </div>
@@ -2035,7 +1719,7 @@ exports[`Registration should select registration type 1`] = `
             <button
               class="sc-AxjAm ddJBbC"
               color="primary"
-              data-testid="Registration__back-button"
+              data-testid="UpdateRegistration__back-button"
               disabled=""
               type="button"
             >
@@ -2044,7 +1728,7 @@ exports[`Registration should select registration type 1`] = `
             <button
               class="sc-AxjAm ddQVWI"
               color="primary"
-              data-testid="Registration__continue-button"
+              data-testid="UpdateRegistration__continue-button"
               type="button"
             >
               Continue
@@ -2057,11 +1741,11 @@ exports[`Registration should select registration type 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Registration should should go back 1`] = `
+exports[`UpdateRegistration should submit 1`] = `
 <DocumentFragment>
   <div
     class="max-w-xl mx-auto"
-    data-testid="Registration"
+    data-testid="UpdateRegistration"
   >
     <form
       class="space-y-6"
@@ -2071,334 +1755,6 @@ exports[`Registration should should go back 1`] = `
         <ul
           class="StepIndicator___StyledUl-sc-15t41is-1 dhAbBb"
         >
-          <li
-            class="StepIndicator__StepStyled-sc-15t41is-0 crUtTP"
-          />
-          <li
-            class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
-          />
-          <li
-            class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
-          />
-          <li
-            class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
-          />
-          <li
-            class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
-          />
-          <li
-            class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
-          />
-          <li
-            class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
-          />
-        </ul>
-        <div
-          class="mt-4"
-        >
-          <div
-            data-testid="tab-pabel__active-panel"
-          >
-            <div
-              data-testid="Registration__first-step"
-            >
-              <h1>
-                Registration
-              </h1>
-              <div
-                class="text-theme-neutral-700"
-              >
-                Select the type of registration and the address you want to register with.
-              </div>
-              <div
-                class="sc-fzoLag TJgFv mt-5"
-              >
-                <div
-                  aria-expanded="false"
-                  aria-haspopup="listbox"
-                  aria-labelledby="downshift-2-label"
-                  class="relative"
-                  role="combobox"
-                >
-                  <label
-                    for="downshift-2-input"
-                    id="downshift-2-label"
-                  />
-                  <div
-                    class="relative flex items-center w-full flex-inline"
-                  >
-                    <div
-                      class="flex w-full border rounded shadow-sm bg-theme-background border-theme-neutral-300 transition-colors duration-200 hover:outline-none hover:border-theme-primary"
-                    >
-                      <div
-                        class="px-4 py-2 flex-0 w-14"
-                      >
-                        <div
-                          class="sc-AxirZ HSPq border-theme-neutral-200"
-                        />
-                      </div>
-                      <div
-                        class="relative flex-1 p-1 font-semibold text-theme-neutral-800"
-                      >
-                        <div
-                          class="relative z-10 w-full"
-                          data-testid="select-network__typeahead-"
-                        >
-                          <div
-                            class="absolute left-0 font-semibold top-2 text-theme-neutral-400"
-                          />
-                        </div>
-                        <input
-                          aria-autocomplete="list"
-                          aria-labelledby="downshift-2-label"
-                          autocomplete="off"
-                          class="relative z-20 w-full h-full font-semibold bg-transparent outline-none"
-                          data-testid="select-asset__input"
-                          id="downshift-2-input"
-                          placeholder="Enter a network name"
-                          value=""
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    aria-labelledby="downshift-2-label"
-                    class="pt-6"
-                    data-testid="select-asset__items"
-                    id="downshift-2-menu"
-                    role="listbox"
-                  >
-                    <div
-                      aria-selected="false"
-                      class="inline-block mr-4 cursor-pointer"
-                      id="downshift-2-item-0"
-                      role="option"
-                      title="Ark Ecosystem"
-                    >
-                      <div
-                        class="sc-AxirZ cZokSJ text-theme-danger-400 border-theme-danger-200"
-                      >
-                        <div
-                          class="sc-AxhCb eHGcDb"
-                          height="18"
-                          width="18"
-                        >
-                          <svg>
-                            ark.svg
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      aria-selected="false"
-                      class="inline-block mr-4 cursor-pointer"
-                      id="downshift-2-item-1"
-                      role="option"
-                      title="Bitcoin"
-                    >
-                      <div
-                        class="sc-AxirZ cZokSJ text-theme-warning-400 border-theme-warning-200"
-                      >
-                        <div
-                          class="sc-AxhCb eHGcDb"
-                          height="18"
-                          width="18"
-                        >
-                          <svg>
-                            btc.svg
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      aria-selected="false"
-                      class="inline-block mr-4 cursor-pointer"
-                      id="downshift-2-item-2"
-                      role="option"
-                      title="Ethereum"
-                    >
-                      <div
-                        class="sc-AxirZ cZokSJ text-theme-neutral-800 border-theme-neutral-600"
-                      >
-                        <div
-                          class="sc-AxhCb eHGcDb"
-                          height="18"
-                          width="18"
-                        >
-                          <svg>
-                            eth.svg
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <fieldset
-                  class="sc-AxiKw iQzisX relative h-20 mt-8"
-                >
-                  <div
-                    class="mb-2"
-                  >
-                    <label
-                      class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
-                      data-testid="FormLabel"
-                      for="address"
-                      label="Address"
-                    >
-                      Address
-                    </label>
-                  </div>
-                  <div
-                    class="sc-AxmLO kuiknc ProfileFormField__select-contact select-transparent"
-                  >
-                    <div
-                      class="sc-AxmLO kuiknc"
-                    >
-                      <select
-                        class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
-                        data-testid="ProfileFormField__select-address"
-                        name="address"
-                      >
-                        <option
-                          disabled=""
-                          selected=""
-                          value=""
-                        >
-                           
-                        </option>
-                        <option
-                          data-testid="ProfileFormField__profile-select"
-                          value="FJKDSALJFKASLJFKSDAJFKFKDSAJFKSAJFKLASJKDFJ"
-                        >
-                          My Wallet FJKDSALJFKASL...SAJFKLASJKDFJ
-                        </option>
-                      </select>
-                      <div
-                        class="sc-AxgMl sc-Axmtr cPxyjO w-12 text-lg pointer-events-none text-theme-neutral-dark"
-                      >
-                        <div
-                          class="sc-AxhCb fxrKLH"
-                          height="1em"
-                          width="1em"
-                        >
-                          <svg>
-                            chevron-down.svg
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="absolute ml-4 -mt-10"
-                  >
-                    <div
-                      class="sc-AxirZ HSPq mt-px bg-theme-neutral-200 border-theme-neutral-200"
-                    />
-                  </div>
-                </fieldset>
-                <fieldset
-                  class="sc-AxiKw iQzisX relative h-20 mt-8"
-                  data-testid="Registration__type"
-                >
-                  <div
-                    class="mb-2"
-                  >
-                    <label
-                      class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
-                      data-testid="FormLabel"
-                      for="registrationType"
-                      label="Registration Type"
-                    >
-                      Registration Type
-                    </label>
-                  </div>
-                  <div>
-                    <div
-                      class="sc-AxmLO kuiknc"
-                    >
-                      <select
-                        class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
-                        data-testid="Registration__type-select"
-                        name="registrationType"
-                      >
-                        <option
-                          disabled=""
-                          selected=""
-                          value=""
-                        >
-                           
-                        </option>
-                        <option
-                          data-testid="Registration__type-option"
-                          value="business"
-                        >
-                          Business
-                        </option>
-                      </select>
-                      <div
-                        class="sc-AxgMl sc-Axmtr cPxyjO w-12 text-lg pointer-events-none text-theme-neutral-dark"
-                      >
-                        <div
-                          class="sc-AxhCb fxrKLH"
-                          height="1em"
-                          width="1em"
-                        >
-                          <svg>
-                            chevron-down.svg
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </fieldset>
-              </div>
-            </div>
-          </div>
-          <div
-            class="flex justify-end mt-8 space-x-3"
-          >
-            <button
-              class="sc-AxjAm ddJBbC"
-              color="primary"
-              data-testid="Registration__back-button"
-              disabled=""
-              type="button"
-            >
-              Back
-            </button>
-            <button
-              class="sc-AxjAm ddQVWI"
-              color="primary"
-              data-testid="Registration__continue-button"
-              type="button"
-            >
-              Continue
-            </button>
-          </div>
-        </div>
-      </div>
-    </form>
-  </div>
-</DocumentFragment>
-`;
-
-exports[`Registration should submit 1`] = `
-<DocumentFragment>
-  <div
-    class="max-w-xl mx-auto"
-    data-testid="Registration"
-  >
-    <form
-      class="space-y-6"
-      data-testid="Form"
-    >
-      <div>
-        <ul
-          class="StepIndicator___StyledUl-sc-15t41is-1 dhAbBb"
-        >
-          <li
-            class="StepIndicator__StepStyled-sc-15t41is-0 crUtTP"
-          />
           <li
             class="StepIndicator__StepStyled-sc-15t41is-0 crUtTP"
           />
@@ -2661,7 +2017,7 @@ exports[`Registration should submit 1`] = `
                       <div
                         class="mt-2 font-semibold"
                       >
-                        Business Registration
+                        Update Business
                       </div>
                     </div>
                     <div
@@ -2787,7 +2143,7 @@ exports[`Registration should submit 1`] = `
               <button
                 class="sc-AxjAm ddJBbC"
                 color="primary"
-                data-testid="Registration__wallet-button"
+                data-testid="UpdateRegistration__wallet-button"
                 type="button"
               >
                 Back to wallet
@@ -2795,7 +2151,7 @@ exports[`Registration should submit 1`] = `
               <button
                 class="sc-AxjAm ddJBbC"
                 color="primary"
-                data-testid="Registration__download-button"
+                data-testid="UpdateRegistration__download-button"
                 type="submit"
               >
                 <div
