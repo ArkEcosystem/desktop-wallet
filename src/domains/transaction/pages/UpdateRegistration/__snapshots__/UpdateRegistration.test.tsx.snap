@@ -464,7 +464,7 @@ exports[`UpdateRegistration should render 2nd step 1`] = `
                       class="mt-2 font-semibold"
                     >
                       <div
-                        class="flex-auto text-xl font-semibold truncate text-theme-neutral-800 max-w-24"
+                        class="flex-auto font-semibold truncate text-theme-neutral-800 max-w-24"
                       >
                         ARK Ecosystem
                       </div>
@@ -521,13 +521,13 @@ exports[`UpdateRegistration should render 2nd step 1`] = `
                         class="inline-block truncate"
                       >
                         <span
-                          class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-xl"
+                          class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                           data-testid="address__wallet-name"
                         >
                           ROBank
                         </span>
                         <span
-                          class="text-theme-neutral-400 font-semibold text-xl"
+                          class="text-theme-neutral-400 font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
                           AUexKj...EVTQWK
@@ -632,6 +632,50 @@ exports[`UpdateRegistration should render 2nd step 1`] = `
                       >
                         https://ark.io
                       </a>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 mb-2"
+                >
+                  <div
+                    class="flex-1"
+                  >
+                    <div
+                      class="mt-2 font-semibold"
+                    >
+                      <div
+                        data-testid="LinkList"
+                      >
+                        <div
+                          class="flex justify-between cursor-pointer"
+                          data-testid="LinkList__header"
+                        >
+                          <div>
+                            <span
+                              class="font-semibold"
+                            >
+                              Repository
+                            </span>
+                            <div
+                              class="mt-2 text-theme-neutral-700"
+                            >
+                              Show your projects through the repository
+                            </div>
+                          </div>
+                          <div>
+                            <div
+                              class="sc-AxhCb eHGcDb flex items-center justify-center w-5 h-5 rounded-full bg-theme-primary-100 text-theme-primary-600"
+                              height="18"
+                              width="18"
+                            >
+                              <svg>
+                                chevron-down.svg
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -1099,13 +1143,13 @@ exports[`UpdateRegistration should render 4th step 1`] = `
                           class="inline-block truncate"
                         >
                           <span
-                            class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-xl"
+                            class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                             data-testid="address__wallet-name"
                           >
                             ROBank
                           </span>
                           <span
-                            class="text-theme-neutral-400 font-semibold text-xl"
+                            class="text-theme-neutral-400 font-semibold text-base"
                             data-testid="address__wallet-address"
                           >
                             AUexKj...EVTQWK
@@ -1159,13 +1203,13 @@ exports[`UpdateRegistration should render 4th step 1`] = `
                           class="inline-block truncate"
                         >
                           <span
-                            class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-xl"
+                            class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                             data-testid="address__wallet-name"
                           >
                             ROBank
                           </span>
                           <span
-                            class="text-theme-neutral-400 font-semibold text-xl"
+                            class="text-theme-neutral-400 font-semibold text-base"
                             data-testid="address__wallet-address"
                           >
                             AUexKj...EVTQWK
@@ -1923,13 +1967,13 @@ exports[`UpdateRegistration should submit 1`] = `
                           class="inline-block truncate"
                         >
                           <span
-                            class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-xl"
+                            class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                             data-testid="address__wallet-name"
                           >
                             ROBank
                           </span>
                           <span
-                            class="text-theme-neutral-400 font-semibold text-xl"
+                            class="text-theme-neutral-400 font-semibold text-base"
                             data-testid="address__wallet-address"
                           >
                             AUexKj...EVTQWK
@@ -1983,13 +2027,13 @@ exports[`UpdateRegistration should submit 1`] = `
                           class="inline-block truncate"
                         >
                           <span
-                            class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-xl"
+                            class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                             data-testid="address__wallet-name"
                           >
                             ROBank
                           </span>
                           <span
-                            class="text-theme-neutral-400 font-semibold text-xl"
+                            class="text-theme-neutral-400 font-semibold text-base"
                             data-testid="address__wallet-address"
                           >
                             AUexKj...EVTQWK
