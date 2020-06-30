@@ -5,7 +5,7 @@ export const getDateDifferenceFromNow = (targetDate: string): string => {
 	const dateToCompare = DateTime.make(targetDate);
 	const dateDifference = currentDateObj.diffInDays(dateToCompare);
 
-	const dateComplement = dateDifference > 1 ? "days" : "day";
+	const dateComplement = dateDifference !== 1 ? "days" : "day";
 
 	return `${dateDifference} ${dateComplement} ago`;
 };
