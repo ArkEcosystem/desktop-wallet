@@ -14,7 +14,7 @@ type SelectAssetProps = {
 	placeholder?: string;
 	name?: string;
 	value?: string;
-	onSelect?: () => void;
+	onSelect?: (asset: any) => void;
 };
 
 type InputValue = any;

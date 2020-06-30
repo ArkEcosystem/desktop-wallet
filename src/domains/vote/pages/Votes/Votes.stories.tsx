@@ -1,5 +1,6 @@
 import React from "react";
 
+import { addressListData, delegateListData } from "../../data";
 import { Votes } from "./Votes";
 
 export default { title: "Domains / Vote / Pages / Votes" };
@@ -23,9 +24,5 @@ export const Default = () => {
 		},
 	];
 
-	return (
-		<div>
-			<Votes assets={assets} />
-		</div>
-	);
+	return <Votes assets={assets} addressList={addressListData} delegateList={delegateListData} />;
 };

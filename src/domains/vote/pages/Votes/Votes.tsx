@@ -1,5 +1,6 @@
 import { images } from "app/assets/images";
 import { Address } from "app/components/Address";
+import { Avatar } from "app/components/Avatar";
 import { Breadcrumbs } from "app/components/Breadcrumbs";
 import { Circle } from "app/components/Circle";
 import { Header } from "app/components/Header";
@@ -8,12 +9,17 @@ import { Icon } from "app/components/Icon";
 import { Input } from "app/components/Input";
 import { SelectAsset } from "app/components/SelectAsset";
 import { TransactionDetail } from "app/components/TransactionDetail";
-import React from "react";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { styled } from "twin.macro";
 
+import { AddressList } from "../../components/AddressList";
+import { DelegateList } from "../../components/DelegateList";
+
 type VotesProps = {
 	assets?: any[];
+	addressList?: any[];
+	delegateList?: any[];
 };
 
 const { PlaceholderVotes } = images.vote.pages.votes;
@@ -26,14 +32,33 @@ const SelectAssetWrapper = styled.div`
 	}
 `;
 
-export const Votes = ({ assets }: VotesProps) => {
+const PlaceholderImage = () => {
+	return (
+		<div className="flex flex-col">
+			<PlaceholderVotes />
+			<PlaceholderVotes />
+		</div>
+	);
+};
+
+export const Votes = ({ assets, addressList, delegateList }: VotesProps) => {
 	const { t } = useTranslation();
+	const [selectedCrypto, setSelectCrypto] = useState("");
+	const [selectedAddress, setSelectAddress] = useState("");
 	const crumbs = [
 		{
 			route: "portfolio",
 			label: "Go back to Portfolio",
 		},
 	];
+
+	const handleSelectCrypto = (crypto: any) => {
+		setSelectCrypto(crypto.icon);
+	};
+
+	const handleSelectAddress = (address: string) => {
+		setSelectAddress(address);
+	};
 
 	return (
 		<div data-testid="MyVotes" className="flex flex-col min-h-screen -m-5 bg-theme-neutral-200">
@@ -56,7 +81,12 @@ export const Votes = ({ assets }: VotesProps) => {
 					<div className="grid grid-flow-col gap-6">
 						<TransactionDetail border={false} label="Cryptoasset">
 							<SelectAssetWrapper>
-								<SelectAsset assets={assets} name="cryptoasset" placeholder="Select cryptoasset" />
+								<SelectAsset
+									assets={assets}
+									name="cryptoasset"
+									placeholder="Select cryptoasset"
+									onSelect={handleSelectCrypto}
+								/>
 							</SelectAssetWrapper>
 						</TransactionDetail>
 						<TransactionDetail border={false} label="Address">
@@ -64,8 +94,27 @@ export const Votes = ({ assets }: VotesProps) => {
 								<Input type="text" disabled />
 								<div className="absolute flex items-center justify-between w-full ml-3">
 									<div className="flex items-center">
-										<Circle avatarId="test" size="small" noShadow className="mr-3" />
-										<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName="ROBank" />
+										{selectedAddress ? (
+											<>
+												<Avatar
+													className="mr-3"
+													address={selectedAddress}
+													size="small"
+													noShadow
+												/>
+												<Address
+													address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
+													walletName="ROBank"
+												/>
+											</>
+										) : (
+											<>
+												<Circle className="mr-3" avatarId="test" size="small" noShadow />
+												<span className="text-base font-semibold text-theme-neutral-400">
+													Select address
+												</span>
+											</>
+										)}
 									</div>
 									<Icon name="User" className="mr-6" width={20} height={20} />
 								</div>
@@ -74,8 +123,14 @@ export const Votes = ({ assets }: VotesProps) => {
 					</div>
 				</div>
 
-				<div className="p-10 bg-theme-background">
-					<PlaceholderVotes />
+				<div className="relative p-10 bg-theme-background">
+					{!selectedCrypto ? (
+						<PlaceholderImage />
+					) : selectedAddress ? (
+						<DelegateList data={delegateList} />
+					) : (
+						<AddressList data={addressList} onSelect={handleSelectAddress} />
+					)}
 				</div>
 			</div>
 		</div>
@@ -84,4 +139,6 @@ export const Votes = ({ assets }: VotesProps) => {
 
 Votes.defaultProps = {
 	assets: [],
+	addressList: [],
+	delegateList: [],
 };

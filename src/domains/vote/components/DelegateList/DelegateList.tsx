@@ -118,6 +118,7 @@ export const DelegateList = (props: DelegateListProps) => {
 
 	return (
 		<div>
+			<h2 className="py-5 text-2xl font-bold">Select a Delegate</h2>
 			<Table columns={columns} data={props.data}>
 				{(rowData: any) => <DelegateListItem {...rowData} selected={selected} onSelect={toggleSelected} />}
 			</Table>
