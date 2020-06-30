@@ -2,6 +2,11 @@
 
 exports[`AddressList should render 1`] = `
 <DocumentFragment>
+  <h2
+    class="py-5 text-2xl font-bold"
+  >
+    Select Address
+  </h2>
   <div
     class="sc-AxirZ gQslMC"
     role="table"
@@ -411,7 +416,7 @@ exports[`AddressList should render 1`] = `
                 class="text-theme-neutral-800 font-semibold text-base"
                 data-testid="address__wallet-address"
               >
-                ASuusXSW9...6T9GQ3kqT
+                FSuusXSW9...6T9GQ3kqT
               </span>
             </div>
           </td>
@@ -517,7 +522,7 @@ exports[`AddressList should render 1`] = `
                 class="text-theme-neutral-800 font-semibold text-base"
                 data-testid="address__wallet-address"
               >
-                ASuusXSW9...6T9GQ3kqT
+                DSuusXSW9...6T9GQ3kqT
               </span>
             </div>
           </td>
@@ -592,7 +597,7 @@ exports[`AddressList should render 1`] = `
                 class="text-theme-neutral-800 font-semibold text-base"
                 data-testid="address__wallet-address"
               >
-                ASuusXSW9...6T9GQ3kqT
+                HSuusXSW9...6T9GQ3kqT
               </span>
             </div>
           </td>
@@ -654,6 +659,11 @@ exports[`AddressList should render 1`] = `
 
 exports[`AddressList should render with empty list 1`] = `
 <DocumentFragment>
+  <h2
+    class="py-5 text-2xl font-bold"
+  >
+    Select Address
+  </h2>
   <div
     class="sc-AxirZ gQslMC"
     role="table"

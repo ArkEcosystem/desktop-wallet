@@ -71,7 +71,7 @@ exports[`Registration should render 1st step 1`] = `
                     class="relative flex items-center w-full flex-inline"
                   >
                     <div
-                      class="flex w-full border rounded shadow-sm bg-theme-background border-theme-neutral-300 transition-colors duration-200 hover:outline-none hover:border-theme-primary"
+                      class="flex w-full transition-colors duration-200 border rounded shadow-sm bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary"
                     >
                       <div
                         class="px-4 py-2 flex-0 w-14"
@@ -106,7 +106,7 @@ exports[`Registration should render 1st step 1`] = `
                   </div>
                   <div
                     aria-labelledby="downshift-0-label"
-                    class="pt-6"
+                    class="pt-6 select-asset__items"
                     data-testid="select-asset__items"
                     id="downshift-0-menu"
                     role="listbox"
@@ -1797,7 +1797,7 @@ exports[`Registration should select registration type 1`] = `
                     class="relative flex items-center w-full flex-inline"
                   >
                     <div
-                      class="flex w-full border rounded shadow-sm bg-theme-background border-theme-neutral-300 transition-colors duration-200 hover:outline-none hover:border-theme-primary"
+                      class="flex w-full transition-colors duration-200 border rounded shadow-sm bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary"
                     >
                       <div
                         class="px-4 py-2 flex-0 w-14"
@@ -1832,7 +1832,7 @@ exports[`Registration should select registration type 1`] = `
                   </div>
                   <div
                     aria-labelledby="downshift-8-label"
-                    class="pt-6"
+                    class="pt-6 select-asset__items"
                     data-testid="select-asset__items"
                     id="downshift-8-menu"
                     role="listbox"
@@ -2128,7 +2128,7 @@ exports[`Registration should should go back 1`] = `
                     class="relative flex items-center w-full flex-inline"
                   >
                     <div
-                      class="flex w-full border rounded shadow-sm bg-theme-background border-theme-neutral-300 transition-colors duration-200 hover:outline-none hover:border-theme-primary"
+                      class="flex w-full transition-colors duration-200 border rounded shadow-sm bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary"
                     >
                       <div
                         class="px-4 py-2 flex-0 w-14"
@@ -2163,7 +2163,7 @@ exports[`Registration should should go back 1`] = `
                   </div>
                   <div
                     aria-labelledby="downshift-2-label"
-                    class="pt-6"
+                    class="pt-6 select-asset__items"
                     data-testid="select-asset__items"
                     id="downshift-2-menu"
                     role="listbox"
