@@ -11,7 +11,7 @@ type ClipboardProps = {
 	children: React.ReactNode;
 };
 
-export const Clipboard = ({ data, options = {}, children }: ClipboardProps) => {
+export const Clipboard = ({ data, options, children }: ClipboardProps) => {
 	const { t } = useTranslation();
 
 	const [hasCopied, copy] = useClipboard({
@@ -37,4 +37,5 @@ export const Clipboard = ({ data, options = {}, children }: ClipboardProps) => {
 
 Clipboard.defaultProps = {
 	data: "",
+	options: {},
 };
