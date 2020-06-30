@@ -7,7 +7,7 @@ exports[`Registration should render 1st step 1`] = `
     data-testid="Registration"
   >
     <form
-      class="space-y-6"
+      class="space-y-8"
       data-testid="Form"
     >
       <div>
@@ -183,7 +183,7 @@ exports[`Registration should render 1st step 1`] = `
                     class="mb-2"
                   >
                     <label
-                      class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                      class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
                       data-testid="FormLabel"
                       for="address"
                       label="Address"
@@ -247,7 +247,7 @@ exports[`Registration should render 1st step 1`] = `
                     class="mb-2"
                   >
                     <label
-                      class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                      class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
                       data-testid="FormLabel"
                       for="registrationType"
                       label="Registration Type"
@@ -332,7 +332,7 @@ exports[`Registration should render 2nd step 1`] = `
     data-testid="Registration"
   >
     <form
-      class="space-y-6"
+      class="space-y-8"
       data-testid="Form"
     >
       <div>
@@ -392,7 +392,7 @@ exports[`Registration should render 2nd step 1`] = `
                         class="sc-AxiKw iQzisX flex flex-col space-y-2"
                       >
                         <label
-                          class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                          class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
                           data-testid="FormLabel"
                           for="name"
                           required=""
@@ -414,7 +414,7 @@ exports[`Registration should render 2nd step 1`] = `
                         class="sc-AxiKw iQzisX mt-8"
                       >
                         <label
-                          class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                          class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
                           data-testid="FormLabel"
                           for="description"
                           required=""
@@ -435,7 +435,7 @@ exports[`Registration should render 2nd step 1`] = `
                         class="sc-AxiKw iQzisX mt-8"
                       >
                         <label
-                          class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                          class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
                           data-testid="FormLabel"
                           for="website"
                         >
@@ -721,7 +721,7 @@ exports[`Registration should render 3rd step 1`] = `
     data-testid="Registration"
   >
     <form
-      class="space-y-6"
+      class="space-y-8"
       data-testid="Form"
     >
       <div>
@@ -844,7 +844,7 @@ exports[`Registration should render 3rd step 1`] = `
                         </div>
                       </div>
                       <div
-                        class="inline-block truncate"
+                        class="inline-block truncate align-middle"
                       >
                         <span
                           class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-xl"
@@ -1120,7 +1120,7 @@ exports[`Registration should render 4th step 1`] = `
     data-testid="Registration"
   >
     <form
-      class="space-y-6"
+      class="space-y-8"
       data-testid="Form"
     >
       <div>
@@ -1174,7 +1174,7 @@ exports[`Registration should render 4th step 1`] = `
                     class="sc-AxiKw iQzisX flex flex-col space-y-2"
                   >
                     <label
-                      class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                      class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
                       data-testid="FormLabel"
                       for="name"
                     >
@@ -1214,7 +1214,7 @@ exports[`Registration should render 4th step 1`] = `
                     class="sc-AxiKw iQzisX mt-8"
                   >
                     <label
-                      class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                      class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
                       data-testid="FormLabel"
                       for="name"
                     >
@@ -1297,7 +1297,7 @@ exports[`Registration should render 5th step 1`] = `
     data-testid="Registration"
   >
     <form
-      class="space-y-6"
+      class="space-y-8"
       data-testid="Form"
     >
       <div>
@@ -1381,7 +1381,7 @@ exports[`Registration should render 5th step 1`] = `
                             data-testid="clipboard__wrapper"
                           >
                             <div
-                              class="inline-block truncate"
+                              class="inline-block truncate align-middle"
                             >
                               <span
                                 class="text-theme-primary font-semibold text-base"
@@ -1430,7 +1430,7 @@ exports[`Registration should render 5th step 1`] = `
                             data-testid="clipboard__wrapper"
                           >
                             <div
-                              class="inline-block truncate"
+                              class="inline-block truncate align-middle"
                             >
                               <span
                                 class="text-theme-primary font-semibold text-base"
@@ -1472,7 +1472,7 @@ exports[`Registration should render 5th step 1`] = `
                         class="mt-2 font-semibold"
                       >
                         <div
-                          class="inline-block truncate"
+                          class="inline-block truncate align-middle"
                         >
                           <span
                             class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-xl"
@@ -1532,7 +1532,7 @@ exports[`Registration should render 5th step 1`] = `
                           </div>
                         </div>
                         <div
-                          class="inline-block truncate"
+                          class="inline-block truncate align-middle"
                         >
                           <span
                             class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-xl"
@@ -1733,7 +1733,7 @@ exports[`Registration should select registration type 1`] = `
     data-testid="Registration"
   >
     <form
-      class="space-y-6"
+      class="space-y-8"
       data-testid="Form"
     >
       <div>
@@ -1909,7 +1909,7 @@ exports[`Registration should select registration type 1`] = `
                     class="mb-2"
                   >
                     <label
-                      class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                      class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
                       data-testid="FormLabel"
                       for="address"
                       label="Address"
@@ -1973,7 +1973,7 @@ exports[`Registration should select registration type 1`] = `
                     class="mb-2"
                   >
                     <label
-                      class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                      class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
                       data-testid="FormLabel"
                       for="registrationType"
                       label="Registration Type"
@@ -2064,7 +2064,7 @@ exports[`Registration should should go back 1`] = `
     data-testid="Registration"
   >
     <form
-      class="space-y-6"
+      class="space-y-8"
       data-testid="Form"
     >
       <div>
@@ -2240,7 +2240,7 @@ exports[`Registration should should go back 1`] = `
                     class="mb-2"
                   >
                     <label
-                      class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                      class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
                       data-testid="FormLabel"
                       for="address"
                       label="Address"
@@ -2304,7 +2304,7 @@ exports[`Registration should should go back 1`] = `
                     class="mb-2"
                   >
                     <label
-                      class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                      class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
                       data-testid="FormLabel"
                       for="registrationType"
                       label="Registration Type"
@@ -2389,7 +2389,7 @@ exports[`Registration should submit 1`] = `
     data-testid="Registration"
   >
     <form
-      class="space-y-6"
+      class="space-y-8"
       data-testid="Form"
     >
       <div>
@@ -2473,7 +2473,7 @@ exports[`Registration should submit 1`] = `
                             data-testid="clipboard__wrapper"
                           >
                             <div
-                              class="inline-block truncate"
+                              class="inline-block truncate align-middle"
                             >
                               <span
                                 class="text-theme-primary font-semibold text-base"
@@ -2522,7 +2522,7 @@ exports[`Registration should submit 1`] = `
                             data-testid="clipboard__wrapper"
                           >
                             <div
-                              class="inline-block truncate"
+                              class="inline-block truncate align-middle"
                             >
                               <span
                                 class="text-theme-primary font-semibold text-base"
@@ -2564,7 +2564,7 @@ exports[`Registration should submit 1`] = `
                         class="mt-2 font-semibold"
                       >
                         <div
-                          class="inline-block truncate"
+                          class="inline-block truncate align-middle"
                         >
                           <span
                             class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-xl"
@@ -2624,7 +2624,7 @@ exports[`Registration should submit 1`] = `
                           </div>
                         </div>
                         <div
-                          class="inline-block truncate"
+                          class="inline-block truncate align-middle"
                         >
                           <span
                             class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-xl"
