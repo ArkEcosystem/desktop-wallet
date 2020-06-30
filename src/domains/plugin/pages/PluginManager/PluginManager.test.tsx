@@ -25,7 +25,7 @@ describe("PluginManager", () => {
 	});
 
 	it("should toggle between list and grid on home", () => {
-		const { asFragment, getByTestId, rerender } = render(
+		const { asFragment, getByTestId } = render(
 			<I18nextProvider i18n={i18n}>
 				<PluginManager />
 			</I18nextProvider>,
@@ -49,7 +49,7 @@ describe("PluginManager", () => {
 	});
 
 	it("should toggle between list and grid on game", () => {
-		const { asFragment, getByTestId, rerender } = render(
+		const { asFragment, getByTestId } = render(
 			<I18nextProvider i18n={i18n}>
 				<PluginManager />
 			</I18nextProvider>,
@@ -76,7 +76,7 @@ describe("PluginManager", () => {
 	});
 
 	it("should open & close featured modal", () => {
-		const { asFragment, getByTestId, rerender } = render(
+		const { asFragment, getByTestId } = render(
 			<I18nextProvider i18n={i18n}>
 				<PluginManager />
 			</I18nextProvider>,
@@ -97,7 +97,7 @@ describe("PluginManager", () => {
 	});
 
 	it("should open & close top rated modal", () => {
-		const { asFragment, getByTestId, rerender } = render(
+		const { asFragment, getByTestId } = render(
 			<I18nextProvider i18n={i18n}>
 				<PluginManager />
 			</I18nextProvider>,
@@ -151,7 +151,7 @@ describe("PluginManager", () => {
 	});
 
 	it("should download & install plugin on game", () => {
-		const { asFragment, getAllByTestId, getByTestId, rerender } = render(
+		const { asFragment, getAllByTestId, getByTestId } = render(
 			<I18nextProvider i18n={i18n}>
 				<PluginManager />
 			</I18nextProvider>,
@@ -185,7 +185,7 @@ describe("PluginManager", () => {
 	});
 
 	it("should close install plugin modal", () => {
-		const { asFragment, getAllByTestId, getByTestId, rerender } = render(
+		const { asFragment, getAllByTestId, getByTestId } = render(
 			<I18nextProvider i18n={i18n}>
 				<PluginManager />
 			</I18nextProvider>,
@@ -207,7 +207,7 @@ describe("PluginManager", () => {
 	});
 
 	it("should cancel install plugin", () => {
-		const { asFragment, getAllByTestId, getByTestId, rerender } = render(
+		const { asFragment, getAllByTestId, getByTestId } = render(
 			<I18nextProvider i18n={i18n}>
 				<PluginManager />
 			</I18nextProvider>,
