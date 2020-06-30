@@ -42,7 +42,7 @@ export const delegateListData = [
 		min: 500,
 	},
 	{
-		delegateAddress: "ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
+		delegateAddress: "FSuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
 		delegateName: "Delegate 2",
 		rank: 2,
 		votes: 3.43,
@@ -53,9 +53,26 @@ export const delegateListData = [
 		min: 500,
 	},
 	{
-		delegateAddress: "ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
+		delegateAddress: "ATuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
 		delegateName: "Delegate 3",
 		rank: 3,
+		votes: 3.43,
+	},
+	{
+		delegateAddress: "ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
+		delegateName: "Delegate 4",
+		rank: 4,
+		votes: 3.43,
+		msqUrl: "https://marketsquare.ark.io",
+		commissionPercentage: 80,
+		commissionDaily: 2.387082496,
+		payout: "Daily",
+		min: 500,
+	},
+	{
+		delegateAddress: "AAuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
+		delegateName: "Delegate 5",
+		rank: 5,
 		votes: 3.43,
 	},
 ];
