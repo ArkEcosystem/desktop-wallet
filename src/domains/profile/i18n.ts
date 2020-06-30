@@ -13,4 +13,12 @@ export const translations: { [key: string]: any } = {
 		GitLab: "GitLab",
 		Npm: "NPM",
 	},
+	MODAL_HISTORY: {
+		TITLE: "History",
+		TYPES: {
+			REGISTRATION: "Registration",
+			RESIGN: "Resign",
+			UPDATE: "Update",
+		},
+	},
 };
