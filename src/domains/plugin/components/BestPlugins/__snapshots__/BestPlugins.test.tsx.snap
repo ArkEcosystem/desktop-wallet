@@ -9,11 +9,11 @@ exports[`BestPlugins should render a modal 1`] = `
     data-testid="modal__overlay"
   />
   <div
-    class="sc-AxiKw jCpCzv absolute top-0 left-0 right-0 z-30 flex flex-col px-12 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
+    class="sc-AxiKw jCpCzv absolute top-0 left-0 right-0 z-30 flex flex-col px-10 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
     data-testid="modal__inner"
   >
     <div
-      class="absolute top-0 right-0 z-10 mt-4 mr-4"
+      class="absolute top-0 right-0 z-10 mt-5 mr-5"
     >
       <button
         class="sc-AxjAm bThAoP"
@@ -35,14 +35,16 @@ exports[`BestPlugins should render a modal 1`] = `
     <div
       class="py-4"
     >
-      <h2>
+      <h2
+        class="text-3xl font-bold mb-0"
+      >
         Best applications of the month
       </h2>
       <div
         class="flex-1 "
       >
         <div
-          class="text-theme-neutral-700"
+          class="text-theme-neutral-700 mt-1"
         >
           ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.
         </div>
@@ -50,7 +52,7 @@ exports[`BestPlugins should render a modal 1`] = `
           class="mt-8 -mb-6"
         >
           <div
-            class="sc-AxhCb gfJeeC"
+            class="sc-AxhCb brtxRQ"
             role="table"
           >
             <table

@@ -51,7 +51,7 @@ exports[`Transaction Send should render 1`] = `
               class="sc-fzoyAV kjXSHn"
             >
               <form
-                class="space-y-6"
+                class="space-y-8"
                 data-testid="Form"
                 id="send-transaction__form"
               >
@@ -62,7 +62,7 @@ exports[`Transaction Send should render 1`] = `
                     class="mb-2"
                   >
                     <label
-                      class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                      class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark mb-2"
                       data-testid="FormLabel"
                       for="network"
                       label="Network"
@@ -199,7 +199,7 @@ exports[`Transaction Send should render 1`] = `
                     class="mb-2"
                   >
                     <label
-                      class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                      class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark mb-2"
                       data-testid="FormLabel"
                       for="sender"
                       label="Sender"
@@ -296,7 +296,7 @@ exports[`Transaction Send should render 1`] = `
                     class="mb-2"
                   >
                     <label
-                      class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                      class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark mb-2"
                       data-testid="FormLabel"
                       for="recipient"
                       label="Recipient"
@@ -405,7 +405,7 @@ exports[`Transaction Send should render 1`] = `
                     class="mb-2"
                   >
                     <label
-                      class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                      class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark mb-2"
                       data-testid="FormLabel"
                       for="amount"
                       label="Amount ARK"
@@ -442,7 +442,7 @@ exports[`Transaction Send should render 1`] = `
                     class="mb-2"
                   >
                     <label
-                      class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                      class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark mb-2"
                       data-testid="FormLabel"
                       for="smartbridge"
                       label="Smartbridge"
@@ -485,7 +485,7 @@ exports[`Transaction Send should render 1`] = `
                         class="mb-2"
                       >
                         <label
-                          class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                          class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark mb-2"
                           data-testid="FormLabel"
                           for="fee"
                           label="Fee ARK"
@@ -627,7 +627,7 @@ exports[`Transaction Send should render 1st step 1`] = `
       class="sc-fzoyAV kjXSHn"
     >
       <form
-        class="space-y-6"
+        class="space-y-8"
         data-testid="Form"
         id="send-transaction__form"
       >
@@ -638,7 +638,7 @@ exports[`Transaction Send should render 1st step 1`] = `
             class="mb-2"
           >
             <label
-              class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+              class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark mb-2"
               data-testid="FormLabel"
               for="network"
               label="Network"
@@ -775,7 +775,7 @@ exports[`Transaction Send should render 1st step 1`] = `
             class="mb-2"
           >
             <label
-              class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+              class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark mb-2"
               data-testid="FormLabel"
               for="sender"
               label="Sender"
@@ -872,7 +872,7 @@ exports[`Transaction Send should render 1st step 1`] = `
             class="mb-2"
           >
             <label
-              class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+              class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark mb-2"
               data-testid="FormLabel"
               for="recipient"
               label="Recipient"
@@ -981,7 +981,7 @@ exports[`Transaction Send should render 1st step 1`] = `
             class="mb-2"
           >
             <label
-              class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+              class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark mb-2"
               data-testid="FormLabel"
               for="amount"
               label="Amount ARK"
@@ -1018,7 +1018,7 @@ exports[`Transaction Send should render 1st step 1`] = `
             class="mb-2"
           >
             <label
-              class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+              class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark mb-2"
               data-testid="FormLabel"
               for="smartbridge"
               label="Smartbridge"
@@ -1061,7 +1061,7 @@ exports[`Transaction Send should render 1st step 1`] = `
                 class="mb-2"
               >
                 <label
-                  class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                  class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark mb-2"
                   data-testid="FormLabel"
                   for="fee"
                   label="Fee ARK"
@@ -1264,7 +1264,7 @@ exports[`Transaction Send should render 2nd step 1`] = `
               </div>
             </div>
             <div
-              class="inline-block truncate"
+              class="inline-block truncate align-middle"
             >
               <span
                 class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-xl"
@@ -1305,7 +1305,7 @@ exports[`Transaction Send should render 2nd step 1`] = `
               class="pt-2"
             >
               <div
-                class="sc-fzokOt epSntt"
+                class="sc-fzokOt bVpfTX"
                 role="table"
               >
                 <table
@@ -1393,7 +1393,7 @@ exports[`Transaction Send should render 2nd step 1`] = `
                       </td>
                       <td>
                         <div
-                          class="inline-block truncate"
+                          class="inline-block truncate align-middle"
                         >
                           <span
                             class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
@@ -1428,7 +1428,7 @@ exports[`Transaction Send should render 2nd step 1`] = `
                       </td>
                       <td>
                         <div
-                          class="inline-block truncate"
+                          class="inline-block truncate align-middle"
                         >
                           <span
                             class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
@@ -1463,7 +1463,7 @@ exports[`Transaction Send should render 2nd step 1`] = `
                       </td>
                       <td>
                         <div
-                          class="inline-block truncate"
+                          class="inline-block truncate align-middle"
                         >
                           <span
                             class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
@@ -1498,7 +1498,7 @@ exports[`Transaction Send should render 2nd step 1`] = `
                       </td>
                       <td>
                         <div
-                          class="inline-block truncate"
+                          class="inline-block truncate align-middle"
                         >
                           <span
                             class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
@@ -1648,7 +1648,7 @@ exports[`Transaction Send should render 3rd step 1`] = `
     data-testid="TransactionSend__step--third"
   >
     <form
-      class="space-y-6"
+      class="space-y-8"
       data-testid="Form"
     >
       <div>
@@ -1813,7 +1813,7 @@ exports[`Transaction Send should render 5th step 1`] = `
                   data-testid="clipboard__wrapper"
                 >
                   <div
-                    class="inline-block truncate"
+                    class="inline-block truncate align-middle"
                   >
                     <span
                       class="text-theme-primary font-semibold text-base"
@@ -1862,7 +1862,7 @@ exports[`Transaction Send should render 5th step 1`] = `
                   data-testid="clipboard__wrapper"
                 >
                   <div
-                    class="inline-block truncate"
+                    class="inline-block truncate align-middle"
                   >
                     <span
                       class="text-theme-primary font-semibold text-base"
@@ -1904,7 +1904,7 @@ exports[`Transaction Send should render 5th step 1`] = `
               class="mt-2 font-semibold"
             >
               <div
-                class="inline-block truncate"
+                class="inline-block truncate align-middle"
               >
                 <span
                   class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-xl"
@@ -1964,7 +1964,7 @@ exports[`Transaction Send should render 5th step 1`] = `
                 </div>
               </div>
               <div
-                class="inline-block truncate"
+                class="inline-block truncate align-middle"
               >
                 <span
                   class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-xl"

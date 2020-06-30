@@ -7,11 +7,11 @@ exports[`SelectDelegate should allow multiple selection 1`] = `
     data-testid="modal__overlay"
   />
   <div
-    class="sc-AxhUy cowKBD absolute top-0 left-0 right-0 z-30 flex flex-col px-12 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
+    class="sc-AxhUy cowKBD absolute top-0 left-0 right-0 z-30 flex flex-col px-10 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
     data-testid="modal__inner"
   >
     <div
-      class="absolute top-0 right-0 z-10 mt-4 mr-4"
+      class="absolute top-0 right-0 z-10 mt-5 mr-5"
     >
       <button
         class="sc-AxjAm bThAoP"
@@ -33,14 +33,16 @@ exports[`SelectDelegate should allow multiple selection 1`] = `
     <div
       class="py-4"
     >
-      <h2>
+      <h2
+        class="text-3xl font-bold mb-0"
+      >
         Select a Delegate
       </h2>
       <div
         class="flex-1 "
       >
         <div
-          class="text-theme-neutral-700"
+          class="text-theme-neutral-700 mt-1"
         >
           Please select the Delegate you wish to vote for. For additional information about the delegate and/or payouts, please visit MarketSquare.
         </div>
@@ -48,11 +50,11 @@ exports[`SelectDelegate should allow multiple selection 1`] = `
           class="-mx-12"
         >
           <div
-            class="bg-theme-neutral-100 px-12 pt-8 pb-10 mt-8"
+            class="bg-theme-neutral-100 px-12 pt-8 pb-8 mt-8"
             data-testid="SearchBar"
           >
             <div
-              class="flex items-center px-6 py-4 bg-white rounded shadow-xl"
+              class="flex items-center px-10 py-6 bg-white rounded shadow-xl"
             >
               <div
                 class="sc-AxhCb fxrKLH w-4 mr-6 text-theme-neutral-300"
@@ -64,7 +66,7 @@ exports[`SelectDelegate should allow multiple selection 1`] = `
                 </svg>
               </div>
               <div
-                class="flex-1 pl-2 mr-4 border-l border-theme-neutral-200"
+                class="flex-1 pl-4 mr-4 border-l border-theme-neutral-200"
               >
                 <input
                   class="sc-AxheI gJZyBf overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary border-none shadow-none"
@@ -73,7 +75,7 @@ exports[`SelectDelegate should allow multiple selection 1`] = `
                 />
               </div>
               <button
-                class="sc-AxjAm cCtLft my-1"
+                class="sc-AxjAm ddQVWI my-1"
                 color="primary"
                 data-testid="SearchBar__button"
                 type="button"
@@ -91,7 +93,7 @@ exports[`SelectDelegate should allow multiple selection 1`] = `
           class="mt-8 mb-14"
         >
           <div
-            class="sc-fznKkj jwbSbq"
+            class="sc-fznKkj crvYjk"
             role="table"
           >
             <table
@@ -702,11 +704,11 @@ exports[`SelectDelegate should only allow one selection 1`] = `
     data-testid="modal__overlay"
   />
   <div
-    class="sc-AxhUy cowKBD absolute top-0 left-0 right-0 z-30 flex flex-col px-12 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
+    class="sc-AxhUy cowKBD absolute top-0 left-0 right-0 z-30 flex flex-col px-10 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
     data-testid="modal__inner"
   >
     <div
-      class="absolute top-0 right-0 z-10 mt-4 mr-4"
+      class="absolute top-0 right-0 z-10 mt-5 mr-5"
     >
       <button
         class="sc-AxjAm bThAoP"
@@ -728,14 +730,16 @@ exports[`SelectDelegate should only allow one selection 1`] = `
     <div
       class="py-4"
     >
-      <h2>
+      <h2
+        class="text-3xl font-bold mb-0"
+      >
         Select a Delegate
       </h2>
       <div
         class="flex-1 "
       >
         <div
-          class="text-theme-neutral-700"
+          class="text-theme-neutral-700 mt-1"
         >
           Please select the Delegate you wish to vote for. For additional information about the delegate and/or payouts, please visit MarketSquare.
         </div>
@@ -743,11 +747,11 @@ exports[`SelectDelegate should only allow one selection 1`] = `
           class="-mx-12"
         >
           <div
-            class="bg-theme-neutral-100 px-12 pt-8 pb-10 mt-8"
+            class="bg-theme-neutral-100 px-12 pt-8 pb-8 mt-8"
             data-testid="SearchBar"
           >
             <div
-              class="flex items-center px-6 py-4 bg-white rounded shadow-xl"
+              class="flex items-center px-10 py-6 bg-white rounded shadow-xl"
             >
               <div
                 class="sc-AxhCb fxrKLH w-4 mr-6 text-theme-neutral-300"
@@ -759,7 +763,7 @@ exports[`SelectDelegate should only allow one selection 1`] = `
                 </svg>
               </div>
               <div
-                class="flex-1 pl-2 mr-4 border-l border-theme-neutral-200"
+                class="flex-1 pl-4 mr-4 border-l border-theme-neutral-200"
               >
                 <input
                   class="sc-AxheI gJZyBf overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary border-none shadow-none"
@@ -768,7 +772,7 @@ exports[`SelectDelegate should only allow one selection 1`] = `
                 />
               </div>
               <button
-                class="sc-AxjAm cCtLft my-1"
+                class="sc-AxjAm ddQVWI my-1"
                 color="primary"
                 data-testid="SearchBar__button"
                 type="button"
@@ -786,7 +790,7 @@ exports[`SelectDelegate should only allow one selection 1`] = `
           class="mt-8 mb-14"
         >
           <div
-            class="sc-fznKkj jwbSbq"
+            class="sc-fznKkj crvYjk"
             role="table"
           >
             <table
@@ -1343,11 +1347,11 @@ exports[`SelectDelegate should render a modal 1`] = `
     data-testid="modal__overlay"
   />
   <div
-    class="sc-AxhUy cowKBD absolute top-0 left-0 right-0 z-30 flex flex-col px-12 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
+    class="sc-AxhUy cowKBD absolute top-0 left-0 right-0 z-30 flex flex-col px-10 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
     data-testid="modal__inner"
   >
     <div
-      class="absolute top-0 right-0 z-10 mt-4 mr-4"
+      class="absolute top-0 right-0 z-10 mt-5 mr-5"
     >
       <button
         class="sc-AxjAm bThAoP"
@@ -1369,14 +1373,16 @@ exports[`SelectDelegate should render a modal 1`] = `
     <div
       class="py-4"
     >
-      <h2>
+      <h2
+        class="text-3xl font-bold mb-0"
+      >
         Select a Delegate
       </h2>
       <div
         class="flex-1 "
       >
         <div
-          class="text-theme-neutral-700"
+          class="text-theme-neutral-700 mt-1"
         >
           Please select the Delegate you wish to vote for. For additional information about the delegate and/or payouts, please visit MarketSquare.
         </div>
@@ -1384,11 +1390,11 @@ exports[`SelectDelegate should render a modal 1`] = `
           class="-mx-12"
         >
           <div
-            class="bg-theme-neutral-100 px-12 pt-8 pb-10 mt-8"
+            class="bg-theme-neutral-100 px-12 pt-8 pb-8 mt-8"
             data-testid="SearchBar"
           >
             <div
-              class="flex items-center px-6 py-4 bg-white rounded shadow-xl"
+              class="flex items-center px-10 py-6 bg-white rounded shadow-xl"
             >
               <div
                 class="sc-AxhCb fxrKLH w-4 mr-6 text-theme-neutral-300"
@@ -1400,7 +1406,7 @@ exports[`SelectDelegate should render a modal 1`] = `
                 </svg>
               </div>
               <div
-                class="flex-1 pl-2 mr-4 border-l border-theme-neutral-200"
+                class="flex-1 pl-4 mr-4 border-l border-theme-neutral-200"
               >
                 <input
                   class="sc-AxheI gJZyBf overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary border-none shadow-none"
@@ -1409,7 +1415,7 @@ exports[`SelectDelegate should render a modal 1`] = `
                 />
               </div>
               <button
-                class="sc-AxjAm cCtLft my-1"
+                class="sc-AxjAm ddQVWI my-1"
                 color="primary"
                 data-testid="SearchBar__button"
                 type="button"
@@ -1427,7 +1433,7 @@ exports[`SelectDelegate should render a modal 1`] = `
           class="mt-8 mb-14"
         >
           <div
-            class="sc-fznKkj jwbSbq"
+            class="sc-fznKkj crvYjk"
             role="table"
           >
             <table

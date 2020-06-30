@@ -9,11 +9,11 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
     data-testid="modal__overlay"
   />
   <div
-    class="sc-fznyAO ioJhAT absolute top-0 left-0 right-0 z-30 flex flex-col px-12 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
+    class="sc-fznyAO ioJhAT absolute top-0 left-0 right-0 z-30 flex flex-col px-10 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
     data-testid="modal__inner"
   >
     <div
-      class="absolute top-0 right-0 z-10 mt-4 mr-4"
+      class="absolute top-0 right-0 z-10 mt-5 mr-5"
     >
       <button
         class="sc-AxhCb idLVlI"
@@ -35,14 +35,16 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
     <div
       class="py-4"
     >
-      <h2>
+      <h2
+        class="text-3xl font-bold mb-0"
+      >
         Verify
       </h2>
       <div
         class="flex-1 "
       >
         <div
-          class="text-theme-neutral-700"
+          class="text-theme-neutral-700 mt-1"
         >
           To make sure that you are the owner of this wallet, you can pass the check. and this more text.
         </div>
@@ -87,7 +89,7 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
             </div>
           </div>
           <form
-            class="space-y-6"
+            class="space-y-8"
             data-testid="Form"
             id="verify-message__form"
           >
@@ -98,7 +100,7 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
                 class="sc-AxhUy dJlYTe mt-10"
               >
                 <label
-                  class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                  class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark mb-2"
                   data-testid="FormLabel"
                   for="message-content"
                   label="Message"
@@ -116,7 +118,7 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
                 class="sc-AxhUy dJlYTe mt-3"
               >
                 <label
-                  class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                  class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark mb-2"
                   data-testid="FormLabel"
                   for="public-key"
                   label="Public key"
@@ -136,7 +138,7 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
                 class="sc-AxhUy dJlYTe mt-3"
               >
                 <label
-                  class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                  class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark mb-2"
                   data-testid="FormLabel"
                   for="signature"
                   label="Signature"

@@ -7,11 +7,11 @@ exports[`SignMessage should render as signed 1`] = `
     data-testid="modal__overlay"
   />
   <div
-    class="sc-fzplWN jxRzUr absolute top-0 left-0 right-0 z-30 flex flex-col px-12 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
+    class="sc-fzplWN jxRzUr absolute top-0 left-0 right-0 z-30 flex flex-col px-10 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
     data-testid="modal__inner"
   >
     <div
-      class="absolute top-0 right-0 z-10 mt-4 mr-4"
+      class="absolute top-0 right-0 z-10 mt-5 mr-5"
     >
       <button
         class="sc-AxjAm bThAoP"
@@ -33,7 +33,9 @@ exports[`SignMessage should render as signed 1`] = `
     <div
       class="py-4"
     >
-      <h2>
+      <h2
+        class="text-3xl font-bold mb-0"
+      >
         Message Successfully Signed
       </h2>
       <div
@@ -58,7 +60,7 @@ exports[`SignMessage should render as signed 1`] = `
                   class="mt-2 font-semibold"
                 >
                   <div
-                    class="inline-block truncate"
+                    class="inline-block truncate align-middle"
                   >
                     <span
                       class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-xl"
@@ -175,11 +177,11 @@ exports[`SignMessage should render the SignMessage 1`] = `
     data-testid="modal__overlay"
   />
   <div
-    class="sc-fzplWN jxRzUr absolute top-0 left-0 right-0 z-30 flex flex-col px-12 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
+    class="sc-fzplWN jxRzUr absolute top-0 left-0 right-0 z-30 flex flex-col px-10 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
     data-testid="modal__inner"
   >
     <div
-      class="absolute top-0 right-0 z-10 mt-4 mr-4"
+      class="absolute top-0 right-0 z-10 mt-5 mr-5"
     >
       <button
         class="sc-AxjAm bThAoP"
@@ -201,14 +203,16 @@ exports[`SignMessage should render the SignMessage 1`] = `
     <div
       class="py-4"
     >
-      <h2>
+      <h2
+        class="text-3xl font-bold mb-0"
+      >
         Sign Message
       </h2>
       <div
         class="flex-1 "
       >
         <div
-          class="text-theme-neutral-700"
+          class="text-theme-neutral-700 mt-1"
         >
           Insert a message below to sign using your private key
         </div>
@@ -216,7 +220,7 @@ exports[`SignMessage should render the SignMessage 1`] = `
           class="mt-5"
         >
           <form
-            class="space-y-6"
+            class="space-y-8"
             data-testid="Form"
             id="sign-message__form"
           >
@@ -224,7 +228,7 @@ exports[`SignMessage should render the SignMessage 1`] = `
               class="sc-AxiKw iQzisX flex flex-col space-y-2"
             >
               <label
-                class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark mb-2"
                 data-testid="FormLabel"
                 for="signatory-address"
                 label="Signatory"
@@ -259,7 +263,7 @@ exports[`SignMessage should render the SignMessage 1`] = `
               class="sc-AxiKw iQzisX flex flex-col space-y-2"
             >
               <label
-                class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark mb-2"
                 data-testid="FormLabel"
                 for="message"
                 label="Message"
@@ -277,7 +281,7 @@ exports[`SignMessage should render the SignMessage 1`] = `
               class="sc-AxiKw iQzisX flex flex-col space-y-2"
             >
               <label
-                class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark mb-2"
                 data-testid="FormLabel"
                 for="passphrase"
                 label="Your Passphrase"
