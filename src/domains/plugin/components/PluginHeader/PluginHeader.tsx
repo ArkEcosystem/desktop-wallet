@@ -38,7 +38,7 @@ export const PluginHeader = ({ author, category, url, rating, version, size, isI
 			<>
 				<Button data-testid="PluginHeader__button--install">Install</Button>
 				<Button className="ml-3" data-testid="PluginHeader__button--warning" variant="plain">
-					<Icon name="AlertDanger" />
+					<Icon name="Report" />
 				</Button>
 			</>
 		);

@@ -21,6 +21,7 @@ type GridItemProps = {
 	label: string;
 	value: string;
 	textDirection?: string;
+	iconName?: string;
 };
 
 const GridItem = ({ label, value, textDirection }: GridItemProps) => (
@@ -47,7 +48,15 @@ const GridCol = ({ children, colSpan, justify, padding }: GridColProps) => {
 export const PluginSpecs = ({ author, category, url, rating, version, size }: Props) => (
 	<div className="pt-5 mt-5 text-sm border-t border-dashed grid grid-cols-5 divide-x divide-theme-neutral-300 grid-flow-col border-theme-neutral-300">
 		<GridCol>
-			<GridItem label="Author" value={author} />
+			<div className="flex flex-col">
+				<span className="font-bold text-theme-neutral-400">Author</span>
+				<div className="flex items-center">
+					<span className="font-bold text-theme-neutral-600">{author}</span>
+					<div className="ml-3">
+						<Icon name="Verified" />
+					</div>
+				</div>
+			</div>
 		</GridCol>
 		<GridCol padding="px-6">
 			<GridItem label="Category" value={category} />
