@@ -83,7 +83,7 @@ export const SecondStep = () => (
 				border={false}
 				label="Network"
 				extra={
-					<div className="text-theme-danger-500 ml-1">
+					<div className="ml-1 text-theme-danger-500">
 						<Circle className="bg-theme-background border-theme-danger-200" size="large">
 							<Icon name="Ark" width={20} height={20} />
 						</Circle>
@@ -155,7 +155,7 @@ export const FourthStep = () => (
 		<TransactionDetail
 			label="Transaction type"
 			extra={
-				<div className="text-theme-neutral-900 ml-1">
+				<div className="ml-1 text-theme-neutral-900">
 					<Circle className="border-theme-neutral-900 bg-theme-background" size="large">
 						<Icon name="Voted" />
 					</Circle>

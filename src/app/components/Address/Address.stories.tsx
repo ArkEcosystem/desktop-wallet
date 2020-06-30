@@ -16,7 +16,7 @@ export const Default = () => {
 
 	return (
 		<div className="">
-			<div className="text-md mb-10">Formatted (truncated) address with optional wallet name</div>
+			<div className="mb-10 text-md">Formatted (truncated) address with optional wallet name</div>
 			<div className="mb-10">
 				<Address address={address} maxChars={maxChars} walletName={walletName} size={size} />
 			</div>
