@@ -3,6 +3,10 @@ import { i18n } from "app/i18n";
 import React from "react";
 import { I18nextProvider } from "react-i18next";
 
+jest.mock("moment", () => {
+	return () => jest.requireActual("moment")("2020-06-19T14:48:00.000Z");
+});
+
 import { PluginDetails } from "./PluginDetails";
 
 describe("PluginDetails", () => {
