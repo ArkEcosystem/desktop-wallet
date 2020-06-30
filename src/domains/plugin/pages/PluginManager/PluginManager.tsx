@@ -67,7 +67,7 @@ const PluginManagerHome = ({ onDelete, onInstall, viewType }: PluginManagerHomeP
 					<span
 						data-testid="PluginManager__home__featured__view-more"
 						onClick={() => setFeaturedModalOpen(true)}
-						className="cursor-pointer text-theme-primary-600 hover:text-theme-primary-500"
+						className="cursor-pointer link"
 					>
 						{t("COMMON.VIEW_MORE")}
 					</span>
@@ -92,7 +92,7 @@ const PluginManagerHome = ({ onDelete, onInstall, viewType }: PluginManagerHomeP
 					<span
 						data-testid="PluginManager__home__top-rated__view-more"
 						onClick={() => setBestModalOpen(true)}
-						className="cursor-pointer text-theme-primary-600 hover:text-theme-primary-500"
+						className="cursor-pointer link"
 					>
 						{t("COMMON.VIEW_MORE")}
 					</span>
