@@ -71,6 +71,7 @@ import { ReactComponent as Reddit } from "./reddit.svg";
 import { ReactComponent as Redirect } from "./redirect.svg";
 import { ReactComponent as RegistrationsIllustration } from "./register.svg";
 import { ReactComponent as ReplyArrow } from "./reply-arrow.svg";
+import { ReactComponent as Report } from "./report.svg";
 import { ReactComponent as Reset } from "./reset.svg";
 import { ReactComponent as Search } from "./search.svg";
 import { ReactComponent as Send } from "./send.svg";
@@ -87,6 +88,7 @@ import { ReactComponent as Twitter } from "./twitter.svg";
 import { ReactComponent as Update } from "./update.svg";
 import { ReactComponent as Upload } from "./upload.svg";
 import { ReactComponent as User } from "./user.svg";
+import { ReactComponent as Verified } from "./verified.svg";
 import { ReactComponent as Voted } from "./voted.svg";
 
 export const SvgCollection: any = {
@@ -153,6 +155,7 @@ export const SvgCollection: any = {
 	Redirect,
 	RegistrationsIllustration,
 	ReplyArrow,
+	Report,
 	Reset,
 	Search,
 	Send,
@@ -169,6 +172,7 @@ export const SvgCollection: any = {
 	Update,
 	Upload,
 	Voted,
+	Verified,
 	Notification,
 	User,
 	Exchange,
