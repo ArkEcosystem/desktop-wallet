@@ -1,5 +1,7 @@
 import { SvgCollection } from "app/assets/svg";
 import { Button } from "app/components/Button";
+import { Header } from "app/components/Header";
+import { HeaderSearchBar } from "app/components/Header/HeaderSearchBar";
 import React from "react";
 
 import { BlockchainTable } from "./components/BlockchainTable";
@@ -69,15 +71,18 @@ export const MyRegistrations = ({ registrations, handleDropdown }: Props) => {
 	return (
 		<section className="bg-theme-neutral-100">
 			<div className="px-10 py-14 bg-theme-background">
-				<div className="flex justify-between">
-					<div className="flex flex-col">
-						<span className="text-3xl font-semibold">My Registrations</span>
-						<span className="text-theme-neutral-600">
-							You can register a Delagate, Business and Bridgechain.
-						</span>
-					</div>
-					<Button className="self-end">Register</Button>
-				</div>
+				<Header
+					title="My Registrations"
+					subtitle="You can register a Delagate, Business and Bridgechain."
+					extra={
+						<div className="flex justify-end divide-x space-x-10 divide-theme-neutral-300">
+							<HeaderSearchBar onSearch={console.log} />
+							<div className="pl-10">
+								<Button>Register</Button>
+							</div>
+						</div>
+					}
+				/>
 			</div>
 			{!registrations.length ? EmptyRegistrations : mountRegistrations()}
 		</section>

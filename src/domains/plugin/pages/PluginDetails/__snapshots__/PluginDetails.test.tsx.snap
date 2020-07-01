@@ -55,40 +55,57 @@ exports[`PluginDetails should render properly 1`] = `
                 type="button"
               >
                 <div
-                  class="sc-AxjAm cpczEI"
-                  height="1em"
-                  width="1em"
+                  class="sc-AxjAm buCJuk"
+                  height="20"
+                  width="20"
                 >
                   <svg>
-                    alert-danger.svg
+                    report.svg
                   </svg>
                 </div>
               </button>
             </div>
           </div>
           <div
-            class="pt-5 mt-5 text-sm border-t border-dashed grid grid-cols-5 divide-x divide-gray-400 grid-flow-col border-theme-neutral"
+            class="pt-5 mt-5 text-sm border-t border-dashed grid grid-cols-5 divide-x divide-theme-neutral-300 grid-flow-col border-theme-neutral-300"
           >
             <div
               class="flex"
             >
               <div
-                class="flex flex-col undefined"
+                class="flex flex-col"
               >
                 <span
                   class="font-bold text-theme-neutral-400"
                 >
                   Author
                 </span>
-                <span
-                  class="font-bold text-theme-neutral-600"
+                <div
+                  class="flex items-center"
                 >
-                  ARK Ecosystem
-                </span>
+                  <span
+                    class="font-bold text-theme-neutral-600"
+                  >
+                    ARK Ecosystem
+                  </span>
+                  <div
+                    class="ml-3"
+                  >
+                    <div
+                      class="sc-AxjAm cpczEI"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        official-ark-plugin.svg
+                      </svg>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
             <div
-              class="flex px-8"
+              class="flex px-6"
             >
               <div
                 class="flex flex-col undefined"
@@ -106,10 +123,10 @@ exports[`PluginDetails should render properly 1`] = `
               </div>
             </div>
             <div
-              class="flex px-8"
+              class="flex px-6 -ml-5"
             >
               <div
-                class="flex flex-col undefined"
+                class="flex flex-col"
               >
                 <span
                   class="font-bold text-theme-neutral-400"
@@ -117,28 +134,45 @@ exports[`PluginDetails should render properly 1`] = `
                   URL
                 </span>
                 <span
-                  class="font-bold text-theme-neutral-600"
+                  class="font-bold text-theme-primary"
                 >
                   github.com
                 </span>
               </div>
             </div>
             <div
-              class="flex col-span-2 justify-between px-8"
+              class="flex col-span-2 justify-between px-6 -ml-8"
             >
               <div
-                class="flex flex-col undefined"
+                class="flex flex-col"
               >
                 <span
                   class="font-bold text-theme-neutral-400"
                 >
                   Rating
                 </span>
-                <span
-                  class="font-bold text-theme-neutral-600"
+                <div
+                  class="flex items-center"
                 >
-                  4.6
-                </span>
+                  <div
+                    class="pr-1 text-theme-warning-300"
+                  >
+                    <div
+                      class="sc-AxjAm cpczEI"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        star.svg
+                      </svg>
+                    </div>
+                  </div>
+                  <span
+                    class="font-bold text-theme-neutral-600"
+                  >
+                    4.6
+                  </span>
+                </div>
               </div>
               <div
                 class="flex flex-col text-right"
@@ -156,7 +190,7 @@ exports[`PluginDetails should render properly 1`] = `
               </div>
             </div>
             <div
-              class="flex pl-8"
+              class="flex pl-6"
             >
               <div
                 class="flex flex-col text-right"
@@ -316,7 +350,7 @@ exports[`PluginDetails should render properly 1`] = `
             class="flex rounded-lg overflow-hidden bg-theme-warning"
           >
             <div
-              class="sc-Axmtr dmCHuV flex items-center justify-center text-theme-warning bg-theme-warning-200"
+              class="sc-AxmLO fmYfwI flex items-center justify-center text-theme-warning bg-theme-warning-200"
             >
               <div
                 class="sc-AxjAm bIZXgI"
@@ -329,7 +363,7 @@ exports[`PluginDetails should render properly 1`] = `
               </div>
             </div>
             <div
-              class="sc-AxheI jVDBvm flex-1 bg-theme-warning-100"
+              class="sc-Axmtr BLpZJ flex-1 bg-theme-warning-100"
             >
               <p
                 class="text-xl font-bold text-theme-warning"
@@ -346,8 +380,13 @@ exports[`PluginDetails should render properly 1`] = `
     <div
       class="mt-5 bg-theme-background"
     >
+      <p
+        class="pt-10 pb-3 mx-10 text-2xl font-bold"
+      >
+        Reviews ARK Explorer
+      </p>
       <div
-        class="py-24 mx-10 grid grid-cols-2 grid-flow-col divide-x divide-theme-neutral-300"
+        class="mx-10 grid grid-cols-2 grid-flow-col divide-x divide-theme-neutral-300"
       >
         <div
           class="col-span-2"
@@ -356,11 +395,6 @@ exports[`PluginDetails should render properly 1`] = `
           <div
             class="w-full"
           >
-            <p
-              class="text-xl font-bold"
-            >
-              Reviews ARK Explorer
-            </p>
             <div
               class="flex items-center mt-5 text-sm font-semibold text-theme-neutral-900"
             >
@@ -440,7 +474,11 @@ exports[`PluginDetails should render properly 1`] = `
                       <span
                         class="text-theme-neutral-400"
                       >
-                        11 days ago
+                        <span
+                          data-testid="timeago"
+                        >
+                          11 days ago
+                        </span>
                       </span>
                     </div>
                   </div>
@@ -495,7 +533,11 @@ exports[`PluginDetails should render properly 1`] = `
                       <span
                         class="text-theme-neutral-400"
                       >
-                        11 days ago
+                        <span
+                          data-testid="timeago"
+                        >
+                          11 days ago
+                        </span>
                       </span>
                     </div>
                   </div>
@@ -532,14 +574,18 @@ exports[`PluginDetails should render properly 1`] = `
                           Developer response
                         </span>
                         <span
-                          class="px-3"
+                          class="px-3 text-theme-neutral-400"
                         >
-                          11 days ago
+                          <span
+                            data-testid="timeago"
+                          >
+                            11 days ago
+                          </span>
                         </span>
                       </div>
                     </div>
                     <div
-                      class="sc-AxgMl fBXLvj mt-2 ml-7 text-theme-neutral-600"
+                      class="sc-AxheI emNSdd mt-2 ml-7 text-theme-neutral-600"
                     >
                       <a
                         href="#"
@@ -591,7 +637,11 @@ exports[`PluginDetails should render properly 1`] = `
                       <span
                         class="text-theme-neutral-400"
                       >
-                        11 days ago
+                        <span
+                          data-testid="timeago"
+                        >
+                          11 days ago
+                        </span>
                       </span>
                     </div>
                   </div>
@@ -646,7 +696,11 @@ exports[`PluginDetails should render properly 1`] = `
                       <span
                         class="text-theme-neutral-400"
                       >
-                        11 days ago
+                        <span
+                          data-testid="timeago"
+                        >
+                          11 days ago
+                        </span>
                       </span>
                     </div>
                   </div>
@@ -666,7 +720,7 @@ exports[`PluginDetails should render properly 1`] = `
               class="mt-7"
             >
               <div
-                class="sc-AxhCb gSLQTX"
+                class="sc-AxhUy jaOXDK"
                 data-testid="Pagination"
               >
                 <button
@@ -708,17 +762,17 @@ exports[`PluginDetails should render properly 1`] = `
                   class="flex px-2 rounded bg-theme-primary-contrast"
                 >
                   <div
-                    class="sc-AxhUy bxYQX current-page"
+                    class="sc-AxgMl fXLMnx current-page"
                   >
                     1
                   </div>
                   <div
-                    class="sc-AxhUy bxYQX"
+                    class="sc-AxgMl fXLMnx"
                   >
                     2
                   </div>
                   <div
-                    class="sc-AxhUy bxYQX"
+                    class="sc-AxgMl fXLMnx"
                   >
                     3
                   </div>
@@ -844,7 +898,7 @@ exports[`PluginDetails should render properly 1`] = `
                     class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
                   >
                     <div
-                      class="sc-AxmLO idNujh h-2 rounded-lg bg-theme-warning-300"
+                      class="sc-fzozJi cRQcyM h-2 rounded-lg bg-theme-warning-300"
                       data-testid="5-stars__rating-count"
                       width="44.95677233429395"
                     />
@@ -879,7 +933,7 @@ exports[`PluginDetails should render properly 1`] = `
                     class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
                   >
                     <div
-                      class="sc-AxmLO eGBqsC h-2 rounded-lg bg-theme-warning-300"
+                      class="sc-fzozJi cszPGj h-2 rounded-lg bg-theme-warning-300"
                       data-testid="4-stars__rating-count"
                       width="55.907780979827095"
                     />
@@ -914,7 +968,7 @@ exports[`PluginDetails should render properly 1`] = `
                     class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
                   >
                     <div
-                      class="sc-AxmLO grsgIS h-2 rounded-lg bg-theme-warning-300"
+                      class="sc-fzozJi gzdTDv h-2 rounded-lg bg-theme-warning-300"
                       data-testid="3-stars__rating-count"
                       width="7.204610951008646"
                     />
@@ -949,7 +1003,7 @@ exports[`PluginDetails should render properly 1`] = `
                     class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
                   >
                     <div
-                      class="sc-AxmLO iQzyro h-2 rounded-lg bg-theme-warning-300"
+                      class="sc-fzozJi eGUgh h-2 rounded-lg bg-theme-warning-300"
                       data-testid="2-stars__rating-count"
                       width="12.103746397694524"
                     />
@@ -984,7 +1038,7 @@ exports[`PluginDetails should render properly 1`] = `
                     class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
                   >
                     <div
-                      class="sc-AxmLO bCFoDH h-2 rounded-lg bg-theme-warning-300"
+                      class="sc-fzozJi bjsazK h-2 rounded-lg bg-theme-warning-300"
                       data-testid="1-stars__rating-count"
                       width="2.0172910662824206"
                     />
@@ -1071,12 +1125,12 @@ exports[`PluginDetails should render properly as installed 1`] = `
                 type="button"
               >
                 <div
-                  class="sc-AxjAm cpczEI"
-                  height="1em"
-                  width="1em"
+                  class="sc-AxjAm buCJuk"
+                  height="20"
+                  width="20"
                 >
                   <svg>
-                    alert-danger.svg
+                    report.svg
                   </svg>
                 </div>
               </button>
@@ -1099,28 +1153,45 @@ exports[`PluginDetails should render properly as installed 1`] = `
             </div>
           </div>
           <div
-            class="pt-5 mt-5 text-sm border-t border-dashed grid grid-cols-5 divide-x divide-gray-400 grid-flow-col border-theme-neutral"
+            class="pt-5 mt-5 text-sm border-t border-dashed grid grid-cols-5 divide-x divide-theme-neutral-300 grid-flow-col border-theme-neutral-300"
           >
             <div
               class="flex"
             >
               <div
-                class="flex flex-col undefined"
+                class="flex flex-col"
               >
                 <span
                   class="font-bold text-theme-neutral-400"
                 >
                   Author
                 </span>
-                <span
-                  class="font-bold text-theme-neutral-600"
+                <div
+                  class="flex items-center"
                 >
-                  ARK Ecosystem
-                </span>
+                  <span
+                    class="font-bold text-theme-neutral-600"
+                  >
+                    ARK Ecosystem
+                  </span>
+                  <div
+                    class="ml-3"
+                  >
+                    <div
+                      class="sc-AxjAm cpczEI"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        official-ark-plugin.svg
+                      </svg>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
             <div
-              class="flex px-8"
+              class="flex px-6"
             >
               <div
                 class="flex flex-col undefined"
@@ -1138,10 +1209,10 @@ exports[`PluginDetails should render properly as installed 1`] = `
               </div>
             </div>
             <div
-              class="flex px-8"
+              class="flex px-6 -ml-5"
             >
               <div
-                class="flex flex-col undefined"
+                class="flex flex-col"
               >
                 <span
                   class="font-bold text-theme-neutral-400"
@@ -1149,28 +1220,45 @@ exports[`PluginDetails should render properly as installed 1`] = `
                   URL
                 </span>
                 <span
-                  class="font-bold text-theme-neutral-600"
+                  class="font-bold text-theme-primary"
                 >
                   github.com
                 </span>
               </div>
             </div>
             <div
-              class="flex col-span-2 justify-between px-8"
+              class="flex col-span-2 justify-between px-6 -ml-8"
             >
               <div
-                class="flex flex-col undefined"
+                class="flex flex-col"
               >
                 <span
                   class="font-bold text-theme-neutral-400"
                 >
                   Rating
                 </span>
-                <span
-                  class="font-bold text-theme-neutral-600"
+                <div
+                  class="flex items-center"
                 >
-                  4.6
-                </span>
+                  <div
+                    class="pr-1 text-theme-warning-300"
+                  >
+                    <div
+                      class="sc-AxjAm cpczEI"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        star.svg
+                      </svg>
+                    </div>
+                  </div>
+                  <span
+                    class="font-bold text-theme-neutral-600"
+                  >
+                    4.6
+                  </span>
+                </div>
               </div>
               <div
                 class="flex flex-col text-right"
@@ -1188,7 +1276,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
               </div>
             </div>
             <div
-              class="flex pl-8"
+              class="flex pl-6"
             >
               <div
                 class="flex flex-col text-right"
@@ -1348,7 +1436,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
             class="flex rounded-lg overflow-hidden bg-theme-warning"
           >
             <div
-              class="sc-Axmtr dmCHuV flex items-center justify-center text-theme-warning bg-theme-warning-200"
+              class="sc-AxmLO fmYfwI flex items-center justify-center text-theme-warning bg-theme-warning-200"
             >
               <div
                 class="sc-AxjAm bIZXgI"
@@ -1361,7 +1449,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
               </div>
             </div>
             <div
-              class="sc-AxheI jVDBvm flex-1 bg-theme-warning-100"
+              class="sc-Axmtr BLpZJ flex-1 bg-theme-warning-100"
             >
               <p
                 class="text-xl font-bold text-theme-warning"
@@ -1378,8 +1466,13 @@ exports[`PluginDetails should render properly as installed 1`] = `
     <div
       class="mt-5 bg-theme-background"
     >
+      <p
+        class="pt-10 pb-3 mx-10 text-2xl font-bold"
+      >
+        Reviews ARK Explorer
+      </p>
       <div
-        class="py-24 mx-10 grid grid-cols-2 grid-flow-col divide-x divide-theme-neutral-300"
+        class="mx-10 grid grid-cols-2 grid-flow-col divide-x divide-theme-neutral-300"
       >
         <div
           class="col-span-2"
@@ -1388,11 +1481,6 @@ exports[`PluginDetails should render properly as installed 1`] = `
           <div
             class="w-full"
           >
-            <p
-              class="text-xl font-bold"
-            >
-              Reviews ARK Explorer
-            </p>
             <div
               class="flex items-center mt-5 text-sm font-semibold text-theme-neutral-900"
             >
@@ -1472,7 +1560,11 @@ exports[`PluginDetails should render properly as installed 1`] = `
                       <span
                         class="text-theme-neutral-400"
                       >
-                        11 days ago
+                        <span
+                          data-testid="timeago"
+                        >
+                          11 days ago
+                        </span>
                       </span>
                     </div>
                   </div>
@@ -1527,7 +1619,11 @@ exports[`PluginDetails should render properly as installed 1`] = `
                       <span
                         class="text-theme-neutral-400"
                       >
-                        11 days ago
+                        <span
+                          data-testid="timeago"
+                        >
+                          11 days ago
+                        </span>
                       </span>
                     </div>
                   </div>
@@ -1564,14 +1660,18 @@ exports[`PluginDetails should render properly as installed 1`] = `
                           Developer response
                         </span>
                         <span
-                          class="px-3"
+                          class="px-3 text-theme-neutral-400"
                         >
-                          11 days ago
+                          <span
+                            data-testid="timeago"
+                          >
+                            11 days ago
+                          </span>
                         </span>
                       </div>
                     </div>
                     <div
-                      class="sc-AxgMl fBXLvj mt-2 ml-7 text-theme-neutral-600"
+                      class="sc-AxheI emNSdd mt-2 ml-7 text-theme-neutral-600"
                     >
                       <a
                         href="#"
@@ -1623,7 +1723,11 @@ exports[`PluginDetails should render properly as installed 1`] = `
                       <span
                         class="text-theme-neutral-400"
                       >
-                        11 days ago
+                        <span
+                          data-testid="timeago"
+                        >
+                          11 days ago
+                        </span>
                       </span>
                     </div>
                   </div>
@@ -1678,7 +1782,11 @@ exports[`PluginDetails should render properly as installed 1`] = `
                       <span
                         class="text-theme-neutral-400"
                       >
-                        11 days ago
+                        <span
+                          data-testid="timeago"
+                        >
+                          11 days ago
+                        </span>
                       </span>
                     </div>
                   </div>
@@ -1698,7 +1806,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
               class="mt-7"
             >
               <div
-                class="sc-AxhCb gSLQTX"
+                class="sc-AxhUy jaOXDK"
                 data-testid="Pagination"
               >
                 <button
@@ -1740,17 +1848,17 @@ exports[`PluginDetails should render properly as installed 1`] = `
                   class="flex px-2 rounded bg-theme-primary-contrast"
                 >
                   <div
-                    class="sc-AxhUy bxYQX current-page"
+                    class="sc-AxgMl fXLMnx current-page"
                   >
                     1
                   </div>
                   <div
-                    class="sc-AxhUy bxYQX"
+                    class="sc-AxgMl fXLMnx"
                   >
                     2
                   </div>
                   <div
-                    class="sc-AxhUy bxYQX"
+                    class="sc-AxgMl fXLMnx"
                   >
                     3
                   </div>
@@ -1876,7 +1984,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                     class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
                   >
                     <div
-                      class="sc-AxmLO idNujh h-2 rounded-lg bg-theme-warning-300"
+                      class="sc-fzozJi cRQcyM h-2 rounded-lg bg-theme-warning-300"
                       data-testid="5-stars__rating-count"
                       width="44.95677233429395"
                     />
@@ -1911,7 +2019,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                     class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
                   >
                     <div
-                      class="sc-AxmLO eGBqsC h-2 rounded-lg bg-theme-warning-300"
+                      class="sc-fzozJi cszPGj h-2 rounded-lg bg-theme-warning-300"
                       data-testid="4-stars__rating-count"
                       width="55.907780979827095"
                     />
@@ -1946,7 +2054,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                     class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
                   >
                     <div
-                      class="sc-AxmLO grsgIS h-2 rounded-lg bg-theme-warning-300"
+                      class="sc-fzozJi gzdTDv h-2 rounded-lg bg-theme-warning-300"
                       data-testid="3-stars__rating-count"
                       width="7.204610951008646"
                     />
@@ -1981,7 +2089,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                     class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
                   >
                     <div
-                      class="sc-AxmLO iQzyro h-2 rounded-lg bg-theme-warning-300"
+                      class="sc-fzozJi eGUgh h-2 rounded-lg bg-theme-warning-300"
                       data-testid="2-stars__rating-count"
                       width="12.103746397694524"
                     />
@@ -2016,7 +2124,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                     class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
                   >
                     <div
-                      class="sc-AxmLO bCFoDH h-2 rounded-lg bg-theme-warning-300"
+                      class="sc-fzozJi bjsazK h-2 rounded-lg bg-theme-warning-300"
                       data-testid="1-stars__rating-count"
                       width="2.0172910662824206"
                     />

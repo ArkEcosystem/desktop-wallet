@@ -34,7 +34,7 @@ exports[`UpdateRegistration should render 1st step 1`] = `
           />
         </ul>
         <div
-          class="mt-4"
+          class="mt-8"
         >
           <div
             data-testid="tab-pabel__active-panel"
@@ -42,7 +42,9 @@ exports[`UpdateRegistration should render 1st step 1`] = `
             <div
               data-testid="UpdateRegistration__first-step"
             >
-              <h1>
+              <h1
+                class="mb-0"
+              >
                 Update Business
               </h1>
               <div
@@ -52,7 +54,7 @@ exports[`UpdateRegistration should render 1st step 1`] = `
               </div>
               <div>
                 <div
-                  class="flex items-center py-4 true mb-8"
+                  class="flex items-center py-4 true pt-0 mt-6"
                 >
                   <div
                     class="flex-1"
@@ -61,7 +63,7 @@ exports[`UpdateRegistration should render 1st step 1`] = `
                       class="mt-2 font-semibold"
                     >
                       <fieldset
-                        class="sc-AxiKw iQzisX flex flex-col space-y-2"
+                        class="sc-AxiKw iQzisX font-normal"
                       >
                         <label
                           class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
@@ -84,7 +86,7 @@ exports[`UpdateRegistration should render 1st step 1`] = `
                         />
                       </fieldset>
                       <fieldset
-                        class="sc-AxiKw iQzisX mt-8"
+                        class="sc-AxiKw iQzisX mt-8 font-normal"
                       >
                         <label
                           class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
@@ -107,7 +109,7 @@ exports[`UpdateRegistration should render 1st step 1`] = `
                         </textarea>
                       </fieldset>
                       <fieldset
-                        class="sc-AxiKw iQzisX mt-8"
+                        class="sc-AxiKw iQzisX mt-8 font-normal"
                       >
                         <label
                           class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
@@ -263,100 +265,107 @@ exports[`UpdateRegistration should render 1st step 1`] = `
                   </div>
                 </div>
                 <div
-                  class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 mt-4"
+                  class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 pb-0 mt-4"
                 >
                   <div
                     class="flex-1"
                   >
                     <div
-                      class="text-sm font-semibold text-theme-neutral-500"
-                    >
-                      Fee ARK
-                    </div>
-                    <div
                       class="mt-2 font-semibold"
                     >
-                      <div
-                        class="flex space-x-2"
+                      <fieldset
+                        class="sc-AxiKw iQzisX font-normal"
                       >
+                        <label
+                          class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                          data-testid="FormLabel"
+                          for="name"
+                        >
+                          Fee ARK
+                        </label>
                         <div
-                          class="flex-1"
+                          class="flex space-x-2"
                         >
                           <div
-                            class="sc-AxmLO kuiknc"
+                            class="flex-1"
                           >
-                            <input
-                              class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
-                              data-testid="InputCurrency"
-                              type="text"
-                              value="25"
-                            />
                             <div
-                              class="absolute bottom-0 w-full px-1"
+                              class="sc-AxmLO kuiknc"
                             >
+                              <input
+                                class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+                                data-testid="InputCurrency"
+                                name="name"
+                                type="text"
+                                value="25"
+                              />
                               <div
-                                class="flex flex-wrap justify-center"
-                                data-testid="Range"
+                                class="absolute bottom-0 w-full px-1"
                               >
                                 <div
-                                  class="sc-fzozJi cRbOfl"
-                                  data-testid="Range__track"
-                                  style="transform: scale(1); cursor: pointer;"
+                                  class="flex flex-wrap justify-center"
+                                  data-testid="Range"
                                 >
                                   <div
-                                    class="sc-fzoLsD ckpTMK"
-                                    data-testid="Range__track__filled"
+                                    class="sc-fzozJi cRbOfl"
+                                    data-testid="Range__track"
+                                    style="transform: scale(1); cursor: pointer;"
                                   >
                                     <div
-                                      aria-valuemax="100"
-                                      aria-valuemin="1"
-                                      aria-valuenow="25"
-                                      class="sc-fzpans dtzHyc"
-                                      data-testid="Range__thumb"
-                                      draggable="false"
-                                      role="slider"
-                                      style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
-                                      tabindex="0"
-                                    />
+                                      class="sc-fzoLsD ckpTMK"
+                                      data-testid="Range__track__filled"
+                                    >
+                                      <div
+                                        aria-valuemax="100"
+                                        aria-valuemin="1"
+                                        aria-valuenow="25"
+                                        class="sc-fzpans dtzHyc"
+                                        data-testid="Range__thumb"
+                                        draggable="false"
+                                        role="slider"
+                                        style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
+                                        tabindex="0"
+                                      />
+                                    </div>
                                   </div>
                                 </div>
                               </div>
                             </div>
                           </div>
-                        </div>
-                        <div>
-                          <div
-                            class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300 shadow-sm"
-                            data-testid="SelectionBar"
-                            role="radiogroup"
-                          >
-                            <button
-                              aria-checked="true"
-                              class="sc-fznyAO hWIpjZ relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
-                              data-testid="SelectionBarOption"
-                              role="radio"
+                          <div>
+                            <div
+                              class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300 shadow-sm"
+                              data-testid="SelectionBar"
+                              role="radiogroup"
                             >
-                              Last
-                            </button>
-                            <button
-                              aria-checked="false"
-                              class="sc-fznyAO hWIpjZ relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
-                              data-testid="SelectionBarOption"
-                              role="radio"
-                            >
-                              Min
-                            </button>
-                            <button
-                              aria-checked="false"
-                              class="sc-fznyAO hWIpjZ relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
-                              data-testid="SelectionBarOption"
-                              role="radio"
-                            >
-                              Average
-                            </button>
+                              <button
+                                aria-checked="true"
+                                class="sc-fznyAO hWIpjZ relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                data-testid="SelectionBarOption"
+                                role="radio"
+                              >
+                                Last
+                              </button>
+                              <button
+                                aria-checked="false"
+                                class="sc-fznyAO hWIpjZ relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                data-testid="SelectionBarOption"
+                                role="radio"
+                              >
+                                Min
+                              </button>
+                              <button
+                                aria-checked="false"
+                                class="sc-fznyAO hWIpjZ relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                data-testid="SelectionBarOption"
+                                role="radio"
+                              >
+                                Average
+                              </button>
+                            </div>
                           </div>
                         </div>
-                      </div>
+                      </fieldset>
                     </div>
                   </div>
                 </div>
@@ -425,13 +434,12 @@ exports[`UpdateRegistration should render 2nd step 1`] = `
           />
         </ul>
         <div
-          class="mt-4"
+          class="mt-8"
         >
           <div
             data-testid="tab-pabel__active-panel"
           >
             <div
-              class="space-y-8"
               data-testid="UpdateRegistration__second-step"
             >
               <div>
@@ -447,7 +455,7 @@ exports[`UpdateRegistration should render 2nd step 1`] = `
                 </p>
               </div>
               <div
-                class="grid grid-flow-row gap-2"
+                class="mt-4 grid grid-flow-row"
               >
                 <div
                   class="flex items-center py-4 true "
@@ -514,7 +522,11 @@ exports[`UpdateRegistration should render 2nd step 1`] = `
                           class="sc-fzplWN gpwIyi"
                           color="warning"
                         >
-                          Your address
+                          <span
+                            class="text-sm"
+                          >
+                            Your address
+                          </span>
                         </div>
                       </div>
                       <div
@@ -715,7 +727,7 @@ exports[`UpdateRegistration should render 2nd step 1`] = `
                             Transaction fee
                           </span>
                           <span
-                            class="mt-3 mr-2"
+                            class="mt-3"
                             data-testid="total-amount-box__transaction-fee"
                           >
                             0.09660435 ARK
@@ -821,7 +833,7 @@ exports[`UpdateRegistration should render 3rd step 1`] = `
           />
         </ul>
         <div
-          class="mt-4"
+          class="mt-8"
         >
           <div
             data-testid="tab-pabel__active-panel"
@@ -830,16 +842,18 @@ exports[`UpdateRegistration should render 3rd step 1`] = `
               data-testid="UpdateRegistration__third-step"
             >
               <div>
-                <h1>
+                <h1
+                  class="mb-0"
+                >
                   Authenticate
                 </h1>
                 <div
-                  class="text-sm text-theme-neutral-700"
+                  class="text-theme-neutral-700"
                 >
                   Enter your twelve word mnemonic to authenticate the transaction.
                 </div>
                 <div
-                  class="mt-5"
+                  class="mt-8"
                 >
                   <fieldset
                     class="sc-AxiKw iQzisX flex flex-col space-y-2"
@@ -995,7 +1009,7 @@ exports[`UpdateRegistration should render 4th step 1`] = `
           />
         </ul>
         <div
-          class="mt-4"
+          class="mt-8"
         >
           <div
             data-testid="tab-pabel__active-panel"
@@ -1196,7 +1210,11 @@ exports[`UpdateRegistration should render 4th step 1`] = `
                             class="sc-fzplWN gpwIyi"
                             color="warning"
                           >
-                            Your address
+                            <span
+                              class="text-sm"
+                            >
+                              Your address
+                            </span>
                           </div>
                         </div>
                         <div
@@ -1428,7 +1446,7 @@ exports[`UpdateRegistration should should go back 1`] = `
           />
         </ul>
         <div
-          class="mt-4"
+          class="mt-8"
         >
           <div
             data-testid="tab-pabel__active-panel"
@@ -1436,7 +1454,9 @@ exports[`UpdateRegistration should should go back 1`] = `
             <div
               data-testid="UpdateRegistration__first-step"
             >
-              <h1>
+              <h1
+                class="mb-0"
+              >
                 Update Business
               </h1>
               <div
@@ -1446,7 +1466,7 @@ exports[`UpdateRegistration should should go back 1`] = `
               </div>
               <div>
                 <div
-                  class="flex items-center py-4 true mb-8"
+                  class="flex items-center py-4 true pt-0 mt-6"
                 >
                   <div
                     class="flex-1"
@@ -1455,7 +1475,7 @@ exports[`UpdateRegistration should should go back 1`] = `
                       class="mt-2 font-semibold"
                     >
                       <fieldset
-                        class="sc-AxiKw iQzisX flex flex-col space-y-2"
+                        class="sc-AxiKw iQzisX font-normal"
                       >
                         <label
                           class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
@@ -1478,7 +1498,7 @@ exports[`UpdateRegistration should should go back 1`] = `
                         />
                       </fieldset>
                       <fieldset
-                        class="sc-AxiKw iQzisX mt-8"
+                        class="sc-AxiKw iQzisX mt-8 font-normal"
                       >
                         <label
                           class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
@@ -1501,7 +1521,7 @@ exports[`UpdateRegistration should should go back 1`] = `
                         </textarea>
                       </fieldset>
                       <fieldset
-                        class="sc-AxiKw iQzisX mt-8"
+                        class="sc-AxiKw iQzisX mt-8 font-normal"
                       >
                         <label
                           class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
@@ -1657,100 +1677,107 @@ exports[`UpdateRegistration should should go back 1`] = `
                   </div>
                 </div>
                 <div
-                  class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 mt-4"
+                  class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 pb-0 mt-4"
                 >
                   <div
                     class="flex-1"
                   >
                     <div
-                      class="text-sm font-semibold text-theme-neutral-500"
-                    >
-                      Fee ARK
-                    </div>
-                    <div
                       class="mt-2 font-semibold"
                     >
-                      <div
-                        class="flex space-x-2"
+                      <fieldset
+                        class="sc-AxiKw iQzisX font-normal"
                       >
+                        <label
+                          class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                          data-testid="FormLabel"
+                          for="name"
+                        >
+                          Fee ARK
+                        </label>
                         <div
-                          class="flex-1"
+                          class="flex space-x-2"
                         >
                           <div
-                            class="sc-AxmLO kuiknc"
+                            class="flex-1"
                           >
-                            <input
-                              class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
-                              data-testid="InputCurrency"
-                              type="text"
-                              value="25"
-                            />
                             <div
-                              class="absolute bottom-0 w-full px-1"
+                              class="sc-AxmLO kuiknc"
                             >
+                              <input
+                                class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+                                data-testid="InputCurrency"
+                                name="name"
+                                type="text"
+                                value="25"
+                              />
                               <div
-                                class="flex flex-wrap justify-center"
-                                data-testid="Range"
+                                class="absolute bottom-0 w-full px-1"
                               >
                                 <div
-                                  class="sc-fzozJi cRbOfl"
-                                  data-testid="Range__track"
-                                  style="transform: scale(1); cursor: pointer;"
+                                  class="flex flex-wrap justify-center"
+                                  data-testid="Range"
                                 >
                                   <div
-                                    class="sc-fzoLsD ckpTMK"
-                                    data-testid="Range__track__filled"
+                                    class="sc-fzozJi cRbOfl"
+                                    data-testid="Range__track"
+                                    style="transform: scale(1); cursor: pointer;"
                                   >
                                     <div
-                                      aria-valuemax="100"
-                                      aria-valuemin="1"
-                                      aria-valuenow="25"
-                                      class="sc-fzpans dtzHyc"
-                                      data-testid="Range__thumb"
-                                      draggable="false"
-                                      role="slider"
-                                      style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
-                                      tabindex="0"
-                                    />
+                                      class="sc-fzoLsD ckpTMK"
+                                      data-testid="Range__track__filled"
+                                    >
+                                      <div
+                                        aria-valuemax="100"
+                                        aria-valuemin="1"
+                                        aria-valuenow="25"
+                                        class="sc-fzpans dtzHyc"
+                                        data-testid="Range__thumb"
+                                        draggable="false"
+                                        role="slider"
+                                        style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
+                                        tabindex="0"
+                                      />
+                                    </div>
                                   </div>
                                 </div>
                               </div>
                             </div>
                           </div>
-                        </div>
-                        <div>
-                          <div
-                            class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300 shadow-sm"
-                            data-testid="SelectionBar"
-                            role="radiogroup"
-                          >
-                            <button
-                              aria-checked="true"
-                              class="sc-fznyAO hWIpjZ relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
-                              data-testid="SelectionBarOption"
-                              role="radio"
+                          <div>
+                            <div
+                              class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300 shadow-sm"
+                              data-testid="SelectionBar"
+                              role="radiogroup"
                             >
-                              Last
-                            </button>
-                            <button
-                              aria-checked="false"
-                              class="sc-fznyAO hWIpjZ relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
-                              data-testid="SelectionBarOption"
-                              role="radio"
-                            >
-                              Min
-                            </button>
-                            <button
-                              aria-checked="false"
-                              class="sc-fznyAO hWIpjZ relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
-                              data-testid="SelectionBarOption"
-                              role="radio"
-                            >
-                              Average
-                            </button>
+                              <button
+                                aria-checked="true"
+                                class="sc-fznyAO hWIpjZ relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                data-testid="SelectionBarOption"
+                                role="radio"
+                              >
+                                Last
+                              </button>
+                              <button
+                                aria-checked="false"
+                                class="sc-fznyAO hWIpjZ relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                data-testid="SelectionBarOption"
+                                role="radio"
+                              >
+                                Min
+                              </button>
+                              <button
+                                aria-checked="false"
+                                class="sc-fznyAO hWIpjZ relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                data-testid="SelectionBarOption"
+                                role="radio"
+                              >
+                                Average
+                              </button>
+                            </div>
                           </div>
                         </div>
-                      </div>
+                      </fieldset>
                     </div>
                   </div>
                 </div>
@@ -1819,7 +1846,7 @@ exports[`UpdateRegistration should submit 1`] = `
           />
         </ul>
         <div
-          class="mt-4"
+          class="mt-8"
         >
           <div
             data-testid="tab-pabel__active-panel"
@@ -2020,7 +2047,11 @@ exports[`UpdateRegistration should submit 1`] = `
                             class="sc-fzplWN gpwIyi"
                             color="warning"
                           >
-                            Your address
+                            <span
+                              class="text-sm"
+                            >
+                              Your address
+                            </span>
                           </div>
                         </div>
                         <div

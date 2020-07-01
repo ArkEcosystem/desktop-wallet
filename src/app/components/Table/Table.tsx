@@ -7,6 +7,7 @@ import { defaultTableStyle } from "./Table.styles";
 
 type TableProps = {
 	children?: any;
+	className?: string;
 	data: any[];
 	columns: any[];
 };

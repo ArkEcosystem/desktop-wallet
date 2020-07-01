@@ -211,7 +211,7 @@ exports[`Welcome should render empty state 1`] = `
             data-testid="business-table__row"
           >
             <td
-              class="w-24 py-4"
+              class="w-24 py-6"
             >
               <div
                 class="flex items-center"
@@ -230,27 +230,33 @@ exports[`Welcome should render empty state 1`] = `
                   </div>
                 </div>
                 <div
-                  class="Avatar__AvatarStyled-sc-1vsy2s2-0 jZYOhz"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cBelGv"
                   data-testid="Avatar"
-                />
+                >
+                  <img
+                    alt="AaAy"
+                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"70\\" cy=\\"30\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"35\\" cx=\\"90\\" cy=\\"60\\" fill=\\"rgb(63, 81, 181)\\"/><circle r=\\"55\\" cx=\\"50\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
+                    title="AaAy"
+                  />
+                </div>
               </div>
             </td>
             <td
-              class="py-4 mt-1 font-semibold"
+              class="py-6 mt-1 font-semibold"
             >
               <span>
                 OLEBank
               </span>
             </td>
             <td
-              class="py-1 font-semibold"
+              class="py-6 font-semibold"
             >
               <span>
                 ARK Ecosystem
               </span>
             </td>
             <td
-              class="py-1 text-bold text-theme-primary"
+              class="py-6 text-bold text-theme-primary"
             >
               <span
                 class="-ml-8"
@@ -259,7 +265,7 @@ exports[`Welcome should render empty state 1`] = `
               </span>
             </td>
             <td
-              class="py-1 text-theme-neutral-400"
+              class="py-6 text-theme-neutral-400"
             >
               <div
                 class="sc-AxiKw dzBdqj ml-12"
@@ -272,7 +278,7 @@ exports[`Welcome should render empty state 1`] = `
               </div>
             </td>
             <td
-              class="py-1 text-bold text-theme-primary"
+              class="py-6 text-bold text-theme-primary"
             >
               <div
                 class="sc-AxiKw fFXzuz ml-1"
@@ -285,7 +291,7 @@ exports[`Welcome should render empty state 1`] = `
               </div>
             </td>
             <td
-              class="py-1 text-bold text-theme-primary"
+              class="py-6 text-bold text-theme-primary"
             >
               <span
                 class="ml-3"
@@ -297,10 +303,10 @@ exports[`Welcome should render empty state 1`] = `
               class="px-1 px-12"
             />
             <td
-              class="float-right py-1"
+              class="flex items-center justify-center float-right py-6 mt-1"
             >
               <button
-                class="sc-AxjAm kTAyCf mt-4"
+                class="sc-AxjAm kTAyCf"
                 color="primary"
                 type="button"
               >
@@ -330,7 +336,7 @@ exports[`Welcome should render empty state 1`] = `
             data-testid="business-table__row"
           >
             <td
-              class="w-24 py-4"
+              class="w-24 py-6"
             >
               <div
                 class="flex items-center"
@@ -349,27 +355,33 @@ exports[`Welcome should render empty state 1`] = `
                   </div>
                 </div>
                 <div
-                  class="Avatar__AvatarStyled-sc-1vsy2s2-0 jZYOhz"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cBelGv"
                   data-testid="Avatar"
-                />
+                >
+                  <img
+                    alt="AaAy"
+                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"70\\" cy=\\"30\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"35\\" cx=\\"90\\" cy=\\"60\\" fill=\\"rgb(63, 81, 181)\\"/><circle r=\\"55\\" cx=\\"50\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
+                    title="AaAy"
+                  />
+                </div>
               </div>
             </td>
             <td
-              class="py-4 mt-1 font-semibold"
+              class="py-6 mt-1 font-semibold"
             >
               <span>
                 OLEBank
               </span>
             </td>
             <td
-              class="py-1 font-semibold"
+              class="py-6 font-semibold"
             >
               <span>
                 ARK Ecosystem
               </span>
             </td>
             <td
-              class="py-1 text-bold text-theme-primary"
+              class="py-6 text-bold text-theme-primary"
             >
               <span
                 class="-ml-8"
@@ -378,7 +390,7 @@ exports[`Welcome should render empty state 1`] = `
               </span>
             </td>
             <td
-              class="py-1 text-theme-neutral-400"
+              class="py-6 text-theme-neutral-400"
             >
               <div
                 class="sc-AxiKw dzBdqj ml-12"
@@ -391,7 +403,7 @@ exports[`Welcome should render empty state 1`] = `
               </div>
             </td>
             <td
-              class="py-1 text-bold text-theme-primary"
+              class="py-6 text-bold text-theme-primary"
             >
               <div
                 class="sc-AxiKw fFXzuz ml-1"
@@ -404,7 +416,7 @@ exports[`Welcome should render empty state 1`] = `
               </div>
             </td>
             <td
-              class="py-1 text-bold text-theme-primary"
+              class="py-6 text-bold text-theme-primary"
             >
               <span
                 class="ml-3"
@@ -416,10 +428,10 @@ exports[`Welcome should render empty state 1`] = `
               class="px-1 px-12"
             />
             <td
-              class="float-right py-1"
+              class="flex items-center justify-center float-right py-6 mt-1"
             >
               <button
-                class="sc-AxjAm kTAyCf mt-4"
+                class="sc-AxjAm kTAyCf"
                 color="primary"
                 type="button"
               >

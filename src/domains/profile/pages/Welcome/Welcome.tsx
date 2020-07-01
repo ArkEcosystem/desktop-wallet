@@ -48,14 +48,8 @@ export const Welcome = () => {
 							</p>
 
 							<div className="mt-6 mb-8 space-y-3">
-								{profiles.map((profile: any) => (
-									<ProfileCard
-										name={profile.name()}
-										avatar={profile.avatar()}
-										balance="0"
-										key={profile.id()}
-										actions={profileCardActions}
-									/>
+								{profiles.map((profile: any, index: number) => (
+									<ProfileCard key={index} profile={profile} actions={profileCardActions} />
 								))}
 							</div>
 
