@@ -1,8 +1,6 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { act, fireEvent, render, waitFor } from "@testing-library/react";
-import { i18n } from "app/i18n";
 import React from "react";
-import { I18nextProvider } from "react-i18next";
+import { act, fireEvent, render, waitFor } from "test-utils";
 
 import { contacts } from "../../data";
 import { translations } from "../../i18n";
@@ -10,11 +8,7 @@ import { Contacts } from "./Contacts";
 
 describe("Contacts", () => {
 	it("should render", () => {
-		const { asFragment, getByTestId } = render(
-			<I18nextProvider i18n={i18n}>
-				<Contacts contacts={[]} />
-			</I18nextProvider>,
-		);
+		const { asFragment, getByTestId } = render(<Contacts contacts={[]} />);
 
 		expect(getByTestId("contacts")).toHaveTextContent(translations.CONTACTS_PAGE.TITLE);
 		expect(getByTestId("contacts")).toHaveTextContent(translations.CONTACTS_PAGE.SUBTITLE);
@@ -25,11 +19,7 @@ describe("Contacts", () => {
 	});
 
 	it("should render with contacts", () => {
-		const { asFragment, getByTestId } = render(
-			<I18nextProvider i18n={i18n}>
-				<Contacts contacts={contacts} />
-			</I18nextProvider>,
-		);
+		const { asFragment, getByTestId } = render(<Contacts contacts={contacts} />);
 
 		expect(getByTestId("contacts")).toHaveTextContent(translations.CONTACTS_PAGE.TITLE);
 		expect(getByTestId("contacts")).toHaveTextContent(translations.CONTACTS_PAGE.SUBTITLE);
@@ -44,11 +34,7 @@ describe("Contacts", () => {
 		["cancel", "contact-form__cancel-btn"],
 		["save", "contact-form__save-btn"],
 	])("should open & close add contact modal (%s)", async (buttonName, buttonId) => {
-		const { asFragment, getAllByTestId, getByTestId, queryByTestId } = render(
-			<I18nextProvider i18n={i18n}>
-				<Contacts contacts={[]} />
-			</I18nextProvider>,
-		);
+		const { asFragment, getAllByTestId, getByTestId, queryByTestId } = render(<Contacts contacts={[]} />);
 
 		fireEvent.click(getByTestId("contacts__add-contact-btn"));
 

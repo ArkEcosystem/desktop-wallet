@@ -1,9 +1,7 @@
-import { fireEvent, render, within } from "@testing-library/react";
 import { act } from "@testing-library/react-hooks";
-import { i18n } from "app/i18n";
 import React from "react";
 import TestUtils from "react-dom/test-utils";
-import { I18nextProvider } from "react-i18next";
+import { fireEvent, render, within } from "test-utils";
 
 // i18n
 import { translations } from "../../i18n";
@@ -13,11 +11,7 @@ jest.useFakeTimers();
 
 describe("PluginManager", () => {
 	it("should render", () => {
-		const { asFragment, getByTestId } = render(
-			<I18nextProvider i18n={i18n}>
-				<PluginManager />
-			</I18nextProvider>,
-		);
+		const { asFragment, getByTestId } = render(<PluginManager />);
 
 		expect(getByTestId("PluginManager")).toHaveTextContent(translations.PAGE_PLUGIN_MANAGER.TITLE);
 		expect(getByTestId("PluginManager")).toHaveTextContent(translations.PAGE_PLUGIN_MANAGER.DESCRIPTION);
@@ -25,11 +19,7 @@ describe("PluginManager", () => {
 	});
 
 	it("should toggle between list and grid on home", () => {
-		const { asFragment, getByTestId } = render(
-			<I18nextProvider i18n={i18n}>
-				<PluginManager />
-			</I18nextProvider>,
-		);
+		const { asFragment, getByTestId } = render(<PluginManager />);
 
 		expect(within(getByTestId("PluginManager__home__featured")).getByTestId("PluginGrid")).toBeTruthy();
 
@@ -49,11 +39,7 @@ describe("PluginManager", () => {
 	});
 
 	it("should toggle between list and grid on game", () => {
-		const { asFragment, getByTestId } = render(
-			<I18nextProvider i18n={i18n}>
-				<PluginManager />
-			</I18nextProvider>,
-		);
+		const { asFragment, getByTestId } = render(<PluginManager />);
 
 		act(() => {
 			fireEvent.click(getByTestId("PluginManagerNavigationBar__game"));
@@ -76,11 +62,7 @@ describe("PluginManager", () => {
 	});
 
 	it("should open & close featured modal", () => {
-		const { asFragment, getByTestId } = render(
-			<I18nextProvider i18n={i18n}>
-				<PluginManager />
-			</I18nextProvider>,
-		);
+		const { asFragment, getByTestId } = render(<PluginManager />);
 
 		act(() => {
 			fireEvent.click(getByTestId("PluginManager__home__featured__view-more"));
@@ -97,11 +79,7 @@ describe("PluginManager", () => {
 	});
 
 	it("should open & close top rated modal", () => {
-		const { asFragment, getByTestId } = render(
-			<I18nextProvider i18n={i18n}>
-				<PluginManager />
-			</I18nextProvider>,
-		);
+		const { asFragment, getByTestId } = render(<PluginManager />);
 
 		act(() => {
 			fireEvent.click(getByTestId("PluginManager__home__top-rated__view-more"));
@@ -118,11 +96,7 @@ describe("PluginManager", () => {
 	});
 
 	it("should download & install plugin on home", () => {
-		const { asFragment, getAllByTestId, getByTestId } = render(
-			<I18nextProvider i18n={i18n}>
-				<PluginManager />
-			</I18nextProvider>,
-		);
+		const { asFragment, getAllByTestId, getByTestId } = render(<PluginManager />);
 
 		act(() => {
 			fireEvent.click(getByTestId("LayoutControls__list--icon"));
@@ -151,11 +125,7 @@ describe("PluginManager", () => {
 	});
 
 	it("should download & install plugin on game", () => {
-		const { asFragment, getAllByTestId, getByTestId } = render(
-			<I18nextProvider i18n={i18n}>
-				<PluginManager />
-			</I18nextProvider>,
-		);
+		const { asFragment, getAllByTestId, getByTestId } = render(<PluginManager />);
 
 		act(() => {
 			fireEvent.click(getByTestId("PluginManagerNavigationBar__game"));
@@ -185,11 +155,7 @@ describe("PluginManager", () => {
 	});
 
 	it("should close install plugin modal", () => {
-		const { asFragment, getAllByTestId, getByTestId } = render(
-			<I18nextProvider i18n={i18n}>
-				<PluginManager />
-			</I18nextProvider>,
-		);
+		const { asFragment, getAllByTestId, getByTestId } = render(<PluginManager />);
 
 		act(() => {
 			fireEvent.click(getByTestId("LayoutControls__list--icon"));
@@ -207,11 +173,7 @@ describe("PluginManager", () => {
 	});
 
 	it("should cancel install plugin", () => {
-		const { asFragment, getAllByTestId, getByTestId } = render(
-			<I18nextProvider i18n={i18n}>
-				<PluginManager />
-			</I18nextProvider>,
-		);
+		const { asFragment, getAllByTestId, getByTestId } = render(<PluginManager />);
 
 		act(() => {
 			fireEvent.click(getByTestId("LayoutControls__list--icon"));
@@ -231,11 +193,7 @@ describe("PluginManager", () => {
 	it("should search for plugin", (done) => {
 		const consoleSpy = jest.spyOn(global.console, "log").mockImplementation();
 
-		const { asFragment, getByTestId, rerender } = render(
-			<I18nextProvider i18n={i18n}>
-				<PluginManager />
-			</I18nextProvider>,
-		);
+		const { asFragment, getByTestId, rerender } = render(<PluginManager />);
 
 		act(() => {
 			fireEvent.click(getByTestId("header-search-bar__button"));
@@ -261,11 +219,7 @@ describe("PluginManager", () => {
 	it("should select plugin on home grids", () => {
 		const consoleSpy = jest.spyOn(global.console, "log").mockImplementation();
 
-		const { asFragment, getAllByTestId, getByTestId, rerender } = render(
-			<I18nextProvider i18n={i18n}>
-				<PluginManager />
-			</I18nextProvider>,
-		);
+		const { asFragment, getAllByTestId, getByTestId, rerender } = render(<PluginManager />);
 
 		act(() => {
 			fireEvent.click(
@@ -299,11 +253,7 @@ describe("PluginManager", () => {
 	it("should select plugin on game grid", () => {
 		const consoleSpy = jest.spyOn(global.console, "log").mockImplementation();
 
-		const { asFragment, getAllByTestId, getByTestId, rerender } = render(
-			<I18nextProvider i18n={i18n}>
-				<PluginManager />
-			</I18nextProvider>,
-		);
+		const { asFragment, getAllByTestId, getByTestId, rerender } = render(<PluginManager />);
 
 		act(() => {
 			fireEvent.click(getByTestId("PluginManagerNavigationBar__game"));
@@ -320,11 +270,7 @@ describe("PluginManager", () => {
 	it("should delete plugin on home", () => {
 		const consoleSpy = jest.spyOn(global.console, "log").mockImplementation();
 
-		const { asFragment, getAllByTestId, getByTestId, rerender } = render(
-			<I18nextProvider i18n={i18n}>
-				<PluginManager />
-			</I18nextProvider>,
-		);
+		const { asFragment, getAllByTestId, getByTestId, rerender } = render(<PluginManager />);
 
 		act(() => {
 			fireEvent.click(within(getByTestId("PluginManager__home__featured")).getAllByTestId("dropdown__toggle")[0]);
@@ -341,11 +287,7 @@ describe("PluginManager", () => {
 	it("should delete plugin on game", () => {
 		const consoleSpy = jest.spyOn(global.console, "log").mockImplementation();
 
-		const { asFragment, getAllByTestId, getByTestId, rerender } = render(
-			<I18nextProvider i18n={i18n}>
-				<PluginManager />
-			</I18nextProvider>,
-		);
+		const { asFragment, getAllByTestId, getByTestId, rerender } = render(<PluginManager />);
 
 		act(() => {
 			fireEvent.click(getByTestId("PluginManagerNavigationBar__game"));

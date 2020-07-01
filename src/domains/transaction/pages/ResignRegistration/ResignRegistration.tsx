@@ -5,7 +5,7 @@ import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { Form, FormField, FormLabel } from "app/components/Form";
 import { Icon } from "app/components/Icon";
-import {  InputPassword } from "app/components/Input";
+import { InputPassword } from "app/components/Input";
 import { Label } from "app/components/Label";
 import { useSelectionState } from "app/components/SelectionBar";
 import { Spinner } from "app/components/Spinner";

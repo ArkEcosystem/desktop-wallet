@@ -1,8 +1,6 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { act, fireEvent, render } from "@testing-library/react";
-import { i18n } from "app/i18n";
 import React from "react";
-import { I18nextProvider } from "react-i18next";
+import { act, fireEvent, render } from "test-utils";
 
 import { ResignRegistration } from "../ResignRegistration";
 
@@ -16,11 +14,7 @@ beforeEach(() => {
 
 describe("ResignRegistration", () => {
 	it("should render 1st step", () => {
-		const { asFragment, getByTestId } = render(
-			<I18nextProvider i18n={i18n}>
-				<ResignRegistration {...defaultFormValues} />
-			</I18nextProvider>,
-		);
+		const { asFragment, getByTestId } = render(<ResignRegistration {...defaultFormValues} />);
 
 		expect(getByTestId("ResignRegistration__first-step")).toBeTruthy();
 		expect(defaultFormValues.onDownload).toHaveBeenCalledTimes(0);
@@ -28,11 +22,7 @@ describe("ResignRegistration", () => {
 	});
 
 	it("should should go back", async () => {
-		const { asFragment, getByTestId } = render(
-			<I18nextProvider i18n={i18n}>
-				<ResignRegistration {...defaultFormValues} />
-			</I18nextProvider>,
-		);
+		const { asFragment, getByTestId } = render(<ResignRegistration {...defaultFormValues} />);
 
 		await act(async () => {
 			fireEvent.click(getByTestId("ResignRegistration__continue-button"));
@@ -47,11 +37,7 @@ describe("ResignRegistration", () => {
 	});
 
 	it("should render 2nd step", async () => {
-		const { asFragment, getByTestId } = render(
-			<I18nextProvider i18n={i18n}>
-				<ResignRegistration {...defaultFormValues} />
-			</I18nextProvider>,
-		);
+		const { asFragment, getByTestId } = render(<ResignRegistration {...defaultFormValues} />);
 
 		await act(async () => {
 			fireEvent.click(getByTestId("ResignRegistration__continue-button"));
@@ -63,11 +49,7 @@ describe("ResignRegistration", () => {
 	});
 
 	it("should render 3rd step", async () => {
-		const { asFragment, getByTestId } = render(
-			<I18nextProvider i18n={i18n}>
-				<ResignRegistration {...defaultFormValues} />
-			</I18nextProvider>,
-		);
+		const { asFragment, getByTestId } = render(<ResignRegistration {...defaultFormValues} />);
 
 		await act(async () => {
 			fireEvent.click(getByTestId("ResignRegistration__continue-button"));
@@ -82,11 +64,7 @@ describe("ResignRegistration", () => {
 	});
 
 	it("should render 4th step", async () => {
-		const { asFragment, getByTestId } = render(
-			<I18nextProvider i18n={i18n}>
-				<ResignRegistration {...defaultFormValues} />
-			</I18nextProvider>,
-		);
+		const { asFragment, getByTestId } = render(<ResignRegistration {...defaultFormValues} />);
 
 		await act(async () => {
 			fireEvent.click(getByTestId("ResignRegistration__continue-button"));
@@ -110,11 +88,7 @@ describe("ResignRegistration", () => {
 	});
 
 	it("should submit", async () => {
-		const { asFragment, getByTestId } = render(
-			<I18nextProvider i18n={i18n}>
-				<ResignRegistration {...defaultFormValues} />
-			</I18nextProvider>,
-		);
+		const { asFragment, getByTestId } = render(<ResignRegistration {...defaultFormValues} />);
 
 		await act(async () => {
 			fireEvent.click(getByTestId("ResignRegistration__continue-button"));

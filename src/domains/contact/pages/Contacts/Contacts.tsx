@@ -107,12 +107,17 @@ export const Contacts = ({ contacts, onSearch }: ContactsProps) => {
 
 				<div className="flex flex-1 p-10 bg-theme-background">
 					{contacts.length === 0 && (
-						<div data-testid="contacts__banner" className="flex flex-col items-center justify-center mx-auto">
+						<div
+							data-testid="contacts__banner"
+							className="flex flex-col items-center justify-center mx-auto"
+						>
 							<div className="max-w-4xl mx-auto">
 								<ContactsBanner />
 							</div>
 							<div className="mt-6">
-								<span className="text-theme-neutral-dark">{t("CONTACTS.CONTACTS_PAGE.ADD_CONTACT_MESSAGE")}</span>
+								<span className="text-theme-neutral-dark">
+									{t("CONTACTS.CONTACTS_PAGE.ADD_CONTACT_MESSAGE")}
+								</span>
 							</div>
 						</div>
 					)}
