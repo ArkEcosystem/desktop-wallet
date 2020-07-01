@@ -14,7 +14,7 @@ exports[`Table should render 1`] = `
           role="row"
         >
           <th
-            class="text-xs text-left select-none text-theme-neutral-400"
+            class="text-sm text-left select-none text-theme-neutral-500"
             colspan="1"
             data-testid="table__th--0"
             role="columnheader"
@@ -25,18 +25,18 @@ exports[`Table should render 1`] = `
               class="flex flex-inline align-top  undefined"
             >
               <div
-                class="mr-1"
+                class="mr-2"
               >
                 Header 1
               </div>
               <div
-                class="mt-1 text-theme-color-neutral-500"
+                class="flex items-center text-theme-color-neutral-500"
                 data-testid="table__Sort"
               >
                 <div
-                  class="sc-AxjAm iepfoc"
-                  height="10"
-                  width="10"
+                  class="sc-AxjAm hdgaLj"
+                  height="12"
+                  width="15"
                 >
                   <svg>
                     sort.svg
@@ -46,7 +46,7 @@ exports[`Table should render 1`] = `
             </div>
           </th>
           <th
-            class="text-xs text-left select-none text-theme-neutral-400"
+            class="text-sm text-left select-none text-theme-neutral-500"
             colspan="1"
             data-testid="table__th--1"
             role="columnheader"
@@ -57,18 +57,18 @@ exports[`Table should render 1`] = `
               class="flex flex-inline align-top  undefined"
             >
               <div
-                class="mr-1"
+                class="mr-2"
               >
                 Header 2
               </div>
               <div
-                class="mt-1 text-theme-color-neutral-500"
+                class="flex items-center text-theme-color-neutral-500"
                 data-testid="table__Sort"
               >
                 <div
-                  class="sc-AxjAm iepfoc"
-                  height="10"
-                  width="10"
+                  class="sc-AxjAm hdgaLj"
+                  height="12"
+                  width="15"
                 >
                   <svg>
                     sort.svg
@@ -110,7 +110,7 @@ exports[`Table should render empty rows if template not provided 1`] = `
           role="row"
         >
           <th
-            class="text-xs text-left select-none text-theme-neutral-400"
+            class="text-sm text-left select-none text-theme-neutral-500"
             colspan="1"
             data-testid="table__th--0"
             role="columnheader"
@@ -121,18 +121,18 @@ exports[`Table should render empty rows if template not provided 1`] = `
               class="flex flex-inline align-top  undefined"
             >
               <div
-                class="mr-1"
+                class="mr-2"
               >
                 Header 1
               </div>
               <div
-                class="mt-1 text-theme-color-neutral-500"
+                class="flex items-center text-theme-color-neutral-500"
                 data-testid="table__Sort"
               >
                 <div
-                  class="sc-AxjAm iepfoc"
-                  height="10"
-                  width="10"
+                  class="sc-AxjAm hdgaLj"
+                  height="12"
+                  width="15"
                 >
                   <svg>
                     sort.svg
@@ -142,7 +142,7 @@ exports[`Table should render empty rows if template not provided 1`] = `
             </div>
           </th>
           <th
-            class="text-xs text-left select-none text-theme-neutral-400"
+            class="text-sm text-left select-none text-theme-neutral-500"
             colspan="1"
             data-testid="table__th--1"
             role="columnheader"
@@ -153,18 +153,18 @@ exports[`Table should render empty rows if template not provided 1`] = `
               class="flex flex-inline align-top  undefined"
             >
               <div
-                class="mr-1"
+                class="mr-2"
               >
                 Header 2
               </div>
               <div
-                class="mt-1 text-theme-color-neutral-500"
+                class="flex items-center text-theme-color-neutral-500"
                 data-testid="table__Sort"
               >
                 <div
-                  class="sc-AxjAm iepfoc"
-                  height="10"
-                  width="10"
+                  class="sc-AxjAm hdgaLj"
+                  height="12"
+                  width="15"
                 >
                   <svg>
                     sort.svg
