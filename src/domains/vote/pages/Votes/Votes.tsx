@@ -80,8 +80,8 @@ export const Votes = ({ assets, addressList, delegateList }: VotesProps) => {
 								/>
 							</SelectAssetWrapper>
 						</TransactionDetail>
-						<TransactionDetail border={false} label="Address">
-							<div className="relative flex items-center pb-16">
+						<TransactionDetail border={false} label="Address" className="mt-2">
+							<div className="relative flex items-center pb-24">
 								<Input type="text" disabled />
 								<div className="absolute flex items-center justify-between w-full ml-3">
 									<div className="flex items-center">
