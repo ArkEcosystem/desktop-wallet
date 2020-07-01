@@ -27,20 +27,18 @@ export const PluginListItem = ({ onDelete, onInstall, plugin }: PluginListItemPr
 			</td>
 
 			<td>
-				<a href="#" className="font-semibold text-theme-primary-500 hover:text-theme-primary-400">
-					{plugin.name}
-				</a>
+				<div className="flex items-center space-x-2">
+					<a href="#" className="font-semibold link">
+						{plugin.name}
+					</a>
+
+					{plugin.isOfficial && <Icon name="OfficialArkPlugin" width={18} height={18} />}
+					{plugin.isGrant && <Icon name="Grant" width={14} height={20} />}
+				</div>
 			</td>
 
 			<td>
-				<div className="flex items-center justify-between pr-16">
-					<span>{plugin.author}</span>
-
-					<div>
-						{plugin.isOfficial && <Icon name="OfficialArkPlugin" width={18} height={18} />}
-						{plugin.isGrant && <Icon name="Grant" width={20} height={20} />}
-					</div>
-				</div>
+				<div className="flex items-center justify-between pr-16">{plugin.author}</div>
 			</td>
 
 			<td className="py-10">{t(`PLUGINS.CATEGORY.${plugin.category.toUpperCase()}`)}</td>
