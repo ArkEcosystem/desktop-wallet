@@ -56,7 +56,7 @@ const PluginManagerHome = ({ onDelete, onInstall, viewType }: PluginManagerHomeP
 
 	return (
 		<div>
-			<PluginManagerHomeBanner className="w-full" />
+			<PluginManagerHomeBanner className="w-full mt-8" height="auto" />
 			<FeaturedPlugins isOpen={featuredModalOpen} onClose={() => setFeaturedModalOpen(false)} />
 			<BestPlugins isOpen={bestModalOpen} onClose={() => setBestModalOpen(false)} />
 
