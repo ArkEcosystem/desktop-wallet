@@ -5,7 +5,7 @@ exports[`Application root should render without crashing 1`] = `
   "calls": Array [
     Array [
       <HashRouter>
-        <withRouter() />
+        <withRouter(App) />
       </HashRouter>,
       <div
         id="root"
