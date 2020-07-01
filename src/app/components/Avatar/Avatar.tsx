@@ -9,7 +9,7 @@ type Props = {
 	className?: string;
 };
 
-const AvatarStyled = styled.div<{ size: string; noShadow: boolean }>`
+export const AvatarWrapper = styled.div<{ size: string; noShadow: boolean }>`
 	${tw`block rounded-full overflow-hidden`}
 	${({ size }) => {
 		switch (size) {
@@ -34,9 +34,9 @@ export const Avatar = ({ address, size, noShadow, className }: Props) => {
 	const svg = React.useMemo(() => AvatarSDK.make(address), [address]);
 
 	return (
-		<AvatarStyled data-testid="Avatar" size={size!} noShadow={!!noShadow} className={className}>
+		<AvatarWrapper data-testid="Avatar" size={size!} noShadow={!!noShadow} className={className}>
 			<img title={address} src={`data:image/svg+xml;utf8,${svg}`} />
-		</AvatarStyled>
+		</AvatarWrapper>
 	);
 };
 
