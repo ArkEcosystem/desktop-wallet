@@ -26,7 +26,7 @@ export const FirstStep = () => {
 				<h1 className="mb-0">Vote for delegate</h1>
 				<p className="text-theme-neutral-dark">Enter details to send your money</p>
 			</div>
-			<div className="grid grid-flow-row gap-2 mt-4">
+			<div className="mt-4 grid grid-flow-row gap-2">
 				<TransactionDetail
 					border={false}
 					label="Account"
@@ -78,7 +78,7 @@ export const SecondStep = () => (
 			<h1 className="mb-0">Transaction Review</h1>
 			<p className="text-theme-neutral-dark">Check the information again before voting</p>
 		</div>
-		<div className="grid grid-flow-row gap-2 mt-4">
+		<div className="mt-4 grid grid-flow-row gap-2">
 			<TransactionDetail
 				border={false}
 				label="Network"
@@ -131,7 +131,7 @@ export const ThirdStep = () => {
 			<div>
 				<h1 className="mb-0">Passphrase</h1>
 				<p className="text-theme-neutral-dark">Confirm your password to continue</p>
-				<div className="grid grid-flow-row gap-2 mt-4">
+				<div className="mt-4 grid grid-flow-row gap-2">
 					<TransactionDetail border={false} label="Your password" className="pb-0">
 						<InputPassword name="passphras" />
 					</TransactionDetail>
