@@ -145,7 +145,7 @@ export const CreateProfile = ({ onSubmit }: CreateProfileProps) => {
 						</div>
 
 						<div className="flex justify-end mx-4 mt-12 mb-16 space-x-3 md:mx-8 xl:mx-16">
-							<Button variant="plain" onClick={() => history.goBack()}>
+							<Button variant="plain" onClick={() => history.go(-1)}>
 								Back
 							</Button>
 							<Button>Complete</Button>
