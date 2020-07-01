@@ -12,11 +12,12 @@ type ProfileCardProps = {
 	profile: any;
 	actions?: ISettingsOptions[];
 	onSelect?: any;
+	handleClick?: any;
 	showSettings?: boolean;
 };
 
-export const ProfileCard = ({ profile, actions, onSelect, showSettings }: ProfileCardProps) => (
-	<Card>
+export const ProfileCard = ({ profile, actions, handleClick, onSelect, showSettings }: ProfileCardProps) => (
+	<Card handleClick={handleClick}>
 		<div className="relative px-6 py-4 sm:flex sm:items-center">
 			{showSettings && (
 				<div className="absolute top-0 right-0 flex items-center justify-center w-6 h-6 p-1 mt-3 -mt-2 -mr-4">
