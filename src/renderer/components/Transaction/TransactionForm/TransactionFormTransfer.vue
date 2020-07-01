@@ -573,6 +573,8 @@ export default {
               this.wallet_truncate(this.schema.address)
             ]))
           }
+        } else {
+          this.$set(this, 'recipientId', this.schema.address || '')
         }
 
         this.$set(this.form, 'vendorField', this.schema.vendorField || '')
