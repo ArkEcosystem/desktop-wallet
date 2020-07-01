@@ -4,11 +4,12 @@ import { clickOutsideHandler, useDebounce } from "app/hooks";
 import React, { useEffect, useRef, useState } from "react";
 
 type HeaderSearchBarProps = {
+	placeholder?: string;
 	children?: React.ReactNode;
 	onSearch?: any;
 };
 
-export const HeaderSearchBar = ({ children, onSearch }: HeaderSearchBarProps) => {
+export const HeaderSearchBar = ({ placeholder, children, onSearch }: HeaderSearchBarProps) => {
 	const [searchbarVisible, setSearchbarVisible] = useState(false);
 	const [query, setQuery] = useState("");
 
@@ -60,7 +61,7 @@ export const HeaderSearchBar = ({ children, onSearch }: HeaderSearchBarProps) =>
 					<div className="flex-1 mx-4">
 						<Input
 							className="border-none shadow-none"
-							placeholder="Search..."
+							placeholder={placeholder}
 							value={query}
 							onChange={(e) => setQuery((e.target as HTMLInputElement).value)}
 						/>
@@ -71,4 +72,8 @@ export const HeaderSearchBar = ({ children, onSearch }: HeaderSearchBarProps) =>
 			)}
 		</>
 	);
+};
+
+HeaderSearchBar.defaultProps = {
+	placeholder: "Search...",
 };

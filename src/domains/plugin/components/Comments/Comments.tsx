@@ -4,7 +4,7 @@ import { Pagination } from "app/components/Pagination";
 import React, { useState } from "react";
 
 import { Reply } from "./components/Reply";
-import { getDateDifferenceFromNow } from "./utils";
+import { TimeAgo } from "./components/TimeAgo";
 
 type Comment = {
 	author: string;
@@ -64,7 +64,9 @@ export const Comments = ({ comments, sortOptions }: CommentsProps) => {
 									<span className="flex ml-1 text-theme-neutral-600">{score}</span>
 								</div>
 								<div className="px-3">
-									<span className="text-theme-neutral-400">{getDateDifferenceFromNow(date)}</span>
+									<span className="text-theme-neutral-400">
+										<TimeAgo date={date} />
+									</span>
 								</div>
 							</div>
 						</div>

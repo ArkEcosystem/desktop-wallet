@@ -48,10 +48,10 @@ exports[`Transaction Send should render 1`] = `
               </p>
             </div>
             <div
-              class="sc-fzoyAV kjXSHn"
+              class="sc-fzoyAV eEIPVP"
             >
               <form
-                class="space-y-6"
+                class="space-y-8"
                 data-testid="Form"
                 id="send-transaction__form"
               >
@@ -62,7 +62,7 @@ exports[`Transaction Send should render 1`] = `
                     class="mb-2"
                   >
                     <label
-                      class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                      class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
                       data-testid="FormLabel"
                       for="network"
                       label="Network"
@@ -85,7 +85,7 @@ exports[`Transaction Send should render 1`] = `
                       class="relative flex items-center w-full flex-inline"
                     >
                       <div
-                        class="flex w-full border rounded transition-colors duration-200 shadow-sm bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary"
+                        class="flex w-full transition-colors duration-200 border rounded shadow-sm bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary"
                       >
                         <div
                           class="px-4 py-2 flex-0 w-14"
@@ -121,25 +121,25 @@ exports[`Transaction Send should render 1`] = `
                     </div>
                     <div
                       aria-labelledby="downshift-1-label"
-                      class="pt-6 select-asset__items"
+                      class="select-asset__items"
                       data-testid="select-asset__items"
                       id="downshift-1-menu"
                       role="listbox"
                     >
                       <div
                         aria-selected="false"
-                        class="inline-block mr-4 cursor-pointer"
+                        class="inline-block pt-6 mr-6 cursor-pointer"
                         id="downshift-1-item-0"
                         role="option"
                         title="Ark Ecosystem"
                       >
                         <div
-                          class="sc-AxirZ cZokSJ text-theme-danger-400 border-theme-danger-200"
+                          class="sc-AxirZ ffmqtx text-theme-danger-400 border-theme-danger-200"
                         >
                           <div
-                            class="sc-AxhCb eHGcDb"
-                            height="18"
-                            width="18"
+                            class="sc-AxhCb dCXdPH"
+                            height="26"
+                            width="26"
                           >
                             <svg>
                               ark.svg
@@ -149,18 +149,18 @@ exports[`Transaction Send should render 1`] = `
                       </div>
                       <div
                         aria-selected="false"
-                        class="inline-block mr-4 cursor-pointer"
+                        class="inline-block pt-6 mr-6 cursor-pointer"
                         id="downshift-1-item-1"
                         role="option"
                         title="Bitcoin"
                       >
                         <div
-                          class="sc-AxirZ cZokSJ text-theme-warning-400 border-theme-warning-200"
+                          class="sc-AxirZ ffmqtx text-theme-warning-400 border-theme-warning-200"
                         >
                           <div
-                            class="sc-AxhCb eHGcDb"
-                            height="18"
-                            width="18"
+                            class="sc-AxhCb dCXdPH"
+                            height="26"
+                            width="26"
                           >
                             <svg>
                               btc.svg
@@ -170,18 +170,18 @@ exports[`Transaction Send should render 1`] = `
                       </div>
                       <div
                         aria-selected="false"
-                        class="inline-block mr-4 cursor-pointer"
+                        class="inline-block pt-6 mr-6 cursor-pointer"
                         id="downshift-1-item-2"
                         role="option"
                         title="Ethereum"
                       >
                         <div
-                          class="sc-AxirZ cZokSJ text-theme-neutral-800 border-theme-neutral-600"
+                          class="sc-AxirZ ffmqtx text-theme-neutral-800 border-theme-neutral-600"
                         >
                           <div
-                            class="sc-AxhCb eHGcDb"
-                            height="18"
-                            width="18"
+                            class="sc-AxhCb dCXdPH"
+                            height="26"
+                            width="26"
                           >
                             <svg>
                               eth.svg
@@ -199,7 +199,7 @@ exports[`Transaction Send should render 1`] = `
                     class="mb-2"
                   >
                     <label
-                      class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                      class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
                       data-testid="FormLabel"
                       for="sender"
                       label="Sender"
@@ -296,7 +296,7 @@ exports[`Transaction Send should render 1`] = `
                     class="mb-2"
                   >
                     <label
-                      class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                      class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
                       data-testid="FormLabel"
                       for="recipient"
                       label="Recipient"
@@ -405,7 +405,7 @@ exports[`Transaction Send should render 1`] = `
                     class="mb-2"
                   >
                     <label
-                      class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                      class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
                       data-testid="FormLabel"
                       for="amount"
                       label="Amount ARK"
@@ -442,7 +442,7 @@ exports[`Transaction Send should render 1`] = `
                     class="mb-2"
                   >
                     <label
-                      class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                      class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
                       data-testid="FormLabel"
                       for="smartbridge"
                       label="Smartbridge"
@@ -485,7 +485,7 @@ exports[`Transaction Send should render 1`] = `
                         class="mb-2"
                       >
                         <label
-                          class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                          class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
                           data-testid="FormLabel"
                           for="fee"
                           label="Fee ARK"
@@ -624,10 +624,10 @@ exports[`Transaction Send should render 1st step 1`] = `
       </p>
     </div>
     <div
-      class="sc-fzoyAV kjXSHn"
+      class="sc-fzoyAV eEIPVP"
     >
       <form
-        class="space-y-6"
+        class="space-y-8"
         data-testid="Form"
         id="send-transaction__form"
       >
@@ -638,7 +638,7 @@ exports[`Transaction Send should render 1st step 1`] = `
             class="mb-2"
           >
             <label
-              class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+              class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
               data-testid="FormLabel"
               for="network"
               label="Network"
@@ -661,7 +661,7 @@ exports[`Transaction Send should render 1st step 1`] = `
               class="relative flex items-center w-full flex-inline"
             >
               <div
-                class="flex w-full border rounded transition-colors duration-200 shadow-sm bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary"
+                class="flex w-full transition-colors duration-200 border rounded shadow-sm bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary"
               >
                 <div
                   class="px-4 py-2 flex-0 w-14"
@@ -697,25 +697,25 @@ exports[`Transaction Send should render 1st step 1`] = `
             </div>
             <div
               aria-labelledby="downshift-0-label"
-              class="pt-6 select-asset__items"
+              class="select-asset__items"
               data-testid="select-asset__items"
               id="downshift-0-menu"
               role="listbox"
             >
               <div
                 aria-selected="false"
-                class="inline-block mr-4 cursor-pointer"
+                class="inline-block pt-6 mr-6 cursor-pointer"
                 id="downshift-0-item-0"
                 role="option"
                 title="Ark Ecosystem"
               >
                 <div
-                  class="sc-AxirZ cZokSJ text-theme-danger-400 border-theme-danger-200"
+                  class="sc-AxirZ ffmqtx text-theme-danger-400 border-theme-danger-200"
                 >
                   <div
-                    class="sc-AxhCb eHGcDb"
-                    height="18"
-                    width="18"
+                    class="sc-AxhCb dCXdPH"
+                    height="26"
+                    width="26"
                   >
                     <svg>
                       ark.svg
@@ -725,18 +725,18 @@ exports[`Transaction Send should render 1st step 1`] = `
               </div>
               <div
                 aria-selected="false"
-                class="inline-block mr-4 cursor-pointer"
+                class="inline-block pt-6 mr-6 cursor-pointer"
                 id="downshift-0-item-1"
                 role="option"
                 title="Bitcoin"
               >
                 <div
-                  class="sc-AxirZ cZokSJ text-theme-warning-400 border-theme-warning-200"
+                  class="sc-AxirZ ffmqtx text-theme-warning-400 border-theme-warning-200"
                 >
                   <div
-                    class="sc-AxhCb eHGcDb"
-                    height="18"
-                    width="18"
+                    class="sc-AxhCb dCXdPH"
+                    height="26"
+                    width="26"
                   >
                     <svg>
                       btc.svg
@@ -746,18 +746,18 @@ exports[`Transaction Send should render 1st step 1`] = `
               </div>
               <div
                 aria-selected="false"
-                class="inline-block mr-4 cursor-pointer"
+                class="inline-block pt-6 mr-6 cursor-pointer"
                 id="downshift-0-item-2"
                 role="option"
                 title="Ethereum"
               >
                 <div
-                  class="sc-AxirZ cZokSJ text-theme-neutral-800 border-theme-neutral-600"
+                  class="sc-AxirZ ffmqtx text-theme-neutral-800 border-theme-neutral-600"
                 >
                   <div
-                    class="sc-AxhCb eHGcDb"
-                    height="18"
-                    width="18"
+                    class="sc-AxhCb dCXdPH"
+                    height="26"
+                    width="26"
                   >
                     <svg>
                       eth.svg
@@ -775,7 +775,7 @@ exports[`Transaction Send should render 1st step 1`] = `
             class="mb-2"
           >
             <label
-              class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+              class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
               data-testid="FormLabel"
               for="sender"
               label="Sender"
@@ -872,7 +872,7 @@ exports[`Transaction Send should render 1st step 1`] = `
             class="mb-2"
           >
             <label
-              class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+              class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
               data-testid="FormLabel"
               for="recipient"
               label="Recipient"
@@ -981,7 +981,7 @@ exports[`Transaction Send should render 1st step 1`] = `
             class="mb-2"
           >
             <label
-              class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+              class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
               data-testid="FormLabel"
               for="amount"
               label="Amount ARK"
@@ -1018,7 +1018,7 @@ exports[`Transaction Send should render 1st step 1`] = `
             class="mb-2"
           >
             <label
-              class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+              class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
               data-testid="FormLabel"
               for="smartbridge"
               label="Smartbridge"
@@ -1061,7 +1061,7 @@ exports[`Transaction Send should render 1st step 1`] = `
                 class="mb-2"
               >
                 <label
-                  class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                  class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
                   data-testid="FormLabel"
                   for="fee"
                   label="Fee ARK"
@@ -1264,7 +1264,7 @@ exports[`Transaction Send should render 2nd step 1`] = `
               </div>
             </div>
             <div
-              class="inline-block truncate"
+              class="inline-block truncate align-middle"
             >
               <span
                 class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-xl"
@@ -1305,7 +1305,7 @@ exports[`Transaction Send should render 2nd step 1`] = `
               class="pt-2"
             >
               <div
-                class="sc-fzokOt epSntt"
+                class="sc-fzokOt bVpfTX"
                 role="table"
               >
                 <table
@@ -1393,7 +1393,7 @@ exports[`Transaction Send should render 2nd step 1`] = `
                       </td>
                       <td>
                         <div
-                          class="inline-block truncate"
+                          class="inline-block truncate align-middle"
                         >
                           <span
                             class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
@@ -1428,7 +1428,7 @@ exports[`Transaction Send should render 2nd step 1`] = `
                       </td>
                       <td>
                         <div
-                          class="inline-block truncate"
+                          class="inline-block truncate align-middle"
                         >
                           <span
                             class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
@@ -1463,7 +1463,7 @@ exports[`Transaction Send should render 2nd step 1`] = `
                       </td>
                       <td>
                         <div
-                          class="inline-block truncate"
+                          class="inline-block truncate align-middle"
                         >
                           <span
                             class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
@@ -1498,7 +1498,7 @@ exports[`Transaction Send should render 2nd step 1`] = `
                       </td>
                       <td>
                         <div
-                          class="inline-block truncate"
+                          class="inline-block truncate align-middle"
                         >
                           <span
                             class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
@@ -1648,7 +1648,7 @@ exports[`Transaction Send should render 3rd step 1`] = `
     data-testid="TransactionSend__step--third"
   >
     <form
-      class="space-y-6"
+      class="space-y-8"
       data-testid="Form"
     >
       <div>
@@ -1813,7 +1813,7 @@ exports[`Transaction Send should render 5th step 1`] = `
                   data-testid="clipboard__wrapper"
                 >
                   <div
-                    class="inline-block truncate"
+                    class="inline-block truncate align-middle"
                   >
                     <span
                       class="text-theme-primary font-semibold text-base"
@@ -1862,7 +1862,7 @@ exports[`Transaction Send should render 5th step 1`] = `
                   data-testid="clipboard__wrapper"
                 >
                   <div
-                    class="inline-block truncate"
+                    class="inline-block truncate align-middle"
                   >
                     <span
                       class="text-theme-primary font-semibold text-base"
@@ -1904,16 +1904,16 @@ exports[`Transaction Send should render 5th step 1`] = `
               class="mt-2 font-semibold"
             >
               <div
-                class="inline-block truncate"
+                class="inline-block truncate align-middle"
               >
                 <span
-                  class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-xl"
+                  class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                   data-testid="address__wallet-name"
                 >
                   ROBank
                 </span>
                 <span
-                  class="text-theme-neutral-400 font-semibold text-xl"
+                  class="text-theme-neutral-400 font-semibold text-base"
                   data-testid="address__wallet-address"
                 >
                   AUexKj...EVTQWK
@@ -1964,16 +1964,16 @@ exports[`Transaction Send should render 5th step 1`] = `
                 </div>
               </div>
               <div
-                class="inline-block truncate"
+                class="inline-block truncate align-middle"
               >
                 <span
-                  class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-xl"
+                  class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                   data-testid="address__wallet-name"
                 >
                   ROBank
                 </span>
                 <span
-                  class="text-theme-neutral-400 font-semibold text-xl"
+                  class="text-theme-neutral-400 font-semibold text-base"
                   data-testid="address__wallet-address"
                 >
                   AUexKj...EVTQWK

@@ -120,7 +120,7 @@ exports[`Votes should render 1`] = `
                       class="relative flex items-center w-full flex-inline"
                     >
                       <div
-                        class="flex w-full border rounded transition-colors duration-200 shadow-sm bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary"
+                        class="flex w-full transition-colors duration-200 border rounded shadow-sm bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary"
                       >
                         <div
                           class="px-4 py-2 flex-0 w-14"
@@ -156,25 +156,25 @@ exports[`Votes should render 1`] = `
                     </div>
                     <div
                       aria-labelledby="downshift-0-label"
-                      class="pt-6 select-asset__items"
+                      class="select-asset__items"
                       data-testid="select-asset__items"
                       id="downshift-0-menu"
                       role="listbox"
                     >
                       <div
                         aria-selected="false"
-                        class="inline-block mr-4 cursor-pointer"
+                        class="inline-block pt-6 mr-6 cursor-pointer"
                         id="downshift-0-item-0"
                         role="option"
                         title="Ark Ecosystem"
                       >
                         <div
-                          class="sc-AxjAm bDDbwS text-theme-danger-400 border-theme-danger-200"
+                          class="sc-AxjAm eZoLDa text-theme-danger-400 border-theme-danger-200"
                         >
                           <div
-                            class="sc-AxirZ iOZZCn"
-                            height="18"
-                            width="18"
+                            class="sc-AxirZ hyqZof"
+                            height="26"
+                            width="26"
                           >
                             <svg>
                               ark.svg
@@ -184,18 +184,18 @@ exports[`Votes should render 1`] = `
                       </div>
                       <div
                         aria-selected="false"
-                        class="inline-block mr-4 cursor-pointer"
+                        class="inline-block pt-6 mr-6 cursor-pointer"
                         id="downshift-0-item-1"
                         role="option"
                         title="Bitcoin"
                       >
                         <div
-                          class="sc-AxjAm bDDbwS text-theme-warning-400 border-theme-warning-200"
+                          class="sc-AxjAm eZoLDa text-theme-warning-400 border-theme-warning-200"
                         >
                           <div
-                            class="sc-AxirZ iOZZCn"
-                            height="18"
-                            width="18"
+                            class="sc-AxirZ hyqZof"
+                            height="26"
+                            width="26"
                           >
                             <svg>
                               btc.svg
@@ -205,18 +205,18 @@ exports[`Votes should render 1`] = `
                       </div>
                       <div
                         aria-selected="false"
-                        class="inline-block mr-4 cursor-pointer"
+                        class="inline-block pt-6 mr-6 cursor-pointer"
                         id="downshift-0-item-2"
                         role="option"
                         title="Ethereum"
                       >
                         <div
-                          class="sc-AxjAm bDDbwS text-theme-neutral-800 border-theme-neutral-600"
+                          class="sc-AxjAm eZoLDa text-theme-neutral-800 border-theme-neutral-600"
                         >
                           <div
-                            class="sc-AxirZ iOZZCn"
-                            height="18"
-                            width="18"
+                            class="sc-AxirZ hyqZof"
+                            height="26"
+                            width="26"
                           >
                             <svg>
                               eth.svg
@@ -429,7 +429,7 @@ exports[`Votes should select a cryptoasset 1`] = `
                       class="relative flex items-center w-full flex-inline"
                     >
                       <div
-                        class="flex w-full border rounded transition-colors duration-200 shadow-sm bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary"
+                        class="flex w-full transition-colors duration-200 border rounded shadow-sm bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary"
                       >
                         <div
                           class="px-4 py-2 flex-0 w-14"
@@ -478,25 +478,25 @@ exports[`Votes should select a cryptoasset 1`] = `
                     </div>
                     <div
                       aria-labelledby="downshift-1-label"
-                      class="pt-6 select-asset__items"
+                      class="select-asset__items"
                       data-testid="select-asset__items"
                       id="downshift-1-menu"
                       role="listbox"
                     >
                       <div
                         aria-selected="false"
-                        class="inline-block mr-4 cursor-pointer"
+                        class="inline-block pt-6 mr-6 cursor-pointer"
                         id="downshift-1-item-0"
                         role="option"
                         title="Ark Ecosystem"
                       >
                         <div
-                          class="sc-AxjAm bDDbwS text-theme-neutral-400"
+                          class="sc-AxjAm eZoLDa text-theme-neutral-400"
                         >
                           <div
-                            class="sc-AxirZ iOZZCn"
-                            height="18"
-                            width="18"
+                            class="sc-AxirZ hyqZof"
+                            height="26"
+                            width="26"
                           >
                             <svg>
                               ark.svg
@@ -506,18 +506,18 @@ exports[`Votes should select a cryptoasset 1`] = `
                       </div>
                       <div
                         aria-selected="false"
-                        class="inline-block mr-4 cursor-pointer"
+                        class="inline-block pt-6 mr-6 cursor-pointer"
                         id="downshift-1-item-1"
                         role="option"
                         title="Bitcoin"
                       >
                         <div
-                          class="sc-AxjAm bDDbwS text-theme-success-500 border-theme-success-200"
+                          class="sc-AxjAm eZoLDa text-theme-success-500 border-theme-success-200"
                         >
                           <div
-                            class="sc-AxirZ iOZZCn"
-                            height="18"
-                            width="18"
+                            class="sc-AxirZ hyqZof"
+                            height="26"
+                            width="26"
                           >
                             <svg>
                               btc.svg
@@ -527,18 +527,18 @@ exports[`Votes should select a cryptoasset 1`] = `
                       </div>
                       <div
                         aria-selected="false"
-                        class="inline-block mr-4 cursor-pointer"
+                        class="inline-block pt-6 mr-6 cursor-pointer"
                         id="downshift-1-item-2"
                         role="option"
                         title="Ethereum"
                       >
                         <div
-                          class="sc-AxjAm bDDbwS text-theme-neutral-400"
+                          class="sc-AxjAm eZoLDa text-theme-neutral-400"
                         >
                           <div
-                            class="sc-AxirZ iOZZCn"
-                            height="18"
-                            width="18"
+                            class="sc-AxirZ hyqZof"
+                            height="26"
+                            width="26"
                           >
                             <svg>
                               eth.svg
@@ -618,7 +618,7 @@ exports[`Votes should select a cryptoasset 1`] = `
             Select Address
           </h2>
           <div
-            class="sc-fzoLsD khbsxi"
+            class="sc-fzoLsD hITtcw"
             role="table"
           >
             <table
@@ -888,7 +888,7 @@ exports[`Votes should select a cryptoasset 1`] = `
                     class="py-5"
                   >
                     <div
-                      class="inline-block truncate"
+                      class="inline-block truncate align-middle"
                     >
                       <span
                         class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
@@ -1020,7 +1020,7 @@ exports[`Votes should select a cryptoasset 1`] = `
                     class="py-5"
                   >
                     <div
-                      class="inline-block truncate"
+                      class="inline-block truncate align-middle"
                     >
                       <span
                         class="text-theme-neutral-800 font-semibold text-base"
@@ -1126,7 +1126,7 @@ exports[`Votes should select a cryptoasset 1`] = `
                     class="py-5"
                   >
                     <div
-                      class="inline-block truncate"
+                      class="inline-block truncate align-middle"
                     >
                       <span
                         class="text-theme-neutral-800 font-semibold text-base"
@@ -1201,7 +1201,7 @@ exports[`Votes should select a cryptoasset 1`] = `
                     class="py-5"
                   >
                     <div
-                      class="inline-block truncate"
+                      class="inline-block truncate align-middle"
                     >
                       <span
                         class="text-theme-neutral-800 font-semibold text-base"
@@ -1391,7 +1391,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="relative flex items-center w-full flex-inline"
                     >
                       <div
-                        class="flex w-full border rounded transition-colors duration-200 shadow-sm bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary"
+                        class="flex w-full transition-colors duration-200 border rounded shadow-sm bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary"
                       >
                         <div
                           class="px-4 py-2 flex-0 w-14"
@@ -1440,25 +1440,25 @@ exports[`Votes should select a delegate 1`] = `
                     </div>
                     <div
                       aria-labelledby="downshift-3-label"
-                      class="pt-6 select-asset__items"
+                      class="select-asset__items"
                       data-testid="select-asset__items"
                       id="downshift-3-menu"
                       role="listbox"
                     >
                       <div
                         aria-selected="false"
-                        class="inline-block mr-4 cursor-pointer"
+                        class="inline-block pt-6 mr-6 cursor-pointer"
                         id="downshift-3-item-0"
                         role="option"
                         title="Ark Ecosystem"
                       >
                         <div
-                          class="sc-AxjAm bDDbwS text-theme-neutral-400"
+                          class="sc-AxjAm eZoLDa text-theme-neutral-400"
                         >
                           <div
-                            class="sc-AxirZ iOZZCn"
-                            height="18"
-                            width="18"
+                            class="sc-AxirZ hyqZof"
+                            height="26"
+                            width="26"
                           >
                             <svg>
                               ark.svg
@@ -1468,18 +1468,18 @@ exports[`Votes should select a delegate 1`] = `
                       </div>
                       <div
                         aria-selected="false"
-                        class="inline-block mr-4 cursor-pointer"
+                        class="inline-block pt-6 mr-6 cursor-pointer"
                         id="downshift-3-item-1"
                         role="option"
                         title="Bitcoin"
                       >
                         <div
-                          class="sc-AxjAm bDDbwS text-theme-success-500 border-theme-success-200"
+                          class="sc-AxjAm eZoLDa text-theme-success-500 border-theme-success-200"
                         >
                           <div
-                            class="sc-AxirZ iOZZCn"
-                            height="18"
-                            width="18"
+                            class="sc-AxirZ hyqZof"
+                            height="26"
+                            width="26"
                           >
                             <svg>
                               btc.svg
@@ -1489,18 +1489,18 @@ exports[`Votes should select a delegate 1`] = `
                       </div>
                       <div
                         aria-selected="false"
-                        class="inline-block mr-4 cursor-pointer"
+                        class="inline-block pt-6 mr-6 cursor-pointer"
                         id="downshift-3-item-2"
                         role="option"
                         title="Ethereum"
                       >
                         <div
-                          class="sc-AxjAm bDDbwS text-theme-neutral-400"
+                          class="sc-AxjAm eZoLDa text-theme-neutral-400"
                         >
                           <div
-                            class="sc-AxirZ iOZZCn"
-                            height="18"
-                            width="18"
+                            class="sc-AxirZ hyqZof"
+                            height="26"
+                            width="26"
                           >
                             <svg>
                               eth.svg
@@ -1548,7 +1548,7 @@ exports[`Votes should select a delegate 1`] = `
                         data-testid="Avatar"
                       />
                       <div
-                        class="inline-block truncate"
+                        class="inline-block truncate align-middle"
                       >
                         <span
                           class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
@@ -1592,7 +1592,7 @@ exports[`Votes should select a delegate 1`] = `
             Select a Delegate
           </h2>
           <div
-            class="sc-fzoLsD khbsxi"
+            class="sc-fzoLsD hITtcw"
             role="table"
           >
             <table
@@ -2486,7 +2486,7 @@ exports[`Votes should select address 1`] = `
                       class="relative flex items-center w-full flex-inline"
                     >
                       <div
-                        class="flex w-full border rounded transition-colors duration-200 shadow-sm bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary"
+                        class="flex w-full transition-colors duration-200 border rounded shadow-sm bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary"
                       >
                         <div
                           class="px-4 py-2 flex-0 w-14"
@@ -2535,25 +2535,25 @@ exports[`Votes should select address 1`] = `
                     </div>
                     <div
                       aria-labelledby="downshift-2-label"
-                      class="pt-6 select-asset__items"
+                      class="select-asset__items"
                       data-testid="select-asset__items"
                       id="downshift-2-menu"
                       role="listbox"
                     >
                       <div
                         aria-selected="false"
-                        class="inline-block mr-4 cursor-pointer"
+                        class="inline-block pt-6 mr-6 cursor-pointer"
                         id="downshift-2-item-0"
                         role="option"
                         title="Ark Ecosystem"
                       >
                         <div
-                          class="sc-AxjAm bDDbwS text-theme-neutral-400"
+                          class="sc-AxjAm eZoLDa text-theme-neutral-400"
                         >
                           <div
-                            class="sc-AxirZ iOZZCn"
-                            height="18"
-                            width="18"
+                            class="sc-AxirZ hyqZof"
+                            height="26"
+                            width="26"
                           >
                             <svg>
                               ark.svg
@@ -2563,18 +2563,18 @@ exports[`Votes should select address 1`] = `
                       </div>
                       <div
                         aria-selected="false"
-                        class="inline-block mr-4 cursor-pointer"
+                        class="inline-block pt-6 mr-6 cursor-pointer"
                         id="downshift-2-item-1"
                         role="option"
                         title="Bitcoin"
                       >
                         <div
-                          class="sc-AxjAm bDDbwS text-theme-success-500 border-theme-success-200"
+                          class="sc-AxjAm eZoLDa text-theme-success-500 border-theme-success-200"
                         >
                           <div
-                            class="sc-AxirZ iOZZCn"
-                            height="18"
-                            width="18"
+                            class="sc-AxirZ hyqZof"
+                            height="26"
+                            width="26"
                           >
                             <svg>
                               btc.svg
@@ -2584,18 +2584,18 @@ exports[`Votes should select address 1`] = `
                       </div>
                       <div
                         aria-selected="false"
-                        class="inline-block mr-4 cursor-pointer"
+                        class="inline-block pt-6 mr-6 cursor-pointer"
                         id="downshift-2-item-2"
                         role="option"
                         title="Ethereum"
                       >
                         <div
-                          class="sc-AxjAm bDDbwS text-theme-neutral-400"
+                          class="sc-AxjAm eZoLDa text-theme-neutral-400"
                         >
                           <div
-                            class="sc-AxirZ iOZZCn"
-                            height="18"
-                            width="18"
+                            class="sc-AxirZ hyqZof"
+                            height="26"
+                            width="26"
                           >
                             <svg>
                               eth.svg
@@ -2643,7 +2643,7 @@ exports[`Votes should select address 1`] = `
                         data-testid="Avatar"
                       />
                       <div
-                        class="inline-block truncate"
+                        class="inline-block truncate align-middle"
                       >
                         <span
                           class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
@@ -2687,7 +2687,7 @@ exports[`Votes should select address 1`] = `
             Select a Delegate
           </h2>
           <div
-            class="sc-fzoLsD khbsxi"
+            class="sc-fzoLsD hITtcw"
             role="table"
           >
             <table

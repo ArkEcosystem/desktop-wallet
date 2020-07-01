@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import tw, { styled } from "twin.macro";
 
 import { Icon } from "../Icon";
@@ -14,13 +15,15 @@ const ToggleIcon = styled.span<{ isOpen: boolean }>`
 type Props = { isOpen?: boolean } & React.ButtonHTMLAttributes<any>;
 
 export const CollapseToggleButton = ({ isOpen, ...props }: Props) => {
+	const { t } = useTranslation();
+
 	return (
 		<button
 			data-testid="CollapseToggleButton"
 			className="flex items-center px-4 py-2 font-medium rounded text-theme-neutral focus:outline-none focus:shadow-outline space-x-2"
 			{...props}
 		>
-			<span>{isOpen ? "Hide" : "Show"}</span>
+			<span>{isOpen ? t("COMMON.HIDE") : t("COMMON.SHOW")}</span>
 			<ToggleIcon isOpen={isOpen!}>
 				<Icon name="ChevronDown" />
 			</ToggleIcon>
