@@ -76,7 +76,7 @@ const SecondStep = () => (
 			<h1 className="mb-0">Transaction Review</h1>
 			<p className="text-theme-neutral-dark">Check the information again before Resignation</p>
 		</div>
-		<div className="grid grid-flow-row gap-2 mt-4">
+		<div className="mt-4 grid grid-flow-row gap-2">
 			<TransactionDetail
 				border={false}
 				label="Network"
@@ -135,7 +135,7 @@ const ThirdStep = ({ form, passwordType }: { form: any; passwordType: "mnemonic"
 							<InputPassword name={passwordType} ref={register} />
 						</FormField>
 
-						<FormField name="name" className="mt-8 pb-4">
+						<FormField name="name" className="pb-4 mt-8">
 							<FormLabel>2nd Mnemonic</FormLabel>
 							<InputPassword name="secondMnemonic" ref={register} />
 						</FormField>
