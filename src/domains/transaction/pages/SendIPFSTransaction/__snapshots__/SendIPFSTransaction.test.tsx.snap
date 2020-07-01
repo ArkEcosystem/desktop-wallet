@@ -27,13 +27,12 @@ exports[`SendIPFSTransaction should render 1`] = `
           />
         </ul>
         <div
-          class="mt-10"
+          class="mt-8"
         >
           <div
             data-testid="tab-pabel__active-panel"
           >
             <section
-              class="space-y-8"
               data-testid="SendIPFSTransaction__step--first"
             >
               <div>
@@ -49,7 +48,7 @@ exports[`SendIPFSTransaction should render 1`] = `
                 </p>
               </div>
               <div
-                class="grid grid-flow-row gap-2"
+                class="grid grid-flow-row gap-2 mt-4"
               >
                 <div
                   class="flex items-center py-4 true "
@@ -190,7 +189,7 @@ exports[`SendIPFSTransaction should render 1`] = `
                   </div>
                 </div>
                 <div
-                  class="flex items-center py-4 true "
+                  class="flex items-center py-4 true pb-0"
                 >
                   <div
                     class="flex-1"
@@ -291,7 +290,7 @@ exports[`SendIPFSTransaction should render 1`] = `
             </section>
           </div>
           <div
-            class="flex justify-start mt-6 space-x-2"
+            class="flex justify-end mt-8 space-x-2"
           >
             <button
               class="sc-AxjAm hQuXai"
@@ -321,7 +320,6 @@ exports[`SendIPFSTransaction should render 1`] = `
 exports[`SendIPFSTransaction should render 1st step 1`] = `
 <DocumentFragment>
   <section
-    class="space-y-8"
     data-testid="SendIPFSTransaction__step--first"
   >
     <div>
@@ -337,7 +335,7 @@ exports[`SendIPFSTransaction should render 1st step 1`] = `
       </p>
     </div>
     <div
-      class="grid grid-flow-row gap-2"
+      class="grid grid-flow-row gap-2 mt-4"
     >
       <div
         class="flex items-center py-4 true "
@@ -478,7 +476,7 @@ exports[`SendIPFSTransaction should render 1st step 1`] = `
         </div>
       </div>
       <div
-        class="flex items-center py-4 true "
+        class="flex items-center py-4 true pb-0"
       >
         <div
           class="flex-1"
@@ -583,7 +581,6 @@ exports[`SendIPFSTransaction should render 1st step 1`] = `
 exports[`SendIPFSTransaction should render 2nd step 1`] = `
 <DocumentFragment>
   <section
-    class="space-y-8"
     data-testid="SendIPFSTransaction__step--second"
   >
     <div>
@@ -599,7 +596,7 @@ exports[`SendIPFSTransaction should render 2nd step 1`] = `
       </p>
     </div>
     <div
-      class="grid grid-flow-row gap-2"
+      class="grid grid-flow-row gap-2 mt-4"
     >
       <div
         class="flex items-center py-4 true "
@@ -793,7 +790,7 @@ exports[`SendIPFSTransaction should render 2nd step 1`] = `
                 Transaction fee
               </span>
               <span
-                class="mt-3 mr-2"
+                class="mt-3"
                 data-testid="total-amount-box__transaction-fee"
               >
                 0.09660435 ARK
@@ -857,10 +854,10 @@ exports[`SendIPFSTransaction should render 3rd step 1`] = `
         Confirm your password to continue
       </p>
       <div
-        class="grid grid-flow-row gap-2"
+        class="grid grid-flow-row gap-2 mt-4"
       >
         <div
-          class="flex items-center py-4 true "
+          class="flex items-center py-4 true pb-0"
         >
           <div
             class="flex-1"
@@ -1109,7 +1106,11 @@ exports[`SendIPFSTransaction should render 4th step 1`] = `
                   class="sc-fznZeY kKCHjH"
                   color="warning"
                 >
-                  Your address
+                  <span
+                    class="text-sm"
+                  >
+                    Your address
+                  </span>
                 </div>
               </div>
               <div
@@ -1159,7 +1160,7 @@ exports[`SendIPFSTransaction should render 4th step 1`] = `
           </div>
         </div>
         <div
-          class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+          class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 pb-0"
         >
           <div
             class="flex-1"
