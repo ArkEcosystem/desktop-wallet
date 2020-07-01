@@ -2,42 +2,42 @@ import { DateTime } from "@arkecosystem/platform-sdk-intl";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
+const dateDifference = (date: string) => {
+	const now = DateTime.make();
+	const target = DateTime.make(date);
+
+	const yearDifference = now.diffInYears(target);
+	if (yearDifference > 0) {
+		return { count: yearDifference, key: "YEARS" };
+	}
+
+	const monthDifference = now.diffInMonths(target);
+	if (monthDifference > 0) {
+		return { count: monthDifference, key: "MONTHS" };
+	}
+
+	const dayDifference = now.diffInDays(target);
+	if (dayDifference > 0) {
+		return { count: dayDifference, key: "DAYS" };
+	}
+
+	const hourDifference = now.diffInHours(target);
+	if (hourDifference > 0) {
+		return { count: hourDifference, key: "HOURS" };
+	}
+
+	const minuteDifference = now.diffInMinutes(target);
+	if (minuteDifference > 0) {
+		return { count: minuteDifference, key: "MINUTES" };
+	}
+
+	return { key: "FEW_SECONDS" };
+};
+
 export const TimeAgo = ({ date }: { date: string }) => {
 	const { t } = useTranslation();
 
-	const currentDateObj = DateTime.make();
-	const dateToCompare = DateTime.make(date);
-
-	let diff;
-
-	const yearDifference = currentDateObj.diffInYears(dateToCompare);
-	if (yearDifference > 0) {
-		diff = { count: yearDifference, key: "YEARS" };
-	} else {
-		const monthDifference = currentDateObj.diffInMonths(dateToCompare);
-		if (monthDifference > 0) {
-			diff = { count: monthDifference, key: "MONTHS" };
-		} else {
-			const dayDifference = currentDateObj.diffInDays(dateToCompare);
-			if (dayDifference > 0) {
-				diff = { count: dayDifference, key: "DAYS" };
-			} else {
-				const hourDifference = currentDateObj.diffInHours(dateToCompare);
-				if (hourDifference > 0) {
-					diff = { count: hourDifference, key: "HOURS" };
-				} else {
-					const minuteDifference = currentDateObj.diffInMinutes(dateToCompare);
-					if (minuteDifference > 0) {
-						diff = { count: minuteDifference, key: "MINUTES" };
-					} else {
-						diff = { key: "FEW_SECONDS" };
-					}
-				}
-			}
-		}
-	}
-
-	const { count, key } = diff;
+	const { count, key } = dateDifference(date);
 
 	return (
 		<span data-testid="timeago">
