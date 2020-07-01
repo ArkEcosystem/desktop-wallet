@@ -560,8 +560,8 @@ export default {
       }
 
       try {
-        if (this.schema.address && this.schema.amount) {
-          if (WalletService.validateAddress(this.schema.address, this.session_network.version)) {
+        if (WalletService.validateAddress(this.schema.address, this.session_network.version)) {
+          if (this.schema.address && this.schema.amount) {
             this.$v.form.recipients.$model = []
             this.$v.form.recipients.$model.push({
               address: this.schema.address,
@@ -569,13 +569,15 @@ export default {
               sendAll: false
             })
           } else {
-            throw new Error(this.$t('VALIDATION.RECIPIENT_DIFFERENT_NETWORK', [
-              this.wallet_truncate(this.schema.address)
-            ]))
+            this.$set(this, 'recipientId', this.schema.address || '')
           }
-        }
 
-        this.$set(this.form, 'vendorField', this.schema.vendorField || '')
+          this.$set(this.form, 'vendorField', this.schema.vendorField || '')
+        } else {
+          throw new Error(this.$t('VALIDATION.RECIPIENT_DIFFERENT_NETWORK', [
+            this.wallet_truncate(this.schema.address)
+          ]))
+        }
       } catch (error) {
         this.$error(`${this.$t('TRANSACTION.ERROR.LOAD_FROM_URI')}: ${error.message}`)
       }
